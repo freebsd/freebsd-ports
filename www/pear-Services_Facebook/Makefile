@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Facebook
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	www pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -29,6 +29,7 @@ FILES=		Services/Facebook.php \
 		Services/Facebook/Exception.php \
 		Services/Facebook/Events.php \
 		Services/Facebook/Common.php \
+		Services/Facebook/Connect.php \
 		Services/Facebook/Auth.php \
 		Services/Facebook/Application.php \
 		Services/Facebook/Admin.php \
@@ -62,6 +63,9 @@ TESTS=		010-users-isAppAdded.phpt \
 		123-marketplace-getListings.phpt \
 		124-marketplace-removeListing.phpt \
 		125-marketplace-search.phpt \
+		130-connect-hashEmail.phpt \
+		131-connect-unregisterUsers.phpt \
+		132-connect-registerUsers.phpt \
 		test-image.jpg \
 		tests-config.php.example
 
