@@ -1,4 +1,5 @@
 bin/geomorph
+share/applications/geomorph.desktop
 %%DATADIR%%/%%PORTVERSION%%/AFAIRE
 %%DATADIR%%/%%PORTVERSION%%/FAQ
 %%DATADIR%%/%%PORTVERSION%%/FAQ-fr
@@ -50,11 +51,12 @@ bin/geomorph
 %%DATADIR%%/%%PORTVERSION%%/update-rc
 %%DATADIR%%/%%PORTVERSION%%/v0_30_new_sections
 %%DATADIR%%/GeoMorph.xpm
-%%DATADIR%%/Geomorph-gnome.desktop
-%%DATADIR%%/Geomorph-kde.desktop
-share/locale/de/LC_MESSAGES/geomorph.mo
-share/locale/en/LC_MESSAGES/geomorph.mo
-share/locale/fr/LC_MESSAGES/geomorph.mo
+%%DATADIR%%/geomorph.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/geomorph.mo
+%%NLS%%share/locale/en/LC_MESSAGES/geomorph.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/geomorph.mo
+share/pixmaps/geomorph.xpm
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scenes
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

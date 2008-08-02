@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	geomorph
-PORTVERSION=	0.40
-PORTREVISION=	2
+PORTVERSION=	0.50
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,14 +19,34 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libintl-prefix="${LOCALBASE}"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph|${DATADIR}|' ${WRKSRC}/install-step* ${WRKSRC}/install-user ${WRKSRC}/src/app/app.c
-	@${REINPLACE_CMD} -e 's|\$$HOME/geomorph|\$$HOME/.geomorph|' ${WRKSRC}/install-step* ${WRKSRC}/install-user
-	@${REINPLACE_CMD} -e '/DEFAULT_DIR/ s|geomorph|.geomorph|' ${WRKSRC}/src/app/globals.h ${WRKSRC}/src/hf/globals.h
-	@${RM} ${WRKSRC}/install-step*.bak ${WRKSRC}/install-user*.bak
+	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph/GeoMorph.xpm|geomorph.xpm|' \
+		${WRKSRC}/geomorph.desktop
+	@${FIND} ${WRKSRC} -exec ${GREP} -q /usr/local/share/geomorph {} \; -print | \
+		${XARGS} ${REINPLACE_CMD} -e 's|/usr/local/share/geomorph|${DATADIR}|'
+	@${REINPLACE_CMD} -e 's|\$$HOME/geomorph|\$$HOME/.geomorph|' \
+		${WRKSRC}/install-step* ${WRKSRC}/install-user ${WRKSRC}/update-rc
+	@${REINPLACE_CMD} -e '/DEF_DIR_NAME/ s|geomorph|.geomorph|' \
+		${WRKSRC}/src/app/globals.h ${WRKSRC}/src/hf/globals.h
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	@${RM} ${WRKSRC}/install*~
+
+post-install:
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/geomorph.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/GeoMorph.xpm ${PREFIX}/share/pixmaps/geomorph.xpm
 
 .include <bsd.port.mk>
