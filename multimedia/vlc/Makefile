@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6h
-PORTREVISION=	2
+DISTVERSION=	0.8.6i
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -31,7 +30,6 @@ OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
 OPTIONS+=	AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On
 OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
 OPTIONS+=	ARTS "Enable arts sound support" Off
-OPTIONS+=	CORBA "Enable a Corba interface via orbit2" Off
 OPTIONS+=	DAAP "Connect to iTunes(R) music shares" On
 OPTIONS+=	DEBUG "Enable debuging support" Off
 OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
@@ -40,7 +38,6 @@ OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
 OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" Off
 OPTIONS+=	FLAC "Flac audio codec support" Off
 OPTIONS+=	HTTPD "Streaming media control via http" On
-OPTIONS+=	LAME "Lame mp3 audio encoder support" On
 OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
 OPTIONS+=	MAD "Mad mp3 audio decoder support" On
 OPTIONS+=	MATROSKA "Matroska Container Format support" On
@@ -53,7 +50,7 @@ OPTIONS+=	SDL "SDL video output" On
 OPTIONS+=	SVG "SVG graphics support" Off
 OPTIONS+=	SVGALIB "SVGALIB video output" Off
 OPTIONS+=	SHOUT "Shout2 support" Off
-OPTIONS+=	SKINS "Enable GTK+ skinsned interface" Off
+OPTIONS+=	SKINS "Enable Winamp 2.x skinned interface" Off
 OPTIONS+=	SPEEX "Speex voice codec support" On
 OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
 OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
@@ -222,13 +219,6 @@ CONFIGURE_ARGS+=--disable-cdda \
 		--disable-cddax
 .endif
 
-.if defined(WITH_CORBA) && !defined(WITHOUT_CORBA)
-USE_GNOME+=	orbit2
-CONFIGURE_ARGS+=--enable-corba
-.else
-CONFIGURE_ARGS+=--disable-corba
-.endif
-
 .if !defined(WITHOUT_DVBPSI)
 LIB_DEPENDS+=	dvbpsi.5:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvbpsi \
@@ -343,15 +333,6 @@ CONFIGURE_ARGS+=--enable-ggi
 CONFIGURE_ARGS+=--disable-ggi
 .endif
 
-# Do not use lame if PACKAGE_BUILDING is defined. since
-# lame can NOT be packaged.
-.if !defined(WITHOUT_LAME) && !defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=--enable-mp3lame
-.else
-CONFIGURE_ARGS+=--disable-mp3lame
-.endif
-
 .if !defined(WITHOUT_MATROSKA)
 LIB_DEPENDS+=	matroska.0:${PORTSDIR}/multimedia/libmatroska
 CONFIGURE_ARGS+=--enable-mkv
@@ -367,8 +348,7 @@ CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey nvu
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+USE_GECKO=	xulrunner firefox3 firefox mozilla seamonkey nvu
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"

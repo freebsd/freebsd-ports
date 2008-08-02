@@ -11,9 +11,6 @@
 #
 # Interface Knobs:
 #
-# WITH_CORBA
-#  Enable a Corba interface via orbit2
-#
 # WITH_NCURSES=yes
 #  Ncurses (console) interface
 #
@@ -50,10 +47,6 @@
 #  Flac Support
 #
 
-# WITHOUT_LAME=yes
-#  Mp3 encoder Support
-#   ** NOT DEFINED if PACKAGE_BUILDING is defined **
-#
 # WITHOUT_A52=yes
 #  liba52 audio support
 #
