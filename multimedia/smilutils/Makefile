@@ -7,7 +7,7 @@
 
 PORTNAME=	smilutils
 DISTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	cvs
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -41,7 +41,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib/libquicktime -L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-CONFIGURE_ARGS=	--with-avcodec --enable-mp3lame --enable-vorbis \
+CONFIGURE_ARGS=	--with-avcodec=${LOCALBASE}/include/ffmpeg --enable-mp3lame --enable-vorbis \
 		--with-ffmpeg=${LOCALBASE}/lib --with-x
 
 MAN1=	image2raw.1 ppm2raw.1 ppm2webcam.1 raw2dv.1 \
