@@ -2,13 +2,11 @@
 # Date created:				March 28 2008
 # Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
 #
-# $Carpetsmoker: ports/graphics/pqiv/Makefile,v 1.1 2008/03/28 13:07:07 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	pqiv
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/ \
 		http://www.carpetsmoker.net/distfiles/ \
@@ -16,7 +14,7 @@ MASTER_SITES=	http://www.pberndt.com/raw//Programme/Linux/pqiv/_download/ \
 		http://www.rwxrwxrwx.net/distfiles/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	carpetsmoker@rwxrwxrwx.net
 COMMENT=	Pretty Quick Image Viewer
 
 USE_BZIP2=	yes
