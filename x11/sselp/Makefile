@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sselp
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://code.suckless.org/dl/tools/ \
 		http://laffaye.free.fr/distfiles/
