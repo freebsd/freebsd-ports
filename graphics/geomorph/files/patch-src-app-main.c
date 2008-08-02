@@ -1,5 +1,5 @@
---- src/app/main.c.orig	Sun Nov  6 08:52:50 2005
-+++ src/app/main.c	Tue Feb 28 04:00:28 2006
+--- src/app/main.c.orig	2008-06-02 08:16:24.000000000 +0400
++++ src/app/main.c	2008-08-02 19:32:26.000000000 +0400
 @@ -19,6 +19,7 @@
   * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
   */
@@ -7,8 +7,8 @@
 +#include <sys/param.h>
  #include "./main.h"
  #include "./globals.h"
- // Gtkglext - 2005-11
-@@ -48,37 +49,21 @@
+ #include "./app.h"
+@@ -56,6 +57,12 @@
  	if (command) free(command);
  }
  
@@ -19,47 +19,75 @@
 +}
 +
  gchar *find_config_file() {
- //	Returns the config file name (name OPTIONS_FILE, defined in globals.h),
+ //	Returns the config file name (name OPTION_FILE, defined in globals.h),
  //	with its full path
- 	gchar *default_dir, *path_n_file, *buf, *command;
- 	gboolean shortcuts;
+@@ -71,55 +78,22 @@
+ //	if $HOME/DEF_DIR_NAME doesn't exist, we create the required files
+ //	The directory where OPTION_FILE is found becomes the default one (DEF_DIR)
  
--//	We try:
--//	1. in the current directory. (./OPTIONS_FILE = ./geomorphrc)
--//	2. if not found, we try ./DEFAULT_DIR/OPTIONS_FILE (./geomorph/geomorphrc)
--//	3. if not found, we try $HOME/OPTIONS_FILE (~/geomorphrc)
--//	4. if not found, we try in $HOME/DEFAULT_DIR (~/geomorph/geomorphrc) 
--//	--> if OPTIONS_FILE was not found, and 
--//	if $HOME/DEFAULT_DIR doesn't exist, we create the required files
--//	The directory where OPTIONS_FILE is found becomes the default one (DEF_DIR)
--
--	// Try ./OPTIONS_FILE
+-	// Try ./OPTION_FILE
 -	default_dir = (gchar *) get_current_dir_name();
--	path_n_file = concat_dname_fname(default_dir,OPTIONS_FILE);
--	if (!filexists(path_n_file)) { // Try ./DEFAULT_DIR/OPTIONS_FILE
--		default_dir = concat_dname_fname(default_dir,DEFAULT_DIR);
+-	path_n_file = concat_dname_fname(default_dir,OPTION_FILE);
+-	if (!filexists(path_n_file)) { // Try ./DEF_DIR_NAME/OPTION_FILE
+-		default_dir = concat_dname_fname(default_dir,DEF_DIR_NAME);
 -		if (path_n_file)
 -			free(path_n_file);
--		path_n_file = concat_dname_fname(default_dir,OPTIONS_FILE);
--		if (!filexists(path_n_file)) { // Try in the home directory - ~/OPTIONS_FILE
-+	// Config file is located under $HOME/.geomorph/geomorphrc
- 			default_dir = getenv("HOME");
+-		path_n_file = concat_dname_fname(default_dir,OPTION_FILE);
+-		if (!filexists(path_n_file)) { // Try in the home directory - ~/OPTION_FILE
+-			default_dir = getenv("HOME");
 -			if (path_n_file)
 -				free(path_n_file);
--			path_n_file = concat_dname_fname(default_dir, OPTIONS_FILE);
--			if (!filexists(path_n_file)) { // Try ~/DEFAULT_DIR/OPTIONS_FILE
- 				default_dir = concat_dname_fname(default_dir,DEFAULT_DIR);
+-			path_n_file = concat_dname_fname(default_dir, OPTION_FILE);
+-			if (!filexists(path_n_file)) { // Try ~/DEFAULT_DIR/OPTION_FILE
+-				default_dir = concat_dname_fname(default_dir,DEF_DIR_NAME);
 -				if (path_n_file) free(path_n_file);
- 				path_n_file = concat_dname_fname(default_dir, OPTIONS_FILE);
- 				if (directory_exists(default_dir)) {
- 					if (!filexists(path_n_file)) {
-@@ -109,9 +94,6 @@
- 					}
- 				if (path_n_file) free(path_n_file);
- 				}
+-				path_n_file = concat_dname_fname(default_dir, OPTION_FILE);
+-				if (directory_exists(default_dir)) {
+-					if (!filexists(path_n_file)) {
+-						// Big problem, create a default rc file
+-						create_config_file(path_n_file);
+-					}
+-				}
+-				else {
+-					// Geomorph directory ("default_dir") doesn't exist
+-					// Create one with default scenes and rc file
+-					buf = malloc(strlen(_("Creation of the default working directory?"))+1+strlen(default_dir));
+-					sprintf(buf,_("Creation of the default working directory?"),default_dir);
+-					if (!yes_no(buf,TRUE))
+-						exit(0);
+-					if (buf) free(buf);
+-					shortcuts = yes_no(_("Add shortcuts on the KDE and GNOME desktops?"), TRUE);
+-					command = concat_dname_fname(get_data_dir(),"install-step1-dir");
+-					if (system(command))
+-						my_msg(_("Fatal error during the creation of the default working directory"),ABORT);
+-					if (command) free(command);
+-					create_config_file(path_n_file);
+-					if (shortcuts) {
+-						command = concat_dname_fname(get_data_dir(),"install-step3-desktop");
+-						if (system(command))
+-							my_msg(_("Error during the creation of one shortcut or both"),WARNING);
+-						if (buf) free(buf);
+-						if (command) free(command);
+-					}
+-				if (path_n_file) free(path_n_file);
+-				}
 -			}
--		}
--	}
++	default_dir = concat_dname_fname(getenv("HOME"), DEF_DIR_NAME);
++	path_n_file = concat_dname_fname(default_dir, OPTION_FILE);
++	if (directory_exists(default_dir)) {
++		if (!filexists(path_n_file)) {
++			// Big problem, create a default rc file
++			create_config_file(path_n_file);
+ 		}
+ 	}
++	else {
++		command = concat_dname_fname(get_data_dir(),"install-step1-dir");
++		if (system(command))
++			my_msg(_("Fatal error during the creation of the default working directory"),ABORT);
++		if (command) free(command);
++		create_config_file(path_n_file);
++	}
++	if (path_n_file) free(path_n_file);
  	return add_filesep(default_dir);
  }
  
