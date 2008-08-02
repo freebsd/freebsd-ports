@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	qutim
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	qutIM-${PORTVERSION}
+MASTER_SITES=	http://qutim.org/download/ \
+		http://dl.kibab.com/distfiles/qutim/ \
+		ftp://ftp.inferra.ru/pub/qutIM/
+DISTNAME=	qutim_${PORTVERSION}
 
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	A Qt4-based lightweight ICQ client with advanced features
 
-WRKSRC=		${WRKDIR}/qutIM
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
@@ -27,6 +26,6 @@ pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o Makefile qutIM.pro
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/qutIM ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/build/bin/qutIM ${PREFIX}/bin
 
 .include <bsd.port.mk>
