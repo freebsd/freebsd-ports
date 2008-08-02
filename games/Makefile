@@ -119,6 +119,7 @@
     SUBDIR += cgoban
     SUBDIR += cgoban2
     SUBDIR += chanta
+    SUBDIR += chapping
     SUBDIR += cheech
     SUBDIR += childsplay
     SUBDIR += childsplay_plugins
