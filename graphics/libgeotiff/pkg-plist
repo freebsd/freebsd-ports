@@ -13,6 +13,7 @@ include/geo_config.h
 include/geo_ctrans.inc
 include/geo_keyp.h
 include/geo_normalize.h
+include/geo_simpletags.h
 include/geo_tiffp.h
 include/geokeys.h
 include/geokeys.inc
