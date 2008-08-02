@@ -1,22 +1,29 @@
-share/gauche/site/lib/test/unit.scm
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.en
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.ja
+%%PORTDOCS%%%%DOCSDIR%%/README.en
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.ja
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/symdiff/lib/symdiff.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/symdiff/test/run-test.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/symdiff/test/test-symdiff.scm
 share/gauche/site/lib/test/unit/assertions.scm
-share/gauche/site/lib/test/unit/autorunner.scm
+share/gauche/site/lib/test/unit/auto-runner.scm
 share/gauche/site/lib/test/unit/base.scm
+share/gauche/site/lib/test/unit/color.scm
 share/gauche/site/lib/test/unit/common.scm
-share/gauche/site/lib/test/unit/result.scm
-share/gauche/site/lib/test/unit/ui.scm
+share/gauche/site/lib/test/unit/listener.scm
+share/gauche/site/lib/test/unit/pending.scm
+share/gauche/site/lib/test/unit/run-context.scm
+share/gauche/site/lib/test/unit/test-case.scm
 share/gauche/site/lib/test/unit/ui/gtk.scm
 share/gauche/site/lib/test/unit/ui/text.scm
+share/gauche/site/lib/test/unit/ui.scm
+share/gauche/site/lib/test/unit.scm
 @dirrm share/gauche/site/lib/test/unit/ui
 @dirrm share/gauche/site/lib/test/unit
 @dirrmtry share/gauche/site/lib/test
-%%EXAMPLESDIR%%/site-lisp/run-test-setting.el
-%%EXAMPLESDIR%%/site-lisp/run-test.el
-%%EXAMPLESDIR%%/symdiff/lib/symdiff.scm
-%%EXAMPLESDIR%%/symdiff/test/run-test.scm
-%%EXAMPLESDIR%%/symdiff/test/test-symdiff.scm
-@dirrm %%EXAMPLESDIR%%/symdiff/test
-@dirrm %%EXAMPLESDIR%%/symdiff/lib
-@dirrm %%EXAMPLESDIR%%/symdiff
-@dirrm %%EXAMPLESDIR%%/site-lisp
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/symdiff/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/symdiff/lib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/symdiff
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
