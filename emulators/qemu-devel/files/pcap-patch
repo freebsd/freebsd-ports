@@ -1,0 +1,297 @@
+--- Makefile.target.orig	2008-07-18 15:18:11.000000000 -0400
++++ Makefile.target	2008-07-18 15:23:11.000000000 -0400
+@@ -619,6 +619,13 @@
+ COCOA_LIBS+=-framework CoreAudio
+ endif
+ endif
++ifdef CONFIG_PCAP
++ifdef CONFIG_WIN32
++LIBS+=-lwpcap
++else
++LIBS+=-lpcap
++endif
++endif
+ ifdef CONFIG_SLIRP
+ CPPFLAGS+=-I$(SRC_PATH)/slirp
+ endif
+--- configure.orig	2008-07-18 15:18:42.000000000 -0400
++++ configure	2008-07-18 15:22:24.000000000 -0400
+@@ -88,6 +88,7 @@
+ mingw32="no"
+ EXESUF=""
+ gdbstub="yes"
++pcap="no"
+ slirp="yes"
+ fmod_lib=""
+ fmod_inc=""
+@@ -278,6 +279,8 @@
+   ;;
+   --enable-mingw32) mingw32="yes" ; cross_prefix="i386-mingw32-" ; linux_user="no"
+   ;;
++  --enable-pcap) pcap="yes"
++  ;;
+   --disable-slirp) slirp="no"
+   ;;
+   --disable-kqemu) kqemu="no"
+@@ -712,6 +715,28 @@
+ fi # -z $sdl
+ 
+ ##########################################
++# pcap probe
++
++if test "$pcap" = "yes" ; then
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
++EOF
++  if test "$mingw32" = "no" ; then
++    libpcap=-lpcap
++  else
++    libpcap=-lwpcap
++  fi
++  if ! $cc $ARCH_CFLAGS -o $TMPE $TMPC $libpcap 2> /dev/null ; then
++    echo
++    echo "Error: Could not find pcap"
++    echo "Make sure to have the pcap libs and headers installed."
++    echo
++    exit 1
++  fi
++fi # test "$pcap"
++
++##########################################
+ # VNC TLS detection
+ if test "$vnc_tls" = "yes" ; then
+   `pkg-config gnutls` || vnc_tls="no"
+@@ -865,6 +890,7 @@
+     echo "    TLS CFLAGS    $vnc_tls_cflags"
+     echo "    TLS LIBS      $vnc_tls_libs"
+ fi
++echo "pcap support      $pcap"
+ if test -n "$sparc_cpu"; then
+     echo "Target Sparc Arch $sparc_cpu"
+ fi
+@@ -1034,6 +1060,15 @@
+ if test $profiler = "yes" ; then
+   echo "#define CONFIG_PROFILER 1" >> $config_h
+ fi
++if test "$pcap" = "yes" ; then
++  echo "CONFIG_PCAP=yes" >> $config_mak
++  echo "#define CONFIG_PCAP 1" >> $config_h
++  if test "$mingw32" = "no" ; then
++    if test -c /dev/bpf0 ; then
++      echo "#define HAVE_BPF 1" >> $config_h
++    fi
++  fi
++fi
+ if test "$slirp" = "yes" ; then
+   echo "CONFIG_SLIRP=yes" >> $config_mak
+   echo "#define CONFIG_SLIRP 1" >> $config_h
+--- vl.c.orig	2008-07-18 15:19:26.000000000 -0400
++++ vl.c	2008-07-18 15:31:25.000000000 -0400
+@@ -102,6 +102,13 @@
+ int inet_aton(const char *cp, struct in_addr *ia);
+ #endif
+ 
++#if defined(CONFIG_PCAP)
++#if defined(_WIN32)
++#define WPCAP 1
++#endif
++#include <pcap.h>
++#endif
++
+ #if defined(CONFIG_SLIRP)
+ #include "libslirp.h"
+ #endif
+@@ -3914,6 +3921,164 @@
+     }
+ }
+ 
++#if defined(CONFIG_PCAP)
++
++typedef struct PCAPState {
++    VLANClientState *vc;
++    pcap_t *handle;
++} PCAPState;
++
++static void pcap_receive(void *opaque, const uint8_t *buf, int size)
++{
++    PCAPState *s = (PCAPState *)opaque;
++
++    pcap_sendpacket(s->handle, (u_char*)buf, size);
++}
++
++static void pcap_callback(u_char *user, struct pcap_pkthdr *phdr, u_char *pdata)
++{
++    VLANClientState *vc = (VLANClientState *)user;
++
++    qemu_send_packet(vc, pdata, phdr->len);
++}
++
++static void pcap_send(void *opaque)
++{
++    PCAPState *s = (PCAPState *)opaque;
++
++    pcap_dispatch(s->handle, 1, (pcap_handler)&pcap_callback, (u_char *)s->vc);
++}
++
++static int net_pcap_init(VLANState *vlan, char *ifname)
++{
++    PCAPState *s = NULL;
++    struct bpf_program fcode = { 0, NULL };
++    char pcap_program[64];
++    char macstr[] = "xx:xx:xx:xx:xx:xx";
++    char errbuf[PCAP_ERRBUF_SIZE];
++#if defined(_WIN32)
++    HANDLE h;
++#endif
++    int i;
++
++    /* Find guest's MAC address. */
++    for (i = 0; i < nb_nics; i++)
++	if (nd_table[i].vlan == vlan) {
++	    u_char *mac = nd_table[i].macaddr;
++	    snprintf(macstr, sizeof(macstr), "%02x:%02x:%02x:%02x:%02x:%02x",
++		mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
++	    break;
++	}
++    if (macstr[0] == 'x') {
++	fprintf(stderr, "qemu: net_pcap_init: no matching NIC found\n");
++	return -1;
++    }
++
++    s = qemu_mallocz(sizeof(PCAPState));
++    if (!s)
++	return -1;
++
++    if (ifname == NULL && (ifname = pcap_lookupdev(errbuf)) == NULL) {
++	fprintf(stderr, "qemu: pcap_lookupdev: %s\n", errbuf);
++	goto fail;
++    }
++
++    /* Attempt to connect device. */
++    s->handle = (void *)pcap_open_live(ifname, 65535, 1, 0, errbuf);
++    if (!s->handle) {
++	fprintf(stderr, "qemu: pcap_open_live: %s\n", errbuf);
++	goto fail;
++    }
++
++    /* Set filter program. */
++    snprintf(pcap_program, 64, "ether dst %s or multicast", macstr);
++    if (pcap_compile(s->handle, &fcode, pcap_program, 1, 0) < 0) {
++	fprintf(stderr, "qemu: pcap_compile failed\n");
++	goto fail;
++    }
++    if (pcap_setfilter(s->handle, &fcode) < 0) {
++	fprintf(stderr, "qemu: pcap_setfilter failed\n");
++	goto fail;
++    }
++
++    /* Set non-blocking mode. */
++    if (pcap_setnonblock(s->handle, 1, errbuf) < 0) {
++	fprintf(stderr, "qemu: pcap_setnonblock: %s\n", errbuf);
++	goto fail;
++    }
++
++#if defined(_WIN32)
++    /*
++     * Tell the kernel that the packet has to be seen immediately.
++     */
++    if (pcap_setmintocopy(s->handle, 0) < 0) {
++	fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
++	goto fail;
++    }
++#else /* !_WIN32 */
++#if defined(HAVE_BPF)
++#if defined(BIOCIMMEDIATE)
++    /*
++     * Tell the kernel that the packet has to be seen immediately.
++     */
++    {
++	unsigned int one = 1;
++	if (ioctl(pcap_fileno(s->handle), BIOCIMMEDIATE, &one) < 0) {
++	    fprintf(stderr, "qemu: pcap failed to set immediate mode\n");
++	    goto fail;
++	}
++    }
++#endif /* BIOCIMMEDIATE */
++
++#if defined(BIOCFEEDBACK)
++    /*
++     * Tell the kernel that the sent packet has to be fed back.
++     * This is necessary to connect host and guest.
++     */
++    {
++	unsigned int one = 1;
++	if (ioctl(pcap_fileno(s->handle), BIOCFEEDBACK, &one) < 0) {
++	    fprintf(stderr, "qemu: pcap failed to set feedback mode\n");
++	    goto fail;
++	}
++    }
++#endif /* BIOCFEEDBACK */
++#endif /* HAVE_BPF */
++#endif /* _WIN32 */
++
++    s->vc = qemu_new_vlan_client(vlan, pcap_receive, NULL, s);
++    snprintf(s->vc->info_str, sizeof(s->vc->info_str), "pcap redirector");
++
++#if defined(_WIN32)
++    if ((h = pcap_getevent(s->handle)) == NULL) {
++	fprintf(stderr, "qemu: pcap_getevent failed\n");
++	goto fail;
++    }
++    qemu_add_wait_object(h, pcap_send, s);
++#else /* !_WIN32 */
++    if ((i = pcap_get_selectable_fd(s->handle)) < 0) {
++	fprintf(stderr, "qemu: pcap_get_selectable_fd failed\n");
++	goto fail;
++    }
++    qemu_set_fd_handler(i, pcap_send, NULL, s);
++#endif /* _WIN32 */
++
++    return 0;
++
++fail:
++    if (s) {
++	if (s->handle) {
++	    if (fcode.bf_len)
++		pcap_freecode(&fcode);
++	    pcap_close(s->handle);
++	}
++	qemu_free(s);
++    }
++
++    return -1;
++}
++#endif /* CONFIG_PCAP */
++
+ #if defined(CONFIG_SLIRP)
+ 
+ /* slirp network adapter */
+@@ -4983,6 +5150,16 @@
+            are wanted */
+         ret = 0;
+     } else
++#ifdef CONFIG_PCAP
++    if (!strcmp(device, "pcap")) {
++	char ifname[64];
++	vlan->nb_host_devs++;
++	if (get_param_value(ifname, sizeof(ifname), "ifname", p) <= 0)
++	    ret = net_pcap_init(vlan, NULL);
++	else
++	    ret = net_pcap_init(vlan, ifname);
++    } else
++#endif
+ #ifdef CONFIG_SLIRP
+     if (!strcmp(device, "user")) {
+         if (get_param_value(buf, sizeof(buf), "hostname", p)) {
+@@ -7398,6 +7575,10 @@
+            "Network options:\n"
+            "-net nic[,vlan=n][,macaddr=addr][,model=type]\n"
+            "                create a new Network Interface Card and connect it to VLAN 'n'\n"
++#ifdef CONFIG_PCAP
++           "-net pcap[,vlan=n][,ifname=name]\n"
++           "                connect the host network interface using PCAP to VLAN 'n'\n"
++#endif
+ #ifdef CONFIG_SLIRP
+            "-net user[,vlan=n][,hostname=host]\n"
+            "                connect the user mode network stack to VLAN 'n' and send\n"

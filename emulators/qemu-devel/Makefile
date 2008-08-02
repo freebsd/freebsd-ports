@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.9.1s.20080620
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -36,6 +37,7 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
+		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		ALL_TARGETS "Also build dyngen targets (requires gcc34)" On
 
@@ -71,6 +73,10 @@ CONFIGURE_ARGS+=	--disable-vnc-tls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
+.if defined(WITH_PCAP)
+CONFIGURE_ARGS+=	--enable-pcap
+.endif
+
 .if defined(WITH_SAMBA)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
 .endif
@@ -104,6 +110,9 @@ pre-patch:
 post-patch:
 .if defined(WITH_RTL8139_TIMER)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
+.endif
+.if defined(WITH_PCAP)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 .endif
 .if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
