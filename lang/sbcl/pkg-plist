@@ -38,7 +38,6 @@ lib/sbcl/sb-bsd-sockets/Makefile
 lib/sbcl/sb-bsd-sockets/NEWS
 lib/sbcl/sb-bsd-sockets/TODO
 lib/sbcl/sb-bsd-sockets/a.out
-lib/sbcl/sb-bsd-sockets/alien/.keep_me
 lib/sbcl/sb-bsd-sockets/constants.fasl
 lib/sbcl/sb-bsd-sockets/constants.lisp
 lib/sbcl/sb-bsd-sockets/constants.lisp-temp
@@ -130,7 +129,6 @@ lib/sbcl/sb-posix/Makefile
 lib/sbcl/sb-posix/README
 lib/sbcl/sb-posix/TODO
 lib/sbcl/sb-posix/a.out
-lib/sbcl/sb-posix/alien/.keep_me
 lib/sbcl/sb-posix/constants.fasl
 lib/sbcl/sb-posix/constants.lisp
 lib/sbcl/sb-posix/constants.lisp-temp
@@ -221,7 +219,6 @@ lib/sbcl/site-systems/.keep_me
 @dirrm lib/sbcl/sb-simple-streams
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
-@dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix
 @dirrm lib/sbcl/sb-md5
@@ -230,7 +227,6 @@ lib/sbcl/site-systems/.keep_me
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cover
 @dirrm lib/sbcl/sb-cltl2
-@dirrm lib/sbcl/sb-bsd-sockets/alien
 @dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
 @dirrm lib/sbcl/asdf-install
