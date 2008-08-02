@@ -50,6 +50,11 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/data/v541_cygR1.dat
 %%DATADIR%%/data/v541_cygR2.dat
 %%DATADIR%%/data/v541_cygV.dat
+%%DATADIR%%/doc/C/edu/help0.txt
+%%DATADIR%%/doc/C/edu/help1.txt
+%%DATADIR%%/doc/C/edu/help2.txt
+%%DATADIR%%/doc/C/edu/help3.txt
+%%DATADIR%%/doc/C/edu/help5.txt
 %%DATADIR%%/doc/C/help0.txt
 %%DATADIR%%/doc/C/help1.txt
 %%DATADIR%%/doc/C/help2.txt
@@ -59,15 +64,16 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/doc/C/help6.txt
 %%DATADIR%%/doc/C/help7.txt
 %%DATADIR%%/doc/C/help8.txt
+%%DATADIR%%/doc/de/edu/help0.txt
+%%DATADIR%%/doc/de/edu/help1.txt
+%%DATADIR%%/doc/de/edu/help2.txt
+%%DATADIR%%/doc/de/edu/help3.txt
+%%DATADIR%%/doc/de/edu/help5.txt
 %%DATADIR%%/doc/de/help0.txt
 %%DATADIR%%/doc/de/help1.txt
 %%DATADIR%%/doc/de/help2.txt
 %%DATADIR%%/doc/de/help3.txt
-%%DATADIR%%/doc/de/help4.txt
 %%DATADIR%%/doc/de/help5.txt
-%%DATADIR%%/doc/de/help6.txt
-%%DATADIR%%/doc/de/help7.txt
-%%DATADIR%%/doc/de/help8.txt
 %%DATADIR%%/pixmaps/checker_256.jpg
 %%DATADIR%%/pixmaps/disk_128.jpg
 %%DATADIR%%/pixmaps/disk_256.jpg
@@ -87,7 +93,9 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%GNOME:%%share/omf/nightfall/nightfall-de.omf
 %%GNOME:%%@dirrm share/omf/nightfall
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/doc/de/edu
 @dirrm %%DATADIR%%/doc/de
+@dirrm %%DATADIR%%/doc/C/edu
 @dirrm %%DATADIR%%/doc/C
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data
