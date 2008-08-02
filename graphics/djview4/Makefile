@@ -7,7 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu
 DISTNAME=	${PORTNAME}4-${PORTVERSION}
@@ -41,6 +41,9 @@ MLINKS=	djview4.1 djview.1
 post-patch:
 	@${REINPLACE_CMD} -e 's,/netscape/,/djview4/,' \
 		${WRKSRC}/nsdejavu/Makefile.in ${WRKSRC}/nsdejavu/nsdejavu.1.in
+	@${REINPLACE_CMD} -e 's,@NSDEJAVU_LIBS@,@NSDEJAVU_LIBS@ -lXt -lXext,g' \
+		${WRKSRC}/nsdejavu/Makefile.in ${WRKSRC}/nsdejavu/nsdejavu.1.in
+
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
