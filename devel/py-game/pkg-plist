@@ -3,6 +3,7 @@ include/%%PYTHON_VERSION%%/pygame/fastevents.h
 include/%%PYTHON_VERSION%%/pygame/ffmovie.h
 include/%%PYTHON_VERSION%%/pygame/font.h
 include/%%PYTHON_VERSION%%/pygame/mixer.h
+include/%%PYTHON_VERSION%%/pygame/pgopengl.h
 include/%%PYTHON_VERSION%%/pygame/pygame.h
 include/%%PYTHON_VERSION%%/pygame/pygamedocs.h
 include/%%PYTHON_VERSION%%/pygame/scrap.h
@@ -16,6 +17,12 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/locals.py
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/locals.pyc
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/locals.pyo
+%%PYTHON_SITELIBDIR%%/pygame/threads/__init__.py
+%%PYTHON_SITELIBDIR%%/pygame/threads/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygame/threads/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygame/threads/Py25Queue.py
+%%PYTHON_SITELIBDIR%%/pygame/threads/Py25Queue.pyc
+%%PYTHON_SITELIBDIR%%/pygame/threads/Py25Queue.pyo
 %%PYTHON_SITELIBDIR%%/pygame/__init__.py
 %%PYTHON_SITELIBDIR%%/pygame/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygame/__init__.pyo
@@ -30,9 +37,7 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 %%PYTHON_SITELIBDIR%%/pygame/base.so
 %%PYTHON_SITELIBDIR%%/pygame/bufferproxy.so
 %%PYTHON_SITELIBDIR%%/pygame/cdrom.so
-%%PYTHON_SITELIBDIR%%/pygame/color.py
-%%PYTHON_SITELIBDIR%%/pygame/color.pyc
-%%PYTHON_SITELIBDIR%%/pygame/color.pyo
+%%PYTHON_SITELIBDIR%%/pygame/color.so
 %%PYTHON_SITELIBDIR%%/pygame/colordict.py
 %%PYTHON_SITELIBDIR%%/pygame/colordict.pyc
 %%PYTHON_SITELIBDIR%%/pygame/colordict.pyo
@@ -104,6 +109,7 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 %%PORTDOCS%%%%DOCSDIR%%/pygame_small.gif
 %%PORTDOCS%%%%DOCSDIR%%/pygame_tiny.gif
 %%PORTDOCS%%%%DOCSDIR%%/ref/cdrom.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/color.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/cursors.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/display.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/draw.html
@@ -162,80 +168,78 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/games5.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/games6.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/radians.png
-%%PORTDOCS%%%%DOCSDIR%%/util/doclate.html
-%%PORTDOCS%%%%DOCSDIR%%/util/listlate.html
-%%PORTDOCS%%%%DOCSDIR%%/util/makedocs.py
-%%PORTDOCS%%%%DOCSDIR%%/util/pagelate.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/aliens.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/arraydemo.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/blend_fill.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/blit_blends.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/chimp.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/cursors.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien1.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien1.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien1.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien2.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien3.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/alien3.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/arraydemo.bmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/asprite.bmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/background.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/bomb.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/boom.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/car_door.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/chimp.bmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/danger.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/explosion1.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/fist.bmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/house_lo.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/liquid.bmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/oldplayer.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/player1.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/punch.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/secosmic_lo.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shot.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/static.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/whiff.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/yuv_1.pgm
-%%PORTDOCS%%%%EXAMPLESDIR%%/eventlist.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/fastevents.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/headless_no_windows_needed.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/fonty.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/glcube.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/liquid.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/JavaCompiling.plist
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/_MainMenu_EOArchive_English.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/classes.nib
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/info.nib
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/keyedobjects.nib
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/aliens.icns
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens_bootstrap.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/setup.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/macfont.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/mask.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/moveit.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/oldalien.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/overlay.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/pixelarray.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/readme.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/scaletest.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/scrap_clipboard.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/sound.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/sound_array_demos.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/stars.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/testsprite.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/vgrade.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/util
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aliens.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arraydemo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blend_fill.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blit_blends.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chimp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursors.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien1.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien1.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien2.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien3.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/arraydemo.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/asprite.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/background.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/blue.mpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/bomb.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/boom.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/car_door.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/chimp.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/danger.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/explosion1.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/fist.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/house_lo.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/house_lo.mp3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/house_lo.ogg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/liquid.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/oldplayer.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/player1.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/punch.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/secosmic_lo.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/shot.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/static.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/whiff.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/yuv_1.pgm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventlist.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fastevents.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/headless_no_windows_needed.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fonty.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glcube.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/liquid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/JavaCompiling.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/_MainMenu_EOArchive_English.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/classes.nib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/info.nib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/keyedobjects.nib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/aliens.icns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens_bootstrap.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/setup.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/macfont.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mask.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moveit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oldalien.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlay.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pixelarray.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scaletest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scrap_clipboard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound_array_demos.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stars.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsprite.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vgrade.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macosx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/tom
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/surfarray
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/intro
@@ -244,5 +248,6 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pygame/gp2x
+@dirrm %%PYTHON_SITELIBDIR%%/pygame/threads
 @dirrm %%PYTHON_SITELIBDIR%%/pygame
 @dirrm include/%%PYTHON_VERSION%%/pygame
