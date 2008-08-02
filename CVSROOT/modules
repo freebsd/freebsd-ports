@@ -830,7 +830,6 @@ barcode                         ports/graphics/barcode
 barnyard                        ports/security/barnyard
 barnyard-sguil                  ports/security/barnyard-sguil
 barrage                         ports/games/barrage
-barry                           ports/ports-mgmt/barry
 bas2tap                         ports/lang/bas2tap
 base                            ports/security/base
 base64                          ports/converters/base64
@@ -1391,6 +1390,7 @@ ch                              ports/shells/ch
 chaco                           ports/math/chaco
 chanta                          ports/games/chanta
 chaosreader                     ports/security/chaosreader
+chapping                        ports/games/chapping
 charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
 chbg                            ports/graphics/chbg
@@ -2383,6 +2383,7 @@ drupal5-workflow_ng             ports/www/drupal5-workflow_ng
 drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
 drupal6-nice_menus              ports/www/drupal6-nice_menus
+drupal6-print                   ports/www/drupal6-print
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
 drweb-qmail                     ports/security/drweb-qmail
@@ -15583,6 +15584,7 @@ paintlib                        ports/graphics/paintlib
 paje                            ports/science/paje
 pal                             ports/deskutils/pal
 palm-db-tools                   ports/palm/palm-db-tools
+palm_barry                      ports/palm/barry
 palmos-sdk                      ports/palm/palmos-sdk
 palmpower                       ports/palm/palmpower
 palomino                        ports/games/palomino
@@ -16890,6 +16892,7 @@ portmaster                      ports/ports-mgmt/portmaster
 portmk                          ports/ports-mgmt/portmk
 portmon                         ports/net-mgmt/portmon
 portoseguro                     ports/x11/portoseguro
+ports-mgmt_barry                ports/ports-mgmt/barry
 ports_at                        ports/science/at
 ports_bs                        ports/games/bs
 ports_bzip2                     ports/archivers/bzip2
