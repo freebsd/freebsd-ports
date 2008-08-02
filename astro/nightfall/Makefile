@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.62
-PORTREVISION=	3
+PORTVERSION=	1.64
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
 
@@ -35,6 +34,7 @@ MAN1=		nightfall.1
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix libgnomeui
+CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
 INSTALLS_OMF=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gnome
