@@ -108,6 +108,8 @@ other than help debugging (k)qemu... (well or falling back to unaccellerated
 qemu/leaving out -kernel-kqemu if its that what's causing the problems.
 note however that kqemu now can also be used with the 32 bit qemu even
 on amd64 hosts as of the 20080620 update.)
+- the new (optional) pcap code cannot talk to the host on 6.x because
+the necessary bpf feature (BIOCFEEDBACK) hasn't (yet?) been merged there.
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 - The default configuration location (qemu-ifup script etc.) has been
