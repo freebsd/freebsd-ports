@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_af
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
