@@ -1,6 +1,6 @@
---- gui2/Makefile.in.orig	2008-05-25 01:52:30.000000000 +0900
-+++ gui2/Makefile.in	2008-06-18 13:53:40.000000000 +0900
-@@ -109,7 +110,7 @@
+--- gui2/Makefile.in.orig	2008-07-30 02:58:41.000000000 +0900
++++ gui2/Makefile.in	2008-08-02 02:37:44.000000000 +0900
+@@ -110,7 +110,7 @@
  #### End of system configuration section. ####
  
  SHELL = /bin/sh
@@ -9,7 +9,7 @@
  PROG  = gretl_x11
  
  vpath %.c $(topsrc)/gui2
-@@ -168,13 +169,13 @@
+@@ -175,13 +175,13 @@
  	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
  
  $(PROG): .deps $(OBJS) $(HACK_OBJ) $(GTKEXTRA_LITE) $(GTKSOURCEVIEW_LITE) 
@@ -25,10 +25,10 @@
  
  mklang.o: mklang.c $(topsrc)/lib/src/options.c $(topsrc)/lib/src/genlex.c
  	$(CC) -c -I.. -I$(libsrc) $(XML_CFLAGS) $<
-@@ -183,10 +184,10 @@
+@@ -190,10 +190,10 @@
  	./mklang $(LANGOPT) > $@
  
- $(GTKEXTRA_LITE): 
+ $(GTKEXTRA_LITE): $(GTKEXTRA_SRC)
 -	make -C gtkextra-lite
 +	$(MAKE) -C gtkextra-lite
  
@@ -38,7 +38,7 @@
  
  .deps:
  	mkdir $@
-@@ -201,7 +202,7 @@
+@@ -208,7 +208,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(DESTDIR)$(bindir)/$(PROG)
  
  install-data: installdirs
