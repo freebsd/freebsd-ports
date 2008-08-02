@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -35,7 +35,15 @@ TESTS=		AllTests.php console_commandline_accept.phpt \
 		console_commandline_addargument.phpt \
 		console_commandline_addcommand.phpt \
 		console_commandline_addoption.phpt \
+		console_commandline_addoption_errors_1.phpt \
+		console_commandline_addoption_errors_2.phpt \
+		console_commandline_addoption_errors_3.phpt \
+		console_commandline_addoption_errors_4.phpt \
+		console_commandline_addoption_errors_5.phpt \
+		console_commandline_addoption_errors_6.phpt \
+		console_commandline_addoption_errors_7.phpt \
 		console_commandline_fromxmlfile.phpt \
+		console_commandline_fromxmlfile_error.phpt \
 		console_commandline_fromxmlstring.phpt \
 		console_commandline_parse_1.phpt console_commandline_parse_2.phpt \
 		console_commandline_parse_3.phpt console_commandline_parse_4.phpt \
@@ -43,6 +51,8 @@ TESTS=		AllTests.php console_commandline_accept.phpt \
 		console_commandline_parse_7.phpt console_commandline_parse_8.phpt \
 		console_commandline_parse_9.phpt console_commandline_parse_10.phpt \
 		console_commandline_parse_11.phpt console_commandline_parse_12.phpt \
+		console_commandline_parse_13.phpt console_commandline_parse_14.phpt \
+		console_commandline_parse_15.phpt console_commandline_parse_16.phpt \
 		test.xml tests.inc.php
 
 .include <bsd.port.pre.mk>
