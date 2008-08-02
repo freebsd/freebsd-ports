@@ -1,0 +1,14 @@
+DjVu is a web-centric format and software platform for distributing
+documents and images. DjVu was originally developped at AT&T
+Labs-Research. In March 2000, AT&T sold DjVu to LizardTech Inc. who
+now distributes Windows/Mac plug-ins, and commercial encoders (mostly
+on Windows)
+
+The LizardTech released the reference implementation of DjVu under
+the GNU GPL in October 2000. DjVuLibre (which means free DjVu), is
+an enhanced version of that code maintained by the original inventors
+of DjVu. It is compatible with version 3.5 of the LizardTech DjVu
+software suite.
+
+Author:	Leon Bottou <leonb@users.sf.net>
+WWW:	http://djvu.sourceforge.net/
