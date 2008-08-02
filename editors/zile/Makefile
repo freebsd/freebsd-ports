@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.2.59
+PORTVERSION=	2.2.60
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -16,6 +16,7 @@ COMMENT=	Small emacs-like text editor
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lgnuregex"
+CONFIGURE_ARGS=	have_getopt_long_only=true
 
 MAN1=		zile.1
 INFO=		zile
