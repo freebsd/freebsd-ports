@@ -7,13 +7,14 @@
 
 PORTNAME=	pidentd
 PORTVERSION=	3.0.19
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.stack.nl/pub/users/johans/pidentd/
 
 PATCH_SITES=	ftp://ftp.stack.nl/pub/users/johans/pidentd/ \
 		ftp://mud.stack.nl/pub/pidentd/
-PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20050927.diff.gz
+PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20080101.diff.gz
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	johans@stack.nl
