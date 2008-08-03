@@ -37,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS?=	PAM "Pluggable Authentication Module support" on \
-		KEYRING "Enable GnomeKeyring/PAM integration" on \
+		KEYRING "Enable GnomeKeyring integration (needs PAM)" on \
 		ALL_FORTUNES "Enable support for all fortunes" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off
 
@@ -90,21 +90,19 @@ MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
 
-.if defined(WITH_PAM)
+.if defined(WITH_PAM) || defined(WITH_KEYRING)
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		PAM=""
+.else
+CONFIGURE_ARGS+=	--without-pam
+PLIST_SUB+=		PAM="@comment "
+.endif
+
 .if defined(WITH_KEYRING)
 SUB_LIST+=		PAM_KEYRING=
 RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
 .else
 SUB_LIST+=		PAM_KEYRING=\#
-.endif
-.else
-CONFIGURE_ARGS+=	--without-pam
-PLIST_SUB+=		PAM="@comment "
-.if defined(WITH_KEYRING)
-.warning Option KEYRING needs PAM, but PAM is disabled.
-.endif
 .endif
 
 .if defined(WITH_SETUID_HACKS)
