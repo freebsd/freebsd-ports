@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gossip
-PORTVERSION=	0.26
-PORTREVISION=	4
+PORTVERSION=	0.31
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -38,7 +37,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	gossip.schemas
 
 OPTIONS=	NOTIFY "Enable libnotify support" on \
-		TELEPATHY "Enable telepathy support" off
+		TELEPATHY "Enable telepathy support" off \
+		EBOOK "Enable Evolution integration" off
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +53,12 @@ LIB_DEPENDS+=		telepathy.2:${PORTSDIR}/net-im/libtelepathy
 CONFIGURE_ARGS+=	--enable-telepathy=yes
 .else
 CONFIGURE_ARGS+=	--enable-telepathy=no
+.endif
+
+.if defined(WITH_EBOOK)
+USE_GNOME+=	evolutiondataserver
+.else
+CONFIGURE_ARGS+=	--enable-ebook=no
 .endif
 
 .include <bsd.port.post.mk>
