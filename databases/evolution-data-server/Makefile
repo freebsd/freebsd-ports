@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	2.22.3
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,8 @@ COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		nss3.1:${PORTSDIR}/security/nss \
-		tasn1.3:${PORTSDIR}/security/libtasn1
+		tasn1.3:${PORTSDIR}/security/libtasn1 \
+		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -31,6 +33,7 @@ USE_BDB=	41+
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--enable-nss=yes \
+		--enable-gnome-keyring=yes \
 		--with-openldap=yes \
 		--with-libdb=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
