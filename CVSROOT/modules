@@ -8858,6 +8858,7 @@ nget                            ports/news/nget
 nginx                           ports/www/nginx
 nginx-devel                     ports/www/nginx-devel
 ngircd                          ports/irc/ngircd
+ngmp                            ports/mail/ngmp
 ngpt                            ports/devel/ngpt
 ngraph                          ports/math/ngraph
 ngrep                           ports/net/ngrep
