@@ -1,0 +1,42 @@
+
+POST-IuNSTALL CONFIGURATION FOR NGMP
+===================================
+
+
+1) Before the post-install of ngmp, please make sure
+the following servers work well first.
+	exim with pgsql support (smtp)
+	courier-imap (pop3/imap)
+	courier-authlib with pgsql support (auth)
+	dspam with pgsql support (antispam)
+	clamav-clamd (antivirus)
+
+These servers configuration files are in %%WWWDIR%%/conf/,
+copy those files to their server configuration directory
+
+2) Create database and tables in postgresql server
+example: 
+	createuser ngmp -S -D -R -l -q
+	createdb -O ngmp ngmp
+	createlang plpgsql ngmp
+	psql -U ngmp ngmp -f %%WWWDIR%%/conf/sql/ngmp.sql
+
+if you use different db username than 'ngmp', then you should change then ngmp settings file,
+
+cmd:
+	cp %%WWWDIR%%/libs/prevantage/ngmp.settings.ini.default %%WWWDIR%%/libs/prevantage/ngmp.settings.ini
+
+	changes install_dir & users_dir in ngmp.settings.ini
+
+change db relate settings in the config file
+
+3) Apache 2
+	Enable NameVirtualHost
+	cp %%WWWDIR%%/conf/apache/httpd-vhost-ngmp.conf to apache conf directory
+	change values in httpd-vhost-ngmp.conf
+
+4) Disable apc module in php extensions.ini
+
+5) visit http://www.prevantage.com to acquire a free license
+
+=====================================
