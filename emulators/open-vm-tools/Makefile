@@ -69,7 +69,6 @@ post-install:
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/drivers
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/input
 	${MKDIR} -p ${PREFIX}/share/vmware-tools
-	${INSTALL} ${WRKSRC}/guestd/vmware-guestd ${PREFIX}/bin/vmware-guestd
 .if ${OSREL} >= 6
 	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount_vmhgfs
 .endif
