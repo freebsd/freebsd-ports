@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaeo
-PORTVERSION=	45
+PORTVERSION=	50
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-trunk-r${PORTVERSION}
@@ -22,8 +22,6 @@ NO_BUILD=	yes
 
 USE_PYTHON=	2.5+
 USE_ZIP=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/bin/gaeo.py
