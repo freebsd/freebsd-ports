@@ -5,7 +5,7 @@
  
      # copy GAEO directory
 -    copytree(os.path.join(os.path.dirname(__file__), '..', 'gaeo'), os.path.join(project_home, 'gaeo'))
-+    copytree(os.path.join(os.path.dirname(__file__), '%%DATADIR%%', 'gaeo'), os.path.join(project_home, 'gaeo'))
++    copytree(os.path.join('%%DATADIR%%', 'gaeo'), os.path.join(project_home, 'gaeo'))
  
      # create the eclipse project file
      if create_eclipse_proj:

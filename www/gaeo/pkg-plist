@@ -8,9 +8,11 @@ bin/gaeogen.py
 %%DATADIR%%/gaeo/dispatch/__init__.py
 %%DATADIR%%/gaeo/dispatch/dispatcher.py
 %%DATADIR%%/gaeo/dispatch/router.py
+%%DATADIR%%/gaeo/model/__init__.py
 %%DATADIR%%/gaeo/session/__init__.py
 %%DATADIR%%/gaeo/session/memcache.py
 @dirrm %%DATADIR%%/gaeo/session
+@dirrm %%DATADIR%%/gaeo/model
 @dirrm %%DATADIR%%/gaeo/dispatch
 @dirrm %%DATADIR%%/gaeo/controller
 @dirrm %%DATADIR%%/gaeo
