@@ -42,26 +42,35 @@ SCREENSAVER_DIR=	share/applications/screensavers
 
 XSCREENSAVER_EXCLUDE=	"(popsquares.xml)"
 
-OPTIONS=	PAM "Pluggable Authentication Module support" off \
-		KEYRING "Enable GnomeKeyring/PAM integration" off
+OPTIONS=	PAM "Pluggable Authentication Module support (broken!)" off \
+		KEYRING "Enable GnomeKeyring integration (needs PAM)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PAM)
+# Currently semi-broken: http://bugzilla.gnome.org/show_bug.cgi?id=370847
+# Our default pam_unix will not be able to authenticate
+# Define GNOME_SCREENSAVER_WITH_BROKEN_PAM only if you know what you are doing.
+.if !defined(GNOME_SCREENSAVER_WITH_BROKEN_PAM)
+IGNORE=			PAM support is partially broken. Please read Makefile
+.endif
 CONFIGURE_ARGS+=	--enable-pam
 PLIST_SUB+=		PAM=""
-.if defined(WITH_KEYRING)
+.else
+CONFIGURE_ARGS+=	--disable-pam
+PLIST_SUB+=		PAM="@comment "
+.endif
+
+.if defined(WITH_KEYRING) && defined(WITH_PAM)
 SUB_LIST+=		PAM_KEYRING=
 RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
 .else
 SUB_LIST+=		PAM_KEYRING=\#
 .endif
-.else
-CONFIGURE_ARGS+=	--disable-pam
-PLIST_SUB+=		PAM="@comment "
-.if defined(WITH_KEYRING)
-.warning Option KEYRING needs PAM, but PAM is disabled.
-.endif
+
+pre-everything::
+.if defined(WITHOUT_PAM) && defined(WITH_KEYRING)
+	@${ECHO_MSG} "Keyring integration is disabled because it needs PAM."
 .endif
 
 post-patch:
