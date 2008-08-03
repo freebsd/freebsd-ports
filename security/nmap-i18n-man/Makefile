@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap-i18n-man
-PORTVERSION=	4.60.20080413
+PORTVERSION=	4.68.20080803
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/data/man-xlate/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/${PORTVERSION}/
