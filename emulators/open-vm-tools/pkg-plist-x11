@@ -13,12 +13,12 @@ share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
 share/pixmaps/vmware/vmware-toolbox.xpm
-bin/vmware-guestd
 bin/vmware-toolbox
 bin/vmware-user
 bin/vmware-checkvm
 bin/vmware-xferlogs
 bin/vmware-hgfsclient
+sbin/vmware-guestd
 etc/vmware-tools/tools.conf
 %%FIVEONLY%%sbin/mount_vmhgfs
 %%X11%%sbin/vmware-toolbox
