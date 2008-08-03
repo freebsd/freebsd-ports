@@ -7,9 +7,10 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
