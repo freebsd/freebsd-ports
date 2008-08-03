@@ -1,5 +1,5 @@
---- configure.orig	2008-04-28 19:53:32.000000000 +0200
-+++ configure	2008-05-04 20:25:47.000000000 +0200
+--- configure.orig	2008-06-15 09:05:12.000000000 +0200
++++ configure	2008-08-03 12:41:04.000000000 +0200
 @@ -1930,7 +1930,7 @@
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
@@ -9,25 +9,14 @@
  { echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
  if test "${ac_cv_prog_CC+set}" = set; then
-@@ -7179,9 +7179,9 @@
+@@ -7337,8 +7337,8 @@
      no_lua="yes"
    ;;
    *)
 -    CPPFLAGS="-I$with_liblua/include $CPPFLAGS"
 -    LDFLAGS="-L$with_liblua/lib $LDFLAGS"
--    have_lua=yes
 +    CPPFLAGS="-I${LUA_INCDIR} $CPPFLAGS"
 +    LDFLAGS="-L${LUA_LIBDIR} $LDFLAGS"
-+    #have_lua=yes
    ;;
    esac
  
-@@ -7189,7 +7189,7 @@
- 
- 
- # They don't want lua
--if test $no_lua == yes; then
-+if test $no_lua = yes; then
-   CXXFLAGS="-DNOLUA $CXXFLAGS"
-   LIBLUA_LIBS=""
-   LUA_DEPENDS=""

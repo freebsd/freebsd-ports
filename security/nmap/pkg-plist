@@ -17,8 +17,6 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/scripts/promiscuous.nse
 %%DATADIR%%/scripts/netbios-smb-os-discovery.nse
 %%DATADIR%%/scripts/nbstat.nse
-%%DATADIR%%/scripts/mswindowsShell.nse
-%%DATADIR%%/scripts/kibuvDetection.nse
 %%DATADIR%%/scripts/ircZombieTest.nse
 %%DATADIR%%/scripts/ircServerInfo.nse
 %%DATADIR%%/scripts/iax2Detect.nse
@@ -58,6 +56,7 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/nselib/url.lua
 %%DATADIR%%/nselib/tab.lua
 %%DATADIR%%/nselib/datafiles.lua
+%%DATADIR%%/nselib/comm.lua
 @dirrm %%DATADIR%%/nselib
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
