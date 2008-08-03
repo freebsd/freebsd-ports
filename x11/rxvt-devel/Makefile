@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 # If possible, please consider updating the simple ports/x11-clocks/rclock
-# when you upgrade rxvt.  These ports all use the same distfile.
+# when you upgrade rxvt. These ports all use the same distfile.
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.10
@@ -14,124 +14,121 @@ CATEGORIES+=	x11
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	akosela@andykosela.com
 COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+
+OPTIONS=	256_COLOR	"Build with 256-color support" off \
+		BIG5		"Build with BIG5 support" off \
+		EUCJ		"Build with EUC Japanese support" off \
+		GB		"Build with GB support" off \
+		GREEK		"Build with greek keyboard support" off \
+		KR		"Build with EUC Korean support" off \
+		LINESPACE	"Build with linespace support" off \
+		MENUBAR		"Build with menubar support" off \
+		NEXT		"Build with NeXT scrollbar" off \
+		RXVT		"Build with rxvt scrollbar" off \
+		SJIS		"Build with Shift JIS support" off \
+		SMART		"Build with smart resize support" off \
+		TRANSPARENCY	"Build with transparency support" off \
+		XGETDEFAULT	"Build with XGetDefault() support" off \
+		XIM		"Build with XIM support" off \
+		XTERM		"Build with Xterm scrollbar" off
+
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
-		--with-xpm --enable-xpm-background --enable-transparency \
-		--enable-shared
+		--with-xpm --enable-xpm-background --enable-shared \
+		--enable-mousewheel --disable-languages
 USE_LDCONFIG=	yes
 
 MAN1=		rxvt.1
 
-# disable backspace key
-.if defined(WITHOUT_BACKSPACE_KEY)
-CONFIGURE_ARGS+=	--disable-backspace-key
-.endif # WITHOUT_BACKSPACE_KEY
-#
-# disable delete key
-.if defined(WITHOUT_DELETE_KEY)
-CONFIGURE_ARGS+=	--disable-delete-key
-.endif # WITHOUT_DELETE_KEY
-#
-# set the default encoding for multi-char glyph languages
-.if defined(WITH_ENCODING)
-CONFIGURE_ARGS+=	--with-encoding=${WITH_ENCODING}
-.endif # WITH_ENCODING
-#
-# enable graphics support
-.if defined(WITH_GRAPHICS)
-CONFIGURE_ARGS+=	--enable-graphics
-.endif # WITH_GRAPHICS
-#
-# enable greek keyboard support
-.if defined(WITH_GREEK_KEYBOARD)
-CONFIGURE_ARGS+=	--enable-greek
-.endif # WITH_GREEK_KEYBOARD
-#
-# enable menubar
-.if defined(WITH_MENUBAR)
-CONFIGURE_ARGS+=	--enable-menubar
-.endif # WITH_MENUBAR
-#
-# enable scrolling via mouse wheel or buttons 4 & 5
-.if defined(WITH_MOUSEWHEEL)
-CONFIGURE_ARGS+=	--enable-mousewheel
-.endif # WITH_MOUSEWHEEL
-#
-# enable NeXT style scrollbar
-.if defined(WITH_NEXT_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-next-scroll
-.endif
-#
-# enable rxvt style scrollbar
-.if defined(WITH_RXVT_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-rxvt-scroll
-.endif # WITH_RXVT_SCROLLBAR
-#
-# enable smart resize
-.if defined(WITH_SMART_RESIZE)
-CONFIGURE_ARGS+=	--enable-smart-resize
-.endif # WITH_SMART_RESIZE
-#
-# make resources checking via XGetDefault()
-.if defined(WITH_XGETDEFAULT)
-CONFIGURE_ARGS+=	--enable-xgetdefault
-.endif # WITH_XGETDEFAULT
-#
-# XIM (X Input Method) protocol support
-.ifndef(WITHOUT_XIM)
-CONFIGURE_ARGS+=	--enable-xim
-.endif # WITHOUT_XIM
-#
-# enable Xterm style scrollbar
-.if defined(WITH_XTERM_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-xterm-scroll
-.endif # WITH_XTERM_SCROLLBAR
-#
-# enable line-spacing
-.if defined(WITH_LINESPACE)
-CONFIGURE_ARGS+=	--enable-linespace
-.endif # WITH_LINESPACE
-#
+.include <bsd.port.pre.mk>
+
 # enable 256 color
 .if defined(WITH_256_COLOR)
 CONFIGURE_ARGS+=	--enable-256-color
-.endif # WITH_256_COLOR
+.endif
+
+# enable big5 support
+.if defined(WITH_BIG5)
+CONFIGURE_ARGS+=	--with-encoding=big5 --enable-languages
+.endif
+
+# enable euc japanese support
+.if defined(WITH_EUCJ)
+CONFIGURE_ARGS+=	--with-encoding=eucj --enable-languages
+.endif
+
+# enable gb support
+.if defined(WITH_GB)
+CONFIGURE_ARGS+=	--with-encoding=gb --enable-languages
+.endif
+
+# enable greek keyboard support
+.if defined(WITH_GREEK)
+CONFIGURE_ARGS+=	--enable-greek
+.endif
+
+# enable euc korean support
+.if defined(WITH_KR)
+CONFIGURE_ARGS+=	--with-encoding=kr --enable-languages
+.endif
+
+# enable line-spacing
+.if defined(WITH_LINESPACE)
+CONFIGURE_ARGS+=	--enable-linespace
+.endif
+
+# enable menubar
+.if defined(WITH_MENUBAR)
+CONFIGURE_ARGS+=	--enable-menubar
+.endif
+
+# enable NeXT style scrollbar
+.if defined(WITH_NEXT)
+CONFIGURE_ARGS+=	--enable-next-scroll
+.endif
+
+# enable rxvt style scrollbar
+.if defined(WITH_RXVT)
+CONFIGURE_ARGS+=	--enable-rxvt-scroll
+.endif
+
+# enable shift jis support
+.if defined(WITH_SJIS)
+CONFIGURE_ARGS+=	--with-encoding=sjis --enable-languages
+.endif
+
+# enable smart resize
+.if defined(WITH_SMART)
+CONFIGURE_ARGS+=	--enable-smart-resize
+.endif
+
+# enable transparency support
+.if defined(WITH_TRANSPARENCY)
+CONFIGURE_ARGS+=	--enable-transparency
+.endif
+
+# make resources checking via XGetDefault()
+.if defined(WITH_XGETDEFAULT)
+CONFIGURE_ARGS+=	--enable-xgetdefault
+.endif
+
+# XIM (X Input Method) protocol support
+.if defined(WITH_XIM)
+CONFIGURE_ARGS+=	--enable-xim
+.endif
+
+# enable Xterm style scrollbar
+.if defined(WITH_XTERM)
+CONFIGURE_ARGS+=	--enable-xterm-scroll
+.endif
 
 CONFIGURE_ENV+=		LIBS="-lutil"
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY=yes	disable handling of the backspace key"
-	@${ECHO_MSG} "WITHOUT_DELETE_KEY=yes		disable handling of the delete key"
-	@${ECHO_MSG} "WITHOUT_XIM=yes			disable support for XIM (X Input Method) protocol"
-	@${ECHO_MSG} "WITH_XGETDEFAULT=yes		make resources checking via XGetDefault()"
-	@${ECHO_MSG} "WITH_GRAPHICS=yes		enable rxvt own graphics mode"
-	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
-	@${ECHO_MSG} "WITH_LINESPACE=yes		add support for line-spacing"
-	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
-	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes		add support for scrolling via mouse wheel"
-	@${ECHO_MSG} "				or buttons 4 & 5"
-	@${ECHO_MSG} "WITH_SMART_RESIZE=yes		enable smart growth/shrink behaviour"
-	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes		add support for a NeXT-like scrollbar"
-	@${ECHO_MSG} "WITH_RXVT_SCROLLBAR=yes		add support for the original rxvt scrollbar"
-	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	add support for an Xterm-like scrollbar"
-	@${ECHO_MSG}
-.ifndef(WITH_ENCODING)
-	@${ECHO_MSG} "==> You can specify an alternate encoding by setting the WITH_ENCODING variable"
-	@${ECHO_MSG} '==> Options are: "eucj" EUC Japanese encoding; "sjis" Shift JIS encoding;'
-	@${ECHO_MSG} '==> "big5" BIG5 encoding; "gb" GB encoding; "kr" EUC Korean encoding'
-	@${ECHO_MSG} '==> "noenc" for no encoding (useful if you are experiencing encoding problems)'
-	@${ECHO_MSG} '==> For example, "WITH_ENCODING=gb" for GB encoding'
-	@${ECHO_MSG}
-.endif
 
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
@@ -140,4 +137,4 @@ post-patch:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
