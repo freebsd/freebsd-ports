@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 # If possible, please consider updating the simple ports/x11-clocks/rclock
-# (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
-# the same distfile.
+# when you upgrade rxvt. These ports all use the same distfile.
 
 PORTNAME=	rxvt
 PORTVERSION=	2.6.4
@@ -14,86 +13,89 @@ PORTREVISION=	5
 CATEGORIES+=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	akosela@andykosela.com
 COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+
+OPTIONS=	BIG5		"Build with BIG5 support" off \
+		GB		"Build with GB support" off \
+		GREEK 		"Build with greek keyboard support" off \
+		HALF_SHADOW	"Build with half shadows support" off \
+		KANJI		"Build with Kanji support" off \
+		MENUBAR		"Build with menubar support" off \
+		NEXT		"Build with NeXT scrollbar" off \
+		TRANSPARENCY	"Build with transparency support" off \
+		XGETDEFAULT	"Build with XGetDefault() support" off \
+		XIM		"Build with XIM support" off \
+		XTERM		"Build with Xterm scrollbar" off
+
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-ttygid \
-		--with-xpm --enable-xpm-background --enable-transparency \
+		--with-xpm --enable-xpm-background \
 		--with-xpm-includes=${LOCALBASE}/include/X11 \
 		--with-xpm-library=${LOCALBASE}/lib
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
 
+.include <bsd.port.pre.mk>
+
 # enable big5 support
 .if defined(WITH_BIG5)
 CONFIGURE_ARGS+=	--enable-big5
-.endif # WITH_BIG5
-#
+.endif
+
 # enable gb support
 .if defined(WITH_GB)
 CONFIGURE_ARGS+=	--enable-gb
-.endif # WITH_GB
-#
+.endif
+
 # enable greek keyboard support
-.if defined(WITH_GREEK_KEYBOARD)
+.if defined(WITH_GREEK)
 CONFIGURE_ARGS+=	--enable-greek
-.endif # WITH_GREEK_KEYBOARD
-#
+.endif
+
 # enable half width/height shadows scrollbar
 .if defined(WITH_HALF_SHADOW)
 CONFIGURE_ARGS+=	--enable-half-shadow
 .endif
-#
+
 # enable kanji support
 .if defined(WITH_KANJI)
 CONFIGURE_ARGS+=	--enable-kanji
-.endif # WITH_KANJI
-#
+.endif
+
 # enable menubar
 .if defined(WITH_MENUBAR)
 CONFIGURE_ARGS+=	--enable-menubar
-.endif # WITH_MENUBAR
-#
+.endif
+
 # enable NeXT style scrollbar
-.if defined(WITH_NEXT_SCROLLBAR)
+.if defined(WITH_NEXT)
 CONFIGURE_ARGS+=	--enable-next-scroll
 .endif
-#
+
+# enable transparency support
+.if defined(WITH_TRANSPARENCY)
+CONFIGURE_ARGS+=	--enable-transparency
+.endif
+
 # make resources checking via XGetDefault()
 .if defined(WITH_XGETDEFAULT)
 CONFIGURE_ARGS+=	--enable-xgetdefault
-.endif # WITH_XGETDEFAULT
-#
-# XIM (X Input Method) protocol support
-.ifndef(WITHOUT_XIM)
-CONFIGURE_ARGS+=	--enable-xim
-.endif # WITH_XIM
-#
-# enable Xterm style scrollbar
-.if defined(WITH_XTERM_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-xterm-scroll
-.endif # WITH_XTERM_SCROLLBAR
-#
+.endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
-	@${ECHO_MSG} "WITH_XGETDEFAULT=yes	make resources checking via XGetDefault()"
-	@${ECHO_MSG} "WITH_BIG5=yes		add support for Chinese characters (BIG5)"
-	@${ECHO_MSG} "WITH_GB=yes		add support for Chinese characters (GB)"
-	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
-	@${ECHO_MSG} "WITH_HALF_SHADOW=yes	use half width/height shadows on non-Xterm scrollbar"
-	@${ECHO_MSG} "WITH_KANJI=yes		add support for Kanji characters"
-	@${ECHO_MSG} "WITH_MENUBAR=yes	add support for rxvt menu bar system"
-	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes	add support for a NeXT-like scrollbar"
-	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	make the scrollbar look like an Xterm scrollbar"
-	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes 	use cleartext passwords"
+# XIM (X Input Method) protocol support
+.if defined(WITH_XIM)
+CONFIGURE_ARGS+=	--enable-xim
+.endif
+
+# enable Xterm style scrollbar
+.if defined(WITH_XTERM)
+CONFIGURE_ARGS+=	--enable-xterm-scroll
+.endif
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
