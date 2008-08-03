@@ -4,12 +4,11 @@
 # $FreeBSD$
 
 PORTNAME=	ocurl
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	An interface for OCaml to the curl lib
@@ -20,6 +19,7 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
+WRKSRC=		${WRKDIR}/ocurl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+="--with-findlib"
