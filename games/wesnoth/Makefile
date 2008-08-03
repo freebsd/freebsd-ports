@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" ca_ES@valencia cs da de es fr gl_ES hu it ja
+MANLANG=	"" ca_ES@valencia cs da de es fr gl hu it ja
 MANLANG+=	lt nl pl sk sr sr@latin sv tr zh_CN
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \

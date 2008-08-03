@@ -330,25 +330,25 @@ bin/wesnoth
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-trow.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-tsg.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-utbs.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-aoi.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-did.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-editor.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-ei.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-httt.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-l.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-lib.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-multiplayer.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-nr.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-sof.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-sotbe.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-tb.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-thot.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-trow.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-tsg.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-tutorial.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-units.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth-utbs.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-editor.mo
@@ -520,6 +520,25 @@ bin/wesnoth
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-editor.mo
@@ -3062,11 +3081,38 @@ bin/wesnoth
 %%DATADIR%%/data/core/images/projectiles/lightning-bolt.png
 %%DATADIR%%/data/core/images/projectiles/lightning-n.png
 %%DATADIR%%/data/core/images/projectiles/lightning-ne.png
+%%DATADIR%%/data/core/images/projectiles/misfire-spark-1.png
+%%DATADIR%%/data/core/images/projectiles/misfire-spark-2.png
+%%DATADIR%%/data/core/images/projectiles/misfire-spark-3.png
+%%DATADIR%%/data/core/images/projectiles/misfire-spark-4.png
 %%DATADIR%%/data/core/images/projectiles/missile-fire-n.png
 %%DATADIR%%/data/core/images/projectiles/missile-fire-ne.png
 %%DATADIR%%/data/core/images/projectiles/missile-n.png
 %%DATADIR%%/data/core/images/projectiles/missile-ne.png
 %%DATADIR%%/data/core/images/projectiles/mud-glob.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-10.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-11.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-12.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-13.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-14.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-s-1.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-s-2.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-s-3.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-n-1.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-n-2.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-n-3.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-ne-1.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-ne-2.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-ne-3.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-se-1.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-se-2.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-se-3.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-4.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-5.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-6.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-7.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-8.png
+%%DATADIR%%/data/core/images/projectiles/muzzle-flash-9.png
 %%DATADIR%%/data/core/images/projectiles/pitchfork-n.png
 %%DATADIR%%/data/core/images/projectiles/pitchfork-ne.png
 %%DATADIR%%/data/core/images/projectiles/spear-n.png
@@ -4461,6 +4507,9 @@ bin/wesnoth
 %%DATADIR%%/data/core/images/terrain/village/desert3.png
 %%DATADIR%%/data/core/images/terrain/village/dwarven-tile.png
 %%DATADIR%%/data/core/images/terrain/village/dwarven.png
+%%DATADIR%%/data/core/images/terrain/village/dwarven2.png
+%%DATADIR%%/data/core/images/terrain/village/dwarven3.png
+%%DATADIR%%/data/core/images/terrain/village/dwarven4.png
 %%DATADIR%%/data/core/images/terrain/village/elven-snow-tile.png
 %%DATADIR%%/data/core/images/terrain/village/elven-snow.png
 %%DATADIR%%/data/core/images/terrain/village/elven-snow2.png
@@ -6784,6 +6833,12 @@ bin/wesnoth
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-crossbow.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-defend-1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-defend-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-3.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-4.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-5.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-melee-attack-6.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/draug-attack1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/draug-attack2.png
@@ -7634,6 +7689,7 @@ bin/wesnoth
 %%DATADIR%%/data/languages/ko_KR.cfg
 %%DATADIR%%/data/languages/la_IT.cfg
 %%DATADIR%%/data/languages/lt_LT.cfg
+%%DATADIR%%/data/languages/lv_LV.cfg
 %%DATADIR%%/data/languages/mk_MK.cfg
 %%DATADIR%%/data/languages/nb_NO.cfg
 %%DATADIR%%/data/languages/nl_NL.cfg
@@ -8271,7 +8327,7 @@ bin/wesnoth
 %%DOCSDIR%%/manual/manual.es.html
 %%DOCSDIR%%/manual/manual.et.html
 %%DOCSDIR%%/manual/manual.fr.html
-%%DOCSDIR%%/manual/manual.gl_ES.html
+%%DOCSDIR%%/manual/manual.gl.html
 %%DOCSDIR%%/manual/manual.hu.html
 %%DOCSDIR%%/manual/manual.it.html
 %%DOCSDIR%%/manual/manual.pl.html
@@ -8280,6 +8336,7 @@ bin/wesnoth
 %%DOCSDIR%%/manual/manual.sv.html
 %%DOCSDIR%%/manual/manual.txt
 %%DOCSDIR%%/manual/manual.zh_CN.html
+%%DOCSDIR%%/manual/manual.zh_TW.html
 %%DOCSDIR%%/manual/styles/manual.css
 @dirrm %%DATADIR%%/data/ais
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/images/portraits
@@ -8544,8 +8601,8 @@ bin/wesnoth
 @dirrmtry man/de
 @dirrmtry man/fr/man6
 @dirrmtry man/fr
-@dirrmtry man/gl_ES/man6
-@dirrmtry man/gl_ES
+@dirrmtry man/gl/man6
+@dirrmtry man/gl
 @dirrmtry man/it/man6
 @dirrmtry man/it
 @dirrmtry man/jp/man6
@@ -8567,8 +8624,8 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%@dirrmtry share/locale/ca_ES@valencia
 %%NLS%%@dirrmtry share/locale/fur_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fur_IT
-%%NLS%%@dirrmtry share/locale/gl_ES/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl_ES
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
 %%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/la
 %%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
