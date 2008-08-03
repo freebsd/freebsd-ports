@@ -24,7 +24,6 @@ CONFLICTS=	portupgrade-devel-*
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
-USE_PERL5_RUN=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
