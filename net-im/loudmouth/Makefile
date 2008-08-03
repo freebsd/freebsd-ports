@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
 		${MASTER_SITE_GNOME}
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 
 OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on
 
