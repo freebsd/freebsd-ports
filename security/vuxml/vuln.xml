@@ -25649,7 +25649,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>kdewebdev</name>
-	<range><lt>3.4.0_1,2</lt></range>
+	<range><gt>3.2,2</gt><lt>3.4.0_1,2</lt></range>
       </package>
     </affects>
     <description>
@@ -25673,6 +25673,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-04-20</discovery>
       <entry>2005-04-23</entry>
+      <modified>2008-08-04</modified>
     </dates>
   </vuln>
 
