@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.132
-PORTREVISION=	2
+PORTVERSION=	0.133
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -41,7 +40,5 @@ CONFIGURE_ARGS+=	--with-gtkspell
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in"| ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
-	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \
-		${WRKSRC}/pan/data-impl/my-tree.cc
 
 .include <bsd.port.post.mk>
