@@ -8,6 +8,7 @@
 
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.122
+PORTREVISION=	1
 CATEGORIES=	ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A full-featured, secure, extensible and configurable Perl FTP server
 
-RUN_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM \
-		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
+RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
+		p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource \
+		p5-Compress-Zlib>=1.14:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-File-Sync>=0:${PORTSDIR}/devel/p5-File-Sync \
+		p5-IO-stringy>=1.126:${PORTSDIR}/devel/p5-IO-stringy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV+=	NOCONF=1
@@ -52,12 +53,8 @@ MAN3=	Net::FTPServer.3 \
 
 DOCS=	FAQ README TODO doc/*
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-.endif
+PORTDOCS=	*
+PORTEXAMPLES=	ftpd.conf
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
@@ -69,13 +66,22 @@ post-patch:
 		${WRKSRC}/Makefile.PL
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ftpd.conf ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${PERL} -p -e 's,PREFIX,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net
+.endif
 
 .include <bsd.port.post.mk>

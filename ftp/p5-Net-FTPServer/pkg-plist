@@ -24,21 +24,6 @@ sbin/ftpd.pl
 sbin/inmem-ftpd.pl
 sbin/proxy-ftpd.pl
 sbin/ro-ftpd.pl
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/archives.txt
-%%PORTDOCS%%%%DOCSDIR%%/eg1-psql63.sql
-%%PORTDOCS%%%%DOCSDIR%%/eg1.sql
-%%PORTDOCS%%%%DOCSDIR%%/modules.txt
-%%PORTDOCS%%%%DOCSDIR%%/press1.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfcs.txt
-%%PORTDOCS%%%%DOCSDIR%%/roadmap-1.2.txt
-%%PORTDOCS%%%%DOCSDIR%%/safesignals.txt
-%%PORTDOCS%%%%DOCSDIR%%/sharedstate.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/ftpd.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/FTPServer/RO
