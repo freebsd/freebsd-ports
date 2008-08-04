@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	QT-based comic book archive viewer
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
@@ -28,8 +28,8 @@ CONFIGURE_ENV=	QtGui_CFLAGS="${QtGui_CFLAGS}"
 MAN1=		qcomicbook.1
 
 QtGui_CFLAGS=	-DQT_SHARED \
-		-I${QT_PREFIX}/include/QtGui \
-		-I${QT_PREFIX}/include/QtCore \
-		-I${QT_PREFIX}/include
+		-I${QT_INCDIR}/QtGui \
+		-I${QT_INCDIR}/QtCore \
+		-I${QT_INCDIR}
 
 .include <bsd.port.mk>
