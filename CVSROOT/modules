@@ -541,7 +541,6 @@ ar-kde3-i18n                    ports/arabic/kde3-i18n
 ar-khotot                       ports/arabic/khotot
 ar-koffice-i18n                 ports/arabic/koffice-i18n
 ar-libitl                       ports/arabic/libitl
-ar-php_doc                      ports/arabic/php_doc
 arc                             ports/archivers/arc
 arcconf                         ports/sysutils/arcconf
 archivemail                     ports/mail/archivemail
@@ -5042,7 +5041,6 @@ hu-jdictionary-eng-hun          ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr     ports/hungarian/jdictionary-eng-hun-expr
 hu-kde3-i18n                    ports/hungarian/kde3-i18n
 hu-koffice-i18n                 ports/hungarian/koffice-i18n
-hu-php_doc                      ports/hungarian/php_doc
 huc                             ports/lang/huc
 hudson                          ports/www/hudson
 hugelatex                       ports/print/hugelatex
@@ -6469,7 +6467,6 @@ ko-nhpf                         ports/korean/nhpf
 ko-nvi-euc-kr                   ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr              ports/korean/nvi-iso-2022-kr
 ko-pgp.language                 ports/korean/pgp.language
-ko-php_doc                      ports/korean/php_doc
 ko-pinetreefonts                ports/korean/pinetreefonts
 ko-qt4-codecs-kr                ports/korean/qt4-codecs-kr
 ko-scim-hangul                  ports/korean/scim-hangul
@@ -12378,6 +12375,7 @@ p5-XML-RSS-LibXML               ports/textproc/p5-XML-RSS-LibXML
 p5-XML-RSS-Liberal              ports/textproc/p5-XML-RSS-Liberal
 p5-XML-RSS-Parser               ports/textproc/p5-XML-RSS-Parser
 p5-XML-RSS-SimpleGen            ports/textproc/p5-XML-RSS-SimpleGen
+p5-XML-RSSLite                  ports/textproc/p5-XML-RSSLite
 p5-XML-RegExp                   ports/textproc/p5-XML-RegExp
 p5-XML-SAX                      ports/textproc/p5-XML-SAX
 p5-XML-SAX-Expat                ports/textproc/p5-XML-SAX-Expat
@@ -15515,6 +15513,7 @@ p5-xml-rss-liberal              ports/textproc/p5-XML-RSS-Liberal
 p5-xml-rss-libxml               ports/textproc/p5-XML-RSS-LibXML
 p5-xml-rss-parser               ports/textproc/p5-XML-RSS-Parser
 p5-xml-rss-simplegen            ports/textproc/p5-XML-RSS-SimpleGen
+p5-xml-rsslite                  ports/textproc/p5-XML-RSSLite
 p5-xml-sablotron                ports/textproc/p5-XML-Sablotron
 p5-xml-sax                      ports/textproc/p5-XML-SAX
 p5-xml-sax-expat                ports/textproc/p5-XML-SAX-Expat
@@ -18867,6 +18866,7 @@ rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-yadis                   ports/net/rubygem-yadis
+rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
 rubyphoto                       ports/graphics/rubyphoto
 rude                            ports/net/rude
@@ -22522,9 +22522,6 @@ zh-p5-lingua-zh-wordsegmenter   ports/chinese/p5-Lingua-ZH-WordSegmenter
 zh-p5-lingua-zh-wrap            ports/chinese/p5-Lingua-ZH-Wrap
 zh-p5-text-greeking-zh_tw       ports/chinese/p5-Text-Greeking-zh_TW
 zh-pcmanx                       ports/chinese/pcmanx
-zh-php_doc-hk                   ports/chinese/php_doc-hk
-zh-php_doc-tw                   ports/chinese/php_doc-tw
-zh-php_doc-zh                   ports/chinese/php_doc-zh
 zh-phpbb-tw                     ports/chinese/phpbb-tw
 zh-pine4                        ports/chinese/pine4
 zh-pyDict                       ports/chinese/pyDict
