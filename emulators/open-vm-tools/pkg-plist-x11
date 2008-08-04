@@ -34,4 +34,3 @@ share/applications/vmware-toolbox.desktop
 @dirrmtry etc/vmware-tools
 @dirrmtry share/vmware-tools
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
