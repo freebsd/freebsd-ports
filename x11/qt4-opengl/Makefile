@@ -8,7 +8,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
+PORTREVISION=0
 CATEGORIES?=	x11
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -24,46 +24,39 @@ QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_GL=		glu
-USE_XORG=	x11
+USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_GL=		yes
+USE_XLIB=	yes
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/network' \
-	--exclude '${DISTNAME}/src/xml' --exclude '${DISTNAME}/src/qt3support' \
-	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
-	--exclude '${DISTNAME}/src/3rdparty' --exclude '${DISTNAME}/src/tools/moc' \
-	--exclude '${DISTNAME}/src/tools/rcc' \
-	--exclude '${DISTNAME}/src/tools/uic' --exclude '${DISTNAME}/src/tools/uic3' \
-	--exclude '${DISTNAME}/tools/assistant' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake tools translations \
+		src/dbus src/network src/phonon \
+		src/qt3support src/script src/sql src/svg src/testlib \
+		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
-		-e 's|flat_headers.path.*|flat_headers.path=${PREFIX}/include/Qt|g' \
-		-e 's|targ_headers.path.*|targ_headers.path=${PREFIX}/include/$$$$TARGET|g' \
-		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/../qt_install.pri
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
-			-E -e 's|(.*Cflags:.*)-I${LOCALBASE}/include |\1|g' \
-		${WRKSRC}/../../lib/pkgconfig/*Qt*
+		${WRKSRC}/../../lib/pkgconfig/QtOpenGL.pc
 
 .include <bsd.port.mk>

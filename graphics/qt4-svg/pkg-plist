@@ -1,23 +1,25 @@
-include/Qt/QtSvg
-include/Qt/qgraphicssvgitem.h
-include/Qt/qsvggenerator.h
-include/Qt/qsvgrenderer.h
-include/Qt/qsvgwidget.h
-include/QtSvg/QGraphicsSvgItem
-include/QtSvg/QSvgGenerator
-include/QtSvg/QSvgRenderer
-include/QtSvg/QSvgWidget
-include/QtSvg/QtSvg
-include/QtSvg/qgraphicssvgitem.h
-include/QtSvg/qsvggenerator.h
-include/QtSvg/qsvgrenderer.h
-include/QtSvg/qsvgwidget.h
-lib/libQtSvg.la
-lib/libQtSvg.prl
-lib/libQtSvg.so
-lib/libQtSvg.so.4
-lib/libQtSvg.so.4.3
-lib/libQtSvg.so.4.3.4
-%%DEBUG%%lib/libQtSvg.so.4.3.4.debug
+include/qt4/Qt/QtSvg
+include/qt4/Qt/qgraphicssvgitem.h
+include/qt4/Qt/qsvggenerator.h
+include/qt4/Qt/qsvgrenderer.h
+include/qt4/Qt/qsvgwidget.h
+include/qt4/QtSvg/QGraphicsSvgItem
+include/qt4/QtSvg/QSvgGenerator
+include/qt4/QtSvg/QSvgRenderer
+include/qt4/QtSvg/QSvgWidget
+include/qt4/QtSvg/QtSvg
+include/qt4/QtSvg/qgraphicssvgitem.h
+include/qt4/QtSvg/qsvggenerator.h
+include/qt4/QtSvg/qsvgrenderer.h
+include/qt4/QtSvg/qsvgwidget.h
+lib/qt4/libQtSvg.la
+lib/qt4/libQtSvg.prl
+lib/qt4/libQtSvg.so
+lib/qt4/libQtSvg.so.4
+lib/qt4/libQtSvg.so.4.4
+lib/qt4/libQtSvg.so.4.4.1
+%%DEBUG%%lib/qt4/libQtSvg.so.4.4.1.debug
 libdata/pkgconfig/QtSvg.pc
-@dirrm include/QtSvg
+@dirrm include/qt4/QtSvg
+@dirrmtry include/qt4/Qt
+@dirrmtry include/qt4

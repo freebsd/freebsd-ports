@@ -2,12 +2,13 @@ SHLIB_NAME=	libqsql${DB}.so
 
 VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${DRIVER} \
-		-I${LOCALBASE}/include/Qt \
+		-I${PREFIX}/include/qt4 \
+		-I${PREFIX}/include/qt4/Qt \
 		-I${LOCALBASE}/include/mysql \
 		-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS} -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQT_PLUGIN \
 		-DQT_SQL_LIB -DQT_CORE_LIB -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -DQT_SHARED
-LDADD=		-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmysqlclient_r 
+LDADD=		-L${PREFIX}/lib/qt4 -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lQtSql -lmysqlclient_r 
 MOC?=		${LOCALBASE}/bin/moc-qt4
 SRCS=		main.cpp qsql_${DB}.cpp moc_qsql_${DB}.cpp
 

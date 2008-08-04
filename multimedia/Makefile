@@ -194,6 +194,8 @@
     SUBDIR += py-gstreamer
     SUBDIR += py-pybmp
     SUBDIR += qdvdauthor
+    SUBDIR += qt4-phonon
+    SUBDIR += qt4-phonon-gst
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += recmpeg

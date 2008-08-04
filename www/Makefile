@@ -1183,6 +1183,7 @@
     SUBDIR += pyblosxom
     SUBDIR += pyweblib
     SUBDIR += qdecoder
+    SUBDIR += qt4-webkit
     SUBDIR += quickie
     SUBDIR += quixote
     SUBDIR += raqdevil

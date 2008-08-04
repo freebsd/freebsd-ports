@@ -867,7 +867,10 @@
     SUBDIR += pybook
     SUBDIR += pychm
     SUBDIR += qstardict
+    SUBDIR += qt4-clucene
     SUBDIR += qt4-xml
+    SUBDIR += qt4-xmlpatterns
+    SUBDIR += qt4-xmlpatterns-tool
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand

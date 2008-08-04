@@ -1,5 +1,5 @@
---- tools/qtestlib/src/qtest_global.h
-+++ tools/qtestlib/src/qtest_global.h
+--- src/testlib/qtest_global.h
++++ src/testlib/qtest_global.h
 @@ -59,7 +59,11 @@ namespace QTest
      enum SkipMode { SkipSingle = 1, SkipAll = 2 };
      enum TestFailMode { Abort = 1, Continue = 2 };

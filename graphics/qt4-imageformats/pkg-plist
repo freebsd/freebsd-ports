@@ -8,4 +8,6 @@ lib/qt4/plugins/imageformats/libqsvg.so
 %%DEBUG%%lib/qt4/plugins/imageformats/libqsvg.so.debug
 lib/qt4/plugins/imageformats/libqtiff.so
 %%DEBUG%%lib/qt4/plugins/imageformats/libqtiff.so.debug
-@dirrm lib/qt4/plugins/imageformats
+lib/qt4/plugins/imageformats/libqico.so
+%%DEBUG%%lib/qt4/plugins/imageformats/libqico.so.debug
+@dirrmtry lib/qt4/plugins/imageformats
