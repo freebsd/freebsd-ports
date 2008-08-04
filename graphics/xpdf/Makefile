@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -67,6 +67,11 @@ CONFIGURE_ARGS+=	--with-x
 USE_MOTIF=		yes
 MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
+.endif
+
+.if defined(WITHOUT_DRAW)
+PATCH_SITES+=   http://info.iet.unipi.it/~luigi/FreeBSD/
+PATCHFILES+=    patch-zz-xpdf-annot.20080728a
 .endif
 
 post-install:

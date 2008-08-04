@@ -7,3 +7,6 @@ SIZE (xpdf-3.02pl1.patch) = 1050
 MD5 (xpdf-3.02pl2.patch) = 3a5cb165ae66781e0b21e6219ae06795
 SHA256 (xpdf-3.02pl2.patch) = d1c1d887b0b8a5283f04f825e44f085f2e92daf7b518889acf1bc89ea07ed9d9
 SIZE (xpdf-3.02pl2.patch) = 20843
+MD5 (patch-zz-xpdf-annot.20080728a) = ddb032df9edcad1ba0ef1fb03189acd8
+SHA256 (patch-zz-xpdf-annot.20080728a) = c96308c0fb90450251a6f8a19b5436a5fd5d70b4d6af2626ba85d3c4b7300fe1
+SIZE (patch-zz-xpdf-annot.20080728a) = 69092
