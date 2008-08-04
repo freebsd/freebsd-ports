@@ -43,6 +43,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Aironet.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/AlcatelLucent.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/AlteonAD.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BayRS.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
@@ -61,6 +62,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Netscreen.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Passport.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Timetra.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/HP9300.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
