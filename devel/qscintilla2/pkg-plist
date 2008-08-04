@@ -167,38 +167,38 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-%%HEADERS%%include/Qsci/qsciapis.h
-%%HEADERS%%include/Qsci/qscicommand.h
-%%HEADERS%%include/Qsci/qscicommandset.h
-%%HEADERS%%include/Qsci/qscidocument.h
-%%HEADERS%%include/Qsci/qsciglobal.h
-%%HEADERS%%include/Qsci/qscilexer.h
-%%HEADERS%%include/Qsci/qscilexerbash.h
-%%HEADERS%%include/Qsci/qscilexerbatch.h
-%%HEADERS%%include/Qsci/qscilexercpp.h
-%%HEADERS%%include/Qsci/qscilexercsharp.h
-%%HEADERS%%include/Qsci/qscilexercmake.h
-%%HEADERS%%include/Qsci/qscilexercss.h
-%%HEADERS%%include/Qsci/qscilexerd.h
-%%HEADERS%%include/Qsci/qscilexerdiff.h
-%%HEADERS%%include/Qsci/qscilexerhtml.h
-%%HEADERS%%include/Qsci/qscilexeridl.h
-%%HEADERS%%include/Qsci/qscilexerjava.h
-%%HEADERS%%include/Qsci/qscilexerjavascript.h
-%%HEADERS%%include/Qsci/qscilexerlua.h
-%%HEADERS%%include/Qsci/qscilexermakefile.h
-%%HEADERS%%include/Qsci/qscilexerperl.h
-%%HEADERS%%include/Qsci/qscilexerpov.h
-%%HEADERS%%include/Qsci/qscilexerproperties.h
-%%HEADERS%%include/Qsci/qscilexerpython.h
-%%HEADERS%%include/Qsci/qscilexerruby.h
-%%HEADERS%%include/Qsci/qscilexersql.h
-%%HEADERS%%include/Qsci/qscilexertex.h
-%%HEADERS%%include/Qsci/qscilexervhdl.h
-%%HEADERS%%include/Qsci/qscimacro.h
-%%HEADERS%%include/Qsci/qsciprinter.h
-%%HEADERS%%include/Qsci/qsciscintilla.h
-%%HEADERS%%include/Qsci/qsciscintillabase.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciapis.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscicommand.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscicommandset.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscidocument.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciglobal.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexer.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerbash.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerbatch.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercpp.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercsharp.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercmake.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexercss.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerd.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerdiff.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerhtml.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexeridl.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerjava.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerjavascript.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerlua.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexermakefile.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerperl.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerpov.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerproperties.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerpython.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexerruby.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexersql.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexertex.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscilexervhdl.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qscimacro.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciprinter.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciscintilla.h
+%%HEADERS%%%%QT_INCDIR_REL%%/Qsci/qsciscintillabase.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/copy.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/cut.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/new.png
@@ -222,5 +222,5 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%HEADERS%%@dirrm include/Qsci
+%%HEADERS%%@dirrm %%QT_INCDIR_REL%%/Qsci
 %%TRANSLATIONS%%@dirrmtry share/qt4/translations

@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake moc uic rcc gui xml
-CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
+CFLAGS+=	-I${QT_INCDIR} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
+LDFLAGS+=	-L${QT_LIBDIR}
 CONFIGURE_ARGS+=ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 ac_cv_path_ac_uic=${LOCALBASE}/bin/uic-qt4 \
 		ac_cv_path_ac_qmake=${LOCALBASE}/bin/qmake-qt4
 

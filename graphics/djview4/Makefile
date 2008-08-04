@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network rcc uic moc qmake
+QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
 		QMAKESPEC="${QMAKESPEC}" \
 		CFLAGS="-I${LOCALBASE}/include" \

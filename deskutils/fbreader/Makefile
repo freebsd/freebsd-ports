@@ -26,6 +26,7 @@ USE_GNOME=	gtk20
 UI=	qt4
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib moc
+LDFLAGS+=	-L${QT_LIBDIR}
 .endif
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

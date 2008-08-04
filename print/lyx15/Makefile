@@ -124,9 +124,9 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 # includes of qt4 must be found earlier than those of qt3
-CONFIGURE_ENV+=	QT4_CORE_CFLAGS="-DQT_SHARED -I${LOCALBASE}/include/QtCore \
-		-I${LOCALBASE}/include" \
-	QT4_FRONTEND_CFLAGS="-DQT_SHARED -I${LOCALBASE}/include/QtCore \
-		-I${LOCALBASE}/include/QtGui -I${LOCALBASE}/include"
+CONFIGURE_ENV+=	QT4_CORE_CFLAGS="-DQT_SHARED -I${QT_INCDIR}/QtCore \
+		-I${QT_INCDIR}" \
+	QT4_FRONTEND_CFLAGS="-DQT_SHARED -I${QT_INCDIR}/QtCore  \
+		-I${QT_INCDIR}/QtGui -I${QT_INCDIR}"
 
 .include <bsd.port.post.mk>

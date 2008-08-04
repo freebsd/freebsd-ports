@@ -23,7 +23,10 @@ PLATFORMKEYWORD=	freebsd-32-gcc-release
 
 do-build:
 	cd ${WRKSRC} \
-		&& ${SH} build.sh -platform ${PLATFORMKEYWORD} -qt ${LOCALBASE}
+		&& ${SH} build.sh -platform ${PLATFORMKEYWORD} \
+		-qtbin ${QT_PREFIX}/bin \
+		-qtinc ${QT_INCDIR} \
+		-qtlib ${QT_LIBDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin.${PLATFORMKEYWORD}/klayout \

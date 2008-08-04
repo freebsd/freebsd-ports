@@ -24,8 +24,8 @@ LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc uic rcc gui opengl xml network \
-		designer assistant
+QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network \
+		designer assistant assistantclient
 USE_GL=	glut
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
