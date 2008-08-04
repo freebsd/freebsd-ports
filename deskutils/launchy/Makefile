@@ -15,6 +15,8 @@ COMMENT=	Access applications, files, and bookmarks with just a few keystrokes
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost
 
+BROKEN=		does not build
+
 USE_DOS2UNIX=	readme.lyx readme.txt
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake gui network
