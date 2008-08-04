@@ -31,6 +31,8 @@ PATCHFILES:=	${PATCHFILES:S/126/126ne/}
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
+BROKEN=		does not build
+
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
