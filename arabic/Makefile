@@ -12,6 +12,5 @@
     SUBDIR += khotot
     SUBDIR += koffice-i18n
     SUBDIR += libitl
-    SUBDIR += php_doc
 
 .include <bsd.port.subdir.mk>
