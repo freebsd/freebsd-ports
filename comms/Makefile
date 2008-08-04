@@ -50,6 +50,7 @@
     SUBDIR += hso-kmod
     SUBDIR += hylafax
     SUBDIR += ib-kmod
+    SUBDIR += ibp
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
     SUBDIR += jerm
