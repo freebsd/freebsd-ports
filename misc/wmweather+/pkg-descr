@@ -2,7 +2,8 @@ wmweather+ will download the National Weather Serivce METAR bulletins,
 ANV and MRF forecasts, and any weather map for display in a WindowMaker
 dockapp. Think wmweather with a smaller font, forecasts, a weather map,
 and a sky condition display.
+
 You will need to look up the METAR code for your city (a standard code
-used in aviation)
+used in aviation).
 
 WWW: http://sourceforge.net/projects/wmweatherplus/
