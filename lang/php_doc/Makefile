@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20080318
+PORTVERSION=	20080804
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -16,23 +16,16 @@ COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-SLAVEDIRS=	arabic/php_doc \
-		chinese/php_doc-hk \
-		chinese/php_doc-tw \
-		chinese/php_doc-zh \
-		french/php_doc \
+SLAVEDIRS=	french/php_doc \
 		german/php_doc \
-		hungarian/php_doc \
 		japanese/php_doc \
-		korean/php_doc \
 		polish/php_doc \
-		portugese/php_doc \
 		russian/php_doc
 
 PHP_LANG?=	en
 PHP_LANGS=	${PHP_WRKDIR} ${PHP_WRKSRC}
-PHP_WRKDIR=	ar br de en fr hu pl ru tw zh
-PHP_WRKSRC=	hk ja kr
+PHP_WRKDIR=	br de en fr pl ru
+PHP_WRKSRC=	ja
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
 PLIST=		${WRKDIR}/pkg-plist
 
@@ -55,19 +48,13 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
-	@${ECHO} "	ar (arabic),"
 	@${ECHO} "	br (brazillian),"
 	@${ECHO} "	de (german),"
 	@${ECHO} "	en (english),"
 	@${ECHO} "	fr (french) or"
-	@${ECHO} "	hu (hungarian) or"
 	@${ECHO} "	ja (japanese)"
-	@${ECHO} "	hk (Chinese Hong Kong Cantonese)"
-	@${ECHO} "	kr (korean)"
 	@${ECHO} "	pl (polish)"
 	@${ECHO} "	ru (russian)"
-	@${ECHO} "	tw (Chinese traditional)"
-	@${ECHO} "	zh (Chinese Simplified)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
@@ -103,7 +90,8 @@ makesum:
 
 fetchdist:
 .for l in ${PHP_LANGS:S/br/pt_BR/}
-	wget -c ftp://ftp.planetmirror.com/pub/php/distributions/manual/php_manual_${l}.tar.gz
+#	wget -c ftp://ftp.planetmirror.com/pub/php/distributions/manual/php_manual_${l}.tar.gz
+	wget -c  ftp://pt.php.net/pub/php/distributions/manual/php_manual_${l}.tar.gz
 	if [ "${l}" = "pt_BR" ]; then \
 		${MV} php_manual_${l}.tar.gz ${DISTDIR}/php_manual_br-${PORTVERSION}.tar.gz; \
 	else \
