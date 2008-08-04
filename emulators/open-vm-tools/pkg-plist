@@ -27,4 +27,3 @@ etc/vmware-tools/tools.conf
 @dirrmtry etc/vmware-tools
 @dirrmtry share/vmware-tools
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
