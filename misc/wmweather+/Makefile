@@ -4,17 +4,16 @@
 #
 # $FreeBSD$
 
-PORTNAME=	wmweather+
-PORTVERSION=	2.9
-PORTREVISION=	5
-CATEGORIES=	misc windowmaker geography
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		wmweather+
+PORTVERSION=		2.11
+CATEGORIES=		misc windowmaker geography
+MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	wmweatherplus
 
-MAINTAINER=	harald.wille@students.jku.at
-COMMENT=	Think wmweather with forecasts, weather map, and a sky cond. display
+MAINTAINER=	dougb@FreeBSD.org
+COMMENT=	Displays current conditions and forecasts with icons and text
 
-LIB_DEPENDS=	xmlparse:${PORTSDIR}/www/libwww \
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		wraster:${PORTSDIR}/x11-wm/windowmaker \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff:${PORTSDIR}/graphics/tiff \
@@ -31,22 +30,38 @@ CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE}
 
 MAN1=		wmweather+.1
 
+PLIST_FILES=	bin/wmweather+
+
+post-patch:
+	@${CP} ${WRKSRC}/wmweather+.c ${WRKSRC}/wmweather+.c.dist
+	@${SED} -e "s#^void usage(int i) __THROW.*#void usage(int i);#" \
+		${WRKSRC}/wmweather+.c.dist > ${WRKSRC}/wmweather+.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmweather+ ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmweather+.1 ${PREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/HINTS ${EXAMPLESDIR}/HINTS
+	${INSTALL_DATA} ${WRKSRC}/example.conf ${EXAMPLESDIR}/example.conf
+PLIST_FILES+=	${EXAMPLESDIR_REL}/HINTS
+PLIST_FILES+=	${EXAMPLESDIR_REL}/example.conf
+PLIST_DIRS+=	${EXAMPLESDIR_REL}
+PM=		${WRKDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+.endif
+
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.conf ${EXAMPLESDIR}/example.conf
-
-	@${ECHO} ""
-	@${ECHO} "================================================="
-	@${ECHO} "Sample configuration file has been copied to"
-	@${ECHO} "${EXAMPLESDIR}/example.conf"
-	@${ECHO} ""
-	@${ECHO} "Please copy it to your homedir into .wmweather+"
-	@${ECHO} "as conf and adjust it to your needs!"
-	@${ECHO} "================================================="
-	@${ECHO} ""
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO} "===================================================" > ${PM}
+	@${ECHO} "A sample configuration file has been copied to" >> ${PM}
+	@${ECHO} "${EXAMPLESDIR}/example.conf" >> ${PM}
+	@${ECHO} "" >> ${PM}
+	@${ECHO} "Please copy it to ~/.wmweather+/conf and adjust it" >> ${PM}
+	@${ECHO} "to your needs!" >> ${PM}
+	@${ECHO} "===================================================" >> ${PM}
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
