@@ -1,0 +1,5 @@
+%%SITE_PERL%%/XML/RSSLite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSSLite/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSSLite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML
