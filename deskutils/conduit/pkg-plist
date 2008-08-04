@@ -254,6 +254,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/Globals.py
 %%PYTHON_SITELIBDIR%%/conduit/Globals.pyc
 %%PYTHON_SITELIBDIR%%/conduit/Globals.pyo
+%%PYTHON_SITELIBDIR%%/conduit/Knowledge.py
+%%PYTHON_SITELIBDIR%%/conduit/Knowledge.pyc
+%%PYTHON_SITELIBDIR%%/conduit/Knowledge.pyo
 %%PYTHON_SITELIBDIR%%/conduit/Logging.py
 %%PYTHON_SITELIBDIR%%/conduit/Logging.pyc
 %%PYTHON_SITELIBDIR%%/conduit/Logging.pyo
@@ -320,6 +323,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Audio.py
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Audio.pyc
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Audio.pyo
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Bookmark.py
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Bookmark.pyc
+%%PYTHON_SITELIBDIR%%/conduit/datatypes/Bookmark.pyo
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Contact.py
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Contact.pyc
 %%PYTHON_SITELIBDIR%%/conduit/datatypes/Contact.pyo
@@ -365,6 +371,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Database.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Database.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/Database.pyo
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.py
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.pyc
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/MsgArea.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/SimpleConfigurator.pyo
@@ -374,6 +383,9 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/UI.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/UI.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/UI.pyo
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.py
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.pyc
+%%PYTHON_SITELIBDIR%%/conduit/gtkui/Util.pyo
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/gtkui/__init__.pyo
@@ -389,12 +401,33 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsPython.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsPython.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/SettingsPython.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserMozilla.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserMozilla.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserMozilla.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserSystem.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserSystem.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserSystem.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserWebkit.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserWebkit.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/WebBrowserWebkit.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/__init__.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/__init__.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.pyo
+%%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.py
+%%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.pyc
+%%PYTHON_SITELIBDIR%%/conduit/utils/Singleton.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/__init__.pyo
@@ -422,10 +455,20 @@ share/gnome/help/conduit/C/conduit.xml
 share/gnome/help/conduit/C/figures/conduit-dp.png
 share/gnome/help/conduit/C/figures/conduit-folder-configuration.png
 share/gnome/help/conduit/C/figures/conduit-gui-parts.png
+share/gnome/help/conduit/C/figures/conduit-login.png
+share/gnome/help/conduit/C/figures/network-pc1.png
+share/gnome/help/conduit/C/figures/network-pc2.png
+share/gnome/help/conduit/C/figures/network-sync-pc1.png
+share/gnome/help/conduit/C/figures/network-sync-pc2.png
 share/gnome/help/conduit/es/conduit.xml
 share/gnome/help/conduit/es/figures/conduit-dp.png
 share/gnome/help/conduit/es/figures/conduit-folder-configuration.png
 share/gnome/help/conduit/es/figures/conduit-gui-parts.png
+share/gnome/help/conduit/es/figures/conduit-login.png
+share/gnome/help/conduit/es/figures/network-pc1.png
+share/gnome/help/conduit/es/figures/network-pc2.png
+share/gnome/help/conduit/es/figures/network-sync-pc1.png
+share/gnome/help/conduit/es/figures/network-sync-pc2.png
 share/icons/hicolor/16x16/actions/conduit-conflict-ask.png
 share/icons/hicolor/16x16/actions/conduit-conflict-delete.png
 share/icons/hicolor/16x16/actions/conduit-conflict-left.png
@@ -487,6 +530,7 @@ share/omf/conduit/conduit-es.omf
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/utils
+@dirrm %%PYTHON_SITELIBDIR%%/conduit/platform
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/hildonui
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/conduit/datatypes
