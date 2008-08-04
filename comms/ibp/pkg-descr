@@ -1,0 +1,6 @@
+This little program helps one with monitoring the beacons of the
+International Beacon Project, by continuously showing which beacon is
+transmitting on which frequency, along with the distance and
+antenna directions.
+
+WWW:	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ibp.html
