@@ -12,6 +12,5 @@
     SUBDIR += jdictionary-eng-hun-expr
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
-    SUBDIR += php_doc
 
 .include <bsd.port.subdir.mk>

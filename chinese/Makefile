@@ -102,9 +102,6 @@
     SUBDIR += p5-Lingua-ZH-Wrap
     SUBDIR += p5-Text-Greeking-zh_TW
     SUBDIR += pcmanx
-    SUBDIR += php_doc-hk
-    SUBDIR += php_doc-tw
-    SUBDIR += php_doc-zh
     SUBDIR += phpbb-tw
     SUBDIR += pine4
     SUBDIR += pyDict
