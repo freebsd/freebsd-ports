@@ -1,0 +1,333 @@
+bin/yapra
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/config_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/inflector_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin/advance_mode_registry_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin/compatible_mode_registry_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin/registry_factory_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/pipeline_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin/context_aware_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin/erb_applier_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin/feed_item_operator_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin/mechanize_base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/runtime_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/yapra/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/config/agent_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/config/basic_auth_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/config/web_post_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/feed/custom_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/feed/load_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter/apply_template_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter/entry_full_text_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/file_download_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/gmail_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/imap_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/on_memory_download_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test/append_entry_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/History_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/License_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/PostInstall_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/README_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/website/index_txt.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/RegistryFactory.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/RegistryFactory.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/AdvanceModeRegistry.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/AdvanceModeRegistry.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/AdvanceModeRegistry.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/CompatibleModeRegistry.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/CompatibleModeRegistry.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/CompatibleModeRegistry.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/RegistryFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/AdvanceModeRegistry.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/CompatibleModeRegistry.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Load.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Custom.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Load.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Custom.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/BasicAuth.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/Agent.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/WebPost.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/BasicAuth.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/Agent.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/WebPost.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ErbApplier.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ErbApplier.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/LICENCE
+%%GEM_LIB_DIR%%/License.txt
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/PostInstall.txt
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/bin/yapra
+%%GEM_LIB_DIR%%/config/hoe.rb
+%%GEM_LIB_DIR%%/config/requirements.rb
+%%GEM_LIB_DIR%%/fixtures/config/habu_like.yml
+%%GEM_LIB_DIR%%/fixtures/config/mixed_type.yml
+%%GEM_LIB_DIR%%/fixtures/config/pragger_like.yml
+%%GEM_LIB_DIR%%/fixtures/legacy_plugin/legacy_test_plugin.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Download/nicovideo.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Feed/custom_feed.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Feed/google_calendar.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Feed/google_search_history.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Feed/hatena_graph.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Feed/lirs.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/Translations/yahoo.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/apply_text_html.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/average.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/deduped.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/find_num.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/find_regex.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/fresh.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/get_html.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/grep.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/invert.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/sort.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/subs.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Filter/to_integer.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/delicious.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/google_calendar.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/hatena_bookmark.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/hatena_diary_writer.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/hatena_graph.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/lingr.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/mixi_diary_writer.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/scuttle.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Publish/twitter.rb
+%%GEM_LIB_DIR%%/legacy_plugins/RSS/load.rb
+%%GEM_LIB_DIR%%/legacy_plugins/RSS/save.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Yaml/load.rb
+%%GEM_LIB_DIR%%/legacy_plugins/Yaml/save.rb
+%%GEM_LIB_DIR%%/legacy_plugins/argv.rb
+%%GEM_LIB_DIR%%/legacy_plugins/concat.rb
+%%GEM_LIB_DIR%%/legacy_plugins/const_list.rb
+%%GEM_LIB_DIR%%/legacy_plugins/first.rb
+%%GEM_LIB_DIR%%/legacy_plugins/head.rb
+%%GEM_LIB_DIR%%/legacy_plugins/load_path.rb
+%%GEM_LIB_DIR%%/legacy_plugins/plagger.rb
+%%GEM_LIB_DIR%%/legacy_plugins/plugin_from_uri.rb
+%%GEM_LIB_DIR%%/legacy_plugins/pluginbase.rb
+%%GEM_LIB_DIR%%/legacy_plugins/print.rb
+%%GEM_LIB_DIR%%/legacy_plugins/reverse.rb
+%%GEM_LIB_DIR%%/legacy_plugins/send_msg.rb
+%%GEM_LIB_DIR%%/legacy_plugins/stdin.rb
+%%GEM_LIB_DIR%%/legacy_plugins/stdout.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/config/agent.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/config/basic_auth.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/config/web_post.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/feed/custom.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/feed/load.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter/apply_template.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter/entry_full_text.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/file_download.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/gmail.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/imap.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/on_memory_download.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test/append_entry.rb
+%%GEM_LIB_DIR%%/lib/yapra.rb
+%%GEM_LIB_DIR%%/lib/yapra/config.rb
+%%GEM_LIB_DIR%%/lib/yapra/inflector.rb
+%%GEM_LIB_DIR%%/lib/yapra/legacy_plugin.rb
+%%GEM_LIB_DIR%%/lib/yapra/legacy_plugin/advance_mode_registry.rb
+%%GEM_LIB_DIR%%/lib/yapra/legacy_plugin/base.rb
+%%GEM_LIB_DIR%%/lib/yapra/legacy_plugin/compatible_mode_registry.rb
+%%GEM_LIB_DIR%%/lib/yapra/legacy_plugin/registry_factory.rb
+%%GEM_LIB_DIR%%/lib/yapra/pipeline.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin/base.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin/context_aware.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin/erb_applier.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin/feed_item_operator.rb
+%%GEM_LIB_DIR%%/lib/yapra/plugin/mechanize_base.rb
+%%GEM_LIB_DIR%%/lib/yapra/runtime.rb
+%%GEM_LIB_DIR%%/lib/yapra/version.rb
+%%GEM_LIB_DIR%%/plugins/Filter/deduped.rb
+%%GEM_LIB_DIR%%/plugins/Filter/grep.rb
+%%GEM_LIB_DIR%%/plugins/Filter/sort.rb
+%%GEM_LIB_DIR%%/plugins/Filter/subs.rb
+%%GEM_LIB_DIR%%/script/console
+%%GEM_LIB_DIR%%/script/destroy
+%%GEM_LIB_DIR%%/script/generate
+%%GEM_LIB_DIR%%/script/txt2html
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/spec/spec.opts
+%%GEM_LIB_DIR%%/spec/spec_helper.rb
+%%GEM_LIB_DIR%%/spec/yapra/config_spec.rb
+%%GEM_LIB_DIR%%/spec/yapra/legacy_plugin/base_spec.rb
+%%GEM_LIB_DIR%%/spec/yapra/legacy_plugin/registry_factory_spec.rb
+%%GEM_LIB_DIR%%/spec/yapra_spec.rb
+%%GEM_LIB_DIR%%/tasks/deployment.rake
+%%GEM_LIB_DIR%%/tasks/environment.rake
+%%GEM_LIB_DIR%%/tasks/rspec.rake
+%%GEM_LIB_DIR%%/tasks/website.rake
+%%GEM_LIB_DIR%%/website/index.txt
+%%GEM_LIB_DIR%%/website/javascripts/rounded_corners_lite.inc.js
+%%GEM_LIB_DIR%%/website/stylesheets/screen.css
+%%GEM_LIB_DIR%%/website/template.html.erb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%/config
+@dirrm %%GEM_LIB_DIR%%/fixtures/config
+@dirrm %%GEM_LIB_DIR%%/fixtures/legacy_plugin
+@dirrm %%GEM_LIB_DIR%%/fixtures
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Download
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Feed
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Filter/Translations
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Filter
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Publish
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/RSS
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins/Yaml
+@dirrm %%GEM_LIB_DIR%%/legacy_plugins
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/config
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/feed
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin
+@dirrm %%GEM_LIB_DIR%%/lib-plugins/yapra
+@dirrm %%GEM_LIB_DIR%%/lib-plugins
+@dirrm %%GEM_LIB_DIR%%/lib/yapra/legacy_plugin
+@dirrm %%GEM_LIB_DIR%%/lib/yapra/plugin
+@dirrm %%GEM_LIB_DIR%%/lib/yapra
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/plugins/Filter
+@dirrm %%GEM_LIB_DIR%%/plugins
+@dirrm %%GEM_LIB_DIR%%/script
+@dirrm %%GEM_LIB_DIR%%/spec/yapra/legacy_plugin
+@dirrm %%GEM_LIB_DIR%%/spec/yapra
+@dirrm %%GEM_LIB_DIR%%/spec
+@dirrm %%GEM_LIB_DIR%%/tasks
+@dirrm %%GEM_LIB_DIR%%/website/javascripts
+@dirrm %%GEM_LIB_DIR%%/website/stylesheets
+@dirrm %%GEM_LIB_DIR%%/website
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/yapra/legacy_plugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/yapra/plugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/yapra
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/config
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/feed
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib-plugins
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/website
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/RegistryFactory.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/AdvanceModeRegistry.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin/CompatibleModeRegistry.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Load.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed/Custom.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/BasicAuth.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/Agent.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/WebPost.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ErbApplier.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
