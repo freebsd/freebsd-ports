@@ -8,7 +8,7 @@
 
 PORTNAME=	qvfb
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -29,18 +29,17 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/network' \
-	--exclude '${DISTNAME}/src/opengl' \
-	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
-	--exclude '${DISTNAME}/src/3rdparty' --exclude '${DISTNAME}/src/xml' \
-	--exclude '${DISTNAME}/src/tools/moc' --exclude '${DISTNAME}/src/tools/rcc' \
-	--exclude '${DISTNAME}/src/tools/uic' --exclude '${DISTNAME}/src/tools/uic3' \
-	--exclude '${DISTNAME}/tools/assistant' --exclude '${DISTNAME}/tools/designer' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig'
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
+		src/dbus src/network src/phonon \
+		src/qt3support src/script src/sql src/svg src/testlib \
+		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 
@@ -53,9 +52,5 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
-
-post-install:
-	${MKDIR} ${DATADIR}
-	${CP} -Rf ${WRKSRC}/*.skin ${WRKSRC}/pda* ${DATADIR}
 
 .include <bsd.port.mk>

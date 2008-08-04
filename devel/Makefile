@@ -2235,8 +2235,11 @@
     SUBDIR += qsvn
     SUBDIR += qt4
     SUBDIR += qt4-assistant
+    SUBDIR += qt4-assistant-adp
     SUBDIR += qt4-corelib
     SUBDIR += qt4-designer
+    SUBDIR += qt4-help
+    SUBDIR += qt4-help-tools
     SUBDIR += qt4-libqtassistantclient
     SUBDIR += qt4-linguist
     SUBDIR += qt4-makeqpf

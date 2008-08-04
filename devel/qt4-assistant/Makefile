@@ -8,7 +8,7 @@
 
 PORTNAME=	assistant
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -20,7 +20,7 @@ COMMENT=	Qt documentation browser
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui network sql xml doc dbus
+		gui network sql xml doc help
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -30,30 +30,30 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/opengl' --exclude '${DISTNAME}/src/qt3support' \
-	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
-	--exclude '${DISTNAME}/src/3rdparty' \
-	--exclude '${DISTNAME}/src/tools/moc' --exclude '${DISTNAME}/src/tools/rcc' \
-	--exclude '${DISTNAME}/src/tools/uic' --exclude '${DISTNAME}/src/tools/uic3' \
-	--exclude '${DISTNAME}/tools/designer' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
-WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
-CONFIGURE_WRKSRC=${WRKSRC}/../../
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
+		src/dbus src/opengl src/phonon \
+		src/qt3support src/script src/svg src/testlib \
+		src/tools src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
+WRKSRC=${WRKDIR}/${DISTNAME}/tools/${PORTNAME}/tools/${PORTNAME}
+CONFIGURE_WRKSRC=${WRKSRC}/../../../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
-			-e 's|^TARGET.*|TARGET=assistant-qt4|g' \
-		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/lib/lib.pro
-	${MKDIR} ${WRKSRC}/../../mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
+	${REINPLACE_CMD} \
+		-e 's|^TARGET.*|TARGET=assistant-qt4|g' \
+		${WRKSRC}/${PORTNAME}.pro
+	${MKDIR} ${WRKSRC}/../../../../mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../../../bin/uic
+	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../../../bin/rcc
 
 .include <bsd.port.mk>

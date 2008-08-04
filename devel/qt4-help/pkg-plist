@@ -1,0 +1,40 @@
+include/qt4/Qt/QtHelp
+include/qt4/Qt/qhelp_global.h
+include/qt4/Qt/qhelpcontentwidget.h
+include/qt4/Qt/qhelpengine.h
+include/qt4/Qt/qhelpenginecore.h
+include/qt4/Qt/qhelpindexwidget.h
+include/qt4/Qt/qhelpsearchengine.h
+include/qt4/Qt/qhelpsearchquerywidget.h
+include/qt4/Qt/qhelpsearchresultwidget.h
+include/qt4/QtHelp/QHelpContentItem
+include/qt4/QtHelp/QHelpContentModel
+include/qt4/QtHelp/QHelpContentWidget
+include/qt4/QtHelp/QHelpEngine
+include/qt4/QtHelp/QHelpEngineCore
+include/qt4/QtHelp/QHelpIndexModel
+include/qt4/QtHelp/QHelpIndexWidget
+include/qt4/QtHelp/QHelpSearchEngine
+include/qt4/QtHelp/QHelpSearchQuery
+include/qt4/QtHelp/QHelpSearchQueryWidget
+include/qt4/QtHelp/QHelpSearchResultWidget
+include/qt4/QtHelp/QtHelp
+include/qt4/QtHelp/qhelp_global.h
+include/qt4/QtHelp/qhelpcontentwidget.h
+include/qt4/QtHelp/qhelpengine.h
+include/qt4/QtHelp/qhelpenginecore.h
+include/qt4/QtHelp/qhelpindexwidget.h
+include/qt4/QtHelp/qhelpsearchengine.h
+include/qt4/QtHelp/qhelpsearchquerywidget.h
+include/qt4/QtHelp/qhelpsearchresultwidget.h
+lib/qt4/libQtHelp.la
+lib/qt4/libQtHelp.prl
+lib/qt4/libQtHelp.so
+lib/qt4/libQtHelp.so.4
+lib/qt4/libQtHelp.so.4.4
+lib/qt4/libQtHelp.so.4.4.1
+%%DEBUG%%lib/qt4/libQtHelp.so.4.4.1.debug
+libdata/pkgconfig/QtHelp.pc
+@dirrm include/qt4/QtHelp
+@dirrmtry include/qt4/Qt
+@dirrmtry include/qt4

@@ -8,7 +8,7 @@
 
 PORTNAME=	qtdemo
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -21,7 +21,8 @@ COMMENT=	Qt demonstration and example programs
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistantclient \
 		corelib designer gui network opengl sql svg qtestlib xml \
-		imageformats_run dbus script
+		imageformats_run dbus script webkit phonon help assistant_run \
+		phonon-gst
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -31,8 +32,22 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
+
+DO_NOT_EXTRACT=	doc mkspecs qmake translations
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/demos
 CONFIGURE_WRKSRC=${WRKSRC}/../
+PATCH_WRKSRC=	${CONFIGURE_WRKSRC}
+
+post-patch:
+	${REINPLACE_CMD} -e '/app +=/s|"assistant"|"assistant-qt4"|' \
+		${PATCH_WRKSRC}/demos/qtdemo/menumanager.cpp \
+		${PATCH_WRKSRC}/examples/help/remotecontrol/remotecontrol.cpp \
+		${PATCH_WRKSRC}/examples/help/simpletextviewer/assistant.cpp
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}

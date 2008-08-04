@@ -29,17 +29,17 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/network' --exclude '${DISTNAME}/src/xml' \
-	--exclude '${DISTNAME}/src/opengl' --exclude '${DISTNAME}/src/qt3support' \
-	--exclude '${DISTNAME}/src/sql' \
-	--exclude '${DISTNAME}/src/tools/moc' --exclude '${DISTNAME}/src/tools/uic' \
-	--exclude '${DISTNAME}/src/tools/rcc' --exclude '${DISTNAME}/src/tools/uic3' \
-	--exclude '${DISTNAME}/tools/assistant' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake tools translations \
+		src/dbus src/gui src/network src/opengl src/phonon \
+		src/qt3support src/script src/sql src/svg src/testlib \
+		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/${PORTNAME}/cn
 CONFIGURE_WRKSRC=${WRKSRC}/../../../..
 
@@ -47,7 +47,6 @@ pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
 
 post-configure:
 	${REINPLACE_CMD} -e 's|(test -z.*||g' ${WRKSRC}/Makefile

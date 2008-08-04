@@ -8,7 +8,7 @@
 
 PORTNAME=	pixeltool
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -19,8 +19,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt screen magnification utility
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build assistantclient corelib gui \
-		network
+QT_COMPONENTS=	qmake_build moc_build corelib gui network
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
@@ -30,17 +29,17 @@ ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/opengl' --exclude '${DISTNAME}/src/qt3support' \
-	--exclude '${DISTNAME}/src/sql' --exclude '${DISTNAME}/src/plugins' \
-	--exclude '${DISTNAME}/src/3rdparty' \
-	--exclude '${DISTNAME}/src/tools/moc' --exclude '${DISTNAME}/src/tools/rcc' \
-	--exclude '${DISTNAME}/src/tools/uic' --exclude '${DISTNAME}/src/tools/uic3' \
-	--exclude '${DISTNAME}/tools/designer' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
+		src/dbus src/network src/opengl src/phonon \
+		src/qt3support src/script src/sql src/svg src/testlib \
+		src/tools src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 
@@ -51,6 +50,5 @@ pre-configure:
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 
 .include <bsd.port.mk>
