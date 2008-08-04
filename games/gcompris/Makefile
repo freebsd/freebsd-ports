@@ -8,7 +8,7 @@
 
 PORTNAME=	gcompris
 DISTVERSION=	8.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gcompris
 
@@ -54,6 +54,8 @@ CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	    	${WRKSRC}/src/gcompris/gcompris.c
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
 
