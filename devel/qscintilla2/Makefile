@@ -31,6 +31,7 @@ OPTIONS=	HEADERS		"Install Qsci headers" on \
 PLIST_SUB+=	HEADERS="@comment "
 .else
 PLIST_SUB+=	HEADERS=""
+PLIST_SUB+=	QT_INCDIR_REL=${QT_INCDIR_REL}
 .endif
 .if defined(WITH_TRANSLATIONS)
 PLIST_SUB+=	TRANSLATIONS=""

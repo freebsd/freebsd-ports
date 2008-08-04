@@ -15,8 +15,8 @@ DISTNAME=	tipp10_source_v2-0-1
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A 10 finger touch typing learning program
 
-RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \
-		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
+RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \
+		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
 USE_ZIP=	yes
 USE_QT_VER=	4

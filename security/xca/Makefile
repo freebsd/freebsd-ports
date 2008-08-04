@@ -26,9 +26,9 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_PREFIX}/include/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
+	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
-	@echo "LDFLAGS= ${LDFLAGS} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
+	@echo "LDFLAGS= ${LDFLAGS} -L${QT_LIBDIR} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
 	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto" >> ${WRKSRC}/Local.mak
 	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
 	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak

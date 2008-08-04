@@ -22,4 +22,8 @@ USE_FPC=	opengl
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build network qmake_build rcc_build svg xml
 
+post-patch:
+	${ECHO} "include_directories(${LOCALBASE}/include)" >> \
+		${WRKSRC}/QTfrontend/CMakeLists.txt
+
 .include <bsd.port.mk>
