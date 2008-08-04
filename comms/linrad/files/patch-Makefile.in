@@ -1,5 +1,5 @@
---- Makefile.in.orig	2008-06-25 19:17:06.000000000 -0400
-+++ Makefile.in	2008-07-18 20:57:17.000000000 -0400
+--- Makefile.in.orig	2008-07-29 12:39:53.000000000 -0400
++++ Makefile.in	2008-08-04 11:45:19.000000000 -0400
 @@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
@@ -21,7 +21,7 @@
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -682,7 +679,7 @@
+@@ -683,7 +680,7 @@
  
  
  
