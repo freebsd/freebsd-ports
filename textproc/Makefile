@@ -986,6 +986,7 @@
     SUBDIR += smartdoc-devel
     SUBDIR += sml-fxp
     SUBDIR += soothsayer
+    SUBDIR += soprano
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += sp
