@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2008-07-27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -58,8 +58,7 @@ COMPAT_HEADERS=	libavcodec/avcodec.h \
 	libavutil/mem.h \
 	libavutil/random.h \
 	libavutil/rational.h \
-	libavutil/sha1.h \
-	libpostproc/postprocess.h
+	libavutil/sha1.h
 
 .include <bsd.port.pre.mk>
 
@@ -315,5 +314,8 @@ post-install:
 .for FILE in ${COMPAT_HEADERS}
 	${CP} -f ${PREFIX}/include/${FILE} ${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
 .endfor
+	${MKDIR} ${PREFIX}/include/postproc
+	${CP} -f ${PREFIX}/include/libpostproc/postprocess.h \
+		 ${PREFIX}/include/postproc/
 
 .include <bsd.port.post.mk>

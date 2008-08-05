@@ -20,7 +20,6 @@ include/ffmpeg/mathematics.h
 include/ffmpeg/md5.h
 include/ffmpeg/mem.h
 include/ffmpeg/opt.h
-include/ffmpeg/postprocess.h
 include/ffmpeg/random.h
 include/ffmpeg/rational.h
 include/ffmpeg/rtsp.h
@@ -50,6 +49,7 @@ include/libavutil/random.h
 include/libavutil/rational.h
 include/libavutil/sha1.h
 include/libpostproc/postprocess.h
+include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
@@ -80,6 +80,7 @@ libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libpostproc.pc
 @dirrm lib/vhook
+@dirrm include/postproc
 @dirrm include/libpostproc
 @dirrm include/libavutil
 @dirrm include/libavformat
