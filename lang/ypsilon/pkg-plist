@@ -1,0 +1,83 @@
+bin/ypsilon
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gears.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glut-demo.scm
+%%DATADIR%%/sitelib/apropos.scm
+%%DATADIR%%/sitelib/ffi.scm
+%%DATADIR%%/sitelib/gl.scm
+%%DATADIR%%/sitelib/glut.scm
+%%DATADIR%%/sitelib/match.scm
+%%DATADIR%%/sitelib/pregexp.scm
+%%DATADIR%%/sitelib/srfi/srfi-1.scm
+%%DATADIR%%/sitelib/srfi/srfi-26.scm
+%%DATADIR%%/sitelib/srfi/srfi-28.scm
+%%DATADIR%%/sitelib/srfi/srfi-39.scm
+%%DATADIR%%/sitelib/srfi/srfi-42.scm
+%%DATADIR%%/sitelib/srfi/srfi-6.scm
+%%DATADIR%%/sitelib/srfi/srfi-8.scm
+%%DATADIR%%/sitelib/streams.scm
+%%DATADIR%%/sitelib/tidbits/define-inline.scm
+%%DATADIR%%/sitelib/tidbits/dotimes.scm
+%%DATADIR%%/sitelib/tidbits/string-split.scm
+%%DATADIR%%/sitelib/time.scm
+%%DATADIR%%/sitelib/trace.scm
+%%DATADIR%%/stdlib/core.scm
+%%DATADIR%%/stdlib/core/arithmetic.scm
+%%DATADIR%%/stdlib/core/bytevector-transcoders.scm
+%%DATADIR%%/stdlib/core/bytevectors.scm
+%%DATADIR%%/stdlib/core/chkarg.scm
+%%DATADIR%%/stdlib/core/conditions.scm
+%%DATADIR%%/stdlib/core/control.scm
+%%DATADIR%%/stdlib/core/destructuring.scm
+%%DATADIR%%/stdlib/core/enums.scm
+%%DATADIR%%/stdlib/core/exceptions.scm
+%%DATADIR%%/stdlib/core/files.scm
+%%DATADIR%%/stdlib/core/hashtables.scm
+%%DATADIR%%/stdlib/core/io.scm
+%%DATADIR%%/stdlib/core/lists.scm
+%%DATADIR%%/stdlib/core/optargs.scm
+%%DATADIR%%/stdlib/core/optimize.scm
+%%DATADIR%%/stdlib/core/parameters.scm
+%%DATADIR%%/stdlib/core/r5rs.scm
+%%DATADIR%%/stdlib/core/records.scm
+%%DATADIR%%/stdlib/core/sorting.scm
+%%DATADIR%%/stdlib/core/struct.scm
+%%DATADIR%%/stdlib/core/syntax-case.scm
+%%DATADIR%%/stdlib/core/unicode-assistants.scm
+%%DATADIR%%/stdlib/core/unicode.scm
+%%DATADIR%%/stdlib/rnrs.scm
+%%DATADIR%%/stdlib/rnrs/arithmetic/bitwise.scm
+%%DATADIR%%/stdlib/rnrs/arithmetic/fixnums.scm
+%%DATADIR%%/stdlib/rnrs/arithmetic/flonums.scm
+%%DATADIR%%/stdlib/rnrs/base.scm
+%%DATADIR%%/stdlib/rnrs/bytevectors.scm
+%%DATADIR%%/stdlib/rnrs/conditions.scm
+%%DATADIR%%/stdlib/rnrs/control.scm
+%%DATADIR%%/stdlib/rnrs/enums.scm
+%%DATADIR%%/stdlib/rnrs/eval.scm
+%%DATADIR%%/stdlib/rnrs/exceptions.scm
+%%DATADIR%%/stdlib/rnrs/files.scm
+%%DATADIR%%/stdlib/rnrs/hashtables.scm
+%%DATADIR%%/stdlib/rnrs/io/ports.scm
+%%DATADIR%%/stdlib/rnrs/io/simple.scm
+%%DATADIR%%/stdlib/rnrs/lists.scm
+%%DATADIR%%/stdlib/rnrs/mutable-pairs.scm
+%%DATADIR%%/stdlib/rnrs/mutable-strings.scm
+%%DATADIR%%/stdlib/rnrs/programs.scm
+%%DATADIR%%/stdlib/rnrs/r5rs.scm
+%%DATADIR%%/stdlib/rnrs/records/inspection.scm
+%%DATADIR%%/stdlib/rnrs/records/procedural.scm
+%%DATADIR%%/stdlib/rnrs/records/syntactic.scm
+%%DATADIR%%/stdlib/rnrs/sorting.scm
+%%DATADIR%%/stdlib/rnrs/syntax-case.scm
+%%DATADIR%%/stdlib/rnrs/unicode.scm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/stdlib/rnrs/arithmetic
+@dirrm %%DATADIR%%/stdlib/rnrs/io
+@dirrm %%DATADIR%%/stdlib/rnrs/records
+@dirrm %%DATADIR%%/stdlib/rnrs
+@dirrm %%DATADIR%%/stdlib/core
+@dirrm %%DATADIR%%/stdlib
+@dirrm %%DATADIR%%/sitelib/srfi
+@dirrm %%DATADIR%%/sitelib/tidbits
+@dirrm %%DATADIR%%/sitelib
+@dirrm %%DATADIR%%

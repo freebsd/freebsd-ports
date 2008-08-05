@@ -1,0 +1,6 @@
+Ypsilon is an implementation of Scheme programming language for real-time
+applications, which conforms to the latest standard R^6RS.
+Ypsilon features mostly concurrent garbage collector optimized for systems
+with multiple CPUs, and an easy to use FFI.
+
+WWW: http://code.google.com/p/ypsilon/

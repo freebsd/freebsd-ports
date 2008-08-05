@@ -1,0 +1,42 @@
+diff -ruN sitelib.old/ffi.scm sitelib/ffi.scm
+--- sitelib.old/ffi.scm	2008-08-02 22:38:36.000000000 +0300
++++ sitelib/ffi.scm	2008-08-02 22:38:49.000000000 +0300
+@@ -6,7 +6,7 @@
+ (library (ffi)
+ 
+   (export c-function c-argument
+-          on-windows on-darwin on-linux on-posix)
++          on-windows on-darwin on-linux on-freebsd on-posix)
+ 
+   (import (core primitives)
+           (core syntax-case)
+@@ -16,6 +16,7 @@
+   (define on-windows (and (string-contains (architecture-feature 'operating-system) "windows") #t))
+   (define on-darwin  (and (string-contains (architecture-feature 'operating-system) "darwin")  #t))
+   (define on-linux   (and (string-contains (architecture-feature 'operating-system) "linux")   #t))
++  (define on-freebsd (and (string-contains (architecture-feature 'operating-system) "freebsd") #t))
+   (define on-posix   (not on-windows))
+   
+   (define assert-int
+diff -ruN sitelib.old/gl.scm sitelib/gl.scm
+--- sitelib.old/gl.scm	2008-08-02 22:38:36.000000000 +0300
++++ sitelib/gl.scm	2008-08-02 22:38:49.000000000 +0300
+@@ -1242,6 +1242,7 @@
+   (define libGL (cond (on-darwin  (load-shared-object "OpenGL.framework/OpenGL"))
+                       (on-windows (load-shared-object "opengl32.dll"))
+                       (on-linux   (load-shared-object "libGL.so.1"))
++                      (on-freebsd (load-shared-object "libGL.so.1"))
+                       (else       (assertion-violation #f "can not locate OpenGL library, unknown operating system"))))
+   
+   ;;;; Boolean values
+diff -ruN sitelib.old/glut.scm sitelib/glut.scm
+--- sitelib.old/glut.scm	2008-08-02 22:38:36.000000000 +0300
++++ sitelib/glut.scm	2008-08-02 22:38:49.000000000 +0300
+@@ -181,6 +181,7 @@
+   (define libGLUT (cond (on-darwin  (load-shared-object "GLUT.framework/GLUT"))
+                         (on-windows (load-shared-object "glut32.dll"))
+                         (on-linux   (load-shared-object "libglut.so.3"))
++                        (on-freebsd (load-shared-object "libglut.so.4"))
+                         (else       (assertion-violation #f "can not locate GLUT library, unknown operating system"))))
+ 
+   ;; Display mode bit masks.
