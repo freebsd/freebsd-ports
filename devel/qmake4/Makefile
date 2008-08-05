@@ -28,7 +28,8 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/config.tests/unix/padstring' \
 	'${DISTNAME}/mkspecs' \
 	'${DISTNAME}/include/*/*' \
-	'${DISTNAME}/src/*/*.h' '${DISTNAME}/qmake' \
+	'${DISTNAME}/src/*/*.h' \
+	'${DISTNAME}/qmake' \
 	'${DISTNAME}/src/corelib/tools' \
 	'${DISTNAME}/src/corelib/io' \
 	'${DISTNAME}/src/corelib/global' \
@@ -39,16 +40,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/src/3rdparty/md5' \
 	'${DISTNAME}/src/3rdparty/sha1'
 
-.if !defined(NOPORTDOCS)
-EXTRACT_AFTER_ARGS+='${DISTNAME}/doc/html/qmake*'
-DOCSDIR=${PREFIX}/share/doc/qt4
-post-install:
-	${MKDIR} '${DOCSDIR}'
-	${CP} -Rp '${WRKSRC:H}/doc/html' '${DOCSDIR}'
-.endif
-
 post-patch:
-	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|gcc.*|${CC}|' \
 		-e 's|g++.*|${CXX}|' \
@@ -59,8 +51,7 @@ post-patch:
 		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|uic|uic-qt4|' \
 		-e 's|moc|moc-qt4|' \
-		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf \
-		${WRKSRC}/../mkspecs/freebsd-g++34/qmake.conf
+		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 
 do-configure:
@@ -80,5 +71,8 @@ CXXFLAGS+=	-mieee
 .if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
 CXXFLAGS+=	-fno-gcse
 .endif
+
+post-install:
+	${LN} -sf ${PREFIX}/share/qt4/mkspecs/freebsd-g++ ${PREFIX}/share/qt4/mkspecs/default
 
 .include <bsd.port.post.mk>
