@@ -14,8 +14,6 @@ MASTER_SITES=	http://cr.yp.to/djbfft/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An extremely fast library for floating-point convolution
 
-RESTRICTED=	Forbidden to redistribute - we have patches to the distribution.
-
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check

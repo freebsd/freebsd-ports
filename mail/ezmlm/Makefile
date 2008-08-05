@@ -24,8 +24,6 @@ USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-idx-*
 
-RESTRICTED=	Unsure of DJB license
-
 ALL_TARGET=	it
 
 PROGRAMS=	ezmlm-make ezmlm-manage ezmlm-send ezmlm-reject ezmlm-return \
