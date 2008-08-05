@@ -11,7 +11,7 @@ PREFIX=%%PREFIX%%
 . %%RC_SUBR%%
 
 # Global
-checkvm_cmd="${PREFIX}/sbin/vmware-checkvm > /dev/null"
+checkvm_cmd="${PREFIX}/bin/vmware-checkvm > /dev/null"
 
 # Functions
 vmware_guest_vmmemctl_start()
