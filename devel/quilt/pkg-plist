@@ -1,63 +1,61 @@
-@unexec if cmp -s %D/etc/quilt.quiltrc %D/etc/quilt.quiltrc.sample; then rm -f %D/etc/quilt.quiltrc; fi
-etc/quilt.quiltrc.sample
-@exec if [ ! -f %D/etc/quilt.quiltrc ] ; then cp %D/%F %B/quilt.quiltrc; fi
 bin/guards
 bin/quilt
 etc/bash_completion.d/quilt
-share/libexec/quilt/add
-share/libexec/quilt/annotate
-share/libexec/quilt/applied
-share/libexec/quilt/backup-files
-share/libexec/quilt/compat/cp
-share/libexec/quilt/compat/date
-share/libexec/quilt/compat/getopt
-share/libexec/quilt/compat/patch
-%%RPMBUILD%%share/libexec/quilt/compat/rpmbuild
-share/libexec/quilt/compat/sed
-share/libexec/quilt/compat/sendmail
-share/libexec/quilt/delete
-share/libexec/quilt/diff
-share/libexec/quilt/edit
-share/libexec/quilt/files
-share/libexec/quilt/fold
-share/libexec/quilt/fork
-share/libexec/quilt/graph
-share/libexec/quilt/grep
-share/libexec/quilt/header
-share/libexec/quilt/import
-share/libexec/quilt/mail
-share/libexec/quilt/new
-share/libexec/quilt/next
-share/libexec/quilt/patches
-share/libexec/quilt/pop
-share/libexec/quilt/previous
-share/libexec/quilt/push
-share/libexec/quilt/refresh
-share/libexec/quilt/remove
-share/libexec/quilt/rename
-share/libexec/quilt/scripts/dependency-graph
-share/libexec/quilt/scripts/edmail
-share/libexec/quilt/scripts/inspect
-share/libexec/quilt/scripts/parse-patch
-share/libexec/quilt/scripts/patchfns
-share/libexec/quilt/scripts/remove-trailing-ws
-share/libexec/quilt/series
-share/libexec/quilt/setup
-share/libexec/quilt/snapshot
-share/libexec/quilt/top
-share/libexec/quilt/unapplied
-share/libexec/quilt/upgrade
-share/libexec/quilt/wrapper/patch
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.MAIL
-%%PORTDOCS%%%%DOCSDIR%%/quilt.pdf
+etc/quilt.quiltrc
+lib/quilt/backup-files
 %%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/quilt.mo
-@dirrm share/libexec/quilt/wrapper
-@dirrm share/libexec/quilt/scripts
-@dirrm share/libexec/quilt/compat
-@dirrm share/libexec/quilt
-@dirrm share/libexec
-@dirrm etc/bash_completion.d
+%%DATADIR%%/add
+%%DATADIR%%/annotate
+%%DATADIR%%/applied
+%%DATADIR%%/delete
+%%DATADIR%%/diff
+%%DATADIR%%/edit
+%%DATADIR%%/files
+%%DATADIR%%/fold
+%%DATADIR%%/fork
+%%DATADIR%%/graph
+%%DATADIR%%/grep
+%%DATADIR%%/header
+%%DATADIR%%/import
+%%DATADIR%%/mail
+%%DATADIR%%/new
+%%DATADIR%%/next
+%%DATADIR%%/patches
+%%DATADIR%%/pop
+%%DATADIR%%/previous
+%%DATADIR%%/push
+%%DATADIR%%/refresh
+%%DATADIR%%/remove
+%%DATADIR%%/rename
+%%DATADIR%%/series
+%%DATADIR%%/setup
+%%DATADIR%%/snapshot
+%%DATADIR%%/top
+%%DATADIR%%/unapplied
+%%DATADIR%%/upgrade
+%%DATADIR%%/scripts/parse-patch
+%%DATADIR%%/scripts/inspect
+%%DATADIR%%/scripts/dependency-graph
+%%DATADIR%%/scripts/edmail
+%%DATADIR%%/scripts/remove-trailing-ws
+%%DATADIR%%/scripts/patchfns
+%%DATADIR%%/wrapper/patch
+%%DATADIR%%/compat/getopt
+%%DATADIR%%/compat/cp
+%%DATADIR%%/compat/date
+%%DATADIR%%/compat/sed
+%%DATADIR%%/compat/patch
+%%DATADIR%%/compat/sendmail
+%%RPMBUILD%%share/libexec/quilt/compat/rpmbuild
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.MAIL
+%%PORTDOCS%%%%DOCSDIR%%/quilt.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/bash_completion.d
+@dirrmtry lib/quilt
+@dirrm %%DATADIR%%/compat
+@dirrm %%DATADIR%%/wrapper
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
