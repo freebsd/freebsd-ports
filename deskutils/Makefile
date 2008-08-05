@@ -199,6 +199,7 @@
     SUBDIR += sliderule
     SUBDIR += snotes
     SUBDIR += splashsetter
+    SUBDIR += strigi
     SUBDIR += sugarcrm
     SUBDIR += sunbird
     SUBDIR += sunbird-i18n
