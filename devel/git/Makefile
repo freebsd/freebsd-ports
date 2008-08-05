@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.6.2
+PORTVERSION=	1.5.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -18,7 +18,7 @@ COMMENT=	Distributed source code management tool
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		cvsps:${PORTSDIR}/devel/cvsps-devel \
+		cvsps:${PORTSDIR}/devel/cvsps \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -169,7 +169,6 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		PYTHON_PATH=${LOCALBASE}/bin/python \
 		PERL_PATH=${PERL} \
 		LIBMD_SHA1=yes
@@ -199,6 +198,7 @@ MAKE_ENV+=	NO_TCLTK=yes
 
 .ifdef (WITH_SVN)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		svn:${PORTSDIR}/devel/subversion
 .endif
 
