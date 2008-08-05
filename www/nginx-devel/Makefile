@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -28,12 +28,15 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_SSL_MODULE "Enable http_ssl module" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
+		HTTP_XSLT_MODULE "Enable http_xslt module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
 		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
 		MAIL_POP3_MODULE "Enable POP3 proxy module" off \
 		MAIL_SMTP_MODULE "Enable SMTP proxy module" off \
 		MAIL_SSL_MODULE "Enable mail_ssl module" off \
 		WWW "Enable html sample files" on
+
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -112,6 +115,11 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 
 .if defined(WITH_HTTP_SUB_MODULE)
 CONFIGURE_ARGS+=--with-http_sub_module
+.endif
+
+.if defined(WITH_HTTP_XSLT_MODULE)
+USE_GNOME=	libxml2 libxslt
+CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
