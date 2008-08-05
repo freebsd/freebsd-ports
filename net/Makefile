@@ -264,6 +264,7 @@
     SUBDIR += krdesktop
     SUBDIR += l2tpd
     SUBDIR += l4ip
+    SUBDIR += ladvd
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += lanbrowsing
