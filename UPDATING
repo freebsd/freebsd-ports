@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080805:
+  AFFECTS: Users of devel/qt4
+  AUTHOR: kde@FreeBSD.org
+
+  The qt4 has been updated to 4.4.1. With this update several ports specific
+  problems have been fixed. Qt4 headers and libraries have been moved to
+  include/qt4 and lib/qt4. bsd.qt.mk defines QT_INCDIR and QT_LIBDIR now,
+  which could be used in qt4-dependent ports if required. Before you start
+  the update of your ports, please force update of qmake4 and qt4-corelib ports:
+
+	portmaster devel/qmake4 devel/qt4-corelib
+	portupgrade -f devel/qmake4 devel/qt4-corelib
+
 20080804:
   AFFECTS: Users of devel/git
   AUTHOR: wxs@FreeBSD.org
