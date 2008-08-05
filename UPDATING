@@ -7,20 +7,24 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080805:
-  AFFECTS: Users of devel/qt4
+  AFFECTS: users of devel/qt4
   AUTHOR: kde@FreeBSD.org
 
-  The qt4 has been updated to 4.4.1. With this update several ports specific
-  problems have been fixed. Qt4 headers and libraries have been moved to
-  include/qt4 and lib/qt4. bsd.qt.mk defines QT_INCDIR and QT_LIBDIR now,
-  which could be used in qt4-dependent ports if required. Before you start
-  the update of your ports, please force update of qmake4 and qt4-corelib ports:
+  The qt4 ports has been updated to 4.4.1.  With this update several ports
+  specific problems have been fixed.  Qt4 headers and libraries have been
+  moved to include/qt4 and lib/qt4.  bsd.qt.mk defines QT_INCDIR and
+  QT_LIBDIR now, which could be used in qt4-dependent ports if required.
+  Before you start to update your ports, please force update of qmake4 and
+  qt4-corelib ports.  Portmaster users can do:
 
 	portmaster devel/qmake4 devel/qt4-corelib
+
+  or, if you're using portupgrade:
+
 	portupgrade -f devel/qmake4 devel/qt4-corelib
 
 20080804:
-  AFFECTS: Users of devel/git
+  AFFECTS: users of devel/git
   AUTHOR: wxs@FreeBSD.org
 
   Git's cvsps dependency has been switched from cvsps-devel to cvsps.  The
@@ -54,8 +58,8 @@ upgrades.
 
   You are urged to move your configuration out of the default location
   (/usr/local/etc/raddb) before upgrading from 2.0.4 (or earlier)
-  to 2.0.5 (or later). Once this upgrade is complete, remove the sample 
-  configuration that has been installed in the default location and 
+  to 2.0.5 (or later). Once this upgrade is complete, remove the sample
+  configuration that has been installed in the default location and
   move your configuration back to the default location.
 
   This is a one time procedure that will prevent unmodified files in
@@ -80,7 +84,7 @@ upgrades.
   Update to 3.0.1_1,1; it no longer seeks for plugins in lib/browser_plugins,
   because few plugins that built with Firefox 2 can cause Firefox 3 to crash.
   We are working on making some changes with plugins directory by using
-  www/linux-mplayer-plugin/Makefile.npapi. If there are few other plugins
+  www/linux-mplayer-plugin/Makefile.npapi. If there are some other plugins
   that work with Firefox 3 and you would like to use, you can copy them to
   ~/.mozilla/plugins or /usr/local/lib/firefox3/plugins manually for now.
 
@@ -131,7 +135,7 @@ upgrades.
 	% mv ~/.gprename_log ~/.config/gprename/gprename_log
 
 20080717:
-  AFFECTS: Users of devel/anjuta
+  AFFECTS: users of devel/anjuta
   AUTHOR: gnome@FreeBSD.org
 
   Anjuta's neon dependency has been switched from neon26 to neon28.  The
@@ -141,7 +145,7 @@ upgrades.
 	portupgrade anjuta
 
 20080714:
-  AFFECTS: Users of www/squid
+  AFFECTS: users of www/squid
   AUTHOR: Thomas-Martin Seck <tmseck@web.de>
 
   www/squid has been updated to Squid 2.7.STABLE3.
@@ -698,7 +702,7 @@ upgrades.
     # portmaster gstreamer-plugins-good
 
 20080323:
-  AFFECTS: All GNOME users and ports depend on gnomehier
+  AFFECTS: all GNOME users and ports depend on gnomehier
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.22.0.  You have to deinstall a few ports first
@@ -1111,7 +1115,7 @@ upgrades.
   actually anything using it).
 
 20071024:
-  AFFECTS: All GNOME users and ports depend on misc/gnomehier
+  AFFECTS: all GNOME users and ports depend on misc/gnomehier
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.20.1. All ports that depend on gnomehier have
@@ -2537,14 +2541,14 @@ upgrades.
   All 3 milters change their default user to "mailnull".
 
 20061108:
-  AFFECTS: Users of databases/postgresql*-server
+  AFFECTS: users of databases/postgresql*-server
   AUTHOR: Palle Girgensohn <girgen@FreeBSD.org>
 
   With the latest patch release of the PostgreSQL ports, the rc script
   is renamed `postgresql'.
 
 20061106:
-  AFFECTS: Users of net/freeradius
+  AFFECTS: users of net/freeradius
   AUTHOR: David Wood <david@wood2.org.uk>
 
   FreeBSD used to patch FreeRADIUS's rlm_mschap.c to strip all domain names
@@ -2608,7 +2612,7 @@ upgrades.
   - New feature: GSSAPI support.
 
 20061101:
-  AFFECTS: Users of mail/dovecot
+  AFFECTS: users of mail/dovecot
   AUTHOR: shaun@FreeBSD.org
 
   Dovecot now requires the mail root to be set explicitly in the
@@ -2622,7 +2626,7 @@ upgrades.
   http://dovecot.org/list/dovecot-news/2006-October/000016.html
 
 20061031:
-  AFFECTS: Users of math/rkward
+  AFFECTS: users of math/rkward
   AUTHOR: thierry@FreeBSD.org
 
   The way some information such as descriptive labels is stored in the
@@ -2634,7 +2638,7 @@ upgrades.
   in the RKWard R console after loading the workspace in question.
 
 20061031:
-  AFFECTS: Users of news/inn-current or news/inn-stable
+  AFFECTS: users of news/inn-current or news/inn-stable
   AUTHOR: shaun@FreeBSD.org
 
   The stable and current ports of inn have been updated. They suffered
@@ -2645,7 +2649,7 @@ upgrades.
   erased.
 
 20061014:
-  AFFECTS: All GTK+2 and GNOME users
+  AFFECTS: all GTK+2 and GNOME users
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.16. All GTK+2 and GNOME components have
