@@ -18923,6 +18923,7 @@ sam2p                           ports/graphics/sam2p
 samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
 samba-pdbsql                    ports/net/samba-pdbsql
+samba-smbclient			ports/net/samba-smbclient
 samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
 samba4wins                      ports/net/samba4wins
