@@ -32,6 +32,8 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${LOCALBASE}/share/opera/plugins/libnpp.so:${PORTSDIR}/www/opera
 
+BROKEN=		does not build
+
 OPERA_VER=	9.21
 OPERA_MINVER=
 OPERA_REL=	final
