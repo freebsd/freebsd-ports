@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080804:
+  AFFECTS: Users of devel/git
+  AUTHOR: wxs@FreeBSD.org
+
+  Git's cvsps dependency has been switched from cvsps-devel to cvsps.  The
+  two are incompatible, so you will need to do the following before
+  upgrading git:
+
+	portmaster -o devel/cvsps devel/cvsps-devel
+
 20080728:
   AFFECTS: users of net/freeradius2
   AUTHOR: David Wood <david@wood2.org.uk>
