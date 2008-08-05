@@ -1,5 +1,5 @@
 Deco is a Un*x script able to extract various archive file formats.
 Supported archive formats: 7z, ace, ar, arc, arj, bz2, cab, cpio, deb,
-flac, gz, jar, lha, lzma, rar, rpm, tar, zip, zoo.
+flac, gz, jar, lha, lzma, lzo, rar, rpm, tar, zip, zoo.
 
 WWW: http://hartlich.com/deco/
