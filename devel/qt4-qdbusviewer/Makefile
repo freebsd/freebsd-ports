@@ -8,7 +8,7 @@
 
 PORTNAME=	qdbusviewer
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -26,32 +26,32 @@ QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-	--exclude '${DISTNAME}/demos' --exclude '${DISTNAME}/examples' \
-	--exclude '${DISTNAME}/src/opengl' --exclude '${DISTNAME}/src/sql' \
-	--exclude '${DISTNAME}/src/tools/moc' --exclude '${DISTNAME}/src/tools/rcc' \
-	--exclude '${DISTNAME}/src/tools/uic3' --exclude '${DISTNAME}/tools/designer' \
-	--exclude '${DISTNAME}/tools/linguist' --exclude '${DISTNAME}/tools/porting' \
-	--exclude '${DISTNAME}/tools/qtconfig' --exclude '${DISTNAME}/tools/qvfb'
-WRKSRC=		${WRKDIR}/${DISTNAME}/tools/qdbus/tools/qdbusviewer
-CONFIGURE_WRKSRC=${WRKSRC}/../../../..
+
+DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
+		src/network src/opengl src/phonon \
+		src/qt3support src/script src/sql src/svg src/testlib \
+		src/tools src/xmlpatterns src/3rdparty/clucene \
+		src/3rdparty/kdebase src/3rdparty/kdelibs src/3rdparty/webkit
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
+.for dne in ${DO_NOT_EXTRACT}
+EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
+.endfor
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/tools/qdbus/qdbusviewer
+CONFIGURE_WRKSRC=${WRKSRC}/../../..
 
 .include <bsd.port.pre.mk>
 
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
-		${WRKSRC}/qdbusviewer.pro
-	${MKDIR} ${WRKSRC}/../../../../mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../../../bin/rcc
+	${MKDIR} ${WRKSRC}/../../../mkspecs
+	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../../bin/rcc
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,51 @@
+--- configure.orig	2008-04-28 17:11:12.000000000 +0400
++++ configure	2008-06-15 11:00:20.000000000 +0400
+@@ -1887,12 +1887,6 @@
+         chmod 755 "$outpath/bin/syncqt"
+     fi
+ 
+-    # symlink the mkspecs directory
+-    mkdir -p "$outpath/mkspecs"
+-    rm -f "$outpath"/mkspecs/*
+-    ln -s "$relpath"/mkspecs/* "$outpath/mkspecs"
+-    rm -f "$outpath/mkspecs/default"
+-
+     # symlink the doc directory
+     rm -rf "$outpath/doc"
+     ln -s "$relpath/doc" "$outpath/doc"
+@@ -1931,7 +1925,7 @@
+ # find a make command
+ if [ -z "$MAKE" ]; then
+     MAKE=
+-    for mk in gmake make; do
++    for mk in make; do
+         if "$WHICH" $mk >/dev/null 2>&1; then
+             MAKE=`$WHICH $mk`
+             break
+@@ -3791,7 +3785,7 @@
+ }
+ 
+ # build qmake
+-if true; then ###[ '!' -f "$outpath/bin/qmake" ];
++if false; then ###[ '!' -f "$outpath/bin/qmake" ];
+     echo "Creating qmake. Please wait..."
+ 
+     OLD_QCONFIG_H=
+@@ -6309,7 +6303,7 @@
+ if [ -f "${relpath}/projects.pro" ]; then
+     mkfile="${outpath}/Makefile"
+     [ -f "$mkfile" ] && chmod +w "$mkfile"
+-    QTDIR="$outpath" "$outpath/bin/qmake" -spec "$XQMAKESPEC" "${relpath}/projects.pro" -o "$mkfile"
++    QTDIR="$outpath" qmake-qt4 -spec "$XQMAKESPEC" "${relpath}/projects.pro" -o "$mkfile"
+ fi
+ 
+ # .projects      -> projects to process
+@@ -6482,7 +6476,7 @@
+             echo "  for $a\c"
+         fi
+ 
+-        QMAKE="$outpath/bin/qmake"
++        QMAKE="qmake-qt4"
+ 	QMAKE_ARGS="$QMAKE_SWITCHES $QMAKE_SPEC_ARGS"
+         if [ "$file" = ".projects.3" ]; then
+             if echo '\c' | grep '\c' >/dev/null; then
