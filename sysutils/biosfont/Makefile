@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	biosfont
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
-# only platform guraranteed to be ok, feedback/patches are welcome
-ONLY_FOR_ARCHS=	i386
+# only platforms guraranteed to be ok, feedback/patches are welcome
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAN4=		biosfont.4
 
