@@ -645,6 +645,7 @@
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
+    SUBDIR += qca-ossl
     SUBDIR += qca-tls
     SUBDIR += qident
     SUBDIR += qtfw

@@ -1,0 +1,4 @@
+lib/qt4/plugins/crypto/libqca-ossl.so
+lib/qt4/plugins/crypto/libqca-ossl.so.debug
+@dirrmtry %%QT_PLUGINDIR%%/crypto
+@dirrmtry %%QT_PLUGINDIR%%
