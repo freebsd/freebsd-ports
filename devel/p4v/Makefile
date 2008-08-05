@@ -17,6 +17,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Visual client for Perforce SCM
 
+BROKEN=		does not build
 NO_CDROM=	Binary redistribution restrictions in effect
 RESTRICTED=	${NO_CDROM}
 
