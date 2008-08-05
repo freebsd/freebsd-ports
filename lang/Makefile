@@ -349,5 +349,6 @@
     SUBDIR += yabasic
     SUBDIR += yorick
     SUBDIR += yorick-doc
+    SUBDIR += ypsilon
 
 .include <bsd.port.subdir.mk>
