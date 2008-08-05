@@ -44,7 +44,6 @@ USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR}
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
-RESTRICTED=	Unsure of the license of djb software
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
