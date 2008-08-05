@@ -10,11 +10,13 @@ lib/seed7/bigrat.s7i
 lib/seed7/cards.s7i
 lib/seed7/cgi.s7i
 lib/seed7/charsets.s7i
+lib/seed7/chartype.s7i
 lib/seed7/complex.s7i
 lib/seed7/dialog.s7i
 lib/seed7/dir.s7i
 lib/seed7/draw.s7i
 lib/seed7/echo.s7i
+lib/seed7/encoding.s7i
 lib/seed7/field.s7i
 lib/seed7/float.s7i
 lib/seed7/getf.s7i
@@ -63,6 +65,7 @@ lib/seed7/wrinum.s7i
 %%PORTDOCS%%%%DOCSDIR%%/robodoc.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LGPL
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/files.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addup.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bas7.sd7

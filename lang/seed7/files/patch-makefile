@@ -14,32 +14,3 @@
  # LFLAGS = -pg
  # LFLAGS = -pg -lc_p
  # LIBS = /usr/Xlib/libX11.so -lncurses -lm
-@@ -80,7 +80,6 @@
- 
- hi: $(OBJ) $(COMPILER_LIB) $(COMP_DATA_LIB) $(SEED7_LIB)
- 	$(CC) $(LFLAGS) $(OBJ) $(COMPILER_LIB) $(COMP_DATA_LIB) $(SEED7_LIB) $(LIBS) -o hi
--	$(MAKE) ../prg/hi
- 	./hi level
- #	cp hi /usr/local/bin/hi
- 
-@@ -177,16 +176,16 @@
- 	$(CC) $(CFLAGS) -c hi.c
- 
- depend: a_depend b_depend c_depend version.h
--	$(CC) -M $(SRC) > depend
-+	$(CC) -M ${CFLAGS} $(SRC) > depend
- 
- a_depend: version.h
--	$(CC) -M $(SEED7_LIB_SRC) > a_depend
-+	$(CC) -M ${CFLAGS} $(SEED7_LIB_SRC) > a_depend
- 
- b_depend: version.h
--	$(CC) -M $(COMP_DATA_LIB_SRC) > b_depend
-+	$(CC) -M ${CFLAGS} $(COMP_DATA_LIB_SRC) > b_depend
- 
- c_depend: version.h
--	$(CC) -M $(COMPILER_LIB_SRC) > c_depend
-+	$(CC) -M ${CFLAGS} $(COMPILER_LIB_SRC) > c_depend
- 
- level.h:
- 	hi level
