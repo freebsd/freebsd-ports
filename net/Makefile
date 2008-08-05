@@ -819,6 +819,7 @@
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-pdbsql
+    SUBDIR += samba-smbclient
     SUBDIR += samba3
     SUBDIR += samba4wins
     SUBDIR += sambasentinel
