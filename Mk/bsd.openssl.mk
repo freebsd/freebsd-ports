@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.38 2008-03-30 11:38:02 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.39 2008-08-05 09:33:07 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -121,11 +121,14 @@ OPENSSL_SHLIBVER?=	3
 	exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
 # find installed port and use it for dependency
 PKG_DBDIR?=		${DESTDIR}/var/db/pkg
-OPENSSL_INSTALLED!=	grep -l -r "^lib/libssl.so." "${PKG_DBDIR}" | \
+.if !defined(OPENSSL_INSTALLED)
+OPENSSL_INSTALLED!=	find "${PKG_DBDIR}" -type f -name "+CONTENTS" -print0 | \
+			xargs -0 grep -l "^lib/libssl.so." | \
 			while read contents; do \
 				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
 				if test "$${sslprefix}" = "@cwd ${LOCALBASE}" ; then \
 					echo "$${contents}"; break; fi; done
+.endif
 OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
 OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
