@@ -35,11 +35,12 @@ MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
 		LIBS="-L${OPENSSLLIB} \
 		-lssl -lcrypto -lncurses -lcrypt -lutil -lm"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800037 && ${ARCH} == "amd64"
-BROKEN=		does not compile on amd64
-.endif
+post-patch:
+# FreeBSD has hexdump(3) in libutil, which conflicts with local macro
+	@${REINPLACE_CMD} -E 's,([[:blank:]])(hexdump),\1__\2,' \
+		${WRKSRC}/ck_crp.c ${WRKSRC}/ckcdeb.h ${WRKSRC}/ckcftp.c \
+		${WRKSRC}/ckcnet.c ${WRKSRC}/ckctel.c ${WRKSRC}/ckuath.c \
+		${WRKSRC}/ckutio.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
@@ -58,4 +59,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLESDIR}/dot.mykermrc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
