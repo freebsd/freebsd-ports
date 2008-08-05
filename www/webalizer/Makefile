@@ -108,7 +108,12 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 .if ${WEBALIZER_LANG} == japanese
 EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
 .endif
+.if ${WEBALIZER_LANG} == ukrainian
+EXTRA_PATCHES+=		${FILESDIR}/uk-lang.h
+EXTRA_PATCHES+=		${FILESDIR}/uk-output.c
 .endif
+.endif
+
 
 .if defined(WITH_WEBALIZER_CONV)
 USE_ICONV=yes
