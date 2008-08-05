@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		leaves files behind on deinstall
+
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	networkx
