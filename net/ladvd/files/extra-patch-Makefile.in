@@ -1,0 +1,44 @@
+--- Makefile.in.old	2008-08-03 21:36:15.000000000 -0300
++++ Makefile.in	2008-08-03 21:47:09.000000000 -0300
+@@ -162,7 +162,6 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = src
+-dist_doc_DATA = LICENSE doc/ChangeLog doc/README
+ dist_man_MANS = doc/ladvd.8
+ EXTRA_DIST = debian
+ all: all-recursive
+@@ -247,15 +246,6 @@
+ 	  echo " rm -f '$(DESTDIR)$(man8dir)/$$inst'"; \
+ 	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
+ 	done
+-install-dist_docDATA: $(dist_doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	@list='$(dist_doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	done
+ 
+ uninstall-dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -593,7 +583,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docDATA install-man
++install-data-am: install-man
+ 
+ install-exec-am:
+ 
+@@ -634,7 +624,7 @@
+ 	distclean-generic distclean-recursive distclean-tags \
+ 	distcleancheck distdir distuninstallcheck dvi dvi-am html \
+ 	html-am info info-am install install-am install-data \
+-	install-data-am install-dist_docDATA install-exec \
++	install-data-am install-exec \
+ 	install-exec-am install-info install-info-am install-man \
+ 	install-man8 install-strip installcheck installcheck-am \
+ 	installdirs installdirs-am maintainer-clean \

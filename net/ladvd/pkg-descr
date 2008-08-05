@@ -1,0 +1,4 @@
+ladvd is a minimal link layer advertisement sender which supports the
+CDP and LLDP packet formats.
+
+WWW: http://www.blinkenlights.nl/software/ladvd/
