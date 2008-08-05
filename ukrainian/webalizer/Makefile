@@ -12,9 +12,6 @@ MAINTAINER=	mikef@LITech.lviv.ua
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/ukrainian/gd
 
-BROKEN=		does not patch
-
 WEBALIZER_LANG=	ukrainian
-EXTRA_PATCHES+=	${.CURDIR}/files/patch-ba ${.CURDIR}/files/patch-bb
 
 .include "${MASTERDIR}/Makefile"
