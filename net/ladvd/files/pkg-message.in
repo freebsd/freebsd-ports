@@ -1,0 +1,7 @@
+*******************************************************************
+ If you want to run ladvd at startup you'll need the following
+ line in /etc/rc.conf(.local):
+
+    ladvd_enable="YES"
+
+*******************************************************************
