@@ -1,0 +1,46 @@
+--- Makefile.orig	2008-08-01 04:39:41.000000000 +0300
++++ Makefile	2008-08-02 22:01:30.000000000 +0300
+@@ -3,13 +3,11 @@
+ #   Use Win32 native build for Cygwin
+ #
+ 
+-PROG 	 = ypsilon
++PROG 	 = ${PORTNAME}
+ 
+-PREFIX 	 = /usr/local
++CPPFLAGS = -DNDEBUG -DDEFAULT_HEAP_LIMIT=32 -DSYSTEM_SHARE_PATH='"${DATADIR}"'
+ 
+-CPPFLAGS = -DNDEBUG -DDEFAULT_HEAP_LIMIT=32 -DSYSTEM_SHARE_PATH='"$(PREFIX)/share/$(PROG)"'
+-
+-CXXFLAGS = -x c++ -pthread -msse -mfpmath=sse -O3 -fstrict-aliasing \
++CXXFLAGS = -x c++ ${CFLAGS} \
+ 	   -fomit-frame-pointer -momit-leaf-frame-pointer \
+ 	   -fno-align-labels -fno-align-loops -fno-align-jumps
+ 
+@@ -25,6 +23,18 @@
+ 
+ UNAME 	 = $(shell uname)
+ 
++ifneq (, $(findstring FreeBSD, $(UNAME)))
++  ifeq ($(shell $(CXX) -dumpspecs | grep 'march=native')), )
++    CXXFLAGS += -m32 -march=i386
++  else
++    CXXFLAGS += -m32# -march=native
++  endif
++  CPPFLAGS += -D__LITTLE_ENDIAN__
++  ASFLAGS = --32
++  LDFLAGS = -m32 ${PTHREAD_LIBS}
++  SRCS += ffi_stub_linux.s
++endif
++
+ ifneq (, $(findstring Linux, $(UNAME)))
+   ifeq ($(shell $(CXX) -dumpspecs | grep 'march=native')), )
+     CXXFLAGS += -m32 -march=i686
+@@ -48,7 +58,6 @@
+ .PHONY: all install uninstall sitelib stdlib check bench clean
+ 
+ all: $(PROG)
+-	@mkdir -p -m755 $(HOME)/.ypsilon
+ 
+ $(PROG): $(OBJS)
+ 	$(CXX) $(LDFLAGS) -o $@ $^
