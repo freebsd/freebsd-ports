@@ -1,5 +1,14 @@
---- Makefile.in.orig	Tue Jun 19 19:11:39 2007
-+++ Makefile.in	Mon Oct 15 03:26:15 2007
+--- Makefile.in.orig	2008-07-10 21:17:14.000000000 +0200
++++ Makefile.in	2008-08-05 02:06:03.000000000 +0200
+@@ -91,7 +91,7 @@
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+ LOGFILEBASE = @logfilebase@
+-CONFIGFILE = $(CONFIGDIR)/smb.conf
++CONFIGFILE = $(CONFIGDIR)/%%SAMBA_CONFIG%%
+ LMHOSTSFILE = $(CONFIGDIR)/lmhosts
+ 
+ # This is where smbpasswd et al go
 @@ -424,6 +424,7 @@
  VFS_HPUXACL_OBJ = modules/vfs_hpuxacl.o
  VFS_IRIXACL_OBJ = modules/vfs_irixacl.o

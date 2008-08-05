@@ -39,7 +39,7 @@ SAMBA_SWATDIR=		${PREFIX}/share/swat
 SAMBA_PRIVATE?=		${PREFIX}/private
 SAMBA_CONFDIR?=		${PREFIX}/etc
 SAMBA_PRIVATEDIR?=	${SAMBA_CONFDIR}/samba
-SAMBA_CONFIG=		smb.conf
+SAMBA_CONFIG?=		smb.conf
 SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
@@ -216,7 +216,7 @@ CONFIGURE_ARGS+=	--disable-fam
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-IGNORE=			ACL support requires 5.1-RELEASE or later. Disable ACL support
+IGNORE=			an ACL support requires 5.1-RELEASE or later. Disable ACL support
 .endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
@@ -225,7 +225,7 @@ CONFIGURE_ARGS+=	--without-acl-support
 
 .if defined(WITH_AIO_SUPPORT)
 .if ${OSVERSION} < 700055
-IGNORE=			AIO support requires 7.0-RELEASE or later. Disable AIO support
+IGNORE=			an AIO support requires 7.0-RELEASE or later. Disable AIO support
 .endif
 CONFIGURE_ARGS+=	--with-aio-support
 .else
@@ -262,6 +262,16 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--without-included-popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
+.endif
+
+.if defined(WITH_SMBTORTURE)
+PLIST_SUB+=		SMBTORTURE=""
+.else
+PLIST_SUB+=		SMBTORTURE="@comment "
+.endif
+
+.if defined(WITH_SMBTORTURE4_PATH) && exists(${WITH_SMBTORTURE4_PATH})
+CONFIGURE_ARGS+=	--with-smbtorture4-path=${WITH_SMBTORTURE4_PATH}
 .endif
 # !SAMBA_SUBPORT
 .endif
@@ -300,18 +310,12 @@ CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if defined(WITH_SMBTORTURE)
-PLIST_SUB+=		SMBTORTURE=""
-.else
-PLIST_SUB+=		SMBTORTURE="@comment "
-.endif
+post-patch:
+		@${REINPLACE_CMD} -e 's/%%SAMBA_CONFIG%%/${SAMBA_CONFIG}/' \
+		    ${WRKSRC}/Makefile.in
 
-.if defined(WITH_SMBTORTURE4_PATH) && exists(${WITH_SMBTORTURE4_PATH})
-CONFIGURE_ARGS+=	--with-smbtorture4-path=${WITH_SMBTORTURE4_PATH}
-.endif
-
+# Samba server only
 .if !defined(SAMBA_SUBPORT)
-# Samba server itself
 MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
@@ -395,12 +399,14 @@ pre-everything::
 	    ${ECHO_CMD} ""; \
 	fi
 
+.if defined(OPTIONS)
 pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
 	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
 	@${ECHO_MSG} "===>  -------------------------------------------"
+.endif
 
-post-patch:
+pre-configure:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/LDAP/smbldap-tools-*
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libmsrpc
@@ -440,7 +446,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/pam_smbpass
 	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* "${EXAMPLESDIR}/pam_smbpass"
 .endif
-	${CP} -p "${WRKDIR}/${SAMBA_CONFIG}.sample" "${EXAMPLESDIR}"
+	${INSTALL_DATA} "${WRKDIR}/smb.conf.sample" "${EXAMPLESDIR}/${SAMBA_CONFIG}.sample"
 	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
 # Winbind
 .if !defined(WITHOUT_WINBIND)
@@ -487,10 +493,10 @@ post-install:
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-# !SAMBA_SUBPORT
-.endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
+# !SAMBA_SUBPORT
+.endif
 
 .include <bsd.port.post.mk>
