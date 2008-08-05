@@ -1,0 +1,15 @@
+--- Makefile.in.old	2008-08-03 20:41:13.000000000 -0300
++++ Makefile.in	2008-08-03 20:45:36.000000000 -0300
+@@ -316,12 +316,6 @@
+ 	$(INSTALL) -d $(BUILD_ROOT)$(libdir)/$(PACKAGE)
+ 	$(INSTALL) -m 755 $(LIB:%=lib/%) $(BUILD_ROOT)$(libdir)/$(PACKAGE)/
+ 
+-	$(INSTALL) -d $(BUILD_ROOT)$(docdir)/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 doc/README					\
+-		   $(BUILD_ROOT)$(docdir)/$(PACKAGE)-$(VERSION)/
+-	$(INSTALL) -m 644 doc/quilt.pdf doc/README.MAIL			\
+-		   $(BUILD_ROOT)$(docdir)/$(PACKAGE)-$(VERSION)/
+-
+ 	$(INSTALL) -d $(BUILD_ROOT)$(mandir)/man1
+ 	$(INSTALL) -m 644 $(MAN1) $(BUILD_ROOT)$(mandir)/man1/
+ 

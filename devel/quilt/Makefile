@@ -7,7 +7,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.46
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed --without-getopt --with-patch=${LOCALBASE}/bin/gpatch
 
 MAN1=		guards.1 quilt.1
-PORTDOCS=	README* quilt.pdf
+DOCS=		README README.MAIL quilt.pdf
 
 .include <bsd.port.pre.mk>
 
@@ -52,10 +52,8 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/quilt.quiltrc ]; then \
-		${CP} ${PREFIX}/etc/quilt.quiltrc.sample \
-			${PREFIX}/etc/quilt.quiltrc ; \
-	fi
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
