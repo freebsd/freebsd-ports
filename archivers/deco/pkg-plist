@@ -3,6 +3,7 @@ bin/deco
 %%DATADIR%%/a/extract
 %%DATADIR%%/ace|[c0-9][0-9][0-9]/extract
 %%DATADIR%%/ace|[c0-9][0-9][0-9]/permissions
+%%DATADIR%%/alz/extract
 %%DATADIR%%/ape/extract
 %%DATADIR%%/ar
 %%DATADIR%%/arc/extract
@@ -22,6 +23,7 @@ bin/deco
 %%DATADIR%%/lha/extract
 %%DATADIR%%/lzh
 %%DATADIR%%/lzma/extract
+%%DATADIR%%/lzo/extract
 %%DATADIR%%/odc
 %%DATADIR%%/odf
 %%DATADIR%%/odg
@@ -71,6 +73,7 @@ bin/deco
 @dirrm %%DATADIR%%/shn
 @dirrm %%DATADIR%%/rpm
 @dirrm %%DATADIR%%/rar|[rst][0-9][0-9]
+@dirrm %%DATADIR%%/lzo
 @dirrm %%DATADIR%%/lzma
 @dirrm %%DATADIR%%/lha
 @dirrm %%DATADIR%%/gz
@@ -82,6 +85,7 @@ bin/deco
 @dirrm %%DATADIR%%/arj
 @dirrm %%DATADIR%%/arc
 @dirrm %%DATADIR%%/ape
+@dirrm %%DATADIR%%/alz
 @dirrm %%DATADIR%%/ace|[c0-9][0-9][0-9]
 @dirrm %%DATADIR%%/a
 @dirrm %%DATADIR%%/7z
