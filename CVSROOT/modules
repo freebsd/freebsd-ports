@@ -5094,6 +5094,7 @@ iaikpkcs11wrapper               ports/security/iaikpkcs11wrapper
 iat                             ports/sysutils/iat
 iaxmodem                        ports/net/iaxmodem
 ib-kmod                         ports/comms/ib-kmod
+ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
 ical                            ports/deskutils/ical
 ical2html                       ports/converters/ical2html
@@ -6628,6 +6629,7 @@ labrea                          ports/security/labrea
 lacheck                         ports/textproc/lacheck
 ladder                          ports/games/ladder
 ladspa                          ports/audio/ladspa
+ladvd                           ports/net/ladvd
 lafontaine                      ports/lang/lafontaine
 lagan                           ports/biology/lagan
 lamarc                          ports/biology/lamarc
@@ -17914,6 +17916,7 @@ qar-bufo                        ports/mail/qar-bufo
 qbittorrent                     ports/net-p2p/qbittorrent
 qbrew                           ports/misc/qbrew
 qca                             ports/devel/qca
+qca-ossl                        ports/security/qca-ossl
 qca-tls                         ports/security/qca-tls
 qcad                            ports/cad/qcad
 qcad-partslib                   ports/cad/qcad-partslib
@@ -18025,10 +18028,14 @@ qt33                            ports/x11-toolkits/qt33
 qt4                             ports/devel/qt4
 qt4-accessible                  ports/accessibility/qt4-accessible
 qt4-assistant                   ports/devel/qt4-assistant
+qt4-assistant-adp               ports/devel/qt4-assistant-adp
+qt4-clucene                     ports/textproc/qt4-clucene
 qt4-corelib                     ports/devel/qt4-corelib
 qt4-designer                    ports/devel/qt4-designer
 qt4-doc                         ports/misc/qt4-doc
 qt4-gui                         ports/x11-toolkits/qt4-gui
+qt4-help                        ports/devel/qt4-help
+qt4-help-tools                  ports/devel/qt4-help-tools
 qt4-ibase-plugin                ports/databases/qt4-ibase-plugin
 qt4-iconengines                 ports/graphics/qt4-iconengines
 qt4-imageformats                ports/graphics/qt4-imageformats
@@ -18042,6 +18049,8 @@ qt4-network                     ports/net/qt4-network
 qt4-odbc-plugin                 ports/databases/qt4-odbc-plugin
 qt4-opengl                      ports/x11/qt4-opengl
 qt4-pgsql-plugin                ports/databases/qt4-pgsql-plugin
+qt4-phonon                      ports/multimedia/qt4-phonon
+qt4-phonon-gst                  ports/multimedia/qt4-phonon-gst
 qt4-pixeltool                   ports/graphics/qt4-pixeltool
 qt4-porting                     ports/devel/qt4-porting
 qt4-qdbusviewer                 ports/devel/qt4-qdbusviewer
@@ -18058,7 +18067,10 @@ qt4-sqlite3-plugin              ports/databases/qt4-sqlite3-plugin
 qt4-svg                         ports/graphics/qt4-svg
 qt4-uic                         ports/devel/qt4-uic
 qt4-uic3                        ports/devel/qt4-uic3
+qt4-webkit                      ports/www/qt4-webkit
 qt4-xml                         ports/textproc/qt4-xml
+qt4-xmlpatterns                 ports/textproc/qt4-xmlpatterns
+qt4-xmlpatterns-tool            ports/textproc/qt4-xmlpatterns-tool
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
 qtfw                            ports/security/qtfw
@@ -19469,6 +19481,7 @@ sonata                          ports/audio/sonata
 sonice                          ports/audio/sonice
 sonytv                          ports/misc/sonytv
 soothsayer                      ports/textproc/soothsayer
+soprano                         ports/textproc/soprano
 sopwith                         ports/games/sopwith
 soqt                            ports/x11-toolkits/soqt
 sortmail                        ports/mail/sortmail
@@ -19760,6 +19773,7 @@ streamripper                    ports/audio/streamripper
 streamtranscoder                ports/audio/streamtranscoder
 streamtuner                     ports/audio/streamtuner
 stress                          ports/sysutils/stress
+strigi                          ports/deskutils/strigi
 stringencoders                  ports/devel/stringencoders
 strobe                          ports/security/strobe
 stroq                           ports/games/stroq
@@ -22355,6 +22369,7 @@ yorick                          ports/lang/yorick
 yorick-doc                      ports/lang/yorick-doc
 yould                           ports/textproc/yould
 youtube_dl                      ports/www/youtube_dl
+ypsilon                         ports/lang/ypsilon
 yptransitd                      ports/net/yptransitd
 ysm                             ports/net-im/ysm
 ytalk                           ports/net/ytalk
