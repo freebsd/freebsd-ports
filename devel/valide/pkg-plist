@@ -1,0 +1,29 @@
+bin/valide
+share/pixmaps/valide/icone-16.xpm
+share/pixmaps/valide/icone-32.xpm
+share/pixmaps/valide/icone-48.xpm
+share/pixmaps/valide/icone-64.xpm
+share/pixmaps/valide/logo.png
+share/pixmaps/valide/pref-general.png
+share/pixmaps/valide/pref-pkg.png
+%%DATADIR%%/template/cmd/icon.png
+%%DATADIR%%/template/cmd/main.vala
+%%DATADIR%%/template/cmd/template.xml
+%%DATADIR%%/template/empty/icon.png
+%%DATADIR%%/template/empty/template.xml
+%%DATADIR%%/template/gnome/icon.png
+%%DATADIR%%/template/gnome/main.vala
+%%DATADIR%%/template/gnome/template.xml
+%%DATADIR%%/template/gtk/icon.png
+%%DATADIR%%/template/gtk/main.vala
+%%DATADIR%%/template/gtk/template.xml
+%%DATADIR%%/valide-ui.xml
+%%DATADIR%%/COPYING
+@dirrm %%DATADIR%%/template/cmd
+@dirrm %%DATADIR%%/template/empty
+@dirrm %%DATADIR%%/template/gnome
+@dirrm %%DATADIR%%/template/gtk
+@dirrm %%DATADIR%%/template
+@dirrm %%DATADIR%%
+@dirrm share/pixmaps/valide
+@dirrmtry lib/locale
