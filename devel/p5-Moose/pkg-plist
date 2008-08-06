@@ -1,18 +1,23 @@
 %%SITE_PERL%%/Moose.pm
 %%SITE_PERL%%/Moose/Cookbook.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe1.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe10.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe2.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe3.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe4.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe5.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe6.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe7.pod
+%%SITE_PERL%%/Moose/Cookbook/Basics/Recipe9.pod
+%%SITE_PERL%%/Moose/Cookbook/Extending/Recipe1.pod
+%%SITE_PERL%%/Moose/Cookbook/Extending/Recipe2.pod
 %%SITE_PERL%%/Moose/Cookbook/FAQ.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe1.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe11.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe2.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe3.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe4.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe5.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe6.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe7.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe9.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe10.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe21.pod
-%%SITE_PERL%%/Moose/Cookbook/Recipe22.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe1.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe2.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe3.pod
+%%SITE_PERL%%/Moose/Cookbook/Meta/Recipe4.pod
+%%SITE_PERL%%/Moose/Cookbook/Roles/Recipe1.pod
+%%SITE_PERL%%/Moose/Cookbook/Roles/Recipe2.pod
 %%SITE_PERL%%/Moose/Cookbook/Snack/Keywords.pod
 %%SITE_PERL%%/Moose/Cookbook/Snack/Types.pod
 %%SITE_PERL%%/Moose/Cookbook/Style.pod
@@ -67,5 +72,9 @@
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Method
 @dirrmtry %%SITE_PERL%%/Moose/Meta
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook/Snack
+@dirrmtry %%SITE_PERL%%/Moose/Cookbook/Roles
+@dirrmtry %%SITE_PERL%%/Moose/Cookbook/Meta
+@dirrmtry %%SITE_PERL%%/Moose/Cookbook/Extending
+@dirrmtry %%SITE_PERL%%/Moose/Cookbook/Basics
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook
 @dirrmtry %%SITE_PERL%%/Moose
