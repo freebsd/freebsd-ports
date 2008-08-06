@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
