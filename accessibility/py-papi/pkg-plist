@@ -7,7 +7,9 @@ include/%%PYTHON_VERSION%%/papi/papi_msaa.h
 %%PYTHON_SITELIBDIR%%/papi/atk.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkaction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkapplication.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkcapi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msaaapplication.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msaacapi.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/papi
 @dirrm include/%%PYTHON_VERSION%%/papi
