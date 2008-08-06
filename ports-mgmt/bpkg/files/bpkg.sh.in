@@ -309,10 +309,25 @@ pkg_path()
 pkg_makefile()
 {
 	path=`cd /usr/ports && make search path=/$pkg$ | grep -w Path | \
-	    cut -d/ -f4,5`
+	    sed -n 1p | cut -d/ -f4,5`
 	[ -z "$path" ] && echo "bpkg: can't find the port in /usr/ports/"
 
 	less /usr/ports/$path/Makefile 2>/dev/null
+	exit 0
+}
+
+pkg_distinfo()
+{
+	path=`cd /usr/ports && make search path=/$pkg$ | grep -w Path | \
+	    sed -n 1p | cut -d/ -f4,5`
+	[ -z "$path" ] && echo "bpkg: can't find the port in /usr/ports/"
+
+	for e in `cat /usr/ports/$path/distinfo 2>/dev/null | grep SIZE | \
+	    cut -d'=' -f2`; do
+		echo "`cat /usr/ports/$path/distinfo | grep $e | \
+		    sed 's/SIZE// ; s/(// ; s/)//' | \
+			cut -d' ' -f2` `convert $e`"
+	done
 	exit 0
 }
 
@@ -365,9 +380,23 @@ pkg_ftp()
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
-	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/"
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/ < /tmp/bpkg.tmp
-	rm /tmp/bpkg.tmp
+	cat /tmp/bpkg.tmp | sed s/[0-9][0-9].*/*/ > /tmp/bpkg1.tmp
+
+	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/"
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
+
+	n=1
+	for e in `cat /tmp/bpkg2.tmp | awk '{print $9}' | cut -d. -f1`; do
+		size_pkg=`cat /tmp/bpkg2.tmp | sed '/^[A-Z]/d' | \
+		    sed -n ${n}p | awk '{print $11}' | cut -d/ -f3`
+		size=`cat /tmp/bpkg3.tmp | grep $size_pkg | awk '{print $5}'`
+		mtime=`cat /tmp/bpkg3.tmp | grep $size_pkg | \
+		    awk '{print $6, $7, $8}'` 
+		echo "$e -> $size_pkg `convert $size` [$mtime]"
+		n=`expr $n + 1`
+	done
+	rm /tmp/bpkg*.tmp
 	exit 0
 }
 
@@ -378,9 +407,23 @@ pkg_latestftp()
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
+	cat /tmp/bpkg.tmp | sed s/[0-9][0-9].*/*/ > /tmp/bpkg1.tmp
+
 	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/"
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/ < /tmp/bpkg.tmp
-	rm /tmp/bpkg.tmp
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
+
+	n=1
+	for e in `cat /tmp/bpkg2.tmp | awk '{print $9}' | cut -d. -f1`; do
+		size_pkg=`cat /tmp/bpkg2.tmp | sed '/^[A-Z]/d' | \
+		    sed -n ${n}p | awk '{print $11}' | cut -d/ -f3`
+		size=`cat /tmp/bpkg3.tmp | grep $size_pkg | awk '{print $5}'`
+		mtime=`cat /tmp/bpkg3.tmp | grep $size_pkg | \
+		    awk '{print $6, $7, $8}'` 
+		echo "$e -> $size_pkg `convert $size` [$mtime]"
+		n=`expr $n + 1`
+	done
+	rm /tmp/bpkg*.tmp
 	exit 0
 }
 
@@ -566,6 +609,22 @@ make_config()
 		    done
 		fi
 	done
+	exit 0
+}
+
+pkg_freshports()
+{
+	browser=`ls /usr/local/bin/w3m 2>/dev/null || \
+	    ls /usr/local/bin/lynx 2>/dev/null || \
+		ls /usr/local/bin/links 2>/dev/null`
+	if [ -z "$browser" ]; then
+		echo "bpkg: text WWW browser required"
+	else
+		echo "Loading..."
+		path=`cd /usr/ports && make search path=/$pkg | grep -w Path | \
+		    sed -n 1p | cut -d/ -f4,5`
+		$browser http://www.freshports.org/$path
+	fi
 	exit 0
 }
 
@@ -801,12 +860,34 @@ make_ldd_all()
 	exit 0
 }
 
+convert()
+{
+	kilo=$(echo "scale=1; $1/1024" | bc )
+	kiloint=$(echo "$1/1024" | bc )
+
+	mega=$(echo "scale=1; $kilo/1024" | bc )
+	megaint=$(echo "$kilo/1024" | bc )
+
+	giga=$(echo "scale=1; $mega/1024" | bc )
+	gigaint=$(echo "$mega/1024" | bc )
+
+	if [ $kiloint -lt 1 ]; then
+		echo "$1 bytes"
+	elif [ $megaint -lt 1 ]; then
+		echo "${kilo}K"
+	elif [ $gigaint -lt 1 ]; then
+		echo "${mega}M"
+	else
+		echo "${giga}G"
+	fi
+}
+
 help()
 {
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
-	echo "Usage: bpkg [-bdefgiIjkLmMoOpqQrsSwz] pkg-name ..."
-	echo "       bpkg [-cChltvZ]"
+	echo "Usage: bpkg [-bDdeFfgIijkLMmOopQqrSswz] pkg-name ..."
+	echo "       bpkg [-CchltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
 	echo ""
@@ -816,54 +897,58 @@ help()
 # End of functions
 ###############################################################################
 
-while getopts b:d:e:f:g:i:I:j:k:L:m:M:o:O:p:q:Q:r:s:S:w:z:cChltvZ opts; do
+while getopts b:D:d:e:F:f:g:I:i:j:k:L:M:m:O:o:p:Q:q:r:S:s:w:z:CchltvZ opts; do
 	case $opts in
 		b) pkg=$OPTARG
 		   pkg_backup;;
+		D) pkg=$OPTARG
+		   pkg_distinfo;;
 		d) pkg=$OPTARG
 		   pkg_info-x;;
 		e) pkg=$OPTARG
 		   make_config;;
+		F) pkg=$OPTARG
+		   pkg_freshports;;
 		f) pkg=$OPTARG
 		   pkg_info-xf;;
 		g) pkg=$OPTARG
 		   pkg_info-xg;;
-		i) pkg=$OPTARG
-		   make_search;;
 		I) pkg=$OPTARG
 		   pkg_info-xI;;
+		i) pkg=$OPTARG
+		   make_search;;
 		j) pkg=$OPTARG
 		   make_search_info;;
 		k) pkg=$OPTARG
 		   pkg_info-xk;;
 		L) pkg=$OPTARG
 		   pkg_info-xL;;
-		m) pkg=$OPTARG
-		   pkg_makefile;;
 		M) pkg=$OPTARG
 		   pkg_info-xD;;
-		o) pkg=$OPTARG
-		   make_showc;;
+		m) pkg=$OPTARG
+		   pkg_makefile;;
 		O) pkg=$OPTARG
 		   make_rmc;;
+		o) pkg=$OPTARG
+		   make_showc;;
 		p) pkg=$OPTARG
 		   pkg_path;;
-		q) pkg=$OPTARG
-		   pkg_ftp;;
 		Q) pkg=$OPTARG
 		   pkg_latestftp;;
+		q) pkg=$OPTARG
+		   pkg_ftp;;
 		r) pkg=$OPTARG
 		   pkg_info-xr;;
-		s) pkg=$OPTARG
-		   pkg_info-xs;;
 		S) pkg=$OPTARG
 		   make_search_S;;
+		s) pkg=$OPTARG
+		   pkg_info-xs;;
 		w) pkg=$OPTARG
 		   pkg_which-;;
 		z) pkg=$OPTARG
 		   make_ldd;;
-		c) pkg_clean;;
 		C) pkg_clean2;;
+		c) pkg_clean;;
 		h) help;;
 		l) pkg_inf;;
 		t) pkg_time;;

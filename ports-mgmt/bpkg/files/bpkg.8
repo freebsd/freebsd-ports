@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd July 19, 2008
+.Dd August 5, 2008
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -31,10 +31,10 @@
 .Nd a simple tool for displaying information about ports.
 .Sh SYNOPSIS
 .Nm
-.Op Fl bdeEfgiIjkLmMoOpqQrsSwz
+.Op Fl bDdeFfgIijkLMmOopQqrSswz
 .Ar pkg-name ...
 .Nm
-.Op Fl cChltvZ
+.Op Fl CchltvZ
 .Pp
 .Sh DESCRIPTION
 .Nm
@@ -46,15 +46,19 @@ The following command line arguments are supported:
 .Bl -tag -width F1
 .It Fl b
 create backup package in /var/tmp/bpkg/ from a locally installed port.
+.It Fl C
+clean all distfiles in /usr/ports/distfiles/* and also all work directories
+of the ports tree /usr/ports/*/*/work/ [no arguments]
 .It Fl c
 clean all distfiles in /usr/ports/distfiles/* [no arguments]
-.It Fl C
-clean all distfiles in /usr/ports/distfiles/* and also all working directories 
-of the ports tree /usr/ports/*/*/work/ [no arguments]
+.It Fl D
+display size of port's source files.
 .It Fl d
 display description of the port.
 .It Fl e
-configure options for the specified port using dialog(1).
+configure OPTIONS for the specified port.
+.It Fl F
+browse www.freshports.org port's entry. [text WWW browser required]
 .It Fl f
 show the packing list instructions for the port.
 .It Fl g
@@ -70,40 +74,40 @@ display short info about the port (priority - installed ports).
 search the ports tree according to ports' descriptions.
 .It Fl k
 show the deinstall script (if any) for the installed port.
-.It Fl l
-display short info about all installed ports. [no arguments]
 .It Fl L
 show the files within the installed port.
-.It Fl m
-display port's Makefile.
+.It Fl l
+display short info about all installed ports. [no arguments]
 .It Fl M
 show the install-message file for the installed port.
-.It Fl o
-display config options for the specified port.
+.It Fl m
+display port's Makefile.
 .It Fl O
-remove config options for the specified port.
+remove config OPTIONS for the specified port.
+.It Fl o
+display config OPTIONS for the specified port.
 .It Fl p
 search the ports tree and display short info about the port.
-.It Fl q
-show the latest available package in the FreeBSD repository. [-RELEASE]
 .It Fl Q
-show the latest available package in the FreeBSD repository. [-STABLE]
+display the latest available package in the FreeBSD repository. [-STABLE]
+.It Fl q
+display the latest available package in the FreeBSD repository. [-RELEASE]
 .It Fl r
 show the list of all port's dependencies.
-.It Fl s
-show the total size occupied by files installed within the port.
 .It Fl S
 search the ports tree and display info about the port.
+.It Fl s
+show the total size occupied by files installed within the port.
 .It Fl t
 list all installed ports with dates of their installation. [no arguments]
 .It Fl w
 which installed port owns the specified file.
 .It Fl v
 list all installed ports and possible updates. [no arguments]
-.It Fl z
-display dynamic object dependencies for the specified port.
 .It Fl Z
 display all missing dynamic object dependencies. [no arguments] 
+.It Fl z
+display dynamic object dependencies for the specified port.
 .El
 .Sh EXIT STATUS
 .Ex -std
