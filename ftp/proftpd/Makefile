@@ -87,7 +87,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
 		COMB "Include mod_comb (multistream upload)" off \
-		CODECONV "Use charset conversion (mod_codeconv)" off
+		CODECONV "Use charset conversion (possibly broken)" off
 
 MODULES?=
 LIBDIRS?=
