@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Array
-PORTVERSION=	0.14
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Arrays as objects with set operations
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
 
 PERL_MODBUILD=	yes
 
