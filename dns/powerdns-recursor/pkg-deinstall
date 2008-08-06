@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+PDNSUSER=${PDNSUSER:-pdns_recursor}
+PDNSUID=${PDNSUID:-120}
+PDNSGROUP=${PDNSGROUP:-pdns}
+PDNSGID=${PDNSGID:-120}
+
+if pw groupshow "$PDNSGROUP" 2>/dev/null 1>&2; then
+	echo "To delete the PowerDNS group permanently, use 'pw groupdel ${PDNSGROUP}'"
+fi
+
+if pw usershow "$PDNSUSER" 2>/dev/null 1>&2; then
+	echo "To delete the PowerDNS user permanently, use 'pw userdel ${PDNSUSER}'"
+fi
+exit 0

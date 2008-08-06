@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.1.7
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -48,7 +49,6 @@ MAKE_ENV+="LUA_LIBS_CONFIG=-L${LOCALBASE}/lib/lua51/ -llua"
 
 .if defined(WITH_STATIC)
 MAKE_ENV+=STATIC=full
-PLIST_SUB+=	STATIC="@comment "
 .endif
 
 .if exists(/usr/include/ucontext.h)

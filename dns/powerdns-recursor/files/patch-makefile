@@ -8,6 +8,18 @@
  CXXFLAGS:= $(CXXFLAGS) -Wall -DBOOST_SP_DISABLE_THREADS $(OPTFLAGS) $(PROFILEFLAGS)
  CFLAGS:=$(CFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
  LINKCC=$(CXX)
+@@ -41,9 +40,9 @@
+ ifeq ($(STATIC),semi)
+ 	STATICFLAGS=-Wl,-Bstatic -lstdc++ $(LUALIBS) -lgcc -Wl,-Bdynamic -static-libgcc -lm -lc
+ 	LINKCC=$(CC)
+-	LDFLAGS += malloc.o -ldl -lm
++	LDFLAGS += malloc.o -lm
+ else ifeq ($(STATIC),full)
+-	STATICFLAGS=-lstdc++ $(LUALIBS) -ldl -lm -static 
++	STATICFLAGS=-lstdc++ $(LUALIBS) -lm -static 
+ 	LINKCC=$(CC)
+ else
+ 	LDFLAGS += malloc.o $(LUALIBS)
 @@ -54,16 +53,14 @@
  	 fi
  
