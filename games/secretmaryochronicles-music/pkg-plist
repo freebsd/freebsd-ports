@@ -1,0 +1,42 @@
+%%DATADIR%%/music/game/bossbattle_3.ogg
+%%DATADIR%%/music/game/bossbattle_3.txt
+%%DATADIR%%/music/game/courseclear.ogg
+%%DATADIR%%/music/game/courseclear.txt
+%%DATADIR%%/music/game/lost_1.ogg
+%%DATADIR%%/music/game/lost_1.txt
+%%DATADIR%%/music/game/menu.ogg
+%%DATADIR%%/music/game/menu.txt
+%%DATADIR%%/music/game/star.ogg
+%%DATADIR%%/music/game/star.txt
+%%DATADIR%%/music/land/cave_1.ogg
+%%DATADIR%%/music/land/cave_1.txt
+%%DATADIR%%/music/land/cave_2.ogg
+%%DATADIR%%/music/land/cave_2.txt
+%%DATADIR%%/music/land/cave_3.ogg
+%%DATADIR%%/music/land/cave_3.txt
+%%DATADIR%%/music/land/hyper_1.ogg
+%%DATADIR%%/music/land/hyper_1.txt
+%%DATADIR%%/music/land/jungle_1.ogg
+%%DATADIR%%/music/land/jungle_1.txt
+%%DATADIR%%/music/land/land_1.ogg
+%%DATADIR%%/music/land/land_1.txt
+%%DATADIR%%/music/land/land_2.ogg
+%%DATADIR%%/music/land/land_2.txt
+%%DATADIR%%/music/land/land_3.ogg
+%%DATADIR%%/music/land/land_3.txt
+%%DATADIR%%/music/land/land_4.ogg
+%%DATADIR%%/music/land/land_4.txt
+%%DATADIR%%/music/land/land_5.ogg
+%%DATADIR%%/music/land/land_5.txt
+%%DATADIR%%/music/land/water_1.ogg
+%%DATADIR%%/music/land/water_1.txt
+%%DATADIR%%/music/land/waterway_1.ogg
+%%DATADIR%%/music/land/waterway_1.txt
+%%DATADIR%%/music/overworld/land_1.ogg
+%%DATADIR%%/music/overworld/land_1.txt
+%%DATADIR%%/music/story/default_story_1.ogg
+%%DATADIR%%/music/story/default_story_1.txt
+@dirrm %%DATADIR%%/music/story
+@dirrm %%DATADIR%%/music/overworld
+@dirrm %%DATADIR%%/music/land
+@dirrm %%DATADIR%%/music/game
