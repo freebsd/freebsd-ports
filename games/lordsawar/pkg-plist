@@ -3,6 +3,8 @@ bin/lordsawar-army-editor
 bin/lordsawar-editor
 bin/lordsawar-tile-editor
 share/applications/lordsawar.desktop
+share/gnome/help/lordsawar/C/legal.xml
+share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/citynames
 %%DATADIR%%/heronames
 %%DATADIR%%/ruinnames
@@ -121,7 +123,7 @@ share/applications/lordsawar.desktop
 %%DATADIR%%/various/buttons.png
 %%DATADIR%%/various/city_occupied.png
 %%DATADIR%%/various/items.png
-%%DATADIR%%/various/medals_mask.gif
+%%DATADIR%%/various/medals_mask.png
 %%DATADIR%%/various/ship.png
 %%DATADIR%%/various/recruit_female.png
 %%DATADIR%%/various/recruit_male.png
@@ -151,9 +153,7 @@ share/applications/lordsawar.desktop
 %%DATADIR%%/map/2ndPunic37.map
 %%DATADIR%%/music/back1.ogg
 %%DATADIR%%/music/defeat.ogg
-%%DATADIR%%/music/defeat1.ogg
 %%DATADIR%%/music/victory.ogg
-%%DATADIR%%/music/victory1.ogg
 %%DATADIR%%/music/hero.ogg
 %%DATADIR%%/music/intro.ogg
 %%DATADIR%%/music/music.xml
@@ -286,6 +286,10 @@ share/applications/lordsawar.desktop
 %%DATADIR%%/citysets/bigdefault/temples.png
 %%DATADIR%%/citysets/bigdefault/towers.png
 @dirrmtry share/applications
+@dirrm share/gnome/help/lordsawar/C
+@dirrm share/gnome/help/lordsawar
+@dirrmtry share/gnome/help
+@dirrmtry share/gnome
 @dirrm %%DATADIR%%/army/default
 @dirrm %%DATADIR%%/army/bigdefault
 @dirrm %%DATADIR%%/army

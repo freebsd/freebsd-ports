@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lordsawar
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://lordsawar.com/
 
