@@ -1461,6 +1461,7 @@
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
     SUBDIR += xitami
+    SUBDIR += xoops
     SUBDIR += xpath2rss
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus

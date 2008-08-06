@@ -1,0 +1,27 @@
+
+POST-INSTALL CONFIGURATION FOR XOOPS
+=====================================
+
+1) Add the following to your Apache configuration, and
+   restart the server:
+
+   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   Alias /xoops %%WWWDIR%%/
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%>
+      AllowOverride None
+      Order Allow,Deny
+      Allow from all
+   </Directory>
+
+2) Visit your XOOPS site with a browser (i.e.,
+   http://your.server.com/xoops/htdocs/), and you should
+   be taken to the install script, which will lead
+   you through creating a config file and then
+   setting up XOOPS.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+http://www.xoops.org/modules/mediawiki/index.php/Installation_Guide
+
+========================================================
