@@ -62,6 +62,7 @@
 %%DATADIR%%/templates/archivepage.tmpl
 %%DATADIR%%/templates/atomitem.tmpl
 %%DATADIR%%/templates/atompage.tmpl
+%%DATADIR%%/templates/autoindex.tmpl
 %%DATADIR%%/templates/blogpost.tmpl
 %%DATADIR%%/templates/change.tmpl
 %%DATADIR%%/templates/editpage.tmpl
@@ -69,7 +70,6 @@
 %%DATADIR%%/templates/editcreationconflict.tmpl
 %%DATADIR%%/templates/editfailedsave.tmpl
 %%DATADIR%%/templates/editpagegone.tmpl
-%%DATADIR%%/templates/estseek.conf
 %%DATADIR%%/templates/feedlink.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
 %%DATADIR%%/templates/misc.tmpl
@@ -89,6 +89,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
 %%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
+%%SITE_PERL%%/IkiWiki/Plugin/autoindex.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
