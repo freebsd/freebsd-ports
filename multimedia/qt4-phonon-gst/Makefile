@@ -44,11 +44,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/plugins/phonon/gstreamer
 CONFIGURE_WRKSRC=${WRKSRC}/../../../../
 
-EXTRA_INCL!=	pkg-config --cflags-only-I gstreamer-0.10 | sed -e 's|-I||g'
-
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
-	${ECHO_CMD} "INCLUDEPATH+=${EXTRA_INCL}" >> ${WRKSRC}/gstreamer.pro
 	${ECHO_CMD} "DEFINES+= QT_OPENGL" >> ${WRKSRC}/gstreamer.pro
 	${MKDIR} ${WRKSRC}/../../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
