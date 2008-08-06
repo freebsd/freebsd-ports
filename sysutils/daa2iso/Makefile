@@ -2,31 +2,49 @@
 # Date created:				27 Jan 2008
 # Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
 #
-# $Carpetsmoker: ports/sysutils/daa2iso/Makefile,v 1.3 2008/03/27 14:43:02 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	daa2iso
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5a
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.carpetsmoker.net/distfiles/ \
 		http://www.xs4all.nl/distfiles/ \
 		http://www.rwxrwxrwx.net/distfiles/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	carpetsmoker@rwxrwxrwx.net
 COMMENT=	Convert PowerISO DAA files to ISO9660
 
 PLIST_FILES=	bin/daa2iso
 PORTDOCS=	daa2iso.txt
 
+post-patch:
+	@${REINPLACE_CMD} 's|exit(1)|exit(0)|' ${WRKSRC}/daa2iso.c
+
 do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} -lz ${WRKSRC}/daa2iso.c
+	${CC} ${CFLAGS} -c ${WRKSRC}/LzmaDec.c -o ${WRKSRC}/LzmaDec.o
+	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} -lz ${WRKSRC}/daa2iso.c ${WRKSRC}/LzmaDec.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/daa2iso ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/daa2iso.txt ${DOCSDIR}
+.endif
+
+.if defined(MAINTAINER)
+distfile:
+	rm -fr /tmp/${PORTNAME}-${PORTVERSION}
+	mkdir /tmp/${PORTNAME}-${PORTVERSION}
+	cd /tmp/${PORTNAME}-${PORTVERSION} && \
+	fetch http://aluigi.altervista.org/mytoolz/${PORTNAME}.zip && \
+	tar xf ${PORTNAME}.zip && \
+	mv src/* . && \
+	rm -rf ${PORTNAME}.zip *.exe src && \
+	chmod 664 *
+	cd /tmp && \
+	tar cf ${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-${PORTVERSION}
+	rm -fr /tmp/${PORTNAME}-${PORTVERSION}
 .endif
 
 .include <bsd.port.mk>
