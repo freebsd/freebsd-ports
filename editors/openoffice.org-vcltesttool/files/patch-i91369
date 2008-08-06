@@ -1,0 +1,16 @@
+Index: store/util/makefile.mk
+===================================================================
+RCS file: /cvs/ucb/store/util/makefile.mk,v
+retrieving revision 1.24
+diff -u -r1.24 makefile.mk
+--- store/util/makefile.mk	10 Apr 2008 14:23:47 -0000	1.24
++++ store/util/makefile.mk	30 Jun 2008 23:52:56 -0000
+@@ -78,7 +78,7 @@
+ .ELSE
+ .IF "$(OS)"=="NETBSD"
+ SHL1STDLIBS+= 	-lsupc++
+-.ELIF "$(OS)"=="MACOSX"
++.ELIF "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD"
+ .IF "$(CCNUMVER)"<="000399999999"
+ SHL1STDLIBS+=	-lsupc++
+ .ENDIF # CCNUMVER
