@@ -15,7 +15,7 @@ DISTNAME=	SMC_music_${PORTVERSION}_high
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Background music for Secret Maryo Chronicles
 
-RUN_DEPENDS=smc:${PORTSDIR}/games/secretmaryochronicles
+RUN_DEPENDS=	smc:${PORTSDIR}/games/secretmaryochronicles
 
 USE_ZIP=	yes
 
@@ -25,7 +25,7 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${DATADIR}/music
-	${CP} -R ${WRKSRC}/data/music/* ${DATADIR}/music/
+	${CP} -Rv ${WRKSRC}/data/music/* ${DATADIR}/music/
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Addon\ \-\ Music\ Readme.txt license.txt
