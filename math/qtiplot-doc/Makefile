@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qtiplot-doc
-DISTVERSION=	0.9.6
+PORTNAME=	qtiplot
+DISTVERSION=	0.9.7
 CATEGORIES=	math
-MASTER_SITES=	http://soft.proindependent.com/src/
-DISTNAME=	qtiplot-${DISTVERSION}
+MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
+PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	The QtiPlot Handbook
