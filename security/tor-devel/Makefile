@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.2-alpha
+DISTVERSION=	0.2.1.4-alpha
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
