@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
@@ -15,10 +15,10 @@ COMMENT=	A C and C++ client library to the memcached server
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget pkgconfig
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = libdata/pkgconfig|' \
+	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
 			${WRKSRC}/support/Makefile.in
 .if defined(NO_INSTALL_MANPAGES)
 	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
