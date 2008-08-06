@@ -1,17 +1,26 @@
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/README
-%%WWWDIR%%/config.php.new
+%%WWWDIR%%/README_PLUGIN
 %%WWWDIR%%/config.php
+%%WWWDIR%%/config.php.new
+%%WWWDIR%%/data/index.html
 %%WWWDIR%%/distros.ini
+%%WWWDIR%%/gfx/ajaxLoader.gif
 %%WWWDIR%%/gfx/asc.gif
+%%WWWDIR%%/gfx/attention.gif
 %%WWWDIR%%/gfx/bg.gif
 %%WWWDIR%%/gfx/body.gif
 %%WWWDIR%%/gfx/bullet_toggle_minus.png
 %%WWWDIR%%/gfx/bullet_toggle_plus.png
+%%WWWDIR%%/gfx/close.gif
 %%WWWDIR%%/gfx/desc.gif
 %%WWWDIR%%/gfx/html.gif
+%%WWWDIR%%/gfx/next.gif
+%%WWWDIR%%/gfx/prev.gif
+%%WWWDIR%%/gfx/reload.png
 %%WWWDIR%%/images/Arch.gif
+%%WWWDIR%%/images/Arch.png
 %%WWWDIR%%/images/CentOS.png
 %%WWWDIR%%/images/Cobalt.png
 %%WWWDIR%%/images/Darwin.png
@@ -31,13 +40,17 @@
 %%WWWDIR%%/images/Trustix.gif
 %%WWWDIR%%/images/Ubuntu.gif
 %%WWWDIR%%/images/free-eos.png
+%%WWWDIR%%/images/hlfs.png
 %%WWWDIR%%/images/index.html
 %%WWWDIR%%/images/lfs.png
 %%WWWDIR%%/images/unknown.png
 %%WWWDIR%%/images/xp.gif
 %%WWWDIR%%/includes/class.Error.inc.php
+%%WWWDIR%%/includes/class.psi_plugin.inc.php
+%%WWWDIR%%/includes/class.psi_plugin_interface.inc.php
 %%WWWDIR%%/includes/common_functions.php
 %%WWWDIR%%/includes/index.html
+%%WWWDIR%%/includes/mb/class.coretemp.inc.php
 %%WWWDIR%%/includes/mb/class.hddtemp.inc.php
 %%WWWDIR%%/includes/mb/class.healthd.inc.php
 %%WWWDIR%%/includes/mb/class.hwsensors.inc.php
@@ -46,6 +59,7 @@
 %%WWWDIR%%/includes/mb/class.mbmon.inc.php
 %%WWWDIR%%/includes/mb/index.html
 %%WWWDIR%%/includes/os/class.BSD.common.inc.php
+%%WWWDIR%%/includes/os/class.BSD.common.inc.php.orig
 %%WWWDIR%%/includes/os/class.Darwin.inc.php
 %%WWWDIR%%/includes/os/class.FreeBSD.inc.php
 %%WWWDIR%%/includes/os/class.HP-UX.inc.php
@@ -56,29 +70,52 @@
 %%WWWDIR%%/includes/os/class.WINNT.inc.php
 %%WWWDIR%%/includes/os/class.parseProgs.inc.php
 %%WWWDIR%%/includes/os/index.html
+%%WWWDIR%%/includes/redir.php
 %%WWWDIR%%/includes/ups/class.apcupsd.inc.php
 %%WWWDIR%%/includes/ups/index.html
 %%WWWDIR%%/includes/xml.class.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/jquery.js
-%%WWWDIR%%/jquery.tablesorter.pack.js
+%%WWWDIR%%/js/README
+%%WWWDIR%%/js/index.html
+%%WWWDIR%%/js/jquery.color.pack.js
+%%WWWDIR%%/js/jquery.mousewheel.pack.js
+%%WWWDIR%%/js/jquery.nyroModal.pack.js
+%%WWWDIR%%/js/jquery.pack.js
+%%WWWDIR%%/js/jquery.tablesorter.pack.js
+%%WWWDIR%%/language/bg.xml
 %%WWWDIR%%/language/cz.xml
 %%WWWDIR%%/language/de.xml
 %%WWWDIR%%/language/en.xml
 %%WWWDIR%%/language/es.xml
+%%WWWDIR%%/language/et.xml
 %%WWWDIR%%/language/fr.xml
 %%WWWDIR%%/language/gl.xml
 %%WWWDIR%%/language/hu.xml
 %%WWWDIR%%/language/it.xml
 %%WWWDIR%%/language/language.php
+%%WWWDIR%%/language/nl.xml
 %%WWWDIR%%/language/no.xml
 %%WWWDIR%%/language/pl.xml
+%%WWWDIR%%/language/pt-br.xml
+%%WWWDIR%%/language/ro.xml
 %%WWWDIR%%/language/ru.xml
+%%WWWDIR%%/language/sc.xml
 %%WWWDIR%%/language/sk.xml
 %%WWWDIR%%/language/sv.xml
+%%WWWDIR%%/language/tw.xml
 %%WWWDIR%%/language/uk.xml
 %%WWWDIR%%/phpsysinfo.dtd
 %%WWWDIR%%/phpsysinfo.js
+%%WWWDIR%%/plugins/index.html
+%%WWWDIR%%/plugins/mdstat/class.mdstat.inc.php
+%%WWWDIR%%/plugins/mdstat/css/mdstat.css
+%%WWWDIR%%/plugins/mdstat/gfx/error.png
+%%WWWDIR%%/plugins/mdstat/gfx/harddrivefail.png
+%%WWWDIR%%/plugins/mdstat/gfx/harddriveok.png
+%%WWWDIR%%/plugins/mdstat/gfx/harddrivespare.png
+%%WWWDIR%%/plugins/mdstat/js/mdstat.js
+%%WWWDIR%%/plugins/mdstat/lang/de.xml
+%%WWWDIR%%/plugins/mdstat/lang/en.xml
 %%WWWDIR%%/templates/aqua.css
 %%WWWDIR%%/templates/aqua/aq_background.gif
 %%WWWDIR%%/templates/clean.css
@@ -86,14 +123,28 @@
 %%WWWDIR%%/templates/jstyle_blue.css
 %%WWWDIR%%/templates/jstyle_green.css
 %%WWWDIR%%/templates/phpsysinfo.css
+%%WWWDIR%%/templates/plugin/index.html
+%%WWWDIR%%/templates/plugin/nyroModal.full.css
+%%WWWDIR%%/templates/two.css
+%%WWWDIR%%/templates/two/gradient.png
 %%WWWDIR%%/xml.php
+@dirrm %%WWWDIR%%/templates/two
+@dirrm %%WWWDIR%%/templates/plugin
 @dirrm %%WWWDIR%%/templates/aqua
 @dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/plugins/mdstat/lang
+@dirrm %%WWWDIR%%/plugins/mdstat/js
+@dirrm %%WWWDIR%%/plugins/mdstat/gfx
+@dirrm %%WWWDIR%%/plugins/mdstat/css
+@dirrm %%WWWDIR%%/plugins/mdstat
+@dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/language
+@dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes/ups
 @dirrm %%WWWDIR%%/includes/os
 @dirrm %%WWWDIR%%/includes/mb
 @dirrm %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/gfx
+@dirrm %%WWWDIR%%/data
 @dirrmtry %%WWWDIR%%
