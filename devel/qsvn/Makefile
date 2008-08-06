@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	qsvn
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 
@@ -18,7 +17,7 @@ COMMENT=	Qt based GUI frontend for Subversion
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic_build rcc_build qmake_build qt3support_build
+QT_COMPONENTS=	gui sql moc_build uic_build rcc_build qmake_build
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 

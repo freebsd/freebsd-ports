@@ -1,12 +1,18 @@
 bin/qsvn
 include/svnqt-qt4/annotate_line.hpp
 include/svnqt-qt4/apr.hpp
+include/svnqt-qt4/cache/DatabaseException.hpp
+include/svnqt-qt4/cache/LogCache.hpp
+include/svnqt-qt4/cache/ReposLog.hpp
 include/svnqt-qt4/check.hpp
 include/svnqt-qt4/client.hpp
 include/svnqt-qt4/commititem.hpp
+include/svnqt-qt4/conflictdescription.hpp
+include/svnqt-qt4/conflictresult.hpp
 include/svnqt-qt4/context.hpp
 include/svnqt-qt4/context_listener.hpp
 include/svnqt-qt4/datetime.hpp
+include/svnqt-qt4/diffoptions.hpp
 include/svnqt-qt4/dirent.hpp
 include/svnqt-qt4/entry.hpp
 include/svnqt-qt4/exception.hpp
@@ -21,6 +27,7 @@ include/svnqt-qt4/revision.hpp
 include/svnqt-qt4/shared_pointer.hpp
 include/svnqt-qt4/smart_pointer.hpp
 include/svnqt-qt4/status.hpp
+include/svnqt-qt4/stringarray.hpp
 include/svnqt-qt4/svnfilestream.hpp
 include/svnqt-qt4/svnqt_defines.hpp
 include/svnqt-qt4/svnqttypes.hpp
@@ -31,6 +38,7 @@ include/svnqt-qt4/version_check.hpp
 include/svnqt-qt4/wc.hpp
 lib/libsvnqt-qt4.so
 lib/libsvnqt-qt4.so.4
-lib/libsvnqt-qt4.so.4.1.0
+lib/libsvnqt-qt4.so.4.2.0
 share/pixmaps/qsvn.png
+@dirrm include/svnqt-qt4/cache
 @dirrm include/svnqt-qt4
