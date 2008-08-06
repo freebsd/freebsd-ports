@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	papi
-PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTVERSION=	0.0.6
 CATEGORIES=	accessibility devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ocemp
+MASTER_SITES=	SF/ocemp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mva@sysfault.org
@@ -20,22 +18,16 @@ USE_GNOME=	atk
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-PORTDOCS=	manual.html
-PORTEXAMPLES=	atkaction.py atkapplication.py
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/papi.so
+EXAMPLES=	atkaction.py atkapplication.py  msaaapplication.py
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}/
 	@cd ${WRKSRC}/doc/examples && \
-		${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+		${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
