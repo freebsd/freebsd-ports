@@ -20,5 +20,5 @@ lib/libmemcached.a
 lib/libmemcached.la
 lib/libmemcached.so
 lib/libmemcached.so.2
-@dirrmtry lib/pkgconfig
+libdata/pkgconfig/libmemcached.pc
 @dirrmtry include/libmemcached
