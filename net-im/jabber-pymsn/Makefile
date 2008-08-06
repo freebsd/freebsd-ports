@@ -6,6 +6,7 @@
 
 PORTNAME=	pymsn
 DISTVERSION=	0.11.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://delx.net.au/projects/pymsnt/tarballs/
@@ -96,9 +97,11 @@ post-patch:
 		${WRKSRC}/src/config.py
 	@${REINPLACE_CMD} -i "" 's|"config.xml"|"${PREFIX}/etc/jabber-pymsn.xml"|' \
 		${WRKSRC}/src/main.py
+	@${RM} -f ${WRKSRC}/src/main.py.orig
 	@${REINPLACE_CMD} -i "" 's|#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyMSNt.py
-	@${RM} -f ${WRKSRC}/src/main.py.orig
+	@${REINPLACE_CMD} -i "" '/MSN_PROTOCOL_VERSION *= */s/MSNP11 CVR0/MSNP11/' \
+		${WRKSRC}/src/legacy/msn/msn.py
 
 do-install:
 	@${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
