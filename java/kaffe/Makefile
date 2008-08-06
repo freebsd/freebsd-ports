@@ -13,7 +13,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://www.kaffe.org/~robilad/
 DISTNAME=	${PORTNAME}-1.1.7-rc1
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

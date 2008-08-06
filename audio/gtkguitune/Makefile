@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.geocities.com/harpin_floh/mysoft/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A guitar (and other instruments) tuner for GTK
 
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12

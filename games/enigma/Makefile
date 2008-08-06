@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	enigma
 DISTNAME=	enigma-${PORTVERSION}
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++

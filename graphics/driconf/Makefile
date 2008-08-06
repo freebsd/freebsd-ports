@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration program for DRI drivers
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

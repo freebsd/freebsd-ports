@@ -10,7 +10,7 @@ PORTVERSION=	2.56
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desk calculator language
 
 USE_GMAKE=	yes
