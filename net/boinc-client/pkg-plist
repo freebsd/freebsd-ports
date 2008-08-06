@@ -9,13 +9,12 @@ include/BOINC/boinc_win.h
 include/BOINC/boinc_zip.h
 include/BOINC/common_defs.h
 include/BOINC/config.h
+include/BOINC/coproc.h
 include/BOINC/crypt.h
 include/BOINC/diagnostics.h
 include/BOINC/error_numbers.h
 include/BOINC/filesys.h
-include/BOINC/graphics_api.h
-include/BOINC/graphics_impl.h
-include/BOINC/graphics_lib.h
+include/BOINC/graphics2.h
 include/BOINC/gui_rpc_client.h
 include/BOINC/gutil.h
 include/BOINC/hostinfo.h
@@ -31,9 +30,6 @@ include/BOINC/version.h
 include/BOINC/util.h
 lib/libboinc.a
 lib/libboinc_api.a
-%%BOINC_GUI%%lib/libboinc_graphics_api.a
-%%BOINC_GUI%%lib/libboinc_graphics_impl.a
-%%BOINC_GUI%%lib/libboinc_graphics_lib.a
 %%BOINC_GUI%%lib/libboinc_graphics2.a
 lib/libboinc_zip.a
 @dirrm include/BOINC
