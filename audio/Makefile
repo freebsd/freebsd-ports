@@ -334,6 +334,7 @@
     SUBDIR += libamrwb
     SUBDIR += libao
     SUBDIR += libaudiofile
+    SUBDIR += libcanberra
     SUBDIR += libcdaudio
     SUBDIR += libcddb
     SUBDIR += libcddb-doc
