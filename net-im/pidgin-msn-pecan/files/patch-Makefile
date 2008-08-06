@@ -1,0 +1,11 @@
+--- _Makefile	2008-08-03 20:08:19.000000000 +0000
++++ Makefile	2008-08-03 20:08:29.000000000 +0000
+@@ -32,7 +32,7 @@
+ # For glib < 2.6 support (libpurple maniacs)
+ FALLBACK_CFLAGS+=-I./fix_purple
+ 
+-LDFLAGS:=-Wl,--no-undefined
++LDFLAGS:=-Wl,--no-undefined,-lc
+ 
+ purpledir=$(DESTDIR)/$(PURPLE_PREFIX)/lib/purple-2
+ 

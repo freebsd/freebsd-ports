@@ -110,6 +110,7 @@
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
+    SUBDIR += pidgin-msn-pecan
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-twitter
     SUBDIR += pork
