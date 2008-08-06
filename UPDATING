@@ -17,11 +17,11 @@ upgrades.
   Before you start to update your ports, please force update of qmake4 and
   qt4-corelib ports.  Portmaster users can do:
 
-	portmaster devel/qmake4 devel/qt4-corelib
+	portmaster devel/qmake4 devel/qt4-moc devel/qt4-corelib
 
   or, if you're using portupgrade:
 
-	portupgrade -f devel/qmake4 devel/qt4-corelib
+	portupgrade -f devel/qmake4 devel/qt4-moc devel/qt4-corelib
 
 20080804:
   AFFECTS: users of devel/git
