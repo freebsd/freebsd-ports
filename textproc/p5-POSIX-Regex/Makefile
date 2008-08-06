@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POSIX-Regex
-PORTVERSION=	0.90.11
+PORTVERSION=	0.90.16
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO interface for the gnu regex engine
 
-PERL_CONFIGURE=	yes
+RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
+
+PERL_MODBUILD=	yes
 
 MAN3=		POSIX::Regex.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/Constant.pm:${PORTSDIR}/devel/p5-ExtUtils-Constant
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
