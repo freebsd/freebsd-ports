@@ -23,12 +23,12 @@ WRKSRC=		${WRKDIR}
 DATADIR=	${PREFIX}/share/smc
 NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Addon\ \-\ Music\ Readme.txt license.txt
-
 do-install:
 	${MKDIR} ${DATADIR}/music
 	${CP} -R ${WRKSRC}/data/music/* ${DATADIR}/music/
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Addon\ \-\ Music\ Readme.txt license.txt
 
 post-install:
 	${MKDIR} ${DOCSDIR}
