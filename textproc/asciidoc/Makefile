@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text document format for writing short documents and man pages
 
 USE_PYTHON=	yes

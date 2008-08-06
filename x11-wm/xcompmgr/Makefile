@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://xapps.freedesktop.org/release/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sample X compositing manager
 
 USE_XORG=	x11 xcomposite xfixes xdamage xrender

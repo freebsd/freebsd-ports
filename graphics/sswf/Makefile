@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sswf
 DISTNAME=	sswf-${PORTVERSION}-src
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and script language tool to create Flash movies
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small program for testing basic Render extension conformance
 
 XORG_CAT=	app

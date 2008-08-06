@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.kernel.org/pub/software/scm/cogito/ \
 		http://www.us.kernel.org/pub/software/scm/cogito/ \
 		http://www.jp.kernel.org/pub/software/scm/cogito/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Cogito Version Control System
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
