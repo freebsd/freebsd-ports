@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	links
-DISTVERSION=	2.1pre37
+DISTVERSION=	2.2
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
