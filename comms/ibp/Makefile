@@ -7,6 +7,7 @@
 
 PORTNAME=	ibp
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
 		${MASTER_SITE_LOCAL}
@@ -25,6 +26,6 @@ MANCOMPRESSED=	no
 
 do-install:
 	${INSTALL_PROGRAM}	${WRKSRC}/ibp ${PREFIX}/bin/
-	${INSTALL_MAN}	${FILESDIR}/ibp.1 ${MANPREFIX}/man/man1/ibp.1
+	${INSTALL_MAN}	${WRKSRC}/ibp.1 ${MANPREFIX}/man/man1/ibp.1
 
 .include <bsd.port.mk>
