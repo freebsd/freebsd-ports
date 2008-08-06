@@ -194,8 +194,7 @@ WANT_EXP_MODULES+=	vfs_catia vfs_cacheprime vfs_commit
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
-USE_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
-CONFIGURE_ARGS+=	--with-shared-modules="${USE_EXP_MODULES}"
+CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C/(\\\\ )+/,/g}"
 .endif
 
 .if defined(WITH_PAM_SMBPASS)
