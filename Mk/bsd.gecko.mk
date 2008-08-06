@@ -12,10 +12,10 @@
 # ======================= USERS =================================
 # To specify which gecko-based backend you prefer, use something like:
 #
-# WITH_GECKO=	firefox3
+# WITH_GECKO=	firefox
 #
 # The valid backends are:
-# firefox firefox3 flock nvu seamonkey thunderbird xulrunner
+# firefox flock nvu seamonkey thunderbird xulrunner
 #
 # See below for more details.
 # ======================= /USERS ================================
@@ -79,7 +79,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${WRKSRC}/configure
 #  .endif
 
-_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock firefox3 mozilla
+_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock mozilla
 
 thunderbird_PORTSDIR=	mail
 

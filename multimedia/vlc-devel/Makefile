@@ -396,7 +396,7 @@ CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-USE_GECKO=	firefox3 firefox mozilla seamonkey nvu
+USE_GECKO=	firefox mozilla seamonkey nvu
 .include <bsd.gecko.mk>
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \

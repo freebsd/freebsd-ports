@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 
-USE_GECKO=	firefox mozilla seamonkey xulrunner firefox3
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
@@ -24,7 +24,8 @@ USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--enable-nautilus-view=no
+CONFIGURE_ARGS=	--enable-nautilus-view=no \
+		--with-mozilla=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -41,12 +42,6 @@ NO_WERROR=	yes
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--disable-werror
-.endif
-
-.if ${GECKO}=="firefox3"
-CONFIGURE_ARGS+=	--with-mozilla=firefox
-.else
-CONFIGURE_ARGS+=	--with-mozilla=${GECKO}
 .endif
 
 post-patch:
