@@ -1,0 +1,11 @@
+--- includes/os/class.BSD.common.inc.php.org	2008-06-05 20:58:52.000000000 +0200
++++ includes/os/class.BSD.common.inc.php	2008-08-05 22:34:24.000000000 +0200
+@@ -83,7 +83,7 @@
+     }
+   }
+   // get our apache SERVER_NAME or vhost
+-  public function hostname() {
++  public function vhostname() {
+     if (!($result = getenv('SERVER_NAME'))) {
+       $result = "N.A.";
+     }
