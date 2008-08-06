@@ -356,6 +356,8 @@ share/apps/tork/icons/hicolor/48x48/apps/tork_mail.png
 share/apps/tork/icons/hicolor/48x48/apps/tork_opera.png
 share/apps/tork/icons/hicolor/48x48/apps/tork_play.png
 share/apps/tork/icons/hicolor/48x48/apps/tork_pressplay.png
+share/apps/tork/icons/hicolor/48x48/apps/tork_privoxy.png
+share/apps/tork/icons/hicolor/48x48/apps/tork_remotetor.png
 share/apps/tork/icons/hicolor/48x48/apps/tork_stop.png
 share/apps/tork/icons/hicolor/48x48/apps/tork_torserver.png
 share/apps/tork/privoxy/templates/blocked
