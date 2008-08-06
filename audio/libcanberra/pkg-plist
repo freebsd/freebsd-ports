@@ -37,5 +37,6 @@ libdata/pkgconfig/libcanberra.pc
 %%DOCSDIR%%/up.png
 share/gnome/autostart/libcanberra-login-sound.desktop
 share/gnome/shutdown/libcanberra-logout-sound.sh
+@dirrmtry share/gnome/shutdown
 @dirrm %%DOCSDIR%%
 @dirrm lib/libcanberra
