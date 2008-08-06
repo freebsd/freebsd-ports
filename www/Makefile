@@ -784,6 +784,7 @@
     SUBDIR += p5-HTML-FormFu
     SUBDIR += p5-HTML-FromANSI
     SUBDIR += p5-HTML-FromText
+    SUBDIR += p5-HTML-Highlight
     SUBDIR += p5-HTML-LinkExtractor
     SUBDIR += p5-HTML-Lint
     SUBDIR += p5-HTML-Location
