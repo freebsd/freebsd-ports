@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.59:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.64:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -25,19 +25,24 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
+	Moose::Cookbook::Basics::Recipe1.3 \
+	Moose::Cookbook::Basics::Recipe10.3 \
+	Moose::Cookbook::Basics::Recipe2.3 \
+	Moose::Cookbook::Basics::Recipe3.3 \
+	Moose::Cookbook::Basics::Recipe4.3 \
+	Moose::Cookbook::Basics::Recipe5.3 \
+	Moose::Cookbook::Basics::Recipe6.3 \
+	Moose::Cookbook::Basics::Recipe7.3 \
+	Moose::Cookbook::Basics::Recipe9.3 \
+	Moose::Cookbook::Extending::Recipe1.3 \
+	Moose::Cookbook::Extending::Recipe2.3 \
 	Moose::Cookbook::FAQ.3 \
-	Moose::Cookbook::Recipe1.3 \
-	Moose::Cookbook::Recipe11.3 \
-	Moose::Cookbook::Recipe2.3 \
-	Moose::Cookbook::Recipe3.3 \
-	Moose::Cookbook::Recipe4.3 \
-	Moose::Cookbook::Recipe5.3 \
-	Moose::Cookbook::Recipe6.3 \
-	Moose::Cookbook::Recipe7.3 \
-	Moose::Cookbook::Recipe9.3 \
-	Moose::Cookbook::Recipe10.3 \
-	Moose::Cookbook::Recipe21.3 \
-	Moose::Cookbook::Recipe22.3 \
+	Moose::Cookbook::Meta::Recipe1.3 \
+	Moose::Cookbook::Meta::Recipe2.3 \
+	Moose::Cookbook::Meta::Recipe3.3 \
+	Moose::Cookbook::Meta::Recipe4.3 \
+	Moose::Cookbook::Roles::Recipe1.3 \
+	Moose::Cookbook::Roles::Recipe2.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
