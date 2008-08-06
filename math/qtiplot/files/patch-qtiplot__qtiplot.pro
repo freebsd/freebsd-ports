@@ -55,7 +55,7 @@
      LIBS        += -lm
      system(mkdir -p $${SIP_DIR})
 -    system($$system(python python-sipcmd.py) -c $${SIP_DIR} src/qti.sip)
-+    SIPCMD = $$(PYTHON_VERSION) python-sipcmd.py
++    SIPCMD = $$PYTHON_CMD python-sipcmd.py
 +    system($$system($$SIPCMD) -c $${SIP_DIR} src/qti.sip)
    }
  
