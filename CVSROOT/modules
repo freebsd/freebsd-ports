@@ -4090,6 +4090,7 @@ gmimms                          ports/multimedia/gmimms
 gmines                          ports/games/gmines
 gmixer                          ports/audio/gmixer
 gmm                             ports/audio/gmm
+gmm++                           ports/math/gmm++
 gmp-ecm                         ports/math/gmp-ecm
 gmpc                            ports/audio/gmpc
 gmpc-autoplaylist               ports/audio/gmpc-autoplaylist
@@ -6845,6 +6846,7 @@ libbonobouimm                   ports/x11-toolkits/libbonobouimm
 libbt                           ports/net-p2p/libbt
 libcabinet                      ports/archivers/libcabinet
 libcaca                         ports/graphics/libcaca
+libcanberra                     ports/audio/libcanberra
 libcapplet                      ports/x11/libcapplet
 libcapsinetwork                 ports/devel/libcapsinetwork
 libccid                         ports/devel/libccid
@@ -9953,6 +9955,7 @@ p5-Config-General               ports/devel/p5-Config-General
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles              ports/devel/p5-Config-IniFiles
 p5-Config-IniHash               ports/devel/p5-Config-IniHash
+p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
 p5-Config-Properties            ports/devel/p5-Config-Properties
@@ -10476,6 +10479,7 @@ p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
 p5-File-Sort                    ports/misc/p5-File-Sort
 p5-File-Stat-Bits               ports/sysutils/p5-File-Stat-Bits
+p5-File-Stream                  ports/devel/p5-File-Stream
 p5-File-Sync                    ports/devel/p5-File-Sync
 p5-File-Tail                    ports/devel/p5-File-Tail
 p5-File-Temp                    ports/devel/p5-File-Temp
@@ -10606,6 +10610,7 @@ p5-GraphViz-DBI                 ports/databases/p5-GraphViz-DBI
 p5-GraphViz-Data-Structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-GraphViz-Traverse            ports/graphics/p5-GraphViz-Traverse
 p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
+p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
 p5-Gtk2                         ports/x11-toolkits/p5-Gtk2
 p5-Gtk2-Ex-FormFactory          ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
@@ -10642,6 +10647,7 @@ p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
 p5-HTML-FromANSI                ports/www/p5-HTML-FromANSI
 p5-HTML-FromText                ports/www/p5-HTML-FromText
+p5-HTML-Highlight               ports/www/p5-HTML-Highlight
 p5-HTML-LinkExtractor           ports/www/p5-HTML-LinkExtractor
 p5-HTML-Lint                    ports/www/p5-HTML-Lint
 p5-HTML-Location                ports/www/p5-HTML-Location
@@ -13020,6 +13026,7 @@ p5-config-general               ports/devel/p5-Config-General
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
 p5-config-inifiles              ports/devel/p5-Config-IniFiles
 p5-config-inihash               ports/devel/p5-Config-IniHash
+p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-objective             ports/devel/p5-Config-Objective
 p5-config-properties            ports/devel/p5-Config-Properties
@@ -13562,6 +13569,7 @@ p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
 p5-file-sort                    ports/misc/p5-File-Sort
 p5-file-stat-bits               ports/sysutils/p5-File-Stat-Bits
+p5-file-stream                  ports/devel/p5-File-Stream
 p5-file-sync                    ports/devel/p5-File-Sync
 p5-file-tail                    ports/devel/p5-File-Tail
 p5-file-temp                    ports/devel/p5-File-Temp
@@ -13686,6 +13694,7 @@ p5-graph-readwrite              ports/graphics/p5-Graph-ReadWrite
 p5-graph-socialmap              ports/graphics/p5-Graph-SocialMap
 p5-graph-writer-graphviz        ports/graphics/p5-Graph-Writer-GraphViz
 p5-graphics-colornames          ports/graphics/p5-Graphics-ColorNames
+p5-graphics-colornames-www      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-graphviz                     ports/graphics/p5-GraphViz
 p5-graphviz-data-structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-graphviz-dbi                 ports/databases/p5-GraphViz-DBI
@@ -13741,6 +13750,7 @@ p5-html-formfu                  ports/www/p5-HTML-FormFu
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
+p5-html-highlight               ports/www/p5-HTML-Highlight
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
 p5-html-lint                    ports/www/p5-HTML-Lint
 p5-html-location                ports/www/p5-HTML-Location
@@ -16617,6 +16627,7 @@ pidgin-hotkeys                  ports/net-im/pidgin-hotkeys
 pidgin-latex                    ports/net-im/pidgin-latex
 pidgin-libnotify                ports/net-im/pidgin-libnotify
 pidgin-manualsize               ports/net-im/pidgin-manualsize
+pidgin-msn-pecan                ports/net-im/pidgin-msn-pecan
 pidgin-musictracker             ports/audio/pidgin-musictracker
 pidgin-otr                      ports/security/pidgin-otr
 pidgin-rhythmbox                ports/net-im/pidgin-rhythmbox
@@ -18923,7 +18934,7 @@ sam2p                           ports/graphics/sam2p
 samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
 samba-pdbsql                    ports/net/samba-pdbsql
-samba-smbclient			ports/net/samba-smbclient
+samba-smbclient                 ports/net/samba-smbclient
 samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
 samba4wins                      ports/net/samba4wins
@@ -19095,6 +19106,7 @@ sec                             ports/sysutils/sec
 seccure                         ports/security/seccure
 secpanel                        ports/security/secpanel
 secretmaryochronicles           ports/games/secretmaryochronicles
+secretmaryochronicles-music     ports/games/secretmaryochronicles-music
 sectar                          ports/archivers/sectar
 sectok                          ports/security/sectok
 secure_delete                   ports/security/secure_delete
@@ -20810,6 +20822,7 @@ vala                            ports/lang/vala
 valgrind                        ports/devel/valgrind
 valgrind-snapshot               ports/devel/valgrind-snapshot
 validator                       ports/www/validator
+valide                          ports/devel/valide
 valknut                         ports/net-p2p/valknut
 vamos                           ports/games/vamos
 vamps                           ports/multimedia/vamps
@@ -21999,6 +22012,7 @@ xoids                           ports/games/xoids
 xoj                             ports/games/xoj
 xom                             ports/textproc/xom
 xonix                           ports/games/xonix
+xoops                           ports/www/xoops
 xopps                           ports/deskutils/xopps
 xorg                            ports/x11/xorg
 xorg-apps                       ports/x11/xorg-apps
