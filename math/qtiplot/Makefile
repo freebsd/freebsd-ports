@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.6.2
-PORTREVISION=	2
+DISTVERSION=	0.9.7
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -15,7 +14,6 @@ MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
-
 LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
@@ -25,7 +23,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build opengl svg qt3support network assistantclient
 HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-unix -recursive LOCALBASE=${LOCALBASE}
+QMAKE_ARGS+=	-unix -recursive LOCALBASE=${LOCALBASE} PYTHON_CMD=${PYTHON_CMD}
 USE_DOS2UNIX=	*.pro
 MAN1=		qtiplot.1
 
@@ -57,8 +55,7 @@ RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
 .endif
 
 .if !defined(WITHOUT_NLS)
-#QT_COMPONENTS+=	linguist
-BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
+QT_COMPONENTS+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
