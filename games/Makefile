@@ -724,6 +724,7 @@
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += secretmaryochronicles
+    SUBDIR += secretmaryochronicles-music
     SUBDIR += senken
     SUBDIR += senso
     SUBDIR += sex
