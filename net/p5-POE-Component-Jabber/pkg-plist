@@ -7,11 +7,10 @@
 %%SITE_PERL%%/POE/Component/Jabber/Status.pm
 %%SITE_PERL%%/POE/Component/Jabber/XMPP.pm
 %%SITE_PERL%%/POE/Component/Jabber/Error.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/J14Component
-%%PORTDOCS%%%%EXAMPLESDIR%%/J2Component
-%%PORTDOCS%%%%EXAMPLESDIR%%/LegacyClient
-%%PORTDOCS%%%%EXAMPLESDIR%%/XMPPClient
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/POE/Component/Jabber
+%%SITE_PERL%%/POE/Component/Jabber/Utility/ClientHandle.pm
+%%SITE_PERL%%/POE/Component/Jabber/Utility/SSLify.pm
+%%SITE_PERL%%/POE/Component/Jabber/Utility/ServerHandle.pm
+@dirrmtry %%SITE_PERL%%/POE/Component/Jabber/Utility
+@dirrmtry %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
