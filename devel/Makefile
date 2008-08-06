@@ -1062,6 +1062,7 @@
     SUBDIR += p5-Config-INI-Simple
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
+    SUBDIR += p5-Config-JSON
     SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Properties
