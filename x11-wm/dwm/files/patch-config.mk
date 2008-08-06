@@ -1,5 +1,5 @@
---- config.mk.orig	2008-06-18 23:08:29.000000000 +0200
-+++ config.mk	2008-06-20 10:39:37.000000000 +0200
+--- config.mk.orig	2008-07-29 20:18:32.000000000 +0200
++++ config.mk	2008-08-06 00:31:19.000000000 +0200
 @@ -4,11 +4,11 @@
  # Customize below to fit your system
  
@@ -16,7 +16,7 @@
  
  # Xinerama, comment if you don't want it
  XINERAMALIBS = -L${X11LIB} -lXinerama
-@@ -19,9 +19,9 @@
+@@ -19,13 +19,13 @@
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
@@ -29,3 +29,8 @@
  
  # Solaris
  #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC?= cc

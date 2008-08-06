@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.suckless.org/download/ \
+MASTER_SITES=	http://code.suckless.org/dl/${PORTNAME}/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
