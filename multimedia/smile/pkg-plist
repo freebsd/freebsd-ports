@@ -3,6 +3,14 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_haut.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_droite.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Zigzag_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Coeur.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Coeur.png
+%%DATADIR%%/BIB_ManSlide/Luma/Helice_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Helice_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Helice_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Brule.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Brule.png
+%%DATADIR%%/BIB_ManSlide/Luma/Helice_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/Spirale_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Spirale_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/Recouvrement_bandes_horizontales.png
@@ -37,6 +45,26 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Luma/Damier_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Damier_002.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Damier_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/Pattern_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/Pattern_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Zigzag_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Pendule_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Pattern_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Nuages_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Cercle_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Pattern_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Nuages_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/Nuages_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/Pendule_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Spirale_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Pendule_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Nuages_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Spirale_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/Zigzag_003.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Pattern_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Cercle_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Pattern_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Pendule_001.png
 %%DATADIR%%/Interface/Theme/1leftarrow.png
 %%DATADIR%%/Interface/Theme/mini_p_v.png
 %%DATADIR%%/Interface/Theme/player_stop.png
@@ -57,10 +85,8 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/bookmark.png
 %%DATADIR%%/Interface/Theme/2downarrow.png
 %%DATADIR%%/Interface/Theme/mini_f_a.png
-%%DATADIR%%/Interface/Theme/audio_screen.png
 %%DATADIR%%/Interface/Theme/flag_green.png
 %%DATADIR%%/Interface/Theme/player_play.png
-%%DATADIR%%/Interface/Theme/underconstruction.png
 %%DATADIR%%/Interface/Theme/color_M.png
 %%DATADIR%%/Interface/Theme/preferences_other.png
 %%DATADIR%%/Interface/Theme/camera_photo.png
@@ -90,13 +116,11 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/insertion.gif
 %%DATADIR%%/Interface/Theme/preferences_system.png
 %%DATADIR%%/Interface/Theme/filesaveas.png
-%%DATADIR%%/Interface/Theme/zoom_out.png
 %%DATADIR%%/Interface/Theme/copy.png
 %%DATADIR%%/Interface/Theme/color_C.png
 %%DATADIR%%/Interface/Theme/mini_p_h.png
 %%DATADIR%%/Interface/Theme/reload.png
 %%DATADIR%%/Interface/Theme/applications_graphics.png
-%%DATADIR%%/Interface/Theme/text_speak.png
 %%DATADIR%%/Interface/Theme/player_end.png
 %%DATADIR%%/Interface/Theme/rotateX.png
 %%DATADIR%%/Interface/Theme/comment.png
@@ -123,14 +147,54 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/nuage.png
 %%DATADIR%%/Interface/Theme/nullpixmap.png
 %%DATADIR%%/Interface/Theme/puzzle.png
+%%DATADIR%%/Interface/Theme/1uparrow.png
+%%DATADIR%%/Interface/Theme/1downarrow.png
 %%DATADIR%%/Interface/Theme/soleil.png
+%%DATADIR%%/Interface/Theme/brush_nuage.png
+%%DATADIR%%/Interface/Theme/brush_etoile.png
+%%DATADIR%%/Interface/Theme/brush_branche.png
+%%DATADIR%%/Interface/Theme/brush_coeur.png
+%%DATADIR%%/Interface/Theme/brush_girl.png
+%%DATADIR%%/Interface/Theme/brush_ronde.png
+%%DATADIR%%/Interface/Theme/brush_fleur.png
 %%DATADIR%%/Interface/Theme/star.png
+%%DATADIR%%/Interface/Theme/contents.png
+%%DATADIR%%/Interface/Theme/help_about.png
+%%DATADIR%%/Interface/Theme/addvideo.png
+%%DATADIR%%/Interface/Theme/tools_report_bug.png
+%%DATADIR%%/Interface/Theme/stock-eye-20.png
+%%DATADIR%%/Interface/Theme/flag_grey.png
+%%DATADIR%%/BIB_ManSlide/Help/doc_fr.html
+%%DATADIR%%/BIB_ManSlide/Help/doc_en.html
+%%DATADIR%%/BIB_ManSlide/Help/doc_it.html
+%%DATADIR%%/BIB_ManSlide/Help/style.css
+%%DATADIR%%/BIB_ManSlide/Help/gpl-2.0.txt
+%%DATADIR%%/BIB_ManSlide/Help/images/son.png
+%%DATADIR%%/BIB_ManSlide/Help/images/Eggibault_3.png
+%%DATADIR%%/BIB_ManSlide/Help/images/type.png
+%%DATADIR%%/BIB_ManSlide/Help/images/mandvd.png
+%%DATADIR%%/BIB_ManSlide/Help/images/.directory
+%%DATADIR%%/BIB_ManSlide/Help/images/deplacer.png
+%%DATADIR%%/BIB_ManSlide/Help/images/manslide.jpg
+%%DATADIR%%/BIB_ManSlide/Help/images/boiboite.png
+%%DATADIR%%/BIB_ManSlide/Help/images/outils.png
+%%DATADIR%%/BIB_ManSlide/Help/images/time_av.png
+%%DATADIR%%/BIB_ManSlide/Help/images/manslide2.jpg
+%%DATADIR%%/BIB_ManSlide/Help/images/drapeau.png
+%%DATADIR%%/BIB_ManSlide/Help/images/qdial.png
+%%DATADIR%%/BIB_ManSlide/Help/images/couleur.png
+%%DATADIR%%/BIB_ManSlide/Help/images/import.png
+%%DATADIR%%/BIB_ManSlide/Help/images/lecture.png
+%%DATADIR%%/BIB_ManSlide/Help/images/ban.png
+%%DATADIR%%/BIB_ManSlide/Help/images/smile.png
 %%DATADIR%%/smile
-%%DATADIR%%/smile.qm
 %%DATADIR%%/smile_en.qm
 %%DATADIR%%/smile_it.qm
+%%DATADIR%%/smile_de.qm
 @dirrm %%DATADIR%%/BIB_ManSlide/Eff_sup
 @dirrm %%DATADIR%%/BIB_ManSlide/Luma
+@dirrm %%DATADIR%%/BIB_ManSlide/Help/images
+@dirrm %%DATADIR%%/BIB_ManSlide/Help
 @dirrm %%DATADIR%%/BIB_ManSlide/
 @dirrm %%DATADIR%%/Interface/Theme
 @dirrm %%DATADIR%%/Interface
