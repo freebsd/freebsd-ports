@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	173.14.09
-PORTREVISION?=	0			# For consistency with slave ports
+DISTVERSION?=	173.14.12
+PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
@@ -68,7 +68,6 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 .if ${OSVERSION} < 503000
 IGNORE=		supports FreeBSD-STABLE (5.3 or later), or FreeBSD-CURRENT
 .endif
-
 .if ${OSVERSION} >= 600033
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 .endif
@@ -85,16 +84,6 @@ post-patch: .SILENT
 .if ${OSVERSION} >= 700048
 	${REINPLACE_CMD} -e '15s,^,#include <sys/priv.h>,' \
 		${WRKSRC}/src/nvidia_os.c
-.endif
-# Correct prototypes to fix the build with FreeBSD AGP support
-.if ${NVVERSION} >= 1690700
-	${REINPLACE_CMD} -e '406,407s/(/(nv_stack_t *, /' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-# Do not implement certain pmap API functions on systems that have them
-.if ${NVVERSION} >= 1731405
-	${REINPLACE_CMD} -E 's,if( __FreeBSD_version )(< 700055),if\1< 602110 ||\1>= 700000 \&\&\1\2,' \
-		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
