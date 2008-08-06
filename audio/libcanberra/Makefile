@@ -7,11 +7,14 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/public/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the Freedesktop sound theme spec
+
+LIB_DEPENDS=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack
