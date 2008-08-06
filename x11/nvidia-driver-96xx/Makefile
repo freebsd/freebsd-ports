@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 
-DISTVERSION=	96.43.05
-PORTREVISION=	1
+DISTVERSION=	96.43.07
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 
