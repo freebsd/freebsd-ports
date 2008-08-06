@@ -6,7 +6,7 @@
 #    $MCom: ports/deskutils/conduit/Makefile,v 1.7 2008/03/18 14:53:42 ahze Exp $
 
 PORTNAME=	conduit
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.13.1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
