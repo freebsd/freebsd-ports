@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
+PORTREVISION?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -104,11 +105,6 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_GCC=	4.2
-#following part should sync with ports/Mk/bsd.gcc.mk
-.if (${OSVERSION} >= 700042)
-CONFIGURE_ARGS+=	--with-system-stdlibs
-.endif
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
@@ -146,7 +142,9 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
 			--with-system-zlib				\
+			--with-system-stdlibs				\
 			--with-epm=internal
+
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
