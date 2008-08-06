@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-Flex
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fastest Lexer in the West
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Parse::Flex.3 Parse::Flex::Generate.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
