@@ -1,0 +1,9 @@
+Perl filehandles are streams, but sometimes they just aren't powerful
+enough. This module offers to have streams from filehandles searched with
+regexes and allows the global input record separator variable to contain
+regexes.
+
+Thus, readline() and the <> operator can now return records delimited by
+regular expression matches.
+
+WWW:	http://search.cpan.org/dist/File-Stream/
