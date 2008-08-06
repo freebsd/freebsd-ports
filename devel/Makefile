@@ -1299,6 +1299,7 @@
     SUBDIR += p5-File-ShareDir
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Slurp-Tree
+    SUBDIR += p5-File-Stream
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Temp
