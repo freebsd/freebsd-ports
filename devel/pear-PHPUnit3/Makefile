@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.2.20
+PORTVERSION=	3.2.21
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
