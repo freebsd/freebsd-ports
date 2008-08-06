@@ -7,7 +7,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
@@ -19,17 +19,15 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build
-USE_GNOME=	gnometarget
+USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
-USE_EFL=	imlib2
+# USE_EFL=	imlib2 #disabled in this release
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QtGui_CFLAGS="${QtGui_CFLAGS}"
 
 MAN1=		qcomicbook.1
 
-QtGui_CFLAGS=	-DQT_SHARED \
-		-I${QT_INCDIR}/QtGui \
-		-I${QT_INCDIR}/QtCore \
-		-I${QT_INCDIR}
+DESKTOP_ENTRIES="QComicBook" "Comic Book Viewer" \
+		"${DATADIR}/${PORTNAME}.png" \
+		"qcomicbook" "" false
 
 .include <bsd.port.mk>
