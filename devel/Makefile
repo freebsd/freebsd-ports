@@ -2510,6 +2510,7 @@
     SUBDIR += uppaal
     SUBDIR += urjtag
     SUBDIR += ustl
+    SUBDIR += valide
     SUBDIR += valgrind
     SUBDIR += valgrind-snapshot
     SUBDIR += varconf
