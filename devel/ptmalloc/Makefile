@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	ptmalloc
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative malloc, performs better with threaded applications
 
 INCDIR=	include/${PORTNAME}

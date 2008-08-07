@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.onlinetractorparts.com.au/rohbags/xmltvau/
 # DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X 'tv_grab_au' is an XMLTV grabber for Australian TV programmes
 
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv

@@ -13,7 +13,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lemis.com/pub/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test performance of low-level storage devices
 
 NO_WRKSUBDIR=	yes
