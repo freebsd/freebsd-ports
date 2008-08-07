@@ -93,6 +93,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-avatars.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-caps.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus-properties-mixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus.html
