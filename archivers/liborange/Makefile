@@ -7,13 +7,16 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Library to extract CAB files from self-extracting installers
+
+RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
+		unzip:${PORTSDIR}/archivers/unzip
 
 OPTIONS=	LIBSYNCE	"Build with libsynce support"			on \
 		LIBDYNAMITE	"Build with libdynamite support"		on \
