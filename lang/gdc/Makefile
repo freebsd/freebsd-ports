@@ -7,7 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -35,9 +35,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--disable-shared \
 		--enable-languages=c,c++,d \
-		--enable-thread-lib=-lpthread
+		--enable-thread-lib=-pthread
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}\///}/configure
 
 PLIST_SUB=	GCC_VER=${GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
