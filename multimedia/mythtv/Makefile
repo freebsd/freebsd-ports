@@ -13,7 +13,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://chuggalug.clues.com/mythtv/
 DISTNAME=	mythtv-fixes-0.20-13053
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \

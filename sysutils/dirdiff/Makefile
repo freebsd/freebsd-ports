@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils tcl tk
 MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 
-MAINTAINER=	grog@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	A graphical diff tool
 
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
