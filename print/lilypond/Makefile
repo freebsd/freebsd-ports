@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.11.52
-PORTREVISION=	1
+PORTVERSION=	2.11.55
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
@@ -46,6 +45,7 @@ INSTALLS_OMF=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" MAKEINFO="${LOCALBASE}/bin/makeinfo"
+NO_CCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
