@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -69,7 +69,8 @@ MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""
 .endif
 
-.if defined(WITHOUT_DRAW)
+.if defined(WITH_DRAW)
+# add support for adding/deleting drawing annotations in PDF files
 PATCH_SITES+=   http://info.iet.unipi.it/~luigi/FreeBSD/
 PATCHFILES+=    patch-zz-xpdf-annot.20080728a
 .endif
