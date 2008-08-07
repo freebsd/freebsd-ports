@@ -1,12 +1,14 @@
+-----------------------------------------------------------------
 ezmlm-idx has been installed successfully.
 
 However, before you can use the programs, you should copy the
 "ezmlmglrc.sample", "ezmlmrc.sample" and "ezmlmsubrc.sample" files
-in ${PREFIX}/etc/ezmlm to "ezmlmglrc", "ezmlmrc" and "ezmlmsubrc"
+in %%PREFIX%%/etc/ezmlm to "ezmlmglrc", "ezmlmrc" and "ezmlmsubrc"
 respectively.
 
 Usually, you do not need to edit these files, but be sure to check
 carefully.
 
 If you have enabled the MySQL extensions, you need to create an
-ezmlm database. See INSTALL.idx in ${PREFIX}/share/doc/ezmlm-idx.
+ezmlm database. See INSTALL.idx in %%PREFIX%%/share/doc/ezmlm-idx.
+-----------------------------------------------------------------

@@ -8,16 +8,13 @@ ezmlm-idx adds the following features:
 - subscriber-only restrictions
 - message trailer
 - subject prefix
-- subscriber name storage,
+- subscriber name storage
 - customizable setup
 - multi-language and MIME support 
 - improved bounce handling
 - case-insensitive subscriber address storage
 - distributed lists (main + sublist transparent to the subscriber)
-- SQL support (MySQL or Postgres) for centrally administrated 
+- SQL support (MySQL or PostgreSQL) for centrally administered
   distributed lists
 
-WWW: http://www.ezmlm.org/
-
-- Tom
-tom@FreeBSD.org
+WWW:	http://www.ezmlm.org/
