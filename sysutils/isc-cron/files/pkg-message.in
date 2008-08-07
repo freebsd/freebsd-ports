@@ -1,0 +1,8 @@
+Please add
+
+	cron_program="%%PREFIX%%/sbin/cron"
+
+to your /etc/rc.conf to enable the ISC cron instead of the base
+Vixie cron.
+
+Please use %%PREFIX%%/bin/crontab to edit the users crontab.

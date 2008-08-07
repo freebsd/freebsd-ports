@@ -331,6 +331,7 @@
     SUBDIR += ipmi-kmod
     SUBDIR += ipmitool
     SUBDIR += ipsc
+    SUBDIR += isc-cron
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += ispman
