@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2008-08-05 09:49:07.117143030 -0400
++++ src/Makefile.in	2008-08-05 09:50:16.548210107 -0400
+@@ -37,7 +37,7 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-@TRE_AGREP_TRUE@bin_PROGRAMS = agrep$(EXEEXT)
++@TRE_AGREP_TRUE@bin_PROGRAMS = tre_agrep$(EXEEXT)
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -281,7 +281,7 @@
+ 	  echo " rm -f $$p $$f"; \
+ 	  rm -f $$p $$f ; \
+ 	done
+-agrep$(EXEEXT): $(agrep_OBJECTS) $(agrep_DEPENDENCIES) 
++tre_agrep$(EXEEXT): $(agrep_OBJECTS) $(agrep_DEPENDENCIES) 
+ 	@rm -f agrep$(EXEEXT)
+ 	$(LINK) $(agrep_LDFLAGS) $(agrep_OBJECTS) $(agrep_LDADD) $(LIBS)
+ 
