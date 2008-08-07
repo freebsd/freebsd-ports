@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-I18N
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +25,8 @@ MAN3=		Catalyst::Plugin::I18N.3 \
 		Catalyst::Plugin::I18N::Manual.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	p5-I18N-LangTags-Detect>=0:${PORTSDIR}/misc/p5-I18N-LangTags
-RUN_DEPENDS+=	p5-I18N-LangTags-Detect>=0:${PORTSDIR}/misc/p5-I18N-LangTags
+.if ${PERL_LEVEL} < 500806
+BUILD_DEPENDS+=	p5-I18N-LangTags>=0.35:${PORTSDIR}/misc/p5-I18N-LangTags
+RUN_DEPENDS+=	p5-I18N-LangTags>=0.35:${PORTSDIR}/misc/p5-I18N-LangTags
 .endif
 .include <bsd.port.post.mk>
