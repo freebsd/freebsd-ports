@@ -1,17 +1,18 @@
-share/sgml/docbook/4.0/40chg.txt
-share/sgml/docbook/4.0/50issues.txt
-share/sgml/docbook/4.0/cals-tbl.dtd
-share/sgml/docbook/4.0/dbcent.mod
-share/sgml/docbook/4.0/dbgenent.mod
-share/sgml/docbook/4.0/dbhier.mod
-share/sgml/docbook/4.0/dbnotn.mod
-share/sgml/docbook/4.0/dbpool.mod
-share/sgml/docbook/4.0/docbook.cat
-share/sgml/docbook/4.0/docbook.dcl
-share/sgml/docbook/4.0/docbook.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/%%DTD_VERSION%%/catalog
-share/sgml/docbook/4.0/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/%%DTD_VERSION%%/catalog
-share/sgml/docbook/4.0/readme.txt
+@unexec %%SGMLCAT_RM%%
+share/sgml/docbook/4.0/dtd/40chg.txt
+share/sgml/docbook/4.0/dtd/50issues.txt
+share/sgml/docbook/4.0/dtd/cals-tbl.dtd
+share/sgml/docbook/4.0/dtd/catalog
+share/sgml/docbook/4.0/dtd/dbcent.mod
+share/sgml/docbook/4.0/dtd/dbgenent.mod
+share/sgml/docbook/4.0/dtd/dbhier.mod
+share/sgml/docbook/4.0/dtd/dbnotn.mod
+share/sgml/docbook/4.0/dtd/dbpool.mod
+share/sgml/docbook/4.0/dtd/docbook.cat
+share/sgml/docbook/4.0/dtd/docbook.dcl
+share/sgml/docbook/4.0/dtd/docbook.dtd
+share/sgml/docbook/4.0/dtd/readme.txt
+@dirrm share/sgml/docbook/4.0/dtd
 @dirrm share/sgml/docbook/4.0
 @dirrmtry share/sgml/docbook
+@exec %%SGMLCAT_ADD%%
