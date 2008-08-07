@@ -129,6 +129,7 @@
     SUBDIR += kuake
     SUBDIR += launchy
     SUBDIR += libopensync-plugin-evolution2
+    SUBDIR += libopensync-plugin-evolution2-devel
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-python-devel
     SUBDIR += libopensync-plugin-vformat-devel
