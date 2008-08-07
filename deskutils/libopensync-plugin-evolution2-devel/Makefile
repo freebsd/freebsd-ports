@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Evolution 2 plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
+LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync \
 		vconvert:${PORTSDIR}/deskutils/libopensync-plugin-vformat-devel
 
 CONFLICTS=	libopensync-plugin-evolution2-0.2*
