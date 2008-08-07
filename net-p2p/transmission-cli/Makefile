@@ -31,7 +31,7 @@ MAN1?=		transmissioncli.1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING NEWS README
