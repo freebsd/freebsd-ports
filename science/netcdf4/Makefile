@@ -17,17 +17,27 @@ COMMENT=	Library for machine-independent, array-oriented data access
 
 CONFLICTS=	hdf-4.* netcdf-4.*
 
-CONFIGURE_ARGS=	--enable-shared --disable-f77
+CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV+=	${MAKE_ENV}
 
 MAN1=		ncdump.1 ncgen.1
 MAN3=		netcdf.3
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 		netcdf-install netcdf-tutorial
+
+.ifdef WITH_FORTRAN
+USE_FORTRAN=	yes
+MAN3+=	netcdf_f77.3 netcdf_f90.3
+PLIST_SUB+=	FORTRAN=""
+.else
+CONFIGURE_ARGS+=--disable-f77
+PLIST_SUB+=	FORTRAN="@comment "
+.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/ncdump ${PREFIX}/bin/ncgen
@@ -38,6 +48,8 @@ post-install:
 .for file in COPYRIGHT README RELEASE_NOTES
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.else
+CONFIGURE_ARGS+=	--disable-docs-install
 .endif
 
 regression-test: build
