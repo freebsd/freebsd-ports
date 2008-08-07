@@ -165,6 +165,7 @@
     SUBDIR += drupal6
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-print
+    SUBDIR += drupal6-views
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
