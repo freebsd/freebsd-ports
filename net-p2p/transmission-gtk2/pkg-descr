@@ -1,4 +1,4 @@
-A fast and lightweight CLI (command line) BitTorrent client.
+A fast and lightweight GTK+2 BitTorrent client.
 
 Transmission has been built from the ground up to be a lightweight, yet
 powerful BitTorrent client. Its simple, intuitive interface is designed

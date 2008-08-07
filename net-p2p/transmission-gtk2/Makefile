@@ -8,23 +8,27 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
-COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
+MAINTAINER=	mezz@FreeBSD.org
+COMMENT=	A fast and lightweight GTK+2 BitTorrent client
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	${GEN_LIB_DEPENDS} \
+		notify.1:${PORTSDIR}/devel/libnotify \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	${GEN_RUN_DEPENDS} \
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
-MASTERDIR=	${.CURDIR}/../transmission
+DESCR=		${.CURDIR}/pkg-descr
+MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
+SLAVEPORT=	gtk
 
 USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
+USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	${GCONFIGURE} \
-		--disable-cli \
-		--disable-daemon \
-		--enable-gtk
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN1=		transmission.1
 
 post-patch: general-patch

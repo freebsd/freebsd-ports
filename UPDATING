@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080806:
+  AFFECTS: users of net-p2p/transmission
+  AUTHOR: mezz@FreeBSD.org
+
+  Update to 1.3x, the net-p2p/transmission now is a meta-port. It depends on
+  cli, daemon and gtk2. If you don't want that, uninstall transmission and
+  install net-p2p/transmission-cli.
+
+  	portmaster -o net-p2p/transmission-cli net-p2p/transmission
+
+  or
+
+  	portupgrade -o net-p2p/transmission-cli net-p2p/transmission
+
 20080805:
   AFFECTS: users of devel/qt4
   AUTHOR: kde@FreeBSD.org
