@@ -1,3 +1,4 @@
+bin/tre_agrep
 include/tre/regex.h
 include/tre/tre-config.h
 lib/libtre.a
