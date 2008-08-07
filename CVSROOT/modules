@@ -2381,8 +2381,10 @@ drupal5-views                   ports/www/drupal5-views
 drupal5-workflow_ng             ports/www/drupal5-workflow_ng
 drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
+drupal6-cck                     ports/www/drupal6-cck
 drupal6-nice_menus              ports/www/drupal6-nice_menus
 drupal6-print                   ports/www/drupal6-print
+drupal6-views                   ports/www/drupal6-views
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
 drweb-qmail                     ports/security/drweb-qmail
@@ -5366,6 +5368,7 @@ is-aspell                       ports/textproc/is-aspell
 isaac-cfd                       ports/science/isaac-cfd
 isabelle                        ports/math/isabelle
 isakmpd                         ports/security/isakmpd
+isc-cron                        ports/sysutils/isc-cron
 isc-dhcp3-client                ports/net/isc-dhcp3-client
 isc-dhcp3-devel                 ports/net/isc-dhcp3-devel
 isc-dhcp3-relay                 ports/net/isc-dhcp3-relay
@@ -7146,6 +7149,7 @@ libopennet                      ports/net/libopennet
 libopenraw                      ports/graphics/libopenraw
 libopensync                     ports/devel/libopensync
 libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
+libopensync-plugin-evolution2-devel  ports/deskutils/libopensync-plugin-evolution2-devel
 libopensync-plugin-python       ports/deskutils/libopensync-plugin-python
 libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
 libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
@@ -10944,6 +10948,7 @@ p5-Locale-Maketext-Simple       ports/devel/p5-Locale-Maketext-Simple
 p5-Locale-Msgcat                ports/misc/p5-Locale-Msgcat
 p5-Locale-PGetText              ports/devel/p5-Locale-PGetText
 p5-Locale-SubCountry            ports/misc/p5-Locale-SubCountry
+p5-Locale-US                    ports/misc/p5-Locale-US
 p5-Locale-gettext               ports/devel/p5-Locale-gettext
 p5-Locale-libintl               ports/devel/p5-Locale-libintl
 p5-LockFile-Simple              ports/devel/p5-LockFile-Simple
@@ -14043,6 +14048,7 @@ p5-locale-maketext-simple       ports/devel/p5-Locale-Maketext-Simple
 p5-locale-msgcat                ports/misc/p5-Locale-Msgcat
 p5-locale-pgettext              ports/devel/p5-Locale-PGetText
 p5-locale-subcountry            ports/misc/p5-Locale-SubCountry
+p5-locale-us                    ports/misc/p5-Locale-US
 p5-lockfile-simple              ports/devel/p5-LockFile-Simple
 p5-log-accounting-svk           ports/devel/p5-Log-Accounting-SVK
 p5-log-accounting-svn           ports/devel/p5-Log-Accounting-SVN
@@ -20457,8 +20463,10 @@ translate                       ports/misc/translate
 translate-toolkit               ports/textproc/translate-toolkit
 translator                      ports/misc/translator
 transmission                    ports/net-p2p/transmission
+transmission-cli                ports/net-p2p/transmission-cli
 transmission-daemon             ports/net-p2p/transmission-daemon
 transmission-gtk2               ports/net-p2p/transmission-gtk2
+transmission-web                ports/www/transmission-web
 transproxy                      ports/www/transproxy
 transset-df                     ports/x11-wm/transset-df
 trapproto                       ports/x11/trapproto
