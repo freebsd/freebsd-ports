@@ -3,6 +3,8 @@ bin/ncgen
 include/ncvalues.h
 include/netcdf.h
 include/netcdf.hh
+%%FORTRAN%%include/netcdf.mod
+%%FORTRAN%%include/typesizes.mod
 include/netcdfcpp.h
 lib/libnetcdf.a
 lib/libnetcdf.la
@@ -12,6 +14,10 @@ lib/libnetcdf_c++.a
 lib/libnetcdf_c++.la
 lib/libnetcdf_c++.so
 lib/libnetcdf_c++.so.4
+%%FORTRAN%%lib/libnetcdff.a
+%%FORTRAN%%lib/libnetcdff.la
+%%FORTRAN%%lib/libnetcdff.so
+%%FORTRAN%%lib/libnetcdff.so.4
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
