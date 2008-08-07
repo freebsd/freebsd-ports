@@ -28,6 +28,9 @@
 %%PYTHON_SITELIBDIR%%/pymsn/event/offline_messages.py
 %%PYTHON_SITELIBDIR%%/pymsn/event/offline_messages.pyc
 %%PYTHON_SITELIBDIR%%/pymsn/event/offline_messages.pyo
+%%PYTHON_SITELIBDIR%%/pymsn/event/profile.py
+%%PYTHON_SITELIBDIR%%/pymsn/event/profile.pyc
+%%PYTHON_SITELIBDIR%%/pymsn/event/profile.pyo
 %%PYTHON_SITELIBDIR%%/pymsn/gnet/__init__.py
 %%PYTHON_SITELIBDIR%%/pymsn/gnet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pymsn/gnet/__init__.pyo
