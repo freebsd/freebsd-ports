@@ -1361,7 +1361,7 @@
     SUBDIR += trac-wikitemplates
     SUBDIR += trac-wysiwyg
     SUBDIR += trac-xmlrpc
-    SUBDIR += transmission-www
+    SUBDIR += transmission-web
     SUBDIR += transproxy
     SUBDIR += twhttpd
     SUBDIR += twig
