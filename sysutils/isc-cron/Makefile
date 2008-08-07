@@ -31,6 +31,8 @@ do-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cron ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/crontab ${PREFIX}/bin
+	${CHOWN} root ${PREFIX}/bin/crontab
+	${CHMOD} 4555 ${PREFIX}/bin/crontab
 	${INSTALL_MAN} ${WRKSRC}/crontab.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/crontab.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/cron.8 ${PREFIX}/man/man8
