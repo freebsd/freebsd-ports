@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daemonlogger
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.snort.org/users/roesch/code/
 
