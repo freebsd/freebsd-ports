@@ -120,6 +120,7 @@
     SUBDIR += torrentvolve
     SUBDIR += trackerbt
     SUBDIR += transmission
+    SUBDIR += transmission-cli
     SUBDIR += transmission-daemon
     SUBDIR += transmission-gtk2
     SUBDIR += tribler

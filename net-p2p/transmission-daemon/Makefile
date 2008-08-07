@@ -8,23 +8,14 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-daemon
 
-COMMENT=	A free BitTorrent daemon written from scratch in C
+MAINTAINER=	mezz@FreeBSD.org
+COMMENT=	A fast and lightweight daemon BitTorrent client
 
 DESCR=		${.CURDIR}/pkg-descr
-MASTERDIR=	${.CURDIR}/../transmission
+MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
+SLAVEPORT=	daemon
 
-CONFIGURE_ARGS=${GCONFIGURE} \
-		--disable-cli \
-		--enable-daemon \
-		--disable-gtk
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-MAN1=		transmission-daemon.1 transmission-proxy.1 \
-		transmission-remote.1
-
-post-patch: general-patch
-
-post-install: general-install
+MAN1=		transmission-daemon.1 transmission-remote.1
 
 .include "${MASTERDIR}/Makefile"
