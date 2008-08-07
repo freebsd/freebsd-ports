@@ -9,7 +9,7 @@ PORTVERSION=	20080326
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 # Oliver Eikemeier recommended the following construction
@@ -55,6 +55,7 @@ post-install:
 	@${REINPLACE_CMD} -e 's|/md5sum/|/md5 -r/|' \
 		-e 's|#!.*/usr/bin/crm.*|#!${PREFIX}/bin/crm|' \
 		${WRKSRC}/mailfilter.crm ${WRKSRC}/mailtrainer.crm \
+		${WRKSRC}/rewriteutil.crm \
 		${WRKSRC}/mailreaver.crm ${WRKSRC}/shuffle.crm
 	@for i in priolist.mfp whitelist.mfp; do \
 		${CP} ${WRKSRC}/$${i}.example ${WRKSRC}/$${i}; \
