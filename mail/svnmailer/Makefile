@@ -7,7 +7,7 @@
 
 PORTNAME=	svnmailer
 DISTVERSION=	1.1.0-dev-r1373
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -16,6 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A tool to post subversion repository commit information
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	YES
 USE_PYTHON=		2.3+
