@@ -1,13 +1,34 @@
-share/sgml/docbook/2.4.1/241chg.txt
-share/sgml/docbook/2.4.1/calstbl.mod
-share/sgml/docbook/2.4.1/dbgenent.mod
-share/sgml/docbook/2.4.1/dbhier.mod
-share/sgml/docbook/2.4.1/dbpool.mod
-share/sgml/docbook/2.4.1/docbook.cat
-share/sgml/docbook/2.4.1/docbook.dcl
-share/sgml/docbook/2.4.1/docbook.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/%%DTD_VERSION%%/catalog
-share/sgml/docbook/2.4.1/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/%%DTD_VERSION%%/catalog
+@unexec %%SGMLCAT_RM%%
+share/sgml/docbook/2.4.1/dtd/241chg.txt
+share/sgml/docbook/2.4.1/dtd/announce.txt
+share/sgml/docbook/2.4.1/dtd/calstbl.mod
+share/sgml/docbook/2.4.1/dtd/catalog
+share/sgml/docbook/2.4.1/dtd/dbgenent.mod
+share/sgml/docbook/2.4.1/dtd/dbhier.mod
+share/sgml/docbook/2.4.1/dtd/dbpool.mod
+share/sgml/docbook/2.4.1/dtd/docbook.cat
+share/sgml/docbook/2.4.1/dtd/docbook.dcl
+share/sgml/docbook/2.4.1/dtd/docbook.dtd
+share/sgml/docbook/2.4.1/dtd/iso-amsa.gml
+share/sgml/docbook/2.4.1/dtd/iso-amsb.gml
+share/sgml/docbook/2.4.1/dtd/iso-amsc.gml
+share/sgml/docbook/2.4.1/dtd/iso-amsn.gml
+share/sgml/docbook/2.4.1/dtd/iso-amso.gml
+share/sgml/docbook/2.4.1/dtd/iso-amsr.gml
+share/sgml/docbook/2.4.1/dtd/iso-box.gml
+share/sgml/docbook/2.4.1/dtd/iso-cyr1.gml
+share/sgml/docbook/2.4.1/dtd/iso-cyr2.gml
+share/sgml/docbook/2.4.1/dtd/iso-dia.gml
+share/sgml/docbook/2.4.1/dtd/iso-grk1.gml
+share/sgml/docbook/2.4.1/dtd/iso-grk2.gml
+share/sgml/docbook/2.4.1/dtd/iso-grk3.gml
+share/sgml/docbook/2.4.1/dtd/iso-grk4.gml
+share/sgml/docbook/2.4.1/dtd/iso-lat1.gml
+share/sgml/docbook/2.4.1/dtd/iso-lat2.gml
+share/sgml/docbook/2.4.1/dtd/iso-num.gml
+share/sgml/docbook/2.4.1/dtd/iso-pub.gml
+share/sgml/docbook/2.4.1/dtd/iso-tech.gml
+@dirrm share/sgml/docbook/2.4.1/dtd
 @dirrm share/sgml/docbook/2.4.1
 @dirrmtry share/sgml/docbook
+@exec %%SGMLCAT_ADD%%
