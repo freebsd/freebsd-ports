@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ivtools
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -29,4 +28,14 @@ USE_XORG=	x11 xaw ice xext
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Incomplete pkg-plist
+.endif
+
+.if ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
+PLIST_SUB+=	IVDL="@comment"
+.endif
+
+.include <bsd.port.post.mk>
