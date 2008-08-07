@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	3.0.${SNAPSHOT}
+PORTVERSION=	2.9.22.${SNAPSHOT}
+PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-svn.${SNAPSHOT}.${REVISION}
+DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-snapshot.${SNAPSHOT}.${REVISION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
-SNAPSHOT=	20080625
-REVISION=	1227
+SNAPSHOT=	20080804
+REVISION=	1251
 
 CONFLICTS=	powerdns-[0-2]*
 
@@ -120,6 +121,7 @@ SUB_LIST+=	SLAPD=
 .	endif
 .else
 PLIST_SUB+=		WITHOPENLDAP="@comment "
+SUB_LIST+=		SLAPD=
 .endif
 
 .if defined(WITH_SQLITE)
@@ -147,10 +149,6 @@ CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
-.if ${OSVERSION} < 500039
-USE_GCC=3.4
-.endif
-
 .if defined(WITH_OPENLDAP)
 post-patch:
 	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
@@ -165,7 +163,7 @@ post-install:
 .if !exists(${PREFIX}/etc/pdns/pdns.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 .for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
