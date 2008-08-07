@@ -37,6 +37,6 @@ lib/libpipebackend.so.0
 @unexec if cmp -s %D/etc/pdns/pdns.conf %D/etc/pdns/pdns.conf-dist; then rm -f %D/etc/pdns/pdns.conf; fi
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/pdns.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdns.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry etc/pdns
