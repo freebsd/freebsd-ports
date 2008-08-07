@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.21
-PORTREVISION=	1
+PORTVERSION=	2.9.21.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -117,10 +116,6 @@ CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHOPENDBX="@comment "
 .endif
 
-.if ${OSVERSION} < 500039
-USE_GCC=3.4
-.endif
-
 .if defined(WITH_OPENLDAP)
 post-patch:
 	${REINPLACE_CMD} -e 's;-I. ;-I. -I${LOCALBASE}/include ;' \
@@ -135,7 +130,7 @@ post-install:
 .if !exists(${PREFIX}/etc/pdns/pdns.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/pdns/pdns.conf-dist ${PREFIX}/etc/pdns/pdns.conf
 .endif
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 .for i in pdns.conf tables-mssql_or_sybase.sql tables-mysql.sql tables-pgsql.sql tables-sqlite.sql
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
