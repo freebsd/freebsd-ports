@@ -1,20 +1,21 @@
+@unexec %%XMLCAT_RM%%
 share/xml/docbook/5.0/catalog.xml
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/ChangeLog
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/README
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/VERSION
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.html
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.pdf
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.xml
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.html
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.pdf
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.xml
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/emacs.png
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen1.png
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen2.png
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen3.png
-%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/xxe.png
-%%NOPORTDOCS%%@dirrm share/xml/docbook/5.0/docs/images
-%%NOPORTDOCS%%@dirrm share/xml/docbook/5.0/docs
+%%PORTDOCS%%share/xml/docbook/5.0/docs/ChangeLog
+%%PORTDOCS%%share/xml/docbook/5.0/docs/README
+%%PORTDOCS%%share/xml/docbook/5.0/docs/VERSION
+%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.html
+%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.pdf
+%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.xml
+%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.html
+%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.pdf
+%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.xml
+%%PORTDOCS%%share/xml/docbook/5.0/docs/images/emacs.png
+%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen1.png
+%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen2.png
+%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen3.png
+%%PORTDOCS%%share/xml/docbook/5.0/docs/images/xxe.png
+%%PORTDOCS%%@dirrm share/xml/docbook/5.0/docs/images
+%%PORTDOCS%%@dirrm share/xml/docbook/5.0/docs
 %%DTD%%share/xml/docbook/5.0/dtd/docbook.dtd
 %%DTD%%@dirrm share/xml/docbook/5.0/dtd
 %%NVDL%%share/xml/docbook/5.0/nvdl/docbook.nvdl
@@ -36,3 +37,4 @@ share/xml/docbook/5.0/catalog.xml
 @dirrm share/xml/docbook/5.0
 @dirrmtry share/xml/docbook
 @dirrmtry share/xml
+@exec %%XMLCAT_ADD%%
