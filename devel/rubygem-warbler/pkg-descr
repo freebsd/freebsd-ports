@@ -1,0 +1,14 @@
+Warbler is a gem to make a .war file out of a Rails project. The intent is
+to provide a minimal, flexible, ruby-like way to bundle up all of your
+application files for deployment to a Java application server.
+
+Warbler provides a sane set of out-of-the box defaults that should allow
+most Rails applications without external gem dependencies
+(aside from Rails itself) to assemble and Just Work.
+
+Warbler bundles JRuby and the JRuby-Rack servlet adapter for
+dispatching requests to your application inside the java application server,
+and assembles all jar files in WARBLER_HOME/lib/*.jar into your application.
+No external dependencies are downloaded.
+
+WWW: http://caldersphere.rubyforge.org/warbler/
