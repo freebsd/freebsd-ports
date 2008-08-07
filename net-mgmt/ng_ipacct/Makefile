@@ -15,6 +15,8 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
 .ifndef PACKAGE_BUILDING
+NO_PACKAGE=	"Depends on kernel"
+.else
 IGNORE=		"Depends on kernel"
 .endif
 
