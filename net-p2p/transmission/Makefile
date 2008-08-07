@@ -9,6 +9,8 @@ PORTNAME=	transmission
 PORTVERSION=	1.31
 CATEGORIES=	net-p2p
 MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	The "meta-port" for Transmission BitTorrent client
