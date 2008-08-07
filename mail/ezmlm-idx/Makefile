@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	ezmlm-idx
-PORTVERSION=	0.40
-PORTREVISION=	4
+PORTVERSION=	0.444
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
-		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/mail/ezmlm/
+MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
+		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/ \
+		http://cr.yp.to/software/ \
+		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	ezmlm-cgi.patch
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
 USE_QMAIL_RUN=	yes
@@ -29,27 +25,28 @@ CONFLICTS=	ezmlm-0.*
 # LANGUAGE is the ISO code for the language to use in ezmlmrc
 LANGUAGE?=	en_US
 
+SUB_FILES=	pkg-message
+
+OPTIONS=	MYSQL "Build MySQL extensions" off \
+		PGSQL "Build PostgreSQL extensions" off
+
+.include <bsd.port.pre.mk>
+
 # If WITH_MYSQL is defined, build with MySQL extensions
 .if defined(WITH_MYSQL)
-ALL_TARGET=	mysql it ${LANGUAGE}
 USE_MYSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
-.elif defined(WITH_POSTGRESQL)
-ALL_TARGET=	pgsql it ${LANGUAGE}
+.elif defined(WITH_PGSQL)
 USE_PGSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
-.else
-ALL_TARGET=	it ${LANGUAGE}
 .endif
 
-RESTRICTED=	Unsure of DJB license
+ALL_TARGET=	it ${LANGUAGE}
 
 WRKSRC=		${WRKDIR}/ezmlm-${EZMLM_VERSION}
 EZMLM_VERSION=	0.53
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PROGRAMS=	ezmlm-archive ezmlm-cgi ezmlm-clean ezmlm-cron ezmlm-gate \
 		ezmlm-get ezmlm-idx ezmlm-issubn ezmlm-limit ezmlm-list \
@@ -75,13 +72,16 @@ pre-patch:
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < idx.patch
 
 post-patch:
+	@${ECHO_CMD} /usr/sbin > ${WRKSRC}/conf-cron
 	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 .if defined(WITH_MYSQL)
+	@${ECHO_CMD} mysql > ${WRKSRC}/conf-sub
 	@${ECHO_CMD} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_mysql/conf-sqlcc
 	@${ECHO_CMD} ${EXTRACT_LIB} > ${WRKSRC}/sub_mysql/conf-sqlld
-.elif defined(WITH_POSTGRESQL)
+.elif defined(WITH_PGSQL)
+	@${ECHO_CMD} pgsql > ${WRKSRC}/conf-sub
 	@${ECHO_CMD} ${EXTRACT_INCLUDE} > ${WRKSRC}/sub_pgsql/conf-sqlcc
 	@${ECHO_CMD} ${EXTRACT_LIB} > ${WRKSRC}/sub_pgsql/conf-sqlld
 .endif
@@ -91,7 +91,7 @@ post-patch:
 		${WRKSRC}/idx.h
 
 do-install:
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
 		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
@@ -100,12 +100,12 @@ do-install:
 .for file in ${CONFIG}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/ezmlm/${file}.sample
 .endfor
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${SED} -e 's,$${PREFIX},${PREFIX},' ${.CURDIR}/pkg-message \
-		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
