@@ -1,0 +1,7 @@
+This is a MySQL JDBC driver gem for JRuby. Use
+
+   require 'jdbc/mysql'
+
+to make the driver accessible to JDBC and ActiveRecord code running in JRuby.
+
+WWW: http://rubyforge.org/projects/jruby-extras/
