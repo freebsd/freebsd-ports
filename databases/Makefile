@@ -554,6 +554,7 @@
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
     SUBDIR += rubygem-activerecord
+    SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rrdtool
