@@ -9,45 +9,47 @@
 
 PORTNAME=	docbook
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
-DISTFILES=	docbk30.tar.Z
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/${PORTVERSION}/
+DISTNAME=	docbk30
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	V3.0 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+USE_ZIP=	yes
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	DTD_NAME=${PORTNAME}
-PLIST_SUB+=	DTD_VERSION=${PORTVERSION}
-PLIST_SUB+=	XMLCATMGR=${XMLCATMGR}
-PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
-INSTDIR=	${PREFIX}/share/sgml/docbook
-ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
+DTDDIR=		share/sgml/docbook/3.0/dtd
+PLIST_SUB+=	SGMLCAT_ADD="${SGMLCAT_ADD}" \
+		SGMLCAT_RM="${SGMLCAT_RM}"
+
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
+SGMLCAT=	${PREFIX}/share/sgml/catalog.ports
+XMLCAT=		${PREFIX}/share/xml/catalog.ports
+ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 
-LATEST_LINK=	docbook-${PORTVERSION}
+SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
+		    ${PREFIX}/${DTDDIR}/catalog
+SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
+		    ${PREFIX}/${DTDDIR}/catalog
 
-pre-su-install:
-	@[ -d ${INSTDIR}/${PORTVERSION} ] || ${MKDIR} ${INSTDIR}/${PORTVERSION}
+LATEST_LINK=	docbook-300
 
 do-install:
-	@zcat ${DISTDIR}/docbk30.tar.Z | \
-		(cd ${INSTDIR}/${PORTVERSION}; ${PAX} -r)
-	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/${PORTVERSION}/catalog
-	@${ECHO_CMD} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/${PORTVERSION}/catalog
-	@${CHMOD} ${SHAREMODE} ${INSTDIR}/${PORTVERSION}/*
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	@${MKDIR} ${PREFIX}/${DTDDIR}
+	files=$$(${FIND} ${WRKSRC} -type f | ${GREP} -v "${WRKSRC}/\."); \
+	for i in $${files}; do \
+		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
+	done
+	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${PREFIX}/${DTDDIR}/catalog
 
 post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/${PORTVERSION}/catalog
+	-${SGMLCAT_ADD}
 
 .include <bsd.port.mk>
