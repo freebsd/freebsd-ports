@@ -1,6 +1,6 @@
-# New ports collection makefile for:   nickle
-# Date created:        16 April 2001
-# Whom:                Christopher Elkins <chrise@scardini.com>
+# New ports collection makefile for:	Nickle
+# Date created:				16 April 2001
+# Whom:				Christopher Elkins <chrise@scardini.com>
 #
 # $FreeBSD$
 #
@@ -10,8 +10,8 @@ PORTVERSION=	2.56
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A desk calculator language
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	A numeric oriented programming language
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
