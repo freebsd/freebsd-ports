@@ -15,7 +15,7 @@ COMMENT=	A command line pc speaker bell
 
 PLIST_FILES=	bin/yell
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS=	SUID	"Set the setuid bit on the yell program"	off
 
