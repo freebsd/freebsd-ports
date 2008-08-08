@@ -16,7 +16,7 @@ upgrades.
   If you are updating from a previous version, to preserve your
   settings and data, please do the following:
 
-        mv /usr/local/www/data/phpBB2 /usr/local/www
+	mv /usr/local/www/data/phpBB2 /usr/local/www
 
   Then update as usual.
 
@@ -25,12 +25,12 @@ upgrades.
   AUTHOR: mezz@FreeBSD.org
 
   Update to 1.3x, the net-p2p/transmission now is a meta-port. It depends on
-  cli, daemon and gtk2. If you don't want that, uninstall transmission and
-  install net-p2p/transmission-cli.
+  cli, daemon, and gtk2. If you don't want that, uninstall transmission and
+  install net-p2p/transmission-cli by doing:
 
   	portmaster -o net-p2p/transmission-cli net-p2p/transmission
 
-  or
+  or, if you're using portupgrade:
 
   	portupgrade -o net-p2p/transmission-cli net-p2p/transmission
 
@@ -76,11 +76,10 @@ upgrades.
   configuration files have been modified.
 
   You are recommended to track changes in the sample configuration and
-  keep your configuration in a version control system. I use
-  Subversion (see the devel/subversion port) to track my
-  changes. Keeping the sample configuration in a 'vendor branch' (see
-  the Subversion book for more details) allows easy merging of changes
-  from the sample configuration.
+  keep your configuration in a version control system. I use Subversion
+  (see the devel/subversion port) to track my changes. Keeping the sample
+  configuration in a 'vendor branch' (see the Subversion book for more
+  details) allows easy merging of changes from the sample configuration.
 
   *** IMPORTANT ***
 
@@ -137,7 +136,7 @@ upgrades.
   AUTHOR: Greg Larkin <glarkin@FreeBSD.org>
 
   If you are upgrading from a prior version of ojs2, please backup
-  your database, uploaded files directory and your config.inc.php before
+  your database, uploaded files directory, and your config.inc.php before
   the upgrade.  Read /usr/local/share/docs/ojs2/UPGRADE or visit
   http://pkp.sfu.ca/ojs/UPGRADE for additional upgrade information.
 
@@ -1985,12 +1984,12 @@ upgrades.
   That should be enough at most circumstances. If you have difficulties,
   please be sure to expand item 1 to:
 
-  1a. Remove all ports which depends on linux base port.
+  1a. Remove all ports that depend on linux base port.
   1b. Remove linux base port.
   1c. Clean /compat/linux/ directory.
 
   In case you want to get rid of the port, deinstall it, then return
-  back compat.linux.osrelease to 2.4.2 (as usual make sure that no
+  back compat.linux.osrelease to 2.4.2 (as usual, make sure that no
   linux application is running) and remove from /etc/make.conf the line
   containing the OVERRIDE_LINUX_BASE_PORT variable.
 
@@ -2000,8 +1999,9 @@ upgrades.
 
   The lang/tcl-tk-wrapper port has been replaced by lang/tcl-wrapper and
   x11-toolkits/tk-wrapper ports. The Tcl and Tk ports no longer include an
-  option to install the wrapper - the wrapper ports require a Tcl/Tk instead.
-  The new configuration files in local etc are named: tclsh.conf wish.conf
+  option to install the wrapper -- the wrapper ports require a Tcl/Tk
+  instead.  The new configuration files in local etc directory are named:
+  tclsh.conf, wish.conf.
 
 20070327:
   AFFECTS: users of devel/py-sip and x11-toolkits/py-qt
@@ -2024,20 +2024,20 @@ upgrades.
   AUTHOR: mezz@FreeBSD.org
 
   The x11-wm/fluxbox-devel has been merged into x11-wm/fluxbox. You should
-  be back up your ~/.fluxbox and remove it. If you still want to keep to
-  use the same ~/.fluxbox, then you will have to do this:
+  back up your ~/.fluxbox and remove it. If you still want to keep using
+  your good old ~/.fluxbox, you will have to do the following:
 
-  	- The prefix has been changed from X11BASE (/usr/X11R6) to
-  	  LOCALBASE (/usr/local). You might have to edit a few of paths in
-  	  the ~/.fluxbox/* if there is any.
-  	- The bsetroot has been renamed to fbsetroot. You might have to
-  	  tweak a few of theme for bsetroot -> fbsetroot. Other way can be
-  	  done is to install the x11-wm/boxtools that has bsetroot if you
-  	  don't want to edit any theme.
+    - Since prefix has been changed from X11BASE (/usr/X11R6) to
+      LOCALBASE (/usr/local), you might have to edit a few paths in
+      the ~/.fluxbox/* if there are any.
+    - The bsetroot has been renamed to fbsetroot. You might have to
+      tweak a few themes for bsetroot -> fbsetroot. Other way it can be
+      is to install the x11-wm/boxtools that has bsetroot if you do not
+      want to edit any themes.
 
   While I am here, don't forget to use 'pkgdb -Ff'. As for the portmaster
   users, I don't think you will need to do anything since portmaster will
-  taking care of it by default.
+  take care of it by default.
 
 20070318:
   AFFECTS: users of devel/gettext (i.e.: YOU)
@@ -2053,7 +2053,7 @@ upgrades.
 
   In addition, if you have multimedia/vlc installed, you should deinstall
   it *before* either of the above commands, and reinstall it manually
-  afterwards - vlc erroneously installs its own version of lib/charset.alias
+  afterwards: vlc erroneously installs its own version of lib/charset.alias
   which will overwrite the one supplied by devel/gettext otherwise.
 
 20070313:
@@ -6732,7 +6732,7 @@ Option "XkbRules" "xfree86"
 	find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
 	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //') | sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
-      afterward.
+      afterwards.
 
 20040529:
   AFFECTS: users of mail/mailman and japanese/mailman
@@ -6740,8 +6740,8 @@ Option "XkbRules" "xfree86"
 
   In Mailman 2.1.5, some significant changes have been made to the
   file formats for qfiles and the pendings database. See
-  $PREFIX/share/doc/mailman/UPGRADING for details (if you define
-  NOPORTDOCS, refer relevant file in an archive).
+  $PREFIX/share/doc/mailman/UPGRADING for details (if you defined
+  NOPORTDOCS, refer to relevant file in the archive).
 
 20040527:
   AFFECTS: users of net/openldap22-client
@@ -6757,21 +6757,21 @@ Option "XkbRules" "xfree86"
   AUTHOR: mat@FreeBSD.org
 
   This port was removed because of dependencies problem. If you still want to
-  have it, install databases/postgresql7 with -DWITHOUT_SERVER
+  have it, install databases/postgresql7 with -DWITHOUT_SERVER.
 
 20040521:
   AFFECTS: users of irc/ircd-hybrid-ru
   AUTHOR: krion@FreeBSD.org
 
   UID/GID were changed from 6667 to 555, please manually delete
-  old entries from /etc/passwd /etc/master.passwd and /etc/group
+  old entries from /etc/passwd, /etc/master.passwd, and /etc/group.
 
 20040514:
   AFFECTS: users of audio/faad
   AUTHOR: pav@FreeBSD.org
 
-  If the compilation of faad fails, please manually delete older
-  installed version of faad and reinstall from port.
+  If the compilation of faad fails, please manually delete previously
+  installed version of faad and reinstall it from the port.
 
 20040512:
   AFFECTS: users of print/teTeX
@@ -6912,16 +6912,20 @@ Option "XkbRules" "xfree86"
       rm <PREFIX>/AntiVir/antivir.vdf
       chown root:wheel <PREFIX>/AntiVir
       chown root:smmsp <PREFIX>/AntiVir/hbedv.key
+
     In your SENDMAIL_MC change
       `S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
     to:
       `S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
     and rebuild sendmail.cf.
+
     If /var/spool/avmilter exist you have to:
       chown -R smmsp:smmsp /var/spool/avmilter
+
     If you are using a customized <PREFIX>/etc/avmilter.conf the port
     won't remove it on deinstall and you have to manually change User
     and Group to smmsp there.
+
     Afterwards you can install the new version of this port. You then
     should run antivirupdater to get a current VDF.
 
@@ -6964,10 +6968,10 @@ Option "XkbRules" "xfree86"
 
   Change the default version of perl to 5.8.
 
-  1) Force perl-5.6.1 to be upgraded with perl-5.8.
+  1) Force perl-5.6.1 to be upgraded with perl-5.8:
 	portupgrade -o lang/perl5.8 -f perl-5.6.1_15
 
-  2) Update all p5-* modules.
+  2) Update all p5-* modules:
 	portupgrade -f p5-\*
 
 $FreeBSD$
