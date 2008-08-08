@@ -9,6 +9,9 @@ bin/alarm-clock
 %%PYTHON_SITELIBDIR%%/alarmclock/MainClass.py
 %%PYTHON_SITELIBDIR%%/alarmclock/MainClass.pyc
 %%PYTHON_SITELIBDIR%%/alarmclock/MainClass.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/OldDirCheck.py
+%%PYTHON_SITELIBDIR%%/alarmclock/OldDirCheck.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/OldDirCheck.pyo
 %%PYTHON_SITELIBDIR%%/alarmclock/Prefix.py
 %%PYTHON_SITELIBDIR%%/alarmclock/Prefix.pyc
 %%PYTHON_SITELIBDIR%%/alarmclock/Prefix.pyo
@@ -39,11 +42,14 @@ share/locale/da/LC_MESSAGES/alarm-clock.mo
 share/locale/de_DE/LC_MESSAGES/alarm-clock.mo
 share/locale/en_GB/LC_MESSAGES/alarm-clock.mo
 share/locale/es/LC_MESSAGES/alarm-clock.mo
+share/locale/el/LC_MESSAGES/alarm-clock.mo
 share/locale/fa/LC_MESSAGES/alarm-clock.mo
 share/locale/fr/LC_MESSAGES/alarm-clock.mo
+share/locale/he/LC_MESSAGES/alarm-clock.mo
 share/locale/hu/LC_MESSAGES/alarm-clock.mo
 share/locale/it/LC_MESSAGES/alarm-clock.mo
 share/locale/ja/LC_MESSAGES/alarm-clock.mo
+share/locale/ko/LC_MESSAGES/alarm-clock.mo
 share/locale/la/LC_MESSAGES/alarm-clock.mo
 share/locale/lv/LC_MESSAGES/alarm-clock.mo
 share/locale/nb/LC_MESSAGES/alarm-clock.mo
@@ -52,11 +58,14 @@ share/locale/nl/LC_MESSAGES/alarm-clock.mo
 share/locale/pl/LC_MESSAGES/alarm-clock.mo
 share/locale/pt/LC_MESSAGES/alarm-clock.mo
 share/locale/pt_BR/LC_MESSAGES/alarm-clock.mo
+share/locale/ro/LC_MESSAGES/alarm-clock.mo
 share/locale/ru/LC_MESSAGES/alarm-clock.mo
 share/locale/sr/LC_MESSAGES/alarm-clock.mo
 share/locale/sr@latin/LC_MESSAGES/alarm-clock.mo
 share/locale/sv/LC_MESSAGES/alarm-clock.mo
 share/locale/tr/LC_MESSAGES/alarm-clock.mo
+share/locale/zh_CN/LC_MESSAGES/alarm-clock.mo
+share/locale/zh_TW/LC_MESSAGES/alarm-clock.mo
 share/pixmaps/alarm-clock.svg
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
