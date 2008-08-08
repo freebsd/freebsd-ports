@@ -18,3 +18,4 @@ lib/libnetcdf_c++.so.4
 %%FORTRAN%%lib/libnetcdff.la
 %%FORTRAN%%lib/libnetcdff.so
 %%FORTRAN%%lib/libnetcdff.so.4
+@dirrmtry %%DOCSDIR%%
