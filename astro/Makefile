@@ -6,6 +6,7 @@
     SUBDIR += aa
     SUBDIR += accrete
     SUBDIR += boinc-einsteinathome
+    SUBDIR += boinc-milkyway
     SUBDIR += boinc-setiathome-enhanced
     SUBDIR += celestia
     SUBDIR += celestia-gnome

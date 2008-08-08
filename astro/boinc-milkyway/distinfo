@@ -1,0 +1,6 @@
+MD5 (astronomy_1.21_amd64-unknown-freebsd) = b0e2def4033f1d6931b9aea552c6abe6
+SHA256 (astronomy_1.21_amd64-unknown-freebsd) = fe17316df1de0916af60e23b8953be4329514ba1dd0fb691df1b46801a7a464d
+SIZE (astronomy_1.21_amd64-unknown-freebsd) = 315101
+MD5 (astronomy_1.21_i386-unknown-freebsd) = 0c7db6aec0895c2ff2bb071b2b202797
+SHA256 (astronomy_1.21_i386-unknown-freebsd) = 5e1a1af979c18c1056df905a81174374add773c1d746127a0304b76f2fd58bd5
+SIZE (astronomy_1.21_i386-unknown-freebsd) = 288688
