@@ -1,4 +1,3 @@
-@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
@@ -36,6 +35,7 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
+%%PHPBBDIR%%/config.php
 %%PHPBBDIR%%/db/db2.php
 %%PHPBBDIR%%/db/index.htm
 %%PHPBBDIR%%/db/msaccess.php
@@ -50,7 +50,6 @@
 %%PHPBBDIR%%/images/avatars/gallery/index.htm
 %%PHPBBDIR%%/images/avatars/index.htm
 %%PHPBBDIR%%/images/index.htm
-%%PHPBBDIR%%/images/rss.gif
 %%PHPBBDIR%%/images/smiles/icon_arrow.gif
 %%PHPBBDIR%%/images/smiles/icon_biggrin.gif
 %%PHPBBDIR%%/images/smiles/icon_confused.gif
@@ -90,8 +89,6 @@
 %%PHPBBDIR%%/includes/page_header.php
 %%PHPBBDIR%%/includes/page_tail.php
 %%PHPBBDIR%%/includes/prune.php
-%%PHPBBDIR%%/includes/rss_config.php
-%%PHPBBDIR%%/includes/rss_functions.php
 %%PHPBBDIR%%/includes/sessions.php
 %%PHPBBDIR%%/includes/smtp.php
 %%PHPBBDIR%%/includes/sql_parse.php
@@ -118,27 +115,6 @@
 %%PHPBBDIR%%/install/update_to_latest.php
 %%PHPBBDIR%%/install/upgrade.php
 %%PHPBBDIR%%/language/index.htm
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/admin_activate.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/admin_send_email.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/admin_welcome_activated.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/admin_welcome_inactive.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/coppa_welcome_inactive.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/group_added.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/group_approved.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/group_request.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/index.htm
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/privmsg_notify.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/profile_send_email.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/topic_notify.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/user_activate.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/user_activate_passwd.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/user_welcome.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email/user_welcome_inactive.tpl
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/index.htm
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_admin.php
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_bbcode.php
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_faq.php
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_main.php
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
 %%PHPBBDIR%%/language/lang_english/email/admin_send_email.tpl
 %%PHPBBDIR%%/language/lang_english/email/admin_welcome_activated.tpl
@@ -168,10 +144,8 @@
 %%PHPBBDIR%%/posting.php
 %%PHPBBDIR%%/privmsg.php
 %%PHPBBDIR%%/profile.php
-%%PHPBBDIR%%/rss.php
 %%PHPBBDIR%%/search.php
 %%PHPBBDIR%%/templates/index.htm
-%%PHPBBDIR%%/templates/rss.xsl
 %%PHPBBDIR%%/templates/subSilver/admin/admin_message_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/auth_forum_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/auth_select_body.tpl
@@ -213,7 +187,6 @@
 %%PHPBBDIR%%/templates/subSilver/admin/words_edit_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/words_list_body.tpl
 %%PHPBBDIR%%/templates/subSilver/agreement.tpl
-%%PHPBBDIR%%/templates/subSilver/atom_body.tpl
 %%PHPBBDIR%%/templates/subSilver/bbcode.tpl
 %%PHPBBDIR%%/templates/subSilver/confirm_body.tpl
 %%PHPBBDIR%%/templates/subSilver/error_body.tpl
@@ -254,22 +227,6 @@
 %%PHPBBDIR%%/templates/subSilver/images/icon_minipost_new.gif
 %%PHPBBDIR%%/templates/subSilver/images/icon_newest_reply.gif
 %%PHPBBDIR%%/templates/subSilver/images/index.htm
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_aim.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_edit.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_email.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_icq_add.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_ip.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_msnm.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_pm.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_profile.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_quote.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_search.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_www.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_yim.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/msg_newpost.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/post.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply-locked.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_aim.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_edit.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_email.gif
@@ -328,7 +285,6 @@
 %%PHPBBDIR%%/templates/subSilver/profile_send_email.tpl
 %%PHPBBDIR%%/templates/subSilver/profile_send_pass.tpl
 %%PHPBBDIR%%/templates/subSilver/profile_view_body.tpl
-%%PHPBBDIR%%/templates/subSilver/rss_body.tpl
 %%PHPBBDIR%%/templates/subSilver/search_body.tpl
 %%PHPBBDIR%%/templates/subSilver/search_results_posts.tpl
 %%PHPBBDIR%%/templates/subSilver/search_results_topics.tpl
@@ -346,33 +302,26 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
-@exec touch %B/config.php
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/doc
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
-@dirrm %%PHPBBDIR%%/admin
-@dirrm %%PHPBBDIR%%/cache
-@dirrm %%PHPBBDIR%%/db
-@dirrm %%PHPBBDIR%%/images/smiles
-@dirrmtry %%PHPBBDIR%%/images/avatars/gallery
-@dirrmtry %%PHPBBDIR%%/images/avatars/upload
-@dirrmtry %%PHPBBDIR%%/images/avatars
-@dirrmtry %%PHPBBDIR%%/images
-@dirrm %%PHPBBDIR%%/includes
-@dirrm %%PHPBBDIR%%/install/schemas
-@dirrm %%PHPBBDIR%%/install
-@dirrm %%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/email
-@dirrm %%PHPBBDIR%%/language/lang_chinese_traditional_taiwan
+@dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
+@dirrm %%PHPBBDIR%%/templates/subSilver/images
+@dirrm %%PHPBBDIR%%/templates/subSilver/admin
+@dirrm %%PHPBBDIR%%/templates/subSilver
+@dirrm %%PHPBBDIR%%/templates
 @dirrm %%PHPBBDIR%%/language/lang_english/email
 @dirrm %%PHPBBDIR%%/language/lang_english
-@dirrmtry %%PHPBBDIR%%/language
-@dirrm %%PHPBBDIR%%/templates/subSilver/admin
-@dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/
-@dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
-@dirrmtry %%PHPBBDIR%%/templates/subSilver/images
-@dirrmtry %%PHPBBDIR%%/templates/subSilver
-@dirrmtry %%PHPBBDIR%%/templates
-@dirrmtry %%PHPBBDIR%% || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"
-@dirrmtry www/data
+@dirrm %%PHPBBDIR%%/language
+@dirrm %%PHPBBDIR%%/install/schemas
+@dirrm %%PHPBBDIR%%/install
+@dirrm %%PHPBBDIR%%/includes
+@dirrm %%PHPBBDIR%%/images/smiles
+@dirrm %%PHPBBDIR%%/images/avatars/gallery
+@dirrm %%PHPBBDIR%%/images/avatars
+@dirrm %%PHPBBDIR%%/images
+@dirrm %%PHPBBDIR%%/db
+@dirrm %%PHPBBDIR%%/cache
+@dirrm %%PHPBBDIR%%/admin
+@dirrm %%PHPBBDIR%%
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
+@dirrm %%PORTDOCS%%%%DOCSDIR%%

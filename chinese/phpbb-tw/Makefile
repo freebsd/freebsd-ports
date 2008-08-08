@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.21
+PORTVERSION=	2.0.23
 CATEGORIES=	chinese www
-MASTER_SITES=	LOCAL/chinsan
+MASTER_SITES=	LOCAL/chinsan/php/ \
+		http://freebsd.ee.ccu.edu.tw/
 PKGNAMESUFFIX=	-tw
 DISTNAME=	phpBB-tw-${PORTVERSION}
 
@@ -30,7 +31,7 @@ HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 PHPBB_URL?=	phpBB2
 #
 # End of user-configurable variables.

@@ -17,6 +17,21 @@ configure your installation of phpBB2:
 
   http://%%HOSTNAME%%/%%PHPBB_URL%%
 
+To make phpBB available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /%%PHPBB_URL%%/ "%%PREFIX%%/%%PHPBBDIR%%/"
+
+    <Directory "%%PREFIX%%/%%PHPBBDIR%%/">
+        Options none
+        AllowOverride Limit
+
+        Order Deny,Allow
+        Deny from All
+        Allow from All 
+    </Directory>
+
+
 
 After configuring phpBB2 and ensuring that it is operational, you **MUST**
 delete the following files manually for security purposes:

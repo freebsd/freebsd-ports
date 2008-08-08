@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080808
+  AFFECTS: users of chinese/phpbb-tw
+  AUTHOR: chinsan@FreeBSD.org
+
+  The default install directory for phpbb-tw has changed from
+  ${PREFIX}/www/data/phpBB2 to ${PREFIX}/www/phpBB2.
+
+  If you are updating from a previous version, to preserve your
+  settings and data, please do the following:
+
+        mv /usr/local/www/data/phpBB2 /usr/local/www
+
+  Then update as usual.
+
 20080806:
   AFFECTS: users of net-p2p/transmission
   AUTHOR: mezz@FreeBSD.org
