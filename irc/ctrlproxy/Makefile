@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ctrlproxy
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 		LOCAL/chinsan/ctrlproxy/
