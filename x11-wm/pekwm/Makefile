@@ -6,32 +6,34 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.carpetsmoker.net/distfiles/ \
+MASTER_SITES=	http://pekwm.org/projects/3/files/ \
+		http://www.carpetsmoker.net/distfiles/ \
 		http://www.xs4all.nl/~tournoij/distfiles/ \
 		http://www.rwxrwxrwx.net/distfiles/
 
-MAINTAINER=	carpetsmoker@xs4all.nl
-COMMENT=	A windowmanager based on aewm++
+MAINTAINER=	carpetsmoker@rwxrwxrwx.net
+COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	xft xpm x11
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
-		--enable-xft --disable-pcre --enable-image-xpm \
-		--enable-image-jpeg --enable-image-png --disable-debug \
+		--enable-xft --enable-image-xpm --enable-image-jpeg \
+		--enable-image-png --disable-debug \
 		--disable-pedantic --enable-menus --enable-harbour
+CFLAGS+=	-DICONV_CONST
 MAN1=		pekwm.1
 MANCOMPRESSED=	no
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/pekwm
+post-configure:
+	@${REINPLACE_CMD} 's|-lX11|-liconv -lX11|' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
