@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	soprano
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QT4 RDF framework
 
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
