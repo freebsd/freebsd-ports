@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Class-Data-Accessor
-PORTVERSION=	0.04002
+PORTVERSION=	0.04003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Inheritable and overridable class and instance data accessors
+
+DEPRECATED=	Please consider using p5-Class-Accessor-Grouped or p5-Moose
 
 PERL_CONFIGURE=	5.8.0+
 
