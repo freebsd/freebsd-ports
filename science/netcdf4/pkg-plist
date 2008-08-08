@@ -18,7 +18,3 @@ lib/libnetcdf_c++.so.4
 %%FORTRAN%%lib/libnetcdff.la
 %%FORTRAN%%lib/libnetcdff.so
 %%FORTRAN%%lib/libnetcdff.so.4
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
