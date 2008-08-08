@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.56
+PORTVERSION=	2.68
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
@@ -15,13 +15,10 @@ COMMENT=	A numeric oriented programming language
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 
 # Nickle now has bindings which are likely to pull in libraries that need
 # libpthread.  Link to it now, since it wouldn't work at runtime.
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 MAN1=		nickle.1
 
