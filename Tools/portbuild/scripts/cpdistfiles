@@ -16,13 +16,22 @@ builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 yesreally=0
 dryrun=-n
+cleanup=0
 if [ "$4" = "-yesreally" ]; then
   yesreally=1
   dryrun=
+elif [ "$4" = "-cleanup" ]; then
+  cleanup=1
 fi
 
 distdir=${builddir}/distfiles/
 log=${builddir}/logs/.distfiles
+
+if [ "${cleanup}" -eq 1 ]; then
+    echo "Removing distfiles"
+    rm -rf ${distdir} || exit 1
+    exit 0
+fi
 
 if [ -e ${distdir}/.pbtmp ]; then
   echo "${distdir} has not been processed!"
@@ -36,4 +45,5 @@ if [ "$yesreally" = "0" ]; then
   echo "--> Will transfer ${num} files - make sure this is what you want and rerun '$0 $* -yesreally'"
 else
   echo "--> Transferred ${num} files - results in ${log}"
+  echo "    Now run '$0 $1 $2 $3 -cleanup' to remove distfiles and save space"
 fi
