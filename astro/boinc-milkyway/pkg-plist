@@ -1,0 +1,4 @@
+@cwd %%BOINC_HOME%%
+projects/%%MILKYWAY_SITE%%/app_info.xml
+projects/%%MILKYWAY_SITE%%/%%MILKYWAY_BINARY%%
+@unexec rmdir %D/projects/%%MILKYWAY_SITE%% 2>/dev/null || true
