@@ -1,520 +1,498 @@
-#!/usr/bin/env python
+#!/bin/sh
 
-# Improved build scheduler.  We try to build leaf packages (those
-# which can be built immediately without requiring additional
-# dependencies to be built) in the order such that the ones required
-# by the longest dependency chains are built first.
-#
-# This has the effect of favouring deep parts of the package tree and
-# evening out the depth over time, hopefully avoiding the situation
-# where the entire cluster waits for a deep part of the tree to
-# build on a small number of machines
-#
-# Other advantages are that this system is easily customizable and
-# will let us customize things like the matching policy of jobs to
-# machines.
-#
-# TODO:
-# * External queue manager
-# * Mark completed packages instead of deleting them
-# * check mtime for package staleness (cf make)
-# * Check for parent mtimes after finishing child
+# configurable variables
+pb=/var/portbuild
 
-import os, sys, threading, time, subprocess, fcntl, operator
-#from itertools import ifilter, imap
-from random import choice
+# XXX unused
+get_latest_snap() {
+    snap=$1
 
-def parseindex(indexfile):
+    zfs list -rHt snapshot ${snap} | tail -1 | awk '{print $1}'
+}
 
-    tmp={}
-    pkghash={}
-    for i in file(indexfile):
-        line=i.rstrip().split("|")
-        pkg = line[0]
-        tmp[pkg] = line[1:]
+now() {
+    date +%Y%m%d%H%M%S
+}
 
-        # XXX hash category names too
+do_list() {
+    arch=$1
+    branch=$2
 
-        # Trick python into storing package names by reference instead of copying strings and wasting 60MB
-        pkghash[pkg] = pkg
+    buildpar=/var/portbuild/${arch}/${branch}/builds
 
-    index=dict.fromkeys(tmp.keys())
-    for pkg in tmp.iterkeys():
-        line = tmp[pkg]
-        data={'name': pkg, 'path':line[0],
-                #'prefix':line[1],
-                #'comment':line[2],
-                #'descr':line[3],
-                #'maintainer':line[4],
-                'categories':line[5], # XXX duplicates strings
-                'bdep':[pkghash[i] for i in line[6].split(None)],
-                'rdep':[pkghash[i] for i in line[7].split(None)],
-                #'www':line[8],
-                'edep':[pkghash[i] for i in line[9].split(None)],
-                'pdep':[pkghash[i] for i in line[10].split(None)],
-                'fdep':[pkghash[i] for i in line[11].split(None)],
-                'height':None}
-        if index[pkg] is None:
-            index[pkg] = data
-        else:
-            index[pkg].update(data)
-        if not index[pkg].has_key('parents'):
-            index[pkg]['parents'] = []
+    if [ -d ${buildpar} ]; then
+	snaps=$(cd ${buildpar}; ls -1d 2* 2> /dev/null)
+	echo "The following builds are active:"
+	echo ${snaps}
 
-        # XXX iter?
-        deps=set()
-        for j in ['bdep','rdep','edep','fdep','pdep']:
-            deps.update(set(index[pkg][j]))
-        index[pkg]['deps'] = [pkghash[i] for i in deps]
+	if [ -L ${buildpar}/latest -a -d ${buildpar}/latest/ ]; then
+	    link=$(readlink ${buildpar}/latest)
+	    link=${link%/}
+	    link=${link##*/}
 
-        for j in deps:
-            # This grossness is needed to avoid a second pass through
-            # the index, because we might be about to refer to
-            # packages that have not yet been processed
-            if index[j] is not None:
-                if index[j].has_key('parents'):
-                    index[j]['parents'].append(pkghash[pkg])
-                else:
-                    index[j]['parents'] = [pkghash[pkg]]
-            else:
-                index[j] = {'parents':[pkghash[pkg]]}
+	    echo "Latest build is: ${link}"
+	fi
+    else
+	echo "No such build environment ${arch}/${branch}"
+	exit 1
+    fi
+}
 
-    return index
+do_create() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-def gettargets(index, targets):
-    """ split command line arguments into list of packages to build.  Returns set or iterable """
-    # XXX make this return the full recursive list and use this later for processing wqueue
+    zfs create -o mountpoint=${builddir} a/portbuild/${arch}/${branch}/${buildid} \
+	|| (echo "Couldn't create build"; exit 1)    
 
-    plist = set()
-    if len(targets) == 0:
-        targets = ["all"]
-    for i in targets:
-        if i == "all":
-            plist = index.iterkeys()
-            break
-        if i.endswith("-all"):
-            cat = i.rpartition("-")[0]
-            plist.update(j for j in index.iterkeys() if cat in index[j]['categories'])
-        elif i.rstrip(".tbz") in index.iterkeys():
-            plist.update([i.rstrip(".tbz")])
+    echo "New build ID is ${buildid}"
 
-    return plist
+}
 
-def heightindex(index, targets):
-    """ Initial population of height tree """
+do_clone() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-    for i in targets:
-        heightdown(index, i)
+    if [ "$#" -gt 0 ]; then
+	newid=$1
+	shift
+    else
+	newid=$(now)
+    fi
 
-def heightdown(index, pkgname):
-    """
-    Recursively populate the height tree down from a given package,
-    assuming empty values on entries not yet visited
-    """
+    tmp=$(realpath ${builddir})
+    tmp=${tmp%/}
+    newbuilddir="${tmp%/*}/${newid}"
 
-    pkg=index[pkgname]
-    if pkg['height'] is None:
-        if len(pkg['deps']) > 0:
-            max = 0
-            for i in pkg['deps']:
-                w = heightdown(index, i)
-                if w > max:
-                    max = w
-            pkg['height'] = max + 1
-        else:
-            pkg['height'] = 1
-    return pkg['height']
+    oldfs=a/portbuild/${arch}/${buildid}
+    newfs=a/portbuild/${arch}/${newid}
 
-def heightup(index, pkgname):
-    """ Recalculate the height tree going upwards from a package """
+    zfs snapshot ${oldfs}@${newid}
+    zfs clone ${oldfs}@${newid} ${newfs}
+    zfs set mountpoint=${newbuilddir} ${newfs}
+    zfs promote ${newfs}
 
-    if not index.has_key(pkgname):
-        raise KeyError
+    if zfs list -H -t filesystem ${oldfs}/ports 2> /dev/null; then
+	portsnap=${oldfs}/ports@${newid}
+	zfs snapshot ${portsnap}
+	zfs clone ${portsnap} ${newfs}/ports
+	zfs promote ${newfs}/ports
+    fi
 
-    parents=set(index[pkgname]['parents'])
+    if zfs list -H -t filesystem ${oldfs}/src 2> /dev/null; then
+	srcsnap=${oldfs}/src@${newid}
+	zfs snapshot ${srcsnap}
+	zfs clone ${srcsnap} ${newfs}/src
+	zfs promote ${newfs}/src
+    fi
 
-    while len(parents) > 0:
-        # XXX use a deque?
-        pkgname = parents.pop()
-        if not index.has_key(pkgname):
-            # XXX can this happen?
-            continue
-        pkg=index[pkgname]
-        oldheight=pkg['height']
-        if oldheight is None:
-            # Parent is in our build target list
-            continue
-        if len(pkg['deps']) == 0:
-            newheight = 1
-        else:
-            newheight=max(index[j]['height'] for j in pkg['deps']) + 1
-        if newheight > oldheight:
-            print "%s height increasing: %d -> %d", pkg, oldheight, newheight
-            assert(False)
-        if newheight != oldheight:
-            pkg['height'] = newheight
-            parents.update(pkg['parents'])
+    if [ -d ${newbuilddir} ]; then
+	if [ ! -f ${pbab}/builds/previous/.keep ]; then
+	    build destroy ${arch} ${branch} previous
+	fi
+        rm -f ${pbab}/builds/previous
+	mv ${pbab}/builds/latest ${pbab}/builds/previous
 
-def deleteup(index, pkgname):
-    if not index.has_key(pkgname):
-        raise KeyError
+	ln -sf ${newbuilddir} ${pbab}/builds/latest
+    fi
 
-    parents=set([pkgname])
+    echo "New build ID is ${newid}"
+}
 
-    children=[]
-    removed=[]
-    while len(parents) > 0:
-        pkgname = parents.pop()
-        if not index.has_key(pkgname):
-            # Parent was already deleted via another path
-            # XXX can happen?
-            print "YYYYYYYYYYYYYYYYYYYYYY %s deleted" % pkgname
-            continue
-        if index[pkgname]['height'] is None:
-            # parent is not in our list of build targets
-            continue
-        pkg=index[pkgname]
+do_portsupdate() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-        children.extend(pkg['deps'])
-        parents.update(pkg['parents'])
-        removed.append(pkgname)
-        del index[pkgname]
+    portsfs=a/portbuild/${arch}/${buildid}/ports
 
-    removed = set(removed)
-    children = set(children)
-#    print "Removed %d packages, touching %d children" % (len(removed), len(children))
-
-    for i in children.difference(removed):
-        par=index[i]['parents']
-        index[i]['parents'] = list(set(par).difference(removed))
-
-# XXX return an iter
-def selectheights(index, level):
-    return [i for i in index.iterkeys() if index[i]['height'] == level]
-
-def rank(index, ready, sortd, max = None):
-    """ rank the list of ready packages according to those listed as
-    dependencies in successive entries of the sorted list """
-
-    input=set(ready)
-    output = []
-    count = 0
-    print "Working on depth ",
-    for i in sortd:
-        deps = set(index[i]['deps'])
-        both = deps.intersection(input)
-        if len(both) > 0:
-            print "%d " % index[i]['height'],
-            input.difference_update(both)
-            output.extend(list(both))
-            if len(input) == 0:
-                break
-        if max:
-            count+=len(both)
-            if count > max:
-                return output
-    print
-    output.extend(list(input))
-
-    return output
-
-def jobsuccess(index, job):
-
-    pkg = index[job]
-    # Build succeeded
-    for i in pkg['parents']:
-        index[i]['deps'].remove(job)
-
-    # deps/parents tree now partially inconsistent but this is
-    # what we need to avoid counting the height of the entry
-    # we are about to remove (which would make it a NOP)
-    heightup(index, job)
-
-    del index[job]
-
-def jobfailure(index, job):
-
-    # Build failed
-    deleteup(index, job)
+    echo "================================================"
+    echo "Reimaging ZFS ports tree on ${builddir}/ports"
+    echo "================================================"
+    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
     
-class worker(threading.Thread):
+    now=$(now)
+    zfs snapshot a/snap/ports@${now}
+    zfs clone a/snap/ports@${now} ${portsfs}
+    zfs set mountpoint=${builddir}/ports ${portsfs}
+    cp ${builddir}/ports/cvsdone ${builddir}	
+}
 
-    lock = threading.Lock()
+do_srcupdate() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-    # List of running threads
-    tlist = []
+    srcfs=a/portbuild/${arch}/${buildid}/src
 
-    # List of running jobs
-    running = []
+    echo "================================================"
+    echo "Reimaging ZFS src tree on ${builddir}/src"
+    echo "================================================"
+    
+    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
+    
+    case ${branch} in
+	8|8-exp)
+	    srcbranch=HEAD
+	    ;;
+	*-exp)
+	    srcbranch=${branch%-exp}
+	    ;;
+	*)
+	    srcbranch=${branch}
+    esac
+    now=$(now)
+    
+    zfs snapshot a/snap/src-${srcbranch}@${now}
+    zfs clone a/snap/src-${srcbranch}@${now} ${srcfs}
+    zfs set mountpoint=${builddir}/src ${srcfs}
 
-    # Used to signal dispatcher when we finish a job
-    event = threading.Event()
+}
 
-    def __init__(self, mach, job, queue, arch, branch):
-        threading.Thread.__init__(self) 
-        self.job = job
-        self.mach = mach
-        self.queue = queue
-        self.arch = arch
-        self.branch = branch
+cleanup_client() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    mach=$4
+    arg=$5
 
-    def run(self): 
-        global index
+    # XXX use same exclusion protocol as claim-chroot
 
-        pkg = index[self.job]
+    echo "Started cleaning up ${arch}/${branch} build ID ${buildid} on ${mach}"
 
-        if len(pkg['deps']) != 0:
-            print "Running job with non-empty deps: %s" % pkg
-            assert(False)
+    test -f ${pb}/${arch}/portbuild.${mach} && . ${pb}/${arch}/portbuild.${mach}
 
-        print "Running job %s" % (self.job)
-        while True:
-            retcode = subprocess.call(["/usr/bin/env", "FD=%s" % " ".join(["%s.tbz" % i for i in pkg['fdep']]), "ED=%s" % " ".join(["%s.tbz" % i for i in pkg['edep']]), "PD=%s" % " ".join(["%s.tbz" % i for i in pkg['pdep']]), "BD=%s" % " ".join(["%s.tbz" % i for i in pkg['bdep']]), "RD=%s" % " ".join(["%s.tbz" % i for i in pkg['rdep']]), "/var/portbuild/scripts/pdispatch2", self.mach, self.arch, self.branch, "/var/portbuild/scripts/portbuild", "%s.tbz" % self.job, pkg['path']])
-            self.queue.release(self.mach)
-            if retcode != 254:
-                break
+    # Kill off builds and clean up chroot
+    ${pb}/scripts/dosetupnode ${arch} ${branch} ${buildid} ${mach} -nocopy -queue
+    
+    if [ "${arg}" = "-full" ]; then
+	${ssh_cmd} ${client_user}@${mach} ${sudo_cmd} rm -rf ${pb}/${arch}/${branch}/builds/${buildid}/.ready ${pb}/${arch}/${branch}/builds/${buildid} /tmp/.setup-${buildid}
+    fi
+    echo "Finished cleaning up ${arch}/${branch} build ID ${buildid} on ${mach}"
 
-            # Failed to obtain job slot
-            time.sleep(15)
-            (self.mach, dummy) = self.queue.pick()
-            print "Retrying on %s" % self.mach
+}
 
-        print "Finished job %s" % self.job,
+do_cleanup() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    arg=$5
+    shift 5
 
-        if retcode == 0:
-            status = True
-            print
-        else:
-            status = False
-            print " with status %d" % retcode
+    for i in `cat ${pb}/${arch}/mlist`; do
+	cleanup_client ${arch} ${branch} ${buildid} ${i} ${arg} &
+    done
+    wait
+}
 
-        worker.lock.acquire()
-        worker.running.remove(self.job)
-        worker.tlist.remove(self)
-        if status == True:
-            jobsuccess(index, self.job)
-        else:
-            jobfailure(index, self.job)
+do_upload() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-        # Wake up dispatcher in case it was blocked
-        worker.event.set()
-        worker.event.clear()
+    echo "Not implemented yet"
+    exit 1
 
-        worker.lock.release()
+}
 
-    @staticmethod
-    def dispatch(mach, job, queue, arch, branch):
-        worker.lock.acquire()
-        wrk = worker(mach, job, queue, arch, branch)
-        worker.tlist.append(wrk)
-        worker.lock.release()
-        wrk.start()
+test_fs() {
+    local fs=$1
 
-class machqueue(object):
-    path = '';
-    fd = -1;
+    zfs list -Ht filesystem | awk '{print $1}' | grep -q "$fs"
 
-    # fcntl locks are per-process, so the fcntl lock acquisition will
-    # succeed if another thread already holds it.  We need the fcntl
-    # lock for external visibility between processes but also need an
-    # internal lock for protecting against out own threads.
-    ilock = threading.Lock()
+}
 
-    def __init__(self, path):
-        super(machqueue, self).__init__()
-        self.path = path
-        self.fd = os.open("%s.lock" % self.path, os.O_RDWR|os.O_CREAT)
-        
-#        print "Initializing with %s %d" % (self.path, self.fd)
 
-    def lock(self):
-        print "Locking...",
-#        ret = fcntl.lockf(self.fd, fcntl.LOCK_EX)
-        self.ilock.acquire()
-        print "success"
+get_latest_child() {
+    local fs=$1
 
-    def unlock(self):
-        print "Unlocking fd"
-        self.ilock.release()
-#        ret = fcntl.lockf(self.fd, fcntl.LOCK_UN)
+    # Return the child of this filesystem with lexicographically
+    # highest name
+    # 
+    # XXX if a filesystem is cloned into a different prefix
+    # (e.g. different arch) then we may not get the most recent one
+    # but that should not happen.
+    zfs get -H -o name,value origin | grep ${fs} | sort | \
+    (while read zfs origin; do
+	if [ "${origin%@*}" = "${fs}" ]; then
+	    child=${zfs}
+	fi
+    done; echo ${child})
+}
 
-    def poll(self):
-        """ Return currently available machines """
+get_parent() {
+    local fs=$1
 
-        mfile = file(self.path + "../mlist", "r")
-        mlist = mfile.readlines()
-        mfile.close()
-        mlist = [i.rstrip() for i in mlist] # Chop \n
+    # Check whether this filesystem has a parent
+    zfs get -H -o value origin ${fs} | \
+	(read snap;
+	case "${snap}" in
+	    -|a/snap/*)
+		;;
+	    *)
+		parent=${snap}
+		;;
+	esac; echo ${parent})
+}
 
-        list = os.listdir(self.path)
-        special = []
-        machines = []
-        for i in list:
-            if i.startswith('.'):
-                special.append(i)
-            else:
-                if i in mlist:
-                    machines.append(i)
-                else:
-                    os.unlink(self.path + i)
+destroy_fs() {
+    fs=$1
+    buildid=$2
+    subfs=$3
 
-        print "Found machines %s" % machines
-        return (machines, special)
+    fullfs=${fs}/${buildid}${subfs}
+    if test_fs "${fullfs}"; then
 
-    def pick(self):
-        """ Choose a random machine from the queue """
+	# We can destroy a leaf filesystem (having no dependent
+	# clones) with no further effort.  However if we are
+	# destroying the root of the clone tree then we have to
+	# promote a child to be the new root.
+	#
+	# XXX In principle we might have to iterate until we end up as
+	# a leaf but I don't know if this can happen.
+	echo "Filesystem ${fullfs}"
+	child=$(get_latest_child ${fullfs})
+	parent=$(get_parent ${fullfs})
+	echo "Filesystem has parent ${parent}"
+	if [ -z "${child}" ]; then
+	    echo "Filesystem is a leaf"
+	else
+	    echo "Filesystem has latest child ${child}"
+	    # Check whether filesystem is root
+	    if [ -z "${parent}" ]; then
+		echo "Filesystem is root; promoting ${child}"
+		zfs promote ${child}
+		parent=$(get_parent ${fullfs})
+		echo "New parent is ${parent}"
+	    else
+		echo "Filesystem has parent ${parent} and cannot be destroyed"
+		return 1
+	    fi
+	fi
 
-        min = 999
-        while min == 999:
-            while True:
-                self.lock()
-                (machines, special) = self.poll()
-                if len(machines):
-                    break
-                else:
-                    self.unlock()
-                    time.sleep(15)
-                    # XXX Use kqueue to monitor for changes
+	# We might have snapshots on the target filesystem, e.g. if it
+	# is both the head and tail of its clone tree.  They should be
+	# unreferenced.
+	(zfs list -H -o name | grep "^${fullfs}@" | xargs -n 1 zfs destroy) || return 1
 
-            list = []
-            # XXX Choose as fraction of capacity
-            for i in machines:
-                f = file(self.path + i, "r")
-                out = f.readline().rstrip()
-                try:
-                    load = int(out)
-                except ValueError:
-                    print "Bad value for %s: %s" % (i, out)
-                    load = 999
-                f.close()
-                if load < min:
-                    min = load
-                    list=[]
-                if load == min:
-                    list.append(i)
-            print "(%s, %d)" % (list, load)
+	# The target filesystem should now be unreferenced
+	zfs destroy -f "${fullfs}" || return 1
 
-            if min == 999:
-                print "Bad queue length for %s" % list
-                self.unlock()
+	# Clean up the initial snapshot(s) that were promoted onto a
+        # cloned filesystem.  It could have been propagated several
+        # times so we don't know where it ended up.  Therefore we
+        # can't match for the ${buildid} part of ${fullfs}.
+	#
+	# XXX might be doing a substring match of subfs but we can't
+	# prepend / because a null subfs will not match
 
-        machine = choice(list)
-        # XXX hook up config files
-        if min == 2:
-            # Queue full
-            os.unlink(self.path + machine)
-        else:
-            f = file(self.path + machine, "w")
-            f.write("%d\n" % (min + 1))
-            f.flush()
-            f.close()
+	# Destroy the origin snapshot, which should be unreferenced
+	if [ ! -z "${parent}" ]; then
+	    zfs destroy -f ${parent} || return 1
+	fi
+    fi
+}	
 
-        self.unlock()
-        return (machine, special)
+do_destroy() {
+    arch=$1
+    branch=$2
+    buildid=$3
+    builddir=$4
+    shift 4
 
-    def release(self, mach):
-        self.lock()
-        print "Releasing %s" % mach,
-        if os.path.exists(self.path + mach):
-            f = file(self.path + mach, "r+")
-            out = f.readline().rstrip()
-            try:
-                load = int(out)
-            except ValueError:
-                print "Queue error on release of %s: %s" % (mach, out)
-                load = 3 #XXX
-        else:
-            f = file(self.path + mach, "w")
-            load = 3 #XXX
+    buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+    if [ -z "${buildid}" ]; then
+	echo "Invalid build ID ${buildid}"
+	exit 1
+    fi
 
-#        f.truncate(0)
-        f.write("%d\n" % (load - 1))
-        print "...now %d" % (load - 1)
-        f.flush()
-        f.close()
-        self.unlock()
+    latestid=$(resolve ${pb} ${arch} ${branch} latest)
+    if [ "${buildid}" = "${latestid}" ]; then
+	echo "Cannot destroy latest build"
+	exit 1
+    fi
 
-def main(arch, branch, args):
-    global index
+    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
+    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
+    destroy_fs a/portbuild/${arch} ${buildid} || exit 1
 
-    basedir="/var/portbuild/"+arch+"/"+branch
-    portsdir=basedir+"/ports"
-    indexfile=portsdir+"/INDEX-"+branch
-    indexfile="/var/portbuild/i386/7-exp/ports/INDEX-7"
+    rmdir ${builddir}
 
-    qlen = 100
+}
 
-    q = machqueue("/var/portbuild/%s/queue/" % arch)
+# Run a command as root if running as user
+# Authentication and command validation is taken care of by buildproxy
+proxy_root() {
+    cmd=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+    builddir=$5
+    shift 5
+    args=$@
 
-    print "parseindex..."
-    index=parseindex(indexfile)
-    print "length = %s" % len(index)
+    id=$(id -u)
+    if [ ${id} != "0" ]; then
+	/var/portbuild/scripts/buildproxy-client "build ${cmd} ${arch} ${branch} ${buildid} ${args}"
+	error=$?
+	if [ ${error} -eq 254 ]; then
+	    echo "Proxy error"
+	fi
+    else
+	eval "do_${cmd} ${arch} ${branch} ${buildid} ${builddir} ${args}"
+	error=$?
+    fi
 
-    targets = gettargets(index, args)
+    exit ${error}
+}
 
-    print "heightindex..."
-    heightindex(index, targets)
+# Run a command as the ports-${arch} user if root
+proxy_user() {
+    cmd=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+    builddir=$5
+    shift 5
+    args=$@
 
-    sortd = sorted(((key, val["height"]) for (key, val) in index.iteritems() if val["height"] is not None), key=operator.itemgetter(1), reverse=True)
-    wqueue = rank(index, selectheights(index, 1), (i[0] for i in sortd), qlen)
+    id=$(id -u)
+    if [ ${id} != "0" ]; then
+	eval "do_${cmd} ${arch} ${branch} ${buildid} \"${builddir}\" ${args}"
+	error=$?
+    else
+	su ports-${arch} -c "build ${cmd} ${arch} ${branch} ${buildid} \"${builddir}\" ${args}"
+	error=$?
+    fi
 
-    # Main work loop
-    while len(sortd) > 0:
-        worker.lock.acquire()
-        print "Remaining %s" % len(sortd)
-        while len(wqueue) > 0:
-            job = wqueue.pop(0)
+    exit ${error}
+}
 
-            if os.path.exists("/var/portbuild/%s/%s/packages/All/%s.tbz" % (arch, branch, job)):
-                print "Skipping %s since it already exists" % job
-                jobsuccess(index, job)
-            else:
-                worker.running.append(job) # Protect against a queue
-                                           # rebalance adding this
-                                           # back during build
-                worker.lock.release()
-                (machine, specials) = q.pick()
-                worker.dispatch(machine, job, q, arch, branch)
-                worker.lock.acquire()
+usage () {
+  echo "usage: build <command> <arch> <branch> [<buildid>] [<options> ...]"
+  exit 1
+}
 
-        if len(wqueue) == 0:
-            if len(sortd) == 0:
-                # All jobs in progress, wait for children to exit
-                break
-            print "Rebalancing queue...",
-            sortd = sorted(((key, val["height"]) for (key, val) in index.iteritems() if val["height"] is not None), key=operator.itemgetter(1), reverse=True)
-            if len(sortd) == 0:
-                break
+##################
 
-            print sortd[0:3]
-            if sortd[0][0] == 1:
-                # Everything left is depth 1, no need to waste time rebalancing further
-                qlen = len(index)
+if [ $# -lt 3 ]; then
+  usage
+fi
 
-            # Don't add too many deps at once (e.g. after we build a
-            # package like gmake), or we will switch to buildinglots
-            # of shallow packages
-            ready = [i for i in selectheights(index, 1) if i not in worker.running]
-            wqueue = rank(index, ready, (i[0] for i in sortd), qlen)[:2*qlen]
-            print "now %s (%s ready)" % (wqueue, len(ready))
+cmd=$1
+arch=$2
+branch=$3
+shift 3
 
-        worker.lock.release()
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
 
-        if len(wqueue) == 0:
-            # Ran out of work, wait for workers to free up some more
-            print "No work to do, sleeping on workers"
-            worker.event.wait()
+pbab=${pb}/${arch}/${branch}
 
-    for i in worker.tlist:
-        i.join()
+validate_env ${arch} ${branch} || exit 1
 
-    print "Finished"
+# Not every command requires a buildid as arg
+if [ $# -ge 1 ]; then
+    buildid=$1
+    shift 1
 
-if __name__ == "__main__":
-#    from guppy import hpy; h = hpy()
+    # Most commands require a buildid that is valid on the server.  The
+    # exception is "cleanup" which is cleaning up a client build that may
+    # already be destroyed on the server.
+    case "$cmd" in
+	cleanup)
+	    # Resolve symlinks but don't bail if the build doesn't exist.
+	    newbuildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+	    if [ ! -z "${newbuildid}" -a "${newbuildid}" != "${buildid}" ]; then
+		echo "Resolved ${buildid} to ${newbuildid}"
+		buildid=${newbuildid}
 
-    main(sys.argv[1], sys.argv[2], sys.argv[3:])
+		builddir=$(realpath ${pbab}/builds/${buildid}/)
+		# We can't rely on buildenv for this code path
+	    fi
+	    ;;
+	*)
+	    newbuildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+	    if [ -z "${newbuildid}" ]; then
+		echo "Build ID ${buildid} does not exist"
+		exit 1
+	    fi
+	    if [ ${newbuildid} != ${buildid} ]; then
+		echo "Resolved ${buildid} to ${newbuildid}"
+		buildid=${newbuildid}
+	    fi
 
-#    index = parseindex("/var/portbuild/i386/7-exp/ports/INDEX-7")
-#    print index['gmake-3.81_2']
+	    builddir=$(realpath ${pbab}/builds/${buildid}/)
 
+	    buildenv ${pb} ${arch} ${branch} ${builddir}
+	    ;;
+    esac
+fi
+
+# Unprivileged commands
+case "$cmd" in
+    list)
+	do_list ${arch} ${branch} $@
+	;;
+    create)
+	if [ -z "${buildid}" ]; then
+	    buildid=$(now)
+	    usage
+	fi
+	proxy_root create ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    clone)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	proxy_root clone ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    portsupdate)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	proxy_root portsupdate ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    srcupdate)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	proxy_root srcupdate ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    cleanup)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	# builddir may be null if cleaning up a destroyed build
+	proxy_user cleanup ${arch} ${branch} ${buildid} "${builddir}" $@
+	;;
+    upload)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	proxy_user upload ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    destroy)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
+	proxy_root destroy ${arch} ${branch} ${buildid} ${builddir} $@
+	;;
+    *)
+	echo "Invalid command: $cmd"
+	exit 1
+	;;
+esac
