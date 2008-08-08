@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	# Empty
 DISTFILES=	# None
 
-MAINTAINER=	grog@lemis.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant server installs a typical set of ports for a server
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
