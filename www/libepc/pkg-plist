@@ -51,8 +51,16 @@ libdata/pkgconfig/libepc-ui-1.0.pc
 %%DOCSDIR%%/widgets.html
 share/locale/ca/LC_MESSAGES/libepc.mo
 share/locale/de/LC_MESSAGES/libepc.mo
+share/locale/el/LC_MESSAGES/libepc.mo
+share/locale/en_GB/LC_MESSAGES/libepc.mo
 share/locale/es/LC_MESSAGES/libepc.mo
+share/locale/fi/LC_MESSAGES/libepc.mo
+share/locale/fr/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
 @dirrm %%DOCSDIR%%
