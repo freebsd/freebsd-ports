@@ -1,0 +1,6 @@
+Switzerland is a tool for testing networks, ISPs, and firewalls developed
+by the Electronic Frontier Foundation (www.eff.org).  It will spot IP
+packets which are forged or modified between clients, inform you, and
+give you copies of the modified packets.
+
+WWW: http://www.eff.org/testyourisp/switzerland

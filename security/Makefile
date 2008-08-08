@@ -762,6 +762,7 @@
     SUBDIR += sudosh
     SUBDIR += super
     SUBDIR += swatch
+    SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
     SUBDIR += tea-total
