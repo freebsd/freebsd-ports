@@ -397,6 +397,7 @@
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pgworksheet
+    SUBDIR += php-adodb-ext
     SUBDIR += php-sqlite3
     SUBDIR += php-sqlrelay
     SUBDIR += php4-dba
