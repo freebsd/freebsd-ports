@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.4p4
+PORTVERSION?=	4.2.4p4
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
