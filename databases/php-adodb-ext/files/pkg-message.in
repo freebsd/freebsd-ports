@@ -1,0 +1,13 @@
+*****************************************************************************
+The ADOdb extension has been installed successful.
+Add a line containing
+
+       extension=adodb.so
+
+to your %%LOCALBASE%%/etc/php/extensions.ini to load it.
+If you have the Zend Optimizer installed, add the line
+
+       zend_extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/adodb.so
+
+to your [zend] section in the php.ini file, too.
+*****************************************************************************
