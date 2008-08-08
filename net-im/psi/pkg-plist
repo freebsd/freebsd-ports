@@ -10,6 +10,7 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/certs/README
 %%DATADIR%%/certs/rootcerts.pem
 %%DATADIR%%/certs/startcom_ca.crt
+%%DATADIR%%/certs/startcom_ca_new.crt
 %%DATADIR%%/iconsets/emoticons/default/angry.png
 %%DATADIR%%/iconsets/emoticons/default/bat.png
 %%DATADIR%%/iconsets/emoticons/default/beer.png
@@ -76,6 +77,7 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/iconsets/roster/default/perr.png
 %%DATADIR%%/iconsets/roster/default/system.png
 %%DATADIR%%/iconsets/roster/default/xa.png
+%%DATADIR%%/iconsets/roster/stellar-1.jisp
 %%DATADIR%%/iconsets/system/README
 %%DATADIR%%/iconsets/system/default/account.png
 %%DATADIR%%/iconsets/system/default/add.png
@@ -155,6 +157,7 @@ share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/erase.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/group.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/rotate.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/save.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/scale.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/scroll.png
 %%DATADIR%%/iconsets/system/default/whiteboarding/select.png
@@ -182,16 +185,16 @@ share/icons/hicolor/64x64/apps/psi.png
 @dirrm %%DATADIR%%/iconsets
 @dirrm %%DATADIR%%/certs
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/applications

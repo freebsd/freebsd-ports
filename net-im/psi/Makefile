@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psi
-DISTVERSION=	0.11
+DISTVERSION=	0.12
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -21,17 +21,18 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui iconengines imageformats qt3support \
 		inputmethods moc network rcc script svg uic xml
 
-
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LDFLAGS=${PTHREAD_LIBS} \
 		KDEDIR=${LOCALBASE}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
-		--with-qca-inc=${LOCALBASE}/include/QtCrypto \
-		--with-qca-lib=${LOCALBASE}/lib \
-		--disable-growl --disable-dnotify --disable-ghbnr
+		--disable-growl --disable-ghbnr
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
+
+post-patch:
+	#fix build when libzip is installed
+	cd ${WRKSRC}/src/tools/zip && ${LN} zip.h psi-zip.h
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/psi
