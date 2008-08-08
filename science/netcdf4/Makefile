@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFor
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	${MAKE_ENV}
+PORTDOCS=	COPYRIGHT README RELEASE_NOTES
 
 MAN1=		ncdump.1 ncgen.1
 MAN3=		netcdf.3
@@ -44,10 +45,8 @@ post-install:
 	${LN} -fs libnetcdf.so.4 ${PREFIX}/lib/libnetcdf.so
 	${LN} -fs libnetcdf_c++.so.4 ${PREFIX}/lib/libnetcdf_c++.so
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in COPYRIGHT README RELEASE_NOTES
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--disable-docs-install
 .endif
