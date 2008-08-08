@@ -2228,6 +2228,7 @@ dnews                           ports/news/dnews
 dnrd                            ports/dns/dnrd
 dns-proxy-tor                   ports/security/dns-proxy-tor
 dns_balance                     ports/dns/dns_balance
+dns_mre                         ports/dns/dns_mre
 dnscheck                        ports/dns/dnscheck
 dnsdoctor                       ports/dns/dnsdoctor
 dnsflood                        ports/dns/dnsflood
@@ -8992,6 +8993,7 @@ ntl                             ports/math/ntl
 ntlmaps                         ports/net/ntlmaps
 ntop                            ports/net/ntop
 ntp-devel                       ports/net/ntp-devel
+ntp-rc                          ports/net/ntp-rc
 ntraceroute                     ports/net/ntraceroute
 nttcp                           ports/benchmarks/nttcp
 nuclearchess                    ports/games/nuclearchess
@@ -16413,6 +16415,7 @@ photoclip                       ports/graphics/photoclip
 photopc                         ports/graphics/photopc
 php-Auth_OpenID                 ports/security/php-Auth_OpenID
 php-Auth_OpenID2                ports/security/php-Auth_OpenID2
+php-adodb-ext                   ports/databases/php-adodb-ext
 php-auth_openid                 ports/security/php-Auth_OpenID
 php-auth_openid2                ports/security/php-Auth_OpenID2
 php-dbg2                        ports/devel/php-dbg2
@@ -18799,6 +18802,8 @@ rubygem-actionmailer            ports/mail/rubygem-actionmailer
 rubygem-actionpack              ports/www/rubygem-actionpack
 rubygem-actionwebservice        ports/www/rubygem-actionwebservice
 rubygem-activerecord            ports/databases/rubygem-activerecord
+rubygem-activerecord-jdbc-adapter  ports/databases/rubygem-activerecord-jdbc-adapter
+rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdbcmysql-adapter
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
@@ -18829,6 +18834,7 @@ rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
+rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-json                    ports/devel/rubygem-json
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-maruku                  ports/www/rubygem-maruku
@@ -18894,6 +18900,7 @@ rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
+rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
@@ -19893,6 +19900,7 @@ swiggle                         ports/www/swiggle
 swish++                         ports/www/swish++
 swish-e                         ports/www/swish-e
 swisswatch                      ports/x11-clocks/swisswatch
+switzerland                     ports/security/switzerland
 swm                             ports/x11-wm/swm
 sword                           ports/misc/sword
 swt                             ports/x11-toolkits/swt
