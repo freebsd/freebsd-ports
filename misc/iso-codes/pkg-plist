@@ -91,6 +91,7 @@ share/locale/fa/LC_MESSAGES/iso_639.mo
 share/locale/fa/LC_MESSAGES/iso_639_3.mo
 share/locale/fi/LC_MESSAGES/iso_15924.mo
 share/locale/fi/LC_MESSAGES/iso_3166.mo
+share/locale/fi/LC_MESSAGES/iso_3166_2.mo
 share/locale/fi/LC_MESSAGES/iso_4217.mo
 share/locale/fi/LC_MESSAGES/iso_639.mo
 share/locale/fi/LC_MESSAGES/iso_639_3.mo
@@ -369,6 +370,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/wal
 @dirrmtry share/locale/ve/LC_MESSAGES
 @dirrmtry share/locale/ve
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/uk/LC_MESSAGES
@@ -377,10 +380,14 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
 @dirrmtry share/locale/tig/LC_MESSAGES
 @dirrmtry share/locale/tig
 @dirrmtry share/locale/ti/LC_MESSAGES
 @dirrmtry share/locale/ti
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/syr/LC_MESSAGES
@@ -415,12 +422,18 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/kw/LC_MESSAGES
@@ -449,16 +462,24 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/gez/LC_MESSAGES
 @dirrmtry share/locale/gez
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
+@dirrmtry share/locale/fa_IR/LC_MESSAGES
+@dirrmtry share/locale/fa_IR
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/dv/LC_MESSAGES
 @dirrmtry share/locale/dv
+@dirrmtry share/locale/de_AT/LC_MESSAGES
+@dirrmtry share/locale/de_AT
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
