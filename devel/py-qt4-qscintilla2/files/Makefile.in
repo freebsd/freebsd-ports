@@ -8,13 +8,14 @@ LINK = c++
 CPPFLAGS = -DQT_NO_DEBUG -DQT_CORE_LIB -DQT_GUI_LIB\
 		-I%%LOCALBASE%%/include/python%%PYVER%%\
 		-I%%LOCALBASE%%/share/qt4/mkspecs/freebsd-g++\
-		-I%%LOCALBASE%%/include/QtCore\
-		-I%%LOCALBASE%%/include/QtGui\
+		-I%%QT_INCDIR%%/QtCore\
+		-I%%QT_INCDIR%%/QtGui\
+		-I%%QT_INCDIR%%\
 		-I. -I%%LOCALBASE%%/include
 CFLAGS = -pipe -fPIC -O2 -fno-strict-aliasing -Wall -W
 CXXFLAGS = -pipe -fPIC -O2 -fno-strict-aliasing -Wall -W
 LFLAGS = -shared -pthread -Wl,-rpath,%%LOCALBASE%%/lib
-LIBS = -L%%LOCALBASE%%/lib -lqscintilla2 -lQtCore -lz -lm -pthread\
+LIBS = -L%%QT_LIBDIR%% -L%%LOCALBASE%%/lib -lqscintilla2 -lQtCore -lz -lm -pthread\
 	-lgthread-2.0 -lglib-2.0 -liconv -lQtGui -lXt -lpng -lSM -lICE\
 	-lXi -lXrender -lXrandr -lXfixes -lXcursor -lXinerama -lfreetype\
 	-lfontconfig -lXext -lX11

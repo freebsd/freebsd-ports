@@ -6,7 +6,7 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 
 CATEGORIES=	devel
@@ -26,6 +26,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
+USE_QT_VER=	4
+QT_COMPONENTS=	gui
 
 OPTIONS=	API		"Install binding API for QScintilla2" on \
 		DEBUG		"Enable debugging in generated code" off \
@@ -73,6 +75,8 @@ do-configure:
 post-configure:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile &&\
 		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g'\
+			-e 's|%%QT_INCDIR%%|${QT_INCDIR}|g'\
+			-e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|g'\
 			-e 's|%%PYVER%%|${PYVER}|g'\
 			-e 's|CC = cc|CC = ${CC}|'\
 			-e 's|CXX = c++|CXX = ${CXX}|'\
