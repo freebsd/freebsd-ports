@@ -28,6 +28,7 @@
     SUBDIR += gtubeclock
     SUBDIR += intclock
     SUBDIR += kdetoys3
+    SUBDIR += kdetoys4
     SUBDIR += lmclock
     SUBDIR += mlclock
     SUBDIR += mouseclock

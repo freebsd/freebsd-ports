@@ -1,0 +1,41 @@
+bin/akonadi_control
+bin/akonadictl
+bin/akonadiserver
+include/akonadi/private/akonadiprotocolinternals_export.h
+include/akonadi/private/imapparser_p.h
+include/akonadi/private/imapset_p.h
+include/akonadi/private/notificationmessage_p.h
+include/akonadi/private/protocol_p.h
+include/akonadi/private/xdgbasedirs_p.h
+lib/libakonadiprivate.so
+lib/libakonadiprivate.so.1
+lib/libakonadiprivate.so.1.0.0
+lib/libakonadiprotocolinternals.so
+lib/libakonadiprotocolinternals.so.1
+lib/libakonadiprotocolinternals.so.1.0.0
+libdata/pkgconfig/akonadi.pc
+share/config/akonadi/mysql-global.conf
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+share/dbus-1/services/org.freedesktop.Akonadi.Control.service
+share/mime/packages/akonadi-mime.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/dbus-1/services
+@dirrm share/config/akonadi
+@dirrmtry share/config
+@dirrmtry share/pixmaps
+@dirrm include/akonadi/private
+@dirrm include/akonadi
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

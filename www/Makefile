@@ -297,6 +297,7 @@
     SUBDIR += kazehakase
     SUBDIR += kdedict
     SUBDIR += kdewebdev
+    SUBDIR += kdewebdev4
     SUBDIR += khtml2png
     SUBDIR += knowledgekit
     SUBDIR += kompozer

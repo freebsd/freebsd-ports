@@ -1,0 +1,5 @@
+bin/automoc4
+lib/automoc4/Automoc4Version.cmake
+lib/automoc4/Automoc4Config.cmake
+lib/automoc4/automoc4.files.in
+@dirrmtry lib/automoc4

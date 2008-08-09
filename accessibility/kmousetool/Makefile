@@ -1,28 +1,30 @@
-# New ports collection makefile for:	kdeaccessibility
-# Date created:				19 Jan 2004 18:40:32 EST
-# Whom:					Will Andrews <will@FreeBSD.org>
+# New ports collection Makefile for:	kdeaccessibility
+# Date created:				2008-01-31
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdeaccessibility
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	accessibility kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Accessibility applications for KDE
+COMMENT=	Accessibility applications for KDE4
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
+LATEST_LINK=	${PORTNAME}4
 
+USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
-USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	opengl gui moc rcc uic
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+CMAKE_ARGS+=	-DKDE4_KTTSD_ALSA:BOOL=OFF
+
+post-extract:
+	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.mk>

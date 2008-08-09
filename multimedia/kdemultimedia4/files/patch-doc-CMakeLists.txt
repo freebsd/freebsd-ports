@@ -1,0 +1,13 @@
+--- ../doc/CMakeLists.txt.orgi	2008-07-24 15:24:33.000000000 +0200
++++ ../doc/CMakeLists.txt	2008-07-24 15:24:55.000000000 +0200
+@@ -3,9 +3,7 @@
+ endif(TAGLIB_FOUND)
+ add_subdirectory(kioslave)
+ add_subdirectory(kmix)
+-if(XINE_XCB_FOUND)
+-  add_subdirectory(dragonplayer)
+-endif(XINE_XCB_FOUND)
++add_subdirectory(dragonplayer)
+ if (NOT APPLE)
+   add_subdirectory(kscd)
+ endif (NOT APPLE)

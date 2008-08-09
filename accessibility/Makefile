@@ -19,6 +19,7 @@
     SUBDIR += gok
     SUBDIR += java-access-bridge
     SUBDIR += kdeaccessibility
+    SUBDIR += kdeaccessibility4
     SUBDIR += linux-atk
     SUBDIR += mousetweaks
     SUBDIR += orca

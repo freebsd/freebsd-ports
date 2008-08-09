@@ -1,0 +1,19 @@
+--- ../CMakeLists.txt.orgi	2008-07-24 15:05:33.000000000 +0200
++++ ../CMakeLists.txt	2008-07-24 15:05:59.000000000 +0200
+@@ -40,10 +40,11 @@
+ macro_optional_add_subdirectory(strigi-analyzer)
+ macro_optional_add_subdirectory(kioslave)
+ macro_optional_add_subdirectory(kmix)
+-if(XINE_XCB_FOUND)
+-  macro_optional_add_subdirectory(dragonplayer)
+-else(XINE_XCB_FOUND)
+-  message( STATUS "Xine and phonon-xine must be compiled with XCB support.")
+-endif(XINE_XCB_FOUND)
++#if(XINE_XCB_FOUND)
++#  macro_optional_add_subdirectory(dragonplayer)
++#else(XINE_XCB_FOUND)
++#  message( STATUS "Xine and phonon-xine must be compiled with XCB support.")
++#endif(XINE_XCB_FOUND)
++add_subdirectory(dragonplayer)
+ 
+ macro_display_feature_log()

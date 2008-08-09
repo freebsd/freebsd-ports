@@ -345,6 +345,7 @@
     SUBDIR += kbarcode
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
+    SUBDIR += kdegraphics4
     SUBDIR += kipi-plugins
     SUBDIR += kisomandel
     SUBDIR += kix-kmod

@@ -1,0 +1,25 @@
+Akonadi - The PIM Storage Service
+
+    * Common PIM data cache
+	o Type agnostic design
+	o Extensible
+	o Generic offline access, change recording and replay
+	o Generic conflict detection and resolution
+	o Resources are groupable by profile
+	o Items composed of independently retrievable multiple parts
+	o Zero-copy retrieval possible
+
+    * Concurrent access allows background activity independent of UI client
+        o Syncing mail, calendar, addressbooks to remote servers
+	o Syncing with mobile devices
+	o Permits semantic desktop infrastructure to access PIM data
+	o Archiving
+	o Indexing
+	o Out-of-process search
+    * Multi-process design
+        o Crash isolation
+	o Large items can't block whole system
+	o Linkage by IPC allows proprietary components
+	o Thin client installations can share components for scalability
+
+WWW:	http://pim.kde.org/akonadi/

@@ -1,5 +1,480 @@
-lib/kde3/.keep_me
+%%MTREE%%bin/.keep_me
+%%MTREE%%etc/.keep_me
+%%MTREE%%etc/pam.d/.keep_me
+%%MTREE%%etc/rc.d/.keep_me
+%%MTREE%%include/.keep_me
+%%MTREE%%include/X11/.keep_me
+%%MTREE%%info/.keep_me
+%%MTREE%%lib/.keep_me
+%%MTREE%%lib/X11/.keep_me
+%%MTREE%%lib/X11/app-defaults/.keep_me
+%%MTREE%%lib/X11/fonts/.keep_me
+%%MTREE%%lib/X11/fonts/local/.keep_me
+%%MTREE%%libdata/.keep_me
+%%MTREE%%libdata/ldconfig
+%%MTREE%%libdata/ldconfig32
+%%MTREE%%libdata/pkgconfig
+%%MTREE%%libexec/.keep_me
+%%MTREE%%man/.keep_me
+%%MTREE%%man/cat1/.keep_me
+%%MTREE%%man/cat2/.keep_me
+%%MTREE%%man/cat3/.keep_me
+%%MTREE%%man/cat4/.keep_me
+%%MTREE%%man/cat5/.keep_me
+%%MTREE%%man/cat6/.keep_me
+%%MTREE%%man/cat7/.keep_me
+%%MTREE%%man/cat8/.keep_me
+%%MTREE%%man/cat9/.keep_me
+%%MTREE%%man/catl/.keep_me
+%%MTREE%%man/catn/.keep_me
+%%MTREE%%man/de.ISO8859-1/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat1/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat2/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat3/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat4/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat5/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat6/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat7/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat8/.keep_me
+%%MTREE%%man/de.ISO8859-1/cat9/.keep_me
+%%MTREE%%man/de.ISO8859-1/catl/.keep_me
+%%MTREE%%man/de.ISO8859-1/catn/.keep_me
+%%MTREE%%man/de.ISO8859-1/man1/.keep_me
+%%MTREE%%man/de.ISO8859-1/man2/.keep_me
+%%MTREE%%man/de.ISO8859-1/man3/.keep_me
+%%MTREE%%man/de.ISO8859-1/man4/.keep_me
+%%MTREE%%man/de.ISO8859-1/man5/.keep_me
+%%MTREE%%man/de.ISO8859-1/man6/.keep_me
+%%MTREE%%man/de.ISO8859-1/man7/.keep_me
+%%MTREE%%man/de.ISO8859-1/man8/.keep_me
+%%MTREE%%man/de.ISO8859-1/man9/.keep_me
+%%MTREE%%man/de.ISO8859-1/manl/.keep_me
+%%MTREE%%man/de.ISO8859-1/mann/.keep_me
+%%MTREE%%man/en.ISO8859-1/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat1/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat1aout/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat2/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat3/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat4/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat4/i386/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat5/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat6/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat7/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat8/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat8/i386/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat9/.keep_me
+%%MTREE%%man/en.ISO8859-1/cat9/i386/.keep_me
+%%MTREE%%man/en.ISO8859-1/catn/.keep_me
+%%MTREE%%man/ja/.keep_me
+%%MTREE%%man/ja/cat1/.keep_me
+%%MTREE%%man/ja/cat2/.keep_me
+%%MTREE%%man/ja/cat3/.keep_me
+%%MTREE%%man/ja/cat4/.keep_me
+%%MTREE%%man/ja/cat5/.keep_me
+%%MTREE%%man/ja/cat6/.keep_me
+%%MTREE%%man/ja/cat7/.keep_me
+%%MTREE%%man/ja/cat8/.keep_me
+%%MTREE%%man/ja/cat9/.keep_me
+%%MTREE%%man/ja/catl/.keep_me
+%%MTREE%%man/ja/catn/.keep_me
+%%MTREE%%man/ja/man1/.keep_me
+%%MTREE%%man/ja/man2/.keep_me
+%%MTREE%%man/ja/man3/.keep_me
+%%MTREE%%man/ja/man4/.keep_me
+%%MTREE%%man/ja/man5/.keep_me
+%%MTREE%%man/ja/man6/.keep_me
+%%MTREE%%man/ja/man7/.keep_me
+%%MTREE%%man/ja/man8/.keep_me
+%%MTREE%%man/ja/man9/.keep_me
+%%MTREE%%man/ja/manl/.keep_me
+%%MTREE%%man/ja/mann/.keep_me
+%%MTREE%%man/man1/.keep_me
+%%MTREE%%man/man2/.keep_me
+%%MTREE%%man/man3/.keep_me
+%%MTREE%%man/man4/.keep_me
+%%MTREE%%man/man5/.keep_me
+%%MTREE%%man/man6/.keep_me
+%%MTREE%%man/man7/.keep_me
+%%MTREE%%man/man8/.keep_me
+%%MTREE%%man/man9/.keep_me
+%%MTREE%%man/manl/.keep_me
+%%MTREE%%man/mann/.keep_me
+%%MTREE%%man/ru.KOI8-R/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat1/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat2/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat3/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat4/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat5/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat6/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat7/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat8/.keep_me
+%%MTREE%%man/ru.KOI8-R/cat9/.keep_me
+%%MTREE%%man/ru.KOI8-R/catl/.keep_me
+%%MTREE%%man/ru.KOI8-R/catn/.keep_me
+%%MTREE%%man/ru.KOI8-R/man1/.keep_me
+%%MTREE%%man/ru.KOI8-R/man2/.keep_me
+%%MTREE%%man/ru.KOI8-R/man3/.keep_me
+%%MTREE%%man/ru.KOI8-R/man4/.keep_me
+%%MTREE%%man/ru.KOI8-R/man5/.keep_me
+%%MTREE%%man/ru.KOI8-R/man6/.keep_me
+%%MTREE%%man/ru.KOI8-R/man7/.keep_me
+%%MTREE%%man/ru.KOI8-R/man8/.keep_me
+%%MTREE%%man/ru.KOI8-R/man9/.keep_me
+%%MTREE%%man/ru.KOI8-R/manl/.keep_me
+%%MTREE%%man/ru.KOI8-R/mann/.keep_me
+%%MTREE%%sbin/.keep_me
+%%MTREE%%share/.keep_me
+%%MTREE%%share/aclocal/.keep_me
+%%MTREE%%share/dict/.keep_me
+%%MTREE%%share/doc/.keep_me
+%%MTREE%%share/doc/ja/.keep_me
+%%MTREE%%share/emacs/.keep_me
+%%MTREE%%share/emacs/site-lisp/.keep_me
+%%MTREE%%share/examples/.keep_me
+%%MTREE%%share/java/.keep_me
+%%MTREE%%share/java/classes/.keep_me
+%%MTREE%%share/locale/.keep_me
+%%MTREE%%share/locale/af/.keep_me
+%%MTREE%%share/locale/af/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/am/.keep_me
+%%MTREE%%share/locale/am/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ar/.keep_me
+%%MTREE%%share/locale/ar/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/az/.keep_me
+%%MTREE%%share/locale/az/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/be/.keep_me
+%%MTREE%%share/locale/be/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/bg/.keep_me
+%%MTREE%%share/locale/bg/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/bn/.keep_me
+%%MTREE%%share/locale/bn/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/br/.keep_me
+%%MTREE%%share/locale/br/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/bs/.keep_me
+%%MTREE%%share/locale/bs/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ca/.keep_me
+%%MTREE%%share/locale/ca/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/cs/.keep_me
+%%MTREE%%share/locale/cs/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/cy/.keep_me
+%%MTREE%%share/locale/cy/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/da/.keep_me
+%%MTREE%%share/locale/da/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/de/.keep_me
+%%MTREE%%share/locale/de/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/de_AT/.keep_me
+%%MTREE%%share/locale/de_AT/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/dk/.keep_me
+%%MTREE%%share/locale/dk/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ee/.keep_me
+%%MTREE%%share/locale/ee/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/el/.keep_me
+%%MTREE%%share/locale/el/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/en/.keep_me
+%%MTREE%%share/locale/en/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/en_AU/.keep_me
+%%MTREE%%share/locale/en_AU/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/en_CA/.keep_me
+%%MTREE%%share/locale/en_CA/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/en_GB/.keep_me
+%%MTREE%%share/locale/en_GB/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/eo/.keep_me
+%%MTREE%%share/locale/eo/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/es/.keep_me
+%%MTREE%%share/locale/es/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/es_ES/.keep_me
+%%MTREE%%share/locale/es_ES/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/es_MX/.keep_me
+%%MTREE%%share/locale/es_MX/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/et/.keep_me
+%%MTREE%%share/locale/et/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/eu/.keep_me
+%%MTREE%%share/locale/eu/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/fa/.keep_me
+%%MTREE%%share/locale/fa/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/fa_IR/.keep_me
+%%MTREE%%share/locale/fa_IR/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/fi/.keep_me
+%%MTREE%%share/locale/fi/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/fr/.keep_me
+%%MTREE%%share/locale/fr/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/fr_FR/.keep_me
+%%MTREE%%share/locale/fr_FR/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ga/.keep_me
+%%MTREE%%share/locale/ga/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/gl/.keep_me
+%%MTREE%%share/locale/gl/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/gu/.keep_me
+%%MTREE%%share/locale/gu/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/he/.keep_me
+%%MTREE%%share/locale/he/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/hi/.keep_me
+%%MTREE%%share/locale/hi/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/hr/.keep_me
+%%MTREE%%share/locale/hr/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/hu/.keep_me
+%%MTREE%%share/locale/hu/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/id/.keep_me
+%%MTREE%%share/locale/id/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/is/.keep_me
+%%MTREE%%share/locale/is/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/it/.keep_me
+%%MTREE%%share/locale/it/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ja/.keep_me
+%%MTREE%%share/locale/ja/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ka/.keep_me
+%%MTREE%%share/locale/ka/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/kn/.keep_me
+%%MTREE%%share/locale/kn/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ko/.keep_me
+%%MTREE%%share/locale/ko/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/li/.keep_me
+%%MTREE%%share/locale/li/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/lt/.keep_me
+%%MTREE%%share/locale/lt/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/lv/.keep_me
+%%MTREE%%share/locale/lv/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/mk/.keep_me
+%%MTREE%%share/locale/mk/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ml/.keep_me
+%%MTREE%%share/locale/ml/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/mn/.keep_me
+%%MTREE%%share/locale/mn/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ms/.keep_me
+%%MTREE%%share/locale/ms/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/mt/.keep_me
+%%MTREE%%share/locale/mt/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/nb/.keep_me
+%%MTREE%%share/locale/nb/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ne/.keep_me
+%%MTREE%%share/locale/ne/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/nl/.keep_me
+%%MTREE%%share/locale/nl/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/nn/.keep_me
+%%MTREE%%share/locale/nn/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/no/.keep_me
+%%MTREE%%share/locale/no/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/or/.keep_me
+%%MTREE%%share/locale/or/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/pa/.keep_me
+%%MTREE%%share/locale/pa/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/pl/.keep_me
+%%MTREE%%share/locale/pl/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/pt/.keep_me
+%%MTREE%%share/locale/pt/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/pt_BR/.keep_me
+%%MTREE%%share/locale/pt_BR/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/pt_PT/.keep_me
+%%MTREE%%share/locale/pt_PT/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ro/.keep_me
+%%MTREE%%share/locale/ro/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ru/.keep_me
+%%MTREE%%share/locale/ru/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sk/.keep_me
+%%MTREE%%share/locale/sk/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sl/.keep_me
+%%MTREE%%share/locale/sl/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sq/.keep_me
+%%MTREE%%share/locale/sq/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sr/.keep_me
+%%MTREE%%share/locale/sr/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sr@Latn/.keep_me
+%%MTREE%%share/locale/sr@Latn/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/sv/.keep_me
+%%MTREE%%share/locale/sv/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/ta/.keep_me
+%%MTREE%%share/locale/ta/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/tg/.keep_me
+%%MTREE%%share/locale/tg/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/th/.keep_me
+%%MTREE%%share/locale/th/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/tk/.keep_me
+%%MTREE%%share/locale/tk/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/tr/.keep_me
+%%MTREE%%share/locale/tr/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/uk/.keep_me
+%%MTREE%%share/locale/uk/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/uz/.keep_me
+%%MTREE%%share/locale/uz/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/vi/.keep_me
+%%MTREE%%share/locale/vi/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/wa/.keep_me
+%%MTREE%%share/locale/wa/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/zh/.keep_me
+%%MTREE%%share/locale/zh/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/zh_CN.GB2312/.keep_me
+%%MTREE%%share/locale/zh_CN.GB2312/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/zh_CN/.keep_me
+%%MTREE%%share/locale/zh_CN/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/zh_TW.Big5/.keep_me
+%%MTREE%%share/locale/zh_TW.Big5/LC_MESSAGES/.keep_me
+%%MTREE%%share/locale/zh_TW/.keep_me
+%%MTREE%%share/locale/zh_TW/LC_MESSAGES/.keep_me
+%%MTREE%%share/misc/.keep_me
+%%MTREE%%share/nls/.keep_me
+%%MTREE%%share/nls/C/.keep_me
+%%MTREE%%share/nls/af_ZA.ISO8859-1/.keep_me
+%%MTREE%%share/nls/af_ZA.ISO8859-15/.keep_me
+%%MTREE%%share/nls/af_ZA.UTF-8/.keep_me
+%%MTREE%%share/nls/am_ET.UTF-8/.keep_me
+%%MTREE%%share/nls/be_BY.CP1131/.keep_me
+%%MTREE%%share/nls/be_BY.CP1251/.keep_me
+%%MTREE%%share/nls/be_BY.ISO8859-5/.keep_me
+%%MTREE%%share/nls/be_BY.UTF-8/.keep_me
+%%MTREE%%share/nls/bg_BG.CP1251/.keep_me
+%%MTREE%%share/nls/bg_BG.UTF-8/.keep_me
+%%MTREE%%share/nls/ca_ES.ISO8859-1/.keep_me
+%%MTREE%%share/nls/ca_ES.ISO8859-15/.keep_me
+%%MTREE%%share/nls/ca_ES.UTF-8/.keep_me
+%%MTREE%%share/nls/cs_CZ.ISO8859-2/.keep_me
+%%MTREE%%share/nls/cs_CZ.UTF-8/.keep_me
+%%MTREE%%share/nls/da_DK.ISO8859-1/.keep_me
+%%MTREE%%share/nls/da_DK.ISO8859-15/.keep_me
+%%MTREE%%share/nls/da_DK.UTF-8/.keep_me
+%%MTREE%%share/nls/de_AT.ISO8859-1/.keep_me
+%%MTREE%%share/nls/de_AT.ISO8859-15/.keep_me
+%%MTREE%%share/nls/de_AT.UTF-8/.keep_me
+%%MTREE%%share/nls/de_CH.ISO8859-1/.keep_me
+%%MTREE%%share/nls/de_CH.ISO8859-15/.keep_me
+%%MTREE%%share/nls/de_CH.UTF-8/.keep_me
+%%MTREE%%share/nls/de_DE.ISO8859-1/.keep_me
+%%MTREE%%share/nls/de_DE.ISO8859-15/.keep_me
+%%MTREE%%share/nls/de_DE.UTF-8/.keep_me
+%%MTREE%%share/nls/el_GR.ISO8859-7/.keep_me
+%%MTREE%%share/nls/el_GR.UTF-8/.keep_me
+%%MTREE%%share/nls/en_AU.ISO8859-1/.keep_me
+%%MTREE%%share/nls/en_AU.ISO8859-15/.keep_me
+%%MTREE%%share/nls/en_AU.US-ASCII/.keep_me
+%%MTREE%%share/nls/en_AU.UTF-8/.keep_me
+%%MTREE%%share/nls/en_CA.ISO8859-1/.keep_me
+%%MTREE%%share/nls/en_CA.ISO8859-15/.keep_me
+%%MTREE%%share/nls/en_CA.US-ASCII/.keep_me
+%%MTREE%%share/nls/en_CA.UTF-8/.keep_me
+%%MTREE%%share/nls/en_GB.ISO8859-1/.keep_me
+%%MTREE%%share/nls/en_GB.ISO8859-15/.keep_me
+%%MTREE%%share/nls/en_GB.US-ASCII/.keep_me
+%%MTREE%%share/nls/en_GB.UTF-8/.keep_me
+%%MTREE%%share/nls/en_IE.UTF-8/.keep_me
+%%MTREE%%share/nls/en_NZ.ISO8859-1/.keep_me
+%%MTREE%%share/nls/en_NZ.ISO8859-15/.keep_me
+%%MTREE%%share/nls/en_NZ.US-ASCII/.keep_me
+%%MTREE%%share/nls/en_NZ.UTF-8/.keep_me
+%%MTREE%%share/nls/en_US.ISO8859-1/.keep_me
+%%MTREE%%share/nls/en_US.ISO8859-15/.keep_me
+%%MTREE%%share/nls/en_US.UTF-8/.keep_me
+%%MTREE%%share/nls/es_ES.ISO8859-1/.keep_me
+%%MTREE%%share/nls/es_ES.ISO8859-15/.keep_me
+%%MTREE%%share/nls/es_ES.UTF-8/.keep_me
+%%MTREE%%share/nls/et_EE.ISO8859-15/.keep_me
+%%MTREE%%share/nls/et_EE.UTF-8/.keep_me
+%%MTREE%%share/nls/fi_FI.ISO8859-1/.keep_me
+%%MTREE%%share/nls/fi_FI.ISO8859-15/.keep_me
+%%MTREE%%share/nls/fi_FI.UTF-8/.keep_me
+%%MTREE%%share/nls/fr_BE.ISO8859-1/.keep_me
+%%MTREE%%share/nls/fr_BE.ISO8859-15/.keep_me
+%%MTREE%%share/nls/fr_BE.UTF-8/.keep_me
+%%MTREE%%share/nls/fr_CA.ISO8859-1/.keep_me
+%%MTREE%%share/nls/fr_CA.ISO8859-15/.keep_me
+%%MTREE%%share/nls/fr_CA.UTF-8/.keep_me
+%%MTREE%%share/nls/fr_CH.ISO8859-1/.keep_me
+%%MTREE%%share/nls/fr_CH.ISO8859-15/.keep_me
+%%MTREE%%share/nls/fr_CH.UTF-8/.keep_me
+%%MTREE%%share/nls/fr_FR.ISO8859-1/.keep_me
+%%MTREE%%share/nls/fr_FR.ISO8859-15/.keep_me
+%%MTREE%%share/nls/fr_FR.UTF-8/.keep_me
+%%MTREE%%share/nls/he_IL.UTF-8/.keep_me
+%%MTREE%%share/nls/hi_IN.ISCII-DEV/.keep_me
+%%MTREE%%share/nls/hr_HR.ISO8859-2/.keep_me
+%%MTREE%%share/nls/hr_HR.UTF-8/.keep_me
+%%MTREE%%share/nls/hu_HU.ISO8859-2/.keep_me
+%%MTREE%%share/nls/hu_HU.UTF-8/.keep_me
+%%MTREE%%share/nls/hy_AM.ARMSCII-8/.keep_me
+%%MTREE%%share/nls/hy_AM.UTF-8/.keep_me
+%%MTREE%%share/nls/is_IS.ISO8859-1/.keep_me
+%%MTREE%%share/nls/is_IS.ISO8859-15/.keep_me
+%%MTREE%%share/nls/is_IS.UTF-8/.keep_me
+%%MTREE%%share/nls/it_CH.ISO8859-1/.keep_me
+%%MTREE%%share/nls/it_CH.ISO8859-15/.keep_me
+%%MTREE%%share/nls/it_CH.UTF-8/.keep_me
+%%MTREE%%share/nls/it_IT.ISO8859-1/.keep_me
+%%MTREE%%share/nls/it_IT.ISO8859-15/.keep_me
+%%MTREE%%share/nls/it_IT.UTF-8/.keep_me
+%%MTREE%%share/nls/ja_JP.SJIS/.keep_me
+%%MTREE%%share/nls/ja_JP.UTF-8/.keep_me
+%%MTREE%%share/nls/ja_JP.eucJP/.keep_me
+%%MTREE%%share/nls/kk_KZ.PT154/.keep_me
+%%MTREE%%share/nls/kk_KZ.UTF-8/.keep_me
+%%MTREE%%share/nls/ko_KR.CP949/.keep_me
+%%MTREE%%share/nls/ko_KR.UTF-8/.keep_me
+%%MTREE%%share/nls/ko_KR.eucKR/.keep_me
+%%MTREE%%share/nls/la_LN.ISO8859-1/.keep_me
+%%MTREE%%share/nls/la_LN.ISO8859-15/.keep_me
+%%MTREE%%share/nls/la_LN.ISO8859-2/.keep_me
+%%MTREE%%share/nls/la_LN.ISO8859-4/.keep_me
+%%MTREE%%share/nls/la_LN.US-ASCII/.keep_me
+%%MTREE%%share/nls/lt_LT.ISO8859-13/.keep_me
+%%MTREE%%share/nls/lt_LT.ISO8859-4/.keep_me
+%%MTREE%%share/nls/lt_LT.UTF-8/.keep_me
+%%MTREE%%share/nls/nl_BE.ISO8859-1/.keep_me
+%%MTREE%%share/nls/nl_BE.ISO8859-15/.keep_me
+%%MTREE%%share/nls/nl_BE.UTF-8/.keep_me
+%%MTREE%%share/nls/nl_NL.ISO8859-1/.keep_me
+%%MTREE%%share/nls/nl_NL.ISO8859-15/.keep_me
+%%MTREE%%share/nls/nl_NL.UTF-8/.keep_me
+%%MTREE%%share/nls/no_NO.ISO8859-1/.keep_me
+%%MTREE%%share/nls/no_NO.ISO8859-15/.keep_me
+%%MTREE%%share/nls/no_NO.UTF-8/.keep_me
+%%MTREE%%share/nls/pl_PL.ISO8859-2/.keep_me
+%%MTREE%%share/nls/pl_PL.UTF-8/.keep_me
+%%MTREE%%share/nls/pt_BR.ISO8859-1/.keep_me
+%%MTREE%%share/nls/pt_BR.UTF-8/.keep_me
+%%MTREE%%share/nls/pt_PT.ISO8859-1/.keep_me
+%%MTREE%%share/nls/pt_PT.ISO8859-15/.keep_me
+%%MTREE%%share/nls/pt_PT.UTF-8/.keep_me
+%%MTREE%%share/nls/ro_RO.ISO8859-2/.keep_me
+%%MTREE%%share/nls/ro_RO.UTF-8/.keep_me
+%%MTREE%%share/nls/ru_RU.CP1251/.keep_me
+%%MTREE%%share/nls/ru_RU.CP866/.keep_me
+%%MTREE%%share/nls/ru_RU.ISO8859-5/.keep_me
+%%MTREE%%share/nls/ru_RU.KOI8-R/.keep_me
+%%MTREE%%share/nls/ru_RU.UTF-8/.keep_me
+%%MTREE%%share/nls/sk_SK.ISO8859-2/.keep_me
+%%MTREE%%share/nls/sk_SK.UTF-8/.keep_me
+%%MTREE%%share/nls/sl_SI.ISO8859-2/.keep_me
+%%MTREE%%share/nls/sl_SI.UTF-8/.keep_me
+%%MTREE%%share/nls/sr_YU.ISO8859-2/.keep_me
+%%MTREE%%share/nls/sr_YU.ISO8859-5/.keep_me
+%%MTREE%%share/nls/sr_YU.UTF-8/.keep_me
+%%MTREE%%share/nls/sv_SE.ISO8859-1/.keep_me
+%%MTREE%%share/nls/sv_SE.ISO8859-15/.keep_me
+%%MTREE%%share/nls/sv_SE.UTF-8/.keep_me
+%%MTREE%%share/nls/tr_TR.ISO8859-9/.keep_me
+%%MTREE%%share/nls/tr_TR.UTF-8/.keep_me
+%%MTREE%%share/nls/uk_UA.ISO8859-5/.keep_me
+%%MTREE%%share/nls/uk_UA.KOI8-U/.keep_me
+%%MTREE%%share/nls/uk_UA.UTF-8/.keep_me
+%%MTREE%%share/nls/zh_CN.GB18030/.keep_me
+%%MTREE%%share/nls/zh_CN.GB2312/.keep_me
+%%MTREE%%share/nls/zh_CN.GBK/.keep_me
+%%MTREE%%share/nls/zh_CN.UTF-8/.keep_me
+%%MTREE%%share/nls/zh_CN.eucCN/.keep_me
+%%MTREE%%share/nls/zh_HK.Big5HKSCS/.keep_me
+%%MTREE%%share/nls/zh_HK.UTF-8/.keep_me
+%%MTREE%%share/nls/zh_TW.Big5/.keep_me
+%%MTREE%%share/nls/zh_TW.UTF-8/.keep_me
+%%MTREE%%share/pixmaps/.keep_me
+%%MTREE%%share/sgml/.keep_me
+%%MTREE%%share/skel/.keep_me
+%%MTREE%%share/xml/.keep_me
+%%MTREE%%www/.keep_me
+include/KDE/.keep_me
+lib/kconf_update_bin/.keep_me
+lib/kde4/.keep_me
+lib/kde4/libexec/.keep_me
+lib/kde4/plugins/.keep_me
+lib/strigi/.keep_me
 share/applications/.keep_me
+share/applications/kde4/.keep_me
 share/applnk/.hidden/.keep_me
 share/applnk/.keep_me
 share/applnk/Applications/.keep_me
@@ -89,6 +564,10 @@ share/apps/kwin/pics/.keep_me
 share/apps/profiles/.keep_me
 share/apps/zeroconf/.keep_me
 share/config.kcfg/.keep_me
+share/config/.keep_me
+share/dbus-1/.keep_me
+share/dbus-1/interfaces/.keep_me
+share/dbus-1/services/.keep_me
 share/doc/HTML/.keep_me
 share/doc/HTML/cs/.keep_me
 share/doc/HTML/da/.keep_me
@@ -166,6 +645,319 @@ share/icons/crystalsvg/scalable/apps/.keep_me
 share/icons/crystalsvg/scalable/devices/.keep_me
 share/icons/crystalsvg/scalable/filesystems/.keep_me
 share/icons/crystalsvg/scalable/mimetypes/.keep_me
+share/icons/hicolor/.keep_me
+share/icons/hicolor/128x128/.keep_me
+share/icons/hicolor/128x128/actions/.keep_me
+share/icons/hicolor/128x128/animations/.keep_me
+share/icons/hicolor/128x128/apps/.keep_me
+share/icons/hicolor/128x128/categories/.keep_me
+share/icons/hicolor/128x128/devices/.keep_me
+share/icons/hicolor/128x128/emblems/.keep_me
+share/icons/hicolor/128x128/emotes/.keep_me
+share/icons/hicolor/128x128/filesystems/.keep_me
+share/icons/hicolor/128x128/intl/.keep_me
+share/icons/hicolor/128x128/mimetypes/.keep_me
+share/icons/hicolor/128x128/places/.keep_me
+share/icons/hicolor/128x128/status/.keep_me
+share/icons/hicolor/128x128/stock/.keep_me
+share/icons/hicolor/128x128/stock/chart/.keep_me
+share/icons/hicolor/128x128/stock/code/.keep_me
+share/icons/hicolor/128x128/stock/data/.keep_me
+share/icons/hicolor/128x128/stock/form/.keep_me
+share/icons/hicolor/128x128/stock/image/.keep_me
+share/icons/hicolor/128x128/stock/io/.keep_me
+share/icons/hicolor/128x128/stock/media/.keep_me
+share/icons/hicolor/128x128/stock/navigation/.keep_me
+share/icons/hicolor/128x128/stock/net/.keep_me
+share/icons/hicolor/128x128/stock/object/.keep_me
+share/icons/hicolor/128x128/stock/table/.keep_me
+share/icons/hicolor/128x128/stock/text/.keep_me
+share/icons/hicolor/16x16/.keep_me
+share/icons/hicolor/16x16/actions/.keep_me
+share/icons/hicolor/16x16/animations/.keep_me
+share/icons/hicolor/16x16/apps/.keep_me
+share/icons/hicolor/16x16/categories/.keep_me
+share/icons/hicolor/16x16/devices/.keep_me
+share/icons/hicolor/16x16/emblems/.keep_me
+share/icons/hicolor/16x16/emotes/.keep_me
+share/icons/hicolor/16x16/filesystems/.keep_me
+share/icons/hicolor/16x16/intl/.keep_me
+share/icons/hicolor/16x16/mimetypes/.keep_me
+share/icons/hicolor/16x16/places/.keep_me
+share/icons/hicolor/16x16/status/.keep_me
+share/icons/hicolor/16x16/stock/.keep_me
+share/icons/hicolor/16x16/stock/chart/.keep_me
+share/icons/hicolor/16x16/stock/code/.keep_me
+share/icons/hicolor/16x16/stock/data/.keep_me
+share/icons/hicolor/16x16/stock/form/.keep_me
+share/icons/hicolor/16x16/stock/image/.keep_me
+share/icons/hicolor/16x16/stock/io/.keep_me
+share/icons/hicolor/16x16/stock/media/.keep_me
+share/icons/hicolor/16x16/stock/navigation/.keep_me
+share/icons/hicolor/16x16/stock/net/.keep_me
+share/icons/hicolor/16x16/stock/object/.keep_me
+share/icons/hicolor/16x16/stock/table/.keep_me
+share/icons/hicolor/16x16/stock/text/.keep_me
+share/icons/hicolor/192x192/.keep_me
+share/icons/hicolor/192x192/actions/.keep_me
+share/icons/hicolor/192x192/animations/.keep_me
+share/icons/hicolor/192x192/apps/.keep_me
+share/icons/hicolor/192x192/categories/.keep_me
+share/icons/hicolor/192x192/devices/.keep_me
+share/icons/hicolor/192x192/emblems/.keep_me
+share/icons/hicolor/192x192/emotes/.keep_me
+share/icons/hicolor/192x192/filesystems/.keep_me
+share/icons/hicolor/192x192/intl/.keep_me
+share/icons/hicolor/192x192/mimetypes/.keep_me
+share/icons/hicolor/192x192/places/.keep_me
+share/icons/hicolor/192x192/status/.keep_me
+share/icons/hicolor/192x192/stock/.keep_me
+share/icons/hicolor/192x192/stock/chart/.keep_me
+share/icons/hicolor/192x192/stock/code/.keep_me
+share/icons/hicolor/192x192/stock/data/.keep_me
+share/icons/hicolor/192x192/stock/form/.keep_me
+share/icons/hicolor/192x192/stock/image/.keep_me
+share/icons/hicolor/192x192/stock/io/.keep_me
+share/icons/hicolor/192x192/stock/media/.keep_me
+share/icons/hicolor/192x192/stock/navigation/.keep_me
+share/icons/hicolor/192x192/stock/net/.keep_me
+share/icons/hicolor/192x192/stock/object/.keep_me
+share/icons/hicolor/192x192/stock/table/.keep_me
+share/icons/hicolor/192x192/stock/text/.keep_me
+share/icons/hicolor/22x22/.keep_me
+share/icons/hicolor/22x22/actions/.keep_me
+share/icons/hicolor/22x22/animations/.keep_me
+share/icons/hicolor/22x22/apps/.keep_me
+share/icons/hicolor/22x22/categories/.keep_me
+share/icons/hicolor/22x22/devices/.keep_me
+share/icons/hicolor/22x22/emblems/.keep_me
+share/icons/hicolor/22x22/emotes/.keep_me
+share/icons/hicolor/22x22/filesystems/.keep_me
+share/icons/hicolor/22x22/intl/.keep_me
+share/icons/hicolor/22x22/mimetypes/.keep_me
+share/icons/hicolor/22x22/places/.keep_me
+share/icons/hicolor/22x22/status/.keep_me
+share/icons/hicolor/22x22/stock/.keep_me
+share/icons/hicolor/22x22/stock/chart/.keep_me
+share/icons/hicolor/22x22/stock/code/.keep_me
+share/icons/hicolor/22x22/stock/data/.keep_me
+share/icons/hicolor/22x22/stock/form/.keep_me
+share/icons/hicolor/22x22/stock/image/.keep_me
+share/icons/hicolor/22x22/stock/io/.keep_me
+share/icons/hicolor/22x22/stock/media/.keep_me
+share/icons/hicolor/22x22/stock/navigation/.keep_me
+share/icons/hicolor/22x22/stock/net/.keep_me
+share/icons/hicolor/22x22/stock/object/.keep_me
+share/icons/hicolor/22x22/stock/table/.keep_me
+share/icons/hicolor/22x22/stock/text/.keep_me
+share/icons/hicolor/24x24/.keep_me
+share/icons/hicolor/24x24/actions/.keep_me
+share/icons/hicolor/24x24/animations/.keep_me
+share/icons/hicolor/24x24/apps/.keep_me
+share/icons/hicolor/24x24/categories/.keep_me
+share/icons/hicolor/24x24/devices/.keep_me
+share/icons/hicolor/24x24/emblems/.keep_me
+share/icons/hicolor/24x24/emotes/.keep_me
+share/icons/hicolor/24x24/filesystems/.keep_me
+share/icons/hicolor/24x24/intl/.keep_me
+share/icons/hicolor/24x24/mimetypes/.keep_me
+share/icons/hicolor/24x24/places/.keep_me
+share/icons/hicolor/24x24/status/.keep_me
+share/icons/hicolor/24x24/stock/.keep_me
+share/icons/hicolor/24x24/stock/chart/.keep_me
+share/icons/hicolor/24x24/stock/code/.keep_me
+share/icons/hicolor/24x24/stock/data/.keep_me
+share/icons/hicolor/24x24/stock/form/.keep_me
+share/icons/hicolor/24x24/stock/image/.keep_me
+share/icons/hicolor/24x24/stock/io/.keep_me
+share/icons/hicolor/24x24/stock/media/.keep_me
+share/icons/hicolor/24x24/stock/navigation/.keep_me
+share/icons/hicolor/24x24/stock/net/.keep_me
+share/icons/hicolor/24x24/stock/object/.keep_me
+share/icons/hicolor/24x24/stock/table/.keep_me
+share/icons/hicolor/24x24/stock/text/.keep_me
+share/icons/hicolor/32x32/.keep_me
+share/icons/hicolor/32x32/actions/.keep_me
+share/icons/hicolor/32x32/animations/.keep_me
+share/icons/hicolor/32x32/apps/.keep_me
+share/icons/hicolor/32x32/categories/.keep_me
+share/icons/hicolor/32x32/devices/.keep_me
+share/icons/hicolor/32x32/emblems/.keep_me
+share/icons/hicolor/32x32/emotes/.keep_me
+share/icons/hicolor/32x32/filesystems/.keep_me
+share/icons/hicolor/32x32/intl/.keep_me
+share/icons/hicolor/32x32/mimetypes/.keep_me
+share/icons/hicolor/32x32/places/.keep_me
+share/icons/hicolor/32x32/status/.keep_me
+share/icons/hicolor/32x32/stock/.keep_me
+share/icons/hicolor/32x32/stock/chart/.keep_me
+share/icons/hicolor/32x32/stock/code/.keep_me
+share/icons/hicolor/32x32/stock/data/.keep_me
+share/icons/hicolor/32x32/stock/form/.keep_me
+share/icons/hicolor/32x32/stock/image/.keep_me
+share/icons/hicolor/32x32/stock/io/.keep_me
+share/icons/hicolor/32x32/stock/media/.keep_me
+share/icons/hicolor/32x32/stock/navigation/.keep_me
+share/icons/hicolor/32x32/stock/net/.keep_me
+share/icons/hicolor/32x32/stock/object/.keep_me
+share/icons/hicolor/32x32/stock/table/.keep_me
+share/icons/hicolor/32x32/stock/text/.keep_me
+share/icons/hicolor/36x36/.keep_me
+share/icons/hicolor/36x36/actions/.keep_me
+share/icons/hicolor/36x36/animations/.keep_me
+share/icons/hicolor/36x36/apps/.keep_me
+share/icons/hicolor/36x36/categories/.keep_me
+share/icons/hicolor/36x36/devices/.keep_me
+share/icons/hicolor/36x36/emblems/.keep_me
+share/icons/hicolor/36x36/emotes/.keep_me
+share/icons/hicolor/36x36/filesystems/.keep_me
+share/icons/hicolor/36x36/intl/.keep_me
+share/icons/hicolor/36x36/mimetypes/.keep_me
+share/icons/hicolor/36x36/places/.keep_me
+share/icons/hicolor/36x36/status/.keep_me
+share/icons/hicolor/36x36/stock/.keep_me
+share/icons/hicolor/36x36/stock/chart/.keep_me
+share/icons/hicolor/36x36/stock/code/.keep_me
+share/icons/hicolor/36x36/stock/data/.keep_me
+share/icons/hicolor/36x36/stock/form/.keep_me
+share/icons/hicolor/36x36/stock/image/.keep_me
+share/icons/hicolor/36x36/stock/io/.keep_me
+share/icons/hicolor/36x36/stock/media/.keep_me
+share/icons/hicolor/36x36/stock/navigation/.keep_me
+share/icons/hicolor/36x36/stock/net/.keep_me
+share/icons/hicolor/36x36/stock/object/.keep_me
+share/icons/hicolor/36x36/stock/table/.keep_me
+share/icons/hicolor/36x36/stock/text/.keep_me
+share/icons/hicolor/48x48/.keep_me
+share/icons/hicolor/48x48/actions/.keep_me
+share/icons/hicolor/48x48/animations/.keep_me
+share/icons/hicolor/48x48/apps/.keep_me
+share/icons/hicolor/48x48/categories/.keep_me
+share/icons/hicolor/48x48/devices/.keep_me
+share/icons/hicolor/48x48/emblems/.keep_me
+share/icons/hicolor/48x48/emotes/.keep_me
+share/icons/hicolor/48x48/filesystems/.keep_me
+share/icons/hicolor/48x48/intl/.keep_me
+share/icons/hicolor/48x48/mimetypes/.keep_me
+share/icons/hicolor/48x48/places/.keep_me
+share/icons/hicolor/48x48/status/.keep_me
+share/icons/hicolor/48x48/stock/.keep_me
+share/icons/hicolor/48x48/stock/chart/.keep_me
+share/icons/hicolor/48x48/stock/code/.keep_me
+share/icons/hicolor/48x48/stock/data/.keep_me
+share/icons/hicolor/48x48/stock/form/.keep_me
+share/icons/hicolor/48x48/stock/image/.keep_me
+share/icons/hicolor/48x48/stock/io/.keep_me
+share/icons/hicolor/48x48/stock/media/.keep_me
+share/icons/hicolor/48x48/stock/navigation/.keep_me
+share/icons/hicolor/48x48/stock/net/.keep_me
+share/icons/hicolor/48x48/stock/object/.keep_me
+share/icons/hicolor/48x48/stock/table/.keep_me
+share/icons/hicolor/48x48/stock/text/.keep_me
+share/icons/hicolor/64x64/.keep_me
+share/icons/hicolor/64x64/actions/.keep_me
+share/icons/hicolor/64x64/animations/.keep_me
+share/icons/hicolor/64x64/apps/.keep_me
+share/icons/hicolor/64x64/categories/.keep_me
+share/icons/hicolor/64x64/devices/.keep_me
+share/icons/hicolor/64x64/emblems/.keep_me
+share/icons/hicolor/64x64/emotes/.keep_me
+share/icons/hicolor/64x64/filesystems/.keep_me
+share/icons/hicolor/64x64/intl/.keep_me
+share/icons/hicolor/64x64/mimetypes/.keep_me
+share/icons/hicolor/64x64/places/.keep_me
+share/icons/hicolor/64x64/status/.keep_me
+share/icons/hicolor/64x64/stock/.keep_me
+share/icons/hicolor/64x64/stock/chart/.keep_me
+share/icons/hicolor/64x64/stock/code/.keep_me
+share/icons/hicolor/64x64/stock/data/.keep_me
+share/icons/hicolor/64x64/stock/form/.keep_me
+share/icons/hicolor/64x64/stock/image/.keep_me
+share/icons/hicolor/64x64/stock/io/.keep_me
+share/icons/hicolor/64x64/stock/media/.keep_me
+share/icons/hicolor/64x64/stock/navigation/.keep_me
+share/icons/hicolor/64x64/stock/net/.keep_me
+share/icons/hicolor/64x64/stock/object/.keep_me
+share/icons/hicolor/64x64/stock/table/.keep_me
+share/icons/hicolor/64x64/stock/text/.keep_me
+share/icons/hicolor/72x72/.keep_me
+share/icons/hicolor/72x72/actions/.keep_me
+share/icons/hicolor/72x72/animations/.keep_me
+share/icons/hicolor/72x72/apps/.keep_me
+share/icons/hicolor/72x72/categories/.keep_me
+share/icons/hicolor/72x72/devices/.keep_me
+share/icons/hicolor/72x72/emblems/.keep_me
+share/icons/hicolor/72x72/emotes/.keep_me
+share/icons/hicolor/72x72/filesystems/.keep_me
+share/icons/hicolor/72x72/intl/.keep_me
+share/icons/hicolor/72x72/mimetypes/.keep_me
+share/icons/hicolor/72x72/places/.keep_me
+share/icons/hicolor/72x72/status/.keep_me
+share/icons/hicolor/72x72/stock/.keep_me
+share/icons/hicolor/72x72/stock/chart/.keep_me
+share/icons/hicolor/72x72/stock/code/.keep_me
+share/icons/hicolor/72x72/stock/data/.keep_me
+share/icons/hicolor/72x72/stock/form/.keep_me
+share/icons/hicolor/72x72/stock/image/.keep_me
+share/icons/hicolor/72x72/stock/io/.keep_me
+share/icons/hicolor/72x72/stock/media/.keep_me
+share/icons/hicolor/72x72/stock/navigation/.keep_me
+share/icons/hicolor/72x72/stock/net/.keep_me
+share/icons/hicolor/72x72/stock/object/.keep_me
+share/icons/hicolor/72x72/stock/table/.keep_me
+share/icons/hicolor/72x72/stock/text/.keep_me
+share/icons/hicolor/96x96/.keep_me
+share/icons/hicolor/96x96/actions/.keep_me
+share/icons/hicolor/96x96/animations/.keep_me
+share/icons/hicolor/96x96/apps/.keep_me
+share/icons/hicolor/96x96/categories/.keep_me
+share/icons/hicolor/96x96/devices/.keep_me
+share/icons/hicolor/96x96/emblems/.keep_me
+share/icons/hicolor/96x96/emotes/.keep_me
+share/icons/hicolor/96x96/filesystems/.keep_me
+share/icons/hicolor/96x96/intl/.keep_me
+share/icons/hicolor/96x96/mimetypes/.keep_me
+share/icons/hicolor/96x96/places/.keep_me
+share/icons/hicolor/96x96/status/.keep_me
+share/icons/hicolor/96x96/stock/.keep_me
+share/icons/hicolor/96x96/stock/chart/.keep_me
+share/icons/hicolor/96x96/stock/code/.keep_me
+share/icons/hicolor/96x96/stock/data/.keep_me
+share/icons/hicolor/96x96/stock/form/.keep_me
+share/icons/hicolor/96x96/stock/image/.keep_me
+share/icons/hicolor/96x96/stock/io/.keep_me
+share/icons/hicolor/96x96/stock/media/.keep_me
+share/icons/hicolor/96x96/stock/navigation/.keep_me
+share/icons/hicolor/96x96/stock/net/.keep_me
+share/icons/hicolor/96x96/stock/object/.keep_me
+share/icons/hicolor/96x96/stock/table/.keep_me
+share/icons/hicolor/96x96/stock/text/.keep_me
+share/icons/hicolor/scalable/.keep_me
+share/icons/hicolor/scalable/actions/.keep_me
+share/icons/hicolor/scalable/animations/.keep_me
+share/icons/hicolor/scalable/apps/.keep_me
+share/icons/hicolor/scalable/categories/.keep_me
+share/icons/hicolor/scalable/devices/.keep_me
+share/icons/hicolor/scalable/emblems/.keep_me
+share/icons/hicolor/scalable/emotes/.keep_me
+share/icons/hicolor/scalable/filesystems/.keep_me
+share/icons/hicolor/scalable/intl/.keep_me
+share/icons/hicolor/scalable/mimetypes/.keep_me
+share/icons/hicolor/scalable/places/.keep_me
+share/icons/hicolor/scalable/status/.keep_me
+share/icons/hicolor/scalable/stock/.keep_me
+share/icons/hicolor/scalable/stock/chart/.keep_me
+share/icons/hicolor/scalable/stock/code/.keep_me
+share/icons/hicolor/scalable/stock/data/.keep_me
+share/icons/hicolor/scalable/stock/form/.keep_me
+share/icons/hicolor/scalable/stock/image/.keep_me
+share/icons/hicolor/scalable/stock/io/.keep_me
+share/icons/hicolor/scalable/stock/media/.keep_me
+share/icons/hicolor/scalable/stock/navigation/.keep_me
+share/icons/hicolor/scalable/stock/net/.keep_me
+share/icons/hicolor/scalable/stock/object/.keep_me
+share/icons/hicolor/scalable/stock/table/.keep_me
+share/icons/hicolor/scalable/stock/text/.keep_me
 share/icons/locolor/.keep_me
 share/icons/locolor/128x128/.keep_me
 share/icons/locolor/128x128/actions/.keep_me
@@ -203,6 +995,105 @@ share/icons/locolor/64x64/apps/.keep_me
 share/icons/locolor/64x64/devices/.keep_me
 share/icons/locolor/64x64/filesystems/.keep_me
 share/icons/locolor/64x64/mimetypes/.keep_me
+share/icons/oxygen/.keep_me
+share/icons/oxygen/128x128/.keep_me
+share/icons/oxygen/128x128/actions/.keep_me
+share/icons/oxygen/128x128/apps/.keep_me
+share/icons/oxygen/128x128/categories/.keep_me
+share/icons/oxygen/128x128/devices/.keep_me
+share/icons/oxygen/128x128/emblems/.keep_me
+share/icons/oxygen/128x128/emotes/.keep_me
+share/icons/oxygen/128x128/mimetypes/.keep_me
+share/icons/oxygen/128x128/places/.keep_me
+share/icons/oxygen/128x128/status/.keep_me
+share/icons/oxygen/16x16/.keep_me
+share/icons/oxygen/16x16/actions/.keep_me
+share/icons/oxygen/16x16/apps/.keep_me
+share/icons/oxygen/16x16/categories/.keep_me
+share/icons/oxygen/16x16/devices/.keep_me
+share/icons/oxygen/16x16/emblems/.keep_me
+share/icons/oxygen/16x16/emotes/.keep_me
+share/icons/oxygen/16x16/mimetypes/.keep_me
+share/icons/oxygen/16x16/places/.keep_me
+share/icons/oxygen/16x16/status/.keep_me
+share/icons/oxygen/22x22/.keep_me
+share/icons/oxygen/22x22/actions/.keep_me
+share/icons/oxygen/22x22/apps/.keep_me
+share/icons/oxygen/22x22/categories/.keep_me
+share/icons/oxygen/22x22/devices/.keep_me
+share/icons/oxygen/22x22/emblems/.keep_me
+share/icons/oxygen/22x22/emotes/.keep_me
+share/icons/oxygen/22x22/mimetypes/.keep_me
+share/icons/oxygen/22x22/places/.keep_me
+share/icons/oxygen/22x22/status/.keep_me
+share/icons/oxygen/32x32/.keep_me
+share/icons/oxygen/32x32/actions/.keep_me
+share/icons/oxygen/32x32/apps/.keep_me
+share/icons/oxygen/32x32/categories/.keep_me
+share/icons/oxygen/32x32/devices/.keep_me
+share/icons/oxygen/32x32/emblems/.keep_me
+share/icons/oxygen/32x32/emotes/.keep_me
+share/icons/oxygen/32x32/mimetypes/.keep_me
+share/icons/oxygen/32x32/places/.keep_me
+share/icons/oxygen/32x32/status/.keep_me
+share/icons/oxygen/48x48/.keep_me
+share/icons/oxygen/48x48/actions/.keep_me
+share/icons/oxygen/48x48/apps/.keep_me
+share/icons/oxygen/48x48/categories/.keep_me
+share/icons/oxygen/48x48/devices/.keep_me
+share/icons/oxygen/48x48/emblems/.keep_me
+share/icons/oxygen/48x48/emotes/.keep_me
+share/icons/oxygen/48x48/mimetypes/.keep_me
+share/icons/oxygen/48x48/places/.keep_me
+share/icons/oxygen/48x48/status/.keep_me
+share/icons/oxygen/64x64/.keep_me
+share/icons/oxygen/64x64/actions/.keep_me
+share/icons/oxygen/64x64/apps/.keep_me
+share/icons/oxygen/64x64/categories/.keep_me
+share/icons/oxygen/64x64/devices/.keep_me
+share/icons/oxygen/64x64/emblems/.keep_me
+share/icons/oxygen/64x64/emotes/.keep_me
+share/icons/oxygen/64x64/mimetypes/.keep_me
+share/icons/oxygen/64x64/places/.keep_me
+share/icons/oxygen/64x64/status/.keep_me
+share/icons/oxygen/8x8/.keep_me
+share/icons/oxygen/8x8/actions/.keep_me
+share/icons/oxygen/8x8/apps/.keep_me
+share/icons/oxygen/8x8/categories/.keep_me
+share/icons/oxygen/8x8/devices/.keep_me
+share/icons/oxygen/8x8/emblems/.keep_me
+share/icons/oxygen/8x8/emotes/.keep_me
+share/icons/oxygen/8x8/mimetypes/.keep_me
+share/icons/oxygen/8x8/places/.keep_me
+share/icons/oxygen/8x8/status/.keep_me
+share/icons/oxygen/scalable/.keep_me
+share/icons/oxygen/scalable/actions/.keep_me
+share/icons/oxygen/scalable/actions/small/.keep_me
+share/icons/oxygen/scalable/apps/.keep_me
+share/icons/oxygen/scalable/apps/small/.keep_me
+share/icons/oxygen/scalable/categories/.keep_me
+share/icons/oxygen/scalable/categories/small/.keep_me
+share/icons/oxygen/scalable/devices/.keep_me
+share/icons/oxygen/scalable/devices/small/.keep_me
+share/icons/oxygen/scalable/emblems/.keep_me
+share/icons/oxygen/scalable/emblems/small/.keep_me
+share/icons/oxygen/scalable/emotes/.keep_me
+share/icons/oxygen/scalable/emotes/small/.keep_me
+share/icons/oxygen/scalable/mimetypes/.keep_me
+share/icons/oxygen/scalable/mimetypes/small/.keep_me
+share/icons/oxygen/scalable/places/.keep_me
+share/icons/oxygen/scalable/places/small/.keep_me
+share/icons/oxygen/scalable/status/.keep_me
+share/icons/oxygen/scalable/status/small/.keep_me
+share/kde4/.keep_me
+share/kde4/services/.keep_me
+share/kde4/services/ScreenSavers/.keep_me
+share/kde4/services/ServiceMenus/.keep_me
+share/kde4/services/kded/.keep_me
+share/kde4/services/kresources/.keep_me
+share/kde4/services/kresources/kabc/.keep_me
+share/kde4/services/kresources/kcal/.keep_me
+share/kde4/servicetypes/.keep_me
 share/locale/en_US/.keep_me
 share/mimelnk/.keep_me
 share/mimelnk/all/.keep_me
@@ -223,228 +1114,1116 @@ share/sounds/.keep_me
 share/templates/.keep_me
 share/templates/.source/.keep_me
 share/wallpapers/.keep_me
-@dirrm share/wallpapers
-@dirrm share/templates/.source
-@dirrm share/templates
-@dirrm share/sounds
-@dirrm share/servicetypes
-@dirrm share/services/useragentstrings
-@dirrm share/services/searchproviders
-@dirrm share/services
-@dirrm share/mimelnk/video
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/multipart
-@dirrm share/mimelnk/model
-@dirrm share/mimelnk/message
-@dirrm share/mimelnk/inode
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk/all
-@dirrm share/mimelnk
-@dirrm share/locale/en_US
-@dirrm share/icons/locolor/64x64/mimetypes
-@dirrm share/icons/locolor/64x64/filesystems
-@dirrm share/icons/locolor/64x64/devices
-@dirrm share/icons/locolor/64x64/apps
-@dirrm share/icons/locolor/64x64/actions
-@dirrm share/icons/locolor/64x64
-@dirrm share/icons/locolor/48x48/mimetypes
-@dirrm share/icons/locolor/48x48/filesystems
-@dirrm share/icons/locolor/48x48/devices
-@dirrm share/icons/locolor/48x48/apps
-@dirrm share/icons/locolor/48x48/actions
-@dirrm share/icons/locolor/48x48
-@dirrm share/icons/locolor/32x32/mimetypes
-@dirrm share/icons/locolor/32x32/filesystems
-@dirrm share/icons/locolor/32x32/devices
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32/actions
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/22x22/mimetypes
-@dirrm share/icons/locolor/22x22/filesystems
-@dirrm share/icons/locolor/22x22/devices
-@dirrm share/icons/locolor/22x22/apps
-@dirrm share/icons/locolor/22x22/actions
-@dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/mimetypes
-@dirrm share/icons/locolor/16x16/filesystems
-@dirrm share/icons/locolor/16x16/devices
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor/128x128/mimetypes
-@dirrm share/icons/locolor/128x128/filesystem
-@dirrm share/icons/locolor/128x128/devices
-@dirrm share/icons/locolor/128x128/apps
-@dirrm share/icons/locolor/128x128/actions
-@dirrm share/icons/locolor/128x128
-@dirrm share/icons/locolor
-@dirrm share/icons/crystalsvg/scalable/mimetypes
-@dirrm share/icons/crystalsvg/scalable/filesystems
-@dirrm share/icons/crystalsvg/scalable/devices
-@dirrm share/icons/crystalsvg/scalable/apps
-@dirrm share/icons/crystalsvg/scalable/actions
-@dirrm share/icons/crystalsvg/scalable
-@dirrm share/icons/crystalsvg/64x64/mimetypes
-@dirrm share/icons/crystalsvg/64x64/filesystems
-@dirrm share/icons/crystalsvg/64x64/devices
-@dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/64x64/actions
-@dirrm share/icons/crystalsvg/64x64
-@dirrm share/icons/crystalsvg/48x48/mimetypes
-@dirrm share/icons/crystalsvg/48x48/filesystems
-@dirrm share/icons/crystalsvg/48x48/devices
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48/actions
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg/32x32/mimetypes
-@dirrm share/icons/crystalsvg/32x32/filesystems
-@dirrm share/icons/crystalsvg/32x32/devices
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32/actions
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/22x22/mimetypes
-@dirrm share/icons/crystalsvg/22x22/filesystems
-@dirrm share/icons/crystalsvg/22x22/devices
-@dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
-@dirrm share/icons/crystalsvg/16x16/mimetypes
-@dirrm share/icons/crystalsvg/16x16/filesystems
-@dirrm share/icons/crystalsvg/16x16/devices
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg/128x128/mimetypes
-@dirrm share/icons/crystalsvg/128x128/filesystems
-@dirrm share/icons/crystalsvg/128x128/devices
-@dirrm share/icons/crystalsvg/128x128/apps
-@dirrm share/icons/crystalsvg/128x128/actions
-@dirrm share/icons/crystalsvg/128x128
-@dirrm share/icons/crystalsvg
+@dirrmtry share/wallpapers
+@dirrmtry share/templates/.source
+@dirrmtry share/templates
+@dirrmtry share/sounds
+@dirrmtry share/servicetypes
+@dirrmtry share/services/useragentstrings
+@dirrmtry share/services/searchproviders
+@dirrmtry share/services
+@dirrmtry share/mimelnk/video
+@dirrmtry share/mimelnk/text
+@dirrmtry share/mimelnk/multipart
+@dirrmtry share/mimelnk/model
+@dirrmtry share/mimelnk/message
+@dirrmtry share/mimelnk/inode
+@dirrmtry share/mimelnk/image
+@dirrmtry share/mimelnk/audio
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk/all
+@dirrmtry share/mimelnk
+@dirrmtry share/locale/en_US
+@dirrmtry share/kde4/servicetypes
+@dirrmtry share/kde4/services/kresources/kcal
+@dirrmtry share/kde4/services/kresources/kabc
+@dirrmtry share/kde4/services/kresources
+@dirrmtry share/kde4/services/kded
+@dirrmtry share/kde4/services/ServiceMenus
+@dirrmtry share/kde4/services/ScreenSavers
+@dirrmtry share/kde4/services
+@dirrmtry share/kde4
+@dirrmtry share/icons/oxygen/scalable/status/small
+@dirrmtry share/icons/oxygen/scalable/status
+@dirrmtry share/icons/oxygen/scalable/places/small
+@dirrmtry share/icons/oxygen/scalable/places
+@dirrmtry share/icons/oxygen/scalable/mimetypes/small
+@dirrmtry share/icons/oxygen/scalable/mimetypes
+@dirrmtry share/icons/oxygen/scalable/emotes/small
+@dirrmtry share/icons/oxygen/scalable/emotes
+@dirrmtry share/icons/oxygen/scalable/emblems/small
+@dirrmtry share/icons/oxygen/scalable/emblems
+@dirrmtry share/icons/oxygen/scalable/devices/small
+@dirrmtry share/icons/oxygen/scalable/devices
+@dirrmtry share/icons/oxygen/scalable/categories/small
+@dirrmtry share/icons/oxygen/scalable/categories
+@dirrmtry share/icons/oxygen/scalable/apps/small
+@dirrmtry share/icons/oxygen/scalable/apps
+@dirrmtry share/icons/oxygen/scalable/actions/small
+@dirrmtry share/icons/oxygen/scalable/actions
+@dirrmtry share/icons/oxygen/scalable
+@dirrmtry share/icons/oxygen/8x8/status
+@dirrmtry share/icons/oxygen/8x8/places
+@dirrmtry share/icons/oxygen/8x8/mimetypes
+@dirrmtry share/icons/oxygen/8x8/emotes
+@dirrmtry share/icons/oxygen/8x8/emblems
+@dirrmtry share/icons/oxygen/8x8/devices
+@dirrmtry share/icons/oxygen/8x8/categories
+@dirrmtry share/icons/oxygen/8x8/apps
+@dirrmtry share/icons/oxygen/8x8/actions
+@dirrmtry share/icons/oxygen/8x8
+@dirrmtry share/icons/oxygen/64x64/status
+@dirrmtry share/icons/oxygen/64x64/places
+@dirrmtry share/icons/oxygen/64x64/mimetypes
+@dirrmtry share/icons/oxygen/64x64/emotes
+@dirrmtry share/icons/oxygen/64x64/emblems
+@dirrmtry share/icons/oxygen/64x64/devices
+@dirrmtry share/icons/oxygen/64x64/categories
+@dirrmtry share/icons/oxygen/64x64/apps
+@dirrmtry share/icons/oxygen/64x64/actions
+@dirrmtry share/icons/oxygen/64x64
+@dirrmtry share/icons/oxygen/48x48/status
+@dirrmtry share/icons/oxygen/48x48/places
+@dirrmtry share/icons/oxygen/48x48/mimetypes
+@dirrmtry share/icons/oxygen/48x48/emotes
+@dirrmtry share/icons/oxygen/48x48/emblems
+@dirrmtry share/icons/oxygen/48x48/devices
+@dirrmtry share/icons/oxygen/48x48/categories
+@dirrmtry share/icons/oxygen/48x48/apps
+@dirrmtry share/icons/oxygen/48x48/actions
+@dirrmtry share/icons/oxygen/48x48
+@dirrmtry share/icons/oxygen/32x32/status
+@dirrmtry share/icons/oxygen/32x32/places
+@dirrmtry share/icons/oxygen/32x32/mimetypes
+@dirrmtry share/icons/oxygen/32x32/emotes
+@dirrmtry share/icons/oxygen/32x32/emblems
+@dirrmtry share/icons/oxygen/32x32/devices
+@dirrmtry share/icons/oxygen/32x32/categories
+@dirrmtry share/icons/oxygen/32x32/apps
+@dirrmtry share/icons/oxygen/32x32/actions
+@dirrmtry share/icons/oxygen/32x32
+@dirrmtry share/icons/oxygen/22x22/status
+@dirrmtry share/icons/oxygen/22x22/places
+@dirrmtry share/icons/oxygen/22x22/mimetypes
+@dirrmtry share/icons/oxygen/22x22/emotes
+@dirrmtry share/icons/oxygen/22x22/emblems
+@dirrmtry share/icons/oxygen/22x22/devices
+@dirrmtry share/icons/oxygen/22x22/categories
+@dirrmtry share/icons/oxygen/22x22/apps
+@dirrmtry share/icons/oxygen/22x22/actions
+@dirrmtry share/icons/oxygen/22x22
+@dirrmtry share/icons/oxygen/16x16/status
+@dirrmtry share/icons/oxygen/16x16/places
+@dirrmtry share/icons/oxygen/16x16/mimetypes
+@dirrmtry share/icons/oxygen/16x16/emotes
+@dirrmtry share/icons/oxygen/16x16/emblems
+@dirrmtry share/icons/oxygen/16x16/devices
+@dirrmtry share/icons/oxygen/16x16/categories
+@dirrmtry share/icons/oxygen/16x16/apps
+@dirrmtry share/icons/oxygen/16x16/actions
+@dirrmtry share/icons/oxygen/16x16
+@dirrmtry share/icons/oxygen/128x128/status
+@dirrmtry share/icons/oxygen/128x128/places
+@dirrmtry share/icons/oxygen/128x128/mimetypes
+@dirrmtry share/icons/oxygen/128x128/emotes
+@dirrmtry share/icons/oxygen/128x128/emblems
+@dirrmtry share/icons/oxygen/128x128/devices
+@dirrmtry share/icons/oxygen/128x128/categories
+@dirrmtry share/icons/oxygen/128x128/apps
+@dirrmtry share/icons/oxygen/128x128/actions
+@dirrmtry share/icons/oxygen/128x128
+@dirrmtry share/icons/oxygen
+@dirrmtry share/icons/locolor/64x64/mimetypes
+@dirrmtry share/icons/locolor/64x64/filesystems
+@dirrmtry share/icons/locolor/64x64/devices
+@dirrmtry share/icons/locolor/64x64/apps
+@dirrmtry share/icons/locolor/64x64/actions
+@dirrmtry share/icons/locolor/64x64
+@dirrmtry share/icons/locolor/48x48/mimetypes
+@dirrmtry share/icons/locolor/48x48/filesystems
+@dirrmtry share/icons/locolor/48x48/devices
+@dirrmtry share/icons/locolor/48x48/apps
+@dirrmtry share/icons/locolor/48x48/actions
+@dirrmtry share/icons/locolor/48x48
+@dirrmtry share/icons/locolor/32x32/mimetypes
+@dirrmtry share/icons/locolor/32x32/filesystems
+@dirrmtry share/icons/locolor/32x32/devices
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32/actions
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/22x22/mimetypes
+@dirrmtry share/icons/locolor/22x22/filesystems
+@dirrmtry share/icons/locolor/22x22/devices
+@dirrmtry share/icons/locolor/22x22/apps
+@dirrmtry share/icons/locolor/22x22/actions
+@dirrmtry share/icons/locolor/22x22
+@dirrmtry share/icons/locolor/16x16/mimetypes
+@dirrmtry share/icons/locolor/16x16/filesystems
+@dirrmtry share/icons/locolor/16x16/devices
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16/actions
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor/128x128/mimetypes
+@dirrmtry share/icons/locolor/128x128/filesystem
+@dirrmtry share/icons/locolor/128x128/devices
+@dirrmtry share/icons/locolor/128x128/apps
+@dirrmtry share/icons/locolor/128x128/actions
+@dirrmtry share/icons/locolor/128x128
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/scalable/stock/text
+@dirrmtry share/icons/hicolor/scalable/stock/table
+@dirrmtry share/icons/hicolor/scalable/stock/object
+@dirrmtry share/icons/hicolor/scalable/stock/net
+@dirrmtry share/icons/hicolor/scalable/stock/navigation
+@dirrmtry share/icons/hicolor/scalable/stock/media
+@dirrmtry share/icons/hicolor/scalable/stock/io
+@dirrmtry share/icons/hicolor/scalable/stock/image
+@dirrmtry share/icons/hicolor/scalable/stock/form
+@dirrmtry share/icons/hicolor/scalable/stock/data
+@dirrmtry share/icons/hicolor/scalable/stock/code
+@dirrmtry share/icons/hicolor/scalable/stock/chart
+@dirrmtry share/icons/hicolor/scalable/stock
+@dirrmtry share/icons/hicolor/scalable/status
+@dirrmtry share/icons/hicolor/scalable/places
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable/intl
+@dirrmtry share/icons/hicolor/scalable/filesystems
+@dirrmtry share/icons/hicolor/scalable/emotes
+@dirrmtry share/icons/hicolor/scalable/emblems
+@dirrmtry share/icons/hicolor/scalable/devices
+@dirrmtry share/icons/hicolor/scalable/categories
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable/animations
+@dirrmtry share/icons/hicolor/scalable/actions
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/96x96/stock/text
+@dirrmtry share/icons/hicolor/96x96/stock/table
+@dirrmtry share/icons/hicolor/96x96/stock/object
+@dirrmtry share/icons/hicolor/96x96/stock/net
+@dirrmtry share/icons/hicolor/96x96/stock/navigation
+@dirrmtry share/icons/hicolor/96x96/stock/media
+@dirrmtry share/icons/hicolor/96x96/stock/io
+@dirrmtry share/icons/hicolor/96x96/stock/image
+@dirrmtry share/icons/hicolor/96x96/stock/form
+@dirrmtry share/icons/hicolor/96x96/stock/data
+@dirrmtry share/icons/hicolor/96x96/stock/code
+@dirrmtry share/icons/hicolor/96x96/stock/chart
+@dirrmtry share/icons/hicolor/96x96/stock
+@dirrmtry share/icons/hicolor/96x96/status
+@dirrmtry share/icons/hicolor/96x96/places
+@dirrmtry share/icons/hicolor/96x96/mimetypes
+@dirrmtry share/icons/hicolor/96x96/intl
+@dirrmtry share/icons/hicolor/96x96/filesystems
+@dirrmtry share/icons/hicolor/96x96/emotes
+@dirrmtry share/icons/hicolor/96x96/emblems
+@dirrmtry share/icons/hicolor/96x96/devices
+@dirrmtry share/icons/hicolor/96x96/categories
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96/animations
+@dirrmtry share/icons/hicolor/96x96/actions
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/stock/text
+@dirrmtry share/icons/hicolor/72x72/stock/table
+@dirrmtry share/icons/hicolor/72x72/stock/object
+@dirrmtry share/icons/hicolor/72x72/stock/net
+@dirrmtry share/icons/hicolor/72x72/stock/navigation
+@dirrmtry share/icons/hicolor/72x72/stock/media
+@dirrmtry share/icons/hicolor/72x72/stock/io
+@dirrmtry share/icons/hicolor/72x72/stock/image
+@dirrmtry share/icons/hicolor/72x72/stock/form
+@dirrmtry share/icons/hicolor/72x72/stock/data
+@dirrmtry share/icons/hicolor/72x72/stock/code
+@dirrmtry share/icons/hicolor/72x72/stock/chart
+@dirrmtry share/icons/hicolor/72x72/stock
+@dirrmtry share/icons/hicolor/72x72/status
+@dirrmtry share/icons/hicolor/72x72/places
+@dirrmtry share/icons/hicolor/72x72/mimetypes
+@dirrmtry share/icons/hicolor/72x72/intl
+@dirrmtry share/icons/hicolor/72x72/filesystems
+@dirrmtry share/icons/hicolor/72x72/emotes
+@dirrmtry share/icons/hicolor/72x72/emblems
+@dirrmtry share/icons/hicolor/72x72/devices
+@dirrmtry share/icons/hicolor/72x72/categories
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72/animations
+@dirrmtry share/icons/hicolor/72x72/actions
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/stock/text
+@dirrmtry share/icons/hicolor/64x64/stock/table
+@dirrmtry share/icons/hicolor/64x64/stock/object
+@dirrmtry share/icons/hicolor/64x64/stock/net
+@dirrmtry share/icons/hicolor/64x64/stock/navigation
+@dirrmtry share/icons/hicolor/64x64/stock/media
+@dirrmtry share/icons/hicolor/64x64/stock/io
+@dirrmtry share/icons/hicolor/64x64/stock/image
+@dirrmtry share/icons/hicolor/64x64/stock/form
+@dirrmtry share/icons/hicolor/64x64/stock/data
+@dirrmtry share/icons/hicolor/64x64/stock/code
+@dirrmtry share/icons/hicolor/64x64/stock/chart
+@dirrmtry share/icons/hicolor/64x64/stock
+@dirrmtry share/icons/hicolor/64x64/status
+@dirrmtry share/icons/hicolor/64x64/places
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64/intl
+@dirrmtry share/icons/hicolor/64x64/filesystems
+@dirrmtry share/icons/hicolor/64x64/emotes
+@dirrmtry share/icons/hicolor/64x64/emblems
+@dirrmtry share/icons/hicolor/64x64/devices
+@dirrmtry share/icons/hicolor/64x64/categories
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64/animations
+@dirrmtry share/icons/hicolor/64x64/actions
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/stock/text
+@dirrmtry share/icons/hicolor/48x48/stock/table
+@dirrmtry share/icons/hicolor/48x48/stock/object
+@dirrmtry share/icons/hicolor/48x48/stock/net
+@dirrmtry share/icons/hicolor/48x48/stock/navigation
+@dirrmtry share/icons/hicolor/48x48/stock/media
+@dirrmtry share/icons/hicolor/48x48/stock/io
+@dirrmtry share/icons/hicolor/48x48/stock/image
+@dirrmtry share/icons/hicolor/48x48/stock/form
+@dirrmtry share/icons/hicolor/48x48/stock/data
+@dirrmtry share/icons/hicolor/48x48/stock/code
+@dirrmtry share/icons/hicolor/48x48/stock/chart
+@dirrmtry share/icons/hicolor/48x48/stock
+@dirrmtry share/icons/hicolor/48x48/status
+@dirrmtry share/icons/hicolor/48x48/places
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48/intl
+@dirrmtry share/icons/hicolor/48x48/filesystems
+@dirrmtry share/icons/hicolor/48x48/emotes
+@dirrmtry share/icons/hicolor/48x48/emblems
+@dirrmtry share/icons/hicolor/48x48/devices
+@dirrmtry share/icons/hicolor/48x48/categories
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48/animations
+@dirrmtry share/icons/hicolor/48x48/actions
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/36x36/stock/text
+@dirrmtry share/icons/hicolor/36x36/stock/table
+@dirrmtry share/icons/hicolor/36x36/stock/object
+@dirrmtry share/icons/hicolor/36x36/stock/net
+@dirrmtry share/icons/hicolor/36x36/stock/navigation
+@dirrmtry share/icons/hicolor/36x36/stock/media
+@dirrmtry share/icons/hicolor/36x36/stock/io
+@dirrmtry share/icons/hicolor/36x36/stock/image
+@dirrmtry share/icons/hicolor/36x36/stock/form
+@dirrmtry share/icons/hicolor/36x36/stock/data
+@dirrmtry share/icons/hicolor/36x36/stock/code
+@dirrmtry share/icons/hicolor/36x36/stock/chart
+@dirrmtry share/icons/hicolor/36x36/stock
+@dirrmtry share/icons/hicolor/36x36/status
+@dirrmtry share/icons/hicolor/36x36/places
+@dirrmtry share/icons/hicolor/36x36/mimetypes
+@dirrmtry share/icons/hicolor/36x36/intl
+@dirrmtry share/icons/hicolor/36x36/filesystems
+@dirrmtry share/icons/hicolor/36x36/emotes
+@dirrmtry share/icons/hicolor/36x36/emblems
+@dirrmtry share/icons/hicolor/36x36/devices
+@dirrmtry share/icons/hicolor/36x36/categories
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36/animations
+@dirrmtry share/icons/hicolor/36x36/actions
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/32x32/stock/text
+@dirrmtry share/icons/hicolor/32x32/stock/table
+@dirrmtry share/icons/hicolor/32x32/stock/object
+@dirrmtry share/icons/hicolor/32x32/stock/net
+@dirrmtry share/icons/hicolor/32x32/stock/navigation
+@dirrmtry share/icons/hicolor/32x32/stock/media
+@dirrmtry share/icons/hicolor/32x32/stock/io
+@dirrmtry share/icons/hicolor/32x32/stock/image
+@dirrmtry share/icons/hicolor/32x32/stock/form
+@dirrmtry share/icons/hicolor/32x32/stock/data
+@dirrmtry share/icons/hicolor/32x32/stock/code
+@dirrmtry share/icons/hicolor/32x32/stock/chart
+@dirrmtry share/icons/hicolor/32x32/stock
+@dirrmtry share/icons/hicolor/32x32/status
+@dirrmtry share/icons/hicolor/32x32/places
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/intl
+@dirrmtry share/icons/hicolor/32x32/filesystems
+@dirrmtry share/icons/hicolor/32x32/emotes
+@dirrmtry share/icons/hicolor/32x32/emblems
+@dirrmtry share/icons/hicolor/32x32/devices
+@dirrmtry share/icons/hicolor/32x32/categories
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32/animations
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/stock/text
+@dirrmtry share/icons/hicolor/24x24/stock/table
+@dirrmtry share/icons/hicolor/24x24/stock/object
+@dirrmtry share/icons/hicolor/24x24/stock/net
+@dirrmtry share/icons/hicolor/24x24/stock/navigation
+@dirrmtry share/icons/hicolor/24x24/stock/media
+@dirrmtry share/icons/hicolor/24x24/stock/io
+@dirrmtry share/icons/hicolor/24x24/stock/image
+@dirrmtry share/icons/hicolor/24x24/stock/form
+@dirrmtry share/icons/hicolor/24x24/stock/data
+@dirrmtry share/icons/hicolor/24x24/stock/code
+@dirrmtry share/icons/hicolor/24x24/stock/chart
+@dirrmtry share/icons/hicolor/24x24/stock
+@dirrmtry share/icons/hicolor/24x24/status
+@dirrmtry share/icons/hicolor/24x24/places
+@dirrmtry share/icons/hicolor/24x24/mimetypes
+@dirrmtry share/icons/hicolor/24x24/intl
+@dirrmtry share/icons/hicolor/24x24/filesystems
+@dirrmtry share/icons/hicolor/24x24/emotes
+@dirrmtry share/icons/hicolor/24x24/emblems
+@dirrmtry share/icons/hicolor/24x24/devices
+@dirrmtry share/icons/hicolor/24x24/categories
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24/animations
+@dirrmtry share/icons/hicolor/24x24/actions
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/stock/text
+@dirrmtry share/icons/hicolor/22x22/stock/table
+@dirrmtry share/icons/hicolor/22x22/stock/object
+@dirrmtry share/icons/hicolor/22x22/stock/net
+@dirrmtry share/icons/hicolor/22x22/stock/navigation
+@dirrmtry share/icons/hicolor/22x22/stock/media
+@dirrmtry share/icons/hicolor/22x22/stock/io
+@dirrmtry share/icons/hicolor/22x22/stock/image
+@dirrmtry share/icons/hicolor/22x22/stock/form
+@dirrmtry share/icons/hicolor/22x22/stock/data
+@dirrmtry share/icons/hicolor/22x22/stock/code
+@dirrmtry share/icons/hicolor/22x22/stock/chart
+@dirrmtry share/icons/hicolor/22x22/stock
+@dirrmtry share/icons/hicolor/22x22/status
+@dirrmtry share/icons/hicolor/22x22/places
+@dirrmtry share/icons/hicolor/22x22/mimetypes
+@dirrmtry share/icons/hicolor/22x22/intl
+@dirrmtry share/icons/hicolor/22x22/filesystems
+@dirrmtry share/icons/hicolor/22x22/emotes
+@dirrmtry share/icons/hicolor/22x22/emblems
+@dirrmtry share/icons/hicolor/22x22/devices
+@dirrmtry share/icons/hicolor/22x22/categories
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22/animations
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/192x192/stock/text
+@dirrmtry share/icons/hicolor/192x192/stock/table
+@dirrmtry share/icons/hicolor/192x192/stock/object
+@dirrmtry share/icons/hicolor/192x192/stock/net
+@dirrmtry share/icons/hicolor/192x192/stock/navigation
+@dirrmtry share/icons/hicolor/192x192/stock/media
+@dirrmtry share/icons/hicolor/192x192/stock/io
+@dirrmtry share/icons/hicolor/192x192/stock/image
+@dirrmtry share/icons/hicolor/192x192/stock/form
+@dirrmtry share/icons/hicolor/192x192/stock/data
+@dirrmtry share/icons/hicolor/192x192/stock/code
+@dirrmtry share/icons/hicolor/192x192/stock/chart
+@dirrmtry share/icons/hicolor/192x192/stock
+@dirrmtry share/icons/hicolor/192x192/status
+@dirrmtry share/icons/hicolor/192x192/places
+@dirrmtry share/icons/hicolor/192x192/mimetypes
+@dirrmtry share/icons/hicolor/192x192/intl
+@dirrmtry share/icons/hicolor/192x192/filesystems
+@dirrmtry share/icons/hicolor/192x192/emotes
+@dirrmtry share/icons/hicolor/192x192/emblems
+@dirrmtry share/icons/hicolor/192x192/devices
+@dirrmtry share/icons/hicolor/192x192/categories
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/192x192/animations
+@dirrmtry share/icons/hicolor/192x192/actions
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor/16x16/stock/text
+@dirrmtry share/icons/hicolor/16x16/stock/table
+@dirrmtry share/icons/hicolor/16x16/stock/object
+@dirrmtry share/icons/hicolor/16x16/stock/net
+@dirrmtry share/icons/hicolor/16x16/stock/navigation
+@dirrmtry share/icons/hicolor/16x16/stock/media
+@dirrmtry share/icons/hicolor/16x16/stock/io
+@dirrmtry share/icons/hicolor/16x16/stock/image
+@dirrmtry share/icons/hicolor/16x16/stock/form
+@dirrmtry share/icons/hicolor/16x16/stock/data
+@dirrmtry share/icons/hicolor/16x16/stock/code
+@dirrmtry share/icons/hicolor/16x16/stock/chart
+@dirrmtry share/icons/hicolor/16x16/stock
+@dirrmtry share/icons/hicolor/16x16/status
+@dirrmtry share/icons/hicolor/16x16/places
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16/intl
+@dirrmtry share/icons/hicolor/16x16/filesystems
+@dirrmtry share/icons/hicolor/16x16/emotes
+@dirrmtry share/icons/hicolor/16x16/emblems
+@dirrmtry share/icons/hicolor/16x16/devices
+@dirrmtry share/icons/hicolor/16x16/categories
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16/animations
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/stock/text
+@dirrmtry share/icons/hicolor/128x128/stock/table
+@dirrmtry share/icons/hicolor/128x128/stock/object
+@dirrmtry share/icons/hicolor/128x128/stock/net
+@dirrmtry share/icons/hicolor/128x128/stock/navigation
+@dirrmtry share/icons/hicolor/128x128/stock/media
+@dirrmtry share/icons/hicolor/128x128/stock/io
+@dirrmtry share/icons/hicolor/128x128/stock/image
+@dirrmtry share/icons/hicolor/128x128/stock/form
+@dirrmtry share/icons/hicolor/128x128/stock/data
+@dirrmtry share/icons/hicolor/128x128/stock/code
+@dirrmtry share/icons/hicolor/128x128/stock/chart
+@dirrmtry share/icons/hicolor/128x128/stock
+@dirrmtry share/icons/hicolor/128x128/status
+@dirrmtry share/icons/hicolor/128x128/places
+@dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/128x128/intl
+@dirrmtry share/icons/hicolor/128x128/filesystems
+@dirrmtry share/icons/hicolor/128x128/emotes
+@dirrmtry share/icons/hicolor/128x128/emblems
+@dirrmtry share/icons/hicolor/128x128/devices
+@dirrmtry share/icons/hicolor/128x128/categories
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128/animations
+@dirrmtry share/icons/hicolor/128x128/actions
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons/crystalsvg/scalable/mimetypes
+@dirrmtry share/icons/crystalsvg/scalable/filesystems
+@dirrmtry share/icons/crystalsvg/scalable/devices
+@dirrmtry share/icons/crystalsvg/scalable/apps
+@dirrmtry share/icons/crystalsvg/scalable/actions
+@dirrmtry share/icons/crystalsvg/scalable
+@dirrmtry share/icons/crystalsvg/64x64/mimetypes
+@dirrmtry share/icons/crystalsvg/64x64/filesystems
+@dirrmtry share/icons/crystalsvg/64x64/devices
+@dirrmtry share/icons/crystalsvg/64x64/apps
+@dirrmtry share/icons/crystalsvg/64x64/actions
+@dirrmtry share/icons/crystalsvg/64x64
+@dirrmtry share/icons/crystalsvg/48x48/mimetypes
+@dirrmtry share/icons/crystalsvg/48x48/filesystems
+@dirrmtry share/icons/crystalsvg/48x48/devices
+@dirrmtry share/icons/crystalsvg/48x48/apps
+@dirrmtry share/icons/crystalsvg/48x48/actions
+@dirrmtry share/icons/crystalsvg/48x48
+@dirrmtry share/icons/crystalsvg/32x32/mimetypes
+@dirrmtry share/icons/crystalsvg/32x32/filesystems
+@dirrmtry share/icons/crystalsvg/32x32/devices
+@dirrmtry share/icons/crystalsvg/32x32/apps
+@dirrmtry share/icons/crystalsvg/32x32/actions
+@dirrmtry share/icons/crystalsvg/32x32
+@dirrmtry share/icons/crystalsvg/22x22/mimetypes
+@dirrmtry share/icons/crystalsvg/22x22/filesystems
+@dirrmtry share/icons/crystalsvg/22x22/devices
+@dirrmtry share/icons/crystalsvg/22x22/apps
+@dirrmtry share/icons/crystalsvg/22x22/actions
+@dirrmtry share/icons/crystalsvg/22x22
+@dirrmtry share/icons/crystalsvg/16x16/mimetypes
+@dirrmtry share/icons/crystalsvg/16x16/filesystems
+@dirrmtry share/icons/crystalsvg/16x16/devices
+@dirrmtry share/icons/crystalsvg/16x16/apps
+@dirrmtry share/icons/crystalsvg/16x16/actions
+@dirrmtry share/icons/crystalsvg/16x16
+@dirrmtry share/icons/crystalsvg/128x128/mimetypes
+@dirrmtry share/icons/crystalsvg/128x128/filesystems
+@dirrmtry share/icons/crystalsvg/128x128/devices
+@dirrmtry share/icons/crystalsvg/128x128/apps
+@dirrmtry share/icons/crystalsvg/128x128/actions
+@dirrmtry share/icons/crystalsvg/128x128
+@dirrmtry share/icons/crystalsvg
 @dirrmtry share/icons
-@dirrm share/doc/HTML/zh_TW
-@dirrm share/doc/HTML/zh_CN
-@dirrm share/doc/HTML/xh
-@dirrm share/doc/HTML/uk
-@dirrm share/doc/HTML/tr
-@dirrm share/doc/HTML/sv
-@dirrm share/doc/HTML/sr
-@dirrm share/doc/HTML/sl
-@dirrm share/doc/HTML/sk
-@dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML/ro
-@dirrm share/doc/HTML/pt_BR
-@dirrm share/doc/HTML/pt
-@dirrm share/doc/HTML/pl
-@dirrm share/doc/HTML/nl
-@dirrm share/doc/HTML/ko
-@dirrm share/doc/HTML/ja
-@dirrm share/doc/HTML/it
-@dirrm share/doc/HTML/hu
-@dirrm share/doc/HTML/hr
-@dirrm share/doc/HTML/he
-@dirrm share/doc/HTML/fr
-@dirrm share/doc/HTML/fi
-@dirrm share/doc/HTML/eu
-@dirrm share/doc/HTML/et
-@dirrm share/doc/HTML/es
-@dirrm share/doc/HTML/en_GB
-@dirrm share/doc/HTML/en/kcontrol
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML/da
-@dirrm share/doc/HTML/cs
-@dirrm share/doc/HTML
-@dirrm share/config.kcfg
-@dirrm share/apps/zeroconf
-@dirrm share/apps/profiles
-@dirrm share/apps/kwin/pics
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin
-@dirrm share/apps/kthememgr/Themes
-@dirrm share/apps/kthememgr
-@dirrm share/apps/konsole/profiles
-@dirrm share/apps/konsole
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror/profiles
-@dirrm share/apps/konqueror
-@dirrm share/apps/konqsidebartng/virtual_folders/services
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/web
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
-@dirrm share/apps/konqsidebartng/virtual_folders/remote
-@dirrm share/apps/konqsidebartng/virtual_folders
-@dirrm share/apps/konqsidebartng/entries
-@dirrm share/apps/konqsidebartng/dirtree
-@dirrm share/apps/konqsidebartng/add
-@dirrm share/apps/konqsidebartng
-@dirrm share/apps/kicker/wallpapers
-@dirrm share/apps/kicker/tiles
-@dirrm share/apps/kicker/pics
-@dirrm share/apps/kicker/menuext
-@dirrm share/apps/kicker/extensions
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
-@dirrm share/apps/khelpcenter/plugins
-@dirrm share/apps/khelpcenter
-@dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop/pics
-@dirrm share/apps/kdesktop/patterns
-@dirrm share/apps/kdesktop/DesktopLinks
-@dirrm share/apps/kdesktop
-@dirrm share/apps/kate/scripts
-@dirrm share/apps/kate
-@dirrm share/apps/kabc/plugins
-@dirrm share/apps/kabc/formats
-@dirrm share/apps/kabc
-@dirrm share/apps
-@dirrm share/applnk/Utilities/XUtilities
-@dirrm share/applnk/Utilities/More
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Toys
-@dirrm share/applnk/System/Terminal
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System/More
-@dirrm share/applnk/System
-@dirrm share/applnk/Settingsmenu
-@dirrm share/applnk/Settings/WebBrowsing
-@dirrm share/applnk/Settings/System
-@dirrm share/applnk/Settings/Sound
-@dirrm share/applnk/Settings/Security
-@dirrm share/applnk/Settings/PowerControl
-@dirrm share/applnk/Settings/Personalization
-@dirrm share/applnk/Settings/Peripherals
-@dirrm share/applnk/Settings/Network/WebBrowsing
-@dirrm share/applnk/Settings/Network
-@dirrm share/applnk/Settings/LookNFeel/Windows
-@dirrm share/applnk/Settings/LookNFeel/Themes
-@dirrm share/applnk/Settings/LookNFeel
-@dirrm share/applnk/Settings/Information
-@dirrm share/applnk/Settings/Desktop
-@dirrm share/applnk/Settings/Components
-@dirrm share/applnk/Settings/Accessibility
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Office
-@dirrm share/applnk/Multimedia/More
-@dirrm share/applnk/Multimedia
-@dirrm share/applnk/Internet/Terminal
-@dirrm share/applnk/Internet/More
-@dirrm share/applnk/Internet
-@dirrm share/applnk/Graphics/More
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/Games/TacticStrategy
-@dirrm share/applnk/Games/Roguelikes
-@dirrm share/applnk/Games/Kidsgames
-@dirrm share/applnk/Games/Card
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games/Arcade
-@dirrm share/applnk/Games
-@dirrm share/applnk/Edutainment
-@dirrm share/applnk/Editors
-@dirrm share/applnk/Development
-@dirrm share/applnk/Applications
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
-@dirrm share/applications
-@dirrm lib/kde3
+@dirrmtry share/doc/HTML/zh_TW
+@dirrmtry share/doc/HTML/zh_CN
+@dirrmtry share/doc/HTML/xh
+@dirrmtry share/doc/HTML/uk
+@dirrmtry share/doc/HTML/tr
+@dirrmtry share/doc/HTML/sv
+@dirrmtry share/doc/HTML/sr
+@dirrmtry share/doc/HTML/sl
+@dirrmtry share/doc/HTML/sk
+@dirrmtry share/doc/HTML/ru
+@dirrmtry share/doc/HTML/ro
+@dirrmtry share/doc/HTML/pt_BR
+@dirrmtry share/doc/HTML/pt
+@dirrmtry share/doc/HTML/pl
+@dirrmtry share/doc/HTML/nl
+@dirrmtry share/doc/HTML/ko
+@dirrmtry share/doc/HTML/ja
+@dirrmtry share/doc/HTML/it
+@dirrmtry share/doc/HTML/hu
+@dirrmtry share/doc/HTML/hr
+@dirrmtry share/doc/HTML/he
+@dirrmtry share/doc/HTML/fr
+@dirrmtry share/doc/HTML/fi
+@dirrmtry share/doc/HTML/eu
+@dirrmtry share/doc/HTML/et
+@dirrmtry share/doc/HTML/es
+@dirrmtry share/doc/HTML/en_GB
+@dirrmtry share/doc/HTML/en/kcontrol
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML/da
+@dirrmtry share/doc/HTML/cs
+@dirrmtry share/doc/HTML
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1/interfaces
+@dirrmtry share/dbus-1
+@dirrmtry share/config.kcfg
+@dirrmtry share/config
+@dirrmtry share/apps/zeroconf
+@dirrmtry share/apps/profiles
+@dirrmtry share/apps/kwin/pics
+@dirrmtry share/apps/kwin/icewm-themes
+@dirrmtry share/apps/kwin
+@dirrmtry share/apps/kthememgr/Themes
+@dirrmtry share/apps/kthememgr
+@dirrmtry share/apps/konsole/profiles
+@dirrmtry share/apps/konsole
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror/profiles
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps/konqsidebartng/virtual_folders/services
+@dirrmtry share/apps/konqsidebartng/virtual_folders/remote/web
+@dirrmtry share/apps/konqsidebartng/virtual_folders/remote/ftp
+@dirrmtry share/apps/konqsidebartng/virtual_folders/remote
+@dirrmtry share/apps/konqsidebartng/virtual_folders
+@dirrmtry share/apps/konqsidebartng/entries
+@dirrmtry share/apps/konqsidebartng/dirtree
+@dirrmtry share/apps/konqsidebartng/add
+@dirrmtry share/apps/konqsidebartng
+@dirrmtry share/apps/kicker/wallpapers
+@dirrmtry share/apps/kicker/tiles
+@dirrmtry share/apps/kicker/pics
+@dirrmtry share/apps/kicker/menuext
+@dirrmtry share/apps/kicker/extensions
+@dirrmtry share/apps/kicker/applets
+@dirrmtry share/apps/kicker
+@dirrmtry share/apps/khelpcenter/plugins
+@dirrmtry share/apps/khelpcenter
+@dirrmtry share/apps/kdesktop/programs
+@dirrmtry share/apps/kdesktop/pics
+@dirrmtry share/apps/kdesktop/patterns
+@dirrmtry share/apps/kdesktop/DesktopLinks
+@dirrmtry share/apps/kdesktop
+@dirrmtry share/apps/kate/scripts
+@dirrmtry share/apps/kate
+@dirrmtry share/apps/kabc/plugins
+@dirrmtry share/apps/kabc/formats
+@dirrmtry share/apps/kabc
+@dirrmtry share/apps
+@dirrmtry share/applnk/Utilities/XUtilities
+@dirrmtry share/applnk/Utilities/More
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk/Toys
+@dirrmtry share/applnk/System/Terminal
+@dirrmtry share/applnk/System/ScreenSavers
+@dirrmtry share/applnk/System/More
+@dirrmtry share/applnk/System
+@dirrmtry share/applnk/Settingsmenu
+@dirrmtry share/applnk/Settings/WebBrowsing
+@dirrmtry share/applnk/Settings/System
+@dirrmtry share/applnk/Settings/Sound
+@dirrmtry share/applnk/Settings/Security
+@dirrmtry share/applnk/Settings/PowerControl
+@dirrmtry share/applnk/Settings/Personalization
+@dirrmtry share/applnk/Settings/Peripherals
+@dirrmtry share/applnk/Settings/Network/WebBrowsing
+@dirrmtry share/applnk/Settings/Network
+@dirrmtry share/applnk/Settings/LookNFeel/Windows
+@dirrmtry share/applnk/Settings/LookNFeel/Themes
+@dirrmtry share/applnk/Settings/LookNFeel
+@dirrmtry share/applnk/Settings/Information
+@dirrmtry share/applnk/Settings/Desktop
+@dirrmtry share/applnk/Settings/Components
+@dirrmtry share/applnk/Settings/Accessibility
+@dirrmtry share/applnk/Settings
+@dirrmtry share/applnk/Office
+@dirrmtry share/applnk/Multimedia/More
+@dirrmtry share/applnk/Multimedia
+@dirrmtry share/applnk/Internet/Terminal
+@dirrmtry share/applnk/Internet/More
+@dirrmtry share/applnk/Internet
+@dirrmtry share/applnk/Graphics/More
+@dirrmtry share/applnk/Graphics
+@dirrmtry share/applnk/Games/TacticStrategy
+@dirrmtry share/applnk/Games/Roguelikes
+@dirrmtry share/applnk/Games/Kidsgames
+@dirrmtry share/applnk/Games/Card
+@dirrmtry share/applnk/Games/Board
+@dirrmtry share/applnk/Games/Arcade
+@dirrmtry share/applnk/Games
+@dirrmtry share/applnk/Edutainment
+@dirrmtry share/applnk/Editors
+@dirrmtry share/applnk/Development
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk/.hidden
+@dirrmtry share/applnk
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
+@dirrmtry lib/strigi
+@dirrmtry lib/kde4/plugins
+@dirrmtry lib/kde4/libexec
+@dirrmtry lib/kde4
+@dirrmtry lib/kconf_update_bin
+@dirrmtry include/KDE
+%%MTREE%%@dirrm www
+%%MTREE%%@dirrm share/xml
+%%MTREE%%@dirrm share/skel
+%%MTREE%%@dirrm share/sgml
+%%MTREE%%@dirrm share/pixmaps
+%%MTREE%%@dirrm share/nls/zh_TW.UTF-8
+%%MTREE%%@dirrm share/nls/zh_TW.Big5
+%%MTREE%%@dirrm share/nls/zh_HK.UTF-8
+%%MTREE%%@dirrm share/nls/zh_HK.Big5HKSCS
+%%MTREE%%@dirrm share/nls/zh_CN.eucCN
+%%MTREE%%@dirrm share/nls/zh_CN.UTF-8
+%%MTREE%%@dirrm share/nls/zh_CN.GBK
+%%MTREE%%@dirrm share/nls/zh_CN.GB2312
+%%MTREE%%@dirrm share/nls/zh_CN.GB18030
+%%MTREE%%@dirrm share/nls/uk_UA.UTF-8
+%%MTREE%%@dirrm share/nls/uk_UA.KOI8-U
+%%MTREE%%@dirrm share/nls/uk_UA.ISO8859-5
+%%MTREE%%@dirrm share/nls/tr_TR.UTF-8
+%%MTREE%%@dirrm share/nls/tr_TR.ISO8859-9
+%%MTREE%%@dirrm share/nls/sv_SE.UTF-8
+%%MTREE%%@dirrm share/nls/sv_SE.ISO8859-15
+%%MTREE%%@dirrm share/nls/sv_SE.ISO8859-1
+%%MTREE%%@dirrm share/nls/sr_YU.UTF-8
+%%MTREE%%@dirrm share/nls/sr_YU.ISO8859-5
+%%MTREE%%@dirrm share/nls/sr_YU.ISO8859-2
+%%MTREE%%@dirrm share/nls/sl_SI.UTF-8
+%%MTREE%%@dirrm share/nls/sl_SI.ISO8859-2
+%%MTREE%%@dirrm share/nls/sk_SK.UTF-8
+%%MTREE%%@dirrm share/nls/sk_SK.ISO8859-2
+%%MTREE%%@dirrm share/nls/ru_RU.UTF-8
+%%MTREE%%@dirrm share/nls/ru_RU.KOI8-R
+%%MTREE%%@dirrm share/nls/ru_RU.ISO8859-5
+%%MTREE%%@dirrm share/nls/ru_RU.CP866
+%%MTREE%%@dirrm share/nls/ru_RU.CP1251
+%%MTREE%%@dirrm share/nls/ro_RO.UTF-8
+%%MTREE%%@dirrm share/nls/ro_RO.ISO8859-2
+%%MTREE%%@dirrm share/nls/pt_PT.UTF-8
+%%MTREE%%@dirrm share/nls/pt_PT.ISO8859-15
+%%MTREE%%@dirrm share/nls/pt_PT.ISO8859-1
+%%MTREE%%@dirrm share/nls/pt_BR.UTF-8
+%%MTREE%%@dirrm share/nls/pt_BR.ISO8859-1
+%%MTREE%%@dirrm share/nls/pl_PL.UTF-8
+%%MTREE%%@dirrm share/nls/pl_PL.ISO8859-2
+%%MTREE%%@dirrm share/nls/no_NO.UTF-8
+%%MTREE%%@dirrm share/nls/no_NO.ISO8859-15
+%%MTREE%%@dirrm share/nls/no_NO.ISO8859-1
+%%MTREE%%@dirrm share/nls/nl_NL.UTF-8
+%%MTREE%%@dirrm share/nls/nl_NL.ISO8859-15
+%%MTREE%%@dirrm share/nls/nl_NL.ISO8859-1
+%%MTREE%%@dirrm share/nls/nl_BE.UTF-8
+%%MTREE%%@dirrm share/nls/nl_BE.ISO8859-15
+%%MTREE%%@dirrm share/nls/nl_BE.ISO8859-1
+%%MTREE%%@dirrm share/nls/lt_LT.UTF-8
+%%MTREE%%@dirrm share/nls/lt_LT.ISO8859-4
+%%MTREE%%@dirrm share/nls/lt_LT.ISO8859-13
+%%MTREE%%@dirrm share/nls/la_LN.US-ASCII
+%%MTREE%%@dirrm share/nls/la_LN.ISO8859-4
+%%MTREE%%@dirrm share/nls/la_LN.ISO8859-2
+%%MTREE%%@dirrm share/nls/la_LN.ISO8859-15
+%%MTREE%%@dirrm share/nls/la_LN.ISO8859-1
+%%MTREE%%@dirrm share/nls/ko_KR.eucKR
+%%MTREE%%@dirrm share/nls/ko_KR.UTF-8
+%%MTREE%%@dirrm share/nls/ko_KR.CP949
+%%MTREE%%@dirrm share/nls/kk_KZ.UTF-8
+%%MTREE%%@dirrm share/nls/kk_KZ.PT154
+%%MTREE%%@dirrm share/nls/ja_JP.eucJP
+%%MTREE%%@dirrm share/nls/ja_JP.UTF-8
+%%MTREE%%@dirrm share/nls/ja_JP.SJIS
+%%MTREE%%@dirrm share/nls/it_IT.UTF-8
+%%MTREE%%@dirrm share/nls/it_IT.ISO8859-15
+%%MTREE%%@dirrm share/nls/it_IT.ISO8859-1
+%%MTREE%%@dirrm share/nls/it_CH.UTF-8
+%%MTREE%%@dirrm share/nls/it_CH.ISO8859-15
+%%MTREE%%@dirrm share/nls/it_CH.ISO8859-1
+%%MTREE%%@dirrm share/nls/is_IS.UTF-8
+%%MTREE%%@dirrm share/nls/is_IS.ISO8859-15
+%%MTREE%%@dirrm share/nls/is_IS.ISO8859-1
+%%MTREE%%@dirrm share/nls/hy_AM.UTF-8
+%%MTREE%%@dirrm share/nls/hy_AM.ARMSCII-8
+%%MTREE%%@dirrm share/nls/hu_HU.UTF-8
+%%MTREE%%@dirrm share/nls/hu_HU.ISO8859-2
+%%MTREE%%@dirrm share/nls/hr_HR.UTF-8
+%%MTREE%%@dirrm share/nls/hr_HR.ISO8859-2
+%%MTREE%%@dirrm share/nls/hi_IN.ISCII-DEV
+%%MTREE%%@dirrm share/nls/he_IL.UTF-8
+%%MTREE%%@dirrm share/nls/fr_FR.UTF-8
+%%MTREE%%@dirrm share/nls/fr_FR.ISO8859-15
+%%MTREE%%@dirrm share/nls/fr_FR.ISO8859-1
+%%MTREE%%@dirrm share/nls/fr_CH.UTF-8
+%%MTREE%%@dirrm share/nls/fr_CH.ISO8859-15
+%%MTREE%%@dirrm share/nls/fr_CH.ISO8859-1
+%%MTREE%%@dirrm share/nls/fr_CA.UTF-8
+%%MTREE%%@dirrm share/nls/fr_CA.ISO8859-15
+%%MTREE%%@dirrm share/nls/fr_CA.ISO8859-1
+%%MTREE%%@dirrm share/nls/fr_BE.UTF-8
+%%MTREE%%@dirrm share/nls/fr_BE.ISO8859-15
+%%MTREE%%@dirrm share/nls/fr_BE.ISO8859-1
+%%MTREE%%@dirrm share/nls/fi_FI.UTF-8
+%%MTREE%%@dirrm share/nls/fi_FI.ISO8859-15
+%%MTREE%%@dirrm share/nls/fi_FI.ISO8859-1
+%%MTREE%%@dirrm share/nls/et_EE.UTF-8
+%%MTREE%%@dirrm share/nls/et_EE.ISO8859-15
+%%MTREE%%@dirrm share/nls/es_ES.UTF-8
+%%MTREE%%@dirrm share/nls/es_ES.ISO8859-15
+%%MTREE%%@dirrm share/nls/es_ES.ISO8859-1
+%%MTREE%%@dirrm share/nls/en_US.UTF-8
+%%MTREE%%@dirrm share/nls/en_US.ISO8859-15
+%%MTREE%%@dirrm share/nls/en_US.ISO8859-1
+%%MTREE%%@dirrm share/nls/en_NZ.UTF-8
+%%MTREE%%@dirrm share/nls/en_NZ.US-ASCII
+%%MTREE%%@dirrm share/nls/en_NZ.ISO8859-15
+%%MTREE%%@dirrm share/nls/en_NZ.ISO8859-1
+%%MTREE%%@dirrm share/nls/en_IE.UTF-8
+%%MTREE%%@dirrm share/nls/en_GB.UTF-8
+%%MTREE%%@dirrm share/nls/en_GB.US-ASCII
+%%MTREE%%@dirrm share/nls/en_GB.ISO8859-15
+%%MTREE%%@dirrm share/nls/en_GB.ISO8859-1
+%%MTREE%%@dirrm share/nls/en_CA.UTF-8
+%%MTREE%%@dirrm share/nls/en_CA.US-ASCII
+%%MTREE%%@dirrm share/nls/en_CA.ISO8859-15
+%%MTREE%%@dirrm share/nls/en_CA.ISO8859-1
+%%MTREE%%@dirrm share/nls/en_AU.UTF-8
+%%MTREE%%@dirrm share/nls/en_AU.US-ASCII
+%%MTREE%%@dirrm share/nls/en_AU.ISO8859-15
+%%MTREE%%@dirrm share/nls/en_AU.ISO8859-1
+%%MTREE%%@dirrm share/nls/el_GR.UTF-8
+%%MTREE%%@dirrm share/nls/el_GR.ISO8859-7
+%%MTREE%%@dirrm share/nls/de_DE.UTF-8
+%%MTREE%%@dirrm share/nls/de_DE.ISO8859-15
+%%MTREE%%@dirrm share/nls/de_DE.ISO8859-1
+%%MTREE%%@dirrm share/nls/de_CH.UTF-8
+%%MTREE%%@dirrm share/nls/de_CH.ISO8859-15
+%%MTREE%%@dirrm share/nls/de_CH.ISO8859-1
+%%MTREE%%@dirrm share/nls/de_AT.UTF-8
+%%MTREE%%@dirrm share/nls/de_AT.ISO8859-15
+%%MTREE%%@dirrm share/nls/de_AT.ISO8859-1
+%%MTREE%%@dirrm share/nls/da_DK.UTF-8
+%%MTREE%%@dirrm share/nls/da_DK.ISO8859-15
+%%MTREE%%@dirrm share/nls/da_DK.ISO8859-1
+%%MTREE%%@dirrm share/nls/cs_CZ.UTF-8
+%%MTREE%%@dirrm share/nls/cs_CZ.ISO8859-2
+%%MTREE%%@dirrm share/nls/ca_ES.UTF-8
+%%MTREE%%@dirrm share/nls/ca_ES.ISO8859-15
+%%MTREE%%@dirrm share/nls/ca_ES.ISO8859-1
+%%MTREE%%@dirrm share/nls/bg_BG.UTF-8
+%%MTREE%%@dirrm share/nls/bg_BG.CP1251
+%%MTREE%%@dirrm share/nls/be_BY.UTF-8
+%%MTREE%%@dirrm share/nls/be_BY.ISO8859-5
+%%MTREE%%@dirrm share/nls/be_BY.CP1251
+%%MTREE%%@dirrm share/nls/be_BY.CP1131
+%%MTREE%%@dirrm share/nls/am_ET.UTF-8
+%%MTREE%%@dirrm share/nls/af_ZA.UTF-8
+%%MTREE%%@dirrm share/nls/af_ZA.ISO8859-15
+%%MTREE%%@dirrm share/nls/af_ZA.ISO8859-1
+%%MTREE%%@dirrm share/nls/C
+%%MTREE%%@dirrm share/nls
+%%MTREE%%@dirrm share/misc
+%%MTREE%%@dirrm share/locale/zh_TW/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/zh_TW.Big5
+%%MTREE%%@dirrm share/locale/zh_TW
+%%MTREE%%@dirrm share/locale/zh_CN/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/zh_CN.GB2312
+%%MTREE%%@dirrm share/locale/zh_CN
+%%MTREE%%@dirrm share/locale/zh/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/zh
+%%MTREE%%@dirrm share/locale/wa/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/wa
+%%MTREE%%@dirrm share/locale/vi/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/vi
+%%MTREE%%@dirrm share/locale/uz/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/uz
+%%MTREE%%@dirrm share/locale/uk/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/uk
+%%MTREE%%@dirrm share/locale/tr/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/tr
+%%MTREE%%@dirrm share/locale/tk/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/tk
+%%MTREE%%@dirrm share/locale/th/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/th
+%%MTREE%%@dirrm share/locale/tg/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/tg
+%%MTREE%%@dirrm share/locale/ta/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ta
+%%MTREE%%@dirrm share/locale/sv/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sv
+%%MTREE%%@dirrm share/locale/sr@Latn/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sr@Latn
+%%MTREE%%@dirrm share/locale/sr/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sr
+%%MTREE%%@dirrm share/locale/sq/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sq
+%%MTREE%%@dirrm share/locale/sl/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sl
+%%MTREE%%@dirrm share/locale/sk/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/sk
+%%MTREE%%@dirrm share/locale/ru/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ru
+%%MTREE%%@dirrm share/locale/ro/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ro
+%%MTREE%%@dirrm share/locale/pt_PT/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/pt_PT
+%%MTREE%%@dirrm share/locale/pt_BR/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/pt_BR
+%%MTREE%%@dirrm share/locale/pt/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/pt
+%%MTREE%%@dirrm share/locale/pl/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/pl
+%%MTREE%%@dirrm share/locale/pa/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/pa
+%%MTREE%%@dirrm share/locale/or/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/or
+%%MTREE%%@dirrm share/locale/no/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/no
+%%MTREE%%@dirrm share/locale/nn/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/nn
+%%MTREE%%@dirrm share/locale/nl/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/nl
+%%MTREE%%@dirrm share/locale/ne/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ne
+%%MTREE%%@dirrm share/locale/nb/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/nb
+%%MTREE%%@dirrm share/locale/mt/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/mt
+%%MTREE%%@dirrm share/locale/ms/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ms
+%%MTREE%%@dirrm share/locale/mn/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/mn
+%%MTREE%%@dirrm share/locale/ml/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ml
+%%MTREE%%@dirrm share/locale/mk/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/mk
+%%MTREE%%@dirrm share/locale/lv/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/lv
+%%MTREE%%@dirrm share/locale/lt/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/lt
+%%MTREE%%@dirrm share/locale/li/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/li
+%%MTREE%%@dirrm share/locale/ko/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ko
+%%MTREE%%@dirrm share/locale/kn/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/kn
+%%MTREE%%@dirrm share/locale/ka/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ka
+%%MTREE%%@dirrm share/locale/ja/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ja
+%%MTREE%%@dirrm share/locale/it/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/it
+%%MTREE%%@dirrm share/locale/is/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/is
+%%MTREE%%@dirrm share/locale/id/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/id
+%%MTREE%%@dirrm share/locale/hu/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/hu
+%%MTREE%%@dirrm share/locale/hr/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/hr
+%%MTREE%%@dirrm share/locale/hi/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/hi
+%%MTREE%%@dirrm share/locale/he/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/he
+%%MTREE%%@dirrm share/locale/gu/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/gu
+%%MTREE%%@dirrm share/locale/gl/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/gl
+%%MTREE%%@dirrm share/locale/ga/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ga
+%%MTREE%%@dirrm share/locale/fr_FR/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/fr_FR
+%%MTREE%%@dirrm share/locale/fr/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/fr
+%%MTREE%%@dirrm share/locale/fi/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/fi
+%%MTREE%%@dirrm share/locale/fa_IR/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/fa_IR
+%%MTREE%%@dirrm share/locale/fa/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/fa
+%%MTREE%%@dirrm share/locale/eu/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/eu
+%%MTREE%%@dirrm share/locale/et/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/et
+%%MTREE%%@dirrm share/locale/es_MX/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/es_MX
+%%MTREE%%@dirrm share/locale/es_ES/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/es_ES
+%%MTREE%%@dirrm share/locale/es/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/es
+%%MTREE%%@dirrm share/locale/eo/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/eo
+%%MTREE%%@dirrm share/locale/en_GB/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/en_GB
+%%MTREE%%@dirrm share/locale/en_CA/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/en_CA
+%%MTREE%%@dirrm share/locale/en_AU/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/en_AU
+%%MTREE%%@dirrm share/locale/en/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/en
+%%MTREE%%@dirrm share/locale/el/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/el
+%%MTREE%%@dirrm share/locale/ee/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ee
+%%MTREE%%@dirrm share/locale/dk/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/dk
+%%MTREE%%@dirrm share/locale/de_AT/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/de_AT
+%%MTREE%%@dirrm share/locale/de/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/de
+%%MTREE%%@dirrm share/locale/da/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/da
+%%MTREE%%@dirrm share/locale/cy/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/cy
+%%MTREE%%@dirrm share/locale/cs/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/cs
+%%MTREE%%@dirrm share/locale/ca/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ca
+%%MTREE%%@dirrm share/locale/bs/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/bs
+%%MTREE%%@dirrm share/locale/br/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/br
+%%MTREE%%@dirrm share/locale/bn/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/bn
+%%MTREE%%@dirrm share/locale/bg/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/bg
+%%MTREE%%@dirrm share/locale/be/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/be
+%%MTREE%%@dirrm share/locale/az/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/az
+%%MTREE%%@dirrm share/locale/ar/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/ar
+%%MTREE%%@dirrm share/locale/am/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/am
+%%MTREE%%@dirrm share/locale/af/LC_MESSAGES
+%%MTREE%%@dirrm share/locale/af
+%%MTREE%%@dirrm share/locale
+%%MTREE%%@dirrm share/java/classes
+%%MTREE%%@dirrm share/java
+%%MTREE%%@dirrm share/examples
+%%MTREE%%@dirrm share/emacs/site-lisp
+%%MTREE%%@dirrm share/emacs
+%%MTREE%%@dirrm share/doc/ja
+%%MTREE%%@dirrm share/doc
+%%MTREE%%@dirrm share/dict
+%%MTREE%%@dirrm share/aclocal
+%%MTREE%%@dirrm share
+%%MTREE%%@dirrm sbin
+%%MTREE%%@dirrm man/ru.KOI8-R/mann
+%%MTREE%%@dirrm man/ru.KOI8-R/manl
+%%MTREE%%@dirrm man/ru.KOI8-R/man9
+%%MTREE%%@dirrm man/ru.KOI8-R/man8
+%%MTREE%%@dirrm man/ru.KOI8-R/man7
+%%MTREE%%@dirrm man/ru.KOI8-R/man6
+%%MTREE%%@dirrm man/ru.KOI8-R/man5
+%%MTREE%%@dirrm man/ru.KOI8-R/man4
+%%MTREE%%@dirrm man/ru.KOI8-R/man3
+%%MTREE%%@dirrm man/ru.KOI8-R/man2
+%%MTREE%%@dirrm man/ru.KOI8-R/man1
+%%MTREE%%@dirrm man/ru.KOI8-R/catn
+%%MTREE%%@dirrm man/ru.KOI8-R/catl
+%%MTREE%%@dirrm man/ru.KOI8-R/cat9
+%%MTREE%%@dirrm man/ru.KOI8-R/cat8
+%%MTREE%%@dirrm man/ru.KOI8-R/cat7
+%%MTREE%%@dirrm man/ru.KOI8-R/cat6
+%%MTREE%%@dirrm man/ru.KOI8-R/cat5
+%%MTREE%%@dirrm man/ru.KOI8-R/cat4
+%%MTREE%%@dirrm man/ru.KOI8-R/cat3
+%%MTREE%%@dirrm man/ru.KOI8-R/cat2
+%%MTREE%%@dirrm man/ru.KOI8-R/cat1
+%%MTREE%%@dirrm man/ru.KOI8-R
+%%MTREE%%@dirrm man/mann
+%%MTREE%%@dirrm man/manl
+%%MTREE%%@dirrm man/man9
+%%MTREE%%@dirrm man/man8
+%%MTREE%%@dirrm man/man7
+%%MTREE%%@dirrm man/man6
+%%MTREE%%@dirrm man/man5
+%%MTREE%%@dirrm man/man4
+%%MTREE%%@dirrm man/man3
+%%MTREE%%@dirrm man/man2
+%%MTREE%%@dirrm man/man1
+%%MTREE%%@dirrm man/ja/mann
+%%MTREE%%@dirrm man/ja/manl
+%%MTREE%%@dirrm man/ja/man9
+%%MTREE%%@dirrm man/ja/man8
+%%MTREE%%@dirrm man/ja/man7
+%%MTREE%%@dirrm man/ja/man6
+%%MTREE%%@dirrm man/ja/man5
+%%MTREE%%@dirrm man/ja/man4
+%%MTREE%%@dirrm man/ja/man3
+%%MTREE%%@dirrm man/ja/man2
+%%MTREE%%@dirrm man/ja/man1
+%%MTREE%%@dirrm man/ja/catn
+%%MTREE%%@dirrm man/ja/catl
+%%MTREE%%@dirrm man/ja/cat9
+%%MTREE%%@dirrm man/ja/cat8
+%%MTREE%%@dirrm man/ja/cat7
+%%MTREE%%@dirrm man/ja/cat6
+%%MTREE%%@dirrm man/ja/cat5
+%%MTREE%%@dirrm man/ja/cat4
+%%MTREE%%@dirrm man/ja/cat3
+%%MTREE%%@dirrm man/ja/cat2
+%%MTREE%%@dirrm man/ja/cat1
+%%MTREE%%@dirrm man/ja
+%%MTREE%%@dirrm man/en.ISO8859-1/catn
+%%MTREE%%@dirrm man/en.ISO8859-1/cat9/i386
+%%MTREE%%@dirrm man/en.ISO8859-1/cat9
+%%MTREE%%@dirrm man/en.ISO8859-1/cat8/i386
+%%MTREE%%@dirrm man/en.ISO8859-1/cat8
+%%MTREE%%@dirrm man/en.ISO8859-1/cat7
+%%MTREE%%@dirrm man/en.ISO8859-1/cat6
+%%MTREE%%@dirrm man/en.ISO8859-1/cat5
+%%MTREE%%@dirrm man/en.ISO8859-1/cat4/i386
+%%MTREE%%@dirrm man/en.ISO8859-1/cat4
+%%MTREE%%@dirrm man/en.ISO8859-1/cat3
+%%MTREE%%@dirrm man/en.ISO8859-1/cat2
+%%MTREE%%@dirrm man/en.ISO8859-1/cat1aout
+%%MTREE%%@dirrm man/en.ISO8859-1/cat1
+%%MTREE%%@dirrm man/en.ISO8859-1
+%%MTREE%%@dirrm man/de.ISO8859-1/mann
+%%MTREE%%@dirrm man/de.ISO8859-1/manl
+%%MTREE%%@dirrm man/de.ISO8859-1/man9
+%%MTREE%%@dirrm man/de.ISO8859-1/man8
+%%MTREE%%@dirrm man/de.ISO8859-1/man7
+%%MTREE%%@dirrm man/de.ISO8859-1/man6
+%%MTREE%%@dirrm man/de.ISO8859-1/man5
+%%MTREE%%@dirrm man/de.ISO8859-1/man4
+%%MTREE%%@dirrm man/de.ISO8859-1/man3
+%%MTREE%%@dirrm man/de.ISO8859-1/man2
+%%MTREE%%@dirrm man/de.ISO8859-1/man1
+%%MTREE%%@dirrm man/de.ISO8859-1/catn
+%%MTREE%%@dirrm man/de.ISO8859-1/catl
+%%MTREE%%@dirrm man/de.ISO8859-1/cat9
+%%MTREE%%@dirrm man/de.ISO8859-1/cat8
+%%MTREE%%@dirrm man/de.ISO8859-1/cat7
+%%MTREE%%@dirrm man/de.ISO8859-1/cat6
+%%MTREE%%@dirrm man/de.ISO8859-1/cat5
+%%MTREE%%@dirrm man/de.ISO8859-1/cat4
+%%MTREE%%@dirrm man/de.ISO8859-1/cat3
+%%MTREE%%@dirrm man/de.ISO8859-1/cat2
+%%MTREE%%@dirrm man/de.ISO8859-1/cat1
+%%MTREE%%@dirrm man/de.ISO8859-1
+%%MTREE%%@dirrm man/catn
+%%MTREE%%@dirrm man/catl
+%%MTREE%%@dirrm man/cat9
+%%MTREE%%@dirrm man/cat8
+%%MTREE%%@dirrm man/cat7
+%%MTREE%%@dirrm man/cat6
+%%MTREE%%@dirrm man/cat5
+%%MTREE%%@dirrm man/cat4
+%%MTREE%%@dirrm man/cat3
+%%MTREE%%@dirrm man/cat2
+%%MTREE%%@dirrm man/cat1
+%%MTREE%%@dirrm man
+%%MTREE%%@dirrm libexec
+%%MTREE%%@dirrm libdata
+%%MTREE%%@dirrm lib/X11/fonts/local
+%%MTREE%%@dirrm lib/X11/fonts
+%%MTREE%%@dirrm lib/X11/app-defaults
+%%MTREE%%@dirrm lib/X11
+%%MTREE%%@dirrm lib
+%%MTREE%%@dirrm info
+%%MTREE%%@dirrm include/X11
+%%MTREE%%@dirrm include
+%%MTREE%%@dirrm etc/rc.d
+%%MTREE%%@dirrm etc/pam.d
+%%MTREE%%@dirrm etc
+%%MTREE%%@dirrm bin

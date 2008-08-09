@@ -1,17 +1,15 @@
-# New ports collection makefile for:	kde-xdg-env
-# Date created:				April 03 2005
-# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
+# New ports collection makefile for:	kde4-xdg-env
+# Date created:		2008-06-30
+# Whom:			Max Brazhnikov <makc@issp.ac.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xdg
 PORTVERSION=	1.0
-PORTREVISION=	3
-PORTEPOCH=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
-PKGNAMEPREFIX=	kde-
+PKGNAMEPREFIX=	kde4-
 PKGNAMESUFFIX=	-env
 DISTNAME=	# none
 EXTRACT_SUFX=	# none
@@ -19,12 +17,9 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
 
-.if defined(KDE_PREFIX)
-PREFIX=		${KDE_PREFIX}
-SUB_LIST+=	KDE_PREFIX=${KDE_PREFIX}
-.else
-SUB_LIST+=	KDE_PREFIX=${LOCALBASE}
-.endif
+USE_KDE4=	kdeprefix
+
+SUB_LIST+=	KDE4_PREFIX=${KDE4_PREFIX}
 
 NO_BUILD=	yes
 

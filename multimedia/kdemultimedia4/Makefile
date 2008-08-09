@@ -1,23 +1,18 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	KDE3 Multimedia
-# Date created:				Saturday 7 December 2002
-# Whom:					Alan Eldridge <alane@freebsd.org>
+# New ports collection Makefile for:	kdemultimedia
+# Date created:				2008-01-30
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdemultimedia
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
-CATEGORIES=	multimedia kde
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
-
-CONFLICTS=	juk-1*
+COMMENT=	KDE Multimedia applications
 
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		FLAC:${PORTSDIR}/audio/flac \
@@ -25,60 +20,28 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
 		theora:${PORTSDIR}/multimedia/libtheora \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		mp3lame:${PORTSDIR}/audio/lame \
+		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
+		xine.1:${PORTSDIR}/multimedia/libxine
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
+LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env libtool:15
+USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support designer network svg qtestlib
+USE_OPENLDAP=	yes
 
-MAKE_ENV=	${CONFIGURE_ENV}
-
-CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" --disable-xinetest
-CONFIGURE_ENV+=	AKODE_CONFIG=${LOCALBASE}/bin/akode-config
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-DO_NOT_COMPILE+=akode juk mpeglib mpeglib_artsplug xine_artsplugin
-# short-circuit auto frameworks rebuilds
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
-
-OPTIONS=	AKODE "Use akode for audio playback" on \
-		MPEGLIB "Use mpeglib for audio playback" off \
-		XINE "Enable support for video playback using libxine" off
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_AKODE)
-LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
-RUN_DEPENDS+=	${LOCALBASE}/lib/libakode.so:${PORTSDIR}/audio/akode
-.else
-DO_NOT_COMPILE+=akode_artsplugin
+.if ${OSVERSION} < 700000
+CMAKE_USE_PTHREAD+= yes
 .endif
 
-.if defined(WITH_XINE)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libarts_xine.la:${PORTSDIR}/multimedia/xine_artsplugin
-.endif
-
-.if defined(WITH_MPEGLIB)
-RUN_DEPENDS+=	mpeglibartsplay:${PORTSDIR}/audio/mpeglib_artsplug
-.endif
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
-
-pre-configure:
-	${REINPLACE_CMD} -e "s,applications-merged,kde-applications-merged,g" \
-		${WRKSRC}/kappfinder-data/Makefile.in
-	@cd ${CONFIGURE_WRKSRC} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+post-extract:
+	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.post.mk>

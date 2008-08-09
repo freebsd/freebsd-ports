@@ -79,6 +79,7 @@
     SUBDIR += automake17
     SUBDIR += automake18
     SUBDIR += automake19
+    SUBDIR += automoc4
     SUBDIR += autotools
     SUBDIR += avalon-framework
     SUBDIR += avarice
@@ -543,6 +544,7 @@
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdesdk3
+    SUBDIR += kdesdk4
     SUBDIR += kdesvn
     SUBDIR += kdevelop
     SUBDIR += kimwitu

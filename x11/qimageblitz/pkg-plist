@@ -1,0 +1,9 @@
+bin/blitztest
+include/qimageblitz/blitzcpu.h
+include/qimageblitz/qimageblitz.h
+include/qimageblitz/qimageblitz_export.h
+lib/libqimageblitz.so
+lib/libqimageblitz.so.4
+lib/libqimageblitz.so.4.0.0
+libdata/pkgconfig/qimageblitz.pc
+@dirrm include/qimageblitz

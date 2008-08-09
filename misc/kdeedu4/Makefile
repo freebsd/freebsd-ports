@@ -1,51 +1,56 @@
-# New ports collection makefile for:	kdeedu3
-# Date created:				2 November 2001
-# Whom:					will@cvs.kde.org
+# New ports collection Makefile for:	kdeedu
+# Date created:				2008-01-31
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdeedu
-PORTVERSION=	${KDE_VERSION}
-CATEGORIES?=	misc kde
-MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
 
-LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
+BUILD_DEPENDS=	${LOCALBASE}/include/eigen/util.h:${PORTSDIR}/math/eigen \
+		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
+		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
+LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb \
+		boost_python:${PORTSDIR}/devel/boost-python \
+		nova:${PORTSDIR}/astro/libnova \
+		openbabel.3:${PORTSDIR}/science/openbabel \
+		cfitsio.0:${PORTSDIR}/astro/cfitsio \
+		qalculate.4:${PORTSDIR}/math/libqalculate \
+		gsl.12:${PORTSDIR}/math/gsl
 
-CONFLICTS+=	kwordquiz-[0-9]* kgeography-[0-9]*
+LATEST_LINK=	${PORTNAME}4
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=    yes
 USE_BZIP2=	yes
-USE_XORG=	xpm
-USE_GMAKE=	yes
-USE_AUTOTOOLS=  libtool:15
+USE_QT_VER=	4
+USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
+QT_COMPONENTS=	qmake gui moc rcc uic svg
 
-CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
+#fix checking boost_python
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
+post-patch:
+	#fix checking libnova
+	${REINPLACE_CMD} -e 's|\(CMAKE_REQUIRED_INCLUDES $${NOVA_INCLUDE_DIR}\)|\1 ${LOCALBASE}/include|' \
+		 ${WRKSRC}/../cmake/modules/FindNova.cmake
+	#fix checking boost_python
+	${REINPLACE_CMD} -e 's|\(CMAKE_REQUIRED_INCLUDES $${_pydir}\)|\1 ${LOCALBASE}/include|' \
+		 ${WRKSRC}/../cmake/modules/FindBoostPython.cmake
 
-.if ${OSVERSION} > 500035
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python
-PLIST_SUB+=	BOOST_PYTHON=""
-.else
-CONFIGURE_ARGS+=--disable-kig-python-scripting
-PLIST_SUB+=	BOOST_PYTHON="@comment "
-.endif
+post-configure:
+	${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/kalzium/src/CMakeFiles/kalzium.dir/build.make
+	${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/kalzium/src/CMakeFiles/kalzium.dir/link.txt
 
-pre-configure:
-	${REINPLACE_CMD} \
-	-e 's|pylibdir in.*|pylibdir in "${LOCALBASE}/lib" \\|g' \
-	${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

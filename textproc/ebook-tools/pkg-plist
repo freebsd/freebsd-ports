@@ -1,0 +1,7 @@
+bin/einfo
+bin/lit2epub
+include/epub.h
+include/epub_shared.h
+lib/libepub.so
+lib/libepub.so.0
+lib/libepub.so.0.1.1

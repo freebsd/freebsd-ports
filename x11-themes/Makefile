@@ -162,6 +162,7 @@
     SUBDIR += kde-windeco-neos
     SUBDIR += kde-windeco-smoothblend
     SUBDIR += kdeartwork3
+    SUBDIR += kdeartwork4
     SUBDIR += kdmtheme
     SUBDIR += lila-xfwm4
     SUBDIR += linux-gtk-bluecurve-theme

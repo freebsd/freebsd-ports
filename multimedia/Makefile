@@ -97,6 +97,7 @@
     SUBDIR += katchtv
     SUBDIR += kbtv
     SUBDIR += kdemultimedia3
+    SUBDIR += kdemultimedia4
     SUBDIR += kino
     SUBDIR += kissdx
     SUBDIR += kmenc15
@@ -184,6 +185,7 @@
     SUBDIR += p5-Subtitles
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
+    SUBDIR += phonon
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
