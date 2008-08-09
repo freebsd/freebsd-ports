@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.98.0
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://www.notmart.org/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	markus
-PKGNAMEPREFIX=	kde-style-
+MASTER_SITES=	http://www.notmart.org/files/
+PKGNAMEPREFIX=	kde4-style-
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	KDE style and window decoration
 
 USE_BZIP2=	yes
-USE_KDEBASE_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+USE_KDE4=	kdelibs kdehier kdeprefix automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib qmake_build moc_build
+USE_CMAKE=	yes
 
 .include <bsd.port.mk>
