@@ -49,6 +49,8 @@ MAN8=		netams.8 flowprobe.8 netamsctl.8
 
 .if ${ARCH} != "i386"
 BROKEN=		does not compile
+.elif ${OSVERSION} >= 800000
+BROKEN=		does not compile
 .endif
 
 PLIST_FILES+=	etc/netams.conf.sample \
