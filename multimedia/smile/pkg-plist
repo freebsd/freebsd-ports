@@ -23,6 +23,18 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Luma/Rond_002.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_bas.png
 %%DATADIR%%/BIB_ManSlide/Luma/Points_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Spirale_005.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Spirale_004.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Points_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_bandes_3D.png
+%%DATADIR%%/BIB_ManSlide/Luma/Spirale_005.png
+%%DATADIR%%/BIB_ManSlide/Luma/Recouvrement_bandes_3D.png
+%%DATADIR%%/BIB_ManSlide/Luma/Points_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/Rideau_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Rideau_001.png
+%%DATADIR%%/BIB_ManSlide/Luma/Rideau_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/MINI_Rideau_002.png
+%%DATADIR%%/BIB_ManSlide/Luma/Spirale_004.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_gauche.png
 %%DATADIR%%/BIB_ManSlide/Luma/Rond_001.png
 %%DATADIR%%/BIB_ManSlide/Luma/Recouvrement_gauche.png
@@ -162,6 +174,7 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/help_about.png
 %%DATADIR%%/Interface/Theme/addvideo.png
 %%DATADIR%%/Interface/Theme/tools_report_bug.png
+%%DATADIR%%/Interface/Theme/roll.png
 %%DATADIR%%/Interface/Theme/stock-eye-20.png
 %%DATADIR%%/Interface/Theme/flag_grey.png
 %%DATADIR%%/BIB_ManSlide/Help/doc_fr.html
