@@ -1,0 +1,5 @@
+This module converts to and from Base36 numbers (0..9 - A..Z)
+
+It was created because of an article/challenge in "The Perl Review"
+
+WWW: http://search.cpan.org/dist/Math-Base36/
