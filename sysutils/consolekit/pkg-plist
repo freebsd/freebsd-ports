@@ -19,7 +19,7 @@ libexec/ck-get-x11-server-pid
 sbin/console-kit-daemon
 share/PolicyKit/policy/ConsoleKit.policy
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
-@exec %D/etc/ConsoleKit/run-session.d
+@exec mkdir -p %D/etc/ConsoleKit/run-session.d
 @exec mkdir -p %D/lib/ConsoleKit/run-session.d
 @dirrm lib/ConsoleKit/scripts
 @dirrmtry lib/ConsoleKit/run-session.d
