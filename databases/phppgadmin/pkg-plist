@@ -31,6 +31,7 @@
 %%PGADMDIR%%/classes/plugins/Plugin.php
 %%PGADMDIR%%/classes/plugins/Slony.php
 %%PGADMDIR%%/colproperties.php
+%%PGADMDIR%%/conf/.gitignore
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
 @exec cp -np %D/%%PGADMOLDDIR%%/conf/config.inc.php %B/config.inc.php
@@ -319,89 +320,6 @@
 %%PGADMDIR%%/roles.php
 %%PGADMDIR%%/rules.php
 %%PGADMDIR%%/schemas.php
-%%PGADMDIR%%/selenium/Blank.html
-%%PGADMDIR%%/selenium/InjectedRemoteRunner.html
-%%PGADMDIR%%/selenium/RemoteRunner.html
-%%PGADMDIR%%/selenium/SeleniumLog.html
-%%PGADMDIR%%/selenium/TestPrompt.html
-%%PGADMDIR%%/selenium/TestRunner-splash.html
-%%PGADMDIR%%/selenium/TestRunner.hta
-%%PGADMDIR%%/selenium/TestRunner.html
-%%PGADMDIR%%/selenium/domviewer/butmin.gif
-%%PGADMDIR%%/selenium/domviewer/butplus.gif
-%%PGADMDIR%%/selenium/domviewer/domviewer.css
-%%PGADMDIR%%/selenium/domviewer/domviewer.html
-%%PGADMDIR%%/selenium/domviewer/selenium-domviewer.js
-%%PGADMDIR%%/selenium/icons/all.png
-%%PGADMDIR%%/selenium/icons/continue.png
-%%PGADMDIR%%/selenium/icons/continue_disabled.png
-%%PGADMDIR%%/selenium/icons/pause.png
-%%PGADMDIR%%/selenium/icons/pause_disabled.png
-%%PGADMDIR%%/selenium/icons/selected.png
-%%PGADMDIR%%/selenium/icons/step.png
-%%PGADMDIR%%/selenium/icons/step_disabled.png
-%%PGADMDIR%%/selenium/iedoc-core.xml
-%%PGADMDIR%%/selenium/iedoc.xml
-%%PGADMDIR%%/selenium/lib/cssQuery/cssQuery-p.js
-%%PGADMDIR%%/selenium/lib/cssQuery/src/cssQuery-level2.js
-%%PGADMDIR%%/selenium/lib/cssQuery/src/cssQuery-level3.js
-%%PGADMDIR%%/selenium/lib/cssQuery/src/cssQuery-standard.js
-%%PGADMDIR%%/selenium/lib/cssQuery/src/cssQuery.js
-%%PGADMDIR%%/selenium/lib/prototype.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/builder.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/controls.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/dragdrop.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/effects.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/scriptaculous.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/slider.js
-%%PGADMDIR%%/selenium/lib/scriptaculous/unittest.js
-%%PGADMDIR%%/selenium/scripts/find_matching_child.js
-%%PGADMDIR%%/selenium/scripts/htmlutils.js
-%%PGADMDIR%%/selenium/scripts/injection.html
-%%PGADMDIR%%/selenium/scripts/injection_iframe.html
-%%PGADMDIR%%/selenium/scripts/js2html.js
-%%PGADMDIR%%/selenium/scripts/narcissus-defs.js
-%%PGADMDIR%%/selenium/scripts/narcissus-exec.js
-%%PGADMDIR%%/selenium/scripts/narcissus-parse.js
-%%PGADMDIR%%/selenium/scripts/se2html.js
-%%PGADMDIR%%/selenium/scripts/selenium-api.js
-%%PGADMDIR%%/selenium/scripts/selenium-browserbot.js
-%%PGADMDIR%%/selenium/scripts/selenium-browserdetect.js
-%%PGADMDIR%%/selenium/scripts/selenium-commandhandlers.js
-%%PGADMDIR%%/selenium/scripts/selenium-executionloop.js
-%%PGADMDIR%%/selenium/scripts/selenium-logging.js
-%%PGADMDIR%%/selenium/scripts/selenium-remoterunner.js
-%%PGADMDIR%%/selenium/scripts/selenium-testrunner.js
-%%PGADMDIR%%/selenium/scripts/selenium-version.js
-%%PGADMDIR%%/selenium/scripts/user-extensions.js.sample
-%%PGADMDIR%%/selenium/scripts/xmlextras.js
-%%PGADMDIR%%/selenium/selenium-logo.png
-%%PGADMDIR%%/selenium/selenium-test.css
-%%PGADMDIR%%/selenium/selenium.css
-%%PGADMDIR%%/selenium/tests/README
-%%PGADMDIR%%/selenium/tests/TestSuite.html
-%%PGADMDIR%%/selenium/tests/column.php
-%%PGADMDIR%%/selenium/tests/config.inc.php
-%%PGADMDIR%%/selenium/tests/constraints.php
-%%PGADMDIR%%/selenium/tests/create_database.php
-%%PGADMDIR%%/selenium/tests/create_schema.php
-%%PGADMDIR%%/selenium/tests/create_view.php
-%%PGADMDIR%%/selenium/tests/domain.php
-%%PGADMDIR%%/selenium/tests/drop_database.php
-%%PGADMDIR%%/selenium/tests/drop_domain_fail.php
-%%PGADMDIR%%/selenium/tests/drop_role_bad.php
-%%PGADMDIR%%/selenium/tests/drop_schema.php
-%%PGADMDIR%%/selenium/tests/index.php
-%%PGADMDIR%%/selenium/tests/intro.php
-%%PGADMDIR%%/selenium/tests/login.php
-%%PGADMDIR%%/selenium/tests/logout.php
-%%PGADMDIR%%/selenium/tests/outro.php
-%%PGADMDIR%%/selenium/tests/sequence.php
-%%PGADMDIR%%/selenium/tests/table.php
-%%PGADMDIR%%/selenium/user-extensions.js
-%%PGADMDIR%%/selenium/xpath/dom.js
-%%PGADMDIR%%/selenium/xpath/misc.js
-%%PGADMDIR%%/selenium/xpath/xpath.js
 %%PGADMDIR%%/sequences.php
 %%PGADMDIR%%/servers.php
 %%PGADMDIR%%/sql.php
@@ -423,16 +341,6 @@
 @dirrm %%PGADMDIR%%/themes/default
 @dirrm %%PGADMDIR%%/themes
 @dirrm %%PGADMDIR%%/sql
-@dirrm %%PGADMDIR%%/selenium/xpath
-@dirrm %%PGADMDIR%%/selenium/tests
-@dirrm %%PGADMDIR%%/selenium/scripts
-@dirrm %%PGADMDIR%%/selenium/lib/scriptaculous
-@dirrm %%PGADMDIR%%/selenium/lib/cssQuery/src
-@dirrm %%PGADMDIR%%/selenium/lib/cssQuery
-@dirrm %%PGADMDIR%%/selenium/lib
-@dirrm %%PGADMDIR%%/selenium/icons
-@dirrm %%PGADMDIR%%/selenium/domviewer
-@dirrm %%PGADMDIR%%/selenium
 @dirrm %%PGADMDIR%%/libraries/adodb/lang
 @dirrm %%PGADMDIR%%/libraries/adodb/drivers
 @dirrm %%PGADMDIR%%/libraries/adodb
