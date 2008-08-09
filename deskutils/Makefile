@@ -113,7 +113,6 @@
     SUBDIR += kchm
     SUBDIR += kchmviewer
     SUBDIR += kdepim3
-    SUBDIR += kdepim3
     SUBDIR += kdepim4
     SUBDIR += kdepimlibs4
     SUBDIR += kdeplasma-addons
