@@ -528,6 +528,7 @@
     SUBDIR += pam_authsrv
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
+    SUBDIR += pam_helper
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
     SUBDIR += pam_mkhomedir
