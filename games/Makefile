@@ -389,6 +389,7 @@
     SUBDIR += kbilliards
     SUBDIR += kcheckers
     SUBDIR += kdegames3
+    SUBDIR += kdegames4
     SUBDIR += kevedit
     SUBDIR += kfreerings
     SUBDIR += kiki
