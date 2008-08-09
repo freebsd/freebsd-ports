@@ -1,5 +1,5 @@
-lib/libqscintilla2.so
-lib/libqscintilla2.so.3
+%%QT_LIBDIR_REL%%/libqscintilla2.so
+%%QT_LIBDIR_REL%%/libqscintilla2.so.3
 share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
