@@ -1,29 +1,21 @@
-# New ports collection makefile for:    koffice-i18n-zh_CN
-# Date created:                         21 January 2004
-# Whom:                                 Brad Davis <so14k@so14k.com>
+# New ports collection makefile for:    kde4-l10n-zh_CN
+# Date created:                         29 July 2008
+# Whom:                                 Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	koffice-i18n
-PORTVERSION=	1.6.3
-CATEGORIES?=	chinese kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
-PKGNAMEPREFIX=	zh_CN-
-DIST_SUBDIR=	KDE
+PORTNAME=	kde-l10n-zh_CN
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	chinese kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Simplified Chinese messages and documentation for koffice
+COMMENT=	Simplified Chinese messages and documentation for KDE4
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+KDE4_L10N=	yes
 
-USE_KDELIBS_VER=3
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-KDE_I18N=	yes
+post-extract:
+	${MKDIR} ${WRKSRC}/build
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
+.include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>
