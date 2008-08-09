@@ -337,6 +337,7 @@
     SUBDIR += koffice-i18n-xh
     SUBDIR += koffice-i18n-zu
     SUBDIR += konq-plugins
+    SUBDIR += konq-plugins-kde4
     SUBDIR += kp
     SUBDIR += krecipes
     SUBDIR += ksig
