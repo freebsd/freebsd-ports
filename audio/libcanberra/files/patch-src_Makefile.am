@@ -1,0 +1,37 @@
+--- src/Makefile.am.orig	2008-08-09 15:27:42.000000000 -0400
++++ src/Makefile.am	2008-08-09 15:27:55.000000000 -0400
+@@ -164,6 +164,34 @@ libcanberra_alsa_la_LDFLAGS = \
+ endif
+ endif
+ 
++if HAVE_OSS
++if BUILTIN_OSS
++
++libcanberra_la_SOURCES += \
++	oss.c
++
++else
++
++plugin_LTLIBRARIES += \
++	libcanberra-oss.la
++
++libcanberra_oss_la_SOURCES = \
++	oss.c
++libcanberra_oss_la_CFLAGS = \
++	 -Ddriver_open=oss_driver_open \
++	 -Ddriver_destroy=oss_driver_destroy \
++	 -Ddriver_change_device=oss_driver_change_device \
++	 -Ddriver_change_props=oss_driver_change_props \
++	 -Ddriver_play=oss_driver_play \
++	 -Ddriver_cancel=oss_driver_cancel \
++	 -Ddriver_cache=oss_driver_cache
++libcanberra_oss_la_LIBADD = \
++	libcanberra.la
++libcanberra_oss_la_LDFLAGS = \
++	-avoid-version -module -export-dynamic
++endif
++endif
++
+ if HAVE_NULL
+ if BUILTIN_NULL
+ 

@@ -1,0 +1,225 @@
+--- src/Makefile.in.orig	2008-08-09 15:27:46.000000000 -0400
++++ src/Makefile.in	2008-08-09 15:28:08.000000000 -0400
+@@ -92,20 +92,26 @@ noinst_PROGRAMS = test-canberra$(EXEEXT)
+ @BUILTIN_ALSA_FALSE@@HAVE_ALSA_TRUE@am__append_12 = \
+ @BUILTIN_ALSA_FALSE@@HAVE_ALSA_TRUE@	libcanberra-alsa.la
+ 
+-@BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@am__append_13 = \
++@BUILTIN_OSS_TRUE@@HAVE_OSS_TRUE@am__append_13 = \
++@BUILTIN_OSS_TRUE@@HAVE_OSS_TRUE@	oss.c
++
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@am__append_14 = \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	libcanberra-oss.la
++
++@BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@am__append_15 = \
+ @BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@	null.c
+ 
+-@BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@am__append_14 = \
++@BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@am__append_16 = \
+ @BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@	libcanberra-null.la
+ 
+-@HAVE_GTK_TRUE@am__append_15 = \
++@HAVE_GTK_TRUE@am__append_17 = \
+ @HAVE_GTK_TRUE@	libcanberra-gtk.la
+ 
+-@HAVE_GTK_TRUE@am__append_16 = \
++@HAVE_GTK_TRUE@am__append_18 = \
+ @HAVE_GTK_TRUE@	canberra-gtk.h
+ 
+ @HAVE_GTK_TRUE@bin_PROGRAMS = canberra-gtk-play$(EXEEXT)
+-@HAVE_GTK_TRUE@am__append_17 = \
++@HAVE_GTK_TRUE@am__append_19 = \
+ @HAVE_GTK_TRUE@	libcanberra-login-sound.desktop.in \
+ @HAVE_GTK_TRUE@	libcanberra-logout-sound.sh.in
+ 
+@@ -193,6 +199,18 @@ libcanberra_null_la_LINK = $(LIBTOOL) --
+ 	$(libcanberra_null_la_LDFLAGS) $(LDFLAGS) -o $@
+ @BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@am_libcanberra_null_la_rpath =  \
+ @BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@	-rpath $(plugindir)
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@libcanberra_oss_la_DEPENDENCIES =  \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	libcanberra.la
++am__libcanberra_oss_la_SOURCES_DIST = oss.c
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@am_libcanberra_oss_la_OBJECTS =  \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	libcanberra_oss_la-oss.lo
++libcanberra_oss_la_OBJECTS = $(am_libcanberra_oss_la_OBJECTS)
++libcanberra_oss_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
++	$(libcanberra_oss_la_CFLAGS) $(CFLAGS) \
++	$(libcanberra_oss_la_LDFLAGS) $(LDFLAGS) -o $@
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@am_libcanberra_oss_la_rpath =  \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	-rpath $(plugindir)
+ @BUILTIN_PULSE_FALSE@@HAVE_PULSE_TRUE@libcanberra_pulse_la_DEPENDENCIES =  \
+ @BUILTIN_PULSE_FALSE@@HAVE_PULSE_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILTIN_PULSE_FALSE@@HAVE_PULSE_TRUE@	libcanberra.la
+@@ -218,14 +236,17 @@ am__libcanberra_la_SOURCES_DIST = canber
+ 	read-sound-file.c read-sound-file.h read-vorbis.c \
+ 	read-vorbis.h read-wav.c read-wav.h sound-theme-spec.c \
+ 	sound-theme-spec.h llist.h macro.h macro.c malloc.c malloc.h \
+-	dso.c driver-order.c driver-order.h pulse.c alsa.c null.c
++	dso.c driver-order.c driver-order.h pulse.c alsa.c oss.c \
++	null.c
+ @BUILTIN_DSO_TRUE@am__objects_1 = libcanberra_la-dso.lo \
+ @BUILTIN_DSO_TRUE@	libcanberra_la-driver-order.lo
+ @BUILTIN_PULSE_TRUE@@HAVE_PULSE_TRUE@am__objects_2 =  \
+ @BUILTIN_PULSE_TRUE@@HAVE_PULSE_TRUE@	libcanberra_la-pulse.lo
+ @BUILTIN_ALSA_TRUE@@HAVE_ALSA_TRUE@am__objects_3 =  \
+ @BUILTIN_ALSA_TRUE@@HAVE_ALSA_TRUE@	libcanberra_la-alsa.lo
+-@BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@am__objects_4 =  \
++@BUILTIN_OSS_TRUE@@HAVE_OSS_TRUE@am__objects_4 =  \
++@BUILTIN_OSS_TRUE@@HAVE_OSS_TRUE@	libcanberra_la-oss.lo
++@BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@am__objects_5 =  \
+ @BUILTIN_NULL_TRUE@@HAVE_NULL_TRUE@	libcanberra_la-null.lo
+ am_libcanberra_la_OBJECTS = libcanberra_la-common.lo \
+ 	libcanberra_la-mutex-posix.lo libcanberra_la-proplist.lo \
+@@ -233,7 +254,7 @@ am_libcanberra_la_OBJECTS = libcanberra_
+ 	libcanberra_la-read-vorbis.lo libcanberra_la-read-wav.lo \
+ 	libcanberra_la-sound-theme-spec.lo libcanberra_la-macro.lo \
+ 	libcanberra_la-malloc.lo $(am__objects_1) $(am__objects_2) \
+-	$(am__objects_3) $(am__objects_4)
++	$(am__objects_3) $(am__objects_4) $(am__objects_5)
+ libcanberra_la_OBJECTS = $(am_libcanberra_la_OBJECTS)
+ libcanberra_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libcanberra_la_CFLAGS) \
+@@ -271,14 +292,15 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLF
+ SOURCES = $(libcanberra_alsa_la_SOURCES) \
+ 	$(libcanberra_gtk_module_la_SOURCES) \
+ 	$(libcanberra_gtk_la_SOURCES) $(libcanberra_multi_la_SOURCES) \
+-	$(libcanberra_null_la_SOURCES) $(libcanberra_pulse_la_SOURCES) \
+-	$(libcanberra_la_SOURCES) $(canberra_gtk_play_SOURCES) \
+-	$(test_canberra_SOURCES)
++	$(libcanberra_null_la_SOURCES) $(libcanberra_oss_la_SOURCES) \
++	$(libcanberra_pulse_la_SOURCES) $(libcanberra_la_SOURCES) \
++	$(canberra_gtk_play_SOURCES) $(test_canberra_SOURCES)
+ DIST_SOURCES = $(am__libcanberra_alsa_la_SOURCES_DIST) \
+ 	$(am__libcanberra_gtk_module_la_SOURCES_DIST) \
+ 	$(am__libcanberra_gtk_la_SOURCES_DIST) \
+ 	$(am__libcanberra_multi_la_SOURCES_DIST) \
+ 	$(am__libcanberra_null_la_SOURCES_DIST) \
++	$(am__libcanberra_oss_la_SOURCES_DIST) \
+ 	$(am__libcanberra_pulse_la_SOURCES_DIST) \
+ 	$(am__libcanberra_la_SOURCES_DIST) \
+ 	$(am__canberra_gtk_play_SOURCES_DIST) $(test_canberra_SOURCES)
+@@ -303,6 +325,7 @@ AWK = @AWK@
+ BUILTIN_ALSA = @BUILTIN_ALSA@
+ BUILTIN_DSO = @BUILTIN_DSO@
+ BUILTIN_NULL = @BUILTIN_NULL@
++BUILTIN_OSS = @BUILTIN_OSS@
+ BUILTIN_PULSE = @BUILTIN_PULSE@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+@@ -335,6 +358,7 @@ HAVE_ALSA = @HAVE_ALSA@
+ HAVE_DSO = @HAVE_DSO@
+ HAVE_GTK = @HAVE_GTK@
+ HAVE_NULL = @HAVE_NULL@
++HAVE_OSS = @HAVE_OSS@
+ HAVE_PULSE = @HAVE_PULSE@
+ HTML_DIR = @HTML_DIR@
+ INSTALL = @INSTALL@
+@@ -443,15 +467,16 @@ gnomeautostartdir = $(datadir)/gnome/aut
+ AM_CFLAGS = $(PTHREAD_CFLAGS) -DCA_PLUGIN_PATH=\"$(plugindir)\"
+ AM_CXXFLAGS = $(PTHREAD_CFLAGS)
+ AM_LDADD = $(PTHREAD_LIBS)
+-EXTRA_DIST = map-file $(am__append_17)
+-lib_LTLIBRARIES = libcanberra.la $(am__append_15)
+-include_HEADERS = canberra.h $(am__append_16)
++EXTRA_DIST = map-file $(am__append_19)
++lib_LTLIBRARIES = libcanberra.la $(am__append_17)
++include_HEADERS = canberra.h $(am__append_18)
+ libcanberra_la_SOURCES = canberra.h common.c common.h mutex-posix.c \
+ 	mutex.h proplist.c proplist.h driver.h read-sound-file.c \
+ 	read-sound-file.h read-vorbis.c read-vorbis.h read-wav.c \
+ 	read-wav.h sound-theme-spec.c sound-theme-spec.h llist.h \
+ 	macro.h macro.c malloc.c malloc.h $(am__append_1) \
+-	$(am__append_5) $(am__append_9) $(am__append_13)
++	$(am__append_5) $(am__append_9) $(am__append_13) \
++	$(am__append_15)
+ libcanberra_la_CFLAGS = $(AM_CFLAGS) $(VORBIS_CFLAGS) $(am__append_2) \
+ 	$(am__append_6) $(am__append_10)
+ libcanberra_la_LIBADD = $(VORBIS_LIBS) $(am__append_3) $(am__append_7) \
+@@ -462,7 +487,7 @@ libcanberra_la_LDFLAGS = \
+ 	-Wl,-version-script=$(srcdir)/map-file
+ 
+ plugin_LTLIBRARIES = $(am__append_4) $(am__append_8) $(am__append_12) \
+-	$(am__append_14)
++	$(am__append_14) $(am__append_16)
+ @BUILTIN_DSO_TRUE@libcanberra_multi_la_SOURCES = \
+ @BUILTIN_DSO_TRUE@	multi.c
+ 
+@@ -521,6 +546,24 @@ plugin_LTLIBRARIES = $(am__append_4) $(a
+ @BUILTIN_ALSA_FALSE@@HAVE_ALSA_TRUE@libcanberra_alsa_la_LDFLAGS = \
+ @BUILTIN_ALSA_FALSE@@HAVE_ALSA_TRUE@	-avoid-version -module -export-dynamic
+ 
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@libcanberra_oss_la_SOURCES = \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	oss.c
++
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@libcanberra_oss_la_CFLAGS = \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_open=oss_driver_open \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_destroy=oss_driver_destroy \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_change_device=oss_driver_change_device \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_change_props=oss_driver_change_props \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_play=oss_driver_play \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_cancel=oss_driver_cancel \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	 -Ddriver_cache=oss_driver_cache
++
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@libcanberra_oss_la_LIBADD = \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	libcanberra.la
++
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@libcanberra_oss_la_LDFLAGS = \
++@BUILTIN_OSS_FALSE@@HAVE_OSS_TRUE@	-avoid-version -module -export-dynamic
++
+ @BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@libcanberra_null_la_SOURCES = \
+ @BUILTIN_NULL_FALSE@@HAVE_NULL_TRUE@	null.c
+ 
+@@ -722,6 +765,8 @@ libcanberra-multi.la: $(libcanberra_mult
+ 	$(libcanberra_multi_la_LINK) $(am_libcanberra_multi_la_rpath) $(libcanberra_multi_la_OBJECTS) $(libcanberra_multi_la_LIBADD) $(LIBS)
+ libcanberra-null.la: $(libcanberra_null_la_OBJECTS) $(libcanberra_null_la_DEPENDENCIES) 
+ 	$(libcanberra_null_la_LINK) $(am_libcanberra_null_la_rpath) $(libcanberra_null_la_OBJECTS) $(libcanberra_null_la_LIBADD) $(LIBS)
++libcanberra-oss.la: $(libcanberra_oss_la_OBJECTS) $(libcanberra_oss_la_DEPENDENCIES) 
++	$(libcanberra_oss_la_LINK) $(am_libcanberra_oss_la_rpath) $(libcanberra_oss_la_OBJECTS) $(libcanberra_oss_la_LIBADD) $(LIBS)
+ libcanberra-pulse.la: $(libcanberra_pulse_la_OBJECTS) $(libcanberra_pulse_la_DEPENDENCIES) 
+ 	$(libcanberra_pulse_la_LINK) $(am_libcanberra_pulse_la_rpath) $(libcanberra_pulse_la_OBJECTS) $(libcanberra_pulse_la_LIBADD) $(LIBS)
+ libcanberra.la: $(libcanberra_la_OBJECTS) $(libcanberra_la_DEPENDENCIES) 
+@@ -805,6 +850,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-malloc.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-mutex-posix.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-null.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-oss.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-proplist.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-pulse.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-read-sound-file.Plo@am__quote@
+@@ -813,6 +859,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_la-sound-theme-spec.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_multi_la-multi.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_null_la-null.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_oss_la-oss.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcanberra_pulse_la-pulse.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-canberra.Po@am__quote@
+ 
+@@ -872,6 +919,13 @@ libcanberra_null_la-null.lo: null.c
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_null_la_CFLAGS) $(CFLAGS) -c -o libcanberra_null_la-null.lo `test -f 'null.c' || echo '$(srcdir)/'`null.c
+ 
++libcanberra_oss_la-oss.lo: oss.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_oss_la_CFLAGS) $(CFLAGS) -MT libcanberra_oss_la-oss.lo -MD -MP -MF $(DEPDIR)/libcanberra_oss_la-oss.Tpo -c -o libcanberra_oss_la-oss.lo `test -f 'oss.c' || echo '$(srcdir)/'`oss.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libcanberra_oss_la-oss.Tpo $(DEPDIR)/libcanberra_oss_la-oss.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='oss.c' object='libcanberra_oss_la-oss.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_oss_la_CFLAGS) $(CFLAGS) -c -o libcanberra_oss_la-oss.lo `test -f 'oss.c' || echo '$(srcdir)/'`oss.c
++
+ libcanberra_pulse_la-pulse.lo: pulse.c
+ @am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_pulse_la_CFLAGS) $(CFLAGS) -MT libcanberra_pulse_la-pulse.lo -MD -MP -MF $(DEPDIR)/libcanberra_pulse_la-pulse.Tpo -c -o libcanberra_pulse_la-pulse.lo `test -f 'pulse.c' || echo '$(srcdir)/'`pulse.c
+ @am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libcanberra_pulse_la-pulse.Tpo $(DEPDIR)/libcanberra_pulse_la-pulse.Plo
+@@ -970,6 +1024,13 @@ libcanberra_la-alsa.lo: alsa.c
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_la_CFLAGS) $(CFLAGS) -c -o libcanberra_la-alsa.lo `test -f 'alsa.c' || echo '$(srcdir)/'`alsa.c
+ 
++libcanberra_la-oss.lo: oss.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_la_CFLAGS) $(CFLAGS) -MT libcanberra_la-oss.lo -MD -MP -MF $(DEPDIR)/libcanberra_la-oss.Tpo -c -o libcanberra_la-oss.lo `test -f 'oss.c' || echo '$(srcdir)/'`oss.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libcanberra_la-oss.Tpo $(DEPDIR)/libcanberra_la-oss.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='oss.c' object='libcanberra_la-oss.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_la_CFLAGS) $(CFLAGS) -c -o libcanberra_la-oss.lo `test -f 'oss.c' || echo '$(srcdir)/'`oss.c
++
+ libcanberra_la-null.lo: null.c
+ @am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcanberra_la_CFLAGS) $(CFLAGS) -MT libcanberra_la-null.lo -MD -MP -MF $(DEPDIR)/libcanberra_la-null.Tpo -c -o libcanberra_la-null.lo `test -f 'null.c' || echo '$(srcdir)/'`null.c
+ @am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libcanberra_la-null.Tpo $(DEPDIR)/libcanberra_la-null.Plo
