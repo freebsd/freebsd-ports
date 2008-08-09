@@ -141,8 +141,13 @@
     SUBDIR += kde-lite
     SUBDIR += kde3
     SUBDIR += kde3-apireference
+    SUBDIR += kde4
     SUBDIR += kdebase3
+    SUBDIR += kdebase4
+    SUBDIR += kdebase4-runtime
+    SUBDIR += kdebase4-workspace
     SUBDIR += kdelibs3
+    SUBDIR += kdelibs4
     SUBDIR += kdelibs3-nocups
     SUBDIR += keylaunch
     SUBDIR += keynav
@@ -231,6 +236,7 @@
     SUBDIR += printscreen
     SUBDIR += props
     SUBDIR += py-qt4-opengl
+    SUBDIR += qimageblitz
     SUBDIR += qrash
     SUBDIR += qt4-inputmethods
     SUBDIR += qt4-opengl

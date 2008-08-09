@@ -130,6 +130,7 @@
     SUBDIR += duncan
     SUBDIR += dwdiff
     SUBDIR += easydiff
+    SUBDIR += ebook-tools
     SUBDIR += ecromedos
     SUBDIR += ekhtml
     SUBDIR += el-aspell

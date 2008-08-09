@@ -1,128 +1,112 @@
 # -*-mode: makefile-*-
-# New ports collection makefile for:	kdebase3.1
-# Date created:				29 November 2002
-# Whom:					kde@freebsd.org
+# New ports collection makefile for:	kdebase-workspace
+# Date created:				22 Januar 2008
+# Whom:					kde@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kdebase
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTNAME=	kdebase-workspace
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient \
-		usb-0.1:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
+		dbus-1.3:${PORTSDIR}/devel/dbus \
+		hal.1:${PORTSDIR}/sysutils/hal \
+		xklavier.12:${PORTSDIR}/x11/libxklavier
+RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		xprop:${PORTSDIR}/x11/xprop \
+		xsetroot:${PORTSDIR}/x11/xsetroot \
+		xmessage:${PORTSDIR}/x11/xmessage \
+		xrdb:${PORTSDIR}/x11/xrdb \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		xset:${PORTSDIR}/x11/xset
 
-CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-4]* kdeutils-3.[0-2]*
-
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
-USE_OPENLDAP=	yes
-USE_OPENSSL=	yes
-
+SUB_FILES=	kdm
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_XORG=	xpm xkbfile xrandr xcursor
-SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+USE_QT_VER=	4
+QT_COMPONENTS=	assistant corelib dbus designer gui_build moc network opengl rcc \
+		script svg sql qt3support qtestlib uic3 xml porting webkit
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 
-USE_AUTOTOOLS=  libtool:15
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-
-CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
-CONFIGURE_ARGS+=--without-java			\
-		--with-qt-dir=${LOCALBASE}	\
-		--with-xdmdir=${LOCALBASE}/lib/X11/xdm \
-		--with-ssl-dir=${OPENSSLBASE}
-
-OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		HAL "Use HAL backend for media:/ (FreeBSD 5+ only)" on \
-		HTDIG "Depend on htdig, used to build manual indices" off
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-RUN_DEPENDS+=	kompmgr:${PORTSDIR}/x11-wm/kompmgr
-
-.if !defined(WITHOUT_ARTSWRAPPER)
-RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
-.endif
-
-.if defined(WITH_HTDIG)
-RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
-.endif
-
-.if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
-		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
-LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
-		hal.1:${PORTSDIR}/sysutils/hal
-PLIST_SUB+=	MEDIA=""
-.else
-CONFIGURE_ARGS+=--without-hal
-PLIST_SUB+=	MEDIA="@comment "
-.endif
+CMAKE_ARGS+=	-DWITH_BlueZ:BOOL=Off
 
 post-extract:
-	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
-	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
+	${MKDIR} ${WRKSRC}
 
 pre-configure:
-	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-		${WRKSRC}/kdeprint/descriptions/Makefile.in
-	${REINPLACE_CMD} -e "s,applications-merged,kde-applications-merged,g" \
-		${WRKSRC}/applnk/Makefile.in
-	${REINPLACE_CMD} \
-	-E -e '/XftAntialias/s/false/true/g' \
-		${WRKSRC}/kcontrol/krdb/krdb.cpp
-	${REINPLACE_CMD} \
-	-E -e '/htdigbin/s|/usr/bin|${LOCALBASE}/bin|g' \
-	-e '/htdigdata/s|/srv/www/htdig|${LOCALBASE}/share/htdig|g' \
-	-e '/htsearchpath/s|/srv/www|${LOCALBASE}/www|g' \
-		${WRKSRC}/khelpcenter/searchhandlers/khc_htdig.pl.in \
-		${WRKSRC}/khelpcenter/searchhandlers/khc_docbookdig.pl.in \
-		${WRKSRC}/khelpcenter/searchhandlers/khc_htsearch.pl
-	${REINPLACE_CMD} \
-		-e 's|-s|-u|g' \
-		${WRKSRC}/kioslave/media/services/media_safelyremove.desktop
-	${REINPLACE_CMD} \
-		-e 's|kgamma.desktop||g' ${WRKSRC}/applnk/old_desktop_files
+
+.for item in effects/showfps.h scene.h workspace.h
+	${REINPLACE_CMD} -e 's|<qdatetime.h>|<QDateTime>|'\
+		${WRKSRC}/../kwin/${item}
+.endfor
+.for item in client.h compositingprefs.h
+	${REINPLACE_CMD} -e 's|<qframe.h>|<QFrame>|'\
+		${WRKSRC}/../kwin/${item}
+.endfor
+.for item in placement.cpp popupinfo.cpp tabbox.cpp
+	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
+		-e 's|<qdesktopwidget.h>|<QDesktopWidget>|'\
+		${WRKSRC}/../kwin/${item}
+.endfor
+	${REINPLACE_CMD} -e 's|<qsessionmanager.h>|<QSessionManager>|'\
+		${WRKSRC}/../kwin/sm.cpp
+.for item in effects/desktopgrid.h toplevel.h
+	${REINPLACE_CMD} -e 's|<qobject.h>|<QObject>|'\
+		${WRKSRC}/../kwin/${item}
+.endfor
+	${REINPLACE_CMD} -e 's|<qpainter.h>|<QPainter>|'\
+		${WRKSRC}/../kwin/effects/presentwindows.cpp
+	${REINPLACE_CMD} -e 's|<qcursor.h>|<QCursor>|'\
+		-e 's|<qevent.h>|<QtEvents>|'\
+		${WRKSRC}/../kwin/effects/test/test_input.cpp
+	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
+		${WRKSRC}/../kwin/effects/thumbnailaside.h
+	${REINPLACE_CMD} -e 's|<qdir.h>|<QDir>|'\
+		-e 's|<qfile.h>|<QFile>|'\
+		${WRKSRC}/../kwin/effects/videorecord.cpp
+.for item in kcmkwin/kwinoptions/windows.cpp clients/plastik/plastikclient.cpp\
+		clients/plastik/plastikclient.cpp
+	${REINPLACE_CMD} -e 's|<qdesktopwidget.h>|<QDesktopWidget>|'\
+		${WRKSRC}/../kwin/${item}
+.endfor
+.for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
+		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
+		redmond/redmond.cpp
+	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
+		${WRKSRC}/../kwin/clients/${item}
+.endfor
+	${REINPLACE_CMD} -e 's|<qbitmap.h>|<QBitmap>|'\
+		-e 's|<qlabel.h>|<QLabel>|'\
+		-e 's|<qlayout.h>|<QLayout>|'\
+		-e 's|<qpainter.h>|<QPainter>|'\
+		-e 's|<qtooltip.h>|<QToolTip>|'\
+		${WRKSRC}/../kwin/clients/oxygen/oxygenclient.cpp
+	${REINPLACE_CMD} -e 's|<qevent.h>|<QtEvents>|'\
+		${WRKSRC}/../kwin/effects/desktopgrid.cpp
 
 post-configure:
-	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
-		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
-	${REINPLACE_CMD} -e 's/444/644/g' \
-		${WRKSRC}/kdesktop/init/Templates/Makefile
+	${REINPLACE_CMD} -e 's|/\* #undef HAVE_XKB \*/|#define HAVE_XKB 1|'\
+		${WRKSRC}/../build/config-X11.h
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/freebsd.keytab ${PREFIX}/share/apps/konsole/
-	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
-	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
-	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
-		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	@${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
-	@${MV} ${PREFIX}/bin/kdm_config ${PREFIX}/bin/kdm-bin_config
-	@${MV} ${PREFIX}/bin/kdm_greet ${PREFIX}/bin/kdm-bin_greet
-	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${CHGRP} kmem ${KDE4_PREFIX}/bin/ksysguardd && \
+		${CHMOD} g+s ${KDE4_PREFIX}/bin/ksysguardd
+	@${LN} -sf ${KDE4_PREFIX}/bin/startkde ${KDE4_PREFIX}/bin/startkde4
+	@${MV} ${KDE4_PREFIX}/bin/kdm ${KDE4_PREFIX}/bin/kdm-bin
+	@${MV} ${KDE4_PREFIX}/lib/kde4/libexec/kdm_config ${KDE4_PREFIX}/lib/kde4/libexec/kdm-bin_config
+	@${MV} ${KDE4_PREFIX}/lib/kde4/libexec/kdm_greet ${KDE4_PREFIX}/lib/kde4/libexec/kdm-bin_greet
+	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${KDE4_PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

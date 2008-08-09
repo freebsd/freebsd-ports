@@ -461,10 +461,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_KDELIBS_VER		- Set to 3 to use the KDE libraries.
 #				  Implies inclusion of bsd.kde.mk.
 #
+# USE_KDE4			- A list of the KDE4 dependencies the port has (e.g.,
+#				  kdelibs, kdebase).  Implies that the port needs KDE.
+#				  Implies inclusion of bsd.kde4.mk.  See bsd.kde4.mk
+#				  for more details.
+#
 # USE_QT_VER			- Set to 3 or 4 to use the respective version
 #				  of the QT libraries.
 #				  Implies inclusion of bsd.kde.mk.
-##
+#
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
 #				  If set to "7", a dependency is registered to emulators/linux_base.
@@ -1527,6 +1532,10 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.xfce.mk"
 .endif
 
+.if defined(USE_KDE4) || defined(KDE4_BUILDENV)
+.include "${PORTSDIR}/Mk/bsd.kde4.mk"
+.endif
+
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
 .if (${PREFIX:C,(^.).*,\1,} != "/")
@@ -2002,6 +2011,10 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 
 .if defined(USE_XFCE)
 .include "${PORTSDIR}/Mk/bsd.xfce.mk"
+.endif
+
+.if defined(USE_KDE4)
+.include "${PORTSDIR}/Mk/bsd.kde4.mk"
 .endif
 
 .if defined(USE_CMAKE)

@@ -1,0 +1,11 @@
+--- ../libs/ksysguard/CMakeLists.txt.orig	2008-04-10 13:30:14.000000000 +0400
++++ ../libs/ksysguard/CMakeLists.txt	2008-06-28 14:04:29.000000000 +0400
+@@ -5,7 +5,7 @@
+ add_subdirectory( processui )
+ add_subdirectory( tests )
+ 
+-check_include_files(sys/ptrace.h HAVE_SYS_PTRACE_H)
++check_include_files(signal.h HAVE_SYS_PTRACE_H)
+ 
+ configure_file(config-ksysguard.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguard.h )
+ 

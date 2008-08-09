@@ -7,6 +7,7 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += adstudio
+    SUBDIR += akonadi
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += aolserver-nsmysql

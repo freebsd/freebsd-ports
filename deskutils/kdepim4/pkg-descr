@@ -1,4 +1,8 @@
-Personal Information Management tools for KDE.
+KDE4 is the K Desktop Environment for Unix, Windows, and Mac OS X.
 
-This rather broad scope encompasses mail clients, addressbooks, usenet news,
-scheduling and even sticky notes.
+These kde4 ports intend to provide early access to KDE4 for FreeBSD
+developers, porters and beta testers. Use at your own risk!
+
+This package provides PIM applications for KDE4.
+
+WWW: http://www.kde.org/

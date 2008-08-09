@@ -254,6 +254,7 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
+    SUBDIR += kdenetwork4
     SUBDIR += keepalived
     SUBDIR += kiax
     SUBDIR += kissd

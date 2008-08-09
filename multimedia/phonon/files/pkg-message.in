@@ -1,0 +1,10 @@
+Should you not hear any sound at first KDE4 startup, do the following:
+
+create $HOME/.kde4/share/config/phonon_platform_kde
+
+and add the following lines to phonon_platform_kde:
+
+[Settings]
+showOssDevices=true
+
+And then start kde4 new.

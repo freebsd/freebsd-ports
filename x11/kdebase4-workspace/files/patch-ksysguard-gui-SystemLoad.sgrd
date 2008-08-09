@@ -1,0 +1,11 @@
+--- ../ksysguard/gui/SystemLoad.sgrd.orig	2008-04-15 04:43:53.000000000 +0200
++++ ../ksysguard/gui/SystemLoad.sgrd	2008-04-15 04:54:52.000000000 +0200
+@@ -6,7 +6,7 @@
+   <beam sensorName="cpu/nice" sensorType="float" hostName="localhost" color="872414995" />  
+   <beam sensorName="cpu/user" sensorType="float" hostName="localhost" color="4279798271" />
+   <beam sensorName="cpu/sys" sensorType="float" hostName="localhost" color="4294933768" />
+-  <beam sensorName="cpu/wait" sensorType="float" hostName="localhost" color="4294955007" />
++  <beam sensorName="cpu/system/intr" sensorType="float" hostName="localhost" color="4294955007" />
+  </display>
+  <display svgBackground="widgets/plot-background" bColor="4281413681" title="Load Average (1 min)" hScale="3" hCount="5" fontColor="4294967295" vLines="0" hColor="838860800" pause="0" labels="1" autoRange="1" vDistance="30" globalUpdate="1" fontSize="8" vScroll="0" column="1" topBar="1" unit="" vColor="838860800" hLines="1" showUnit="1" class="FancyPlotter" row="0" >
+   <beam sensorName="cpu/loadavg1" sensorType="float" hostName="localhost" color="4279798271" />

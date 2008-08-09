@@ -1,43 +1,13 @@
 bin/amor
-bin/kodo
 bin/kteatime
 bin/ktux
 bin/kweatherreport
 bin/kweatherservice
-bin/kworldclock
-include/AmorIface.h
-lib/kde3/eyes_panelapplet.a
-lib/kde3/eyes_panelapplet.la
-lib/kde3/eyes_panelapplet.so
-lib/kde3/fifteen_panelapplet.a
-lib/kde3/fifteen_panelapplet.la
-lib/kde3/fifteen_panelapplet.so
-lib/kde3/kcm_weather.a
-lib/kde3/kcm_weather.la
-lib/kde3/kcm_weather.so
-lib/kde3/kcm_weatherservice.a
-lib/kde3/kcm_weatherservice.la
-lib/kde3/kcm_weatherservice.so
-lib/kde3/kmoon_panelapplet.a
-lib/kde3/kmoon_panelapplet.la
-lib/kde3/kmoon_panelapplet.so
-lib/kde3/kweatherreport.a
-lib/kde3/kweatherreport.la
-lib/kde3/kweatherreport.so
-lib/kde3/weather_panelapplet.a
-lib/kde3/weather_panelapplet.la
-lib/kde3/weather_panelapplet.so
-lib/kde3/ww_panelapplet.a
-lib/kde3/ww_panelapplet.la
-lib/kde3/ww_panelapplet.so
-lib/libkdeinit_kweatherreport.a
-lib/libkdeinit_kweatherreport.la
-lib/libkdeinit_kweatherreport.so
-share/applications/kde/amor.desktop
-share/applications/kde/kodo.desktop
-share/applications/kde/kteatime.desktop
-share/applications/kde/kworldclock.desktop
-share/applnk/System/ScreenSavers/ktux.desktop
+lib/kde4/kcm_weather.so
+lib/kde4/kcm_weatherservice.so
+lib/libkdeinit4_kweatherreport.so
+share/applications/kde4/amor.desktop
+share/applications/kde4/kteatime.desktop
 share/apps/amor/billyrc
 share/apps/amor/blobrc
 share/apps/amor/bonhommerc
@@ -430,54 +400,10 @@ share/apps/amor/pics/static/bsd.png
 share/apps/amor/pics/static/tux.png
 share/apps/amor/pingurc
 share/apps/amor/taorc
-share/apps/amor/tips
 share/apps/amor/tips-en
 share/apps/amor/tuxrc
 share/apps/amor/wormrc
-share/apps/kdesktop/programs/kdeworld.desktop
-share/apps/kicker/applets/eyesapplet.desktop
-share/apps/kicker/applets/kfifteenapplet.desktop
-share/apps/kicker/applets/kmoonapplet.desktop
-share/apps/kicker/applets/kweather.desktop
-share/apps/kicker/applets/kwwapplet.desktop
-share/apps/kmoon/pics/moon1.png
-share/apps/kmoon/pics/moon10.png
-share/apps/kmoon/pics/moon11.png
-share/apps/kmoon/pics/moon12.png
-share/apps/kmoon/pics/moon13.png
-share/apps/kmoon/pics/moon14.png
-share/apps/kmoon/pics/moon15.png
-share/apps/kmoon/pics/moon16.png
-share/apps/kmoon/pics/moon17.png
-share/apps/kmoon/pics/moon18.png
-share/apps/kmoon/pics/moon19.png
-share/apps/kmoon/pics/moon2.png
-share/apps/kmoon/pics/moon20.png
-share/apps/kmoon/pics/moon21.png
-share/apps/kmoon/pics/moon22.png
-share/apps/kmoon/pics/moon23.png
-share/apps/kmoon/pics/moon24.png
-share/apps/kmoon/pics/moon25.png
-share/apps/kmoon/pics/moon26.png
-share/apps/kmoon/pics/moon27.png
-share/apps/kmoon/pics/moon28.png
-share/apps/kmoon/pics/moon29.png
-share/apps/kmoon/pics/moon3.png
-share/apps/kmoon/pics/moon4.png
-share/apps/kmoon/pics/moon5.png
-share/apps/kmoon/pics/moon6.png
-share/apps/kmoon/pics/moon7.png
-share/apps/kmoon/pics/moon8.png
-share/apps/kmoon/pics/moon9.png
-share/apps/kodo/numbers.png
-share/apps/kteatime/eventsrc
-share/apps/kteatime/icons/crystalsvg/22x22/actions/mug.png
-share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim1.png
-share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim2.png
-share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_not_ready.png
-share/apps/kteatime/icons/hicolor/16x16/apps/kteatime.png
-share/apps/kteatime/icons/hicolor/32x32/apps/kteatime.png
-share/apps/kteatime/icons/hicolor/48x48/apps/kteatime.png
+share/apps/kteatime/kteatime.notifyrc
 share/apps/ktux/sprites/anim0001.png
 share/apps/ktux/sprites/anim0002.png
 share/apps/ktux/sprites/anim0003.png
@@ -534,21 +460,9 @@ share/apps/kweather/tstorm2_night.png
 share/apps/kweather/tstorm3.png
 share/apps/kweatherservice/stations.dat
 share/apps/kweatherservice/weather_stations.desktop
-share/apps/kworldclock/maps/depths/400.jpg
-share/apps/kworldclock/maps/depths/800.jpg
-share/apps/kworldclock/maps/depths/depths.desktop
-share/apps/kworldclock/maps/flatworld/1200.jpg
-share/apps/kworldclock/maps/flatworld/1600.jpg
-share/apps/kworldclock/maps/flatworld/200.jpg
-share/apps/kworldclock/maps/flatworld/400.jpg
-share/apps/kworldclock/maps/flatworld/800.jpg
-share/apps/kworldclock/maps/flatworld/flatworld.desktop
-share/apps/kworldclock/pics/flag-blue.png
-share/apps/kworldclock/pics/flag-green.png
-share/apps/kworldclock/pics/flag-mask.xpm
-share/apps/kworldclock/pics/flag-red.png
-share/apps/kworldclock/pics/flag.png
-share/apps/kworldclock/zone.tab
+share/dbus-1/interfaces/org.kde.amor.xml
+share/dbus-1/interfaces/org.kde.kweather.kweather.xml
+share/dbus-1/interfaces/org.kde.kweather.service.xml
 share/doc/HTML/en/amor/billy.png
 share/doc/HTML/en/amor/bonhomme.png
 share/doc/HTML/en/amor/bsd.png
@@ -564,14 +478,6 @@ share/doc/HTML/en/amor/spot.png
 share/doc/HTML/en/amor/tao.png
 share/doc/HTML/en/amor/tux.png
 share/doc/HTML/en/amor/worm.png
-share/doc/HTML/en/kmoon/carlosmail
-share/doc/HTML/en/kmoon/common
-share/doc/HTML/en/kmoon/index.cache.bz2
-share/doc/HTML/en/kmoon/index.docbook
-share/doc/HTML/en/kodo/common
-share/doc/HTML/en/kodo/guide.png
-share/doc/HTML/en/kodo/index.cache.bz2
-share/doc/HTML/en/kodo/index.docbook
 share/doc/HTML/en/kteatime/common
 share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
@@ -579,76 +485,47 @@ share/doc/HTML/en/kteatime/index.docbook
 share/doc/HTML/en/kweather/common
 share/doc/HTML/en/kweather/index.cache.bz2
 share/doc/HTML/en/kweather/index.docbook
-share/doc/HTML/en/kworldclock/common
-share/doc/HTML/en/kworldclock/index.cache.bz2
-share/doc/HTML/en/kworldclock/index.docbook
-share/doc/HTML/en/kworldclock/man-kworldclock.1.docbook
-share/doc/HTML/en/kworldclock/screenshot-clock-dialog.png
-share/doc/HTML/en/kworldclock/screenshot-mlb.png
-share/doc/HTML/en/kworldclock/screenshot-quairading-clock.png
-share/doc/HTML/en/kworldclock/screenshot-quairading-dialog.png
-share/doc/HTML/en/kworldclock/screenshot-rmb-cities.png
-share/doc/HTML/en/kworldclock/screenshot-rmb-clock.png
-share/doc/HTML/en/kworldclock/screenshot-rmb-daylight.png
-share/doc/HTML/en/kworldclock/screenshot-rmb-flags.png
-share/doc/HTML/en/kworldclock/screenshot-withclocks.png
-share/doc/HTML/en/kworldclock/screenshot-withflags.png
-share/doc/HTML/en/kworldclock/screenshot.png
 share/icons/hicolor/16x16/apps/amor.png
-share/icons/hicolor/16x16/apps/kmoon.png
-share/icons/hicolor/16x16/apps/kodo.png
 share/icons/hicolor/16x16/apps/kteatime.png
 share/icons/hicolor/16x16/apps/ktux.png
 share/icons/hicolor/16x16/apps/kweather.png
-share/icons/hicolor/16x16/apps/kworldclock.png
 share/icons/hicolor/22x22/apps/amor.png
-share/icons/hicolor/22x22/apps/kworldclock.png
 share/icons/hicolor/32x32/apps/amor.png
-share/icons/hicolor/32x32/apps/kmoon.png
-share/icons/hicolor/32x32/apps/kodo.png
 share/icons/hicolor/32x32/apps/kteatime.png
 share/icons/hicolor/32x32/apps/ktux.png
 share/icons/hicolor/32x32/apps/kweather.png
-share/icons/hicolor/32x32/apps/kworldclock.png
 share/icons/hicolor/48x48/apps/amor.png
-share/icons/hicolor/48x48/apps/kmoon.png
-share/icons/hicolor/48x48/apps/kodo.png
 share/icons/hicolor/48x48/apps/kteatime.png
 share/icons/hicolor/48x48/apps/kweather.png
-share/icons/hicolor/48x48/apps/kworldclock.png
-share/services/kcmweather.desktop
-share/services/kcmweatherservice.desktop
-share/services/kweatherservice.desktop
-@dirrm share/doc/HTML/en/kworldclock
+share/kde4/services/ScreenSavers/ktux.desktop
+share/kde4/services/kcmweather.desktop
+share/kde4/services/kcmweatherservice.desktop
+share/kde4/services/kweatherservice.desktop
+@dirrmtry share/kde4/services/ScreenSavers
+@dirrmtry share/kde4/services
+@dirrmtry share/kde4
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
-@dirrm share/doc/HTML/en/kodo
-@dirrm share/doc/HTML/en/kmoon
 @dirrm share/doc/HTML/en/amor
-@dirrm share/apps/kworldclock/pics
-@dirrm share/apps/kworldclock/maps/flatworld
-@dirrm share/apps/kworldclock/maps/depths
-@dirrm share/apps/kworldclock/maps
-@dirrm share/apps/kworldclock
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrmtry share/dbus-1/interfaces
+@dirrmtry share/dbus-1
 @dirrm share/apps/kweatherservice
 @dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
 @dirrm share/apps/ktux
-@dirrm share/apps/kteatime/icons/hicolor/48x48/apps
-@dirrm share/apps/kteatime/icons/hicolor/48x48
-@dirrm share/apps/kteatime/icons/hicolor/32x32/apps
-@dirrm share/apps/kteatime/icons/hicolor/32x32
-@dirrm share/apps/kteatime/icons/hicolor/16x16/apps
-@dirrm share/apps/kteatime/icons/hicolor/16x16
-@dirrm share/apps/kteatime/icons/hicolor
-@dirrm share/apps/kteatime/icons/crystalsvg/22x22/actions
-@dirrm share/apps/kteatime/icons/crystalsvg/22x22
-@dirrm share/apps/kteatime/icons/crystalsvg
-@dirrm share/apps/kteatime/icons
 @dirrm share/apps/kteatime
-@dirrm share/apps/kodo
-@dirrm share/apps/kmoon/pics
-@dirrm share/apps/kmoon
 @dirrm share/apps/amor/pics/static
 @dirrm share/apps/amor/pics/preview
 @dirrm share/apps/amor/pics/animated/worm
@@ -662,3 +539,7 @@ share/services/kweatherservice.desktop
 @dirrm share/apps/amor/pics/animated
 @dirrm share/apps/amor/pics
 @dirrm share/apps/amor
+@dirrmtry share/apps
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
+@dirrmtry lib/kde4

@@ -1,71 +1,57 @@
-# New ports collection makefile for:	KDE PIM
-# Date created:				2 March 2001
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
+# New ports collection Makefile for:	kdepimp4
+# Date created:				2008-31-05
+# Whom:					miwi
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdepim
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
-CATEGORIES=	deskutils mail news palm kde
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Personal Information Management tools for KDE
+COMMENT=	Libraries for KDE-PIM applications
 
+BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		opensync.0:${PORTSDIR}/devel/libopensync022 \
-		pisock:${PORTSDIR}/palm/pilot-link \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2
+		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
+		boost_python:${PORTSDIR}/devel/boost-python \
+		mal.1:${PORTSDIR}/palm/libmal \
+		pisock.9:${PORTSDIR}/palm/pilot-link
 
-CONFLICTS=	akregator-[0-9]* kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kdepim-kpilot-3.2.3
+LATEST_LINK=	${PORTNAME}4
 
-USE_KDEBASE_VER=3
-PREFIX=		${KDE_PREFIX}
-
+USE_KDE4=	kdelibs pimlibs kdebase akonadi kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_BISON=	build
-USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
-USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support designer network svg qtestlib
+USE_OPENLDAP=	yes
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
-		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
-		--with-ssl-dir=${OPENSSLBASE}
+OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off \
+		KITCHENSYNC "PIM synchronization utility" off
 
-OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/gnokii)
-.	if !defined(WITH_GNOKII)
-GNOKII_OVERRIDE=yes
-WITH_GNOKII=	yes
-.	endif
-.endif
 
 .if defined(WITH_GNOKII)
 LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
-.endif # defined ($(WITH_GNOKII))
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
-
-pre-everything::
-.if defined(GNOKII_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "**********************************************************"
-	@${ECHO_MSG} "*   gnokii is installed and support has been enabled     *"
-	@${ECHO_MSG} "* automatically (no additional files will be installed). *"
-	@${ECHO_MSG} "**********************************************************"
-	@${ECHO_MSG}
+PLIST_SUB+=	GNOKII=""
+.else
+CMAKE_ARGS+=	-DWITH_GNOKII:BOOL=off
+PLIST_SUB+=	GNOKII="@comment "
 .endif
+
+.if defined(WITH_KITCHENSYNC)
+LIB_DEPENDS+=	opensync.1:${PORTSDIR}/devel/libopensync
+PLIST_SUB+=	KITCHENSYNC=""
+.else
+CMAKE_ARGS+=	-DWITH_Opensync:BOOL=off
+PLIST_SUB+=	KITCHENSYNC="@comment "
+.endif
+
+post-extract:
+	${MKDIR} ${WRKSRC}
 
 .include <bsd.port.post.mk>

@@ -1,50 +1,34 @@
-# New ports collection makefile for:	kdeutils3
-# Date created:				3 November 2001
-# Whom:					will@cvs.kde.org
+# New ports collection Makefile for:	kdeutils
+# Date created:				2008-01-31
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdeutils
-PORTVERSION=	${KDE_VERSION}
-CATEGORIES?=	misc kde
-MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT=	Utilities for the KDE integrated X11 desktop
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Utilities for the KDE4 integrated X11 Desktop
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+LIB_DEPENDS=    gmp.7:${PORTSDIR}/math/libgmp4 \
+		netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
+		zip.1:${PORTSDIR}/archivers/libzip
+RUN_DEPENDS=    gpg:${PORTSDIR}/security/gnupg
 
-CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
+LATEST_LINK=	${PORTNAME}4
 
-USE_KDELIBS_VER=3
-USE_KDEBASE_VER=3
-PREFIX=		${KDE_PREFIX}
-
-USE_PYTHON=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=  libtool:15
-DO_NOT_COMPILE+=klaptopdaemon kmilo
-CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-CONFIGURE_ARGS+=--with-pythondir=${LOCALBASE}
+USE_QT_VER=	4
+KDE4_BUILDENV= yes
+USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4
+QT_COMPONENTS=	network gui moc rcc uic porting xml
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501102
-.	if ${OSVERSION} > 600021
-RUN_DEPENDS+=   gtar:${PORTSDIR}/archivers/gtar
-.	endif
-post-patch:
-	${REINPLACE_CMD} -e 's|>tar<|>gtar<|g' ${WRKSRC}/ark/ark.kcfg
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

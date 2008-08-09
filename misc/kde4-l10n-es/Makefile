@@ -1,29 +1,21 @@
-# New ports collection makefile for:    kde3-i18n-es
-# Date created:                         05 April 2002
-# Whom:                                 Lauri Watts <lauri@kde.org>
+# New ports collection makefile for:    kde4-l10n-es
+# Date created:                         29 July 2008
+# Whom:                                 Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kde-i18n
-PORTVERSION=	${KDE_VERSION}
-CATEGORIES?=	misc kde spanish
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
-PKGNAMEPREFIX=	es-
-DIST_SUBDIR=	KDE
+PORTNAME=	kde-l10n-es
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Spanish messages and documentation for KDE3
+COMMENT=	Spanish messages and documentation for KDE4
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+KDE4_L10N=	yes
 
-USE_KDELIBS_VER=3
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-KDE_I18N=	yes
+post-extract:
+	${MKDIR} ${WRKSRC}/build
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
+.include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

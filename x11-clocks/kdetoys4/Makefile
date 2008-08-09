@@ -1,33 +1,28 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	kdetoys3
-# Date created:				14 May 2000 02:45:53
-# Whom:					Will Andrews <will@FreeBSD.org>
+# New ports collection Makefile for:	kdetoys
+# Date created:				2008-01-31
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdetoys
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
-CATEGORIES=	x11-clocks kde misc
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	x11-clocks kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Small applications for KDE
+COMMENT=	Collection of entertaining, educational programs for KDE
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
+LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
-USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	opengl gui moc rcc uic
+USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

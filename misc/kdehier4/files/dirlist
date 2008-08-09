@@ -1,3 +1,23 @@
+include/KDE
+lib/kconf_update_bin
+lib/kde4
+lib/kde4/libexec
+lib/kde4/plugins
+lib/strigi
+share/applications/kde4
+share/config
+share/dbus-1
+share/dbus-1/interfaces
+share/dbus-1/services
+share/kde4
+share/kde4/services
+share/kde4/services/ScreenSavers
+share/kde4/services/ServiceMenus
+share/kde4/services/kded
+share/kde4/services/kresources
+share/kde4/services/kresources/kabc
+share/kde4/services/kresources/kcal
+share/kde4/servicetypes
 @comment include/ksgrd
 @comment include/kwin
 @comment --------------------------------------------------------------------
@@ -456,7 +476,6 @@ share/templates/.source
 share/wallpapers
 @comment ---------------------------------------------------------------------
 @comment -- Directories handpicked out of kdelibs
-lib/kde3
 share/applnk/Settings/Components
 share/apps
 share/apps/kabc
@@ -466,6 +485,7 @@ share/apps/kabc/plugins
 @comment -- KDE-LIRc profiles
 share/apps/profiles
 share/icons
+@comment crystalsvg
 share/icons/crystalsvg
 share/icons/crystalsvg/128x128
 share/icons/crystalsvg/128x128/actions
@@ -509,49 +529,319 @@ share/icons/crystalsvg/scalable/apps
 share/icons/crystalsvg/scalable/devices
 share/icons/crystalsvg/scalable/filesystems
 share/icons/crystalsvg/scalable/mimetypes
-@comment share/icons/hicolor
-@comment share/icons/hicolor/128x128
-@comment share/icons/hicolor/128x128/actions
-@comment share/icons/hicolor/128x128/apps
-@comment share/icons/hicolor/128x128/devices
-@comment share/icons/hicolor/128x128/filesystems
-@comment share/icons/hicolor/128x128/mimetypes
-@comment share/icons/hicolor/16x16
-@comment share/icons/hicolor/16x16/actions
-@comment share/icons/hicolor/16x16/apps
-@comment share/icons/hicolor/16x16/devices
-@comment share/icons/hicolor/16x16/filesystems
-@comment share/icons/hicolor/16x16/mimetypes
-@comment share/icons/hicolor/22x22
-@comment share/icons/hicolor/22x22/actions
-@comment share/icons/hicolor/22x22/apps
-@comment share/icons/hicolor/22x22/devices
-@comment share/icons/hicolor/22x22/filesystems
-@comment share/icons/hicolor/22x22/mimetypes
-@comment share/icons/hicolor/32x32
-@comment share/icons/hicolor/32x32/actions
-@comment share/icons/hicolor/32x32/apps
-@comment share/icons/hicolor/32x32/devices
-@comment share/icons/hicolor/32x32/filesystems
-@comment share/icons/hicolor/32x32/mimetypes
-@comment share/icons/hicolor/48x48
-@comment share/icons/hicolor/48x48/actions
-@comment share/icons/hicolor/48x48/apps
-@comment share/icons/hicolor/48x48/devices
-@comment share/icons/hicolor/48x48/filesystems
-@comment share/icons/hicolor/48x48/mimetypes
-@comment share/icons/hicolor/64x64
-@comment share/icons/hicolor/64x64/actions
-@comment share/icons/hicolor/64x64/apps
-@comment share/icons/hicolor/64x64/devices
-@comment share/icons/hicolor/64x64/filesystems
-@comment share/icons/hicolor/64x64/mimetypes
-@comment share/icons/hicolor/scalable
-@comment share/icons/hicolor/scalable/actions
-@comment share/icons/hicolor/scalable/apps
-@comment share/icons/hicolor/scalable/devices
-@comment share/icons/hicolor/scalable/filesystems
-@comment share/icons/hicolor/scalable/mimetypes
+share/icons/hicolor
+share/icons/hicolor/16x16
+share/icons/hicolor/16x16/actions
+share/icons/hicolor/16x16/animations
+share/icons/hicolor/16x16/apps
+share/icons/hicolor/16x16/categories
+share/icons/hicolor/16x16/devices
+share/icons/hicolor/16x16/emblems
+share/icons/hicolor/16x16/emotes
+share/icons/hicolor/16x16/filesystems
+share/icons/hicolor/16x16/intl
+share/icons/hicolor/16x16/mimetypes
+share/icons/hicolor/16x16/places
+share/icons/hicolor/16x16/status
+share/icons/hicolor/16x16/stock/chart
+share/icons/hicolor/16x16/stock/code
+share/icons/hicolor/16x16/stock/data
+share/icons/hicolor/16x16/stock/form
+share/icons/hicolor/16x16/stock/image
+share/icons/hicolor/16x16/stock/io
+share/icons/hicolor/16x16/stock/media
+share/icons/hicolor/16x16/stock/navigation
+share/icons/hicolor/16x16/stock/net
+share/icons/hicolor/16x16/stock/object
+share/icons/hicolor/16x16/stock/table
+share/icons/hicolor/16x16/stock/text
+share/icons/hicolor/16x16/stock
+share/icons/hicolor/22x22
+share/icons/hicolor/22x22/actions
+share/icons/hicolor/22x22/animations
+share/icons/hicolor/22x22/apps
+share/icons/hicolor/22x22/categories
+share/icons/hicolor/22x22/devices
+share/icons/hicolor/22x22/emblems
+share/icons/hicolor/22x22/emotes
+share/icons/hicolor/22x22/filesystems
+share/icons/hicolor/22x22/intl
+share/icons/hicolor/22x22/mimetypes
+share/icons/hicolor/22x22/places
+share/icons/hicolor/22x22/status
+share/icons/hicolor/22x22/stock/chart
+share/icons/hicolor/22x22/stock/code
+share/icons/hicolor/22x22/stock/data
+share/icons/hicolor/22x22/stock/form
+share/icons/hicolor/22x22/stock/image
+share/icons/hicolor/22x22/stock/io
+share/icons/hicolor/22x22/stock/media
+share/icons/hicolor/22x22/stock/navigation
+share/icons/hicolor/22x22/stock/net
+share/icons/hicolor/22x22/stock/object
+share/icons/hicolor/22x22/stock/table
+share/icons/hicolor/22x22/stock/text
+share/icons/hicolor/22x22/stock
+share/icons/hicolor/24x24
+share/icons/hicolor/24x24/actions
+share/icons/hicolor/24x24/animations
+share/icons/hicolor/24x24/apps
+share/icons/hicolor/24x24/categories
+share/icons/hicolor/24x24/devices
+share/icons/hicolor/24x24/emblems
+share/icons/hicolor/24x24/emotes
+share/icons/hicolor/24x24/filesystems
+share/icons/hicolor/24x24/intl
+share/icons/hicolor/24x24/mimetypes
+share/icons/hicolor/24x24/places
+share/icons/hicolor/24x24/status
+share/icons/hicolor/24x24/stock/chart
+share/icons/hicolor/24x24/stock/code
+share/icons/hicolor/24x24/stock/data
+share/icons/hicolor/24x24/stock/form
+share/icons/hicolor/24x24/stock/image
+share/icons/hicolor/24x24/stock/io
+share/icons/hicolor/24x24/stock/media
+share/icons/hicolor/24x24/stock/navigation
+share/icons/hicolor/24x24/stock/net
+share/icons/hicolor/24x24/stock/object
+share/icons/hicolor/24x24/stock/table
+share/icons/hicolor/24x24/stock/text
+share/icons/hicolor/24x24/stock
+share/icons/hicolor/32x32
+share/icons/hicolor/32x32/actions
+share/icons/hicolor/32x32/animations
+share/icons/hicolor/32x32/apps
+share/icons/hicolor/32x32/categories
+share/icons/hicolor/32x32/devices
+share/icons/hicolor/32x32/emblems
+share/icons/hicolor/32x32/emotes
+share/icons/hicolor/32x32/filesystems
+share/icons/hicolor/32x32/intl
+share/icons/hicolor/32x32/mimetypes
+share/icons/hicolor/32x32/places
+share/icons/hicolor/32x32/status
+share/icons/hicolor/32x32/stock/chart
+share/icons/hicolor/32x32/stock/code
+share/icons/hicolor/32x32/stock/data
+share/icons/hicolor/32x32/stock/form
+share/icons/hicolor/32x32/stock/image
+share/icons/hicolor/32x32/stock/io
+share/icons/hicolor/32x32/stock/media
+share/icons/hicolor/32x32/stock/navigation
+share/icons/hicolor/32x32/stock/net
+share/icons/hicolor/32x32/stock/object
+share/icons/hicolor/32x32/stock/table
+share/icons/hicolor/32x32/stock/text
+share/icons/hicolor/32x32/stock
+share/icons/hicolor/36x36
+share/icons/hicolor/36x36/actions
+share/icons/hicolor/36x36/animations
+share/icons/hicolor/36x36/apps
+share/icons/hicolor/36x36/categories
+share/icons/hicolor/36x36/devices
+share/icons/hicolor/36x36/emblems
+share/icons/hicolor/36x36/emotes
+share/icons/hicolor/36x36/filesystems
+share/icons/hicolor/36x36/intl
+share/icons/hicolor/36x36/mimetypes
+share/icons/hicolor/36x36/places
+share/icons/hicolor/36x36/status
+share/icons/hicolor/36x36/stock/chart
+share/icons/hicolor/36x36/stock/code
+share/icons/hicolor/36x36/stock/data
+share/icons/hicolor/36x36/stock/form
+share/icons/hicolor/36x36/stock/image
+share/icons/hicolor/36x36/stock/io
+share/icons/hicolor/36x36/stock/media
+share/icons/hicolor/36x36/stock/navigation
+share/icons/hicolor/36x36/stock/net
+share/icons/hicolor/36x36/stock/object
+share/icons/hicolor/36x36/stock/table
+share/icons/hicolor/36x36/stock/text
+share/icons/hicolor/36x36/stock
+share/icons/hicolor/48x48
+share/icons/hicolor/48x48/actions
+share/icons/hicolor/48x48/animations
+share/icons/hicolor/48x48/apps
+share/icons/hicolor/48x48/categories
+share/icons/hicolor/48x48/devices
+share/icons/hicolor/48x48/emblems
+share/icons/hicolor/48x48/emotes
+share/icons/hicolor/48x48/filesystems
+share/icons/hicolor/48x48/intl
+share/icons/hicolor/48x48/mimetypes
+share/icons/hicolor/48x48/places
+share/icons/hicolor/48x48/status
+share/icons/hicolor/48x48/stock/chart
+share/icons/hicolor/48x48/stock/code
+share/icons/hicolor/48x48/stock/data
+share/icons/hicolor/48x48/stock/form
+share/icons/hicolor/48x48/stock/image
+share/icons/hicolor/48x48/stock/io
+share/icons/hicolor/48x48/stock/media
+share/icons/hicolor/48x48/stock/navigation
+share/icons/hicolor/48x48/stock/net
+share/icons/hicolor/48x48/stock/object
+share/icons/hicolor/48x48/stock/table
+share/icons/hicolor/48x48/stock/text
+share/icons/hicolor/48x48/stock
+share/icons/hicolor/64x64
+share/icons/hicolor/64x64/actions
+share/icons/hicolor/64x64/animations
+share/icons/hicolor/64x64/apps
+share/icons/hicolor/64x64/categories
+share/icons/hicolor/64x64/devices
+share/icons/hicolor/64x64/emblems
+share/icons/hicolor/64x64/emotes
+share/icons/hicolor/64x64/filesystems
+share/icons/hicolor/64x64/intl
+share/icons/hicolor/64x64/mimetypes
+share/icons/hicolor/64x64/places
+share/icons/hicolor/64x64/status
+share/icons/hicolor/64x64/stock/chart
+share/icons/hicolor/64x64/stock/code
+share/icons/hicolor/64x64/stock/data
+share/icons/hicolor/64x64/stock/form
+share/icons/hicolor/64x64/stock/image
+share/icons/hicolor/64x64/stock/io
+share/icons/hicolor/64x64/stock/media
+share/icons/hicolor/64x64/stock/navigation
+share/icons/hicolor/64x64/stock/net
+share/icons/hicolor/64x64/stock/object
+share/icons/hicolor/64x64/stock/table
+share/icons/hicolor/64x64/stock/text
+share/icons/hicolor/64x64/stock
+share/icons/hicolor/72x72
+share/icons/hicolor/72x72/actions
+share/icons/hicolor/72x72/animations
+share/icons/hicolor/72x72/apps
+share/icons/hicolor/72x72/categories
+share/icons/hicolor/72x72/devices
+share/icons/hicolor/72x72/emblems
+share/icons/hicolor/72x72/emotes
+share/icons/hicolor/72x72/filesystems
+share/icons/hicolor/72x72/intl
+share/icons/hicolor/72x72/mimetypes
+share/icons/hicolor/72x72/places
+share/icons/hicolor/72x72/status
+share/icons/hicolor/72x72/stock/chart
+share/icons/hicolor/72x72/stock/code
+share/icons/hicolor/72x72/stock/data
+share/icons/hicolor/72x72/stock/form
+share/icons/hicolor/72x72/stock/image
+share/icons/hicolor/72x72/stock/io
+share/icons/hicolor/72x72/stock/media
+share/icons/hicolor/72x72/stock/navigation
+share/icons/hicolor/72x72/stock/net
+share/icons/hicolor/72x72/stock/object
+share/icons/hicolor/72x72/stock/table
+share/icons/hicolor/72x72/stock/text
+share/icons/hicolor/72x72/stock
+share/icons/hicolor/96x96
+share/icons/hicolor/96x96/actions
+share/icons/hicolor/96x96/animations
+share/icons/hicolor/96x96/apps
+share/icons/hicolor/96x96/categories
+share/icons/hicolor/96x96/devices
+share/icons/hicolor/96x96/emblems
+share/icons/hicolor/96x96/emotes
+share/icons/hicolor/96x96/filesystems
+share/icons/hicolor/96x96/intl
+share/icons/hicolor/96x96/mimetypes
+share/icons/hicolor/96x96/places
+share/icons/hicolor/96x96/status
+share/icons/hicolor/96x96/stock/chart
+share/icons/hicolor/96x96/stock/code
+share/icons/hicolor/96x96/stock/data
+share/icons/hicolor/96x96/stock/form
+share/icons/hicolor/96x96/stock/image
+share/icons/hicolor/96x96/stock/io
+share/icons/hicolor/96x96/stock/media
+share/icons/hicolor/96x96/stock/navigation
+share/icons/hicolor/96x96/stock/net
+share/icons/hicolor/96x96/stock/object
+share/icons/hicolor/96x96/stock/table
+share/icons/hicolor/96x96/stock/text
+share/icons/hicolor/96x96/stock
+share/icons/hicolor/128x128
+share/icons/hicolor/128x128/actions
+share/icons/hicolor/128x128/animations
+share/icons/hicolor/128x128/apps
+share/icons/hicolor/128x128/categories
+share/icons/hicolor/128x128/devices
+share/icons/hicolor/128x128/emblems
+share/icons/hicolor/128x128/emotes
+share/icons/hicolor/128x128/filesystems
+share/icons/hicolor/128x128/intl
+share/icons/hicolor/128x128/mimetypes
+share/icons/hicolor/128x128/places
+share/icons/hicolor/128x128/status
+share/icons/hicolor/128x128/stock/chart
+share/icons/hicolor/128x128/stock/code
+share/icons/hicolor/128x128/stock/data
+share/icons/hicolor/128x128/stock/form
+share/icons/hicolor/128x128/stock/image
+share/icons/hicolor/128x128/stock/io
+share/icons/hicolor/128x128/stock/media
+share/icons/hicolor/128x128/stock/navigation
+share/icons/hicolor/128x128/stock/net
+share/icons/hicolor/128x128/stock/object
+share/icons/hicolor/128x128/stock/table
+share/icons/hicolor/128x128/stock/text
+share/icons/hicolor/128x128/stock
+share/icons/hicolor/192x192
+share/icons/hicolor/192x192/actions
+share/icons/hicolor/192x192/animations
+share/icons/hicolor/192x192/apps
+share/icons/hicolor/192x192/categories
+share/icons/hicolor/192x192/devices
+share/icons/hicolor/192x192/emblems
+share/icons/hicolor/192x192/emotes
+share/icons/hicolor/192x192/filesystems
+share/icons/hicolor/192x192/intl
+share/icons/hicolor/192x192/mimetypes
+share/icons/hicolor/192x192/places
+share/icons/hicolor/192x192/status
+share/icons/hicolor/192x192/stock/chart
+share/icons/hicolor/192x192/stock/code
+share/icons/hicolor/192x192/stock/data
+share/icons/hicolor/192x192/stock/form
+share/icons/hicolor/192x192/stock/image
+share/icons/hicolor/192x192/stock/io
+share/icons/hicolor/192x192/stock/media
+share/icons/hicolor/192x192/stock/navigation
+share/icons/hicolor/192x192/stock/net
+share/icons/hicolor/192x192/stock/object
+share/icons/hicolor/192x192/stock/table
+share/icons/hicolor/192x192/stock/text
+share/icons/hicolor/192x192/stock
+share/icons/hicolor/scalable
+share/icons/hicolor/scalable/actions
+share/icons/hicolor/scalable/animations
+share/icons/hicolor/scalable/apps
+share/icons/hicolor/scalable/categories
+share/icons/hicolor/scalable/devices
+share/icons/hicolor/scalable/emblems
+share/icons/hicolor/scalable/emotes
+share/icons/hicolor/scalable/filesystems
+share/icons/hicolor/scalable/intl
+share/icons/hicolor/scalable/mimetypes
+share/icons/hicolor/scalable/places
+share/icons/hicolor/scalable/status
+share/icons/hicolor/scalable/stock/chart
+share/icons/hicolor/scalable/stock/code
+share/icons/hicolor/scalable/stock/data
+share/icons/hicolor/scalable/stock/form
+share/icons/hicolor/scalable/stock/image
+share/icons/hicolor/scalable/stock/io
+share/icons/hicolor/scalable/stock/media
+share/icons/hicolor/scalable/stock/navigation
+share/icons/hicolor/scalable/stock/net
+share/icons/hicolor/scalable/stock/object
+share/icons/hicolor/scalable/stock/table
+share/icons/hicolor/scalable/stock/text
+share/icons/hicolor/scalable/stock
 share/icons/locolor
 share/icons/locolor/128x128
 share/icons/locolor/128x128/actions
@@ -589,6 +879,96 @@ share/icons/locolor/64x64/apps
 share/icons/locolor/64x64/devices
 share/icons/locolor/64x64/filesystems
 share/icons/locolor/64x64/mimetypes
+share/icons/oxygen
+share/icons/oxygen/8x8
+share/icons/oxygen/8x8/actions
+share/icons/oxygen/8x8/apps
+share/icons/oxygen/8x8/categories
+share/icons/oxygen/8x8/devices
+share/icons/oxygen/8x8/emblems
+share/icons/oxygen/8x8/emotes
+share/icons/oxygen/8x8/mimetypes
+share/icons/oxygen/8x8/places
+share/icons/oxygen/8x8/status
+share/icons/oxygen/16x16
+share/icons/oxygen/16x16/actions
+share/icons/oxygen/16x16/apps
+share/icons/oxygen/16x16/categories
+share/icons/oxygen/16x16/devices
+share/icons/oxygen/16x16/emblems
+share/icons/oxygen/16x16/emotes
+share/icons/oxygen/16x16/mimetypes
+share/icons/oxygen/16x16/places
+share/icons/oxygen/16x16/status
+share/icons/oxygen/22x22
+share/icons/oxygen/22x22/actions
+share/icons/oxygen/22x22/apps
+share/icons/oxygen/22x22/categories
+share/icons/oxygen/22x22/devices
+share/icons/oxygen/22x22/emblems
+share/icons/oxygen/22x22/emotes
+share/icons/oxygen/22x22/mimetypes
+share/icons/oxygen/22x22/places
+share/icons/oxygen/22x22/status
+share/icons/oxygen/32x32
+share/icons/oxygen/32x32/actions
+share/icons/oxygen/32x32/apps
+share/icons/oxygen/32x32/categories
+share/icons/oxygen/32x32/devices
+share/icons/oxygen/32x32/emblems
+share/icons/oxygen/32x32/emotes
+share/icons/oxygen/32x32/mimetypes
+share/icons/oxygen/32x32/places
+share/icons/oxygen/32x32/status
+share/icons/oxygen/48x48
+share/icons/oxygen/48x48/actions
+share/icons/oxygen/48x48/apps
+share/icons/oxygen/48x48/categories
+share/icons/oxygen/48x48/devices
+share/icons/oxygen/48x48/emblems
+share/icons/oxygen/48x48/emotes
+share/icons/oxygen/48x48/mimetypes
+share/icons/oxygen/48x48/places
+share/icons/oxygen/48x48/status
+share/icons/oxygen/64x64
+share/icons/oxygen/64x64/actions
+share/icons/oxygen/64x64/apps
+share/icons/oxygen/64x64/categories
+share/icons/oxygen/64x64/devices
+share/icons/oxygen/64x64/emblems
+share/icons/oxygen/64x64/emotes
+share/icons/oxygen/64x64/mimetypes
+share/icons/oxygen/64x64/places
+share/icons/oxygen/64x64/status
+share/icons/oxygen/128x128
+share/icons/oxygen/128x128/actions
+share/icons/oxygen/128x128/apps
+share/icons/oxygen/128x128/categories
+share/icons/oxygen/128x128/devices
+share/icons/oxygen/128x128/emblems
+share/icons/oxygen/128x128/emotes
+share/icons/oxygen/128x128/mimetypes
+share/icons/oxygen/128x128/places
+share/icons/oxygen/128x128/status
+share/icons/oxygen/scalable
+share/icons/oxygen/scalable/actions
+share/icons/oxygen/scalable/actions/small
+share/icons/oxygen/scalable/apps
+share/icons/oxygen/scalable/apps/small
+share/icons/oxygen/scalable/categories
+share/icons/oxygen/scalable/categories/small
+share/icons/oxygen/scalable/devices
+share/icons/oxygen/scalable/devices/small
+share/icons/oxygen/scalable/emblems
+share/icons/oxygen/scalable/emblems/small
+share/icons/oxygen/scalable/emotes
+share/icons/oxygen/scalable/emotes/small
+share/icons/oxygen/scalable/mimetypes
+share/icons/oxygen/scalable/mimetypes/small
+share/icons/oxygen/scalable/places
+share/icons/oxygen/scalable/places/small
+share/icons/oxygen/scalable/status
+share/icons/oxygen/scalable/status/small
 share/mimelnk
 share/mimelnk/all
 share/mimelnk/application

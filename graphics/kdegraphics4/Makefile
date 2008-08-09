@@ -1,77 +1,52 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	KDE3 Graphics
-# Date created:				Saturday 2 September 2000
-# Whom:					Will Andrews <will@FreeBSD.org>
+# New ports collection Makefile for:	kdegraphics
+# Date created:				2008-01-31
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdegraphics
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
+COMMENT=	Graphics utilities for the KDE4 integrated X11 desktop
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fribidi:${PORTSDIR}/converters/fribidi \
-		glut:${PORTSDIR}/graphics/libglut \
 		lcms:${PORTSDIR}/graphics/lcms \
 		paper:${PORTSDIR}/print/libpaper \
-		poppler-qt:${PORTSDIR}/graphics/poppler-qt
+		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
+		exiv2.3:${PORTSDIR}/graphics/exiv2 \
+		chm.0:${PORTSDIR}/misc/chmlib \
+		sane.1:${PORTSDIR}/graphics/sane-backends \
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
+		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11 \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
+		spectre.1:${PORTSDIR}/print/libspectre \
+		qca.2:${PORTSDIR}/devel/qca \
+		epub.0:${PORTSDIR}/textproc/ebook-tools
 
-CONFLICTS=	kolourpaint-[0-9]*
+LATEST_LINK=	${PORTNAME}4
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
+USE_GL=			glut
+USE_GHOSTSCRIPT=	yes
+USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
-USE_GMAKE=	yes
-WANT_GNOME=	yes
-USE_GHOSTSCRIPT=yes
+USE_QT_VER=	4
+QT_COMPONENTS=	opengl gui moc rcc uic svg iconengines pixeltool
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-DO_NOT_COMPILE+=kooka kuickshow libkscan
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-OPTIONS=	IMLIB "Build Kuickshow, a fast and versatile image viewer" off \
-		GPHOTO2 "Enable support for digital cameras" off \
-		SANE "Build Kooka, a SANE scanner frontend for KDE" off
+post-patch:
+	${FIND} ${WRKSRC}/.. -type f -name CMakeLists.txt | ${XARGS} \
+		${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|'
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_IMLIB)
-RUN_DEPENDS+=	kuickshow:${PORTSDIR}/graphics/kuickshow
-.elif defined(WITHOUT_IMLIB)
-CONFIGURE_ARGS+=--without-imlib-config
-.endif
-
-.if defined(WITH_GPHOTO2)
-RUN_DEPENDS+=	${LOCALBASE}/lib/kde3/kcm_kamera.la:${PORTSDIR}/graphics/kamera
-.elif defined(WITHOUT_GPHOTO2)
-CONFIGURE_ARGS+=--without-kamera
-.endif
-
-.if defined(WITH_SANE)
-RUN_DEPENDS+=	kooka:${PORTSDIR}/graphics/kooka
-.endif
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
-
-pre-configure:
-	${REINPLACE_CMD} \
-	-E -e '/^SUBDIRS/s/(kamera|kooka|kuickshow)//g' \
-		${WRKSRC}/doc/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,2 @@
+This is a hack port which cleans up mime directory under ${KDE4_PREFIX}
+during deinstalling. It is noop when KDE4_PREFIX is ${LOCALBASE}.

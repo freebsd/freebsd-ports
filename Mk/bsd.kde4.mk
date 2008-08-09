@@ -3,27 +3,63 @@
 #
 # $FreeBSD$
 #
-# Please view me with 4 column tabs!
+
+.if !defined(_POSTMKINCLUDED) && !defined(Kde_Pre_Include)
 
 # Please make sure all changes to this file are past through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-KDE_MAINTAINER=		kde@FreeBSD.org
+Kde_Pre_Include=	bsd.kde4.mk
+Kde_Include_MAINTAINER=	kde@FreeBSD.org
 
-# This section contains the USE_ definitions.
-# XXX: Write HAVE_ definitions sometime.
+#
+# This file contains some variable definitions that are supposed to
+# make your life easier when dealing with ports related to the KDE4
+# desktop environment. It's automatically included when USE_KDE4
+# is defined in the ports' makefile.
+#
+# KDE4 related ports can use this as follows:
+#
+# USE_KDE4=	kdehier kdeprefix kdelibs
+# USE_QT_VER=	4
+# QT_COMPONENTS=corelib #set additional qt4 components here
+#
+# .include <bsd.port.mk>
+#
+# Available KDE4 components are:
+#
+# akonadi	- Akonadi PIM storage service
+# automoc4	- automoc4 tool
+# kdebase	- Basic KDE applications (Konqueror, Dolphin)
+# kdehier	- Provides common KDE directories
+# kdelibs	- The base set of KDE4 libraries
+# kdeprefix	- If set, port will be installed into ${KDE4_PREFIX} instead of ${LOCALBASE}
+# pimlibs	- KDE4 PIM libraries
+# runtime	- More KDE applications
+# sharedmime	- share-mime-info wrapper for KDE4 ports
+# workspace	- More KDE applications (Plasma, kwin, etc.)
+#
+# These read-only variables can be used in port Makefile:
+#
+# MASTER_SITE_KDE_kde
+#		- MASTER_SITE_KDE_kde is equivalent to MASTER_SITE_KDE
+#		with :kde tag. It could be used when port needs multiple
+#		distfiles from different sites. See for details porters-handbook:
+#		http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-distfiles.html
+# KDE4_PREFIX	- The place where KDE4 ports live. Currently it is {LOCALBASE}/kde4,
+#		but this could be changed in a future.
+#
 
-# USE_QT_VER		- Says that the port uses the Qt toolkit.  Possible values:
-#					  3, 4; each specify the major version of Qt to use.
-#					  Note: 4 is handled by bsd.qt.mk.
-# USE_KDELIBS_VER	- Says that the port uses KDE libraries.  Possible values:
-#					  3 specifies the major version of KDE to use.
-#					  This implies USE_QT of the appropriate version.
-# USE_KDEBASE_VER	- Says that the port uses the KDE base.  Possible values:
-#					  3 specifies the major version of KDE to use.
-#					  This implies USE_KDELIBS of the appropriate version.
+KDE4_VERSION=		4.1.0
 
-# tagged MASTER_SITE_KDE_kde
-kmaster=				${MASTER_SITE_KDE:S@%/@%/:kde@g}
+#
+# KDE4 is installed into its own prefix to not conflict with KDE3
+#
+KDE4_PREFIX?=		${LOCALBASE}/kde4
+
+#
+# Tagged MASTER_SITE_KDE
+#
+kmaster=		${MASTER_SITE_KDE:S@%/@%/:kde@g}
 .if !defined(MASTER_SITE_SUBDIR)
 MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@@g}
 .else
@@ -31,128 +67,72 @@ ksub=${MASTER_SITE_SUBDIR}
 MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 .endif # !defined(MASTER_SITE_SUBDIR)
 
-# USE_KDEBASE_VER section
-.if defined(USE_KDEBASE_VER)
-.if ${USE_KDEBASE_VER} == CVS
-LIB_DEPENDS+=	kfontinst:${PORTSDIR}/x11/kdebase
-USE_KDELIBS_VER=CVS
-.elif ${USE_KDEBASE_VER} == 3
-# kdebase 3.x common stuff
-LIB_DEPENDS+=	kfontinst:${PORTSDIR}/x11/kdebase3
-USE_KDELIBS_VER=3
-.endif # ${USE_KDEBASE_VER} == 3
-.endif # defined(USE_KDEBASE_VER)
+#
+# KDE4 modules
+#
+_USE_KDE4_ALL=			akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
+				pimlibs runtime sharedmime workspace
 
-# USE_KDELIBS_VER section
-.if defined(USE_KDELIBS_VER)
+akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
-## This is needed for configure scripts to figure out
-## which threads lib to use
+automoc4_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/automoc4:${PORTSDIR}/devel/automoc4
 
-CONFIGURE_ENV+= PTHREAD_LIBS="${PTHREAD_LIBS}"
+kdebase_LIB_DEPENDS=		konq.7:${PORTSDIR}/x11/kdebase4
 
-## Every KDE application is inherently IPv6-capable
+kdehier_RUN_DEPENDS=		kdehier4>=1:${PORTSDIR}/misc/kdehier4
 
-CATEGORIES+=ipv6
+kdelibs_LIB_DEPENDS=		kimproxy.5:${PORTSDIR}/x11/kdelibs4
 
-##  XXX - This really belongs into bsd.port.mk
-.if !defined(_NO_KDE_CONFTARGET_HACK)
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
-		--disable-as-needed
+kdeprefix_PREFIX=		${KDE4_PREFIX}
+
+pimlibs_LIB_DEPENDS=		kpimutils.5:${PORTSDIR}/deskutils/kdepimlibs4
+
+runtime_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
+runtime_RUN_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
+
+sharedmime_BUILD_DEPENDS=	kde4-shared-mime-info>=1:${PORTSDIR}/misc/kde4-shared-mime-info
+sharedmime_RUN_DEPENDS=		kde4-shared-mime-info>=1:${PORTSDIR}/misc/kde4-shared-mime-info
+
+workspace_LIB_DEPENDS=		kscreensaver.5:${PORTSDIR}/x11/kdebase4-workspace
+
 .endif
 
-.if ${USE_KDELIBS_VER} == CVS
-LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs
-USE_QT_VER=		CVS
-PREFIX=			${KDE_CVS_PREFIX}
-.elif ${USE_KDELIBS_VER} == 3
-# kdelibs 3.x common stuff
-LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
-USE_QT_VER=		3
-PREFIX=			${KDE_PREFIX}
-.else
-IGNORE=			cannot install: unsupported value in USE_KDELIBS_VER
-.endif # ${USE_KDELIBS_VER} == 3
-.endif # defined(USE_KDELIBS_VER)
+.if defined(_POSTMKINCLUDED) && !defined(Kde_Post_Include)
 
-# End of USE_KDELIBS_VER section
+Kde_Post_Include=	bsd.kde4.mk
 
-# USE_QT_VER section
-.if ${USE_QT_VER} == CVS
+.for component in ${USE_KDE4}
+. if ${_USE_KDE4_ALL:M${component}}!=""
+BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
+LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.  if defined(${component}_PREFIX)
+.   if ${.MAKEFLAGS:MPREFIX=*}==""
+PREFIX=	${${component}_PREFIX}
+.    if ${KDE4_PREFIX} != ${LOCALBASE}
+NO_MTREE=	yes
+.    endif
+.   endif
+.  endif
+. else
+IGNORE=	cannot install: Unknown component ${component}
+. endif
+.endfor
 
-KDE_CVS_PREFIX?=	${LOCALBASE}/kde-cvs
-QT_CVS_PREFIX?=		${LOCALBASE}/qt-cvs
-QTCPPFLAGS?=
-QTCFGLIBS?=
+#
+# Common build related stuff for kde4 ports. It's not intended for usage
+# in KDE4-dependent ports
+#
+.if defined(KDE4_BUILDENV)
+USE_CMAKE=	yes
+CMAKE_DEBUG=	yes
+CMAKE_VERBOSE=	yes
 
-MOC?=				${QT_CVS_PREFIX}/bin/moc
-BUILD_DEPENDS+=		${MOC}:${PORTSDIR}/x11-toolkits/qt-copy
-RUN_DEPENDS+=		${MOC}:${PORTSDIR}/x11-toolkits/qt-copy
-QTCPPFLAGS+=		-D_GETOPT_H		# added to work around broken getopt.h #inc
-.if !defined (QT_NONSTANDARD)
-CONFIGURE_ARGS+=--with-extra-libs="${LOCALBASE}/lib" \
-				--with-extra-includes="${LOCALBASE}/include"
-CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
-				QTDIR="${QT_CVS_PREFIX}" KDEDIR="${KDE_CVS_PREFIX}"
+USE_LDCONFIG=	${KDE4_PREFIX}/lib ${KDE4_PREFIX}/lib/kde4
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
+CMAKE_SOURCE_PATH=	..
+
+.endif # KDE4_BUILDENV
+
 .endif
-
-.elif ${USE_QT_VER} == 3
-
-# Yeah, it's namespace pollution, but this is really the best place for this
-# stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.5.8
-KDE_ORIGVER=	${KDE_VERSION}
-KDE_PREFIX?=	${LOCALBASE}
-
-QTCPPFLAGS?=
-QTCGFLIBS?=
-
-# Qt 3.x common stuff
-QT_PREFIX?=		${LOCALBASE}
-MOC?=			${QT_PREFIX}/bin/moc
-#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
-BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt33
-RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt33
-QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
-				-I${QT_PREFIX}/include -D_GETOPT_H
-QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg \
-				-L${QT_PREFIX}/lib
-.if defined(PACKAGE_BUILDING)
-TMPDIR?=	/tmp
-MAKE_ENV+=	TMPDIR="${TMPDIR}"
-CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
-.endif
-
-.if !defined(QT_NONSTANDARD)
-CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
-				--with-qt-libraries=${QT_PREFIX}/lib \
-				--with-extra-libs=${LOCALBASE}/lib \
-				--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
-				QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
-.endif # !defined(QT_NONSTANDARD)
-
-.else
-IGNORE=			cannot install: unsupported value of USE_QT_VER
-.endif # defined(USE_QT_VER)
-
-# End of USE_QT_VER section
-
-# Assemble plist from parts
-# <alane@freebsd.org> 2002-12-06
-.if defined(KDE_BUILD_PLIST)
-PLIST?=			${WRKDIR}/plist
-PLIST_BASE?=	plist.base
-PLIST_APPEND?=
-plist_base=${FILESDIR}/${PLIST_BASE}
-plist_base_rm=${FILESDIR}/${PLIST_BASE}.rm
-plist_append=${PLIST_APPEND:C:([A-Za-z0-9._]+):${FILESDIR}/\1:}
-plist_append_rm=${PLIST_APPEND:C:([A-Za-z0-9._]+):${FILESDIR}/\1.rm:}
-kde-plist:
-	${CAT} ${plist_base} ${plist_append} 2>/dev/null >${PLIST}
-	-${CAT} ${plist_append_rm} ${plist_base_rm} 2>/dev/null >>${PLIST};true
-.PHONY: kde-plist
-pre-build: kde-plist
-.endif # defined(KDE_BUILD_PLIST)

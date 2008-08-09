@@ -1,0 +1,38 @@
+%%HACK%%share/mime/application/.keep_me
+%%HACK%%share/mime/audio/.keep_me
+%%HACK%%share/mime/image/.keep_me
+%%HACK%%share/mime/inode/.keep_me
+%%HACK%%share/mime/message/.keep_me
+%%HACK%%share/mime/model/.keep_me
+%%HACK%%share/mime/multipart/.keep_me
+%%HACK%%share/mime/packages/.keep_me
+%%HACK%%share/mime/text/.keep_me
+%%HACK%%share/mime/video/.keep_me
+%%HACK%%share/mime/x-content/.keep_me
+%%HACK%%share/mime/x-epoc/.keep_me
+%%HACK%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+%%HACK%%@unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
+%%HACK%%@unexec [ -f %D/share/mime/aliases ] && rm -f %D/share/mime/aliases || true
+%%HACK%%@unexec [ -f %D/share/mime/generic-icons ] && rm -f %D/share/mime/generic-icons || true
+%%HACK%%@unexec [ -f %D/share/mime/globs ] && rm -f %D/share/mime/globs || true
+%%HACK%%@unexec [ -f %D/share/mime/globs2 ] && rm -f %D/share/mime/globs2 || true
+%%HACK%%@unexec [ -f %D/share/mime/icons ] && rm -f %D/share/mime/icons || true
+%%HACK%%@unexec [ -f %D/share/mime/magic ] && rm -f %D/share/mime/magic || true
+%%HACK%%@unexec [ -f %D/share/mime/mime.cache ] && rm -f %D/share/mime/mime.cache || true
+%%HACK%%@unexec [ -f %D/share/mime/subclasses ] && rm -f %D/share/mime/subclasses || true
+%%HACK%%@unexec [ -f %D/share/mime/treemagic ] && rm -f %D/share/mime/treemagic || true
+%%HACK%%@unexec [ -f %D/share/mime/types ] && rm -f %D/share/mime/types || true
+%%HACK%%@dirrmtry share/mime/x-epoc
+%%HACK%%@dirrmtry share/mime/x-content
+%%HACK%%@dirrmtry share/mime/video
+%%HACK%%@dirrmtry share/mime/text
+%%HACK%%@dirrmtry share/mime/packages
+%%HACK%%@dirrmtry share/mime/multipart
+%%HACK%%@dirrmtry share/mime/model
+%%HACK%%@dirrmtry share/mime/message
+%%HACK%%@dirrmtry share/mime/inode
+%%HACK%%@dirrmtry share/mime/image
+%%HACK%%@dirrmtry share/mime/audio
+%%HACK%%@dirrmtry share/mime/application
+%%HACK%%@dirrmtry share/mime
+%%HACK%%@dirrmtry share

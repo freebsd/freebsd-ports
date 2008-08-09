@@ -1,20 +1,20 @@
-# New ports collection makefile for:    kde3-i18n-zh_TW
-# Date created:                         05 April 2002
-# Whom:                                 Lauri Watts <lauri@kde.org>
+# New ports collection makefile for:    koffice-i18n-zh_TW
+# Date created:                         27 April 2003
+# Whom:                                 Michael Nottebrock <michaelnottebrock@gmx.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kde-i18n
-PORTVERSION=	${KDE_VERSION}
+PORTNAME=	koffice-i18n
+PORTVERSION=	1.6.3
 CATEGORIES?=	chinese kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
+MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
 PKGNAMEPREFIX=	zh_TW-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Traditional Chinese messages and documentation for KDE3
+COMMENT=	Traditional Chinese messages and documentation for koffice
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

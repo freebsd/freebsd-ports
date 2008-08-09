@@ -1,64 +1,39 @@
-# -*-mode: makefile-*-
-# New ports collection makefile for:	kdenetwork2
-# Date created:				2 November 2001
-# Whom:					will@cvs.kde.org
+# New ports collection Makefile for:	kdepim
+# Date created:				2008-01-30
+# Whom:					Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdenetwork
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
-CATEGORIES?=	net kde
+PORTVERSION=	${KDE4_VERSION}
+CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT=	Network-related programs and modules for KDE
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE Network applications
 
-LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
+BUILD_DEPENDS=	${LOCALBASE}/lib/libvncserver.a:${PORTSDIR}/net/libvncserver
+#		decibel:${PORTSDIR}/net-im/decibel
+LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp \
+		idn:${PORTSDIR}/dns/libidn \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
+		qca.2:${PORTSDIR}/devel/qca \
+		otr.4:${PORTSDIR}/security/libotr
+RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
-OPTIONS=	KOPETE	"Install kopete multi-protocol instant messenger" OFF
+LATEST_LINK=	${PORTNAME}4
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
-USE_PERL5=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4
+KDE4_BUILDENV=	yes
+USE_QT_VER=	4
+USE_SQLITE=	yes
+QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support gui network porting uic3 xml
 USE_OPENSSL=	yes
-USE_XORG=	xtst
 
-USE_AUTOTOOLS=  libtool:15
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-DO_NOT_COMPILE+=kopete lanbrowsing filesharing
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@${REINPLACE_CMD} \
-	-E -e '/^SUBDIRS/s/lisa//g' \
-		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} \
-	-e 's|/etc/security/|${LOCALBASE}/etc/|g' \
-		${WRKSRC}/filesharing/advanced/kcm_sambaconf/kcmsambaconf.cpp \
-		${WRKSRC}/filesharing/simple/fileshare.cpp
-
-##
-# OPTIONS handling
-##
-#
-.if defined(WITH_KOPETE)
-RUN_DEPENDS+=	kopete:${PORTSDIR}/net-im/kopete
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,21 @@
+--- ../CMakeLists.txt.orgi	2008-07-25 14:58:35.000000000 +0200
++++ ../CMakeLists.txt	2008-07-25 14:59:12.000000000 +0200
+@@ -120,12 +120,12 @@
+ 
+       try_run(_run_result _compile_result ${CMAKE_BINARY_DIR} ${_source_file} CMAKE_FLAGS "${_include_dirs}")
+ 
+-      if(NOT _compile_result)
+-         message(FATAL_ERROR "Could not compile simple test program:\n ${_source}")
+-      endif(NOT _compile_result)
+-      if(_run_result)
+-         message(FATAL_ERROR "Qt compiled without support for -fvisibility=hidden. This will break plugins and linking of some applications. Please fix your Qt installation.")
+-      endif(_run_result)
++#      if(NOT _compile_result)
++#         message(FATAL_ERROR "Could not compile simple test program:\n ${_source}")
++#     endif(NOT _compile_result)
++#      if(_run_result)
++#         message(FATAL_ERROR "Qt compiled without support for -fvisibility=hidden. This will break plugins and linking of some applications. Please fix your Qt installation.")
++#      endif(_run_result)
+ 
+       if (GCC_IS_NEWER_THAN_4_2)
+           set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility-inlines-hidden")
