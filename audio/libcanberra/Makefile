@@ -7,7 +7,7 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/public/
 
@@ -23,16 +23,20 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	PULSE "Enable Pulse Audio support" on
+OPTIONS=	PULSE "Enable Pulse Audio support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PULSE)
+.if !defined(WITHOUT_PULSE)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=	PULSE=""
+PLIST_SUB+=	PULSE="" OSS="@comment "
+CONFIGURE_ARGS+=--disable-oss
 .else
 CONFIGURE_ARGS+=--disable-pulse
-PLIST_SUB+=	PULSE="@comment "
+PLIST_SUB+=	PULSE="@comment " OSS=""
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH}
 
 .include <bsd.port.post.mk>

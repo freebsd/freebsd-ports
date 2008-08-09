@@ -18,6 +18,9 @@ lib/libcanberra/libcanberra-multi.so
 lib/libcanberra/libcanberra-null.a
 lib/libcanberra/libcanberra-null.la
 lib/libcanberra/libcanberra-null.so
+%%OSS%%lib/libcanberra/libcanberra-oss.a
+%%OSS%%lib/libcanberra/libcanberra-oss.la
+%%OSS%%lib/libcanberra/libcanberra-oss.so
 %%PULSE%%lib/libcanberra/libcanberra-pulse.a
 %%PULSE%%lib/libcanberra/libcanberra-pulse.la
 %%PULSE%%lib/libcanberra/libcanberra-pulse.so
