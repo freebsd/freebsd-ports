@@ -353,6 +353,7 @@
     SUBDIR += kcpuload
     SUBDIR += kcube
     SUBDIR += kdeadmin3
+    SUBDIR += kdeadmin4
     SUBDIR += kdirstat
     SUBDIR += keep
     SUBDIR += kgtk
