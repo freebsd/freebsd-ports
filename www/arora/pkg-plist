@@ -1,0 +1,36 @@
+bin/arora
+share/applications/arora.desktop
+%%NLS%%share/arora/locale/cs_CZ.qm
+%%NLS%%share/arora/locale/da.qm
+%%NLS%%share/arora/locale/de.qm
+%%NLS%%share/arora/locale/en.qm
+%%NLS%%share/arora/locale/es.qm
+%%NLS%%share/arora/locale/et.qm
+%%NLS%%share/arora/locale/fr_CA.qm
+%%NLS%%share/arora/locale/fr_FR.qm
+%%NLS%%share/arora/locale/hu.qm
+%%NLS%%share/arora/locale/it.qm
+%%NLS%%share/arora/locale/nl.qm
+%%NLS%%share/arora/locale/pl.qm
+%%NLS%%share/arora/locale/pt_BR.qm
+%%NLS%%share/arora/locale/ru.qm
+%%NLS%%share/arora/locale/tr.qm
+%%NLS%%share/arora/locale/zh_CN.qm
+share/icons/hicolor/128x128/apps/arora.png
+share/icons/hicolor/16x16/apps/arora.png
+share/icons/hicolor/32x32/apps/arora.png
+share/icons/hicolor/scalable/apps/arora.svg
+share/pixmaps/arora.xpm
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/arora/locale
+@dirrm share/arora
+@dirrmtry share/applications

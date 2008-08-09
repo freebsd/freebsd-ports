@@ -1,0 +1,11 @@
+Arora is a simple cross platform web browser. Currently Arora is a
+very basic browser whose feature list includes things like "History"
+and "Bookmarks". It does not have support for netscape plugins, so
+no flash support until Qt 4.5. But it is small, less than 10,000
+lines of code, very fast, lean, mean and loads of fun to hack on.
+Arora and QtWebKit is developed to be cross-platform using the Qt
+library. It was originally created as a demo for Qt to help test
+the QtWebKit component and find API issues and bugs before the
+release.
+
+WWW:	http://code.google.com/p/arora/

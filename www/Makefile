@@ -31,6 +31,7 @@
     SUBDIR += aria
     SUBDIR += aria2
     SUBDIR += aria2fe
+    SUBDIR += arora
     SUBDIR += ashe
     SUBDIR += asp2php
     SUBDIR += asterisk-fop
