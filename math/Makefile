@@ -199,6 +199,7 @@
     SUBDIR += p5-Geo-Distance
     SUBDIR += p5-Graph
     SUBDIR += p5-Math-Algebra-Symbols
+    SUBDIR += p5-Math-Base36
     SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-BaseCalc
     SUBDIR += p5-Math-Bezier
