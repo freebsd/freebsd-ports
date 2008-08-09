@@ -6,7 +6,7 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	HEADERS		"Install Qsci headers" on \
 		TRANSLATIONS	"Install translations (de, fr, pt_br, ru)" off
+
+PLIST_SUB+=	QT_LIBDIR_REL=${QT_LIBDIR_REL}
 
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
@@ -62,8 +64,8 @@ do-install:
 	cd ${WRKSRC}/Qt4 && ${MAKE} install
 	cd ${WRKSRC}/lib &&\
 		${MV} libqscintilla2.so.3.0.0 libqscintilla2.so.3 &&\
-		${INSTALL_DATA} libqscintilla2.so.3 ${PREFIX}/lib &&\
-		cd ${PREFIX}/lib &&\
+		${INSTALL_DATA} libqscintilla2.so.3 ${PREFIX}/${QT_LIBDIR_REL} &&\
+		cd ${PREFIX}/${QT_LIBDIR_REL} &&\
 		${LN} -sf libqscintilla2.so.3 libqscintilla2.so &&\
 		${RM} ${PREFIX}/share/qt4/qsci/api/python/Python-2.4.api
 
