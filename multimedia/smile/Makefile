@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smile
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/smiletool/
 
