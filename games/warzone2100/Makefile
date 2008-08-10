@@ -40,7 +40,7 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -Ee 's|^(dist_doc_DATA =) .*|\1|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|^install: install-am|install|' \
+	@${REINPLACE_CMD} -e 's|^install: install-am|install:|' \
 		${WRKSRC}/doc/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's|AUTHORS||; s|COPYING COPYING\.README||' \
