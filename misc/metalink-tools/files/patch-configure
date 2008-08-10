@@ -1,0 +1,11 @@
+--- configure.orig	2008-08-10 05:57:49.000000000 -0300
++++ configure	2008-08-10 05:57:55.000000000 -0300
+@@ -1905,7 +1905,7 @@
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-  for ac_prog in mkdir gmkdir; do
++  for ac_prog in mkdir; do
+ 	 for ac_exec_ext in '' $ac_executable_extensions; do
+ 	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
+ 	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
