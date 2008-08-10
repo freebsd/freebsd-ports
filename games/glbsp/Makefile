@@ -59,9 +59,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libglbsp.a ${PREFIX}/lib
 .endif
 
+	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${MANPREFIX}/man/man1
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
