@@ -22,9 +22,11 @@ include/ffmpeg/mem.h
 include/ffmpeg/opt.h
 include/ffmpeg/random.h
 include/ffmpeg/rational.h
+include/ffmpeg/rgb2rgb.h
 include/ffmpeg/rtsp.h
 include/ffmpeg/rtspcodes.h
 include/ffmpeg/sha1.h
+include/ffmpeg/swscale.h
 include/libavcodec/avcodec.h
 include/libavcodec/opt.h
 include/libavdevice/avdevice.h
@@ -50,6 +52,8 @@ include/libavutil/rational.h
 include/libavutil/sha1.h
 include/libpostproc/postprocess.h
 include/postproc/postprocess.h
+include/libswscale/rgb2rgb.h
+include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
@@ -70,6 +74,10 @@ lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.1
 lib/libpostproc.so.51.1.0
+lib/libswscale.a
+lib/libswscale.so
+lib/libswscale.so.0.5.1
+lib/libswscale.so.1
 lib/vhook/fish.so
 lib/vhook/null.so
 lib/vhook/ppm.so
@@ -79,6 +87,7 @@ libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libpostproc.pc
+libdata/pkgconfig/libswscale.pc
 @dirrm lib/vhook
 @dirrm include/postproc
 @dirrm include/libpostproc
