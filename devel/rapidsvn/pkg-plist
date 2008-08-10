@@ -2,4 +2,4 @@ bin/rapidsvn
 lib/libsvncpp.a
 lib/libsvncpp.la
 lib/libsvncpp.so
-lib/libsvncpp.so.0
+lib/libsvncpp.so.1
