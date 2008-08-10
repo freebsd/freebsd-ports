@@ -7,7 +7,7 @@
 
 PORTNAME=	ucspi-unix
 PORTVERSION=	0.36
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
