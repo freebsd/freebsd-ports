@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc8
-PORTREVISION=	1
+DISTVERSION=	2.1_rc9
 CATEGORIES=	security net
-MASTER_SITES=	https://secure.openvpn.net/beta/
+MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	matthias.andree@gmx.de
@@ -26,7 +25,8 @@ INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
 MAN8=		openvpn.8
 
-OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
+OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
+		PKCS11  "Use security/pkcs11-helper" off
 
 USE_RC_SUBR=	openvpn.sh
 USE_LDCONFIG=	${PREFIX}/lib
@@ -50,6 +50,12 @@ LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 
 .if defined(WITH_PW_SAVE)
 CONFIGURE_ARGS+=	--enable-password-save
+.endif
+
+.if defined(WITH_PKCS11)
+LIB_DEPENDS+=	pkcs11-helper.1:${PORTSDIR}/security/pkcs11-helper
+.else
+CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
 
 post-patch:
