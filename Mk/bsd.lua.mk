@@ -150,7 +150,7 @@ _LUA_PORT_ruby_4.0=		lang/ruby-lua4
 
 _LUA_PORT_lua_5.0=		lang/lua50
 _LUA_DEPTYPE_lua_5.0=	lib
-_LUA_PORT_tolua_5.0=	lang/tolua
+_LUA_PORT_tolua_5.0=	lang/tolua50
 _LUA_PORT_ruby_5.0=		lang/ruby-lua
 
 _LUA_PORT_app_5.0=		devel/lua50-app
@@ -171,6 +171,7 @@ _LUA_PORT_gettext_5.1=	devel/lua-gettext
 _LUA_PORT_posix_5.1=	devel/lua-posix
 _LUA_PORT_pty_5.1=		devel/lua-pty
 _LUA_PORT_socket_5.1=	net/luasocket
+_LUA_PORT_tolua_5.1=	lang/tolua
 
 .	for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}
