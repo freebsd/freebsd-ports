@@ -7,20 +7,29 @@
 
 PORTNAME=	tolua++
 PORTVERSION=	1.0.92
+PORTREVISION=	1
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.codenix.com/~tolua/
+MASTER_SITES=	http://www.codenix.com/~tolua/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
 
-LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua50
-
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
+USE_LUA=	5.1
 USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX}
 
-CFLAGS+=	-I/usr/local/include/lua50
-LDFLAGS+=	-L/usr/local/lib/lua50
+CFLAGS+=	-I${LUA_INCDIR}
+LDFLAGS+=	-L${LUA_LIBDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|'lualib',||" ${WRKSRC}/config_posix.py
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${LUA_BINDIR}
+	${LN} -sf ${LUA_SUBDIR}/tolua++ ${PREFIX}/bin/tolua++-${LUA_VER}
+	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${LUA_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${LUA_LIBDIR}
 
 .include <bsd.port.mk>

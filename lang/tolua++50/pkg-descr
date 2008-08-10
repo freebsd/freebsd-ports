@@ -1,9 +1,9 @@
 tolua++ is an extended version of tolua, a tool to integrate C/C++ code 
 with Lua. tolua++ includes new features oriented to c++ such as:
 
-    * Support for std::string as a basic type (this can be turned off by a 
-command line option).
-    * Support for class templates
+* Support for std::string as a basic type (this can be turned off by a 
+  command line option).
+* Support for class templates
 
 As well as other features and bugfixes.
 
