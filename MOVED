@@ -378,7 +378,6 @@ www/mozilla-headers-vendor|www/mozilla-headers|2003-07-01|vendor tree in sync wi
 www/skipstone||2003-07-01|port is more than a year old with no update in sight
 graphics/glass||2003-07-03|useless
 www/linux-phoenix|www/linux-mozillafirebird|2003-07-03|legal problem with name
-graphics/kpovmodeler||2003-07-03|now part of kdegraphics
 www/linux-opera7|www/linux-opera|2003-07-09|move to www/linux-opera
 www/xswallow||2003-07-12|port is obsolete
 net/gnut||2003-07-12|security vulnerability, and no active development

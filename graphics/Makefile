@@ -352,6 +352,7 @@
     SUBDIR += kludge3d
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kpovmodeler
     SUBDIR += kradview
     SUBDIR += kudu
     SUBDIR += kuickshow
