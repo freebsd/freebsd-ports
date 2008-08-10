@@ -20,11 +20,13 @@ LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-audio=oss
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
 
 OPTIONS=	GSTREAMER "Support for decoding some codecs with GStreamer" off
 
@@ -38,6 +40,7 @@ USE_GSTREAMER=	yes
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--disable-gstreamer --enable-ffmpeg --enable-mad
+CPPFLAGS+=	-I${LOCALBASE}/include/ffmpeg
 .endif
 
 post-patch:
