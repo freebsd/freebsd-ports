@@ -1,71 +1,114 @@
---- Makefile.orig	2008-02-18 21:45:37.000000000 -0300
-+++ Makefile	2008-03-10 14:59:23.000000000 -0300
-@@ -20,7 +20,6 @@
+--- ./Makefile.orig	2008-06-30 21:16:48.000000000 -0300
++++ ./Makefile	2008-08-10 13:40:38.000000000 -0300
+@@ -34,14 +34,27 @@
+ endif
+ endif
  
- # Where to install things:
+-# test if a library can be linked
+-linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
++# test compiler options
++comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $(LDFLAGS) > /dev/null 2>&1; \
+ 	then \
+ 		echo "$(1)"; \
+ 	fi ;)
  
--PREFIX=/usr/local
+-# test compiler options
+-comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $(LDFLAGS) > /dev/null 2>&1; \
++#-ffast-math
++OPTFLAGS:=-O2
++CFLAGS:=$(CFLAGS) -I$(LOCALBASE)/include \
++	$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
++	$(call comptest,-fvisibility=hidden,) \
++	-Wcast-align -Wredundant-decls \
++	-Wbad-function-cast -Wwrite-strings \
++	-Waggregate-return \
++	-Wstrict-prototypes -Wmissing-prototypes \
++	$(shell src/test-option.sh -Wstrict-aliasing=2)
++
++LDFLAGS=-L$(LOCALBASE)/lib
++
++# test if a library can be linked
++linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
+ 	then \
+ 		echo "$(1)"; \
+ 	fi ;)
+@@ -122,9 +135,9 @@
  
- 
- # Root directory to place files when creating packages.
-@@ -48,9 +47,9 @@
  # Docs and man page:
- 
- DOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint
--DEVDOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint-dev
--MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
--DEVMAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
-+DEVDOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint/dev
-+MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/man
-+DEVMAN_PREFIX=$(PKG_ROOT)$(PREFIX)/man
+ DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
+-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+-MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
+-DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
++DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint/dev
++MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
++DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
  
  
  # 'System-wide' Config file:
-@@ -119,12 +118,8 @@
- SDL_CFLAGS=$(shell sdl-config --cflags) $(SVG_CFLAGS)
+@@ -136,7 +149,7 @@
  
+ # Icons and launchers:
+ ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
+-X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
++X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
+ GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
+ KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
+ KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
+@@ -191,23 +204,13 @@
+ 	@echo 'SDL_LIBS      is' $(SDL_LIBS)
+ 	@echo 'SDL_CFLAGS    is' $(SDL_CFLAGS)
+ 	@echo 'SVG_CFLAGS    is' $(SVG_CFLAGS)
+-	@echo 'LDFLAGS       is' $(LDFLAGS)
++	@echo '$(CFLAGS) -I$(LOCALBASE)/include \DFLAGS       is' $(LDFLAGS)
+ 	@echo 'CFLAGS        is' $(CFLAGS)
+ 	@echo 'CPPFLAGS      is' $(CPPFLAGS)
+ endif
  
--SVG_LIB=-lrsvg-2 -lcairo
--SVG_CFLAGS=-I/usr/include/librsvg-2/librsvg \
--	-I/usr/include/gtk-2.0 \
--	-I/usr/include/glib-2.0 \
--	-I/usr/lib/glib-2.0/include \
--	-I/usr/include/cairo
-+SVG_LIB=`pkg-config --libs librsvg-2.0 cairo`
-+SVG_CFLAGS=`pkg-config --cflags librsvg-2.0 cairo`
+ # The entire set of CFLAGS:
  
- PAPER_LIB=-lpaper
- ARCH_LIBS=obj/postscript_print.o
-@@ -134,7 +129,8 @@
+-#-ffast-math
+-OPTFLAGS:=-O2
+-CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
+-	$(call comptest,-fvisibility=hidden,) \
+-	-Wcast-align -Wredundant-decls \
+-	-Wbad-function-cast -Wwrite-strings \
+-	-Waggregate-return \
+-	-Wstrict-prototypes -Wmissing-prototypes \
+-	$(shell src/test-option.sh -Wstrict-aliasing=2)
+-
+ DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
+ 	-DDATA_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DATA_PREFIX))/\" \
+ 	-DDOC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DOC_PREFIX))/\" \
+@@ -300,7 +303,8 @@
+ INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
  
- #-ffast-math
- OPTFLAGS=-O2
--CFLAGS=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
-+MYCFLAGS:=$(CFLAGS)
-+CFLAGS+=$(OPTFLAGS) -W -Wall -fno-common -ffloat-store -I$(LOCALBASE)/include \
- 	-Wcast-align -Wredundant-decls \
- 	-Wbad-function-cast -Wwrite-strings \
- 	-Waggregate-return \
-@@ -362,8 +358,7 @@
- 		install-magic-plugin-dev \
- 		install-icon install-gettext install-im install-importscript \
- 		install-default-config install-example-stamps \
--		install-example-starters \
--		install-gnome install-kde install-kde-icons
-+		install-example-starters
- 	@echo
- 	@echo "--------------------------------------------------------------"
- 	@echo
-@@ -553,7 +548,7 @@
- 	@-rm -f src/tp_magic_api.h
- 	@-rm -f tp-magic-config
- 	@if [ -d trans ]; then rmdir trans; fi
--	@cd magic && make clean$(TARGET_PASSTHRU)
-+	@cd magic && $(MAKE) clean$(TARGET_PASSTHRU)
- 	@echo
+ $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
+-	install -D -m 644 $< $@
++	test -d `dirname $@` || mkdir -p `dirname $@`
++	$(BSD_INSTALL_DATA) $< $@
  
- clean-win32:
-@@ -609,8 +604,10 @@
+ .PHONY: uninstall-i18n
+ uninstall-i18n:
+@@ -390,7 +394,7 @@
+ windows_ARCH_INSTALL:=
+ osx_ARCH_INSTALL:=
+ beos_ARCH_INSTALL:=
+-linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
++linux_ARCH_INSTALL:=
+ ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
+ 
+ # "make install" installs all of the various parts
+@@ -445,9 +449,6 @@
+ 	@install -d $(INCLUDE_PREFIX)/tuxpaint
+ 	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
+ 	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
+-	@install -d $(DEVDOC_PREFIX)
+-	@cp -R magic/docs/* $(DEVDOC_PREFIX)
+-	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
+ 
+ # Installs the various parts for the MinGW/MSYS development/testing environment.
+ 
+@@ -554,8 +555,10 @@
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -78,17 +121,27 @@
  
  
  # Install example stamps
-@@ -738,9 +735,6 @@
- 	@install -d $(ICON_PREFIX)
- 	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
- 	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
--	@install -d $(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm
--	@chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm
+@@ -572,7 +575,8 @@
+ INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
+ 
+ $(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
+-	install -D -m 644 $< $@
++	test -d `dirname $@` || mkdir -p `dirname $@`
++	$(BSD_INSTALL_DATA) $< $@
+ 
+ # Install example starters
+ .PHONY: install-example-starters
+@@ -790,6 +794,9 @@
+ 	@cp -R docs/* $(DOC_PREFIX)
+ 	@cp -R magic/magic-docs $(DOC_PREFIX)
+ 	@chmod a=rX,g=rX,u=rwX $(DOC_PREFIX)
++	@install -d $(DEVDOC_PREFIX)
++	@cp -R magic/docs/* $(DEVDOC_PREFIX)
++	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
  
  
- # Install the program:
-@@ -853,12 +847,6 @@
+ # Install the man page:
+@@ -803,12 +810,6 @@
  	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
@@ -101,37 +154,3 @@
  	@# tuxpaint-import.1
  	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-@@ -886,7 +874,7 @@
- 		$(SDL_LIBS) \
- 		$(SVG_LIB) \
- 		$(PAPER_LIB) \
--		$(ARCH_LINKS)
-+		$(ARCH_LINKS) -lintl -lpng
- 	@$(RSRC_CMD)
- 	@$(MIMESET_CMD)
- 
-@@ -1016,7 +1004,7 @@
- # Go into 'magic' subdirectory and buld magic plug-ins
- 
- magic-plugins:	src/tp_magic_api.h
--	@cd magic && make $(TARGET_PASSTHRU)
-+	@cd magic && $(MAKE) $(TARGET_PASSTHRU)
- 
- 
- src/tp_magic_api.h:	src/tp_magic_api.h.in
-@@ -1028,13 +1016,13 @@
- tp-magic-config:	src/tp-magic-config.sh.in Makefile
- 	@echo
- 	@echo "...Generating 'Magic' tool API configuration script..."
--	@sed src/tp-magic-config.sh.in -e s/__VERSION__/$(VER_VERSION)/ \
-+	@sed -e s/__VERSION__/$(VER_VERSION)/ \
- 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
- 		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
- 		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
- 		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
- 		-e s=__PLUGINDOCPREFIX__=$(DOC_PREFIX)/magic-docs= \
--		> tp-magic-config
-+		src/tp-magic-config.sh.in > tp-magic-config
- 
- # Make the "obj" directory to throw the object(s) into:
- # (not necessary any more; bjk 2006.02.20)
