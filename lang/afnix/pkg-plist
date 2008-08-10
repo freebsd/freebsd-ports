@@ -5,17 +5,6 @@ bin/axl
 bin/axs
 etc/afnix/afnix-gud.el
 etc/afnix/afnix-mode.el
-include/afnix/cpy/Aes.hpp
-include/afnix/cpy/Cipher.hpp
-include/afnix/cpy/Crypto.hpp
-include/afnix/cpy/Hasher.hpp
-include/afnix/cpy/InputCipher.hpp
-include/afnix/cpy/Key.hpp
-include/afnix/cpy/Md5.hpp
-include/afnix/cpy/Sha1.hpp
-include/afnix/cpy/Sha256.hpp
-include/afnix/cpy/Sha384.hpp
-include/afnix/cpy/Sha512.hpp
 include/afnix/eng/Argument.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
@@ -51,6 +40,10 @@ include/afnix/gfx/Graph.hpp
 include/afnix/gfx/Libgfx.hpp
 include/afnix/gfx/Predgfx.hpp
 include/afnix/gfx/Vertex.hpp
+include/afnix/mth/Libmth.hpp
+include/afnix/mth/Mpia.hpp
+include/afnix/mth/Primality.hpp
+include/afnix/mth/Random.hpp
 include/afnix/net/Address.hpp
 include/afnix/net/Datagram.hpp
 include/afnix/net/Libnet.hpp
@@ -98,6 +91,29 @@ include/afnix/plt/cstr.hpp
 include/afnix/plt/csys.hpp
 include/afnix/plt/cthr.hpp
 include/afnix/plt/ctrm.hpp
+include/afnix/plt/cucd.hpp
+include/afnix/sec/Aes.hpp
+include/afnix/sec/BlockCipher.hpp
+include/afnix/sec/Cipher.hpp
+include/afnix/sec/Crypto.hpp
+include/afnix/sec/Hasher.hpp
+include/afnix/sec/Hkdf.hpp
+include/afnix/sec/InputCipher.hpp
+include/afnix/sec/Kdf.hpp
+include/afnix/sec/Kdf1.hpp
+include/afnix/sec/Kdf2.hpp
+include/afnix/sec/Key.hpp
+include/afnix/sec/Libsec.hpp
+include/afnix/sec/Md2.hpp
+include/afnix/sec/Md4.hpp
+include/afnix/sec/Md5.hpp
+include/afnix/sec/Predsec.hpp
+include/afnix/sec/PublicCipher.hpp
+include/afnix/sec/Rsa.hpp
+include/afnix/sec/Sha1.hpp
+include/afnix/sec/Sha256.hpp
+include/afnix/sec/Sha384.hpp
+include/afnix/sec/Sha512.hpp
 include/afnix/sio/Directory.hpp
 include/afnix/sio/Libsio.hpp
 include/afnix/sio/Logtee.hpp
@@ -126,6 +142,7 @@ include/afnix/std/Condvar.hpp
 include/afnix/std/Cons.hpp
 include/afnix/std/Cursor.hpp
 include/afnix/std/Date.hpp
+include/afnix/std/Encoding.hpp
 include/afnix/std/Exception.hpp
 include/afnix/std/Freeable.hpp
 include/afnix/std/HashTable.hpp
@@ -151,14 +168,17 @@ include/afnix/std/Monitor.hpp
 include/afnix/std/Mutex.hpp
 include/afnix/std/NameTable.hpp
 include/afnix/std/Nameable.hpp
+include/afnix/std/Number.hpp
 include/afnix/std/Object.hpp
 include/afnix/std/Options.hpp
 include/afnix/std/Output.hpp
 include/afnix/std/OutputFile.hpp
 include/afnix/std/OutputString.hpp
 include/afnix/std/OutputTerm.hpp
+include/afnix/std/Pathlist.hpp
 include/afnix/std/Pathname.hpp
 include/afnix/std/Plist.hpp
+include/afnix/std/Prime.hpp
 include/afnix/std/PrintTable.hpp
 include/afnix/std/Property.hpp
 include/afnix/std/QuarkArray.hpp
@@ -191,7 +211,6 @@ include/afnix/std/Unimapper.hpp
 include/afnix/std/Unitabler.hpp
 include/afnix/std/Utility.hpp
 include/afnix/std/Vector.hpp
-include/afnix/std/cucd.hpp
 include/afnix/sys/Libsys.hpp
 include/afnix/sys/Predsys.hpp
 include/afnix/sys/SysCalls.hpp
@@ -214,6 +233,7 @@ include/afnix/wax/XhtmlCgr.hpp
 include/afnix/wax/XhtmlCol.hpp
 include/afnix/wax/XhtmlDiv.hpp
 include/afnix/wax/XhtmlEmph.hpp
+include/afnix/wax/XhtmlEquiv.hpp
 include/afnix/wax/XhtmlHead.hpp
 include/afnix/wax/XhtmlHr.hpp
 include/afnix/wax/XhtmlHtml.hpp
@@ -298,6 +318,9 @@ lib/libafnix-eng.so.1
 lib/libafnix-gfx.a
 lib/libafnix-gfx.so
 lib/libafnix-gfx.so.1
+lib/libafnix-mth.a
+lib/libafnix-mth.so
+lib/libafnix-mth.so.1
 lib/libafnix-net.a
 lib/libafnix-net.so
 lib/libafnix-net.so.1
@@ -310,6 +333,9 @@ lib/libafnix-pim.so.1
 lib/libafnix-plt.a
 lib/libafnix-plt.so
 lib/libafnix-plt.so.1
+lib/libafnix-sec.a
+lib/libafnix-sec.so
+lib/libafnix-sec.so.1
 lib/libafnix-sio.a
 lib/libafnix-sio.so
 lib/libafnix-sio.so.1
@@ -335,13 +361,14 @@ lib/libafnix-xpe.a
 lib/libafnix-xpe.so
 lib/libafnix-xpe.so.1
 @dirrm etc/afnix
-@dirrm include/afnix/cpy
 @dirrm include/afnix/eng
 @dirrm include/afnix/gfx
+@dirrm include/afnix/mth
 @dirrm include/afnix/net
 @dirrm include/afnix/nwg
 @dirrm include/afnix/pim
 @dirrm include/afnix/plt
+@dirrm include/afnix/sec
 @dirrm include/afnix/sio
 @dirrm include/afnix/sps
 @dirrm include/afnix/std
