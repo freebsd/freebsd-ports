@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ditrack
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ditrack.org/files/
 EXTRACT_SUFX=	.tgz
@@ -27,7 +26,7 @@ WRKSRC=		${WRKDIR}/DITrack-${PORTVERSION}
 
 post-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/upgrade-0.5-db.py ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/upgrade-0.7-db.py ${DATADIR}
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/index.html ${DOCSDIR}
