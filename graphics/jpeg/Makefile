@@ -9,7 +9,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
