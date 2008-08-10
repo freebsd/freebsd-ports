@@ -1,0 +1,348 @@
+--- ./Makefile.orig	2008-06-11 23:35:55.000000000 -0300
++++ ./Makefile	2008-06-27 20:31:07.000000000 -0300
+@@ -23,29 +23,6 @@
+   endif
+ endif
+ 
+-ifndef BUILD_STANDALONE
+-  BUILD_STANDALONE =
+-endif
+-ifndef BUILD_CLIENT
+-  BUILD_CLIENT     =
+-endif
+-ifndef BUILD_CLIENT_SMP
+-  BUILD_CLIENT_SMP =
+-endif
+-ifndef BUILD_SERVER
+-  BUILD_SERVER     =
+-endif
+-ifndef BUILD_GAME_SO
+-  BUILD_GAME_SO    =
+-endif
+-ifndef BUILD_GAME_QVM
+-  BUILD_GAME_QVM   =
+-endif
+-
+-ifneq ($(PLATFORM),darwin)
+-  BUILD_CLIENT_SMP = 0
+-endif
+-
+ #############################################################################
+ #
+ # If you require a different configuration from the defaults below, create a
+@@ -97,50 +74,25 @@
+ GENERATE_DEPENDENCIES=1
+ endif
+ 
+-ifndef USE_OPENAL
+-USE_OPENAL=1
+-endif
+-
+-ifndef USE_OPENAL_DLOPEN
+-  ifeq ($(PLATFORM),mingw32)
+-    USE_OPENAL_DLOPEN=1
+-  else
+-    USE_OPENAL_DLOPEN=0
+-  endif
+-endif
+-
+-ifndef USE_CURL
+-USE_CURL=1
+-endif
+-
+-ifndef USE_CURL_DLOPEN
+-  ifeq ($(PLATFORM),mingw32)
+-    USE_CURL_DLOPEN=0
+-  else
+-    USE_CURL_DLOPEN=1
+-  endif
+-endif
+-
+-ifndef USE_CODEC_VORBIS
+-USE_CODEC_VORBIS=0
+-endif
+-
+-ifndef USE_MUMBLE
+-USE_MUMBLE=1
+-endif
+-
+-ifndef USE_VOIP
+-USE_VOIP=1
+-endif
+-
+-ifndef USE_LOCAL_HEADERS
+-USE_LOCAL_HEADERS=1
+-endif
++BUILD_STANDALONE=0
++BUILD_CLIENT?=0
++BUILD_CLIENT_SMP?=0
++BUILD_SERVER?=0
++BUILD_GAME_SO?=0
++BUILD_GAME_QVM=0
++USE_OPENAL?=0
++USE_OPENAL_DLOPEN?=0
++USE_CURL?=0
++USE_CURL_DLOPEN?=0
++USE_CODEC_VORBIS?=0
++USE_MUMBLE=0
++USE_VOIP?=0
++USE_LOCAL_HEADERS=0
+ 
+ #############################################################################
+ 
+-BD=$(BUILD_DIR)/debug-$(PLATFORM)-$(ARCH)
+-BR=$(BUILD_DIR)/release-$(PLATFORM)-$(ARCH)
++BD=$(BUILD_DIR)/debug
++BR=$(BUILD_DIR)/release
+ CDIR=$(MOUNT_DIR)/client
+ SDIR=$(MOUNT_DIR)/server
+ RDIR=$(MOUNT_DIR)/renderer
+@@ -493,15 +445,11 @@
+ 
+ ifeq ($(PLATFORM),freebsd)
+ 
+-  ifneq (,$(findstring alpha,$(shell uname -m)))
+-    ARCH=axp
+-  else #default to i386
+-    ARCH=i386
+-  endif #alpha test
+-
++  BASE_CFLAGS = -DARCH='\"$(ARCH)\"' -I$(LOCALBASE)/include -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
++    -DLIBDIR='\"$(LIBDIR)\"' -DUSE_ICON $(shell sdl-config --cflags)
+ 
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
+-    -DUSE_ICON $(shell sdl-config --cflags)
++  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
+ 
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL
+@@ -514,23 +462,18 @@
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS
+   endif
+ 
+-  ifeq ($(ARCH),axp)
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
+-      -fomit-frame-pointer -fexpensive-optimizations
+-  else
+-  ifeq ($(ARCH),i386)
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
+-      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
+-    HAVE_VM_COMPILED=true
+-  else
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+-  endif
++  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
++    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
++       -fexpensive-optimizations
++    ifeq ($(ARCH),i386)
++      RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++         -fstrength-reduce
++    endif
+   endif
+ 
+-  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++  ifneq ($(HAVE_VM_COMPILED),true)
++    BASE_CFLAGS += -DNO_VM_COMPILED
++  endif
+ 
+   SHLIBEXT=so
+   SHLIBCFLAGS=-fPIC
+@@ -540,13 +483,23 @@
+   # don't need -ldl (FreeBSD)
+   LDFLAGS=-lm
+ 
+-  CLIENT_LDFLAGS =
++  CLIENT_LDFLAGS = -L$(LOCALBASE)/lib
+ 
+   CLIENT_LDFLAGS += $(shell sdl-config --libs) -lGL
+ 
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_LDFLAGS += $(THREAD_LDFLAGS)
+     ifneq ($(USE_OPENAL_DLOPEN),1)
+-      CLIENT_LDFLAGS += $(THREAD_LDFLAGS) -lopenal
++      CLIENT_LDFLAGS += -lopenal
++    endif
++  endif
++
++  ifeq ($(USE_CURL),1)
++    BASE_CFLAGS += -DUSE_CURL=1
++    ifneq ($(USE_CURL_DLOPEN),1)
++      CLIENT_LDFLAGS += -lcurl
++    else
++      BASE_CFLAGS += -DUSE_CURL_DLOPEN=1
+     endif
+   endif
+ 
+@@ -759,24 +712,24 @@
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/evq3ded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/evq3ded$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/evq3.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/evq3$(BINEXT)
+   ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/evq3-smp.$(ARCH)$(BINEXT)
++    TARGETS += $(B)/evq3-smp$(BINEXT)
+   endif
+ endif
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/ui$(ARCH).$(SHLIBEXT)     \
+-    $(B)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/missionpack/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/missionpack/ui$(ARCH).$(SHLIBEXT)
++    $(B)/baseq3/cgame.$(SHLIBEXT) \
++    $(B)/baseq3/qagame.$(SHLIBEXT) \
++    $(B)/baseq3/ui.$(SHLIBEXT)     \
++    $(B)/missionpack/cgame.$(SHLIBEXT) \
++    $(B)/missionpack/qagame.$(SHLIBEXT) \
++    $(B)/missionpack/ui.$(SHLIBEXT)
+ endif
+ 
+ ifneq ($(BUILD_GAME_QVM),0)
+@@ -1388,9 +1341,15 @@
+   ifeq ($(ARCH),x86)
+     Q3OBJ += $(B)/client/vm_x86.o
+   endif
++  ifeq ($(ARCH),amd64)
++    Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
++  endif
+   ifeq ($(ARCH),x86_64)
+     Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
++  ifeq ($(ARCH),powerpc)
++    Q3OBJ += $(B)/client/vm_ppc.o
++  endif
+   ifeq ($(ARCH),ppc)
+     Q3OBJ += $(B)/client/vm_ppc.o
+   endif
+@@ -1416,12 +1375,12 @@
+ Q3POBJ_SMP += \
+   $(B)/clientsmp/sdl_glimp.o
+ 
+-$(B)/evq3.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/evq3$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
+ 		$(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/evq3-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/evq3-smp$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+@@ -1529,9 +1488,15 @@
+   ifeq ($(ARCH),x86)
+     Q3DOBJ += $(B)/ded/vm_x86.o
+   endif
++  ifeq ($(ARCH),amd64)
++    Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
++  endif
+   ifeq ($(ARCH),x86_64)
+     Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
++  ifeq ($(ARCH),powerpc)
++    Q3DOBJ += $(B)/ded/vm_ppc.o
++  endif
+   ifeq ($(ARCH),ppc)
+     Q3DOBJ += $(B)/ded/vm_ppc.o
+   endif
+@@ -1548,7 +1513,7 @@
+     $(B)/ded/con_tty.o
+ endif
+ 
+-$(B)/evq3ded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/evq3ded$(BINEXT): $(Q3DOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+@@ -1588,7 +1553,7 @@
+ Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
+ Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/cgame$(ARCH).$(SHLIBEXT): $(Q3CGOBJ)
++$(B)/baseq3/cgame.$(SHLIBEXT): $(Q3CGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
+ 
+@@ -1632,7 +1597,7 @@
+ MPCGOBJ = $(MPCGOBJ_) $(B)/missionpack/cgame/cg_syscalls.o
+ MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/cgame$(ARCH).$(SHLIBEXT): $(MPCGOBJ)
++$(B)/missionpack/cgame.$(SHLIBEXT): $(MPCGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
+ 
+@@ -1685,7 +1650,7 @@
+ Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
+ Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/qagame$(ARCH).$(SHLIBEXT): $(Q3GOBJ)
++$(B)/baseq3/qagame.$(SHLIBEXT): $(Q3GOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
+ 
+@@ -1736,7 +1701,7 @@
+ MPGOBJ = $(MPGOBJ_) $(B)/missionpack/game/g_syscalls.o
+ MPGVMOBJ = $(MPGOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/qagame$(ARCH).$(SHLIBEXT): $(MPGOBJ)
++$(B)/missionpack/qagame.$(SHLIBEXT): $(MPGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
+ 
+@@ -1799,7 +1764,7 @@
+ Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+ Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/ui$(ARCH).$(SHLIBEXT): $(Q3UIOBJ)
++$(B)/baseq3/ui.$(SHLIBEXT): $(Q3UIOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
+ 
+@@ -1827,7 +1792,7 @@
+ MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+ MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm)
+ 
+-$(B)/missionpack/ui$(ARCH).$(SHLIBEXT): $(MPUIOBJ)
++$(B)/missionpack/ui.$(SHLIBEXT): $(MPUIOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(MPUIOBJ)
+ 
+@@ -2018,18 +1983,18 @@
+ endif
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/baseq3/cgame.$(SHLIBEXT) \
+ 					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/baseq3/qagame.$(SHLIBEXT) \
+ 					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/ui$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/baseq3/ui.$(SHLIBEXT) \
+ 					$(COPYDIR)/baseq3/.
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+-	$(INSTALL) -s -m 0755 $(BR)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/missionpack/cgame.$(SHLIBEXT) \
+ 					$(COPYDIR)/missionpack/.
+-	$(INSTALL) -s -m 0755 $(BR)/missionpack/qagame$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/missionpack/qagame.$(SHLIBEXT) \
+ 					$(COPYDIR)/missionpack/.
+-	$(INSTALL) -s -m 0755 $(BR)/missionpack/ui$(ARCH).$(SHLIBEXT) \
++	$(INSTALL) -s -m 0755 $(BR)/missionpack/ui.$(SHLIBEXT) \
+ 					$(COPYDIR)/missionpack/.
+ endif
+ 
