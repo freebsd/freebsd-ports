@@ -114,6 +114,9 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid26
 
+DEPRECATED=	The 2.6 series is no longer actively maintained by the Squid developers
+EXPIRATION_DATE=	2008-12-31
+
 CONFLICTS=	squid-2.[^6]* squid-3.* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
