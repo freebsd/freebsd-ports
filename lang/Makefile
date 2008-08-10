@@ -333,6 +333,7 @@
     SUBDIR += tinycobol
     SUBDIR += tolua
     SUBDIR += tolua++
+    SUBDIR += tolua++50
     SUBDIR += tolua4
     SUBDIR += tolua50
     SUBDIR += treecc
