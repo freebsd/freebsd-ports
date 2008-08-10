@@ -20,7 +20,6 @@ BAD_GST_ALL_PLUGINS+= \
 		directfb \
 		divx \
 		dts \
-		dvb \
 		faac \
 		faad \
 		gsm \
@@ -29,23 +28,22 @@ BAD_GST_ALL_PLUGINS+= \
 		libmms \
 		metadata \
 		mpeg2enc \
+		mplex \
 		musepack \
 		musicbrainz \
 		mythtv \
 		nas \
 		neon \
+		ofa \
+		resindvd \
 		sdl \
 		sndfile \
 		soundtouch \
 		spc \
 		swfdec \
 		timidity \
-		wildmidi \
 		x264 \
 		xvid
-#		ladspa \
-#		theora
-
 # good
 GOOD_GST_ALL_PLUGINS+= \
 		aalib \
