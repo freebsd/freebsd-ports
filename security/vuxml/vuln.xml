@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c61ca9cb-64c3-11dd-954d-006097bcc5f4">
+    <topic>openvpn-devel -- arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>openvpn-devel</name>
+	<range><ge>2.1.b14</ge><lt>2.1.r9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/index.php/documentation/change-log/changelog-21.html">
+	  <p>Security Fix &ndash; affects non-Windows OpenVPN clients running
+	    OpenVPN 2.1-beta14 through 2.1-rc8 (OpenVPN 2.0.x clients are NOT
+	    vulnerable nor are any versions of the OpenVPN server
+	    vulnerable).</p>
+	  <p>An OpenVPN client connecting to a malicious or compromised server
+	    could potentially receive an "lladdr" or "iproute" configuration
+	    directive from the server which could cause arbitrary code execution
+	    on the client. A successful attack requires that (a) the client has
+	    agreed to allow the server to push configuration directives to it by
+	    including "pull" or the macro "client" in its configuration file,
+	    (b) the client succesfully authenticates the server, (c) the server
+	    is malicious or has been compromised and is under the control of the
+	    attacker, and (d) the client is running a non-Windows OS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3459</cvename>
+      <url>http://openvpn.net/index.php/documentation/change-log/changelog-21.html</url>
+    </references>
+    <dates>
+      <discovery>2008-07-31</discovery>
+      <entry>2008-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35e54755-54e4-11dd-ad8b-0030843d3802">
     <topic>phpmyadmin -- cross site request forgery vulnerabilites</topic>
     <affects>
