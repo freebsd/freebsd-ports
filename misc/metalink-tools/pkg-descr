@@ -11,6 +11,6 @@ Features currently include:
   crc32 ed2k gnunet
 - Generation of Metalink files from MD5SUMS lists
 
-WWW: http://www.metalinker.org/
+WWW: http://metalinks.sourceforge.net/
 
 -- lioux@FreeBSD.org
