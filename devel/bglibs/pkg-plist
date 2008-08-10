@@ -25,9 +25,12 @@ include/bglibs/crypto/sha256.h
 include/bglibs/crypto/sha384.h
 include/bglibs/crypto/sha512.h
 include/bglibs/crypto/surf.h
+include/bglibs/crypto/surfrand.h
 include/bglibs/dict/dict.h
 include/bglibs/dict/load.h
 include/bglibs/fmt/number.h
+include/bglibs/fmt/misc.h
+include/bglibs/fmt/multi.h
 include/bglibs/installer.h
 include/bglibs/iobuf/common.h
 include/bglibs/iobuf/ibuf.h
@@ -59,6 +62,7 @@ include/bglibs/unix/fcntl.h
 include/bglibs/unix/nonblock.h
 include/bglibs/unix/selfpipe.h
 include/bglibs/unix/sig.h
+include/bglibs/unix/signalfd.h
 include/bglibs/unix/trigger.h
 include/bglibs/vmailmgr/client.h
 include/bglibs/vmailmgr/vpwentry.h
@@ -68,7 +72,7 @@ lib/bglibs/cdb/make.a
 lib/bglibs/cdb/str.a
 lib/bglibs/cli/cli.a
 lib/bglibs/crypt.lib
-lib/bglibs/crypto/md5
+lib/bglibs/crypto/md5.a
 lib/bglibs/crypto/sha1.a
 lib/bglibs/crypto/sha256.a
 lib/bglibs/crypto/sha512a.a
@@ -97,12 +101,12 @@ lib/bglibs/libbg-str.a
 lib/bglibs/libbg-sysdeps.a
 lib/bglibs/libbg-sysdeps.la
 lib/bglibs/libbg-sysdeps.so
-lib/bglibs/libbg-sysdeps.so.1
 lib/bglibs/libbg-unix.a
 lib/bglibs/libbg.a
 lib/bglibs/libbg.la
 lib/bglibs/libbg.so
-lib/bglibs/libbg.so.1
+lib/bglibs/libbg-sysdeps.so.2
+lib/bglibs/libbg.so.2
 lib/bglibs/libinstaller.a
 lib/bglibs/libinstcheck.a
 lib/bglibs/libinstshow.a
@@ -145,16 +149,15 @@ lib/bglibs/vmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/cmsg_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_201548bc8cd7b18da7ab15618d9a7744.html
-%%PORTDOCS%%%%DOCSDIR%%/dir_2805fc067ac3c994482d36466862609a.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_28609d2f6b17322077df409bed0e8d02.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_3fb7bf5367cadb161b081662ce57c8a3.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_74e682a418f682a90c4a9d71beb28fdd.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_a2e2a6ddf2b9459cbc3be164f3c73476.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_b467e31085870d6887ee57c7b172ec7c.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_dd30a1940344e6186e300b1ab56c7d11.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_e79ee0b49666b683d4b4444c8b170e6b.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_f74869e8b4fdb609276034ecde8dfb36.html
 %%PORTDOCS%%%%DOCSDIR%%/dirs.html
-%%PORTDOCS%%%%DOCSDIR%%/djb_2sig_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/env_8h-source.html
@@ -226,6 +229,20 @@ lib/bglibs/vmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/tab_r.gif
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/trigger_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/group__crypto.html
+%%PORTDOCS%%%%DOCSDIR%%/group__signalfd.html
+%%PORTDOCS%%%%DOCSDIR%%/group__surfrand.html
+%%PORTDOCS%%%%DOCSDIR%%/hmac_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/md4_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/md5_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sha1_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sha256_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sha384_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sha512_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/signalfd_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/structsurfrand.html
+%%PORTDOCS%%%%DOCSDIR%%/surf_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/surfrand_8h-source.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/bglibs/adt
 @dirrm include/bglibs/base64
