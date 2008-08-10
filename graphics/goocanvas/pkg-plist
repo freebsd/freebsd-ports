@@ -47,12 +47,15 @@ libdata/pkgconfig/goocanvas.pc
 %%DOCSDIR%%/goocanvas/ch04.html
 %%DOCSDIR%%/goocanvas/ch05.html
 %%DOCSDIR%%/goocanvas/goocanvas-GooCanvas-Types.html
+%%DOCSDIR%%/goocanvas/goocanvas-architecture.html
+%%DOCSDIR%%/goocanvas/goocanvas-coordinates.html
 %%DOCSDIR%%/goocanvas/goocanvas-creating-items.html
 %%DOCSDIR%%/goocanvas/goocanvas-goocanvasitem.html
 %%DOCSDIR%%/goocanvas/goocanvas-goocanvasitemmodel.html
 %%DOCSDIR%%/goocanvas/goocanvas-model-view-canvas.html
 %%DOCSDIR%%/goocanvas/goocanvas-overview.html
 %%DOCSDIR%%/goocanvas/goocanvas-simple-canvas.html
+%%DOCSDIR%%/goocanvas/goocanvas-wysiwyg.html
 %%DOCSDIR%%/goocanvas/goocanvas.devhelp
 %%DOCSDIR%%/goocanvas/goocanvas.devhelp2
 %%DOCSDIR%%/goocanvas/home.png

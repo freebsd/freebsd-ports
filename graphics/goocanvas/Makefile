@@ -6,10 +6,9 @@
 #    $MCom: ports/graphics/goocanvas/Makefile,v 1.3 2008/02/27 16:19:11 ahze Exp $
 
 PORTNAME=	goocanvas
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	graphics
-MASTER_SITES=	SOURCEFORGE
+MASTER_SITES=	GNOME
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Canvas widget for GTK+
@@ -17,6 +16,7 @@ COMMENT=	Canvas widget for GTK+
 USE_GNOME=	gtk20 gnomehack ltverhack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
+USE_BZIP2=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|' \
