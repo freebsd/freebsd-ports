@@ -17,6 +17,6 @@ RIJNDAEL-128 (AES), RIJNDAEL-256, SERPENT, TWOFISH, CAST 256, SAFER+, LOKI97,
 * It comes with a thread-safe C library, libGringotts, that can be used in any
 other project to save data in files in a simple and safe way.
 
-WWW: http://devel.pluto.linux.it/projects/Gringotts/
+WWW: http://gringotts.berlios.de/
 
 - Anders Nordby <anders@fix.no>

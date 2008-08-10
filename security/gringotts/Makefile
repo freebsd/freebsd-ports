@@ -9,7 +9,7 @@ PORTNAME=	gringotts
 PORTVERSION=	1.2.8
 PORTREVISION=	6
 CATEGORIES=	security
-MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
+MASTER_SITES=	BERLIOS \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
