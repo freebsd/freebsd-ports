@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2008-07-27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -58,7 +58,10 @@ COMPAT_HEADERS=	libavcodec/avcodec.h \
 	libavutil/mem.h \
 	libavutil/random.h \
 	libavutil/rational.h \
-	libavutil/sha1.h
+	libavutil/sha1.h \
+	libpostproc/postprocess.h \
+	libswscale/rgb2rgb.h \
+	libswscale/swscale.h
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +75,7 @@ CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--enable-gpl \
 		--enable-pthreads \
+		--enable-swscale \
 		--mandir=${PREFIX}/man
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV+=	INSTALL="${INSTALL}"
