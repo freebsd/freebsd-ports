@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/GeoPlanet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GeoPlanet/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GeoPlanet

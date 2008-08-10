@@ -908,6 +908,7 @@
     SUBDIR += p5-Net-Flickr-API
     SUBDIR += p5-Net-Flickr-Backup
     SUBDIR += p5-Net-Flickr-RDF
+    SUBDIR += p5-Net-GeoPlanet
     SUBDIR += p5-Net-eBay
     SUBDIR += p5-Newsletter
     SUBDIR += p5-PHP-Session
