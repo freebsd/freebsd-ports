@@ -32,7 +32,7 @@ MAN1=		pdfedit.1
 
 .if defined(NOPORTDOCS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|^all: src doc|all: src|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|doc-dist-install $$||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
