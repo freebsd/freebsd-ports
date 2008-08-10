@@ -1,14 +1,15 @@
---- Makefile.orig	Sun Jul  1 12:06:18 2007
-+++ Makefile	Fri Jul 20 12:07:40 2007
-@@ -20,7 +20,6 @@
+--- ./Makefile.orig	2008-02-27 21:06:33.000000000 -0200
++++ ./Makefile	2008-08-10 13:41:54.000000000 -0300
+@@ -20,7 +20,7 @@
  
  # Where to install things:
  
 -PREFIX=/usr/local
++PREFIX?=/usr/local
  
  
  # Program:
-@@ -37,7 +36,7 @@
+@@ -37,7 +37,7 @@
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -17,7 +18,16 @@
  
  
  # Tux Paint's 'System-wide' Config file:
-@@ -77,7 +76,7 @@
+@@ -52,7 +52,7 @@
+ # Icons and launchers:
+ 
+ ICON_PREFIX=$(PREFIX)/share/pixmaps/
+-X11_ICON_PREFIX=$(PREFIX)/X11R6/include/X11/pixmaps/
++X11_ICON_PREFIX=$(PREFIX)/share/pixmaps/
+ GNOME_PREFIX=`gnome-config --prefix`
+ KDE_PREFIX=`kde-config --install apps --expandvars`
+ KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
+@@ -77,7 +77,7 @@
  PAPER_LIB=-lpaper
  
  # Default CFLAGS:
@@ -26,7 +36,7 @@
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-@@ -147,8 +146,7 @@
+@@ -147,8 +147,7 @@
  # to do this as superuser ("root"))
  
  install:	install-bin install-data install-man install-doc \
@@ -36,17 +46,7 @@
  	@echo
  	@echo "All done! Now (preferably NOT as 'root' superuser),"
  	@echo "you can type the command 'tuxpaint-config' to run the"
-@@ -238,9 +236,6 @@
- 	@install -d $(ICON_PREFIX)
- 	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
- 	@chmod 644 $(ICON_PREFIX)tuxpaint-config.png
--	@install -d $(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint-config.xpm
--	@chmod 644 $(X11_ICON_PREFIX)tuxpaint-config.xpm
- 
- 
- # Install the program:
-@@ -307,7 +302,7 @@
+@@ -307,7 +306,7 @@
  	@echo Linking
  	@$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
  			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
