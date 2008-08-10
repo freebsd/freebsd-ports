@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-%%DATADIR%%/upgrade-0.5-db.py
+%%DATADIR%%/upgrade-0.7-db.py
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.py
 %%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.pyc
@@ -49,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.py
 %%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Cache.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Cache.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Cache.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/DB/Common.py
 %%PYTHON_SITELIBDIR%%/DITrack/DB/Common.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/DB/Common.pyo
