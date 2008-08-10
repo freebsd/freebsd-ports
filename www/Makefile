@@ -1000,6 +1000,7 @@
     SUBDIR += p5-WWW-Myspace
     SUBDIR += p5-WWW-OpenSVN
     SUBDIR += p5-WWW-OpenSearch
+    SUBDIR += p5-WWW-Plurk
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-RobotRules-Parser
     SUBDIR += p5-WWW-Scraper-ISBN
