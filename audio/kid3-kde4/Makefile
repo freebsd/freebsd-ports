@@ -7,9 +7,9 @@
 
 PORTNAME=	kid3
 PORTVERSION=	1.0
-PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
@@ -21,11 +21,12 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib qmake_build moc_build
+USE_CMAKE=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
+
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
 .include <bsd.port.mk>

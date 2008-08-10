@@ -1,6 +1,7 @@
 bin/kid3
-share/applications/kde/kid3.desktop
+share/applications/kde4/kid3.desktop
 share/apps/kid3/kid3ui.rc
+share/dbus-1/interfaces/net.sourceforge.Kid3.xml
 share/doc/HTML/de/kid3/common
 share/doc/HTML/de/kid3/index.cache.bz2
 share/doc/HTML/de/kid3/index.docbook
@@ -19,5 +20,7 @@ share/locale/pl/LC_MESSAGES/kid3.mo
 share/locale/ru/LC_MESSAGES/kid3.mo
 @dirrm share/doc/HTML/en/kid3
 @dirrm share/doc/HTML/de/kid3
+@dirrmtry share/dbus-1/interfaces
+@dirrmtry share/dbus-1
 @dirrm share/apps/kid3
-@dirrmtry share/applications/kde
+@dirrmtry share/applications/kde4
