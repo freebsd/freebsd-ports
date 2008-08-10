@@ -365,6 +365,7 @@
     SUBDIR += mc
     SUBDIR += mc-light
     SUBDIR += menushki
+    SUBDIR += metalink-checker
     SUBDIR += metalink-tools
     SUBDIR += metromap
     SUBDIR += mgp-mode.el
