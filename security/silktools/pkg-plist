@@ -83,6 +83,9 @@ lib/silk/ccfilter.so
 lib/silk/cutmatch.a
 lib/silk/cutmatch.la
 lib/silk/cutmatch.so
+lib/silk/flowrate.so
+lib/silk/flowrate.la
+lib/silk/flowrate.a
 lib/silk/packlogic-generic.so
 lib/silk/packlogic-generic.la
 lib/silk/packlogic-generic.a
@@ -95,15 +98,6 @@ lib/silk/pmapfilter.so
 lib/silk/rwp2f_minbytes.a
 lib/silk/rwp2f_minbytes.la
 lib/silk/rwp2f_minbytes.so
-lib/silk/rwslammer.a
-lib/silk/rwslammer.la
-lib/silk/rwslammer.so
-lib/silk/rwsynackfin.a
-lib/silk/rwsynackfin.la
-lib/silk/rwsynackfin.so
-lib/silk/tuple.a
-lib/silk/tuple.la
-lib/silk/tuple.so
 %%IPFIX%%lib/libskipfix.so.1
 %%IPFIX%%lib/libskipfix.so
 %%IPFIX%%lib/libskipfix.la

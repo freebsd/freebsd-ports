@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
