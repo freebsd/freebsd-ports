@@ -1,17 +1,49 @@
---- configure.orig	Sat Mar 21 19:08:57 1998
-+++ configure	Sat Jan 21 09:22:46 2006
-@@ -1531,3 +1531,2 @@
+--- configure.orig	1998-03-21 20:08:57.000000000 +0100
++++ configure	2008-08-05 12:48:47.000000000 +0200
+@@ -815,7 +815,9 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   cat >> confdefs.h <<\EOF
++#ifndef HAVE_STDDEF_H
+ #define HAVE_STDDEF_H 
++#endif
+ EOF
+ 
+ else
+@@ -851,7 +853,9 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   cat >> confdefs.h <<\EOF
++#ifndef HAVE_STDLIB_H
+ #define HAVE_STDLIB_H 
++#endif
+ EOF
+ 
+ else
+@@ -1529,7 +1533,6 @@
+ 
+ if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
    USELIBTOOL="yes"
 -  LIBTOOL="./libtool"
    O="lo"
-@@ -1561,3 +1560,4 @@
+   A="la"
+   LN='$(LIBTOOL) --mode=link $(CC)'
+@@ -1559,7 +1562,8 @@
+   if test "x$LTSTATIC" = xno; then
+     disable_static="--disable-static"
    fi
 -  $srcdir/ltconfig $disable_shared $disable_static $srcdir/ltmain.sh
 +  pic_flag="-fPIC"
 +  $ac_aux_dir/ltconfig $disable_shared $disable_static $ac_aux_dir/ltmain.sh
  fi
-@@ -1649,3 +1649,3 @@
+ 
+ # Select memory manager depending on user input.
+@@ -1647,7 +1651,7 @@
+ # Extract the library version ID from jpeglib.h.
+ echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
  echo "configure:1650: checking libjpeg version number" >&5
 -JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
 +JPEG_LIB_VERSION=9
  echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
+ 
+ 
