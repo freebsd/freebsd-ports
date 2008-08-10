@@ -105,6 +105,26 @@
 #	running.
 #	USE_LUA_NOT=5.1
 #
+# Notes about the integration of lua related ports with bsd.lua.mk:
+# (please read when updating ports referred here, see lang/lua[0-9]*)
+#
+# The lua/tolua ports have to be patched so they can coexist, as the internal
+# application build infrastructure does not handle it automatically. Currently
+# the framework provides variables to the lua ports themselves, so changing
+# some things here won't require changes in lang/{lua,tolua}*.
+#
+# For lua ports: if they install a static library, use the same method for
+# tolua ports, otherwise in addition the libraries have to be symlinked to the
+# common library directory with a versioned name, and linked with the -soname
+# parameter (so when a port links with -L/usr/local/lib/lua51 -llua, it stores
+# the dynamic dependency as the name which figures under /usr/local/lib).
+#
+# For tolua ports: as it is a static library (.a), installing binaries,
+# headers and libraries under a versioned directory is fine (binary has also a
+# symlink).
+#
+# The lua modules install in a separate directory, so there is no problem.
+#
 
 LUA_Include_MAINTAINER=	alepulver@FreeBSD.org
 
@@ -164,7 +184,7 @@ _LUA_PORT_pty_5.0=		devel/lua50-pty
 _LUA_PORT_socket_5.0=	net/lua50-luasocket
 
 _LUA_PORT_lua_5.1=		lang/lua
-_LUA_DEPTYPE_lua_5.1=	build
+_LUA_DEPTYPE_lua_5.1=	lib
 
 _LUA_PORT_filename_5.1=	devel/lua-filename
 _LUA_PORT_gettext_5.1=	devel/lua-gettext

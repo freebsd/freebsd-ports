@@ -7,7 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -23,7 +23,8 @@ USE_LUA=	5.1
 LUA_COMPS=	# only define variables
 ALL_TARGET=	freebsd
 USE_GNOME=	pkgconfig
-USE_LDCONFIG=	${LUA_LIBDIR}
+USE_LDCONFIG=	yes
+MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
@@ -46,7 +47,7 @@ post-patch:
 		 s|^(CFLAGS=)|\1 ${CFLAGS}| ; \
 		 s|/usr/local|${PREFIX}|' \
 		 ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -Ee \
+	@${REINPLACE_CMD} -i '' -Ee \
 		's|^(prefix=).*|\1 ${PREFIX}| ; \
 		s|^(libdir=).*|\1 ${LUA_LIBDIR}| ; \
 		s|^(includedir=).*|\1 ${LUA_INCDIR}| ; \
@@ -55,7 +56,7 @@ post-patch:
 		s|^(INSTALL_LIB=).*|\1 ${LUA_LIBDIR}| ; \
 		s|^(INSTALL_CMOD=).*|\1 ${LUA_MODLIBDIR}| ; \
 		s|^(INSTALL_LMOD=).*|\1 ${LUA_MODSHAREDIR}|' \
-		${WRKSRC}/etc/lua.pc && ${RM} ${WRKSRC}/etc/lua.pc.bak
+		${WRKSRC}/etc/lua.pc
 
 post-build:
 	@${RM} -f ${WRKSRC}/test/lua ${WRKSRC}/test/luac
@@ -75,8 +76,13 @@ do-install:
 # Libraries.
 	${MKDIR} ${LUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/liblua.a ${LUA_LIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/liblua.so ${LUA_LIBDIR}/liblua.so.1
-	cd ${LUA_LIBDIR} && ${LN} -s liblua.so.1 liblua.so
+	${INSTALL_PROGRAM} ${WRKSRC}/src/liblua.so \
+		${LUA_LIBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH}
+	@${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH} ${LUA_LIBDIR}/liblua.so
+	@${LN} -sf ${LUA_SUBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH} \
+		${PREFIX}/lib
+	@${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH} \
+		${PREFIX}/lib/liblua-${LUA_VER}.so
 # Manual pages.
 .for f in ${LUA_MAN}
 	${INSTALL_MAN} ${WRKSRC}/doc/${f} \
@@ -97,7 +103,6 @@ do-install:
 .endfor
 .endif
 # lua.pc
-	${MKDIR} ${LOCALBASE}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/libdata/pkgconfig/lua-${LUA_VER}.pc
 # Module directories.
 	${MKDIR} ${LUA_MODLIBDIR}

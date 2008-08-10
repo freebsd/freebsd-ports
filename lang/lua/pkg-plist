@@ -9,9 +9,11 @@ bin/luac-%%LUA_VER%%
 %%LUA_INCDIR%%/lua.hpp
 %%LUA_INCDIR%%/luaconf.h
 %%LUA_INCDIR%%/lualib.h
+lib/liblua-%%LUA_VER%%.so
+lib/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 %%LUA_LIBDIR%%/liblua.a
 %%LUA_LIBDIR%%/liblua.so
-%%LUA_LIBDIR%%/liblua.so.1
+%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/amazon.gif
