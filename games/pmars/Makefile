@@ -90,12 +90,12 @@ do-install:
 .for f in ${TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${PREFIX}/bin
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .   for f in README config doc warriors
 	${CP} -R ${WRKSRC}/../${f} ${DOCSDIR}
 .   endfor
-	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
 .endif
 
 .include <bsd.port.post.mk>
