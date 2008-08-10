@@ -23,12 +23,18 @@ WRKSRC=		${WRKDIR}
 DATADIR=	${PREFIX}/share/smc
 NO_BUILD=	yes
 
+post-patch:
+# The pointyhat build system doesn't like spaces in $PORTDOCS,
+# so this makes it happier
+	${MV} ${WRKSRC}/docs/Addon\ -\ Music\ Readme.txt \
+		${WRKSRC}/docs/Addon_-_Music_Readme.txt
+
 do-install:
-	${MKDIR} ${DATADIR}/music
-	${CP} -Rv ${WRKSRC}/data/music/* ${DATADIR}/music/
+	cd ${WRKSRC}/data && \
+		${FIND} music | ${CPIO} -pdmvu ${DATADIR}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Addon\ \-\ Music\ Readme.txt license.txt
+PORTDOCS=	Addon_-_Music_Readme.txt license.txt
 
 post-install:
 	${MKDIR} ${DOCSDIR}
