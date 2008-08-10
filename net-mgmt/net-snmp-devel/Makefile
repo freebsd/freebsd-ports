@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -265,6 +266,7 @@ post-build:
 .endif
 
 post-install: strip-files install-config-files install-doc-files display-message
+	${MKDIR} /var/agentx
 
 strip-files:
 	@cd ${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES}
