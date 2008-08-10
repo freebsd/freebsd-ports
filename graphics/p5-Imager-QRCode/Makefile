@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Imager-QRCode
-PORTVERSION=	0.03
+PORTVERSION=	0.03.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.031
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Generate QR Code with Imager using libqrencode
