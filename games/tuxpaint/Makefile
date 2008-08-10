@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.19
-PORTREVISION=	2
+PORTVERSION=	0.9.20
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -24,10 +23,8 @@ USE_SDL=	image mixer sdl ttf pango
 MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
 MANCOMPRESSED=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|rsvg[-[:alnum:]]*\.h|librsvg/&|' \
-		${WRKSRC}/src/tuxpaint.c
 .if defined(NOPORTDOCS)
+post-patch:
 	@${REINPLACE_CMD} -e 's|install-doc\([^:]\)|\1|' ${WRKSRC}/${MAKEFILE}
 .endif
 

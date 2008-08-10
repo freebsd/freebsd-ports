@@ -456,6 +456,13 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/tr/OPTIONS.txt
 %%PORTDOCS%%%%DOCSDIR%%/tr/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/tr/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/EXTENDING.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/uk/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/wa/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/COPYING.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/FAQ.txt
@@ -478,6 +485,7 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/phone.cin
 share/locale/af/LC_MESSAGES/tuxpaint.mo
 share/locale/ar/LC_MESSAGES/tuxpaint.mo
+share/locale/ast/LC_MESSAGES/tuxpaint.mo
 share/locale/az/LC_MESSAGES/tuxpaint.mo
 share/locale/be/LC_MESSAGES/tuxpaint.mo
 share/locale/bg/LC_MESSAGES/tuxpaint.mo
@@ -557,6 +565,7 @@ share/locale/zh_CN/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_TW/LC_MESSAGES/tuxpaint.mo
 share/locale/zw/LC_MESSAGES/tuxpaint.mo
 share/pixmaps/tuxpaint.png
+share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/brushes/aa_round_03.png
 %%DATADIR%%/brushes/aa_round_06.png
 %%DATADIR%%/brushes/aa_round_12.png
@@ -663,12 +672,12 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/fonts/locale/th.ttf
 %%DATADIR%%/fonts/locale/th_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/th_docs/README.txt
-%%DATADIR%%/fonts/locale/vi.ttf
 %%DATADIR%%/fonts/locale/vi_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/vi_docs/README.txt
 %%DATADIR%%/fonts/locale/zh_tw.ttf
 %%DATADIR%%/fonts/locale/zh_tw_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/zh_tw_docs/README.txt
+%%DATADIR%%/fonts/locale/zh_tw_docs/do_it.sh
 %%DATADIR%%/fonts/locale/zh_tw_docs/maketuxfont.py
 %%DATADIR%%/fonts/locale/zh_tw_docs/tuxpaintsubset.pe
 %%DATADIR%%/im/ja.im
@@ -901,6 +910,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/starters/grid_10x10.png
 %%DATADIR%%/starters/grid_20x20.png
 %%DATADIR%%/starters/jetplane.png
+%%DATADIR%%/starters/jigsaw.png
+%%DATADIR%%/starters/jigsaw.svg
 %%DATADIR%%/starters/nagasaki.png
 %%DATADIR%%/starters/nagasaki.svg
 %%DATADIR%%/starters/reef-back.png
@@ -911,6 +922,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/starters/skyline-sf-dusk-back.jpeg
 %%DATADIR%%/starters/skyline-sf-dusk.png
 %%DATADIR%%/starters/skyline-sf-dusk.txt
+%%DATADIR%%/starters/spirograph.png
+%%DATADIR%%/starters/spirograph.svg
 %%DATADIR%%/starters/street.png
 %%DATADIR%%/starters/tux_farmer.png
 %%DATADIR%%/starters/worldmap.png
@@ -955,29 +968,12 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
-@dirrm share/locale/zw/LC_MESSAGES
-@dirrm share/locale/zw
-@dirrm share/locale/twi/LC_MESSAGES
-@dirrm share/locale/twi
-@dirrm share/locale/tlh/LC_MESSAGES
-@dirrm share/locale/tlh
-@dirrm share/locale/oj/LC_MESSAGES
-@dirrm share/locale/oj
-@dirrm share/locale/nr/LC_MESSAGES
-@dirrm share/locale/nr
-@dirrm share/locale/gos/LC_MESSAGES
-@dirrm share/locale/gos
-@dirrm share/locale/gd/LC_MESSAGES
-@dirrm share/locale/gd
-@dirrm share/locale/en_ZA/LC_MESSAGES
-@dirrm share/locale/en_ZA
-@dirrm share/locale/bo/LC_MESSAGES
-@dirrm share/locale/bo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/wa
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/uk
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ta
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sv
@@ -1036,16 +1032,24 @@ share/pixmaps/tuxpaint.png
 @dirrm lib/tuxpaint/plugins
 @dirrm lib/tuxpaint
 @dirrm include/tuxpaint
-@dirrmtry share/locale/wo/LC_MESSAGES
-@dirrmtry share/locale/wo
-@dirrmtry share/locale/ve/LC_MESSAGES
-@dirrmtry share/locale/ve
+@dirrmtry share/locale/zw/LC_MESSAGES
+@dirrmtry share/locale/zw
 @dirrmtry share/locale/twi/LC_MESSAGES
 @dirrmtry share/locale/twi
-@dirrmtry share/locale/sw/LC_MESSAGES
-@dirrmtry share/locale/sw
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
+@dirrmtry share/locale/tlh/LC_MESSAGES
+@dirrmtry share/locale/tlh
+@dirrmtry share/locale/oj/LC_MESSAGES
+@dirrmtry share/locale/oj
+@dirrmtry share/locale/nr/LC_MESSAGES
+@dirrmtry share/locale/nr
+@dirrmtry share/locale/gos/LC_MESSAGES
+@dirrmtry share/locale/gos
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
+@dirrmtry share/locale/en_ZA/LC_MESSAGES
+@dirrmtry share/locale/en_ZA
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry etc/tuxpaint
