@@ -1,0 +1,16 @@
+[ excerpt from developer's web site ]
+
+Metalink is the main Metalink generation tool. It combines a list
+of mirrors (from stdin) and a number of files into one Metalink
+record (stdout). It can also be used to transform a MD5SUMS file
+into a metalink.
+
+Features currently include:
+
+- Hashing algorithms: md4 md5 sha1 sha256 sha384 sha512 rmd160 tiger
+  crc32 ed2k gnunet
+- Generation of Metalink files from MD5SUMS lists
+
+WWW: http://www.metalinker.org/
+
+-- lioux@FreeBSD.org
