@@ -1,0 +1,23 @@
+--- ./t_cltsrv.sh.orig	2008-08-07 23:14:55.000000000 +0200
++++ ./t_cltsrv.sh	2008-08-07 23:53:27.000000000 +0200
+@@ -38,11 +38,13 @@
+     fi
+     ;;
+ esac
++downscript="${srcdir}/t_cltsrv-down.sh"
++test -x $downscript || chmod +x $downscript || { echo >&2 "$downscript is not executable, failing." ; exit 1 ; }
+ echo "the following test will take about two minutes..." >&2
+ set +e
+ (
+-./openvpn --cd "${srcdir}" ${addopts} --down 'echo "srv:${signal}" >&3 ; : #' --tls-exit --ping-exit 180 --config sample-config-files/loopback-server &
+-./openvpn --cd "${srcdir}" ${addopts} --down 'echo "clt:${signal}" >&3 ; : #' --tls-exit --ping-exit 180 --config sample-config-files/loopback-client
++./openvpn --script-security 2 --cd "${srcdir}" ${addopts} --setenv role srv --down "$downscript" --tls-exit --ping-exit 180 --config sample-config-files/loopback-server &
++./openvpn --script-security 2 --cd "${srcdir}" ${addopts} --setenv role clt --down "$downscript" --tls-exit --ping-exit 180 --config sample-config-files/loopback-client
+ ) 3>log.$$.signal >log.$$ 2>&1
+ e1=$?
+ wait $!
+--- ./t_cltsrv-down.sh.orig	2008-08-07 23:24:40.000000000 +0200
++++ ./t_cltsrv-down.sh	2008-08-07 23:28:40.000000000 +0200
+@@ -0,0 +1,2 @@
++#! /bin/sh
++echo "${role}:${signal}" >&3
