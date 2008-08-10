@@ -1,6 +1,6 @@
---- src/oss.c.orig	2008-08-09 16:04:21.964956000 -0400
-+++ src/oss.c	2008-08-09 16:41:45.000000000 -0400
-@@ -0,0 +1,462 @@
+--- src/oss.c.orig	2008-08-10 01:57:54.353155000 -0400
++++ src/oss.c	2008-08-10 02:12:43.640204000 -0400
+@@ -0,0 +1,475 @@
 +/***
 +  This file is part of libcanberra.
 +
@@ -224,8 +224,6 @@
 +    }
 +}
 +
-+#define SAMPLE_FORMAT AFMT_S16_NE
-+
 +static int open_oss(ca_context *c, struct outstanding *out) {
 +    struct private *p;
 +    int mode;
@@ -245,11 +243,26 @@
 +    mode &= ~O_NONBLOCK;
 +    fcntl(out->pcm, F_SETFL, mode);
 +
-+    val = SAMPLE_FORMAT;
++    switch (ca_sound_file_get_sample_type(out->file)) {
++	    case CA_SAMPLE_U8:
++		    val = AFMT_U8;
++		    break;
++	    case CA_SAMPLE_S16NE:
++		    val = AFMT_S16_NE;
++		    break;
++	    case CA_SAMPLE_S16RE:
++#if _BYTE_ORDER == _LITTLE_ENDIAN
++		    val = AFMT_S16_BE;
++#else
++		    val = AFMT_S16_LE;
++#endif
++		    break;
++    }
++
 +    if (ioctl(out->pcm, SNDCTL_DSP_SETFMT, &val) < 0)
 +        goto finish;
 +
-+    val = 1;
++    val = ca_sound_file_get_nchannels(out->file) > 1 ? 1 : 0;
 +    if (ioctl(out->pcm, SNDCTL_DSP_STEREO, &val) < 0)
 +	goto finish;
 +
