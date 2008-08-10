@@ -8,8 +8,8 @@
 PORTNAME=	libgringotts
 PORTVERSION=	1.2.1
 CATEGORIES=	security
-MASTER_SITES=	http://devel.pluto.linux.it/projects/libGringotts/current/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	BERLIOS
+MASTER_SITE_SUBDIR=	gringotts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for encapsulating/safekeeping data in encrypted/compressed form
