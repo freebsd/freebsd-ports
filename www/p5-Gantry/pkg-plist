@@ -137,11 +137,15 @@
 %%SITE_PERL%%/Gantry/Stash/Controller.pm
 %%SITE_PERL%%/Gantry/Stash/View.pm
 %%SITE_PERL%%/Gantry/Stash/View/Form.pm
+%%SITE_PERL%%/Gantry/State/Constants.pm
+%%SITE_PERL%%/Gantry/State/Default.pm
+%%SITE_PERL%%/Gantry/State/Simple.pm
 %%SITE_PERL%%/Gantry/Template/Default.pm
 %%SITE_PERL%%/Gantry/Template/Framing.pm
 %%SITE_PERL%%/Gantry/Template/TT.pm
 %%SITE_PERL%%/Gantry/Utils/AuthCDBI.pm
 %%SITE_PERL%%/Gantry/Utils/CDBI.pm
+%%SITE_PERL%%/Gantry/Utils/CRON.pm
 %%SITE_PERL%%/Gantry/Utils/CRUDHelp.pm
 %%SITE_PERL%%/Gantry/Utils/Crypt.pm
 %%SITE_PERL%%/Gantry/Utils/DB.pm
@@ -176,6 +180,7 @@
 @dirrmtry %%SITE_PERL%%/Gantry/Utils/DBConnHelper
 @dirrmtry %%SITE_PERL%%/Gantry/Utils
 @dirrmtry %%SITE_PERL%%/Gantry/Template
+@dirrmtry %%SITE_PERL%%/Gantry/State
 @dirrmtry %%SITE_PERL%%/Gantry/Stash/View
 @dirrmtry %%SITE_PERL%%/Gantry/Stash
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins/SOAP

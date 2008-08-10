@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.51
+PORTVERSION=	3.53
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -93,9 +93,11 @@ MAN3=		Gantry.3 \
 		Gantry::Plugins::Session.3 \
 		Gantry::Plugins::Validate.3 Gantry::Server.3 Gantry::Stash.3 \
 		Gantry::Stash::Controller.3 Gantry::Stash::View.3 \
-		Gantry::Stash::View::Form.3 Gantry::Template::Default.3 \
+		Gantry::Stash::View::Form.3 Gantry::State::Simple.3 \
+		Gantry::State::Default.3 Gantry::Template::Default.3 \
 		Gantry::Template::Framing.3 Gantry::Template::TT.3 \
 		Gantry::Utils::AuthCDBI.3 Gantry::Utils::CDBI.3 \
+		Gantry::Utils::CRON.3 \
 		Gantry::Utils::CRUDHelp.3 Gantry::Utils::Crypt.3 \
 		Gantry::Utils::DB.3 \
 		Gantry::Utils::DBConnHelper.3 \
