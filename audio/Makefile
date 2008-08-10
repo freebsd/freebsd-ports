@@ -319,6 +319,7 @@
     SUBDIR += k3bmonkeyaudioplugin
     SUBDIR += kexis
     SUBDIR += kid3
+    SUBDIR += kid3-kde4
     SUBDIR += kirocker
     SUBDIR += kmp
     SUBDIR += ksmp3play
