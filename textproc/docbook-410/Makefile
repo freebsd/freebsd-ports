@@ -49,6 +49,6 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/${PORTVERSION}/catalog
+	@-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/${PORTVERSION}/catalog
 
 .include <bsd.port.mk>
