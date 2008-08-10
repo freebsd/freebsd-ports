@@ -8,6 +8,7 @@
 
 PORTNAME=	redland
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -19,6 +20,7 @@ COMMENT=	A high-level interface for RDF
 LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
 
 USE_BDB=	yes
+WITH_BDB_HIGHEST=	yes
 INVALID_BDB_VER=2
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
@@ -30,7 +32,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-rasqal=internal \
-		--with-threestore=no
+		--with-threestore=no \
+		--with-sqlite=no
 
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
@@ -48,6 +51,7 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=yes
 PLIST_SUB+=	MYSQL=""
 .else
+CONFIGURE_ARGS+=--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
