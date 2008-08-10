@@ -10,14 +10,14 @@
 
 PORTNAME=	qmail-autoresponder
 PORTVERSION=	0.96.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
-LIB_DEPENDS=	bg-sysdeps.1:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	bg-sysdeps.2:${PORTSDIR}/devel/bglibs
 
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
