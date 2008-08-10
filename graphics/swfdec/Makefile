@@ -20,7 +20,7 @@ LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-audio=oss
 USE_LDCONFIG=	yes
