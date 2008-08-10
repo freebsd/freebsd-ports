@@ -35,24 +35,6 @@ MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
 .endif
 
-.if !defined(WITH_SENDMAIL_BASE) && \
-    !defined(WITH_SENDMAIL_PORT) && \
-    !exists(${LOCALBASE}/lib/libmilter.a)
-WITH_SENDMAIL_BASE=yes
-.endif
-
-.if defined(WITH_SENDMAIL_BASE)
-.if exists(/usr/lib/libmilter.a)
-_MILT_DEP=
-MILTERBASE=	/usr
-.else
-BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
-.endif
-.else
-_MILT_DEP=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
-MILTERBASE?=	${LOCALBASE}
-.endif
-
 ##
 # If you have a reentrant resolver (starting with RELENG_5_2) you can use SPF
 ##
@@ -69,7 +51,6 @@ BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	${_MILT_DEP}
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
@@ -120,4 +101,8 @@ post-install:
 	) || ${TRUE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+.include <bsd.port.post.mk>
