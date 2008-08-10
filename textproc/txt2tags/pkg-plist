@@ -14,15 +14,17 @@ bin/txt2tags
 %%EXAMPLESDIR%%/extras/README
 %%EXAMPLESDIR%%/extras/css-reference.txt
 %%EXAMPLESDIR%%/extras/ctags
+%%EXAMPLESDIR%%/extras/gensite
 %%EXAMPLESDIR%%/extras/gvim-menu.vim
 %%EXAMPLESDIR%%/extras/html-update.sh
 %%EXAMPLESDIR%%/extras/nanorc
 %%EXAMPLESDIR%%/extras/pagemaker.vim
-%%EXAMPLESDIR%%/extras/t2tconv
 %%EXAMPLESDIR%%/extras/t2tmake.rb
 %%EXAMPLESDIR%%/extras/txt2tags-compiler.vim
+%%EXAMPLESDIR%%/extras/txt2tags-gedit.lang
 %%EXAMPLESDIR%%/extras/txt2tags-kate.xml
 %%EXAMPLESDIR%%/extras/txt2tags-mode.el
+%%EXAMPLESDIR%%/extras/txt2tags-textmate.zip
 %%EXAMPLESDIR%%/extras/txt2tags.php
 %%EXAMPLESDIR%%/extras/txt2tags.vim
 %%EXAMPLESDIR%%/extras/txt2tagsrc
@@ -41,6 +43,8 @@ bin/txt2tags
 %%EXAMPLESDIR%%/module/README
 %%EXAMPLESDIR%%/module/module-body.py
 %%EXAMPLESDIR%%/module/module-full.py
+%%EXAMPLESDIR%%/sample.doku
+%%EXAMPLESDIR%%/sample.gwiki
 %%EXAMPLESDIR%%/sample.html
 %%EXAMPLESDIR%%/sample.lout
 %%EXAMPLESDIR%%/sample.man
@@ -51,6 +55,7 @@ bin/txt2tags
 %%EXAMPLESDIR%%/sample.t2t
 %%EXAMPLESDIR%%/sample.tex
 %%EXAMPLESDIR%%/sample.txt
+%%EXAMPLESDIR%%/sample.wiki
 %%EXAMPLESDIR%%/sample.xhtml
 @dirrm %%EXAMPLESDIR%%/module
 @dirrm %%EXAMPLESDIR%%/img
