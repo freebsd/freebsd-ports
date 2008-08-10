@@ -31,9 +31,6 @@ lib/gstreamer-%%VERSION%%/libgstfreeze.so
 lib/gstreamer-%%VERSION%%/libgsth264parse.a
 lib/gstreamer-%%VERSION%%/libgsth264parse.la
 lib/gstreamer-%%VERSION%%/libgsth264parse.so
-lib/gstreamer-%%VERSION%%/libgstinterleave.a
-lib/gstreamer-%%VERSION%%/libgstinterleave.la
-lib/gstreamer-%%VERSION%%/libgstinterleave.so
 lib/gstreamer-%%VERSION%%/libgstmodplug.a
 lib/gstreamer-%%VERSION%%/libgstmodplug.la
 lib/gstreamer-%%VERSION%%/libgstmodplug.so
@@ -61,12 +58,6 @@ lib/gstreamer-%%VERSION%%/libgstoss4audio.so
 lib/gstreamer-%%VERSION%%/libgstrawparse.a
 lib/gstreamer-%%VERSION%%/libgstrawparse.la
 lib/gstreamer-%%VERSION%%/libgstrawparse.so
-%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.a
-%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.la
-%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.so
-lib/gstreamer-%%VERSION%%/libgstreplaygain.a
-lib/gstreamer-%%VERSION%%/libgstreplaygain.la
-lib/gstreamer-%%VERSION%%/libgstreplaygain.so
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.a
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.la
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.so
@@ -116,9 +107,12 @@ share/locale/de/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo

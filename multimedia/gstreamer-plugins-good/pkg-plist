@@ -52,6 +52,9 @@ lib/gstreamer-%%VERSION%%/libgsticydemux.so
 lib/gstreamer-%%VERSION%%/libgstid3demux.a
 lib/gstreamer-%%VERSION%%/libgstid3demux.la
 lib/gstreamer-%%VERSION%%/libgstid3demux.so
+lib/gstreamer-%%VERSION%%/libgstinterleave.a
+lib/gstreamer-%%VERSION%%/libgstinterleave.la
+lib/gstreamer-%%VERSION%%/libgstinterleave.so
 lib/gstreamer-%%VERSION%%/libgstlevel.a
 lib/gstreamer-%%VERSION%%/libgstlevel.la
 lib/gstreamer-%%VERSION%%/libgstlevel.so
@@ -76,6 +79,9 @@ lib/gstreamer-%%VERSION%%/libgstossaudio.so
 lib/gstreamer-%%VERSION%%/libgstqtdemux.a
 lib/gstreamer-%%VERSION%%/libgstqtdemux.la
 lib/gstreamer-%%VERSION%%/libgstqtdemux.so
+lib/gstreamer-%%VERSION%%/libgstreplaygain.a
+lib/gstreamer-%%VERSION%%/libgstreplaygain.la
+lib/gstreamer-%%VERSION%%/libgstreplaygain.so
 lib/gstreamer-%%VERSION%%/libgstrtp.a
 lib/gstreamer-%%VERSION%%/libgstrtp.la
 lib/gstreamer-%%VERSION%%/libgstrtp.so
@@ -124,13 +130,16 @@ share/locale/en_GB/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
