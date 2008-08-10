@@ -78,7 +78,7 @@ CMAKE_BUILD_TYPE=DEBUG
 #
 # Force makefile verbosity if needed
 #
-.if defined(CMAKE_VERBOSE)
+.if defined(CMAKE_VERBOSE) || defined(BATCH)
 CMAKE_ARGS+=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 .endif
 

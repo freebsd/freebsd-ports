@@ -83,6 +83,7 @@ bin/ctest
 %%DATADIR%%/Modules/CPack.VolumeIcon.icns.in
 %%DATADIR%%/Modules/CPack.background.png.in
 %%DATADIR%%/Modules/CPack.cmake
+%%DATADIR%%/Modules/CPack.distribution.dist.in
 %%DATADIR%%/Modules/CPackDeb.cmake
 %%DATADIR%%/Modules/CPackRPM.cmake
 %%DATADIR%%/Modules/CPackZIP.cmake
@@ -228,6 +229,7 @@ bin/ctest
 %%DATADIR%%/Modules/ITKCompatibility.cmake
 %%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
+%%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
 %%DATADIR%%/Modules/MacroAddFileDependencies.cmake
 %%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in
@@ -261,6 +263,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Linux-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linux-PGI-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-SunPro-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-SunPro-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-SunPro-Fortran.cmake
@@ -354,6 +357,7 @@ bin/ctest
 %%DATADIR%%/Templates/staticLibFooter.dsptemplate
 %%DATADIR%%/Templates/staticLibHeader.dsptemplate
 %%DATADIR%%/include/cmCPluginAPI.h
+%%DOCSDIR%%/ccmake.docbook
 %%DOCSDIR%%/ccmake.html
 %%DOCSDIR%%/ccmake.txt
 %%DOCSDIR%%/cmake-commands.html
@@ -362,14 +366,19 @@ bin/ctest
 %%DOCSDIR%%/cmake-compatcommands.txt
 %%DOCSDIR%%/cmake-modules.html
 %%DOCSDIR%%/cmake-modules.txt
+%%DOCSDIR%%/cmake-policies.html
+%%DOCSDIR%%/cmake-policies.txt
 %%DOCSDIR%%/cmake-properties.html
 %%DOCSDIR%%/cmake-properties.txt
 %%DOCSDIR%%/cmake-variables.html
 %%DOCSDIR%%/cmake-variables.txt
+%%DOCSDIR%%/cmake.docbook
 %%DOCSDIR%%/cmake.html
 %%DOCSDIR%%/cmake.txt
+%%DOCSDIR%%/cpack.docbook
 %%DOCSDIR%%/cpack.html
 %%DOCSDIR%%/cpack.txt
+%%DOCSDIR%%/ctest.docbook
 %%DOCSDIR%%/ctest.html
 %%DOCSDIR%%/ctest.txt
 @dirrm %%DOCSDIR%%
