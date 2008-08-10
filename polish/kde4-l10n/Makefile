@@ -7,7 +7,7 @@
 
 PORTNAME=	kde-l10n-pl
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	hungarian kde
+CATEGORIES=	polish kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Polish messages and documentation for KDE4

@@ -7,7 +7,7 @@
 
 PORTNAME=	kde-l10n-fr
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	misc kde
+CATEGORIES=	french kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	French messages and documentation for KDE4
