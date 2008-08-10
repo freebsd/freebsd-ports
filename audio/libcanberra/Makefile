@@ -7,7 +7,7 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/public/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
