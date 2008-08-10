@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.5.1
+PORTVERSION=	2.6
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/
@@ -17,9 +17,9 @@ COMMENT=	Multi-user version of the famous WordPress blogging application
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_PHP=	mysql pcre xml
+#USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
-WANT_PHP_WEB=	YES
+#WANT_PHP_WEB=	YES
 SUB_FILES=	pkg-message
 
 pre-everything::
