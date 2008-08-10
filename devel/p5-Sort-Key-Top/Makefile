@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	Sort-Key-Top
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SALVA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Select and sort top n elements
 
 PERL_CONFIGURE=	yes
