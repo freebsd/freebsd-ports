@@ -1,3 +1,5 @@
+%%DATADIR%%/stamps/animals/amphibians/frog-1.png
+%%DATADIR%%/stamps/animals/amphibians/frog-1.txt
 %%DATADIR%%/stamps/animals/amphibians/frog.dat
 %%DATADIR%%/stamps/animals/amphibians/frog.ogg
 %%DATADIR%%/stamps/animals/amphibians/frog.png
@@ -128,6 +130,13 @@
 %%DATADIR%%/stamps/animals/birds/penguin_desc_ca.ogg
 %%DATADIR%%/stamps/animals/birds/penguin_desc_fr.ogg
 %%DATADIR%%/stamps/animals/birds/penguin_desc_nl.ogg
+%%DATADIR%%/stamps/animals/birds/pigeon.dat
+%%DATADIR%%/stamps/animals/birds/pigeon.png
+%%DATADIR%%/stamps/animals/birds/pigeon.txt
+%%DATADIR%%/stamps/animals/birds/pigeon_desc.ogg
+%%DATADIR%%/stamps/animals/birds/pigeon_desc_ca.ogg
+%%DATADIR%%/stamps/animals/birds/pigeon_desc_fr.ogg
+%%DATADIR%%/stamps/animals/birds/pigeon_desc_nl.ogg
 %%DATADIR%%/stamps/animals/birds/pink_flamingo.dat
 %%DATADIR%%/stamps/animals/birds/pink_flamingo.png
 %%DATADIR%%/stamps/animals/birds/pink_flamingo.txt
@@ -228,6 +237,10 @@
 %%DATADIR%%/stamps/animals/fish/stripedfish.png
 %%DATADIR%%/stamps/animals/fish/stripedfish.txt
 %%DATADIR%%/stamps/animals/fish/stripedfish_desc_ca.ogg
+%%DATADIR%%/stamps/animals/insects/Brown_slug.png
+%%DATADIR%%/stamps/animals/insects/Brown_slug.txt
+%%DATADIR%%/stamps/animals/insects/Woodlouse.png
+%%DATADIR%%/stamps/animals/insects/Woodlouse.txt
 %%DATADIR%%/stamps/animals/insects/bee.dat
 %%DATADIR%%/stamps/animals/insects/bee.ogg
 %%DATADIR%%/stamps/animals/insects/bee.png
@@ -236,6 +249,8 @@
 %%DATADIR%%/stamps/animals/insects/bee_desc_ca.ogg
 %%DATADIR%%/stamps/animals/insects/bee_desc_fr.ogg
 %%DATADIR%%/stamps/animals/insects/bee_desc_nl.ogg
+%%DATADIR%%/stamps/animals/insects/cartoon/ant.svg
+%%DATADIR%%/stamps/animals/insects/cartoon/ant.txt
 %%DATADIR%%/stamps/animals/insects/cartoon/butterfly.dat
 %%DATADIR%%/stamps/animals/insects/cartoon/butterfly.png
 %%DATADIR%%/stamps/animals/insects/cartoon/butterfly.txt
@@ -256,6 +271,10 @@
 %%DATADIR%%/stamps/animals/insects/cartoon/snail.png
 %%DATADIR%%/stamps/animals/insects/cartoon/snail.txt
 %%DATADIR%%/stamps/animals/insects/cartoon/snail_desc_ca.ogg
+%%DATADIR%%/stamps/animals/insects/cartoon/spider.svg
+%%DATADIR%%/stamps/animals/insects/cartoon/spider.txt
+%%DATADIR%%/stamps/animals/insects/cartoon/spider2.svg
+%%DATADIR%%/stamps/animals/insects/cartoon/spider2.txt
 %%DATADIR%%/stamps/animals/insects/fly.ogg
 %%DATADIR%%/stamps/animals/insects/fly.png
 %%DATADIR%%/stamps/animals/insects/fly.txt
@@ -279,6 +298,9 @@
 %%DATADIR%%/stamps/animals/insects/hornet_desc_ca.ogg
 %%DATADIR%%/stamps/animals/insects/hornet_desc_fr.ogg
 %%DATADIR%%/stamps/animals/insects/hornet_desc_nl.ogg
+%%DATADIR%%/stamps/animals/insects/mantis.dat
+%%DATADIR%%/stamps/animals/insects/mantis.png
+%%DATADIR%%/stamps/animals/insects/mantis.txt
 %%DATADIR%%/stamps/animals/insects/xanthia.dat
 %%DATADIR%%/stamps/animals/insects/xanthia.ogg
 %%DATADIR%%/stamps/animals/insects/xanthia.png
@@ -331,7 +353,6 @@
 %%DATADIR%%/stamps/animals/mammals/aquatic/orca_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/aquatic/orca_desc_nl.ogg
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.dat
-%%DATADIR%%/stamps/animals/mammals/aquatic/otter.ogg
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.png
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.txt
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter_desc.ogg
@@ -366,6 +387,9 @@
 %%DATADIR%%/stamps/animals/mammals/bears/bear_desc_ca.ogg
 %%DATADIR%%/stamps/animals/mammals/bears/bear_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/bears/bear_desc_nl.ogg
+%%DATADIR%%/stamps/animals/mammals/bears/european-bear.dat
+%%DATADIR%%/stamps/animals/mammals/bears/european-bear.png
+%%DATADIR%%/stamps/animals/mammals/bears/european-bear.txt
 %%DATADIR%%/stamps/animals/mammals/bears/toys/edward_bear.png
 %%DATADIR%%/stamps/animals/mammals/bears/toys/edward_bear.txt
 %%DATADIR%%/stamps/animals/mammals/bears/toys/edward_bear_desc_ca.ogg
@@ -398,6 +422,18 @@
 %%DATADIR%%/stamps/animals/mammals/bovines/cow_white.png
 %%DATADIR%%/stamps/animals/mammals/bovines/cow_white.txt
 %%DATADIR%%/stamps/animals/mammals/bovines/cow_white_desc_ca.ogg
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby-stand.dat
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby-stand.png
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby-stand.txt
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby.dat
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby.png
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-baby.txt
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-sitting.dat
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-sitting.png
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-sitting.txt
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-stand.dat
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-stand.png
+%%DATADIR%%/stamps/animals/mammals/bovines/gnu-stand.txt
 %%DATADIR%%/stamps/animals/mammals/bovines/goat.dat
 %%DATADIR%%/stamps/animals/mammals/bovines/goat.ogg
 %%DATADIR%%/stamps/animals/mammals/bovines/goat.png
@@ -443,6 +479,13 @@
 %%DATADIR%%/stamps/animals/mammals/bovines/yak_desc_ca.ogg
 %%DATADIR%%/stamps/animals/mammals/bovines/yak_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/bovines/yak_desc_nl.ogg
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu.dat
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu.png
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu.txt
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu_desc.ogg
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu_desc_ca.ogg
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu_desc_fr.ogg
+%%DATADIR%%/stamps/animals/mammals/bovines/zebu_desc_nl.ogg
 %%DATADIR%%/stamps/animals/mammals/camel/camel.dat
 %%DATADIR%%/stamps/animals/mammals/camel/camel.ogg
 %%DATADIR%%/stamps/animals/mammals/camel/camel.png
@@ -506,6 +549,13 @@
 %%DATADIR%%/stamps/animals/mammals/deer/doe_desc_ca.ogg
 %%DATADIR%%/stamps/animals/mammals/deer/doe_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/deer/doe_desc_nl.ogg
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti.dat
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti.png
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti.txt
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti_desc.ogg
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti_desc_ca.ogg
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti_desc_fr.ogg
+%%DATADIR%%/stamps/animals/mammals/deer/wapiti_desc_nl.ogg
 %%DATADIR%%/stamps/animals/mammals/dogs/dingo.png
 %%DATADIR%%/stamps/animals/mammals/dogs/dingo.txt
 %%DATADIR%%/stamps/animals/mammals/dogs/dingo_desc_ca.ogg
@@ -650,6 +700,13 @@
 %%DATADIR%%/stamps/animals/mammals/rodents/rabbit_desc_ca.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/rabbit_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/rabbit_desc_nl.ogg
+%%DATADIR%%/stamps/animals/mammals/rodents/rat.dat
+%%DATADIR%%/stamps/animals/mammals/rodents/rat.png
+%%DATADIR%%/stamps/animals/mammals/rodents/rat.txt
+%%DATADIR%%/stamps/animals/mammals/rodents/rat_desc.ogg
+%%DATADIR%%/stamps/animals/mammals/rodents/rat_desc_ca.ogg
+%%DATADIR%%/stamps/animals/mammals/rodents/rat_desc_fr.ogg
+%%DATADIR%%/stamps/animals/mammals/rodents/rat_desc_nl.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel.dat
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel.png
@@ -657,6 +714,13 @@
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel_desc_ca.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel_desc_fr.ogg
 %%DATADIR%%/stamps/animals/mammals/rodents/squirrel_desc_nl.ogg
+%%DATADIR%%/stamps/animals/mammals/wildboar.dat
+%%DATADIR%%/stamps/animals/mammals/wildboar.png
+%%DATADIR%%/stamps/animals/mammals/wildboar.txt
+%%DATADIR%%/stamps/animals/mammals/wildboar_desc.ogg
+%%DATADIR%%/stamps/animals/mammals/wildboar_desc_ca.ogg
+%%DATADIR%%/stamps/animals/mammals/wildboar_desc_fr.ogg
+%%DATADIR%%/stamps/animals/mammals/wildboar_desc_nl.ogg
 %%DATADIR%%/stamps/animals/marsupials/cartoon/kangaroo-silo.dat
 %%DATADIR%%/stamps/animals/marsupials/cartoon/kangaroo-silo.png
 %%DATADIR%%/stamps/animals/marsupials/cartoon/kangaroo-silo.txt
@@ -732,6 +796,15 @@
 %%DATADIR%%/stamps/clothes/hats/tophat.svg
 %%DATADIR%%/stamps/clothes/hats/tophat.txt
 %%DATADIR%%/stamps/clothes/hats/tophat_desc_ca.ogg
+%%DATADIR%%/stamps/clothes/sunglasses_01.dat
+%%DATADIR%%/stamps/clothes/sunglasses_01.svg
+%%DATADIR%%/stamps/clothes/sunglasses_01.txt
+%%DATADIR%%/stamps/clothes/sunglasses_02.dat
+%%DATADIR%%/stamps/clothes/sunglasses_02.svg
+%%DATADIR%%/stamps/clothes/sunglasses_02.txt
+%%DATADIR%%/stamps/clothes/t-shirt_01.dat
+%%DATADIR%%/stamps/clothes/t-shirt_01.svg
+%%DATADIR%%/stamps/clothes/t-shirt_01.txt
 %%DATADIR%%/stamps/food/dessert/cartoon/birthday_cake.dat
 %%DATADIR%%/stamps/food/dessert/cartoon/birthday_cake.png
 %%DATADIR%%/stamps/food/dessert/cartoon/birthday_cake.svg
@@ -742,6 +815,12 @@
 %%DATADIR%%/stamps/food/dessert/cartoon/pink_cake.svg
 %%DATADIR%%/stamps/food/dessert/cartoon/pink_cake.txt
 %%DATADIR%%/stamps/food/dessert/cartoon/pink_cake_desc_ca.ogg
+%%DATADIR%%/stamps/food/fruit/Apricot_whole.png
+%%DATADIR%%/stamps/food/fruit/Apricot_whole.txt
+%%DATADIR%%/stamps/food/fruit/Cherry_Stella.png
+%%DATADIR%%/stamps/food/fruit/Cherry_Stella.txt
+%%DATADIR%%/stamps/food/fruit/Strawberry2.png
+%%DATADIR%%/stamps/food/fruit/Strawberry2.txt
 %%DATADIR%%/stamps/food/fruit/apple_fuji.png
 %%DATADIR%%/stamps/food/fruit/apple_fuji.txt
 %%DATADIR%%/stamps/food/fruit/apple_fuji_desc_ca.ogg
@@ -912,6 +991,8 @@
 %%DATADIR%%/stamps/food/vegetables/chilepepper.png
 %%DATADIR%%/stamps/food/vegetables/chilepepper.txt
 %%DATADIR%%/stamps/food/vegetables/chilepepper_desc_ca.ogg
+%%DATADIR%%/stamps/food/vegetables/corn.png
+%%DATADIR%%/stamps/food/vegetables/corn.txt
 %%DATADIR%%/stamps/food/vegetables/eggplant.png
 %%DATADIR%%/stamps/food/vegetables/eggplant.txt
 %%DATADIR%%/stamps/food/vegetables/eggplant_desc_ca.ogg
@@ -962,6 +1043,8 @@
 %%DATADIR%%/stamps/hobbies/camera_35mm.png
 %%DATADIR%%/stamps/hobbies/camera_35mm.txt
 %%DATADIR%%/stamps/hobbies/camera_35mm_desc_ca.ogg
+%%DATADIR%%/stamps/hobbies/knitting.svg
+%%DATADIR%%/stamps/hobbies/knitting.txt
 %%DATADIR%%/stamps/hobbies/music/brass/trumpet.dat
 %%DATADIR%%/stamps/hobbies/music/brass/trumpet.png
 %%DATADIR%%/stamps/hobbies/music/brass/trumpet.txt
@@ -1008,6 +1091,8 @@
 %%DATADIR%%/stamps/hobbies/music/wind/bassoon.png
 %%DATADIR%%/stamps/hobbies/music/wind/bassoon.txt
 %%DATADIR%%/stamps/hobbies/music/wind/bassoon_desc_ca.ogg
+%%DATADIR%%/stamps/household/Lightbulb.png
+%%DATADIR%%/stamps/household/Lightbulb.txt
 %%DATADIR%%/stamps/household/arttools/highlighter.dat
 %%DATADIR%%/stamps/household/arttools/highlighter.png
 %%DATADIR%%/stamps/household/arttools/highlighter.txt
@@ -1032,6 +1117,8 @@
 %%DATADIR%%/stamps/household/dishes/cartoon/pressure_cooker.png
 %%DATADIR%%/stamps/household/dishes/cartoon/pressure_cooker.txt
 %%DATADIR%%/stamps/household/dishes/cartoon/pressure_cooker_desc_ca.ogg
+%%DATADIR%%/stamps/household/dishes/expresso.svg
+%%DATADIR%%/stamps/household/dishes/expresso.txt
 %%DATADIR%%/stamps/household/dishes/glass.dat
 %%DATADIR%%/stamps/household/dishes/glass.png
 %%DATADIR%%/stamps/household/dishes/glass.txt
@@ -1070,6 +1157,10 @@
 %%DATADIR%%/stamps/household/key.png
 %%DATADIR%%/stamps/household/key.txt
 %%DATADIR%%/stamps/household/key_desc_ca.ogg
+%%DATADIR%%/stamps/household/padlock_closed.svg
+%%DATADIR%%/stamps/household/padlock_closed.txt
+%%DATADIR%%/stamps/household/padlock_open.svg
+%%DATADIR%%/stamps/household/padlock_open.txt
 %%DATADIR%%/stamps/household/rubberduck.dat
 %%DATADIR%%/stamps/household/rubberduck.ogg
 %%DATADIR%%/stamps/household/rubberduck.png
@@ -1114,6 +1205,9 @@
 %%DATADIR%%/stamps/household/tools/wrench_plumbers.png
 %%DATADIR%%/stamps/household/tools/wrench_plumbers.txt
 %%DATADIR%%/stamps/household/tools/wrench_plumbers_desc_ca.ogg
+%%DATADIR%%/stamps/household/vacuum_cleaner.dat
+%%DATADIR%%/stamps/household/vacuum_cleaner.svg
+%%DATADIR%%/stamps/household/vacuum_cleaner.txt
 %%DATADIR%%/stamps/household/wheelie_bin.dat
 %%DATADIR%%/stamps/household/wheelie_bin.png
 %%DATADIR%%/stamps/household/wheelie_bin.txt
@@ -1162,6 +1256,19 @@
 %%DATADIR%%/stamps/naturalforces/lightningbolt.png
 %%DATADIR%%/stamps/naturalforces/lightningbolt.txt
 %%DATADIR%%/stamps/naturalforces/lightningbolt_desc_ca.ogg
+%%DATADIR%%/stamps/people/cartoon/scarecrow.svg
+%%DATADIR%%/stamps/people/cartoon/scarecrow.txt
+%%DATADIR%%/stamps/people/cartoon/woman_chemist.svg
+%%DATADIR%%/stamps/people/cartoon/woman_chemist.txt
+%%DATADIR%%/stamps/people/cartoon/woman_dancing.svg
+%%DATADIR%%/stamps/people/cartoon/woman_doctor.svg
+%%DATADIR%%/stamps/people/cartoon/woman_doctor.txt
+%%DATADIR%%/stamps/people/cartoon/woman_nurse.svg
+%%DATADIR%%/stamps/people/cartoon/woman_nurse.txt
+%%DATADIR%%/stamps/people/cartoon/woman_police_officer_1.svg
+%%DATADIR%%/stamps/people/cartoon/woman_police_officer_1.txt
+%%DATADIR%%/stamps/people/cartoon/woman_police_officer_2.svg
+%%DATADIR%%/stamps/people/cartoon/woman_police_officer_2.txt
 %%DATADIR%%/stamps/people/fireman200b.png
 %%DATADIR%%/stamps/people/fireman200b.txt
 %%DATADIR%%/stamps/people/fireman200b_desc_ca.ogg
@@ -1204,6 +1311,14 @@
 %%DATADIR%%/stamps/plants/flowers/whitestar-petunia.txt
 %%DATADIR%%/stamps/plants/flowers/whitestar-petunia_desc_ca.ogg
 %%DATADIR%%/stamps/plants/flowers/yellow-flower.png
+%%DATADIR%%/stamps/plants/thyme.dat
+%%DATADIR%%/stamps/plants/thyme.png
+%%DATADIR%%/stamps/plants/thyme.txt
+%%DATADIR%%/stamps/plants/toadstool.svg
+%%DATADIR%%/stamps/plants/toadstool.txt
+%%DATADIR%%/stamps/plants/trees/birch.dat
+%%DATADIR%%/stamps/plants/trees/birch.png
+%%DATADIR%%/stamps/plants/trees/birch.txt
 %%DATADIR%%/stamps/plants/trees/holly_leaves.dat
 %%DATADIR%%/stamps/plants/trees/holly_leaves.png
 %%DATADIR%%/stamps/plants/trees/holly_leaves.txt
@@ -1221,8 +1336,32 @@
 %%DATADIR%%/stamps/plants/trees/tree336.png
 %%DATADIR%%/stamps/plants/trees/tree336.txt
 %%DATADIR%%/stamps/plants/trees/tree336_desc_ca.ogg
+%%DATADIR%%/stamps/seasonal/balloon.dat
+%%DATADIR%%/stamps/seasonal/balloon.svg
+%%DATADIR%%/stamps/seasonal/balloon.txt
 %%DATADIR%%/stamps/seasonal/candle.dat
 %%DATADIR%%/stamps/seasonal/candle.png
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_1.dat
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_1.png
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_1.txt
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_2.dat
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_2.png
+%%DATADIR%%/stamps/seasonal/christmas/Candy_cane_photo_2.txt
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_Tree_photo.dat
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_Tree_photo.png
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_Tree_photo.txt
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_pudding.dat
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_pudding.png
+%%DATADIR%%/stamps/seasonal/christmas/Christmas_pudding.txt
+%%DATADIR%%/stamps/seasonal/christmas/German_Christmas_toy.dat
+%%DATADIR%%/stamps/seasonal/christmas/German_Christmas_toy.png
+%%DATADIR%%/stamps/seasonal/christmas/German_Christmas_toy.txt
+%%DATADIR%%/stamps/seasonal/christmas/Mince_Pie.dat
+%%DATADIR%%/stamps/seasonal/christmas/Mince_Pie.png
+%%DATADIR%%/stamps/seasonal/christmas/Mince_Pie.txt
+%%DATADIR%%/stamps/seasonal/christmas/Roast_turkey.dat
+%%DATADIR%%/stamps/seasonal/christmas/Roast_turkey.png
+%%DATADIR%%/stamps/seasonal/christmas/Roast_turkey.txt
 %%DATADIR%%/stamps/seasonal/christmas/bow.dat
 %%DATADIR%%/stamps/seasonal/christmas/bow.png
 %%DATADIR%%/stamps/seasonal/christmas/bow.txt
@@ -1273,6 +1412,8 @@
 %%DATADIR%%/stamps/seasonal/christmas/xmaswreath.png
 %%DATADIR%%/stamps/seasonal/christmas/xmaswreath.txt
 %%DATADIR%%/stamps/seasonal/christmas/xmaswreath_desc_ca.ogg
+%%DATADIR%%/stamps/seasonal/clover.svg
+%%DATADIR%%/stamps/seasonal/clover.txt
 %%DATADIR%%/stamps/seasonal/easter/bluebird.dat
 %%DATADIR%%/stamps/seasonal/easter/bluebird.png
 %%DATADIR%%/stamps/seasonal/easter/bluebird.txt
@@ -1434,6 +1575,8 @@
 %%DATADIR%%/stamps/seasonal/newyears/party-horn-out.png
 %%DATADIR%%/stamps/seasonal/newyears/party-horn-out.txt
 %%DATADIR%%/stamps/seasonal/newyears/party-horn-out_desc_ca.ogg
+%%DATADIR%%/stamps/seasonal/shamrock.svg
+%%DATADIR%%/stamps/seasonal/shamrock.txt
 %%DATADIR%%/stamps/space/apollo_lander.ogg
 %%DATADIR%%/stamps/space/apollo_lander.png
 %%DATADIR%%/stamps/space/apollo_lander.txt
@@ -2643,6 +2786,30 @@
 %%DATADIR%%/stamps/symbols/shapes/thought_balloon.svg
 %%DATADIR%%/stamps/symbols/shapes/thought_balloon.txt
 %%DATADIR%%/stamps/symbols/shapes/thought_balloon_desc_ca.ogg
+%%DATADIR%%/stamps/town/cartoon/docks.png
+%%DATADIR%%/stamps/town/cartoon/docks.svg
+%%DATADIR%%/stamps/town/cartoon/docks.txt
+%%DATADIR%%/stamps/town/cartoon/fountain.png
+%%DATADIR%%/stamps/town/cartoon/fountain.svg
+%%DATADIR%%/stamps/town/cartoon/fountain.txt
+%%DATADIR%%/stamps/town/cartoon/gate.png
+%%DATADIR%%/stamps/town/cartoon/gate.svg
+%%DATADIR%%/stamps/town/cartoon/gate.txt
+%%DATADIR%%/stamps/town/cartoon/mine.png
+%%DATADIR%%/stamps/town/cartoon/mine.svg
+%%DATADIR%%/stamps/town/cartoon/mine.txt
+%%DATADIR%%/stamps/town/cartoon/ruins.png
+%%DATADIR%%/stamps/town/cartoon/ruins.svg
+%%DATADIR%%/stamps/town/cartoon/ruins.txt
+%%DATADIR%%/stamps/town/cartoon/shipwreck.png
+%%DATADIR%%/stamps/town/cartoon/shipwreck.svg
+%%DATADIR%%/stamps/town/cartoon/shipwreck.txt
+%%DATADIR%%/stamps/town/cartoon/watch_tower.png
+%%DATADIR%%/stamps/town/cartoon/watch_tower.svg
+%%DATADIR%%/stamps/town/cartoon/watch_tower.txt
+%%DATADIR%%/stamps/town/cartoon/wishing_well.png
+%%DATADIR%%/stamps/town/cartoon/wishing_well.svg
+%%DATADIR%%/stamps/town/cartoon/wishing_well.txt
 %%DATADIR%%/stamps/town/flags/blue-and-yellowflag.png
 %%DATADIR%%/stamps/town/flags/blue-and-yellowflag.txt
 %%DATADIR%%/stamps/town/flags/blue-and-yellowflag_desc_ca.ogg
@@ -2662,6 +2829,21 @@
 %%DATADIR%%/stamps/town/flags/yellowflag.png
 %%DATADIR%%/stamps/town/flags/yellowflag.txt
 %%DATADIR%%/stamps/town/flags/yellowflag_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/blacksmith.png
+%%DATADIR%%/stamps/town/houses/cartoon/blacksmith.svg
+%%DATADIR%%/stamps/town/houses/cartoon/blacksmith.txt
+%%DATADIR%%/stamps/town/houses/cartoon/cathedral.png
+%%DATADIR%%/stamps/town/houses/cartoon/cathedral.svg
+%%DATADIR%%/stamps/town/houses/cartoon/cathedral.txt
+%%DATADIR%%/stamps/town/houses/cartoon/cave_entrance.png
+%%DATADIR%%/stamps/town/houses/cartoon/cave_entrance.svg
+%%DATADIR%%/stamps/town/houses/cartoon/cave_entrance.txt
+%%DATADIR%%/stamps/town/houses/cartoon/circus.png
+%%DATADIR%%/stamps/town/houses/cartoon/circus.svg
+%%DATADIR%%/stamps/town/houses/cartoon/circus.txt
+%%DATADIR%%/stamps/town/houses/cartoon/city.png
+%%DATADIR%%/stamps/town/houses/cartoon/city.svg
+%%DATADIR%%/stamps/town/houses/cartoon/city.txt
 %%DATADIR%%/stamps/town/houses/cartoon/cityhouse.dat
 %%DATADIR%%/stamps/town/houses/cartoon/cityhouse.png
 %%DATADIR%%/stamps/town/houses/cartoon/cityhouse.svg
@@ -2672,21 +2854,56 @@
 %%DATADIR%%/stamps/town/houses/cartoon/fairytale_castle.svg
 %%DATADIR%%/stamps/town/houses/cartoon/fairytale_castle.txt
 %%DATADIR%%/stamps/town/houses/cartoon/fairytale_castle_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/farm.png
+%%DATADIR%%/stamps/town/houses/cartoon/farm.svg
+%%DATADIR%%/stamps/town/houses/cartoon/farm.txt
+%%DATADIR%%/stamps/town/houses/cartoon/fishery.png
+%%DATADIR%%/stamps/town/houses/cartoon/fishery.svg
+%%DATADIR%%/stamps/town/houses/cartoon/fishery.txt
+%%DATADIR%%/stamps/town/houses/cartoon/fort.png
+%%DATADIR%%/stamps/town/houses/cartoon/fort.svg
+%%DATADIR%%/stamps/town/houses/cartoon/fort.txt
+%%DATADIR%%/stamps/town/houses/cartoon/fortress.png
+%%DATADIR%%/stamps/town/houses/cartoon/fortress.svg
+%%DATADIR%%/stamps/town/houses/cartoon/fortress.txt
+%%DATADIR%%/stamps/town/houses/cartoon/hunter.png
+%%DATADIR%%/stamps/town/houses/cartoon/hunter.svg
+%%DATADIR%%/stamps/town/houses/cartoon/hunter.txt
 %%DATADIR%%/stamps/town/houses/cartoon/igloo.dat
 %%DATADIR%%/stamps/town/houses/cartoon/igloo.png
 %%DATADIR%%/stamps/town/houses/cartoon/igloo.svg
 %%DATADIR%%/stamps/town/houses/cartoon/igloo.txt
 %%DATADIR%%/stamps/town/houses/cartoon/igloo_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/inn.png
+%%DATADIR%%/stamps/town/houses/cartoon/inn.svg
+%%DATADIR%%/stamps/town/houses/cartoon/inn.txt
+%%DATADIR%%/stamps/town/houses/cartoon/jailhouse.png
+%%DATADIR%%/stamps/town/houses/cartoon/jailhouse.svg
+%%DATADIR%%/stamps/town/houses/cartoon/jailhouse.txt
+%%DATADIR%%/stamps/town/houses/cartoon/lighthouse.svg
+%%DATADIR%%/stamps/town/houses/cartoon/lighthouse.txt
+%%DATADIR%%/stamps/town/houses/cartoon/medieval_tent.png
+%%DATADIR%%/stamps/town/houses/cartoon/medieval_tent.svg
+%%DATADIR%%/stamps/town/houses/cartoon/medieval_tent.txt
+%%DATADIR%%/stamps/town/houses/cartoon/monastery.png
+%%DATADIR%%/stamps/town/houses/cartoon/monastery.svg
+%%DATADIR%%/stamps/town/houses/cartoon/monastery.txt
 %%DATADIR%%/stamps/town/houses/cartoon/pinkhome.dat
 %%DATADIR%%/stamps/town/houses/cartoon/pinkhome.png
 %%DATADIR%%/stamps/town/houses/cartoon/pinkhome.svg
 %%DATADIR%%/stamps/town/houses/cartoon/pinkhome.txt
 %%DATADIR%%/stamps/town/houses/cartoon/pinkhome_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/stables.png
+%%DATADIR%%/stamps/town/houses/cartoon/stables.svg
+%%DATADIR%%/stamps/town/houses/cartoon/stables.txt
 %%DATADIR%%/stamps/town/houses/cartoon/swisshome.dat
 %%DATADIR%%/stamps/town/houses/cartoon/swisshome.png
 %%DATADIR%%/stamps/town/houses/cartoon/swisshome.svg
 %%DATADIR%%/stamps/town/houses/cartoon/swisshome.txt
 %%DATADIR%%/stamps/town/houses/cartoon/swisshome_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/tavern.png
+%%DATADIR%%/stamps/town/houses/cartoon/tavern.svg
+%%DATADIR%%/stamps/town/houses/cartoon/tavern.txt
 %%DATADIR%%/stamps/town/houses/cartoon/tent.dat
 %%DATADIR%%/stamps/town/houses/cartoon/tent.png
 %%DATADIR%%/stamps/town/houses/cartoon/tent.svg
@@ -2697,11 +2914,56 @@
 %%DATADIR%%/stamps/town/houses/cartoon/tepee.svg
 %%DATADIR%%/stamps/town/houses/cartoon/tepee.txt
 %%DATADIR%%/stamps/town/houses/cartoon/tepee_desc_ca.ogg
+%%DATADIR%%/stamps/town/houses/cartoon/tower_flag_red.png
+%%DATADIR%%/stamps/town/houses/cartoon/tower_flag_red.svg
+%%DATADIR%%/stamps/town/houses/cartoon/tower_flag_red.txt
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round.png
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round.svg
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round.txt
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round_flag.png
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round_flag.svg
+%%DATADIR%%/stamps/town/houses/cartoon/tower_round_flag.txt
+%%DATADIR%%/stamps/town/houses/cartoon/tower_square.png
+%%DATADIR%%/stamps/town/houses/cartoon/tower_square.svg
+%%DATADIR%%/stamps/town/houses/cartoon/tower_square.txt
+%%DATADIR%%/stamps/town/houses/cartoon/townhall.png
+%%DATADIR%%/stamps/town/houses/cartoon/townhall.svg
+%%DATADIR%%/stamps/town/houses/cartoon/townhall.txt
+%%DATADIR%%/stamps/town/houses/cartoon/university.png
+%%DATADIR%%/stamps/town/houses/cartoon/university.svg
+%%DATADIR%%/stamps/town/houses/cartoon/university.txt
+%%DATADIR%%/stamps/town/houses/cartoon/warehouse.png
+%%DATADIR%%/stamps/town/houses/cartoon/warehouse.svg
+%%DATADIR%%/stamps/town/houses/cartoon/warehouse.txt
+%%DATADIR%%/stamps/town/houses/cartoon/windmill.png
+%%DATADIR%%/stamps/town/houses/cartoon/windmill.svg
+%%DATADIR%%/stamps/town/houses/cartoon/windmill.txt
 %%DATADIR%%/stamps/town/houses/cartoon/wooden_cottage.dat
 %%DATADIR%%/stamps/town/houses/cartoon/wooden_cottage.png
 %%DATADIR%%/stamps/town/houses/cartoon/wooden_cottage.svg
 %%DATADIR%%/stamps/town/houses/cartoon/wooden_cottage.txt
 %%DATADIR%%/stamps/town/houses/cartoon/wooden_cottage_desc_ca.ogg
+%%DATADIR%%/stamps/town/monuments/cartoon/graveyard.png
+%%DATADIR%%/stamps/town/monuments/cartoon/graveyard.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/graveyard.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/magic_stones.png
+%%DATADIR%%/stamps/town/monuments/cartoon/magic_stones.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/magic_stones.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/obelisk.png
+%%DATADIR%%/stamps/town/monuments/cartoon/obelisk.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/obelisk.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/pyramid.png
+%%DATADIR%%/stamps/town/monuments/cartoon/pyramid.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/pyramid.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/statue.png
+%%DATADIR%%/stamps/town/monuments/cartoon/statue.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/statue.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/sword_in_the_stone.png
+%%DATADIR%%/stamps/town/monuments/cartoon/sword_in_the_stone.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/sword_in_the_stone.txt
+%%DATADIR%%/stamps/town/monuments/cartoon/totem.png
+%%DATADIR%%/stamps/town/monuments/cartoon/totem.svg
+%%DATADIR%%/stamps/town/monuments/cartoon/totem.txt
 %%DATADIR%%/stamps/town/monuments/inukshuk-outline.dat
 %%DATADIR%%/stamps/town/monuments/inukshuk-outline.png
 %%DATADIR%%/stamps/town/monuments/inukshuk-outline.txt
@@ -2813,6 +3075,8 @@
 %%DATADIR%%/stamps/vehicles/construction/cartoon/cementMixer.png
 %%DATADIR%%/stamps/vehicles/construction/cartoon/cementMixer.txt
 %%DATADIR%%/stamps/vehicles/construction/cartoon/cementMixer_desc_ca.ogg
+%%DATADIR%%/stamps/vehicles/construction/cartoon/forklift.svg
+%%DATADIR%%/stamps/vehicles/construction/cartoon/forklift.txt
 %%DATADIR%%/stamps/vehicles/construction/cartoon/terex.png
 %%DATADIR%%/stamps/vehicles/construction/cartoon/terex.txt
 %%DATADIR%%/stamps/vehicles/construction/cartoon/terex_desc_ca.ogg
@@ -2820,6 +3084,10 @@
 %%DATADIR%%/stamps/vehicles/construction/cartoon/towTruck.png
 %%DATADIR%%/stamps/vehicles/construction/cartoon/towTruck.txt
 %%DATADIR%%/stamps/vehicles/construction/cartoon/towTruck_desc_ca.ogg
+%%DATADIR%%/stamps/vehicles/construction/dumper.dat
+%%DATADIR%%/stamps/vehicles/construction/dumper.png
+%%DATADIR%%/stamps/vehicles/construction/dumper.txt
+%%DATADIR%%/stamps/vehicles/construction/dumper_mirror.png
 %%DATADIR%%/stamps/vehicles/cycle/pink_tricycle.dat
 %%DATADIR%%/stamps/vehicles/cycle/pink_tricycle.png
 %%DATADIR%%/stamps/vehicles/cycle/pink_tricycle.txt
@@ -2827,6 +3095,10 @@
 %%DATADIR%%/stamps/vehicles/emergency/cartoon/fire_engine.png
 %%DATADIR%%/stamps/vehicles/emergency/cartoon/fire_engine.txt
 %%DATADIR%%/stamps/vehicles/emergency/cartoon/fire_engine_desc_ca.ogg
+%%DATADIR%%/stamps/vehicles/emergency/firetruck.dat
+%%DATADIR%%/stamps/vehicles/emergency/firetruck.ogg
+%%DATADIR%%/stamps/vehicles/emergency/firetruck.png
+%%DATADIR%%/stamps/vehicles/emergency/firetruck.txt
 %%DATADIR%%/stamps/vehicles/emergency/sedan_police.dat
 %%DATADIR%%/stamps/vehicles/emergency/sedan_police.png
 %%DATADIR%%/stamps/vehicles/emergency/sedan_police_mirror.png
@@ -2927,10 +3199,12 @@
 @dirrm %%DATADIR%%/stamps/vehicles/auto
 @dirrm %%DATADIR%%/stamps/vehicles
 @dirrm %%DATADIR%%/stamps/town/roadsigns
+@dirrm %%DATADIR%%/stamps/town/monuments/cartoon
 @dirrm %%DATADIR%%/stamps/town/monuments
 @dirrm %%DATADIR%%/stamps/town/houses/cartoon
 @dirrm %%DATADIR%%/stamps/town/houses
 @dirrm %%DATADIR%%/stamps/town/flags
+@dirrm %%DATADIR%%/stamps/town/cartoon
 @dirrm %%DATADIR%%/stamps/town
 @dirrm %%DATADIR%%/stamps/symbols/shapes
 @dirrm %%DATADIR%%/stamps/symbols/music
@@ -2985,6 +3259,7 @@
 @dirrm %%DATADIR%%/stamps/plants/flowers
 @dirrm %%DATADIR%%/stamps/plants
 @dirrm %%DATADIR%%/stamps/people/toys
+@dirrm %%DATADIR%%/stamps/people/cartoon
 @dirrm %%DATADIR%%/stamps/people
 @dirrm %%DATADIR%%/stamps/naturalforces
 @dirrm %%DATADIR%%/stamps/military/vehicles
