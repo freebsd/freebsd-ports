@@ -1107,6 +1107,7 @@
     SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
     SUBDIR += planet
+    SUBDIR += pligg
     SUBDIR += plone
     SUBDIR += plone3
     SUBDIR += plugger
