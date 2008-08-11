@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Sep 29 10:14:36 2007
-+++ configure.in	Sun Oct 14 12:32:53 2007
+--- configure.in.orig	2008-05-28 07:31:05.000000000 +0930
++++ configure.in	2008-08-10 17:08:44.000000000 +0930
 @@ -12,8 +12,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -18,13 +18,13 @@
  
  AM_PROG_CC_C_O
  
-@@ -166,11 +164,12 @@
+@@ -180,11 +178,12 @@
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
 +if test -d "$PGSQL"; then
  AC_CHECK_LIB(crypt,main)
- if test "$ac_cv_lib_crypt_main" = "yes"; then
+ if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" != "xno"; then
    if test -n "$PGSQL"; then
 -    LDFLAGS="$LDFLAGS -L$PGSQL/lib"
 -    CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
@@ -33,7 +33,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -207,37 +206,42 @@
+@@ -221,37 +220,42 @@
    AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
    AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
  fi
@@ -89,7 +89,7 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -246,6 +250,7 @@
+@@ -260,6 +264,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -97,9 +97,9 @@
  
  dnl Check for headers used by check_ide_smart
  AC_CHECK_HEADER(linux/hdreg.h, FOUNDINCLUDE=yes, FOUNDINCLUDE=no)
-@@ -522,22 +527,10 @@
- 	ac_cv_ps_cols=8
- 	AC_MSG_RESULT([$ac_cv_ps_command])
+@@ -578,22 +583,10 @@
+ dnl 	ac_cv_ps_cols=8
+ dnl 	AC_MSG_RESULT([$ac_cv_ps_command])
  
 -dnl Some gnu/linux systems (debian for one) don't like -axwo and need axwo.
 -dnl so test for this first...
@@ -123,7 +123,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -545,9 +538,8 @@
+@@ -601,9 +594,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -135,7 +135,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -557,209 +549,6 @@
+@@ -613,209 +605,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -345,7 +345,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1137,6 +926,8 @@
+@@ -1193,6 +982,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -354,7 +354,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1167,7 +958,10 @@
+@@ -1223,7 +1014,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -365,7 +365,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1192,7 +986,10 @@
+@@ -1248,7 +1042,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -376,7 +376,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_ARG_WITH(fping_command,
              ACX_HELP_STRING([--with-fping-command=PATH],
-@@ -1204,6 +1001,7 @@
+@@ -1260,6 +1057,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -384,7 +384,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1271,32 +1069,12 @@
+@@ -1327,32 +1125,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
