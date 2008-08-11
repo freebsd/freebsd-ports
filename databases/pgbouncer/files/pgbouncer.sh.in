@@ -18,15 +18,18 @@
 name="pgbouncer"
 rcvar=`set_rcvar`
 
+extra_commands="reload"
+
 command="%%PREFIX%%/bin/pgbouncer"
 config_file="%%PREFIX%%/etc/$name.ini"
 command_args="-d ${config_file}"
-pidfile="/var/run/$name.pid"
+pidfile="%%PGBOUNCER_RUNDIR%%/$name.pid"
 required_files="${config_file}"
 
 # read configuration and set defaults
 load_rc_config "$name"
 : ${pgbouncer_enable="NO"}
+: ${pgbouncer_user="%%PGBOUNCER_USER%%"}
 : ${pgbouncer_flags=""}
 
 run_rc_command "$1"

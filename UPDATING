@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080812:
+  AFFECTS: users of databases/pgbouncer
+  AUTHOR: mm@FreeBSD.org
+
+  Starting with port version 1.2.3, pgbouncer does not run as root anymore.
+  If you are upgrading from earlier versions, please update your configuration
+  in ${PREFIX}/etc/pgbouncer.ini to use log and pid file paths owned by the 
+  newly created pgbouncer user (or customize for a different user yourself).
+
+  Default logfile: /var/log/pgbouncer/pgbouncer.log
+  Default pidfile: /var/run/pgbouncer/pgbouncer.pid
+
 20080808
   AFFECTS: users of chinese/phpbb-tw
   AUTHOR: chinsan@FreeBSD.org

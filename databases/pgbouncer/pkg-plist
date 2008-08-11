@@ -1,3 +1,5 @@
 bin/pgbouncer
-%%EXAMPLESDIR%%/pgbouncer.ini
-@dirrm %%EXAMPLESDIR%%
+@unexec if cmp -s %D/etc/pgbouncer.ini %D/etc/pgbouncer.ini.sample; then rm -f %D/etc/pgbouncer.ini; fi
+etc/pgbouncer.ini.sample
+@exec [ -f %B/pgbouncer.ini ] || cp %B/%f %B/pgbouncer.ini
+etc/pgbouncer.users.sample

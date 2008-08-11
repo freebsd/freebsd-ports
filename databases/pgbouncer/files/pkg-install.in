@@ -1,0 +1,98 @@
+#! /bin/sh
+# $FreeBSD#
+
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
+pgbouncer_user="%%PGBOUNCER_USER%%"
+pgbouncer_uid="%%PGBOUNCER_UID%%"
+pgbouncer_group="%%PGBOUNCER_GROUP%%"
+pgbouncer_gid="%%PGBOUNCER_GID%%"
+pgbouncer_gecos="%%PGBOUNCER_GECOS%%"
+pgbouncer_home="%%PGBOUNCER_HOME%%"
+pgbouncer_shell="%%PGBOUNCER_SHELL%%"
+
+PGBOUNCER_RUNDIR="%%PGBOUNCER_RUNDIR%%"
+PGBOUNCER_LOGDIR="%%PGBOUNCER_LOGDIR%%"
+
+CHMOD="%%CHMOD%%"
+CHOWN="%%CHOWN%%"
+MKDIR="%%MKDIR%%"
+PW=%%PW%%
+
+create_group() {
+    local group gid
+
+    group=$1
+    gid=$2
+
+
+    if ${PW} group show -n $group >/dev/null 2>&1 ; then
+        echo "===> Using existing group $group"
+    else
+        if ${PW} groupadd -n $group -g $gid ; then
+            echo "===> Created group $group"
+        else
+            cat <<-EOERRORMSG
+*** Failed to create group $group.
+
+Please add user $user and group $group
+manually with the following commands:
+
+    ${PW} groupadd -n $group -g $gid
+    ${PW} useradd -n $user -u $uid -g $group -c "$gecos" \\
+        -d $home -s $shell -h -
+
+and retry installing this package.
+EOERRORMSG
+            exit 1
+        fi
+    fi
+
+}
+
+
+create_user() {
+    local user uid group gecos home shell
+
+    user=$1
+    uid=$2
+    group=$3
+    gecos=$4
+    home=$5
+    shell=$6
+
+    if ${PW} user show -n $user >/dev/null 2>&1 ; then
+        echo "===> Using existing user $user"
+    else
+        if ${PW} useradd -n $user -u $uid -g $group -c "$gecos" \
+            -d "$home" -s "$shell" -h - ; then
+            echo "===> Created user $user"
+        else
+            cat <<-EOERRORMSG
+*** Failed to create user $user.
+
+Please add user $user manually with the following command:
+
+    ${PW} useradd -n $user -u $uid -g $group -c "$gecos" \\
+       -d $home -s $shell -h -
+
+and retry installing this package.
+EOERRORMSG
+            exit 1
+        fi
+    fi
+}
+
+create_group $pgbouncer_group $pgbouncer_gid
+create_user  $pgbouncer_user $pgbouncer_uid $pgbouncer_group \
+    "$pgbouncer_gecos" "$pgbouncer_home" "$pgbouncer_shell"
+for DIR in ${PGBOUNCER_RUNDIR} ${PGBOUNCER_LOGDIR}; do
+		echo "===> Creating directory ${DIR}"
+ 		${MKDIR} ${DIR}
+		echo "===> Changing ownership of ${DIR}"
+		${CHOWN} -R ${pgbouncer_user}:${pgbouncer_group} ${DIR}
+		echo "===> Changing permissions of ${DIR}"
+		${CHMOD} -R 770 ${DIR}
+done
