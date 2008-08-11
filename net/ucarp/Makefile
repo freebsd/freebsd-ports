@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucarp
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/ \
 		http://download.pureftpd.org/pub/ucarp/
