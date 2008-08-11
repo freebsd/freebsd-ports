@@ -326,6 +326,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-probstat
     SUBDIR += py-scientific
+    SUBDIR += py-sympy
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qgfe
