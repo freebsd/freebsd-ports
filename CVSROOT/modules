@@ -6421,6 +6421,7 @@ kicker-applets                  ports/misc/kicker-applets
 kickpim                         ports/deskutils/kickpim
 kiconvtool                      ports/sysutils/kiconvtool
 kid3                            ports/audio/kid3
+kid3-kde4                       ports/audio/kid3-kde4
 kiki                            ports/games/kiki
 kile                            ports/editors/kile
 kiltdown                        ports/mail/kiltdown
@@ -7166,6 +7167,7 @@ libmcs                          ports/devel/libmcs
 libmcve                         ports/devel/libmcve
 libmemcache                     ports/databases/libmemcache
 libmemcached                    ports/databases/libmemcached
+libmetalink                     ports/misc/libmetalink
 libmicro                        ports/benchmarks/libmicro
 libmicrohttpd                   ports/www/libmicrohttpd
 libmikmod                       ports/audio/libmikmod
@@ -7281,6 +7283,7 @@ librep                          ports/lang/librep
 libretto-config                 ports/sysutils/libretto-config
 librfc822                       ports/mail/librfc822
 librmath                        ports/math/libRmath
+libroadnav                      ports/astro/libroadnav
 librsvg                         ports/graphics/librsvg
 librsvg2                        ports/graphics/librsvg2
 librsync                        ports/net/librsync
@@ -8097,6 +8100,7 @@ metacity-themes                 ports/x11-themes/metacity-themes
 metaf2xml                       ports/textproc/metaf2xml
 metakit                         ports/databases/metakit
 metalink-checker                ports/misc/metalink-checker
+metalink-editor                 ports/misc/metalink-editor
 metalink-tools                  ports/misc/metalink-tools
 metalog                         ports/sysutils/metalog
 metamail                        ports/mail/metamail
@@ -11339,6 +11343,7 @@ p5-Net-Flow                     ports/net/p5-Net-Flow
 p5-Net-Frame                    ports/net/p5-Net-Frame
 p5-Net-Frame-Dump               ports/net/p5-Net-Frame-Dump
 p5-Net-FreeDB                   ports/audio/p5-Net-FreeDB
+p5-Net-GeoPlanet                ports/www/p5-Net-GeoPlanet
 p5-Net-Gnats                    ports/net/p5-Net-Gnats
 p5-Net-Google                   ports/net/p5-Net-Google
 p5-Net-Google-AuthSub           ports/net/p5-Net-Google-AuthSub
@@ -14447,6 +14452,7 @@ p5-net-ftp-common               ports/ftp/p5-Net-FTP-Common
 p5-net-ftp-file                 ports/net/p5-Net-FTP-File
 p5-net-ftp-recursive            ports/ftp/p5-Net-FTP-Recursive
 p5-net-ftpserver                ports/ftp/p5-Net-FTPServer
+p5-net-geoplanet                ports/www/p5-Net-GeoPlanet
 p5-net-gnats                    ports/net/p5-Net-Gnats
 p5-net-google                   ports/net/p5-Net-Google
 p5-net-google-authsub           ports/net/p5-Net-Google-AuthSub
@@ -18473,6 +18479,7 @@ rnews                           ports/www/rnews
 rnv                             ports/textproc/rnv
 ro-aspell                       ports/textproc/ro-aspell
 roadmap                         ports/astro/roadmap
+roadnav                         ports/astro/roadnav
 roadrunner                      ports/net/roadrunner
 roap                            ports/textproc/roap
 robocode                        ports/games/robocode
@@ -20443,6 +20450,7 @@ tokyocabinet                    ports/databases/tokyocabinet
 tolkien-ttf                     ports/x11-fonts/tolkien-ttf
 tolua                           ports/lang/tolua
 tolua++                         ports/lang/tolua++
+tolua++50                       ports/lang/tolua++50
 tolua4                          ports/lang/tolua4
 tolua50                         ports/lang/tolua50
 tomatoes                        ports/games/tomatoes
