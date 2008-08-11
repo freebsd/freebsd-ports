@@ -208,7 +208,7 @@ int remove_ports(void)
 	pid_t	child;
 	int		status;
 
-	args=(char **)malloc(menulen+2 * sizeof(char *));
+	args=(char **)malloc((menulen+2) * sizeof(char *));
 	if(!args) {
 		init_dialog();
 		dialog_msgbox("ERROR", "Can not allocate memory for package list!", 5, 45, TRUE);

@@ -7,6 +7,7 @@
 
 PORTNAME=	pkg_cleanup
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
