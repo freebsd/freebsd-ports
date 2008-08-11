@@ -1,0 +1,8 @@
+include/metalink/metalink_error.h
+include/metalink/metalink_parser.h
+include/metalink/metalink_types.h
+lib/libmetalink.a
+lib/libmetalink.la
+lib/libmetalink.so
+lib/libmetalink.so.0
+@dirrm include/metalink
