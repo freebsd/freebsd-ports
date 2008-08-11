@@ -72,6 +72,14 @@ diff -urNad lusernet.app-0.4.2~/ComposeWindowController.h ComposeWindowControlle
 diff -urNad lusernet.app-0.4.2~/ComposeWindowController.m ComposeWindowController.m
 --- lusernet.app-0.4.2~/ComposeWindowController.m	2004-03-03 01:58:37.000000000 +0200
 +++ ComposeWindowController.m	2006-09-27 00:13:21.000000000 +0300
+@@ -13,6 +13,7 @@
+ #include <AppKit/NSTextContainer.h>
+ #include <AppKit/NSTextField.h>
+ #include <AppKit/NSButton.h>
++#include <AppKit/NSGraphics.h>
+ #include <GNUstepGUI/GSVbox.h>
+ #include <GNUstepGUI/GSHbox.h>
+ 
 @@ -21,11 +21,12 @@
  #include "main.h"
  #include "KeyWindow.h"
@@ -217,11 +225,13 @@ diff -urNad lusernet.app-0.4.2~/MessageViewController.h MessageViewController.h
 diff -urNad lusernet.app-0.4.2~/MessageViewController.m MessageViewController.m
 --- lusernet.app-0.4.2~/MessageViewController.m	2004-03-03 01:58:37.000000000 +0200
 +++ MessageViewController.m	2006-09-27 00:13:21.000000000 +0300
-@@ -5,6 +5,7 @@
+@@ -5,6 +5,9 @@
  #include <Foundation/NSObject.h>
  #include <Foundation/NSBundle.h>
  #include <Foundation/NSFileManager.h>
 +#include <AppKit/NSAttributedString.h>
++#include <AppKit/NSGraphics.h>
++#include <AppKit/NSGraphicsContext.h>
  #include <AppKit/NSFileWrapper.h>
  #include <AppKit/NSTextView.h>
  #include <AppKit/NSScrollView.h>
@@ -599,7 +609,11 @@ diff -urNad lusernet.app-0.4.2~/main.h main.h
 diff -urNad lusernet.app-0.4.2~/main.m main.m
 --- lusernet.app-0.4.2~/main.m	2004-03-03 01:58:37.000000000 +0200
 +++ main.m	2006-09-27 00:13:21.000000000 +0300
-@@ -11,6 +11,8 @@
+@@ -8,9 +8,12 @@
+ #include <Foundation/NSPathUtilities.h>
+ #include <Foundation/NSBundle.h>
+ #include <AppKit/NSApplication.h>
++#include <AppKit/NSGraphics.h>
  #include <AppKit/NSMenu.h>
  #include <AppKit/NSWindow.h>
  
