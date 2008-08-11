@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amfext
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
