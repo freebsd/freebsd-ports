@@ -348,6 +348,7 @@
     SUBDIR += lesspipe
     SUBDIR += libhome
     SUBDIR += libmcal
+    SUBDIR += libmetalink
     SUBDIR += libpri
     SUBDIR += libpri-bristuff
     SUBDIR += libutf

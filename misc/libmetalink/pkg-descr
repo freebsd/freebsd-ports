@@ -1,0 +1,9 @@
+[ excerpt from developer's web site with modifications ]
+
+libmetalink is a Metalink library written in C language. It intends
+to allow programs written in C to add Metalink functionality such
+as parsing Metalink XML files.
+
+WWW: http://code.google.com/p/libmetalink/
+
+-- lioux@FreeBSD.org
