@@ -20,6 +20,7 @@ include/ffmpeg/mathematics.h
 include/ffmpeg/md5.h
 include/ffmpeg/mem.h
 include/ffmpeg/opt.h
+include/ffmpeg/postprocess.h
 include/ffmpeg/random.h
 include/ffmpeg/rational.h
 include/ffmpeg/rgb2rgb.h
@@ -90,6 +91,7 @@ libdata/pkgconfig/libpostproc.pc
 libdata/pkgconfig/libswscale.pc
 @dirrm lib/vhook
 @dirrm include/postproc
+@dirrm include/libswscale
 @dirrm include/libpostproc
 @dirrm include/libavutil
 @dirrm include/libavformat
