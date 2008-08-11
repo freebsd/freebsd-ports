@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwhich
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	misc
 MASTER_SITES=	GNU/which \
 		http://www.xs4all.nl/~carlo17/which/
