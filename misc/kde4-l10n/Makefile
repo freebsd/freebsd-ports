@@ -7,6 +7,7 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -35,7 +36,7 @@ RUN_DEPENDS+=\
 	${KDE4_PREFIX}/share/locale/pt_BR/entry.desktop:${PORTSDIR}/portuguese/kde4-l10n-pt_BR
 .for ZH in zh_CN zh_TW
 RUN_DEPENDS+=\
-${LOCALBASE}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde4-l10n-${ZH}
+	${KDE4_PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde4-l10n-${ZH}
 .endfor
 
 NO_BUILD=	yes
