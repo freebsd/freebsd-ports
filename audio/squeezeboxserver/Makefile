@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	squeezecenter
-PORTVERSION=	7.0.1
-PORTREVISION=	4
+PORTVERSION=	7.1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
+MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -29,7 +28,7 @@ OPTIONS=	CLASSIC "Default to the Classic skin" off \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=	${WRKDIR}/squeezecenter-${PORTVERSION}-noCPAN
+WRKSRC=	${WRKDIR}/squeezecenter-${PORTVERSION:S/.0//}-noCPAN
 
 BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
@@ -92,6 +91,7 @@ DOCFILES=	Changelog.html Installation.txt License.txt
 CONFFILES=	convert.conf types.conf
 EXCEPTFILES=	${DOCFILES} \
 		${CONFFILES} \
+		CPAN/DBI.pm \
 		CPAN/GD.pm \
 		CPAN/JSON/XS/Boolean.pm \
 		CPAN/JSON/XS.pm \
@@ -102,6 +102,7 @@ EXCEPTFILES=	${DOCFILES} \
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
 		CPAN/Compress \
+		CPAN/DBI \
 		CPAN/Encode \
 		CPAN/GD \
 		CPAN/Template \
@@ -148,12 +149,14 @@ post-patch:
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
 
+
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 	    ${FIND} . -name \*.orig -o -name \*.bak \
 	    ${EXCEPTFILES:S|^|-o -path ./|} \
-	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
+	    ${EXCEPTDIRS:S|^|-o -path ./|} \
+	    ${EXCEPTDIRS:S/$/\/\*/:S/^/-o -path .\//} -o -print | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${TMP_SLIMDIR}
 .for _CONF in ${CONFFILES}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${_CONF} ${TMP_SLIMDIR}/${_CONF}.sample

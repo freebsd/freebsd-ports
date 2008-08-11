@@ -23,12 +23,12 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
 command_interpreter=%%PERL%%
 pidfile=/var/run/${name}/${name}.pid
-logdir=/var/log/%{name}
+logdir=/var/log/${name}
 statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 prefsdir=${statedir}/prefs
 playlistdir=${statedir}/playlists
-conffile=${statedir}/%{name}.conf
+conffile=${statedir}/${name}.conf
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
 command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"

@@ -42,25 +42,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/DBD/Sponge.pm
 %%SLIMDIR%%/CPAN/DBD/mysql.pm
 %%SLIMDIR%%/CPAN/DBD/mysql/GetInfo.pm
-%%SLIMDIR%%/CPAN/DBI.pm
-%%SLIMDIR%%/CPAN/DBI/Const/GetInfo/ANSI.pm
-%%SLIMDIR%%/CPAN/DBI/Const/GetInfo/ODBC.pm
-%%SLIMDIR%%/CPAN/DBI/Const/GetInfoReturn.pm
-%%SLIMDIR%%/CPAN/DBI/Const/GetInfoType.pm
-%%SLIMDIR%%/CPAN/DBI/DBD.pm
-%%SLIMDIR%%/CPAN/DBI/DBD/Metadata.pm
-%%SLIMDIR%%/CPAN/DBI/Format.pm
-%%SLIMDIR%%/CPAN/DBI/Format/SQLMinus.pm
-%%SLIMDIR%%/CPAN/DBI/Profile.pm
-%%SLIMDIR%%/CPAN/DBI/ProfileData.pm
-%%SLIMDIR%%/CPAN/DBI/ProfileDumper.pm
-%%SLIMDIR%%/CPAN/DBI/ProfileDumper/Apache.pm
-%%SLIMDIR%%/CPAN/DBI/Shell.pm
-%%SLIMDIR%%/CPAN/DBI/Shell/Completion.pm
-%%SLIMDIR%%/CPAN/DBI/Shell/FindSqlFile.pm
-%%SLIMDIR%%/CPAN/DBI/Shell/SQLMinus.pm
-%%SLIMDIR%%/CPAN/DBI/Shell/Spool.pm
-%%SLIMDIR%%/CPAN/DBI/Shell/Timing.pm
 %%SLIMDIR%%/CPAN/DBIx/Class.pm
 %%SLIMDIR%%/CPAN/DBIx/Class/AccessorGroup.pm
 %%SLIMDIR%%/CPAN/DBIx/Class/ClassResolver/PassThrough.pm
@@ -652,14 +633,14 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog6.html
 %%SLIMDIR%%/Changelog7.html
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_23.bin
+%%SLIMDIR%%/Firmware/receiver_36.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_88.bin
+%%SLIMDIR%%/Firmware/squeezebox2_101.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_37.bin
+%%SLIMDIR%%/Firmware/transporter_50.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
@@ -718,10 +699,13 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/Default/helpfooter.html
 %%SLIMDIR%%/HTML/Default/helpheader.html
 %%SLIMDIR%%/HTML/Default/home.html
-%%SLIMDIR%%/HTML/Default/html/browse.js
+%%SLIMDIR%%/HTML/Default/html/Browse.js
+%%SLIMDIR%%/HTML/Default/html/Help.js
+%%SLIMDIR%%/HTML/Default/html/Home.js
+%%SLIMDIR%%/HTML/Default/html/Main.js
+%%SLIMDIR%%/HTML/Default/html/Settings.js
+%%SLIMDIR%%/HTML/Default/html/Wizard.js
 %%SLIMDIR%%/HTML/Default/html/docs/help.html
-%%SLIMDIR%%/HTML/Default/html/help.js
-%%SLIMDIR%%/HTML/Default/html/home.js
 %%SLIMDIR%%/HTML/Default/html/images/albumlist0.gif
 %%SLIMDIR%%/HTML/Default/html/images/albumlist0_on.gif
 %%SLIMDIR%%/HTML/Default/html/images/albumlist1.gif
@@ -798,14 +782,13 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/hd-sprite.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/menu.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/se-handle.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-scroll-left.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-scroll-right.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-sprite.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/tip-sprite.gif
 %%SLIMDIR%%/HTML/Default/html/images/squeezecenter.gif
 %%SLIMDIR%%/HTML/Default/html/images/track_info.gif
 %%SLIMDIR%%/HTML/Default/html/images/volume_levels.gif
-%%SLIMDIR%%/HTML/Default/html/main.js
-%%SLIMDIR%%/HTML/Default/html/settings.js
-%%SLIMDIR%%/HTML/Default/html/utils.js
 %%SLIMDIR%%/HTML/Default/ie.css
 %%SLIMDIR%%/HTML/Default/ie7.css
 %%SLIMDIR%%/HTML/Default/index.html
@@ -842,6 +825,9 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/home.html
 %%SLIMDIR%%/HTML/EN/homeplayer_list.html
 %%SLIMDIR%%/HTML/EN/hreftemplate
+%%SLIMDIR%%/HTML/EN/html/SqueezeJS/Base.js
+%%SLIMDIR%%/HTML/EN/html/SqueezeJS/Strings.js
+%%SLIMDIR%%/HTML/EN/html/SqueezeJS/UI.js
 %%SLIMDIR%%/HTML/EN/html/common.js
 %%SLIMDIR%%/HTML/EN/html/docs/artwork.html
 %%SLIMDIR%%/HTML/EN/html/docs/buttons.html
@@ -925,6 +911,8 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/r.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/tb-blue.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/tb.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/button/btn-arrow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/button/btn-sprite.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-add.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-no.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-yes.gif
@@ -947,6 +935,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/arrow-right-white.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/col-move-bottom.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/col-move-top.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/columns.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/dirty.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/done.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/drop-no.gif
@@ -963,6 +952,8 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-hrow.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-special-col-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-special-col-sel-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/group-by.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/group-expand-sprite.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hd-pop.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-asc.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-desc.gif
@@ -994,6 +985,10 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/collapse.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/expand.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/gradient-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/mini-bottom.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/mini-left.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/mini-right.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/mini-top.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/ns-collapse.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/ns-expand.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/panel-close.gif
@@ -1005,10 +1000,22 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/tab-close.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/checked.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/group-checked.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/item-over.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/menu-parent.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/menu.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/unchecked.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/corners-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/left-right.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/light-hd.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/tool-sprite-tpl.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/tool-sprites.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/tools-sprites-trans.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/top-bottom.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/top-bottom.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/white-corners-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/white-left-right.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/white-top-bottom.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/progress/progress-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/close.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/tip-sprite.gif
@@ -1016,9 +1023,13 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow-c.png
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow-lr.png
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/blue-loading.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/calendar.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/glass-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/hd-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/large-loading.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/left-btn.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/loading-balls.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/right-btn.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/warning.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/e-handle-dark.gif
@@ -1034,17 +1045,31 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/square.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/sw-handle-dark.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/sw-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/slider/slider-bg.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/slider/slider-thumb.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/slider/slider-v-bg.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/slider/slider-v-thumb.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/scroll-left.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/scroll-right.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/scroller-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-inactive-left-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-inactive-right-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-left-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-right-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-close.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-strip-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-strip-bg.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-strip-btm-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tabs-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-arrow-light.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-arrow.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-over-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/gray-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/tb-bg.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/tb-btn-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/arrows.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-add.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-between.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-no.gif
@@ -1067,6 +1092,18 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/leaf.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/loading.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/s.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/icon-error.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/icon-info.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/icon-question.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/icon-warning.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/left-corners.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/left-corners.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/left-right.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/left-right.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/right-corners.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/right-corners.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/top-bottom.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window/top-bottom.psd
 %%SLIMDIR%%/HTML/EN/html/ext/resources/license.txt
 %%SLIMDIR%%/HTML/EN/html/fileselector.js
 %%SLIMDIR%%/HTML/EN/html/global.js
@@ -1162,7 +1199,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/softsqueeze/webstart.html
 %%SLIMDIR%%/HTML/EN/html/test.html
 %%SLIMDIR%%/HTML/EN/html/vars.js
-%%SLIMDIR%%/HTML/EN/html/wizard.js
 %%SLIMDIR%%/HTML/EN/include.html
 %%SLIMDIR%%/HTML/EN/index.html
 %%SLIMDIR%%/HTML/EN/listparams.html
@@ -1193,7 +1229,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/settings/server/basic.html
 %%SLIMDIR%%/HTML/EN/settings/server/behavior.html
 %%SLIMDIR%%/HTML/EN/settings/server/debugging.html
-%%SLIMDIR%%/HTML/EN/settings/server/fileselector.html
 %%SLIMDIR%%/HTML/EN/settings/server/fileselector_autocomplete.html
 %%SLIMDIR%%/HTML/EN/settings/server/filetypes.html
 %%SLIMDIR%%/HTML/EN/settings/server/formatting.html
@@ -1208,15 +1243,14 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/settings/server/wizard.html
 %%SLIMDIR%%/HTML/EN/skin.css
 %%SLIMDIR%%/HTML/EN/slimserver.css
-%%SLIMDIR%%/HTML/EN/songinfo.html
-%%SLIMDIR%%/HTML/EN/songinfo_details.html
-%%SLIMDIR%%/HTML/EN/squeezenetwork.html
+%%SLIMDIR%%/HTML/EN/songinfo_header.html
 %%SLIMDIR%%/HTML/EN/standardheader.html
 %%SLIMDIR%%/HTML/EN/statecontrol.html
 %%SLIMDIR%%/HTML/EN/status.html
 %%SLIMDIR%%/HTML/EN/status_list.html
 %%SLIMDIR%%/HTML/EN/status_needs_upgrade.html
 %%SLIMDIR%%/HTML/EN/status_noclients.html
+%%SLIMDIR%%/HTML/EN/switchserver.html
 %%SLIMDIR%%/HTML/EN/tunein.html
 %%SLIMDIR%%/HTML/EN/update_firmware.html
 %%SLIMDIR%%/HTML/EN/upnpinfo.html
@@ -1601,7 +1635,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/Nokia770/skin_global.js
 %%SLIMDIR%%/HTML/Nokia770/skinconfig.yml
 %%SLIMDIR%%/HTML/Nokia770/slimserver.css
-%%SLIMDIR%%/HTML/Nokia770/songinfo.html
 %%SLIMDIR%%/HTML/Nokia770/status.html
 %%SLIMDIR%%/HTML/Nokia770/status.js
 %%SLIMDIR%%/HTML/Nokia770/status_header.html
@@ -1627,7 +1660,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/xml/playlist_list.html
 %%SLIMDIR%%/HTML/xml/search.html
 %%SLIMDIR%%/HTML/xml/select_option.html
-%%SLIMDIR%%/HTML/xml/songinfo.html
 %%SLIMDIR%%/HTML/xml/status.html
 %%SLIMDIR%%/HTML/xml/status_header.html
 %%SLIMDIR%%/HTML/xml/status_list.html
@@ -1656,6 +1688,8 @@ bin/softsqueeze
 %%SLIMDIR%%/SQL/mysql/schema_4_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_5_down.sql
 %%SLIMDIR%%/SQL/mysql/schema_5_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_6_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_6_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_clear.sql
 %%SLIMDIR%%/SQL/mysql/schema_optimize.sql
 %%SLIMDIR%%/Slim/Buttons/AlarmClock.pm
@@ -1725,6 +1759,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Hardware/TriLED.pm
 %%SLIMDIR%%/Slim/Hardware/mas3507d.pm
 %%SLIMDIR%%/Slim/Hardware/mas35x9.pm
+%%SLIMDIR%%/Slim/Menu/TrackInfo.pm
 %%SLIMDIR%%/Slim/Music/Artwork.pm
 %%SLIMDIR%%/Slim/Music/Import.pm
 %%SLIMDIR%%/Slim/Music/Info.pm
@@ -1739,6 +1774,10 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Networking/Async/Socket/HTTPS.pm
 %%SLIMDIR%%/Slim/Networking/Async/Socket/UDP.pm
 %%SLIMDIR%%/Slim/Networking/Discovery.pm
+%%SLIMDIR%%/Slim/Networking/Discovery/Players.pm
+%%SLIMDIR%%/Slim/Networking/Discovery/Server.pm
+%%SLIMDIR%%/Slim/Networking/IO/EV.pm
+%%SLIMDIR%%/Slim/Networking/IO/Select.pm
 %%SLIMDIR%%/Slim/Networking/Select.pm
 %%SLIMDIR%%/Slim/Networking/SimpleAsyncHTTP.pm
 %%SLIMDIR%%/Slim/Networking/SliMP3/Protocol.pm
@@ -1794,7 +1833,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/install.xml
 %%SLIMDIR%%/Slim/Plugin/DigitalInput/strings.txt
-%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins/Favorites/html/favorites.js
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins/Favorites/html/Favorites.js
 %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html/images/favorites.png
 %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html/images/favorites_remove.png
 %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/favcontrol.html
@@ -1806,6 +1845,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Favorites/Playlist.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/SqueezeNetwork.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/install.xml
 %%SLIMDIR%%/Slim/Plugin/Favorites/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Health/HTML/EN/plugins/Health/graphs.html
@@ -1822,10 +1862,22 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/install.xml
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/strings.txt
+%%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN/plugins/JiveExtras/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/JiveExtras/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/JiveExtras/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/JiveExtras/install.xml
+%%SLIMDIR%%/Slim/Plugin/JiveExtras/strings.txt
 %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/LMA/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/LMA/install.xml
 %%SLIMDIR%%/Slim/Plugin/LMA/strings.txt
+%%SLIMDIR%%/Slim/Plugin/LastFM/HTML/Default/html/images/btn_lastfm_ban.gif
+%%SLIMDIR%%/Slim/Plugin/LastFM/HTML/Default/html/images/btn_lastfm_love.gif
+%%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/LastFM/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/LastFM/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/LastFM/install.xml
+%%SLIMDIR%%/Slim/Plugin/LastFM/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/Live365/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Live365/ProtocolHandler.pm
@@ -1847,9 +1899,14 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Importer.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/PlayerSettings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/install.xml
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/strings.txt
+%%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/MyRadio/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/MyRadio/install.xml
+%%SLIMDIR%%/Slim/Plugin/MyRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/OPMLBased.pm
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_down.gif
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_up.gif
@@ -1868,9 +1925,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Podcast/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/Podcast/install.xml
 %%SLIMDIR%%/Slim/Plugin/Podcast/strings.txt
-%%SLIMDIR%%/Slim/Plugin/PreventStandby/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/PreventStandby/install.xml
-%%SLIMDIR%%/Slim/Plugin/PreventStandby/strings.txt
 %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
@@ -1894,6 +1948,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/list.html
 %%SLIMDIR%%/Slim/Plugin/RandomPlay/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/RandomPlay/install.xml
 %%SLIMDIR%%/Slim/Plugin/RandomPlay/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN/plugins/Rescan/settings/basic.html
@@ -1933,6 +1988,9 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Snow/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Snow/install.xml
 %%SLIMDIR%%/Slim/Plugin/Snow/strings.txt
+%%SLIMDIR%%/Slim/Plugin/SongScanner/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/SongScanner/install.xml
+%%SLIMDIR%%/Slim/Plugin/SongScanner/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/Sounds/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Sounds/ProtocolHandler.pm
@@ -1984,7 +2042,9 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Schema/ResultSet/Year.pm
 %%SLIMDIR%%/Slim/Schema/Storage.pm
 %%SLIMDIR%%/Slim/Schema/Track.pm
+%%SLIMDIR%%/Slim/Schema/TrackPersistent.pm
 %%SLIMDIR%%/Slim/Schema/Year.pm
+%%SLIMDIR%%/Slim/Utils/Accessor.pm
 %%SLIMDIR%%/Slim/Utils/Alarms.pm
 %%SLIMDIR%%/Slim/Utils/Cache.pm
 %%SLIMDIR%%/Slim/Utils/ChangeNotify.pm
@@ -2012,6 +2072,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Utils/Progress.pm
 %%SLIMDIR%%/Slim/Utils/SQLHelper.pm
 %%SLIMDIR%%/Slim/Utils/Scanner.pm
+%%SLIMDIR%%/Slim/Utils/Scanner/Remote.pm
 %%SLIMDIR%%/Slim/Utils/Scheduler.pm
 %%SLIMDIR%%/Slim/Utils/SoundCheck.pm
 %%SLIMDIR%%/Slim/Utils/Strings.pm
@@ -2088,6 +2149,9 @@ bin/softsqueeze
 %%SLIMDIR%%/revision.txt
 %%SLIMDIR%%/scanner.pl
 %%SLIMDIR%%/slimserver.pl
+%%SLIMDIR%%/slimservice-convert.conf
+%%SLIMDIR%%/slimservice-strings.txt
+%%SLIMDIR%%/slimservice.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/types.conf.sample
 squeezecenter/Cache
@@ -2116,6 +2180,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Web/HTTP
 @dirrm %%SLIMDIR%%/Slim/Web/Cometd
 @dirrm %%SLIMDIR%%/Slim/Web
+@dirrm %%SLIMDIR%%/Slim/Utils/Scanner
 @dirrm %%SLIMDIR%%/Slim/Utils/Prefs
 @dirrm %%SLIMDIR%%/Slim/Utils/ChangeNotify
 @dirrm %%SLIMDIR%%/Slim/Utils
@@ -2142,6 +2207,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds
+@dirrm %%SLIMDIR%%/Slim/Plugin/SongScanner
 @dirrm %%SLIMDIR%%/Slim/Plugin/Snow
 @dirrm %%SLIMDIR%%/Slim/Plugin/SlimTris
 @dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins/Slacker/html/images
@@ -2216,7 +2282,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232
-@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html
@@ -2242,6 +2307,13 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html
@@ -2264,6 +2336,16 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/Default/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/Default
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/LastFM
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA
@@ -2271,6 +2353,12 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/LMA
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN/plugins/JiveExtras/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN/plugins/JiveExtras
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/JiveExtras
 @dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html
@@ -2329,10 +2417,13 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Networking/UPnP
 @dirrm %%SLIMDIR%%/Slim/Networking/SqueezeNetwork
 @dirrm %%SLIMDIR%%/Slim/Networking/SliMP3
+@dirrm %%SLIMDIR%%/Slim/Networking/IO
+@dirrm %%SLIMDIR%%/Slim/Networking/Discovery
 @dirrm %%SLIMDIR%%/Slim/Networking/Async/Socket
 @dirrm %%SLIMDIR%%/Slim/Networking/Async
 @dirrm %%SLIMDIR%%/Slim/Networking
 @dirrm %%SLIMDIR%%/Slim/Music
+@dirrm %%SLIMDIR%%/Slim/Menu
 @dirrm %%SLIMDIR%%/Slim/Hardware
 @dirrm %%SLIMDIR%%/Slim/Formats/Playlists
 @dirrm %%SLIMDIR%%/Slim/Formats
@@ -2371,12 +2462,15 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/HTML/EN/html/scriptaculous
 @dirrm %%SLIMDIR%%/HTML/EN/html/images/ServiceProviders
 @dirrm %%SLIMDIR%%/HTML/EN/html/images
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/window
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/slider
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/progress
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout
@@ -2384,6 +2478,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/editor
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/button
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog
 @dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default
@@ -2396,6 +2491,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/HTML/EN/html/errors
 @dirrm %%SLIMDIR%%/HTML/EN/html/docs/vfdshots
 @dirrm %%SLIMDIR%%/HTML/EN/html/docs
+@dirrm %%SLIMDIR%%/HTML/EN/html/SqueezeJS
 @dirrm %%SLIMDIR%%/HTML/EN/html
 @dirrm %%SLIMDIR%%/HTML/EN
 @dirrm %%SLIMDIR%%/HTML/Default/settings
@@ -2505,13 +2601,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/DBIx/Class/ClassResolver
 @dirrm %%SLIMDIR%%/CPAN/DBIx/Class
 @dirrm %%SLIMDIR%%/CPAN/DBIx
-@dirrm %%SLIMDIR%%/CPAN/DBI/Shell
-@dirrm %%SLIMDIR%%/CPAN/DBI/ProfileDumper
-@dirrm %%SLIMDIR%%/CPAN/DBI/Format
-@dirrm %%SLIMDIR%%/CPAN/DBI/DBD
-@dirrm %%SLIMDIR%%/CPAN/DBI/Const/GetInfo
-@dirrm %%SLIMDIR%%/CPAN/DBI/Const
-@dirrm %%SLIMDIR%%/CPAN/DBI
 @dirrm %%SLIMDIR%%/CPAN/DBD/mysql
 @dirrm %%SLIMDIR%%/CPAN/DBD
 @dirrm %%SLIMDIR%%/CPAN/Class/Virtually
