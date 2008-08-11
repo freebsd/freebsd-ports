@@ -3,7 +3,7 @@ little robot, then set him loose and watch him explore a world on his
 own.  The robot program is written in Scheme, and is implemented using
 GNU Guile.  --from GNU robots README
 
-WWW: http://www.gnu.org/software/robots/
+WWW: http://www.gnu.org/software/gnurobots/
 
 -Aaron VonderHaar
  avh4@usa.net

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnurobots
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -16,12 +15,16 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 
 LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
-USE_XORG=	x11 xpm
-USE_GNOME=	gnometarget glib20
+USE_GNOME=	gnometarget vte
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#include <pty.h>||g' ${WRKSRC}/src/ui-cmdwin.c
 
 post-install:
 .if !defined(NOPORTDOCS)
