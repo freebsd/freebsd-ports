@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.4.19
+PORTVERSION=	1.0.0
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/clive/0.4/src/ \
+MASTER_SITES=	http://download.gna.org/clive/1.0.x/ \
 		SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Video extraction utility for YouTube and Google Video
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber
 
 # deskutils/ljclive (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-9]*
@@ -27,14 +29,15 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=	${PORTNAME}.1
+MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1
 .else
 CONFIGURE_ARGS=	--with-doc=no
 .endif
 
 OPTIONS=	FFMPEG	"Install ffmpeg for re-encoding" off \
 		MPLAYER	"Install mplayer as video player" off \
-		NEWT	"Use devel/newt instead of bundled module" off \
+		NEWT	"Install devel/newt (support for a simple GUI)" off \
+		PYCRYPTO	"Install pycrypto to encrypt login password" off \
 		SQLITE3 "Install sqlite3 for caching visited URLs" off \
 		VLC	"Install vlc as video player" off \
 		XCLIP	"Install xclip (read URLs from clipboard)" off
@@ -51,14 +54,11 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if defined(WITH_NEWT)
-PLIST_SUB+=	OPTNEWT="@comment "
-CONFIGURE_ARGS+=	--with-installed-newt=yes
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 RUN_DEPENDS+=	newt${PYTHON_PKGNAMESUFFIX}>=0.51.0_4:${PORTSDIR}/devel/newt
-.else
-PLIST_SUB+=	OPTNEWT=""
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR} $${CPPFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS} -L${PYTHON_LIBDIR}" SLANG_LIBS="-lncurses -lslang"
+.endif
+
+.if defined(WITH_PYCRYPTO)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0.1_1:${PORTSDIR}/security/py-pycrypto
 .endif
 
 .if defined(WITH_SQLITE3)
