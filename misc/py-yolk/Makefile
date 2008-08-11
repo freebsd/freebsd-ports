@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yolk
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -38,12 +38,12 @@ post-install:
 	@cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} ";"
 .endif
 
-.if defined (WITH_PYPI_RSS)
+.if defined (WITH_PYPI_RSS) && defined(PYTHON_VER) && ${PYTHON_VER} < 2.5
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 .endif
 
 .if !defined (NOPORTEXAMPLES)
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
 .include <bsd.port.post.mk>
