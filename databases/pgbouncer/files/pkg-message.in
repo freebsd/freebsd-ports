@@ -1,13 +1,12 @@
 
 ===>  CONFIGURATION NOTE:
 
-      To setup pgbouncer, you need to copy
-      %%EXAMPLESDIR%%/pgbouncer.ini
-      to %%PREFIX%%/etc/pgbouncer.ini and edit appropriately.
+      To setup pgbouncer you need to edit the configuration file:
+      %%PREFIX%%/etc/pgbouncer.ini
 
       You will also need to define the list of allowed users as
-      per the pgbouncer(5) man page.
+      per the pgbouncer(5) man page. See the sample file:
+      %%PREFIX%%/etc/pgbouncer.users.sample
 
       To run pgbouncer from startup, add pgbouncer_enable="YES"
       in your /etc/rc.conf.
-

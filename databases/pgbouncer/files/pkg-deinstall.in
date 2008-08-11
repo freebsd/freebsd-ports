@@ -1,0 +1,30 @@
+#! /bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+pgbouncer_user=%%PGBOUNCER_USER%%
+pgbouncer_group=%%PGBOUNCER_GROUP%%
+
+PGBOUNCER_RUNDIR=%%PGBOUNCER_RUNDIR%%
+PGBOUNCER_LOGDIR=%%PGBOUNCER_LOGDIR%%
+
+PW="%%PW%%"
+
+if ${PW} usershow "${pgbouncer_user}" 2>/dev/null 1>&2; then
+	echo "To delete ${pgbouncer_user} user permanently, use the following command:"
+	echo "${PW} userdel \"${pgbouncer_user}\""
+fi
+if ${PW} groupshow "${pgbouncer_group}" 2>/dev/null 1>&2; then
+	echo "To delete ${pgbouncer_group} group permanently, use the following command:"
+	echo "${PW} groupdel \"${pgbouncer_group}\""
+fi
+for DIR in ${PGBOUNCER_RUNDIR} ${PGBOUNCER_LOGDIR}; do
+	if test -d "${DIR}"; then
+		echo "You may want to remove the no longer required directory:"
+		echo "${DIR}"
+	fi
+done
+exit 0
