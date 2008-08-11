@@ -29,6 +29,7 @@
     SUBDIR += jday
     SUBDIR += libgal
     SUBDIR += libnova
+    SUBDIR += libroadnav
     SUBDIR += luna
     SUBDIR += match
     SUBDIR += mymoon
@@ -59,6 +60,7 @@
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += roadmap
+    SUBDIR += roadnav
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += sextractor
