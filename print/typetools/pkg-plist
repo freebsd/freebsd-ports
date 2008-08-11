@@ -6,6 +6,7 @@ bin/otfinfo
 bin/otftotfm
 bin/t1dotlessj
 bin/t1lint
+bin/t1rawafm
 bin/t1reencode
 bin/t1testpage
 %%DATADIR%%/7t.enc
