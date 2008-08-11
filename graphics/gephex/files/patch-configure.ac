@@ -1,61 +1,22 @@
---- configure.ac.orig
-+++ configure.ac
-@@ -126,8 +126,11 @@
- fi
- 
- # qt
-+saved_LDFLAGS="${LDFLAGS}"
-+LDFLAGS="${LDFLAGS} %%PTHREAD_LIBS%%"
- AM_PATH_QT([2.3.0], $SHAREDLIBEXT, have_qt=yes, have_qt=no)
- AM_CONDITIONAL(HAVE_QT, test "x$have_qt" = "xyes")
-+LDFLAGS="${saved_LDFLAGS}"
- 
- # Checks for libraries.
- AC_CHECK_LIB(dl,dlopen,
-@@ -170,11 +173,16 @@
- 
- # optional libraries
- 
-+ac_save_CFLAGS="$CFLAGS"
-+CFLAGS="${CFLAGS} -I%%LOCALBASE%%/include"
-+
- CHECK_EXTRA_LIB([GL],
-                 [AC_CHECK_HEADER([GL/glx.h],have_gl=yes,have_gl=no)],
-                 [no], [with_gl], [have_gl], [use_gl])
- AM_CONDITIONAL([WITH_GL], test "x$use_gl" = "xyes")
- 
-+CFLAGS="${ac_save_CFLAGS}"
-+
- CHECK_EXTRA_LIB([SDL], [AM_PATH_SDL([1.1.0], have_sdl=yes, have_sdl=no)],
-                 [yes], [with_sdl], [have_sdl], [use_sdl])
- AM_CONDITIONAL([WITH_SDL], test "x$use_sdl" = "xyes")
-@@ -223,7 +231,8 @@
- # libpng
- CHECK_EXTRA_LIB([LIBPNG],
-                 [AC_CHECK_HEADER([png.h],have_libpng=yes,have_libpng=no)],
--                [no], [with_libpng], [have_libpng], [use_libpng])
-+                [no], [with_libpng], [have_libpng], [use_libpng],
-+		[AC_SUBST(PNG_LDFLAGS, "-L%%LOCALBASE%%/lib")])
- AM_CONDITIONAL([WITH_LIBPNG], test "x$use_libpng" = "xyes")
- 
- # aalib
-@@ -269,7 +278,7 @@
+--- configure.ac.orig	2007-04-29 23:53:44.000000000 +0900
++++ configure.ac	2008-08-08 23:06:42.000000000 +0900
+@@ -290,7 +290,7 @@
  
  # ffmpeg
  CHECK_EXTRA_LIB([FFMPEG],
 -                [if test -d $srcdir/contrib/ffmpeg; then have_ffmpeg=yes; else have_ffmpeg=no; fi],
-+		[have_ffmpeg=yes],
++                [have_ffmpeg=yes],
                  [yes], [with_ffmpeg], [have_ffmpeg], [use_ffmpeg])
  AM_CONDITIONAL([WITH_FFMPEG], test "x$use_ffmpeg" = "xyes")
  
-@@ -345,46 +354,46 @@
+@@ -366,48 +366,48 @@
  AC_DEFINE_UNQUOTED([FRBINMODULE_CACHE_SIZE], $FRBINCACHE, [Size of the cache the frbinmodule uses (in MB)])
  fi;
  
 -if test "x$use_ffmpeg" = "xyes"; then
-- FFMPEG_CONFIGURE_FLAGS="--prefix=$prefix --disable-ffserver --disable-ffplay --enable-shared" 
+- FFMPEG_CONFIGURE_FLAGS="--prefix=$prefix --disable-ffserver --disable-ffplay --enable-shared --enable-memalign-hack" 
 +#if test "x$use_ffmpeg" = "xyes"; then
-+# FFMPEG_CONFIGURE_FLAGS="--prefix=$prefix --disable-ffserver --disable-ffplay --enable-shared" 
++# FFMPEG_CONFIGURE_FLAGS="--prefix=$prefix --disable-ffserver --disable-ffplay --enable-shared --enable-memalign-hack" 
  #--disable-risky"
  
 - echo Preparing ffmpeg configure call...
@@ -107,19 +68,23 @@
 - abs_builddir=`pwd`
 +# abs_builddir=`pwd`
  
-- AC_SUBST(FFMPEG_LDFLAGS,"${abs_builddir}/contrib/ffmpeg/libavformat/libavformat.a ${abs_builddir}/contrib/ffmpeg/libavcodec/libavcodec.a -lz")
-+ AC_SUBST(FFMPEG_LDFLAGS,"%%LOCALBASE%%/lib/libavformat.a %%LOCALBASE%%/lib/libavcodec.a -lz")
+- AC_SUBST(FFMPEG_LDFLAGS,"${abs_builddir}/contrib/ffmpeg/libavformat/libavformat.a ${abs_builddir}/contrib/ffmpeg/libavcodec/libavcodec.a ${abs_builddir}/contrib/ffmpeg/libavutil/libavutil.a -lz")
++ AC_SUBST(FFMPEG_LDFLAGS,"%%LOCALBASE%%/lib/libavformat.a %%LOCALBASE%%/lib/libavcodec.a %%LOCALBASE%%/lib/libavutil.a -lz")
  # AC_SUBST(FFMPEG_LDFLAGS,"-L${abs_builddir}/contrib/ffmpeg/libavcodec -lavcodec -lz -L${abs_builddir}/contrib/ffmpeg/libavformat -lavformat")
-- AC_SUBST(FFMPEG_CFLAGS,"-I${FFMPEG_DIR}/libavcodec -I${FFMPEG_DIR}/libavformat")
+- AC_SUBST(FFMPEG_CFLAGS,"-I${FFMPEG_DIR}/libavcodec -I${FFMPEG_DIR}/libavformat -I${FFMPEG_DIR}/libavutil")
 + AC_SUBST(FFMPEG_CFLAGS,"-I%%LOCALBASE%%/include/ffmpeg")
  
 - echo Calling ffmpeg configure with flags:
 - echo "${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS"
-- cd contrib/ffmpeg/ && ${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS && cd ../..
+- cd contrib/ffmpeg/ || exit 1
+- ${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS
+- cd ../..
 -fi
 +# echo Calling ffmpeg configure with flags:
 +# echo "${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS"
-+# cd contrib/ffmpeg/ && ${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS && cd ../..
++# cd contrib/ffmpeg/ || exit 1
++# ${FFMPEG_CONFIG_DIR}/configure $FFMPEG_CONFIGURE_FLAGS
++# cd ../..
 +#fi
  
  # set gphx_module_lib_dir and gphx_type_lib_dir
