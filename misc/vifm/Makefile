@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.3a
+PORTVERSION=	0.4
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based file manager with vi like keybindings
@@ -20,12 +19,11 @@ RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 
 PLIST_FILES=	bin/pauseme \
-		bin/screen-open-region-with-program \
-		bin/screen-run-program-in-region \
 		bin/vifm \
-		share/vifm/vifm-0.2.help.txt \
+		share/vifm/vifm-help.txt \
 		share/vifm/vifm.txt \
 		share/vifm/vifm.vim
 PLIST_DIRS=	share/vifm
@@ -39,7 +37,7 @@ pre-build:
 	@${REINPLACE_CMD} -e "s/cfg.use_screen = 0/cfg.use_screen = 1/" \
 		${WRKSRC}/src/config.c
 	@${REINPLACE_CMD} -e "s/USE_SCREEN=0/USE_SCREEN=1/" \
-		${WRKSRC}/src/vifmrc0.2
+		${WRKSRC}/src/vifmrc
 .else
 pre-everything::
 	@${ECHO_CMD} "You can define WITH_VIFM_SCREEN to add screen as a dependency."
