@@ -1,0 +1,10 @@
+[ excerpt from developer's web site ]
+
+A cross-platform GUI editor, written in Python. It enables you to
+both create and edit metalinks in a user friendly fashion. The
+editor can automatically enter info about file name, file size,
+hashes & chunk checksums by scanning a local file.
+
+WWW: http://metalinks.sourceforge.net/
+
+-- lioux@FreeBSD.org
