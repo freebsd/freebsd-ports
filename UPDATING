@@ -12,7 +12,7 @@ upgrades.
 
   Starting with port version 1.2.3, pgbouncer does not run as root anymore.
   If you are upgrading from earlier versions, please update your configuration
-  in ${PREFIX}/etc/pgbouncer.ini to use log and pid file paths owned by the 
+  in ${PREFIX}/etc/pgbouncer.ini to use log and pid file paths owned by the
   newly created pgbouncer user (or customize for a different user yourself).
 
   Default logfile: /var/log/pgbouncer/pgbouncer.log
@@ -503,7 +503,7 @@ upgrades.
   To hash existing passwords, update to ikiwiki-2.48 and run the
   following command for each of your ikiwiki src dirs:
 
-  ikiwiki-transition hashpassword /path/to/your/wiki/srcdir
+	ikiwiki-transition hashpassword /path/to/your/wiki/srcdir
 
 20080524:
   AFFECTS: users of net-im/jabberd
@@ -582,7 +582,7 @@ upgrades.
   AUTHOR: beech@FreeBSD.org
 
   The authors have changed the name of this utility to pg_top. To avoid
-  conflicts with another port in the tree with the same name we have retained
+  conflict with another port in the tree with the same name we have retained
   'ptop' as the portname. Also note, the binary has also changed to pg_top.
   Please start the utility with that name after updating.
 
@@ -598,24 +598,23 @@ upgrades.
   AFFECTS: users of net-mgmt/collectd
   AUTHOR: daniel@roe.ch
 
-  Previously, net-mgmt/collectd used to remove the config file
-  even if it was changed by the user. This has now been fixed.
+  Previously, net-mgmt/collectd used to remove the config file even if it
+  was changed by the user. This has now been fixed.
 
   To upgrade without losing your configuration, copy
-  ${PREFIX}/etc/collectd.conf away to a safe place before
-  upgrading net-mgmt/collectd.
+  ${PREFIX}/etc/collectd.conf away to a safe place before upgrading
+  net-mgmt/collectd.
 
-  In addition, the default location of the data files changed
-  from ${PREFIX}/var/lib/collectd to /var/db/collectd; you
-  may want to move your data files and edit your configuration
-  accordingly.
+  In addition, the default location of the data files changed from
+  ${PREFIX}/var/lib/collectd to /var/db/collectd; you may want to move your
+  data files and edit your configuration accordingly.
 
 20080503:
   AFFECTS: users of net/skype-devel
   AUTHOR: beech@FreeBSD.org
 
-  Skype-devel has been moved to update net/skype. If you are running
-  skype-devel, please do the following:
+  Skype-devel port has been removed in favor and by upading of net/skype.
+  If you are running skype-devel, please do the following:
 
 	portupgrade -o net/skype net/skype-devel
 
@@ -638,7 +637,7 @@ upgrades.
 
   Clamav 0.93 does not support the daily.inc and main.inc directories format
   for virus databases.  You need to remove these directories manually and
-  force freshclam get new cvd format files before starting clamd:
+  force freshclam to get new cvd format files before starting clamd:
 
 	portupgrade clamav
 	/usr/local/etc/rc.d/clamav-clamd stop
@@ -654,9 +653,9 @@ upgrades.
 
   www/p5-Apache-Test doesn't actually need www/mod_perl{1,2}. If you would
   like to test a mod_perl, than please install www/mod_perl2 or www/mod_perl
-  as well. The ports infra structure doesn't support this(yet) but you can
-  use this to test both www/apache13, www/apache20 and/or www/apache22
-  without chaining www/p5-Apache-Test.
+  as well. The ports infrastructure doesn't support this (yet) but you can
+  use it to test www/apache13, www/apache20, and/or www/apache22 without
+  chaining www/p5-Apache-Test.
 
 20080405:
   AFFECTS: users of sysutils/tracker
@@ -675,18 +674,17 @@ upgrades.
 	portupgrade -u sysutils/tracker
 
 20080405:
-  AFFECTS: users and maintainers of ports that depends of databases/sqlite3
+  AFFECTS: users and maintainers of ports that depend on databases/sqlite3
   AUTHOR: mnag@FreeBSD.org
 
-  Port databases/sqlite3 are updated to 3.5.6 and enabled threads
-  by default. If you see any problem you can recompile sqlite3
-  without threads and test or change Makefile of affected port
-  with this:
+  Port databases/sqlite3 was updated to 3.5.6 and now has threads enabled
+  by default. If you encounter any problem with it, you can recompile sqlite3
+  without threads and test or change Makefile of affected port with this:
 
-  sed -i.bak -E -e "s|USE_SQLITE=.*|USE_SQLITE=34|g" \
-    -e "s|databases/sqlite3|databases/sqlite34|g" Makefile
+	sed -i.bak -E -e "s|USE_SQLITE=.*|USE_SQLITE=34|g" \
+	    -e "s|databases/sqlite3|databases/sqlite34|g" Makefile
 
-  Report success or fail to port maintainer and to me.
+  Please report success or failure to port maintainer and to me.
 
 20080403:
   AFFECTS: users of emulators/qemu and emulators/qemu-devel
@@ -711,26 +709,27 @@ upgrades.
   To upgrade please do the following:
 
   1. Install www/openx
-  2. Copy the configuration file from phpadsnew to the var directory
-     of www/openx.
+  2. Copy the configuration file from phpadsnew to the var directory of
+     www/openx
   3. Copy your banner images from phpadsnew/www/images to openx/www/images
-  4. Access openx on your browser and follow the instructions for upgrading.
+  4. Access openx on your browser and follow the instructions for upgrading
   5. When you are satisfied with everything working properly you can remove
-     www/phpadsnew.
+     www/phpadsnew
 
 20080326:
   AFFECTS: users of emulators/linux_base-f8
   AUTHOR: bsam@FreeBSD.org
 
-  The new port is used just like emulators/linux_base-fc6. Please,
-  read carefully record 20070327 about emulators/linux_base-fc6.
+  The new port is used just like emulators/linux_base-fc6.  Please, read
+  carefully entry 20070327 about emulators/linux_base-fc6.
 
 20080323:
   AFFECTS: users of multimedia/gstreamer
   AUTHOR: multimedia@FreeBSD.org
 
-  Gstreamer is updated. Due to the move of some plugins between ports. You will
-  have to rebuild the gstreamer-plugins-good port after upgrading.
+  Gstreamer port was updated.  Due to the move of some plugins between
+  ports, you will have to rebuild the gstreamer-plugins-good port after
+  upgrading.
 
   Portupgrade users:
     # portupgrade -a
@@ -766,7 +765,7 @@ upgrades.
   AFFECTS: users of audio/gnump3d
   AUTHOR: jadawin@FreeBSD.org
 
-  The layout of gnump3d 3.0 is changed, please read the documents and the
+  The layout of gnump3d 3.0 is changed, please read documentation and the
   manual pages of gnump3d.
 
 20080318:
@@ -801,7 +800,7 @@ upgrades.
   AUTHOR: rafan@FreeBSD.org
 
   The default configuration location has been changed from /etc to
-  PREFIX/etc. Move your files accordingly.
+  ${PREFIX}/etc. Move your files accordingly.
 
 20080314:
   AFFECTS: users of security/nmapfe
@@ -816,7 +815,7 @@ upgrades.
   AFFECTS: users of mail/ezmlm-web
   AUTHOR: hans@nordhaug.priv.no
 
-  The layout of ezmlm-web 3.2 is changed, please read the documents and
+  The layout of ezmlm-web 3.2 is changed, please read documentation and
   the manual page of ezmlm-web.cgi.
 
 20080312:
@@ -838,8 +837,8 @@ upgrades.
   AFFECTS: users of mail/dovecot
   AUTHOR: ehaupt@FreeBSD.org
 
-  The update to 1.0.12 will require a manual change to the active configuration
-  file.
+  The update to version 1.0.12 will require manual change to the active
+  configuration file.
 
   mail_extra_groups setting was commonly used insecurely. This setting is now
   deprecated. Most users should switch to using mail_privileged_group setting,
@@ -849,9 +848,9 @@ upgrades.
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
-  gnutls has been updated to 2.2.2 and all shared libraries' versions
-  have been bumped. So you need to rebuild all applications that
-  depend on gnutls. Do something like:
+  gnutls has been updated to 2.2.2 and all shared libraries' versions have
+  been bumped.  So you need to rebuild all applications that depend on
+  gnutls. Do something like:
 
 	portupgrade -rf gnutls
 
@@ -859,7 +858,7 @@ upgrades.
   AFFECTS: users of www/instiki
   AUTHOR: beech@FreeBSD.org
 
-  The default install directory for instiki has changed from
+  The default installation directory for instiki has changed from
   /usr/local/instiki to /usr/local/share/instiki.
 
   If you are updating from a previous version, to preserve your
@@ -873,19 +872,19 @@ upgrades.
   AFFECTS: users of x11-wm/xmonad
   AUTHOR: jacula@gmail.com
 
-  From now XMonad uses a new configuration file system, so you don't
-  have to edit Config.hs anymore. Instead, create a custom config
-  file on ~/.xmonad/xmonad.hs. You can see some samples on Xmonad's
-  website. Note that you can be interested by x11-wm/xmonad-contrib.
+  From now XMonad uses a new configuration file system, so you don't have
+  to edit Config.hs anymore.  Instead, create a custom configuration file
+  ~/.xmonad/xmonad.hs.  You can take a look at some samples on Xmonad's
+  website.  Note that you can be interested in x11-wm/xmonad-contrib.
 
 20080218:
   AFFECTS: users of devel/poco and devel/poco-ssl
   AUTHOR: lippemail@gmail.com
 
-  The HashFunction class template has been changed in an incompatible
-  way. The member function formerly named hash() is now the function
-  call operator. If you have defined your own HashFunction classes,
-  you have to update your code.
+  The HashFunction class template has been changed in an incompatible way.
+  The member function formerly named hash() is now the function call
+  operator.  If you have defined your own HashFunction classes, then you
+  have to update your code.
 
 20080216:
   AFFECTS: users of sysutils/symon
@@ -895,9 +894,9 @@ upgrades.
   protocol again. You should update your symux(8) and symon(8) installations
   simultaneously, as:
 
-     - new symon clients will make old symux servers exit, and
-     - new symux servers don't understand the old symon client's if() and
-       mem() probes.
+    - new symon clients will make old symux servers exit, and
+    - new symux servers don't understand the old symon client's if() and
+      mem() probes.
 
 20080208:
   AFFECTS: users of ports-mgmt/portupgrade
@@ -913,76 +912,77 @@ upgrades.
   AFFECTS: users of www/xshttpd
   AUTHOR: johans@FreeBSD.org
 
-  www/xshttpd now uses ${PREFIX}/www/xshttpd/ as a root directory for
-  its data files. The xshttpd configuration files have been moved to
-  ${PREFIX}/www/xshttpd/conf/. Move the appropriate local files
+  www/xshttpd now uses ${PREFIX}/www/xshttpd/ as a root directory for its
+  data files.  The xshttpd configuration files have been moved to
+  ${PREFIX}/www/xshttpd/conf/.  Please move the appropriate local files
   manually if you are upgrading from 3.4 or older versions.
 
 20080202:
-   AFFECTS: users of www/punbb
-   AUTHOR: beech@FreeBSD.org
+  AFFECTS: users of www/punbb
+  AUTHOR: beech@FreeBSD.org
 
-   Install paths have changed. Please do the following prior to upgrade:
+  Install paths have changed. Please do the following prior to upgrade:
 
 	cd /usr/local/www
 	mv punbb punbb.old
 	cp -R punbb.old/upload punbb
 
-   It is now safe to update as usual.
+  It is now safe to update as usual.
 
-   Notes:
-   * You will probably get uninstall errors regarding files not found. It's
-     safe to ignore them.
-   * Your webserver path has changed from www/punbb/upload to www/punbb, please
-     adjust your webserver configuration and restart it.
-   * When you are satisfied that everything is working properly you may remove
-     the punbb.old directory.
+  Notes:
+
+  * You will probably get uninstall errors regarding files not found. It's
+    safe to ignore them
+  * Your webserver path has changed from www/punbb/upload to www/punbb,
+    please adjust your webserver configuration and restart it
+  * When you are satisfied with everything working properly you may remove
+    the punbb.old directory:
 	rm -r /usr/local/www/punbb.old
 
 20080201:
-   AFFECTS: users of www/ziproxy
-   AUTHOR: pankov_p@mail.ru
+  AFFECTS: users of www/ziproxy
+  AUTHOR: pankov_p@mail.ru
 
-   The configuration file was moved from /usr/local/etc to
-   /usr/local/etc/ziproxy.
+  The configuration file was moved from /usr/local/etc to
+  /usr/local/etc/ziproxy.
 
 20080126:
-   AFFECTS: users of net-p2p/deluge
-   AUTHOR: mezz@FreeBSD.org
+  AFFECTS: users of net-p2p/deluge
+  AUTHOR: mezz@FreeBSD.org
 
-   Update of deluge to 0.5.8.2, if you are using blocklist plugin. You have
-   to remove blocklist.conf first before you can run it or it will crash in
-   the start up.
+  Update of deluge to 0.5.8.2, if you are using blocklist plugin. You have
+  to remove blocklist.conf first before you can run it or it will crash in
+  the start up.
 
-   	$ rm -f ~/.config/deluge/blocklist.conf
+	$ rm -f ~/.config/deluge/blocklist.conf
 
 20080125:
-   AFFECTS: users of www/mod_security2
-   AUTHOR: araujo@FreeBSD.org
+  AFFECTS: users of www/mod_security2
+  AUTHOR: araujo@FreeBSD.org
 
-   Update of mod_security2 is a dramatic change, because there is a need
-   to completely rewrite their obsolete rules and migrate for capacity
-   to use new syntax.
-   You need to make a complete backup of your configuration files before
-   you can perform an update.
-
-20080120:
-   AFFECTS: users of www/apache20
-   AUTHOR: clement@FreeBSD.org
-
-   BDB framework provided by bsd.database.mk is now used by www/apache20
-   port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
-   WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
-   ('make show-options').
+  Update of mod_security2 is a dramatic change, because there is a need
+  to completely rewrite their obsolete rules and migrate for capacity
+  to use new syntax.
+  You need to make a complete backup of your configuration files before
+  you can perform an update.
 
 20080120:
-   AFFECTS: users of www/apache22
-   AUTHOR: clement@FreeBSD.org
+  AFFECTS: users of www/apache20
+  AUTHOR: clement@FreeBSD.org
 
-   BDB framework provided by bsd.database.mk is now used by www/apache22
-   port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
-   WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
-   ('make show-options').
+  BDB framework provided by bsd.database.mk is now used by www/apache20
+  port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
+  WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details ('make
+  show-options').
+
+20080120:
+  AFFECTS: users of www/apache22
+  AUTHOR: clement@FreeBSD.org
+
+  BDB framework provided by bsd.database.mk is now used by www/apache22
+  port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
+  WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
+  ('make show-options').
 
 20080118:
   AFFECTS: users of net/freeradius
@@ -1021,8 +1021,8 @@ upgrades.
   I cannot guarantee that all 1.x configurations will work with the 2.0
   server, and I only recommend using a 1.x configuration as an interim measure.
 
-     [1] - http://www.freeradius.org/business/roadmap.html
-     [2] - http://preview.tinyurl.com/ysrr6a
+    [1] - http://www.freeradius.org/business/roadmap.html
+    [2] - http://preview.tinyurl.com/ysrr6a
 
 20080114:
   AFFECTS: users of devel/perforce
@@ -1310,7 +1310,7 @@ upgrades.
   AUTHOR: bsam@FreeBSD.org
 
   The new port is used just like emulators/linux_base-fc6. Please,
-  read carefully record 20070327 about emulators/linux_base-fc6.
+  read carefully entry 20070327 about emulators/linux_base-fc6.
 
 20070921:
   AFFECTS: users of sysutils/grok
@@ -1328,11 +1328,12 @@ upgrades.
   This is a cumulative update of net/samba3 from version 3.0.25a to
   3.0.26a. Detailed list of all the changes can be found:
 
-    http://www.samba.org/samba/history/samba-3.0.26a.html
+	http://www.samba.org/samba/history/samba-3.0.26a.html
 
   or in the WHATSNEW.txt file in the port's document directory.
 
   Short summary is:
+
   o Memory leaks in Winbind's IDMap manager.
   o CVE-2007-4138 - Incorrect primary group assignment for domain
     users using the RFC 2307 or sfu winbind nss info plugin.
@@ -2195,7 +2196,7 @@ upgrades.
   with the usual portupgrade/portmanager command, it is highly
   recommended to follow the instructions at this URL:
 
-     http://www.turbogears.com/download/upgrade.html
+	http://www.turbogears.com/download/upgrade.html
 
   starting from section "Updating from 0.8 to 0.9" on, to make
   your projects/code consistent with the new version.
@@ -2399,7 +2400,7 @@ upgrades.
   seems to perform better. You can convert your existing database to PBL using
   the following commands (assuming you didn't disable PBL support):
 
-    cd ~
+    cd
     mkdir spamprobe.new
     spamprobe -d bdb:.spamprobe export | spamprobe -d spamprobe.new import
     mv .spamprobe spamprobe.old
@@ -2479,9 +2480,9 @@ upgrades.
   you should enable dbus, hal and policy kit during system startup.
   To do this, add the following lines to /etc/rc.conf:
 
-  dbus_enable="YES"
-  polkitd_enable="YES"
-  hald_enable="YES"
+	dbus_enable="YES"
+	polkitd_enable="YES"
+	hald_enable="YES"
 
   Notes and known problems about mounting devices in media:/ with HAL enabled:
 
@@ -2554,7 +2555,8 @@ upgrades.
   The default Berkeley DB version has been changed from
   4.3 to 4.4, as suggested by OpenLDAP developers.
 
-  Suggested upgrade step:
+  Suggested upgrade steps:
+
     - Stop OpenLDAP server (i.e. ${PREFIX}/etc/rc.d/slapd stop)
     - Backup the OpenLDAP database (typically, /var/db/openldap-data)
       with your favorite tool
@@ -2631,15 +2633,15 @@ upgrades.
   AFFECTS: users of syutils/munin-*
   AUTHOR: miwi@FreeBSD.org
 
-  - The default install location has changed from
-    ${PREFIX}/www/data/munin to ${PREFIX}/www/munin.
+  The default install location has changed from ${PREFIX}/www/data/munin
+  to ${PREFIX}/www/munin.
 
 20061106:
   AFFECTS: users of chinese/tatter-tools
   AUTHOR: chinsan.tw@gmail.com
 
-  - The default install location has changed from
-    ${PREFIX}/www/data/tatter to ${PREFIX}/www/tatter.
+  The default install location has changed from ${PREFIX}/www/data/tatter
+  to ${PREFIX}/www/tatter.
 
 20061102:
   AFFECTS: users of mail/fetchmail
