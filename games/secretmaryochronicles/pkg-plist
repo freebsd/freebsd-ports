@@ -2022,6 +2022,7 @@ bin/smc
 %%DATADIR%%/world/world_4/layer.xml
 %%DATADIR%%/world/world_4/world.xml
 %%DATADIR%%/world/worlds.xml
+@exec mkdir -p %D/share/smc/music
 @dirrm %%DATADIR%%/world/world_4
 @dirrm %%DATADIR%%/world/world_3
 @dirrm %%DATADIR%%/world/world_2
