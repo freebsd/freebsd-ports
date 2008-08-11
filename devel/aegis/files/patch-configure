@@ -1,0 +1,20 @@
+--- configure.orig	2008-03-09 20:08:17.000000000 -0200
++++ configure	2008-08-10 22:29:25.000000000 -0300
+@@ -7155,7 +7155,7 @@
+ 
+ if test -n "$MANPATH_PROG"
+ then
+-                    MANPATH_PROG="$MANPATH_PROG 2>/dev/null"
++                    MANPATH_PROG="$MANPATH_PROG"
+ else
+                             temp_str=`man -w 2>/dev/null`
+     if test -n "$temp_str"
+@@ -8868,6 +8868,8 @@
+ fi
+ done
+ 
++echo "#undef HAVE_STRVERSCMP" >> confdefs.h
++
+ { echo "$as_me:$LINENO: checking whether crypt is declared" >&5
+ echo $ECHO_N "checking whether crypt is declared... $ECHO_C" >&6; }
+ if test "${ac_cv_have_decl_crypt+set}" = set; then
