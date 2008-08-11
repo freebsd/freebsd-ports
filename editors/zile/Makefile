@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.2.60
+PORTVERSION=	2.2.61
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -16,7 +16,7 @@ COMMENT=	Small emacs-like text editor
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lgnuregex"
-CONFIGURE_ARGS=	have_getopt_long_only=true
+CONFIGURE_ARGS=	--without-included-regex
 
 MAN1=		zile.1
 INFO=		zile
@@ -35,9 +35,10 @@ GNU_REGEX_H=	gnuregex.h
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<regex\.h>|<${GNU_REGEX_H}>|g ; \
-		 s|_regex_h|_${GNU_REGEX_H:S/\//_/g:S/./_/g}|g ; \
 		 s|-pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|<regex\.h>|<${GNU_REGEX_H}>|g' ${WRKSRC}/src/search.c
+		's|"regex\.h"|<${GNU_REGEX_H}>|g' ${WRKSRC}/src/search.c
+	@${REINPLACE_CMD} -e \
+		's|: install-exec-local|:|g' ${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.post.mk>
