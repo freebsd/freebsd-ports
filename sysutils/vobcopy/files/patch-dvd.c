@@ -1,6 +1,23 @@
---- dvd.c.orig	Tue Dec  5 00:06:52 2006
-+++ dvd.c	Tue Dec  5 00:09:54 2006
-@@ -637,21 +637,6 @@
+--- dvd.c.orig	2008-02-19 00:27:04.000000000 -0500
++++ dvd.c	2008-08-08 19:02:43.000000000 -0400
+@@ -510,7 +510,15 @@
+ 	   */
+ 	     
+ 
+-	   k = strstr( tmp_bufferin, " " );
++	   k = strpbrk( tmp_bufferin, " \t" );
++
++	   /* Avoid a core dump by checking that the break token
++	      was found */
++	   if ( k == NULL )
++	     {
++	         fprintf(stderr, "[Error] Unable to parse the /etc/fstab file\n");
++	         return -1;
++	     }
+ 
+ 	   /*traverse the gap*/
+ 
+@@ -646,21 +654,6 @@
     	   return ( off_t ) vob_size;
  	}
     

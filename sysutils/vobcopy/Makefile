@@ -7,6 +7,7 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		CRITICAL
@@ -35,7 +36,7 @@ post-extract:
 	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|(fopen\("/etc/)mtab|\1fstab|; \
+	@${REINPLACE_CMD} -E -e 's|(fopen\( *"/etc/)mtab|\1fstab|; \
 		s|iso9660|cd9660|' ${WRKSRC}/dvd.c
 	@${REINPLACE_CMD} -E -e 's|declare -i i=0||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -66,11 +67,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${PREFIX}/bin/vobcopy
 	@${INSTALL_MAN} ${WRKSRC}/vobcopy.1${MAN1_SUFX} \
 		${MANPREFIX}/man/man1/vobcopy.1
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
