@@ -67,5 +67,7 @@ libdata/pkgconfig/goocanvasmm-1.0.pc
 @dirrm lib/goocanvasmm-0.1/proc/m4
 @dirrm lib/goocanvasmm-0.1/proc
 @dirrm lib/goocanvasmm-0.1/include
+@dirrm lib/goocanvasmm-0.1
 @dirrm include/goocanvasmm-0.1/goocanvasmm/private
 @dirrm include/goocanvasmm-0.1/goocanvasmm
+@dirrm include/goocanvasmm-0.1
