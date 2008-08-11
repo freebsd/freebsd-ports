@@ -14,7 +14,7 @@
  else
 -CC = g++
 -CFLAGS += -g -Wall -O3 -fno-exceptions -fno-rtti
-+CC ?= g++
++CC = $(CXX)
 +CFLAGS += -fno-exceptions -fno-rtti ${PTHREAD_CFLAGS}
  endif
  
