@@ -38,6 +38,8 @@ RUN_DEPENDS+=	\
 
 CONFLICTS?=	ja-bugzilla-2.*
 
+PORTSCOUT=	limitw:1,even
+
 USE_PERL5=	yes
 
 BINMODE=	700
