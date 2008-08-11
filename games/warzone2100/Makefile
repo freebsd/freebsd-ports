@@ -38,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|-m32||' ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^(dist_doc_DATA =) .*|\1|' \
+	@${REINPLACE_CMD} -Ee 's|^install-dist_docDATA$$||' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^install: install-am|install:|' \
 		${WRKSRC}/doc/Makefile.in
