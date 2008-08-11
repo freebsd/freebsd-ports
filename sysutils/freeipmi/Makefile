@@ -15,8 +15,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
@@ -55,7 +54,6 @@ MAN8+=	bmc-watchdog.8 ipmipower.8 ipmi-raw.8 ipmi-sel.8 \
 	ipmi-fru.8 pef-config.8 ipmimonitoring.8 ipmi-chassis.8 \
 	ipmidetect.8 ipmidetectd.8 ipmi-oem.8 ipmi-sensors-config.8
 INFO+=		freeipmi-faq
-PORTDOCS=	*
 
 CACHE_DIR?=	/var/db/${PORTNAME}
 LOG_DIR=	/var/log/${PORTNAME}
@@ -84,6 +82,12 @@ BROKEN=	IOPERM option is only available on i386 and You are building for ${ARCH}
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug --enable-trace
 STRIP=	# empty
+.endif
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs.patch
+.else
+PORTDOCS=	*
 .endif
 
 post-install:
