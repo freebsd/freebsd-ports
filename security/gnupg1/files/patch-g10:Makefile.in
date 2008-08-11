@@ -1,11 +1,40 @@
---- g10/Makefile.in.orig	Mon Dec  4 09:50:35 2006
-+++ g10/Makefile.in	Mon Dec  4 09:50:46 2006
-@@ -36,7 +36,7 @@
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
+--- g10/Makefile.in.orig	2008-03-27 02:30:47.000000000 +0900
++++ g10/Makefile.in	2008-08-11 11:39:26.000000000 +0900
+@@ -34,7 +34,7 @@
+ 
+ 
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/gnupg1
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = ..
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+@@ -346,7 +346,11 @@
+ 	@LIBUSB_CPPFLAGS@ $(am__append_1)
+ needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a
+ other_libs = $(LIBICONV) $(DNSLIBS) $(LIBINTL) $(CAPLIBS)
++ifdef NOPORTDOCS
++dist_pkgdata_DATA = 
++else
+ dist_pkgdata_DATA = options.skel
++endif
+ @ENABLE_BZIP2_SUPPORT_FALSE@bzip2_source = 
+ @ENABLE_BZIP2_SUPPORT_TRUE@bzip2_source = compress-bz2.c
+ common_source = \
+@@ -590,6 +594,8 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+ install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
++ifdef NOPORTDOCS
++else
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(dist_pkgdata_DATA)'; for p in $$list; do \
+@@ -598,6 +604,7 @@
+ 	  echo " $(dist_pkgdataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
+ 	  $(dist_pkgdataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-dist_pkgdataDATA:
+ 	@$(NORMAL_UNINSTALL)

@@ -1,11 +1,40 @@
---- doc/Makefile.in.orig	Tue Aug  1 19:41:48 2006
-+++ doc/Makefile.in	Mon Dec  4 09:34:23 2006
-@@ -35,7 +35,7 @@
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
+--- doc/Makefile.in.orig	2008-03-27 02:30:46.000000000 +0900
++++ doc/Makefile.in	2008-08-11 11:30:00.000000000 +0900
+@@ -32,7 +32,7 @@
+ # along with this program; if not, see <http://www.gnu.org/licenses/>.
+ 
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/gnupg1
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = ..
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+@@ -296,7 +296,11 @@
+ 
+ # Need this to avoid building of dvis with automake 1.4
+ DVIS = 
++ifdef NOPORTDOCS 
++pkgdata_DATA =
++else
+ pkgdata_DATA = FAQ faq.html
++endif
+ BUILT_SOURCES = FAQ faq.html 
+ # we can't add gpg.texi gpgv.texi here because automake does not like them to
+ # be built files. 
+@@ -589,6 +593,8 @@
+ 	  rm -f "$(DESTDIR)$(man7dir)/$$inst"; \
+ 	done
+ install-pkgdataDATA: $(pkgdata_DATA)
++ifdef NOPORTDOCS
++else
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(pkgdata_DATA)'; for p in $$list; do \
+@@ -597,6 +603,7 @@
+ 	  echo " $(pkgdataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
+ 	  $(pkgdataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
+ 	done
++endif
+ 
+ uninstall-pkgdataDATA:
+ 	@$(NORMAL_UNINSTALL)
