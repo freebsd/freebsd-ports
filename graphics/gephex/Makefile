@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gephex
-PORTVERSION=	0.4.3b
-PORTREVISION=	6
+PORTVERSION=	0.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gephex.org/download/src/
 
@@ -16,163 +15,110 @@ COMMENT=	Software-based interactive video-effect system
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	autoconf:261 autoheader:261 libtool:15 aclocal:19 automake:19
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
-		--without-FFMPEG --without-AVIFILE --without-MPEG3 \
-		--without-LIBPNG --without-SDL --without-SDL_IMAGE \
-		--without-SDL_TTF --without-AALIB --disable-static \
-		--with-qt-libdir="${LOCALBASE}/lib" \
-		--with-qt-incdir="${LOCALBASE}/include" \
-		--with-qt-bindir="${LOCALBASE}/bin"
-USE_QT_VER=	3
-WANT_SDL=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION:R}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//g}
+OPTIONS=	SDL	"Turn on SDL support"		on \
+		AALIB	"Turn on AALIB support"		on \
+		FFMPEG	"Turn on FFMPEG support"	on \
+		MPEG3	"Turn on MPEG3 support"		off \
+		PNG	"Turn on PNG support"		off \
+		GL	"Turn on GL support"		off
+
 ONLY_FOR_ARCHS=	i386
+
+USE_BZIP2=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build uic_build
+USE_GNOME=	gnometarget
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	automake:18 autoconf:261 libtool:15
+AUTOMAKE_ARGS=	--foreign
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--without-ASOUNDLIB --without-AVIFILE \
+		--without-LINUX_JOYSTICK --without-V4L \
+		--disable-static
 
 MAN1=		gephex-engine.1 gephex-gui.1 gephex.1
 
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_SDL:Msdl} && ${HAVE_SDL:Mimage} && ${HAVE_SDL:Mttf} && !defined(WITHOUT_SDL)
-WITH_SDL=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libaa.so.1) && !defined(WITHOUT_AALIB)
-WITH_AALIB=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/avifile-config) && !defined(WITHOUT_AVIFILE)
-WITH_AVIFILE=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libavcodec.a) && !defined(WITHOUT_FFMPEG)
-WITH_FFMPEG=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libmpeg3.a) && !defined(WITHOUT_MPEG3)
-WITH_MPEG3=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libpng.so.5) && !defined(WITHOUT_PNG)
-WITH_PNG=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libGL.so) && !defined(WITHOUT_GL)
-WITH_GL=	yes
-.endif
 
 .if ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--disable-mmx
 .else
-BUILD_DEPENDS+=		${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.ifdef (WITH_SDL)
+.if defined(WITHOUT_SDL)
+CONFIGURE_ARGS+=	--without-SDL --without-SDL_IMAGE --without-SDL_TTF
+PLIST_SUB+=	SDL="@comment "
+.else
 CONFIGURE_ARGS+=	--with-SDL --with-SDL_IMAGE --with-SDL_TTF
 USE_SDL=	sdl image ttf
+PLIST_SUB+=	SDL=""
 .endif
 
-.ifdef (WITH_AALIB)
+.if defined(WITHOUT_AALIB)
+CONFIGURE_ARGS+=	--without-AALIB
+PLIST_SUB+=	AALIB="@comment "
+.else
 CONFIGURE_ARGS+=	--with-AALIB
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=	AALIB=""
 .endif
 
-.ifdef (WITH_AVIFILE)
-CONFIGURE_ARGS+=	--with-AVIFILE
-LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
-.endif
-
-.ifdef (WITH_FFMPEG)
+.if defined(WITHOUT_FFMPEG)
+CONFIGURE_ARGS+=	--without-FFMPEG
+PLIST_SUB+=	FFMPEG="@comment "
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-FFMPEG
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	FFMPEG=""
 .endif
 
-.ifdef (WITH_MPEG3)
+.if defined(WITH_MPEG3)
 CONFIGURE_ARGS+=	--with-MPEG3
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3
+PLIST_SUB+=	MPEG3=""
+.else
+CONFIGURE_ARGS+=	--without-MPEG3
+PLIST_SUB+=	MPEG3="@comment "
 .endif
 
-.ifdef (WITH_PNG)
+.if defined(WITH_PNG)
 CONFIGURE_ARGS+=	--with-LIBPNG
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+PLIST_SUB+=	PNG=""
+.else
+CONFIGURE_ARGS+=	--without-LIBPNG
+PLIST_SUB+=	PNG="@comment "
 .endif
 
-.ifdef (WITH_GL)
+.if defined(WITH_GL)
 CONFIGURE_ARGS+=	--with-GL
-USE_GL=		yes
-.endif
-
-.if !defined(WITH_SDL)
-PLIST_SUB+=	WITH_SDL="@comment "
+USE_GL=		gl
+PLIST_SUB+=	GL=""
 .else
-PLIST_SUB+=	WITH_SDL=""
+CONFIGURE_ARGS+=	--without-GL
+PLIST_SUB+=	GL="@comment "
 .endif
-
-.if !defined(WITH_FFMPEG)
-PLIST_SUB+=	WITH_FFMPEG="@comment "
-.else
-PLIST_SUB+=	WITH_FFMPEG=""
-.endif
-
-.if !defined(WITH_PNG)
-PLIST_SUB+=	WITH_PNG="@comment "
-.else
-PLIST_SUB+=	WITH_PNG=""
-.endif
-
-.ifdef (NOPORTDOCS)
-DO_DOCS=\#
-.endif
-
-pre-everything::
-	@${ECHO_CMD} "Building with the following configuration:"
-.if defined (WITH_AALIB)
-	@${ECHO_CMD} "WITH_AALIB=${WITH_AALIB}"
-.else
-	@${ECHO_CMD} "WITH_AALIB=no"
-.endif
-.if defined (WITH_AVIFILE)
-	@${ECHO_CMD} "WITH_AVIFILE=${WITH_AVIFILE}"
-.else
-	@${ECHO_CMD} "WITH_AVIFILE=no"
-.endif
-.if defined (WITH_FFMPEG)
-	@${ECHO_CMD} "WITH_FFMPEG=${WITH_FFMPEG}"
-.else
-	@${ECHO_CMD} "WITH_FFMPEG=no"
-.endif
-.if defined (WITH_GL)
-	@${ECHO_CMD} "WITH_GL=${WITH_GL}"
-.else
-	@${ECHO_CMD} "WITH_GL=no"
-.endif
-.if defined (WITH_MPEG3)
-	@${ECHO_CMD} "WITH_MPEG3=${WITH_MPEG3}"
-.else
-	@${ECHO_CMD} "WITH_MPEG3=no"
-.endif
-.if defined (WITH_PNG)
-	@${ECHO_CMD} "WITH_PNG=${WITH_PNG}"
-.else
-	@${ECHO_CMD} "WITH_PNG=no"
-.endif
-.if defined (WITH_SDL)
-	@${ECHO_CMD} "WITH_SDL=${WITH_SDL}"
-.else
-	@${ECHO_CMD} "WITH_SDL=no"
-.endif
-	@${ECHO_CMD} "Use WITH[OUT]_ definitions to change current port behaviour"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
-			      s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_DOCS}|' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|$$QTDIR/include |${QT_INCDIR} |g ; \
+		 s|$$QTDIR/lib |${QT_LIBDIR} |g ; \
+		 s|$$QTDIR/bin |${QT_PREFIX}/bin |g ; \
+		 s|/moc|/${MOC:T}|g ; \
+		 s|/uic|/${UIC:T}|g' ${WRKSRC}/acinclude.m4
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.ac
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
+.endif
 
 .include <bsd.port.post.mk>
