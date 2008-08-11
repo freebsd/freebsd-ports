@@ -58,6 +58,9 @@ lib/gstreamer-%%VERSION%%/libgstoss4audio.so
 lib/gstreamer-%%VERSION%%/libgstrawparse.a
 lib/gstreamer-%%VERSION%%/libgstrawparse.la
 lib/gstreamer-%%VERSION%%/libgstrawparse.so
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.a
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.la
+%%I386%%lib/gstreamer-%%VERSION%%/libgstreal.so
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.a
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.la
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.so
