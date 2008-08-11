@@ -1,5 +1,5 @@
-@comment $FreeBSD$
 bin/clive
+bin/clive-passwd
 %%PYTHON_SITELIBDIR%%/clive/__init__.py
 %%PYTHON_SITELIBDIR%%/clive/__init__.pyc
 %%PYTHON_SITELIBDIR%%/clive/__init__.pyo
@@ -15,27 +15,15 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/error.py
 %%PYTHON_SITELIBDIR%%/clive/error.pyc
 %%PYTHON_SITELIBDIR%%/clive/error.pyo
-%%PYTHON_SITELIBDIR%%/clive/feedparser/__init__.py
-%%PYTHON_SITELIBDIR%%/clive/feedparser/__init__.pyc
-%%PYTHON_SITELIBDIR%%/clive/feedparser/__init__.pyo
-%%PYTHON_SITELIBDIR%%/clive/feedparser/feedparser.py
-%%PYTHON_SITELIBDIR%%/clive/feedparser/feedparser.pyc
-%%PYTHON_SITELIBDIR%%/clive/feedparser/feedparser.pyo
 %%PYTHON_SITELIBDIR%%/clive/login.py
 %%PYTHON_SITELIBDIR%%/clive/login.pyc
 %%PYTHON_SITELIBDIR%%/clive/login.pyo
 %%PYTHON_SITELIBDIR%%/clive/main.py
 %%PYTHON_SITELIBDIR%%/clive/main.pyc
 %%PYTHON_SITELIBDIR%%/clive/main.pyo
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/__init__.py
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/__init__.pyc
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/__init__.pyo
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.a
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.la
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.so
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/snack.py
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/snack.pyc
-%%OPTNEWT%%%%PYTHON_SITELIBDIR%%/clive/newt/snack.pyo
+%%PYTHON_SITELIBDIR%%/clive/modules.py
+%%PYTHON_SITELIBDIR%%/clive/modules.pyc
+%%PYTHON_SITELIBDIR%%/clive/modules.pyo
 %%PYTHON_SITELIBDIR%%/clive/nomad.py
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyc
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyo
@@ -45,6 +33,9 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/parse.py
 %%PYTHON_SITELIBDIR%%/clive/parse.pyc
 %%PYTHON_SITELIBDIR%%/clive/parse.pyo
+%%PYTHON_SITELIBDIR%%/clive/passwd.py
+%%PYTHON_SITELIBDIR%%/clive/passwd.pyc
+%%PYTHON_SITELIBDIR%%/clive/passwd.pyo
 %%PYTHON_SITELIBDIR%%/clive/path.py
 %%PYTHON_SITELIBDIR%%/clive/path.pyc
 %%PYTHON_SITELIBDIR%%/clive/path.pyo
@@ -66,22 +57,7 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/update.py
 %%PYTHON_SITELIBDIR%%/clive/update.pyc
 %%PYTHON_SITELIBDIR%%/clive/update.pyo
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/__init__.py
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/__init__.pyc
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/__init__.pyo
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/byterange.py
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/byterange.pyc
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/byterange.pyo
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/grabber.py
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/grabber.pyc
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/grabber.pyo
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/keepalive.py
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/keepalive.pyc
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/keepalive.pyo
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/sslfactory.py
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/sslfactory.pyc
-%%PYTHON_SITELIBDIR%%/clive/urlgrabber/sslfactory.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/clive/urlgrabber
-@dirrm %%PYTHON_SITELIBDIR%%/clive/newt
-@dirrm %%PYTHON_SITELIBDIR%%/clive/feedparser
+%%PYTHON_SITELIBDIR%%/clive/util.py
+%%PYTHON_SITELIBDIR%%/clive/util.pyc
+%%PYTHON_SITELIBDIR%%/clive/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/clive
