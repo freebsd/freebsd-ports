@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Sat Aug  2 17:44:00 2008
++++ Makefile.in	Sun Aug 10 10:38:52 2008
+@@ -318,15 +318,7 @@
+ distclean-libtool:
+ 	-rm -f libtool
+ uninstall-info-am:
+-install-docDATA: $(doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	done
++install-docDATA:
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
+--- doc/Makefile.in.orig	Sat Aug  2 17:43:53 2008
++++ doc/Makefile.in	Sun Aug 10 10:40:25 2008
+@@ -430,15 +430,7 @@
+ 	  echo " rm -f '$(DESTDIR)$(man7dir)/$$inst'"; \
+ 	  rm -f "$(DESTDIR)$(man7dir)/$$inst"; \
+ 	done
+-install-docDATA: $(doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	done
++install-docDATA:
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
