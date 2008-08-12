@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.19.1
+PORTVERSION=	0.20.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -42,6 +42,7 @@ EXAMPLES=	addingTranslations.php creating_drivers.php \
 
 TESTS=		AllTests.php AllTestsUndeployed.php \
 		Date_Holidays_Bugfix_Retests_TestSuite.php \
+		Date_Holidays_Driver_Brazil_TestSuite.php \
 		Date_Holidays_Driver_Christian_TestSuite.php \
 		Date_Holidays_Driver_Jewish_TestSuite.php \
 		Date_Holidays_Driver_TestSuite.php \
