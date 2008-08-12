@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomesword
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 
