@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	compatibility
-PORTVERSION=	2.0.12
+PORTVERSION=	2.0.13
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
