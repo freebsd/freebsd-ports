@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-08-11 13:21:31.000000000 +0800
++++ Makefile	2008-08-11 13:24:33.000000000 +0800
+@@ -197,6 +197,8 @@
+ 	install $(GCIN_SO) $(gcinlibdir)
+ 
+ install:
++	@echo "*** TEST ***"
++	cat config.mak
+ 	install -d $(datadir)/icons
+ 	install gcin.png $(datadir)/icons
+ 	$(MAKE) -C icons install
