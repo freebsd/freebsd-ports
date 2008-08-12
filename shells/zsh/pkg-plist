@@ -73,9 +73,16 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/BSD/_chflags
 %%ZSH_FNDIR%%/Completion/BSD/_csup
 %%ZSH_FNDIR%%/Completion/BSD/_cvsup
+%%ZSH_FNDIR%%/Completion/BSD/_fetch
+%%ZSH_FNDIR%%/Completion/BSD/_freebsd-update
 %%ZSH_FNDIR%%/Completion/BSD/_kld
 %%ZSH_FNDIR%%/Completion/BSD/_portlint
 %%ZSH_FNDIR%%/Completion/BSD/_portsnap
+%%ZSH_FNDIR%%/Completion/BSD/_powerd
+%%ZSH_FNDIR%%/Completion/BSD/_zfs
+%%ZSH_FNDIR%%/Completion/BSD/_zfs_dataset
+%%ZSH_FNDIR%%/Completion/BSD/_zfs_pool
+%%ZSH_FNDIR%%/Completion/BSD/_zpool
 %%ZSH_FNDIR%%/Completion/Base/_all_labels
 %%ZSH_FNDIR%%/Completion/Base/_all_matches
 %%ZSH_FNDIR%%/Completion/Base/_alternative
