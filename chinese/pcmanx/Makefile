@@ -22,6 +22,13 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS=	WGET	"enable wget support for download articles" on
+
+.if !defined(WITHOUT_WGET)
+RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+CONFIGURE_ARGS+=--enable-wget
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
