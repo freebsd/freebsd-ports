@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.708
+PORTVERSION=	3.0.711
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
 
