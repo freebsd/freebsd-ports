@@ -1,3 +1,4 @@
-This module provides a Perlish interface to Amazon Elastic Compute Cloud.
+This module provides a Perlish interface to Amazon Elastic Compute
+Cloud.
 
 WWW:	http://search.cpan.org/dist/Net-Amazon-EC2/
