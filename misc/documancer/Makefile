@@ -13,8 +13,10 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programmer's documentation reader
+
+DEPRECATED=	Unmaintained upstream
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		swish-e:${PORTSDIR}/www/swish-e
