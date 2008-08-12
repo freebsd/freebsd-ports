@@ -1,6 +1,9 @@
 %%SITE_PERL%%/Net/Amazon/EC2.pm
+%%SITE_PERL%%/Net/Amazon/EC2/AvailabilityZone.pm
+%%SITE_PERL%%/Net/Amazon/EC2/BlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ConfirmProductInstanceResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ConsoleOutput.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeAddress.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImageAttribute.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/DescribeKeyPairsResponse.pm
@@ -13,10 +16,10 @@
 %%SITE_PERL%%/Net/Amazon/EC2/KeyPair.pm
 %%SITE_PERL%%/Net/Amazon/EC2/LaunchPermission.pm
 %%SITE_PERL%%/Net/Amazon/EC2/LaunchPermissionOperation.pm
+%%SITE_PERL%%/Net/Amazon/EC2/PlacementResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ProductCode.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ProductInstanceResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ReservationInfo.pm
-%%SITE_PERL%%/Net/Amazon/EC2/RunInstance.pm
 %%SITE_PERL%%/Net/Amazon/EC2/RunningInstances.pm
 %%SITE_PERL%%/Net/Amazon/EC2/SecurityGroup.pm
 %%SITE_PERL%%/Net/Amazon/EC2/TerminateInstancesResponse.pm
