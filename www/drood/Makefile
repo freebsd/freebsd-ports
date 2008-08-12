@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drood
-PORTVERSION=	1.28
+PORTVERSION=	1.30
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -17,6 +17,8 @@ MAN8=		drood.8
 MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/drood \
+		etc/drood/types.tab \
 		etc/rc.d/drood
+PLIST_DIRS=	etc/drood
 
 .include <bsd.port.mk>
