@@ -27,7 +27,7 @@ etc/racoon2/hook/ph1-up
 etc/racoon2/hook/ph1-down
 etc/rc.d/iked
 etc/rc.d/spmd
-%%KINK%%etc/rc.d/kinkd.sh
+%%KINK%%etc/rc.d/kinkd
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
 %%PORTDOCS%%%%DOCSDIR%%/README
