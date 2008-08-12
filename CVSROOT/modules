@@ -11376,6 +11376,7 @@ p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
 p5-Net-MAC-Vendor               ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN                      ports/net-im/p5-Net-MSN
+p5-Net-ManageSieve              ports/mail/p5-Net-ManageSieve
 p5-Net-MovableType              ports/net/p5-Net-MovableType
 p5-Net-NBName                   ports/net/p5-Net-NBName
 p5-Net-NBsocket                 ports/net/p5-Net-NBsocket
@@ -14484,6 +14485,7 @@ p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
 p5-net-mac-vendor               ports/net/p5-Net-MAC-Vendor
+p5-net-managesieve              ports/mail/p5-Net-ManageSieve
 p5-net-movabletype              ports/net/p5-Net-MovableType
 p5-net-msn                      ports/net-im/p5-Net-MSN
 p5-net-nbname                   ports/net/p5-Net-NBName
@@ -16873,6 +16875,7 @@ plb                             ports/net/plb
 plconfig                        ports/sysutils/plconfig
 plee-the-bear                   ports/games/plee-the-bear
 plib                            ports/x11-toolkits/plib
+pligg                           ports/www/pligg
 plman                           ports/math/plman
 pload                           ports/net/pload
 plod                            ports/sysutils/plod
@@ -17821,6 +17824,7 @@ py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
+py-sympy                        ports/math/py-sympy
 py-tables                       ports/devel/py-tables
 py-tada                         ports/databases/py-tada
 py-tagfu                        ports/deskutils/py-tagfu
