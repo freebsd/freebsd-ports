@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-.if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	0.14.0
-.else
-PORTVERSION=	0.12.2
-.endif
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
