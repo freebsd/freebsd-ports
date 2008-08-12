@@ -17,7 +17,7 @@ System/Library/Documentation/man/man1/sfparse.1.gz
 System/Library/Documentation/man/man1/xmlparse.1.gz
 System/Library/Documentation/man/man8/gdomap.8.gz
 System/Library/Headers/Foundation/Foundation.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/FoundationErrors.h
+System/Library/Headers/Foundation/FoundationErrors.h
 System/Library/Headers/Foundation/GSMime.h
 System/Library/Headers/Foundation/GSXML.h
 System/Library/Headers/Foundation/NSAffineTransform.h
@@ -46,7 +46,7 @@ System/Library/Headers/Foundation/NSDistributedLock.h
 System/Library/Headers/Foundation/NSDistributedNotificationCenter.h
 System/Library/Headers/Foundation/NSEnumerator.h
 System/Library/Headers/Foundation/NSError.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSErrorRecoveryAttempting.h
+System/Library/Headers/Foundation/NSErrorRecoveryAttempting.h
 System/Library/Headers/Foundation/NSException.h
 System/Library/Headers/Foundation/NSExpression.h
 System/Library/Headers/Foundation/NSFileHandle.h
@@ -783,7 +783,7 @@ System/Library/Libraries/libgnustep-base.so
 System/Library/Libraries/libgnustep-base.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-base.so.%%VERSION%%
 System/Library/Makefiles/Additional/base.make
-%%GNUSTEP_DEVEL%%System/Tools/HTMLLinker
+System/Tools/HTMLLinker
 System/Tools/autogsdoc
 System/Tools/cvtenc
 System/Tools/defaults
