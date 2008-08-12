@@ -9,7 +9,7 @@ PORTNAME=	rats
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.fortifysoftware.com/servlet/downloads/public/ \
+MASTER_SITES=	http://www.fortify.com/servlet/downloads/public/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
