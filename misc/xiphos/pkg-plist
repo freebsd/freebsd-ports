@@ -23,6 +23,7 @@ share/gnome/help/gnomesword/C/figures/interface_shortcut.png
 share/gnome/help/gnomesword/C/figures/interface_sidepane.png
 share/gnome/help/gnomesword/C/figures/interface_toolbar.png
 share/gnome/help/gnomesword/C/figures/interface_viewer.png
+share/gnome/help/gnomesword/C/figures/journal.png
 share/gnome/help/gnomesword/C/figures/module.png
 share/gnome/help/gnomesword/C/figures/personal.png
 share/gnome/help/gnomesword/C/figures/preferences.png
@@ -43,6 +44,7 @@ share/gnome/help/gnomesword/C/figures/sword_sources.png
 share/gnome/help/gnomesword/C/gnomesword.xml
 share/gnome/help/gnomesword/C/interface.xml
 share/gnome/help/gnomesword/C/introduction.xml
+share/gnome/help/gnomesword/C/journals.xml
 share/gnome/help/gnomesword/C/legal.xml
 share/gnome/help/gnomesword/C/license.xml
 share/gnome/help/gnomesword/C/modules.xml
@@ -51,50 +53,6 @@ share/gnome/help/gnomesword/C/preferences.xml
 share/gnome/help/gnomesword/C/search.xml
 share/gnome/help/gnomesword/C/start.xml
 share/gnome/help/gnomesword/C/studypad.xml
-share/gnome/help/gnomesword/de/authors.xml
-share/gnome/help/gnomesword/de/figures/first_start.png
-share/gnome/help/gnomesword/de/figures/gtkhtml3-vs-mozembed.png
-share/gnome/help/gnomesword/de/figures/interface.png
-share/gnome/help/gnomesword/de/figures/interface_biblepane-options.png
-share/gnome/help/gnomesword/de/figures/interface_biblepane.png
-share/gnome/help/gnomesword/de/figures/interface_commentarypane.png
-share/gnome/help/gnomesword/de/figures/interface_dictionary.png
-share/gnome/help/gnomesword/de/figures/interface_menubar-view.png
-share/gnome/help/gnomesword/de/figures/interface_menubar.png
-share/gnome/help/gnomesword/de/figures/interface_parallel-separate.png
-share/gnome/help/gnomesword/de/figures/interface_parallel.png
-share/gnome/help/gnomesword/de/figures/interface_searchpane.png
-share/gnome/help/gnomesword/de/figures/interface_shortcut.png
-share/gnome/help/gnomesword/de/figures/interface_sidepane.png
-share/gnome/help/gnomesword/de/figures/interface_toolbar.png
-share/gnome/help/gnomesword/de/figures/interface_viewer.png
-share/gnome/help/gnomesword/de/figures/module.png
-share/gnome/help/gnomesword/de/figures/personal.png
-share/gnome/help/gnomesword/de/figures/preferences.png
-share/gnome/help/gnomesword/de/figures/preferences_fonts-color.png
-share/gnome/help/gnomesword/de/figures/preferences_fonts-misc.png
-share/gnome/help/gnomesword/de/figures/preferences_general-misc.png
-share/gnome/help/gnomesword/de/figures/preferences_general-tabs.png
-share/gnome/help/gnomesword/de/figures/preferences_modules-main.png
-share/gnome/help/gnomesword/de/figures/preferences_modules-misc.png
-share/gnome/help/gnomesword/de/figures/preferences_modules-parallel.png
-share/gnome/help/gnomesword/de/figures/search_search.png
-share/gnome/help/gnomesword/de/figures/studypad.png
-share/gnome/help/gnomesword/de/figures/sword3.png
-share/gnome/help/gnomesword/de/figures/sword_config.png
-share/gnome/help/gnomesword/de/figures/sword_install.png
-share/gnome/help/gnomesword/de/figures/sword_remove.png
-share/gnome/help/gnomesword/de/figures/sword_sources.png
-share/gnome/help/gnomesword/de/gnomesword.xml
-share/gnome/help/gnomesword/de/interface.xml
-share/gnome/help/gnomesword/de/introduction.xml
-share/gnome/help/gnomesword/de/license.xml
-share/gnome/help/gnomesword/de/modules.xml
-share/gnome/help/gnomesword/de/personal.xml
-share/gnome/help/gnomesword/de/preferences.xml
-share/gnome/help/gnomesword/de/search.xml
-share/gnome/help/gnomesword/de/start.xml
-share/gnome/help/gnomesword/de/studypad.xml
 share/gnome/help/gnomesword/fr/authors.xml
 share/gnome/help/gnomesword/fr/figures/first_start.png
 share/gnome/help/gnomesword/fr/figures/gtkhtml3-vs-mozembed.png
@@ -112,6 +70,7 @@ share/gnome/help/gnomesword/fr/figures/interface_shortcut.png
 share/gnome/help/gnomesword/fr/figures/interface_sidepane.png
 share/gnome/help/gnomesword/fr/figures/interface_toolbar.png
 share/gnome/help/gnomesword/fr/figures/interface_viewer.png
+share/gnome/help/gnomesword/fr/figures/journal.png
 share/gnome/help/gnomesword/fr/figures/module.png
 share/gnome/help/gnomesword/fr/figures/personal.png
 share/gnome/help/gnomesword/fr/figures/preferences.png
@@ -132,6 +91,7 @@ share/gnome/help/gnomesword/fr/figures/sword_sources.png
 share/gnome/help/gnomesword/fr/gnomesword.xml
 share/gnome/help/gnomesword/fr/interface.xml
 share/gnome/help/gnomesword/fr/introduction.xml
+share/gnome/help/gnomesword/fr/journals.xml
 share/gnome/help/gnomesword/fr/license.xml
 share/gnome/help/gnomesword/fr/modules.xml
 share/gnome/help/gnomesword/fr/personal.xml
@@ -147,6 +107,8 @@ share/gnome/help/gnomesword/fr/studypad.xml
 %%DATADIR%%/editor_note.xml
 %%DATADIR%%/editor_studypad.xml
 %%DATADIR%%/export-dialog.glade
+%%DATADIR%%/languages
+%%DATADIR%%/languages.cygwin
 %%DATADIR%%/logo.png
 %%DATADIR%%/module-manager.glade
 %%DATADIR%%/navbar_versekey.glade
@@ -190,14 +152,12 @@ share/pixmaps/gnomesword/sword.png
 share/pixmaps/gnomesword/sword3.png
 share/pixmaps/gnomesword/tt.png
 @dirrm %%DATADIR%%
+@dirrm share/pixmaps/gnomesword
+@dirrm share/locale/nb_NO/LC_MESSAGES
+@dirrm share/locale/nb_NO
 @dirrm share/gnome/help/gnomesword/fr/figures
 @dirrm share/gnome/help/gnomesword/fr
-@dirrm share/gnome/help/gnomesword/de/figures
-@dirrm share/gnome/help/gnomesword/de
 @dirrm share/gnome/help/gnomesword/C/figures
 @dirrm share/gnome/help/gnomesword/C
 @dirrm share/gnome/help/gnomesword
-@dirrm share/locale/nb_NO/LC_MESSAGES
-@dirrm share/locale/nb_NO
-@dirrm share/pixmaps/gnomesword
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
