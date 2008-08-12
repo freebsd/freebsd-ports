@@ -183,8 +183,8 @@
     buf[sizeof(buf)-1]='\0';
  
 +#ifdef USE_DB185
-+   dns_db = dbopen(buf, O_RDONLY, 0664, DB_HASH, NULL);
-+   if (dns_db == NULL)
++   geo_db = dbopen(buf, O_RDONLY, 0664, DB_HASH, NULL);
++   if (geo_db == NULL)
 +      return NULL;
 +#else
     /* create database thingie */
