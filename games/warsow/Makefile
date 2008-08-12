@@ -121,6 +121,6 @@ do-install:
 .for b in ${WSWBIN}
 	${INSTALL_PROGRAM} ${RELEASEDIR}/${b}.${ARCH} ${PREFIX}/bin/${b}
 .endfor
-	cd ${RELEASEDIR} && ${COPYTREE_SHARE} ${WSWSUBDIR} ${DATADIR}
+	cd ${RELEASEDIR} && ${COPYTREE_SHARE} "${WSWSUBDIR}" ${DATADIR}
 
 .include <bsd.port.post.mk>
