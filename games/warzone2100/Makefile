@@ -34,17 +34,18 @@ CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS}"
+REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-m32||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|AUTHORS||; s|COPYING COPYING\.README||' \
+		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^install-dist_docDATA$$||' \
+	@${REINPLACE_CMD} -Ee 's|install-dist_docDATA$$||' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^install: install-am|install:|' \
 		${WRKSRC}/doc/Makefile.in
 .else
-	@${REINPLACE_CMD} -e 's|AUTHORS||; s|COPYING COPYING\.README||' \
-		${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
