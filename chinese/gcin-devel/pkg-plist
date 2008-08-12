@@ -17,6 +17,7 @@ bin/tsd2a32
 bin/tslearn
 include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
+%%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 lib/gcin1.so
 lib/gcin2.so
 lib/libgcin-im-client.so

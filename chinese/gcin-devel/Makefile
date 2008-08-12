@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3.pre5
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
-		http://ftp.twaren.net/local-distfiles/gcin/:main \
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
 		LOCAL/chinsan:main
+PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
+
+CONFLICTS=	zh-gcin-[0-9]*
+NO_LATEST_LINK=	yes
 
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
@@ -24,11 +27,15 @@ USE_GMAKE=	YES
 USE_XORG=	xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	on
+
+OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method" on \
+		QT_IM_MODULE	"enable QT IM module" on
 
 MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
+
+WRKSRC=		${WRKDIR}/gcin-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -49,15 +56,21 @@ post-extract:
 		${WRKSRC}/scripts/Makefile
 .endif
 
+.if defined(WITH_QT_IM_MODULE)
+USE_QT_VER=	4
+QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; s,libdir)\/gcin,libdir),; \
-		143,150 d; \
+		s,/usr/lib/qt4/plugins/lib,${PREFIX}/lib/qt4/plugins,; \
+		131 s,QT,QT4,; \
 		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
-	  	210,211 d; 215,216 d;' \
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
@@ -76,6 +89,9 @@ pre-patch:
 		${WRKSRC}/IMdkit/lib/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit
+	@${REINPLACE_CMD} -e \
+	  's,/usr/lib/qt4/include,${LOCALBASE}/include/qt4,g' \
+	  ${WRKSRC}/qt4-im/.depend
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 
 .if defined(WITH_BOSHIAMY)
@@ -83,6 +99,13 @@ post-patch:
 PLIST_SUB+=	BOSHIAMY=""
 .else
 PLIST_SUB+=	BOSHIAMY="@comment "
+.endif
+
+.if defined(WITH_QT_IM_MODULE)
+post-patch:
+PLIST_SUB+=	QT_IM_MODULE=""
+.else
+PLIST_SUB+=	QT_IM_MODULE="@comment "
 .endif
 
 post-install:
