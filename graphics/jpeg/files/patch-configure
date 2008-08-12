@@ -1,25 +1,5 @@
 --- configure.orig	1998-03-21 20:08:57.000000000 +0100
 +++ configure	2008-08-05 12:48:47.000000000 +0200
-@@ -815,7 +815,9 @@
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   cat >> confdefs.h <<\EOF
-+#ifndef HAVE_STDDEF_H
- #define HAVE_STDDEF_H 
-+#endif
- EOF
- 
- else
-@@ -851,7 +853,9 @@
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   cat >> confdefs.h <<\EOF
-+#ifndef HAVE_STDLIB_H
- #define HAVE_STDLIB_H 
-+#endif
- EOF
- 
- else
 @@ -1529,7 +1533,6 @@
  
  if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
