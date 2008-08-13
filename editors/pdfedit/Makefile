@@ -28,14 +28,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 MAKE_ENV=	${CONFIGURE_ENV} QTDIR="${LOCALBASE}"
 CFLAGS+=	-I${LOCALBASE}/include
 
-.if !defined(NOPORTDOCS)
 MAN1=		pdfedit.1
-.endif
-
-.if defined(NOPORTDOCS)
-post-patch:
-	@${REINPLACE_CMD} -e 's|doc-dist-install $$||' ${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gui/${PORTNAME} ${PREFIX}/bin
