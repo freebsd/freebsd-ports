@@ -173,6 +173,7 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/contents.png
 %%DATADIR%%/Interface/Theme/help_about.png
 %%DATADIR%%/Interface/Theme/addvideo.png
+%%DATADIR%%/Interface/Theme/rotate_angle.png
 %%DATADIR%%/Interface/Theme/tools_report_bug.png
 %%DATADIR%%/Interface/Theme/roll.png
 %%DATADIR%%/Interface/Theme/stock-eye-20.png
@@ -181,30 +182,48 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Help/doc_en.html
 %%DATADIR%%/BIB_ManSlide/Help/style.css
 %%DATADIR%%/BIB_ManSlide/Help/gpl-2.0.txt
-%%DATADIR%%/BIB_ManSlide/Help/images/son.png
 %%DATADIR%%/BIB_ManSlide/Help/images/Eggibault_3.png
-%%DATADIR%%/BIB_ManSlide/Help/images/type.png
 %%DATADIR%%/BIB_ManSlide/Help/images/mandvd.png
 %%DATADIR%%/BIB_ManSlide/Help/images/.directory
-%%DATADIR%%/BIB_ManSlide/Help/images/deplacer.png
 %%DATADIR%%/BIB_ManSlide/Help/images/manslide.jpg
-%%DATADIR%%/BIB_ManSlide/Help/images/boiboite.png
-%%DATADIR%%/BIB_ManSlide/Help/images/outils.png
-%%DATADIR%%/BIB_ManSlide/Help/images/time_av.png
 %%DATADIR%%/BIB_ManSlide/Help/images/manslide2.jpg
-%%DATADIR%%/BIB_ManSlide/Help/images/drapeau.png
 %%DATADIR%%/BIB_ManSlide/Help/images/qdial.png
-%%DATADIR%%/BIB_ManSlide/Help/images/couleur.png
-%%DATADIR%%/BIB_ManSlide/Help/images/import.png
-%%DATADIR%%/BIB_ManSlide/Help/images/lecture.png
 %%DATADIR%%/BIB_ManSlide/Help/images/ban.png
-%%DATADIR%%/BIB_ManSlide/Help/images/smile.png
+%%DATADIR%%/BIB_ManSlide/Help/images/color.png
+%%DATADIR%%/BIB_ManSlide/Help/images/play.png
+%%DATADIR%%/BIB_ManSlide/Help/images/ex_timeline.png
+%%DATADIR%%/BIB_ManSlide/Help/images/move.png
+%%DATADIR%%/BIB_ManSlide/Help/images/flags.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/rotation.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/.directory
+%%DATADIR%%/BIB_ManSlide/Help/images_en/audio.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/type.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/draw.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/crop.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/import.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/form.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/toolbox.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/interface.png
+%%DATADIR%%/BIB_ManSlide/Help/images_en/rendering.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/rotation.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/.directory
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/audio.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/type.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/draw.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/crop.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/import.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/form.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/toolbox.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/interface.png
+%%DATADIR%%/BIB_ManSlide/Help/images_fr/rendering.png
 %%DATADIR%%/smile
 %%DATADIR%%/smile_en.qm
 %%DATADIR%%/smile_it.qm
 %%DATADIR%%/smile_de.qm
 @dirrm %%DATADIR%%/BIB_ManSlide/Eff_sup
 @dirrm %%DATADIR%%/BIB_ManSlide/Luma
+@dirrm %%DATADIR%%/BIB_ManSlide/Help/images_en
+@dirrm %%DATADIR%%/BIB_ManSlide/Help/images_fr
 @dirrm %%DATADIR%%/BIB_ManSlide/Help/images
 @dirrm %%DATADIR%%/BIB_ManSlide/Help
 @dirrm %%DATADIR%%/BIB_ManSlide/
