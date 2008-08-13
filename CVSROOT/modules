@@ -18665,6 +18665,7 @@ ruby-bz2                        ports/archivers/ruby-bz2
 ruby-cache                      ports/devel/ruby-cache
 ruby-cairo                      ports/graphics/ruby-cairo
 ruby-calendar                   ports/devel/ruby-calendar
+ruby-camellia                   ports/security/ruby-camellia
 ruby-cast_256                   ports/security/ruby-cast_256
 ruby-cdb                        ports/databases/ruby-cdb
 ruby-cruisecontrolrb            ports/www/ruby-cruisecontrolrb
