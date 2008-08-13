@@ -7,6 +7,7 @@
 
 PORTNAME=	testdisk
 PORTVERSION=	6.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -52,7 +53,7 @@ CONFIGURE_ARGS+=--without-iconv
 #.endif
 
 .if defined(WITH_NTFSPROGS)
-LIB_DEPENDS+=	ntfs.9:${PORTSDIR}/sysutils/ntfsprogs
+LIB_DEPENDS+=	ntfs.10:${PORTSDIR}/sysutils/ntfsprogs
 .else
 CONFIGURE_ARGS+=--without-ntfs
 .endif
