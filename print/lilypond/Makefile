@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.11.55
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
@@ -71,11 +72,12 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|makeinfo|${LOCALBASE}/bin/makeinfo|' \
 	    ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
+	    ${WRKSRC}/lily/include/includable-lexer.hh
 
 post-install:
 	@${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
-	@${INSTALL} -d ${DOCSDIR}
 	@echo "Installing documentation... this takes a while..."
 	@(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
