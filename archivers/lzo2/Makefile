@@ -43,4 +43,10 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
