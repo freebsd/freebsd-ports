@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.15
+PORTVERSION=	4.3.16
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	empserver
@@ -32,10 +32,7 @@ MAN6=		empire.6 emp_server.6 empdump.6 empsched.6 \
 
 post-patch:
 	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
-		${WRKSRC}/Make.mk
-	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
-		-e 's/[a-z/]*\/fuel\.[ct] //g' \
-		${WRKSRC}/sources.mk
+		${WRKSRC}/Make.mk ${WRKSRC}/sources.mk
 .if ${ARCH} == "sparc64"
 	${REINPLACE_CMD} -e '/ucontext\.h/ { h; s|ucontext|sys/types|; G; }' \
 		${WRKSRC}/src/lib/lwp/lwpint.h
