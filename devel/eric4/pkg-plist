@@ -20,7 +20,9 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Basic-4.0.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/DebuggerProperties-3.8.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/DebuggerProperties-3.9.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/MultiProject-4.2.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/PluginRepository-4.1.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/PluginRepository-4.2.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-3.5.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-3.6.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-3.7.dtd
@@ -29,16 +31,21 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-4.0.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-4.1.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-4.2.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-4.3.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Project-4.4.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-3.5.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-3.6.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-3.7.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-3.8.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.0.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.1.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.2.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Shortcuts-3.5.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Shortcuts-3.6.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Tasks-3.7.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Tasks-3.8.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Tasks-4.1.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Tasks-4.2.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Templates-3.8.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/UserProject-4.0.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DataViews/CodeMetrics.py
@@ -215,14 +222,20 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4Action.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4Completers.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4Completers.pyc
-%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4IconProvider.py
-%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4IconProvider.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4Led.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4Led.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4SingleApplication.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4SingleApplication.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4SqueezeLabels.py
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4SqueezeLabels.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4TabWidget.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4TabWidget.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4ToolBarDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4ToolBarDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4ToolBarManager.py
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/E4ToolBarManager.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/Ui_E4ToolBarDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/E4Gui/Ui_E4ToolBarDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Globals/__init__.py
@@ -245,6 +258,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/PackageItem.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/PixmapDiagram.py
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/PixmapDiagram.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Graphics/SvgDiagram.py
+%%PYTHON_SITELIBDIR%%/eric4/Graphics/SvgDiagram.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/UMLClassDiagram.py
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/UMLClassDiagram.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/UMLDialog.py
@@ -265,14 +280,20 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/BookmarkDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/BookmarkDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/DownloadDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/DownloadDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpBrowser.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpBrowser.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpBrowserWV.py
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpBrowserWV.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpWindow.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/HelpWindow.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/SearchDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/SearchDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_BookmarkDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_BookmarkDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_DownloadDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_DownloadDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_SearchDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Ui_SearchDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/__init__.py
@@ -287,6 +308,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQFontDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQInputDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQInputDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQMainWindow.py
+%%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQMainWindow.pyc
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQMessageBox.py
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQMessageBox.pyc
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/KQPrintDialog.py
@@ -298,6 +321,20 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/KdeQt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/LICENSE.GPL
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/AddProjectDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/AddProjectDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/MultiProject.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/MultiProject.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/MultiProjectBrowser.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/MultiProjectBrowser.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/PropertiesDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/PropertiesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/Ui_AddProjectDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/Ui_AddProjectDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/Ui_PropertiesDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/Ui_PropertiesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/__init__.py
+%%PYTHON_SITELIBDIR%%/eric4/MultiProject/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/PluginManager/PluginDetailsDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/PluginManager/PluginDetailsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/PluginManager/PluginExceptions.py
@@ -384,6 +421,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVcsSubversion.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmListspace.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmListspace.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmMdiArea.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmMdiArea.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmTabview.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmTabview.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/PluginVmWorkspace.py
@@ -412,7 +451,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage/Ui_SubversionPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage/preferences-subversion.png
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ProjectBrowserHelper.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ProjectBrowserHelper.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ProjectHelper.py
@@ -521,6 +559,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnUrlSelectionDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/icons/preferences-subversion.png
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/icons/pysvn.png
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/subversion.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/subversion.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Config.py
@@ -531,7 +571,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage/Ui_SubversionPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage/preferences-subversion.png
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ProjectBrowserHelper.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ProjectBrowserHelper.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ProjectHelper.py
@@ -562,6 +601,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnPropListDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnPropSetDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnPropSetDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnRelocateDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnRelocateDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnRepoBrowserDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnRepoBrowserDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnRevisionSelectionDialog.py
@@ -606,6 +647,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnPropListDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnPropSetDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnPropSetDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnRelocateDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnRelocateDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnRepoBrowserDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnRepoBrowserDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnRevisionSelectionDialog.py
@@ -622,6 +665,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnUrlSelectionDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/icons/preferences-subversion.png
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/icons/subversion.png
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/subversion.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/subversion.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Listspace/Listspace.py
@@ -629,6 +674,11 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Listspace/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Listspace/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Listspace/preview.png
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea/MdiArea.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea/MdiArea.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea/__init__.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea/preview.png
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Tabview/Tabview.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Tabview/Tabview.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Tabview/__init__.py
@@ -711,10 +761,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/ConfigurationPageBase.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/CorbaPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/CorbaPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneral1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneral1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneral2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneral2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneralPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerGeneralPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerPythonPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerPythonPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/DebuggerRubyPage.py
@@ -723,22 +771,26 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorAPIsPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorAutocompletionPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorAutocompletionPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorAutocompletionQScintillaPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorAutocompletionQScintillaPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorCalltipsPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorCalltipsPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorColoursPage.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorColoursPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorCalltipsQScintillaPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorCalltipsQScintillaPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorExportersPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorExportersPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorFilePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorFilePage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorGeneralPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorGeneralPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorHighlightersPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorHighlightersPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorHighlightingStylesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorHighlightingStylesPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorProperties1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorProperties1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorProperties2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorProperties2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorPropertiesPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorPropertiesPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorSearchPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorSearchPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorStylesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorStylesPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EditorTypingPage.py
@@ -747,6 +799,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/EmailPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/GraphicsPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/GraphicsPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/HelpAppearancePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/HelpAppearancePage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/HelpDocumentationPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/HelpDocumentationPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/HelpViewersPage.py
@@ -755,10 +809,10 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/IconsPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/IconsPreviewDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/IconsPreviewDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Interface1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Interface1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Interface2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Interface2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/InterfacePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/InterfacePage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/MultiProjectPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/MultiProjectPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/PluginManagerPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/PluginManagerPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/PrinterPage.py
@@ -781,10 +835,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_ApplicationPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_CorbaPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_CorbaPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneral1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneral1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneral2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneral2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneralPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerGeneralPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerPythonPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerPythonPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_DebuggerRubyPage.py
@@ -793,22 +845,26 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorAPIsPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorAutocompletionPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorAutocompletionPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorAutocompletionQScintillaPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorAutocompletionQScintillaPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorCalltipsPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorCalltipsPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorColoursPage.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorColoursPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorCalltipsQScintillaPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorCalltipsQScintillaPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorExportersPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorExportersPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorFilePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorFilePage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorGeneralPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorGeneralPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorHighlightersPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorHighlightersPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorHighlightingStylesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorHighlightingStylesPage.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorProperties1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorProperties1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorProperties2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorProperties2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorPropertiesPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorPropertiesPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorSearchPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorSearchPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorStylesPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorStylesPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EditorTypingPage.py
@@ -817,6 +873,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_EmailPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_GraphicsPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_GraphicsPage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_HelpAppearancePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_HelpAppearancePage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_HelpDocumentationPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_HelpDocumentationPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_HelpViewersPage.py
@@ -825,10 +883,10 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_IconsPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_IconsPreviewDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_IconsPreviewDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_Interface1Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_Interface1Page.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_Interface2Page.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_Interface2Page.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_InterfacePage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_InterfacePage.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_MultiProjectPage.py
+%%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_MultiProjectPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_PluginManagerPage.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_PluginManagerPage.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ConfigurationPages/Ui_PrinterPage.py
@@ -871,8 +929,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ToolConfigurationDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ToolGroupConfigurationDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/ToolGroupConfigurationDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/Ui_ConfigurationDialog.py
-%%PYTHON_SITELIBDIR%%/eric4/Preferences/Ui_ConfigurationDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/Ui_ProgramsDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/Ui_ProgramsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Preferences/Ui_ShortcutDialog.py
@@ -913,6 +969,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBaseBrowser.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowser.py
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowser.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowserFlags.py
+%%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowserFlags.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowserModel.py
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowserModel.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Project/ProjectBrowserSortFilterProxyModel.py
@@ -1029,6 +1087,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerRuby.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerSQL.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerSQL.pyc
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerTCL.py
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerTCL.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerTeX.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerTeX.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Lexers/LexerVHDL.py
@@ -1045,6 +1105,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/SearchReplaceDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Shell.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Shell.pyc
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/ShellHistoryDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/ShellHistoryDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterBase.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterBase.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/TypingCompleters/CompleterPython.py
@@ -1059,6 +1121,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_ReplaceDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_SearchDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_SearchDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_ShellHistoryDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_ShellHistoryDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_ZoomDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/Ui_ZoomDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/QScintilla/ZoomDialog.py
@@ -1092,14 +1156,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Templates/Ui_TemplateSingleVariableDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Templates/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Templates/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/__init__.py
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/__init__.py
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/compactpath.py
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/compactpath.pyc
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/pathlabelwrap_qt4.py
-%%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath/pathlabelwrap_qt4.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Tools/TRPreviewer.py
 %%PYTHON_SITELIBDIR%%/eric4/Tools/TRPreviewer.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Tools/TRSingleApplication.py
@@ -1110,6 +1166,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/Tools/UIPreviewer.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Tools/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/UI/AuthenticationDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/UI/AuthenticationDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/UI/Browser.py
 %%PYTHON_SITELIBDIR%%/eric4/UI/Browser.pyc
 %%PYTHON_SITELIBDIR%%/eric4/UI/BrowserModel.py
@@ -1138,6 +1196,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/UI/PixmapCache.pyc
 %%PYTHON_SITELIBDIR%%/eric4/UI/SplashScreen.py
 %%PYTHON_SITELIBDIR%%/eric4/UI/SplashScreen.pyc
+%%PYTHON_SITELIBDIR%%/eric4/UI/Ui_AuthenticationDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/UI/Ui_AuthenticationDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/UI/Ui_CompareDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/UI/Ui_CompareDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/UI/Ui_DeleteFilesConfirmationDialog.py
@@ -1206,6 +1266,10 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesHandler.pyc
 %%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesWriter.py
 %%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectWriter.pyc
 %%PYTHON_SITELIBDIR%%/eric4/XML/PluginRepositoryHandler.py
 %%PYTHON_SITELIBDIR%%/eric4/XML/PluginRepositoryHandler.pyc
 %%PYTHON_SITELIBDIR%%/eric4/XML/ProjectHandler.py
@@ -1291,6 +1355,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/1rightarrow.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/1uparrow.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/2downarrow.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/2leftarrow.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/2rightarrow.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/2uparrow.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/addBookmark.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/altn.png
@@ -1337,14 +1403,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/deleteShape.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/designer.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/designer4.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/devDesktop.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/devHarddisk.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/devNetwork.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/devSystem.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/devTrashcan.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/diffFiles.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/dirClosed.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/dirClosedLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/dirOpen.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/download.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/editBookmarks.png
@@ -1368,37 +1428,27 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/exit.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/exportShortcuts.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileD.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileDLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileDesigner.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileDesignerLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileIDL.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileIDLLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileLinguist.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileLinguist2.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileLinguist2Link.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileLinguistLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileMisc.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileMiscLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileModified.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileMultiProject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/filePixmap.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/filePixmapLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileProject.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileProjectLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/filePython.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/filePython2.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/filePython2Link.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/filePythonLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileResource.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileResourceLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileRuby.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileRubyLink.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileSave.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileSaveAll.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileSaveAs.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileSaveProject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/fileShortcuts.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileShortcutsLink.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/fileSvg.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/find.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/findClear.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/findNext.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/findPrev.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/forward.png
@@ -1407,15 +1457,25 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/gotoBrace.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/group.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/help.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/helpAbout.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/helpAboutKde.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/helpAboutQt.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/home.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/importShortcuts.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/linguist.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/linguist4.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/localVariables.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/masterProject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/method.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/method_private.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/method_protected.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/module.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectClose.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectNew.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectOpen.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectProps.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectSave.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/multiProjectSaveAs.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/namedgroup.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/namedreference.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/neglookahead.png
@@ -1428,11 +1488,13 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/notcoveredNext.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/notcoveredPrev.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/open.png
-%%PYTHON_SITELIBDIR%%/eric4/icons/default/openMulti.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/openNewTab.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/openQM.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/openUI.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/plugin.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginArchive.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginArchiveList.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginArchiveSnapshot.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginInstall.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginRepository.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/pluginUninstall.png
@@ -1446,6 +1508,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-debugger.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-editor.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-exporters.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-filehandling.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-general.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-graphics.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-help.png
@@ -1456,6 +1519,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-icons.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-interface.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-mail_generic.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-multiproject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-orbit.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-pluginmanager.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-printer.png
@@ -1465,6 +1529,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-python.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-qtlogo.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-rbDebugger.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-search.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-shell.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-styles.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-template.png
@@ -1472,6 +1537,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-vcs.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/preferences-viewmanager.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/print.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/printPreview.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/profileProject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/profileScript.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/projectClose.png
@@ -1492,6 +1558,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/projectSourcesRbMixed.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/projectTranslations.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/projectUserProps.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/qscintilla.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/quickFindExtend.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/quickFindNext.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/quickFindPrev.png
@@ -1508,6 +1575,12 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/sceneWidthDec.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/sceneWidthInc.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/screenCapture.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignBottom.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignHCenter.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignLeft.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignRight.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignTop.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/shapesAlignVCenter.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/shell.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/showPrograms.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/splitHorizontal.png
@@ -1528,6 +1601,8 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/taskPrioHigh.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/taskPrioLow.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/taskPriority.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/textencoding.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/toolbarsConfigure.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/toolsConfigure.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/trPreviewer.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/uiPreviewer.png
@@ -1536,6 +1611,25 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/unittestProject.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/unittestRestart.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/unittestScript.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsAdd.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsCheckout.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsCommit.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsDiff.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsExport.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsLock.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsLog.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsLogin.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsLogout.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsMerge.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsRemove.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsRepo.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsRepoBrowser.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsRevert.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsStatus.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsSwitch.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsTag.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsUnlock.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsUpdate.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/viewProfileDebug.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/viewProfileEdit.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/watchpoints.png
@@ -1564,7 +1658,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4config.py
 %%PYTHON_SITELIBDIR%%/eric4config.pyc
 %%PYTHON_SITELIBDIR%%/eric4plugins/__init__.py
-%%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/LICENSE.GPL
 %%DOCSDIR%%/README-PyXML.txt
 %%DOCSDIR%%/README-eric4-doc.txt
@@ -1636,10 +1729,12 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.E4Graphics.E4GraphicsView.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4Action.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4Completers.html
-%%DOCSDIR%%/Source/eric4.E4Gui.E4IconProvider.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4Led.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4SingleApplication.html
+%%DOCSDIR%%/Source/eric4.E4Gui.E4SqueezeLabels.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4TabWidget.html
+%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarDialog.html
+%%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarManager.html
 %%DOCSDIR%%/Source/eric4.Graphics.ApplicationDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.AssociationItem.html
 %%DOCSDIR%%/Source/eric4.Graphics.ClassItem.html
@@ -1649,6 +1744,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Graphics.PackageDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.PackageItem.html
 %%DOCSDIR%%/Source/eric4.Graphics.PixmapDiagram.html
+%%DOCSDIR%%/Source/eric4.Graphics.SvgDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.UMLClassDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.UMLDialog.html
 %%DOCSDIR%%/Source/eric4.Graphics.UMLGraphicsView.html
@@ -1656,7 +1752,9 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Graphics.UMLSceneSizeDialog.html
 %%DOCSDIR%%/Source/eric4.Graphics.ZoomDialog.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.BookmarkDialog.html
+%%DOCSDIR%%/Source/eric4.Helpviewer.DownloadDialog.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.HelpBrowser.html
+%%DOCSDIR%%/Source/eric4.Helpviewer.HelpBrowserWV.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.HelpWindow.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.SearchDialog.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQApplication.html
@@ -1664,11 +1762,16 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.KdeQt.KQFileDialog.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQFontDialog.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQInputDialog.html
+%%DOCSDIR%%/Source/eric4.KdeQt.KQMainWindow.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQMessageBox.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQPrintDialog.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQPrinter.html
 %%DOCSDIR%%/Source/eric4.KdeQt.KQProgressDialog.html
 %%DOCSDIR%%/Source/eric4.KdeQt.__init__.html
+%%DOCSDIR%%/Source/eric4.MultiProject.AddProjectDialog.html
+%%DOCSDIR%%/Source/eric4.MultiProject.MultiProject.html
+%%DOCSDIR%%/Source/eric4.MultiProject.MultiProjectBrowser.html
+%%DOCSDIR%%/Source/eric4.MultiProject.PropertiesDialog.html
 %%DOCSDIR%%/Source/eric4.PluginManager.PluginDetailsDialog.html
 %%DOCSDIR%%/Source/eric4.PluginManager.PluginExceptions.html
 %%DOCSDIR%%/Source/eric4.PluginManager.PluginInfoDialog.html
@@ -1692,6 +1795,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Plugins.PluginVcsPySvn.html
 %%DOCSDIR%%/Source/eric4.Plugins.PluginVcsSubversion.html
 %%DOCSDIR%%/Source/eric4.Plugins.PluginVmListspace.html
+%%DOCSDIR%%/Source/eric4.Plugins.PluginVmMdiArea.html
 %%DOCSDIR%%/Source/eric4.Plugins.PluginVmTabview.html
 %%DOCSDIR%%/Source/eric4.Plugins.PluginVmWorkspace.html
 %%DOCSDIR%%/Source/eric4.Plugins.PluginWizardPyRegExp.html
@@ -1751,6 +1855,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnOptionsDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropListDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnPropSetDialog.html
+%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRelocateDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRepoBrowserDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnRevisionSelectionDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnStatusDialog.html
@@ -1762,6 +1867,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnUtilities.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.subversion.html
 %%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Listspace.Listspace.html
+%%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.MdiArea.MdiArea.html
 %%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Tabview.Tabview.html
 %%DOCSDIR%%/Source/eric4.Plugins.ViewManagerPlugins.Workspace.Workspace.html
 %%DOCSDIR%%/Source/eric4.Plugins.WizardPlugins.ColorDialogWizard.ColorDialogWizardDialog.html
@@ -1779,30 +1885,32 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ApplicationPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ConfigurationPageBase.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.CorbaPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerGeneral1Page.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerGeneral2Page.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerGeneralPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerPythonPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.DebuggerRubyPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAPIsPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionPage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorAutocompletionQScintillaPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorColoursPage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorCalltipsQScintillaPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorExportersPage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorFilePage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorGeneralPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightersPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorHighlightingStylesPage.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorProperties1Page.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorProperties2Page.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorPropertiesPage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorSearchPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorStylesPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EditorTypingPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.EmailPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.GraphicsPage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpAppearancePage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpDocumentationPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.HelpViewersPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.IconsPreviewDialog.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.Interface1Page.html
-%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.Interface2Page.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.InterfacePage.html
+%%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.MultiProjectPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PluginManagerPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.PrinterPage.html
 %%DOCSDIR%%/Source/eric4.Preferences.ConfigurationPages.ProjectBrowserPage.html
@@ -1835,6 +1943,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Project.Project.html
 %%DOCSDIR%%/Source/eric4.Project.ProjectBaseBrowser.html
 %%DOCSDIR%%/Source/eric4.Project.ProjectBrowser.html
+%%DOCSDIR%%/Source/eric4.Project.ProjectBrowserFlags.html
 %%DOCSDIR%%/Source/eric4.Project.ProjectBrowserModel.html
 %%DOCSDIR%%/Source/eric4.Project.ProjectBrowserSortFilterProxyModel.html
 %%DOCSDIR%%/Source/eric4.Project.ProjectFormsBrowser.html
@@ -1877,6 +1986,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerPython.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerRuby.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerSQL.html
+%%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTCL.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerTeX.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.LexerVHDL.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Lexers.__init__.html
@@ -1885,6 +1995,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.QScintilla.QsciScintillaCompat.html
 %%DOCSDIR%%/Source/eric4.QScintilla.SearchReplaceDialog.html
 %%DOCSDIR%%/Source/eric4.QScintilla.Shell.html
+%%DOCSDIR%%/Source/eric4.QScintilla.ShellHistoryDialog.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterBase.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterPython.html
 %%DOCSDIR%%/Source/eric4.QScintilla.TypingCompleters.CompleterRuby.html
@@ -1902,6 +2013,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.Tools.TRSingleApplication.html
 %%DOCSDIR%%/Source/eric4.Tools.TrayStarter.html
 %%DOCSDIR%%/Source/eric4.Tools.UIPreviewer.html
+%%DOCSDIR%%/Source/eric4.UI.AuthenticationDialog.html
 %%DOCSDIR%%/Source/eric4.UI.Browser.html
 %%DOCSDIR%%/Source/eric4.UI.BrowserModel.html
 %%DOCSDIR%%/Source/eric4.UI.BrowserSortFilterProxyModel.html
@@ -1940,6 +2052,8 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.XML.Config.html
 %%DOCSDIR%%/Source/eric4.XML.DebuggerPropertiesHandler.html
 %%DOCSDIR%%/Source/eric4.XML.DebuggerPropertiesWriter.html
+%%DOCSDIR%%/Source/eric4.XML.MultiProjectHandler.html
+%%DOCSDIR%%/Source/eric4.XML.MultiProjectWriter.html
 %%DOCSDIR%%/Source/eric4.XML.PluginRepositoryHandler.html
 %%DOCSDIR%%/Source/eric4.XML.ProjectHandler.html
 %%DOCSDIR%%/Source/eric4.XML.ProjectWriter.html
@@ -1995,6 +2109,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/index-eric4.Graphics.html
 %%DOCSDIR%%/Source/index-eric4.Helpviewer.html
 %%DOCSDIR%%/Source/index-eric4.KdeQt.html
+%%DOCSDIR%%/Source/index-eric4.MultiProject.html
 %%DOCSDIR%%/Source/index-eric4.PluginManager.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.AboutPlugin.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.CheckerPlugins.SyntaxChecker.html
@@ -2009,6 +2124,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.ConfigurationPage.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.VcsPlugins.vcsSubversion.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Listspace.html
+%%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.MdiArea.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Tabview.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.Workspace.html
 %%DOCSDIR%%/Source/index-eric4.Plugins.ViewManagerPlugins.html
@@ -2041,6 +2157,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/index-eric4.html
 %%DOCSDIR%%/Source/index.html
 %%DOCSDIR%%/THANKS
+%%DOCSDIR%%/changelog
 %%EXAMPLESDIR%%/hallo.py
 %%EXAMPLESDIR%%/hallo.pyc
 %%EXAMPLESDIR%%/modpython.py
@@ -2049,13 +2166,12 @@ bin/eric4-unittest
 %%EXAMPLESDIR%%/modpython_dbg.pyc
 %%EXAMPLESDIR%%/rhallo.py
 %%EXAMPLESDIR%%/rhallo.pyc
-share/qt4/qsci/api/python/django-0.96.api
 share/qt4/qsci/api/python/eric4.api
-share/qt4/qsci/api/python/turbogears-1.0.api
-share/qt4/qsci/api/python/wxPython-2.8.api
-share/qt4/qsci/api/python/wxaddons.api
 share/qt4/qsci/api/python/zope-2.10.5.api
 share/qt4/qsci/api/python/zope-3.3.1.api
+share/qt4/qsci/api/ruby/Ruby-1.8.7.api
+share/qt4/qsci/api/ruby/eric4.api
+@dirrmtry share/qt4/qsci/api/ruby
 @comment @dirrmtry share/qt4/qsci/api/python
 @comment @dirrmtry share/qt4/qsci/api
 @comment @dirrmtry share/qt4/qsci
@@ -2075,8 +2191,6 @@ share/qt4/qsci/api/python/zope-3.3.1.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Utilities
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/UI
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Tools
-@dirrm %%PYTHON_SITELIBDIR%%/eric4/ThirdParty/compactpath
-@dirrm %%PYTHON_SITELIBDIR%%/eric4/ThirdParty
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Templates
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Tasks
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Styles
@@ -2098,10 +2212,13 @@ share/qt4/qsci/api/python/zope-3.3.1.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/WizardPlugins
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Workspace
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Tabview
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/MdiArea
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins/Listspace
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/ViewManagerPlugins
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/icons
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ConfigurationPage
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/icons
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ConfigurationPage
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins
@@ -2114,6 +2231,7 @@ share/qt4/qsci/api/python/zope-3.3.1.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins/AboutPlugin
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Plugins
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/PluginManager
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/MultiProject
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/KdeQt
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Helpviewer
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Graphics
