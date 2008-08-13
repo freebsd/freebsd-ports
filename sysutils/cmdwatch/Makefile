@@ -8,9 +8,9 @@
 PORTNAME=	cmdwatch
 PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://wedgie.org/pub/
+MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Watches the output from a command at specified intervals
 
 MAN1=		cmdwatch.1
