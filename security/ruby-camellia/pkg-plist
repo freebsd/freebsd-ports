@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/camellia_rb.rb
+%%RUBY_SITELIBDIR%%/camellia_rb/version.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/History.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/License.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/camellia-example.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/camellia_rb
