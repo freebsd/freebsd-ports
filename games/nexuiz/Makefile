@@ -7,6 +7,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -77,6 +78,11 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE}
+# Make Nexuiz' lhnetaddress structure really compatible with FreeBSD's
+# sockaddr_in, and fix value for LHNETADDRESSTYPE_INET6_FAMILY
+	@${REINPLACE_CMD} -e 's,10,28, ; \
+		s,short family,char sin_len; unsigned char family,' \
+			${WRKSRC}/lhnet.h
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
