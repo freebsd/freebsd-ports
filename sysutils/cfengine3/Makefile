@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/downloads/
 
@@ -27,6 +27,9 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 		BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
+.if !defined(NOPORTDOCS)
+INFO=		cfengine-Tutorial cfengine-Reference
+.endif
 
 MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
 		cfetoolcreate.8 cfetooldump.8 cfetoolgraph.8 cfetoolimport.8 \

@@ -1,6 +1,31 @@
---- doc/Makefile.in.orig	2008-07-01 21:38:18.000000000 -0400
-+++ doc/Makefile.in	2008-07-01 21:39:06.000000000 -0400
-@@ -331,6 +331,7 @@
+--- doc/Makefile.in.orig	2008-08-04 21:55:47.000000000 +0400
++++ doc/Makefile.in	2008-08-08 02:18:39.000000000 +0400
+@@ -214,7 +214,7 @@
+ man_MANS = cfengine.8 cfagent.8  cfenvd.8  cfenvgraph.8  cfexecd.8  cfkey.8  cfrun.8  cfservd.8 cfshow.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 
+ 
+ # Info used in building the Info files
+-info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo # cfengine-Anomalies.texinfo
++info_TEXINFOS =
+ infofiles = $(info_TEXINFOS:.texinfo=.info)
+ MAKEINFOHTML = $(MAKEINFO) --html --css-include=cfcomdoc.css --no-split
+ 
+@@ -476,6 +476,7 @@
+ 	done
+ 
+ dist-info: $(INFO_DEPS)
++.if !defined(NOPORTDOCS)
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(INFO_DEPS)'; \
+ 	for base in $$list; do \
+@@ -492,6 +493,7 @@
+ 	    else :; fi; \
+ 	  done; \
+ 	done
++.endif
+ 
+ mostlyclean-aminfo:
+ 	-rm -rf cfengine-Reference.aux cfengine-Reference.cp cfengine-Reference.cps \
+@@ -570,6 +572,7 @@
  	done
  install-docDATA: $(doc_DATA)
  	@$(NORMAL_INSTALL)
@@ -8,7 +33,7 @@
  	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
  	@list='$(doc_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-@@ -338,6 +339,7 @@
+@@ -577,6 +580,7 @@
  	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
  	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
  	done
@@ -16,7 +41,7 @@
  
  uninstall-docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -348,6 +350,7 @@
+@@ -587,6 +591,7 @@
  	done
  install-htmlDATA: $(html_DATA)
  	@$(NORMAL_INSTALL)
@@ -24,7 +49,7 @@
  	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
  	@list='$(html_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-@@ -355,6 +358,7 @@
+@@ -594,6 +599,7 @@
  	  echo " $(htmlDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(htmldir)/$$f'"; \
  	  $(htmlDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(htmldir)/$$f"; \
  	done
@@ -32,3 +57,19 @@
  
  uninstall-htmlDATA:
  	@$(NORMAL_UNINSTALL)
+@@ -730,6 +736,7 @@
+ install-info: install-info-am
+ 
+ install-info-am: $(INFO_DEPS)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(infodir)" || $(MKDIR_P) "$(DESTDIR)$(infodir)"
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+@@ -759,6 +766,7 @@
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \
+ 	else : ; fi
++.endif
+ install-man: install-man8
+ 
+ install-pdf: install-pdf-am
