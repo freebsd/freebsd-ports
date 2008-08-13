@@ -32,7 +32,7 @@ PORTEXAMPLES=	*
 .endif
 
 post-patch:
-# do not automagically install neither documents nor examples
+# do not automagically install either documents or examples
 	@${REINPLACE_CMD} -E \
 		-e 's|^(install:).*|\1|' \
 		${WRKSRC}/doc/Makefile.in
