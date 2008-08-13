@@ -1,11 +1,20 @@
+%%BLINKENPLAYER%%bin/BlinkenPlayer
 bin/LostPixels
 bin/bmfcompress
 bin/bmfdecompress
+%%DATADIR%%/Gaposis Outline (BRK).ttf
+%%DATADIR%%/Gas Huffer Phat.ttf
+%%DATADIR%%/Georgia.ttf
+%%DATADIR%%/Ghostmeat.ttf
 %%DATADIR%%/basedata.bmf
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/HOWTOPLAY
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/splash.jpg
+%%ADDONS%%%%DATADIR%%/24c3.bmf
+%%ADDONS%%%%DATADIR%%/mz_escape.bmf
+%%ADDONS%%%%DATADIR%%/mz_moviepack.bmf
+%%ADDONS%%%%DATADIR%%/mz_pnog.bmf
+%%ADDONS%%%%DATADIR%%/mz_template.bmf
+%%ADDONS%%%%DATADIR%%/mz_xmas2007.bmf
+%%ADDONS%%%%DATADIR%%/s23_ivorytower.bmf
+%%ADDONS%%%%DATADIR%%/theme_standard.bmf
+%%ADDONS%%%%DATADIR%%/theme_xmas2007.bmf
 @dirrm %%DATADIR%%
