@@ -29,6 +29,7 @@
 %%DATADIR%%/basewiki/templates/popup.mdwn
 %%DATADIR%%/basewiki/wikiicons/diff.png
 %%DATADIR%%/basewiki/wikiicons/openidlogin-bg.gif
+%%DATADIR%%/basewiki/wikiicons/search-bg.gif
 %%DATADIR%%/basewiki/wikilink.mdwn
 %%DATADIR%%/smiley/smileys.mdwn
 %%DATADIR%%/smiley/smileys/alert.png
@@ -91,6 +92,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
 %%SITE_PERL%%/IkiWiki/Plugin/autoindex.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
+%%SITE_PERL%%/IkiWiki/Plugin/bzr.pm
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
@@ -103,6 +105,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
 %%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
+%%SITE_PERL%%/IkiWiki/Plugin/git.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/googlecalendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
@@ -119,9 +122,12 @@
 %%SITE_PERL%%/IkiWiki/Plugin/lockedit.pm
 %%SITE_PERL%%/IkiWiki/Plugin/map.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm
+%%SITE_PERL%%/IkiWiki/Plugin/mercurial.pm
 %%SITE_PERL%%/IkiWiki/Plugin/meta.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mirrorlist.pm
+%%SITE_PERL%%/IkiWiki/Plugin/monotone.pm
 %%SITE_PERL%%/IkiWiki/Plugin/more.pm
+%%SITE_PERL%%/IkiWiki/Plugin/norcs.pm
 %%SITE_PERL%%/IkiWiki/Plugin/opendiscussion.pm
 %%SITE_PERL%%/IkiWiki/Plugin/openid.pm
 %%SITE_PERL%%/IkiWiki/Plugin/orphans.pm
@@ -149,27 +155,24 @@
 %%SITE_PERL%%/IkiWiki/Plugin/skeleton.pm.example
 %%SITE_PERL%%/IkiWiki/Plugin/smiley.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sparkline.pm
+%%SITE_PERL%%/IkiWiki/Plugin/svn.pm
 %%SITE_PERL%%/IkiWiki/Plugin/table.pm
 %%SITE_PERL%%/IkiWiki/Plugin/tag.pm
 %%SITE_PERL%%/IkiWiki/Plugin/template.pm
 %%SITE_PERL%%/IkiWiki/Plugin/testpagespec.pm
 %%SITE_PERL%%/IkiWiki/Plugin/teximg.pm
 %%SITE_PERL%%/IkiWiki/Plugin/textile.pm
+%%SITE_PERL%%/IkiWiki/Plugin/tla.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toc.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
 %%SITE_PERL%%/IkiWiki/Plugin/txt.pm
 %%SITE_PERL%%/IkiWiki/Plugin/typography.pm
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
+%%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
-%%SITE_PERL%%/IkiWiki/Rcs/Stub.pm
-%%SITE_PERL%%/IkiWiki/Rcs/bzr.pm
-%%SITE_PERL%%/IkiWiki/Rcs/git.pm
-%%SITE_PERL%%/IkiWiki/Rcs/mercurial.pm
-%%SITE_PERL%%/IkiWiki/Rcs/monotone.pm
-%%SITE_PERL%%/IkiWiki/Rcs/svn.pm
-%%SITE_PERL%%/IkiWiki/Rcs/tla.pm
 %%SITE_PERL%%/IkiWiki/Render.pm
 %%SITE_PERL%%/IkiWiki/Setup.pm
+%%SITE_PERL%%/IkiWiki/Setup/Automator.pm
 %%SITE_PERL%%/IkiWiki/Setup/Standard.pm
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
@@ -177,9 +180,8 @@ bin/ikiwiki
 bin/ikiwiki-makerepo
 bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
-lib/ikiwiki/plugins/externaldemo
+etc/ikiwiki/auto.setup
 lib/ikiwiki/plugins/proxy.py
-lib/ikiwiki/plugins/pythondemo
 lib/ikiwiki/plugins/rst
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 sbin/ikiwiki-mass-rebuild
@@ -193,6 +195,7 @@ share/locale/gu/LC_MESSAGES/ikiwiki.mo
 share/locale/pl/LC_MESSAGES/ikiwiki.mo
 share/locale/sv/LC_MESSAGES/ikiwiki.mo
 share/locale/vi/LC_MESSAGES/ikiwiki.mo
+@dirrm etc/ikiwiki
 @dirrm lib/ikiwiki/plugins
 @dirrm lib/ikiwiki
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
@@ -207,7 +210,6 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/IkiWiki/Plugin
-@dirrm %%SITE_PERL%%/IkiWiki/Rcs
 @dirrm %%SITE_PERL%%/IkiWiki/Setup
 @dirrm %%SITE_PERL%%/IkiWiki
 %%W3M%%@dirrmtry libexec/w3m/cgi-bin

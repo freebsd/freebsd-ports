@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080813:
+  AFFECTS: users of www/ikiwiki
+  AUTHOR: brix@FreeBSD.org
+
+  The layout of the ikiwiki.setup file has changed in a significant
+  way in this release.  Old setup files will continue to work, but new
+  features, like the new websetup interface, require a new format
+  setup file.  You can convert old setup files into the new format by
+  running the following command for all your ikiwiki.setup files:
+
+  	ikiwiki-transition setupformat ikiwiki.setup
+
 20080812:
   AFFECTS: users of mail/spamdyke
   AUTHOR: mm@FreeBSD.org
