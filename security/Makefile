@@ -666,6 +666,7 @@
     SUBDIR += ruby-acl
     SUBDIR += ruby-aes
     SUBDIR += ruby-blowfish
+    SUBDIR += ruby-camellia
     SUBDIR += ruby-cast_256
     SUBDIR += ruby-crypt
     SUBDIR += ruby-gpgme
