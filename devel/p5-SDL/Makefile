@@ -76,19 +76,19 @@ MAN3=		SDL.3		\
 
 pre-extract:
 .if !defined(WITHOUT_SDL_GFX)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_SDL_GFX."
+	@${ECHO_MSG} "You can disable support for SDL_gfx by defining WITHOUT_SDL_GFX."
 .endif
 .if !defined(WITHOUT_SDL_IMAGE)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_SDL_IMAGE."
+	@${ECHO_MSG} "You can disable support for SDL_image by defining WITHOUT_SDL_IMAGE."
 .endif
 .if !defined(WITHOUT_SDL_MIXER)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_SDL_MIXER."
+	@${ECHO_MSG} "You can disable support for SDL_mixer by defining WITHOUT_SDL_MIXER."
 .endif
 .if !defined(WITHOUT_SDL_NET)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_SDL_NET."
+	@${ECHO_MSG} "You can disable support for SDL_net by defining WITHOUT_SDL_NET."
 .endif
 .if !defined(WITHOUT_SDL_TTF)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_SDL_TTF."
+	@${ECHO_MSG} "You can disable support for SDL_ttf by defining WITHOUT_SDL_TTF."
 .endif
 
 do-configure:
