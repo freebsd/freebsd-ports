@@ -1,5 +1,5 @@
---- libntfs/unix_io.c.orig	Fri Feb  3 23:42:42 2006
-+++ libntfs/unix_io.c	Mon Sep 10 17:56:18 2007
+--- ./libntfs/unix_io.c.orig	2007-09-26 15:28:34.000000000 -0300
++++ ./libntfs/unix_io.c	2008-08-10 17:44:16.000000000 -0300
 @@ -54,19 +54,112 @@
  #include <linux/fd.h>
  #endif
@@ -114,7 +114,7 @@
  /**
   * ntfs_device_unix_io_open - Open a device and lock it exclusively
   * @dev:
-@@ -78,30 +171,87 @@
+@@ -78,24 +171,76 @@
   */
  static int ntfs_device_unix_io_open(struct ntfs_device *dev, int flags)
  {
@@ -128,7 +128,6 @@
 -	int err;
 +	struct unix_filehandle *ufh;
 +	int err = 0;
-+	int is_special = 0;
 +#if USE_UBLIO
 +	struct ublio_param up;
 +	int use_ublio = 0;
@@ -139,14 +138,13 @@
  		errno = EBUSY;
  		return -1;
  	}
--	if (!(dev->d_private = malloc(sizeof(int))))
-+
-+	if (S_ISBLK(sbuf.st_mode) || S_ISCHR(sbuf.st_mode))
-+		is_special = 1;
+-	if (!(dev->d_private = ntfs_malloc(sizeof(int))))
 +
 +	ufh = malloc(sizeof(*ufh));
 +	if (!ufh)
  		return -1;
+-	*(int*)dev->d_private = open(dev->d_name, flags);
+-	if (*(int*)dev->d_private == -1) {
 +	dev->d_private = ufh;
 +#if USE_ALIGNED_IO
 +	ufh->fd = -1;
@@ -155,15 +153,6 @@
 +	ufh->media_size = 0;
 +#endif
 +
- 	/*
- 	 * Open the device/file obtaining the file descriptor for exclusive
- 	 * access (but only if mounting r/w).
- 	 */ 
--	if ((flags & O_RDWR) == O_RDWR)
-+	if (!is_special && (flags & O_RDWR) == O_RDWR)
- 		flags |= O_EXCL;
--	*(int*)dev->d_private = open(dev->d_name, flags);
--	if (*(int*)dev->d_private == -1) {
 +	ufh->fd = open(dev->d_name, flags);
 +	if (ufh->fd == -1) {
  		err = errno;
@@ -172,7 +161,6 @@
  	/* Setup our read-only flag. */
  	if ((flags & O_RDWR) != O_RDWR)
  		NDevSetReadOnly(dev);
-+
 +#if USE_UBLIO
 +	ufh->ublio_fh = NULL;
 +	if ((xenv = getenv("NTFS_USE_UBLIO")) &&
@@ -207,7 +195,7 @@
  	/* Acquire exclusive (mandatory) lock on the whole device. */
  	memset(&flk, 0, sizeof(flk));
  	if (NDevReadOnly(dev))
-@@ -110,7 +260,21 @@
+@@ -104,7 +249,21 @@
  		flk.l_type = F_WRLCK;
  	flk.l_whence = SEEK_SET;
  	flk.l_start = flk.l_len = 0LL;
@@ -228,10 +216,10 @@
 +#if USE_LOCK
 +	if (!NDevBlock(dev) && fcntl(DEV_FD(dev), F_SETLK, &flk)) {
  		err = errno;
- 		ntfs_log_debug("ntfs_device_unix_io_open: Could not lock %s for %s\n",
- 				dev->d_name, NDevReadOnly(dev) ? "reading" : "writing");
-@@ -119,6 +283,16 @@
- 					"close %s", dev->d_name);
+ 		ntfs_log_debug("ntfs_device_unix_io_open: Could not lock %s "
+ 				"for %s\n", dev->d_name, NDevReadOnly(dev) ?
+@@ -114,6 +273,16 @@
+ 					"Could not close %s", dev->d_name);
  		goto err_out;
  	}
 +#endif
@@ -247,7 +235,7 @@
  	/* Determine if device is a block device or not, ignoring errors. */
  	if (!fstat(DEV_FD(dev), &sbuf) && S_ISBLK(sbuf.st_mode))
  		NDevSetBlock(dev);
-@@ -142,7 +316,10 @@
+@@ -137,7 +306,10 @@
   */
  static int ntfs_device_unix_io_close(struct ntfs_device *dev)
  {
@@ -258,7 +246,7 @@
  
  	if (!NDevOpen(dev)) {
  		errno = EBADF;
-@@ -150,14 +327,20 @@
+@@ -145,14 +317,20 @@
  	}
  	if (NDevDirty(dev))
  		fsync(DEV_FD(dev));
@@ -280,7 +268,7 @@
  	/* Close the file descriptor and clear our open flag. */
  	if (close(DEV_FD(dev)))
  		return -1;
-@@ -180,10 +363,235 @@
+@@ -175,9 +353,234 @@
  static s64 ntfs_device_unix_io_seek(struct ntfs_device *dev, s64 offset,
  		int whence)
  {
@@ -317,8 +305,8 @@
 +#else
  	return lseek(DEV_FD(dev), offset, whence);
 +#endif
-+}
-+
+ }
+ 
 +#if USE_ALIGNED_IO
 +
 +#if USE_UBLIO
@@ -400,9 +388,9 @@
 +	if (nr > count)
 +		nr = count;
 +	return nr;
- }
- 
- /**
++}
++
++/**
 + * aligned_pwrite - Perform an aligned positioned write from the device
 + */
 +static s64 aligned_pwrite(struct ntfs_device *dev, void *buf, s64 count, s64 offset)
@@ -512,11 +500,10 @@
 +
 +#endif
 +
-+/**
+ /**
   * ntfs_device_unix_io_read - Read from the device, from the current location
   * @dev:
-  * @buf:
-@@ -196,6 +604,29 @@
+@@ -191,6 +594,29 @@
  static s64 ntfs_device_unix_io_read(struct ntfs_device *dev, void *buf,
  		s64 count)
  {
@@ -546,7 +533,7 @@
  	return read(DEV_FD(dev), buf, count);
  }
  
-@@ -217,6 +648,28 @@
+@@ -212,6 +638,28 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -575,7 +562,7 @@
  	return write(DEV_FD(dev), buf, count);
  }
  
-@@ -234,6 +687,13 @@
+@@ -229,6 +677,13 @@
  static s64 ntfs_device_unix_io_pread(struct ntfs_device *dev, void *buf,
  		s64 count, s64 offset)
  {
@@ -586,10 +573,10 @@
 +		return ublio_pread(DEV_HANDLE(dev)->ublio_fh, buf, count,
 +		    offset);
 +#endif
- 	return ntfs_pread(dev, offset, count, buf);
+ 	return pread(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -256,6 +716,13 @@
+@@ -251,6 +706,13 @@
  		return -1;
  	}
  	NDevSetDirty(dev);
@@ -600,10 +587,10 @@
 +		return ublio_pwrite(DEV_HANDLE(dev)->ublio_fh, (void *)buf,
 +		    count, offset);
 +#endif
- 	return ntfs_pwrite(dev, offset, count, buf);
+ 	return pwrite(DEV_FD(dev), buf, count, offset);
  }
  
-@@ -269,8 +736,17 @@
+@@ -264,8 +726,17 @@
   */
  static int ntfs_device_unix_io_sync(struct ntfs_device *dev)
  {
