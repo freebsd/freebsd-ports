@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	upp
-PORTVERSION=	2007.1
-PORTREVISION=	4
+PORTVERSION=	2008.1
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
@@ -21,27 +21,34 @@ USE_XORG=	xft
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
-.if defined(WITH_SDL)
-USE_SDL=	sdl
-.endif
+ALL_TARGET=	theide
 
 WRKSRC=	${WRKDIR}
 
-INSTALL_DIRS=	Common examples reference tutorial uppsrc
+INSTALL_DIRS=	bazaar examples reference tutorial uppsrc
 
-pre-everything::
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITH_SDL to install SDL library for running SDL example."
-	@${ECHO_MSG} ""
+OPTIONS=	SDL	"Install with SDL library" off \
+		GL	"Install wiht OpenGL library" off \
+		MYSQL	"Install with MySQL database" off \
+		PGSQL	"Install with PostreSQL database" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SDL)
+USE_SDL=	sdl
 .endif
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS|C_FLAGS|' ${WRKSRC}/uppsrc/ide/Makefile
+.if defined(WITH_GL)
+USE_GL=	gl
+.endif
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/uppsrc/ide/Makefile
-	@${REINPLACE_CMD} -e 's|-ldl|-lfreetype|g' ${WRKSRC}/uppsrc/ide/Makefile
 	@${REINPLACE_CMD} -e 's|CINC =(.*)|$1 ${PTHREAD_CFLAGS}|' ${WRKSRC}/uppsrc/ide/Makefile
 
 post-build:
@@ -51,7 +58,7 @@ post-build:
 	@${ECHO_CMD} "DEBUG_OPTIONS = \"-O0\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "RELEASE_BLITZ = \"0\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "RELEASE_LINKMODE = \"1\";" >> ${WRKSRC}/GCC.bm
-	@${ECHO_CMD} "RELEASE_OPTIONS = \"-O3 -ffunction-sections\";" >> ${WRKSRC}/GCC.bm
+	@${ECHO_CMD} "RELEASE_OPTIONS = \"-O2 -ffunction-sections\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "DEBUGGER = \"gdb\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "PATH = \"\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "INCLUDE = \"${LOCALBASE}/include;${LOCALBASE}/include/freetype2;${LOCALBASE}/include/gtk-2.0;${LOCALBASE}/include/glib-2.0;${LOCALBASE}/include/cairo;${LOCALBASE}/include/pango-1.0;${LOCALBASE}/include/atk-1.0\";" >> ${WRKSRC}/GCC.bm
@@ -62,7 +69,7 @@ post-build:
 	@${ECHO_CMD} "REMOTE_MAP = \"\";" >> ${WRKSRC}/GCC.bm
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/out/ide/GCC-Gcc-Gui-Linux-Main-Shared/ide ${PREFIX}/bin/theide
+	@${INSTALL_PROGRAM} ${WRKSRC}/out/ide/GCC-FREEBSD-Gcc-Gui-Main-Shared/ide ${PREFIX}/bin/theide
 	@${MKDIR} ${PREFIX}/share/upp
 	@${INSTALL_DATA} ${WRKSRC}/GCC.bm ${PREFIX}/share/upp/GCC.bm
 	@(cd ${WRKSRC} && for d in ${INSTALL_DIRS};do ${FIND} $$d \! -empty -type d -print|${SORT} -r>>dirs.txt;done;)
@@ -78,4 +85,4 @@ post-install:
 	@${ECHO_CMD} @dirrm share/upp >> ${TMPPLIST}
 	@${RM} ${WRKSRC}/*.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
