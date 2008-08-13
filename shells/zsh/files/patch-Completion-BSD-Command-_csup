@@ -1,26 +1,30 @@
---- Completion/BSD/Command/_csup.orig	2008-08-12 13:52:12.409319715 +0200
-+++ Completion/BSD/Command/_csup	2008-08-07 23:26:34.000000000 +0200
-@@ -0,0 +1,23 @@
-+#compdef csup
-+
-+_arguments -s \
-+    '-1[disable automatic retries]' \
-+    '-4[Force usage of IPv4 addresses]' \
-+    '-6[Force usage of IPv6 addresses]' \
+--- Completion/BSD/Command/_csup.orig	2007-07-20 18:39:15.000000000 +0200
++++ Completion/BSD/Command/_csup	2008-08-13 19:00:33.890223677 +0200
+@@ -4,17 +4,17 @@
+     '-1[disable automatic retries]' \
+     '-4[Force usage of IPv4 addresses]' \
+     '-6[Force usage of IPv6 addresses]' \
+-    '-A:local address:_hosts' \
+-    '-b:base directory:_files -/' \
+-    '-c:collections directory:_files -/' \
+-    '-d:maximum number of deleted files:' \
+-    '-h:server host:_hosts' \
+-    '-i:file pattern:' \
 +    '-A[Local address to bind to when connecting to the server]:local address:_hosts' \
 +    '-b[Base directory]:base directory:_files -/' \
 +    '-c[Subdirectory of base for information about collections]:collections directory:_files -/' \
 +    '-d[maximum number of deleted files]:maximum number of deleted files:' \
 +    '-h[Server host]:server host:_hosts' \
 +    '-i[Include only files and directories matching]:file pattern:' \
-+    '-k[keep temporary copies of failed updates]' \
+     '-k[keep temporary copies of failed updates]' \
+-    '-l:lock file:_files' \
+-    '-L:verbosity level:(0 1 2)' \
+-    '-p:port:_ports' \
+-    '-r:maximum number of retries:' \
 +    '-l[Lock file]:lock file:_files' \
 +    '-L[Verbosity level]:verbosity level:(0 1 2)' \
 +    '-p[Server port]:port:_ports' \
 +    '-r[maximum number of retries]:maximum number of retries:' \
-+    '-s[suppress status checks]' \
-+    '-v[print version information]' \
-+    '(-Z)-z[enable compression]' \
-+    '(-z)-Z[disable compression]' \
-+    ':csup file:_files' \
-+    ':destination directory:_files -/'
+     '-s[suppress status checks]' \
+     '-v[print version information]' \
+     '(-Z)-z[enable compression]' \
