@@ -4,9 +4,9 @@ bin/ntfscmp
 bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
-%%FUSE%%bin/ntfsmount
-%%FUSE%%@exec ln -fs %D/%F /usr/sbin/mount_ntfs-fuse
-%%FUSE%%@unexec rm -f /usr/sbin/mount_ntfs-fuse
+bin/ntfsmount
+@exec ln -fs %D/%F /usr/sbin/mount_ntfs-fuse
+@unexec rm -f /usr/sbin/mount_ntfs-fuse
 include/ntfs/attrib.h
 include/ntfs/attrlist.h
 include/ntfs/bitmap.h
@@ -14,14 +14,15 @@ include/ntfs/bootsect.h
 include/ntfs/collate.h
 include/ntfs/compat.h
 include/ntfs/compress.h
+include/ntfs/crypto.h
 include/ntfs/debug.h
 include/ntfs/device.h
 include/ntfs/device_io.h
 include/ntfs/dir.h
-include/ntfs/index.h
 include/ntfs/endians.h
 include/ntfs/gnome-vfs-method.h
 include/ntfs/gnome-vfs-module.h
+include/ntfs/index.h
 include/ntfs/inode.h
 include/ntfs/layout.h
 include/ntfs/lcnalloc.h
@@ -31,11 +32,9 @@ include/ntfs/logging.h
 include/ntfs/mft.h
 include/ntfs/mst.h
 include/ntfs/ntfstime.h
-include/ntfs/rich.h
 include/ntfs/runlist.h
 include/ntfs/security.h
 include/ntfs/support.h
-include/ntfs/tree.h
 include/ntfs/types.h
 include/ntfs/unistr.h
 include/ntfs/version.h
@@ -43,17 +42,19 @@ include/ntfs/volume.h
 lib/libntfs.a
 lib/libntfs.la
 lib/libntfs.so
-lib/libntfs.so.9
+lib/libntfs.so.10
 sbin/mkntfs
-sbin/mkfs.ntfs
 sbin/ntfsclone
 sbin/ntfscp
 sbin/ntfslabel
 sbin/ntfsresize
 sbin/ntfsundelete
-@dirrm include/ntfs
 %%GNOMEVFS2%%etc/gnome-vfs-2.0/modules/libntfs.conf
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.a
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.la
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+@dirrm include/ntfs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

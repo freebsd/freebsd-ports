@@ -1,12 +1,12 @@
-The goals of this project are: create a new Linux kernel driver for the NTFS
-file system (v1.2 and later 3.0), user space utilities (e.g. format, ntfs
-check, etc.) and a library to avoid code duplication and provide access to
-NTFS to other GPLed programs.
+The goals of the Linux-NTFS project are to develop reliable and full feature
+access to NTFS by the Linux kernel driver and by a user space driver
+(ntfsmount), and to provide a wide collection of NTFS utilities and a
+developer's library for other GPLed programs. We have already achieved a lot,
+with high quality results. Includes the following:
 
-It includes a read-only fusefs driver to mount NTFS volumes, but a read-write
-version exists in sysutils/fusefs-ntfs. They can be installed simultaneously.
+ntfsmount: fast, reliable, read/write, userspace.
+ntfsprogs: various tools for managing ntfs, namely mkntfs, ntfsresize,
+           ntfsclone, ntfsfix, ntfsundelete, ntfswipe and ntfsdecrypt.
+
 
 WWW: http://www.linux-ntfs.org/
-
-- Florent Thoumie
-flz@xbsd.org

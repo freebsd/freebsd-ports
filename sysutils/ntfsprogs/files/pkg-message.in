@@ -1,13 +1,10 @@
 ==============================================================================
 
-If UBLIO (cache for improving performance) was enabled, see the following to
-know more about it: "ports/sysutils/fusefs-ntfs/files/pkg-message.in" (only
-the relevant parts).
+Linux-NTFS has been installed, for information, known issues and how to report
+bugs see the FreeBSD README (describes FUSE and UBLIO options):
 
-If FUSE (mount support) was enabled, note that there is no write capability
-and does not allow to browse directories with programs like the GTK+ file
-browser, Midnight Commander, etc. So for mounting it's better to use
-"sysutils/fusefs-ntfs". Note that the mount(8) filesystem type installed by
-this port is called "ntfs-fuse".
+%%DOCSDIR%%/README.FreeBSD
+
+Also see the official README (platform independent).
 
 ==============================================================================
