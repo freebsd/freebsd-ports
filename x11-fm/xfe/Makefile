@@ -3,12 +3,10 @@
 # Whom:					ptiJo
 #
 # $FreeBSD$
-# $Carpetsmoker: ports/x11-fm/xfe/Makefile,v 1.1 2008/07/19 22:54:09 carpetsmoker Exp $
 #
 
 PORTNAME=	xfe
-PORTVERSION=	1.19.1
-PORTREVISION=	1
+PORTVERSION=	1.19.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
