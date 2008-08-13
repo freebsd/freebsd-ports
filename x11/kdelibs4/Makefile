@@ -23,12 +23,11 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		aspell:${PORTSDIR}/textproc/aspell \
 		jasper:${PORTSDIR}/graphics/jasper \
 		pcre:${PORTSDIR}/devel/pcre \
-		avahi-core:${PORTSDIR}/net/avahi \
+		avahi-core:${PORTSDIR}/net/avahi-app \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/dns/libidn \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
@@ -39,6 +38,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		xauth:${PORTSDIR}/x11/xauth
 # XXX: hebrew/hspell?
 # XXX: gssapi/kerberos special handling?
+
+.if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h) || defined(WITH_LIBDNS)
+LIB_DEPENDS+=	avahi-qt4:${PORTSDIR}/net/avahi-qt4 \
+		dns_sd:${PORTSDIR}/net/avahi-libdns
+.else
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+.endif
 
 CONFLICTS=	qt4-phonon-4*
 LATEST_LINK=	${PORTNAME}4
