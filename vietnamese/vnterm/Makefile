@@ -20,6 +20,10 @@ USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800039
+BROKEN=		does not build
+.endif
+
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
 		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
