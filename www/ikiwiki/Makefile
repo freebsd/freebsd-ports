@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.56
+PORTVERSION=	2.60
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -43,7 +43,7 @@ OPTIONS=	SEARCH "Install search backend" On \
 MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
-PORTEXAMPLES=	ikiwiki.setup
+PORTEXAMPLES=	ikiwiki.setup wikilist
 
 .include <bsd.port.pre.mk>
 
@@ -65,7 +65,7 @@ post-patch:
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
 	@${REINPLACE_CMD} -e \
-		"s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
+		"s|/etc/ikiwiki/wikilist|${PREFIX}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/ikiwiki-update-wikilist \
@@ -74,22 +74,29 @@ post-patch:
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
 		-e 's|$$(PREFIX)/lib/w3m|$$(PREFIX)/libexec/w3m|' \
 		-e 's|-wholename|-path|' \
+		-e 's|cp -a|install -m 755|' \
+		-e 's|\(install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
+		-e 's|\(install -m 0644 wikilist\)|#\1|' \
+		-e 's|\(install -m 0644 auto.setup\)|#\1|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e \
-		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|" \
-		${WRKSRC}/doc/ikiwiki.setup
+		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
+		${WRKSRC}/IkiWiki/Plugin/search.pm
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/search.pm.bak
 .ifndef(WITH_W3M)
 	@${REINPLACE_CMD} -e '/w3m/d' ${WRKSRC}/Makefile.PL
 .endif
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/ikiwiki
+	${INSTALL_DATA} ${WRKSRC}/auto.setup ${PREFIX}/etc/ikiwiki
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/doc/@} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
