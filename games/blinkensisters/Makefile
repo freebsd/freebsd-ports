@@ -6,44 +6,80 @@
 #
 
 PORTNAME=	blinkensisters
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	LostPixels-${PORTVERSION}-source
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Parallax-style 2D scrolling platform game
 
 USE_SDL=	sdl image ttf
-WRKSRC=		${WRKDIR}//blinkensisters/lostpixels/game/software
+USE_PERL5_BUILD=	yes
 USE_CMAKE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	SOUND	"Build with souns support" on \
-		NETWORK	"Build with network support" on
+WRKSRC=		${WRKDIR}/blinkensisters/lostpixels/game/software
+ADDONS_WRKSRC=	${WRKDIR}/blinkensisters/lostpixels/game/addons
+
+PORTDOCS=	*
+
+OPTIONS=	ADDONS	"Install addons (~200 MB download size)" off \
+		SDL_MIXER	"Build with sound support" on \
+		SDL_NET	"Build with network support" on \
+		THEORA	"Build with theora support" off
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_ADDONS)
+DISTNAME=	LostPixels-${PORTVERSION}-source-with-addons
+PKGNAMESUFFIX=	-with-addons
+PLIST_SUB+=	ADDONS=""
+.else
+DISTNAME=	LostPixels-${PORTVERSION}-source
+PLIST_SUB+=	ADDONS="@comment "
+.endif
+
+.if defined(WITHOUT_SDL_MIXER)
+CMAKE_ARGS+=	-DUSE_SDL_MIXER:BOOL=OFF
+PLIST_SUB+=	BLINKENPLAYER="@comment "
+.else
+USE_SDL+=	mixer
+PLIST_SUB+=	BLINKENPLAYER=""
+.endif
+
+.if defined(WITHOUT_SDL_NET)
+CMAKE_ARGS+=	-DUSE_SDL_NET:BOOL=OFF
+.else
+USE_SDL+=	net
+.endif
+
+.if defined(WITH_THEORA)
+CMAKE_ARGS+=	-DUSE_THEORA:BOOL=ON
+.else
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+.endif
+
 post-patch:
-.if defined(WITHOUT_SOUND)
-	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*SDL_mixer/ d' \
-		${WRKSRC}/CMakeLists.txt
-.endif
-
-.if defined(WITHOUT_NETWORK)
-	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*SDL_net/ d' \
-		${WRKSRC}/CMakeLists.txt
-.endif
-
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^INSTALL.*doc/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-
 	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR:S,${PREFIX}/,,}|; \
 		s|share/doc/blinkensisters|${DOCSDIR:S,${PREFIX}/,,}|' \
 		${WRKSRC}/CMakeLists.txt
+.if defined(WITH_ADDONS)
+	@${FIND} ${ADDONS_WRKSRC} -name "Makefile" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|bmfcompress|${WRKSRC}/&|'
+.endif
+
+.if defined(WITH_ADDONS)
+post-build:
+	cd ${ADDONS_WRKSRC} && ${MAKE}
+
+post-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${ADDONS_WRKSRC}/for_upload/*.bmf ${DATADIR}
+.endif
 
 .include <bsd.port.post.mk>
