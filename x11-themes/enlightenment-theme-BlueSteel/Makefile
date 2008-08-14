@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	enlightenment
 DISTNAME=	${PORTNAME:S/enlightenment/e16/}-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A themes of enlightenment window menager
 
 RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/enlightenment
