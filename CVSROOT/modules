@@ -8802,6 +8802,7 @@ ndesk-dbus-glib                 ports/devel/ndesk-dbus-glib
 ndiff                           ports/math/ndiff
 ndir                            ports/sysutils/ndir
 ndisc6                          ports/net/ndisc6
+ndoutils                        ports/net-mgmt/ndoutils
 ndpmon                          ports/net-mgmt/ndpmon
 nds-aspell                      ports/textproc/nds-aspell
 ne                              ports/editors/ne
@@ -10235,6 +10236,7 @@ p5-Data-ACL                     ports/devel/p5-Data-ACL
 p5-Data-Alias                   ports/devel/p5-Data-Alias
 p5-Data-Bind                    ports/devel/p5-Data-Bind
 p5-Data-Buffer                  ports/misc/p5-Data-Buffer
+p5-Data-ClearSilver-HDF         ports/devel/p5-Data-ClearSilver-HDF
 p5-Data-Compare                 ports/devel/p5-Data-Compare
 p5-Data-Currency                ports/finance/p5-Data-Currency
 p5-Data-Dump                    ports/devel/p5-Data-Dump
@@ -13253,6 +13255,7 @@ p5-data-acl                     ports/devel/p5-Data-ACL
 p5-data-alias                   ports/devel/p5-Data-Alias
 p5-data-bind                    ports/devel/p5-Data-Bind
 p5-data-buffer                  ports/misc/p5-Data-Buffer
+p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
 p5-data-compare                 ports/devel/p5-Data-Compare
 p5-data-currency                ports/finance/p5-Data-Currency
 p5-data-dump                    ports/devel/p5-Data-Dump
