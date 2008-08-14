@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ndo2db
+# REQUIRE: DAEMON nagios
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable ndo2db:
+# ndo2db_enable (bool):    Set to "NO" by default.
+# ndo2db_flags (str):      Set to "" by default.
+# ndo2db_configfile (str): Set to "%%PREFIX%%/etc/nagios/nagios.cfg" by default.
+
+. %%RC_SUBR%%
+
+name="ndo2db"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/bin/${name}"
+required_files="${ndo2db_configfile}"
+command_args="-c ${ndo2db_configfile}"
+
+load_rc_config $name
+
+: ${ndo2db_enable=-NO}
+: ${ndo2db_configfile=-%%PREFIX%%/etc/nagios/nagios.cfg}
+
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+
+******************************************************************************
+* $ mysqladmin -uroot -pXXXX create nagios
+* 
+* $ mysql -uroot -pXXXX -e \
+*   "GRANT SELECT,INSERT,UPDATE,DELETE TO 'nagios'@'%' IDENTIFIED BY 'YYYYY'
+*
+* $ cd %%DATADIR%%/db
+* $ ./installdb
+******************************************************************************
