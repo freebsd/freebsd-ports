@@ -51,6 +51,6 @@ share/nano/tex.nanorc
 @dirrm %%EXAMPLESDIR%%
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
-@dirrmtry man/fr/man5
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
+%%NLS%%@dirrmtry man/fr/man5
+%%NLS%%@dirrmtry man/fr/man1
+%%NLS%%@dirrmtry man/fr
