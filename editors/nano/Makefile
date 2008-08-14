@@ -7,7 +7,7 @@
 
 PORTNAME=	nano
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.0/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v2.0/
@@ -24,6 +24,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+MANLANG=	"" fr
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -32,7 +33,6 @@ PLIST_SUB+=	NLS="@comment "
 INFO=		nano
 MAN1=		nano.1 rnano.1
 MAN5=		nanorc.5
-MANLANG=	"" fr
 
 .include <bsd.port.pre.mk>
 
