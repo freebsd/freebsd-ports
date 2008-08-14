@@ -12,7 +12,7 @@ MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
 DISTNAME=	Io-${PORTVERSION:S/0.0.//:S/./-/g}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 USE_GMAKE=	yes
