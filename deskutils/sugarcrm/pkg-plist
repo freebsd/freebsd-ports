@@ -130,6 +130,7 @@
 %%WWWDIR%%/include/MVC/View/views/view.noaccess.php
 %%WWWDIR%%/include/MVC/View/views/view.popup.php
 %%WWWDIR%%/include/MVC/View/views/view.serialized.php
+%%WWWDIR%%/include/MVC/View/views/view.sidequickcreate.php
 %%WWWDIR%%/include/MVC/View/views/view.vcard.php
 %%WWWDIR%%/include/MVC/View/views/view.xml.php
 %%WWWDIR%%/include/MassUpdate.php
@@ -3013,6 +3014,7 @@
 %%WWWDIR%%/modules/Employees/metadata/listviewdefs.php
 %%WWWDIR%%/modules/Employees/vardefs.php
 %%WWWDIR%%/modules/Employees/views/view.detail.php
+%%WWWDIR%%/modules/Employees/views/view.edit.php
 %%WWWDIR%%/modules/Feeds/AddFavorite.php
 %%WWWDIR%%/modules/Feeds/Delete.php
 %%WWWDIR%%/modules/Feeds/DeleteFavorite.php
@@ -3463,6 +3465,7 @@
 %%WWWDIR%%/modules/Opportunities/vardefs.php
 %%WWWDIR%%/modules/Opportunities/views/view.detail.php
 %%WWWDIR%%/modules/Opportunities/views/view.edit.php
+%%WWWDIR%%/modules/Opportunities/views/view.sidequickcreate.php
 %%WWWDIR%%/modules/OptimisticLock/Forms.php
 %%WWWDIR%%/modules/OptimisticLock/LockResolve.php
 %%WWWDIR%%/modules/OptimisticLock/Menu.php
@@ -3752,9 +3755,11 @@
 %%WWWDIR%%/modules/UpgradeWizard/Forms.php
 %%WWWDIR%%/modules/UpgradeWizard/Menu.php
 %%WWWDIR%%/modules/UpgradeWizard/SILENTUPGRADE.txt
+%%WWWDIR%%/modules/UpgradeWizard/UploadFileCheck.php
 %%WWWDIR%%/modules/UpgradeWizard/cancel.php
 %%WWWDIR%%/modules/UpgradeWizard/commit.php
 %%WWWDIR%%/modules/UpgradeWizard/commitJson.php
+%%WWWDIR%%/modules/UpgradeWizard/deleteCache.php
 %%WWWDIR%%/modules/UpgradeWizard/end.php
 %%WWWDIR%%/modules/UpgradeWizard/index.php
 %%WWWDIR%%/modules/UpgradeWizard/language/en_us.help.index.html
