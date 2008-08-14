@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/ \
-		http://www.dirk.sh/dirk/php/Ice/
+		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	IcePHP-${PORTVERSION}
+DISTNAME=	Ice-${PORTVERSION}
 
 MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for PHP
@@ -25,8 +24,10 @@ DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
+BUILD_WRKSRC=	${WRKSRC}/php
+INSTALL_WRKSRC=	${WRKSRC}/php
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
 PHP_MODNAME?=	IcePHP
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
@@ -37,24 +38,24 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .include <bsd.port.pre.mk>
-
 .if ${ARCH} == "ia64"
-BROKEN=		does not compile
+BROKEN=		does not compile on ia64
 .endif
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
 MAKE_ENV=	LP64=yes
 .endif
 
-post-extract:
-	${CP} ${WRKSRC}/config/Make.rules.Linux ${WRKSRC}/config/Make.rules.FreeBSD
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/config/Make.rules.FreeBSD
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/php/config/Make.rules
 	${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/config/Make.rules
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/php/config/Make.rules
 post-install:
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \

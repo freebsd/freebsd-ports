@@ -1,31 +1,12 @@
---- Makefile.orig	Wed Aug  8 21:00:54 2007
-+++ Makefile	Fri Sep 14 12:30:38 2007
-@@ -11,7 +11,10 @@
- 
+--- cpp/Makefile.bak	2008-05-16 19:24:00.000000000 +0200
++++ cpp/Makefile	2008-07-31 13:37:25.000000000 +0200
+@@ -12,6 +12,9 @@
  include $(top_srcdir)/config/Make.rules
  
--SUBDIRS		= config src include test demo slice doc
-+SUBDIRS		= config src include test demo slice
-+ifndef NOPORTDOCS
+ SUBDIRS		= config src include test demo
++ifneq ($(NOPORTDOCS),yes)
 +SUBDIRS		+= doc
 +endif
  
- INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_slicedir) $(install_docdir)
+ INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_configdir)
  
-@@ -51,12 +54,14 @@
- 	@( cd doc && $(MAKE) ) || exit 1
- 
- install::
-+ifndef NOPORTDOCS
- 	@if test -d doc ; \
- 	then \
- 	    ( cd doc && $(MAKE) install ) || exit 1 ; \
- 	fi
--	$(call installdata,ICE_LICENSE,$(prefix))
--	$(call installdata,LICENSE,$(prefix))
-+	$(call installdata,ICE_LICENSE,$(install_docdir))
-+	$(call installdata,LICENSE,$(install_docdir))
-+endif
- 
- clean::
- 	@if test -d doc ; \

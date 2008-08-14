@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
+BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_BDB=	42+
 INVALID_BDB_VER=	2 3 40 41
 USE_LDCONFIG=	yes
+BUILD_WRKSRC=	${WRKSRC}/cpp
+INSTALL_WRKSRC=	${WRKSRC}/cpp
 
-CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
+CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 .if defined(DEBUG)
 CFLAGS+=	-g
 .else
@@ -51,14 +55,21 @@ post-patch:
 		s|%%DOCSDIR%%|${DOCSDIR}|g; \
 		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g' \
-		${FILESDIR}/Make.rules.FreeBSD > ${WRKSRC}/config/Make.rules.FreeBSD
+		${FILESDIR}/Make.rules.FreeBSD > ${WRKSRC}/cpp/config/Make.rules.FreeBSD
 	${REINPLACE_CMD} 's|%%BDB_LIB_CXX_NAME%%|${BDB_LIB_CXX_NAME}|g; \
 		s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g; \
-		s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g' \
-		${WRKSRC}/config/Make.rules
-	${REINPLACE_CMD} 's|prefix|install_slicedir|g' ${WRKSRC}/config/Makefile
-	${REINPLACE_CMD} 's|prefix|install_slicedir|g; \
-		s|INSTALL_PROGRAM|INSTALL_DATA|g' ${WRKSRC}/src/ca/Makefile
-	${FIND} ${WRKSRC} -name Makefile -exec ${REINPLACE_CMD} 's|-lIceSSL|-lIceSSL -lIceXML|' {} \;
+		s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g; \
+		/install_docdir/d' \
+		${WRKSRC}/cpp/config/Make.rules
+	${REINPLACE_CMD} '/install_configdir/d' \
+		${WRKSRC}/cpp/config/Make.rules
+	${REINPLACE_CMD} 's|INSTALL_PROGRAM|INSTALL_DATA|g' \
+		${WRKSRC}/cpp/src/ca/Makefile
+	${REINPLACE_CMD} '/LICENSE/s/prefix/install_slicedir/' \
+		${WRKSRC}/config/Make.common.rules
+.if ${OSVERSION} < 700000
+	${REINPLACE_CMD} 's|__APPLE__|__FreeBSD__|' \
+		${WRKSRC}/cpp/src/IceUtil/Cond.cpp
+.endif
 
 .include <bsd.port.post.mk>

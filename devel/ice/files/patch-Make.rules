@@ -1,5 +1,5 @@
---- config/Make.rules.orig	Fri Mar  9 00:16:54 2007
-+++ config/Make.rules	Fri Apr 13 20:05:04 2007
+--- cpp/config/Make.rules.orig	Fri Mar  9 00:16:54 2007
++++ cpp/config/Make.rules	Fri Apr 13 20:05:04 2007
 @@ -188,7 +188,9 @@
        DB_FLAGS          = -I/usr/include/db45
        DB_LIBS           = -L/usr/$(libsubdir)/db45 -ldb_cxx
@@ -10,4 +10,3 @@
 +      DB_RPATH_LINK     = $(call rpathlink,%%BDB_LIB_DIR%%)
     endif
  endif
- 

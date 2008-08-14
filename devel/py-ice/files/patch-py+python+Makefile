@@ -1,6 +1,6 @@
---- python/Makefile.orig	Thu Feb 17 00:48:17 2005
-+++ python/Makefile	Tue Aug 30 19:16:53 2005
-@@ -94,7 +94,8 @@
+--- py/python/Makefile.orig	2008-08-01 16:33:15.000000000 +0800
++++ py/python/Makefile	2008-08-01 16:33:45.000000000 +0800
+@@ -230,7 +230,8 @@
  	$(INSTALL_DATA) *.py $(install_pythondir)
  	@for i in $(PACKAGES) ; \
  	do \
