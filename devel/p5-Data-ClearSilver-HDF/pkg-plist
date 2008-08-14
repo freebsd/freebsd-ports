@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ClearSilver/HDF/.packlist
+%%SITE_PERL%%/Data/ClearSilver/HDF.pm
+@dirrmtry %%SITE_PERL%%/Data/ClearSilver
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ClearSilver/HDF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ClearSilver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+bin/cspage
