@@ -468,8 +468,6 @@ pre-everything::
 .endif
 
 pre-extract:	check-options-version
-	@${ECHO_CMD} "testing 4 5 6 ..."
-	@${FALSE}
 .ifndef(MAINT)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
