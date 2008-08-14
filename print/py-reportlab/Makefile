@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reportlab
-PORTVERSION=	1.21.1
+PORTVERSION=	1.21.2
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
 		ftp://ftp.reportlab.org/ \
@@ -22,7 +22,6 @@ COMMENT=	Library to create PDF documents using the Python language
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Reportlab
-PYDISTUTILS_PKGVERSION=	1.20
 
 WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/g}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
