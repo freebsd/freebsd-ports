@@ -1,5 +1,5 @@
 %%INCDIR%%/malloc.h
 lib/libptmalloc.a
 lib/libptmalloc.so
-lib/libptmalloc.so.1
+lib/libptmalloc.so.2
 @dirrm %%INCDIR%%
