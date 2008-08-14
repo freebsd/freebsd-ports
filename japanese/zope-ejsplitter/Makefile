@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ejSplitter
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 
