@@ -30,6 +30,10 @@ CONFLICTS=	samhain-client-2*
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CFLAGS+=        -fPIC
+.endif
+
 .if defined(WITH_GPG)
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
