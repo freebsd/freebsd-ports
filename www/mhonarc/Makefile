@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/
 DISTNAME=	MHonArc-${PORTVERSION}
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW front end for mail archives
 
 USE_BZIP2=	Yes
