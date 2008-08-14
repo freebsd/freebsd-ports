@@ -1,0 +1,46 @@
+--- config/Make.common.rules.orig	2008-05-17 01:24:00.000000000 +0800
++++ config/Make.common.rules	2008-08-14 17:48:05.000000000 +0800
+@@ -307,24 +307,24 @@
+ 	    $(call mkdir,$(prefix)) ; \
+ 	fi
+ 
+-	@if test ! -d $(install_slicedir) ; \
+-	then \
+-	    echo "Creating $(install_slicedir)..." ; \
+-	    $(call mkdir,$(install_slicedir)) ; \
+-	    cd $(top_srcdir)/../slice ; \
+-	    for subdir in * ; \
+-	    do \
+-	        echo "Copying slice/$$subdir to $(install_slicedir)..." ; \
+-	        cp -fpr $$subdir $(install_slicedir) ; \
+-	    done ; \
+-        fi
++#	@if test ! -d $(install_slicedir) ; \
++#	then \
++#	    echo "Creating $(install_slicedir)..." ; \
++#	    $(call mkdir,$(install_slicedir)) ; \
++#	    cd $(top_srcdir)/../slice ; \
++#	    for subdir in * ; \
++#	    do \
++#	        echo "Copying slice/$$subdir to $(install_slicedir)..." ; \
++#	        cp -fpr $$subdir $(install_slicedir) ; \
++#	    done ; \
++#        fi
+ 
+-	@if test ! -f $(prefix)/ICE_LICENSE ; \
+-	then \
+-	    $(call installdata,$(top_srcdir)/../ICE_LICENSE,$(prefix)) ; \
+-	fi
++#	@if test ! -f $(prefix)/ICE_LICENSE ; \
++#	then \
++#	    $(call installdata,$(top_srcdir)/../ICE_LICENSE,$(prefix)) ; \
++#	fi
+ 
+-	@if test ! -f $(prefix)/LICENSE ; \
+-	then \
+-	    $(call installdata,$(top_srcdir)/../LICENSE,$(prefix)) ; \
+-	fi
++#	@if test ! -f $(prefix)/LICENSE ; \
++#	then \
++#	    $(call installdata,$(top_srcdir)/../LICENSE,$(prefix)) ; \
++#	fi

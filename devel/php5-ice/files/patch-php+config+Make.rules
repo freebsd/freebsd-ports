@@ -1,0 +1,40 @@
+--- php/config/Make.rules.orig	2008-05-17 01:24:03.000000000 +0800
++++ php/config/Make.rules	2008-08-02 08:20:17.000000000 +0800
+@@ -12,7 +12,9 @@
+ # if it does not exist.
+ #
+ 
+-prefix			?= /opt/Ice-$(VERSION)
++ICE_HOME		= %%PREFIX%%
++
++prefix			?= %%PREFIX%%/lib/php/$(PHP_EXT_DIR)
+ 
+ #
+ # The "root directory" for runpath embedded in executables. Can be unset
+@@ -25,7 +27,7 @@
+ # Otherwise the Ice extension is built with debug information.
+ #
+ 
+-#OPTIMIZE		= yes
++OPTIMIZE		= yes
+ 
+ #
+ # Define LP64 as yes if you want to build in 64 bit mode on a platform
+@@ -48,7 +50,7 @@
+ # PHP_INCLUDE_DIR and PHP_LIB_DIR.
+ #
+ 
+-PHP_HOME		?= /opt/php
++PHP_HOME		?= %%PREFIX%%
+ 
+ #
+ # Verifies the PHP_HOME is valid and attempts to adjust for platform variances
+@@ -94,7 +96,7 @@
+ endif
+ 
+ libdir			= $(top_srcdir)/lib
+-install_libdir		= $(prefix)/$(libsubdir)
++install_libdir		= $(prefix)
+ 
+ #
+ # Platform specific definitions
