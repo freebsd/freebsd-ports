@@ -1,0 +1,64 @@
+@stopdaemon ndo2db
+bin/file2sock
+bin/log2ndo
+bin/ndo2db-3x
+bin/ndomod-3x.o
+bin/sockdebug
+etc/nagios/misccommands.cfg-sample
+etc/nagios/ndo2db.cfg-sample
+etc/nagios/ndomod.cfg-sample
+etc/nagios/ndoutils.cfg-sample
+%%PORTDOCS%%%%DOCSDIR%%/NDOUTILS DB Model.odt
+%%PORTDOCS%%%%DOCSDIR%%/NDOUTILS DB Model.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NDOUtils Documentation.odt
+%%PORTDOCS%%%%DOCSDIR%%/NDOUtils Documentation.pdf
+%%DATADIR%%/README
+%%DATADIR%%/installdb
+%%DATADIR%%/mysql-mods-1.4b5.sql
+%%DATADIR%%/mysql-mods-1.4b7.sql
+%%DATADIR%%/mysql-upgrade-1.3.sql
+%%DATADIR%%/mysql-upgrade-1.4b1.sql
+%%DATADIR%%/mysql-upgrade-1.4b2.sql
+%%DATADIR%%/mysql-upgrade-1.4b3.sql
+%%DATADIR%%/mysql-upgrade-1.4b4.sql
+%%DATADIR%%/mysql-upgrade-1.4b5.sql
+%%DATADIR%%/mysql-upgrade-1.4b6.sql
+%%DATADIR%%/mysql.sql
+%%DATADIR%%/prepsql
+%%DATADIR%%/queries/comment_history.sql
+%%DATADIR%%/queries/comments.sql
+%%DATADIR%%/queries/contact_notification_methods.sql
+%%DATADIR%%/queries/contact_notifications.sql
+%%DATADIR%%/queries/contact_status.sql
+%%DATADIR%%/queries/contactgroup_membership.sql
+%%DATADIR%%/queries/contacts.sql
+%%DATADIR%%/queries/downtime_history.sql
+%%DATADIR%%/queries/event_handlers.sql
+%%DATADIR%%/queries/flapping_history.sql
+%%DATADIR%%/queries/host_comments.sql
+%%DATADIR%%/queries/host_downtime_history.sql
+%%DATADIR%%/queries/host_event_handlers.sql
+%%DATADIR%%/queries/host_flapping_history.sql
+%%DATADIR%%/queries/host_notifications.sql
+%%DATADIR%%/queries/host_state_history.sql
+%%DATADIR%%/queries/host_status.sql
+%%DATADIR%%/queries/hostgroup_membership.sql
+%%DATADIR%%/queries/hosts.sql
+%%DATADIR%%/queries/notifications.sql
+%%DATADIR%%/queries/scheduled_downtime.sql
+%%DATADIR%%/queries/service_comments.sql
+%%DATADIR%%/queries/service_downtime_history.sql
+%%DATADIR%%/queries/service_event_handlers.sql
+%%DATADIR%%/queries/service_flapping_history.sql
+%%DATADIR%%/queries/service_notifications.sql
+%%DATADIR%%/queries/service_state_history.sql
+%%DATADIR%%/queries/service_status.sql
+%%DATADIR%%/queries/servicegroup_membership.sql
+%%DATADIR%%/queries/services.sql
+%%DATADIR%%/queries/state_history.sql
+%%DATADIR%%/queries/timed_event_queue.sql
+%%DATADIR%%/queries/timed_events.sql
+%%DATADIR%%/upgradedb
+@dirrm %%DATADIR%%/queries
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

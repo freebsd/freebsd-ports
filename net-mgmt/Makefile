@@ -120,6 +120,7 @@
     SUBDIR += nat
     SUBDIR += nav
     SUBDIR += nbtscan
+    SUBDIR += ndoutils
     SUBDIR += ndpmon
     SUBDIR += nedi
     SUBDIR += nefu
