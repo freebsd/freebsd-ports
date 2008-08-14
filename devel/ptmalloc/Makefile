@@ -6,25 +6,31 @@
 # $FreeBSD$
 
 PORTNAME=	ptmalloc
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
-DISTNAME=	ptmalloc
+DISTNAME=	${PORTNAME}2-current
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Alternative malloc, performs better with threaded applications
+COMMENT=	Alternative threads-aware malloc
 
+USE_GMAKE=	yes
+USE_LD_CONFIG=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}2
 INCDIR=	include/${PORTNAME}
 
 PLIST_SUB=	INCDIR=${INCDIR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's+-pthread+${PTHREAD_LIBS}+g ;'   \
+		${WRKSRC}/Makefile
+
 do-install:	all
 	${MKDIR} ${PREFIX}/${INCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ptmalloc.h ${PREFIX}/${INCDIR}/malloc.h
-	${INSTALL_PROGRAM} ${WRKSRC}/ptmalloc.so ${PREFIX}/lib/libptmalloc.so.1
-	${INSTALL_PROGRAM} ${WRKSRC}/ptmalloc.so ${PREFIX}/lib/libptmalloc.so
-	${INSTALL_PROGRAM} ${WRKSRC}/libptmalloc.a ${PREFIX}/lib/libptmalloc.a
+	${INSTALL_DATA} ${WRKSRC}/malloc.h ${PREFIX}/${INCDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/malloc.so ${PREFIX}/lib/libptmalloc.so.2
+	${LN} -s ${PREFIX}/lib/ptmalloc.so.2 ${PREFIX}/lib/libptmalloc.so
+	${INSTALL_PROGRAM} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc.a
 
 post-install:
 	@${ECHO_CMD}

@@ -1,7 +1,5 @@
 ptmalloc is the original version of the malloc that was later included
-in GNU libc.  Under some circumstances, notably with pthreads and
-excessive calls to realloc, it performs significantly better than
-FreeBSD malloc.  This version is *not* GPL or LGPL:
+in GNU libc.  This version is *not* GPL or LGPL:
 
   Copyright (c) 1999 Wolfram Gloger
   
@@ -24,23 +22,11 @@ FreeBSD malloc.  This version is *not* GPL or LGPL:
   PERFORMANCE OF THIS SOFTWARE.
 
 This is not the latest version: it's older than the one in GNU libc.
-There is a newer version, but it's still marked as "current snapshot".
-It's in /usr/ports/devel/ptmalloc-2/.
 
 This package comes with no documentation beyond a README, which isn't
 worth installing.  It appears that the GNU libc man page malloc(3)
 applies, but it's not included here for copyright reasons.  There's
 nothing unusual about it.  In particular, the section TUNING in
 FreeBSD malloc(3) does not apply.
-
-This library uses the POSIX pthread_atfork() function which was not
-committed to -CURRENT until 10 December 2004.  See PR bin/68841 for
-further details.  To build it on older versions, first install this
-patch, which should be transparent.
-
-In addition to the library, the package contains a couple of test
-cases.  Theoretically they could be run using the FreeBSD libraries,
-but they call the legacy memalign() function, which is not provided by
-FreeBSD.  It may be of interest to fix this issue.
 
 WWW: http://www.malloc.de/en/
