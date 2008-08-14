@@ -7,7 +7,7 @@
 
 PORTNAME=	TracGantt
 PORTVERSION=	0.3.2a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://willbarton.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -16,30 +16,26 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A plugin to creates Gantt charts for trac
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
+NO_BUILD=	yes
 USE_PYTHON=	2.3+
+USE_PYDISTUTILS=yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
+PYDISTUTILS_NOEGGINFO=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	PKG-INFO README
 .endif
 
-do-build:
-	cd ${WRKSRC}; \
-	${PYTHON_CMD} setup.py bdist_egg
+.include <bsd.port.pre.mk>
 
-do-install:
-.for i in *
-	${INSTALL_DATA} ${WRKSRC}/dist/${i} ${PYTHON_SITELIBDIR}/
-.endfor
-
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
