@@ -1,3 +1,69 @@
+%%PYTHON_INCLUDEDIR%%/pygsl/arrayobject.h
+%%PYTHON_INCLUDEDIR%%/pygsl/block_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/block_helpers_numarray.h
+%%PYTHON_INCLUDEDIR%%/pygsl/block_helpers_numeric.h
+%%PYTHON_INCLUDEDIR%%/pygsl/block_helpers_numpy.h
+%%PYTHON_INCLUDEDIR%%/pygsl/compilers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/complex_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/error_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/errorno.h
+%%PYTHON_INCLUDEDIR%%/pygsl/function_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/general_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/intern.h
+%%PYTHON_INCLUDEDIR%%/pygsl/profile.h
+%%PYTHON_INCLUDEDIR%%/pygsl/pygsl.h
+%%PYTHON_INCLUDEDIR%%/pygsl/pygsl_features.h
+%%PYTHON_INCLUDEDIR%%/pygsl/rng.h
+%%PYTHON_INCLUDEDIR%%/pygsl/rng_helpers.h
+%%PYTHON_INCLUDEDIR%%/pygsl/solver.h
+%%PYTHON_INCLUDEDIR%%/pygsl/swig.h
+%%PYTHON_INCLUDEDIR%%/pygsl/utils.h
+%%PYTHON_SITELIBDIR%%/pygsl/_version.py
+%%PYTHON_SITELIBDIR%%/pygsl/_version.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/_version.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/bspline.py
+%%PYTHON_SITELIBDIR%%/pygsl/bspline.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/bspline.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/errno.so
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/__init__.py
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/array_includes.py
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/array_includes.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/array_includes.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_Extension.py
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_Extension.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_Extension.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_site_example.py
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_site_example.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/gsl_site_example.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/swig_extension.py
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/swig_extension.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/swig_extension.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/inittest.so
+%%PYTHON_SITELIBDIR%%/pygsl/multiminimize.py
+%%PYTHON_SITELIBDIR%%/pygsl/multiminimize.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/multiminimize.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/sum.py
+%%PYTHON_SITELIBDIR%%/pygsl/sum.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/sum.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/testing/_ufuncs.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/complex.py
+%%PYTHON_SITELIBDIR%%/pygsl/testing/complex.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/testing/complex.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/testing/minimize.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/multifit_nlin.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/multimin.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/multiroot.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/odeiv.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/roots.so
+%%PYTHON_SITELIBDIR%%/pygsl/testing/sf.py
+%%PYTHON_SITELIBDIR%%/pygsl/testing/sf.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/testing/sf.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/testing/solver.so
+%%PYTHON_SITELIBDIR%%/pygsl/wavelet.py
+%%PYTHON_SITELIBDIR%%/pygsl/wavelet.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/wavelet.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/__block.so
 %%PYTHON_SITELIBDIR%%/pygsl/__callback.so
 %%PYTHON_SITELIBDIR%%/pygsl/__init__.py
@@ -41,7 +107,6 @@
 %%PYTHON_SITELIBDIR%%/pygsl/combination.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/const.so
 %%PYTHON_SITELIBDIR%%/pygsl/deriv.so
-%%PYTHON_SITELIBDIR%%/pygsl/diff.so
 %%PYTHON_SITELIBDIR%%/pygsl/eigen.py
 %%PYTHON_SITELIBDIR%%/pygsl/eigen.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/eigen.pyo
@@ -79,7 +144,6 @@
 %%PYTHON_SITELIBDIR%%/pygsl/math.py
 %%PYTHON_SITELIBDIR%%/pygsl/math.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/math.pyo
-%%PYTHON_SITELIBDIR%%/pygsl/matrix.so
 %%PYTHON_SITELIBDIR%%/pygsl/matrix_pierre.py
 %%PYTHON_SITELIBDIR%%/pygsl/matrix_pierre.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/matrix_pierre.pyo
@@ -141,4 +205,6 @@
 %%PYTHON_SITELIBDIR%%/pygsl/vector.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pygsl/testing
 @dirrm %%PYTHON_SITELIBDIR%%/pygsl/statistics
+@dirrm %%PYTHON_SITELIBDIR%%/pygsl/gsl_dist
 @dirrm %%PYTHON_SITELIBDIR%%/pygsl
+@dirrm %%PYTHON_INCLUDEDIR%%/pygsl
