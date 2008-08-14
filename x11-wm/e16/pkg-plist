@@ -102,6 +102,10 @@ bin/starte16
 %%DATADIR%%/misc/e16.png
 %%DATADIR%%/misc/e16-gnome.desktop
 %%DATADIR%%/misc/e16-kde.desktop
+%%DATADIR%%/misc/e16-dbus-cmd
+%%DATADIR%%/misc/starte16
+%%DATADIR%%/misc/starte16-gnome
+%%DATADIR%%/misc/starte16-kde
 %%DATADIR%%/misc/Xclients.e16.sh
 %%DATADIR%%/misc/Xclients.e16-gnome.sh
 %%DATADIR%%/misc/Xclients.e16-kde.sh
