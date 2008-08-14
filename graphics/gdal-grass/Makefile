@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	gdal-grass
-PORTVERSION=	1.3.1.2
-PORTREVISION=	3
+PORTVERSION=	1.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gdal.org/dl/ \
 		ftp://ftp.remotesensing.org/gdal/ \
 		http://gdal.maptools.org/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	GDAL drivers for GRASS raster and vector files
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
-BUILD_DEPENDS=	grass>=0:${PORTSDIR}/databases/grass
-RUN_DEPENDS=	grass>=0:${PORTSDIR}/databases/grass
+BUILD_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
+RUN_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 
 GRASS_INST_DIR=	grass
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.3.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gdal=${LOCALBASE}/bin/gdal-config \
