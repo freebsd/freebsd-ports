@@ -23,6 +23,8 @@ EXTRACT_ONLY=	dungn27s.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text adventure game of ZORK
 
+BROKNE=		does not package
+
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 #WRKSRC=		${WRKDIR}/${DISTNAME}
