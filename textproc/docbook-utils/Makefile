@@ -7,20 +7,21 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
-BUILD_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade \
-		${LOCALBASE}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
-		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
-RUN_DEPENDS+=	${LOCALBASE}/share/texmf/tex/jadetex/dsssl.def:${PORTSDIR}/print/jadetex \
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
+		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		nsgmls:${PORTSDIR}/textproc/jade
+RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		${LOCALBASE}/share/texmf/tex/jadetex/dsssl.def:${PORTSDIR}/print/jadetex \
+		nsgmls:${PORTSDIR}/textproc/jade \
 		sgmlspl:${PORTSDIR}/textproc/p5-SGMLSpm \
-    		jade:${PORTSDIR}/textproc/jade \
 		lynx:${PORTSDIR}/www/lynx
 
 USE_PERL5_RUN=	yes
@@ -44,8 +45,12 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-	 @${REINPLACE_CMD} -e '254 s/install-htmlDATA//' \
+	@${REINPLACE_CMD} -e 's|/etc/sgml/catalog|${PREFIX}/share/sgml/catalog|g' \
 		${WRKSRC}/doc/HTML/Makefile.in
+	@${REINPLACE_CMD} -e 's|/etc/sgml|${LOCALBASE}/share/sgml|g' \
+			-e 's|/usr/bin/|${LOCALBASE}/bin/|g' \
+			${WRKSRC}/doc/refentry/*.sgml \
+			${WRKSRC}/backends/txt
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
