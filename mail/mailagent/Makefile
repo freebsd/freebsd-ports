@@ -12,7 +12,7 @@ CATEGORIES=		mail
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/RAM
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated automatic mail-processing tool
 
 USE_PERL5=	yes
