@@ -218,14 +218,6 @@
 #  Do not install Vlc's Documents
 #
 
-pre-everything::
-.if exists(${LOCALBASE}/lib/libswscale.so)
-	@${ECHO_CMD}
-	@${ECHO_CMD} 'VLC cannot find ffmpeg if it has been built with the software scaler,'
-	@${ECHO_CMD} 'be sure to not define WITH_SWSCALER to build it.'
-	@${ECHO_CMD}
-.endif
-
 post-extract:
 # remove badly formatted pre-generated messages catalogs
 	${FIND} ${WRKSRC} -name "*.gmo" -delete
