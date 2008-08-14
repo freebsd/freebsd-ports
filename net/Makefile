@@ -999,6 +999,7 @@
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
     SUBDIR += wistumbler2
+    SUBDIR += wizd
     SUBDIR += wmlj
     SUBDIR += wmnd
     SUBDIR += wmnet
