@@ -26,6 +26,8 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
 
+BROKEN=		does not build
+
 USE_GNOME=	gnomehack gnometarget glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
