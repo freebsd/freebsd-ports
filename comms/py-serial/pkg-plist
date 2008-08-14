@@ -1,21 +1,9 @@
-%%PYTHON_SITELIBDIR%%/serial/__init__.py
-%%PYTHON_SITELIBDIR%%/serial/__init__.pyc
-%%PYTHON_SITELIBDIR%%/serial/__init__.pyo
-%%PYTHON_SITELIBDIR%%/serial/serialjava.py
-%%PYTHON_SITELIBDIR%%/serial/serialjava.pyc
-%%PYTHON_SITELIBDIR%%/serial/serialjava.pyo
-%%PYTHON_SITELIBDIR%%/serial/serialposix.py
-%%PYTHON_SITELIBDIR%%/serial/serialposix.pyc
-%%PYTHON_SITELIBDIR%%/serial/serialposix.pyo
-%%PYTHON_SITELIBDIR%%/serial/serialutil.py
-%%PYTHON_SITELIBDIR%%/serial/serialutil.pyc
-%%PYTHON_SITELIBDIR%%/serial/serialutil.pyo
-%%PYTHON_SITELIBDIR%%/serial/serialwin32.py
-%%PYTHON_SITELIBDIR%%/serial/serialwin32.pyc
-%%PYTHON_SITELIBDIR%%/serial/serialwin32.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhancedserial.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/miniterm.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scanwin32.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup-miniterm-py2exe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_serial_redirect.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.py
@@ -26,4 +14,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.wxg
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/serial
