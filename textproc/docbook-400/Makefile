@@ -47,6 +47,7 @@ do-install:
 	for i in $${files}; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
 	done
+	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/${DTDDIR}
 	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${PREFIX}/${DTDDIR}/catalog
 
 post-install:

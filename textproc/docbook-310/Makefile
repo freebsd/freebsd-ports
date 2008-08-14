@@ -9,7 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/sgml/3.1/
 DISTNAME=	docbk31
@@ -48,6 +48,7 @@ do-install:
 	for i in $${files}; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
 	done
+	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/${DTDDIR}
 	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${PREFIX}/${DTDDIR}/catalog
 
 post-install:

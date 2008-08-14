@@ -9,6 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/2.4.1/
@@ -47,6 +48,7 @@ do-install:
 	for i in $${files}; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
 	done
+	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/${DTDDIR}
 	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${PREFIX}/${DTDDIR}/catalog
 
 post-install:
