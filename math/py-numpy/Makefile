@@ -7,6 +7,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.1.1
+PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
