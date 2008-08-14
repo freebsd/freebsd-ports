@@ -21,6 +21,8 @@ LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
