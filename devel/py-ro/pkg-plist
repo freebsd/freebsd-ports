@@ -1,12 +1,12 @@
-bin/es
-bin/esd
-bin/genguid
-bin/ns
-bin/nsc
-bin/nsd
-bin/rns
-bin/wxnsc
-bin/xnsc
+bin/pyro-es
+bin/pyro-esd
+bin/pyro-genguid
+bin/pyro-ns
+bin/pyro-nsc
+bin/pyro-nsd
+bin/pyro-rns
+bin/pyro-wxnsc
+bin/pyro-xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.py
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyo
@@ -92,6 +92,8 @@ bin/xnsc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/PyroManual.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pyromanual.css
+%%PORTDOCS%%%%DOCSDIR%%/pyromanual_print.css
 %%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/allinone_ownloop.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/allinone_threads.py
@@ -130,7 +132,6 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/ShoppingAgent.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/__init__.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/agent3/agent/base.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/serv/shop1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/agent3/serv/shop2.py
@@ -190,6 +191,11 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/md5crack.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/sorting.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing/tasks/task.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing2/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing2/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing2/dispatcher.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing2/worker.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/distributed-computing2/workitem.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/excep.py
@@ -235,14 +241,9 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/object.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/pyrorun
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/server.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/example-a.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/example-b.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/exlib.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/rserve-broker.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/rserve.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/client_thread.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/tst.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/Readme.txt
@@ -250,26 +251,6 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/client.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/server.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/ca-cert.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/host.key
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.attr
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.attr.old
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/index.old
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcerts/01.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcerts/02.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/openssl.cnf
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/private/ca-key.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.cert
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.csr
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/client.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/host.key
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.cert
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.csr
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/requests/server.pem
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/serial
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/serial.old
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/MClient.py
@@ -280,22 +261,81 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/naming.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/producer.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testclient.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/clientparams/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/clientparams/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/server/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/server/serverparams/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/bothways/server/serverparams/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/client2server/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/client2server/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/client2server/params/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/client2server/params/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/client2server/server/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/params/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/params/base.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/params/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/server/answers/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/server/answers/answer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/server/answers/base.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/imports/server/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/params/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/params/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/server/server1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/passon/server/server2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/server2client/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/server2client/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/server2client/server/params/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/server2client/server/params/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testmobile/server2client/server/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testserver.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/params/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/params/parameters.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/server/outparams.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadmobile/server/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/timeout/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/timeout/timeout.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/timeout/timeout2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/connvalidator.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/server.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/user_passwd_auth
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/timeout
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/threadmobile/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/threadmobile/params
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/threadmobile
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/server2client/server/params
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/server2client/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/server2client
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/passon/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/passon/params
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/passon
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/imports/server/answers
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/imports/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/imports/params
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/imports
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/client2server/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/client2server/params
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/client2server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/bothways/server/serverparams
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/bothways/server
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/bothways/clientparams
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile/bothways
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/testmobile
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stresstest
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stockquotes
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/requests
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/private
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/newcerts
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/certs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rserve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/oneway
@@ -309,6 +349,7 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filetransfer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/factory
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/exceptions
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing2
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing/tasks
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing/cell
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/distributed-computing
