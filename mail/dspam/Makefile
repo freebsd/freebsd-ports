@@ -468,7 +468,7 @@ pre-everything::
 .endif
 
 pre-extract:	check-options-version
-	@${ECHO_CMD} "testing 1 2 3 ..."
+	@${ECHO_CMD} "testing 4 5 6 ..."
 	@${FALSE}
 .ifndef(MAINT)
 	@${ECHO_CMD} ""
