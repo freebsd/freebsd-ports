@@ -1,11 +1,13 @@
-===============================================================================
+==============================================================================
 
-In contrast to Linux it is not necessary to use airmon-ng to enable the monitor
-mode of your wireless card. So do not care about what the manpages say about
-airmon-ng. airodump-ng sets monitor mode automatically.
-To return from monitor mode use:
-ifconfig ${INTERFACE} -mediaopt monitor
+Contrary to Linux, it is not necessary to use airmon-ng to enable the monitor
+mode of your wireless card.  So do not care about what the manpages say about
+airmon-ng, airodump-ng sets monitor mode automatically.
 
-For aireplay-ng you need FreeBSD >= 7.0
+To return from monitor mode, issue the following command:
 
-===============================================================================
+	ifconfig ${INTERFACE} -mediaopt monitor
+
+For aireplay-ng you need FreeBSD >= 7.0.
+
+==============================================================================
