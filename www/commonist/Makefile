@@ -13,6 +13,8 @@ MASTER_SITES=	http://djini.de/software/commonist/
 MAINTAINER=	saper@SYSTEM.PL
 COMMENT=	Easy upload of images to Wikimedia Commons and Mediawiki
 
+BROKEN=		does not extract
+
 TARGET_JAR=	${JAVAJARDIR}/${PORTNAME}.jar
 USE_ZIP=	yes
 USE_JAVA=	1.5+
