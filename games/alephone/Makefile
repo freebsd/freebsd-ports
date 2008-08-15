@@ -18,6 +18,8 @@ COMMENT=	The open source version of Bungie's Marathon game
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
+BROKEN=		does not build with speex-1.2rc1
+
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget
