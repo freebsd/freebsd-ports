@@ -219,7 +219,6 @@ bin/xscreensaver-hacks/xlyap
 bin/xscreensaver-hacks/xmatrix
 bin/xscreensaver-hacks/xrayswarm
 bin/xscreensaver-hacks/xspirograph
-bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
 %%PAM%%etc/pam.d/xscreensaver
@@ -291,7 +290,6 @@ share/xscreensaver/config/circuit.xml
 share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
-share/xscreensaver/config/cosmos.xml
 share/xscreensaver/config/crackberg.xml
 share/xscreensaver/config/critical.xml
 share/xscreensaver/config/crystal.xml
@@ -309,7 +307,6 @@ share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
-share/xscreensaver/config/electricsheep.xml
 share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
@@ -318,7 +315,6 @@ share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
-share/xscreensaver/config/fireflies.xml
 share/xscreensaver/config/fireworkx.xml
 share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
@@ -347,7 +343,6 @@ share/xscreensaver/config/glschool.xml
 share/xscreensaver/config/glslideshow.xml
 share/xscreensaver/config/glsnake.xml
 share/xscreensaver/config/gltext.xml
-share/xscreensaver/config/goban.xml
 share/xscreensaver/config/goop.xml
 share/xscreensaver/config/grav.xml
 share/xscreensaver/config/greynetic.xml
@@ -436,7 +431,6 @@ share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
 share/xscreensaver/config/sphere.xml
-share/xscreensaver/config/sphereeversion.xml
 share/xscreensaver/config/spheremonics.xml
 share/xscreensaver/config/spiral.xml
 share/xscreensaver/config/spotlight.xml
@@ -469,16 +463,11 @@ share/xscreensaver/config/whirlygig.xml
 share/xscreensaver/config/worm.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
-share/xscreensaver/config/xaos.xml
-share/xscreensaver/config/xdaliclock.xml
 share/xscreensaver/config/xflame.xml
 share/xscreensaver/config/xjack.xml
 share/xscreensaver/config/xlyap.xml
 share/xscreensaver/config/xmatrix.xml
-share/xscreensaver/config/xmountains.xml
-share/xscreensaver/config/xplanet.xml
 share/xscreensaver/config/xrayswarm.xml
-share/xscreensaver/config/xsnow.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
 @dirrm share/xscreensaver/config

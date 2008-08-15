@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	xscreensaver-gnome
-PORTVERSION=	5.06
-PORTREVISION?=	1
+PORTVERSION=	5.07
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
