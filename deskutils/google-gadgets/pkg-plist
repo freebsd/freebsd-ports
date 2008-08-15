@@ -1,4 +1,5 @@
-bin/ggl-gtk
+%%GTK%%bin/ggl-gtk
+%%QT%%bin/ggl-qt
 include/google-gadgets/ggadget/anchor_element.h
 include/google-gadgets/ggadget/audioclip_interface.h
 include/google-gadgets/ggadget/backoff.h
@@ -38,15 +39,15 @@ include/google-gadgets/ggadget/gadget.h
 include/google-gadgets/ggadget/gadget_consts.h
 include/google-gadgets/ggadget/gadget_manager_interface.h
 include/google-gadgets/ggadget/graphics_interface.h
-include/google-gadgets/ggadget/gtk/cairo_graphics.h
-include/google-gadgets/ggadget/gtk/hotkey.h
-include/google-gadgets/ggadget/gtk/key_convert.h
-include/google-gadgets/ggadget/gtk/main_loop.h
-include/google-gadgets/ggadget/gtk/menu_builder.h
-include/google-gadgets/ggadget/gtk/single_view_host.h
-include/google-gadgets/ggadget/gtk/tooltip.h
-include/google-gadgets/ggadget/gtk/utilities.h
-include/google-gadgets/ggadget/gtk/view_widget_binder.h
+%%GTK%%include/google-gadgets/ggadget/gtk/cairo_graphics.h
+%%GTK%%include/google-gadgets/ggadget/gtk/hotkey.h
+%%GTK%%include/google-gadgets/ggadget/gtk/key_convert.h
+%%GTK%%include/google-gadgets/ggadget/gtk/main_loop.h
+%%GTK%%include/google-gadgets/ggadget/gtk/menu_builder.h
+%%GTK%%include/google-gadgets/ggadget/gtk/single_view_host.h
+%%GTK%%include/google-gadgets/ggadget/gtk/tooltip.h
+%%GTK%%include/google-gadgets/ggadget/gtk/utilities.h
+%%GTK%%include/google-gadgets/ggadget/gtk/view_widget_binder.h
 include/google-gadgets/ggadget/host_interface.h
 include/google-gadgets/ggadget/image_cache.h
 include/google-gadgets/ggadget/image_interface.h
@@ -69,6 +70,12 @@ include/google-gadgets/ggadget/module.h
 include/google-gadgets/ggadget/object_element.h
 include/google-gadgets/ggadget/options_interface.h
 include/google-gadgets/ggadget/progressbar_element.h
+%%QT%%include/google-gadgets/ggadget/qt/qt_graphics.h
+%%QT%%include/google-gadgets/ggadget/qt/qt_main_loop.h
+%%QT%%include/google-gadgets/ggadget/qt/qt_menu.h
+%%QT%%include/google-gadgets/ggadget/qt/qt_view_host.h
+%%QT%%include/google-gadgets/ggadget/qt/qt_view_widget.h
+%%QT%%include/google-gadgets/ggadget/qt/utilities.h
 include/google-gadgets/ggadget/registerable_interface.h
 include/google-gadgets/ggadget/run_once.h
 include/google-gadgets/ggadget/scoped_ptr.h
@@ -110,7 +117,7 @@ include/google-gadgets/ggadget/xml_http_request_interface.h
 include/google-gadgets/ggadget/xml_parser_interface.h
 include/google-gadgets/ggadget/xml_utils.h
 include/google-gadgets/ggadget/zip_file_manager.h
-lib/google-gadgets/gtkmoz-browser-child
+%%GTK%%lib/google-gadgets/gtkmoz-browser-child
 lib/google-gadgets/include/ggadget/sysdeps.h
 lib/google-gadgets/modules/curl-xml-http-request.a
 lib/google-gadgets/modules/curl-xml-http-request.la
@@ -133,18 +140,33 @@ lib/google-gadgets/modules/gst-audio-framework.so
 lib/google-gadgets/modules/gst-mediaplayer-element.a
 lib/google-gadgets/modules/gst-mediaplayer-element.la
 lib/google-gadgets/modules/gst-mediaplayer-element.so
-lib/google-gadgets/modules/gtk-edit-element.a
-lib/google-gadgets/modules/gtk-edit-element.la
-lib/google-gadgets/modules/gtk-edit-element.so
-lib/google-gadgets/modules/gtk-system-framework.a
-lib/google-gadgets/modules/gtk-system-framework.la
-lib/google-gadgets/modules/gtk-system-framework.so
-lib/google-gadgets/modules/gtkmoz-browser-element.a
-lib/google-gadgets/modules/gtkmoz-browser-element.la
-lib/google-gadgets/modules/gtkmoz-browser-element.so
+%%GTK%%lib/google-gadgets/modules/gtk-edit-element.a
+%%GTK%%lib/google-gadgets/modules/gtk-edit-element.la
+%%GTK%%lib/google-gadgets/modules/gtk-edit-element.so
+%%GTK%%lib/google-gadgets/modules/gtk-system-framework.a
+%%GTK%%lib/google-gadgets/modules/gtk-system-framework.la
+%%GTK%%lib/google-gadgets/modules/gtk-system-framework.so
+%%GTK%%lib/google-gadgets/modules/gtkmoz-browser-element.a
+%%GTK%%lib/google-gadgets/modules/gtkmoz-browser-element.la
+%%GTK%%lib/google-gadgets/modules/gtkmoz-browser-element.so
 lib/google-gadgets/modules/libxml2-xml-parser.a
 lib/google-gadgets/modules/libxml2-xml-parser.la
 lib/google-gadgets/modules/libxml2-xml-parser.so
+%%QT%%lib/google-gadgets/modules/qt-edit-element.a
+%%QT%%lib/google-gadgets/modules/qt-edit-element.la
+%%QT%%lib/google-gadgets/modules/qt-edit-element.so
+%%QT%%lib/google-gadgets/modules/qt-script-runtime.a
+%%QT%%lib/google-gadgets/modules/qt-script-runtime.la
+%%QT%%lib/google-gadgets/modules/qt-script-runtime.so
+%%QT%%lib/google-gadgets/modules/qt-system-framework.a
+%%QT%%lib/google-gadgets/modules/qt-system-framework.la
+%%QT%%lib/google-gadgets/modules/qt-system-framework.so
+%%QT%%lib/google-gadgets/modules/qt-xml-http-request.a
+%%QT%%lib/google-gadgets/modules/qt-xml-http-request.la
+%%QT%%lib/google-gadgets/modules/qt-xml-http-request.so
+%%QT%%lib/google-gadgets/modules/qtwebkit-browser-element.a
+%%QT%%lib/google-gadgets/modules/qtwebkit-browser-element.la
+%%QT%%lib/google-gadgets/modules/qtwebkit-browser-element.so
 lib/google-gadgets/modules/smjs-script-runtime.a
 lib/google-gadgets/modules/smjs-script-runtime.la
 lib/google-gadgets/modules/smjs-script-runtime.so
@@ -156,19 +178,25 @@ lib/libggadget-dbus-1.0.a
 lib/libggadget-dbus-1.0.la
 lib/libggadget-dbus-1.0.so
 lib/libggadget-dbus-1.0.so.0
-lib/libggadget-gtk-1.0.a
-lib/libggadget-gtk-1.0.la
-lib/libggadget-gtk-1.0.so
-lib/libggadget-gtk-1.0.so.0
+%%GTK%%lib/libggadget-gtk-1.0.a
+%%GTK%%lib/libggadget-gtk-1.0.la
+%%GTK%%lib/libggadget-gtk-1.0.so
+%%GTK%%lib/libggadget-gtk-1.0.so.0
 lib/libggadget-js-1.0.a
 lib/libggadget-js-1.0.la
 lib/libggadget-js-1.0.so
 lib/libggadget-js-1.0.so.0
+%%QT%%lib/libggadget-qt-1.0.a
+%%QT%%lib/libggadget-qt-1.0.la
+%%QT%%lib/libggadget-qt-1.0.so
+%%QT%%lib/libggadget-qt-1.0.so.0
 libdata/pkgconfig/libggadget-1.0.pc
 libdata/pkgconfig/libggadget-dbus-1.0.pc
-libdata/pkgconfig/libggadget-gtk-1.0.pc
+%%GTK%%libdata/pkgconfig/libggadget-gtk-1.0.pc
 libdata/pkgconfig/libggadget-js-1.0.pc
-share/applications/ggl-gtk.desktop
+%%QT%%libdata/pkgconfig/libggadget-qt-1.0.pc
+%%GTK%%share/applications/ggl-gtk.desktop
+%%QT%%share/applications/ggl-qt.desktop
 %%DATADIR%%/analog_clock.gg
 %%DATADIR%%/digital_alarm_clock.gg
 %%DATADIR%%/google-gadget-browser.gg
@@ -176,17 +204,19 @@ share/applications/ggl-gtk.desktop
 %%DATADIR%%/resources.gg
 %%DATADIR%%/rss.gg
 share/mime/packages/00-google-gadgets.xml
-share/mime/application/x-google-gadgets.xml
 share/pixmaps/google-gadgets.png
-@dirrm share/mime/packages
 @dirrm %%DATADIR%%
 @dirrm lib/google-gadgets/modules
 @dirrm lib/google-gadgets/include/ggadget
 @dirrm lib/google-gadgets/include
 @dirrm lib/google-gadgets
+%%QT%%@dirrm include/google-gadgets/ggadget/qt
 @dirrm include/google-gadgets/ggadget/js
-@dirrm include/google-gadgets/ggadget/gtk
+%%GTK%%@dirrm include/google-gadgets/ggadget/gtk
 @dirrm include/google-gadgets/ggadget/dbus
 @dirrm include/google-gadgets/ggadget
 @dirrm include/google-gadgets
-@dirrmtry share/mime/application
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
