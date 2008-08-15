@@ -28,6 +28,8 @@ USE_XORG=	xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 
+ONLY_FOR_ARCHS=	i386
+
 OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method" on \
 		QT_IM_MODULE	"enable QT IM module" on
 
