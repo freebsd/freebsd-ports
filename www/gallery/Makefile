@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTVERSION=	1.5.8
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
 DIST_SUBDIR=	gallery
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
@@ -68,10 +67,10 @@ PLIST_SUB=		NLS=""
 PLIST_SUB=		NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 PORTDOCS=	AUTHORS ChangeLog README
-EXCEPTFILES=	${PORTDOCS} LICENSE.txt
+EXCEPTFILES=	${PORTDOCS} LICENSE.txt gallery
 CPIOARGS=	--quiet -pdum -R
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -90,7 +89,7 @@ do-extract:
 	@ ${INSTALL} -d ${WRKDIR}
 	@ cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 	@ for i in ${LANGPACKS}; do \
-		if ! (cd ${WRKDIR}/gallery/locale && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/$$i ${EXTRACT_AFTER_ARGS});\
+		if ! (cd ${WRKSRC}/locale && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/$$i ${EXTRACT_AFTER_ARGS});\
 		then \
 			exit 1; \
 		fi \
