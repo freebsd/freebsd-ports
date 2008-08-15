@@ -59,21 +59,20 @@ PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||} \
 		PIXMAPSDIR=${PIXMAPSDIR:S|^${PREFIX}/||}
 
-# building with gcc 4.2 results in libKernel.a becoming 800+ MB
-# and hitting the 400 MB file limit on pointyhat
-NO_PACKAGE=	yes
+ONLY_FOR_ARCHS= i386 amd64 powerpc
+ONLY_FOR_ARCHS_REASON=	does not configure due to the lack of CDraw libraries for ${ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
-BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
-.endif
-
 .if ${OSVERSION} < 700036
-# we're using dlmalloc because the stock libc does not have malloc_usable_size()
-LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
-MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
+# we're using ptmalloc because the stock libc does not have malloc_usable_size()
+LIB_DEPENDS+=	ptmalloc.2:${PORTSDIR}/devel/ptmalloc
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
+MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include/ptmalloc"
+.else
+# building with gcc 4.2 results in libKernel.a becoming 800+ MB
+# and hitting the 400 MB file limit on pointyhat
+NO_PACKAGE=	yes
 .endif
 
 post-patch:
