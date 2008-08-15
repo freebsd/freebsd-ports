@@ -1,5 +1,4 @@
 bin/rdiff-backup
-bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/C.so
 %%PYTHON_SITELIBDIR%%/rdiff_backup/FilenameMapping.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/FilenameMapping.pyc
@@ -35,9 +34,6 @@ bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/backup.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/backup.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/backup.pyo
-%%PYTHON_SITELIBDIR%%/rdiff_backup/compare.py
-%%PYTHON_SITELIBDIR%%/rdiff_backup/compare.pyc
-%%PYTHON_SITELIBDIR%%/rdiff_backup/compare.pyo
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/connection.pyo
@@ -47,9 +43,6 @@ bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/fs_abilities.pyo
-%%PYTHON_SITELIBDIR%%/rdiff_backup/hash.py
-%%PYTHON_SITELIBDIR%%/rdiff_backup/hash.pyc
-%%PYTHON_SITELIBDIR%%/rdiff_backup/hash.pyo
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/increment.pyo
@@ -65,9 +58,6 @@ bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.pyo
-%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.py
-%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.pyc
-%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.pyo
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.pyo
@@ -101,9 +91,6 @@ bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/user_group.pyo
-%%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.py
-%%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.pyc
-%%PYTHON_SITELIBDIR%%/rdiff_backup/win_acls.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html

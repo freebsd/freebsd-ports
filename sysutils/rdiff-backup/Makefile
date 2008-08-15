@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
@@ -22,17 +21,19 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 
-CONFLICTS=	rdiff-backup-devel-[0-9]*
+CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup10-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-MAN1=		rdiff-backup.1
+MAN1=		rdiff-backup.1 rdiff-backup-statistics.1
 
 DOCFILES=	CHANGELOG README COPYING FAQ.html
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/rdiff-backup.1 ${PREFIX}/man/man1
+.for man in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${man} ${PREFIX}/man/man1
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
