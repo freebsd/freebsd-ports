@@ -1515,6 +1515,7 @@
     SUBDIR += xpi-jsview
     SUBDIR += xpi-leechblock
     SUBDIR += xpi-linkification
+    SUBDIR += xpi-live_http_headers
     SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-menueditor
     SUBDIR += xpi-mldonkey
