@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.kernel.org/pub/linux/libs/pam/pre/doc/
 DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 
-MAINTAINER=	rushani@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-PAM offline documentation
 
 NO_WRKSUBDIR=	yes
