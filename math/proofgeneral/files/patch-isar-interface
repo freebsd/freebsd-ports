@@ -1,0 +1,11 @@
+--- isar/interface.orig	2008-07-29 13:22:58.000000000 +1000
++++ isar/interface	2008-07-29 13:25:10.000000000 +1000
+@@ -60,7 +60,7 @@
+ GEOMETRY=""
+ KEYWORDS=""
+ LOGIC="$ISABELLE_LOGIC"
+-PROGNAME="emacs"
++PROGNAME="%%EMACS_NAME%%"
+ INITFILE="true"
+ WINDOWSYSTEM="true"
+ XSYMBOL=""
