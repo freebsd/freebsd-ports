@@ -1,4 +1,5 @@
 %%XPI_XPIDIR%%/chrome/content/yslow/component.js
+%%XPI_XPIDIR%%/chrome/content/yslow/env.js
 %%XPI_XPIDIR%%/chrome/content/yslow/fulljslint.js
 %%XPI_XPIDIR%%/chrome/content/yslow/jslintwrapper.js
 %%XPI_XPIDIR%%/chrome/content/yslow/lint.js
