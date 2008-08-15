@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	mailx
-PORTVERSION=	12.3
+PORTVERSION=	12.4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	heirloom
 PKGNAMEPREFIX=	${MASTER_SITE_SUBDIR}-
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
+COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP and S/MIME extensions
+
+OPTIONS=	IPV6	"Enable IPv6 Support"	On
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -22,8 +24,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \
 		SENDMAIL="/usr/sbin/sendmail" \
 		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		IPv6="-DHAVE_IPv6_FUNCS"
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
@@ -35,6 +36,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IPV6)
+MAKE_ARGS+=	IPv6="-DHAVE_IPv6_FUNCS"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -50,4 +57,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
