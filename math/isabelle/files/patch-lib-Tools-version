@@ -1,8 +1,0 @@
---- lib/Tools/version.orig	Sat Jan 12 16:57:34 2008
-+++ lib/Tools/version	Sat Jan 12 17:03:48 2008
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- #
- # $Id: version,v 1.2 2004/06/21 08:25:57 kleing Exp $
- # Author: Stefan Berghofer, TU Muenchen

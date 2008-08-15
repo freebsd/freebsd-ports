@@ -1,6 +1,6 @@
---- etc/settings.orig	Sat Jan 12 16:47:09 2008
-+++ etc/settings	Sat Jan 12 16:56:24 2008
-@@ -16,60 +16,27 @@
+--- etc/settings.orig	2008-07-28 15:10:38.000000000 +1000
++++ etc/settings	2008-07-28 15:22:08.000000000 +1000
+@@ -16,70 +16,36 @@
  # not invent new ML system names unless you know what you are doing.
  # Only one of the sections below should be activated.
  
@@ -15,7 +15,7 @@
 -  "/opt/polyml/$ML_PLATFORM" \
 -  $POLY_HOME)
 -ML_SYSTEM=$("$ISABELLE_HOME/lib/scripts/polyml-version")
--ML_OPTIONS="-H 500"
+-ML_OPTIONS="-H 200"
 -ML_DBASE=""
 -
 -# Poly/ML 5.1
@@ -69,7 +69,18 @@
  #ML_OPTIONS="-noinit"
  #ML_SUFFIX=".psv"
  #ML_PLATFORM=""
-@@ -155,7 +122,7 @@
+ 
+-
+ ###
+ ### Interactive sessions (cf. isatool tty)
+ ###
+ 
+-ISABELLE_LINE_EDITOR=""
++ISABELLE_LINE_EDITOR="%%LINE_EDIT%%"
+ [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p rlwrap)"
+ [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p ledit)"
+ 
+@@ -154,7 +120,7 @@
  ###
  
  # Where to look for docs (multiple dirs separated by ':').
@@ -78,15 +89,29 @@
  
  # Preferred document format
  ISABELLE_DOC_FORMAT=pdf
-@@ -190,6 +157,7 @@
+@@ -189,6 +155,8 @@
  
  # Proof General path, look in a variety of places
  ISABELLE_INTERFACE=$(choosefrom \
++  "%%PREFIX%%/lib/xemacs/site-lisp/ProofGeneral/isar/interface" \
 +  "%%PREFIX%%/bin/proofgeneral" \
    "$ISABELLE_HOME/contrib/ProofGeneral/isar/interface" \
    "$ISABELLE_HOME/../ProofGeneral/isar/interface" \
    "/usr/local/ProofGeneral/isar/interface" \
-@@ -223,26 +191,26 @@
+@@ -211,9 +179,9 @@
+ ## Set HOME only for tools you have installed!
+ 
+ # External provers
+-E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "/usr/local/E" "")
+-VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "/usr/local/Vampire" "")
+-SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "/usr/local/SPASS" "")
++E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "%%PREFIX%%/E" "")
++VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "%%PREFIX%%/Vampire" "")
++SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "%%PREFIX%%/SPASS" "")
+ 
+ # HOL4 proof objects (cf. Isabelle/src/HOL/Import)
+ #HOL4_PROOFS="$ISABELLE_HOME_USER/proofs:$ISABELLE_HOME/proofs"
+@@ -224,26 +192,26 @@
  #SVC_MACHINE=sparc-sun-solaris
  
  # Mucke (mu-calculus model checker)
@@ -119,13 +144,3 @@
  
  # For configuring HOL/Matrix/cplex
  # LP_SOLVER is the default solver. It can be changed during runtime via Cplex.set_solver.
-@@ -254,6 +222,6 @@
- #GLPK_PATH=glpsol
- 
- # External provers
--E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "/usr/local/E" "")
--VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "/usr/local/Vampire" "")
--SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "/usr/local/SPASS" "")
-+E_HOME=$(choosefrom "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" "%%PREFIX%%/E" "")
-+VAMPIRE_HOME=$(choosefrom "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" "%%PREFIX%%/Vampire" "")
-+SPASS_HOME=$(choosefrom "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" "%%PREFIX%%/SPASS" "")
