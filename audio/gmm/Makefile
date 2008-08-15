@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmm
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.15
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -15,20 +15,29 @@ MAINTAINER=	sklauder@trimind.de
 COMMENT=	Music collection manager and player
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
+LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\
 		xine.1:${PORTSDIR}/multimedia/libxine		\
 		tag.6:${PORTSDIR}/audio/taglib			\
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+		sqlite3.8:${PORTSDIR}/databases/sqlite3		\
+		dbus-1:${PORTSDIR}/devel/dbus			\
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gtk20
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	README AUTHORS
-PLIST_FILES=	bin/gmm                         \
-		share/pixmaps/gmm.png
+PLIST_DIRS=	share/applications
+PLIST_FILES=	bin/gmm						\
+		bin/gmm-tray					\
+		share/applications/gmm.desktop			\
+		share/icons/hicolor/24x24/apps/gmm-tray.png	\
+		share/icons/hicolor/48x48/apps/gmm.png  \
+		share/icons/hicolor/48x48/apps/gmm-tray.png
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	OPT_CFLAGS=" "
 
 .include <bsd.port.pre.mk>
@@ -37,14 +46,17 @@ CONFIGURE_ENV=	OPT_CFLAGS=" "
 CONFIGURE_ARGS+=--without-new-remote
 .endif
 
-.if defined(WITH_DBUS)
-CONFIGURE_ARGS+=--with-dbus
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-.endif
-
 post-extract:
 	${REINPLACE_CMD} -i '' -e "s|/bin/bash|${PREFIX}/bin/bash|" \
 		${WRKSRC}/configure
+
+post-configure:
+	${REINPLACE_CMD} -i '' -e 's|-D -m|-m|' \
+		${WRKSRC}/Makefile
+
+pre-install:
+	[ -d ${PREFIX}/share/applications ] ||	\
+	    ${MKDIR} ${PREFIX}/share/applications
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -53,6 +65,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 . endfor
 .endif
-	${INSTALL_DATA} ${WRKSRC}/extra/gmm.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.post.mk>
