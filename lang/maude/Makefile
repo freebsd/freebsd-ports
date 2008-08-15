@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	maude
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
@@ -20,20 +19,20 @@ LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 		gmp:${PORTSDIR}/math/libgmp4
 
 USE_BISON=	build
+USE_AUTOTOOLS= aclocal:19 automake:19
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
-		${WRKSRC}/src/Mixfix/main.cc
+		${WRKSRC}/src/Mixfix/global.hh
+
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
 BROKEN=		does not compile on 4.X or 5.X
-.elif ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .include <bsd.port.post.mk>

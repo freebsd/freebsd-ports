@@ -1,6 +1,8 @@
 bin/maude
 %%DATADIR%%/linear.maude
+%%DATADIR%%/machine-int.maude
 %%DATADIR%%/model-checker.maude
 %%DATADIR%%/prelude.maude
 %%DATADIR%%/socket.maude
+%%DATADIR%%/term-order.maude
 @dirrm %%DATADIR%%

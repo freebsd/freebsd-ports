@@ -1,0 +1,35 @@
+--- src/Mixfix/global.hh.orig	2008-08-11 02:03:45.000000000 +0200
++++ src/Mixfix/global.hh	2008-08-11 02:04:25.000000000 +0200
+@@ -36,6 +36,7 @@
+ 
+ #define PRELUDE_NAME	"prelude.maude"
+ #define MAUDE_LIB	"MAUDE_LIB"
++#define MAUDE_DATA_DIR	"%%DATADIR%%"
+ 
+ bool
+ findPrelude(string& directory, string& fileName);
+--- src/Mixfix/global.cc.orig	2008-08-11 01:48:58.000000000 +0200
++++ src/Mixfix/global.cc	2008-08-11 01:53:15.000000000 +0200
+@@ -81,6 +81,8 @@
+       directory = ".";
+       if (directoryManager.checkAccess(directory, fileName, R_OK, ext))
+ 	return true;
++      if (directoryManager.checkAccess(MAUDE_DATA_DIR, fileName, R_OK,  ext))
++	return true;
+       if (directoryManager.searchPath(MAUDE_LIB, directory, fileName, R_OK, ext))
+ 	return true;
+       if (!(executableDirectory.empty()) &&
+--- src/Main/main.cc.orig	2008-08-11 01:48:40.000000000 +0200
++++ src/Main/main.cc	2008-08-11 01:55:01.000000000 +0200
+@@ -267,6 +267,11 @@
+       directory = executableDirectory;
+       return true;
+     }
++  if (directoryManager.checkAccess(MAUDE_DATA_DIR, fileName, R_OK))
++    {
++      directory = MAUDE_DATA_DIR;
++      return true;
++    }
+   if (directoryManager.checkAccess(".", fileName, R_OK))
+     {
+       directory = ".";
