@@ -3405,7 +3405,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/el/misc/check_answer.ogg
 %%DATADIR%%/boards/voices/el/misc/click_on_letter.ogg
 %%DATADIR%%/boards/voices/el/misc/configuration.ogg
-%%DATADIR%%/boards/voices/el/misc/congratulations.ogg
+%%DATADIR%%/boards/voices/el/misc/congratulation.ogg
 %%DATADIR%%/boards/voices/el/misc/equal.ogg
 %%DATADIR%%/boards/voices/el/misc/fantastic.ogg
 %%DATADIR%%/boards/voices/el/misc/good.ogg
@@ -4010,7 +4010,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/fi/misc/super.ogg
 %%DATADIR%%/boards/voices/fi/misc/waytogo.ogg
 %%DATADIR%%/boards/voices/fi/misc/welcome.ogg
-%%DATADIR%%/boards/voices/fr/activity/clickgame-intro.ogg
 %%DATADIR%%/boards/voices/fr/alphabet/10.ogg
 %%DATADIR%%/boards/voices/fr/alphabet/README
 %%DATADIR%%/boards/voices/fr/alphabet/U0030.ogg
@@ -4184,6 +4183,172 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/fr/misc/super.ogg
 %%DATADIR%%/boards/voices/fr/misc/waytogo.ogg
 %%DATADIR%%/boards/voices/fr/misc/welcome.ogg
+%%DATADIR%%/boards/voices/he/alphabet/10.ogg
+%%DATADIR%%/boards/voices/he/alphabet/100.ogg
+%%DATADIR%%/boards/voices/he/alphabet/11.ogg
+%%DATADIR%%/boards/voices/he/alphabet/12.ogg
+%%DATADIR%%/boards/voices/he/alphabet/13.ogg
+%%DATADIR%%/boards/voices/he/alphabet/14.ogg
+%%DATADIR%%/boards/voices/he/alphabet/15.ogg
+%%DATADIR%%/boards/voices/he/alphabet/16.ogg
+%%DATADIR%%/boards/voices/he/alphabet/17.ogg
+%%DATADIR%%/boards/voices/he/alphabet/18.ogg
+%%DATADIR%%/boards/voices/he/alphabet/19.ogg
+%%DATADIR%%/boards/voices/he/alphabet/20.ogg
+%%DATADIR%%/boards/voices/he/alphabet/30.ogg
+%%DATADIR%%/boards/voices/he/alphabet/40.ogg
+%%DATADIR%%/boards/voices/he/alphabet/50.ogg
+%%DATADIR%%/boards/voices/he/alphabet/60.ogg
+%%DATADIR%%/boards/voices/he/alphabet/70.ogg
+%%DATADIR%%/boards/voices/he/alphabet/80.ogg
+%%DATADIR%%/boards/voices/he/alphabet/90.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0030.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0031.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0032.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0033.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0034.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0035.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0036.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0037.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0038.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U0039.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D0.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D1.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D2.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D3.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D4.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D5.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D6.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D7.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D8.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05D9.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DA.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DB.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DC.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DD.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DE.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05DF.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E0.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E1.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E2.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E3.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E4.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E5.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E6.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E7.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E8.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05E9.ogg
+%%DATADIR%%/boards/voices/he/alphabet/U05EA.ogg
+%%DATADIR%%/boards/voices/he/alphabet/V.ogg
+%%DATADIR%%/boards/voices/he/alphabet/readme
+%%DATADIR%%/boards/voices/he/colors/README
+%%DATADIR%%/boards/voices/he/colors/black.ogg
+%%DATADIR%%/boards/voices/he/colors/blue.ogg
+%%DATADIR%%/boards/voices/he/colors/brown.ogg
+%%DATADIR%%/boards/voices/he/colors/green.ogg
+%%DATADIR%%/boards/voices/he/colors/grey.ogg
+%%DATADIR%%/boards/voices/he/colors/orange.ogg
+%%DATADIR%%/boards/voices/he/colors/pink.ogg
+%%DATADIR%%/boards/voices/he/colors/purple.ogg
+%%DATADIR%%/boards/voices/he/colors/red.ogg
+%%DATADIR%%/boards/voices/he/colors/white.ogg
+%%DATADIR%%/boards/voices/he/colors/yellow.ogg
+%%DATADIR%%/boards/voices/he/geography/README
+%%DATADIR%%/boards/voices/he/geography/africa.ogg
+%%DATADIR%%/boards/voices/he/geography/alaska.ogg
+%%DATADIR%%/boards/voices/he/geography/albania.ogg
+%%DATADIR%%/boards/voices/he/geography/america.ogg
+%%DATADIR%%/boards/voices/he/geography/antartica.ogg
+%%DATADIR%%/boards/voices/he/geography/argentina.ogg
+%%DATADIR%%/boards/voices/he/geography/asia.ogg
+%%DATADIR%%/boards/voices/he/geography/austria.ogg
+%%DATADIR%%/boards/voices/he/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/he/geography/belarus.ogg
+%%DATADIR%%/boards/voices/he/geography/belgium.ogg
+%%DATADIR%%/boards/voices/he/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/he/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/he/geography/brazil.ogg
+%%DATADIR%%/boards/voices/he/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/he/geography/canada.ogg
+%%DATADIR%%/boards/voices/he/geography/chile.ogg
+%%DATADIR%%/boards/voices/he/geography/colombia.ogg
+%%DATADIR%%/boards/voices/he/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/he/geography/croatia.ogg
+%%DATADIR%%/boards/voices/he/geography/cuba.ogg
+%%DATADIR%%/boards/voices/he/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/he/geography/czech.ogg
+%%DATADIR%%/boards/voices/he/geography/denmark.ogg
+%%DATADIR%%/boards/voices/he/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/he/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/he/geography/estonia.ogg
+%%DATADIR%%/boards/voices/he/geography/europe.ogg
+%%DATADIR%%/boards/voices/he/geography/finland.ogg
+%%DATADIR%%/boards/voices/he/geography/france.ogg
+%%DATADIR%%/boards/voices/he/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/he/geography/germany.ogg
+%%DATADIR%%/boards/voices/he/geography/greece.ogg
+%%DATADIR%%/boards/voices/he/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/he/geography/guyana.ogg
+%%DATADIR%%/boards/voices/he/geography/haiti.ogg
+%%DATADIR%%/boards/voices/he/geography/honduras.ogg
+%%DATADIR%%/boards/voices/he/geography/hungary.ogg
+%%DATADIR%%/boards/voices/he/geography/iceland.ogg
+%%DATADIR%%/boards/voices/he/geography/ireland.ogg
+%%DATADIR%%/boards/voices/he/geography/italy.ogg
+%%DATADIR%%/boards/voices/he/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/he/geography/latvia.ogg
+%%DATADIR%%/boards/voices/he/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/he/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/he/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/he/geography/mexico.ogg
+%%DATADIR%%/boards/voices/he/geography/moldova.ogg
+%%DATADIR%%/boards/voices/he/geography/netherland.ogg
+%%DATADIR%%/boards/voices/he/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/he/geography/norway.ogg
+%%DATADIR%%/boards/voices/he/geography/panama.ogg
+%%DATADIR%%/boards/voices/he/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/he/geography/peru.ogg
+%%DATADIR%%/boards/voices/he/geography/poland.ogg
+%%DATADIR%%/boards/voices/he/geography/portugal.ogg
+%%DATADIR%%/boards/voices/he/geography/romania.ogg
+%%DATADIR%%/boards/voices/he/geography/russia.ogg
+%%DATADIR%%/boards/voices/he/geography/salvador.ogg
+%%DATADIR%%/boards/voices/he/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/he/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/he/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/he/geography/spain.ogg
+%%DATADIR%%/boards/voices/he/geography/suriname.ogg
+%%DATADIR%%/boards/voices/he/geography/sweden.ogg
+%%DATADIR%%/boards/voices/he/geography/switz.ogg
+%%DATADIR%%/boards/voices/he/geography/turkey.ogg
+%%DATADIR%%/boards/voices/he/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/he/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/he/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/he/geography/usa.ogg
+%%DATADIR%%/boards/voices/he/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/he/misc/README
+%%DATADIR%%/boards/voices/he/misc/about.ogg
+%%DATADIR%%/boards/voices/he/misc/awesome.ogg
+%%DATADIR%%/boards/voices/he/misc/back.ogg
+%%DATADIR%%/boards/voices/he/misc/by.ogg
+%%DATADIR%%/boards/voices/he/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/he/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/he/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/he/misc/equal.ogg
+%%DATADIR%%/boards/voices/he/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/he/misc/good.ogg
+%%DATADIR%%/boards/voices/he/misc/great.ogg
+%%DATADIR%%/boards/voices/he/misc/help.ogg
+%%DATADIR%%/boards/voices/he/misc/level.ogg
+%%DATADIR%%/boards/voices/he/misc/minus.ogg
+%%DATADIR%%/boards/voices/he/misc/ok.ogg
+%%DATADIR%%/boards/voices/he/misc/outof.ogg
+%%DATADIR%%/boards/voices/he/misc/perfect.ogg
+%%DATADIR%%/boards/voices/he/misc/plus.ogg
+%%DATADIR%%/boards/voices/he/misc/quit.ogg
+%%DATADIR%%/boards/voices/he/misc/super.ogg
+%%DATADIR%%/boards/voices/he/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/he/misc/welcome.ogg
 %%DATADIR%%/boards/voices/hi/alphabet/10.ogg
 %%DATADIR%%/boards/voices/hi/alphabet/11.ogg
 %%DATADIR%%/boards/voices/hi/alphabet/12.ogg
@@ -6839,7 +7004,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ur/misc/plus.ogg
 %%DATADIR%%/boards/voices/ur/misc/quit.ogg
 %%DATADIR%%/boards/voices/ur/misc/super.ogg
-%%DATADIR%%/boards/voices/ur/misc/way_to_go.ogg
 %%DATADIR%%/boards/voices/ur/misc/waytogo.ogg
 %%DATADIR%%/boards/voices/ur/misc/welcome.ogg
 %%DATADIR%%/boards/watercycle.xml
@@ -7114,12 +7278,16 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/hi/colors
 @dirrm %%DATADIR%%/boards/voices/hi/alphabet
 @dirrm %%DATADIR%%/boards/voices/hi
+@dirrm %%DATADIR%%/boards/voices/he/misc
+@dirrm %%DATADIR%%/boards/voices/he/geography
+@dirrm %%DATADIR%%/boards/voices/he/colors
+@dirrm %%DATADIR%%/boards/voices/he/alphabet
+@dirrm %%DATADIR%%/boards/voices/he
 @dirrm %%DATADIR%%/boards/voices/fr/misc
 @dirrm %%DATADIR%%/boards/voices/fr/geography
 @dirrm %%DATADIR%%/boards/voices/fr/france_region
 @dirrm %%DATADIR%%/boards/voices/fr/colors
 @dirrm %%DATADIR%%/boards/voices/fr/alphabet
-@dirrm %%DATADIR%%/boards/voices/fr/activity
 @dirrm %%DATADIR%%/boards/voices/fr
 @dirrm %%DATADIR%%/boards/voices/fi/misc
 @dirrm %%DATADIR%%/boards/voices/fi/geography
