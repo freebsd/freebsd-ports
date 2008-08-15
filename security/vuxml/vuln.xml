@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1d96305d-6ae6-11dd-91d5-000c29d47fd7">
+    <topic>Bugzilla -- Directory Traversal in importxml.pl</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<name>ja-bugzilla</name>
+	<range><ge>2.22.1</ge><lt>2.22.4</lt></range>
+	<range><ge>3.*</ge><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/2.22.4/">
+	  <p>When importing bugs using importxml.pl, the --attach_path
+	  option can be specified, pointing to the directory where
+	  attachments to import are stored. If the XML file being
+	  read by importxml.pl contains a malicious
+	  <pre>../relative_path/to/local_file</pre>
+	  node, the script follows this relative path and attaches the
+	  local file pointed by it to the bug, making the file public.
+	  The security fix makes sure the relative path is always
+	  ignored.</p>
+	  <p>Most Bugzilla installations will not be vulnerable, as
+	  they do not use --attach_path with importxml.pl.
+	  (In fact, most installations don't use importxml.pl at all.)
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=437169</url>
+    </references>
+    <dates>
+      <discovery>2008-06-03</discovery>
+      <entry>2008-08-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c61ca9cb-64c3-11dd-954d-006097bcc5f4">
     <topic>openvpn-devel -- arbitrary code execution</topic>
     <affects>
