@@ -1,41 +1,56 @@
+%%CGIDIR%%/default_templates/about_this_page.mtml
 %%CGIDIR%%/default_templates/archive_index.mtml
-%%CGIDIR%%/default_templates/atom.mtml
-%%CGIDIR%%/default_templates/base_theme.mtml
-%%CGIDIR%%/default_templates/categories.mtml
-%%CGIDIR%%/default_templates/comment_detail.mtml
-%%CGIDIR%%/default_templates/comment_form.mtml
+%%CGIDIR%%/default_templates/archive_widgets_group.mtml
+%%CGIDIR%%/default_templates/author_archive_list.mtml
+%%CGIDIR%%/default_templates/banner_footer.mtml
+%%CGIDIR%%/default_templates/banner_header.mtml
+%%CGIDIR%%/default_templates/calendar.mtml
+%%CGIDIR%%/default_templates/category_archive_list.mtml
+%%CGIDIR%%/default_templates/category_entry_listing.mtml
 %%CGIDIR%%/default_templates/comment_preview.mtml
 %%CGIDIR%%/default_templates/comment_response.mtml
 %%CGIDIR%%/default_templates/comment_throttle.mtml
 %%CGIDIR%%/default_templates/commenter_confirm.mtml
 %%CGIDIR%%/default_templates/commenter_notify.mtml
 %%CGIDIR%%/default_templates/comments.mtml
+%%CGIDIR%%/default_templates/creative_commons.mtml
+%%CGIDIR%%/default_templates/current_author_monthly_archive_list.mtml
+%%CGIDIR%%/default_templates/current_category_monthly_archive_list.mtml
+%%CGIDIR%%/default_templates/date_based_author_archives.mtml
+%%CGIDIR%%/default_templates/date_based_category_archives.mtml
 %%CGIDIR%%/default_templates/dynamic_error.mtml
 %%CGIDIR%%/default_templates/entry.mtml
-%%CGIDIR%%/default_templates/entry_detail.mtml
-%%CGIDIR%%/default_templates/entry_listing.mtml
-%%CGIDIR%%/default_templates/entry_metadata.mtml
 %%CGIDIR%%/default_templates/entry_summary.mtml
+%%CGIDIR%%/default_templates/feed_recent.mtml
 %%CGIDIR%%/default_templates/footer-email.mtml
-%%CGIDIR%%/default_templates/footer.mtml
-%%CGIDIR%%/default_templates/header.mtml
+%%CGIDIR%%/default_templates/html_head.mtml
 %%CGIDIR%%/default_templates/javascript.mtml
 %%CGIDIR%%/default_templates/main_index.mtml
+%%CGIDIR%%/default_templates/main_index_widgets_group.mtml
+%%CGIDIR%%/default_templates/monthly_archive_dropdown.mtml
+%%CGIDIR%%/default_templates/monthly_archive_list.mtml
+%%CGIDIR%%/default_templates/monthly_entry_listing.mtml
 %%CGIDIR%%/default_templates/new-comment.mtml
 %%CGIDIR%%/default_templates/new-ping.mtml
 %%CGIDIR%%/default_templates/notify-entry.mtml
+%%CGIDIR%%/default_templates/openid.mtml
 %%CGIDIR%%/default_templates/page.mtml
-%%CGIDIR%%/default_templates/page_detail.mtml
+%%CGIDIR%%/default_templates/pages_list.mtml
 %%CGIDIR%%/default_templates/popup_image.mtml
+%%CGIDIR%%/default_templates/powered_by.mtml
+%%CGIDIR%%/default_templates/recent_assets.mtml
+%%CGIDIR%%/default_templates/recent_comments.mtml
+%%CGIDIR%%/default_templates/recent_entries.mtml
 %%CGIDIR%%/default_templates/recover-password.mtml
 %%CGIDIR%%/default_templates/rsd.mtml
-%%CGIDIR%%/default_templates/rss.mtml
+%%CGIDIR%%/default_templates/search.mtml
 %%CGIDIR%%/default_templates/search_results.mtml
 %%CGIDIR%%/default_templates/sidebar.mtml
-%%CGIDIR%%/default_templates/sidebar_2col.mtml
-%%CGIDIR%%/default_templates/sidebar_3col.mtml
+%%CGIDIR%%/default_templates/signin.mtml
 %%CGIDIR%%/default_templates/styles.mtml
-%%CGIDIR%%/default_templates/tags.mtml
+%%CGIDIR%%/default_templates/syndication.mtml
+%%CGIDIR%%/default_templates/tag_cloud.mtml
+%%CGIDIR%%/default_templates/technorati_search.mtml
 %%CGIDIR%%/default_templates/trackbacks.mtml
 %%CGIDIR%%/default_templates/verify-subscribe.mtml
 %%CGIDIR%%/extlib/Apache/SOAP.pm
@@ -103,6 +118,7 @@
 %%CGIDIR%%/extlib/HTTP/Status.pm
 %%CGIDIR%%/extlib/Heap/Fibonacci.pm
 %%CGIDIR%%/extlib/I18N/LangTags.pm
+%%CGIDIR%%/extlib/I18N/LangTags/Detect.pm
 %%CGIDIR%%/extlib/I18N/LangTags/List.pm
 %%CGIDIR%%/extlib/IO/Scalar.pm
 %%CGIDIR%%/extlib/IO/SessionData.pm
@@ -146,7 +162,10 @@
 %%CGIDIR%%/extlib/LWP/media.types
 %%CGIDIR%%/extlib/Locale/Maketext.pm
 %%CGIDIR%%/extlib/Locale/Maketext.pod
+%%CGIDIR%%/extlib/Locale/Maketext/Guts.pm
+%%CGIDIR%%/extlib/Locale/Maketext/GutsLoader.pm
 %%CGIDIR%%/extlib/Locale/Maketext/TPJ13.pod
+%%CGIDIR%%/extlib/Lucene/QueryParser.pm
 %%CGIDIR%%/extlib/MIME/Charset.pm
 %%CGIDIR%%/extlib/MIME/Charset/_Compat.pm
 %%CGIDIR%%/extlib/MIME/EncWords.pm
@@ -160,10 +179,27 @@
 %%CGIDIR%%/extlib/Net/HTTP/Methods.pm
 %%CGIDIR%%/extlib/Net/HTTP/NB.pm
 %%CGIDIR%%/extlib/Net/HTTPS.pm
+%%CGIDIR%%/extlib/Net/OAuth.pm
+%%CGIDIR%%/extlib/Net/OAuth/AccessTokenRequest.pm
+%%CGIDIR%%/extlib/Net/OAuth/AccessTokenResponse.pm
+%%CGIDIR%%/extlib/Net/OAuth/Message.pm
+%%CGIDIR%%/extlib/Net/OAuth/ProtectedResourceRequest.pm
+%%CGIDIR%%/extlib/Net/OAuth/Request.pm
+%%CGIDIR%%/extlib/Net/OAuth/RequestTokenRequest.pm
+%%CGIDIR%%/extlib/Net/OAuth/RequestTokenResponse.pm
+%%CGIDIR%%/extlib/Net/OAuth/Response.pm
+%%CGIDIR%%/extlib/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
+%%CGIDIR%%/extlib/Net/OAuth/SignatureMethod/PLAINTEXT.pm
+%%CGIDIR%%/extlib/Net/OAuth/SignatureMethod/RSA_SHA1.pm
+%%CGIDIR%%/extlib/Net/OAuth/UserAuthRequest.pm
+%%CGIDIR%%/extlib/Net/OAuth/UserAuthResponse.pm
 %%CGIDIR%%/extlib/Net/OpenID/Association.pm
 %%CGIDIR%%/extlib/Net/OpenID/ClaimedIdentity.pm
 %%CGIDIR%%/extlib/Net/OpenID/Consumer.pm
+%%CGIDIR%%/extlib/Net/OpenID/IndirectMessage.pm
 %%CGIDIR%%/extlib/Net/OpenID/VerifiedIdentity.pm
+%%CGIDIR%%/extlib/Net/OpenID/Yadis.pm
+%%CGIDIR%%/extlib/Net/OpenID/Yadis/Service.pm
 %%CGIDIR%%/extlib/Params/Check.pm
 %%CGIDIR%%/extlib/Params/Validate.pm
 %%CGIDIR%%/extlib/Params/ValidatePP.pm
@@ -194,10 +230,12 @@
 %%CGIDIR%%/extlib/URI/Fetch/Response.pm
 %%CGIDIR%%/extlib/URI/Heuristic.pm
 %%CGIDIR%%/extlib/URI/QueryParam.pm
+%%CGIDIR%%/extlib/URI/Split.pm
 %%CGIDIR%%/extlib/URI/URL.pm
 %%CGIDIR%%/extlib/URI/WithBase.pm
 %%CGIDIR%%/extlib/URI/_foreign.pm
 %%CGIDIR%%/extlib/URI/_generic.pm
+%%CGIDIR%%/extlib/URI/_ldap.pm
 %%CGIDIR%%/extlib/URI/_login.pm
 %%CGIDIR%%/extlib/URI/_query.pm
 %%CGIDIR%%/extlib/URI/_segment.pm
@@ -217,7 +255,10 @@
 %%CGIDIR%%/extlib/URI/http.pm
 %%CGIDIR%%/extlib/URI/https.pm
 %%CGIDIR%%/extlib/URI/ldap.pm
+%%CGIDIR%%/extlib/URI/ldapi.pm
+%%CGIDIR%%/extlib/URI/ldaps.pm
 %%CGIDIR%%/extlib/URI/mailto.pm
+%%CGIDIR%%/extlib/URI/mms.pm
 %%CGIDIR%%/extlib/URI/news.pm
 %%CGIDIR%%/extlib/URI/nntp.pm
 %%CGIDIR%%/extlib/URI/pop.pm
@@ -230,6 +271,7 @@
 %%CGIDIR%%/extlib/URI/snews.pm
 %%CGIDIR%%/extlib/URI/ssh.pm
 %%CGIDIR%%/extlib/URI/telnet.pm
+%%CGIDIR%%/extlib/URI/tn3270.pm
 %%CGIDIR%%/extlib/URI/urn.pm
 %%CGIDIR%%/extlib/URI/urn/isbn.pm
 %%CGIDIR%%/extlib/URI/urn/oid.pm
@@ -311,50 +353,6 @@
 %%CGIDIR%%/extlib/XMLRPC/Transport/POP3.pm
 %%CGIDIR%%/extlib/XMLRPC/Transport/TCP.pm
 %%CGIDIR%%/extlib/YAML/Tiny.pm
-%%CGIDIR%%/extras/examples/plugins/BackupRestoreSample/BackupRestoreSample.pl
-%%CGIDIR%%/extras/examples/plugins/BackupRestoreSample/lib/BackupRestoreSample/Object.pm
-%%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount/CommentByGoogleAccount.pl
-%%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount/lib/CommentByGoogleAccount.pm
-%%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount/tmpl/config.tmpl
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/border-right.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/bullet.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/no_rating-hover.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/no_rating.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/star-hover.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating/star.gif
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins/FiveStarRating/FiveStarRating.pl
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins/FiveStarRating/lib/FiveStarRating.pm
-%%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins/FiveStarRating/rate.cgi
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/GoogleSearch.pl
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/GoogleSearch.wsdl
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/de.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/en_us.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/es.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/fr.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/ja.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N/nl.pm
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/php/GoogleSearch.wsdl
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/php/block.mtgooglesearch.php
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/php/function.mtgooglesearchresult.php
-%%CGIDIR%%/extras/examples/plugins/GoogleSearch/tmpl/config.tmpl
-%%CGIDIR%%/extras/examples/plugins/UpdatePingsJP/config.yaml
-%%CGIDIR%%/extras/examples/plugins/l10nsample/l10nsample.cgi
-%%CGIDIR%%/extras/examples/plugins/l10nsample/l10nsample.pl
-%%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample.pm
-%%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample/L10N.pm
-%%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample/L10N/en_us.pm
-%%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample/L10N/ja.pm
-%%CGIDIR%%/extras/examples/plugins/l10nsample/tmpl/view.tmpl
-%%CGIDIR%%/extras/examples/plugins/mirror/lib/Mirror.pm
-%%CGIDIR%%/extras/examples/plugins/mirror/mirror.pl
-%%CGIDIR%%/extras/examples/plugins/mirror/mt-mirror.cgi
-%%CGIDIR%%/extras/examples/plugins/mirror/tmpl/mirror.tmpl
-%%CGIDIR%%/extras/examples/plugins/reCaptcha/README
-%%CGIDIR%%/extras/examples/plugins/reCaptcha/lib/reCaptcha.pm
-%%CGIDIR%%/extras/examples/plugins/reCaptcha/php/init.reCaptcha.php
-%%CGIDIR%%/extras/examples/plugins/reCaptcha/reCaptcha.pl
-%%CGIDIR%%/extras/openid-server-1.1.tar.gz
 %%CGIDIR%%/lib/MT.pm
 %%CGIDIR%%/lib/MT/App.pm
 %%CGIDIR%%/lib/MT/App/ActivityFeeds.pm
@@ -362,9 +360,30 @@
 %%CGIDIR%%/lib/MT/App/Comments.pm
 %%CGIDIR%%/lib/MT/App/NotifyList.pm
 %%CGIDIR%%/lib/MT/App/Search.pm
+%%CGIDIR%%/lib/MT/App/Search/FreeText.pm
+%%CGIDIR%%/lib/MT/App/Search/Legacy.pm
+%%CGIDIR%%/lib/MT/App/Search/TagSearch.pm
 %%CGIDIR%%/lib/MT/App/Trackback.pm
 %%CGIDIR%%/lib/MT/App/Upgrader.pm
 %%CGIDIR%%/lib/MT/App/Wizard.pm
+%%CGIDIR%%/lib/MT/ArchiveType.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Author.pm
+%%CGIDIR%%/lib/MT/ArchiveType/AuthorDaily.pm
+%%CGIDIR%%/lib/MT/ArchiveType/AuthorMonthly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/AuthorWeekly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/AuthorYearly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Category.pm
+%%CGIDIR%%/lib/MT/ArchiveType/CategoryDaily.pm
+%%CGIDIR%%/lib/MT/ArchiveType/CategoryMonthly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/CategoryWeekly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/CategoryYearly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Daily.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Date.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Individual.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Monthly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Page.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Weekly.pm
+%%CGIDIR%%/lib/MT/ArchiveType/Yearly.pm
 %%CGIDIR%%/lib/MT/Asset.pm
 %%CGIDIR%%/lib/MT/Asset/Audio.pm
 %%CGIDIR%%/lib/MT/Asset/Image.pm
@@ -389,6 +408,30 @@
 %%CGIDIR%%/lib/MT/Blog.pm
 %%CGIDIR%%/lib/MT/Bootstrap.pm
 %%CGIDIR%%/lib/MT/Builder.pm
+%%CGIDIR%%/lib/MT/CMS/AddressBook.pm
+%%CGIDIR%%/lib/MT/CMS/Asset.pm
+%%CGIDIR%%/lib/MT/CMS/BanList.pm
+%%CGIDIR%%/lib/MT/CMS/Blog.pm
+%%CGIDIR%%/lib/MT/CMS/Category.pm
+%%CGIDIR%%/lib/MT/CMS/Comment.pm
+%%CGIDIR%%/lib/MT/CMS/Common.pm
+%%CGIDIR%%/lib/MT/CMS/Dashboard.pm
+%%CGIDIR%%/lib/MT/CMS/Entry.pm
+%%CGIDIR%%/lib/MT/CMS/Export.pm
+%%CGIDIR%%/lib/MT/CMS/Folder.pm
+%%CGIDIR%%/lib/MT/CMS/Import.pm
+%%CGIDIR%%/lib/MT/CMS/Log.pm
+%%CGIDIR%%/lib/MT/CMS/Page.pm
+%%CGIDIR%%/lib/MT/CMS/Plugin.pm
+%%CGIDIR%%/lib/MT/CMS/Search.pm
+%%CGIDIR%%/lib/MT/CMS/Tag.pm
+%%CGIDIR%%/lib/MT/CMS/Template.pm
+%%CGIDIR%%/lib/MT/CMS/Tools.pm
+%%CGIDIR%%/lib/MT/CMS/TrackBack.pm
+%%CGIDIR%%/lib/MT/CMS/User.pm
+%%CGIDIR%%/lib/MT/Cache/Negotiate.pm
+%%CGIDIR%%/lib/MT/Cache/Null.pm
+%%CGIDIR%%/lib/MT/Cache/Session.pm
 %%CGIDIR%%/lib/MT/Callback.pm
 %%CGIDIR%%/lib/MT/Callback.pod
 %%CGIDIR%%/lib/MT/Category.pm
@@ -429,13 +472,17 @@
 %%CGIDIR%%/lib/MT/Log.pm
 %%CGIDIR%%/lib/MT/Mail.pm
 %%CGIDIR%%/lib/MT/Memcached.pm
+%%CGIDIR%%/lib/MT/Meta.pm
+%%CGIDIR%%/lib/MT/Meta/Proxy.pm
 %%CGIDIR%%/lib/MT/Notification.pm
 %%CGIDIR%%/lib/MT/Object.pm
+%%CGIDIR%%/lib/MT/Object/BaseCache.pm
 %%CGIDIR%%/lib/MT/ObjectAsset.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/DDL.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/DDL/Pg.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/DDL/SQLite.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/DDL/mysql.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/Driver/Cache/RAM.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/Legacy.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/Pg.pm
 %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD/SQLite.pm
@@ -456,6 +503,7 @@
 %%CGIDIR%%/lib/MT/Plugin/L10N.pm
 %%CGIDIR%%/lib/MT/PluginData.pm
 %%CGIDIR%%/lib/MT/Promise.pm
+%%CGIDIR%%/lib/MT/PublishOption.pm
 %%CGIDIR%%/lib/MT/Request.pm
 %%CGIDIR%%/lib/MT/Role.pm
 %%CGIDIR%%/lib/MT/Sanitize.pm
@@ -468,6 +516,7 @@
 %%CGIDIR%%/lib/MT/TaskMgr.pm
 %%CGIDIR%%/lib/MT/Template.pm
 %%CGIDIR%%/lib/MT/Template/Context.pm
+%%CGIDIR%%/lib/MT/Template/Context/Search.pm
 %%CGIDIR%%/lib/MT/Template/ContextHandlers.pm
 %%CGIDIR%%/lib/MT/TemplateMap.pm
 %%CGIDIR%%/lib/MT/TheSchwartz.pm
@@ -475,6 +524,8 @@
 %%CGIDIR%%/lib/MT/TheSchwartz/ExitStatus.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/FuncMap.pm
 %%CGIDIR%%/lib/MT/TheSchwartz/Job.pm
+%%CGIDIR%%/lib/MT/Tool.pm
+%%CGIDIR%%/lib/MT/Touch.pm
 %%CGIDIR%%/lib/MT/Trackback.pm
 %%CGIDIR%%/lib/MT/Upgrade.pm
 %%CGIDIR%%/lib/MT/Util.pm
@@ -482,6 +533,8 @@
 %%CGIDIR%%/lib/MT/Util/Archive/Tgz.pm
 %%CGIDIR%%/lib/MT/Util/Archive/Zip.pm
 %%CGIDIR%%/lib/MT/Util/Captcha.pm
+%%CGIDIR%%/lib/MT/Util/LogProcessor.pm
+%%CGIDIR%%/lib/MT/Util/PerformanceData.pm
 %%CGIDIR%%/lib/MT/Util/ReqTimer.pm
 %%CGIDIR%%/lib/MT/WeblogPublisher.pm
 %%CGIDIR%%/lib/MT/Worker/Publish.pm
@@ -495,6 +548,7 @@
 %%CGIDIR%%/mt-comments.cgi
 %%CGIDIR%%/mt-config.cgi-original
 %%CGIDIR%%/mt-feed.cgi
+%%CGIDIR%%/mt-ftsearch.cgi
 %%CGIDIR%%/mt-search.cgi
 %%CGIDIR%%/mt-tb.cgi
 %%CGIDIR%%/mt-testbg.cgi
@@ -505,6 +559,7 @@
 %%CGIDIR%%/php/extlib/ezsql/ezsql_mssqlserver.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_mysql.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_oracle.php
+%%CGIDIR%%/php/extlib/ezsql/ezsql_pdo_sqlite.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_postgres.php
 %%CGIDIR%%/php/extlib/ezsql/ezsql_sqlite.php
 %%CGIDIR%%/php/extlib/smarty/.cvsignore
@@ -701,11 +756,13 @@
 %%CGIDIR%%/php/lib/block.mtifcommentsactive.php
 %%CGIDIR%%/php/lib/block.mtifcommentsallowed.php
 %%CGIDIR%%/php/lib/block.mtifcommentsmoderated.php
+%%CGIDIR%%/php/lib/block.mtifcurrentpage.php
 %%CGIDIR%%/php/lib/block.mtifdynamic.php
 %%CGIDIR%%/php/lib/block.mtiffolder.php
 %%CGIDIR%%/php/lib/block.mtifimagesupport.php
 %%CGIDIR%%/php/lib/block.mtifisancestor.php
 %%CGIDIR%%/php/lib/block.mtifisdescendant.php
+%%CGIDIR%%/php/lib/block.mtifmoreresults.php
 %%CGIDIR%%/php/lib/block.mtifneedemail.php
 %%CGIDIR%%/php/lib/block.mtifnonempty.php
 %%CGIDIR%%/php/lib/block.mtifnonzero.php
@@ -713,6 +770,7 @@
 %%CGIDIR%%/php/lib/block.mtifpingsactive.php
 %%CGIDIR%%/php/lib/block.mtifpingsallowed.php
 %%CGIDIR%%/php/lib/block.mtifpingsmoderated.php
+%%CGIDIR%%/php/lib/block.mtifpreviousresults.php
 %%CGIDIR%%/php/lib/block.mtifregistrationallowed.php
 %%CGIDIR%%/php/lib/block.mtifregistrationnotrequired.php
 %%CGIDIR%%/php/lib/block.mtifregistrationrequired.php
@@ -727,6 +785,7 @@
 %%CGIDIR%%/php/lib/block.mtpageiftagged.php
 %%CGIDIR%%/php/lib/block.mtpagenext.php
 %%CGIDIR%%/php/lib/block.mtpageprevious.php
+%%CGIDIR%%/php/lib/block.mtpagerblock.php
 %%CGIDIR%%/php/lib/block.mtpages.php
 %%CGIDIR%%/php/lib/block.mtpagesfooter.php
 %%CGIDIR%%/php/lib/block.mtpagesheader.php
@@ -871,8 +930,10 @@
 %%CGIDIR%%/php/lib/function.mtcommentlink.php
 %%CGIDIR%%/php/lib/function.mtcommentname.php
 %%CGIDIR%%/php/lib/function.mtcommentordernumber.php
+%%CGIDIR%%/php/lib/function.mtcommentparentid.php
 %%CGIDIR%%/php/lib/function.mtcommentrank.php
 %%CGIDIR%%/php/lib/function.mtcommentrepliesrecurse.php
+%%CGIDIR%%/php/lib/function.mtcommentreplytolink.php
 %%CGIDIR%%/php/lib/function.mtcommentscore.php
 %%CGIDIR%%/php/lib/function.mtcommentscoreavg.php
 %%CGIDIR%%/php/lib/function.mtcommentscorecount.php
@@ -881,6 +942,7 @@
 %%CGIDIR%%/php/lib/function.mtcommentscript.php
 %%CGIDIR%%/php/lib/function.mtcommenturl.php
 %%CGIDIR%%/php/lib/function.mtconfigfile.php
+%%CGIDIR%%/php/lib/function.mtcurrentpage.php
 %%CGIDIR%%/php/lib/function.mtdate.php
 %%CGIDIR%%/php/lib/function.mtdefaultlanguage.php
 %%CGIDIR%%/php/lib/function.mtentriescount.php
@@ -948,6 +1010,7 @@
 %%CGIDIR%%/php/lib/function.mtindexlink.php
 %%CGIDIR%%/php/lib/function.mtindexname.php
 %%CGIDIR%%/php/lib/function.mtlink.php
+%%CGIDIR%%/php/lib/function.mtnextlink.php
 %%CGIDIR%%/php/lib/function.mtnotifyscript.php
 %%CGIDIR%%/php/lib/function.mtpageauthordisplayname.php
 %%CGIDIR%%/php/lib/function.mtpageauthoremail.php
@@ -962,6 +1025,7 @@
 %%CGIDIR%%/php/lib/function.mtpagemodifieddate.php
 %%CGIDIR%%/php/lib/function.mtpagemore.php
 %%CGIDIR%%/php/lib/function.mtpagepermalink.php
+%%CGIDIR%%/php/lib/function.mtpagerlink.php
 %%CGIDIR%%/php/lib/function.mtpagetitle.php
 %%CGIDIR%%/php/lib/function.mtpingblogname.php
 %%CGIDIR%%/php/lib/function.mtpingdate.php
@@ -977,15 +1041,19 @@
 %%CGIDIR%%/php/lib/function.mtpingssenturl.php
 %%CGIDIR%%/php/lib/function.mtpingtitle.php
 %%CGIDIR%%/php/lib/function.mtpingurl.php
+%%CGIDIR%%/php/lib/function.mtpreviouslink.php
 %%CGIDIR%%/php/lib/function.mtproductname.php
 %%CGIDIR%%/php/lib/function.mtpublishcharset.php
 %%CGIDIR%%/php/lib/function.mtremotesigninlink.php
 %%CGIDIR%%/php/lib/function.mtremotesignoutlink.php
 %%CGIDIR%%/php/lib/function.mtsearchincludeblogs.php
+%%CGIDIR%%/php/lib/function.mtsearchmaxresults.php
 %%CGIDIR%%/php/lib/function.mtsearchscript.php
 %%CGIDIR%%/php/lib/function.mtsearchstring.php
 %%CGIDIR%%/php/lib/function.mtsetvar.php
+%%CGIDIR%%/php/lib/function.mtsigninlink.php
 %%CGIDIR%%/php/lib/function.mtsignonurl.php
+%%CGIDIR%%/php/lib/function.mtsignoutlink.php
 %%CGIDIR%%/php/lib/function.mtstaticfilepath.php
 %%CGIDIR%%/php/lib/function.mtstaticwebpath.php
 %%CGIDIR%%/php/lib/function.mtsubcategorypath.php
@@ -999,10 +1067,17 @@
 %%CGIDIR%%/php/lib/function.mttagsearchlink.php
 %%CGIDIR%%/php/lib/function.mttemplatecreatedon.php
 %%CGIDIR%%/php/lib/function.mttemplatenote.php
+%%CGIDIR%%/php/lib/function.mttotalpages.php
 %%CGIDIR%%/php/lib/function.mttrackbackscript.php
 %%CGIDIR%%/php/lib/function.mttypekeytoken.php
+%%CGIDIR%%/php/lib/function.mtusersessioncookiedomain.php
+%%CGIDIR%%/php/lib/function.mtusersessioncookiename.php
+%%CGIDIR%%/php/lib/function.mtusersessioncookiepath.php
+%%CGIDIR%%/php/lib/function.mtusersessioncookietimeout.php
 %%CGIDIR%%/php/lib/function.mtvar.php
 %%CGIDIR%%/php/lib/function.mtversion.php
+%%CGIDIR%%/php/lib/function.mtwidgetmanager.php
+%%CGIDIR%%/php/lib/function.mtwidgetset.php
 %%CGIDIR%%/php/lib/function.mtxmlrpcscript.php
 %%CGIDIR%%/php/lib/l10n_de.php
 %%CGIDIR%%/php/lib/l10n_en.php
@@ -1010,19 +1085,21 @@
 %%CGIDIR%%/php/lib/l10n_fr.php
 %%CGIDIR%%/php/lib/l10n_ja.php
 %%CGIDIR%%/php/lib/l10n_nl.php
-%%CGIDIR%%/php/lib/modifier.convert_breaks.php
 %%CGIDIR%%/php/lib/modifier.decode_html.php
 %%CGIDIR%%/php/lib/modifier.decode_xml.php
 %%CGIDIR%%/php/lib/modifier.dirify.php
 %%CGIDIR%%/php/lib/modifier.encode_html.php
 %%CGIDIR%%/php/lib/modifier.encode_js.php
 %%CGIDIR%%/php/lib/modifier.encode_php.php
+%%CGIDIR%%/php/lib/modifier.encode_sha1.php
 %%CGIDIR%%/php/lib/modifier.encode_url.php
 %%CGIDIR%%/php/lib/modifier.encode_xml.php
 %%CGIDIR%%/php/lib/modifier.filters.php
 %%CGIDIR%%/php/lib/modifier.lower_case.php
 %%CGIDIR%%/php/lib/modifier.ltrim.php
+%%CGIDIR%%/php/lib/modifier.mteval.php
 %%CGIDIR%%/php/lib/modifier.nofollowfy.php
+%%CGIDIR%%/php/lib/modifier.numify.php
 %%CGIDIR%%/php/lib/modifier.remove_html.php
 %%CGIDIR%%/php/lib/modifier.richtext.php
 %%CGIDIR%%/php/lib/modifier.rtrim.php
@@ -1038,14 +1115,19 @@
 %%CGIDIR%%/php/lib/modifier.words.php
 %%CGIDIR%%/php/lib/modifier.wrap_text.php
 %%CGIDIR%%/php/lib/modifier.zero_pad.php
+%%CGIDIR%%/php/lib/mtcache_base.php
+%%CGIDIR%%/php/lib/mtcache_memcached.php
+%%CGIDIR%%/php/lib/mtcache_session.php
 %%CGIDIR%%/php/lib/mtdb_base.php
 %%CGIDIR%%/php/lib/mtdb_mysql.php
+%%CGIDIR%%/php/lib/mtdb_pdo_sqlite.php
 %%CGIDIR%%/php/lib/mtdb_postgres.php
 %%CGIDIR%%/php/lib/mtdb_sqlite.php
 %%CGIDIR%%/php/lib/prefilter.mt_to_smarty.php
 %%CGIDIR%%/php/lib/rating_lib.php
 %%CGIDIR%%/php/lib/resource.mt.php
 %%CGIDIR%%/php/lib/sanitize_lib.php
+%%CGIDIR%%/php/lib/thumbnail_lib.php
 %%CGIDIR%%/php/mt.php
 %%CGIDIR%%/php/tmpl/error.tpl
 %%CGIDIR%%/php/tmpl/footer-popup.tpl
@@ -1071,11 +1153,10 @@
 %%CGIDIR%%/plugins/MultiBlog/php/block.mtmultibloglocalblog.php
 %%CGIDIR%%/plugins/MultiBlog/php/block.mtotherblog.php
 %%CGIDIR%%/plugins/MultiBlog/php/init.MultiBlog.php
-%%CGIDIR%%/plugins/MultiBlog/t/00.require.t
-%%CGIDIR%%/plugins/MultiBlog/t/01.tags.t
 %%CGIDIR%%/plugins/MultiBlog/tmpl/blog_config.tmpl
 %%CGIDIR%%/plugins/MultiBlog/tmpl/dialog_create_trigger.tmpl
 %%CGIDIR%%/plugins/MultiBlog/tmpl/system_config.tmpl
+%%CGIDIR%%/plugins/StyleCatcher/config.yaml
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/CMS.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/de.pm
@@ -1084,7 +1165,6 @@
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/fr.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/ja.pm
 %%CGIDIR%%/plugins/StyleCatcher/lib/StyleCatcher/L10N/nl.pm
-%%CGIDIR%%/plugins/StyleCatcher/stylecatcher.pl
 %%CGIDIR%%/plugins/StyleCatcher/tmpl/view.tmpl
 %%CGIDIR%%/plugins/Textile/Changes
 %%CGIDIR%%/plugins/Textile/lib/Text/Textile.pm
@@ -1093,42 +1173,34 @@
 %%CGIDIR%%/plugins/Textile/php/modifier.textile_2.php
 %%CGIDIR%%/plugins/Textile/readme.txt
 %%CGIDIR%%/plugins/Textile/textile2.pl
+%%CGIDIR%%/plugins/TypePadAntiSpam/TypePadAntiSpam.pl
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/MT/TypePadAntiSpam.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/de.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/en_us.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/es.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/fr.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/ja.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N/nl.pm
+%%CGIDIR%%/plugins/TypePadAntiSpam/php/function.mttypepadantispamcounter.php
+%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/config.tmpl
+%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/stats_widget.tmpl
+%%CGIDIR%%/plugins/TypePadAntiSpam/tmpl/system.tmpl
 %%CGIDIR%%/plugins/WXRImporter/WXRImporter.pl
 %%CGIDIR%%/plugins/WXRImporter/lib/HTML/Entities/Numbered.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/HTML/Entities/Numbered/Table.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/Import.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N.pm
+%%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/de.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/en_us.pm
+%%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/es.pm
+%%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/fr.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/ja.pm
+%%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/L10N/nl.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/WXRHandler.pm
 %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/Worker/Downloader.pm
 %%CGIDIR%%/plugins/WXRImporter/tmpl/options.tmpl
 %%CGIDIR%%/plugins/WidgetManager/WidgetManager.pl
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/about_this_page.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/archive_meta_widget.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/author_archive_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/calendar.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/category_archive_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/creative_commons.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/current_author_monthly_archive_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/current_category_monthly_archive_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/date_based_author_archives.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/date_based_category_archives.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/main_index_meta_widget.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/monthly_archive_dropdown.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/monthly_archive_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/pages_list.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/powered_by.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/recent_assets.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/recent_comments.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/recent_entries.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/search.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/signin.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/syndication.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/tag_cloud.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/technorati_search.mtml
-%%CGIDIR%%/plugins/WidgetManager/default_widgets/widgets.cfg
-%%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/CMS.pm
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N.pm
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N/de.pm
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N/en_us.pm
@@ -1136,11 +1208,6 @@
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N/fr.pm
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N/ja.pm
 %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N/nl.pm
-%%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/Plugin.pm
-%%CGIDIR%%/plugins/WidgetManager/php/function.mtwidgetmanager.php
-%%CGIDIR%%/plugins/WidgetManager/php/function.mtwidgetset.php
-%%CGIDIR%%/plugins/WidgetManager/tmpl/edit.tmpl
-%%CGIDIR%%/plugins/WidgetManager/tmpl/list.tmpl
 %%CGIDIR%%/plugins/spamlookup/lib/spamlookup.pm
 %%CGIDIR%%/plugins/spamlookup/lib/spamlookup/L10N.pm
 %%CGIDIR%%/plugins/spamlookup/spamlookup.pl
@@ -1181,6 +1248,7 @@
 %%CGIDIR%%/tmpl/cms/dialog/entry_notify.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/footer.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/header.tmpl
+%%CGIDIR%%/tmpl/cms/dialog/publishing_profile.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/recover.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/refresh_templates.tmpl
 %%CGIDIR%%/tmpl/cms/dialog/restore_end.tmpl
@@ -1199,6 +1267,7 @@
 %%CGIDIR%%/tmpl/cms/edit_ping.tmpl
 %%CGIDIR%%/tmpl/cms/edit_role.tmpl
 %%CGIDIR%%/tmpl/cms/edit_template.tmpl
+%%CGIDIR%%/tmpl/cms/edit_widget.tmpl
 %%CGIDIR%%/tmpl/cms/error.tmpl
 %%CGIDIR%%/tmpl/cms/export.tmpl
 %%CGIDIR%%/tmpl/cms/handshake_return.tmpl
@@ -1221,6 +1290,7 @@
 %%CGIDIR%%/tmpl/cms/include/cfg_system_content_nav.tmpl
 %%CGIDIR%%/tmpl/cms/include/chromeless_footer.tmpl
 %%CGIDIR%%/tmpl/cms/include/chromeless_header.tmpl
+%%CGIDIR%%/tmpl/cms/include/comment_detail.tmpl
 %%CGIDIR%%/tmpl/cms/include/comment_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/commenter_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/copyright.tmpl
@@ -1265,6 +1335,7 @@
 %%CGIDIR%%/tmpl/cms/list_role.tmpl
 %%CGIDIR%%/tmpl/cms/list_tag.tmpl
 %%CGIDIR%%/tmpl/cms/list_template.tmpl
+%%CGIDIR%%/tmpl/cms/list_widget.tmpl
 %%CGIDIR%%/tmpl/cms/login.tmpl
 %%CGIDIR%%/tmpl/cms/pinging.tmpl
 %%CGIDIR%%/tmpl/cms/popup/pinged_urls.tmpl
@@ -1273,6 +1344,7 @@
 %%CGIDIR%%/tmpl/cms/preview_entry.tmpl
 %%CGIDIR%%/tmpl/cms/preview_entry_content.tmpl
 %%CGIDIR%%/tmpl/cms/preview_strip.tmpl
+%%CGIDIR%%/tmpl/cms/preview_template_strip.tmpl
 %%CGIDIR%%/tmpl/cms/rebuilding.tmpl
 %%CGIDIR%%/tmpl/cms/recover_password_result.tmpl
 %%CGIDIR%%/tmpl/cms/refresh_results.tmpl
@@ -1325,9 +1397,12 @@
 %%CGIDIR%%/tools/find-junk
 %%CGIDIR%%/tools/list-objects
 %%CGIDIR%%/tools/mt-tmpl-preview
+%%CGIDIR%%/tools/pl-viewer
 %%CGIDIR%%/tools/plugin-config
+%%CGIDIR%%/tools/rebuild-benchmark
 %%CGIDIR%%/tools/rebuild-pages
 %%CGIDIR%%/tools/remove-object
+%%CGIDIR%%/tools/report-slow-request
 %%CGIDIR%%/tools/run-periodic-tasks
 %%CGIDIR%%/tools/sig-validate
 %%CGIDIR%%/tools/upgrade
@@ -1391,6 +1466,7 @@
 %%DATADIR%%/mt-static/css/simple.css
 %%DATADIR%%/mt-static/css/structure.css
 %%DATADIR%%/mt-static/css/utilities.css
+%%DATADIR%%/mt-static/css/widget.css
 %%DATADIR%%/mt-static/flash/JavaScriptFlashGateway.swf
 %%DATADIR%%/mt-static/flash/date_slider_open.swf
 %%DATADIR%%/mt-static/htc/editor-content.htc
@@ -1402,6 +1478,7 @@
 %%DATADIR%%/mt-static/images/align_none.gif
 %%DATADIR%%/mt-static/images/align_right.gif
 %%DATADIR%%/mt-static/images/ani-rebuild.gif
+%%DATADIR%%/mt-static/images/arrow-down-blue.gif
 %%DATADIR%%/mt-static/images/arrow-left-blue.gif
 %%DATADIR%%/mt-static/images/arrow-left-gray.gif
 %%DATADIR%%/mt-static/images/arrow-left-green.gif
@@ -1552,7 +1629,9 @@
 %%DATADIR%%/mt-static/images/display-options-link-system.gif
 %%DATADIR%%/mt-static/images/display-options-link.gif
 %%DATADIR%%/mt-static/images/divider.gif
+%%DATADIR%%/mt-static/images/drop.gif
 %%DATADIR%%/mt-static/images/expand.gif
+%%DATADIR%%/mt-static/images/favicon.ico
 %%DATADIR%%/mt-static/images/filetype_icons/default_lg.gif
 %%DATADIR%%/mt-static/images/filetype_icons/default_sm.gif
 %%DATADIR%%/mt-static/images/filetype_icons/doc_lg.gif
@@ -1606,6 +1685,7 @@
 %%DATADIR%%/mt-static/images/icon_warning.png
 %%DATADIR%%/mt-static/images/increase.gif
 %%DATADIR%%/mt-static/images/indeterminate-progress-bar.gif
+%%DATADIR%%/mt-static/images/indicator-login.gif
 %%DATADIR%%/mt-static/images/indicator.gif
 %%DATADIR%%/mt-static/images/indicator.white.gif
 %%DATADIR%%/mt-static/images/input-bg.gif
@@ -1615,7 +1695,6 @@
 %%DATADIR%%/mt-static/images/listing/filter-tr.gif
 %%DATADIR%%/mt-static/images/listing/has-focus.gif
 %%DATADIR%%/mt-static/images/locked.gif
-%%DATADIR%%/mt-static/images/logo.gif
 %%DATADIR%%/mt-static/images/mininav-create-bg.gif
 %%DATADIR%%/mt-static/images/movable-type-logo-system.gif
 %%DATADIR%%/mt-static/images/movable-type-logo.gif
@@ -1709,6 +1788,7 @@
 %%DATADIR%%/mt-static/images/nav_icons/mini/view-site.gif
 %%DATADIR%%/mt-static/images/neutral-bg.gif
 %%DATADIR%%/mt-static/images/next.gif
+%%DATADIR%%/mt-static/images/openid-accepted.gif
 %%DATADIR%%/mt-static/images/pagination-system.gif
 %%DATADIR%%/mt-static/images/pagination.gif
 %%DATADIR%%/mt-static/images/plugin-bullet.gif
@@ -1813,6 +1893,7 @@
 %%DATADIR%%/mt-static/images/widget/blogstats-b.gif
 %%DATADIR%%/mt-static/images/widget/blogstats-bg.gif
 %%DATADIR%%/mt-static/images/widget/blogstats-tr.gif
+%%DATADIR%%/mt-static/images/widget/corners.png
 %%DATADIR%%/mt-static/images/widget/news-b.gif
 %%DATADIR%%/mt-static/images/widget/news-bg.gif
 %%DATADIR%%/mt-static/images/widget/news-header-bg.gif
@@ -1886,6 +1967,7 @@
 %%DATADIR%%/mt-static/js/tc/tagcomplete.js
 %%DATADIR%%/mt-static/js/tc/window.js
 %%DATADIR%%/mt-static/js/tc/wordselect.js
+%%DATADIR%%/mt-static/js/widget.js
 %%DATADIR%%/mt-static/mt.js
 %%DATADIR%%/mt-static/mt_de.js
 %%DATADIR%%/mt-static/mt_es.js
@@ -1920,16 +2002,6 @@
 %%DATADIR%%/mt-static/styles_nl.css
 %%DATADIR%%/mt-static/themes-base/blog.css
 %%DATADIR%%/mt-static/themes-base/forum.css
-%%DATADIR%%/mt-static/themes/cityscape-paris/body.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/content-tw.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/content-twt.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/content-wt.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/content-wtt.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/header.png
-%%DATADIR%%/mt-static/themes/cityscape-paris/screen.css
-%%DATADIR%%/mt-static/themes/cityscape-paris/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/thumbnail.gif
-%%DATADIR%%/mt-static/themes/cityscape-paris/widget-header.gif
 %%DATADIR%%/mt-static/themes/cityscape-portland/body.gif
 %%DATADIR%%/mt-static/themes/cityscape-portland/content-tw.gif
 %%DATADIR%%/mt-static/themes/cityscape-portland/content-twt.gif
@@ -1950,40 +2022,6 @@
 %%DATADIR%%/mt-static/themes/cityscape-sf/thumbnail-large.gif
 %%DATADIR%%/mt-static/themes/cityscape-sf/thumbnail.gif
 %%DATADIR%%/mt-static/themes/cityscape-sf/widget-header.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/content-tw.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/content-twt.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/content-wt.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/content-wtt.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/header.png
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/mt-powered.png
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/screen.css
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/thumbnail.gif
-%%DATADIR%%/mt-static/themes/cityscape-tokyo/widget-header.gif
-%%DATADIR%%/mt-static/themes/hills-green/body.gif
-%%DATADIR%%/mt-static/themes/hills-green/content-tw.gif
-%%DATADIR%%/mt-static/themes/hills-green/content-twt.gif
-%%DATADIR%%/mt-static/themes/hills-green/content-wt.gif
-%%DATADIR%%/mt-static/themes/hills-green/content-wtt.gif
-%%DATADIR%%/mt-static/themes/hills-green/header.png
-%%DATADIR%%/mt-static/themes/hills-green/post-ornament.gif
-%%DATADIR%%/mt-static/themes/hills-green/screen.css
-%%DATADIR%%/mt-static/themes/hills-green/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/hills-green/thumbnail.gif
-%%DATADIR%%/mt-static/themes/hills-pink/body.gif
-%%DATADIR%%/mt-static/themes/hills-pink/content-tw.gif
-%%DATADIR%%/mt-static/themes/hills-pink/content-twt.gif
-%%DATADIR%%/mt-static/themes/hills-pink/content-wt.gif
-%%DATADIR%%/mt-static/themes/hills-pink/content-wtt.gif
-%%DATADIR%%/mt-static/themes/hills-pink/header.png
-%%DATADIR%%/mt-static/themes/hills-pink/post-ornament.gif
-%%DATADIR%%/mt-static/themes/hills-pink/screen.css
-%%DATADIR%%/mt-static/themes/hills-pink/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/hills-pink/thumbnail.gif
-%%DATADIR%%/mt-static/themes/minimalist-green/header.gif
-%%DATADIR%%/mt-static/themes/minimalist-green/screen.css
-%%DATADIR%%/mt-static/themes/minimalist-green/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/minimalist-green/thumbnail.gif
 %%DATADIR%%/mt-static/themes/minimalist-red/header.gif
 %%DATADIR%%/mt-static/themes/minimalist-red/screen.css
 %%DATADIR%%/mt-static/themes/minimalist-red/thumbnail-large.gif
@@ -1999,27 +2037,14 @@
 %%DATADIR%%/mt-static/themes/unity-blue/screen.css
 %%DATADIR%%/mt-static/themes/unity-blue/thumbnail-large.gif
 %%DATADIR%%/mt-static/themes/unity-blue/thumbnail.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/body.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/content-tw.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/content-twt.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/content-wt.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/content-wtt.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/corner-left.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/corner-right.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/header.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/screen.css
-%%DATADIR%%/mt-static/themes/unity-tricolor/thumbnail-large.gif
-%%DATADIR%%/mt-static/themes/unity-tricolor/thumbnail.gif
-@dirrm %%DATADIR%%/mt-static/themes/unity-tricolor
+%%DATADIR%%/mt-static/themes/unstyled/screen.css
+%%DATADIR%%/mt-static/themes/unstyled/thumbnail-large.gif
+%%DATADIR%%/mt-static/themes/unstyled/thumbnail.gif
+@dirrm %%DATADIR%%/mt-static/themes/unstyled
 @dirrm %%DATADIR%%/mt-static/themes/unity-blue
 @dirrm %%DATADIR%%/mt-static/themes/minimalist-red
-@dirrm %%DATADIR%%/mt-static/themes/minimalist-green
-@dirrm %%DATADIR%%/mt-static/themes/hills-pink
-@dirrm %%DATADIR%%/mt-static/themes/hills-green
-@dirrm %%DATADIR%%/mt-static/themes/cityscape-tokyo
 @dirrm %%DATADIR%%/mt-static/themes/cityscape-sf
 @dirrm %%DATADIR%%/mt-static/themes/cityscape-portland
-@dirrm %%DATADIR%%/mt-static/themes/cityscape-paris
 @dirrm %%DATADIR%%/mt-static/themes-base
 @dirrm %%DATADIR%%/mt-static/themes
 @dirrm %%DATADIR%%/mt-static/support
@@ -2065,8 +2090,8 @@
 @dirrm %%DATADIR%%/mt-static/codepress/images
 @dirrm %%DATADIR%%/mt-static/codepress/engines
 @dirrm %%DATADIR%%/mt-static/codepress
-@dirrmtry %%DATADIR%%/mt-static
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/mt-static
+@dirrm %%DATADIR%%
 @dirrm %%CGIDIR%%/tools
 @dirrm %%CGIDIR%%/tmpl/wizard
 @dirrm %%CGIDIR%%/tmpl/feeds
@@ -2083,12 +2108,9 @@
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib/spamlookup
 @dirrm %%CGIDIR%%/plugins/spamlookup/lib
 @dirrm %%CGIDIR%%/plugins/spamlookup
-@dirrm %%CGIDIR%%/plugins/WidgetManager/tmpl
-@dirrm %%CGIDIR%%/plugins/WidgetManager/php
 @dirrm %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager/L10N
 @dirrm %%CGIDIR%%/plugins/WidgetManager/lib/WidgetManager
 @dirrm %%CGIDIR%%/plugins/WidgetManager/lib
-@dirrm %%CGIDIR%%/plugins/WidgetManager/default_widgets
 @dirrm %%CGIDIR%%/plugins/WidgetManager
 @dirrm %%CGIDIR%%/plugins/WXRImporter/tmpl
 @dirrm %%CGIDIR%%/plugins/WXRImporter/lib/WXRImporter/Worker
@@ -2099,6 +2121,13 @@
 @dirrm %%CGIDIR%%/plugins/WXRImporter/lib/HTML
 @dirrm %%CGIDIR%%/plugins/WXRImporter/lib
 @dirrm %%CGIDIR%%/plugins/WXRImporter
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/tmpl
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/php
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam/L10N
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/TypePadAntiSpam
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib/MT
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam/lib
+@dirrm %%CGIDIR%%/plugins/TypePadAntiSpam
 @dirrm %%CGIDIR%%/plugins/Textile/php
 @dirrm %%CGIDIR%%/plugins/Textile/lib/Text
 @dirrm %%CGIDIR%%/plugins/Textile/lib
@@ -2109,7 +2138,6 @@
 @dirrm %%CGIDIR%%/plugins/StyleCatcher/lib
 @dirrm %%CGIDIR%%/plugins/StyleCatcher
 @dirrm %%CGIDIR%%/plugins/MultiBlog/tmpl
-@dirrm %%CGIDIR%%/plugins/MultiBlog/t
 @dirrm %%CGIDIR%%/plugins/MultiBlog/php
 @dirrm %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog/L10N
 @dirrm %%CGIDIR%%/plugins/MultiBlog/lib/MultiBlog
@@ -2139,58 +2167,32 @@
 @dirrm %%CGIDIR%%/lib/MT/Util/Archive
 @dirrm %%CGIDIR%%/lib/MT/Util
 @dirrm %%CGIDIR%%/lib/MT/TheSchwartz
+@dirrm %%CGIDIR%%/lib/MT/Template/Context
 @dirrm %%CGIDIR%%/lib/MT/Template
 @dirrm %%CGIDIR%%/lib/MT/Plugin
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/SQL
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/Driver/DBD
+@dirrm %%CGIDIR%%/lib/MT/ObjectDriver/Driver/Cache
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/Driver
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver/DDL
 @dirrm %%CGIDIR%%/lib/MT/ObjectDriver
+@dirrm %%CGIDIR%%/lib/MT/Object
+@dirrm %%CGIDIR%%/lib/MT/Meta
 @dirrm %%CGIDIR%%/lib/MT/L10N
 @dirrm %%CGIDIR%%/lib/MT/I18N
 @dirrm %%CGIDIR%%/lib/MT/FileMgr
 @dirrm %%CGIDIR%%/lib/MT/Compat
+@dirrm %%CGIDIR%%/lib/MT/Cache
+@dirrm %%CGIDIR%%/lib/MT/CMS
 @dirrm %%CGIDIR%%/lib/MT/BackupRestore
 @dirrm %%CGIDIR%%/lib/MT/Auth
 @dirrm %%CGIDIR%%/lib/MT/Asset
+@dirrm %%CGIDIR%%/lib/MT/ArchiveType
+@dirrm %%CGIDIR%%/lib/MT/App/Search
 @dirrm %%CGIDIR%%/lib/MT/App
 @dirrm %%CGIDIR%%/lib/MT
 @dirrm %%CGIDIR%%/lib
 @dirrm %%CGIDIR%%/import
-@dirrm %%CGIDIR%%/extras/examples/plugins/reCaptcha/php
-@dirrm %%CGIDIR%%/extras/examples/plugins/reCaptcha/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/reCaptcha
-@dirrm %%CGIDIR%%/extras/examples/plugins/mirror/tmpl
-@dirrm %%CGIDIR%%/extras/examples/plugins/mirror/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/mirror
-@dirrm %%CGIDIR%%/extras/examples/plugins/l10nsample/tmpl
-@dirrm %%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample/L10N
-@dirrm %%CGIDIR%%/extras/examples/plugins/l10nsample/lib/l10nsample
-@dirrm %%CGIDIR%%/extras/examples/plugins/l10nsample/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/l10nsample
-@dirrm %%CGIDIR%%/extras/examples/plugins/UpdatePingsJP
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch/tmpl
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch/php
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch/L10N
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib/GoogleSearch
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/GoogleSearch
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins/FiveStarRating/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins/FiveStarRating
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/plugins
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins/FiveStarRating
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static/plugins
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating/mt-static
-@dirrm %%CGIDIR%%/extras/examples/plugins/FiveStarRating
-@dirrm %%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount/tmpl
-@dirrm %%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/CommentByGoogleAccount
-@dirrm %%CGIDIR%%/extras/examples/plugins/BackupRestoreSample/lib/BackupRestoreSample
-@dirrm %%CGIDIR%%/extras/examples/plugins/BackupRestoreSample/lib
-@dirrm %%CGIDIR%%/extras/examples/plugins/BackupRestoreSample
-@dirrm %%CGIDIR%%/extras/examples/plugins
-@dirrm %%CGIDIR%%/extras/examples
-@dirrm %%CGIDIR%%/extras
 @dirrm %%CGIDIR%%/extlib/YAML
 @dirrm %%CGIDIR%%/extlib/XMLRPC/Transport
 @dirrm %%CGIDIR%%/extlib/XMLRPC
@@ -2216,7 +2218,10 @@
 @dirrm %%CGIDIR%%/extlib/SOAP/Transport
 @dirrm %%CGIDIR%%/extlib/SOAP
 @dirrm %%CGIDIR%%/extlib/Params
+@dirrm %%CGIDIR%%/extlib/Net/OpenID/Yadis
 @dirrm %%CGIDIR%%/extlib/Net/OpenID
+@dirrm %%CGIDIR%%/extlib/Net/OAuth/SignatureMethod
+@dirrm %%CGIDIR%%/extlib/Net/OAuth
 @dirrm %%CGIDIR%%/extlib/Net/HTTP
 @dirrm %%CGIDIR%%/extlib/Net
 @dirrm %%CGIDIR%%/extlib/Module/Load
@@ -2227,6 +2232,7 @@
 @dirrm %%CGIDIR%%/extlib/MT
 @dirrm %%CGIDIR%%/extlib/MIME/Charset
 @dirrm %%CGIDIR%%/extlib/MIME
+@dirrm %%CGIDIR%%/extlib/Lucene
 @dirrm %%CGIDIR%%/extlib/Locale/Maketext
 @dirrm %%CGIDIR%%/extlib/Locale
 @dirrm %%CGIDIR%%/extlib/LWP/Protocol
