@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	yui
-PORTVERSION=	3.2.03
+PORTVERSION=	3.2.04
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.askd.ru/~shelton/fileZ/
+MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/software/ \
+		http://citycat4.land.ru/ \
+                http://myooo.ru/FreeBSD/
 
 MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Rich-featured multi-windows console text editor
@@ -21,16 +23,12 @@ MAN1=		y.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on 64-bit arch
-.endif
-
 post-install:
 	${LN} -sf ${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in BUGS CHANGES COPYRIGHT TODO COPYRIGHT.ITK
+.for file in BUGS CHANGES COPYRIGHT TODO COPYRIGHT.ITK THANKS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
