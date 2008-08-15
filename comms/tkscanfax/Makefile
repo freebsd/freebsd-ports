@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	comms tk
 MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 
 USE_TK=		yes

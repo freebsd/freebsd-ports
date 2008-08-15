@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax send/receive program
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
