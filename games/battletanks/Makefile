@@ -30,6 +30,10 @@ OPTIONS=	LUA	"Build with Lua scripting support"	off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_LUA)
 USE_LUA=	5.0+
 .else
