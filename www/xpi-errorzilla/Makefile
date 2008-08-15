@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xpi-errorzilla
 # Date created:		02 Nov 2006
-# Whom:			Steven Kreuzer <skreuzer@f2o.org>
+# Whom:			Steven Kreuzer <skreuzer@exit2shell.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	errorzilla
-PORTVERSION=	0.2
-DISTVERSIONSUFFIX=	-fx+fl
+PORTVERSION=	0.33
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	skreuzer@exit2shell.com
@@ -15,9 +15,9 @@ COMMENT=	Useful error pages
 
 XPI_DISTNAME=	errorzilla_mod
 XPI_NUM=	3336
-XPI_ID=		ErrorZillaMod@jaybaldwin
-XPI_FILES=	chrome/errorzillamod.jar chrome.manifest install.rdf license.txt
-XPI_DIRS=	chrome
+XPI_ID={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+XPI_FILES=chrome/errorzillamod.jar chrome.manifest defaults/preferences/prefs.js install.js install.rdf
+XPI_DIRS=chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
