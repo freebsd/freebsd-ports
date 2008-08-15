@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.jp/edict/fpw/dist/yasou/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.b0/beta0/}
 
-MAINTAINER=	rushani@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yasou picture book (EPWING V1 format) by SAS
 
 NO_CDROM=	"No commercial use, and no redistribution allowed with fee except media and/or shipping cost"

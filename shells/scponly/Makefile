@@ -77,7 +77,7 @@ MASTER_SITES=	http://www.sublimation.org/scponly/ \
 MASTER_SITE_SUBDIR=	scponly
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rushani@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8
