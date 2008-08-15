@@ -25,8 +25,8 @@
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Types.hi
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Window.hi
 %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/SOE.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHGL-3.2.0.0.o
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHGL-3.2.0.0.a
+%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHGL-%%HGL_VERSION%%.o
+%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHGL-%%HGL_VERSION%%.a
 %%HGL_LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrm %%DOCSDIR%%
@@ -38,6 +38,6 @@
 @dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
 @dirrm %%HGL_LIBDIR_REL%%
 @exec /bin/sh %D/%%HGL_LIBDIR_REL%%/register.sh
-@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec if [ -x %D/bin/ghc-pkg ]; then %D/bin/ghc-pkg unregister HGL || /usr/bin/true; fi
-@unexec if [ -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old ]; then rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old || /usr/bin/true; fi
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister HGL
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
