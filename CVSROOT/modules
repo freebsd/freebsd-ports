@@ -7521,6 +7521,7 @@ linrad                          ports/comms/linrad
 linrename                       ports/sysutils/linrename
 linsmith                        ports/science/linsmith
 linux-SHA-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
+linux-XnViewMP                  ports/graphics/linux-XnViewMP
 linux-ac3d                      ports/graphics/linux-ac3d
 linux-acu                       ports/sysutils/linux-acu
 linux-adobesvg                  ports/graphics/linux-adobesvg
@@ -7682,6 +7683,7 @@ linux-warsow                    ports/games/linux-warsow
 linux-xerces-c2                 ports/textproc/linux-xerces-c2
 linux-xjoypad                   ports/emulators/linux-xjoypad
 linux-xmovie                    ports/multimedia/linux-xmovie
+linux-xnviewmp                  ports/graphics/linux-XnViewMP
 linux-xorg-libs                 ports/x11/linux-xorg-libs
 linux-ymessenger                ports/net-im/linux-ymessenger
 linux_base-f7                   ports/emulators/linux_base-f7
@@ -18359,6 +18361,7 @@ rdesktop                        ports/net/rdesktop
 rdfdb                           ports/databases/rdfdb
 rdiff-backup                    ports/sysutils/rdiff-backup
 rdiff-backup-devel              ports/sysutils/rdiff-backup-devel
+rdiff-backup10                  ports/sysutils/rdiff-backup10
 rdigest                         ports/security/rdigest
 rdist6                          ports/net/rdist6
 re2c                            ports/devel/re2c
@@ -21299,6 +21302,7 @@ wireshark-lite                  ports/net/wireshark-lite
 wise                            ports/biology/wise
 wistumbler2                     ports/net/wistumbler2
 wizardkit                       ports/devel/wizardkit
+wizd                            ports/net/wizd
 wm2                             ports/x11-wm/wm2
 wmScoreBoard                    ports/misc/wmScoreBoard
 wmakerconf                      ports/x11-wm/wmakerconf
@@ -22196,6 +22200,8 @@ xpi-errorzilla                  ports/www/xpi-errorzilla
 xpi-fasterfox                   ports/www/xpi-fasterfox
 xpi-firebug                     ports/www/xpi-firebug
 xpi-firefox-showcase            ports/www/xpi-firefox-showcase
+xpi-firefoxonwooztalk           ports/www/xpi-firefoxonwooztalk
+xpi-firegpg                     ports/www/xpi-firegpg
 xpi-fission                     ports/www/xpi-fission
 xpi-flashblock                  ports/www/xpi-flashblock
 xpi-flashgot                    ports/www/xpi-flashgot
@@ -22220,6 +22226,7 @@ xpi-joga                        ports/www/xpi-joga
 xpi-jsview                      ports/www/xpi-jsview
 xpi-leechblock                  ports/www/xpi-leechblock
 xpi-linkification               ports/www/xpi-linkification
+xpi-live_http_headers           ports/www/xpi-live_http_headers
 xpi-locale-switcher             ports/www/xpi-locale-switcher
 xpi-menueditor                  ports/www/xpi-menueditor
 xpi-mldonkey                    ports/www/xpi-mldonkey
