@@ -164,7 +164,7 @@ int read_pkglist(int loops)
 		gauge=p*100/gl.gl_pathc;
 		if(gauge != lastgauge) {
 			dialog_gauge(NULL, "Searching for leaves", maxy/2-1, maxx/2-12, 7, 24, gauge);
-			gauge=lastgauge;
+			lastgauge=gauge;
 		}
 		sprintf(path,"%s/+REQUIRED_BY",gl.gl_pathv[p]);
 		if(stat(path,&sb)) {
