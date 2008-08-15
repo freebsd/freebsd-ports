@@ -122,6 +122,8 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/classstd_1_1logic__error__inherit__graph.png
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context_8h.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context__private_8h-source.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context__private_8h.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/deprecated.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_60681489e9d398c429ccaa1240ca56f5.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_60681489e9d398c429ccaa1240ca56f5_dep.map
@@ -222,9 +224,11 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/inherit__graph__9.png
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/inherits.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespaceCairo.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespaceCairo_1_1Private.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_enum.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_eval.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_func.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespacemembers_type.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/namespaces.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/pages.html
