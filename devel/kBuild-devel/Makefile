@@ -19,6 +19,8 @@ COMMENT=	Makefile framework
 BUILD_DEPENDS=	automake-1.9:${PORTSDIR}/devel/automake19 \
 		autoconf-2.62:${PORTSDIR}/devel/autoconf262
 
+BROKEN=		changes permissions on already installed binaries
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
