@@ -12,6 +12,7 @@ libexec/torrus/action_notify
 libexec/torrus/action_printemail
 libexec/torrus/action_snmptrap
 libexec/torrus/action_snmpv1trap
+libexec/torrus/bdbinfo
 libexec/torrus/buildsearchdb
 libexec/torrus/cleanup
 libexec/torrus/clearcache
@@ -30,32 +31,32 @@ libexec/torrus/schedulerinfo
 libexec/torrus/scripts/rrdup_notify.sh
 libexec/torrus/scripts/xml/extract-skeleton.xsl
 libexec/torrus/ttproclist
-share/doc/torrus/devdoc/architecture.pod
-share/doc/torrus/devdoc/devdiscover.pod
-share/doc/torrus/devdoc/progstyle.pod
-share/doc/torrus/devdoc/reqs.0.0.pod
-share/doc/torrus/devdoc/reqs.0.1.pod
-share/doc/torrus/devdoc/torrus_roadmap.pod
-share/doc/torrus/devdoc/wd.distributed.pod
-share/doc/torrus/devdoc/wd.messaging.pod
-share/doc/torrus/devdoc/wd.monitor-escalation.pod
-share/doc/torrus/devdoc/wd.uptime-mon.pod
-share/doc/torrus/install.txt
-share/doc/torrus/reporting_setup.txt
-share/doc/torrus/rpnexpr.txt
-share/doc/torrus/rrfw_torrus_migration.txt
-share/doc/torrus/scalability.txt
-share/doc/torrus/snmpdiscovery.txt
-share/doc/torrus/stylingprofile.txt
-share/doc/torrus/userguide.txt
-share/doc/torrus/vendorsupport.txt
-share/doc/torrus/webintf.txt
-share/doc/torrus/xmlconfig.txt
-share/examples/torrus/README
-share/examples/torrus/onms.tmpl
-share/examples/torrus/onmsInterfaces.sh
-share/examples/torrus/setmonitor.xupdate.xml
-share/examples/torrus/torrus-siteconfig.powerbook.pl
+%%DOCSDIR%%/devdoc/architecture.pod
+%%DOCSDIR%%/devdoc/devdiscover.pod
+%%DOCSDIR%%/devdoc/progstyle.pod
+%%DOCSDIR%%/devdoc/reqs.0.0.pod
+%%DOCSDIR%%/devdoc/reqs.0.1.pod
+%%DOCSDIR%%/devdoc/torrus_roadmap.pod
+%%DOCSDIR%%/devdoc/wd.distributed.pod
+%%DOCSDIR%%/devdoc/wd.messaging.pod
+%%DOCSDIR%%/devdoc/wd.monitor-escalation.pod
+%%DOCSDIR%%/devdoc/wd.uptime-mon.pod
+%%DOCSDIR%%/install.txt
+%%DOCSDIR%%/reporting_setup.txt
+%%DOCSDIR%%/rpnexpr.txt
+%%DOCSDIR%%/rrfw_torrus_migration.txt
+%%DOCSDIR%%/scalability.txt
+%%DOCSDIR%%/snmpdiscovery.txt
+%%DOCSDIR%%/stylingprofile.txt
+%%DOCSDIR%%/userguide.txt
+%%DOCSDIR%%/vendorsupport.txt
+%%DOCSDIR%%/webintf.txt
+%%DOCSDIR%%/xmlconfig.txt
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/onms.tmpl
+%%EXAMPLESDIR%%/onmsInterfaces.sh
+%%EXAMPLESDIR%%/setmonitor.xupdate.xml
+%%EXAMPLESDIR%%/torrus-siteconfig.powerbook.pl
 share/torrus/conf_defaults/devdiscover-config.pl
 share/torrus/conf_defaults/initscript.conf
 share/torrus/conf_defaults/instvars
@@ -123,6 +124,7 @@ share/torrus/xmlconfig/old/snmp-defs.old-0.1.2.xml
 share/torrus/xmlconfig/snmp-defs.xml
 share/torrus/xmlconfig/vendor/alteon.xml
 share/torrus/xmlconfig/vendor/apc.ups.xml
+share/torrus/xmlconfig/vendor/apple.ae.xml
 share/torrus/xmlconfig/vendor/ascend.max.xml
 share/torrus/xmlconfig/vendor/atmel.xml
 share/torrus/xmlconfig/vendor/betternetworks.xml
@@ -144,6 +146,7 @@ share/torrus/xmlconfig/vendor/motorola.bsr.xml
 share/torrus/xmlconfig/vendor/netapp.filer.xml
 share/torrus/xmlconfig/vendor/netscreen.xml
 share/torrus/xmlconfig/vendor/paradyne.xdsl.xml
+share/torrus/xmlconfig/vendor/symmetricom.xml
 share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/ACL.pm
 %%SITE_PERL%%/Torrus/ACL/AuthLocalMD5.pm
@@ -171,6 +174,7 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DevDiscover/ATMEL.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Alteon.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Apple_AE.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AscendMax.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AxxessIT.pm
 %%SITE_PERL%%/Torrus/DevDiscover/BetterNetworks.pm
@@ -201,6 +205,7 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2737_ENTITY_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2790_HOST_RESOURCES.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2863_IF_MIB.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Symmetricom.pm
 %%SITE_PERL%%/Torrus/DevDiscover/UcdSnmp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Xylan.pm
 %%SITE_PERL%%/Torrus/Log.pm
@@ -241,7 +246,7 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @dirrm var/torrus/session_data/lock
 @dirrm var/torrus/session_data
 @dirrm var/torrus/reports
-@dirrm var/torrus/db
+@dirrmtry var/torrus/db
 @dirrm var/torrus/cache
 @dirrmtry var/torrus
 @dirrm share/torrus/xmlconfig/vendor
@@ -262,9 +267,9 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @dirrm share/torrus/plugins
 @dirrm share/torrus/conf_defaults
 @dirrm share/torrus
-@dirrm share/examples/torrus
-@dirrm share/doc/torrus/devdoc
-@dirrm share/doc/torrus
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/devdoc
+@dirrm %%DOCSDIR%%
 @dirrm libexec/torrus/scripts/xml
 @dirrm libexec/torrus/scripts
 @dirrm libexec/torrus
@@ -283,4 +288,3 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 @dirrm %%SITE_PERL%%/Torrus/ACL
 @dirrm %%SITE_PERL%%/Torrus
 @exec mkdir -p /var/log/torrus
-@unexec rmdir /var/log/torrus 2>/dev/null || echo "The logs will be left in /var/log/torrus after the port is deinstalled."
