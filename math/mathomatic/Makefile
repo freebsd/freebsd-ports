@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	14.1.2
+PORTVERSION=	14.1.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
