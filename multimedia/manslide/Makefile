@@ -41,6 +41,9 @@ DESKTOP_ENTRIES=	"Manslide" \
        			"Application;AudioVideo;" \
 			false
 
+DEPRECATED=	Use multimedia/smile instead
+EXPIRATION_DATE=	2008-10-13
+
 post-extract:
 # bash it isn't the FreeBSD's default shell
 	@${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/mainfrm.cpp
