@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.12 2008-04-29 19:20:52 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.13 2008-08-15 12:29:42 bsam Exp $
 #
 
 # Variables:
@@ -104,6 +104,20 @@ MD5_FILE?=				${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 
 BRANDELF_DIRS?=
 BRANDELF_FILES?=
+
+# For ports that define PORTDOCS, be sure not to install
+# documentation if NOPORTDOCS is defined
+.  if defined(PORTDOCS) && defined(NOPORTDOCS)
+pre-patch: linux-rpm-clean-portdocs
+
+.    if !target(linux-rpm-clean-portdocs)
+linux-rpm-clean-portdocs:
+.      for x in ${PORTDOCS}
+	@${RM} -f ${WRKDIR}/${DOCSDIR_REL}/${x}
+.      endfor
+	@${RMDIR} ${WRKDIR}/${DOCSDIR_REL}
+.    endif
+.  endif
 
 .  if defined(AUTOMATIC_PLIST)
 
