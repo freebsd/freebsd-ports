@@ -20,6 +20,7 @@
 %%WWWDIR%%/classes/HTML_Safe/Safe.php
 %%WWWDIR%%/classes/Image.php
 %%WWWDIR%%/classes/LoggedInUser.php
+%%WWWDIR%%/classes/Logins.php
 %%WWWDIR%%/classes/Mail/RFC822.php
 %%WWWDIR%%/classes/Mail/htmlMimeMail.php
 %%WWWDIR%%/classes/Mail/mimePart.php
@@ -29,7 +30,10 @@
 %%WWWDIR%%/classes/UserDB.php
 %%WWWDIR%%/classes/XML_HTMLSax3/HTMLSax3.php
 %%WWWDIR%%/classes/XML_HTMLSax3/HTMLSax3/Decorators.php
+%%WWWDIR%%/classes/XML_HTMLSax3/HTMLSax3/Grammar.php
 %%WWWDIR%%/classes/XML_HTMLSax3/HTMLSax3/States.php
+%%WWWDIR%%/classes/XML_HTMLSax3/lgpl-3.0.txt
+%%WWWDIR%%/classes/XML_HTMLSax3/license.txt
 %%WWWDIR%%/classes/database/mysql/Database.php
 %%WWWDIR%%/classes/gallery/User.php
 %%WWWDIR%%/classes/gallery/UserDB.php
@@ -84,6 +88,7 @@
 %%WWWDIR%%/css/base.css.default
 %%WWWDIR%%/css/config.css.default
 %%WWWDIR%%/css/embedded_style.css.default
+%%WWWDIR%%/css/mooRainbow.css
 %%WWWDIR%%/css/screen.css.default
 %%WWWDIR%%/delete_album.php
 %%WWWDIR%%/delete_photo.php
@@ -94,45 +99,6 @@
 %%WWWDIR%%/docs/context-help/search.php
 %%WWWDIR%%/docs/context-help/slideshow.php
 %%WWWDIR%%/docs/context-help/test.php
-%%WWWDIR%%/docs/g1package/gallery1-admin.backup.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.basics.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.embedding.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.mirroring.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.offline.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.patching.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.performance.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.securing.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.users.html
-%%WWWDIR%%/docs/g1package/gallery1-install.config-wizard.html
-%%WWWDIR%%/docs/g1package/gallery1-install.credits.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.a.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.b.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.c.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.d.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.html
-%%WWWDIR%%/docs/g1package/gallery1-install.features.html
-%%WWWDIR%%/docs/g1package/gallery1-install.help.html
-%%WWWDIR%%/docs/g1package/gallery1-install.html
-%%WWWDIR%%/docs/g1package/gallery1-install.language-packs.html
-%%WWWDIR%%/docs/g1package/gallery1-install.overview.html
-%%WWWDIR%%/docs/g1package/gallery1-install.remote-applets.html
-%%WWWDIR%%/docs/g1package/gallery1-install.required-programs.html
-%%WWWDIR%%/docs/g1package/gallery1-install.requirements.html
-%%WWWDIR%%/docs/g1package/gallery1-install.unix-ftp.html
-%%WWWDIR%%/docs/g1package/gallery1-install.unix-shell.html
-%%WWWDIR%%/docs/g1package/gallery1-install.upgrade.html
-%%WWWDIR%%/docs/g1package/gallery1-install.windows-iis.html
-%%WWWDIR%%/docs/g1package/gallery1-install.windows.html
-%%WWWDIR%%/docs/g1package/gallery1-user.html
-%%WWWDIR%%/docs/g1package/gallery1-user.import.html
-%%WWWDIR%%/docs/g1package/gallery1-user.watermark.html
-%%WWWDIR%%/docs/g1package/html.css
-%%WWWDIR%%/docs/g1package/images/basic-auth.gif
-%%WWWDIR%%/docs/g1package/images/up-up.gif
-%%WWWDIR%%/docs/g1package/images/up.gif
-%%WWWDIR%%/docs/g1package/index.html
-%%WWWDIR%%/docs/g1package/pretty-html.css
 %%WWWDIR%%/docs/gallery1-admin.backup.html
 %%WWWDIR%%/docs/gallery1-admin.basics.html
 %%WWWDIR%%/docs/gallery1-admin.embedding.html
@@ -187,12 +153,22 @@
 %%WWWDIR%%/extra_fields.php
 %%WWWDIR%%/gallery_remote.php
 %%WWWDIR%%/gallery_remote2.php
+%%WWWDIR%%/help/blacklist.txt
 %%WWWDIR%%/help/imagemap.php
 %%WWWDIR%%/help/metadataOnUpload.php
 %%WWWDIR%%/html/userData.inc
 %%WWWDIR%%/html_wrap/album.footer.default
 %%WWWDIR%%/html_wrap/album.header.default
 %%WWWDIR%%/html_wrap/frames/README.php
+%%WWWDIR%%/html_wrap/frames/deryk/BB.gif
+%%WWWDIR%%/html_wrap/frames/deryk/BL.gif
+%%WWWDIR%%/html_wrap/frames/deryk/BR.gif
+%%WWWDIR%%/html_wrap/frames/deryk/LL.gif
+%%WWWDIR%%/html_wrap/frames/deryk/RR.gif
+%%WWWDIR%%/html_wrap/frames/deryk/TL.gif
+%%WWWDIR%%/html_wrap/frames/deryk/TR.gif
+%%WWWDIR%%/html_wrap/frames/deryk/TT.gif
+%%WWWDIR%%/html_wrap/frames/deryk/frame.def
 %%WWWDIR%%/html_wrap/frames/golden/BB.gif
 %%WWWDIR%%/html_wrap/frames/golden/BL.gif
 %%WWWDIR%%/html_wrap/frames/golden/BR.gif
@@ -242,6 +218,74 @@
 %%WWWDIR%%/html_wrap/frames/postage_stamp/TT5.gif
 %%WWWDIR%%/html_wrap/frames/postage_stamp/frame.def
 %%WWWDIR%%/html_wrap/frames/postage_stamp/pixel_trans.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/BB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/BBL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/BBR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/BL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/BR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/LL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/LLB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/LLT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/RR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/RRB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/RRT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/TL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/TR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/TT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/TTL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/TTR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook/frame.def
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/BB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/BBL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/BBR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/BL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/BR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/LL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/LLB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/LLT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/RR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/RRB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/RRT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/TL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/TR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/TT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/TTL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/TTR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbook_small/frame.def
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/BB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/BBL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/BBR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/BL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/BR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/LL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/LLB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/LLT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/RR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/RRB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/RRT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/TL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/TR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/TT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/TTL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/TTR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadow/frame.def
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/BB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/BBL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/BBR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/BL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/BR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/LL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/LLB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/LLT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/RR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/RRB.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/RRT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/TL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/TR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/TT.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/TTL.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/TTR.gif
+%%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall/frame.def
 %%WWWDIR%%/html_wrap/frames/shadows/BB.png
 %%WWWDIR%%/html_wrap/frames/shadows/BBL.png
 %%WWWDIR%%/html_wrap/frames/shadows/BR.png
@@ -312,7 +356,7 @@
 %%WWWDIR%%/images/colorpicker.png
 %%WWWDIR%%/images/colorscale.png
 %%WWWDIR%%/images/computer.gif
-%%WWWDIR%%/images/donate.jpg
+%%WWWDIR%%/images/donate.png
 %%WWWDIR%%/images/ecard_images/00.gif
 %%WWWDIR%%/images/ecard_images/01.gif
 %%WWWDIR%%/images/ecard_images/02.gif
@@ -351,13 +395,13 @@
 %%WWWDIR%%/images/favicon.ico
 %%WWWDIR%%/images/g1-phpBB2-icon.png
 %%WWWDIR%%/images/gallery-tag.png
+%%WWWDIR%%/images/gallery1.gif
 %%WWWDIR%%/images/green_trafficlight.gif
-%%WWWDIR%%/images/icons/1leftarrow.gif
-%%WWWDIR%%/images/icons/1rightarrow.gif
 %%WWWDIR%%/images/icons/2downarrow.gif
+%%WWWDIR%%/images/icons/admin.gif
 %%WWWDIR%%/images/icons/behavior-capplet.gif
 %%WWWDIR%%/images/icons/camera.gif
-%%WWWDIR%%/images/icons/compressed.png
+%%WWWDIR%%/images/icons/compressed.gif
 %%WWWDIR%%/images/icons/decrypted.gif
 %%WWWDIR%%/images/icons/delete.gif
 %%WWWDIR%%/images/icons/display.gif
@@ -378,13 +422,32 @@
 %%WWWDIR%%/images/icons/info.gif
 %%WWWDIR%%/images/icons/kcmfontinst.gif
 %%WWWDIR%%/images/icons/kdf.gif
-%%WWWDIR%%/images/icons/nav_first.gif
-%%WWWDIR%%/images/icons/nav_last.gif
-%%WWWDIR%%/images/icons/nav_next.gif
-%%WWWDIR%%/images/icons/nav_prev.gif
+%%WWWDIR%%/images/icons/key.gif
+%%WWWDIR%%/images/icons/locked.gif
+%%WWWDIR%%/images/icons/login.gif
+%%WWWDIR%%/images/icons/logout.gif
+%%WWWDIR%%/images/icons/navigation/nav_dot.gif
+%%WWWDIR%%/images/icons/navigation/nav_dot_left.gif
+%%WWWDIR%%/images/icons/navigation/nav_dot_right.gif
+%%WWWDIR%%/images/icons/navigation/nav_first.gif
+%%WWWDIR%%/images/icons/navigation/nav_home.gif
+%%WWWDIR%%/images/icons/navigation/nav_last.gif
+%%WWWDIR%%/images/icons/navigation/nav_next.gif
+%%WWWDIR%%/images/icons/navigation/nav_page.gif
+%%WWWDIR%%/images/icons/navigation/nav_prev.gif
+%%WWWDIR%%/images/icons/navigation/return_to.gif
+%%WWWDIR%%/images/icons/new_album.gif
 %%WWWDIR%%/images/icons/no_idea.gif
+%%WWWDIR%%/images/icons/notice/error.gif
+%%WWWDIR%%/images/icons/notice/information.gif
+%%WWWDIR%%/images/icons/notice/success.gif
+%%WWWDIR%%/images/icons/notice/warning.gif
+%%WWWDIR%%/images/icons/preferences.gif
 %%WWWDIR%%/images/icons/reload.gif
 %%WWWDIR%%/images/icons/showcomment.gif
+%%WWWDIR%%/images/icons/slideshow/1leftarrow.gif
+%%WWWDIR%%/images/icons/slideshow/1rightarrow.gif
+%%WWWDIR%%/images/icons/slideshow/play_stop.gif
 %%WWWDIR%%/images/icons/tab_duplicate.gif
 %%WWWDIR%%/images/icons/thumbnail.gif
 %%WWWDIR%%/images/icons/tree/join-left.gif
@@ -392,18 +455,24 @@
 %%WWWDIR%%/images/icons/tree/joinbottom-left.gif
 %%WWWDIR%%/images/icons/tree/joinbottom-right.gif
 %%WWWDIR%%/images/icons/unsortedList.gif
+%%WWWDIR%%/images/icons/user_gray.gif
+%%WWWDIR%%/images/icons/view_comment.gif
 %%WWWDIR%%/images/icons/viewmag1.gif
 %%WWWDIR%%/images/icons/window_fullscreen.gif
 %%WWWDIR%%/images/icons/window_nofullscreen.gif
 %%WWWDIR%%/images/icons/yast_kuser.gif
 %%WWWDIR%%/images/icons/yast_sysadmin.gif
 %%WWWDIR%%/images/icons/yast_sysadmin2.gif
+%%WWWDIR%%/images/moorainbow/blank.gif
+%%WWWDIR%%/images/moorainbow/moor_arrows.gif
+%%WWWDIR%%/images/moorainbow/moor_boverlay.png
+%%WWWDIR%%/images/moorainbow/moor_cursor.gif
+%%WWWDIR%%/images/moorainbow/moor_slider.png
+%%WWWDIR%%/images/moorainbow/moor_woverlay.png
 %%WWWDIR%%/images/movie.thumb.jpg
 %%WWWDIR%%/images/nav_dot.gif
 %%WWWDIR%%/images/nav_dot_left.gif
 %%WWWDIR%%/images/nav_dot_right.gif
-%%WWWDIR%%/images/nav_home.gif
-%%WWWDIR%%/images/nav_page.gif
 %%WWWDIR%%/images/pixel_trans.gif
 %%WWWDIR%%/images/red_trafficlight.gif
 %%WWWDIR%%/images/simplex-bkg.gif
@@ -419,6 +488,7 @@
 %%WWWDIR%%/includes/add_photos/add_other.inc
 %%WWWDIR%%/includes/add_photos/add_url.inc
 %%WWWDIR%%/includes/add_photos/captionOptions.inc.php
+%%WWWDIR%%/includes/comments/commentHandling.inc.php
 %%WWWDIR%%/includes/definitions/albumProperties.php
 %%WWWDIR%%/includes/definitions/mime.mapping.php
 %%WWWDIR%%/includes/definitions/navIcons.php
@@ -442,14 +512,33 @@
 %%WWWDIR%%/java/ImageTools.jar
 %%WWWDIR%%/java/applet_img.jar
 %%WWWDIR%%/java/metadata-extractor-2.1.jar
+%%WWWDIR%%/js/arrowkey_nav.js
 %%WWWDIR%%/js/client_sniff.js
 %%WWWDIR%%/js/fitToWindow.js.php
 %%WWWDIR%%/js/imagemap.js
+%%WWWDIR%%/js/jopen.js
+%%WWWDIR%%/js/moorainbow/mooRainbow.js.php
+%%WWWDIR%%/js/moorainbow/mootools.v1.11.js
 %%WWWDIR%%/js/multifile.js.php
+%%WWWDIR%%/js/passwordStrengthMeter.js
+%%WWWDIR%%/js/progressbar.js
+%%WWWDIR%%/js/rgbcolor.js
 %%WWWDIR%%/js/sectionTabs.js.php
-%%WWWDIR%%/js/toggle.js
-%%WWWDIR%%/js/wz_jsgraphics.js
-%%WWWDIR%%/js/wz_tooltip.js
+%%WWWDIR%%/js/toggle.js.php
+%%WWWDIR%%/js/wz/tip_balloon.js
+%%WWWDIR%%/js/wz/tip_balloon/b.gif
+%%WWWDIR%%/js/wz/tip_balloon/background.gif
+%%WWWDIR%%/js/wz/tip_balloon/l.gif
+%%WWWDIR%%/js/wz/tip_balloon/lb.gif
+%%WWWDIR%%/js/wz/tip_balloon/lt.gif
+%%WWWDIR%%/js/wz/tip_balloon/r.gif
+%%WWWDIR%%/js/wz/tip_balloon/rb.gif
+%%WWWDIR%%/js/wz/tip_balloon/rt.gif
+%%WWWDIR%%/js/wz/tip_balloon/stemb.gif
+%%WWWDIR%%/js/wz/tip_balloon/stemt.gif
+%%WWWDIR%%/js/wz/tip_balloon/t.gif
+%%WWWDIR%%/js/wz/wz_jsgraphics.js
+%%WWWDIR%%/js/wz/wz_tooltip.js
 %%WWWDIR%%/layout/adminAlbumCommands.inc
 %%WWWDIR%%/layout/adminbox.inc
 %%WWWDIR%%/layout/breadcrumb.inc
@@ -465,18 +554,22 @@
 %%WWWDIR%%/layout/navtablemiddle.inc
 %%WWWDIR%%/layout/searchdraw.inc
 %%WWWDIR%%/layout/watermarkform.inc
-%%WWWDIR%%/lib/Form.php
 %%WWWDIR%%/lib/album.php
 %%WWWDIR%%/lib/albumItem.php
-%%WWWDIR%%/lib/colorpicker.php
 %%WWWDIR%%/lib/content.php
+%%WWWDIR%%/lib/filesystem.php
+%%WWWDIR%%/lib/filetypes.php
+%%WWWDIR%%/lib/form.php
 %%WWWDIR%%/lib/imageManipulation.php
 %%WWWDIR%%/lib/lang.php
 %%WWWDIR%%/lib/mail.php
 %%WWWDIR%%/lib/messages.php
 %%WWWDIR%%/lib/popup.php
 %%WWWDIR%%/lib/setup.php
+%%WWWDIR%%/lib/stats.php
+%%WWWDIR%%/lib/text.php
 %%WWWDIR%%/lib/url.php
+%%WWWDIR%%/lib/users.php
 %%WWWDIR%%/lib/valchecks.php
 %%WWWDIR%%/lib/voting.php
 %%NLS%%%%WWWDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_common.mo
@@ -764,6 +857,7 @@
 %%WWWDIR%%/publish_xp_docs.php
 %%WWWDIR%%/rearrange.php
 %%WWWDIR%%/rebuild_capture_dates.php
+%%WWWDIR%%/rebuild_thumbs.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/rename_album.php
 %%WWWDIR%%/reset_votes.php
@@ -775,7 +869,6 @@
 %%WWWDIR%%/secure.sh
 %%WWWDIR%%/session.php
 %%WWWDIR%%/setup/.htaccess
-%%WWWDIR%%/setup/backup_albums.php
 %%WWWDIR%%/setup/check.inc
 %%WWWDIR%%/setup/check_imagemagick.php
 %%WWWDIR%%/setup/check_mail.php
@@ -803,6 +896,13 @@
 %%WWWDIR%%/skins/bars002/images/screenshot.jpg
 %%WWWDIR%%/skins/bars002/images/topbar.jpg
 %%WWWDIR%%/skins/bars002/style.def
+%%WWWDIR%%/skins/bars014/css/screen.css
+%%WWWDIR%%/skins/bars014/images/mod_highlight_bg.jpg
+%%WWWDIR%%/skins/bars014/images/mod_highlight_left.jpg
+%%WWWDIR%%/skins/bars014/images/mod_highlight_right.jpg
+%%WWWDIR%%/skins/bars014/images/navbar.jpg
+%%WWWDIR%%/skins/bars014/images/screenshot.jpg
+%%WWWDIR%%/skins/bars014/style.def
 %%WWWDIR%%/skins/bblue/css/screen.css
 %%WWWDIR%%/skins/bblue/images/mod_headliner.jpg
 %%WWWDIR%%/skins/bblue/images/mod_navbar.jpg
@@ -994,7 +1094,6 @@
 %%WWWDIR%%/stamp_preview.php
 %%WWWDIR%%/stats-wizard.php
 %%WWWDIR%%/stats.php
-%%WWWDIR%%/tools/build_manifest.php
 %%WWWDIR%%/tools/build_manifest_1_4.php
 %%WWWDIR%%/tools/despam-comments.php
 %%WWWDIR%%/tools/find_orphans.php
@@ -1079,6 +1178,9 @@
 @dirrm %%WWWDIR%%/skins/bblue/images
 @dirrm %%WWWDIR%%/skins/bblue/css
 @dirrm %%WWWDIR%%/skins/bblue
+@dirrm %%WWWDIR%%/skins/bars014/images
+@dirrm %%WWWDIR%%/skins/bars014/css
+@dirrm %%WWWDIR%%/skins/bars014
 @dirrm %%WWWDIR%%/skins/bars002/images
 @dirrm %%WWWDIR%%/skins/bars002/css
 @dirrm %%WWWDIR%%/skins/bars002
@@ -1199,6 +1301,9 @@
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/layout
+@dirrm %%WWWDIR%%/js/wz/tip_balloon
+@dirrm %%WWWDIR%%/js/wz
+@dirrm %%WWWDIR%%/js/moorainbow
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/java
 @dirrm %%WWWDIR%%/includes/stats
@@ -1207,9 +1312,14 @@
 @dirrm %%WWWDIR%%/includes/ecard/templates
 @dirrm %%WWWDIR%%/includes/ecard
 @dirrm %%WWWDIR%%/includes/definitions
+@dirrm %%WWWDIR%%/includes/comments
 @dirrm %%WWWDIR%%/includes/add_photos
 @dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/images/moorainbow
 @dirrm %%WWWDIR%%/images/icons/tree
+@dirrm %%WWWDIR%%/images/icons/slideshow
+@dirrm %%WWWDIR%%/images/icons/notice
+@dirrm %%WWWDIR%%/images/icons/navigation
 @dirrm %%WWWDIR%%/images/icons/imageedit
 @dirrm %%WWWDIR%%/images/icons
 @dirrm %%WWWDIR%%/images/ecard_images
@@ -1217,18 +1327,21 @@
 @dirrm %%WWWDIR%%/html_wrap/frames/wooden
 @dirrm %%WWWDIR%%/html_wrap/frames/simple_book
 @dirrm %%WWWDIR%%/html_wrap/frames/shadows
+@dirrm %%WWWDIR%%/html_wrap/frames/scrapbookshadowsmall
+@dirrm %%WWWDIR%%/html_wrap/frames/scrapbookshadow
+@dirrm %%WWWDIR%%/html_wrap/frames/scrapbook_small
+@dirrm %%WWWDIR%%/html_wrap/frames/scrapbook
 @dirrm %%WWWDIR%%/html_wrap/frames/postage_stamp
 @dirrm %%WWWDIR%%/html_wrap/frames/polaroids
 @dirrm %%WWWDIR%%/html_wrap/frames/polaroid
 @dirrm %%WWWDIR%%/html_wrap/frames/notebook
 @dirrm %%WWWDIR%%/html_wrap/frames/golden
+@dirrm %%WWWDIR%%/html_wrap/frames/deryk
 @dirrm %%WWWDIR%%/html_wrap/frames
 @dirrm %%WWWDIR%%/html_wrap
 @dirrm %%WWWDIR%%/html
 @dirrm %%WWWDIR%%/help
 @dirrm %%WWWDIR%%/docs/images
-@dirrm %%WWWDIR%%/docs/g1package/images
-@dirrm %%WWWDIR%%/docs/g1package
 @dirrm %%WWWDIR%%/docs/context-help
 @dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/css
