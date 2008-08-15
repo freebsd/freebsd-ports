@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	${PORTNAME}2-current
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	giffunip@tutopia.com
 COMMENT=	Alternative threads-aware malloc
 
 USE_GMAKE=	yes
