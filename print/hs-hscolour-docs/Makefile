@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hscolour-docs
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	print haskell
-MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/
+MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
+		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	hscolour-${PORTVERSION}
 
@@ -20,24 +21,23 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		HsColour:${PORTSDIR}/print/hs-hscolour
 
 HSCOLOUR_VERSION=	${PORTVERSION}
+HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
 
 CABAL_CMD=	runghc Setup.hs
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-PLIST_SUB=	DOCSDIR_REL=${DOCSDIR_REL}
 
 .SILENT:
 
 do-configure:
-	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --prefix=${PREFIX}
+	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --haddock-options=-w --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABAL_CMD} build && \
-		${CABAL_CMD} haddock --executables --hyperlink-source \
-				     --hscolour-css=${LOCALBASE}/share/hscolour-${HSCOLOUR_VERSION}/hscolour.css
+	cd ${WRKSRC} && ${CABAL_CMD} haddock --executables --hyperlink-source \
+					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 
 do-install:
 	${MKDIR} ${DOCSDIR}/html
-	cd ${WRKSRC}/dist/doc/html/hscolour && ${CP} -R * ${DOCSDIR}/html
+	cd ${WRKSRC}/dist/doc/html/hscolour && ${COPYTREE_SHARE} \* ${DOCSDIR}/html
 
 .include <bsd.port.mk>
