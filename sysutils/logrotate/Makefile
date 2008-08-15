@@ -7,6 +7,7 @@
 
 PORTNAME=		logrotate
 PORTVERSION=		3.7.7
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
