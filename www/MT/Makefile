@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.12
+PORTVERSION=	4.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/
 DISTNAME=	MTOS-${PORTVERSION}-en
@@ -25,7 +25,8 @@ RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
 	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
+	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 .endif
 
 DATADIR=	www/data
@@ -88,7 +89,7 @@ do-install:
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt-config.cgi-original \
-	  extlib default_templates  extlib extras import lib php plugins search_templates \
+	  extlib default_templates  extlib import lib php plugins search_templates \
 	  tmpl tools ${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${PREFIX}/${DATADIR}
