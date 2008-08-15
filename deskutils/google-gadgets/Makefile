@@ -7,6 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -32,20 +33,47 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefo
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20
 USE_GCC=	4.2+
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" CPPFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-qt-host --enable-ltdl-install=no --disable-update-mime-database
+CONFIGURE_ARGS=	--enable-ltdl-install=no
 USE_AUTOTOOLS=	libtool:15:env autoconf:261:env automake:110:env aclocal:110:env libltdl:15
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack
 
-OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on
+OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
+		GTK		"Build GTK Host"			on\
+		QT		"Build Qt Host"				on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITHOUT_GTK)
+PLIST_SUB+=	GTK="@comment "
+CONFIGURE_ARGS+=	--disable-gtk-host --disable-libggadget-gtk --disable-gtkmoz-browser-element --disable-gtk-system-framework
+.elif defined(WITH_GTK)
+USE_GNOME=	gtk20
+PLIST_SUB+=	GTK=""
+CONFIGURE_ARGS+=	--enable-gtk-host
+.endif
+
+.if defined(WITHOUT_QT)
+PLIST_SUB+=	QT="@comment "
+CONFIGURE_ARGS+=	--disable-qt-host --disable-libggadget-qt --disable-qt-system-framework\
+			--disable-qtwebkit-browser-element --disable-qt-script-runtime --disable-qt-xml-http-request
+.else
+USE_QT_VER=	4
+QT_COMPONENTS=	webkit opengl gui corelib script network moc
+PLIST_SUB+=	QT=""
+CONFIGURE_ARGS+=	--enable-qt-host
+.endif
+
+.if defined(WITHOUT_QT) && defined(WITHOUT_GTK)
+IGNORE=This port requires GTK or Qt host to be enabled
 .endif
 
 post-patch:
@@ -54,10 +82,7 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autotools/bootstrap.sh && ${CP} ${AUTOMAKE_DIR}/mkinstalldirs libltdl/
 
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-DEINSTALL
-
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
