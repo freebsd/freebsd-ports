@@ -21,8 +21,6 @@ LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
@@ -267,6 +265,11 @@ pre-everything::
 .endif
 
 post-patch:
+.if defined(WITH_LZO) || (exists(${LOCALBASE}/lib/liblzo2.so) && !defined(WITHOUT_LZO))
+	${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
+.else
+	${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
+.endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
 		-e 's|-O[236]|${CFLAGS}|'
