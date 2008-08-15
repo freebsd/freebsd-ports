@@ -170,6 +170,11 @@ pre-configure:
 .endif
 	${TOUCH} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
+post-configure:
+.if defined(WITH_ONIGURUMA)
+	cd ${WRKSRC}/ && ${PATCH} -p0 < ${PATCHDIR}/extrapatch-oniguruma-reggnu.c
+.endif
+
 post-build:
 #
 # Hack to allow modules to be installed into separate PREFIX and/or under user

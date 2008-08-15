@@ -297,6 +297,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/etc.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fcntl.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/intern.h
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/largefile.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/io/wait.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/missing.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/nkf.so
