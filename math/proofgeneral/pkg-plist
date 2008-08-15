@@ -56,6 +56,8 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/pg-xml.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-autoloads.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-autoloads.elc
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-auxmodes.el
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-auxmodes.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-config.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-config.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/generic/proof-depends.el
@@ -188,6 +190,8 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/maths-menu.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/pg-dev.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/pg-dev.elc
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/pg-fontsets.el
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/pg-fontsets.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/proof-compat.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/proof-compat.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/lib/span-extent.el
@@ -276,6 +280,8 @@ bin/proofgeneral
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/escherknot.xbm
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts-ttf/README
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts-ttf/isaxsym.ttf
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts-ttf/XSymb0Medium.ttf
+%%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts-ttf/XSymb1Medium.ttf
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts/2helvR12.bdf
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts/2helvR14.bdf
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/x-symbol/etc/fonts/3helvR12.bdf

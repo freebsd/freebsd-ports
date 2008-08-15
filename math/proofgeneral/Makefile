@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	proofgeneral
-PORTVERSION=	3.7
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
-DISTNAME=	ProofGeneral-3.7
+DISTNAME=	ProofGeneral-3.7.1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	timbob@bigpond.com
@@ -68,7 +67,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/teTeX-base
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/etc/desktop/proofgeneral.desktop
-	${TOUCH} ${WRKSRC}/.byte-compile
+	@${TOUCH} ${WRKSRC}/.byte-compile
+	@${REINPLACE_CMD} -e 's,%%EMACS_NAME%%,${EMACS_NAME},' \
+		${WRKSRC}/isar/interface
 
 pre-build:
 #.if defined(BYTE_COMPILE)

@@ -1,5 +1,5 @@
 --- Makefile.orig	2008-02-01 00:06:38.000000000 +1100
-+++ Makefile	2008-02-23 20:45:58.000000000 +1100
++++ Makefile	2008-07-29 13:09:58.000000000 +1000
 @@ -21,7 +21,7 @@
  
  # Set this to "emacs" or "xemacs" according to your version of Emacs.
@@ -30,7 +30,7 @@
  
  ## Compiling can show up errors in the code, but be wary of fixing obsoletion
  ## or argument call warnings unless they're valid for both Emacsen.
-@@ -85,7 +84,7 @@
+@@ -85,10 +84,10 @@
  	@echo "****************************************************************"
  	@echo " Byte compiling... "
  	@echo "****************************************************************"
@@ -38,7 +38,11 @@
 +	$(MAKE) elc
  	@echo " Byte compiling X-Symbol..."
  	(cd x-symbol/lisp; $(MAKE) EMACS="$(EMACS) -q -no-site-file")
- 	echo $(EMACS) > $(@)
+-	echo $(EMACS) > $(@)
++	echo $(EMACS_NAME) > $(@)
+ 	@echo "****************************************************************"
+ 	@echo " Finished."
+ 	@echo "****************************************************************"
 @@ -137,39 +136,35 @@
  # Set Elisp directories according to paths used in Red Hat RPMs
  # (which may or may not be official Emacs policy).  We generate
@@ -107,7 +111,7 @@
 -	for f in ${EXTRA_DIRS}; do cp -prf $$f/* ${ELISP}/$$f; done
 -	for f in ${ELISP_EXTRAS}; do cp -pf $$f ${ELISP}/$$f; done
 +	for f in ${ELISP_DIRS}; do ${BSD_INSTALL_DATA} $$f/*.el ${ELISP}/$$f; done
-+	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_DATA} $$f ${ELISP}/$$f; done
++	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_SCRIPT} $$f ${ELISP}/$$f; done
 +	for f in ${EXTRA_DIRS}; \
 +		do for g in `find -d $$f -type d`; \
 +		   do mkdir -p ${ELISP}/$$g; \
@@ -124,7 +128,7 @@
 -	for f in ${ELISP_DIRS}; do cp -pf $$f/*.elc ${ELISP}/$$f; done
 -	for f in ${ELISP_EXTRAS}; do cp -pf $$f ${ELISP}/$$f; done
 +	for f in ${ELISP_DIRS}; do ${BSD_INSTALL_DATA} $$f/*.elc ${ELISP}/$$f; done
-+	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_DATA} $$f ${ELISP}/$$f; done
++	for f in ${ELISP_EXTRAS}; do ${BSD_INSTALL_SCRIPT} $$f ${ELISP}/$$f; done
  
  install-init:
  	mkdir -p ${ELISP_START}
