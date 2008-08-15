@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	mod_clamav
-PORTVERSION=	0.21
-PORTREVISION=	3
+PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	www security
-MASTER_SITES=	http://software.othello.ch/mod_clamav/
+MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
+		http://www.kommunity.net/download/mod_clamav/
 
 MAINTAINER=	tmueko@kommunity.net
-COMMENT=	Scans content delivered by the Apache2 proxy module for viruses
-
-LIB_DEPENDS+=	clamav.4:${PORTSDIR}/${CLAMAV_PORT}
+COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 USE_AUTOTOOLS=	libtool:15
 USE_APACHE=	YES
 WITH_APACHE2=	YES
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/apache22/http_core.h) || exists(${LOCALBASE}/include/apache/http_core.h)
+IGNORE=	mod_clamav only compile and run with apache-2.0.x
+.endif
+
 .if defined(WITH_CLAMAVDEVEL)
-CLAMAV_PORT=	security/clamav-devel
+LIB_DEPENDS+=	clamav:${PORTSDIR}/security/clamav-devel
 .else
 CLAMAV_PORT=	security/clamav
+LIB_DEPENDS+=	clamav:${PORTSDIR}/security/clamav
 .endif
+
+BUILD_DEPENDS+=	apache20:${PORTSDIR}/www/apache20
 
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--libdir=${PREFIX}/lib/apache2
@@ -39,5 +47,4 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
