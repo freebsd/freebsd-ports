@@ -1,7 +1,174 @@
-%%SITE_PERL%%/mach/auto/Math/GSL/GSL.so
-%%SITE_PERL%%/mach/auto/Math/GSL/GSL.bs
-%%SITE_PERL%%/mach/auto/Math/GSL/.packlist
+%%SITE_PERL%%/mach/BLAS.so
+%%SITE_PERL%%/mach/BSpline.so
+%%SITE_PERL%%/mach/CBLAS.so
+%%SITE_PERL%%/mach/CDF.so
+%%SITE_PERL%%/mach/Chebyshev.so
+%%SITE_PERL%%/mach/Combination.so
+%%SITE_PERL%%/mach/Complex.so
+%%SITE_PERL%%/mach/Const.so
+%%SITE_PERL%%/mach/DHT.so
+%%SITE_PERL%%/mach/Deriv.so
+%%SITE_PERL%%/mach/Diff.so
+%%SITE_PERL%%/mach/Eigen.so
+%%SITE_PERL%%/mach/Errno.so
+%%SITE_PERL%%/mach/FFT.so
+%%SITE_PERL%%/mach/Fit.so
+%%SITE_PERL%%/mach/Heapsort.so
+%%SITE_PERL%%/mach/Histogram.so
+%%SITE_PERL%%/mach/Histogram2D.so
+%%SITE_PERL%%/mach/IEEEUtils.so
+%%SITE_PERL%%/mach/Integration.so
+%%SITE_PERL%%/mach/Interp.so
+%%SITE_PERL%%/mach/Linalg.so
+%%SITE_PERL%%/mach/Machine.so
+%%SITE_PERL%%/mach/Matrix.so
+%%SITE_PERL%%/mach/Min.so
+%%SITE_PERL%%/mach/Monte.so
+%%SITE_PERL%%/mach/Multifit.so
+%%SITE_PERL%%/mach/Multimin.so
+%%SITE_PERL%%/mach/Multiroots.so
+%%SITE_PERL%%/mach/NTuple.so
+%%SITE_PERL%%/mach/ODEIV.so
+%%SITE_PERL%%/mach/Permutation.so
+%%SITE_PERL%%/mach/Poly.so
+%%SITE_PERL%%/mach/PowInt.so
+%%SITE_PERL%%/mach/QRNG.so
+%%SITE_PERL%%/mach/RNG.so
+%%SITE_PERL%%/mach/Randist.so
+%%SITE_PERL%%/mach/Roots.so
+%%SITE_PERL%%/mach/SF.so
+%%SITE_PERL%%/mach/Siman.so
+%%SITE_PERL%%/mach/Sort.so
+%%SITE_PERL%%/mach/Spline.so
+%%SITE_PERL%%/mach/Statistics.so
+%%SITE_PERL%%/mach/Sum.so
+%%SITE_PERL%%/mach/Sys.so
+%%SITE_PERL%%/mach/Vector.so
+%%SITE_PERL%%/mach/Wavelet.so
+%%SITE_PERL%%/mach/Wavelet2D.so
 %%SITE_PERL%%/mach/Math/GSL.pm
-@dirrm %%SITE_PERL%%/mach/auto/Math/GSL
-@dirrmtry %%SITE_PERL%%/mach/auto/Math
-@dirrmtry %%SITE_PERL%%/mach/Math
+%%SITE_PERL%%/mach/Math/GSL/CBLAS.pm
+%%SITE_PERL%%/mach/Math/GSL/DFT.pm
+%%SITE_PERL%%/mach/Math/GSL/Roots.pm
+%%SITE_PERL%%/mach/Math/GSL/Min.pm
+%%SITE_PERL%%/mach/Math/GSL/Multifit.pm
+%%SITE_PERL%%/mach/Math/GSL/Vector.pm
+%%SITE_PERL%%/mach/Math/GSL/Combination.pm
+%%SITE_PERL%%/mach/Math/GSL/Randist.pm
+%%SITE_PERL%%/mach/Math/GSL/ODEIV.pm
+%%SITE_PERL%%/mach/Math/GSL/PowInt.pm
+%%SITE_PERL%%/mach/Math/GSL/Histogram2D.pm
+%%SITE_PERL%%/mach/Math/GSL/Integration.pm
+%%SITE_PERL%%/mach/Math/GSL/BLAS.pm
+%%SITE_PERL%%/mach/Math/GSL/Interp.pm
+%%SITE_PERL%%/mach/Math/GSL/RNG.pm
+%%SITE_PERL%%/mach/Math/GSL/Matrix.pm
+%%SITE_PERL%%/mach/Math/GSL/Const.pm
+%%SITE_PERL%%/mach/Math/GSL/Sys.pm
+%%SITE_PERL%%/mach/Math/GSL/Siman.pm
+%%SITE_PERL%%/mach/Math/GSL/Monte.pm
+%%SITE_PERL%%/mach/Math/GSL/Poly.pm
+%%SITE_PERL%%/mach/Math/GSL/IEEEUtils.pm
+%%SITE_PERL%%/mach/Math/GSL/NTuple.pm
+%%SITE_PERL%%/mach/Math/GSL/Wavelet.pm
+%%SITE_PERL%%/mach/Math/GSL/QRNG.pm
+%%SITE_PERL%%/mach/Math/GSL/Machine.pm
+%%SITE_PERL%%/mach/Math/GSL/Permutation.pm
+%%SITE_PERL%%/mach/Math/GSL/BSpline.pm
+%%SITE_PERL%%/mach/Math/GSL/Deriv.pm
+%%SITE_PERL%%/mach/Math/GSL/Errno.pm
+%%SITE_PERL%%/mach/Math/GSL/Wavelet2D.pm
+%%SITE_PERL%%/mach/Math/GSL/DHT.pm
+%%SITE_PERL%%/mach/Math/GSL/Chebyshev.pm
+%%SITE_PERL%%/mach/Math/GSL/Fit.pm
+%%SITE_PERL%%/mach/Math/GSL/Linalg.pm
+%%SITE_PERL%%/mach/Math/GSL/Sum.pm
+%%SITE_PERL%%/mach/Math/GSL/FFT.pm
+%%SITE_PERL%%/mach/Math/GSL/Spline.pm
+%%SITE_PERL%%/mach/Math/GSL/Sort.pm
+%%SITE_PERL%%/mach/Math/GSL/Diff.pm
+%%SITE_PERL%%/mach/Math/GSL/Eigen.pm
+%%SITE_PERL%%/mach/Math/GSL/Multiroots.pm
+%%SITE_PERL%%/mach/Math/GSL/Heapsort.pm
+%%SITE_PERL%%/mach/Math/GSL/Histogram.pm
+%%SITE_PERL%%/mach/Math/GSL/Complex.pm
+%%SITE_PERL%%/mach/Math/GSL/SF.pm
+%%SITE_PERL%%/mach/Math/GSL/CDF.pm
+%%SITE_PERL%%/mach/Math/GSL/Multimin.pm
+%%SITE_PERL%%/mach/Math/GSL/Statistics.pm
+%%SITE_PERL%%/mach/Math/GSL/Complex/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Randist/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/ODEIV/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Permutation/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/BLAS/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Histogram/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Interp/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Histogram2D/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/PowInt/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Sum/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Vector/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Sort/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/CBLAS/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Spline/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Sys/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Matrix/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Eigen/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Errno/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/QRNG/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Multifit/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Combination/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Poly/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/FFT/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Min/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Const/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Fit/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/RNG/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/DHT/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/SF/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Wavelet2D/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Linalg/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/BSpline/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Deriv/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Wavelet/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/NTuple/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Roots/Test.pm
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Complex
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Randist
+@dirrm %%SITE_PERL%%/mach/Math/GSL/ODEIV
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Permutation
+@dirrm %%SITE_PERL%%/mach/Math/GSL/BLAS
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Histogram
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Interp
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Histogram2D
+@dirrm %%SITE_PERL%%/mach/Math/GSL/PowInt
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Sum
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Vector
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Sort
+@dirrm %%SITE_PERL%%/mach/Math/GSL/CBLAS
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Spline
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Sys
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Matrix
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Eigen
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Errno
+@dirrm %%SITE_PERL%%/mach/Math/GSL/QRNG
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Multifit
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Combination
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Poly
+@dirrm %%SITE_PERL%%/mach/Math/GSL/FFT
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Min
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Const
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Fit
+@dirrm %%SITE_PERL%%/mach/Math/GSL/RNG
+@dirrm %%SITE_PERL%%/mach/Math/GSL/DHT
+@dirrm %%SITE_PERL%%/mach/Math/GSL/SF
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Wavelet2D
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Linalg
+@dirrm %%SITE_PERL%%/mach/Math/GSL/BSpline
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Deriv
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Wavelet
+@dirrm %%SITE_PERL%%/mach/Math/GSL/NTuple
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Roots
+@dirrm %%SITE_PERL%%/mach/Math/GSL
+@dirrm %%SITE_PERL%%/mach/Math
+@dirrm %%SITE_PERL%%/mach/auto/Math
+@dirrm %%SITE_PERL%%/mach/auto
