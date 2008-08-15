@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080815:
+  AFFECTS: users of sysutils/rdiff-backup
+  AUTHOR: vd@FreeBSD.org
+
+  sysutils/rdiff-backup has been upgraded from 1.0.5 to 1.2.0. This is
+  an incompatible upgrade. If you need the "old" 1.0.5, you can find it
+  in sysutils/rdiff-backup10.
+
 20080813:
   AFFECTS: users of www/ikiwiki
   AUTHOR: brix@FreeBSD.org

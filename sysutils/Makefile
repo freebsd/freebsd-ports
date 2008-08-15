@@ -595,6 +595,7 @@
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
+    SUBDIR += rdiff-backup10
     SUBDIR += readlink
     SUBDIR += reclinker
     SUBDIR += recoverdm
