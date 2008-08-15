@@ -49,6 +49,8 @@ MAN1=	image2raw.1 ppm2raw.1 ppm2webcam.1 raw2dv.1 \
 	rawplay.1 smil2raw.1 smil2wav.1 smil2yuv.1 \
 	smilutils.1 xwd2raw.1
 
+BROKEN=	Does not compile
+
 run-autotools:
 	@cd ${WRKSRC} && ${SH} autogen.sh
 
