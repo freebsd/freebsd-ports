@@ -7,7 +7,7 @@
 
 PORTNAME=	wmwave
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,10 +39,6 @@ do-install:
 
 .if ${OSVERSION} < 600007
 IGNORE=		needs API available in FreeBSD 6.X and later
-.endif
-
-.if ${OSVERSION} >= 800036
-BROKEN=		does not compile
 .endif
 
 .include <bsd.port.post.mk>

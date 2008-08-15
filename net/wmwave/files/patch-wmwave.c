@@ -19,7 +19,7 @@
   *
   */
  
-@@ -57,6 +69,22 @@
+@@ -57,6 +69,23 @@
  #include <X11/xpm.h>
  #include <X11/extensions/shape.h>
  
@@ -36,6 +36,7 @@
 +#include <netinet/ip.h>
 +#include <netinet/ip_var.h>
 +#include <arpa/inet.h>
++#include <net80211/_ieee80211.h>
 +#include <net80211/ieee80211.h>
 +#include <net80211/ieee80211_crypto.h>
 +#include <net80211/ieee80211_ioctl.h>
