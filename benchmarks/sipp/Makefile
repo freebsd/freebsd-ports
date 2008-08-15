@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	3.1
+PORTVERSION=	3.1.20080723
 CATEGORIES=	benchmarks net
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}.${PORTVERSION}.src
+MASTER_SITES=	http://sipp.sourceforge.net/snapshots/
+DISTNAME=	${PORTNAME}.2008-07-23
 
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
-
-WRKSRC=		${WRKDIR}/${PORTNAME}.svn
 
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
