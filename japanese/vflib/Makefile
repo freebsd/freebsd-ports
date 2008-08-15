@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake

@@ -11,7 +11,7 @@ PORTVERSION=	1.12a
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
-MAINTAINER?=	mita@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	An X11-based presentation tool
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
