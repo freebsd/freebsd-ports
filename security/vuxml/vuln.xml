@@ -51,9 +51,9 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>When importing bugs using importxml.pl, the --attach_path
 	    option can be specified, pointing to the directory where
 	    attachments to import are stored. If the XML file being
-	    read by importxml.pl contains a malicious
+	    read by importxml.pl contains a malicious</p>
 	    <pre>../relative_path/to/local_file</pre>
-	    node, the script follows this relative path and attaches the
+	    <p>node, the script follows this relative path and attaches the
 	    local file pointed by it to the bug, making the file public.
 	    The security fix makes sure the relative path is always
 	    ignored.</p>
