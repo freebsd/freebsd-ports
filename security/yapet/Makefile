@@ -7,8 +7,13 @@
 
 PORTNAME=	yapet
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.guengel.ch/myapps/yapet/downloads/
+
+PATCH_SITES=	http://www.guengel.ch/myapps/yapet/downloads/patches/
+PATCHFILES=	yapet_gcc43-0.2.diff yapet_crs_bs-0.2.diff
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	rafi@guengel.ch
 COMMENT=	A curses based password manager
