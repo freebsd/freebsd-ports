@@ -7,6 +7,7 @@
 
 PORTNAME=	nget
 PORTVERSION=	0.27.1
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nget
@@ -17,15 +18,9 @@ COMMENT=	Auto-resuming command line nntp file grabber
 
 MAN1=		nget.1 ngetlite.1
 MANCOMPRESSED=	no
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-extract:
 	${LN} -s nget-${PORTVERSION} ${WRKDIR}/${DISTNAME}
@@ -46,4 +41,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
