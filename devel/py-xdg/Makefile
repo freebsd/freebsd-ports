@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xdg
-PORTVERSION=	0.15
-PORTREVISION=	3
+PORTVERSION=	0.16
 CATEGORIES=	devel python
 MASTER_SITES=	http://people.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +22,7 @@ PYDISTUTILS_PKGNAME=	pyxdg
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/etc|${LOCALBASE}/etc|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${WRKSRC}/xdg/BaseDirectory.py \
-			${WRKSRC}/xdg/IconTheme.py
+		's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${WRKSRC}/xdg/BaseDirectory.py
 
 .include <bsd.port.mk>
