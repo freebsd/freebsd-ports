@@ -7,13 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080816:
-AFFECTS: users of mail/assp
-AUTHOR: J.R. Oldroyd <fbsd@opal.com>
+  AFFECTS: users of mail/assp
+  AUTHOR: J.R. Oldroyd <fbsd@opal.com>
 
-The periodic(8) script no longer outputs to files in the assp dir.
-You should remove /var/db/assp/nightly.log and nightly.log.old by
-hand once you are done with them. The information that was stored
-there will now come in your nightly system email.
+  The periodic(8) script no longer outputs to files in the assp dir.
+  You should remove /var/db/assp/nightly.log and nightly.log.old by
+  hand once you are done with them. The information that was stored
+  there will now come in your nightly system email.
 
 20080815:
   AFFECTS: users of sysutils/rdiff-backup
@@ -33,15 +33,15 @@ there will now come in your nightly system email.
   setup file.  You can convert old setup files into the new format by
   running the following command for all your ikiwiki.setup files:
 
-  	ikiwiki-transition setupformat ikiwiki.setup
+	ikiwiki-transition setupformat ikiwiki.setup
 
 20080812:
   AFFECTS: users of mail/spamdyke
   AUTHOR: mm@FreeBSD.org
 
   The spamdyke port has been updated to 4.0.2.  The new version is not
-  backwards compatible with previous versions.  Please examine the
-  new configuration file for the changes.
+  backwards compatible with previous versions.  Please examine the new
+  configuration file for the changes.
 
 20080812:
   AFFECTS: users of databases/pgbouncer
@@ -62,8 +62,8 @@ there will now come in your nightly system email.
   The default install directory for phpbb-tw has changed from
   ${PREFIX}/www/data/phpBB2 to ${PREFIX}/www/phpBB2.
 
-  If you are updating from a previous version, to preserve your
-  settings and data, please do the following:
+  If you are updating from a previous version, to preserve your settings
+  and data, please do the following:
 
 	mv /usr/local/www/data/phpBB2 /usr/local/www
 
@@ -987,9 +987,9 @@ there will now come in your nightly system email.
   AFFECTS: users of net-p2p/deluge
   AUTHOR: mezz@FreeBSD.org
 
-  Update of deluge to 0.5.8.2, if you are using blocklist plugin. You have
-  to remove blocklist.conf first before you can run it or it will crash in
-  the start up.
+  Deluge was updated to version 0.5.8.2.  If you are using blocklist plugin,
+  you have to remove blocklist.conf first before you can run it, or it will
+  crash upon start up.
 
 	$ rm -f ~/.config/deluge/blocklist.conf
 
@@ -998,10 +998,11 @@ there will now come in your nightly system email.
   AUTHOR: araujo@FreeBSD.org
 
   Update of mod_security2 is a dramatic change, because there is a need
-  to completely rewrite their obsolete rules and migrate for capacity
-  to use new syntax.
-  You need to make a complete backup of your configuration files before
-  you can perform an update.
+  to completely rewrite their obsolete rules and migrate for capacity to
+  use new syntax.
+
+  You are advised to make a complete backup of your configuration files
+  before you can perform an update.
 
 20080120:
   AFFECTS: users of www/apache20
@@ -1028,35 +1029,36 @@ there will now come in your nightly system email.
   FreeRADIUS 2.0 is now available as the net/freeradius2 port. All FreeRADIUS
   users are advised to consider upgrading to 2.0. It is the FreeRADIUS team's
   intention to put the 1.x server into 'maintenance' mode with just critical
-  bug fixes.[1] 2.0 has many improvements including numerous bug fixes that were
-  too difficult for the 1.x server, as well as many new features.
+  bug fixes.[1] 2.0 has many improvements including numerous bug fixes that
+  were too difficult for the 1.x server, as well as many new features.
 
   Before uninstalling 1.x, it is recommended that you backup your
-  configuration, which is typically in /usr/local/etc/raddb, then move
-  it out of the way. It is also worth backing up the default configuration,
+  configuration, which is typically in /usr/local/etc/raddb, then move it
+  out of the way. It is also worth backing up the default configuration,
   which is typically in /usr/local/share/examples/freeradius/raddb.
 
-  1.x configurations should work with the 2.0 server [2]. However the
-  port automatically upgrades any unedited files in the configuration when
-  you install a new version of FreeRADIUS. Installing 2.0 with the residue
-  of a 1.x configuration in the default location will result in a mixed 1.x and
+  1.x configurations should work with the 2.0 server [2]. However the port
+  automatically upgrades any unedited files in the configuration when you
+  install a new version of FreeRADIUS. Installing 2.0 with the residue of a
+  1.x configuration in the default location will result in a mixed 1.x and
   2.0 configuration that may not work.
 
   The recommended approach is to diff your 1.x configuration against the
   default 1.x configuration, then make corresponding changes to a copy
-  of the default 2.0 configuration. If you moved your 1.x configuration out of
-  the way before upgrading, you will have a 2.0 configuration ready to edit in
-  the default location. It is worth reading man 5 unlang for details of
-  the new FreeRADIUS 'un-language' before starting.
+  of the default 2.0 configuration. If you moved your 1.x configuration out
+  of the way before upgrading, you will have a 2.0 configuration ready to
+  edit in the default location. It is worth reading man 5 unlang for details
+  of the new FreeRADIUS 'un-language' before starting.
 
-  Alternatively, you can move your 1.x configuration to another location, such
-  as /usr/local/etc/raddb_v1, then edit /etc/rc.conf to point the rc.d script
-  to that location. For example:
+  Alternatively, you can move your 1.x configuration to another location,
+  such as /usr/local/etc/raddb_v1, then edit /etc/rc.conf to point the rc.d
+  script to that location. For example:
 
 	radiusd_flags="-d /usr/local/etc/raddb_v1"
 
   I cannot guarantee that all 1.x configurations will work with the 2.0
-  server, and I only recommend using a 1.x configuration as an interim measure.
+  server, and I only recommend using a 1.x configuration as an interim
+  measure.
 
     [1] - http://www.freeradius.org/business/roadmap.html
     [2] - http://preview.tinyurl.com/ysrr6a
@@ -1076,35 +1078,35 @@ there will now come in your nightly system email.
   AUTHOR: brix@FreeBSD.org
 
   irc/bitlbee now stores saved user settings in /var/db/bitlbee/, not
-  $PREFIX/etc/bitlbee/.  You will have to manually move any existing
-  user settings to the new location (or override the user settings
-  directory using -d if you wish to keep the old behavior).  Other
-  configuration files are still kept in $PREFIX/etc/bitlbee/ by
-  default.
+  $PREFIX/etc/bitlbee/.  You will have to manually move any existing user
+  settings to the new location (or override the user settings directory
+  using -d if you wish to keep the old behavior).  Other configuration
+  files are still kept in $PREFIX/etc/bitlbee/ by default.
 
-  The default installation is now configured for running bitlbee as
-  user 'nobody' by default.  Make sure any existing configuration
-  files are readable by that user.
+  The default installation is now configured for running bitlbee as user
+  'nobody' by default.  Make sure any existing configuration files are
+  readable by that user.
 
 20071225:
   AFFECTS: users of www/amphetadesk
   AUTHOR: lioux@FreeBSD.org
 
-  www/amphetadesk has been updated to use the USE_RC_SUBR framework
-  for rc.d scripts. The rc.d script has been renamed from amphetadesk.sh
-  to amphetadesk for consistency with other ports.
+  www/amphetadesk has been updated to use the USE_RC_SUBR framework for
+  rc.d scripts.  The rc.d script has been renamed from amphetadesk.sh to
+  amphetadesk for consistency with other ports.
 
 20071216:
   AFFECTS: users of net-mgmt/cacti
   AUTHOR: sem@FreeBSD.org
 
-  From 0.8.7a version database settings has moved to config.php file.
-  You have to copy your setting from db-settings.php to config.php and
+  From version 0.8.7a database settings has moved to config.php file.
+  You have to copy your settings from db-settings.php to config.php and
   remove db-settings.php file after updating.
 
-  Plugin support is dropped again and will not revive anymore in the port.
-  A reason for that is the patch is unofficial and there are long time lags
-  between a new cacti version released and time when the patch is adapted.
+  Plugin support is dropped again and will not be revived anymore in the
+  port.  A reason for that is the patch is unofficial and there are long
+  time lags between a new cacti version released and time when the patch
+  is adapted.
 
 20071215:
   AFFECTS: users of www/suphp
@@ -1164,9 +1166,11 @@ there will now come in your nightly system email.
 
   The skype-devel port has been upgraded to version 1.4.0.118. This requires
   a sysctl change to run. After upgrading, please do:
-  	sysctl compat.linux.osrelease=2.4.20
-  from a terminal. Also add: "compat.linux.osrelease=2.4.20" to your
-  /etc/sysctl.conf  to make this change at boot time.
+
+	sysctl compat.linux.osrelease=2.4.20
+
+  from a terminal. You can also add "compat.linux.osrelease=2.4.20" to your
+  /etc/sysctl.conf to make this change permanent (at boot time).
 
 20071030:
   AFFECTS: users of sysutils/daemontools
@@ -1187,7 +1191,7 @@ there will now come in your nightly system email.
   - the libstunnel library is in ${PREFIX}/lib/stunnel/ instead of lib/.
 
   You may need to adjust your PATH settings or your scripts to accommodate
-  the new location of the stunnel executable (and library, if there is
+  to the new location of the stunnel executable (and library, if there is
   actually anything using it).
 
 20071024:
