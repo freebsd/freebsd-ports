@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dateutil
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://labix.org/download/python-dateutil/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,6 @@ DISTNAME=	python-dateutil-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Provides powerful extensions to the standard datetime module
 
-USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python-dateutil
