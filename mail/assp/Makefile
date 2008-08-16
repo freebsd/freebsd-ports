@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.3.3.8
-PORTREVISION=	1
+PORTVERSION=	1.3.3.10
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -20,8 +19,7 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 USE_DOS2UNIX=	\
-		../Install.txt \
-		../changelog.txt \
+		../1.3.3.8-1.3.3.10-changes.txt \
 		addservice.pl \
 		assp.pl \
 		files/URIBLCCTLDS.txt \
@@ -34,10 +32,12 @@ USE_DOS2UNIX=	\
 		files/rbl-service.txt \
 		files/redre.txt \
 		files/whitedomains.txt \
+		images/assp.css \
+		images/editor.css \
+		images/shutdown.css \
 		move2num.pl \
 		rc/readme.txt \
 		rebuildspamdb.pl \
-		repair.pl \
 		reports/helpreport.txt \
 		reports/notspamreport.txt \
 		reports/redremovereport.txt \
@@ -74,7 +74,7 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		MYSQL	"Use MySQL db to store white/red/delaylists" off \
 		SIMPLE	"Use procedural Web Page interfaces" on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}_${PORTVERSION}-Install/${PORTNAME:U}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:L}
 
 .include <bsd.port.pre.mk>
 
@@ -131,7 +131,11 @@ post-patch:
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/assp
-	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/lib/assp
+	${INSTALL_SCRIPT} ${WRKSRC}/addservice.pl ${PREFIX}/lib/assp
+	${INSTALL_SCRIPT} ${WRKSRC}/assp.pl ${PREFIX}/lib/assp
+	${INSTALL_SCRIPT} ${WRKSRC}/move2num.pl ${PREFIX}/lib/assp
+	${INSTALL_SCRIPT} ${WRKSRC}/rebuildspamdb.pl ${PREFIX}/lib/assp
+	${INSTALL_SCRIPT} ${WRKSRC}/stat.pl ${PREFIX}/lib/assp
 	${INSTALL_SCRIPT} ${WRKSRC}/stats.sh ${PREFIX}/lib/assp
 	${MKDIR} ${PREFIX}/lib/assp/files
 	${INSTALL_DATA} ${WRKSRC}/files/* ${PREFIX}/lib/assp/files

@@ -63,6 +63,9 @@ Bayesian spam check failed
 DL
 Message from unknown sender delayed, sender requested to retry later
 .TP
+EM
+message to ASSP's email interface (e.g., spam/notspam report, redlist addition)
+.TP
 HL
 Bad HELO greeting
 .TP
@@ -81,10 +84,10 @@ Malformed RFC822 recipient address
 ME
 Maximum number of other errors exceeded
 .TP
-NS
-asspnotspam@ report submission
+NP
+Email that passed without being processed
 .TP
-Ok
+OK
 Email that fully passed all tests
 .TP
 PB
@@ -99,24 +102,24 @@ SPF check failed
 VI
 Virus detected
 .TP
-WA+
+W+
 Whitelist addition by local user
 .TP
-WL+
-Whitelist addition of address CC'd in whitelisted email
+W-
+Whitelist deletion by local user
 .TP
-SR
-asspspam@ report submission
+WC
+Whitelist addition of address CC'd in whitelisted email
 .SH BUGS
 Note that
 .I assplog
-suppresses some of the messages in the log (those that appear
+suppresses many of the messages in the log (those that appear
 to duplicate information in other messages).
 Unknown/new log messages are not colorized.
-For an accurate view of
-the log, use
+FOR A COMPLETE AND ACCURATE VIEW OF
+THE LOG, USE
 .B "tail -f"
-directly on the log file.
+DIRECTLY ON THE LOG FILE.
 .SH FILES
 .IP %%ASSP_HOME%%/maillog.txt
 location of ASSP log file
