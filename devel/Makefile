@@ -1725,6 +1725,7 @@
     SUBDIR += p5-Test-Log4perl
     SUBDIR += p5-Test-LongString
     SUBDIR += p5-Test-Manifest
+    SUBDIR += p5-Test-Memory-Cycle
     SUBDIR += p5-Test-MockModule
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-MockRandom
