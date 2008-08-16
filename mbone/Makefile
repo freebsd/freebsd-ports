@@ -10,7 +10,6 @@
     SUBDIR += rat30
     SUBDIR += relate
     SUBDIR += rqm
-    SUBDIR += rtpmon
     SUBDIR += rtptools
     SUBDIR += sdr
     SUBDIR += speak_freely
