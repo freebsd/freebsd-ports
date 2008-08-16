@@ -7,7 +7,7 @@
 
 PORTNAME=	conserver
 PORTVERSION=	8.1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.conserver.com/ \
 		ftp://ftp.conserver.com/conserver/
@@ -25,7 +25,15 @@ MAN1=	console.1
 MAN5=	conserver.cf.5 conserver.passwd.5
 MAN8=	conserver.8
 
+OPTIONS=	UDS	"Use Unix domain sockets for client/server"	off
+
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_UDS)
+CONFIGURE_ARGS+=	--with-uds
+.endif
+
+.include <bsd.port.post.mk>
