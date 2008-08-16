@@ -10367,6 +10367,7 @@ p5-Devel-CoreStack              ports/devel/p5-Devel-CoreStack
 p5-Devel-Cover                  ports/devel/p5-Devel-Cover
 p5-Devel-Cycle                  ports/devel/p5-Devel-Cycle
 p5-Devel-DProfPP                ports/devel/p5-Devel-DProfPP
+p5-Devel-Declare                ports/devel/p5-Devel-Declare
 p5-Devel-Diagram                ports/devel/p5-Devel-Diagram
 p5-Devel-EvalContext            ports/devel/p5-Devel-EvalContext
 p5-Devel-Leak                   ports/devel/p5-Devel-Leak
@@ -12063,6 +12064,7 @@ p5-Test-LectroTest              ports/devel/p5-Test-LectroTest
 p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
 p5-Test-LongString              ports/devel/p5-Test-LongString
 p5-Test-Manifest                ports/devel/p5-Test-Manifest
+p5-Test-Memory-Cycle            ports/devel/p5-Test-Memory-Cycle
 p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
@@ -13450,6 +13452,7 @@ p5-devel-constants              ports/devel/p5-Devel-Constants
 p5-devel-corestack              ports/devel/p5-Devel-CoreStack
 p5-devel-cover                  ports/devel/p5-Devel-Cover
 p5-devel-cycle                  ports/devel/p5-Devel-Cycle
+p5-devel-declare                ports/devel/p5-Devel-Declare
 p5-devel-diagram                ports/devel/p5-Devel-Diagram
 p5-devel-dprofpp                ports/devel/p5-Devel-DProfPP
 p5-devel-ebug                   ports/devel/p5-Devel-ebug
@@ -15198,6 +15201,7 @@ p5-test-lectrotest              ports/devel/p5-Test-LectroTest
 p5-test-log4perl                ports/devel/p5-Test-Log4perl
 p5-test-longstring              ports/devel/p5-Test-LongString
 p5-test-manifest                ports/devel/p5-Test-Manifest
+p5-test-memory-cycle            ports/devel/p5-Test-Memory-Cycle
 p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
@@ -18592,7 +18596,6 @@ rth                             ports/devel/rth
 rtorrent                        ports/net-p2p/rtorrent
 rtorrent-devel                  ports/net-p2p/rtorrent-devel
 rtpbreak                        ports/net/rtpbreak
-rtpmon                          ports/mbone/rtpmon
 rtpproxy                        ports/net/rtpproxy
 rtptools                        ports/mbone/rtptools
 rtty                            ports/sysutils/rtty
@@ -19809,7 +19812,6 @@ ss                              ports/math/ss
 ss5                             ports/net/ss5
 ssaha                           ports/biology/ssaha
 ssam                            ports/editors/ssam
-ssc                             ports/games/ssc
 sscalc                          ports/astro/sscalc
 sscep                           ports/security/sscep
 ssddiff                         ports/textproc/ssddiff
