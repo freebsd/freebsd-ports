@@ -202,6 +202,8 @@ include/xqilla/functions/FunctionNormalizeUnicode.hpp
 include/xqilla/functions/FunctionNot.hpp
 include/xqilla/functions/FunctionNumber.hpp
 include/xqilla/functions/FunctionOneOrMore.hpp
+include/xqilla/functions/FunctionParseHTML.hpp
+include/xqilla/functions/FunctionParseJSON.hpp
 include/xqilla/functions/FunctionParseXML.hpp
 include/xqilla/functions/FunctionPosition.hpp
 include/xqilla/functions/FunctionPrefixFromQName.hpp
@@ -217,6 +219,7 @@ include/xqilla/functions/FunctionRoundHalfToEven.hpp
 include/xqilla/functions/FunctionSecondsFromDateTime.hpp
 include/xqilla/functions/FunctionSecondsFromDuration.hpp
 include/xqilla/functions/FunctionSecondsFromTime.hpp
+include/xqilla/functions/FunctionSerializeJSON.hpp
 include/xqilla/functions/FunctionStartsWith.hpp
 include/xqilla/functions/FunctionStaticBaseURI.hpp
 include/xqilla/functions/FunctionString.hpp
@@ -228,6 +231,7 @@ include/xqilla/functions/FunctionSubstring.hpp
 include/xqilla/functions/FunctionSubstringAfter.hpp
 include/xqilla/functions/FunctionSubstringBefore.hpp
 include/xqilla/functions/FunctionSum.hpp
+include/xqilla/functions/FunctionTime.hpp
 include/xqilla/functions/FunctionTimezoneFromDate.hpp
 include/xqilla/functions/FunctionTimezoneFromDateTime.hpp
 include/xqilla/functions/FunctionTimezoneFromTime.hpp
@@ -236,6 +240,7 @@ include/xqilla/functions/FunctionTrace.hpp
 include/xqilla/functions/FunctionTranslate.hpp
 include/xqilla/functions/FunctionTrue.hpp
 include/xqilla/functions/FunctionUnordered.hpp
+include/xqilla/functions/FunctionUnparsedText.hpp
 include/xqilla/functions/FunctionUpperCase.hpp
 include/xqilla/functions/FunctionYearFromDate.hpp
 include/xqilla/functions/FunctionYearFromDateTime.hpp
@@ -371,7 +376,7 @@ include/xqilla/xqts/TestSuiteRunner.hpp
 lib/libxqilla.a
 lib/libxqilla.la
 lib/libxqilla.so
-lib/libxqilla.so.3
+lib/libxqilla.so.4
 @dirrm include/xqilla/xqts
 @dirrm include/xqilla/xerces
 @dirrm include/xqilla/utils
