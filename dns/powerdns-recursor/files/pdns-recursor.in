@@ -5,6 +5,7 @@
 
 # PROVIDE: pdns_recursor
 # REQUIRE: SERVERS cleanvar
+# BEFORE:  DAEMON
 # KEYWORD: shutdown
 
 #
