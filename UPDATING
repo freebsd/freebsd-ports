@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080816:
+AFFECTS: users of mail/assp
+AUTHOR: J.R. Oldroyd <fbsd@opal.com>
+
+The periodic(8) script no longer outputs to files in the assp dir.
+You should remove /var/db/assp/nightly.log and nightly.log.old by
+hand once you are done with them. The information that was stored
+there will now come in your nightly system email.
+
 20080815:
   AFFECTS: users of sysutils/rdiff-backup
   AUTHOR: vd@FreeBSD.org
