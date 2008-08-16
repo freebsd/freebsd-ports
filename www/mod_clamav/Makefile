@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
@@ -16,7 +16,7 @@ MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
 USE_AUTOTOOLS=	libtool:15
-USE_APACHE=	YES
+USE_APACHE=	2.0
 WITH_APACHE2=	YES
 GNU_CONFIGURE=	yes
 
@@ -32,8 +32,6 @@ LIB_DEPENDS+=	clamav:${PORTSDIR}/security/clamav-devel
 CLAMAV_PORT=	security/clamav
 LIB_DEPENDS+=	clamav:${PORTSDIR}/security/clamav
 .endif
-
-BUILD_DEPENDS+=	apache20:${PORTSDIR}/www/apache20
 
 CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--libdir=${PREFIX}/lib/apache2
