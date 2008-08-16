@@ -1200,6 +1200,7 @@
     SUBDIR += p5-Devel-Cover
     SUBDIR += p5-Devel-Cycle
     SUBDIR += p5-Devel-DProfPP
+    SUBDIR += p5-Devel-Declare
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-EvalContext
     SUBDIR += p5-Devel-Leak
