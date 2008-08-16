@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	e16-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
 DATADIR=	${PREFIX}/share/e16
