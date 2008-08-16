@@ -6,17 +6,14 @@
 
 cd %%ASSP_HOME%%
 
-[ -f nightly.log ] && mv nightly.log nightly.log.old
-
 if [ ! -f %%PREFIX%%/lib/assp/rebuildspamdb.pl ]
 then
 	echo "%%PREFIX%%/lib/assp/rebuildspamdb.pl does not exist"
 	rc_spamdb=2
 else
 	echo ""
-	echo "Running ASSP rebuildspamdb.pl (output to nightly.log)"
-	echo "Running ASSP rebuildspamdb.pl:" >>nightly.log
-	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl >>nightly.log && rc_spamdb=0 || rc_spamdb=3
+	echo "Running ASSP rebuildspamdb.pl:"
+	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
 fi
 
 if [ ! -f %%PREFIX%%/lib/assp/freshclam.sh ]

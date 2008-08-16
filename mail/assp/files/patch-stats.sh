@@ -1,5 +1,5 @@
---- stats.sh.orig	Thu Nov  8 10:30:36 2007
-+++ stats.sh	Thu Nov  8 10:43:14 2007
+--- stats.sh.orig	2008-08-06 17:43:32.000000000 -0400
++++ stats.sh	2008-08-06 17:47:16.000000000 -0400
 @@ -1,15 +1,23 @@
  #!/bin/sh
  
@@ -43,7 +43,7 @@
  #
  # I got the idea for this script from Mark Constable. He submitted
  #  a similar script to follow the Courier-MTA /var/log/maillog
-@@ -46,91 +47,283 @@
+@@ -46,91 +47,308 @@
  # Some fields are truncated (with a hard-coded length value, usually 40)
  #   to keep each line more or less intact on your screen as things scroll by
  # Colors are coded with ANSI Color coding, your mileage may vary ...
@@ -149,33 +149,39 @@
 +        $(p+7) )
 +    next
 +  }
-+  /[Ee]mail whitelist addition/ {
-+    if ($3 != "Email") {
-+	email_wa_ip = $4
-+	email_wa_name = $5
-+    }
-+    else {
-+	printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mWA+ %s\033[0m \033[1;32m%s\033[0m \033[1;36m%s\033[0m\n",
-+	    $1,
-+	    $2,
-+	    email_wa_ip,
-+	    substr(email_wa_name,1,40),
-+	    "-adds-",
-+	    $(p+6) )
-+    }
++  /[Em]ail whitelist (addition|deletion):/ {
++    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mW%s %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
++	$1,
++	$2,
++	$(p+4),
++	(/addition:/) ? "+" : "-",
++	substr($(p+5),1,40),
++        (/addition:/) ? "-adds-" : "-deletes-",
++	$(p+9) )
 +    next
 +  }
 +  /whitelist addition:/ && !/[Ee]mail/ {
-+    printf("%s %s \033[1;32m%-15s\033[0m \033[1;37mWL+ %s\033[0m \033[1;32m%s\033[0m \033[1;37m%s\033[0m\n",
++    printf("%s %s \033[1;36m%-15s\033[0m \033[1;36mWC %s\033[0m \033[1;37m%s\033[0m \033[1;36m%s\033[0m\n",
++	$1,
++	$2,
++	$(p+4),
++	substr($(p+5),1,40),
++        "-adds-",
++	$(p+10) )
++    next
++    next
++  }
++  /[Ee]mail (hamreport|help|spamreport|redlist)/ {
++    printf("%s %s\033[1;36m %-15s EM  %s %s%s\033[0m\n",
 +        $1,
 +        $2,
 +        $(p+4),
-+        substr($(p+5),1,40),
-+        "-adds-",
-+        $(p+10) )
++        $(p+5),
++	$(p+7),
++	($(p+8)) ? " " $(p+8) : "" )
 +    next
 +  }
-+  /Bayesian Check Prob/ {
++  /Bayesian Check ( - )?Prob/ {
 +    # suppress
 +    next
 +  }
@@ -193,7 +199,7 @@
 +    next
 +  }
 +  /message ok/ {
-+    printf("%s %s \033[1;32m%-15s Ok  %s -> %s\033[0m\n",
++    printf("%s %s \033[1;32m%-15s OK  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
 +        $(p+4),
@@ -257,7 +263,7 @@
 +    # suppress
 +    next
 +  }
-+  /failed (DNS|URI)BL|failed (R|URI)BL checks|Received-RBL: fail|\[DNSBL].* rejected by / {
++  /failed (DNS|URI)BL|failed (R|URI)BL checks|Received-RBL: fail/ {
 +    printf("%s %s \033[1;35m%-15s BL  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -266,11 +272,21 @@
 +        $(p+7) )
 +    next
 +  }
-+  /Received-SPF: (pass|neutral)| SPF: (soft)?fail|SPFstrict/ {
++  /(\[DNSBL]|\[DNSBLcache]).* rejected by / {
++    printf("%s %s \033[1;35m%-15s BL  %s (%s blacklisted by %s)\033[0m\n",
++        $1,
++        $2,
++        $(p+4),
++        substr($(p+5),1,40),
++        $(p+7),
++	$(p+10) )
++    next
++  }
++  /Received-SPF(\(cache\))?: (pass|neutral)| SPF: (soft)?fail|SPFstrict/ {
 +    # suppress
 +    next
 +  }
-+  /failed SPF checks|Received-SPF: ((soft)?fail|error)/ {
++  /failed SPF checks|Received-SPF(\(cache\))?: ((soft)?fail|error)| SPF: neutral/ {
 +    printf("%s %s \033[1;35m%-15s SP  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -311,7 +327,7 @@
 +    # suppress
 +    next
 +  }
-+  /recipient delayed/ {
++  /(recipient|bounce) delayed/ {
 +    printf("%s %s \033[1;35m%-15s DL  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -320,24 +336,12 @@
 +        $(p+8) )
 +    next
 +  }
-+  /Admin (update:|connection from )/ {
++  /DATA phase delayed/ {
++    # suppress
++    next
++  }
++  /(Admin (update:|connection from ))|AdminUpdate:/ {
 +    printf("\033[1;33m%s\033[0m\n", $0)
-+    next
-+  }
-+  /[Ee]mail spamreport/ {
-+    printf("%s %s\033[1;36m %-15s SR  %s\033[0m\n",
-+        $1,
-+        $2,
-+        $(p+4),
-+        $(p+5) )
-+    next
-+  }
-+  /[Ee]mail hamreport/ {
-+    printf("%s %s\033[1;36m %-15s NS  %s\033[0m\n",
-+        $1,
-+        $2,
-+        $(p+4),
-+        $(p+5) )
 +    next
 +  }
 +  /ClamAV: scanning/ {
@@ -367,7 +371,7 @@
 +	substr($(p+14),8,40) )
 +    next
 +  }
-+  /PB:.*score:.*reason:/ {
++  /PB:( deleting\(black\)|.*score:.*reason:)/ {
 +    # suppress
 +    next
 +    printf("%s %s\033[1;34m %-15s PB  %s %s %s %s (%s)\033[0m\n",
@@ -378,7 +382,11 @@
 +	substr($(p+12),8,40) )
 +    next
 +  }
-+  /PBextreme:monitoring|([ValidHelo]|[InvalidHelo]|[PTRmissing])[scoring]/ {
++  /PBextreme:monitoring/ {
++    # suppress
++    next
++  }
++  /(\[ValidHelo]|\[InvalidHelo]|\[PTRinvalid]|\[PTRmissing])\[scoring]/ {
 +    # suppress
 +    next
 +  }
@@ -397,6 +405,23 @@
 +	$2,
 +	$(p+4),
 +	substr($(p+5),1,40) )
++    next
++  }
++  /Message proxied without processing/ {
++    # suppress
++    next
++  }
++  /message proxied without processing/ {
++    printf("%s %s \033[1;32m%-15s NP  %s -> %s\033[0m\n",
++        $1,
++        $2,
++        $(p+4),
++        substr($(p+5),1,40),
++        $(p+7) )
++    next
++  }
++  /Regex:(Black|NoProcessingDomain)/ {
++    # suppress
 +    next
 +  }
 +  {

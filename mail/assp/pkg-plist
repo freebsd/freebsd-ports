@@ -13,7 +13,6 @@ lib/assp/files/nodelay.txt
 lib/assp/files/rbl-service.txt
 lib/assp/files/redre.txt
 lib/assp/files/whitedomains.txt
-lib/assp/images/Thumbs.db
 lib/assp/images/assp.css
 lib/assp/images/dropShadow.gif
 lib/assp/images/editor.css
@@ -26,12 +25,9 @@ lib/assp/images/opensource-logo.gif
 lib/assp/images/plusIcon.png
 lib/assp/images/shutdown.css
 lib/assp/images/sourceforge-logo.gif
-lib/assp/images/valid-xhtml10.gif
 lib/assp/images/village.gif
-lib/assp/images/xml-pill.gif
 lib/assp/move2num.pl
 lib/assp/rebuildspamdb.pl
-lib/assp/repair.pl
 lib/assp/reports/helpreport.txt
 lib/assp/reports/notspamreport.txt
 lib/assp/reports/redremovereport.txt
@@ -50,8 +46,8 @@ sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm -f %D%%ASSP_HOME%%/reports 2>/dev/null || true
-@unexec rm -f %D%%ASSP_HOME%%/images 2>/dev/null || true
-@unexec rm -f %D%%ASSP_HOME%%/files 2>/dev/null || true
-@unexec rmdir %D%%ASSP_HOME%% 2>/dev/null || true
-@unexec if [ -d %D%%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %D%%ASSP_HOME%% directory."; fi
+@unexec rm %%ASSP_HOME%%/reports
+@unexec rm %%ASSP_HOME%%/images
+@unexec rm %%ASSP_HOME%%/files
+@unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
+@unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
