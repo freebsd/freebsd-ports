@@ -1,0 +1,18 @@
+--- utils/flickrdf.c.orig	2008-08-16 13:19:35.000000000 +0800
++++ utils/flickrdf.c	2008-08-16 13:20:38.000000000 +0800
+@@ -130,6 +130,15 @@
+ 
+ 
+ #ifndef HAVE_RAPTOR
++typedef enum {
++  RAPTOR_IDENTIFIER_TYPE_UNKNOWN,
++  RAPTOR_IDENTIFIER_TYPE_RESOURCE,
++  RAPTOR_IDENTIFIER_TYPE_ANONYMOUS,
++  RAPTOR_IDENTIFIER_TYPE_PREDICATE,
++  RAPTOR_IDENTIFIER_TYPE_ORDINAL,
++  RAPTOR_IDENTIFIER_TYPE_LITERAL,
++  RAPTOR_IDENTIFIER_TYPE_XML_LITERAL
++} raptor_identifier_type;
+ typedef char raptor_uri;
+ typedef struct {
+   const void *subject;

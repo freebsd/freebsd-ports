@@ -32,9 +32,11 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-prefs.html
 %%DOCSDIR%%/flickcurl-section-reflection.html
 %%DOCSDIR%%/flickcurl-section-tag.html
+%%DOCSDIR%%/flickcurl-section-serializer.html
 %%DOCSDIR%%/flickcurl-section-test.html
 %%DOCSDIR%%/flickcurl-section-upload.html
 %%DOCSDIR%%/flickcurl-section-urls.html
+%%DOCSDIR%%/flickcurl-section-video.html
 %%DOCSDIR%%/flickcurl.devhelp
 %%DOCSDIR%%/flickcurl.devhelp2
 %%DOCSDIR%%/home.png
