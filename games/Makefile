@@ -755,7 +755,6 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
-    SUBDIR += ssc
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stepbill
