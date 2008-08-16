@@ -40,4 +40,5 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 %%JAVA%%share/python/aotcompile.py
 %%JAVA%%share/python/classfile.py
+%%JAVA%%@dirrmtry share/python
 @comment Insert PLIST.lib here
