@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pgcalc2
-DISTVERSION=	2.2-5
-PORTREVISION=	1
+DISTVERSION=	2.2-10
 CATEGORIES=	math kde
 MASTER_SITES=	http://www.pgcalc.net/
 
@@ -25,10 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	ARTS "Build with aRts support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if !defined(WITH_ARTS)
 CONFIGURE_ARGS+=	--without-arts
