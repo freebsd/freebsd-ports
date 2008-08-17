@@ -682,6 +682,7 @@
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg
     SUBDIR += renderpark
+    SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += ristretto
     SUBDIR += robot
