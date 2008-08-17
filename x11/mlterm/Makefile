@@ -7,7 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	2.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,10 +22,11 @@ USE_GNOME=	gtk20 lthack
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
 		--with-type-engines="xcore,xft"
-CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
 
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \
@@ -68,7 +69,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-inputmethod:iiimf:im_iiimf.c
 .endif
 
 CONFIGURE_ARGS+=	--enable-iiimf
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
 LIB_DEPENDS+=	iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
 PLIST_SUB+=	IIIMF=""
 .else
