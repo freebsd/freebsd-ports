@@ -17,6 +17,8 @@ COMMENT=	The library for the xine-dvdnav plugin
 
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
+CONFLICTS=	libdvdnav-mplayer-[0-9]*
+
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=''
