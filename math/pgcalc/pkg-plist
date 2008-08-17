@@ -1,8 +1,8 @@
-bin/pgcalc2
-share/doc/HTML/en/pgcalc2/common
-share/doc/HTML/en/pgcalc2/index.docbook
-share/doc/HTML/en/pgcalc2/index.cache.bz2
-@dirrm share/doc/HTML/en/pgcalc2
+bin/pgcalc
+share/doc/HTML/en/pgcalc/common
+share/doc/HTML/en/pgcalc/index.docbook
+share/doc/HTML/en/pgcalc/index.cache.bz2
+@dirrm share/doc/HTML/en/pgcalc
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
 %%DOCSDIR%%/alg_mode1.png
@@ -126,17 +126,9 @@ share/doc/HTML/en/pgcalc2/index.cache.bz2
 %%DOCSDIR%%/var_dlg1.png
 @dirrm %%DOCSDIR%%
 share/icons/hicolor/32x32/apps/pgcalc2.png
-share/applnk/Office/PGCalculator/pgcalc2.desktop
-share/applnk/Office/PGCalculator/pgcalc2-BHP49G.desktop
-share/applnk/Office/PGCalculator/pgcalc2-Metallic.desktop
-share/applnk/Office/PGCalculator/pgcalc2-CFX-9850GB+.desktop
-share/applnk/Office/PGCalculator/pgcalc2-FX20.desktop
-share/applnk/Office/PGCalculator/pgcalc2-HP48GX.desktop
-share/applnk/Office/PGCalculator/pgcalc2-HP49G+.desktop
-@dirrm share/applnk/Office/PGCalculator
-@dirrmtry share/applnk/Office
+share/applnk/Utilities/pgcalc.desktop
+@dirrmtry share/applnk/Utilities
 @dirrmtry share/applnk
-share/apps/pgcalc2/pgcalc2ui.rc
 share/apps/pgcalc2/skins/BHP49G/Backgrnd.bmp
 share/apps/pgcalc2/skins/BHP49G/HP49GFon.bmp
 share/apps/pgcalc2/skins/BHP49G/SmFonts8x8.bmp
