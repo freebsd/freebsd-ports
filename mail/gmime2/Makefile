@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.2.18
-PORTREVISION?=	1
+PORTVERSION=	2.2.22
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v${PORTVERSION:C/([0-9]\.[0-9]).*/\1/}/
 
