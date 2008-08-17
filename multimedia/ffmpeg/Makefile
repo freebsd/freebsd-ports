@@ -142,14 +142,14 @@ CONFIGURE_ARGS+=	--disable-libfaad
 ## amr
 .ifdef(WITH_AMR_NB)
 LIB_DEPENDS+=		amrnb.3:${PORTSDIR}/audio/libamrnb
-CONFIGURE_ARGS+=	--enable-libamr-nb
+CONFIGURE_ARGS+=	--enable-libamr-nb --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libamr-nb
 .endif
 
 .ifdef(WITH_AMR_WB)
 LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
-CONFIGURE_ARGS+=	--enable-libamr-wb
+CONFIGURE_ARGS+=	--enable-libamr-wb --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libamr-wb
 .endif
