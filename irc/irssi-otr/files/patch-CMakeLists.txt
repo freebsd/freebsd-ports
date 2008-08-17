@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -194,7 +194,7 @@
+ 
+ ADD_LIBRARY(otr SHARED otr.c otrutil.c otr_ops.c otr_key.c ui.c ${PROJECT_BINARY_DIR}/otr-formats.c)
+ 
+-TARGET_LINK_LIBRARIES(otr ${GLIB_LIBRARIES} ${LIBOTR_LIBRARIES})
++TARGET_LINK_LIBRARIES(otr ${GLIB_LDFLAGS} ${LIBOTR_LIBRARIES})
+ 
+ # cscope
+ 
