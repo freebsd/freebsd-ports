@@ -46,7 +46,7 @@ gdm_start()
 	sleep 1
 	iter=$(expr ${iter} + 1)
     done
-    ${command} ) &
+    ${command} ${gdm_flags} ) &
 }
 
 load_rc_config ${name}
