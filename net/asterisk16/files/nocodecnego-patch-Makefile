@@ -9,6 +9,18 @@
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
  endif
+@@ -214,9 +214,11 @@
+   ASTLDFLAGS+=-L/usr/local/lib
+ endif
+
++ifneq ($(OSARCH),FreeBSD)
+ ifneq ($(PROC),ultrasparc)
+   ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ endif
++endif
+
+ ifeq ($(PROC),ppc)
+   ASTCFLAGS+=-fsigned-char
 @@ -224,7 +224,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
