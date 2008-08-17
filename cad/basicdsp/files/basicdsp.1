@@ -1,0 +1,41 @@
+.Dd June 16, 2008
+.Os Unix
+.Dt basicdsp 1
+.Sh NAME
+.Nm basicdsp
+.Nd DSP demonstration program
+.Sh SYNOPSIS
+A program for experimenting with simple audio DSP algorithms.
+.Sh DESCRIPTION
+.Pp
+BasicDSP is a program to apply simple Digital Signal Processing algorithms
+to audio signals. The input can either be taken from the sound card, or
+be a locally generated sine wave, white noise or impulse signal. The output
+is fed to the sound card, as well as to a virtual oscilloscope and spectrum
+analyzer.
+.Pp
+The DSP algorithm itself is specified in a very straightforward programming
+language which has only assignment statements (and on unix a print statement).
+Each line contains one statement, and all lines are executed once for each
+incoming sample. The input sample is available in variables named 'in',
+'inl' (left channel) and 'inr' (right channel). The program should write the
+output into variables named 'out', 'outl' and/or 'outr'.
+Here's a simple example program:
+
+  a = a + slider1 * (in - a)
+  outl = a
+  outr = fir(in, 0.1, 0.3, 0.3, 0.1)
+.Pp
+This illustrates defining new variables ('a' in the example), the use of
+the sliders, and the use of a built-in function like fir().
+The help-menu gives access to a complete list of built-in variables and
+functions.
+.Pp
+Note: the program was originally written to accompany a series of articles
+on Software-Defined Radio appearing in the Dutch amateur radio journal
+\'Electron\'. Another tutorial appeared in the December 2007 issue of SPRAT.
+.Sh PROJECT WEBSITE, DOCUMENTATION
+http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/
+.Pp
+.Sh AUTHORS
+Pieter-Tjerk de Boer, Niels A. Moseley
