@@ -128,6 +128,7 @@
     SUBDIR += updatedd
     SUBDIR += vizone
     SUBDIR += walker
+    SUBDIR += zkt
     SUBDIR += zonecheck
     SUBDIR += zonenotify
 
