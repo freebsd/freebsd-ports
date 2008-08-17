@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/mosh
+%%DATADIR%%/all-tests.scm
+%%DATADIR%%/repl.scm
+@dirrmtry %%DATADIR%%

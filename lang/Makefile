@@ -161,6 +161,7 @@
     SUBDIR += mmix
     SUBDIR += mono
     SUBDIR += moscow_ml
+    SUBDIR += mosh
     SUBDIR += mozart
     SUBDIR += mpd
     SUBDIR += munger
