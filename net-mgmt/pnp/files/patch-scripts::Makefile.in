@@ -1,0 +1,10 @@
+--- scripts/Makefile.in.orig	2008-08-17 00:52:43.000000000 +0400
++++ scripts/Makefile.in	2008-08-17 00:52:47.000000000 +0400
+@@ -37,7 +37,6 @@
+ 	$(INSTALL) -m 774 $(INSTALL_OPTS) net2pnp.pl $(DESTDIR)$(BINDIR)
+ 
+ install: 
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATADIR)
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
+ 	$(MAKE) install-processperfdata
+ 

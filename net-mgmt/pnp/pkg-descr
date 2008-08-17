@@ -1,0 +1,9 @@
+PNP is an addon to nagios which analyzes performance data provided
+by plugins and stores them automatically into RRD-databases (Round
+Robin Databases, see RRD Tool).
+
+During development of PNP we set value on easy installation and
+little maintenance while running it. An administrator should do
+other things than configure graphing tools.
+
+WWW: http://www.pnp4nagios.org/pnp/start
