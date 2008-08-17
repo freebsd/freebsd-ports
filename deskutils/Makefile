@@ -171,6 +171,7 @@
     SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += org-mode.el
+    SUBDIR += org-mode.el6
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
     SUBDIR += pal
