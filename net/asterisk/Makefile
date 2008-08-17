@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.21.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -37,7 +38,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
-		NOISY_BUILD=YES
+		NOISY_BUILD=YES \
+		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \

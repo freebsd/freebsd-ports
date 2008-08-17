@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- Makefile.rules
++++ Makefile.rules
+@@ -27,6 +27,7 @@
+    CMD_PREFIX=
+ endif
+ 
++ifneq ($(OSARCH),FreeBSD)
+ ifeq ($(findstring DONT_OPTIMIZE,$(MENUSELECT_CFLAGS)),)
+ # More GSM codec optimization
+ # Uncomment to enable MMXTM optimizations for x86 architecture CPU's
+@@ -37,6 +38,7 @@
+ OPTIMIZE?=-O6
+ ASTCFLAGS+=$(OPTIMIZE)
+ endif
++endif
+ 
+ %.o: %.c
+ 	$(ECHO_PREFIX) echo "   [CC] $< -> $@"
