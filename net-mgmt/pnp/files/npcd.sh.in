@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: npcd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable/tune npcd:
+# npcd_enable (bool):    Set to "NO" by default.
+#                        Set it to "YES" to enable npcd.
+# npcd_flags (str):      Set to "" by default.
+# npcd_configfile (str): Set to "%%PREFIX%%/etc/pnp/npcd.cfg" by default.
+#
+
+. %%RC_SUBR%%
+
+name="npcd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/npcd"
+command_args="-d"
+pidfile=/var/run/${name}.pid
+
+: ${npcd_enable="NO"}
+: ${npcd_flags=""}
+: ${npcd_configfile:="%%PREFIX%%/etc/pnp/npcd.cfg"}
+
+load_rc_config "${name}"
+
+required_files="${npcd_configfile}"
+command_args="${command_args} -f ${npcd_configfile}"
+
+run_rc_command "$1"

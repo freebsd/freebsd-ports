@@ -1,0 +1,28 @@
+--- sample-config/Makefile.in.orig	2008-08-16 23:03:08.000000000 +0400
++++ sample-config/Makefile.in	2008-08-16 23:04:53.000000000 +0400
+@@ -28,22 +28,18 @@
+ devclean: distclean
+ 
+ install:
+-	-rm -f $(HTMLDIR)/conf/config.php
+-
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/check_commands
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/pages
+-	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(CFGDIR)
+-	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/background.pdf $(DESTDIR)$(CFGDIR)
++	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(CFGDIR)/config.php-sample
++	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/background.pdf $(DESTDIR)$(CFGDIR)/background.pdf-sample
+ 
+ install-config: 
+-	-rm -f $(DESTDIR)$(HTMLDIR)/conf/config.php
+-
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/check_commands
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/pages
+ 	
+-	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(CFGDIR)
++	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(CFGDIR)/config.php-sample
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/process_perfdata.cfg-sample $(DESTDIR)$(CFGDIR)
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/rra.cfg-sample $(DESTDIR)$(CFGDIR)
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS)  pnp/check_commands/check_nwstat.cfg-sample $(DESTDIR)$(CFGDIR)/check_commands

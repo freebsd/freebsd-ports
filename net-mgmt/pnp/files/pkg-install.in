@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PNP_RRDS=%%PNP_RRDS%%
+PNP_SPOOL=%%PNP_SPOOL%%
+NAGIOSUSER=%%NAGIOSUSER%%
+NAGIOSGROUP=%%NAGIOSGROUP%%
+
+dirs () {
+	for i in "$PNP_RRDS" "$PNP_SPOOL"; do
+		if ! [ -d "$i" ]; then
+			mkdir -p "$i"
+			chmod 750 "$i"
+			chown "$NAGIOSUSER":"$NAGIOSGROUP" "$i"
+		fi
+	done
+}
+
+check_sanity () {
+	if ! pw group show "$NAGIOSGROUP" 2>&1 > /dev/null; then
+		echo "No group '$NAGIOSGROUP'.  Create it and try again."
+		exit 1
+	fi
+	if ! pw user show "$NAGIOSUSER" 2>&1 > /dev/null; then
+		echo "No user '$NAGIOSUSER'.  Create it and try again."
+		exit 1
+	fi
+}
+
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	check_sanity
+	dirs
+fi

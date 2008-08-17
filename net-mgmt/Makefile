@@ -203,6 +203,7 @@
     SUBDIR += pixilate
     SUBDIR += pktstat
     SUBDIR += pmacct
+    SUBDIR += pnp
     SUBDIR += portmon
     SUBDIR += py-flowtools
     SUBDIR += py-ipy

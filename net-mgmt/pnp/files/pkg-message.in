@@ -1,0 +1,55 @@
+========================================================================
+
+You just installed/upgraded PNP graphing tool for Nagios.
+
+For tool configuration tasks read
+  http://www.pnp4nagios.org/pnp/config
+
+For Web-frontend configuration tasks read
+  http://www.pnp4nagios.org/pnp/webfe
+
+We recommend to start with the following restrictive Apache
+configuration for the PNP area:
+
+<Directory "%%WWWDIR%%/">
+    Order deny,allow
+    Allow from all
+    Deny from all
+    DirectoryIndex index.php
+    AddHandler application/x-httpd-php .php
+</Directory>
+
+<Directory "%%WWWDIR%%/include/">
+    Options None
+    Order allow,deny
+    Deny from all
+    <FilesMatch ".css$">
+        Order deny,allow
+        Allow from all
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+<Directory "%%WWWDIR%%/include/js/">
+    Order deny,allow
+    Allow from all
+    Deny from all
+</Directory>
+<Directory "%%WWWDIR%%/lang/">
+    Order allow,deny
+    Deny from all
+</Directory>
+<Directory "%%WWWDIR%%/templates/">
+    Order allow,deny
+    Deny from all
+</Directory>
+<Directory "%%WWWDIR%%/templates.dist/">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+
+Remember to restart NPCD service after upgrade if you're using
+'bulk' mode with NPCD.
+
+========================================================================
