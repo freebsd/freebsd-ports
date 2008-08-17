@@ -5,19 +5,17 @@
 # $FreeBSD$
 #
 
-PORTVERSION=		3.0.30
+PORTVERSION=		3.0.31
 PORTEPOCH=		1
 CATEGORIES=		japanese net
 PKGNAMEPREFIX=		ja-
 
 PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-${PORTVERSION}-i18n-20080713.bz2
+PATCHFILES=		samba-${PORTVERSION}-i18n-20080818.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=		kuriyama@FreeBSD.org
 COMMENT=		Japanese Samba
-
-BROKEN=			does not package
 
 CONFLICTS=		ja-samba-2.* samba-2.* samba-3.0.* sharity-light-1.*
 
