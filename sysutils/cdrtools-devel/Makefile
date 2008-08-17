@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a43
+PORTVERSION=	2.01.01a45
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -100,8 +100,9 @@ pre-everything::
 
 post-extract:
 .for i in config.guess config.sub
-	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
-	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/cdda2wav
+.for j in autoconf conf cdda2wav
+	@${CP} -fp ${PORTSDIR}/Templates/${i} ${WRKSRC}/${j}
+.endfor
 .endfor
 .if ${CDRTLSTARGET} != "i386-freebsd-cc"
 	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
