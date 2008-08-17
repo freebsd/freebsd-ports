@@ -111,6 +111,7 @@
     SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
     SUBDIR += libdvdnav
+    SUBDIR += libdvdnav-mplayer
     SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libfame

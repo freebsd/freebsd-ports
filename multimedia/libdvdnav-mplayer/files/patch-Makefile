@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-08-11 07:48:09.644830172 +0200
++++ Makefile	2008-08-11 07:48:56.632122342 +0200
+@@ -101,7 +101,7 @@
+ 	cd $(.OBJDIR) && $(CC) $(SHLDFLAGS) -L. -Wl,-soname=$(SHLIB).$(SHLIB_MAJOR) -o $@ $(SHOBJS) -ldvdread $(THREADLIB)
+ else
+ ${SHLIB}: version.h $(.OBJDIR) $(SHOBJS) $(BUILDDEPS)
+-	cd $(.OBJDIR) && $(CC) $(SHLDFLAGS) -Wl,-soname=$(SHLIB).$(SHLIB_MAJOR) -o $@ $(SHOBJS) -ldvdread $(THREADLIB)
++	cd $(.OBJDIR) && $(CC) $(SHLDFLAGS) $(LDFLAGS) -Wl,-soname=$(SHLIB).$(SHLIB_MAJOR) -o $@ $(SHOBJS) -ldvdread $(THREADLIB)
+ endif
+ ${MINI_SHLIB}: version.h $(.OBJDIR) $(SHOBJS) $(BUILDDEPS)
+ 	cd $(.OBJDIR) && $(CC) $(SHLDFLAGS) -Wl,-soname=$(MINI_SHLIB).$(SHLIB_MAJOR) -o $@ $(SHOBJS) $(THREADLIB)
