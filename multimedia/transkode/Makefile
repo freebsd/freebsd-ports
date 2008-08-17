@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	transkode
-PORTVERSION=	0.7b
-PORTREVISION=	2
+PORTVERSION=	0.7
+PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE/Qt based frontend for various audio transcoding tools
