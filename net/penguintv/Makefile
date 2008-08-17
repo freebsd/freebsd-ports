@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.60
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -19,12 +18,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYXML} \
-		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
+		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		leaves egg file behind on deinstall
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
 
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 
