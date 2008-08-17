@@ -5369,6 +5369,7 @@ irssi                           ports/irc/irssi
 irssi-dcc_send_limiter          ports/irc/irssi-dcc_send_limiter
 irssi-devel                     ports/irc/irssi-devel
 irssi-fish                      ports/irc/irssi-fish
+irssi-otr                       ports/irc/irssi-otr
 irssi-scripts                   ports/irc/irssi-scripts
 irssi-themes                    ports/x11-themes/irssi-themes
 irssi-xmpp                      ports/irc/irssi-xmpp
@@ -6980,6 +6981,7 @@ libdv                           ports/multimedia/libdv
 libdvbpsi                       ports/multimedia/libdvbpsi
 libdvdcss                       ports/multimedia/libdvdcss
 libdvdnav                       ports/multimedia/libdvdnav
+libdvdnav-mplayer               ports/multimedia/libdvdnav-mplayer
 libdvdplay                      ports/multimedia/libdvdplay
 libdvdread                      ports/multimedia/libdvdread
 libdwarf                        ports/devel/libdwarf
@@ -7245,6 +7247,7 @@ libpanelappletmm                ports/x11-toolkits/libpanelappletmm
 libpano12                       ports/graphics/libpano12
 libpano13                       ports/graphics/libpano13
 libpaper                        ports/print/libpaper
+libpar2                         ports/archivers/libpar2
 libparanoia                     ports/security/libparanoia
 libparsifal                     ports/textproc/libparsifal
 libpasori                       ports/devel/libpasori
@@ -8297,6 +8300,7 @@ mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
 mod_auth_mysql41_ap2            ports/www/mod_auth_mysql41_ap2
 mod_auth_mysql_another          ports/www/mod_auth_mysql_another
+mod_auth_openid                 ports/www/mod_auth_openid
 mod_auth_pam                    ports/www/mod_auth_pam
 mod_auth_pam2                   ports/www/mod_auth_pam2
 mod_auth_pgsql                  ports/www/mod_auth_pgsql
@@ -8445,6 +8449,7 @@ moria                           ports/games/moria
 morla                           ports/editors/morla
 morpheus                        ports/graphics/morpheus
 moscow_ml                       ports/lang/moscow_ml
+mosh                            ports/lang/mosh
 mosref                          ports/security/mosref
 most                            ports/sysutils/most
 moth                            ports/graphics/moth
@@ -8728,6 +8733,7 @@ nagios                          ports/net-mgmt/nagios
 nagios-base-logos               ports/misc/nagios-base-logos
 nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
 nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
+nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
 nagios-plugins                  ports/net-mgmt/nagios-plugins
@@ -9398,6 +9404,7 @@ orbital_eunuchs_sniper          ports/games/orbital_eunuchs_sniper
 orbitcpp                        ports/devel/orbitcpp
 oregano                         ports/cad/oregano
 org-mode.el                     ports/deskutils/org-mode.el
+org-mode.el6                    ports/deskutils/org-mode.el6
 orion                           ports/x11-wm/orion
 oroborus                        ports/x11-wm/oroborus
 orpheus                         ports/audio/orpheus
@@ -16940,6 +16947,7 @@ pngquant                        ports/graphics/pngquant
 pngrewrite                      ports/graphics/pngrewrite
 pngwriter                       ports/graphics/pngwriter
 pnm2ppa                         ports/print/pnm2ppa
+pnp                             ports/net-mgmt/pnp
 po4a                            ports/textproc/po4a
 poc                             ports/security/poc
 pocketreader                    ports/textproc/pocketreader
@@ -18426,6 +18434,7 @@ replaceit                       ports/textproc/replaceit
 replay                          ports/devel/replay
 replex                          ports/multimedia/replex
 reply-o-matic                   ports/mail/reply-o-matic
+repng2jpeg                      ports/graphics/repng2jpeg
 reportmagic                     ports/www/reportmagic
 resid                           ports/audio/resid
 resin2                          ports/www/resin2
@@ -21437,6 +21446,7 @@ woadaptor-cgi                   ports/www/woadaptor-cgi
 wol                             ports/net/wol
 wolf3d                          ports/games/wolf3d
 wolfpack                        ports/games/wolfpack
+wooztalk                        ports/net-im/wooztalk
 wop                             ports/games/wop
 word2x                          ports/textproc/word2x
 wordnet                         ports/textproc/wordnet
@@ -22737,6 +22747,7 @@ zipper                          ports/archivers/zipper
 ziproxy                         ports/www/ziproxy
 zircon                          ports/irc/zircon
 zisofs-tools                    ports/sysutils/zisofs-tools
+zkt                             ports/dns/zkt
 zmailer                         ports/mail/zmailer
 zmq                             ports/devel/zmq
 zmtx-zmrx                       ports/comms/zmtx-zmrx
