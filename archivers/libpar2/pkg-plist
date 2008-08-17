@@ -1,0 +1,38 @@
+include/libpar2/commandline.h
+include/libpar2/config.h
+include/libpar2/crc.h
+include/libpar2/creatorpacket.h
+include/libpar2/criticalpacket.h
+include/libpar2/datablock.h
+include/libpar2/descriptionpacket.h
+include/libpar2/diskfile.h
+include/libpar2/filechecksummer.h
+include/libpar2/galois.h
+include/libpar2/letype.h
+include/libpar2/libpar2.h
+include/libpar2/mainpacket.h
+include/libpar2/md5.h
+include/libpar2/par1fileformat.h
+include/libpar2/par1repairer.h
+include/libpar2/par1repairersourcefile.h
+include/libpar2/par2cmdline.h
+include/libpar2/par2creator.h
+include/libpar2/par2creatorsourcefile.h
+include/libpar2/par2fileformat.h
+include/libpar2/par2repairer.h
+include/libpar2/par2repairersourcefile.h
+include/libpar2/parheaders.h
+include/libpar2/recoverypacket.h
+include/libpar2/reedsolomon.h
+include/libpar2/verificationhashtable.h
+include/libpar2/verificationpacket.h
+lib/libpar2.a
+lib/libpar2.la
+lib/libpar2.so
+lib/libpar2.so.0
+lib/libpar2/include/config.h
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
+@dirrm lib/libpar2/include
+@dirrm lib/libpar2
+@dirrm include/libpar2
