@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://www.bellz.org/treeline/ \
-		http://depot.fsck.ch/mirror/distfiles/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}:treeline \
+		http://treeline.bellz.org/plugins/:plugins \
+		http://depot.fsck.ch/mirror/distfiles/:treeline,plugins
+MASTER_SITE_SUBDIR=treeline
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@fsck.ch
 COMMENT=	TreeLine is a structured information storage program
 
-BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 OPTIONS=	ASPELL "install with aspell support" off \
 		ISPELL "install with ispell support" off \
 		PYXML "use pythons py-xml instead of textproc/expat2" on \
-		HTTPLOAD "install httpLoad plugin" off \
-		TYPESEARCH "install typesearch plugin" off
+		HTTPLOAD "install httpLoad plugin" off
 
 WRKSRC=		${WRKDIR}/TreeLine
-USE_QT_VER=	3
+USE_QT_VER=	4
 USE_PYTHON=	2.3+
 NO_BUILD=	yes
 
@@ -45,27 +45,17 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
 .if defined(WITH_HTTPLOAD)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} httpload.py
+DISTFILES+=	httpload2.py:plugins
 PLIST_SUB+=	HTTPLOAD=""
 .else
 PLIST_SUB+=	HTTPLOAD="@comment "
-.endif
-
-.if defined(WITH_TYPESEARCH)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} typesearch.py
-PLIST_SUB+=	TYPESEARCH=""
-.else
-PLIST_SUB+=	TYPESEARCH="@comment "
 .endif
 
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} install.py \
 	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -x
 .if defined(WITH_HTTPLOAD)
-	@${INSTALL_DATA} ${DISTDIR}/httpload.py ${PREFIX}/lib/${PORTNAME}/plugins/
-.endif
-.if defined(WITH_TYPESEARCH)
-	@${INSTALL_DATA} ${DISTDIR}/typesearch.py ${PREFIX}/lib/${PORTNAME}/plugins/
+	@${INSTALL_DATA} ${DISTDIR}/httpload2.py ${PREFIX}/lib/${PORTNAME}/plugins/
 .endif
 
 post-install:
