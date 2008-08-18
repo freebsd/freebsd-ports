@@ -34,5 +34,5 @@ include/tnl/tnlVector.h
 lib/libtnl.a
 lib/libtnl.so
 lib/libtnl.so.1
-lib/libtnl_p.a
+%%PROFILE%%lib/libtnl_p.a
 @dirrm include/tnl

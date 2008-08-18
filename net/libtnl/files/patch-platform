@@ -1,0 +1,97 @@
+Use defines instead of (partially incorrect) function-wrappers for
+standard functions.
+
+	-mi
+
+--- tnlPlatform.h	2004-09-28 14:45:25.000000000 -0400
++++ tnlPlatform.h	2008-08-17 20:47:59.000000000 -0400
+@@ -31,4 +31,5 @@
+ #include "tnlTypes.h"
+ #endif
++#include <stdio.h>
+ 
+ namespace TNL {
+@@ -101,10 +102,11 @@
+ ///
+ /// This will print into the specified string until the buffer size is reached.
+-extern int    dSprintf(char *buffer, U32 bufferSize, const char *format, ...);
+-
+-/// Vsprintf with buffer size argument.
+-///
+-/// This will print into the specified string until the buffer size is reached.
+-extern int    dVsprintf(char *buffer, U32 bufferSize, const char *format, void *arglist); ///< compiler independent
++#ifdef TNL_COMPILER_VISUALC
++#	define dSprintf	_snprintf
++#	define dVsprintf	_vsnprintf
++#else
++#	define dSprintf	snprintf
++#	define dVsprintf	vsnprintf
++#endif
+ 
+ inline char dToupper(const char c) { if (c >= char('a') && c <= char('z')) return char(c + 'A' - 'a'); else return c; } ///< Converts an ASCII character to upper case.
+@@ -120,6 +122,6 @@
+ #if defined (__GNUC__)
+ 
+-int stricmp(const char *str1, const char *str2);
+-int strnicmp(const char *str1, const char *str2, unsigned int len);
++#define stricmp(str1, str2)	strcasecmp(str1, str2)
++#define strnicmp(str1, str2, size)	strncasecmp(str1, str2, size)
+ 
+ #endif
+--- platform.cpp	2004-08-20 14:26:58.000000000 -0400
++++ platform.cpp	2008-08-17 11:43:55.000000000 -0400
+@@ -435,54 +435,3 @@
+ }
+ 
+-S32 dSprintf(char *buffer, U32 bufferSize, const char *format, ...)
+-{
+-   va_list args;
+-   va_start(args, format);
+-#ifdef TNL_COMPILER_VISUALC
+-   S32 len = _vsnprintf(buffer, bufferSize, format, args);
+-#else
+-   S32 len = vsnprintf(buffer, bufferSize, format, args);
+-#endif
+-   return (len);
+-}
+-
+-
+-S32 dVsprintf(char *buffer, U32 bufferSize, const char *format, void *arglist)
+-{
+-#ifdef TNL_COMPILER_VISUALC
+-   S32 len = _vsnprintf(buffer, bufferSize, format, (va_list) arglist);
+-#else
+-   S32 len = vsnprintf(buffer, bufferSize, format, (char *) arglist);
+-#endif
+-   return len;
+-}
+-
+ };
+-
+-
+-#if defined (__GNUC__)
+-
+-int stricmp(const char *str1, const char *str2)
+-{
+-   while(toupper(*str1) == toupper(*str2) && *str1)
+-   {
+-      str1++;
+-      str2++;
+-   }
+-   return (toupper(*str1) > toupper(*str2)) ? 1 : ((toupper(*str1) < toupper(*str2)) ? -1 : 0);
+-}
+-
+-int strnicmp(const char *str1, const char *str2, unsigned int len)
+-{
+-   for(unsigned int i = 0; i < len; i++)
+-   {
+-      if(toupper(str1[i]) == toupper(str2[i]))
+-         continue;
+-      return (toupper(str1[i]) > toupper(str2[i])) ? 1 : ((toupper(str1[i]) < toupper(str2[i])) ? -1 : 0);
+-   }
+-   return 0;
+-}
+-
+-#endif
+-
+-
