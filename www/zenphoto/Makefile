@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.1.7
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
@@ -29,11 +29,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \
 		"! -name README.html ! -name License.txt")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-.for i in multimediaDefault.png videoDefault.png zen-logo.jpg
-.if exists(${WWWDIR}/albums/${i})
-	${CHMOD} 644 ${WWWDIR}/albums/${i}
-.endif
-.endfor
+	${CHMOD} 644 ${WWWDIR}/zp-core/images/*
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
