@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	2.0.3.3
+PORTVERSION=	2.0.4.0
 CATEGORIES=	science
-MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/distributions/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/distributions/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
