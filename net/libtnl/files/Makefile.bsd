@@ -64,4 +64,3 @@ INCLUDEDIR=		${PREFIX}/include/tnl
 LIBDIR=			${PREFIX}/lib
 
 .include <bsd.lib.mk>
-
