@@ -81,7 +81,7 @@ start_postcmd()
 		done
 		echo
 		if [ $i -eq 0 ]; then
-			echo "There is no clamav-milter socket (${clamav_clamd_socket})!"
+			echo "There is no clamav-milter socket (${clamav_milter_socket})!"
 			exit 1
 		fi
 		/bin/chmod ${clamav_milter_socket_mode} ${clamav_milter_socket}
