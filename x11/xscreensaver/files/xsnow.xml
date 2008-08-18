@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xsnow" _label="Xsnow">
+
+  <command arg="-bg SkyBlue3"/>
+  <command arg="-solidbg"/>
+
+  <number id="snowflakes" type="spinbutton" arg="-snowflakes %"
+          _label="Number of Snowflakes" low="100" high="1000" default="100"/>
+
+  <boolean id="nosanta"		_label="Display Santa" arg-unset="-nosanta"/>
+
+  <number id="santa" type="slider" arg="-santa %"
+          _label="Size of Santa" _low-label="Small" _high-label="Large"
+          low="0" high="2" default="2"/>
+
+  <hgroup>
+    <boolean id="norudolf"	_label="Display Rudolph" arg-unset="-norudolf"/>
+    <boolean id="notrees"	_label="Display Trees" arg-unset="-notrees"/>
+  </hgroup>
+
+  <boolean id="keepsnow" _label="Allow Snow to Stick" arg-unset="-nokeepsnow"/>
+
+  <number id="windtimer" type="slider" arg="-windtimer %"
+          _label="Seconds Between Wind Gusts" _low-label="0" _high-label="30"
+          low="0" high="30" default="10"/>
+
+  <_description>
+Draws falling snow and the occasional tiny Santa.
+
+Written by Rick Jansen.
+  </_description>
+</screensaver>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xplanet" _label="Xplanet">
+
+  <command arg="-vroot"/>
+  <command arg="-wait 1"/>
+
+  <number id="timewarp" type="slider" arg="-timewarp %"
+          _label="Time Warp" _low-label="Real Time" _high-label="Fast"
+          low="1" high="1000" default="1"/>
+
+  <hgroup>
+   <select id="body">
+    <option id="sun"       _label="View Sun"       arg-set="-body sun"/>
+    <option id="mercury"   _label="View Mercury"   arg-set="-body mercury"/>
+    <option id="venus"     _label="View Venus"     arg-set="-body venus"/>
+    <option id="earth"     _label="View Earth"/>
+    <option id="moon"      _label="View Moon"      arg-set="-body moon"/>
+    <option id="mars"      _label="View Mars"      arg-set="-body mars"/>
+    <option id="phobos"    _label="View Phobos"    arg-set="-body phobos"/>
+    <option id="deimos"    _label="View Deimos"    arg-set="-body deimos"/>
+    <option id="jupiter"   _label="View Jupiter"   arg-set="-body jupiter"/>
+    <option id="io"        _label="View Io"        arg-set="-body io"/>
+    <option id="europa"    _label="View Europa"    arg-set="-body europa"/>
+    <option id="ganymede"  _label="View Ganymede"  arg-set="-body ganymede"/>
+    <option id="callisto"  _label="View Callisto"  arg-set="-body callisto"/>
+    <option id="saturn"    _label="View Saturn"    arg-set="-body saturn"/>
+    <option id="mimas"     _label="View Mimas"     arg-set="-body mimas"/>
+    <option id="enceladus" _label="View Enceladus" arg-set="-body enceladus"/>
+    <option id="tethys"    _label="View Tethys"    arg-set="-body tethys"/>
+    <option id="dione"     _label="View Dione"     arg-set="-body dione"/>
+    <option id="rhea"      _label="View Rhea"      arg-set="-body rhea"/>
+    <option id="titan"     _label="View Titan"     arg-set="-body titan"/>
+    <option id="hyperion"  _label="View Hyperion"  arg-set="-body hyperion"/>
+    <option id="iapetus"   _label="View Iapetus"   arg-set="-body iapetus"/>
+    <option id="phoebe"    _label="View Phoebe"    arg-set="-body phoebe"/>
+    <option id="uranus"    _label="View Uranus"    arg-set="-body uranus"/>
+    <option id="miranda"   _label="View Miranda"   arg-set="-body miranda"/>
+    <option id="ariel"     _label="View Ariel"     arg-set="-body ariel"/>
+    <option id="umbriel"   _label="View Umbriel"   arg-set="-body umbriel"/>
+    <option id="titania"   _label="View Titania"   arg-set="-body titania"/>
+    <option id="oberon"    _label="View Oberon"    arg-set="-body oberon"/>
+    <option id="neptune"   _label="View Neptune"   arg-set="-body neptune"/>
+    <option id="triton"    _label="View Triton"    arg-set="-body triton"/>
+    <option id="nereid"    _label="View Nereid"    arg-set="-body nereid"/>
+    <option id="pluto"     _label="View Pluto"     arg-set="-body pluto"/>
+    <option id="charon"    _label="View Charon"    arg-set="-body charon"/>
+    <option id="random"    _label="View Random"    arg-set="-body random"/>
+    <option id="major"     _label="View Major"     arg-set="-body major"/>
+   </select> 
+
+   <select id="origin">
+    <option id="sun"       _label="From Sun"/>
+    <option id="mercury"   _label="From Mercury"   arg-set="-origin mercury"/>
+    <option id="venus"     _label="From Venus"     arg-set="-origin venus"/>
+    <option id="earth"     _label="From Earth"     arg-set="-origin earth"/>
+    <option id="moon"      _label="From Moon"      arg-set="-origin moon"/>
+    <option id="mars"      _label="From Mars"      arg-set="-origin mars"/>
+    <option id="phobos"    _label="From Phobos"    arg-set="-origin phobos"/>
+    <option id="deimos"    _label="From Deimos"    arg-set="-origin deimos"/>
+    <option id="jupiter"   _label="From Jupiter"   arg-set="-origin jupiter"/>
+    <option id="io"        _label="From Io"        arg-set="-origin io"/>
+    <option id="europa"    _label="From Europa"    arg-set="-origin europa"/>
+    <option id="ganymede"  _label="From Ganymede"  arg-set="-origin ganymede"/>
+    <option id="callisto"  _label="From Callisto"  arg-set="-origin callisto"/>
+    <option id="saturn"    _label="From Saturn"    arg-set="-origin saturn"/>
+    <option id="mimas"     _label="From Mimas"     arg-set="-origin mimas"/>
+    <option id="enceladus" _label="From Enceladus" arg-set="-origin enceladus"/>
+    <option id="tethys"    _label="From Tethys"    arg-set="-origin tethys"/>
+    <option id="dione"     _label="From Dione"     arg-set="-origin dione"/>
+    <option id="rhea"      _label="From Rhea"      arg-set="-origin rhea"/>
+    <option id="titan"     _label="From Titan"     arg-set="-origin titan"/>
+    <option id="hyperion"  _label="From Hyperion"  arg-set="-origin hyperion"/>
+    <option id="iapetus"   _label="From Iapetus"   arg-set="-origin iapetus"/>
+    <option id="phoebe"    _label="From Phoebe"    arg-set="-origin phoebe"/>
+    <option id="uranus"    _label="From Uranus"    arg-set="-origin uranus"/>
+    <option id="miranda"   _label="From Miranda"   arg-set="-origin miranda"/>
+    <option id="ariel"     _label="From Ariel"     arg-set="-origin ariel"/>
+    <option id="umbriel"   _label="From Umbriel"   arg-set="-origin umbriel"/>
+    <option id="titania"   _label="From Titania"   arg-set="-origin titania"/>
+    <option id="oberon"    _label="From Oberon"    arg-set="-origin oberon"/>
+    <option id="neptune"   _label="From Neptune"   arg-set="-origin neptune"/>
+    <option id="triton"    _label="From Triton"    arg-set="-origin triton"/>
+    <option id="nereid"    _label="From Nereid"    arg-set="-origin nereid"/>
+    <option id="pluto"     _label="From Pluto"     arg-set="-origin pluto"/>
+    <option id="charon"    _label="From Charon"    arg-set="-origin charon"/>
+    <option id="random"    _label="From Random"    arg-set="-origin random"/>
+    <option id="major"     _label="From Major"     arg-set="-origin major"/>
+   </select>
+  </hgroup>
+
+  <select id="proj">
+   <option id="none"         _label="Render as a Globe"/>
+   <option id="ancient"      _label="Ancient Projection"      arg-set="-projection ancient"/>
+   <option id="azimuthal"    _label="Azimuthal Projection"    arg-set="-projection azimuthal"/>
+   <option id="hemisphere"   _label="Hemisphere Projection"   arg-set="-projection hemisphere"/>
+   <option id="lambert"      _label="Lambert Projection"      arg-set="-projection lambert"/>
+   <option id="mercator"     _label="Mercator Projection"     arg-set="-projection mercator"/>
+   <option id="mollweide"    _label="Mollweide Projection"    arg-set="-projection mollweide"/>
+   <option id="peters"       _label="Peters Projection"       arg-set="-projection peters"/>
+   <option id="orthographic" _label="Orthographic Projection" arg-set="-projection orthographic"/>
+   <option id="rectangular"  _label="Rectangular Projection"  arg-set="-projection rectangular"/>
+  </select>
+
+  <hgroup>
+    <number id="lat" type="spinbutton" arg="-latitude %"
+            _label="Latitude" low="-90" high="90" default="0"/>
+    <number id="longitude" type="spinbutton" arg="-longitude %"
+            _label="Longitude" low="-180" high="180" default="0"/>
+  </hgroup>
+
+  <hgroup>
+    <boolean id="label" _label="Date/Time Stamp" arg-set="-label"/>
+
+    <select id="timestamp">
+      <option id="ul" _label="Upper Left"  arg-set="-labelpos +5+5"/>
+      <option id="ll" _label="Lower Left"  arg-set="-labelpos +5-5"/>
+      <option id="ur" _label="Upper Right"/>
+      <option id="lr" _label="Lower Right" arg-set="-labelpos -5+5"/>
+    </select>
+  </hgroup>
+
+  <number id="radius" type="slider" arg="-radius %"
+          _label="Radius" _low-label="0%" _high-label="100%"
+          low="1" high="100" default="45"/>
+
+  <_description>
+Xplanet draws an image of the Earth, as seen from your favorite vantage
+point in space, correctly shaded for the current position of the Sun.
+
+Written by Hari Nair; 2001.
+  </_description>
+</screensaver>

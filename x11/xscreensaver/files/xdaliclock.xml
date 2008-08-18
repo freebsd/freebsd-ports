@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xdaliclock" _label="XDaliClock">
+
+  <command arg="-root"/>
+
+  <select id="size">
+    <option id="font0" _label="Small Font"   arg-set="-font BUILTIN0"/>
+    <option id="font1" _label="Medium Font"  arg-set="-font BUILTIN1"/>
+    <option id="font2" _label="Large Font"/>
+    <option id="font2" _label="Huge Font"    arg-set="-font BUILTIN3"/>
+  </select>
+
+  <select id="style">
+    <option id="12" _label="12-Hour Time"/>
+    <option id="24" _label="24-Hour Time" arg-set="-24"/>
+  </select>
+
+  <boolean id="secs"  _label="Display Seconds" arg-unset="-noseconds"/>
+
+  <boolean id="cycle" _label="Cycle Colors" arg-set="-cycle"/>
+
+  <_description>
+XDaliClock draws a large digital clock, the numbers of which change by
+"melting" into their new shapes.
+
+Written by Jamie Zawinski; 1991.
+  </_description>
+</screensaver>

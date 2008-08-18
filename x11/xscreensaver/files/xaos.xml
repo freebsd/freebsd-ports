@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xaos" _label="XaoS">
+
+  <command arg="-root"/>
+
+  <command arg="-autopilot"/>
+  <command arg="-nogui"/>
+  <command arg="-delay 100"/>
+  <command arg="-maxframerate 30"/>
+  <command arg="-incoloring -1"/>
+  <command arg="-outcoloring -1"/>
+
+  <_description>
+XaoS generates fast fly-through animations of the Mandelbrot and other
+fractal sets.
+
+Written by Thomas Marsh and Jan Hubicka.
+  </_description>
+</screensaver>
