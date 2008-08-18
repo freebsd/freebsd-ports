@@ -8,20 +8,31 @@ include/sswf/libsswf-version.h
 include/sswf/libsswf.h
 include/sswf/libsswf_as.h
 include/sswf/libsswf_asas.h
-lib/libsswf-1.7.4.so
+include/sswf/libsswf_c.h
+lib/libsswf-%%VERSION%%.so
+lib/libsswf-%%VERSION%%.so.3
 lib/libsswf.a
 lib/libsswf.la
 lib/libsswf.so
-lib/libsswf_as-1.7.4.so
+lib/libsswf_as-%%VERSION%%.so
+lib/libsswf_as-%%VERSION%%.so.1
 lib/libsswf_as.a
 lib/libsswf_as.la
 lib/libsswf_as.so
-lib/libsswf_asas-1.7.4.so
+lib/libsswf_asas-%%VERSION%%.so
+lib/libsswf_asas-%%VERSION%%.so.1
 lib/libsswf_asas.a
 lib/libsswf_asas.la
 lib/libsswf_asas.so
-@comment For non-standard prefixes
-@unexec rm -f %D/libdata/ldconfig/sswf 2>/dev/null || true
+lib/libsswf_c-%%VERSION%%.so
+lib/libsswf_c-%%VERSION%%.so.2
+lib/libsswf_c.a
+lib/libsswf_c.la
+lib/libsswf_c.so
+libdata/pkgconfig/libsswf.pc
+libdata/pkgconfig/libsswf_as.pc
+libdata/pkgconfig/libsswf_asas.pc
+libdata/pkgconfig/libsswf_c.pc
 %%DATADIR%%/ASC-TODO.txt
 %%DATADIR%%/AUTHORS.txt
 %%DATADIR%%/CHANGES.txt
@@ -31,6 +42,7 @@ lib/libsswf_asas.so
 %%DATADIR%%/INSTALL-RPM.txt
 %%DATADIR%%/INSTALL-SLACKWARE.txt
 %%DATADIR%%/INSTALL-SRC.txt
+%%DATADIR%%/INSTALL-ZSERIES.txt
 %%DATADIR%%/INSTALL.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/LINKS.txt
@@ -48,14 +60,33 @@ lib/libsswf_asas.so
 %%DATADIR%%/samples/asc_logo/run
 %%DATADIR%%/samples/asc_logo/run.bat
 %%DATADIR%%/samples/asc_logo/swf_dump-tables.jpg
+%%DATADIR%%/samples/c-samples/makefile
+%%DATADIR%%/samples/c-samples/simple.c
+%%DATADIR%%/samples/c-samples/simple.html
 %%DATADIR%%/samples/check_version/makefile
 %%DATADIR%%/samples/check_version/version.c++
+%%DATADIR%%/samples/clock/clock.html
+%%DATADIR%%/samples/clock/clock.sswf
+%%DATADIR%%/samples/clock/roman_complex.sswf
+%%DATADIR%%/samples/clock/run
+%%DATADIR%%/samples/clock/run.bat
 %%DATADIR%%/samples/dyn-button/button.html
 %%DATADIR%%/samples/dyn-button/button.sswf
 %%DATADIR%%/samples/dyn-button/clicked.html
 %%DATADIR%%/samples/dyn-button/run
 %%DATADIR%%/samples/dyn-button/run.bat
 %%DATADIR%%/samples/functions/find-sswf.sh
+%%DATADIR%%/samples/gradients/gradients.html
+%%DATADIR%%/samples/gradients/gradients.sswf
+%%DATADIR%%/samples/gradients/run
+%%DATADIR%%/samples/gradients/run.bat
+%%DATADIR%%/samples/grid-button/corner.tga
+%%DATADIR%%/samples/grid-button/grid-button.html
+%%DATADIR%%/samples/grid-button/grid-button.sswf
+%%DATADIR%%/samples/grid-button/run
+%%DATADIR%%/samples/grid-button/run.bat
+%%DATADIR%%/samples/grid-button/side.tga
+%%DATADIR%%/samples/grid-button/text.tga
 %%DATADIR%%/samples/lanuit-mp3/README.txt
 %%DATADIR%%/samples/lanuit-mp3/lanuit.html
 %%DATADIR%%/samples/lanuit-mp3/lanuit.mp3
@@ -90,6 +121,10 @@ lib/libsswf_asas.so
 %%DATADIR%%/samples/libya/tokra_icon.tga
 %%DATADIR%%/samples/libya/tripoli.html
 %%DATADIR%%/samples/libya/tripoli_icon.tga
+%%DATADIR%%/samples/line-styles/line-styles.html
+%%DATADIR%%/samples/line-styles/line-styles.sswf
+%%DATADIR%%/samples/line-styles/run
+%%DATADIR%%/samples/line-styles/run.bat
 %%DATADIR%%/samples/logo/logo.html
 %%DATADIR%%/samples/logo/logo.png
 %%DATADIR%%/samples/logo/logo.sswf
@@ -120,7 +155,6 @@ lib/libsswf_asas.so
 %%DATADIR%%/samples/news-samples/simple.html
 %%DATADIR%%/samples/news-samples/sprite.c++
 %%DATADIR%%/samples/news-samples/sprite.html
-%%DATADIR%%/samples/news-samples/typescript
 %%DATADIR%%/samples/scroller/run
 %%DATADIR%%/samples/scroller/run.bat
 %%DATADIR%%/samples/scroller/scroller.html
@@ -207,11 +241,16 @@ lib/libsswf_asas.so
 @dirrm %%DATADIR%%/samples/new-anim
 @dirrm %%DATADIR%%/samples/morph
 @dirrm %%DATADIR%%/samples/logo
+@dirrm %%DATADIR%%/samples/line-styles
 @dirrm %%DATADIR%%/samples/libya
 @dirrm %%DATADIR%%/samples/lanuit-mp3
+@dirrm %%DATADIR%%/samples/grid-button
+@dirrm %%DATADIR%%/samples/gradients
 @dirrm %%DATADIR%%/samples/functions
 @dirrm %%DATADIR%%/samples/dyn-button
+@dirrm %%DATADIR%%/samples/clock
 @dirrm %%DATADIR%%/samples/check_version
+@dirrm %%DATADIR%%/samples/c-samples
 @dirrm %%DATADIR%%/samples/asc_logo
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/misc
