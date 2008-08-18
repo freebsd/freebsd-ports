@@ -37,7 +37,7 @@ EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
 		sample/8.png	sample/9.png	sample/pngcat.rb
 
 post-configure:
-	@${REINPLACE_CMD} -e "s| -L'.'||" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E -e "s| -L'?\.'?||" ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
