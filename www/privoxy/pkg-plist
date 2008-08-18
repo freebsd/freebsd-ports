@@ -36,6 +36,7 @@ etc/privoxy/templates/show-version
 etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
+etc/privoxy/templates/url-info-osd.xml
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/actions-file.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/appendix.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/config.html
