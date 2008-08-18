@@ -7,7 +7,7 @@
 
 PORTNAME=	electricsheep
 PORTVERSION=	2.6.8
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -22,17 +22,11 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/x11/xloadimage \
 		curl:${PORTSDIR}/ftp/curl
 
-.if defined(WITH_XSCREENSAVER)
-RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
-.endif
-
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xi xrandr xv sm ice
 
-.if !defined(NOPORTDOCS)
 MAN1=		electricsheep.1
-.endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -40,15 +34,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 LIBTOOLFILES=	configure mpeg2dec/configure flam3/configure
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(WITH_XSCREENSAVER)
-	@${ECHO_MSG} "elecricsheep has the following tunable option(s):"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_XSCREENSAVER=yes Installs configuration file"
-	@${ECHO_MSG} "                      for XScreenSaver"
-	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -74,11 +59,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg2dec/src/mpeg2dec_onroot ${PREFIX}/bin
 	@${INSTALL} -d -m 0755 ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
-.if defined(WITH_XSCREENSAVER)
-	@${INSTALL_DATA} ${WRKSRC}/electricsheep.xml ${PREFIX}/share/xscreensaver/config
-.endif
-.if !defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/electricsheep.man ${PREFIX}/man/man1/electricsheep.1
-.endif
 
 .include <bsd.port.post.mk>
