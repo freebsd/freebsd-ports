@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--without-arts
 
 post-extract:
 # Fix permissions for ``make clean'' to work
-	@${CHMOD} 755 ${WRKSRC}/skins/HP49G+
+	@${CHMOD} 755 ${WRKSRC}/skins/HP49G+ ${WRKSRC}/admin/install-sh
 	@${REINPLACE_CMD} -e 's,LIBS)$$,& $$(LIBPTHREAD),' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -E 's,cp ([^-]*).* -r$$,${CP} -r \1,' \
