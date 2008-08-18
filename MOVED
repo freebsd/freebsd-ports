@@ -3549,3 +3549,4 @@ korean/php_doc||2008-08-04|Manual in this language was removed
 mbone/rtpmon||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
 games/ssc||2008-08-16|Abandoned upstream and needs gcc32 which is going to be removed
 mail/mutt-ng||2008-08-18|Has expired: Abandonware by upstream maintainers. Use mail/mutt-devel
+x11-wm/heliodor||2008-08-18|No longer supported - Use compiz
