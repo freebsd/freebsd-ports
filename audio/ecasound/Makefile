@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.4.6.1
+PORTVERSION=	2.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -14,6 +14,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+
+OPTIONS=	ARTS		"Enable aRts support"		off \
+		AUDIOFILE	"Enable libaudiofile support"	off \
+		JACK		"Enable JACK support"		off \
+		SAMPLERATE	"Enable libsamplerate support"	off
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes

@@ -38,6 +38,8 @@ include/libecasound/audiofx_reverb.h
 include/libecasound/audiofx_timebased.h
 include/libecasound/audiogate.h
 include/libecasound/audioio-aac.h
+include/libecasound/audioio-acseq.h
+include/libecasound/audioio-barrier.h
 include/libecasound/audioio-buffered.h
 include/libecasound/audioio-cdr.h
 include/libecasound/audioio-cdr_impl.h
@@ -64,7 +66,9 @@ include/libecasound/audioio-raw.h
 include/libecasound/audioio-resample.h
 include/libecasound/audioio-reverse.h
 include/libecasound/audioio-rtnull.h
+include/libecasound/audioio-seqbase.h
 include/libecasound/audioio-timidity.h
+include/libecasound/audioio-tone.h
 include/libecasound/audioio-typeselect.h
 include/libecasound/audioio-wave.h
 include/libecasound/audioio.h
