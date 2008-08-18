@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	sswf
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sswf
-DISTNAME=	sswf-${PORTVERSION}-src
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library and script language tool to create Flash movies
@@ -19,13 +17,23 @@ COMMENT=	A library and script language tool to create Flash movies
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_GNOME=	gnometarget pkgconfig
 USE_BISON=	build
-USE_AUTOTOOLS=	libtool:15
-WRKSRC=		${WRKDIR}/sswf-${PORTVERSION}
 USE_ICONV=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--disable-debug --disable-yydebug
+.endif
 
 .include <bsd.port.mk>
