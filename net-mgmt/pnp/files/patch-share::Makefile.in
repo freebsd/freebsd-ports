@@ -1,0 +1,68 @@
+--- share/Makefile.in.orig	2008-06-18 12:02:41.000000000 +0400
++++ share/Makefile.in	2008-08-18 18:55:45.000000000 +0400
+@@ -11,6 +11,9 @@
+ 
+ CP=@CP@
+ 
++DIRMODE=755
++FILEMODE=644
++
+ all html:
+ 
+ clean:
+@@ -24,38 +27,38 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/font
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/font/makefont
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/js
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/lang/
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/templates/
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/templates.dist/
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/font
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/font/makefont
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/include/js
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/lang/
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/templates/
++	$(INSTALL) -m $(DIRMODE) $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/templates.dist/
+ 
+ 	for file in pnp/*.php; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
+ 
+ 	for file in pnp/templates.dist/*.php; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/templates.dist; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/templates.dist; done
+ 
+ 	for file in pnp/lang/*.php; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/lang; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/lang; done
+ 	
+ 	for file in pnp/images/*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
+ 
+ 	for file in pnp/include/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include; done
+ 
+ 	for file in pnp/include/js/*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/js; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/js; done
+ 
+ 	for file in pnp/include/font/*.php; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/font; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/font; done
+ 
+ 	for file in pnp/include/font/makefont/*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/font/makefont; done
++	do $(INSTALL) -m $(FILEMODE) $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/include/font/makefont; done
+ 
+ 	

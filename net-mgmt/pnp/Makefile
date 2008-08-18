@@ -1,5 +1,5 @@
 # New ports collection makefile for:	pnp
-# Date created:				unknown
+# Date created:				16 August 2008
 # Whom:					rea-fbsd@codelabs.ru
 #
 # $FreeBSD$
@@ -7,7 +7,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pnp4nagios
@@ -21,9 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
-USE_PHP=	yes
+USE_PHP=	zlib gd xml
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
+MAN1=		pnpsender.1
 
 NAGIOSDIR?=	/var/spool/nagios
 NAGIOSHTMURL?=	/nagios
@@ -35,7 +36,6 @@ PNP_SPOOL=	${PNP_STATE}/perfspool
 FPDF_DIR?=	share/fpdf
 
 .if defined(WITH_PDF)
-USE_PHP=	zlib
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share::pnp::include::function.inc.php
 .endif
@@ -85,6 +85,9 @@ post-patch:
 .endfor
 
 post-install:
+.for m in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${m} ${MAN1PREFIX}/man/man1/${m}
+.endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

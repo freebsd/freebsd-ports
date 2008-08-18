@@ -13,6 +13,9 @@ dirs () {
 	local notempty
 
 	for i in "$PNP_RRDS" "$PNP_SPOOL" "$PNP_STATE"; do
+		if ! [ -d "$i" ]; then
+			continue
+		fi
 		if ! rmdir "$i" > /dev/null 2>&1; then
 			notempty="$notempty $i"
 		fi
