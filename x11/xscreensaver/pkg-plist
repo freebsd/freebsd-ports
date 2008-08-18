@@ -219,7 +219,6 @@ bin/xscreensaver-hacks/xlyap
 bin/xscreensaver-hacks/xmatrix
 bin/xscreensaver-hacks/xrayswarm
 bin/xscreensaver-hacks/xspirograph
-bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
 %%PAM%%etc/pam.d/xscreensaver
@@ -260,7 +259,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/cloudlife.xml
 %%DATADIR%%/config/compass.xml
 %%DATADIR%%/config/coral.xml
-%%DATADIR%%/config/cosmos.xml
 %%DATADIR%%/config/crackberg.xml
 %%DATADIR%%/config/critical.xml
 %%DATADIR%%/config/crystal.xml
@@ -279,7 +277,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/distort.xml
 %%DATADIR%%/config/drift.xml
 %%DATADIR%%/config/endgame.xml
-%%DATADIR%%/config/electricsheep.xml
 %%DATADIR%%/config/engine.xml
 %%DATADIR%%/config/epicycle.xml
 %%DATADIR%%/config/eruption.xml
@@ -287,7 +284,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/extrusion.xml
 %%DATADIR%%/config/fadeplot.xml
 %%DATADIR%%/config/fiberlamp.xml
-%%DATADIR%%/config/fireflies.xml
 %%DATADIR%%/config/fireworkx.xml
 %%DATADIR%%/config/flag.xml
 %%DATADIR%%/config/flame.xml
@@ -316,7 +312,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/glslideshow.xml
 %%DATADIR%%/config/glsnake.xml
 %%DATADIR%%/config/gltext.xml
-%%DATADIR%%/config/goban.xml
 %%DATADIR%%/config/goop.xml
 %%DATADIR%%/config/grav.xml
 %%DATADIR%%/config/greynetic.xml
@@ -405,7 +400,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/sonar.xml
 %%DATADIR%%/config/speedmine.xml
 %%DATADIR%%/config/sphere.xml
-%%DATADIR%%/config/sphereeversion.xml
 %%DATADIR%%/config/spheremonics.xml
 %%DATADIR%%/config/spiral.xml
 %%DATADIR%%/config/spotlight.xml
@@ -438,18 +432,20 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/worm.xml
 %%DATADIR%%/config/wormhole.xml
 %%DATADIR%%/config/xanalogtv.xml
-%%DATADIR%%/config/xaos.xml
-%%DATADIR%%/config/xdaliclock.xml
 %%DATADIR%%/config/xflame.xml
 %%DATADIR%%/config/xjack.xml
 %%DATADIR%%/config/xlyap.xml
 %%DATADIR%%/config/xmatrix.xml
-%%DATADIR%%/config/xmountains.xml
-%%DATADIR%%/config/xplanet.xml
 %%DATADIR%%/config/xrayswarm.xml
-%%DATADIR%%/config/xsnow.xml
 %%DATADIR%%/config/xspirograph.xml
 %%DATADIR%%/config/zoom.xml
+%%DATADIR%%/config/electricsheep.xml
+%%DATADIR%%/config/xaos.xml
+%%DATADIR%%/config/xdaliclock.xml
+%%DATADIR%%/config/xearth.xml
+%%DATADIR%%/config/xmountains.xml
+%%DATADIR%%/config/xplanet.xml
+%%DATADIR%%/config/xsnow.xml
 %%DATADIR%%/glade/screensaver-cmndln.png
 %%DATADIR%%/glade/screensaver-colorselector.png
 %%DATADIR%%/glade/screensaver-diagnostic.png
