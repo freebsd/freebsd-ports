@@ -3,6 +3,9 @@ bin/typespeed-hs-conv
 @unexec if cmp -s %D/etc/typespeedrc %D/etc/typespeedrc.dist; then rm -f %D/etc/typespeedrc; fi
 etc/typespeedrc.dist
 @exec [ -f %B/typespeedrc ] || cp %B/%f %B/typespeedrc
+%%NLS%%share/locale/de_DE/LC_MESSAGES/typespeed.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/typespeed.mo
+%%NLS%%share/locale/it/LC_MESSAGES/typespeed.mo
 %%DATADIR%%/words/words.csharp
 %%DATADIR%%/words/words.csharp_with_operators
 %%DATADIR%%/words/words.dos
@@ -19,3 +22,5 @@ etc/typespeedrc.dist
 %%DATADIR%%/words/words.unix
 @dirrm  %%DATADIR%%/words
 @dirrm  %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
