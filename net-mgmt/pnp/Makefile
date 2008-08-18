@@ -7,6 +7,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pnp4nagios
@@ -14,6 +15,7 @@ MASTER_SITE_SUBDIR=	pnp4nagios
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios performance data collector and grapher
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
