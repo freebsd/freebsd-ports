@@ -1,4 +1,0 @@
-%%PYTHON_SITELIBDIR%%/berylsettings.so
-%%PYTHON_SITELIBDIR%%/berylsettings.la
-%%PYTHON_SITELIBDIR%%/berylsettings.a
-libdata/pkgconfig/beryl-settings-bindings.pc

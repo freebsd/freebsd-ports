@@ -1,8 +1,0 @@
-This is the core package that contains all the important files 
-required for running beryl. Including headers and files required 
-for development of beryl-plugins.
-
-WWW: http://www.beryl-project.org/
-
-- Florent Thoumie
-flz@FreeBSD.org
