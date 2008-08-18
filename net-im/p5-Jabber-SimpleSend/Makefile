@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Jabber-SimpleSend
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Send a Jabber message simply
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
