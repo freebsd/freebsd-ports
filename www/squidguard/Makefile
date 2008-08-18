@@ -26,8 +26,8 @@ CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 
 CFGINPUT=	${.CURDIR}/files/sgcfg.in
 
-SQUID_UID?=	nobody
-SQUID_GID?=	nogroup
+SQUID_UID?=	squid
+SQUID_GID?=	squid
 
 DATADIR?=	/var/db/${PORTNAME}
 LOGDIR?=	/var/log
@@ -36,10 +36,10 @@ PLIST:=		${WRKDIR}/PLIST
 PLIST_SUB=	DATADIR=${DATADIR}
 
 pre-fetch:
-	@if [ ${SQUID_UID} = "nobody" -o ${SQUID_GID} = "nogroup" ] ; then \
+	@if [ ${SQUID_UID} = "squid" -o ${SQUID_GID} = "squid" ] ; then \
 		${ECHO_MSG} "===>  SQUID_UID is set to \"${SQUID_UID}\" and SQUID_GID is set to \"${SQUID_GID}\"." ; \
 		${ECHO_MSG} "      To change this specify them with your make arguments, e.g." ; \
-		${ECHO_MSG} "      make SQUID_UID=squid SQUID_GID=squid" ; \
+		${ECHO_MSG} "      make SQUID_UID=nobody SQUID_GID=nogroup" ; \
 	fi
 
 post-patch:
@@ -134,7 +134,7 @@ post-install:
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} "= In order to activate ${PORTNAME} you have to edit squid.conf"
-	@${ECHO_MSG} "= To the contain \"redirect_program	${PREFIX}/bin/${PORTNAME}\""
+	@${ECHO_MSG} "= To the contain \"url_rewrite_program	${PREFIX}/bin/${PORTNAME}\""
 	@${ECHO_MSG} "= and create a configuration file for ${PORTNAME}."
 	@${ECHO_MSG} "="
 	@${ECHO_MSG} "= To activate the changes do a ${PREFIX}/sbin/squid -k reconfigure"
