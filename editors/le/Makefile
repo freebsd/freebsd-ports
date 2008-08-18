@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.13.7
+PORTVERSION=	1.13.8
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/
 
@@ -20,31 +20,44 @@ CONFIGURE_ENV=	LIBS="-lgnuregex"
 
 MAN1=		le.1
 PORTDOCS=	FEATURES HISTORY NEWS README TODO
-PORTDATA=	colors-black colors-blue colors-defbg colors-green \
-		colors-white keymap-emacs le.hlp mainmenu mainmenu-ru syntax
-PLIST_FILES+=	bin/le
+PORTDATA=	${MISC_DATA} ${SRC_DATA}
+PLIST_FILES=	bin/le
+
+MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
+		colors-white keymap-emacs mainmenu mainmenu-ru syntax
+SRC_DATA=	le.hlp
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 502010
 GNU_REGEX_H=	gnu/regex.h
+.else
+GNU_REGEX_H=	gnuregex.h
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBOBJS@||g ; \
 		 s|@ALLOCA@||g' ${WRKSRC}/lib/Makefile.in
-	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' \
-		${WRKSRC}/src/highli.h
-.if defined(NOPORTDATA)
-	@${REINPLACE_CMD} -e 's|misc||g' \
-	    ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|le.hlp||g;468s|install-pkgdataDATA||' \
-	    ${WRKSRC}/src/Makefile.in
-.endif
+.for file in configure src/search.cc src/highli.h
+	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' ${WRKSRC}/${file}
+.endfor
 
-post-install:
+do-install:
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${PREFIX}/bin
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDATA)
+	@${MKDIR} ${DATADIR}
+.for file in ${MISC_DATA}
+	cd ${WRKSRC}/misc && ${INSTALL_DATA} ${file} ${DATADIR}
+.endfor
+.for file in ${SRC_DATA}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${file} ${DATADIR}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${DOCSDIR}
 .endfor
 .endif
 
