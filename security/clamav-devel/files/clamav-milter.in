@@ -84,7 +84,8 @@ start_postcmd()
 			echo "There is no clamav-milter socket (${clamav_milter_socket})!"
 			exit 1
 		fi
-		/bin/chmod ${clamav_milter_socket_mode} ${clamav_milter_socket}
+		%%CHMOD%% ${clamav_milter_socket_mode} ${clamav_milter_socket}
+		%%CHOWN%% ${clamav_milter_socket_user}:${clamav_milter_socket_group} ${clamav_milter_socket}
 	fi
 }
 
@@ -95,6 +96,8 @@ load_rc_config $name
 : ${clamav_milter_flags="--postmaster-only --local --outgoing --timeout=0 --max-children=50"}
 : ${clamav_milter_socktimeout="60"}
 : ${clamav_milter_socket_mode="755"}
+: ${clamav_milter_socket_user="%%CLAMAVUSER%%"}
+: ${clamav_milter_socket_group="%%CLAMAVGROUP%%"}
 
 : ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
 : ${clamav_clamd_enable="NO"}

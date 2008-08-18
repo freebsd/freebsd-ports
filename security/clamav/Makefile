@@ -83,7 +83,9 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 		CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP} \
 		CLAMAV_CLAMD_SOCKET=${CLAMAV_CLAMD_SOCKET} \
-		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET}
+		CLAMAV_MILTER_SOCKET=${CLAMAV_MILTER_SOCKET} \
+		CHMOD=${CHMOD} \
+		CHOWN=${CHOWN}
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
@@ -170,15 +172,18 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
 .for c in clamd freshclam
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
-		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
+		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
+. if defined(WITH_MILTER)
+	${INSTALL_DATA} ${WRKSRC}/clamav-milter/INSTALL ${DOCSDIR}/INSTALL.clamav-milter
+. endif
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
