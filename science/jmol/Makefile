@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jmol
-PORTVERSION=	11.4.4
-PORTREVISION=	1
+PORTVERSION=	11.4.6
 CATEGORIES=	science java
 MASTER_SITES=	SF:source1 \
 		http://jmol.svn.sourceforge.net/viewvc/*checkout*/jmol/trunk/Jmol/selfSignedCertificate/:source2
