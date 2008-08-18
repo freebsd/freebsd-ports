@@ -16,7 +16,9 @@
     SUBDIR += cryptix-jce
     SUBDIR += dbvis
     SUBDIR += diablo-jdk15
+    SUBDIR += diablo-jdk16
     SUBDIR += diablo-jre15
+    SUBDIR += diablo-jre16
     SUBDIR += drexelsnmp
     SUBDIR += ecj-bootstrap
     SUBDIR += eclipse
