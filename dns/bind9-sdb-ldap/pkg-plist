@@ -74,6 +74,7 @@ include/dst/dst.h
 include/dst/lib.h
 include/dst/result.h
 include/isc/app.h
+include/isc/atomic.h
 include/isc/assertions.h
 include/isc/base64.h
 include/isc/bitstring.h
