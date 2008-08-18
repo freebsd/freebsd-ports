@@ -7,17 +7,17 @@
 
 PORTNAME=	commonist
 PORTVERSION=	0.3.28
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://djini.de/software/commonist/
 
 MAINTAINER=	saper@SYSTEM.PL
 COMMENT=	Easy upload of images to Wikimedia Commons and Mediawiki
 
-BROKEN=		does not extract
-
 TARGET_JAR=	${JAVAJARDIR}/${PORTNAME}.jar
 USE_ZIP=	yes
 USE_JAVA=	1.5+
+JAVA_EXTRACT=	yes
 USE_ANT=	yes
 ALL_TARGET=	jar
 MAKE_ARGS+=	-Djar.lib.dir=${WRKSRC}/build/jar -Dtarget.name=${WRKSRC}/build/jar/${PORTNAME}.jar
