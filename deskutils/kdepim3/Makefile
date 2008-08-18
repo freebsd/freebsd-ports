@@ -7,7 +7,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -25,6 +25,7 @@ CONFLICTS=	akregator-[0-9]* kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kd
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
+_NO_KDE_FINAL=	yes
 
 USE_BZIP2=	yes
 USE_BISON=	build

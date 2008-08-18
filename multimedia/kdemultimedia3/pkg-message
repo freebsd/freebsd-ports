@@ -20,8 +20,8 @@ the CAM transport layer and CAM passthrough layer devices to 666, i.e.:
 
 For ATAPI CD-ROMs and no ATAPICAM, the instructions for kscd apply.
 
-In order to make these changes permanent on FreeBSD 5.x, you have to
-add them to /etc/devfs.conf. Further instructions and examples on how
-to do this can be found there as well.
+In order to make these changes permanent, you have to add them to
+/etc/devfs.conf. Further instructions and examples on how to do this
+can be found there as well.
  
 ======================================================================

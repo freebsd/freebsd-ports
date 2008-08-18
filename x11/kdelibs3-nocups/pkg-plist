@@ -1160,7 +1160,6 @@ lib/libvcard.a
 lib/libvcard.la
 lib/libvcard.so
 lib/libvcard.so.0
-libdata/ldconfig/kdelibs
 share/applications/kde/kresources.desktop
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD

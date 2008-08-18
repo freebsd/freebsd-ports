@@ -7,7 +7,6 @@
 
 PORTNAME=	akode
 PORTVERSION=	2.0.2
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO}
@@ -25,7 +24,6 @@ OPTIONS=	FFMPEG "FFMPEG decoder plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \
 		MPEG "MPEG Audio (including mp3) plugin" on \
 		OSS "OSS output plugin" on \
-		PULSEAUDIO "Pulseaudio output plugin" off \
 		RESAMPLER "Resampler processing plugin" on \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
@@ -62,10 +60,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_mpeg_decoder.so:${PORTSDIR}/audio/akode-
 
 .if !defined(WITHOUT_OSS)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_oss_sink.so:${PORTSDIR}/audio/akode-plugins-oss
-.endif
-
-.if defined(WITH_PULSEAUDIO)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_polyp_sink.so:${PORTSDIR}/audio/akode-plugins-pulseaudio
 .endif
 
 .if !defined(WITHOUT_RESAMPLER)

@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTVERSION=	1.5.9
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -47,9 +47,7 @@ OPTIONS=	ESD "Enable esound support" off \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-.if ${OSVERSION} > 502102
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
-.endif
 .endif
 
 .if defined(WITH_ESD)

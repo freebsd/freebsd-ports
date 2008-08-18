@@ -153,7 +153,62 @@ share/doc/HTML/sk/amor/index.docbook
 share/doc/HTML/sk/atlantik/common
 share/doc/HTML/sk/atlantik/index.cache.bz2
 share/doc/HTML/sk/atlantik/index.docbook
-share/doc/HTML/sk/docs/common/gpl-translated.html
+share/doc/HTML/sk/common/1.png
+share/doc/HTML/sk/common/10.png
+share/doc/HTML/sk/common/2.png
+share/doc/HTML/sk/common/3.png
+share/doc/HTML/sk/common/4.png
+share/doc/HTML/sk/common/5.png
+share/doc/HTML/sk/common/6.png
+share/doc/HTML/sk/common/7.png
+share/doc/HTML/sk/common/8.png
+share/doc/HTML/sk/common/9.png
+share/doc/HTML/sk/common/appheader.html
+share/doc/HTML/sk/common/artistic-license.html
+share/doc/HTML/sk/common/bottom-left.png
+share/doc/HTML/sk/common/bottom-middle.png
+share/doc/HTML/sk/common/bottom-right.png
+share/doc/HTML/sk/common/bottom1.png
+share/doc/HTML/sk/common/bottom2.png
+share/doc/HTML/sk/common/bsd-license.html
+share/doc/HTML/sk/common/docheadergears.png
+share/doc/HTML/sk/common/doctop1.png
+share/doc/HTML/sk/common/doctop1a.png
+share/doc/HTML/sk/common/doctop1b.png
+share/doc/HTML/sk/common/doctop2.png
+share/doc/HTML/sk/common/doxygen.css
+share/doc/HTML/sk/common/favicon.ico
+share/doc/HTML/sk/common/fdl-license
+share/doc/HTML/sk/common/fdl-license.html
+share/doc/HTML/sk/common/fdl-notice.html
+share/doc/HTML/sk/common/footer.html
+share/doc/HTML/sk/common/gpl-license
+share/doc/HTML/sk/common/gpl-license.html
+share/doc/HTML/sk/common/gpl-translated.html
+share/doc/HTML/sk/common/grad.png
+share/doc/HTML/sk/common/header.html
+share/doc/HTML/sk/common/headerbg.png
+share/doc/HTML/sk/common/kde-common.css
+share/doc/HTML/sk/common/kde-default.css
+share/doc/HTML/sk/common/kde-localised.css.template
+share/doc/HTML/sk/common/kde-web.css
+share/doc/HTML/sk/common/kde_gear_64.png
+share/doc/HTML/sk/common/kde_logo.png
+share/doc/HTML/sk/common/kde_logo_bg.png
+share/doc/HTML/sk/common/kmenu.png
+share/doc/HTML/sk/common/lgpl-license
+share/doc/HTML/sk/common/lgpl-license.html
+share/doc/HTML/sk/common/mainfooter.html
+share/doc/HTML/sk/common/mainheader.html
+share/doc/HTML/sk/common/qpl-license.html
+share/doc/HTML/sk/common/shadow.png
+share/doc/HTML/sk/common/top-left.png
+share/doc/HTML/sk/common/top-middle.png
+share/doc/HTML/sk/common/top-right-konqueror.png
+share/doc/HTML/sk/common/web-docbottom.png
+share/doc/HTML/sk/common/web-doctop.png
+share/doc/HTML/sk/common/x11-license.html
+share/doc/HTML/sk/common/xml.dcl
 share/doc/HTML/sk/kaboodle/common
 share/doc/HTML/sk/kaboodle/index.cache.bz2
 share/doc/HTML/sk/kaboodle/index.docbook
@@ -1096,6 +1151,7 @@ share/locale/sk/LC_MESSAGES/kio_nntp.mo
 share/locale/sk/LC_MESSAGES/kio_pop3.mo
 share/locale/sk/LC_MESSAGES/kio_print.mo
 share/locale/sk/LC_MESSAGES/kio_remote.mo
+share/locale/sk/LC_MESSAGES/kio_scalix.mo
 share/locale/sk/LC_MESSAGES/kio_settings.mo
 share/locale/sk/LC_MESSAGES/kio_sftp.mo
 share/locale/sk/LC_MESSAGES/kio_sieve.mo
@@ -1203,6 +1259,7 @@ share/locale/sk/LC_MESSAGES/kres_groupware.mo
 share/locale/sk/LC_MESSAGES/kres_groupwise.mo
 share/locale/sk/LC_MESSAGES/kres_kolab.mo
 share/locale/sk/LC_MESSAGES/kres_remote.mo
+share/locale/sk/LC_MESSAGES/kres_scalix.mo
 share/locale/sk/LC_MESSAGES/kres_tvanytime.mo
 share/locale/sk/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/sk/LC_MESSAGES/kreversi.mo
@@ -1333,6 +1390,7 @@ share/locale/sk/LC_MESSAGES/privacy.mo
 share/locale/sk/LC_MESSAGES/quanta.mo
 share/locale/sk/LC_MESSAGES/quicklauncher.mo
 share/locale/sk/LC_MESSAGES/rellinks.mo
+share/locale/sk/LC_MESSAGES/scalixadmin.mo
 share/locale/sk/LC_MESSAGES/searchbarplugin.mo
 share/locale/sk/LC_MESSAGES/secpolicy.mo
 share/locale/sk/LC_MESSAGES/spy.mo
@@ -1502,8 +1560,7 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kamera
 @dirrm share/doc/HTML/sk/kaddressbook
 @dirrm share/doc/HTML/sk/kaboodle
-@dirrm share/doc/HTML/sk/docs/common
-@dirrm share/doc/HTML/sk/docs
+@dirrm share/doc/HTML/sk/common
 @dirrm share/doc/HTML/sk/atlantik
 @dirrm share/doc/HTML/sk/amor
 @dirrm share/apps/kturtle/examples/sk
@@ -1517,3 +1574,5 @@ share/locale/sk/flag.png
 @dirrm share/apps/klettres/sk/alpha
 @dirrm share/apps/klettres/sk
 @dirrm share/apps/klettres
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

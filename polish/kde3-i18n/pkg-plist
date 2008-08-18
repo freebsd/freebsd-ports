@@ -51,11 +51,66 @@ share/doc/HTML/pl/ark/man-ark.1.docbook
 share/doc/HTML/pl/blinken/common
 share/doc/HTML/pl/blinken/index.cache.bz2
 share/doc/HTML/pl/blinken/index.docbook
-share/doc/HTML/pl/docs/common/fdl-translated.html
-share/doc/HTML/pl/docs/common/gpl-translated.html
-share/doc/HTML/pl/docs/common/kde-localised.css
-share/doc/HTML/pl/docs/common/lgpl-translated.html
-share/doc/HTML/pl/docs/common/logotp3.png
+share/doc/HTML/pl/common/1.png
+share/doc/HTML/pl/common/10.png
+share/doc/HTML/pl/common/2.png
+share/doc/HTML/pl/common/3.png
+share/doc/HTML/pl/common/4.png
+share/doc/HTML/pl/common/5.png
+share/doc/HTML/pl/common/6.png
+share/doc/HTML/pl/common/7.png
+share/doc/HTML/pl/common/8.png
+share/doc/HTML/pl/common/9.png
+share/doc/HTML/pl/common/appheader.html
+share/doc/HTML/pl/common/artistic-license.html
+share/doc/HTML/pl/common/bottom-left.png
+share/doc/HTML/pl/common/bottom-middle.png
+share/doc/HTML/pl/common/bottom-right.png
+share/doc/HTML/pl/common/bottom1.png
+share/doc/HTML/pl/common/bottom2.png
+share/doc/HTML/pl/common/bsd-license.html
+share/doc/HTML/pl/common/docheadergears.png
+share/doc/HTML/pl/common/doctop1.png
+share/doc/HTML/pl/common/doctop1a.png
+share/doc/HTML/pl/common/doctop1b.png
+share/doc/HTML/pl/common/doctop2.png
+share/doc/HTML/pl/common/doxygen.css
+share/doc/HTML/pl/common/favicon.ico
+share/doc/HTML/pl/common/fdl-license
+share/doc/HTML/pl/common/fdl-license.html
+share/doc/HTML/pl/common/fdl-notice.html
+share/doc/HTML/pl/common/fdl-translated.html
+share/doc/HTML/pl/common/footer.html
+share/doc/HTML/pl/common/gpl-license
+share/doc/HTML/pl/common/gpl-license.html
+share/doc/HTML/pl/common/gpl-translated.html
+share/doc/HTML/pl/common/grad.png
+share/doc/HTML/pl/common/header.html
+share/doc/HTML/pl/common/headerbg.png
+share/doc/HTML/pl/common/kde-common.css
+share/doc/HTML/pl/common/kde-default.css
+share/doc/HTML/pl/common/kde-localised.css
+share/doc/HTML/pl/common/kde-localised.css.template
+share/doc/HTML/pl/common/kde-web.css
+share/doc/HTML/pl/common/kde_gear_64.png
+share/doc/HTML/pl/common/kde_logo.png
+share/doc/HTML/pl/common/kde_logo_bg.png
+share/doc/HTML/pl/common/kmenu.png
+share/doc/HTML/pl/common/lgpl-license
+share/doc/HTML/pl/common/lgpl-license.html
+share/doc/HTML/pl/common/lgpl-translated.html
+share/doc/HTML/pl/common/logotp3.png
+share/doc/HTML/pl/common/mainfooter.html
+share/doc/HTML/pl/common/mainheader.html
+share/doc/HTML/pl/common/qpl-license.html
+share/doc/HTML/pl/common/shadow.png
+share/doc/HTML/pl/common/top-left.png
+share/doc/HTML/pl/common/top-middle.png
+share/doc/HTML/pl/common/top-right-konqueror.png
+share/doc/HTML/pl/common/web-docbottom.png
+share/doc/HTML/pl/common/web-doctop.png
+share/doc/HTML/pl/common/x11-license.html
+share/doc/HTML/pl/common/xml.dcl
 share/doc/HTML/pl/kaddressbook/common
 share/doc/HTML/pl/kaddressbook/index.cache.bz2
 share/doc/HTML/pl/kaddressbook/index.docbook
@@ -1840,8 +1895,7 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/kanagram
 @dirrm share/doc/HTML/pl/kalzium
 @dirrm share/doc/HTML/pl/kaddressbook
-@dirrm share/doc/HTML/pl/docs/common
-@dirrm share/doc/HTML/pl/docs
+@dirrm share/doc/HTML/pl/common
 @dirrm share/doc/HTML/pl/blinken
 @dirrm share/doc/HTML/pl/ark
 @dirrm share/doc/HTML/pl/amor
@@ -1854,3 +1908,5 @@ share/locale/pl/flag.png
 @dirrm share/apps/khangman/data/pl
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

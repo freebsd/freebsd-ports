@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTVERSION=	3.5.1
+PORTREVISION=	0
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -42,7 +42,7 @@ USE_GMAKE=	yes
 USE_BDB=	yes
 USE_AUTOTOOLS=  libtool:15 autotools:run
 _NO_KDE_FINAL=	yes
-CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBSE}/share/doc/qt/html \
+CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBASE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \
 		--with-db-libdir=${BDB_LIB_DIR} --with-db-lib=${BDB_LIB_NAME} \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \

@@ -1,8 +1,63 @@
-share/doc/HTML/zh_TW/docs/common/fdl-translated.html
-share/doc/HTML/zh_TW/docs/common/gpl-translated.html
-share/doc/HTML/zh_TW/docs/common/kde-localised.css
-share/doc/HTML/zh_TW/docs/common/lgpl-translated.html
-share/doc/HTML/zh_TW/docs/common/logotp3.png
+share/doc/HTML/zh_TW/common/1.png
+share/doc/HTML/zh_TW/common/10.png
+share/doc/HTML/zh_TW/common/2.png
+share/doc/HTML/zh_TW/common/3.png
+share/doc/HTML/zh_TW/common/4.png
+share/doc/HTML/zh_TW/common/5.png
+share/doc/HTML/zh_TW/common/6.png
+share/doc/HTML/zh_TW/common/7.png
+share/doc/HTML/zh_TW/common/8.png
+share/doc/HTML/zh_TW/common/9.png
+share/doc/HTML/zh_TW/common/appheader.html
+share/doc/HTML/zh_TW/common/artistic-license.html
+share/doc/HTML/zh_TW/common/bottom-left.png
+share/doc/HTML/zh_TW/common/bottom-middle.png
+share/doc/HTML/zh_TW/common/bottom-right.png
+share/doc/HTML/zh_TW/common/bottom1.png
+share/doc/HTML/zh_TW/common/bottom2.png
+share/doc/HTML/zh_TW/common/bsd-license.html
+share/doc/HTML/zh_TW/common/docheadergears.png
+share/doc/HTML/zh_TW/common/doctop1.png
+share/doc/HTML/zh_TW/common/doctop1a.png
+share/doc/HTML/zh_TW/common/doctop1b.png
+share/doc/HTML/zh_TW/common/doctop2.png
+share/doc/HTML/zh_TW/common/doxygen.css
+share/doc/HTML/zh_TW/common/favicon.ico
+share/doc/HTML/zh_TW/common/fdl-license
+share/doc/HTML/zh_TW/common/fdl-license.html
+share/doc/HTML/zh_TW/common/fdl-notice.html
+share/doc/HTML/zh_TW/common/fdl-translated.html
+share/doc/HTML/zh_TW/common/footer.html
+share/doc/HTML/zh_TW/common/gpl-license
+share/doc/HTML/zh_TW/common/gpl-license.html
+share/doc/HTML/zh_TW/common/gpl-translated.html
+share/doc/HTML/zh_TW/common/grad.png
+share/doc/HTML/zh_TW/common/header.html
+share/doc/HTML/zh_TW/common/headerbg.png
+share/doc/HTML/zh_TW/common/kde-common.css
+share/doc/HTML/zh_TW/common/kde-default.css
+share/doc/HTML/zh_TW/common/kde-localised.css
+share/doc/HTML/zh_TW/common/kde-localised.css.template
+share/doc/HTML/zh_TW/common/kde-web.css
+share/doc/HTML/zh_TW/common/kde_gear_64.png
+share/doc/HTML/zh_TW/common/kde_logo.png
+share/doc/HTML/zh_TW/common/kde_logo_bg.png
+share/doc/HTML/zh_TW/common/kmenu.png
+share/doc/HTML/zh_TW/common/lgpl-license
+share/doc/HTML/zh_TW/common/lgpl-license.html
+share/doc/HTML/zh_TW/common/lgpl-translated.html
+share/doc/HTML/zh_TW/common/logotp3.png
+share/doc/HTML/zh_TW/common/mainfooter.html
+share/doc/HTML/zh_TW/common/mainheader.html
+share/doc/HTML/zh_TW/common/qpl-license.html
+share/doc/HTML/zh_TW/common/shadow.png
+share/doc/HTML/zh_TW/common/top-left.png
+share/doc/HTML/zh_TW/common/top-middle.png
+share/doc/HTML/zh_TW/common/top-right-konqueror.png
+share/doc/HTML/zh_TW/common/web-docbottom.png
+share/doc/HTML/zh_TW/common/web-doctop.png
+share/doc/HTML/zh_TW/common/x11-license.html
+share/doc/HTML/zh_TW/common/xml.dcl
 share/doc/HTML/zh_TW/khelpcenter/contact.docbook
 share/doc/HTML/zh_TW/khelpcenter/faq/about.docbook
 share/doc/HTML/zh_TW/khelpcenter/faq/common
@@ -332,6 +387,7 @@ share/locale/zh_TW/LC_MESSAGES/kio_nntp.mo
 share/locale/zh_TW/LC_MESSAGES/kio_pop3.mo
 share/locale/zh_TW/LC_MESSAGES/kio_print.mo
 share/locale/zh_TW/LC_MESSAGES/kio_remote.mo
+share/locale/zh_TW/LC_MESSAGES/kio_scalix.mo
 share/locale/zh_TW/LC_MESSAGES/kio_settings.mo
 share/locale/zh_TW/LC_MESSAGES/kio_sftp.mo
 share/locale/zh_TW/LC_MESSAGES/kio_sieve.mo
@@ -439,6 +495,7 @@ share/locale/zh_TW/LC_MESSAGES/kres_groupware.mo
 share/locale/zh_TW/LC_MESSAGES/kres_groupwise.mo
 share/locale/zh_TW/LC_MESSAGES/kres_kolab.mo
 share/locale/zh_TW/LC_MESSAGES/kres_remote.mo
+share/locale/zh_TW/LC_MESSAGES/kres_scalix.mo
 share/locale/zh_TW/LC_MESSAGES/kres_tvanytime.mo
 share/locale/zh_TW/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/zh_TW/LC_MESSAGES/kreversi.mo
@@ -550,7 +607,6 @@ share/locale/zh_TW/LC_MESSAGES/libkscan.mo
 share/locale/zh_TW/LC_MESSAGES/libkscreensaver.mo
 share/locale/zh_TW/LC_MESSAGES/libksieve.mo
 share/locale/zh_TW/LC_MESSAGES/libksirtet.mo
-share/locale/zh_TW/LC_MESSAGES/libksync.mo
 share/locale/zh_TW/LC_MESSAGES/libtaskbar.mo
 share/locale/zh_TW/LC_MESSAGES/libtaskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/lockout.mo
@@ -570,6 +626,7 @@ share/locale/zh_TW/LC_MESSAGES/privacy.mo
 share/locale/zh_TW/LC_MESSAGES/quanta.mo
 share/locale/zh_TW/LC_MESSAGES/quicklauncher.mo
 share/locale/zh_TW/LC_MESSAGES/rellinks.mo
+share/locale/zh_TW/LC_MESSAGES/scalixadmin.mo
 share/locale/zh_TW/LC_MESSAGES/searchbarplugin.mo
 share/locale/zh_TW/LC_MESSAGES/secpolicy.mo
 share/locale/zh_TW/LC_MESSAGES/spy.mo
@@ -591,5 +648,4 @@ share/locale/zh_TW/entry.desktop
 share/locale/zh_TW/flag.png
 @dirrm share/doc/HTML/zh_TW/khelpcenter/faq
 @dirrm share/doc/HTML/zh_TW/khelpcenter
-@dirrm share/doc/HTML/zh_TW/docs/common
-@dirrm share/doc/HTML/zh_TW/docs
+@dirrm share/doc/HTML/zh_TW/common

@@ -9,9 +9,9 @@ PORTNAME=	kopete
 PORTVERSION=	0.12.7
 CATEGORIES?=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/3.5.8/src
+MASTER_SITE_SUBDIR=	stable/3.5.9/src
 PKGNAMEPREFIX=	kdenetwork-
-DISTNAME=	kdenetwork-3.5.8
+DISTNAME=	kdenetwork-3.5.9
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -44,6 +44,7 @@ INSTALL_WRKSRC=	${WRKSRC}/kopete
 
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500028
