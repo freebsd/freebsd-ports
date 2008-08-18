@@ -7,6 +7,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -33,7 +34,8 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
 
-OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off
+OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
+		THREADS "build with threads support" on
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +44,10 @@ LIB_DEPENDS+=	event:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-libevent=no
+.endif
+
+.if !defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
 post-patch:
