@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.06
+PORTVERSION=	5.07
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -33,7 +33,15 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
 		KERBEROS "Add support for kerberos" off \
 		PAM "Add support for pam authentication" off \
-		SETUID_HACKS "Install sonar hack suid so it can ping" off
+		SETUID_HACKS "Install sonar hack suid so it can ping" off \
+		SHEEP "Add extra port x11/electricsheep" off \
+		FIREF "Add extra port x11/fireflies" off \
+		XAOS1 "Add extra port graphics/xaos" off \
+		XDALI "Add extra port x11-clocks/xdaliclock" off \
+		XURTH "Add extra port astro/xearth" off \
+		XMOUN "Add extra port graphics/xmountains" off \
+		XPLAN "Add extra port astro/xplanet" off \
+		XSNOW "Add extra port x11/xsnow" off
 
 .include <bsd.port.pre.mk>
 
@@ -54,6 +62,31 @@ PLIST_SUB+=		PAM="@comment not installed: "
 .endif
 .if defined(WITH_SETUID_HACKS)
 CONFIGURE_ARGS+=	--with-setuid-hacks
+.endif
+
+.if defined(WITH_SHEEP)
+RUN_DEPENDS+=	electricsheep:${PORTSDIR}/x11/electricsheep
+.endif
+.if defined(WITH_FIREF)
+RUN_DEPENDS+=	${X11BASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
+.endif
+.if defined(WITH_XAOS1)
+RUN_DEPENDS+=	xaos:${PORTSDIR}/graphics/xaos
+.endif
+.if defined(WITH_XDALI)
+RUN_DEPENDS+=	xdaliclock:${PORTSDIR}/x11-clocks/xdaliclock
+.endif
+.if defined(WITH_XURTH)
+RUN_DEPENDS+=	xearth:${PORTSDIR}/astro/xearth
+.endif
+.if defined(WITH_XMOUN)
+RUN_DEPENDS+=	xmountains:${PORTSDIR}/graphics/xmountains
+.endif
+.if defined(WITH_XPLAN)
+RUN_DEPENDS+=	xplanet:${PORTSDIR}/astro/xplanet
+.endif
+.if defined(WITH_XSNOW)
+RUN_DEPENDS+=	xsnow:${PORTSDIR}/x11/xsnow
 .endif
 
 .undef HAVE_GNOME
@@ -115,7 +148,6 @@ pre-fetch:
 	@sleep 2
 .endif
 
-USE_DOS2UNIX=	hacks/glx/topblock.c
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
@@ -136,6 +168,7 @@ post-patch:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/*.xml ${DATADIR}/config/
 	@(if test -x ${LOCALBASE}/bin/xscreensaver-hacks/webcollage-helper; then \
 		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
