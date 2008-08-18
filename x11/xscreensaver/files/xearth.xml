@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<screensaver name="xearth" _label="Xearth">
+
+  <command arg="-root"/>
+  <command arg="-wait 0"/>
+  <command arg="-nofork"/>
+  <command arg="-ncolors 50"/>
+  <command arg="-night 3"/>
+  <command arg="-pos sunrel/38/-30"/>
+
+  <select id="proj">
+   <option id="none"	    _label="Render as a Globe"/>
+   <option id="mercator"    _label="Mercator Projection"     arg-set="-proj mercator"/>
+   <option id="cylindrical" _label="Cylindrical Projection"  arg-set="-proj cylindrical"/>
+  </select>
+
+  <number id="timewarp" type="slider" arg="-timewarp %"
+          _label="Time Warp" _low-label="Real Time" _high-label="Fast"
+          low="1" high="1000" default="1"/>
+
+  <hgroup>
+   <boolean id="shade"	_label="Enable Shading" arg-unset="-noshade"/>
+   <boolean id="grid"	_label="Enable Long/Lat Grid" arg-set="-grid"/>
+  </hgroup>
+
+  <hgroup>
+    <select id="markers">
+     <option id="none"		_label="Markers: City Names"/>
+     <option id="nomarkers"	_label="None"			arg-set="-nomarkers"/>
+     <option id="committers"	_label="FreeBSD Committers"	arg-set="-markerfile /usr/local/lib/X11/xearth/freebsd.committers.markers"/>
+     <option id="submitters"	_label="FreeBSD Submitters"	arg-set="-markerfile /usr/local/lib/X11/xearth/freebsd.submitters.markers"/>
+     <option id="ftp"		_label="FreeBSD FTP Sites"	arg-set="-markerfile /usr/local/lib/X11/xearth/freebsd.ftp.markers"/>
+    </select>
+
+    <boolean id="label" _label="Date/Time Stamp" arg-set="-label"/>
+
+    <select id="timestamp">
+      <option id="none" _label="Lower Right"/>
+      <option id="ul" _label="Upper Left"  arg-set="-labelpos +5+5"/>
+      <option id="ll" _label="Lower Left"  arg-set="-labelpos +5-5"/>
+      <option id="lr" _label="Upper Right" arg-set="-labelpos -5+5"/>
+    </select>
+  </hgroup>
+
+  <boolean id="stars" _label="Show Starfield" arg-unset="-nostars"/>
+
+  <hgroup>
+    <number id="starfreq" type="spinbutton" arg="-starfreq 0.00%"
+            _label="Fraction of background to use as stars" low="2" high="9" default="2"/>
+    <number id="bigstars" type="spinbutton" arg="-bigstars %"
+            _label="Percentage of Stars to Make Larger" low="0" high="90" default="0"/>
+  </hgroup>
+
+  <_description>
+Xearth  sets  the  X root window to an image of the Earth, as seen from
+your favorite vantage point in space, correctly shaded for the  current
+position  of  the  Sun.
+
+Written by Kirk Johnson; 1989.
+  </_description>
+</screensaver>
