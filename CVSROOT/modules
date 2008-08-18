@@ -839,6 +839,7 @@ bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
 bashburn                        ports/sysutils/bashburn
 bashc                           ports/shells/bashc
+basicdsp                        ports/cad/basicdsp
 basiliskII                      ports/emulators/basiliskII
 basiliskii                      ports/emulators/basiliskII
 basket                          ports/deskutils/basket
@@ -2130,7 +2131,9 @@ dia                             ports/graphics/dia
 dia2code                        ports/devel/dia2code
 diablo                          ports/news/diablo
 diablo-jdk15                    ports/java/diablo-jdk15
+diablo-jdk16                    ports/java/diablo-jdk16
 diablo-jre15                    ports/java/diablo-jre15
+diablo-jre16                    ports/java/diablo-jre16
 diacanvas2                      ports/graphics/diacanvas2
 diamanda                        ports/www/diamanda
 diameter                        ports/games/diameter
@@ -7736,6 +7739,7 @@ llgal                           ports/www/llgal
 llnlxdir                        ports/ftp/llnlxdir
 llnlxftp                        ports/ftp/llnlxftp
 llvm                            ports/devel/llvm
+llvm-devel                      ports/devel/llvm-devel
 llvm-gcc4                       ports/lang/llvm-gcc4
 lm-solve                        ports/games/lm-solve
 lmarbles                        ports/games/lmarbles
@@ -20043,6 +20047,7 @@ sympa5                          ports/mail/sympa5
 synaesthesia                    ports/graphics/synaesthesia
 synaptics                       ports/x11-drivers/synaptics
 synce-gnomevfs                  ports/palm/synce-gnomevfs
+synce-gvfs                      ports/palm/synce-gvfs
 synce-hal                       ports/palm/synce-hal
 synce-kde                       ports/palm/synce-kde
 synce-librapi2                  ports/palm/synce-librapi2
@@ -20317,6 +20322,7 @@ thttpd-st                       ports/www/thttpd-st
 thudboard                       ports/games/thudboard
 thumbnail_index                 ports/www/thumbnail_index
 thunar                          ports/x11-fm/thunar
+thunar-archive-plugin           ports/archivers/thunar-archive-plugin
 thunar-media-tags-plugin        ports/audio/thunar-media-tags-plugin
 thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
