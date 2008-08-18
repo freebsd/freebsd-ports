@@ -5,32 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	synce-gnomevfs
-PORTVERSION=	0.9.0
-PORTREVISION=	6
+PORTNAME=	synce-gvfs
+PORTVERSION=	0.1
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	Gnome VFS module for WinCE devices
+COMMENT=	GVFS module for access Windows Mobile devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
-USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
-			--with-libsynce=${LOCALBASE}
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gnomeprefix gnomehack gnometarget gvfs
+INSTALLS_ICONS=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 
-BROKEN=		No longer supported by developers
-DEPRECATED=     ${BROKEN}
-EXPIRATION_DATE=        2008-08-24
-
-USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/src/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
