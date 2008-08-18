@@ -52,8 +52,10 @@ PLIST_SUB+=	AMD64="@comment "
 .elif ${ARCH} == "amd64"
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 PORTVERSION=	1.1
+PORTREVISION=	2
 AMD64_PATCHES=	p-amd64-common p-amd64-gcc p-amd64-gcc-321-322 p-amd64-gcchacks \
 		p-amd64-gccstatic p-amd64-m3 p-amd64-m3-except-sort p-amd64-newfiles
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fcntl
 TARGET=		FBSD_AMD64
 WORDSIZE=	64
 ENDIANESS=	le
