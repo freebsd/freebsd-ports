@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -30,10 +30,12 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT} \
-		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		iceauth:${PORTSDIR}/x11/iceauth
 
 CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-4]* kdepim-3.2*
 .if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
@@ -62,8 +64,8 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \
 		--enable-mt \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-libthai=yes \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
+		--with-libthai=yes \
 		--with-lua=no \
 		--with-ssl-dir=${OPENSSLBASE}
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
@@ -78,9 +80,6 @@ FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
-
-BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-RUN_DEPENDS+=	iceauth:${PORTSDIR}/x11/iceauth
 
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp

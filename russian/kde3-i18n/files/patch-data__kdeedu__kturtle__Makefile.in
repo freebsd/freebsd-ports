@@ -1,0 +1,12 @@
+--- ./data/kdeedu/kturtle/Makefile.in.orig	2008-02-13 17:26:23.000000000 +0300
++++ ./data/kdeedu/kturtle/Makefile.in	2008-08-11 21:56:11.000000000 +0400
+@@ -177,8 +177,7 @@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-txt_DATA = curly.logo square.logo triangle.logo \
+-flower.logo arrow.logo example2.logo example3.logo
++txt_DATA = ad.logo arrow.logo canvascolors.logo curly.logo flower.logo kde.logo randomname.logo square.logo squaresss.logo timestables.logo triangle.logo trianglesss.logo
+ 
+ txtdir = $(kde_datadir)/kturtle/examples/ru
+ xml_DATA = logohighlightstyle.ru.xml

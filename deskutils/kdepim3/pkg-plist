@@ -36,6 +36,8 @@ bin/ktnef
 bin/kwatchgnupg
 bin/kxml_compiler
 bin/networkstatustestservice
+bin/scalixadmin
+bin/scalixwizard
 bin/sloxwizard
 include/KNotesAppIface.h
 include/KNotesIface.h
@@ -112,6 +114,7 @@ include/kleo/keylistjob.h
 include/kleo/keylistview.h
 include/kleo/keyrequester.h
 include/kleo/keyselectiondialog.h
+include/kleo/messagebox.h
 include/kleo/multideletejob.h
 include/kleo/passphrasedialog.h
 include/kleo/progressbar.h
@@ -290,6 +293,9 @@ lib/kde3/kabc_kolab.so
 lib/kde3/kabc_newexchange.a
 lib/kde3/kabc_newexchange.la
 lib/kde3/kabc_newexchange.so
+lib/kde3/kabc_scalix.a
+lib/kde3/kabc_scalix.la
+lib/kde3/kabc_scalix.so
 lib/kde3/kabc_slox.a
 lib/kde3/kabc_slox.la
 lib/kde3/kabc_slox.so
@@ -323,6 +329,9 @@ lib/kde3/kcal_remote.so
 lib/kde3/kcal_resourcefeatureplan.a
 lib/kde3/kcal_resourcefeatureplan.la
 lib/kde3/kcal_resourcefeatureplan.so
+lib/kde3/kcal_scalix.a
+lib/kde3/kcal_scalix.la
+lib/kde3/kcal_scalix.so
 lib/kde3/kcal_slox.a
 lib/kde3/kcal_slox.la
 lib/kde3/kcal_slox.so
@@ -392,6 +401,9 @@ lib/kde3/kio_imap4.so
 lib/kde3/kio_mbox.a
 lib/kde3/kio_mbox.la
 lib/kde3/kio_mbox.so
+lib/kde3/kio_scalix.a
+lib/kde3/kio_scalix.la
+lib/kde3/kio_scalix.so
 lib/kde3/kio_sieve.a
 lib/kde3/kio_sieve.la
 lib/kde3/kio_sieve.so
@@ -401,6 +413,9 @@ lib/kde3/knotes_kolab.so
 lib/kde3/knotes_local.a
 lib/kde3/knotes_local.la
 lib/kde3/knotes_local.so
+lib/kde3/knotes_scalix.a
+lib/kde3/knotes_scalix.la
+lib/kde3/knotes_scalix.so
 lib/kde3/knotes_xmlrpc.a
 lib/kde3/knotes_xmlrpc.la
 lib/kde3/knotes_xmlrpc.so
@@ -554,6 +569,9 @@ lib/kde3/libkorg_yearlyprint.so
 lib/kde3/libkorganizerpart.a
 lib/kde3/libkorganizerpart.la
 lib/kde3/libkorganizerpart.so
+lib/kde3/libscalixwizard.a
+lib/kde3/libscalixwizard.la
+lib/kde3/libscalixwizard.so
 lib/kde3/libsloxwizard.a
 lib/kde3/libsloxwizard.la
 lib/kde3/libsloxwizard.so
@@ -572,7 +590,7 @@ lib/libakregatorprivate.so
 lib/libgpgme++.a
 lib/libgpgme++.la
 lib/libgpgme++.so
-lib/libgpgme++.so.2
+lib/libgpgme++.so.3
 lib/libgwsoap.a
 lib/libgwsoap.la
 lib/libgwsoap.so
@@ -605,6 +623,10 @@ lib/libkabckolab.a
 lib/libkabckolab.la
 lib/libkabckolab.so
 lib/libkabckolab.so.0
+lib/libkabcscalix.a
+lib/libkabcscalix.la
+lib/libkabcscalix.so
+lib/libkabcscalix.so.0
 lib/libkabinterfaces.a
 lib/libkabinterfaces.la
 lib/libkabinterfaces.so
@@ -649,6 +671,10 @@ lib/libkcalkolab.a
 lib/libkcalkolab.la
 lib/libkcalkolab.so
 lib/libkcalkolab.so.0
+lib/libkcalscalix.a
+lib/libkcalscalix.la
+lib/libkcalscalix.so
+lib/libkcalscalix.so.0
 lib/libkdepim.a
 lib/libkdepim.la
 lib/libkdepim.so
@@ -687,6 +713,7 @@ lib/libkmime.so.4
 lib/libknodecommon.a
 lib/libknodecommon.la
 lib/libknodecommon.so
+lib/libknodecommon.so.3
 lib/libknotes_xmlrpc.a
 lib/libknotes_xmlrpc.la
 lib/libknotes_xmlrpc.so
@@ -695,6 +722,10 @@ lib/libknoteskolab.a
 lib/libknoteskolab.la
 lib/libknoteskolab.so
 lib/libknoteskolab.so.0
+lib/libknotesscalix.a
+lib/libknotesscalix.la
+lib/libknotesscalix.so
+lib/libknotesscalix.so.0
 lib/libkocorehelper.a
 lib/libkocorehelper.la
 lib/libkocorehelper.so
@@ -782,6 +813,7 @@ share/applications/kde/kleopatra_import.desktop
 share/applications/kde/kmail_view.desktop
 share/applications/kde/knotes.desktop
 share/applications/kde/konsolekalendar.desktop
+share/applications/kde/kontactdcop.desktop
 share/applications/kde/korganizer.desktop
 share/applications/kde/kpalmdoc.desktop
 share/applications/kde/kpilot.desktop
@@ -894,6 +926,7 @@ share/apps/kconf_update/kmail-3.5-trigger-flag-migration.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd
+share/apps/kconf_update/kolab-resource.upd
 share/apps/kconf_update/korganizer.upd
 share/apps/kconf_update/korn-3-4-config_change.upd
 share/apps/kconf_update/korn-3-5-metadata-update.pl
@@ -903,6 +936,7 @@ share/apps/kconf_update/kpalmdoc.upd
 share/apps/kconf_update/kpgp-3.1-upgrade-address-data.pl
 share/apps/kconf_update/kpgp.upd
 share/apps/kconf_update/kpilot.upd
+share/apps/kconf_update/upgrade-resourcetype.pl
 share/apps/kconf_update/upgrade-signature.pl
 share/apps/kconf_update/upgrade-transport.pl
 share/apps/kdepim/icons/crystalsvg/16x16/actions/appointment.png
@@ -992,6 +1026,21 @@ share/apps/kmail/kmail_part.rc
 share/apps/kmail/kmcomposerui.rc
 share/apps/kmail/kmmainwin.rc
 share/apps/kmail/kmreadermainwin.rc
+share/apps/kmail/pics/enterprise_bottom.png
+share/apps/kmail/pics/enterprise_bottom_left.png
+share/apps/kmail/pics/enterprise_bottom_right.png
+share/apps/kmail/pics/enterprise_icon.png
+share/apps/kmail/pics/enterprise_left.png
+share/apps/kmail/pics/enterprise_right.png
+share/apps/kmail/pics/enterprise_s_left.png
+share/apps/kmail/pics/enterprise_s_right.png
+share/apps/kmail/pics/enterprise_sbar.png
+share/apps/kmail/pics/enterprise_sp_right.png
+share/apps/kmail/pics/enterprise_sw.png
+share/apps/kmail/pics/enterprise_top.png
+share/apps/kmail/pics/enterprise_top_left.png
+share/apps/kmail/pics/enterprise_top_right.png
+share/apps/kmail/pics/enterprise_w.png
 share/apps/kmail/pics/key.png
 share/apps/kmail/pics/key_bad.png
 share/apps/kmail/pics/key_ok.png
@@ -1093,6 +1142,12 @@ share/apps/kontact/about/main.html
 share/apps/kontact/about/top-right-kontact.png
 share/apps/kontact/kontact.setdlg
 share/apps/kontact/kontactui.rc
+share/apps/kontact/profiles/KontactDefaults/kontactrc
+share/apps/kontact/profiles/KontactDefaults/korganizerrc
+share/apps/kontact/profiles/KontactDefaults/profile.cfg
+share/apps/kontact/profiles/OutlookDefaults/kontactrc
+share/apps/kontact/profiles/OutlookDefaults/korganizerrc
+share/apps/kontact/profiles/OutlookDefaults/profile.cfg
 share/apps/kontactsummary/kontactsummary_part.rc
 share/apps/korgac/icons/crystalsvg/22x22/actions/korgac.png
 share/apps/korgac/icons/crystalsvg/22x22/actions/korgac_disabled.png
@@ -1692,6 +1747,7 @@ share/config.kcfg/mk4config.kcfg
 share/config.kcfg/pimemoticons.kcfg
 share/config.kcfg/popmail.kcfg
 share/config.kcfg/replyphrases.kcfg
+share/config.kcfg/scalix.kcfg
 share/config.kcfg/slox.kcfg
 share/config.kcfg/sysinfoconduit.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
@@ -2200,6 +2256,7 @@ share/services/kresources/kabc/kabc_ox.desktop
 share/services/kresources/kabc/kabc_slox.desktop
 share/services/kresources/kabc/kabc_xmlrpc.desktop
 share/services/kresources/kabc/kolab.desktop
+share/services/kresources/kabc/scalix.desktop
 share/services/kresources/kcal/exchange.desktop
 share/services/kresources/kcal/imap.desktop
 share/services/kresources/kcal/kabc.desktop
@@ -2215,17 +2272,21 @@ share/services/kresources/kcal/kolab.desktop
 share/services/kresources/kcal/local.desktop
 share/services/kresources/kcal/localdir.desktop
 share/services/kresources/kcal/remote.desktop
+share/services/kresources/kcal/scalix.desktop
 share/services/kresources/kcal_manager.desktop
 share/services/kresources/knotes/imap.desktop
 share/services/kresources/knotes/knotes_xmlrpc.desktop
 share/services/kresources/knotes/kolabresource.desktop
 share/services/kresources/knotes/local.desktop
+share/services/kresources/knotes/scalix.desktop
 share/services/kresources/knotes_manager.desktop
 share/services/ldifvcardthumbnail.desktop
 share/services/mbox.protocol
 share/services/memofile-conduit.desktop
 share/services/notepad-conduit.desktop
 share/services/popmail-conduit.desktop
+share/services/scalix.protocol
+share/services/scalixs.protocol
 share/services/sieve.protocol
 share/services/sysinfo_conduit.desktop
 share/services/time_conduit.desktop
@@ -2248,108 +2309,37 @@ share/servicetypes/kontactplugin.desktop
 share/servicetypes/korganizerpart.desktop
 share/servicetypes/korgprintplugin.desktop
 share/servicetypes/kpilotconduit.desktop
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimidentities/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimidentities/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpgp/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpgp/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkmime/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkmime/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkholidays/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkholidays/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libemailfunctions/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libemailfunctions/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kontact/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kontact/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/karm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kdgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kdgantt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kdgantt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/karm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/karm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kdgantt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kontact/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libemailfunctions/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkholidays/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkmime/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpgp/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/certmanager/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/kpilot/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimidentities/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/librss/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/src/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/akregator/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/karm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kontact/html
 @dirrm share/services/kresources/knotes
 @dirrm share/services/kresources/kcal
 @dirrm share/services/korganizer
@@ -2502,6 +2492,9 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/korgac/icons
 @dirrm share/apps/korgac
 @dirrm share/apps/kontactsummary
+@dirrm share/apps/kontact/profiles/OutlookDefaults
+@dirrm share/apps/kontact/profiles/KontactDefaults
+@dirrm share/apps/kontact/profiles
 @dirrm share/apps/kontact/about
 @dirrm share/apps/kontact
 @dirrm share/apps/knotes/icons/crystalsvg/16x16/actions

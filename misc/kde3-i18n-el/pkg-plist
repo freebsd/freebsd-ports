@@ -298,6 +298,7 @@ share/locale/el/LC_MESSAGES/kio_nntp.mo
 share/locale/el/LC_MESSAGES/kio_pop3.mo
 share/locale/el/LC_MESSAGES/kio_print.mo
 share/locale/el/LC_MESSAGES/kio_remote.mo
+share/locale/el/LC_MESSAGES/kio_scalix.mo
 share/locale/el/LC_MESSAGES/kio_settings.mo
 share/locale/el/LC_MESSAGES/kio_sftp.mo
 share/locale/el/LC_MESSAGES/kio_sieve.mo
@@ -405,6 +406,7 @@ share/locale/el/LC_MESSAGES/kres_groupware.mo
 share/locale/el/LC_MESSAGES/kres_groupwise.mo
 share/locale/el/LC_MESSAGES/kres_kolab.mo
 share/locale/el/LC_MESSAGES/kres_remote.mo
+share/locale/el/LC_MESSAGES/kres_scalix.mo
 share/locale/el/LC_MESSAGES/kres_tvanytime.mo
 share/locale/el/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/el/LC_MESSAGES/kreversi.mo
@@ -535,6 +537,7 @@ share/locale/el/LC_MESSAGES/privacy.mo
 share/locale/el/LC_MESSAGES/quanta.mo
 share/locale/el/LC_MESSAGES/quicklauncher.mo
 share/locale/el/LC_MESSAGES/rellinks.mo
+share/locale/el/LC_MESSAGES/scalixadmin.mo
 share/locale/el/LC_MESSAGES/searchbarplugin.mo
 share/locale/el/LC_MESSAGES/secpolicy.mo
 share/locale/el/LC_MESSAGES/spy.mo

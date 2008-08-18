@@ -367,12 +367,66 @@ share/doc/HTML/es/cervisia/popup.png
 share/doc/HTML/es/cervisia/repositories.png
 share/doc/HTML/es/cervisia/resolve.png
 share/doc/HTML/es/cervisia/updatetag.png
-share/doc/HTML/es/docs/common/fdl-translated.html
-share/doc/HTML/es/docs/common/gpl-translated.html
-share/doc/HTML/es/docs/common/kde-localised.css
-share/doc/HTML/es/docs/common/kde_logo.png
-share/doc/HTML/es/docs/common/lgpl-translated.html
-share/doc/HTML/es/docs/common/logotp3.png
+share/doc/HTML/es/common/1.png
+share/doc/HTML/es/common/10.png
+share/doc/HTML/es/common/2.png
+share/doc/HTML/es/common/3.png
+share/doc/HTML/es/common/4.png
+share/doc/HTML/es/common/5.png
+share/doc/HTML/es/common/6.png
+share/doc/HTML/es/common/7.png
+share/doc/HTML/es/common/8.png
+share/doc/HTML/es/common/9.png
+share/doc/HTML/es/common/appheader.html
+share/doc/HTML/es/common/artistic-license.html
+share/doc/HTML/es/common/bottom-left.png
+share/doc/HTML/es/common/bottom-middle.png
+share/doc/HTML/es/common/bottom-right.png
+share/doc/HTML/es/common/bottom1.png
+share/doc/HTML/es/common/bottom2.png
+share/doc/HTML/es/common/bsd-license.html
+share/doc/HTML/es/common/docheadergears.png
+share/doc/HTML/es/common/doctop1.png
+share/doc/HTML/es/common/doctop1a.png
+share/doc/HTML/es/common/doctop1b.png
+share/doc/HTML/es/common/doctop2.png
+share/doc/HTML/es/common/doxygen.css
+share/doc/HTML/es/common/favicon.ico
+share/doc/HTML/es/common/fdl-license
+share/doc/HTML/es/common/fdl-license.html
+share/doc/HTML/es/common/fdl-notice.html
+share/doc/HTML/es/common/fdl-translated.html
+share/doc/HTML/es/common/footer.html
+share/doc/HTML/es/common/gpl-license
+share/doc/HTML/es/common/gpl-license.html
+share/doc/HTML/es/common/gpl-translated.html
+share/doc/HTML/es/common/grad.png
+share/doc/HTML/es/common/header.html
+share/doc/HTML/es/common/headerbg.png
+share/doc/HTML/es/common/kde-common.css
+share/doc/HTML/es/common/kde-default.css
+share/doc/HTML/es/common/kde-localised.css
+share/doc/HTML/es/common/kde-localised.css.template
+share/doc/HTML/es/common/kde-web.css
+share/doc/HTML/es/common/kde_gear_64.png
+share/doc/HTML/es/common/kde_logo.png
+share/doc/HTML/es/common/kde_logo_bg.png
+share/doc/HTML/es/common/kmenu.png
+share/doc/HTML/es/common/lgpl-license
+share/doc/HTML/es/common/lgpl-license.html
+share/doc/HTML/es/common/lgpl-translated.html
+share/doc/HTML/es/common/logotp3.png
+share/doc/HTML/es/common/mainfooter.html
+share/doc/HTML/es/common/mainheader.html
+share/doc/HTML/es/common/qpl-license.html
+share/doc/HTML/es/common/shadow.png
+share/doc/HTML/es/common/top-left.png
+share/doc/HTML/es/common/top-middle.png
+share/doc/HTML/es/common/top-right-konqueror.png
+share/doc/HTML/es/common/web-docbottom.png
+share/doc/HTML/es/common/web-doctop.png
+share/doc/HTML/es/common/x11-license.html
+share/doc/HTML/es/common/xml.dcl
 share/doc/HTML/es/irkick/common
 share/doc/HTML/es/irkick/index.cache.bz2
 share/doc/HTML/es/irkick/index.docbook
@@ -536,6 +590,7 @@ share/doc/HTML/es/kbabel/catalogmanager_nopot_ok.png
 share/doc/HTML/es/kbabel/catalogmanager_ok.png
 share/doc/HTML/es/kbabel/catalogmanager_reload.png
 share/doc/HTML/es/kbabel/catman.docbook
+share/doc/HTML/es/kbabel/common
 share/doc/HTML/es/kbabel/dbcan.png
 share/doc/HTML/es/kbabel/dictionaries.docbook
 share/doc/HTML/es/kbabel/editcopy.png
@@ -547,6 +602,8 @@ share/doc/HTML/es/kbabel/filesave.png
 share/doc/HTML/es/kbabel/find.png
 share/doc/HTML/es/kbabel/forward.png
 share/doc/HTML/es/kbabel/glossary.docbook
+share/doc/HTML/es/kbabel/index.cache.bz2
+share/doc/HTML/es/kbabel/index.docbook
 share/doc/HTML/es/kbabel/kbabeldict.docbook
 share/doc/HTML/es/kbabel/man-catalogmanager.1.docbook
 share/doc/HTML/es/kbabel/menu.docbook
@@ -1171,6 +1228,7 @@ share/doc/HTML/es/khelpcenter/userguide/common
 share/doc/HTML/es/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/es/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/es/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/es/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/es/khelpcenter/userguide/desktop.png
 share/doc/HTML/es/khelpcenter/userguide/email.docbook
 share/doc/HTML/es/khelpcenter/userguide/extragear-applications.docbook
@@ -2194,6 +2252,9 @@ share/doc/HTML/es/kshisen/index.cache.bz2
 share/doc/HTML/es/kshisen/index.docbook
 share/doc/HTML/es/kshisen/kshisen-configuration.png
 share/doc/HTML/es/kshisen/score-formula.png
+share/doc/HTML/es/ksig/common
+share/doc/HTML/es/ksig/index.cache.bz2
+share/doc/HTML/es/ksig/index.docbook
 share/doc/HTML/es/ksim/common
 share/doc/HTML/es/ksim/index.cache.bz2
 share/doc/HTML/es/ksim/index.docbook
@@ -3345,6 +3406,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/ksirtet
 @dirrm share/doc/HTML/es/ksirc
 @dirrm share/doc/HTML/es/ksim
+@dirrm share/doc/HTML/es/ksig
 @dirrm share/doc/HTML/es/kshisen
 @dirrm share/doc/HTML/es/kscd
 @dirrm share/doc/HTML/es/ksame
@@ -3563,8 +3625,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kaboodle
 @dirrm share/doc/HTML/es/juk
 @dirrm share/doc/HTML/es/irkick
-@dirrm share/doc/HTML/es/docs/common
-@dirrm share/doc/HTML/es/docs
+@dirrm share/doc/HTML/es/common
 @dirrm share/doc/HTML/es/cervisia
 @dirrm share/doc/HTML/es/blinken
 @dirrm share/doc/HTML/es/atlantik
@@ -3589,3 +3650,5 @@ share/locale/es/flag.png
 @dirrm share/apps/khangman/data/es
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

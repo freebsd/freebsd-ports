@@ -1,8 +1,63 @@
-share/doc/HTML/ja/docs/common/fdl-translated.html
-share/doc/HTML/ja/docs/common/gpl-translated.html
-share/doc/HTML/ja/docs/common/kde-localised.css
-share/doc/HTML/ja/docs/common/lgpl-translated.html
-share/doc/HTML/ja/docs/common/logotp3.png
+share/doc/HTML/ja/common/1.png
+share/doc/HTML/ja/common/10.png
+share/doc/HTML/ja/common/2.png
+share/doc/HTML/ja/common/3.png
+share/doc/HTML/ja/common/4.png
+share/doc/HTML/ja/common/5.png
+share/doc/HTML/ja/common/6.png
+share/doc/HTML/ja/common/7.png
+share/doc/HTML/ja/common/8.png
+share/doc/HTML/ja/common/9.png
+share/doc/HTML/ja/common/appheader.html
+share/doc/HTML/ja/common/artistic-license.html
+share/doc/HTML/ja/common/bottom-left.png
+share/doc/HTML/ja/common/bottom-middle.png
+share/doc/HTML/ja/common/bottom-right.png
+share/doc/HTML/ja/common/bottom1.png
+share/doc/HTML/ja/common/bottom2.png
+share/doc/HTML/ja/common/bsd-license.html
+share/doc/HTML/ja/common/docheadergears.png
+share/doc/HTML/ja/common/doctop1.png
+share/doc/HTML/ja/common/doctop1a.png
+share/doc/HTML/ja/common/doctop1b.png
+share/doc/HTML/ja/common/doctop2.png
+share/doc/HTML/ja/common/doxygen.css
+share/doc/HTML/ja/common/favicon.ico
+share/doc/HTML/ja/common/fdl-license
+share/doc/HTML/ja/common/fdl-license.html
+share/doc/HTML/ja/common/fdl-notice.html
+share/doc/HTML/ja/common/fdl-translated.html
+share/doc/HTML/ja/common/footer.html
+share/doc/HTML/ja/common/gpl-license
+share/doc/HTML/ja/common/gpl-license.html
+share/doc/HTML/ja/common/gpl-translated.html
+share/doc/HTML/ja/common/grad.png
+share/doc/HTML/ja/common/header.html
+share/doc/HTML/ja/common/headerbg.png
+share/doc/HTML/ja/common/kde-common.css
+share/doc/HTML/ja/common/kde-default.css
+share/doc/HTML/ja/common/kde-localised.css
+share/doc/HTML/ja/common/kde-localised.css.template
+share/doc/HTML/ja/common/kde-web.css
+share/doc/HTML/ja/common/kde_gear_64.png
+share/doc/HTML/ja/common/kde_logo.png
+share/doc/HTML/ja/common/kde_logo_bg.png
+share/doc/HTML/ja/common/kmenu.png
+share/doc/HTML/ja/common/lgpl-license
+share/doc/HTML/ja/common/lgpl-license.html
+share/doc/HTML/ja/common/lgpl-translated.html
+share/doc/HTML/ja/common/logotp3.png
+share/doc/HTML/ja/common/mainfooter.html
+share/doc/HTML/ja/common/mainheader.html
+share/doc/HTML/ja/common/qpl-license.html
+share/doc/HTML/ja/common/shadow.png
+share/doc/HTML/ja/common/top-left.png
+share/doc/HTML/ja/common/top-middle.png
+share/doc/HTML/ja/common/top-right-konqueror.png
+share/doc/HTML/ja/common/web-docbottom.png
+share/doc/HTML/ja/common/web-doctop.png
+share/doc/HTML/ja/common/x11-license.html
+share/doc/HTML/ja/common/xml.dcl
 share/doc/HTML/ja/kcontrol/arts/common
 share/doc/HTML/ja/kcontrol/arts/index.cache.bz2
 share/doc/HTML/ja/kcontrol/arts/index.docbook
@@ -485,6 +540,7 @@ share/locale/ja/LC_MESSAGES/kio_nntp.mo
 share/locale/ja/LC_MESSAGES/kio_pop3.mo
 share/locale/ja/LC_MESSAGES/kio_print.mo
 share/locale/ja/LC_MESSAGES/kio_remote.mo
+share/locale/ja/LC_MESSAGES/kio_scalix.mo
 share/locale/ja/LC_MESSAGES/kio_settings.mo
 share/locale/ja/LC_MESSAGES/kio_sftp.mo
 share/locale/ja/LC_MESSAGES/kio_sieve.mo
@@ -592,6 +648,7 @@ share/locale/ja/LC_MESSAGES/kres_groupware.mo
 share/locale/ja/LC_MESSAGES/kres_groupwise.mo
 share/locale/ja/LC_MESSAGES/kres_kolab.mo
 share/locale/ja/LC_MESSAGES/kres_remote.mo
+share/locale/ja/LC_MESSAGES/kres_scalix.mo
 share/locale/ja/LC_MESSAGES/kres_tvanytime.mo
 share/locale/ja/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/ja/LC_MESSAGES/kreversi.mo
@@ -722,6 +779,7 @@ share/locale/ja/LC_MESSAGES/privacy.mo
 share/locale/ja/LC_MESSAGES/quanta.mo
 share/locale/ja/LC_MESSAGES/quicklauncher.mo
 share/locale/ja/LC_MESSAGES/rellinks.mo
+share/locale/ja/LC_MESSAGES/scalixadmin.mo
 share/locale/ja/LC_MESSAGES/searchbarplugin.mo
 share/locale/ja/LC_MESSAGES/secpolicy.mo
 share/locale/ja/LC_MESSAGES/spy.mo
@@ -798,5 +856,4 @@ share/locale/ja/flag.png
 @dirrm share/doc/HTML/ja/kcontrol/bell
 @dirrm share/doc/HTML/ja/kcontrol/arts
 @dirrm share/doc/HTML/ja/kcontrol
-@dirrm share/doc/HTML/ja/docs/common
-@dirrm share/doc/HTML/ja/docs
+@dirrm share/doc/HTML/ja/common

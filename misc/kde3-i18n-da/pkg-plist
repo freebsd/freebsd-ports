@@ -134,11 +134,66 @@ share/doc/HTML/da/blinken/index.docbook
 share/doc/HTML/da/cervisia/common
 share/doc/HTML/da/cervisia/index.cache.bz2
 share/doc/HTML/da/cervisia/index.docbook
-share/doc/HTML/da/docs/common/fdl-translated.html
-share/doc/HTML/da/docs/common/gpl-translated.html
-share/doc/HTML/da/docs/common/kde-localised.css
-share/doc/HTML/da/docs/common/lgpl-translated.html
-share/doc/HTML/da/docs/common/logotp3.png
+share/doc/HTML/da/common/1.png
+share/doc/HTML/da/common/10.png
+share/doc/HTML/da/common/2.png
+share/doc/HTML/da/common/3.png
+share/doc/HTML/da/common/4.png
+share/doc/HTML/da/common/5.png
+share/doc/HTML/da/common/6.png
+share/doc/HTML/da/common/7.png
+share/doc/HTML/da/common/8.png
+share/doc/HTML/da/common/9.png
+share/doc/HTML/da/common/appheader.html
+share/doc/HTML/da/common/artistic-license.html
+share/doc/HTML/da/common/bottom-left.png
+share/doc/HTML/da/common/bottom-middle.png
+share/doc/HTML/da/common/bottom-right.png
+share/doc/HTML/da/common/bottom1.png
+share/doc/HTML/da/common/bottom2.png
+share/doc/HTML/da/common/bsd-license.html
+share/doc/HTML/da/common/docheadergears.png
+share/doc/HTML/da/common/doctop1.png
+share/doc/HTML/da/common/doctop1a.png
+share/doc/HTML/da/common/doctop1b.png
+share/doc/HTML/da/common/doctop2.png
+share/doc/HTML/da/common/doxygen.css
+share/doc/HTML/da/common/favicon.ico
+share/doc/HTML/da/common/fdl-license
+share/doc/HTML/da/common/fdl-license.html
+share/doc/HTML/da/common/fdl-notice.html
+share/doc/HTML/da/common/fdl-translated.html
+share/doc/HTML/da/common/footer.html
+share/doc/HTML/da/common/gpl-license
+share/doc/HTML/da/common/gpl-license.html
+share/doc/HTML/da/common/gpl-translated.html
+share/doc/HTML/da/common/grad.png
+share/doc/HTML/da/common/header.html
+share/doc/HTML/da/common/headerbg.png
+share/doc/HTML/da/common/kde-common.css
+share/doc/HTML/da/common/kde-default.css
+share/doc/HTML/da/common/kde-localised.css
+share/doc/HTML/da/common/kde-localised.css.template
+share/doc/HTML/da/common/kde-web.css
+share/doc/HTML/da/common/kde_gear_64.png
+share/doc/HTML/da/common/kde_logo.png
+share/doc/HTML/da/common/kde_logo_bg.png
+share/doc/HTML/da/common/kmenu.png
+share/doc/HTML/da/common/lgpl-license
+share/doc/HTML/da/common/lgpl-license.html
+share/doc/HTML/da/common/lgpl-translated.html
+share/doc/HTML/da/common/logotp3.png
+share/doc/HTML/da/common/mainfooter.html
+share/doc/HTML/da/common/mainheader.html
+share/doc/HTML/da/common/qpl-license.html
+share/doc/HTML/da/common/shadow.png
+share/doc/HTML/da/common/top-left.png
+share/doc/HTML/da/common/top-middle.png
+share/doc/HTML/da/common/top-right-konqueror.png
+share/doc/HTML/da/common/web-docbottom.png
+share/doc/HTML/da/common/web-doctop.png
+share/doc/HTML/da/common/x11-license.html
+share/doc/HTML/da/common/xml.dcl
 share/doc/HTML/da/irkick/common
 share/doc/HTML/da/irkick/index.cache.bz2
 share/doc/HTML/da/irkick/index.docbook
@@ -1788,6 +1843,7 @@ share/locale/da/LC_MESSAGES/kio_nntp.mo
 share/locale/da/LC_MESSAGES/kio_pop3.mo
 share/locale/da/LC_MESSAGES/kio_print.mo
 share/locale/da/LC_MESSAGES/kio_remote.mo
+share/locale/da/LC_MESSAGES/kio_scalix.mo
 share/locale/da/LC_MESSAGES/kio_settings.mo
 share/locale/da/LC_MESSAGES/kio_sftp.mo
 share/locale/da/LC_MESSAGES/kio_sieve.mo
@@ -1901,6 +1957,7 @@ share/locale/da/LC_MESSAGES/kres_groupware.mo
 share/locale/da/LC_MESSAGES/kres_groupwise.mo
 share/locale/da/LC_MESSAGES/kres_kolab.mo
 share/locale/da/LC_MESSAGES/kres_remote.mo
+share/locale/da/LC_MESSAGES/kres_scalix.mo
 share/locale/da/LC_MESSAGES/kres_tvanytime.mo
 share/locale/da/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/da/LC_MESSAGES/kreversi.mo
@@ -2033,6 +2090,7 @@ share/locale/da/LC_MESSAGES/privacy.mo
 share/locale/da/LC_MESSAGES/quanta.mo
 share/locale/da/LC_MESSAGES/quicklauncher.mo
 share/locale/da/LC_MESSAGES/rellinks.mo
+share/locale/da/LC_MESSAGES/scalixadmin.mo
 share/locale/da/LC_MESSAGES/searchbarplugin.mo
 share/locale/da/LC_MESSAGES/secpolicy.mo
 share/locale/da/LC_MESSAGES/spy.mo
@@ -2314,8 +2372,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kaboodle
 @dirrm share/doc/HTML/da/juk
 @dirrm share/doc/HTML/da/irkick
-@dirrm share/doc/HTML/da/docs/common
-@dirrm share/doc/HTML/da/docs
+@dirrm share/doc/HTML/da/common
 @dirrm share/doc/HTML/da/cervisia
 @dirrm share/doc/HTML/da/blinken
 @dirrm share/doc/HTML/da/atlantik

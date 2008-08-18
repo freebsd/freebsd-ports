@@ -11,6 +11,7 @@ include/kommander_export.h
 include/kommanderfactory.h
 include/kommanderplugin.h
 include/kommanderwidget.h
+include/specials.h
 lib/kde3/libkfilereplacepart.a
 lib/kde3/libkfilereplacepart.la
 lib/kde3/libkfilereplacepart.so
@@ -20,6 +21,9 @@ lib/kde3/libkimagemapeditor.so
 lib/kde3/libklinkstatuspart.a
 lib/kde3/libklinkstatuspart.la
 lib/kde3/libklinkstatuspart.so
+lib/kde3/libkommander_part.a
+lib/kde3/libkommander_part.la
+lib/kde3/libkommander_part.so
 lib/kde3/libkxsldbgpart.a
 lib/kde3/libkxsldbgpart.la
 lib/kde3/libkxsldbgpart.so
@@ -51,7 +55,11 @@ share/applnk/.hidden/kmdr-executor.desktop
 share/apps/kafkapart/entities
 share/apps/kafkapart/pics/comment.png
 share/apps/kafkapart/pics/php.png
+share/apps/katepart/syntax/kommander-new.xml
 share/apps/katepart/syntax/kommander.xml
+share/apps/kdevappwizard/kommanderplugin.png
+share/apps/kdevappwizard/kommanderplugin.tar.gz
+share/apps/kdevappwizard/templates/kommanderplugin.kdevtemplate
 share/apps/kfilereplace/kfilereplaceui.rc
 share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/back.png
 share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/backup_option.png
@@ -72,6 +80,16 @@ share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/unsortedList.png
 share/apps/kfilereplacepart/kfilereplacepartui.rc
 share/apps/kimagemapeditor/addpointcursor.png
 share/apps/kimagemapeditor/freehandcursor.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/addpoint.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/arrow.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/circle.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/circle2.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/freehand.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/lower.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/polygon.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/raise.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/rectangle.png
+share/apps/kimagemapeditor/icons/hicolor/22x22/actions/removepoint.png
 share/apps/kimagemapeditor/kimagemapeditorpartui.rc
 share/apps/kimagemapeditor/kimagemapeditorui.rc
 share/apps/kimagemapeditor/polygoncursor.png
@@ -80,7 +98,60 @@ share/apps/klinkstatus/klinkstatus_shell.rc
 share/apps/klinkstatus/styles/results_stylesheet.xsl
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/304.png
+share/apps/kmdr-editor/editor/current/a1.kmdr
+share/apps/kmdr-editor/editor/current/b1.kmdr
+share/apps/kmdr-editor/editor/current/editor-poc.kmdr
+share/apps/kmdr-editor/editor/current/keyvaluecombo.kmdr
+share/apps/kmdr-editor/editor/current/kpartmwframe.kmdr
+share/apps/kmdr-editor/editor/current/kpartpart.kmdr
+share/apps/kmdr-editor/editor/current/passvariables.kmdr
+share/apps/kmdr-editor/editor/current/tableselect.kmdr
+share/apps/kmdr-editor/editor/dcoptool-oldparser.kmdr
+share/apps/kmdr-editor/editor/examples.kmdr
+share/apps/kmdr-editor/editor/old/checkmail.kmdr
+share/apps/kmdr-editor/editor/old/ex1.kmdr
+share/apps/kmdr-editor/editor/old/execprogram.kmdr
+share/apps/kmdr-editor/editor/old/firstform.kmdr.kmdr
+share/apps/kmdr-editor/editor/old/form1.kmdr
+share/apps/kmdr-editor/editor/old/form2.kmdr
+share/apps/kmdr-editor/editor/old/form3.kmdr
+share/apps/kmdr-editor/editor/old/form4.kmdr
+share/apps/kmdr-editor/editor/old/form5.kmdr
+share/apps/kmdr-editor/editor/old/newfile.kmdr
+share/apps/kmdr-editor/editor/old/populate.kmdr
+share/apps/kmdr-editor/editor/old/resize.kmdr
+share/apps/kmdr-editor/editor/old/selectedwidgettext.kmdr
+share/apps/kmdr-editor/editor/old/settings.kmdr
+share/apps/kmdr-editor/editor/old/simplelist.kmdr
+share/apps/kmdr-editor/editor/old/tar.kmdr
+share/apps/kmdr-editor/editor/old/tidy.kmdr
+share/apps/kmdr-editor/editor/old/widgetgenerator.kmdr
+share/apps/kmdr-editor/editor/old/wizard.kmdr
+share/apps/kmdr-editor/editor/tutorial/README
+share/apps/kmdr-editor/editor/tutorial/append.kmdr
+share/apps/kmdr-editor/editor/tutorial/arrays.kmdr
+share/apps/kmdr-editor/editor/tutorial/calc.kmdr
+share/apps/kmdr-editor/editor/tutorial/cmdline.kmdr
+share/apps/kmdr-editor/editor/tutorial/dcop.kmdr
+share/apps/kmdr-editor/editor/tutorial/dialogs.kmdr
+share/apps/kmdr-editor/editor/tutorial/globals.kmdr
+share/apps/kmdr-editor/editor/tutorial/initialize.kmdr
+share/apps/kmdr-editor/editor/tutorial/loop.kmdr
+share/apps/kmdr-editor/editor/tutorial/picview.kmdr
+share/apps/kmdr-editor/editor/tutorial/progressbar.kmdr
+share/apps/kmdr-editor/editor/tutorial/settings.kmdr
+share/apps/kmdr-editor/editor/tutorial/slots.kmdr
+share/apps/kmdr-editor/editor/tutorial/statusbar.kmdr
+share/apps/kmdr-editor/editor/tutorial/strings.kmdr
+share/apps/kmdr-editor/editor/tutorial/table.kmdr
+share/apps/kmdr-editor/editor/tutorial/tree.kmdr
+share/apps/kmdr-editor/editor/tutorial/widgets.kmdr
+share/apps/kommander/icons/hicolor/22x22/actions/arrow.png
+share/apps/kommander/pics/kfontcombo.png
 share/apps/kommander/pics/kommandersplash.png
+share/apps/kommander/pics/toolbox.png
+share/apps/kommander/translating/extractkmdr
+share/apps/kommander/translating/kmdr2po
 share/apps/kxsldbg/kxsldbg_shell.rc
 share/apps/kxsldbgpart/kxsldbg_part.rc
 share/apps/quanta/actions.rc
@@ -1433,10 +1504,13 @@ share/doc/HTML/en/klinkstatus/screenshot.png
 share/doc/HTML/en/kommander/basics.docbook
 share/doc/HTML/en/kommander/buttongroup.png
 share/doc/HTML/en/kommander/checkbox.png
+share/doc/HTML/en/kommander/closebutton.png
 share/doc/HTML/en/kommander/combobox.png
 share/doc/HTML/en/kommander/commands.docbook
 share/doc/HTML/en/kommander/common
+share/doc/HTML/en/kommander/contents.png
 share/doc/HTML/en/kommander/credits.docbook
+share/doc/HTML/en/kommander/datepicker.png
 share/doc/HTML/en/kommander/dcop.docbook
 share/doc/HTML/en/kommander/editor.docbook
 share/doc/HTML/en/kommander/editor.png
@@ -1449,23 +1523,34 @@ share/doc/HTML/en/kommander/index.docbook
 share/doc/HTML/en/kommander/installation.docbook
 share/doc/HTML/en/kommander/interface.png
 share/doc/HTML/en/kommander/introduction.docbook
-share/doc/HTML/en/kommander/kde-common.css
-share/doc/HTML/en/kommander/kde-default.css
-share/doc/HTML/en/kommander/kde-web.css
+share/doc/HTML/en/kommander/kfontcombo.png
+share/doc/HTML/en/kommander/kommander.png
+share/doc/HTML/en/kommander/konsole.png
 share/doc/HTML/en/kommander/label.png
 share/doc/HTML/en/kommander/lineedit.png
 share/doc/HTML/en/kommander/listbox.png
 share/doc/HTML/en/kommander/listview.png
 share/doc/HTML/en/kommander/multilineedit.png
+share/doc/HTML/en/kommander/parser.docbook
 share/doc/HTML/en/kommander/pixlabel.png
+share/doc/HTML/en/kommander/progress.png
 share/doc/HTML/en/kommander/pushbutton.png
 share/doc/HTML/en/kommander/q-and-a.docbook
 share/doc/HTML/en/kommander/radiobutton.png
 share/doc/HTML/en/kommander/richtextedit.png
 share/doc/HTML/en/kommander/shadow.png
+share/doc/HTML/en/kommander/shellscript.png
+share/doc/HTML/en/kommander/slider.png
 share/doc/HTML/en/kommander/specials.docbook
 share/doc/HTML/en/kommander/spinbox.png
+share/doc/HTML/en/kommander/statusbar.png
+share/doc/HTML/en/kommander/table.png
 share/doc/HTML/en/kommander/tabwidget.png
+share/doc/HTML/en/kommander/textbrowser.png
+share/doc/HTML/en/kommander/textedit.png
+share/doc/HTML/en/kommander/timer.png
+share/doc/HTML/en/kommander/toolbox.png
+share/doc/HTML/en/kommander/translating.docbook
 share/doc/HTML/en/kommander/tutorials.docbook
 share/doc/HTML/en/kommander/widgets.docbook
 share/doc/HTML/en/kxsldbg/1downarrow.png
@@ -1602,19 +1687,9 @@ share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/klinkstatus.png
 share/icons/hicolor/16x16/apps/quanta.png
 share/icons/hicolor/22x22/actions/1downarrow.png
-share/icons/hicolor/22x22/actions/addpoint.png
-share/icons/hicolor/22x22/actions/arrow.png
-share/icons/hicolor/22x22/actions/circle.png
-share/icons/hicolor/22x22/actions/circle2.png
 share/icons/hicolor/22x22/actions/configure.png
 share/icons/hicolor/22x22/actions/exit.png
-share/icons/hicolor/22x22/actions/freehand.png
-share/icons/hicolor/22x22/actions/lower.png
 share/icons/hicolor/22x22/actions/next.png
-share/icons/hicolor/22x22/actions/polygon.png
-share/icons/hicolor/22x22/actions/raise.png
-share/icons/hicolor/22x22/actions/rectangle.png
-share/icons/hicolor/22x22/actions/removepoint.png
 share/icons/hicolor/22x22/actions/run.png
 share/icons/hicolor/22x22/actions/step.png
 share/icons/hicolor/22x22/actions/xsldbg_break.png
@@ -1645,6 +1720,7 @@ share/mimelnk/application/x-webprj.desktop
 share/services/kfilereplacepart.desktop
 share/services/kimagemapeditorpart.desktop
 share/services/klinkstatus_part.desktop
+share/services/kommander_part.desktop
 share/services/kxsldbg_part.desktop
 share/services/quanta_preview_config.desktop
 share/services/quantadebuggerdbgp.desktop
@@ -1725,12 +1801,26 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/quanta
 @dirrm share/apps/kxsldbgpart
 @dirrm share/apps/kxsldbg
+@dirrm share/apps/kommander/translating
 @dirrm share/apps/kommander/pics
+@dirrm share/apps/kommander/icons/hicolor/22x22/actions
+@dirrm share/apps/kommander/icons/hicolor/22x22
+@dirrm share/apps/kommander/icons/hicolor
+@dirrm share/apps/kommander/icons
 @dirrm share/apps/kommander
+@dirrm share/apps/kmdr-editor/editor/tutorial
+@dirrm share/apps/kmdr-editor/editor/old
+@dirrm share/apps/kmdr-editor/editor/current
+@dirrm share/apps/kmdr-editor/editor
+@dirrm share/apps/kmdr-editor
 @dirrm share/apps/klinkstatuspart/pics
 @dirrm share/apps/klinkstatuspart
 @dirrm share/apps/klinkstatus/styles
 @dirrm share/apps/klinkstatus
+@dirrm share/apps/kimagemapeditor/icons/hicolor/22x22/actions
+@dirrm share/apps/kimagemapeditor/icons/hicolor/22x22
+@dirrm share/apps/kimagemapeditor/icons/hicolor
+@dirrm share/apps/kimagemapeditor/icons
 @dirrm share/apps/kimagemapeditor
 @dirrm share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kfilereplacepart/icons/crystalsvg/22x22
@@ -1738,5 +1828,7 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/kfilereplacepart/icons
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kfilereplace
+@dirrm share/apps/kdevappwizard/templates
+@dirrm share/apps/kdevappwizard
 @dirrm share/apps/kafkapart/pics
 @dirrm share/apps/kafkapart

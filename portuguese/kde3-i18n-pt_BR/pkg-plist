@@ -4,6 +4,109 @@ share/apps/khangman/data/pt_BR/easy.kvtml
 share/apps/khangman/data/pt_BR/hard.kvtml
 share/apps/khangman/data/pt_BR/medium.kvtml
 share/apps/khangman/pt_BR.txt
+share/apps/klettres/pt_BR/alpha/a.ogg
+share/apps/klettres/pt_BR/alpha/b.ogg
+share/apps/klettres/pt_BR/alpha/c.ogg
+share/apps/klettres/pt_BR/alpha/d.ogg
+share/apps/klettres/pt_BR/alpha/e.ogg
+share/apps/klettres/pt_BR/alpha/f.ogg
+share/apps/klettres/pt_BR/alpha/g.ogg
+share/apps/klettres/pt_BR/alpha/h.ogg
+share/apps/klettres/pt_BR/alpha/i.ogg
+share/apps/klettres/pt_BR/alpha/j.ogg
+share/apps/klettres/pt_BR/alpha/k.ogg
+share/apps/klettres/pt_BR/alpha/l.ogg
+share/apps/klettres/pt_BR/alpha/m.ogg
+share/apps/klettres/pt_BR/alpha/n.ogg
+share/apps/klettres/pt_BR/alpha/o.ogg
+share/apps/klettres/pt_BR/alpha/p.ogg
+share/apps/klettres/pt_BR/alpha/q.ogg
+share/apps/klettres/pt_BR/alpha/r.ogg
+share/apps/klettres/pt_BR/alpha/s.ogg
+share/apps/klettres/pt_BR/alpha/t.ogg
+share/apps/klettres/pt_BR/alpha/u.ogg
+share/apps/klettres/pt_BR/alpha/v.ogg
+share/apps/klettres/pt_BR/alpha/w.ogg
+share/apps/klettres/pt_BR/alpha/x.ogg
+share/apps/klettres/pt_BR/alpha/y.ogg
+share/apps/klettres/pt_BR/alpha/z.ogg
+share/apps/klettres/pt_BR/sounds.xml
+share/apps/klettres/pt_BR/syllab/ba.ogg
+share/apps/klettres/pt_BR/syllab/be.ogg
+share/apps/klettres/pt_BR/syllab/bi.ogg
+share/apps/klettres/pt_BR/syllab/bo.ogg
+share/apps/klettres/pt_BR/syllab/bu.ogg
+share/apps/klettres/pt_BR/syllab/ca.ogg
+share/apps/klettres/pt_BR/syllab/co.ogg
+share/apps/klettres/pt_BR/syllab/cu.ogg
+share/apps/klettres/pt_BR/syllab/da.ogg
+share/apps/klettres/pt_BR/syllab/de.ogg
+share/apps/klettres/pt_BR/syllab/di.ogg
+share/apps/klettres/pt_BR/syllab/do.ogg
+share/apps/klettres/pt_BR/syllab/du.ogg
+share/apps/klettres/pt_BR/syllab/fa.ogg
+share/apps/klettres/pt_BR/syllab/fe.ogg
+share/apps/klettres/pt_BR/syllab/fi.ogg
+share/apps/klettres/pt_BR/syllab/fo.ogg
+share/apps/klettres/pt_BR/syllab/fu.ogg
+share/apps/klettres/pt_BR/syllab/ga.ogg
+share/apps/klettres/pt_BR/syllab/go.ogg
+share/apps/klettres/pt_BR/syllab/gu.ogg
+share/apps/klettres/pt_BR/syllab/ja.ogg
+share/apps/klettres/pt_BR/syllab/je.ogg
+share/apps/klettres/pt_BR/syllab/ji.ogg
+share/apps/klettres/pt_BR/syllab/jo.ogg
+share/apps/klettres/pt_BR/syllab/ju.ogg
+share/apps/klettres/pt_BR/syllab/la.ogg
+share/apps/klettres/pt_BR/syllab/le.ogg
+share/apps/klettres/pt_BR/syllab/li.ogg
+share/apps/klettres/pt_BR/syllab/lo.ogg
+share/apps/klettres/pt_BR/syllab/lu.ogg
+share/apps/klettres/pt_BR/syllab/ma.ogg
+share/apps/klettres/pt_BR/syllab/me.ogg
+share/apps/klettres/pt_BR/syllab/mi.ogg
+share/apps/klettres/pt_BR/syllab/mo.ogg
+share/apps/klettres/pt_BR/syllab/mu.ogg
+share/apps/klettres/pt_BR/syllab/na.ogg
+share/apps/klettres/pt_BR/syllab/ne.ogg
+share/apps/klettres/pt_BR/syllab/ni.ogg
+share/apps/klettres/pt_BR/syllab/no.ogg
+share/apps/klettres/pt_BR/syllab/nu.ogg
+share/apps/klettres/pt_BR/syllab/pa.ogg
+share/apps/klettres/pt_BR/syllab/pe.ogg
+share/apps/klettres/pt_BR/syllab/pi.ogg
+share/apps/klettres/pt_BR/syllab/po.ogg
+share/apps/klettres/pt_BR/syllab/pu.ogg
+share/apps/klettres/pt_BR/syllab/ra.ogg
+share/apps/klettres/pt_BR/syllab/re.ogg
+share/apps/klettres/pt_BR/syllab/ri.ogg
+share/apps/klettres/pt_BR/syllab/ro.ogg
+share/apps/klettres/pt_BR/syllab/ru.ogg
+share/apps/klettres/pt_BR/syllab/sa.ogg
+share/apps/klettres/pt_BR/syllab/se.ogg
+share/apps/klettres/pt_BR/syllab/si.ogg
+share/apps/klettres/pt_BR/syllab/so.ogg
+share/apps/klettres/pt_BR/syllab/su.ogg
+share/apps/klettres/pt_BR/syllab/ta.ogg
+share/apps/klettres/pt_BR/syllab/te.ogg
+share/apps/klettres/pt_BR/syllab/ti.ogg
+share/apps/klettres/pt_BR/syllab/to.ogg
+share/apps/klettres/pt_BR/syllab/tu.ogg
+share/apps/klettres/pt_BR/syllab/va.ogg
+share/apps/klettres/pt_BR/syllab/ve.ogg
+share/apps/klettres/pt_BR/syllab/vi.ogg
+share/apps/klettres/pt_BR/syllab/vo.ogg
+share/apps/klettres/pt_BR/syllab/vu.ogg
+share/apps/klettres/pt_BR/syllab/xa.ogg
+share/apps/klettres/pt_BR/syllab/xe.ogg
+share/apps/klettres/pt_BR/syllab/xi.ogg
+share/apps/klettres/pt_BR/syllab/xo.ogg
+share/apps/klettres/pt_BR/syllab/xu.ogg
+share/apps/klettres/pt_BR/syllab/za.ogg
+share/apps/klettres/pt_BR/syllab/ze.ogg
+share/apps/klettres/pt_BR/syllab/zi.ogg
+share/apps/klettres/pt_BR/syllab/zo.ogg
+share/apps/klettres/pt_BR/syllab/zu.ogg
 share/apps/kturtle/data/logokeywords.pt_BR.xml
 share/apps/kturtle/examples/pt_BR/comercial.logo
 share/apps/kturtle/examples/pt_BR/coresdefundo.logo
@@ -56,11 +159,66 @@ share/doc/HTML/pt_BR/cervisia/index.cache.bz2
 share/doc/HTML/pt_BR/cervisia/index.docbook
 share/doc/HTML/pt_BR/cervisia/mainview.png
 share/doc/HTML/pt_BR/cervisia/popup.png
-share/doc/HTML/pt_BR/docs/common/fdl-translated.html
-share/doc/HTML/pt_BR/docs/common/gpl-translated.html
-share/doc/HTML/pt_BR/docs/common/kde-localised.css
-share/doc/HTML/pt_BR/docs/common/lgpl-translated.html
-share/doc/HTML/pt_BR/docs/common/logotp3.png
+share/doc/HTML/pt_BR/common/1.png
+share/doc/HTML/pt_BR/common/10.png
+share/doc/HTML/pt_BR/common/2.png
+share/doc/HTML/pt_BR/common/3.png
+share/doc/HTML/pt_BR/common/4.png
+share/doc/HTML/pt_BR/common/5.png
+share/doc/HTML/pt_BR/common/6.png
+share/doc/HTML/pt_BR/common/7.png
+share/doc/HTML/pt_BR/common/8.png
+share/doc/HTML/pt_BR/common/9.png
+share/doc/HTML/pt_BR/common/appheader.html
+share/doc/HTML/pt_BR/common/artistic-license.html
+share/doc/HTML/pt_BR/common/bottom-left.png
+share/doc/HTML/pt_BR/common/bottom-middle.png
+share/doc/HTML/pt_BR/common/bottom-right.png
+share/doc/HTML/pt_BR/common/bottom1.png
+share/doc/HTML/pt_BR/common/bottom2.png
+share/doc/HTML/pt_BR/common/bsd-license.html
+share/doc/HTML/pt_BR/common/docheadergears.png
+share/doc/HTML/pt_BR/common/doctop1.png
+share/doc/HTML/pt_BR/common/doctop1a.png
+share/doc/HTML/pt_BR/common/doctop1b.png
+share/doc/HTML/pt_BR/common/doctop2.png
+share/doc/HTML/pt_BR/common/doxygen.css
+share/doc/HTML/pt_BR/common/favicon.ico
+share/doc/HTML/pt_BR/common/fdl-license
+share/doc/HTML/pt_BR/common/fdl-license.html
+share/doc/HTML/pt_BR/common/fdl-notice.html
+share/doc/HTML/pt_BR/common/fdl-translated.html
+share/doc/HTML/pt_BR/common/footer.html
+share/doc/HTML/pt_BR/common/gpl-license
+share/doc/HTML/pt_BR/common/gpl-license.html
+share/doc/HTML/pt_BR/common/gpl-translated.html
+share/doc/HTML/pt_BR/common/grad.png
+share/doc/HTML/pt_BR/common/header.html
+share/doc/HTML/pt_BR/common/headerbg.png
+share/doc/HTML/pt_BR/common/kde-common.css
+share/doc/HTML/pt_BR/common/kde-default.css
+share/doc/HTML/pt_BR/common/kde-localised.css
+share/doc/HTML/pt_BR/common/kde-localised.css.template
+share/doc/HTML/pt_BR/common/kde-web.css
+share/doc/HTML/pt_BR/common/kde_gear_64.png
+share/doc/HTML/pt_BR/common/kde_logo.png
+share/doc/HTML/pt_BR/common/kde_logo_bg.png
+share/doc/HTML/pt_BR/common/kmenu.png
+share/doc/HTML/pt_BR/common/lgpl-license
+share/doc/HTML/pt_BR/common/lgpl-license.html
+share/doc/HTML/pt_BR/common/lgpl-translated.html
+share/doc/HTML/pt_BR/common/logotp3.png
+share/doc/HTML/pt_BR/common/mainfooter.html
+share/doc/HTML/pt_BR/common/mainheader.html
+share/doc/HTML/pt_BR/common/qpl-license.html
+share/doc/HTML/pt_BR/common/shadow.png
+share/doc/HTML/pt_BR/common/top-left.png
+share/doc/HTML/pt_BR/common/top-middle.png
+share/doc/HTML/pt_BR/common/top-right-konqueror.png
+share/doc/HTML/pt_BR/common/web-docbottom.png
+share/doc/HTML/pt_BR/common/web-doctop.png
+share/doc/HTML/pt_BR/common/x11-license.html
+share/doc/HTML/pt_BR/common/xml.dcl
 share/doc/HTML/pt_BR/irkick/common
 share/doc/HTML/pt_BR/irkick/index.cache.bz2
 share/doc/HTML/pt_BR/irkick/index.docbook
@@ -2166,8 +2324,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/kaboodle
 @dirrm share/doc/HTML/pt_BR/juk
 @dirrm share/doc/HTML/pt_BR/irkick
-@dirrm share/doc/HTML/pt_BR/docs/common
-@dirrm share/doc/HTML/pt_BR/docs
+@dirrm share/doc/HTML/pt_BR/common
 @dirrm share/doc/HTML/pt_BR/cervisia
 @dirrm share/doc/HTML/pt_BR/atlantik
 @dirrm share/doc/HTML/pt_BR/artsbuilder
@@ -2179,6 +2336,12 @@ share/locale/pt_BR/flag.png
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
+@dirrm share/apps/klettres/pt_BR/syllab
+@dirrm share/apps/klettres/pt_BR/alpha
+@dirrm share/apps/klettres/pt_BR
+@dirrm share/apps/klettres
 @dirrm share/apps/khangman/data/pt_BR
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

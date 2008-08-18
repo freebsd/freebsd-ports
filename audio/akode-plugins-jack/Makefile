@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=distfiles
-DISTNAME=   30375-akode-${PORTVERSION}.tar.bz2
+DISTNAME=	30375-akode-${PORTVERSION}.tar.bz2
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,7 +25,7 @@ PLUGIN=		jack_sink
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
 USE_AUTOTOOLS=	libltdl
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
@@ -34,12 +34,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
-
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
-IGNORE= Jack not available
-.endif
 
 post-patch:
 	@${SETENV} TZ=UTC \
@@ -54,4 +48,4 @@ do-build:
 do-install:
 	cd ${WRKSRC}/akode/plugins/${PLUGIN} && ${GMAKE} install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

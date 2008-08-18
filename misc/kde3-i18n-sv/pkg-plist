@@ -138,11 +138,66 @@ share/doc/HTML/sv/cervisia/popup.png
 share/doc/HTML/sv/cervisia/repositories.png
 share/doc/HTML/sv/cervisia/resolve.png
 share/doc/HTML/sv/cervisia/updatetag.png
-share/doc/HTML/sv/docs/common/fdl-translated.html
-share/doc/HTML/sv/docs/common/gpl-translated.html
-share/doc/HTML/sv/docs/common/kde-localised.css
-share/doc/HTML/sv/docs/common/lgpl-translated.html
-share/doc/HTML/sv/docs/common/logotp3.png
+share/doc/HTML/sv/common/1.png
+share/doc/HTML/sv/common/10.png
+share/doc/HTML/sv/common/2.png
+share/doc/HTML/sv/common/3.png
+share/doc/HTML/sv/common/4.png
+share/doc/HTML/sv/common/5.png
+share/doc/HTML/sv/common/6.png
+share/doc/HTML/sv/common/7.png
+share/doc/HTML/sv/common/8.png
+share/doc/HTML/sv/common/9.png
+share/doc/HTML/sv/common/appheader.html
+share/doc/HTML/sv/common/artistic-license.html
+share/doc/HTML/sv/common/bottom-left.png
+share/doc/HTML/sv/common/bottom-middle.png
+share/doc/HTML/sv/common/bottom-right.png
+share/doc/HTML/sv/common/bottom1.png
+share/doc/HTML/sv/common/bottom2.png
+share/doc/HTML/sv/common/bsd-license.html
+share/doc/HTML/sv/common/docheadergears.png
+share/doc/HTML/sv/common/doctop1.png
+share/doc/HTML/sv/common/doctop1a.png
+share/doc/HTML/sv/common/doctop1b.png
+share/doc/HTML/sv/common/doctop2.png
+share/doc/HTML/sv/common/doxygen.css
+share/doc/HTML/sv/common/favicon.ico
+share/doc/HTML/sv/common/fdl-license
+share/doc/HTML/sv/common/fdl-license.html
+share/doc/HTML/sv/common/fdl-notice.html
+share/doc/HTML/sv/common/fdl-translated.html
+share/doc/HTML/sv/common/footer.html
+share/doc/HTML/sv/common/gpl-license
+share/doc/HTML/sv/common/gpl-license.html
+share/doc/HTML/sv/common/gpl-translated.html
+share/doc/HTML/sv/common/grad.png
+share/doc/HTML/sv/common/header.html
+share/doc/HTML/sv/common/headerbg.png
+share/doc/HTML/sv/common/kde-common.css
+share/doc/HTML/sv/common/kde-default.css
+share/doc/HTML/sv/common/kde-localised.css
+share/doc/HTML/sv/common/kde-localised.css.template
+share/doc/HTML/sv/common/kde-web.css
+share/doc/HTML/sv/common/kde_gear_64.png
+share/doc/HTML/sv/common/kde_logo.png
+share/doc/HTML/sv/common/kde_logo_bg.png
+share/doc/HTML/sv/common/kmenu.png
+share/doc/HTML/sv/common/lgpl-license
+share/doc/HTML/sv/common/lgpl-license.html
+share/doc/HTML/sv/common/lgpl-translated.html
+share/doc/HTML/sv/common/logotp3.png
+share/doc/HTML/sv/common/mainfooter.html
+share/doc/HTML/sv/common/mainheader.html
+share/doc/HTML/sv/common/qpl-license.html
+share/doc/HTML/sv/common/shadow.png
+share/doc/HTML/sv/common/top-left.png
+share/doc/HTML/sv/common/top-middle.png
+share/doc/HTML/sv/common/top-right-konqueror.png
+share/doc/HTML/sv/common/web-docbottom.png
+share/doc/HTML/sv/common/web-doctop.png
+share/doc/HTML/sv/common/x11-license.html
+share/doc/HTML/sv/common/xml.dcl
 share/doc/HTML/sv/irkick/common
 share/doc/HTML/sv/irkick/index.cache.bz2
 share/doc/HTML/sv/irkick/index.docbook
@@ -1361,6 +1416,7 @@ share/doc/HTML/sv/kommander/index.cache.bz2
 share/doc/HTML/sv/kommander/index.docbook
 share/doc/HTML/sv/kommander/installation.docbook
 share/doc/HTML/sv/kommander/introduction.docbook
+share/doc/HTML/sv/kommander/parser.docbook
 share/doc/HTML/sv/kommander/q-and-a.docbook
 share/doc/HTML/sv/kommander/specials.docbook
 share/doc/HTML/sv/kommander/tutorials.docbook
@@ -2536,6 +2592,7 @@ share/locale/sv/LC_MESSAGES/kio_nntp.mo
 share/locale/sv/LC_MESSAGES/kio_pop3.mo
 share/locale/sv/LC_MESSAGES/kio_print.mo
 share/locale/sv/LC_MESSAGES/kio_remote.mo
+share/locale/sv/LC_MESSAGES/kio_scalix.mo
 share/locale/sv/LC_MESSAGES/kio_settings.mo
 share/locale/sv/LC_MESSAGES/kio_sftp.mo
 share/locale/sv/LC_MESSAGES/kio_sieve.mo
@@ -2643,6 +2700,7 @@ share/locale/sv/LC_MESSAGES/kres_groupware.mo
 share/locale/sv/LC_MESSAGES/kres_groupwise.mo
 share/locale/sv/LC_MESSAGES/kres_kolab.mo
 share/locale/sv/LC_MESSAGES/kres_remote.mo
+share/locale/sv/LC_MESSAGES/kres_scalix.mo
 share/locale/sv/LC_MESSAGES/kres_tvanytime.mo
 share/locale/sv/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/sv/LC_MESSAGES/kreversi.mo
@@ -2773,6 +2831,7 @@ share/locale/sv/LC_MESSAGES/privacy.mo
 share/locale/sv/LC_MESSAGES/quanta.mo
 share/locale/sv/LC_MESSAGES/quicklauncher.mo
 share/locale/sv/LC_MESSAGES/rellinks.mo
+share/locale/sv/LC_MESSAGES/scalixadmin.mo
 share/locale/sv/LC_MESSAGES/searchbarplugin.mo
 share/locale/sv/LC_MESSAGES/secpolicy.mo
 share/locale/sv/LC_MESSAGES/spy.mo
@@ -3060,8 +3119,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kaboodle
 @dirrm share/doc/HTML/sv/juk
 @dirrm share/doc/HTML/sv/irkick
-@dirrm share/doc/HTML/sv/docs/common
-@dirrm share/doc/HTML/sv/docs
+@dirrm share/doc/HTML/sv/common
 @dirrm share/doc/HTML/sv/cervisia
 @dirrm share/doc/HTML/sv/blinken
 @dirrm share/doc/HTML/sv/atlantik
@@ -3081,3 +3139,5 @@ share/locale/sv/flag.png
 @dirrm share/apps/khangman/data/sv
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

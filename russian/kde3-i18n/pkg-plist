@@ -1,16 +1,26 @@
+share/apps/kanagram/data/ru/computers.kvtml
+share/apps/kanagram/data/ru/currencies.kvtml
+share/apps/kanagram/data/ru/people.kvtml
+share/apps/kanagram/data/ru/space.kvtml
+share/apps/kanagram/data/ru/worldcapitals.kvtml
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/data/ru/animals.kvtml
 share/apps/khangman/data/ru/easy.kvtml
 share/apps/khangman/data/ru/hard.kvtml
 share/apps/khangman/data/ru/medium.kvtml
 share/apps/kturtle/data/logokeywords.ru.xml
+share/apps/kturtle/examples/ru/ad.logo
 share/apps/kturtle/examples/ru/arrow.logo
+share/apps/kturtle/examples/ru/canvascolors.logo
 share/apps/kturtle/examples/ru/curly.logo
-share/apps/kturtle/examples/ru/example2.logo
-share/apps/kturtle/examples/ru/example3.logo
 share/apps/kturtle/examples/ru/flower.logo
+share/apps/kturtle/examples/ru/kde.logo
+share/apps/kturtle/examples/ru/randomname.logo
 share/apps/kturtle/examples/ru/square.logo
+share/apps/kturtle/examples/ru/squaresss.logo
+share/apps/kturtle/examples/ru/timestables.logo
 share/apps/kturtle/examples/ru/triangle.logo
+share/apps/kturtle/examples/ru/trianglesss.logo
 share/doc/HTML/ru/KRegExpEditor/common
 share/doc/HTML/ru/KRegExpEditor/index.cache.bz2
 share/doc/HTML/ru/KRegExpEditor/index.docbook
@@ -45,10 +55,65 @@ share/doc/HTML/ru/atlantik/index.docbook
 share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
-share/doc/HTML/ru/docs/common/fdl-translated.html
-share/doc/HTML/ru/docs/common/gpl-translated.html
-share/doc/HTML/ru/docs/common/kde-localised.css
-share/doc/HTML/ru/docs/common/logotp3.png
+share/doc/HTML/ru/common/1.png
+share/doc/HTML/ru/common/10.png
+share/doc/HTML/ru/common/2.png
+share/doc/HTML/ru/common/3.png
+share/doc/HTML/ru/common/4.png
+share/doc/HTML/ru/common/5.png
+share/doc/HTML/ru/common/6.png
+share/doc/HTML/ru/common/7.png
+share/doc/HTML/ru/common/8.png
+share/doc/HTML/ru/common/9.png
+share/doc/HTML/ru/common/appheader.html
+share/doc/HTML/ru/common/artistic-license.html
+share/doc/HTML/ru/common/bottom-left.png
+share/doc/HTML/ru/common/bottom-middle.png
+share/doc/HTML/ru/common/bottom-right.png
+share/doc/HTML/ru/common/bottom1.png
+share/doc/HTML/ru/common/bottom2.png
+share/doc/HTML/ru/common/bsd-license.html
+share/doc/HTML/ru/common/docheadergears.png
+share/doc/HTML/ru/common/doctop1.png
+share/doc/HTML/ru/common/doctop1a.png
+share/doc/HTML/ru/common/doctop1b.png
+share/doc/HTML/ru/common/doctop2.png
+share/doc/HTML/ru/common/doxygen.css
+share/doc/HTML/ru/common/favicon.ico
+share/doc/HTML/ru/common/fdl-license
+share/doc/HTML/ru/common/fdl-license.html
+share/doc/HTML/ru/common/fdl-notice.html
+share/doc/HTML/ru/common/fdl-translated.html
+share/doc/HTML/ru/common/footer.html
+share/doc/HTML/ru/common/gpl-license
+share/doc/HTML/ru/common/gpl-license.html
+share/doc/HTML/ru/common/gpl-translated.html
+share/doc/HTML/ru/common/grad.png
+share/doc/HTML/ru/common/header.html
+share/doc/HTML/ru/common/headerbg.png
+share/doc/HTML/ru/common/kde-common.css
+share/doc/HTML/ru/common/kde-default.css
+share/doc/HTML/ru/common/kde-localised.css
+share/doc/HTML/ru/common/kde-localised.css.template
+share/doc/HTML/ru/common/kde-web.css
+share/doc/HTML/ru/common/kde_gear_64.png
+share/doc/HTML/ru/common/kde_logo.png
+share/doc/HTML/ru/common/kde_logo_bg.png
+share/doc/HTML/ru/common/kmenu.png
+share/doc/HTML/ru/common/lgpl-license
+share/doc/HTML/ru/common/lgpl-license.html
+share/doc/HTML/ru/common/logotp3.png
+share/doc/HTML/ru/common/mainfooter.html
+share/doc/HTML/ru/common/mainheader.html
+share/doc/HTML/ru/common/qpl-license.html
+share/doc/HTML/ru/common/shadow.png
+share/doc/HTML/ru/common/top-left.png
+share/doc/HTML/ru/common/top-middle.png
+share/doc/HTML/ru/common/top-right-konqueror.png
+share/doc/HTML/ru/common/web-docbottom.png
+share/doc/HTML/ru/common/web-doctop.png
+share/doc/HTML/ru/common/x11-license.html
+share/doc/HTML/ru/common/xml.dcl
 share/doc/HTML/ru/irkick/common
 share/doc/HTML/ru/irkick/index.cache.bz2
 share/doc/HTML/ru/irkick/index.docbook
@@ -2041,8 +2106,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kaboodle
 @dirrm share/doc/HTML/ru/juk
 @dirrm share/doc/HTML/ru/irkick
-@dirrm share/doc/HTML/ru/docs/common
-@dirrm share/doc/HTML/ru/docs
+@dirrm share/doc/HTML/ru/common
 @dirrm share/doc/HTML/ru/cervisia
 @dirrm share/doc/HTML/ru/atlantik
 @dirrm share/doc/HTML/ru/artsbuilder
@@ -2056,3 +2120,8 @@ share/locale/ru/flag.png
 @dirrm share/apps/khangman/data/ru
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart
+@dirrm share/apps/kanagram/data/ru
+@dirrm share/apps/kanagram/data
+@dirrm share/apps/kanagram

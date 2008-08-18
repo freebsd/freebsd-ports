@@ -8,7 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -33,7 +33,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env libtool:15
+USE_AUTOTOOLS=	libtool:15
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
@@ -42,9 +42,6 @@ CONFIGURE_ENV+=	AKODE_CONFIG=${LOCALBASE}/bin/akode-config
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=akode juk mpeglib mpeglib_artsplug xine_artsplugin
-# short-circuit auto frameworks rebuilds
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
 
 OPTIONS=	AKODE "Use akode for audio playback" on \
 		MPEGLIB "Use mpeglib for audio playback" off \
@@ -56,8 +53,10 @@ OPTIONS=	AKODE "Use akode for audio playback" on \
 .if !defined(WITHOUT_AKODE)
 LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode.so:${PORTSDIR}/audio/akode
+PLIST_SUB+= AKODE=""
 .else
 DO_NOT_COMPILE+=akode_artsplugin
+PLIST_SUB+= AKODE="@comment "
 .endif
 
 .if defined(WITH_XINE)
@@ -75,8 +74,6 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 pre-configure:
 	${REINPLACE_CMD} -e "s,applications-merged,kde-applications-merged,g" \
 		${WRKSRC}/kappfinder-data/Makefile.in
-	@cd ${CONFIGURE_WRKSRC} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
