@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenGL:${PORTSDIR}/graphics/py-opengl \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/protocols/__init__.py:${PORTSDIR}/devel/py-protocols \
-		${PYTHON_SITELIBDIR}/serial/__init__.py:${PORTSDIR}/comms/py-serial \
+		${PKGNAMEPREFIX}serial>=2.2:${PORTSDIR}/comms/py-serial \
 		aqsis:${PORTSDIR}/graphics/aqsis
 .endif
 
