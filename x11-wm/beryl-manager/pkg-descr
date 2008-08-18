@@ -1,8 +1,0 @@
-This is the manager package for beryl. It requires beryl-core 
-beryl-plugins, beryl-settings and your choice of window
-decorator such as emerald or gtk-window-decorator.
-
-WWW: http://www.beryl-project.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

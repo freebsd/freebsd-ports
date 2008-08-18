@@ -17,13 +17,6 @@
     SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
-    SUBDIR += beryl
-    SUBDIR += beryl-core
-    SUBDIR += beryl-manager
-    SUBDIR += beryl-plugins
-    SUBDIR += beryl-plugins-unsupported
-    SUBDIR += beryl-settings
-    SUBDIR += beryl-settings-bindings
     SUBDIR += blackbox
     SUBDIR += blwm
     SUBDIR += boxtools

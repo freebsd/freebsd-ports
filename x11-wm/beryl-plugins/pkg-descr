@@ -1,8 +1,0 @@
-This is the plugins package for beryl. Requires beryl-core 
-package to run and beryl-core development package if you 
-want to build/hack plugins.
-
-WWW: http://www.beryl-project.org/
-
-- Florent Thoumie
-flz@FreeBSD.org

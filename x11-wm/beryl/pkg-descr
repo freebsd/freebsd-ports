@@ -1,7 +1,0 @@
-This is the beryl meta-port. It installs all beryl components
-(plugins, settings manager, window decorator, themes, ...).
-
-WWW: http://www.beryl-project.org/
-
-- Florent Thoumie
-flz@FreeBSD.org
