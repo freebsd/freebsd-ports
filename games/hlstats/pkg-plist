@@ -259,6 +259,10 @@ www/hlstats/ChangeLog
 %%HLSTATS%%/web/hlstatsimg/weapons/css/deagle.png
 %%HLSTATS%%/web/hlstatsimg/weapons/css/elite.png
 %%HLSTATS%%/web/hlstatsimg/weapons/css/famas.png
+%%HLSTATS%%/web/hlstatsimg/weapons/css/smokegrenade_projectile.png
+%%HLSTATS%%/web/hlstatsimg/weapons/css/glock.png
+%%HLSTATS%%/web/hlstatsimg/weapons/css/flashbang.png
+%%HLSTATS%%/web/hlstatsimg/weapons/css/grenade.png
 %%HLSTATS%%/web/hlstatsimg/weapons/css/fiveseven.png
 %%HLSTATS%%/web/hlstatsimg/weapons/css/g3sg1.png
 %%HLSTATS%%/web/hlstatsimg/weapons/css/galil.png
