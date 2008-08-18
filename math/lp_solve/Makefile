@@ -6,29 +6,24 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	${PORTMAJOR_VER}.0.12
+PORTVERSION=	5.5.0.13
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lpsolve
+MASTER_SITES=	SF/lpsolve
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Programming Solver
 
-PORTMAJOR_VER=	5.5
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTMAJOR_VER}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R:R}
+
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
-.endif
-
-pre-build:
-	@${REINPLACE_CMD} -e 's:%%CFLAGS%%:${CFLAGS}:g' -e 's:%%PICFLAG%%:${PICFLAG}:g'  -e 's:%%CC%%:${CC}:g' ${WRKSRC}/lp_solve/ccc ${WRKSRC}/demo/ccc ${WRKSRC}/lpsolve55/ccc
+post-patch:
+	@${FIND} ${WRKSRC} -name "ccc" | ${XARGS} ${REINPLACE_CMD} -e \
+		"s|^c=.*$$|c='${CC}'|g ; \
+		 s|^opts=.*$$|opts='${CFLAGS}'|g ; \
+		 s|-fpic|-fPIC|g ; \
+		 s|-ldl||g"
 
 do-build:
 	cd ${WRKSRC}/lp_solve  ; ${SH} -x ccc
@@ -37,20 +32,13 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/lp_solve ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/demo/demo ${EXAMPLESDIR}
-.endif
-	${MKDIR} ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_lib.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_types.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_utils.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_Hash.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_matrix.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_mipbb.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lp_SOS.h ${PREFIX}/include/lpsolve
-	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.so ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
+	@${MKDIR} ${PREFIX}/include/lpsolve
+.for i in lp_Hash.h lp_SOS.h lp_lib.h lp_matrix.h lp_mipbb.h lp_types.h lp_utils.h 
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/lpsolve
+.endfor
+.for i in lpsolve55/liblpsolve55.a lpsolve55/liblpsolve55.so
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib
+.endfor
+	${LN} -sf liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
