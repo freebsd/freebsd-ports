@@ -1,21 +1,29 @@
-# New ports collection makefile for:    kde4-l10n-ko
-# Date created:                         29 July 2008
-# Whom:                                 Martin Wilke <miwi@FreeBSD.org>
+# New ports collection makefile for:    kde3-i18n-ko
+# Date created:                         05 April 2002
+# Whom:                                 Lauri Watts <lauri@kde.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-ko
-PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	korean kde
+PORTNAME=	kde-i18n
+PORTVERSION=	${KDE_VERSION}
+CATEGORIES?=	korean kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
+PKGNAMEPREFIX=	ko-
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Korean messages and documentation for KDE4
+COMMENT=	Korean messages and documentation for KDE3
 
-KDE4_L10N=	yes
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-post-extract:
-	${MKDIR} ${WRKSRC}/build
+USE_KDELIBS_VER=3
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+KDE_I18N=	yes
 
-.include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+
 .include <bsd.port.mk>
