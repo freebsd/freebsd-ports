@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -33,13 +33,12 @@ CONFLICTS=	privoxy-devel-[0-9]*
 
 MAN1=		privoxy.1
 
-CONFIGURE_ARGS=	--enable-zlib
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include/
 
 OPTIONS=	FORCE "Allows to optionally bypass blocks" On \
 		TOGGLE "Support for remote toggling" On \
-		EDITOR "Enable webbased action editor" On \
+		EDITOR "Allow to enable the webbased action editor" On \
 		DEBUG "Build with debugging symbols" Off
 
 .include <bsd.port.pre.mk>
