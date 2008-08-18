@@ -26,6 +26,7 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-DMAP_ANONYMOUS=MAP_ANON
 
 OPTIONS=	CLIENT "Build client" on \
 		CURL "Enable curl support" on \
@@ -135,6 +136,9 @@ post-patch:
 # Do not log debug output of bots (can be enabled with "homedir"/"gamedir").
 	@${REINPLACE_CMD} -e 's|"botlib\.log"|"/dev/null"|' \
 		${WRKSRC}/code/botlib/be_interface.c
+# Enable mmap on i386.
+	@${REINPLACE_CMD} -e 's|__linux__|__unix__|' \
+		${WRKSRC}/code/qcommon/vm_x86.c
 
 do-install:
 	${MKDIR} ${LIBDIR}/baseq3
