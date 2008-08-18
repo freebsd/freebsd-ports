@@ -7,22 +7,22 @@
 
 PORTNAME=	libpar2
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	parchive
-DISTNAME=		${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		toxic@doobie.com
-COMMENT=		A library for manipulating par2 files, extracted from par2cmdline
+MAINTAINER=	toxic@doobie.com
+COMMENT=	A library for manipulating par2 files, extracted from par2cmdline
 
-LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_LDCONFIG=	yes
 
