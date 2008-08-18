@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
@@ -42,10 +42,13 @@ PLIST_FILES+=		bin/cdotest
 
 post-build:
 .if defined(WITH_NETCDF)
-	cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
+	@cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+regression-test:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.post.mk>
