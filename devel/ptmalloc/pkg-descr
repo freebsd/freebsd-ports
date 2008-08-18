@@ -1,7 +1,7 @@
 ptmalloc is the original version of the malloc that was later included
-in GNU libc.  This version is *not* GPL or LGPL:
+in GNU libc.  This version is also but *not* exclusively LGPL:
 
-  Copyright (c) 1999 Wolfram Gloger
+  Copyright (c) 2001-2006 Wolfram Gloger
   
   Permission to use, copy, modify, distribute, and sell this software
   and its documentation for any purpose is hereby granted without fee,
@@ -21,12 +21,8 @@ in GNU libc.  This version is *not* GPL or LGPL:
   THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   PERFORMANCE OF THIS SOFTWARE.
 
-This is not the latest version: it's older than the one in GNU libc.
-
 This package comes with no documentation beyond a README, which isn't
 worth installing.  It appears that the GNU libc man page malloc(3)
-applies, but it's not included here for copyright reasons.  There's
-nothing unusual about it.  In particular, the section TUNING in
-FreeBSD malloc(3) does not apply.
+applies, but it's not included here for copyright reasons.
 
 WWW: http://www.malloc.de/en/
