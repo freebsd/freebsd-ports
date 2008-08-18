@@ -12,3 +12,5 @@
 @dirrmtry %%SITE_PERL%%/auto/File/ShareDir
 @dirrmtry %%SITE_PERL%%/auto/File
 @dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
