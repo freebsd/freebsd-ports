@@ -26,8 +26,6 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
 
-BROKEN=		does not build
-
 USE_GNOME=	gnomehack gnometarget glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -38,7 +36,9 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 post-patch:
 	@${REINPLACE_CMD} -e '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-	    /optimization_flags/s|CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/url_fclose/s|&formatc|formatc|g' \
+		${WRKSRC}/src/modules/mod_libavcodec/trgt_av.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)
