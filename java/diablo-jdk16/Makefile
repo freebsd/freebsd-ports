@@ -64,7 +64,7 @@ PLIST_SUB+=	CLIENTVM="@comment "
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
 DISTFILE_INSTRUCTIONS=	:\n\
 Because of licensing restrictions, you must fetch the distribution\n\
-manually.\n\n
+manually.\n\n\
 Please access\n\
 \n\
   ${DOWNLOAD_URL}\n\
