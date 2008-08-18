@@ -33,6 +33,9 @@ bin/pychecker
 %%PYTHON_SITELIBDIR%%/pychecker/options.py
 %%PYTHON_SITELIBDIR%%/pychecker/options.pyc
 %%PYTHON_SITELIBDIR%%/pychecker/options.pyo
+%%PYTHON_SITELIBDIR%%/pychecker/pcmodules.py
+%%PYTHON_SITELIBDIR%%/pychecker/pcmodules.pyc
+%%PYTHON_SITELIBDIR%%/pychecker/pcmodules.pyo
 %%PYTHON_SITELIBDIR%%/pychecker/printer.py
 %%PYTHON_SITELIBDIR%%/pychecker/printer.pyc
 %%PYTHON_SITELIBDIR%%/pychecker/printer.pyo
