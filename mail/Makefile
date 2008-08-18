@@ -287,7 +287,6 @@
     SUBDIR += mutt-devel
     SUBDIR += mutt-devel-lite
     SUBDIR += mutt-lite
-    SUBDIR += mutt-ng
     SUBDIR += mutt_vc_query
     SUBDIR += muttzilla
     SUBDIR += nbsmtp
