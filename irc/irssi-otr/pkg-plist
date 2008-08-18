@@ -1,7 +1,0 @@
-lib/irssi/modules/libotr.so
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-
-@dirrmtry lib/irssi/modules
-@dirrmtry lib/irssi
-@dirrm %%DOCSDIR%%
