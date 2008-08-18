@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellmbgchg2
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
@@ -23,8 +22,10 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmbgchg.so
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/Makefile
+do-build:
+	cd ${BUILD_WRKSRC} && ${CC} -shared ${CFLAGS} -fPIC \
+		`pkg-config --cflags --libs gkrellm` gkrellmbgchg.c \
+		-o gkrellmbgchg.so
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
