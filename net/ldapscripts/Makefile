@@ -7,6 +7,7 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://contribs.martymac.com/ldapscripts/
@@ -49,12 +50,15 @@ PORTDOCS=	README CHANGELOG COPYING VERSION TODO
 # and set paths to OpenLDAP binaries
 post-patch:
 	${REINPLACE_CMD} "s|^all:.*|all:|g" ${WRKSRC}/Makefile
-	${REINPLACE_CMD} "s|^LDAPSEARCHBIN=.*|LDAPSEARCHBIN=\"${LOCALBASE}/bin/ldapsearch\"|g" ${WRKSRC}/etc/ldapscripts.conf
-	${REINPLACE_CMD} "s|^LDAPADDBIN=.*|LDAPADDBIN=\"${LOCALBASE}/bin/ldapadd\"|g" ${WRKSRC}/etc/ldapscripts.conf
-	${REINPLACE_CMD} "s|^LDAPDELETEBIN=.*|LDAPDELETEBIN=\"${LOCALBASE}/bin/ldapdelete\"|g" ${WRKSRC}/etc/ldapscripts.conf
-	${REINPLACE_CMD} "s|^LDAPMODIFYBIN=.*|LDAPMODIFYBIN=\"${LOCALBASE}/bin/ldapmodify\"|g" ${WRKSRC}/etc/ldapscripts.conf
-	${REINPLACE_CMD} "s|^LDAPMODRDNBIN=.*|LDAPMODRDNBIN=\"${LOCALBASE}/bin/ldapmodrdn\"|g" ${WRKSRC}/etc/ldapscripts.conf
-	${REINPLACE_CMD} "s|^LDAPPASSWDBIN=.*|LDAPPASSWDBIN=\"${LOCALBASE}/bin/ldappasswd\"|g" ${WRKSRC}/etc/ldapscripts.conf
+	${REINPLACE_CMD} \
+	-e "s|^LDAPSEARCHBIN=.*|LDAPSEARCHBIN=\"${LOCALBASE}/bin/ldapsearch\"|g" \
+	-e "s|^LDAPADDBIN=.*|LDAPADDBIN=\"${LOCALBASE}/bin/ldapadd\"|g" \
+	-e "s|^LDAPDELETEBIN=.*|LDAPDELETEBIN=\"${LOCALBASE}/bin/ldapdelete\"|g" \
+	-e "s|^LDAPMODIFYBIN=.*|LDAPMODIFYBIN=\"${LOCALBASE}/bin/ldapmodify\"|g" \
+	-e "s|^LDAPMODRDNBIN=.*|LDAPMODRDNBIN=\"${LOCALBASE}/bin/ldapmodrdn\"|g" \
+	-e "s|^LDAPPASSWDBIN=.*|LDAPPASSWDBIN=\"${LOCALBASE}/bin/ldappasswd\"|g" \
+	-e "s|^ICONVBIN=.*|ICONVBIN=\"${LOCALBASE}/bin/iconv\"|g" \
+	${WRKSRC}/etc/ldapscripts.conf
 
 # Install remaining stuff
 post-install:
