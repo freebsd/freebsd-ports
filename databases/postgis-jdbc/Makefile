@@ -8,8 +8,7 @@
 PORTNAME=	postgis-jdbc
 PORTVERSION=	1.4.0
 CATEGORIES=	databases java geography
-MASTER_SITES=	http://www.postgis.org/download/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTFILES=	postgis_${PORTVERSION}.jar
 
 MAINTAINER=	wenheping@gmail.com
