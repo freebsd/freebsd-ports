@@ -169,6 +169,8 @@ _JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
+_JAVA_PORT_NATIVE_FREEBSD_JDK_1_6_INFO=		PORT=java/diablo-jdk16			HOME=${LOCALBASE}/diablo-jdk1.6.0 \
+											VERSION=1.6.0	OS=native	VENDOR=freebsd
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBASE}/diablo-jdk1.5.0 \
 											VERSION=1.5.0	OS=native	VENDOR=freebsd
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		PORT=java/jdk13					HOME=${LOCALBASE}/jdk1.3.1 \
@@ -201,15 +203,15 @@ _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
 # Enforce preferred Java ports according to OS
-.		if (${ARCH} == "amd64" && ${OSVERSION} >= 600000 && ${OSVERSION} < 700000) || \
-		   (${ARCH} == "i386" && ${OSVERSION} < 700000)
-_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_5
+.		if (${OSVERSION} >= 600000 && ${OSVERSION} < 800000)
+_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6
 .		else
-_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5
+_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6
 .		endif
 
 # List all JDK ports
-__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
+__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
+					JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
