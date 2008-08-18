@@ -34,6 +34,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="070b5b22-6d74-11dd-aa18-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>drupal10</lt></range>
+      </package>
+      <package>
+      <name>drupal6</name>
+      <range><lt>6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/295053">
+	  <p>A bug in the output filter employed by Drupal makes it possible
+	    for malicious users to insert script code into pages (cross site
+	    scripting or XSS). A bug in the private filesystem trusts the MIME
+	    type sent by the browser, enabling malicious users with the ability
+	    to upload files to execute cross site scripting attacks.</p>
+	  <p>The BlogAPI module does not validate the extension of uploaded
+	    files, enabling users with the "administer content with blog api"
+	    permission to upload harmful files.  This bug affects both Drupal
+	    5.x and 6.x.</p>
+	  <p>Drupal forms contain a token to protect against cross site
+	    request forgeries (CSRF). The token may not be validated properly
+	    for cached forms and forms containing AHAH elements. This bug
+	    affects Drupal 6.x.</p>
+	  <p>User access rules can be added or deleted upon accessing a
+	    properly formatted URL, making such modifications vulnerable to
+	    cross site request forgeries (CSRF). This may lead to unintended
+	    addition or deletion of an access rule when a sufficiently
+	    privileged user visits a page or site created by a malicious
+	    person. This bug affects both Drupal 5.x and 6.x.</p>
+	  <p>The Upload module in Drupal 6 contains privilege escalation
+	    vulnerabilities for users with the "upload files" permission. This
+	    can lead to users being able to edit nodes which they are normally
+	    not allowed to, delete any file to which the webserver has
+	    sufficient rights, and download attachments of nodes to which they
+	    have no access. Harmful files may also be uploaded via cross site
+	    request forgeries (CSRF). These bugs affect Drupal 6.x.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/295053</url>
+      <url>http://secunia.com/advisories/31462/</url>
+    </references>
+    <dates>
+      <discovery>2008-08-13</discovery>
+      <entry>2008-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c329712a-6b5b-11dd-9d79-001fc61c2a55">
     <topic>ruby -- multiple vulnerabilities in safe level</topic>
     <affects>
