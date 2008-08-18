@@ -99,9 +99,9 @@ lib/libokularcore.so
 lib/libokularcore.so.1
 lib/libokularcore.so.1.1.0
 lib/strigi/strigita_dvi.so
-libdata/pkgconfig/libkipi.pc
-libdata/pkgconfig/libkdcraw.pc
-libdata/pkgconfig/libkexiv2.pc
+libdata/pkgconfig/libkipi-kde4.pc
+libdata/pkgconfig/libkdcraw-kde4.pc
+libdata/pkgconfig/libkexiv2-kde4.pc
 libdata/pkgconfig/libksane.pc
 share/applications/kde4/gwenview.desktop
 share/applications/kde4/kcolorchooser.desktop
