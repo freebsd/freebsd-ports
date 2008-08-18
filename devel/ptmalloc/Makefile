@@ -14,11 +14,11 @@ DISTNAME=	${PORTNAME}2-current
 MAINTAINER=	giffunip@tutopia.com
 COMMENT=	Alternative threads-aware malloc
 
-USE_GMAKE=	yes
 USE_LD_CONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}2
-INCDIR=	include/${PORTNAME}
+ALL_TARGET=	posix
 
+INCDIR=	include/${PORTNAME}
 PLIST_SUB=	INCDIR=${INCDIR}
 
 post-patch:
@@ -32,11 +32,7 @@ do-install:	all
 	${LN} -s ${PREFIX}/lib/ptmalloc.so.2 ${PREFIX}/lib/libptmalloc.so
 	${INSTALL_PROGRAM} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc.a
 
-post-install:
-	@${ECHO_CMD}
-	@${ECHO_CMD} Not much documentation is available.
-	@${ECHO_CMD} Read ${WRKSRC:S|^${WRKDIRPREFIX}${.CURDIR}/||}/README for what there is.
-	@${ECHO_CMD} See also pkg_descr
-	@${ECHO_CMD}
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
