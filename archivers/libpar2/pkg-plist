@@ -31,8 +31,8 @@ lib/libpar2.la
 lib/libpar2.so
 lib/libpar2.so.0
 lib/libpar2/include/config.h
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/libpar2/include
 @dirrm lib/libpar2
 @dirrm include/libpar2
