@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>drupal5</name>
-	<range><lt>drupal10</lt></range>
+	<range><lt>drupal5.10</lt></range>
       </package>
       <package>
       <name>drupal6</name>
