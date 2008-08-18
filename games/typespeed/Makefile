@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	typespeed
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	games
-MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
-		CRITICAL
+MASTER_SITES=	SF \
+		http://tobias.eyedacor.org/typespeed/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-highscoredir="/var/games/typespeed"
 
@@ -27,6 +28,14 @@ CFLAGS+=	-I${LOCALBASE}/include -DWITH_HIGHSCOREDIR=\"${SCOREDIR}\"  \
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}" WRKSRC="${WRKSRC}"
 MAN1=		typespeed.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(/etc\)|${PREFIX}\1|' \
@@ -44,6 +53,13 @@ do-install:
 	${MKDIR} ${DATADIR}/words
 	${FIND} ${WRKSRC}/words/ -name "words.*" -type f \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/words \;
+.if !defined(WITHOUT_NLS)
+.for i in de_DE fr_FR it
+	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \
+		${PREFIX}/share/locale/${i}/LC_MESSAGES/typespeed.mo
+.endfor
+.endif
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
