@@ -73,7 +73,6 @@
     SUBDIR += golem
     SUBDIR += gwm
     SUBDIR += hackedbox
-    SUBDIR += heliodor
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += ion-2
