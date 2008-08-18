@@ -15,7 +15,7 @@ PKGNAMESUFFIX?=	-odbc
 DISTNAME=	psqlodbc-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	alex-goncharov@comcast.net
 COMMENT=	PostgreSQL ODBC client support
 
 # PostgreSQL ODBC support needs an ODBC driver manager to be
