@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>drupal5</name>
-	<range><lt>drupal5.10</lt></range>
+	<range><lt>5.10</lt></range>
       </package>
       <package>
       <name>drupal6</name>
@@ -207,14 +207,11 @@ Note:  Please add new entries to the beginning of this file.
 	    option can be specified, pointing to the directory where
 	    attachments to import are stored. If the XML file being
 	    read by importxml.pl contains a malicious</p>
-	    <pre>../relative_path/to/local_file</pre>
-	    <p>node, the script follows this relative path and attaches the
+	  <pre>../relative_path/to/local_file</pre>
+	  <p>node, the script follows this relative path and attaches the
 	    local file pointed by it to the bug, making the file public.
 	    The security fix makes sure the relative path is always
 	    ignored.</p>
-	    <p>Most Bugzilla installations will not be vulnerable, as
-	    they do not use --attach_path with importxml.pl.
-	    (In fact, most installations don't use importxml.pl at all.)</p>
 	</blockquote>
       </body>
     </description>
@@ -224,6 +221,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-06-03</discovery>
       <entry>2008-08-15</entry>
+      <modified>2008-08-19</modified>
     </dates>
   </vuln>
 
@@ -436,17 +434,16 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Pylons team reports:</p>
 	<blockquote cite="http://wiki.pylonshq.com/display/pylonsdocs/0.9.6.2">
 	  <p>The error.py controller uses paste.fileapp to serve the static
-	  resources to the browser. The default error.py controller uses
-	  os.path.join to combine the id from Routes with the media path.
-	  Routes prior to 1.8 double unquoted the PATH_INFO, resulting in
-	  FileApp returning files from the filesystem that can be outside
-	  of the intended media path directory.
-	  </p>
+	    resources to the browser. The default error.py controller uses
+	    os.path.join to combine the id from Routes with the media path.
+	    Routes prior to 1.8 double unquoted the PATH_INFO, resulting in
+	    FileApp returning files from the filesystem that can be outside
+	    of the intended media path directory.</p>
 	  <p>An attacker can craft URL's which utilize the double escaping
-	  to pass in a name to the error.py controller which contains a
-	  leading slash thus escaping the intended media path and serving
-	  files from any location on the filesystem that the Pylons
-	  application has access to.</p>
+	    to pass in a name to the error.py controller which contains a
+	    leading slash thus escaping the intended media path and serving
+	    files from any location on the filesystem that the Pylons
+	    application has access to.</p>
 	</blockquote>
       </body>
     </description>
