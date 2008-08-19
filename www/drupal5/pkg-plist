@@ -91,6 +91,7 @@
 %%DRUPAL_BASE%%/modules/blog/blog.info
 %%DRUPAL_BASE%%/modules/blog/blog.module
 %%DRUPAL_BASE%%/modules/blogapi/blogapi.info
+%%DRUPAL_BASE%%/modules/blogapi/blogapi.install
 %%DRUPAL_BASE%%/modules/blogapi/blogapi.module
 %%DRUPAL_BASE%%/modules/book/book.css
 %%DRUPAL_BASE%%/modules/book/book.info
