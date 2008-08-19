@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTVERSION=	1.3.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,7 @@ OPTIONS=	QUICKTIME "With Quicktime support" off	\
 		FFMPEG_KINO "With ffmpeg-kino" off
 
 USE_XORG=	x11 xv ice
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
