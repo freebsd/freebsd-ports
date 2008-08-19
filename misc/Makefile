@@ -534,6 +534,7 @@
     SUBDIR += vifm
     SUBDIR += viz
     SUBDIR += voltcraft304
+    SUBDIR += wanpipe
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
