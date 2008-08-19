@@ -53,9 +53,9 @@ www/validator/htdocs/dev/tests/bogus-fpi4.html
 www/validator/htdocs/dev/tests/bogus-fpi5.xhtml
 www/validator/htdocs/dev/tests/bogus-xmlpi.html
 www/validator/htdocs/dev/tests/bogus-xmlpi.xhtml
+www/validator/htdocs/dev/tests/charset-xmldecl.xhtml
 www/validator/htdocs/dev/tests/charset_mismatch-http_meta.html.utf8
 www/validator/htdocs/dev/tests/charset_mismatch-http_xmldec.xhtml.utf8
-www/validator/htdocs/dev/tests/charset-xmldecl.xhtml
 www/validator/htdocs/dev/tests/colons.html
 www/validator/htdocs/dev/tests/error_pls_warning.html
 www/validator/htdocs/dev/tests/errors_sorting.smi
@@ -335,6 +335,9 @@ www/validator/htdocs/results.css
 www/validator/htdocs/robots.txt
 www/validator/htdocs/scripts/mootools.js
 www/validator/htdocs/scripts/w3c-validator.js
+www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml-basic11.dtd
+www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml11-model-1.mod
+www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml11.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict.dtd
@@ -521,6 +524,14 @@ www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-special.ent
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-struct-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-symbol.ent
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-text-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic10-f.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic10-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic10.cat
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic10.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic11-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic11.cat
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic11.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-inputmode-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-blkpres-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-inlpres-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-inlstyle-1.mod
@@ -619,6 +630,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 @dirrm www/validator/htdocs/sgml-lib/REC-smil20-20050107
 @dirrm www/validator/htdocs/sgml-lib/REC-smil-19980615
@@ -635,6 +647,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML2-20031021
 @dirrm www/validator/htdocs/sgml-lib/ISO-HTML
 @dirrm www/validator/htdocs/sgml-lib/IETF
+@dirrm www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713
 @dirrm www/validator/htdocs/sgml-lib
 @dirrm www/validator/htdocs/scripts
 @dirrm www/validator/htdocs/misc
