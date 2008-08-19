@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	schroedinger
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.diracvideo.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-speed Dirac codec
 
 LIB_DEPENDS=	oil:${PORTSDIR}/devel/liboil

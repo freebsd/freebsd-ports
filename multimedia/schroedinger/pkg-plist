@@ -23,6 +23,7 @@ include/schroedinger-1.0/schroedinger/schromotion.h
 include/schroedinger-1.0/schroedinger/schromotionest.h
 include/schroedinger-1.0/schroedinger/schropack.h
 include/schroedinger-1.0/schroedinger/schroparams.h
+include/schroedinger-1.0/schroedinger/schroparse.h
 include/schroedinger-1.0/schroedinger/schrophasecorrelation.h
 include/schroedinger-1.0/schroedinger/schroqueue.h
 include/schroedinger-1.0/schroedinger/schrossim.h
@@ -30,11 +31,12 @@ include/schroedinger-1.0/schroedinger/schrotables.h
 include/schroedinger-1.0/schroedinger/schrounpack.h
 include/schroedinger-1.0/schroedinger/schroutils.h
 include/schroedinger-1.0/schroedinger/schrovideoformat.h
+include/schroedinger-1.0/schroedinger/schrovirtframe.h
 include/schroedinger-1.0/schroedinger/schrowavelet.h
 lib/libschroedinger-1.0.a
 lib/libschroedinger-1.0.la
 lib/libschroedinger-1.0.so
-lib/libschroedinger-1.0.so.0
+lib/libschroedinger-1.0.so.1
 libdata/pkgconfig/schroedinger-1.0.pc
 share/gtk-doc/html/schroedinger/home.png
 share/gtk-doc/html/schroedinger/index.html
