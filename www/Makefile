@@ -970,6 +970,7 @@
     SUBDIR += p5-Text-Markdown-ApacheHandler
     SUBDIR += p5-Tie-TinyURL
     SUBDIR += p5-URI-Fetch
+    SUBDIR += p5-URI-ParseSearchString
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-URI-Title
     SUBDIR += p5-URI-ToDisk

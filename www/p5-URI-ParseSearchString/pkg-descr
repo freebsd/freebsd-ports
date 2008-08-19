@@ -1,0 +1,11 @@
+This module provides a simple function to parse and extract search
+engine query strings.  It was designed and tested having Apache referrer
+logs in mind.  It can be used for a wide number of purposes, including
+tracking down what keywords people use on popular search engines before
+they land on a site.  It makes use of URI::split to extract the string
+and URI::Escape to un-escape the encoded characters in it.  Although a
+number of existing modules and scripts exist for this purpose, the
+majority of them are either outdated using obsolete search strings
+associated with each engine.
+
+WWW: http://search.cpan.org/dist/URI-ParseSearchString/
