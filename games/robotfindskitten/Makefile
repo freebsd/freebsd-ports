@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	robotfindskitten
-PORTVERSION=	1600003.248b
-PORTREVISION=	1
+PORTVERSION=	1.7320508.406
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://robotfindskitten.org/download/POSIX/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ceri@FreeBSD.org
+MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Yet another zen simulation
 
 GNU_CONFIGURE=	YES
 USE_GNOME=	glib12
+CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/robotfindskitten
