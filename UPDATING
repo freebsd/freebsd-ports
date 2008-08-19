@@ -804,7 +804,14 @@ upgrades.
 
   In order to update to glib 2.16 or higher, you must first update the
   glib20 port on its own or you will get a failure trying to install
-  devel/gio-fam-backend saying it cannot find -lgio-2.0.
+  devel/gio-fam-backend saying it cannot find -lgio-2.0. Portmaster users
+  can do:
+ 
+	portmaster glib-2\*
+
+  or, if you're using portupgrade:
+
+	portupgrade glib-2\*
 
 20080318:
   AFFECTS: users of audio/gnump3d
