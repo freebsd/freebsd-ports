@@ -20,7 +20,7 @@ COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	Package will be 560MB; set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 715MB; set FORCE_PACKAGE if you really want it
 WRKSRC=		${WRKDIR}/UrbanTerror
 
 DATADIR=	${Q3DIR}
