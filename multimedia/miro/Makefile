@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A video player to get internet TV broadcasts
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex				\
