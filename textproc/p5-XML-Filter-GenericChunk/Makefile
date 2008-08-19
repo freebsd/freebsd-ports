@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base Class for SAX Filters parsing WellBallanced Chunks
 
 BUILD_DEPENDS=	p5-XML-LibXML>=1.4:${PORTSDIR}/textproc/p5-XML-LibXML \
