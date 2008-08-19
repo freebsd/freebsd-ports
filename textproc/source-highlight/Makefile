@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	source-highlight
-PORTVERSION=	2.7
+PORTVERSION=	2.10
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	src-highlite
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	src-highlite
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
+BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes

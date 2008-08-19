@@ -1,0 +1,11 @@
+--- configure.orig	2008-08-19 14:41:57.000000000 +0800
++++ configure	2008-08-19 14:42:09.000000000 +0800
+@@ -23377,7 +23377,7 @@
+ fi
+ 
+ 
+-for ac_prog in ctags exuberant-ctags
++for ac_prog in exctags exuberant-ctags
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
