@@ -1,0 +1,10 @@
+Este conjunto de ficheros compone un diccionario de español con unos 
+53.000 términos. El número de términos está en constante incremento, 
+aunque no se puede disponer de nuevas versiones hasta que no se comprueba 
+su correcto funcionamiento. Momento en que se hacen públicas.
+
+La distribución actual de COES incluye un corrector ortográfico.
+Estas herramientas se usan en conjunto con la versión internacional del 
+ispell 3.1.13 o posterior.
+
+WWW: http://www.datsi.fi.upm.es/~coes/
