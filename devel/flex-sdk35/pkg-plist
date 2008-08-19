@@ -4,6 +4,7 @@ bin/fdb
 bin/mxmlc
 %%JAVAJARDIR%%/%%PORTNAME%%/asc.jar
 %%JAVAJARDIR%%/%%PORTNAME%%/asdoc.jar
+%%JAVAJARDIR%%/%%PORTNAME%%/backport-util-concurrent.jar
 %%JAVAJARDIR%%/%%PORTNAME%%/batik-awt-util.jar
 %%JAVAJARDIR%%/%%PORTNAME%%/batik-bridge.jar
 %%JAVAJARDIR%%/%%PORTNAME%%/batik-css.jar
@@ -38,6 +39,7 @@ bin/mxmlc
 %%DATADIR%%/asdoc/templates/appendixes.xsl
 %%DATADIR%%/asdoc/templates/asDocHelper
 %%DATADIR%%/asdoc/templates/asDocHelper.exe
+%%DATADIR%%/asdoc/templates/asDocHelper.linux
 %%DATADIR%%/asdoc/templates/asdoc-util.xsl
 %%DATADIR%%/asdoc/templates/asdoc.js
 %%DATADIR%%/asdoc/templates/class-files.xsl
@@ -83,17 +85,22 @@ bin/mxmlc
 %%DATADIR%%/frameworks/license.properties
 %%DATADIR%%/frameworks/localFonts.ser
 %%DATADIR%%/frameworks/locale/en_US/SharedResources.properties
+%%DATADIR%%/frameworks/locale/en_US/automation.properties
+%%DATADIR%%/frameworks/locale/en_US/automation_rb.swc
 %%DATADIR%%/frameworks/locale/en_US/collections.properties
 %%DATADIR%%/frameworks/locale/en_US/controls.properties
 %%DATADIR%%/frameworks/locale/en_US/core.properties
 %%DATADIR%%/frameworks/locale/en_US/effects.properties
-%%DATADIR%%/frameworks/locale/en_US/fds_rb.swc
 %%DATADIR%%/frameworks/locale/en_US/formatters.properties
 %%DATADIR%%/frameworks/locale/en_US/framework_rb.swc
 %%DATADIR%%/frameworks/locale/en_US/logging.properties
+%%DATADIR%%/frameworks/locale/en_US/messaging.properties
+%%DATADIR%%/frameworks/locale/en_US/rpc.properties
+%%DATADIR%%/frameworks/locale/en_US/rpc_rb.swc
 %%DATADIR%%/frameworks/locale/en_US/skins.properties
 %%DATADIR%%/frameworks/locale/en_US/states.properties
 %%DATADIR%%/frameworks/locale/en_US/styles.properties
+%%DATADIR%%/frameworks/locale/en_US/utils.properties
 %%DATADIR%%/frameworks/locale/en_US/validators.properties
 %%DATADIR%%/frameworks/macFonts.ser
 %%DATADIR%%/frameworks/mxml-manifest.xml
@@ -197,6 +204,7 @@ bin/mxmlc
 %%DATADIR%%/frameworks/source/mx/automation/delegates/core/UIComponentAutomationImpl.as
 %%DATADIR%%/frameworks/source/mx/automation/delegates/core/UITextFieldAutomationImpl.as
 %%DATADIR%%/frameworks/source/mx/automation/events/AutomationDragEvent.as
+%%DATADIR%%/frameworks/source/mx/automation/events/AutomationEvent.as
 %%DATADIR%%/frameworks/source/mx/automation/events/AutomationRecordEvent.as
 %%DATADIR%%/frameworks/source/mx/automation/events/AutomationReplayEvent.as
 %%DATADIR%%/frameworks/source/mx/automation/events/ListItemSelectEvent.as
@@ -647,6 +655,7 @@ bin/mxmlc
 %%DATADIR%%/frameworks/source/mx/graphics/GradientEntry.as
 %%DATADIR%%/frameworks/source/mx/graphics/IFill.as
 %%DATADIR%%/frameworks/source/mx/graphics/IStroke.as
+%%DATADIR%%/frameworks/source/mx/graphics/ImageSnapshot.as
 %%DATADIR%%/frameworks/source/mx/graphics/LinearGradient.as
 %%DATADIR%%/frameworks/source/mx/graphics/LinearGradientStroke.as
 %%DATADIR%%/frameworks/source/mx/graphics/RadialGradient.as
@@ -654,6 +663,9 @@ bin/mxmlc
 %%DATADIR%%/frameworks/source/mx/graphics/RoundedRectangle.as
 %%DATADIR%%/frameworks/source/mx/graphics/SolidColor.as
 %%DATADIR%%/frameworks/source/mx/graphics/Stroke.as
+%%DATADIR%%/frameworks/source/mx/graphics/codec/IImageEncoder.as
+%%DATADIR%%/frameworks/source/mx/graphics/codec/JPEGEncoder.as
+%%DATADIR%%/frameworks/source/mx/graphics/codec/PNGEncoder.as
 %%DATADIR%%/frameworks/source/mx/logging/AbstractTarget.as
 %%DATADIR%%/frameworks/source/mx/logging/ILogger.as
 %%DATADIR%%/frameworks/source/mx/logging/ILoggingTarget.as
@@ -703,7 +715,6 @@ bin/mxmlc
 %%DATADIR%%/frameworks/source/mx/managers/ToolTipManagerImpl.as
 %%DATADIR%%/frameworks/source/mx/managers/dragClasses/DragProxy.as
 %%DATADIR%%/frameworks/source/mx/managers/layoutClasses/PriorityQueue.as
-%%DATADIR%%/frameworks/source/mx/messaging/config/LoaderConfig.as
 %%DATADIR%%/frameworks/source/mx/modules/IModuleInfo.as
 %%DATADIR%%/frameworks/source/mx/modules/Module.as
 %%DATADIR%%/frameworks/source/mx/modules/ModuleBase.as
@@ -719,7 +730,6 @@ bin/mxmlc
 %%DATADIR%%/frameworks/source/mx/readme.txt
 %%DATADIR%%/frameworks/source/mx/resources/Locale.as
 %%DATADIR%%/frameworks/source/mx/resources/ResourceBundle.as
-%%DATADIR%%/frameworks/source/mx/rpc/IResponder.as
 %%DATADIR%%/frameworks/source/mx/skins/Border.as
 %%DATADIR%%/frameworks/source/mx/skins/ProgrammaticSkin.as
 %%DATADIR%%/frameworks/source/mx/skins/RectangularBorder.as
@@ -840,456 +850,41 @@ bin/mxmlc
 %%DATADIR%%/frameworks/themes/smoke_bg.jpg
 %%DATADIR%%/frameworks/themes/wooden_bg.jpg
 %%DATADIR%%/frameworks/winFonts.ser
-%%EXAMPLESDIR%%/README.txt
-%%EXAMPLESDIR%%/build-samples.bat
-%%EXAMPLESDIR%%/build-samples.sh
-%%EXAMPLESDIR%%/explorer/AC_OETags.js
-%%EXAMPLESDIR%%/explorer/COPYRIGHT.txt
-%%EXAMPLESDIR%%/explorer/README.html
-%%EXAMPLESDIR%%/explorer/SourceTab.mxml
-%%EXAMPLESDIR%%/explorer/build.bat
-%%EXAMPLESDIR%%/explorer/build.sh
-%%EXAMPLESDIR%%/explorer/containers/AccordionExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/DividedBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/FormExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/GridLayoutExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/HBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/HDividedBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimpleApplicationControlBarExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimpleBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimpleCanvasExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimpleControlBarExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimplePanelExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/SimpleTitleWindowExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/TabNavigatorExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/TileLayoutExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/TitleWindowApp.mxml
-%%EXAMPLESDIR%%/explorer/containers/VBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/VDividedBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/ViewStackExample.mxml
-%%EXAMPLESDIR%%/explorer/containers/assets/Nokia_6630.png
-%%EXAMPLESDIR%%/explorer/controls/ButtonBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/ButtonExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/CheckBoxExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/ColorPickerExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/DateChooserExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/DateFieldExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/HScrollBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/HorizontalListExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/LabelExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/LinkBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/LinkButtonExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/Local.mxml
-%%EXAMPLESDIR%%/explorer/controls/MenuBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/NumericStepperExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/PopUpButtonExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/PopUpButtonMenuExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/RadioButtonExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/RadioButtonGroupExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/RichTextEditorExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleAlert.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleComboBox.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleDataGrid.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleHRule.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleImage.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleImageHSlider.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleImageVSlider.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleList.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleLoader.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleMenuExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleProgressBar.mxml
-%%EXAMPLESDIR%%/explorer/controls/SimpleVRule.mxml
-%%EXAMPLESDIR%%/explorer/controls/SpacerExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TabBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TextAreaExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TextExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TextInputExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TileListExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/ToggleButtonBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/TreeExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/VScrollBarExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/VideoDisplayExample.mxml
-%%EXAMPLESDIR%%/explorer/controls/assets/FlexLogo.gif
-%%EXAMPLESDIR%%/explorer/controls/assets/Nokia_6630.png
-%%EXAMPLESDIR%%/explorer/controls/assets/Nokia_6680.png
-%%EXAMPLESDIR%%/explorer/controls/assets/Nokia_7610.png
-%%EXAMPLESDIR%%/explorer/controls/assets/Nokia_lg_v_keypad.png
-%%EXAMPLESDIR%%/explorer/controls/assets/Nokia_sm_v_keypad.png
-%%EXAMPLESDIR%%/explorer/controls/assets/TransportButtons.fla
-%%EXAMPLESDIR%%/explorer/controls/assets/TransportButtons.swf
-%%EXAMPLESDIR%%/explorer/controls/assets/buttonDisabled.gif
-%%EXAMPLESDIR%%/explorer/controls/assets/buttonDown.gif
-%%EXAMPLESDIR%%/explorer/controls/assets/buttonOver.gif
-%%EXAMPLESDIR%%/explorer/controls/assets/buttonUp.gif
-%%EXAMPLESDIR%%/explorer/controls/assets/mm-icon.png
-%%EXAMPLESDIR%%/explorer/controls/assets/phone.flv
-%%EXAMPLESDIR%%/explorer/core/RepeaterExample.mxml
-%%EXAMPLESDIR%%/explorer/core/SimpleApplicationExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/AnimatePropertyEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/BlurEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/CompositeEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/DissolveEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/FadeEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/GlowEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/IrisEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/MoveEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/ParallelEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/PauseEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/ResizeEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/RotateEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/SequenceEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/SimpleEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/SimpleTweenEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/SoundEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/WipeDownExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/WipeLeftExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/WipeRightExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/WipeUpExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/ZoomEffectExample.mxml
-%%EXAMPLESDIR%%/explorer/effects/assets/MyriadWebPro.ttf
-%%EXAMPLESDIR%%/explorer/effects/assets/Nokia_6630.png
-%%EXAMPLESDIR%%/explorer/effects/assets/jazz.mp3
-%%EXAMPLESDIR%%/explorer/explorer.html
-%%EXAMPLESDIR%%/explorer/explorer.mxml
-%%EXAMPLESDIR%%/explorer/explorer.xml
-%%EXAMPLESDIR%%/explorer/formatters/CurrencyFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/DateFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/NumberFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/PhoneFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/SimpleFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/SwitchSymbolFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/formatters/ZipCodeFormatterExample.mxml
-%%EXAMPLESDIR%%/explorer/loaderPanel.mxml
-%%EXAMPLESDIR%%/explorer/printing/FormPrintFooter.mxml
-%%EXAMPLESDIR%%/explorer/printing/FormPrintHeader.mxml
-%%EXAMPLESDIR%%/explorer/printing/FormPrintView.mxml
-%%EXAMPLESDIR%%/explorer/printing/PrintDataGridExample.mxml
-%%EXAMPLESDIR%%/explorer/states/StatesExample.mxml
-%%EXAMPLESDIR%%/explorer/states/TransitionExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/CreditCardValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/CurrencyValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/DateValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/EmailValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/NumberValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/PhoneNumberValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/RegExValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/SimpleValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/SocialSecurityValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/StringValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/validators/ZipCodeValidatorExample.mxml
-%%EXAMPLESDIR%%/explorer/viewsource.mxml
-%%EXAMPLESDIR%%/flexstore/AC_OETags.js
-%%EXAMPLESDIR%%/flexstore/HomeView.mxml
-%%EXAMPLESDIR%%/flexstore/ProductsView.mxml
-%%EXAMPLESDIR%%/flexstore/README.html
-%%EXAMPLESDIR%%/flexstore/SupportView.mxml
-%%EXAMPLESDIR%%/flexstore/assets/beige_background.jpg
-%%EXAMPLESDIR%%/flexstore/assets/beige_dotted_map.png
-%%EXAMPLESDIR%%/flexstore/assets/blue_background.jpg
-%%EXAMPLESDIR%%/flexstore/assets/blue_dotted_map.png
-%%EXAMPLESDIR%%/flexstore/assets/grip.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_cart_empty.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_cart_full.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_compare.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_details.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_magnifier.png
-%%EXAMPLESDIR%%/flexstore/assets/icon_tiles.png
-%%EXAMPLESDIR%%/flexstore/assets/logo_blue.png
-%%EXAMPLESDIR%%/flexstore/assets/logo_orange.png
-%%EXAMPLESDIR%%/flexstore/assets/phone.flv
-%%EXAMPLESDIR%%/flexstore/assets/phone_1.png
-%%EXAMPLESDIR%%/flexstore/assets/phone_2.png
-%%EXAMPLESDIR%%/flexstore/assets/phone_3.png
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3100_blue.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3100_pink.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3120.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3220.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3230_black.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3230_bronze.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3595.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_3650.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6010.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6360.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6620.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6630.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6670.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6680.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_6820.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_7610_black.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_7610_white.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_9300_close.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_9300_open.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_9500_close.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_9500_open.gif
-%%EXAMPLESDIR%%/flexstore/assets/pic/Nokia_N90.gif
-%%EXAMPLESDIR%%/flexstore/assets/support_map.png
-%%EXAMPLESDIR%%/flexstore/assets/support_mapmarker_a.png
-%%EXAMPLESDIR%%/flexstore/assets/support_mapmarker_b.png
-%%EXAMPLESDIR%%/flexstore/assets/support_mapmarker_c.png
-%%EXAMPLESDIR%%/flexstore/assets/support_mapmarker_plus.png
-%%EXAMPLESDIR%%/flexstore/assets/trashcan.png
-%%EXAMPLESDIR%%/flexstore/beige.css
-%%EXAMPLESDIR%%/flexstore/blue.css
-%%EXAMPLESDIR%%/flexstore/build.bat
-%%EXAMPLESDIR%%/flexstore/build.sh
-%%EXAMPLESDIR%%/flexstore/data/catalog.xml
-%%EXAMPLESDIR%%/flexstore/flexstore.html
-%%EXAMPLESDIR%%/flexstore/flexstore.mxml
-%%EXAMPLESDIR%%/flexstore/main.css
-%%EXAMPLESDIR%%/flexstore/productsView/CatalogTitleButtons.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/Grip.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductCart.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductCatalogPanel.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductCatalogThumbnail.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductDetails.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductFilterPanel.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductList.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductListItem.mxml
-%%EXAMPLESDIR%%/flexstore/productsView/ProductSupport.mxml
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/ButtonBarButtonSkin.as
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/Product.as
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/ProductFilter.as
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/ProductFilterEvent.as
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/ProductListEvent.as
-%%EXAMPLESDIR%%/flexstore/samples/flexstore/ProductThumbEvent.as
-%%EXAMPLESDIR%%/hybridstore/AC_OETags.js
-%%EXAMPLESDIR%%/hybridstore/AnimatedTileList.mxml
-%%EXAMPLESDIR%%/hybridstore/README.html
-%%EXAMPLESDIR%%/hybridstore/Thumbnail.mxml
-%%EXAMPLESDIR%%/hybridstore/assets/background.jpg
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3100_blue.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3100_pink.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3120.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3220.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3230_black.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3230_bronze.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3595.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_3650.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6010.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6360.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6620.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6630.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6670.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6680.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_6820.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_7610_black.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_7610_white.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_9300_close.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_9300_open.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_9500_close.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_9500_open.gif
-%%EXAMPLESDIR%%/hybridstore/assets/pic/Nokia_N90.gif
-%%EXAMPLESDIR%%/hybridstore/assets/xdslider.png
-%%EXAMPLESDIR%%/hybridstore/build.bat
-%%EXAMPLESDIR%%/hybridstore/build.sh
-%%EXAMPLESDIR%%/hybridstore/catalog.mxml
-%%EXAMPLESDIR%%/hybridstore/catalog.xml
-%%EXAMPLESDIR%%/hybridstore/hybridstore.css
-%%EXAMPLESDIR%%/hybridstore/hybridstore.html
-%%EXAMPLESDIR%%/hybridstore/js/YAHOO.js
-%%EXAMPLESDIR%%/hybridstore/js/dom.js
-%%EXAMPLESDIR%%/hybridstore/js/dragdrop.js
-%%EXAMPLESDIR%%/hybridstore/js/event.js
-%%EXAMPLESDIR%%/hybridstore/js/slider.js
-%%EXAMPLESDIR%%/photoviewer/AC_OETags.js
-%%EXAMPLESDIR%%/photoviewer/CarouselView.mxml
-%%EXAMPLESDIR%%/photoviewer/NavButton.mxml
-%%EXAMPLESDIR%%/photoviewer/PhotoViewer-config.xml
-%%EXAMPLESDIR%%/photoviewer/PhotoViewer.html
-%%EXAMPLESDIR%%/photoviewer/PhotoViewer.mxml
-%%EXAMPLESDIR%%/photoviewer/README.html
-%%EXAMPLESDIR%%/photoviewer/SlideShowView.mxml
-%%EXAMPLESDIR%%/photoviewer/Thumbnail.mxml
-%%EXAMPLESDIR%%/photoviewer/ThumbnailView.mxml
-%%EXAMPLESDIR%%/photoviewer/assets/icon_carousel.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_left.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_left_disabled.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_list.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_pause.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_play.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_right.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_right_disabled.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_slideshow.png
-%%EXAMPLESDIR%%/photoviewer/assets/icon_stop.png
-%%EXAMPLESDIR%%/photoviewer/build.bat
-%%EXAMPLESDIR%%/photoviewer/build.sh
-%%EXAMPLESDIR%%/photoviewer/data/galleries.xml
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Acropolis on Calton Hill.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/EiffelTower.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Fountain and Edinburgh Castle.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Hippo.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/MunichCityHall.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Pantheon.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Pueblo.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Regal_Bengal_tiger.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/Watchtower.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/abandoned car.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/amalfi-bw.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/amalfi.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/hoover-dam.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/ilDuomo.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/londonbridge.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/nepal1.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/nepal2.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/ravello.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/shades.jpg
-%%EXAMPLESDIR%%/photoviewer/galleries/flextravel/tuscany.jpg
-%%EXAMPLESDIR%%/photoviewer/haloButtonTrans.as
-%%EXAMPLESDIR%%/photoviewer/locale/de_DE/strings.properties
-%%EXAMPLESDIR%%/photoviewer/locale/en_US/strings.properties
-%%EXAMPLESDIR%%/photoviewer/locale/fr_FR/strings.properties
-%%EXAMPLESDIR%%/photoviewer/locale/ja_JP/strings.properties
-%%EXAMPLESDIR%%/photoviewer/main.css
-%%EXAMPLESDIR%%/photoviewer/samples/photoviewer/Carousel.as
-%%EXAMPLESDIR%%/photoviewer/samples/photoviewer/CarouselImage.as
-%%EXAMPLESDIR%%/photoviewer/samples/photoviewer/Gallery.as
-%%EXAMPLESDIR%%/photoviewer/samples/photoviewer/Photo.as
-%%EXAMPLESDIR%%/photoviewer/samples/photoviewer/PhotoService.as
-%%EXAMPLESDIR%%/readme.css
-%%EXAMPLESDIR%%/restaurant/AC_OETags.js
-%%EXAMPLESDIR%%/restaurant/README.html
-%%EXAMPLESDIR%%/restaurant/WEB-INF/db/restaurant/restaurant.log
-%%EXAMPLESDIR%%/restaurant/WEB-INF/db/restaurant/restaurant.properties
-%%EXAMPLESDIR%%/restaurant/WEB-INF/db/restaurant/restaurant.script
-%%EXAMPLESDIR%%/restaurant/WEB-INF/lib/hsqldb.jar
-%%EXAMPLESDIR%%/restaurant/WEB-INF/lib/webservices.jar
-%%EXAMPLESDIR%%/restaurant/WEB-INF/lib/xercesImpl.jar
-%%EXAMPLESDIR%%/restaurant/WEB-INF/lib/xmlParserAPIs.jar
-%%EXAMPLESDIR%%/restaurant/WEB-INF/server-config.wsdd
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/CategoryService.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/ConnectionManager.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/Restaurant.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/RestaurantCategory.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/RestaurantService.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/RestaurantSummary.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant/Review.java
-%%EXAMPLESDIR%%/restaurant/WEB-INF/web.xml
-%%EXAMPLESDIR%%/restaurant/assets/img/plus.png
-%%EXAMPLESDIR%%/restaurant/assets/img/star_blue.png
-%%EXAMPLESDIR%%/restaurant/assets/img/star_empty.png
-%%EXAMPLESDIR%%/restaurant/assets/img/star_filled.png
-%%EXAMPLESDIR%%/restaurant/assets/img/star_orange.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars0.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars1.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars2.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars3.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars4.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars5.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars_1_over.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars_2_over.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars_3_over.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars_4_over.png
-%%EXAMPLESDIR%%/restaurant/assets/img/stars_5_over.png
-%%EXAMPLESDIR%%/restaurant/assets/pic/addis.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/aquitaine.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/argana.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/aspasia.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/atasca.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/aujourdhui.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/cuchi.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/dailycatch.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/dali.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/durgin.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/durginpark.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/espalier.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/flora.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/fugakyu.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/hamersley.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/jo.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/kashmir.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/kingfish.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/lalarokh.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/lesoir.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/lumiere.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/mammamaria.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/newginza.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/noimage.png
-%%EXAMPLESDIR%%/restaurant/assets/pic/oleana.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/prezza.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/rialto.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/sabur.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/seldelaterre.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/sonsie.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/tangierino.jpg
-%%EXAMPLESDIR%%/restaurant/assets/pic/zygomates.jpg
-%%EXAMPLESDIR%%/restaurant/build.bat
-%%EXAMPLESDIR%%/restaurant/build.sh
-%%EXAMPLESDIR%%/restaurant/build.xml
-%%EXAMPLESDIR%%/restaurant/finder.html
-%%EXAMPLESDIR%%/restaurant/finder.mxml
-%%EXAMPLESDIR%%/restaurant/recentReviews.html
-%%EXAMPLESDIR%%/restaurant/recentReviews.jsp
-%%EXAMPLESDIR%%/restaurant/recentReviews.mxml
-%%EXAMPLESDIR%%/restaurant/restaurant.css
-%%EXAMPLESDIR%%/restaurant/samples/restaurant/Review.as
-%%EXAMPLESDIR%%/restaurant/samples/restaurant/ServiceLocator.as
-%%EXAMPLESDIR%%/restaurant/samples/restaurant/TokenResponder.as
-%%EXAMPLESDIR%%/restaurant/view/AccessibleImage.as
-%%EXAMPLESDIR%%/restaurant/view/AccessibleLabel.as
-%%EXAMPLESDIR%%/restaurant/view/AccessibleText.as
-%%EXAMPLESDIR%%/restaurant/view/CategoryFilter.mxml
-%%EXAMPLESDIR%%/restaurant/view/IAccessibleComponent.as
-%%EXAMPLESDIR%%/restaurant/view/Rating.mxml
-%%EXAMPLESDIR%%/restaurant/view/RestaurantAccImpl.as
-%%EXAMPLESDIR%%/restaurant/view/RestaurantDetails.mxml
-%%EXAMPLESDIR%%/restaurant/view/ReviewList.mxml
-%%EXAMPLESDIR%%/restaurant/view/ReviewThumbnail.mxml
-%%EXAMPLESDIR%%/restaurant/view/ThumbnailRepeater.as
+%%DATADIR%%/resources/html-templates/client-side-detection-with-history/AC_OETags.js
+%%DATADIR%%/resources/html-templates/client-side-detection-with-history/history.htm
+%%DATADIR%%/resources/html-templates/client-side-detection-with-history/history.js
+%%DATADIR%%/resources/html-templates/client-side-detection-with-history/history.swf
+%%DATADIR%%/resources/html-templates/client-side-detection-with-history/index.template.html
+%%DATADIR%%/resources/html-templates/client-side-detection/AC_OETags.js
+%%DATADIR%%/resources/html-templates/client-side-detection/index.template.html
+%%DATADIR%%/resources/html-templates/express-installation-with-history/AC_OETags.js
+%%DATADIR%%/resources/html-templates/express-installation-with-history/history.htm
+%%DATADIR%%/resources/html-templates/express-installation-with-history/history.js
+%%DATADIR%%/resources/html-templates/express-installation-with-history/history.swf
+%%DATADIR%%/resources/html-templates/express-installation-with-history/index.template.html
+%%DATADIR%%/resources/html-templates/express-installation-with-history/playerProductInstall.swf
+%%DATADIR%%/resources/html-templates/express-installation/AC_OETags.js
+%%DATADIR%%/resources/html-templates/express-installation/index.template.html
+%%DATADIR%%/resources/html-templates/express-installation/playerProductInstall.swf
+%%DATADIR%%/resources/html-templates/no-player-detection-with-history/AC_OETags.js
+%%DATADIR%%/resources/html-templates/no-player-detection-with-history/history.htm
+%%DATADIR%%/resources/html-templates/no-player-detection-with-history/history.js
+%%DATADIR%%/resources/html-templates/no-player-detection-with-history/history.swf
+%%DATADIR%%/resources/html-templates/no-player-detection-with-history/index.template.html
+%%DATADIR%%/resources/html-templates/no-player-detection/AC_OETags.js
+%%DATADIR%%/resources/html-templates/no-player-detection/index.template.html
 %%DOCSDIR%%/additional-legal-notices.htm
 %%DOCSDIR%%/license.htm
 %%DOCSDIR%%/readme.htm
-%%DOCSDIR%%/readme_hotfix1_159086.htm
 @dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/restaurant/view
-@dirrm %%EXAMPLESDIR%%/restaurant/samples/restaurant
-@dirrm %%EXAMPLESDIR%%/restaurant/samples
-@dirrm %%EXAMPLESDIR%%/restaurant/assets/pic
-@dirrm %%EXAMPLESDIR%%/restaurant/assets/img
-@dirrm %%EXAMPLESDIR%%/restaurant/assets
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples/restaurant
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/src/samples
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/src
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/lib
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/db/restaurant
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF/db
-@dirrm %%EXAMPLESDIR%%/restaurant/WEB-INF
-@dirrm %%EXAMPLESDIR%%/restaurant
-@dirrm %%EXAMPLESDIR%%/photoviewer/samples/photoviewer
-@dirrm %%EXAMPLESDIR%%/photoviewer/samples
-@dirrm %%EXAMPLESDIR%%/photoviewer/locale/ja_JP
-@dirrm %%EXAMPLESDIR%%/photoviewer/locale/fr_FR
-@dirrm %%EXAMPLESDIR%%/photoviewer/locale/en_US
-@dirrm %%EXAMPLESDIR%%/photoviewer/locale/de_DE
-@dirrm %%EXAMPLESDIR%%/photoviewer/locale
-@dirrm %%EXAMPLESDIR%%/photoviewer/galleries/flextravel
-@dirrm %%EXAMPLESDIR%%/photoviewer/galleries
-@dirrm %%EXAMPLESDIR%%/photoviewer/data
-@dirrm %%EXAMPLESDIR%%/photoviewer/assets
-@dirrm %%EXAMPLESDIR%%/photoviewer
-@dirrm %%EXAMPLESDIR%%/hybridstore/js
-@dirrm %%EXAMPLESDIR%%/hybridstore/assets/pic
-@dirrm %%EXAMPLESDIR%%/hybridstore/assets
-@dirrm %%EXAMPLESDIR%%/hybridstore
-@dirrm %%EXAMPLESDIR%%/flexstore/samples/flexstore
-@dirrm %%EXAMPLESDIR%%/flexstore/samples
-@dirrm %%EXAMPLESDIR%%/flexstore/productsView
-@dirrm %%EXAMPLESDIR%%/flexstore/data
-@dirrm %%EXAMPLESDIR%%/flexstore/assets/pic
-@dirrm %%EXAMPLESDIR%%/flexstore/assets
-@dirrm %%EXAMPLESDIR%%/flexstore
-@dirrm %%EXAMPLESDIR%%/explorer/validators
-@dirrm %%EXAMPLESDIR%%/explorer/states
-@dirrm %%EXAMPLESDIR%%/explorer/printing
-@dirrm %%EXAMPLESDIR%%/explorer/formatters
-@dirrm %%EXAMPLESDIR%%/explorer/effects/assets
-@dirrm %%EXAMPLESDIR%%/explorer/effects
-@dirrm %%EXAMPLESDIR%%/explorer/core
-@dirrm %%EXAMPLESDIR%%/explorer/controls/assets
-@dirrm %%EXAMPLESDIR%%/explorer/controls
-@dirrm %%EXAMPLESDIR%%/explorer/containers/assets
-@dirrm %%EXAMPLESDIR%%/explorer/containers
-@dirrm %%EXAMPLESDIR%%/explorer
-@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/resources/html-templates/no-player-detection-with-history
+@dirrm %%DATADIR%%/resources/html-templates/no-player-detection
+@dirrm %%DATADIR%%/resources/html-templates/express-installation-with-history
+@dirrm %%DATADIR%%/resources/html-templates/express-installation
+@dirrm %%DATADIR%%/resources/html-templates/client-side-detection-with-history
+@dirrm %%DATADIR%%/resources/html-templates/client-side-detection
+@dirrm %%DATADIR%%/resources/html-templates
+@dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/frameworks/themes/AeonGraphical Source
 @dirrm %%DATADIR%%/frameworks/themes
 @dirrm %%DATADIR%%/frameworks/source/mx/validators
@@ -1299,19 +894,17 @@ bin/mxmlc
 @dirrm %%DATADIR%%/frameworks/source/mx/states
 @dirrm %%DATADIR%%/frameworks/source/mx/skins/halo
 @dirrm %%DATADIR%%/frameworks/source/mx/skins
-@dirrm %%DATADIR%%/frameworks/source/mx/rpc
 @dirrm %%DATADIR%%/frameworks/source/mx/resources
 @dirrm %%DATADIR%%/frameworks/source/mx/printing
 @dirrm %%DATADIR%%/frameworks/source/mx/preloaders
 @dirrm %%DATADIR%%/frameworks/source/mx/modules
-@dirrm %%DATADIR%%/frameworks/source/mx/messaging/config
-@dirrm %%DATADIR%%/frameworks/source/mx/messaging
 @dirrm %%DATADIR%%/frameworks/source/mx/managers/layoutClasses
 @dirrm %%DATADIR%%/frameworks/source/mx/managers/dragClasses
 @dirrm %%DATADIR%%/frameworks/source/mx/managers
 @dirrm %%DATADIR%%/frameworks/source/mx/logging/targets
 @dirrm %%DATADIR%%/frameworks/source/mx/logging/errors
 @dirrm %%DATADIR%%/frameworks/source/mx/logging
+@dirrm %%DATADIR%%/frameworks/source/mx/graphics/codec
 @dirrm %%DATADIR%%/frameworks/source/mx/graphics
 @dirrm %%DATADIR%%/frameworks/source/mx/formatters
 @dirrm %%DATADIR%%/frameworks/source/mx/events
