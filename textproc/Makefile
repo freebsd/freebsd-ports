@@ -141,6 +141,7 @@
     SUBDIR += eqe
     SUBDIR += eruby
     SUBDIR += es-aspell
+    SUBDIR += es-ispell
     SUBDIR += estraier
     SUBDIR += et-aspell
     SUBDIR += etoile-lucenekit
