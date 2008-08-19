@@ -27,7 +27,8 @@ USE_XORG=	xpm
 USE_GMAKE=	yes
 USE_AUTOTOOLS=  libtool:15
 
-CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE} \
+		--disable-ocamlsolver
 
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
