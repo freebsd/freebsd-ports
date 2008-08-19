@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libwhisker
-PORTVERSION=	2.1
+PORTVERSION=	2.4
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
+DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Perl module to create HTTP test scripts
