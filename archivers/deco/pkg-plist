@@ -50,7 +50,9 @@ bin/deco
 %%DATADIR%%/rpm/subdirectory
 %%DATADIR%%/shn/extract
 %%DATADIR%%/sue
+%%DATADIR%%/t7z
 %%DATADIR%%/tar/extract
+%%DATADIR%%/tar\.7z/extract
 %%DATADIR%%/tar\.bz2/extract
 %%DATADIR%%/tar\.gz/extract
 %%DATADIR%%/tar\.lzma/extract
@@ -69,6 +71,7 @@ bin/deco
 @dirrm %%DATADIR%%/tar\.lzma
 @dirrm %%DATADIR%%/tar\.gz
 @dirrm %%DATADIR%%/tar\.bz2
+@dirrm %%DATADIR%%/tar\.7z
 @dirrm %%DATADIR%%/tar
 @dirrm %%DATADIR%%/shn
 @dirrm %%DATADIR%%/rpm
