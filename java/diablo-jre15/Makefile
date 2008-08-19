@@ -79,12 +79,11 @@ PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE}))) && !defined(PACKAGE_BUILDING) && defined(JRE_OSREL)
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
+DISTFILE_INSTRUCTIONS=\n\
 Because of licensing restrictions, you must fetch the distribution\n\
-manually.\n
+manually.\n\n
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
-IGNORE += Please access\n\
+DISTFILE_INSTRUCTIONS += Please access\n\
 \n\
   ${DOWNLOAD_URL}\n\
 \n\
@@ -93,11 +92,17 @@ with a web browser and \"Accept\" the End User License Agreement for\n\
 ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n\n
 .endif
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})
-IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
 time zone update file, ${TZUPDATEFILE}.\n\n
 .endif
+.endif
+
+pre-fetch:
+.if defined(DISTFILE_INSTRUCTIONS)
+	@printf "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
 .endif
 
 .if defined(WITH_TZUPDATE)
