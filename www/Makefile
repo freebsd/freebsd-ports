@@ -164,6 +164,7 @@
     SUBDIR += drupal5-workflow_ng
     SUBDIR += drupal5-xmlsitemap
     SUBDIR += drupal6
+    SUBDIR += drupal6-advanced_help
     SUBDIR += drupal6-cck
     SUBDIR += drupal6-nice_menus
     SUBDIR += drupal6-print
