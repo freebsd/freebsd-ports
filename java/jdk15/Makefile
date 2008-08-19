@@ -59,18 +59,21 @@ LATEST_LINK=	jdk15
 TZUPDATE_VERSION=	1_3_6
 TZUPDATE_TZVERSION=	2008c
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
-			${LOCALBASE}/jdk1.5.0 \
-			${LOCALBASE}/jdk1.6.0 \
-			${LOCALBASE}/jdk1.4.2
+NATIVE_BOOTSTRAP_JDKS=	\
+	${LOCALBASE}/diablo-jdk1.6.0:${PORTSDIR}/java/diablo-jdk16 \
+	${LOCALBASE}/diablo-jdk1.5.0:${PORTSDIR}/java/diablo-jdk15 \
+	${LOCALBASE}/jdk1.5.0:${PORTSDIR}/java/jdk15 \
+	${LOCALBASE}/jdk1.6.0:${PORTSDIR}/java/jdk16 \
+	${LOCALBASE}/jdk1.4.2:${PORTSDIR}/java/jdk14
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.5.0 \
-			${LOCALBASE}/linux-sun-jdk1.6.0 \
-			${LOCALBASE}/linux-sun-jdk1.4.2
-
-.include <bsd.port.pre.mk>
+LINUX_BOOTSTRAP_JDKS=	\
+	${LOCALBASE}/linux-sun-jdk1.5.0:${PORTSDIR}/java/linux-sun-jdk15 \
+	${LOCALBASE}/linux-sun-jdk1.6.0:${PORTSDIR}/java/linux-sun-jdk16 \
+	${LOCALBASE}/linux-sun-jdk1.4.2:${PORTSDIR}/java/linux-sun-jdk14
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
@@ -89,8 +92,9 @@ EXTRACT_ONLY+=	${TZUPDATEFILE}
 # do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
 .for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK:C/:.*$//}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK:C/:.*$//}
+BUILD_DEPENDS+=		${CJDK:C/:.*$//}/bin/javac:${CJDK:C/^[^:]*://}
 .  endif
 .endfor
 .endif
@@ -98,8 +102,9 @@ BOOTSTRAPJDKDIR=	${CJDK}
 # do we have valid linux jdk installed?
 .if !defined(BOOTSTRAPJDKDIR)
 .for CJDK in ${LINUX_BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK:C/:.*$//}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK:C/:.*$//}
+BUILD_DEPENDS+=		${CJDK:C/:.*$//}/bin/javac:${CJDK:C/^[^:]*://}
 WITH_LINUX_BOOTSTRAP=	YES
 .  endif
 .endfor
@@ -107,8 +112,8 @@ WITH_LINUX_BOOTSTRAP=	YES
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR) || !exists(${BOOTSTRAPJDKDIR}/bin/javac)
-BOOTSTRAPJDKDIR=	${LOCALBASE}/diablo-jdk1.5.0
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
+BOOTSTRAPJDKDIR=	${LOCALBASE}/diablo-jdk1.6.0
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
 .endif
 
 .if defined(WITHOUT_WEB)
@@ -122,8 +127,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xmu xp xt xtst
-RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
-NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
+RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
+NO_CDROM=	Redistribution of pre-compiled binaries is not permitted
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${LOCALBASE}" \
@@ -177,53 +182,56 @@ X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFe
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
+DISTFILE_INSTRUCTIONS=	\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-IGNORE += Please open http://download.java.net/tiger/archive/tiger_u14/\n\
+DISTFILE_INSTRUCTIONS += Please open http://download.java.net/tiger/archive/tiger_u14/\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
+DISTFILE_INSTRUCTIONS += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
 .endif#}
 .if !exists(${DISTDIR}/${JRL_BINFILE})#{
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-IGNORE += and the\n
+DISTFILE_INSTRUCTIONS += and the\n
 .endif#}
-IGNORE += Source Binaries, ${JRL_BINFILE}
+DISTFILE_INSTRUCTIONS += Source Binaries, ${JRL_BINFILE}
 .endif#}
-IGNORE += .\n\n
+DISTFILE_INSTRUCTIONS += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy\n\
 Files 5.0\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
 time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += Please download the patchset, ${PATCHSETFILE}, from\n\
+DISTFILE_INSTRUCTIONS += Please download the patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\n
 .endif#}
-IGNORE += Please place the downloaded file(s) in ${DISTDIR}
-IGNORE += \n and restart the build.\n\n
+DISTFILE_INSTRUCTIONS += Please place the downloaded file(s) in ${DISTDIR}
+DISTFILE_INSTRUCTIONS += \n and restart the build.\n\n
 .endif#}
 
 pre-fetch:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have at least"
-	@${ECHO_MSG} "2.5Gb of free disk space in build area!"
+	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.5.0 port, you should have at least"
+	@${ECHO_MSG} "2.5Gb of free disk space in the build area!"
 	@${ECHO_MSG}
 .if defined(WITH_LINUX_BOOTSTRAP)
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have linux emulation"
-	@${ECHO_MSG} "enabled in the kernel and linux procfs (linprocfs) filesystem"
+	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.5.0 port, you should have linux emulation"
+	@${ECHO_MSG} "enabled in the kernel and the linux procfs (linprocfs) filesystem"
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
+.endif
+.if defined(DISTFILE_INSTRUCTIONS)
+	@printf "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
 .endif
 
 # Get JRL agreement
@@ -292,24 +300,24 @@ post-patch:
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | ${AWK} '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
 		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
 		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
-	@if [ `/sbin/sysctl -n compat.linux.osname` != "Linux" ]; \
+	@if [ `${SYSCTL} -n compat.linux.osname` != "Linux" ]; \
 	then \
 		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
 		${ECHO_MSG} "to 'Linux' with the command:"; \
-		${ECHO_MSG} "	/sbin/sysctl compat.linux.osname=Linux"; \
+		${ECHO_MSG} "	${SYSCTL} compat.linux.osname=Linux"; \
 		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
 .if !defined(WITH_JAIL)#{
-	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
+	@if [ "`/sbin/mount | ${GREP} ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
 		${ECHO_MSG} "starting to build the native JDK 1.5.0." ; \
