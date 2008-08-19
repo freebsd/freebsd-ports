@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4f31e16-6e33-11dd-8eb7-0011098ad87f">
+    <topic>cdf3 -- Buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>cdf3</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NASA Goddard Space Flight Center reports:</p>
+	<blockquote cite="http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html">
+	  <p>The libraries for the scientific data file format, Common Data
+            Format (CDF) version 3.2 and earlier, have the potential for a
+            buffer overflow vulnerability when reading specially-crafted
+            (invalid) CDF files. If successful, this could trigger execution
+            of arbitrary code within the context of the CDF-reading program
+            that could be exploited to compromise a system, or otherwise
+            crash the program. While it's unlikely that you would open CDFs
+            from untrusted sources, we recommend everyone upgrade to the
+            latest CDF libraries on their systems, including the IDL and
+            Matlab plugins. Most worrisome is any service that enables the
+            general public to submit CDF files for processing.</p>
+	  <p>The vulnerability is in the CDF library routines not properly
+            checking the length tags on a CDF file before copying data to a
+            stack buffer. Exploitation requires the user to explicitly open
+            a specially-crafted file. CDF users should not open files from
+            untrusted third parties until the patch is applied (and continue
+            then to exercise normal caution for files from untrusted third
+            parties).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html</url>
+    </references>
+    <dates>
+      <discovery>2008-05-15</discovery>
+      <entry>2008-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="070b5b22-6d74-11dd-aa18-0030843d3802">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
