@@ -1,4 +1,5 @@
 %%LUA_BINDIR%%/tolua++
 bin/tolua++-%%LUA_VER%%
 %%LUA_LIBDIR%%/libtolua++.a
+%%LUA_LIBDIR%%/libtolua++.so
 %%LUA_INCDIR%%/tolua++.h

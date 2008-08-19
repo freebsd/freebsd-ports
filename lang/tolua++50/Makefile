@@ -7,6 +7,7 @@
 
 PORTNAME=	tolua++
 PORTVERSION=	1.0.92
+PORTREVISION=	1
 PKGNAMESUFFIX=	50
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
@@ -28,5 +29,6 @@ do-install:
 	${LN} -sf ${LUA_SUBDIR}/tolua++ ${PREFIX}/bin/tolua++-${LUA_VER}
 	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${LUA_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${LUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${LUA_LIBDIR}
 
 .include <bsd.port.mk>
