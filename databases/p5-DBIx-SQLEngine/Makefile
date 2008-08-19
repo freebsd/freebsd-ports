@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extends DBI with high-level operations
 
 BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD \

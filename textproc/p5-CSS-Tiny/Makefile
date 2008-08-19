@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read/Write .css files with as little code as possible
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
