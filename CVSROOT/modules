@@ -907,13 +907,6 @@ beforelight                     ports/x11/beforelight
 belooted                        ports/games/belooted
 belvu                           ports/biology/belvu
 berkeley-db                     ports/java/berkeley-db
-beryl                           ports/x11-wm/beryl
-beryl-core                      ports/x11-wm/beryl-core
-beryl-manager                   ports/x11-wm/beryl-manager
-beryl-plugins                   ports/x11-wm/beryl-plugins
-beryl-plugins-unsupported       ports/x11-wm/beryl-plugins-unsupported
-beryl-settings                  ports/x11-wm/beryl-settings
-beryl-settings-bindings         ports/x11-wm/beryl-settings-bindings
 bestfit                         ports/misc/bestfit
 bf2c                            ports/lang/bf2c
 bfbtester                       ports/security/bfbtester
@@ -936,6 +929,7 @@ bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
 bibletime                       ports/misc/bibletime
+bibletime-devel                 ports/misc/bibletime-devel
 biblical-curse                  ports/misc/biblical-curse
 bibtex2html                     ports/textproc/bibtex2html
 bibtool                         ports/textproc/bibtool
@@ -2390,9 +2384,11 @@ drupal5-views                   ports/www/drupal5-views
 drupal5-workflow_ng             ports/www/drupal5-workflow_ng
 drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
+drupal6-advanced_help           ports/www/drupal6-advanced_help
 drupal6-cck                     ports/www/drupal6-cck
 drupal6-nice_menus              ports/www/drupal6-nice_menus
 drupal6-print                   ports/www/drupal6-print
+drupal6-tagadelic               ports/www/drupal6-tagadelic
 drupal6-views                   ports/www/drupal6-views
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
@@ -2832,6 +2828,7 @@ es                              ports/shells/es
 es-acroread                     ports/print/es-acroread
 es-acroread8                    ports/print/es-acroread8
 es-aspell                       ports/textproc/es-aspell
+es-ispell                       ports/textproc/es-ispell
 esdl                            ports/devel/esdl
 esh                             ports/shells/esh
 esmart                          ports/graphics/esmart
@@ -4867,7 +4864,6 @@ heirloom                        ports/sysutils/heirloom
 heirloom-doctools               ports/textproc/heirloom-doctools
 heirloom-mailx                  ports/mail/heirloom-mailx
 heirloom-sh                     ports/shells/heirloom-sh
-heliodor                        ports/x11-wm/heliodor
 helixplayer                     ports/multimedia/helixplayer
 helixplugin                     ports/www/helixplugin
 hellanzb                        ports/news/hellanzb
@@ -5414,6 +5410,7 @@ it++                            ports/math/it++
 it-acroread                     ports/print/it-acroread
 it-acroread8                    ports/print/it-acroread8
 it-aspell                       ports/textproc/it-aspell
+it-ispell                       ports/textproc/it-ispell
 itcl                            ports/lang/itcl
 itext                           ports/devel/itext
 ithought                        ports/deskutils/ithought
@@ -5624,8 +5621,6 @@ ja-lookup-emacs21               ports/japanese/lookup-emacs21
 ja-lsd-fpw                      ports/japanese/lsd-fpw
 ja-lynx                         ports/japanese/lynx
 ja-lynx-current                 ports/japanese/lynx-current
-ja-lyx                          ports/japanese/lyx
-ja-lyx-doc                      ports/japanese/lyx-doc
 ja-magicpoint                   ports/japanese/magicpoint
 ja-mailman                      ports/japanese/mailman
 ja-makejvf                      ports/japanese/makejvf
@@ -8664,7 +8659,6 @@ mutt                            ports/mail/mutt
 mutt-devel                      ports/mail/mutt-devel
 mutt-devel-lite                 ports/mail/mutt-devel-lite
 mutt-lite                       ports/mail/mutt-lite
-mutt-ng                         ports/mail/mutt-ng
 mutt_vc_query                   ports/mail/mutt_vc_query
 muttprint                       ports/print/muttprint
 muttzilla                       ports/mail/muttzilla
@@ -9767,6 +9761,7 @@ p5-CGI-Builder                  ports/www/p5-CGI-Builder
 p5-CGI-Builder-TT2              ports/www/p5-CGI-Builder-TT2
 p5-CGI-Cache                    ports/www/p5-CGI-Cache
 p5-CGI-Cookie-Splitter          ports/www/p5-CGI-Cookie-Splitter
+p5-CGI-Deurl-XS                 ports/www/p5-CGI-Deurl-XS
 p5-CGI-Ex                       ports/www/p5-CGI-Ex
 p5-CGI-Expand                   ports/www/p5-CGI-Expand
 p5-CGI-FCKeditor                ports/www/p5-CGI-FCKeditor
@@ -12298,6 +12293,7 @@ p5-URI-Fetch                    ports/www/p5-URI-Fetch
 p5-URI-Find                     ports/textproc/p5-URI-Find
 p5-URI-FromHash                 ports/net/p5-URI-FromHash
 p5-URI-OpenURL                  ports/net/p5-URI-OpenURL
+p5-URI-ParseSearchString        ports/www/p5-URI-ParseSearchString
 p5-URI-Sequin                   ports/www/p5-URI-Sequin
 p5-URI-Template                 ports/net/p5-URI-Template
 p5-URI-Title                    ports/www/p5-URI-Title
@@ -12967,6 +12963,7 @@ p5-cgi-builder                  ports/www/p5-CGI-Builder
 p5-cgi-builder-tt2              ports/www/p5-CGI-Builder-TT2
 p5-cgi-cache                    ports/www/p5-CGI-Cache
 p5-cgi-cookie-splitter          ports/www/p5-CGI-Cookie-Splitter
+p5-cgi-deurl-xs                 ports/www/p5-CGI-Deurl-XS
 p5-cgi-ex                       ports/www/p5-CGI-Ex
 p5-cgi-expand                   ports/www/p5-CGI-Expand
 p5-cgi-fasttemplate             ports/www/p5-CGI-FastTemplate
@@ -15458,6 +15455,7 @@ p5-uri-fromhash                 ports/net/p5-URI-FromHash
 p5-uri-imap                     ports/mail/p5-URI-imap
 p5-uri-imaps                    ports/mail/p5-URI-imaps
 p5-uri-openurl                  ports/net/p5-URI-OpenURL
+p5-uri-parsesearchstring        ports/www/p5-URI-ParseSearchString
 p5-uri-sequin                   ports/www/p5-URI-Sequin
 p5-uri-template                 ports/net/p5-URI-Template
 p5-uri-title                    ports/www/p5-URI-Title
@@ -21198,6 +21196,7 @@ wanderer                        ports/games/wanderer
 wanderlust                      ports/mail/wanderlust
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
+wanpipe                         ports/misc/wanpipe
 waon                            ports/audio/waon
 wapiti                          ports/security/wapiti
 wapsh                           ports/shells/wapsh
