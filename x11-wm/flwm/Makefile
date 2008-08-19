@@ -13,8 +13,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gj
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
+
+DEPRECATED=	Project is dead, and uses obsolete version of fltk
+EXPIRATION_DATE=	2008-10-19
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
