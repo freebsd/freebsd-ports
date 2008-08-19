@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	flex-sdk
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1.194515
 CATEGORIES=	devel java
 MASTER_SITES=	#
-DISTFILES=	flex_sdk_2_hf1.zip
+DISTFILES=	flex_sdk_2_194515.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adobe Flex SDK
@@ -24,7 +23,7 @@ USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+
 WRKSRC=		${WRKDIR}
-DOWNLOAD_URL=	http://www.adobe.com/products/flex/sdk/
+DOWNLOAD_URL=	http://labs.adobe.com/technologies/flex/sdk/flex2sdk.html
 SUB_FILES=	asdoc.sh compc.sh fdb.sh mxmlc.sh
 NO_BUILD=	YES
 PLIST_SUB=	PORTNAME=${PORTNAME}
@@ -61,8 +60,8 @@ do-install:
 	${MKDIR} ${DATADIR}/asdoc/templates
 	${CP} -r ${WRKSRC}/asdoc/templates/ ${DATADIR}/asdoc/templates/
 
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -r ${WRKSRC}/samples/ ${EXAMPLESDIR}/
+	${MKDIR} ${DATADIR}/resources
+	${CP} -r ${WRKSRC}/resources/ ${DATADIR}/resources/
 
 	${MKDIR} ${DOCSDIR}
 	${CP} -r ${WRKSRC}/*.htm ${DOCSDIR}/
