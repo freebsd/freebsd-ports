@@ -185,7 +185,7 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 OPTIONS+=	QEXTRA		"enable QUEUE_EXTRA copy feature" off
 
 .if !defined(SLAVE_LDAP)
-OPTIONS+=	RCDLINK		"create rc.d/qmail.sh" on
+OPTIONS+=	RCDLINK		"create rc.d/qmail.sh symlink" on
 .endif
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \

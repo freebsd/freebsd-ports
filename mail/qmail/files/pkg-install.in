@@ -72,6 +72,12 @@ elif [ "$2" = "POST-INSTALL" ]; then
 
 	%%RCDLINK%%ln -s ${PREFIX}/rc %%LOCALBASE%%/etc/rc.d/qmail.sh
 
+	%%RCDLINK%%echo ""
+	%%RCDLINK%%echo "A %%LOCALBASE%%/etc/rc.d/qmail.sh symlink was created.  To enable qmail at boot"
+	%%RCDLINK%%echo "time you need to copy a script to %%PREFIX%%/rc.  There are some examples at"
+	%%RCDLINK%%echo "%%PREFIX/boot"
+	%%RCDLINK%%echo ""
+
 	if ! touch ${PREFIX}/alias/.qmail-postmaster \
 		   ${PREFIX}/alias/.qmail-root \
 		   ${PREFIX}/alias/.qmail-mailer-daemon; then
