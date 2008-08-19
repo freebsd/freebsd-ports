@@ -1,10 +1,11 @@
 bin/munger
-lib/libmunger.so.36
+lib/libmunger.so.37
 lib/libminimunger.a
 include/minimunger.h
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/compiler.munger
 %%DATADIR%%/httpd.munger
+%%DATADIR%%/scgi.munger
 %%DATADIR%%/ip2country.munger
 %%DATADIR%%/echo.munger
 %%DATADIR%%/msh.munger
