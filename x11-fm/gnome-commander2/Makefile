@@ -7,9 +7,10 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
@@ -26,7 +27,7 @@ CONFLICTS=	gnome-commander-*
 USE_BZIP2=	yes
 USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:262:env
+USE_AUTOTOOLS=	libtool:15 autoconf:262:env aclocal:19:env automake:19:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
