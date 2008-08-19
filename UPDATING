@@ -346,7 +346,7 @@ upgrades.
   after subversion upgrade.
 
 20080630:
-  AFFECTS: users of graphics/poppler* and future users of www/firefox3
+  AFFECTS: users of graphics/cairo, graphics/poppler*, and future users of www/firefox3
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
 
   The poppler* ports have been updated to 0.8.3 and the shared libraries
@@ -797,6 +797,14 @@ upgrades.
   Be sure to read in our known issues and solutions:
 
     http://www.freebsd.org/gnome/docs/faq222.html#q4
+
+20080323:
+  AFFECTS: users of devel/glib20 and future users of devel/gio-fam-backend
+  AUTHOR: gnome@FreeBSD.org
+
+  In order to update to glib 2.16 or higher, you must first update the
+  glib20 port on its own or you will get a failure trying to install
+  devel/gio-fam-backend saying it cannot find -lgio-2.0.
 
 20080318:
   AFFECTS: users of audio/gnump3d
