@@ -7,13 +7,14 @@
 
 PORTNAME=	trickle
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes

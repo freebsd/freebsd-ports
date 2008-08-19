@@ -7,14 +7,14 @@
 
 PORTNAME=	plb
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://plb.sunsite.dk/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance HTTP load balancer
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc

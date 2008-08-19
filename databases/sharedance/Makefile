@@ -7,13 +7,14 @@
 
 PORTNAME=	sharedance
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A daemon to centralize keys and associated data
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CONFIGURE_ARGS=	--with-largefile
 GNU_CONFIGURE=	yes
