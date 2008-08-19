@@ -28,6 +28,12 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not build on amd64
+.endif
+
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${WRKSRC}
@@ -38,4 +44,4 @@ do-configure:
 		-D CMAKE_INSTALL_PREFIX=${PREFIX} \
 		${WRKSRC}/..
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
