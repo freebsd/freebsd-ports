@@ -7,6 +7,7 @@
 
 PORTNAME=	memcachedb
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://freebsd.csie.nctu.edu.tw/~gslin/files/
@@ -14,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed storage system designed for persistent
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CFLAGS=		-I"${BDB_INCLUDE_DIR}"
 CONFIUGRE_ARGS=	--enable-threads --with-bdb="${LOCALBASE}" \

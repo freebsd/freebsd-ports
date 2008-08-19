@@ -7,7 +7,7 @@
 
 PORTNAME=	openospfd
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.dkuug.dk/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	zebra-0* quagga-0*
 

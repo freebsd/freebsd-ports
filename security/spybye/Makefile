@@ -7,13 +7,14 @@
 
 PORTNAME=	spybye
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	A web proxy to detect malware
 
-BUILD_DEPENDS=	event_rpcgen.py:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 OPTIONS=	CLAMAV "Enable CLAMAV support" off
 

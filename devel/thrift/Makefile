@@ -7,7 +7,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	20070917
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://developers.facebook.com/thrift/
 
@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
 
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost \
-		event-1.3e:${PORTSDIR}/devel/libevent
+		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	libtool:15
 USE_GCC=	4.2+

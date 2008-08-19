@@ -7,13 +7,14 @@
 
 PORTNAME=	msn-proxy
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	loos.br@gmail.com
 COMMENT=	Messenger proxy/control daemon
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 OPTIONS+=	MYSQL		"Use MySQL database version" off
 OPTIONS+=	PGSQL		"Use Postgresql (pgsql) database version" on

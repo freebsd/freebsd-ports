@@ -6,6 +6,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	4.2.20071221
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	OpenBSD Relay Daemon
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 WRKSRC=		${WRKDIR}/tmp
 MAN5=		relayd.conf.5

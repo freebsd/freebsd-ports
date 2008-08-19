@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-proxy
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-Proxy
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	MySQL-Proxy
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Monitor, analyze or transform the communication of MySQL
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 		glib:${PORTSDIR}/devel/glib20
 
 CONFIGURE_ARGS+=	--with-lua=lua-5.1 --with-mysql

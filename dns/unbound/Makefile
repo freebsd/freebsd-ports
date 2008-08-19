@@ -40,7 +40,7 @@ OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBEVENT)
-LIB_DEPENDS+=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS+=		event-1.4:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-libevent=no

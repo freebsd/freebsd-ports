@@ -8,6 +8,7 @@
 
 PORTNAME=	eventxx
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/
 MASTER_SITE_SUBDIR=	gahr
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
