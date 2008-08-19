@@ -6,6 +6,7 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -14,9 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
 
-BUILD_DEPENDS=	xscreensaver:${PORTSDIR}/x11/xscreensaver
-RUN_DEPENDS=	xscreensaver:${PORTSDIR}/x11/xscreensaver
-
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
@@ -24,6 +22,18 @@ USE_QT_VER=	4
 USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 QT_COMPONENTS=	opengl gui moc rcc uic svg qt3support
+
+OPTIONS=	GNOME "Use Gnome screensavers" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GNOME)
+BUILD_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+RUN_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+.else
+BUILD_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}
@@ -57,4 +67,4 @@ post-patch:
 	    ${WRKSRC}/../${item}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
