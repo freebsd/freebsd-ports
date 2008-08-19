@@ -1,11 +1,9 @@
-Gfortran uses only one underscore(?)
-
---- src/include/cdflib.h~	Wed Oct  4 05:13:39 2006
-+++ src/include/cdflib.h	Wed Jan 17 15:46:50 2007
-@@ -356,7 +356,7 @@
+--- src/include/cdflib.h.orig	2008-05-02 20:16:55.000000000 +0200
++++ src/include/cdflib.h	2008-08-19 21:59:08.000000000 +0200
+@@ -370,7 +370,7 @@
      defined(__MINGW32__)
  #  if (defined(linux) && !defined(__ICC)) || defined(__CYGWIN__) || \
-       defined(macosX) || \
+       defined(macosXppc) || defined(macosXintel) || \
 -      defined(sun) || defined(__MINGW32__) || defined(__FreeBSD__)
 +      defined(sun) || defined(__MINGW32__)
  #    define Fif_ENTRYPOINT(ep__,ep_,ep,EP) ep__

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdf3
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/
@@ -14,18 +14,18 @@ MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PKGNAME}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
 MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu      \
 		FORTRAN=yes FC_freebsd=${F77}
 USE_LDCONFIG=	yes
 
-VER=		${PORTVERSION:S/.//}
+VER=		${PORTVERSION:S/.//:S/./_/}
 
 USE_FORTRAN=	yes
 
-WRKSRC=		${WRKDIR}/cdf${VER}-dist-readonly
+WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -48,9 +48,12 @@ post-install:
 	${MV} ${PREFIX}/lib/libcdf.so ${PREFIX}/lib/libcdf.so.0
 	${LN} -sf ${PREFIX}/lib/libcdf.so.0 ${PREFIX}/lib/libcdf.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif

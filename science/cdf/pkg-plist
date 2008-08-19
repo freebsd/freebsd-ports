@@ -46,22 +46,22 @@ lib/cdf/help/skt2cdfj.olh
 lib/libcdf.a
 lib/libcdf.so
 lib/libcdf.so.0
-%%PORTDOCS%%%%EXAMPLESDIR%%/OperateAttributes.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/OperateCDF.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/OperateVariables.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/cacsst2.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/cacsst2.skt
-%%PORTDOCS%%%%EXAMPLESDIR%%/d103a2x.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.f
-%%PORTDOCS%%%%EXAMPLESDIR%%/geocpi0.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/geocpi0.skt
-%%PORTDOCS%%%%EXAMPLESDIR%%/ij01r39.cdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/read_example1.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/zfia10x.cdf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateAttributes.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateCDF.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateVariables.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacsst2.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacsst2.skt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/d103a2x.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.f
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi0.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geocpi0.skt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ij01r39.cdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_example1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfia10x.cdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/cdf/help
 @dirrm lib/cdf
