@@ -1,0 +1,24 @@
+etc/rc.d/wanpipe
+sbin/sdladump
+sbin/wan_aftup
+sbin/wan_ec_client
+sbin/wan_plxup
+sbin/wancfg
+sbin/wancfg_legacy
+sbin/wancfg_zaptel
+sbin/wanconfig
+sbin/wanpipe_ft1exec
+sbin/wanpipe_cfgft1
+sbin/wanpipe_lxdialog
+sbin/wanpipemon
+sbin/wanpipemon_legacy
+sbin/wanrouter
+@cwd /boot/modules
+sdladrv.ko
+wan_aften.ko
+wanec.ko
+wanpipe.ko
+wanpipe_lip.ko
+wanrouter.ko
+@unexec kldxref %D
+@exec kldxref %D

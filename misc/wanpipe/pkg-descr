@@ -1,0 +1,10 @@
+This package contains the latest Sangoma drivers that supports following
+Sangoma cards under FreeBSD OS:
+o AFT Series PCI/PCI Express cards
+o S51x PCI cards:
+The current version wanpipe-3.3.1 supports following protocols:
+o Asterisk/Zaptel interface
+o Cisco HDLC, Frame Relay and Point-to-Point
+o PPPoE and PPPoA (for S518 ADSL card)
+
+Release date: Tue Jul 15 14:27:03 UTC 2008
