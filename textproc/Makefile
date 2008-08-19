@@ -243,6 +243,7 @@
     SUBDIR += iso8879
     SUBDIR += ispell
     SUBDIR += it-aspell
+    SUBDIR += it-ispell
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
     SUBDIR += jakarta-poi
