@@ -11,7 +11,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
 USE_AUTOTOOLS=	libtool:15

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://svn.xiph.org/releases/ezstream/
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line utility for streaming to icecast servers
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \

@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 USE_RC_SUBR=	ngircd

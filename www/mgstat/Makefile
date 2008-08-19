@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce graphs from mod_gzip log files
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

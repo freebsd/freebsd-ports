@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nsnam
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl

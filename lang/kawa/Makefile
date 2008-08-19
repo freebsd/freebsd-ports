@@ -12,7 +12,7 @@ CATEGORIES=		lang scheme java
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
 
-MAINTAINER=		laszlof@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Java-based Scheme implementation
 
 BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed

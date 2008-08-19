@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evilnet
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
 
 USE_BZIP2=	yes
