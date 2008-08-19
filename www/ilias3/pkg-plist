@@ -48,6 +48,7 @@
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_profile_view.html
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_recordings.html
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_right_frame.html
+%%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_srv_off_redirect_js.html
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_start.html
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_top_frame.html
 %%WWWDIR%%/Modules/Chat/templates/default/tpl.chat_user_frame.html
@@ -786,6 +787,7 @@
 %%WWWDIR%%/Modules/Test/js/calendar/calendar-setup.js
 %%WWWDIR%%/Modules/Test/js/calendar/calendar.css
 %%WWWDIR%%/Modules/Test/js/calendar/calendar.js
+%%WWWDIR%%/Modules/Test/templates/default/ta.css
 %%WWWDIR%%/Modules/Test/templates/default/test_print.css
 %%WWWDIR%%/Modules/Test/templates/default/test_print_hide_content.css
 %%WWWDIR%%/Modules/Test/templates/default/tpl.confirm_deletion.html
@@ -951,7 +953,6 @@
 %%WWWDIR%%/Modules/TestQuestionPool/save_question_post_data.php
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/images/assessment.gif
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/test_javascript.css
-%%WWWDIR%%/Modules/TestQuestionPool/templates/default/test_print.css
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.charcounter.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.confirm_deletion.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.export_file_row.html
@@ -1078,6 +1079,7 @@
 %%WWWDIR%%/Services/AuthShibboleth/README.SHIBBOLETH.txt
 %%WWWDIR%%/Services/AuthShibboleth/classes/class.ilShibboleth.php
 %%WWWDIR%%/Services/AuthShibboleth/classes/class.ilShibbolethWAYF.php
+%%WWWDIR%%/Services/Authentication/classes/class.ilAuthInactive.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthModeDetermination.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthMultiple.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthUtils.php
