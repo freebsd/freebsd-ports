@@ -14,13 +14,10 @@ include/kino/kino_plugin_utility.h
 include/kino/playlist.h
 include/kino/smiltime.h
 include/kino/time_map.h
-lib/kino-gtk2/libdvtitler.a
 lib/kino-gtk2/libdvtitler.la
 lib/kino-gtk2/libdvtitler.so
-lib/kino-gtk2/libkinoplus.a
 lib/kino-gtk2/libkinoplus.la
 lib/kino-gtk2/libkinoplus.so
-lib/kino-gtk2/libtimfx.a
 lib/kino-gtk2/libtimfx.la
 lib/kino-gtk2/libtimfx.so
 share/applications/Kino.desktop
@@ -330,6 +327,7 @@ share/kino/scripts/exports/ffmpeg_dvd_dual.sh
 share/kino/scripts/exports/ffmpeg_flv.sh
 share/kino/scripts/exports/ffmpeg_h264.sh
 share/kino/scripts/exports/ffmpeg_h264_dual.sh
+share/kino/scripts/exports/ffmpeg_huffyuv.sh
 share/kino/scripts/exports/ffmpeg_mov.sh
 share/kino/scripts/exports/ffmpeg_mp3.sh
 share/kino/scripts/exports/ffmpeg_mp4.sh
@@ -386,6 +384,7 @@ share/kino/lumas/matrix_snake_toplefthorizontal.png
 share/kino/lumas/none.png
 share/kino/lumas/symmetric_clock.png
 share/pixmaps/kino.png
+share/locale/be/LC_MESSAGES/kino.mo
 share/locale/ca/LC_MESSAGES/kino.mo
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
