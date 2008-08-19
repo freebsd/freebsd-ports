@@ -638,6 +638,7 @@
     SUBDIR += p5-CGI-Builder-TT2
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-Cookie-Splitter
+    SUBDIR += p5-CGI-Deurl-XS
     SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-Expand
     SUBDIR += p5-CGI-FCKeditor
