@@ -11,9 +11,9 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Apache2 module for use macros in config files
+COMMENT=	Apache 2.0.x module for use macros in config files
 
-USE_APACHE=	20+
+USE_APACHE=	20
 LATEST_LINK=	mod_macro2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
