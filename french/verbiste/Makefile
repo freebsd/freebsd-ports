@@ -7,15 +7,17 @@
 
 PORTNAME=	verbiste
 PORTVERSION=	0.1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	timbob@bigpond.com
 COMMENT=	French verb conjugator/deconjugator
 
+OPTIONS=	GNOMEGUI	"With gnome gui"		no
+
 USE_GETTEXT=	yes
-USE_GNOME+=	gnomehack ltverhack libxml2
+USE_GNOME=	gnomehack ltverhack libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
@@ -23,6 +25,14 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.if defined(WITH_GNOMEGUI)
+CONFIGURE_ARGS=	--with-gnome-app
+USE_GNOME+=	gnomeprefix libgnomeui
+PLIST_SUB=	HASGUI=""
+.else
+PLIST_SUB=	HASGUI="@comment "
+.endif
 
 .if !defined(PKGNAMEPREFIX)
 
