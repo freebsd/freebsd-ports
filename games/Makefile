@@ -81,10 +81,8 @@
     SUBDIR += blackjack
     SUBDIR += blackshadeselite
     SUBDIR += blinkensisters
-    SUBDIR += blobandconquer
     SUBDIR += blobby
     SUBDIR += bloboats
-    SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blokish
@@ -692,7 +690,6 @@
     SUBDIR += qwdtools
     SUBDIR += r1q2
     SUBDIR += race
-    SUBDIR += randomshooter
     SUBDIR += reminiscence
     SUBDIR += rfksay
     SUBDIR += ri-li
@@ -755,7 +752,6 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
-    SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
@@ -851,7 +847,6 @@
     SUBDIR += vectoroids
     SUBDIR += vegastrike
     SUBDIR += vegastrike-data
-    SUBDIR += viruskiller
     SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += vultures-claw

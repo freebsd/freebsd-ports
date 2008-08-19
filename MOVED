@@ -3559,3 +3559,8 @@ x11-wm/beryl-settings||2008-08-18|Has expired: No longer supported - Use compiz
 x11-wm/beryl-settings-bindings||2008-08-18|Has expired: No longer supported - Use compiz
 japanese/lyx|print/lyx|2008-08-18|No longer maintained and print/lyx now supports Unicode
 japanese/lyx-doc||2008-08-18|Obsolete
+games/blobandconquer||2008-08-20|Removed due to copyright problem
+games/blobwars||2008-08-20|Removed due to copyright problem
+games/randomshooter||2008-08-20|Removed due to copyright problem
+games/starfighter||2008-08-20|Removed due to copyright problem
+games/viruskiller||2008-08-20|Removed due to copyright problem
