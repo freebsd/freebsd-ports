@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG Postscript pseudo-editor
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
