@@ -152,6 +152,7 @@
     SUBDIR += p5-Gtk2-Ex-FormFactory
     SUBDIR += p5-Gtk2-Ex-PodViewer
     SUBDIR += p5-Gtk2-Ex-Simple-List
+    SUBDIR += p5-Gtk2-Ex-Utils
     SUBDIR += p5-Gtk2-GladeXML
     SUBDIR += p5-Gtk2-Html2
     SUBDIR += p5-Gtk2-TrayIcon
