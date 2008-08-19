@@ -1,0 +1,10 @@
+bin/ffmpegthumbnailer
+include/libffmpegthumbnailer/videothumbnailer.h
+include/libffmpegthumbnailer/videothumbnailerc.h
+include/libffmpegthumbnailer/imagetypes.h
+lib/libffmpegthumbnailer.so.2
+lib/libffmpegthumbnailer.so
+lib/libffmpegthumbnailer.la
+lib/libffmpegthumbnailer.a
+libdata/pkgconfig/libffmpegthumbnailer.pc
+@dirrm include/libffmpegthumbnailer
