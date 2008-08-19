@@ -22,6 +22,12 @@
 %%PYTHON_SITELIBDIR%%/odf/draw.py
 %%PYTHON_SITELIBDIR%%/odf/draw.pyc
 %%PYTHON_SITELIBDIR%%/odf/draw.pyo
+%%PYTHON_SITELIBDIR%%/odf/easyliststyle.py
+%%PYTHON_SITELIBDIR%%/odf/easyliststyle.pyc
+%%PYTHON_SITELIBDIR%%/odf/easyliststyle.pyo
+%%PYTHON_SITELIBDIR%%/odf/elementtypes.py
+%%PYTHON_SITELIBDIR%%/odf/elementtypes.pyc
+%%PYTHON_SITELIBDIR%%/odf/elementtypes.pyo
 %%PYTHON_SITELIBDIR%%/odf/element.py
 %%PYTHON_SITELIBDIR%%/odf/element.pyc
 %%PYTHON_SITELIBDIR%%/odf/element.pyo
@@ -49,6 +55,9 @@
 %%PYTHON_SITELIBDIR%%/odf/number.py
 %%PYTHON_SITELIBDIR%%/odf/number.pyc
 %%PYTHON_SITELIBDIR%%/odf/number.pyo
+%%PYTHON_SITELIBDIR%%/odf/odf2moinmoin.py
+%%PYTHON_SITELIBDIR%%/odf/odf2moinmoin.pyc
+%%PYTHON_SITELIBDIR%%/odf/odf2moinmoin.pyo
 %%PYTHON_SITELIBDIR%%/odf/odf2xhtml.py
 %%PYTHON_SITELIBDIR%%/odf/odf2xhtml.pyc
 %%PYTHON_SITELIBDIR%%/odf/odf2xhtml.pyo
@@ -79,6 +88,9 @@
 %%PYTHON_SITELIBDIR%%/odf/table.py
 %%PYTHON_SITELIBDIR%%/odf/table.pyc
 %%PYTHON_SITELIBDIR%%/odf/table.pyo
+%%PYTHON_SITELIBDIR%%/odf/teletype.py
+%%PYTHON_SITELIBDIR%%/odf/teletype.pyc
+%%PYTHON_SITELIBDIR%%/odf/teletype.pyo
 %%PYTHON_SITELIBDIR%%/odf/text.py
 %%PYTHON_SITELIBDIR%%/odf/text.pyc
 %%PYTHON_SITELIBDIR%%/odf/text.pyo
@@ -91,10 +103,12 @@
 %%PYTHON_SITELIBDIR%%/odf/xforms.py
 %%PYTHON_SITELIBDIR%%/odf/xforms.pyc
 %%PYTHON_SITELIBDIR%%/odf/xforms.pyo
-%%PYTHON_SITELIBDIR%%/odfpy-0.7-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/%%ODF_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/odf/
 bin/mailodf
 bin/odf2mht
+bin/odf2xml
+bin/odf2xhtml
 bin/odf2war
 bin/odfimgimport
 bin/odflint
