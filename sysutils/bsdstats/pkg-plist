@@ -1,0 +1,4 @@
+etc/periodic/monthly/300.statistics
+etc/rc.d/bsdstats.sh
+@dirrmtry etc/periodic/monthly
+@dirrmtry etc/periodic

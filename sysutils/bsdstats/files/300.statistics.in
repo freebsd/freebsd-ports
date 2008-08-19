@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.40 2007-12-20 04:36:39 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.41 2008-08-19 10:25:06 bsam Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -239,7 +239,7 @@ report_devices () {
 get_id_token () {
     if [ -f $id_token_file ]
     then
-      if [ `cat /var/db/bsdstats | wc -l` -lt 3 ] 
+      if [ `wc -l < $id_token_file` -lt 3 ] 
       then
         rm $id_token_file
       fi

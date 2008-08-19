@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdstats
 PORTVERSION=	5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -21,9 +21,6 @@ RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
 .endif
 
 NO_BUILD=	yes
-PLIST_FILES=	etc/periodic/monthly/300.statistics etc/rc.d/bsdstats.sh
-PLIST_DIRS=	etc/periodic/monthly \
-		etc/periodic
 
 do-install:
 	${MKDIR} ${LOCALBASE}/etc/periodic/monthly
