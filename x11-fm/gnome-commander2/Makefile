@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.2.4
-PORTREVISION=	4
+PORTVERSION=	1.2.7
 PORTEPOCH=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -27,17 +26,15 @@ CONFLICTS=	gnome-commander-*
 USE_BZIP2=	yes
 USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15 autoconf:262:env
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_OMF=	yes
 
 MAN1=		gnome-commander.1
 
-.include <bsd.port.pre.mk>
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none
 
-.if ${OSVERSION} >= 700000 && ${ARCH} == "amd64"
-IGNORE=		Does not run on amd64 and 7.X or greater
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
