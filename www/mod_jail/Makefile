@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://igorpopov.newmail.ru/
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 
 WRKSRC=		${WRKDIR}/mod_jail

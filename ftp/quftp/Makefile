@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quftp
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scriptable FTP client
 
 LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
