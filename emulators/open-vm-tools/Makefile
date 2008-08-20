@@ -15,6 +15,8 @@ MASTER_SITES=		SF
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
+BROKEN=			leaves files behind on deinstall
+
 RELEASE_DATE=		2008.07.01
 BUILD_VER=		102166
 
