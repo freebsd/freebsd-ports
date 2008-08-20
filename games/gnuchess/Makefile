@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	chess
 # The DISTFILES here is explicitly needed because it can be extended later.
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Classic" Gnu Chess
 
 PLIST_FILES=	bin/gnuchess \
