@@ -1,0 +1,321 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaction/.packlist
+bin/componentui_cgi.pl
+bin/componentui_create.pl
+bin/componentui_fastcgi.pl
+bin/componentui_server.pl
+bin/componentui_test.pl
+bin/moose_to_rclass.pl
+bin/rclass_back_to_moose.pl
+%%SITE_PERL%%/Catalyst/Model/Reaction/InterfaceModel/DBIC.pm
+%%SITE_PERL%%/ComponentUI.pm
+%%SITE_PERL%%/ComponentUI/Controller/Root.pm
+%%SITE_PERL%%/ComponentUI/Controller/TestModel/Bar.pm
+%%SITE_PERL%%/ComponentUI/Controller/TestModel/Baz.pm
+%%SITE_PERL%%/ComponentUI/Controller/TestModel/Foo.pm
+%%SITE_PERL%%/ComponentUI/Model/TestDB.pm
+%%SITE_PERL%%/ComponentUI/Model/TestModel.pm
+%%SITE_PERL%%/ComponentUI/TestModel.pm
+%%SITE_PERL%%/ComponentUI/TestModel/Foo.pm
+%%SITE_PERL%%/ComponentUI/View/Site.pm
+%%SITE_PERL%%/ComponentUI/View/Site/Widget/Index.pm
+%%SITE_PERL%%/DBIx/Class/IntrospectableM2M.pm
+%%SITE_PERL%%/Reaction.pm
+%%SITE_PERL%%/Reaction/Class.pm
+%%SITE_PERL%%/Reaction/ClassExporter.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Result.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Result/Delete.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Result/Update.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/ResultSet/Create.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/ResultSet/DeleteAll.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Role/CheckUniques.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User/ChangePassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User/ResetPassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User/Role/SetPassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User/SetPassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/Role/SimpleMethodCall.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/User/ChangePassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/User/Login.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/User/ResetPassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/User/Role/ConfirmationCodeSupport.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Action/User/SetPassword.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/DBIC/Role/Base.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/DBIC/Role/Where.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/Persistent.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/Persistent/ResultSet.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/Virtual.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Collection/Virtual/ResultSet.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Object.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/ObjectClass.pm
+%%SITE_PERL%%/Reaction/InterfaceModel/Reflector/DBIC.pm
+%%SITE_PERL%%/Reaction/Manual.pod
+%%SITE_PERL%%/Reaction/Manual/Intro.pod
+%%SITE_PERL%%/Reaction/Meta/Attribute.pm
+%%SITE_PERL%%/Reaction/Meta/Class.pm
+%%SITE_PERL%%/Reaction/Meta/InterfaceModel/Action/Class.pm
+%%SITE_PERL%%/Reaction/Meta/InterfaceModel/Action/ParameterAttribute.pm
+%%SITE_PERL%%/Reaction/Meta/InterfaceModel/Object/Class.pm
+%%SITE_PERL%%/Reaction/Meta/InterfaceModel/Object/DomainModelAttribute.pm
+%%SITE_PERL%%/Reaction/Meta/InterfaceModel/Object/ParameterAttribute.pm
+%%SITE_PERL%%/Reaction/Object.pm
+%%SITE_PERL%%/Reaction/Role.pm
+%%SITE_PERL%%/Reaction/Test.pm
+%%SITE_PERL%%/Reaction/Test/WithDB.pm
+%%SITE_PERL%%/Reaction/Types/Core.pm
+%%SITE_PERL%%/Reaction/Types/DBIC.pm
+%%SITE_PERL%%/Reaction/Types/DateTime.pm
+%%SITE_PERL%%/Reaction/Types/Email.pm
+%%SITE_PERL%%/Reaction/Types/File.pm
+%%SITE_PERL%%/Reaction/UI/Controller.pm
+%%SITE_PERL%%/Reaction/UI/Controller/Collection.pm
+%%SITE_PERL%%/Reaction/UI/Controller/Collection/CRUD.pm
+%%SITE_PERL%%/Reaction/UI/Controller/Root.pm
+%%SITE_PERL%%/Reaction/UI/FocusStack.pm
+%%SITE_PERL%%/Reaction/UI/LayoutSet.pm
+%%SITE_PERL%%/Reaction/UI/LayoutSet/TT.pm
+%%SITE_PERL%%/Reaction/UI/RenderingContext.pm
+%%SITE_PERL%%/Reaction/UI/RenderingContext/TT.pm
+%%SITE_PERL%%/Reaction/UI/Skin.pm
+%%SITE_PERL%%/Reaction/UI/View.pm
+%%SITE_PERL%%/Reaction/UI/View/TT.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Action.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Action/Link.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Grid.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Grid/Member.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Grid/Member/WithActions.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Role/Order.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Role/Pager.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/.ToDo/File.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/.ToDo/TimeRange.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Array.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Boolean.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Collection.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/DateTime.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/File.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Integer.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Array.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Boolean.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/ChooseMany.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/ChooseOne.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/DateTime.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/File.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/HiddenArray.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Integer.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/MatchingPasswords.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Number.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Password.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/String.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable/Text.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Number.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Password.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/RelatedObject.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Role/Choices.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Role/Mutable.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Role/Mutable/Simple.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/String.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/Text.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Field/TimeRange.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/ListView.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Object.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/Role/Actions.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/SiteLayout.pm
+%%SITE_PERL%%/Reaction/UI/ViewPort/TimeRangeCollection.pm
+%%SITE_PERL%%/Reaction/UI/Widget.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Action.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Action/Link.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Collection.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Collection/Grid.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Collection/Grid/Member.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Collection/Grid/Member/WithActions.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Container.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Array.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Boolean.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Collection.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/DateTime.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Image.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Integer.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/Boolean.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/ChooseMany.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/ChooseOne.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/DateTime.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/File.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/HiddenArray.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/Integer.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/MatchingPasswords.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/Number.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/Password.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/String.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/Text.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable/TimeRange.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Number.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/RelatedObject.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/String.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Field/Text.pm
+%%SITE_PERL%%/Reaction/UI/Widget/ListView.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Object.pm
+%%SITE_PERL%%/Reaction/UI/Widget/SiteLayout.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/Boolean.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/Collection.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/DateTime.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/Image.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/Number.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/RelatedObject.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/String.pm
+%%SITE_PERL%%/Reaction/UI/Widget/Value/Text.pm
+%%SITE_PERL%%/Reaction/UI/WidgetClass.pm
+%%SITE_PERL%%/Reaction/UI/WidgetClass/_OVER.pm
+%%SITE_PERL%%/Reaction/UI/Window.pm
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/action.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/action/link.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection/grid.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection/grid/member.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection/grid/member/with_actions.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/array.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/boolean.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/collection.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/date_time.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/integer.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/boolean.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/choose_many.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/choose_one.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/date_time.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/file.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/hidden_array.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/integer.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/matching_passwords.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/number.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/password.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/string.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/text.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable/time_range.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/number.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/related_object.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/string.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/text.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/list_view.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/object.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/site_layout.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/boolean.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/collection.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/date_time.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/image.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/list.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/number.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/related_object.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/string.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value/text.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/layout/index.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/layout/site_layout.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/skin.conf
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/web/componentui-basic.css
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/action.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/action/link.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/array.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/collection.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/mutable.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/mutable/choose_many.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/mutable/time_range.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/list_view.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/object.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/site_layout.tt
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/default/skin.conf
+%%SITE_PERL%%/auto/share/dist/Reaction/skin/defaults.conf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaction
+@dirrm %%SITE_PERL%%/Catalyst/Model/Reaction/InterfaceModel
+@dirrm %%SITE_PERL%%/Catalyst/Model/Reaction
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/Reaction/Types
+@dirrm %%SITE_PERL%%/Reaction/Test
+@dirrm %%SITE_PERL%%/Reaction/UI/WidgetClass
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Value
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Field/Mutable
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Field
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Collection/Grid/Member
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Collection/Grid
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Collection
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget/Action
+@dirrm %%SITE_PERL%%/Reaction/UI/Widget
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Role
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Field/.ToDo
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Field/Role/Mutable
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Field/Role
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Field/Mutable
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Field
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Grid/Member
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Grid
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Collection/Role
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Collection
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort/Action
+@dirrm %%SITE_PERL%%/Reaction/UI/ViewPort
+@dirrm %%SITE_PERL%%/Reaction/UI/View
+@dirrm %%SITE_PERL%%/Reaction/UI/RenderingContext
+@dirrm %%SITE_PERL%%/Reaction/UI/LayoutSet
+@dirrm %%SITE_PERL%%/Reaction/UI/Controller/Collection
+@dirrm %%SITE_PERL%%/Reaction/UI/Controller
+@dirrm %%SITE_PERL%%/Reaction/UI
+@dirrm %%SITE_PERL%%/Reaction/Meta/InterfaceModel/Object
+@dirrm %%SITE_PERL%%/Reaction/Meta/InterfaceModel/Action
+@dirrm %%SITE_PERL%%/Reaction/Meta/InterfaceModel
+@dirrm %%SITE_PERL%%/Reaction/Meta
+@dirrm %%SITE_PERL%%/Reaction/Manual
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Reflector
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Collection/Virtual
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Collection/DBIC/Role
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Collection/DBIC
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Collection/Persistent
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Collection
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/User/Role
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/User
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/Role
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User/Role
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/User
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Role
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/ResultSet
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC/Result
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action/DBIC
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel/Action
+@dirrm %%SITE_PERL%%/Reaction/InterfaceModel
+@dirrm %%SITE_PERL%%/Reaction
+@dirrm %%SITE_PERL%%/ComponentUI/View/Site/Widget
+@dirrm %%SITE_PERL%%/ComponentUI/View/Site
+@dirrm %%SITE_PERL%%/ComponentUI/View
+@dirrm %%SITE_PERL%%/ComponentUI/TestModel
+@dirrm %%SITE_PERL%%/ComponentUI/Model
+@dirrm %%SITE_PERL%%/ComponentUI/Controller/TestModel
+@dirrm %%SITE_PERL%%/ComponentUI/Controller
+@dirrm %%SITE_PERL%%/ComponentUI
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field/mutable
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/field
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/action
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/default
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/web
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui/layout
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/componentui
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/value
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field/mutable
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/field
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection/grid/member
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection/grid
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/collection
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout/action
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base/layout
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin/base
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction/skin
+@dirrm %%SITE_PERL%%/auto/share/dist/Reaction
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share

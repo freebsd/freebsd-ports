@@ -927,6 +927,7 @@
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RTx-Statistics
+    SUBDIR += p5-Reaction
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-SWF-Chart
