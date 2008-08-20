@@ -12,7 +12,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lewiz@compsoc.man.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
 
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread

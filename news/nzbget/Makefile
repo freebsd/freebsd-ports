@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
-MAINTAINER=	lewiz@compsoc.man.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A binary newsreader supporting NZB files
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
