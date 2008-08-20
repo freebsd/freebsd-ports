@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://zsync.moria.org.uk/download/
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	A file transfer program
 
 USE_BZIP2=	yes
