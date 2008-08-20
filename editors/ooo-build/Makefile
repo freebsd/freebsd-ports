@@ -19,7 +19,7 @@ DISTFILES+=	${OOOBUILD_SOURCE} \
 	${OOO_LIBWPS}:libwps \
 	${OOO_LIBWPG}:libwpg
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community enhanced/bug fixed version of OpenOffice.org
 
 BROKEN=		Size mismatch
