@@ -49,7 +49,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 .if defined(WITH_MODPYTHON3)
-RUN_DEPENDS+=	${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_python3
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_python3
 .endif
 
 # This feature is a clone of the Mozilla Project's Bonsai database.
