@@ -18,15 +18,14 @@ COMMENT=	Full-text search system using N-gram
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr
 
-BROKEN=		does not compile
-
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	YES
 USE_BDB=	42
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_RUBY=	YES
-CONFIGURE_ARGS=	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
+CONFIGURE_ARGS=	\
+	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 	--with-apu-config=${LOCALBASE}/bin/apu-1-config \
 	--with-db-includes="-I${BDB_INCLUDE_DIR}" \
 	--with-db-libs="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" \
