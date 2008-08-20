@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A distributed, collaborative, spam detection and filtering network
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
