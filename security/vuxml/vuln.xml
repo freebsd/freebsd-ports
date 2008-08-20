@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8514b6e7-6f0f-11dd-b3db-001c2514716c">
+    <topic>joomla -- flaw in the reset token validation</topic>
+    <affects>
+      <package>
+	<name>joomla</name>
+	<range><lt>1.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla project reports:</p>
+	<blockquote cite="http://developer.joomla.org/security/news/241-20080801-core-password-remind-functionality.html">
+	  <p>A flaw in the reset token validation mechanism allows
+	    for non-validating tokens to be forged. This will allow
+	    an unauthenticated, unauthorized user to reset the password
+	    of the first enabled user (lowest id). Typically, this is
+	    an administrator user. Note, that changing the first users
+	    username may lessen the impact of this exploit (since the
+	    person who changed the password does not know the login
+	    associated with the new password).  However, the only way
+	    to completely rectify the issue is to upgrade to 1.5.6
+	    (or patch the /components/com_user/models/reset.php file).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3681</cvename>
+    </references>
+    <dates>
+      <discovery>2008-08-14</discovery>
+      <entry>2008-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4f31e16-6e33-11dd-8eb7-0011098ad87f">
     <topic>cdf3 -- Buffer overflow vulnerability</topic>
     <affects>
