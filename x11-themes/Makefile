@@ -24,6 +24,7 @@
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
     SUBDIR += cursor-polar-theme
+    SUBDIR += e16-themes
     SUBDIR += e17-splash-azul
     SUBDIR += e17-splash-blue
     SUBDIR += e17-splash-clean
