@@ -18,7 +18,7 @@ COMMENT=	An asterisk ajax web manager
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 PROJECTHOST=	asterisk-bsd
-USE_AUTOTOOLS=	autoconf:261 automake:19
+USE_AUTOTOOLS=	autoconf:262 automake:19
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

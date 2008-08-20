@@ -19,7 +19,7 @@ CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 autoheader:261 libtool:15
+USE_AUTOTOOLS=	automake:19 autoheader:262 libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

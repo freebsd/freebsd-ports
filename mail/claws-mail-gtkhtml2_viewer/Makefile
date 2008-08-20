@@ -19,7 +19,7 @@ BUILD_DEPENDS=	claws-mail>=3.5.0:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.5.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_GNOME=	libgtkhtml
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

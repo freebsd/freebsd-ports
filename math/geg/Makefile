@@ -17,7 +17,7 @@ MAINTAINER=	domi@saargate.de
 COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	automake:15 autoconf:261
+USE_AUTOTOOLS=	automake:15 autoconf:262
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

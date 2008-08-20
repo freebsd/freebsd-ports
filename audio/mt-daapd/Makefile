@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
-USE_AUTOTOOLS=	autoheader:261 autoconf:261:env
+USE_AUTOTOOLS=	autoheader:262 autoconf:262:env
 
 USE_ICONV=	yes
 PATCH_SITES+=	http://www.apionet.or.jp/~tomi/

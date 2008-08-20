@@ -53,7 +53,7 @@ XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_TARGET=--build=${XEMACS_ARCH}
 
 CONFIGURE_ARGS+=	--enable-mule \

@@ -16,7 +16,7 @@ COMMENT=	A sophisticated scripter based on tcl/tk
 
 CONFLICTS=	expect-5.43*
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 EXPECT_VER=	${PORTVERSION}
 

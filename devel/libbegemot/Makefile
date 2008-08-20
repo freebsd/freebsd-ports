@@ -17,7 +17,7 @@ COMMENT=	A function library for begemot tools
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:261:env libltdl:15 libtool:15:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env libltdl:15 libtool:15:env
 USE_LDCONFIG=	yes
 
 

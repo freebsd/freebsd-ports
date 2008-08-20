@@ -21,7 +21,7 @@ BUILD_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE} \
 	--with-librapi2=${LOCALBASE}
@@ -29,5 +29,8 @@ CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE} \
 PLIST_FILES=	lib/claws-mail/plugins/synce_plugin.a \
 	lib/claws-mail/plugins/synce_plugin.la \
 	lib/claws-mail/plugins/synce_plugin.so
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:261 libtool:15
+USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:15
 USE_XORG=	sm ice xt xp xext x11
 USE_FREETYPE=	yes
 USE_LDCONFIG=	yes

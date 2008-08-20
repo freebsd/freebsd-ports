@@ -49,7 +49,7 @@ PLIST_SUB+=	NLS="@comment "
 # after the GNU gzip implementation was replaced with a BSD licensed version
 .if (${OSVERSION} >= 602105) && \
     (${OSVERSION} < 700000 || ${OSVERSION} >= 700029)
-USE_AUTOTOOLS=	autoconf:261:env	# autom4te
+USE_AUTOTOOLS=	autoconf:262:env	# autom4te
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tests_gzip.at
 .endif
 

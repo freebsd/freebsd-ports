@@ -16,7 +16,7 @@ MAINTAINER=	durian@shadetreesoftware.com
 COMMENT=	Apache module for loading C++ objects as handlers
 
 USE_APACHE=	2.0+
-USE_AUTOTOOLS=	autoconf:261 autoheader:261 libtool:15 automake:19 aclocal:19
+USE_AUTOTOOLS=	autoconf:262 autoheader:262 libtool:15 automake:19 aclocal:19
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a
 GNU_CONFIGURE=	yes

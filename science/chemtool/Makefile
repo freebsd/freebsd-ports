@@ -17,7 +17,7 @@ RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

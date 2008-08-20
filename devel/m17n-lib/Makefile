@@ -22,7 +22,7 @@ RUN_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
 
 USE_XORG=	xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes

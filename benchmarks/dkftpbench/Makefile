@@ -19,6 +19,6 @@ PLIST_FILES=	bin/dkftpbench
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-USE_AUTOTOOLS=	automake:14 autoconf:261
+USE_AUTOTOOLS=	automake:14 autoconf:262
 
 .include <bsd.port.mk>

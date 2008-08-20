@@ -16,7 +16,7 @@ DISTNAME=	trrntzip_v${PORTVERSION:S/.//}_src
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Efficient way to prepare zipfiles for BitTorrent
 
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:262
 AUTOMAKE_ARGS=		-a
 
 WRKSRC=		${WRKDIR}/trrntzip

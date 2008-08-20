@@ -16,7 +16,7 @@ COMMENT=	High-level audio API
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_WX=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

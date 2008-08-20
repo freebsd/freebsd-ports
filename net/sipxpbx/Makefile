@@ -35,7 +35,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env automake:19:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env
 USE_APACHE=	2.0+
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sipxpbx

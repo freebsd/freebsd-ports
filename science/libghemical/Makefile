@@ -46,7 +46,7 @@ LAPACK=		-llapack
 
 CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel --with-blas="-L${LOCALBASE}/lib ${BLAS}" -with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
 .include <bsd.port.post.mk>

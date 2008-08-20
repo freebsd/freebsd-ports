@@ -108,7 +108,7 @@ CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 # disable autotools bootstrapping for now, 3.0.STABLE does not currently
 # require it:
-#USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
+#USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid

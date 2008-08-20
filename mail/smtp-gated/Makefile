@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This software block SMTP sessions used by e-mail worms and viruses
 
 HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader:261
+USE_AUTOTOOLS=	autoheader:262
 
 OPTIONS=	NAT "NAT transparent proxy code" On \
 		CHUNKING "Enable support for SMTP CHUNKING extension" Off \

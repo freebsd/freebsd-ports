@@ -21,7 +21,7 @@ USE_TK=		80+
 USE_TK_NO_THREADS=	yes
 USE_XORG=	xext
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)

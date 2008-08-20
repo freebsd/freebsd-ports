@@ -17,7 +17,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for Haddock
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		haddock:${PORTSDIR}/devel/hs-haddock \

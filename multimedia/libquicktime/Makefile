@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_XORG=	xaw xv
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen
@@ -152,6 +152,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*

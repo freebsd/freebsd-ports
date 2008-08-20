@@ -28,7 +28,7 @@ BROKEN=		does not configure
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoheader:261 autoconf:261
+USE_AUTOTOOLS=	autoheader:262 autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

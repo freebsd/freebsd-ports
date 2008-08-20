@@ -21,7 +21,7 @@ LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2 \
 
 BROKEN=		does not compile
 
-USE_AUTOTOOLS=	autoheader:261 automake:110 libtool:15
+USE_AUTOTOOLS=	autoheader:262 automake:110 libtool:15
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 libxml2

@@ -24,10 +24,13 @@ USE_ICONV =	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS=	--enable-s3=yes
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
 CFLAGS+=	${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 USE_GNOME=	pkgconfig gtk20 libgtkhtml vte
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 CONFIGURE_ARGS=	--with-tk \
 		--with-tk-library=${LOCALBASE}/lib \

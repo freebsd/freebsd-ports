@@ -17,7 +17,7 @@ COMMENT=	Gtk2 Frontend for samba daemon
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 pkgconfig
 
@@ -25,6 +25,9 @@ PORTDOCS=	AUTHORS README ChangeLog COPYING
 
 post-extract:
 	@${CP} ${FILESDIR}/crypt.h ${WRKSRC}/src/
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 post-configure:
 	@${REINPLACE_CMD} -e "s:\<crypt.h\>:\"crypt.h\":" ${WRKSRC}/src/functions.c

@@ -26,7 +26,7 @@ USE_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 AUTOMAKE_ARGS+=	--add-missing -Wno-portability
-USE_AUTOTOOLS=	aclocal:110 autoconf:261 automake:110
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
 
 .include <bsd.port.pre.mk>
 

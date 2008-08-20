@@ -18,7 +18,7 @@ COMMENT=	GNU Standards-compliant Makefile generator (1.10)
 RUN_DEPENDS=	${AUTOCONF_DEPENDS} \
 		automake-wrapper:${PORTSDIR}/devel/automake-wrapper
 
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 BUILD_VERSION=	1.10
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake110

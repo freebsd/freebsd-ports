@@ -21,7 +21,7 @@ USE_GNOME=	gtk12 gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261 autoconf:261 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:262 autoconf:262 libtool:15
 ACLOCAL_ARGS=	--force
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \

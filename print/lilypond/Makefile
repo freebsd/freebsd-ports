@@ -36,7 +36,7 @@ MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 INFO=		lilypond lilypond-internals lilypond-program lilypond-learning \
 		music-glossary
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

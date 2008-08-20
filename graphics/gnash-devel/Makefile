@@ -32,7 +32,7 @@ USE_GCC=	4.2+
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:15 automake:19:env autoheader:261:env autoconf:261:env aclocal:19:env libtool:15:env
+USE_AUTOTOOLS=	libltdl:15 automake:19:env autoheader:262:env autoconf:262:env aclocal:19:env libtool:15:env
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

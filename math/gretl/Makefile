@@ -24,7 +24,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:261
+USE_AUTOTOOLS=	libtool:15 autoconf:262
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${GCCLIBDIR}"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake

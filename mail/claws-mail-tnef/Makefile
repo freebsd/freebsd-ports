@@ -21,7 +21,7 @@ LIB_DEPENDS=	ytnef.0:${PORTSDIR}/devel/libytnef
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

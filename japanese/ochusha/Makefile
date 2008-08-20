@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	pkgconfig glib20 gtk20 libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:110 autoconf:261 aclocal:110 libtool:15
+USE_AUTOTOOLS=	automake:110 autoconf:262 aclocal:110 libtool:15
 
 DESKTOP_ENTRIES="Ochusha" "A GUI BBS browser for 2ch.net" \
 		"${LOCALBASE}/share/ochusha/ochusha32.xpm" \

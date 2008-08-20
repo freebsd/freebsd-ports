@@ -17,7 +17,7 @@ COMMENT=	Networking API that provides reliable UDP primarily for online games
 
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:261
+USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 				LDFLAGS="-L${LOCALBASE}/lib" \
@@ -49,6 +49,9 @@ PLIST_SUB+=	PL_AUTOPATCHER=""
 CONFIGURE_ARGS+=	--disable-autopatcher
 PLIST_SUB+=	PL_AUTOPATCHER="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -3564,3 +3564,4 @@ games/blobwars||2008-08-20|Removed due to copyright problem
 games/randomshooter||2008-08-20|Removed due to copyright problem
 games/starfighter||2008-08-20|Removed due to copyright problem
 games/viruskiller||2008-08-20|Removed due to copyright problem
+devel/autoconf261|devel/autoconf262|2008-08-20|Migration to autoconf-2.62

@@ -21,7 +21,7 @@ CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.* tdb-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:261 autoheader:261
+USE_AUTOTOOLS=		autoconf:262 autoheader:262
 AUTOHEADER_ARGS=	-I${WRKSRC} -I${WRKSRC}/lib/replace
 AUTOCONF_ARGS=		-I${WRKSRC} -I${WRKSRC}/lib/replace
 

@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 ALL_TARGET=	default
 
 MAN1=		6tunnel.1

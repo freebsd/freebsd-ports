@@ -21,7 +21,7 @@ LIB_DEPENDS=	begemot.1:${PORTSDIR}/devel/libbegemot \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libbegemot=${LOCALBASE}
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 USE_LDCONFIG=		yes
 

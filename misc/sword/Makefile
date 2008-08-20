@@ -19,7 +19,7 @@ COMMENT=	A project framework for manipulating Bible texts
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:110 autoconf:261
+USE_AUTOTOOLS=	automake:110 autoconf:262
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf --without-clucene --with-zlib --without-icu
 USE_LDCONFIG=	yes
@@ -38,6 +38,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
 	@@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \

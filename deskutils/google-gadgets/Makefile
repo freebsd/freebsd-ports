@@ -38,7 +38,7 @@ USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" CPPFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-ltdl-install=no
-USE_AUTOTOOLS=	libtool:15:env autoconf:261:env automake:110:env aclocal:110:env libltdl:15
+USE_AUTOTOOLS=	libtool:15:env autoconf:262:env automake:110:env aclocal:110:env libltdl:15
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 

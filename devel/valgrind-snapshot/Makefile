@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS+=	autoconf:261 aclocal:19 automake:19
+USE_AUTOTOOLS+=	autoconf:262 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GCC=	3.4
 

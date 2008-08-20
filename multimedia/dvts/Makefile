@@ -21,7 +21,7 @@ COMMENT=	An implementation of Digital Video Transport System
 
 CONFLICTS=	gdvrecv-[0-9]*
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 MAN1=		dvts.1 dvsend.1 dvrecv.1
 

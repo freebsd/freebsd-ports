@@ -19,7 +19,7 @@ COMMENT=	An open source, completely automatic on-line backup system for UNIX
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:261 aclocal:19 autoheader:261
+USE_AUTOTOOLS=	autoconf:262 aclocal:19 autoheader:262
 ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

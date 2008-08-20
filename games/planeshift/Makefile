@@ -23,7 +23,7 @@ LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:261:env
+USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib

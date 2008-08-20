@@ -32,7 +32,7 @@ USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -53,6 +53,7 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 PLIST_SUB+=	RELEASE="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!' \

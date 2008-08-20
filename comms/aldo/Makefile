@@ -18,7 +18,7 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:261 automake:110 libtool:15
+USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
@@ -29,6 +29,7 @@ MAN1=	aldo.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aldo ${PREFIX}/bin

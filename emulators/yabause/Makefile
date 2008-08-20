@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:261
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message

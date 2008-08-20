@@ -15,7 +15,7 @@ DISTNAME=	nss-mdns-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
-USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
+USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

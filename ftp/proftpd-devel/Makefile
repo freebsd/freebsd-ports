@@ -57,7 +57,7 @@ PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-1.[0-9].*

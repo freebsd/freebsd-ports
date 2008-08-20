@@ -24,7 +24,7 @@ SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:19 autoconf:261
+USE_AUTOTOOLS=	automake:19 autoconf:262
 USE_GCC=	3.4
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\

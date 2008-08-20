@@ -20,7 +20,7 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_SDL=	sdl
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-sdl

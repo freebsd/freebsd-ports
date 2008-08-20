@@ -28,7 +28,7 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
-USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

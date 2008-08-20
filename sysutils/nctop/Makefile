@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.rz.uni-karlsruhe.de/~hj28/download.php?file=/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote system monitor for unix hosts
 
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 USE_BZIP2=	YES
 
 HAS_CONFIGURE=	yes

@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-intf-open
 		!defined(WITHOUT_FREEIPMI))
 # Support for FreeIPMI 0.4.x and 0.5.x API
 EXTRA_PATCHES+=	${FILESDIR}/freeipmi-support.patch
-USE_AUTOTOOLS+=	autoconf:261 libtool:15 aclocal:19 automake:19
+USE_AUTOTOOLS+=	autoconf:262 libtool:15 aclocal:19 automake:19
 # libtool15 installs it's aclocal macros into ${LOCALBASE}/share/aclocal
 ACLOCAL_ARGS+=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 # Make automake quiet about missing NEWS and ChangeLog files

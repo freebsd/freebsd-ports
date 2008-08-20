@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 GHC_VERSION=	${PORTVERSION}
 
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 

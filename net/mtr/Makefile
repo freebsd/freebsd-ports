@@ -19,7 +19,7 @@ COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19 autoheader:261 autoconf:261
+USE_AUTOTOOLS=	automake:19 autoheader:262 autoconf:262
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr

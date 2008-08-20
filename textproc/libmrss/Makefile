@@ -35,7 +35,7 @@ pre-patch:
 
 .if defined(WITH_PHPMRSS)
 USE_PHP=	yes
-USE_AUTOTOOLS+=	autoconf:261:env
+USE_AUTOTOOLS+=	autoconf:262:env
 BUILD_DEPENDS+=	phpize:${PHP_PORT}
 post-install:
 		@(cd ${WRKSRC}/phpmrss; ${SETENV} ${SCRIPTS_ENV} ${LOCALBASE}/bin/phpize)

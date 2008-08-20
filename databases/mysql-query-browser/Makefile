@@ -24,7 +24,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 BROKEN=		Checksum mismatch
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:261:env
+USE_AUTOTOOLS=	automake:19:env autoconf:262:env
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_ICONV=	yes

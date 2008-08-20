@@ -47,7 +47,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 USE_FORTRAN=	yes
 

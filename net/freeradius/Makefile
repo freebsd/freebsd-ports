@@ -38,7 +38,7 @@ CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 .endif
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:261
+USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:262
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -225,7 +225,7 @@ pre-configure:
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
 # Force the rebuild of some configures from configure.in, as we're patching
 # the configure.in
-# NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:261 is
+# NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:262 is
 # added to USE_AUTOTOOLS
 	@cd ${WRKSRC}/src/modules/rlm_ldap && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql \

@@ -17,7 +17,7 @@ COMMENT=	A gps file translating tool
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
 		expat:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gpsbabel

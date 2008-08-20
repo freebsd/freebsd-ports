@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 OOPSVERSION=	1.5.24
 
 USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
 		--localstatedir=${OOPSVAR} \

@@ -29,7 +29,7 @@ USE_QT_VER=	3
 USE_GNOME=	gnometarget
 USE_PERL5_RUN=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${EXAMPLESDIR}/
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

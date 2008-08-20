@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 PLUGDIR=	lib/bmp/Input
 PLUGFILE=	libbmp-mpc.so
 PLIST_FILES=	${PLUGDIR}/${PLUGFILE}

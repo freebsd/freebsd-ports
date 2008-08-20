@@ -21,7 +21,7 @@ LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=		otr_toolkit.1

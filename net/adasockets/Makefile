@@ -17,7 +17,7 @@ COMMENT=		Sockets library for Ada
 BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat \
 			texi2dvi:${PORTSDIR}/print/teTeX
 
-USE_AUTOTOOLS=		autoconf:261
+USE_AUTOTOOLS=		autoconf:262
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-examples
 .if defined(NOPORTDOCS)

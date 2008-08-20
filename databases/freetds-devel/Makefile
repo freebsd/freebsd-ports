@@ -19,7 +19,7 @@ TDS_VER?=	5.0
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_GONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:261:env libtool:15
+USE_AUTOTOOLS=	autoconf:262:env libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}

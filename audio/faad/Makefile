@@ -18,7 +18,7 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_DOS2UNIX=	yes
-USE_AUTOTOOLS=	automake:15 autoheader:261 libtool:15
+USE_AUTOTOOLS=	automake:15 autoheader:262 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
