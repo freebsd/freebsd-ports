@@ -1,32 +1,30 @@
-# New ports collection makefile for:    gtk-qt-engine
-# Date created:                         23 February 2004
-# Whom:                                 Danny Pansters <danny@ricin.com>
+# New ports collection makefile for:    gtk-qt4-engine
+# Date created:                         07 July 2008
+# Whom:                                 Kris Moore <kris@pcbsd.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gtk-qt-engine
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTNAME=	gtk-qt4-engine
+PORTVERSION=	1.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://gtk-qt.ecs.soton.ac.uk/files/${PORTVERSION}/ \
-		http://freebsd.ricin.com/ports/distfiles/
+MASTER_SITES=	http://gtk-qt.ecs.soton.ac.uk/files/${PORTVERSION}/
+DISTFILES=	gtk-qt-engine-${PORTVERSION}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	kris@pcbsd.org
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_QT_VER=	3
-USE_KDEBASE_VER=3
-HAS_CONFIGURE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc_build rcc_build uic_build qmake_build
 USE_CMAKE=	yes
+USE_KDE4=	kdebase kdeprefix automoc4
 
 OPTIONS=	LIBBONOBOUI "Install libbonoboui if missing" off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/gtk-qt-engine
 
 .include <bsd.port.pre.mk>
 
