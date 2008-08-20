@@ -19,15 +19,6 @@
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
  		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
-@@ -258,7 +257,7 @@
- tests: $(TEST_EXES)
- 
- install:   install-program   install-ad    install-scripts \
--	   install-gnome     install-man   install-xml install-pam
-+	   install-gnome     install-man   install-xml
- uninstall: uninstall-program uninstall-ad  \
- 	   uninstall-gnome   uninstall-man uninstall-xml  
- 
 @@ -490,22 +489,6 @@
  	  fi ;								\
  	fi
