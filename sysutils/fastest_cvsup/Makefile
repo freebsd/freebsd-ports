@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.is-root.com/myports/
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds fastest CVSup server
 
 DISTVERSION=	0.2.8

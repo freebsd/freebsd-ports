@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/
 DISTNAME=	dlint${PORTVERSION}
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
 NO_BUILD=	yes

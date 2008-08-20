@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://gatling.ikk.sztaki.hu/pub/aclgen/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimize Cisco routers ip access lists
 
 NO_WRKSUBDIR=	YES
