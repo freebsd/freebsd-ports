@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_SNAPDATE!=	date -v-1d +%Y-%m-%d
 .else
-SVN_SNAPDATE=	2008-08-05
+SVN_SNAPDATE=	2008-08-17
 .endif
 
 SNAPDATE=	${SVN_SNAPDATE:S/-//g}
@@ -81,7 +81,9 @@ post-install:
 	@${RM} ${PREFIX}/bin/.dir \
 	   ${PREFIX}/lib/.dir
 
+.if defined(MAINTAINER_MODE)
 regression-test: ${BUILD_COOKIE}
 	(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
+.endif
 
 .include <bsd.port.mk>
