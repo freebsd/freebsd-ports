@@ -7,7 +7,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.46
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -29,6 +29,7 @@ OPTIONS=	RPMBUILD "rpmbuild support" off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed --without-getopt --with-patch=${LOCALBASE}/bin/gpatch
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 MAN1=		guards.1 quilt.1
 DOCS=		README README.MAIL quilt.pdf
