@@ -1,9 +1,21 @@
 bin/viking
 bin/viking-remote
+share/applications/viking.desktop
+share/icons/viking_icon.png
 %%NLS%%share/locale/cs/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/da/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/de/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/el/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/es/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/it/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/viking.mo
+@dirrmtry share/applications
