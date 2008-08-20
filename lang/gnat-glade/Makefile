@@ -18,7 +18,7 @@ COMMENT=	GNU Ada distributed systems annex
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
-USE_AUTOTOOLS=	automake:14 autoconf:261
+USE_AUTOTOOLS=	automake:14 autoconf:262
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --program-transform-name=''
 

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 USE_GNOME=	pkgconfig gnomehack
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD}

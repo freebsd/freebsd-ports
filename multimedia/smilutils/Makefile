@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261 autoheader:261 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 autoheader:262 libtool:15
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxml2 libglade2

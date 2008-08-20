@@ -22,7 +22,7 @@ LIB_DEPENDS=	pari.2:${PORTSDIR}/math/pari
 
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:261
+USE_AUTOTOOLS=	automake:15 autoconf:262
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
 ASIR_SRC_VERSION=	${PORTVERSION}
 ASIR_DOC_VERSION=	20070718

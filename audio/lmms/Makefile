@@ -28,7 +28,7 @@ USE_QT_VER=	3
 USE_SDL=	sdl sound
 USE_GMAKE=	yes
 
-USE_AUTOTOOLS=	autoconf:261 autoheader:261 automake:19 aclocal:19 libtool:15
+USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:19 aclocal:19 libtool:15
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

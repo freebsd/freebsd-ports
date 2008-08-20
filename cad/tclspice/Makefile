@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261 libtool:15
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:15
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 ALL_TARGET=	tcl

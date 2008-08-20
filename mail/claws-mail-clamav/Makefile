@@ -21,7 +21,7 @@ LIB_DEPENDS=	clamav.4:${PORTSDIR}/security/clamav
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}

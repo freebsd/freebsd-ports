@@ -17,7 +17,7 @@ COMMENT=	A lightweight and user friendly ncurse based IRC client
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -88,5 +88,8 @@ PLIST_SUB+=	PERL=""
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	automake:15:env autoconf:261:env
+USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-proj=${LOCALBASE} \

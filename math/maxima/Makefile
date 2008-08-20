@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 
 USE_TK=		84+
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoconf:261
+USE_AUTOTOOLS=	aclocal:110 autoconf:262
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${WISH} \

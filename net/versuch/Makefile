@@ -26,7 +26,7 @@ BROKEN=		Does not compile
 WRKSRC=		${WRKDIR}/versuch
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

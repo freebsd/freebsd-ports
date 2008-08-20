@@ -17,7 +17,7 @@ MAINTAINER=	makoto@pinpott.spnet.ne.jp
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:261
+USE_AUTOTOOLS=	automake:14 autoconf:262
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib --mandir=${PREFIX}/man \
 		--with-setgid=${SHAREGRP}

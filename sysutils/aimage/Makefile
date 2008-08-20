@@ -18,8 +18,11 @@ LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 PLIST_FILES=	bin/aimage
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

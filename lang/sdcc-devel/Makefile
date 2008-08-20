@@ -52,7 +52,7 @@ LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "
 .else
-USE_AUTOTOOLS+=		autoconf:261
+USE_AUTOTOOLS+=		autoconf:262
 PLIST_SUB+=		MCS51DS390=""
 .endif
 

@@ -21,7 +21,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
-USE_AUTOTOOLS=		autoconf:261 autoheader:261
+USE_AUTOTOOLS=		autoconf:262 autoheader:262
 WRKSRC=                 ${WRKDIR}/${DISTNAME}-samba
 
 SAMBA_PORT=		net/samba3

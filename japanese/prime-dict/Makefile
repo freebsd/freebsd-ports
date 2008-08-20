@@ -20,7 +20,7 @@ USE_RUBY=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USE_AUTOTOOLS=	automake:19 autoconf:261
+USE_AUTOTOOLS=	automake:19 autoconf:262
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

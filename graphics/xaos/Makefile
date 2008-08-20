@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_XORG=	x11 xau xdmcp xext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 OPTIONS=	PTHREAD "Enable SMP support (experimental)" off \
 		NLS "Native Language Support" on

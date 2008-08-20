@@ -20,7 +20,7 @@ BUILD_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_PERL5=	yes
 
 PLIST_FILES=	lib/claws-mail/plugins/perl_plugin.a \

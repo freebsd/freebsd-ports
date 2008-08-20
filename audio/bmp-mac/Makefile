@@ -21,7 +21,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 PLUGDIR=	lib/bmp/Input
 PLUGFILE=	lib${PKGNAMEPREFIX}${PORTNAME}.so

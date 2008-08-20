@@ -28,7 +28,7 @@ USE_FORTRAN=	yes
 FCFLAGS+=	-O3 -ffast-math
 .endif
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

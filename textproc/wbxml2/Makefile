@@ -19,7 +19,7 @@ COMMENT=	Library & tools for converting wbxml<->xml
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	aclocal:19 autoconf:261 autoheader:261 automake:19 libtool:15
+USE_AUTOTOOLS=	aclocal:19 autoconf:262 autoheader:262 automake:19 libtool:15
 AUTOMAKE_ARGS=	-acf
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig libxml2

@@ -22,7 +22,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 QUICKML_USER=	quickml
 QUICKML_GROUP=	quickml
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 

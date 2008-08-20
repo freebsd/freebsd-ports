@@ -1,0 +1,16 @@
+--- ./aclocal.m4.orig	2007-09-19 18:47:25.000000000 +0000
++++ ./aclocal.m4	2008-08-04 13:46:17.000000000 +0000
+@@ -436,6 +436,6 @@
+ [
+- if test "x$[ac_condor_analyze_[$1]]" = "x"; then
++ if test "x$[ac_condor_analyze_$1]" = "x"; then
+    if test ! "x$ac_condor_analyze" = "x" ; then
+      AC_MSG_WARN([no condor_analyze.$1 found, using $ac_condor_analyze])
+-     AC_SUBST([condor_analyze_[$1]],$ac_condor_analyze)
++     AC_SUBST([condor_analyze_$1],$ac_condor_analyze)
+    else
+@@ -448,3 +448,3 @@
+  else 
+-   AC_SUBST([condor_analyze_[$1]],$[ac_condor_analyze_[$1]])
++   AC_SUBST([condor_analyze_$1],$[ac_condor_analyze_$1])
+  fi

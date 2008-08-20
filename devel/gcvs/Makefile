@@ -30,7 +30,7 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-USE_AUTOTOOLS=	automake:15:env autoconf:261:env
+USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 
 .include <bsd.port.pre.mk>
 

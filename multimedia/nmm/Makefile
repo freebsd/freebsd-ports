@@ -44,7 +44,7 @@ USE_XORG=	x11
 # be fixed correctly, but so far I haven't found the correct way...
 #
 USE_AUTOTOOLS=	libltdl libtool:15 \
-		autoconf:261:env autoheader:261:env \
+		autoconf:262:env autoheader:262:env \
 		automake:19:env aclocal:19:env
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

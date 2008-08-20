@@ -38,7 +38,7 @@ SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 USE_APACHE=		common22
 USE_BZIP2=		yes
 USE_ICONV=		yes
-USE_AUTOTOOLS=		autoconf:261 libtool:15
+USE_AUTOTOOLS=		autoconf:262 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22.sh htcacheclean.sh
 SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}

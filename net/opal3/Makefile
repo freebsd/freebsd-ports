@@ -23,7 +23,7 @@ LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` optshared
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

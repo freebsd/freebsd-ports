@@ -1,28 +1,25 @@
---- configure.ac.orig	Thu Mar 30 21:11:17 2006
-+++ configure.ac	Sat Apr  1 19:49:02 2006
-@@ -1272,6 +1272,7 @@
- dnl Straightforward OS determination
- case "$ac_cv_build" in
+--- configure.ac.orig	2007-05-21 03:50:13.000000000 +0000
++++ configure.ac	2008-08-04 13:51:25.000000000 +0000
+@@ -389,5 +389,7 @@
+ dnl
++dnl m4_fst disappeared without a trace in autoconf 2.62
++m4_define([xe_fst], [$1])dnl
+ define([XE_EXPAND_COMPLEX_OPTIONS],
+ [m4_if([$2], [], [],
+-       [XE_EXPAND_COMPLEX_OPTION([$1], m4_fst($2))[]dnl
++       [XE_EXPAND_COMPLEX_OPTION([$1], xe_fst($2))[]dnl
+ XE_EXPAND_COMPLEX_OPTIONS([$1], XE_CDR($2))])])dnl
+@@ -1313,2 +1315,3 @@
    *-*-linux*    ) opsys=linux ;;
 +  *-*-freebsd*	) opsys=freebsd ;;
    *-*-netbsd*   ) opsys=netbsd ;;
-   *-*-openbsd*	) opsys=openbsd ;;
-   *-*-nextstep* ) opsys=nextstep ;;
-@@ -3439,7 +3440,7 @@
-       dnl #### How about /sw/include, and /opt/local/include?
-       dnl these directories need to be the parent of the freetype directory
+@@ -3496,3 +3499,3 @@
        for freetype_include_top in "/usr/X11R6/include/freetype2" \
 -				  "/usr/include/freetype2"
 +				  "$with_site_includes/freetype2"
        do
- 	if test -d $freetype_include_top; then
- 	  AC_MSG_CHECKING([in ${freetype_include_top}/freetype2])
-@@ -5339,7 +5340,7 @@
- dnl Check for Berkeley DB.
- if test "$enable_database_berkdb" != "no"; then
+@@ -5420,3 +5423,3 @@
    AC_MSG_CHECKING(for Berkeley db.h)
 -  for header in "db/db.h" "db.h"; do
 +  for header in "/usr/include/db.h" "db/db.h" "db.h"; do
      AC_COMPILE_IFELSE([AC_LANG_SOURCE([
- #include <stdlib.h>
- #if !(defined __GLIBC__ && __GLIBC_MINOR__ >= 1)

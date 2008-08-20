@@ -23,7 +23,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:261
+USE_AUTOTOOLS=	automake:15:env autoconf:262
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

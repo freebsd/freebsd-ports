@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env automake:19:env
+USE_AUTOTOOLS=	autoconf:262:env automake:19:env
 GNU_CONFIGURE=	yes
 LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \

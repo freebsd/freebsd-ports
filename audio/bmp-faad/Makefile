@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:15 autoheader:261 autoconf:261 libtool:15
+USE_AUTOTOOLS=	automake:15 autoheader:262 autoconf:262 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

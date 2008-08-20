@@ -25,7 +25,7 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOTOOLS=	automake:15 autoheader:261 autoconf:261 libtool:15
+USE_AUTOTOOLS=	automake:15 autoheader:262 autoconf:262 libtool:15
 AUTOMAKE_ARGS=		--add-missing
 USE_GNOME=		gtk12
 USE_GMAKE=		yes

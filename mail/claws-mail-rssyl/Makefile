@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	claws-mail>=3.5.0:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.5.0:${PORTSDIR}/mail/claws-mail
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

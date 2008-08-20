@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_GL=		gl glu
 WANT_GNOME=	yes
 WANT_SDL=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15
+USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS=" -L${LOCALBASE}/lib"

@@ -17,7 +17,7 @@ COMMENT=	Domain Name Server (DNS) implementation
 
 LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
 
-USE_AUTOTOOLS=	autoconf:261 libltdl:15 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libltdl:15 libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

@@ -24,7 +24,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USE_AUTOTOOLS=	autoconf:261:env autoheader:261:env aclocal:19:env \
+USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \
 		automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

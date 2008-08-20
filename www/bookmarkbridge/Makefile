@@ -22,7 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build rcc_build uic_build qt3support
 USE_GNOME=	gnometarget libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 .include <bsd.port.mk>

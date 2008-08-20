@@ -19,7 +19,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off
 
-USE_AUTOTOOLS=	autoheader:261 aclocal:19
+USE_AUTOTOOLS=	autoheader:262 aclocal:19
 USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"

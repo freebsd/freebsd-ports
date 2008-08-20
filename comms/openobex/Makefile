@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Open source implementation of the OBEX protocol
 
-USE_AUTOTOOLS=	automake:14:env autoheader:261 autoconf:261 libtool:15
+USE_AUTOTOOLS=	automake:14:env autoheader:262 autoconf:262 libtool:15
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes

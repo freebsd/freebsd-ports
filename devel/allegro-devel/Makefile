@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_GMAKE=	yes
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes

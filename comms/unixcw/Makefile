@@ -31,7 +31,7 @@ PLIST_SUB+=	XCWCP="@comment "
 .endif
 MAN7=		cw.7 CW.7
 MANCOMPRESSED=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 

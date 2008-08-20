@@ -29,7 +29,7 @@ COMMENT=	FSF gcc-4.1 for DJGPP cross-development
 BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		autoconf-2.61:${PORTSDIR}/devel/autoconf261 \
+		autoconf-2.62:${PORTSDIR}/devel/autoconf262 \
 		aclocal-1.9:${PORTSDIR}/devel/automake19
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \

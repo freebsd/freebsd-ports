@@ -42,7 +42,7 @@ OPTIONS=	AVAHI   "Enable Avahi Zeroconf/mDNS/Bonjour support" Off \
 PATCHFILES+=	distcc-avahi-080101.patch
 LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi-app
 PATCH_DIST_STRIP=	-p1
-USE_AUTOTOOLS+=	autoconf:261
+USE_AUTOTOOLS+=	autoconf:262
 AUTOCONF_ARGS+=	-I${LOCALBASE}/share/libtool/libltdl/
 CFLAGS+=	-DHAVE_AVAHI
 .endif

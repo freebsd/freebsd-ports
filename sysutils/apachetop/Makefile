@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.webta.org/apachetop/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache RealTime log stats
 
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 GNU_CONFIGURE=	yes
 
 MAN1=		apachetop.1

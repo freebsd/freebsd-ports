@@ -17,7 +17,7 @@ COMMENT=	Gtk2 Frontend for proftpd daemon
 RUN_DEPENDS=	proftpd:${PORTSDIR}/ftp/proftpd
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 pkgconfig
 

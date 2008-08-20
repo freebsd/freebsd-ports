@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
-USE_AUTOTOOLS=	aclocal:19 autoheader:261 automake:15 autoconf:261
+USE_AUTOTOOLS=	aclocal:19 autoheader:262 automake:15 autoconf:262
 AUTOMAKE_ARGS=	--add-missing
 
 GNU_CONFIGURE=	yes

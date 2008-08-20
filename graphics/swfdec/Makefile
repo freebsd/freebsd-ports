@@ -18,7 +18,7 @@ LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_GNOME=	gnomehack gtk20
-USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261
+USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"

@@ -45,7 +45,7 @@ OOO_LIBWPG=		libwpg-0.1.0~cvs20070608.tar.gz
 OOO_PATCHDIR=src680
 
 MD5_FILE=      ${.CURDIR}/distinfo
-USE_AUTOTOOLS=  autoconf:261
+USE_AUTOTOOLS=  autoconf:262
 
 CONFIGURE_ARGS+=	--enable-cairo
 CONFIGURE_ARGS+=	--with-system-xrender-headers

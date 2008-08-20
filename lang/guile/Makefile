@@ -16,7 +16,7 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	autoconf:261 libltdl:15
+USE_AUTOTOOLS=	autoconf:262 libltdl:15
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -45,5 +45,6 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libguile/load.c
+	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>

@@ -19,7 +19,7 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 post-patch:
 	@${REINPLACE_CMD} \

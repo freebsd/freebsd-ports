@@ -26,7 +26,7 @@ PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
 PORTDOCS=	*
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:262:env
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX}
 
 post-patch:

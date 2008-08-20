@@ -17,7 +17,7 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

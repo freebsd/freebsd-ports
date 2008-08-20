@@ -21,7 +21,7 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 
 USE_BZIP2=		yes
 USE_RC_SUBR=		yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:262
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--localstatedir=/var
