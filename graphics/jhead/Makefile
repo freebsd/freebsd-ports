@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	2.7
+PORTVERSION=	2.82
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 		http://www.is-root.com/myports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Exif Jpeg camera setting parser, rotator and much more
 
 RUN_DEPENDS=	jpegtran:${PORTSDIR}/graphics/jpeg
