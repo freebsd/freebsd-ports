@@ -1,3 +1,3 @@
-MD5 (rabbitmq-1.3.0.tar.gz) = 3206716f78a22e5c1d82529c660410d5
-SHA256 (rabbitmq-1.3.0.tar.gz) = 0de5000c937a6fc78f0f247b8d04a480dada20213602e4d333b3da427b59d758
-SIZE (rabbitmq-1.3.0.tar.gz) = 2085989
+MD5 (rabbitmq-server-1.4.0.tar.gz) = ac43cb6178d992eae192ebe19557ccd5
+SHA256 (rabbitmq-server-1.4.0.tar.gz) = d00b3022a71a4eb3b028e1eb3c1a0881c2a93bf6d705a9351fc42c87c55aeca1
+SIZE (rabbitmq-server-1.4.0.tar.gz) = 108625
