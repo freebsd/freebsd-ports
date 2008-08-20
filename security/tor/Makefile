@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.0.30
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -18,7 +19,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
