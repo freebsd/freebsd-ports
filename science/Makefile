@@ -71,6 +71,7 @@
     SUBDIR += libghemical
     SUBDIR += libint
     SUBDIR += liblinear
+    SUBDIR += liboglappth
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += linsmith
