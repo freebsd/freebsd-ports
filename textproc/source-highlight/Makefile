@@ -7,6 +7,7 @@
 
 PORTNAME=	source-highlight
 PORTVERSION=	2.10
+PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	src-highlite
@@ -26,7 +27,7 @@ MAKE_ENV+=	NOPORTDOCS="${NOPORTDOCS}"
 
 USE_GMAKE=	yes
 
-MAN1=	source-highlight.1
+MAN1=	source-highlight.1 check-regexp.1
 INFO=	source-highlight
 
 .include <bsd.port.pre.mk>
