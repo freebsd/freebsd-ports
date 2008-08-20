@@ -1,0 +1,23 @@
+Reaction is basically an extended MVC:
+
+Domain Model
+	DBIx::Class::Schema, MyApp::Foo, MyApp::Bar, etc.
+
+Interface Model
+	InterfaceModel::DBIC::Schema, InterfaceModel::Action,
+	MyApp::InterfaceModel::Foo classes.
+
+Controller
+	Mediation and navigation.
+
+ViewPort
+	Event handling encapsulation.
+
+Widget
+	View logic.
+
+Renderer
+	MyApp::View:: classes, renders viewports.
+
+
+WWW: http://search.cpan.org/dist/Reaction/
