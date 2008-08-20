@@ -18,7 +18,7 @@ COMMENT=	Java Development Kit ${JDK_VERSION}_${RELEASE_VERSION}.${BUILD_VERSION}
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-RESTRICTED=	"License doesn't allow distribution with fee"
+RESTRICTED=	License does not allow distribution with fee
 
 USE_BZIP2=	yes
 USE_XORG+=	xi xp xt xtst
@@ -52,7 +52,7 @@ PLIST_SUB+=	RELEASENOTE="@comment "
 JDK_OSREL=	freebsd6
 PLIST_SUB+=	RELEASENOTE=""
 .else
-IGNORE=		Only available for FreeBSD 6.x/i386 and FreeBSD 6.x/amd64 and later
+IGNORE=		only available for FreeBSD 6.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
 .if ${ARCH} == "i386"
@@ -62,7 +62,7 @@ PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
-DISTFILE_INSTRUCTIONS=	:\n\
+DISTFILE_INSTRUCTIONS=\n\
 Because of licensing restrictions, you must fetch the distribution\n\
 manually.\n\n\
 Please access\n\
@@ -76,7 +76,7 @@ ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n\n
 
 pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
-	@printf "${DISTFILE_INSTRUCTIONS}"
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
 .endif
 
