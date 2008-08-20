@@ -1,7 +1,5 @@
-pidgin-twitter is a pidgin plugin to help twittering via pidgin. This
-plugin translates any @username and the sender name to the link to the
-user respectively. pidgin-twitter also can play a sound when an
-incoming message contains any recipient name or sender name which is
-listed in the each dedicated lists.
+pidgin-twitter is a pidgin plugin which provides a lot of useful features
+to the users who use pidgin as a front end to post and read twitter messages. 
+pidgin-twitter supports Twitter, Wassr, and identi.ca now.
 
-WWW: http://www.honeyplanet.jp/download.html
+WWW: http://honeyplanet.jp/pidgin-twitter/
