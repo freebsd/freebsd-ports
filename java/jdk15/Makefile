@@ -182,7 +182,7 @@ X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFe
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
-DISTFILE_INSTRUCTIONS=	\n\
+DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
 DISTFILE_INSTRUCTIONS += Please open http://download.java.net/tiger/archive/tiger_u14/\n\
@@ -230,7 +230,7 @@ pre-fetch:
 	@${ECHO_MSG}
 .endif
 .if defined(DISTFILE_INSTRUCTIONS)
-	@printf "${DISTFILE_INSTRUCTIONS}"
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
 .endif
 
