@@ -17,7 +17,7 @@ COMMENT=	MPEG audio analysis toolkit
 
 BROKEN=		checksum mismatch due to fetch grabbing an error page instead of the distfiles
 DEPRICATED=	Homepage and distfiles have disappeared, last update was in 2002
-EXPIRATION_DATE=2008-07-29
+EXPIRATION_DATE=2008-10-01
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
