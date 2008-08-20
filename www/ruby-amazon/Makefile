@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to Amazon's Web Services
 
 CONFLICTS=	ruby-aws-[0-9]*

@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipurpose relay and more
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}

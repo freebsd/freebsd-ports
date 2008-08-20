@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 IS_INTERACTIVE=	YES

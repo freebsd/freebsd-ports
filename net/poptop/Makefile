@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows 9x compatible PPTP (VPN) server
 
 USE_GMAKE=	yes

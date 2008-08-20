@@ -10,7 +10,7 @@ PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network/Service monitoring software
 
 MANPREFIX=	${PREFIX}/nocol/

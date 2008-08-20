@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks

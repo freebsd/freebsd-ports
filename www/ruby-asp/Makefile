@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Active Server Pages port to Apache with Ruby scripting
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xml/xslt.so:${PORTSDIR}/textproc/ruby-xslt \
