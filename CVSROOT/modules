@@ -725,7 +725,6 @@ autocd                          ports/audio/autocd
 autoconf-archive                ports/devel/autoconf-archive
 autoconf-wrapper                ports/devel/autoconf-wrapper
 autoconf213                     ports/devel/autoconf213
-autoconf261                     ports/devel/autoconf261
 autoconf262                     ports/devel/autoconf262
 autocutsel                      ports/deskutils/autocutsel
 autodia                         ports/devel/autodia
@@ -1018,10 +1017,8 @@ bless                           ports/editors/bless
 blimitd                         ports/sysutils/blimitd
 blinkensisters                  ports/games/blinkensisters
 blitz++                         ports/math/blitz++
-blobandconquer                  ports/games/blobandconquer
 blobby                          ports/games/blobby
 bloboats                        ports/games/bloboats
-blobwars                        ports/games/blobwars
 block                           ports/games/block
 blockade                        ports/games/blockade
 blocksolve95                    ports/math/blocksolve95
@@ -2481,6 +2478,7 @@ dzip                            ports/archivers/dzip
 e                               ports/math/e
 e-uae                           ports/emulators/e-uae
 e00compr                        ports/devel/e00compr
+e16-themes                      ports/x11-themes/e16-themes
 e16utils                        ports/x11-wm/e16utils
 e17-module-bling                ports/x11/e17-module-bling
 e17-module-calendar             ports/x11/e17-module-calendar
@@ -2756,14 +2754,6 @@ enjoympeg                       ports/multimedia/enjoympeg
 enlightenment                   ports/x11-wm/enlightenment
 enlightenment-devel             ports/x11-wm/enlightenment-devel
 enlightenment-docs              ports/x11-wm/enlightenment-docs
-enlightenment-theme-BlueSteel   ports/x11-themes/enlightenment-theme-BlueSteel
-enlightenment-theme-BrushedMetal-Tigert  ports/x11-themes/enlightenment-theme-BrushedMetal-Tigert
-enlightenment-theme-Ganymede    ports/x11-themes/enlightenment-theme-Ganymede
-enlightenment-theme-ShinyMetal  ports/x11-themes/enlightenment-theme-ShinyMetal
-enlightenment-theme-bluesteel   ports/x11-themes/enlightenment-theme-BlueSteel
-enlightenment-theme-brushedmetal-tigert  ports/x11-themes/enlightenment-theme-BrushedMetal-Tigert
-enlightenment-theme-ganymede    ports/x11-themes/enlightenment-theme-Ganymede
-enlightenment-theme-shinymetal  ports/x11-themes/enlightenment-theme-ShinyMetal
 enscribe                        ports/audio/enscribe
 enscript-a4                     ports/print/enscript-a4
 enscript-letter                 ports/print/enscript-letter
@@ -4657,6 +4647,7 @@ gtk-murrine-themes              ports/x11-themes/gtk-murrine-themes
 gtk-qn-x11-theme                ports/x11-themes/gtk-qn-x11-theme
 gtk-qnxtheme                    ports/x11-themes/gtk-qnxtheme
 gtk-qt-engine                   ports/x11-themes/gtk-qt-engine
+gtk-qt4-engine                  ports/x11-themes/gtk-qt4-engine
 gtk-send-pr                     ports/sysutils/gtk-send-pr
 gtk-sharp10                     ports/x11-toolkits/gtk-sharp10
 gtk-sharp20                     ports/x11-toolkits/gtk-sharp20
@@ -10710,9 +10701,12 @@ p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
 p5-Gtk2                         ports/x11-toolkits/p5-Gtk2
+p5-Gtk2-Ex-Dialogs              ports/x11-toolkits/p5-Gtk2-Ex-Dialogs
 p5-Gtk2-Ex-FormFactory          ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
 p5-Gtk2-Ex-PodViewer            ports/x11-toolkits/p5-Gtk2-Ex-PodViewer
 p5-Gtk2-Ex-Simple-List          ports/x11-toolkits/p5-Gtk2-Ex-Simple-List
+p5-Gtk2-Ex-Utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
+p5-Gtk2-GladeXML                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-Gtk2-Html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
@@ -11740,6 +11734,7 @@ p5-RTF-Writer                   ports/textproc/p5-RTF-Writer
 p5-RTx-Statistics               ports/www/p5-RTx-Statistics
 p5-Rcs                          ports/devel/p5-Rcs
 p5-Rcs-Agent                    ports/devel/p5-Rcs-Agent
+p5-Reaction                     ports/www/p5-Reaction
 p5-ReadLine-Gnu                 ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl                ports/devel/p5-ReadLine-Perl
 p5-Readonly                     ports/devel/p5-Readonly
@@ -13810,9 +13805,12 @@ p5-gssapi                       ports/security/p5-GSSAPI
 p5-gstreamer                    ports/multimedia/p5-GStreamer
 p5-gtk                          ports/x11-toolkits/p5-Gtk
 p5-gtk2                         ports/x11-toolkits/p5-Gtk2
+p5-gtk2-ex-dialogs              ports/x11-toolkits/p5-Gtk2-Ex-Dialogs
 p5-gtk2-ex-formfactory          ports/x11-toolkits/p5-Gtk2-Ex-FormFactory
 p5-gtk2-ex-podviewer            ports/x11-toolkits/p5-Gtk2-Ex-PodViewer
 p5-gtk2-ex-simple-list          ports/x11-toolkits/p5-Gtk2-Ex-Simple-List
+p5-gtk2-ex-utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
+p5-gtk2-gladexml                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-gtk2-html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
@@ -14861,6 +14859,7 @@ p5-rdf-core                     ports/textproc/p5-RDF-Core
 p5-rdf-notation3                ports/textproc/p5-RDF-Notation3
 p5-rdf-simple                   ports/textproc/p5-RDF-Simple
 p5-rdfstore                     ports/textproc/p5-RDFStore
+p5-reaction                     ports/www/p5-Reaction
 p5-readline-gnu                 ports/devel/p5-ReadLine-Gnu
 p5-readline-perl                ports/devel/p5-ReadLine-Perl
 p5-readonly                     ports/devel/p5-Readonly
@@ -18319,7 +18318,6 @@ raknet                          ports/devel/raknet
 rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
 rand                            ports/textproc/rand
-randomshooter                   ports/games/randomshooter
 randrproto                      ports/x11/randrproto
 raop_play                       ports/audio/raop_play
 rapid                           ports/math/rapid
@@ -19869,7 +19867,6 @@ stardict2                       ports/textproc/stardict2
 stardict2-dictd_mova            ports/textproc/stardict2-dictd_mova
 stardict2-quick                 ports/textproc/stardict2-quick
 stardict2-rptts                 ports/textproc/stardict2-rptts
-starfighter                     ports/games/starfighter
 starlanes                       ports/games/starlanes
 starlogo                        ports/lang/starlogo
 staroffice5                     ports/editors/staroffice5
@@ -21077,7 +21074,6 @@ vips                            ports/graphics/vips
 virtualmin                      ports/sysutils/virtualmin
 virtualpaper                    ports/print/virtualpaper
 virtuoso                        ports/databases/virtuoso
-viruskiller                     ports/games/viruskiller
 vis5d+                          ports/science/vis5d+
 visionegg                       ports/graphics/visionegg
 visitors                        ports/www/visitors
