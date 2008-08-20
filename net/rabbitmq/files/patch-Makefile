@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-08-15 20:56:25.000000000 -0400
++++ Makefile	2008-08-15 20:57:14.000000000 -0400
+@@ -113,7 +113,7 @@
+ 		cp BUILD $(GENERIC_STAGE_DIR); \
+ 	fi
+ 
+-	sed -i 's/%%VERSION%%/$(VERSION)/' $(GENERIC_STAGE_DIR)/ebin/rabbit.app
++	#sed -i 's/%%VERSION%%/$(VERSION)/' $(GENERIC_STAGE_DIR)/ebin/rabbit.app
+ 
+ srcdist: distclean
+ 	$(MAKE) VERSION=$(VERSION) GENERIC_STAGE_DIR=dist/$(TARBALL_NAME) generic_stage
