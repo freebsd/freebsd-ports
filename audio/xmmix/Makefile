@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/1.2.2/src/
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif-based audio mixer
 
 WRKSRC=		${WRKDIR}/xmmix-1.2

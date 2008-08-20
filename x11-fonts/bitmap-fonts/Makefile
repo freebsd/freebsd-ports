@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 		ftp://ftp.jpl.org/pub/elisp/bitmap/snapshots/
 DISTNAME=	${PORTNAME}-${BITMAP_FONTS_VER}
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitmap font, (6x12, 7x14, 8x16, 12x24) dots bitmap font
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf

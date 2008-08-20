@@ -12,7 +12,7 @@ CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/ \
 		LOCAL/beech
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text search engine
 
 PORTDOCS=	README COPYRIGHT

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 USE_XORG=	xext xt sm ice xext x11
