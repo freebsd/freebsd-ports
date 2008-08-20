@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcrackzip
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	security archivers
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 
