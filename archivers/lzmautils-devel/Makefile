@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzmautils
-PORTVERSION=	4.32.6
+PORTVERSION=	4.32.7
 CATEGORIES=	archivers
 MASTER_SITES=	http://tukaani.org/lzma/
 DISTNAME=	lzma-${PORTVERSION}
