@@ -12,7 +12,7 @@ bin/kalarmd
 bin/kandy
 bin/kandy_client
 bin/karm
-bin/kitchensync
+%%KITCHENSYNC%%bin/kitchensync
 bin/kleopatra
 bin/kmail
 bin/kmail_antivir.sh
@@ -485,9 +485,9 @@ lib/kde3/libkaddressbookpart.so
 lib/kde3/libkarmpart.a
 lib/kde3/libkarmpart.la
 lib/kde3/libkarmpart.so
-lib/kde3/libkitchensyncpart.a
-lib/kde3/libkitchensyncpart.la
-lib/kde3/libkitchensyncpart.so
+%%KITCHENSYNC%%lib/kde3/libkitchensyncpart.a
+%%KITCHENSYNC%%lib/kde3/libkitchensyncpart.la
+%%KITCHENSYNC%%lib/kde3/libkitchensyncpart.so
 lib/kde3/libkmail_bodypartformatter_application_octetstream.a
 lib/kde3/libkmail_bodypartformatter_application_octetstream.la
 lib/kde3/libkmail_bodypartformatter_application_octetstream.so
@@ -695,10 +695,10 @@ lib/libkholidays.a
 lib/libkholidays.la
 lib/libkholidays.so
 lib/libkholidays.so.1
-lib/libkitchensync.a
-lib/libkitchensync.la
-lib/libkitchensync.so
-lib/libkitchensync.so.0
+%%KITCHENSYNC%%lib/libkitchensync.a
+%%KITCHENSYNC%%lib/libkitchensync.la
+%%KITCHENSYNC%%lib/libkitchensync.so
+%%KITCHENSYNC%%lib/libkitchensync.so.0
 lib/libkleopatra.a
 lib/libkleopatra.la
 lib/libkleopatra.so
@@ -794,10 +794,10 @@ lib/libqgpgme.a
 lib/libqgpgme.la
 lib/libqgpgme.so
 lib/libqgpgme.so.0
-lib/libqopensync.a
-lib/libqopensync.la
-lib/libqopensync.so
-lib/libqopensync.so.0
+%%KITCHENSYNC%%lib/libqopensync.a
+%%KITCHENSYNC%%lib/libqopensync.la
+%%KITCHENSYNC%%lib/libqopensync.so
+%%KITCHENSYNC%%lib/libqopensync.so.0
 share/applications/kde/KMail.desktop
 share/applications/kde/KNode.desktop
 share/applications/kde/KOrn.desktop
@@ -808,7 +808,7 @@ share/applications/kde/kaddressbook.desktop
 share/applications/kde/kalarm.desktop
 share/applications/kde/kandy.desktop
 share/applications/kde/karm.desktop
-share/applications/kde/kitchensync.desktop
+%%KITCHENSYNC%%share/applications/kde/kitchensync.desktop
 share/applications/kde/kleopatra_import.desktop
 share/applications/kde/kmail_view.desktop
 share/applications/kde/knotes.desktop
@@ -975,20 +975,20 @@ share/apps/kgantt/icons/crystalsvg/22x22/actions/ganttUnselecttask.png
 share/apps/kgantt/icons/crystalsvg/32x32/actions/ganttSelect.png
 share/apps/kgantt/icons/crystalsvg/32x32/actions/ganttSelecttask.png
 share/apps/kgantt/icons/crystalsvg/32x32/actions/ganttUnselecttask.png
-share/apps/kitchensync/about/kitchensync.css
-share/apps/kitchensync/about/main.html
-share/apps/kitchensync/about/top-right-kitchensync.png
-share/apps/kitchensync/icons/crystalsvg/128x128/apps/mobile_phone.png
-share/apps/kitchensync/icons/crystalsvg/16x16/actions/hotsync.png
-share/apps/kitchensync/icons/crystalsvg/16x16/apps/mobile_phone.png
-share/apps/kitchensync/icons/crystalsvg/22x22/actions/hotsync.png
-share/apps/kitchensync/icons/crystalsvg/32x32/actions/hotsync.png
-share/apps/kitchensync/icons/crystalsvg/32x32/apps/mobile_phone.png
-share/apps/kitchensync/icons/crystalsvg/48x48/actions/hotsync.png
-share/apps/kitchensync/icons/crystalsvg/48x48/apps/mobile_phone.png
-share/apps/kitchensync/icons/crystalsvg/64x64/apps/mobile_phone.png
-share/apps/kitchensync/kitchensync_part.rc
-share/apps/kitchensync/kitchensyncui.rc
+%%KITCHENSYNC%%share/apps/kitchensync/about/kitchensync.css
+%%KITCHENSYNC%%share/apps/kitchensync/about/main.html
+%%KITCHENSYNC%%share/apps/kitchensync/about/top-right-kitchensync.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/128x128/apps/mobile_phone.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/16x16/actions/hotsync.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/16x16/apps/mobile_phone.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/22x22/actions/hotsync.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/32x32/actions/hotsync.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/32x32/apps/mobile_phone.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/48x48/actions/hotsync.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/48x48/apps/mobile_phone.png
+%%KITCHENSYNC%%share/apps/kitchensync/icons/crystalsvg/64x64/apps/mobile_phone.png
+%%KITCHENSYNC%%share/apps/kitchensync/kitchensync_part.rc
+%%KITCHENSYNC%%share/apps/kitchensync/kitchensyncui.rc
 share/apps/kleopatra/kleopatraui.rc
 share/apps/kmail/about/kmail.css
 share/apps/kmail/about/main.html
@@ -2089,7 +2089,7 @@ share/icons/hicolor/16x16/apps/akregator.png
 share/icons/hicolor/16x16/apps/kaddressbook.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/16x16/apps/karm.png
-share/icons/hicolor/16x16/apps/kitchensync.png
+%%KITCHENSYNC%%share/icons/hicolor/16x16/apps/kitchensync.png
 share/icons/hicolor/16x16/apps/kmail.png
 share/icons/hicolor/16x16/apps/knode.png
 share/icons/hicolor/16x16/apps/knode2.png
@@ -2100,7 +2100,7 @@ share/icons/hicolor/16x16/apps/korn.png
 share/icons/hicolor/16x16/apps/kpilot.png
 share/icons/hicolor/22x22/apps/akregator.png
 share/icons/hicolor/22x22/apps/karm.png
-share/icons/hicolor/22x22/apps/kitchensync.png
+%%KITCHENSYNC%%share/icons/hicolor/22x22/apps/kitchensync.png
 share/icons/hicolor/22x22/apps/kmail.png
 share/icons/hicolor/22x22/apps/knotes.png
 share/icons/hicolor/22x22/apps/kontact.png
@@ -2109,7 +2109,7 @@ share/icons/hicolor/32x32/apps/akregator.png
 share/icons/hicolor/32x32/apps/kaddressbook.png
 share/icons/hicolor/32x32/apps/kalarm.png
 share/icons/hicolor/32x32/apps/karm.png
-share/icons/hicolor/32x32/apps/kitchensync.png
+%%KITCHENSYNC%%share/icons/hicolor/32x32/apps/kitchensync.png
 share/icons/hicolor/32x32/apps/kmail.png
 share/icons/hicolor/32x32/apps/knode.png
 share/icons/hicolor/32x32/apps/knode2.png
@@ -2122,7 +2122,7 @@ share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/48x48/apps/kaddressbook.png
 share/icons/hicolor/48x48/apps/kalarm.png
 share/icons/hicolor/48x48/apps/karm.png
-share/icons/hicolor/48x48/apps/kitchensync.png
+%%KITCHENSYNC%%share/icons/hicolor/48x48/apps/kitchensync.png
 share/icons/hicolor/48x48/apps/kmail.png
 share/icons/hicolor/48x48/apps/knode.png
 share/icons/hicolor/48x48/apps/knode2.png
@@ -2324,7 +2324,7 @@ share/servicetypes/kpilotconduit.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
+%%KITCHENSYNC%%@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kitchensync/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kmail/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
@@ -2386,8 +2386,8 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kdepim-apidocs/knotes
 @dirrm share/doc/HTML/en/kdepim-apidocs/kmail/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kmail
-@dirrm share/doc/HTML/en/kdepim-apidocs/kitchensync/html
-@dirrm share/doc/HTML/en/kdepim-apidocs/kitchensync
+%%KITCHENSYNC%%@dirrm share/doc/HTML/en/kdepim-apidocs/kitchensync/html
+%%KITCHENSYNC%%@dirrm share/doc/HTML/en/kdepim-apidocs/kitchensync
 @dirrm share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kioslaves/mbox
 @dirrm share/doc/HTML/en/kdepim-apidocs/kioslaves/imap4/html
@@ -2537,25 +2537,25 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kmail/about
 @dirrm share/apps/kmail
 @dirrm share/apps/kleopatra
-@dirrm share/apps/kitchensync/icons/crystalsvg/64x64/apps
-@dirrm share/apps/kitchensync/icons/crystalsvg/64x64
-@dirrm share/apps/kitchensync/icons/crystalsvg/48x48/apps
-@dirrm share/apps/kitchensync/icons/crystalsvg/48x48/actions
-@dirrm share/apps/kitchensync/icons/crystalsvg/48x48
-@dirrm share/apps/kitchensync/icons/crystalsvg/32x32/apps
-@dirrm share/apps/kitchensync/icons/crystalsvg/32x32/actions
-@dirrm share/apps/kitchensync/icons/crystalsvg/32x32
-@dirrm share/apps/kitchensync/icons/crystalsvg/22x22/actions
-@dirrm share/apps/kitchensync/icons/crystalsvg/22x22
-@dirrm share/apps/kitchensync/icons/crystalsvg/16x16/apps
-@dirrm share/apps/kitchensync/icons/crystalsvg/16x16/actions
-@dirrm share/apps/kitchensync/icons/crystalsvg/16x16
-@dirrm share/apps/kitchensync/icons/crystalsvg/128x128/apps
-@dirrm share/apps/kitchensync/icons/crystalsvg/128x128
-@dirrm share/apps/kitchensync/icons/crystalsvg
-@dirrm share/apps/kitchensync/icons
-@dirrm share/apps/kitchensync/about
-@dirrm share/apps/kitchensync
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/64x64/apps
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/64x64
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/48x48/apps
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/48x48/actions
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/48x48
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/32x32/apps
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/32x32/actions
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/32x32
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/22x22/actions
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/22x22
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/16x16/apps
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/16x16/actions
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/16x16
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/128x128/apps
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg/128x128
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons/crystalsvg
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/icons
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync/about
+%%KITCHENSYNC%%@dirrm share/apps/kitchensync
 @dirrm share/apps/kgantt/icons/crystalsvg/32x32/actions
 @dirrm share/apps/kgantt/icons/crystalsvg/32x32
 @dirrm share/apps/kgantt/icons/crystalsvg/22x22/actions
