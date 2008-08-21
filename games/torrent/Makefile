@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image ttf
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="`${SDL_CONFIG} --libs`" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		SDL_CONFIG="${SDL_CONFIG}"

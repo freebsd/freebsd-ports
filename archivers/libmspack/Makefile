@@ -17,7 +17,6 @@ COMMENT=	A library for Microsoft compression formats
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=  yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 post-patch:

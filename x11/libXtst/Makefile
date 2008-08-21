@@ -17,8 +17,6 @@ XORG_CAT=	lib
 USE_XORG=	x11 xext recordproto:both xextproto inputproto:both
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 MAN3=		XTestQueryExtension.3 \
 		XTestCompareCursorWithWindow.3 \
 		XTestCompareCurrentCursorWithWindow.3 \

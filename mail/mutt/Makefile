@@ -82,7 +82,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:262
-CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \

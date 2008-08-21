@@ -21,7 +21,6 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

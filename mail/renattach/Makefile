@@ -14,7 +14,6 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Rename or remove certain attachments or kill entire messages
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		renattach.1
 PORTDOCS=	INSTALL

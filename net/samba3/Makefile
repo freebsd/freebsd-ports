@@ -44,8 +44,6 @@ SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
 
-CONFIGURE_TARGET=	--build="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
-
 CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 			--localstatedir="${VARDIR}" \
 		        --with-configdir="${SAMBA_CONFDIR}" \

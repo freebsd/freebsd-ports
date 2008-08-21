@@ -20,7 +20,6 @@ USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS=		--enable-debug
 .else

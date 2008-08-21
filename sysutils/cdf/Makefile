@@ -17,6 +17,5 @@ COMMENT=	A colorized df
 PLIST_FILES=	bin/cdf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -24,7 +24,6 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 USE_GETTEXT=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

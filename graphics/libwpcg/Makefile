@@ -19,7 +19,6 @@ COMMENT=	A basic 2D/3D computer graphics library which uses OpenGL
 USE_GCC=	3.4
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lGL -lGLU -lglut"
 

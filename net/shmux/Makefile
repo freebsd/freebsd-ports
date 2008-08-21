@@ -19,7 +19,6 @@ OPTIONS=	FPING "Use fping utility" on	\
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 ALL_TARGET=	${PORTNAME}
 

@@ -18,7 +18,6 @@ COMMENT=	Convert your source code to syntax highlighted HTML
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WANT_FINAL)

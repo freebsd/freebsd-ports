@@ -14,7 +14,6 @@ MAINTAINER=	des@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 USE_LDCONFIG=	yes
 

@@ -17,8 +17,7 @@ COMMENT=	Simple arp scanner
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		 --with-libdnet=${LOCALBASE}
+CONFIGURE_ARGS=--with-libdnet=${LOCALBASE}
 
 PLIST_FILES=	bin/arpscan
 

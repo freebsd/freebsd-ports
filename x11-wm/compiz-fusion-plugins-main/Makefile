@@ -51,7 +51,6 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-vpswitch.schemas \
 		compiz-shift.schemas
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-schemas

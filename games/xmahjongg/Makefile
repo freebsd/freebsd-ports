@@ -16,7 +16,6 @@ COMMENT=	The Chinese game of Mahjongg for X11
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		xmahjongg.6
 

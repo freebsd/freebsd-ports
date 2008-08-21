@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} --enable-nfprofile --with-rrdpath=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
 
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
@@ -31,7 +31,7 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 #for compatibility
 #
 .ifndef(WITHOUT_NFDUMP14_SUPPORT)
-CONFIGURE_ARGS=		--enable-compat14
+CONFIGURE_ARGS+=	--enable-compat14
 .endif
 
 PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfreplay bin/nfexpire bin/nfprofile

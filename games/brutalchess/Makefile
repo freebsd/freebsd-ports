@@ -21,8 +21,6 @@ COMMENT=		Nice looking OpenGL chess game
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	x11
 
-CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
-
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 

@@ -39,7 +39,6 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
 

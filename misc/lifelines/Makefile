@@ -16,7 +16,6 @@ MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_BISON=	build

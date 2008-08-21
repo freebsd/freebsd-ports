@@ -18,7 +18,6 @@ COMMENT=	A C++ class library for writing CGI applications
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 USE_LDCONFIG=	yes
 

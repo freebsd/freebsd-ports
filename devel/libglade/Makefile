@@ -24,6 +24,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bonobo --enable-gnomedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>

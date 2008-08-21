@@ -16,7 +16,6 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A vi-like binary file (hex)editor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 MAN1=		bvi.1 bmore.1

@@ -21,7 +21,6 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -idirafter ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

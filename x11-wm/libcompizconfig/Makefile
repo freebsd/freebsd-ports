@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 
 USE_GNOME=	gnomehack intltool libxml2
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

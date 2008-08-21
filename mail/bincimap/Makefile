@@ -24,7 +24,6 @@ COMMENT=	Light-weight IMAP server for Maildir
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR}
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 

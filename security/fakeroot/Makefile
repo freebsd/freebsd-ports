@@ -16,7 +16,6 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Simulate the root user behaviour
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ipc=tcp
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=	yes

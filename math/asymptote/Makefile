@@ -41,7 +41,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gc=system --with-latex=${LOCALBASE}/share/texmf-local/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV+=	${CONFIGURE_ENV}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr

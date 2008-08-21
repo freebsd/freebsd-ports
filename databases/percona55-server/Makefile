@@ -21,7 +21,6 @@ SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \

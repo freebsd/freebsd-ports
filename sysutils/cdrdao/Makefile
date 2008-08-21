@@ -58,7 +58,6 @@ CONFIGURE_ARGS+=	--without-mp3-support --without-ogg-support
 CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--with-pcctsinc=${LOCALBASE}/include/pccts \
 			--without-posix-threads --with-scglib=pkg
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 

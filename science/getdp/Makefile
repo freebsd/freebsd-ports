@@ -22,7 +22,6 @@ LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl	\
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+= FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE}
 WANT_PERL=	yes

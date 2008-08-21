@@ -23,7 +23,6 @@ COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-log-wrap \
 		--with-ignore-dot \

@@ -28,7 +28,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=All
-CONFIGURE_TARGET=
 MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1
 
 .include <bsd.port.mk>

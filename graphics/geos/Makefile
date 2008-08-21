@@ -20,8 +20,6 @@ USE_BZIP2=	YES
 
 USE_LDCONFIG=	YES
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 post-patch:
 	@${REINPLACE_CMD} -e '/-release/d' ${WRKSRC}/source/Makefile.in
 

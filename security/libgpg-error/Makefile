@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	ltverhack
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS=	--disable-nls

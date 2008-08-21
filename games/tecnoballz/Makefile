@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	automake:19 aclocal:19
 USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		tecnoballz.6
 

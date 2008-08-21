@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AfterStep basic functionality library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs --with-x
 USE_LDCONFIG=	yes
 PLIST_SUB=	STATIC="@comment "

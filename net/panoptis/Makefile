@@ -20,7 +20,6 @@ LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	bin/panoptis bin/mail.py bin/pview.py bin/speed.py
 
 do-install:

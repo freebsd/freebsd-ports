@@ -17,7 +17,6 @@ COMMENT=	GNU Portable Threads
 
 USE_LDCONFIG=	${PREFIX}/lib/pth
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-optimize \
 		--enable-batch \
 		--includedir="${PREFIX}/include/pth" \

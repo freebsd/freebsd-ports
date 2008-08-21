@@ -19,7 +19,6 @@ COMMENT=	An SDL port of the scrolling game XKobo
 USE_BZIP2=	yes
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 
 MAN6=		kobodl.6

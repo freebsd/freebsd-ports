@@ -21,7 +21,6 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib

@@ -19,7 +19,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		FLAC.10:${PORTSDIR}/audio/flac
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${LOCALBASE}"

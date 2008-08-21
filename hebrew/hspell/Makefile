@@ -16,7 +16,6 @@ COMMENT=	Hebrew spellchecker and morphology engine
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
 
 MAN1=		hspell.1
 MAN3=		hspell.3

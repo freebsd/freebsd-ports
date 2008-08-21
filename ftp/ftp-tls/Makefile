@@ -21,7 +21,6 @@ USE_OPENSSL=	yes
 MAN1=		ftp-tls.1
 
 CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftp ${PREFIX}/bin/ftp-tls

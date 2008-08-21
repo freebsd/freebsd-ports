@@ -20,7 +20,7 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \

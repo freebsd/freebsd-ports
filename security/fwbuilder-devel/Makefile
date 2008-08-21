@@ -31,7 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 USE_LDCONFIG=	yes

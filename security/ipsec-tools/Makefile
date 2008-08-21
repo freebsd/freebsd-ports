@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
 		--localstatedir=${STATEDIR:S/\/racoon//} \
 		--with-pkgversion=freebsd-${PORTVERSION}

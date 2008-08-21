@@ -16,7 +16,6 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Sound card oscilloscope
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

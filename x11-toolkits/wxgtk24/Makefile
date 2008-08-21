@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
 		--with-opengl\
-		--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}\
+		--enable-gtk2 \
 		--includedir=${PREFIX}/include/wx-2.4
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \

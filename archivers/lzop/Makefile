@@ -21,7 +21,6 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

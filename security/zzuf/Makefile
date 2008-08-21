@@ -14,7 +14,6 @@ MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Transparent application input fuzzer
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 MAN1=	zzuf.1

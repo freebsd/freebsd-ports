@@ -60,7 +60,6 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-wobbly.schemas \
 		compiz-zoom.schemas
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

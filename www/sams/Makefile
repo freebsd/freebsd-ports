@@ -35,7 +35,6 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--with-configfile=${LOCALBASE}/etc/sams.conf \
 	       --with-rcd-locations=${LOCALBASE}/etc/rc.d/ \
 	       --with-httpd-locations=${DOCUMENT_ROOT}

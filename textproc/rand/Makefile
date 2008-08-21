@@ -15,7 +15,6 @@ COMMENT=	Utility to display files or streams in random order
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		rand.1
 PLIST_FILES=	bin/rand

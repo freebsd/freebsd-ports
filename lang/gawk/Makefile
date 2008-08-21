@@ -23,7 +23,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nowchar
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 

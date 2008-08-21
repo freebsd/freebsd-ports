@@ -16,7 +16,6 @@ COMMENT=	Show information about local users
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ui.1
 MLINKS=		ui.1 userinfo.1

@@ -31,7 +31,6 @@ USE_AUTOTOOLS=	libtool:15
 MAN1=		emerald.1 \
 		emerald-theme-manager.1
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

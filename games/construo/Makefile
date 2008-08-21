@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	sm ice x11 xext xxf86vm
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${DATADIR}

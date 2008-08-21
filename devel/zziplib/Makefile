@@ -17,7 +17,6 @@ COMMENT=	A library to provide transparent read access to zipped files
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
 

@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-manager.sh
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
 

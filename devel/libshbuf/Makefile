@@ -18,7 +18,6 @@ COMMENT=	Library for Shared Buffer IPC
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 post-patch:

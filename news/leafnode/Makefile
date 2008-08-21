@@ -39,7 +39,6 @@ PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \
 		--exec-prefix=${PREFIX}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 

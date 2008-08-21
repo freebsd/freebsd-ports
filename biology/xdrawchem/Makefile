@@ -20,8 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 CONFIGURE_ENV=	QTINCDIR="${LOCALBASE}/include" \
 		QTLIBDIR="${LOCALBASE}/lib" \
 		LDFLAGS="${LDFLAGS} -lm"

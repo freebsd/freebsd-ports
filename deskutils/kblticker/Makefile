@@ -22,6 +22,4 @@ USE_KDELIBS_VER=	3
 
 CONFIGURE_ARGS+=	--enable-final
 
-CONFIGURE_TARGET=
-
 .include <bsd.port.mk>

@@ -22,8 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 MAN1=		motion.1
 
 USE_AUTOTOOLS=	autoconf:262

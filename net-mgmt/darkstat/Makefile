@@ -17,7 +17,6 @@ USE_RC_SUBR=	darkstat
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	darkstat.1
 DOCS=	AUTHORS INSTALL README THANKS

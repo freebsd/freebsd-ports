@@ -18,7 +18,6 @@ USE_AUTOTOOLS=		libtool:15
 
 CONFIGURE_ARGS+=	--with-qt-dir=${QT_PREFIX}
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 INSTALLS_ICONS=		1

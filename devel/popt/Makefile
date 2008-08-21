@@ -23,7 +23,6 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--program-prefix=""
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

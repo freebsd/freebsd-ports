@@ -16,7 +16,6 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Convert man pages to HTML
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--bindir="${PREFIX}/${CGIDIR}" \
 		--sysconfdir="${PREFIX}/etc" \
 		--with-manpath=/usr/share/man:${LOCALBASE}/man \

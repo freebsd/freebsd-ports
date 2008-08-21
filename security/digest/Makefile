@@ -24,8 +24,6 @@ MAN1?=		${PORTNAME}.1
 
 PLIST_FILES?=	bin/${PORTNAME}
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.pre.mk>
 
 test: build

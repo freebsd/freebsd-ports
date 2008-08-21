@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 

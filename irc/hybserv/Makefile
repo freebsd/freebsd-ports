@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/hybserv
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .if defined(WITH_DAEMONTOOLS)
 CONFIGURE_ARGS+=	--with-daemontools
 RUN_DEPENDS+=	supervise:${PORTSDIR}/sysutils/daemontools

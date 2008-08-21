@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 
 OPTIONS=	FRIBIDI	"Enable fribidi support" on

@@ -19,7 +19,6 @@ COMMENT=	A packet sniffer that grabs ARP packets on any ethernet devices
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	echolot.1
 

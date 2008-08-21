@@ -23,11 +23,9 @@ USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX}/${PORTNAME}			\
 			--with-comment='FreeBSD port: ${PKGNAME}'	\
-			--with-openssl=/usr				\
-			${CONFIGURE_TARGET}
+			--with-openssl=/usr
 
 CONFIGURE_ENV+=		CXXFLAGS="-Wno-uninitialized"
 

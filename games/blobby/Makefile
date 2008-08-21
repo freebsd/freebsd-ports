@@ -21,7 +21,6 @@ USE_XORG=	x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
 USE_SDL=	sdl
 USE_GL=		glu
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 WRKSRC=		${WRKDIR}/blobby-alpha-6

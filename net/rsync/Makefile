@@ -28,7 +28,6 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex

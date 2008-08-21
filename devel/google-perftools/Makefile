@@ -16,7 +16,6 @@ MAINTAINER=	yuri@tsoft.com
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 

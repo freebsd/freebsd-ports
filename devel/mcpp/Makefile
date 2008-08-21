@@ -14,8 +14,7 @@ MAINTAINER=	kmatsui@t3.rim.or.jp
 COMMENT=	Alternative C/C++ preprocessor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
-		--enable-mcpplib
+CONFIGURE_ARGS=	--enable-mcpplib
 MAN1=		mcpp.1
 
 PLIST_FILES=	bin/mcpp    \

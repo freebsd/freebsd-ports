@@ -15,7 +15,6 @@ MAINTAINER=	matt@peterson.org
 COMMENT=	C library for network device, raw & compressed network flows
 
 CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -19,7 +19,6 @@ COMMENT=	Tools and library routines for working with GIF images
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_X11)

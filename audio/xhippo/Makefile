@@ -21,7 +21,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 		xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz

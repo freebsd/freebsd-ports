@@ -21,7 +21,6 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/netrik
 

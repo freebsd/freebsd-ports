@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
 USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
 MAN1=	yabause.1

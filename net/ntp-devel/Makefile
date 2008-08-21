@@ -20,7 +20,6 @@ COMMENT=	The Network Time Protocol Distribution
 LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		sntp.1
 

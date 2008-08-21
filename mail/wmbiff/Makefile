@@ -18,7 +18,6 @@ OPTIONS=	GNUTLS "Support for SSL" off
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		wmbiff.1
 MAN5=		wmbiffrc.5

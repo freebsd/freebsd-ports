@@ -56,7 +56,6 @@ PLIST_SUB+=		TIMELORD=""
 PLIST_SUB+=		TIMELORD="@comment "
 .endif
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \

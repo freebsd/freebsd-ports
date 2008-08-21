@@ -23,9 +23,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 
-CONFIGURE_TARGET=	--target=${OURTARGET}
 CONFIGURE_ARGS+=	--disable-nls \
 			--with-system-zlib \
+			--target=${OURTARGET}
 
 OURTARGET=	${TGTARCH}-${TGTABI}
 

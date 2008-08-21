@@ -15,7 +15,6 @@ MAINTAINER=	smyru@heron.pl
 COMMENT=	Transforms bitmaps into vector graphics
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		potrace.1 mkbitmap.1

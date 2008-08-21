@@ -22,7 +22,6 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc
 
 OPTIONS=	IRMAN "Build with libirman support" On

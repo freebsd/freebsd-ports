@@ -15,7 +15,6 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	A complete parser for RFC822 addresses
 
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	user-manual.html
 PLIST_FILES=	include/rfc822.hpp lib/librfc822.a

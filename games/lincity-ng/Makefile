@@ -26,7 +26,6 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

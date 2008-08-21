@@ -17,7 +17,6 @@ COMMENT=	Client for Uptime Project
 USE_RC_SUBR=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	sbin/uptimec etc/uptimecrc.sample etc/rc.d/uptimec.sh
 PORTDOCS=	README ChangeLog INSTALL protocol.txt

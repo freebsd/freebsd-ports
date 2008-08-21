@@ -32,7 +32,6 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LIBS="-L../common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGDEINSTALL=	${PKGINSTALL}
 SUB_FILES+=	pkg-message

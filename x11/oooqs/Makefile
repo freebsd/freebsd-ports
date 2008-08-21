@@ -14,7 +14,6 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Quick launcher for Open Office
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 

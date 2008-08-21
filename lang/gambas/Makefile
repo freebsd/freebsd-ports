@@ -32,7 +32,6 @@ CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-moc=${LOCALBASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
 SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c

@@ -24,7 +24,6 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 APACHE_COMPAT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-phrase \
 		--enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \

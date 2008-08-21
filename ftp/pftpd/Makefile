@@ -15,7 +15,6 @@ MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pftpd.1 rpad.1
 PLIST_FILES=	sbin/pftpd

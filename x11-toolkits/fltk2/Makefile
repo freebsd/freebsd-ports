@@ -54,7 +54,6 @@ CONFIGURE_ARGS+=	--enable-jpeg --enable-png --enable-gl --enable-xft \
 # after possibly incompatible updates to fltk2.
 CONFIGURE_ARGS+=	--disable-shared
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbuild-freebsd${OSREL}
 
 DOCSDIR=	${PREFIX}/share/doc/fltk2
 PORTDOCS=	*

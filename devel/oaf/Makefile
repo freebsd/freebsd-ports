@@ -30,7 +30,6 @@ CONFIGURE_ARGS= --enable-static --enable-shared \
 		--disable-more-warnings
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	oafd.1
 

@@ -15,7 +15,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	XML 1.0 parser written in C
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 USE_LDCONFIG=	yes
 MAN1=		xmlwf.1

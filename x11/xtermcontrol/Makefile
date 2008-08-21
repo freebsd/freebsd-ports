@@ -18,7 +18,6 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

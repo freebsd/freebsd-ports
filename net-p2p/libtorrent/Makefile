@@ -27,7 +27,6 @@ USE_GNOME=	pkgconfig gnomehack
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
 

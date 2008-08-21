@@ -20,8 +20,6 @@ MANCOMPRESSED=	no
 # recoverjpeg scripts require many dependencies
 OPTIONS=	SCRIPTS	"Install sort-pictures script" off
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 PLIST_FILES=	bin/recoverjpeg
 MAN1=		recoverjpeg.1
 

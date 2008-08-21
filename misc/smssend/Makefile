@@ -22,7 +22,6 @@ MAN1=	smssend.1 smssend.scripting.1 email2smssend.1
 MANLANG=	"" fr
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/smssend

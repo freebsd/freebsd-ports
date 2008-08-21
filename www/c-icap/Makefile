@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	c_icap
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/c_icap
 
 SUB_FILES=	pkg-install pkg-deinstall

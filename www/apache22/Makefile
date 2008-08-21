@@ -164,7 +164,7 @@ CONFIGURE_ARGS+=	--enable-nonportable-atomics
 .   endif
 .endif
 
-CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
 pre-everything::
 	@${ECHO_MSG}	""

@@ -21,7 +21,6 @@ LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 DOCSDIR=	lib/${PORTNAME}
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

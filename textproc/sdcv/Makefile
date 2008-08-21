@@ -19,7 +19,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	glib20
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_NLS)

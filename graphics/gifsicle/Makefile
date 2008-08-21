@@ -14,7 +14,6 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gifdiff.1 gifsicle.1
 

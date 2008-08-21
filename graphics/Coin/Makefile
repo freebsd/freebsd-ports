@@ -19,7 +19,6 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\
 		--enable-javascript-api

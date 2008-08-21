@@ -20,7 +20,6 @@ GNU_CONFIGURE=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib \
 			%%PREFIX%%/lib/libpreludedb/plugins/formats
 USE_LDCONFIG=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=		PERL "Include Perl bindings" off \
 			PYTHON "Include Python bindings" off \

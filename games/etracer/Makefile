@@ -22,7 +22,6 @@ USE_SDL=		mixer sdl
 USE_GL=			gl glu glut
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-tcl=${PREFIX}/lib/tcl8.5 \
 			--with-tcl-inc=${PREFIX}/include/tcl8.5 \
 			--with-gl-libs="${LOCALBASE}/lib" \

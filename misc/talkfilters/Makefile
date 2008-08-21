@@ -18,7 +18,6 @@ CONFLICTS=	jive* chef* filters-*
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	talkfilters.1 wrap.1
 MLINKS=	talkfilters.1 austro.1 \

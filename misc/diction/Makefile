@@ -15,7 +15,6 @@ MAINTAINER=	mva@sysfault.org
 COMMENT=	GNU diction and style
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
 		share/diction/en share/diction/en_GB share/diction/nl

@@ -18,7 +18,6 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GNOME=	gtk20 libglade2
 
 PLIST_FILES=	bin/desmume-glade bin/desmume bin/desmume-cli

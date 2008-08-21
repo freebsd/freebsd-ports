@@ -21,7 +21,6 @@ MAN3=		libsox.3
 MAN7=		soxexam.7 soxformat.7 soxeffect.7
 MLINKS=		sox.1 play.1 sox.1 rec.1
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 # src/Makefile uses ${RM} but never sets it

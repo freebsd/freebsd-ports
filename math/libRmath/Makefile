@@ -36,7 +36,6 @@ COMMENT=	The standalone math library from R
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--without-x
 CONFIGURE_ENV+= F77="${F77}"
 

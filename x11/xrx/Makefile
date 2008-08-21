@@ -18,8 +18,6 @@ USE_XORG=	x11 xt xext xtrans xproxymngproto xau xaw
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 MAN1=		xrx.1 libxrx.1
 
 .include <bsd.port.mk>

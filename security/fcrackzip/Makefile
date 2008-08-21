@@ -14,7 +14,6 @@ MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Portable, fast and featureful ZIP password cracker
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=yes
 
 PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo

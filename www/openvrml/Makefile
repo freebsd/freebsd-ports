@@ -34,7 +34,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_
 		LDFLAGS="-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
 		LIBS="-lm"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GECKO=	firefox seamonkey

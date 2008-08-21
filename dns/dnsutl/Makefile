@@ -15,7 +15,6 @@ MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	Programs to make using DNS easier
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	all sure
 
 MAN1=		dns-boot-check.1 dns-bootp.1 dns-bootparams.1 \

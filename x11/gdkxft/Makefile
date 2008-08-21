@@ -22,7 +22,6 @@ USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnuregex -liconv" \
 		CFLAGS="${CFLAGS} `pkg-config xft --cflags`"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin

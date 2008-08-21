@@ -26,7 +26,6 @@ CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
 		--with-python-incdir=${PYTHON_INCLUDEDIR} \
 		--with-fontconfig-incdir=${LOCALBASE}/include/fontconfig \

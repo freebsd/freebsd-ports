@@ -20,7 +20,6 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README.remote
 PLIST_FILES=	bin/flac123

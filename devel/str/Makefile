@@ -15,7 +15,6 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Generic String Library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 MAN1=		str-config.1

@@ -17,7 +17,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 post-patch:

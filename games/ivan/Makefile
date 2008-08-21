@@ -18,7 +18,6 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/games
 
 STATEDIR=	/var/games/ivan

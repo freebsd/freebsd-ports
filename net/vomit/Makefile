@@ -18,7 +18,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 		dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

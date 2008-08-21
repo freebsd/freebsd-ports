@@ -29,7 +29,6 @@ DEPRECATED=	This port is no longer in use by anything in the ports collection.  
 BROKEN=		Does not compile on alpha
 .endif
 
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		OSVERSION=${OSVERSION}
 PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 .if ${OSVERSION} < 600011

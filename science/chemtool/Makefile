@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" CPPFLAGS+="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 

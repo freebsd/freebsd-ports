@@ -16,6 +16,4 @@ XORG_CAT=	lib
 USE_XORG=	x11
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.mk>

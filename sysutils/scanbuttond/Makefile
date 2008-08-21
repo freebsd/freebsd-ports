@@ -19,7 +19,6 @@ LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 SUB_FILES+=	pkg-message

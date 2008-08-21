@@ -17,7 +17,6 @@ COMMENT=	A validating, recursive, and caching DNS resolver
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 

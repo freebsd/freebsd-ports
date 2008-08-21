@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \

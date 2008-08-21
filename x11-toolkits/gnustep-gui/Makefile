@@ -21,7 +21,6 @@ LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 
 RESTRICTED=	GPL3
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib

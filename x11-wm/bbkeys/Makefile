@@ -22,7 +22,6 @@ USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
 		LDFLAGS="`pkg-config --libs xft`"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5

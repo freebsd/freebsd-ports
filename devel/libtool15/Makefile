@@ -18,7 +18,6 @@ COMMENT?=	Generic shared library support script
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INFO?=		libtool
 
 .include <bsd.port.mk>

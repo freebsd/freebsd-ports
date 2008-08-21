@@ -16,7 +16,6 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A generic and extensible framework for serialization
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 MAN1=		xds-config.1

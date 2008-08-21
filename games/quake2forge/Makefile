@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/' \
 		--disable-warn
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	AO "Build libao sound module" off \
 		CTF "Build the CTF (Capture The Flag) modification" off \

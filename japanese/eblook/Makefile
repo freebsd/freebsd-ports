@@ -18,7 +18,6 @@ COMMENT=	Interactive EB interface command for seraching words in electoric dicti
 LIB_DEPENDS=	eb.12:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-eb-includes=${PREFIX}/include \
 			--with-eb-libraries=${PREFIX}/lib
 

@@ -46,7 +46,6 @@ LIBSTDCPP_REV=	2100
 PLIST_SUB+=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 #CONFIGURE_ARGS+=	--program-suffix=-295

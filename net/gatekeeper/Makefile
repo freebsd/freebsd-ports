@@ -24,7 +24,6 @@ LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 USE_RC_SUBR=	gnugk.sh
 
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-firebird
 
 USE_GMAKE=	yes

@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE}
 

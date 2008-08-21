@@ -15,7 +15,6 @@ COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		global.1 gozilla.1 gtags.1 gtags-cscope.1 gtags-parser.1 htags.1
 INFO=		global

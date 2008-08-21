@@ -19,7 +19,6 @@ WITH_BDB_VER?=	46
 USE_BDB=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-docs \
 		--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html

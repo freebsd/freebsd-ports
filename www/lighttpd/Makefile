@@ -24,7 +24,6 @@ USE_GNOME=	lthack
 USE_RC_SUBR=	lighttpd.sh
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

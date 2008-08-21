@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html

@@ -17,7 +17,6 @@ COMMENT=	A utility for saying hello to the world and reading email
 
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		hello.1
 INFO=		hello

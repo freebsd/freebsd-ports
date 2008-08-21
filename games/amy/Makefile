@@ -22,7 +22,6 @@ NOT_FOR_ARCHS=	sparc64 alpha
 MAN6=		Amy.6
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 

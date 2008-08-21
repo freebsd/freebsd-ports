@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
 		--enable-nested-tables --enable-default-colors \

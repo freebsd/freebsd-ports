@@ -19,7 +19,6 @@ BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
 
 USE_XORG=	xaw xft
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--enable-wide-chars --enable-luit --with-utempter \

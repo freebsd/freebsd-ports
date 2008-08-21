@@ -15,7 +15,6 @@ MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A threaded, anonymous only FTP server designed for security
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		oftpd.8
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS

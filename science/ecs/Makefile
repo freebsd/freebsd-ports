@@ -24,7 +24,6 @@ LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-hdf5=${LOCALBASE}	\
 		--with-cgns=${LOCALBASE}	\

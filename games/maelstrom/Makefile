@@ -18,7 +18,6 @@ COMMENT=	Asteroids-style game for X Window System
 USE_SDL=	sdl net
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_gamedocs

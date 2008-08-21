@@ -26,7 +26,6 @@ CONFLICTS=	paragui-[0-9]*
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes

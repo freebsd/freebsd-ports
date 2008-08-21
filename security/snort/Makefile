@@ -30,7 +30,6 @@ USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map reference.config \

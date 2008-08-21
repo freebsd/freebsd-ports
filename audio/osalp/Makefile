@@ -19,7 +19,6 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
     		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-fPIC -DPIC
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

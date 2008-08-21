@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-all
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

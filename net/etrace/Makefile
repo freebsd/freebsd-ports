@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 
 WRKSRC=		${WRKDIR}/etrace
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-libdnet=${PREFIX}
 
 MAN8=	etrace.8

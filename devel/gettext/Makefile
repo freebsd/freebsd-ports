@@ -19,7 +19,6 @@ USE_ICONV=	yes
 LIBTOOLFILES=	autoconf-lib-link/configure gettext-runtime/configure \
 		gettext-runtime/libasprintf/configure gettext-tools/configure
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOCONF="${TRUE}" \
 		AUTOMAKE="${TRUE}" \

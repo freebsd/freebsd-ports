@@ -18,7 +18,6 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--disable-helper-search
 CPPFLAGS=		-I${LOCALBASE}/include

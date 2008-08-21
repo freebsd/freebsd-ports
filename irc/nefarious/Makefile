@@ -16,7 +16,6 @@ COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB+=	INSTALL_PREFIX=${INSTALL_PREFIX:S/${PREFIX}\///}
 MAN8=		ircd.8
 

@@ -16,7 +16,6 @@ COMMENT=	`WHO iS ONline' protocol implementation
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes
 

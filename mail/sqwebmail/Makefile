@@ -57,7 +57,6 @@ CACHEOWNER?=	bin
 #
 # End of user variables
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 USE_GCC=	3.4
 USE_PERL5=	YES
 HAS_CONFIGURE=	YES

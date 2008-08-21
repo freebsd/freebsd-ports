@@ -17,7 +17,6 @@ USE_BZIP2=	yes
 USE_PERL5=	yes # for strace-graph
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/strace bin/strace-graph
 

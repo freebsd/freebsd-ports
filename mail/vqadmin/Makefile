@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WANT_QMAIL=	yes
 
 CGIBINDIR?=	www/cgi-bin-dist

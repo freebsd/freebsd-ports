@@ -21,7 +21,6 @@ GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		ice
 USE_GL=			glu
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-warnings
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-lusbhid"
 

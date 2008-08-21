@@ -20,7 +20,6 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INFO=		latex-mk
 

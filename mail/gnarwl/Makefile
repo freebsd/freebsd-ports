@@ -23,7 +23,6 @@ USE_ICONV=	yes
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-docdir=${DOCSDIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		damnit.8 gnarwl.8
 MANCOMPRESSED=	yes

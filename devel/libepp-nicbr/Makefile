@@ -16,7 +16,6 @@ COMMENT=	Partial Extensible Provisioning Protocol to .br domains
 LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_SUB=	VER=${PORTVERSION}
 

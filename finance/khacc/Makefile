@@ -21,7 +21,6 @@ USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qhacc-config=${LOCALBASE}/bin
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

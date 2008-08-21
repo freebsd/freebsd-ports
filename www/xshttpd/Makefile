@@ -28,7 +28,6 @@ USE_BZIP2=	yes
 USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SSL "Enable https support" On \
 		PCRE "Enable pcre rewriting support" On \

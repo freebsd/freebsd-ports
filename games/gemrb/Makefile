@@ -23,7 +23,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--enable-openal \
 					--libdir=${LOCALBASE}/lib \
 					--includedir=${LOCALBASE}/include
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_GZIP=	yes
 USE_GMAKE=	yes

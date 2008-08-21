@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV+=	MOC="${MOC}" QTDIR="${QT_PREFIX}"
 
 post-patch:

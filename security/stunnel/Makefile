@@ -21,7 +21,6 @@ USE_OPENSSL=	YES
 USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
 		--enable-static --disable-fips
 

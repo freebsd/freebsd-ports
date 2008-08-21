@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--enable-drivers="${LCDPROC_DRIVERS}" \
 		--disable-ldap \
 		--disable-doxygen
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		lcdexec.1 lcdproc.1
 MAN5=		lcdproc-config.5

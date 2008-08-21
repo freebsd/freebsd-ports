@@ -57,7 +57,6 @@ USE_OPENSSL=	yes
 PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--datadir=${DATADIR} \
 		--libexecdir=${LIBEXECDIR} \

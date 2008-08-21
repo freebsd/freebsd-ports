@@ -32,7 +32,6 @@ CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
 USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:15
 AUTOMAKE_ARGS+=	-a -c --foreign
-CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
 CONFLICTS=	tidy-20000804* tidy-devel-[0-9]*

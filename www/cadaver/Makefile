@@ -17,7 +17,6 @@ COMMENT=	Commandline client for DAV
 LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver

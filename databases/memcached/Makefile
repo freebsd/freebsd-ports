@@ -20,7 +20,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	REPCACHED	"Enable data replication feature"	off
 

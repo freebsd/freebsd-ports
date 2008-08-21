@@ -14,7 +14,6 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A C++ template library that implements Double-Array
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 EXAMPLES=	darts.cpp mkdarts.cpp
 DOCS=		AUTHORS ChangeLog README doc

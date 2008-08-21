@@ -19,7 +19,6 @@ LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		afternoonstalker.6

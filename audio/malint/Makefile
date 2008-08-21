@@ -17,7 +17,6 @@ COMMENT=	MPEG Audio stream validator
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 PORTDOCS=	README
 PLIST_FILES=	bin/malint
 

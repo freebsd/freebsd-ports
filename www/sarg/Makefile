@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 		--enable-htmldir="${PREFIX}/www/${PORTNAME}" \
 		--enable-mandir="${MAN1PREFIX}/man/man1"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		sarg.1
 

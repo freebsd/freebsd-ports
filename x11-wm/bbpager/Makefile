@@ -22,7 +22,6 @@ USE_XORG=	xext sm x11 xau xcursor xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
 		LDFLAGS="`pkg-config --libs xft`"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS BUGS COPYING ChangeLog INSTALL NEWS \
 		README TODO

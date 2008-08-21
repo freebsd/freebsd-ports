@@ -18,7 +18,6 @@ COMMENT=	Digramic Bayesian classifier
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PROGRAMS=	bayesol dbacl mailinspect hmine hypex
 SCRIPTS=	mailcross mailtoe mailfoot

@@ -18,7 +18,6 @@ COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 		--with-dynaload-cflags="${CFLAGS} -shared" \
 		--with-gd-includes="${LOCALBASE}/include" \

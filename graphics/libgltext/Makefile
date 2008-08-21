@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
 OPTIONS=	EXAMPLES	"Compile examples, need libglut"	off

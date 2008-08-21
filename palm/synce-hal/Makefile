@@ -23,7 +23,6 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce  \
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 
 PLIST_FILES=	libexec/hal-dccm \

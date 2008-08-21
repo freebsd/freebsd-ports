@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_BISON=	build
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		tpb.1

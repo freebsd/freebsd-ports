@@ -19,7 +19,6 @@ COMMENT?=	An interpreted object-oriented programming language
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 USE_LDCONFIG=	yes

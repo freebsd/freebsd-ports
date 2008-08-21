@@ -17,8 +17,6 @@ COMMENT=	Simple file hash program utilizing SHA-1, SHA-256, SHA-384, SHA-512
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 MAN1=		sha.1
 PLIST_FILES=	bin/sha
 

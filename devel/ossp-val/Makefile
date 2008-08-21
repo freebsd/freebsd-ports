@@ -20,7 +20,6 @@ LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 
 MAN1=	val-config.1

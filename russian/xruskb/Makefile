@@ -18,7 +18,6 @@ USE_XORG=	x11 ice xt xmu
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_MOTIF)
 CONFIGURE_ARGS+=	--with-toolkit=motif

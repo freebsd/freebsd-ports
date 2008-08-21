@@ -22,8 +22,6 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 DOC_FILES=	AUTHORS COPYING NEWS README TODO
 
 # allow build with more warnings enabled

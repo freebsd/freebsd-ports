@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 # avoid renaming of soxt-config and soxt-config.1
-CONFIGURE_TARGET=	--target=""
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1
 

@@ -17,7 +17,6 @@ COMMENT=	Documentation gettext tools
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CharWidth.pm:${PORTSDIR}/textproc/libtext-charwidth-perl
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PERL_CONFIGURE=	yes

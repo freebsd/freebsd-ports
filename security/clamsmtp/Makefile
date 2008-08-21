@@ -19,8 +19,6 @@ USE_RC_SUBR=	clamsmtpd.sh
 SUB_LIST=	CLAMAV_PID_DIR=${CLAMAV_PID_DIR}
 SUB_FILES+=	pkg-message
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 CLAMAV_PID_DIR?=	/var/run/clamav
 
 MAN5=		clamsmtpd.conf.5

@@ -29,7 +29,6 @@ USE_SDL=	sdl ttf net
 USE_GL=		yes
 USE_GCC=	4.2+
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"

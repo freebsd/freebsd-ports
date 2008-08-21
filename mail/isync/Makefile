@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_BDB=	42+
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		isync.1 mbsync.1 mdconvert.1

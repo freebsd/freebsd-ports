@@ -17,7 +17,6 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Tools for using Parity v2 Archive files
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-tbb-[0-9]*

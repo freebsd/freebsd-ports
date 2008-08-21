@@ -1,4 +1,4 @@
-bin/%%ARCH%%-portbld-freebsd%%OSREL%%-matc
+bin/matc
 include/elmer/fnames.h
 include/elmer/gra.h
 include/elmer/matc.h

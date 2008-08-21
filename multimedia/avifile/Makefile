@@ -33,7 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" 
 CONFIGURE_ARGS=	--with-gnu-ld --enable-iconv \
 		--disable-v4l \
 		--disable-divx4
-CONFIGURE_TARGET=
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
 

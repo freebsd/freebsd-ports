@@ -52,7 +52,6 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/ros
 REINPLACE_ARGS=	-i ""
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-tk=${TK_LIBDIR}					\
 		--with-java-include=${JAVA_HOME}/include		\

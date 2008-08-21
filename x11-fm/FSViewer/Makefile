@@ -23,7 +23,6 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CPPFLAGS=	`pkg-config --cflags WINGs`

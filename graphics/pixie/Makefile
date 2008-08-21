@@ -27,7 +27,6 @@ PORTDOCS=*
 USE_GL=		yes
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_AUTOTOOLS=	autoconf:262 aclocal:19 automake:19 libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="-O0 -fPIC -pipe -I${LOCALBASE}/include" \
 		CXXFLAGS="-O0 -pipe -fPIC -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/OpenEXR" \

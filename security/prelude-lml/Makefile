@@ -20,7 +20,6 @@ LIB_DEPENDS+=	prelude.14:${PORTSDIR}/security/libprelude \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-lml.sh
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
 .include <bsd.port.pre.mk>

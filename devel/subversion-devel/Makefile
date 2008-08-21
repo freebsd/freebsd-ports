@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
 WANT_PERL=	yes
 

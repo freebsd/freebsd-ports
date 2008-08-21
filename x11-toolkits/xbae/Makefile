@@ -20,7 +20,6 @@ COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_MOTIF=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--enable-production --enable-static
 
 MAN3=		XbaeCaption.3 XbaeInput.3 XbaeMatrix.3

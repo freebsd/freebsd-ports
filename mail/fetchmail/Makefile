@@ -34,7 +34,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:

@@ -17,7 +17,6 @@ COMMENT=	Useful to correct images from digtal camera with CCD defects
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -23,7 +23,6 @@ USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 

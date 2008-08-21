@@ -24,7 +24,6 @@ LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # Remove MAKE="${GMAKE}" after ffmpeg-devel's upgrade
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 			LDFLAGS="-L${LOCALBASE}/lib"	\

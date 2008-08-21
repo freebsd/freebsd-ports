@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	jday.1
 

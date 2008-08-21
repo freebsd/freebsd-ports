@@ -21,7 +21,6 @@ COMMENT=	ISC's utility library
 ISCVERSION=	9.3.1
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MANCOMPRESSED=	yes
 BUILD_WRKSRC=	${WRKSRC}/lib/bind/freebsdportisc/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

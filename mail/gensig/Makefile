@@ -16,7 +16,6 @@ MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	A random .signature generator
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gensig.1 cattag.1
 

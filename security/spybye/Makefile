@@ -21,7 +21,6 @@ OPTIONS=	CLAMAV "Enable CLAMAV support" off
 USE_RC_SUBR=	spybye.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		spybye.1
 

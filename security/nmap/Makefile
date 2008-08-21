@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--without-localdirs \
 		--with-libdnet=${LOCALBASE} \
 		--with-liblua=${LOCALBASE}
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		nmap.1
 

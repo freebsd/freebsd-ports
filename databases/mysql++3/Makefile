@@ -18,7 +18,6 @@ COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 

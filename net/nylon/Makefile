@@ -21,7 +21,6 @@ USE_RC_SUBR=	nylon.sh
 
 GNU_CONFIGURE=	yes
 # Necessary for $PREFIX to work:
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 
 MAN1=		nylon.1

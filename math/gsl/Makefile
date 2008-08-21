@@ -22,7 +22,6 @@ COMMENT=	The GNU Scientific Library - mathematical libs
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
 
 MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1

@@ -18,7 +18,6 @@ COMMENT=	An automated unit testing framework for C
 WRKSRC=	${WRKDIR}/${PORTNAME:S/^cu/CU/}-${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/CUnit
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader:262
 USE_LDCONFIG=	yes

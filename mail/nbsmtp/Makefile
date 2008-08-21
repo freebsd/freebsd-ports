@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 		DEBUG	"Enable debug information (for developers)"	off \

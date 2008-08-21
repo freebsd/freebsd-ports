@@ -107,8 +107,6 @@ gnomeprefix_USE_GNOME_IMPL=gnomehier
 gnomeprefix_PREFIX=${LOCALBASE}
 .endif
 
-gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"

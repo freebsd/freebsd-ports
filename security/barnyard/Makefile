@@ -23,7 +23,6 @@ USE_AUTOTOOLS=	autoheader:262 aclocal:19
 USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 SLAVEDIRS=	security/barnyard-sguil6
 SUB_FILES=	pkg-message
 

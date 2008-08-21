@@ -19,7 +19,6 @@ LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 USE_XORG=	x11 xt xinerama
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		feh.1

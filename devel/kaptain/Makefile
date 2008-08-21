@@ -20,7 +20,6 @@ USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-mt
 
 MAN1=		kaptain.1

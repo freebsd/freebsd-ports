@@ -24,7 +24,6 @@ USE_GNOME=	pkgconfig ltverhack
 CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour
 CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UTF8 "Enable UTF8 support" off \

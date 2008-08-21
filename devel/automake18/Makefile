@@ -27,7 +27,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INFO=		automake-${BUILD_VERSION}
 
 post-patch:

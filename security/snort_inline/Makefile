@@ -18,7 +18,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-inline --enable-ipfw
 
 LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet

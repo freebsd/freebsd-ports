@@ -28,7 +28,6 @@ MAN1=		mysqlar_graph.1
 MAN8=		mysqlard.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-rrd="${LOCALBASE}" --datadir="${PREFIX}/www" \
 		--sysconfdir="${PREFIX}/etc"
 

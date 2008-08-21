@@ -54,7 +54,6 @@ CFLAGS=		-O3 -tpp7 -axN -Vaxlib
 CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \

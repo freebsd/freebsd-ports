@@ -50,7 +50,6 @@ USE_FORTRAN=	yes
 INSTALL_TARGET=	install install-libR
 ALL_TARGET=	all
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes

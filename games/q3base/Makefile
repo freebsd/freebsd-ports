@@ -21,7 +21,6 @@ USE_BZIP2=		yes
 USE_SDL=		sdl net
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=
 
 OPTIONS=		X11 "Build OpenGL client" on
 

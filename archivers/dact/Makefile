@@ -20,8 +20,7 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-			--libdir=${PREFIX}/lib
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	TOBUILD="dact libdact.so dact.conf"

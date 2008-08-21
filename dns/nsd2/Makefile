@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-pidfile=/var/run/nsd.pid \
 		--with-dbfile=${NSDDBFILE} \
 		--with-libwrap
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
 		IPV6		"Enable IPv6 support" On \

@@ -15,7 +15,6 @@ COMMENT=	Menu generation tool for X window managers
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		wmconfig.1x
 

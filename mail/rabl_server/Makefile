@@ -19,7 +19,6 @@ COMMENT=	Reactive Autonomous Blackhole List server
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	CHANGE README RELEASE.NOTES
 

@@ -18,7 +18,6 @@ COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 

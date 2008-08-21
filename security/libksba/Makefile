@@ -19,8 +19,6 @@ LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=yes
 
 INFO=		ksba

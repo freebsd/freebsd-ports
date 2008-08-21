@@ -19,6 +19,5 @@ WRKSRC=		${WRKDIR}/fann-2.1.0
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

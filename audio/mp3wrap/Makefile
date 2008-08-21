@@ -16,7 +16,6 @@ MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Utility to merge mp3 files (and other formats)
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

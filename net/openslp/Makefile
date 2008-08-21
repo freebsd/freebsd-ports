@@ -21,7 +21,6 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 		--localstatedir=/var
-CONFIGURE_TARGET=--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}

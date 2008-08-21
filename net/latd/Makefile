@@ -17,7 +17,6 @@ COMMENT=	The linux-decnet project LAT protocol suite
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-Wno-deprecated
 
 MAN1=		llogin.1

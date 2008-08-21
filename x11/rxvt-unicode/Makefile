@@ -24,7 +24,6 @@ USE_XORG=		xpm xft
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=		yes
 
 MAN1=		urxvt.1 urxvtc.1 urxvtd.1

@@ -17,8 +17,6 @@ XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xineramaproto:both
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 MAN3=		Xinerama.3 \
 		XineramaQueryExtension.3 \
 		XineramaQueryVersion.3 \

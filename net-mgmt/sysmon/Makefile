@@ -20,7 +20,6 @@ DOCS=		Changes.html binaries.html config.html docs.html index.html \
 MAN8=		sysmon.man.8 sysmon.conf.man.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${PREFIX}/bin

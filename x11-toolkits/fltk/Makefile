@@ -36,7 +36,6 @@ VERSION=	1.1.7
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-shared --enable-xft
 # configure ignores ${CXX} and keeps on linking C++ code with ${CC}
 CONFIGURE_ENV+=	CC="${CXX}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

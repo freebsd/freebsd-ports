@@ -21,7 +21,6 @@ RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX}
 
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}

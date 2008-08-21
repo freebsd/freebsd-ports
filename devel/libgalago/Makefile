@@ -26,8 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 post-configure:
 	@${ECHO_CMD} "#define HAVE_STRCHR 1" >> ${WRKSRC}/config.h
 

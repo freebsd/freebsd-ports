@@ -23,7 +23,6 @@ USE_DOS2UNIX=	*.pc.in
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \

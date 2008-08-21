@@ -17,7 +17,6 @@ COMMENT=	Yet another Basic for Unix and Windows
 USE_XORG=	x11 ice sm xt
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		yabasic.1
 PORTDOCS=	yabasic.htm

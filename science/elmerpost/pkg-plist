@@ -1,6 +1,6 @@
-bin/%%ARCH%%-portbld-freebsd%%OSREL%%-ElmerPost
-bin/%%ARCH%%-portbld-freebsd%%OSREL%%-QueryGLXExt
-bin/%%ARCH%%-portbld-freebsd%%OSREL%%-sico2elmer
+bin/ElmerPost
+bin/QueryGLXExt
+bin/sico2elmer
 %%DATADIR%%/help/index.html
 %%DATADIR%%/help/http.tcl
 %%DATADIR%%/help/help.tcl

@@ -22,7 +22,6 @@ COMMENT=	A new ftp server that can perform a variety of ftp tasks
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-authsmb
 
 MAN1=		ftpwho.1 muddleftpd.1 mudpasswd.1

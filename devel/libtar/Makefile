@@ -17,7 +17,6 @@ COMMENT=	A library for manipulating POSIX and GNU tar files
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}"
 
 post-install:

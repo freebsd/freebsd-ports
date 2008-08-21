@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_RC_SUBR=	havp
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-locking
 
 LOG_DIR=	/var/log/havp

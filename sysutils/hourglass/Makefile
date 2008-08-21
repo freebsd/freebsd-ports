@@ -18,7 +18,6 @@ RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/busy bin/hourglass
 PORTDOCS=	CALIBRATION

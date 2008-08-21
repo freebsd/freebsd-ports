@@ -29,7 +29,6 @@ CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-python \
 			--disable-ruby \
 			--disable-zope
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

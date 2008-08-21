@@ -35,9 +35,9 @@ ALL_TARGET=	all info
 
 DEPENDS_ARGS=	TGTARCH="${TGTARCH}" TGTABI="${TGTABI}"
 
-CONFIGURE_TARGET=	--target=${OURTARGET}
 CONFIGURE_ARGS+=	--disable-nls \
-			--exec-prefix=${EPRFX}/
+			--exec-prefix=${EPRFX}/ \
+			--target=${OURTARGET}
 
 OURTARGET=	${TGTARCH}-${TGTABI}
 

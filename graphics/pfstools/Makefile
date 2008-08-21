@@ -22,7 +22,7 @@ PFS_BUILD=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB+=	PFS_BASE=${PREFIX}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${PFS_BUILD}
+CONFIGURE_TARGET=	${PFS_BUILD}
 CONFIGURE_ARGS=	--disable-jpeghdr --disable-matlab \
 		--with-bash=${LOCALBASE}/bin/bash
 CONFIGURE_ENV=	CPPFLAGS="${PFS_CPPFLAGS}" \

@@ -27,7 +27,6 @@ USE_SDL=	sdl image mixer net
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN6=		tmw.6
 
 OPTIONS=	MUSIC	"Install additional music" On

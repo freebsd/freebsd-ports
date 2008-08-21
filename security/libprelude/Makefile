@@ -21,7 +21,6 @@ OPTIONS=	PERL "Include Perl bindings" off \
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--localstatedir=/var
 
 MAN1=		prelude-admin.1

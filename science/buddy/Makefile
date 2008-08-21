@@ -17,7 +17,6 @@ COMMENT=	A Binary Decision Diagram library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

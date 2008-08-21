@@ -38,8 +38,6 @@ OPTIONS=	GNUTAR "use GNU tar" on \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
 AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists

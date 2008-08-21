@@ -28,7 +28,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${DATADIR} \
 		--disable-optimize

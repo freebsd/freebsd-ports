@@ -79,7 +79,6 @@ CONFIGURE_ARGS+=	--libexec=${PREFIX}/libexec/fidogate \
 			--with-vardir=${VARDIR} \
 			--with-spooldir=${SPOOLDIR} \
 			--with-btbasedir=${BTBASEDIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		doc/README.ru doc/README doc/FAQ.ru doc/FIDOGATE+tracker.ru \
 		ChangeLog Changes.ru doc/old/FAQ_fidogate doc/FAQ_Config.ru \

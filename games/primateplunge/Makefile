@@ -18,7 +18,6 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PRIMATEDIR=	sounds graphics
 
 do-install:
