@@ -6,31 +6,33 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20070525
-PORTREVISION=	2
+PORTVERSION=	20080721
 CATEGORIES=	games
 MASTER_SITES=	SF/marathon
 DISTNAME=	AlephOne-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
-BROKEN=		does not build with speex-1.2rc1
-
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget
-USE_LUA=	5.0
+USE_LUA=	5.1
 USE_SDL=	image net sdl sound
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}"
 
 DATADIR=	${PREFIX}/share/AlephOne
+
+MAN6=		alephone.6
+
+PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,4 +43,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
