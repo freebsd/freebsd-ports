@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	postal
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
+
+OPTIONS=	SSL "Build with OpenSSL support" on
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -26,9 +28,14 @@ MAN8=	bhm.8 postal.8 rabid.8
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS=	--disable-gnutls
+
+.if !defined(WITH_SSL)
+CONFIGURE_ARGS+=	--disable-openssl
+.endif
+
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--disable-gnutls
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.post.mk>
