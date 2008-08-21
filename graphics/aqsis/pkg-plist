@@ -1,24 +1,47 @@
 bin/aqsis
 bin/aqsl
 bin/aqsltell
+bin/eqsl
 bin/miqser
+bin/piqsl
 bin/teqser
 etc/aqsis/aqsisrc
 include/aqsis/aqsis.h
+include/aqsis/aqsis_compiler.h
 include/aqsis/aqsis_types.h
+include/aqsis/aqsismath.h
 include/aqsis/bitvector.h
+include/aqsis/cellnoise.h
 include/aqsis/color.h
 include/aqsis/exception.h
+include/aqsis/execute.h
 include/aqsis/file.h
 include/aqsis/list.h
+include/aqsis/logging.h
+include/aqsis/logging_streambufs.h
+include/aqsis/lowdiscrep.h
 include/aqsis/matrix.h
+include/aqsis/matrix2d.h
+include/aqsis/memorysentry.h
+include/aqsis/multitimer.h
+include/aqsis/multitimer_system.h
 include/aqsis/ndspy.h
+include/aqsis/noise.h
+include/aqsis/noise1234.h
+include/aqsis/plugins.h
+include/aqsis/pool.h
 include/aqsis/random.h
 include/aqsis/refcount.h
 include/aqsis/ri.h
 include/aqsis/ri.inl
+include/aqsis/ri_types.h
+include/aqsis/riparamlist.h
 include/aqsis/shadeop.h
 include/aqsis/slx.h
+include/aqsis/smartptr.h
+include/aqsis/socket.h
+include/aqsis/socket_system.h
+include/aqsis/spline.h
 include/aqsis/sstring.h
 include/aqsis/vector2d.h
 include/aqsis/vector3d.h
@@ -27,85 +50,182 @@ lib/aqsis/libd_bmp.so
 lib/aqsis/libd_exr.so
 lib/aqsis/libd_xpm.so
 lib/aqsis/libdisplay.so
-lib/aqsis/plugins/libbake2tif.so
-lib/aqsis/plugins/libbmp2tif.so
-lib/aqsis/plugins/libdbo_plane.so
-lib/aqsis/plugins/libexr2tif.so
-lib/aqsis/plugins/libgif2tif.so
-lib/aqsis/plugins/libjpg2tif.so
-lib/aqsis/plugins/libpcx2tif.so
-lib/aqsis/plugins/libpng2tif.so
-lib/aqsis/plugins/libppm2tif.so
-lib/aqsis/plugins/libtga2tif.so
-lib/libaqsis.so.1.2
+lib/aqsis/libpiqsldisplay.so
 lib/libaqsis.so
 lib/libaqsis.so.1
-lib/libaqsistypes.so.1.2
+lib/libaqsis.so.1.4
+lib/libaqsisargparse.so
+lib/libaqsisargparse.so.1
+lib/libaqsisargparse.so.1.4
+lib/libaqsistex.so
+lib/libaqsistex.so.1
+lib/libaqsistex.so.1.4
 lib/libaqsistypes.so
 lib/libaqsistypes.so.1
-lib/libri2rib.so.1.2
+lib/libaqsistypes.so.1.4
 lib/libri2rib.so
 lib/libri2rib.so.1
-lib/libshadervm.so.1.2
+lib/libri2rib.so.1.4
 lib/libshadervm.so
 lib/libshadervm.so.1
-lib/libslxargs.so.1.2
+lib/libshadervm.so.1.4
 lib/libslxargs.so
 lib/libslxargs.so.1
-share/aqsis/shaders/ambientlight.sl
-share/aqsis/shaders/ambientlight.slx
-share/aqsis/shaders/background.sl
-share/aqsis/shaders/background.slx
-share/aqsis/shaders/bumpy.sl
-share/aqsis/shaders/bumpy.slx
-share/aqsis/shaders/constant.sl
-share/aqsis/shaders/constant.slx
-share/aqsis/shaders/depthcue.sl
-share/aqsis/shaders/depthcue.slx
-share/aqsis/shaders/distantlight.sl
-share/aqsis/shaders/distantlight.slx
-share/aqsis/shaders/fog.sl
-share/aqsis/shaders/fog.slx
-share/aqsis/shaders/matte.sl
-share/aqsis/shaders/matte.slx
-share/aqsis/shaders/metal.sl
-share/aqsis/shaders/metal.slx
-share/aqsis/shaders/paintedplastic.sl
-share/aqsis/shaders/paintedplastic.slx
-share/aqsis/shaders/plastic.sl
-share/aqsis/shaders/plastic.slx
-share/aqsis/shaders/pointlight.sl
-share/aqsis/shaders/pointlight.slx
-share/aqsis/shaders/shinymetal.sl
-share/aqsis/shaders/shinymetal.slx
-share/aqsis/shaders/spotlight.sl
-share/aqsis/shaders/spotlight.slx
-share/aqsis/content/ribs/features/layeredshaders/grid.tif
-share/aqsis/content/ribs/features/layeredshaders/layered.rib
-share/aqsis/content/ribs/features/layeredshaders/render.bat
-share/aqsis/content/ribs/features/layeredshaders/render.sh
-share/aqsis/content/ribs/features/layeredshaders/texmap.sl
-share/aqsis/content/ribs/scenes/vase/render.bat
-share/aqsis/content/ribs/scenes/vase/render.sh
-share/aqsis/content/ribs/scenes/vase/vase.rib
-share/aqsis/content/shaders/displacement/dented.sl
-share/aqsis/content/shaders/displacement/dented.slx
-share/aqsis/content/shaders/light/shadowspot.sl
-share/aqsis/content/shaders/light/shadowspot.slx
-share/aqsis/scripts/mpanalyse.py
+lib/libslxargs.so.1.4
+share/applications/aqsis.desktop
+share/applications/aqsl.desktop
+share/applications/aqsltell.desktop
+share/applications/eqsl.desktop
+share/applications/piqsl.desktop
+share/mime/packages/aqsis.xml
+share/pixmaps/aqsis-doc.png
+share/pixmaps/aqsis.png
+%%DATADIR%%/scripts/aqsis.sh
+%%DATADIR%%/scripts/aqsl.sh
+%%DATADIR%%/scripts/aqsltell.sh
+%%DATADIR%%/scripts/mpanalyse.py
+%%DATADIR%%/shaders/matte.sl
+%%DATADIR%%/shaders/ambientlight.sl
+%%DATADIR%%/shaders/background.sl
+%%DATADIR%%/shaders/metal.sl
+%%DATADIR%%/shaders/pointlight.sl
+%%DATADIR%%/shaders/bumpy.sl
+%%DATADIR%%/shaders/distantlight.sl
+%%DATADIR%%/shaders/spotlight.sl
+%%DATADIR%%/shaders/paintedplastic.sl
+%%DATADIR%%/shaders/plastic.sl
+%%DATADIR%%/shaders/shinymetal.sl
+%%DATADIR%%/shaders/fog.sl
+%%DATADIR%%/shaders/constant.sl
+%%DATADIR%%/shaders/depthcue.sl
+%%DATADIR%%/shaders/matte.slx
+%%DATADIR%%/shaders/ambientlight.slx
+%%DATADIR%%/shaders/background.slx
+%%DATADIR%%/shaders/metal.slx
+%%DATADIR%%/shaders/pointlight.slx
+%%DATADIR%%/shaders/bumpy.slx
+%%DATADIR%%/shaders/distantlight.slx
+%%DATADIR%%/shaders/fog.slx
+%%DATADIR%%/shaders/spotlight.slx
+%%DATADIR%%/shaders/paintedplastic.slx
+%%DATADIR%%/shaders/plastic.slx
+%%DATADIR%%/shaders/shinymetal.slx
+%%DATADIR%%/shaders/constant.slx
+%%DATADIR%%/shaders/depthcue.slx
+%%DATADIR%%/content/ribs/features/bake/bakesphere.rib
+%%DATADIR%%/content/ribs/features/bake/render.sh
+%%DATADIR%%/content/ribs/features/bake/sphere.rib
+%%DATADIR%%/content/ribs/features/curves/render.sh
+%%DATADIR%%/content/ribs/features/curves/bezier.rib
+%%DATADIR%%/content/ribs/features/objectinstance/singlepolygon.rib
+%%DATADIR%%/content/ribs/features/objectinstance/render.sh
+%%DATADIR%%/content/ribs/features/motionblur/camera.rib
+%%DATADIR%%/content/ribs/features/motionblur/render_deformation.sh
+%%DATADIR%%/content/ribs/features/motionblur/render_camera.sh
+%%DATADIR%%/content/ribs/features/motionblur/deformation.rib
+%%DATADIR%%/content/ribs/features/shadows/autoshadow.rib
+%%DATADIR%%/content/ribs/features/shadows/render_autoshadow.sh
+%%DATADIR%%/content/ribs/features/shadows/softshadow.rib
+%%DATADIR%%/content/ribs/features/shadows/render_softshadow.sh
+%%DATADIR%%/content/ribs/features/levelofdetail/render.sh
+%%DATADIR%%/content/ribs/features/levelofdetail/detail.rib
+%%DATADIR%%/content/ribs/features/layeredshaders/grid.tif
+%%DATADIR%%/content/ribs/features/layeredshaders/render.sh
+%%DATADIR%%/content/ribs/features/layeredshaders/texmap.sl
+%%DATADIR%%/content/ribs/features/layeredshaders/layered.rib
+%%DATADIR%%/content/ribs/features/subdivision/render.sh
+%%DATADIR%%/content/ribs/features/subdivision/creases.rib
+%%DATADIR%%/content/ribs/features/occlusion/simple.rib
+%%DATADIR%%/content/ribs/features/occlusion/occlmap.py
+%%DATADIR%%/content/ribs/features/occlusion/render.sh
+%%DATADIR%%/content/ribs/features/occlusion/occlmap.rib
+%%DATADIR%%/content/ribs/features/occlusion/envlight.sl
+%%DATADIR%%/content/ribs/features/occlusion/world.rib
+%%DATADIR%%/content/ribs/features/textures/grid.tif
+%%DATADIR%%/content/ribs/features/textures/render.sh
+%%DATADIR%%/content/ribs/features/textures/sticky.rib
+%%DATADIR%%/content/ribs/features/multipass/myval.sl
+%%DATADIR%%/content/ribs/features/multipass/render.sh
+%%DATADIR%%/content/ribs/features/multipass/aov.rib
+%%DATADIR%%/content/ribs/features/solidmodeling/csg.rib
+%%DATADIR%%/content/ribs/features/solidmodeling/render.sh
+%%DATADIR%%/content/ribs/scenes/fisheye/README.txt
+%%DATADIR%%/content/ribs/scenes/fisheye/fisheye_projection.sl
+%%DATADIR%%/content/ribs/scenes/fisheye/lights.rib
+%%DATADIR%%/content/ribs/scenes/fisheye/scene.rib
+%%DATADIR%%/content/ribs/scenes/fisheye/render.sh
+%%DATADIR%%/content/ribs/scenes/fisheye/envmap.rib
+%%DATADIR%%/content/ribs/scenes/fisheye/fisheye.rib
+%%DATADIR%%/content/ribs/scenes/fisheye/world.rib
+%%DATADIR%%/content/ribs/scenes/vase/vase.rib
+%%DATADIR%%/content/ribs/scenes/vase/render.sh
+%%DATADIR%%/content/ribs/scenes/microbe/microbe.rib
+%%DATADIR%%/content/ribs/scenes/microbe/render.sh
+%%DATADIR%%/content/shaders/displacement/AqDMap.sl
+%%DATADIR%%/content/shaders/displacement/borg_metal.sl
+%%DATADIR%%/content/shaders/displacement/micro_bumps.sl
+%%DATADIR%%/content/shaders/displacement/wavy.sl
+%%DATADIR%%/content/shaders/displacement/dented.sl
+%%DATADIR%%/content/shaders/include/patterns.sl
+%%DATADIR%%/content/shaders/surface/SpaceTest.sl
+%%DATADIR%%/content/shaders/surface/show_st.sl
+%%DATADIR%%/content/shaders/surface/expensive.sl
+%%DATADIR%%/content/shaders/surface/curvetube.sl
+%%DATADIR%%/content/shaders/surface/pinkGranite.sl
+%%DATADIR%%/content/shaders/surface/debug.sl
+%%DATADIR%%/content/shaders/surface/cddiffract.h
+%%DATADIR%%/content/shaders/surface/randgrid.sl
+%%DATADIR%%/content/shaders/surface/show_N.sl
+%%DATADIR%%/content/shaders/surface/uvtest.sl
+%%DATADIR%%/content/shaders/surface/AqSMap.sl
+%%DATADIR%%/content/shaders/surface/microscope.sl
+%%DATADIR%%/content/shaders/surface/sticky_texture.sl
+%%DATADIR%%/content/shaders/surface/DPProctext.h
+%%DATADIR%%/content/shaders/surface/showuser.sl
+%%DATADIR%%/content/shaders/surface/cellnoisetest.sl
+%%DATADIR%%/content/shaders/surface/cd.sl
+%%DATADIR%%/content/shaders/surface/face_plastic.sl
+%%DATADIR%%/content/shaders/surface/DPBlueMarble.sl
+%%DATADIR%%/content/shaders/light/shadowpoint.sl
+%%DATADIR%%/content/shaders/light/shadowdistant.sl
+%%DATADIR%%/content/shaders/light/shadowspot.sl
+%%DATADIR%%/content/shaders/imager/fakesky.sl
+%%DATADIR%%/content/shaders/imager/filmgrain.sl
+%%DATADIR%%/content/shaders/imager/bluescreen.sl
+%%DATADIR%%/content/shaders/imager/exposure.sl
+%%DATADIR%%/content/shaders/imager/gradient.sl
+%%DATADIR%%/content/shaders/imager/iramp.sl
 @dirrm etc/aqsis
 @dirrm include/aqsis
-@dirrm lib/aqsis/plugins
 @dirrm lib/aqsis
-@dirrm share/aqsis/content/ribs/features/layeredshaders
-@dirrm share/aqsis/content/ribs/features
-@dirrm share/aqsis/content/ribs/scenes/vase
-@dirrm share/aqsis/content/ribs/scenes
-@dirrm share/aqsis/content/ribs
-@dirrm share/aqsis/content/shaders/displacement
-@dirrm share/aqsis/content/shaders/light
-@dirrm share/aqsis/content/shaders
-@dirrm share/aqsis/content
-@dirrm share/aqsis/shaders
-@dirrm share/aqsis/scripts
-@dirrm share/aqsis
+@dirrm %%DATADIR%%/shaders
+@dirrm %%DATADIR%%/content/shaders/surface
+@dirrm %%DATADIR%%/content/shaders/light
+@dirrm %%DATADIR%%/content/shaders/include
+@dirrm %%DATADIR%%/content/shaders/imager
+@dirrm %%DATADIR%%/content/shaders/displacement
+@dirrm %%DATADIR%%/content/shaders
+@dirrm %%DATADIR%%/content/ribs/scenes/vase
+@dirrm %%DATADIR%%/content/ribs/scenes/microbe
+@dirrm %%DATADIR%%/content/ribs/scenes/fisheye
+@dirrm %%DATADIR%%/content/ribs/scenes
+@dirrm %%DATADIR%%/content/ribs/features/textures
+@dirrm %%DATADIR%%/content/ribs/features/subdivision
+@dirrm %%DATADIR%%/content/ribs/features/solidmodeling
+@dirrm %%DATADIR%%/content/ribs/features/shadows
+@dirrm %%DATADIR%%/content/ribs/features/occlusion
+@dirrm %%DATADIR%%/content/ribs/features/objectinstance
+@dirrm %%DATADIR%%/content/ribs/features/multipass
+@dirrm %%DATADIR%%/content/ribs/features/motionblur
+@dirrm %%DATADIR%%/content/ribs/features/levelofdetail
+@dirrm %%DATADIR%%/content/ribs/features/layeredshaders
+@dirrm %%DATADIR%%/content/ribs/features/curves
+@dirrm %%DATADIR%%/content/ribs/features/bake
+@dirrm %%DATADIR%%/content/ribs/features
+@dirrm %%DATADIR%%/content/ribs
+@dirrm %%DATADIR%%/content
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/mime/packages
+@dirrmtry share/mime

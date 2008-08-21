@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2008-08-21 01:09:19.000000000 +0200
++++ CMakeLists.txt	2008-08-21 01:09:27.000000000 +0200
+@@ -17,9 +17,6 @@
+ 
+ INCLUDE(macros)
+ 
+-INCLUDE(FirstCMakeRun)
+-INCLUDE(OutOfSourceBuild)
+-
+ # Find path to precompiled libs on windows.
+ INCLUDE(FindWin32Libs)
+ 
