@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.7.a3
+PORTVERSION=	1.7.a4
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/.alpha/}
@@ -28,12 +28,6 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
-.endif
-
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${WRKSRC}
@@ -44,4 +38,4 @@ do-configure:
 		-D CMAKE_INSTALL_PREFIX=${PREFIX} \
 		${WRKSRC}/..
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
