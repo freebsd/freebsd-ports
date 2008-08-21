@@ -1,6 +1,7 @@
 bin/diff_tpl_auto_escape
 bin/make_tpl_varnames_h
 bin/template-converter
+include/google/per_expand_data.h
 include/google/template.h
 include/google/template_dictionary.h
 include/google/template_enums.h
@@ -9,6 +10,7 @@ include/google/template_from_string.h
 include/google/template_modifiers.h
 include/google/template_namelist.h
 include/google/template_pathops.h
+include/google/template_string.h
 lib/libctemplate.a
 lib/libctemplate.la
 lib/libctemplate.so
