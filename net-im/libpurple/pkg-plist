@@ -49,6 +49,7 @@ include/libpurple/roomlist.h
 include/libpurple/savedstatuses.h
 include/libpurple/server.h
 include/libpurple/signals.h
+include/libpurple/smiley.h
 include/libpurple/sound.h
 include/libpurple/sslconn.h
 include/libpurple/status.h
@@ -131,10 +132,10 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.4
+%%DBUS%%lib/libpurple-client.so.5
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.4
+lib/libpurple.so.5
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
@@ -208,6 +209,8 @@ share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
 share/locale/zh_HK/LC_MESSAGES/pidgin.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin.mo
+share/purple/ca-certs/CAcert_Class3.pem
+share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
