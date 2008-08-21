@@ -7,7 +7,7 @@
 
 PORTNAME=	tolua++
 PORTVERSION=	1.0.92
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	50
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
@@ -19,7 +19,7 @@ COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
 USE_BZIP2=	yes
 USE_LUA=	5.0
 USE_SCONS=	yes
-SCONS_ARGS=	prefix=${PREFIX}
+SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
@@ -30,5 +30,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${LUA_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${LUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${LUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${PREFIX}/lib/libtolua++-${LUA_VER}.so
 
 .include <bsd.port.mk>
