@@ -7,6 +7,7 @@
 
 PORTNAME=	ptmalloc
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	${PORTNAME}2-current
@@ -28,9 +29,9 @@ post-patch:
 do-install:	all
 	${MKDIR} ${PREFIX}/${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/malloc.h ${PREFIX}/${INCDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/malloc.so ${PREFIX}/lib/libptmalloc.so.2
+	${INSTALL_DATA} ${WRKSRC}/malloc.so ${PREFIX}/lib/libptmalloc.so.2
 	${LN} -s ${PREFIX}/lib/ptmalloc.so.2 ${PREFIX}/lib/libptmalloc.so
-	${INSTALL_PROGRAM} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc.a
+	${INSTALL_DATA} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc.a
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
