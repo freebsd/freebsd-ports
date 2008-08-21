@@ -231,7 +231,7 @@ post-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
 .endif
 
-pre-install:
+pre-su-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
