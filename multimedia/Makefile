@@ -41,6 +41,7 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flv2mpeg4
+    SUBDIR += flvtool++
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol

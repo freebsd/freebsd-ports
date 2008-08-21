@@ -1,0 +1,11 @@
+--- SConstruct.orig	2007-09-08 03:24:22.000000000 +0400
++++ SConstruct	2008-08-21 20:38:10.000000000 +0400
+@@ -1,5 +1,7 @@
++import os
++
+ libd = '#lib/'
+-env = Environment(CPPFLAGS='-ggdb -O3 -Wall', LINKFLAGS='-ggdb')
++env = Environment(CXX=os.environ['CXX'], CXXFLAGS=os.environ['CXXFLAGS'], ENV=os.environ)
+ env.TargetSignatures('content')
+ 
+ Export('env libd')
