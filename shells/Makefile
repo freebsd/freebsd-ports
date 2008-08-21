@@ -28,6 +28,7 @@
     SUBDIR += pear-PHP_Shell
     SUBDIR += psh
     SUBDIR += rc
+    SUBDIR += rssh
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += shell-include
