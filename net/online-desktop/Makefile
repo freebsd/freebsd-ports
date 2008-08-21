@@ -7,6 +7,7 @@
 
 PORTNAME=	online-desktop
 PORTVERSION=	0.2.29
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,7 +25,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		nspr4.1:${PORTSDIR}/devel/nspr \
 		nss3.1:${PORTSDIR}/security/nss \
-		purple.4:${PORTSDIR}/net-im/libpurple
+		purple.5:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-data-model \
 		${LOCALBASE}/bin/bigboard:${PORTSDIR}/misc/bigboard \
 		${LOCALBASE}/bin/purple-remote:${PORTSDIR}/net-im/libpurple \
