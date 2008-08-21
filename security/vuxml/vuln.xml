@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d864a0a7-6f27-11dd-acfe-00104b9e1a4a">
+    <topic>gnutls -- "gnutls_handshake()" Denial of Service</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><ge>2.3.5</ge><lt>2.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31505/">
+	  <p>A vulnerability has been reported in GnuTLS, which can
+	    potentially be exploited by malicious people to cause a DoS
+	    (Denial of Service).</p>
+	  <p>The vulnerability is caused due to a use-after-free error when an
+	    application calls "gnutls_handshake()" for an already valid session
+	    and can potentially be exploited, e.g. during re-handshakes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2377</cvename>
+      <url>http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/2947</url>
+      <url>http://secunia.com/advisories/31505/</url>
+    </references>
+    <dates>
+      <discovery>2008-08-15</discovery>
+      <entry>2008-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8514b6e7-6f0f-11dd-b3db-001c2514716c">
     <topic>joomla -- flaw in the reset token validation</topic>
     <affects>
