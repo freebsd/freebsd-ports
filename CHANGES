@@ -10,6 +10,13 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20080821:
+AUTHOR: rafan@FreeBSD.org
+
+   * CONFIGURE_ARGS is updated to use correct syntax for newer autoconf
+     on the configure target. Individual ports no longer need to change
+     CONFIGURE_TARGET to have the '--build=' prefix.
+
 20080721:
 AUTHOR: pav@FreeBSD.org
 
