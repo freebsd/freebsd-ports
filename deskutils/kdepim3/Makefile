@@ -7,7 +7,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,7 +17,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		opensync.0:${PORTSDIR}/devel/libopensync022 \
 		pisock:${PORTSDIR}/palm/pilot-link \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
@@ -39,10 +38,19 @@ CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--with-ssl-dir=${OPENSSLBASE}
 
-OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
+OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off \
+		KITCHENSYNC "PIM synchronization utility" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_KITCHENSYNC)
+LIB_DEPENDS+=	opensync.0:${PORTSDIR}/devel/libopensync022
+PLIST_SUB+=	KITCHENSYNC=""
+.else
+PLIST_SUB+=	KITCHENSYNC="@comment "
+DO_NOT_COMPILE+=kitchensync
+.endif
 
 .if exists(${LOCALBASE}/bin/gnokii)
 .	if !defined(WITH_GNOKII)
