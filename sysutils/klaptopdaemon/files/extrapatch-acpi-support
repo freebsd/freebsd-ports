@@ -1,39 +1,5 @@
 --- klaptopdaemon/portable.cpp.orig	2007-09-14 18:54:04.000000000 +0400
 +++ klaptopdaemon/portable.cpp	2007-09-14 18:54:18.000000000 +0400
-@@ -1,7 +1,7 @@
- /*
-  * portable.cpp
-  *
-- * $Id: portable.cpp 629304 2007-02-02 09:55:28Z dfaure $
-+ * $Id: portable.cpp 540996 2006-05-15 09:55:42Z mueller $
-  *
-  * Copyright (c) 1999 Paul Campbell <paul@taniwha.com>
-  *
-@@ -1957,19 +1957,19 @@
- laptop_portable::get_button(LaptopButton l)	// true if a button is pressed
- {
- 	if (::has_acpi()) {
--		QString name;
-+		QString *name=0;
- 		switch (l) {
- 		case LidButton:
--			name = acpi_lid_name;
-+			name = &acpi_lid_name;
- 			break;
- 		case PowerButton:
--			name = acpi_power_name;
-+			name = &acpi_power_name;
- 			break;
- 		default:
- 			break;
- 		}
--		if (!name.isEmpty()) {
--			QFile f(name);
-+		if (name) {
-+			QFile f(*name);
- 			if (f.open(IO_ReadOnly)) {
- 				while (!f.atEnd()) {
- 					QString l;
 @@ -2001,7 +2001,488 @@
  	return(0);
  }
