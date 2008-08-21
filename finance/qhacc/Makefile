@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

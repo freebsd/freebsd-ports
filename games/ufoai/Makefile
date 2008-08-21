@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--enable-release=yes
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DATADIR=	share/${PORTNAME}
 SUB_FILES=	pkg-message

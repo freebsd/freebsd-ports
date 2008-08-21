@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-nested-tables --enable-gzip-help \

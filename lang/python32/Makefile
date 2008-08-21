@@ -19,7 +19,6 @@ DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"

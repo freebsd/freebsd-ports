@@ -22,8 +22,6 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=
-CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fpermissive" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"

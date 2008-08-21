@@ -36,7 +36,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share	# location of fgfs-base
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
 

@@ -28,7 +28,6 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4 AWK=${AWK}
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/autoconf
 INFO=		autoconf-${BUILD_VERSION}
 

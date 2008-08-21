@@ -16,7 +16,6 @@ COMMENT=	A ftp-like client for the FSP service
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		fsp.1
 PLIST_FILES=	bin/fsp

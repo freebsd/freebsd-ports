@@ -15,7 +15,6 @@ COMMENT=		A text-based personal organizer
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 
 MAN1=			calcurse.1

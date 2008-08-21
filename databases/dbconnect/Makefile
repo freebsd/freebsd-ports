@@ -19,7 +19,6 @@ COMMENT=	Use C++ object API to allow applications to connect to databases
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	${PTHREAD_CFLAGS} -fPIC -DFREEBSD

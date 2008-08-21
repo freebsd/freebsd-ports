@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation gettext tools
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PERL_CONFIGURE=	5.8.0+

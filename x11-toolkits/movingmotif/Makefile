@@ -16,7 +16,6 @@ COMMENT=	Display scientific data as dynamic plot
 
 USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

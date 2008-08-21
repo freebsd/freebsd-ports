@@ -15,7 +15,6 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A network monitoring daemon
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib" \
 			YACC=${YACC} \

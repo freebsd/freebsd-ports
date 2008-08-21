@@ -18,7 +18,6 @@ CONFLICTS=	ircd-hybrid-7.[0-9]*
 
 GNU_CONFIGURE=		yes
 USE_RC_SUBR=		undernet.sh
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
 PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example

@@ -21,10 +21,8 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-distri=freebsd
+CONFIGURE_ARGS+=--with-distri=freebsd
 
 MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \
 		kvkd.1 memcard.1 libchipcard-config.1 readertest.1

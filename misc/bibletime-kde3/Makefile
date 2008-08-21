@@ -23,7 +23,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>

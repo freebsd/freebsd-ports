@@ -21,7 +21,6 @@ PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
 		README-br README-de README-es README-fr README-ru
 SUB_FILES=	pkg-message
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS=""

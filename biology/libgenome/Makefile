@@ -19,7 +19,6 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 post-patch:

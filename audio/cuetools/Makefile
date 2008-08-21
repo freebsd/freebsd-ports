@@ -15,7 +15,6 @@ COMMENT=	A set of utilities for working with cue files and toc files
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		cuebreakpoints.1 cueconvert.1 cueprint.1
 PORTDOCS=	README

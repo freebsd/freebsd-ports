@@ -25,11 +25,11 @@ INFO=		g-wrap
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
 NOT_FOR_ARCHS=	ia64
 
-CONFIGURE_TARGET=	--build=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
 CONFIGURE_ARGS=		--disable-Werror
 

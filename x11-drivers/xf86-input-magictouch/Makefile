@@ -17,6 +17,4 @@ XORG_CAT=	driver
 MAN4=		magictouch.4x
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.mk>

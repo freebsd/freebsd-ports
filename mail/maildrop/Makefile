@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildirquota
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

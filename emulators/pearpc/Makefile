@@ -16,7 +16,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PowerPC emulator
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_XORG=	x11

@@ -56,7 +56,6 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE} \
 			--enable-dnsrbl --with-thread-safe-resolver
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "

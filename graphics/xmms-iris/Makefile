@@ -19,7 +19,6 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	lib/xmms/Visualization/libiris.so
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

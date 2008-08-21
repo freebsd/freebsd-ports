@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-pgsqldir=${LOCALBASE} --with-plpgsqldir=${LOCALBASE}
 
 USE_LDCONFIG=	yes

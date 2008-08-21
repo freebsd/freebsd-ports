@@ -21,7 +21,6 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl

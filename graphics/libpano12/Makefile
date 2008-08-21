@@ -27,7 +27,6 @@ USE_GNOME=	gtk20 glib20 pango atk
 USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \
 		automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \
 			-I${LOCALBASE}/include/glib-2.0 \
 			-I${LOCALBASE}/include/pango-1.0 \

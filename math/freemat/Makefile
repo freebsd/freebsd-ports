@@ -34,7 +34,6 @@ USE_QT_VER=		4
 USE_GMAKE=		yes
 QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build xml svg
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-blas="${BLAS}" --without-llvm
 CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\

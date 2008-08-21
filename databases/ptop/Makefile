@@ -19,7 +19,6 @@ MAN1=	pg_top.1
 USE_GMAKE=	yes
 USE_PGSQL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/pg_top
 

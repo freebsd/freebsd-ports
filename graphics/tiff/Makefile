@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib
 

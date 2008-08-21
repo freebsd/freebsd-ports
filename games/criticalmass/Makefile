@@ -23,7 +23,6 @@ USE_SDL=	image mixer sdl
 USE_GL=		gl
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-optimize
 
 MAN6=		critter.6

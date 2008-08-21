@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 RESTRICTED=	"Redistribution not allowed"
 NO_CDROM=	${RESTRICTED}
 
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 post-install:

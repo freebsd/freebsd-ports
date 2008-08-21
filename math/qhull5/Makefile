@@ -18,7 +18,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 MAN1=		qhull.1 rbox.1

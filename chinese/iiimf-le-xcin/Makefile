@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	automake:19 autoheader:262 autoconf:262 libtool:15
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-extract:
 	${MKDIR} ${WRKDIR}

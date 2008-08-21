@@ -18,7 +18,6 @@ COMMENT=	GNU version of 'make' utility
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--program-prefix=g
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci
 ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_ENV=	CC="${CC} -I${PREFIX}/include"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

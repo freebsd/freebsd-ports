@@ -32,8 +32,6 @@ USE_GNOME=	libxml2
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

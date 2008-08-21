@@ -16,7 +16,6 @@ COMMENT=	Network API translation layer for X applications and libraries
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 

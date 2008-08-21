@@ -40,7 +40,6 @@ CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 			--without-zlib-version-check --with-ssl-engine
 PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \

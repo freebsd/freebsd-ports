@@ -32,7 +32,6 @@ USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
 USE_AUTOTOOLS=	libltdl:15
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

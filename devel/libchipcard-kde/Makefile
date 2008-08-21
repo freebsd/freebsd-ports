@@ -19,10 +19,8 @@ LIB_DEPENDS=		chipcard.20:${PORTSDIR}/devel/libchipcard:install
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
-			--with-applnk-dir=${PREFIX}/share/applnk/Utilities \
-			--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+			--with-applnk-dir=${PREFIX}/share/applnk/Utilities
 USE_KDELIBS_VER=	3
 
 .include <bsd.port.pre.mk>

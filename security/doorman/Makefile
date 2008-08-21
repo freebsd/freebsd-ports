@@ -28,7 +28,6 @@ MAN1=	knock.1
 MAN5=	knockcf.5 doormand.cf.5 guestlist.5
 MAN8=	doormand.8
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message doormand.cf.EXAMPLE
 USE_RC_SUBR=	doorman.sh

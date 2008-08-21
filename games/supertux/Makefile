@@ -20,7 +20,6 @@ USE_SDL=	image mixer
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-debug
 
 post-patch:

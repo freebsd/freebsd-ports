@@ -21,7 +21,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

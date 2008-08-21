@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv-prefix="${LOCALBASE}" \
 			--enable-dccm-file-support=no \
 			--enable-hal-support=yes \

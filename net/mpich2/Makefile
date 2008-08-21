@@ -33,7 +33,6 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" LDFLAGS="${PTHREAD_LIBS}" F77="${F77}" FFLAGS="${FFLAGS}"
 FFLAGS?=	-O2

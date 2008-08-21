@@ -17,8 +17,7 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 
 MAN1=		adtool.1
 

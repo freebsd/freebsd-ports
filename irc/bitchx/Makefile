@@ -20,12 +20,10 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
-		--libdir="${PREFIX}/share" \
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+		--libdir="${PREFIX}/share"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS}"

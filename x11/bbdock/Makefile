@@ -18,7 +18,6 @@ LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 
 PORTDOCS=		README
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
 USE_XORG=		ice sm x11 xau xcursor xdmcp xext xfixes xi
 

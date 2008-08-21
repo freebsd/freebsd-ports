@@ -882,7 +882,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
 #				  Default: "--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
-#				  --mandir=${MANPREFIX}/man ${CONFIGURE_TARGET}" if
+#				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
@@ -2814,6 +2814,7 @@ PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.
@@ -2824,7 +2825,7 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
-CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
@@ -2835,6 +2836,11 @@ SET_LATE_CONFIGURE_ARGS= \
 	fi ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
+	fi ; \
+	if [ -z "`./${CONFIGURE_SCRIPT} --version 2>&1 | ${EGREP} '(2\.13|Unrecognized option)'`" ]; then \
+		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --build=${CONFIGURE_TARGET}" ; \
+	else \
+		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}" ; \
 	fi ;
 .endif
 

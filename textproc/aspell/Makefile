@@ -21,7 +21,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\
 			--enable-static

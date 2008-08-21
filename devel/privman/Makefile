@@ -17,7 +17,6 @@ COMMENT=	Library that makes it easy for programs to use privilege separation
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(PACKAGE).d|$$(PACKAGE)|g' \

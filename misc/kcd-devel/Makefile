@@ -19,8 +19,7 @@ COMMENT=	Change directory in full-screen visual mode
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-			--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 

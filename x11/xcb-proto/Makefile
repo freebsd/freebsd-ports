@@ -18,7 +18,6 @@ BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 DATADIR=	${PREFIX}/share/xcb
 

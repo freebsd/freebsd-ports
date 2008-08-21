@@ -19,7 +19,6 @@ COMMENT=	A tool for processing trees (i.e. terms)
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		kc++.1
 PLIST_FILES=	bin/kc++

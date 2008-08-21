@@ -86,7 +86,6 @@ CONFIGURE_ARGS+=	--without-db3 --without-db4
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--without-perl
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		lmtpd.8
 DOCS=		NEWS README TODO

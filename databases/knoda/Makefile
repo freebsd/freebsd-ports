@@ -23,7 +23,6 @@ USE_PYTHON=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-hk_classes-dir=${LOCALBASE}/lib/hk_classes \
 		--with-hk_classes-incdir=${LOCALBASE}/include/hk_classes
 

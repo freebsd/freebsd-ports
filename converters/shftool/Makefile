@@ -17,7 +17,6 @@ COMMENT=	Converter for the Standard Hex Format (SHF)
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,^LIBLOC_LIST=.*,LIBLOC_LIST=${LOCALBASE},' \

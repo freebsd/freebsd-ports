@@ -15,7 +15,6 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Watch a file for changes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bubblegum.1
 MANCOMPRESSED=	no

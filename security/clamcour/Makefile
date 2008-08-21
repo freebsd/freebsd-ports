@@ -18,7 +18,6 @@ BUILD_DEPENDS=	courier-config:${PORTSDIR}/mail/courier
 LIB_DEPENDS=	clamav.4:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS=	--with-clamav-config=${LOCALBASE}/bin \
 		--with-courier-config=${LOCALBASE}/bin

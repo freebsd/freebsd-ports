@@ -24,7 +24,6 @@ USE_PERL5=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--enable-ltdl-install=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \

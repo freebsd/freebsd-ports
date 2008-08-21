@@ -35,7 +35,6 @@ GCONF_SCHEMAS=	compiz-fakeargb.schemas \
 		compiz-snow.schemas \
 		compiz-tile.schemas
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-schemas

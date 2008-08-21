@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	all-redirect
 
 MAN1=		bfort.1 doctext.1 tohtml.1

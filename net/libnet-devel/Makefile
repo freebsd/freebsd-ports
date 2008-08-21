@@ -19,7 +19,6 @@ COMMENT=	A C library for creating IP packets (development version)
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${SHORT_VER}

@@ -22,7 +22,6 @@ CONFLICTS=	joe-3*
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 

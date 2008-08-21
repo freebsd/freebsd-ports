@@ -23,7 +23,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
 USE_AUTOTOOLS=	autoheader:262 autoconf:262:env

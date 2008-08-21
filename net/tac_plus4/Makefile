@@ -17,7 +17,6 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	tac_plus
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
 		--with-userid=$$(/usr/bin/id -u tacacs 2>/dev/null || echo '559')
 

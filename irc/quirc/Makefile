@@ -18,7 +18,6 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_XORG=	xt
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.4 \
 		--with-tcl-include-dir=${LOCALBASE}/include/tcl8.4 \
 		--with-tk-include-dir=${LOCALBASE}/include/tk8.4 \

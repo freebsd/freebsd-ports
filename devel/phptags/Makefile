@@ -15,7 +15,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Create a tags file from PHP sources
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		phptags.1
 PLIST_FILES=	bin/phptags \

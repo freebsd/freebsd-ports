@@ -16,7 +16,6 @@ COMMENT=	Yet another ftp client. Similar to ftp(1)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-socks4=no --with-socks5=no --with-krb4=no \
 		--with-krb5=no --with-gssapi=no
 

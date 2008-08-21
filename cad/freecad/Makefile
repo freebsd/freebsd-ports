@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--with-wildmagic-includes=${LOCALBASE}/include/Wm4	\
 		--with-xercesc-libs=${LOCALBASE}/lib			\
 		--with-OCC-includes=${LOCALBASE}/OpenCAS/ros/inc	\
 		--with-OCC-libs=${LOCALBASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 QTDIR=		${QT_PREFIX}
 QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAKE_ENV=	QMAKESPEC="${QMAKESPEC}" QTDIR="${QTDIR}"

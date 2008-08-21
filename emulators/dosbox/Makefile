@@ -25,7 +25,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-core-inline
 
 post-patch:

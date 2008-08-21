@@ -27,7 +27,6 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes

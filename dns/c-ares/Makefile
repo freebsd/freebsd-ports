@@ -31,7 +31,6 @@ MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 
 MAN3=	ares_cancel.3 \

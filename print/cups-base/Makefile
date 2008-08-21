@@ -32,7 +32,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DSOFLAGS="${DSOFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--disable-slp				\
 			--disable-gssapi			\

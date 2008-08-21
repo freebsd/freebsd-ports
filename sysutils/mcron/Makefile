@@ -20,7 +20,6 @@ BUILD_DEPENDS=	guile>=1.8.0:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAKEFILE=	makefile
 
 INFO=		mcron

@@ -14,7 +14,6 @@ MAINTAINER=	ofsen@enderunix.org
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

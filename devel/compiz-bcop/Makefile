@@ -24,8 +24,6 @@ GNU_CONFIGURE=	yes
 
 USE_GNOME=	pkgconfig libxslt
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|' \

@@ -24,7 +24,6 @@ HAS_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/scv-1.0p2-sysc2.2
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-systemc=${LOCALBASE}/systemc ${CONFIGURE_TARGET}
 CONFIGURE_WRKSRC=	${WRKSRC}/objdir
 BUILD_WRKSRC=	${WRKSRC}/objdir

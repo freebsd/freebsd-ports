@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=	--enable-default-server=${DEFAULT_CVS_SERVER}
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 USE_BZIP2=	yes

@@ -31,7 +31,6 @@ INFO=		autoconf-${BUILD_VERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4 AWK=${AWK}
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION} --without-lispdir
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh missing
 GENERIC_LINKS=	autoconf autoheader autom4te autoreconf autoscan autoupdate \

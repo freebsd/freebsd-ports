@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 MAN1=		lookat.1

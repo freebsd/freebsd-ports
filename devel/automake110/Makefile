@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 INFO=		automake-${BUILD_VERSION}
 

@@ -55,7 +55,7 @@ pre-configure:
 
 post-build:
 	cd ${WRKSRC}/libf95.a-${G95VERSION} && \
-		./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} &&\
+		./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} ${CONFIGURE_TARGET} &&\
 		${MAKE_ENV} ${GMAKE}
 
 post-install:

@@ -15,7 +15,6 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	A parallel HTTP downloader similar to wget
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		puf.1
 PLIST_FILES=	bin/puf

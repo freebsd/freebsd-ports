@@ -14,7 +14,6 @@ MASTER_SITES=	http://relax.ath.cx/jfk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 2D shoot'em up game
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 USE_SDL=	image sdl
 

@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xt sm ice xext x11
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		xdaliclock.1
 PLIST_FILES=	bin/xdaliclock
 

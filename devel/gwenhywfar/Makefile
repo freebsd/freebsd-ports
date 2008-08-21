@@ -22,7 +22,6 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	${PREFIX}/lib \
 		${PREFIX}/lib/gwenhywfar/plugins/38/crypttoken \
 		${PREFIX}/lib/gwenhywfar/plugins/38/dbio \

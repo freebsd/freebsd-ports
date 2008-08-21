@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 

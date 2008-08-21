@@ -20,8 +20,6 @@ USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_AUTOTOOLS=		libtool:15
 USE_GMAKE=		yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-build:
 	${TOUCH} ${WRKSRC}/config.h.in

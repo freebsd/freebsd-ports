@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

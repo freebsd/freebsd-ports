@@ -35,8 +35,6 @@ USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xext ice
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .if !defined(WITH_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell

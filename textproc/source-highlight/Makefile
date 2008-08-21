@@ -19,7 +19,6 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS="${NOPORTDOCS}"

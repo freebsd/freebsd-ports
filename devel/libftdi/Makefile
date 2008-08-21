@@ -18,7 +18,6 @@ LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=		yes
 USE_GNOME=		pkgconfig gnomehack
 

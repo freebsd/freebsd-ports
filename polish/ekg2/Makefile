@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--enable-dynamic \

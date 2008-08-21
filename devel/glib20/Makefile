@@ -59,7 +59,6 @@ GLIB_ARCH=	x86_64
 .else
 GLIB_ARCH=	${ARCH}
 .endif
-CONFIGURE_TARGET=	--build=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_COLLATION_FIX)
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu

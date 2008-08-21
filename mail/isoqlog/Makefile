@@ -16,7 +16,6 @@ MAINTAINER=	ofsen@enderunix.org
 COMMENT=	A qmail, postfix, sendmail, exim MTA log analysis program
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 post-install:

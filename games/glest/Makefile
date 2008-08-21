@@ -29,7 +29,6 @@ USE_DOS2UNIX=	yes
 USE_SDL=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 SUB_FILES=		glest-wrapper pkg-message

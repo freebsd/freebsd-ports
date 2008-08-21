@@ -23,7 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'
 
 MINUID?=	100
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-minuid=${MINUID}
 
 MAN8=		courierpasswd.8

@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MANCOMPRESSED=	no
 MAN6=	wormux.6

@@ -16,10 +16,10 @@ COMMENT=	Customizable, extensible automatic printer filter
 
 USE_GHOSTSCRIPT=	yes
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--confdir=${PREFIX}/etc \
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--confdir=${PREFIX}/etc \
 			--filterdir=${PREFIX}/libexec/magicfilter \
 			--use-fifo
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}

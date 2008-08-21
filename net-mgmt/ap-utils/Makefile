@@ -15,7 +15,6 @@ MAINTAINER=	david@catwhisker.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_ICONV=	yes
 CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib" \

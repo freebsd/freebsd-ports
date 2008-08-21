@@ -17,7 +17,6 @@ COMMENT=	A simple, powerful configuration-file parser
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 pre-patch:

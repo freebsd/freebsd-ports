@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 PLIST_FILES=	sbin/fprobe
 PORTDOCS=	ChangeLog README

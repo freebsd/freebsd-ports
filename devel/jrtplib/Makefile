@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-jthread
 
 post-patch:

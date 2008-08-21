@@ -16,7 +16,6 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	General Astrodynamics Library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --enable-shared=yes
 USE_LDCONFIG=	yes
 

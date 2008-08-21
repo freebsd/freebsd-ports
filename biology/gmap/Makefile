@@ -21,6 +21,5 @@ FETCH_BEFORE_ARGS=	--no-check-certificate
 DISABLE_SIZE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

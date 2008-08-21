@@ -7,7 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/abinit|} \
 		ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
@@ -20,8 +20,6 @@ CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
-GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB=	GNU_HOST=${GNU_HOST}
 
 .include <bsd.port.pre.mk>
 

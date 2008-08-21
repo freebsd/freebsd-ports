@@ -26,7 +26,6 @@ MAN1=		rtorrent.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
 

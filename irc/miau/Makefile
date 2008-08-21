@@ -32,7 +32,6 @@ CONFIGURE_ARGS=		--enable-dccbounce \
 			--enable-empty-awaymsg \
 			--enable-dumpstatus \
 			--disable-dependency-tracking
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}"

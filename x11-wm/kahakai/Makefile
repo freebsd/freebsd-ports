@@ -36,7 +36,6 @@ USE_EFL=	imlib2
 
 MAN1=		kahakai.1
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS=${PTHREAD_CFLAGS} \
 		LDFLAGS=-L${LOCALBASE}/lib \

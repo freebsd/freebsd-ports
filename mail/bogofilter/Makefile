@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=	--with-included-gsl
 .endif
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
 		PERL="${PERL}" CPPFLAGS="${BF_CPPFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \

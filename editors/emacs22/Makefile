@@ -42,7 +42,6 @@ USE_XORG=	x11
 USE_XORG=	xpm xft
 .endif
 
-CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=		--with-x=no
 .else

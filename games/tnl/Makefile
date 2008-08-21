@@ -33,7 +33,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GCC=	4.2+
 USE_GL=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS=	--with-io-cflags="-I${LOCALBASE}/include/io" \
 		--with-io-libs="-L${LOCALBASE}/lib -liovmall"

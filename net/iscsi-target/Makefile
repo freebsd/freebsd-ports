@@ -20,7 +20,6 @@ COMMENT=	Implementation of userland ISCSI target (from NetBSD)
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=		targets.5
 MAN8=		iscsi-target.8

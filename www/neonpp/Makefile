@@ -22,6 +22,5 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

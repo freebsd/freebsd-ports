@@ -22,7 +22,6 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		JACK "Jack support" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--without-alsa
 

@@ -21,7 +21,6 @@ USE_SDL=	sdl image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-etc
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash

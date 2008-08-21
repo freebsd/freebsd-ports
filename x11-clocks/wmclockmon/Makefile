@@ -17,7 +17,6 @@ COMMENT=	A digital clock dockapp with a similar look to wmcpuload
 USE_XORG=	xpm
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		wmclockmon.1 wmclockmon-config.1 wmclockmon-cal.1
 

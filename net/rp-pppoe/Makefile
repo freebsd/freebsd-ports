@@ -14,7 +14,6 @@ MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The popular Roaring Penguin's PPPoE software
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PATCH_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src

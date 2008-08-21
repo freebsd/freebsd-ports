@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		BUILD_CANVAS="${BUILD_CANVAS}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 BUILD_CANVAS?=	no
 

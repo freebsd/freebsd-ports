@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
 USE_RC_SUBR=	binkd.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		binkd.8
 

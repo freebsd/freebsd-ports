@@ -28,7 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-v4l --without-quicktime --without-carbon \
 				--without-1394libs \
 				--without-swig # I don't know anything about swig ...
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 				png:${PORTSDIR}/graphics/png \
 				tiff:${PORTSDIR}/graphics/tiff \

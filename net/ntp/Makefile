@@ -20,7 +20,6 @@ COMMENT=	The Network Time Protocol Distribution
 LATEST_LINK=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	automake:19
 
 .if defined(ENABLE_RAWDCF)

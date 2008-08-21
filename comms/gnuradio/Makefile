@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -49,8 +49,6 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 		--disable-doxygen \
 		--disable-html-docs \
 		--disable-latex-docs
-
-PLIST_SUB+=	RELEASE="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4

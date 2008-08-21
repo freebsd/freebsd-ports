@@ -23,7 +23,6 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 WRKSRC=		${WRKDIR}/${PORTNAME}-0${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 USE_GMAKE=	yes
 USE_BZIP2=	yes

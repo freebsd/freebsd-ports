@@ -19,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 CONFIGURE_ARGS=	--without-ewf
 

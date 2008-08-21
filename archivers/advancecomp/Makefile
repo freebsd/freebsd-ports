@@ -16,7 +16,6 @@ COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG and .GZ files
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		advdef.1 advmng.1 advpng.1 advzip.1
 PLIST_FILES=	bin/advdef bin/advmng bin/advpng bin/advzip

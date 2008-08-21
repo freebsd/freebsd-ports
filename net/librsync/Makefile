@@ -21,7 +21,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --disable-trace

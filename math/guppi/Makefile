@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--enable-gnumeric --enable-explicit-python-linking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libglade-1.0" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		GNUMERIC_IDLDIR="${WRKDIR}/gnumeric"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	VERSION="${PORTVERSION}"
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

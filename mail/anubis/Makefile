@@ -28,7 +28,6 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Outgoing SMTP mail processor
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}" \
 			CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}"
 LDFLAGS+=		-L${LOCALBASE}/lib

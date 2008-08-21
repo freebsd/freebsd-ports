@@ -23,7 +23,6 @@ QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui network xml
 QT_NONSTANDARD=	yes
 INSTALLS_ICONS=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	#
 CONFIGURE_ARGS=	--with-libtorrent-inc="${LOCALBASE}/include" \
 		--with-libtorrent-lib="${LOCALBASE}/lib"
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}"

@@ -16,7 +16,6 @@ COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 USE_RC_SUBR=	ngircd
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

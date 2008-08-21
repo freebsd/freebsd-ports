@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build
 USE_LDCONFIG=	${PREFIX}/lib/dovecot/lda
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-dovecot=`make -C ${PORTSDIR}/mail/dovecot -V WRKSRC`
 
 .include <bsd.port.mk>

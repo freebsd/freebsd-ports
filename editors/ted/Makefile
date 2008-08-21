@@ -25,7 +25,6 @@ USE_MOTIF=	yes
 USE_XORG=	xpm xp xmu xt xext sm ice x11
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV+=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\""

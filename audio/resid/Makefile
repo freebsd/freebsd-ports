@@ -18,7 +18,6 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-shared
 
 .include <bsd.port.mk>

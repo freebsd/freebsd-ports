@@ -17,7 +17,6 @@ COMMENT=	Library that provides the red-black balanced tree algorithm
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 MAN1=		rbgen.1

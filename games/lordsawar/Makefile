@@ -36,6 +36,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.post.mk>

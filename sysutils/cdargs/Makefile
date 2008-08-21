@@ -15,7 +15,6 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-DHAVE_DECL_GETOPT
 
 MAN1=	cdargs.1

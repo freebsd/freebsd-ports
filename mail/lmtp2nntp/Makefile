@@ -20,7 +20,6 @@ LIB_DEPENDS=	str.9:${PORTSDIR}/devel/str \
 		var.11:${PORTSDIR}/devel/ossp-var
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --with-str=${LOCALBASE} \
 		--with-sa=${LOCALBASE} --with-var=${LOCALBASE}
 

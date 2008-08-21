@@ -40,7 +40,6 @@ USE_QT_VER=	3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:U}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_KDE)

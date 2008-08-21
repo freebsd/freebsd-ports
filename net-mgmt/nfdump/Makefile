@@ -15,7 +15,6 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \

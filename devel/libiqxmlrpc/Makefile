@@ -18,7 +18,6 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost\
 		xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

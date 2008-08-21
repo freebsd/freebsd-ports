@@ -19,8 +19,6 @@ COMMENT=	Generate C function prototypes and convert function definitions
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 MAN1=		cproto.1
 PLIST_FILES=	bin/cproto
 

@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \
 		--enable-tls \
 		--with-mailspool-directory=/var/mail
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		PGSQL		"Use PgSQL authentication"			off \

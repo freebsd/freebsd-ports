@@ -21,7 +21,6 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

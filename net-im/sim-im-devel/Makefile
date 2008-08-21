@@ -30,8 +30,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 OPTIONS=	KDE "Enable KDE support" off \
 		DEBUG "Enable debug" on
 

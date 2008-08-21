@@ -29,7 +29,6 @@ LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 	PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--disable-init-scripts --disable-logrotate-config \

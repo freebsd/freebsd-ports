@@ -21,7 +21,6 @@ LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

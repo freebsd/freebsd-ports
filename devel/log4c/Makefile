@@ -16,7 +16,6 @@ COMMENT=	Logging for C Library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

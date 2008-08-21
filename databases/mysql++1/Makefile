@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--includedir=${PREFIX}/include/mysql++ \
 		--disable-examples
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*

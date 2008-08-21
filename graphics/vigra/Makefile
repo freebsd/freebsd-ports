@@ -20,7 +20,6 @@ COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 USE_GMAKE=	yes
 

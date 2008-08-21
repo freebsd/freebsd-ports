@@ -14,7 +14,6 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		re2c.1
 

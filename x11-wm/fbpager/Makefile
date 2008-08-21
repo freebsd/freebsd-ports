@@ -16,7 +16,6 @@ COMMENT=	Desktop pager for the Fluxbox window manager
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/fbpager
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO

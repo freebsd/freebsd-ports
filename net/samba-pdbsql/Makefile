@@ -43,7 +43,6 @@ SAMBA_PDBDIR=		${SAMBA_MODULEDIR}/pdb
 
 BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/${SAMBA_PORT}:configure
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--libdir=${SAMBA_PDBDIR} \
 			--with-samba-dir=${SAMBA_WRKSRC}
 

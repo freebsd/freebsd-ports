@@ -7,7 +7,7 @@
 
 PORTNAME=	front
 PORTVERSION=	5.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 		${LOCALBASE}/lib/libeioc.a:${PORTSDIR}/science/elmer-eio
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 		ElmerSolver:${PORTSDIR}/science/elmer-fem	\
-		${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerMesh2D:${PORTSDIR}/science/elmer-meshgen2d
+		ElmerMesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
@@ -34,6 +34,5 @@ USE_GMAKE=	yes
 ALL_TARGET=
 
 DATADIR=	${PREFIX}/share/elmerfront
-PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
 .include <bsd.port.mk>

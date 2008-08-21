@@ -23,7 +23,6 @@ MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-default-8bit
 

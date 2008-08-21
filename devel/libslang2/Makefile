@@ -20,7 +20,6 @@ COMMENT=	Routines for rapid alpha-numeric terminal applications development
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFLICTS=	libslang-[0-9]* libslang-1.*.j[0-9]
 

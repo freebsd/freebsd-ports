@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool for recording VNC sessions
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		rfbproxy.1
 PLIST_FILES=	bin/rfbproxy

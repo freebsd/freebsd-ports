@@ -24,7 +24,6 @@ SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${WWWDIR}
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \

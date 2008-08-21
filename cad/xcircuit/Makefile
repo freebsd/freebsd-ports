@@ -25,7 +25,6 @@ USE_TK_BUILD=	84
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 

@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 #WRKSRC=		${WRKDIR}/${PORTNAME}-dnh${PATCHLEVEL}
 
 PLIST_FILES=	bin/ctorrent
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README-DNH.TXT UserGuide
 

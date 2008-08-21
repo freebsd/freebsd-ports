@@ -17,7 +17,6 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A smart LDAP directory management tool
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs
 USE_OPENLDAP=	yes

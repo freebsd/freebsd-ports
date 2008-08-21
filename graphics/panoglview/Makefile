@@ -15,7 +15,6 @@ MAINTAINER=	ii@any.com.ru
 COMMENT=	Panorama viewer using OpenGL
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -ftemplate-depth-64" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lwx_gtk2_gl-${WX_VERSION}" \

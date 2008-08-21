@@ -14,7 +14,6 @@ MASTER_SITES=	http://iserverd.khstu.ru/download/
 MAINTAINER=	danfocus@gmail.com
 COMMENT=	Groupware ICQ server clone
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_PGSQL=	YES
 GNU_CONFIGURE=	YES
 USE_RC_SUBR=	iserverd

@@ -26,7 +26,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A libg++ container classes for EGCS and later versions of GCC
 
 USE_GCC=	2.95
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
 
 pre-configure:

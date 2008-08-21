@@ -46,7 +46,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 			LIBS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-plugins
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if ${OSVERSION} < 502111
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap

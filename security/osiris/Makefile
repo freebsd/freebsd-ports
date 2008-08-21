@@ -19,7 +19,6 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		PRINTDB "Build database print tool" off \
 		CLI "Enable to build the management CLI" off
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 

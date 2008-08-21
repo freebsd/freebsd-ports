@@ -19,7 +19,6 @@ DISTDATE=	2008-07-25
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:262:env automake:110:env
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_SUB=	MACRODIR=share/aclocal
 

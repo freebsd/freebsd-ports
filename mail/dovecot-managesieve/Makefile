@@ -22,7 +22,6 @@ RUN_DEPENDS=	dovecot>=1.1.*:${PORTSDIR}/mail/dovecot \
 DOVECOTVERSION=	1.1
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` \
 		--with-dovecot-sieve=`${MAKE} -C ${PORTSDIR}/mail/dovecot-sieve -V WRKSRC`

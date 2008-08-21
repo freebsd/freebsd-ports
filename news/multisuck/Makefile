@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${PREFIX}/bin

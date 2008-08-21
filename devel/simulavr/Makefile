@@ -26,7 +26,6 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--disable-versioned-doc --enable-pdf
 
 MAN1=		simulavr.1 simulavr-disp.1

@@ -16,7 +16,6 @@ COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		splint.1
 

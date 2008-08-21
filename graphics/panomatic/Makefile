@@ -16,7 +16,6 @@ COMMENT=	A tool that automates the creation of control points
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 

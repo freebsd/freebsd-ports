@@ -17,7 +17,6 @@ COMMENT=	A TrueType font server for X11
 
 USE_XORG=	fontsproto xproto
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var --disable-nls
 
 MAN1=		xfstt.1x

@@ -16,7 +16,6 @@ COMMENT=	An easy-to-use library for strong hashes such as MD5 and SHA1
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}" --enable-static \
 			--with-gnu-ld
 

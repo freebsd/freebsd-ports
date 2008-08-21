@@ -27,7 +27,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-extract:
 	${CHMOD} 0755 ${WRKSRC}/admin/install-sh

@@ -18,7 +18,6 @@ COMMENT=	A SDL audio library and player for some popular sound file formats
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	FLAC "Enable flac support" on \

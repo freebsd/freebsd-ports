@@ -15,7 +15,6 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	A Alcohol 120% to ISO converter
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

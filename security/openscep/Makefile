@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 		--with-cgi-install-dir="${PREFIX}/www/cgi-bin/openscep" \
 		--with-openscep-dir="${PREFIX}/etc/openscep" \

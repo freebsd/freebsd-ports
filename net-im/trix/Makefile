@@ -21,7 +21,6 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS +=	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib

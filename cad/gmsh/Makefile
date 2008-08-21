@@ -27,7 +27,6 @@ TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
 		--with-gsl-prefix=${LOCALBASE}	\
 		--with-med-prefix=${LOCALBASE}	\

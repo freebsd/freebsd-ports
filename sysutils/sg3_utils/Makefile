@@ -17,7 +17,6 @@ COMMENT=	Set of utilities that send SCSI commands to devices
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		sg_format.8 sg_get_config.8 sg_ident.8 sg_inq.8 sg_logs.8 \
 		sg_luns.8 sg_modes.8 sg_persist.8 sg_opcodes.8 sg_prevent.8 \

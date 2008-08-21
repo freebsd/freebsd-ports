@@ -31,7 +31,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX} \
 		--with-simdir=${PREFIX}/lib/silcsim \

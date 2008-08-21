@@ -64,7 +64,6 @@ CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS:=	${CFLAGS:N-ffast-math}

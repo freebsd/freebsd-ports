@@ -18,7 +18,6 @@ COMMENT=	A screen capture utility that utilizes Imlib2
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NO_DOC=yes

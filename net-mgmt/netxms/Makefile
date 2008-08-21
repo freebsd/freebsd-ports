@@ -15,7 +15,6 @@ COMMENT=	NetXMS - network monitoring system
 
 NO_PACKAGE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes

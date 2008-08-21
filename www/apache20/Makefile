@@ -157,7 +157,7 @@ CFLAGS+=		-DFREEBSD_THREAD_HACK
 .   endif
 .endif
 
-CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc

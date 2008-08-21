@@ -17,8 +17,6 @@ XORG_CAT=	lib
 USE_XORG=	x11 xext xextproto xau printproto:both
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
 MAN3=	XpCancelDoc.3 \
 	XpCancelJob.3 \
 	XpCancelPage.3 \

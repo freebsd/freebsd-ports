@@ -18,7 +18,6 @@ COMMENT=	Fast mail searching for mutt
 RUN_DEPENDS=	namazu:${PORTSDIR}/databases/namazu2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/nmzmail

@@ -29,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CRYSTAL=	${LOCALBASE}
 CEL=		${LOCALBASE}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cpu-specific-optimizations=no
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CRYSTAL="${CRYSTAL}" CEL="${CEL}"
 SUB_FILES=	pkg-message planeshift pssetup updater psserver

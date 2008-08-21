@@ -17,7 +17,6 @@ COMMENT=	A robust proxy server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 TESTSBIN=	bft_test bft_mem_usage_test bft_printf_test
 

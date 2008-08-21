@@ -22,7 +22,6 @@ WX_PREMK=	yes
 WX_UNICODE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 OPTIONS=	FIREBIRD "Use firebird1 instead of firebird2"	off

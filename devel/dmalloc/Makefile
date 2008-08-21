@@ -15,7 +15,6 @@ MAINTAINER=	pesho.petrov@gmail.com
 COMMENT=	Portable debug memory allocation library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-threads --enable-shlib
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes

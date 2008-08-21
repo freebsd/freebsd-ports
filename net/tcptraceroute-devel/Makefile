@@ -27,7 +27,6 @@ MAN1=	tcptraceroute.1
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=		--with-libpcap=/usr --bindir=${PREFIX}/sbin
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INSTALL_TARGET=	install-exec-am install-man
 

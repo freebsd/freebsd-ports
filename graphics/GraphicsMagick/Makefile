@@ -45,7 +45,6 @@ MAN5=	quantize.5
 WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
 .endif
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--without-threads
 USE_LDCONFIG=	yes

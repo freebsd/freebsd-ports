@@ -18,6 +18,5 @@ EXTRA_PATCHES=	${.CURDIR}/../../comms/kallers/files/patch-configure
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

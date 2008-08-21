@@ -18,7 +18,6 @@ COMMENT=	TCP proxy for applications that don't speak IPv6
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	autoconf:262
 ALL_TARGET=	default
 

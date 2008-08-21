@@ -16,7 +16,6 @@ COMMENT=	Manage your credit institute accounts using openhbci
 LIB_DEPENDS=		openhbci.14:${PORTSDIR}/finance/openhbci
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAN1=			aqmoney.1
 PLIST_FILES=		bin/aqmoney
 

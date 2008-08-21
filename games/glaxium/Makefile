@@ -21,7 +21,6 @@ USE_GNOME=	gnometarget
 USE_SDL=	sdl mixer
 USE_GL=		glut
 USE_GMAKE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 

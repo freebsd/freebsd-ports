@@ -17,8 +17,6 @@ COMMENT=		OS-X dock-like for KDE
 
 WRKSRC=			${WRKDIR}/kooldock
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15

@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 		--localstatedir=/var/dpsearch \
 		--enable-mp3	\

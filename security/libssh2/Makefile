@@ -16,7 +16,6 @@ COMMENT=	A library implementing the SSH2 protocol
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/libssh2.h \

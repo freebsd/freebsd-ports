@@ -20,7 +20,6 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 USE_ZIP=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GNOME=	gnomehack
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

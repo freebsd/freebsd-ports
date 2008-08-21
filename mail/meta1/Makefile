@@ -29,7 +29,6 @@ MANUAL_PACKAGE_BUILD=	needs hostname
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
 MAN8=		createmap.8 mailq.8 mcp.8 milter-spamd.8 milter-regex.8 qmgr.8 \

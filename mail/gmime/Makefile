@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-L${LOCALBASE}/lib # req'd to find iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAKE_ARGS=	confexecdir=${PREFIX}/etc
 
 USE_LDCONFIG=	yes

@@ -16,7 +16,6 @@ COMMENT=	A library for parsing, sorting and filtering mail
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/src
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src

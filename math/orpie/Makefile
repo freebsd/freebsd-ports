@@ -18,7 +18,6 @@ LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

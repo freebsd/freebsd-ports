@@ -20,7 +20,6 @@ COMMENT=	Portable speedy, lossless data compression library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 

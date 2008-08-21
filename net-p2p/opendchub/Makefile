@@ -17,7 +17,6 @@ COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:

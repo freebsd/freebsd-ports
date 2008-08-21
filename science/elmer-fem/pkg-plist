@@ -1,4 +1,4 @@
-bin/%%ARCH%%-portbld-freebsd%%OSREL%%-SC2Elmer
+bin/SC2Elmer
 bin/ElmerSolver
 bin/GebhardtFactors
 bin/ViewFactors

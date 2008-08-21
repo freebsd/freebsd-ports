@@ -35,8 +35,6 @@ S4W_CONFDIR=		${PREFIX}/etc
 S4W_LIBDIR=		${PREFIX}/lib/${PORTNAME}
 S4W_CONFIG=		${S4W_CONFDIR}/samba4wins.conf
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--datadir=${S4W_DATADIR} \
 	    		--libdir=${S4W_LIBDIR} \

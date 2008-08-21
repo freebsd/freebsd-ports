@@ -22,7 +22,6 @@ MAKEFILE=	GNUmakefile
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 

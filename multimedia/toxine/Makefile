@@ -18,7 +18,6 @@ COMMENT=	Text user interface using the xine library
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	AALIB "Enable aalib support" on \

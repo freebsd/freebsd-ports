@@ -17,7 +17,6 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	smartd

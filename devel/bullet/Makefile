@@ -23,7 +23,6 @@ USE_ZIP=	yes
 USE_GL=		glu glut
 USE_XORG=	x11
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include
 CONFIGURE_ENV=		CPPFLAGS=${CPPFLAGS} LDFLAGS=${LDFLAGS}
 

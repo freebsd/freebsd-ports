@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_QMAIL=	yes
 

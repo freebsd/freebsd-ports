@@ -32,7 +32,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	DBDIR=${DBDIR} \
 		PORTVERSION=${PORTVERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \

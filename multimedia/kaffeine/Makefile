@@ -24,7 +24,6 @@ USE_GETTEXT=		yes
 USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool:15
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -I${WRKSRC}" CFLAGS="${CFLAGS} -I${WRKSRC}"
-CONFIGURE_TARGET=
 DVB_HEADERS=		ca.h dmx.h frontend.h net.h audio.h video.h
 
 .ifdef (WITH_GSTREAMER)

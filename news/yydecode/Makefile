@@ -17,7 +17,6 @@ COMMENT=	Tool to decode yEnc encoded files
 MAN1=		yydecode.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/yydecode
 

@@ -22,7 +22,6 @@ USE_SDL=	sdl
 WRKSRC=		${WRKDIR}/fceu
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		fceu.6
 

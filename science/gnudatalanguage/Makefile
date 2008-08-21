@@ -37,7 +37,6 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		readline.5:${PORTSDIR}/devel/readline
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 

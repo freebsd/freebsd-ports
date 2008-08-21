@@ -17,7 +17,6 @@ COMMENT=	Athena Widgets with N*XTSTEP appearance
 USE_AUTOTOOLS=	libtool:15
 USE_XORG=	xmu x11 xext
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes

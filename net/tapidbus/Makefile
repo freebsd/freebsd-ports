@@ -23,8 +23,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
 USE_LDCONFIG=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 

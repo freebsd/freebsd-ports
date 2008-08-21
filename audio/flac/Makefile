@@ -18,7 +18,6 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \
 		--with-ogg="${LOCALBASE}" \
 		--disable-thorough-tests \

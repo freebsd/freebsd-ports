@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		flphoto.1
 MAN5=		album.5

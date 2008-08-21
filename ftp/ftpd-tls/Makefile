@@ -22,7 +22,6 @@ USE_RC_SUBR=	ftpd-tls.sh
 MAN8=		ftpd-tls.8
 
 CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>

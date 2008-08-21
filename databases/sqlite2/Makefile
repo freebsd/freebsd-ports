@@ -21,7 +21,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCSDIR=	${PREFIX}/share/doc/sqlite2
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite2

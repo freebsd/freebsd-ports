@@ -17,7 +17,6 @@ COMMENT=	Commandline text rendering utility - creates images from text
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-porbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-giblib-prefix=${LOCALBASE}
 
 MAN1=		gozer.1

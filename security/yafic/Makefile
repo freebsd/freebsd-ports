@@ -15,7 +15,6 @@ MAINTAINER=	allan@saddi.com
 COMMENT=	Yet Another File Integrity Checker, similar to Tripwire
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LDFLAGS="-static"
 

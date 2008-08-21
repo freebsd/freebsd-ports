@@ -24,7 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-sdl-net \
 		--localstatedir=/var/games \
 		--disable-nls
-CONFIGURE_TARGET=
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

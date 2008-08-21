@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured ANSI art editor/viewer with TCP/IP multidraw support
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/tetradraw bin/tetraview
 

@@ -19,6 +19,5 @@ USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

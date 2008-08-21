@@ -38,8 +38,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		RCC="${LOCALBASE}/bin/rcc" LRELEASE="${LOCALBASE}/bin/lrelease-qt4"
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

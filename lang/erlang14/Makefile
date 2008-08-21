@@ -82,7 +82,6 @@ ERLANG_DOCS=	otp_doc_html_R12B-3.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
-CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 

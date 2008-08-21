@@ -26,7 +26,6 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	| ${CPIO} -i
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	crashecho.1 \
 	crashexport.1 \

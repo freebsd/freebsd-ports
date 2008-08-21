@@ -30,7 +30,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_GMAKE=	yes

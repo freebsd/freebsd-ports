@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
 MAN1=		ragel.1 rlgen-cd.1 rlgen-dot.1 rlgen-java.1 rlgen-ruby.1

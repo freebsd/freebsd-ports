@@ -20,7 +20,6 @@ USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:110 autoconf:262
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf --without-clucene --with-zlib --without-icu
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message

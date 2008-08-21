@@ -59,7 +59,6 @@ CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 MAKE_ENV:=	${CONFIGURE_ENV}
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-unicode \
 		--enable-ltdl-install=no \
 		--without-authcustom \

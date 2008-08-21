@@ -21,7 +21,6 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var

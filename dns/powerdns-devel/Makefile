@@ -29,7 +29,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-modules="pipe" \
 			--with-dynmodules="${CONFIGURE_MODULES}" \
 			--sysconfdir="${PREFIX}/etc/pdns" \

@@ -17,7 +17,6 @@ COMMENT=	Fetch listings and books from Project Gutenberg
 LIB_DEPENDS=	gutenfetch:${PORTSDIR}/devel/libgutenfetch
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_GMAKE=	yes

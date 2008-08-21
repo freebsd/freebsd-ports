@@ -26,7 +26,6 @@ USE_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN6=	cosmosmash.6
 

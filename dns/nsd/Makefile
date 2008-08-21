@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-difffile=${NSDDIFFFILE} \
 		--with-xfrdfile=${NSDXFRDFILE} \
 		--with-libwrap
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=	nsd.conf.5
 MAN8=	nsd.8 nsdc.8 zonec.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 \

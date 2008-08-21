@@ -40,7 +40,6 @@ USE_AUTOTOOLS=	autoconf:262 autoheader:262
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \

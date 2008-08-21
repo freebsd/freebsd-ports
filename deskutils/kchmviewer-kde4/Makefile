@@ -37,8 +37,6 @@ USE_PERL5_BUILD=yes
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 PLIST_SUB+=	KDE="@comment "
 PLIST_SUB+=	QT=""
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 DO_NOT_COMPILE+=kio-msits
 .endif
 

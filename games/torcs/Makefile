@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
 

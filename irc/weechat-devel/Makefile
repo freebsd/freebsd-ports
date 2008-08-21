@@ -20,7 +20,6 @@ USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-lua
 
 MAN1=	weechat-curses.1

@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell authentication for TACACS+ protocol
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README WHATSNEW ChangeLog
 PLIST_FILES=	bin/tacshell etc/tacshell.conf.sample

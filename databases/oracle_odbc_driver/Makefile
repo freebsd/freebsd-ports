@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"\
 		AUTOHEADER=true
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 

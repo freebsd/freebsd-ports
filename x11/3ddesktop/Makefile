@@ -20,7 +20,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 USE_GL=		yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		3ddesk.1 3ddeskd.1

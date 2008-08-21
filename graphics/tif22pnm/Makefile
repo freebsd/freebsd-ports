@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libtiff-ldir=${LOCALBASE}/lib \
 		--with-libtiff-idir=${LOCALBASE}/include
 

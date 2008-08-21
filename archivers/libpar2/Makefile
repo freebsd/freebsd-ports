@@ -19,7 +19,6 @@ COMMENT=	A library for manipulating par2 files, extracted from par2cmdline
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"

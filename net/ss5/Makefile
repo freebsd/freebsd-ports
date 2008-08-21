@@ -21,7 +21,6 @@ USE_OPENLDAP=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-docpathbase=${PREFIX}/share/doc \
 		--with-confpathbase=${PREFIX}/etc \

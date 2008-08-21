@@ -47,7 +47,6 @@ USE_AUTOTOOLS=	libltdl libtool:15 \
 		autoconf:262:env autoheader:262:env \
 		automake:19:env aclocal:19:env
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--program-prefix=nmm- \
 		--enable-final \
 		--disable-examples-helloworld --disable-examples-avmux \

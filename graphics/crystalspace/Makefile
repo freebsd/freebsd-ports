@@ -35,8 +35,6 @@ USE_GL=		yes
 WANT_PERL=	yes
 LDFLAGS+=	-L/usr/lib -lc
 LIBS=		-lc
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LIBS="${LIBS}"
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}" LIBS="${LIBS}"
 CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no \
 			--disable-ptmalloc \

@@ -19,7 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GL=		glu
 USE_XORG=	x11 ice
 .ifdef (WITH_EXAMPLES)

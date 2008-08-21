@@ -94,7 +94,6 @@ CONFIGURE_ARGS+=	\
 	--enable-vpopmaildir=${VPOPMAIL_DIR} \
 	--enable-autoresponder-path=${LOCALBASE}/bin \
 	--enable-ezmlmdir=${LOCALBASE}/bin
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_IPAUTH)
 CONFIGURE_ARGS+=	--disable-ipauth

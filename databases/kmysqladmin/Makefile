@@ -21,6 +21,4 @@ USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.mk>

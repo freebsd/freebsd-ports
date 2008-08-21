@@ -17,7 +17,6 @@ COMMENT=	Ident server that supports user-defined ident strings
 
 USE_RC_SUBR=	oidentd
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN5=		oidentd.conf.5 oidentd_masq.conf.5
 MAN8=		oidentd.8

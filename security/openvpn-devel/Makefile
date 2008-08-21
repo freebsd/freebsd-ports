@@ -18,7 +18,6 @@ CONFLICTS=	openvpn-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man

@@ -17,7 +17,6 @@ COMMENT=	Graphical circuit design and simulation tool
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ps2sp.1 qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 \
 		qucsdigi.1 qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 \

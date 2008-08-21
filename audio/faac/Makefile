@@ -26,7 +26,6 @@ USE_AUTOTOOLS=	automake:19 autoheader:262 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lmp4v2"

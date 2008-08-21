@@ -25,8 +25,6 @@ USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib \
 			LDFLAGS=-L${PREFIX}/lib \
 			PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib

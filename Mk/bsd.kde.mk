@@ -57,9 +57,7 @@ CATEGORIES+=ipv6
 
 ##  XXX - This really belongs into bsd.port.mk
 .if !defined(_NO_KDE_CONFTARGET_HACK)
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS+=--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
 		--disable-as-needed
 .endif
 

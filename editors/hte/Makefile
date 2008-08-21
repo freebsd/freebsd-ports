@@ -17,7 +17,6 @@ COMMENT=	A file editor/viewer/analyzer for executables
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/ht
 

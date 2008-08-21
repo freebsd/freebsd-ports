@@ -16,7 +16,6 @@ COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		wmfsm.1

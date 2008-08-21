@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp \
 		--enable-non-root-build
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 #
 # User-configurable variables

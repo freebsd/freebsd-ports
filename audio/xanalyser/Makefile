@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 MAN1=		xanalyser.1
 PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \

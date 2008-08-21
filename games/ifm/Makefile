@@ -19,7 +19,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
 post-patch:

@@ -21,7 +21,6 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes

@@ -15,7 +15,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GNU bash shell extended with visual two-panel file browser
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/bashc \
 		etc/bash_commander \

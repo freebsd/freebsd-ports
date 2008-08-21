@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
 		PERL_ARCH="${PERL_ARCH}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	wml_backend/p2_mp4h/configure
 PLIST_SUB+=	ARCH=${PERL_ARCH}

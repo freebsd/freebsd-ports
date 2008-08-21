@@ -21,8 +21,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 post-extract:
 	${CHMOD} 755 ${WRKSRC}/missing
 

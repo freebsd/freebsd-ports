@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		xdelta.1
 

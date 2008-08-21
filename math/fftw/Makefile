@@ -26,7 +26,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" FC="${FC}" F77="${F77}"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes

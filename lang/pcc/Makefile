@@ -25,7 +25,6 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DATESPEC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	YACC=${YACC}
-CONFIGURE_TARGET= --build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp \

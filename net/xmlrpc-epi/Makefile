@@ -23,7 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|" \
 		--with-expat=/usr/local
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

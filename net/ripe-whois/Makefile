@@ -18,7 +18,6 @@ COMMENT=	The RIPE whois client version 3
 USE_PERL5_BUILD=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		whois3.1
 PLIST_FILES=	bin/whois3

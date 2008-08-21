@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--disable-dx
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=		yes
 USE_GNOME=		pkgconfig
 

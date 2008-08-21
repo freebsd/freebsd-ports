@@ -18,7 +18,7 @@ LIB_DEPENDS=	osip2.5:${PORTSDIR}/net/libosip
 
 USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--with-libosip-prefix=${PREFIX}
+CONFIGURE_ARGS=	--with-libosip-prefix=${PREFIX}
 
 PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \

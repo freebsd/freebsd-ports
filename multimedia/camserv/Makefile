@@ -25,7 +25,6 @@ ONLY_FOR_ARCHS=	i386 alpha
 USE_AUTOTOOLS=	autoconf:262 libtool:15 libltdl:15
 USE_EFL=	imlib2
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/gtk12 \
 		-I${LOCALBASE}/include/gdk-pixbuf-1.0 \

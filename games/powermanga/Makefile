@@ -19,7 +19,6 @@ COMMENT=	An arcade 2D shoot-em-up
 USE_XORG=	xext xxf86dga
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	AUTHORS CHANGES
 

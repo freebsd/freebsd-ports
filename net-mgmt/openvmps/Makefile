@@ -21,7 +21,6 @@ USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--bindir=${PREFIX}/sbin
 
 MAN1=		vmpsd.1

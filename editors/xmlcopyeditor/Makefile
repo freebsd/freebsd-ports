@@ -46,7 +46,6 @@ ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:15
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libxml2 ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"

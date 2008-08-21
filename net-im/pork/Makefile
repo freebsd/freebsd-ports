@@ -18,6 +18,5 @@ USE_PERL5=		yes
 USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

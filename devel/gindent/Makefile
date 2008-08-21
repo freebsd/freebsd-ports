@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU indent
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBERKELEY_DEFAULTS=1" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--program-prefix=g

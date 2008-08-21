@@ -24,7 +24,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
 		UBLIO "Enable user space cache for improved speed" on

@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFLICTS=	freelibiberty-[0-9]*
 

@@ -37,8 +37,6 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		PULSE "Support for PulseAudio" off \
 		SHOUT "Support for Icecast and Shoutcast" on
 
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 .include <bsd.port.pre.mk>
 
 .ifdef(WITHOUT_FLAC)

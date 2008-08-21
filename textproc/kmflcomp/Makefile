@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \

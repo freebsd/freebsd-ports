@@ -20,6 +20,5 @@ USE_GMAKE=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>

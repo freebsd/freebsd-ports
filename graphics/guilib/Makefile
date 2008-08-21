@@ -18,7 +18,6 @@ COMMENT=	A very simple GUI framework for use with SDL
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	 aclocal:19:env
 

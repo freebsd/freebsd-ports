@@ -59,11 +59,9 @@ PREFIX=		${KDE_PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/kde3
 
 USE_AUTOTOOLS=  libtool:15
-CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \
 		--enable-mt \
-		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
 		--with-libthai=yes \
 		--with-lua=no \

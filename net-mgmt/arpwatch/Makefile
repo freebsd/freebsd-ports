@@ -18,7 +18,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--quiet --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--quiet
 MAKE_ENV+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}"
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8

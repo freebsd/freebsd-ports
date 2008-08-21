@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/cpp2latex
 PORTDOCS=	AUTHORS ChangeLog README TODO

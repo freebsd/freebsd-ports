@@ -21,8 +21,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-lqt,-lqt-mt -pthread,' ${WRKSRC}/configure
