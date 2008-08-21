@@ -112,9 +112,6 @@ share/X11/xkb/keymap.dir
 share/X11/xkb/rules/base
 share/X11/xkb/rules/base.lst
 share/X11/xkb/rules/base.xml
-share/X11/xkb/rules/sgi
-share/X11/xkb/rules/sun
-share/X11/xkb/rules/sun.xml
 share/X11/xkb/rules/xfree98
 share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
