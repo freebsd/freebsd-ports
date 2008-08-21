@@ -7,7 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	3.0.1376
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.evolane.com/download/mirror/etcl/ \
 		http://www.evolane.fr/download/mirror/etcl/
