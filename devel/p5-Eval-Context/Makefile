@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Eval-Context
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://cpan.mirror.solnet.ch/authors/id/N/NK/NKH/ \
 		CRITICAL
