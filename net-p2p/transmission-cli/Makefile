@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -23,7 +23,7 @@ LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 GEN_LIB_DEPENDS=curl.4:${PORTSDIR}/ftp/curl
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
-USE_GNOME?=	gnometarget pkgconfig
+USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
 
 MAN1?=		transmissioncli.1

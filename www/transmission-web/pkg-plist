@@ -42,5 +42,5 @@
 @dirrm %%DATADIR%%/web/images/buttons
 @dirrm %%DATADIR%%/web/images
 @dirrm %%DATADIR%%/web
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
