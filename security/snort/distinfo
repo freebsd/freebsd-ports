@@ -1,3 +1,6 @@
 MD5 (snort-2.8.2.1.tar.gz) = b39e784dd8a5cf180aae20e94a7b52dd
 SHA256 (snort-2.8.2.1.tar.gz) = 55ffb0bf34eac5ce48e3b517a83d6c05f838d864586cebbd7d14d575ba2d5d7b
 SIZE (snort-2.8.2.1.tar.gz) = 4377110
+MD5 (snortsam-2.8.2.1.diff) = 0d246e535cbe7b7d042879a188b2ce1c
+SHA256 (snortsam-2.8.2.1.diff) = cb0b347a25ddc7bf8dc96203fab9b1823b8ccadbe67563b4746c2b080bfad476
+SIZE (snortsam-2.8.2.1.diff) = 113845

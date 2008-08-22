@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -24,7 +25,8 @@ OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off \
-		PERPROFILE "Enable Performance Profiling" off
+		PERPROFILE "Enable Performance Profiling" off \
+		SNORTSAM "Enable output plugin to SnortSam" off
 
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
@@ -125,7 +127,20 @@ PLIST_SUB+=		PRELUDE="@comment "
 CONFIGURE_ARGS+=	--enable-perfprofiling
 .endif
 
+.if defined(WITH_SNORTSAM)
+PATCH_SITES+=http://www.freebsdbrasil.com.br/~urisso/files/snort/:snortsam
+PATCHFILES+=snortsam-2.8.2.1.diff:snortsam
+.endif
+
 post-patch:
+.if defined(WITH_SNORTSAM)
+BUILD_DEPENDS+=		automake>=1.10.1:${PORTSDIR}/devel/automake110
+.endif
+
+pre-configure:
+.if defined(WITH_SNORTSAM)
+	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autojunk.sh
+.endif
 	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|lib/snort_|lib/snort/|g'
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
@@ -137,10 +152,6 @@ post-patch:
 .if defined(WITHOUT_DYNAMIC)
 	${REINPLACE_CMD} -e "s,-am: install-libLTLIBRARIES,-am:," \
 		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
-.endif
-
-pre-configure:
-.if defined(WITHOUT_DYNAMIC)
 	@${CAT} ${PATCHDIR}/pkg-message-dynamicplugin
 	@sleep 5
 .endif
