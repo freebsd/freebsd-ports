@@ -1,0 +1,8 @@
+--- libmopac7.pc.in~	2003-12-19 22:14:28.000000000 +0900
++++ libmopac7.pc.in	2008-08-23 07:09:51.000000000 +0900
+@@ -4,4 +4,4 @@
+ Name: libmopac7
+ Description: A library for semi-empirical QM calculations.
+ Version: @VERSION@
+-Libs: -L${libdir} -lmopac7
++Libs: -L${libdir} -lmopac7 -lf2c
