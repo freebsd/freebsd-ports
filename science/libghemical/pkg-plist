@@ -17,14 +17,15 @@ include/ghemical/eng2_qm_mm.h
 include/ghemical/engine.h
 include/ghemical/geomopt.h
 include/ghemical/intcrd.h
-include/ghemical/libghemicalconfig2.h
 include/ghemical/libghemicaldefine.h
+include/ghemical/libghemical-features.h
 include/ghemical/mfinder.h
 include/ghemical/model.h
 include/ghemical/moldyn.h
 include/ghemical/notice.h
 include/ghemical/pop_ana.h
 include/ghemical/resonance.h
+include/ghemical/sasaeval.h
 include/ghemical/search.h
 include/ghemical/seqbuild.h
 include/ghemical/tab_mm_default.h
@@ -35,17 +36,17 @@ include/ghemical/typerule.h
 include/ghemical/utility.h
 include/ghemical/v3d.h
 @dirrm include/ghemical
-lib/libghemical.so.0
+lib/libghemical.so.4
 lib/libghemical.so
 lib/libghemical.la
 lib/libghemical.a
 lib/pkgconfig/libghemical.pc
 @dirrm lib/pkgconfig
-share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_amino02.in
-share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminoct02.in
-share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminont02.in
-share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_nuc02.in
-share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/parm99.dat
+share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_amino94_MOD.in
+share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminoct94.in
+share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminont94.in
+share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_nuc94_MOD.in
+share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/parm99_frcmod_ff99SB.dat
 share/libghemical/%%LIBGHEMICAL_VERSION%%/builder/amino.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/builder/nucleic.txt
 share/libghemical/%%LIBGHEMICAL_VERSION%%/param_mm/default/atomtypes.txt

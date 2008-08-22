@@ -1,48 +1,13 @@
---- configure.ac.orig	Mon Apr 24 19:58:14 2006
-+++ configure.ac	Mon Jul  3 10:54:47 2006
-@@ -46,6 +46,16 @@
- 		;;
- esac
- 
-+AC_ARG_WITH(blas,
-+[  --with-blas             Gives BLAS name you use(e.g., -lblas).],
-+BLAS=$withval
-+)
-+
-+AC_ARG_WITH(lapack,
-+[  --with-lapack           Gives LAPACK name you use(e.g., -llapack).],
-+LAPACK=$withval
-+)
-+
- AC_ARG_ENABLE(mpqc,[  --enable-mpqc           compile with MPQC support],WITH_MPQC="$enableval",WITH_MPQC="no")
- AC_ARG_ENABLE(mopac7,[  --enable-mopac7         compile with MOPAC7 support],WITH_MOPAC7="$enableval",WITH_MOPAC7="no")
- ##removed20060208##AC_ARG_ENABLE(openbabel,[  --enable-openbabel      compile with OpenBabel support],WITH_OPENBABEL="$enableval",WITH_OPENBABEL="no")
-@@ -69,8 +79,26 @@
- AC_CHECK_LIB([m], [acos])
+--- configure.ac~	2008-07-31 19:22:53.000000000 +0900
++++ configure.ac	2008-08-23 06:17:58.000000000 +0900
+@@ -89,8 +89,8 @@
+ AC_CHECK_LIB(m,acos,,[AC_MSG_ERROR([math library missing])])
  
  if test $WITH_MPQC = yes; then
 -	AC_CHECK_LIB([blas], [main], , AC_MSG_ERROR([Cannot find blas library needed for MPQC support]))
 -	AC_CHECK_LIB([lapack], [main], , AC_MSG_ERROR([Cannot find lapack library needed for MPQC support]))
-+
-+#Blas and lapack ...actually not checked...
-+BLAS=""
-+ if test "$BLASNAME" = NONE; then
-+   AC_MSG_ERROR([BLAS is required to complete the build])
-+ else
-+   HAVE_BLAS="yes"
-+   BLAS="$BLASNAME"
-+ fi
-+ 
-+ AC_SUBST(HAVE_BLAS)
-+
-+LAPACK=""
-+if test "$LAPACKNAME" = NONE; then
-+  AC_MSG_ERROR([LAPACK is required to complete the build])
-+else
-+  HAVE_LAPACK="yes"
-+  LAPACK="$LAPACKNAME"
-+fi
-+
++#	AC_CHECK_LIB([blas], [main], , AC_MSG_ERROR([Cannot find blas library needed for MPQC support]))
++#	AC_CHECK_LIB([lapack], [main], , AC_MSG_ERROR([Cannot find lapack library needed for MPQC support]))
  	AM_PATH_SC(1.2.5, HAVE_MPQC="yes", HAVE_MPQC="no")
  	if test "${HAVE_MPQC}" = "yes"; then
  		AC_DEFINE([ENABLE_MPQC], [], [Define if you are building a version that interfaces directly with MPQC])
