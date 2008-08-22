@@ -348,8 +348,6 @@
     SUBDIR += mediawiki110
     SUBDIR += mediawiki111
     SUBDIR += mediawiki16
-    SUBDIR += mediawiki17
-    SUBDIR += mediawiki18
     SUBDIR += mediawiki19
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
