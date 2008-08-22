@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	2.10
-PORTREVISION=	4
+PORTVERSION=	2.98
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
+MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20080731/ \
 		http://bioinformatics.org/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -17,11 +16,12 @@ COMMENT=	Ghemical is a computational chemistry software package
 
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \
 		openbabel:${PORTSDIR}/science/openbabel
+RUN_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
-		glut:${PORTSDIR}/graphics/libglut \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		ghemical:${PORTSDIR}/science/libghemical \
+		oglappth:${PORTSDIR}/science/liboglappth \
 		mopac7:${PORTSDIR}/biology/mopac
 
 USE_FORTRAN=	yes
@@ -29,8 +29,9 @@ CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2 pkgconfig
+USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mopac7 --enable-gamess --enable-mpqc --enable-openbabel
+CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7 
 PLIST_SUB=      GHEMICAL_VERSION="${PORTVERSION}"
 
 MAKE_ENV=       PKG_CONFIG=${LOCALBASE}/pkg-config
