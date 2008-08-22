@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 
 USE_JAVA=	yes
 USE_ANT=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4 1.5
 ALL_TARGET=	clean dist
 MAKE_ARGS=	-Djavalibdir=${JAVALIBDIR}
 BUILDDIR=	${WRKDIR}/${DISTNAME}/build/${DISTNAME}
@@ -61,7 +61,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "This port requires JDK 1.4.x or better to compile, but the"
+	@${ECHO_MSG} "This port requires JDK 1.4.x or JDK 1.5.x to compile, but the"
 	@${ECHO_MSG} "JDBC driver can be made to operate with JVM 1.2.x or better"
 	@${ECHO_MSG} ""
 
