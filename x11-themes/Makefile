@@ -44,10 +44,6 @@
     SUBDIR += e17-theme-simply_white
     SUBDIR += emerald-themes
     SUBDIR += engradient
-    SUBDIR += enlightenment-theme-BlueSteel
-    SUBDIR += enlightenment-theme-BrushedMetal-Tigert
-    SUBDIR += enlightenment-theme-Ganymede
-    SUBDIR += enlightenment-theme-ShinyMetal
     SUBDIR += etoile-azbackground
     SUBDIR += etoile-camaelon
     SUBDIR += etoile-etoilemenus
