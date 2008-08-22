@@ -15,17 +15,19 @@
 # APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
 
 PORTNAME=	apr
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	${APR_VERSION}.${APU_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
-DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
+DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 
 MAINTAINER=	pgollucci@FreeBSD.org
-COMMENT=	The Apache Group's Portability Library
+COMMENT=	Apache Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+
+APR_VERSION=	1.3.3
+APU_VERSION=	1.3.4
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:15:env
@@ -34,12 +36,13 @@ USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
-WRKSRC=	${WRKDIR}
+
+NO_WRKSUBDIR=	yes
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 SHLIB_MAJOR=	3
 
-APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
+APR_UTIL_CONF_ARGS=	--with-apr=../apr-${APR_VERSION} \
 			--with-expat=${LOCALBASE} \
 			--with-iconv=${LOCALBASE}
 
@@ -85,6 +88,10 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .else
 PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
+.endif
+
+.if defined(WITH_LDAP)
+APR_UTIL_WITH_LDAP=	yes
 .endif
 
 .if defined(APR_UTIL_WITH_LDAP)
@@ -138,29 +145,21 @@ pre-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's/OSVERSION/'${OSVERSION}'/g' \
-		${WRKDIR}/apr-${PORTVERSION}/build/apr_hints.m4
+		${WRKDIR}/apr-${APR_VERSION}/build/apr_hints.m4
 	${FIND} ${WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
-pre-configure:
-.for d in apr apr-util
-.for f in config.guess config.sub
-	${CP} -f ${TEMPLATES}/${f} ${WRKDIR}/${d}-${PORTVERSION}/build/${f}
-	${CHMOD} a+rx ${WRKDIR}/${d}-${PORTVERSION}/build/${f}
-.endfor
-.endfor
-
 run-autotools::
-	cd ${WRKDIR}/apr-${PORTVERSION} ; \
+	cd ${WRKDIR}/apr-${APR_VERSION} ; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf
-	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
+	cd ${WRKDIR}/apr-util-${APU_VERSION} ; \
 		${RM} -fr xml/expat
-	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
+	cd ${WRKDIR}/apr-util-${APU_VERSION} ; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf \
-		--with-apr=../apr-${PORTVERSION}
-	cd ${WRKDIR}/apr-${PORTVERSION}; \
+		--with-apr=../apr-${APR_VERSION}
+	cd ${WRKDIR}/apr-${APR_VERSION}; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
+	cd ${WRKDIR}/apr-util-${APU_VERSION}; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
@@ -168,12 +167,12 @@ do-configure:
 	${DO_NADA}
 
 do-build:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKDIR}/apr-${APR_VERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKDIR}/apr-util-${APU_VERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
+	cd ${WRKDIR}/apr-${APR_VERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
+	cd ${WRKDIR}/apr-util-${APU_VERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
 
 debug_autoconf:
 	@echo "LIBTOOL: ${LIBTOOL_VERSION}"
