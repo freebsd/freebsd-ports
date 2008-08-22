@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	4.7.26
+PORTVERSION=	4.7.27
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Marco d'Itri whois client
+COMMENT=	Marco d\'Itri whois client
 
 USE_GMAKE=		yes
 USE_ICONV=		yes
@@ -20,10 +20,13 @@ USE_PERL5_BUILD=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+LDFLAGS+=	-L/usr/local/lib
+CFLAGS+=	-I/usr/local/include
+
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	OPTS=""
 
-MAN1=	mwhois.1
+MAN1=	whois.1 mkpasswd.1
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -35,9 +38,7 @@ NO_PO=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|prefix\=/usr/local|prefix\=${PREFIX}|g ; \
-		s|/usr/local|${LOCALBASE}|g ; \
-		s|share/man/|man/|g ; \
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/po/Makefile
 	@if [ -n "${NO_PO}" ]; \

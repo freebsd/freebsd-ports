@@ -1,4 +1,5 @@
-bin/mwhois
+bin/whois
+bin/mkpasswd
 %%NLS%%share/locale/cs/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/de/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/el/LC_MESSAGES/whois.mo
