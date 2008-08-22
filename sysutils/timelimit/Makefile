@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timelimit
-PORTVERSION=	1.0.b3
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
@@ -14,11 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
-MAN8=		timelimit.8
+MAN1=		timelimit.1
 PLIST_FILES=	bin/timelimit
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${PREFIX}/bin
-		${INSTALL_DATA} ${WRKSRC}/timelimit.8 ${PREFIX}/man/man8/
+		${INSTALL_DATA} ${WRKSRC}/timelimit.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
