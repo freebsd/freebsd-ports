@@ -1,16 +1,14 @@
-@comment $FreeBSD$
 bin/make+
 bin/make+-skeleton
 etc/make+.conf
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03s03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch04.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/README
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/ch03.html
+%%DOCSDIR%%/ch03s02.html
+%%DOCSDIR%%/ch03s03.html
+%%DOCSDIR%%/ch04.html
+%%DOCSDIR%%/index.html
 %%DATADIR%%/README.make+_for_bundles
 %%DATADIR%%/c.mk
 %%DATADIR%%/check_funcs.sh
@@ -37,4 +35,5 @@ etc/make+.conf
 %%DATADIR%%/run_tests.sh
 %%DATADIR%%/test.mk
 %%DATADIR%%/website.mk
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
