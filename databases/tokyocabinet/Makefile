@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.2.11
+PORTVERSION=	1.3.2
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
@@ -18,17 +18,16 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.if !defined (NO_INSTALL_MANPAGES)
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in
+.endif
+
 MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
+		tcfmgr.1 tcfmttest.1 tcftest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
 		tcutest.1
-MAN3=		tcadb.3 tcbdb.3 tchdb.3 tcutil.3 tokyocabinet.3
-.endif
-DOCS=		COPYING ChangeLog README THANKS
-BINS=		tcamgr tcatest tcbmgr tcbmttest tcbtest tchmgr tchmttest \
-		tchtest tcucodec tcumttest tcutest
-LIBS=		libtokyocabinet.a
-INCLUDES=	tcbdb.h tchdb.h tcutil.h
+MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
+		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3
 
 OPTIONS=	DEBUG "Debugging support" off \
 		DEVEL "Development build" off \
@@ -41,6 +40,10 @@ OPTIONS=	DEBUG "Debugging support" off \
 		PTHREAD "Disable POSIX thread support" off
 
 .include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -77,23 +80,7 @@ CONFIGURE_ARGS+=	--disable-shared
 # to patch it manually.
 post-patch:
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
+		-e 's|@datarootdir@|@datarootdir@/doc|' \
 		${WRKSRC}/Makefile.in
-
-do-install:
-	@${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin/
-	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/,} ${MAN1PREFIX}/man/man1
-	@${INSTALL_MAN} ${MAN3:S,^,${WRKSRC}/man/,} ${MAN3PREFIX}/man/man3
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}/)
-.endif
-.for i in ${LIBS}
-	@${CP} ${WRKSRC}/${i} ${PREFIX}/lib/
-.endfor
-.for j in ${INCLUDES}
-	@${CP} ${WRKSRC}/${j} ${PREFIX}/include/
-.endfor
-	@${CP} ${WRKSRC}/tokyocabinet.pc ${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.post.mk>
