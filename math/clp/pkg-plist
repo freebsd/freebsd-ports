@@ -10,7 +10,7 @@ include/coin/ClpConstraintQuadratic.hpp
 include/coin/ClpDualRowDantzig.hpp
 include/coin/ClpDualRowPivot.hpp
 include/coin/ClpDualRowSteepest.hpp
-include/coin/ClpDummyMatrix.hpp 
+include/coin/ClpDummyMatrix.hpp
 include/coin/ClpDynamicExampleMatrix.hpp
 include/coin/ClpDynamicMatrix.hpp
 include/coin/ClpEventHandler.hpp
@@ -43,6 +43,7 @@ include/coin/ClpSolve.hpp
 include/coin/Clp_C_Interface.h
 include/coin/CoinAlloc.hpp
 include/coin/CoinBuild.hpp
+include/coin/CoinDenseFactorization.hpp
 include/coin/CoinDenseVector.hpp
 include/coin/CoinDistance.hpp
 include/coin/CoinError.hpp
