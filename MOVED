@@ -3569,3 +3569,5 @@ x11-themes/enlightenment-theme-BlueSteel||2008-08-20|Deprecated by x11-themes/e1
 x11-themes/enlightenment-theme-BrushedMetal-Tigert||2008-08-20|Deprecated by x11-themes/e16-themes
 x11-themes/enlightenment-theme-Ganymede|2008-08-20||Deprecated by x11-themes/e16-themes
 x11-themes/enlightenment-theme-ShinyMetal||2008-08-20|Deprecated by x11-themes/e16-themes
+www/mediawiki17||2008-08-22|Expired, use www/mediawiki instead
+www/mediawiki18||2008-08-22|Expired, use www/mediawiki instead
