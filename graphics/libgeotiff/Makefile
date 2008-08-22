@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-proj=${LOCALBASE} \
 		--with-libtiff=${LOCALBASE}
 USE_LDCONFIG=	yes
-CFLAGS+=	-L${LOCALBASE}/lib \
-		-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
