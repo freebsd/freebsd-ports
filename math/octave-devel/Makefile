@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.9.19
+PORTVERSION=	3.1.51
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/\
@@ -16,15 +16,14 @@ PKGNAMESUFFIX=  -devel
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Developer's version of math/octave
 
-IGNORE=		please use math/octave instead
-
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
 		gsed:${PORTSDIR}/textproc/gsed \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
+		glpk.15:${PORTSDIR}/math/glpk \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull
@@ -47,18 +46,28 @@ BUILD_DEPENDS+=	info:${PORTSDIR}/print/texinfo
 BROKEN=		Fails to install
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
+USE_BLAS?=	reference
+
+.if exists(${LOCALBASE}/lib/libgoto.so)
+USE_BLAS=	gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+USE_BLAS=	atlas
 .endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
-.else
+
+. if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
+.elif ${USE_BLAS} == gotoblas
+LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lgotop
+LAPACK=		-lgotop -llapack
+.elif ${USE_BLAS} == atlas
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas_r
+LAPACK=		-lalapack_r
 .endif
 
 USE_FORTRAN=	yes
@@ -95,6 +104,9 @@ post-install:
 	${MV} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/libexec/${PORTNAME}/${PORTVERSION}/exec/${GNU_HOST}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 	${LN} -fs ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/octave.desktop \
+	${DESKTOPDIR}/www.octave.org-octave.desktop
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in faq/Octave-FAQ.ps liboctave/liboctave.ps \
