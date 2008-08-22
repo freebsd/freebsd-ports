@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xcalib
-PORTVERSION=	0.6
-PORTREVISION=	3
+PORTVERSION=	0.8
 CATEGORIES=	x11 graphics
-MASTER_SITES=	http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	hopet@ics.muni.cz
@@ -18,15 +17,15 @@ COMMENT=	A program for display calibration of X11-Servers with ICC profiles
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README README.profilers
 USE_XORG=	x11 xext sm xxf86vm
+USE_GMAKE=	yes
 
 DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
 CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
 
-do-build:
-	${CC} ${CFLAGS} ${DEFINES} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
-	${CC} ${CFLAGS} ${DEFINES} -c ${WRKSRC}/icclib/icc.c -o ${WRKSRC}/icclib/icc.o
-	${CC} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.o -o ${WRKSRC}/${PORTNAME}
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+	    ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
