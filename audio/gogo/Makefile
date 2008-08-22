@@ -9,14 +9,15 @@ PORTNAME=	gogo
 PORTVERSION=	2.39b
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/gogo2/src/
+MASTER_SITES=	ftp://ftp.csie.ncu.edu.tw/FreeBSD/ports/distfiles/ \
+		ftp://ftp.thu.edu.tw/FreeBSD/ports/distfiles/ \
+		ftp://ftp.42.org/pub/FreeBSD/distfiles/
+
 DISTNAME=	gogo239b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast MP3 encoder using recent x86 processors' features
-
-BROKEN=		does not fetch
 
 OPTIONS=	THREADS "Use linuxthreads for increased SMP performance" off
 
