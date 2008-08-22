@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdt
-PORTVERSION=	2.0.3
+PORTVERSION=	3.0.2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gds2
@@ -17,16 +17,20 @@ COMMENT=	GDS2/GDT format translator
 
 USE_PERL5_RUN=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
-PLIST_FILES=	bin/gdsinfo bin/gds2gdt bin/gdt2gds
+PLIST_FILES=	bin/gdsinfo bin/gds2gdt bin/gdt2gds bin/scalegds
 
 post-patch:
 	${REINPLACE_CMD} 's,^#!/usr/bin/perl,#!${PERL},' \
-		${WRKSRC}/Examples/gdsinfo
+		${WRKSRC}/Examples/gdsinfo \
+		${WRKSRC}/Examples/scalegds
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Examples/gdsinfo ${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/Examples/gdsinfo \
+		${WRKSRC}/Examples/scalegds \
+		${PREFIX}/bin
 
 .include <bsd.port.mk>
