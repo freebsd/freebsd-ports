@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.7/0.7.2/ \
+MASTER_SITES=	http://www.cherokee-project.com/download/0.8/${PORTVERSION}/ \
 		LOCAL/beech
 PKGNAMESUFFIX=	-devel
 
@@ -34,8 +33,8 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--disable-static
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
-MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_tweak.1 \
-		cherokee-admin.1 spawn-fcgi.1
+MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
+		spawn-fcgi.1 cherokee-tweak.1 cherokee-guardian.1
 PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
@@ -82,7 +81,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/qa/run-tests.py	
+		${WRKSRC}/qa/run-tests.py
 
 post-install:
 	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}
