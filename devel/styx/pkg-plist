@@ -254,27 +254,27 @@ lib/libxstyx.so.2
 %%PORTDOCS%%%%DOCSDIR%%/xml_pim.htm
 %%PORTDOCS%%%%DOCSDIR%%/xmllit_lim.htm
 %%PORTDOCS%%%%DOCSDIR%%/xstdosx.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/pat/lstydoc_us.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/pat/pcmdbook.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/pat/pcmddoc_us.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/pat/rstydoc_us.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/pat/tstydoc_us.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/ccnv.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/cdps.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/cmd.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/cprj.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/dtd.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/estyx.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/hpat.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/meta.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/rexp.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/styx.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/xml.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/xml1.lex
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/xml2.lex
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/xmllit.sty
-%%PORTDOCS%%%%EXAMPLESDIR%%/spe/xxml
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/spe
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pat
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/lstydoc_us.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/pcmdbook.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/pcmddoc_us.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/rstydoc_us.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/tstydoc_us.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/ccnv.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/cdps.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/cmd.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/cprj.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/dtd.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/estyx.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/hpat.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/meta.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/rexp.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/styx.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xml.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xml1.lex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xml2.lex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xmllit.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xxml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spe
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
