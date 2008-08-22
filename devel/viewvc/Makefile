@@ -7,7 +7,7 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/41694/
 
