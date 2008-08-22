@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits java
 MASTER_SITES=	https://jdic.dev.java.net/files/documents/880/43269/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDesktop Integration Components
 
 # USE_GMAKE conflicts with USE_ANT
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	the required com.sun.jnlp is part of jawaws.jar, only ins
 
 USE_ZIP=	yes
 USE_ANT=	yes
-USE_XORG=	x11 xext
+USE_XORG=	x11 xext xt
 USE_GNOME=	pkgconfig # libgnome
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
