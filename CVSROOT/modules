@@ -3266,6 +3266,7 @@ fluxconf                        ports/x11-wm/fluxconf
 fluxspace                       ports/x11-wm/fluxspace
 fluxter                         ports/x11-wm/fluxter
 flv2mpeg4                       ports/multimedia/flv2mpeg4
+flvtool++                       ports/multimedia/flvtool++
 flvw                            ports/x11-toolkits/flvw
 flwm                            ports/x11-wm/flwm
 fly                             ports/graphics/fly
@@ -7205,6 +7206,7 @@ libofa                          ports/audio/libofa
 libofx                          ports/finance/libofx
 libogg                          ports/audio/libogg
 liboggz                         ports/audio/liboggz
+liboglappth                     ports/science/liboglappth
 liboil                          ports/devel/liboil
 libol                           ports/devel/libol
 liboldX                         ports/x11/liboldX
@@ -9114,6 +9116,7 @@ nzbget                          ports/news/nzbget
 nzbperl                         ports/news/nzbperl
 o2em                            ports/emulators/o2em
 o2sms                           ports/comms/o2sms
+o3read                          ports/converters/o3read
 oaf                             ports/devel/oaf
 oak                             ports/sysutils/oak
 oases                           ports/science/oases
