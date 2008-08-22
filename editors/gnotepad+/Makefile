@@ -36,9 +36,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\(use_gtkhtml=\)yes|\1no|g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
+PLIST_SUB+=	NOPORTDOCS="@comment "
 post-extract:
 	@${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
 	@${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs ${WRKSRC}/docs
+.else
+PLIST_SUB+=	NOPORTDOCS=""
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
