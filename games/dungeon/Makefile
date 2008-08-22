@@ -7,7 +7,7 @@
 
 PORTNAME=	dungeon
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
 		ftp://ftp.ifarchive.com/if-archive/games/source/ \
@@ -22,8 +22,6 @@ EXTRACT_ONLY=	dungn27s.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text adventure game of ZORK
-
-BROKEN=		does not package
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
@@ -53,6 +51,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dtextc.dat ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/dungeon.6 ${PREFIX}/man/man6
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/history ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manifest ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
