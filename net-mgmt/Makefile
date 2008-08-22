@@ -111,6 +111,7 @@
     SUBDIR += nagios-geom
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
+    SUBDIR += nagios-portaudit
     SUBDIR += nagios-radauth-plugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
