@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	libghemical
-PORTVERSION=	2.10
-PORTREVISION=	4
+PORTVERSION=	2.98
 CATEGORIES=	science
-MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
+MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20080731/ \
 		http://bioinformatics.org/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -28,25 +27,10 @@ USE_LDCONFIG=   yes
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	yes
+USE_AUTOTOOLS=	autoconf:262
+CONFIGURE_ARGS+=	--enable-mpqc --enable-openbabel --enable-mopac7 
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
-.else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.endif
-
-CONFIGURE_ARGS+=	--enable-mopac7 --enable-mpqc --enable-openbabel --with-blas="-L${LOCALBASE}/lib ${BLAS}" -with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
-
-USE_AUTOTOOLS=	autoconf:262
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
 .include <bsd.port.post.mk>
