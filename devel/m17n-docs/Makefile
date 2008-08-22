@@ -269,10 +269,9 @@ MAN5=		mdbCharsetList.5 mdbCodingList.5 mdbDir.5 \
 		mdbGeneral.5 mdbIM.5 mdbTutorialIM.5
 
 DOCSDIR=	${PREFIX}/share/doc/m17n
-PORTDOCS=	*
 
 post-patch:
-.for file in configure Makefile.in 
+.for file in configure Makefile.in
 	@${REINPLACE_CMD} -e 's|/m17n/docs|/doc/m17n|g' ${WRKSRC}/${file}
 .endfor
 
