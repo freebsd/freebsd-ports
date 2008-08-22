@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Clp
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
@@ -21,6 +21,7 @@ LIB_DEPENDS+=	glpk.15:${PORTSDIR}/math/glpk
 .endif
 
 USE_FORTRAN=	yes
+CXXFLAGS+=	-ffast-math -fomit-frame-pointer
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
