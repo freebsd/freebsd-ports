@@ -7,7 +7,7 @@
 
 PORTNAME=	makeplus
 PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/_file/
 
@@ -16,8 +16,6 @@ COMMENT=	Advanced build system for GNU Make
 
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
-
-BROKEN=		bad plist
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
