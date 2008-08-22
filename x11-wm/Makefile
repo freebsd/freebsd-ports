@@ -111,7 +111,6 @@
     SUBDIR += treewm
     SUBDIR += tvtwm
     SUBDIR += twm
-    SUBDIR += ude
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += waimea
