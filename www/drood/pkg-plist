@@ -1,0 +1,5 @@
+bin/drood
+etc/rc.d/drood
+@unexec if cmp -s %D/etc/drood/types.tab %D/etc/drood/types.tab.dist; then rm -r %D/etc/drood/types.tab; fi
+etc/drood/types.tab.dist
+@dirrm /etc/drood
