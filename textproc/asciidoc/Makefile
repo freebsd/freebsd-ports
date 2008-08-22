@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION= 	8.1.0
+PORTVERSION=	8.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
 
 USE_PYTHON=	yes
@@ -29,6 +29,8 @@ pre-patch:
 		-e "s|/etc/asciidoc|${PREFIX}/etc/asciidoc|g" \
 		${WRKSRC}/asciidoc.py
 
+# a future improvement to this port is to also install the vim syntax
+# highlighing mode in its proper location.
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc
 	${INSTALL_SCRIPT} ${WRKSRC}/a2x ${PREFIX}/bin
@@ -39,9 +41,17 @@ do-install:
 		${PREFIX}/etc/asciidoc/filters
 	${INSTALL_SCRIPT} ${WRKSRC}/filters/code-filter.py \
 		${PREFIX}/etc/asciidoc/filters
+	${MKDIR} ${PREFIX}/etc/asciidoc/dblatex
+	${INSTALL_DATA} ${WRKSRC}/dblatex/*.xsl \
+		${PREFIX}/etc/asciidoc/dblatex
+	${INSTALL_DATA} ${WRKSRC}/dblatex/*.sty \
+		${PREFIX}/etc/asciidoc/dblatex
 	${MKDIR} ${PREFIX}/etc/asciidoc/docbook-xsl
 	${INSTALL_DATA} ${WRKSRC}/docbook-xsl/*.xsl \
 		${PREFIX}/etc/asciidoc/docbook-xsl
+	${MKDIR} ${PREFIX}/etc/asciidoc/javascripts
+	${INSTALL_DATA} ${WRKSRC}/javascripts/*.js \
+		${PREFIX}/etc/asciidoc/javascripts
 	${MKDIR} ${PREFIX}/etc/asciidoc/stylesheets
 	${INSTALL_DATA} ${WRKSRC}/stylesheets/*.css \
 		${PREFIX}/etc/asciidoc/stylesheets
