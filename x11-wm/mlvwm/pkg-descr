@@ -1,8 +1,0 @@
-Mlvwm is a Macintosh like window manager.
-
-Configuration:
-	Copy /usr/X11R6/lib/X11/mlvwm/system.mlvwmrc(default) to 
-	$HOME/.mlvwmrc . Please refer to the comment  in  that  sample
-	mlvwmrc.
-
-WWW: http://www2u.biglobe.ne.jp/~y-miyata/mlvwm.html

@@ -3571,3 +3571,8 @@ x11-themes/enlightenment-theme-Ganymede|2008-08-20||Deprecated by x11-themes/e16
 x11-themes/enlightenment-theme-ShinyMetal||2008-08-20|Deprecated by x11-themes/e16-themes
 www/mediawiki17||2008-08-22|Expired, use www/mediawiki instead
 www/mediawiki18||2008-08-22|Expired, use www/mediawiki instead
+x11-wm/9wm||2008-08-22|Has expired: Project is dead, last release from 2002
+x11-wm/gwm||2008-08-22|Has expired: Project is dead
+x11-wm/mlvwm||2008-08-22|Has expired: Project is dead
+x11-wm/novawm||2008-08-22|Has expired: Project is dead
+x11-wm/orion||2008-08-22|Has expired: Version branch long since retired

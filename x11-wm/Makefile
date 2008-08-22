@@ -3,7 +3,6 @@
 
     COMMENT = X11 window managers
 
-    SUBDIR += 9wm
     SUBDIR += aewm
     SUBDIR += afterstep
     SUBDIR += afterstep-i18n
@@ -64,7 +63,6 @@
     SUBDIR += gcompmgr
     SUBDIR += genmenu
     SUBDIR += golem
-    SUBDIR += gwm
     SUBDIR += hackedbox
     SUBDIR += icewm
     SUBDIR += ion
@@ -82,14 +80,11 @@
     SUBDIR += lxsession-lite
     SUBDIR += matchbox
     SUBDIR += metacity
-    SUBDIR += mlvwm
     SUBDIR += nickleby
-    SUBDIR += novawm
     SUBDIR += obconf
     SUBDIR += obmenu
     SUBDIR += olvwm
     SUBDIR += openbox
-    SUBDIR += orion
     SUBDIR += oroborus
     SUBDIR += pager
     SUBDIR += pawm
