@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=
+PATCHFILES=	snmp_auth_none_notice.patch reset_each_patch.patch
 
 PATCH_DIST_STRIP=	-p1
 
@@ -23,7 +23,7 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
-#PATCHLEVEL=	.0
+PATCHLEVEL=	.2
 PATCH_STRIP=	-p1
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre session sockets snmp xml
