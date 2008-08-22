@@ -108,6 +108,7 @@
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-devel
+    SUBDIR += nagios-geom
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-radauth-plugin

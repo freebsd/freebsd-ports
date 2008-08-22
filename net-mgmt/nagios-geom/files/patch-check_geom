@@ -1,0 +1,38 @@
+--- check_geom.orig	2007-07-03 15:55:27.000000000 +0400
++++ check_geom	2008-08-20 15:30:57.000000000 +0400
+@@ -33,6 +33,7 @@
+ my %ERRORS=('DEPENDENT'=>4,'UNKNOWN'=>3,'OK'=>0,'WARNING'=>1,'CRITICAL'=>2);
+ my $state="UNKNOWN";
+ my $msg="FAILURE";
++my $perfdata="";
+ 
+ if ($#ARGV < 1) {
+ 	print "Not enough arguments!\nUsage: $0 <class> <device>\n";
+@@ -63,7 +64,7 @@
+ 
+ 	chomp;
+ 	if ($found) {
+-		if (/^$class\//) {
++		if (/^\s*$class\//) {
+ 			last;
+ 		} else {
+ 			my ($vgh) = /\s+(.*)/;
+@@ -72,7 +73,7 @@
+ 		}
+ 	}
+ 
+-	if (/$class\/$volume/) {
++	if (/^\s*$class\/$volume/) {
+ 		($name, $status, $compo) = /(\S+)\s+(\S+)\s+(.*)$/;
+ 		$found=1;
+ 	}
+@@ -127,6 +128,7 @@
+ }
+ 
+ #goats away!
+-$msg = sprintf "%s/%s %s { %s }\n", $class, $volume, $status, $compo;
+-print $state, " ", $msg;
++$msg = sprintf "%s/%s %s { %s }", $class, $volume, $status, $compo;
++$perfdata = sprintf "%s=%d;;;0;", "geom_" . $class, $found;
++print $state, " ", $msg, "|", $perfdata, "\n";
+ exit ($ERRORS{$state});

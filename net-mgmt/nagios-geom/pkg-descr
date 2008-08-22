@@ -1,0 +1,5 @@
+This is a small Nagios plugin written in PERL and designed to monitor
+the state of FreeBSD GEOM devices (specifically mirrors and striped
+volumes) from Nagios.
+
+WWW: http://www.geocities.com/ntb4real/proj/geom.htm
