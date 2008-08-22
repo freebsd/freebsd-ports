@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-09-08 16:39:17.000000000 +0400
++++ Makefile.in	2008-08-07 03:44:02.000000000 +0400
+@@ -246,7 +246,7 @@
+ #   tools -> lib-src/lua
+ #   src   -> tools, lib-src
+ #
+-SUBDIRS = m4 lib-src tools intl src data doc po etc
++SUBDIRS = m4 lib-src src data doc po etc
+ EXTRA_DIST = enigma CHANGES ACKNOWLEDGEMENTS
+ doc_DATA = README CHANGES COPYING ACKNOWLEDGEMENTS
+ ACLOCAL_AMFLAGS = -I m4
