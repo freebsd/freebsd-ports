@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.8/${PORTVERSION}/ \
 		LOCAL/beech
@@ -15,7 +16,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		GeoIP.5:${PORTSDIR}/net/GeoIP
 
 CONFLICTS=	cherokee-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
