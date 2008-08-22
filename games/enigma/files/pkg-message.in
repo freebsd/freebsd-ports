@@ -1,0 +1,7 @@
+This game was installed as %%PREFIX%%/bin/enigma.
+If you run "enigma" now, you might end up running /usr/bin/enigma
+(very simple file encryption) instead of a game, so please run
+
+%%PREFIX%%/bin/enigma
+
+to play and also read enigma(6) instead of enigma(1).
