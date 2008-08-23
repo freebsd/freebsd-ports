@@ -4,9 +4,9 @@ header files sys/socket.h and netdb.h for getaddrinfo() and getnameinfo().
 If host name is longer than UT_HOSTSIZE (16 characters), log numeric
 address to utmp.
 
---- src/logwtmp.c.orig	Wed Dec 13 13:26:40 2006
-+++ src/logwtmp.c	Wed Dec 13 14:14:52 2006
-@@ -42,11 +42,13 @@
+--- src/logwtmp.c.orig	2008-05-31 23:26:12.000000000 -0400
++++ src/logwtmp.c	2008-05-31 23:26:12.000000000 -0400
+@@ -43,11 +43,13 @@
  
  #include <sys/types.h>
  #include <sys/param.h>
@@ -20,7 +20,7 @@ address to utmp.
  #include <signal.h>
  #include <stdio.h>
  #include <string.h>
-@@ -59,7 +61,6 @@
+@@ -60,7 +62,6 @@
  #ifdef SUPPORT_UTMPX
  #include <utmpx.h>
  #endif
@@ -28,11 +28,10 @@ address to utmp.
  
  #ifdef KERBEROS5
  #include <krb5/krb5.h>
-@@ -88,6 +89,26 @@
- {
+@@ -90,6 +91,26 @@
  	struct utmp ut;
  	struct stat buf;
-+
+ 
 +	if (strlen(host) > UT_HOSTSIZE) {
 +		struct addrinfo hints, *res;
 +		int error;
@@ -52,6 +51,7 @@ address to utmp.
 +				hostbuf[UT_HOSTSIZE] = '\0';
 +		}
 +	}
- 
++
  	if (fd < 0)
  		return;
+ 	if (fstat(fd, &buf) == 0) {

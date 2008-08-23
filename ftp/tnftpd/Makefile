@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tnftpd
-PORTVERSION=	20061204
-PORTREVISION=	1
+PORTVERSION=	20080609
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
@@ -15,7 +14,6 @@ MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
 GNU_CONFIGURE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CFLAGS+=	-DSUPPORT_UTMP
 
@@ -24,13 +22,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5
 .endif
 
-DOCS=		ChangeLog README THANKS COPYING
-
 MAN5=		ftpd.conf.5 ftpusers.5
 MAN8=		tnftpd.8
 PLIST_FILES=	libexec/tnftpd
-PORTDOCS=	ChangeLog README THANKS COPYING
+PORTDOCS=	ChangeLog NEWS README THANKS COPYING
 
+SUB_FILES=	pkg-message
 FIXPREFIX=	ftpd.8 ftpd.conf.5 ftpusers.5
 
 pre-patch:
@@ -51,9 +48,6 @@ pre-patch:
 		"s@^#define	_DEFAULT_CONFDIR	\"/etc\"@#define	_DEFAULT_CONFDIR	\"${PREFIX}/etc\"@" \
 	${WRKSRC}/src/pathnames.h
 
-post-build:
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tnftpd ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/src/ftpd.8 ${PREFIX}/man/man8/tnftpd.8
@@ -61,7 +55,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/ftpusers.5 ${PREFIX}/man/man5
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif

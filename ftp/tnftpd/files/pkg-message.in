@@ -1,0 +1,9 @@
+================================================================================
+This port relies on a number of configuration files in %%PREFIX%%/etc.
+At the very least, create a ftpusers file with the usernams of users you don't
+want to connect (root, toor, etc.). This will allow non-listed users to log in.
+Copying /etc/ftpusers to %%PREFIX%%/etc/ftpusers should be sufficient.
+
+See the man files for more information. The man- and configuration files for
+FreeBSD's built-in ftpd can also be of use as examples/additional info.
+================================================================================
