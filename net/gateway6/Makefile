@@ -7,7 +7,7 @@
 
 PORTNAME=	gateway6
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=142&foo=/
 MASTER_SITES+=	ftp://ftp.fth-devel.net/pub/freenet6/
@@ -36,8 +36,8 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/gw6c ${PREFIX}/bin/gw6c
-	@${INSTALL_MAN} ${WRKSRC}/man/man8/gw6c.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/gw6c.conf.5 ${PREFIX}/man/man5
+	@${INSTALL_MAN} ${WRKSRC}/man/man8/gw6c.8 ${MAN8PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/man/man5/gw6c.conf.5 ${MAN5PREFIX}/man/man5
 	@${INSTALL_SCRIPT} ${WRKSRC}/template/checktunnel.sh ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/template/freebsd.sh ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/bin/gw6c.conf.sample ${PREFIX}/etc
@@ -49,7 +49,7 @@ do-install:
 .endfor
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/orbit.conf ]; then \
+	@if [ ! -f ${PREFIX}/etc/gw6c.conf ]; then \
 		${CP} -p ${PREFIX}/etc/gw6c.conf.sample ${PREFIX}/etc/gw6c.conf ; \
 	fi
 	@${CAT} ${PKGMESSAGE}
