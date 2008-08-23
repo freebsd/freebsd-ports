@@ -10,6 +10,7 @@
 
 PORTNAME=	openmpi
 DISTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.2/downloads/
 
@@ -51,7 +52,7 @@ WITH_TORQUE=	yes
 .endif
 
 .if defined(WITH_TORQUE)
-LIB_DEPENDS+=	torque.0:${PORTSDIR}/sysutils/torque
+LIB_DEPENDS+=	torque.2:${PORTSDIR}/sysutils/torque
 CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
 PLIST_SUB+=	TORQUE=""
 .else
