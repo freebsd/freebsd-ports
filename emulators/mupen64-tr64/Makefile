@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-tr64
 
 COMMENT=	Tr64 graphics plugin for Mupen64
 
+BROKEN=		does not build
+
 USE_SDL=	sdl
 USE_GL=		yes
 

@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-glide
 
 COMMENT=	Glide64 graphics plugin for Mupen64
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_SDL=	sdl
