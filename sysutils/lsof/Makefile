@@ -99,6 +99,8 @@ pre-configure:
 	@${ECHO} "************************************************************"
 	@${ECHO} ""
 .endif
+.elif ${OSVERSION} >= 800000
+BROKEN=	does not build
 .endif
 
 post-install:
