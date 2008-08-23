@@ -77,7 +77,6 @@
     SUBDIR += gcc-ooo
     SUBDIR += gcc28
     SUBDIR += gcc295
-    SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcc34
     SUBDIR += gcc41
