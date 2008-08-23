@@ -51,6 +51,10 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=			does not fetch
+.endif
+
 srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		41
 fsf_mans=		fsf-funding gfdl gpl
