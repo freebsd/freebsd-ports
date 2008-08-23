@@ -1,15 +1,18 @@
---- ./include/config.h.orig	2008-06-09 19:32:50.000000000 +0100
-+++ ./include/config.h	2008-06-29 14:51:42.000000000 +0100
-@@ -54,15 +54,17 @@
+--- ./include/config.h.orig	2008-08-17 14:16:36.000000000 +0100
++++ ./include/config.h	2008-08-21 00:30:16.000000000 +0100
+@@ -52,16 +52,18 @@
+ #define AUTOMODPATH MODULE_DIR "/autoload/"
+ #define ETCPATH ETC_DIR 
  #define LOGPATH LOG_DIR
- #define UHPATH   HELP_DIR "/users"
- #define HPATH  HELP_DIR "/opers"
+-#define UHPATH   HELP_DIR "/users"
+-#define HPATH  HELP_DIR "/opers"
++#define UHPATH	HELP_DIR "/users"
++#define HPATH	HELP_DIR "/opers"
 +#define RUNPATH	"%%RUNDIR%%"
-+#define DBPTH "%%DBDIR%%"
++#define DBPTH	"%%DBDIR%%"
  
  /* files */
  #define SPATH    BINPATH "/ircd"	/* ircd executable */
- #define SLPATH   BINPATH "/servlink"	/* servlink executable */
  #define CPATH    ETCPATH "/ircd.conf"	/* ircd.conf file */
 -#define DBPATH   ETCPATH "/ban.db"
 +#define DBPATH   DBPTH "/ban.db"
