@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--with-oss
 
 MAN1=		xzx.1
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
-PORTDOCS=	COPYRIGHT FAQ README
 
 # Prevent configure from trying to run auto* since it's not needed and will
 # error if auto* < 2.54
