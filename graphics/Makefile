@@ -75,6 +75,7 @@
     SUBDIR += crystalspace
     SUBDIR += crystalspace-devel
     SUBDIR += cthumb
+    SUBDIR += cuneiform
     SUBDIR += curator
     SUBDIR += cuttlefish
     SUBDIR += danpei
