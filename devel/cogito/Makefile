@@ -29,15 +29,6 @@ USE_GMAKE=	yes
 .if !defined(NOPORTDOCS)
 ALL_TARGET=	all doc
 INSTALL_TARGET=	install install-doc
-.endif
-
-# We set HOME to PREFIX. This will install the files in the proper location.
-MAKE_ENV+=	HOME=${PREFIX} CPATH=${PREFIX}/include LIBRARY_PATH=${PREFIX}/lib
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-CONTRIB_FILES=	${WRKDIR}/${DISTNAME}/contrib/gitfeedmaillist.sh \
-		${WRKDIR}/${DISTNAME}/contrib/ciabot.pl
-
 MAN1 =		cg-add.1 \
 		cg-admin-cat.1 \
 		cg-admin-ls.1 \
@@ -76,6 +67,15 @@ MAN1 =		cg-add.1 \
 		cg.1
 MAN7=		cogito.7 \
 		cg-ref.7
+
+.endif
+
+# We set HOME to PREFIX. This will install the files in the proper location.
+MAKE_ENV+=	HOME=${PREFIX} CPATH=${PREFIX}/include LIBRARY_PATH=${PREFIX}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+CONTRIB_FILES=	${WRKDIR}/${DISTNAME}/contrib/gitfeedmaillist.sh \
+		${WRKDIR}/${DISTNAME}/contrib/ciabot.pl
 
 post-install:
 	${INSTALL_SCRIPT} ${CONTRIB_FILES} ${PREFIX}/bin
