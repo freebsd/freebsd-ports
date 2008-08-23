@@ -5,6 +5,7 @@ bin/gaeogen.py
 %%DATADIR%%/gaeo/controller/__init__.py
 %%DATADIR%%/gaeo/controller/errors.py
 %%DATADIR%%/gaeo/controller/helper.py
+%%DATADIR%%/gaeo/controller/jsonencoder.py
 %%DATADIR%%/gaeo/dispatch/__init__.py
 %%DATADIR%%/gaeo/dispatch/dispatcher.py
 %%DATADIR%%/gaeo/dispatch/router.py
