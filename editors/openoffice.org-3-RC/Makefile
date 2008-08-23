@@ -61,9 +61,9 @@ JAVA_VENDOR=	bsdjava
 JAVA_VENDOR=	freebsd bsdjava
 .endif
 .if (${OSVERSION} >= 700000)
-JAVA_VERSION=	1.5
+JAVA_VERSION=	1.5 1.6
 .else
-JAVA_VERSION=	1.4 1.5
+JAVA_VERSION=	1.4 1.5 1.6
 .endif
 
 .include <${FILESDIR}/Makefile.localized>
