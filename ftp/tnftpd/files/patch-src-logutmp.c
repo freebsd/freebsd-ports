@@ -2,8 +2,8 @@
 FreeBSD does not have header file util.h, fortunately it is not needed.
 Add header file time.h for time().
 
---- src/logutmp.c.orig	Wed Dec 13 13:16:58 2006
-+++ src/logutmp.c	Wed Dec 13 13:17:18 2006
+--- src/logutmp.c.orig	2006-12-04 16:13:22.000000000 -0500
++++ src/logutmp.c	2006-12-04 16:13:22.000000000 -0500
 @@ -59,13 +59,13 @@
  #include <stdio.h>
  #include <stdlib.h>

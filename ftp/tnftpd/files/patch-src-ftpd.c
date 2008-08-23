@@ -8,9 +8,9 @@ instead.
 We are sure, that we have good LOGIN_NAME_MAX from tnftpd.h, so use it
 instead of unnecessarily conservative _POSIX_LOGIN_NAME_MAX.
 
---- src/ftpd.c.orig	Wed Sep 27 07:22:18 2006
-+++ src/ftpd.c	Thu Dec 14 00:19:55 2006
-@@ -371,6 +371,24 @@
+--- src/ftpd.c.orig	2008-06-08 20:52:33.000000000 -0400
++++ src/ftpd.c	2008-06-08 20:52:33.000000000 -0400
+@@ -368,6 +368,24 @@
  			break;
  
  		case 'C':
@@ -35,7 +35,7 @@ instead of unnecessarily conservative _POSIX_LOGIN_NAME_MAX.
  			pw = sgetpwnam(optarg);
  			exit(checkaccess(optarg) ? 0 : 1);
  			/* NOTREACHED */
-@@ -496,12 +514,12 @@
+@@ -497,12 +515,12 @@
  		exit(1);
  	} else if (l <= 0) {
  		syslog(LOG_WARNING, "using conservative LOGIN_NAME_MAX value");
@@ -50,7 +50,7 @@ instead of unnecessarily conservative _POSIX_LOGIN_NAME_MAX.
  #endif
  	curname = malloc(curname_len);
  	if (curname == NULL) {
-@@ -1166,18 +1184,38 @@
+@@ -1179,18 +1197,38 @@
  
  					/* have a host specifier */
  		if ((p = strchr(word, '@')) != NULL) {
@@ -98,10 +98,10 @@ instead of unnecessarily conservative _POSIX_LOGIN_NAME_MAX.
  					continue;
  
  					/* check against hostname glob */
-@@ -3744,7 +3782,7 @@
+@@ -3776,7 +3814,7 @@
  	expire = pwent->pw_expire;
  #endif
- #if HAVE_PW_CHANGE
+ #if defined(HAVE_STRUCT_PASSWD_PW_CHANGE)
 -	change = (pwent->pw_change == _PASSWORD_CHGNOW)? now : pwent->pw_change;
 +	change = (pwent->pw_change == -1)? now : pwent->pw_change;
  #endif
