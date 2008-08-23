@@ -11,6 +11,8 @@ PKGNAMESUFFIX=		-smbclient
 
 COMMENT=		Samba "ftp-like" client
 
+BROKEN=			leaves files behind on deinstallation
+
 CONFLICTS=		ja-samba-2.* ja-samba-3.* samba-2.* samba-3.*
 
 SAMBA_CONFIG=		smb-client.conf
