@@ -7,6 +7,7 @@
 
 PORTNAME=	robotfindskitten
 PORTVERSION=	1.7320508.406
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://robotfindskitten.org/download/POSIX/
@@ -21,6 +22,7 @@ CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/robotfindskitten
+MAN6=		robotfindskitten.6
 
 post-extract:
 	${RM}	${WRKSRC}/doc/robotfindskitten.info
