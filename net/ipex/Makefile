@@ -24,4 +24,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipex ${PREFIX}/bin/ipex
 	${INSTALL_MAN} ${WRKSRC}/doc/ipex.1.gz ${MANPREFIX}/man/man1/ipex.1.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
