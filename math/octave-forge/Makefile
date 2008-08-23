@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/octave
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	Many additional features to math/octave
 
 IGNORE=		work in progress
