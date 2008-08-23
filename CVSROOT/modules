@@ -159,7 +159,6 @@ ports_x11_wm                    ports/x11-wm
 9libs                           ports/x11-toolkits/9libs
 9menu                           ports/x11/9menu
 9term                           ports/x11/9term
-9wm                             ports/x11-wm/9wm
 ADMsmb                          ports/security/ADMsmb
 ADMsnmp                         ports/security/ADMsnmp
 AquaGatekeeper                  ports/net/AquaGatekeeper
@@ -4780,7 +4779,6 @@ gwenview                        ports/graphics/gwenview
 gwenview-i18n                   ports/misc/gwenview-i18n
 gwhich                          ports/misc/gwhich
 gwhois                          ports/net/gwhois
-gwm                             ports/x11-wm/gwm
 gworkspace                      ports/deskutils/gworkspace
 gworkspace-clipbook             ports/deskutils/gworkspace-clipbook
 gworkspace-gwmetadata           ports/deskutils/gworkspace-gwmetadata
@@ -8039,8 +8037,6 @@ mediawiki                       ports/www/mediawiki
 mediawiki110                    ports/www/mediawiki110
 mediawiki111                    ports/www/mediawiki111
 mediawiki16                     ports/www/mediawiki16
-mediawiki17                     ports/www/mediawiki17
-mediawiki18                     ports/www/mediawiki18
 mediawiki19                     ports/www/mediawiki19
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
@@ -8253,7 +8249,6 @@ mls                             ports/mail/mls
 mlterm                          ports/x11/mlterm
 mlton                           ports/lang/mlton
 mlview                          ports/editors/mlview
-mlvwm                           ports/x11-wm/mlvwm
 mm                              ports/devel/mm
 mma                             ports/audio/mma
 mmail                           ports/news/mmail
@@ -8726,8 +8721,10 @@ nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
 nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-devel                    ports/net-mgmt/nagios-devel
+nagios-geom                     ports/net-mgmt/nagios-geom
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
 nagios-plugins                  ports/net-mgmt/nagios-plugins
+nagios-portaudit                ports/net-mgmt/nagios-portaudit
 nagios-radauth-plugin           ports/net-mgmt/nagios-radauth-plugin
 nagios-silfreed-plugins         ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins             ports/net-mgmt/nagios-snmp-plugins
@@ -9030,7 +9027,6 @@ notftp                          ports/www/notftp
 notif2                          ports/x11-themes/notif2
 notification-daemon             ports/deskutils/notification-daemon
 nova                            ports/astro/nova
-novawm                          ports/x11-wm/novawm
 noweb                           ports/devel/noweb
 npadmin                         ports/sysutils/npadmin
 npapi-xine                      ports/www/npapi-xine
@@ -9397,7 +9393,6 @@ orbitcpp                        ports/devel/orbitcpp
 oregano                         ports/cad/oregano
 org-mode.el                     ports/deskutils/org-mode.el
 org-mode.el6                    ports/deskutils/org-mode.el6
-orion                           ports/x11-wm/orion
 oroborus                        ports/x11-wm/oroborus
 orpheus                         ports/audio/orpheus
 orpie                           ports/math/orpie
@@ -20795,7 +20790,6 @@ ucspi-ssl                       ports/sysutils/ucspi-ssl
 ucspi-ssl-tls                   ports/sysutils/ucspi-ssl-tls
 ucspi-tcp                       ports/sysutils/ucspi-tcp
 ucspi-unix                      ports/sysutils/ucspi-unix
-ude                             ports/x11-wm/ude
 udesc_dump                      ports/sysutils/udesc_dump
 udfclient                       ports/sysutils/udfclient
 udis86                          ports/devel/udis86
