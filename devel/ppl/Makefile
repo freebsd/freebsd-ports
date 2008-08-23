@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ppl
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
@@ -27,9 +26,14 @@ CONFIGURE_ARGS=	--disable-debugging \
 		--enable-optimization \
 		--with-cflags="${CFLAGS}" \
 		--with-cxxflags="${CXXFLAGS}" \
-		--with-gmp-includes="${LOCALBASE}/include" \
-		--with-gmp-dir="${LOCALBASE}/lib"
+		--with-libgmp-prefix="${LOCALBASE}"
 USE_LDCONFIG=	yes
-PORTDOCS=	*
+
+MAN1=	ppl-config.1 ppl_lcdd.1 ppl_lpsol.1
+
+.if defined(NOPORTDOCS)
+post-patch:
+	${REINPLACE_CMD -e '/SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
