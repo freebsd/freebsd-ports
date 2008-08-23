@@ -21,7 +21,7 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	ARTS "Build with aRts support" on
+OPTIONS=	ARTS	"Build with aRts support"	on
 
 .include <bsd.port.pre.mk>
 
