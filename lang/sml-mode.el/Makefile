@@ -35,11 +35,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc ${PREFIX}/${SMLMODE_ELISPDIR}/
 	(cd ${PREFIX}/${ELISP_SUBDIR} && \
 		${LN} -sf sml-mode/sml-mode-startup.el .)
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/sml-mode.info ${PREFIX}/info/
 	install-info --section="The Emacs editor and associated tools" \
 		--entry="${SMLMODE_DIR_ENTRY}" ${PREFIX}/info/sml-mode.info \
 		${PREFIX}/info/dir
-.endif
 
 .include <bsd.port.mk>
