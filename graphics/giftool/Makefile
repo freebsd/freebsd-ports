@@ -38,8 +38,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
