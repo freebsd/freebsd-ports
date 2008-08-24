@@ -241,7 +241,8 @@ post-patch:
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
+	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g; \
+		s|= -I/usr/local/|= -I. -I... -I.../libavutil -I/usr/local/|g' \
 		${WRKSRC}/config.mak
 
 post-install:
