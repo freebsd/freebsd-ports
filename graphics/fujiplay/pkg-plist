@@ -1,6 +1,0 @@
-bin/fujiplay
-bin/yycc2ppm
-%%DOCSDIR%%/README
-%%DOCSDIR%%/fujiplay.lsm
-%%DOCSDIR%%/mx700-commands.html
-@dirrm %%DOCSDIR%%
