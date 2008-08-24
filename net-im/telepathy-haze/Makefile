@@ -7,7 +7,7 @@
 
 PORTNAME=	haze
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 PKGNAMEPREFIX=	telepathy-
@@ -16,7 +16,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libpurple connection manager for telepathy
 
-LIB_DEPENDS=	purple.4:${PORTSDIR}/net-im/libpurple \
+LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
 USE_GNOME=	pkgconfig
