@@ -1,0 +1,14 @@
+include/flowcanvas/Canvas.hpp
+include/flowcanvas/Connectable.hpp
+include/flowcanvas/Connection.hpp
+include/flowcanvas/Ellipse.hpp
+include/flowcanvas/Item.hpp
+include/flowcanvas/Module.hpp
+include/flowcanvas/Port.hpp
+include/flowcanvas/flowcanvas.hpp
+include/flowcanvas/types.hpp
+@dirrm include/flowcanvas
+lib/libflowcanvas.so.1
+lib/libflowcanvas.so
+lib/libflowcanvas.la
+libdata/pkgconfig/flowcanvas.pc

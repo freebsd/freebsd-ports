@@ -1,0 +1,13 @@
+--- configure.orig	2008-07-22 21:46:45.000000000 +0200
++++ configure	2008-07-22 21:47:36.000000000 +0200
+@@ -22253,8 +22253,8 @@
+   done
+ done
+  ;;
+-    "set_aa":C) sed 's/\(\/\*CANVASBASE\*\/\).*/\1Gnome::Canvas::CanvasAA/' -i $srcdir/flowcanvas/Canvas.hpp ;;
+-    "set_no_aa":C) sed 's/\(\/\*CANVASBASE\*\/\).*/\1Gnome::Canvas::Canvas/' -i $srcdir/flowcanvas/Canvas.hpp ;;
++    "set_aa":C) sed -i '' 's/\(\/\*CANVASBASE\*\/\).*/\1Gnome::Canvas::CanvasAA/' $srcdir/flowcanvas/Canvas.hpp ;;
++    "set_no_aa":C) sed -i '' 's/\(\/\*CANVASBASE\*\/\).*/\1Gnome::Canvas::Canvas/' $srcdir/flowcanvas/Canvas.hpp ;;
+ 
+   esac
+ done # for ac_tag
