@@ -1,7 +1,7 @@
 bin/xhime
-share/doc/ja/xhime/xhime-doc.euc
-share/doc/ja/xhime/xhime.doc
-share/doc/ja/xhime/rh110-doc.euc
-@dirrm share/doc/ja/xhime
-share/examples/xhime/rh110.xhm
-@dirrm share/examples/xhime
+%%PORTDOCS%%share/doc/ja/xhime/xhime-doc.euc
+%%PORTDOCS%%share/doc/ja/xhime/xhime.doc
+%%PORTDOCS%%share/doc/ja/xhime/rh110-doc.euc
+%%PORTDOCS%%@dirrm share/doc/ja/xhime
+%%EXAMPLESDIR%%/rh110.xhm
+@dirrm %%EXAMPLESDIR%%
