@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.8/${PORTVERSION}/ \
 		LOCAL/beech
@@ -31,6 +31,7 @@ CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
+		--localstatedir=/var \
 		--enable-readdir_r \
 		--disable-static
 DEFCONFS=	cherokee.conf
@@ -70,6 +71,7 @@ post-patch:
 		s:%datadir%:${PREFIX}/share:g; \
 		s:%wwwroot%:${PREFIX}/www/cherokee:g; \
 		s:%prefix%:${PREFIX}:g; \
+		s:%localstatedir%:/var:g; \
 		s:#.*User.*nobody:User www:g; \
 		s:#.*Group.*nogroup:Group www:g; \
 		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
@@ -80,6 +82,8 @@ post-patch:
 		${WRKSRC}/contrib/05to06.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/contrib/06to07.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/07to08.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
