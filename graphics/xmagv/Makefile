@@ -22,13 +22,18 @@ XMKMF=		xmkmf
 MANLANG=	. ja
 MAN1=		xmagv.1
 
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
+
+PLIST_FILES=	bin/xmagv
+PORTDOCS=	xmagv.doc
+
 post-install:
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/xmagv.j ${PREFIX}/man/ja/man1
 	${MV} ${PREFIX}/man/ja/man1/xmagv.j ${PREFIX}/man/ja/man1/xmagv.1
 	${GZIP_CMD} ${PREFIX}/man/ja/man1/xmagv.1
-	${MKDIR} ${PREFIX}/share/doc/ja/xmagv
-	${INSTALL_MAN} ${WRKSRC}/xmagv.doc ${PREFIX}/share/doc/ja/xmagv
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/xmagv.doc ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
