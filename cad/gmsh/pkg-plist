@@ -16,6 +16,7 @@ bin/mshsort
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view2.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view3.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view4.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/view5.msh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/anim.script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/antenna.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/antenna.i1
@@ -37,6 +38,7 @@ bin/mshsort
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/piece-extr-rec.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/piece-extr.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/piece.geo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/plot2d.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/primitives.pos
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/pripyrtet.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/rotate.script
