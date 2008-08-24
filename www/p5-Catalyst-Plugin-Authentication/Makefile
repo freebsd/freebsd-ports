@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.10006
+PORTVERSION=	0.10007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,5 +35,8 @@ MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Plugin::Authentication::Store::Minimal.3 \
 	Catalyst::Plugin::Authentication::User.3 \
 	Catalyst::Plugin::Authentication::User::Hash.3
+
+post-extract:
+	@${REINPLACE_CMD} -e '/^test_requires/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
