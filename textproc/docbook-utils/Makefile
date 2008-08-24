@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
@@ -51,6 +51,10 @@ post-patch:
 			-e 's|/usr/bin/|${LOCALBASE}/bin/|g' \
 			${WRKSRC}/doc/refentry/*.sgml \
 			${WRKSRC}/backends/txt
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|SUBDIRS = refentry man HTML|SUBDIRS = refentry man|' \
+			${WRKSRC}/doc/Makefile.in
+.endif
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
