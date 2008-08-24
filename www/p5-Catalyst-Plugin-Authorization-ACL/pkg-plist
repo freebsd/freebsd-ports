@@ -1,5 +1,10 @@
 %%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL/Engine.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authorization/ACL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authorization/ACL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authorization
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authorization/ACL
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authorization
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
