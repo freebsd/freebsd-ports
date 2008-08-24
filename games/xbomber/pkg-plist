@@ -1,8 +1,8 @@
 bin/xbomber
-share/doc/xbomber/GRAPHICS.txt
-share/doc/xbomber/LEVELS.txt
-share/doc/xbomber/README.txt
-share/doc/xbomber/SOUND.txt
+%%PORTDOCS%%share/doc/xbomber/GRAPHICS.txt
+%%PORTDOCS%%share/doc/xbomber/LEVELS.txt
+%%PORTDOCS%%share/doc/xbomber/README.txt
+%%PORTDOCS%%share/doc/xbomber/SOUND.txt
 share/xbomber/bitmaps/block.xbm
 share/xbomber/bitmaps/block2.xbm
 share/xbomber/bitmaps/bomb.xbm
