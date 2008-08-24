@@ -1,6 +1,6 @@
 lib/libonew-canna+wnn6.a
-share/doc/ja-onew-canna+wnn6/README.ONEW
-@dirrm share/doc/ja-onew-canna+wnn6
+%%PORTDOCS%%share/doc/ja-onew-canna+wnn6/README.ONEW
+%%PORTDOCS%%@dirrm share/doc/ja-onew-canna+wnn6
 lib/wnn/ja_JP/rk.wnn6/1B_TOUPPER
 lib/wnn/ja_JP/rk.wnn6/1B_ZENHIRA
 lib/wnn/ja_JP/rk.wnn6/1B_ZENKATA
