@@ -1,20 +1,20 @@
---- src/dialogs/Viewer.cxx.orig	2008-02-17 13:33:02.000000000 -0500
-+++ src/dialogs/Viewer.cxx	2008-02-17 13:35:44.000000000 -0500
-@@ -87,7 +87,7 @@
+--- src/dialogs/Viewer.cxx.orig	2008-08-14 13:31:08.000000000 -0400
++++ src/dialogs/Viewer.cxx	2008-08-17 20:28:40.000000000 -0400
+@@ -91,7 +91,7 @@
  
- #ifdef REGEX
+ #if HAVE_REGEX_H
  regex_t* seek_re = 0;
 -void re_comp(const char* needle)
 +void fl_re_comp(const char* needle)
  {
          if (seek_re)
                  regfree(seek_re);
-@@ -292,7 +292,7 @@
- 	for (size_t i = 0; i < tofind.length(); i++)
- 		tofind[i] = toupper(tofind[i]);
+@@ -306,7 +306,7 @@
  #else
+ 	static Fl_Color seek_color[2] = { FL_FOREGROUND_COLOR,
+ 					  adjust_color(FL_RED, FL_BACKGROUND2_COLOR) }; // invalid RE
 -	re_comp(inpSeek->value());
 +	fl_re_comp(inpSeek->value());
- #endif
- }
- 
+ 	if (inpSeek->textcolor() != seek_color[!seek_re]) {
+ 		inpSeek->textcolor(seek_color[!seek_re]);
+ 		inpSeek->redraw();
