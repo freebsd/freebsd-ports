@@ -15,7 +15,7 @@ DIST_SUBDIR=	mpich
 #PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/mpich2-patch/
 #PATCHFILES=
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
 #BUILD_DEPENDS=	doctext:${PORTSDIR}/textproc/sowing
@@ -53,6 +53,8 @@ CONFIGURE_ARGS+=	--disable-graphics
 WITHOUT_JAVA=	yes
 PLIST_SUB+=	X11="@comment "
 .else
+CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include --x-libraries==${X11BASE}/lib
+USE_XORG=	x11 xt
 PLIST_SUB+=	X11=${PLX11}
 .endif
 .if defined(WITHOUT_JAVA)

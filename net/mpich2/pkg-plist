@@ -743,7 +743,7 @@ share/examples_logging/srtest.c
 %%PORTDOCS%%@dirrm man/man4
 %%PORTDOCS%%@dirrm man/man3
 %%PORTDOCS%%@dirrm man/man1
-%%PORTDOCS%%@dirrm man
+@dirrm man
 %%PORTDOCS%%%%JAVA%%@dirrm lib/trace_rlog
 @dirrm lib
 @dirrm include
