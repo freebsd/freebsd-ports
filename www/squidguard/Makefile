@@ -15,6 +15,8 @@ COMMENT=	A fast redirector for squid
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
+BROKEN=		bad plist
+
 USE_BDB=	3+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
