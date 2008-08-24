@@ -2,6 +2,4 @@ This command parses the output of tcpdump to display the dhcp-packets
 for easier checking and debugging.
 
 WWW: http://www.mavetju.org/unix/general.php
-
-- Edwin Groothuis
-edwin@mavetju.org
+Author: Edwin Groothuis <edwin@mavetju.org>
