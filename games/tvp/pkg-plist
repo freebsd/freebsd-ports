@@ -2,11 +2,6 @@ bin/prez
 bin/aprez
 bin/xprez
 bin/xpwish
-share/doc/tvp/aprez.txt
-share/doc/tvp/libass.txt
-share/doc/tvp/president.txt
-share/doc/tvp/prez.txt
-share/doc/tvp/xprez.txt
 share/games/tvp/backs-01.gif
 share/games/tvp/backs-02.gif
 share/games/tvp/backs-03.gif
@@ -105,4 +100,3 @@ share/games/tvp/spades-8.gif
 share/games/tvp/spades-9.gif
 @dirrm share/games/tvp
 @dirrmtry share/games
-@dirrm share/doc/tvp
