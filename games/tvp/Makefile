@@ -28,14 +28,14 @@ USE_PERL5_BUILD=yes
 MAN6=		tvp.6
 MLINKS=		tvp.6 xprez.6 - aprez.6 - prez.6
 
-DOCFILES=	aprez.txt libass.txt president.txt prez.txt xprez.txt
+PORTDOCS=	aprez.txt libass.txt president.txt prez.txt xprez.txt
 
 .include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tvp
-.for f in ${DOCFILES}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/tvp
 .endfor
 .endif
