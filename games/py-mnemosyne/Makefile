@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mnemosyne
-PORTVERSION=	1.0.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	games python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-proj
@@ -19,11 +18,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_EGG=	Mnemosyne-${PORTVERSION}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		py*-xml>=0:${PORTSDIR}/textproc/py-xml \
 		py*-qt>=0:${PORTSDIR}/x11-toolkits/py-qt
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/applications || true
+	@${INSTALL_DATA} ${WRKSRC}/mnemosyne.desktop ${PREFIX}/share/applications/
+	@${MKDIR} ${PREFIX}/share/icons || true
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/mnemosyne.png ${PREFIX}/share/icons/
 
 .include <bsd.port.mk>
