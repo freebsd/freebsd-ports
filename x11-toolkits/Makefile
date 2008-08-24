@@ -18,6 +18,7 @@
     SUBDIR += evilvte
     SUBDIR += ewl
     SUBDIR += fl_editor
+    SUBDIR += flowcanvas
     SUBDIR += fltk
     SUBDIR += fltk-threads
     SUBDIR += fltk2
