@@ -35,11 +35,16 @@ USE_LDCONFIG=	yes
 DOC2FIX=	. gif html jpg png tests
 TST2FIX=	c f
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 pre-configure:
 .for ext in am in
 . if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|SUBDIRS = src tests tools doc|SUBDIRS = src tests tools|'	\
-		${WRKSRC}/Makefile.${ext}
+	${REINPLACE_CMD} -e '/SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.${ext}
+. endif
+. if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e '/SUBDIRS/ s|tests||' ${WRKSRC}/Makefile.${ext}
 . endif
 . for dd in ${DOC2FIX}
 	${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = @docdir@|'	\
