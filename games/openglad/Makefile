@@ -19,9 +19,13 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 
 NOT_FOR_ARCHS=	sparc64
+
+.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|^docs_DOCS = |nono&|' ${WRKSRC}/Makefile.in
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's|/path/to/data/dir|${LOCALBASE}/share/openglad|g' \
