@@ -19,4 +19,12 @@ USE_LDCONFIG=	yes
 
 MAN1=		calc.1
 
+CALCPAGER?=	more
+MAKE_ENV+=	CALCPAGER="${CALCPAGER}" CAT="${CAT}" CHMOD="${CHMOD}" CP="${CP}" \
+		GMAKE="${GMAKE}" LN="${LN}" MKDIR="${MKDIR}" MV="${MV}" RM="${RM}" \
+		SED="${SED}" TOUCH="${TOUCH}" TRUE="${TRUE}"
+
+regression-test: build
+	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check )
+
 .include <bsd.port.mk>

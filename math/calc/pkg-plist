@@ -483,12 +483,12 @@ lib/libcustcalc.so.2.12.3.3
 %%DATADIR%%/unitfrac.cal
 %%DATADIR%%/varargs.cal
 %%DATADIR%%/xx_print.cal
-@dirrmtry share/man/man1
-@dirrmtry share/man
-@dirrmtry %%DATADIR%%/help
-@dirrmtry %%DATADIR%%/custom
-@dirrmtry %%DATADIR%%/custhelp
-@dirrmtry %%DATADIR%%
+@dirrmtry man/man1
+@dirrmtry man
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/custom
+@dirrm %%DATADIR%%/custhelp
+@dirrm %%DATADIR%%
 @dirrmtry include/calc/custom
-@dirrmtry include/calc
-@dirrmtry bin/cscript
+@dirrm include/calc
+@dirrm bin/cscript
