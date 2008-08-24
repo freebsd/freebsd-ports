@@ -1,5 +1,5 @@
 --- agent/mibgroup/hardware/memory/memory_freebsd.c.orig	2006-03-07 01:23:52.000000000 +0900
-+++ agent/mibgroup/hardware/memory/memory_freebsd.c	2008-07-03 21:32:46.000000000 +0900
++++ agent/mibgroup/hardware/memory/memory_freebsd.c	2008-08-24 23:35:12.857234897 +0900
 @@ -47,6 +47,9 @@
      int            phys_mem_mib[] = { CTL_HW, HW_PHYSMEM };
      int            user_mem_mib[] = { CTL_HW, HW_USERMEM };
@@ -27,10 +27,15 @@
          mem->free  = total.t_free;
      }
  
-@@ -129,6 +133,18 @@
-         mem->free  = -1;
-     }
- 
+@@ -125,10 +129,22 @@
+         if (!mem->descr)
+              mem->descr = strdup("Cached memory");
+         mem->units = vmem.v_page_size;
+-        mem->size  = vmem.v_cache_count;
++        mem->size  = vmem.v_cache_count + vmem.v_inactive_count;
++        mem->free  = -1;
++    }
++
 +    mem = netsnmp_memory_get_byIdx( NETSNMP_MEM_TYPE_MBUF, 1 );
 +    if (!mem) {
 +        snmp_log_perror("No Memory Buffer info entry");
@@ -39,9 +44,9 @@
 +             mem->descr = strdup("Memory Buffer");
 +        mem->units = pagesize;
 +        mem->size  = bufspace/pagesize;
-+        mem->free  = -1;
-+    }
-+
+         mem->free  = -1;
+     }
+ 
 +
      nswap = swapmode(pagesize);
      mem = netsnmp_memory_get_byIdx( NETSNMP_MEM_TYPE_SWAP, 1 );
