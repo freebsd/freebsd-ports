@@ -30,8 +30,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/checkstyle %%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-optional.jar \
 		%%DATADIR%%/examples/conf/sun_checks.xml
-.if !defined(NOPORTDOCS)
 BUILDDIR=	${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README LICENSE* RIGHTS* docs
 .endif
 
