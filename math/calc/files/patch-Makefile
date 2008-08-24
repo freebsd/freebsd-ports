@@ -1,5 +1,5 @@
---- Makefile.orig	2008-05-10 08:04:43.000000000 -0700
-+++ Makefile	2008-05-10 08:05:39.000000000 -0700
+--- Makefile.orig	2008-05-10 07:58:05.000000000 -0400
++++ Makefile	2008-08-06 08:53:08.992116860 -0400
 @@ -585,7 +585,7 @@
  
  #INCDIR= /usr/local/include
@@ -37,3 +37,103 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
+@@ -857,7 +857,7 @@
+ #CALCPAGER= more
+ #CALCPAGER= pg
+ #CALCPAGER= cat
+-CALCPAGER= less
++#CALCPAGER= less
+ #CALCPAGER= less.exe -ci
+ 
+ # Debug/Optimize options for ${CC} and ${LCC}
+@@ -966,8 +966,8 @@
+ # MKDIR_ARG= -p			# use mkdir -p when creating paths
+ # MKDIR_ARG=			# use if system does not understand mkdir -p
+ #
+-MKDIR_ARG= -p
+-#MKDIR_ARG=
++#MKDIR_ARG= -p
++MKDIR_ARG=
+ 
+ # Some out of date operating systems require / want an executable to
+ # end with a certain file extension.  Some compile systems such as
+@@ -999,35 +999,36 @@
+ 
+ # standard utilities used during make
+ #
+-SHELL= /bin/sh
++#SHELL= /bin/sh
+ LANG= C
+-MAKE= make
++#MAKE= make
+ AWK= awk
+-SED= sed
++#SED= sed
+ DIFF= diff
+ GREP= egrep
+ SORT= sort
+ TEE= tee
+ CTAGS= ctags
+-CHMOD= chmod
++#CHMOD= chmod
+ FMT= fmt
+ XARGS= xargs
+ CMP= cmp
+-MKDIR= mkdir
++#MKDIR= mkdir
+ SPLINT= splint
+ SPLINT_OPTS=
+-RM= rm
+-TOUCH= touch
++#RM= rm
++#TOUCH= touch
+ RMDIR= rmdir
+-CP= cp
+-MV= mv
++#CP= cp
++#MV= mv
+ CO= co
+ AR= ar
+-TRUE= true
+-CAT= cat
++#TRUE= true
++#CAT= cat
+ COL= col
+-LN= ln
+-LDCONFIG= ldconfig
++#LN= ln
++#LDCONFIG= ldconfig
++LDCONFIG=
+ # assume the X11 makedepend tool for the depend rule
+ MAKEDEPEND= makedepend
+ STRIP= strip
+@@ -1235,13 +1236,15 @@
+ #
+ CCWARN= -Wall -W -Wno-comment
+ CCWERR=
+-CCOPT= ${DEBUG}
++#CCOPT= ${DEBUG}
++CCOPT=
+ CCMISC=
+ #
+-LCC= gcc
+-CC= ${PURIFY} ${LCC} ${CCWERR}
++LCC= ${CC}
++#CC= ${PURIFY} ${LCC} ${CCWERR}
+ #
+-MAKE= gmake
++#MAKE= gmake
++MAKE= ${GMAKE}
+ #
+ endif
+ 
+@@ -1469,7 +1472,8 @@
+ else
+ ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
+ endif
+-CFLAGS= ${ICFLAGS} ${CCOPT}
++#CFLAGS= ${ICFLAGS} ${CCOPT}
++CFLAGS+= ${ICFLAGS} ${CCOPT}
+ 
+ # Required flags to link files for calc
+ #
