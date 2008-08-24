@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.158 2008/07/20 01:07:59 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.159 2008/08/24 17:14:31 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -45,8 +45,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 9;
-my $micro = 10;
+my $minor = 10;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1046,6 +1046,150 @@ sub checkpatch {
 	close(IN);
 }
 
+sub check_depends_syntax {
+	my $tmp = shift;
+	my $file = shift;
+	my (%seen_depends, $j);
+
+	if (!defined $ENV{'PORTSDIR'}) {
+		$ENV{'PORTSDIR'} = $portsdir;
+	}
+	foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
+		$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
+		$j = $1;
+		$seen_depends{$j}++;
+		if ($j ne 'DEPENDS' &&
+			$i =~ /^\${([A-Z_]+DEPENDS)}\s*$/ &&
+			$seen_depends{$1} &&
+			$j ne $1)
+		{
+			print "OK: $j refers to $1, skipping checks.\n"
+				if ($verbose);
+			next;
+		}
+		print "OK: checking ports listed in $j.\n"
+			if ($verbose);
+		foreach my $k (split(/\s+/, $i)) {
+			my @l = split(':', $k);
+
+			print "OK: checking dependency value for $j.\n"
+				if ($verbose);
+			if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)}/) {
+				&perror("WARN", $file, -1, "do not set $j to $k. ".
+					"Instead, explicity list out required $j dependencies.");
+			}
+
+			if (($j ne 'DEPENDS'
+			  && scalar(@l) != 2 && scalar(@l) != 3)) {
+				&perror("WARN", $file, -1, "wrong dependency value ".
+					"for $j. $j requires ".
+						"2 or 3 ".
+					"colon-separated tuples.");
+				next;
+			}
+			my %m = ();
+			$m{'dep'} = $l[0];
+			$m{'dir'} = $l[1];
+			$m{'tgt'} = $l[2];
+			print "OK: dep=\"$m{'dep'}\", ".
+				"dir=\"$m{'dir'}\", tgt=\"$m{'tgt'}\"\n"
+				if ($verbose);
+
+			# check USE_PERL5
+			if ($m{'dep'} =~ /^perl5(\.\d+)?$/) {
+				&perror("WARN", $file, -1, "dependency to perl5 ".
+					"listed in $j. consider using ".
+					"USE_PERL5.");
+			}
+
+			# check USE_ICONV
+			if ($m{'dep'} =~ /^(iconv\.\d+)$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j.  consider using ".
+					"USE_ICONV.");
+			}
+
+			# check USE_GETTEXT
+			if ($m{'dep'} =~ /^(intl\.\d+)$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j.  consider using ".
+					"USE_GETTEXT.");
+			}
+
+			# check USE_GMAKE
+			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j. consider using ".
+					"USE_GMAKE.");
+			}
+
+			# check USE_QT
+			if ($m{'dep'} =~ /^(qt\d)+$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j. consider using ".
+					"USE_QT.");
+			}
+
+			# check LIBLTDL
+			if ($m{'dep'} =~ /^(ltdl\.\d)+$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j.  consider using ".
+					"USE_LIBLTDL.");
+			}
+
+			# check CDRTOOLS
+			if ($m{'dir'} =~ /(cdrtools|cdrtools-cjk)$/) {
+				&perror("WARN", $file, -1, "dependency to $1 ".
+					"listed in $j.  consider using ".
+					"USE_CDRTOOLS.");
+			}
+
+			# check GHOSTSCRIPT
+			if ($m{'dep'} eq "gs") {
+				&perror("WARN", $file, -1, "dependency to gs ".
+					"listed in $j.  consider using ".
+					"USE_GHOSTSCRIPT(_BUILD|_RUN).");
+			}
+
+			# check JAVALIBDIR
+			if ($m{'dep'} =~ m|share/java/classes|) {
+				&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
+					"in BUILD_DEPENDS/RUN_DEPENDS to define ".
+					"dependencies on JAR files installed in ".
+					"\${JAVAJARDIR}");
+			}
+
+			# check backslash in LIB_DEPENDS
+			if ($osname eq 'NetBSD' && $j eq 'LIB_DEPENDS'
+			 && $m{'dep'} =~ /\\\\./) {
+				&perror("WARN", $file, -1, "use of backslashes in ".
+					"$j is deprecated.");
+			}
+
+			# check for PREFIX
+			if ($m{'dep'} =~ /\${PREFIX}/) {
+				&perror("FATAL", $file, -1, "\${PREFIX} must not be ".
+					"contained in *_DEPENDS. ".
+					"use \${LOCALBASE} or ".
+					"\${X11BASE} instead.");
+			}
+
+			# check port dir existence
+			$k = $m{'dir'};
+			$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
+			$k =~ s/\$[\({]PORTSDIR[\)}]/$ENV{'PORTSDIR'}/;
+			if (! -d $k) {
+				&perror("WARN", $file, -1, "no port directory $k ".
+					"found, even though it is ".
+					"listed in $j.");
+			} else {
+				print "OK: port directory $k found.\n"
+					if ($verbose);
+			}
+		}
+	}
+}
+
 #
 # Makefile
 #
@@ -1738,7 +1882,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	# whole file: check for --mandir and --infodir when GNU_CONFIGURE
 	#
 	if ($makevar{GNU_CONFIGURE} ne '' &&
-		$makevar{CONFIGURE_ARGS} =~ /(man|info)dir/) {
+		$makevar{CONFIGURE_ARGS} =~ /--(man|info)dir/) {
 		&perror("WARN", $file, -1, "--mandir and --infodir are not needed ".
 			"in CONFIGURE_ARGS as they are already set in bsd.port.mk");
 	}
@@ -1933,6 +2077,16 @@ DIST_SUBDIR EXTRACT_ONLY
 	if (@cat == 0) {
 		&perror("FATAL", $file, -1, "CATEGORIES left blank. set it to \"misc\"".
 		" if nothing seems apropriate.");
+	} else {
+		my %seencat = ();
+		foreach my $cat (@cat) {
+			if ($seencat{$cat}) {
+				&perror("WARN", $file, -1, "Duplicate category, $cat specified".
+					" in CATEGORIES.");
+			} else {
+				$seencat{$cat} = 1;
+			}
+		}
 	}
 
 	if ($use_java && !grep /^java$/, @cat) {
@@ -2365,145 +2519,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 	if ($tmp =~ /^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
 
-		my %seen_depends;
-
-		if (!defined $ENV{'PORTSDIR'}) {
-			$ENV{'PORTSDIR'} = $portsdir;
-		}
-		foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
-			$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
-			$j = $1;
-			$seen_depends{$j}++;
-			if ($j ne 'DEPENDS' &&
-				$i =~ /^\${([A-Z_]+DEPENDS)}\s*$/ &&
-				$seen_depends{$1} &&
-				$j ne $1)
-			{
-				print "OK: $j refers to $1, skipping checks.\n"
-					if ($verbose);
-				next;
-			}
-			print "OK: checking ports listed in $j.\n"
-				if ($verbose);
-			foreach my $k (split(/\s+/, $i)) {
-				my @l = split(':', $k);
-
-				print "OK: checking dependency value for $j.\n"
-					if ($verbose);
-				if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)}/) {
-					&perror("WARN", $file, -1, "do not set $j to $k. ".
-						"Instead, explicity list out required $j dependencies.");
-				}
-
-				if (($j ne 'DEPENDS'
-				  && scalar(@l) != 2 && scalar(@l) != 3)) {
-					&perror("WARN", $file, -1, "wrong dependency value ".
-						"for $j. $j requires ".
-							"2 or 3 ".
-						"colon-separated tuples.");
-					next;
-				}
-				my %m = ();
-				$m{'dep'} = $l[0];
-				$m{'dir'} = $l[1];
-				$m{'tgt'} = $l[2];
-				print "OK: dep=\"$m{'dep'}\", ".
-					"dir=\"$m{'dir'}\", tgt=\"$m{'tgt'}\"\n"
-					if ($verbose);
-
-				# check USE_PERL5
-				if ($m{'dep'} =~ /^perl5(\.\d+)?$/) {
-					&perror("WARN", $file, -1, "dependency to perl5 ".
-						"listed in $j. consider using ".
-						"USE_PERL5.");
-				}
-
-				# check USE_ICONV
-				if ($m{'dep'} =~ /^(iconv\.\d+)$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j.  consider using ".
-						"USE_ICONV.");
-				}
-
-				# check USE_GETTEXT
-				if ($m{'dep'} =~ /^(intl\.\d+)$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j.  consider using ".
-						"USE_GETTEXT.");
-				}
-
-				# check USE_GMAKE
-				if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j. consider using ".
-						"USE_GMAKE.");
-				}
-
-				# check USE_QT
-				if ($m{'dep'} =~ /^(qt\d)+$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j. consider using ".
-						"USE_QT.");
-				}
-
-				# check LIBLTDL
-				if ($m{'dep'} =~ /^(ltdl\.\d)+$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j.  consider using ".
-						"USE_LIBLTDL.");
-				}
-
-				# check CDRTOOLS
-				if ($m{'dir'} =~ /(cdrtools|cdrtools-cjk)$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-						"listed in $j.  consider using ".
-						"USE_CDRTOOLS.");
-				}
-
-				# check GHOSTSCRIPT
-				if ($m{'dep'} eq "gs") {
-					&perror("WARN", $file, -1, "dependency to gs ".
-						"listed in $j.  consider using ".
-						"USE_GHOSTSCRIPT(_BUILD|_RUN).");
-				}
-
-				# check JAVALIBDIR
-				if ($m{'dep'} =~ m|share/java/classes|) {
-					&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
-						"in BUILD_DEPENDS/RUN_DEPENDS to define ".
-						"dependencies on JAR files installed in ".
-						"\${JAVAJARDIR}");
-				}
-
-				# check backslash in LIB_DEPENDS
-				if ($osname eq 'NetBSD' && $j eq 'LIB_DEPENDS'
-				 && $m{'dep'} =~ /\\\\./) {
-					&perror("WARN", $file, -1, "use of backslashes in ".
-						"$j is deprecated.");
-				}
-
-				# check for PREFIX
-				if ($m{'dep'} =~ /\${PREFIX}/) {
-					&perror("FATAL", $file, -1, "\${PREFIX} must not be ".
-						"contained in *_DEPENDS. ".
-						"use \${LOCALBASE} or ".
-						"\${X11BASE} instead.");
-				}
-
-				# check port dir existence
-				$k = $m{'dir'};
-				$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
-				$k =~ s/\$[\({]PORTSDIR[\)}]/$ENV{'PORTSDIR'}/;
-				if (! -d $k) {
-					&perror("WARN", $file, -1, "no port directory $k ".
-						"found, even though it is ".
-						"listed in $j.");
-				} else {
-					print "OK: port directory $k found.\n"
-						if ($verbose);
-				}
-			}
-		}
+		check_depends_syntax($tmp, $file);
 
 		foreach my $i (@linestocheck) {
 			$tmp =~ s/$i[?+]?=[^\n]+\n//g;
@@ -2526,6 +2542,10 @@ FETCH_DEPENDS DEPENDS_TARGET
 	$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
 
 	&checkearlier($file, $tmp, @varnames);
+
+	# Check depends that might be specified based on the WITH_/WITHOUT_
+	# arguments and other external variables.
+	check_depends_syntax($tmp, $file);
 
 	# check WRKSRC/NO_WRKSUBDIR
 	#
