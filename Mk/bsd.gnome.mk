@@ -709,6 +709,7 @@ ltasneededhack_PRE_PATCH=	if [ -f ${WRKDIR}/gnome-libtool ]; then \
 .ifdef _USE_GNOME
 . if ${USE_GNOME:Mltverhack*}!= "" || ${USE_GNOME:Mltasneededhack}!= ""
 GNOME_PRE_PATCH+=	${lthacks_PRE_PATCH}
+CONFIGURE_ENV+=		${lthacks_CONFIGURE_ENV}
 . endif
 . for component in ${_USE_GNOME_ALL}
 .  if ${_USE_GNOME:M${component}}!=""
