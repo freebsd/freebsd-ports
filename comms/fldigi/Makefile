@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	2.10.3
+PORTVERSION=	3.01
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
@@ -22,6 +22,7 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \
 		boost_wave:${PORTSDIR}/devel/boost \
 		pulse:${PORTSDIR}/audio/pulseaudio
 
+USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
