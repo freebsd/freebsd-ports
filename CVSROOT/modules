@@ -1803,6 +1803,7 @@ cue2toc                         ports/audio/cue2toc
 cuecat                          ports/misc/cuecat
 cuetools                        ports/audio/cuetools
 cultivation                     ports/games/cultivation
+cuneiform                       ports/graphics/cuneiform
 cunit                           ports/devel/cunit
 cups                            ports/print/cups
 cups-base                       ports/print/cups-base
@@ -3738,7 +3739,6 @@ gcb                             ports/x11/gcb
 gcc-ooo                         ports/lang/gcc-ooo
 gcc28                           ports/lang/gcc28
 gcc295                          ports/lang/gcc295
-gcc32                           ports/lang/gcc32
 gcc33                           ports/lang/gcc33
 gcc34                           ports/lang/gcc34
 gcc41                           ports/lang/gcc41
