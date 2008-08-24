@@ -29,7 +29,7 @@ include/xmlrpc.h
 include/xmlrpc_cgi.h
 include/xmlrpc_client.h
 include/xmlrpc_server.h
-include/xmlrpc_server_abyss.h
+include/xmlrpc_abyss.h
 include/xmlrpc_server_w32httpsys.h
 lib/libxmlrpc++.a
 lib/libxmlrpc.a
