@@ -1,3 +1,3 @@
 lib/libonew-freewnn.a
-share/doc/ja-onew-freewnn/README.ONEW
-@dirrm share/doc/ja-onew-freewnn
+%%PORTDOCS%%share/doc/ja-onew-freewnn/README.ONEW
+%%PORTDOCS%%@dirrm share/doc/ja-onew-freewnn
