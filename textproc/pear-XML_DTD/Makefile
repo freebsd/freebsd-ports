@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_DTD
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
