@@ -1,0 +1,53 @@
+bin/aubioonset
+bin/aubiotrack
+bin/aubionotes
+include/aubio/config.h
+include/aubio/aubio.h
+include/aubio/types.h
+include/aubio/phasevoc.h
+include/aubio/mathutils.h
+include/aubio/fft.h
+include/aubio/sample.h
+include/aubio/hist.h
+include/aubio/scale.h
+include/aubio/resample.h
+include/aubio/onsetdetection.h
+include/aubio/tss.h
+include/aubio/peakpick.h
+include/aubio/biquad.h
+include/aubio/pitchdetection.h
+include/aubio/pitchmcomb.h
+include/aubio/pitchyin.h
+include/aubio/pitchschmitt.h
+include/aubio/pitchfcomb.h
+include/aubio/pitchyinfft.h
+include/aubio/beattracking.h
+include/aubio/onset.h
+include/aubio/tempo.h
+include/aubio/filter.h
+include/aubio/aubioext.h
+include/aubio/jackio.h
+include/aubio/sndfileio.h
+include/aubio/midi/midi.h
+include/aubio/midi/list.h
+include/aubio/midi/timer.h
+include/aubio/midi/midi_file.h
+include/aubio/midi/midi_driver.h
+include/aubio/midi/midi_event.h
+include/aubio/midi/midi_track.h
+include/aubio/midi/midi_player.h
+include/aubio/midi/midi_parser.h
+@dirrm include/aubio/midi
+@dirrm include/aubio
+lib/libaubio.so.3
+lib/libaubio.so
+lib/libaubio.la
+lib/libaubio.a
+lib/libaubioext.so.3
+lib/libaubioext.so
+lib/libaubioext.la
+lib/libaubioext.a
+libdata/pkgconfig/aubio.pc
+share/sounds/aubio/woodblock.aiff
+@dirrm share/sounds/aubio
+@dirrm share/sounds

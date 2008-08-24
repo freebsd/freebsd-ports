@@ -42,6 +42,7 @@
     SUBDIR += asunder
     SUBDIR += atunes
     SUBDIR += aube
+    SUBDIR += aubio
     SUBDIR += audacious-crossfade
     SUBDIR += audacious-dumb
     SUBDIR += audacious-mac
