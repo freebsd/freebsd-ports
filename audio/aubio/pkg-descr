@@ -1,0 +1,12 @@
+aubio is a library for audio labelling.  Its features include
+segmenting a sound file before each of its attacks, performing pitch
+detection, tapping the beat and producing midi streams from live
+audio.  The name aubio comes from 'audio' with a typo: several
+transcription errors are likely to be found in the results too.
+
+The aim of this project is to provide these automatic labelling
+features to other audio softwares.  Functions can be used offline
+in sound editors and software samplers, or online in audio effects
+and virtual instruments.
+
+WWW:	http://aubio.org/
