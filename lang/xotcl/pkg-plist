@@ -16,7 +16,6 @@
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/RDFCreator.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/RDFTriple.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/pkgIndex.tcl
-%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/rdfExample.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/rdfRecreatorVisitor.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/rdf/xoRDF.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/registry/Registry.xotcl
@@ -35,7 +34,6 @@
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/sgml.tcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xml.tcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xml.xotcl
-%%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xmlExample.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xmlRecreatorVisitor.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/xml/xoXML.xotcl
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/patterns/ChainOfResponsibility.xotcl
