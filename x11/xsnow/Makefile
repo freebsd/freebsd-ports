@@ -25,7 +25,7 @@ pre-build:
 	 -e 's: MANDIR .*:MANDIR=${PREFIX}/man/man6:' \
 	 -e 's: MANSUFFIX .*:MANSUFFIX=6:' <Makefile~ >Makefile
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/man/man6
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
