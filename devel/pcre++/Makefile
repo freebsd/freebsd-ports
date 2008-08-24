@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 MAN3=		Pcre.3
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+DOCSDIR=	${PREFIX}/share/doc/lib${PORTNAME}-${PORTVERSION}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
 
