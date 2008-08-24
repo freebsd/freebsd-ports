@@ -75,9 +75,9 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1 ${PREFIX}/man/man1/rskkserv.1
-	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1.ja_JP.eucJP ${PREFIX}/man/ja/man1/rskkserv.1
 .endif
+	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1 ${MANPREFIX}/man/man1/rskkserv.1
+	${INSTALL_MAN} ${WRKSRC}/doc/rskkserv.1.ja_JP.eucJP ${MANPREFIX}/man/ja/man1/rskkserv.1
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/conf-o2n.rb ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/rskkserv.conf ${EXAMPLESDIR}
