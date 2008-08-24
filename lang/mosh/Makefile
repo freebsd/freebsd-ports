@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	mosh-scheme
@@ -24,7 +24,7 @@ USE_GCC=	4.2+
 CFLAGS+=	"-O0"
 CXXFLAGS+=	"-O0"
 
-SCMS=		all-tests.scm repl.scm
+SCMS=		all-tests.scm psyntax.scm repl.scm
 
 do-install:
 	${MKDIR} ${DATADIR}
