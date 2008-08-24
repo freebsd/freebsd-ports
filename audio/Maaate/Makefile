@@ -8,20 +8,17 @@
 
 PORTNAME=	Maaate
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/M/m/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@SYSTEM.PL
 COMMENT=	MPEG audio analysis toolkit
-
-BROKEN=		checksum mismatch due to fetch grabbing an error page instead of the distfiles
-DEPRICATED=	Homepage and distfiles have disappeared, last update was in 2002
-EXPIRATION_DATE=2008-10-01
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
