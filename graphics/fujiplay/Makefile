@@ -18,13 +18,14 @@ COMMENT=	Digital camera downloading tool for Fujifilm digital cameras
 
 NO_WRKSUBDIR=	yes
 
-PORTSDOC=	README fujiplay.lsm mx700-commands.html
+PLIST_FILES=	bin/fujiplay bin/yycc2ppm
+PORTDOCS=	README fujiplay.lsm mx700-commands.html
 
 do-install:
 	(cd ${WRKDIR}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${PREFIX}/bin)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/fujiplay
-.for f in ${PORTSDOC}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/share/doc/fujiplay
 .endfor
 .endif
