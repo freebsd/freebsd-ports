@@ -538,8 +538,8 @@ www/cherokee/index.html
 @dirrm %%DATADIR%%/admin/static/images
 @dirrm %%DATADIR%%/admin/static/css
 @dirrm %%DATADIR%%/admin/static
-@dirrm %%DATADIR%%/admin
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/admin
+@dirrmtry %%DATADIR%%
 @dirrm lib/cherokee
 @dirrm include/cherokee
 @dirrmtry etc/cherokee/ssl
