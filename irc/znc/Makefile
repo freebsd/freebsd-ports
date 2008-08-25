@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.056
+PORTVERSION=	0.058
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	elvstone@gmail.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An advanced IRC bouncer
 
 GNU_CONFIGURE=	yes
@@ -57,5 +57,8 @@ PLIST_SUB+=		SASL=""
 .else
 PLIST_SUB+=		SASL="@comment "
 .endif
+
+MANCOMPREEED=	yes
+MAN1=		znc.1.gz znc-buildmod.1.gz znc-config.1.gz
 
 .include <bsd.port.post.mk>
