@@ -2281,3 +2281,5 @@
 @dirrm %%DATADIR%%/themes/ShinyMetal/backgrounds
 @dirrm %%DATADIR%%/themes/ShinyMetal/ABOUT
 @dirrm %%DATADIR%%/themes/ShinyMetal
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%
