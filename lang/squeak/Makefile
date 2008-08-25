@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		squeak
-PORTVERSION=		3.7
-PORTREVISION=	3
+PORTVERSION=		3.9
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
@@ -18,13 +17,12 @@ MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/unix-linux/ \
 			http://www.squeakland.org/installers/:plugin \
-			http://www.squeakland.jp/plugin/installers/:jpplugin \
+			http://squeakland.jp/plugin/installers/:jpplugin \
 			http://squeak.610t.org/patches/:ximpatch
 DISTFILES=		Squeak-${VMVERSION}.src${EXTRACT_SUFX} \
-			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip \
-			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip \
+			Squeak${IMAGEVERSION}-${PATCHNUMBER}.zip \
 			SqueakV3.sources.gz \
-			${JAPANESE_PLUGIN_IMAGE}:jpplugin
+			SqueakV39.sources.gz
 EXTRACT_ONLY=		Squeak-${VMVERSION}.src${EXTRACT_SUFX}
 
 ##################################################
@@ -33,18 +31,19 @@ COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
 BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
+			ffi:${PORTSDIR}/devel/libffi
 
 ##################################################
-VMVERSION=		3.7-7
-IMAGEVERSION=		3.7
-PATCHNUMBER=		5989
+VMVERSION=		3.9-7
+IMAGEVERSION=		3.9-final
+PATCHNUMBER=		7067
+IMAGEDIR=		Squeak${IMAGEVERSION}-${PATCHNUMBER}
 
 ##################################################
 OPTIONS+=		MPG_MMX		"MMX support (MPG plugin)" off
 OPTIONS+=		NPSQUEAK	"browser plugin support" on
 OPTIONS+=		RFB		"remote frame buffer support" on
-OPTIONS+=		FFI		"libffi support" off
 OPTIONS+=		X		"X Windows support" on
 OPTIONS+=		XIM		"XIM support (Implies X)" off
 
@@ -53,7 +52,7 @@ OPTIONS+=		XIM		"XIM support (Implies X)" off
 ##################################################
 XIM_PATCH=		SqueakImmX11Plugin3a${EXTRACT_SUFX}
 PLUGIN_IMAGE=		SqueakPlugin.zip
-JAPANESE_PLUGIN_IMAGE=		SqueakPlugin2005J.zip
+JAPANESE_PLUGIN_IMAGE=		SqueakPlugin2005J2.zip
 
 ##################################################
 DIST_SUBDIR=		squeak
@@ -69,10 +68,8 @@ SHAREMODE=		644
 # shared Libaries are to be installed in:
 LDCONFIG_DIRS=		${PREFIX}/share/squeak/${VMVERSION}
 
-FILES_TO_GZIP=		Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.image \
-			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.changes \
-			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.image \
-			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.changes
+FILES_TO_GZIP=		${IMAGEDIR}/Squeak${IMAGEVERSION}-${PATCHNUMBER}.image \
+			${IMAGEDIR}/Squeak${IMAGEVERSION}-${PATCHNUMBER}.changes
 
 ##################################################
 # Configure and Build
@@ -120,17 +117,9 @@ PLIST_X=
 CONFIGURE_ARGS+=	--enable-mpg-mmx
 .endif
 
-.if defined(WITH_FFI)
-LIB_DEPENDS+=		ffi.2:${PORTSDIR}/devel/libffi
-PLIST_FFI=
-EXT_PLUGINS+=		SqueakFFIPrims
-.else
-CONFIGURE_ARGS+=	--without-ffi
-PLIST_FFI=		"@comment feature not wanted - "
-.endif
-
 .if defined(WITH_XIM)
-DISTFILES+=		${XIM_PATCH}:ximpatch
+DISTFILES+=		${XIM_PATCH}:ximpatch \
+			${JAPANESE_PLUGIN_IMAGE}:jpplugin
 PLIST_XIM=
 WITH_X=			yes
 USE_ICONV=		yes
@@ -156,7 +145,6 @@ PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			VMVERSION=${VMVERSION}\
 			PLIST_NPSQUEAK=${PLIST_NPSQUEAK}\
 			PLIST_X=${PLIST_X} \
-			PLIST_FFI=${PLIST_FFI} \
 			PLIST_XIM=${PLIST_XIM}
 
 ##################################################
@@ -175,7 +163,7 @@ post-patch:
 		${PATCH} -S + -p0 < ImmX11.patch
 .endif
 # Fix external plugins
-	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin Squeak3D XDisplayControlPlugin ${EXT_PLUGINS}" > ${WRKSRC}/platforms/unix/src/plugins.ext
+	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin PseudoTTYPlugin UnixOSProcessPlugin XDisplayControlPlugin Squeak3D AioPlugin ${EXT_PLUGINS}" > ${WRKSRC}/platforms/unix/src/plugins.ext
 
 ##################################################
 pre-configure:
@@ -192,15 +180,16 @@ post-configure:
 post-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV3.sources.gz ${PREFIX}/share/squeak/)
 	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d SqueakV3.sources.gz)
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip -d ${WRKDIR})
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip -d ${WRKDIR})
-	(cd ${WRKDIR} && ${INSTALL_DATA} ReadMe.txt ${PREFIX}/share/squeak/)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV39.sources.gz ${PREFIX}/share/squeak/)
+	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d SqueakV39.sources.gz)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}.zip -d ${WRKDIR} Squeak${IMAGEVERSION}-${PATCHNUMBER}/*)
 .if defined(WITH_NPSQUEAK)
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u ${PLUGIN_IMAGE} -d ${WRKDIR})
 .endif
 .for file in ${FILES_TO_GZIP}
 	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
+	(cd ${WRKDIR} && ${INSTALL_DATA} ${IMAGEDIR}/SqueakV39.sources ${PREFIX}/share/squeak/${VMVERSION})
 	${INSTALL_SCRIPT} ${WRKSRC}/build/inisqueak ${PREFIX}/bin/inisqueak
 	${CHMOD} 755 ${PREFIX}/bin/inisqueak
 	@${CAT} ${PKGMESSAGE}
