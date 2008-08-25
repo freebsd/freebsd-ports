@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://code.launchpad.net/bzrtools/stable/${PORTVERSION}/+download/
@@ -17,8 +17,7 @@ COMMENT=	Extensions to devel/bazaar-ng
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 
 OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" on \
-		RSYNC    "Enable rsync for rspush" on \
-		BAZ      "Enable baz-import" off
+		RSYNC    "Enable rsync for rspush" on
 
 WRKSRC=	${WRKDIR}/bzrtools
 USE_PYTHON=	2.4+
@@ -27,16 +26,12 @@ PYDISTUTILS_PKGNAME=	BzrTools
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GRAPHVIZ)
+.if !defined(WITHOUT_GRAPHVIZ)
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.if defined(WITH_RSYNC)
+.if !defined(WITHOUT_RSYNC)
 RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
-.endif
-
-.if defined(WITH_BAZ)
-RUN_DEPENDS+=	baz:${PORTSDIR}/devel/bazaar
 .endif
 
 .include <bsd.port.post.mk>
