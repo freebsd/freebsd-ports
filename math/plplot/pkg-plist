@@ -120,6 +120,7 @@ libdata/pkgconfig/plplotd.pc
 libdata/pkgconfig/plplotd-c++.pc
 libdata/pkgconfig/plplotd-f77.pc
 libdata/pkgconfig/plplotd-f95.pc
+%%TCLTK%%libdata/pkgconfig/plplotd-tcl.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
@@ -128,11 +129,11 @@ libdata/pkgconfig/plplotd-f95.pc
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.1st.csa
-%%PORTDOCS%%%%DOCSDIR%%/README.1st.nn
+%%DOCSDIR%%/README.1st.nn
 %%PORTDOCS%%%%DOCSDIR%%/README.csa
 %%PORTDOCS%%%%DOCSDIR%%/README.drivers
-%%PORTDOCS%%%%DOCSDIR%%/README.nn
-%%PORTDOCS%%%%DOCSDIR%%/README.pkg-config
+%%DOCSDIR%%/README.nn
+%%DOCSDIR%%/README.pkg-config
 %%DATADIR%%%%VERSION%%/cglobe.map
 %%DATADIR%%%%VERSION%%/examples/Makefile
 %%DATADIR%%%%VERSION%%/examples/c/Makefile
@@ -417,7 +418,7 @@ libdata/pkgconfig/plplotd-f95.pc
 @dirrm %%DATADIR%%%%VERSION%%/examples/c
 @dirrm %%DATADIR%%%%VERSION%%/examples
 @dirrm %%DATADIR%%%%VERSION%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/plplot%%VERSION%%/driversd
 @dirrm lib/plplot%%VERSION%%
 @dirrm include/plplot
