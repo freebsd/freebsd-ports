@@ -96,6 +96,7 @@
     SUBDIR += junipoll
     SUBDIR += kismet
     SUBDIR += knowlan
+    SUBDIR += lanmap
     SUBDIR += libsmi
     SUBDIR += macroscope
     SUBDIR += mbrowse

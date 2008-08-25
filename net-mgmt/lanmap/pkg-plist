@@ -1,0 +1,28 @@
+bin/lanmap
+share/lanmap/data/mac_vendor
+share/lanmap/graph/img/bridge.gif
+share/lanmap/graph/img/bridge.png
+share/lanmap/graph/img/bridge.svg
+share/lanmap/graph/img/cloud.gif
+share/lanmap/graph/img/cloud.png
+share/lanmap/graph/img/cloud.svg
+share/lanmap/graph/img/desktop.gif
+share/lanmap/graph/img/desktop.png
+share/lanmap/graph/img/desktop.svg
+share/lanmap/graph/img/printer.gif
+share/lanmap/graph/img/printer.png
+share/lanmap/graph/img/printer.svg
+share/lanmap/graph/img/router.gif
+share/lanmap/graph/img/router.png
+share/lanmap/graph/img/router.svg
+share/lanmap/graph/img/server.gif
+share/lanmap/graph/img/server.png
+share/lanmap/graph/img/server.svg
+share/lanmap/graph/img/switch.gif
+share/lanmap/graph/img/switch.png
+share/lanmap/graph/lanmap.header
+@dirrm share/lanmap/graph/img
+@dirrm share/lanmap/graph
+@dirrm share/lanmap/data/graph
+@dirrm share/lanmap/data
+@dirrm share/lanmap
