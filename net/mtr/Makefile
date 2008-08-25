@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.73
-PORTREVISION=	1
+PORTVERSION=	0.74
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
@@ -17,34 +16,36 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19 autoheader:262 autoconf:262
+GNU_CONFIGURE=	yes
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
 
-.if !defined(WITHOUT_X11)
-.if defined(WITH_GTK1)
-USE_GNOME=	gtk12
-PKGNAMESUFFIX=	-gtk1
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=--without-gtk
 .else
 USE_GNOME=	gtk20
-CONFIGURE_ARGS=--enable-gtk2
-.endif
-USE_XORG=	x11
-CONFIGURE_ARGS+=--with-gtk-prefix=${LOCALBASE}
-.else
-PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant
 .endif
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e '/getopt/d' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|getopt.*$$(OBJEXT)||g ; \
+		 s|getopt.*[ch]||g ; \
+		 /getopt.*Po/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
+.if ${OSVERSION} < 700024
+	@${REINPLACE_CMD} -e \
+		's|-Wno-pointer-sign||' ${WRKSRC}/configure
+.endif
 
 post-install:
 	@${ECHO_MSG} ""
@@ -54,4 +55,4 @@ post-install:
 	@${ECHO_MSG} "in file ${WRKSRC}/SECURITY (not installed)"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
