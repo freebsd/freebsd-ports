@@ -34,6 +34,80 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="73ec1008-72f0-11dd-874b-0030843d3802">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>linux-opera</name>
+	<range><lt>9.52.20080814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Opera Team reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/view/893/">
+	  <p>Scripts are able to change the addresses of framed pages that
+	    come from the same site. Due to a flaw in the way that Opera checks
+	    what frames can be changed, a site can change the address of frames
+	    on other sites inside any window that it has opened. This allows
+	    sites to open pages from other sites, and display misleading
+	    information on them.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/894/">
+	  <p>Custom shortcut and menu commands can be used to activate external
+	    applications. In some cases, the parameters passed to these
+	    applications are not prepared correctly, and may be created from
+	    uninitialized memory. These may be misinterpreted as additional
+	    parameters, and depending on the application, this could allow
+	    execution of arbitrary code.</p>
+	  <p>Successful exploitation requires convincing the user to modify
+	    their shortcuts or menu files appropriately, pointing to an
+	    appropriate target application, then to activate that shortcut at
+	    an appropriate time. To inject code, additional means will have to
+	    be employed.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/895/">
+	  <p>When insecure pages load content from secure sites into a frame,
+	    they can cause Opera to incorrectly report the insecure site as
+	    being secure. The padlock icon will incorrectly be shown, and the
+	    security information dialog will state that the connection is
+	    secure, but without any certificate information.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/896/">
+	  <p>As a security precaution, Opera does not allow Web pages to
+	    link to files on the user's local disk. However, a flaw exists
+	    that allows Web pages to link to feed source files on the
+	    user's computer. Suitable detection of JavaScript events and
+	    appropriate manipulation can unreliably allow a script to
+	    detect the difference between successful and unsuccessful
+	    subscriptions to these files, to allow it to discover if the
+	    file exists or not. In most cases the attempt will fail.</p>
+	  </blockquote>
+	  <blockquote cite="http://www.opera.com/support/search/view/897/">
+	    <p>It has been reported that when a user subscribes to a news
+	      feed using the feed subscription button, the page address
+	      can be changed. This causes the address field not to update
+	      correctly. Although this can mean that that misleading
+	      information can be displayed in the address field, it can
+	      only leave the attacking page's address in the address bar,
+	      not a trusted third party address.</p>
+	  </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/search/view/893/</url>
+      <url>http://www.opera.com/support/search/view/894/</url>
+      <url>http://www.opera.com/support/search/view/895/</url>
+      <url>http://www.opera.com/support/search/view/896/</url>
+      <url>http://www.opera.com/support/search/view/897/</url>
+    </references>
+    <dates>
+      <discovery>2008-08-20</discovery>
+      <entry>2008-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d864a0a7-6f27-11dd-acfe-00104b9e1a4a">
     <topic>gnutls -- "gnutls_handshake()" Denial of Service</topic>
     <affects>
