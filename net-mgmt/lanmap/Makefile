@@ -1,0 +1,25 @@
+# New ports collection makefile for:	lanmap
+# Date created:		2008-08-21
+# Whom:				Bapt <baptiste.daroussin@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	lanmap
+DISTVERSION=	2006-03-07-rev81
+CATEGORIES=	net-mgmt
+MASTER_SITES=	http://www.parseerror.com/lanmap/rev/
+
+MAINTAINER=	baptiste.daroussin@gmail.com
+COMMENT=	Lanmap sits quietly on a network and builds a picture of what it sees
+
+RUN_DEPENDS=	twopi:${PORTSDIR}/graphics/graphviz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
+USE_ZIP=	yes
+
+.include <bsd.port.pre.mk>
+post-extract:
+	${CHMOD} 755 ${WRKSRC}/configure
+.include <bsd.port.post.mk>
