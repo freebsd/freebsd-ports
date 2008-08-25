@@ -697,6 +697,7 @@ atunes                          ports/audio/atunes
 atutor                          ports/www/atutor
 aub                             ports/news/aub
 aube                            ports/audio/aube
+aubio                           ports/audio/aubio
 auctex                          ports/print/auctex
 audacious                       ports/multimedia/audacious
 audacious-crossfade             ports/audio/audacious-crossfade
@@ -3240,6 +3241,7 @@ florist-gpl                     ports/devel/florist-gpl
 flounder                        ports/science/flounder
 flow-extract                    ports/net-mgmt/flow-extract
 flow-tools                      ports/net-mgmt/flow-tools
+flowcanvas                      ports/x11-toolkits/flowcanvas
 flowd                           ports/net-mgmt/flowd
 flowdesigner                    ports/devel/flowdesigner
 flowgrep                        ports/net/flowgrep
@@ -5193,7 +5195,6 @@ iiimf-protocol-lib              ports/textproc/iiimf-protocol-lib
 iiimf-server                    ports/textproc/iiimf-server
 iiimf-x                         ports/textproc/iiimf-x
 iiimf-x-lib                     ports/textproc/iiimf-x-lib
-iip                             ports/irc/iip
 iiview                          ports/graphics/iiview
 ija                             ports/news/ija
 ike                             ports/security/ike
