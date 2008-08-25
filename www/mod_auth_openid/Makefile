@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 
@@ -26,4 +27,10 @@ CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		Doesn't compile on 6.x
+.endif
+
+.include <bsd.port.post.mk>
