@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtse
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://computers.douglasthrift.net/searchengine/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
