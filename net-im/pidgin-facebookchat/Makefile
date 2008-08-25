@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-facebookchat
-PORTVERSION=	1.30
+PORTVERSION=	1.35
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
@@ -24,7 +24,8 @@ USE_BZIP2=	yes
 PIXMAPS_DIR=	${PREFIX}/share/pixmaps/pidgin/protocols
 
 do-patch:
-	${REINPLACE_CMD} "s#i686-pc-freebsd6.0-gcc#${CC}#" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s#i686-pc-freebsd6.0-gcc#${CC}#; s#/usr/local/#${LOCALBASE}/#g" \
+		${WRKSRC}/Makefile
 
 do-build:
 	${MAKE} -C ${WRKSRC} libfacebookbsd60.so
