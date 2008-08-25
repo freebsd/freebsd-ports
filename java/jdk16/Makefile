@@ -61,16 +61,17 @@ LATEST_LINK=	jdk16
 TZUPDATE_VERSION=	1_3_6
 TZUPDATE_TZVERSION=	2008c
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
+NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0 \
+			${LOCALBASE}/diablo-jdk1.5.0 \
 			${LOCALBASE}/jdk1.6.0 \
 			${LOCALBASE}/jdk1.5.0
 .endif
 
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.6.0 \
 			${LOCALBASE}/linux-sun-jdk1.5.0
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
@@ -107,10 +108,9 @@ WITH_LINUX_BOOTSTRAP=	YES
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.5.0
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
 .endif
-
-BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
 
 .if !defined(WITHOUT_WEB)
 USE_GNOME=	desktopfileutils
@@ -120,8 +120,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xtst
-RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
-NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
+RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
+NO_CDROM=	Redistribution of pre-compiled binaries is not permitted
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${LOCALBASE}" \
@@ -191,46 +191,45 @@ DESKTOP_FILES=	../../deploy/src/desktop/freedesktop/applications/sun-java.deskto
 
 # Check for JDK sources and patch file
 .if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
+DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE})#{
-IGNORE += Please open http://download.java.net/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/index.html\n\
+DISTFILE_INSTRUCTIONS += Please open http://download.java.net/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/index.html\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
+DISTFILE_INSTRUCTIONS += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
 .endif#}
 .if !exists(${DISTDIR}/${JRL_BINFILE})#{
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-IGNORE += and the\n
+DISTFILE_INSTRUCTIONS += and the\n
 .endif#}
-IGNORE += Source Binaries, ${JRL_BINFILE}
+DISTFILE_INSTRUCTIONS += Source Binaries, ${JRL_BINFILE}
 .endif#}
 .if !exists(${DISTDIR}/${JRL_MOZFILE})#{
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-IGNORE += and the\n
+DISTFILE_INSTRUCTIONS += and the\n
 .endif#}
-IGNORE += Mozilla Headers, ${JRL_MOZFILE}
+DISTFILE_INSTRUCTIONS += Mozilla Headers, ${JRL_MOZFILE}
 .endif#}
-IGNORE += .\n\n
+DISTFILE_INSTRUCTIONS += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
-IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
 time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += Please download the patchset, ${PATCHSETFILE}, from\n\
+DISTFILE_INSTRUCTIONS += Please download the patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk16.html.\n\n
 .endif#}
-IGNORE += Please place the downloaded file(s) in ${DISTDIR}
-IGNORE += \n and restart the build.\n\n
+DISTFILE_INSTRUCTIONS += Please place the downloaded file(s) in ${DISTDIR}
+DISTFILE_INSTRUCTIONS += \n and restart the build.\n\n
 .endif#}
 
 pre-fetch:
@@ -243,6 +242,10 @@ pre-fetch:
 	@${ECHO_MSG} "enabled in the kernel and the linux procfs (linprocfs) filesystem"
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
+.endif
+.if defined(DISTFILE_INSTRUCTIONS)
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
+	@exit 1
 .endif
 
 # Get JRL agreement
@@ -302,24 +305,24 @@ post-patch:
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | ${AWK} '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
 		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
 		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
-	@if [ `/sbin/sysctl -n compat.linux.osname` != "Linux" ]; \
+	@if [ `${SYSCTL} -n compat.linux.osname` != "Linux" ]; \
 	then \
 		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
 		${ECHO_MSG} "to 'Linux' with the command:"; \
-		${ECHO_MSG} "	/sbin/sysctl compat.linux.osname=Linux"; \
+		${ECHO_MSG} "	${SYSCTL} compat.linux.osname=Linux"; \
 		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
 .if !defined(WITH_JAIL)#{
-	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
+	@if [ "`/sbin/mount | ${GREP} ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
 		${ECHO_MSG} "starting to build the native JDK 1.6.0." ; \
