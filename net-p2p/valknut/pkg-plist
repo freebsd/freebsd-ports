@@ -8,6 +8,7 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/bookmark_folder.xpm
 %%DATADIR%%/icons/appl/default/configure.xpm
 %%DATADIR%%/icons/appl/default/configure_22x22.xpm
+%%DATADIR%%/icons/appl/default/connect.xpm
 %%DATADIR%%/icons/appl/default/connect_creating.xpm
 %%DATADIR%%/icons/appl/default/connect_no.xpm
 %%DATADIR%%/icons/appl/default/connected.xpm
@@ -29,6 +30,7 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/filetype-video.xpm
 %%DATADIR%%/icons/appl/default/find.xpm
 %%DATADIR%%/icons/appl/default/find_22x22.xpm
+%%DATADIR%%/icons/appl/default/fish.xpm
 %%DATADIR%%/icons/appl/default/flag_bosnian.xpm
 %%DATADIR%%/icons/appl/default/flag_brazilian.xpm
 %%DATADIR%%/icons/appl/default/flag_czech.xpm
@@ -46,8 +48,8 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/flag_norway.xpm
 %%DATADIR%%/icons/appl/default/flag_poland.xpm
 %%DATADIR%%/icons/appl/default/flag_romania.xpm
-%%DATADIR%%/icons/appl/default/flag_serbia.xpm
 %%DATADIR%%/icons/appl/default/flag_russia.xpm
+%%DATADIR%%/icons/appl/default/flag_serbia.xpm
 %%DATADIR%%/icons/appl/default/flag_slovak.xpm
 %%DATADIR%%/icons/appl/default/flag_spain.xpm
 %%DATADIR%%/icons/appl/default/flag_sweden.xpm
@@ -57,15 +59,7 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/globe.xpm
 %%DATADIR%%/icons/appl/default/gv.xpm
 %%DATADIR%%/icons/appl/default/help.xpm
-%%DATADIR%%/icons/appl/default/icon_128x128.icns
-%%DATADIR%%/icons/appl/default/icon_128x128.png
-%%DATADIR%%/icons/appl/default/icon_16x16.png
-%%DATADIR%%/icons/appl/default/icon_22x22.png
 %%DATADIR%%/icons/appl/default/icon_22x22.xpm
-%%DATADIR%%/icons/appl/default/icon_24x24.png
-%%DATADIR%%/icons/appl/default/icon_32x32.png
-%%DATADIR%%/icons/appl/default/icon_48x48.png
-%%DATADIR%%/icons/appl/default/icon_64x64.png
 %%DATADIR%%/icons/appl/default/icon_operator.xpm
 %%DATADIR%%/icons/appl/default/icon_user.xpm
 %%DATADIR%%/icons/appl/default/icon_user_away.xpm
@@ -87,11 +81,14 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/transfer.xpm
 %%DATADIR%%/icons/appl/default/translate.xpm
 %%DATADIR%%/icons/appl/default/up.xpm
+%%DATADIR%%/icons/appl/default/update.xpm
+%%DATADIR%%/icons/appl/default/users.xpm
+%%DATADIR%%/icons/appl/default/users_22x22.xpm
 %%DATADIR%%/icons/appl/default/view_sidetree.xpm
-%%DATADIR%%/icons/emot/simple/emoticons.xml
-%%DATADIR%%/icons/emot/simple/simple-tango.xpm
 %%DATADIR%%/icons/emot/default/emoticons.xml
 %%DATADIR%%/icons/emot/default/emoticons.xpm
+%%DATADIR%%/icons/emot/simple/emoticons.xml
+%%DATADIR%%/icons/emot/simple/simple-tango.xpm
 %%DATADIR%%/icons/user/default/usericons.xml
 %%DATADIR%%/icons/user/default/usericons.xpm
 %%DATADIR%%/translation/valknut.bs.qm
@@ -117,6 +114,14 @@ bin/valknut
 %%DATADIR%%/translation/valknut.sr@latin.qm
 %%DATADIR%%/translation/valknut.sr.qm
 %%DATADIR%%/translation/valknut.sv.qm
+share/icons/hicolor/16x16/apps/icon_16x16.png
+share/icons/hicolor/22x22/apps/icon_22x22.png
+share/icons/hicolor/24x24/apps/icon_24x24.png
+share/icons/hicolor/32x32/apps/icon_32x32.png
+share/icons/hicolor/48x48/apps/icon_48x48.png
+share/icons/hicolor/64x64/apps/icon_64x64.png
+share/icons/hicolor/128x128/apps/icon_128x128.png
+share/applications/valknut.desktop
 @dirrm %%DATADIR%%/translation
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
@@ -129,3 +134,20 @@ bin/valknut
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
