@@ -24,16 +24,16 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPE
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_ARCH}/${OPERA_LIB}/&,} \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
 #		http://www.opera.mirroarrr.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
+DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.51
+OPERA_VER=	9.52
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20080630
-OPERA_BUILD=	2061
+OPERA_DATE=	20080814
+OPERA_BUILD=	2091
 OPERA_LIB=	shared
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
