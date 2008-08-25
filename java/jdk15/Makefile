@@ -62,18 +62,16 @@ TZUPDATE_TZVERSION=	2008c
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS=	\
-	${LOCALBASE}/diablo-jdk1.6.0:${PORTSDIR}/java/diablo-jdk16 \
-	${LOCALBASE}/diablo-jdk1.5.0:${PORTSDIR}/java/diablo-jdk15 \
-	${LOCALBASE}/jdk1.5.0:${PORTSDIR}/java/jdk15 \
-	${LOCALBASE}/jdk1.6.0:${PORTSDIR}/java/jdk16 \
-	${LOCALBASE}/jdk1.4.2:${PORTSDIR}/java/jdk14
+NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0 \
+			${LOCALBASE}/diablo-jdk1.5.0 \
+			${LOCALBASE}/jdk1.5.0 \
+			${LOCALBASE}/jdk1.6.0 \
+			${LOCALBASE}/jdk1.4.2
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	\
-	${LOCALBASE}/linux-sun-jdk1.5.0:${PORTSDIR}/java/linux-sun-jdk15 \
-	${LOCALBASE}/linux-sun-jdk1.6.0:${PORTSDIR}/java/linux-sun-jdk16 \
-	${LOCALBASE}/linux-sun-jdk1.4.2:${PORTSDIR}/java/linux-sun-jdk14
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.5.0 \
+			${LOCALBASE}/linux-sun-jdk1.6.0 \
+			${LOCALBASE}/linux-sun-jdk1.4.2
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
@@ -92,9 +90,8 @@ EXTRACT_ONLY+=	${TZUPDATEFILE}
 # do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
 .for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK:C/:.*$//}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK:C/:.*$//}
-BUILD_DEPENDS+=		${CJDK:C/:.*$//}/bin/javac:${CJDK:C/^[^:]*://}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK}
 .  endif
 .endfor
 .endif
@@ -102,9 +99,8 @@ BUILD_DEPENDS+=		${CJDK:C/:.*$//}/bin/javac:${CJDK:C/^[^:]*://}
 # do we have valid linux jdk installed?
 .if !defined(BOOTSTRAPJDKDIR)
 .for CJDK in ${LINUX_BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK:C/:.*$//}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK:C/:.*$//}
-BUILD_DEPENDS+=		${CJDK:C/:.*$//}/bin/javac:${CJDK:C/^[^:]*://}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK}
 WITH_LINUX_BOOTSTRAP=	YES
 .  endif
 .endfor
