@@ -10,22 +10,23 @@ bin/squeak
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/Squeak3D
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/XDisplayControlPlugin
 %%PLIST_XIM%%%%DATADIR%%/%%VMVERSION%%/ImmX11Plugin
-%%PLIST_FFI%%%%DATADIR%%/%%VMVERSION%%/SqueakFFIPrims
 %%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueak.so
 %%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakrun
 %%DATADIR%%/%%VMVERSION%%/squeak
 %%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/vm-display-X11
+%%DATADIR%%/%%VMVERSION%%/AioPlugin
+%%DATADIR%%/%%VMVERSION%%/PseudoTTYPlugin
+%%DATADIR%%/%%VMVERSION%%/UnixOSProcessPlugin
 %%DATADIR%%/%%VMVERSION%%/vm-display-null
 %%DATADIR%%/%%VMVERSION%%/vm-sound-NAS
 %%DATADIR%%/%%VMVERSION%%/vm-sound-OSS
 %%DATADIR%%/%%VMVERSION%%/vm-sound-null
-%%DATADIR%%/ReadMe.txt
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.changes.gz
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.image.gz
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.changes.gz
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.image.gz
-%%DATADIR%%/SqueakPlugin.image.gz
+%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%.changes.gz
+%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%.image.gz
+%%PLIST_NPSQUEAK%%%%DATADIR%%/SqueakPlugin.image.gz
 %%DATADIR%%/SqueakV3.sources
+%%DATADIR%%/SqueakV39.sources
+%%DATADIR%%/%%VMVERSION%%/SqueakV39.sources
 %%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakregister
 @dirrm %%DATADIR%%/%%VMVERSION%%
 @dirrm %%DATADIR%%
