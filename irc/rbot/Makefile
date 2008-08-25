@@ -6,20 +6,32 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12
 CATEGORIES=	irc ruby
-MASTER_SITES=	http://linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Ruby IRC bot similar to infobot
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	rexml
 USE_RUBY_SETUP=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc/${RUBY_NAME}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+
+PORTDOCS=	README REQUIREMENTS ChangeLog
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for x in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${x} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

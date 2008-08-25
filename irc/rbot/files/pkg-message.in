@@ -1,0 +1,7 @@
+===============================================================================
+  There are many plugins supported by rbot. Each plugin may require specific
+  libraries. Before these plugins run correctly, you should make sure those
+  libs required are available.
+
+  For more details, please check %%DOCSDIR%%/REQUIREMENTS.
+===============================================================================
