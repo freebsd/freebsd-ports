@@ -339,6 +339,7 @@
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
+    SUBDIR += ucc
     SUBDIR += vala
     SUBDIR += visualworks
     SUBDIR += wamcc
