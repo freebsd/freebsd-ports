@@ -65,7 +65,8 @@ ONLY_FOR_ARCHS_REASON=	does not configure due to the lack of CDraw libraries for
 
 .if ${OSVERSION} < 700036
 # we're using ptmalloc because the stock libc does not have malloc_usable_size()
-LIB_DEPENDS+=	ptmalloc.2:${PORTSDIR}/devel/ptmalloc
+BUILD_DEPENDS+=	ptmalloc>=2.0_1:${PORTSDIR}/devel/ptmalloc
+RUN_DEPENDS+=	ptmalloc>=2.0_1:${PORTSDIR}/devel/ptmalloc
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include/ptmalloc"
 .else
