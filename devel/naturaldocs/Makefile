@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	naturaldocs
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTVERSION=	1.4
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	NaturalDocs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,31 +23,25 @@ NO_BUILD=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/NaturalDocs
 
+do-configure:
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/NaturalDocs.sh
+	@${ECHO_CMD} >> ${WRKDIR}/NaturalDocs.sh
+	@${ECHO_CMD} "${DATADIR}/NaturalDocs \$$@" >> ${WRKDIR}/NaturalDocs.sh
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/NaturalDocs ${DATADIR}/NaturalDocs
-	@cd ${WRKSRC} && \
-	${FIND} * -type d ! -name Help -exec ${MKDIR} ${DATADIR}/{} \; && \
-	${FIND} * -type f ! -name Help ! -name NaturalDocs -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${INSTALL_SCRIPT} ${WRKDIR}/NaturalDocs.sh ${PREFIX}/bin/NaturalDocs
 	@${MKDIR} ${SITE_PERL}/NaturalDocs
-	@cd ${WRKSRC}/Modules/NaturalDocs && \
-		${FIND} * -type d -exec ${MKDIR} ${SITE_PERL}/NaturalDocs/{} \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} {} ${SITE_PERL}/NaturalDocs/{} \;
-	@${FIND} ${SITE_PERL}/NaturalDocs -type f | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${SITE_PERL}/NaturalDocs -type d | ${SORT} -r | \
-		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
-	@${INSTALL_SCRIPT} ${FILESDIR}/NaturalDocs ${PREFIX}/bin && \
-	${SED} -i '' -e "s,%%DATADIR%%,${DATADIR}," ${PREFIX}/bin/NaturalDocs	
+	@(cd ${WRKSRC}/Modules/NaturalDocs \
+		&& ${COPYTREE_SHARE} . ${SITE_PERL}/NaturalDocs)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/NaturalDocs ${DATADIR}
+.for dir in Config Info JavaScript Styles
+	@${MKDIR} ${DATADIR}/${dir}
+	@(cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${DATADIR}/${dir})
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/Help && \
-		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${FIND} ${DOCSDIR} -type f | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+	@(cd ${WRKSRC}/Help && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
