@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	burgerspace
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.8.2
 CATEGORIES=	games
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BurgerTime clone
@@ -22,13 +21,18 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CCONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-gengameng-prefix="${LOCALBASE}"
 
 MAN6=		burgerspace.6
-PLIST_FILES=	bin/burgerspace
+PORTDOCS=	*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/burgerspace ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/burgerspace.6 ${PREFIX}/man/man6
+post-patch:
+	@${REINPLACE_CMD} -e 's|^pkgsounddir =.*|pkgsounddir = ${DATADIR}/sounds|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|docdir = .*|docdir = ${DOCSDIR}|' \
+		${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
