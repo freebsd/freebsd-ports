@@ -215,6 +215,7 @@
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
+    SUBDIR += navi2ch
     SUBDIR += navi2ch-emacs21
     SUBDIR += navi2ch-xemacs21-mule
     SUBDIR += ne

@@ -6,9 +6,6 @@ share/doc/ja/navi2ch/contrib/navi2ch-logo.el
 share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 @dirrm share/doc/ja/navi2ch/contrib
 @dirrm share/doc/ja/navi2ch
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.img
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xbm
-%%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/navi2ch-logo.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/plugged.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/unplugged.xpm
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons
@@ -19,12 +16,15 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-articles.elc
 %%LISPDIR%%/navi2ch/navi2ch-auto-modify.el
 %%LISPDIR%%/navi2ch/navi2ch-auto-modify.elc
+%%LISPDIR%%/navi2ch/navi2ch-be2ch.el
+%%LISPDIR%%/navi2ch/navi2ch-be2ch.elc
 %%LISPDIR%%/navi2ch/navi2ch-board-misc.el
 %%LISPDIR%%/navi2ch/navi2ch-board-misc.elc
 %%LISPDIR%%/navi2ch/navi2ch-board.el
 %%LISPDIR%%/navi2ch/navi2ch-board.elc
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.el
 %%LISPDIR%%/navi2ch/navi2ch-bookmark.elc
+%%LISPDIR%%/navi2ch/navi2ch-config.el
 %%LISPDIR%%/navi2ch/navi2ch-directory.el
 %%LISPDIR%%/navi2ch/navi2ch-directory.elc
 %%LISPDIR%%/navi2ch/navi2ch-e21.el
@@ -49,6 +49,8 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-localfile.elc
 %%LISPDIR%%/navi2ch/navi2ch-machibbs.el
 %%LISPDIR%%/navi2ch/navi2ch-machibbs.elc
+%%LISPDIR%%/navi2ch/navi2ch-megabbs.el
+%%LISPDIR%%/navi2ch/navi2ch-megabbs.elc
 %%LISPDIR%%/navi2ch/navi2ch-message.el
 %%LISPDIR%%/navi2ch/navi2ch-message.elc
 %%LISPDIR%%/navi2ch/navi2ch-mona.el

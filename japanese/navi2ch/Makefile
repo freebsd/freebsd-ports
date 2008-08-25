@@ -1,4 +1,4 @@
-# New ports collection makefile for:	navi2ch for emacs20
+# New ports collection makefile for:	navi2ch for Emacsen
 # Date created:		13 May 2001
 # Whom:			FUJISHIMA Satsuki <sf@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	1.7.5
-PORTREVISION=	5
+PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	SF
@@ -17,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 INFO=		navi2ch
 
 GNU_CONFIGURE=	yes
