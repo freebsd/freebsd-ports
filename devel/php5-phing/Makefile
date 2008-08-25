@@ -7,7 +7,7 @@
 
 PORTNAME=	phing
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pear.phing.info/get/
 
@@ -37,6 +37,7 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	BuildLogger.php TaskContainer.php BuildEvent.php Task.php \
 	TaskAdapter.php Phing.php RuntimeConfigurable.php BuildListener.php \
 	Project.php UnknownElement.php BuildException.php Target.php \
+	phing.php \
 	util/regexp/RegexpEngine.php util/regexp/Regexp.php \
 	util/regexp/PregEngine.php \
 	util/SourceFileScanner.php util/ExtendedFileStream.php \
@@ -219,18 +220,19 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 DOCS=
 EXAMPLES= src/HelloWorldTest.php src/HelloWorld.php build.xml
 SQLS=
-SCRIPTFILES=
+SCRIPTFILES=	phing
 TESTS=
 
 post-extract:
 	${MV} ${WRKSRC}/example ${WRKSRC}/examples
+
+post-patch:
+	${MKDIR} ${WRKSRC}/pear-bin
 	${SED} -e "s|/opt/phing|${PREFIX}/lib/php/phing|" \
 		-e "s|@PHP-BIN@|${PREFIX}/bin/php|" \
 		-e "s|@PEAR-DIR@|${PREFIX}/share/pear|" \
-	${WRKSRC}/bin/pear-phing > ${WRKSRC}/bin/pear-phing.new
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/pear-phing.new ${PREFIX}/bin/phing
-	${INSTALL_DATA} ${WRKSRC}/bin/phing.php ${PREFIX}/share/pear/phing.php
-	@${CHMOD} 755 ${PREFIX}/bin/phing
+	${WRKSRC}/bin/pear-phing > ${WRKSRC}/pear-phing
+	${CP} ${WRKSRC}/bin/phing.php ${WRKSRC}/phing.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
