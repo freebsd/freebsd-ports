@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -20,7 +20,6 @@ OPTIONS=	ARTS		"Enable aRts support"		off \
 		JACK		"Enable JACK support"		off \
 		SAMPLERATE	"Enable libsamplerate support"	off
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -35,8 +34,8 @@ MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
 		ecaplay.1 ecasignalview.1
 MAN5=		ecasoundrc.5
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
