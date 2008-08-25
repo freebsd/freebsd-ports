@@ -7,7 +7,7 @@
 
 PORTNAME=	wtk
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	sun-
@@ -17,16 +17,17 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun J2ME Wireless Toolkit
 
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+
+USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR@CDS-CDS_Developer
 
 RESTRICTED=	License does not allow redistribution of any kind
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -40,48 +41,28 @@ do-extract:
 	@cd ${WRKDIR} \
 	&& dd bs=1024 if=${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		of=${WRKDIR}/j2mewtk-solaris.zip skip=20 2>/dev/null
+	@${LOCALBASE}/bin/unzip -qo ${WRKDIR}/j2mewtk-solaris.zip -d ${WRKSRC}
+	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0644 {} \+
+	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \+
+	@${FIND} ${WRKSRC}/bin ! -name '*.jar' -exec ${CHMOD} 0755 {} \;
+
+do-patch:
+	@${REINPLACE_CMD} -e "\
+		s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@; \
+		s@/usr/bin/expr@/bin/expr@g" \
+		${WRKSRC}/bin/defaultdevice ${WRKSRC}/bin/emulator \
+		${WRKSRC}/bin/ktoolbar ${WRKSRC}/bin/prefs \
+		${WRKSRC}/bin/utils ${WRKSRC}/bin/wscompile
+	@${MV} ${WRKSRC}/wtklib/Linux ${WRKSRC}/wtklib/FreeBSD
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	@${MKDIR} ${APP_HOME}
-	@cd ${APP_HOME}  && ${JAR} xf ${WRKDIR}/j2mewtk-solaris.zip 2>/dev/null
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/ktoolbar > ${APP_HOME}/bin/ktoolbar_
-	@${RM} ${APP_HOME}/bin/ktoolbar
-	@${MV} ${APP_HOME}/bin/ktoolbar_ ${APP_HOME}/bin/ktoolbar
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/emulator > ${APP_HOME}/bin/emulator_
-	@${RM} ${APP_HOME}/bin/emulator
-	@${MV} ${APP_HOME}/bin/emulator_ ${APP_HOME}/bin/emulator
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/prefs > ${APP_HOME}/bin/prefs_
-	@${RM} ${APP_HOME}/bin/prefs
-	@${MV} ${APP_HOME}/bin/prefs_ ${APP_HOME}/bin/prefs
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/utils > ${APP_HOME}/bin/utils_
-	@${RM} ${APP_HOME}/bin/utils
-	@${MV} ${APP_HOME}/bin/utils_ ${APP_HOME}/bin/utils
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/defaultdevice > ${APP_HOME}/bin/defaultdevice_
-	@${RM} ${APP_HOME}/bin/defaultdevice
-	@${MV} ${APP_HOME}/bin/defaultdevice_ ${APP_HOME}/bin/defaultdevice
-	@${SED} -e "s@javapathtowtk=.*@javapathtowtk=${JAVA_HOME}/bin/@" \
-		-e "s@/usr/bin/expr@/bin/expr@g" \
-		< ${APP_HOME}/bin/wscompile > ${APP_HOME}/bin/wscompile_
-	@${RM} ${APP_HOME}/bin/wscompile
-	@${MV} ${APP_HOME}/bin/wscompile_ ${APP_HOME}/bin/wscompile
-	@${CHMOD} ugo+x ${APP_HOME}/bin/*
-	@${CHMOD} ugo-x ${APP_HOME}/bin/*.jar
-	@${MV} ${APP_HOME}/wtklib/Linux ${APP_HOME}/wtklib/FreeBSD
+	cd "${WRKSRC}" && ${FIND} . \
+	  | ${CPIO} -pdmu -R root:wheel "${APP_HOME}"
 	@${LN} -sf ${APP_HOME}/bin/ktoolbar ${PREFIX}/bin/ktoolbar
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${APP_HOME},' \
-		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
