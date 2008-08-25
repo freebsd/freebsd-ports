@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,6 +37,7 @@ MAN3=	Math::GSL.3 Math::GSL::Heapsort.3 Math::GSL::Permutation.3 \
 	Math::GSL::Deriv.3 Math::GSL::Multimin.3 Math::GSL::Statistics.3 \
 	Math::GSL::Eigen.3 Math::GSL::Multiroots.3 Math::GSL::Sum.3 \
 	Math::GSL::Errno.3 Math::GSL::NTuple.3 Math::GSL::Vector.3 \
-	Math::GSL::Fit.3 Math::GSL::ODEIV.3 Math::GSL::Wavelet.3
+	Math::GSL::Fit.3 Math::GSL::ODEIV.3 Math::GSL::Wavelet.3 \
+	Math::GSL::Sys.3
 
 .include <bsd.port.mk>

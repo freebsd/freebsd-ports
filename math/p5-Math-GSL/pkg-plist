@@ -110,6 +110,7 @@
 %%SITE_PERL%%/mach/Math/GSL/Sort/Test.pm
 %%SITE_PERL%%/mach/Math/GSL/CBLAS/Test.pm
 %%SITE_PERL%%/mach/Math/GSL/Spline/Test.pm
+%%SITE_PERL%%/mach/Math/GSL/Statistics/Test.pm
 %%SITE_PERL%%/mach/Math/GSL/Sys/Test.pm
 %%SITE_PERL%%/mach/Math/GSL/Matrix/Test.pm
 %%SITE_PERL%%/mach/Math/GSL/Eigen/Test.pm
@@ -147,6 +148,7 @@
 @dirrm %%SITE_PERL%%/mach/Math/GSL/CBLAS
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Spline
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Sys
+@dirrm %%SITE_PERL%%/mach/Math/GSL/Statistics
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Matrix
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Eigen
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Errno
@@ -170,5 +172,3 @@
 @dirrm %%SITE_PERL%%/mach/Math/GSL/Roots
 @dirrm %%SITE_PERL%%/mach/Math/GSL
 @dirrm %%SITE_PERL%%/mach/Math
-@dirrm %%SITE_PERL%%/mach/auto/Math
-@dirrm %%SITE_PERL%%/mach/auto
