@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
