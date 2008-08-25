@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -53,6 +53,10 @@ TESTS=		AllTests.php console_commandline_accept.phpt \
 		console_commandline_parse_11.phpt console_commandline_parse_12.phpt \
 		console_commandline_parse_13.phpt console_commandline_parse_14.phpt \
 		console_commandline_parse_15.phpt console_commandline_parse_16.phpt \
+		console_commandline_parse_17.phpt console_commandline_parse_18.phpt \
+		console_commandline_webrequest_1.phpt \
+		console_commandline_webrequest_2.phpt \
+		console_commandline_webrequest_3.phpt \
 		test.xml tests.inc.php
 
 .include <bsd.port.pre.mk>
