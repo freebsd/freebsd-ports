@@ -65,6 +65,7 @@
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += cacheboy
+    SUBDIR += cacheboy15-devel
     SUBDIR += cadaver
     SUBDIR += cakephp
     SUBDIR += cakephp-devel
