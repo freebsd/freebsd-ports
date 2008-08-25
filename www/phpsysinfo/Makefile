@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	walt@relnor.com
 COMMENT=	A php script that displays info about the host being accessed
 
 USE_PHP=	pcre xml simplexml
