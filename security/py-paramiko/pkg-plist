@@ -49,9 +49,6 @@
 %%PYTHON_SITELIBDIR%%/paramiko/message.py
 %%PYTHON_SITELIBDIR%%/paramiko/message.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/message.pyo
-%%PYTHON_SITELIBDIR%%/paramiko/osrandom.py
-%%PYTHON_SITELIBDIR%%/paramiko/osrandom.pyc
-%%PYTHON_SITELIBDIR%%/paramiko/osrandom.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/packet.py
 %%PYTHON_SITELIBDIR%%/paramiko/packet.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/packet.pyo
@@ -67,6 +64,15 @@
 %%PYTHON_SITELIBDIR%%/paramiko/resource.py
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/rng.py
+%%PYTHON_SITELIBDIR%%/paramiko/rng.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/rng.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.py
+%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.py
+%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.py
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.pyo
