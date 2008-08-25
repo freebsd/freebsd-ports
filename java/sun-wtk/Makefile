@@ -21,8 +21,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR&SiteId=JSC&TransactionId=try
+ONLY_FOR_ARCHS=	i386 amd64
+DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR@CDS-CDS_Developer
 
 RESTRICTED=	License does not allow redistribution of any kind
 
