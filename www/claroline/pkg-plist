@@ -695,7 +695,6 @@
 %%WWWDIR%%/claroline/img/wiki.gif
 %%WWWDIR%%/claroline/img/xls.gif
 %%WWWDIR%%/claroline/img/zip.gif
-%%WWWDIR%%/claroline/inc/.cvsignore
 %%WWWDIR%%/claroline/inc/claro_init_banner.inc.php
 %%WWWDIR%%/claroline/inc/claro_init_footer.inc.php
 %%WWWDIR%%/claroline/inc/claro_init_global.inc.php

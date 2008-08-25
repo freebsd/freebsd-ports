@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	claroline
-PORTVERSION=	1.8.9
+PORTVERSION=	1.8.11
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	claroline189
+DISTNAME=	claroline1811
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Open Source eLearning and eWorking platform
