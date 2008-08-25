@@ -1,5 +1,8 @@
 libexec/xfce4/panel-plugins/xfce4-wmdock-plugin
 share/icons/hicolor/48x48/apps/xfce4-wmdock.png
+share/locale/de/LC_MESSAGES/xfce4-wmdock-plugin.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-wmdock-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-wmdock-plugin.mo
 share/xfce4/panel-plugins/wmdock.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
