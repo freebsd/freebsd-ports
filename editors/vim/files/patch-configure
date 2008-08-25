@@ -1,8 +1,14 @@
---- auto/configure.orig	Thu May  4 03:46:19 2006
-+++ auto/configure	Mon Jun 19 03:01:38 2006
-@@ -4644,3 +4644,4 @@ echo "${ECHO_T}$try/tclConfig.sh" >&6
+--- auto/configure.orig	2008-07-24 05:40:36.000000000 -0700
++++ auto/configure	2008-08-25 07:37:37.000000000 -0700
+@@ -882 +882 @@ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+@@ -5599,7 +5599,7 @@ $as_echo_n "checking for location of tcl
+ $as_echo "$try/tclConfig.sh" >&6; }
+ 	    . $try/tclConfig.sh
  	    	    TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`
--	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\\\\ /\\\\X/g' | tr ' ' '\012' | sed -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr '\012' ' ' | sed -e 's/\\\\X/\\\\ /g'`
+-	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\\\\ /\\\\X/g' | tr ' ' '\012' | sed -e '/^[^-]/d' -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr '\012' ' ' | sed -e 's/\\\\X/\\\\ /g'`
 +	    	    	    TCL_DEFS=`echo $TCL_DEFS | sed -e 's/\\ /\\\\X/g' | tr ' ' '\012' | sed -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr '\012' ' ' | sed -e 's/\\\\X/\\ /g'`
-+
  	    break
+ 	  fi
+ 	done
