@@ -148,6 +148,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Ehinted.png
 %%PORTDOCS%%%%DOCSDIR%%/EhintedTtf.png
 %%PORTDOCS%%%%DOCSDIR%%/Eperspective.png
+%%PORTDOCS%%%%DOCSDIR%%/FF32.png
+%%PORTDOCS%%%%DOCSDIR%%/FFmacotfIcon.png
+%%PORTDOCS%%%%DOCSDIR%%/FFsfd32.png
 %%PORTDOCS%%%%DOCSDIR%%/FVHMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FVVMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FlatSerif.png
@@ -778,6 +781,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/xItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/xim.html
 %%PORTDOCS%%%%DOCSDIR%%/xres.html
+%%DATADIR%%/pixmaps/colorwheel.png
 %%DATADIR%%/pixmaps/editclear.png
 %%DATADIR%%/pixmaps/editclearback.png
 %%DATADIR%%/pixmaps/editcopy.png
@@ -810,6 +814,7 @@ libdata/pkgconfig/fontforge.pc
 %%DATADIR%%/pixmaps/elementbdfinfo.png
 %%DATADIR%%/pixmaps/elementbitmapsavail.png
 %%DATADIR%%/pixmaps/elementbuildaccent.png
+%%DATADIR%%/pixmaps/elementbuildcomposit.png
 %%DATADIR%%/pixmaps/elementclockwise.png
 %%DATADIR%%/pixmaps/elementcomparefonts.png
 %%DATADIR%%/pixmaps/elementcomparelayers.png
