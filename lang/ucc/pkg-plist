@@ -1,0 +1,9 @@
+bin/ucc
+bin/ucl
+lib/assert.o
+include/ucc/assert.h
+include/ucc/float.h
+include/ucc/limits.h
+include/ucc/math.h
+include/ucc/stdarg.h
+@dirrm include/ucc

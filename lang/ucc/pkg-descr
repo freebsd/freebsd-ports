@@ -1,0 +1,14 @@
+Ucc is a C compiler which implements the ANSI C89
+standard with a few extensions. Ucc is released
+under BSD license.
+
+Ucc is specificaly designed for personal research
+and assist the undergraduate or graduate in compiler
+learning. We hope that Ucc will be a seedbed for new
+ideas and world-class optimizing techniques.
+
+Ucc's design and development goals is clear code
+structure,upstanding extensibility,retargetable and
+excellent optimization.
+
+WWW:   http://ucc.sf.net
