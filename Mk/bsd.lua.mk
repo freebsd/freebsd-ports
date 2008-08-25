@@ -33,7 +33,8 @@
 #				  type.
 #				  The available components are:
 #				  lua			- The Lua library.
-#				  tolua			- The tolua library (for 4.0-5.0).
+#				  tolua			- The tolua library (for 4.0-5.1).
+#				  toluaxx		- The tolua++ library (for 5.0-5.1).
 #				  ruby			- The Ruby bindings for Lua (for 4.0-5.0).
 #				  Other components (modules):
 #				  5.0			- app, compat51, dfui, filename, gettext,
@@ -77,8 +78,10 @@
 #				  NOTE: please see comments below about its double function.
 # LUA_SUBDIR	- The directory under bin/share/lib where Lua is installed.
 #				  Also used by Lua ports (lang/lua*) to set LATEST_LINK.
-# LUA_INCDIR	- The directory where Lua and tolua header files are installed.
-# LUA_LIBDIR	- The directory where Lua and tolua libraries are installed.
+# LUA_INCDIR	- The directory where Lua, tolua and tolua++ header files are
+#				  installed.
+# LUA_LIBDIR	- The directory where Lua, tolua and tolua++ libraries are
+#				  installed.
 # LUA_MODLIBDIR	- The directory where Lua module libraries (.so) are installed.
 # LUA_MODSHAREDIR
 #				- The directory where Lua modules (.lua) are installed.
@@ -87,6 +90,7 @@
 # LUA_CMD		- The path to the Lua interpreter.
 # LUAC_CMD		- The path to the Lua compiler.
 # TOLUA_CMD		- The path to the tolua program.
+# TOLUAXX_CMD	- The path to the tolua++ program.
 #
 # Examples:
 # - A port that needs Lua 4.0 and tolua (also 4.0) libraries (lua for building
@@ -145,7 +149,7 @@ _LUA_Definitions_Done=	yes
 #						  to be added to PLIST_SUB.
 #
 
-_LUA_COMPS_ALL=			lua tolua ruby \
+_LUA_COMPS_ALL=			lua tolua toluaxx ruby \
 						app compat51 dfui filename gettext posix pty socket
 _LUA_DEP_TYPES_ALL=		build lib run
 _LUA_VERS_ALL=			4.0 5.0 5.1
@@ -171,6 +175,7 @@ _LUA_PORT_ruby_4.0=		lang/ruby-lua4
 _LUA_PORT_lua_5.0=		lang/lua50
 _LUA_DEPTYPE_lua_5.0=	lib
 _LUA_PORT_tolua_5.0=	lang/tolua50
+_LUA_PORT_toluaxx_5.0=	lang/tolua++50
 _LUA_PORT_ruby_5.0=		lang/ruby-lua
 
 _LUA_PORT_app_5.0=		devel/lua50-app
@@ -192,6 +197,7 @@ _LUA_PORT_posix_5.1=	devel/lua-posix
 _LUA_PORT_pty_5.1=		devel/lua-pty
 _LUA_PORT_socket_5.1=	net/luasocket
 _LUA_PORT_tolua_5.1=	lang/tolua
+_LUA_PORT_toluaxx_5.1=	lang/tolua++
 
 .	for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}
@@ -205,6 +211,9 @@ _LUA_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lua${ver:S/.//g}/liblua.a
 .			elif ${_LUA_COMP} == "tolua"
 _LUA_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lua${ver:S/.//g}/libtolua.a
 _LUA_DEPTYPE_${comp}_${ver}=build
+.			elif ${_LUA_COMP} == "toluaxx"
+_LUA_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lua${ver:S/.//g}/libtolua++.so
+_LUA_DEPTYPE_${comp}_${ver}=lib
 .			elif ${_LUA_COMP} == "ruby"
 _LUA_FILE_${comp}_${ver}=	${RUBY_SITEARCHLIBDIR}/lua-${ver}.so
 _LUA_DEPTYPE_${comp}_${ver}=lib
@@ -470,6 +479,7 @@ LUA_MODSHAREDIR?=		${LUA_PREFIX}/share/lua/${LUA_VER}
 LUA_CMD?=				${LUA_PREFIX}/bin/lua-${LUA_VER}
 LUAC_CMD?=				${LUA_PREFIX}/bin/luac-${LUA_VER}
 TOLUA_CMD?=				${LUA_PREFIX}/bin/tolua-${LUA_VER}
+TOLUAXX_CMD?=			${LUA_PREFIX}/bin/tolua++-${LUA_VER}
 
 .endif		# _LUA_Need_Version
 
