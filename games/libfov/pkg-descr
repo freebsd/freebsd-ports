@@ -1,8 +1,7 @@
-This is a C library which implements a course-grained lighting algorithm 
-suitable for tile-based games such as roguelikes.
+libfov is a C library for calculating fields of view and lighting on low
+resolution rasters, suitable for roguelike games. In that screenshot below,
+imagine that green dot is your character in a computer game, and as you
+walk around (move between tiles on the grid), you want to know which tiles
+you can see and which tiles you cannot. libfov calculates exactly that.
 
-WWW: http://members.optushome.com.au/puyo/libfov.html
-Author: Greg <greg@puyo.cjb.net>
-
-- Aaron Dalton
-aaron@FreeBSD.org
+WWW: http://code.google.com/p/libfov/
