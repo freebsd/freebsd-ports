@@ -7,6 +7,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFFIX}
@@ -20,13 +21,7 @@ LIB_DEPENDS=	poppler.3:${PORTSDIR}/graphics/poppler
 USE_GMAKE=	yes
 PLIST_FILES=	bin/pdf2djvu
 
-.if exists(${LOCALBASE}/bin/djview)
-DJVU_DIR?=	# empty
-.else
-DJVU_DIR?=	-nox11
-.endif
-
-LIB_DEPENDS+=	djvulibre.20:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
+LIB_DEPENDS+=	djvulibre.21:${PORTSDIR}/graphics/djvulibre-nox11
 
 MAN1=	pdf2djvu.1
 MANCOMPRESSED=	no

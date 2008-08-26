@@ -7,7 +7,7 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	0.9.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
-		cjb2:${PORTSDIR}/graphics/djvulibre \
+		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
 		unpaper:${PORTSDIR}/graphics/unpaper \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
