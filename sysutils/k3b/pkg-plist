@@ -19,6 +19,8 @@ include/k3bblankingjob.h
 include/k3bbootitem.h
 include/k3bbusywidget.h
 include/k3bcdcopyjob.h
+include/k3bcddb.h
+include/k3bcddbresult.h
 include/k3bcdparanoialib.h
 include/k3bcdrdaowriter.h
 include/k3bcdrecordwriter.h

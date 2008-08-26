@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils multimedia kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A CD/DVD recording GUI for KDE
@@ -54,6 +52,10 @@ showinfo:
 	more ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+PKGMESSAGE=	${PKGDIR}/pkg-message-7
+.endif
 
 .if defined(WITH_FLAC)
 PLIST_SUB+=	FLAC=""
