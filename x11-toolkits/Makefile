@@ -248,6 +248,7 @@
     SUBDIR += sdl_gui
     SUBDIR += sdl_pango
     SUBDIR += slgtk
+    SUBDIR += slgtkdatabox
     SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt
