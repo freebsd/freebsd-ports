@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \
-		hamlib:${PORTSDIR}/comms/hamlib \
+BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
+		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
+LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		sndfile:${PORTSDIR}/audio/libsndfile \
 		boost_wave:${PORTSDIR}/devel/boost \
 		pulse:${PORTSDIR}/audio/pulseaudio
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64" && ${OSVERSION} < 700000
-USE_GCC=	4.1
+USE_GCC=	4.2+
 .endif
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
