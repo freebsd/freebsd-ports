@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openct
-DISTVERSION=	0.6.14
+PORTVERSION=	0.6.15
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -14,46 +14,48 @@ MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A middleware framework for smart card terminals
 
-OPTIONS=	USB "Install libusb for USB tokens/readers support" on \
-		PCSC "Install pcsc-lite to build the PC/SC->OpenCT frontend" off
+OPTIONS=	PCSC "Enable PC/SC support" off
 
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	openct
 SUB_FILES=	etoken.conf
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
+		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl"
+
+CONFIGURE_ARGS=	--with-ifddir=${PREFIX}/lib/ifd \
+		--localstatedir=/var
 
 MAN1=		openct-tool.1
 
-DOC_FILES=	README export-wiki.sh export-wiki.xsl trac.css *.html api
+DOC_FILES=	trac.css *.html
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_USB) || exists(${LOCALBASE}/lib/libusb-0.1.so)
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
-.if defined(WITH_PCSC) || exists(${LOCALBASE}/lib/libpcsclite.so)
+.if defined(WITH_PCSC)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+CONFIGURE_ARGS+=--enable-pcsc
 PLIST_SUB+=	PCSC=""
 .else
 PLIST_SUB+=	PCSC="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/configure
+
 post-install:
-	${INSTALL_DATA}	${WRKSRC}/etc/openct.conf ${PREFIX}/etc/openct.conf-sample
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKDIR}/etoken.conf ${EXAMPLESDIR}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
+	@(cd ${WRKSRC}/doc/nonpersistent/wiki.out/ && ${CP} -R ${DOC_FILES} ${DOCSDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
 
