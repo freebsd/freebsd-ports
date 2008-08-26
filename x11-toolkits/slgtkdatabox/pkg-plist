@@ -1,0 +1,13 @@
+lib/slang/v2/modules/gtkdatabox-module.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basics.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/coords.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid.sl
+%%SLGLADE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/line_attributes.glade
+%%SLGLADE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/line_attributes.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lissajous.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logarithmic.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/marker.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rulers.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showhide.sl
+share/slsh/local-packages/gtkdatabox.sl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

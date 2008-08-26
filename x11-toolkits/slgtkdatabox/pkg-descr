@@ -1,0 +1,4 @@
+The slgtkdatabox package binds gtkdatabox, a gtk widget for data plotting,
+to the S-Lang scripting language.
+
+WWW: http://laurent.perez2.free.fr/comp/slang/modules/modules.html
