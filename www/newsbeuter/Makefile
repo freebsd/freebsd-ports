@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://synflood.at/newsbeuter/
+MASTER_SITES=	http://newsbeuter.org/downloads/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
