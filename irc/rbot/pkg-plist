@@ -30,119 +30,119 @@ bin/rbot-remote
 %%RUBY_SITELIBDIR%%/rbot/registry.rb
 %%RUBY_SITELIBDIR%%/rbot/rfc2812.rb
 %%RUBY_SITELIBDIR%%/rbot/timer.rb
-%%PORTDATA%%%%DATADIR%%/contrib/plugins/stats.rb
-%%PORTDATA%%%%DATADIR%%/contrib/plugins/vandale.rb
-%%PORTDATA%%%%DATADIR%%/languages/dutch.lang
-%%PORTDATA%%%%DATADIR%%/languages/english.lang
-%%PORTDATA%%%%DATADIR%%/languages/french.lang
-%%PORTDATA%%%%DATADIR%%/languages/german.lang
-%%PORTDATA%%%%DATADIR%%/languages/italian.lang
-%%PORTDATA%%%%DATADIR%%/languages/japanese.lang
-%%PORTDATA%%%%DATADIR%%/languages/russian.lang
-%%PORTDATA%%%%DATADIR%%/languages/traditional_chinese.lang
-%%PORTDATA%%%%DATADIR%%/plugins/alias.rb
-%%PORTDATA%%%%DATADIR%%/plugins/autoop.rb
-%%PORTDATA%%%%DATADIR%%/plugins/autorejoin.rb
-%%PORTDATA%%%%DATADIR%%/plugins/bans.rb
-%%PORTDATA%%%%DATADIR%%/plugins/bash.rb
-%%PORTDATA%%%%DATADIR%%/plugins/botsnack.rb
-%%PORTDATA%%%%DATADIR%%/plugins/cal.rb
-%%PORTDATA%%%%DATADIR%%/plugins/chanserv.rb
-%%PORTDATA%%%%DATADIR%%/plugins/chucknorris.rb
-%%PORTDATA%%%%DATADIR%%/plugins/chucknorris.yml.gz
-%%PORTDATA%%%%DATADIR%%/plugins/debugger.rb
-%%PORTDATA%%%%DATADIR%%/plugins/deepthoughts.rb
-%%PORTDATA%%%%DATADIR%%/plugins/delicious.rb
-%%PORTDATA%%%%DATADIR%%/plugins/dice.rb
-%%PORTDATA%%%%DATADIR%%/plugins/dict.rb
-%%PORTDATA%%%%DATADIR%%/plugins/dictclient.rb
-%%PORTDATA%%%%DATADIR%%/plugins/digg.rb
-%%PORTDATA%%%%DATADIR%%/plugins/eightball.rb
-%%PORTDATA%%%%DATADIR%%/plugins/excuse.rb
-%%PORTDATA%%%%DATADIR%%/plugins/factoids.rb
-%%PORTDATA%%%%DATADIR%%/plugins/figlet.rb
-%%PORTDATA%%%%DATADIR%%/plugins/fish.rb
-%%PORTDATA%%%%DATADIR%%/plugins/forecast.rb
-%%PORTDATA%%%%DATADIR%%/plugins/fortune.rb
-%%PORTDATA%%%%DATADIR%%/plugins/freshmeat.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/azgame.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/quiz.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/roshambo.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/roulette.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/shiritori.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/uno.rb
-%%PORTDATA%%%%DATADIR%%/plugins/games/wheelfortune.rb
-%%PORTDATA%%%%DATADIR%%/plugins/grouphug.rb
-%%PORTDATA%%%%DATADIR%%/plugins/hl2.rb
-%%PORTDATA%%%%DATADIR%%/plugins/host.rb
-%%PORTDATA%%%%DATADIR%%/plugins/httpd.rb.disabled
-%%PORTDATA%%%%DATADIR%%/plugins/imdb.rb
-%%PORTDATA%%%%DATADIR%%/plugins/insult.rb
-%%PORTDATA%%%%DATADIR%%/plugins/iplookup.rb
-%%PORTDATA%%%%DATADIR%%/plugins/karma.rb
-%%PORTDATA%%%%DATADIR%%/plugins/keywords.rb
-%%PORTDATA%%%%DATADIR%%/plugins/lart.rb
-%%PORTDATA%%%%DATADIR%%/plugins/lastfm.rb
-%%PORTDATA%%%%DATADIR%%/plugins/linkbot.rb
-%%PORTDATA%%%%DATADIR%%/plugins/markov.rb
-%%PORTDATA%%%%DATADIR%%/plugins/math.rb
-%%PORTDATA%%%%DATADIR%%/plugins/modes.rb
-%%PORTDATA%%%%DATADIR%%/plugins/nickrecover.rb
-%%PORTDATA%%%%DATADIR%%/plugins/nickserv.rb
-%%PORTDATA%%%%DATADIR%%/plugins/nslookup.rb
-%%PORTDATA%%%%DATADIR%%/plugins/plugin.header
-%%PORTDATA%%%%DATADIR%%/plugins/quakeauth.rb
-%%PORTDATA%%%%DATADIR%%/plugins/quotes.rb
-%%PORTDATA%%%%DATADIR%%/plugins/reaction.rb
-%%PORTDATA%%%%DATADIR%%/plugins/remind.rb
-%%PORTDATA%%%%DATADIR%%/plugins/remotectl.rb
-%%PORTDATA%%%%DATADIR%%/plugins/ri.rb
-%%PORTDATA%%%%DATADIR%%/plugins/rot13.rb
-%%PORTDATA%%%%DATADIR%%/plugins/rss.rb
-%%PORTDATA%%%%DATADIR%%/plugins/salut.rb
-%%PORTDATA%%%%DATADIR%%/plugins/script.rb
-%%PORTDATA%%%%DATADIR%%/plugins/search.rb
-%%PORTDATA%%%%DATADIR%%/plugins/seen.rb
-%%PORTDATA%%%%DATADIR%%/plugins/shortenurls.rb
-%%PORTDATA%%%%DATADIR%%/plugins/slashdot.rb
-%%PORTDATA%%%%DATADIR%%/plugins/spell.rb
-%%PORTDATA%%%%DATADIR%%/plugins/theyfightcrime.rb
-%%PORTDATA%%%%DATADIR%%/plugins/threat.rb
-%%PORTDATA%%%%DATADIR%%/plugins/time.rb
-%%PORTDATA%%%%DATADIR%%/plugins/topic.rb
-%%PORTDATA%%%%DATADIR%%/plugins/translator.rb
-%%PORTDATA%%%%DATADIR%%/plugins/tube.rb
-%%PORTDATA%%%%DATADIR%%/plugins/twitter.rb
-%%PORTDATA%%%%DATADIR%%/plugins/urban.rb
-%%PORTDATA%%%%DATADIR%%/plugins/url.rb
-%%PORTDATA%%%%DATADIR%%/plugins/usermodes.rb
-%%PORTDATA%%%%DATADIR%%/plugins/wall.rb
-%%PORTDATA%%%%DATADIR%%/plugins/weather.rb
-%%PORTDATA%%%%DATADIR%%/plugins/wow.rb
-%%PORTDATA%%%%DATADIR%%/plugins/wserver.rb
-%%PORTDATA%%%%DATADIR%%/plugins/youtube.rb
-%%PORTDATA%%%%DATADIR%%/templates/keywords.rbot
-%%PORTDATA%%%%DATADIR%%/templates/lart/larts-english
-%%PORTDATA%%%%DATADIR%%/templates/lart/larts-italian
-%%PORTDATA%%%%DATADIR%%/templates/lart/larts-japanese
-%%PORTDATA%%%%DATADIR%%/templates/lart/praises-english
-%%PORTDATA%%%%DATADIR%%/templates/lart/praises-italian
-%%PORTDATA%%%%DATADIR%%/templates/lart/praises-japanese
-%%PORTDATA%%%%DATADIR%%/templates/quiz/win_messages
-%%PORTDATA%%%%DATADIR%%/templates/salut/salut-english
-%%PORTDATA%%%%DATADIR%%/templates/salut/salut-french
-%%PORTDATA%%%%DATADIR%%/templates/salut/salut-italian
-%%PORTDATA%%%%DATADIR%%/templates/salut/salut-japanese
-%%PORTDATA%%@dirrm %%DATADIR%%/templates/salut
-%%PORTDATA%%@dirrm %%DATADIR%%/templates/quiz
-%%PORTDATA%%@dirrm %%DATADIR%%/templates/lart
-%%PORTDATA%%@dirrm %%DATADIR%%/templates
-%%PORTDATA%%@dirrm %%DATADIR%%/plugins/games
-%%PORTDATA%%@dirrm %%DATADIR%%/plugins
-%%PORTDATA%%@dirrm %%DATADIR%%/languages
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib/plugins
-%%PORTDATA%%@dirrm %%DATADIR%%/contrib
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/contrib/plugins/stats.rb
+%%DATADIR%%/contrib/plugins/vandale.rb
+%%DATADIR%%/languages/dutch.lang
+%%DATADIR%%/languages/english.lang
+%%DATADIR%%/languages/french.lang
+%%DATADIR%%/languages/german.lang
+%%DATADIR%%/languages/italian.lang
+%%DATADIR%%/languages/japanese.lang
+%%DATADIR%%/languages/russian.lang
+%%DATADIR%%/languages/traditional_chinese.lang
+%%DATADIR%%/plugins/alias.rb
+%%DATADIR%%/plugins/autoop.rb
+%%DATADIR%%/plugins/autorejoin.rb
+%%DATADIR%%/plugins/bans.rb
+%%DATADIR%%/plugins/bash.rb
+%%DATADIR%%/plugins/botsnack.rb
+%%DATADIR%%/plugins/cal.rb
+%%DATADIR%%/plugins/chanserv.rb
+%%DATADIR%%/plugins/chucknorris.rb
+%%DATADIR%%/plugins/chucknorris.yml.gz
+%%DATADIR%%/plugins/debugger.rb
+%%DATADIR%%/plugins/deepthoughts.rb
+%%DATADIR%%/plugins/delicious.rb
+%%DATADIR%%/plugins/dice.rb
+%%DATADIR%%/plugins/dict.rb
+%%DATADIR%%/plugins/dictclient.rb
+%%DATADIR%%/plugins/digg.rb
+%%DATADIR%%/plugins/eightball.rb
+%%DATADIR%%/plugins/excuse.rb
+%%DATADIR%%/plugins/factoids.rb
+%%DATADIR%%/plugins/figlet.rb
+%%DATADIR%%/plugins/fish.rb
+%%DATADIR%%/plugins/forecast.rb
+%%DATADIR%%/plugins/fortune.rb
+%%DATADIR%%/plugins/freshmeat.rb
+%%DATADIR%%/plugins/games/azgame.rb
+%%DATADIR%%/plugins/games/quiz.rb
+%%DATADIR%%/plugins/games/roshambo.rb
+%%DATADIR%%/plugins/games/roulette.rb
+%%DATADIR%%/plugins/games/shiritori.rb
+%%DATADIR%%/plugins/games/uno.rb
+%%DATADIR%%/plugins/games/wheelfortune.rb
+%%DATADIR%%/plugins/grouphug.rb
+%%DATADIR%%/plugins/hl2.rb
+%%DATADIR%%/plugins/host.rb
+%%DATADIR%%/plugins/httpd.rb.disabled
+%%DATADIR%%/plugins/imdb.rb
+%%DATADIR%%/plugins/insult.rb
+%%DATADIR%%/plugins/iplookup.rb
+%%DATADIR%%/plugins/karma.rb
+%%DATADIR%%/plugins/keywords.rb
+%%DATADIR%%/plugins/lart.rb
+%%DATADIR%%/plugins/lastfm.rb
+%%DATADIR%%/plugins/linkbot.rb
+%%DATADIR%%/plugins/markov.rb
+%%DATADIR%%/plugins/math.rb
+%%DATADIR%%/plugins/modes.rb
+%%DATADIR%%/plugins/nickrecover.rb
+%%DATADIR%%/plugins/nickserv.rb
+%%DATADIR%%/plugins/nslookup.rb
+%%DATADIR%%/plugins/plugin.header
+%%DATADIR%%/plugins/quakeauth.rb
+%%DATADIR%%/plugins/quotes.rb
+%%DATADIR%%/plugins/reaction.rb
+%%DATADIR%%/plugins/remind.rb
+%%DATADIR%%/plugins/remotectl.rb
+%%DATADIR%%/plugins/ri.rb
+%%DATADIR%%/plugins/rot13.rb
+%%DATADIR%%/plugins/rss.rb
+%%DATADIR%%/plugins/salut.rb
+%%DATADIR%%/plugins/script.rb
+%%DATADIR%%/plugins/search.rb
+%%DATADIR%%/plugins/seen.rb
+%%DATADIR%%/plugins/shortenurls.rb
+%%DATADIR%%/plugins/slashdot.rb
+%%DATADIR%%/plugins/spell.rb
+%%DATADIR%%/plugins/theyfightcrime.rb
+%%DATADIR%%/plugins/threat.rb
+%%DATADIR%%/plugins/time.rb
+%%DATADIR%%/plugins/topic.rb
+%%DATADIR%%/plugins/translator.rb
+%%DATADIR%%/plugins/tube.rb
+%%DATADIR%%/plugins/twitter.rb
+%%DATADIR%%/plugins/urban.rb
+%%DATADIR%%/plugins/url.rb
+%%DATADIR%%/plugins/usermodes.rb
+%%DATADIR%%/plugins/wall.rb
+%%DATADIR%%/plugins/weather.rb
+%%DATADIR%%/plugins/wow.rb
+%%DATADIR%%/plugins/wserver.rb
+%%DATADIR%%/plugins/youtube.rb
+%%DATADIR%%/templates/keywords.rbot
+%%DATADIR%%/templates/lart/larts-english
+%%DATADIR%%/templates/lart/larts-italian
+%%DATADIR%%/templates/lart/larts-japanese
+%%DATADIR%%/templates/lart/praises-english
+%%DATADIR%%/templates/lart/praises-italian
+%%DATADIR%%/templates/lart/praises-japanese
+%%DATADIR%%/templates/quiz/win_messages
+%%DATADIR%%/templates/salut/salut-english
+%%DATADIR%%/templates/salut/salut-french
+%%DATADIR%%/templates/salut/salut-italian
+%%DATADIR%%/templates/salut/salut-japanese
+@dirrm %%DATADIR%%/templates/salut
+@dirrm %%DATADIR%%/templates/quiz
+@dirrm %%DATADIR%%/templates/lart
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/plugins/games
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/contrib/plugins
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
 @dirrm %%RUBY_SITELIBDIR%%/rbot/core/utils
 @dirrm %%RUBY_SITELIBDIR%%/rbot/core
 @dirrm %%RUBY_SITELIBDIR%%/rbot
