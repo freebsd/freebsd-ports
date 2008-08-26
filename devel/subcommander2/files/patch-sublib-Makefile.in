@@ -1,0 +1,11 @@
+--- sublib/Makefile.in.orig	2008-06-22 13:22:05.000000000 -0400
++++ sublib/Makefile.in	2008-08-09 09:24:43.000000000 -0400
+@@ -216,7 +216,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-QT_MOC = @QT_BIN@/moc
++QT_MOC = @QT_BIN@/moc-qt4
+ QT_RCC = @QT_BIN@/rcc
+ scdir = $(datadir)/subcommander
+ AM_CPPFLAGS = @APR_CPPFLAGS@ \
