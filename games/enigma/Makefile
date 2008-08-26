@@ -17,14 +17,12 @@ COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++ \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet \
-		${LOCALBASE}/lib/lua51/libtolua++.so:${PORTSDIR}/lang/tolua++
-RUN_DEPENDS=	${LOCALBASE}/lib/lua51/libtolua++.so:${PORTSDIR}/lang/tolua++
+BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LUA=	5.1
-LUA_COMPS=	lua # toluaxx <- to be used when support is added to bsd.lua.mk
+LUA_COMPS=	lua toluaxx
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxxlua \
