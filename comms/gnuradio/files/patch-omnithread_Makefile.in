@@ -1,6 +1,6 @@
---- omnithread/Makefile.in.orig	2008-03-24 12:50:08.000000000 -0400
-+++ omnithread/Makefile.in	2008-03-24 16:28:42.000000000 -0400
-@@ -587,7 +587,7 @@
+--- omnithread/Makefile.in.orig	2008-08-23 20:37:43.000000000 -0400
++++ omnithread/Makefile.in	2008-08-24 07:04:18.000000000 -0400
+@@ -605,7 +605,7 @@
  libgromnithread_la_LIBADD = \
  	$(PTHREAD_LIBS)
  
