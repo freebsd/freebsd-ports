@@ -36,7 +36,8 @@ MAN1=	ppl-config.1 ppl_lcdd.1 ppl_lpsol.1
 
 .if defined(NOPORTDOCS)
 post-patch:
-	${REINPLACE_CMD} -e '/SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||g' \
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 .include <bsd.port.mk>
