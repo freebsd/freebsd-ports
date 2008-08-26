@@ -1,0 +1,17 @@
+lib/slang/v2/modules/glade-module.la
+lib/slang/v2/modules/glade-module.so
+%%PORTDOCS%%%%DOCSDIR%%/slgladefun.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/buffer_basic.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get_widget.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/howdy.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/root_widget.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/signal_connect.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/texteditor.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/texteditor.sl
+share/slsh/local-packages/glade.sl
+share/slsh/local-packages/slirprc-glade.sl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

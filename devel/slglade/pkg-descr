@@ -1,0 +1,12 @@
+SLglade is a S-Lang module that provides S-Lang bindings
+for the libglade library. Used in conjunction with SLgtk,
+it allows you to design your GUI with Glade (a GTK+ user interface builder),
+save the interface description in a Glade XML file,
+and then generate your S-Lang script's graphical interface
+directly from the XML at runtime. This should reduce the time spent
+developing SLgtk applications considerably, as it eliminates
+the tedious job of writing interface-creation code by hand.
+
+This is an update for Christopher Stawarz's SLglade module.
+
+WWW: http://laurent.perez2.free.fr/comp/slang/modules/modules.html
