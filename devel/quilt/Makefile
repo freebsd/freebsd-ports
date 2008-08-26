@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quilt
-PORTVERSION=	0.46
-PORTREVISION=	5
+PORTVERSION=	0.47
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -28,11 +27,12 @@ USE_PERL5=	yes
 OPTIONS=	RPMBUILD "rpmbuild support" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed --without-getopt --with-patch=${LOCALBASE}/bin/gpatch
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
+		--without-getopt \
+		--with-patch=${LOCALBASE}/bin/gpatch
 
 MAN1=		guards.1 quilt.1
-DOCS=		README README.MAIL quilt.pdf
+PORTDOCS=	README README.MAIL quilt.pdf
 
 .include <bsd.port.pre.mk>
 
@@ -56,5 +56,9 @@ CONFIGURE_ARGS+=	--disable-nls
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|$$(docdir)/$$(PACKAGE)-$$(VERSION)|$$(docdir)/$$(PACKAGE)|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
