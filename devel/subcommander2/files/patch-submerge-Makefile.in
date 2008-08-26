@@ -1,0 +1,20 @@
+--- submerge/Makefile.in.orig	2008-06-22 13:22:05.000000000 -0400
++++ submerge/Makefile.in	2008-08-09 09:44:42.000000000 -0400
+@@ -221,7 +221,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-QT_MOC = @QT_BIN@/moc
++QT_MOC = @QT_BIN@/moc-qt4
+ scdir = $(datadir)/subcommander
+ icondir = $(scdir)/icons/default
+ icon_DATA = ../pics/icons/default/MergeFile-Normal.png \
+@@ -245,7 +245,7 @@
+ 
+ AM_CXXFLAGS = @MACOSX_UNIVERSAL_CXXFLAGS@
+ AM_LDFLAGS = @MACOSX_UNIVERSAL_LDFLAGS@
+-submerge_LDADD = -L../util -L../svn -L../sublib  -lutil -lsvn -lsublib \
++submerge_LDADD = -L../util -L../svn -L../sublib  -lsublib -lutil -lsvn \
+                  @QT_LIBS@ @APR_LIBS@ @APU_LIBS@ @SVN_LIBS@ -lsvn_diff-1 \
+                  -lsvn_subr-1 @STLPORT_LIBS@ -lz
+ 

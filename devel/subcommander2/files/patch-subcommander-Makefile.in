@@ -1,8 +1,20 @@
---- subcommander/Makefile.in.orig	2008-04-06 16:52:58.000000000 -0400
-+++ subcommander/Makefile.in	2008-07-08 10:05:14.000000000 -0400
-@@ -332,7 +332,7 @@
+--- subcommander/Makefile.in.orig	2008-06-22 13:22:05.000000000 -0400
++++ subcommander/Makefile.in	2008-08-09 09:57:39.000000000 -0400
+@@ -326,7 +326,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-QT_MOC = @QT_BIN@/moc
++QT_MOC = @QT_BIN@/moc-qt4
+ scdir = $(datadir)/subcommander
+ icondir = $(scdir)/icons/default
+ icons = ../pics/icons/default
+@@ -430,9 +430,9 @@
  
- subcommander_LDADD = -L../util -L../svn -L../sublib -lsvn -lutil -lsublib @QT_LIBS@ \
+ AM_CXXFLAGS = @MACOSX_UNIVERSAL_CXXFLAGS@
+ AM_LDFLAGS = @MACOSX_UNIVERSAL_LDFLAGS@
+-subcommander_LDADD = -L../util -L../svn -L../sublib -lsvn -lutil -lsublib @QT_LIBS@ \
++subcommander_LDADD = -L../util -L../svn -L../sublib -lsvn -lsublib -lutil @QT_LIBS@ \
                   -lz @APR_LIBS@ @APU_LIBS@ @SVN_LIBS@ -lsvn_client-1 -lsvn_subr-1 \
 -                 -lsvn_ra-1 -lsvn_wc-1 -lsvn_delta-1 -lsvn_diff-1 -lsvn_ra_dav-1 \
 +                 -lsvn_ra-1 -lsvn_wc-1 -lsvn_delta-1 -lsvn_diff-1 \

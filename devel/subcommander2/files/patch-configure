@@ -1,0 +1,20 @@
+--- configure.orig	2008-08-24 15:30:09.000000000 -0400
++++ configure	2008-08-25 13:56:04.000000000 -0400
+@@ -6687,7 +6687,7 @@
+ 
+   # extract version numbers of qt
+ 
+-  QT_VERSION=`$QT_BIN/moc -v 2>&1 | sed "s/.*(Qt \(.*\))/\1/"`
++  QT_VERSION=`$QT_BIN/moc-qt4 -v 2>&1 | sed "s/.*(Qt \(.*\))/\1/"`
+   QT_MAJOR=`echo $QT_VERSION | sed "s/\(.*\)[.].*[.].*/\1/"`
+   QT_MINOR=`echo $QT_VERSION | sed "s/.*[.]\(.*\)[.].*/\1/"`
+ 
+@@ -6715,7 +6715,7 @@
+     *)
+       # any other Unix platform directly link with the libs
+ 
+-      QT_INCLUDES="-DQT3_SUPPORT -I$qt_path/include -I$qt_path/include/Qt"
++      QT_INCLUDES="-DQT3_SUPPORT -I$qt_path/include -I$qt_path/include/qt4"
+       QT_LIBS="-L$QT_LIBPATH -lQt3Support -lQtGui -lQtNetwork -lQtCore"
+     ;;
+     esac
