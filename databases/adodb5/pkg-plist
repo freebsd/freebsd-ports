@@ -34,6 +34,7 @@
 %%ADODB_DIR%%/datadict/datadict-mysql.inc.php
 %%ADODB_DIR%%/datadict/datadict-oci8.inc.php
 %%ADODB_DIR%%/datadict/datadict-postgres.inc.php
+%%ADODB_DIR%%/datadict/datadict-postgres.inc.php.bak
 %%ADODB_DIR%%/datadict/datadict-sapdb.inc.php
 %%ADODB_DIR%%/datadict/datadict-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-access.inc.php
@@ -51,14 +52,18 @@
 %%ADODB_DIR%%/drivers/adodb-informix72.inc.php
 %%ADODB_DIR%%/drivers/adodb-ldap.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql.inc.php
+%%ADODB_DIR%%/drivers/adodb-mssql.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-mssql_n.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysql.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqli.inc.php
+%%ADODB_DIR%%/drivers/adodb-mysqli.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-mysqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqlt.inc.php
 %%ADODB_DIR%%/drivers/adodb-netezza.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8.inc.php
+%%ADODB_DIR%%/drivers/adodb-oci8.inc.php.bak
+%%ADODB_DIR%%/drivers/adodb-oci8.old.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci805.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8po.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc.inc.php
@@ -96,6 +101,7 @@
 %%ADODB_DIR%%/lang/adodb-en.inc.php
 %%ADODB_DIR%%/lang/adodb-es.inc.php
 %%ADODB_DIR%%/lang/adodb-esperanto.inc.php
+%%ADODB_DIR%%/lang/adodb-fa.inc.php
 %%ADODB_DIR%%/lang/adodb-fr.inc.php
 %%ADODB_DIR%%/lang/adodb-hu.inc.php
 %%ADODB_DIR%%/lang/adodb-it.inc.php
@@ -128,6 +134,7 @@
 %%ADODB_DIR%%/session/adodb-session-clob2.php
 %%ADODB_DIR%%/session/adodb-session.php
 %%ADODB_DIR%%/session/adodb-session2.php
+%%ADODB_DIR%%/session/adodb-session2.php.bak
 %%ADODB_DIR%%/session/adodb-sessions.mysql.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.clob.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.sql
