@@ -7,6 +7,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/ \
 		${MASTER_SITE_LOCAL}
@@ -35,5 +36,7 @@ MAN1=		ccmake.1 \
 post-patch:
 	@${GREP} -rl '/usr/X11R6' ${WRKSRC}/Modules ${WRKSRC}/Tests | \
 		${XARGS} ${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'
+	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
+		${WRKSRC}/Modules/FindKDE4.cmake
 
 .include <bsd.port.mk>
