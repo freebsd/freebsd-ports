@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont
-PORTVERSION=	20080808
+PORTVERSION=	20080820
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://unifoundry.com/ \
 		http://chirashi-no-ura.net/files/
