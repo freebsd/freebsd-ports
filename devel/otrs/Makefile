@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -142,7 +142,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/scripts/*.p[hm]* ${WRKSRC}/scripts/apache* ${OTRSDIR}/scripts/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${OTRSDIR}/scripts/database/update/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.pl ${OTRSDIR}/scripts/test/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${OTRSDIR}/scripts/test/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/tools/*.pl ${OTRSDIR}/scripts/tools/
 .ifndef NOPORTDOCS
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
