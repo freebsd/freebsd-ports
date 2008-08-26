@@ -1,6 +1,6 @@
---- gr-audio-oss/Makefile.in.orig	2008-03-24 12:50:02.000000000 -0400
-+++ gr-audio-oss/Makefile.in	2008-03-24 16:20:01.000000000 -0400
-@@ -543,12 +543,11 @@
+--- gr-audio-oss/Makefile.in.orig	2008-08-23 20:37:37.000000000 -0400
++++ gr-audio-oss/Makefile.in	2008-08-24 07:02:01.000000000 -0400
+@@ -558,12 +558,11 @@
  
  # Base directory for example applications
  exampledir = $(datadir)/gnuradio/examples

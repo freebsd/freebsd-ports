@@ -1,6 +1,6 @@
---- gr-wxgui/Makefile.in.orig	2008-03-24 12:50:08.000000000 -0400
-+++ gr-wxgui/Makefile.in	2008-03-24 16:27:33.000000000 -0400
-@@ -545,11 +545,11 @@
+--- gr-wxgui/Makefile.in.orig	2008-08-23 20:37:43.000000000 -0400
++++ gr-wxgui/Makefile.in	2008-08-24 07:03:34.000000000 -0400
+@@ -560,11 +560,11 @@
  
  # Base directory for example applications
  exampledir = $(datadir)/gnuradio/examples
