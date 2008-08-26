@@ -18,8 +18,6 @@ RUN_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		makedepend:${PORTSDIR}/devel/makedepend \
 		${PREFIX}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
 
-CONFLICTS=	imake-4*
-
 USE_PERL5=	yes
 
 XORG_CAT=	util
@@ -29,7 +27,7 @@ USE_XORG=	xproto
 .error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-MAN1= 		ccmakedep.1 \
+MAN1=		ccmakedep.1 \
 		cleanlinks.1 \
 		imake.1 \
 		makeg.1 \
