@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-video-openchrome
-PORTVERSION=	0.2.901
-PORTREVISION=	1
+PORTVERSION=	0.2.902
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.openchrome.org/releases/
 
