@@ -26,6 +26,8 @@ CONFIGURE_ARGS=	--enable-fsstd --disable-esdtest --disable-dependency-tracking \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+PORTSCOUT=	limit:0.16.8.14-*
+
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME=	esound
 .else
