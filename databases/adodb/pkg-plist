@@ -52,6 +52,7 @@
 %%ADODB_DIR%%/drivers/adodb-informix72.inc.php
 %%ADODB_DIR%%/drivers/adodb-ldap.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql.inc.php
+%%ADODB_DIR%%/drivers/adodb-mssql.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-mssql_n.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysql.inc.php
@@ -96,6 +97,7 @@
 %%ADODB_DIR%%/lang/adodb-en.inc.php
 %%ADODB_DIR%%/lang/adodb-es.inc.php
 %%ADODB_DIR%%/lang/adodb-esperanto.inc.php
+%%ADODB_DIR%%/lang/adodb-fa.inc.php
 %%ADODB_DIR%%/lang/adodb-fr.inc.php
 %%ADODB_DIR%%/lang/adodb-hu.inc.php
 %%ADODB_DIR%%/lang/adodb-it.inc.php
