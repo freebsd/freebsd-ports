@@ -7,6 +7,7 @@
 
 PORTNAME=	openct
 PORTVERSION=	0.6.15
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -32,8 +33,6 @@ CONFIGURE_ARGS=	--with-ifddir=${PREFIX}/lib/ifd \
 
 MAN1=		openct-tool.1
 
-DOC_FILES=	trac.css *.html
-
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
@@ -44,6 +43,10 @@ CONFIGURE_ARGS+=--enable-pcsc
 PLIST_SUB+=	PCSC=""
 .else
 PLIST_SUB+=	PCSC="@comment "
+.endif
+
+.ifndef(NOPORTDOCS)
+CONFIGURE_ARGS+=--enable-doc
 .endif
 
 post-patch:
@@ -62,9 +65,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKDIR}/etoken.conf ${EXAMPLESDIR}
-.ifndef(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc/nonpersistent/wiki.out/ && ${CP} -R ${DOC_FILES} ${DOCSDIR})
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
