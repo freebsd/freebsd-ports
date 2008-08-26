@@ -10,6 +10,7 @@ bin/pkcs11-tool
 bin/pkcs15-crypt
 bin/pkcs15-init
 bin/pkcs15-tool
+bin/rutoken-tool
 etc/opensc.conf-sample
 include/opensc/asn1.h
 include/opensc/cardctl.h
@@ -18,6 +19,7 @@ include/opensc/emv.h
 include/opensc/errors.h
 include/opensc/log.h
 include/opensc/opensc.h
+include/opensc/pkcs11-opensc.h
 include/opensc/pkcs11.h
 include/opensc/pkcs15-init.h
 include/opensc/pkcs15.h
@@ -52,6 +54,9 @@ lib/opensc-pkcs11.so
 lib/pkcs11-spy.a
 lib/pkcs11-spy.la
 lib/pkcs11-spy.so
+lib/pkcs11/onepin-opensc-pkcs11.so
+lib/pkcs11/opensc-pkcs11.so
+lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/asepcos.profile
 %%DATADIR%%/cardos.profile
 %%DATADIR%%/cyberflex.profile
@@ -63,7 +68,9 @@ lib/pkcs11-spy.so
 %%DATADIR%%/muscle.profile
 %%DATADIR%%/oberthur.profile
 %%DATADIR%%/pkcs15.profile
+%%DATADIR%%/rutoken.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
 @dirrm include/opensc
+@dirrm lib/pkcs11
 @dirrm %%DATADIR%%

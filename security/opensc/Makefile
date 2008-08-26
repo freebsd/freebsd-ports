@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opensc
-DISTVERSION=	0.11.4
-PORTREVISION=	2
+PORTVERSION=	0.11.5
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -23,18 +22,13 @@ USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
+		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
-
-DOC_FILES=	README *.sh *.xsl *.css *.html api html tools
 
 PORTDOCS=	*
 
@@ -68,14 +62,13 @@ MAN5=		pkcs15-profile.5
 
 .if !defined(WITHOUT_OPENCT)
 LIB_DEPENDS+=	openct.1:${PORTSDIR}/security/openct
-.else
-CONFIGURE_ARGS+=--disable-openct
+CONFIGURE_ARGS+=--enable-openct
 .endif
 
 .if defined(WITH_PCSC)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-.else
-CONFIGURE_ARGS+=--disable-pcsc-lite
+CONFIGURE_ARGS+=--enable-pcsc \
+		--with-pcsc-provider=${LOCALBASE}/lib/libpcsclite.so
 .endif
 
 .if defined(WITH_SIGNER)
@@ -84,21 +77,34 @@ PINENTRY?=	${LOCALBASE}/bin/pinentry
 PINENTRY_PORT?=	security/pinentry
 RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}
 USE_XORG=	x11
-CONFIGURE_ARGS+=--with-libassuan-prefix=${LOCALBASE} \
-		--with-plugin-dir=${LOCALBASE}/lib/browser_plugins \
-		--with-pin-entry=${PINENTRY}
+CONFIGURE_ARGS+=--enable-nsplugin \
+		--with-libassuan-prefix=${LOCALBASE} \
+		--with-plugindir=${LOCALBASE}/lib/browser_plugins \
+		--with-pinentry=${PINENTRY}
 PLIST_SUB+=	SIGNER=""
 .else
-CONFIGURE_ARGS+=--disable-nsplugin
 PLIST_SUB+=	SIGNER="@comment "
 .endif
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/opensc.conf ${PREFIX}/etc/opensc.conf-sample
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
+CONFIGURE_ARGS+=--enable-doc
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/configure
+.if !defined(WITH_SIGNER)
+	@${REINPLACE_CMD} 's|install-data-am: install-pluginDATA|install-data-am:|' \
+		${WRKSRC}/src/signer/Makefile.in
+.endif
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA install-dist_htmlDATA|install-data-am:|' \
+		${WRKSRC}/doc/Makefile.in
+.endif
+
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
