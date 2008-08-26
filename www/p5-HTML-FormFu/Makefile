@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.03001
+PORTVERSION=	0.03003
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -141,6 +141,9 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Plugin::StashValid.3 \
 	HTML::FormFu::Deflator::CompoundSplit.3 \
 	HTML::FormFu::Plugin.3 \
-	HTML::FormFu::Model.3
+	HTML::FormFu::Model.3 \
+	HTML::FormFu::Constraint::DateTime.3 \
+	HTML::FormFu::Filter::CompoundSprintf.3 \
+	HTML::FormFu::Filter::_Compound.3
 
 .include <bsd.port.mk>
