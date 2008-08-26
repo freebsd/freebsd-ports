@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 PORTREVISION?=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
@@ -15,7 +15,7 @@ DISTNAME=	ncftp-${PORTVERSION}-src
 
 .if !defined(WITHOUT_NCFTP_IPV6) && !defined(WITHOUT_IPV6)
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-321-v6-20070822.diff.gz
+PATCHFILES=	ncftp-322-v6-20080821.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -40,7 +40,7 @@ MAN1=		${LATEST_LINK}.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
 		ncftpspooler.1
 MAN3=		Strn.3
 
-LIBNCFTP=	libncftp.so.2
+LIBNCFTP=	libncftp.so.3
 LIBSIO=		libsio.so.5
 LIBSTRN=	libStrn.so.1
 
