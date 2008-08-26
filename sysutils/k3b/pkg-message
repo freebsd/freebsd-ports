@@ -1,4 +1,4 @@
-Notes for FreeBSD 5.x and onwards users:
+Notes for FreeBSD 5.x and 6.x users:
 1. The FreeBSD k3b port supports SCSI drives only. If you have IDE CD or DVD
    drives, use them through the cam system. See Chapter 12.5.9 of the handbook
    (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM)
