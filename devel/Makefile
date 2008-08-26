@@ -2447,6 +2447,7 @@
     SUBDIR += styx
     SUBDIR += subclipse
     SUBDIR += subcommander
+    SUBDIR += subcommander2
     SUBDIR += subversion
     SUBDIR += subversion-devel
     SUBDIR += subversion-freebsd
