@@ -1,9 +1,9 @@
 bin/parrot
+bin/parrot_debugger
 bin/pbc_disassemble
 bin/pbc_info
 bin/pbc_merge
 bin/pbc_to_exe
-bin/pdb
 bin/pdump
 compilers/imcc/imclexer.c
 compilers/json/JSON.pbc
@@ -28,7 +28,6 @@ include/parrot/atomic/fallback.h
 include/parrot/atomic/gcc_pcc.h
 include/parrot/atomic/gcc_x86.h
 include/parrot/atomic/sparc.h
-include/parrot/builtin.h
 include/parrot/caches.h
 include/parrot/cclass.h
 include/parrot/charset.h
@@ -36,7 +35,7 @@ include/parrot/compiler.h
 include/parrot/config.h
 include/parrot/core_pmcs.h
 include/parrot/datatypes.h
-include/parrot/debug.h
+include/parrot/debugger.h
 include/parrot/dod.h
 include/parrot/dynext.h
 include/parrot/embed.h
@@ -349,7 +348,6 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/pdds/draft/pdd11_extending.pod
 %%PARROT_DOCS%%/pdds/draft/pdd14_bignum.pod
 %%PARROT_DOCS%%/pdds/draft/pdd16_native_call.pod
-%%PARROT_DOCS%%/pdds/draft/pdd19_pir.pod
 %%PARROT_DOCS%%/pdds/draft/pdd29_compiler_tools.pod
 %%PARROT_DOCS%%/pdds/pdd00_pdd.pod
 %%PARROT_DOCS%%/pdds/pdd03_calling_conventions.pod
@@ -361,6 +359,7 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/pdds/pdd15_objects.pod
 %%PARROT_DOCS%%/pdds/pdd17_pmc.pod
 %%PARROT_DOCS%%/pdds/pdd18_security.pod
+%%PARROT_DOCS%%/pdds/pdd19_pir.pod
 %%PARROT_DOCS%%/pdds/pdd20_lexical_vars.pod
 %%PARROT_DOCS%%/pdds/pdd21_namespaces.pod
 %%PARROT_DOCS%%/pdds/pdd22_io.pod
