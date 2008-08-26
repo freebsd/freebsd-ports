@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.0
 CATEGORIES=	lang
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BS/BSCHMAL
+MASTER_SITE_SUBDIR=	../../authors/id/R/RG/RGRJR
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
