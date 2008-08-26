@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20080725
-PORTREVISION=	1
+PORTVERSION=	20080826
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -40,9 +39,6 @@ PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
 .endif
-
-post-extract:
-	@cd ${WRKSRC}; ${MAKE} clean
 
 post-install:
 	${LN} -s ${PREFIX}/bin/grep ${PREFIX}/bin/bsdgrep
