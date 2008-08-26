@@ -849,4 +849,5 @@ share/aclocal/ppl.m4
 %%PORTDOCS%%%%DOCSDIR%%/ppl-user-0.9.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ppl-user-0.9-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
+@dirrm lib/ppl
 @dirrmtry share/aclocal
