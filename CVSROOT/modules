@@ -1230,6 +1230,7 @@ ca_root_nss                     ports/security/ca_root_nss
 cabextract                      ports/archivers/cabextract
 cacao                           ports/java/cacao
 cacheboy                        ports/www/cacheboy
+cacheboy15-devel                ports/www/cacheboy15-devel
 cacti                           ports/net-mgmt/cacti
 cacti-spine                     ports/net-mgmt/cacti-spine
 cadaver                         ports/www/cadaver
@@ -5645,6 +5646,7 @@ ja-mypaedia-fpw                 ports/japanese/mypaedia-fpw
 ja-mypaedia-fpw-package         ports/japanese/mypaedia-fpw-package
 ja-namazu                       ports/japanese/namazu
 ja-namazu2                      ports/japanese/namazu2
+ja-navi2ch                      ports/japanese/navi2ch
 ja-navi2ch-emacs21              ports/japanese/navi2ch-emacs21
 ja-navi2ch-xemacs21-mule        ports/japanese/navi2ch-xemacs21-mule
 ja-ne                           ports/japanese/ne
@@ -6712,6 +6714,7 @@ landscape                       ports/graphics/landscape
 lang_chameleon                  ports/lang/chameleon
 lang_mpd                        ports/lang/mpd
 langspec                        ports/java/langspec
+lanmap                          ports/net-mgmt/lanmap
 lapack                          ports/math/lapack
 lapack++                        ports/math/lapack++
 lapack95                        ports/math/lapack95
