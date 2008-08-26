@@ -18,7 +18,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gsed:${PORTSDIR}/textproc/gsed \
 		gpatch:${PORTSDIR}/devel/patch \
-		diffstat:${PORTSDIR}/textproc/diffstat
+		diffstat:${PORTSDIR}/textproc/diffstat \
+		gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
