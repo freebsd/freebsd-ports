@@ -49,12 +49,20 @@ PLIST_SUB+=	PCSC="@comment "
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
+.ifndef(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
+		${WRKSRC}/doc/Makefile.in
+.else
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKDIR}/etoken.conf ${EXAMPLESDIR}
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc/nonpersistent/wiki.out/ && ${CP} -R ${DOC_FILES} ${DOCSDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
