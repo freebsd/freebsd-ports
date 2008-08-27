@@ -27,10 +27,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 pre-configure:
 	${CP} ${LTMAIN} ${WRKSRC}
 

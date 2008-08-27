@@ -1,5 +1,5 @@
---- src/ixlib_garbage.hh.orig	Tue Jun 19 16:16:29 2001
-+++ src/ixlib_garbage.hh	Fri Dec  1 19:56:04 2006
+--- src/ixlib_garbage.hh.orig	2001-06-20 01:16:29.000000000 +0200
++++ src/ixlib_garbage.hh	2008-08-27 17:54:47.000000000 +0200
 @@ -126,24 +126,24 @@
        // compiler generates one, which is *ahem* - fatal
        ref(ref const &src)
@@ -216,6 +216,15 @@
  	return oldinst;
          }
      };
+@@ -440,7 +440,7 @@
+ 	
+     private:
+       hash_value hash(T const *ptr) const {
+-        unsigned u = reinterpret_cast<unsigned>(ptr);
++        uintptr_t u = reinterpret_cast<uintptr_t>(ptr);
+         return (u ^ (u >> 8) ^ (u >> 16) ^ (u >> 24)) & HASH_MAX;
+         }
+       instance_data *getHashEntry(T const *instance) {
 @@ -482,7 +482,7 @@
  
  
