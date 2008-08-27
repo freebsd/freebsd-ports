@@ -2,7 +2,7 @@
 lib/libStrn.so
 lib/libStrn.so.1
 lib/libncftp.so
-lib/libncftp.so.2
+lib/libncftp.so.3
 lib/libsio.so
 lib/libsio.so.5
 bin/%%NCFTP%%
