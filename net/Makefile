@@ -339,6 +339,7 @@
     SUBDIR += miredo
     SUBDIR += mknbi
     SUBDIR += mmucl
+    SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
     SUBDIR += mpd
