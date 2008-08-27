@@ -8,6 +8,7 @@
     SUBDIR += bind9
     SUBDIR += bind9-dlz
     SUBDIR += bind9-sdb-ldap
+    SUBDIR += bind9-sdb-postgresql
     SUBDIR += bind94
     SUBDIR += bind95
     SUBDIR += bindgraph
