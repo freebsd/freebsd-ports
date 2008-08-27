@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.67
-PORTREVISION=	1
+PORTVERSION=	3.68
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
@@ -27,7 +26,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
 		DC="${CC} -DX -I${LOCALBASE}/include ${CFLAGS}" \
-		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt"
+		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
 
 PORTDOCS=	*
 
