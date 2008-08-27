@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	devil
-PORTVERSION=	1.6.7
-PORTREVISION=	6
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openil
+MASTER_SITES=	SF/openil
 DISTNAME=	DevIL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,14 +20,22 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
-USE_AUTOTOOLS=	libtool:15
-USE_GL=		yes
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-allegro
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
-
 OPTIONS=	SDL "Enable SDL support" off
+
+NO_WRKSUBDIR=	yes
+
+USE_GL=		glu
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+CONFIGURE_ARGS=	--disable-allegro --disable-directx8 --disable-directx9 \
+		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +46,6 @@ CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} \( -name '*.c' -o -name '*.cpp' -o -name '*.h' \) -print0 |\
-		${XARGS} -0 ${REINPLACE_CMD} 's|ILvoid|void|g'
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.post.mk>
