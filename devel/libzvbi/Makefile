@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzvbi
-PORTVERSION=	0.2.31
+PORTVERSION=	0.2.32
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zapping
@@ -29,5 +29,11 @@ CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/li
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
+#		${WRKSRC}/contrib/atsc-cc.c
+#	@${REINPLACE_CMD} -e 's|-I\.|& -I\.\./src|g' \
+#		${WRKSRC}/contrib/Makefile.in
+	@${REINPLACE_CMD} -e 's|zvbi-atsc-cc$$(EXEEXT)||g; \
+		s|zvbi-atsc-cc\.1||g' ${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.mk>
