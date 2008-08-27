@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jack-rack
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/jack-rack
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui libxml2
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
