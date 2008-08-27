@@ -878,7 +878,6 @@
     SUBDIR += oniguruma
     SUBDIR += oniguruma4
     SUBDIR += open-beagle
-    SUBDIR += openthreads
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp

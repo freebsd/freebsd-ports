@@ -1,7 +1,0 @@
-This library is intended to provide a minimal & complete Object-Oriented (OO)
-thread interface for C++ programmers.  It is loosely modeled on the Java thread
-API, and the POSIX Threads standards.  The architecture of the library is
-designed around "swappable" thread models which are defined at compile-time in
-a shared object library.
-
-WWW: http://openthreads.sourceforge.net/

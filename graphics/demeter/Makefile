@@ -61,6 +61,7 @@ USE_GNOME=	libxml2
 .ifdef (WITH_OSG)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 RUN_DEPENDS+=	${LOCALBASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
+BROKEN=		Does not compile with osg
 .endif
 
 .ifdef (WITH_GDAL)

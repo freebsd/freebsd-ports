@@ -3582,3 +3582,5 @@ irc/iip||2008-08-24|Abanndonware, long since deprecated
 www/mediawiki19||2008-08-26|Expired, use www/mediawiki instead
 www/mediawiki110||2008-08-26|Expired, use www/mediawiki instead
 www/mediawiki111||2008-08-26|Expired, use www/mediawiki instead
+graphics/openproducer||2008-08-27|Now included in graphics/osg
+devel/openthreads||2008-08-27|Now included in graphics/osg
