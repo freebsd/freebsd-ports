@@ -1105,6 +1105,7 @@
     SUBDIR += phproxy
     SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
+    SUBDIR += phpwebgallery
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
