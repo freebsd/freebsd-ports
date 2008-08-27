@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.98.0
+PORTVERSION=	0.98.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,9 @@ PERL_CONFIGURE=	yes
 MAN3=		PAR.3 \
 		PAR::Environment.3 \
 		PAR::FAQ.3 \
-		PAR::Heavy.3 PAR::Tutorial.3
+		PAR::Heavy.3 PAR::Tutorial.3 \
+		PAR::SetupProgname.3 \
+		PAR::SetupTemp.3
 
 .include <bsd.port.pre.mk>
 
