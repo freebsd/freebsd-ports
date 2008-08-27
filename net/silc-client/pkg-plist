@@ -1,4 +1,21 @@
 bin/silc
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi.pm
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/Silc.pm
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/TextUI.pm
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/Irssi/UI.pm
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/.packlist
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Irssi.bs
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Irssi.so
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/.packlist
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.bs
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc/Silc.so
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/.packlist
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/TextUI.bs
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI/TextUI.so
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/.packlist
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/UI.bs
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI/UI.so
+%%WITH_PERL%%lib/silc/perl/%%PERL_ARCHNAME%%/perllocal.pod
 %%DATADIR%%/help/action
 %%DATADIR%%/help/admin
 %%DATADIR%%/help/alias
@@ -108,6 +125,15 @@ bin/silc
 @unexec if cmp -s %D/etc/silc.conf.sample %D/etc/silc.conf; then rm -f %D/etc/silc.conf; fi
 etc/silc.conf.sample
 @exec if [ ! -f %D/etc/silc.conf ] ; then cp -p %D/%F %B/silc.conf; fi
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/Silc
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/TextUI
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi/UI
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/auto/Irssi
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/auto
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%/Irssi
+%%WITH_PERL%%@dirrm lib/silc/perl/%%PERL_ARCHNAME%%
+%%WITH_PERL%%@dirrm lib/silc/perl
+@dirrmtry lib/silc
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/scripts

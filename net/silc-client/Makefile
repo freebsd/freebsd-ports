@@ -7,6 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -32,11 +33,12 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
-		--with-perl=no \
 		--without-libtoolfix
 
 OPTIONS=	PTHREADS "Enable pthreads support" off \
 		IPV6 "Enable IPv6 support" on \
+		ICONV "Enable international character support" on \
+		PERL "Enable perl support" on \
 		OPTIMIZED_ASM "Use assembler optimizations (i386 only)" on
 
 .ifdef(IRSSI_PLUGIN)
@@ -80,6 +82,23 @@ WITHOUT_OPTIMIZED_ASM=	yes
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_ICONV)
+USE_ICONV=		yes
+CONFIGURE_ARGS+=	--with-iconv
+.else
+CONFIGURE_ARGS+=	--without-iconv
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5=		yes
+PERL_ARCHNAME!=		${PERL} -V:archname 2>/dev/null || true
+PLIST_SUB+=		WITH_PERL="" PERL_ARCHNAME=${PERL_ARCHNAME:S/archname='//:S/';//}
+CONFIGURE_ARGS+=	--with-perl-lib=${PREFIX}/lib/${PORTNAME}/perl
+.else
+CONFIGURE_ARGS+=	--without-perl
+PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITHOUT_OPTIMIZED_ASM)
