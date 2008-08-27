@@ -1,6 +1,6 @@
---- mysys/default.c.orig	Thu May 26 15:26:56 2005
-+++ mysys/default.c	Fri Jun  3 17:16:59 2005
-@@ -517,7 +517,7 @@
+--- mysys/default.c.orig	2008-08-04 14:19:45.000000000 +0200
++++ mysys/default.c	2008-08-27 12:23:54.000000000 +0200
+@@ -634,7 +634,7 @@
    {
      MY_STAT stat_info;
      if (!my_stat(name,&stat_info,MYF(0)))
@@ -9,14 +9,14 @@
      /*
        Ignore world-writable regular files.
        This is mainly done to protect us to not read a file created by
-@@ -867,9 +867,8 @@
-     *ptr++= env;
+@@ -1084,7 +1084,10 @@
+     errors += add_directory(alloc, env, dirs);
+ #elif defined(DEFAULT_SYSCONFDIR)
+   if (DEFAULT_SYSCONFDIR != "")
++  {
+     errors += add_directory(alloc, DEFAULT_SYSCONFDIR, dirs);
++    errors += add_directory(alloc, DEFAULT_SYSCONFDIR "mysql", dirs);
++  }
+ #endif /* __EMX__ || __OS2__ */
+ 
  #endif
-   *ptr++= "/etc/";
-+  *ptr++= "%%PREFIX%%/etc/";
- #endif
--  if ((env= getenv(STRINGIFY_ARG(DEFAULT_HOME_ENV))))
--    *ptr++= env;
-   *ptr++= "";			/* Place for defaults_extra_file */
- #if !defined(__WIN__) && !defined(__NETWARE__)
-   *ptr++= "~/";;
