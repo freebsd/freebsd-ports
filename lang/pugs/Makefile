@@ -6,54 +6,73 @@
 #
 
 PORTNAME=	pugs
-PORTVERSION=	6.2.13
-PORTREVISION=	1
+PORTVERSION=	6.28.0
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN
-DISTNAME=	Perl6-Pugs-${PORTVERSION}
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     clsung
+DISTNAME=       Perl6-Pugs-${PORTVERSION}.r22035
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Perl6 Implementation
 
-BROKEN=		This version does not build with current ghc
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		${SITE_PERL}/Pugs/Emitter/Perl6/Perl5.pm:${PORTSDIR}/lang/p5-v6 \
+    		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
     		p5-Data-Bind>=0.28:${PORTSDIR}/devel/p5-Data-Bind \
     		p5-Devel-Caller>=0.10:${PORTSDIR}/devel/p5-Devel-Caller \
     		p5-Module-Compile>=0.17:${PORTSDIR}/devel/p5-Module-Compile \
     		p5-Moose>=0.10:${PORTSDIR}/devel/p5-Moose \
+		p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
     		p5-Pugs-Compiler-Rule>=0.17:${PORTSDIR}/lang/p5-Pugs-Compiler-Rule \
     		p5-Sub-Multi>=0:${PORTSDIR}/devel/p5-Sub-Multi
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/Perl6-Pugs-${PORTVERSION}
 
-MAN3=		Perl6::Pugs.3 \
-		Inline::Pugs.3
-
-SITE_PERL6_REL=	lib/perl6
-PERL6_MANPREFIX= ${PREFIX}/${SITE_PERL6_REL}/site_perl/auto/pugs/perl5
-SITE_PERL6_MAN3=	Class::Rebless.3 \
-			PIL2JS::JSPM.3 \
-			Pugs::Compiler::Perl6.3 \
-			Pugs::Compiler::Regex.3 \
-			Pugs::Compiler::RegexPerl5.3 \
-			Pugs::Compiler::Rule.3 \
-			Pugs::Compiler::Token.3 \
-			Pugs::Compiler::compile_p6grammar-token.3 \
-			Pugs::Compiler::compile_p6grammar.3 \
-			Pugs::Emitter::Perl6::Perl5.3 \
-			Pugs::Grammar::Precedence.3 \
-			Pugs::Runtime::Capture.3 \
-			Pugs::Runtime::Match.3 \
-			Pugs::Runtime::Perl6.3 \
-			v6.3
-_MANPAGES+=     ${SITE_PERL6_MAN3:S%^%${PERL6_MANPREFIX}/man3/%}
-PLIST_SUB=      SITE_PERL6_REL=${SITE_PERL6_REL}
+MAN3=		Inline::Pugs.3 \
+		Perl6::API.3 \
+		Perl6::API::Math::Basic.3 \
+		Perl6::API::Scalar.3 \
+		Perl6::API::macros.3 \
+		Perl6::Doc.3 \
+		Perl6::FAQ::Capture.3 \
+		Perl6::FAQ::FUD.3 \
+		Perl6::Overview.3 \
+		Perl6::Overview::Control.3 \
+		Perl6::Overview::Data.3 \
+		Perl6::Overview::File.3 \
+		Perl6::Overview::Functions.3 \
+		Perl6::Overview::Object.3 \
+		Perl6::Overview::Operator.3 \
+		Perl6::Overview::Reduce.3 \
+		Perl6::Overview::Rule.3 \
+		Perl6::Overview::Smartmatch.3 \
+		Perl6::Overview::Subroutine.3 \
+		Perl6::Overview::Variable.3 \
+		Perl6::Perl5::Differences.3 \
+		Perl6::Perl5::Docfinder.3 \
+		Perl6::Pugs.3 \
+		Perl6::Spec.3 \
+		Perl6::Spec::Block.3 \
+		Perl6::Spec::CPAN.3 \
+		Perl6::Spec::Concurrency.3 \
+		Perl6::Spec::Documentation.3 \
+		Perl6::Spec::Functions.3 \
+		Perl6::Spec::IO.3 \
+		Perl6::Spec::Module.3 \
+		Perl6::Spec::Object.3 \
+		Perl6::Spec::Operator.3 \
+		Perl6::Spec::Overload.3 \
+		Perl6::Spec::Overview.3 \
+		Perl6::Spec::Package.3 \
+		Perl6::Spec::Rule.3 \
+		Perl6::Spec::Structure.3 \
+		Perl6::Spec::Subroutine.3 \
+		Perl6::Spec::Syntax.3 \
+		Perl6::Tutorial.3
 
 .include <bsd.port.pre.mk>
 
