@@ -9,8 +9,7 @@ PORTNAME=	freealut
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.openal.org/openal_webstf/downloads/ \
-		http://aedion.de/openal/
+MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
