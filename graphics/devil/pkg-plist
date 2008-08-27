@@ -1,3 +1,10 @@
+include/IL/config.h
+include/IL/devil_internal_exports.h
+include/IL/il.h
+include/IL/il_wrap.h
+include/IL/ilu.h
+include/IL/ilu_region.h
+include/IL/ilut.h
 lib/libIL.a
 lib/libIL.la
 lib/libIL.so
@@ -10,11 +17,4 @@ lib/libILUT.a
 lib/libILUT.la
 lib/libILUT.so
 lib/libILUT.so.1
-include/IL/il.h
-include/IL/ilu.h
-include/IL/ilut.h
-include/IL/il_wrap.h
-include/IL/config.h
-include/IL/devil_internal_exports.h
-include/IL/ilu_region.h
 @dirrm include/IL
