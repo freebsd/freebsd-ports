@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CPANTS-Analyse
-PORTVERSION=	0.79
-PORTREVISION=	1
+PORTVERSION=	0.82
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,6 +36,7 @@ MAN3=		Module::CPANTS::Analyse.3 \
 		Module::CPANTS::Kwalitee::BrokenInstaller.3 \
 		Module::CPANTS::Kwalitee::CpantsErrors.3 \
 		Module::CPANTS::Kwalitee::Distname.3 \
+		Module::CPANTS::Kwalitee::Distros.3 \
 		Module::CPANTS::Kwalitee::Files.3 \
 		Module::CPANTS::Kwalitee::FindModules.3 \
 		Module::CPANTS::Kwalitee::License.3 \
