@@ -1,6 +1,6 @@
---- ./Makefile.orig	2008-06-07 21:03:58.000000000 -0400
-+++ ./Makefile	2008-06-14 18:18:52.000000000 -0400
-@@ -164,16 +164,16 @@
+--- ./Makefile.orig	2008-08-27 08:55:18.000000000 -0400
++++ ./Makefile	2008-08-27 08:57:19.000000000 -0400
+@@ -164,8 +164,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,19 +11,9 @@
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
+@@ -217,15 +217,15 @@
  
- prefix = $(HOME)
- bindir = $(prefix)/bin
--mandir = $(prefix)/share/man
--infodir = $(prefix)/share/info
-+mandir = $(prefix)/man
-+infodir = $(prefix)/info
- gitexecdir = $(bindir)
- sharedir = $(prefix)/share
- template_dir = $(sharedir)/git-core/templates
-@@ -206,15 +206,15 @@
- 
- export prefix bindir gitexecdir sharedir template_dir htmldir sysconfdir
+ export prefix bindir sharedir htmldir sysconfdir
  
 -CC = gcc
 -AR = ar
@@ -46,3 +36,16 @@
  
  export TCL_PATH TCLTK_PATH
  
+@@ -826,9 +826,9 @@
+ endif
+ ifndef NO_OPENSSL
+ 	OPENSSL_LIBSSL = -lssl
+-	ifdef OPENSSLDIR
+-		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
+-		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
++	ifdef OPENSSLBASE 
++		BASIC_CFLAGS += -I$(OPENSSLBASE)/include
++		OPENSSL_LINK = -L$(OPENSSLBASE)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLBASE)/$(lib)
+ 	else
+ 		OPENSSL_LINK =
+ 	endif

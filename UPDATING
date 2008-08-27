@@ -7,6 +7,24 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080827:
+  AFFECTS: users of devel/git
+  AUTHOR: wxs@FreeBSD.org
+
+  With the default Makefile settings, most of the programs are now
+		installed outside your $PATH, except for "git", "gitk" and
+		some server side programs that need to be accessible for technical
+		reasons.  Invoking a git subcommand as "git-xyzzy" from the command
+		line has been deprecated since early 2006 (and officially announced in
+		1.5.4 release notes); use of them from your scripts after adding
+		output from "git --exec-path" to the $PATH is still supported in this
+		release, but users are again strongly encouraged to adjust their
+		scripts to use "git xyzzy" form, as we will stop installing
+		"git-xyzzy" hardlinks for built-in commands in later releases.
+
+  Please see this URL for more information:
+  http://www.kernel.org/pub/software/scm/git/docs/RelNotes-1.6.0.txt
+
+20080827:
   AFFECTS: users of mail/qmhandle
   AUTHOR: garga@FreeBSD.org
 

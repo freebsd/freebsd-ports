@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.6.4
+PORTVERSION=	1.6.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -207,9 +207,6 @@ PLIST_SUB+=	GITWEB=""
 .else
 PLIST_SUB+=	GITWEB="@comment "
 .endif
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|OPENSSLDIR|OPENSSLBASE|g' ${WRKSRC}/Makefile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
