@@ -61,13 +61,13 @@ pre-install:
 		&& ${FIND} -d . -type d | \
 		${CUT} -c3-999 | \
 		${SED} -e 's:^:@dirrm share/doc/pd/:' >> ${PLIST}
+.endif
 	cd ${WRKSRC}/../extra && ${FIND} -s . -type f -or -type l | \
 		${CUT} -c3-999 | \
 		${SED} -e 's:^:share/pd/:' >> ${PLIST} \
 		&& ${FIND} -d . -type d | \
 		${CUT} -c3-999 | \
 		${SED} -e 's:^:@dirrm share/pd/:' >> ${PLIST}
-.endif
 
 do-install:
 .for ii in pd pd-gui pd-watchdog pdreceive pdsend
