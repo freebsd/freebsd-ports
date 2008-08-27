@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_p11
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
@@ -23,14 +23,14 @@ USE_GNOME=	pkgconfig
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-DOC_FILES=	README *.sh *.xsl *.css *.html
-
 PORTDOCS=	*
 
 .ifndef(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
+	@${MKDIR} ${DOCSDIR}/wiki
+	@(cd ${WRKSRC} && ${CP} NEWS ${DOCSDIR})
+	@(cd ${WRKSRC}/doc && ${CP} README ${DOCSDIR})
+	@(cd ${WRKSRC}/doc && ${CP} *.css *.html ${DOCSDIR}/wiki)
 .endif
 
 .include <bsd.port.mk>
