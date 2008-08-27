@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile
-PORTVERSION=	0.90
+PORTVERSION=	0.93
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,10 +32,6 @@ MAN3=	XML::Compile.3 \
 	XML::Compile::Schema::Instance.3 \
 	XML::Compile::Schema::NameSpaces.3 \
 	XML::Compile::Schema::Specs.3 \
-	XML::Compile::Schema::Template.3 \
-	XML::Compile::Schema::Translate.3 \
-	XML::Compile::Schema::XmlReader.3 \
-	XML::Compile::Schema::XmlWriter.3 \
 	XML::Compile::Translate.3 \
 	XML::Compile::Translate::Reader.3 \
 	XML::Compile::Translate::Template.3 \
