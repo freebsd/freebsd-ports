@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080827:
+  AFFECTS: users of mail/qmhandle
+  AUTHOR: garga@FreeBSD.org
+
+  A qmHandle.conf file was created, for now, is not needed to edit
+  ${PREFIX}/bin/qmHandle to change stopqmail and startqmail variables.
+  Just remember to edit configuration file after upgrade.
+
 20080820:
   AFFECTS: users of net/rabbitmq
   AUTHOR: pneumann@gmail.com
