@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.102
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2106/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2479/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -30,7 +31,8 @@ CONFIGURE_ARGS+=--enable-debug \
 		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
-		--enable-threadsafe
+		--enable-threadsafe \
+		--disable-libhal
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN5=		reader.conf.5
