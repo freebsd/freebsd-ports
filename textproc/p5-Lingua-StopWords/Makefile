@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Lingua-StopWords
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Stop words for several languages
 
 PERL_CONFIGURE=	yes
