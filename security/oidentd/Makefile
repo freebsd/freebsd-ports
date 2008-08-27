@@ -28,17 +28,13 @@ OPTIONS=	IPV6 "Enable IPv6 support"		on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		does not build
-.endif
-
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .else
 CATEGORIES+=   ipv6
 .endif
 
-.if defined(WITHOUT_MASQ)
+.if defined(WITHOUT_MASQ) || ${OSVERSION} >= 800000
 CONFIGURE_ARGS+=--disable-masq
 .endif
 
