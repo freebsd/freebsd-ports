@@ -2,19 +2,19 @@
 # Date created:				14 November 2007
 # Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
 #
-# $Carpetsmoker: ports/emulators/catapult/Makefile,v 1.1 2007/11/14 04:42:21 carpetsmoker Exp $
+# $Carpetsmoker: ports/emulators/catapult/Makefile,v 1.2 2008/07/21 12:54:29 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	catapult
 PORTVERSION=	0.6.3R1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	openmsx
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION:S/R1/-R1/}
 
-MAINTAINER=	carpetsmoker@xs4all.nl
+MAINTAINER=	carpetsmoker@rwxrwxrwx.net
 COMMENT=	GUI for openMSX
 
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
@@ -37,5 +37,8 @@ post-patch:
 	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' ${WRKSRC}/build/info2code.mk
 	@${REINPLACE_CMD} 's|wx-config|${WX_CONFIG}|g' \
 		${WRKSRC}/build/main.mk ${WRKSRC}/build/probe.mk
+.if defined(NOPORTDOCS)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/build-main.mk
+.endif
 
 .include <bsd.port.mk>
