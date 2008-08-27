@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfmpc
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
