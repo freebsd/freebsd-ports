@@ -1,0 +1,50 @@
+##################################################################
+#
+# This configuration file was written using perl language
+# be carefull with the sintax
+#
+##################################################################
+
+#####
+# Set this to your qmail queue directory (be sure to include the final slash!)
+our ($queue) = '/var/qmail/queue/';
+our ($bigtodo) = (-d "${queue}todo/0") ? 0 : 1; # 1 means no big-todo
+
+#####
+# If your system has got automated command to start/stop qmail, then
+# enter them here.
+# ### Be sure to uncomment only ONE of each variable declarations ###
+
+# For instance, this is if you have DJB's daemontools
+#our ($stopqmail) = '%%LOCALBASE%%/bin/svc -d /service/qmail-deliver';
+#our ($startqmail) = '%%LOCALBASE%%/bin/svc -u /service/qmail-deliver';
+
+# While this is if you have a Debian GNU/Linux with its qmail package
+#our ($stopqmail) = '/etc/init.d/qmail stop';
+#our ($startqmail) = '/etc/init.d/qmail start';
+
+# This is if you have FreeBSD with its qmail package
+our ($stopqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh stop';
+our ($startqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh start';
+
+# If you don't have scripts, leave $stopqmail blank (the process will
+# be hunted and killed by qmHandle):
+#our ($stopqmail) = '';
+
+# However, you still need to launch qmail in a way or the other. So,
+# if you have a standard qmail 1.03 use this:
+#our ($startqmail) = "csh -cf '/var/qmail/rc &'";
+
+# While, if you have a standard qmail < 1.03 you should use this:
+#our ($startqmail) = '/var/qmail/bin/qmail-start ./Mailbox splogger qmail &';
+
+#####
+# Enter here the system command which returns qmail PID. The following
+# should work on most Unixes:
+#our ($pidcmd) = 'pidof qmail-send';
+ 
+# This is for FreeBSD with a standard qmail installation:
+our ($pidcmd) = 'pgrep qmail-send';
+
+################### NEVER REMOVE FOLLOWING LINE ##################
+1;
