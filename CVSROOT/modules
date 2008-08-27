@@ -8038,10 +8038,7 @@ mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
-mediawiki110                    ports/www/mediawiki110
-mediawiki111                    ports/www/mediawiki111
 mediawiki16                     ports/www/mediawiki16
-mediawiki19                     ports/www/mediawiki19
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
 medusa                          ports/security/medusa
@@ -17469,6 +17466,7 @@ py-docutils                     ports/textproc/py-docutils
 py-dosage                       ports/deskutils/py-dosage
 py-dpkt                         ports/net/py-dpkt
 py-dsv                          ports/textproc/py-dsv
+py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
@@ -19480,8 +19478,10 @@ slbd                            ports/net/slbd
 sleuth                          ports/dns/sleuth
 sleuthkit                       ports/sysutils/sleuthkit
 slffea                          ports/cad/slffea
+slglade                         ports/devel/slglade
 slgrace                         ports/math/slgrace
 slgtk                           ports/x11-toolkits/slgtk
+slgtkdatabox                    ports/x11-toolkits/slgtkdatabox
 slib                            ports/lang/slib
 slib-gauche                     ports/lang/slib-gauche
 slib-guile                      ports/lang/slib-guile
@@ -19933,6 +19933,7 @@ su2                             ports/sysutils/su2
 subcalc                         ports/net-mgmt/subcalc
 subclipse                       ports/devel/subclipse
 subcommander                    ports/devel/subcommander
+subcommander2                   ports/devel/subcommander2
 subconv                         ports/multimedia/subconv
 sublib                          ports/multimedia/sublib
 subtitlecomposer                ports/multimedia/subtitlecomposer
@@ -20785,6 +20786,7 @@ uberkey                         ports/security/uberkey
 ubh                             ports/news/ubh
 ubuntulooks                     ports/x11-themes/ubuntulooks
 ucarp                           ports/net/ucarp
+ucc                             ports/lang/ucc
 ucl                             ports/archivers/ucl
 uclmmbase                       ports/devel/uclmmbase
 ucpp                            ports/devel/ucpp
