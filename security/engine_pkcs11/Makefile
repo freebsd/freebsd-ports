@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	engine_pkcs11
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
@@ -20,16 +20,17 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 
-CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}"
-
-DOC_FILES=	README *.sh *.xsl *.css *.html
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
 PORTDOCS=	*
 
 .ifndef(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
+CONFIGURE_ARGS+=--enable-doc
+.else
+post-patch:
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
 .include <bsd.port.mk>
