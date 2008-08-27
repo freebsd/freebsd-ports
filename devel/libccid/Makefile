@@ -6,6 +6,7 @@
 
 PORTNAME=	ccid
 PORTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2482/
 
