@@ -10,9 +10,9 @@ lib/mono/gac/policy.1.0.Mono.Zeroconf/0.0.0.0__e60c4f4a95e1099e/policy.1.0.confi
 lib/mono/gac/policy.2.0.Mono.Zeroconf/0.0.0.0__e60c4f4a95e1099e/policy.2.0.Mono.Zeroconf.dll
 lib/mono/gac/policy.2.0.Mono.Zeroconf/0.0.0.0__e60c4f4a95e1099e/policy.2.0.config
 lib/mono/mono-zeroconf/Mono.Zeroconf.dll
-%%PORTDOCS%%lib/monodoc/sources/mono-zeroconf-docs.zip
-%%PORTDOCS%%lib/monodoc/sources/mono-zeroconf-docs.tree
 %%PORTDOCS%%lib/monodoc/sources/mono-zeroconf-docs.source
+%%PORTDOCS%%lib/monodoc/sources/mono-zeroconf-docs.tree
+%%PORTDOCS%%lib/monodoc/sources/mono-zeroconf-docs.zip
 libdata/pkgconfig/mono-zeroconf.pc
 @dirrm lib/mono/mono-zeroconf
 @dirrm lib/mono/gac/policy.2.0.Mono.Zeroconf/0.0.0.0__e60c4f4a95e1099e
