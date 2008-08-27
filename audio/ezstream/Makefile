@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ezstream
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	audio
 MASTER_SITES=	http://svn.xiph.org/releases/ezstream/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
@@ -26,15 +25,21 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/ezstream
-PORTDOCS=	ezstream_mp3.xml ezstream_reencoding_example_vorbis.xml \
-		ezstream_reencoding_example_mp3.xml ezstream_vorbis.xml \
-		ezstream_reencoding_example_theora.xml
+PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml ezstream_reencode_mp3.xml \
+		ezstream_reencode_theora.xml ezstream_reencode_vorbis.xml \
+		ezstream_stdin_vorbis.xml ezstream_vorbis.xml meta.sh play.sh
 
-.if !defined(NOPORTDOCS)
+MAN1=	ezstream.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's|COPYING NEWS README||g; s|examples||g; \
+	    s|install-dist_docDATA||g' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+
+.if !defined(NOPORTEXAMPLES)
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${DOCSDIR}
+	${INSTALL} -d ${EXAMPLESDIR}
+.for ex in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
 .endfor
 .endif
 
