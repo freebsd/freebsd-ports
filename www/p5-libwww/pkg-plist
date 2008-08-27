@@ -1,6 +1,3 @@
-bin/GET
-bin/HEAD
-bin/POST
 bin/lwp-download
 bin/lwp-mirror
 bin/lwp-request

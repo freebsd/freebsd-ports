@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwww
-PORTVERSION=	5.812
+PORTVERSION=	5.814
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	LWP
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	GET.1 HEAD.1 POST.1 lwp-download.1 lwp-mirror.1 lwp-request.1 lwp-rget.1
+MAN1=	lwp-download.1 lwp-mirror.1 lwp-request.1 lwp-rget.1
 
 MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Cookies.3 \
 	HTTP::Cookies::Microsoft.3 HTTP::Cookies::Netscape.3 \
