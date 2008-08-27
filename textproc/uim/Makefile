@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -96,8 +95,10 @@ do-install:
 .if !defined(UIM_SLAVE) && !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DATADIR}/helperdata
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}
+.endif
 	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${DOCSDIR}/KEY
 	${INSTALL_DATA} ${WRKSRC}/fep/README ${DOCSDIR}/README.fep
 	${INSTALL_DATA} ${WRKSRC}/fep/README ${DOCSDIR}/README.key
