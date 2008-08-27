@@ -253,9 +253,9 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrm lib/uim
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
-%%PORTDOCS%%@dirrm %%DOCSDIR_SIGSCHEME%%
+@dirrm %%DOCSDIR_SIGSCHEME%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/helperdata
+%%PORTDOCS%%@dirrm %%DATADIR%%/helperdata
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
