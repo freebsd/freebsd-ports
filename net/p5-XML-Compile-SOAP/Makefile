@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	0.75
+PORTVERSION=	0.77
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Base-class for SOAP implementations
 
-RUN_DEPENDS=	p5-XML-Compile>=0.73:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-Log-Report>=0.11:${PORTSDIR}/devel/p5-Log-Report \
+RUN_DEPENDS=	p5-XML-Compile>=0.91:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
 		p5-libwww>=5.803:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
