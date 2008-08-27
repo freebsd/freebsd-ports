@@ -806,6 +806,7 @@
     SUBDIR += ml-doc
     SUBDIR += mm
     SUBDIR += mob
+    SUBDIR += mono-addins
     SUBDIR += mono-tools
     SUBDIR += monodoc
     SUBDIR += monotone
