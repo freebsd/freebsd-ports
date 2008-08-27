@@ -1,34 +1,11 @@
---- qmHandle.orig	2007-07-20 02:03:45.000000000 -0300
-+++ qmHandle	2008-05-20 15:20:39.000000000 -0300
-@@ -26,13 +26,17 @@
- # ### Be sure to uncomment only ONE of each variable declarations ###
- 
- # For instance, this is if you have DJB's daemontools
--my ($stopqmail) = '/usr/local/bin/svc -d /service/qmail-deliver';
--my ($startqmail) = '/usr/local/bin/svc -u /service/qmail-deliver';
-+#my ($stopqmail) = '/usr/local/bin/svc -d /service/qmail-deliver';
-+#my ($startqmail) = '/usr/local/bin/svc -u /service/qmail-deliver';
- 
- # While this is if you have a Debian GNU/Linux with its qmail package
- #my ($stopqmail) = '/etc/init.d/qmail stop';
- #my ($startqmail) = '/etc/init.d/qmail start';
- 
-+# This is if you have FreeBSD with its qmail package
-+my ($stopqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh stop';
-+my ($startqmail) = '%%LOCALBASE%%/etc/rc.d/qmail.sh start';
-+
- # If you don't have scripts, leave $stopqmail blank (the process will
- # be hunted and killed by qmHandle):
- #my ($stopqmail) = '';
-@@ -47,7 +51,10 @@
- #####
- # Enter here the system command which returns qmail PID. The following
- # should work on most Unixes:
--my ($pidcmd) = 'pidof qmail-send';
-+#my ($pidcmd) = 'pidof qmail-send';
-+# This is for FreeBSD with a standard qmail installation:
-+my ($pidcmd) = 'pgrep qmail-send';
-+
+--- qmHandle.orig	2008-08-27 10:10:19.000000000 -0300
++++ qmHandle	2008-08-27 10:22:20.000000000 -0300
+@@ -51,6 +51,8 @@
  
  ####################  USER CONFIGURATION END  ####################
  
++require "%%LOCALBASE%%/etc/qmHandle.conf" if ( -f "%%LOCALBASE%%/etc/qmHandle.conf" );
++
+ # Print usage if no arguments
+ if ($#ARGV == -1) {
+     &Usage();

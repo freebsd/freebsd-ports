@@ -7,7 +7,7 @@
 
 PORTNAME=	qmhandle
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -20,15 +20,21 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 
-PLIST_FILES=	bin/qmHandle
 PORTDOCS=	HISTORY README
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},; \
-		s,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/qmHandle
+	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},g' \
+			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+			  -e '/^##* *USER *CONFIGURATION *BEGIN *##*$$/,/^##* *USER *CONFIGURATION *END *##*$$/s/^\(#*\)my/\1our/g' \
+		${WRKSRC}/qmHandle
+	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${FILESDIR}/qmHandle.conf.in > \
+		${WRKSRC}/qmHandle.conf.sample
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmHandle ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/qmHandle.conf.sample ${PREFIX}/etc
+	[ -f ${PREFIX}/etc/qmHandle.conf ] || \
+		${INSTALL_DATA} -m 0644 ${WRKSRC}/qmHandle.conf.sample ${PREFIX}/etc/qmHandle.conf
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
