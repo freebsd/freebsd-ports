@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.39 2008-08-05 09:33:07 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.40 2008-08-27 06:19:39 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -122,7 +122,7 @@ OPENSSL_SHLIBVER?=	3
 # find installed port and use it for dependency
 PKG_DBDIR?=		${DESTDIR}/var/db/pkg
 .if !defined(OPENSSL_INSTALLED)
-OPENSSL_INSTALLED!=	find "${PKG_DBDIR}" -type f -name "+CONTENTS" -print0 | \
+OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 			xargs -0 grep -l "^lib/libssl.so." | \
 			while read contents; do \
 				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
