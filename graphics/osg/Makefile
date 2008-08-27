@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics
+MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.6/
+DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
-		${LOCALBASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
-RUN_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
-		${LOCALBASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2
+USE_ZIP=	yes
+USE_CMAKE=	yes
+USE_GL=		glu
 
-USE_GL=		yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/OpenSceneGraph
+LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
-.include "${.CURDIR}/bsd.osg.mk"
+post-patch:
+	@${REINPLACE_CMD} -e 's|"64"|""|' ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
