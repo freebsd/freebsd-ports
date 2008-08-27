@@ -4,10 +4,7 @@
 %%WWWDIR_REL%%/account_prefs_page.php
 %%WWWDIR_REL%%/account_prefs_reset.php
 %%WWWDIR_REL%%/account_prefs_update.php
-%%WWWDIR_REL%%/account_prof_add.php
-%%WWWDIR_REL%%/account_prof_delete.php
 %%WWWDIR_REL%%/account_prof_edit_page.php
-%%WWWDIR_REL%%/account_prof_make_default.php
 %%WWWDIR_REL%%/account_prof_menu_page.php
 %%WWWDIR_REL%%/account_prof_update.php
 %%WWWDIR_REL%%/account_sponsor_page.php
@@ -83,7 +80,6 @@
 %%WWWDIR_REL%%/bug_assign.php
 %%WWWDIR_REL%%/bug_assign_reporter.php
 %%WWWDIR_REL%%/bug_change_status_page.php
-%%WWWDIR_REL%%/bug_delete.php
 %%WWWDIR_REL%%/bug_file_add.php
 %%WWWDIR_REL%%/bug_file_delete.php
 %%WWWDIR_REL%%/bug_file_upload_inc.php
@@ -314,6 +310,7 @@
 %%WWWDIR_REL%%/core/error_api.php
 %%WWWDIR_REL%%/core/file_api.php
 %%WWWDIR_REL%%/core/filter_api.php
+%%WWWDIR_REL%%/core/form_api.php
 %%WWWDIR_REL%%/core/gpc_api.php
 %%WWWDIR_REL%%/core/graph_api.php
 %%WWWDIR_REL%%/core/graphviz_api.php
@@ -368,6 +365,7 @@
 %%WWWDIR_REL%%/core/relationship_graph_api.php
 %%WWWDIR_REL%%/core/rss_api.php
 %%WWWDIR_REL%%/core/send_emails.php
+%%WWWDIR_REL%%/core/session_api.php
 %%WWWDIR_REL%%/core/sponsorship_api.php
 %%WWWDIR_REL%%/core/string_api.php
 %%WWWDIR_REL%%/core/summary_api.php
