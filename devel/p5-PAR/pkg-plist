@@ -2,6 +2,8 @@
 %%SITE_PERL%%/PAR/Environment.pod
 %%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Heavy.pm
+%%SITE_PERL%%/PAR/SetupProgname.pm
+%%SITE_PERL%%/PAR/SetupTemp.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
 @dirrmtry %%SITE_PERL%%/auto/PAR
