@@ -7,6 +7,7 @@
 
 PORTNAME=	jack-rack
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/jack-rack
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui libxml2
 USE_GETTEXT=	yes
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -29,5 +31,6 @@ CONFIGURE_ARGS=	--disable-ladcca --disable-lash
 post-patch:
 	@${REINPLACE_CMD} -e '/^jr_desktop_install/ s|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/ecarack
 
 .include <bsd.port.mk>
