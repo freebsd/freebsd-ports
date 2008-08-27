@@ -100,9 +100,9 @@
 +		;;
 +
 +	("clone")
++		# XXX needs to bail if there are no snapshots
 +		_arguments -A "-*" \
 +			'-p[Create parent datasets]' \
-+			# XXX needs to bail if there are no snapshots
 +			':snapshot:_zfs_dataset -t snap' \
 +			':filesystem/volume:'
 +		;;
