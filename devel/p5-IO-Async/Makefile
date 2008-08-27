@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.13
+PORTVERSION=	0.16.001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,14 +19,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		IO::Async.3 IO::Async::Buffer.3 IO::Async::ChildManager.3 \
+MAN3=		IO::Async.3 IO::Async::ChildManager.3 \
 		IO::Async::Connector.3 IO::Async::DetachedCode.3 \
-		IO::Async::Loop.3 \
+		IO::Async::Listener.3 IO::Async::Loop.3 \
 		IO::Async::Loop::IO_Poll.3 IO::Async::Loop::Select.3 \
 		IO::Async::MergePoint.3 IO::Async::Notifier.3 \
-		IO::Async::Resolver.3 IO::Async::Set.3 \
-		IO::Async::Set::IO_Poll.3 \
-		IO::Async::Set::Select.3 IO::Async::SignalProxy.3 \
+		IO::Async::Resolver.3 IO::Async::Sequencer.3 \
+		IO::Async::SignalProxy.3 \
 		IO::Async::Stream.3 IO::Async::TimeQueue.3 \
 		IO::Async::Test.3
 
