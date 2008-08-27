@@ -1,0 +1,10 @@
+This class knows how to read two treebank formats, the Penn format
+and the Chomsky Normal Form (CNF) format. These formats differ in
+how they handle terminal nodes. The Penn format places pre-terminal
+part of speech tags in the left-hand position of a
+parenthesis-delimited pair, just like it does non-terminal nodes.
+
+The CNF format attaches pre-terminal tags to the word with an
+underscore.
+
+WWW: http://search.cpan.org/dist/Lingua-Treebank/

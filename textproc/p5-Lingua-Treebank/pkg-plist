@@ -1,0 +1,14 @@
+bin/list-rewrites
+bin/list-edges
+bin/tree-collapse
+bin/get-words
+bin/tree-inflate
+bin/vocabulary
+%%SITE_PERL%%/Lingua/Treebank.pm
+%%SITE_PERL%%/Lingua/Treebank/Const.pm
+%%SITE_PERL%%/Lingua/Treebank/HeadFinder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Treebank/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Treebank
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/Treebank
+@dirrmtry %%SITE_PERL%%/Lingua
