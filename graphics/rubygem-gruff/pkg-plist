@@ -32,12 +32,14 @@
 %%GEM_LIB_DIR%%/assets/plastik/blue.png
 %%GEM_LIB_DIR%%/assets/plastik/green.png
 %%GEM_LIB_DIR%%/assets/plastik/red.png
+%%GEM_LIB_DIR%%/init.rb
 %%GEM_LIB_DIR%%/lib/gruff.rb
 %%GEM_LIB_DIR%%/lib/gruff/accumulator_bar.rb
 %%GEM_LIB_DIR%%/lib/gruff/area.rb
 %%GEM_LIB_DIR%%/lib/gruff/bar.rb
 %%GEM_LIB_DIR%%/lib/gruff/bar_conversion.rb
 %%GEM_LIB_DIR%%/lib/gruff/base.rb
+%%GEM_LIB_DIR%%/lib/gruff/bullet.rb
 %%GEM_LIB_DIR%%/lib/gruff/deprecated.rb
 %%GEM_LIB_DIR%%/lib/gruff/line.rb
 %%GEM_LIB_DIR%%/lib/gruff/mini/bar.rb
@@ -54,6 +56,9 @@
 %%GEM_LIB_DIR%%/lib/gruff/stacked_area.rb
 %%GEM_LIB_DIR%%/lib/gruff/stacked_bar.rb
 %%GEM_LIB_DIR%%/lib/gruff/stacked_mixin.rb
+%%GEM_LIB_DIR%%/rails_generators/gruff/gruff_generator.rb
+%%GEM_LIB_DIR%%/rails_generators/gruff/templates/controller.rb
+%%GEM_LIB_DIR%%/rails_generators/gruff/templates/functional_test.rb
 %%GEM_LIB_DIR%%/test/gruff_test_case.rb
 %%GEM_LIB_DIR%%/test/test_accumulator_bar.rb
 %%GEM_LIB_DIR%%/test/test_area.rb
@@ -72,8 +77,12 @@
 %%GEM_LIB_DIR%%/test/test_side_bar.rb
 %%GEM_LIB_DIR%%/test/test_sidestacked_bar.rb
 %%GEM_LIB_DIR%%/test/test_spider.rb
+%%GEM_LIB_DIR%%/test/test_stacked_area.rb
 %%GEM_LIB_DIR%%/test/test_stacked_bar.rb
 @dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/rails_generators/gruff/templates
+@dirrm %%GEM_LIB_DIR%%/rails_generators/gruff
+@dirrm %%GEM_LIB_DIR%%/rails_generators
 @dirrm %%GEM_LIB_DIR%%/lib/gruff/mini
 @dirrm %%GEM_LIB_DIR%%/lib/gruff
 @dirrm %%GEM_LIB_DIR%%/lib
@@ -95,15 +104,11 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Area.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Area.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bar.src/M000087.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/BarConversion.src/M000092.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000043.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000044.html
@@ -135,8 +140,19 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000071.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base/StackedMixin.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base/StackedMixin.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base/StackedMixin.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src/M000011.html
@@ -154,9 +170,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000036.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src/M000037.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Line.src/M000091.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Bar.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/Bar.src/M000007.html
@@ -171,9 +187,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/SideBar.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Mini/SideBar.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000077.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000078.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/Net.src/M000085.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/PhotoBar.src/M000032.html
@@ -187,25 +203,25 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000019.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Scene.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideBar.src/M000095.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/SideStackedBar.src/M000082.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Spider.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedArea.html
-%%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedArea.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedArea.src/M000088.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedBar.html
 %%GEM_DOC_DIR%%/rdoc/classes/Gruff/StackedBar.src/M000016.html
 %%GEM_DOC_DIR%%/rdoc/classes/Magick.html
 %%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.html
-%%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.src/M000096.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/History_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
@@ -215,6 +231,7 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/bar_conversion_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/bar_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/gruff/bullet_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/deprecated_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/line_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/mini/bar_rb.html
@@ -261,6 +278,7 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Layer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Group.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Deprecated.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Bullet.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base/StackedMixin.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Gruff/Base
