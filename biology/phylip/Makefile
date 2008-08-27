@@ -23,9 +23,9 @@ USE_XORG=	x11 xaw xt
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
-		DC="${CC} -DX -I${LOCALBASE}/include ${CFLAGS}" \
+		DC="${CC} -DX ${CFLAGS}" \
 		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt -lm"
 
 PORTDOCS=	*
