@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -27,10 +27,14 @@ USE_GNOME=	glib20
 USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	MSN "Enable MSN protocol support" On \
-		DEBUG "Create debuggable binary" Off \
-		OPENSSL "Use openssl rather than gnutls" Off \
-		IPV6 "Compile IPV6 support" On
+OPTIONS=	DEBUG "Enable debug support" Off \
+		IPV6 "Enable IPv6 support" On \
+		OPENSSL "Use OpenSSL rather than GnuTLS" Off \
+		MSN "Enable MSN protocol support" On \
+		JABBER "Enable Jabber (XMPP) protocol support" On \
+		OSCAR "Enable OSCAR (ICQ, AIM) protocol support" On \
+		YAHOO "Enable Yahoo! protocol support" On
+
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
@@ -54,10 +58,16 @@ SUB_FILES+=	pkg-install pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MSN)
-CONFIGURE_ARGS+=--msn=1
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--debug=1
 .else
-CONFIGURE_ARGS+=--msn=0 --ssl=bogus
+CONFIGURE_ARGS+=--debug=0
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=--ipv6=1
+.else
+CONFIGURE_ARGS+=--ipv6=0
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -67,12 +77,28 @@ CONFIGURE_ARGS+=--ssl=gnutls
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--debug=1
+.if defined(WITH_MSN)
+CONFIGURE_ARGS+=--msn=1
+.else
+CONFIGURE_ARGS+=--msn=0
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--ipv6=0
+.if defined(WITH_JABBER)
+CONFIGURE_ARGS+=--jabber=1
+.else
+CONFIGURE_ARGS+=--jabber=0
+.endif
+
+.if defined(WITH_OSCAR)
+CONFIGURE_ARGS+=--oscar=1
+.else
+CONFIGURE_ARGS+=--oscar=0
+.endif
+
+.if defined(WITH_YAHOO)
+CONFIGURE_ARGS+=--yahoo=1
+.else
+CONFIGURE_ARGS+=--yahoo=0
 .endif
 
 post-patch:
