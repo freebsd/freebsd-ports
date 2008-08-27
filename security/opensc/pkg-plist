@@ -60,6 +60,7 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/asepcos.profile
 %%DATADIR%%/cardos.profile
 %%DATADIR%%/cyberflex.profile
+%%DATADIR%%/entersafe.profile
 %%DATADIR%%/flex.profile
 %%DATADIR%%/gpk.profile
 %%DATADIR%%/incrypto34.profile
