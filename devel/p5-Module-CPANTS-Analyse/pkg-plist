@@ -4,6 +4,7 @@ bin/cpants_lint.pl
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/BrokenInstaller.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/CpantsErrors.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Distname.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Distros.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Files.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/FindModules.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/License.pm
