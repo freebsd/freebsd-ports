@@ -33,10 +33,6 @@ USE_TK_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 pre-patch:
 	${RM} -f ${WRKSRC}/configure
 
@@ -46,6 +42,8 @@ post-configure:
 		s:^pddocdir = .*:pddocdir = ${PREFIX}/share/doc/pd:g; \
 		s:x_midi.c ::g; s:s_midi.c ::g;" \
 		< ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e "s,-m32,," ${WRKSRC}/../extra/makefile \
+		${WRKSRC}/../extra/expr~/makefile
 
 pre-install:
 	${RM} -f ${PLIST}
