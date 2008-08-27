@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	gruff
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.4
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A beautiful graphing library for Ruby using RMagick
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/RMagick2.so:${PORTSDIR}/graphics/ruby-rmagick \
