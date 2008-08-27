@@ -24,6 +24,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
+CFLAGS+=	-fPIC
 
 OPTIONS=	DEBUG "Turn on debugging" off
 
@@ -35,10 +36,6 @@ CONFIGURE_ARGS+=	--enable-debug=no
 
 .if ${OSVERSION} < 700000
 BROKEN=		Does not install
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not build on !i386
 .endif
 
 post-patch:
