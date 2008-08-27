@@ -1,4 +1,5 @@
 %%SITE_PERL%%/InlineX/C2XS.pm
+%%SITE_PERL%%/InlineX/C2XS-Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX/C2XS/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX/C2XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/InlineX

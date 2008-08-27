@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	InlineX-C2XS
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/SI/SISYPHUS/
@@ -20,6 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		InlineX::C2XS.3
+MAN3=		InlineX::C2XS.3 InlineX::C2XS-Cookbook.3
 
 .include <bsd.port.mk>
