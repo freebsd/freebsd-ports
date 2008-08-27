@@ -243,12 +243,12 @@
 %%EMACS_PACKAGESDIR%%/info/wl-ja.info
 %%EMACS_PACKAGESDIR%%/info/wl.info
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.wl
-share/doc/ja/wanderlust/README.ja
-share/doc/ja/wanderlust/NEWS.ja
-share/doc/ja/wanderlust/wl-ja.texi
-share/doc/wanderlust/README
-share/doc/wanderlust/NEWS
-share/doc/wanderlust/wl.texi
+%%PORTDOCS%%share/doc/ja/wanderlust/README.ja
+%%PORTDOCS%%share/doc/ja/wanderlust/NEWS.ja
+%%PORTDOCS%%share/doc/ja/wanderlust/wl-ja.texi
+%%PORTDOCS%%share/doc/wanderlust/README
+%%PORTDOCS%%share/doc/wanderlust/NEWS
+%%PORTDOCS%%share/doc/wanderlust/wl.texi
 share/examples/wanderlust/en/dot.addresses
 share/examples/wanderlust/en/dot.folders
 share/examples/wanderlust/en/dot.wl
@@ -258,8 +258,8 @@ share/examples/wanderlust/ja/dot.wl
 share/wanderlust/ja.Emacs
 @dirrm %%EMACS_PACKAGESDIR%%/etc/wl
 @dirrm %%EMACS_PACKAGESDIR%%/lisp/wl
-@dirrm share/doc/ja/wanderlust
-@dirrm share/doc/wanderlust
+%%PORTDOCS%%@dirrm share/doc/ja/wanderlust
+%%PORTDOCS%%@dirrm share/doc/wanderlust
 @dirrm share/examples/wanderlust/en
 @dirrm share/examples/wanderlust/ja
 @dirrm share/examples/wanderlust

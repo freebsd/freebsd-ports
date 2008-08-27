@@ -4,12 +4,12 @@ info/wl.info
 @unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl-ja.info %D/info/dir
 info/wl-ja.info
 @exec install-info --section="%%DIRSECTION%%" %D/info/wl-ja.info %D/info/dir
-share/doc/ja/wanderlust/NEWS.ja
-share/doc/ja/wanderlust/README.ja
-share/doc/ja/wanderlust/wl-ja.texi
-share/doc/wanderlust/NEWS
-share/doc/wanderlust/README
-share/doc/wanderlust/wl.texi
+%%PORTDOCS%%share/doc/ja/wanderlust/NEWS.ja
+%%PORTDOCS%%share/doc/ja/wanderlust/README.ja
+%%PORTDOCS%%share/doc/ja/wanderlust/wl-ja.texi
+%%PORTDOCS%%share/doc/wanderlust/NEWS
+%%PORTDOCS%%share/doc/wanderlust/README
+%%PORTDOCS%%share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/acap.el
 %%WL_LISPDIR%%/acap.elc
 %%WL_LISPDIR%%/bbdb-wl.el
@@ -256,8 +256,8 @@ share/examples/wanderlust/ja/dot.folders
 share/examples/wanderlust/ja/dot.wl
 share/wanderlust/ja.Emacs
 @dirrm %%WL_LISPDIR%%
-@dirrm share/doc/ja/wanderlust
-@dirrm share/doc/wanderlust
+%%PORTDOCS%%@dirrm share/doc/ja/wanderlust
+%%PORTDOCS%%@dirrm share/doc/wanderlust
 @dirrm %%WL_ICONDIR%%
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/wl
 @dirrm share/examples/wanderlust/en
