@@ -488,7 +488,6 @@
     SUBDIR += openexr_ctl
     SUBDIR += opengl-man
     SUBDIR += openjpeg
-    SUBDIR += openproducer
     SUBDIR += openrm
     SUBDIR += ophoto
     SUBDIR += optipng
