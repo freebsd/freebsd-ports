@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -41,7 +41,6 @@ MAKE_ENV:=	${CONFIGURE_ENV}
 #
 
 OPTIONS=	FAM		"Build in fam support for IDLE command"		off \
-		DRAC		"Build in DRAC support"				off \
 		TRASHQUOTA	"Include deleted mails in the quota"		off \
 		GDBM		"Use gdbm db instead of system bdb"		off \
 		IPV6		"Build with IPv6 support"			on
@@ -68,12 +67,13 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DRAC)
+#does not work with 4.4.0
+#.if defined(WITH_DRAC)
 # move me below .include <bsd.port.pre.mk> when re-enabling
-PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-4.1.0-drac.patch
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-.endif
+#PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
+#PATCHFILES=	courier-imap-4.1.0-drac.patch
+#BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+#.endif
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
