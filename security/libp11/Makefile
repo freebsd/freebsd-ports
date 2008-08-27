@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libp11
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
@@ -16,27 +16,35 @@ COMMENT=	A small layer on top of PKCS\#11 API
 USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
+		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-DOC_FILES=	README *.sh *.xsl *.css *.html api
-
 PORTDOCS=	*
+
+.ifndef(NOPORTDOCS)
+CONFIGURE_ARGS+=--enable-doc
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/configure
+.ifndef(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
+		${WRKSRC}/doc/Makefile.in
+.else
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am:|' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/* ${EXAMPLESDIR}
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
