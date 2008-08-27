@@ -8,7 +8,7 @@
 PORTNAME=	mono-addins
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Mono framework to create extensible applications
