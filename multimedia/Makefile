@@ -10,6 +10,7 @@
     SUBDIR += avidemux2
     SUBDIR += avifile
     SUBDIR += avinfo
+    SUBDIR += banshee
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx

@@ -1,0 +1,181 @@
+bin/banshee-1
+lib/banshee-1/Backends/Banshee.GStreamer.dll
+lib/banshee-1/Backends/Banshee.GStreamer.dll.mdb
+lib/banshee-1/Backends/Banshee.Gnome.dll
+lib/banshee-1/Backends/Banshee.Gnome.dll.mdb
+lib/banshee-1/Backends/Banshee.Hal.dll
+lib/banshee-1/Backends/Banshee.Hal.dll.mdb
+lib/banshee-1/Backends/Banshee.NowPlaying.X11.dll
+lib/banshee-1/Backends/Banshee.NowPlaying.X11.dll.mdb
+lib/banshee-1/Backends/Banshee.Unix.dll
+lib/banshee-1/Backends/Banshee.Unix.dll.mdb
+lib/banshee-1/Backends/libbnpx11.a
+lib/banshee-1/Backends/libbnpx11.la
+lib/banshee-1/Backends/libbnpx11.so
+lib/banshee-1/Banshee.Core.dll
+lib/banshee-1/Banshee.Core.dll.mdb
+lib/banshee-1/Banshee.Services.addins
+lib/banshee-1/Banshee.Services.dll
+lib/banshee-1/Banshee.Services.dll.mdb
+lib/banshee-1/Banshee.ThickClient.dll
+lib/banshee-1/Banshee.ThickClient.dll.mdb
+lib/banshee-1/Banshee.Widgets.dll
+lib/banshee-1/Banshee.Widgets.dll.config
+lib/banshee-1/Banshee.Widgets.dll.mdb
+lib/banshee-1/Extensions/Banshee.AudioCd.dll
+lib/banshee-1/Extensions/Banshee.AudioCd.dll.mdb
+lib/banshee-1/Extensions/Banshee.Bookmarks.dll
+lib/banshee-1/Extensions/Banshee.Bookmarks.dll.mdb
+lib/banshee-1/Extensions/Banshee.CoverArt.dll
+lib/banshee-1/Extensions/Banshee.CoverArt.dll.mdb
+lib/banshee-1/Extensions/Banshee.Daap.dll
+lib/banshee-1/Extensions/Banshee.Daap.dll.mdb
+lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll
+lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll.mdb
+lib/banshee-1/Extensions/Banshee.Dap.dll
+lib/banshee-1/Extensions/Banshee.Dap.dll.mdb
+lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll
+lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll.mdb
+lib/banshee-1/Extensions/Banshee.InternetRadio.dll
+lib/banshee-1/Extensions/Banshee.InternetRadio.dll.mdb
+lib/banshee-1/Extensions/Banshee.Lastfm.dll
+lib/banshee-1/Extensions/Banshee.Lastfm.dll.mdb
+lib/banshee-1/Extensions/Banshee.MiniMode.dll
+lib/banshee-1/Extensions/Banshee.MiniMode.dll.mdb
+lib/banshee-1/Extensions/Banshee.MultimediaKeys.dll
+lib/banshee-1/Extensions/Banshee.MultimediaKeys.dll.mdb
+lib/banshee-1/Extensions/Banshee.NotificationArea.dll
+lib/banshee-1/Extensions/Banshee.NotificationArea.dll.config
+lib/banshee-1/Extensions/Banshee.NotificationArea.dll.mdb
+lib/banshee-1/Extensions/Banshee.NowPlaying.dll
+lib/banshee-1/Extensions/Banshee.NowPlaying.dll.mdb
+lib/banshee-1/Extensions/Banshee.PlayQueue.dll
+lib/banshee-1/Extensions/Banshee.PlayQueue.dll.mdb
+lib/banshee-1/Extensions/Banshee.Podcasting.dll
+lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
+lib/banshee-1/Halie.exe
+lib/banshee-1/Halie.exe.mdb
+lib/banshee-1/Hyena.Gui.dll
+lib/banshee-1/Hyena.Gui.dll.config
+lib/banshee-1/Hyena.Gui.dll.mdb
+lib/banshee-1/Hyena.dll
+lib/banshee-1/Hyena.dll.mdb
+lib/banshee-1/Lastfm.Gui.dll
+lib/banshee-1/Lastfm.Gui.dll.mdb
+lib/banshee-1/Lastfm.dll
+lib/banshee-1/Lastfm.dll.mdb
+lib/banshee-1/Migo.dll
+lib/banshee-1/Migo.dll.mdb
+lib/banshee-1/Mono.Media.dll
+lib/banshee-1/Mono.Media.dll.mdb
+lib/banshee-1/MusicBrainz.dll
+lib/banshee-1/MusicBrainz.dll.mdb
+lib/banshee-1/Nereid.exe
+lib/banshee-1/Nereid.exe.mdb
+lib/banshee-1/gconf-schema-extractor.exe
+lib/banshee-1/gstreamer-0.10/libgstequalizer.a
+lib/banshee-1/gstreamer-0.10/libgstequalizer.la
+lib/banshee-1/gstreamer-0.10/libgstequalizer.so
+lib/banshee-1/libbanshee.a
+lib/banshee-1/libbanshee.la
+lib/banshee-1/libbanshee.so
+%%PORTDOCS%%lib/monodoc/sources/banshee-docs.source
+%%PORTDOCS%%lib/monodoc/sources/banshee-docs.tree
+%%PORTDOCS%%lib/monodoc/sources/banshee-docs.zip
+%%PORTDOCS%%lib/monodoc/sources/hyena-docs.source
+%%PORTDOCS%%lib/monodoc/sources/hyena-docs.tree
+%%PORTDOCS%%lib/monodoc/sources/hyena-docs.zip
+libdata/pkgconfig/banshee-1-core.pc
+libdata/pkgconfig/banshee-1-hyena-gui.pc
+libdata/pkgconfig/banshee-1-hyena.pc
+libdata/pkgconfig/banshee-1-lastfm-gui.pc
+libdata/pkgconfig/banshee-1-lastfm.pc
+libdata/pkgconfig/banshee-1-mono-media.pc
+libdata/pkgconfig/banshee-1-musicbrainz.pc
+libdata/pkgconfig/banshee-1-services.pc
+libdata/pkgconfig/banshee-1-thickclient.pc
+share/applications/banshee-1.desktop
+share/banshee-1/audio-profiles/base.xml
+share/banshee-1/audio-profiles/flac.xml
+share/banshee-1/audio-profiles/mp3-lame.xml
+share/banshee-1/audio-profiles/mp3-xing.xml
+share/banshee-1/audio-profiles/vorbis.xml
+share/banshee-1/audio-profiles/wav.xml
+share/banshee-1/audio-profiles/wavpack.xml
+share/banshee-1/audio-profiles/wma.xml
+share/banshee-1/icons/hicolor/16x16/actions
+share/banshee-1/icons/hicolor/16x16/categories/podcast.png
+share/banshee-1/icons/hicolor/16x16/categories/source-playlist.png
+share/banshee-1/icons/hicolor/16x16/categories/source-smart-playlist.png
+share/banshee-1/icons/hicolor/16x16/status
+share/banshee-1/icons/hicolor/22x22/actions
+share/banshee-1/icons/hicolor/22x22/categories/lastfm-audioscrobbler.png
+share/banshee-1/icons/hicolor/22x22/categories/lastfm-neighbour.png
+share/banshee-1/icons/hicolor/22x22/categories/lastfm-personal.png
+share/banshee-1/icons/hicolor/22x22/categories/lastfm-recommended.png
+share/banshee-1/icons/hicolor/22x22/categories/lastfm-tag.png
+share/banshee-1/icons/hicolor/22x22/categories/podcast.png
+share/banshee-1/icons/hicolor/22x22/categories/radio.png
+share/banshee-1/icons/hicolor/22x22/categories/source-playlist.png
+share/banshee-1/icons/hicolor/22x22/categories/source-smart-playlist.png
+share/banshee-1/icons/hicolor/48x48/actions
+share/banshee-1/icons/hicolor/48x48/categories/podcast.png
+share/banshee-1/icons/hicolor/48x48/categories/radio.png
+share/banshee-1/icons/hicolor/scalable/categories/radio.svg
+share/dbus-1/services/org.bansheeproject.Banshee.service
+share/locale/ar/LC_MESSAGES/banshee-1.mo
+share/locale/be@latin/LC_MESSAGES/banshee-1.mo
+share/locale/bg/LC_MESSAGES/banshee-1.mo
+share/locale/ca/LC_MESSAGES/banshee-1.mo
+share/locale/cs/LC_MESSAGES/banshee-1.mo
+share/locale/da/LC_MESSAGES/banshee-1.mo
+share/locale/de/LC_MESSAGES/banshee-1.mo
+share/locale/dz/LC_MESSAGES/banshee-1.mo
+share/locale/en_CA/LC_MESSAGES/banshee-1.mo
+share/locale/en_GB/LC_MESSAGES/banshee-1.mo
+share/locale/es/LC_MESSAGES/banshee-1.mo
+share/locale/fi/LC_MESSAGES/banshee-1.mo
+share/locale/fr/LC_MESSAGES/banshee-1.mo
+share/locale/gl/LC_MESSAGES/banshee-1.mo
+share/locale/he/LC_MESSAGES/banshee-1.mo
+share/locale/hu/LC_MESSAGES/banshee-1.mo
+share/locale/it/LC_MESSAGES/banshee-1.mo
+share/locale/ja/LC_MESSAGES/banshee-1.mo
+share/locale/lt/LC_MESSAGES/banshee-1.mo
+share/locale/lv/LC_MESSAGES/banshee-1.mo
+share/locale/mk/LC_MESSAGES/banshee-1.mo
+share/locale/nb/LC_MESSAGES/banshee-1.mo
+share/locale/nl/LC_MESSAGES/banshee-1.mo
+share/locale/oc/LC_MESSAGES/banshee-1.mo
+share/locale/pa/LC_MESSAGES/banshee-1.mo
+share/locale/pl/LC_MESSAGES/banshee-1.mo
+share/locale/pt/LC_MESSAGES/banshee-1.mo
+share/locale/pt_BR/LC_MESSAGES/banshee-1.mo
+share/locale/ru/LC_MESSAGES/banshee-1.mo
+share/locale/sl/LC_MESSAGES/banshee-1.mo
+share/locale/sr/LC_MESSAGES/banshee-1.mo
+share/locale/sr@Latn/LC_MESSAGES/banshee-1.mo
+share/locale/sv/LC_MESSAGES/banshee-1.mo
+share/locale/th/LC_MESSAGES/banshee-1.mo
+share/locale/vi/LC_MESSAGES/banshee-1.mo
+share/locale/zh_CN/LC_MESSAGES/banshee-1.mo
+share/locale/zh_HK/LC_MESSAGES/banshee-1.mo
+share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
+@dirrm share/banshee-1/icons/hicolor/scalable/categories
+@dirrm share/banshee-1/icons/hicolor/scalable
+@dirrm share/banshee-1/icons/hicolor/48x48/categories
+@dirrm share/banshee-1/icons/hicolor/48x48
+@dirrm share/banshee-1/icons/hicolor/32x32/actions
+@dirrm share/banshee-1/icons/hicolor/32x32
+@dirrm share/banshee-1/icons/hicolor/22x22/categories
+@dirrm share/banshee-1/icons/hicolor/22x22
+@dirrm share/banshee-1/icons/hicolor/16x16/categories
+@dirrm share/banshee-1/icons/hicolor/16x16
+@dirrm share/banshee-1/icons/hicolor
+@dirrm share/banshee-1/icons
+@dirrm share/banshee-1/audio-profiles
+@dirrm share/banshee-1
+@dirrm lib/banshee-1/gstreamer-0.10
+@dirrm lib/banshee-1/Extensions
+@dirrm lib/banshee-1/Backends
+@dirrm lib/banshee-1
