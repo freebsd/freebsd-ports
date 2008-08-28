@@ -1,0 +1,11 @@
+--- m.fl.orig	2008-08-28 14:00:49.000000000 +0200
++++ m.fl	2008-08-28 14:00:58.000000000 +0200
+@@ -231,7 +231,7 @@
+       }
+     }
+   }
+-  code {w->show(argc, argv);
++  //code {w->show(argc, argv);
+ while (1) {
+   int c = Lesson->select();	// Select random letter
+   bool pass = Teacher->teach(c);// Teach/test student
