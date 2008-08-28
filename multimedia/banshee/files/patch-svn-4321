@@ -1,0 +1,34 @@
+Index: src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationService.cs
+===================================================================
+--- src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationService.cs	(revision 4321)
++++ src/Extensions/Banshee.Lastfm/Banshee.Lastfm.Recommendations/RecommendationService.cs	(working copy)
+@@ -110,7 +110,7 @@
+ 
+         private void UpdateVisibility ()
+         {
+-            bool source_is_playback_source = (ServiceManager.SourceManager.ActiveSource == ServiceManager.PlaybackController.Source);
++            bool source_is_playback_source = (ServiceManager.SourceManager.ActiveSource as Banshee.Sources.ITrackModelSource) == ServiceManager.PlaybackController.Source;
+             pane.ShowWhenReady = ShowSchema.Get () && source_is_playback_source;
+             if (!source_is_playback_source) {
+                 pane.HideWithTimeout ();
+Index: src/Libraries/Hyena/Hyena.Collections/QueuePipelineElement.cs
+===================================================================
+--- src/Libraries/Hyena/Hyena.Collections/QueuePipelineElement.cs	(revision 4321)
++++ src/Libraries/Hyena/Hyena.Collections/QueuePipelineElement.cs	(working copy)
+@@ -32,12 +32,12 @@
+ 
+ namespace Hyena.Collections
+ {
++    internal class ElementProcessCanceledException : ApplicationException
++    {
++    }
++    
+     public abstract class QueuePipelineElement<T> where T : class
+     {
+-        private class ElementProcessCanceledException : ApplicationException
+-        {
+-        }
+-    
+         private Queue<T> queue = new Queue<T> ();
+         private object monitor = new object ();
+         private AutoResetEvent thread_wait;
