@@ -142,6 +142,8 @@ include/FL/Fl_Radio_Light_Button.H
 include/FL/Fl_Radio_Light_Button.h
 include/FL/Fl_Radio_Round_Button.H
 include/FL/Fl_Radio_Round_Button.h
+include/FL/Fl_RGB_Image.H
+include/FL/Fl_RGB_Image.h
 include/FL/Fl_Repeat_Button.H
 include/FL/Fl_Repeat_Button.h
 include/FL/Fl_Return_Button.H
@@ -233,12 +235,14 @@ include/FL/gl.h
 include/FL/gl2opengl.h
 include/FL/gl_draw.H
 include/FL/gl_draw.h
+include/FL/glu.h
 include/FL/glut.H
 include/FL/glut.h
 include/FL/mac.H
 include/FL/mac.h
 include/FL/mac.r
 include/FL/math.h
+include/FL/names.h
 include/FL/win32.H
 include/FL/win32.h
 include/FL/x.H
@@ -270,6 +274,7 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Check_Button.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Choice.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Clock.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_Clock_Output.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Color_Chooser.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Counter.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Dial.html
@@ -340,6 +345,7 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Tile.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Tiled_Image.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Timer.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_Toggle_Button.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Tooltip.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Valuator.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_Value_Input.gif
@@ -353,6 +359,7 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/Fl_XBM_Image.html
 %%PORTDOCS%%%%DOCSDIR%%/Fl_XPM_Image.html
 %%PORTDOCS%%%%DOCSDIR%%/adjuster1.gif
+%%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/basics.html
 %%PORTDOCS%%%%DOCSDIR%%/boxtypes.gif
 %%PORTDOCS%%%%DOCSDIR%%/buttons.gif
@@ -369,6 +376,7 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/editor.html
 %%PORTDOCS%%%%DOCSDIR%%/enumerations.html
 %%PORTDOCS%%%%DOCSDIR%%/events.html
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/CubeMain.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/CubeView.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/CubeView.h
@@ -379,14 +387,7 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/examples/arc.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/ask.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/bitmap.cxx
-%%PORTDOCS%%%%DOCSDIR%%/examples/black_1.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/black_2.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/black_3.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/black_4.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/blackking_1.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/blackking_2.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/blackking_3.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/blackking_4.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/blocks.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/boxtype.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/browser.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/button.cxx
@@ -447,8 +448,42 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/examples/pack.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/pixmap.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/pixmap_browser.cxx
-%%PORTDOCS%%%%DOCSDIR%%/examples/porsche.xpm
-%%PORTDOCS%%%%DOCSDIR%%/examples/porsche1.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/black_1.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/black_2.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/black_3.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/black_4.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blackking_1.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blackking_2.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blackking_3.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blackking_4.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blast.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blue.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/blue_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/cyan.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/cyan_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/gray.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/gray_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/green.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/green_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/magenta.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/magenta_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/porsche.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/porsche1.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/red.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/red_bomb.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/srs.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/sudoku.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/tile.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/white_1.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/white_2.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/white_3.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/white_4.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/whiteking_1.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/whiteking_2.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/whiteking_3.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/whiteking_4.xbm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/yellow.xpm
+%%PORTDOCS%%%%DOCSDIR%%/examples/pixmaps/yellow_bomb.xpm
 %%PORTDOCS%%%%DOCSDIR%%/examples/preferences.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/preferences.fl
 %%PORTDOCS%%%%DOCSDIR%%/examples/preferences.h
@@ -461,10 +496,8 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/examples/resizebox.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/scroll.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/shape.cxx
-%%PORTDOCS%%%%DOCSDIR%%/examples/srs.xbm
 %%PORTDOCS%%%%DOCSDIR%%/examples/subwindow.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/sudoku.cxx
-%%PORTDOCS%%%%DOCSDIR%%/examples/sudoku.xbm
 %%PORTDOCS%%%%DOCSDIR%%/examples/sudokurc.h
 %%PORTDOCS%%%%DOCSDIR%%/examples/symbols.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/tabs.cxx
@@ -473,21 +506,12 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/examples/threads.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/threads.h
 %%PORTDOCS%%%%DOCSDIR%%/examples/tile.cxx
-%%PORTDOCS%%%%DOCSDIR%%/examples/tile.xpm
 %%PORTDOCS%%%%DOCSDIR%%/examples/tiled_image.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/trackball.h
 %%PORTDOCS%%%%DOCSDIR%%/examples/unittests.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/valuators.cxx
 %%PORTDOCS%%%%DOCSDIR%%/examples/valuators.fl
 %%PORTDOCS%%%%DOCSDIR%%/examples/valuators.h
-%%PORTDOCS%%%%DOCSDIR%%/examples/white_1.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/white_2.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/white_3.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/white_4.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/whiteking_1.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/whiteking_2.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/whiteking_3.xbm
-%%PORTDOCS%%%%DOCSDIR%%/examples/whiteking_4.xbm
 %%PORTDOCS%%%%DOCSDIR%%/fl_alert.gif
 %%PORTDOCS%%%%DOCSDIR%%/fl_ask.gif
 %%PORTDOCS%%%%DOCSDIR%%/fl_choice.gif
@@ -540,5 +564,6 @@ lib/libfltk_forms.so.1
 %%PORTDOCS%%%%DOCSDIR%%/widgets.html
 @dirrm include/FL
 include/Fl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

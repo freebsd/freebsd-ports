@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	${VERSION}
-PORTREVISION=	4
+PORTVERSION=	1.1.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
-MASTER_SITE_SUBDIR=	fltk/${VERSION}
+MASTER_SITE_SUBDIR=	fltk/${PORTVERSION}
 .ifdef WITH_THREADS
 PKGNAMESUFFIX=	-threads
 .endif
-DISTNAME=	${PORTNAME}-${VERSION}-source
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER?=	demon@FreeBSD.org
-COMMENT?=	C++ graphical user interface for X
+MAINTAINER=	gahr@FreeBSD.org
+COMMENT=	Cross-platform C++ graphical user interface toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=--enable-threads
@@ -32,16 +30,17 @@ CONFLICTS=	fltk-1*
 CONFLICTS=	fltk-threads-1*
 .endif
 
-VERSION=	1.1.7
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	xft
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --enable-xft
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 # configure ignores ${CXX} and keeps on linking C++ code with ${CC}
-CONFIGURE_ENV+=	CC="${CXX}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
-USE_GL=		yes
+CONFIGURE_ENV+=	CC="${CXX}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GL=		gl glu
 
 MAN1=		fluid.1 fltk-config.1
 MAN3=		fltk.3
@@ -54,11 +53,19 @@ pre-everything::
 	@${ECHO_MSG} "===>"
 .endif
 
-pre-configure:
+post-patch:
+	${REINPLACE_CMD} -e 's|.$${FL_MINOR_VERSION}||; \
+	    s|CAT1EXT=0|CAT1EXT=1|g; s|CAT3EXT=0|CAT3EXT=3|g' \
+	    ${WRKSRC}/configure ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e 's|.1.1|.1|g' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's|LINKSHARED)|LINKSHARED) ../src/fl_gtk.o|' \
+	    ${WRKSRC}/fluid/Makefile
+	${REINPLACE_CMD} -e 's|cat1|man1|g;s|cat3|man3|g' ${WRKSRC}/documentation/Makefile
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|%%DOCS%%|#|' ${WRKSRC}/documentation/Makefile
+	${REINPLACE_CMD} -e 's|%%DOCS%%|#|' ${WRKSRC}/documentation/Makefile
+	${REINPLACE_CMD} -e 's|test||' ${WRKSRC}/Makefile
 .else
-	@${REINPLACE_CMD} -e 's|%%DOCS%%||' ${WRKSRC}/documentation/Makefile
+	${REINPLACE_CMD} -e 's|%%DOCS%%||' ${WRKSRC}/documentation/Makefile
 .endif
 
 .include <bsd.port.post.mk>
