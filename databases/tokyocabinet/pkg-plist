@@ -21,6 +21,6 @@ include/tcutil.h
 lib/libtokyocabinet.a
 lib/libtokyocabinet.so
 lib/libtokyocabinet.so.4
-lib/libtokyocabinet.so.4.3.0
+lib/libtokyocabinet.so.4.5.0
 libdata/pkgconfig/tokyocabinet.pc
 libexec/tcawmgr.cgi
