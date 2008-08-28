@@ -7,6 +7,7 @@
 
 PORTNAME=	banshee
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -21,10 +22,10 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib \
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:${PORTSDIR}/audio/taglib-sharp \
 		${LOCALBASE}/libdata/pkgconfig/mono-zeroconf.pc:${PORTSDIR}/net/mono-zeroconf \
-		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins \
-		${LOCALBASE}/libdata/pkgconfig/sqlite3.pc:${PORTSDIR}/databases/sqlite3
+		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 
-OPTIONS=	DOCS "Install documentation" on
+OPTIONS=	DOCS "Install documentation" on \
+		MTP "Enable MTP support" on
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -35,9 +36,13 @@ USE_GSTREAMER=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}-1
 USE_XORG=	xrandr xxf86vm
+USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--disable-boo --disable-ipod --disable-mtp
+CONFIGURE_ARGS+=	--disable-boo --disable-ipod
+
+# Need absolute path for build/icon-install-theme.
+INSTALL=	/usr/bin/install
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
@@ -46,6 +51,14 @@ CONFIGURE_ARGS+=	--disable-boo --disable-ipod --disable-mtp
 BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
 .else
 CONFIGURE_ARGS+=	--disable-docs
+.endif
+
+.if !defined(WITHOUT_MTP)
+LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
+PLIST_SUB+=	OPT_MTP=""
+.else
+CONFIGURE_ARGS+=	--disable-mtp
+PLIST_SUB+=	OPT_MTP="@comment "
 .endif
 
 post-patch:
@@ -57,24 +70,26 @@ post-patch:
 				${WRKSRC}/build/private-icon-theme-installer
 	@${REINPLACE_CMD} 's|-a banshee-1||' \
 				${WRKSRC}/src/Clients/banshee-1.in
-#	@${REINPLACE_CMD} 's|sed -r|sed|' \
+	@${REINPLACE_CMD} 's|sed -r|sed -E|' \
+				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
 #				${WRKSRC}/configure \
-#				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
 
 # XXX - This is gross.
 post-configure:
-	@${REINPLACE_CMD} -e 's|^\(MSGFMT =\)|\1 ${LOCALBASE}/bin/msgfmt|' \
-			 -e 's|^\(GMSGFMT =\)|\1 ${LOCALBASE}/bin/msgfmt|' \
-				${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} -e 's|^\(MSGFMT =\).*|\1 ${LOCALBASE}/bin/msgfmt|' \
+		-e 's|^\(GMSGFMT =\).*|\1 ${LOCALBASE}/bin/msgfmt|' \
+			${WRKSRC}/po/Makefile
 
+# XXX - Really ugly too.
 pre-build:
-.for i in 16x16 22x22 48x48 scalable
-	${MKDIR} ${WRKSRC}/bin/share/banshee-1/icons/hicolor/$i/categories
-.endfor
+	${MKDIR} ${WRKSRC}/bin/share/banshee-1/icons/hicolor/scalable/
 
+# XXX - This one is the best.
 pre-install:
-.for i in 16x16 22x22 48x48 scalable
-	${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/categories
+.for i in 16x16 22x22 32x32 48x48 scalable
+. for j in actions categories status
+	${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/$j/
+. endfor
 .endfor
 
 .include <bsd.port.post.mk>
