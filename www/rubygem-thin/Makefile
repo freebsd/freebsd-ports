@@ -5,19 +5,28 @@
 # $FreeBSD$
 
 PORTNAME=	thin
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast and very simple Ruby web server
 
-BUILD_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
+BUILD_DEPENDS=	rubygem-rack>=0.3.0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-eventmachine>=0.8.1:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-daemons>=1.0.9:${PORTSDIR}/devel/rubygem-daemons
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+
+post-install:
+	@${ECHO} bin/thin > ${TMPPLIST}
+	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
