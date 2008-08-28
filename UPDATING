@@ -517,7 +517,7 @@ upgrades.
 
 20080610:
   AFFECTS: users of mail/svnmailer
-  AUTHOR: pgollucci@p6m7g8.com
+  AUTHOR: pgollucci@FreeBSD.org
 
   Some of the config directives and sections allowed have changed.  You will
   have to edit your config file when updating to 1.1.0-dev-r1373 version of
@@ -723,7 +723,7 @@ upgrades.
 
 20080408:
   AFFECTS: users of www/p5-Apache-Test
-  AUTHOR: pgollucci@p6m7g8.com
+  AUTHOR: pgollucci@FreeBSD.org
 
   www/p5-Apache-Test doesn't actually need www/mod_perl{1,2}. If you would
   like to test a mod_perl, than please install www/mod_perl2 or www/mod_perl
