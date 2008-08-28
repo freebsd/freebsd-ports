@@ -197,6 +197,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/Page.py
 %%DATADIR%%/admin/Page.pyc
 %%DATADIR%%/admin/PageAdvanced.py
+%%DATADIR%%/admin/PageAdvanced.pyc
 %%DATADIR%%/admin/PageAjaxUpdate.py
 %%DATADIR%%/admin/PageAjaxUpdate.pyc
 %%DATADIR%%/admin/PageEncoders.py
