@@ -1,8 +1,7 @@
-Cherokee is a very fast, flexible, and lightweight Web server. It is
-implemented entirely in C, and has no dependencies beyond a standard C
-library. It is embeddable and extensible with plug-ins. It supports on-the-fly
-configuration by reading files or strings, TLS/SSL (via GNUTLS or OpenSSL),
-virtual hosts, authentication, cache friendly features, PHP, custom error
-management, and much more.
+Cherokee is a very fast, flexible and easy to configure Web Server. It supports
+the widespread technologies nowadays: FastCGI, SCGI, PHP, CGI, TLS and SSL
+encrypted connections, Virtual hosts, Authentication, on the fly encoding, Load
+balancing, Apache compatible log files, and much more. A user friendly interface
+called cherokee-admin is provided for a no-hassle configuration of the server.
 
 WWW: http://www.cherokee-project.com/

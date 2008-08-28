@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${DISTVERSION}/
+MASTER_SITES=	http://www.cherokee-project.com/download/0.8/${PORTVERSION}/ \
+		LOCAL/beech
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		GeoIP.5:${PORTSDIR}/net/GeoIP
 
-CONFLICTS=	cherokee-devel-[0-9]*
+CONFLICTS=	cherokee-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_BISON=	build
 USE_MYSQL=	yes
+USE_PYTHON=	2.4+
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
+		--localstatedir=/var \
 		--enable-readdir_r \
 		--disable-static
-DEFCONFS=	cherokee.conf mime.compression.types mime.types
+DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
-MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
+MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
+		spawn-fcgi.1 cherokee-tweak.1 cherokee-guardian.1
+PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
 		GNUTLS	"TLS/SSL support via gnutls"	off \
@@ -64,10 +70,23 @@ post-patch:
 		s:%datadir%:${PREFIX}/share:g; \
 		s:%wwwroot%:${PREFIX}/www/cherokee:g; \
 		s:%prefix%:${PREFIX}:g; \
+		s:%localstatedir%:/var:g; \
 		s:#.*User.*nobody:User www:g; \
 		s:#.*Group.*nogroup:Group www:g; \
 		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
 		$$i > $${i%.pre};done
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/admin/server.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/05to06.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/06to07.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/07to08.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/qa/fcgi.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/qa/run-tests.py
 
 post-install:
 	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}
@@ -82,5 +101,12 @@ post-install:
 		if [ ! -f $${i%.default} ];then ${CP} $$i $${i%.default};fi;done
 	@for i in `${FIND} ${PREFIX}/etc/cherokee/ -name \*.sample`;do\
 		if [ ! -f $${i%.sample} ];then ${CP} $$i $${i%.sample};fi;done
+
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+
+	@cd ${DATADIR}/admin && ${FIND} . -name "*.py" |\
+	${XARGS} ${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py
 
 .include <bsd.port.post.mk>
