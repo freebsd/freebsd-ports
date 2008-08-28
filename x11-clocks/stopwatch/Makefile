@@ -15,7 +15,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/stopwatch
