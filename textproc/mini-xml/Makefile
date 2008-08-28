@@ -26,6 +26,11 @@ MAN3=		mxml.3
 CAT1=		mxmldoc.1
 CAT3=		mxml.3
 
+.if defined(NOPORTDOCS)
+post-patch:
+	${REINPLACE_CMD} -e '130,133d' ${WRKSRC}/Makefile.in
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
