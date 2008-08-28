@@ -62,10 +62,8 @@ post-patch:
 	    ${WRKSRC}/fluid/Makefile
 	${REINPLACE_CMD} -e 's|cat1|man1|g;s|cat3|man3|g' ${WRKSRC}/documentation/Makefile
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|%%DOCS%%|#|' ${WRKSRC}/documentation/Makefile
-	${REINPLACE_CMD} -e 's|test||' ${WRKSRC}/Makefile
-.else
-	${REINPLACE_CMD} -e 's|%%DOCS%%||' ${WRKSRC}/documentation/Makefile
+	${REINPLACE_CMD} -e 's|test ||' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '234,238d' ${WRKSRC}/documentation/Makefile
 .endif
 
 .include <bsd.port.post.mk>
