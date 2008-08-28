@@ -50,6 +50,12 @@ MAN1=	gbasename.1 gcat.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 gcksum.1 \
 	gwc.1 gwho.1 gwhoami.1 gyes.1 gbase64.1 gsha224sum.1 gsha256sum.1 \
 	gsha384sum.1 gsha512sum.1 gshuf.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
+.endif
+
 post-patch:
 .if !defined(WITH_SUID)
 	@${REINPLACE_CMD} -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
@@ -61,4 +67,4 @@ post-build:
 regression-test: build
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
