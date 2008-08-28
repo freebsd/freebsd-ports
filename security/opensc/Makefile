@@ -67,8 +67,7 @@ CONFIGURE_ARGS+=--enable-openct
 
 .if defined(WITH_PCSC)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-CONFIGURE_ARGS+=--enable-pcsc \
-		--with-pcsc-provider=${LOCALBASE}/lib/libpcsclite.so
+CONFIGURE_ARGS+=--enable-pcsc
 .endif
 
 .if defined(WITH_SIGNER)

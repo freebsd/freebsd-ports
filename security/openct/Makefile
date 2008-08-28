@@ -28,8 +28,7 @@ SUB_FILES=	etoken.conf
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl"
 
-CONFIGURE_ARGS=	--with-ifddir=${PREFIX}/lib/ifd \
-		--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var
 
 MAN1=		openct-tool.1
 
