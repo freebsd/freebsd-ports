@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.5.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
-		mercator-0.2.4:${PORTSDIR}/devel/mercator \
+		mercator-0.2.5:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
 		wfut-0.2:${PORTSDIR}/devel/libwfut
