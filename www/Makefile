@@ -563,6 +563,8 @@
     SUBDIR += p5-Apache-ConfigParser
     SUBDIR += p5-Apache-DB
     SUBDIR += p5-Apache-DBI
+    SUBDIR += p5-Apache-DBI-mp1
+    SUBDIR += p5-Apache-DBI-mp2
     SUBDIR += p5-Apache-DebugInfo
     SUBDIR += p5-Apache-DumpHeaders
     SUBDIR += p5-Apache-Filter

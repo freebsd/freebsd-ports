@@ -33,6 +33,14 @@ upgrades.
   Just remember to edit configuration file after upgrade.
 
 20080820:
+  AFFECTS: users of www/p5-Apache-DBI
+  AUTHOR: pgollucci@FreeBSD.org
+
+  www/p5-Apache-DBI has been forked into a MASTER and SLAVE
+  setup www/p5-Apache-DBI-mp1 and www/p5-Apache-DBI-mp2
+  so as to work with www/rt38 among possibly other ports.
+  
+20080820:
   AFFECTS: users of net/rabbitmq
   AUTHOR: pneumann@gmail.com
 
