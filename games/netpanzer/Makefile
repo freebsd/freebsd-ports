@@ -36,8 +36,7 @@ post-patch:
 
 .if defined(NOPORTDOCS)
 post-configure:
-	@(cd ${BUILD_WRKSRC}; \
-	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/noportdocs-patch-Jamfile)
+	${REINPLACE_CMD} -e '/InstallDoc/d' ${WRKSRC}/Jamfile
 .endif
 
 do-build:
