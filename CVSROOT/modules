@@ -953,6 +953,7 @@ bincimap                        ports/mail/bincimap
 bind9                           ports/dns/bind9
 bind9-dlz                       ports/dns/bind9-dlz
 bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
+bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind94                          ports/dns/bind94
 bind95                          ports/dns/bind95
 bindgraph                       ports/dns/bindgraph
@@ -8414,8 +8415,10 @@ monitord                        ports/sysutils/monitord
 monkey                          ports/www/monkey
 monkeybubble                    ports/games/monkeybubble
 mono                            ports/lang/mono
+mono-addins                     ports/devel/mono-addins
 mono-kmod                       ports/sysutils/mono-kmod
 mono-tools                      ports/devel/mono-tools
+mono-zeroconf                   ports/net/mono-zeroconf
 monodoc                         ports/devel/monodoc
 monopd                          ports/games/monopd
 monotone                        ports/devel/monotone
@@ -9325,7 +9328,6 @@ openoffice.org-3-devel          ports/editors/openoffice.org-3-devel
 openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openospfd                       ports/net/openospfd
 openpbx.org                     ports/net/openpbx.org
-openproducer                    ports/graphics/openproducer
 openproj                        ports/deskutils/openproj
 openquicktime                   ports/multimedia/openquicktime
 openradius                      ports/net/openradius
@@ -9344,7 +9346,6 @@ openssh-portable                ports/security/openssh-portable
 openssl-beta                    ports/security/openssl-beta
 openssl-stable                  ports/security/openssl-stable
 opentaxsolver                   ports/finance/opentaxsolver
-openthreads                     ports/devel/openthreads
 openttd                         ports/games/openttd
 openuniverse                    ports/astro/openuniverse
 openupsd                        ports/sysutils/openupsd
@@ -11017,6 +11018,7 @@ p5-Lingua-Stem-Snowball-Da      ports/textproc/p5-Lingua-Stem-Snowball-Da
 p5-Lingua-Stem-Snowball-No      ports/textproc/p5-Lingua-Stem-Snowball-No
 p5-Lingua-Stem-Snowball-Se      ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-Lingua-StopWords             ports/textproc/p5-Lingua-StopWords
+p5-Lingua-Treebank              ports/textproc/p5-Lingua-Treebank
 p5-List-Compare                 ports/misc/p5-List-Compare
 p5-List-Cycle                   ports/devel/p5-List-Cycle
 p5-List-Group                   ports/devel/p5-List-Group
@@ -14124,6 +14126,7 @@ p5-lingua-stem-snowball-da      ports/textproc/p5-Lingua-Stem-Snowball-Da
 p5-lingua-stem-snowball-no      ports/textproc/p5-Lingua-Stem-Snowball-No
 p5-lingua-stem-snowball-se      ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-lingua-stopwords             ports/textproc/p5-Lingua-StopWords
+p5-lingua-treebank              ports/textproc/p5-Lingua-Treebank
 p5-list-compare                 ports/misc/p5-List-Compare
 p5-list-cycle                   ports/devel/p5-List-Cycle
 p5-list-group                   ports/devel/p5-List-Group
@@ -16713,6 +16716,7 @@ phpua-ut                        ports/games/phpua-ut
 phpua-ut2003                    ports/games/phpua-ut2003
 phpwebapp                       ports/www/phpwebapp
 phpwebftp                       ports/ftp/phpwebftp
+phpwebgallery                   ports/www/phpwebgallery
 phpwiki                         ports/www/phpwiki
 phpwiki13                       ports/www/phpwiki13
 phrap                           ports/biology/phrap
@@ -20101,6 +20105,7 @@ tacshell                        ports/net/tacshell
 tads                            ports/games/tads
 tagger                          ports/audio/tagger
 taglib                          ports/audio/taglib
+taglib-sharp                    ports/audio/taglib-sharp
 taglookup                       ports/audio/taglookup
 tagtool                         ports/audio/tagtool
 tagutils                        ports/deskutils/tagutils
