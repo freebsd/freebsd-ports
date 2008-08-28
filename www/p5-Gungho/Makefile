@@ -7,6 +7,7 @@
 
 PORTNAME=	Gungho
 PORTVERSION=	0.09.007
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DM/DMAKI
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${SITE_PERL}/Best.pm:${PORTSDIR}/devel/p5-Best \
 		${SITE_PERL}/HTML/RobotsMETA.pm:${PORTSDIR}/www/p5-HTML-RobotsMETA \
 		${SITE_PERL}/HTTP/Parser.pm:${PORTSDIR}/www/p5-HTTP-Parser \
 		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Async/Buffer.pm:${PORTSDIR}/devel/p5-IO-Async \
+		${SITE_PERL}/IO/Async.pm:${PORTSDIR}/devel/p5-IO-Async \
 		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
 		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
 		${SITE_PERL}/POE/Component/Client/Keepalive.pm:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
