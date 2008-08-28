@@ -1,0 +1,29 @@
+# New ports collection makefile for:	stopwatch
+# Date created:				28 August 2008
+# Whom:					Edwin Groothuis <edwin@mavetju.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	stopwatch
+PORTVERSION=	3.5
+CATEGORIES=	x11-clocks
+MASTER_SITES=	http://expect.nist.gov/stopwatch/
+DISTNAME=	stopwatch
+
+MAINTAINER=	edwin@mavetju.org
+COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
+USE_TK=		yes
+NO_BUILD=	yes
+
+PLIST_FILES=	bin/stopwatch
+
+post-patch:
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/stopwatch
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/stopwatch ${PREFIX}/bin
+
+.include <bsd.port.mk>
