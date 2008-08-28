@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sunrychen@gmail.com
 COMMENT=	A fully automatic Morse code teaching machine
 
-BUILD_DEPENDS=	fluid:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_DISPLAY=	yes
 USE_SDL=	sdl
