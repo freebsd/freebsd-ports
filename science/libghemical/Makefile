@@ -6,6 +6,7 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	2.98
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20080731/ \
 		http://bioinformatics.org/ghemical/download/
@@ -21,6 +22,7 @@ LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
+USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes
 
