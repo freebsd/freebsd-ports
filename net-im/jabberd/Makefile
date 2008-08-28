@@ -20,8 +20,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		idn.16:${PORTSDIR}/dns/libidn \
 		udns.0:${PORTSDIR}/dns/udns
 
-BROKEN=		requires gsasl => 0.2.27 ( ports/126857 )
-
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		POSTGRESQL "Support PostgreSQL (storage/auth/reg)" off \
 		LDAP "Support OpenLDAP (storage/auth/reg)" off \
