@@ -1,6 +1,6 @@
 bin/xplot
 bin/tcpdump2xplot
 bin/tcpdump2xplot.pl
-share/doc/xplot/README
-share/doc/xplot/README.tcp_plots
-@dirrm share/doc/xplot
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.tcp_plots
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
