@@ -7,7 +7,7 @@
 
 PORTNAME=	gacxtool
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	leoz.2005@gmail.com
 COMMENT=	Displays the status of the ACX driver
 
-LIB_DEPENDS=	gtkdatabox:${PORTSDIR}/x11-toolkits/gtkdatabox2
+LIB_DEPENDS=	gtkdatabox:${PORTSDIR}/x11-toolkits/gtkdatabox
 BUILD_DEPENDS=	/boot/kernel/if_acx.ko:${PORTSDIR}/net/acx100
 RUN_DEPENDS=	/boot/kernel/if_acx.ko:${PORTSDIR}/net/acx100
 

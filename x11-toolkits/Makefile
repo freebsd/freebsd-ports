@@ -64,7 +64,6 @@
     SUBDIR += gtkada-gcc
     SUBDIR += gtkada-gps
     SUBDIR += gtkdatabox
-    SUBDIR += gtkdatabox2
     SUBDIR += gtkextra
     SUBDIR += gtkextra2
     SUBDIR += gtkglarea
