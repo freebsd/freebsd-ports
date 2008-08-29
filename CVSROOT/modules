@@ -825,6 +825,7 @@ bamg                            ports/math/bamg
 bandwidthd                      ports/net-mgmt/bandwidthd
 banihstypos                     ports/games/banihstypos
 bannerfilter                    ports/www/bannerfilter
+banshee                         ports/multimedia/banshee
 bar                             ports/textproc/bar
 barbecue                        ports/graphics/barbecue
 barcode                         ports/graphics/barcode
@@ -1409,7 +1410,6 @@ chemical-mime-data              ports/science/chemical-mime-data
 chemtool                        ports/science/chemtool
 chemtool-devel                  ports/science/chemtool-devel
 cherokee                        ports/www/cherokee
-cherokee-devel                  ports/www/cherokee-devel
 chexedit                        ports/editors/chexedit
 chgrep                          ports/sysutils/chgrep
 chicken                         ports/lang/chicken
@@ -9521,6 +9521,8 @@ p5-Apache-ConfigFile            ports/www/p5-Apache-ConfigFile
 p5-Apache-ConfigParser          ports/www/p5-Apache-ConfigParser
 p5-Apache-DB                    ports/www/p5-Apache-DB
 p5-Apache-DBI                   ports/www/p5-Apache-DBI
+p5-Apache-DBI-mp1               ports/www/p5-Apache-DBI-mp1
+p5-Apache-DBI-mp2               ports/www/p5-Apache-DBI-mp2
 p5-Apache-DebugInfo             ports/www/p5-Apache-DebugInfo
 p5-Apache-DumpHeaders           ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter                ports/www/p5-Apache-Filter
@@ -12610,6 +12612,8 @@ p5-apache-configfile            ports/www/p5-Apache-ConfigFile
 p5-apache-configparser          ports/www/p5-Apache-ConfigParser
 p5-apache-db                    ports/www/p5-Apache-DB
 p5-apache-dbi                   ports/www/p5-Apache-DBI
+p5-apache-dbi-mp1               ports/www/p5-Apache-DBI-mp1
+p5-apache-dbi-mp2               ports/www/p5-Apache-DBI-mp2
 p5-apache-debuginfo             ports/www/p5-Apache-DebugInfo
 p5-apache-dumpheaders           ports/www/p5-Apache-DumpHeaders
 p5-apache-filter                ports/www/p5-Apache-Filter
@@ -19904,6 +19908,7 @@ stmpclean                       ports/sysutils/stmpclean
 stone                           ports/net/stone
 stonesoup                       ports/games/stonesoup
 stonx                           ports/emulators/stonx
+stopwatch                       ports/x11-clocks/stopwatch
 stormbaancoureur                ports/games/stormbaancoureur
 stow                            ports/sysutils/stow
 stowES                          ports/sysutils/stowES
