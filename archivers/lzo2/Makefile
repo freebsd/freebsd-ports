@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 
 post-build:
 	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes, without output)"
-	cd ${WRKSRC} && ${MAKE} test SHELL="${SHELL} -x"
+	cd ${WRKSRC} && ${MAKE} test SHELL="${SH} -x"
 
 post-install:
 .if !defined(NOPORTDOCS)
