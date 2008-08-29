@@ -173,6 +173,8 @@
 %%DATADIR%%/plugins/admin/webapp/images/wait24trans.gif
 %%DATADIR%%/plugins/admin/webapp/images/setup_btn_bg-bigblue.gif
 %%DATADIR%%/plugins/admin/webapp/images/yahoo-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/enterprise.png
+%%DATADIR%%/plugins/admin/webapp/images/star-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/setup_sidebar_bg-top.gif
 %%DATADIR%%/plugins/admin/webapp/images/setup_language_zh_CN.gif
 %%DATADIR%%/plugins/admin/webapp/images/twisty_closed_9x9.gif
@@ -268,12 +270,40 @@
 %%DATADIR%%/resources/database/upgrade/16/openfire_oracle.sql
 %%DATADIR%%/resources/database/upgrade/16/openfire_mysql.sql
 %%DATADIR%%/resources/database/upgrade/16/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/17/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/18/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/19/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_mysql.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_oracle.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/20/openfire_oracle.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_mysql.sql
@@ -348,6 +378,7 @@
 @dirrm %%DATADIR%%/resources/database/upgrade/6
 @dirrm %%DATADIR%%/resources/database/upgrade/5
 @dirrm %%DATADIR%%/resources/database/upgrade/4
+@dirrm %%DATADIR%%/resources/database/upgrade/20
 @dirrm %%DATADIR%%/resources/database/upgrade/2
 @dirrm %%DATADIR%%/resources/database/upgrade/10
 @dirrm %%DATADIR%%/resources/database/upgrade/11
@@ -356,6 +387,9 @@
 @dirrm %%DATADIR%%/resources/database/upgrade/14
 @dirrm %%DATADIR%%/resources/database/upgrade/15
 @dirrm %%DATADIR%%/resources/database/upgrade/16
+@dirrm %%DATADIR%%/resources/database/upgrade/17
+@dirrm %%DATADIR%%/resources/database/upgrade/18
+@dirrm %%DATADIR%%/resources/database/upgrade/19
 @dirrm %%DATADIR%%/resources/database/upgrade/1
 @dirrm %%DATADIR%%/resources/database/upgrade
 @dirrm %%DATADIR%%/resources/database
