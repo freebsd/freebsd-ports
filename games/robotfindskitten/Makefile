@@ -18,7 +18,6 @@ COMMENT=	Yet another zen simulation
 
 GNU_CONFIGURE=	YES
 USE_GNOME=	glib12
-CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/robotfindskitten
