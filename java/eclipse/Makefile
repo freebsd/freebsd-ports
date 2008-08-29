@@ -61,6 +61,10 @@ MAKE_CAIRO=	make_cairo
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
+JAVA_VERSION=	1.6
+.endif
+
+.if ${OSVERSION} >= 800000
 JAVA_VENDOR=	bsdjava
 .endif
 
