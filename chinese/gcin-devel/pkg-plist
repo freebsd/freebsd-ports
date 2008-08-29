@@ -21,11 +21,12 @@ lib/gtk-2.0/immodules/im-gcin.so
 lib/gcin1.so
 lib/gcin2.so
 lib/libgcin-im-client.so
-lib/libgcin-im-client.so.1.0.2
+lib/libgcin-im-client.so.1.1.0
 lib/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
 %%BOSHIAMY%%%%DATADIR%%/script/noseeadd.rb
+%%DATADIR%%/script/html-browser
 %%DATADIR%%/script/noseeing-inst
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
@@ -66,7 +67,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.html
 share/applications/gcin
 share/applications/gcin-setup
 share/icons/gcin/NewCJ3.png
