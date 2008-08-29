@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.3.pre5
+PORTVERSION=	1.4.3.pre6
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
-		LOCAL/chinsan:main
+  		http://cle.linux.org.tw/gcin/download/:main \
+		LOCAL/chinsan/gcin:main
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
@@ -77,13 +78,16 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,g; \
-		s,/usr/include,${LOCALBASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
-		${WRKSRC}/qt-im/Makefile
+		s,/usr/include,${LOCALBASE}/include,g; \
+		s,Xft2/X11/Xft,X11/Xft,' ${WRKSRC}/qt-im/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
 		${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${LOCALBASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
 		${WRKSRC}/scripts/gtab.append_prepare
+	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; 12,13 s/=/ /; \
+		s/export/setenv/; s/mozilla-firefox/firefox3/;' \
+		${WRKSRC}/scripts/html-browser
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
@@ -91,9 +95,6 @@ pre-patch:
 		${WRKSRC}/IMdkit/lib/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit
-	@${REINPLACE_CMD} -e \
-	  's,/usr/lib/qt4/include,${LOCALBASE}/include/qt4,g' \
-	  ${WRKSRC}/qt4-im/.depend
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 
 .if defined(WITH_BOSHIAMY)
@@ -113,7 +114,7 @@ PLIST_SUB+=	QT_IM_MODULE="@comment "
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in Changelog README
+.for file in Changelog README.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
