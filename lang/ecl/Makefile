@@ -12,7 +12,7 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecls
 
-MAINTAINER=	der_julian@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
