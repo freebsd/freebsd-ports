@@ -25,7 +25,7 @@ load_rc_config $name
 : ${cherokee_conf="%%PREFIX%%/etc/cherokee/cherokee.conf"}
 
 command=%%PREFIX%%/sbin/cherokee
-command_args="-C ${cherokee_conf} -b"
+command_args="-C ${cherokee_conf}"
 pidfile=/var/run/cherokee.pid
 required_files=${cherokee_conf}
 stop_postcmd=stop_postcmd
