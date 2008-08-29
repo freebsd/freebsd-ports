@@ -11,5 +11,3 @@ Features:
      text data.
    * Complete isolation from the backend parser due to the private
      implementation (pimpl) idiom.
-
-WWW: http://pmade.org/software/xmlwrapp/
