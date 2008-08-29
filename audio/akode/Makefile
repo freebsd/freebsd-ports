@@ -35,7 +35,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH}
 
-CONFIGURE_ARGS+=--program-transform-name= \
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--program-transform-name= \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include
 

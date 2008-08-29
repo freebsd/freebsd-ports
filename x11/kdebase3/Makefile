@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-ssl-dir=${OPENSSLBASE}
 
 OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		HAL "Use HAL backend for media:/ (FreeBSD 5+ only)" on \
+		HAL "Use HAL backend for media:/" on \
 		HTDIG "Depend on htdig, used to build manual indices" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
@@ -68,8 +68,6 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
 .if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
-		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 		hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	MEDIA=""

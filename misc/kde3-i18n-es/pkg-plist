@@ -525,11 +525,13 @@ share/doc/HTML/es/kasteroids/fuel.png
 share/doc/HTML/es/kasteroids/index.cache.bz2
 share/doc/HTML/es/kasteroids/index.docbook
 share/doc/HTML/es/kate-plugins/common
+share/doc/HTML/es/kate-plugins/configure_insertcommand.png
 share/doc/HTML/es/kate-plugins/filetemplates.docbook
 share/doc/HTML/es/kate-plugins/htmltools.docbook
 share/doc/HTML/es/kate-plugins/index.cache.bz2
 share/doc/HTML/es/kate-plugins/index.docbook
 share/doc/HTML/es/kate-plugins/insertcommand.docbook
+share/doc/HTML/es/kate-plugins/insertcommand.png
 share/doc/HTML/es/kate-plugins/openheader.docbook
 share/doc/HTML/es/kate-plugins/projectmanager.docbook
 share/doc/HTML/es/kate-plugins/textfilter.docbook
@@ -2255,6 +2257,7 @@ share/doc/HTML/es/kshisen/score-formula.png
 share/doc/HTML/es/ksig/common
 share/doc/HTML/es/ksig/index.cache.bz2
 share/doc/HTML/es/ksig/index.docbook
+share/doc/HTML/es/ksig/screenshot.png
 share/doc/HTML/es/ksim/common
 share/doc/HTML/es/ksim/index.cache.bz2
 share/doc/HTML/es/ksim/index.docbook
@@ -3101,6 +3104,7 @@ share/locale/es/LC_MESSAGES/kio_nntp.mo
 share/locale/es/LC_MESSAGES/kio_pop3.mo
 share/locale/es/LC_MESSAGES/kio_print.mo
 share/locale/es/LC_MESSAGES/kio_remote.mo
+share/locale/es/LC_MESSAGES/kio_scalix.mo
 share/locale/es/LC_MESSAGES/kio_settings.mo
 share/locale/es/LC_MESSAGES/kio_sftp.mo
 share/locale/es/LC_MESSAGES/kio_sieve.mo
@@ -3208,6 +3212,7 @@ share/locale/es/LC_MESSAGES/kres_groupware.mo
 share/locale/es/LC_MESSAGES/kres_groupwise.mo
 share/locale/es/LC_MESSAGES/kres_kolab.mo
 share/locale/es/LC_MESSAGES/kres_remote.mo
+share/locale/es/LC_MESSAGES/kres_scalix.mo
 share/locale/es/LC_MESSAGES/kres_tvanytime.mo
 share/locale/es/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/es/LC_MESSAGES/kreversi.mo
@@ -3338,6 +3343,7 @@ share/locale/es/LC_MESSAGES/privacy.mo
 share/locale/es/LC_MESSAGES/quanta.mo
 share/locale/es/LC_MESSAGES/quicklauncher.mo
 share/locale/es/LC_MESSAGES/rellinks.mo
+share/locale/es/LC_MESSAGES/scalixadmin.mo
 share/locale/es/LC_MESSAGES/searchbarplugin.mo
 share/locale/es/LC_MESSAGES/secpolicy.mo
 share/locale/es/LC_MESSAGES/spy.mo

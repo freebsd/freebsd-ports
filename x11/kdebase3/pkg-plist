@@ -17,6 +17,7 @@ bin/kcontrol
 bin/kcontroledit
 bin/kdcop
 bin/kdebugdialog
+bin/kde3
 bin/kdeeject
 bin/kdeinstallktheme
 bin/kdepasswd

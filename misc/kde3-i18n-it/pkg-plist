@@ -580,11 +580,13 @@ share/doc/HTML/it/kdeprint/cupsaddprinterwizard3_networkscan.png
 share/doc/HTML/it/kdeprint/cupsaddprinterwizard4_networkscan_config.png
 share/doc/HTML/it/kdeprint/extensions.docbook
 share/doc/HTML/it/kdeprint/external-command.docbook
+share/doc/HTML/it/kdeprint/final-word.docbook
 share/doc/HTML/it/kdeprint/getting-started.docbook
 share/doc/HTML/it/kdeprint/lpd.docbook
 share/doc/HTML/it/kdeprint/lpr-bsd.docbook
 share/doc/HTML/it/kdeprint/lprng.docbook
 share/doc/HTML/it/kdeprint/rlpr.docbook
+share/doc/HTML/it/kdeprint/tech-overview.docbook
 share/doc/HTML/it/kdesu/common
 share/doc/HTML/it/kdesu/index.cache.bz2
 share/doc/HTML/it/kdesu/index.docbook

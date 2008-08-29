@@ -425,6 +425,10 @@ lib/kde3/ldifvcardthumbnail.so
 lib/kde3/libakregator_mk4storage_plugin.a
 lib/kde3/libakregator_mk4storage_plugin.la
 lib/kde3/libakregator_mk4storage_plugin.so
+lib/kde3/libkaddrbk_distributionlistng.so
+lib/kde3/libkaddrbk_distributionlistng.la
+lib/kde3/libkaddrbk_distributionlistng.a
+lib/kde3/libkaddrbk_distributionlist.so.0
 lib/kde3/libakregatorpart.a
 lib/kde3/libakregatorpart.la
 lib/kde3/libakregatorpart.so
@@ -1041,6 +1045,8 @@ share/apps/kmail/pics/enterprise_top.png
 share/apps/kmail/pics/enterprise_top_left.png
 share/apps/kmail/pics/enterprise_top_right.png
 share/apps/kmail/pics/enterprise_w.png
+share/apps/kmail/pics/attachmentQuicklistClosed.png
+share/apps/kmail/pics/attachmentQuicklistOpened.png
 share/apps/kmail/pics/key.png
 share/apps/kmail/pics/key_bad.png
 share/apps/kmail/pics/key_ok.png
@@ -1303,6 +1309,8 @@ share/apps/libical/zoneinfo/America/Anchorage.ics
 share/apps/libical/zoneinfo/America/Anguilla.ics
 share/apps/libical/zoneinfo/America/Antigua.ics
 share/apps/libical/zoneinfo/America/Araguaina.ics
+share/apps/libical/zoneinfo/America/Marigot.ics
+share/apps/libical/zoneinfo/America/St_Barthelemy.ics
 share/apps/libical/zoneinfo/America/Argentina/Buenos_Aires.ics
 share/apps/libical/zoneinfo/America/Argentina/Catamarca.ics
 share/apps/libical/zoneinfo/America/Argentina/Cordoba.ics
@@ -1311,6 +1319,7 @@ share/apps/libical/zoneinfo/America/Argentina/La_Rioja.ics
 share/apps/libical/zoneinfo/America/Argentina/Mendoza.ics
 share/apps/libical/zoneinfo/America/Argentina/Rio_Gallegos.ics
 share/apps/libical/zoneinfo/America/Argentina/San_Juan.ics
+share/apps/libical/zoneinfo/America/Argentina/San_Luis.ics
 share/apps/libical/zoneinfo/America/Argentina/Tucuman.ics
 share/apps/libical/zoneinfo/America/Argentina/Ushuaia.ics
 share/apps/libical/zoneinfo/America/Aruba.ics
@@ -1462,6 +1471,8 @@ share/apps/libical/zoneinfo/Asia/Chongqing.ics
 share/apps/libical/zoneinfo/Asia/Colombo.ics
 share/apps/libical/zoneinfo/Asia/Damascus.ics
 share/apps/libical/zoneinfo/Asia/Dhaka.ics
+share/apps/libical/zoneinfo/Asia/Ho_Chi_Minh.ics
+share/apps/libical/zoneinfo/Asia/Kolkata.ics
 share/apps/libical/zoneinfo/Asia/Dili.ics
 share/apps/libical/zoneinfo/Asia/Dubai.ics
 share/apps/libical/zoneinfo/Asia/Dushanbe.ics
@@ -1675,11 +1686,13 @@ share/apps/libkholidays/holiday_ar
 share/apps/libkholidays/holiday_at
 share/apps/libkholidays/holiday_au
 share/apps/libkholidays/holiday_bavarian
-share/apps/libkholidays/holiday_be
 share/apps/libkholidays/holiday_br
 share/apps/libkholidays/holiday_ca
 share/apps/libkholidays/holiday_catalan
 share/apps/libkholidays/holiday_ch
+share/apps/libkholidays/holiday_BelgiumDutch
+share/apps/libkholidays/holiday_BelgiumFrench
+share/apps/libkholidays/holiday_BelgiumWalloon
 share/apps/libkholidays/holiday_co
 share/apps/libkholidays/holiday_cz
 share/apps/libkholidays/holiday_de
@@ -2160,11 +2173,11 @@ share/services/kabconfig.desktop
 share/services/kabcustomfields.desktop
 share/services/kabldapconfig.desktop
 share/services/kaddressbook/aimprotocol.desktop
+share/services/kaddressbook/distributionlistng.desktop
 share/services/kaddressbook/bookmark_xxport.desktop
 share/services/kaddressbook/cardview.desktop
 share/services/kaddressbook/cryptosettings.desktop
 share/services/kaddressbook/csv_xxport.desktop
-share/services/kaddressbook/distributionlist.desktop
 share/services/kaddressbook/eudora_xxport.desktop
 share/services/kaddressbook/gaduprotocol.desktop
 share/services/kaddressbook/gnokii_xxport.desktop
