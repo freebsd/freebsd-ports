@@ -1,3 +1,6 @@
 MD5 (nginx-0.7.13.tar.gz) = 966c0951433f5edf7bb42aa70fabbc29
 SHA256 (nginx-0.7.13.tar.gz) = 24dca7ae851411eeb1597f97d44648eaa7b515216b327a7d061cc37498b25180
 SIZE (nginx-0.7.13.tar.gz) = 543938
+MD5 (nginx_upload_module-2.0.6.tar.gz) = a4e5f20735a443df5e8f111076ccdc03
+SHA256 (nginx_upload_module-2.0.6.tar.gz) = fb11a458fbaa5fde6b3a6b248881585c00d961deee69137ebc681ed6ba42fabd
+SIZE (nginx_upload_module-2.0.6.tar.gz) = 16867

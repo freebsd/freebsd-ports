@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	osa
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -28,6 +29,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_SSL_MODULE "Enable http_ssl module" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
+		HTTP_UPLOAD_MODULE "Enable upload module" off \
 		HTTP_XSLT_MODULE "Enable http_xslt module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
 		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
@@ -115,6 +117,13 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 
 .if defined(WITH_HTTP_SUB_MODULE)
 CONFIGURE_ARGS+=--with-http_sub_module
+.endif
+
+.if defined(WITH_HTTP_UPLOAD_MODULE)
+NGINX_UPLOAD_MODULE_VERSION=	2.0.6
+MASTER_SITES+=	http://grid.net.ru/nginx/download/:upload
+DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_XSLT_MODULE)
