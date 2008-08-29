@@ -62,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${j} ${JAVAJARDIR}
 .endfor
 
-.if defined(WITHOUT_COMPILE)
+.if !defined(WITHOUT_COMPILE)
 .for j in ${JMOL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/build/${j} ${JAVAJARDIR}
 .endfor
