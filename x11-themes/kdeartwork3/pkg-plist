@@ -1729,6 +1729,7 @@ share/icons/kdeclassic/16x16/actions/2downarrow.png
 share/icons/kdeclassic/16x16/actions/2leftarrow.png
 share/icons/kdeclassic/16x16/actions/2rightarrow.png
 share/icons/kdeclassic/16x16/actions/2uparrow.png
+share/icons/kdeclassic/16x16/actions/view.png
 share/icons/kdeclassic/16x16/actions/3downarrow.png
 share/icons/kdeclassic/16x16/actions/3uparrow.png
 share/icons/kdeclassic/16x16/actions/5days.png
@@ -2769,6 +2770,7 @@ share/icons/kdeclassic/16x16/mimetypes/vectorgfx.png
 share/icons/kdeclassic/16x16/mimetypes/video.png
 share/icons/kdeclassic/16x16/mimetypes/widget_doc.png
 share/icons/kdeclassic/16x16/mimetypes/wordprocessing.png
+share/icons/kdeclassic/22x22/actions/view.png
 share/icons/kdeclassic/22x22/actions/14_ellipse.png
 share/icons/kdeclassic/22x22/actions/14_gradient.png
 share/icons/kdeclassic/22x22/actions/14_group.png
@@ -3480,6 +3482,7 @@ share/icons/kdeclassic/22x22/mimetypes/kugar_kud.png
 share/icons/kdeclassic/22x22/mimetypes/kugardata.png
 share/icons/kdeclassic/22x22/mimetypes/kword_kwd.png
 share/icons/kdeclassic/32x32/actions/1day.png
+share/icons/kdeclassic/32x32/actions/view.png
 share/icons/kdeclassic/32x32/actions/1downarrow.png
 share/icons/kdeclassic/32x32/actions/1leftarrow.png
 share/icons/kdeclassic/32x32/actions/1rightarrow.png

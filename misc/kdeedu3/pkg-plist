@@ -34,8 +34,6 @@ bin/pykig.py
 bin/skycommander
 bin/spotlight2kvtml
 bin/temma
-bin/test_extdate
-bin/test_extdatepicker
 include/kstarsinterface.h
 include/libkdeedu/kdeeduglossary.h
 include/libkdeedu/keduvocdata.h
@@ -1683,6 +1681,7 @@ share/apps/kstars/wzgeo.png
 share/apps/kstars/wzscope.png
 share/apps/kstars/wzstars.png
 share/apps/ktouch/bg.keyboard
+share/apps/ktouch/nb.keyboard
 share/apps/ktouch/bulgarian.ktouch.xml
 share/apps/ktouch/bulgarian_long.ktouch.xml
 share/apps/ktouch/catalan.ktouch.xml

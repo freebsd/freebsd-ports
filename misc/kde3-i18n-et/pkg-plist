@@ -944,8 +944,10 @@ share/doc/HTML/et/kommander/index.cache.bz2
 share/doc/HTML/et/kommander/index.docbook
 share/doc/HTML/et/kommander/installation.docbook
 share/doc/HTML/et/kommander/introduction.docbook
+share/doc/HTML/et/kommander/parser.docbook
 share/doc/HTML/et/kommander/q-and-a.docbook
 share/doc/HTML/et/kommander/specials.docbook
+share/doc/HTML/et/kommander/translating.docbook
 share/doc/HTML/et/kommander/tutorials.docbook
 share/doc/HTML/et/kommander/widgets.docbook
 share/doc/HTML/et/kompare/common

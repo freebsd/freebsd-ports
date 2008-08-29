@@ -182,6 +182,7 @@
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
     SUBDIR += kde3-i18n-az
+    SUBDIR += kde3-i18n-be
     SUBDIR += kde3-i18n-bg
     SUBDIR += kde3-i18n-bn
     SUBDIR += kde3-i18n-br

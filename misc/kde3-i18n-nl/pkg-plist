@@ -1913,7 +1913,6 @@ share/locale/nl/LC_MESSAGES/libkscan.mo
 share/locale/nl/LC_MESSAGES/libkscreensaver.mo
 share/locale/nl/LC_MESSAGES/libksieve.mo
 share/locale/nl/LC_MESSAGES/libksirtet.mo
-share/locale/nl/LC_MESSAGES/libksync.mo
 share/locale/nl/LC_MESSAGES/libtaskbar.mo
 share/locale/nl/LC_MESSAGES/libtaskmanager.mo
 share/locale/nl/LC_MESSAGES/lockout.mo
@@ -1930,7 +1929,6 @@ share/locale/nl/LC_MESSAGES/nsplugin.mo
 share/locale/nl/LC_MESSAGES/pitchablespeed.mo
 share/locale/nl/LC_MESSAGES/ppdtranslations.mo
 share/locale/nl/LC_MESSAGES/privacy.mo
-share/locale/nl/LC_MESSAGES/qeditor.mo
 share/locale/nl/LC_MESSAGES/quanta.mo
 share/locale/nl/LC_MESSAGES/quicklauncher.mo
 share/locale/nl/LC_MESSAGES/rellinks.mo

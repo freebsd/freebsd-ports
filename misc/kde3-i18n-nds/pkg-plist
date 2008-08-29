@@ -667,6 +667,7 @@ share/locale/nds/LC_MESSAGES/wavecapture.mo
 share/locale/nds/LC_MESSAGES/webarchiver.mo
 share/locale/nds/charset
 share/locale/nds/entry.desktop
+share/locale/nds/flag.png
 @dirrm share/locale/nds/LC_MESSAGES
 @dirrm share/locale/nds
 @dirrm share/apps/ktuberling/sounds/nds

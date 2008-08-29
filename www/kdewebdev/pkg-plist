@@ -1659,6 +1659,7 @@ share/doc/HTML/en/xsldbg/index.docbook
 share/doc/HTML/en/xsldbg/introduction.docbook
 share/doc/HTML/en/xsldbg/usage.docbook
 share/doc/HTML/en/xsldbg/xsldbghelp.xml
+share/doc/HTML/en/xsldbg/xsldbghelp.xsl
 share/icons/crystalsvg/128x128/apps/kommander.png
 share/icons/crystalsvg/16x16/actions/bug.png
 share/icons/crystalsvg/16x16/apps/kommander.png
