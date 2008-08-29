@@ -7,7 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -56,11 +56,7 @@ WITHOUT_CPU_CFLAGS=	true
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-.if (${OSVERSION} >= 800000)
-JAVA_VENDOR=	bsdjava
-.else
 JAVA_VENDOR=	freebsd bsdjava
-.endif
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
 .else
