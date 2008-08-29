@@ -7,7 +7,7 @@
 
 PORTNAME=	lzo2
 PORTVERSION=	2.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/ \
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 
 post-build:
 	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes, without output)"
-	cd ${WRKSRC} && ${MAKE} test
+	cd ${WRKSRC} && ${MAKE} test SHELL="${SHELL} -x"
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -42,10 +42,4 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
