@@ -3586,3 +3586,4 @@ graphics/openproducer||2008-08-27|Now included in graphics/osg
 devel/openthreads||2008-08-27|Now included in graphics/osg
 www/cherokee-devel||2008-08-27|Removed, use www/cherokee instead
 irc/tirc||2008-08-28|Has expired: Project is dead
+x11-toolkits/gtkdatabox2||2008-08-29|Removed, use x11-toolkits/gtkdatabox instead
