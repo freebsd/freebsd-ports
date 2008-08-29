@@ -21,8 +21,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/burrGui bin/burrTxt
