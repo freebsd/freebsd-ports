@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Text-SimpleTable
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Simple Eyecandy ASCII Tables
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Text::SimpleTable.3
 
