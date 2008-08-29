@@ -1,0 +1,86 @@
+--- configure	2007-10-29 10:14:25.000000000 -0400
++++ configure	2008-05-02 15:31:51.000000000 -0400
+@@ -4686,6 +4686,14 @@
+           then
+             clamavdb=$f
+             break
++          elif test -f "$f/daily.cld"
++          then
++            clamavdb=$f
++            break
++          elif test -f "$f/daily.inc/daily.info"
++          then
++            clamavdb=$f
++            break
+           fi
+         done
+ 
+--- configure.in	2007-10-29 10:13:40.000000000 -0400
++++ configure.in	2008-05-02 15:31:32.000000000 -0400
+@@ -622,6 +622,14 @@
+           then
+             clamavdb=$f
+             break
++          elif test -f "$f/daily.cld"
++          then
++            clamavdb=$f
++            break
++          elif test -f "$f/daily.inc/daily.info"
++          then
++            clamavdb=$f
++            break
+           fi
+         done
+ 
+--- simscanmk.c	2006-10-10 19:15:17.000000000 -0400
++++ simscanmk.c	2008-07-07 14:21:46.000000000 -0400
+@@ -123,6 +123,7 @@
+   char input[MAX_LINE];
+   char dbpath[MAX_LINE];
+   char *pos;
++  int rv;
+ #if ENABLE_SPAM==1 || ENABLE_TROPHIE==1
+   int fnd_vsvers;
+ #endif
+@@ -276,8 +277,18 @@
+     waitpid(pid,&rmstat,0);
+     close(pin[0]); close(pin[1]);
+   }
+-  strncpy(dbpath,CLAMAVDBPATH,MAX_DATA);
+-  strcat(dbpath,"/main.cvd");
++  strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++  strncat(dbpath,"/main.inc/main.info",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++  rv=access(dbpath,F_OK);
++  if(rv) {
++    strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++    strncat(dbpath,"/main.cld",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++  }
++  rv=access(dbpath,F_OK);
++  if(rv) {
++    strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++    strncat(dbpath,"/main.cvd",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++  }
+   strcat(data,"m:");
+   if (pipe(pin)){
+     printf("error opening pipe for sigtool\n");
+@@ -306,8 +317,18 @@
+     }
+     waitpid(pid,&rmstat,0);
+     close(pin[0]); close(pin[1]);
+-    strncpy(dbpath,CLAMAVDBPATH,MAX_DATA);
+-    strcat(dbpath,"/daily.cvd");
++    strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++    strncat(dbpath,"/daily.inc/daily.info",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++    rv=access(dbpath,F_OK);
++    if(rv) {
++      strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++      strncat(dbpath,"/daily.cld",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++    }
++    rv=access(dbpath,F_OK);
++    if(rv) {
++      strncpy(dbpath,CLAMAVDBPATH,MAX_LINE);
++      strncat(dbpath,"/daily.cvd",(MAX_LINE-sizeof(CLAMAVDBPATH)-1));
++    }
+     if (pipe(pin)){
+      printf("error opening pipe for sigtool\n");
+     }
