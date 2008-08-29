@@ -52,7 +52,7 @@ MAN1=	gbasename.1 gcat.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 gcksum.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
+.if ${OSVERSION} >= 800039
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
 .endif
 
