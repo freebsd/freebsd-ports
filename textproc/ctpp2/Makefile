@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ctpp2
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.5
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://ctpp.havoc.ru/download/
+MASTER_SITES=	http://ctpp.havoc.ru/download/ \
+		LOCAL/glarkin
 
 MAINTAINER=	reki@reki.ru
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
