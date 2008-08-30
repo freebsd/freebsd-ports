@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A fast Console Chinese System which supports framebuffer device
 
+PORTSCOUT=	limit:^0\.2.[0-9]*
+
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 USE_ICONV=	yes
