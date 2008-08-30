@@ -158,7 +158,6 @@ include/irssi/src/lib-config/module.h
 %%DATADIR%%/help/connect
 %%DATADIR%%/help/ctcp
 %%DATADIR%%/help/cycle
-%%DATADIR%%/help/date
 %%DATADIR%%/help/dcc
 %%DATADIR%%/help/dehilight
 %%DATADIR%%/help/deop
