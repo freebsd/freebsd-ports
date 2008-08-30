@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo/.packlist
+%%SITE_PERL%%/Graphics/Primitive/Driver/Cairo.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver/Cairo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/Driver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive/Driver
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive
+@dirrmtry %%SITE_PERL%%/Graphics
