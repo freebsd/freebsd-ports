@@ -279,6 +279,7 @@
     SUBDIR += ikiwiki
     SUBDIR += ilias
     SUBDIR += imgsizer
+    SUBDIR += impresscms
     SUBDIR += indexme
     SUBDIR += instiki
     SUBDIR += interchange
