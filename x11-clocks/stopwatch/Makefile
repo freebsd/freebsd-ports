@@ -7,6 +7,7 @@
 
 PORTNAME=	stopwatch
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://expect.nist.gov/stopwatch/
 DISTNAME=	stopwatch
@@ -16,6 +17,7 @@ COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
 USE_TK_RUN=	yes
+USE_TK_WRAPPER=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/stopwatch
