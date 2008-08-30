@@ -16,11 +16,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programmer's documentation reader
 
-DEPRECATED=	Unmaintained upstream
-
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		swish-e:${PORTSDIR}/www/swish-e
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2008-10-01
+PORTSCOUT=	limitw:1,even
 
 USE_PYTHON=	2.4+
 USE_PERL5=	yes
