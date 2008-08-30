@@ -4675,7 +4675,6 @@ gtkballs                        ports/games/gtkballs
 gtkbe                           ports/x11-themes/gtkbe
 gtkchtheme                      ports/x11/gtkchtheme
 gtkdatabox                      ports/x11-toolkits/gtkdatabox
-gtkdatabox2                     ports/x11-toolkits/gtkdatabox2
 gtkdiff                         ports/textproc/gtkdiff
 gtkdps                          ports/graphics/gtkdps
 gtkextra                        ports/x11-toolkits/gtkextra
@@ -6237,6 +6236,7 @@ kde3-apireference               ports/x11/kde3-apireference
 kde3-i18n                       ports/misc/kde3-i18n
 kde3-i18n-af                    ports/misc/kde3-i18n-af
 kde3-i18n-az                    ports/misc/kde3-i18n-az
+kde3-i18n-be                    ports/misc/kde3-i18n-be
 kde3-i18n-bg                    ports/misc/kde3-i18n-bg
 kde3-i18n-bn                    ports/misc/kde3-i18n-bn
 kde3-i18n-br                    ports/misc/kde3-i18n-br
@@ -20397,7 +20397,6 @@ tinysu                          ports/security/tinysu
 tinywm                          ports/x11-wm/tinywm
 tinyxml                         ports/textproc/tinyxml
 tipograf                        ports/print/tipograf
-tirc                            ports/irc/tirc
 tircproxy                       ports/irc/tircproxy
 titano                          ports/devel/titano
 titlefix                        ports/sysutils/titlefix
