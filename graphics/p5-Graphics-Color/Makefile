@@ -1,0 +1,34 @@
+# Ports collection makefile for:	p5-Graphics-Color
+# Date created:				2008/08/30
+# Whom:	      				chinsan
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Graphics-Color
+PORTVERSION=	0.12
+CATEGORIES=	graphics perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan@FreeBSD.org
+COMMENT=	Device and library agnostic color spaces
+
+BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
+		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+  		p5-MooseX-Clone>=0:${PORTSDIR}/devel/p5-MooseX-Clone \
+		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
+		p5-Pod-Coverage-Moose>=0:${PORTSDIR}/devel/p5-Pod-Coverage-Moose
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	YES
+
+MAN3=		Graphics::Color.3 \
+		Graphics::Color::CMYK.3 \
+		Graphics::Color::Equal.3 \
+		Graphics::Color::HSL.3 \
+		Graphics::Color::RGB.3 \
+		Graphics::Color::YIQ.3 \
+		Graphics::Color::YUV.3
+
+.include <bsd.port.mk>
