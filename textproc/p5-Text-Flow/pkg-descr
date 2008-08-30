@@ -1,0 +1,9 @@
+This module provides a flexible way to wrap and flow text for both ASCII and
+non-ASCII outputs.
+
+The main purpose of this module is to provide text wrapping and flowing
+features without being tied down to ASCII based output and fixed-width
+fonts. My needs were for a more sophisticated text control in PDF and GIF
+output formats in particular.
+
+WWW: http://search.cpan.org/dist/Text-Flow/
