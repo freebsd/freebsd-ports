@@ -1,0 +1,13 @@
+The Tie::RefHash module can be used to access hashes by reference. This is
+useful when you index by object, for example.
+
+The problem with Tie::RefHash, and cross indexing, is that sometimes the
+index should not contain strong references to the objecs. Tie::RefHash's
+internal structures contain strong references to the key, and provide no
+convenient means to make those references weak.
+
+This subclass of Tie::RefHash has weak keys, instead of strong ones. The
+values are left unaltered, and you'll have to make sure there are no strong
+references there yourself.
+
+WWW: http://search.cpan.org/dist/Tie-RefHash-Weak/
