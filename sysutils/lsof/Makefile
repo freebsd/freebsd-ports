@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.81A
+PORTVERSION=	4.81D
 PORTEPOCH=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
@@ -99,9 +99,7 @@ pre-configure:
 	@${ECHO} "************************************************************"
 	@${ECHO} ""
 .endif
-.elif ${OSVERSION} >= 800000
-BROKEN=	does not build
-.endif
+.endif 
 
 post-install:
 	cd ${PREFIX} && \
