@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-SSL
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +15,13 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to SSL sockets
 
 RUN_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::Socket::SSL.3
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${EXAMPLESDIR}
@@ -29,8 +29,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>
