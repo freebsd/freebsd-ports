@@ -476,6 +476,7 @@
     SUBDIR += rname
     SUBDIR += rpl
     SUBDIR += rtfm
+    SUBDIR += ruby-progressbar
     SUBDIR += ruby-vpim
     SUBDIR += salias
     SUBDIR += seq2
