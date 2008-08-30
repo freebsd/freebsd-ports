@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
 DISTNAME?=	vtk-${PORTVERSION}
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	giffunip@tutopia.com
 COMMENT=	The Visualization Toolkit
 
 LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
