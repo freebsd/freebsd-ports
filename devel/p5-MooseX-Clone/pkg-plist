@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone/.packlist
+%%SITE_PERL%%/MooseX/Clone.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/NoClone.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Copy.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone.pm
+%%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone/Base.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Clone
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/Clone
+@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait
+@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta/Attribute
+@dirrmtry %%SITE_PERL%%/MooseX/Clone/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/Clone
+@dirrmtry %%SITE_PERL%%/MooseX
