@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.86
+PORTVERSION=	5.88
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ PERL_CONFIGURE=	yes
 MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Common.3 \
 		POE::Component::IRC::Constants.3 \
+		POE::Component::IRC::Cookbook::MegaHAL.3 \
 		POE::Component::IRC::Plugin.3 \
 		POE::Component::IRC::Plugin::AutoJoin.3 \
 		POE::Component::IRC::Plugin::BotAddressed.3 \
@@ -56,7 +57,6 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Cookbook.3 \
 		POE::Component::IRC::Cookbook::Resolver.3 \
 		POE::Component::IRC::Plugin::BotCommand.3 \
-		POE::Filter::CTCP.3 \
 		POE::Filter::IRC.3 \
 		POE::Filter::IRC::Compat.3
 
