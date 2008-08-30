@@ -185,7 +185,7 @@ _REQUIRE+=		ypserv
 
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-2.5.3-vda-ng.patch.gz
+PATCHFILES+=		postfix-2.5.4-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
