@@ -1,0 +1,10 @@
+Sub::Current makes available a function ROUTINE(), that returns a code
+reference pointing at the currently executing subroutine.
+
+In a special block (BEGIN, END, CHECK, INIT, and UNITCHECK in Perl 5.10)
+this function will return undef.
+
+Outside of a special block (that is, at the top level of a program)
+ROUTINE() will return undef as well.
+
+WWW: http://search.cpan.org/dist/Sub-Current/
