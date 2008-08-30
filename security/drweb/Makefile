@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.33
-PORTREVISION=	5
+PORTVERSION=	4.44.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/61/:f61 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/55/:f55 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/411/:f411 \
-		http://freebsd.spectrum.ru/distfiles/drweb/:f61,f55,f411
-DIST_SUBDIR=	drweb
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/:f60 \
+		http://freebsd.spectrum.ru/distfiles/drweb/:f60
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	support@spectrum.ru
 COMMENT=	DrWeb antivirus suite
@@ -23,18 +20,22 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
 USE_RC_SUBR=		drwebd.sh
+USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 601000
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd61
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f61
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd60
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f60
 .else
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd55
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f55
+IGNORE=		"Sorry, port is not supported of FreeBSD version < 6.1"
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+.if ${OSVERSION} >= 700000
+LIB_DEPENDS+=   stdc++.5:${PORTSDIR}/misc/compat6x
+.endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 DRWEB_VARPREFIX=/var/drweb
@@ -42,8 +43,11 @@ DRWEB_VARPREFIX=/var/drweb
 do-install:
 	@${INSTALL} -dv -m 0750 ${DRWEB_PREFIX}
 	@${INSTALL} -dv -m 0750 ${PREFIX}/etc/drweb
+	@${INSTALL} -dv -m 0750 ${PREFIX}/etc/drweb/monitor
 	@${INSTALL} -dv -m 0750 ${DRWEB_VARPREFIX}
-	@${RM} -f ${WRKSRC}${LOCALBASE}/drweb/update.pl
+	@${MKDIR} ${WRKSRC}${LOCALBASE}/drweb/update
+	@${MV} ${WRKSRC}${LOCALBASE}/drweb/update.pl \
+		${WRKSRC}${LOCALBASE}/drweb/update/update.pl
 	@${TAR} -cf - -C ${WRKSRC}${LOCALBASE}/drweb . | \
 		${TAR} -xf - -C ${DRWEB_PREFIX} \
 		--exclude "*.static" --exclude "doc"
@@ -61,6 +65,9 @@ do-install:
 		${CP} ${PREFIX}/etc/drweb/email.ini-distr \
 		${PREFIX}/etc/drweb/email.ini; \
 	fi
+	@${INSTALL_DATA} -m 0640 \
+		${WRKSRC}${LOCALBASE}/etc/drweb/monitor/daemon.mmc \
+		${PREFIX}/etc/drweb/monitor/daemon.mmc
 
 post-install:
 .if !defined(NOPORTDOCS)
