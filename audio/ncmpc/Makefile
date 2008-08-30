@@ -21,7 +21,8 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	NLS "Native language support" on \
-		CLOCK_SCREEN "Enable clock screen" on
+		CLOCK_SCREEN "Enable clock screen" on \
+		SEARCH_SCREEN "Enable search screen" on
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +46,10 @@ PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 
 .if !defined(WITHOUT_CLOCK_SCREEN)
 CONFIGURE_ARGS+=--enable-clock-screen
+.endif
+
+.if !defined(WITHOUT_SEARCH_SCREEN)
+CONFIGURE_ARGS+=--enable-search-screen
 .endif
 
 MAN1=		ncmpc.1
