@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	smplayer
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.6.2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${DISTVERSION}final
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A complete front-end based on QT4 for mplayer
