@@ -1,9 +1,11 @@
 @unexec if [ -f /var/drweb/run/drwebd.pid ] ; then %D/etc/rc.d/drwebd stop ; fi
+drweb/agent/daemon.amc
 drweb/drweb
 drweb/drwebd
 drweb/drwebdc
 drweb/getkey.HOWTO
 drweb/getkey.rus.HOWTO
+drweb/getkey.rus.HOWTO.utf8
 drweb/lib/drweb32.dll
 drweb/lib/ru_daemon.dwl
 drweb/lib/ru_scanner.dwl
@@ -15,81 +17,65 @@ etc/drweb/drweb32.ini-distr
 @unexec if [ -f %D/etc/drweb/email.ini ] && cmp -s %D/etc/drweb/email.ini %D/etc/drweb/email.ini-distr; then rm -f %D/etc/drweb/email.ini ; fi
 etc/drweb/email.ini-distr
 @exec if [ ! -f %B/email.ini ] ; then cp -p %B/%F %B/email.ini ; fi
+etc/drweb/monitor/daemon.mmc
+etc/rc.d/drwebd
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.rus
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.rus
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rus.utf8
+%%PORTDOCS%%%%DOCSDIR%%/daemon/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/daemon/ChangeLog.rus
+%%PORTDOCS%%%%DOCSDIR%%/daemon/ChangeLog.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon
 %%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon.rus
-%%PORTDOCS%%%%DOCSDIR%%/drweb.newsyslog.add
+%%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/readme.eicar
 %%PORTDOCS%%%%DOCSDIR%%/readme.eicar.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.eicar.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/readme.license
 %%PORTDOCS%%%%DOCSDIR%%/readme.license.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.license.rus.utf8
+%%PORTDOCS%%%%DOCSDIR%%/scanner/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/scanner/ChangeLog.rus
+%%PORTDOCS%%%%DOCSDIR%%/scanner/ChangeLog.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner
 %%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner.rus
+%%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner.rus.utf8
 %%PORTDOCS%%%%DOCSDIR%%/update/readme.update
 %%PORTDOCS%%%%DOCSDIR%%/update/readme.update.rus
+%%PORTDOCS%%%%DOCSDIR%%/update/readme.update.rus.utf8
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/update
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/scanner
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/daemon
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/drweb/monitor
 @dirrm etc/drweb
 @dirrm drweb/update
 @dirrm drweb/lib
+@dirrm drweb/agent
 @dirrm drweb
 @cwd /var
-drweb/bases/drw43300.vdb
-drweb/bases/drw43301.vdb
-drweb/bases/drw43302.vdb
-drweb/bases/drw43303.vdb
-drweb/bases/drw43304.vdb
-drweb/bases/drw43305.vdb
-drweb/bases/drw43306.vdb
-drweb/bases/drw43307.vdb
-drweb/bases/drw43308.vdb
-drweb/bases/drw43309.vdb
-drweb/bases/drw43310.vdb
-drweb/bases/drw43311.vdb
-drweb/bases/drw43312.vdb
-drweb/bases/drw43313.vdb
-drweb/bases/drw43314.vdb
-drweb/bases/drw43315.vdb
-drweb/bases/drw43316.vdb
-drweb/bases/drw43317.vdb
-drweb/bases/drw43318.vdb
-drweb/bases/drw43319.vdb
-drweb/bases/drw43320.vdb
-drweb/bases/drw43321.vdb
-drweb/bases/drw43322.vdb
-drweb/bases/drw43323.vdb
-drweb/bases/drw43324.vdb
-drweb/bases/drw43325.vdb
-drweb/bases/drw43326.vdb
-drweb/bases/drw43327.vdb
-drweb/bases/drw43328.vdb
-drweb/bases/drw43329.vdb
-drweb/bases/drw43330.vdb
-drweb/bases/drw43331.vdb
-drweb/bases/drw43332.vdb
-drweb/bases/drw43333.vdb
-drweb/bases/drw43334.vdb
-drweb/bases/drw43335.vdb
-drweb/bases/drw43336.vdb
-drweb/bases/drw43337.vdb
-drweb/bases/drw43338.vdb
-drweb/bases/drw43339.vdb
-drweb/bases/drw43340.vdb
-drweb/bases/drw43341.vdb
+drweb/bases/drw44400.vdb
+drweb/bases/drw44401.vdb
+drweb/bases/drw44402.vdb
+drweb/bases/drw44403.vdb
+drweb/bases/drw44404.vdb
+drweb/bases/drw44405.vdb
+drweb/bases/drw44406.vdb
+drweb/bases/drw44407.vdb
+drweb/bases/drw44408.vdb
+drweb/bases/drw44409.vdb
 drweb/bases/drwebase.vdb
 drweb/bases/drwnasty.vdb
 drweb/bases/drwrisky.vdb
-drweb/bases/dwn43301.vdb
-drweb/bases/dwn43302.vdb
-drweb/bases/dwn43303.vdb
-drweb/bases/dwr43301.vdb
+drweb/bases/drwtoday.vdb
+drweb/bases/dwntoday.vdb
+drweb/bases/dwrtoday.vdb
 drweb/bases/update.drl
 @dirrm drweb/bases
+@dirrm drweb/cache
 @dirrm drweb/infected
 @dirrm drweb/log
 @dirrm drweb/run
