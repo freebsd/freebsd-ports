@@ -8,6 +8,3 @@ based objects because they allow one to access array slots by name
 instead of by index.
 
 WWW: http://search.cpan.org/dist/Class-ArrayObjects/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
