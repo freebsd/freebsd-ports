@@ -17,6 +17,7 @@
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/auth.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/providers.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/__init__.py
