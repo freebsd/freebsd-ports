@@ -5,12 +5,24 @@ bin/terminator
 %%PYTHON_SITELIBDIR%%/terminatorlib/config.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/config.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/config.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/configfile.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/configfile.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/configfile.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/debugserver.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/debugserver.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/debugserver.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/encoding.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/encoding.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/encoding.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/freebsd.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/keybindings.pyo
+%%PYTHON_SITELIBDIR%%/terminatorlib/prefs_profile.py
+%%PYTHON_SITELIBDIR%%/terminatorlib/prefs_profile.pyc
+%%PYTHON_SITELIBDIR%%/terminatorlib/prefs_profile.pyo
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminator.py
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminator.pyc
 %%PYTHON_SITELIBDIR%%/terminatorlib/terminator.pyo
@@ -55,6 +67,7 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/ja/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/terminator.mo
@@ -66,11 +79,15 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/ro/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/te/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
-%%NLS%%@dirrm share/locale/fy/LC_MESSAGES
-%%NLS%%@dirrm share/locale/fy
+%%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fy
 @dirrm %%PYTHON_SITELIBDIR%%/terminatorlib
