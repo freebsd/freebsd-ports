@@ -1,0 +1,6 @@
+Geometry::Primitive is a device and library agnostic system for representing
+geometric entities such as points, lines and shapes. It provides simple
+objects and many convenience methods you would expect from a geometry
+library.
+
+WWW: http://search.cpan.org/dist/Geometry-Primitive/
