@@ -1,0 +1,5 @@
+When using Pod::Coverage in combination with Moose, it will report any
+method imported from a Role. This is especially bad when used in combination
+with Test::Pod::Coverage, since it takes away its ease of use.
+
+WWW: http://search.cpan.org/dist/Pod-Coverage-Moose/
