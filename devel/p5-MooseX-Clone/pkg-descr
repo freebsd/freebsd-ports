@@ -1,0 +1,10 @@
+Out of the box Moose only provides very barebones cloning support in order
+to maximize flexibility.
+
+This role provides a clone method that makes use of the low level cloning
+support already in Moose and adds selective deep cloning based on
+introspection on top of that. Attributes with the Clone trait will handle
+cloning of data within the object, typically delegating to the attribute
+value's own clone method.
+
+WWW: http://search.cpan.org/dist/MooseX-Clone/
