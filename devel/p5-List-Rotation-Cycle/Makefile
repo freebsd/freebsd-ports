@@ -22,6 +22,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-
 		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limitw:1,even
+
 MAN3=		List::Rotation::Cycle.3
 
 PERL_CONFIGURE=	yes
