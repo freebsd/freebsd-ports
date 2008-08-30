@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tijmp
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/ \
 		http://www.klop.ws/~ronald/software-mirrors/
