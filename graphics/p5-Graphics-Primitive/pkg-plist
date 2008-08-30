@@ -1,0 +1,29 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive/.packlist
+%%SITE_PERL%%/Graphics/Primitive.pm
+%%SITE_PERL%%/Graphics/Primitive/Aligned.pm
+%%SITE_PERL%%/Graphics/Primitive/Border.pm
+%%SITE_PERL%%/Graphics/Primitive/Brush.pm
+%%SITE_PERL%%/Graphics/Primitive/Canvas.pm
+%%SITE_PERL%%/Graphics/Primitive/Component.pm
+%%SITE_PERL%%/Graphics/Primitive/ComponentList.pm
+%%SITE_PERL%%/Graphics/Primitive/Container.pm
+%%SITE_PERL%%/Graphics/Primitive/Driver.pm
+%%SITE_PERL%%/Graphics/Primitive/Font.pm
+%%SITE_PERL%%/Graphics/Primitive/Image.pm
+%%SITE_PERL%%/Graphics/Primitive/Insets.pm
+%%SITE_PERL%%/Graphics/Primitive/Operation
+%%SITE_PERL%%/Graphics/Primitive/Operation.pm
+%%SITE_PERL%%/Graphics/Primitive/Operation/Fill.pm
+%%SITE_PERL%%/Graphics/Primitive/Operation/Stroke.pm
+%%SITE_PERL%%/Graphics/Primitive/Oriented.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint/Gradient.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint/Solid.pm
+%%SITE_PERL%%/Graphics/Primitive/Path.pm
+%%SITE_PERL%%/Graphics/Primitive/TextBox.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive/Paint
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive/Operation
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive
+@dirrmtry %%SITE_PERL%%/Graphics
