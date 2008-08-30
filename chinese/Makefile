@@ -3,7 +3,6 @@
 
     COMMENT = Chinese support
 
-    SUBDIR += BBMan
     SUBDIR += CJKUnifonts
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
