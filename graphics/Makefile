@@ -519,6 +519,7 @@
     SUBDIR += p5-GraphViz
     SUBDIR += p5-GraphViz-Data-Structure
     SUBDIR += p5-GraphViz-Traverse
+    SUBDIR += p5-Graphics-Color
     SUBDIR += p5-Graphics-ColorNames
     SUBDIR += p5-Graphics-ColorNames-WWW
     SUBDIR += p5-Image-Caa
