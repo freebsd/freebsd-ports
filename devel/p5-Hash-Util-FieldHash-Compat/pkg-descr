@@ -1,0 +1,9 @@
+Under older perls this module provides a drop in compatible api to
+Hash::Util::FieldHash using perltie. When Hash::Util::FieldHash is available
+it will use that instead.
+
+This way code requiring field hashes can benefit from fast, robust field
+hashes on Perl 5.10 and newer, but still run on older perls that don't ship
+with that module.
+
+WWW: http://search.cpan.org/dist/Hash-Util-FieldHash-Compat/
