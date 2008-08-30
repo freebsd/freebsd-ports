@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	plone3
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5.1
 CATEGORIES=	www zope
-MASTER_SITES=	https://launchpad.net/plone/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/plone/3.1/${PORTVERSION}/+download/
 DISTNAME=	Plone-${PORTVERSION}
 DIST_SUBDIR=	zope
 

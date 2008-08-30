@@ -2727,6 +2727,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/metadata.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/portlets.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three11_three12/jsregistry.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three13_three14/propertiestool.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/overrides.zcml
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.pyc
@@ -3829,8 +3830,6 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testTranslationServiceTool.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testURLTool.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testURLTool.pyc
-%%ZOPEPRODUCTDIR%%/CMFPlone/tests/testUnicodeNormalizer.py
-%%ZOPEPRODUCTDIR%%/CMFPlone/tests/testUnicodeNormalizer.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testUnicodeSplitter.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testUnicodeSplitter.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testUserFolderBasics.py
@@ -6262,6 +6261,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonefrontpage.mo
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES/plonelocales.mo
@@ -6310,15 +6311,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES/plonelocales.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/README.txt
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/__init__.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/__init__.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/framework.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/framework.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/i18ngenerator.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/i18ngenerator.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/runalltests.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/test_i18n.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/test_i18n.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/admix.py
@@ -6329,8 +6323,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/fillmsgstr.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/list.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/list.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.py
@@ -7957,6 +7949,7 @@
 %%ZOPELIBPYTHONDIR%%/borg/localrole/default.zcml
 %%ZOPELIBPYTHONDIR%%/borg/localrole/default_adapter.py
 %%ZOPELIBPYTHONDIR%%/borg/localrole/default_adapter.pyc
+%%ZOPELIBPYTHONDIR%%/borg/localrole/exportimport.zcml
 %%ZOPELIBPYTHONDIR%%/borg/localrole/factory_adapter.py
 %%ZOPELIBPYTHONDIR%%/borg/localrole/factory_adapter.pyc
 %%ZOPELIBPYTHONDIR%%/borg/localrole/interfaces.py
@@ -8897,6 +8890,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/configure.zcml
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/datecomponents.py
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/datecomponents.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/multicheckboxwidget.py
+%%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/multicheckboxwidget.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/interfaces.py
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets/overrides.zcml
@@ -9366,6 +9361,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/setuphandlers.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/logged_out.cpt
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/logged_out.cpt.metadata
+%%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/login_failed.cpt
+%%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/login_failed.cpt.metadata
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/login_form.cpt
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/login_form.cpt.metadata
 %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid/openid-icon.gif
@@ -10021,6 +10018,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/negotiator.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/path.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/path.pyc
+%%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/subdomain.py
+%%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/subdomain.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_cookie.py
@@ -10029,6 +10028,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_negotiator.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_path.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_path.pyc
+%%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_subdomain.py
+%%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_subdomain.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_tld.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests/test_tld.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tld.py
@@ -10044,6 +10045,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/de.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/el.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/el.pyc
+%%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/fr.py
+%%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/fr.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/interfaces.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/pl.py
@@ -11095,6 +11098,7 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles/default
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/patches
+@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three13_three14
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three11_three12
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles
