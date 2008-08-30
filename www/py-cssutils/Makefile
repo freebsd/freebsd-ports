@@ -7,24 +7,25 @@
 #
 
 PORTNAME=	cssutils
-PORTVERSION=	0.8a6
+PORTVERSION=	0.9.5.1
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://cthedot.de/cssutils/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	CSS Cascading Style Sheets library for Python
 
-RUN_DEPENDS=	${PYXML}
-
 USE_ZIP=	yes
-USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,\((.\)examples\(.\),\1${EXAMPLESDIR:S,${PREFIX}/,,}\2,' \
-	-e '/.*LICENSE.*/d' ${WRKSRC}/setup.py
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 0644
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+.if !defined(NOPORTEXAMPLES)
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
