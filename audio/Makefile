@@ -455,6 +455,7 @@
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += ncmpc
+    SUBDIR += ncmpcpp
     SUBDIR += nekobee
     SUBDIR += normalize
     SUBDIR += nosefart

@@ -1,0 +1,5 @@
+Ncmpcpp is almost exact clone of ncmpc but it contains some
+new features ncmpc doesn't have. It's been also rewritten
+from scratch in C++.
+
+WWW:	http://unkart.ovh.org/ncmpcpp/
