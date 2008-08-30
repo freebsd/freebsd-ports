@@ -67,6 +67,7 @@
     SUBDIR += bpfstat
     SUBDIR += brutecopy
     SUBDIR += bsdproxy
+    SUBDIR += bwping
     SUBDIR += c3270
     SUBDIR += callgen323
     SUBDIR += cap

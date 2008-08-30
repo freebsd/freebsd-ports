@@ -1,0 +1,5 @@
+A tool to measure bandwidth and response times between two
+hosts using Internet Control Message Protocol (ICMP) echo
+request/echo reply mechanism.
+
+WWW: http://tclmon.vsi.ru/utils.php
