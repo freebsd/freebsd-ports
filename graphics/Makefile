@@ -544,6 +544,7 @@
     SUBDIR += p5-Imager-Plot
     SUBDIR += p5-Imager-QRCode
     SUBDIR += p5-Imlib2
+    SUBDIR += p5-Layout-Manager
     SUBDIR += p5-OpenGL
     SUBDIR += p5-SVG-DOM2
     SUBDIR += p5-SVG-Graph
