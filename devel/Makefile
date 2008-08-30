@@ -1574,6 +1574,7 @@
     SUBDIR += p5-PerlMenu
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pod-Coverage
+    SUBDIR += p5-Pod-Coverage-Moose
     SUBDIR += p5-Pod-Tests
     SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-Daemon

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose/.packlist
+%%SITE_PERL%%/Pod/Coverage/Moose.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Moose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/Coverage
+@dirrmtry %%SITE_PERL%%/Pod
