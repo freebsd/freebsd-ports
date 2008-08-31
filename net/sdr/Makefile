@@ -7,7 +7,7 @@
 
 PORTNAME=	sdr
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mbone tk
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/3.0/
 
