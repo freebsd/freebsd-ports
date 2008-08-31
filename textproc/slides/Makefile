@@ -15,7 +15,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doctype and stylesheets for making slides
 
 RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl
