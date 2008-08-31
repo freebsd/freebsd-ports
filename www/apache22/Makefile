@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -16,7 +17,7 @@ DISTFILES=	${DISTNAME}.tar.bz2
 DIST_SUBDIR=	apache22
 
 MAINTAINER?=	clement@FreeBSD.org
-COMMENT?=	Version 2.2 of Apache web server with ${WITH_MPM:L} MPM.
+COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
@@ -41,7 +42,7 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22.sh htcacheclean.sh
-SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+#SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
 # for slave ports
@@ -60,7 +61,8 @@ OPTIONS= \
 	SQLITE "Enable SQLite support for apr-dbd" Off \
 	IPV6 "Enable IPv6 support" On \
 	PCRE_FROM_PORTS "Use devel/pcre instead of bundled one" Off \
-	BDB "Enable BerkeleyDB dbm" Off
+	BDB "Enable BerkeleyDB dbm" Off \
+        SVN "Enable Subversion support" Off
 .include "${APACHEDIR}/Makefile.options"
 .endif
 
@@ -104,6 +106,16 @@ CONFIGURE_ARGS+=	--enable-exception-hook
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
+
+# OPTIONS fixups
+.if defined(WITH_SVN)
+APR_PORT=	devel/apr-svn
+WITH_BDB=	YES
+.endif
+.if defined (WITH_AUTHNZ_LDAP)
+WITH_LDAP=	yes
+.endif
+
 .include "${APACHEDIR}/Makefile.modules"
 
 .if (defined(WITH_SSL)|| !defined(WITHOUT_SSL_MODULES))
@@ -115,7 +127,8 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
+APR_PORT?=	devel/apr	
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config
 CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
