@@ -46,6 +46,7 @@
     SUBDIR += gbk2uni
     SUBDIR += gbscript
     SUBDIR += gcin
+    SUBDIR += gcin-devel
     SUBDIR += gugod-clean
     SUBDIR += hanzim
     SUBDIR += hc
