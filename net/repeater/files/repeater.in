@@ -19,11 +19,9 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 repeater_enable=${repeater_enable:-"NO"}
-repeater_server_port=${repeater_server_port:-5500}
-repeater_viewer_port=${repeater_viewer_port:-5900}
-repeater_log=${repeater_log:-"/var/run/repeater.log"}
+repeater_log=${repeater_log:-"/var/log/repeater.log"}
 command=%%PREFIX%%/sbin/repeater
 start_precmd="echo Starting ${name}."
-start_cmd="daemon ${command} ${repeater_viewer_port} ${repeater_server_port} > ${repeater_log} 2>&1"
+start_cmd="daemon ${command} %%PREFIX%%/etc/uvncrepeater.ini > ${repeater_log} 2>&1"
 
 run_rc_command "$1"
