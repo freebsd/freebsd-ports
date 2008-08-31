@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	dark-glass
-PORTVERSION=	2.5
+PORTVERSION=	2.72
 MASTER_SITES=	http://www.mentalrey.it/icon_set/
-DISTNAME=	Dark-Glass-scripted
+DISTNAME=	DarkGlass_Reworked
 
 COMMENT=	KDE Dark Glass iconset
-
-BROKEN=		does not fetch
 
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 
