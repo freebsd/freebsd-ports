@@ -13,7 +13,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/ \
 		http://caraldi.com/jbq/numlockx/
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This little thingy allows you to start X with NumLock turned on
 
 GNU_CONFIGURE=	yes

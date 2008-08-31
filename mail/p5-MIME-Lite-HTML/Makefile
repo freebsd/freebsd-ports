@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide routine to transform a HTML page into a MIME mail
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

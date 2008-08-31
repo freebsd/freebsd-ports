@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://jarvi.dsl.frii.com/pub/rxtx/
 PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/-\1/:S/p/pre/}
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Native interface to serial ports in Java
 
 USE_ZIP=	yes
