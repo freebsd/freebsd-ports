@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.5 2007-09-18 20:03:15 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.6 2008-08-31 23:00:27 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -23,12 +23,14 @@
 # apache22_http_accept_enable (bool): Set to "NO" by default.
 #                             Set to yes to check for accf_http kernel
 #                             module on start up and load if not loaded.
+# apache22_fib (str):	      Set an altered default network view for apache
+
 . %%RC_SUBR%%
 
 name="apache22"
 rcvar=`set_rcvar`
 
-start_precmd="apache22_precmd"
+start_precmd="apache22_prestart"
 restart_precmd="apache22_checkconfig"
 reload_precmd="apache22_checkconfig"
 reload_cmd="apache22_graceful"
@@ -46,6 +48,7 @@ required_files=%%PREFIX%%/etc/apache22/httpd.conf
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
 [ -z "$apache22limits_args" ]   && apache22limits_args="-e -C daemon"
 [ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"
+[ -z "$apache22_fib" ] && apache22_fib="NO"
 
 apache22_accf() {
 	retcode=0
@@ -82,6 +85,7 @@ if [ -n "$2" ]; then
 		eval apache22_http_accept_enable="\${apache22_${profile}_http_accept_enable:-${apache22_http_accept_enable}}"
 		eval apache22limits_enable="\${apache22limits_${profile}_enable:-${apache22limits_enable}}"
 		eval apache22limits_args="\${apache22limits_${profile}_args:-${apache22limits_args}}"
+		eval apache22_fib="\${apache22_${profile}_fib:-${apache22_fib}}"
 		apache22_flags="-f ${apache22_configfile} -c \"PidFile ${pidfile}\" ${apache22_flags}"
 	else
 		echo "$0: extra argument ignored"
@@ -89,6 +93,26 @@ if [ -n "$2" ]; then
 else
 	if [ "x${apache22_profiles}" != "x" -a "x$1" != "x" ]; then
 		for profile in ${apache22_profiles}; do
+			eval _enable="\${apache22_${profile}_enable}"
+			case "x${_enable:-${apache22_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=apache22_enable
+				else
+					_var=apache22_"${profile}"_enable
+				fi
+				echo "Bad value" \
+				    "'${_enable:-${apache22_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
 			echo "===> apache22 profile: ${profile}"
 			%%PREFIX%%/etc/rc.d/apache22%%RC_SUBR_SUFFIX%% $1 ${profile}
 			retcode="$?"
@@ -150,6 +174,23 @@ apache22_precmd()
 		return 0
         fi
 
+}
+
+apache22_checkfib () {
+	sysctl net.fibs 2>&1 > /dev/null
+	ret=$? 
+ 	[ $ret -gt 0 ] && return 0 
+	if [ "x$apache22_fib" != "xNO" ]
+	then 
+		command="setfib -F ${apache22_fib} ${command}"
+	else
+		return	0
+	fi
+}
+
+apache22_prestart() {
+	apache22_precmd
+	apache22_checkfib
 }
 
 extra_commands="reload graceful gracefulstop configtest"
