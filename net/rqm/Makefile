@@ -23,12 +23,14 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX} X11BASE=${LOCALBASE}
 
 ALL_TARGET=	rqm
+PLIST_FILES=	bin/rqm
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rqm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/rqm
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rqm
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
