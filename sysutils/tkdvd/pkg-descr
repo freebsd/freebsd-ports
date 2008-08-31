@@ -1,0 +1,19 @@
+TkDVD is a GUI to dvd+rw-tools and cdrecord. It allows burnning CDs
+and DVDs easily.
+
+Features:
+ * View the current command line that will be used to burn the CD/DVD
+ * Burn CD/DVD from iso images
+ * Create ISO images from files and CD/DVD
+ * CD/DVD Copy
+ * Can overburn CD/DVD
+ * Support multi session CD/DVD
+ * Add/delete/exclude file/directories and show current used space
+ * Can keep directory structure
+ * Options to choose iso9660 filesystem extension (like Joliet or
+   RockRidge extensions)
+ * Prevent burning if used space > DVD+R/RW capacity
+ * Show output of growisofs/mkisofs to view burned % and estimated
+   remaining time
+
+WWW: http://regis.damongeot.free.fr/tkdvd/

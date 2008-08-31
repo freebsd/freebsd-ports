@@ -704,6 +704,7 @@
     SUBDIR += timemon
     SUBDIR += tinybsd
     SUBDIR += titlefix
+    SUBDIR += tkdvd
     SUBDIR += tm
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
