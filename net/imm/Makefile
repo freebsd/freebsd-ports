@@ -7,7 +7,7 @@
 
 PORTNAME=	imm
 PORTVERSION=	3.5a1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mbone tk
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source
@@ -18,6 +18,8 @@ COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
 USE_TK=		yes
 WRKSRC=		${WRKDIR}/mnm
+
+PORTDOCS=	README imm_readme.txt
 
 .include <bsd.port.pre.mk>
 
@@ -33,12 +35,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/lscomp ${PREFIX}/bin
 # and no man pages at all yet.
 # But include the very limited documentation
-	${MKDIR} ${PREFIX}/share/doc/imm
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
-	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${DOCSDIR}
 .endif
 # The sdr plugin is pretty much required.
-	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${PREFIX}/share/doc/imm
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sdr2.plugin.S53.image.imm ${DATADIR}
 
 .include <bsd.port.post.mk>
