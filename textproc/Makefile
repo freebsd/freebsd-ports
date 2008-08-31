@@ -566,6 +566,7 @@
     SUBDIR += p5-Text-CSV_PP
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-Capitalize
+    SUBDIR += p5-Text-CharWidth
     SUBDIR += p5-Text-Chomp
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-Decorator
