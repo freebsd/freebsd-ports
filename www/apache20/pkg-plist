@@ -532,4 +532,4 @@ share/apache2/build/special.mk
 @dirrmtry etc/apache2/Includes
 @dirrmtry etc/apache2/envvars.d
 @unexec rm -f %D/etc/apache2/httpd.conf.bak 2> /dev/null || true
-@unexec rmdir %D/etc/apache2 2> /dev/null || echo "===> If you plan to do not reinstall apache2, you can safely remove %D/etc/apache2."
+@unexec rmdir %D/etc/apache2 2> /dev/null || echo "===> If you do not plan to reinstall apache2, you can safely remove %D/etc/apache2."
