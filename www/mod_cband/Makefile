@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_cband
 PORTVERSION=	0.9.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/
 DISTNAME=	${PORTNAME:C/_/-/}-${PORTVERSION}
@@ -24,9 +24,12 @@ ALL_TARGET=	#
 PORTDOCS=	libpatricia.copyright documentation.txt faq.txt
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/libpatricia.copyright ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/documentation.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/faq.txt ${DOCSDIR}
-
+.else
+	@${DO_NADA}
+.endif
 .include <bsd.port.mk>
