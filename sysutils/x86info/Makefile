@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +19,14 @@ PLIST_FILES=	bin/x86info
 MAN1=	x86info.1
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 800042
+BUILD_DEPENDS+=	${LOCALBASE}/include/cpu.h:${PORTSDIR}/sysutils/devcpu
+CFLAGS+=	-I"${LOCALBASE}"/include
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/x86info.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
