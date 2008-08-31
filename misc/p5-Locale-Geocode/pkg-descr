@@ -1,0 +1,8 @@
+Locale::Geocode is a module that provides an interface with which to find
+codes and information on geographical locations and their administrative
+subdivisions as defined primarily by ISO 3166-1 and ISO 3166-2. It is the
+most complete ISO 3166 module available on CPAN.
+
+Also included are, where applicable, FIPS codes.
+
+WWW: http://search.cpan.org/dist/Locale-Geocode/
