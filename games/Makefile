@@ -406,6 +406,7 @@
     SUBDIR += kslide
     SUBDIR += ksudoku
     SUBDIR += ktritoc
+    SUBDIR += kuklomenos
     SUBDIR += kwappen
     SUBDIR += ladder
     SUBDIR += lapispuzzle
