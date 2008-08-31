@@ -190,6 +190,9 @@
     SUBDIR += qinx
     SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme
+    SUBDIR += qtcurve-gtk2
+    SUBDIR += qtcurve-kde3
+    SUBDIR += qtcurve-kde4
     SUBDIR += rezlooks
     SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
