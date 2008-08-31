@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_tidy
-PORTVERSION=	0.5
+PORTVERSION=	0.5.5
 CATEGORIES=	www
 MASTER_SITES=	http://mod-tidy.sourceforge.net/src/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	Validates the HTML output of your apache2 webserver
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-USE_APACHE=	20
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_INC+=	${LOCALBASE}/include/tidy
