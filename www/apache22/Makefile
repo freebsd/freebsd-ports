@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -42,7 +42,7 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22.sh htcacheclean.sh
-#SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
 # for slave ports
@@ -230,7 +230,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
 	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes
 .if !defined(NOPORTDOCS)
-	@[ -d ${DOCSDIR}/style/lang/ ] && ${TOUCH} ${DOCSDIR}/style/lang/.keepme
+.for dir in style/lang style/xsl/util style/xsl
+	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 

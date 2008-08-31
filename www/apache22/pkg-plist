@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%APR_PORTS%%@exec mkdir -p %D/lib/apr-util-1
 @exec mkdir -p %D/etc/apache22/extra 2> /dev/null
 @exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
@@ -533,7 +534,7 @@ www/apache22/icons/world2.png
 @dirrmtry www/apache22/cgi-bin
 @dirrm %%EXAMPLESDIR%%/extra
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+@dirrmtry %%DOCSDIR%%
 @dirrm share/apache22/build
 @dirrm share/apache22
 %%APR_PORTS%%@dirrm include/apr-1
