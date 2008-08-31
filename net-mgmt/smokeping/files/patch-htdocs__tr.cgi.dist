@@ -1,0 +1,12 @@
+--- ./htdocs/tr.cgi.dist.orig	2008-07-09 14:35:43.000000000 +0200
++++ ./htdocs/tr.cgi.dist	2008-07-09 14:49:01.000000000 +0200
+@@ -1,7 +1,6 @@
+-#!/usr/sepp/bin/speedy-5.8.8 -w
++#!%%PREFIX%%/bin/speedy -w
+ use strict;
+-use lib qw(/home/oposs/smokeping/software/lib);
+-use lib qw(perl);
++use lib qw(%%PREFIX%%/smokeping/lib);
+ 
+ use CGI;
+ use CGI::Util qw(expires);

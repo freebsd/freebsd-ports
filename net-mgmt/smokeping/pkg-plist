@@ -102,12 +102,12 @@ etc/smokeping/tmail.dist
 %%PORTDOCS%%%%DOCSDIR%%/smokeping_upgrade.txt
 %%PORTDOCS%%%%DOCSDIR%%/tSmoke.html
 %%PORTDOCS%%%%DOCSDIR%%/tSmoke.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.echoping
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.fping-instances
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.multiple-probes
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.simple
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.targetvars-with-Curl
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.template
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.echoping
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.fping-instances
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.multiple-probes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.simple
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.targetvars-with-Curl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.template
 smokeping/htdocs/cropper/cropper.css
 smokeping/htdocs/cropper/cropper.js
 smokeping/htdocs/cropper/cropper.uncompressed.js
@@ -124,10 +124,47 @@ smokeping/htdocs/cropper/licence.txt
 smokeping/htdocs/cropper/marqueeHoriz.gif
 smokeping/htdocs/cropper/marqueeVert.gif
 smokeping/htdocs/cropper/smokeping-zoom.js
+smokeping/htdocs/resource/Tr/image/ajax-loader.gif
+smokeping/htdocs/resource/qx/icon/CrystalClear/16/actions/view-refresh.png
+smokeping/htdocs/resource/qx/icon/Nuvola/16/actions/view-refresh.png
+smokeping/htdocs/resource/qx/static/image/blank.gif
+smokeping/htdocs/resource/qx/static/image/dotted_white.gif
+smokeping/htdocs/resource/qx/static/log/log.html
+smokeping/htdocs/resource/qx/widget/Windows/arrows/down.gif
+smokeping/htdocs/resource/qx/widget/Windows/arrows/down_small.gif
+smokeping/htdocs/resource/qx/widget/Windows/arrows/next.gif
+smokeping/htdocs/resource/qx/widget/Windows/arrows/up.gif
+smokeping/htdocs/resource/qx/widget/Windows/arrows/up_small.gif
+smokeping/htdocs/resource/qx/widget/Windows/cursors/alias.gif
+smokeping/htdocs/resource/qx/widget/Windows/cursors/copy.gif
+smokeping/htdocs/resource/qx/widget/Windows/cursors/move.gif
+smokeping/htdocs/resource/qx/widget/Windows/cursors/nodrop.gif
+smokeping/htdocs/resource/qx/widget/Windows/menu/checkbox.gif
+smokeping/htdocs/resource/qx/widget/Windows/menu/radiobutton.gif
+smokeping/htdocs/resource/qx/widget/Windows/splitpane/knob-horizontal.png
+smokeping/htdocs/resource/qx/widget/Windows/splitpane/knob-vertical.png
+smokeping/htdocs/resource/qx/widget/Windows/table/ascending.png
+smokeping/htdocs/resource/qx/widget/Windows/table/descending.png
+smokeping/htdocs/resource/qx/widget/Windows/table/selectColumnOrder.png
+smokeping/htdocs/resource/qx/widget/Windows/window/close.gif
+smokeping/htdocs/resource/qx/widget/Windows/window/maximize.gif
+smokeping/htdocs/resource/qx/widget/Windows/window/minimize.gif
+smokeping/htdocs/resource/qx/widget/Windows/window/restore.gif
+smokeping/htdocs/script/Tr.js
 smokeping/htdocs/smokeping.cgi
+smokeping/htdocs/tr.cgi
+smokeping/htdocs/tr.html
 smokeping/lib/Config/Grammar.pm
 smokeping/lib/Config/Grammar/Document.pm
 smokeping/lib/Config/Grammar/Dynamic.pm
+smokeping/lib/JSON.pm
+smokeping/lib/JSON/Converter.pm
+smokeping/lib/JSON/PP.pm
+smokeping/lib/JSON/PP5005.pm
+smokeping/lib/JSON/PP56.pm
+smokeping/lib/JSON/Parser.pm
+smokeping/lib/Qooxdoo/JSONRPC.pm
+smokeping/lib/Qooxdoo/Services/Tr.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/Smokeping/Colorspace.pm
 smokeping/lib/Smokeping/Config.pm
@@ -196,9 +233,35 @@ smokeping/lib/Smokeping/sorters/base.pm
 @dirrm smokeping/lib/Smokeping/probes
 @dirrm smokeping/lib/Smokeping/matchers
 @dirrm smokeping/lib/Smokeping
+@dirrm smokeping/lib/Qooxdoo/Services
+@dirrm smokeping/lib/Qooxdoo
+@dirrm smokeping/lib/JSON
 @dirrm smokeping/lib/Config/Grammar
 @dirrm smokeping/lib/Config
 @dirrm smokeping/lib
+@dirrm smokeping/htdocs/script
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/window
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/table
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/splitpane
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/menu
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/cursors
+@dirrm smokeping/htdocs/resource/qx/widget/Windows/arrows
+@dirrm smokeping/htdocs/resource/qx/widget/Windows
+@dirrm smokeping/htdocs/resource/qx/widget
+@dirrm smokeping/htdocs/resource/qx/static/log
+@dirrm smokeping/htdocs/resource/qx/static/image
+@dirrm smokeping/htdocs/resource/qx/static
+@dirrm smokeping/htdocs/resource/qx/icon/Nuvola/16/actions
+@dirrm smokeping/htdocs/resource/qx/icon/Nuvola/16
+@dirrm smokeping/htdocs/resource/qx/icon/Nuvola
+@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear/16/actions
+@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear/16
+@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear
+@dirrm smokeping/htdocs/resource/qx/icon
+@dirrm smokeping/htdocs/resource/qx
+@dirrm smokeping/htdocs/resource/Tr/image
+@dirrm smokeping/htdocs/resource/Tr
+@dirrm smokeping/htdocs/resource
 @dirrm smokeping/htdocs/cropper/lib
 @dirrm smokeping/htdocs/cropper
 @dirrm smokeping/htdocs
@@ -207,5 +270,5 @@ smokeping/lib/Smokeping/sorters/base.pm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/probes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry smokeping

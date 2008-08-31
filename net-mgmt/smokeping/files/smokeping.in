@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: smokeping
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: sshd
 # KEYWORD: shutdown
 
 # Define these smokeping_* variables in one of these files:
@@ -24,6 +23,7 @@ smokeping_group=${smokeping_group-"%%GROUP%%"}
 
 name="smokeping"
 rcvar=`set_rcvar`
+load_rc_config $name
 command="/usr/local/bin/smokeping"
 command_args="--logfile=${smokeping_logfile}"
 pidfile="${smokeping_pidfile}"
@@ -36,6 +36,5 @@ smokeping_reloadcmd()
 	$command --reload
 }
 
-load_rc_config $name
 run_rc_command "$1"
 
