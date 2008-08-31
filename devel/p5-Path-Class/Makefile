@@ -7,16 +7,13 @@
 
 PORTNAME=	Path-Class
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/K/KW/KWILLIAMS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cross-platform path specification manipulation
-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -33,4 +30,10 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500803
+RUN_DEPENDS+=	p5-PathTools>=0.87:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.include <bsd.port.post.mk>
