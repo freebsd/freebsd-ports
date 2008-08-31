@@ -1,5 +1,5 @@
---- tests/Makefile.in.orig	Fri Feb  6 04:19:16 2004
-+++ tests/Makefile.in	Wed Mar 24 15:29:28 2004
+--- tests/Makefile.in.orig	2008-08-31 08:25:29.000000000 +0800
++++ tests/Makefile.in	2008-08-31 08:26:18.000000000 +0800
 @@ -76,7 +76,7 @@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
@@ -9,12 +9,3 @@
  LIBICONV = @LIBICONV@
  LIBINTL = @LIBINTL@
  LIBOBJS = @LIBOBJS@
-@@ -151,7 +151,7 @@
- noinst_PROGRAMS = wenju
- 
- wenju_SOURCES = wenju.c
--wenju_LDADD = -lrt
-+wenju_LDADD = #-lrt
- subdir = tests
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

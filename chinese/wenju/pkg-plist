@@ -7,6 +7,7 @@ lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-tim.so
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wenju.mo
 %%DATADIR%%/bxm.tim
 %%DATADIR%%/cj.tim
+%%DATADIR%%/cj5-s.tim
 %%DATADIR%%/erbi.tim
 %%DATADIR%%/liu.tim
 %%DATADIR%%/phone.tim
