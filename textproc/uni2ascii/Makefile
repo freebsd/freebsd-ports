@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	4.9
+PORTVERSION=	4.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/ \
 		CRITICAL
