@@ -420,6 +420,7 @@
     SUBDIR += p5-LEGO-RCX
     SUBDIR += p5-List-Compare
     SUBDIR += p5-Locale-Codes
+    SUBDIR += p5-Locale-Geocode
     SUBDIR += p5-Locale-Msgcat
     SUBDIR += p5-Locale-SubCountry
     SUBDIR += p5-Locale-US

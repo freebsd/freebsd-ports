@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Locale/Geocode.pm
+%%SITE_PERL%%/Locale/Geocode/Division.pm
+%%SITE_PERL%%/Locale/Geocode/Territory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Geocode/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Geocode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrmtry %%SITE_PERL%%/Locale/Geocode
+@dirrmtry %%SITE_PERL%%/Locale
