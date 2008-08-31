@@ -1204,6 +1204,7 @@ bvi                             ports/editors/bvi
 bwbasic                         ports/lang/bwbasic
 bwidget                         ports/x11-toolkits/bwidget
 bwm-ng                          ports/net-mgmt/bwm-ng
+bwping                          ports/net/bwping
 byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
@@ -5236,6 +5237,7 @@ imp-interpreter                 ports/lang/imp-interpreter
 impact                          ports/cad/impact
 import-pictures                 ports/graphics/import-pictures
 impress                         ports/editors/impress
+impresscms                      ports/www/impresscms
 imspector                       ports/net-im/imspector
 imwheel                         ports/x11/imwheel
 inadyn                          ports/dns/inadyn
@@ -8788,6 +8790,7 @@ ncftp3                          ports/ftp/ncftp3
 ncftpd                          ports/ftp/ncftpd
 ncid                            ports/comms/ncid
 ncmpc                           ports/audio/ncmpc
+ncmpcpp                         ports/audio/ncmpcpp
 ncnf                            ports/devel/ncnf
 ncp                             ports/net/ncp
 ncplib                          ports/net/ncplib
@@ -10610,6 +10613,7 @@ p5-Flickr-Upload                ports/www/p5-Flickr-Upload
 p5-Font-AFM                     ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF                     ports/x11-fonts/p5-Font-TTF
 p5-Font-TTFMetrics              ports/x11-fonts/p5-Font-TTFMetrics
+p5-Forest                       ports/devel/p5-Forest
 p5-FormValidator-Simple         ports/textproc/p5-FormValidator-Simple
 p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-FreeBSD-Portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
@@ -10670,6 +10674,7 @@ p5-Geo-Weather                  ports/misc/p5-Geo-Weather
 p5-Geography-Countries          ports/misc/p5-Geography-Countries
 p5-Geography-NationalGrid       ports/misc/p5-Geography-NationalGrid
 p5-Geography-NationalGrid-TW    ports/misc/p5-Geography-NationalGrid-TW
+p5-Geometry-Primitive           ports/graphics/p5-Geometry-Primitive
 p5-Getargs-Long                 ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile              ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare               ports/devel/p5-Getopt-Declare
@@ -10699,6 +10704,7 @@ p5-GraphViz                     ports/graphics/p5-GraphViz
 p5-GraphViz-DBI                 ports/databases/p5-GraphViz-DBI
 p5-GraphViz-Data-Structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-GraphViz-Traverse            ports/graphics/p5-GraphViz-Traverse
+p5-Graphics-Color               ports/graphics/p5-Graphics-Color
 p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
@@ -10846,6 +10852,7 @@ p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-Case                    ports/devel/p5-Hash-Case
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
 p5-Hash-MultiKey                ports/devel/p5-Hash-MultiKey
+p5-Hash-Util-FieldHash-Compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-Hash-WithDefaults            ports/devel/p5-Hash-WithDefaults
 p5-Hatena-Keyword               ports/textproc/p5-Hatena-Keyword
 p5-Heap                         ports/devel/p5-Heap
@@ -11264,6 +11271,7 @@ p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
+p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
@@ -11683,6 +11691,7 @@ p5-Plucene-Plugin-Analyzer-SnowballAnalyzer  ports/textproc/p5-Plucene-Plugin-An
 p5-Plucene-Simple               ports/textproc/p5-Plucene-Simple
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage                 ports/devel/p5-Pod-Coverage
+p5-Pod-Coverage-Moose           ports/devel/p5-Pod-Coverage-Moose
 p5-Pod-DocBook                  ports/textproc/p5-Pod-DocBook
 p5-Pod-Escapes                  ports/textproc/p5-Pod-Escapes
 p5-Pod-POM                      ports/textproc/p5-Pod-POM
@@ -11948,6 +11957,7 @@ p5-String-ShowDiff              ports/textproc/p5-String-ShowDiff
 p5-String-Similarity            ports/devel/p5-String-Similarity
 p5-String-Strip                 ports/textproc/p5-String-Strip
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
+p5-Sub-Current                  ports/devel/p5-Sub-Current
 p5-Sub-Exporter                 ports/devel/p5-Sub-Exporter
 p5-Sub-Identify                 ports/devel/p5-Sub-Identify
 p5-Sub-Install                  ports/devel/p5-Sub-Install
@@ -12139,6 +12149,7 @@ p5-Text-Filter-Chain            ports/textproc/p5-Text-Filter-Chain
 p5-Text-FixEOL                  ports/textproc/p5-Text-FixEOL
 p5-Text-FixedLength             ports/textproc/p5-Text-FixedLength
 p5-Text-FixedLength-Extra       ports/textproc/p5-Text-FixedLength-Extra
+p5-Text-Flow                    ports/textproc/p5-Text-Flow
 p5-Text-Flowchart               ports/textproc/p5-Text-Flowchart
 p5-Text-Flowed                  ports/textproc/p5-Text-Flowed
 p5-Text-Format                  ports/textproc/p5-Text-Format
@@ -12222,6 +12233,7 @@ p5-Tie-Hash-TwoWay              ports/devel/p5-Tie-Hash-TwoWay
 p5-Tie-IxHash                   ports/devel/p5-Tie-IxHash
 p5-Tie-NetAddr-IP               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-Tie-RefHash                  ports/devel/p5-Tie-RefHash
+p5-Tie-RefHash-Weak             ports/devel/p5-Tie-RefHash-Weak
 p5-Tie-Restore                  ports/devel/p5-Tie-Restore
 p5-Tie-ShareLite                ports/devel/p5-Tie-ShareLite
 p5-Tie-Simple                   ports/devel/p5-Tie-Simple
@@ -12325,6 +12337,7 @@ p5-VCS                          ports/devel/p5-VCS
 p5-VCS-CVS                      ports/devel/p5-VCS-CVS
 p5-VCS-Lite                     ports/devel/p5-VCS-Lite
 p5-Validate-Net                 ports/net/p5-Validate-Net
+p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Video-Info                   ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-Visio                        ports/graphics/p5-Visio
@@ -13715,6 +13728,7 @@ p5-flv-info                     ports/multimedia/p5-FLV-Info
 p5-font-afm                     ports/x11-fonts/p5-Font-AFM
 p5-font-ttf                     ports/x11-fonts/p5-Font-TTF
 p5-font-ttfmetrics              ports/x11-fonts/p5-Font-TTFMetrics
+p5-forest                       ports/devel/p5-Forest
 p5-forks                        ports/devel/p5-forks
 p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
 p5-freebsd-pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
@@ -13772,6 +13786,7 @@ p5-geo-weather                  ports/misc/p5-Geo-Weather
 p5-geography-countries          ports/misc/p5-Geography-Countries
 p5-geography-nationalgrid       ports/misc/p5-Geography-NationalGrid
 p5-geography-nationalgrid-tw    ports/misc/p5-Geography-NationalGrid-TW
+p5-geometry-primitive           ports/graphics/p5-Geometry-Primitive
 p5-getargs-long                 ports/devel/p5-Getargs-Long
 p5-getopt-argvfile              ports/devel/p5-Getopt-ArgvFile
 p5-getopt-declare               ports/devel/p5-Getopt-Declare
@@ -13800,6 +13815,7 @@ p5-graph-easy                   ports/graphics/p5-Graph-Easy
 p5-graph-readwrite              ports/graphics/p5-Graph-ReadWrite
 p5-graph-socialmap              ports/graphics/p5-Graph-SocialMap
 p5-graph-writer-graphviz        ports/graphics/p5-Graph-Writer-GraphViz
+p5-graphics-color               ports/graphics/p5-Graphics-Color
 p5-graphics-colornames          ports/graphics/p5-Graphics-ColorNames
 p5-graphics-colornames-www      ports/graphics/p5-Graphics-ColorNames-WWW
 p5-graphviz                     ports/graphics/p5-GraphViz
@@ -13826,6 +13842,7 @@ p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-case                    ports/devel/p5-Hash-Case
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
 p5-hash-multikey                ports/devel/p5-Hash-MultiKey
+p5-hash-util-fieldhash-compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-hash-withdefaults            ports/devel/p5-Hash-WithDefaults
 p5-hatena-keyword               ports/textproc/p5-Hatena-Keyword
 p5-heap                         ports/devel/p5-Heap
@@ -14378,6 +14395,7 @@ p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
+p5-moosex-clone                 ports/devel/p5-MooseX-Clone
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
@@ -14739,6 +14757,7 @@ p5-plucene-plugin-analyzer-snowballanalyzer  ports/textproc/p5-Plucene-Plugin-An
 p5-plucene-simple               ports/textproc/p5-Plucene-Simple
 p5-pod-constants                ports/textproc/p5-Pod-Constants
 p5-pod-coverage                 ports/devel/p5-Pod-Coverage
+p5-pod-coverage-moose           ports/devel/p5-Pod-Coverage-Moose
 p5-pod-docbook                  ports/textproc/p5-Pod-DocBook
 p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
 p5-pod-parser                   ports/textproc/p5-Pod-Parser
@@ -15067,6 +15086,7 @@ p5-string-showdiff              ports/textproc/p5-String-ShowDiff
 p5-string-similarity            ports/devel/p5-String-Similarity
 p5-string-strip                 ports/textproc/p5-String-Strip
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
+p5-sub-current                  ports/devel/p5-Sub-Current
 p5-sub-exporter                 ports/devel/p5-Sub-Exporter
 p5-sub-identify                 ports/devel/p5-Sub-Identify
 p5-sub-install                  ports/devel/p5-Sub-Install
@@ -15287,6 +15307,7 @@ p5-text-filter-chain            ports/textproc/p5-Text-Filter-Chain
 p5-text-fixedlength             ports/textproc/p5-Text-FixedLength
 p5-text-fixedlength-extra       ports/textproc/p5-Text-FixedLength-Extra
 p5-text-fixeol                  ports/textproc/p5-Text-FixEOL
+p5-text-flow                    ports/textproc/p5-Text-Flow
 p5-text-flowchart               ports/textproc/p5-Text-Flowchart
 p5-text-flowed                  ports/textproc/p5-Text-Flowed
 p5-text-format                  ports/textproc/p5-Text-Format
@@ -15373,6 +15394,7 @@ p5-tie-ical                     ports/devel/p5-Tie-iCal
 p5-tie-ixhash                   ports/devel/p5-Tie-IxHash
 p5-tie-netaddr-ip               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-tie-refhash                  ports/devel/p5-Tie-RefHash
+p5-tie-refhash-weak             ports/devel/p5-Tie-RefHash-Weak
 p5-tie-restore                  ports/devel/p5-Tie-Restore
 p5-tie-sharelite                ports/devel/p5-Tie-ShareLite
 p5-tie-simple                   ports/devel/p5-Tie-Simple
@@ -15470,6 +15492,7 @@ p5-user                         ports/sysutils/p5-User
 p5-user-identity                ports/devel/p5-User-Identity
 p5-v6                           ports/lang/p5-v6
 p5-validate-net                 ports/net/p5-Validate-Net
+p5-variable-magic               ports/devel/p5-Variable-Magic
 p5-vcg                          ports/graphics/p5-VCG
 p5-vcp                          ports/devel/p5-VCP
 p5-vcp-autrijus                 ports/devel/p5-VCP-autrijus
@@ -16696,6 +16719,7 @@ phpldapadmin098                 ports/net/phpldapadmin098
 phplist                         ports/mail/phplist
 phplot                          ports/graphics/phplot
 phpmailer                       ports/mail/phpmailer
+phpminadmin                     ports/databases/phpminadmin
 phpminiadmin                    ports/databases/phpminiadmin
 phpmp                           ports/www/phpmp
 phpmyadmin                      ports/databases/phpmyadmin
@@ -18843,6 +18867,7 @@ ruby-pgplot                     ports/graphics/ruby-pgplot
 ruby-poll                       ports/devel/ruby-poll
 ruby-postgres                   ports/databases/ruby-postgres
 ruby-programmingruby            ports/lang/ruby-programmingruby
+ruby-progressbar                ports/misc/ruby-progressbar
 ruby-property                   ports/devel/ruby-property
 ruby-qdbm                       ports/databases/ruby-qdbm
 ruby-quixml                     ports/textproc/ruby-quixml
@@ -22576,7 +22601,6 @@ zerowait-httpd                  ports/www/zerowait-httpd
 zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zgv                             ports/graphics/zgv
-zh-BBMan                        ports/chinese/BBMan
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
 zh-FreeWnn-lib                  ports/chinese/FreeWnn-lib
 zh-FreeWnn-server               ports/chinese/FreeWnn-server
@@ -22593,7 +22617,6 @@ zh-aterm                        ports/chinese/aterm
 zh-auto-cn-l10n                 ports/chinese/auto-cn-l10n
 zh-auto-tw-l10n                 ports/chinese/auto-tw-l10n
 zh-autoconvert                  ports/chinese/autoconvert
-zh-bbman                        ports/chinese/BBMan
 zh-bg5pdf                       ports/chinese/bg5pdf
 zh-bg5ps                        ports/chinese/bg5ps
 zh-big5con                      ports/chinese/big5con
