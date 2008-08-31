@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	wenju
-PORTVERSION=	1.3
-PORTREVISION=	10
+PORTVERSION=	1.4
 CATEGORIES=	chinese
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
 USE_AUTOTOOLS=	libtool:15
