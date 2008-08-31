@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies/TV/.packlist
+%%SITE_PERL%%/WWW/AtMovies/TV.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies/TV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/AtMovies
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/AtMovies
+@dirrmtry %%SITE_PERL%%/WWW

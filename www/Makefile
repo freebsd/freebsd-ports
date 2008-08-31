@@ -978,6 +978,7 @@
     SUBDIR += p5-URI-ToDisk
     SUBDIR += p5-W3C-LinkChecker
     SUBDIR += p5-W3C-LogValidator
+    SUBDIR += p5-WWW-AtMovies-TV
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Baseball-NPB
     SUBDIR += p5-WWW-Comic
