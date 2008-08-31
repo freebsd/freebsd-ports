@@ -1,0 +1,24 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+PW="/usr/sbin/pw"
+CHOWN="/usr/sbin/chown"
+CHMOD="/bin/chmod"
+MKDIR="/bin/mkdir -p"
+NOLOGIN="/usr/sbin/nologin"
+
+REP_USER=%%REP_USER%%
+REP_GROUP=%%REP_GROUP%%
+
+case "$2" in
+
+POST-INSTALL)
+  ${PW} groupshow -n ${REP_GROUP} >/dev/null 2>&1 \
+    || ${PW} groupadd -n ${REP_GROUP} 
+  ${PW} usershow -n ${REP_USER} >/dev/null 2>&1 \
+    || ${PW} useradd ${REP_USER} -g ${REP_GROUP} -s ${NOLOGIN}
+  ;;
+
+esac
+exit 0
