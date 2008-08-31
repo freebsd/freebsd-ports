@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
 USE_AUTOTOOLS=	autoconf:262
