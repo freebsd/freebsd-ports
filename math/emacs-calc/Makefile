@@ -16,12 +16,10 @@ PKGNAMEPREFIX=	emacs-
 MAINTAINER=	andrewb@cs.cmu.edu
 COMMENT=	Arbitrary-precision calculator for Emacs
 
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
+CONFLICTS=	emacs-22.* xemacs-packages-\*
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
+USE_EMACS=	yes
+EMACS_PORT_NAME=emacs21
 
 INFO=		calc
 
