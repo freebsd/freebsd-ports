@@ -20,13 +20,14 @@ GNU_CONFIGURE=	yes
 MYPORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
 		README.Ng README.SKG
 LATEST_LINK=	ng-devel
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/ng
+	${MKDIR} ${DOCSDIR}
 .for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${PREFIX}/share/doc/ja/ng/${file}.euc-jp
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}/${file}.euc-jp
 .endfor
 .endif
 
