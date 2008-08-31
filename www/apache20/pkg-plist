@@ -521,6 +521,7 @@ share/apache2/build/special.mk
 %%WWWDATA%%@dirrm www/data-dist
 %%CGI%%@dirrm www/cgi-bin-dist
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm share/apache2/build
 @dirrm share/apache2
 @dirrmtry libexec/apache2

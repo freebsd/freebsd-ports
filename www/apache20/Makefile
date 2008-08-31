@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -19,7 +20,7 @@ DIST_SUBDIR=	apache2
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
 MAINTAINER?=	clement@FreeBSD.org
-COMMENT?=	Version 2 of Apache web server with ${WITH_MPM:L} MPM.
+COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
@@ -51,7 +52,7 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		apache2.sh
-SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+#SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 USE_APACHE=		common20
 LIBTOOLFILES=		configure
 USE_LDCONFIG=		${PREFIX}/lib/apache2
