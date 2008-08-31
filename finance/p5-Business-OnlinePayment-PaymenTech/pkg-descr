@@ -1,0 +1,5 @@
+Business::OnlinePayment::PaymenTech allows you to utilize PaymenTech's
+Orbital SDK credit card services. You will need to install the Perl Orbital
+SDK for this to work.
+
+WWW: http://search.cpan.org/dist/Business-OnlinePayment-PaymenTech/
