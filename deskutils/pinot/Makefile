@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	deskutils
-PORTREVISION=	1
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
 #		http://amra.dyndns.org/
@@ -48,11 +47,6 @@ USE_SQLITE=	3
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
-
-.if defined(WITH_SOAP)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libgsoap.a:${PORTSDIR}/devel/gsoap
-CONFIGURE_ARGS+=	--enable-soap=yes
-.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
