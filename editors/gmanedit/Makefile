@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gmanedit
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/gmanedit2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A GNOME manpages editor
 
 USE_GNOME=	gnomehack gnometarget libgnomeui
