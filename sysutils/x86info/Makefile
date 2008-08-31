@@ -7,6 +7,7 @@
 
 PORTNAME=	x86info
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/
 EXTRACT_SUFX=	.tgz
