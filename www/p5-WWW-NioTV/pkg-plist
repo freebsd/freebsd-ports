@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NioTV/.packlist
+%%SITE_PERL%%/WWW/NioTV.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NioTV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
