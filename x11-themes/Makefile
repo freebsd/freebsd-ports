@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += xfce4-icon-theme
 
     COMMENT = X11 themes
 
@@ -203,6 +202,7 @@
     SUBDIR += xcursor-themes
     SUBDIR += xenophilia
     SUBDIR += xenostep
+    SUBDIR += xfce4-icon-theme
     SUBDIR += xmms-bluecurve-theme
     SUBDIR += xmms-eq-skins
     SUBDIR += xmms-vumeter-skins
