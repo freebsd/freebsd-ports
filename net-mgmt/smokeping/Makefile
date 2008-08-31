@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -16,6 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
+		p5-CGI-Session>0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-CGI-SpeedyCGI>0:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
@@ -24,9 +24,6 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
 		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
-
-NO_BUILD=	yes
-USE_PERL5=	yes
 
 NO_BUILD=	yes
 USE_PERL5=	yes
@@ -194,6 +191,7 @@ post-extract:
 	${RM} ${WRKSRC}/lib/BER.pm
 	${RM} ${WRKSRC}/lib/SNMP_*.pm
 	${RM} -rf ${WRKSRC}/lib/Digest
+	${RM} -rf ${WRKSRC}/lib/CGI
 
 pre-patch:
 	${REINPLACE_CMD} -e s!/usr/bin/!%%PREFIX%%/bin/! \
@@ -220,6 +218,7 @@ pre-configure:
 		${WRKSRC}/bin/smokeping.dist \
 		${WRKSRC}/bin/tSmoke.dist \
 		${WRKSRC}/htdocs/smokeping.cgi.dist \
+		${WRKSRC}/htdocs/tr.cgi.dist \
 		${WRKSRC}/etc/config.dist \
 		${WRKSRC}/lib/Smokeping/probes/*.pm
 	${FIND} ${WRKSRC} -name \*.bak -delete
@@ -232,6 +231,7 @@ pre-configure:
 	${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
 	${MV} ${WRKSRC}/bin/tSmoke.dist ${WRKSRC}/bin/tSmoke
 	${MV} ${WRKSRC}/htdocs/smokeping.cgi.dist ${WRKSRC}/htdocs/smokeping.cgi
+	${MV} ${WRKSRC}/htdocs/tr.cgi.dist ${WRKSRC}/htdocs/tr.cgi
 
 pre-su-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -255,6 +255,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}/${FILE}.html
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}/${FILE}.txt
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR})
 .endif
@@ -266,12 +268,12 @@ do-install:
 	fi
 .endfor
 	${MKDIR} ${PREFIX}/smokeping/htdocs
+	${MKDIR} ${PREFIX}/smokeping/htdocs/img
 	${CP} -R ${WRKSRC}/htdocs ${PREFIX}/smokeping/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs
 	${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
 	${MKDIR} ${PREFIX}/var/smokeping
 	${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
-	${MKDIR} ${PREFIX}/smokeping/htdocs/img
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs/img
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -9,7 +9,7 @@
 -datadir  = /tmp/smokeping-ms/data
 -piddir  = /tmp/smokeping-ms/var
 +imgcache = %%PREFIX%%/smokeping/htdocs/img
-+imgurl   = /smokeimg
++imgurl   = img
 +datadir  = %%PREFIX%%/var/smokeping
 +piddir  = %%PREFIX%%/var/smokeping
  cgiurl   = http://some.url/smokeping.cgi
