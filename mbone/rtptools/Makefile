@@ -15,13 +15,15 @@ COMMENT=	A set of tools to record, playback and monitor RTPv2 data streams
 
 GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/rtpdump bin/rtpplay bin/rtpsend bin/rtptrans
 DOCFILES=	README ChangeLog.html rtptools.html
+PORTDOCS=	${DOCSFILES}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/rtptools
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/rtptools
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 

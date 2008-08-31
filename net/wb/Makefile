@@ -22,14 +22,17 @@ STRIP=
 # ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 USE_GHOSTSCRIPT_RUN=	yes
 
+PLIST_FILES=	bin/wb
+PORTDOCS=	README CHANGES NOTES lblwb.ps
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/wb
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wb
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/wb
-	${INSTALL_DATA} ${WRKSRC}/NOTES ${PREFIX}/share/doc/wb
-	${INSTALL_DATA} ${WRKSRC}/lblwb.ps ${PREFIX}/share/doc/wb
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/NOTES ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lblwb.ps ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
