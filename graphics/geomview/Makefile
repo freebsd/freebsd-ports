@@ -15,7 +15,7 @@ MAINTAINER=	bms@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 USE_MOTIF=	yes
-USE_XORG=	glut
+USE_GL=		glut
 
 USE_AUTOTOOLS=	autoconf:213
 
