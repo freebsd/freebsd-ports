@@ -8,7 +8,7 @@
 PORTNAME=	fpdns
 PORTVERSION=	0.9.3
 CATEGORIES=	dns net perl5
-MASTER_SITES=	http://www.rfc.se/fpdns/distfiles/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://dougbarton.us/Downloads/
 DISTNAME=	Net-DNS-Fingerprint-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
