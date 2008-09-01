@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/check
 DISTNAME=	check-${PORTVERSION}
 
-MAINTAINER=	mikeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A unit test framework for C
 
 GNU_CONFIGURE=	yes

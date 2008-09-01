@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
-MAINTAINER=	mikeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
