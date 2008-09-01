@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rendercheck
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,5 +16,7 @@ XORG_CAT=	app
 USE_XORG=	xrender
 
 MAN1=		rendercheck.1
+
+PLIST_FILES=	bin/rendercheck
 
 .include <bsd.port.mk>
