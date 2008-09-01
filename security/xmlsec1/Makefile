@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -73,8 +73,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=[`/a-z]*|=elf|' \
 	    -e '/^XMLSEC_SHLIBSFX="/s|"[^"]*"|".so"|' \
 	    -e 's|openssl_exlibs=-ldl|openssl_exlibs=|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-ldl"|"|' \
+	    -e 's|-ldl"|"|' \
 	    -e 's,with_nspr/include,with_nspr/include/nspr ${PTHREAD_CFLAGS},' \
 	    -e 's,with_nss/include,with_nss/include/nss/nss,' \
 	    -e 's,with_nss/lib,with_nss/lib/nss,g' \
@@ -83,6 +82,9 @@ post-patch:
 	    -e 's,\(-lplc4\)",\1 ${PTHREAD_LIBS}",' \
 	    -e '/ test /s, == , = ,' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} \
+	    -e 's,total_time.*/ 1000),total_time*1000/CLOCKS_PER_SEC,' \
+		${WRKSRC}/apps/xmlsec.c
 .if defined(WITH_NSS)
 	# Makeing the xmlsec1 executable multi-threaded to let load -lnss,
 	# when needed.
