@@ -37,10 +37,6 @@ LATEST_LINK=	pgp6
 BROKEN=		Does not compile on !i386
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN?=	Does not compile with GCC 4.2
-.endif
-
 # the distfile is actually a tar of three compressed tars and their
 # signatures
 post-extract:
@@ -55,6 +51,11 @@ post-extract:
 	fi
 .endif
 	${CP} ${FILESDIR}/build.Makefile ${WRKSRC}/Makefile
+
+pre-patch:
+	${REINPLACE_CMD} -e 's,-fwritable-strings,,' \
+	    ${WRKSRC}/libs/network/ldaplib/Make-common \
+	    ${WRKSRC}/libs/network/ldaplib/*/Makefile
 
 do-install:
 	cd ${WRKSRC}/clients/pgp/cmdline ; ${GMAKE} install ; \
