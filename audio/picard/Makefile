@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	picard
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+DISTVERSION=	0.10
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
-		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
+		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
+		http://ftp.uk.musicbrainz.org/pub/musicbrainz/picard/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next generation MusicBrainz Tagger
@@ -33,5 +33,6 @@ post-patch:
 		/with-avcodec/s|False|True|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
 		${WRKSRC}/picard/disc.py
+	@${REINPLACE_CMD} 's|<av|<ffmpeg/av|' ${WRKSRC}/picard/musicdns/avcodec.c
 
 .include <bsd.port.mk>
