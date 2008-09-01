@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	alpine
-PORTVERSION=	1.10
-PORTREVISION?=	1
+PORTVERSION=	2.00
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/ \
 		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/
@@ -16,7 +15,7 @@ DIST_SUBDIR=	alpine-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	Mail and news client descended from Pine
 
-OPTIONS+=	THREADS "Support for pthreads" on \
+OPTIONS+=	THREADS "Compile with thread support" on \
 		MOUSE "Enable mouse support for xterm" on \
 		NLS "National Language Support" off \
 		ISPELL "Use ispell instead of aspell as default speller" off \
