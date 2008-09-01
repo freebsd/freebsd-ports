@@ -75,6 +75,8 @@ share/locale/uk/LC_MESSAGES/system-config-printer.mo
 share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
+%%DATADIR%%/AdvancedServerSettings.py
+%%DATADIR%%/PhysicalDevice.py
 %%DATADIR%%/applet.glade
 %%DATADIR%%/applet.py
 %%DATADIR%%/authconn.py
@@ -108,6 +110,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/troubleshoot/ErrorLogFetch.py
 %%DATADIR%%/troubleshoot/ErrorLogParse.py
 %%DATADIR%%/troubleshoot/LocalOrRemote.py
+%%DATADIR%%/troubleshoot/Locale.py
 %%DATADIR%%/troubleshoot/NetworkCUPSPrinterShared.py
 %%DATADIR%%/troubleshoot/PrintTestPage.py
 %%DATADIR%%/troubleshoot/PrinterStateReasons.py
