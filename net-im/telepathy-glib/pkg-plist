@@ -22,6 +22,7 @@ include/telepathy-1.0/telepathy-glib/channel-iface.h
 include/telepathy-1.0/telepathy-glib/channel.h
 include/telepathy-1.0/telepathy-glib/connection-manager.h
 include/telepathy-1.0/telepathy-glib/connection.h
+include/telepathy-1.0/telepathy-glib/contacts-mixin.h
 include/telepathy-1.0/telepathy-glib/dbus-properties-mixin.h
 include/telepathy-1.0/telepathy-glib/dbus.h
 include/telepathy-1.0/telepathy-glib/debug-ansi.h
@@ -76,12 +77,14 @@ share/gtk-doc/html/telepathy-glib/left.png
 share/gtk-doc/html/telepathy-glib/right.png
 share/gtk-doc/html/telepathy-glib/style.css
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpChannelFactoryIface.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-TpContactsMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpGroupMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpHeap.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpIntSet.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPresenceMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPropertiesMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpTextMixin.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-asv.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-group.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-media.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-channel-roomlist.html
@@ -91,6 +94,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-aliasing.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-avatars.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-caps.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-contacts.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
@@ -107,7 +111,6 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-handle-repo.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-handle.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-interfaces.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-media-interfaces.html
-share/gtk-doc/html/telepathy-glib/telepathy-glib-asv.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-dbus-core.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-subclass.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-tp-properties.html
