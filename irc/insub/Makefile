@@ -11,7 +11,7 @@ PORTVERSION=	10.1
 CATEGORIES=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on irc and the web
 
 NO_BUILD=	YES
