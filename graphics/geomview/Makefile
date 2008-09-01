@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/geomview
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 USE_MOTIF=	yes
