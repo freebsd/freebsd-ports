@@ -45,6 +45,10 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 
 .include <bsd.port.pre.mk>
 
+.if	${OSVERSION} < 700000
+CONFIGURE_ENV+=	LIBAVCODEC_EXTRA_LIBS="-pthread"
+.endif
+
 .if (defined(WITH_FREETYPE) || exists(${LOCALBASE}/lib/libfreetype.so)) && !defined(WITHOUT_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-ft-prefix=${LOCALBASE} --enable-freetype2
@@ -266,9 +270,9 @@ pre-everything::
 
 post-patch:
 .if defined(WITH_LZO) || (exists(${LOCALBASE}/lib/liblzo2.so) && !defined(WITHOUT_LZO))
-	${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
 .else
-	${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
 .endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
