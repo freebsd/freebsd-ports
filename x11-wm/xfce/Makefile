@@ -16,7 +16,7 @@ COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_GCC=	4.1
+USE_GCC=	4.2+
 USE_XORG=	x11 xpm
 USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
