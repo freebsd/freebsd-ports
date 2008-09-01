@@ -54,6 +54,7 @@
 %%WWWDIR%%/images/icon_download.png
 %%WWWDIR%%/images/icon_edit.png
 %%WWWDIR%%/images/icon_enable.png
+%%WWWDIR%%/images/icon_feed.png
 %%WWWDIR%%/images/icon_flag.png
 %%WWWDIR%%/images/icon_flag_off.png
 %%WWWDIR%%/images/icon_home.png
@@ -116,6 +117,7 @@
 %%WWWDIR%%/lib/class/random.class.php
 %%WWWDIR%%/lib/class/rating.class.php
 %%WWWDIR%%/lib/class/registration.class.php
+%%WWWDIR%%/lib/class/rss.class.php
 %%WWWDIR%%/lib/class/scrobbler.class.php
 %%WWWDIR%%/lib/class/shoutbox.class.php
 %%WWWDIR%%/lib/class/song.class.php
@@ -146,7 +148,6 @@
 %%WWWDIR%%/lib/ui.lib.php
 %%WWWDIR%%/lib/xmlrpc.php
 %%WWWDIR%%/locale/base/TRANSLATIONS
-%%WWWDIR%%/locale/base/gather-messages.sh
 %%WWWDIR%%/locale/base/merge-messages.sh
 %%WWWDIR%%/locale/base/messages.po
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
