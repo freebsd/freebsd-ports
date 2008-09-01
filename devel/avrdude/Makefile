@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	avrdude
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
 
-LIB_DEPENDES=	usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 MAN1=		avrdude.1
 MANCOMPRESSED=	no
