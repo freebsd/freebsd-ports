@@ -32,6 +32,7 @@ CONFLICTS=	samhain-client-2*
 
 .if ${ARCH} == "amd64"
 CFLAGS+=        -fPIC
+BROKEN=		does not compile
 .endif
 
 .if defined(WITH_GPG)
