@@ -73,9 +73,12 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${LICDOCS:S|^|${WRKSRC}/doc/|} ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
 	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/doc/|} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/grf/* ${EXAMPLESDIR}/grf
 	${INSTALL_DATA} ${WRKSRC}/tgt/* ${EXAMPLESDIR}/tgt
