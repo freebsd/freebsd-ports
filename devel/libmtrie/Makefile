@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~alfred/sources/$(PORTNAME)/
 DISTNAME=	$(PORTNAME)-${PORTVERSION}
 USE_BZIP2=	yes
 
-MAINTAINER=	alfred@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to build an IP-netmask based mtrie.
 
 USE_LDCONFIG= yes
