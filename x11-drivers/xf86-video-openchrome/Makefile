@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-openchrome
-PORTVERSION=	0.2.902
+PORTVERSION=	0.2.903
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.openchrome.org/releases/
 
@@ -21,10 +21,4 @@ MAN4=		openchrome.4x
 
 MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
