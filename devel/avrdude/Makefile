@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	avrdude
 
-MAINTAINER=	bsd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
 
 LIB_DEPENDES=	usb-0.1.8:${PORTSDIR}/devel/libusb

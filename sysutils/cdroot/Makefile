@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bsd
 
-MAINTAINER=	bsd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scripts to automate setting up a bootable CD-ROM based FreeBSD system
 
 .include <bsd.port.mk>
