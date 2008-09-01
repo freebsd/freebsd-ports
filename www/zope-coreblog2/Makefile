@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	COREBlog2_09b
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully-featured blog product for Plone
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	MindMapBBS
 DIST_SUBDIR=	zope
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope product to create graphical BBS based on Mind Map
 
 USE_PYTHON=	yes

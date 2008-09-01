@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	COREBlog125
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope Blog/Weblog/Web-nikki Product
 
 USE_PYTHON=	yes

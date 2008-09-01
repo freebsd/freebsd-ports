@@ -12,7 +12,7 @@ MASTER_SITES=	http://iungo.org/products/Epoz/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Epoz-${PORTVERSION}
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-browser-wysiwyg-editor for Zope/CMF
 
 USE_PYTHON=	yes
