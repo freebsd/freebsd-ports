@@ -6680,6 +6680,7 @@ ku-aspell                       ports/textproc/ku-aspell
 kuake                           ports/deskutils/kuake
 kudu                            ports/graphics/kudu
 kuickshow                       ports/graphics/kuickshow
+kuklomenos                      ports/games/kuklomenos
 kvirc                           ports/irc/kvirc
 kvirc-devel                     ports/irc/kvirc-devel
 kwappen                         ports/games/kwappen
@@ -9705,6 +9706,7 @@ p5-Business-OnlinePayment-Network1Financial  ports/finance/p5-Business-OnlinePay
 p5-Business-OnlinePayment-OCV   ports/finance/p5-Business-OnlinePayment-OCV
 p5-Business-OnlinePayment-PayConnect  ports/finance/p5-Business-OnlinePayment-PayConnect
 p5-Business-OnlinePayment-PayflowPro  ports/finance/p5-Business-OnlinePayment-PayflowPro
+p5-Business-OnlinePayment-PaymenTech  ports/finance/p5-Business-OnlinePayment-PaymenTech
 p5-Business-OnlinePayment-PaymentsGateway  ports/finance/p5-Business-OnlinePayment-PaymentsGateway
 p5-Business-OnlinePayment-SurePay  ports/finance/p5-Business-OnlinePayment-SurePay
 p5-Business-OnlinePayment-TCLink  ports/finance/p5-Business-OnlinePayment-TCLink
@@ -10606,6 +10608,7 @@ p5-Finance-Currency-Convert-WebserviceX  ports/finance/p5-Finance-Currency-Conve
 p5-Finance-Currency-Convert-XE  ports/finance/p5-Finance-Currency-Convert-XE
 p5-Finance-Quote                ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist            ports/finance/p5-Finance-QuoteHist
+p5-Finance-QuoteTW              ports/finance/p5-Finance-QuoteTW
 p5-Finance-TW-EmergingQuote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-Finance-TW-TSEQuote          ports/finance/p5-Finance-TW-TSEQuote
 p5-Flickr-API                   ports/www/p5-Flickr-API
@@ -10707,6 +10710,8 @@ p5-GraphViz-Traverse            ports/graphics/p5-GraphViz-Traverse
 p5-Graphics-Color               ports/graphics/p5-Graphics-Color
 p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
+p5-Graphics-Primitive           ports/graphics/p5-Graphics-Primitive
+p5-Graphics-Primitive-Driver-Cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
 p5-Gtk                          ports/x11-toolkits/p5-Gtk
 p5-Gtk2                         ports/x11-toolkits/p5-Gtk2
 p5-Gtk2-Ex-Dialogs              ports/x11-toolkits/p5-Gtk2-Ex-Dialogs
@@ -10989,6 +10994,7 @@ p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-WithCache      ports/www/p5-LWP-UserAgent-WithCache
 p5-LWPx-ParanoidAgent           ports/www/p5-LWPx-ParanoidAgent
+p5-Layout-Manager               ports/graphics/p5-Layout-Manager
 p5-Lchown                       ports/sysutils/p5-Lchown
 p5-Lexical-Alias                ports/devel/p5-Lexical-Alias
 p5-Lexical-Persistence          ports/devel/p5-Lexical-Persistence
@@ -11037,6 +11043,7 @@ p5-List-PowerSet                ports/devel/p5-List-PowerSet
 p5-List-Rotation-Cycle          ports/devel/p5-List-Rotation-Cycle
 p5-Locale-Codes                 ports/misc/p5-Locale-Codes
 p5-Locale-Currency-Format       ports/finance/p5-Locale-Currency-Format
+p5-Locale-Geocode               ports/misc/p5-Locale-Geocode
 p5-Locale-Maketext              ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy        ports/devel/p5-Locale-Maketext-Fuzzy
 p5-Locale-Maketext-Gettext      ports/devel/p5-Locale-Maketext-Gettext
@@ -12130,6 +12137,7 @@ p5-Text-CSV-Simple              ports/textproc/p5-Text-CSV-Simple
 p5-Text-CSV_PP                  ports/textproc/p5-Text-CSV_PP
 p5-Text-CSV_XS                  ports/textproc/p5-Text-CSV_XS
 p5-Text-Capitalize              ports/textproc/p5-Text-Capitalize
+p5-Text-CharWidth               ports/textproc/p5-Text-CharWidth
 p5-Text-Chomp                   ports/textproc/p5-Text-Chomp
 p5-Text-Context-EitherSide      ports/textproc/p5-Text-Context-EitherSide
 p5-Text-Decorator               ports/textproc/p5-Text-Decorator
@@ -12345,6 +12353,7 @@ p5-W3C-LinkChecker              ports/www/p5-W3C-LinkChecker
 p5-W3C-LogValidator             ports/www/p5-W3C-LogValidator
 p5-WAP-wbxml                    ports/converters/p5-WAP-wbxml
 p5-WDDX                         ports/textproc/p5-WDDX
+p5-WWW-AtMovies-TV              ports/www/p5-WWW-AtMovies-TV
 p5-WWW-Babelfish                ports/www/p5-WWW-Babelfish
 p5-WWW-Baseball-NPB             ports/www/p5-WWW-Baseball-NPB
 p5-WWW-BitTorrent               ports/net-p2p/p5-WWW-BitTorrent
@@ -12374,6 +12383,7 @@ p5-WWW-Mediawiki-Client         ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi                     ports/www/p5-WWW-Mixi
 p5-WWW-Mixi-Scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-WWW-Myspace                  ports/www/p5-WWW-Myspace
+p5-WWW-NioTV                    ports/www/p5-WWW-NioTV
 p5-WWW-OpenSVN                  ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch               ports/www/p5-WWW-OpenSearch
 p5-WWW-Plurk                    ports/www/p5-WWW-Plurk
@@ -12815,6 +12825,7 @@ p5-business-onlinepayment-network1financial  ports/finance/p5-Business-OnlinePay
 p5-business-onlinepayment-ocv   ports/finance/p5-Business-OnlinePayment-OCV
 p5-business-onlinepayment-payconnect  ports/finance/p5-Business-OnlinePayment-PayConnect
 p5-business-onlinepayment-payflowpro  ports/finance/p5-Business-OnlinePayment-PayflowPro
+p5-business-onlinepayment-paymentech  ports/finance/p5-Business-OnlinePayment-PaymenTech
 p5-business-onlinepayment-paymentsgateway  ports/finance/p5-Business-OnlinePayment-PaymentsGateway
 p5-business-onlinepayment-surepay  ports/finance/p5-Business-OnlinePayment-SurePay
 p5-business-onlinepayment-tclink  ports/finance/p5-Business-OnlinePayment-TCLink
@@ -13720,6 +13731,7 @@ p5-finance-currency-convert-webservicex  ports/finance/p5-Finance-Currency-Conve
 p5-finance-currency-convert-xe  ports/finance/p5-Finance-Currency-Convert-XE
 p5-finance-quote                ports/finance/p5-Finance-Quote
 p5-finance-quotehist            ports/finance/p5-Finance-QuoteHist
+p5-finance-quotetw              ports/finance/p5-Finance-QuoteTW
 p5-finance-tw-emergingquote     ports/finance/p5-Finance-TW-EmergingQuote
 p5-finance-tw-tsequote          ports/finance/p5-Finance-TW-TSEQuote
 p5-flickr-api                   ports/www/p5-Flickr-API
@@ -13818,6 +13830,8 @@ p5-graph-writer-graphviz        ports/graphics/p5-Graph-Writer-GraphViz
 p5-graphics-color               ports/graphics/p5-Graphics-Color
 p5-graphics-colornames          ports/graphics/p5-Graphics-ColorNames
 p5-graphics-colornames-www      ports/graphics/p5-Graphics-ColorNames-WWW
+p5-graphics-primitive           ports/graphics/p5-Graphics-Primitive
+p5-graphics-primitive-driver-cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
 p5-graphviz                     ports/graphics/p5-GraphViz
 p5-graphviz-data-structure      ports/graphics/p5-GraphViz-Data-Structure
 p5-graphviz-dbi                 ports/databases/p5-GraphViz-DBI
@@ -14100,6 +14114,7 @@ p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
 p5-kwiki                        ports/www/p5-Kwiki
+p5-layout-manager               ports/graphics/p5-Layout-Manager
 p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
 p5-lexical-alias                ports/devel/p5-Lexical-Alias
@@ -14161,6 +14176,7 @@ p5-lj-textmessage               ports/sysutils/p5-LJ-TextMessage
 p5-lmap-cid2spf                 ports/mail/p5-LMAP-CID2SPF
 p5-locale-codes                 ports/misc/p5-Locale-Codes
 p5-locale-currency-format       ports/finance/p5-Locale-Currency-Format
+p5-locale-geocode               ports/misc/p5-Locale-Geocode
 p5-locale-gettext               ports/devel/p5-Locale-gettext
 p5-locale-libintl               ports/devel/p5-Locale-libintl
 p5-locale-maketext              ports/devel/p5-Locale-Maketext
@@ -15284,6 +15300,7 @@ p5-text-bibtex                  ports/textproc/p5-Text-BibTeX
 p5-text-bidi                    ports/converters/p5-Text-Bidi
 p5-text-bind                    ports/textproc/p5-Text-Bind
 p5-text-capitalize              ports/textproc/p5-Text-Capitalize
+p5-text-charwidth               ports/textproc/p5-Text-CharWidth
 p5-text-chomp                   ports/textproc/p5-Text-Chomp
 p5-text-context-eitherside      ports/textproc/p5-Text-Context-EitherSide
 p5-text-csv                     ports/textproc/p5-Text-CSV
@@ -15531,6 +15548,7 @@ p5-what                         ports/net/p5-What
 p5-wordnet-querydata            ports/textproc/p5-WordNet-QueryData
 p5-wordnet-similarity           ports/textproc/p5-WordNet-Similarity
 p5-workflow                     ports/devel/p5-Workflow
+p5-www-atmovies-tv              ports/www/p5-WWW-AtMovies-TV
 p5-www-babelfish                ports/www/p5-WWW-Babelfish
 p5-www-baseball-npb             ports/www/p5-WWW-Baseball-NPB
 p5-www-bittorrent               ports/net-p2p/p5-WWW-BitTorrent
@@ -15560,6 +15578,7 @@ p5-www-mediawiki-client         ports/www/p5-WWW-Mediawiki-Client
 p5-www-mixi                     ports/www/p5-WWW-Mixi
 p5-www-mixi-scraper             ports/www/p5-WWW-Mixi-Scraper
 p5-www-myspace                  ports/www/p5-WWW-Myspace
+p5-www-niotv                    ports/www/p5-WWW-NioTV
 p5-www-opensearch               ports/www/p5-WWW-OpenSearch
 p5-www-opensvn                  ports/www/p5-WWW-OpenSVN
 p5-www-plurk                    ports/www/p5-WWW-Plurk
@@ -18238,6 +18257,9 @@ qt4-webkit                      ports/www/qt4-webkit
 qt4-xml                         ports/textproc/qt4-xml
 qt4-xmlpatterns                 ports/textproc/qt4-xmlpatterns
 qt4-xmlpatterns-tool            ports/textproc/qt4-xmlpatterns-tool
+qtcurve-gtk2                    ports/x11-themes/qtcurve-gtk2
+qtcurve-kde3                    ports/x11-themes/qtcurve-kde3
+qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
 qtfw                            ports/security/qtfw
@@ -22651,6 +22673,7 @@ zh-gb2ps                        ports/chinese/gb2ps
 zh-gbk2uni                      ports/chinese/gbk2uni
 zh-gbscript                     ports/chinese/gbscript
 zh-gcin                         ports/chinese/gcin
+zh-gcin-devel                   ports/chinese/gcin-devel
 zh-gugod-clean                  ports/chinese/gugod-clean
 zh-hanzim                       ports/chinese/hanzim
 zh-hc                           ports/chinese/hc
