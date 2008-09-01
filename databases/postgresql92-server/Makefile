@@ -107,7 +107,7 @@ USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-833-icu-xx-2008-06-11.diff.gz:icu
+PATCHFILES+=	pg-833-icu-xx-2008-08-28.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
