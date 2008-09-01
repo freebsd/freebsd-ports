@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Markup/Perl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Markup/Perl/.packlist
+@dirrmtry %%SITE_PERL%%/Markup/Perl
+@dirrmtry %%SITE_PERL%%/Markup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Markup/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Markup
