@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.docbook.org/sgml/4.1/
 DISTNAME=	docbk41
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	V4.1 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
