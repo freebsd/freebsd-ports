@@ -1,0 +1,23 @@
+diff -ruN src.old/chm_lib.c src/chm_lib.c
+--- src.old/chm_lib.c	2008-08-18 10:22:30.000000000 +0200
++++ chm_lib.c	2008-08-18 11:10:20.000000000 +0200
+@@ -170,8 +170,18 @@
+ typedef unsigned long           UInt32;
+ typedef long long               Int64;
+ typedef unsigned long long      UInt64;
+-#else
+ 
++/* AMD64 */
++#elif __amd64__
++typedef unsigned char           UChar;
++typedef short                   Int16;
++typedef unsigned short          UInt16;
++typedef long                    Int32;
++typedef unsigned long           UInt32;
++typedef long long               Int64;
++typedef unsigned long long      UInt64;
++
++#else
+ /* yielding an error is preferable to yielding incorrect behavior */
+ #error "Please define the sized types for your platform in chm_lib.c"
+ #endif

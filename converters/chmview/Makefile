@@ -21,11 +21,7 @@ USE_DOS2UNIX=	yes
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	bin/chmview
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		is not 64-bit clean
-.endif
+ONLY_FOR_ARCHS=	i386 amd64
 
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
@@ -33,4 +29,4 @@ pre-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/chmview ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

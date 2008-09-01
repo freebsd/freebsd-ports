@@ -1,6 +1,7 @@
---- ../src/chmview.c
-+++ chmview.c.new
-@@ -17,16 +17,30 @@
+diff -ruN src.old/chmview.c src/chmview.c
+--- src.old/chmview.c	2005-03-07 21:29:18.000000000 +0100
++++ chmview.c	2008-08-18 14:39:39.000000000 +0200
+@@ -17,19 +17,33 @@
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
  
@@ -30,7 +31,11 @@
 +
  struct cb_data
  {
-   int extractwithoutpath;
+-  int extractwithoutpath;
++  long extractwithoutpath;
+   char *path;
+   int pathlen;
+ };
 @@ -44,6 +58,7 @@
    return p;
  }
@@ -79,6 +84,15 @@
  
  const char ILLEGAL_SYMB[] = "<>:|?*\"";
  const char ILLEGAL_REPL[] = "()_!__'";
+@@ -94,7 +142,7 @@
+   }
+ }
+ 
+-static int savetofile(struct chmFile *c, struct chmUnitInfo *ui, int extractwithoutpath)
++static int savetofile(struct chmFile *c, struct chmUnitInfo *ui, long extractwithoutpath)
+ {
+   LONGINT64 length=0;
+   char *outbuf=NULL;
 @@ -103,6 +151,9 @@
    char fullpath[CHM_MAX_PATHLEN*2+1];
    char target[CHM_MAX_PATHLEN*2+1];
@@ -122,7 +136,14 @@
    ReplaceIllegalChars(target);
    strcat(fullpath,extractwithoutpath?pointtoname(target):(target[0]=='/'?target+1:target));
    if (!extractwithoutpath)
-@@ -153,15 +223,19 @@
+@@ -147,26 +217,30 @@
+   return 0;
+ }
+ 
+-void extract(struct chmFile *c, struct chmUnitInfo *ui, int extractwithoutpath)
++void extract(struct chmFile *c, struct chmUnitInfo *ui, long extractwithoutpath)
+ {
+   char target[CHM_MAX_PATHLEN*2+1];
    wchar_t temp[CHM_MAX_PATHLEN+1];
  
    decode_UTF8(temp,ui->path);
@@ -138,12 +159,26 @@
      error=1;
      //return CHM_ENUMERATOR_FAILURE;
 -  }
--  printf("OK\n");
 +  } else
-+		printf("OK\n");
+   printf("OK\n");
  }
  
  int _extract_callback_all(struct chmFile *c, struct chmUnitInfo *ui, void *context)
+ {
+-  extract(c,ui,(int)context);
++  extract(c,ui,(long)context);
+   return CHM_ENUMERATOR_CONTINUE;
+ }
+ 
+@@ -180,7 +254,7 @@
+   return CHM_ENUMERATOR_CONTINUE;
+ }
+ 
+-extractdir(struct chmFile *c, char *path, int extractwithoutpath)
++extractdir(struct chmFile *c, char *path, long extractwithoutpath)
+ {
+   struct cb_data data = {extractwithoutpath,path,strlen(path)};
+   chm_enumerate(c,CHM_ENUMERATE_ALL,_extract_callback_dir,(void *)&data);
 @@ -193,7 +267,11 @@
    wchar_t temp[CHM_MAX_PATHLEN+1];
  
@@ -166,6 +201,15 @@
    c = chm_open(infname);
    if (!c)
      exit(-1);
+@@ -265,7 +346,7 @@
+       char target[CHM_MAX_PATHLEN*2+1];
+       wchar_t temp[CHM_MAX_PATHLEN+1];
+       int status;
+-      int extractwithoutpath = command[0]=='e'?1:0;
++      long extractwithoutpath = command[0]=='e'?1:0;
+ 
+       if (argc == 4)
+       {
 @@ -305,7 +386,11 @@
              strcat(target,name+1);
            else
