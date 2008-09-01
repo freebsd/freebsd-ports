@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zeroconf/Bonjour(tm) implementation
 
 USE_AUTOTOOLS=	libtool:15
