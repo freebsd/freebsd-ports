@@ -1,0 +1,10 @@
+--- libs/network/ldaplib/build/platforms/freebsd-gcc/Make-platform.orig	2008-08-31 01:19:49.000000000 -0700
++++ libs/network/ldaplib/build/platforms/freebsd-gcc/Make-platform	2008-08-31 01:19:52.000000000 -0700
+@@ -11,6 +11,6 @@
+ # -------------------------------------------------------------------------
+ # you will probably not need to edit anything below this point
+ # -------------------------------------------------------------------------
+-CC	= gcc
++#CC	= gcc
+ 
+ PLATFORMCFLAGS=	-Dfreebsd

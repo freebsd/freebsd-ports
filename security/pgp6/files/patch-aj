@@ -1,15 +1,11 @@
-*** libs/pgpcdk/pub/include/pgpSockets.h	2000/01/26 03:10:46	1.1.1.1
---- libs/pgpcdk/pub/include/pgpSockets.h	2000/01/26 03:13:58	1.1.1.2
-***************
-*** 30,35 ****
---- 30,39 ----
-  # include <netdb.h>
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ # include <sys/ioctl.h>		/* Need FIONREAD */
-+ #endif
-+ 
-  #if PGP_WIN32
-  # include <winsock.h>
-  #endif
+--- libs/pgpcdk/pub/include/pgpSockets.h.orig	1999-08-04 11:36:04.000000000 -0700
++++ libs/pgpcdk/pub/include/pgpSockets.h	2008-08-31 00:37:11.000000000 -0700
+@@ -20,7 +20,7 @@ ________________________________________
+ #if PGP_UNIX
+ # include <sys/types.h>
+ # include <sys/socket.h>
+-#if PGP_UNIX_LINUX
++#if PGP_UNIX_LINUX || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ # include <sys/time.h>		/* Needed for unknown reason */
+ # include <sys/ioctl.h>		/* Need FIONREAD */
+ #elif PGP_UNIX_SOLARIS

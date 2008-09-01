@@ -1,0 +1,17 @@
+--- libs/network/ldaplib/Makefile.orig	1999-08-04 11:35:42.000000000 -0700
++++ libs/network/ldaplib/Makefile	2008-08-31 01:17:43.000000000 -0700
+@@ -237,14 +237,6 @@ makeconfig:	.makefiles buildtools
+ 	CC=$(CC); \
+ 	OLDIFS="$$IFS"; \
+ 	IFS=":"; \
+-if test -n "$CC"; then \
+-	for dir in $$PATH; do \
+-	    if [ -f $$dir/gcc ]; then \
+-		CC=gcc; \
+-		break; \
+-	    fi; \
+-	done; \
+-fi; \
+ 	IFS="$$OLDIFS"; \
+ 	$(LN) ./build/platforms/$$PLATFORM-$$CC/Make-platform .make-platform; \
+ 	echo ""; \
