@@ -28,11 +28,11 @@ lib/pari/pari.cfg
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COMPAT
 %%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CVS.txt
 %%DOCSDIR%%/MACHINES
 %%DOCSDIR%%/NEW
 %%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
+%%PERL%%%%DOCSDIR%%/PARI/822.pm
+%%PERL%%%%DOCSDIR%%/pari.desc
 %%DOCSDIR%%/misc/README
 %%DOCSDIR%%/misc/color.dft
 %%DOCSDIR%%/misc/gpalias
@@ -69,9 +69,19 @@ lib/pari/pari.cfg
 %%DOCSDIR%%/examples/rho.gp
 %%DOCSDIR%%/examples/squfof.gp
 %%DOCSDIR%%/examples/taylor.gp
+%%EMACS%%share/emacs/site-lisp/pari/pari-conf.el
+%%EMACS%%share/emacs/site-lisp/pari/pari-completion.el
+%%EMACS%%share/emacs/site-lisp/pari/pari-fontification.el
+%%EMACS%%share/emacs/site-lisp/pari/pari-help.el
+%%EMACS%%share/emacs/site-lisp/pari/pari-messages.el
+%%EMACS%%share/emacs/site-lisp/pari/pari.el
+%%EMACS%%share/emacs/site-lisp/pari/pariemacs.txt
+%%EMACS%%share/emacs/site-lisp/pari/sli-tools.el
 @dirrm include/pari
 @dirrm lib/pari
 @dirrm %%DOCSDIR%%/misc
 @dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%/examples
+%%PERL%%@dirrm %%DOCSDIR%%/PARI
 @dirrm %%DOCSDIR%%
+%%EMACS%%@dirrm share/emacs/site-lisp/pari
