@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
 REINPLACE_ARGS=	-i ""
 
-MAINTAINER?=	mikeh@FreeBSD.ORG
+MAINTAINER?=	ports@FreeBSD.ORG
 COMMENT?=	A graphical user interface toolkit for X Window System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
