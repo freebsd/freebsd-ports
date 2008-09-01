@@ -11,7 +11,7 @@ CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope hotfix Product to send mail in Japanese
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope

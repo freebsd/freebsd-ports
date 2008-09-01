@@ -13,7 +13,7 @@ DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4

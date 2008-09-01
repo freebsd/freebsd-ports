@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 
-MAINTAINER=	yasi@yasi.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese word splitter for searching text in Zope Products
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec-zope
