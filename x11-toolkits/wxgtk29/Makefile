@@ -7,7 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.8.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
@@ -39,7 +39,8 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-mspack\
 		--with-gtk\
 		--enable-mediactrl\
-		--disable-backtrace
+		--disable-backtrace\
+		--enable-graphics_ctx
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
 		WXCONFIG_CPPFLAGS="${PTHREAD_CFLAGS}"\
@@ -50,7 +51,7 @@ PLIST=		${.CURDIR}/pkg-plist
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
