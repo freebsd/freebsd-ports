@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/proxy-connect/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION)
 
-MAINTAINER=	alfred@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A socks4, socks5 and http proxy tool
 
 USE_BZIP2=	yes

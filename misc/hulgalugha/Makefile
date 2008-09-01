@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/hulgalugha/
 USE_BZIP2=	yes
 
-MAINTAINER=	alfred@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very jerky text filter.
 
 PLIST_FILES=	bin/hulgalugha

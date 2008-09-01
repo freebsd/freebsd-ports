@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	state-threads
 
-MAINTAINER=	alfred@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
 
 USE_LDCONFIG=	yes
