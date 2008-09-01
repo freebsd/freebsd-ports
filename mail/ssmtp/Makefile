@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		ssmtp_2.61-11.1.diff.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.61
