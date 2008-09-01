@@ -11,7 +11,7 @@ CATEGORIES=	comms net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bsd
 
-MAINTAINER=	bsd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide network access to local serial ports and make remote ports appear local
 
 MAN8=		comservd.8
