@@ -5,7 +5,7 @@ bin/axl
 bin/axs
 etc/afnix/afnix-gud.el
 etc/afnix/afnix-mode.el
-include/afnix/eng/Argument.hpp
+include/afnix/eng/ArgsList.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
 include/afnix/eng/Closure.hpp
@@ -24,6 +24,7 @@ include/afnix/eng/Librarian.hpp
 include/afnix/eng/Localset.hpp
 include/afnix/eng/Meta.hpp
 include/afnix/eng/Module.hpp
+include/afnix/eng/Multiset.hpp
 include/afnix/eng/Nameset.hpp
 include/afnix/eng/Printer.hpp
 include/afnix/eng/Promise.hpp
