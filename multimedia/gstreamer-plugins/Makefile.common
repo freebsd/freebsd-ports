@@ -49,7 +49,6 @@ GOOD_GST_ALL_PLUGINS+= \
 		aalib \
 		annodex \
 		cairo \
-		cdio \
 		dv \
 		esd \
 		flac \
@@ -72,6 +71,7 @@ GOOD_GST_ALL_PLUGINS+= \
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
 		amrnb \
+		cdio \
 		dvdnav \
 		dvdread \
 		lame \
