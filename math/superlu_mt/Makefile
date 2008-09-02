@@ -20,8 +20,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
-BROKEN=		does not install
-
 USE_FORTRAN=	yes
 
 .include <bsd.port.pre.mk>
@@ -95,8 +93,6 @@ do-build:
 	${RM} -rf ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_shared \;
-
-post-build:
 	@cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 	${RM} -f $${i}.so.* $${i}.so ; \
        	ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --allow-multiple-definition --whole-archive $${i}.a ;\
