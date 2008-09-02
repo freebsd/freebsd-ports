@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.33
-PORTREVISION=	1
+PORTVERSION=	2.40
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	pl${PORTVERSION:S/.//}src
@@ -52,7 +51,7 @@ MANCOMPRESSED=	no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
-		${BUILD_WRKSRC}/Makefile ${BUILD_WRKSRC}/Makefile_api
+		${BUILD_WRKSRC}/Makefile ${BUILD_WRKSRC}/mkapi
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/pl ${PREFIX}/bin/ploticus
@@ -68,7 +67,7 @@ do-install:
 
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/pltestsuite && ${FIND} . | \
+	cd ${WRKSRC}/pltestsuite && ${FIND} . \! -name "*.orig" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
