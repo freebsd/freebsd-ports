@@ -1,9 +1,9 @@
---- qmake.inc.in.linux	2006-06-22 08:36:05.000000000 -0700
-+++ qmake.inc.in	2006-06-22 08:36:27.000000000 -0700
-@@ -34,10 +34,8 @@
+--- qmake.inc.in.orig	2008-08-27 22:44:07.000000000 -0700
++++ qmake.inc.in	2008-08-29 16:04:11.000000000 -0700
+@@ -66,10 +66,8 @@
+ 	PKGLOCALEDIR			= $$res.path/locale
  
- 	PKGLOCALEDIR            = $$res.path/locale
- 
+ 	CONFIG                 += warn_on debug
 -	QMAKE_CFLAGS_DEBUG     += -Wno-unused-parameter
 -	QMAKE_CFLAGS_RELEASE   += -Wno-unused-parameter
 -	QMAKE_CXXFLAGS_DEBUG   += -Wno-unused-parameter @CXXFLAGS@
