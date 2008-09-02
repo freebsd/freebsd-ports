@@ -1026,6 +1026,7 @@
     SUBDIR += xisp
     SUBDIR += xmlrpc++
     SUBDIR += xmlrpc-c
+    SUBDIR += xmlrpc-c-devel
     SUBDIR += xmlrpc-epi
     SUBDIR += xorp
     SUBDIR += xprobe
