@@ -1,0 +1,11 @@
+--- configure.ac.orig	2008-09-02 14:40:15.000000000 +0100
++++ configure.ac	2008-09-02 14:41:51.000000000 +0100
+@@ -55,7 +55,7 @@
+ 	[enable_encoder_jpeg=auto])
+ 
+ case $host in
+-	*-*-linux*)
++	*-*-linux*|*freebsd*)
+ 		if test x$enable_input_vdig = xyes; then
+ 			AC_MSG_ERROR([QuickTime digitizer support is only available on Mac OS X])
+ 		fi
