@@ -159,6 +159,7 @@
     SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
     SUBDIR += mysql-proxy
+    SUBDIR += mysql-q4m
     SUBDIR += mysql-query-browser
     SUBDIR += mysql-udf
     SUBDIR += mysql2odbc
