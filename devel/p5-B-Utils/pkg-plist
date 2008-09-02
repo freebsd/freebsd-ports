@@ -1,5 +1,13 @@
-%%SITE_PERL%%/B/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install/BUtils.h
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/OP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/B/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils/Utils.bs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
-@dirrmtry %%SITE_PERL%%/B
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B/Utils
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/B

@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	B-Utils
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Helper functions for op tree manipulation
 
-MAN3=	B::Utils.3
+MAN3=		B::Utils.3 B::Utils::OP.3
 
 PERL_CONFIGURE=	yes
 
