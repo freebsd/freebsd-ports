@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chemistry-Elements
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,4 +18,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Chemistry::Elements.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
