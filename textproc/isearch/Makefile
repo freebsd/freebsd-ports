@@ -1,12 +1,13 @@
 # New ports collection makefile for:   isearch
 # Date created:			21 Sept 1996
-# Whom:				Pedro
+# Whom:				Pedro Giffuni
 #
 # $FreeBSD$
 #
 
 PORTNAME=	isearch
 PORTVERSION=	1.47i
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.etymon.com/software/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}
@@ -14,7 +15,9 @@ DISTNAME=	Isearch-${PORTVERSION}
 MAINTAINER=	pmarquis@pobox.com
 COMMENT=	Text Search Engine by CNIDR
 
-GNU_CONFIGURE=	yes
+USE_GCC=	3.4
+CFLAGS+=	-fwritable-strings
+
 MAKE_ARGS=	INSTALL=${PREFIX}/bin
 
 post-install:
@@ -23,10 +26,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/html/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
