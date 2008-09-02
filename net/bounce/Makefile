@@ -1,5 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:  bounce
+# New Ports collection makefile for:  bounce
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -8,7 +7,7 @@
 
 PORTNAME=	bounce
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/ \
 		${MASTER_SITE_LOCAL}
@@ -21,6 +20,8 @@ COMMENT=	Bounce tcp connections to another machine/port
 
 USE_RC_SUBR=	bounce
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_FILES=	sbin/bounce
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
