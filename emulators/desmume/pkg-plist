@@ -1,0 +1,14 @@
+bin/desmume
+bin/desmume-cli
+bin/desmume-glade
+share/applications/desmume-glade.desktop
+share/applications/desmume.desktop
+%%DATADIR%%/glade/DeSmuME.xpm
+%%DATADIR%%/glade/DeSmuMe.glade
+%%DATADIR%%/glade/DeSmuMe_Dtools.glade
+share/locale/fr/LC_MESSAGES/desmume.mo
+share/locale/pt_BR/LC_MESSAGES/desmume.mo
+share/pixmaps/DeSmuME.xpm
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
