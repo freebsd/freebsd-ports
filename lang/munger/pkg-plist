@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.37
+lib/libmunger.so.38
 lib/libminimunger.a
 include/minimunger.h
 %%DATADIR%%/ipdatabase.munger
