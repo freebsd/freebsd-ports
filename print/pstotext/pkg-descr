@@ -21,19 +21,3 @@ standard input. (PDF documents require random access, hence cannot be read
 from standard input.) You can use the -output option to specify an output file
 (remember to invoke it before the input file); otherwise pstotext writes to
 standard output.
-       
-The option -cork is only relevant for PostScript files produced by dvips from
-TeX or LaTeX documents; it tells pstotext to use the Cork encoding (known as T1
-in LaTeX) rather than the old TeX text encoding (known as OT1 in LaTeX).
-Unfortunately files produced by dvips don't distinguish which font encodings
-were used.
-       
-The options -landscape and -landscapeOther should be used for documents that
-must be rotated 90 degrees clockwise or counterclockwise, respectively, in
-order to be readable.
-
-The options -debug and -bboxes are mostly of use for the maintainers of
-pstotext.  -debug shows Ghostscript output and error messages.  -bboxes outputs
-one word per line with bounding box information. 
-
-WWW: http://www.research.digital.com/SRC/virtualpaper/pstotext.html
