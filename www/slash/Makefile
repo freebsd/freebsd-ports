@@ -7,13 +7,13 @@
 
 PORTNAME=	slash
 PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	slashcode
 DISTNAME=	slash-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Slash-Like Automatic Storytelling Homepage system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
@@ -23,6 +23,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 USE_PERL5=	yes
+USE_APACHE=	13
+
+SUB_FILES+=	pkg-message
 
 MAKE_ARGS+=	SLASH_PREFIX=${PREFIX}/slash
 
@@ -48,6 +51,6 @@ MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
 
 post-install:
 	@${FIND} ${PREFIX}/slash -name "*.orig" -delete
-	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
