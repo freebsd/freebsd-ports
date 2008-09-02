@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.6 2008-08-31 23:00:27 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.7 2008-09-02 07:34:21 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -54,7 +54,7 @@ apache22_accf() {
 	retcode=0
 	if checkyesno apache22_http_accept_enable
 	then
-		/sbin/kldstat -v | grep accf_http 2>&1 > /dev/null
+		/sbin/kldstat -v | grep accf_http >/dev/null 2>&1
 		retcode=${?}
 		if [ ${retcode} -ne 0 ]
 		then
@@ -177,7 +177,7 @@ apache22_precmd()
 }
 
 apache22_checkfib () {
-	sysctl net.fibs 2>&1 > /dev/null
+	sysctl net.fibs >/dev/null 2>&1
 	ret=$? 
  	[ $ret -gt 0 ] && return 0 
 	if [ "x$apache22_fib" != "xNO" ]
