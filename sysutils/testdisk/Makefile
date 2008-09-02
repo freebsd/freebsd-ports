@@ -67,7 +67,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 .else
-	@${REINPLACE_CMD} -e '/\/doc\/$(PACKAGE)-$(VERSION)/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/\/doc\/$$(PACKAGE)-$$(VERSION)/d' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
