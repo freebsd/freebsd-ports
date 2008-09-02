@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=        --with-dbm=db185 \
                         --with-berkeley-db=/usr
 .	else
 USE_BDB=                yes
-INVALID_BDB_VER=	46
+INVALID_BDB_VER=	46 47
 CONFIGURE_ARGS+=        --with-dbm=db${BDB_VER:S/40/4/} \
                         --with-berkeley-db=${LOCALBASE}
 .	endif
