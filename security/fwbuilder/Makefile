@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	2.1.19
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -16,11 +15,10 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	fwbuilder.7:${PORTSDIR}/security/libfwbuilder
+LIB_DEPENDS=	fwbuilder.8:${PORTSDIR}/security/libfwbuilder
 
-BUILD_VERSION=	21
-PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USE_QT_VER=	3
+PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
+USE_QT_VER=	4
 
 QTDIR?=		${QT_PREFIX}
 
@@ -37,7 +35,6 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 MAN1=		fwbuilder.1 \
-		fwblookup.1 \
 		fwbedit.1 \
 		fwb_iosacl.1 \
 		fwb_ipt.1 \

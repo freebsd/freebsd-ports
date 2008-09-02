@@ -147,6 +147,7 @@
     SUBDIR += fuzz
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
+    SUBDIR += fwbuilder2
     SUBDIR += fwipe
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
@@ -235,6 +236,7 @@
     SUBDIR += libecc
     SUBDIR += libfprint
     SUBDIR += libfwbuilder
+    SUBDIR += libfwbuilder2
     SUBDIR += libgcrypt
     SUBDIR += libgnomesu
     SUBDIR += libgpg-error

@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	2.1.19
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -18,9 +17,8 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
-BUILD_VERSION=	21
-PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-USE_QT_VER=	3
+PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
+USE_QT_VER=	4
 
 QTDIR?=		${QT_PREFIX}
 
@@ -37,8 +35,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-install:
-	${RM} ${PREFIX}/lib/libfwbuilder.so.7.3
-	${RM} ${PREFIX}/lib/libfwcompiler.so.7.3
+	${RM} ${PREFIX}/lib/libfwbuilder.so.8.0
+	${RM} ${PREFIX}/lib/libfwcompiler.so.8.0
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
