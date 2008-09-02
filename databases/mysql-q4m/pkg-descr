@@ -1,0 +1,7 @@
+Q4M (Queue for MySQL) is a message queue licensed under GPL that works
+as a pluggable storage engine of MySQL 5.1, designed to be robust,
+fast, flexible.  The development started in late December of 2007, and
+although it is very primitive, operates quite swiftly.
+
+Author:	Kazuho Oku at Cybozu Labs, Inc.
+WWW:	http://q4m.31tools.com/
