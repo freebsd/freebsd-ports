@@ -1,5 +1,5 @@
---- magick/symbols.h.orig	Mon Jul 16 21:55:06 2007
-+++ magick/symbols.h	Mon Jul 16 21:56:04 2007
+--- ./magick/symbols.h.orig	2004-04-14 18:45:07.000000000 -0400
++++ ./magick/symbols.h	2008-09-02 08:05:29.000000000 -0400
 @@ -17,6 +17,8 @@
  #if !defined(_MAGICK_SYMBOLS_H)
  #define _MAGICK_SYMBOLS_H

@@ -1,0 +1,29 @@
+--- ./coders/Makefile.in.orig	2008-04-10 11:16:23.000000000 -0400
++++ ./coders/Makefile.in	2008-09-02 08:05:28.000000000 -0400
+@@ -1696,7 +1696,7 @@
+ 	done
+ install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z "$(pkg_LTLIBRARIES)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f=$(am__strip_dir) \
+@@ -2038,7 +2038,7 @@
+ 	-rm -rf .libs _libs
+ install-pkgDATA: $(pkg_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+@@ -2055,7 +2055,7 @@
+ 	done
+ install-pkgdataDATA: $(pkgdata_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
++	test -z "$(pkgdatadir)" -o -z '$(pkgdata_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(pkgdata_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
