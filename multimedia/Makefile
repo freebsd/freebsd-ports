@@ -218,6 +218,7 @@
     SUBDIR += smplayer
     SUBDIR += smplayer-themes
     SUBDIR += spigot
+    SUBDIR += spook
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
     SUBDIR += subconv
