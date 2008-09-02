@@ -1,4 +1,4 @@
-Simple, fast, /bin/sh-based filters to use GnuPG with Pine or Alpine.
+Simple, fast, /bin/sh-based filters to use GnuPG with Alpine.
 
 In addition to the standard functions of encrypt/decrypt and sign/verify
 for inline messages, I added pseudo-filters to verify or decrypt messages
