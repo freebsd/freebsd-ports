@@ -45,6 +45,8 @@ USE_RC_SUBR=		apache22.sh htcacheclean.sh
 SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
+MPM_ITK_VERSION?=	20080727-00
+
 # for slave ports
 .if !defined(MASTERDIR)
 APACHEDIR=	${.CURDIR}
