@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -20,6 +20,8 @@ USE_PYTHON=	2.3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
+
+SUB_FILES=	pkg-message
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
