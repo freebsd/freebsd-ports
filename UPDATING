@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080902:
+  AFFECTS: users of math/ploticus
+  AUTHOR:  linimon@FreeBSD.org
+
+  This is a major update.
+
+  Deprecated: server-side image maps (use client-side instead); definition
+  of categories within proc areadef (use proc categories instead); proc print.
+
+  Discontinued attributes: proc processdata's stack; proc usedata's element,
+  proc getdata's rotate, and proc defineunits (use the $changeunits()
+  function instead).
+
+  proc rangebar has been renamed proc boxplot and there are major
+  functionality changes. Any script that uses proc rangebar will need
+  maintenance.
+
+  See http://ploticus.sourceforge.net/doc/news.html for more information.
+
 20080901:
   AFFECTS: users of mail/pine4 and editors/pico
   AUTHOR:  dougb@FreeBSD.org
