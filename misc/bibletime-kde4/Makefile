@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.7.a4
+PORTVERSION=	1.7.b1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/.alpha/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE4
