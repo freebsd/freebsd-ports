@@ -7,7 +7,7 @@
 
 PORTNAME=	scotty
 PORTVERSION=	20000221
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt tcl tk
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/devel/
 DISTNAME=	${PORTNAME}-00-02-21
@@ -57,10 +57,6 @@ PLIST_SUB+=	X11='@comment '
 LATEST_LINK=	scotty3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 post-patch:
 	${MV} ${WRKSRC}/scotty.c ${WRKSRC}/scotty.c.orig
