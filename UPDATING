@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080901:
+  AFFECTS: users of mail/pine4 and editors/pico
+  AUTHOR:  dougb@FreeBSD.org
+
+  These two ports have been removed in favor of the new mail/alpine
+  and editors/pico-alpine ports. UW discontinued work on Pine in
+  September of 2005 and is focusing on Alpine. You should be able to
+  directly replace pine with alpine.
+
+  See http://www.washington.edu/alpine/ for more information.
+
 20080831:
   AFFECTS: users of net-mgmt/smokeping
   AUTHOR: lth@FreeBSD.org
