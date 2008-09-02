@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cocot
-PORTVERSION=	20041220
+PORTVERSION=	20080315
 CATEGORIES=	converters
 MASTER_SITES=	http://vmi.jp/software/cygwin/
 
