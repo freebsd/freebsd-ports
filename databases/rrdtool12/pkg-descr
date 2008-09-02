@@ -1,0 +1,10 @@
+It is pretty easy to gather status information from all sorts of things,
+ranging from the temperature in your office to the number of octets which
+have passed through the FDDI interface of your router. But it is not so
+trivial to store this data in a efficient and systematic manner. This is
+where RRDtool kicks in. It lets you log and analyze the data you gather from
+all kinds of data-sources. The data analysis part of RRDtool is based
+on the ability to quickly generate graphical representations of the data
+values collected over a definable time period.
+
+WWW: http://www.rrdtool.org/
