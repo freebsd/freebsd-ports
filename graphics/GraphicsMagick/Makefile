@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.14
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
+MASTER_SITES=	SF \
+		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.1/
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
+
+CONFLICTS=	GraphicsMagick-1.2.*
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
@@ -23,9 +25,9 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		xml2:${PORTSDIR}/textproc/libxml2
 OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
-OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off
 
-OPTIONS+=	TESTS "Run bundled self-tests after build" on
+OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
+		TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -49,15 +51,8 @@ CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--without-threads
 USE_LDCONFIG=	yes
 
-.if defined(WITH_WINDOWS_FONT_DIR)
-CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
-.endif
-
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-data-html
-.endif
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -66,8 +61,9 @@ test check:
 
 .include <bsd.port.pre.mk>
 
-# Perl and Tcl APIs will be installed by separate ports
-PLIST_SUB+=	WITH_PERL="@comment "
+.if defined(WITH_WINDOWS_FONT_DIR)
+CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
+.endif
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=	-nox11

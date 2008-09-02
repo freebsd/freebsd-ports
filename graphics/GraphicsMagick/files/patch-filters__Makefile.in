@@ -1,0 +1,20 @@
+--- ./filters/Makefile.in.orig	2008-04-10 11:16:24.000000000 -0400
++++ ./filters/Makefile.in	2008-09-02 08:05:29.000000000 -0400
+@@ -464,7 +464,7 @@
+ 	done
+ install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)"  -o -z '$(pkg_LTLIBRARIES)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f=$(am__strip_dir) \
+@@ -530,7 +530,7 @@
+ 	-rm -rf .libs _libs
+ install-pkgDATA: $(pkg_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
