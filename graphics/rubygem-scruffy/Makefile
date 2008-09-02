@@ -7,17 +7,29 @@
 #
 
 PORTNAME=	scruffy
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beautiful Graphs for Ruby
 
 RUN_DEPENDS=	rubygem-builder>=2.0.0:${PORTSDIR}/devel/rubygem-builder
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+
+update-plist:
+	@${RM} -f ${PLIST}
+	@${ECHO} "%%GEM_SPEC%%" >> ${PLIST}
+	@${ECHO} "%%GEM_CACHE%%" >> ${PLIST}
+	@${FIND} ${LOCALBASE}/${GEM_LIB_DIR} -type f | ${SORT} | ${SED} -e \
+		's,^${LOCALBASE}/${GEM_LIB_DIR},%%GEM_LIB_DIR%%,' >> ${PLIST}
+	@${FIND} ${LOCALBASE}/${GEM_LIB_DIR} -type d | ${SORT} -r | ${SED} -e \
+		's,^${LOCALBASE}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> ${PLIST}
+	@${FIND} ${LOCALBASE}/${GEM_DOC_DIR} -type f | ${SORT} | ${SED} -e \
+		's,^${LOCALBASE}/${GEM_DOC_DIR},%%GEM_DOC_DIR%%,' >> ${PLIST}
+	@${FIND} ${LOCALBASE}/${GEM_DOC_DIR} -type d | ${SORT} -r | ${SED} -e \
+		's,^${LOCALBASE}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> ${PLIST}
 
 .include <bsd.port.mk>
