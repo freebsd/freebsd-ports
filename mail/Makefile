@@ -447,7 +447,6 @@
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters
-    SUBDIR += pine4
     SUBDIR += pm-lib
     SUBDIR += pmail
     SUBDIR += pop-before-smtp
