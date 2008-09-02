@@ -1,4 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2/.packlist
 %%SITE_PERL%%/Net/Amazon/EC2.pm
+%%SITE_PERL%%/Net/Amazon/EC2/Attachment.pm
 %%SITE_PERL%%/Net/Amazon/EC2/AvailabilityZone.pm
 %%SITE_PERL%%/Net/Amazon/EC2/BlockDeviceMapping.pm
 %%SITE_PERL%%/Net/Amazon/EC2/ConfirmProductInstanceResponse.pm
@@ -22,10 +25,11 @@
 %%SITE_PERL%%/Net/Amazon/EC2/ReservationInfo.pm
 %%SITE_PERL%%/Net/Amazon/EC2/RunningInstances.pm
 %%SITE_PERL%%/Net/Amazon/EC2/SecurityGroup.pm
+%%SITE_PERL%%/Net/Amazon/EC2/Snapshot.pm
 %%SITE_PERL%%/Net/Amazon/EC2/TerminateInstancesResponse.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserData.pm
 %%SITE_PERL%%/Net/Amazon/EC2/UserIdGroupPair.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2/.packlist
+%%SITE_PERL%%/Net/Amazon/EC2/Volume.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
