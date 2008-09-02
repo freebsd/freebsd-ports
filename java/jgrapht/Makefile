@@ -51,7 +51,7 @@ pre-fetch:
 
 do-install:
 	@${ECHO_MSG} -n  ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-jdk${JAVA_PORT_VERSION:C/([0-9]\.[0-9])\.[0-9]/\1/}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-jdk${JAVA_PORT_VERSION:C/1\.4\.[0-9]/1.4/:C/1\.[56]\.[0-9]/1.5/}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
