@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	pstotext
-PORTVERSION=	1.8g
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	print
-MASTER_SITES=	http://www.breuninger.org/files/distfiles/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/contrib/
 
 MAINTAINER=	ob@breuninger.org
 COMMENT=	A PostScript to Text converter
@@ -20,9 +17,18 @@ USE_GHOSTSCRIPT_RUN=	yes
 
 MAN1=		pstotext.1
 PLIST_FILES=	bin/pstotext
+PORTDOCS=	copyright
+
+post-patch:
+	${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g' ${WRKSRC}/main.c
+	${REINPLACE_CMD} -e 's;%%PREFIX%%;${PREFIX};g' ${WRKSRC}/pstotext.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pstotext ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pstotext.1 ${MAN1PREFIX}/man/man1
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/pstotext.txt ${DOCSDIR}/copyright
+.endif
 
 .include <bsd.port.mk>
