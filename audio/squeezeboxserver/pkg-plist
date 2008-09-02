@@ -39,6 +39,8 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Class/Singleton.pm
 %%SLIMDIR%%/CPAN/Class/Virtual.pm
 %%SLIMDIR%%/CPAN/Class/Virtually/Abstract.pm
+%%SLIMDIR%%/CPAN/Class/XSAccessor/Array.pm
+%%SLIMDIR%%/CPAN/Cookie/XS.pm
 %%SLIMDIR%%/CPAN/DBD/Sponge.pm
 %%SLIMDIR%%/CPAN/DBD/mysql.pm
 %%SLIMDIR%%/CPAN/DBD/mysql/GetInfo.pm
@@ -243,7 +245,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Log/Log4perl/Layout/PatternLayout.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Layout/SimpleLayout.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Level.pm
-%%SLIMDIR%%/CPAN/Log/Log4perl/Logger.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/MDC.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/NDC.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Util.pm
@@ -632,33 +633,42 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog5.html
 %%SLIMDIR%%/Changelog6.html
 %%SLIMDIR%%/Changelog7.html
+%%SLIMDIR%%/Firmware/boom.version
+%%SLIMDIR%%/Firmware/boom_30.bin
+%%SLIMDIR%%/Firmware/boom_32.bin
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_36.bin
+%%SLIMDIR%%/Firmware/receiver_47.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_101.bin
+%%SLIMDIR%%/Firmware/squeezebox2_112.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_50.bin
+%%SLIMDIR%%/Firmware/transporter_62.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
 %%SLIMDIR%%/Graphics/blockanimateSB2.1.font.bmp
 %%SLIMDIR%%/Graphics/blockanimateSBG.1.font.bmp
 %%SLIMDIR%%/Graphics/full.2.font.bmp
+%%SLIMDIR%%/Graphics/full_n.2.font.bmp
 %%SLIMDIR%%/Graphics/high.2.font.bmp
 %%SLIMDIR%%/Graphics/huge.2.font.bmp
 %%SLIMDIR%%/Graphics/large.2.font.bmp
 %%SLIMDIR%%/Graphics/light.1.font.bmp
 %%SLIMDIR%%/Graphics/light.2.font.bmp
+%%SLIMDIR%%/Graphics/light_n.1.font.bmp
+%%SLIMDIR%%/Graphics/light_n.2.font.bmp
 %%SLIMDIR%%/Graphics/logo.font.bmp
+%%SLIMDIR%%/Graphics/logoSB2.2.font.bmp
 %%SLIMDIR%%/Graphics/medium.1.font.bmp
 %%SLIMDIR%%/Graphics/medium.2.font.bmp
 %%SLIMDIR%%/Graphics/small.1.font.bmp
 %%SLIMDIR%%/Graphics/small.2.font.bmp
 %%SLIMDIR%%/Graphics/standard.1.font.bmp
 %%SLIMDIR%%/Graphics/standard.2.font.bmp
+%%SLIMDIR%%/Graphics/standard_n.1.font.bmp
+%%SLIMDIR%%/Graphics/standard_n.2.font.bmp
 %%SLIMDIR%%/Graphics/threeline.1.font.bmp
 %%SLIMDIR%%/Graphics/threeline.2.font.bmp
 %%SLIMDIR%%/Graphics/threeline.3.font.bmp
@@ -782,6 +792,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/hd-sprite.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/menu.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/se-handle.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/slider-thumb.png
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-scroll-left.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-scroll-right.gif
 %%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-sprite.gif
@@ -1111,6 +1122,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/squeezecenter.png
 %%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/squeezenetwork.png
 %%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/tuneinurl.png
+%%SLIMDIR%%/HTML/EN/html/images/alarm.png
 %%SLIMDIR%%/HTML/EN/html/images/albums.png
 %%SLIMDIR%%/HTML/EN/html/images/artists.png
 %%SLIMDIR%%/HTML/EN/html/images/b_ascend.gif
@@ -1226,6 +1238,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/settings/player/display.html
 %%SLIMDIR%%/HTML/EN/settings/player/menu.html
 %%SLIMDIR%%/HTML/EN/settings/player/remote.html
+%%SLIMDIR%%/HTML/EN/settings/player/synchronization.html
 %%SLIMDIR%%/HTML/EN/settings/server/basic.html
 %%SLIMDIR%%/HTML/EN/settings/server/behavior.html
 %%SLIMDIR%%/HTML/EN/settings/server/debugging.html
@@ -1692,7 +1705,7 @@ bin/softsqueeze
 %%SLIMDIR%%/SQL/mysql/schema_6_up.sql
 %%SLIMDIR%%/SQL/mysql/schema_clear.sql
 %%SLIMDIR%%/SQL/mysql/schema_optimize.sql
-%%SLIMDIR%%/Slim/Buttons/AlarmClock.pm
+%%SLIMDIR%%/Slim/Buttons/Alarm.pm
 %%SLIMDIR%%/Slim/Buttons/Block.pm
 %%SLIMDIR%%/Slim/Buttons/BrowseDB.pm
 %%SLIMDIR%%/Slim/Buttons/BrowseTree.pm
@@ -1721,6 +1734,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Control/Queries.pm
 %%SLIMDIR%%/Slim/Control/Request.pm
 %%SLIMDIR%%/Slim/Control/Stdio.pm
+%%SLIMDIR%%/Slim/Display/Boom.pm
 %%SLIMDIR%%/Slim/Display/Display.pm
 %%SLIMDIR%%/Slim/Display/EmulatedSqueezebox2.pm
 %%SLIMDIR%%/Slim/Display/Graphics.pm
@@ -1755,6 +1769,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Formats/Wav.pm
 %%SLIMDIR%%/Slim/Formats/WavPack.pm
 %%SLIMDIR%%/Slim/Formats/XML.pm
+%%SLIMDIR%%/Slim/Hardware/BacklightLED.pm
 %%SLIMDIR%%/Slim/Hardware/IR.pm
 %%SLIMDIR%%/Slim/Hardware/TriLED.pm
 %%SLIMDIR%%/Slim/Hardware/mas3507d.pm
@@ -1790,6 +1805,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Networking/UDP.pm
 %%SLIMDIR%%/Slim/Networking/UPnP/ControlPoint.pm
 %%SLIMDIR%%/Slim/Networking/mDNS.pm
+%%SLIMDIR%%/Slim/Player/Boom.pm
 %%SLIMDIR%%/Slim/Player/Client.pm
 %%SLIMDIR%%/Slim/Player/HTTP.pm
 %%SLIMDIR%%/Slim/Player/Pipeline.pm
@@ -1878,6 +1894,12 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/LastFM/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/LastFM/install.xml
 %%SLIMDIR%%/Slim/Plugin/LastFM/strings.txt
+%%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins/LineIn/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins/LineIn/set.html
+%%SLIMDIR%%/Slim/Plugin/LineIn/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/LineIn/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/LineIn/install.xml
+%%SLIMDIR%%/Slim/Plugin/LineIn/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/Live365/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Live365/ProtocolHandler.pm
@@ -2045,7 +2067,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Schema/TrackPersistent.pm
 %%SLIMDIR%%/Slim/Schema/Year.pm
 %%SLIMDIR%%/Slim/Utils/Accessor.pm
-%%SLIMDIR%%/Slim/Utils/Alarms.pm
+%%SLIMDIR%%/Slim/Utils/Alarm.pm
 %%SLIMDIR%%/Slim/Utils/Cache.pm
 %%SLIMDIR%%/Slim/Utils/ChangeNotify.pm
 %%SLIMDIR%%/Slim/Utils/ChangeNotify/Linux.pm
@@ -2082,6 +2104,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Utils/Unicode.pm
 %%SLIMDIR%%/Slim/Utils/Validate.pm
 %%SLIMDIR%%/Slim/Utils/Versions.pm
+%%SLIMDIR%%/Slim/Utils/Win32.pm
 %%SLIMDIR%%/Slim/Web/Cometd.pm
 %%SLIMDIR%%/Slim/Web/Cometd/Manager.pm
 %%SLIMDIR%%/Slim/Web/Graphics.pm
@@ -2106,6 +2129,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Web/Settings/Player/Display.pm
 %%SLIMDIR%%/Slim/Web/Settings/Player/Menu.pm
 %%SLIMDIR%%/Slim/Web/Settings/Player/Remote.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Synchronization.pm
 %%SLIMDIR%%/Slim/Web/Settings/Server/Basic.pm
 %%SLIMDIR%%/Slim/Web/Settings/Server/Behavior.pm
 %%SLIMDIR%%/Slim/Web/Settings/Server/Debugging.pm
@@ -2139,6 +2163,7 @@ bin/softsqueeze
 %%SLIMDIR%%/lib/Audio/Wav/Write.pm
 %%SLIMDIR%%/lib/Audio/Wav/Write/Header.pm
 %%SLIMDIR%%/lib/Cache/FileBackend.pm
+%%SLIMDIR%%/lib/Log/Log4perl/Logger.pm
 %%SLIMDIR%%/lib/MP3/Info.pm
 %%SLIMDIR%%/lib/MP4/Info.pm
 %%SLIMDIR%%/lib/MPEG/Audio/Frame.pm
@@ -2166,6 +2191,8 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/lib/MPEG
 @dirrm %%SLIMDIR%%/lib/MP4
 @dirrm %%SLIMDIR%%/lib/MP3
+@dirrm %%SLIMDIR%%/lib/Log/Log4perl
+@dirrm %%SLIMDIR%%/lib/Log
 @dirrm %%SLIMDIR%%/lib/Cache
 @dirrm %%SLIMDIR%%/lib/Audio/Wav/Write
 @dirrm %%SLIMDIR%%/lib/Audio/Wav
@@ -2336,6 +2363,13 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Live365
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins/LineIn/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins/LineIn/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins/LineIn
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/LineIn
 @dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM
@@ -2603,6 +2637,8 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/DBIx
 @dirrm %%SLIMDIR%%/CPAN/DBD/mysql
 @dirrm %%SLIMDIR%%/CPAN/DBD
+@dirrm %%SLIMDIR%%/CPAN/Cookie
+@dirrm %%SLIMDIR%%/CPAN/Class/XSAccessor
 @dirrm %%SLIMDIR%%/CPAN/Class/Virtually
 @dirrm %%SLIMDIR%%/CPAN/Class/Data
 @dirrm %%SLIMDIR%%/CPAN/Class/Accessor/Chained

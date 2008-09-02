@@ -7,6 +7,7 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
@@ -149,7 +150,6 @@ post-patch:
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
 
-
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
 	cd ${WRKSRC} && \
@@ -192,7 +192,7 @@ post-install:
 
 build-plist:
 	@${CAT} /dev/null > ${PLIST}
-	echo bin/softsqueeze >> ${PLIST}
+	@${ECHO} bin/softsqueeze >> ${PLIST}
 .for _CONF in ${CONFFILES}
 	@${ECHO} '@unexec if cmp -s %D/%%SLIMDIR%%/${_CONF} %D/%%SLIMDIR%%/${_CONF}.sample; then rm -f %D/%%SLIMDIR%%/${_CONF}; fi' >> ${PLIST}
 .endfor
@@ -206,7 +206,7 @@ build-plist:
 	@${ECHO} "${SLIMDIR}/MySQL/errmsg.txt" >> ${PLIST}
 	@${ECHO} "${SLIMDIR}/MySQL/errmsg.sys" >> ${PLIST}
 	${FIND} ${TMP_SLIMDIR} -type d | \
-	    egrep -v "${TMP_SLIMDIR}(|/Plugins)$$" | \
+	    ${EGREP} -v "${TMP_SLIMDIR}(|/Plugins)$$" | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
 	echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
