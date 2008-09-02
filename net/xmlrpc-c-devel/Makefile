@@ -7,20 +7,21 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.06.30
+PORTVERSION=	1.11.00
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
+PKGNAMESUFFIX=	-devel
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" off
+		LIBWWW "Compile with libwww support" on
 
-CONFLICTS=	xmlrpc-epi-0.*
+CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
 USE_GNOME=	gnometarget
 USE_PERL5=	yes
@@ -29,8 +30,8 @@ USE_AUTOTOOLS=	libtool:15:env
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
-		CFLAGS_COMMON="${CFLAGS}" \
-		CXXFLAGS_COMMON="${CXXFLAGS}"
+		CFLAGS_COMMON="${CFLAGS}"
+CONFIGURE_ARGS+=--disable-cplusplus
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -66,5 +67,8 @@ post-extract:
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e 's|netbsd|freebsd|g' \
+	  	${WRKSRC}/Makefile.config.in
+	${CAT} ${WRKSRC}/Makefile.config.in
 
 .include <bsd.port.post.mk>
