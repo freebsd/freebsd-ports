@@ -33,6 +33,7 @@
     SUBDIR += dwm
     SUBDIR += e16utils
     SUBDIR += e17-utils
+    SUBDIR += echinus
     SUBDIR += ede
     SUBDIR += emerald
     SUBDIR += enlightenment
