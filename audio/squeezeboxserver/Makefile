@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squeezecenter
-PORTVERSION=	7.1.0
+PORTVERSION=	7.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN

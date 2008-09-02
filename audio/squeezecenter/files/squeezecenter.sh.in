@@ -38,21 +38,21 @@ command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
 %%PORTNAME%%_start_precmd()
 {
 	mkdir -p /var/run/${name}
-	chown -R ${u}:${g} /var/run/${name}
+	chown -RH ${u}:${g} /var/run/${name}
 
 	mkdir -p ${logdir}
-	chown -R ${u}:${g} ${logdir}
+	chown -RH ${u}:${g} ${logdir}
 
 	mkdir -p ${statedir}
 	mkdir -p ${cachedir}
 	mkdir -p ${prefsdir}
 	mkdir -p ${playlistdir}
 	touch ${conffile}
-	chown -R ${u}:${g} ${statedir}
+	chown -RH ${u}:${g} ${statedir}
 
 	if [ ! -f ${logfile} ]; then
 		touch ${logfile}
-		chown ${u}:${g} ${logfile}
+		chown -H ${u}:${g} ${logfile}
 	fi	
 }
 
