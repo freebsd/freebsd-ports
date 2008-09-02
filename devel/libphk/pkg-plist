@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+include/phk_argv.h
+include/phk_binheap.h
+include/phk_expr.h
+include/phk_ihex.h
+include/phk_tcp.h
+include/phk_obj.h
+include/phk_event.h
+include/phk_modbus.h
+include/phk_lineup.h
+lib/libphk.a
+lib/libphk_p.a

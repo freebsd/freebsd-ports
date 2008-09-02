@@ -672,6 +672,7 @@
     SUBDIR += libpdel
     SUBDIR += libpeak
     SUBDIR += libphish
+    SUBDIR += libphk
     SUBDIR += libpperl
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
