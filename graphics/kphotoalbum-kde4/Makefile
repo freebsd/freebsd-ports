@@ -8,7 +8,7 @@ PORTNAME=		kphotoalbum
 PORTVERSION=		3.1.1
 PORTREVISION=	2
 CATEGORIES=		graphics kde
-MASTER_SITES=		http://www.kphotoalbum.org/download/
+MASTER_SITES=		http://www.kphotoalbum.org/data/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
