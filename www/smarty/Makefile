@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.19
+PORTVERSION=	2.6.20
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/distributions/ \
 		http://www.smarty.net/distributions/manual/en/:manual
@@ -27,9 +27,7 @@ USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MSG_SRC=	${FILESDIR}/pkg-message
-
-MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -50,8 +48,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} ${MSG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${MSG_SRC} > \
-		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
