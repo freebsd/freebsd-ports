@@ -4,8 +4,8 @@ bin/Isearch
 bin/Iutil
 bin/zpresent
 bin/zsearch
-%%PORTDOCS%%share/doc/isearch/Isearch-cgi-tutorial.html
-%%PORTDOCS%%share/doc/isearch/IsearchFeatures.html
-%%PORTDOCS%%share/doc/isearch/IsearchTutorial.html
-%%PORTDOCS%%share/doc/isearch/QuickStart.html
-%%PORTDOCS%%@dirrm share/doc/isearch
+%%PORTDOCS%%%%DOCSDIR%%/Isearch-cgi-tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/IsearchFeatures.html
+%%PORTDOCS%%%%DOCSDIR%%/IsearchTutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
