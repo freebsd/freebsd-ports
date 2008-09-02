@@ -1,0 +1,103 @@
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README
+%%WWWDIR%%/ajaxcreatetable.php
+%%WWWDIR%%/ajaxfulltext.php
+%%WWWDIR%%/ajaximportfile.php
+%%WWWDIR%%/ajaxquery.php
+%%WWWDIR%%/ajaxsavecolumnedit.php
+%%WWWDIR%%/ajaxsaveedit.php
+%%WWWDIR%%/ajaxsaveuseredit.php
+%%WWWDIR%%/browse.php
+%%WWWDIR%%/config.php
+%%WWWDIR%%/css/common.css
+%%WWWDIR%%/css/navigation.css
+%%WWWDIR%%/dboverview.php
+%%WWWDIR%%/edit.php
+%%WWWDIR%%/editcolumn.php
+%%WWWDIR%%/edituser.php
+%%WWWDIR%%/export.php
+%%WWWDIR%%/functions.php
+%%WWWDIR%%/home.php
+%%WWWDIR%%/images/button.png
+%%WWWDIR%%/images/close.png
+%%WWWDIR%%/images/closeHover.png
+%%WWWDIR%%/images/closedArrow.png
+%%WWWDIR%%/images/goto.png
+%%WWWDIR%%/images/info.png
+%%WWWDIR%%/images/infoHover.png
+%%WWWDIR%%/images/initLoad.png
+%%WWWDIR%%/images/loading.gif
+%%WWWDIR%%/images/logo.png
+%%WWWDIR%%/images/openArrow.png
+%%WWWDIR%%/images/schemaHeader.png
+%%WWWDIR%%/images/sortasc.gif
+%%WWWDIR%%/images/sortdesc.gif
+%%WWWDIR%%/images/transparent.png
+%%WWWDIR%%/images/window-button.png
+%%WWWDIR%%/images/window-center.png
+%%WWWDIR%%/images/window-close.png
+%%WWWDIR%%/images/window-header-center.png
+%%WWWDIR%%/images/window-header-left.png
+%%WWWDIR%%/images/window-header-right.png
+%%WWWDIR%%/images/window-resize.png
+%%WWWDIR%%/images/window-shadow-bottom-left.png
+%%WWWDIR%%/images/window-shadow-bottom-right.png
+%%WWWDIR%%/images/window-shadow-bottom.png
+%%WWWDIR%%/images/window-shadow-left.png
+%%WWWDIR%%/images/window-shadow-right.png
+%%WWWDIR%%/import.php
+%%WWWDIR%%/includes/browse.php
+%%WWWDIR%%/includes/gettextreader.php
+%%WWWDIR%%/includes/types.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/insert.php
+%%WWWDIR%%/js/animation.js
+%%WWWDIR%%/js/columnsize.js
+%%WWWDIR%%/js/core.js
+%%WWWDIR%%/js/drag.js
+%%WWWDIR%%/js/helpers.js
+%%WWWDIR%%/js/mootools-1.2-core.js
+%%WWWDIR%%/js/resize.js
+%%WWWDIR%%/locale/de_DE.pot
+%%WWWDIR%%/locale/en_US.pot
+%%WWWDIR%%/locale/es_ES.pot
+%%WWWDIR%%/locale/it_IT.pot
+%%WWWDIR%%/locale/nl_NL.pot
+%%WWWDIR%%/locale/pl_PL.pot
+%%WWWDIR%%/locale/pt_BR.pot
+%%WWWDIR%%/locale/ru_RU.pot
+%%WWWDIR%%/locale/sv_SE.pot
+%%WWWDIR%%/locale/tl_PH.pot
+%%WWWDIR%%/locale/zh_CN.pot
+%%WWWDIR%%/locale/zh_TW.pot
+%%WWWDIR%%/login.php
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/query.php
+%%WWWDIR%%/structure.php
+%%WWWDIR%%/themes/bittersweet/css/ie.css
+%%WWWDIR%%/themes/bittersweet/css/main.css
+%%WWWDIR%%/themes/bittersweet/images/header.png
+%%WWWDIR%%/themes/bittersweet/images/initLoad-dark.png
+%%WWWDIR%%/themes/classic/css/ie.css
+%%WWWDIR%%/themes/classic/css/main.css
+%%WWWDIR%%/themes/classic/images/corner-bl.png
+%%WWWDIR%%/themes/classic/images/corner-br.png
+%%WWWDIR%%/themes/classic/images/corner-tl.png
+%%WWWDIR%%/themes/classic/images/corner-tr.png
+%%WWWDIR%%/themes/classic/images/header.png
+%%WWWDIR%%/themes/classic/images/shading.png
+%%WWWDIR%%/users.php
+@dirrm %%WWWDIR%%/themes/classic/images
+@dirrm %%WWWDIR%%/themes/classic/css
+@dirrm %%WWWDIR%%/themes/classic
+@dirrm %%WWWDIR%%/themes/bittersweet/images
+@dirrm %%WWWDIR%%/themes/bittersweet/css
+@dirrm %%WWWDIR%%/themes/bittersweet
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/exports
+@dirrm %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%

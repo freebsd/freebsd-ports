@@ -568,6 +568,7 @@
     SUBDIR += skytools
     SUBDIR += slony1
     SUBDIR += spatialite
+    SUBDIR += sqlbuddy
     SUBDIR += sqlcached
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
