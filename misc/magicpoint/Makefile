@@ -28,6 +28,7 @@ OPTIONS+=	FREETYPE	"With FreeType support" on \
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
+DOCSDIR=	${PREFIX}/share/doc/mgp
 DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
 	README.lang RELNOTES SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
@@ -95,21 +96,21 @@ post-install:
 	(cd ${WRKSRC}/contrib/xmindpath; make install)
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mgp
+	${MKDIR} ${DOCSDIR}
 	for i in $(DOCS); do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/mgp; \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
 	done
-	${MKDIR} ${PREFIX}/share/doc/mgp/sample
+	${MKDIR} ${DOCSDIR}/sample
 	for i in $(SAMPLES); do \
-		${INSTALL_DATA} ${WRKSRC}/sample/$$i ${PREFIX}/share/doc/mgp/sample; \
+		${INSTALL_DATA} ${WRKSRC}/sample/$$i ${DOCSDIR}/sample; \
 	done
-	${MKDIR} ${PREFIX}/share/doc/mgp/emacs-lisp/mgp-el
+	${MKDIR} ${DOCSDIR}/emacs-lisp/mgp-el
 	for i in $(EMACS_LISPS); do \
-		${INSTALL_DATA} ${WRKSRC}/contrib/$$i ${PREFIX}/share/doc/mgp/emacs-lisp/$$i; \
+		${INSTALL_DATA} ${WRKSRC}/contrib/$$i ${DOCSDIR}/emacs-lisp/$$i; \
 	done
-	${MKDIR} ${PREFIX}/share/doc/mgp/scripts
+	${MKDIR} ${DOCSDIR}/scripts
 	for i in $(SAMPLE_SCRIPTS); do \
-		${INSTALL_SCRIPT} ${WRKSRC}/contrib/$$i ${PREFIX}/share/doc/mgp/scripts/$$i; \
+		${INSTALL_SCRIPT} ${WRKSRC}/contrib/$$i ${DOCSDIR}/scripts/$$i; \
 	done
 .endif
 
