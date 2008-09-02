@@ -16,13 +16,11 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
-CONFLICTS=	xmlrpc-c-devel-[0-9]*
-
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
 		LIBWWW "Compile with libwww support" off
 
-CONFLICTS=	xmlrpc-epi-0.*
+CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 
 USE_GNOME=	gnometarget
 USE_PERL5=	yes
