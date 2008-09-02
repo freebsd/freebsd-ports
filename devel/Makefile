@@ -181,6 +181,7 @@
     SUBDIR += colorer
     SUBDIR += commoncpp
     SUBDIR += compiz-bcop
+    SUBDIR += configkit
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook

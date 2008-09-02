@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/configkit
+include/configkit.h
+include/configkit_int.h
+include/configkit_src.h
+lib/libconfigkit.a
+lib/libconfigkit_p.a
