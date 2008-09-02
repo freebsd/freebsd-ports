@@ -18093,7 +18093,6 @@ q-graph                         ports/graphics/q-graph
 q15                             ports/games/q15
 q2p                             ports/games/q2p
 q2pro                           ports/games/q2pro
-q3base                          ports/games/q3base
 q3cellshading                   ports/games/q3cellshading
 qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
@@ -20468,6 +20467,7 @@ tkcvs                           ports/devel/tkcvs
 tkdesk                          ports/x11-fm/tkdesk
 tkdiff                          ports/textproc/tkdiff
 tkdnd                           ports/x11-toolkits/tkdnd
+tkdvd                           ports/sysutils/tkdvd
 tkfont                          ports/x11-fonts/tkfont
 tkgate                          ports/cad/tkgate
 tkgeomap                        ports/astro/tkgeomap
