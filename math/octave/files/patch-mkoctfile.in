@@ -1,0 +1,11 @@
+--- mkoctfile.in-orig	2008-08-27 17:46:53.000000000 -0500
++++ mkoctfile.in	2008-08-27 17:47:45.000000000 -0500
+@@ -278,7 +278,7 @@
+     -D*)
+       defs="$defs $1"
+     ;;
+-    -[lLR]* | -Wl,*)
++    -[lLR]* | -pthread | -Wl,*)
+       ldflags="$ldflags $1"
+     ;;
+     -M | --depend)
