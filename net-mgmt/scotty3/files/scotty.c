@@ -2,7 +2,7 @@
 
 #include "tnmInt.h"
 
-static int
+int
 Tcl_AppInit(interp)
 	Tcl_Interp *interp;
 {
