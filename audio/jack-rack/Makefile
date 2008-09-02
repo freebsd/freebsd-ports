@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	jack-rack
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/jack-rack
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A LADSPA effects rack for the JACK audio server
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
