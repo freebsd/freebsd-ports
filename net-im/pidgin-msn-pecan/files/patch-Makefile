@@ -1,11 +1,29 @@
---- _Makefile	2008-08-03 20:08:19.000000000 +0000
-+++ Makefile	2008-08-03 20:08:29.000000000 +0000
-@@ -32,7 +32,7 @@
+--- Makefile.orig	2008-08-29 06:15:22.000000000 +0800
++++ Makefile	2008-09-01 03:46:46.000000000 +0800
+@@ -27,16 +27,16 @@
+ OTHER_WARNINGS=-D_FORTIFY_SOURCE=2 -fstack-protector -g3 -Wdisabled-optimization \
+ 	       -Wendif-labels -Wformat=2 -Wstack-protector -Wswitch
+ 
+-CFLAGS+=-Wall # $(EXTRA_WARNINGS)
++CFLAGS+=-Wall -I/usr/local/include # $(EXTRA_WARNINGS)
+ 
+ override CFLAGS+=-I. -D PACKAGE='"msn-pecan"' -DENABLE_NLS -DHAVE_LIBPURPLE -DPURPLE_DEBUG -D PLUGIN_NAME='msn-pecan'
+ 
  # For glib < 2.6 support (libpurple maniacs)
  FALLBACK_CFLAGS+=-I./fix_purple
  
 -LDFLAGS:=-Wl,--no-undefined
-+LDFLAGS:=-Wl,--no-undefined,-lc
++LDFLAGS:=-Wl,--no-undefined,-lintl
+ 
+-DATA_DIR=/usr/share
++DATA_DIR=/usr/local/share
  
  purpledir=$(DESTDIR)/$(PURPLE_PREFIX)/lib/purple-2
  
+@@ -180,5 +180,5 @@
+ 
+ install_locales: $(foreach e,$(CATALOGS),po/libmsn-pecan-$(e).mo)
+ 	for x in $(CATALOGS); do \
+-	install po/libmsn-pecan-$$x.mo $(DATA_DIR)/locale/$$x/LC_MESSAGES/libmsn-pecan.mo; \
++	install -m 444 po/libmsn-pecan-$$x.mo $(DATA_DIR)/locale/$$x/LC_MESSAGES/libmsn-pecan.mo; \
+ 	done
