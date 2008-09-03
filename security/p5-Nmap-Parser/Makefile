@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jabra@ccs.neu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse nmap scan data with perl
 
 BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \

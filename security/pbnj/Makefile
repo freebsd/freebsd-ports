@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jabra@ccs.neu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suite of tools to monitor changes on a network
 
 BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
