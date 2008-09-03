@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
 		p5-Cairo>=1.000:${PORTSDIR}/graphics/p5-Cairo \
 		p5-DateTime-Set>=0.25:${PORTSDIR}/devel/p5-DateTime-Set \
 		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Primitive>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive \
+		p5-Graphics-Primitive>=0.28:${PORTSDIR}/graphics/p5-Graphics-Primitive \
 		p5-Graphics-Primitive-Driver-Cairo>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
 		p5-Layout-Manager>=0:${PORTSDIR}/graphics/p5-Layout-Manager
 RUN_DEPENDS=	${BUILD_DEPENDS}
