@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.14.r20
-PORTREVISION=	0
+PORTVERSION=	0.94.14.r21
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
@@ -23,9 +22,7 @@ GNU_CONFIGURE=	yes
 INFO=		boa
 MAN8=		boa.8
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	boa.texi boa.html boa.txt boa_banner.png
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
