@@ -1206,6 +1206,7 @@
     SUBDIR += p5-Devel-Declare
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-EvalContext
+    SUBDIR += p5-Devel-GlobalDestruction
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakTrace
