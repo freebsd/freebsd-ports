@@ -1,0 +1,38 @@
+bin/aqemu
+share/applications/aqemu.desktop
+%%NLS%%%%DATADIR%%/aqemu_ru.qm
+%%DATADIR%%/os_icons/alt.png
+%%DATADIR%%/os_icons/arch.png
+%%DATADIR%%/os_icons/asp.png
+%%DATADIR%%/os_icons/centos.png
+%%DATADIR%%/os_icons/debian.png
+%%DATADIR%%/os_icons/fedora.png
+%%DATADIR%%/os_icons/freebsd.png
+%%DATADIR%%/os_icons/gentoo.png
+%%DATADIR%%/os_icons/knoppix.png
+%%DATADIR%%/os_icons/kubuntu.png
+%%DATADIR%%/os_icons/mandriva.png
+%%DATADIR%%/os_icons/netbsd.png
+%%DATADIR%%/os_icons/openbsd.png
+%%DATADIR%%/os_icons/opensolaris.png
+%%DATADIR%%/os_icons/redhat.png
+%%DATADIR%%/os_icons/slackware.png
+%%DATADIR%%/os_icons/solaris.png
+%%DATADIR%%/os_icons/suse.png
+%%DATADIR%%/os_icons/ubuntu.png
+%%DATADIR%%/os_templates/Linux_2_0.aqvmt
+%%DATADIR%%/os_templates/Linux_2_4.aqvmt
+%%DATADIR%%/os_templates/Linux_2_6.aqvmt
+%%DATADIR%%/os_templates/Linux_x86_64.aqvmt
+%%DATADIR%%/os_templates/Windows_2000.aqvmt
+%%DATADIR%%/os_templates/Windows_95.aqvmt
+%%DATADIR%%/os_templates/Windows_98.aqvmt
+%%DATADIR%%/os_templates/Windows_Vista.aqvmt
+%%DATADIR%%/os_templates/Windows_XP.aqvmt
+%%DATADIR%%/os_templates/Windows_x64.aqvmt
+share/pixmaps/aqemu_48x48.png
+share/pixmaps/aqemu_64x64.png
+@dirrm %%DATADIR%%/os_templates
+@dirrm %%DATADIR%%/os_icons
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
