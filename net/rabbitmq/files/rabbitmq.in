@@ -17,19 +17,20 @@
 # Set some defaults
 rabbitmq_enable=${rabbitmq_enable:-"NO"}
 
+prefix=%%PREFIX%%
 name=rabbitmq
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 
 rabbitmq_start()
 {
-	rabbitmq-server -detached
+	${prefix}/sbin/rabbitmq-server -detached
 	echo "RabbitMQ started"
 }
 
 rabbitmq_stop()
 {
-	rabbitmqctl stop
+	${prefix}/sbin/rabbitmqctl stop
 }
 
 rcvar=`set_rcvar`
