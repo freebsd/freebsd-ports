@@ -14,6 +14,9 @@ MASTER_SITES=	SF/geomview
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
+NOT_FOR_ARCHS=	amd64
+NOT_FOR_ARCHS_REASON=	Segfaults on amd64
+
 USE_MOTIF=	yes
 USE_GL=		glut
 
