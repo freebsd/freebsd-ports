@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	hello
 
-MAINTAINER=	shipley@dis.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for saying hello to the world and reading email
 
 USE_PERL5_BUILD=	YES

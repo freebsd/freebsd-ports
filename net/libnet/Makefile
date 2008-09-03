@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 PKGNAMESUFFIX=	11
 
-MAINTAINER=	shipley@dis.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 GNU_CONFIGURE=	yes
