@@ -11,7 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	everygui
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic GUI for an OS command
 
 USE_PYTHON=	yes

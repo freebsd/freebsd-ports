@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://invisible-island.net/cdk/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 USE_GMAKE=	yes

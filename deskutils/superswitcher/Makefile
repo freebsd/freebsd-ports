@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	browserbookapp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alt-Tab replacement
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	cdk-perl-20031210
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
 LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk

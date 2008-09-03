@@ -15,7 +15,7 @@ MASTER_SITES=	# Empty
 DISTFILES=	# Empty
 EXTRACT_ONLY=	# Empty
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Gnome Metacity themes
 
 RUN_DEPENDS=	${LOCALBASE}/share/themes/microgui/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-microgui

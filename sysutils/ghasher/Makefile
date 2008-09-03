@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://asgaard.homelinux.org/code/ghasher/
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to MD5 sum
 
 USE_GNOME=	gtk20 libglade2
