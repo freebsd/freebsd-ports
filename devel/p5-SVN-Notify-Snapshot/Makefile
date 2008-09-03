@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify-Snapshot
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,16 +15,14 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Take snapshots from Subversion activity
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
 
 OPTIONS=	CONFIG "Enable YAML syntax for post-commit hook" Off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CONFIG)
-_BUILD_DEPENDS=	${SITE_PERL}/SVN/Notify/Config.pm:${PORTSDIR}/devel/p5-SVN-Notify-Config
-BUILD_DEPENDS+=	${_BUILD_DEPENDS}
-RUN_DEPENDS+=	${_BUILD_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/SVN/Notify/Config.pm:${PORTSDIR}/devel/p5-SVN-Notify-Config
 .endif
 
 PERL_MODBUILD=	yes
