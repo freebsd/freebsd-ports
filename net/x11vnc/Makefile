@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=libvncserver
 
-MAINTAINER=	lorenl@north-winds.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
