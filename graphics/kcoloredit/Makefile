@@ -1,0 +1,28 @@
+# New ports collection makefile for:	kcoloredit
+# Date created:		2008-09-01
+# Whom:			Max Brazhnikov <makc@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kcoloredit
+PORTVERSION=	${APP_VER}.${EXTRA_VER}
+CATEGORIES=	graphics kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
+DIST_SUBDIR=	KDE/extragear
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Palette files editor for KDE
+
+USE_BZIP2=	yes
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib uic_build moc_build
+USE_CMAKE=	yes
+
+APP_VER=	1.9.0
+EXTRA_VER=	4.1.1
+
+.include <bsd.port.mk>

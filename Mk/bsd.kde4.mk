@@ -49,7 +49,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.1.0
+KDE4_VERSION=		4.1.1
 
 #
 # KDE4 is installed into its own prefix to not conflict with KDE3

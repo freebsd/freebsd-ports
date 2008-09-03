@@ -485,11 +485,13 @@ share/doc/HTML/en/kteatime/index.docbook
 share/doc/HTML/en/kweather/common
 share/doc/HTML/en/kweather/index.cache.bz2
 share/doc/HTML/en/kweather/index.docbook
+share/icons/hicolor/128x128/apps/kteatime.png
 share/icons/hicolor/16x16/apps/amor.png
 share/icons/hicolor/16x16/apps/kteatime.png
 share/icons/hicolor/16x16/apps/ktux.png
 share/icons/hicolor/16x16/apps/kweather.png
 share/icons/hicolor/22x22/apps/amor.png
+share/icons/hicolor/22x22/apps/kteatime.png
 share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/32x32/apps/kteatime.png
 share/icons/hicolor/32x32/apps/ktux.png
@@ -497,6 +499,8 @@ share/icons/hicolor/32x32/apps/kweather.png
 share/icons/hicolor/48x48/apps/amor.png
 share/icons/hicolor/48x48/apps/kteatime.png
 share/icons/hicolor/48x48/apps/kweather.png
+share/icons/hicolor/64x64/apps/kteatime.png
+share/icons/hicolor/scalable/apps/kteatime.svgz
 share/kde4/services/ScreenSavers/ktux.desktop
 share/kde4/services/kcmweather.desktop
 share/kde4/services/kcmweatherservice.desktop
@@ -504,6 +508,10 @@ share/kde4/services/kweatherservice.desktop
 @dirrmtry share/kde4/services/ScreenSavers
 @dirrmtry share/kde4/services
 @dirrmtry share/kde4
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps
@@ -512,6 +520,8 @@ share/kde4/services/kweatherservice.desktop
 @dirrmtry share/icons/hicolor/22x22
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm share/doc/HTML/en/kweather

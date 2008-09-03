@@ -297,6 +297,7 @@ share/locale/ja/LC_MESSAGES/kcmkded.mo
 share/locale/ja/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ja/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ja/LC_MESSAGES/kcmkeys.mo
+share/locale/ja/LC_MESSAGES/kcmkgamma.mo
 share/locale/ja/LC_MESSAGES/kcmkio.mo
 share/locale/ja/LC_MESSAGES/kcmkonq.mo
 share/locale/ja/LC_MESSAGES/kcmkonqhtml.mo
@@ -373,7 +374,6 @@ share/locale/ja/LC_MESSAGES/kfloppy.mo
 share/locale/ja/LC_MESSAGES/kfmclient.mo
 share/locale/ja/LC_MESSAGES/kfontinst.mo
 share/locale/ja/LC_MESSAGES/kfourinline.mo
-share/locale/ja/LC_MESSAGES/kgamma.mo
 share/locale/ja/LC_MESSAGES/kgeography.mo
 share/locale/ja/LC_MESSAGES/kget.mo
 share/locale/ja/LC_MESSAGES/kgoldrunner.mo
@@ -610,12 +610,12 @@ share/locale/ja/LC_MESSAGES/okular_tiff.mo
 share/locale/ja/LC_MESSAGES/okular_xps.mo
 share/locale/ja/LC_MESSAGES/parley.mo
 share/locale/ja/LC_MESSAGES/phonon-xine.mo
+share/locale/ja/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ja/LC_MESSAGES/phonon_kde.mo
 share/locale/ja/LC_MESSAGES/plasma.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/ja/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_desktop.mo
@@ -628,7 +628,6 @@ share/locale/ja/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/ja/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -645,12 +644,10 @@ share/locale/ja/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/ja/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/ja/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ja/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ja/LC_MESSAGES/printer-applet.mo
 share/locale/ja/LC_MESSAGES/processcore.mo
 share/locale/ja/LC_MESSAGES/processui.mo
-share/locale/ja/LC_MESSAGES/quanta.mo
 share/locale/ja/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ja/LC_MESSAGES/solid-hardware.mo
 share/locale/ja/LC_MESSAGES/solid-network.mo
@@ -670,6 +667,9 @@ share/locale/ja/LC_MESSAGES/useraccount.mo
 share/locale/ja/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ja/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/ja/entry.desktop
+@dirrm share/locale/ja/LC_SCRIPTS/kgeography
+@dirrm share/locale/ja/LC_SCRIPTS/kdelibs4
+@dirrm share/locale/ja/LC_SCRIPTS
 @dirrm share/doc/HTML/ja/okular
 @dirrm share/doc/HTML/ja/ksquares
 @dirrm share/doc/HTML/ja/kshisen
@@ -730,6 +730,3 @@ share/locale/ja/entry.desktop
 @dirrm share/doc/HTML/ja/kcontrol/clock
 @dirrm share/doc/HTML/ja/kcontrol/bell
 @dirrm share/doc/HTML/ja/kcontrol
-@dirrm share/locale/ja/LC_SCRIPTS/kgeography
-@dirrm share/locale/ja/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/ja/LC_SCRIPTS

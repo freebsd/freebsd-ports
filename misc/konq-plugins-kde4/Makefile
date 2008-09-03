@@ -21,6 +21,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib
 USE_CMAKE=	yes
 
-EXTRA_VER=	4.1.0
+EXTRA_VER=	4.1.1
 
 .include <bsd.port.mk>

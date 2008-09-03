@@ -341,6 +341,12 @@ share/doc/HTML/de/kbattleship/index.docbook
 share/doc/HTML/de/kblackbox/common
 share/doc/HTML/de/kblackbox/index.cache.bz2
 share/doc/HTML/de/kblackbox/index.docbook
+share/doc/HTML/de/kbounce/common
+share/doc/HTML/de/kbounce/index.cache.bz2
+share/doc/HTML/de/kbounce/index.docbook
+share/doc/HTML/de/kbounce/jezball_corridor1.png
+share/doc/HTML/de/kbounce/jezball_corridor2.png
+share/doc/HTML/de/kbounce/jezball_newWall.png
 share/doc/HTML/de/kbruch/checked.png
 share/doc/HTML/de/kbruch/common
 share/doc/HTML/de/kbruch/compare.png
@@ -492,6 +498,9 @@ share/doc/HTML/de/kcontrol/panelappearance/index.docbook
 share/doc/HTML/de/kcontrol/passwords/common
 share/doc/HTML/de/kcontrol/passwords/index.cache.bz2
 share/doc/HTML/de/kcontrol/passwords/index.docbook
+share/doc/HTML/de/kcontrol/paths/common
+share/doc/HTML/de/kcontrol/paths/index.cache.bz2
+share/doc/HTML/de/kcontrol/paths/index.docbook
 share/doc/HTML/de/kcontrol/performance/common
 share/doc/HTML/de/kcontrol/performance/index.cache.bz2
 share/doc/HTML/de/kcontrol/performance/index.docbook
@@ -1595,6 +1604,7 @@ share/locale/de/LC_MESSAGES/kcmkded.mo
 share/locale/de/LC_MESSAGES/kcmkdnssd.mo
 share/locale/de/LC_MESSAGES/kcmkeyboard.mo
 share/locale/de/LC_MESSAGES/kcmkeys.mo
+share/locale/de/LC_MESSAGES/kcmkgamma.mo
 share/locale/de/LC_MESSAGES/kcmkio.mo
 share/locale/de/LC_MESSAGES/kcmkonq.mo
 share/locale/de/LC_MESSAGES/kcmkonqhtml.mo
@@ -1672,7 +1682,6 @@ share/locale/de/LC_MESSAGES/kfloppy.mo
 share/locale/de/LC_MESSAGES/kfmclient.mo
 share/locale/de/LC_MESSAGES/kfontinst.mo
 share/locale/de/LC_MESSAGES/kfourinline.mo
-share/locale/de/LC_MESSAGES/kgamma.mo
 share/locale/de/LC_MESSAGES/kgeography.mo
 share/locale/de/LC_MESSAGES/kget.mo
 share/locale/de/LC_MESSAGES/kgoldrunner.mo
@@ -1915,12 +1924,12 @@ share/locale/de/LC_MESSAGES/okular_tiff.mo
 share/locale/de/LC_MESSAGES/okular_xps.mo
 share/locale/de/LC_MESSAGES/parley.mo
 share/locale/de/LC_MESSAGES/phonon-xine.mo
+share/locale/de/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/de/LC_MESSAGES/phonon_kde.mo
 share/locale/de/LC_MESSAGES/plasma.mo
 share/locale/de/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/de/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/de/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/de/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/de/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/de/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/de/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1933,7 +1942,7 @@ share/locale/de/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/de/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/de/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/de/LC_MESSAGES/plasma_applet_kalzium.mo
+share/locale/de/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/de/LC_MESSAGES/plasma_applet_knewsticker.mo
 share/locale/de/LC_MESSAGES/plasma_applet_kolourpicker.mo
@@ -1949,14 +1958,12 @@ share/locale/de/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/de/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/de/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/de/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/de/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/de/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/de/LC_MESSAGES/plasmapkg.mo
 share/locale/de/LC_MESSAGES/plasmoidviewer.mo
 share/locale/de/LC_MESSAGES/printer-applet.mo
 share/locale/de/LC_MESSAGES/processcore.mo
 share/locale/de/LC_MESSAGES/processui.mo
-share/locale/de/LC_MESSAGES/quanta.mo
 share/locale/de/LC_MESSAGES/solid-bluetooth.mo
 share/locale/de/LC_MESSAGES/solid-hardware.mo
 share/locale/de/LC_MESSAGES/solid-network.mo
@@ -2102,6 +2109,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kcontrol/proxy
 @dirrm share/doc/HTML/de/kcontrol/powerctrl
 @dirrm share/doc/HTML/de/kcontrol/performance
+@dirrm share/doc/HTML/de/kcontrol/paths
 @dirrm share/doc/HTML/de/kcontrol/passwords
 @dirrm share/doc/HTML/de/kcontrol/panelappearance
 @dirrm share/doc/HTML/de/kcontrol/panel
@@ -2150,6 +2158,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kcachegrind
 @dirrm share/doc/HTML/de/kbugbuster
 @dirrm share/doc/HTML/de/kbruch
+@dirrm share/doc/HTML/de/kbounce
 @dirrm share/doc/HTML/de/kblackbox
 @dirrm share/doc/HTML/de/kbattleship
 @dirrm share/doc/HTML/de/katomic

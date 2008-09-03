@@ -110,6 +110,7 @@ share/locale/pl/LC_MESSAGES/kalgebra.mo
 share/locale/pl/LC_MESSAGES/kalzium.mo
 share/locale/pl/LC_MESSAGES/kanagram.mo
 share/locale/pl/LC_MESSAGES/kappfinder.mo
+share/locale/pl/LC_MESSAGES/kapptemplate.mo
 share/locale/pl/LC_MESSAGES/kate.mo
 share/locale/pl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/pl/LC_MESSAGES/katefilebrowserplugin.mo
@@ -182,6 +183,7 @@ share/locale/pl/LC_MESSAGES/kcmkded.mo
 share/locale/pl/LC_MESSAGES/kcmkdnssd.mo
 share/locale/pl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pl/LC_MESSAGES/kcmkeys.mo
+share/locale/pl/LC_MESSAGES/kcmkgamma.mo
 share/locale/pl/LC_MESSAGES/kcmkio.mo
 share/locale/pl/LC_MESSAGES/kcmkonq.mo
 share/locale/pl/LC_MESSAGES/kcmkonqhtml.mo
@@ -259,7 +261,6 @@ share/locale/pl/LC_MESSAGES/kfloppy.mo
 share/locale/pl/LC_MESSAGES/kfmclient.mo
 share/locale/pl/LC_MESSAGES/kfontinst.mo
 share/locale/pl/LC_MESSAGES/kfourinline.mo
-share/locale/pl/LC_MESSAGES/kgamma.mo
 share/locale/pl/LC_MESSAGES/kgeography.mo
 share/locale/pl/LC_MESSAGES/kget.mo
 share/locale/pl/LC_MESSAGES/kgoldrunner.mo
@@ -383,6 +384,7 @@ share/locale/pl/LC_MESSAGES/kruler.mo
 share/locale/pl/LC_MESSAGES/krunner.mo
 share/locale/pl/LC_MESSAGES/krunner_bookmarksrunner.mo
 share/locale/pl/LC_MESSAGES/krunner_calculatorrunner.mo
+share/locale/pl/LC_MESSAGES/krunner_contacts.mo
 share/locale/pl/LC_MESSAGES/krunner_converterrunner.mo
 share/locale/pl/LC_MESSAGES/krunner_locationsrunner.mo
 share/locale/pl/LC_MESSAGES/krunner_sessions.mo
@@ -498,10 +500,12 @@ share/locale/pl/LC_MESSAGES/okular_tiff.mo
 share/locale/pl/LC_MESSAGES/okular_xps.mo
 share/locale/pl/LC_MESSAGES/parley.mo
 share/locale/pl/LC_MESSAGES/phonon-xine.mo
+share/locale/pl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/pl/LC_MESSAGES/phonon_kde.mo
 share/locale/pl/LC_MESSAGES/plasma.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_desktop.mo
@@ -514,7 +518,6 @@ share/locale/pl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/pl/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -522,6 +525,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_kolourpicker.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -530,14 +534,12 @@ share/locale/pl/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/pl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/pl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/pl/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/pl/LC_MESSAGES/plasmapkg.mo
 share/locale/pl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/pl/LC_MESSAGES/printer-applet.mo
 share/locale/pl/LC_MESSAGES/processcore.mo
 share/locale/pl/LC_MESSAGES/processui.mo
-share/locale/pl/LC_MESSAGES/quanta.mo
 share/locale/pl/LC_MESSAGES/solid-bluetooth.mo
 share/locale/pl/LC_MESSAGES/solid-hardware.mo
 share/locale/pl/LC_MESSAGES/solid-network.mo
@@ -557,6 +559,8 @@ share/locale/pl/LC_MESSAGES/useraccount.mo
 share/locale/pl/LC_SCRIPTS/kgeography/general.pmap
 share/locale/pl/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/pl/entry.desktop
+@dirrm share/locale/pl/LC_SCRIPTS/kgeography
+@dirrm share/locale/pl/LC_SCRIPTS
 @dirrm share/doc/HTML/pl/kwordquiz
 @dirrm share/doc/HTML/pl/kwallet
 @dirrm share/doc/HTML/pl/ktuberling
@@ -572,5 +576,3 @@ share/locale/pl/entry.desktop
 @dirrm share/apps/kvtml/pl
 @dirrm share/apps/kvtml
 @dirrm share/apps/khangman
-@dirrm share/locale/pl/LC_SCRIPTS/kgeography/
-@dirrm share/locale/pl/LC_SCRIPTS

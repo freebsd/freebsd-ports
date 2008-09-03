@@ -125,6 +125,7 @@ share/locale/tr/LC_MESSAGES/kcmkded.mo
 share/locale/tr/LC_MESSAGES/kcmkdnssd.mo
 share/locale/tr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/tr/LC_MESSAGES/kcmkeys.mo
+share/locale/tr/LC_MESSAGES/kcmkgamma.mo
 share/locale/tr/LC_MESSAGES/kcmkio.mo
 share/locale/tr/LC_MESSAGES/kcmkonq.mo
 share/locale/tr/LC_MESSAGES/kcmkonqhtml.mo
@@ -202,7 +203,6 @@ share/locale/tr/LC_MESSAGES/kfloppy.mo
 share/locale/tr/LC_MESSAGES/kfmclient.mo
 share/locale/tr/LC_MESSAGES/kfontinst.mo
 share/locale/tr/LC_MESSAGES/kfourinline.mo
-share/locale/tr/LC_MESSAGES/kgamma.mo
 share/locale/tr/LC_MESSAGES/kgeography.mo
 share/locale/tr/LC_MESSAGES/kget.mo
 share/locale/tr/LC_MESSAGES/kgoldrunner.mo
@@ -451,7 +451,6 @@ share/locale/tr/LC_MESSAGES/plasma.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_desktop.mo
@@ -464,7 +463,6 @@ share/locale/tr/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -481,14 +479,12 @@ share/locale/tr/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/tr/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/tr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/tr/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/tr/LC_MESSAGES/plasmapkg.mo
 share/locale/tr/LC_MESSAGES/plasmoidviewer.mo
 share/locale/tr/LC_MESSAGES/printer-applet.mo
 share/locale/tr/LC_MESSAGES/processcore.mo
 share/locale/tr/LC_MESSAGES/processui.mo
-share/locale/tr/LC_MESSAGES/quanta.mo
 share/locale/tr/LC_MESSAGES/solid-bluetooth.mo
 share/locale/tr/LC_MESSAGES/solid-hardware.mo
 share/locale/tr/LC_MESSAGES/solid-network.mo

@@ -346,9 +346,12 @@
     SUBDIR += kallery
     SUBDIR += kamera
     SUBDIR += kbarcode
+    SUBDIR += kcoloredit
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
     SUBDIR += kdegraphics4
+    SUBDIR += kgraphviewer
+    SUBDIR += kiconedit
     SUBDIR += kipi-plugins
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
@@ -740,6 +743,7 @@
     SUBDIR += show
     SUBDIR += showimg
     SUBDIR += simage
+    SUBDIR += skanlite
     SUBDIR += skencil
     SUBDIR += sketch
     SUBDIR += sng

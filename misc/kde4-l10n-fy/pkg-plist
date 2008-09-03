@@ -60,6 +60,7 @@ share/locale/fy/LC_MESSAGES/kcmkded.mo
 share/locale/fy/LC_MESSAGES/kcmkdnssd.mo
 share/locale/fy/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fy/LC_MESSAGES/kcmkeys.mo
+share/locale/fy/LC_MESSAGES/kcmkgamma.mo
 share/locale/fy/LC_MESSAGES/kcmkio.mo
 share/locale/fy/LC_MESSAGES/kcmkonq.mo
 share/locale/fy/LC_MESSAGES/kcmkonqhtml.mo
@@ -109,7 +110,6 @@ share/locale/fy/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/fy/LC_MESSAGES/kfindpart.mo
 share/locale/fy/LC_MESSAGES/kfmclient.mo
 share/locale/fy/LC_MESSAGES/kfontinst.mo
-share/locale/fy/LC_MESSAGES/kgamma.mo
 share/locale/fy/LC_MESSAGES/kgreet_classic.mo
 share/locale/fy/LC_MESSAGES/kgreet_winbind.mo
 share/locale/fy/LC_MESSAGES/khelpcenter.mo

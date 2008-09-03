@@ -1,0 +1,6 @@
+KGraphViewer is a GraphViz DOT graph viewer for KDE. The GraphViz
+programs are free-software layout engines for graphs. KGraphViewer
+displays the graphs in a modern, user-friendly GUI with all the
+power of a well integrated KDE application.
+
+WWW:	http://extragear.kde.org/apps/kgraphviewer/

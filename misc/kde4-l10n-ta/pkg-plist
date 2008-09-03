@@ -87,6 +87,7 @@ share/locale/ta/LC_MESSAGES/kcmkded.mo
 share/locale/ta/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ta/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ta/LC_MESSAGES/kcmkeys.mo
+share/locale/ta/LC_MESSAGES/kcmkgamma.mo
 share/locale/ta/LC_MESSAGES/kcmkio.mo
 share/locale/ta/LC_MESSAGES/kcmkonq.mo
 share/locale/ta/LC_MESSAGES/kcmkonqhtml.mo
@@ -160,7 +161,6 @@ share/locale/ta/LC_MESSAGES/kfloppy.mo
 share/locale/ta/LC_MESSAGES/kfmclient.mo
 share/locale/ta/LC_MESSAGES/kfontinst.mo
 share/locale/ta/LC_MESSAGES/kfourinline.mo
-share/locale/ta/LC_MESSAGES/kgamma.mo
 share/locale/ta/LC_MESSAGES/kgeography.mo
 share/locale/ta/LC_MESSAGES/kget.mo
 share/locale/ta/LC_MESSAGES/kgoldrunner.mo
@@ -361,7 +361,6 @@ share/locale/ta/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ta/LC_MESSAGES/printer-applet.mo
 share/locale/ta/LC_MESSAGES/processcore.mo
 share/locale/ta/LC_MESSAGES/processui.mo
-share/locale/ta/LC_MESSAGES/quanta.mo
 share/locale/ta/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ta/LC_MESSAGES/solid-hardware.mo
 share/locale/ta/LC_MESSAGES/solid-network.mo

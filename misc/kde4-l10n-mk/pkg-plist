@@ -84,6 +84,7 @@ share/locale/mk/LC_MESSAGES/kcmkded.mo
 share/locale/mk/LC_MESSAGES/kcmkdnssd.mo
 share/locale/mk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/mk/LC_MESSAGES/kcmkeys.mo
+share/locale/mk/LC_MESSAGES/kcmkgamma.mo
 share/locale/mk/LC_MESSAGES/kcmkio.mo
 share/locale/mk/LC_MESSAGES/kcmkonq.mo
 share/locale/mk/LC_MESSAGES/kcmkonqhtml.mo
@@ -158,7 +159,6 @@ share/locale/mk/LC_MESSAGES/kfloppy.mo
 share/locale/mk/LC_MESSAGES/kfmclient.mo
 share/locale/mk/LC_MESSAGES/kfontinst.mo
 share/locale/mk/LC_MESSAGES/kfourinline.mo
-share/locale/mk/LC_MESSAGES/kgamma.mo
 share/locale/mk/LC_MESSAGES/kgeography.mo
 share/locale/mk/LC_MESSAGES/kget.mo
 share/locale/mk/LC_MESSAGES/kgoldrunner.mo

@@ -106,6 +106,7 @@ share/locale/lv/LC_MESSAGES/kcmkded.mo
 share/locale/lv/LC_MESSAGES/kcmkdnssd.mo
 share/locale/lv/LC_MESSAGES/kcmkeyboard.mo
 share/locale/lv/LC_MESSAGES/kcmkeys.mo
+share/locale/lv/LC_MESSAGES/kcmkgamma.mo
 share/locale/lv/LC_MESSAGES/kcmkio.mo
 share/locale/lv/LC_MESSAGES/kcmkonq.mo
 share/locale/lv/LC_MESSAGES/kcmkonqhtml.mo
@@ -183,7 +184,6 @@ share/locale/lv/LC_MESSAGES/kfloppy.mo
 share/locale/lv/LC_MESSAGES/kfmclient.mo
 share/locale/lv/LC_MESSAGES/kfontinst.mo
 share/locale/lv/LC_MESSAGES/kfourinline.mo
-share/locale/lv/LC_MESSAGES/kgamma.mo
 share/locale/lv/LC_MESSAGES/kget.mo
 share/locale/lv/LC_MESSAGES/kgpg.mo
 share/locale/lv/LC_MESSAGES/kgreet_classic.mo
@@ -258,6 +258,7 @@ share/locale/lv/LC_MESSAGES/knode.mo
 share/locale/lv/LC_MESSAGES/knotes.mo
 share/locale/lv/LC_MESSAGES/knotify4.mo
 share/locale/lv/LC_MESSAGES/kode.mo
+share/locale/lv/LC_MESSAGES/kolf.mo
 share/locale/lv/LC_MESSAGES/kollision.mo
 share/locale/lv/LC_MESSAGES/kolourpaint.mo
 share/locale/lv/LC_MESSAGES/kompare.mo
@@ -375,6 +376,7 @@ share/locale/lv/LC_MESSAGES/libkpimutils.mo
 share/locale/lv/LC_MESSAGES/libkresources.mo
 share/locale/lv/LC_MESSAGES/libksane.mo
 share/locale/lv/LC_MESSAGES/libkscreensaver.mo
+share/locale/lv/LC_MESSAGES/libksieve.mo
 share/locale/lv/LC_MESSAGES/libktnef.mo
 share/locale/lv/LC_MESSAGES/libkworkspace.mo
 share/locale/lv/LC_MESSAGES/libkxmlrpcclient.mo
@@ -388,6 +390,7 @@ share/locale/lv/LC_MESSAGES/lskat.mo
 share/locale/lv/LC_MESSAGES/marble.mo
 share/locale/lv/LC_MESSAGES/nepomuk.mo
 share/locale/lv/LC_MESSAGES/nsplugin.mo
+share/locale/lv/LC_MESSAGES/okteta.mo
 share/locale/lv/LC_MESSAGES/oktetapart.mo
 share/locale/lv/LC_MESSAGES/okular.mo
 share/locale/lv/LC_MESSAGES/okular_chm.mo
@@ -423,7 +426,6 @@ share/locale/lv/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/lv/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -440,14 +442,12 @@ share/locale/lv/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/lv/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/lv/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/lv/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/lv/LC_MESSAGES/plasmapkg.mo
 share/locale/lv/LC_MESSAGES/plasmoidviewer.mo
 share/locale/lv/LC_MESSAGES/printer-applet.mo
 share/locale/lv/LC_MESSAGES/processcore.mo
 share/locale/lv/LC_MESSAGES/processui.mo
-share/locale/lv/LC_MESSAGES/quanta.mo
 share/locale/lv/LC_MESSAGES/solid-bluetooth.mo
 share/locale/lv/LC_MESSAGES/solid-hardware.mo
 share/locale/lv/LC_MESSAGES/solid-network.mo
@@ -455,6 +455,7 @@ share/locale/lv/LC_MESSAGES/solid-powermanagement.mo
 share/locale/lv/LC_MESSAGES/solidcontrol.mo
 share/locale/lv/LC_MESSAGES/soliduiserver.mo
 share/locale/lv/LC_MESSAGES/spy.mo
+share/locale/lv/LC_MESSAGES/step.mo
 share/locale/lv/LC_MESSAGES/strigila_diff.mo
 share/locale/lv/LC_MESSAGES/superkaramba.mo
 share/locale/lv/LC_MESSAGES/svgpart.mo

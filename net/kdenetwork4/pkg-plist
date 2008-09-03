@@ -1310,7 +1310,6 @@ share/kde4/services/kcmsambaconf.desktop
 share/kde4/services/kopete_jabber.desktop
 share/kde4/services/xmpp.protocol
 share/kde4/services/kopete_groupwise.desktop
-share/kde4/services/kconfiguredialog
 share/kde4/services/kconfiguredialog/kopete_otr_config.desktop
 share/kde4/services/kopete_otr.desktop
 share/kde4/services/kconfiguredialog/kopete_addbookmarks_config.desktop

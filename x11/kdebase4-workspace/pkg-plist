@@ -762,6 +762,9 @@ share/doc/HTML/en/kcontrol/kcmdisplay/index.docbook
 share/doc/HTML/en/kcontrol/kcmstyle/common
 share/doc/HTML/en/kcontrol/kcmstyle/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmstyle/index.docbook
+share/doc/HTML/en/kcontrol/keyboard/common
+share/doc/HTML/en/kcontrol/keyboard/index.cache.bz2
+share/doc/HTML/en/kcontrol/keyboard/index.docbook
 share/doc/HTML/en/kcontrol/keys/common
 share/doc/HTML/en/kcontrol/keys/index.cache.bz2
 share/doc/HTML/en/kcontrol/keys/index.docbook
@@ -1966,6 +1969,7 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrm share/wallpapers/Blue_Curl
 @dirrmtry share/wallpapers
 @dirrmtry share/sounds
+@dirrmtry share/pixmaps
 @dirrmtry share/kde4/servicetypes
 @dirrmtry share/kde4/services/solidbackends
 @dirrmtry share/kde4/services/kwin
@@ -2028,6 +2032,7 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrmtry share/doc/HTML/en/kcontrol/screensaver
 @dirrmtry share/doc/HTML/en/kcontrol/kwindecoration
 @dirrmtry share/doc/HTML/en/kcontrol/keys
+@dirrmtry share/doc/HTML/en/kcontrol/keyboard
 @dirrmtry share/doc/HTML/en/kcontrol/kcmstyle
 @dirrmtry share/doc/HTML/en/kcontrol/kcmdisplay
 @dirrmtry share/doc/HTML/en/kcontrol/kcmaccess
@@ -2117,7 +2122,6 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrm share/apps/kdm/pics/users
 @dirrm share/apps/kdm/pics
 @dirrm share/apps/kdm/patterns
-@dirrm share/apps/kdm/faces
 @dirrm share/apps/kdm
 @dirrm share/apps/kdisplay/app-defaults
 @dirrm share/apps/kdisplay
