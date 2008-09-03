@@ -19,6 +19,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		mxmlc:${PORTSDIR}/devel/flex-sdk
 
 RESTRICTED=	Redistribution is not allowed
+CONFLICTS=	flex-sdk-3.*
 
 USE_ZIP=	YES
 USE_JAVA=	YES
