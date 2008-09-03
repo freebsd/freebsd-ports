@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	estith.freebsd.ports@thelunarempire.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for handling ESRI GIS Shapefiles
 
 PERL_CONFIGURE=	yes
