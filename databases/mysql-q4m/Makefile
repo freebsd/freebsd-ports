@@ -7,6 +7,7 @@
 
 PORTNAME=	q4m
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.31tools.com/dist/
 PKGNAMEPREFIX=	mysql${MYSQL_VER}-
@@ -28,23 +29,33 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/mysql/plugin" \
 		--with-mysql="$$(cd ${PORTSDIR}/databases/mysql${MYSQL_VER}-server; ${MAKE} -V WRKSRC)"
 
+COPYTREE_AUTO=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+					2>&1) && \
+					${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+					${FIND} $$1 -type d -exec chmod 755 {} \; && \
+					${FIND} $$1 -type f \! -perm +100 -exec chmod ${SHAREMODE} {} \; && \
+					${FIND} $$1 -type f -perm +100 -exec ${CHOWN} ${BINOWN}:${BINGRP} {} \; && \
+					${FIND} $$1 -type f -perm +100 -exec chmod ${BINMODE} {} \;' --
+
+post-extract:
+	${CP} -p ${WRKSRC}/support-files/install.sql ${WRKSRC}/examples/
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS ChangeLog README doc
-PORTEXAMPLES=	examples support-files
+PORTEXAMPLES=	crawler install.sql
 
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
-	cd ${INSTALL_WRKSRC}; ${COPYTREE_SHARE} ${f} ${DOCSDIR}
+	cd ${WRKSRC}; ${COPYTREE_SHARE} ${f} ${DOCSDIR}
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	cd ${INSTALL_WRKSRC}; ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples; ${COPYTREE_AUTO} ${f} ${EXAMPLESDIR}
 .endfor
-	${RM} ${EXAMPLESDIR}/support-files/q4m-forward
 .endif
 
 test:
-	cd ${BUILD_WRKSRC}; ${PERL} run_tests.pl
+	cd ${WRKSRC}; ${PERL} run_tests.pl
 
 .include <bsd.port.mk>
