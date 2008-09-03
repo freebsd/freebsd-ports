@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	espen@tagestad.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable "magic dot" notation in CGI::Application-derived applications
 
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \

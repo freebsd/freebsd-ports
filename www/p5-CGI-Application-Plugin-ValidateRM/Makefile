@@ -10,7 +10,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	espen@tagestad.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Help validate forms with the CGI::Application framework
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
