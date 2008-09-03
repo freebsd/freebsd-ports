@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.worlddesign.com/Content/rd/mta/spampd/
 
-MAINTAINER=	christian.schade@interface-systems.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
