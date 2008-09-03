@@ -48,6 +48,11 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+post-install:
+	@${ECHO} If you are upgrading from a previous version of fwbuilder,
+	@${ECHO} please make sure to backup your fwbuilder database files
+	@${ECHO} prior to invoking fwbuilder for the first time.
+
 .if defined(NOPORTDOCS)
 BROKEN=		NOPORTDOCS is incomplete in this port
 .endif
