@@ -113,10 +113,6 @@ OPTIONS=	OPTIMIZATION "Build with optimizations" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800032
-BROKEN=		does not compile
-.endif
-
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
 .ifdef WITH_OPTIMIZATION
