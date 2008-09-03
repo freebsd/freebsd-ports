@@ -48,6 +48,8 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs11.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs12.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs13.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs14.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs15.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/implicit_plot.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/orthopoly1.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/plotdf1.gif
@@ -178,6 +180,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_90.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_91.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_92.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_93.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_ovr.html
@@ -318,6 +321,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_algorithm.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_linear_algebra.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/README
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/amatrix.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/amatrix.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/amatrix.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/rtest_amatrix.mac
@@ -387,6 +391,8 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/tests/testsuite.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib/distrib.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib/numdistrib.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib/rtest_distrib.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/physical_constants.mac
@@ -497,8 +503,10 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ggf.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graph2d.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/cgraphs.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/connectivity.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/create_graph.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/demoucron.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/dijkstra.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/draw_graph.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph6.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph_core.lisp
@@ -512,6 +520,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/spring_embedding.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/impdiff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/implicit_plot.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/integer_sequence.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/rtest_levin.mac
@@ -527,10 +536,10 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maxima-server.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/CtMathML.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/PrMathML.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/load-mathml.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/mathml-maxima.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/mathml.readme
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/mathmldisplay.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/maximaMathML/maximaMathML.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/mcclim/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/mcclim/formula.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/mcclim/listeneroutput.png
@@ -570,6 +579,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/pdiff-doc.pdf
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/pdiff-doc.tex
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/pdiff.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/pdiff/rtest_pdiff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/plsquares.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/powers.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/prim/prim-ex.mac
@@ -633,6 +643,8 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_lsquares.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_opproperties.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtestdefstruct.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_sequence.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_topoly.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/aliases.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/arag_test.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/sarag/constants.mac
@@ -672,6 +684,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/simplex/minimize_sx.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/simplex/simplex.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/simplex/simplex_algorithm.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rat_ineq.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/rtest_simplify_sum.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/rtest_solve_rec.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/simplify_sum.mac
@@ -949,6 +962,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/linearalgebra/test-lu.mac
 %%DATADIR%%/%%PORTVERSION%%/share/linearalgebra/test-matrixexp.mac
 %%DATADIR%%/%%PORTVERSION%%/share/linearalgebra/test-polynomialp.mac
+%%DATADIR%%/%%PORTVERSION%%/share/lisp-utils/defsystem.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/macro/autolo.mac
 %%DATADIR%%/%%PORTVERSION%%/share/macro/basic.mac
 %%DATADIR%%/%%PORTVERSION%%/share/macro/caseq.mac
@@ -1017,6 +1031,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/newton1.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/riemsum.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/romberg.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/numeric/rtest_interpol.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/rtest_romberg.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/simpsn.dem
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/simpsn.mac
@@ -1025,7 +1040,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/README
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/changes_0.9_to_0.94.txt
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/h_atom.dem
-%%DATADIR%%/%%PORTVERSION%%/share/orthopoly/orthopoly-init.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/orthopoly.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/test_orthopoly.mac
 %%DATADIR%%/%%PORTVERSION%%/share/orthopoly/variational_method.dem
@@ -1207,9 +1221,11 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/displa.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/displm.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/dskfn.lisp
+%%DATADIR%%/%%PORTVERSION%%/src/ecl-port.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/elim.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ellipt.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/evalw.lisp
+%%DATADIR%%/%%PORTVERSION%%/src/expintegral.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ezgcd.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/factor.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/fcall.lisp
@@ -1499,12 +1515,14 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest9.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest9a.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_abs.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_algebraic.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_allnummod.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_boolean.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_diff_invtrig.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_dot.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_equal.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_everysome.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_hypgeo.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
@@ -1649,6 +1667,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/lapack
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/lbfgs
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/linearalgebra
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/lisp-utils
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/macro
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/matrix
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/misc
