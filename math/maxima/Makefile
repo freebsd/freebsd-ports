@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.15.0
-PORTREVISION=	2
+PORTVERSION=	5.16.3
 CATEGORIES=	math tk
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	Symbolic mathematics program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}
@@ -81,5 +80,8 @@ post-patch:
 	${WRKSRC}/interfaces/xmaxima/Makefile.in
 	( cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
 	${LOCALBASE}/bin/bash ./fix_tab )
+
+regression-test: build
+	${LOCALBASE}/bin/bash ${WRKSRC}/src/maxima --batch-string='run_testsuite();'
 
 .include <bsd.port.post.mk>
