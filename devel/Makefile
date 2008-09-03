@@ -335,6 +335,7 @@
     SUBDIR += fistgen
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
+    SUBDIR += flex-sdk2
     SUBDIR += flex_compiler_shell
     SUBDIR += flexjson
     SUBDIR += flick
