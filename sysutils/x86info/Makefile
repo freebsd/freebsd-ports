@@ -12,10 +12,10 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/x86info
 MAN1=	x86info.1
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
