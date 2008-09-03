@@ -34,4 +34,8 @@ do-configure:
 CFLAGS+=	-DDSP_X86
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		Unable to build
+.endif
+
 .include <bsd.port.post.mk>
