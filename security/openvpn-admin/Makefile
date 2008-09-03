@@ -12,7 +12,7 @@ CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to openvpn
 
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn

@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	http://download.gna.org/gcfilms/
 
-MAINTAINER=	MrL0Lz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to manage movie collections
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
