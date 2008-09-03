@@ -8,7 +8,7 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	3.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
