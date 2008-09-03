@@ -2554,6 +2554,7 @@ ecb                             ports/devel/ecb
 ecg2png                         ports/graphics/ecg2png
 ecgi                            ports/devel/ecgi
 echat                           ports/net-im/echat
+echinus                         ports/x11-wm/echinus
 echolinux                       ports/comms/echolinux
 echolot                         ports/net-mgmt/echolot
 echoping                        ports/net/echoping
@@ -7257,6 +7258,7 @@ libpdel                         ports/devel/libpdel
 libpdtp                         ports/net-p2p/libpdtp
 libpeak                         ports/devel/libpeak
 libphish                        ports/devel/libphish
+libphk                          ports/devel/libphk
 libppd                          ports/print/libppd
 libpperl                        ports/devel/libpperl
 libprelude                      ports/security/libprelude
@@ -8682,6 +8684,7 @@ mysql-connector-odbc            ports/databases/mysql-connector-odbc
 mysql-editor                    ports/databases/mysql-editor
 mysql-navigator                 ports/databases/mysql-navigator
 mysql-proxy                     ports/databases/mysql-proxy
+mysql-q4m                       ports/databases/mysql-q4m
 mysql-query-browser             ports/databases/mysql-query-browser
 mysql-udf                       ports/databases/mysql-udf
 mysql2odbc                      ports/databases/mysql2odbc
@@ -9251,7 +9254,6 @@ oo2c                            ports/lang/oo2c
 oof                             ports/science/oof
 oolite                          ports/games/oolite
 oonsoo                          ports/games/oonsoo
-ooo-build                       ports/editors/ooo-build
 oooqs                           ports/x11/oooqs
 oooqs2                          ports/x11/oooqs2
 oops                            ports/www/oops
@@ -9829,6 +9831,7 @@ p5-Catalyst-Example-InstantCRUD  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-Catalyst-Helper-Controller-Scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
 p5-Catalyst-Log-Log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-Catalyst-Manual              ports/www/p5-Catalyst-Manual
+p5-Catalyst-Model-Adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-Catalyst-Model-CDBI          ports/www/p5-Catalyst-Model-CDBI
 p5-Catalyst-Model-CDBI-Plain    ports/www/p5-Catalyst-Model-CDBI-Plain
 p5-Catalyst-Model-CDBI-Sweet    ports/www/p5-Catalyst-Model-CDBI-Sweet
@@ -12877,6 +12880,7 @@ p5-catalyst-example-instantcrud  ports/www/p5-Catalyst-Example-InstantCRUD
 p5-catalyst-helper-controller-scaffold  ports/www/p5-Catalyst-Helper-Controller-Scaffold
 p5-catalyst-log-log4perl        ports/www/p5-Catalyst-Log-Log4perl
 p5-catalyst-manual              ports/www/p5-Catalyst-Manual
+p5-catalyst-model-adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-catalyst-model-cdbi          ports/www/p5-Catalyst-Model-CDBI
 p5-catalyst-model-cdbi-plain    ports/www/p5-Catalyst-Model-CDBI-Plain
 p5-catalyst-model-cdbi-sweet    ports/www/p5-Catalyst-Model-CDBI-Sweet
@@ -16778,7 +16782,6 @@ pic2fig                         ports/print/pic2fig
 picard                          ports/audio/picard
 picasm                          ports/devel/picasm
 picmonger                       ports/news/PicMonger
-pico                            ports/editors/pico
 pico-alpine                     ports/editors/pico-alpine
 picp                            ports/devel/picp
 picprog                         ports/devel/picprog
@@ -16812,7 +16815,6 @@ pimdd                           ports/net/pimdd
 pimp3                           ports/audio/pimp3
 pinball                         ports/games/pinball
 pine-pgp-filters                ports/mail/pine-pgp-filters
-pine4                           ports/mail/pine4
 pinentry                        ports/security/pinentry
 pinentry-curses                 ports/security/pinentry-curses
 pinentry-gtk                    ports/security/pinentry-gtk
@@ -19774,6 +19776,7 @@ splitvt                         ports/misc/splitvt
 splix                           ports/print/splix
 spnetkit                        ports/net/spnetkit
 spoofer                         ports/net/spoofer
+spook                           ports/multimedia/spook
 spooles                         ports/math/spooles
 spooles-mpich                   ports/math/spooles-mpich
 spread                          ports/net/spread
@@ -19787,6 +19790,7 @@ spruce                          ports/mail/spruce
 spserver                        ports/net/spserver
 spybye                          ports/security/spybye
 sql-ledger                      ports/finance/sql-ledger
+sqlbuddy                        ports/databases/sqlbuddy
 sqlcached                       ports/databases/sqlcached
 sqlclient                       ports/databases/sqlclient
 sqldeveloper                    ports/databases/sqldeveloper
@@ -22079,6 +22083,7 @@ xmlpull                         ports/textproc/xmlpull
 xmlroff                         ports/textproc/xmlroff
 xmlrpc++                        ports/net/xmlrpc++
 xmlrpc-c                        ports/net/xmlrpc-c
+xmlrpc-c-devel                  ports/net/xmlrpc-c-devel
 xmlrpc-epi                      ports/net/xmlrpc-epi
 xmlsec                          ports/security/xmlsec
 xmlsec1                         ports/security/xmlsec1
