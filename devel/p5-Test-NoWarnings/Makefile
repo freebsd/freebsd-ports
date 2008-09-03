@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	alex@kapranoff.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hide and store warnings while running test scripts
 
 PERL_CONFIGURE=	yes

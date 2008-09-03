@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	alex@kapranoff.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy, automatic, specification-based tests
 
 PERL_MODBUILD=	yes
