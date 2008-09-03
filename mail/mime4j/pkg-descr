@@ -1,0 +1,22 @@
+mime4j provides a parser, MimeStreamParser, for e-mail message streams
+in plain rfc822 and MIME format. The parser uses a callback mechanism to
+report parsing events such as the start of an entity header, the start
+of a body, etc. If you are familiar with the SAX XML parser interface
+you should have no problem getting started with mime4j.
+
+The parser only deals with the structure of the message stream. It won't
+do any decoding of base64 or quoted-printable encoded header fields and
+bodies.
+
+The parser has been designed to be extremely tolerant against messages
+violating the standards.
+
+mime4j can also be used to build a tree representation of an e-mail
+message using the Message class. Using this facility mime4j
+automatically handles the decoding of fields and bodies and uses
+temporary files for large attachments.
+
+WWW: http://james.apache.org/mime4j/
+
+- Alex Dupre
+ale@FreeBSD.org
