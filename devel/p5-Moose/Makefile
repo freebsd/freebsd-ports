@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
+MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.64:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.65:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -36,17 +37,21 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Basics::Recipe9.3 \
 	Moose::Cookbook::Extending::Recipe1.3 \
 	Moose::Cookbook::Extending::Recipe2.3 \
+	Moose::Cookbook::Extending::Recipe3.3 \
+	Moose::Cookbook::Extending::Recipe4.3 \
 	Moose::Cookbook::FAQ.3 \
 	Moose::Cookbook::Meta::Recipe1.3 \
 	Moose::Cookbook::Meta::Recipe2.3 \
 	Moose::Cookbook::Meta::Recipe3.3 \
 	Moose::Cookbook::Meta::Recipe4.3 \
+	Moose::Cookbook::Meta::Recipe5.3 \
 	Moose::Cookbook::Roles::Recipe1.3 \
 	Moose::Cookbook::Roles::Recipe2.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
 	Moose::Cookbook::WTF.3 \
+	Moose::Exporter.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
 	Moose::Meta::Instance.3 \
@@ -79,6 +84,7 @@ MAN3=	Moose.3 \
 	Moose::Role.3 \
 	Moose::Spec::Role.3 \
 	Moose::Util.3 \
+	Moose::Util::MetaRole.3 \
 	Moose::Util::TypeConstraints.3 \
 	Moose::Util::TypeConstraints::OptimizedConstraints.3 \
 	Test::Moose.3 \
