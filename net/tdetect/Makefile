@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	# disappeared
 
-MAINTAINER=	shipley@dis.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for detecting traceroutes and reporting them via syslog
 
 pre-configure:

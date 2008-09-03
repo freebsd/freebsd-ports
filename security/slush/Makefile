@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	crypt/SSL/slush
 
-MAINTAINER=	shipley@dis.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A telnet-like application which uses a secure SSL channel
 
 GNU_CONFIGURE=	yes
