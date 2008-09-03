@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	love
-DISTVERSION=	0.3-2
+DISTVERSION=	0.4-0
 CATEGORIES=	games devel
 MASTER_SITES=	SF
 
@@ -33,8 +33,12 @@ PLIST_FILES=	bin/love lib/liblove.a
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+post-extract:
+	cd ${WRKSRC} && ${FIND} . -name "*.o" -delete
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp
+	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
+		${WRKSRC}/src/opengl/love_opengl.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/love ${PREFIX}/bin
