@@ -5,9 +5,12 @@ bin/vw
 %%SITE_PERL%%/Squatting/Cookbook.pod
 %%SITE_PERL%%/Squatting/Mapper.pm
 %%SITE_PERL%%/Squatting/On/Catalyst.pm
+%%SITE_PERL%%/Squatting/On/CGI.pm
 %%SITE_PERL%%/Squatting/On/Continuity.pm
 %%SITE_PERL%%/Squatting/View.pm
+%%SITE_PERL%%/Squatting/With/AccessTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting
 @dirrmtry %%SITE_PERL%%/Squatting/On
+@dirrmtry %%SITE_PERL%%/Squatting/With
 @dirrmtry %%SITE_PERL%%/Squatting
