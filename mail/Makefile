@@ -265,6 +265,7 @@
     SUBDIR += milter-greylist-devel
     SUBDIR += milter-regex
     SUBDIR += milter-skem
+    SUBDIR += mime4j
     SUBDIR += mimedefang
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
