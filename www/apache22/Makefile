@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -198,10 +198,6 @@ pre-everything::
 
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
-
-post-extract:
-	@${INSTALL_DATA} ${FILESDIR}/apr_dbd_mysql.c \
-		${WRKSRC}/srclib/apr-util/dbd/
 
 post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
