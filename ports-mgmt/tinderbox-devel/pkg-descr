@@ -15,7 +15,7 @@ need, for platforms and architectures you need. Tinderbox is also
 excellent tool for testing new ports and port upgrades, especially
 for testing dependencies and packing lists. It's also useful for
 testing ports on various releases of FreeBSD, since you can run
-FreeBSD 4.X world as a jail on FreeBSD 5.X/6.X host.
+FreeBSD 6.X world as a jail on FreeBSD 7.X/8.X host.
 
 WWW: http://tinderbox.marcuscom.com/
 Author: Joe Marcus Clarke.
