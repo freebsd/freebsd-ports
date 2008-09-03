@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	estith.freebsd.ports@thelunarempire.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl cartographic projections wrapper for Proj library
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
