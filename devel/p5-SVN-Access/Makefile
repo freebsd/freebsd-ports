@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Access
-PORTVERSION=	0.03
-PORTREVISION=	2
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,11 +25,13 @@ MAN3=		SVN::Access.3 \
 		SVN::Access::Group.3 \
 		SVN::Access::Resource.3
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 	@${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
