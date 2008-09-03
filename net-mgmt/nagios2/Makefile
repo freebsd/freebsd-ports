@@ -9,8 +9,7 @@ PORTNAME=	nagios
 PORTVERSION=	2.12
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nagios
+MASTER_SITES=	SF
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
@@ -21,9 +20,9 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:262 libltdl:15
-USE_RC_SUBR=	nagios.sh
+USE_RC_SUBR=	nagios
 
-CONFLICTS=	nagios-[13].*
+CONFLICTS=	nagios-[13].* nagios-devel-*
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" OFF \
 		NANOSLEEP "Use nanosleep in event timing" OFF
@@ -89,6 +88,7 @@ SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
 
+### XXX: Subtle bug with removing PREFIX from here
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 

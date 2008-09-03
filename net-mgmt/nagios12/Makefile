@@ -7,25 +7,20 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=nagios
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	nagios
 USE_PERL5_BUILD=yes
-
-PKGINSTALL=	${WRKDIR}/INSTALL
-PKGDEINSTALL=	${WRKDIR}/DEINSTALL
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
@@ -35,7 +30,7 @@ OPTIONS=	MYSQL "MySQL suport" off \
 		PGSQL "PostgreSQL suport" off \
 		FILE_PERFDATA "Save performance data to files" off
 
-CONFLICTS=	nagios-2*
+CONFLICTS=	nagios-[23].* nagios-devel-*
 LATEST_LINK=	nagios12
 
 .include <bsd.port.pre.mk>
@@ -77,24 +72,30 @@ CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
 		--with-pgsql-xdata
 .endif
 
-SED_SCRIPT=	-e 's,%%NAGIOSUSER%%,${NAGIOSUSER},g' \
-		-e 's,%%NAGIOSGROUP%%,${NAGIOSGROUP},g' \
-		-e 's,%%NAGIOSDIR%%,${NAGIOSDIR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
+			NAGIOSWWWDIR=${NAGIOSWWWDIR} \
+			NAGIOSUSER=${NAGIOSUSER} \
+			NAGIOSGROUP=${NAGIOSGROUP} \
+			NAGIOSUID=${NAGIOSUID} \
+			NAGIOSGID=${NAGIOSGID} \
+			NAGIOSHTMURL=${NAGIOSHTMURL} \
+			NAGIOSCGIURL=${NAGIOSCGIURL} \
+			WWWGRP=${WWWGRP}
+
+SUB_FILES=	pkg-install \
+			pkg-deinstall \
+			pkg-message
+
+### XXX: Subtle bug with removing PREFIX from here
+SUB_LIST=	PREFIX=${PREFIX} \
+			${PLIST_SUB}
 
 INSTALL_TARGET=	all install config install-config install-commandmode
-
-pre-build:
-	for file in nagios.sh INSTALL DEINSTALL MESSAGE; do \
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${file}.tmpl >${WRKDIR}/$${file}; \
-	done
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/nagios.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

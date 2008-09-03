@@ -1,7 +1,7 @@
---- base/Makefile.in.orig	Wed May 31 02:01:44 2006
-+++ base/Makefile.in	Sat Jun  3 11:09:48 2006
-@@ -188,9 +188,9 @@
- 	 $(MAKE) install-basic
+--- base/Makefile.in.orig	Wed Jan 24 04:58:34 2007
++++ base/Makefile.in	Fri Jul 20 13:34:45 2007
+@@ -193,9 +193,9 @@
+ 	$(MAKE) install-basic
  
  install-basic:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)

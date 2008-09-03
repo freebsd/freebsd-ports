@@ -105,6 +105,7 @@
     SUBDIR += mtrace
     SUBDIR += nagcon
     SUBDIR += nagios
+    SUBDIR += nagios2
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_ports
