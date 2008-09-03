@@ -15,7 +15,7 @@ PATCH_SITES=	http://bsdguru.org/fortunes/
 PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
 		fortunes-pl_${PORTVERSION}.filozofia
 
-MAINTAINER=	alex@bsdguru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lot of funny Polish fortune files
 
 STRCMD=		/usr/games/strfile

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://amor.cms.hu-berlin.de/~h0444y2j/pub/
 
-MAINTAINER=	alex@bsdguru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \

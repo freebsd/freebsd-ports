@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/ \
 		http://bsdguru.org/distfiles/
 
-MAINTAINER=	alex@BSDGuru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
 
 USE_BZIP2=	yes

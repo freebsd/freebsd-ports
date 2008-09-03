@@ -10,7 +10,7 @@ PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
 
-MAINTAINER=	alex@BSDGuru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This library is used by many IMs with Gadu-Gadu support
 
 CONFLICTS=	pl-ekg-1.[0-6]*

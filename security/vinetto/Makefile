@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
 
-MAINTAINER=	alex@BSDGuru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A forensics tool to examine Thumbs.db files
 
 OPTIONS=	IMAGING "Build with ability to extract graphic thumbnails" on
