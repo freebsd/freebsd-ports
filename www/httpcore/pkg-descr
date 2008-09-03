@@ -1,0 +1,20 @@
+The HttpCore components implement the most fundamental aspects of the HTTP
+protocol. They are nonetheless sufficient to develop basic client-side and
+server-side HTTP services with a minimal footprint and no external
+dependencies.
+
+The HttpCore base module contains the public API and the default
+implementation based on the Java classic (blocking) I/O model. It requires
+a Java 1.3 compatible runtime and has no dependency on any external libraries.
+
+HttpCore NIO extensions contain optional components that leverage the event
+driven, non-blocking I/O (NIO) model. HttpCore NIO extensions require a
+Java 5.0 compatible runtime and the HttpCore base module. HttpCore NIO
+extensions are intended for those usage scenarios where raw throughput is
+less important than the ability to handle thousands of simultaneous HTTP
+connections in a resource efficient manner.
+
+WWW: http://hc.apache.org/httpcomponents-core/
+
+- Alex Dupre
+ale@FreeBSD.org
