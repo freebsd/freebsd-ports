@@ -1,0 +1,15 @@
+HttpClient provides components for client-side authentication, HTTP state
+management, connection management, and an HTTP/1.1 compliant HTTP agent
+implementation based on those components. It is intended as successor of
+and replacement for Jakarta Commons HttpClient 3.x.
+
+The HttpClient module is a full-featured, HTTP/1.1 compliant agent built
+on top of HttpCore.
+
+The HttpMime module extends mime4j library with some HTTP specific
+functionality and integrates it with the HttpComponents framework.
+
+WWW: http://hc.apache.org/httpcomponents-client/
+
+- Alex Dupre
+ale@FreeBSD.org
