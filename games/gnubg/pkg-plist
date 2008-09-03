@@ -210,6 +210,7 @@ bin/makehyper
 %%DATADIR%%/gnubg_os0.bd
 %%DATADIR%%/gnubg.game.sql
 %%DATADIR%%/gnubg.gtkrc
+%%DATADIR%%/textures.txt
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%/textures
