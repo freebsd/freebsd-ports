@@ -1,7 +1,7 @@
---- cgi/Makefile.in.orig	Wed May 31 02:01:44 2006
-+++ cgi/Makefile.in	Sat Jun  3 11:14:04 2006
-@@ -198,9 +198,9 @@
- 	 $(MAKE) install-basic
+--- cgi/Makefile.in.orig	Wed Dec 13 02:57:57 2006
++++ cgi/Makefile.in	Fri Jul 20 13:35:18 2007
+@@ -190,9 +190,9 @@
+ 	$(MAKE) install-basic
  
  install-basic:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)

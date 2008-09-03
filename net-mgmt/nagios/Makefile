@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.12
-PORTREVISION=	1
+DISTVERSION=	3.0.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nagios
+MASTER_SITES=	SF
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
@@ -21,12 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:262 libltdl:15
-USE_RC_SUBR=	nagios.sh
+USE_RC_SUBR=	nagios
 
-CONFLICTS=	nagios-[13].*
+CONFLICTS=	nagios-[12].* nagios-devel-*
 
-OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" OFF \
-		NANOSLEEP "Use nanosleep in event timing" OFF
+OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
+		NANOSLEEP "Use nanosleep in event timing" off \
+		EVENT_BROKER "Enable event broker functionality" off
 
 GNU_CONFIGURE=	yes
 
@@ -40,14 +39,6 @@ NAGIOSGID=	${NAGIOSUID}
 NAGIOSWWWDIR?=	www/nagios
 NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
-
-# Suggested NAGIOSHOMEURL values:
-# Home:              main.html
-# Tactical Overview: ${NAGIOSCGIURL}/tac.cgi
-# Service Detail:    ${NAGIOSCGIURL}/status.cgi?host=all
-# Host Detail:       ${NAGIOSCGIURL}/status.cgi?hostgroup=all&style=hostdetail
-# Status Map:        ${NAGIOSCGIURL}/statusmap.cgi?host=all
-NAGIOSHOMEURL?=	main.html
 
 .include <bsd.port.pre.mk>
 
@@ -65,7 +56,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
-		--prefix=${PREFIX}
+		--with-httpd-conf=${PREFIX}/etc \
+		--with-checkresult-dir=${NAGIOSDIR}/checkresults
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
@@ -89,8 +81,9 @@ SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
 
+### XXX: Subtle bug with removing PREFIX from here
 SUB_LIST=	PREFIX=${PREFIX} \
-		${PLIST_SUB}
+			${PLIST_SUB}
 
 .if defined(WITH_EMBEDDED_PERL)
 USE_PERL5=	5.8.0+
@@ -105,16 +98,18 @@ PLIST_SUB+=	EMBEDDED_PERL="@comment "
 CONFIGURE_ARGS+=	--enable-nanosleep
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#"main.html"#"${NAGIOSHOMEURL:S/\//\\\//g:S/&/\\&/g}"#' \
-		${WRKSRC}/html/index.html.in
+.if defined(WITH_EVENT_BROKER)
+CONFIGURE_ARGS+=	--enable-event-broker
+.else
+CONFIGURE_ARGS+=	--disable-event-broker
+.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 post-install:
-	@${CHMOD} 775 ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/rw
-	@${CHOWN} ${NAGIOSUSER}:${NAGIOSGROUP} ${NAGIOSDIR} ${NAGIOSDIR}/archives
+	@${CHMOD} 775 ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/checkresults ${NAGIOSDIR}/rw
+	@${CHOWN} ${NAGIOSUSER}:${NAGIOSGROUP} ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/checkresults
 	@${CHOWN} ${NAGIOSUSER}:${WWWGRP} ${NAGIOSDIR}/rw
 	@${CAT} ${PKGMESSAGE}
 

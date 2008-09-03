@@ -1,6 +1,6 @@
---- html/Makefile.in.orig	Thu Apr 10 05:46:02 2003
-+++ html/Makefile.in	Sat Feb 12 13:53:16 2005
-@@ -33,37 +33,37 @@
+--- html/Makefile.in.orig	2008-01-10 04:21:25.000000000 +1030
++++ html/Makefile.in	2008-01-30 23:02:38.000000000 +1030
+@@ -33,39 +33,39 @@
  devclean: distclean
  
  install:
@@ -53,9 +53,12 @@
  	for file in images/*.png; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
+ 	for file in images/*.ico; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
  	for file in images/logos/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
  
- 
- 
+ install-unstripped:
+ 	$(MAKE) install
