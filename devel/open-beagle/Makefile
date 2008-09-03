@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/beagle
 DISTNAME=	beagle-${PORTVERSION}
 
-MAINTAINER=	sf@slappy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Evolutionary Computation Framework
 
 CONFLICTS=	beagle-[0-9]*

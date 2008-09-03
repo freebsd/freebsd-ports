@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math tk
 MASTER_SITES=	SF
 
-MAINTAINER=	sf@slappy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}

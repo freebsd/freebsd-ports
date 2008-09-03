@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}
 		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
 DISTNAME=	cmucl-${PORTVERSION}-x86-FreeBSD.extra
 
-MAINTAINER=	sf@slappy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl

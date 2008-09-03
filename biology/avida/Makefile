@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	sf@slappy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
