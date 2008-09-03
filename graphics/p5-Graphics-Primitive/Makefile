@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -17,6 +17,7 @@ COMMENT=	Device and library agnostic graphic primitives
 
 BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
 		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+		p5-Graphics-Color>=0:${PORTSDIR}/graphics/p5-Graphics-Color \
   		p5-MooseX-Clone>=0:${PORTSDIR}/devel/p5-MooseX-Clone \
   		p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
