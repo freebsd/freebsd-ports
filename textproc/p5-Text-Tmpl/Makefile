@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Tmpl
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +21,7 @@ MAN3=		template_syntax.3 Text::Tmpl.3 template_extend.3
 pre-patch:
 	@${PERL} -pi -e '/OPTIMIZE|libtmpl.pod/ and $$_=""' \
 		${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e 's/\(I32\)/(IV)/' \
+		${WRKSRC}/typemap ${WRKSRC}/perl_tags.c
 
 .include <bsd.port.mk>
