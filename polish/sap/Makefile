@@ -11,7 +11,7 @@ CATEGORIES=	polish
 MASTER_SITES=	http://www.bsdguru.org/sap/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alex@bsdguru.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line Polish-English and English-Polish dictionary
 
 do-configure:
