@@ -1,0 +1,112 @@
+bin/kiconedit
+share/applications/kde4/kiconedit.desktop
+share/apps/kiconedit/kiconeditui.rc
+share/apps/kiconedit/pics/aim-cursor.xpm
+share/apps/kiconedit/pics/aim.png
+share/apps/kiconedit/pics/airbrush-cursor.xpm
+share/apps/kiconedit/pics/colorpicker-cursor.xpm
+share/apps/kiconedit/pics/compressed.png
+share/apps/kiconedit/pics/draw-circle-filled.png
+share/apps/kiconedit/pics/draw-circle.png
+share/apps/kiconedit/pics/draw-ellipse-filled.png
+share/apps/kiconedit/pics/draw-ellipse.png
+share/apps/kiconedit/pics/draw-line.png
+share/apps/kiconedit/pics/draw-rectangle-filled.png
+share/apps/kiconedit/pics/draw-rectangle.png
+share/apps/kiconedit/pics/eraser-cursor.xpm
+share/apps/kiconedit/pics/fill-cursor.xpm
+share/apps/kiconedit/pics/grayscale.png
+share/apps/kiconedit/pics/kdepalette.png
+share/apps/kiconedit/pics/paintbrush-cursor.xpm
+share/apps/kiconedit/pics/pointer.png
+share/apps/kiconedit/pics/select-area.png
+share/apps/kiconedit/pics/select-circle.png
+share/apps/kiconedit/pics/select-rectangular.png
+share/apps/kiconedit/pics/show-grid.png
+share/apps/kiconedit/pics/source.png
+share/apps/kiconedit/pics/standard.png
+share/apps/kiconedit/pics/transform-scale.png
+share/doc/HTML/en/kiconedit/common
+share/doc/HTML/en/kiconedit/index.cache.bz2
+share/doc/HTML/en/kiconedit/index.docbook
+share/doc/HTML/en/kiconedit/kiconedit-configuration.png
+share/icons/hicolor/16x16/apps/kiconedit.png
+share/icons/hicolor/22x22/apps/kiconedit.png
+share/icons/hicolor/32x32/apps/kiconedit.png
+share/icons/hicolor/48x48/apps/kiconedit.png
+share/locale/af/LC_MESSAGES/kiconedit.mo
+share/locale/ar/LC_MESSAGES/kiconedit.mo
+share/locale/be/LC_MESSAGES/kiconedit.mo
+share/locale/bg/LC_MESSAGES/kiconedit.mo
+share/locale/br/LC_MESSAGES/kiconedit.mo
+share/locale/ca/LC_MESSAGES/kiconedit.mo
+share/locale/cs/LC_MESSAGES/kiconedit.mo
+share/locale/cy/LC_MESSAGES/kiconedit.mo
+share/locale/da/LC_MESSAGES/kiconedit.mo
+share/locale/de/LC_MESSAGES/kiconedit.mo
+share/locale/el/LC_MESSAGES/kiconedit.mo
+share/locale/en_GB/LC_MESSAGES/kiconedit.mo
+share/locale/eo/LC_MESSAGES/kiconedit.mo
+share/locale/es/LC_MESSAGES/kiconedit.mo
+share/locale/et/LC_MESSAGES/kiconedit.mo
+share/locale/eu/LC_MESSAGES/kiconedit.mo
+share/locale/fa/LC_MESSAGES/kiconedit.mo
+share/locale/fi/LC_MESSAGES/kiconedit.mo
+share/locale/fr/LC_MESSAGES/kiconedit.mo
+share/locale/ga/LC_MESSAGES/kiconedit.mo
+share/locale/gl/LC_MESSAGES/kiconedit.mo
+share/locale/he/LC_MESSAGES/kiconedit.mo
+share/locale/hi/LC_MESSAGES/kiconedit.mo
+share/locale/hr/LC_MESSAGES/kiconedit.mo
+share/locale/hu/LC_MESSAGES/kiconedit.mo
+share/locale/is/LC_MESSAGES/kiconedit.mo
+share/locale/it/LC_MESSAGES/kiconedit.mo
+share/locale/ja/LC_MESSAGES/kiconedit.mo
+share/locale/km/LC_MESSAGES/kiconedit.mo
+share/locale/ko/LC_MESSAGES/kiconedit.mo
+share/locale/lt/LC_MESSAGES/kiconedit.mo
+share/locale/lv/LC_MESSAGES/kiconedit.mo
+share/locale/mk/LC_MESSAGES/kiconedit.mo
+share/locale/ms/LC_MESSAGES/kiconedit.mo
+share/locale/nb/LC_MESSAGES/kiconedit.mo
+share/locale/nds/LC_MESSAGES/kiconedit.mo
+share/locale/ne/LC_MESSAGES/kiconedit.mo
+share/locale/nl/LC_MESSAGES/kiconedit.mo
+share/locale/nn/LC_MESSAGES/kiconedit.mo
+share/locale/oc/LC_MESSAGES/kiconedit.mo
+share/locale/pa/LC_MESSAGES/kiconedit.mo
+share/locale/pl/LC_MESSAGES/kiconedit.mo
+share/locale/pt/LC_MESSAGES/kiconedit.mo
+share/locale/pt_BR/LC_MESSAGES/kiconedit.mo
+share/locale/ro/LC_MESSAGES/kiconedit.mo
+share/locale/ru/LC_MESSAGES/kiconedit.mo
+share/locale/se/LC_MESSAGES/kiconedit.mo
+share/locale/sk/LC_MESSAGES/kiconedit.mo
+share/locale/sl/LC_MESSAGES/kiconedit.mo
+share/locale/sv/LC_MESSAGES/kiconedit.mo
+share/locale/ta/LC_MESSAGES/kiconedit.mo
+share/locale/tg/LC_MESSAGES/kiconedit.mo
+share/locale/th/LC_MESSAGES/kiconedit.mo
+share/locale/tr/LC_MESSAGES/kiconedit.mo
+share/locale/uk/LC_MESSAGES/kiconedit.mo
+share/locale/vi/LC_MESSAGES/kiconedit.mo
+share/locale/wa/LC_MESSAGES/kiconedit.mo
+share/locale/xh/LC_MESSAGES/kiconedit.mo
+share/locale/zh_CN/LC_MESSAGES/kiconedit.mo
+share/locale/zh_HK/LC_MESSAGES/kiconedit.mo
+share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrm share/doc/HTML/en/kiconedit
+@dirrm share/apps/kiconedit/pics
+@dirrm share/apps/kiconedit
