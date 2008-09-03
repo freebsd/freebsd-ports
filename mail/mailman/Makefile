@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.10
+DISTVERSION=	2.1.11
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -111,8 +111,8 @@ RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py
 .if defined(WITH_HTDIG)
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
-PATCHFILES+=	indexing-2.1.10-0.1.patch.gz:patch1 \
-		htdig-2.1.10-0.1.patch.gz:patch2
+PATCHFILES+=	indexing-${DISTVERSION}-0.1.patch.gz:patch1 \
+		htdig-${DISTVERSION}-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
 PKGNAMESUFFIX+=	-with-htdig
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
