@@ -1,154 +1,129 @@
 tinderbox/scripts/README
-tinderbox/scripts/buildscript
-tinderbox/scripts/create
 tinderbox/scripts/ds.ph.dist
-tinderbox/scripts/enterbuild
+tinderbox/scripts/etc/env/.keep_me
 tinderbox/scripts/etc/rc.d/tinderd.sh
-tinderbox/scripts/lib/Build.pm
-tinderbox/scripts/lib/BuildPortsQueue.pm
-tinderbox/scripts/lib/Hook.pm
-tinderbox/scripts/lib/Host.pm
-tinderbox/scripts/lib/Jail.pm
-tinderbox/scripts/lib/MakeCache.pm
-tinderbox/scripts/lib/Port.pm
-tinderbox/scripts/lib/PortFailPattern.pm
-tinderbox/scripts/lib/PortFailReason.pm
-tinderbox/scripts/lib/PortsTree.pm
-tinderbox/scripts/lib/TBConfig.pm
-tinderbox/scripts/lib/TinderObject.pm
-tinderbox/scripts/lib/TinderboxDS.pm
-tinderbox/scripts/lib/User.pm
+tinderbox/scripts/lib/Tinderbox/Build.pm
+tinderbox/scripts/lib/Tinderbox/BuildPortsQueue.pm
+tinderbox/scripts/lib/Tinderbox/Config.pm
+tinderbox/scripts/lib/Tinderbox/Hook.pm
+tinderbox/scripts/lib/Tinderbox/Jail.pm
+tinderbox/scripts/lib/Tinderbox/MakeCache.pm
+tinderbox/scripts/lib/Tinderbox/Port.pm
+tinderbox/scripts/lib/Tinderbox/PortFailPattern.pm
+tinderbox/scripts/lib/Tinderbox/PortFailReason.pm
+tinderbox/scripts/lib/Tinderbox/PortsTree.pm
+tinderbox/scripts/lib/Tinderbox/TinderObject.pm
+tinderbox/scripts/lib/Tinderbox/TinderboxDS.pm
+tinderbox/scripts/lib/Tinderbox/User.pm
+tinderbox/scripts/lib/buildscript
+tinderbox/scripts/lib/db-mysql.sh
+tinderbox/scripts/lib/db-pgsql.sh
 tinderbox/scripts/lib/enterbuild
-tinderbox/scripts/lib/setup-mysql.sh
-tinderbox/scripts/lib/setup-pgsql.sh
-tinderbox/scripts/lib/setup_shlib.sh
-tinderbox/scripts/lib/tinderbox_shlib.sh
+tinderbox/scripts/lib/makemake
+tinderbox/scripts/lib/pnohang.c
+tinderbox/scripts/lib/portbuild
+tinderbox/scripts/lib/tc_command.pl
+tinderbox/scripts/lib/tc_command.sh
+tinderbox/scripts/lib/tinderbox.env
 tinderbox/scripts/lib/tinderlib.pl
-tinderbox/scripts/makemake
-tinderbox/scripts/man/man1/tc-configCcache.1
-tinderbox/scripts/man/man1/tc-configDistfile.1
-tinderbox/scripts/man/man1/tc-configGet.1
-tinderbox/scripts/man/man1/tc-configJail.1
-tinderbox/scripts/man/man1/tc-configTinderd.1
-tinderbox/scripts/man/man1/tc-init.1
-tinderbox/scripts/mkbuild
-tinderbox/scripts/mkjail
-tinderbox/scripts/pnohang.c
-tinderbox/scripts/portbuild
-tinderbox/scripts/rawenv.dist
-tinderbox/scripts/setup.sh
-tinderbox/scripts/tbkill.sh
+tinderbox/scripts/lib/tinderlib.sh
+tinderbox/scripts/sql/genschema
+tinderbox/scripts/sql/schema.mysql.post
+tinderbox/scripts/sql/schema.mysql.pre
+tinderbox/scripts/sql/schema.pgsql.post
+tinderbox/scripts/sql/schema.pgsql.pre
+tinderbox/scripts/sql/values.config
+tinderbox/scripts/sql/values.hooks
+tinderbox/scripts/sql/values.pfp
+tinderbox/scripts/sql/values.pfr
 tinderbox/scripts/tc
-tinderbox/scripts/tinderbox-mysql.schema
-tinderbox/scripts/tinderbox-pgsql.schema
 tinderbox/scripts/tinderbox.ph.dist
-tinderbox/scripts/tinderbuild
 tinderbox/scripts/tinderd
-tinderbox/scripts/upgrade.sh
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-1.X_to_2.0.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.0.0_to_2.1.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.0_to_2.1.1.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.1_to_2.2.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.2.0_to_2.3.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.0_to_2.3.1.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.1_to_2.3.2.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.2_to_2.3.3.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.3_to_2.4.0.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.2.0_to_2.3.0.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.0_to_2.3.1.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.1_to_2.3.2.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.2_to_2.3.3.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.3_to_2.4.0.sql
-tinderbox/scripts/upgrade/mig_shlib.sh
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/Build.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/BuildPortsQueue.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/Host.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/Jail.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/Port.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/PortFailReason.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/PortsTree.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/TinderObject.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/TinderboxDS.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/User.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/core/functions.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/inc_ds.php.dist
-%%WEB_EXP%%tinderbox/scripts/www-exp/inc_tinderbox.php.dist
-%%WEB_EXP%%tinderbox/scripts/www-exp/index.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/favicon.ico
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/module.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleBuildPorts.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleBuilds.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleHosts.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/modulePortFailureReasons.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/modulePorts.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleSession.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleTinderd.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/module/moduleUsers.php
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/current_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/describe_port.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/display_login.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/failed_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/latest_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/list_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/list_builds.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/list_failure_reasons.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/list_tinderd_queue.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/messages.inc
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/please_login.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/tinderstyle.css
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/user_admin.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/user_permissions.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/default/user_properties.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/images/hdr_fill.png
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/config.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/current_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/describe_port.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/display_login.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/failed_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/footer.inc.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/header.inc.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/latest_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/list_buildports.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/list_builds.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/list_failure_reasons.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/list_tinderd_queue.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/messages.inc
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/please_login.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/rss.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/tinderstyle.css
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/user_admin.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/user_permissions.tpl
-%%WEB_EXP%%tinderbox/scripts/www-exp/templates/paefchen/user_properties.tpl
-%%WEB%%tinderbox/scripts/www/Build.php
-%%WEB%%tinderbox/scripts/www/Jail.php
-%%WEB%%tinderbox/scripts/www/Makefile
-%%WEB%%tinderbox/scripts/www/Port.php
-%%WEB%%tinderbox/scripts/www/PortsTree.php
-%%WEB%%tinderbox/scripts/www/TinderObject.php
-%%WEB%%tinderbox/scripts/www/TinderboxDS.php
-%%WEB%%tinderbox/scripts/www/failures.php
-%%WEB%%tinderbox/scripts/www/inc_ds.php.dist
-%%WEB%%tinderbox/scripts/www/inc_tinderbox.php.dist
-%%WEB%%tinderbox/scripts/www/index.php
-%%WEB%%tinderbox/scripts/www/favicon.ico
-%%WEB%%tinderbox/scripts/www/lastbuilds.php
-%%WEB%%tinderbox/scripts/www/showbuild.php
-%%WEB%%tinderbox/scripts/www/showport.php
-%%WEB%%tinderbox/scripts/www/tinderstyle.css
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates/default
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates/paefchen/images
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates/paefchen
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/templates
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/module
-%%WEB_EXP%%@dirrm tinderbox/scripts/www-exp/core
-%%WEB%%@dirrm tinderbox/scripts/www
+tinderbox/scripts/upgrade/.keep_me
+tinderbox/scripts/upgrade/build_ports.map
+tinderbox/scripts/upgrade/build_ports_queue.map
+tinderbox/scripts/upgrade/builds.map
+tinderbox/scripts/upgrade/config.map
+tinderbox/scripts/upgrade/hooks.map
+tinderbox/scripts/upgrade/jails.map
+tinderbox/scripts/upgrade/order.lst
+tinderbox/scripts/upgrade/user_permissions.map
+%%WEBUI%%tinderbox/scripts/webui/core/Build.php
+%%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
+%%WEBUI%%tinderbox/scripts/webui/core/Config.php
+%%WEBUI%%tinderbox/scripts/webui/core/Jail.php
+%%WEBUI%%tinderbox/scripts/webui/core/Port.php
+%%WEBUI%%tinderbox/scripts/webui/core/PortFailReason.php
+%%WEBUI%%tinderbox/scripts/webui/core/PortsTree.php
+%%WEBUI%%tinderbox/scripts/webui/core/TinderObject.php
+%%WEBUI%%tinderbox/scripts/webui/core/TinderboxDS.php
+%%WEBUI%%tinderbox/scripts/webui/core/User.php
+%%WEBUI%%tinderbox/scripts/webui/core/functions.php
+%%WEBUI%%tinderbox/scripts/webui/inc_ds.php.dist
+%%WEBUI%%tinderbox/scripts/webui/inc_tinderbox.php.dist
+%%WEBUI%%tinderbox/scripts/webui/index.php
+%%WEBUI%%tinderbox/scripts/webui/favicon.ico
+%%WEBUI%%tinderbox/scripts/webui/module/module.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleBuildPorts.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleBuilds.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleConfig.php
+%%WEBUI%%tinderbox/scripts/webui/module/modulePortFailureReasons.php
+%%WEBUI%%tinderbox/scripts/webui/module/modulePorts.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleRss.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleSession.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleTinderd.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleUsers.php
+%%WEBUI%%tinderbox/scripts/webui/templates/default/config.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/current_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/describe_port.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/display_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/failed_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/latest_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/list_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/list_builds.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/list_failure_reasons.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/list_tinderd_queue.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/messages.inc
+%%WEBUI%%tinderbox/scripts/webui/templates/default/please_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/tinderstyle.css
+%%WEBUI%%tinderbox/scripts/webui/templates/default/user_admin.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/user_permissions.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/user_properties.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/config.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/current_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/describe_port.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/failed_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/footer.inc.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/header.inc.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/images/hdr_fill.png
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/latest_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/list_buildports.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/list_builds.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/list_failure_reasons.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/list_tinderd_queue.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/messages.inc
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/please_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/rss.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/tinderstyle.css
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_admin.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_permissions.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_properties.tpl
+%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/paefchen/images
+%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/paefchen
+%%WEBUI%%@dirrm tinderbox/scripts/webui/templates/default
+%%WEBUI%%@dirrm tinderbox/scripts/webui/templates
+%%WEBUI%%@dirrm tinderbox/scripts/webui/module
+%%WEBUI%%@dirrm tinderbox/scripts/webui/core
+%%WEBUI%%@dirrmtry tinderbox/scripts/webui
 @dirrm tinderbox/scripts/upgrade
+@dirrm tinderbox/scripts/sql
 @dirrm tinderbox/scripts/man/man1
 @dirrm tinderbox/scripts/man
+@dirrm tinderbox/scripts/lib/Tinderbox
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
+@dirrm tinderbox/scripts/etc/env
 @dirrm tinderbox/scripts/etc
-@dirrmtry tinderbox/scripts/www-exp
-@dirrmtry tinderbox/scripts
+@dirrm tinderbox/scripts
 @dirrmtry tinderbox
