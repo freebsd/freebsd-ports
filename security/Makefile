@@ -725,6 +725,7 @@
     SUBDIR += snort-rep
     SUBDIR += snort_inline
     SUBDIR += snortreport
+    SUBDIR += snortsam
     SUBDIR += snortsms
     SUBDIR += snortsnarf
     SUBDIR += spike-proxy
