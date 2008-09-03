@@ -10,6 +10,7 @@ DISTVERSION=	3.0.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
