@@ -168,6 +168,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vim.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vim.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vim.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/vs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/token.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/token.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/token.pyo
