@@ -11,7 +11,7 @@ CATEGORIES=		net-im polish
 MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
 			http://freebsd.e.pl/distfiles/
 
-MAINTAINER=		r@robakdesign.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Jabberd XMPP to GG instant messaging service gateway
 
 LIB_DEPENDS=		idn.16:${PORTSDIR}/dns/libidn \

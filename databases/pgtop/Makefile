@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CO/COSIMO
 
-MAINTAINER=	r@robakdesign.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display PostgreSQL performance info like top(1)
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
