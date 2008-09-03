@@ -16,6 +16,7 @@ lib/kde4/minitoolsplugin.so
 lib/kde4/searchbarplugin.so
 lib/kde4/validatorsplugin.so
 lib/kde4/webarchivethumbnail.so
+share/apps/akregator/pics/feed.png
 share/apps/dolphinpart/kpartplugins/dirfilterplugin.desktop
 share/apps/dolphinpart/kpartplugins/dirfilterplugin.rc
 share/apps/dolphinpart/kpartplugins/kimgalleryplugin.desktop
@@ -24,6 +25,8 @@ share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/fsview_part.rc
 share/apps/imagerotation/exif.py
 share/apps/imagerotation/orient.py
+share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
+share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
 share/apps/khtml/kpartplugins/autorefresh.desktop
 share/apps/khtml/kpartplugins/autorefresh.rc
 share/apps/khtml/kpartplugins/crashesplugin.desktop
@@ -1316,3 +1319,5 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 @dirrm share/apps/domtreeviewer
 @dirrmtry share/apps/dolphinpart/kpartplugins
 @dirrmtry share/apps/dolphinpart
+@dirrmtry share/apps/akregator/pics
+@dirrmtry share/apps/akregator

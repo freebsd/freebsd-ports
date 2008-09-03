@@ -289,6 +289,7 @@ share/locale/nds/LC_MESSAGES/kcmkded.mo
 share/locale/nds/LC_MESSAGES/kcmkdnssd.mo
 share/locale/nds/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nds/LC_MESSAGES/kcmkeys.mo
+share/locale/nds/LC_MESSAGES/kcmkgamma.mo
 share/locale/nds/LC_MESSAGES/kcmkio.mo
 share/locale/nds/LC_MESSAGES/kcmkonq.mo
 share/locale/nds/LC_MESSAGES/kcmkonqhtml.mo
@@ -366,7 +367,6 @@ share/locale/nds/LC_MESSAGES/kfloppy.mo
 share/locale/nds/LC_MESSAGES/kfmclient.mo
 share/locale/nds/LC_MESSAGES/kfontinst.mo
 share/locale/nds/LC_MESSAGES/kfourinline.mo
-share/locale/nds/LC_MESSAGES/kgamma.mo
 share/locale/nds/LC_MESSAGES/kgeography.mo
 share/locale/nds/LC_MESSAGES/kget.mo
 share/locale/nds/LC_MESSAGES/kgoldrunner.mo
@@ -615,7 +615,6 @@ share/locale/nds/LC_MESSAGES/plasma.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/nds/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_desktop.mo
@@ -628,7 +627,6 @@ share/locale/nds/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/nds/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -645,14 +643,12 @@ share/locale/nds/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/nds/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/nds/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nds/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/nds/LC_MESSAGES/plasmapkg.mo
 share/locale/nds/LC_MESSAGES/plasmoidviewer.mo
 share/locale/nds/LC_MESSAGES/printer-applet.mo
 share/locale/nds/LC_MESSAGES/processcore.mo
 share/locale/nds/LC_MESSAGES/processui.mo
-share/locale/nds/LC_MESSAGES/quanta.mo
 share/locale/nds/LC_MESSAGES/solid-bluetooth.mo
 share/locale/nds/LC_MESSAGES/solid-hardware.mo
 share/locale/nds/LC_MESSAGES/solid-network.mo
@@ -670,8 +666,8 @@ share/locale/nds/LC_MESSAGES/timezones4.mo
 share/locale/nds/LC_MESSAGES/umbrello.mo
 share/locale/nds/LC_MESSAGES/useraccount.mo
 share/locale/nds/entry.desktop
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
+@dirrm share/locale/nds/LC_MESSAGES
+@dirrm share/locale/nds
 @dirrm share/apps/kvtml/nds
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/nds
@@ -685,3 +681,5 @@ share/locale/nds/entry.desktop
 @dirrm share/apps/klettres/nds
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart

@@ -110,9 +110,6 @@ share/doc/HTML/pt_BR/amor/common
 share/doc/HTML/pt_BR/amor/index.cache.bz2
 share/doc/HTML/pt_BR/amor/index.docbook
 share/doc/HTML/pt_BR/amor/man-amor.6.docbook
-share/doc/HTML/pt_BR/ark/common
-share/doc/HTML/pt_BR/ark/index.cache.bz2
-share/doc/HTML/pt_BR/ark/index.docbook
 share/doc/HTML/pt_BR/cervisia/common
 share/doc/HTML/pt_BR/cervisia/index.cache.bz2
 share/doc/HTML/pt_BR/cervisia/index.docbook
@@ -998,6 +995,7 @@ share/locale/pt_BR/LC_MESSAGES/kblackbox.mo
 share/locale/pt_BR/LC_MESSAGES/kblankscrn.mo
 share/locale/pt_BR/LC_MESSAGES/kblocks.mo
 share/locale/pt_BR/LC_MESSAGES/kbounce.mo
+share/locale/pt_BR/LC_MESSAGES/kbreakout.mo
 share/locale/pt_BR/LC_MESSAGES/kbruch.mo
 share/locale/pt_BR/LC_MESSAGES/kbstateapplet.mo
 share/locale/pt_BR/LC_MESSAGES/kbugbuster.mo
@@ -1041,6 +1039,7 @@ share/locale/pt_BR/LC_MESSAGES/kcmkded.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkdnssd.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkeys.mo
+share/locale/pt_BR/LC_MESSAGES/kcmkgamma.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkio.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkonq.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkonqhtml.mo
@@ -1118,7 +1117,6 @@ share/locale/pt_BR/LC_MESSAGES/kfloppy.mo
 share/locale/pt_BR/LC_MESSAGES/kfmclient.mo
 share/locale/pt_BR/LC_MESSAGES/kfontinst.mo
 share/locale/pt_BR/LC_MESSAGES/kfourinline.mo
-share/locale/pt_BR/LC_MESSAGES/kgamma.mo
 share/locale/pt_BR/LC_MESSAGES/kgeography.mo
 share/locale/pt_BR/LC_MESSAGES/kget.mo
 share/locale/pt_BR/LC_MESSAGES/kgoldrunner.mo
@@ -1366,7 +1364,6 @@ share/locale/pt_BR/LC_MESSAGES/plasma.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/pt_BR/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1400,7 +1397,6 @@ share/locale/pt_BR/LC_MESSAGES/plasmoidviewer.mo
 share/locale/pt_BR/LC_MESSAGES/printer-applet.mo
 share/locale/pt_BR/LC_MESSAGES/processcore.mo
 share/locale/pt_BR/LC_MESSAGES/processui.mo
-share/locale/pt_BR/LC_MESSAGES/quanta.mo
 share/locale/pt_BR/LC_MESSAGES/solid-bluetooth.mo
 share/locale/pt_BR/LC_MESSAGES/solid-hardware.mo
 share/locale/pt_BR/LC_MESSAGES/solid-network.mo
@@ -1559,7 +1555,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/irkick
 @dirrm share/doc/HTML/pt_BR/gwenview
 @dirrm share/doc/HTML/pt_BR/cervisia
-@dirrm share/doc/HTML/pt_BR/ark
 @dirrm share/doc/HTML/pt_BR/amor
 @dirrm share/apps/kvtml/pt_BR
 @dirrm share/apps/kvtml

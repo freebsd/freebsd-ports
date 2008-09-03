@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kpovmodeler
-PORTVERSION=	1.1.3
-DISTVERSIONSUFFIX=	-kde${EXTRA_VER}
+PORTVERSION=	${APP_VER}.${EXTRA_VER}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,6 +23,7 @@ QT_COMPONENTS=	corelib opengl
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
-EXTRA_VER=	4.1.0
+APP_VER=	1.1.3
+EXTRA_VER=	4.1.1
 
 .include <bsd.port.mk>

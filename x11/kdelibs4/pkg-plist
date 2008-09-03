@@ -1620,6 +1620,7 @@ share/apps/cmake/modules/FindCarbon.cmake
 share/apps/cmake/modules/FindDNSSD.cmake
 share/apps/cmake/modules/FindENCHANT.cmake
 share/apps/cmake/modules/FindEigen.cmake
+share/apps/cmake/modules/FindEigen2.cmake
 share/apps/cmake/modules/FindExiv2.cmake
 share/apps/cmake/modules/FindFAM.cmake
 share/apps/cmake/modules/FindFFmpeg.cmake

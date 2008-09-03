@@ -119,6 +119,7 @@ share/locale/fi/LC_MESSAGES/kcmkded.mo
 share/locale/fi/LC_MESSAGES/kcmkdnssd.mo
 share/locale/fi/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fi/LC_MESSAGES/kcmkeys.mo
+share/locale/fi/LC_MESSAGES/kcmkgamma.mo
 share/locale/fi/LC_MESSAGES/kcmkio.mo
 share/locale/fi/LC_MESSAGES/kcmkonq.mo
 share/locale/fi/LC_MESSAGES/kcmkonqhtml.mo
@@ -196,7 +197,6 @@ share/locale/fi/LC_MESSAGES/kfloppy.mo
 share/locale/fi/LC_MESSAGES/kfmclient.mo
 share/locale/fi/LC_MESSAGES/kfontinst.mo
 share/locale/fi/LC_MESSAGES/kfourinline.mo
-share/locale/fi/LC_MESSAGES/kgamma.mo
 share/locale/fi/LC_MESSAGES/kgeography.mo
 share/locale/fi/LC_MESSAGES/kget.mo
 share/locale/fi/LC_MESSAGES/kgoldrunner.mo
@@ -394,8 +394,10 @@ share/locale/fi/LC_MESSAGES/nsplugin.mo
 share/locale/fi/LC_MESSAGES/oktetapart.mo
 share/locale/fi/LC_MESSAGES/okular.mo
 share/locale/fi/LC_MESSAGES/okular_chm.mo
+share/locale/fi/LC_MESSAGES/okular_comicbook.mo
 share/locale/fi/LC_MESSAGES/okular_djvu.mo
 share/locale/fi/LC_MESSAGES/okular_dvi.mo
+share/locale/fi/LC_MESSAGES/okular_epub.mo
 share/locale/fi/LC_MESSAGES/okular_fictionbook.mo
 share/locale/fi/LC_MESSAGES/okular_ghostview.mo
 share/locale/fi/LC_MESSAGES/okular_kimgio.mo
@@ -436,7 +438,6 @@ share/locale/fi/LC_MESSAGES/plasmapkg.mo
 share/locale/fi/LC_MESSAGES/printer-applet.mo
 share/locale/fi/LC_MESSAGES/processcore.mo
 share/locale/fi/LC_MESSAGES/processui.mo
-share/locale/fi/LC_MESSAGES/quanta.mo
 share/locale/fi/LC_MESSAGES/solid-bluetooth.mo
 share/locale/fi/LC_MESSAGES/solid-powermanagement.mo
 share/locale/fi/LC_MESSAGES/solidcontrol.mo
@@ -452,8 +453,8 @@ share/locale/fi/LC_MESSAGES/umbrello.mo
 share/locale/fi/LC_MESSAGES/useraccount.mo
 share/locale/fi/entry.desktop
 @dirrm share/apps/kvtml/fi
-@dirrmtry share/apps/kvtml
+@dirrm share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/fi
-@dirrmtry share/apps/ktuberling/sounds
-@dirrmtry share/apps/ktuberling
-@dirrmtry share/apps/khangman
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling
+@dirrm share/apps/khangman

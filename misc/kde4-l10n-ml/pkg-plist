@@ -25,6 +25,7 @@ share/locale/ml/LC_MESSAGES/kcm_phonon.mo
 share/locale/ml/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ml/LC_MESSAGES/kcm_solid.mo
 share/locale/ml/LC_MESSAGES/kcmaccess.mo
+share/locale/ml/LC_MESSAGES/kcmbackground.mo
 share/locale/ml/LC_MESSAGES/kcmbell.mo
 share/locale/ml/LC_MESSAGES/kcmcgi.mo
 share/locale/ml/LC_MESSAGES/kcmcolors.mo
@@ -175,7 +176,6 @@ share/locale/ml/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_panel.mo
@@ -183,7 +183,6 @@ share/locale/ml/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/ml/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/ml/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ml/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ml/LC_MESSAGES/plasmapkg.mo
 share/locale/ml/LC_MESSAGES/plasmoidviewer.mo

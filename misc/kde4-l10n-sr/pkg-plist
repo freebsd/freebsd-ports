@@ -337,7 +337,6 @@ share/locale/sr/LC_MESSAGES/plasma.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/sr/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_desktop.mo
@@ -392,8 +391,8 @@ share/locale/sr@latin/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/sr@latin/entry.desktop
 @dirrm share/locale/sr@latin/LC_MESSAGES
 @dirrm share/locale/sr@latin
-@dirrm share/locale/sr/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/sr/LC_SCRIPTS/kfontinst
+@dirrm share/locale/sr/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/sr/LC_SCRIPTS
 @dirrm share/icons/oxygen/scalable/status/small/48x48/l10n/sr
 @dirrm share/icons/oxygen/scalable/status/small/48x48/l10n
@@ -404,80 +403,50 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/oxygen/scalable/status/small/16x16/l10n/sr
 @dirrm share/icons/oxygen/scalable/status/small/16x16/l10n
 @dirrm share/icons/oxygen/scalable/status/small/16x16
-@dirrm share/icons/oxygen/scalable/status/small
 @dirrm share/icons/oxygen/scalable/status/l10n/sr
 @dirrm share/icons/oxygen/scalable/status/l10n
-@dirrm share/icons/oxygen/scalable/status
 @dirrm share/icons/oxygen/scalable/apps/small/32x32/l10n/sr
 @dirrm share/icons/oxygen/scalable/apps/small/32x32/l10n
 @dirrm share/icons/oxygen/scalable/apps/small/32x32
 @dirrm share/icons/oxygen/scalable/apps/small/16x16/l10n/sr
 @dirrm share/icons/oxygen/scalable/apps/small/16x16/l10n
 @dirrm share/icons/oxygen/scalable/apps/small/16x16
-@dirrm share/icons/oxygen/scalable/apps/small
 @dirrm share/icons/oxygen/scalable/apps/l10n/sr
 @dirrm share/icons/oxygen/scalable/apps/l10n
-@dirrm share/icons/oxygen/scalable/apps
 @dirrm share/icons/oxygen/scalable/actions/l10n/sr
 @dirrm share/icons/oxygen/scalable/actions/l10n
-@dirrm share/icons/oxygen/scalable/actions
-@dirrm share/icons/oxygen/scalable
-@dirrm share/icons/oxygen/8x8
 @dirrm share/icons/oxygen/64x64/status/l10n/sr
 @dirrm share/icons/oxygen/64x64/status/l10n
-@dirrm share/icons/oxygen/64x64/status
 @dirrm share/icons/oxygen/64x64/apps/l10n/sr
 @dirrm share/icons/oxygen/64x64/apps/l10n
-@dirrm share/icons/oxygen/64x64/apps
-@dirrm share/icons/oxygen/64x64
 @dirrm share/icons/oxygen/48x48/status/l10n/sr
 @dirrm share/icons/oxygen/48x48/status/l10n
-@dirrm share/icons/oxygen/48x48/status
 @dirrm share/icons/oxygen/48x48/apps/l10n/sr
 @dirrm share/icons/oxygen/48x48/apps/l10n
-@dirrm share/icons/oxygen/48x48/apps
 @dirrm share/icons/oxygen/48x48/actions/l10n/sr
 @dirrm share/icons/oxygen/48x48/actions/l10n
-@dirrm share/icons/oxygen/48x48/actions
-@dirrm share/icons/oxygen/48x48
 @dirrm share/icons/oxygen/32x32/status/l10n/sr
 @dirrm share/icons/oxygen/32x32/status/l10n
-@dirrm share/icons/oxygen/32x32/status
 @dirrm share/icons/oxygen/32x32/apps/l10n/sr
 @dirrm share/icons/oxygen/32x32/apps/l10n
-@dirrm share/icons/oxygen/32x32/apps
 @dirrm share/icons/oxygen/32x32/actions/l10n/sr
 @dirrm share/icons/oxygen/32x32/actions/l10n
-@dirrm share/icons/oxygen/32x32/actions
-@dirrm share/icons/oxygen/32x32
 @dirrm share/icons/oxygen/22x22/status/l10n/sr
 @dirrm share/icons/oxygen/22x22/status/l10n
-@dirrm share/icons/oxygen/22x22/status
 @dirrm share/icons/oxygen/22x22/apps/l10n/sr
 @dirrm share/icons/oxygen/22x22/apps/l10n
-@dirrm share/icons/oxygen/22x22/apps
 @dirrm share/icons/oxygen/22x22/actions/l10n/sr
 @dirrm share/icons/oxygen/22x22/actions/l10n
-@dirrm share/icons/oxygen/22x22/actions
-@dirrm share/icons/oxygen/22x22
 @dirrm share/icons/oxygen/16x16/status/l10n/sr
 @dirrm share/icons/oxygen/16x16/status/l10n
-@dirrm share/icons/oxygen/16x16/status
 @dirrm share/icons/oxygen/16x16/apps/l10n/sr
 @dirrm share/icons/oxygen/16x16/apps/l10n
-@dirrm share/icons/oxygen/16x16/apps
 @dirrm share/icons/oxygen/16x16/actions/l10n/sr
 @dirrm share/icons/oxygen/16x16/actions/l10n
-@dirrm share/icons/oxygen/16x16/actions
-@dirrm share/icons/oxygen/16x16
 @dirrm share/icons/oxygen/128x128/status/l10n/sr
 @dirrm share/icons/oxygen/128x128/status/l10n
-@dirrm share/icons/oxygen/128x128/status
 @dirrm share/icons/oxygen/128x128/apps/l10n/sr
 @dirrm share/icons/oxygen/128x128/apps/l10n
-@dirrm share/icons/oxygen/128x128/apps
-@dirrm share/icons/oxygen/128x128
-@dirrm share/icons/oxygen
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/scalable/actions/l10n/sr
 @dirrm share/icons/hicolor/scalable/actions/l10n
@@ -493,7 +462,6 @@ share/locale/sr@latin/entry.desktop
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr@latin
 @dirrm share/icons/hicolor/16x16/actions/l10n/sr
 @dirrm share/icons/hicolor/16x16/actions/l10n
-@dirrmtry share/icons
 @dirrm share/doc/HTML/sr@latin/sonnet
 @dirrm share/doc/HTML/sr@latin/lokalize
 @dirrm share/doc/HTML/sr@latin/khelpcenter

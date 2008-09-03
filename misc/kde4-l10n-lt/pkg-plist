@@ -101,6 +101,7 @@ share/locale/lt/LC_MESSAGES/kcmkded.mo
 share/locale/lt/LC_MESSAGES/kcmkdnssd.mo
 share/locale/lt/LC_MESSAGES/kcmkeyboard.mo
 share/locale/lt/LC_MESSAGES/kcmkeys.mo
+share/locale/lt/LC_MESSAGES/kcmkgamma.mo
 share/locale/lt/LC_MESSAGES/kcmkio.mo
 share/locale/lt/LC_MESSAGES/kcmkonq.mo
 share/locale/lt/LC_MESSAGES/kcmkonqhtml.mo
@@ -175,7 +176,6 @@ share/locale/lt/LC_MESSAGES/kfloppy.mo
 share/locale/lt/LC_MESSAGES/kfmclient.mo
 share/locale/lt/LC_MESSAGES/kfontinst.mo
 share/locale/lt/LC_MESSAGES/kfourinline.mo
-share/locale/lt/LC_MESSAGES/kgamma.mo
 share/locale/lt/LC_MESSAGES/kgeography.mo
 share/locale/lt/LC_MESSAGES/kget.mo
 share/locale/lt/LC_MESSAGES/kgoldrunner.mo
@@ -407,7 +407,6 @@ share/locale/lt/LC_MESSAGES/plasmapkg.mo
 share/locale/lt/LC_MESSAGES/plasmoidviewer.mo
 share/locale/lt/LC_MESSAGES/processcore.mo
 share/locale/lt/LC_MESSAGES/processui.mo
-share/locale/lt/LC_MESSAGES/quanta.mo
 share/locale/lt/LC_MESSAGES/solid-bluetooth.mo
 share/locale/lt/LC_MESSAGES/solid-hardware.mo
 share/locale/lt/LC_MESSAGES/solid-network.mo
@@ -426,5 +425,3 @@ share/locale/lt/entry.desktop
 @dirrm share/doc/HTML/lt/khelpcenter/visualdict
 @dirrm share/doc/HTML/lt/khelpcenter
 @dirrm share/doc/HTML/lt
-@dirrm share/doc/HTML
-@dirrm share/doc

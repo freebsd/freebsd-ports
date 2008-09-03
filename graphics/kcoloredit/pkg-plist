@@ -1,0 +1,81 @@
+bin/kcoloredit
+share/applications/kde4/kcoloredit.desktop
+share/apps/kcoloredit/kcoloreditui.rc
+share/doc/HTML/en/kcoloredit/common
+share/doc/HTML/en/kcoloredit/index.cache.bz2
+share/doc/HTML/en/kcoloredit/index.docbook
+share/icons/hicolor/16x16/apps/kcoloredit.png
+share/icons/hicolor/32x32/apps/kcoloredit.png
+share/locale/af/LC_MESSAGES/kcoloredit.mo
+share/locale/ar/LC_MESSAGES/kcoloredit.mo
+share/locale/be/LC_MESSAGES/kcoloredit.mo
+share/locale/bg/LC_MESSAGES/kcoloredit.mo
+share/locale/br/LC_MESSAGES/kcoloredit.mo
+share/locale/ca/LC_MESSAGES/kcoloredit.mo
+share/locale/cs/LC_MESSAGES/kcoloredit.mo
+share/locale/cy/LC_MESSAGES/kcoloredit.mo
+share/locale/da/LC_MESSAGES/kcoloredit.mo
+share/locale/de/LC_MESSAGES/kcoloredit.mo
+share/locale/el/LC_MESSAGES/kcoloredit.mo
+share/locale/en_GB/LC_MESSAGES/kcoloredit.mo
+share/locale/eo/LC_MESSAGES/kcoloredit.mo
+share/locale/es/LC_MESSAGES/kcoloredit.mo
+share/locale/et/LC_MESSAGES/kcoloredit.mo
+share/locale/eu/LC_MESSAGES/kcoloredit.mo
+share/locale/fa/LC_MESSAGES/kcoloredit.mo
+share/locale/fi/LC_MESSAGES/kcoloredit.mo
+share/locale/fr/LC_MESSAGES/kcoloredit.mo
+share/locale/ga/LC_MESSAGES/kcoloredit.mo
+share/locale/gl/LC_MESSAGES/kcoloredit.mo
+share/locale/he/LC_MESSAGES/kcoloredit.mo
+share/locale/hi/LC_MESSAGES/kcoloredit.mo
+share/locale/hr/LC_MESSAGES/kcoloredit.mo
+share/locale/hu/LC_MESSAGES/kcoloredit.mo
+share/locale/is/LC_MESSAGES/kcoloredit.mo
+share/locale/it/LC_MESSAGES/kcoloredit.mo
+share/locale/ja/LC_MESSAGES/kcoloredit.mo
+share/locale/km/LC_MESSAGES/kcoloredit.mo
+share/locale/lt/LC_MESSAGES/kcoloredit.mo
+share/locale/lv/LC_MESSAGES/kcoloredit.mo
+share/locale/mk/LC_MESSAGES/kcoloredit.mo
+share/locale/ms/LC_MESSAGES/kcoloredit.mo
+share/locale/nb/LC_MESSAGES/kcoloredit.mo
+share/locale/nds/LC_MESSAGES/kcoloredit.mo
+share/locale/ne/LC_MESSAGES/kcoloredit.mo
+share/locale/nl/LC_MESSAGES/kcoloredit.mo
+share/locale/nn/LC_MESSAGES/kcoloredit.mo
+share/locale/oc/LC_MESSAGES/kcoloredit.mo
+share/locale/pa/LC_MESSAGES/kcoloredit.mo
+share/locale/pl/LC_MESSAGES/kcoloredit.mo
+share/locale/pt/LC_MESSAGES/kcoloredit.mo
+share/locale/pt_BR/LC_MESSAGES/kcoloredit.mo
+share/locale/ro/LC_MESSAGES/kcoloredit.mo
+share/locale/ru/LC_MESSAGES/kcoloredit.mo
+share/locale/se/LC_MESSAGES/kcoloredit.mo
+share/locale/sk/LC_MESSAGES/kcoloredit.mo
+share/locale/sl/LC_MESSAGES/kcoloredit.mo
+share/locale/sv/LC_MESSAGES/kcoloredit.mo
+share/locale/ta/LC_MESSAGES/kcoloredit.mo
+share/locale/tg/LC_MESSAGES/kcoloredit.mo
+share/locale/th/LC_MESSAGES/kcoloredit.mo
+share/locale/tr/LC_MESSAGES/kcoloredit.mo
+share/locale/uk/LC_MESSAGES/kcoloredit.mo
+share/locale/vi/LC_MESSAGES/kcoloredit.mo
+share/locale/xh/LC_MESSAGES/kcoloredit.mo
+share/locale/zh_CN/LC_MESSAGES/kcoloredit.mo
+share/locale/zh_HK/LC_MESSAGES/kcoloredit.mo
+share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrm share/doc/HTML/en/kcoloredit
+@dirrm share/apps/kcoloredit

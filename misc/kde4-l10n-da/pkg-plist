@@ -1154,10 +1154,10 @@ share/locale/da/LC_MESSAGES/kcmkded.mo
 share/locale/da/LC_MESSAGES/kcmkdnssd.mo
 share/locale/da/LC_MESSAGES/kcmkeyboard.mo
 share/locale/da/LC_MESSAGES/kcmkeys.mo
+share/locale/da/LC_MESSAGES/kcmkgamma.mo
 share/locale/da/LC_MESSAGES/kcmkio.mo
 share/locale/da/LC_MESSAGES/kcmkonq.mo
 share/locale/da/LC_MESSAGES/kcmkonqhtml.mo
-share/locale/da/LC_MESSAGES/kcmkontactnt.mo
 share/locale/da/LC_MESSAGES/kcmkurifilt.mo
 share/locale/da/LC_MESSAGES/kcmkwallet.mo
 share/locale/da/LC_MESSAGES/kcmkwincompositing.mo
@@ -1222,7 +1222,6 @@ share/locale/da/LC_MESSAGES/kfile_sid.mo
 share/locale/da/LC_MESSAGES/kfile_theora.mo
 share/locale/da/LC_MESSAGES/kfile_tiff.mo
 share/locale/da/LC_MESSAGES/kfile_torrent.mo
-share/locale/da/LC_MESSAGES/kfile_vcf.mo
 share/locale/da/LC_MESSAGES/kfile_wav.mo
 share/locale/da/LC_MESSAGES/kfile_xps.mo
 share/locale/da/LC_MESSAGES/kfileaudiopreview4.mo
@@ -1233,7 +1232,6 @@ share/locale/da/LC_MESSAGES/kfloppy.mo
 share/locale/da/LC_MESSAGES/kfmclient.mo
 share/locale/da/LC_MESSAGES/kfontinst.mo
 share/locale/da/LC_MESSAGES/kfourinline.mo
-share/locale/da/LC_MESSAGES/kgamma.mo
 share/locale/da/LC_MESSAGES/kgeography.mo
 share/locale/da/LC_MESSAGES/kget.mo
 share/locale/da/LC_MESSAGES/kgoldrunner.mo
@@ -1482,7 +1480,6 @@ share/locale/da/LC_MESSAGES/plasma.mo
 share/locale/da/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/da/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/da/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/da/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/da/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/da/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/da/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1495,7 +1492,6 @@ share/locale/da/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/da/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/da/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/da/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/da/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/da/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/da/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/da/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -1512,14 +1508,12 @@ share/locale/da/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/da/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/da/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/da/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/da/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/da/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/da/LC_MESSAGES/plasmapkg.mo
 share/locale/da/LC_MESSAGES/plasmoidviewer.mo
 share/locale/da/LC_MESSAGES/printer-applet.mo
 share/locale/da/LC_MESSAGES/processcore.mo
 share/locale/da/LC_MESSAGES/processui.mo
-share/locale/da/LC_MESSAGES/quanta.mo
 share/locale/da/LC_MESSAGES/solid-bluetooth.mo
 share/locale/da/LC_MESSAGES/solid-hardware.mo
 share/locale/da/LC_MESSAGES/solid-network.mo
@@ -1537,7 +1531,6 @@ share/locale/da/LC_MESSAGES/timezones4.mo
 share/locale/da/LC_MESSAGES/umbrello.mo
 share/locale/da/LC_MESSAGES/useraccount.mo
 share/locale/da/entry.desktop
-@dirrmtry share/pixmaps
 @dirrm share/doc/HTML/da/xsldbg
 @dirrm share/doc/HTML/da/umbrello
 @dirrm share/doc/HTML/da/superkaramba

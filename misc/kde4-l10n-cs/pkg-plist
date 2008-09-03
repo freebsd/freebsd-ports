@@ -194,6 +194,8 @@ share/locale/cs/LC_MESSAGES/kcachegrind.mo
 share/locale/cs/LC_MESSAGES/kcalc.mo
 share/locale/cs/LC_MESSAGES/kcertpart.mo
 share/locale/cs/LC_MESSAGES/kcharselect.mo
+share/locale/cs/LC_MESSAGES/kcm_autostart.mo
+share/locale/cs/LC_MESSAGES/kcm_emoticons.mo
 share/locale/cs/LC_MESSAGES/kcm_krfb.mo
 share/locale/cs/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/cs/LC_MESSAGES/kcm_phonon.mo
@@ -224,6 +226,7 @@ share/locale/cs/LC_MESSAGES/kcmkded.mo
 share/locale/cs/LC_MESSAGES/kcmkdnssd.mo
 share/locale/cs/LC_MESSAGES/kcmkeyboard.mo
 share/locale/cs/LC_MESSAGES/kcmkeys.mo
+share/locale/cs/LC_MESSAGES/kcmkgamma.mo
 share/locale/cs/LC_MESSAGES/kcmkio.mo
 share/locale/cs/LC_MESSAGES/kcmkonq.mo
 share/locale/cs/LC_MESSAGES/kcmkonqhtml.mo
@@ -297,7 +300,6 @@ share/locale/cs/LC_MESSAGES/kfloppy.mo
 share/locale/cs/LC_MESSAGES/kfmclient.mo
 share/locale/cs/LC_MESSAGES/kfontinst.mo
 share/locale/cs/LC_MESSAGES/kfourinline.mo
-share/locale/cs/LC_MESSAGES/kgamma.mo
 share/locale/cs/LC_MESSAGES/kgeography.mo
 share/locale/cs/LC_MESSAGES/kget.mo
 share/locale/cs/LC_MESSAGES/kgoldrunner.mo
@@ -535,11 +537,11 @@ share/locale/cs/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_skapplet.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_trash.mo
+share/locale/cs/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_dict.mo
 share/locale/cs/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/cs/LC_MESSAGES/processcore.mo
 share/locale/cs/LC_MESSAGES/processui.mo
-share/locale/cs/LC_MESSAGES/quanta.mo
 share/locale/cs/LC_MESSAGES/solid-bluetooth.mo
 share/locale/cs/LC_MESSAGES/solid-hardware.mo
 share/locale/cs/LC_MESSAGES/solid-network.mo

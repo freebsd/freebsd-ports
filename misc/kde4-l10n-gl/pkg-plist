@@ -198,6 +198,7 @@ share/locale/gl/LC_MESSAGES/kcmkded.mo
 share/locale/gl/LC_MESSAGES/kcmkdnssd.mo
 share/locale/gl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/gl/LC_MESSAGES/kcmkeys.mo
+share/locale/gl/LC_MESSAGES/kcmkgamma.mo
 share/locale/gl/LC_MESSAGES/kcmkio.mo
 share/locale/gl/LC_MESSAGES/kcmkonq.mo
 share/locale/gl/LC_MESSAGES/kcmkonqhtml.mo
@@ -275,7 +276,6 @@ share/locale/gl/LC_MESSAGES/kfloppy.mo
 share/locale/gl/LC_MESSAGES/kfmclient.mo
 share/locale/gl/LC_MESSAGES/kfontinst.mo
 share/locale/gl/LC_MESSAGES/kfourinline.mo
-share/locale/gl/LC_MESSAGES/kgamma.mo
 share/locale/gl/LC_MESSAGES/kgeography.mo
 share/locale/gl/LC_MESSAGES/kget.mo
 share/locale/gl/LC_MESSAGES/kgoldrunner.mo
@@ -524,7 +524,6 @@ share/locale/gl/LC_MESSAGES/plasma.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/gl/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_desktop.mo
@@ -537,7 +536,6 @@ share/locale/gl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/gl/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -554,14 +552,12 @@ share/locale/gl/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/gl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/gl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/gl/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/gl/LC_MESSAGES/plasmapkg.mo
 share/locale/gl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/gl/LC_MESSAGES/printer-applet.mo
 share/locale/gl/LC_MESSAGES/processcore.mo
 share/locale/gl/LC_MESSAGES/processui.mo
-share/locale/gl/LC_MESSAGES/quanta.mo
 share/locale/gl/LC_MESSAGES/solid-bluetooth.mo
 share/locale/gl/LC_MESSAGES/solid-hardware.mo
 share/locale/gl/LC_MESSAGES/solid-network.mo
@@ -592,7 +588,5 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl/kanagram
 @dirrm share/doc/HTML/gl/blinken
 @dirrm share/doc/HTML/gl
-@dirrmtry share/doc/HTML
-@dirrmtry share/doc
 @dirrm share/apps/kvtml/gl
 @dirrm share/apps/kvtml

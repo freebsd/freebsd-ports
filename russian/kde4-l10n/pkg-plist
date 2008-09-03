@@ -802,6 +802,7 @@ share/doc/HTML/ru/xsldbg/index.cache.bz2
 share/doc/HTML/ru/xsldbg/index.docbook
 share/doc/HTML/ru/xsldbg/introduction.docbook
 share/doc/HTML/ru/xsldbg/usage.docbook
+share/locale/ru/LC_MESSAGES/akonaditray.mo
 share/locale/ru/LC_MESSAGES/akregator.mo
 share/locale/ru/LC_MESSAGES/amor.mo
 share/locale/ru/LC_MESSAGES/ark.mo
@@ -860,6 +861,7 @@ share/locale/ru/LC_MESSAGES/kblackbox.mo
 share/locale/ru/LC_MESSAGES/kblankscrn.mo
 share/locale/ru/LC_MESSAGES/kblocks.mo
 share/locale/ru/LC_MESSAGES/kbounce.mo
+share/locale/ru/LC_MESSAGES/kbreakout.mo
 share/locale/ru/LC_MESSAGES/kbruch.mo
 share/locale/ru/LC_MESSAGES/kbstateapplet.mo
 share/locale/ru/LC_MESSAGES/kbugbuster.mo
@@ -901,6 +903,7 @@ share/locale/ru/LC_MESSAGES/kcmkded.mo
 share/locale/ru/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ru/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ru/LC_MESSAGES/kcmkeys.mo
+share/locale/ru/LC_MESSAGES/kcmkgamma.mo
 share/locale/ru/LC_MESSAGES/kcmkio.mo
 share/locale/ru/LC_MESSAGES/kcmkonq.mo
 share/locale/ru/LC_MESSAGES/kcmkonqhtml.mo
@@ -944,6 +947,7 @@ share/locale/ru/LC_MESSAGES/kdesud.mo
 share/locale/ru/LC_MESSAGES/kdf.mo
 share/locale/ru/LC_MESSAGES/kdgantt1.mo
 share/locale/ru/LC_MESSAGES/kdialog.mo
+share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdmconfig.mo
 share/locale/ru/LC_MESSAGES/kdmgreet.mo
 share/locale/ru/LC_MESSAGES/keditbookmarks.mo
@@ -974,7 +978,6 @@ share/locale/ru/LC_MESSAGES/kfloppy.mo
 share/locale/ru/LC_MESSAGES/kfmclient.mo
 share/locale/ru/LC_MESSAGES/kfontinst.mo
 share/locale/ru/LC_MESSAGES/kfourinline.mo
-share/locale/ru/LC_MESSAGES/kgamma.mo
 share/locale/ru/LC_MESSAGES/kgeography.mo
 share/locale/ru/LC_MESSAGES/kget.mo
 share/locale/ru/LC_MESSAGES/kgoldrunner.mo
@@ -1049,6 +1052,7 @@ share/locale/ru/LC_MESSAGES/knode.mo
 share/locale/ru/LC_MESSAGES/knotes.mo
 share/locale/ru/LC_MESSAGES/knotify4.mo
 share/locale/ru/LC_MESSAGES/kolf.mo
+share/locale/ru/LC_MESSAGES/kollision.mo
 share/locale/ru/LC_MESSAGES/kolourpaint.mo
 share/locale/ru/LC_MESSAGES/kompare.mo
 share/locale/ru/LC_MESSAGES/konqueror.mo
@@ -1162,6 +1166,7 @@ share/locale/ru/LC_MESSAGES/libkpgp.mo
 share/locale/ru/LC_MESSAGES/libkscreensaver.mo
 share/locale/ru/LC_MESSAGES/libksieve.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
+share/locale/ru/LC_MESSAGES/liboktetacore.mo
 share/locale/ru/LC_MESSAGES/libphonon.mo
 share/locale/ru/LC_MESSAGES/libplasma.mo
 share/locale/ru/LC_MESSAGES/libtaskmanager.mo
@@ -1194,8 +1199,8 @@ share/locale/ru/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_dict.mo
 share/locale/ru/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/ru/LC_MESSAGES/printer-applet.mo
 share/locale/ru/LC_MESSAGES/processui.mo
-share/locale/ru/LC_MESSAGES/quanta.mo
 share/locale/ru/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ru/LC_MESSAGES/solid-hardware.mo
 share/locale/ru/LC_MESSAGES/solid-network.mo

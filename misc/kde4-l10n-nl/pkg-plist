@@ -867,7 +867,9 @@ share/locale/nl/LC_MESSAGES/katomic.mo
 share/locale/nl/LC_MESSAGES/kbattleship.mo
 share/locale/nl/LC_MESSAGES/kblackbox.mo
 share/locale/nl/LC_MESSAGES/kblankscrn.mo
+share/locale/nl/LC_MESSAGES/kblocks.mo
 share/locale/nl/LC_MESSAGES/kbounce.mo
+share/locale/nl/LC_MESSAGES/kbreakout.mo
 share/locale/nl/LC_MESSAGES/kbruch.mo
 share/locale/nl/LC_MESSAGES/kbstateapplet.mo
 share/locale/nl/LC_MESSAGES/kbugbuster.mo
@@ -911,6 +913,7 @@ share/locale/nl/LC_MESSAGES/kcmkded.mo
 share/locale/nl/LC_MESSAGES/kcmkdnssd.mo
 share/locale/nl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nl/LC_MESSAGES/kcmkeys.mo
+share/locale/nl/LC_MESSAGES/kcmkgamma.mo
 share/locale/nl/LC_MESSAGES/kcmkio.mo
 share/locale/nl/LC_MESSAGES/kcmkonq.mo
 share/locale/nl/LC_MESSAGES/kcmkonqhtml.mo
@@ -955,6 +958,7 @@ share/locale/nl/LC_MESSAGES/kdesud.mo
 share/locale/nl/LC_MESSAGES/kdf.mo
 share/locale/nl/LC_MESSAGES/kdgantt1.mo
 share/locale/nl/LC_MESSAGES/kdialog.mo
+share/locale/nl/LC_MESSAGES/kdiamond.mo
 share/locale/nl/LC_MESSAGES/kdmconfig.mo
 share/locale/nl/LC_MESSAGES/kdmgreet.mo
 share/locale/nl/LC_MESSAGES/keditbookmarks.mo
@@ -987,7 +991,6 @@ share/locale/nl/LC_MESSAGES/kfloppy.mo
 share/locale/nl/LC_MESSAGES/kfmclient.mo
 share/locale/nl/LC_MESSAGES/kfontinst.mo
 share/locale/nl/LC_MESSAGES/kfourinline.mo
-share/locale/nl/LC_MESSAGES/kgamma.mo
 share/locale/nl/LC_MESSAGES/kgeography.mo
 share/locale/nl/LC_MESSAGES/kget.mo
 share/locale/nl/LC_MESSAGES/kgoldrunner.mo
@@ -1202,6 +1205,7 @@ share/locale/nl/LC_MESSAGES/libktnef.mo
 share/locale/nl/LC_MESSAGES/libkworkspace.mo
 share/locale/nl/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/nl/LC_MESSAGES/libmailtransport.mo
+share/locale/nl/LC_MESSAGES/liboktetacore.mo
 share/locale/nl/LC_MESSAGES/libphonon.mo
 share/locale/nl/LC_MESSAGES/libplasma.mo
 share/locale/nl/LC_MESSAGES/libtaskmanager.mo
@@ -1233,7 +1237,6 @@ share/locale/nl/LC_MESSAGES/plasma.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/nl/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1246,7 +1249,6 @@ share/locale/nl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/nl/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_knewsticker.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kolourpicker.mo
@@ -1262,14 +1264,12 @@ share/locale/nl/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/nl/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/nl/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/nl/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/nl/LC_MESSAGES/plasmapkg.mo
 share/locale/nl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/nl/LC_MESSAGES/printer-applet.mo
 share/locale/nl/LC_MESSAGES/processcore.mo
 share/locale/nl/LC_MESSAGES/processui.mo
-share/locale/nl/LC_MESSAGES/quanta.mo
 share/locale/nl/LC_MESSAGES/solid-bluetooth.mo
 share/locale/nl/LC_MESSAGES/solid-hardware.mo
 share/locale/nl/LC_MESSAGES/solid-network.mo

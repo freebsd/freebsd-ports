@@ -77,6 +77,7 @@ share/locale/th/LC_MESSAGES/kcmkded.mo
 share/locale/th/LC_MESSAGES/kcmkdnssd.mo
 share/locale/th/LC_MESSAGES/kcmkeyboard.mo
 share/locale/th/LC_MESSAGES/kcmkeys.mo
+share/locale/th/LC_MESSAGES/kcmkgamma.mo
 share/locale/th/LC_MESSAGES/kcmkio.mo
 share/locale/th/LC_MESSAGES/kcmkonq.mo
 share/locale/th/LC_MESSAGES/kcmkonqhtml.mo
@@ -148,7 +149,6 @@ share/locale/th/LC_MESSAGES/kfloppy.mo
 share/locale/th/LC_MESSAGES/kfmclient.mo
 share/locale/th/LC_MESSAGES/kfontinst.mo
 share/locale/th/LC_MESSAGES/kfourinline.mo
-share/locale/th/LC_MESSAGES/kgamma.mo
 share/locale/th/LC_MESSAGES/kget.mo
 share/locale/th/LC_MESSAGES/kgreet_classic.mo
 share/locale/th/LC_MESSAGES/kgreet_generic.mo
@@ -316,7 +316,6 @@ share/locale/th/LC_MESSAGES/plasma.mo
 share/locale/th/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/th/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/th/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/th/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/th/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/th/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/th/LC_MESSAGES/plasma_applet_desktop.mo

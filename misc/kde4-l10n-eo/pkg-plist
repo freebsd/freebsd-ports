@@ -61,6 +61,7 @@ share/locale/eo/LC_MESSAGES/kcmkded.mo
 share/locale/eo/LC_MESSAGES/kcmkdnssd.mo
 share/locale/eo/LC_MESSAGES/kcmkeyboard.mo
 share/locale/eo/LC_MESSAGES/kcmkeys.mo
+share/locale/eo/LC_MESSAGES/kcmkgamma.mo
 share/locale/eo/LC_MESSAGES/kcmkio.mo
 share/locale/eo/LC_MESSAGES/kcmkonq.mo
 share/locale/eo/LC_MESSAGES/kcmkonqhtml.mo
@@ -126,7 +127,6 @@ share/locale/eo/LC_MESSAGES/kfloppy.mo
 share/locale/eo/LC_MESSAGES/kfmclient.mo
 share/locale/eo/LC_MESSAGES/kfontinst.mo
 share/locale/eo/LC_MESSAGES/kfourinline.mo
-share/locale/eo/LC_MESSAGES/kgamma.mo
 share/locale/eo/LC_MESSAGES/kgeography.mo
 share/locale/eo/LC_MESSAGES/kgreet_classic.mo
 share/locale/eo/LC_MESSAGES/kgreet_winbind.mo

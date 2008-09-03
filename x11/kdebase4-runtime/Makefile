@@ -30,7 +30,7 @@ QT_COMPONENTS=	corelib opengl moc rcc uic dbus
 USE_FAM=	yes
 USE_GETTEXT=	yes
 
-MAN1=	kdesu.1
+MAN1=  kdesu.1
 
 post-extract:
 	${MKDIR} ${WRKSRC}

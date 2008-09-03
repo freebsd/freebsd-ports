@@ -74,6 +74,7 @@ share/locale/ko/LC_MESSAGES/kcmkded.mo
 share/locale/ko/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ko/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ko/LC_MESSAGES/kcmkeys.mo
+share/locale/ko/LC_MESSAGES/kcmkgamma.mo
 share/locale/ko/LC_MESSAGES/kcmkio.mo
 share/locale/ko/LC_MESSAGES/kcmkonq.mo
 share/locale/ko/LC_MESSAGES/kcmkonqhtml.mo
@@ -145,7 +146,6 @@ share/locale/ko/LC_MESSAGES/kfloppy.mo
 share/locale/ko/LC_MESSAGES/kfmclient.mo
 share/locale/ko/LC_MESSAGES/kfontinst.mo
 share/locale/ko/LC_MESSAGES/kfourinline.mo
-share/locale/ko/LC_MESSAGES/kgamma.mo
 share/locale/ko/LC_MESSAGES/kget.mo
 share/locale/ko/LC_MESSAGES/kgpg.mo
 share/locale/ko/LC_MESSAGES/kgreet_classic.mo
@@ -312,7 +312,6 @@ share/locale/ko/LC_MESSAGES/plasma.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/ko/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_desktop.mo
@@ -345,7 +344,6 @@ share/locale/ko/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ko/LC_MESSAGES/printer-applet.mo
 share/locale/ko/LC_MESSAGES/processcore.mo
 share/locale/ko/LC_MESSAGES/processui.mo
-share/locale/ko/LC_MESSAGES/quanta.mo
 share/locale/ko/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ko/LC_MESSAGES/solid-hardware.mo
 share/locale/ko/LC_MESSAGES/solid-network.mo
@@ -360,9 +358,8 @@ share/locale/ko/LC_MESSAGES/timezones4.mo
 share/locale/ko/LC_MESSAGES/useraccount.mo
 share/locale/ko/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ko/entry.desktop
+@dirrm share/locale/ko/LC_SCRIPTS/kdelibs4
+@dirrm share/locale/ko/LC_SCRIPTS
 @dirrm share/doc/HTML/ko/khelpcenter/quickstart
 @dirrm share/doc/HTML/ko/khelpcenter
 @dirrm share/doc/HTML/ko/common
-@dirrm share/locale/ko/LC_SCRIPTS/kdelibs4
-@dirrm share/locale/ko/LC_SCRIPTS
-

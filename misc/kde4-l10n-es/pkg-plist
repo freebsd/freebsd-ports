@@ -1287,9 +1287,6 @@ share/doc/HTML/es/lokalize/index.docbook
 share/doc/HTML/es/lskat/common
 share/doc/HTML/es/lskat/index.cache.bz2
 share/doc/HTML/es/lskat/index.docbook
-share/doc/HTML/es/mailody/common
-share/doc/HTML/es/mailody/index.cache.bz2
-share/doc/HTML/es/mailody/index.docbook
 share/doc/HTML/es/multisynk/common
 share/doc/HTML/es/multisynk/index.cache.bz2
 share/doc/HTML/es/multisynk/index.docbook
@@ -1443,6 +1440,7 @@ share/locale/es/LC_MESSAGES/kcmkded.mo
 share/locale/es/LC_MESSAGES/kcmkdnssd.mo
 share/locale/es/LC_MESSAGES/kcmkeyboard.mo
 share/locale/es/LC_MESSAGES/kcmkeys.mo
+share/locale/es/LC_MESSAGES/kcmkgamma.mo
 share/locale/es/LC_MESSAGES/kcmkio.mo
 share/locale/es/LC_MESSAGES/kcmkonq.mo
 share/locale/es/LC_MESSAGES/kcmkonqhtml.mo
@@ -1520,7 +1518,6 @@ share/locale/es/LC_MESSAGES/kfloppy.mo
 share/locale/es/LC_MESSAGES/kfmclient.mo
 share/locale/es/LC_MESSAGES/kfontinst.mo
 share/locale/es/LC_MESSAGES/kfourinline.mo
-share/locale/es/LC_MESSAGES/kgamma.mo
 share/locale/es/LC_MESSAGES/kgeography.mo
 share/locale/es/LC_MESSAGES/kget.mo
 share/locale/es/LC_MESSAGES/kgoldrunner.mo
@@ -1769,7 +1766,6 @@ share/locale/es/LC_MESSAGES/plasma.mo
 share/locale/es/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/es/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_calculator.mo
-share/locale/es/LC_MESSAGES/plasma_applet_charselect.mo
 share/locale/es/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/es/LC_MESSAGES/plasma_applet_desktop.mo
@@ -1782,7 +1778,6 @@ share/locale/es/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/es/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/es/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalgebra.mo
-share/locale/es/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/es/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/es/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -1799,14 +1794,12 @@ share/locale/es/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/es/LC_MESSAGES/plasma_applet_twitter.mo
 share/locale/es/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/es/LC_MESSAGES/plasma_engine_dict.mo
-share/locale/es/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/es/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/es/LC_MESSAGES/plasmapkg.mo
 share/locale/es/LC_MESSAGES/plasmoidviewer.mo
 share/locale/es/LC_MESSAGES/printer-applet.mo
 share/locale/es/LC_MESSAGES/processcore.mo
 share/locale/es/LC_MESSAGES/processui.mo
-share/locale/es/LC_MESSAGES/quanta.mo
 share/locale/es/LC_MESSAGES/solid-bluetooth.mo
 share/locale/es/LC_MESSAGES/solid-hardware.mo
 share/locale/es/LC_MESSAGES/solid-network.mo
@@ -1824,7 +1817,6 @@ share/locale/es/LC_MESSAGES/timezones4.mo
 share/locale/es/LC_MESSAGES/umbrello.mo
 share/locale/es/LC_MESSAGES/useraccount.mo
 share/locale/es/entry.desktop
-@dirrmtry share/pixmaps
 @dirrm share/doc/HTML/es/xsldbg
 @dirrm share/doc/HTML/es/umbrello
 @dirrm share/doc/HTML/es/systemsettings
@@ -1833,7 +1825,6 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/plasma
 @dirrm share/doc/HTML/es/okteta
 @dirrm share/doc/HTML/es/multisynk
-@dirrm share/doc/HTML/es/mailody
 @dirrm share/doc/HTML/es/lskat
 @dirrm share/doc/HTML/es/lokalize
 @dirrm share/doc/HTML/es/lilo-config

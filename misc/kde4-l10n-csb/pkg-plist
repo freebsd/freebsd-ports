@@ -203,6 +203,5 @@ share/locale/csb/LC_MESSAGES/systemsettings.mo
 share/locale/csb/LC_MESSAGES/timezones4.mo
 share/locale/csb/LC_MESSAGES/useraccount.mo
 share/locale/csb/entry.desktop
-@dirrmtry share/pixmaps
 @dirrm share/locale/csb/LC_MESSAGES
 @dirrm share/locale/csb

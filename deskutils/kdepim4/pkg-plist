@@ -16,6 +16,7 @@ bin/akonaditray
 bin/akregator
 bin/egroupwarewizard
 bin/groupwarewizard
+bin/groupwisewizard
 bin/ical2vcal
 bin/kabc2mutt
 bin/kabcclient
@@ -151,6 +152,7 @@ lib/kde4/akregator_onlinesync_plugin.so
 lib/kde4/akregatorpart.so
 lib/kde4/kabc_akonadi.so
 lib/kde4/kabc_groupdav.so
+lib/kde4/kabc_groupwise.so
 lib/kde4/kabc_kolab.so
 lib/kde4/kabc_scalix.so
 lib/kde4/kabc_slox.so
@@ -179,6 +181,7 @@ lib/kde4/karmpart.so
 lib/kde4/kcal_akonadi.so
 lib/kde4/kcal_blog.so
 lib/kde4/kcal_groupdav.so
+lib/kde4/kcal_groupwise.so
 lib/kde4/kcal_kabc.so
 lib/kde4/kcal_kolab.so
 lib/kde4/kcal_remote.so
@@ -260,15 +263,15 @@ lib/libimap.so.5.0.0
 lib/libkabc_groupdav.so
 lib/libkabc_groupdav.so.5
 lib/libkabc_groupdav.so.5.0.0
-lib/libkabc_groupwise.so
-lib/libkabc_groupwise.so.5
-lib/libkabc_groupwise.so.5.0.0
 lib/libkabc_slox.so
 lib/libkabc_slox.so.5
 lib/libkabc_slox.so.5.0.0
 lib/libkabc_xmlrpc.so
 lib/libkabc_xmlrpc.so.5
 lib/libkabc_xmlrpc.so.5.0.0
+lib/libkabcgroupwise.so
+lib/libkabcgroupwise.so.5
+lib/libkabcgroupwise.so.5.0.0
 lib/libkabckolab.so
 lib/libkabckolab.so.5
 lib/libkabckolab.so.5.0.0
@@ -290,9 +293,6 @@ lib/libkalarm_resources.so.5.0.0
 lib/libkcal_groupdav.so
 lib/libkcal_groupdav.so.5
 lib/libkcal_groupdav.so.5.0.0
-lib/libkcal_groupwise.so
-lib/libkcal_groupwise.so.5
-lib/libkcal_groupwise.so.5.0.0
 lib/libkcal_resourceblog.so
 lib/libkcal_resourceblog.so.5
 lib/libkcal_resourceblog.so.5.0.0
@@ -308,6 +308,9 @@ lib/libkcal_slox.so.5.0.0
 lib/libkcal_xmlrpc.so
 lib/libkcal_xmlrpc.so.5
 lib/libkcal_xmlrpc.so.5.0.0
+lib/libkcalgroupwise.so
+lib/libkcalgroupwise.so.5
+lib/libkcalgroupwise.so.5.0.0
 lib/libkcalkolab.so
 lib/libkcalkolab.so.5
 lib/libkcalkolab.so.5.0.0
@@ -504,6 +507,7 @@ share/apps/kalarm/kalarmui.rc
 share/apps/karmpart/karmui.rc
 share/apps/kconf_update/kalarm-1.2.1-general.pl
 share/apps/kconf_update/kalarm-1.9.5-defaults.pl
+share/apps/kconf_update/kalarm-2.0.2-general.pl
 share/apps/kconf_update/kalarm-version.pl
 share/apps/kconf_update/kalarm.upd
 share/apps/kconf_update/kmail-3.1-update-new-mail-notification-settings.pl
@@ -732,7 +736,7 @@ share/apps/libkholidays/holiday_ie
 share/apps/libkholidays/holiday_il
 share/apps/libkholidays/holiday_is
 share/apps/libkholidays/holiday_it
-share/apps/libkholidays/holiday_ja
+share/apps/libkholidays/holiday_jp
 share/apps/libkholidays/holiday_lt
 share/apps/libkholidays/holiday_mx
 share/apps/libkholidays/holiday_nl
@@ -998,6 +1002,9 @@ share/doc/HTML/en/ktimetracker/index.cache.bz2
 share/doc/HTML/en/ktimetracker/index.docbook
 share/doc/HTML/en/ktimetracker/karm.png
 share/doc/HTML/en/ktimetracker/systray.png
+share/doc/HTML/en/kwsdl_compiler/common
+share/doc/HTML/en/kwsdl_compiler/index.cache.bz2
+share/doc/HTML/en/kwsdl_compiler/index.docbook
 share/icons/hicolor/128x128/apps/akregator.png
 share/icons/hicolor/128x128/apps/kaddressbook.png
 share/icons/hicolor/128x128/apps/kjots.png
@@ -1308,66 +1315,12 @@ share/kde4/servicetypes/kaddressbookimprotocol.desktop
 share/kde4/servicetypes/kontactplugin.desktop
 share/kde4/servicetypes/korganizerpart.desktop
 share/kde4/servicetypes/korgprintplugin.desktop
-@dirrmtry share/kde4/servicetypes
 @dirrm share/kde4/services/kresources/knotes
-@dirrmtry share/kde4/services/kresources/kcal
-@dirrmtry share/kde4/services/kresources/kabc
 @dirrm share/kde4/services/kresources/alarms
-@dirrmtry share/kde4/services/kresources
 @dirrm share/kde4/services/korganizer
 @dirrm share/kde4/services/kontact
 @dirrm share/kde4/services/kaddressbook
-@dirrmtry share/kde4/services
-@dirrmtry share/kde4
-@dirrmtry share/icons/oxygen/scalable/status
-@dirrmtry share/icons/oxygen/scalable/mimetypes
-@dirrmtry share/icons/oxygen/scalable/apps
-@dirrmtry share/icons/oxygen/scalable/actions
-@dirrmtry share/icons/oxygen/scalable
-@dirrmtry share/icons/oxygen/64x64/apps
-@dirrmtry share/icons/oxygen/64x64
-@dirrmtry share/icons/oxygen/48x48/mimetypes
-@dirrmtry share/icons/oxygen/48x48/apps
-@dirrmtry share/icons/oxygen/48x48/actions
-@dirrmtry share/icons/oxygen/48x48
-@dirrmtry share/icons/oxygen/32x32/status
-@dirrmtry share/icons/oxygen/32x32/mimetypes
-@dirrmtry share/icons/oxygen/32x32/apps
-@dirrmtry share/icons/oxygen/32x32/actions
-@dirrmtry share/icons/oxygen/32x32
-@dirrmtry share/icons/oxygen/22x22/status
-@dirrmtry share/icons/oxygen/22x22/mimetypes
-@dirrmtry share/icons/oxygen/22x22/apps
-@dirrmtry share/icons/oxygen/22x22/actions
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/16x16/status
-@dirrmtry share/icons/oxygen/16x16/mimetypes
-@dirrmtry share/icons/oxygen/16x16/apps
-@dirrmtry share/icons/oxygen/16x16/actions
-@dirrmtry share/icons/oxygen/16x16
-@dirrmtry share/icons/oxygen/128x128/apps
-@dirrmtry share/icons/oxygen/128x128
-@dirrmtry share/icons/oxygen
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48/actions
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32/actions
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22/actions
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16/actions
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dirrm share/doc/HTML/en/kwsdl_compiler
 @dirrm share/doc/HTML/en/ktimetracker
 @dirrm share/doc/HTML/en/korganizer
 @dirrm share/doc/HTML/en/kontact
@@ -1380,12 +1333,6 @@ share/kde4/servicetypes/korgprintplugin.desktop
 @dirrm share/doc/HTML/en/kalarm
 @dirrm share/doc/HTML/en/kaddressbook
 @dirrm share/doc/HTML/en/akregator
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/dbus-1/interfaces
-@dirrmtry share/dbus-1
-@dirrmtry share/config.kcfg
-@dirrmtry share/config
 @dirrmtry share/autostart
 @dirrmtry share/apps/nepomuk/ontologies
 @dirrmtry share/apps/nepomuk
@@ -1469,15 +1416,10 @@ share/kde4/servicetypes/korgprintplugin.desktop
 @dirrm share/apps/akonadi/plugins/serializer
 @dirrm share/apps/akonadi/plugins
 @dirrm share/apps/akonadi
-@dirrmtry share/apps
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
 @dirrmtry lib/strigi
 @dirrmtry lib/kde4/plugins/designer
-@dirrmtry lib/kde4/plugins
-@dirrmtry lib/kde4
 @dirrm include/libkleopatraclient/gui
 @dirrm include/libkleopatraclient/core
 @dirrm include/libkleopatraclient

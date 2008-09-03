@@ -68,6 +68,7 @@ share/locale/kk/LC_MESSAGES/kcmkclock.mo
 share/locale/kk/LC_MESSAGES/kcmkded.mo
 share/locale/kk/LC_MESSAGES/kcmkdnssd.mo
 share/locale/kk/LC_MESSAGES/kcmkeys.mo
+share/locale/kk/LC_MESSAGES/kcmkgamma.mo
 share/locale/kk/LC_MESSAGES/kcmkio.mo
 share/locale/kk/LC_MESSAGES/kcmkonq.mo
 share/locale/kk/LC_MESSAGES/kcmkonqhtml.mo
@@ -137,7 +138,6 @@ share/locale/kk/LC_MESSAGES/kfindpart.mo
 share/locale/kk/LC_MESSAGES/kfloppy.mo
 share/locale/kk/LC_MESSAGES/kfmclient.mo
 share/locale/kk/LC_MESSAGES/kfontinst.mo
-share/locale/kk/LC_MESSAGES/kgamma.mo
 share/locale/kk/LC_MESSAGES/kget.mo
 share/locale/kk/LC_MESSAGES/kgpg.mo
 share/locale/kk/LC_MESSAGES/kgreet_classic.mo

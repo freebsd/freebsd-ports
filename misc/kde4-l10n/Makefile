@@ -7,7 +7,6 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -27,8 +26,8 @@ RUN_DEPENDS+=\
 	${KDE4_PREFIX}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde4-l10n
 
 .for LANG in bg ca cs csb da el en_GB eo es et fi fy ga gl hi it kk km ku lt \
-	lv mk ml nb nds pa sl sr sv ta th tr wo
-RUN_DEPENS+= \
+	lv mk ml nb nds pa sl sr sv ta th tr wa
+RUN_DEPENDS+= \
 	${KDE4_PREFIX}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde4-l10n-${LANG}
 .endfor
 RUN_DEPENDS+=\
@@ -40,8 +39,7 @@ RUN_DEPENDS+=\
 .endfor
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 USE_KDE4=	kdeprefix kdelibs
-
-do-install:	# none
 
 .include <bsd.port.mk>
