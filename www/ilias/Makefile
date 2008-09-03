@@ -9,7 +9,7 @@ PORTVERSION=	3.9.5
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	r@robakdesign.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \

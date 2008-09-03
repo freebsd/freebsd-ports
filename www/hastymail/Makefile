@@ -12,7 +12,7 @@ CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	hastymail
 
-MAINTAINER=	r@robakdesign.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
