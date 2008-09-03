@@ -9,7 +9,8 @@ PORTNAME=	qscan
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	mail security
-MASTER_SITES=	ftp://ftp.c9x.org/qscan/
+MASTER_SITES=	http://download.pureftpd.org/pub/qscan/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/qscan/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A mail filter for Qmail that scans messages with ClamAV
