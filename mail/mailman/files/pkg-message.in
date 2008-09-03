@@ -9,8 +9,8 @@ extensive post-installation instructions may be found in:
 
 Note (1):  If you use an alternate (non-Sendmail) MTA, you MUST be sure
 that the correct value of MAIL_GID was used when this port or package
-was built.  Performing a "make options" in the Mailman port directory
-will list required values for various mail servers.
+was built.  Performing a "make config" in the Mailman port directory
+you can choose your MTA with the correct MAIL_GID.
 
 Note (2):  The entire Mailman installation resides under %%MAILMANDIR%%
 The command-line scripts necessary to administer Mailman have been
