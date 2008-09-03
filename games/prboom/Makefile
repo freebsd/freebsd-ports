@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	robin.schoonover@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer-capable and modified version of ID's classic DOOM game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
