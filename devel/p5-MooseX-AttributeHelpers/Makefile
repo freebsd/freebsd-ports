@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-AttributeHelpers
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Extend your attribute interfaces
 
-RUN_DEPENDS=	p5-Moose>=0.45:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
