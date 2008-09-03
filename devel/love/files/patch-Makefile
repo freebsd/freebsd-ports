@@ -1,11 +1,11 @@
---- Makefile.orig	2008-07-04 03:25:34.000000000 +0400
-+++ Makefile	2008-08-01 16:27:46.000000000 +0400
+--- Makefile.orig	2008-08-29 03:42:40.000000000 +0400
++++ Makefile	2008-08-29 18:09:43.000000000 +0400
 @@ -3,20 +3,19 @@
  # You may need to modify parts of this makefile for your system.
  ######################################################################
  
 -CC = g++
--CFLAGS = -g -O2 -Wall
+-CFLAGS = -g0 -O3 -Wall
 -CFLAGS_MOD = -g0 -O3
 +CFLAGS += -Wall
 +CFLAGS_MOD = $(CFLAGS)
