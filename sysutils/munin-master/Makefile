@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	munin
@@ -38,8 +37,8 @@ USE_GMAKE=	yes
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-ALL_TARGET=	DATADIR=${DATADIR} PERL=${PERL} build build-man
-INSTALL_TARGET=	DATADIR=${DATADIR} PERL=${PERL} SITE_PERL_REL=$(SITE_PERL_REL) install-main
+ALL_TARGET=	WWWDIR=${WWWDIR} DATADIR=${DATADIR} PERL=${PERL} build build-man
+INSTALL_TARGET=	WWWDIR=${WWWDIR} DATADIR=${DATADIR} PERL=${PERL} SITE_PERL_REL=$(SITE_PERL_REL) install-main
 
 MAN5=		munin.conf.5
 MAN8=		munin-cron.8 munin-graph.8 munin-html.8 munin-limits.8 munin-update.8
@@ -47,7 +46,7 @@ MAN8=		munin-cron.8 munin-graph.8 munin-html.8 munin-limits.8 munin-update.8
 SUB_FILES=pkg-message
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/build/server/munin.conf ${PREFIX}/etc/munin/munin.conf.sample
@@ -57,9 +56,9 @@ post-install:
 	@for man in ${MAN8}; do \
 		${INSTALL_MAN} -C ${WRKSRC}/build/doc/$$man ${PREFIX}/man/man8; \
 	done
-	@DATADIR=${DATADIR} PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
+	@DATADIR=${DATADIR} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CHOWN} munin /var/log/munin-main
-	@${CHGRP} munin /var/run/munin /var/log/munin-main ${PREFIX}/www/munin ${PREFIX}/var/munin
+	@${CHGRP} munin /var/run/munin /var/log/munin-main ${WWWDIR} ${PREFIX}/var/munin
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,9 @@
 etc/munin/munin-node.conf.sample
 @unexec if cmp -s %D/etc/munin/plugin-conf.d/plugins.conf %D/etc/munin/plugin-conf.d/plugins.conf.sample; then rm -f %D/etc/munin/plugin-conf.d/plugins.conf; fi
 etc/munin/plugin-conf.d/plugins.conf.sample
+bin/munindoc
 etc/rc.d/munin-node.sh
+%%SITE_PERL%%/Munin/Plugin.pm
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-node-configure-snmp
@@ -62,12 +64,14 @@ sbin/munin-run
 %%DATADIR%%/plugins/named
 %%DATADIR%%/plugins/netstat
 %%DATADIR%%/plugins/ntp_
+%%DATADIR%%/plugins/ntp_offset
 %%DATADIR%%/plugins/ntp_states
 %%DATADIR%%/plugins/nut_misc
 %%DATADIR%%/plugins/nut_volts
 %%DATADIR%%/plugins/open_files
 %%DATADIR%%/plugins/perdition
 %%DATADIR%%/plugins/ping_
+%%DATADIR%%/plugins/plugin.sh
 %%DATADIR%%/plugins/plugins.history
 %%DATADIR%%/plugins/pm3users_
 %%DATADIR%%/plugins/pop_stats
@@ -112,6 +116,8 @@ sbin/munin-run
 @dirrmtry var/munin
 @dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
+@dirrmtry %%SITE_PERL%%/Munin/Plugin
+@dirrmtry %%SITE_PERL%%/Munin
 @dirrmtry etc/munin/plugin-conf.d
 @dirrmtry etc/munin/plugins
 @dirrmtry etc/munin
