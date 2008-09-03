@@ -8,6 +8,7 @@
     SUBDIR += advancemenu
     SUBDIR += advancemess
     SUBDIR += aftp
+    SUBDIR += aqemu
     SUBDIR += atari800
     SUBDIR += basiliskII
     SUBDIR += bfe
