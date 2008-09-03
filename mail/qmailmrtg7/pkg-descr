@@ -8,7 +8,7 @@ queue size, messages process, bytes transferred,
 and success/failure delivery status.
 For POP and SMTP it graphs total connections and concurrency.
 
-WWW: http://www.inter7.com/mrtg.html
+WWW: http://www.inter7.com/?page=qmailmrtg7
 
 - Alex Dupre
 ale@FreeBSD.org
