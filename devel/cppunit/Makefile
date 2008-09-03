@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	C++ port of the JUnit framework for unit testing
 
 USE_AUTOTOOLS=	libtool:15
