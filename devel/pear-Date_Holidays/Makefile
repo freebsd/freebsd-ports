@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -18,23 +18,24 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Date
 FILES=		Holidays.php \
-		Holidays/Holiday.php \
-		Holidays/Filter/Whitelist.php \
-		Holidays/Filter/Composite.php \
-		Holidays/Filter/Blacklist.php \
-		Holidays/Filter.php \
-		Holidays/Driver/Jewish.php \
-		Holidays/Driver/Composite.php \
 		Holidays/Driver/Christian.php \
+		Holidays/Driver/EasternChristian.php \
+		Holidays/Driver/Composite.php \
+		Holidays/Driver/Jewish.php \
+		Holidays/Filter/Blacklist.php \
+		Holidays/Filter/Composite.php \
+		Holidays/Filter/Whitelist.php \
 		Holidays/Driver.php \
-		lang/Christian/it_IT.xml \
-		lang/Christian/it_IT.ser \
-		lang/Christian/fr_FR.xml \
-		lang/Christian/fr_FR.ser \
-		lang/Christian/en_EN.xml \
-		lang/Christian/en_EN.ser \
-		lang/Christian/de_DE.xml \
+		Holidays/Filter.php \
+		Holidays/Holiday.php \
 		lang/Christian/de_DE.ser \
+		lang/Christian/de_DE.xml \
+		lang/Christian/en_EN.ser \
+		lang/Christian/en_EN.xml \
+		lang/Christian/fr_FR.ser \
+		lang/Christian/fr_FR.xml \
+		lang/Christian/it_IT.ser \
+		lang/Christian/it_IT.xml
 
 EXAMPLES=	addingTranslations.php creating_drivers.php \
 		fetchingInstalledDrivers.php languagefile-with-properties.xml \
@@ -42,7 +43,6 @@ EXAMPLES=	addingTranslations.php creating_drivers.php \
 
 TESTS=		AllTests.php AllTestsUndeployed.php \
 		Date_Holidays_Bugfix_Retests_TestSuite.php \
-		Date_Holidays_Driver_Brazil_TestSuite.php \
 		Date_Holidays_Driver_Christian_TestSuite.php \
 		Date_Holidays_Driver_Jewish_TestSuite.php \
 		Date_Holidays_Driver_TestSuite.php \
