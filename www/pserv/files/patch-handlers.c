@@ -1,5 +1,5 @@
---- sources/handlers.c.orig	Tue May 17 00:03:16 2005
-+++ sources/handlers.c	Mon May 30 11:44:23 2005
+--- sources/handlers.c.orig	2005-06-01 12:36:18.000000000 +0200
++++ sources/handlers.c	2008-09-03 14:25:41.000000000 +0200
 @@ -25,6 +25,7 @@
  #endif
  
@@ -8,22 +8,38 @@
  extern int  port;                            /* server port */
  extern char defaultFileName[MAX_PATH_LEN+1]; /* default name for index, default or similar file */
  
-@@ -269,6 +270,14 @@
+@@ -261,6 +262,17 @@
          
          i = 0;
  	/* beware of not overfilling this array, check MAX_ENVP_LEN */
 +        if (req.contentLength != -1)
 +        {
++            newEnvp[i] = (char *) calloc(35, sizeof(char));
 +            sprintf(newEnvp[i++], "CONTENT_LENGTH=%ld", req.contentLength);
++            newEnvp[i] = (char *) calloc(CONTENT_TYPE_LEN + 14, sizeof(char));
 +            strcpy(newEnvp[i], "CONTENT_TYPE=");
 +            strcat(newEnvp[i++], req.contentType);
 +        }
++        newEnvp[i] = (char *) calloc(strlen(DEFAULT_SERVER_NAME) + 13, sizeof(char));
 +        strcpy(newEnvp[i], "SERVER_NAME=");
 +        strcat(newEnvp[i++], DEFAULT_SERVER_NAME);
+         newEnvp[i] = (char *) calloc(128, sizeof(char));
          strcpy(newEnvp[i], "SERVER_SOFTWARE=");
          strcat(newEnvp[i], SERVER_SOFTWARE_STR);
-         strcat(newEnvp[i], "/");
-@@ -326,8 +335,233 @@
+@@ -293,6 +305,12 @@
+ 	completedPath[MAX_PATH_LEN]='\0';
+ 	strcpy(newEnvp[i], "SCRIPT_FILENAME=");
+ 	strcat(newEnvp[i++], completedPath);
++        if (req.cookie[0] != '\0') 	 
++        { 	 
++            newEnvp[i] = (char *) calloc(MAX_COOKIE_LEN+13, sizeof(char));
++            strcpy(newEnvp[i], "HTTP_COOKIE="); 	 
++            strcat(newEnvp[i++], req.cookie); 	 
++        }
+ 
+         /* extracting PATH env variable */
+         envPath = getenv("PATH");
+@@ -333,8 +351,236 @@
  }
  #endif /* ENABLE_CGI */
  
@@ -38,7 +54,7 @@
 +{
 +    char *envPath; /* pointer to the envrionment PATH variable */
 +    char *relativePath;
-+    char scriptWorkingDir[MAX_PATH_LEN+1];
++    char scriptWorkingDir[2*MAX_PATH_LEN+1];
 +    char **newArgv;
 +    char **newEnvp;
 +    int i;
@@ -57,17 +73,13 @@
 +    /* first we create the pipes needed for stdout redirection */
 +    if (pipe(outStdPipe))
 +    {
-+#ifdef PRINTF_DEBUG
-+        printf("Pipe creation error\n");
++        DBGPRINTF(("Pipe creation error\n"));
 +        return -1;
-+#endif
 +    }
 +    if (pipe(inStdPipe))
 +    {
-+#ifdef PRINTF_DEBUG
-+        printf("Pipe creation error\n");
++        DBGPRINTF(("Pipe creation error\n"));
 +        return -1;
-+#endif
 +    }
 +
 +
@@ -77,25 +89,24 @@
 +    { /* this is the parent process */
 +        if (pid < 0)
 +        { /* we check for creation error */
-+            printf ("Forking error during cgi exec: %d\n", errno);
++            DBGPRINTF(("Forking error during cgi exec: %d\n", errno));
 +            return -1;
 +        }
 +        /* we close the unused end of the pipe */
 +        close(outStdPipe[WRITE]);
 +        close(inStdPipe[READ]);
 +
-+        if (!strcmp(req.method, "POST")) /* we have to feed the stdin of the script */
++        if (req.method[0]=='P' && req.method[1]=='O' && req.method[2]=='S' && req.method[3]=='T' && req.method[4]=='\0')
 +        {
++            /* we have to feed the stdin of the script */
 +            if(!strlen(postStr))
 +            {
-+#ifdef PRINTF_DEBUG
-+                printf("cannot post empty data\n");
-+#endif
++                DBGPRINTF(("cannot post empty data\n"));
 +                return -1;
 +            }
 +            howMany = write(inStdPipe[WRITE], postStr, strlen(postStr));
 +            if (howMany < 0)
-+                printf("Error during script pipe read.\n");
++                DBGPRINTF(("Error during script pipe read (POST).\n"));
 +        }
 +        totalSentFromPipe = 0;
 +        fatal = NO;
@@ -103,16 +114,14 @@
 +        while (howMany > 0 && !fatal)
 +        {
 +            howMany = read(outStdPipe[READ], pipeReadBuf, PIPE_READ_BUF);
-+            if (howMany < 0)
-+                printf("Error during script pipe read.\n");
-+            else if (!howMany)
-+                printf("Nothing read from script pipe.\n");
-+            else {
++            if (howMany > 0)
++            {
 +                if (sendChunk(sock, pipeReadBuf, howMany) < 0)
 +                    fatal = YES;
 +                else
 +                    totalSentFromPipe += howMany;
-+            }
++            } else
++                fatal = YES; /* it may be EOF too */
 +        }
 +        /* now we finished and we clean up */
 +        wait(&i);
@@ -132,13 +141,6 @@
 +        }
 +
 +        newEnvp = (char **)calloc(MAX_ENVP_LEN + 1, sizeof(char*));
-+        for (i = 0; i < MAX_ENVP_LEN + 1; i++)
-+        {
-+            newEnvp[i] = calloc(MAX_PATH_LEN, sizeof(char));
-+        }
-+
-+        /* extract PATH env variable */
-+        envPath = getenv("PATH");
 +
 +        i = 0;
 +        strcpy(newArgv[i++], phpFileName);     /* here we should pass the phppath */
@@ -180,51 +182,68 @@
 +        /* beware of not overfilling this array, check MAX_ENVP_LEN */
 +        if (req.contentLength != -1)
 +        {
++            newEnvp[i] = (char *) calloc(35, sizeof(char));
 +            sprintf(newEnvp[i++], "CONTENT_LENGTH=%ld", req.contentLength);
++            newEnvp[i] = (char *) calloc(CONTENT_TYPE_LEN + 14, sizeof(char));
 +            strcpy(newEnvp[i], "CONTENT_TYPE=");
 +            strcat(newEnvp[i++], req.contentType);
 +        }
++        newEnvp[i] = (char *) calloc(strlen(DEFAULT_SERVER_NAME) + 13, sizeof(char));
 +        strcpy(newEnvp[i], "SERVER_NAME=");
 +        strcat(newEnvp[i++], DEFAULT_SERVER_NAME);
++        newEnvp[i] = (char *) calloc(128, sizeof(char));
 +        strcpy(newEnvp[i], "SERVER_SOFTWARE=");
 +        strcat(newEnvp[i], SERVER_SOFTWARE_STR);
 +        strcat(newEnvp[i], "/");
 +        strcat(newEnvp[i++], SERVER_VERSION_STR);
++        newEnvp[i] = (char *) calloc(METHOD_LEN+16, sizeof(char));
 +        strcpy(newEnvp[i], "REQUEST_METHOD=");
 +        strcat(newEnvp[i++], req.method);
++        newEnvp[i] = (char *) calloc(MAX_PATH_LEN+16, sizeof(char));
 +        strcpy(newEnvp[i], "SCRIPT_NAME=");
 +        strcat(newEnvp[i++], req.documentAddress);
++        newEnvp[i] = (char *) calloc(32, sizeof(char));
 +        strcpy(newEnvp[i], "GATEWAY_INTERFACE=");
 +        strcat(newEnvp[i++], CGI_VERSION);
++        newEnvp[i] = (char *) calloc(18, sizeof(char));
 +        sprintf(newEnvp[i++], "SERVER_PORT=%d", port);
++        newEnvp[i] = (char *) calloc(MAX_QUERY_STRING_LEN+16, sizeof(char));
 +        strcpy(newEnvp[i], "QUERY_STRING=");
 +        strcat(newEnvp[i++], req.queryString);
++        newEnvp[i] = (char *) calloc(PROTOCOL_LEN+17, sizeof(char));
 +        strcpy(newEnvp[i], "SERVER_PROTOCOL=");
 +        strcat(newEnvp[i++], req.protocolVersion);
++        newEnvp[i] = (char *) calloc(ADDRESS_LEN+13, sizeof(char));
 +        strcpy(newEnvp[i], "REMOTE_ADDR=");
 +        strcat(newEnvp[i++], req.address);
++        newEnvp[i] = (char *) calloc(USER_AGENT_LEN+17, sizeof(char));
 +        strcpy(newEnvp[i], "HTTP_USER_AGENT=");
 +        strcat(newEnvp[i++], req.userAgent);
++        newEnvp[i] = (char *) calloc(MAX_PATH_LEN+17, sizeof(char));
++        completedPath[MAX_PATH_LEN]='\0';
 +        strcpy(newEnvp[i], "SCRIPT_FILENAME=");
 +        strcat(newEnvp[i++], completedPath);
 +        if (req.cookie[0] != '\0')
 +        {
++            newEnvp[i] = (char *) calloc(MAX_COOKIE_LEN+13, sizeof(char));
 +            strcpy(newEnvp[i], "HTTP_COOKIE=");
 +            strcat(newEnvp[i++], req.cookie);
 +        }
-+        if (envPath != NULL)
-+        {
-+            strcpy(newEnvp[i], "PATH=");
-+            strcat(newEnvp[i++], envPath);
-+        }
++
++        /* extracting PATH env variable */
++        envPath = getenv("PATH");
++        /* we get the path from the env itself so we assume it safe */
++        newEnvp[i] = (char *) calloc(MAX_PATH_LEN+16, sizeof(char));
++        strcpy(newEnvp[i], "PATH=");
++        strcat(newEnvp[i++], envPath);
++
++        /* terminate the array */
 +        newEnvp[i] = NULL;
 +
 +        /* we change the current working directory to the scripts one */
 +        if(chdir(scriptWorkingDir))
 +        {
-+#ifdef PRINTF_DEBUG
-+            printf("error while changing PWD in script execution: %d\n", errno);
-+#endif
++            DBGPRINTF(("error while changing PWD in script execution: %d\n", errno));
 +        }
 +
 +        close(outStdPipe[READ]);    /* we close the unused end*/

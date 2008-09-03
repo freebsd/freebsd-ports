@@ -1,6 +1,6 @@
---- sources/main.c.orig	Mon May 16 23:13:18 2005
-+++ sources/main.c	Sat May 28 10:42:47 2005
-@@ -23,6 +23,7 @@
+--- sources/main.c.orig	2005-06-01 12:36:18.000000000 +0200
++++ sources/main.c	2008-09-03 13:13:27.000000000 +0200
+@@ -27,6 +27,7 @@
  char	    	defaultFileName[MAX_PATH_LEN+1];
  char	    	logFileName[MAX_PATH_LEN+1];
  char	    	mimeTypesFileName[MAX_PATH_LEN+1];
@@ -8,7 +8,7 @@
  char	    	cgiRoot[MAX_PATH_LEN+1]; /* root for CGI scripts exec */
  struct timeval	sockTimeVal;
  mimeData    	*mimeArray;  /* here we will hold all MIME data, inited once, never to be changed */
-@@ -314,10 +315,13 @@
+@@ -302,10 +303,13 @@
          reqStruct->keepAlive = YES;
      else if (!strncmp(reqArray[1], "Connection: keep-alive", strlen("Connection: keep-alive")))
          reqStruct->keepAlive = YES;
@@ -23,7 +23,7 @@
      while (i < readLines)
      {
          if (!strncmp(reqArray[i], "User-Agent:", strlen("User-Agent:")))
-@@ -332,6 +336,20 @@
+@@ -320,6 +324,20 @@
  #ifdef PRINTF_DEBUG
  	    printf("content length %ld\n", reqStruct->contentLength);
  #endif
@@ -44,7 +44,7 @@
  	}
          i++;
      }
-@@ -442,18 +460,39 @@
+@@ -433,18 +451,39 @@
                       * we append the default file name */
                      strcat(completeFilePath, defaultFileName);
                      analyzeExtension(mimeType, completeFilePath);
@@ -86,8 +86,16 @@
 +#endif
              }
          }
-     } else if (!strcmp(req.method, "HEAD"))
-@@ -485,7 +524,14 @@
+     } else if (req.method[0]=='H' && req.method[1]=='E' && req.method[2]=='A' && req.method[3]=='D' && req.method[4]=='\0')
+@@ -461,6 +500,7 @@
+         {
+             strcpy(completeFilePath, homePath);
+             strcat(completeFilePath, req.documentAddress);
++
+             /* now we check if the given file is a directory or a plain file */
+             stat(completeFilePath, &fileStats);
+             if ((fileStats.st_mode & S_IFDIR) == S_IFDIR)
+@@ -475,7 +515,14 @@
                  strcat(completeFilePath, defaultFileName);
              }
              analyzeExtension(mimeType, completeFilePath);
@@ -101,12 +109,12 @@
 +                phpHandler(port, sock, phpFileName, completeFilePath, req, NULL);
 +#endif
          }
-     } else if (!strcmp(req.method, "POST"))
+     } else if (req.method[0]=='P' && req.method[1]=='O' && req.method[2]=='S' && req.method[3]=='T' && req.method[4]=='\0')
      {
-@@ -499,13 +545,6 @@
-         int readFinished;
+@@ -488,13 +535,6 @@
+ 	int ch;
          
-         printf("Handling of POST method\n");
+         DBGPRINTF(("Handling of POST method\n"));
 -        /* first we check if the path contains the directory selected for cgi's and in case handle it */
 -        if (strncmp(req.documentAddress, CGI_MATCH_STRING, strlen(CGI_MATCH_STRING)))
 -        {
@@ -115,21 +123,21 @@
 -            return -1;
 -        }
  #ifdef ENABLE_CGI
- #ifdef PRINTF_DEBUG
-         printf ("begin of post handling\n");
-@@ -522,7 +561,7 @@
+         DBGPRINTF(("begin of post handling\n"));
+         buff[0] = '\0';
+@@ -507,7 +547,7 @@
              return -1;
-         } else if (req.contentLength >= BUFFER_SIZE)
+         } else if (req.contentLength >= POST_BUFFER_SIZE)
          {
 -            sayError(sock, BUFFER_OVERFLOW, "", req);
 +            sayError(sock, POST_BUFFER_OVERFLOW, "", req);
              return -1;
          }
          while (!readFinished)
-@@ -601,7 +640,77 @@
- #ifdef PRINTF_DEBUG
-             printf("buff: |%s|\n", buff);
- #endif
+@@ -557,7 +597,38 @@
+                 buff[totalRead] = '\0';
+             }
+             DBGPRINTF(("buff: |%s|\n", buff));
 -            cgiHandler(port, sock, req, buff);
 +            if (!strncmp(req.documentAddress, CGI_MATCH_STRING, strlen(CGI_MATCH_STRING)))
 +            {
@@ -139,45 +147,6 @@
 +#ifdef PHP
 +                strcpy(completeFilePath, homePath);
 +                strcat(completeFilePath, req.documentAddress);
-+                /* now we check if the given path tries to get out of the root */
-+                {
-+                    int i,j;
-+                    int sL;
-+                    char dirName[MAX_PATH_LEN+1];
-+                    int depthCount = 0;
-+
-+                    sL = strlen(req.documentAddress);
-+                    dirName[0] = '\0';
-+                    if (sL > 3) {
-+                        dirName[0] = req.documentAddress[1];
-+                        dirName[1] = req.documentAddress[2];
-+                        dirName[2] = req.documentAddress[3];
-+                        dirName[3] ='\0';
-+                        if (!strcmp(dirName, "../"))
-+                        {
-+                            sayError(sock, FORBIDDEN, req.documentAddress, req);
-+                            return -1;
-+                        }
-+                    }
-+                    j = 0;
-+                    for (i = 1; i < sL; i++) {
-+                        if (req.documentAddress[i] == '/')
-+                        {
-+                            dirName[j] = '\0';
-+                            if (strcmp(dirName, ".."))
-+                                depthCount ++;
-+                            else
-+                                depthCount--;
-+                            j = 0;
-+                        } else
-+                            dirName[j++] = req.documentAddress[i];
-+                    }
-+                    if (depthCount < 0)
-+                    {
-+                        sayError(sock, FORBIDDEN, req.documentAddress, req);
-+                        return -1;
-+                    }
-+                }
 +                /* now we check if the given file is a directory or a plain file */
 +                stat(completeFilePath, &fileStats);
 +                if ((fileStats.st_mode & S_IFDIR) == S_IFDIR)
@@ -205,7 +174,7 @@
          }
  #endif /* ENABLE_CGI */
  #ifndef ENABLE_CGI
-@@ -637,7 +746,7 @@
+@@ -593,7 +664,7 @@
      f = fopen(configFile, "r");
      if (f == NULL)
      {
@@ -214,7 +183,7 @@
          *serverPort = DEFAULT_PORT;
          *maxChildren = DEFAULT_MAX_CHILDREN;
          strcpy(homePath, DEFAULT_DOCS_LOCATION);
-@@ -646,7 +755,9 @@
+@@ -602,7 +673,9 @@
          sockTimeVal.tv_usec = DEFAULT_USEC_TO;
          strcpy(logFileName, DEFAULT_LOG_FILE);
          strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
@@ -224,7 +193,7 @@
          return -1;
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
-@@ -747,11 +858,25 @@
+@@ -703,11 +776,25 @@
          if (mimeTypesFileName == NULL)
          {
              strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
