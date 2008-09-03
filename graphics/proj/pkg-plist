@@ -15,6 +15,7 @@ lib/libproj.so
 lib/libproj.so.5
 %%DATADIR%%/FL
 %%DATADIR%%/GL27
+%%DATADIR%%/IGNF
 %%DATADIR%%/MD
 %%DATADIR%%/TN
 %%DATADIR%%/WI
@@ -28,6 +29,7 @@ lib/libproj.so.5
 %%DATADIR%%/nad.lst
 %%DATADIR%%/nad27
 %%DATADIR%%/nad83
+%%DATADIR%%/ntf_r93.gsb
 %%DATADIR%%/ntv1_can.dat
 %%DATADIR%%/null
 %%DATADIR%%/nzgd2kgrid0005.gsb
