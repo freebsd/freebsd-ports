@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	plproxy
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1355/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1818/
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	skv@FreeBSD.org
@@ -17,12 +16,9 @@ COMMENT=	PL/Proxy is database partitioning system
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
-BROKEN=		Does not build
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
-
 USE_PGSQL=	yes
 USE_GMAKE=	yes
+USE_BISON=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's= flex= ${LOCALBASE}/bin/flex=g' \
