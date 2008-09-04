@@ -961,6 +961,7 @@
     SUBDIR += ttt
     SUBDIR += tvark
     SUBDIR += twinkle
+    SUBDIR += twitux
     SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += ulxmlrpcpp
