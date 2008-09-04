@@ -8,7 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 PKGNAMESUFFIX?=	-client
@@ -25,6 +25,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		qdbm.14:${PORTSDIR}/databases/qdbm \
 		exempi.3:${PORTSDIR}/textproc/exempi
 RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
+		o3totxt:${PORTSDIR}/converters/o3read \
 		pdftotext:${PORTSDIR}/graphics/poppler-utils \
 		w3m:${PORTSDIR}/www/w3m
 
