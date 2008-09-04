@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.9
+PORTVERSION=	1.8.10
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	frolov@riss-telecom.ru
 COMMENT=	CLI to manage IPMI systems
@@ -22,8 +21,10 @@ CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
 		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 	LDFLAGS="${LDFLAGS}"
-PLIST_FILES=	bin/ipmitool sbin/ipmievd
-PORTDOCS=	*
+PLIST_FILES=	bin/ipmitool sbin/ipmievd share/ipmitool/oem_ibm_sel_map
+PLIST_DIRS=	share/ipmitool
+PORTDOCS=	AUTHORS COPYING ChangeLog README
+
 MAN1+=		${PORTNAME}.1
 MAN8+=		ipmievd.8
 
@@ -47,19 +48,16 @@ CONFIGURE_ARGS+=	--disable-intf-open
 .if defined(WITH_FREEIPMI) || \
 	(exists(${LOCALBASE}/include/freeipmi/freeipmi.h) && \
 		!defined(WITHOUT_FREEIPMI))
-# Support for FreeIPMI 0.4.x and 0.5.x API
-EXTRA_PATCHES+=	${FILESDIR}/freeipmi-support.patch
-USE_AUTOTOOLS+=	autoconf:262 libtool:15 aclocal:19 automake:19
-# libtool15 installs it's aclocal macros into ${LOCALBASE}/share/aclocal
-ACLOCAL_ARGS+=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
-# Make automake quiet about missing NEWS and ChangeLog files
-AUTOMAKE_ARGS+=	--foreign
 LIB_DEPENDS+=	freeipmi:${PORTSDIR}/sysutils/freeipmi
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-intf-free
 .else
 CONFIGURE_ARGS+=	--disable-intf-free
+.endif
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 
 .include <bsd.port.post.mk>

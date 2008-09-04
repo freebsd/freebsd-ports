@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Aug  8 04:33:51 2008
++++ Makefile.in	Sun Aug 10 11:12:54 2008
+@@ -688,8 +688,6 @@
+ 	cp control/ipmitool.spec $(distdir)
+ 
+ install-data-local:
+-	mkdir -p $(DESTDIR)$(DOCDIR)
+-	$(INSTALL_DATA) $(DOCLIST) $(DESTDIR)$(DOCDIR)
+ 
+ uninstall-local:
+ 	-rm -rf $(DESTDIR)$(DOCDIR)
