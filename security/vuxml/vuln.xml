@@ -785,21 +785,21 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ee6fa2bd-406a-11dd-936a-0015af872849">
-    <topic>php -- input validation error in posix_access function</topic>
+    <topic>php -- input validation error in safe_mode</topic>
     <affects>
       <package>
-	<name>php5-posix</name>
-	<range><ge>5.0</ge></range>
+	<name>php5</name>
+	<range><lt>5.2.6_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>According to Maksymilian Arciemowicz research,
 	  it is possible to bypass security restrictions
-	  of <code>safe_mode</code> in <code>posix_access()</code>
-	  function via directory traversal vulnerability. The attacker
+	  of <code>safe_mode</code> in various
+	  functions via directory traversal vulnerability. The attacker
 	  can use this attack to gain access to sensitive
-	  information. Other functions utilizing
+	  information. Functions utilizing
 	  <code>expand_filepath()</code> may be affected.</p>
 	<p>It should be noted that this vulnerability is not
 	  considered to be serious by the FreeBSD Security Team,
@@ -809,13 +809,14 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-2665</cvename>
+      <cvename>CVE-2008-2666</cvename>
       <bid>29797</bid>
       <url>http://securityreason.com/achievement_securityalert/54</url>
     </references>
     <dates>
       <discovery>2008-06-17</discovery>
       <entry>2008-06-22</entry>
-      <modified>2008-06-22</modified>
+      <modified>2008-09-04</modified>
     </dates>
   </vuln>
 
