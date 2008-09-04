@@ -8,4 +8,4 @@ Since there is an ambition to slim the PostgreSQL distribution, this
 software is no longer a part thereof. It is still the offical ODBC
 implementation, though.
 
-WWW: http://odbc.postgresql.org/
+WWW: http://pgfoundry.org/projects/psqlodbc/

@@ -1,6 +1,20 @@
-lib/psqlodbc.a
-lib/psqlodbc.la
-lib/psqlodbc.so
-share/psqlodbc/odbc-drop.sql
-share/psqlodbc/odbc.sql
-@dirrm share/psqlodbc
+lib/psqlodbcw.la
+lib/psqlodbcw.so
+share/doc/postgresql/odbc/config-opt.html
+share/doc/postgresql/odbc/config.html
+share/doc/postgresql/odbc/faq.html
+share/doc/postgresql/odbc/howto-accesslo.html
+share/doc/postgresql/odbc/howto-accessvba.html
+share/doc/postgresql/odbc/howto-bo.html
+share/doc/postgresql/odbc/howto-ch.html
+share/doc/postgresql/odbc/howto-csharp.html
+share/doc/postgresql/odbc/howto-vb.html
+share/doc/postgresql/odbc/howto-vblo.html
+share/doc/postgresql/odbc/index.html
+share/doc/postgresql/odbc/release.html
+share/doc/postgresql/odbc/unix-compilation.html
+share/doc/postgresql/odbc/win32-compilation.html
+@dirrm share/doc/postgresql/odbc
+share/postgresql/odbc/odbc-drop.sql
+share/postgresql/odbc/odbc.sql
+@dirrm share/postgresql/odbc

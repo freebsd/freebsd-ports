@@ -1,56 +1,72 @@
 # New ports collection makefile for:  PostgreSQL ODBC
 # Date created:		January 14, 2002
 # Whom:			Palle Girgensohn <girgen@partitur.se>
+# Completely rewritten by Alex Goncharov <alex-goncharov@comcast.net> on 2008-08-30.
+
 #
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
-PORTVERSION=	7.2.5
-PORTREVISION=	2
-CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_PGSQL}
+# PostgreSQL ODBC driver should work under either unixODBC or iODBC
+# driver manager, when compliled against one. (Important: Do not try
+# to have both installed -- they have overlapping files).
+
+# It looks like most people are using unixODBC these days, rather than
+# iODBC, so let's make unixODBC the default choice: to select iODBC,
+# set WITH_IODBC, without setting WITH_UNIXODBC.  When the latter is
+# set or when neither is set, we go with WITH_UNIXODBC.
+
+# Following the existing convention, and other postgresql-* pieces,
+# this is considered to be a part of the `postgresql' port.
+
+PORTNAME=		postgresql
+PORTVERSION=		08.03.0200
+CATEGORIES=		databases
+MASTER_SITES=		${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
-PKGNAMESUFFIX?=	-odbc
-DISTNAME=	psqlodbc-${PORTVERSION}
-DIST_SUBDIR=	postgresql
+# PKGNAMESUFFIX will be changed for the driver used with iODBC
+PKGNAMESUFFIX=		-odbc
+DISTNAME=		psqlodbc-${PORTVERSION}
+DIST_SUBDIR=		postgresql
 
-MAINTAINER=	alex-goncharov@comcast.net
-COMMENT=	PostgreSQL ODBC client support
+MAINTAINER=		alex-goncharov@comcast.net
+COMMENT=		PostgreSQL ODBC driver
 
-# PostgreSQL ODBC support needs an ODBC driver manager to be
-# installed, and it supports both iODBC and unixODBC.
+BUILD_DEPENDS=		pg_config:${PORTSDIR}/databases/postgresql83-client
 
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+GNU_CONFIGURE=		YES
+
+.if !defined(WITH_IODBC)
+WITH_UNIXODBC=	yes
 .endif
 
-.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
-WITH_IODBC?=	yes
-.endif
-
-# Note that there is a potential conflict between unixODBC's and
-# postgres' libodbcpsql.so. unixODBC installs versions `1' & `2' of
-# the named lib, while postgres installs version `0'. The postgres
-# folks say their is the best, so you might be better off removing
-# the others?
-.if defined(WITH_IODBC)
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-iodbc --with-odbcinst=${LOCALBASE}/etc/libiodbc
-.elif defined(WITH_UNIXODBC)
-PKGNAMESUFFIX=		-unixodbc
-CONFIGURE_ARGS+=	--with-unixodbc
+.if defined(WITH_UNIXODBC)
+# I.e. even if WITH_IODBC is defined
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
+.else
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
+
+# Modify a suffix in this case
+PKGNAMESUFFIX=	-iodbc
 .endif
 
-USE_AUTOTOOLS=	libtool:15
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS= --with-libdir=${LOCALBASE}/lib --enable-pthreads \
-		--with-includes=${LOCALBASE}/include
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+DATADIR_1=	${DATADIR}/odbc
+DOCSDIR_1=	${DOCSDIR}/odbc
+post-install:
+	@${MKDIR} ${DATADIR_1}
+	${INSTALL_DATA} ${WRKSRC}/odbc.sql ${DATADIR_1}
+	${INSTALL_DATA} ${WRKSRC}/odbc-drop.sql ${DATADIR_1}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR_1}
+	${TAR} -C ${WRKSRC}/docs --exclude '*Makefile*' -cf - . \
+	 | ${TAR} -C ${DOCSDIR_1} --unlink -xf -
+.if !defined(INSTALL_AS_USER)
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR_1}
+	${FIND} ${DOCSDIR_1} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	${FIND} ${DOCSDIR_1} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+.endif
+.endif
 
 .include <bsd.port.mk>
