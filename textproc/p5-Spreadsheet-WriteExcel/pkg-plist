@@ -61,6 +61,7 @@ bin/chartex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/convertA1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/copyformat.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csv2xls.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data_validate.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_time.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datecalc1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datecalc2.pl
