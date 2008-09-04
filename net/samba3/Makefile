@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.31
-PORTREVISION=		1
+PORTVERSION?=		3.0.32
+PORTREVISION=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -69,7 +69,6 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
 		UTMP		"With UTMP accounting support" on \
-		MSDFS		"With MSDFS support" on \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		CLUSTER		"With experimental cluster support" off \
 		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
@@ -110,6 +109,10 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
 .endif
 
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 # Let process generate meaningful backtrace on core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
@@ -128,9 +131,9 @@ SUB_LIST+=		CUPSD="@comment "
 
 .if defined(WITH_MAX_DEBUG)
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
-CPPFLAGS+=		-g -I${LOCALBASE}/include
-LDFLAGS+=		-g -L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=		-g
+LDFLAGS+=		-g
+#CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-debug --enable-socket-wrapper \
 			--enable-developer --enable-krb5developer \
 			--enable-dmalloc --with-profiling-data
@@ -156,12 +159,6 @@ CONFIGURE_ARGS+=	--without-quotas
 CONFIGURE_ARGS+=	--with-utmp
 .else
 CONFIGURE_ARGS+=	--without-utmp
-.endif
-
-.if defined(WITH_MSDFS)
-CONFIGURE_ARGS+=	--with-msdfs
-.else
-CONFIGURE_ARGS+=	--without-msdfs
 .endif
 
 .if !defined(WITHOUT_WINBIND)
@@ -227,15 +224,6 @@ IGNORE=			an AIO support requires 7.0-RELEASE or later. Disable AIO support
 CONFIGURE_ARGS+=	--with-aio-support
 .else
 CONFIGURE_ARGS+=	--without-aio-support
-.endif
-
-.if defined(WITH_SMBSH)
-IGNORE=			broken IPC and code. Disable SMBSH support
-CONFIGURE_ARGS+=	--with-smbwrapper
-PLIST_SUB+=		SMBSH=""
-.else
-CONFIGURE_ARGS+=	--without-smbwrapper
-PLIST_SUB+=		SMBSH="@comment "
 .endif
 
 .if defined(WITH_CLUSTER)
