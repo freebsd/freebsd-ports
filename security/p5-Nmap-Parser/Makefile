@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Nmap-Parser
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse nmap scan data with perl
 
 BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \
