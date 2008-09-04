@@ -1,20 +1,20 @@
 lib/psqlodbcw.la
 lib/psqlodbcw.so
-share/doc/postgresql/odbc/config-opt.html
-share/doc/postgresql/odbc/config.html
-share/doc/postgresql/odbc/faq.html
-share/doc/postgresql/odbc/howto-accesslo.html
-share/doc/postgresql/odbc/howto-accessvba.html
-share/doc/postgresql/odbc/howto-bo.html
-share/doc/postgresql/odbc/howto-ch.html
-share/doc/postgresql/odbc/howto-csharp.html
-share/doc/postgresql/odbc/howto-vb.html
-share/doc/postgresql/odbc/howto-vblo.html
-share/doc/postgresql/odbc/index.html
-share/doc/postgresql/odbc/release.html
-share/doc/postgresql/odbc/unix-compilation.html
-share/doc/postgresql/odbc/win32-compilation.html
-@dirrm share/doc/postgresql/odbc
+%%PORTDOCS%%%%DOCSDIR%%/odbc/config-opt.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/config.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-accesslo.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-accessvba.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-bo.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-ch.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-csharp.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-vb.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/howto-vblo.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/release.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/unix-compilation.html
+%%PORTDOCS%%%%DOCSDIR%%/odbc/win32-compilation.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/odbc
 share/postgresql/odbc/odbc-drop.sql
 share/postgresql/odbc/odbc.sql
 @dirrm share/postgresql/odbc
