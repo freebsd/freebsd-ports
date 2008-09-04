@@ -9,8 +9,7 @@ PORTNAME=	libopensync
 PORTVERSION=	0.22
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
-EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw
+MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop synchronization framework
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
+USE_BZIP2=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
