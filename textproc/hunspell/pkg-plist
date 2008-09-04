@@ -16,6 +16,7 @@ include/hunspell/license.hunspell
 include/hunspell/phonet.hxx
 include/hunspell/suggestmgr.hxx
 include/hunspell/w_char.hxx
+@dirrm include/hunspell
 lib/libhunspell-1.2.a
 lib/libhunspell-1.1.la
 lib/libhunspell-1.2.so.0
@@ -30,3 +31,4 @@ share/myspell/magyar.dic
 share/myspell/default.aff
 share/myspell/default.dic
 @dirrm share/myspell
+@dirrmtry lib/pkgconfig
