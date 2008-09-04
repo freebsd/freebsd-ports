@@ -366,6 +366,7 @@
 %%MMDIR%%/cron/bumpdigests
 %%MMDIR%%/cron/checkdbs
 %%MMDIR%%/cron/crontab.in
+%%MMDIR%%/cron/cull_bad_shunt
 %%MMDIR%%/cron/disabled
 %%MMDIR%%/cron/gate_news
 %%MMDIR%%/cron/mailpasswds
@@ -705,6 +706,7 @@
 %%MMDIR%%/templates/ca/archliststart.html
 %%MMDIR%%/templates/ca/archtoc.html
 %%MMDIR%%/templates/ca/archtocentry.html
+%%MMDIR%%/templates/ca/archtocnombox.html
 %%MMDIR%%/templates/ca/article.html
 %%MMDIR%%/templates/ca/bounce.txt
 %%MMDIR%%/templates/ca/checkdbs.txt
@@ -724,6 +726,7 @@
 %%MMDIR%%/templates/ca/postauth.txt
 %%MMDIR%%/templates/ca/postheld.txt
 %%MMDIR%%/templates/ca/private.html
+%%MMDIR%%/templates/ca/probe.txt
 %%MMDIR%%/templates/ca/refuse.txt
 %%MMDIR%%/templates/ca/roster.html
 %%MMDIR%%/templates/ca/subauth.txt
@@ -2165,6 +2168,8 @@
 %%MMDIR%%/tests/bounces/dsn_13.txt
 %%MMDIR%%/tests/bounces/dsn_14.txt
 %%MMDIR%%/tests/bounces/dsn_15.txt
+%%MMDIR%%/tests/bounces/dsn_16.txt
+%%MMDIR%%/tests/bounces/dsn_17.txt
 %%MMDIR%%/tests/bounces/dumbass_01.txt
 %%MMDIR%%/tests/bounces/exim_01.txt
 %%MMDIR%%/tests/bounces/groupwise_01.txt
@@ -2214,6 +2219,12 @@
 %%MMDIR%%/tests/bounces/simple_25.txt
 %%MMDIR%%/tests/bounces/simple_26.txt
 %%MMDIR%%/tests/bounces/simple_27.txt
+%%MMDIR%%/tests/bounces/simple_28.txt
+%%MMDIR%%/tests/bounces/simple_29.txt
+%%MMDIR%%/tests/bounces/simple_30.txt
+%%MMDIR%%/tests/bounces/simple_31.txt
+%%MMDIR%%/tests/bounces/simple_32.txt
+%%MMDIR%%/tests/bounces/simple_33.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt
