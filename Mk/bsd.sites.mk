@@ -971,13 +971,12 @@ MASTER_SITE_PERL_CPAN+=	\
 #
 # For the full list, see the following:
 #
-#	http://www.postgresql.org/mirrors-ftp.html
+#	http://wwwmaster.postgresql.org/download/mirrors-ftp
 #
 # Before update mirror list please consult with fenner's distfiles survey.
 #
 .if !defined(IGNORE_MASTER_SITE_PGSQL)
 MASTER_SITE_PGSQL+= \
-	ftp://ftp8.us.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
 	ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
