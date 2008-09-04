@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CAM-PDF
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
@@ -15,10 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PDF manipulation library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Crypt/RC4.pm:${PORTSDIR}/security/p5-Crypt-RC4 \
-		${SITE_PERL}/Text/PDF/File.pm:${PORTSDIR}/print/p5-Text-PDF
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-RC4>=2.02:${PORTSDIR}/security/p5-Crypt-RC4 \
+		p5-Text-PDF>=0.29:${PORTSDIR}/print/p5-Text-PDF
 
 PERL_CONFIGURE=	yes
 
@@ -47,4 +45,10 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
+.include <bsd.port.post.mk>
