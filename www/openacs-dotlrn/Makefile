@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	dotlrn
-DISTVERSION=	2.3.1
-PORTREVISION=	3
+DISTVERSION=	2.4.0
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenACS-based e-learning platform
 
-DIST_REV_ID=	1169831
+DIST_REV_ID=	1616858
 
 OPENACS_USER?=	dotlrn
 OPENACS_GROUP?=	dotlrn
