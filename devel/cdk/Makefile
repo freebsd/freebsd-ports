@@ -10,8 +10,7 @@ PORTNAME=	cdk
 PORTVERSION=	5.0.20050424
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/cdk/ \
-		http://fresh.t-systems-sfr.com/linux/src/
+MASTER_SITES=	LOCAL/beech
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
@@ -22,6 +21,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 NOPRECIOUSSOFTMAKEVARS=	yes # to many _MLINKS
+PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 
 .include <bsd.port.pre.mk>
 
@@ -44,19 +44,34 @@ USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/maninfo.mk"
 
+post-extract:
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-Makefile.in
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/doc/cdk|/share/doc/cdk| ; s|VERSION)|VERSION_MAJOR)|' ${WRKSRC}/Makefile.in
 
+pre-install:
+.if !defined(NOPORTEXAMPLES)
+PLIST_SUB+=	EXAMPLES=""
+.else
+PLIST_SUB+=	EXAMPLES="@comment "
+.endif
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}/cli
+.if !defined(NOPORTEXAMPLES)
+	${INSTALL} -d ${EXAMPLESDIR}
+	${INSTALL} -d ${EXAMPLESDIR}/cli
 	cd ${WRKSRC}/cli; \
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/cli
-	${MKDIR} ${EXAMPLESDIR}/demos
+	${INSTALL} -d ${EXAMPLESDIR}/demos
 	cd ${WRKSRC}/demos; \
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/demos
-	${MKDIR} ${EXAMPLESDIR}/examples
+	${INSTALL} -d ${EXAMPLESDIR}/examples
 	cd ${WRKSRC}/examples; \
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/examples
+.endif
 
 .include "${.CURDIR}/mancompress.mk"
 
