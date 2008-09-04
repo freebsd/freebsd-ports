@@ -1,14 +1,14 @@
 # New ports collection makefile for:	aribas
 # Date created:		2007-06-19
-# Whom:			Lars Engels <lars.engels@0x20.net>
+# Whom:			Lars Engels <lme@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	aribas
-PORTVERSION=	1.53
+PORTVERSION=	1.63
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.mathematik.uni-muenchen.de/pub/forster/aribas/ \
+MASTER_SITES=	ftp://ftp.mathematik.uni-muenchen.de/pub/forster/aribas/UNIX_LINUX/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lme@FreeBSD.org
