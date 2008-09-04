@@ -8,6 +8,7 @@ include/glpdmp.h
 include/glpfhv.h
 include/glpgmp.h
 include/glphbm.h
+include/glpini.h
 include/glpios.h
 include/glpipm.h
 include/glpipp.h
@@ -25,6 +26,7 @@ include/glprgr.h
 include/glprng.h
 include/glpscf.h
 include/glpscg.h
+include/glpscl.h
 include/glpspm.h
 include/glpspx.h
 include/glpsql.h
@@ -34,4 +36,4 @@ include/glptsp.h
 lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
-lib/libglpk.so.15
+lib/libglpk.so.16

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.30
+PORTVERSION=	4.31
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -51,8 +51,9 @@ CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps \
-		gomory.djvu opb.txt tables.txt updating.djvu
+PORTDOCS=	bench.txt bench1.txt bench2.txt glpk.ps glpk_faq.txt gmpl.ps \
+		opb.txt tables.txt dfeas.djvu gomory.djvu scaling.djvu \
+		subset.djvu updating.djvu
 .endif
 
 post-patch:
@@ -63,8 +64,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
 
 .if !defined(NOPORTDOCS)
-	@${CP} ${WRKSRC}/doc/memo/gomory.djvu ${WRKSRC}/doc/
-	@${CP} ${WRKSRC}/doc/memo/updating.djvu ${WRKSRC}/doc/
+	@${CP} ${WRKSRC}/doc/notes/*.djvu ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
