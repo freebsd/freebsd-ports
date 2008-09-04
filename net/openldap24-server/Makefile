@@ -39,7 +39,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
@@ -74,6 +74,7 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		TRANSLUCENT "With Translucent Proxy overlay" off \
 		UNIQUE "With attribute Uniqueness overlay" off \
 		VALSORT "With Value Sorting overlay" off \
+		SMBPWD "With Samba Password hashes overlay" off \
 		DYNAMIC_BACKENDS "Build dynamic backends" on
 .endif
 
@@ -388,6 +389,12 @@ BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE
 PLIST_SUB+=		BACK_SQL="@comment "
 .endif
 
+.if defined(WITH_SMBPWD)
+PLIST_SUB+=		SMBPWD=""
+.else
+PLIST_SUB+=		SMBPWD="@comment "
+.endif
+
 .if defined(WITH_RLOOKUPS)
 CONFIGURE_ARGS+=	--enable-rlookups
 PLIST_SUB+=		RLOOKUPS=""
@@ -460,6 +467,12 @@ test: build
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 .endif
 
+.if defined(WITH_SMBPWD)
+post-build:
+	@cd ${BUILD_WRKSRC}/contrib/slapd-modules/smbk5pwd; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} DEFS="-DDO_SAMBA" all
+.endif
+
 pre-su-install:
 	@if [ -f ${PKGINSTALL} ]; then \
 		${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
@@ -489,6 +502,11 @@ post-install:
 	done >>${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
+.if defined(WITH_SMBPWD)
+	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/smbk5pwd.la \
+		${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 ${PREFIX}/libexec/openldap/
+	@${LN} -s smbk5pwd.so.0 ${PREFIX}/libexec/openldap/smbk5pwd.so
+.endif
 .endif
 	@${CAT} ${PKGMESSAGE}
 

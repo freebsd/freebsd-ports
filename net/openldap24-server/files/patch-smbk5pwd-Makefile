@@ -1,0 +1,25 @@
+--- contrib/slapd-modules/smbk5pwd/Makefile.orig	2008-09-04 20:37:17.000000000 +0400
++++ contrib/slapd-modules/smbk5pwd/Makefile	2008-09-04 21:06:32.000000000 +0400
+@@ -9,7 +9,6 @@
+ # top-level directory of the distribution or, alternatively, at
+ # <http://www.OpenLDAP.org/license.html>.
+ 
+-LIBTOOL=../../../libtool
+ OPT=-g -O2
+ CC=gcc
+ 
+@@ -24,7 +23,7 @@
+ HEIMDAL_LIB=-L/usr/heimdal/lib -lkrb5 -lkadm5srv
+ SSL_LIB=-lcrypto
+ LDAP_LIB=-lldap_r -llber
+-LIBS=$(LDAP_LIB) $(HEIMDAL_LIB) $(SSL_LIB)
++LIBS=$(LDAP_LIB) $(SSL_LIB) $(LDFLAGS)
+ 
+ all:	smbk5pwd.la
+ 
+@@ -34,4 +33,4 @@
+ 
+ smbk5pwd.la:	smbk5pwd.lo
+ 	$(LIBTOOL) --mode=link $(CC) $(OPT) -version-info 0:0:0 \
+-	-rpath /usr/local/libexec/openldap -module -o $@ $? $(LIBS)
++	-rpath $(PREFIX)/libexec/openldap -module -o $@ $? $(LIBS)

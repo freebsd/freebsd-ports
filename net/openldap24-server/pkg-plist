@@ -68,6 +68,9 @@ etc/openldap/DB_CONFIG.example
 %%BACK_SQL%%libexec/openldap/back_sql-2.4.so.3
 %%BACK_SQL%%libexec/openldap/back_sql.la
 %%BACK_SQL%%libexec/openldap/back_sql.so
+%%SMBPWD%%libexec/openldap/smbk5pwd.la
+%%SMBPWD%%libexec/openldap/smbk5pwd.so
+%%SMBPWD%%libexec/openldap/smbk5pwd.so.0
 libexec/slapd
 @dirrmtry libexec/openldap
 sbin/slapacl
