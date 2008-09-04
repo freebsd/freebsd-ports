@@ -65,6 +65,7 @@ bin/rbot-remote
 %%DATADIR%%/plugins/forecast.rb
 %%DATADIR%%/plugins/fortune.rb
 %%DATADIR%%/plugins/freshmeat.rb
+%%DATADIR%%/plugins/geoip.rb
 %%DATADIR%%/plugins/games/azgame.rb
 %%DATADIR%%/plugins/games/quiz.rb
 %%DATADIR%%/plugins/games/roshambo.rb
