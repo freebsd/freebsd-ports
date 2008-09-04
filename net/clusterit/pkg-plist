@@ -3,12 +3,13 @@ bin/barrierd
 bin/clustersed
 bin/dsh
 bin/dshbak
+bin/dtop
 %%X11%%bin/dvt
 bin/jsd
 bin/jsh
 bin/pcp
 bin/pdf
 bin/prm
+bin/rseq
 bin/run
 %%X11%%bin/rvt
-bin/seq
