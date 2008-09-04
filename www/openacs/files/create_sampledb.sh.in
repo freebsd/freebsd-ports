@@ -42,7 +42,7 @@ if [ "x${POSTGRESQL81}" = "xYES" ]; then
 	echo "You have PostgreSQL 8.1 or greater installed."
 	echo "Your may need to alter your PostgreSQL configuration."
 	echo "You can do this by running the supplied script:"
-	echo "%%DOCSDIR%%/adjust_pgqsl_conf.sh"; echo ""
+	echo "%%DOCSDIR%%/adjust_pgsql_conf.sh"; echo ""
 	echo "Alternatively you can follow the instructions at:"
 	echo "http://openacs.org/xowiki/How_to_install_in_Postgres_8.x"
 	echo "****************************************************************"
