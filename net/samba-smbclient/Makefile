@@ -11,8 +11,6 @@ PKGNAMESUFFIX=		-smbclient
 
 COMMENT=		Samba "ftp-like" client
 
-BROKEN=			leaves files behind on deinstallation
-
 CONFLICTS=		ja-samba-2.* ja-samba-3.* samba-2.* samba-3.*
 
 SAMBA_CONFIG=		smb-client.conf
@@ -26,8 +24,9 @@ PKGDIR=			${.CURDIR}
 WITHOUT_ADS=		yes
 
 MAN1=			smbclient.1
-PLIST_FILES=		bin/smbclient \
-			${SAMBA_CONFDIR:S,^${PREFIX}/,,}/${SAMBA_CONFIG}.sample
+
+PLIST_SUB+=		SAMBA_CONFDIR="${SAMBA_CONFDIR:S,^${PREFIX}/,,}" \
+			SAMBA_CONFIG="${SAMBA_CONFIG}"
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} include/proto.h
