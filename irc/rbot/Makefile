@@ -25,9 +25,13 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README REQUIREMENTS ChangeLog
 
+.include <bsd.port.pre.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
