@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
@@ -27,12 +26,8 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README REQUIREMENTS ChangeLog
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for x in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${x} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
