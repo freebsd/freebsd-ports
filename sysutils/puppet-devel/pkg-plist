@@ -11,4 +11,3 @@ etc/puppet/puppet.conf-dist
 @dirrmtry etc/puppet/ssl
 @dirrmtry etc/puppet/manifests
 @dirrmtry etc/puppet
-@dirrmtry /var/run/puppet
