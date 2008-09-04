@@ -13,7 +13,7 @@ MASTER_SITES=	SF/opennms
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	A Java native interface (JNI) to RRDtool
 
-LIB_DEPENDS=	rrd.4:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

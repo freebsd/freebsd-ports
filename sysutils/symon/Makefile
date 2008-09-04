@@ -25,7 +25,7 @@ WITHOUT_SYMUX=	yes
 .endif
 
 .if !defined(WITHOUT_SYMUX)
-LIB_DEPENDS+=	rrd.4:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
 .endif
 
 .if defined(WITHOUT_SYMUX) && defined(WITHOUT_SYMON)
