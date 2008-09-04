@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -52,6 +52,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Style.3 \
 	Moose::Cookbook::WTF.3 \
 	Moose::Exporter.3 \
+	Moose::Intro.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
 	Moose::Meta::Instance.3 \
@@ -83,6 +84,7 @@ MAN3=	Moose.3 \
 	Moose::Object.3 \
 	Moose::Role.3 \
 	Moose::Spec::Role.3 \
+	Moose::Unsweetened.3 \
 	Moose::Util.3 \
 	Moose::Util::MetaRole.3 \
 	Moose::Util::TypeConstraints.3 \
