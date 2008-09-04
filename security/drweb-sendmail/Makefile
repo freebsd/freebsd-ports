@@ -7,12 +7,10 @@
 
 PORTNAME=	drweb-sendmail
 PORTVERSION=	4.33
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/61/:f61 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/55/:f55 \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/411/:f411 \
-		http://freebsd.spectrum.ru/distfiles/drweb/:f61,f55,f411
+MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/:f61 \
+		http://freebsd.spectrum.ru/distfiles/drweb/:f61
 DIST_SUBDIR=	drweb
 
 MAINTAINER=	support@spectrum.ru
@@ -22,15 +20,15 @@ RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
+USE_RC_SUBR=            drweb-smf.sh
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 601000
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd61
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f61
+DISTNAME=       ${PORTNAME}-${PORTVERSION}-freebsd61
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX}:f61
 .else
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd55
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f55
+IGNORE=         sorry, port is not supported of FreeBSD version < 6.1
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -67,13 +65,6 @@ do-install:
 .endif
 .endfor
 .endfor
-	${SED} -e s#___T_FILTER_PATH___#${INST_PREFIX}/drweb-smf#g \
-		-e s#___T_FILTER_UNIX___#yes#g \
-		-e s#___T_FILTER_SOCKET___#no#g \
-		-e s#___T_FILTER_PARAMS___##g \
-		< ${WRKSRC}${LOCALBASE}/drweb/doc/sendmail/template.initscript > \
-		${PREFIX}/etc/rc.d/002.drweb-smf.sh
-	${CHMOD} 750 ${PREFIX}/etc/rc.d/002.drweb-smf.sh
 
 post-install:
 .if !defined(NOPORTDOCS)

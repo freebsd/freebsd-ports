@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# PROVIDE: drweb_smf
+# REQUIRE: DAEMON drwebd
+# BEFORE: mail
+
+. %%RC_SUBR%%
+
+name="drweb_smf"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${drweb_smf_enable="NO"}
+: ${drweb_smf_procname="%%PREFIX%%/drweb/drweb-smf"}
+
+command=$drweb_smf_procname
+
+run_rc_command "$1"
