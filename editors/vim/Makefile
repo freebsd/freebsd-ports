@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	6
+PATCHLEVEL=	9
 PORTVERSION=	7.2.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -16,10 +16,10 @@ MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
-#PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-#BADPATCHES=
+BADPATCHES=	007
 #.if !defined(WITH_LANG)
 #BADPATCHES+=
 #.endif
