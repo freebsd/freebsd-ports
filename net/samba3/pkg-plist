@@ -21,7 +21,6 @@ bin/tdbbackup
 bin/tdbdump
 bin/tdbtool
 bin/testparm
-%%SMBSH%%bin/smbsh
 %%SMBTORTURE%%bin/smbtorture
 %%WINBIND%%bin/wbinfo
 sbin/smbd
