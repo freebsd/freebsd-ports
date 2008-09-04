@@ -26,6 +26,7 @@
 %%SITE_PERL%%/Moose/Cookbook/Style.pod
 %%SITE_PERL%%/Moose/Cookbook/WTF.pod
 %%SITE_PERL%%/Moose/Exporter.pm
+%%SITE_PERL%%/Moose/Intro.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
 %%SITE_PERL%%/Moose/Meta/Class.pm
 %%SITE_PERL%%/Moose/Meta/Instance.pm
@@ -57,6 +58,7 @@
 %%SITE_PERL%%/Moose/Object.pm
 %%SITE_PERL%%/Moose/Role.pm
 %%SITE_PERL%%/Moose/Spec/Role.pod
+%%SITE_PERL%%/Moose/Unsweetened.pod
 %%SITE_PERL%%/Moose/Util.pm
 %%SITE_PERL%%/Moose/Util/MetaRole.pm
 %%SITE_PERL%%/Moose/Util/TypeConstraints.pm
