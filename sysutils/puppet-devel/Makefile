@@ -24,7 +24,8 @@ CONFLICTS=	puppet-[0-9]*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppetmasterd puppetd
-DOCS=	CHANGELOG README LICENSE COPYING
+PORTDOCS=	CHANGELOG README LICENSE COPYING
+PORTEXAMPLES=	*
 PUPPET_USER:=	puppet
 PUPPET_GROUP:=	${PUPPET_USER}
 PUPPET_RUNDIR:=	/var/run/${PORTNAME}
@@ -48,15 +49,6 @@ pre-install:
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
-	${INSTALL} -d ${DOCSDIR}
-.if !defined(NOPORTDOCS)
-.for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-	${INSTALL} -d ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.endif
 
 post-install:
 	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}
@@ -73,19 +65,16 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${FIND} ${EXAMPLESDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
