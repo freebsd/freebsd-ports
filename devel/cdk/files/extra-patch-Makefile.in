@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2005-04-24 15:06:20.000000000 -0800
++++ Makefile.in	2008-09-02 21:52:52.000000000 -0800
+@@ -301,13 +301,13 @@
+ #
+ # This installs the informational readme files.
+ #
+-install \
+-installCDKReadme :: $(DOCUMENT_DIR)
+-	@echo "Installing CDK Readme files in $(DOCUMENT_DIR)..."
+-	@for i in $(CDKREADME); do \
+-	   echo "	... $$i"; \
+-	   $(INSTALL_DATA) $(srcdir)/$$i $(DOCUMENT_DIR)/$$i; \
+-	done
++#install \
++#installCDKReadme :: $(DOCUMENT_DIR)
++#	@echo "Installing CDK Readme files in $(DOCUMENT_DIR)..."
++#	@for i in $(CDKREADME); do \
++#	   echo "	... $$i"; \
++#	   $(INSTALL_DATA) $(srcdir)/$$i $(DOCUMENT_DIR)/$$i; \
++#	done
+ 
+ uninstall \
+ uninstallCDKReadme ::
