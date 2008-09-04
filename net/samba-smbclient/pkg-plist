@@ -1,0 +1,3 @@
+bin/smbclient
+@unexec if cmp -s %D/%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%% %D/%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%.sample; then rm -f %D/%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%; fi
+%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%.sample
