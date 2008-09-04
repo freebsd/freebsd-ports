@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	ecl
-PORTVERSION=	0.9g
-PORTREVISION=	2
+PORTVERSION=	0.9l
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecls
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-system-gmp --with-cmuformat=yes --enable-boehm=included
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-system-gmp --enable-boehm=system
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	ASDF "Enable ASDF building facility" on \
@@ -30,9 +30,6 @@ OPTIONS=	ASDF "Enable ASDF building facility" on \
 		CLX "Enable X11 interface" off \
 		SOCKETS "Enable socket interface" on \
 		THREADS "Enable threading support" off
-
-MAN1=		ecl.1
-INFO=		ecl ecldev
 
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
@@ -62,7 +59,7 @@ PLIST_SUB+=	CLOS_STREAMS="@comment "
 .if defined(WITH_CLX)
 USE_XORG=	x11
 CONFIGURE_ARGS+=--with-clx=yes
-INFO+=		clx
+#INFO+=		clx
 PLIST_SUB+=	CLX=""
 .else
 CONFIGURE_ARGS+=--with-clx=no
