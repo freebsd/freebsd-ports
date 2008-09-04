@@ -240,10 +240,6 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "oc"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "or-IN"
 LANG_PKGNAME=	or
 LANG_SUFFIX=	IN
