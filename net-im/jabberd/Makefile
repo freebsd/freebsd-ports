@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -37,6 +36,7 @@ USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	jabberd
+USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
