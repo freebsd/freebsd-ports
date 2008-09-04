@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.12
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SFE/nagiosplug
@@ -16,7 +17,6 @@ COMMENT=	Plugins for Nagios
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I m4 -I gl/m4
@@ -52,10 +52,9 @@ CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
 		--localstatedir=${NAGIOSDIR} \
 		--prefix=${PREFIX}
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
 .if defined(WITH_QSTAT)
