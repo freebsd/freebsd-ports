@@ -1249,6 +1249,7 @@
     SUBDIR += p5-Event-Lib
     SUBDIR += p5-Event-Notify
     SUBDIR += p5-Event-RPC
+    SUBDIR += p5-Every
     SUBDIR += p5-Exception-Class
     SUBDIR += p5-Exception-Class-TryCatch
     SUBDIR += p5-Exception-Handler
