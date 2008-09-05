@@ -46,7 +46,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/DiagArray2.cc
 include/octave-%%OCTAVE_VERSION%%/octave/DiagArray2.h
 include/octave-%%OCTAVE_VERSION%%/octave/EIG.h
 include/octave-%%OCTAVE_VERSION%%/octave/FEGrid.h
-include/octave-%%OCTAVE_VERSION%%/octave/lo-math.h
 include/octave-%%OCTAVE_VERSION%%/octave/LP.h
 include/octave-%%OCTAVE_VERSION%%/octave/LSODE-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/LSODE.h
@@ -153,6 +152,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/lex.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-error.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-ieee.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-mappers.h
+include/octave-%%OCTAVE_VERSION%%/octave/lo-math.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-specfun.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-sysdep.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-utils.h
@@ -606,41 +606,36 @@ include/octave-%%OCTAVE_VERSION%%/octave/vx-s-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 include/octave-%%OCTAVE_VERSION%%/octave/zfstream.h
-@dirrm include/octave-%%OCTAVE_VERSION%%/octave
-@dirrm include/octave-%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/libcruft.so
 lib/octave-%%OCTAVE_VERSION%%/libcruft.so.%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/liboctave.so
 lib/octave-%%OCTAVE_VERSION%%/liboctave.so.%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so.%%OCTAVE_VERSION%%
-@dirrm lib/octave-%%OCTAVE_VERSION%%
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-octave-help
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-%%OCTAVE_VERSION%%
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/bsxfun.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/convhulln.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/tsearch.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/typecast.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__contourc__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__dsearchn__.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__lin_interpn__.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__voronoi__.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__contourc__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__glpk__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__gnuplot_raw__.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__lin_interpn__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__pchip_deriv__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__qp__.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__voronoi__.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/balance.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/besselj.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/betainc.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/bsxfun.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ccolamd.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/cellfun.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/chol.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/colamd.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/colloc.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/conv2.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/convhulln.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/daspk.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dasrt.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/dassl.oct
@@ -691,22 +686,10 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/svd.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/syl.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/symrcm.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/time.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/tsearch.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/typecast.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/urlwrite.oct
 libexec/octave/ls-R
-@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site
-@dirrm libexec/octave/%%OCTAVE_VERSION%%
-@dirrm libexec/octave/site/exec/%%GNU_HOST%%
-@dirrm libexec/octave/site/exec
-@dirrm libexec/octave/site
-@dirrm libexec/octave
 share/applications/www.octave.org-octave.desktop
 share/octave/%%OCTAVE_VERSION%%/NEWS
 share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
@@ -998,13 +981,6 @@ share/octave/%%OCTAVE_VERSION%%/m/finance/vol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/__isequal__.m
 share/octave/%%OCTAVE_VERSION%%/m/general/__splinen__.m
 share/octave/%%OCTAVE_VERSION%%/m/general/accumarray.m
-share/octave/%%OCTAVE_VERSION%%/m/general/celldisp.m
-share/octave/%%OCTAVE_VERSION%%/m/general/del2.m
-share/octave/%%OCTAVE_VERSION%%/m/general/interp3.m
-share/octave/%%OCTAVE_VERSION%%/m/general/interpn.m
-share/octave/%%OCTAVE_VERSION%%/m/general/rat.m
-share/octave/%%OCTAVE_VERSION%%/m/general/runlength.m
-share/octave/%%OCTAVE_VERSION%%/m/general/structfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/arrayfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/bicubic.m
 share/octave/%%OCTAVE_VERSION%%/m/general/bitcmp.m
@@ -1014,11 +990,13 @@ share/octave/%%OCTAVE_VERSION%%/m/general/blkdiag.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cart2pol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cart2sph.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cell2mat.m
+share/octave/%%OCTAVE_VERSION%%/m/general/celldisp.m
 share/octave/%%OCTAVE_VERSION%%/m/general/circshift.m
 share/octave/%%OCTAVE_VERSION%%/m/general/common_size.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cplxpair.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cumtrapz.m
 share/octave/%%OCTAVE_VERSION%%/m/general/deal.m
+share/octave/%%OCTAVE_VERSION%%/m/general/del2.m
 share/octave/%%OCTAVE_VERSION%%/m/general/diff.m
 share/octave/%%OCTAVE_VERSION%%/m/general/flipdim.m
 share/octave/%%OCTAVE_VERSION%%/m/general/fliplr.m
@@ -1028,7 +1006,9 @@ share/octave/%%OCTAVE_VERSION%%/m/general/ind2sub.m
 share/octave/%%OCTAVE_VERSION%%/m/general/int2str.m
 share/octave/%%OCTAVE_VERSION%%/m/general/interp1.m
 share/octave/%%OCTAVE_VERSION%%/m/general/interp2.m
+share/octave/%%OCTAVE_VERSION%%/m/general/interp3.m
 share/octave/%%OCTAVE_VERSION%%/m/general/interpft.m
+share/octave/%%OCTAVE_VERSION%%/m/general/interpn.m
 share/octave/%%OCTAVE_VERSION%%/m/general/is_duplicate_entry.m
 share/octave/%%OCTAVE_VERSION%%/m/general/isa.m
 share/octave/%%OCTAVE_VERSION%%/m/general/isdefinite.m
@@ -1054,15 +1034,18 @@ share/octave/%%OCTAVE_VERSION%%/m/general/postpad.m
 share/octave/%%OCTAVE_VERSION%%/m/general/prepad.m
 share/octave/%%OCTAVE_VERSION%%/m/general/quadl.m
 share/octave/%%OCTAVE_VERSION%%/m/general/randperm.m
+share/octave/%%OCTAVE_VERSION%%/m/general/rat.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rem.m
 share/octave/%%OCTAVE_VERSION%%/m/general/repmat.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rot90.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rotdim.m
+share/octave/%%OCTAVE_VERSION%%/m/general/runlength.m
 share/octave/%%OCTAVE_VERSION%%/m/general/shift.m
 share/octave/%%OCTAVE_VERSION%%/m/general/shiftdim.m
 share/octave/%%OCTAVE_VERSION%%/m/general/sortrows.m
 share/octave/%%OCTAVE_VERSION%%/m/general/sph2cart.m
 share/octave/%%OCTAVE_VERSION%%/m/general/strerror.m
+share/octave/%%OCTAVE_VERSION%%/m/general/structfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/sub2ind.m
 share/octave/%%OCTAVE_VERSION%%/m/general/trapz.m
 share/octave/%%OCTAVE_VERSION%%/m/general/tril.m
@@ -1088,23 +1071,15 @@ share/octave/%%OCTAVE_VERSION%%/m/image/__img_via_file__.m
 share/octave/%%OCTAVE_VERSION%%/m/image/autumn.m
 share/octave/%%OCTAVE_VERSION%%/m/image/bone.m  
 share/octave/%%OCTAVE_VERSION%%/m/image/brighten.m
+share/octave/%%OCTAVE_VERSION%%/m/image/colormap.m
 share/octave/%%OCTAVE_VERSION%%/m/image/cool.m  
 share/octave/%%OCTAVE_VERSION%%/m/image/copper.m
 share/octave/%%OCTAVE_VERSION%%/m/image/flag.m
 share/octave/%%OCTAVE_VERSION%%/m/image/gmap40.m
-share/octave/%%OCTAVE_VERSION%%/m/image/hot.m
-share/octave/%%OCTAVE_VERSION%%/m/image/hsv.m
-share/octave/%%OCTAVE_VERSION%%/m/image/jet.m
-share/octave/%%OCTAVE_VERSION%%/m/image/pink.m
-share/octave/%%OCTAVE_VERSION%%/m/image/prism.m
-share/octave/%%OCTAVE_VERSION%%/m/image/rainbow.m
-share/octave/%%OCTAVE_VERSION%%/m/image/spring.m
-share/octave/%%OCTAVE_VERSION%%/m/image/summer.m
-share/octave/%%OCTAVE_VERSION%%/m/image/white.m 
-share/octave/%%OCTAVE_VERSION%%/m/image/winter.m
-share/octave/%%OCTAVE_VERSION%%/m/image/colormap.m
 share/octave/%%OCTAVE_VERSION%%/m/image/gray.m
 share/octave/%%OCTAVE_VERSION%%/m/image/gray2ind.m
+share/octave/%%OCTAVE_VERSION%%/m/image/hot.m
+share/octave/%%OCTAVE_VERSION%%/m/image/hsv.m
 share/octave/%%OCTAVE_VERSION%%/m/image/hsv2rgb.m
 share/octave/%%OCTAVE_VERSION%%/m/image/image.m
 share/octave/%%OCTAVE_VERSION%%/m/image/image_viewer.m
@@ -1112,13 +1087,21 @@ share/octave/%%OCTAVE_VERSION%%/m/image/imagesc.m
 share/octave/%%OCTAVE_VERSION%%/m/image/imshow.m
 share/octave/%%OCTAVE_VERSION%%/m/image/ind2gray.m
 share/octave/%%OCTAVE_VERSION%%/m/image/ind2rgb.m
+share/octave/%%OCTAVE_VERSION%%/m/image/jet.m
 share/octave/%%OCTAVE_VERSION%%/m/image/loadimage.m
 share/octave/%%OCTAVE_VERSION%%/m/image/ntsc2rgb.m
 share/octave/%%OCTAVE_VERSION%%/m/image/ocean.m
+share/octave/%%OCTAVE_VERSION%%/m/image/pink.m
+share/octave/%%OCTAVE_VERSION%%/m/image/prism.m
+share/octave/%%OCTAVE_VERSION%%/m/image/rainbow.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2hsv.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ind.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ntsc.m
 share/octave/%%OCTAVE_VERSION%%/m/image/saveimage.m
+share/octave/%%OCTAVE_VERSION%%/m/image/spring.m
+share/octave/%%OCTAVE_VERSION%%/m/image/summer.m
+share/octave/%%OCTAVE_VERSION%%/m/image/white.m 
+share/octave/%%OCTAVE_VERSION%%/m/image/winter.m
 share/octave/%%OCTAVE_VERSION%%/m/io/beep.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/__norm__.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/commutation_matrix.m
@@ -1133,8 +1116,8 @@ share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/krylov.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/krylovb.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/logm.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/null.m
-share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/orth.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/onenormest.m
+share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/orth.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/qzhess.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/rank.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/rref.m
@@ -1163,6 +1146,7 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/flops.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fullfile.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/getfield.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/gunzip.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/gzip.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/inputname.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ismac.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ispc.m
@@ -1181,10 +1165,12 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/orderfields.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/pack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/paren.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/parseparams.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/run.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/semicolon.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/setfield.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/single.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/substruct.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/swapbytes.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tar.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tempdir.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tempname.m
@@ -1193,11 +1179,8 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unix.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unpack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/untar.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unzip.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/gzip.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/run.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ver.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/swapbytes.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/warning_ids.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/what.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/xor.m
@@ -1212,20 +1195,12 @@ share/octave/%%OCTAVE_VERSION%%/m/path/savepath.m
 share/octave/%%OCTAVE_VERSION%%/m/pkg/PKG_ADD
 share/octave/%%OCTAVE_VERSION%%/m/pkg/pkg.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/PKG_ADD
-share/octave/%%OCTAVE_VERSION%%/m/plot/__patch__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__area__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axes_limits__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__bars__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__contour__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__quiver__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__scatter__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/__stem__.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/ancestor.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/meshc.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/patch.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/peaks.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__bar__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__bars__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__contour__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__default_plot_options__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errcomm__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errplot__.m
@@ -1235,6 +1210,7 @@ share/octave/%%OCTAVE_VERSION%%/m/plot/__go_draw_axes__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__go_draw_figure__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__line__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__next_line_color__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__patch__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr1__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plr2__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt1__.m
@@ -1250,27 +1226,39 @@ share/octave/%%OCTAVE_VERSION%%/m/plot/__plt__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt_get_axis_arg__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__pltopt1__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__pltopt__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__quiver__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__scatter__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__stem__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/ancestor.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/area.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/axes.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/axis.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/bar.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/barh.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/box.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/caxis.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/clf.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/compass.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/ellipsoid.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/feather.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/rose.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/close.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/closereq.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/colorbar.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/compass.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/contour.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/contour3.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/contourc.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/contourf.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/cylinder.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/drawnow.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/ellipsoid.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/errorbar.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/feather.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/figure.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/fill.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/findobj.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/fplot.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/gca.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/gcf.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/grid.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/hidden.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/hist.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/hold.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/isfigure.m
@@ -1280,66 +1268,61 @@ share/octave/%%OCTAVE_VERSION%%/m/plot/line.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/loglog.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/loglogerr.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/mesh.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/meshc.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/meshgrid.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/meshz.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/ndgrid.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/newplot.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/orient.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/pareto.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/patch.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/pcolor.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/peaks.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/pie.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/plot.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/plot3.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/plotyy.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/polar.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/print.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/quiver.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/quiver3.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/replot.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/ribbon.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/rose.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/scatter.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/scatter3.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/semilogx.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/semilogxerr.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/semilogy.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/semilogyerr.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/shg.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/sombrero.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/stairs.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/stem.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/subplot.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/text.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/title.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/view.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/xlabel.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/ylabel.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/zlabel.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/area.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/caxis.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/colorbar.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/contour3.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/contourf.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/cylinder.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/fill.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/findobj.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/hidden.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/meshz.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/pareto.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/pcolor.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/pie.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/plotyy.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/quiver.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/quiver3.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/ribbon.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/scatter.m
-share/octave/%%OCTAVE_VERSION%%/m/plot/scatter3.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/shading.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/shg.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/slice.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/sombrero.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/sphere.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/spinmap.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/stairs.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/stem.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/stem3.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/subplot.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/surf.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/surface.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/surfc.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/surfnorm.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/text.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/title.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/view.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/xlabel.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/xlim.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/ylabel.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/ylim.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/zlabel.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/zlim.m
-share/octave/%%OCTAVE_VERSION%%/m/polynomial/mpoles.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/compan.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/conv.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/deconv.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/mkpp.m
+share/octave/%%OCTAVE_VERSION%%/m/polynomial/mpoles.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/pchip.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/poly.m
 share/octave/%%OCTAVE_VERSION%%/m/polynomial/polyder.m
@@ -1462,9 +1445,6 @@ share/octave/%%OCTAVE_VERSION%%/m/special-matrix/vander.m
 share/octave/%%OCTAVE_VERSION%%/m/special-matrix/wilkinson.m
 share/octave/%%OCTAVE_VERSION%%/m/startup/inputrc
 share/octave/%%OCTAVE_VERSION%%/m/startup/octaverc
-share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidcdf.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidinv.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidpdf.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/center.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cloglog.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cor.m
@@ -1574,6 +1554,9 @@ share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/tcdf.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/tinv.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/tpdf.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/trnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidcdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidinv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidpdf.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unidrnd.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unifcdf.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/unifinv.m
@@ -1612,7 +1595,6 @@ share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/welch_test.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/wilcoxon_test.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/z_test.m
 share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/z_test_2.m
-share/octave/%%OCTAVE_VERSION%%/m/strings/strtrim.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/base2dec.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/bin2dec.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/blanks.m
@@ -1639,6 +1621,7 @@ share/octave/%%OCTAVE_VERSION%%/m/strings/strmatch.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/strncmpi.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/strrep.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/strtok.m
+share/octave/%%OCTAVE_VERSION%%/m/strings/strtrim.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/strtrunc.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/strvcat.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/substr.m
@@ -1665,7 +1648,18 @@ share/octave/%%OCTAVE_VERSION%%/m/time/now.m
 share/octave/%%OCTAVE_VERSION%%/m/time/weekday.m
 share/octave/ls-R
 share/octave/site/m/startup/octaverc
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/pkg
+@unexec rm -rf %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rm -rf %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@dirrmtry share/applications
+@dirrm share/octave/site/m/startup
+@dirrm share/octave/site/m
+@dirrm share/octave/site/api-v32/m
+@dirrm share/octave/site/api-v32
+@dirrm share/octave/site
+@dirrm share/octave/%%OCTAVE_VERSION%%/site/m
+@dirrm share/octave/%%OCTAVE_VERSION%%/site
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/time
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/testfun
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
@@ -1683,6 +1677,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/quaternion
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/polynomial
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/plot
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/pkg
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/path
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/optimization
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/miscellaneous
@@ -1701,17 +1696,36 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/base
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
-@dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
 @dirrm share/octave/%%OCTAVE_VERSION%%/m
+@dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
 @dirrm share/octave/%%OCTAVE_VERSION%%
-@dirrm share/octave/site/m/startup
-@dirrm share/octave/site/m
-@dirrm share/octave/site
 @dirrm share/octave
-@dirrmtry share/applications
-%%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
-%%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
-%%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
-%%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
+@dirrm libexec/octave/site/oct/api-v32/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct/api-v32
+@dirrm libexec/octave/site/oct/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct
+@dirrm libexec/octave/site/exec
+@dirrm libexec/octave/site
+@dirrm libexec/octave/api-v32/site/exec/%%GNU_HOST%%
+@dirrm libexec/octave/api-v32/site/exec
+@dirrm libexec/octave/api-v32/site
+@dirrm libexec/octave/api-v32
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
+@dirrm libexec/octave/%%OCTAVE_VERSION%%
+@dirrm libexec/octave
+@dirrm lib/octave-%%OCTAVE_VERSION%%
+@dirrm include/octave-%%OCTAVE_VERSION%%/octave
+@dirrm include/octave-%%OCTAVE_VERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
+%%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
+%%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
