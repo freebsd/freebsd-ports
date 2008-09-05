@@ -1,18 +1,5 @@
-
-
-Patch attached with submission follows:
-
---- panel-plugin/battery.c	(revision 3756)
-+++ panel-plugin/battery.c	(working copy)
-@@ -25,7 +25,7 @@
- #include <config.h>
- #endif
- 
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && (defined(i386) || defined(__i386__))
- #include <machine/apm_bios.h>
- #elif __OpenBSD__
- #include <sys/param.h>
+--- panel-plugin/battery.c.orgi	2008-09-04 22:53:40.000000000 +0200
++++ panel-plugin/battery.c	2008-09-05 10:02:08.000000000 +0200
 @@ -163,7 +163,9 @@
       except that is does not work on FreeBSD
  
@@ -27,11 +14,36 @@ Patch attached with submission follows:
        acline = apm.ac_state ? TRUE : FALSE;
  
  #else
-+#ifdef APMDEVICE
-     struct apm_info apm;
+-    struct apm_info apm;
++#ifdef APMDEVICE    
++struct apm_info apm;
 +#endif
      DBG ("Updating battery status...");
  
      if(battmon->method == BM_BROKEN) {
-
-
+@@ -382,6 +386,7 @@
+           rate = last_rate;
+         }
+ 
++#ifdef __linux__
+         charge = (((float)ccapacity)/((float)lcapacity))*100;
+ 
+         if ( last_acline )
+@@ -394,6 +399,17 @@
+ 
+         last_acline = acline;
+ 
++#elif __FreeBSD__
++	charge = acpistate->percentage;
++	
++	if ( last_acline)
++	    time_remaining = acpistate->rtime;
++	else
++	    time_remaining = acpistate->rtime;
++
++	if ( time_remaining < 0 )
++	    time_remaining = 0;
++#endif
+     }
+ #ifdef __linux__
+     else {
