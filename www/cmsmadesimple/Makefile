@@ -1,0 +1,67 @@
+# New ports collection makefile for:   cmsmadesimple
+# Date created:		1st September 2008
+# Whom:			Wen heping <wenheping@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cmsmadesimple
+PORTVERSION=	1.4.1
+CATEGORIES=	www
+MASTER_SITES=	http://dev.cmsmadesimple.org/frs/download.php/2536/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-full
+
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	A Simple Open Source CMS
+
+USE_PHP=	mysql tokenizer gd
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}
+CMS_DIRS=	admin doc images install lib \
+		modules plugins tmp uploads
+CMS_FILES=	favicon_cms.ico fileloc.php include.php \
+		index.php moduleinterface.php preview.php \
+		robots.txt soap.php stylesheet.css \
+		stylesheet.php version.php
+WRITABLE_DIRS=	tmp tmp/templates_c tmp/cache \
+		uploads uploads/images modules
+
+.include <bsd.port.pre.mk>
+post-extract:
+	@cd ${WRKSRC} && ${RM} -f config.php
+
+do-install:
+.for i in ${CMS_DIRS}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+.endfor
+.for i in ${CMS_FILES}
+	@cd ${WRKSRC} && ${CP} ${i} ${WWWDIR}/${i}
+.endfor
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHMOD} -R 755 ${WWWDIR}
+
+	@if [ ! -f ${WWWDIR}/config.php ]; then \
+	${TOUCH} ${WWWDIR}/config.php ; fi
+
+post-install:
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+		>> ${TMPPLIST}
+
+.for i in ${WRITABLE_DIRS}
+	@${CHMOD} 775 ${WWWDIR}/${i}
+	@${ECHO_CMD} '@exec ${CHMOD} 775 ${WWWDIR}/${i}' \
+		>> ${TMPPLIST}
+.endfor
+
+	@${CHMOD} 666 ${WWWDIR}/config.php
+	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/config.php' \
+		>> ${TMPPLIST}
+
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
