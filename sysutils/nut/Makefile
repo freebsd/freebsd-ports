@@ -116,7 +116,11 @@ PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
 .if !defined(WITHOUT_NEON)
+.if exists(${LOCALBASE}/lib/libneon.so.26)
 LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
+.else
+LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
+.endif
 CONFIGURE_ARGS+=	--with-neonxml
 MAN8+=		netxml-ups.8
 PLIST_SUB+=	NUT_NEON=""
