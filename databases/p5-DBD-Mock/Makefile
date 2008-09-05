@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Simple mock DBD implementation used for testing
 
 BUILD_DEPENDS=	p5-DBI>=1.3:${PORTSDIR}/databases/p5-DBI
