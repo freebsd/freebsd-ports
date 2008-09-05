@@ -24,6 +24,7 @@
     SUBDIR += akode-plugins-resampler
     SUBDIR += akode-plugins-xiph
     SUBDIR += alac
+    SUBDIR += albumart
     SUBDIR += alienwah
     SUBDIR += amarok
     SUBDIR += amarok-fs
