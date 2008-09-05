@@ -106,7 +106,7 @@ MAN1+=	ffmpeg.1 ffserver.1
 .endif
 
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-CFLAGS:=		${CFLAGS:N-O*} -O3 -ffast-math -fomit-frame-pointer
+CFLAGS:=		${CFLAGS:N-O*} -O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .else
 CFLAGS:=		${CFLAGS:N-O0} -O2
 DEBUG_FLAGS+=		 -O2
