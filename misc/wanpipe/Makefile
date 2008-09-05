@@ -8,6 +8,7 @@
 
 PORTNAME=	wanpipe
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	misc net
 MASTER_SITES=	ftp://ftp.sangoma.com/FreeBSD/wanpipe/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -62,6 +63,11 @@ do-configure:
 	@${SH} ${PKGCONFIG} ${DISTNAME} do-configure ${WRKSRC} ${EXTRA_ARGS}
 
 post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/wanpipe ${LOCALBASE}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/wancfg_legacy ${LOCALBASE}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/wancfg_zaptel ${LOCALBASE}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/wanpipe_cfgft1 ${LOCALBASE}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/wanrouter ${LOCALBASE}/sbin/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
