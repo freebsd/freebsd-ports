@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f794295-7b69-11dd-80ba-000bcdf0a03b">
+    <topic>FreeBSD -- Remote kernel panics on IPv6 connections</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_4</lt></range>
+	<range><gt>7.0</gt><lt>7.0_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In case of an incoming ICMPv6 'Packet Too Big Message', there
+	  is an insufficient check on the proposed new MTU for a path to
+	  the destination.</p>
+	<h1>Impact:</h1>
+	<p>When the kernel is configured to process IPv6 packets and has
+	  active IPv6 TCP sockets, a specifically crafted ICMPv6 'Packet
+	  Too Big Message' could cause the TCP stack of the kernel to
+	  panic.</p>
+	<h1>Workaround:</h1>
+	<p>Systems without INET6 / IPv6 support are not vulnerable and
+	  neither are systems which do not listen on any IPv6 TCP sockets
+	  and have no active IPv6 connections.</p>
+	<p>Filter ICMPv6 'Packet Too Big Messages' using a firewall, but
+	  this will at the same time break PMTU support for IPv6
+	  connections.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3530</cvename>
+      <freebsdsa>SA-08:09.icmp6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-09-03</discovery>
+      <entry>2008-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7dbb7197-7b68-11dd-80ba-000bcdf0a03b">
     <topic>FreeBSD -- nmount(2) local arbitrary code execution</topic>
     <affects>
