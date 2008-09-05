@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.4-alpha
-PORTREVISION=	1
-CATEGORIES=	security net
+DISTVERSION=	0.2.1.5-alpha
+CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
 		http://tor.depthstrike.com/dist/ \
@@ -121,7 +120,7 @@ post-install:
 	${CHOWN} _tor:_tor /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
-regression-test:
+regression-test: build
 	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
 
