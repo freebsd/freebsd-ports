@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d4e4759-7b67-11dd-80ba-000bcdf0a03b">
+    <topic>FreeBSD -- amd64 swapgs local privilege escalation</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_4</lt></range>
+	<range><gt>7.0</gt><lt>7.0_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>If a General Protection Fault happens on a FreeBSD/amd64
+	  system while it is returning from an interrupt, trap or
+	  system call, the swapgs CPU instruction may be called one
+	  extra time when it should not resulting in userland and
+	  kernel state being mixed.</p>
+	<h1>Impact:</h1>
+	<p>A local attacker can by causing a General Protection Fault
+	  while the kernel is returning from an interrupt, trap or
+	  system call while manipulating stack frames and, run
+	  arbitrary code with kernel privileges.</p>
+	<p>The vulnerability can be used to gain kernel / supervisor
+	  privilege.  This can for example be used by normal users to
+	  gain root privileges, to break out of jails, or bypass
+	  Mandatory Access Control (MAC) restrictions.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available, but only systems running the 64
+	  bit FreeSD/amd64 kernels are vulnerable.</p>
+	<p>Systems with 64 bit capable CPUs, but running the 32 bit
+	  FreeBSD/i386 kernel are not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3890</cvename>
+      <freebsdsa>SA-08:07.amd64</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-09-03</discovery>
+      <entry>2008-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="73ec1008-72f0-11dd-874b-0030843d3802">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
