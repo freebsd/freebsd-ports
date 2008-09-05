@@ -9,6 +9,7 @@ bin/klavaro
 %%DATADIR%%/C_intro.txt
 %%DATADIR%%/C_velo_intro.txt
 %%DATADIR%%/alphagrip5.kbd
+%%DATADIR%%/alphagrip5_br.kbd
 %%DATADIR%%/azerty_be.kbd
 %%DATADIR%%/azerty_fr.kbd
 %%DATADIR%%/azerty_fr_ibook.kbd
@@ -125,6 +126,7 @@ bin/klavaro
 %%DATADIR%%/qwerty_pt.kbd
 %%DATADIR%%/qwerty_se.kbd
 %%DATADIR%%/qwerty_tr.kbd
+%%DATADIR%%/qwerty_uk.kbd
 %%DATADIR%%/qwerty_us.kbd
 %%DATADIR%%/qwerty_us2.kbd
 %%DATADIR%%/qwertz_cz.kbd
