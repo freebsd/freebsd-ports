@@ -1,11 +1,15 @@
 @comment $FreeBSD$
 bin/html_formfu_deploy.pl
+bin/html_formfu_dumpconf.pl
+man/man1/html_formfu_dumpconf.pl.1
+man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Constraint/Integer.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/AutoSet.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Word.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Number.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Length.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/reCAPTCHA.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Email.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/CallbackOnce.pm
@@ -38,6 +42,7 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Element/_DateSelect.pm
 %%SITE_PERL%%/HTML/FormFu/Element/_Input.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Multi.pm
+%%SITE_PERL%%/HTML/FormFu/Element/reCAPTCHA.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Submit.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Hidden.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Date.pm
@@ -81,6 +86,7 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Filter/Split.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CompoundJoin.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_pt.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/pt_br.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/de.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/en.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/es.pm
@@ -123,8 +129,9 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Literal.pm
 %%SITE_PERL%%/HTML/FormFu/base.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint.pm
+%%SITE_PERL%%/HTML/FormFu/Constants.pm
 %%SITE_PERL%%/HTML/FormFu.pm
-%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/radiogroup_tag
+%%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/recaptcha
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_form
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 %%SITE_PERL%%/auto/share/dist/HTML-FormFu/templates/tt/xhtml/non_block
