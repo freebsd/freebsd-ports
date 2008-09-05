@@ -1,2 +1,10 @@
 %%SITE_PERL%%/MooseX/ClassAttribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method/Accessor.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta/Attribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta/Class.pm
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Role
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute
 @dirrmtry %%SITE_PERL%%/MooseX
