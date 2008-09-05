@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	3.16
-DISTVERSIONSUFFIX=	-fx+mz+ns+sm+fl
+PORTVERSION=	3.26
+DISTVERSIONSUFFIX=	-fx+mz+sm
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
@@ -15,8 +15,8 @@ COMMENT=	A collaborative surfing tool extension
 
 XPI_NUM=	138
 XPI_ID=		{AE93811A-5C9A-4d34-8462-F7B864FC4696}
-XPI_FILES=	chrome/stumbleupon.jar install.js install.rdf chrome.manifest
-XPI_DIRS=	chrome
+XPI_FILES=	chrome/stumbleupon.jar chrome.manifest components/stumbleuponService.js install.js install.rdf
+XPI_DIRS=	chrome components
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
