@@ -1,4 +1,5 @@
 %%XPI_XPIDIR%%/build.xml
+%%XPI_XPIDIR%%/build/update.rdf
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/firebug-service.js
 %%XPI_XPIDIR%%/content/firebug/bindings.xml
@@ -57,6 +58,7 @@
 %%XPI_XPIDIR%%/docs/index.tpl.html
 %%XPI_XPIDIR%%/icons/default/firebug.ico
 %%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/jarred.manifest
 %%XPI_XPIDIR%%/license.txt
 %%XPI_XPIDIR%%/lite/errorIcon.png
 %%XPI_XPIDIR%%/lite/firebug.css
@@ -245,39 +247,41 @@
 %%XPI_XPIDIR%%/skin/classic/win/twistyOpen.png
 %%XPI_XPIDIR%%/skin/classic/win/window.css
 %%XPI_XPIDIR%%/skin/classic/window.css
-@dirrm %%XPI_XPIDIR%%/components
+%%XPI_XPIDIR%%/update.rdf.tpl.xml
+@dirrm %%XPI_XPIDIR%%/skin/classic/win
+@dirrm %%XPI_XPIDIR%%/skin/classic/mac
+@dirrm %%XPI_XPIDIR%%/skin/classic
+@dirrm %%XPI_XPIDIR%%/skin
+@dirrm %%XPI_XPIDIR%%/platform/Darwin
+@dirrm %%XPI_XPIDIR%%/platform
+@dirrm %%XPI_XPIDIR%%/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/locale/tr-TR
+@dirrm %%XPI_XPIDIR%%/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/locale/pl-PL
+@dirrm %%XPI_XPIDIR%%/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/locale/ja
+@dirrm %%XPI_XPIDIR%%/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/locale/hu-HU
+@dirrm %%XPI_XPIDIR%%/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/locale/en-US
+@dirrm %%XPI_XPIDIR%%/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/locale/da-DK
+@dirrm %%XPI_XPIDIR%%/locale/cs-CZ
+@dirrm %%XPI_XPIDIR%%/locale/ca-AD
+@dirrm %%XPI_XPIDIR%%/locale/bg
+@dirrm %%XPI_XPIDIR%%/locale
+@dirrm %%XPI_XPIDIR%%/lite
+@dirrm %%XPI_XPIDIR%%/icons/default
+@dirrm %%XPI_XPIDIR%%/icons
+@dirrm %%XPI_XPIDIR%%/docs
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
 @dirrm %%XPI_XPIDIR%%/content/firebug/tests
 @dirrm %%XPI_XPIDIR%%/content/firebug
 @dirrm %%XPI_XPIDIR%%/content
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/docs
-@dirrm %%XPI_XPIDIR%%/icons/default
-@dirrm %%XPI_XPIDIR%%/icons
-@dirrm %%XPI_XPIDIR%%/lite
-@dirrm %%XPI_XPIDIR%%/locale/bg
-@dirrm %%XPI_XPIDIR%%/locale/ca-AD
-@dirrm %%XPI_XPIDIR%%/locale/cs-CZ
-@dirrm %%XPI_XPIDIR%%/locale/da-DK
-@dirrm %%XPI_XPIDIR%%/locale/de-DE
-@dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/locale/fr-FR
-@dirrm %%XPI_XPIDIR%%/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/locale/ja
-@dirrm %%XPI_XPIDIR%%/locale/ko-KR
-@dirrm %%XPI_XPIDIR%%/locale/nl-NL
-@dirrm %%XPI_XPIDIR%%/locale/pl-PL
-@dirrm %%XPI_XPIDIR%%/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/locale/sk-SK
-@dirrm %%XPI_XPIDIR%%/locale/tr-TR
-@dirrm %%XPI_XPIDIR%%/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/locale
-@dirrm %%XPI_XPIDIR%%/platform/Darwin
-@dirrm %%XPI_XPIDIR%%/platform
-@dirrm %%XPI_XPIDIR%%/skin/classic/mac
-@dirrm %%XPI_XPIDIR%%/skin/classic/win
-@dirrm %%XPI_XPIDIR%%/skin/classic
-@dirrm %%XPI_XPIDIR%%/skin
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/build
