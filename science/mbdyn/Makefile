@@ -7,6 +7,7 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -34,6 +35,7 @@ MAN1=		mbdyn.1
 
 OPTIONS=	MPI "Enable mpich-support" off \
 		METIS "Enable metis-support" off \
+		CHACO "Enable chaco-support" off \
 		GINAC "Enable GiNaC-support (not implemented yet)" off \
 		TCL "Enable tcl-support (not implemented yet)" off
 
@@ -64,12 +66,18 @@ CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
 .if defined(WITH_METIS)
-BROKEN=		Does not compile with metis enabled
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
 CONFIGURE_ARGS+=	--with-metis=no
+.endif
+
+.if defined(WITH_CHACO)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libchaco.a:${PORTSDIR}/math/chaco
+CONFIGURE_ARGS+=	--with-chaco=yes 
+.else
+CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
 .if defined(WITH_GINAC)
@@ -91,10 +99,6 @@ CONFIGURE_ARGS+=	--with-tcl=no
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-.if ${OSVERSION} < 500000
 BROKEN=		Does not compile
 .endif
 
