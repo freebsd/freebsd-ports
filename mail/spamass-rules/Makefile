@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20060927
-PORTREVISION=	1
+PORTVERSION=	20080903
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
-MAINTAINER=	mranner@inode.at
+MAINTAINER=	michael@ranner.eu
 COMMENT=	Custom rulesets for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
@@ -26,6 +25,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		FRENCH "Catches spam written in French" off \
 		GERMAN "Catches spam written in German" off \
+		GREEK "Catches spam written in Greek" off \
 		MANGLED "Looks for obfuscated/gappy words" off \
 		MIMEVLD "Some mime validation rules" off \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
@@ -90,6 +90,10 @@ SPAMASS_FILES+=	french_rules.cf
 
 .if defined(WITH_GERMAN)
 SPAMASS_FILES+=	70_zmi_german.cf
+.endif
+
+.if defined(WITH_GREEK)
+SPAMASS_FILES+=	gr_domain.cf
 .endif
 
 .if defined(WITH_MANGLED)
