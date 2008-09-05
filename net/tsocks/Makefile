@@ -6,7 +6,7 @@
 
 PORTNAME=	tsocks
 PORTVERSION=	1.8.b5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -94,13 +94,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ufds|fds|g' ${WRKSRC}/tsocks.c
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/tsocks
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/tsocks
-	${INSTALL_DATA} ${WRKSRC}/*.example ${PREFIX}/share/examples/tsocks
 	${INSTALL_DATA} ${WRKSRC}/tsocks.conf.simple.example ${PREFIX}/etc/tsocks.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/examples/tsocks/README
-	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.example ${EXAMPLESDIR}
 .endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}/README
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
