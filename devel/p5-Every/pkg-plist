@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Every.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Every/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Every
