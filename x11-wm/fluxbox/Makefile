@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.1.0.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -27,7 +25,8 @@ GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
-		startfluxbox.1
+		startfluxbox.1 fluxbox-remote.1
+MAN5=		fluxbox-keys.5
 DOCSVERSION=	20060629
 
 .if defined(WITH_DEBUG)
@@ -60,12 +59,6 @@ USE_EFL+=		imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
-.endif
-
-.if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-kde
-.else
-CONFIGURE_ARGS+=	--disable-kde
 .endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
@@ -137,9 +130,6 @@ pre-everything::
 .endif
 .if !defined(WITH_IMLIB2)
 	@${ECHO_CMD} "WITH_IMLIB2=yes		Enable Imlib2 (pixmap themes) support"
-.endif
-.if !defined(WITH_KDE)
-	@${ECHO_CMD} "WITH_KDE=yes		Enable KDE slit support"
 .endif
 .if !defined(WITH_XINERAMA)
 	@${ECHO_CMD} "WITH_XINERAMA=yes	Enable Xinerama support"

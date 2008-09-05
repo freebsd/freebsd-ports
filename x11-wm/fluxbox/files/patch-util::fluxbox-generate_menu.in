@@ -1,6 +1,6 @@
---- util/fluxbox-generate_menu.in.orig	2007-10-08 15:30:19.000000000 -0500
-+++ util/fluxbox-generate_menu.in	2007-10-08 15:41:35.000000000 -0500
-@@ -48,7 +48,7 @@
+--- util/fluxbox-generate_menu.in.orig	2008-09-02 15:13:53.000000000 -0500
++++ util/fluxbox-generate_menu.in	2008-09-02 15:32:52.000000000 -0500
+@@ -45,7 +45,7 @@
  
  
  WHOAMI=`whoami`
@@ -8,36 +8,35 @@
 +[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
  
  # Check for Imlib2-support
- if fluxbox -info 2> /dev/null | grep -q "^IMLIB"; then
-@@ -82,7 +82,7 @@
-     -d  other path(s) to recursively search for *.desktop files
-     -ds wider search for *.desktop files (takes more time)
-     -i  other path(s) to search for icons
+ if @pkgprefix@fluxbox@pkgsuffix@ -info 2> /dev/null | grep -q "^IMLIB"; then
+@@ -79,7 +79,7 @@
+     -d  Other path(s) to recursively search for *.desktop files
+     -ds Wider search for *.desktop files (takes more time)
+     -i  Other path(s) to search for icons
 -        e.g., "/usr/kde/3.3/share/icons/crystalsvg/16x16/*"
 +        e.g., "%%LOCALBASE%%/share/icons/crystalsvg/16x16/*"
-     -is wider search for icons (worth the extra time)
-     -in skip icon search
+     -is Wider search for icons (worth the extra time)
+     -in Skip icon search
  
-@@ -99,7 +99,7 @@
+@@ -96,7 +96,7 @@
    Only for packagers:
  
-     -p  prefix; default is @PREFIX@
+     -p  Prefix; default is @PREFIX@
 -    -n  Gnome-prefix; /opt, /usr, /usr/X11R6 and /usr/local autodetected
 +    -n  Gnome-prefix; %%LOCALBASE%% autodetected
      -q  KDE-prefix; idem dito
  
  
-@@ -283,7 +283,8 @@
+@@ -253,7 +253,7 @@
      # echo -n "for $temp_icon"
      eval doSearchLoop $USER_ICONPATHS \
        "$FB_ICONDIR" \
 -      "/usr/share/${execname%% *}" \
 +      "%%LOCALBASE%%/share/${execname%% *}" \
-+      "%%LOCALBASE%%/share/gnome/${execname%% *}" \
        ${OTHER_ICONPATHS} \
  
  
-@@ -1261,16 +1262,16 @@
+@@ -1236,16 +1236,16 @@
  # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
  # your prefix is: @PREFIX@
  
@@ -52,13 +51,13 @@
 +# KDE_PREFIX=%%LOCALBASE%%
  
  
- # Sepparate the list of background-dirs with semicolumns ':'
+ # Separate the list of background dirs with colons ':'
 -# BACKGROUND_DIRS="${USERFLUXDIR}/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
-+# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:%%LOCALBASE%%/share/wallpapers"
++# BACKGROUND_DIRS="${USERFLUXDIR}/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:%%LOCALBASE%%/share/wallpapers"
  
  
  # --- Boolean variables.
-@@ -1342,29 +1343,23 @@
+@@ -1317,29 +1317,21 @@
          -g) GNOMEMENU=yes; shift;;
          -in) NO_ICON=yes; shift;;
          -is) OTHER_ICONPATHS="
@@ -80,8 +79,6 @@
 -                /usr/local/X11R6/share/icons/hicolor/16x16
 +                %%LOCALBASE%%/share/icons
 +                %%LOCALBASE%%/share/icons/mini
-+                %%LOCALBASE%%/share/gnome/icons
-+                %%LOCALBASE%%/share/gnome/pixmaps
 +                %%LOCALBASE%%/share/pixmaps
 +                %%LOCALBASE%%/share/xclass/icons
 +                %%LOCALBASE%%/share/xclass/pixmaps
@@ -95,14 +92,14 @@
 -                /usr/share/applications
 -                /usr/share/xsessions 
 -                /usr/share/services 
++                %%LOCALBASE%%/share/mimelnk
 +                %%LOCALBASE%%/share/applications
-+                %%LOCALBASE%%/share/gnome/applications
-+                %%LOCALBASE%%/share/gnome/xsessions
 +                %%LOCALBASE%%/share/xsessions
++                %%LOCALBASE%%/share/services
              "
              # /usr/share/apps \
              shift;;
-@@ -1440,7 +1435,7 @@
+@@ -1416,7 +1408,7 @@
  
  
  # gnome prefix
@@ -111,7 +108,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -1448,7 +1443,7 @@
+@@ -1424,7 +1416,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -120,16 +117,16 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1536,7 +1531,7 @@
+@@ -1512,7 +1504,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
 -    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
 +    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
-         if find_it $browser; then
+         if find_it_options $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1583,7 +1578,8 @@
+@@ -1559,7 +1551,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firefox|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -139,7 +136,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1602,7 +1598,8 @@
+@@ -1578,7 +1571,8 @@
      append_submenu "${BROWSERMENU}"
          normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
