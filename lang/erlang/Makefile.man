@@ -320,13 +320,9 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpm_user.3 \
 	sofs.3 \
 	ssh.3 \
-	ssh_cli.3 \
-	ssh_cm.3 \
+	ssh_connection.3 \
 	ssh_sftp.3 \
 	ssh_sftpd.3 \
-	ssh_ssh.3 \
-	ssh_sshd.3 \
-	ssh_transport.3 \
 	ssl.3 \
 	ssl_pkix.3 \
 	string.3 \
