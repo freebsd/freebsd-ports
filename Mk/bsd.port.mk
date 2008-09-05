@@ -344,7 +344,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
-#				  build and run.
+#				  build and run.  If a number is specified,
+#				  the specified version will be used.
+#				  The valid value is '7' or '8' in that case.
 # USE_GHOSTSCRIPT_BUILD
 #				- If set, this port needs ghostscript to build.
 # USE_GHOSTSCRIPT_RUN
@@ -354,10 +356,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Some installations may wish to override the default
 #				  to specify a version without X11 and/or localized
 #				  versions for their nationality.
-#				  Default: print/ghostscript-gpl
-# WITH_GHOSTSCRIPT_GNU
-#				- If set, this port uses the GNU version of the ghostscript
-#				  software instead of the GPL version, which is used otherwise.
+#				  Default: print/ghostscript8
+# WITH_GHOSTSCRIPT_VER
+#				- If set, the specified version of ghostscript will be
+#				  used.  The valid value is "7" or "8".  Note that
+#				  this is for users, not for port maintainers.  This
+#				  should not be used in Makefile.
 ##
 # USE_BISON		- Implies that the port uses bison in one way or another:
 #				  'yes' (backwards compatibility) - use bison for building
@@ -2044,19 +2048,47 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 # Set the default for the installation of Postscript(TM)-
 # compatible functionality.
-.if !defined(WITHOUT_X11)
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
+.if !defined(USE_GHOSTSCRIPT)
+.	if defined(USE_GHOSTSCRIPT_BUILD)
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_BUILD}
+.	elif defined(USE_GHOSTSCRIPT_RUN)
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_RUN}
+.	endif
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gpl
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT}
 .endif
+
+.if defined(WITH_GHOSTSCRIPT_VER) && !empty(WITH_GHOSTSCRIPT_VER:M[78])
+_USE_GHOSTSCRIPT_DEFAULT_VER=	${WITH_GHOSTSCRIPT_VER}
 .else
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+_USE_GHOSTSCRIPT_DEFAULT_VER=	8
+.endif
+
+.if defined(_USE_GHOSTSCRIPT)
+.	if !defined(WITHOUT_X11)
+_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=
+.	else
+_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=-nox11
+.	endif
+.	if !empty(_USE_GHOSTSCRIPT:M[78])
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT:M[78]}
+.	else
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
+.	endif
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gpl-nox11
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
 .endif
+
+# Sanity check
+.if defined(_USE_GHOSTSCRIPT) && defined(WITH_GHOSTSCRIPT_VER)
+.	if empty(WITH_GHOSTSCRIPT_VER:M[78])
+.		error You set an invalid value "${WITH_GHOSTSCRIPT_VER}" in WITH_GHOSTSCRIPT_VER.  Abort.
+.	elif ${_USE_GHOSTSCRIPT_VER} != ${WITH_GHOSTSCRIPT_VER}
+.		error You set WITH_GHOSTSCRIPT_VER as ${WITH_GHOSTSCRIPT_VER} but ${PKGNAME} requires print/ghostscript${_USE_GHOSTSCRIPT_VER}.  Abort.
+.	endif
 .endif
+
+GHOSTSCRIPT_PORT?=	print/ghostscript${_USE_GHOSTSCRIPT_VER}${_USE_GHOSTSCRIPT_PKGNAME_SUFFIX}
 
 # Set up the ghostscript dependencies.
 .if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD)

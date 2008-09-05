@@ -10,6 +10,28 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20080905:
+AUTHOR: hrs@FreeBSD.org
+
+  * print/ghostscript-* and related ports have been renamed in the
+    following way:
+ 
+	print/ghostscript-gnu -> print/ghostscript7
+	print/ghostscript-gnu-nox11 -> print/ghostscript7-nox11
+	print/ghostscript-gnu-commfont -> print/ghostscript7-commfont
+	print/ghostscript-gpl -> print/ghostscript8
+	print/ghostscript-gpl-nox11 -> print/ghostscript8-nox11
+	japanese/ghostscript-gnu-jpnfont -> print/ghostscript7-jpnfont
+	korean/ghostscript-gnu-korfont -> print/ghostscript7-korfont
+
+  * USE_GHOSTSCRIPT now supports a version number which the port
+    requires.  The valid value is "7" or "8".  If other value is
+    specified, value of WITH_GHOSTSCRIPT_VER is used.
+
+  * WITH_GHOSTSCRIPT_GNU has been removed in favor of
+    WITH_GHOSTSCRIPT_VER.  The valid value of WITH_GHOSTSCRIPT_VER is
+    "7" or "8", and the default value is "8".
+
 20080821:
 AUTHOR: rafan@FreeBSD.org
 
