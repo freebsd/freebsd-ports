@@ -654,6 +654,7 @@
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
+    SUBDIR += py-graph
     SUBDIR += py-graphviz
     SUBDIR += py-gvgen
     SUBDIR += py-imaging
