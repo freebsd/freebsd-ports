@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	protobuf
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A data interchange format library
