@@ -16,7 +16,6 @@ COMMENT=	A MySQL Management Tool Written in PHP
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 USE_PHP=	mysql session
 SUB_FILES=	pkg-message
 
