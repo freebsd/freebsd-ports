@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.03003
+PORTVERSION=	0.03004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
 		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-Captcha-reCAPTCHA>=0.92:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \
 		p5-DateTime>=0.38:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Builder>=0.79.01:${PORTSDIR}/devel/p5-DateTime-Format-Builder \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
@@ -144,6 +145,8 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Model.3 \
 	HTML::FormFu::Constraint::DateTime.3 \
 	HTML::FormFu::Filter::CompoundSprintf.3 \
-	HTML::FormFu::Filter::_Compound.3
+	HTML::FormFu::Filter::_Compound.3 \
+	HTML::FormFu::Element::reCAPTCHA.3 \
+	HTML::FormFu::Constraint::reCAPTCHA.3
 
 .include <bsd.port.mk>
