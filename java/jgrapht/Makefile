@@ -17,7 +17,7 @@ COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4-1.5
+JAVA_VERSION=	1.4+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes
