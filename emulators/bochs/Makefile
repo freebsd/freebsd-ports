@@ -19,7 +19,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-docbook
 
