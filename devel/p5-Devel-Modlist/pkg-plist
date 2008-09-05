@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Devel/Modlist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Modlist/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Modlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/Devel
