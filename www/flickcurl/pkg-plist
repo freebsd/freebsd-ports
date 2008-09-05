@@ -28,6 +28,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-person.html
 %%DOCSDIR%%/flickcurl-section-photo.html
 %%DOCSDIR%%/flickcurl-section-photoset.html
+%%DOCSDIR%%/flickcurl-section-photoslist.html
 %%DOCSDIR%%/flickcurl-section-place.html
 %%DOCSDIR%%/flickcurl-section-prefs.html
 %%DOCSDIR%%/flickcurl-section-reflection.html
