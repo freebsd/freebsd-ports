@@ -7,7 +7,7 @@
 
 PORTNAME=	erlslang
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.erlang.org/contrib/ \
 		http://erlang.stacken.kth.se/contrib/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/contrib/ \
 DISTNAME=	slang-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	SLang binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
