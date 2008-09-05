@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	0.5.0
-PORTREVISION=	6
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -15,7 +14,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for XFce4
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
