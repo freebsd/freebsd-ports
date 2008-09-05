@@ -1,0 +1,54 @@
+bin/albumart-qt
+lib/albumart/albumart_source_buy.py
+lib/albumart/event.py
+lib/albumart/config.py
+lib/albumart/albumart_source_amazon.py
+lib/albumart/albumart_images.py
+lib/albumart/albumart_source_yahoo.py
+lib/albumart/albumart_configuration_dialog.py
+lib/albumart/albumart_dialog_base.py
+lib/albumart/albumart_target_freedesktop.py
+lib/albumart/albumart_target_id3v2.py
+lib/albumart/albumart_target_windows.py
+lib/albumart/albumart_progress_widget.py
+lib/albumart/albumart_string_list_widget.py
+lib/albumart/albumart_about_dialog_base.py
+lib/albumart/id3/__init__.py
+lib/albumart/id3/binfuncs.py
+lib/albumart/id3/ID3v2Frames.py
+lib/albumart/items.py
+lib/albumart/albumart_about_dialog.py
+lib/albumart/albumart_exception_dialog.py
+lib/albumart/albumart_configuration_dialog_base.py
+lib/albumart/albumart.py
+lib/albumart/albumart_recognizer_path.py
+lib/albumart/albumart_exception_dialog_base.py
+lib/albumart/amazon.py
+lib/albumart/albumart_source_walmart.py
+lib/albumart/pixmap.py
+lib/albumart/albumart_target_generic.py
+lib/albumart/albumart_recognizer_id3v2.py
+lib/albumart/albumart_dialog.py
+lib/albumart/albumart_unattended_ui.py
+lib/albumart/albumart_string_list_widget_base.py
+lib/albumart/version.py
+lib/albumart/process.py
+lib/albumart/yahoo/__init__.py
+lib/albumart/yahoo/search/domparsers.py
+lib/albumart/yahoo/search/debug.py
+lib/albumart/yahoo/search/__init__.py
+lib/albumart/yahoo/search/webservices.py
+lib/albumart/yahoo/search/version.py
+share/pixmaps/albumart.png
+share/applnk/Multimedia/albumart.desktop
+share/apps/konqueror/servicemenus/albumart_set_cover_image.desktop
+@dirrmtry share/doc/albumart
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps
+@dirrmtry share/applnk/Multimedia
+@dirrmtry share/applnk
+@dirrmtry lib/albumart/yahoo/search
+@dirrmtry lib/albumart/yahoo
+@dirrmtry lib/albumart/id3
+@dirrmtry lib/albumart

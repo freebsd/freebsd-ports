@@ -1,0 +1,8 @@
+GUI program to semi-automatically download album cover images for a music
+collection. It will work through a specified music directory, and for each
+subdirectory will download a set of corresponding (best guess) album covers.
+The naming format of the subdirectories can be configured, as can the
+location to save the results, such as .desktop-entry files, folder.jpg
+files, mp3 tags, etc.
+
+WWW: http://www.unrealvoodoo.org/hiteck/projects/albumart/
