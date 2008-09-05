@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lout
-PORTVERSION=	3.31
+PORTVERSION=	3.36
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.it.usyd.edu.au/jeff/lout/
