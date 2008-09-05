@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nvclock
-DISTVERSION=	0.8b2
-PORTREVISION=	1
+DISTVERSION=	0.8b3a
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.linuxhardware.org/nvclock/ \
-		http://www.kerneled.com/freebsd/ports/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	nvclock
 DISTNAME=	nvclock${DISTVERSION}
 
 MAINTAINER=	sbahra@gwu.edu
@@ -19,13 +18,16 @@ COMMENT=	The nVidia graphic card status and overclocking tool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
+USE_AUTOTOOLS=	aclocal:19 autoheader:262 autoconf:262
+
+PLIST_FILES=	bin/nvclock
 
 .if defined(WITHOUT_GUI)
-PLIST_SUB+=	GTK="@comment "
-CONFIGURE_ARGS+="--enable-gtk=no"
+CONFIGURE_ARGS+=--enable-gtk=no --enable-qt=no --enable-nvcontrol=no
 .else
+USE_XORG=	xext
 USE_GNOME+=	gtk20
-PLIST_SUB+=	GTK=""
+PLIST_FILES+=	bin/nvclock_gtk
 .endif
 
 MAN1=		nvclock.1
@@ -41,9 +43,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-.for i in src/gtk/Makefile.in src/backend/Makefile.in
-	@${REINPLACE_CMD} -e 's|"CFLAGS="|"CFLAGS+="|g' ${WRKSRC}/${i}
-.endfor
+	@${REINPLACE_CMD} -e 's|$$(DISTDIR)||' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	@${GMAKE} -C ${WRKSRC}/src install
