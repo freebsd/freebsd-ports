@@ -1198,6 +1198,7 @@
     SUBDIR += p5-Decision-ACL
     SUBDIR += p5-Devel-Arena
     SUBDIR += p5-Devel-Caller
+    SUBDIR += p5-Devel-Callsite
     SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-CoreStack
     SUBDIR += p5-Devel-Cover
