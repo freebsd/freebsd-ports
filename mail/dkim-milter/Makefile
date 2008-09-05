@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
