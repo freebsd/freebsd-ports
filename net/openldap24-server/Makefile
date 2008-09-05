@@ -503,8 +503,10 @@ post-install:
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
 .if defined(WITH_SMBPWD)
-	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/smbk5pwd.la \
-		${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 ${PREFIX}/libexec/openldap/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/smbk5pwd.la \
+		${PREFIX}/libexec/openldap/
+	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 \
+		${PREFIX}/libexec/openldap/
 	@${LN} -s smbk5pwd.so.0 ${PREFIX}/libexec/openldap/smbk5pwd.so
 .endif
 .endif
