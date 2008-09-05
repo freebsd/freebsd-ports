@@ -642,6 +642,7 @@
     SUBDIR += py-posix1e
     SUBDIR += py-pow
     SUBDIR += py-pycrypto
+    SUBDIR += py-pycryptopp
     SUBDIR += py-rijndael
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
