@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7dbb7197-7b68-11dd-80ba-000bcdf0a03b">
+    <topic>FreeBSD -- nmount(2) local arbitrary code execution</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_4</lt></range>
+	<range><gt>7.0</gt><lt>7.0_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Various user defined input such as mount points, devices, and
+	  mount options are prepared and passed as arguments to
+	  nmount(2) into the kernel.  Under certain error conditions,
+	  user defined data will be copied into a stack allocated buffer
+	  stored in the kernel without sufficient bounds checking.</p>
+	<h1>Impact:</h1>
+	<p>If the system is configured to allow unprivileged users to
+	  mount file systems, it is possible for a local adversary to
+	  exploit this vulnerability and execute code in the context of
+	  the kernel.</p>
+	<h1>Workaround:</h1>
+	<p>It is possible to work around this issue by allowing only
+	  privileged users to mount file systems by running the
+	  following sysctl(8) command:</p>
+	<pre># sysctl vfs.usermount=0</pre>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3531</cvename>
+      <freebsdsa>SA-08:08.nmount</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-09-03</discovery>
+      <entry>2008-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d4e4759-7b67-11dd-80ba-000bcdf0a03b">
     <topic>FreeBSD -- amd64 swapgs local privilege escalation</topic>
     <affects>
