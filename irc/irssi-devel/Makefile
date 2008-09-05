@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20080825
+PORTVERSION=	20080831
 CATEGORIES=	irc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://miwi.bsdcrew.de/~miwi/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
