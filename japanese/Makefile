@@ -77,7 +77,6 @@
     SUBDIR += fumeikai-fpw
     SUBDIR += gawk
     SUBDIR += gd
-    SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
     SUBDIR += gorua
     SUBDIR += gqmpeg

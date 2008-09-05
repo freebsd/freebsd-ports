@@ -3591,3 +3591,10 @@ games/q3base||2008-09-01|Project gone, website defaced
 editors/ooo-build||2008-09-01|Has expired: Has been broken for more than 6 months
 mail/pine4|mail/alpine|2008-09-01|No further development for pine, alpine has more features and is config-compatible
 editors/pico|editors/pico-alpine|2008-09-01|No further development for pine, alpine has more features and is config-compatible
+print/ghostscript-gnu|print/ghostscript7|2008-09-05|Renamed for better naming
+print/ghostscript-gnu-nox11|print/ghostscript7-nox11|2008-09-05|Renamed for better naming
+print/ghostscript-gnu-commfont|print/ghostscript7-commfont|2008-09-05|Renamed for better naming
+japanese/ghostscript-gnu-jpnfont|print/ghostscript7-jpnfont|2008-09-05|Renamed for better naming
+korean/ghostscript-gnu-korfont|print/ghostscript7-korfont|2008-09-05|Renamed for better naming
+print/ghostscript-gpl|print/ghostscript8|2008-09-05|Renamed for better naming
+print/ghostscript-gpl-nox11|print/ghostscript8-nox11|2008-09-05|Renamed for better naming

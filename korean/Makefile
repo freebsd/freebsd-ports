@@ -17,7 +17,6 @@
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += gdick
-    SUBDIR += ghostscript-gnu-korfont
     SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += hanIM
