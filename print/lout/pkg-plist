@@ -32,7 +32,6 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/design/s6_2
 %%PORTDOCS%%%%DOCSDIR%%/design/s6_9
 %%PORTDOCS%%%%DOCSDIR%%/design/s7_0
-%%PORTDOCS%%%%DOCSDIR%%/expert/.pre_brea.swp
 %%PORTDOCS%%%%DOCSDIR%%/expert/README
 %%PORTDOCS%%%%DOCSDIR%%/expert/all
 %%PORTDOCS%%%%DOCSDIR%%/expert/det
@@ -63,6 +62,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_case
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_colo
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_conc
+%%PORTDOCS%%%%DOCSDIR%%/expert/pre_cont
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_cove
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_cros
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_data
@@ -102,6 +102,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_span
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_tagg
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_text
+%%PORTDOCS%%%%DOCSDIR%%/expert/pre_ucol
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_unde
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_verb
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_wide
@@ -145,6 +146,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_verb
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_boxs
+%%PORTDOCS%%%%DOCSDIR%%/user/bgr_clip
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_colo
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_incl
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_mirr
@@ -172,6 +174,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_defs
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_disp
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_intr
+%%PORTDOCS%%%%DOCSDIR%%/user/equ_math
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_spac
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_summ
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_symb
@@ -532,6 +535,8 @@ bin/prg2lout
 %%DATADIR%%/include/langdefs
 %%DATADIR%%/include/latin2
 %%DATADIR%%/include/lengths
+%%DATADIR%%/include/math
+%%DATADIR%%/include/mathf
 %%DATADIR%%/include/modula
 %%DATADIR%%/include/modulaf
 %%DATADIR%%/include/mydefs
@@ -558,8 +563,7 @@ bin/prg2lout
 %%DATADIR%%/include/rubyf
 %%DATADIR%%/include/russian
 %%DATADIR%%/include/russian.fd
-%%DATADIR%%/include/save_graphf
-%%DATADIR%%/include/save_graphf.lpg
+%%DATADIR%%/include/save_bsf
 %%DATADIR%%/include/slides
 %%DATADIR%%/include/slidesf
 %%DATADIR%%/include/tab
@@ -568,9 +572,6 @@ bin/prg2lout
 %%DATADIR%%/include/tbl
 %%DATADIR%%/include/tblf
 %%DATADIR%%/include/ts
-%%DATADIR%%/include/xind
-%%DATADIR%%/include/xinda
-%%DATADIR%%/include/xindb
 %%DATADIR%%/include/xrgb
 %%DATADIR%%/locale/.place_holder
 %%DATADIR%%/maps/00README
