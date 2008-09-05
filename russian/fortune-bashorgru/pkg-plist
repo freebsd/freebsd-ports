@@ -1,9 +1,14 @@
-share/games/fortune/rus/fortune-bashorgru
-share/games/fortune/rus/fortune-bashorgru.dat
-share/games/fortune/rus/fortune-bashorgru-freebsd
-share/games/fortune/rus/fortune-bashorgru-freebsd.dat
-share/examples/fortune-bashorgru/fortune-update.sh
-@dirrmtry share/games/fortune/rus
+share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru
+share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru.dat
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru.dat
+share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru-freebsd
+share/games/fortune/ru_RU.KOI8-R/fortune-bashorgru-freebsd.dat
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru-freebsd
+share/games/fortune/ru_RU.UTF-8/fortune-bashorgru-freebsd.dat
+share/examples/fortune-bashorgru/fortune-update.py
+@dirrmtry share/games/fortune/ru_RU.UTF-8
+@dirrmtry share/games/fortune/ru_RU.KOI8-R
 @dirrmtry share/examples/fortune-bashorgru
 @dirrmtry share/games/fortune
 @dirrmtry share/games
