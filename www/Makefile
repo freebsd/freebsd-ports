@@ -94,6 +94,7 @@
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += clickheat
+    SUBDIR += cmsmadesimple
     SUBDIR += cocoon
     SUBDIR += codeigniter
     SUBDIR += comclear
