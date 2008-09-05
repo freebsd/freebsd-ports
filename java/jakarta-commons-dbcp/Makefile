@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${JAVAJARDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4-1.5
+JAVA_VERSION=	1.4 1.5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
