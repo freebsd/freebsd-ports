@@ -7,18 +7,17 @@
 
 PORTNAME=	DateTime-Locale
 PORTVERSION=	0.40.01
-DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Localization support for DateTime
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
 PERL_MODBUILD=	yes
 
@@ -471,4 +470,10 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA
+.endif
+
+.include <bsd.port.post.mk>
