@@ -10,7 +10,10 @@ PORTVERSION=	1.6.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Distributed source code management tool
@@ -207,6 +210,10 @@ PLIST_SUB+=	GITWEB=""
 .else
 PLIST_SUB+=	GITWEB="@comment "
 .endif
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
+		${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL

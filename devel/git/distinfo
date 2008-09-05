@@ -4,3 +4,6 @@ SIZE (git-1.6.0.1.tar.bz2) = 1861853
 MD5 (git-manpages-1.6.0.1.tar.bz2) = 07b357210b59a1140200815c682fda34
 SHA256 (git-manpages-1.6.0.1.tar.bz2) = 7e0708f61157beee32dbf8c6630bcbc6e83168ce28cea7242e61b7211db94da5
 SIZE (git-manpages-1.6.0.1.tar.bz2) = 221756
+MD5 (git-1.6.0.1.tar.bz2.sign) = 0a0f36b460f63e479b456a7e1068cbf6
+SHA256 (git-1.6.0.1.tar.bz2.sign) = 813a88ab4d124e3f02fd5d3f8669b00ce789dc908dc336ae16c4ac9547ba0181
+SIZE (git-1.6.0.1.tar.bz2.sign) = 248
