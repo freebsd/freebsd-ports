@@ -11,7 +11,7 @@ PORTEPOCH=		2
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://ekg.chmurka.net/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		bartlomiej@syryjczyk.name
 COMMENT=		Text-mode Gadu-Gadu client
 
 LIB_DEPENDS=		execinfo.1:${PORTSDIR}/devel/libexecinfo \
