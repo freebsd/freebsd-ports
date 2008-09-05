@@ -1,12 +1,8 @@
 bin/v_sim
-lib/v_sim/plug-ins/abinit.png
 %%BABEL%%lib/v_sim/plug-ins/libobloader.a
 %%BABEL%%lib/v_sim/plug-ins/libobloader.la
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so
 %%BABEL%%lib/v_sim/plug-ins/libobloader.so.1
-lib/v_sim/plug-ins/nanoquanta.png
-lib/v_sim/plug-ins/openbabel.png
-lib/v_sim/plug-ins/xsf.png
 %%PORTDOCS%%%%DOCSDIR%%/ColorComboBox.html
 %%PORTDOCS%%%%DOCSDIR%%/DumpDialog.html
 %%PORTDOCS%%%%DOCSDIR%%/NumericalEntry.html
@@ -18,7 +14,6 @@ lib/v_sim/plug-ins/xsf.png
 %%PORTDOCS%%%%DOCSDIR%%/ShadeComboBox.html
 %%PORTDOCS%%%%DOCSDIR%%/StippleComboBox.html
 %%PORTDOCS%%%%DOCSDIR%%/VisuData.html
-%%PORTDOCS%%%%DOCSDIR%%/authors
 %%PORTDOCS%%%%DOCSDIR%%/axesTransform.png
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch02.html
@@ -39,10 +34,6 @@ lib/v_sim/plug-ins/xsf.png
 %%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/ix01.html
 %%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/licence.en.txt
-%%PORTDOCS%%%%DOCSDIR%%/licence.fr.txt
-%%PORTDOCS%%%%DOCSDIR%%/pot2surf_help
-%%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
@@ -133,9 +124,7 @@ lib/v_sim/plug-ins/xsf.png
 %%PORTDOCS%%%%DOCSDIR%%/v-sim-wire.html
 %%PORTDOCS%%%%DOCSDIR%%/v_sim.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/v_sim.devhelp2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ab_silicon.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aluminium.d3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cinchonidine.xsf.bz2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-browser.tar.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.ascii
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.d3
@@ -145,11 +134,7 @@ lib/v_sim/plug-ins/xsf.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/density-sih4.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.ascii
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nq-netcdf.cdl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nq-netcdf.nc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planes.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/si1002x1-o_DS1_DEN-etsf.nc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/silane.nc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_isosurfaces.ascii
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_isosurfaces.surf
 %%NLS%%share/locale/fr/LC_MESSAGES/v_sim.mo
@@ -157,6 +142,9 @@ share/pixmaps/v_sim.16.png
 share/pixmaps/v_sim.32.png
 share/pixmaps/v_sim.48.png
 share/pixmaps/v_sim.xpm
+%%DATADIR%%/authors
+%%DATADIR%%/licence.en.txt
+%%DATADIR%%/licence.fr.txt
 %%DATADIR%%/pixmaps/axes-angles.png
 %%DATADIR%%/pixmaps/axes-box.png
 %%DATADIR%%/pixmaps/axes-button.png
@@ -172,6 +160,7 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/pixmaps/logo_petit.png
 %%DATADIR%%/pixmaps/logo_rectangle.png
 %%DATADIR%%/pixmaps/observe-bandeau.png
+%%DATADIR%%/pixmaps/openbabel.png
 %%DATADIR%%/pixmaps/save-bandeau.png
 %%DATADIR%%/pixmaps/stock-atomic.png
 %%DATADIR%%/pixmaps/stock-axes_20.png
@@ -209,6 +198,8 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/pixmaps/stock_media-stop.png
 %%DATADIR%%/pixmaps/stock_rotate_20.png
 %%DATADIR%%/pixmaps/stock_spin.png
+%%DATADIR%%/pot2surf_help
+%%DATADIR%%/readme
 %%DATADIR%%/v_sim.par
 %%DATADIR%%/v_sim.rc
 %%DATADIR%%/v_sim.res
