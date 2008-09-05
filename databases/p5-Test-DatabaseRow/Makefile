@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Simple database tests
 
 BUILD_DEPENDS=	${SITE_PERL}/mach/DBI.pm:${PORTSDIR}/databases/p5-DBI \
