@@ -142,9 +142,9 @@ share/pixmaps/v_sim.16.png
 share/pixmaps/v_sim.32.png
 share/pixmaps/v_sim.48.png
 share/pixmaps/v_sim.xpm
-%%DATADIR%%/authors
-%%DATADIR%%/licence.en.txt
-%%DATADIR%%/licence.fr.txt
+%%PORTDOCS%%%%DATADIR%%/authors
+%%PORTDOCS%%%%DATADIR%%/licence.en.txt
+%%PORTDOCS%%%%DATADIR%%/licence.fr.txt
 %%DATADIR%%/pixmaps/axes-angles.png
 %%DATADIR%%/pixmaps/axes-box.png
 %%DATADIR%%/pixmaps/axes-button.png
@@ -198,8 +198,8 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/pixmaps/stock_media-stop.png
 %%DATADIR%%/pixmaps/stock_rotate_20.png
 %%DATADIR%%/pixmaps/stock_spin.png
-%%DATADIR%%/pot2surf_help
-%%DATADIR%%/readme
+%%PORTDOCS%%%%DATADIR%%/pot2surf_help
+%%PORTDOCS%%%%DATADIR%%/readme
 %%DATADIR%%/v_sim.par
 %%DATADIR%%/v_sim.rc
 %%DATADIR%%/v_sim.res
