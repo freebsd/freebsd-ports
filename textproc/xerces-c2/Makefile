@@ -7,6 +7,7 @@
 
 PORTNAME=	xerces-c2
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
@@ -16,8 +17,6 @@ MAINTAINER=	kenm@icarz.com
 COMMENT=	Validating XML parser from the Apache XML Project
 
 OPTIONS=	THREADS "Build a thread enabled shared library." on \
-		SAMPLES "Copy sample binaries and sources." on \
-		PORTDOCS "Copy documentation." on \
 		DEBUG "Include debugging information, do not strip." off \
 		ICONVFBSD "Use IconvFBSD transcoder." on \
 		ICU "Use ICU transcoder." off \
@@ -84,9 +83,8 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
-.if !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	-d
-STRIP=
 .endif
 
 .if defined(ARCH) && \
@@ -109,10 +107,9 @@ XERCESC_LIB=		libxerces-c.so.${PORTVERSION:S/.//}
 XERCESC_DEPDOM_LIB=	libxerces-depdom.so.${PORTVERSION:S/.//}
 PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB} \
 			XERCESC_DEPDOM_LIB=${XERCESC_DEPDOM_LIB} \
-				XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
+			XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
 
-.if !defined(WITHOUT_SAMPLES)
-PLIST_SUB+=	NO_SAMPLES=""
+.if !defined(NOPORTEXAMPLES)
 ALL_TARGET?=	all samples
 XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
 		PSVIWriter Redirect SAX2Count SAX2Print SAXCount SAXPrint \
@@ -125,11 +122,9 @@ SAMPLES_CONFIG_ARGS+=	-r pthread
 SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
-.else
-PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
-.if !defined(WITHOUT_PORTDOCS)
+.if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
@@ -149,7 +144,7 @@ pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
 
 post-configure:
-.if !defined(WITHOUT_SAMPLES)
+.if !defined(NOPORTEXAMPLES)
 .if defined(TRANSCODER) && (${TRANSCODER} == "icu")
 	@(cd ${WRKSRC}/samples && \
 		${SETENV} \
@@ -168,15 +163,11 @@ post-configure:
 .endif
 
 post-install:
-.if defined(WITHOUT_DEBUG)
-	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
-	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_DEPDOM_LIB}
-.endif
-.if !defined(WITHOUT_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
-.if !defined(WITHOUT_SAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${XERCES_BINS} data
 	@${CP} -r ${WRKSRC}/samples/$i ${EXAMPLESDIR}

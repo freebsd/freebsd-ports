@@ -496,124 +496,123 @@ lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
 @dirrm include/xercesc/dom/deprecated
 @dirrm include/xercesc/dom
 @dirrm include/xercesc
-@comment --- SAMPLES ---
-%%NO_SAMPLES%%bin/CreateDOMDocument
-%%NO_SAMPLES%%bin/DOMCount
-%%NO_SAMPLES%%bin/DOMPrint
-%%NO_SAMPLES%%bin/EnumVal
-%%NO_SAMPLES%%bin/MemParse
-%%NO_SAMPLES%%bin/PParse
-%%NO_SAMPLES%%bin/PSVIWriter
-%%NO_SAMPLES%%bin/Redirect
-%%NO_SAMPLES%%bin/SAX2Count
-%%NO_SAMPLES%%bin/SAX2Print
-%%NO_SAMPLES%%bin/SAXCount
-%%NO_SAMPLES%%bin/SAXPrint
-%%NO_SAMPLES%%bin/SCMPrint
-%%NO_SAMPLES%%bin/SEnumVal
-%%NO_SAMPLES%%bin/StdInParse
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/CreateDOMDocument.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMCount/DOMCount.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMCount/DOMCount.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMCount/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMCount/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrint.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintErrorHandler.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintErrorHandler.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintFilter.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintFilter.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMTreeErrorReporter.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMTreeErrorReporter.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/DOMPrint/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/EnumVal/EnumVal.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/EnumVal/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/EnumVal/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParse.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParse.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParseHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParseHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParse.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParse.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Redirect.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Redirect.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/RedirectHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/RedirectHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2Count.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2Count.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2CountHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2CountHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2Print.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2Print.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2PrintHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2PrintHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2FilterHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2FilterHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCount.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCount.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCountHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCountHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrint.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrint.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/SCMPrint.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/SEnumVal.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/Makefile
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/Makefile.in
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParse.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParse.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParseHandlers.cpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParseHandlers.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/data/personal-schema.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/data/personal.dtd
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/data/personal.xml
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/data/personal.xsd
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/data/redirect.dtd
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/data
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/StdInParse
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SEnumVal
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SCMPrint
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXPrint
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXCount
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Print
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Count
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/Redirect
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/PSVIWriter
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/PParse
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/MemParse
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/EnumVal
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMPrint
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMCount
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/CreateDOMDocument
-%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%bin/CreateDOMDocument
+%%PORTEXAMPLES%%bin/DOMCount
+%%PORTEXAMPLES%%bin/DOMPrint
+%%PORTEXAMPLES%%bin/EnumVal
+%%PORTEXAMPLES%%bin/MemParse
+%%PORTEXAMPLES%%bin/PParse
+%%PORTEXAMPLES%%bin/PSVIWriter
+%%PORTEXAMPLES%%bin/Redirect
+%%PORTEXAMPLES%%bin/SAX2Count
+%%PORTEXAMPLES%%bin/SAX2Print
+%%PORTEXAMPLES%%bin/SAXCount
+%%PORTEXAMPLES%%bin/SAXPrint
+%%PORTEXAMPLES%%bin/SCMPrint
+%%PORTEXAMPLES%%bin/SEnumVal
+%%PORTEXAMPLES%%bin/StdInParse
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/CreateDOMDocument.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMCount/DOMCount.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMCount/DOMCount.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMCount/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMCount/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrint.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintErrorHandler.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintErrorHandler.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintFilter.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMPrintFilter.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMTreeErrorReporter.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/DOMTreeErrorReporter.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DOMPrint/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EnumVal/EnumVal.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EnumVal/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EnumVal/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParse.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParse.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParseHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MemParse/MemParseHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/PParse.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/PParse.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/Redirect.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/Redirect.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/RedirectHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Redirect/RedirectHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2Count.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2Count.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2CountHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Count/SAX2CountHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2Print.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2Print.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2PrintHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2PrintHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2FilterHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAX2Print/SAX2FilterHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCount.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCount.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCountHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXCount/SAXCountHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrint.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrint.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SCMPrint/SCMPrint.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SEnumVal/SEnumVal.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParse.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParse.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParseHandlers.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StdInParse/StdInParseHandlers.hpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal-schema.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/personal.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/redirect.dtd
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/StdInParse
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SEnumVal
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SCMPrint
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXPrint
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXCount
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Print
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Count
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Redirect
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/PSVIWriter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/PParse
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MemParse
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/EnumVal
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMPrint
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/DOMCount
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/CreateDOMDocument
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
