@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.4
+PORTVERSION=	1.98.5
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -33,9 +33,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
-
-post-install:
-.ifndef NOPORTDOCS
+.if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
