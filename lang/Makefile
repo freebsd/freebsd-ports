@@ -163,6 +163,7 @@
     SUBDIR += mosh
     SUBDIR += mozart
     SUBDIR += mpd
+    SUBDIR += mtasc
     SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += nbc
