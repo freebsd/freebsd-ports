@@ -702,6 +702,7 @@
     SUBDIR += xpi-displayquota
     SUBDIR += zabit
     SUBDIR += zmailer
+    SUBDIR += zms
 #   SUBDIR += mailman-devel
 
 .include <bsd.port.subdir.mk>

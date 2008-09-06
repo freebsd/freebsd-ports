@@ -1,0 +1,11 @@
+A specialized mail gateway system for using user a specified SMTP
+server and proxying.
+
+Three proxy modes are supported.
+- Unathenticated proxying mode in which case it just sits between
+  the client and specified server.
+- Athenticated proxying mode, which is the same as above, but only
+  for authenticated connection.
+- Smart proxying mode in which it accepts will send the mail through
+  a server specified in the user's config by matching the the sender
+  using regexps to determine what server should be used.
