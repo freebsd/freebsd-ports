@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/ \
 		https://launchpad.net/bzr/1.6/${PORTVERSION}/+download/
