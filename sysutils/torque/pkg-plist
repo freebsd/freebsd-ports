@@ -32,6 +32,7 @@ bin/qstart
 bin/qstop
 bin/qterm
 bin/pbsnodes
+bin/pbs_track
 bin/qmgr
 bin/nqs2pbs
 sbin/pbs_demux
