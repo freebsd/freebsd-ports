@@ -1,8 +1,8 @@
---- default.bam.orig	2008-03-23 16:34:56.000000000 +0300
-+++ default.bam	2008-03-23 22:39:30.000000000 +0300
+--- default.bam.orig	2008-08-31 17:30:59.000000000 +0400
++++ default.bam	2008-09-06 03:08:34.000000000 +0400
 @@ -207,14 +207,16 @@
  		if platform == "macosx" then
- 			settings.cc.flags = "-Wall -fno-exceptions"
+ 			settings.cc.flags = "-Wall -fno-exceptions -mmacosx-version-min=10.4"
  		else
 -			settings.cc.flags = "-Wall -fstack-protector -fstack-protector-all -fno-exceptions"
 +			settings.cc.flags = settings.cc.flags .. " -Wall -fstack-protector -fstack-protector-all -fno-exceptions"
@@ -73,16 +73,16 @@
  	wavpack = Compile(external_settings, Collect("src/engine/external/wavpack/*.c"))
  	pnglite = Compile(external_settings, Collect("src/engine/external/pnglite/*.c"))
  
-@@ -337,7 +331,7 @@
+@@ -338,7 +332,7 @@
  	
- 	-- build client, server and master server
+ 	-- build client, server, version server and master server
  	client_exe = Link(client_settings, "teeworlds", game_shared, game_client,
 -		engine, client, game_editor, glfw, portaudio, zlib, pnglite, wavpack,
 +		engine, client, game_editor, glfw, pnglite, wavpack,
  		client_link_other)
  
  	server_exe = Link(server_settings, "teeworlds_srv", engine, server,
-@@ -383,7 +377,7 @@
+@@ -389,7 +383,7 @@
  release_settings.config_name = "release"
  release_settings.config_ext = ""
  release_settings.debug = 0

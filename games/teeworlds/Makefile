@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.teeworlds.com/files/
@@ -18,17 +18,13 @@ COMMENT=	Platform game featuring buggers equipped with weapons
 
 USE_PYTHON_BUILD=	yes
 
-BAM=	${WRKDIR}/bam.bin
+BAM=		${WRKDIR}/bam.bin
 BAM_VERSION=	20080326
 BAM_TARGET=	release
 
 OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		Does not compile
-.endif
 
 .if defined(WITH_TEEWORLDS_SERVER_ONLY)
 BAM_TARGET=	server_release
@@ -51,6 +47,10 @@ post-patch:
 	@${FIND} ${WRKSRC}/src -name "*.c" -o -name "*.cpp" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g'
 	@${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g' ${WRKSRC}/datasrc/*
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e 's|-fstack-protector -fstack-protector-all||' \
+		${WRKSRC}/default.bam
+.endif
 
 # build bam executable - teeworlds own build system
 pre-build:
