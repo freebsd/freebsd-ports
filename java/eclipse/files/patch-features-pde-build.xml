@@ -1,6 +1,6 @@
---- features/org.eclipse.pde/build.xml.orig	Thu Jul 27 17:44:29 2006
-+++ features/org.eclipse.pde/build.xml	Tue Jul 25 19:20:37 2006
-@@ -119,6 +119,10 @@
+--- features/org.eclipse.pde/build.xml.orig	Mon Jun 25 15:39:42 2007
++++ features/org.eclipse.pde/build.xml	Fri Aug 17 15:41:11 2007
+@@ -136,6 +136,10 @@
  	</target>
  	<target name="rootFileslinux_motif_x86">
  	</target>
@@ -11,9 +11,9 @@
  	<target name="rootFilessolaris_gtk_sparc">
  	</target>
  	<target name="rootFilessolaris_gtk_x86">
-@@ -144,6 +148,8 @@
- 		<antcall target="rootFileslinux_gtk_x86_64"/>
- 		<antcall target="rootFileslinux_gtk_ia64"/>
+@@ -164,6 +168,8 @@
+ 		<antcall target="rootFileslinux_gtk_s390"/>
+ 		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_amd64"/>

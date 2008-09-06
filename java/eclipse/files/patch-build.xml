@@ -1,65 +1,87 @@
---- build.xml.orig	Thu Sep 21 10:57:38 2006
-+++ build.xml	Thu Oct 26 14:32:58 2006
-@@ -86,11 +86,11 @@
- 		<!--unzip launcher -->
- 		<property name="launcherlibs" value="${buildDirectory}/launchertmp" />
- 		<mkdir dir="${launcherlibs}" />
--		<unzip dest="${launcherlibs}">
--			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
--				<include name="org.eclipse.platform_*/launchersrc.zip" />
--			</fileset>
--		</unzip>
-+		<copy todir="${launcherlibs}">
-+                        <fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
-+                                <include name ="**"/>
-+                        </fileset>
-+                </copy>
- 		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
- 			<arg line="build.sh" />
- 		</exec>
-@@ -142,7 +142,6 @@
- 	<target name="build.doc.plugins">
- 		<!--Build doc plug-ins using antRunner in eclipse to gain access to classpath required for
- 		 pde.convertSchemaToHTML and help.buildHelpIndex tasks which are used when generating extension-point and help indeces.-->
--		<antcall target="install.eclipse.${archive.format}" />
- 		<property name="plugin.destination" value="${buildDirectory}/tmp/eclipse/plugins" />
- 		<mkdir dir="${plugin.destination}" />
- 		
-@@ -179,7 +178,6 @@
- 			<fileset dir="${buildDirectory}/${buildLabel}" />
+--- build.xml.orig	2007-09-22 02:02:44.000000000 +0900
++++ build.xml	2007-10-19 13:37:04.000000000 +0900
+@@ -10,6 +10,7 @@
+ 
+ 	<target name="fetch" depends="init" if="srcFetch">
+ 		<touch file="${cvspass}" />
++		
+ 		<property name="featureOnly" value="true" />
+ 		<property name="featureAndPlugins" value="true" />
+ 		<property name="featuresRecursively" value="true" />
+@@ -21,6 +22,17 @@
+ 		<mkdir dir="${linux.motif.rootfiles}" />
+ 		<copy tofile="${linux.motif.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.motif.linux.x86/about.html" />
+ 
++		<!--copy freebsd gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86" />
++		<mkdir dir="${freebsd.gtk.x86.rootfiles}" />
++		<copy tofile="${freebsd.gtk.x86.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86/about.html" />
++
++		<!--copy freebsd gtk amd64 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.amd64.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.amd64" />
++		<mkdir dir="${freebsd.gtk.amd64.rootfiles}" />
++		<copy tofile="${freebsd.gtk.amd64.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.amd64/about.html" />
++
++
+ 		<!--copy linux gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
+ 		<property name="linux.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/linux.gtk.x86" />
+ 		<mkdir dir="${linux.gtk.x86.rootfiles}" />
+@@ -108,11 +120,18 @@
+ 		</copy>
+ 
+ 		<!-- build liblocalfile -->
++		<!--
+ 		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/linux" executable="make" failonerror="true" />
+ 		<move file="plugins/org.eclipse.core.filesystem/natives/unix/linux/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.linux.${installArch}/os/linux/${installArch}">
++		  -->
++		<exec dir="plugins/org.eclipse.core.filesystem/natives/unix/freebsd" executable="make" failonerror="true" />
++		<move file="plugins/org.eclipse.core.filesystem/natives/unix/freebsd/liblocalfile_1_0_0.so" todir="plugins/org.eclipse.core.filesystem.freebsd.${installArch}/os/freebsd/${installArch}">
  		</move>
- 		<mkdir dir="${buildDirectory}/${buildLabel}" />
--		<antcall target="archive.eclipse.${archive.format}" />
- 		<delete dir="${buildDirectory}/${buildLabel}-old" />
+ 		<!-- build libupdate -->
++		<!--
+ 		<ant dir="plugins/org.eclipse.update.core.linux/src" antfile="build.xml" />
++		-->
++		<ant dir="plugins/org.eclipse.update.core.freebsd/src" antfile="build.xml" />
+ 
  	</target>
  
-@@ -285,8 +283,8 @@
+@@ -305,8 +324,16 @@
  		</fail>
  
- 		<property name="compilerArg" value="-encoding ISO-8859-1" />
--		<property name="javacSource" value="1.3" />
--		<property name="javacTarget" value="1.2" />
+ 		<property name="compilerArg" value="-enableJavadoc -encoding ISO-8859-1" />
+-		<property name="javacSource" value="1.6" />
+-		<property name="javacTarget" value="1.6" />
 +		<property name="javacSource" value="1.5" />
 +		<property name="javacTarget" value="1.5" />
++               <!-- for jdk1.6 -->
++		<condition property="javacSource" value="1.6">
++		  <isset property="JavaSE-1.6"/>
++		</condition>
++		<condition property="javacTarget" value="1.6">
++		  <isset property="JavaSE-1.6"/>
++		</condition>
++
  		<property name="javacDebugInfo" value="true" />
  		<property name="javacFailOnError" value="true" />
  
-@@ -306,12 +304,17 @@
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64" />
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-ia64_32" />
- 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="solaris-gtk-x86" />
-+				<equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
-+                               <equals arg1="${install0s}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
- 			</or>
- 		</condition>
+@@ -322,6 +349,8 @@
+ 		<!-- determines if libraries need to be recompiled for specific platforms -->
+ 		<condition property="libsconfig">
+ 			<or>
++				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-x86" />
++				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="freebsd-gtk-amd64" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-ppc64" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-motif-x86" />
+ 				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-s390" />
+@@ -335,7 +364,10 @@
  
  		<!--used to add doc plug-ins to result after initial assembly-->
  		<condition property="archive.format" value="tar">
--			<equals arg1="${installOs}" arg2="linux" />
-+			<or>
-+				<equals arg1="${installOs}" arg2="linux" />
-+				<equals arg1="${installOs}" arg2="freebsd" />
-+			</or>
++		    <or>
+ 			<equals arg1="${installOs}" arg2="linux" />
++			<equals arg1="${installOs}" arg2="freebsd" />
++		    </or>
  		</condition>
  		<property name="archive.format" value="zip" />
  	</target>
+
