@@ -1,0 +1,10 @@
+--- features/org.eclipse.platform.source/feature.xml.orig	2008-08-02 15:27:51.000000000 -0400
++++ features/org.eclipse.platform.source/feature.xml	2008-08-02 15:28:00.000000000 -0400
+@@ -68,6 +68,7 @@
+ 	<plugin id="org.eclipse.ui.workbench.compatibility.source" version="3.2.0.I20080509-2000"     unpack="false"/>
+ 	<plugin id="org.eclipse.update.core.linux.source" version="3.2.0.v20080422" os="linux"    unpack="false"/>
+ 	<plugin id="org.eclipse.update.core.win32.source" version="3.2.100.v20080107" os="win32"    unpack="false"/>
++	<plugin id="org.eclipse.update.core.freebsd.source" version="3.2.0.v20080422" os="freebsd"    unpack="false"/>
+ 	<plugin id="org.eclipse.ui.views.properties.tabbed.source" version="3.4.0.I20080527-2000"     unpack="false"/>
+ 	<plugin id="org.eclipse.equinox.security.source" version="1.0.0.v20080512-1800"     unpack="false"/>
+ 	<plugin id="org.eclipse.equinox.security.ui.source" version="1.0.0.v20080603-1810"     unpack="false"/>

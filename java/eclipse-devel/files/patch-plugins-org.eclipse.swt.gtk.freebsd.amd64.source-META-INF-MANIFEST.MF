@@ -1,0 +1,11 @@
+--- plugins/org.eclipse.swt.gtk.freebsd.amd64.source/META-INF/MANIFEST.MF.orig	2008-08-09 16:48:52.839706184 -0400
++++ plugins/org.eclipse.swt.gtk.freebsd.amd64.source/META-INF/MANIFEST.MF	2008-08-09 16:49:24.369835991 -0400
+@@ -6,7 +6,6 @@
+ Bundle-ManifestVersion: 2
+ Bundle-Localization: fragment
+ Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.amd64.source
+-Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x8
+- 6_64))
++Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=amd64))
+ Bundle-Version: 3.4.0.v3448f
+ 
