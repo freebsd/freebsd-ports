@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=subcomposer
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
 USE_BZIP2=	yes
@@ -21,6 +21,8 @@ USE_XORG=	xext
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
 INSTALLS_ICONS=	yes
+
+PORTSCOUT=	limit:^0\.4\.
 
 OPTIONS=	MPLAYER "Enable MPlayer backend (recommended)" on \
 		XINE "Enable Xine backend" off \
@@ -51,7 +53,7 @@ CONFIGURE_ARGS+=--without-xine --without-xcb
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER+=	yes
 .else
-CONFIGURE_ARGS=	--without-gstreamer
+CONFIGURE_ARGS+=--without-gstreamer
 .endif
 
 .include <bsd.port.post.mk>
