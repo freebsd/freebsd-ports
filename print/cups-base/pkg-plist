@@ -522,6 +522,73 @@ sbin/reject
 %%DATADIR%%/templates/header.tmpl
 %%DATADIR%%/templates/help-header.tmpl
 %%DATADIR%%/templates/help-printable.tmpl
+%%DATADIR%%/templates/id/add-class.tmpl
+%%DATADIR%%/templates/id/add-printer.tmpl
+%%DATADIR%%/templates/id/add-rss-subscription.tmpl
+%%DATADIR%%/templates/id/admin.tmpl
+%%DATADIR%%/templates/id/choose-device.tmpl
+%%DATADIR%%/templates/id/choose-make.tmpl
+%%DATADIR%%/templates/id/choose-model.tmpl
+%%DATADIR%%/templates/id/choose-serial.tmpl
+%%DATADIR%%/templates/id/choose-uri.tmpl
+%%DATADIR%%/templates/id/class-added.tmpl
+%%DATADIR%%/templates/id/class-confirm.tmpl
+%%DATADIR%%/templates/id/class-deleted.tmpl
+%%DATADIR%%/templates/id/class-jobs-header.tmpl
+%%DATADIR%%/templates/id/class-modified.tmpl
+%%DATADIR%%/templates/id/classes-header.tmpl
+%%DATADIR%%/templates/id/classes.tmpl
+%%DATADIR%%/templates/id/edit-config.tmpl
+%%DATADIR%%/templates/id/error-op.tmpl
+%%DATADIR%%/templates/id/error.tmpl
+%%DATADIR%%/templates/id/header.tmpl
+%%DATADIR%%/templates/id/help-header.tmpl
+%%DATADIR%%/templates/id/help-printable.tmpl
+%%DATADIR%%/templates/id/list-available-printers.tmpl
+%%DATADIR%%/templates/id/job-cancel.tmpl
+%%DATADIR%%/templates/id/job-hold.tmpl
+%%DATADIR%%/templates/id/job-move.tmpl
+%%DATADIR%%/templates/id/job-moved.tmpl
+%%DATADIR%%/templates/id/job-release.tmpl
+%%DATADIR%%/templates/id/job-restart.tmpl
+%%DATADIR%%/templates/id/jobs-header.tmpl
+%%DATADIR%%/templates/id/jobs.tmpl
+%%DATADIR%%/templates/id/maintenance.tmpl
+%%DATADIR%%/templates/id/modify-class.tmpl
+%%DATADIR%%/templates/id/modify-printer.tmpl
+%%DATADIR%%/templates/id/norestart.tmpl
+%%DATADIR%%/templates/id/option-boolean.tmpl
+%%DATADIR%%/templates/id/option-conflict.tmpl
+%%DATADIR%%/templates/id/option-header.tmpl
+%%DATADIR%%/templates/id/option-pickmany.tmpl
+%%DATADIR%%/templates/id/option-pickone.tmpl
+%%DATADIR%%/templates/id/option-trailer.tmpl
+%%DATADIR%%/templates/id/pager.tmpl
+%%DATADIR%%/templates/id/printer-accept.tmpl
+%%DATADIR%%/templates/id/printer-added.tmpl
+%%DATADIR%%/templates/id/printer-configured.tmpl
+%%DATADIR%%/templates/id/printer-confirm.tmpl
+%%DATADIR%%/templates/id/printer-default.tmpl
+%%DATADIR%%/templates/id/printer-deleted.tmpl
+%%DATADIR%%/templates/id/printer-jobs-header.tmpl
+%%DATADIR%%/templates/id/printer-modified.tmpl
+%%DATADIR%%/templates/id/printer-purge.tmpl
+%%DATADIR%%/templates/id/printer-reject.tmpl
+%%DATADIR%%/templates/id/printer-start.tmpl
+%%DATADIR%%/templates/id/printer-stop.tmpl
+%%DATADIR%%/templates/id/printers-header.tmpl
+%%DATADIR%%/templates/id/printers.tmpl
+%%DATADIR%%/templates/id/restart.tmpl
+%%DATADIR%%/templates/id/samba-export.tmpl
+%%DATADIR%%/templates/id/samba-exported.tmpl
+%%DATADIR%%/templates/id/search.tmpl
+%%DATADIR%%/templates/id/set-printer-options-header.tmpl
+%%DATADIR%%/templates/id/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/id/subscription-added.tmpl
+%%DATADIR%%/templates/id/subscription-canceled.tmpl
+%%DATADIR%%/templates/id/test-page.tmpl
+%%DATADIR%%/templates/id/trailer.tmpl
+%%DATADIR%%/templates/id/users.tmpl
 %%DATADIR%%/templates/it/add-class.tmpl
 %%DATADIR%%/templates/it/add-printer.tmpl
 %%DATADIR%%/templates/it/admin.tmpl
@@ -1297,6 +1364,62 @@ sbin/reject
 %%DOCSDIR%%/images/web-set-printer-options.gif
 %%DOCSDIR%%/images/web-test-page.gif
 %%DOCSDIR%%/index.html
+%%DOCSDIR%%/id/images/button-accept-jobs.gif
+%%DOCSDIR%%/id/images/button-add-class.gif
+%%DOCSDIR%%/id/images/button-add-printer.gif
+%%DOCSDIR%%/id/images/button-add-rss-subscription.gif
+%%DOCSDIR%%/id/images/button-add-this-printer.gif
+%%DOCSDIR%%/id/images/button-cancel-all-jobs.gif
+%%DOCSDIR%%/id/images/button-cancel-job.gif
+%%DOCSDIR%%/id/images/button-cancel-subscription.gif
+%%DOCSDIR%%/id/images/button-change-settings.gif
+%%DOCSDIR%%/id/images/button-clean-print-heads.gif
+%%DOCSDIR%%/id/images/button-clear.gif
+%%DOCSDIR%%/id/images/button-continue.gif
+%%DOCSDIR%%/id/images/button-delete-class.gif
+%%DOCSDIR%%/id/images/button-delete-printer.gif
+%%DOCSDIR%%/id/images/button-edit-configuration-file.gif
+%%DOCSDIR%%/id/images/button-export-samba.gif
+%%DOCSDIR%%/id/images/button-find-new-printers.gif
+%%DOCSDIR%%/id/images/button-help.gif
+%%DOCSDIR%%/id/images/button-hold-job.gif
+%%DOCSDIR%%/id/images/button-manage-classes.gif
+%%DOCSDIR%%/id/images/button-manage-jobs.gif
+%%DOCSDIR%%/id/images/button-manage-printers.gif
+%%DOCSDIR%%/id/images/button-manage-server.gif
+%%DOCSDIR%%/id/images/button-modify-class.gif
+%%DOCSDIR%%/id/images/button-modify-printer.gif
+%%DOCSDIR%%/id/images/button-move-job.gif
+%%DOCSDIR%%/id/images/button-move-jobs.gif
+%%DOCSDIR%%/id/images/button-print-self-test-page.gif
+%%DOCSDIR%%/id/images/button-print-test-page.gif
+%%DOCSDIR%%/id/images/button-publish-printer.gif
+%%DOCSDIR%%/id/images/button-reject-jobs.gif
+%%DOCSDIR%%/id/images/button-release-job.gif
+%%DOCSDIR%%/id/images/button-restart-job.gif
+%%DOCSDIR%%/id/images/button-save-changes.gif
+%%DOCSDIR%%/id/images/button-search.gif
+%%DOCSDIR%%/id/images/button-set-allowed-users.gif
+%%DOCSDIR%%/id/images/button-set-as-default.gif
+%%DOCSDIR%%/id/images/button-set-printer-options.gif
+%%DOCSDIR%%/id/images/button-show-active.gif
+%%DOCSDIR%%/id/images/button-show-all.gif
+%%DOCSDIR%%/id/images/button-show-completed.gif
+%%DOCSDIR%%/id/images/button-show-next.gif
+%%DOCSDIR%%/id/images/button-show-previous.gif
+%%DOCSDIR%%/id/images/button-sort-ascending.gif
+%%DOCSDIR%%/id/images/button-sort-descending.gif
+%%DOCSDIR%%/id/images/button-start-class.gif
+%%DOCSDIR%%/id/images/button-start-printer.gif
+%%DOCSDIR%%/id/images/button-stop-class.gif
+%%DOCSDIR%%/id/images/button-stop-printer.gif
+%%DOCSDIR%%/id/images/button-unpublish-printer.gif
+%%DOCSDIR%%/id/images/button-use-default-config.gif
+%%DOCSDIR%%/id/images/button-view-access-log.gif
+%%DOCSDIR%%/id/images/button-view-error-log.gif
+%%DOCSDIR%%/id/images/button-view-page-log.gif
+%%DOCSDIR%%/id/images/button-view-printable-version.gif
+%%DOCSDIR%%/id/index.html
 %%DOCSDIR%%/it/images/button-accept-jobs.gif
 %%DOCSDIR%%/it/images/button-add-class.gif
 %%DOCSDIR%%/it/images/button-add-printer.gif
@@ -1579,6 +1702,7 @@ share/locale/et/cups_et.po
 share/locale/fi/cups_fi.po
 share/locale/fr/cups_fr.po
 share/locale/he/cups_he.po
+share/locale/id/cups_id.po
 share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/ko/cups_ko.po
@@ -1613,26 +1737,14 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec mkdir -p %D/%%DOCSDIR%%/zh/images
 @dirrm %%DOCSDIR%%/zh_TW/images
 @dirrm %%DOCSDIR%%/zh_TW
-@dirrm %%DOCSDIR%%/zh/images
-@dirrm %%DOCSDIR%%/zh
 @dirrm %%DOCSDIR%%/sv/images
 @dirrm %%DOCSDIR%%/sv
-@dirrm %%DOCSDIR%%/ru/images
-@dirrm %%DOCSDIR%%/ru
-@dirrm %%DOCSDIR%%/pt_BR/images
-@dirrm %%DOCSDIR%%/pt_BR
-@dirrm %%DOCSDIR%%/pt/images
-@dirrm %%DOCSDIR%%/pt
 @dirrm %%DOCSDIR%%/pl/images
 @dirrm %%DOCSDIR%%/pl
-@dirrm %%DOCSDIR%%/no/images
-@dirrm %%DOCSDIR%%/no
-@dirrm %%DOCSDIR%%/nl/images
-@dirrm %%DOCSDIR%%/nl
-@dirrm %%DOCSDIR%%/ko/images
-@dirrm %%DOCSDIR%%/ko
 @dirrm %%DOCSDIR%%/ja/images
 @dirrm %%DOCSDIR%%/ja
+@dirrm %%DOCSDIR%%/id/images
+@dirrm %%DOCSDIR%%/id
 @dirrm %%DOCSDIR%%/it/images
 @dirrm %%DOCSDIR%%/it
 @dirrm %%DOCSDIR%%/images
@@ -1641,16 +1753,12 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/he
 @dirrm %%DOCSDIR%%/fr/images
 @dirrm %%DOCSDIR%%/fr
-@dirrm %%DOCSDIR%%/fi/images
-@dirrm %%DOCSDIR%%/fi
 @dirrm %%DOCSDIR%%/et/images
 @dirrm %%DOCSDIR%%/et
 @dirrm %%DOCSDIR%%/es/images
 @dirrm %%DOCSDIR%%/es
 @dirrm %%DOCSDIR%%/de/images
 @dirrm %%DOCSDIR%%/de
-@dirrm %%DOCSDIR%%/da/images
-@dirrm %%DOCSDIR%%/da
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/templates/zh_TW
@@ -1658,6 +1766,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DATADIR%%/templates/pl
 @dirrm %%DATADIR%%/templates/ja
 @dirrm %%DATADIR%%/templates/it
+@dirrm %%DATADIR%%/templates/id
 @dirrm %%DATADIR%%/templates/he
 @dirrm %%DATADIR%%/templates/fr
 @dirrm %%DATADIR%%/templates/et
