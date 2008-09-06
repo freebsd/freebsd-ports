@@ -7,6 +7,7 @@
 
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.16
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/
@@ -22,18 +23,18 @@ NO_BUILD=	Yes
 MAN1=	mhonarc.1 mha-dbedit.1 mha-dbrecover.1 mha-decode.1
 
 INSTALL_ARGS=	-binpath ${PREFIX}/bin \
-		-libpath ${PREFIX}/share/MHonArc \
+		-libpath ${SITE_PERL} \
 		-manpath ${PREFIX}/man \
 		-batch
+
 .if !defined(NOPORTDOCS)
-INSTALL_ARGS+=	-docpath ${PREFIX}/share/doc/MHonArc
+DOCSDIR=	${PREFIX}/share/doc/MHonArc
+INSTALL_ARGS+=	-docpath ${DOCSDIR}
 .else
 INSTALL_ARGS+=	-nodoc
 .endif
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
