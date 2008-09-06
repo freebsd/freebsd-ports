@@ -5,7 +5,6 @@ apps/VideoThumbnail/Help/COPYING
 apps/VideoThumbnail/Help/Changes
 apps/VideoThumbnail/Help/README
 apps/VideoThumbnail/Messages/dist
-apps/VideoThumbnail/Messages/en.gmo
 apps/VideoThumbnail/Messages/en.po
 apps/VideoThumbnail/Messages/update-po
 apps/VideoThumbnail/Options.xml
@@ -14,6 +13,8 @@ apps/VideoThumbnail/extopts.py
 apps/VideoThumbnail/extopts.pyc
 apps/VideoThumbnail/findrox.py
 apps/VideoThumbnail/findrox.pyc
+apps/VideoThumbnail/manage.py
+apps/VideoThumbnail/manage.pyc
 apps/VideoThumbnail/options.py
 apps/VideoThumbnail/options.pyc
 apps/VideoThumbnail/thumb.py
