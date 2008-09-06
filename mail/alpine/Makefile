@@ -7,6 +7,7 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.00
+PORTREVISION?=	1
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/ \
 		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/
@@ -62,19 +63,23 @@ CONFIGURE_ARGS+=	--disable-mouse
 .endif
 
 .if defined(WITH_NLS)
-CONFIGURE_ARGS+=	--with-nls
+CONFIGURE_ARGS+=	--enable-nls
 .else
-CONFIGURE_ARGS+=	--without-nls
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if !defined(WITH_NOSPELL)
 .if !defined(WITH_ISPELL)
-CONFIGURE_ARGS+=--with-spellcheck-prog="${LOCALBASE}/bin/aspell --dont-backup --mode=email check"
+CONFIGURE_ARGS+=--with-interactive-spellcheck=${LOCALBASE}/bin/aspell
+BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .else
-CONFIGURE_ARGS+=	--with-spellcheck-prog="${LOCALBASE}/bin/ispell"
+CONFIGURE_ARGS+=	--with-interactive-spellcheck=${LOCALBASE}/bin/ispell
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
+.else
+CONFIGURE_ARGS+=--without-simple-spellcheck --without-interactive-spellcheck
 .endif
 
 .if !defined(PICO_ALPINE_SLAVE)
@@ -97,7 +102,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if defined(WITH_PASSFILE)
 ALPINE_PASSFILE?=	.alpine.pwd
-CONFIGURE_ARGS+=	--with-passfile=".alpine.pwd"
+CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 .endif
 
 .if defined(WITH_CONS25)
@@ -120,15 +125,12 @@ PATCHFILES+=	quota.patch.gz
 PATCHFILES+=	maildir.patch.gz
 .endif
 
-.if defined(WITHOUT_SSL)
-MAKE_ARGS+=	SSLTYPE=none
+.if !defined(WITHOUT_SSL)
+MAKE_ARGS+=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
+CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
+			--with-ssl-certs-dir=${OPENSSLDIR}/certs
 .else
-EXTRA_OPTS+=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
-.if defined(WITH_SSL_AND_PLAINTEXT)
-EXTRA_OPTS+=	SSLTYPE=nopwd
-.else
-EXTRA_OPTS+=	SSLTYPE=unix
-.endif
+CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 MAN1=		alpine.1 rpdump.1 rpload.1
@@ -147,6 +149,11 @@ post-patch:
 	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
 	@${SED}	-e "s#doc/pico.1 doc/pilot.1 ##" \
 	    ${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
+	@${CP} ${WRKSRC}/imap/src/osdep/unix/Makefile \
+	    ${WRKSRC}/imap/src/osdep/unix/Makefile.presed
+	@${SED} -e "s#^LOCKPGM=.*#LOCKPGM= ${PREFIX}/libexec/mlock#" \
+	    ${WRKSRC}/imap/src/osdep/unix/Makefile.presed \
+	    > ${WRKSRC}/imap/src/osdep/unix/Makefile
 	@for i in ${WRKSRC}/README ${WRKSRC}/doc/alpine.1 \
 	    ${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
 	    ${WRKSRC}/pith/pine.hlp ; do \
