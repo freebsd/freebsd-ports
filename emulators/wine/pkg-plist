@@ -399,6 +399,7 @@ include/wine/windows/qedit.h
 include/wine/windows/qedit.idl
 include/wine/windows/slerror.h
 include/wine/windows/slpublic.h
+include/wine/windows/srrestoreptapi.h
 include/wine/windows/ras.h
 include/wine/windows/raserror.h
 include/wine/windows/reason.h
