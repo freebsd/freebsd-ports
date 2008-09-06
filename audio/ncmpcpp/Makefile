@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -30,8 +30,11 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	bin/ncmpcpp \
-		%%EXAMPLESDIR%%/ncmpcpprc.sample
-PLIST_DIRS=	%%EXAMPLESDIR%%
+		%%DOCSDIR%%/ncmpcpprc \
+		%%DOCSDIR%%/ncmpcpp_keys \
+		%%DOCSDIR%%/NEWS \
+		%%DOCSDIR%%/AUTHORS
+PLIST_DIRS=	%%DOCSDIR%%
 
 .if !defined(WITHOUT_CURL)
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
@@ -49,8 +52,14 @@ CONFIGURE_ARGS+=	--with-taglib=no
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/ncmpcpprc ${EXAMPLESDIR}/ncmpcpprc.sample
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}/NEWS
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/AUTHORS
+	${INSTALL_DATA} ${WRKSRC}/doc/ncmpcpprc ${DOCSDIR}/ncmpcpprc
+	${INSTALL_DATA} ${WRKSRC}/doc/ncmpcpp_keys ${DOCSDIR}/ncmpcpp_keys
+.endif
 
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
