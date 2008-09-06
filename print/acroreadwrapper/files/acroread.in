@@ -9,8 +9,8 @@
 #
 # ADOBE_VER:
 #     Set this if you want to invoke a specific version of
-#     Adobe Reader by "acroread".  Currently "7" and "8" are valid.
-#     When this script is invoked as "acroread7" and "acroread8",
+#     Adobe Reader by "acroread".  Currently only "8" is valid.
+#     When this script is invoked as "acroread8",
 #     ADOBE_VER is automatically set.
 #
 # ADOBE_DISABLEIMMODULEHACK:
@@ -79,9 +79,8 @@ case ${ADOBE_VER} in
 	BN=${0##*/}
 	VN=${BN#????????}
 	case ${VN} in
-	[78])	ADOBE_VER=${VN} ;;
+	8)	ADOBE_VER=${VN} ;;
 	*)
-		if [ -d %%PREFIX%%/%%ACROBASE7%% ]; then ADOBE_VER=7; fi
 		if [ -d %%PREFIX%%/%%ACROBASE8%% ]; then ADOBE_VER=8; fi
 	;;
 	esac
@@ -89,10 +88,6 @@ case ${ADOBE_VER} in
 esac
 
 case ${ADOBE_VER} in
-7)
-	ACROBASE=%%ACROBASE7%%
-	BINPREFIX=bin
-;;
 8)
 	ACROBASE=%%ACROBASE8%%
 	BINPREFIX=Adobe/Reader8/bin
@@ -108,10 +103,6 @@ case ${ADOBE_DISABLEIMMODULEHACK} in
 	*:""|*:xim)
 		GTK_IM_MODULE=xim; export GTK_IM_MODULE
 	;;
-	7:scim)
-		GTK_IM_MODULE=xim; export GTK_IM_MODULE
-		XMODIFIERS="@im=SCIM"; export XMODIFIERS
-	;; 
 	8:scim)
 		GTK_IM_MODULE=scim; export GTK_IM_MODULE
 		XMODIFIERS="@im=SCIM"; export XMODIFIERS

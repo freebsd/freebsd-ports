@@ -7,7 +7,7 @@
 
 PORTNAME=	acroread8
 PORTVERSION=	8.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -17,7 +17,7 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
-RUN_DEPENDS=	acroreadwrapper>=0.0.20080110:${PORTSDIR}/print/acroreadwrapper \
+RUN_DEPENDS=	acroreadwrapper>=0.0.20080906:${PORTSDIR}/print/acroreadwrapper \
 		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 		${LOCALBASE}/lib/linux-nvu/libgtkembedmoz.so:${PORTSDIR}/www/linux-nvu \

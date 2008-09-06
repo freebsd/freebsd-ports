@@ -1,8 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-#
-# remove harmless files only
-#
-case $2 in
-*/AcroWriteTest|*/*.tmp)	/bin/rm "$@" ;;
-esac

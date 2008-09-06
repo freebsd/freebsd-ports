@@ -4,7 +4,6 @@
     COMMENT = German support
 
     SUBDIR += BBBike
-    SUBDIR += acroread
     SUBDIR += acroread8
     SUBDIR += alt-aspell
     SUBDIR += aspell

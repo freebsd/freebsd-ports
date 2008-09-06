@@ -6,8 +6,6 @@
     SUBDIR += CJKUnifonts
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
-    SUBDIR += acroread-zh_CN
-    SUBDIR += acroread-zh_TW
     SUBDIR += acroread8-zh_CN
     SUBDIR += acroread8-zh_TW
     SUBDIR += arphicttf

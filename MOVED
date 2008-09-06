@@ -3598,3 +3598,18 @@ japanese/ghostscript-gnu-jpnfont|print/ghostscript7-jpnfont|2008-09-05|Renamed f
 korean/ghostscript-gnu-korfont|print/ghostscript7-korfont|2008-09-05|Renamed for better naming
 print/ghostscript-gpl|print/ghostscript8|2008-09-05|Renamed for better naming
 print/ghostscript-gpl-nox11|print/ghostscript8-nox11|2008-09-05|Renamed for better naming
+chinese/acroread-zh_CN|chinese/acroread8-zh_CN|2008-09-06|Removed because of security vulnerability
+chinese/acroread-zh_TW|chinese/acroread8-zh_TW|2008-09-06|Removed because of security vulnerability
+french/acroread|french/acroread8|2008-09-06|Removed because of security vulnerability
+german/acroread|german/acroread8|2008-09-06|Removed because of security vulnerability
+japanese/acroread|japanese/acroread8|2008-09-06|Removed because of security vulnerability
+korean/acroread|korean/acroread8|2008-09-06|Removed because of security vulnerability
+portuguese/acroread|portuguese/acroread8|2008-09-06|Removed because of security vulnerability
+print/acroread7|print/acroread8|2008-09-06|Removed because of security vulnerability
+print/dk-acroread|print/dk-acroread8|2008-09-06|Removed because of security vulnerability
+print/es-acroread|print/es-acroread8|2008-09-06|Removed because of security vulnerability
+print/fi-acroread|print/fi-acroread8|2008-09-06|Removed because of security vulnerability
+print/it-acroread|print/it-acroread8|2008-09-06|Removed because of security vulnerability
+print/nl-acroread|print/nl-acroread8|2008-09-06|Removed because of security vulnerability
+print/no-acroread|print/no-acroread8|2008-09-06|Removed because of security vulnerability
+print/sv-acroread|print/sv-acroread8|2008-09-06|Removed because of security vulnerability

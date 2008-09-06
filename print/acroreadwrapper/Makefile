@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroreadwrapper
-PORTVERSION=	0.0.20080110
+PORTVERSION=	0.0.20080906
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,10 +16,9 @@ COMMENT=	Wrapper script for Adobe Reader
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
-PLIST_FILES=	bin/acroread7 bin/acroread8 bin/acroread
+PLIST_FILES=	bin/acroread8 bin/acroread
 SUB_FILES=	acroread
-SUB_LIST=	ACROBASE7=${ACROBASE7} \
-		ACROBASE8=${ACROBASE8} \
+SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
 		INSTALLDIR=${INSTALLDIR} \
 		LINUXBASE=${LINUXBASE} \
@@ -27,7 +26,6 @@ SUB_LIST=	ACROBASE7=${ACROBASE7} \
 		PLUGINDIR=${PLUGINDIR} \
 
 ADOBEBASE=	Adobe
-ACROBASE7=	${ADOBEBASE}/Acrobat7.0
 ACROBASE8=	${ADOBEBASE}/Reader8
 PLUGINDIR=	lib/npapi/linux-acroread
 
@@ -37,7 +35,6 @@ do-fetch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/acroread ${PREFIX}/bin/acroread
 	cd ${PREFIX}/bin && ${LN} -s -f acroread acroread8
-	cd ${PREFIX}/bin && ${LN} -s -f acroread acroread7
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
