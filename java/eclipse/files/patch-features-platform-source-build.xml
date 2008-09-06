@@ -1,6 +1,6 @@
---- features/org.eclipse.platform.source/build.xml.orig	Mon Feb 12 12:45:20 2007
-+++ features/org.eclipse.platform.source/build.xml	Tue Apr  3 17:15:03 2007
-@@ -27,6 +27,11 @@
+--- features/org.eclipse.platform.source/build.xml.orig	Mon Jun 25 15:39:42 2007
++++ features/org.eclipse.platform.source/build.xml	Fri Aug 17 16:38:54 2007
+@@ -37,6 +37,11 @@
  			<property name="os" value="linux"/>
  			<property name="ws" value="gtk"/>
  		</ant>
@@ -12,9 +12,9 @@
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.macosx.carbon.ppc" target="${target}">
  			<property name="arch" value="ppc"/>
  			<property name="os" value="macosx"/>
-@@ -42,6 +47,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+@@ -62,6 +67,11 @@
+ 			<property name="os" value="win32"/>
+ 			<property name="ws" value="wpf"/>
  		</ant>
 +		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.gtk.amd64" target="${target}">
 +                        <property name="arch" value="amd64"/>
@@ -24,16 +24,7 @@
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.hpux.motif.PA_RISC" target="${target}">
  			<property name="arch" value="PA_RISC"/>
  			<property name="os" value="hpux"/>
-@@ -131,7 +141,7 @@
- 		<copy todir="${feature.base}/features/org.eclipse.platform.source_3.2.2.r322_v20070119-CXMbUe9K_WF26uA" failonerror="true" overwrite="false">
- 			<fileset dir="${basedir}" includes="epl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
- 		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.2.2.r322_v20070119-CXMbUe9K_WF26uA/feature.xml"  selfVersion="3.2.2.r322_v20070119-CXMbUe9K_WF26uA" featureIds="org.eclipse.rcp.source,3.2.2.r322_v20070104-iwP0VLKnfFC923K," pluginIds="org.eclipse.platform.doc.isv,3.2.2.R32x_v20070115,org.eclipse.platform.source,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.hpux.motif.ia64_32,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ia64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.qnx.photon.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ppc,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.hpux.motif.PA_RISC,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.x86_64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ppc64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.macosx.carbon.ppc,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.win32.win32.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.motif.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.2.2.r322_v20070119-CXMbUe9K_WF26uA/feature.xml"  selfVersion="3.2.2.r322_v20070119-CXMbUe9K_WF26uA" featureIds="org.eclipse.rcp.source,3.2.2.r322_v20070104-iwP0VLKnfFC923K," pluginIds="org.eclipse.platform.doc.isv,3.2.2.R32x_v20070115,org.eclipse.platform.source,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.hpux.motif.ia64_32,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ia64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.freebsd.gtk.amd64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.qnx.photon.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ppc,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.hpux.motif.PA_RISC,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.x86_64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.freebsd.gtk.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.ppc64,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.macosx.carbon.ppc,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.gtk.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.win32.win32.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,org.eclipse.platform.source.linux.motif.x86,3.2.2.r322_v20070119-CXMbUe9K_WF26uA,"/>
- 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
- 	</target>
- 	<target name="rootFileswin32_win32_x86">
-@@ -150,6 +160,10 @@
+@@ -187,6 +197,10 @@
  	</target>
  	<target name="rootFileslinux_motif_x86">
  	</target>
@@ -44,9 +35,9 @@
  	<target name="rootFilessolaris_gtk_sparc">
  	</target>
  	<target name="rootFilessolaris_gtk_x86">
-@@ -175,6 +189,8 @@
- 		<antcall target="rootFileslinux_gtk_x86_64"/>
- 		<antcall target="rootFileslinux_gtk_ia64"/>
+@@ -215,6 +229,8 @@
+ 		<antcall target="rootFileslinux_gtk_s390"/>
+ 		<antcall target="rootFileslinux_gtk_s390x"/>
  		<antcall target="rootFileslinux_motif_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_x86"/>
 +		<antcall target="rootFilesfreebsd_gtk_amd64"/>
