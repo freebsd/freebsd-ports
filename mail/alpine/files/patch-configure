@@ -1,0 +1,29 @@
+--- configure.orig	2008-08-21 18:41:04.000000000 -0700
++++ configure	2008-09-05 22:36:00.000000000 -0700
+@@ -23041,7 +23041,7 @@
+ case "$SPELLPROG" in
+   no)
+     ;;
+-  yes)
++  yes|*aspell|*ispell)
+     # Extract the first word of "aspell", so it can be a program name with args.
+ set dummy aspell; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -23233,7 +23233,7 @@
+ case "$ISPELLPROG" in
+   no)
+     ;;
+-  yes)
++  yes|*aspell|*ispell)
+     # Extract the first word of "aspell", so it can be a program name with args.
+ set dummy aspell; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -33251,7 +33251,7 @@
+   c_client_specials="${c_client_specials}SSLTYPE=none "
+ else
+ 
+-  if test -n "$alpine_SSLCERTS" -a -d "$alpine_SSLCERTS" ; then
++  if test -n "$alpine_SSLCERTS" ; then
+     certdir="$alpine_SSLCERTS"
+   elif test -n "$alpine_SSLDIR" -a -d "${alpine_SSLDIR}/certs" ; then
+     certdir="${alpine_SSLDIR}/certs"
