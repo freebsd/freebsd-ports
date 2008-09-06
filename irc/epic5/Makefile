@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		ftp://ftp.parodius.com/pub/epic/EPIC5-ALPHA/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-ALPHA/
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 SUB_FILES=	pkg-message

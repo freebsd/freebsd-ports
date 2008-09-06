@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	php-
 DISTNAME=	dbg-${PORTVERSION}
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Debugger for PHP
 
 USE_PHP=	yes

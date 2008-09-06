@@ -13,7 +13,7 @@ CATEGORIES=	misc net
 MASTER_SITES=	ftp://ftp.sangoma.com/FreeBSD/wanpipe/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A FreeBSD Driver for Sangoma AFT/S51x Series Cards
 
 ONLY_FOR_ARCHS=	i386 amd64
