@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cuneiform
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	OCR system developed and open sourced by Cognitive technologies
@@ -39,7 +40,6 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|lib64|lib|' ${WRKSRC}/../CMakeLists.txt
 .if !defined(WITH_IMAGEMAGICK)
 	@${REINPLACE_CMD} -e '/pkg_check_modules.*ImageMagick/ d' \
 		${WRKSRC}/../cuneiform_src/Kern/CMakeLists.txt
