@@ -14,16 +14,8 @@ EXTRACT_SUFX=	-src.zip
 MAINTAINER=	peterjeremy@optushome.com.au
 COMMENT=	Java bindings for OpenGL
 
-LIB_DEPENDS=	GL.1:${PORTSDIR}/graphics/libGL		\
-		X11.6:${PORTSDIR}/x11/libX11		\
-		Xau.6:${PORTSDIR}/x11/libXau		\
-		Xdamage.1:${PORTSDIR}/x11/libXdamage	\
-		Xdmcp.6:${PORTSDIR}/x11/libXdmcp	\
-		Xext.6:${PORTSDIR}/x11/libXext		\
-		Xfixes.3:${PORTSDIR}/x11/libXfixes	\
-		Xxf86vm.1:${PORTSDIR}/x11/libXxf86vm	\
-		drm.2:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper		\
+LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
+BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper     \
 		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
@@ -44,6 +36,9 @@ ALL_TARGET+=	javadoc
 # jogl/make/build.xml
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_XORG=	x11 xau xdamage xdmcp xext xf86vidmodeproto xfixes xproto xt \
+		xxf86vm
+USE_GL=		gl
 USE_ZIP=	yes
 USE_ANT=	yes
 USE_LDCONFIG=	yes
