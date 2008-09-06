@@ -2086,6 +2086,7 @@
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-cjson
+    SUBDIR += py-cmdln
     SUBDIR += py-cog
     SUBDIR += py-configobj
     SUBDIR += py-coro

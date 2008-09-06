@@ -1,0 +1,38 @@
+# New ports collection makefile for:	py-cmdln
+# Date created:		2008-09-05
+# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cmdln
+PORTVERSION=	1.1.1
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yzlin@cs.nctu.edu.tw
+COMMENT=	A python module for easily building good multi-command scripts
+
+USE_ZIP=	yes
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+PORTDOCS=	README
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/$f.txt ${DOCSDIR}/$f
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.mk>
