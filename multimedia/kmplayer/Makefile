@@ -13,6 +13,7 @@ CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/ \
 		http://kmplayer.kde.org/pkgs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	KDE frontend to MPlayer, Xine, GStreamer
@@ -68,13 +69,9 @@ CONFIGURE_ARGS+=--without-xine
 
 .if defined(WITH_TUBESTUFF)
 TUBESTUFF_VER=	20080314
-DISTFILES=	tubestuff-${TUBESTUFF_VER}.tbz
-DISTFILES+=	${DISTNAME}.tar.bz2
+DISTFILES+=	tubestuff-${TUBESTUFF_VER}.tbz
 BUILD_DEPENDS+=	mencoder:${PORTSDIR}/multimedia/mencoder
 USE_PYTHON=	yes
-
-post-extract:
-	${TAR} xvf ${DISTDIR}/tubestuff-${TUBESTUFF_VER}.tbz ${WRKDIR}
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|'\
