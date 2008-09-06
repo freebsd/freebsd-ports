@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -67,6 +67,7 @@ IGNORE=		flags and atimes can't be enabled simultaneously. Please rerun 'make co
 
 .if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT) || defined(WITH_ATIMES)
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 .if defined(WITH_ICONV)
