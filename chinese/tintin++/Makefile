@@ -7,7 +7,7 @@
 
 CATEGORIES?=	chinese net games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++-devel
 
