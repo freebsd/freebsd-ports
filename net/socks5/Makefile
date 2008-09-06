@@ -12,7 +12,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://freeware.sgi.com/source/socks5/
 DISTNAME=	socks5-v1.0r11
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	SOCKS v5 application layer gateway and clients
 
 USE_RC_SUBR=	${PORTNAME}.sh

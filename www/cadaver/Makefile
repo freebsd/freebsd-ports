@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28

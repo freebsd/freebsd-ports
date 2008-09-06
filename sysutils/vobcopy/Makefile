@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		CRITICAL
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread

@@ -18,7 +18,7 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-help-20050315.tar.bz2
 
-MAINTAINER=	josh@tcbug.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 CONFLICTS=	epic5-0.[0-2]*
