@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	holotz-castle
-PORTVERSION=	1.3.9
-PORTREVISION=	3
+PORTVERSION=	1.3.11
 CATEGORIES=	games
 MASTER_SITES=	http://www.mainreactor.net/holotzcastle/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,12 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	A platform game with high doses of mystery
 
-MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/ CXX=${CXX}
+MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 USE_GMAKE=	yes
-
-IGNORE=		Does not run (No video mode large enough for 676550817x676551540)
 
 .include <bsd.port.mk>

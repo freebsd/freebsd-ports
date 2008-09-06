@@ -1,0 +1,44 @@
+--- src/Makefile.orig	2008-08-23 22:36:07.000000000 +0400
++++ src/Makefile	2008-08-25 18:04:07.000000000 +0400
+@@ -21,12 +21,8 @@
+ # Edita estas l�neas para cambiar el directorio de instalaci�n de datos y del juego o bien
+ # comenta estas l�neas si no quieres instalar el juego (y descomenta las de arriba)
+ 
+-ifndef I486_BUILD
+-HC_BASE = /usr/share/games/holotz-castle/
+ HC_DATA = $(HC_BASE)game/
+ HCED_DATA = $(HC_BASE)editor/
+-HC_BIN_DIR = /usr/local/bin/
+-endif
+ 
+ DEFINES = -DHC_DATA_DIR=\"$(HC_DATA)\" -DHCED_DATA_DIR=\"$(HCED_DATA)\"
+ 
+@@ -42,23 +38,23 @@
+ 
+ # Definir -D_JLIB_DEBUG para debug con JLib. Ponerlo también en el Makefile de JLib.
+ # Define -D_JLIB_DEBUG for JLib debug mode. Put it also in JLib's Makefile.
+-CFLAGS=-fno-strict-aliasing -I. -I../JLib `$(SDL_CONFIG) --cflags` -I/usr/local/include/ -I/usr/local/include/SDL -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c
+-LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
++CXXFLAGS+=-I. -I../JLib `$(SDL_CONFIG) --cflags` -Wall -Wshadow -c
++LDFLAGS=-L. -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
+ 
+ 
+ JLib: 
+ 	$(MAKE) -C ../JLib;
+ 
+ %.o: %.cpp %.h
+-	g++ $(CFLAGS) $(DEFINES) $< -o $@
++	$(CXX) $(CXXFLAGS) $(DEFINES) $< -o $@
+ 
+ HC: $(HC_OBJS) $(HC_OBJ_MAIN) ../JLib/libJLib.a
+-	g++ $(LDFLAGS) $? -o $@;\
++	$(CXX) $(LDFLAGS) $? -o $@;\
+ 	mv HC ../holotz-castle
+ 
+ # HCed (Holotz's Castle editor).
+ HCed: $(HC_OBJS) $(HCED_OBJ_MAIN) ../JLib/libJLib.a
+-	g++ $(LDFLAGS) $? -o $@;\
++	$(CXX) $(LDFLAGS) $? -o $@;\
+ 	mv HCed ../holotz-castle-editor
+ 
+ install:
