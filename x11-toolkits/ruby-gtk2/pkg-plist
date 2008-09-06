@@ -65,6 +65,7 @@
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/menus.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/panes.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/pixbufs.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/printing.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/rotated_text.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/ruby-gnome2-logo.png
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/sizegroup.rb
