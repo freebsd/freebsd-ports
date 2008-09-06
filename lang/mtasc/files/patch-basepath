@@ -1,0 +1,22 @@
+--- mtasc/main.ml.orig	2008-09-06 03:09:02.176005686 +0200
++++ mtasc/main.ml	2008-09-06 03:11:37.642045225 +0200
+@@ -113,7 +113,7 @@
+ ;;
+ try	
+ 	let usage = "Motion-Twin ActionScript2 Compiler 1.14 - (c)2004-2008 Motion-Twin\n Usage : mtasc.exe [options] <files...>\n Options :" in
+-	let base_path = normalize_path (try Extc.executable_path() with _ -> ".") in
++	let base_path = normalize_path (try Extc.executable_path() ^ "/.." with _ -> "..") in
+ 	let files = ref [] in
+ 	let time = Sys.time() in
+ 	Plugin.class_path := [base_path;"";"/"];
+@@ -132,8 +132,8 @@
+ 		),": use precompiled mx package");
+ 	] @ !Plugin.options in
+ 	Arg.parse args_spec (fun file -> files := file :: !files) usage;
+-	Plugin.class_path := (base_path ^ "std/") :: !Plugin.class_path;
+-	if (match !GenSwf.version with Some x -> x >= 8 | None -> false) then Plugin.class_path := (base_path ^ "std8/") :: !Plugin.class_path;
++	Plugin.class_path := (base_path ^ "share/mtasc/std/") :: !Plugin.class_path;
++	if (match !GenSwf.version with Some x -> x >= 8 | None -> false) then Plugin.class_path := (base_path ^ "share/mtasc/std8/") :: !Plugin.class_path;
+ 	Hashtbl.remove Lexer.keywords "add";
+ 	Parser.warning := (fun msg pos -> report ~do_exit:false (msg,pos) "Warning" (fun msg -> msg));
+ 	if !files = [] then begin
