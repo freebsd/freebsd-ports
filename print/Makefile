@@ -11,7 +11,6 @@
     SUBDIR += abcm2ps
     SUBDIR += abntex
     SUBDIR += acrobatviewer
-    SUBDIR += acroread7
     SUBDIR += acroread8
     SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
@@ -52,7 +51,6 @@
     SUBDIR += cups-smb-backend
     SUBDIR += cupsddk
     SUBDIR += detex
-    SUBDIR += dk-acroread
     SUBDIR += dk-acroread8
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
@@ -70,9 +68,7 @@
     SUBDIR += envelope
     SUBDIR += epsmerge
     SUBDIR += epsonepl
-    SUBDIR += es-acroread
     SUBDIR += es-acroread8
-    SUBDIR += fi-acroread
     SUBDIR += fi-acroread8
     SUBDIR += flpsed
     SUBDIR += font2svg
@@ -125,7 +121,6 @@
     SUBDIR += hugelatex
     SUBDIR += hyperlatex
     SUBDIR += ifhp
-    SUBDIR += it-acroread
     SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
@@ -196,9 +191,7 @@
     SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
-    SUBDIR += nl-acroread
     SUBDIR += nl-acroread8
-    SUBDIR += no-acroread
     SUBDIR += no-acroread8
     SUBDIR += p5-Net-Printer
     SUBDIR += p5-PDF-Template
@@ -304,7 +297,6 @@
     SUBDIR += scribus
     SUBDIR += sgf2tex
     SUBDIR += splix
-    SUBDIR += sv-acroread
     SUBDIR += sv-acroread8
     SUBDIR += system-config-printer
     SUBDIR += t1utils

@@ -14,7 +14,6 @@
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
     SUBDIR += ack
-    SUBDIR += acroread
     SUBDIR += acroread8
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
