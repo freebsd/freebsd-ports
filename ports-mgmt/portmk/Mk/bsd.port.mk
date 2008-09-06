@@ -343,7 +343,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
-#				  build and run.
+#				  build and run.  If a number is specified,
+#				  the specified version will be used.
+#				  The valid value is '7' or '8' in that case.
 # USE_GHOSTSCRIPT_BUILD
 #				- If set, this port needs ghostscript to build.
 # USE_GHOSTSCRIPT_RUN
@@ -353,10 +355,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Some installations may wish to override the default
 #				  to specify a version without X11 and/or localized
 #				  versions for their nationality.
-#				  Default: print/ghostscript-gpl
-# WITH_GHOSTSCRIPT_GNU
-#				- If set, this port uses the GNU version of the ghostscript
-#				  software instead of the GPL version, which is used otherwise.
+#				  Default: print/ghostscript8
+# WITH_GHOSTSCRIPT_VER
+#				- If set, the specified version of ghostscript will be
+#				  used.  The valid value is "7" or "8".  Note that
+#				  this is for users, not for port maintainers.  This
+#				  should not be used in Makefile.
 ##
 # USE_BISON		- Implies that the port uses bison in one way or another:
 #				  'yes' (backwards compatibility) - use bison for building
@@ -460,10 +464,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_KDELIBS_VER		- Set to 3 to use the KDE libraries.
 #				  Implies inclusion of bsd.kde.mk.
 #
+# USE_KDE4			- A list of the KDE4 dependencies the port has (e.g.,
+#				  kdelibs, kdebase).  Implies that the port needs KDE.
+#				  Implies inclusion of bsd.kde4.mk.  See bsd.kde4.mk
+#				  for more details.
+#
 # USE_QT_VER			- Set to 3 or 4 to use the respective version
 #				  of the QT libraries.
 #				  Implies inclusion of bsd.kde.mk.
-##
+#
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
 #				  If set to "7", a dependency is registered to emulators/linux_base.
@@ -876,7 +885,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
 #				  Default: "--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
-#				  --mandir=${MANPREFIX}/man ${CONFIGURE_TARGET}" if
+#				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
@@ -1639,6 +1648,13 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
+.if defined(USE_KDE4) || defined(KDE4_BUILDENV)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.kde4.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.kde4.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.kde4.mk"
+.endif
+.endif
 
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
@@ -2209,6 +2225,14 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
+.if defined(USE_KDE4)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.kde4.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.kde4.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.kde4.mk"
+.endif
+.endif
+
 .if defined(USE_CMAKE)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.cmake.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.cmake.mk"
@@ -2240,19 +2264,47 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 # Set the default for the installation of Postscript(TM)-
 # compatible functionality.
-.if !defined(WITHOUT_X11)
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
+.if !defined(USE_GHOSTSCRIPT)
+.	if defined(USE_GHOSTSCRIPT_BUILD)
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_BUILD}
+.	elif defined(USE_GHOSTSCRIPT_RUN)
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_RUN}
+.	endif
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gpl
+_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT}
 .endif
+
+.if defined(WITH_GHOSTSCRIPT_VER) && !empty(WITH_GHOSTSCRIPT_VER:M[78])
+_USE_GHOSTSCRIPT_DEFAULT_VER=	${WITH_GHOSTSCRIPT_VER}
 .else
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+_USE_GHOSTSCRIPT_DEFAULT_VER=	8
+.endif
+
+.if defined(_USE_GHOSTSCRIPT)
+.	if !defined(WITHOUT_X11)
+_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=
+.	else
+_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=-nox11
+.	endif
+.	if !empty(_USE_GHOSTSCRIPT:M[78])
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT:M[78]}
+.	else
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
+.	endif
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gpl-nox11
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
 .endif
+
+# Sanity check
+.if defined(_USE_GHOSTSCRIPT) && defined(WITH_GHOSTSCRIPT_VER)
+.	if empty(WITH_GHOSTSCRIPT_VER:M[78])
+.		error You set an invalid value "${WITH_GHOSTSCRIPT_VER}" in WITH_GHOSTSCRIPT_VER.  Abort.
+.	elif ${_USE_GHOSTSCRIPT_VER} != ${WITH_GHOSTSCRIPT_VER}
+.		error You set WITH_GHOSTSCRIPT_VER as ${WITH_GHOSTSCRIPT_VER} but ${PKGNAME} requires print/ghostscript${_USE_GHOSTSCRIPT_VER}.  Abort.
+.	endif
 .endif
+
+GHOSTSCRIPT_PORT?=	print/ghostscript${_USE_GHOSTSCRIPT_VER}${_USE_GHOSTSCRIPT_PKGNAME_SUFFIX}
 
 # Set up the ghostscript dependencies.
 .if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD)
@@ -3014,6 +3066,7 @@ PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.
@@ -3024,7 +3077,7 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
-CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} $${_LATE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 
@@ -3035,6 +3088,11 @@ SET_LATE_CONFIGURE_ARGS= \
 	fi ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
 	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
+	fi ; \
+	if [ -z "`./${CONFIGURE_SCRIPT} --version 2>&1 | ${EGREP} -i '(autoconf.*2\.13|Unrecognized option)'`" ]; then \
+		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --build=${CONFIGURE_TARGET}" ; \
+	else \
+		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} ${CONFIGURE_TARGET}" ; \
 	fi ;
 .endif
 
