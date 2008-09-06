@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/ \
 		http://redundancy.redundancy.org/mirror/
@@ -23,6 +23,17 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	musicpd.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CFLAGS+=	-I${PREFIX}/include
+
+MAN1=		mpd.1
+MAN5=		mpd.conf.5
+
+DOCSDIR=	${PREFIX}/share/doc/mpd
+
+SUB_FILES=	pkg-message
 
 OPTIONS=	FLAC "Support for FLAC Audio" on \
 		VORBIS "Support for OGG Vorbis Audio" on \
@@ -35,7 +46,9 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		IPV6 "Support for IPV6" on \
 		AO "Support for libao" off \
 		PULSE "Support for PulseAudio" off \
-		SHOUT "Support for Icecast and Shoutcast" on
+		JACK "Support for JACK" off \
+		SHOUT "Support for Icecast and Shoutcast" on \
+		SAMPLERATE "Support for ibsamplerate" on
 
 .include <bsd.port.pre.mk>
 
@@ -96,34 +109,33 @@ CONFIGURE_ARGS+=--enable-ao
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 .endif
 
-.ifdef(WITHOUT_PULSE)
-CONFIGURE_ARGS+=--disable-pulse
-.else
+.ifdef(WITH_PULSE)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=--disable-pulse
+.endif
+
+.ifdef(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .ifdef(WITHOUT_SHOUT)
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+.ifdef(WITHOUT_SAMPLERATE)
+CONFIGURE_ARGS+=--disable-lsr
+.else
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.endif
 
-CFLAGS+=	-I${PREFIX}/include
-
-MAN1=		mpd.1
-MAN5=		mpd.conf.5
-
-DOCSDIR=	${PREFIX}/share/doc/mpd
-DOCS=	COMMANDS \
-		mpdconf.example \
-		README \
-		UPGRADING
-
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g'
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message >${PKGMESSAGE}
+.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
