@@ -6,7 +6,7 @@
 
 PORTNAME=	lucene
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java,}
 DISTNAME=	lucene-${PORTVERSION}
@@ -18,11 +18,36 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-OPTIONS=	DOCS    "Install docs & examples" on
+OPTIONS=	DOCS    "Install docs & examples" on \
+		CONTRIB "Install contribs" off
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
+CONTRIBS=	analyzers \
+		ant \
+		benchmark \
+		highlighter \
+		lucli \
+		memory \
+		misc \
+		queries \
+		regex \
+		similarity \
+		snowball \
+		spellchecker \
+		surround \
+		swing \
+		wikipedia \
+		wordnet \
+		xml-query-parser
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CONTRIB)
+.for f in ${CONTRIBS}
+PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
+.endfor
+.endif
 
 .if defined(WITHOUT_DOCS) || !defined(WITH_DOCS)
 NOPORTDOCS=	yes
@@ -36,6 +61,11 @@ DEMODIR=	src/demo/org/apache/lucene/demo
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
+.if defined(WITH_CONTRIB)
+	@${INSTALL_DATA} \
+	    ${CONTRIBS:C,^(.*$,${WRKSRC}/contrib/\1/${PORTNAME}-\1-${PORTVERSION}.jar,} \
+	    ${JAVADIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${DOCSDIR}
