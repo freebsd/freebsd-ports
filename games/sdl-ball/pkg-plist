@@ -1,0 +1,61 @@
+bin/sdl-ball
+%%DATADIR%%/font/acidic.ttf
+%%DATADIR%%/font/ack.ttf
+%%DATADIR%%/gfx/ball/fireball.png
+%%DATADIR%%/gfx/ball/tail.png
+%%DATADIR%%/gfx/ball/test.png
+%%DATADIR%%/gfx/border.png
+%%DATADIR%%/gfx/brick/ani1.png
+%%DATADIR%%/gfx/brick/base.png
+%%DATADIR%%/gfx/brick/cement.png
+%%DATADIR%%/gfx/brick/doom-org.png
+%%DATADIR%%/gfx/brick/doom.png
+%%DATADIR%%/gfx/brick/explosive.png
+%%DATADIR%%/gfx/brick/glass.png
+%%DATADIR%%/gfx/brick/invisible.png
+%%DATADIR%%/gfx/highscore/entername.png
+%%DATADIR%%/gfx/highscore/numbers.png
+%%DATADIR%%/gfx/menu/but0.png
+%%DATADIR%%/gfx/menu/but1.png
+%%DATADIR%%/gfx/menu/but2.png
+%%DATADIR%%/gfx/menu/highscorebg.png
+%%DATADIR%%/gfx/menu/life.png
+%%DATADIR%%/gfx/menu/menu0.png
+%%DATADIR%%/gfx/paddle/aim.png
+%%DATADIR%%/gfx/paddle/base.png
+%%DATADIR%%/gfx/paddle/glue.png
+%%DATADIR%%/gfx/paddle/gun.png
+%%DATADIR%%/gfx/particle.png
+%%DATADIR%%/gfx/powerup/aim.png
+%%DATADIR%%/gfx/powerup/aimhelp.png
+%%DATADIR%%/gfx/powerup/bigball.png
+%%DATADIR%%/gfx/powerup/bullet.png
+%%DATADIR%%/gfx/powerup/detonate.png
+%%DATADIR%%/gfx/powerup/die.png
+%%DATADIR%%/gfx/powerup/drop.png
+%%DATADIR%%/gfx/powerup/easybrick.png
+%%DATADIR%%/gfx/powerup/explosive-grow.png
+%%DATADIR%%/gfx/powerup/explosive.png
+%%DATADIR%%/gfx/powerup/glue.png
+%%DATADIR%%/gfx/powerup/go-thru.png
+%%DATADIR%%/gfx/powerup/gravity.png
+%%DATADIR%%/gfx/powerup/growbat.png
+%%DATADIR%%/gfx/powerup/gun.png
+%%DATADIR%%/gfx/powerup/laser.png
+%%DATADIR%%/gfx/powerup/life.png
+%%DATADIR%%/gfx/powerup/multiball.png
+%%DATADIR%%/gfx/powerup/nextlevel.png
+%%DATADIR%%/gfx/powerup/normalball.png
+%%DATADIR%%/gfx/powerup/shrinkbat.png
+%%DATADIR%%/gfx/powerup/smallball.png
+%%DATADIR%%/levels.txt
+%%DATADIR%%/powerups.txt
+@dirrm %%DATADIR%%/gfx/powerup
+@dirrm %%DATADIR%%/gfx/paddle
+@dirrm %%DATADIR%%/gfx/menu
+@dirrm %%DATADIR%%/gfx/highscore
+@dirrm %%DATADIR%%/gfx/brick
+@dirrm %%DATADIR%%/gfx/ball
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/font
+@dirrm %%DATADIR%%

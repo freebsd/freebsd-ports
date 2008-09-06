@@ -715,6 +715,7 @@
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
     SUBDIR += sdb
+    SUBDIR += sdl-ball
     SUBDIR += sdlCC
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
