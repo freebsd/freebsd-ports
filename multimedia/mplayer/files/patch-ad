@@ -52,7 +52,7 @@
  if freebsd ; then
    _ld_extra="$_ld_extra -L/usr/local/lib"
 -  _inc_extra="$_inc_extra -I/usr/local/include"
-+  _inc_extra="$_inc_extra -I... -I.../libavutil"
++  _inc_extra="$_inc_extra -I... -I.../libavutil -I$_prefix/include"
  fi
  
  if darwin; then
