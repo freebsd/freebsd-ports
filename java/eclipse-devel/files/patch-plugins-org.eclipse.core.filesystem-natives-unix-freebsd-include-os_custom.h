@@ -1,5 +1,5 @@
---- plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h.orig	Sun Aug 19 23:58:06 2007
-+++ plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h	Sun Aug 19 23:58:15 2007
+--- plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h.orig	2008-08-02 10:40:44.000000000 -0400
++++ plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h	2008-08-02 10:40:55.000000000 -0400
 @@ -11,8 +11,8 @@
  ***********************************************************************/
  
@@ -10,4 +10,4 @@
 +#define FREEBSD
  #endif
  
- /* Linux supports reading symbolic links */
+ /* FreeBSD supports reading symbolic links */
