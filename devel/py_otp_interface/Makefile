@@ -6,38 +6,35 @@
 #
 
 PORTNAME=	py_otp_interface
-PORTVERSION=	0.93
+PORTVERSION=	0.95
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 DISTNAME=	py_interface-${PORTVERSION}
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A native python implementation of an Erlang/OTP node
+COMMENT=	A native Python implementation of an Erlang/OTP node
 
 USE_PYTHON=	yes
 
-PORTDOCS=	COPYING.LIB README py_interface.pub
-
-OTP_LIBS=	erl_async_conn.py erl_common.py erl_epmd.py \
-		erl_eventhandler.py erl_node.py erl_node_conn.py \
-		erl_opts.py erl_term.py
-OTP_EXAMPLES=	test_erl_node.py test_erl_node_conn.py test_erl_epmd.py \
-		test_erl_node_tk_1.py
-OTP_DOCS=	COPYING.LIB README py_interface.pub
+OTP_LIBS=	__init__.py erl_async_conn.py erl_common.py erl_epmd.py \
+		erl_eventhandler.py erl_node.py erl_node_conn.py erl_opts.py \
+		erl_term.py
+OTP_DOCS=	COPYING.LIB README
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
+	@${MKDIR} ${PYTHON_SITELIBDIR}/py_interface
 	@for FILE in ${OTP_LIBS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${FILE}* ${PYTHON_SITELIBDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/py_interface/$${FILE}* ${PYTHON_SITELIBDIR}/py_interface; \
 	done
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@for FILE in ${OTP_EXAMPLES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${EXAMPLESDIR}; \
-	done
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR};
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${OTP_DOCS}; do \
