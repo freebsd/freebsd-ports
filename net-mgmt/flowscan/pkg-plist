@@ -15,14 +15,14 @@ var/db/flows/bin/flowscan.cf.sample
 var/db/flows/bin/local_nets.boulder.sample
 var/db/flows/bin/our_subnets.boulder.sample
 var/db/flows/graphs/Makefile.sample
-share/doc/flowscan/README
-share/doc/flowscan/README.html
-share/doc/flowscan/INSTALL
-share/doc/flowscan/INSTALL.html
-share/doc/flowscan/TODO
+%%PORTDOCS%%share/doc/flowscan/README
+%%PORTDOCS%%share/doc/flowscan/README.html
+%%PORTDOCS%%share/doc/flowscan/INSTALL.html
+%%PORTDOCS%%share/doc/flowscan/TODO
 share/doc/flowscan/crontab.sample
 share/doc/flowscan/cflowd.sample
 share/doc/flowscan/flowscan.sample
+share/doc/flowscan/INSTALL
 @dirrm var/db/flows/graphs
 @dirrm var/db/flows/bin
 @dirrm var/db/flows
