@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.9.5
+PORTVERSION=	3.9.6
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -47,7 +47,7 @@ USE_PHP+=	json
 .endif
 
 .if defined(WITH_Checker)
-RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP_Request.php:${PORTSDIR}/www/pear-HTTP_Request
+RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
 .if defined(WITH_Mail)

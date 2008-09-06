@@ -1079,6 +1079,7 @@
 %%WWWDIR%%/Services/AuthShibboleth/README.SHIBBOLETH.txt
 %%WWWDIR%%/Services/AuthShibboleth/classes/class.ilShibboleth.php
 %%WWWDIR%%/Services/AuthShibboleth/classes/class.ilShibbolethWAYF.php
+%%WWWDIR%%/Services/Authentication/classes/class.ilAuthDB.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthInactive.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthModeDetermination.php
 %%WWWDIR%%/Services/Authentication/classes/class.ilAuthMultiple.php
