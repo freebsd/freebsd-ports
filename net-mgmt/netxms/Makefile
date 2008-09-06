@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	0.2.21
+PORTVERSION=	0.2.22
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.netxms.org/download/
 
 MAINTAINER=	samflanker@gmail.com
 COMMENT=	NetXMS - network monitoring system
