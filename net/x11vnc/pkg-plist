@@ -14,4 +14,3 @@ bin/x11vnc
 @dirrm %%DATADIR%%/classes/ssl
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
