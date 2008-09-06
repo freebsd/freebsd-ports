@@ -36,6 +36,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
 OPTIONS=	OPENEXR "Use OpenEXR" on
 
+BROKEN=		does not compile
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENEXR)
