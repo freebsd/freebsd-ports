@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.3
-PORTREVISION=	2
+PORTVERSION=	0.99.10
+PORTREVISION=	0
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smith charting program
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
