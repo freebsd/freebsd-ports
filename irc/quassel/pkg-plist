@@ -1,0 +1,6 @@
+bin/quassel
+bin/quasselclient
+bin/quasselcore
+share/applications/quassel.desktop
+share/applications/quasselclient.desktop
+@dirrmtry share/applications
