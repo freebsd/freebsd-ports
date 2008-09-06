@@ -1186,6 +1186,7 @@
     SUBDIR += py-scgi
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
+    SUBDIR += py-textile
     SUBDIR += py-tgwebservices
     SUBDIR += py-turbodjango
     SUBDIR += py-turbogears
