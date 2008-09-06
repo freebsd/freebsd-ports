@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a45
+PORTVERSION=	2.01.01a48
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -126,6 +126,13 @@ post-patch:
 .for i in include/schily/schily.h libfind/find.c libschily/fexec.c \
 	libschily/libschily-mapvers
 	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/${i}
+.endfor
+	@${MV} -f ${WRKSRC}/libparanoia/cdda_paranoia.h \
+		${WRKSRC}/libparanoia/js_cdda_paranoia.h
+.for i in cdda2wav/cdda2wav.c cdda2wav/global.h libparanoia/gap.c \
+	libparanoia/overlap.c libparanoia/p_block.c libparanoia/paranoia.c
+	@${REINPLACE_CMD} -e 's|cdda_paranoia\.h|js_cdda_paranoia.h|g' \
+		${WRKSRC}/${i}
 .endfor
 #	@${REINPLACE_CMD} -E -e \
 #		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
