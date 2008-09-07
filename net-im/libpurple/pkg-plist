@@ -163,6 +163,7 @@ share/locale/eu/LC_MESSAGES/pidgin.mo
 share/locale/fa/LC_MESSAGES/pidgin.mo
 share/locale/fi/LC_MESSAGES/pidgin.mo
 share/locale/fr/LC_MESSAGES/pidgin.mo
+share/locale/ga/LC_MESSAGES/pidgin.mo
 share/locale/gl/LC_MESSAGES/pidgin.mo
 share/locale/gu/LC_MESSAGES/pidgin.mo
 share/locale/he/LC_MESSAGES/pidgin.mo
@@ -216,6 +217,7 @@ share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 share/sounds/purple/alert.wav
 share/sounds/purple/login.wav
