@@ -349,6 +349,7 @@
     SUBDIR += man2web
     SUBDIR += mathopd
     SUBDIR += mediawiki
+    SUBDIR += mediawiki12
     SUBDIR += mediawiki16
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
