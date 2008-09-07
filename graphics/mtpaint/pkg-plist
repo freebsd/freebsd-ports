@@ -1,18 +1,20 @@
 bin/mtpaint
 share/applications/mtpaint.desktop
-share/locale/cs/LC_MESSAGES/mtpaint.mo
-share/locale/de_DE/LC_MESSAGES/mtpaint.mo
-share/locale/es/LC_MESSAGES/mtpaint.mo
-share/locale/fr/LC_MESSAGES/mtpaint.mo
-share/locale/ja/LC_MESSAGES/mtpaint.mo
-share/locale/pl/LC_MESSAGES/mtpaint.mo
-share/locale/pt/LC_MESSAGES/mtpaint.mo
-share/locale/pt_BR/LC_MESSAGES/mtpaint.mo
-share/locale/sk/LC_MESSAGES/mtpaint.mo
-share/locale/tr/LC_MESSAGES/mtpaint.mo
-share/locale/zh_CN/LC_MESSAGES/mtpaint.mo
-share/locale/zh_TW/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/mtpaint.mo
 share/pixmaps/mtpaint.png
 @dirrmtry share/applications
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
+@dirrmtry %%NLS%%share/locale/de_DE/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/de_DE
