@@ -7,7 +7,7 @@
 
 PORTNAME=		policyd
 PORTVERSION=		1.0.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libspf2.org/patch/
 PKGNAMEPREFIX=		postfix-
