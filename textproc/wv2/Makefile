@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library providing routines to access Microsoft Word files
 
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug

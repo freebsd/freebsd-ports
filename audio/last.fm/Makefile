@@ -12,7 +12,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official last.fm radio player
 
 PKGINSTALL=	${WRKDIR}/pkg-install

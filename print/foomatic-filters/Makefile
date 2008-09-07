@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
 USE_PERL5=	yes

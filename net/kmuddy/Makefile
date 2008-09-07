@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net games
 MASTER_SITES=	http://www.kmuddy.com/files/
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUD client for KDE
 
 LIB_DEPENDS=	mxp:${PORTSDIR}/net/libmxp

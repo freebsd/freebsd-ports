@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vorbis streaming source client for icecast 2
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \

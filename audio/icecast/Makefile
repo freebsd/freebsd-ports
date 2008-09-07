@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes

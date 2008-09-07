@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan

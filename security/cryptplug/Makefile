@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/cryptplug
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of plug-ins to cryptographic engines
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgpgme03.so.9:${PORTSDIR}/security/gpgme03 \
