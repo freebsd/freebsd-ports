@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.13.1+2
-PORTREVISION=	1
+DISTVERSION=	0.15.3
 CATEGORIES=	www
 MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}c-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Yet another download tool
 
-#CPPFLAGS=	-g
-#DONTSTRIP=	yes
-#CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
-#MAKE_ENV=	DONTSTRIP=
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
 		--with-libxml2 --without-gnutls --without-libares \
 		--without-libcares --program-transform-name=""
@@ -30,7 +25,7 @@ GNU_CONFIGURE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	ca de es fi fr he hu id it ja nl nn pl pt_BR ru sv th zh_CN
+LINGUAS=	bg ca da de es el fi fr he hu id it ja nl nn pl pt_BR ru sv th tr zh_CN
 .endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
