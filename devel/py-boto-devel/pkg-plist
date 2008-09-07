@@ -34,6 +34,12 @@
 %%PYTHON_SITELIBDIR%%/boto/ec2/securitygroup.py
 %%PYTHON_SITELIBDIR%%/boto/ec2/securitygroup.pyc
 %%PYTHON_SITELIBDIR%%/boto/ec2/securitygroup.pyo
+%%PYTHON_SITELIBDIR%%/boto/ec2/snapshot.py
+%%PYTHON_SITELIBDIR%%/boto/ec2/snapshot.pyc
+%%PYTHON_SITELIBDIR%%/boto/ec2/snapshot.pyo
+%%PYTHON_SITELIBDIR%%/boto/ec2/volume.py
+%%PYTHON_SITELIBDIR%%/boto/ec2/volume.pyc
+%%PYTHON_SITELIBDIR%%/boto/ec2/volume.pyo
 %%PYTHON_SITELIBDIR%%/boto/ec2/zone.py
 %%PYTHON_SITELIBDIR%%/boto/ec2/zone.pyc
 %%PYTHON_SITELIBDIR%%/boto/ec2/zone.pyo
@@ -154,6 +160,30 @@
 %%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.py
 %%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.pyc
 %%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/__init__.py
+%%PYTHON_SITELIBDIR%%/boto/services/__init__.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/__init__.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/bs.py
+%%PYTHON_SITELIBDIR%%/boto/services/bs.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/bs.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/message.py
+%%PYTHON_SITELIBDIR%%/boto/services/message.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/message.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/result.py
+%%PYTHON_SITELIBDIR%%/boto/services/result.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/result.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/service.py
+%%PYTHON_SITELIBDIR%%/boto/services/service.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/service.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/servicedef.py
+%%PYTHON_SITELIBDIR%%/boto/services/servicedef.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/servicedef.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/sonofmmm.py
+%%PYTHON_SITELIBDIR%%/boto/services/sonofmmm.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/sonofmmm.pyo
+%%PYTHON_SITELIBDIR%%/boto/services/submit.py
+%%PYTHON_SITELIBDIR%%/boto/services/submit.pyc
+%%PYTHON_SITELIBDIR%%/boto/services/submit.pyo
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.py
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.pyo
@@ -199,6 +229,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/boto/mturk
 @dirrm %%PYTHON_SITELIBDIR%%/boto/pyami
 @dirrm %%PYTHON_SITELIBDIR%%/boto/s3
+@dirrm %%PYTHON_SITELIBDIR%%/boto/services
 @dirrm %%PYTHON_SITELIBDIR%%/boto/sdb/persist
 @dirrm %%PYTHON_SITELIBDIR%%/boto/sdb
 @dirrm %%PYTHON_SITELIBDIR%%/boto/sqs
