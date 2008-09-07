@@ -115,4 +115,7 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${PREFIX}/man/man1
 .endif
 
+regression-test: build
+	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} smallcheck
+
 .include <bsd.port.post.mk>
