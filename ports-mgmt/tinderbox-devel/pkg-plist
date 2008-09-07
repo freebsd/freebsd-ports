@@ -1,3 +1,4 @@
+etc/rc.d/tinderbox
 tinderbox/scripts/README
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me

@@ -7,6 +7,7 @@
 PORTNAME=	tinderbox
 #DISTVERSION=	${PORTVERSION}-${PORTREVISION}
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 #DIST_SUBDIR=	tinderbox
@@ -88,11 +89,22 @@ post-extract:
 	@${RM} -R ${WRKSRC}/webui
 .endif
 
+post-patch:
+	${RM} ${WRKSRC}/lib/Tinderbox/TinderboxDS.pm.orig \
+		${WRKSRC}/lib/tc_command.pl.orig \
+		${WRKSRC}/sql/schema.pgsql.pre.orig \
+		${WRKSRC}/sql/genschema.orig
+
 do-install:
-	${MKDIR} ${PREFIX}/tinderbox/scripts
+	@${MKDIR} ${PREFIX}/tinderbox/scripts
+	@${ECHO_CMD} "Installing man pages ..."
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 		cd ${WRKSRC} && ${RM} -r ${WRKSRC}/man
+	@${ECHO_CMD} "Installing rc script ..."
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd.sh ${PREFIX}/etc/rc.d/${PORTNAME}
+	@${ECHO_CMD} "Installing tinderbox ..."
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
+	@${ECHO_CMD} "All Done"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
