@@ -19,8 +19,10 @@ include/xcb/xevie.h
 include/xcb/xf86dri.h
 include/xcb/xfixes.h
 include/xcb/xinerama.h
+include/xcb/xinput.h
 include/xcb/xprint.h
 include/xcb/xproto.h
+include/xcb/xselinux.h
 include/xcb/xtest.h
 include/xcb/xv.h
 include/xcb/xvmc.h
