@@ -18,9 +18,30 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/xf86dri.xml
 %%DATADIR%%/xfixes.xml
 %%DATADIR%%/xinerama.xml
+%%DATADIR%%/xinput.xml
 %%DATADIR%%/xprint.xml
 %%DATADIR%%/xproto.xml
+%%DATADIR%%/xselinux.xml
 %%DATADIR%%/xtest.xml
 %%DATADIR%%/xv.xml
 %%DATADIR%%/xvmc.xml
+%%PYTHON_SITELIBDIR%%/xcbgen/__init__.py
+%%PYTHON_SITELIBDIR%%/xcbgen/error.py
+%%PYTHON_SITELIBDIR%%/xcbgen/expr.py
+%%PYTHON_SITELIBDIR%%/xcbgen/matcher.py
+%%PYTHON_SITELIBDIR%%/xcbgen/state.py
+%%PYTHON_SITELIBDIR%%/xcbgen/xtypes.py
+%%PYTHON_SITELIBDIR%%/xcbgen/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/error.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/expr.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/matcher.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/state.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/error.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/expr.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/matcher.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/state.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyo
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/xcbgen

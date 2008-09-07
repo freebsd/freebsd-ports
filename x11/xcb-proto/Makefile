@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xcb-proto
-PORTVERSION=	1.1
-CATEGORIES=	x11
+PORTVERSION=	1.2
+CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	wahjava@gmail.com
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
+USE_PYTHON=	2.5
 GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/xcb
