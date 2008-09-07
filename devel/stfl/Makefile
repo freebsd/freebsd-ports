@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stfl
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel
-MASTER_SITES=	http://www.clifford.at/stfl/ CENKES
+MASTER_SITES=	http://www.clifford.at/stfl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 
 USE_LDCONFIG=	yes
@@ -23,10 +23,6 @@ LDLIBS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDLIBS="${LDLIBS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-BROKEN=	Unicoded ncurses require 5.3
-.endif
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
