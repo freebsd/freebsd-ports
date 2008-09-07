@@ -1,0 +1,13 @@
+--- ./CMakeLists.txt.orig	2008-09-02 03:12:37.000000000 +0400
++++ ./CMakeLists.txt	2008-09-07 16:16:33.000000000 +0400
+@@ -188,8 +188,8 @@
+ add_dependencies(mod_common genversion_run)
+ 
+ # Generate binary translation files
+-include(QuasselGenerateTranslations)
+-quassel_generate_i18n_resource(RC_I18N ${LINGUAS})
++# include(QuasselGenerateTranslations)
++# quassel_generate_i18n_resource(RC_I18N ${LINGUAS})
+ 
+ # Add resources
+ qt4_add_resources(RC_ICONS src/icons/icons.qrc)
