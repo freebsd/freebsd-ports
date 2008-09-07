@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	community/sigs/current/distutils-sig/download
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Distutils-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Module Distribution Utilities
 
 USE_PYTHON=	yes

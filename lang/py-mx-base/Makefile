@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	tg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eGenix mx-Extension Series for Python
 
 FETCH_CMD=	/usr/bin/fetch -ar

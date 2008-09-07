@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.xskat.de/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Skat
 
 .if defined(WITH_ALTENBURGER_CARDS)

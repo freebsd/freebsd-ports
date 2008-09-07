@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.eecs.harvard.edu/~nr/noweb/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple, extensible literate-programming tool
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon

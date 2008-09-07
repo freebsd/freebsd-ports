@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/random/
 DISTNAME=	ranlib.c
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
 USE_LDCONFIG=	yes

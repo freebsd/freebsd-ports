@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gadfly
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		gadfly-${PORTVERSION}
 
-MAINTAINER=		tg@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Graph and set datatypes for Python (C extension)
 
 USE_PYTHON=		yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyrtf
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRTF-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to create RTF documents using the Python language
 
 USE_PYTHON=	yes

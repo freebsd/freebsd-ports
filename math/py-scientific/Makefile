@@ -13,7 +13,7 @@ MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/1034/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ScientificPython-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python modules for scientific computing
 
 BUILD_DEPENDS=	${PYNUMERIC}
