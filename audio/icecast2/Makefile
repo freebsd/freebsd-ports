@@ -13,7 +13,7 @@ CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://svn.xiph.org/releases/icecast/
 DISTNAME=	icecast-${PORTVERSION}
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A streaming mp3/ogg-vorbis audio server
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

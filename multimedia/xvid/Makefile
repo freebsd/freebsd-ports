@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm

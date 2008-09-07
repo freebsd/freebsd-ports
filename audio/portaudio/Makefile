@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
 USE_ZIP=	yes

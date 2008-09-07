@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic data for the HPIJS printer drivers
 
 BUILD_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db

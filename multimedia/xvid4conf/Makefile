@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nerim.net/debian-marillat/pool/main/x/xvid4conf/ \
 MASTER_SITE_SUBDIR=lofi
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XviD configuration panel for transcode
 
 GNU_CONFIGURE=	yes

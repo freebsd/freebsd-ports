@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=lofi
 DISTFILES=	alignmargins align.ps
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility script to generate custom margins in PPDs for CUPS
 
 NO_BUILD=	yes

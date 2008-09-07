@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
 LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth

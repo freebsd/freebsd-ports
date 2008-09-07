@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lofi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KSBA is an X.509 Library
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
