@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lazysearch
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	audio
 # Distfile mirrored due to being unversioned on author's site
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/slimserver/${PORTNAME}/ \
