@@ -554,6 +554,7 @@ share/gnucash/accounts/zh_CN/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/zh_CN/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/zh_CN/acctchrt_spouseretire.gnucash-xea
 share/gnucash/checks/deluxe.chk
+share/gnucash/checks/liberty.chk
 share/gnucash/checks/quicken.chk
 share/gnucash/checks/quicken_wallet.chk
 share/gnucash/doc/AUTHORS
@@ -794,6 +795,7 @@ share/gnucash/scm/qif-import/qif-utils.scm
 share/gnucash/scm/report-utilities.scm
 share/gnucash/scm/report.scm
 share/gnucash/scm/simple-obj.scm
+share/gnucash/scm/string.scm
 share/gnucash/scm/substring-search.scm
 share/gnucash/scm/txf-de_DE.scm
 share/gnucash/scm/txf-help-de_DE.scm
@@ -829,6 +831,8 @@ share/gnucash/xml/qsf/pilot-qsf-gncCustomer.xml
 share/gnucash/xml/qsf/qsf-map.xsd.xml
 share/gnucash/xml/qsf/qsf-object.xsd.xml
 share/icons/hicolor/16x16/apps/gnucash-icon.png
+share/icons/hicolor/22x22/apps/gnucash-icon.png
+share/icons/hicolor/24x24/apps/gnucash-icon.png
 share/icons/hicolor/32x32/apps/gnucash-icon.png
 share/icons/hicolor/48x48/apps/gnucash-icon.png
 share/icons/hicolor/scalable/apps/gnucash-icon.svg
@@ -843,6 +847,7 @@ share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/es_NI/LC_MESSAGES/gnucash.mo
 share/locale/eu/LC_MESSAGES/gnucash.mo
 share/locale/fr/LC_MESSAGES/gnucash.mo
+share/locale/he/LC_MESSAGES/gnucash.mo
 share/locale/hu/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
 share/locale/ja/LC_MESSAGES/gnucash.mo
