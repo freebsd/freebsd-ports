@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPANPLUS plug-in to use Module-Build
 
 BUILD_DEPENDS=	p5-CPANPLUS>=0.0720:${PORTSDIR}/devel/p5-CPANPLUS \

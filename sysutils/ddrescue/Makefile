@@ -10,7 +10,7 @@ DISTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data recovery tool
 
 HAS_CONFIGURE=	yes

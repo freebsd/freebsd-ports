@@ -10,7 +10,7 @@ PORTVERSION=	2.0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Enhanced syslog daemon
 
 LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging

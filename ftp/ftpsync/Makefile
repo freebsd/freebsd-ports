@@ -10,7 +10,7 @@ PORTVERSION=	1.2.33
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww

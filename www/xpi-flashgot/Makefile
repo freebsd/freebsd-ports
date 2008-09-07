@@ -11,7 +11,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	www
 MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download links using popular download managers
 
 XPI_ID=		{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}

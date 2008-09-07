@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
 USE_TK_RUN=	yes

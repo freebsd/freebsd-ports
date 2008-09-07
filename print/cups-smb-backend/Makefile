@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CUPS backend for printing to Windows servers
 
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \

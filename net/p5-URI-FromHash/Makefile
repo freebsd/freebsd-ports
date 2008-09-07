@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create URI from hash of components
 
 BUILD_DEPENDS=	p5-URI>=1.22:${PORTSDIR}/net/p5-URI

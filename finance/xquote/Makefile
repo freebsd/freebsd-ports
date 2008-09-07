@@ -11,7 +11,7 @@ CATEGORIES=	finance
 MASTER_SITES=	http://xinvest.sunsite.dk/ \
 		http://www.sourcefiles.org/Financial/Stockmarket/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quote retrieval tool for X
 
 LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae

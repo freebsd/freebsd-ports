@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/tm/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal mixer
 
 PLIST_FILES=	bin/${PORTNAME}

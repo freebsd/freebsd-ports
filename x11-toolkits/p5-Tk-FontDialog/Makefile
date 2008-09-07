@@ -7,11 +7,11 @@
 
 PORTNAME=	Tk-FontDialog
 PORTVERSION=	0.14
-CATEGORIES=	x11-toolkits perl5
+CATEGORIES=	x11-toolkits perl5 tk
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Font dialog widget
 
 BUILD_DEPENDS=	p5-Tk>=804:${PORTSDIR}/x11-toolkits/p5-Tk

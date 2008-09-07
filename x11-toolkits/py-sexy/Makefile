@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libsexy bindings for Python
 
 LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy

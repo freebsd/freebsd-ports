@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks perl5
 MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-timezone clock
 
 BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

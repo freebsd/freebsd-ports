@@ -10,7 +10,7 @@ PORTVERSION=	0.3.6
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pyawale/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
 RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game

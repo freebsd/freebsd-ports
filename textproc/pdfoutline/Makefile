@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/fntsample
 DISTNAME=	fntsample-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add outlines to PDF files
 
 RUN_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2

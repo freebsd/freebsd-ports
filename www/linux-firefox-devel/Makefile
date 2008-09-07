@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 PKGNAMESUFFIX=		-devel
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 USE_BZIP2=	yes

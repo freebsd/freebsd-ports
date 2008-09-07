@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libots
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Text Summarizer
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CENKES
 # http://www.cs.unc.edu/Research/compgeom/gzstream/gzstream.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides zlib functionality in an iostream
 
 USE_LDCONFIG=	yes

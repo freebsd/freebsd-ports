@@ -10,7 +10,7 @@ PORTVERSION=	2.5.35
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \

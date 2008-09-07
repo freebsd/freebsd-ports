@@ -10,7 +10,7 @@ PORTVERSION=	1.1.12
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple personal calendar
 
 USE_BZIP2=	yes

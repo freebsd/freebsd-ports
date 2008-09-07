@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-scripts
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper scripts for xxdiff
 
 BUILD_DEPENDS=	xxdiff:${PORTSDIR}/textproc/xxdiff

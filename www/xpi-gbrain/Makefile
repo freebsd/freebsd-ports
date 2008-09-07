@@ -10,7 +10,7 @@ PORTVERSION=	0.5.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keeps your browser history at Google bookmarks
 
 XPI_NUM=	2515

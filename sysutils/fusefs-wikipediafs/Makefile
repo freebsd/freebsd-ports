@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount mediawikis
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs

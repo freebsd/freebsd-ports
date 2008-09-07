@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mp3 bitrate plot tool
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost

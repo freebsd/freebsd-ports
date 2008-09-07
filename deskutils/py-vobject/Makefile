@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://vobject.skyhouseconsulting.com/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICalendar library
 
 RUN_DEPENDS=	py*-dateutil>=1.1:${PORTSDIR}/devel/py-dateutil

@@ -15,7 +15,7 @@ MASTER_SITES=	CENKES http://apt.sw.be/packages/mplayerplug-in/ \
 PKGNAMEPREFIX=	linux-
 SRC_DISTFILES=
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed MPlayer into browser
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

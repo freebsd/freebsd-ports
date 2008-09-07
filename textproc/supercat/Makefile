@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://supercat.nosredna.net/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regexp-based text colorizer with ASCII/HTML output
 
 GNU_CONFIGURE=	yes

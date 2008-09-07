@@ -10,7 +10,7 @@ PORTVERSION=	2.0.6
 CATEGORIES=	japanese www
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web proxy converting Japanese into Romaji
 
 RUN_DEPENDS=	*p5-Text-Kakasi>=2:${PORTSDIR}/japanese/p5-Text-Kakasi \

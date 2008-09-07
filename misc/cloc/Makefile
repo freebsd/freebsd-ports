@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Counts lines of code
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff

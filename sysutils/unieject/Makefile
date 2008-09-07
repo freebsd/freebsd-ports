@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eject(1) replacement
 
 LIB_DEPENDS=	cdio.8:${PORTSDIR}/sysutils/libcdio \

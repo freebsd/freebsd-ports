@@ -10,7 +10,7 @@ PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 
 USE_LDCONFIG=	yes

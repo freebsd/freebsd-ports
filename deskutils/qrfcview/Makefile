@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical RFC viewer
 
 USE_QT_VER=	4

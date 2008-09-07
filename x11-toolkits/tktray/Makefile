@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	http://www.sw4me.com/ CENKES
 DISTNAME=	${TKPKG}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System tray icon support
 
 USE_TK=		yes

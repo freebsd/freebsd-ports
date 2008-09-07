@@ -12,7 +12,7 @@ MASTER_SITES=	http://klappnase.bubble.org/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TkinterTreectrl-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TkTreectrl Python bindings
 
 LIB_DEPENDS=	treectrl.0:${PORTSDIR}/x11-toolkits/tktreectrl

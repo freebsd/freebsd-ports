@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AmaroK replacement for GTK+
 
 RUN_DEPENDS=	py*-dbus>=0.82.1:${PORTSDIR}/devel/py-dbus \

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://home.arcor.de/mdoege/newsfeed/ CENKES
 DISTNAME=	NewsFeed-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS/RDF/Atom reader and aggregator
 
 RUN_DEPENDS=	py*-tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \

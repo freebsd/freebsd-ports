@@ -10,7 +10,7 @@ PORTVERSION=	20060219
 CATEGORIES=	audio
 MASTER_SITES=	http://freepats.opensrc.org/ GENTOO/distfiles
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open set of instrument patches
 
 USE_BZIP2=	yes

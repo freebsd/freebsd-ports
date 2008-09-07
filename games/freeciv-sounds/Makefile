@@ -12,7 +12,7 @@ MASTER_SITES=	GENTOO/distfiles ftp://ftp.freeciv.org/freeciv/contrib/audio/sound
 PKGNAMESUFFIX=	-sounds
 DISTNAME=	stdsounds${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freeciv standard sound set
 
 NO_BUILD=	yes

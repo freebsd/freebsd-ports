@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.gson.org/egypt/download/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create call graphs of C programs
 
 USE_PERL5_RUN=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://nadav.harel.org.il/homepage/hoc/ CENKES
 PKGNAMEPREFIX=	nyh-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Order Calculator
 
 GNU_CONFIGURE=	yes

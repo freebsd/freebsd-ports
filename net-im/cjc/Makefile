@@ -11,7 +11,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	CENKES http://jabberstudio.2nw.net/cjc/
 # svn export -r675 http://cjc.jajcus.net/svn/cjc/trunk cjc
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Console Jabber Client
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.0.0.644:${PORTSDIR}/net-im/py-pyxmpp

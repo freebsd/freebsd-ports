@@ -13,7 +13,7 @@ PKGNAMEPREFIX=
 DISTFILES=	${SUNBIRD_I18N_:S|$|.xpi|}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Localized interface for Sunbird
 
 .ifndef WITHOUT_SWITCHER

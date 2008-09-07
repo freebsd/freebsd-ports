@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]*

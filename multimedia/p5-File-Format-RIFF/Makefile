@@ -11,7 +11,7 @@ CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, manipulate, and write RIFF files
 
 PERL_CONFIGURE=	YES

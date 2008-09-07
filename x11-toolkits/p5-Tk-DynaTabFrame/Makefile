@@ -8,11 +8,11 @@
 PORTNAME=	Tk-DynaTabFrame
 PORTVERSION=	0.23
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits perl5
+CATEGORIES=	x11-toolkits perl5 tk
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NoteBook widget with orientable, dynamically stacking tabs
 
 BUILD_DEPENDS=	p5-Tk>=804.027:${PORTSDIR}/x11-toolkits/p5-Tk

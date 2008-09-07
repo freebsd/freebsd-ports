@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CENKES
 DISTNAME=	${PORTNAME}-3.99-u4-b5
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
 USE_AUTOTOOLS=	libtool:15

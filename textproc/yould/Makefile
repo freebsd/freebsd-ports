@@ -10,7 +10,7 @@ PORTVERSION=	0.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://ygingras.net/files/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pronounceable word generator
 
 USE_PYTHON=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Renames files in a proper English title format
 
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2

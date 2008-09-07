@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/libymp
 DISTNAME=	libYGP-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4

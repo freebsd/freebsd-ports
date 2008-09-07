@@ -13,7 +13,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
 DIST_SUBDIR=	${PKGNAME}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SFE
 DISTNAME=	YaBB_${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The original free open-source forum written in Perl
 
 RUN_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \

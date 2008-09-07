@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find similar music by perceptual hashing
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \

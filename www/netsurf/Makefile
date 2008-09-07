@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.netsurf-browser.org/download/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight web browser
 
 BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon \

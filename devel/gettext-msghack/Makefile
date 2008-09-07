@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	gettext-
 # Bundled in fedora gettext srpm
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
 
 NO_BUILD=	yes

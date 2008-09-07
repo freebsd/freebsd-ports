@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES
 # svn export -rSNAPREV https://www.portaudio.com/repos/portaudio/branches/v19-devel
 LATEST_LINK=	${PORTNAME}2
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
 SNAPREV=	1175

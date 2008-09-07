@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra-liberal feed finder
 
 USE_PYTHON=	yes

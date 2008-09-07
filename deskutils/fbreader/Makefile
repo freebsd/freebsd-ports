@@ -13,7 +13,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

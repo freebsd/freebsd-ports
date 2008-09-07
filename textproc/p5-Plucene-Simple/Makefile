@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STRYTOAST
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to Plucene
 
 BUILD_DEPENDS=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \

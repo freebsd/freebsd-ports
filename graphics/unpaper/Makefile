@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	CENKES BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
 
 do-build:

@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
 MASTER_SITES=	BERLIOS CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
 
 USE_ICONV=	yes

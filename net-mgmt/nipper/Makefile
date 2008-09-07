@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netdev config analyzer
 
 PLIST_FILES=	bin/${PORTNAME} etc/nipper.conf.sample

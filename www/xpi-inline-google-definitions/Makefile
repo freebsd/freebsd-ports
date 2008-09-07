@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows Google Definitions for the selected word
 
 XPI_DISTNAME=	inline_google_definitions

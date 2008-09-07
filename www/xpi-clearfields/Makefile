@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbar buttons that clear input fields
 
 XPI_DISTNAME=	clear_fields

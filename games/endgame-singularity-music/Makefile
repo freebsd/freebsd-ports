@@ -10,7 +10,7 @@ PORTVERSION=	005
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
 PROJECTHOST=	endgame-singularity

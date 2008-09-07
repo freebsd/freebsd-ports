@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://spoofer.csail.mit.edu/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANA Spoofer Project testing software
 
 PLIST_FILES=	bin/spoofer

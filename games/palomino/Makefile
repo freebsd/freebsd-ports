@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action flight simulator with its own 3D engine
 
 USE_ZIP=	yes

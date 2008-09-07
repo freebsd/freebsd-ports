@@ -10,7 +10,7 @@ PORTVERSION=	2006.10.09
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A statusbar button to quickly turn the proxy on and off
 
 XPI_ID=		{d5ea4520-61a1-11da-8cd6-0800200c9a66}

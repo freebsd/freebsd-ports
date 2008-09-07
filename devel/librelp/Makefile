@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	CENKES http://download.rsyslog.com/librelp/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
 USE_LDCONFIG=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain ASCII text into PNG bitmap images
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

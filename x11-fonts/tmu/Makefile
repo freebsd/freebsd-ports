@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	CENKES
 # http://www.thdl.org/tools/fonts/index.html
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Tibetan Machine Uni font
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\

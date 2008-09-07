@@ -10,7 +10,7 @@ PORTVERSION=	0.1.9
 CATEGORIES=	textproc python
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm

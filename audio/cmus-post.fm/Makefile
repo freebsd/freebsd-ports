@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	cmus-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last.fm submitter
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \

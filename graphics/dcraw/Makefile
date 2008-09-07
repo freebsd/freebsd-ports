@@ -10,7 +10,7 @@ PORTVERSION=	8.86
 CATEGORIES=	graphics
 MASTER_SITES=	CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

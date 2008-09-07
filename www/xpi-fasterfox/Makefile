@@ -10,7 +10,7 @@ PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance and network tweaks for Firefox
 
 XPI_NUM=	1269

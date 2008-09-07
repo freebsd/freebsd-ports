@@ -12,7 +12,7 @@ MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
 PKGNAMEPREFIX=	endgame-
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulates the life of a true AI
 
 RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game

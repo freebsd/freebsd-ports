@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check if a hostname is blacklisted
 
 USE_BZIP2=	yes

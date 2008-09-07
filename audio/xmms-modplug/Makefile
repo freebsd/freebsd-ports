@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PKGNAMEPREFIX:S/-//}
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modplug-based plugin for XMMS
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms

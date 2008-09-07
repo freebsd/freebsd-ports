@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	IMDb_Preview_${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preview movie & actor posters when hovering over their IMDb links
 
 XPI_ID=		{10187899-7ffe-4f9a-b9d2-35fdb3b49690}

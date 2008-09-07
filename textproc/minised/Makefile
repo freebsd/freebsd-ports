@@ -10,7 +10,7 @@ PORTVERSION=	1.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smaller, cheaper, faster sed implementation
 
 ALL_TARGET=	${PORTNAME}

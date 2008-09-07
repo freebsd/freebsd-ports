@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	CENKES http://ichi2.net/anki/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
 
 BUILD_DEPENDS=	py*-qt4-core>=4.2:${PORTSDIR}/devel/py-qt4-core \

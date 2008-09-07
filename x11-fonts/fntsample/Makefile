@@ -13,7 +13,7 @@ MASTER_SITES=	SF http://unicode.org/Public/5.0.0/ucd/:unidata
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Blocks.txt:unidata
 EXTRACT_ONLY=	${DISTFILES:M*gz}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show Unicode coverage of a font
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

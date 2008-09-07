@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CENKES
 #http://www.suckless.org/cgi-bin/hgwebdir.cgi/9base/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of various original plan9 tools
 
 USE_BZIP2=	yes

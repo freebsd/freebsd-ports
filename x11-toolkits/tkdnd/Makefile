@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	CENKES
 # Distfile prepared from SourceForge CVS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Native drag and drop capabilities
 
 USE_BZIP2=	yes

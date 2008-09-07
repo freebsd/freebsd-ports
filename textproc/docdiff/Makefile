@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare text word by word
 
 RUN_DEPENDS=	*ruby*-uconv>=0:${PORTSDIR}/japanese/ruby-uconv \

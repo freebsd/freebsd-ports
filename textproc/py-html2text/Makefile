@@ -11,7 +11,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert HTML into clean plain ASCII text
 
 USE_PYTHON=	yes
