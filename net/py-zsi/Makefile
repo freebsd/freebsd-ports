@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsi
-PORTVERSION=	1.7
+PORTVERSION=	2.0
 PORTEPOCH=	1
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,9 +17,12 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A pure Python module that provides an implementation of SOAP 1.1
 
+BUILD_DEPENDS=	${PYXML}
+RUN_DEPENDS=	${PYXML}
+
 CONFLICTS=	py-zsi-devel-2.*
 
-USE_PYTHON=	2.0+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	ZSI
 
@@ -29,6 +32,8 @@ post-install:
 .for docfile in CHANGES README doc/zsi.* doc/*.tex
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 .for subdir in interop samples test
 	@${MKDIR} ${EXAMPLESDIR}/${subdir}
 	@${CP} -rp ${WRKSRC}/${subdir}/* ${EXAMPLESDIR}/${subdir}
