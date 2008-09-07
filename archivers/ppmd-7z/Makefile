@@ -12,7 +12,7 @@ MASTER_SITES=	SF/p7zip
 PKGNAMESUFFIX=	-7z
 DISTNAME=	p7zip_${DISTVERSION}_src_all
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	High-ratio PPMD compressor
 
 USE_BZIP2=	yes
