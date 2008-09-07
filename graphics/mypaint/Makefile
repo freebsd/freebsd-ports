@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.ee.ethz.ch/~mrenold/mypaint/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
 USE_BZIP2=	yes

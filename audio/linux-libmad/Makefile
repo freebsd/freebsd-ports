@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.freshrpms.net/pub/freshrpms/%SUBDIR%/ \
 		ftp://ftp.freshrpms.net/pub/freshrpms/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${LINUX_DIST}/linux/${LINUX_DIST_VER}/${PORTNAME}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 ONLY_FOR_ARCHS=	i386 amd64

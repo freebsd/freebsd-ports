@@ -9,7 +9,7 @@ PORTNAME=	libtheora
 DISTVERSION=	1.0alpha4-2
 CATEGORIES=	multimedia linux
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video codec
 
 ONLY_FOR_ARCHS=	i386 amd64

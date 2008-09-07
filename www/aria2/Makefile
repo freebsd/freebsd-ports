@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}c-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another download tool
 
 #CPPFLAGS=	-g

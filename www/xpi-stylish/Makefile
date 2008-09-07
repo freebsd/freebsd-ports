@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 DISTVERSIONSUFFIX=	-fx+tb+sm+fl
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User styles manager
 
 XPI_NUM=	2108

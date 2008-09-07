@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme

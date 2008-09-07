@@ -12,7 +12,7 @@ CATEGORIES=	astro tk
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tkgeomap
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays U.S. Census Burea populated places on a map
 
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap

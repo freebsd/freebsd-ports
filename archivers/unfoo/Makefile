@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	CENKES
 #http://obsoleet.org/code/unfoo/unfoo-1.0.6.sh
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny sh(1) wrapper to simplify decompression of files
 
 RUN_DEPENDS=	unace:${PORTSDIR}/archivers/unace \

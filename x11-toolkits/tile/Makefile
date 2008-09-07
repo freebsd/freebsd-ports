@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/tktable
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themed widget set for Tk
 
 USE_TK=		yes

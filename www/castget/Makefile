@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SAVANNAH CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line podcast downloader
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \

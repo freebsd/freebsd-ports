@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	misc
 MASTER_SITES=	http://libcaca.zoy.org/files/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
 
 LIB_DEPENDS=	cucul.0:${PORTSDIR}/graphics/libcaca

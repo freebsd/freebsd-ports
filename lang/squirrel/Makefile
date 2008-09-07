@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_stable
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level imperative/OO programming language
 
 CONFLICTS=	squsq-[0-9]*

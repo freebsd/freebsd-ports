@@ -10,7 +10,7 @@ PORTVERSION=	0.7.8
 CATEGORIES=	www python
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webapp framework with modpython-based and stand-alone modes
 
 RUN_DEPENDS=	py*-kid>=0.9.5:${PORTSDIR}/devel/py-kid

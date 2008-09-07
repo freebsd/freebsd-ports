@@ -2,7 +2,7 @@ PORTNAME?=	rsyslog
 PORTVERSION?=	3.17.2
 CATEGORIES?=	sysutils
 MASTER_SITES?=	CENKES http://download.rsyslog.com/rsyslog/
-MAINTAINER?=	infofarmer@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 
 CONFLICTS=	rsyslog-2.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include

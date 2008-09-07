@@ -11,7 +11,7 @@ DISTVERSION=	0.21
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort any HTML data table
 
 XPI_NUM=	2637

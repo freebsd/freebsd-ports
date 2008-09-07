@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to display form's action
 
 XPI_NUM=	1579

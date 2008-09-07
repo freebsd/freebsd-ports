@@ -10,7 +10,7 @@ PORTVERSION=	1.8.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/pktstat/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network traffic viewer
 
 GNU_CONFIGURE=	yes

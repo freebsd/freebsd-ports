@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0.1
 CATEGORIES=	astro
 MASTER_SITES=	CENKES BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line weather reporting tool
 
 USE_BZIP2=	yes

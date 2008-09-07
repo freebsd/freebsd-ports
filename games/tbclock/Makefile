@@ -10,7 +10,7 @@ PORTVERSION=	1.10
 CATEGORIES=	games
 MASTER_SITES=	http://tamentis.com/projects/tbclock/files/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary clock in curses
 
 HAS_CONFIGURE=	yes

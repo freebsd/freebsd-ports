@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	CENKES # SF
 DISTNAME=	${PORTNAME}.${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch renamer
 
 RUN_DEPENDS=	p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \

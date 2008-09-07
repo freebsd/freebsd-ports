@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	alpha
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for movie subtitles in SubRipper format
 
 USE_PYTHON=	yes

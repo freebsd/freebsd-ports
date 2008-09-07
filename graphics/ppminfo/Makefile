@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.vanheusden.com/ppminfo/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows details of a ppm file
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm

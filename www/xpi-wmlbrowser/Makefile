@@ -10,7 +10,7 @@ PORTVERSION=	0.7.17
 CATEGORIES=	www
 MASTER_SITES=	MOZDEV
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WML implementation
 
 XPI_ID=		{c4dc572a-3295-40eb-b30f-b54aa4cdc4b7}

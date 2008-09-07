@@ -15,7 +15,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The social web browser
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"

@@ -12,7 +12,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/heroines
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

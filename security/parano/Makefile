@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	CENKES BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gnome program to deal with hashfiles
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2

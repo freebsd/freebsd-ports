@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://creo.hu/~csaba/stuff/reclinker/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recursive symlinking utility
 
 PLIST_FILES=	bin/${PORTNAME} bin/recdeleter bin/reclinktester

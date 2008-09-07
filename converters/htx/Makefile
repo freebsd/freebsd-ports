@@ -10,7 +10,7 @@ DISTVERSION=	0.7.8
 CATEGORIES=	converters www
 MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
 USE_PERL5=	yes

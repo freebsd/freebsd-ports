@@ -13,7 +13,7 @@ MASTER_SITES=	CENKES http://ichi2.net/anki/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spaced-repetition memory training library
 
 BUILD_DEPENDS=	py*-numpy>=0:${PORTSDIR}/math/py-numpy \

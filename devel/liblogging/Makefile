@@ -10,7 +10,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	CENKES http://download.rsyslog.com/liblogging/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use system logging library
 
 USE_LDCONFIG=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CENKES
 PKGNAMEPREFIX=	${APP}-
 DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Crossfading/Gapless Plugin
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms

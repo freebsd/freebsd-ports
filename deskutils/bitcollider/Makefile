@@ -10,7 +10,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	deskutils multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bitzi metadata generator
 
 HAS_CONFIGURE=	yes

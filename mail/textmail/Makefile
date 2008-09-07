@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://raf.org/textmail/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts e-mail attachments to plain-text
 
 RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \

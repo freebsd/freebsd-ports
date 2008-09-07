@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \

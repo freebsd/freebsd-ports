@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.0x743.com/vee/ CENKES
 # Also here: http://code.google.com/p/vee/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny CLI blogging tool
 
 NO_BUILD=	yes

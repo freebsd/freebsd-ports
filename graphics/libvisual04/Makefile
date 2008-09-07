@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	04
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
 USE_AUTOTOOLS=	libtool:15

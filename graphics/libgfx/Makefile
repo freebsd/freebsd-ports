@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/FLTK development
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

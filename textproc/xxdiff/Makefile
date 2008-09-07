@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \

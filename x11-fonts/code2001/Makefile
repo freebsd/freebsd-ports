@@ -12,7 +12,7 @@ MASTER_SITES=	http://code2000.net/ CENKES/myports/${DIST_SUBDIR}
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Plane 1 Unicode-based Font
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\

@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to edit xorg.conf
 
 USE_WX=		2.6

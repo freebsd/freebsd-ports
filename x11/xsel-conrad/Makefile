@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/ \
 		CENKES
 PKGNAMESUFFIX=	-conrad
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access X selection from command line
 
 CONFLICTS=	xsel-[0-9]*

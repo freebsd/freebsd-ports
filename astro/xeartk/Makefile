@@ -12,7 +12,7 @@ CATEGORIES=	astro tk
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tkgeomap
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small demo for tkgeomap
 
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap

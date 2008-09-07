@@ -10,7 +10,7 @@ PORTVERSION=	2.11.4
 CATEGORIES=	astro tcl
 MASTER_SITES=	SF/tkgeomap
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, manipulate and display geo data
 
 USE_TCL=	82+

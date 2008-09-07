@@ -13,7 +13,7 @@ MASTER_SITES=	SF/fuse
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fuse-python-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE Python bindings
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs

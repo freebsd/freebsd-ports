@@ -11,7 +11,7 @@ DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
 MASTER_SITES=	http://frei0r.kexbox.org/download/source/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic plugin API for video effects
 
 NO_BUILD=	yes

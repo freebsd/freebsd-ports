@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X screen locker
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured classic dice game Yahtzee
 
 GNU_CONFIGURE=	yes

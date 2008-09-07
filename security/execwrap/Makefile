@@ -12,7 +12,7 @@ MASTER_SITES=	http://cyanite.org/execwrap/ CENKES
 DISTNAME=	ExecWrap-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super-user exec wrapper
 
 NO_WRKSUBDIR=	yes

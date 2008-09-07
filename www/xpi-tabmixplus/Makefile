@@ -10,7 +10,7 @@ DISTVERSION=	0.3.6
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhances tab browsing capabilities
 
 XPI_DISTNAME=	tab_mix_plus

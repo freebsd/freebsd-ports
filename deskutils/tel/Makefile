@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little console-based phone book manager
 
 USE_BZIP2=	yes

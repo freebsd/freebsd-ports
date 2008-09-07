@@ -10,7 +10,7 @@ PORTVERSION=	3.0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose .wav processing utility
 
 GNU_CONFIGURE=	yes

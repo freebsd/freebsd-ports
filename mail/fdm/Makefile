@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	SFE
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetches and delivers mail
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \

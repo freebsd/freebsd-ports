@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://asturio.gmxhome.de/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reversi/Othello clone
 
 USE_GETTEXT=	yes

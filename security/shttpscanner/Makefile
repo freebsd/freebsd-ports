@@ -11,7 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	SF
 DISTNAME=	sHTTPScanner_v${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple HTTP scanner
 
 USE_ZIP=	yes

@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	MOZDEV
 PKGNAMEPREFIX?=
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A completely keyboard driven browser based on firefox
 
 RUN_DEPENDS=	${CONK_APP}:${PORTSDIR}/www/${CONK_APP}

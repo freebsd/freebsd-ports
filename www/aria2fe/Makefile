@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aria2 QT front-end
 
 RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \

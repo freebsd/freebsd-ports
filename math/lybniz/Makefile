@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}2
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematical function graph plotter
 
 USE_PYTHON=	yes

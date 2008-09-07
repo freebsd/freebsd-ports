@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
 
 BUILD_DEPENDS=	swig>=1.3.31:${PORTSDIR}/devel/swig13

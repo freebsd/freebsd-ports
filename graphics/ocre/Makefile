@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/ CENKES
 DISTNAME=	${PORTNAME}_v${DISTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple optical character recognition solution
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell

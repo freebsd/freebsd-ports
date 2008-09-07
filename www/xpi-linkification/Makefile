@@ -10,7 +10,7 @@ PORTVERSION=	1.3.3
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts text links into genuine, clickable links
 
 XPI_ID=		{35106bca-6c78-48c7-ac28-56df30b51d2a}

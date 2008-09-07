@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monkey's Audio Codec non-win32 port
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \

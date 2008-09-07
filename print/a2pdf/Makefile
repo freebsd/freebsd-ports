@@ -10,7 +10,7 @@ PORTVERSION=	1.13
 CATEGORIES=	print
 MASTER_SITES=	http://perl.jonallen.info/pub/Main/Ascii2Pdf/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to PDF converter
 
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \

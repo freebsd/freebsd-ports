@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}src-${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool15

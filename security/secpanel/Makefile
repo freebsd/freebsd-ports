@@ -13,7 +13,7 @@ CATEGORIES=	security tcl tk
 MASTER_SITES=	http://themediahost.de/secpanel/data/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass

@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/aifftools
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://richard.jones.name/google-hacks/gmail-filesystem/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyOpenSSLProxy-${PORTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTPS proxy support
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl

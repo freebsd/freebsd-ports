@@ -13,7 +13,7 @@ DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game with elaborate stunts
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \

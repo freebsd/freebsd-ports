@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES
 # Unversioned distfile available from:
 # http://www.signedness.org/tools/zniper.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and reset active TCP connections
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

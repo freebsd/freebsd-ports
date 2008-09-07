@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_lib_${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

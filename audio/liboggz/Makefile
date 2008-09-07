@@ -10,7 +10,7 @@ DISTVERSION=	0.9.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.annodex.net/software/liboggz/download/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Ogg API
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg

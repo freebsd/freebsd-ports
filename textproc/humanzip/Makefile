@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	textproc archivers
 MASTER_SITES=	SAVANNAH CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compresses text to human readable output
 
 post-patch:

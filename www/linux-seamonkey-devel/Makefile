@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/nightly/${SNAPDATE}-02-trunk
 PKGNAMESUFFIX=		-devel
 DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 SNAPDATE=	2007-12-12

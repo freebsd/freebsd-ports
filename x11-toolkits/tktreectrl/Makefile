@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
 USE_TK=		yes

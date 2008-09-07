@@ -10,7 +10,7 @@ PORTVERSION=	8.24
 CATEGORIES=	textproc tk
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual regexp development and execution
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets

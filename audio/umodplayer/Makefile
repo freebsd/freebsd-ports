@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console module player
 
 LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug \

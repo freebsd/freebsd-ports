@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.0x1.org/d/projects/mical/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalist iCalendar toolset
 
 RUN_DEPENDS=	py*-dateutil>=1.1:${PORTSDIR}/devel/py-dateutil \

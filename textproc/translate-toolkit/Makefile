@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
 BUILD_DEPENDS=	py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \

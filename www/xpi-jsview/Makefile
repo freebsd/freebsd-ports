@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CENKES
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
 
 XPI_ID=		{cf15270e-cf08-4def-b4ea-6a5ac23f3bca}

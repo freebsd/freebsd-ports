@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics audio
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
 
 USE_SDL=	sdl

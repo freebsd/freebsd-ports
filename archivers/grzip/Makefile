@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient file compressor
 
 USE_BZIP2=	yes

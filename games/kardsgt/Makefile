@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Card game suite
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

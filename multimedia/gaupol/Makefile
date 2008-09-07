@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/enchant/__init__.py:${PORTSDIR}/textproc/py-enchant \

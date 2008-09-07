@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} CENKES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff

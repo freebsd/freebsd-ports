@@ -10,7 +10,7 @@ PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serial task spooler
 
 PLIST_FILES=	bin/${PORTNAME}

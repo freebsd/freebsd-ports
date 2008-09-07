@@ -10,7 +10,7 @@ DISTVERSION=	0.9f.2
 DISTVERSIONSUFFIX=	-fx+tb+sb
 CATEGORIES=	www
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists installed extensions and themes
 
 XPI_ID=		{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}

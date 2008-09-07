@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.suckless.org/download/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone client/server 9P library
 
 USE_LDCONFIG=	yes

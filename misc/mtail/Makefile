@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://matt.immute.net/src/mtail/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small tail workalike that performs output coloring
 
 NO_BUILD=	yes

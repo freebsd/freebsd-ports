@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modplug-based plugin for beep-media-player
 
 LIB_DEPENDS?=	beep.2:${PORTSDIR}/multimedia/beep-media-player

@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy access to SQLite databases using objects
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Gomor.pm:${PORTSDIR}/devel/p5-Class-Gomor \

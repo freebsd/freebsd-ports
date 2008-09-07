@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	diary-
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal workout diary program for bodybuilders
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/__init__.py:${PORTSDIR}/databases/py-PySQLite11
