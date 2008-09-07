@@ -1,0 +1,16 @@
+--- ./debian/logcheck.cron.d.orig	2006-08-06 19:10:49.000000000 -0400
++++ ./debian/logcheck.cron.d	2008-09-06 19:11:28.000000000 -0400
+@@ -1,9 +1,5 @@
+-# /etc/cron.d/logcheck: crontab entries for the logcheck package
+-
+-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
++# crontab entries for the logcheck package
++PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+ MAILTO=root
+-
+-@reboot         logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck -R; fi
+-2 * * * *       logcheck    if [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi
+-
+-# EOF
++@reboot    if [ -x /usr/local/sbin/logcheck ]; then nice -n10 /usr/local/sbin/logcheck -R; fi
++2 * * * *  if [ -x /usr/local/sbin/logcheck ]; then nice -n10 /usr/local/sbin/logcheck; fi

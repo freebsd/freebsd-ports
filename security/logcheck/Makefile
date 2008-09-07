@@ -6,45 +6,68 @@
 #
 
 PORTNAME=	logcheck
-PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.54
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sentrytools
+MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/l/logcheck/ \
+		http://ftp.de.debian.org/debian/pool/main/l/logcheck/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
-# Install binaries and config files readable to root only
-BINMODE=	700
-SHAREMODE=	600
+BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
+RUN_DEPENDS=	lockfile:${PORTSDIR}/mail/procmail \
+		bash:${PORTSDIR}/shells/bash \
+		perl:${PORTSDIR}/lang/perl5
 
-LOGCHECK_TMP?=	/var/run/logcheck
-PLIST_SUB+=	LOGCHECK_TMP=${LOGCHECK_TMP}
-
-CONFIG_FILES=	logcheck.hacking logcheck.ignore \
-		logcheck.violations logcheck.violations.ignore
-DOCS=		CREDITS INSTALL README README.how.to.interpret README.keywords
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BINMODE=	755
+SHAREMODE=	640
+SUB_FILES=	pkg-install pkg-deinstall pkg-message
+CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
+		ignore.d.workstation violations.d violations.ignore.d
+DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
+PORTDOCS=	${DOCS:T}
+MAN8=		logcheck.8 logtail.8
 
 do-build:
-	cd ${WRKSRC}/src && ${CC} ${CFLAGS} -o logtail logtail.c
-	${REINPLACE_CMD} -e 's!/usr/local/bin/logtail!${PREFIX}/bin/logtail!' \
-		-e 's!/usr/local/etc/tmp!${LOGCHECK_TMP}!' \
-		-e 's!/usr/local/etc/logcheck!${PREFIX}/etc/logcheck!' \
-		${WRKSRC}/systems/freebsd/logcheck.sh
+	${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
+	${WRKSRC}/etc/logcheck.logfiles
+	${REINPLACE_CMD} -e 's!/etc/logcheck!/usr/local/etc/logcheck!' \
+	-e 's!/usr/share/doc/logcheck-database/README.logcheck-database.gz!${DOCSDIR}/README.logcheck-database!' \
+	${WRKSRC}/docs/logcheck.sgml
+	docbook-to-man ${WRKSRC}/docs/logcheck.sgml > ${WRKSRC}/docs/logcheck.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/logtail ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/systems/freebsd/logcheck.sh ${PREFIX}/etc
-	@${MKDIR} ${EXAMPLESDIR}
-.for f in ${CONFIG_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${f} ${PREFIX}/etc/${f}.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${PREFIX}/sbin
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${INSTALL} -d /var/lib/logcheck
+	@${INSTALL} -d /var/run/logcheck
+	${CHOWN} logcheck:logcheck /var/lib/logcheck
+	${CHOWN} logcheck:logcheck /var/run/logcheck
+	@${INSTALL} -d ${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf ${ETCDIR}/logcheck.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles ${ETCDIR}/logcheck.logfiles.sample
+.for i in ${CONFIG_DIRS}
+	@${INSTALL} -d ${ETCDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* ${ETCDIR}/${i}
 .endfor
-	${TEST} -d ${LOGCHECK_TMP} || ${MKDIR} -m 700 ${LOGCHECK_TMP}
-	${CHOWN} root:wheel ${LOGCHECK_TMP}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} -d ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d ${EXAMPLESDIR}/crontab.in
 .endif
+	${CHOWN} -R root:logcheck ${ETCDIR}
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL_MAN} ${WRKSRC}/docs/*.8 ${MAN8PREFIX}/man/man8
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${CHMOD} 644 ${DOCSDIR}/*
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
