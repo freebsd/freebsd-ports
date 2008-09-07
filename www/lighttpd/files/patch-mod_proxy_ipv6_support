@@ -1,0 +1,57 @@
+#
+# http://trac.lighttpd.net/trac/ticket/1537
+#
+--- src/mod_proxy.c	2007-08-18 03:17:00.000000000 +0500
++++ src/mod_proxy.c	2008-01-27 20:32:05.514825062 +0400
+@@ -356,6 +356,7 @@
+ static int proxy_establish_connection(server *srv, handler_ctx *hctx) {
+ 	struct sockaddr *proxy_addr;
+ 	struct sockaddr_in proxy_addr_in;
++	struct sockaddr_in6 proxy_addr_in6;
+ 	socklen_t servlen;
+ 
+ 	plugin_data *p    = hctx->plugin_data;
+@@ -364,12 +365,20 @@
+ 
+ 	memset(&proxy_addr, 0, sizeof(proxy_addr));
+ 
+-	proxy_addr_in.sin_family = AF_INET;
+-	proxy_addr_in.sin_addr.s_addr = inet_addr(host->host->ptr);
+-	proxy_addr_in.sin_port = htons(host->port);
+-	servlen = sizeof(proxy_addr_in);
++	if (strstr(host->host->ptr,":")) {
++	    proxy_addr_in6.sin6_family = AF_INET6;
++	    inet_pton(AF_INET6,host->host->ptr,(char *)&proxy_addr_in6.sin6_addr);
++	    proxy_addr_in6.sin6_port = htons(host->port);
++	    servlen = sizeof(proxy_addr_in6);
++	    proxy_addr = (struct sockaddr *) &proxy_addr_in6;
++	} else {
++	    proxy_addr_in.sin_family = AF_INET;
++	    proxy_addr_in.sin_addr.s_addr = inet_addr(host->host->ptr);
++	    proxy_addr_in.sin_port = htons(host->port);
++	    servlen = sizeof(proxy_addr_in);
++	    proxy_addr = (struct sockaddr *) &proxy_addr_in;
++	}
+ 
+-	proxy_addr = (struct sockaddr *) &proxy_addr_in;
+ 
+ 	if (-1 == connect(proxy_fd, proxy_addr, servlen)) {
+ 		if (errno == EINPROGRESS || errno == EALREADY) {
+@@ -740,9 +749,16 @@
+ 
+ 	switch(hctx->state) {
+ 	case PROXY_STATE_INIT:
+-		if (-1 == (hctx->fd = socket(AF_INET, SOCK_STREAM, 0))) {
++		if (strstr(host->host->ptr,":")) {
++		    if (-1 == (hctx->fd = socket(AF_INET6, SOCK_STREAM, 0))) {
++			log_error_write(srv, __FILE__, __LINE__, "ss", "socket failed: ", strerror(errno));
++			return HANDLER_ERROR;
++		    }
++		} else {
++		    if (-1 == (hctx->fd = socket(AF_INET, SOCK_STREAM, 0))) {
+ 			log_error_write(srv, __FILE__, __LINE__, "ss", "socket failed: ", strerror(errno));
+ 			return HANDLER_ERROR;
++		    }
+ 		}
+ 		hctx->fde_ndx = -1;
+ 

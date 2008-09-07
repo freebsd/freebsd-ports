@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -87,6 +87,7 @@ CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
 
 .if defined(WITH_MEMCACHE)
+LIB_DEPENDS+=		memcache.4:${PORTSDIR}/databases/libmemcache
 CONFIGURE_ARGS+=	--with-memcache
 .endif
 
