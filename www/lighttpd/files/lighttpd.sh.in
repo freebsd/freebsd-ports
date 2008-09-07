@@ -12,6 +12,8 @@
 #				Default is "NO".
 # lighttpd_conf (path):		Set full path to config file.
 #				Default is "%%PREFIX%%/etc/lighttpd.conf".
+# lighttpd_pidfile (path):	Set full path to pid file.
+#				Default is "/var/run/lighttpd.pid".
 #
 
 . %%RC_SUBR%%
@@ -23,10 +25,11 @@ load_rc_config $name
 
 : ${lighttpd_enable="NO"}
 : ${lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"}
+: ${lighttpd_pidfile="/var/run/${name}.pid"}
 
 command=%%PREFIX%%/sbin/lighttpd
 command_args="-f ${lighttpd_conf}"
-pidfile=/var/run/lighttpd.pid
+pidfile=${lighttpd_pidfile}
 required_files=${lighttpd_conf}
 stop_postcmd=stop_postcmd
 restart_precmd="checkconfig"
