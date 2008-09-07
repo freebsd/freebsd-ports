@@ -9,13 +9,9 @@ PORTNAME=	cups
 PORTVERSION=	1.3.8
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
-#MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
-# ftp.easysw.com ist broken
-MASTER_SITES+=	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/${PORTNAME}/${DISTVERSION}/
-MASTER_SITES+=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/${PORTNAME}/${DISTVERSION}/
-MASTER_SITES+=	http://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/${PORTNAME}/${DISTVERSION}/
-MASTER_SITES+=	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System
