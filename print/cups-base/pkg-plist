@@ -1726,15 +1726,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@exec mkdir -p %D/%%DOCSDIR%%/da/images
-@exec mkdir -p %D/%%DOCSDIR%%/fi/images
-@exec mkdir -p %D/%%DOCSDIR%%/ko/images
-@exec mkdir -p %D/%%DOCSDIR%%/nl/images
-@exec mkdir -p %D/%%DOCSDIR%%/no/images
-@exec mkdir -p %D/%%DOCSDIR%%/pt/images
-@exec mkdir -p %D/%%DOCSDIR%%/pt_BR/images
-@exec mkdir -p %D/%%DOCSDIR%%/ru/images
-@exec mkdir -p %D/%%DOCSDIR%%/zh/images
 @dirrm %%DOCSDIR%%/zh_TW/images
 @dirrm %%DOCSDIR%%/zh_TW
 @dirrm %%DOCSDIR%%/sv/images
