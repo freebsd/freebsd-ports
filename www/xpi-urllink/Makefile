@@ -10,7 +10,7 @@ PORTVERSION=	2.01.0
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Select a non-URL and open it in a browser window
 
 XPI_DISTNAME=	url_link

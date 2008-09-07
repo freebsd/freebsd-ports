@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Toggles word wrapping
 
 XPI_DISTNAME=	toggle_word_wrap

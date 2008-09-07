@@ -10,7 +10,7 @@ PORTVERSION=	2.0.45
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Bookmark synchronizer
 
 XPI_DISTNAME=	foxmarks_bookmark_synchronizer

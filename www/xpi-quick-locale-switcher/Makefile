@@ -11,7 +11,7 @@ PORTVERSION=	1.6.5.1
 DISTVERSIONSUFFIX=	-
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Quickly change and apply a different locale from the tools menu
 
 XPI_DISTNAME=	quick_locale_switcher

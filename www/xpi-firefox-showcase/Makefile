@@ -10,7 +10,7 @@ PORTVERSION=	0.9.4.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Easily locate and select any open browser window
 
 XPI_DISTNAME=	firefox_showcase

@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Save Javascript Generated/Rendered HTML Pages
 
 XPI_ID=		{d70d11c0-ff1e-11d9-8cd6-0800200c9a66}

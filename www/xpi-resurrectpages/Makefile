@@ -10,7 +10,7 @@ PORTVERSION=	2.0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Resurrects pages from big page caches/mirrors
 
 XPI_DISTNAME=	resurrect_pages

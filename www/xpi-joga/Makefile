@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
 # The update RDF is at http://tools.google.com/firefox/joga/update.rdf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Joga.com Companion
 
 XPI_ID=		{06108483-1773-402e-a112-bfec19a73942}

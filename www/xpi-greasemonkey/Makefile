@@ -10,7 +10,7 @@ PORTVERSION=	0.7.20070607.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Add bits of DHTML to any web page to change its behavior
 
 XPI_ID=		{e4a8a97b-f2ed-450b-b12d-ee082ba24781}

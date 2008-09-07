@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3.043
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A content filtering extension
 
 XPI_NUM=	10

@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	www net-p2p
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A ed2k, magnet and sig2dat protocol handler
 
 XPI_DISTNAME=	mldonkey_protocol_handler

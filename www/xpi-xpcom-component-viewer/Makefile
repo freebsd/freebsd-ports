@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XPCOM Component Viewer
 
 XPI_DISTNAME=	xpcom_component_viewer
