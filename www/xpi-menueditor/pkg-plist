@@ -20,10 +20,14 @@
 %%XPI_XPIDIR%%/translations/1.2.3/es-ES/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/fa-IR/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/fa-IR/menuedittext.dtd
+%%XPI_XPIDIR%%/translations/1.2.3/fr-FR/menuedit.properties
+%%XPI_XPIDIR%%/translations/1.2.3/fr-FR/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/he-IL/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/he-IL/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/hu-HU/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/hu-HU/menuedittext.dtd
+%%XPI_XPIDIR%%/translations/1.2.3/it-IT/menuedit.properties
+%%XPI_XPIDIR%%/translations/1.2.3/it-IT/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/ja-JP/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/ja-JP/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/ko-KR/menuedit.properties
@@ -42,6 +46,8 @@
 %%XPI_XPIDIR%%/translations/1.2.3/sk-SK/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/sv-SE/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/sv-SE/menuedittext.dtd
+%%XPI_XPIDIR%%/translations/1.2.3/zh-CN/menuedit.properties
+%%XPI_XPIDIR%%/translations/1.2.3/zh-CN/menuedittext.dtd
 %%XPI_XPIDIR%%/translations/1.2.3/zh-TW/menuedit.properties
 %%XPI_XPIDIR%%/translations/1.2.3/zh-TW/menuedittext.dtd
 @dirrm %%XPI_XPIDIR%%/chrome/content
@@ -52,8 +58,10 @@
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/de-DE
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/es-ES
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/fa-IR
+@dirrm %%XPI_XPIDIR%%/translations/1.2.3/fr-FR
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/he-IL
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/hu-HU
+@dirrm %%XPI_XPIDIR%%/translations/1.2.3/it-IT
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/ja-JP
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/ko-KR
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/nb-NO
@@ -63,6 +71,7 @@
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/pt-PT
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/sk-SK
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/sv-SE
+@dirrm %%XPI_XPIDIR%%/translations/1.2.3/zh-CN
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3/zh-TW
 @dirrm %%XPI_XPIDIR%%/translations/1.2.3
 @dirrm %%XPI_XPIDIR%%/translations
