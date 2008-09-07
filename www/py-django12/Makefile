@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	0.96.2
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	www python
-MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
+MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
@@ -22,6 +21,7 @@ USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
+PYDISTUTILS_PKGVERSION=	1.0_final
 
 CONFLICTS=	py2[0-9]-django-devel-[0-9]*
 
@@ -31,7 +31,10 @@ OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		POSTGRESQL	"PostgreSQL support"	off \
 		MYSQL	"MySQL support"	off \
 		SQLITE	"SQLite support"	off \
-		FASTCGI	"FastCGI support"	off
+		FASTCGI	"FastCGI support"	off \
+		DOCS	"Install HTML documentation (requires Sphinx)"	off
+
+MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -51,24 +54,35 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+.if ${PYTHON_REL} < 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+.endif
 .endif
 
 .if defined(WITH_FASTCGI)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .endif
 
+.if defined(WITH_DOCS)
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
+PORTDOCS=	*
+.endif
+
+post-build:
+.if defined(WITH_DOCS)
+	cd ${WRKSRC}/docs && ${MAKE} html
+.endif
+
 post-install:
-.if !defined(NOPORTDOCS)
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${MAN1PREFIX}/man/man1
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"			* See http://docs.djangoproject.com/ for complete documentation"
+	@${ECHO_MSG}	""
+.if defined(WITH_DOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"			* See ${DOCSDIR} for complete documentation"
-	@${ECHO_MSG}	""
-.else
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"			* See http://www.djangoproject.com/documentation/ for complete documentation"
-	@${ECHO_MSG}	""
+	${CP} -R ${WRKSRC}/docs/_build/html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
