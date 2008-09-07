@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ffe
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	SFE/ff-extractor
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Flat file extractor
 
 GNU_CONFIGURE=	yes
