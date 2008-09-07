@@ -12,7 +12,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	SF/gnome-sudoku
 DISTNAME=	gnome-sudoku-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Sudoku game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric \

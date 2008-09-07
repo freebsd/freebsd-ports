@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tg
 DISTNAME=	ecos-tools.${SNAPDATE}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
 USE_BZIP2=	yes
