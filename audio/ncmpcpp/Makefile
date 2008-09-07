@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -19,6 +19,7 @@ LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
+USE_GCC=	4.2+
 USE_GNOME=	glib20
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
