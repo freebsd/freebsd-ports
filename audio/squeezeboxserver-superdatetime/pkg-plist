@@ -47,11 +47,14 @@
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/7.gif
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/8.gif
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/9.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/MLB.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/NCAA.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/NHL.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/nba.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/nfl.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/basic.html
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/player.html
+%%SLIMDIR%%/Plugins/SuperDateTime/PlayerSettings.pm
 %%SLIMDIR%%/Plugins/SuperDateTime/Plugin.pm
 %%SLIMDIR%%/Plugins/SuperDateTime/Settings.pm
 %%SLIMDIR%%/Plugins/SuperDateTime/install.xml
