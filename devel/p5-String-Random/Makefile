@@ -21,4 +21,6 @@ PERL_MODBUILD=	yes
 
 MAN3=		String::Random.3
 
+PORTSCOUT=	limit:^0\.(\d\.){,2}
+
 .include <bsd.port.mk>
