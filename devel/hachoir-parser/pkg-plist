@@ -46,6 +46,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/au.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/au.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/au.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/flac.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/flac.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/flac.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/id3.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/id3.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/id3.pyo
@@ -94,6 +97,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/container/action_script.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/container/action_script.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/container/action_script.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/asn1.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/asn1.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/asn1.pyo
@@ -214,6 +220,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/gnome_keyring.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/gnome_keyring.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/gnome_keyring.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.pyo

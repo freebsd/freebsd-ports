@@ -9,6 +9,9 @@ bin/hachoir-metadata-gtk
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/audio.py
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/audio.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/audio.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/config.py
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/config.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/config.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/filter.py
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/filter.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/filter.pyo
