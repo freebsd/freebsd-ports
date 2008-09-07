@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080907:
+  AFFECTS: users of www/mediawiki
+  AUTHOR: miwi@FreeBSD.org
+
+  www/mediawiki version is 1.13 now. 1.12 version was preserved on
+  www/mediawiki12 port.
+
 20080902:
  AFFECTS: users of net-mgmt/nagios and net-mgmt/nagios-devel
  AUTHOR: Jarrod Sayers <jarrod@netleader.com.au>
