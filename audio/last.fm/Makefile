@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	last.fm
-PORTVERSION=	1.3.2.13
-PORTREVISION=	1
+PORTVERSION=	1.3.2.14
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
