@@ -7,7 +7,7 @@
 
 PORTNAME=	rascut
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	hotchpotch
@@ -17,7 +17,7 @@ COMMENT=	Ruby ActionSCript UTility
 
 BUILD_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
 		rackup:${PORTSDIR}/www/rubygem-rack \
-		fcsh:${PORTSDIR}/devel/flex_compiler_shell
+		fcsh:${PORTSDIR}/devel/flex-sdk
 
 USE_RUBY=	yes
 USE_RAKE=	yes
