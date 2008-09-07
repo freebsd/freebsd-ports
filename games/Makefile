@@ -902,6 +902,7 @@
     SUBDIR += xchomp
     SUBDIR += xcogitate
     SUBDIR += xconq
+    SUBDIR += xcowsay
     SUBDIR += xcubes
     SUBDIR += xdeblock
     SUBDIR += xdemineur
