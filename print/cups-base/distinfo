@@ -1,3 +1,3 @@
-MD5 (cups-1.3.8-source.tar.bz2) = 84e09577d673b212f605dd09caee456c
-SHA256 (cups-1.3.8-source.tar.bz2) = bb6e013e104d82e454a98460136360111d77160300a0eb98063d7051e71c4f05
-SIZE (cups-1.3.8-source.tar.bz2) = 3978466
+MD5 (repacked/cups-1.3.8-source.tar.bz2) = 90ed7449948994ad1b22b0b177ab6ba6
+SHA256 (repacked/cups-1.3.8-source.tar.bz2) = d488980f84ad0e6044a67859144306980624cafb654eb0cab071b3e46fee6e1d
+SIZE (repacked/cups-1.3.8-source.tar.bz2) = 3978390
