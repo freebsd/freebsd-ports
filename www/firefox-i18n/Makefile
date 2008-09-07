@@ -13,7 +13,7 @@ PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Localized interface for Firefox
 
 .ifndef WITHOUT_SWITCHER
@@ -30,7 +30,7 @@ FIREFOX_I18N_ALL=	af ar be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
 .ifdef PACKAGE_BUILDING
 FIREFOX_I18N?=	all
 .else
-FIREFOX_I18N?=	zh-CN es-ES ar pt-BR ru ja de fr pa-IN ko it
+FIREFOX_I18N?=	zh-CN zh-TW es-ES ar pt-BR ru ja de fr pa-IN ko it
 .endif
 # http://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers
 
