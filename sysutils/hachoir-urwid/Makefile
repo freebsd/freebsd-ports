@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-urwid
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
