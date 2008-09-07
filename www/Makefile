@@ -254,6 +254,7 @@
     SUBDIR += hastymail
     SUBDIR += havp
     SUBDIR += helixplugin
+    SUBDIR += helma
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
     SUBDIR += horde-ansel
