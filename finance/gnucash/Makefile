@@ -8,6 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -19,8 +20,7 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
-		goffice-0.4:${PORTSDIR}/devel/goffice04
+		goffice-0.6.6:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -41,7 +41,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
-		libgnomeprint libgnomeprintui
+		libgnomeprint libgnomeprintui gtkhtml3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
