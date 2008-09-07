@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	mosh-scheme
 
 MAINTAINER=	katsuji.ishikawa@gmail.com
 COMMENT=	A Fast R6RS Scheme interpreter
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
+
+PROJECTHOST=	mosh-scheme
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,7 +25,7 @@ USE_GCC=	4.2+
 CFLAGS+=	"-O0"
 CXXFLAGS+=	"-O0"
 
-SCMS=		all-tests.scm psyntax.scm repl.scm
+SCMS=		all-tests.scm repl.scm r6rs-examples/psyntax.scm
 
 do-install:
 	${MKDIR} ${DATADIR}

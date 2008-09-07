@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mosh
 %%DATADIR%%/all-tests.scm
 %%DATADIR%%/psyntax.scm
