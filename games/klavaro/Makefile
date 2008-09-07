@@ -10,7 +10,7 @@ PORTVERSION=	1.0.8
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Touchtyping trainer
 
 USE_BZIP2=	yes
