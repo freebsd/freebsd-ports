@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-USE_GCC=4.2+
+BROKEN=		Does not install
 .endif
 
 post-patch:
