@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtpaint
-PORTVERSION=	3.20
-PORTREVISION=	1
+PORTVERSION=	3.21
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -21,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
@@ -33,6 +31,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		gtk2 intl man
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-o /dev/null|-o `mktemp -t /tmp`|' ${WRKSRC}/configure
