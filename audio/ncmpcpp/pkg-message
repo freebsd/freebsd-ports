@@ -2,7 +2,7 @@
 ncmpcpp has been installed.
 
 A default ncmpcpprc config has been installed to:
-PREFIX/share/doc/ncmpcpprc.sample
+PREFIX/share/doc/ncmpcpp/ncmpcpprc
 
 For more information about ncmpcpp visit:
 http://unkart.ovh.org/ncmpcpp
