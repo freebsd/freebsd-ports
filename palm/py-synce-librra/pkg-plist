@@ -1,0 +1,5 @@
+%%PYTHON_LIBDIR%%/site-packages/pyrra.a
+%%PYTHON_LIBDIR%%/site-packages/pyrra.la
+%%PYTHON_LIBDIR%%/site-packages/pyrra.so
+@dirrmtry %%PYTHON_LIBDIR%%/site-packages
+@dirrmtry %%PYTHON_LIBDIR%%

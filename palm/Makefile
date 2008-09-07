@@ -32,6 +32,7 @@
     SUBDIR += ppmtoTbmp
     SUBDIR += prc-tools
     SUBDIR += py-synce-librapi2
+    SUBDIR += py-synce-librra
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += synce-gnomevfs
