@@ -7,6 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -84,6 +85,7 @@ PLIST_SUB+=		CGI="@comment "
 CONFIGURE_ARGS+=	--enable-gapcmon
 USE_GNOME+=		gconf2
 PLIST_SUB+=		GAPCMON=""
+CONFLICTS+=		gapcmon-[0-9]*
 .else
 PLIST_SUB+=		GAPCMON="@comment "
 .endif
