@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	gimpfx-foundry
-PORTVERSION=	20071219
-PORTREVISION=	1
+PORTVERSION=	20080323
 CATEGORIES=	graphics
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-scriptpack-${PORTVERSION}
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	A collection of scripts for The Gimp 2.4
 
 RUN_DEPENDS=	gimp-2.4:${PORTSDIR}/graphics/gimp-app
-
-USE_BZIP2=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -24,8 +22,12 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	release-manifest.txt
 
 do-install:
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${LOCALBASE}/share/gimp/scripts/
+
+post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/release-manifest.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${LOCALBASE}/share/gimp/scripts/
+.endif
 
 .include <bsd.port.mk>
