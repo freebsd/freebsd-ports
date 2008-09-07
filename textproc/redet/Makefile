@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.24
+PORTVERSION=	8.25
 CATEGORIES=	textproc tk
-MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CENKES
+MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Visual regexp development and execution
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
