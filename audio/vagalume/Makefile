@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vagalume
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 MASTER_SITE_SUBDIR=	pool/main/v/vagalume/
@@ -21,26 +21,35 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
-USE_GETTEXT=	yes
+USE_AUTOTOOLS=	libtool:15 autoconf:262
 USE_GNOME=	pkgconfig gtk20
 USE_GSTREAMER=	good mad
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		vagalume.1
 
-OPTIONS=	IMSTATUS "Build with IM status support" off \
-		TRAY     "Build with tray icon and libnotify support" on
+OPTIONS=	DBUS "Build with DBUS support" on \
+		TRAY "Build with tray icon and libnotify support" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IMSTATUS)
-CONFIGURE_ARGS+=--enable-im-status
-LIB_DEPEND+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-im-status
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_DBUS)
+CONFIGURE_ARGS+=--enable-dbus --enable-im-status
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+PLIST_SUB+=	DBUS=""
+MAN1+=		vagalumectl.1
+.else
+CONFIGURE_ARGS+=--disable-dbus --disable-im-status
+PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if !defined(WITHOUT_TRAY)
@@ -55,5 +64,9 @@ CONFIGURE_ARGS+=--disable-tray-icon
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gconf
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
