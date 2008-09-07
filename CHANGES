@@ -15,7 +15,7 @@ AUTHOR: hrs@FreeBSD.org
 
   * print/ghostscript-* and related ports have been renamed in the
     following way:
- 
+
 	print/ghostscript-gnu -> print/ghostscript7
 	print/ghostscript-gnu-nox11 -> print/ghostscript7-nox11
 	print/ghostscript-gnu-commfont -> print/ghostscript7-commfont
