@@ -11,7 +11,7 @@ CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	A POE-based parser for the IRC protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
