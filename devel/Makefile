@@ -1761,6 +1761,7 @@
     SUBDIR += p5-Test-SubCalls
     SUBDIR += p5-Test-TAP-HTMLMatrix
     SUBDIR += p5-Test-TAP-Model
+    SUBDIR += p5-Test-TempDir
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-UseAllModules
