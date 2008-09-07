@@ -31,6 +31,7 @@
     SUBDIR += pose
     SUBDIR += ppmtoTbmp
     SUBDIR += prc-tools
+    SUBDIR += py-synce-librapi2
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += synce-gnomevfs
