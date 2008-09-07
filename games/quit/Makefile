@@ -7,6 +7,7 @@
 
 PORTNAME=	quit
 PORTVERSION=	1.2a
+PORTREVISION=	1
 CATEGORIES?=	games
 MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
 
@@ -25,7 +26,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quit ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/quit.1 ${MAN1PREFIX}/man/ja/man1
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/quit.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
