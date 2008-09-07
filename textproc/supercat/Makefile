@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	supercat
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://supercat.nosredna.net/ CENKES
+MASTER_SITES=	http://supercat.nosredna.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Regexp-based text colorizer with ASCII/HTML output
 
 GNU_CONFIGURE=	yes
