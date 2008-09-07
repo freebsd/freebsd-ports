@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.2.4
-PORTREVISION=	4
+PORTVERSION=	2.2.6
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -58,6 +57,7 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_dialog_common.schemas \
 		apps_gnucash_dialog_prices.schemas \
 		apps_gnucash_dialog_print_checks.schemas \
+		apps_gnucash_import_qif.schemas \
 		apps_gnucash_dialog_reconcile.schemas \
 		apps_gnucash_dialog_scheduled_transctions.schemas \
 		apps_gnucash_dialog_totd.schemas \

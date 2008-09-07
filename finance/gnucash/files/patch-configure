@@ -1,0 +1,11 @@
+--- configure.orig	2008-07-27 12:17:44.000000000 -0500
++++ configure	2008-09-06 22:14:05.289802801 -0500
+@@ -21359,7 +21359,7 @@
+      echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
+   else
+      pkg_config_min_version=0.9.0
+-     if $PKG_CONFIG --atleast-pkgconfig-version $pkg_config_min_version; then
++     if 0 ; then
+         { echo "$as_me:$LINENO: checking for libgoffice-0.4 >= 0.4.0" >&5
+ echo $ECHO_N "checking for libgoffice-0.4 >= 0.4.0... $ECHO_C" >&6; }
+ 
