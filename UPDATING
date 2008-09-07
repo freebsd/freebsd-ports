@@ -18,8 +18,8 @@ upgrades.
  AUTHOR: Jarrod Sayers <jarrod@netleader.com.au>
 
  The stable Nagios port has now been updated to version 3.0.3.
- Upgrading to this version shouldn't require any configuration 
- changes, but note that most sample configuration files have 
+ Upgrading to this version shouldn't require any configuration
+ changes, but note that most sample configuration files have
  moved into an objects/ directory.
 
  Nagios 2.12 is still available as net-mgmt/nagios2, use the
@@ -31,8 +31,8 @@ upgrades.
 
    portupgrade -o net-mgmt/nagios2 net-mgmt/nagios
 
-  Nagios 3.x development continues in net-mgmt/nagios-devel, 
-  users of this port for production use should consider 
+  Nagios 3.x development continues in net-mgmt/nagios-devel,
+  users of this port for production use should consider
   switching to the stable branch using:
 
     portmaster -o net-mgmt/nagios net-mgmt/nagios-devel
