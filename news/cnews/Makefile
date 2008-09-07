@@ -108,7 +108,11 @@ do-install:
 .for f in checknews cnewsdo inews injnews postnews readnews
 	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/$f
 .endfor
-	${CHOWN} -R news:news ${NEWSARTS} ${NEWSOV} ${NEWSCTL}
+	${CHOWN} news:news ${NEWSARTS} ${NEWSOV} ${NEWSCTL} ${NEWSCTL}/bin
+.for d in control junk news/announce/newusers news/announce news \
+	in.coming/bad in.coming out.going out.master out.nntp
+	${CHOWN} news:news ${NEWSARTS}/${d}
+.endfor
 	${CHOWN} news:news ${NEWSBIN}/input/newsspool
 	${CHMOD} 6555 ${NEWSBIN}/input/newsspool
 .for i in ${MAN1}
