@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mywwwatcher
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.the.cz/mywwwatcher/files/
 DISTNAME=	mywwwatcher-${PORTVERSION}
@@ -28,9 +28,9 @@ SUB_FILES=	pkg-message
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${CP} -Rp ${WRKSRC}/* ${WWWDIR}
+	@${CHGRP} -R ${WWWGRP} ${WWWDIR}
 	@${CHMOD} 775 ${WWWDIR}/ini
 	@${CHMOD} 775 ${WWWDIR}/query_archive
-	@${CHOWN} www ${WWWDIR}
 	@${ECHO_CMD} ""
 
 post-install:

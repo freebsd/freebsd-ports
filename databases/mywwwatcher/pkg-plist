@@ -6,9 +6,6 @@
 %%WWWDIR%%/function.php
 %%WWWDIR%%/graphics/cursor_down.gif
 %%WWWDIR%%/graphics/cursor_up.gif
-%%WWWDIR%%/graphics/intro.gif
-%%WWWDIR%%/graphics/intro.gif.cz
-%%WWWDIR%%/graphics/outro.gif
 %%WWWDIR%%/import.php
 %%WWWDIR%%/include/compress.inc.php
 %%WWWDIR%%/include/foot.inc.php
@@ -25,7 +22,6 @@
 %%WWWDIR%%/insert.php
 %%WWWDIR%%/lang/cz.lng
 %%WWWDIR%%/lang/en.lng
-%%WWWDIR%%/logout.php
 %%WWWDIR%%/menu.php
 %%WWWDIR%%/output.php
 %%WWWDIR%%/queries.php
@@ -38,7 +34,7 @@
 %%WWWDIR%%/top.php
 @dirrm %%WWWDIR%%/query_archive
 @dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/ini
 @dirrm %%WWWDIR%%/graphics
-@dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%
