@@ -9,9 +9,9 @@ PORTNAME=	rsstool
 DISTVERSION=	1.0.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
-MASTER_SITES=	BERLIOS CENKES
+MASTER_SITES=	BERLIOS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
 
 USE_ICONV=	yes

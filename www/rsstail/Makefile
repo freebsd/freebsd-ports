@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.vanheusden.com/rsstail/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple rss monitor
 
 LIB_DEPENDS=	mrss.19:${PORTSDIR}/textproc/libmrss
