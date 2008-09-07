@@ -1,0 +1,33 @@
+#!/bin/sh
+
+user="logcheck"
+group="logcheck"
+configfiles="logcheck.conf logcheck.logfiles"
+
+case $2 in
+DEINSTALL)
+	for f in ${configfiles}; do
+		if diff %%PREFIX%%/etc/logcheck/${f} %%PREFIX%%/etc/logcheck/${f}.sample > /dev/null; then
+			echo "---> ${f} configuration file is the same as ${f}.sample"
+			rm -f %%PREFIX%%/etc/logcheck/${f}
+			echo "---> Deleted %%PREFIX%%/etc/logcheck/${f}"
+		else
+			echo "---> %%PREFIX%%/etc/logcheck/${f} differs from sample file; not deleted"
+		fi
+	done
+;;
+POST-DEINSTALL)
+	if /usr/bin/crontab -u "${user}" -l > /dev/null 2>&1; then
+		rm -f /var/cron/tabs/${user}
+		echo "---> Removed crontab for \"${user}\"."
+	fi
+
+	if pw user show ${user} > /dev/null 2>&1; then
+		pw user del ${user}
+		echo "---> Removed user \"${user}\" and group \"${group}\"."
+	fi
+	if pw group show ${group} > /dev/null 2>&1; then
+		pw group del ${group}
+	fi
+;;
+esac
