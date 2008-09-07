@@ -7,6 +7,7 @@
 
 PORTNAME=	rbot
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Ruby IRC bot similar to infobot
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
+		${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
