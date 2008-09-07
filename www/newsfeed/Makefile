@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	newsfeed
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.10
 CATEGORIES=	www
-MASTER_SITES=	http://home.arcor.de/mdoege/newsfeed/ CENKES
+MASTER_SITES=	http://home.arcor.de/mdoege/newsfeed/
 DISTNAME=	NewsFeed-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	RSS/RDF/Atom reader and aggregator
 
 RUN_DEPENDS=	py*-tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
