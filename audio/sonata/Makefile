@@ -7,7 +7,7 @@
 
 PORTNAME=	sonata
 PORTVERSION=	1.5.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tagpy>=0.94.5:${PORTSDIR}/audio/py-tagpy
 .endif
 
 .if defined (WITH_ZSI)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ZSI-devel>=2.0.r3,1:${PORTSDIR}/net/py-zsi-devel
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zsi>=2.0,1:${PORTSDIR}/net/py-zsi
 .endif
 
 .include <bsd.port.post.mk>
