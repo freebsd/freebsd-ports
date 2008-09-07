@@ -119,8 +119,6 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%@dirrmtry tinderbox/scripts/webui
 @dirrm tinderbox/scripts/upgrade
 @dirrm tinderbox/scripts/sql
-@dirrm tinderbox/scripts/man/man1
-@dirrm tinderbox/scripts/man
 @dirrm tinderbox/scripts/lib/Tinderbox
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
