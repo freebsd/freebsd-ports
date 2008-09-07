@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	libxcb
-PORTVERSION=	1.1
-CATEGORIES=	x11
+PORTVERSION=	1.1.90.1
+CATEGORIES=	x11 python
 #MASTER_SITES=	XORG/current/src/extras
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -28,6 +28,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp
+USE_PYTHON=	2.5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-check=${LOCALBASE}
