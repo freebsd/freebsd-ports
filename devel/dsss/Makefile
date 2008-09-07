@@ -25,6 +25,12 @@ PORTDOCS=	*
 
 MAN1=		dsss.1 rebuild.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile on 8-CURRENT
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
 		${WRKSRC}/dsss.conf
@@ -37,4 +43,4 @@ post-patch:
 		${WRKSRC}/rebuild/Makefile
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
