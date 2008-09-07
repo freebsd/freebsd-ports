@@ -36,6 +36,7 @@ MAN1=		nmap.1
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${OPENSSLINC}"
 .else
 CONFIGURE_ARGS+=	--without-openssl
 .endif
