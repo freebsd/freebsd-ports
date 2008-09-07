@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
