@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tclgeomap
-PORTVERSION=	2.11.4
+PORTVERSION=	2.11.5
 CATEGORIES=	astro tcl
 MASTER_SITES=	SF/tkgeomap
 
