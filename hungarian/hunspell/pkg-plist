@@ -31,4 +31,4 @@ share/myspell/magyar.dic
 share/myspell/default.aff
 share/myspell/default.dic
 @dirrm share/myspell
-@dirrmtry lib/pkgconfig
+@dirrmtry libdata/pkgconfig

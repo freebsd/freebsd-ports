@@ -54,8 +54,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/hu_HU-${DICTVERSION}/hu_HU.dic \
 		${WRKDIR}/hu_HU-${DICTVERSION}/hu_HU.aff \
 		${PREFIX}/share/myspell/
-	${MKDIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/hunspell.pc ${PREFIX}/lib/pkgconfig
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/hunspell.pc ${PREFIX}/libdata/pkgconfig
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.dic ${PREFIX}/share/myspell/magyar.dic
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.dic ${PREFIX}/share/myspell/hungarian.dic
 	${LN} -s ${LOCALBASE}/share/myspell/hu_HU.dic ${PREFIX}/share/myspell/default.dic
