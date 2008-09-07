@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geometry-Primitive
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -15,14 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Primitive Geometry Entities
 
-BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
-		p5-Pod-Coverage-Moose>=0:${PORTSDIR}/devel/p5-Pod-Coverage-Moose \
-  		p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-  		p5-MooseX-Clone>=0:${PORTSDIR}/devel/p5-MooseX-Clone \
+BUILD_DEPENDS=	p5-Moose>=0.57:${PORTSDIR}/devel/p5-Moose \
+		p5-Pod-Coverage-Moose>=0.01:${PORTSDIR}/devel/p5-Pod-Coverage-Moose \
+  		p5-MooseX-AttributeHelpers>=0.13:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+  		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Cairo>=1.000:${PORTSDIR}/graphics/p5-Cairo \
 		p5-DateTime-Set>=0.25:${PORTSDIR}/devel/p5-DateTime-Set \
-		p5-Math-Complex>=0:${PORTSDIR}/math/p5-Math-Complex
+		p5-Math-Complex>=1.54:${PORTSDIR}/math/p5-Math-Complex \
+		p5-MooseX-Storage>=0.14:${PORTSDIR}/devel/p5-MooseX-Storage \
+		p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
