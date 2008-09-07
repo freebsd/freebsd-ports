@@ -35,12 +35,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!install-recursive!!g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
+	@${INSTALL_MAN} ${WRKSRC}/doc/dopewars.6 ${MAN6PREFIX}/man/man6
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/help
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${WRKSRC}/doc/example* ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/help/*html ${DOCSDIR}/help/
 	@${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${DOCSDIR}/
-	@${INSTALL_MAN} ${WRKSRC}/doc/dopewars.6 ${MAN6PREFIX}/man/man6/
 .endif
 
 .include <bsd.port.mk>
