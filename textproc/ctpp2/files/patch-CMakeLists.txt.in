@@ -5,7 +5,7 @@
  
  # uild optimized code for following CPU (default i386)
 -SET(CPU_TUNE               "i686")
-+SET(CPU_TUNE               "generic")
++%%HASHMARK%%SET(CPU_TUNE               "%%TUNE_PARAM%%")
  
  SET(CTPP_FLOAT_PRECISION   12)
  
