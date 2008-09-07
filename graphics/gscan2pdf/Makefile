@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.23
-PORTREVISION=	2
+PORTVERSION=	0.9.24
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
@@ -29,12 +28,22 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 #		xdg-email:${PORTSDIR}/devel/xdg-utils
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
 PERL_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|$$sharedir/man|${MANPREFIX}/man|g;s|1p|1|g'\
