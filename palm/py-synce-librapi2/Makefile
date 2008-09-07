@@ -8,7 +8,7 @@ CATEGORIES=	palm python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}synce-
 
 MAINTAINER=	webmaster@kibab.com
-COMMENT=	Python bibdigs for libRAPI2
+COMMENT=	Python bindings for libRAPI2
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
