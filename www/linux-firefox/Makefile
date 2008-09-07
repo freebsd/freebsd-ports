@@ -10,7 +10,7 @@ PORTVERSION=	2.0.0.14
 CATEGORIES=	www
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"

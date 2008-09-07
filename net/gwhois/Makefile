@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gwhois.de/gwhois/ CENKES
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Flexible whois client and proxy
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
