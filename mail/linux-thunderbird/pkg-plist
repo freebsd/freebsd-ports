@@ -228,19 +228,9 @@ lib/%%APP_NAME%%/defaults/wallet/VcardSchema.tbl
 lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
-lib/%%APP_NAME%%/extensions/._talkback@mozilla.org
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/._chrome.manifest
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/._components
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/._libqfaservices.so
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/._qfaservices.xpt
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/._talkback
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/._XTalkback.ad
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/._master.ini
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/._talkback
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/._talkback.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
@@ -330,32 +320,32 @@ lib/%%APP_NAME%%/xpicleanup
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
-@dirrm lib/%%APP_NAME%%/chrome/icons/default
-@dirrm lib/%%APP_NAME%%/chrome/icons
-@dirrm lib/%%APP_NAME%%/chrome
-@dirrm lib/%%APP_NAME%%/components
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/messenger/US
-@dirrm lib/%%APP_NAME%%/defaults/messenger
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/profile/US
-@dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults/wallet
-@dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/isp/en-US
+@dirrm lib/%%APP_NAME%%/isp
+@dirrm lib/%%APP_NAME%%/init.d
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/greprefs
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/init.d
-@dirrm lib/%%APP_NAME%%/isp/en-US
-@dirrm lib/%%APP_NAME%%/isp
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/defaults/wallet
+@dirrm lib/%%APP_NAME%%/defaults/profile/US
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/messenger/US
+@dirrm lib/%%APP_NAME%%/defaults/messenger
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/chrome/icons
+@dirrm lib/%%APP_NAME%%/chrome
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
