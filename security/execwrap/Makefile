@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	execwrap
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://cyanite.org/execwrap/ CENKES
 DISTNAME=	ExecWrap-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Super-user exec wrapper
 
 NO_WRKSUBDIR=	yes
