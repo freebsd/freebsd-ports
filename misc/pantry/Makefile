@@ -11,7 +11,7 @@ DISTVERSION=	23
 CATEGORIES=	misc
 MASTER_SITES=	http://www.smileystation.com/pantry/downloads/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Command-line nutrition analysis program
 
 RUN_DEPENDS=	py*-bsddb>=2:${PORTSDIR}/databases/py-bsddb

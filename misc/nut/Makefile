@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 USE_GMAKE=	yes
