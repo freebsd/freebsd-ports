@@ -8,16 +8,18 @@
 <h1><font color="#990000">FreeBSD Package building logs and errors</font></h1>
 
 <p>FreeBSD maintains a build farm (the "pointyhat cluster") that is used
-to build all packages across all architectures and all major releases.
+to build all packages across all supported architectures and major releases.
 This page contains the build logs and errors for all the ports built by
-the pointyhat cluster.  (Note: all of the "Current run" links are possibly in
-progress and may be partial, so keep that in mind if there appear to
-be some missing.)</p>
+the cluster.  See the <a href="#notes">notes</a> for additional information,
+or the <a href="#errorlist">types of package errors detected</a>.</p>
 
+<h4><font color="#990000">
+Port cross-reference summaries
+</font></h4>
+<p>These live on
+<a href="http://portsmon.FreeBSD.org/index.html">portsmon.FreeBSD.org</a>.</p>
 <dl>
 
-<dt>Port cross-reference summaries on
-<a href="http://portsmon.FreeBSD.org/index.html">portsmon.FreeBSD.org</a></dt>
 <dd><img alt="*" src="/errorlogs/images/blue-ball.gif"> Build errors
 <a href="http://portsmon.FreeBSD.org/portserrs.py">by portname</a>;
 <a href="http://portsmon.FreeBSD.org/portscrossref.py">by portname vs. build environment</a>;
@@ -39,436 +41,259 @@ Problem Reports
 <a href="http://portsmon.FreeBSD.org/portoverview.py">one port</a></dd>
 <dd><img alt="*" src="/errorlogs/images/blue-ball.gif"> The
 <a href="http://portsmon.FreeBSD.org/index.html">complete list of all reports</a></dd>
+</dl>
 
-<br><br>
-<dt>New build failures (check here to find the most recent error log from your port)</dt>
+<h4><font color="#990000">
+New build failures
+</font></h4>
+<p>Check here to find the most recent error log from your port.</p>
 
 <!--#config timefmt="%F %R" -->
 
+<dl>
 <dd>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
-failures on 5.x-stable
-[<a href="i386-5-failure.html">i386</a> (<!--#flastmod file="i386-5-failure.html" -->)]
-[<a href="sparc64-5-failure.html">sparc64</a> (<!--#flastmod file="sparc64-5-failure.html" -->)]
-[<a href="amd64-5-failure.html">amd64</a> (<!--#flastmod file="amd64-5-failure.html" -->)]
+failures on 6.x-stable:
+<a href="amd64-6-failure.html">amd64</a>
+<a href="i386-6-failure.html">i386</a>
+<a href="sparc64-6-failure.html">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
-failures on 6.x-stable
-[<a href="i386-6-failure.html">i386</a> (<!--#flastmod file="i386-6-failure.html" -->)]
-[<a href="sparc64-6-failure.html">sparc64</a> (<!--#flastmod file="sparc64-6-failure.html" -->)]
-[<a href="ia64-6-failure.html">ia64</a> (<!--#flastmod file="ia64-6-failure.html" -->)]
-[<a href="amd64-6-failure.html">amd64</a> (<!--#flastmod file="amd64-6-failure.html" -->)]
+failures on 7.x-stable:
+<a href="amd64-7-failure.html">amd64</a>
+<a href="i386-7-failure.html">i386</a>
+<a href="sparc64-7-failure.html">sparc64</a>
 <br>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
-failures on 7.x-stable
-[<a href="i386-7-failure.html">i386</a> (<!--#flastmod file="i386-7-failure.html" -->)]
-[<a href="sparc64-7-failure.html">sparc64</a> (<!--#flastmod file="sparc64-7-failure.html" -->)]
-[<a href="ia64-7-failure.html">ia64</a> (<!--#flastmod file="ia64-7-failure.html" -->)]
-[<a href="amd64-7-failure.html">amd64</a> (<!--#flastmod file="amd64-7-failure.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build
-failures on 8.x-current
-[<a href="i386-8-failure.html">i386</a> (<!--#flastmod file="i386-8-failure.html" -->)]
-[<a href="sparc64-8-failure.html">sparc64</a> (<!--#flastmod file="sparc64-8-failure.html" -->)]
-[<a href="ia64-8-failure.html">ia64</a> (<!--#flastmod file="ia64-8-failure.html" -->)]
-[<a href="amd64-8-failure.html">amd64</a> (<!--#flastmod file="amd64-8-failure.html" -->)]
-<br>
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 6.x-stable with experimental port patches
-[<a href="amd64-6-exp-failure.html">amd64</a> (<!--#flastmod file="amd64-6-exp-failure.html" -->)]
-[<a href="i386-6-exp-failure.html">i386</a> (<!--#flastmod file="i386-6-exp-failure.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 7.x-stable with experimental port patches
-[<a href="amd64-7-exp-failure.html">amd64</a> (<!--#flastmod file="amd64-7-exp-failure.html" -->)]
-[<a href="i386-7-exp-failure.html">i386</a> (<!--#flastmod file="i386-7-exp-failure.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 8.x-current with experimental port patches
-[<a href="amd64-8-exp-failure.html">amd64</a> (<!--#flastmod file="amd64-8-exp-failure.html" -->)]
-[<a href="i386-8-exp-failure.html">i386</a> (<!--#flastmod file="i386-8-exp-failure.html" -->)]
-<br>
-</dd>
-
-<br>
-<dt>Error logs</dt>
-<dd>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif">
-<a href="http://www.FreeBSD.org/~fenner/errorlogs/">By maintainer</a></dd>
-<dd>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 5.x-stable 
-[<a href="i386-5-full/">i386</a> (<!--#flastmod file="i386-5-full/" -->)]
-[<a href="sparc64-5-full/">sparc64</a> (<!--#flastmod file="sparc64-5-full/" -->)]
-[<a href="amd64-5-full/">amd64</a> (<!--#flastmod file="amd64-5-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 5.x-stable 
-[<a href="i386-5-latest/">i386</a> (<!--#flastmod file="i386-5-latest/" -->)]
-[<a href="sparc64-5-latest/">sparc64</a> (<!--#flastmod file="sparc64-5-latest/" -->)]
-[<a href="amd64-5-latest/">amd64</a> (<!--#flastmod file="amd64-5-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 6.x-stable 
-[<a href="i386-6-full/">i386</a> (<!--#flastmod file="i386-6-full/" -->)]
-[<a href="sparc64-6-full/">sparc64</a> (<!--#flastmod file="sparc64-6-full/" -->)]
-[<a href="ia64-6-full/">ia64</a> (<!--#flastmod file="ia64-6-full/" -->)]
-[<a href="amd64-6-full/">amd64</a> (<!--#flastmod file="amd64-6-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 6.x-stable 
-[<a href="i386-6-latest/">i386</a> (<!--#flastmod file="i386-6-latest/" -->)]
-[<a href="sparc64-6-latest/">sparc64</a> (<!--#flastmod file="sparc64-6-latest/" -->)]
-[<a href="ia64-6-latest/">ia64</a> (<!--#flastmod file="ia64-6-latest/" -->)]
-[<a href="amd64-6-latest/">amd64</a> (<!--#flastmod file="amd64-6-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 7.x-stable 
-[<a href="i386-7-full/">i386</a> (<!--#flastmod file="i386-7-full/" -->)]
-[<a href="sparc64-7-full/">sparc64</a> (<!--#flastmod file="sparc64-7-full/" -->)]
-[<a href="ia64-7-full/">ia64</a> (<!--#flastmod file="ia64-7-full/" -->)]
-[<a href="amd64-7-full/">amd64</a> (<!--#flastmod file="amd64-7-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 7.x-stable 
-[<a href="i386-7-latest/">i386</a> (<!--#flastmod file="i386-7-latest/" -->)]
-[<a href="sparc64-7-latest/">sparc64</a> (<!--#flastmod file="sparc64-7-latest/" -->)]
-[<a href="ia64-7-latest/">ia64</a> (<!--#flastmod file="ia64-7-latest/" -->)]
-[<a href="amd64-7-latest/">amd64</a> (<!--#flastmod file="amd64-7-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 8.x-current 
-[<a href="i386-8-full/">i386</a> (<!--#flastmod file="i386-8-full/" -->)]
-[<a href="sparc64-8-full/">sparc64</a> (<!--#flastmod file="sparc64-8-full/" -->)]
-[<a href="ia64-8-full/">ia64</a> (<!--#flastmod file="ia64-8-full/" -->)]
-[<a href="amd64-8-full/">amd64</a> (<!--#flastmod file="amd64-8-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 8.x-current 
-[<a href="i386-8-latest/">i386</a> (<!--#flastmod file="i386-8-latest/" -->)]
-[<a href="sparc64-8-latest/">sparc64</a> (<!--#flastmod file="sparc64-8-latest/" -->)]
-[<a href="ia64-8-latest/">ia64</a> (<!--#flastmod file="ia64-8-latest/" -->)]
-[<a href="amd64-8-latest/">amd64</a> (<!--#flastmod file="amd64-8-latest/" -->)]
-<br>
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 6.x-stable with experimental port patches
-[<a href="amd64-6-exp-full/">amd64</a> (<!--#flastmod file="amd64-6-exp-full/" -->)]
-[<a href="i386-6-exp-full/">i386</a> (<!--#flastmod file="i386-6-exp-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 6.x-stable with experimental port patches
-[<a href="amd64-6-exp-latest/">amd64</a> (<!--#flastmod file="amd64-6-exp-latest/" -->)]
-[<a href="i386-6-exp-latest/">i386</a> (<!--#flastmod file="i386-6-exp-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 7.x-stable with experimental port patches
-[<a href="amd64-7-exp-full/">amd64</a> (<!--#flastmod file="amd64-7-exp-full/" -->)]
-[<a href="i386-7-exp-full/">i386</a> (<!--#flastmod file="i386-7-exp-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 7.x-stable with experimental port patches
-[<a href="amd64-7-exp-latest/">amd64</a> (<!--#flastmod file="amd64-7-exp-latest/" -->)]
-[<a href="i386-7-exp-latest/">i386</a> (<!--#flastmod file="i386-7-exp-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
-on 8.x-current with experimental port patches
-[<a href="amd64-8-exp-full/">amd64</a> (<!--#flastmod file="amd64-8-exp-full/" -->)]
-[<a href="i386-8-exp-full/">i386</a> (<!--#flastmod file="i386-8-exp-full/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
-on 8.x-current with experimental port patches
-[<a href="amd64-8-exp-latest/">amd64</a> (<!--#flastmod file="amd64-8-exp-latest/" -->)]
-[<a href="i386-8-exp-latest/">i386</a> (<!--#flastmod file="i386-8-exp-latest/" -->)]
-<br>
-</dd>
-
-<br>
-<dt>Build logs (errors and otherwise)</dt>
-
-<dd>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 5.x-stable 
-[<a href="i386-5-full-logs">i386</a> (<!--#flastmod file="i386-5-full-logs" -->)]
-[<a href="sparc64-5-full-logs">sparc64</a> (<!--#flastmod file="sparc64-5-full-logs" -->)]
-[<a href="amd64-5-full-logs">amd64</a> (<!--#flastmod file="amd64-5-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-5.x-stable
-[<a href="i386-5-latest-logs">i386</a> (<!--#flastmod file="i386-5-latest-logs" -->)] 
-[<a href="sparc64-5-latest-logs">sparc64</a> (<!--#flastmod file="sparc64-5-latest-logs" -->)]
-[<a href="amd64-5-latest-logs">amd64</a> (<!--#flastmod file="amd64-5-latest-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 6.x-stable 
-[<a href="i386-6-full-logs">i386</a> (<!--#flastmod file="i386-6-full-logs" -->)]
-[<a href="sparc64-6-full-logs">sparc64</a> (<!--#flastmod file="sparc64-6-full-logs" -->)]
-[<a href="amd64-6-full-logs">amd64</a> (<!--#flastmod file="amd64-6-full-logs" -->)]
-[<a href="ia64-6-full-logs">ia64</a> (<!--#flastmod file="ia64-6-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-6.x-stable
-[<a href="i386-6-latest-logs">i386</a> (<!--#flastmod file="i386-6-latest-logs" -->)] 
-[<a href="sparc64-6-latest-logs">sparc64</a> (<!--#flastmod file="sparc64-6-latest-logs" -->)]
-[<a href="amd64-6-latest-logs">amd64</a> (<!--#flastmod file="amd64-6-latest-logs" -->)]
-[<a href="ia64-6-latest-logs">ia64</a> (<!--#flastmod file="ia64-6-latest-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 7.x-stable 
-[<a href="i386-7-full-logs">i386</a> (<!--#flastmod file="i386-7-full-logs" -->)]
-[<a href="sparc64-7-full-logs">sparc64</a> (<!--#flastmod file="sparc64-7-full-logs" -->)]
-[<a href="amd64-7-full-logs">amd64</a> (<!--#flastmod file="amd64-7-full-logs" -->)]
-[<a href="ia64-7-full-logs">ia64</a> (<!--#flastmod file="ia64-7-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-7.x-stable
-[<a href="i386-7-latest-logs">i386</a> (<!--#flastmod file="i386-7-latest-logs" -->)] 
-[<a href="sparc64-7-latest-logs">sparc64</a> (<!--#flastmod file="sparc64-7-latest-logs" -->)]
-[<a href="amd64-7-latest-logs">amd64</a> (<!--#flastmod file="amd64-7-latest-logs" -->)]
-[<a href="ia64-7-latest-logs">ia64</a> (<!--#flastmod file="ia64-7-latest-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 8.x-current 
-[<a href="i386-8-full-logs">i386</a> (<!--#flastmod file="i386-8-full-logs" -->)]
-[<a href="sparc64-8-full-logs">sparc64</a> (<!--#flastmod file="sparc64-8-full-logs" -->)]
-[<a href="amd64-8-full-logs">amd64</a> (<!--#flastmod file="amd64-8-full-logs" -->)]
-[<a href="ia64-8-full-logs">ia64</a> (<!--#flastmod file="ia64-8-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-8.x-current
-[<a href="i386-8-latest-logs">i386</a> (<!--#flastmod file="i386-8-latest-logs" -->)] 
-[<a href="sparc64-8-latest-logs">sparc64</a> (<!--#flastmod file="sparc64-8-latest-logs" -->)]
-[<a href="amd64-8-latest-logs">amd64</a> (<!--#flastmod file="amd64-8-latest-logs" -->)]
-[<a href="ia64-8-latest-logs">ia64</a> (<!--#flastmod file="ia64-8-latest-logs" -->)]
-<br>
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 6.x-stable with experimental port patches
-[<a href="i386-6-exp-full-logs">i386</a> (<!--#flastmod file="i386-6-exp-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-6.x-stable with experimental port patches
-[<a href="i386-6-exp-latest-logs">i386</a> (<!--#flastmod file="i386-6-exp-latest-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 7.x-stable with experimental port patches
-[<a href="amd64-7-exp-full-logs">amd64</a> (<!--#flastmod file="amd64-7-exp-full-logs" -->)]
-[<a href="i386-7-exp-full-logs">i386</a> (<!--#flastmod file="i386-7-exp-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-7.x-stable with experimental port patches
-[<a href="amd64-7-exp-latest-logs">amd64</a> (<!--#flastmod file="amd64-7-exp-latest-logs" -->)]
-[<a href="i386-7-exp-latest-logs">i386</a> (<!--#flastmod file="i386-7-exp-latest-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
-on 8.x-current with experimental port patches
-[<a href="amd64-8-exp-full-logs">amd64</a> (<!--#flastmod file="amd64-8-exp-full-logs" -->)]
-[<a href="i386-8-exp-full-logs">i386</a> (<!--#flastmod file="i386-8-exp-full-logs" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
-8.x-current with experimental port patches
-[<a href="amd64-8-exp-latest-logs">amd64</a> (<!--#flastmod file="amd64-8-exp-latest-logs" -->)]
-[<a href="i386-8-exp-latest-logs">i386</a> (<!--#flastmod file="i386-8-exp-latest-logs" -->)]
-<br>
-</dd>
-<!--
-<br>
-<dt>Extra files not listed in PLIST</dt>
-
-<dd>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Last full run
-on 5.x-stable 
-[<a href="i386-5-full-logs/extras.html">i386</a> (<!--#flastmod file="i386-5-full-logs/extras.html" -->)] 
-[<a href="sparc64-5-full-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-5-full-logs/extras.html" -->)]
-[<a href="amd64-5-full-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-5-full-logs/extras.html" -->)]
-[<a href="ia64-5-full-logs/extras.html">ia64</a> (< !--#flastmod file="ia64-5-full-logs/extras.html" -- >)]
-<br>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Current run on
-5.x-stable 
-[<a href="i386-5-latest-logs/extras.html">i386</a> (<!--#flastmod file="i386-5-latest-logs/extras.html" -->)] 
-[<a href="sparc64-5-latest-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-5-latest-logs/extras.html" -->)]
-[<a href="amd64-5-latest-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-5-latest-logs/extras.html" -->)]
-[<a href="ia64-5-latest-logs/extras.html">ia64</a> (< !--#flastmod file="ia64-5-latest-logs/extras.html" -- >)]
-<br>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Last full run
-on 6.x-stable 
-[<a href="i386-6-full-logs/extras.html">i386</a> (<!--#flastmod file="i386-6-full-logs/extras.html" -->)] 
-[<a href="sparc64-6-full-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-6-full-logs/extras.html" -->)]
-[<a href="amd64-6-full-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-6-full-logs/extras.html" -->)]
-[<a href="ia64-6-full-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-6-full-logs/extras.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Current run on
-6.x-stable 
-[<a href="i386-6-latest-logs/extras.html">i386</a> (<!--#flastmod file="i386-6-latest-logs/extras.html" -->)] 
-[<a href="sparc64-6-latest-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-6-latest-logs/extras.html" -->)]
-[<a href="amd64-6-latest-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-6-latest-logs/extras.html" -->)]
-[<a href="ia64-6-latest-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-6-latest-logs/extras.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Last full run
-on 7.x-stable 
-[<a href="i386-7-full-logs/extras.html">i386</a> (<!--#flastmod file="i386-7-full-logs/extras.html" -->)] 
-[<a href="sparc64-7-full-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-7-full-logs/extras.html" -->)]
-[<a href="amd64-7-full-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-7-full-logs/extras.html" -->)]
-[<a href="ia64-7-full-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-7-full-logs/extras.html" -->)]
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Current run on
-7.x-stable 
-[<a href="i386-7-latest-logs/extras.html">i386</a> (<!--#flastmod file="i386-7-latest-logs/extras.html" -->)] 
-[<a href="sparc64-7-latest-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-7-latest-logs/extras.html" -->)]
-[<a href="amd64-7-latest-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-7-latest-logs/extras.html" -->)]
-[<a href="ia64-7-latest-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-7-latest-logs/extras.html" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Last full run
-on 8.x-current 
-[<a href="i386-8-full-logs/extras.html">i386</a> (<!--#flastmod file="i386-8-full-logs/extras.html" -->)] 
-[<a href="sparc64-8-full-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-8-full-logs/extras.html" -->)]
-[<a href="amd64-8-full-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-8-full-logs/extras.html" -->)]
-[<a href="ia64-8-full-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-8-full-logs/extras.html" -->)]
-<img alt="*" src="/errorlogs/images/green-ball.gif"> Current run on
-8.x-current 
-[<a href="i386-8-latest-logs/extras.html">i386</a> (<!--#flastmod file="i386-8-latest-logs/extras.html" -->)] 
-[<a href="sparc64-8-latest-logs/extras.html">sparc64</a> (<!--#flastmod file="sparc64-8-latest-logs/extras.html" -->)]
-[<a href="amd64-8-latest-logs/extras.html">amd64</a> (<!--#flastmod file="amd64-8-latest-logs/extras.html" -->)]
-[<a href="ia64-8-latest-logs/extras.html">ia64</a> (<!--#flastmod file="ia64-8-latest-logs/extras.html" -->)]
-<br>
-</dd>
---!>
-<!--
-<dt>List of...</dt>
-
-<dd><img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that
-build on 5.x-stable but not on 4.x-stable (last full run) 
-[<a href="i386-4-full-5-full.html">i386</a> (<!--#flastmod file="i386-4-full-5-full.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that
-build on 5.x-stable but not on 4.x-stable 
-[<a href="i386-4-latest-5-latest.html">i386</a> (<!--#flastmod file="i386-4-latest-5-latest.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that
-build on 4.x-stable but not on 5.x-stable (last full run) 
-[<a href="i386-5-full-4-full.html">i386</a> (<!--#flastmod file="i386-5-full-4-full.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that
-build on 4.x-stable but not on 5.x-stable 
-[<a href="i386-5-latest-4-latest.html">i386</a> (<!--#flastmod file="i386-5-latest-4-latest.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that fail
-on all of "4.x-stable 5.x-stable" (last full run) 
-[<a href="i386-4-full+5-full.html">i386</a> (<!--#flastmod file="i386-4-full+5-full.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that fail
-on all of "4.x-stable 5.x-stable" 
-[<a href="i386-4-latest+5-latest.html">i386</a> (<!--#flastmod file="i386-4-latest+5-latest.html" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that fail
-in the experimental port rebuild but not in the regular port
-rebuild 
-[<a href="i386-5-exp-full-5-full.html">i386</a> (<!--#flastmod file="" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/blue-ball.gif"> Ports that fail
-in the experimental port rebuild but not in the regular port
-rebuild 
-[<a href="i386-5-exp-latest-5-latest.html">i386</a> (<!--#flastmod file="" -->)] 
-<br>
-</dd>
--->
-<br>
-<dt>Packages</dt>
-
-<dd>
-<!--
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages
-from last full run on 4.x-stable 
-[<a href="i386-4-packages-full/">i386</a> (<!--#flastmod file="i386-4-packages-full/" -->)] 
-<br>
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 4.x-stable 
-[<a href="i386-4-packages-latest/">i386</a> (<!--#flastmod file="i386-4-packages-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-last full run on 5.x-stable 
-[<a href="i386-5-packages-full/">i386</a> (<!--#flastmod file="i386-5-packages-full/" -->)] 
-[<a href="sparc64-5-packages-full/">sparc64</a> (<!--#flastmod file="sparc64-5-packages-full/" -->)]
-[<a href="amd64-5-packages-full/">amd64</a> (<!--#flastmod file="amd64-5-packages-full/" -->)]
-<br>
--->
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 5.x-stable 
-[<a href="i386-5-packages-latest/">i386</a> (<!--#flastmod file="i386-5-packages-latest/" -->)] 
-[<a href="sparc64-5-packages-latest/">sparc64</a> (<!--#flastmod file="sparc64-5-packages-latest/" -->)]
-[<a href="amd64-5-packages-latest/">amd64</a> (<!--#flastmod file="amd64-5-packages-latest/" -->)]
-<br>
-<!--
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-last full run on 6-stable 
-[<a href="i386-6-packages-full/">i386</a> (<!--#flastmod file="i386-6-packages-full/" -->)] 
-[<a href="sparc64-6-packages-full/">sparc64</a> (<!--#flastmod file="sparc64-6-packages-full/" -->)]
-[<a href="ia64-6-packages-full/">ia64</a> (<!--#flastmod file="ia64-6-packages-full/" -->)]
-[<a href="amd64-6-packages-full/">amd64</a> (<!--#flastmod file="amd64-6-packages-full/" -->)]
-<br>
--->
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 6-stable 
-[<a href="i386-6-packages-latest/">i386</a> (<!--#flastmod file="i386-6-packages-latest/" -->)] 
-[<a href="sparc64-6-packages-latest/">sparc64</a> (<!--#flastmod file="sparc64-6-packages-latest/" -->)]
-[<a href="ia64-6-packages-latest/">ia64</a> (<!--#flastmod file="ia64-6-packages-latest/" -->)]
-[<a href="amd64-6-packages-latest/">amd64</a> (<!--#flastmod file="amd64-6-packages-latest/" -->)]
-<br>
-<!--
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-last full run on 7-stable
-[<a href="i386-7-packages-full/">i386</a> (<!--#flastmod file="i386-7-packages-full/" -->)] 
-[<a href="sparc64-7-packages-full/">sparc64</a> (<!--#flastmod file="sparc64-7-packages-full/" -->)]
-[<a href="ia64-7-packages-full/">ia64</a> (<!--#flastmod file="ia64-7-packages-full/" -->)]
-[<a href="amd64-7-packages-full/">amd64</a> (<!--#flastmod file="amd64-7-packages-full/" -->)]
-<br>
--->
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 7-stable 
-[<a href="i386-7-packages-latest/">i386</a> (<!--#flastmod file="i386-7-packages-latest/" -->)] 
-[<a href="sparc64-7-packages-latest/">sparc64</a> (<!--#flastmod file="sparc64-7-packages-latest/" -->)]
-[<a href="ia64-7-packages-latest/">ia64</a> (<!--#flastmod file="ia64-7-packages-latest/" -->)]
-[<a href="amd64-7-packages-latest/">amd64</a> (<!--#flastmod file="amd64-7-packages-latest/" -->)]
-<br>
-<!--
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-last full run on 8-current
-[<a href="i386-8-packages-full/">i386</a> (<!--#flastmod file="i386-8-packages-full/" -->)] 
-[<a href="sparc64-8-packages-full/">sparc64</a> (<!--#flastmod file="sparc64-8-packages-full/" -->)]
-[<a href="ia64-8-packages-full/">ia64</a> (<!--#flastmod file="ia64-8-packages-full/" -->)]
-[<a href="amd64-8-packages-full/">amd64</a> (<!--#flastmod file="amd64-8-packages-full/" -->)]
-<br>
--->
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
-latest run on 8-current 
-[<a href="i386-8-packages-latest/">i386</a> (<!--#flastmod file="i386-8-packages-latest/" -->)] 
-[<a href="sparc64-8-packages-latest/">sparc64</a> (<!--#flastmod file="sparc64-8-packages-latest/" -->)]
-[<a href="ia64-8-packages-latest/">ia64</a> (<!--#flastmod file="ia64-8-packages-latest/" -->)]
-[<a href="amd64-8-packages-latest/">amd64</a> (<!--#flastmod file="amd64-8-packages-latest/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/purple-ball.gif"> Package
-<a href="packagestats.html">building statistics</a> (current state of all package builds)
-<br>
-</dd>
-
-<br>
-<dt>Archive</dt>
-
-<dd><img alt="*" src="/errorlogs/images/red-ball.gif"> All error
-logs 
-[<a href="i386-errorlogs/">i386</a> (<!--#flastmod file="i386-errorlogs/" -->)] 
-[<a href="sparc64-errorlogs/">sparc64</a> (<!--#flastmod file="sparc64-errorlogs/" -->)]
-[<a href="ia64-errorlogs/">ia64</a> (<!--#flastmod file="ia64-errorlogs/" -->)]
-[<a href="amd64-errorlogs/">amd64</a> (<!--#flastmod file="amd64-errorlogs/" -->)]
-<br>
-<img alt="*" src="/errorlogs/images/red-ball.gif"> All portbuild
-logs 
-[<a href="i386-buildlogs/">i386</a> (<!--#flastmod file="i386-buildlogs/" -->)] 
-[<a href="sparc64-buildlogs/">sparc64</a> (<!--#flastmod file="sparc64-buildlogs/" -->)]
-[<a href="ia64-buildlogs/">ia64</a> (<!--#flastmod file="ia64-buildlogs/" -->)]
-[<a href="amd64-buildlogs/">amd64</a> (<!--#flastmod file="amd64-buildlogs/" -->)]
+failures on 8.x-current:
+<a href="amd64-8-failure.html">amd64</a>
+<a href="i386-8-failure.html">i386</a>
+<a href="sparc64-8-failure.html">sparc64</a>
+<br>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 6.x-stable with experimental port patches:
+<a href="amd64-6-exp-failure.html">amd64</a>
+<a href="i386-6-exp-failure.html">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 7.x-stable with experimental port patches:
+<a href="amd64-7-exp-failure.html">amd64</a>
+<a href="i386-7-exp-failure.html">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> New build failures on 8.x-current with experimental port patches:
+<a href="amd64-8-exp-failure.html">amd64</a>
+<a href="i386-8-exp-failure.html">i386</a>
 <br>
 </dd>
 </dl>
 
+<h4><font color="#990000">
+Error logs
+</font></h4>
+
+<dl>
+<dd>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif">
+<a href="http://www.FreeBSD.org/~fenner/errorlogs/">By maintainer</a></dd>
+<br>
+<dd>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 6.x-stable:
+<a href="amd64-6-full/">amd64</a>
+<a href="i386-6-full/">i386</a>
+<a href="sparc64-6-full/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 6.x-stable:
+<a href="amd64-6-latest/">amd64</a>
+<a href="i386-6-latest/">i386</a>
+<a href="sparc64-6-latest/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 7.x-stable:
+<a href="amd64-7-full/">amd64</a>
+<a href="i386-7-full/">i386</a>
+<a href="sparc64-7-full/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 7.x-stable:
+<a href="amd64-7-latest/">amd64</a>
+<a href="i386-7-latest/">i386</a>
+<a href="sparc64-7-latest/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 8.x-current:
+<a href="amd64-8-full/">amd64</a>
+<a href="i386-8-full/">i386</a>
+<a href="sparc64-8-full/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 8.x-current:
+<a href="amd64-8-latest/">amd64</a>
+<a href="i386-8-latest/">i386</a>
+<a href="sparc64-8-latest/">sparc64</a>
+<br>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 6.x-stable with experimental port patches:
+<a href="amd64-6-exp-full/">amd64</a>
+<a href="i386-6-exp-full/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 6.x-stable with experimental port patches:
+<a href="amd64-6-exp-latest/">amd64</a>
+<a href="i386-6-exp-latest/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 7.x-stable with experimental port patches:
+<a href="amd64-7-exp-full/">amd64</a>
+<a href="i386-7-exp-full/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 7.x-stable with experimental port patches:
+<a href="amd64-7-exp-latest/">amd64</a>
+<a href="i386-7-exp-latest/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
+on 8.x-current with experimental port patches:
+<a href="amd64-8-exp-full/">amd64</a>
+<a href="i386-8-exp-full/">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/yellow-ball.gif"> Current run
+on 8.x-current with experimental port patches:
+<a href="amd64-8-exp-latest/">amd64</a>
+<a href="i386-8-exp-latest/">i386</a>
+</dd>
+</dl>
+
+<h4><font color="#990000">
+Build logs (errors and otherwise)
+</font></h4>
+
+<dl>
+<dd>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 6.x-stable:
+<a href="amd64-6-full-logs">amd64</a>
+<a href="i386-6-full-logs">i386</a>
+<a href="sparc64-6-full-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+6.x-stable:
+<a href="amd64-6-latest-logs">amd64</a>
+<a href="i386-6-latest-logs">i386</a>
+<a href="sparc64-6-latest-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 7.x-stable:
+<a href="amd64-7-full-logs">amd64</a>
+<a href="i386-7-full-logs">i386</a>
+<a href="sparc64-7-full-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+7.x-stable:
+<a href="amd64-7-latest-logs">amd64</a>
+<a href="i386-7-latest-logs">i386</a>
+<a href="sparc64-7-latest-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 8.x-current:
+<a href="amd64-8-full-logs">amd64</a>
+<a href="i386-8-full-logs">i386</a>
+<a href="sparc64-8-full-logs">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+8.x-current:
+<a href="amd64-8-latest-logs">amd64</a>
+<a href="i386-8-latest-logs">i386</a>
+<a href="sparc64-8-latest-logs">sparc64</a>
+<br>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 6.x-stable with experimental port patches
+<a href="i386-6-exp-full-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+6.x-stable with experimental port patches
+<a href="i386-6-exp-latest-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 7.x-stable with experimental port patches:
+<a href="amd64-7-exp-full-logs">amd64</a>
+<a href="i386-7-exp-full-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+7.x-stable with experimental port patches:
+<a href="amd64-7-exp-latest-logs">amd64</a>
+<a href="i386-7-exp-latest-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Last full run
+on 8.x-current with experimental port patches:
+<a href="amd64-8-exp-full-logs">amd64</a>
+<a href="i386-8-exp-full-logs">i386</a>
+<br>
+<img alt="*" src="/errorlogs/images/orange-ball.gif">Current run on
+8.x-current with experimental port patches:
+<a href="amd64-8-exp-latest-logs">amd64</a>
+<a href="i386-8-exp-latest-logs">i386</a>
+<br>
+</dd>
+</dl>
+
+<h4><font color="#990000">
+Packages
+</font></h4>
+
+<dl>
+<dd>
+<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
+latest run on 6-stable:
+<a href="amd64-6-packages-latest/">amd64</a>
+<a href="i386-6-packages-latest/">i386</a>
+<a href="sparc64-6-packages-latest/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
+latest run on 7-stable:
+<a href="amd64-7-packages-latest/">amd64</a>
+<a href="i386-7-packages-latest/">i386</a>
+<a href="sparc64-7-packages-latest/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/purple-ball.gif"> Packages from
+latest run on 8-current:
+<a href="amd64-8-packages-latest/">amd64</a>
+<a href="i386-8-packages-latest/">i386</a>
+<a href="sparc64-8-packages-latest/">sparc64</a>
+<br>
+<br>
+<img alt="*" src="/errorlogs/images/purple-ball.gif"> Package
+<a href="packagestats.html">building statistics</a> (current state of all package builds)
+</dd>
+</dl>
+
+<h4><font color="#990000">
+Archive
+</font></h4>
+
+<dl>
+<dd><img alt="*" src="/errorlogs/images/red-ball.gif"> All error
+logs:
+<a href="amd64-errorlogs/">amd64</a>
+<a href="i386-errorlogs/">i386</a>
+<a href="sparc64-errorlogs/">sparc64</a>
+<br>
+<img alt="*" src="/errorlogs/images/red-ball.gif"> All portbuild
+logs:
+<a href="amd64-buildlogs/">amd64</a>
+<a href="i386-buildlogs/">i386</a>
+<a href="sparc64-buildlogs/">sparc64</a>
+</dd>
+</dl>
+
+<a name="notes">
 <h3><font color="#990000">Additional information</font></h3>
+</a>
+
+<p>All of the "Current run" links are possibly in progress and may be
+partial, so keep that in mind if there appear to be some missing.</p>
 
 <p>None of the ports marked <tt>IS_INTERACTIVE</tt> or
 <tt>NO_PACKAGE</tt> are built any more -- if you have ports that
@@ -479,16 +304,13 @@ clean-restricted-list</tt>"). <tt>NO_CDROM</tt> packages are built
 but deleted (using "<tt>make clean-cdrom-list</tt>") before being
 put on a CDROM.</p>
 
+<p>See also the <a href="errors.html">types of errors detected</a>.</p>
+
 <p>Notes on the building process:</p>
 
 <ul>
 <li><em>Every</em> port is built in its own chroot environment (
-<!--
-<a
-href="i386-4-bindist.tar">tarball for 4.x-stable</a>
--->
-<a href="i386-5-bindist.tar">tarball for 5.x-stable</a>
-|<a href="i386-6-bindist.tar">tarball for 6.x-stable</a>
+<a href="i386-6-bindist.tar">tarball for 6.x-stable</a>
 |<a href="i386-7-bindist.tar">tarball for 7.x-stable</a>
 |<a href="i386-8-bindist.tar">tarball for 8.x-current</a>
 ), starting with an
@@ -531,13 +353,14 @@ for that.</li>
  use the value of the OSVERSION variable that can be passed in from
  the port makefile.  </li> </ul>
 
-<h3><font color="#990000">Types of errors detected</font></h3>
+<a name="errorlist"></a>
+<h2><font color="990000">Types of package errors detected</font></h2>
 
-<p><a name="errorlist">Here is an <b>alphabetical list of current errors</b></a>
+<p>Here is the <b>alphabetical list of current errors</b>
 detected by the AI script.  Note that this is all just a rough guess --
 it is merely for your aid.</p>
 
-<p>Key (applies only to the items below):
+<p>Key:
 <dl>
   <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif">The most common
     errors.</dt> 
@@ -907,7 +730,7 @@ reasonably efficient while covering as many errors as possible, but many
 errors are not common enough to try to catch.</dd>
 </dl>
 
-<p><a name="errorlist">Here is an <b>alphabetical list of obsolete errors</b></a>
+<p>Here is an <b>alphabetical list of obsolete errors</b></a>
 that used to be detected by the AI script, but are now uncommon enough to
 be skipped:</p>
 
@@ -1039,7 +862,7 @@ longer sufficient in XFree86-4.</dd>
 <hr>
 <center><a href="http://www.freebsd.org/ports/">The ports page</a>
 | Maintained by <a href="mailto:portmgr@FreeBSD.org">portmgr@FreeBSD.org</a>
-| Last modified <!--#flastmod file="index.shtml" -->
+| Last modified 
 <br>
 $FreeBSD$
 </center>
