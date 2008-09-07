@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	libjingle
-PORTVERSION=	0.3.0
-PORTREVISION=	9
+PORTVERSION=	0.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
-
-BROKEN=		does not compile with new speex
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
 
 BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
@@ -27,13 +22,16 @@ LIB_DEPENDS=	\
 		ortp.5:${PORTSDIR}/net/ortp \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
+		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
+
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_DOS2UNIX=	README
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS=	\
 		--with-ilbc=${LOCALBASE} \
 		--with-speex=${LOCALBASE}
 CONFIGURE_ENV=	\
@@ -61,6 +59,8 @@ PORTDOCS=	\
 .endif
 
 PLIST_FILES+=	\
+		bin/login \
+		bin/pcp \
 		bin/relayserver \
 		bin/stunserver \
 
@@ -77,9 +77,7 @@ post-configure:
 		${CONFIGURE_WRKSRC}/config.h
 # configure does not handle OSS support
 # force oss
-# force ssl
 .for feature in \
-	FEATURE_ENABLE_SSL \
 	HAVE_SYS_SOUNDCARD_H
 	@${ECHO_CMD} \
 		'#define ${feature} 1' >> \
