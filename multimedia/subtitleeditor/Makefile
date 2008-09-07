@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.22.3
+PORTVERSION=	0.23.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.22/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.23/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Subtitle editor
