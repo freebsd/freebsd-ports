@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=urjtag
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	stevefranks@ieee.org
 COMMENT=	Extended utility to work with JTAG-aware boards
 
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
