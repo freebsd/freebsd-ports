@@ -6,6 +6,7 @@
 
 PORTNAME=	librra
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 PKGNAMEPREFIX?=	synce-
@@ -25,7 +26,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
 			--with-libmimedir="${LOCALBASE}"
@@ -38,9 +38,10 @@ CONFIGURE_ARGS+=	--enable-python-bindings --disable-minor-tools
 .else
 # Not building bindings
 MAN1=	synce-matchmaker.1
-CONFIGURE_ARGS+=	--disable-minor-tools
-.if !defined(WITHOUT_TOOLS)
+CONFIGURE_ARGS+=	--disable-python-bindings
+.if defined(WITHOUT_TOOLS)
 PLIST_SUB+=	TOOLS="@comment "
+CONFIGURE_ARGS+=	--disable-minor-tools
 .else
 MAN1+=		rra-appointment-from-vevent.1 \
 		rra-appointment-to-vevent.1 rra-contact-from-vcard.1 \
