@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	www net-p2p
-MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ CENKES
+MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ LOCAL/chinsan/xpi
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A ed2k, magnet and sig2dat protocol handler
