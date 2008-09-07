@@ -12,7 +12,7 @@ MASTER_SITES=	CENKES http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # svn export -r664 http://pyxmpp.jajcus.net/svn/pyxmpp/trunk pyxmpp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Python XMPP library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
