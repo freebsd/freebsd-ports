@@ -3613,3 +3613,4 @@ print/it-acroread|print/it-acroread8|2008-09-06|Removed because of security vuln
 print/nl-acroread|print/nl-acroread8|2008-09-06|Removed because of security vulnerability
 print/no-acroread|print/no-acroread8|2008-09-06|Removed because of security vulnerability
 print/sv-acroread|print/sv-acroread8|2008-09-06|Removed because of security vulnerability
+net/py-zsi-devel|net/py-zsi-devel|2008-09-07|Removed in favor of py-zsi
