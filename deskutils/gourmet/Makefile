@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	gourmet
-PORTVERSION=	0.11.2
-PORTREVISION=	3
+PORTVERSION=	0.13.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/grecipe-manager
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
+LIB_DEPENDS=	mk4:${PORTSDIR}/databases/metakit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21 \
 		${PYTHON_SITELIBDIR}/PyRTF/__init__.py:${PORTSDIR}/print/py-rtf \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_GETTEXT=yes
 
 USE_GNOME=	pygnome2
 
