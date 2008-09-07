@@ -428,6 +428,7 @@
 %%PORTEXAMPLES%%lib/kroc/examples/robots/robot
 %%PORTEXAMPLES%%lib/kroc/examples/robots/robot2
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/drawstuff
+%%PORTEXAMPLES%%lib/kroc/examples/sdlraster/glenz
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/imagetool
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/imageviewer
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/justraster
