@@ -18,7 +18,8 @@ COMMENT=	A library for easier access to OpenGL extensions
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
 
 USE_GMAKE=	yes
-USE_GL=		gl
+USE_GL=		gl glu
+USE_XORG=	xmu xext x11
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 
