@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.e164.org/${PORTNAME}/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Enum lookups support
 
 XPI_ID=		support@e164.org

@@ -12,7 +12,7 @@ DISTVERSIONSUFFIX=	.en-US
 CATEGORIES=	www
 MASTER_SITES=	http://www.updatecg.com/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Enhance and tweak Google services
 
 XPI_NUM=	743

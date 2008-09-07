@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Combines address bar and progress bar
 
 XPI_ID=		{1280606b-2510-4fe0-97ef-9b5a22eafe41}

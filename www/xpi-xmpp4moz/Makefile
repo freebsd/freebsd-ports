@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2.2007113019
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Support for XMPP
 
 XPI_ID=		xmpp4moz@hyperstruct.net

@@ -10,7 +10,7 @@ PORTVERSION=	1.2.5
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Customize application menus
 
 XPI_DISTNAME=	menu_editor

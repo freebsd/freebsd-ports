@@ -10,7 +10,7 @@ PORTVERSION=	0.9.9.10
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
 
 XPI_DISTNAME=	downthemall!
