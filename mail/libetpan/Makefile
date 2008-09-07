@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.54
-PORTREVISION=	1
+PORTVERSION=	0.55
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,11 +39,5 @@ CONFIGURE_ARGS+=	--without-gnutls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
-
-post-install:
-	@${FIND} ${PREFIX}/include/libetpan* ! -type d | ${SED} \
-		's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/libetpan -type d | ${SORT} | ${SED} \
-		's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
