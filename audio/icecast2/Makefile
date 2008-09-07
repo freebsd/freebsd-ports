@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	icecast2
-PORTVERSION=	2.3.1
-PORTREVISION=	7
+PORTVERSION=	2.3.2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
-MASTER_SITES=	http://svn.xiph.org/releases/icecast/
+MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
+		http://svn.xiph.org/releases/icecast/
 DISTNAME=	icecast-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,9 +30,17 @@ SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE} CFLAGS=-I${LOCALBASE}/include
 
+DOCSDIR=	${PREFIX}/share/doc/icecast
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(NOPORTDOCS)
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|SUBDIRS = src conf debian doc web admin win32 examples|SUBDIRS = src conf debian web admin win32 examples # doc|' \
+		-e 's| install-exec-am install-data-am| install-exec-am|' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
