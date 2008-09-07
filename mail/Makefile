@@ -112,6 +112,7 @@
     SUBDIR += enigmail
     SUBDIR += enigmail-seamonkey
     SUBDIR += enigmail-thunderbird
+    SUBDIR += enma
     SUBDIR += eps
     SUBDIR += epstools
     SUBDIR += esmtp
