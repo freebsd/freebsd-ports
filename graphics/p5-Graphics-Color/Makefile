@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Color
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
 		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
   		p5-MooseX-Clone>=0:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Pod-Coverage-Moose>=0:${PORTSDIR}/devel/p5-Pod-Coverage-Moose
+		p5-Pod-Coverage-Moose>=0:${PORTSDIR}/devel/p5-Pod-Coverage-Moose \
+		p5-MooseX-Storage>=0:${PORTSDIR}/devel/p5-MooseX-Storage
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
