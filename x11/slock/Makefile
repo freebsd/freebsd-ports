@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       slock
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTNAME=	slock
+PORTVERSION=	0.9
 CATEGORIES=	x11
-MASTER_SITES=	http://www.suckless.org/download/ CENKES
+MASTER_SITES=	http://code.suckless.org/dl/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple X screen locker
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
