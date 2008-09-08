@@ -25,6 +25,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/_internal.py
 %%PYTHON_SITELIBDIR%%/numpy/core/_internal.pyc
 %%PYTHON_SITELIBDIR%%/numpy/core/_internal.pyo
+%%PYTHON_SITELIBDIR%%/numpy/core/_dotblas.so
 %%PYTHON_SITELIBDIR%%/numpy/core/_sort.so
 %%PYTHON_SITELIBDIR%%/numpy/core/arrayprint.py
 %%PYTHON_SITELIBDIR%%/numpy/core/arrayprint.pyc
