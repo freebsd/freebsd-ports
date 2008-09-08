@@ -1,6 +1,6 @@
 --- config/locale.alias.orig	2008-03-10 21:53:02.000000000 -0500
 +++ config/locale.alias	2008-03-10 21:53:37.000000000 -0500
-@@ -14,133 +14,57 @@
+@@ -14,134 +14,57 @@
  #
  #		- George
  
@@ -67,6 +67,7 @@
 -Italian			it_IT.UTF-8,it_IT
 -Japanese		ja_JP.UTF-8,ja_JP
 -Kannada			kn_IN.UTF-8,kn_IN
+-Kazakh			kk_KZ.UTF-8,kk_KZ 
 -Kinyarwanda		rw_RW.UTF-8,rw_RW
 -Korean			ko_KR.UTF-8,ko_KR
 -Latvian			lv_LV.UTF-8,lv_LV
