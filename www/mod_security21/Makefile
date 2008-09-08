@@ -77,7 +77,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRCTOP}/,} ${DOCSDIR}/
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc rules" ${DOCSDIR}/)
+	@cd ${WRKSRC}/../ && ${COPYTREE_SHARE} "doc rules" ${DOCSDIR}
 .endif
 .if !defined(SKIP_RULES)
 	@${INSTALL_DATA} ${WRKDIR}/mod_security2.conf ${PREFIX}/${APACHEETCDIR}/Includes/
