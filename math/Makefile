@@ -235,6 +235,7 @@
     SUBDIR += octave-forge-time
     SUBDIR += octave-forge-triangular
     SUBDIR += octave-forge-video
+    SUBDIR += octave-forge-vrml
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
