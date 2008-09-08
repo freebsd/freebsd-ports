@@ -200,6 +200,7 @@
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-linear-algebra
     SUBDIR += octave-forge-miscellaneous
+    SUBDIR += octave-forge-missing-functions
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
