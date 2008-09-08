@@ -191,6 +191,7 @@
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
+    SUBDIR += octave-forge-financial
     SUBDIR += octave-forge-fixed
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-ftp
