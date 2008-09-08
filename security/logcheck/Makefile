@@ -7,6 +7,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.2.54
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/l/logcheck/ \
 		http://ftp.de.debian.org/debian/pool/main/l/logcheck/
@@ -30,6 +31,9 @@ DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
 PORTDOCS=	${DOCS:T}
 MAN8=		logcheck.8 logtail.8
 
+LOGCHECK_USER=	logcheck
+LOGCHECK_GROUP=	${LOGCHECK_USER}
+
 do-build:
 	${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
 	${WRKSRC}/etc/logcheck.logfiles
@@ -44,8 +48,12 @@ do-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL} -d /var/lib/logcheck
 	@${INSTALL} -d /var/run/logcheck
-	${CHOWN} logcheck:logcheck /var/lib/logcheck
-	${CHOWN} logcheck:logcheck /var/run/logcheck
+	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} /var/lib/logcheck
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
+		/var/lib/logcheck' >> ${TMPPLIST}
+	${CHOWN} ${LOGCHECK_USER}:${LOGCHECK_GROUP} /var/run/logcheck
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${LOGCHECK_USER}:${LOGCHECK_GROUP} \
+		/var/run/logcheck' >> ${TMPPLIST}
 	@${INSTALL} -d ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf ${ETCDIR}/logcheck.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles ${ETCDIR}/logcheck.logfiles.sample
@@ -53,12 +61,13 @@ do-install:
 	@${INSTALL} -d ${ETCDIR}/${i}
 	@${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* ${ETCDIR}/${i}
 .endfor
-	@${INSTALL} -d ${DOCSDIR}
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d ${EXAMPLESDIR}/crontab.in
 .endif
-	${CHOWN} -R root:logcheck ${ETCDIR}
+	${CHOWN} -R root:${LOGCHECK_GROUP} ${ETCDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R root:${LOGCHECK_GROUP} \
+		${ETCDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_MAN} ${WRKSRC}/docs/*.8 ${MAN8PREFIX}/man/man8
 
