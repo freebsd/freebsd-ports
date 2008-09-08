@@ -200,6 +200,7 @@
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-io
+    SUBDIR += octave-forge-irsa
     SUBDIR += octave-forge-linear-algebra
     SUBDIR += octave-forge-miscellaneous
     SUBDIR += octave-forge-missing-functions
