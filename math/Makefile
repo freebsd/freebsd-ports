@@ -213,6 +213,7 @@
     SUBDIR += octave-forge-octgpr
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-odepkg
+    SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
     SUBDIR += oleo
