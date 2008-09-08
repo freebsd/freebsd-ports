@@ -217,6 +217,7 @@
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-pdb
+    SUBDIR += octave-forge-physicalconstants
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
