@@ -1,0 +1,20 @@
+# New ports collection makefile for:	octave-forge
+# Date created:		5 May 2004
+# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	octave-forge-financial
+PORTVERSION=	0.3.0
+CATEGORIES=     math
+
+MAINTAINER=	stephen@math.missouri.edu
+COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+
+RUN_DEPENDS+=	${TARBALLS_DIR}/time.tar.gz:${PORTSDIR}/math/octave-forge-time
+RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.octave.mk"
+.include <bsd.port.post.mk>
