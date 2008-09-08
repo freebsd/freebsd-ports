@@ -219,6 +219,7 @@
     SUBDIR += octave-forge-pdb
     SUBDIR += octave-forge-physicalconstants
     SUBDIR += octave-forge-plot
+    SUBDIR += octave-forge-pt_br
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
