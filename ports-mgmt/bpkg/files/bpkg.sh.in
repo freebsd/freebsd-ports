@@ -375,16 +375,16 @@ make_search_info()
 pkg_ftp()
 {
 	arch=`uname -m`
-	sys=`uname -r | cut -d- -f1,2 | tr '[:upper:]' '[:lower:]'`
+	sys=`uname -r | cut -d- -f1`
 
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
 	cat /tmp/bpkg.tmp | sed s/[0-9][0-9].*/*/ > /tmp/bpkg1.tmp
 
-	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/"
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
+	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/Latest/"
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
 
 	n=1
 	for e in `cat /tmp/bpkg2.tmp | awk '{print $9}' | cut -d. -f1`; do
@@ -403,15 +403,16 @@ pkg_ftp()
 pkg_latestftp()
 {
 	arch=`uname -m`
+	sys=`uname -r | cut -d. -f1`
 
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
 	cat /tmp/bpkg.tmp | sed s/[0-9][0-9].*/*/ > /tmp/bpkg1.tmp
 
-	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/"
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
+	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/Latest/"
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/Latest/ < /tmp/bpkg1.tmp > /tmp/bpkg2.tmp
+	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/All/ < /tmp/bpkg1.tmp > /tmp/bpkg3.tmp
 
 	n=1
 	for e in `cat /tmp/bpkg2.tmp | awk '{print $9}' | cut -d. -f1`; do
