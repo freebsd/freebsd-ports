@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tcl
-PORTVERSION=	0.95
+PORTVERSION=	0.97
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Tcl extension module for Perl5
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-
+USE_TCL=	84+
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--tclsh tclsh8.4
+CONFIGURE_ARGS=	--tclsh tclsh${TCL_VER}
 
 MAN3=		Tcl.3
 
