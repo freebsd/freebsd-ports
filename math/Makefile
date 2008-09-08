@@ -222,6 +222,7 @@
     SUBDIR += octave-forge-pt_br
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
+    SUBDIR += octave-forge-sockets
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
