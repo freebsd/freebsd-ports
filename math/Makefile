@@ -204,6 +204,7 @@
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-nnet
+    SUBDIR += octave-forge-ocs
     SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-parallel
     SUBDIR += oleo
