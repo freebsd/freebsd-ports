@@ -1244,6 +1244,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>nagios</name>
 	<range><lt>2.12</lt></range>
+	<range><gt>3.*</gt><lt>3.0.2</lt></range>
       </package>
       <package>
 	<name>nagios-devel</name>
@@ -1268,6 +1269,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-05-20</discovery>
       <entry>2008-05-28</entry>
+      <modified>2008-09-08</modified>
     </dates>
   </vuln>
 
