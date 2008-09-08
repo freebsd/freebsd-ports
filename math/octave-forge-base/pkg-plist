@@ -1,0 +1,7 @@
+@exec mkdir -p %%LOCALBASE%%/libexec/octave/packages
+@exec mkdir -p %%LOCALBASE%%/share/octave/packages
+@exec mkdir -p %%LOCALBASE%%/share/octave/tarballs
+@unexec rm -rf %%LOCALBASE%%/libexec/octave/packages
+@unexec rm -f %%LOCALBASE%%/share/octave/octave_packages
+@unexec rm -rf %%LOCALBASE%%/share/octave/packages
+@unexec rm -rf %%LOCALBASE%%/share/octave/tarballs

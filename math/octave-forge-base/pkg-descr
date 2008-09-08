@@ -1,0 +1,11 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This baseport provides the basic directory structure.  Deleting this package
+will completely erase all the structure, and remaining files, associated with
+the octave packaging system.  This is useful if things go wrong with the
+octave packaging system.
+
+WWW: http://octave.sourceforge.net/
