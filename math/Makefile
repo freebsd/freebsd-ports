@@ -205,6 +205,7 @@
     SUBDIR += octave-forge-mapping
     SUBDIR += octave-forge-miscellaneous
     SUBDIR += octave-forge-missing-functions
+    SUBDIR += octave-forge-msh
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-nnet
