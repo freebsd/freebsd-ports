@@ -216,6 +216,7 @@
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
+    SUBDIR += octave-forge-pdb
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
