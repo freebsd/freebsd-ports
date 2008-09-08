@@ -220,6 +220,7 @@
     SUBDIR += octave-forge-physicalconstants
     SUBDIR += octave-forge-plot
     SUBDIR += octave-forge-pt_br
+    SUBDIR += octave-forge-secs1d
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
