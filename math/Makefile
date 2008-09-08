@@ -226,6 +226,7 @@
     SUBDIR += octave-forge-sockets
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
+    SUBDIR += octave-forge-spline-gcvspl
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
