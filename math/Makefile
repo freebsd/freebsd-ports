@@ -190,6 +190,7 @@
     SUBDIR += octave-forge-combinatorics
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
+    SUBDIR += octave-forge-data-smoothing
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-financial
