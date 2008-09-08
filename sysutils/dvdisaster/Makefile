@@ -25,6 +25,8 @@ USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
+PORTSCOUT=	limit:^0\.71.[0-9]*
+
 MAN1=	dvdisaster.1
 MANLANG=	"" cs de it
 
