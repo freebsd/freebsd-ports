@@ -236,6 +236,7 @@
     SUBDIR += octave-forge-tcl-octave
     SUBDIR += octave-forge-time
     SUBDIR += octave-forge-triangular
+    SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-vrml
     SUBDIR += octave-forge-windows
