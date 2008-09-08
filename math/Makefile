@@ -190,6 +190,7 @@
     SUBDIR += octave-forge-combinatorics
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
+    SUBDIR += octave-forge-fixed
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-gsl
