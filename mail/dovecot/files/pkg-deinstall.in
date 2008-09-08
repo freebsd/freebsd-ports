@@ -1,5 +1,7 @@
 #! /bin/sh
 #
+#	$FreeBSD: /tmp/pcvs/ports/mail/dovecot/files/pkg-deinstall.in,v 1.1 2008-09-08 06:42:28 beech Exp $
+#
 # ex:ts=4
 
 ask() {
@@ -37,7 +39,8 @@ delete_account() {
 	group=${3%:*}
 	gid=${3#*:}
 
-	echo "If you do not intend to reinstall ${port}, you should manually remove the user '${user}' (uid='${uid}') and the group '${group}' (gid='${gid}')."
+	echo "If you do not intend to reinstall ${port}, you should manually"
+	echo "remove user '${user}' (uid='${uid}') and group '${group}' (gid='${gid}')."
 }
 
 case $2 in
@@ -52,7 +55,9 @@ DEINSTALL)
 		fi
 	fi
 
-	delete_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143}
+	delete_account Dovecot dovecot:${DOVECOT_UID:-%%DOVECOT_UID%%} dovecot:${DOVECOT_GID:-%%DOVECOT_GID%%}
+
+	echo "Also manually rm -rf /var/db/dovecot if anything was stored there."
 
 	base=/var/run/dovecot
 	DIRLIST="${base}/login ${base}"

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD$
+#	$FreeBSD: /tmp/pcvs/ports/mail/dovecot/files/pkg-install.in,v 1.1 2008-09-08 06:42:28 beech Exp $
 #
 # ex:ts=4
 
@@ -85,23 +85,13 @@ create_account() {
 case $2 in
 
 PRE-INSTALL)
-	create_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143} "Dovecot User" /var/empty /usr/sbin/nologin
+	create_account Dovecot dovecot:${DOVECOT_UID:-%%DOVECOT_UID%%} dovecot:${DOVECOT_GID:-%%DOVECOT_GID%%} "Dovecot User" /var/empty /usr/sbin/nologin
 	;;
 
 POST-INSTALL)
 	base=/var/run/dovecot
-	DIRLIST="${base} ${base}/login"
-	echo "Fixing ownerships and modes in \"${base}\"."
-	for directory in ${DIRLIST}; do
-		if [ ! -d "${directory}" ]; then
-			mkdir -p ${directory}
-			echo "Created directory: ${directory}"
-		fi
-	done
-	chown -R root:wheel   ${base}
-	chmod -R 0755         ${base}
-	chown -R root:dovecot ${base}/login
-	chmod -R 0750         ${base}/login
+	/usr/bin/install -o root -g wheel -m 0755 -d ${base}
+	/usr/bin/install -o root -g dovecot -m 0750 -d ${base}/login
 	;;
 
 esac
