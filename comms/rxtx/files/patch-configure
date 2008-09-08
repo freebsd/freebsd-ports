@@ -1,0 +1,11 @@
+--- configure.orig	2008-09-08 22:26:51.000000000 +0200
++++ configure	2008-09-08 22:27:59.000000000 +0200
+@@ -21611,7 +21611,7 @@
+ 	TARGETLIB="\$(target_triplet)/librxtxSerial.la \
+ 			\$(target_triplet)/librxtxParallel.la"
+ 	case $JAVA_VERSION in
+-	1.2*|1.3*|1.4*|1.5*)
++	1.2*|1.3*|1.4*|1.5*|1.6*)
+ 		#fix_parameters $JPATH/jre/lib/javax.comm.properties
+ 		CLASSPATH=".:\$(TOP):\$(TOP)/src:"`find $JPATH/ -name RXTXcomm.jar |head -n1`
+ 		RXTX_PATH="\$(JPATH)/jre/lib/\$(OS_ARCH)"
