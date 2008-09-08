@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/Alabastra-${PORTVERSION}
 
 PLIST_FILES=	bin/alabastra
 
+PORTSCOUT=	limit:^0\.21[0-9]*
+
 do-configure:
 	( cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} Alabastra.pro )

@@ -30,6 +30,8 @@ USE_RC_SUBR=	xmpppyirc
 PORTDOCS=	ChangeLog IRC-Transport-Howtouse.html README.txt
 DDIR=		${PYTHON_SITELIBDIR}/xmpp/irc
 
+PORTSCOUT=	limit:^0\.4[1-4]
+
 post-patch:
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD}," \
