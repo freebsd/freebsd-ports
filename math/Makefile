@@ -238,6 +238,7 @@
     SUBDIR += octave-forge-vrml
     SUBDIR += octave-forge-windows
     SUBDIR += octave-forge-xraylib
+    SUBDIR += octave-forge-zenity
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
