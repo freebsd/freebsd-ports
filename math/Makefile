@@ -196,6 +196,7 @@
     SUBDIR += octave-forge-fixed
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-ftp
+    SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-ident
