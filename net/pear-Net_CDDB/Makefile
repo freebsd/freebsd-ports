@@ -9,7 +9,7 @@ PORTNAME=	Net_CDDB
 PORTVERSION=	0.3.0
 CATEGORIES=	net audio www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class that access and query CDDB audio-CD servers
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \

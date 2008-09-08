@@ -10,7 +10,7 @@ PORTVERSION=	0.1.0
 PORTREVISION=	2
 CATEGORIES=	net pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR SMS functionality
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \

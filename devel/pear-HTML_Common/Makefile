@@ -9,7 +9,7 @@ PORTNAME=	HTML_Common
 PORTVERSION=	1.2.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR::HTML_Common is a base class for other HTML classes
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

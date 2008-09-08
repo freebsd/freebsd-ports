@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Client for the del.icio.us web service
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A tool to query internet domain name services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	Mail
 PORTVERSION=	1.1.14
 CATEGORIES=	mail www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class that provides multiple interfaces for sending emails
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

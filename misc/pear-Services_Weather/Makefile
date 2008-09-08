@@ -9,7 +9,7 @@ PORTNAME=	Services_Weather
 PORTVERSION=	1.4.3
 CATEGORIES=	misc www pear geography
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

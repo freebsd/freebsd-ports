@@ -9,7 +9,7 @@ PORTNAME=	Games_Chess
 PORTVERSION=	1.0.1
 CATEGORIES=	games devel pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR methods for constructing and validating chess games in PGN
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
