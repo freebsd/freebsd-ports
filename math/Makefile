@@ -223,6 +223,7 @@
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
     SUBDIR += octave-forge-sockets
+    SUBDIR += octave-forge-specfun
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
