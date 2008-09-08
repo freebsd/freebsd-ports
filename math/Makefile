@@ -187,6 +187,7 @@
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fpl
+    SUBDIR += octave-forge-gsl
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
