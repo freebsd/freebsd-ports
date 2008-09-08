@@ -192,6 +192,7 @@
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-gsl
+    SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
