@@ -401,6 +401,15 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.py
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/conduit/hildonui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGio.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGnomeVfs.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGnomeVfs.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/FileGnomeVfs.pyo
+%%PYTHON_SITELIBDIR%%/conduit/platform/FilePython.py
+%%PYTHON_SITELIBDIR%%/conduit/platform/FilePython.pyc
+%%PYTHON_SITELIBDIR%%/conduit/platform/FilePython.pyo
 %%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.py
 %%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.pyc
 %%PYTHON_SITELIBDIR%%/conduit/platform/SettingsGConf.pyo
@@ -422,6 +431,12 @@ lib/conduit/modules/iPodModule/iPodModule.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/CommandLineConverter.pyo
+%%PYTHON_SITELIBDIR%%/conduit/utils/GstMetadata.py
+%%PYTHON_SITELIBDIR%%/conduit/utils/GstMetadata.pyc
+%%PYTHON_SITELIBDIR%%/conduit/utils/GstMetadata.pyo
+%%PYTHON_SITELIBDIR%%/conduit/utils/MediaFile.py
+%%PYTHON_SITELIBDIR%%/conduit/utils/MediaFile.pyc
+%%PYTHON_SITELIBDIR%%/conduit/utils/MediaFile.pyo
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.py
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.pyc
 %%PYTHON_SITELIBDIR%%/conduit/utils/Memstats.pyo
@@ -437,6 +452,8 @@ share/applications/conduit.desktop
 %%DATADIR%%/boxdotnet.png
 %%DATADIR%%/conduit-splash.png
 %%DATADIR%%/conduit.glade
+%%DATADIR%%/evolution-memos.png
+%%DATADIR%%/evolution-tasks.png
 %%DATADIR%%/windows.png
 %%DATADIR%%/f-spot.png
 %%DATADIR%%/facebook.png
@@ -460,6 +477,15 @@ share/gnome/help/conduit/C/figures/network-pc1.png
 share/gnome/help/conduit/C/figures/network-pc2.png
 share/gnome/help/conduit/C/figures/network-sync-pc1.png
 share/gnome/help/conduit/C/figures/network-sync-pc2.png
+share/gnome/help/conduit/de/conduit.xml
+share/gnome/help/conduit/de/figures/conduit-dp.png
+share/gnome/help/conduit/de/figures/conduit-folder-configuration.png
+share/gnome/help/conduit/de/figures/conduit-gui-parts.png
+share/gnome/help/conduit/de/figures/conduit-login.png
+share/gnome/help/conduit/de/figures/network-pc1.png
+share/gnome/help/conduit/de/figures/network-pc2.png
+share/gnome/help/conduit/de/figures/network-sync-pc1.png
+share/gnome/help/conduit/de/figures/network-sync-pc2.png
 share/gnome/help/conduit/es/conduit.xml
 share/gnome/help/conduit/es/figures/conduit-dp.png
 share/gnome/help/conduit/es/figures/conduit-folder-configuration.png
@@ -469,6 +495,15 @@ share/gnome/help/conduit/es/figures/network-pc1.png
 share/gnome/help/conduit/es/figures/network-pc2.png
 share/gnome/help/conduit/es/figures/network-sync-pc1.png
 share/gnome/help/conduit/es/figures/network-sync-pc2.png
+share/gnome/help/conduit/fr/conduit.xml
+share/gnome/help/conduit/fr/figures/conduit-dp.png
+share/gnome/help/conduit/fr/figures/conduit-folder-configuration.png
+share/gnome/help/conduit/fr/figures/conduit-gui-parts.png
+share/gnome/help/conduit/fr/figures/conduit-login.png
+share/gnome/help/conduit/fr/figures/network-pc1.png
+share/gnome/help/conduit/fr/figures/network-pc2.png
+share/gnome/help/conduit/fr/figures/network-sync-pc1.png
+share/gnome/help/conduit/fr/figures/network-sync-pc2.png
 share/icons/hicolor/16x16/actions/conduit-conflict-ask.png
 share/icons/hicolor/16x16/actions/conduit-conflict-delete.png
 share/icons/hicolor/16x16/actions/conduit-conflict-left.png
@@ -509,6 +544,7 @@ share/locale/it/LC_MESSAGES/conduit.mo
 share/locale/nb/LC_MESSAGES/conduit.mo
 share/locale/oc/LC_MESSAGES/conduit.mo
 share/locale/pa/LC_MESSAGES/conduit.mo
+share/locale/pl/LC_MESSAGES/conduit.mo
 share/locale/pt/LC_MESSAGES/conduit.mo
 share/locale/pt_BR/LC_MESSAGES/conduit.mo
 share/locale/ru/LC_MESSAGES/conduit.mo
@@ -516,14 +552,20 @@ share/locale/sl/LC_MESSAGES/conduit.mo
 share/locale/sv/LC_MESSAGES/conduit.mo
 share/locale/vi/LC_MESSAGES/conduit.mo
 share/omf/conduit/conduit-C.omf
+share/omf/conduit/conduit-de.omf
 share/omf/conduit/conduit-es.omf
+share/omf/conduit/conduit-fr.omf
 @dirrm share/omf/conduit
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/icons/hicolor/26x26/apps
 @dirrmtry share/icons/hicolor/26x26
+@dirrm share/gnome/help/conduit/fr/figures
+@dirrm share/gnome/help/conduit/fr
 @dirrm share/gnome/help/conduit/es/figures
 @dirrm share/gnome/help/conduit/es
+@dirrm share/gnome/help/conduit/de/figures
+@dirrm share/gnome/help/conduit/de
 @dirrm share/gnome/help/conduit/C/figures
 @dirrm share/gnome/help/conduit/C
 @dirrm share/gnome/help/conduit
