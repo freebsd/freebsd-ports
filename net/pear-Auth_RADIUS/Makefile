@@ -9,7 +9,7 @@ PORTNAME=	Auth_RADIUS
 PORTVERSION=	1.0.6
 CATEGORIES=	net security pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR wrapper classes for the RADIUS PECL
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

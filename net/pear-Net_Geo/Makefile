@@ -9,7 +9,7 @@ PORTNAME=	Net_Geo
 PORTVERSION=	1.0.4
 CATEGORIES=	net pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Geographical locations based on Internet address
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

@@ -9,7 +9,7 @@ PORTNAME=	Net_DNS
 PORTVERSION=	1.0.0
 CATEGORIES=	dns net pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Resolver library used to communicate with a DNS server
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

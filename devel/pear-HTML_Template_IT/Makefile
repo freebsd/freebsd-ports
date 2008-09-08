@@ -9,7 +9,7 @@ PORTNAME=	HTML_Template_IT
 PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Integrated template API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

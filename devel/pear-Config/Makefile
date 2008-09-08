@@ -9,7 +9,7 @@ PORTNAME=	Config
 PORTVERSION=	1.10.11
 CATEGORIES=	devel www pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Your configurations swiss-army knife
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

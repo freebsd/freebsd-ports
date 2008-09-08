@@ -9,7 +9,7 @@ PORTNAME=	PHP_CompatInfo
 PORTVERSION=	1.8.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
