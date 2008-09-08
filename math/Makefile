@@ -204,6 +204,7 @@
     SUBDIR += octave-forge-multicore
     SUBDIR += octave-forge-nan
     SUBDIR += octave-forge-octcdf
+    SUBDIR += octave-forge-parallel
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
