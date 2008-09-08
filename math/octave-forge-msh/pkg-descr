@@ -1,0 +1,12 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is msh.
+
+ Package for creating and managing triangular and tetrahedral meshes for
+Finite Element or Finite Volume PDE solvers. Uses a mesh data structure
+compatible with pdetool. Relies on gmsh for unstructured mesh generation.
+
+WWW: http://octave.sourceforge.net/
