@@ -182,3 +182,7 @@ sbin/logtail
 @dirrm %%ETCDIR%%/ignore.d.paranoid
 @dirrm %%ETCDIR%%/cracking.d
 @dirrm %%ETCDIR%%
+@exec mkdir -p /var/lib/logcheck
+@unexec rm -rf /var/lib/logcheck 2> /dev/null || true
+@exec mkdir -p /var/run/logcheck
+@unexec rm -rf /var/run/logcheck 2> /dev/null || true

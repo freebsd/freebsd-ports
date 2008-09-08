@@ -144,3 +144,4 @@ iserv:*:911:911::0:0:Iserv Daemon:/nonexistent:/usr/sbin/nologin
 _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
 _relayd:*:913:913::0:0:Relay Daemon:/var/empty:/usr/sbin/nologin
 bitlbee:*:914:914::0:0:Bitlbee pseudo-user:/nonexistent:/sbin/nologin
+logcheck:*:915:915::0:0:Logcheck system account:/var/lib/logcheck:/sbin/nologin
