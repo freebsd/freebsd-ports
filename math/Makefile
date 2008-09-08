@@ -193,6 +193,7 @@
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
+    SUBDIR += octave-forge-io
     SUBDIR += octave-forge-linear-algebra
     SUBDIR += oleo
     SUBDIR += orpie
