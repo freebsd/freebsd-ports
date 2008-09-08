@@ -11,4 +11,6 @@ zend_extension_manager.optimizer_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/Optimize
 zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager.so"
 zend_extension_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager_TS.so"
 
+NOTE: PHP should be compiled in non-debug mode (default).
+
 ********************************************************************************
