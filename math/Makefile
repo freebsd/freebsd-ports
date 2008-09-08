@@ -183,6 +183,7 @@
     SUBDIR += octave-forge-ad
     SUBDIR += octave-forge-ann
     SUBDIR += octave-forge-arpack
+    SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
     SUBDIR += oleo
     SUBDIR += orpie
