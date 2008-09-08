@@ -12,6 +12,8 @@ CATEGORIES=     math
 MAINTAINER=	stephen@math.missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
+RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 .include <bsd.port.post.mk>
