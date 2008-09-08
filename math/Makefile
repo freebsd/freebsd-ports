@@ -228,6 +228,7 @@
     SUBDIR += octave-forge-special-matrix
     SUBDIR += octave-forge-spline-gcvspl
     SUBDIR += octave-forge-splines
+    SUBDIR += octave-forge-statistics
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
