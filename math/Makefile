@@ -232,6 +232,7 @@
     SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct
     SUBDIR += octave-forge-symband
+    SUBDIR += octave-forge-tcl-octave
     SUBDIR += octave-forge-time
     SUBDIR += octave-forge-triangular
     SUBDIR += octave-forge-video
