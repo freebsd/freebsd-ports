@@ -223,6 +223,7 @@
     SUBDIR += octave-forge-pt_br
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
+    SUBDIR += octave-forge-signal
     SUBDIR += octave-forge-sockets
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
