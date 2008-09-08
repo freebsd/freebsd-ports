@@ -7,6 +7,7 @@
 
 PORTNAME=	libphk
 PORTVERSION=	0.3.20080902
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://phk.freebsd.dk/phkrel/ \
 		${MASTER_SITE_LOCAL}
