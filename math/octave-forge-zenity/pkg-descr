@@ -1,0 +1,14 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is zenity.
+
+ A set of functions for creating simple graphical
+ user interfaces. It is currently possible to create
+ calendar windows, text entries, file selection dialogs,
+ lists, message windows, icons in the notification area,
+ and windows for large amount of text.
+
+WWW: http://octave.sourceforge.net/
