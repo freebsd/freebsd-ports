@@ -1,0 +1,10 @@
+--- configure.orig	2008-07-23 19:47:03.000000000 -0400
++++ configure	2008-08-01 07:13:03.765264947 -0400
+@@ -1003,6 +1003,7 @@
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
++examplesdir='${datarootdir}/examples/${PACKAGE_TARNAME}'
+ infodir='${datarootdir}/info'
+ htmldir='${docdir}'
+ dvidir='${docdir}'

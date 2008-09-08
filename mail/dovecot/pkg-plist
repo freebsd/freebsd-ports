@@ -1,10 +1,4 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/etc/dovecot-example.conf %D/etc/dovecot.conf; then rm -f %D/etc/dovecot.conf; fi
-etc/dovecot-example.conf
-@exec if [ ! -f %D/etc/dovecot.conf ] ; then cp -p %D/%F %B/dovecot.conf; fi
-%%PORTDOCS%%etc/dovecot-db-example.conf
-%%PORTDOCS%%etc/dovecot-ldap-example.conf
-%%PORTDOCS%%etc/dovecot-sql-example.conf
 @dirrmtry include/dovecot
 lib/dovecot/imap/lib01_acl_plugin.so
 lib/dovecot/imap/lib02_lazy_expunge_plugin.so
@@ -29,7 +23,7 @@ lib/dovecot/lda/lib20_expire_plugin.so
 lib/dovecot/lda/lib20_fts_plugin.so
 lib/dovecot/lda/lib20_mail_log_plugin.so
 lib/dovecot/lda/lib21_fts_squat_plugin.so
-@dirrm lib/dovecot/lda
+@dirrmtry lib/dovecot/lda
 lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
 lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
@@ -40,6 +34,7 @@ lib/dovecot/pop3/lib20_mbox_snarf_plugin.so
 lib/dovecot/pop3/lib20_zlib_plugin.so
 lib/dovecot/pop3/lib21_fts_squat_plugin.so
 @dirrm lib/dovecot/pop3
+@exec install -o root -g wheel -m 0755 -d %D/lib/dovecot/auth
 @dirrm lib/dovecot/auth
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.la
@@ -74,7 +69,7 @@ lib/dovecot/lib20_zlib_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.a
 lib/dovecot/lib21_fts_squat_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.so
-@dirrm lib/dovecot
+@dirrmtry lib/dovecot
 libexec/dovecot/checkpassword-reply
 libexec/dovecot/convert-tool
 %%LDA%%libexec/dovecot/deliver
@@ -92,9 +87,21 @@ libexec/dovecot/maildirlock
 %%POP3%%libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
 libexec/dovecot/ssl-build-param
-@dirrm libexec/dovecot
+@dirrmtry libexec/dovecot
 sbin/dovecot
 sbin/dovecotpw
-%%DATADIR%%/dovecot-openssl.cnf
-%%DATADIR%%/mkcert.sh
-@dirrm %%DATADIR%%
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot.conf %D/etc/dovecot.conf; then rm -f %D/etc/dovecot.conf; fi
+%%EXAMPLESDIR%%/dovecot.conf
+@exec if [ ! -f %D/etc/dovecot.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot.conf %D/etc/dovecot.conf; fi
+%%BDB%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; then rm -f %D/etc/dovecot-db.conf; fi
+%%EXAMPLESDIR%%/dovecot-db.conf
+%%BDB%%@exec if [ ! -f %D/etc/dovecot-db.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; fi
+%%LDAP%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; then rm -f %D/etc/dovecot-ldap.conf; fi
+%%EXAMPLESDIR%%/dovecot-ldap.conf
+%%LDAP%%@exec if [ ! -f %D/etc/dovecot-ldap.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; fi
+%%SQL%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-sql.conf %D/etc/dovecot-sql.conf; then rm -f %D/etc/dovecot-sql.conf; fi
+%%EXAMPLESDIR%%/dovecot-sql.conf
+%%SQL%%@exec if [ ! -f %D/etc/dovecot-sql.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-sql.conf %D/etc/dovecot-sql.conf; fi
+%%EXAMPLESDIR%%/dovecot-openssl.cnf
+%%EXAMPLESDIR%%/mkcert.sh
+@dirrm %%EXAMPLESDIR%%
