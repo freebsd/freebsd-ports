@@ -185,6 +185,7 @@
     SUBDIR += octave-forge-arpack
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
+    SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fpl
     SUBDIR += oleo
     SUBDIR += orpie
