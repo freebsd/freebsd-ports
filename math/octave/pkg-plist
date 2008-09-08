@@ -1648,10 +1648,14 @@ share/octave/%%OCTAVE_VERSION%%/m/time/now.m
 share/octave/%%OCTAVE_VERSION%%/m/time/weekday.m
 share/octave/ls-R
 share/octave/site/m/startup/octaverc
-@unexec rm -rf %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@unexec rm -rf %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
 @exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%  2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/api-v32/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct/%%GNU_HOST%%  2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct/api-v32/%%GNU_HOST%%  2>/dev/null || true
+@exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site/m  2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/api-v32/m  2>/dev/null || true
 @dirrmtry share/applications
 @dirrm share/octave/site/m/startup
 @dirrm share/octave/site/m
@@ -1704,6 +1708,7 @@ share/octave/site/m/startup/octaverc
 @dirrm libexec/octave/site/oct/api-v32
 @dirrm libexec/octave/site/oct/%%GNU_HOST%%
 @dirrm libexec/octave/site/oct
+@dirrm libexec/octave/site/exec/%%GNU_HOST%%
 @dirrm libexec/octave/site/exec
 @dirrm libexec/octave/site
 @dirrm libexec/octave/api-v32/site/exec/%%GNU_HOST%%
@@ -1712,6 +1717,7 @@ share/octave/site/m/startup/octaverc
 @dirrm libexec/octave/api-v32
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct
+@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/site
 @dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
