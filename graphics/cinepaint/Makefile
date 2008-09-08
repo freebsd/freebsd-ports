@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -18,7 +18,8 @@ COMMENT=	An editing tool used for painting and retouching of movies
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		ftgl.2:${PORTSDIR}/graphics/ftgl
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
@@ -36,19 +37,23 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
 OPTIONS=	OPENEXR "Use OpenEXR" on
 
-BROKEN=		does not compile
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENEXR)
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+BUILD_DEPENDS+=	fltk-threads>0:${PORTSDIR}/x11-toolkits/fltk-threads
+RUN_DEPENDS+=	fltk-threads>0:${PORTSDIR}/x11-toolkits/fltk-threads
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/OpenEXR"
+CFLAGS+=	-I${LOCALBASE}/include/openEXR
 PLIST_SUB+=	OPENEXR:=""
 .else
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
+
+CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
