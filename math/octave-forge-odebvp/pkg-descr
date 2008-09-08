@@ -1,0 +1,12 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is odebvp.
+
+To approximate the solution of the boundary-value problem
+  y''=p(x)*y' + q(x)*y + r(x), a<=x<=b, y(a)=alpha, y(b)=beta
+by the linear finite-diffence method.
+
+WWW: http://octave.sourceforge.net/
