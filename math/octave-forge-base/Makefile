@@ -14,6 +14,7 @@
 
 PORTNAME=	octave-forge-base
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
