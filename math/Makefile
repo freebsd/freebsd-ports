@@ -185,6 +185,7 @@
     SUBDIR += octave-forge-arpack
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
+    SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-combinatorics

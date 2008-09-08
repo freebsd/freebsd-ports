@@ -1,0 +1,12 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is bim.
+
+Package for solving Diffusion Advection Reaction (DAR)
+Partial Differential Equaltions based on the Finite Volume Scharfetter-Gummel
+(FVSG) method a.k.a Box Integration Method (BIM)
+
+WWW: http://octave.sourceforge.net/
