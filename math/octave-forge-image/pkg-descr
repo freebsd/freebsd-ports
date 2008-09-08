@@ -1,0 +1,15 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is image.
+
+ The Octave-forge Image package provides functions for
+ reading, writing, and processing images. The package supports
+ almost all image formats through the use of ImageMagick.
+ The package also provides functions for feature extraction, image
+ statistics, spatial and geometric transformations, morphological
+ operations, linear filtering, and much more.
+
+WWW: http://octave.sourceforge.net/

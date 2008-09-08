@@ -191,6 +191,7 @@
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-gsl
+    SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-io
