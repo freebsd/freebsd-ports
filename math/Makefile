@@ -180,6 +180,7 @@
     SUBDIR += octave
     SUBDIR += octave-devel
     SUBDIR += octave-forge
+    SUBDIR += octave-forge-ad
     SUBDIR += octave-forge-base
     SUBDIR += oleo
     SUBDIR += orpie
