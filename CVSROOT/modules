@@ -2761,6 +2761,7 @@ enjoympeg                       ports/multimedia/enjoympeg
 enlightenment                   ports/x11-wm/enlightenment
 enlightenment-devel             ports/x11-wm/enlightenment-devel
 enlightenment-docs              ports/x11-wm/enlightenment-docs
+enma                            ports/mail/enma
 enscribe                        ports/audio/enscribe
 enscript-a4                     ports/print/enscript-a4
 enscript-letter                 ports/print/enscript-letter
@@ -9922,6 +9923,7 @@ p5-Chart-Graph                  ports/graphics/p5-Chart-Graph
 p5-Chart-Math-Axis              ports/math/p5-Chart-Math-Axis
 p5-Chart-PNGgraph               ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza                ports/misc/p5-Chatbot-Eliza
+p5-Check-ISA                    ports/devel/p5-Check-ISA
 p5-Chemistry-Elements           ports/science/p5-Chemistry-Elements
 p5-Chess-PGN-Parse              ports/textproc/p5-Chess-PGN-Parse
 p5-Chooser                      ports/devel/p5-Chooser
@@ -10572,6 +10574,7 @@ p5-File-Mork                    ports/www/p5-File-Mork
 p5-File-NCopy                   ports/devel/p5-File-NCopy
 p5-File-NFSLock                 ports/devel/p5-File-NFSLock
 p5-File-Next                    ports/sysutils/p5-File-Next
+p5-File-Path                    ports/devel/p5-File-Path
 p5-File-Path-Expand             ports/devel/p5-File-Path-Expand
 p5-File-PathConvert             ports/devel/p5-File-PathConvert
 p5-File-Pid                     ports/devel/p5-File-Pid
@@ -11299,6 +11302,7 @@ p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
+p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
@@ -12123,6 +12127,7 @@ p5-Test-Strict                  ports/devel/p5-Test-Strict
 p5-Test-SubCalls                ports/devel/p5-Test-SubCalls
 p5-Test-TAP-HTMLMatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model               ports/devel/p5-Test-TAP-Model
+p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
 p5-Test-URI                     ports/net/p5-Test-URI
 p5-Test-Unit                    ports/devel/p5-Test-Unit
@@ -13031,6 +13036,7 @@ p5-chart-graph                  ports/graphics/p5-Chart-Graph
 p5-chart-math-axis              ports/math/p5-Chart-Math-Axis
 p5-chart-pnggraph               ports/graphics/p5-Chart-PNGgraph
 p5-chatbot-eliza                ports/misc/p5-Chatbot-Eliza
+p5-check-isa                    ports/devel/p5-Check-ISA
 p5-chemistry-elements           ports/science/p5-Chemistry-Elements
 p5-chess-pgn-parse              ports/textproc/p5-Chess-PGN-Parse
 p5-chklinks                     ports/www/p5-chklinks
@@ -13701,6 +13707,7 @@ p5-file-mork                    ports/www/p5-File-Mork
 p5-file-ncopy                   ports/devel/p5-File-NCopy
 p5-file-next                    ports/sysutils/p5-File-Next
 p5-file-nfslock                 ports/devel/p5-File-NFSLock
+p5-file-path                    ports/devel/p5-File-Path
 p5-file-path-expand             ports/devel/p5-File-Path-Expand
 p5-file-pathconvert             ports/devel/p5-File-PathConvert
 p5-file-pid                     ports/devel/p5-File-Pid
@@ -14436,6 +14443,7 @@ p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
+p5-moosex-storage               ports/devel/p5-MooseX-Storage
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
@@ -15292,6 +15300,7 @@ p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
 p5-test-tap-htmlmatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-test-tap-model               ports/devel/p5-Test-TAP-Model
+p5-test-tempdir                 ports/devel/p5-Test-TempDir
 p5-test-tester                  ports/devel/p5-Test-Tester
 p5-test-unit                    ports/devel/p5-Test-Unit
 p5-test-uri                     ports/net/p5-Test-URI
@@ -17503,6 +17512,7 @@ py-cjkcodecs                    ports/converters/py-cjkcodecs
 py-cjson                        ports/devel/py-cjson
 py-clamav                       ports/security/py-clamav
 py-clientform                   ports/www/py-clientform
+py-cmdln                        ports/devel/py-cmdln
 py-cog                          ports/devel/py-cog
 py-compiler                     ports/lang/py-compiler
 py-configobj                    ports/devel/py-configobj
@@ -17758,6 +17768,7 @@ py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
 py-pg8000                       ports/databases/py-pg8000
+py-phpserialize                 ports/devel/py-phpserialize
 py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
@@ -17911,6 +17922,8 @@ py-supybot-plugins              ports/irc/py-supybot-plugins
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
 py-sympy                        ports/math/py-sympy
+py-synce-librapi2               ports/palm/py-synce-librapi2
+py-synce-librra                 ports/palm/py-synce-librra
 py-tables                       ports/devel/py-tables
 py-tada                         ports/databases/py-tada
 py-tagfu                        ports/deskutils/py-tagfu
@@ -17920,6 +17933,7 @@ py-tarfile                      ports/archivers/py-tarfile
 py-tconfpy                      ports/devel/py-tconfpy
 py-testgears                    ports/devel/py-testgears
 py-testoob                      ports/devel/py-testoob
+py-textile                      ports/www/py-textile
 py-texttable                    ports/textproc/py-texttable
 py-tgwebservices                ports/www/py-tgwebservices
 py-thrift                       ports/devel/py-thrift
@@ -18033,7 +18047,6 @@ py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeinterface                ports/devel/py-zopeInterface
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
-py-zsi-devel                    ports/net/py-zsi-devel
 py2html                         ports/textproc/py2html
 py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
@@ -18327,6 +18340,7 @@ quantumminigolf                 ports/games/quantumminigolf
 quaqut                          ports/games/quaqut
 quark                           ports/multimedia/quark
 quasi88                         ports/emulators/quasi88
+quassel                         ports/irc/quassel
 quat                            ports/graphics/quat
 quat-gui                        ports/graphics/quat-gui
 qucs                            ports/cad/qucs
@@ -21730,6 +21744,7 @@ xcompmgr                        ports/x11-wm/xcompmgr
 xconq                           ports/games/xconq
 xconsole                        ports/x11/xconsole
 xcoral                          ports/editors/xcoral
+xcowsay                         ports/games/xcowsay
 xcpc                            ports/emulators/xcpc
 xcpustate                       ports/sysutils/xcpustate
 xcruise                         ports/x11-fm/xcruise
