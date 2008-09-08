@@ -232,6 +232,7 @@
     SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct
     SUBDIR += octave-forge-symband
+    SUBDIR += octave-forge-time
     SUBDIR += oleo
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
