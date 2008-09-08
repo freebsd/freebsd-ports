@@ -186,6 +186,7 @@
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bioinfo
+    SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-gsl
