@@ -188,6 +188,7 @@
     SUBDIR += octave-forge-bioinfo
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-combinatorics
+    SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fixed
