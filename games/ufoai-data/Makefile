@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	UFO alien invasion data files
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 NO_PACKAGE=	Package will be 400MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
