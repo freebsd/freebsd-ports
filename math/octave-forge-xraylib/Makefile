@@ -12,6 +12,8 @@ CATEGORIES=     math
 MAINTAINER=	stephen@math.missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+/usr/local/bin/bash+g ${WRKSRC}/src/xraylib/src/*.sh
 	@${REINPLACE_CMD} s+/bin/bash+/usr/local/bin/bash+g ${WRKSRC}/src/xraylib/src/Makefile
