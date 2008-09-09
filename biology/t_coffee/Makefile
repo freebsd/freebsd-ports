@@ -29,15 +29,14 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}/html
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ cd ${WRKSRC}/example && ${FIND} * \
-	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	@ ${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DATADIR}
-	@ ${MKDIR} ${DATADIR}/html
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
