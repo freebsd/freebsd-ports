@@ -22,18 +22,22 @@ ALL_TARGET=
 CONFIGURE_ENV=	YACC=${YACC}
 USE_BISON=	build
 
+PLIST_FILES=	sbin/moo
+
+PORTDOCS=	*
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/moo ${PREFIX}/sbin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/LambdaMOO
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC};\
 	${INSTALL_MAN} Minimal.db README README.Minimal \
-		${PREFIX}/share/doc/LambdaMOO; \
+		${DOCSDIR}; \
 	)
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD \
-		${PREFIX}/share/doc/LambdaMOO
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
