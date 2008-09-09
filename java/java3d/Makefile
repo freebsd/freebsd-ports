@@ -7,6 +7,7 @@
 
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	java graphics
 MASTER_SITES=	http://daemon.wizard.googlepages.com/
 DISTNAME=	java3d-${PORTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	Java3D Kit ${PORTVERSION}
 USE_BZIP2=	yes
 
 USE_JAVA=	yes
+USE_GL=		gl
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
