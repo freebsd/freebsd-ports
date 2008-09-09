@@ -9,8 +9,8 @@ PORTNAME=	pipsecd
 PORTVERSION=	19991014
 PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
-		http://www.mindstep.com/pipsec/
+MASTER_SITES=	http://perso.telecom-paristech.fr/~beyssac/pipsec/ \
+		http://www.komquats.com/distfiles/
 DISTNAME=	pipsec-19991014
 
 MAINTAINER=	cy@FreeBSD.org
