@@ -21,18 +21,14 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-build:
-.if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC} && makeinfo --no-split php-mode.texi
-.endif
 
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/php-mode.el ${EMACSLISPDIR}/php-mode.el
 	${LN} -sf ${EMACSLISPDIR}/php-mode.el ${XEMACSLISPDIR}
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/php-mode.info ${PREFIX}/${INFO_PATH}/
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

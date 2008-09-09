@@ -84,7 +84,7 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e \
 		's/[<"]malloc.h[>"]/<stdlib.h>/'
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/%%PORTDOCS%%/#/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/%%PORTDOCS%%/d' ${WRKSRC}/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's/%%PORTDOCS%%//' ${WRKSRC}/Makefile.in
 .endif
