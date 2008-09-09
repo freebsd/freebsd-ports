@@ -16,7 +16,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Stream a highly accurate breadth first data dump in Perl code
 
 RUN_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${SITE_PERL}/B/Utils.pm:${PORTSDIR}/devel/p5-B-Utils
+		${SITE_PERL}/${PERL_ARCH}/B/Utils.pm:${PORTSDIR}/devel/p5-B-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
