@@ -127,15 +127,15 @@ post-install: ${POST_INSTALL_SEQ}
 	${INSTALL_DATA} ${TMACBASE}/mdoc/${F} ${PREFIX}/${MDOCDIR}
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/mdoc.local ${PREFIX}/${SITETMACDIR}
+.if !defined(WITHOUT_INFO)
+	${INSTALL_DATA} ${WRKSRC}/doc/groff.info ${PREFIX}/${INFO_PATH}
+.endif
 
 install-documents:
 	@${MKDIR} ${DOCSDIR}/${PORTVERSION}
 .for F in ${DOCUMENTS}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${F} ${DOCSDIR}/${PORTVERSION}
 .endfor
-.if !defined(WITHOUT_INFO)
-	${INSTALL_DATA} ${WRKSRC}/doc/groff.info ${PREFIX}/${INFO_PATH}
-.endif
 
 install-links:
 .for F in eqn neqn pic tbl
