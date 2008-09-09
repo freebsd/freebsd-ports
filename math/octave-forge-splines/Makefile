@@ -1,5 +1,5 @@
-# New ports collection makefile for:	octave-forge
-# Date created:		5 May 2004
+# New ports collection makefile for:	octave-forge-splines
+# Date created:		8 September 2008
 # Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
 #
 # $FreeBSD$
