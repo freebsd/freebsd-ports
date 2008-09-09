@@ -1,8 +1,8 @@
 sbin/pipsecd
 etc/ipsec/pipsecd.conf.sample
 etc/rc.d/pipsecd.sh
-share/doc/pipsecd/README
-share/doc/pipsecd/COPYRIGHT
-share/doc/pipsecd/README.port
-@dirrm share/doc/pipsecd
+%%PORTDOCS%%share/doc/pipsecd/README
+%%PORTDOCS%%share/doc/pipsecd/COPYRIGHT
+%%PORTDOCS%%share/doc/pipsecd/README.port
+%%PORTDOCS%%@dirrm share/doc/pipsecd
 @dirrm etc/ipsec
