@@ -23,7 +23,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 USE_ANT=	yes
 
-MAKE_ARGS=	-cp ${JAVAJARDIR}/junit.jar
 ALL_TARGET=	dist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
@@ -31,6 +30,9 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE.txt api
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/build.xml
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."

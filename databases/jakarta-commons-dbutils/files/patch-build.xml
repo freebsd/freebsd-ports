@@ -1,0 +1,43 @@
+--- build.xml.orig	2008-09-10 14:27:27.000000000 +0200
++++ build.xml	2008-09-10 14:28:28.000000000 +0200
+@@ -24,7 +24,7 @@
+ <project default="jar" name="commons-dbutils" basedir=".">
+   <property name="defaulttargetdir" value="target">
+   </property>
+-  <property name="libdir" value="target/lib">
++  <property name="libdir" value="%%JAVALIBDIR%%">
+   </property>
+   <property name="classesdir" value="target/classes">
+   </property>
+@@ -39,14 +39,12 @@
+   <property name="final.name" value="commons-dbutils-1.1">
+   </property>
+   <target name="init" description="o Initializes some properties">
+-    <mkdir dir="${libdir}">
+-    </mkdir>
+     <condition property="noget">
+       <equals arg2="only" arg1="${build.sysclasspath}">
+       </equals>
+     </condition>
+   </target>
+-  <target name="compile" description="o Compile the code" depends="get-deps">
++  <target name="compile" description="o Compile the code">
+     <mkdir dir="${classesdir}">
+     </mkdir>
+     <javac destdir="${classesdir}" deprecation="true" debug="true" optimize="false" excludes="**/package.html">
+@@ -152,15 +150,4 @@
+       </classpath>
+     </javadoc>
+   </target>
+-  <target name="get-deps" unless="noget" depends="init">
+-    <get dest="${libdir}/junit-3.8.1.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/junit/jars/junit-3.8.1.jar">
+-    </get>
+-    <get dest="${libdir}/ant-1.5.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/ant/jars/ant-1.5.jar">
+-    </get>
+-    <get dest="${libdir}/ant-optional-1.5.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/ant/jars/ant-optional-1.5.jar">
+-    </get>
+-    <echo message="Pay no attention if there is a subsequent warning if building under JDK 1.4+"/>
+-    <copy file="lib/jdbc2_0-stdext.jar" todir="${libdir}" failonerror="false">
+-    </copy>
+-  </target>
+ </project>
