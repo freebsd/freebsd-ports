@@ -34,6 +34,101 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="388d9ee4-7f22-11dd-a66a-0019666436c2">
+    <topic>mysql -- MyISAM table privileges secuity bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>6.0</ge><lt>6.0.5</lt></range>
+	<range><ge>5.1</ge><lt>5.1.24</lt></range>
+	<range><ge>5.0</ge><lt>5.0.67</lt></range>
+	<range><ge>4.1</ge><lt>5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/29106/discuss">
+	  <p>MySQL is prone to a security-bypass vulnerability.
+	    An attacker can exploit this issue to overwrite existing
+	    table files in the MySQL data directory, bypassing certain
+	    security restrictions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>29106</bid>
+      <cvename>CVE-2008-2079</cvename>
+    </references>
+    <dates>
+      <discovery>2008-05-05</discovery>
+      <entry>2008-09-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8e8b8b94-7f1d-11dd-a66a-0019666436c2">
+    <topic>rubygem-rails -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-rails</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jonathan Weiss reports, that it is possible
+	  to perform an SQL injection in Rails applications
+	  via not correctly sanitized :limit and :offset
+	  parameters. It is possible to change arbitrary
+	  values in affected tables or gain access to the
+	  sensitive data.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.innerewut.de/2008/6/16/why-you-should-upgrade-to-rails-2-1</url>
+    </references>
+    <dates>
+      <discovery>2008-09-08</discovery>
+      <entry>2008-09-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="884fced7-7f1c-11dd-a66a-0019666436c2">
+    <topic>wordpress -- remote privilege escalation</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>wordpress-mu</name>
+	<name>de-wordpress</name>
+	<name>zh-wordpress</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Wordpress development team reports:</p>
+	<blockquote cite="http://wordpress.org/development/2008/09/wordpress-262/">
+	  <p>With open registration enabled, it is possible in WordPress
+	    versions 2.6.1 and earlier to craft a username such that it
+	    will allow resetting another users password to a randomly
+	    generated password.  The randomly generated password is not
+	    disclosed to the attacker, so this problem by itself is annoying
+	    but not a security exploit. However, this attack coupled with a
+	    weakness in the random number seeding in mt_rand() could be used
+	    to predict the randomly generated password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31068</bid>
+      <url>http://wordpress.org/development/2008/09/wordpress-262/</url>
+    </references>
+    <dates>
+      <discovery>2008-09-08</discovery>
+      <entry>2008-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f794295-7b69-11dd-80ba-000bcdf0a03b">
     <topic>FreeBSD -- Remote kernel panics on IPv6 connections</topic>
     <affects>
