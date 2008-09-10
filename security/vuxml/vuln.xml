@@ -98,8 +98,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>wordpress</name>
-	<name>wordpress-mu</name>
 	<name>de-wordpress</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+      <package>
+	<name>wordpress-mu</name>
 	<name>zh-wordpress</name>
 	<range><gt>0</gt></range>
       </package>
