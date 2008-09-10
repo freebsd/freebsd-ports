@@ -77,7 +77,8 @@ post-extract:
 		-d ${WRKDIR}/Nexuiz/sources
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE} \
+	    ${WRKSRC}/makefile.inc
 # Make Nexuiz' lhnetaddress structure really compatible with FreeBSD's
 # sockaddr_in, and fix value for LHNETADDRESSTYPE_INET6_FAMILY
 	@${REINPLACE_CMD} -e 's,10,28, ; \
