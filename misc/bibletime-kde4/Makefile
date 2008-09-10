@@ -28,6 +28,8 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml
 
+BROKEN=		Does not install; developers are working on a solution
+
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${WRKSRC}
