@@ -1,5 +1,19 @@
---- setup.py.orig	2008-07-06 15:01:26.000000000 +0200
-+++ setup.py	2008-07-06 15:01:51.000000000 +0200
+--- setup.py.orig	2008-02-15 04:48:02.000000000 +0800
++++ setup.py	2008-09-10 11:12:00.000000000 +0800
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env python
+ 
+-try:
+-    from setuptools import setup
+-except ImportError, excp:
+-    from distutils.core import setup
++#try:
++#    from setuptools import setup
++#except ImportError, excp:
++from distutils.core import setup
+     
+ import pydot
+ 
 @@ -27,5 +27,5 @@
          'Topic :: Software Development :: Libraries :: Python Modules'],
      long_description = "\n".join(pydot.__doc__.split('\n')),
