@@ -7,10 +7,10 @@
 
 PORTNAME=	pydot
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PROJECTHOST=	${PORTNAME}
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	A Python interface to the Graphviz Dot language
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 		dot:${PORTSDIR}/graphics/graphviz
 
+PROJECTHOST=	${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
