@@ -1,10 +1,12 @@
 #!/bin/sh
 
-user="logcheck"
-group="logcheck"
+user="%%LOGCHECK_USER%%"
+uid="%%LOGCHECK_UID%%"
+group="%%LOGCHECK_GROUP%%"
+gid="%%LOGCHECK_GID%%"
 descr="Logcheck system account"
-homedir="/var/lib/logcheck"
-shell="/usr/bin/false"
+homedir="/var/db/logcheck"
+shell="/usr/local/bin/bash"
 configfiles="logcheck.conf logcheck.logfiles"
 
 case $2 in
@@ -12,13 +14,13 @@ PRE-INSTALL)
 	if pw group show ${group} > /dev/null 2>&1; then
 		echo "---> You already have a group \"${group}\", so I will use it."
 	else
-		pw group add "${group}"
+		pw group add "${group}" -g "${gid}"
 		echo "---> Created group \"${group}\"."
 	fi
 	if pw user show ${user} > /dev/null 2>&1; then
 		echo "---> You already have a user \"${user}\", so I will use it."
 	else
-		pw user add -n logcheck -c "${descr}" -d "${homedir}" -s "${shell}" -g logcheck -G wheel
+		pw user add -n ${user} -c "${descr}" -d "${homedir}" -s "${shell}" -g ${group} -u "${uid}"
 		echo "---> Created user \"${user}\"."
 	fi
 ;;
@@ -34,8 +36,15 @@ POST-INSTALL)
 				echo "---> Installed crontab(5) file for user \"${user}\""
 			fi
 		else
-			/usr/bin/crontab -u "${user}" "%%EXAMPLESDIR%%/crontab.in" || exit 1
-			echo "---> Created crontab(5) file for user \"${user}\""
+			if grep -q "are not allowed to use this program" /tmp/logchecktab$$ ; then
+				echo "---> The logcheck user is not allowed to run crontab."
+				echo "---> Please check the contents of /var/cron/allow and /var/cron/deny"
+				echo "---> and grant access, if necessary."
+				exit 1
+			else
+				/usr/bin/crontab -u "${user}" "%%EXAMPLESDIR%%/crontab.in" || exit 1
+				echo "---> Created crontab(5) file for user \"${user}\""
+			fi
 		fi
 		rm -f /tmp/logchecktab$$
         fi
