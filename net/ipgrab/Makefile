@@ -21,8 +21,10 @@ MAN8=		ipgrab.8
 DOCS=		README AUTHORS COPYING ChangeLog \
 		DEVELOPER-HOWTO INSTALL NEWS TODO
 
-PLIST_FILES=	bin/ipgrab ${DOCS:S,^,%%DOCSDIR%%/,}
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES=	bin/ipgrab
+
+PORTDOCS=	README AUTHORS COPYING ChangeLog DEVELOPER-HOWTO \
+		INSTALL NEWS TODO
 
 do-install:
 	@${INSTALL_MAN} ${MAN8:S,^,${WRKSRC}/doc/,} ${MANPREFIX}/man/man8/
@@ -30,7 +32,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/ipgrab ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
