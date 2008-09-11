@@ -7,6 +7,7 @@
 
 PORTNAME=	SOAP
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -49,7 +50,7 @@ BUILD_DEPENDS+=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 .endif
 
 .if defined(WITH_PEAR_NET_DIME)
-BUILD_DEPENDS+=	${PEARDIR}/DIME.php:${PORTSDIR}/net/pear-Net_DIME
+BUILD_DEPENDS+=	${PEARDIR}/Net/DIME.php:${PORTSDIR}/net/pear-Net_DIME
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
