@@ -18,8 +18,6 @@ COMMENT=	A fast tree with ordered data and expanded iterator support
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
-BROKEN=		does not compile
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
