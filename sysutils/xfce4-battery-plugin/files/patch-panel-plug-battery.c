@@ -1,6 +1,16 @@
---- panel-plugin/battery.c.orgi	2008-09-04 22:53:40.000000000 +0200
-+++ panel-plugin/battery.c	2008-09-05 10:02:08.000000000 +0200
-@@ -163,7 +163,9 @@
+--- panel-plugin/battery.c.orig	2008-09-04 17:53:40.000000000 -0300
++++ panel-plugin/battery.c	2008-09-10 21:53:56.000000000 -0300
+@@ -26,7 +26,9 @@
+ #endif
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__i386___)
+ #include <machine/apm_bios.h>
++#endif
+ #elif __OpenBSD__
+ #include <sys/param.h>
+ #include <machine/apmvar.h>
+@@ -163,7 +165,9 @@
       except that is does not work on FreeBSD
  
    */
@@ -10,7 +20,7 @@
        int fd;
  
      /* First check to see if ACPI is available */
-@@ -310,7 +312,9 @@
+@@ -310,7 +314,9 @@
        acline = apm.ac_state ? TRUE : FALSE;
  
  #else
@@ -21,7 +31,7 @@
      DBG ("Updating battery status...");
  
      if(battmon->method == BM_BROKEN) {
-@@ -382,6 +386,7 @@
+@@ -382,6 +388,7 @@
            rate = last_rate;
          }
  
@@ -29,7 +39,7 @@
          charge = (((float)ccapacity)/((float)lcapacity))*100;
  
          if ( last_acline )
-@@ -394,6 +399,17 @@
+@@ -394,6 +401,17 @@
  
          last_acline = acline;
  

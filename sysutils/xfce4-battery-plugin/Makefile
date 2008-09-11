@@ -14,7 +14,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for XFce4
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
