@@ -18,8 +18,6 @@ COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
-BROKEN=		does not build
-
 RESTRICTED=	free for non-commercial use.
 ONLY_FOR_ARCHS=	i386
 USE_XORG=	x11
@@ -41,10 +39,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BINVER=		-5.4
-BINDIR=		54
-.elif ${OSVERSION} < 700000
+.if ${OSVERSION} < 700000
 BINVER=		-6.0
 BINDIR=		60
 .else
