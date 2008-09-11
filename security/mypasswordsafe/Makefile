@@ -26,7 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's|(USER=)\$$\(USER\)|\1$$(shell whoami)|' \
 		${WRKSRC}/${MAKEFILE}
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '63,64d; 66,67d' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '63s|\\||; 64d; 67,68d' ${WRKSRC}/${MAKEFILE}
 .endif
 
 .include <bsd.port.mk>
