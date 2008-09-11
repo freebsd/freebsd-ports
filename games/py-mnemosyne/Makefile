@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
 
+BROKEN=		installs files in build phase
+
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_EGG=	Mnemosyne-${PORTVERSION}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
