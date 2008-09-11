@@ -22,7 +22,7 @@
 %%SITE_PERL%%/MIME/Words.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/tools/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/tools
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrm %%SITE_PERL%%/MIME/Field
 @dirrm %%SITE_PERL%%/MIME/Decoder
 @dirrm %%SITE_PERL%%/MIME/Parser
