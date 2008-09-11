@@ -6,6 +6,54 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080909:
+  AFFECTS: users of security/logcheck
+  AUTHOR: glarkin@FreeBSD.org
+
+  logcheck now stores its configuration files in
+  /usr/local/etc/logcheck instead of /usr/local/etc. If you are
+  upgrading the port from version 1.1.1 to version 1.2.54, copy
+  the following files to a temporary directory, in case they are
+  removed during the upgrade:
+
+  /usr/local/etc/logcheck.hacking
+  /usr/local/etc/logcheck.ignore
+  /usr/local/etc/logcheck.violations
+  /usr/local/etc/logcheck.violations.ignore
+
+  e.g.:
+    cd /usr/local/etc
+    mkdir /tmp/logcheck.saveconf
+    cp logcheck.hacking logcheck.ignore logcheck.violations* \
+      /tmp/logcheck.saveconf
+
+  After the upgrade, integrate your local changes to the files listed
+  above into the new configuration files found in the following
+  directories:
+
+  /usr/local/etc/logcheck/cracking.d
+  /usr/local/etc/logcheck/ignore.d.paranoid
+  /usr/local/etc/logcheck/ignore.d.server
+  /usr/local/etc/logcheck/ignore.d.workstation
+  /usr/local/etc/logcheck/violations.d
+  /usr/local/etc/logcheck/violations.ignore.d
+
+  Please consult the following files for more information about
+  logcheck rules and reporting levels:
+
+  /usr/local/share/doc/logcheck/README.logcheck
+  /usr/local/share/doc/logcheck/README.logcheck-database
+
+  Also note that the upgraded port installs a crontab file for user
+  "logcheck" that executes the logcheck script every hour and emails
+  the results to root.  If the installation process cannot install
+  the crontab file, it can be installed manually from:
+
+  /usr/local/share/examples/logcheck/crontab.in
+
+  e.g.:
+    crontab -u logcheck /usr/local/share/examples/logcheck/crontab.in
+
 20080907:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org

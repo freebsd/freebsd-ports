@@ -1,7 +1,7 @@
 #!/bin/sh
 
-user="logcheck"
-group="logcheck"
+user="%%LOGCHECK_USER%%"
+group="%%LOGCHECK_GROUP%%"
 configfiles="logcheck.conf logcheck.logfiles"
 
 case $2 in

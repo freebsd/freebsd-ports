@@ -3,8 +3,8 @@ Please make sure that all files listed in
 
   %%PREFIX%%/etc/logcheck/logcheck.logfiles
 
-are readable to 'wheel' group (see also /etc/newsyslog.conf), or remove
-them from the aforementioned logcheck configuration file.
+are readable to the '%%LOGCHECK_GROUP%%' group (see also /etc/newsyslog.conf),
+or remove them from the aforementioned logcheck configuration file.
 
 For information on how to write local rulesets see
 
