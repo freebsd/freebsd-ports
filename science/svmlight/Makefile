@@ -12,7 +12,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/current/
 DISTNAME=	svm_light
 
-PATCH_SITES=	http://search.cpan.org/src/KWILLIAMS/Algorithm-SVMLight-0.05/
+PATCH_SITES=	http://search.cpan.org/src/KWILLIAMS/Algorithm-SVMLight-0.08/
 PATCHFILES=	SVMLight.patch
 
 MAINTAINER=	gslin@gslin.org
@@ -25,6 +25,13 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+pre-patch:
+	${CP} ${DISTDIR}/${PATCHFILES} ${WRKDIR}
+	${REINPLACE_CMD} -e 's|svm_light/||g' ${WRKDIR}/${PATCHFILES}
+
+do-patch:
+	cd ${WRKDIR} && ${PATCH} < ${PATCHFILES}
 
 post-build:
 	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 \
