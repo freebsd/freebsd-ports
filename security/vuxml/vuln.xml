@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7d239578-7ff2-11dd-8de5-0030843d3802">
+    <topic>horde -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>horde-base</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31842/">
+	  <p>Some vulnerabilities have been reported in various Horde products,
+	    which can be exploited by malicious people to conduct script insertion
+	    attacks</p>
+	  <p>Input via MIME attachment linking is not properly sanitised in the
+	    MIME library before being used. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser session if e.g. a
+	    malicious email is viewed.</p>
+	  <p>Certain unspecified input in HTML messages is not properly
+	    sanitised before being used. This can be exploited to execute
+	    arbitrary HTML and script in a user's browser session if e.g. a
+	    malicious HTML email is viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3823</cvename>
+      <cvename>CVE-2008-3824</cvename>
+      <mlist>http://lists.horde.org/archives/announce/2008/000429.html</mlist>
+      <url>http://secunia.com/advisories/31842/</url>
+    </references>
+    <dates>
+      <discovery>2008-09-10</discovery>
+      <entry>2008-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0dccaa28-7f3c-11dd-8de5-0030843d3802">
     <topic>python -- multiple vulnerabilities</topic>
     <affects>
