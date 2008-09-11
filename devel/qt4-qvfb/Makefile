@@ -8,7 +8,7 @@
 
 PORTNAME=	qvfb
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib gui opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USE_XORG=	xtst
 
 HAS_CONFIGURE=	yes
 
