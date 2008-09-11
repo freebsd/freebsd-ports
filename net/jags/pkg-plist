@@ -1,58 +1,77 @@
-bin/fixsmbcop
 bin/jags
-share/jags/jags.conf.sample
-share/jags/pixmaps/Makefile.am
-share/jags/pixmaps/about.xpm
-share/jags/pixmaps/apply.xpm
-share/jags/pixmaps/blank.xpm
-share/jags/pixmaps/browse.xpm
-share/jags/pixmaps/cancel.xpm
-share/jags/pixmaps/computer.xpm
-share/jags/pixmaps/exit.xpm
-share/jags/pixmaps/i-bookmark.xpm
-share/jags/pixmaps/mount.xpm
-share/jags/pixmaps/network.xpm
-share/jags/pixmaps/new_item.xpm
-share/jags/pixmaps/ok.xpm
-share/jags/pixmaps/search.xpm
-share/jags/pixmaps/settings.xpm
-share/jags/pixmaps/unmount.xpm
-share/jags/plugins/freebsd-samba-2.0.7.plugin/fetch_master_browser.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/fetch_master_browser.sh.old
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_masterbrowsers.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_servercomments.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_servers.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_shares.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/list_workgroups.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/ls_mnts.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/mount_share.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/mount_share_with.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/search.sh
-share/jags/plugins/freebsd-samba-2.0.7.plugin/umount.sh
-share/jags/plugins/offline.plugin/fetch_master_browser.sh
-share/jags/plugins/offline.plugin/list_masterbrowsers.sh
-share/jags/plugins/offline.plugin/list_servers.sh
-share/jags/plugins/offline.plugin/list_shares.sh
-share/jags/plugins/offline.plugin/list_workgroups.sh
-share/jags/plugins/offline.plugin/mount_share.sh
-share/jags/plugins/offline.plugin/nmblookup_sample
-share/jags/plugins/offline.plugin/sample_smb_output
-share/jags/plugins/samba-2.0.7.plugin/]
-share/jags/plugins/samba-2.0.7.plugin/fetch_master_browser.sh
-share/jags/plugins/samba-2.0.7.plugin/fetch_master_browser.sh.old
-share/jags/plugins/samba-2.0.7.plugin/list_masterbrowsers.sh
-share/jags/plugins/samba-2.0.7.plugin/list_servercomments.sh
-share/jags/plugins/samba-2.0.7.plugin/list_servers.sh
-share/jags/plugins/samba-2.0.7.plugin/list_shares.sh
-share/jags/plugins/samba-2.0.7.plugin/list_workgroups.sh
-share/jags/plugins/samba-2.0.7.plugin/ls_mnts.sh
-share/jags/plugins/samba-2.0.7.plugin/mount_share.sh
-share/jags/plugins/samba-2.0.7.plugin/mount_share_with.sh
-share/jags/plugins/samba-2.0.7.plugin/search.sh
-share/jags/plugins/samba-2.0.7.plugin/umount.sh
-@dirrm share/jags/plugins/samba-2.0.7.plugin
-@dirrm share/jags/plugins/offline.plugin
-@dirrm share/jags/plugins/freebsd-samba-2.0.7.plugin
-@dirrm share/jags/plugins
-@dirrm share/jags/pixmaps
-@dirrm share/jags
+bin/fixsmbcop
+%%DATADIR%%/pixmaps/Makefile.am
+%%DATADIR%%/pixmaps/about.xpm
+%%DATADIR%%/pixmaps/apply.xpm
+%%DATADIR%%/pixmaps/blank.xpm
+%%DATADIR%%/pixmaps/browse.xpm
+%%DATADIR%%/pixmaps/cancel.xpm
+%%DATADIR%%/pixmaps/computer.xpm
+%%DATADIR%%/pixmaps/exit.xpm
+%%DATADIR%%/pixmaps/i-bookmark.xpm
+%%DATADIR%%/pixmaps/ipc.xpm
+%%DATADIR%%/pixmaps/mount.xpm
+%%DATADIR%%/pixmaps/network.xpm
+%%DATADIR%%/pixmaps/new_item.xpm
+%%DATADIR%%/pixmaps/ok.xpm
+%%DATADIR%%/pixmaps/pass.xpm
+%%DATADIR%%/pixmaps/printer.xpm
+%%DATADIR%%/pixmaps/search.xpm
+%%DATADIR%%/pixmaps/settings.xpm
+%%DATADIR%%/pixmaps/smbnet.xpm
+%%DATADIR%%/pixmaps/unmount.xpm
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/cat_outfile.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/echo.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/fetch_master_browser.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/fetch_master_browser_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/fetch_remote_browser_workgroup.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/is_server_online.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/list_masterbrowsers.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/list_servers.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/list_shares_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/list_workgroups.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/ls_mnts.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/ls_mnts_load.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/mount_share.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/mount_share_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/mount_share_with_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/search.sh
+%%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin/umount.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/]
+%%DATADIR%%/plugins/samba-2.0.7.plugin/cat_outfile.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/echo.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/fetch_master_browser.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/fetch_master_browser_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/fetch_remote_browser_workgroup.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/is_server_online.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_masterbrowsers.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_servercomments.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_servers.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_shares.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_shares_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/list_workgroups.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/ls_mnts.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/ls_mnts_load.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/mount_share.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/mount_share_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/search.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/mount_share_with.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/mount_share_with_remote.sh
+%%DATADIR%%/plugins/samba-2.0.7.plugin/umount.sh
+%%DATADIR%%/sounds/apply2.ogg
+%%DATADIR%%/sounds/exit2.ogg
+%%DATADIR%%/sounds/jags2.ogg
+%%DATADIR%%/sounds/nothing2.ogg
+%%DATADIR%%/sounds/password2.ogg
+%%DATADIR%%/sounds/settings2.ogg
+%%DATADIR%%/sounds/share2.ogg
+%%DATADIR%%/sounds/unmall2.ogg
+%%DATADIR%%/jags.conf.sample
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/plugins/samba-2.0.7.plugin
+@dirrm %%DATADIR%%/plugins/samba-2.0.7.cyrillic.plugin
+@dirrm %%DATADIR%%/plugins/offline.plugin
+@dirrm %%DATADIR%%/plugins/freebsd-samba-2.0.7.plugin
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%

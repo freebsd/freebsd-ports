@@ -6,33 +6,25 @@
 #
 
 PORTNAME=	jags
-PORTVERSION=	0.20.2
-PORTREVISION=	4
+PORTVERSION=	0.22.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://sumpan.campus.luth.se/software/jags/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	JAGS - Just Another GTK+ Samba Client
+
+RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xi xext x11
 USE_GNOME=	gtk12
-USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
+CFLAGS+=	-ffriend-injection
 .endif
-
-pre-patch:
-	@${PERL} -pi.fbsd -e 's@/usr/local/share/jags/@${PREFIX}/share/jags/@g' \
-		${WRKSRC}/src/jagsconfig.cpp
-	@${PERL} -pi.fbsd -e 's@/usr/local/share/jags/pixmaps/@${PREFIX}/share/jags/pixmaps/@g' \
-		${WRKSRC}/src/gtk_common.cpp
 
 .include <bsd.port.post.mk>
