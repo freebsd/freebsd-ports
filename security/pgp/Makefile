@@ -23,7 +23,7 @@ ALL_TARGET=	freebsd-${MACHINE_ARCH}
 MAKE_ENV=	OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/share/pgp
 MAN1=		pgp.1 pgp2.1
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha amd64 sparc64
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} -c -o bin -g bin -m 555 pgp ${PREFIX}/bin
