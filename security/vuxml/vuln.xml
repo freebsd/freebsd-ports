@@ -34,6 +34,63 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0dccaa28-7f3c-11dd-8de5-0030843d3802">
+    <topic>python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      	<name>python24</name>
+	<range><lt>2.4.5_2</lt></range>
+      </package>
+      <package>
+      	<name>python25</name>
+	<range><lt>2.5.2_3</lt></range>
+      </package>
+      <package>
+      	<name>python23</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31305">
+	  <p>Some vulnerabilities have been reported in Python, where some have
+	    unknown impact and others can potentially be exploited by malicious
+	    people to cause a DoS (Denial of Service) or to compromise a
+	    vulnerable system.</p>
+	  <p>Various integer overflow errors exist in core modules e.g.
+	    stringobject, unicodeobject, bufferobject, longobject, tupleobject,
+	    stropmodule, gcmodule, mmapmodule.</p>
+	  <p>An integer overflow in the hashlib module can lead to an unreliable
+	    cryptographic digest results.</p>
+	  <p>Integer overflow errors in the processing of unicode strings can be
+	    exploited to cause buffer overflows on 32-bit systems.</p>
+	  <p>An integer overflow exists in the PyOS_vsnprintf() function on
+	    architectures that do not have a "vsnprintf()" function.</p>
+	  <p>An integer underflow error in the PyOS_vsnprintf() function when
+	    passing zero-length strings can lead to memory corruption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2315</cvename>
+      <cvename>CVE-2008-2316</cvename>
+      <cvename>CVE-2008-3142</cvename>
+      <cvename>CVE-2008-3144</cvename>
+      <url>http://bugs.python.org/issue2620</url>
+      <url>http://bugs.python.org/issue2588</url>
+      <url>http://bugs.python.org/issue2589</url>
+      <url>http://secunia.com/advisories/31305</url>
+      <mlist>http://mail.python.org/pipermail/python-checkins/2008-July/072276.html</mlist>
+      <mlist>http://mail.python.org/pipermail/python-checkins/2008-July/072174.html</mlist>
+      <mlist>http://mail.python.org/pipermail/python-checkins/2008-June/070481.html</mlist>
+    </references>
+    <dates>
+      <discovery>2008-08-04</discovery>
+      <entry>2008-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="388d9ee4-7f22-11dd-a66a-0019666436c2">
     <topic>mysql -- MyISAM table privileges secuity bypass vulnerability</topic>
     <affects>
