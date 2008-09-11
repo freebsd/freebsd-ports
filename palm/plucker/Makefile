@@ -73,11 +73,11 @@ do-install:
 	${MKDIR} ${DATADIR}/${F}
 	${INSTALL_DATA} ${WRKSRC}/${F}/* ${DATADIR}/${F}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/manual
 .for F in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${F} ${MAN1PREFIX}/man/man1
 .endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/manual
 .for F in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
 .endfor
