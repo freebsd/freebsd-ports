@@ -7,6 +7,7 @@
 
 PORTNAME=	base
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/secureideas
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-php4
 
-USE_PHP=	gd gettext pcre session zlib
+USE_PHP=	gd gettext pcre session zlib ctype
 
 ADODB_DIR=	${LOCALBASE}/share/adodb
 
