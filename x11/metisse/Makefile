@@ -20,8 +20,6 @@ CONFLICTS=	fvwm-1.* fvwm-2.5.*
 LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
-BROKEN=		does not package
-
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
@@ -130,5 +128,13 @@ post-patch: .SILENT
 # Simple GCC 4.2 gimmick
 	${REINPLACE_CMD} -e '/^typedef/s,GLvoid,void,g' \
 		${WRKSRC}/xserver/include/GL/glu.h
+
+.if ${OSVERSION} < 700042
+PLIST_SUB+=	FBSD6="" \
+		FBSD7="@comment "
+.else
+PLIST_SUB+=	FBSD6="@comment " \
+		FBSD7=""
+.endif
 
 .include <bsd.port.post.mk>
