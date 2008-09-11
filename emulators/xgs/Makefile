@@ -23,7 +23,7 @@ EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	xgs
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
-#BROKEN=		Does not fetch
+BROKEN=		Does not fetch
 
 # Source building
 #
