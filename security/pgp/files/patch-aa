@@ -1,5 +1,5 @@
---- makefile	Thu Jan 18 05:42:36 1996
-+++ makefile.new	Wed Jun 11 20:50:13 2003
+--- makefile	1996-01-18 04:42:36.000000000 -0600
++++ makefile.patched	2008-09-12 01:55:27.000000000 -0500
 @@ -50,7 +50,8 @@
  # -DUSE_SELECT to use select() system call
  # -DUSE_NBIO   to use non-blocking read()
@@ -15,11 +15,11 @@
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
 -	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
-+	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386}, hpux-68k(*), hpux-68k-ansi,"
++	@echo "	dgux, djgpp, encore, freebsd-{alpha,amd64,i386,sparc64}, hpux-68k(*), hpux-68k-ansi,"
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc,"
  	@echo "	hpux9-pa-ansi, irix, irix_asm, isc, isc_asm, linux, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -171,10 +172,15 @@
+@@ -171,10 +172,21 @@
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -31,7 +31,13 @@
 +	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS) -DUNIX \
 +		-DIDEA32 -DASM -DMAX_NAMELEN=255"
 +
-+freebsd-alpha:
++freebsd-alpha: freebsd
++
++freebsd-amd64: freebsd
++
++freebsd-sparc64: freebsd
++
++freebsd:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS) \
 +		-DPORTABLE -DUNIX -DIDEA32 -DMAX_NAMELEN=255"
