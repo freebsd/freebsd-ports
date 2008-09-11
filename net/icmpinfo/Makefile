@@ -17,17 +17,19 @@ COMMENT=	Looks at the icmp messages received by the host
 
 ALL_TARGET=
 MAN1=		icmpinfo.1
-PLIST_FILES=	bin/icmpinfo share/doc/icmpinfo/README
-PLIST_DIRS=	share/doc/icmpinfo
+PLIST_FILES=	bin/icmpinfo
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
 	${CHOWN} root ${PREFIX}/bin/icmpinfo
 	${CHMOD} 4555 ${PREFIX}/bin/icmpinfo
 	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/icmpinfo
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/icmpinfo
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
