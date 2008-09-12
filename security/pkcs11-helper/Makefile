@@ -33,7 +33,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am|' \
+	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in
 .endif
 
