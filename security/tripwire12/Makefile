@@ -28,6 +28,8 @@ post-extract:
 post-patch:
 	@${PERL} -pi -e 's|/secureplace/bin|${PREFIX}/bin|g;' \
 		-e 's|/usr/man|${PREFIX}/man|g;' ${WRKSRC}/Makefile
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	    's|bs_ntohl|ntohl|g;s|bs_htonl|htonl|g'
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
