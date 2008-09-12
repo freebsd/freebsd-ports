@@ -54,7 +54,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <bid>307110</bid>
+      <bid>30710</bid>
       <cvename>CVE-2008-3746</cvename>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=476571</url>
       <url>http://lists.manyfish.co.uk/pipermail/neon/2008-August/000040.html</url>
