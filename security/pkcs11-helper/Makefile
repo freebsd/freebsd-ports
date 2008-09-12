@@ -32,9 +32,13 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA|install-data-am:|' \
+		${WRKSRC}/doc/api/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|install-data-am: install-man install-nodist_htmlDATA|install-data-am: install-man|' \
+		${WRKSRC}/man/Makefile.in
 .endif
 
 
