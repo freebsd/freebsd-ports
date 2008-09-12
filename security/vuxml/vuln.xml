@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da5c4072-8082-11dd-9c8c-001c2514716c">
+    <topic>clamav -- CHM Processing Denial of Service</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.94</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20080902</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hanno Boeck reports:</p>
+	<blockquote cite="http://int21.de/cve/CVE-2008-1389-clamav-chd.html">
+	  <p>A fuzzing test showed weakness in the chm parser of
+	    clamav, which can possibly be exploited.  The clamav
+	    team has disabled the chm module in older versions
+	    though freshclam updates and has released 0.94 with
+	    a fixed parser.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1389</cvename>
+      <url>https://wwws.clamav.net/bugzilla/show_bug.cgi?id=1089</url>
+    </references>
+    <dates>
+      <discovery>2008-07-09</discovery>
+      <entry>2008-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d239578-7ff2-11dd-8de5-0030843d3802">
     <topic>horde -- multiple vulnerabilities</topic>
     <affects>
