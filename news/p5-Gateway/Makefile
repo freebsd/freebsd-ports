@@ -23,10 +23,10 @@ PERL_CONFIGURE=	yes
 MAN3=		News::Gateway.3
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/Gateway
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${PREFIX} ${EXAMPLESDIR}
 .for file in listgate listgate.m4 listgate.readme raccmod raccpost racrmod
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/share/examples/Gateway
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 

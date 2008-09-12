@@ -1,6 +1,5 @@
 %%SITE_PERL%%/News/Gateway.pm
 %%SITE_PERL%%/News/Gateway.pod
-@dirrmtry %%SITE_PERL%%/News
 %%SITE_PERL%%/auto/News/Gateway/anykeyword.al
 %%SITE_PERL%%/auto/News/Gateway/bodyheaders.al
 %%SITE_PERL%%/auto/News/Gateway/cleanbody.al
@@ -20,14 +19,16 @@
 %%SITE_PERL%%/auto/News/Gateway/post.al
 %%SITE_PERL%%/auto/News/Gateway/previoushop.al
 %%SITE_PERL%%/auto/News/Gateway/whitelist.al
-@dirrmtry %%SITE_PERL%%/auto/News/Gateway
-@dirrmtry %%SITE_PERL%%/auto/News
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Gateway/.packlist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listgate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listgate.m4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listgate.readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/raccmod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/raccpost
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/racrmod
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Gateway
-share/examples/Gateway/listgate
-share/examples/Gateway/listgate.m4
-share/examples/Gateway/listgate.readme
-share/examples/Gateway/raccmod
-share/examples/Gateway/raccpost
-share/examples/Gateway/racrmod
-@dirrm share/examples/Gateway
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/News
+@dirrm %%SITE_PERL%%/auto/News/Gateway
+@dirrm %%SITE_PERL%%/auto/News
+@dirrm %%SITE_PERL%%/News

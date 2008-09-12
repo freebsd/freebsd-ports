@@ -18,16 +18,18 @@ COMMENT=	Configurable remote distributed denial of service tool detector
 
 ALL_TARGET=	rid
 
+DOCS=		README
+
 pre-configure:
-	@${REINPLACE_CMD} -e 's:config.txt:${PREFIX}/etc/rid.conf:g'  \
+	@${REINPLACE_CMD} -e 's:config.txt:${PREFIX}/etc/rid.conf.sample:g'  \
 		${WRKSRC}/config.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rid ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/rid.conf
+	@${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/rid.conf.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/rid
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/rid
+	${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
