@@ -51,6 +51,10 @@ SUB_LIST+=	PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
