@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="755fa519-80a9-11dd-8de5-0030843d3802">
+    <topic>neon -- NULL pointer dereference in Digest domain support</topic>
+    <affects>
+      <package>
+	<name>neon28</name>
+	<range><lt>0.28.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joe Orton reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2008/08/15/4">
+	  <p>A NULL pointer deference in the Digest authentication support in
+	    neon versions 0.28.0 through 0.28.2 inclusive allows a malicious
+	    server to crash a client application, resulting in possible denial
+	    of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>307110</bid>
+      <cvename>CVE-2008-3746</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=476571</url>
+      <url>http://lists.manyfish.co.uk/pipermail/neon/2008-August/000040.html</url>
+    </references>
+    <dates>
+      <discovery>2008-08-15</discovery>
+      <entry>2008-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da5c4072-8082-11dd-9c8c-001c2514716c">
     <topic>clamav -- CHM Processing Denial of Service</topic>
     <affects>
