@@ -19,6 +19,8 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
+DOCS=		 README docs.html
+
 post-patch:
 	${REINPLACE_CMD} -e \
 		's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' \
@@ -30,9 +32,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin/sslwrap
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sslwrap
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/docs.html \
-			${PREFIX}/share/doc/sslwrap
+	${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/ 
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
 bin/sslwrap
-share/doc/sslwrap/README
-share/doc/sslwrap/docs.html
-@dirrm share/doc/sslwrap
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
