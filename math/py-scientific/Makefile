@@ -28,9 +28,9 @@ DOCDIR=		${PREFIX}/share/doc/py-scientific
 EXAMPLEDIR=	${PREFIX}/share/examples/py-scientific
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCDIR}
-.if !defined(NOPORTDOCS)
 	cd ${WRKDIR}/${DISTNAME}/Doc; tar -c --exclude='*~' -f - . | \
 	    (cd ${DOCDIR}; tar -xf -)
 	@${MKDIR} ${EXAMPLEDIR}
