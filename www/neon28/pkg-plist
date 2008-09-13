@@ -81,7 +81,6 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/refxml.html
 %%PORTDOCS%%%%DOCSDIR%%/html/using.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xml.html
-%%PORTDOCS%%%%DOCSDIR%%/using-neon.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/neon
