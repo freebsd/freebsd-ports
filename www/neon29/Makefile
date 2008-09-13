@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neon28
-PORTVERSION=	0.28.2
-PORTREVISION=	1
+PORTVERSION=	0.28.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
@@ -41,7 +40,7 @@ CONFIGURE_ARGS=	--with-ssl \
 		--enable-xml \
 		--enable-shared \
 		--with-expat \
-		--with-libs=${PREFIX}
+		--with-libs=${LOCALBASE}:${PREFIX}
 
 MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
@@ -55,7 +54,7 @@ MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
 	ne_ssl_cert_cmp.3 ne_ssl_cert_identity.3 ne_ssl_cert_read.3 \
 	ne_ssl_clicert_read.3 ne_ssl_readable_dname.3 ne_ssl_set_verify.3 \
 	ne_ssl_trust_cert.3 ne_status.3 ne_token.3 ne_version_match.3 \
-	ne_xml_create.3 neon.3
+	ne_xml_create.3 neon.3 ne_set_connect_timeout.3
 MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_addr_resolve.3 ne_addr_destroy.3 \
 	ne_addr_resolve.3 ne_addr_error.3 \
@@ -112,17 +111,15 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 	ne_xml_create.3 ne_xml_destroy.3
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/neon
 
 .include <bsd.port.pre.mk>
-
-DOCSDIR:=	${DOCSDIR:S/28//}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${MANPREFIX}/man/man3
 .ifndef NOPORTDOCS
 	(cd ${WRKSRC} ; ${MAKE} install-html)
-	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
