@@ -161,5 +161,4 @@ do-install:
 	    -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 	@echo '@unexec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
 
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>
