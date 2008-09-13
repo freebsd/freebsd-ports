@@ -1,5 +1,5 @@
---- ./flexbackup.orig	2008-07-19 09:56:20.000000000 +0200
-+++ ./flexbackup	2008-07-19 09:58:09.000000000 +0200
+--- flexbackup.orig	2003-10-10 22:12:09.000000000 +0800
++++ flexbackup	2008-09-13 22:12:36.000000000 +0800
 @@ -269,6 +269,7 @@
      untie(%::index);
  }
@@ -319,8 +319,8 @@
      print SCR "#!/bin/sh\n";
 -    print SCR "tmp_data=/tmp/bufftest\$\$.txt\n";
 -    print SCR "tmp_err=/tmp/bufftest\$\$.err\n";
-+    print SCR "tmp_data=\`tempfile\`\n";
-+    print SCR "tmp_err=\`tempfile\`\n";
++    print SCR "tmp_data=\$(mktemp $cfg::tmpdir/data.XXXXXXXXXX)\n";
++    print SCR "tmp_err=\$(mktemp $cfg::tmpdir/err.XXXXXXXXXX)\n";
      print SCR "echo testme > \$tmp_data\n";
      print SCR "$buffer_cmd > /dev/null 2> \$tmp_err < \$tmp_data\n";
      print SCR "res=\$?\n";
