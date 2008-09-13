@@ -527,17 +527,18 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
-	http://laotzu.acc.umu.se/pub/GNOME/%SUBDIR%/ \
-	http://gemmei.acc.umu.se/pub/GNOME/%SUBDIR%/ \
-	http://chuangtzu.acc.umu.se/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
+	http://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
+	http://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
+	http://linorg.usp.br/gnome/%SUBDIR%/ \
+	http://mirror.aarnet.edu.au/pub/GNOME/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 .endif
 
