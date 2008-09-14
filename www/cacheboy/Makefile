@@ -86,6 +86,8 @@ DIST_SUBDIR=	CACHEBOY_1.4.1
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative)
 
+BROKEN=		leaves leftover binary after deinstall
+
 CONFLICTS=	squid-[0-9]*
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
