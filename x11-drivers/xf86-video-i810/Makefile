@@ -15,6 +15,8 @@ COMMENT=	X.Org i810 display driver
 
 CONFLICTS=	xf86-video-intel-[0-9]*
 
+BROKEN=		does not compile
+
 USE_GL=		gl
 
 XORG_CAT=	driver
