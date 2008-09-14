@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20051113
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
