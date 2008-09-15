@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9227dcaf-827f-11dd-9cd7-0050568452ac">
+    <topic>twiki -- Arbitrary code execution in session files</topic>
+    <affects>
+      <package>
+        <name>twiki</name>
+        <range><ge>4.0.0</ge><le>4.0.5</le></range>
+        <range><ge>4.1.0</ge><le>4.1.2</le></range>
+        <range><ge>4.2.0</ge><le>4.2.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Th1nk3r  (cnwfhguohrugbo / gmail.com) reports:</p>
+        <blockquote cite="http://www.milw0rm.com/exploits/6269">
+          <p>TWiki version 4.2.0 (I haven't tested other versions) is
+            vulnerable to a File Disclosure. It's only possible to
+            exploit the bug if you can access the "/bin/configure" script.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3195</cvename>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2008-3195</url>
+      <url>http://www.kb.cert.org/vuls/id/362012</url>
+      <url>https://inspectit.accessitgroup.com/threats/details.cgi?id=34031</url>
+      <url>http://www.nessus.org/plugins/index.php?view=single&amp;id=34031</url>
+    </references>
+    <dates>
+      <discovery>2008-08-05</discovery>
+      <entry>2008-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="755fa519-80a9-11dd-8de5-0030843d3802">
     <topic>neon -- NULL pointer dereference in Digest domain support</topic>
     <affects>
