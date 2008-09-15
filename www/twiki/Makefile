@@ -7,7 +7,7 @@
 
 PORTNAME=	twiki
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Flexible, powerful, and easy to use enterprise wiki
+
+FORBIDDEN=	Contains security exploit: http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2008-3195
 
 RUN_DEPENDS=	\
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
