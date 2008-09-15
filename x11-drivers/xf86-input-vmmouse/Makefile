@@ -16,4 +16,7 @@ COMMENT=	X.Org vmmouse input driver
 XORG_CAT=	driver
 MAN4=		vmmouse.4x
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	The vmmouse protocol is only supported on x86-compatible architectures.
+
 .include <bsd.port.mk>
