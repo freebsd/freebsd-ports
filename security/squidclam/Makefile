@@ -31,7 +31,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/squidclam %%EXAMPLESDIR%%/squidclam.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
-BROKEN=	Doesn't build with clamav-0.93
+BROKEN=	Doesn't build with clamav-0.93 or higher
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
