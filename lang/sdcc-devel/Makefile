@@ -44,6 +44,11 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+CFLAGS+=	-O0
+CXXFLAGS+=	-O0
+.endif
+
 .if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
