@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:bui
 		${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15:env
 USE_MYSQL=	yes
 WANT_MYSQL_VER?=	51
 
