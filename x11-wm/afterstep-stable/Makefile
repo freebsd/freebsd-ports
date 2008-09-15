@@ -7,7 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
