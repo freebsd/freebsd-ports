@@ -31,7 +31,7 @@ OPTIONS=	CLAMAV "Build with srv_clamav service" on \
 			IPV6 "Enable IPv6 support" off
 #		PERL "With Perl support" off
 
-BROKEN=	Doesn't build with clamav-0.93
+BROKEN=	Doesn't build with clamav-0.93 or higher
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-perl
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
-LIB_DEPENDS+=	clamav.4:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
 PLIST_SUB+=	CLAMAV=""
 CONFIGURE_ARGS+=	--with-clamav
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \

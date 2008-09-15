@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A KDE 3 front-end to Clam Anti-Virus
 
-LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.5:${PORTSDIR}/security/clamav
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -35,6 +35,8 @@ CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
 
 USE_KDELIBS_VER=	3
+
+BROKEN=	Doesn't build with clamav-0.94
 
 .include <bsd.port.pre.mk>
 

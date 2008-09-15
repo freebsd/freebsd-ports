@@ -226,7 +226,7 @@ DISTFILES+=	mod_clamav-0.5.1.tar.bz2:clam
 EXTRACT_ONLY+=	mod_clamav-0.5.1.tar.bz2
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
-LIB_DEPENDS+=	clamav.4:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
