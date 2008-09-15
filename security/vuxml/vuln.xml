@@ -39,18 +39,20 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>twiki</name>
-        <range><ge>4.0.0</ge><le>4.0.5</le></range>
-        <range><ge>4.1.0</ge><le>4.1.2</le></range>
-        <range><ge>4.2.0</ge><le>4.2.2</le></range>
+        <range><lt>4.2.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Th1nk3r  (cnwfhguohrugbo / gmail.com) reports:</p>
+        <p>Th1nk3r reports:</p>
         <blockquote cite="http://www.milw0rm.com/exploits/6269">
-          <p>TWiki version 4.2.0 (I haven't tested other versions) is
-            vulnerable to a File Disclosure. It's only possible to
-            exploit the bug if you can access the "/bin/configure" script.</p>
+          <p>The version of TWiki installed on the remote host allows access to
+	    the 'configure' script and fails to sanitize the 'image' parameter
+	    of that script of directory traversal sequences before returning the
+	    file contents when the 'action' parameter is set to 'image'. An
+	    unauthenticated attacker can leverage this issue to view arbitrary
+	    files on the remote host subject to the privileges of the web server
+	    user id. .</p>
         </blockquote>
       </body>
     </description>
