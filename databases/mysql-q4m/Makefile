@@ -46,6 +46,9 @@ post-extract:
 PORTDOCS=	AUTHORS ChangeLog README doc
 PORTEXAMPLES=	crawler install.sql
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
