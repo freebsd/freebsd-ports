@@ -21,16 +21,18 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	ircservices
 
 DIST_SUBDIR=	${PORTNAME}
-CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
 IRCSERVICES_LANG?=	EN_US
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}=="sparc64"
-CONFIGURE_ARGS+=	-ignore-cache
-CFLAGS:=	${CFLAGS:N-O*:N-pipe}
+.if ${OSVERSION} > 700042
+CFLAGS+=	-fno-stack-protector
+.endif
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
 .endif
 
 pre-patch:
