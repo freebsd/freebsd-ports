@@ -29,7 +29,8 @@ CONFIGURE_ARGS+=	--disable-fatal-warnings \
 			--with-initdir=${PREFIX}/etc/rc.d \
 			--localstatedir=/var \
 			--with-group-id=275 --with-ccmuser-id=275
-CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --cflags`"
+CONFIGURE_ENV=	CPPFLAGS="`${LIBNET_CONFIG} --cflags`" \
+		LDFLAGS="`${LIBNET_CONFIG} --libs`"
 
 SUB_FILES=	pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
