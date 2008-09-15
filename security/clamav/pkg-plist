@@ -12,15 +12,15 @@ include/clamav-config.h
 lib/libclamav.a
 lib/libclamav.la
 lib/libclamav.so
-lib/libclamav.so.4
+lib/libclamav.so.5
 %%UNRAR%%lib/libclamunrar.a
 %%UNRAR%%lib/libclamunrar.la
 %%UNRAR%%lib/libclamunrar.so
-%%UNRAR%%lib/libclamunrar.so.4
+%%UNRAR%%lib/libclamunrar.so.5
 %%UNRAR%%lib/libclamunrar_iface.a
 %%UNRAR%%lib/libclamunrar_iface.la
 %%UNRAR%%lib/libclamunrar_iface.so
-%%UNRAR%%lib/libclamunrar_iface.so.4
+%%UNRAR%%lib/libclamunrar_iface.so.5
 libdata/pkgconfig/libclamav.pc
 @unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
 etc/clamd.conf.default
