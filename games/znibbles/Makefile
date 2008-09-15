@@ -22,10 +22,4 @@ CONFIGURE_ARGS=	--without-motif \
 
 MAN6=	nibbles.6 znibbles.6 gznibbles.6 znibblesX.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == amd64
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
