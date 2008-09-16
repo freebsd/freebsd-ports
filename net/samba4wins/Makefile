@@ -77,4 +77,8 @@ post-install:
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on FreeBSD 6.x
+.endif
+
 .include <bsd.port.post.mk>
