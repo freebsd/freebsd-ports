@@ -89,6 +89,13 @@ post-patch:
 		/dom.disable_window_open_feature.toolbar/s/false/true/' \
 		${WRKSRC}/${ii}/all.js
 .endfor
+.if ${ARCH} == "sparc64"
+	@(cd ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix && \
+	    ${LN} -s xptcstubs_asm_sparc64_openbsd.s xptcstubs_asm_sparc64_freebsd.s && \
+	    ${LN} -s xptcstubs_sparc64_openbsd.cpp xptcstubs_sparc64_freebsd.cpp && \
+	    ${LN} -s xptcinvoke_sparc64_openbsd.cpp xptcinvoke_sparc64_freebsd.cpp) && \
+	    ${LN} -s xptcinvoke_asm_sparc64_openbsd.s xptcinvoke_asm_sparc64_freebsd.s)
+.endif
 
 port-pre-install:
 #	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib
