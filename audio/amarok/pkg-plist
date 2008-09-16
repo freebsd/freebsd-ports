@@ -981,6 +981,7 @@ share/locale/id/LC_MESSAGES/amarok.mo
 share/locale/is/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/ja/LC_MESSAGES/amarok.mo
+share/locale/ka/LC_MESSAGES/amarok.mo
 share/locale/km/LC_MESSAGES/amarok.mo
 share/locale/ko/LC_MESSAGES/amarok.mo
 share/locale/ku/LC_MESSAGES/amarok.mo
@@ -1014,6 +1015,7 @@ share/locale/th/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
+share/locale/uz@cyrillic/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
 %%GPOD%%share/services/amarok_ipod-mediadevice.desktop
