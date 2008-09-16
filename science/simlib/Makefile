@@ -20,6 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-3
 
 CXXFLAGS+=	-fPIC
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
 	@${MV} ${WRKSRC}/src/Makefile.FreeBSD-i386 ${WRKSRC}/src/Makefile
