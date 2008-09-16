@@ -182,6 +182,10 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 BROKEN=		does not compile with Heimdal 1.1 in 8.0-CURRENT
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile with OpenSSL in 6.x base
+.endif
+
 # Authentication methods and modules:
 
 basic_auth=	DB NCSA PAM MSNT SMB
