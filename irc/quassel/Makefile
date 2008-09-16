@@ -21,6 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui network script sql dbus xml \
 		qmake_build moc_build rcc_build uic_build
 
+CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS+=	-DWANT_MONO=ON
 
 .include <bsd.port.mk>
