@@ -7,6 +7,7 @@
 
 PORTNAME=	klamav
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -35,8 +36,6 @@ CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
 
 USE_KDELIBS_VER=	3
-
-BROKEN=	Doesn't build with clamav-0.94
 
 .include <bsd.port.pre.mk>
 
