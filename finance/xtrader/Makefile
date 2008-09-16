@@ -29,15 +29,17 @@ PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
-BROKEN=		Does not compile
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|char|const char|' \
+	    ${WRKSRC}/xtrader/src/Resource.cpp
+	${REINPLACE_CMD} -e 's|static char|static const char|' \
+	    ${WRKSRC}/xtrader/src/Resource.h
+	${REINPLACE_CMD} -e 's|int(data)|(unsigned long)data|' \
+	    ${WRKSRC}/xtrader/src/gui/XTrader.h
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/sample.xt ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/xtrader ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
