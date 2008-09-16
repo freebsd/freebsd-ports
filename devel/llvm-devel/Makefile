@@ -47,6 +47,12 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 .if defined(BOOTSTRAP)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
@@ -90,4 +96,4 @@ regression-test: ${BUILD_COOKIE}
 		${SH} -c ${TEST_CMD}; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
