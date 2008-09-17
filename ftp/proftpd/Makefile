@@ -87,8 +87,8 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
 		COMB "Include mod_comb (multistream upload)" off \
-		CODECONV "Use charset conversion (possibly broken)" off
-
+		CODECONV "Use charset conversion (possibly broken)" off \
+		RUSSIANCHAR "Disable telnet filterning (Fix Russian)" off 
 MODULES?=
 LIBDIRS?=
 INCLUDEDIRS?=
@@ -264,6 +264,11 @@ CONFIGURE_ARGS+=	--disable-sendfile
 PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif
+
+.if defined(WITH_RUSSIANCHAR)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-netio.c
+.endif
+
 
 # mod_ifsession should be the last item in the modules list
 .if !defined(WITHOUT_IFSESSION)
