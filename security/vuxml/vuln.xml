@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="74bf1594-8493-11dd-bb64-0030843d3802">
+    <topic>phpmyadmin -- Code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement:</p>
+	<blockquote
+	cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-7">
+	  <p>The server_databases.php script was vulnerable to an attack coming
+	  from a user who is already logged-on to phpMyAdmin, where he can
+	  execute shell code (if the PHP configuration permits commands like
+	  exec).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+     <url>http://secunia.com/Advisories/31884/</url>
+     <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-7</url>
+    </references>
+    <dates>
+      <discovery>2008-09-15</discovery>
+      <entry>2008-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9227dcaf-827f-11dd-9cd7-0050568452ac">
     <topic>twiki -- Arbitrary code execution in session files</topic>
     <affects>
