@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- Code execution vulnerability</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.9.1</lt></range>
       </package>
     </affects>
@@ -894,7 +894,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- cross site request forgery vulnerabilites</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.7.1</lt></range>
       </package>
     </affects>
@@ -915,6 +915,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-07-15</discovery>
       <entry>2008-07-18</entry>
+      <modified>2008-09-17</modified>
     </dates>
   </vuln>
 
@@ -1164,7 +1165,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- Cross Site Scripting Vulnerabilities</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.7</lt></range>
       </package>
     </affects>
@@ -1191,6 +1192,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-06-23</discovery>
       <entry>2008-06-28</entry>
+      <modified>2008-09-17</modified>
     </dates>
   </vuln>
 
@@ -2353,7 +2355,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- Shared Host Information Disclosure</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.5.2</lt></range>
       </package>
     </affects>
@@ -2378,6 +2380,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-04-23</discovery>
       <entry>2008-04-24</entry>
+      <modified>2008-09-17</modified>
     </dates>
   </vuln>
 
@@ -2385,7 +2388,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- Username/Password Session File Information Disclosure</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.5.1</lt></range>
       </package>
     </affects>
@@ -2407,6 +2410,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-03-31</discovery>
       <entry>2008-04-24</entry>
+      <modified>2008-09-17</modified>
     </dates>
   </vuln>
 
@@ -2963,7 +2967,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>phpmyadmin -- SQL injection vulnerability</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.11.5</lt></range>
       </package>
     </affects>
@@ -2993,6 +2997,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-03-01</discovery>
       <entry>2008-03-04</entry>
+      <modified>2008-09-17</modified>
     </dates>
   </vuln>
 
