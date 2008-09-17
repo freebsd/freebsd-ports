@@ -17,6 +17,8 @@ COMMENT=	Project build system based on Apache Ant
 BUILD_DEPENDS=  ${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
+MANUAL_PACKAGE_BUILD=	attempts to contact pear.phing.info during install phase
+
 USE_PHP=	yes
 DEFAULT_PHP_VER=5
 WANT_PHP_CLI=	yes
