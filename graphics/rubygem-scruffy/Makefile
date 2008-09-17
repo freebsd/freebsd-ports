@@ -19,6 +19,8 @@ RUN_DEPENDS=	rubygem-builder>=2.0.0:${PORTSDIR}/devel/rubygem-builder
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
+BROKEN=		bad plist
+
 update-plist:
 	@${RM} -f ${PLIST}
 	@${ECHO} "%%GEM_SPEC%%" >> ${PLIST}

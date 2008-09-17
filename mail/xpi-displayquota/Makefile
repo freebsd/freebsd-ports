@@ -19,5 +19,7 @@ XPI_ID=		{c1ac4523-76c2-9995-adbd-d93bf5141bea}
 XPI_FILES=	chrome/DisplayQuota.jar defaults/preferences/displayquota.js install.rdf chrome.manifest package.sh.bak
 XPI_DIRS=	chrome chrome/locale.old defaults/preferences defaults
 
+BROKEN=		bad plist
+
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
