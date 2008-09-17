@@ -25,16 +25,31 @@ MAN1=		bkhive.1 samdump2.1
 
 TOOLS_VER=	1.1.1
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS=/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 # Do not install any Linux binaries: we build and install native ones;
 # mute their banner as well in favor of our nice pkg-message
 	@${REINPLACE_CMD} -e 's/ install-exec-local// ; 605,617d' \
 		${WRKSRC}/Makefile.in
 # Hint the tools about correct endianness
-	@${REINPLACE_CMD} -e '27s,^$$,#include <machine/endian.h>,' \
-		${WRKDIR}/bkhive-${TOOLS_VER}/bkhive.c \
+	@${REINPLACE_CMD} -e '22s,^$$,#include <sys/endian.h>,' \
+		${WRKDIR}/bkhive-${TOOLS_VER}/bkhive.c
+	@${REINPLACE_CMD} -e '26s,^$$,#include <sys/endian.h>,' \
+		${WRKDIR}/bkhive-${TOOLS_VER}/hive.c
+	@${REINPLACE_CMD} -e '27s,^$$,#include <sys/endian.h>,' \
 		${WRKDIR}/samdump2-${TOOLS_VER}/samdump2.c
+# FreeBSD does not have <byteswap.h>
+	@${REINPLACE_CMD} -e '/byteswap\.h/d' \
+		${WRKDIR}/bkhive-${TOOLS_VER}/bkhive.c \
+		${WRKDIR}/bkhive-${TOOLS_VER}/hive.c \
+		${WRKDIR}/samdump2-${TOOLS_VER}/samdump2.c
+# And our swap function names are prettier
+	@${REINPLACE_CMD} -E 's,__bswap_([[:digit:]]+),bswap\1,' \
+		${WRKDIR}/bkhive-${TOOLS_VER}/hive.c \
+		${WRKDIR}/samdump2-${TOOLS_VER}/samdump2.c
+# Link to file instead of patching identical copy
+	@${LN} -sf ../bkhive-${TOOLS_VER}/hive.c \
+		${WRKDIR}/samdump2-${TOOLS_VER}/hive.c
 
 post-build:
 # Build auxiliary tools (useful: e.g., samdump2 is called at runtime)
