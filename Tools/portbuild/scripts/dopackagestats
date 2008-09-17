@@ -5,8 +5,8 @@
 # accessible to the web server.
 #
 
-# alpha is obsolete
-SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
+# alpha is obsolete; ia64 is not current
+SUPPORTED_ARCHS="amd64 i386 sparc64"
 ROOT_DIRECTORY=/var/portbuild
 
 OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
@@ -53,7 +53,9 @@ write_row () {
 
     arch=$1
     build=$2
-    directory=${ROOT_DIRECTORY}/${arch}/${build}
+    # XXX MCL 20080916
+    directory=${ROOT_DIRECTORY}/${arch}/${build}/builds/latest
+
     branch=`echo $build | sed -e "s/-exp//"`
     if [ "$branch" = "4" ]; then
       indexfile=$directory/ports/INDEX
@@ -63,78 +65,105 @@ write_row () {
     # work around the fact that 5-exp is really 6-exp-prime
     if [ ! -f $indexfile ]; then
       if [ -d $directory/ports ]; then
-          indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* 2> /dev/null | head -1`
+          indexfile=$directory/ports/`cd $directory/ports 2> /dev/null && ls INDEX* 2> /dev/null | head -1`
         else
           # work around the fact that 4 is EOL and thus has no ports/ directory
-         indexfile=$directory/logs/`cd $directory/logs&&ls INDEX* 2> /dev/null | head -1`
+         indexfile=$directory/logs/`cd $directory/logs 2> /dev/null && ls INDEX* 2> /dev/null | head -1`
         fi
     fi
 
     # column: date of CVS checkout
-    cvsdone="&nbsp;"
+    have_cvsdone=0
+    cvsdone=""
     if [ -f $directory/cvsdone ]; then
       cvsdone="$(cat $directory/cvsdone | awk '{printf("%s %s\n",$2,$3)}')"
-      if [ -z "$cvsdone" ]; then
-        cvsdone="&nbsp;"
+      if [ ! -z "$cvsdone" ]; then
+        have_cvsdone=1
       fi
     fi
 
     # column: datestamp and URL of latest log
-    latest="&nbsp;"
+    have_latest=0
+    latest=""
     if [ -d $directory/logs ]; then
-      latest_suffix="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
+      latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
       if [ "$latest_suffix" ]; then
         latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
-      else
-        latest="&nbsp;"
+      #else
+      #  latest="&nbsp;"
+        have_latest=1
       fi
     fi
 
     # column: INDEX count
+    have_index=0
     n_index=0
     if [ -f $indexfile ]; then
       n_index=`cat $indexfile | wc -l`
+      have_index=1
     fi
 
     # column: buildlog count
+    have_logs=0
     n_logs=0
     if [ -d $directory/logs ]; then
       n_logs=`ls $directory/logs | grep '\.log' | wc -l`
+      have_logs=1
     fi
 
     # column: package count
+    have_packages=0
     n_packages=0
     if [ -d $directory/packages/All ]; then
       n_packages=`find $directory/packages/All -name \*.tbz -or -name \*.tgz |wc -l`
+      have_packages=1
     fi
 
     # column: error count
+    have_errors=0
     n_errors=0
     if [ -d $directory/errors ]; then
       n_errors=`ls $directory/errors | grep '\.log' | wc -l`
+      have_errors=1
     fi
 
     # column: duds count
+    have_duds=0
     n_duds=0
     if [ -f $directory/duds ]; then
       n_duds=`cat $directory/duds | wc -l`
+      have_duds=1
+    fi
+
+    # if do not have any files, skip the row
+    if [ $have_cvsdone -eq 0 -a \
+         $have_latest -eq 0 -a \
+         $have_index -eq 0 -a \
+         $have_logs -eq 0 -a \
+         $have_packages -eq 0 -a \
+         $have_errors -eq 0 -a \
+         $have_duds -eq 0 ]; then
+      return
     fi
 
     # column: not yet built count
+    # XXX MCL 20080916 use n_packages, not n_logs; individual logs can be stale
+    # XXX MCL 20080916 OTOH, so can packages; see sparc64-5
     if [ $n_index -ne 0 ]; then
-      n_not_yet_built=`expr $n_index - $n_logs - $n_errors - $n_duds`
+      n_not_yet_built=`expr $n_index - $n_packages - $n_errors - $n_duds`
     else  # index currently being rebuilt
       n_not_yet_built=0
     fi
 
     # column: running flag
     running_flag="N"
-    # the last grep eliminates false positive of i386-6-exp for i386-6
+    # the last grep eliminates false positive of i386-6-exp for i386-6;
+    # if we are still running FreeBSD in the year 3000, s/2/3/
     running_processes_for_build=`ps axww | \
       grep "pdispatch $arch $build " | \
       grep -v grep | \
       sed -e "s@.*pdispatch @@;s@ /var/portbuild/scripts/.*@@;s@ @-@g" | \
-      grep "^$arch-$build\$"`
+      grep "^$arch-$build-2"`
     if [ ! -z "$running_processes_for_build" ]; then
       running_flag="Y"
     fi
@@ -160,29 +189,67 @@ write_row () {
     echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
 
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/cvsdone'>" >> ${TMPFILE}
-    echo "$cvsdone</a></td>" >> ${TMPFILE}
+    if [ $have_cvsdone ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/cvsdone'>" >> ${TMPFILE}
+      echo "$cvsdone</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
-    echo "<td align='left' bgcolor='$cellcolor'>$latest</td>" >> ${TMPFILE}
+    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    if [ $have_latest ]; then
+      echo "$latest" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     # note: ports/INDEX-n is copied to a file called errorlogs/INDEX
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
-    echo "$n_index</a></td>" >> ${TMPFILE}
+    if [ $have_index ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
+      echo "$n_index</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
-    echo "$n_logs</a></td>" >> ${TMPFILE}
+    if [ $have_logs ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
+      echo "$n_logs</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-packages-latest'>" >> ${TMPFILE}
-    echo "$n_packages</a></td>" >> ${TMPFILE}
+    if [ $have_packages ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-packages-latest/All'>" >> ${TMPFILE}
+      echo "$n_packages</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
-    echo "$n_errors</a></td>" >> ${TMPFILE}
+    if [ $have_errors ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
+      echo "$n_errors</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
-    echo "<td align='right' bgcolor='$cellcolor'>$n_duds</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    if [ $have_duds ]; then
+      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/duds'>" >> ${TMPFILE}
+      echo "$n_duds</a>" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>$n_not_yet_built</td>" >> ${TMPFILE}
 
