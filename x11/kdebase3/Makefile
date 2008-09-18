@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -68,6 +68,8 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
 .if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
+		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 		hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	MEDIA=""
