@@ -89,8 +89,6 @@ write_row () {
       latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
       if [ "$latest_suffix" ]; then
         latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
-      #else
-      #  latest="&nbsp;"
         have_latest=1
       fi
     fi
@@ -136,23 +134,30 @@ write_row () {
     fi
 
     # if do not have any files, skip the row
-    if [ $have_cvsdone -eq 0 -a \
-         $have_latest -eq 0 -a \
-         $have_index -eq 0 -a \
-         $have_logs -eq 0 -a \
-         $have_packages -eq 0 -a \
-         $have_errors -eq 0 -a \
-         $have_duds -eq 0 ]; then
+    if [ ! $have_cvsdone -a \
+         ! $have_latest -a \
+         ! $have_index -a \
+         ! $have_logs -a \
+         ! $have_packages -a \
+         ! $have_errors -a \
+         ! $have_duds ]; then
       return
     fi
 
     # column: not yet built count
-    # XXX MCL 20080916 use n_packages, not n_logs; individual logs can be stale
-    # XXX MCL 20080916 OTOH, so can packages; see sparc64-5
-    if [ $n_index -ne 0 ]; then
-      n_not_yet_built=`expr $n_index - $n_packages - $n_errors - $n_duds`
-    else  # index currently being rebuilt
-      n_not_yet_built=0
+    # XXX MCL 20080916 use n_packages, not n_logs; individual logs can be stale.
+    # (OTOH, so can packages (see sparc64-5) but this is possibly obsolete)
+    have_not_yet_built=0
+    n_not_yet_built=0
+    if [ $have_index -a \
+         $have_packages -a \
+         $have_errors -a \
+         $have_duds ]; then
+      if [ $n_index -ne 0 ]; then
+        n_not_yet_built=`expr $n_index - $n_packages - $n_errors - $n_duds`
+        have_not_yet_built=1
+      # else index currently being rebuilt
+      fi
     fi
 
     # column: running flag
@@ -251,7 +256,13 @@ write_row () {
     fi
     echo "</td>" >> ${TMPFILE}
 
-    echo "<td align='right' bgcolor='$cellcolor'>$n_not_yet_built</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    if [ $have_not_yet_built ]; then
+      echo "$n_not_yet_built" >> ${TMPFILE}
+    else
+      echo "&nbsp;" >> ${TMPFILE}
+    fi
+    echo "</td>" >> ${TMPFILE}
 
     echo "<td align='center' bgcolor='$cellcolor'>$running_flag</td>" >> ${TMPFILE}
     echo "<td align='center' bgcolor='$cellcolor'>$completed_flag</td>" >> ${TMPFILE}
@@ -279,10 +290,11 @@ write_footer () {
   echo "<li><b>completed</b> is whether that build terminated normally or not, as seen from the logfile.</li>" >> ${TMPFILE}
   echo "</ul>" >> ${TMPFILE}
 
-  echo "<p>notes:</p>" >> ${TMPFILE}
-  echo "<ul>" >> ${TMPFILE}
-  echo "<li>on the -exp builds, editors/openoffice.org* are skipped to save time.</li>" >> ${TMPFILE}
-  echo "</ul>" >> ${TMPFILE}
+#  no longer true 20080917
+#  echo "<p>notes:</p>" >> ${TMPFILE}
+#  echo "<ul>" >> ${TMPFILE}
+#  echo "<li>on the -exp builds, editors/openoffice.org* are skipped to save time.</li>" >> ${TMPFILE}
+#  echo "</ul>" >> ${TMPFILE}
 
   echo "</body>" >> ${TMPFILE}
   echo "</html>" >> ${TMPFILE}
@@ -295,8 +307,8 @@ write_header
 # display all the mainstream builds first
 for arch in ${SUPPORTED_ARCHS}; do
 
-  # drop 4 as obsolete
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[5-9]$' | sort`
+  # drop 4 and 5 as obsolete
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[67891]$' | sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
@@ -312,7 +324,7 @@ done
 #   would break up the logical flow of the above)
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]-exp$' | sort`
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[67891]-exp$' | sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
