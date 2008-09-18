@@ -7,6 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	4.3.7284.3916
+PORTREVISION=	1
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
@@ -65,7 +66,7 @@ do-patch:
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
-	@${CHOWN} -R ${SHAREDOWN}:${SHAREDGRP} ${WRKSRC}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 
 do-install:
 	${MKDIR} ${DATADIR}
