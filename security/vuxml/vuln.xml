@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc9e73b2-8685-11dd-bb64-0030843d3802">
+    <topic>gallery -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gallery</name>
+	<range><lt>1.5.9</lt></range>
+      </package>
+      <package>
+        <name>gallery2</name>
+	<range><lt>2.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31912/">
+	  <p>An error in the handing of ZIP archives with symbolic links can be
+	    exploited to disclose the contents of arbitrary files.</p>
+	</blockquote>
+	<blockquote cite="http://secunia.com/advisories/31858/">
+	  <p>Input from uploaded Flash animations is not properly sanitised
+	    before being used. This can be exploited to insert arbitrary HTML and
+	    script code, which is executed in a user's browser session in context
+	    of an affected site when the malicious data is viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/31912/</url>
+      <url>http://secunia.com/advisories/31858/</url>
+    </references>
+    <dates>
+      <discovery>2008-09-18</discovery>
+      <entry>2008-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="74bf1594-8493-11dd-bb64-0030843d3802">
     <topic>phpmyadmin -- Code execution vulnerability</topic>
     <affects>
