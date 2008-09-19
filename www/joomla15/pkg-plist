@@ -533,37 +533,44 @@
 %%WWWDIR%%/administrator/help/en-GB/joomla.support.html
 %%WWWDIR%%/administrator/help/en-GB/joomla.whatsnew10.html
 %%WWWDIR%%/administrator/help/en-GB/joomla.whatsnew15.html
+%%WWWDIR%%/administrator/help/en-GB/screen.banner.categories.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.banner.categories.html
 %%WWWDIR%%/administrator/help/en-GB/screen.banners.client.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.banners.client.html
 %%WWWDIR%%/administrator/help/en-GB/screen.banners.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.banners.html
+%%WWWDIR%%/administrator/help/en-GB/screen.cache.html
 %%WWWDIR%%/administrator/help/en-GB/screen.categories.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.categories.html
 %%WWWDIR%%/administrator/help/en-GB/screen.checkin.html
 %%WWWDIR%%/administrator/help/en-GB/screen.config.html
+%%WWWDIR%%/administrator/help/en-GB/screen.contact_details.categories.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.contact_details.categories.html
 %%WWWDIR%%/administrator/help/en-GB/screen.contactmanager.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.contactmanager.html
+%%WWWDIR%%/administrator/help/en-GB/screen.content.categories.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.content.categories.html
 %%WWWDIR%%/administrator/help/en-GB/screen.content.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.content.html
 %%WWWDIR%%/administrator/help/en-GB/screen.cpanel.html
 %%WWWDIR%%/administrator/help/en-GB/screen.frontpage.html
 %%WWWDIR%%/administrator/help/en-GB/screen.installer.html
-%%WWWDIR%%/administrator/help/en-GB/screen.installer2.html
 %%WWWDIR%%/administrator/help/en-GB/screen.languages.html
 %%WWWDIR%%/administrator/help/en-GB/screen.mediamanager.html
-%%WWWDIR%%/administrator/help/en-GB/screen.menumanager.copy.html
 %%WWWDIR%%/administrator/help/en-GB/screen.menumanager.html
 %%WWWDIR%%/administrator/help/en-GB/screen.menumanager.new.html
-%%WWWDIR%%/administrator/help/en-GB/screen.menus.copy.html
 %%WWWDIR%%/administrator/help/en-GB/screen.menus.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.menus.html
-%%WWWDIR%%/administrator/help/en-GB/screen.menus.move.html
-%%WWWDIR%%/administrator/help/en-GB/screen.menus.type.html
-%%WWWDIR%%/administrator/help/en-GB/screen.messages.conf.html
+%%WWWDIR%%/administrator/help/en-GB/screen.messages.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.messages.inbox.html
+%%WWWDIR%%/administrator/help/en-GB/screen.messages.read.html
 %%WWWDIR%%/administrator/help/en-GB/screen.modules.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.modules.html
 %%WWWDIR%%/administrator/help/en-GB/screen.modules.new.html
+%%WWWDIR%%/administrator/help/en-GB/screen.modulesadministrator.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.modulessite.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.newsfeeds.categories.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.newsfeeds.categories.html
 %%WWWDIR%%/administrator/help/en-GB/screen.newsfeeds.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.newsfeeds.html
 %%WWWDIR%%/administrator/help/en-GB/screen.plugins.edit.html
@@ -577,9 +584,12 @@
 %%WWWDIR%%/administrator/help/en-GB/screen.templates.html
 %%WWWDIR%%/administrator/help/en-GB/screen.trashmanager.html
 %%WWWDIR%%/administrator/help/en-GB/screen.users.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.users.html
 %%WWWDIR%%/administrator/help/en-GB/screen.users.massmail.html
 %%WWWDIR%%/administrator/help/en-GB/screen.weblink.edit.html
 %%WWWDIR%%/administrator/help/en-GB/screen.weblink.html
+%%WWWDIR%%/administrator/help/en-GB/screen.weblinks.categories.edit.html
+%%WWWDIR%%/administrator/help/en-GB/screen.weblinks.categories.html
 %%WWWDIR%%/administrator/help/helpsites-15.xml
 %%WWWDIR%%/administrator/help/index.html
 %%WWWDIR%%/administrator/images/addedit.png
@@ -805,7 +815,6 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_cache.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_categories.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_checkin.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.com_comments.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_config.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_contact.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_contact.menu.ini
@@ -837,10 +846,10 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_weblinks.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_weblinks.menu.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_wrapper.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.com_zine.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_components.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_custom.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.mod_feed.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_footer.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_latest.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_logged.ini
@@ -889,6 +898,7 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_xmlrpc_blogger.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_xmlrpc_joomla.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.tpl_beez.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.tpl_ja_purity.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.tpl_khepri.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.tpl_rhuk_milkyway.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.xml
@@ -1756,7 +1766,7 @@
 %%WWWDIR%%/installation/language/be-BY/index.html
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.ini
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.xml
-%%WWWDIR%%/installation/language/bg-BG/index.html
+%%WWWDIR%%/installation/language/bg-BG/index.htm
 %%WWWDIR%%/installation/language/bn-IN/bn-IN.ini
 %%WWWDIR%%/installation/language/bn-IN/bn-IN.xml
 %%WWWDIR%%/installation/language/bn-IN/index.html
@@ -1765,34 +1775,37 @@
 %%WWWDIR%%/installation/language/bs-BA/index.html
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
-%%WWWDIR%%/installation/language/ca-ES/index.html
+%%WWWDIR%%/installation/language/ca-ES/index.htm
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
 %%WWWDIR%%/installation/language/cs-CZ/index.html
 %%WWWDIR%%/installation/language/da-DK/da-DK.ini
 %%WWWDIR%%/installation/language/da-DK/da-DK.xml
-%%WWWDIR%%/installation/language/da-DK/index.html
+%%WWWDIR%%/installation/language/da-DK/index.htm
 %%WWWDIR%%/installation/language/de-AT/de-AT.ini
 %%WWWDIR%%/installation/language/de-AT/de-AT.xml
 %%WWWDIR%%/installation/language/de-AT/index.html
 %%WWWDIR%%/installation/language/de-CH/de-CH.ini
 %%WWWDIR%%/installation/language/de-CH/de-CH.xml
-%%WWWDIR%%/installation/language/de-CH/index.html
+%%WWWDIR%%/installation/language/de-CH/index.htm
 %%WWWDIR%%/installation/language/de-DE/de-DE.ini
 %%WWWDIR%%/installation/language/de-DE/de-DE.xml
-%%WWWDIR%%/installation/language/de-DE/index.html
+%%WWWDIR%%/installation/language/de-DE/index.htm
 %%WWWDIR%%/installation/language/el-GR/el-GR.ini
 %%WWWDIR%%/installation/language/el-GR/el-GR.xml
-%%WWWDIR%%/installation/language/el-GR/index.html
+%%WWWDIR%%/installation/language/el-GR/index.htm
 %%WWWDIR%%/installation/language/en-GB/en-GB.ini
 %%WWWDIR%%/installation/language/en-GB/en-GB.xml
 %%WWWDIR%%/installation/language/en-GB/index.html
+%%WWWDIR%%/installation/language/en-US/en-US.ini
+%%WWWDIR%%/installation/language/en-US/en-US.xml
+%%WWWDIR%%/installation/language/en-US/index.htm
 %%WWWDIR%%/installation/language/eo-XX/eo-XX.ini
 %%WWWDIR%%/installation/language/eo-XX/eo-XX.xml
 %%WWWDIR%%/installation/language/eo-XX/index.html
 %%WWWDIR%%/installation/language/es-ES/es-ES.ini
 %%WWWDIR%%/installation/language/es-ES/es-ES.xml
-%%WWWDIR%%/installation/language/es-ES/index.html
+%%WWWDIR%%/installation/language/es-ES/index.htm
 %%WWWDIR%%/installation/language/eu-ES/eu-ES.ini
 %%WWWDIR%%/installation/language/eu-ES/eu-ES.xml
 %%WWWDIR%%/installation/language/eu-ES/index.html
@@ -1813,9 +1826,9 @@
 %%WWWDIR%%/installation/language/hr-HR/index.html
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.ini
 %%WWWDIR%%/installation/language/hu-HU/hu-HU.xml
-%%WWWDIR%%/installation/language/hu-HU/index.html
+%%WWWDIR%%/installation/language/hu-HU/index.htm
 %%WWWDIR%%/installation/language/index.html
-%%WWWDIR%%/installation/language/it-IT/index.html
+%%WWWDIR%%/installation/language/it-IT/index.htm
 %%WWWDIR%%/installation/language/it-IT/it-IT.ini
 %%WWWDIR%%/installation/language/it-IT/it-IT.xml
 %%WWWDIR%%/installation/language/ja-JP/index.html
@@ -1827,28 +1840,28 @@
 %%WWWDIR%%/installation/language/lo-LA/index.html
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.ini
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.xml
-%%WWWDIR%%/installation/language/lt-LT/index.html
+%%WWWDIR%%/installation/language/lt-LT/index.htm
 %%WWWDIR%%/installation/language/lt-LT/lt-LT.ini
 %%WWWDIR%%/installation/language/lt-LT/lt-LT.xml
 %%WWWDIR%%/installation/language/lv-LV/index.html
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.ini
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.xml
-%%WWWDIR%%/installation/language/nb-NO/index.html
+%%WWWDIR%%/installation/language/nb-NO/index.htm
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.ini
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.xml
-%%WWWDIR%%/installation/language/nl-NL/index.html
+%%WWWDIR%%/installation/language/nl-NL/index.htm
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.ini
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.xml
 %%WWWDIR%%/installation/language/pl-PL/index.html
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.ini
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.xml
-%%WWWDIR%%/installation/language/pt-BR/index.html
+%%WWWDIR%%/installation/language/pt-BR/index.htm
 %%WWWDIR%%/installation/language/pt-BR/pt-BR.ini
 %%WWWDIR%%/installation/language/pt-BR/pt-BR.xml
 %%WWWDIR%%/installation/language/pt-PT/index.html
 %%WWWDIR%%/installation/language/pt-PT/pt-PT.ini
 %%WWWDIR%%/installation/language/pt-PT/pt-PT.xml
-%%WWWDIR%%/installation/language/ro-RO/index.html
+%%WWWDIR%%/installation/language/ro-RO/index.htm
 %%WWWDIR%%/installation/language/ro-RO/ro-RO.ini
 %%WWWDIR%%/installation/language/ro-RO/ro-RO.xml
 %%WWWDIR%%/installation/language/ru-RU/index.html
@@ -1857,16 +1870,19 @@
 %%WWWDIR%%/installation/language/sd-PK/index.html
 %%WWWDIR%%/installation/language/sd-PK/sd-PK.ini
 %%WWWDIR%%/installation/language/sd-PK/sd-PK.xml
+%%WWWDIR%%/installation/language/si-LK/index.htm
+%%WWWDIR%%/installation/language/si-LK/si-LK.ini
+%%WWWDIR%%/installation/language/si-LK/si-LK.xml
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
 %%WWWDIR%%/installation/language/sr-ME/index.html
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.ini
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.xml
-%%WWWDIR%%/installation/language/sr-RS/index.html
+%%WWWDIR%%/installation/language/sr-RS/index.htm
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.ini
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.xml
-%%WWWDIR%%/installation/language/sv-SE/index.html
+%%WWWDIR%%/installation/language/sv-SE/index.htm
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.ini
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.xml
 %%WWWDIR%%/installation/language/sy-IQ/index.html
@@ -1878,6 +1894,9 @@
 %%WWWDIR%%/installation/language/th-TH/index.html
 %%WWWDIR%%/installation/language/th-TH/th-TH.ini
 %%WWWDIR%%/installation/language/th-TH/th-TH.xml
+%%WWWDIR%%/installation/language/tr-TR/index.htm
+%%WWWDIR%%/installation/language/tr-TR/tr-TR.ini
+%%WWWDIR%%/installation/language/tr-TR/tr-TR.xml
 %%WWWDIR%%/installation/language/uk-UA/index.html
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.ini
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.xml
@@ -1999,6 +2018,7 @@
 %%WWWDIR%%/language/en-GB/en-GB.plg_search_weblinks.ini
 %%WWWDIR%%/language/en-GB/en-GB.plg_system_debug.ini
 %%WWWDIR%%/language/en-GB/en-GB.tpl_beez.ini
+%%WWWDIR%%/language/en-GB/en-GB.tpl_ja_purity.ini
 %%WWWDIR%%/language/en-GB/en-GB.tpl_rhuk_milkyway.ini
 %%WWWDIR%%/language/en-GB/en-GB.xml
 %%WWWDIR%%/language/en-GB/index.html
@@ -2291,6 +2311,7 @@
 %%WWWDIR%%/libraries/joomla/utilities/compat/compat.php
 %%WWWDIR%%/libraries/joomla/utilities/compat/index.html
 %%WWWDIR%%/libraries/joomla/utilities/compat/php50x.php
+%%WWWDIR%%/libraries/joomla/utilities/compat/php51x.php
 %%WWWDIR%%/libraries/joomla/utilities/date.php
 %%WWWDIR%%/libraries/joomla/utilities/index.html
 %%WWWDIR%%/libraries/joomla/utilities/simplecrypt.php
@@ -3412,6 +3433,313 @@
 %%WWWDIR%%/templates/beez/templateDetails.xml
 %%WWWDIR%%/templates/beez/template_thumbnail.png
 %%WWWDIR%%/templates/index.html
+%%WWWDIR%%/templates/ja_purity/component.php
+%%WWWDIR%%/templates/ja_purity/css/index.html
+%%WWWDIR%%/templates/ja_purity/css/ja-sosdmenu.css
+%%WWWDIR%%/templates/ja_purity/css/menu.css
+%%WWWDIR%%/templates/ja_purity/css/template.css
+%%WWWDIR%%/templates/ja_purity/css/template_rtl.css
+%%WWWDIR%%/templates/ja_purity/favicon.ico
+%%WWWDIR%%/templates/ja_purity/html/com_content/article/default.php
+%%WWWDIR%%/templates/ja_purity/html/com_content/article/index.html
+%%WWWDIR%%/templates/ja_purity/html/com_content/category/blog_item.php
+%%WWWDIR%%/templates/ja_purity/html/com_content/category/index.html
+%%WWWDIR%%/templates/ja_purity/html/com_content/frontpage/default_item.php
+%%WWWDIR%%/templates/ja_purity/html/com_content/frontpage/index.html
+%%WWWDIR%%/templates/ja_purity/html/com_content/index.html
+%%WWWDIR%%/templates/ja_purity/html/com_content/section/blog_item.php
+%%WWWDIR%%/templates/ja_purity/html/com_content/section/index.html
+%%WWWDIR%%/templates/ja_purity/html/index.html
+%%WWWDIR%%/templates/ja_purity/html/mod_banners/default.php
+%%WWWDIR%%/templates/ja_purity/html/mod_banners/index.html
+%%WWWDIR%%/templates/ja_purity/html/mod_login/default.php
+%%WWWDIR%%/templates/ja_purity/html/mod_login/index.html
+%%WWWDIR%%/templates/ja_purity/html/modules.php
+%%WWWDIR%%/templates/ja_purity/html/pagination.php
+%%WWWDIR%%/templates/ja_purity/images/arrow.png
+%%WWWDIR%%/templates/ja_purity/images/arrow2.png
+%%WWWDIR%%/templates/ja_purity/images/arrow3.png
+%%WWWDIR%%/templates/ja_purity/images/author.gif
+%%WWWDIR%%/templates/ja_purity/images/b-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/b-br.gif
+%%WWWDIR%%/templates/ja_purity/images/b-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/b-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bb-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bb-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bb-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bb-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bg-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bg-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bg-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bg-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bl-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bl-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bl-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bl-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/blank.png
+%%WWWDIR%%/templates/ja_purity/images/br-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/br-br.gif
+%%WWWDIR%%/templates/ja_purity/images/br-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/br-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bt-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bt-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bt-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bt-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bub1-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub1-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bub1-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub1-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bub2-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub2-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bub2-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub2-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bub3-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub3-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bub3-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub3-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bub4-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub4-br.gif
+%%WWWDIR%%/templates/ja_purity/images/bub4-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/bub4-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/bullet-list.gif
+%%WWWDIR%%/templates/ja_purity/images/bullet.gif
+%%WWWDIR%%/templates/ja_purity/images/bullet2.gif
+%%WWWDIR%%/templates/ja_purity/images/bullet3.gif
+%%WWWDIR%%/templates/ja_purity/images/but-css.gif
+%%WWWDIR%%/templates/ja_purity/images/but-rss.gif
+%%WWWDIR%%/templates/ja_purity/images/but-xhtml10.gif
+%%WWWDIR%%/templates/ja_purity/images/but-xhtml101.gif
+%%WWWDIR%%/templates/ja_purity/images/c-bg1.gif
+%%WWWDIR%%/templates/ja_purity/images/c-bg2.gif
+%%WWWDIR%%/templates/ja_purity/images/checklist-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/cw-bg1.gif
+%%WWWDIR%%/templates/ja_purity/images/cw-bg12.gif
+%%WWWDIR%%/templates/ja_purity/images/cw-bg2.gif
+%%WWWDIR%%/templates/ja_purity/images/cw-bg22.gif
+%%WWWDIR%%/templates/ja_purity/images/cwf-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/download-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/emailButton.png
+%%WWWDIR%%/templates/ja_purity/images/grad1.gif
+%%WWWDIR%%/templates/ja_purity/images/grad2.gif
+%%WWWDIR%%/templates/ja_purity/images/grad3.gif
+%%WWWDIR%%/templates/ja_purity/images/hdot.gif
+%%WWWDIR%%/templates/ja_purity/images/hdot2.gif
+%%WWWDIR%%/templates/ja_purity/images/header-mask.png
+%%WWWDIR%%/templates/ja_purity/images/header/header1.jpg
+%%WWWDIR%%/templates/ja_purity/images/header/header2.jpg
+%%WWWDIR%%/templates/ja_purity/images/header/header3.jpg
+%%WWWDIR%%/templates/ja_purity/images/icon-date.gif
+%%WWWDIR%%/templates/ja_purity/images/icon-error.gif
+%%WWWDIR%%/templates/ja_purity/images/icon-info.gif
+%%WWWDIR%%/templates/ja_purity/images/icon-search.gif
+%%WWWDIR%%/templates/ja_purity/images/icon-tips.gif
+%%WWWDIR%%/templates/ja_purity/images/icon-user.gif
+%%WWWDIR%%/templates/ja_purity/images/icon_list.gif
+%%WWWDIR%%/templates/ja_purity/images/icons_license.txt
+%%WWWDIR%%/templates/ja_purity/images/indent1.png
+%%WWWDIR%%/templates/ja_purity/images/indent2.png
+%%WWWDIR%%/templates/ja_purity/images/indent3.png
+%%WWWDIR%%/templates/ja_purity/images/indent4.png
+%%WWWDIR%%/templates/ja_purity/images/index.html
+%%WWWDIR%%/templates/ja_purity/images/login-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/logo.gif
+%%WWWDIR%%/templates/ja_purity/images/logo.png
+%%WWWDIR%%/templates/ja_purity/images/ol-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/opaque.png
+%%WWWDIR%%/templates/ja_purity/images/pages.gif
+%%WWWDIR%%/templates/ja_purity/images/pdf_button.png
+%%WWWDIR%%/templates/ja_purity/images/printButton.png
+%%WWWDIR%%/templates/ja_purity/images/rtl/arrow.png
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub12-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub12-br.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub12-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub12-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub22-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub22-br.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub22-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub22-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub32-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub32-br.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub32-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub32-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub42-bl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub42-br.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub42-tl.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/bub42-tr.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/c-bg1.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/c-bg2.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/cw-bg1.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/cw-bg12.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/cw-bg122.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/cw-bg2.gif
+%%WWWDIR%%/templates/ja_purity/images/rtl/cw-bg22.gif
+%%WWWDIR%%/templates/ja_purity/images/sc-q.gif
+%%WWWDIR%%/templates/ja_purity/images/so-q.gif
+%%WWWDIR%%/templates/ja_purity/images/spacer.png
+%%WWWDIR%%/templates/ja_purity/images/star-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/sticky-bg.gif
+%%WWWDIR%%/templates/ja_purity/images/trans-bg.png
+%%WWWDIR%%/templates/ja_purity/images/trans.gif
+%%WWWDIR%%/templates/ja_purity/images/user-decrease.png
+%%WWWDIR%%/templates/ja_purity/images/user-increase.png
+%%WWWDIR%%/templates/ja_purity/images/user-reset.png
+%%WWWDIR%%/templates/ja_purity/images/vdot.gif
+%%WWWDIR%%/templates/ja_purity/images/vdot2.gif
+%%WWWDIR%%/templates/ja_purity/index.html
+%%WWWDIR%%/templates/ja_purity/index.php
+%%WWWDIR%%/templates/ja_purity/ja_templatetools.php
+%%WWWDIR%%/templates/ja_purity/ja_vars.php
+%%WWWDIR%%/templates/ja_purity/js/ja.cssmenu.js
+%%WWWDIR%%/templates/ja_purity/js/ja.moomenu.js
+%%WWWDIR%%/templates/ja_purity/js/ja.rightcol.js
+%%WWWDIR%%/templates/ja_purity/js/ja.script.js
+%%WWWDIR%%/templates/ja_purity/params.ini
+%%WWWDIR%%/templates/ja_purity/styles/background/index.html
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/arrow.png
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/b-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/b-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/b-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/b-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bb-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bb-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bb-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bb-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bg-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bg-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bg-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bg-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bl-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bl-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bl-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bl-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/br-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/br-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/br-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/br-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bt-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bt-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bt-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bt-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub1-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub1-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub1-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub1-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub2-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub2-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub2-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub2-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub3-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub3-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub3-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub3-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub4-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub4-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub4-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/bub4-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/c-bg1.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/c-bg2.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/checklist-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/cw-bg1.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/cw-bg2.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/cwf-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/download-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/icon_list.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/ol-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/sc-q.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/so-q.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/star-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/images/sticky-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/index.html
+%%WWWDIR%%/templates/ja_purity/styles/background/lighter/style.css
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/arrow.png
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/b-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/b-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/b-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/b-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bb-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bb-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bb-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bb-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bg-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bg-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bg-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bg-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bl-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bl-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bl-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bl-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/br-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/br-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/br-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/br-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bt-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bt-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bt-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bt-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub1-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub1-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub1-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub1-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub2-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub2-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub2-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub2-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub3-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub3-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub3-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub3-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub4-bl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub4-br.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub4-tl.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/bub4-tr.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/c-bg1.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/c-bg2.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/checklist-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/cw-bg1.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/cw-bg2.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/cw-bg3.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/cwf-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/download-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/icon_list.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/ol-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/sc-q.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/so-q.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/star-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images/sticky-bg.gif
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/index.html
+%%WWWDIR%%/templates/ja_purity/styles/background/purewhite/style.css
+%%WWWDIR%%/templates/ja_purity/styles/elements/black/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/elements/black/index.html
+%%WWWDIR%%/templates/ja_purity/styles/elements/black/style.css
+%%WWWDIR%%/templates/ja_purity/styles/elements/blue/images/bullet3.gif
+%%WWWDIR%%/templates/ja_purity/styles/elements/blue/style.css
+%%WWWDIR%%/templates/ja_purity/styles/elements/green/images/bullet3.gif
+%%WWWDIR%%/templates/ja_purity/styles/elements/green/style.css
+%%WWWDIR%%/templates/ja_purity/styles/elements/index.html
+%%WWWDIR%%/templates/ja_purity/styles/elements/red/images/bullet3.gif
+%%WWWDIR%%/templates/ja_purity/styles/elements/red/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/elements/red/index.html
+%%WWWDIR%%/templates/ja_purity/styles/elements/red/style.css
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/images/header-mask.png
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/images/icon-search.gif
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/images/opaque.png
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/images/vdot2.gif
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/index.html
+%%WWWDIR%%/templates/ja_purity/styles/header/blue/style.css
+%%WWWDIR%%/templates/ja_purity/styles/header/green/images/header-mask.png
+%%WWWDIR%%/templates/ja_purity/styles/header/green/images/icon-search.gif
+%%WWWDIR%%/templates/ja_purity/styles/header/green/images/index.html
+%%WWWDIR%%/templates/ja_purity/styles/header/green/images/opaque.png
+%%WWWDIR%%/templates/ja_purity/styles/header/green/images/vdot2.gif
+%%WWWDIR%%/templates/ja_purity/styles/header/green/index.html
+%%WWWDIR%%/templates/ja_purity/styles/header/green/style.css
+%%WWWDIR%%/templates/ja_purity/styles/header/index.html
+%%WWWDIR%%/templates/ja_purity/styles/index.html
+%%WWWDIR%%/templates/ja_purity/templateDetails.xml
+%%WWWDIR%%/templates/ja_purity/template_thumbnail.png
 %%WWWDIR%%/templates/rhuk_milkyway/component.php
 %%WWWDIR%%/templates/rhuk_milkyway/css/black.css
 %%WWWDIR%%/templates/rhuk_milkyway/css/black_bg.css
@@ -3602,6 +3930,40 @@
 @dirrm %%WWWDIR%%/templates/rhuk_milkyway/html
 @dirrm %%WWWDIR%%/templates/rhuk_milkyway/css
 @dirrm %%WWWDIR%%/templates/rhuk_milkyway
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/header/green/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/header/green
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/header/blue/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/header/blue
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/header
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/red/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/red
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/green/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/green
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/blue/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/blue
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/black/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements/black
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/elements
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/background/purewhite/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/background/purewhite
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/background/lighter/images
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/background/lighter
+@dirrm %%WWWDIR%%/templates/ja_purity/styles/background
+@dirrm %%WWWDIR%%/templates/ja_purity/styles
+@dirrm %%WWWDIR%%/templates/ja_purity/js
+@dirrm %%WWWDIR%%/templates/ja_purity/images/rtl
+@dirrm %%WWWDIR%%/templates/ja_purity/images/header
+@dirrm %%WWWDIR%%/templates/ja_purity/images
+@dirrm %%WWWDIR%%/templates/ja_purity/html/mod_login
+@dirrm %%WWWDIR%%/templates/ja_purity/html/mod_banners
+@dirrm %%WWWDIR%%/templates/ja_purity/html/com_content/section
+@dirrm %%WWWDIR%%/templates/ja_purity/html/com_content/frontpage
+@dirrm %%WWWDIR%%/templates/ja_purity/html/com_content/category
+@dirrm %%WWWDIR%%/templates/ja_purity/html/com_content/article
+@dirrm %%WWWDIR%%/templates/ja_purity/html/com_content
+@dirrm %%WWWDIR%%/templates/ja_purity/html
+@dirrm %%WWWDIR%%/templates/ja_purity/css
+@dirrm %%WWWDIR%%/templates/ja_purity
 @dirrm %%WWWDIR%%/templates/beez/javascript
 @dirrm %%WWWDIR%%/templates/beez/images_general
 @dirrm %%WWWDIR%%/templates/beez/images
@@ -3935,6 +4297,7 @@
 @dirrm %%WWWDIR%%/installation/language/zh-TW
 @dirrm %%WWWDIR%%/installation/language/vi-VN
 @dirrm %%WWWDIR%%/installation/language/uk-UA
+@dirrm %%WWWDIR%%/installation/language/tr-TR
 @dirrm %%WWWDIR%%/installation/language/th-TH
 @dirrm %%WWWDIR%%/installation/language/ta-LK
 @dirrm %%WWWDIR%%/installation/language/sy-IQ
@@ -3942,6 +4305,7 @@
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-ME
 @dirrm %%WWWDIR%%/installation/language/sk-SK
+@dirrm %%WWWDIR%%/installation/language/si-LK
 @dirrm %%WWWDIR%%/installation/language/sd-PK
 @dirrm %%WWWDIR%%/installation/language/ru-RU
 @dirrm %%WWWDIR%%/installation/language/ro-RO
@@ -3965,6 +4329,7 @@
 @dirrm %%WWWDIR%%/installation/language/eu-ES
 @dirrm %%WWWDIR%%/installation/language/es-ES
 @dirrm %%WWWDIR%%/installation/language/eo-XX
+@dirrm %%WWWDIR%%/installation/language/en-US
 @dirrm %%WWWDIR%%/installation/language/en-GB
 @dirrm %%WWWDIR%%/installation/language/el-GR
 @dirrm %%WWWDIR%%/installation/language/de-DE
