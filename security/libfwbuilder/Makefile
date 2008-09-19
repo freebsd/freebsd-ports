@@ -13,11 +13,9 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder API
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
-
-BROKEN=		does not configure
 
 PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
 USE_QT_VER=	4
