@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla15
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.7
 CATEGORIES=	www
-MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/6731/22005/ \
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/8376/30993/ \
 		http://web.dti.supsi.ch/downloads/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
@@ -15,7 +15,7 @@ MAINTAINER=	robi@nunnisoft.ch
 COMMENT=	A dynamic web content management system (CMS)
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USE_ZIP=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf
 WANT_PHP_WEB=	yes
