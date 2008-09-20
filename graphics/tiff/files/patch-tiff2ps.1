@@ -1,0 +1,142 @@
+--- man/tiff2ps.1.orig	2008-08-17 13:03:49.050994382 -0400
++++ man/tiff2ps.1	2008-08-17 13:03:52.522727821 -0400
+@@ -27,7 +27,7 @@
+ .SH NAME
+ tiff2ps \- convert a
+ .SM TIFF
+-image to \*(Ps\(tm
++image to PostScript\(tm
+ .SH SYNOPSIS
+ .B tiff2ps
+ [
+@@ -38,17 +38,17 @@
+ .I tiff2ps
+ reads
+ .SM TIFF
+-images and writes \*(Ps or Encapsulated \*(Ps (EPS)
++images and writes PostScript or Encapsulated PostScript (EPS)
+ on the standard output.
+ By default,
+ .I tiff2ps
+-writes Encapsulated \*(Ps for the first image in the specified
++writes Encapsulated PostScript for the first image in the specified
+ .SM TIFF
+ image file.
+ .PP
+ By default,
+ .I tiff2ps
+-will generate \*(Ps that fills a printed area specified
++will generate PostScript that fills a printed area specified
+ by the 
+ .SM TIFF
+ tags in the input file.
+@@ -67,22 +67,22 @@
+ .SM TIFF
+ tags.
+ .PP
+-The \*(Ps generated for
++The PostScript generated for
+ .SM RGB,
+ palette, and
+ .SM CMYK
+ images uses the
+ .I colorimage
+ operator.
+-The \*(Ps generated for
++The PostScript generated for
+ greyscale and bilevel images
+ uses the
+ .I image
+ operator.
+ When the
+ .I colorimage
+-operator is used, \*(Ps code to emulate this operator
+-on older \*(Ps printers is also generated.
++operator is used, PostScript code to emulate this operator
++on older PostScript printers is also generated.
+ Note that this emulation code can be very slow.
+ .PP
+ Color images with associated alpha data are composited over
+@@ -90,13 +90,13 @@
+ .SH OPTIONS
+ .TP
+ .B \-1
+-Generate \*(Ps Level 1 (the default).
++Generate PostScript Level 1 (the default).
+ .TP
+ .B \-2
+-Generate \*(Ps Level 2.
++Generate PostScript Level 2.
+ .TP
+ .B \-3
+-Generate \*(Ps Level 3. It basically allows one to use the /flateDecode
++Generate PostScript Level 3. It basically allows one to use the /flateDecode
+ filter for ZIP compressed TIFF images.
+ .TP
+ .B \-a
+@@ -119,7 +119,7 @@
+ multi-page (e.g. facsimile) file.
+ .TP
+ .B \-e
+-Force the generation of Encapsulated \*(Ps (implies -z).
++Force the generation of Encapsulated PostScript (implies -z).
+ .TP
+ .B \-h
+ Specify the vertical size of the printed area (in inches).
+@@ -148,7 +148,7 @@
+ .B \-m
+ Where possible render using the
+ .B imagemask
+-\*(Ps operator instead of the image operator.  When this option is specified
++PostScript operator instead of the image operator.  When this option is specified
+ .I tiff2ps
+ will use
+ .B imagemask
+@@ -166,7 +166,7 @@
+ like which are hidden using the SubIFD tag.
+ .TP
+ .B \-p
+-Force the generation of (non-Encapsulated) \*(Ps.
++Force the generation of (non-Encapsulated) PostScript.
+ .TP
+ .B \-r
+ Rotate image by 180 degrees.
+@@ -184,15 +184,15 @@
+ Override resolution units specified in the TIFF as inches.
+ .TP
+ .B \-z
+-When generating \*(Ps Level 2, data is scaled so that it does not
++When generating PostScript Level 2, data is scaled so that it does not
+ image into the 
+ .I deadzone
+ on a page (the outer margin that the printing device is unable to mark).
+ This option suppresses this behavior.
+-When \*(Ps Level 1 is generated, data is imaged to the entire printed
++When PostScript Level 1 is generated, data is imaged to the entire printed
+ page and this option has no affect.
+ .SH EXAMPLES
+-The following generates \*(Ps Level 2 for all pages of a facsimile:
++The following generates PostScript Level 2 for all pages of a facsimile:
+ .RS
+ .nf
+ tiff2ps -a2 fax.tif | lpr
+@@ -201,7 +201,7 @@
+ Note also that if you have version 2.6.1 or newer of Ghostscript then you
+ can efficiently preview facsimile generated with the above command.
+ .PP
+-To generate Encapsulated \*(Ps for a the image at directory 2
++To generate Encapsulated PostScript for a the image at directory 2
+ of an image use:
+ .RS
+ .nf
+@@ -228,8 +228,8 @@
+ .B \-L.5
+ option says to repeat a half inch on the next page (to improve readability).
+ .SH BUGS
+-Because \*(Ps does not support the notion of a colormap,
+-8-bit palette images produce 24-bit \*(Ps images.
++Because PostScript does not support the notion of a colormap,
++8-bit palette images produce 24-bit PostScript images.
+ This conversion results in output that is six times
+ bigger than the original image and which takes a long time
+ to send to a printer over a serial line.
