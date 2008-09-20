@@ -9,7 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -125,5 +125,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCSDIR}/images/
 	${INSTALL_DATA} ${WRKSRC}/html/man/*.html ${DOCSDIR}/man/
 .endif
+
+regression-test: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>

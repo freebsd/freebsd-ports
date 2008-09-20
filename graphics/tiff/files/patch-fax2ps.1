@@ -1,0 +1,74 @@
+--- man/fax2ps.1.orig	2008-08-17 13:03:49.038994710 -0400
++++ man/fax2ps.1	2008-08-17 13:03:52.510994390 -0400
+@@ -27,7 +27,7 @@
+ .SH NAME
+ fax2ps \- convert a
+ .SM TIFF
+-facsimile to compressed \*(Ps\(tm
++facsimile to compressed PostScript\(tm
+ .SH SYNOPSIS
+ .B fax2ps
+ [
+@@ -40,7 +40,7 @@
+ reads one or more
+ .SM TIFF
+ facsimile image files and prints a compressed form of
+-\*(Ps on the standard output that is suitable for printing.
++PostScript on the standard output that is suitable for printing.
+ .PP
+ By default, each page is scaled to reflect the
+ image dimensions and resolutions stored in the file.
+@@ -62,26 +62,26 @@
+ .PP
+ By default
+ .I fax2ps
+-generates \*(Ps for all pages in the file.
++generates PostScript for all pages in the file.
+ The
+ .B \-p
+ option can be used to select one or more pages from
+ a multi-page document.
+ .PP
+ .I fax2ps
+-generates a compressed form of \*(Ps that is
+-optimized for sending pages of text to a \*(Ps
++generates a compressed form of PostScript that is
++optimized for sending pages of text to a PostScript
+ printer attached to a host through a low-speed link (such
+ as a serial line).
+ Each output page is filled with white and then only
+ the black areas are drawn.
+-The \*(Ps specification of the black drawing operations
++The PostScript specification of the black drawing operations
+ is optimized by using a special font that encodes the
+ move-draw operations required to fill
+ the black regions on the page.
+ This compression scheme typically results in a substantially
+-reduced \*(Ps description, relative to the straightforward
+-imaging of the page with a \*(Ps
++reduced PostScript description, relative to the straightforward
++imaging of the page with a PostScript
+ .I image
+ operator.
+ This algorithm can, however, be ineffective
+@@ -138,9 +138,9 @@
+ attempts to recover from such data errors by resynchronizing
+ decoding at the end of the current scanline.
+ This can result in long horizontal black lines in the resultant
+-\*(Ps image.
++PostScript image.
+ .SH NOTES
+-If the destination printer supports \*(Ps Level II then
++If the destination printer supports PostScript Level II then
+ it is always faster to just send the encoded bitmap generated
+ by the
+ .BR tiff2ps (1)
+@@ -149,7 +149,7 @@
+ .I fax2ps
+ should probably figure out when it is doing a poor
+ job of compressing the output and just generate 
+-\*(Ps to image the bitmap raster instead.
++PostScript to image the bitmap raster instead.
+ .SH "SEE ALSO"
+ .BR tiff2ps (1),
+ .BR libtiff (3)
