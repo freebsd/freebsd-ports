@@ -9,7 +9,7 @@ PORTNAME=	icons-tango-extras
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://tango-project.org/releases/ \
+MASTER_SITES=	http://tango.freedesktop.org/releases/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	tango-icon-theme-extras-${PORTVERSION}
