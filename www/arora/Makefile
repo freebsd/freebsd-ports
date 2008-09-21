@@ -6,6 +6,7 @@
 
 PORTNAME=	arora
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -13,7 +14,8 @@ MAINTAINER=	andy@athame.co.uk
 COMMENT=	Simple Qt4 based browser
 
 USE_QT_VER=	4
-QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build
+QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build \
+		imageformats
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 
