@@ -19,7 +19,6 @@ OPTIONS=	XCB "use XCB for low-level protocol implementation" off
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 		kbproto:both inputproto xf86bigfontproto xproto:both
-USE_XORG+=	
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
 
@@ -27,7 +26,7 @@ CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
 
 .if defined(WITH_XCB)
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
 CONFIGURE_ARGS+=	--with-xcb=yes
 PLIST_SUB+=	XCB=""
 .else
