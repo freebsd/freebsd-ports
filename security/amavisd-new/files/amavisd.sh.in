@@ -33,7 +33,7 @@ rm -rf %%AMAVISDIR%%/tmp/* %%AMAVISDIR%%/tmp/.* 2>/dev/null || true
 if [ ${amavisd_ram} ];then
   df %%AMAVISDIR%%/tmp |  grep '^/dev/md' > /dev/null
   if [ $? -eq 1 ];then
-   mdmfs -M -s ${amavisd_ram} -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
+    mdmfs -M -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
   fi
 fi
 }
