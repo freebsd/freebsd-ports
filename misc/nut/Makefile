@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	13.9
+PORTVERSION=	14.0
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -15,13 +15,14 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 USE_GMAKE=	yes
-PORTDOCS=	CREDITS LICENSE README nut.html
+PORTDOCS=	CREDITS LICENSE README nut.html README.DOS
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 ALL_TARGET=	${PORTNAME}
-PORTDATA=	FOOD_DES.txt NUT_DATA.txt WEIGHT.lib WEIGHT.txt sr20.nut
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
+		%%DATADIR%%/NUT_DATA.txt %%DATADIR%%/WEIGHT.lib \
+		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr21.nut
+PLIST_DIRS=	%%DATADIR%%
 MAN1=		${PORTNAME}.1
-.undef		NOPORTDATA
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/nut|${DATADIR}|" \
@@ -30,11 +31,11 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL} -d ${DATADIR}/
-	@cd ${WRKSRC}/raw.data/&&${INSTALL_DATA} ${PORTDATA} ${DATADIR}/
+	@cd ${WRKSRC}/raw.data/ && ${COPYTREE_SHARE} . ${DATADIR}/
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
