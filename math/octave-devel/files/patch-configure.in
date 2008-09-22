@@ -1,0 +1,15 @@
+--- configure.in~	2008-07-22 10:30:06.000000000 +0900
++++ configure.in	2008-09-22 15:04:07.000000000 +0900
+@@ -855,9 +855,10 @@
+ ### Checks for BLAS and LAPACK libraries:
+ # (Build subdirectories of libcruft if they aren't found on the system.)
+ sinclude(acx_blas.m4)
+-sinclude(acx_blas_f77_func.m4)
++#sinclude(acx_blas_f77_func.m4)
+ sinclude(acx_lapack.m4)
+-ACX_BLAS_WITH_F77_FUNC([], [BLAS_DIR="blas"])
++ACX_BLAS([], [BLAS_DIR="blas"])
++#ACX_BLAS_WITH_F77_FUNC([], [BLAS_DIR="blas"])
+ ACX_LAPACK([BLAS_LIBS="$LAPACK_LIBS $BLAS_LIBS"], [LAPACK_DIR="lapack"])
+ AC_SUBST(BLAS_DIR)
+ AC_SUBST(LAPACK_DIR)
