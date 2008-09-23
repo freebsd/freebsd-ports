@@ -6,7 +6,7 @@
 
 PORTNAME=		kphotoalbum
 PORTVERSION=		3.1.1
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.kphotoalbum.org/data/download/
 
@@ -15,7 +15,7 @@ COMMENT=		Image database for KDE
 
 LIB_DEPENDS=		kipi.2:${PORTSDIR}/graphics/libkipi \
 			exiv2.3:${PORTSDIR}/graphics/exiv2 \
-			kdcraw:${PORTSDIR}/graphics/libkdcraw
+			kdcraw.4:${PORTSDIR}/graphics/libkdcraw
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
