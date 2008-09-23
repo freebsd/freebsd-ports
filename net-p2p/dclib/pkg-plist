@@ -29,7 +29,8 @@ include/dclib/core/clist.h
 include/dclib/core/clisten.h
 include/dclib/core/clogfile.h
 include/dclib/core/cmanager.h
-include/dclib/core/cobject.h
+include/dclib/core/cmutex.h
+include/dclib/core/cnetaddr.h
 include/dclib/core/cplugin.h
 include/dclib/core/csingleton.h
 include/dclib/core/csocket.h
@@ -38,9 +39,9 @@ include/dclib/core/cstring.h
 include/dclib/core/cstringhash.h
 include/dclib/core/cstringlist.h
 include/dclib/core/cthread.h
+include/dclib/core/ctraffic.h
 include/dclib/core/cxml.h
 include/dclib/core/czlib.h
-include/dclib/core/filecopy.h
 include/dclib/core/platform.h
 include/dclib/core/types.h
 include/dclib/cpluginmanager.h
@@ -60,7 +61,7 @@ include/dclib/dcos.h
 lib/libdc.a
 lib/libdc.la
 lib/libdc.so
-lib/libdc.so.1
+lib/libdc.so.3
 @dirrmtry lib/dclib/plugin
 @dirrmtry lib/dclib
 libdata/pkgconfig/dclib.pc
