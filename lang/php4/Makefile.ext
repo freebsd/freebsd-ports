@@ -229,8 +229,7 @@ CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "openssl"
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
-		--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
