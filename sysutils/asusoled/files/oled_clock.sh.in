@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: oled_clock
+# REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the ASUS OLED clock:
+#
+# oled_clock_enable="YES"
+#
+
+oled_clock_enable=${oled_clock_enable-"NO"}
+oled_clock_flags=${oled_clock_flags-"-R -i -w -P 1"}
+
+. /etc/rc.subr
+
+name=oled_clock
+rcvar=`set_rcvar`
+
+start_cmd=oled_clock_start
+stop_cmd=oled_clock_stop
+
+asusoled_bin="%%PREFIX%%/sbin/asusoled"
+oled_clock_pidfile="/var/run/${name}.pid"
+oled_clock_command="LANG=en_US.UTF-8 /bin/date '+%a %b %d %R %Y'"
+
+oled_clock_start() {
+    if checkyesno oled_clock_enable
+    then
+	echo "Starting oled_clock."
+	${asusoled_bin} -e || exit 1
+	${asusoled_bin} ${oled_clock_flags} -D -p ${oled_clock_pidfile} \
+	    -c "${oled_clock_command}"
+    fi
+}
+
+oled_clock_stop() {
+    if checkyesno oled_clock_enable
+    then
+	echo "Stopping oled_clock."
+	test -f ${oled_clock_pidfile} && \
+	    ${asusoled_bin} -k -p ${oled_clock_pidfile}
+	${asusoled_bin} -d
+    fi
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
