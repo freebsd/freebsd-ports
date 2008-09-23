@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0afb4b9-89a1-11dd-a65b-00163e000016">
+    <topic>squirrelmail -- Session hijacking vulnerability</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<range><le>1.4.15_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hanno Boeck reports:</p>
+	<blockquote cite="http://seclists.org/bugtraq/2008/Sep/0239.html">
+	  <p>When configuring a web application to use only ssl (e.g. by
+	  forwarding all http-requests to https), a user would expect that
+	  sniffing and hijacking the session is impossible. </p>
+	  <p>Though, for this to be secure, one needs to set the session cookie
+	  to have the secure flag. Else the cookie will be transferred through
+	  http if the victim's browser does a single http-request on the same
+	  domain.</p>
+	  <p>Squirrelmail does not set that flag. It is fixed in the 1.5 test
+	  versions, but current 1.4.15 is vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31321</bid>
+      <cvename>CVE-2008-3663</cvename>
+      <mlist>http://seclists.org/bugtraq/2008/Sep/0239.html</mlist>
+    </references>
+    <dates>
+      <discovery>2008-08-12</discovery>
+      <entry>2008-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f51f2c9-8956-11dd-a6fe-0030843d3802">
     <topic>proftpd -- Long Command Processing Vulnerability</topic>
     <affects>
