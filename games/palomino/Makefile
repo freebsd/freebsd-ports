@@ -6,42 +6,76 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20061125
-PORTREVISION=	1
+PORTVERSION=	20080906
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}_data_models_${MODELS_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_sounds_${SOUNDS_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_terrain_${TERRAIN_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_textures_replays_${TEXTURES_VER}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Action flight simulator with its own 3D engine
 
-USE_ZIP=	yes
-USE_PYTHON=	yes
-USE_GL=		glut
-USE_GMAKE=	yes
+LIB_DEPENDS=	osg.44:${PORTSDIR}/graphics/osg
+
+USE_BZIP2=	yes
+USE_GL=		gl
+USE_CMAKE=	yes
+
+MODELS_VER=	20080712
+SOUNDS_VER=	20080704
+TERRAIN_VER=	20080131
+TEXTURES_VER=	20080906
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}/modules/pony
-MAKEFILE=	GNUmakefile
+
+OPTIONS=	JOYSTICK "Enable joystick support through linux-js" on \
+		SOUND	"Enable sound support through plib" on \
+		GUI	"Enable FLTK GUI" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_JOYSTICK)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+.endif
+
+.if !defined(WITHOUT_SOUND)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+.endif
+
+.if !defined(WITHOUT_GUI)
+LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/APPLE_CC/s|$$| \&\& !defined(__FreeBSD__)|'\
-		${WRKSRC}/gfx/src/gfx_math.hh
-	@${REINPLACE_CMD} -Ee 's|(string (unix)?[iI]nstallDir = ).*$$|\1"${DATADIR}/";|'\
-		-e 's!../modules/!!' ${WRKSRC}/palomino/modules/pony/src/mod_pony_init.cc
-	@${REINPLACE_CMD} -Ee 's|(CC_FLAGS.*:=)|\1 $$(CFLAGS)|' ${WRKSRC}/gfx/GNUmakefile_common
-	@${REINPLACE_CMD} -Ee 's!(-O[0-9s]?|-funroll-loops|-fno-inline)!!g'\
-		${WRKSRC}/gfx/tools/cc-config.sh
-	@${REINPLACE_CMD} -e 's|-march=$$ARCH||' ${WRKSRC}/gfx/tools/cc-config.sh
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g'\
-		${WRKSRC}/gfx/tools/cc-config.sh ${WRKSRC}/gfx/tools/ld-config.sh
+.if defined(WITHOUT_JOYSTICK)
+	@${REINPLACE_CMD} -e 's|OS_FREEBSD|0|' ${WRKSRC}/src/input/joystick.* \
+		${WRKSRC}/src/input/joystick_linux.* ${WRKSRC}/src/control/conf.cc
+.endif
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE(/ s|)| REQUIRED)|' \
+		${WRKSRC}/CMakeLists.txt
+.if defined(WITHOUT_SOUND)
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE(PLIB/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+.if defined(WITHOUT_GUI)
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE(FLTK/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+	@${REINPLACE_CMD} -e '/FIND_PACKAGE(OSSIM/ d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|ENV||' ${WRKSRC}/build/program/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
+	       	${WRKSRC}/src/base/conf.cc
+	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \
+	       	${WRKSRC}/src/lua_bind/defs.hh
+	@${REINPLACE_CMD} -e 's|doc/html/|${DOCSDIR}/|' ${WRKSRC}/src/gui/gui.cc
 
-do-install:
-	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/out/palomino ${PREFIX}/bin/
-	@${INSTALL} -d ${DATADIR}/pony/out/
-	@${CP} -R ${INSTALL_WRKSRC}/models ${INSTALL_WRKSRC}/textures ${DATADIR}/pony/
-	@${CHMOD} -R a+rX,u+w,go-w ${DATADIR}/pony/
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/src/mod_pony.py \
-			${WRKSRC}/palomino/engine/src/eng.py ${DATADIR}/pony/out/
+post-install:
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "data scripts" ${DATADIR}/
+# docs are used from within the game, thus this is unconditional
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
