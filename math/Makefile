@@ -155,6 +155,7 @@
     SUBDIR += mbasecalc
     SUBDIR += metis
     SUBDIR += metis-edf
+    SUBDIR += mingw32-libgmp4
     SUBDIR += miracl
     SUBDIR += moo
     SUBDIR += mpexpr
