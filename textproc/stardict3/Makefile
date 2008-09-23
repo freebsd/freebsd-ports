@@ -1,13 +1,12 @@
-# Ports collection makefile for:	stardict2
-# Date created:			13 April 2003
-# Whom:				Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
+# New ports collection makefile for:   stardict3
+# Date created:        23 July 2008
+# Whom:                eric
 #
 # $FreeBSD$
 #
 
 PORTNAME=	stardict
-PORTVERSION=	2.4.8
-PORTREVISION=	7
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +15,23 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
+LIB_DEPENDS=    sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
+		enchant.1:${PORTSDIR}/textproc/enchant
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-festival \
+		--disable-gucharmap \
+		--disable-espeak
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USE_GETTEXT=	yes
 
 OPTIONS=	GNOMEUI "GNOME support" On
+
+CONFLICTS=      stardict-2.[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -40,12 +47,6 @@ PLIST_SUB=	GNOME="@comment not installed: "
 .endif
 
 MAN1=		stardict.1
-
-post-patch:
-# gcc 2.95 does not know std::string::clear()
-	@${REINPLACE_CMD} -e 's|.clear()|.erase()|' \
-		${WRKSRC}/src/docklet.cpp ${WRKSRC}/src/floatwin.cpp \
-		${WRKSRC}/src/selection.cpp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

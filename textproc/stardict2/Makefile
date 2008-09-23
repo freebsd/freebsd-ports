@@ -26,6 +26,8 @@ USE_GETTEXT=	yes
 
 OPTIONS=	GNOMEUI "GNOME support" On
 
+CONFLICTS=	stardict-3.[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNOMEUI)

@@ -1,6 +1,6 @@
 --- src/conf.cpp.orig	Mon Jul 10 05:23:39 2006
 +++ src/conf.cpp	Mon Jul 10 05:24:36 2006
-@@ -93,7 +93,7 @@
+@@ -114,7 +114,7 @@
  #ifdef _WIN32
  	add_entry("/apps/stardict/preferences/dictionary/tts_path", std::string("C:\\Program Files\\WyabdcRealPeopleTTS\nC:\\Program Files\\OtdRealPeopleTTS\nWyabdcRealPeopleTTS\nOtdRealPeopleTTS"));
  #else

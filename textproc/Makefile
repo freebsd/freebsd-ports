@@ -1007,6 +1007,7 @@
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
     SUBDIR += stardict2-rptts
+    SUBDIR += stardict3
     SUBDIR += supercat
     SUBDIR += sv-aspell
     SUBDIR += svn2cl
