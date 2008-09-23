@@ -111,6 +111,7 @@
     SUBDIR += bzflag
     SUBDIR += cake
     SUBDIR += cardpics
+    SUBDIR += cave9
     SUBDIR += cavezofphear
     SUBDIR += cchess
     SUBDIR += ceferino
