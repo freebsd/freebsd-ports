@@ -32,6 +32,7 @@ include/gretl/gretl_panel.h
 include/gretl/gretl_paths.h
 include/gretl/gretl_prn.h
 include/gretl/gretl_restrict.h
+include/gretl/gretl_scalar.h
 include/gretl/gretl_string_table.h
 include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
@@ -421,6 +422,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/oprobit.inp
 %%DATADIR%%/scripts/misc/penngrow.inp
 %%DATADIR%%/scripts/misc/perron97.inp
+%%DATADIR%%/scripts/misc/pensions.inp
 %%DATADIR%%/scripts/misc/ps_descriptions
 %%DATADIR%%/scripts/misc/restrict.inp
 %%DATADIR%%/scripts/misc/sw_ch12.inp
