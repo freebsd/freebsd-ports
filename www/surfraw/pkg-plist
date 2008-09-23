@@ -45,6 +45,7 @@ lib/surfraw/freedb
 lib/surfraw/freshmeat
 lib/surfraw/fsfdir
 lib/surfraw/genpkg
+lib/surfraw/genportage
 lib/surfraw/google
 lib/surfraw/gutenberg
 lib/surfraw/happypenguin
@@ -58,6 +59,7 @@ lib/surfraw/netbsd
 lib/surfraw/openbsd
 lib/surfraw/opensearch
 lib/surfraw/pgpkeys
+lib/surfraw/piratebay
 lib/surfraw/port
 lib/surfraw/pubmed
 lib/surfraw/rae
@@ -125,6 +127,7 @@ man/man1/freedb.1sr.gz
 man/man1/freshmeat.1sr.gz
 man/man1/fsfdir.1sr.gz
 man/man1/genpkg.1sr.gz
+man/man1/genportage.1sr.gz
 man/man1/google.1sr.gz
 man/man1/gutenberg.1sr.gz
 man/man1/happypenguin.1sr.gz
@@ -137,6 +140,7 @@ man/man1/musicbrainz.1sr.gz
 man/man1/netbsd.1sr.gz
 man/man1/openbsd.1sr.gz
 man/man1/pgpkeys.1sr.gz
+man/man1/piratebay.1sr.gz
 man/man1/port.1sr.gz
 man/man1/pubmed.1sr.gz
 man/man1/rae.1sr.gz
