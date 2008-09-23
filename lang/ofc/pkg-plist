@@ -62,6 +62,7 @@ include/ofc/DQueuable.h
 include/ofc/DRandomable.h
 include/ofc/DRegEx.h
 include/ofc/DRnd.h
+include/ofc/DRndDist.h
 include/ofc/DSHA1.h
 include/ofc/DSHA256.h
 include/ofc/DSimpleFont.h
@@ -105,5 +106,5 @@ lib/libofc.a
 lib/libofc.la
 lib/libofc.so
 lib/libofc-0.8.so
-lib/libofc-0.8.so.0
+lib/libofc-0.8.so.1
 @dirrm include/ofc
