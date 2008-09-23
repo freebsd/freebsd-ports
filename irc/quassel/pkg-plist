@@ -1,6 +1,6 @@
-bin/quassel
-bin/quasselclient
-bin/quasselcore
-share/applications/quassel.desktop
-share/applications/quasselclient.desktop
+%%MONO%%bin/quassel
+%%CLIENT%%bin/quasselclient
+%%CORE%%bin/quasselcore
+%%MONO%%share/applications/quassel.desktop
+%%CLIENT%%share/applications/quasselclient.desktop
 @dirrmtry share/applications
