@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -28,6 +28,10 @@ USE_GMAKE=	yes
 WANT_PERL=	yes
 
 CONFIGURE_ARGS=	--disable-tcl
+
+PORTDOCS=	*
+PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl piped-demo.pl \
+		perftest.pl shared-demo.pl stripes.pl
 
 OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
 		RUBY_MODULE	"Build RUBY bindings" off \
@@ -85,6 +89,10 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
 		-e 's/^	cd .* rrdtool.html index.html/	#/' \
 		${WRKSRC}/doc/Makefile.in
+.endif
+.if defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e 's|SUBDIRS = $$(PO) src examples doc bindings|SUBDIRS = $$(PO) src doc bindings|' \
+		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
