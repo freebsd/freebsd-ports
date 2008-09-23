@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	sshguard
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mij@bitchx.it
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
