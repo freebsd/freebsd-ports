@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	log4shib
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/
+MASTER_SITES=	http://shibboleth.internet2.edu/downloads/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
