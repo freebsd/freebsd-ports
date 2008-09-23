@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	2008-09-02 15:13:53.000000000 -0500
-+++ util/fluxbox-generate_menu.in	2008-09-02 15:32:52.000000000 -0500
+--- util/fluxbox-generate_menu.in.orig	2008-09-22 13:41:08.000000000 -0500
++++ util/fluxbox-generate_menu.in	2008-09-22 14:00:24.000000000 -0500
 @@ -45,7 +45,7 @@
  
  
@@ -27,7 +27,65 @@
      -q  KDE-prefix; idem dito
  
  
-@@ -253,7 +253,7 @@
+@@ -123,13 +123,42 @@
+ EOF
+ }
+ 
+-find_it() {
+-    [ -n "$1" ] && hash $1 2> /dev/null && shift && "$@"
+-}
++# some which's have a reliable return code, some don't
++# Lets figure out which which we have.
++if which this_program_does_not_exist-no_really-aA1zZ9 2> /dev/null 1> /dev/null; then
++    # can't rely on return value
++    find_it() {
++        file=`which $1 2> /dev/null`
++        if [ -x "$file" ]; then
++            if [ $# -gt 1 ]; then
++                shift
++                "$@"
++            fi
++            return 0
++        else
++            return 1
++        fi
++    }
+ 
+-find_it_options() {
+-    [ -n "$1" ] && hash $1 2> /dev/null
+-}
++    find_it_options() {
++        file=`which $1 2> /dev/null`
++        if [ -x "$file" ]; then
++            return 0
++        else
++            return 1
++        fi
++    }
++
++else
++    # can rely on return value
++    find_it() {
++        which $1 > /dev/null 2>&1 && shift && "$@"
++    }
++
++    find_it_options() {
++        which $1 > /dev/null 2>&1
++    }
++fi
+ 
+ #echo "replaceWithinString: $1, $2, $3" >&2
+ #echo ${1//$2/$3} # causes error in BSD even though not used
+@@ -181,7 +210,7 @@
+     if [ -f "${entry_icon}" ]; then
+         : echo "File exists. To overwrite, type: convert \"$1\" \"$entry_icon\"" >&2
+     else
+-        if hash convert 2> /dev/null; then
++        if which convert &> /dev/null; then
+             convert "$1" "$entry_icon"
+             # echo convert "$1" , "$entry_icon" >> $ICONMAPPING
+         else
+@@ -253,7 +282,7 @@
      # echo -n "for $temp_icon"
      eval doSearchLoop $USER_ICONPATHS \
        "$FB_ICONDIR" \
@@ -36,7 +94,7 @@
        ${OTHER_ICONPATHS} \
  
  
-@@ -1236,16 +1236,16 @@
+@@ -1236,16 +1265,16 @@
  # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
  # your prefix is: @PREFIX@
  
@@ -57,7 +115,7 @@
  
  
  # --- Boolean variables.
-@@ -1317,29 +1317,21 @@
+@@ -1317,29 +1346,21 @@
          -g) GNOMEMENU=yes; shift;;
          -in) NO_ICON=yes; shift;;
          -is) OTHER_ICONPATHS="
@@ -99,7 +157,14 @@
              "
              # /usr/share/apps \
              shift;;
-@@ -1416,7 +1408,7 @@
+@@ -1410,13 +1431,12 @@
+ # prefix
+ PREFIX="${PREFIX:=@PREFIX@}"
+ if [  -z "${PREFIX}" -o ! -d "${PREFIX}" ]; then
+-    hash @pkgprefix@fluxbox@pkgsuffix@
+-    PREFIX=`hash | grep @pkgprefix@fluxbox@pkgsuffix@ | sed 's,.*\t/,/,' | sed 's,/bin/@pkgprefix@fluxbox@pkgsuffix@$,,'`
++    PREFIX=`which fluxbox | sed 's,/bin/fluxbox$,,'`
+ fi
  
  
  # gnome prefix
@@ -108,7 +173,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -1424,7 +1416,7 @@
+@@ -1424,7 +1444,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -117,7 +182,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1512,7 +1504,7 @@
+@@ -1512,7 +1532,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
@@ -126,7 +191,7 @@
          if find_it_options $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1559,7 +1551,8 @@
+@@ -1559,7 +1579,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firefox|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -136,7 +201,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1578,7 +1571,8 @@
+@@ -1578,7 +1599,8 @@
      append_submenu "${BROWSERMENU}"
          normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"

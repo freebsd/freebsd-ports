@@ -1,0 +1,43 @@
+--- util/fbsetbg.orig	2008-09-22 13:47:05.000000000 -0500
++++ util/fbsetbg	2008-09-22 13:52:03.000000000 -0500
+@@ -49,7 +49,7 @@
+ 
+ 
+ WHOAMI=`whoami`
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
+ 
+ command="`basename \"$0\"`"
+ 
+@@ -129,9 +129,28 @@
+ EOF
+ }
+ 
+-find_it() {
+-    [ -n "$1" ] && hash $1 2> /dev/null
+-}
++# some which's have a reliable return code, some don't
++# Lets figure out which which we have.
++if which this_program_does_not_exist-no_really-aA1zZ9 >/dev/null 2>/dev/null; then
++    # can't rely on return value
++    find_it() {
++        file=`which $1 2> /dev/null`
++        if [ -x "$file" ]; then
++            if [ $# -gt 1 ]; then
++                shift
++                $*
++            fi
++            return 0
++        else
++            return 1
++        fi
++    }
++else
++    # can rely on return value
++    find_it() {
++        which $1 > /dev/null 2>&1 && shift && $*
++    }
++fi
+ 
+ message() {
+ 
