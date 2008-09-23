@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.25
+PORTVERSION=	8.26
 CATEGORIES=	textproc tk
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 
