@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinentry
-PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTVERSION=	0.7.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	pinentry
@@ -37,7 +36,6 @@ PLIST_SUB+=	WITH_QT=""
 pre-configure:
 	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/configure
-
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt
 PLIST_SUB+=	WITH_QT="@comment "
@@ -46,7 +44,7 @@ PLIST_SUB+=	WITH_QT="@comment "
 .if defined(PINENTRY_GTK)
 USE_GNOME+=	gtk12
 PLIST_SUB+=	WITH_GTK=""
-CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk
 PLIST_SUB+=	WITH_GTK="@comment "
@@ -55,7 +53,7 @@ PLIST_SUB+=	WITH_GTK="@comment "
 .if defined(PINENTRY_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
-CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
