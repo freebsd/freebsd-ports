@@ -18,7 +18,7 @@ COMMENT=	An open source implementation of .NET Development Framework
 CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
 
 USE_BZIP2=	yes
-USE_BISON=	yes
+USE_BISON=	build
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
