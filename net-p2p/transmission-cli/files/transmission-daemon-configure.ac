@@ -1,5 +1,5 @@
---- configure.ac.orig	2008-07-14 14:13:26.000000000 -0500
-+++ configure.ac	2008-07-14 14:17:17.000000000 -0500
+--- configure.ac.orig	2008-09-17 12:18:44.000000000 -0500
++++ configure.ac	2008-09-17 12:21:54.000000000 -0500
 @@ -10,22 +10,8 @@
  AM_INIT_AUTOMAKE([1.9 tar-ustar])
  AC_PROG_LIBTOOL
@@ -23,17 +23,16 @@
  
  AC_PROG_CC
  AC_PROG_CXX
-@@ -44,7 +30,8 @@
+@@ -44,7 +30,7 @@
  
  AC_SEARCH_LIBS([socket], [socket net])
  AC_SEARCH_LIBS([gethostbyname], [nsl bind])
--PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM])
-+AC_CHECK_LIB([crypto],[CRYPTO_new_ex_data])
-+AC_CHECK_LIB([ssl],[SSL_library_init])
+-PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM], , [CHECK_SSL()])
++CHECK_SSL()
  PKG_CHECK_MODULES(LIBCURL, [libcurl >= $CURL_MINIMUM])
  
  AC_SYS_LARGEFILE
-@@ -76,237 +63,19 @@
+@@ -76,237 +62,19 @@
  AC_SUBST(LIBEVENT_CPPFLAGS)
  
  
@@ -273,7 +272,7 @@
  
  ac_configure_args="$ac_configure_args --enable-static --disable-shared -q"
  AC_OUTPUT
-@@ -317,14 +86,6 @@
+@@ -317,14 +85,6 @@
  
          Source code location:       ${srcdir}
          Compiler:                   ${CXX}
@@ -288,9 +287,9 @@
 -        Build wxWidgets client:     ${build_wx}
  
  "
---- Makefile.am.orig	2008-07-14 14:13:34.000000000 -0500
-+++ Makefile.am	2008-07-14 14:17:56.000000000 -0500
-@@ -1,104 +1,6 @@
+--- Makefile.am.orig	2008-09-17 12:18:52.000000000 -0500
++++ Makefile.am	2008-09-17 12:22:33.000000000 -0500
+@@ -1,103 +1,6 @@
  ACLOCAL_AMFLAGS = -I m4
  
 -if BUILD_BEOS
@@ -355,7 +354,6 @@
 -
 -clutch_jquerydir = $(clutch_jsdir)/jquery
 -clutch_jquery_DATA = \
--  web/javascript/jquery \
 -  web/javascript/jquery/json.min.js \
 -  web/javascript/jquery/jquery.contextmenu.min.js \
 -  web/javascript/jquery/jquery.min.js \

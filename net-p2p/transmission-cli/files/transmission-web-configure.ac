@@ -1,6 +1,6 @@
---- configure.ac.orig	2008-07-13 22:42:28.000000000 -0500
-+++ configure.ac	2008-07-14 16:12:09.000000000 -0500
-@@ -6,325 +6,10 @@
+--- configure.ac.orig	2008-09-17 12:30:29.000000000 -0500
++++ configure.ac	2008-09-17 12:33:50.000000000 -0500
+@@ -6,325 +6,15 @@
  
  AC_PREREQ(2.54)
  dnl AM_CONFIG_HEADER(config.h)
@@ -42,7 +42,7 @@
 -
 -AC_SEARCH_LIBS([socket], [socket net])
 -AC_SEARCH_LIBS([gethostbyname], [nsl bind])
--PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM])
+-PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM], , [CHECK_SSL()])
 -PKG_CHECK_MODULES(LIBCURL, [libcurl >= $CURL_MINIMUM])
 -
 -AC_SYS_LARGEFILE
@@ -174,7 +174,7 @@
 -fi
 -AM_CONDITIONAL([BUILD_WX],[test "x$build_wx" = "xyes"])
 -
- 
+-
 -
 -dnl ----------------------------------------------------------------------------
 -dnl
@@ -282,12 +282,12 @@
 -if test "x$have_msw" = "xyes"; then
 -    AC_DEFINE([HAVE_MSW], 1)
 -fi
--
--
--dnl ----------------------------------------------------------------------------
--dnl
--dnl  Generate the output
--
+ 
+ 
+ dnl ----------------------------------------------------------------------------
+ dnl
+ dnl  Generate the output
+ 
 -AC_CONFIG_FILES([Makefile
 -                 transmission.spec
 -                 beos/Makefile
@@ -327,8 +327,8 @@
 -        Build wxWidgets client:     ${build_wx}
 -
 -"
---- Makefile.am.orig	2008-07-14 16:11:59.000000000 -0500
-+++ Makefile.am	2008-07-14 16:11:59.000000000 -0500
+--- Makefile.am.orig	2008-09-17 12:30:32.000000000 -0500
++++ Makefile.am	2008-09-17 12:34:31.000000000 -0500
 @@ -1,46 +1,5 @@
  ACLOCAL_AMFLAGS = -I m4
  
@@ -376,7 +376,7 @@
  clutchdir = $(datadir)/transmission/web
  clutch_DATA = \
    web/index.html \
-@@ -97,8 +56,3 @@
+@@ -96,8 +55,3 @@
    web/images/buttons/info_general.png \
    web/images/buttons/torrent_buttons.png \
    web/images/buttons/info_activity.png
