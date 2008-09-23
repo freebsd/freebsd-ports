@@ -1,4 +1,5 @@
 bin/allacrost
+%%EDITOR%%bin/allacrost-editor
 %%DATADIR%%/allacrost/dat/actors/characters.lua
 %%DATADIR%%/allacrost/dat/actors/enemies_set_01.lua
 %%DATADIR%%/allacrost/dat/actors/enemies_set_02.lua
@@ -6,6 +7,8 @@ bin/allacrost
 %%DATADIR%%/allacrost/dat/config/restore_settings.lua
 %%DATADIR%%/allacrost/dat/config/settings.lua
 %%DATADIR%%/allacrost/dat/credits.lua
+%%DATADIR%%/allacrost/dat/effects/status.lua
+%%DATADIR%%/allacrost/dat/global.lua
 %%DATADIR%%/allacrost/dat/maps/demo_cave.lua
 %%DATADIR%%/allacrost/dat/maps/demo_town.lua
 %%DATADIR%%/allacrost/dat/objects/arm_armor.lua
@@ -27,6 +30,7 @@ bin/allacrost
 %%DATADIR%%/allacrost/dat/tilesets/mountain_house_exterior2.lua
 %%DATADIR%%/allacrost/dat/tilesets/mountain_house_interior.lua
 %%DATADIR%%/allacrost/dat/tilesets/mountain_landscape.lua
+%%DATADIR%%/allacrost/doc/allacrost.dox
 %%DATADIR%%/allacrost/img/backdrops/battle/desert_cave.png
 %%DATADIR%%/allacrost/img/backdrops/battle/desert_cave_anim.png
 %%DATADIR%%/allacrost/img/backdrops/battle/mountain_village.png
@@ -37,7 +41,9 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/fonts/tarnhalo.ttf
 %%DATADIR%%/allacrost/img/fonts/vtc_switchblade_romance.ttf
 %%DATADIR%%/allacrost/img/icons/actors/characters/claudius.png
+%%DATADIR%%/allacrost/img/icons/actors/characters/claudius_bw.png
 %%DATADIR%%/allacrost/img/icons/actors/characters/laila.png
+%%DATADIR%%/allacrost/img/icons/actors/characters/laila_bw.png
 %%DATADIR%%/allacrost/img/icons/actors/enemies/aerocephal.png
 %%DATADIR%%/allacrost/img/icons/actors/enemies/arcana_drake.png
 %%DATADIR%%/allacrost/img/icons/actors/enemies/aurum-drakueli.png
@@ -95,6 +101,7 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/menus/dialogue_nameplate.png
 %%DATADIR%%/allacrost/img/menus/locations/desert_cave.png
 %%DATADIR%%/allacrost/img/menus/locations/mountain_village.png
+%%DATADIR%%/allacrost/img/menus/scroll_cursors.png
 %%DATADIR%%/allacrost/img/menus/stamina_bar.png
 %%DATADIR%%/allacrost/img/menus/stamina_icon.png
 %%DATADIR%%/allacrost/img/menus/stamina_icon_selected.png
@@ -102,6 +109,9 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/misc/category_icons.png
 %%DATADIR%%/allacrost/img/misc/chest1.png
 %%DATADIR%%/allacrost/img/misc/dialogue_icon.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/arrow-left.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/arrow-right.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-arrow.png
 %%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-bucket-fill-22.png
 %%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-color-picker-22.png
 %%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-eraser-22.png
@@ -112,9 +122,11 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/misc/torch_light_mask.png
 %%DATADIR%%/allacrost/img/portraits/battle/claudius_damage.png
 %%DATADIR%%/allacrost/img/portraits/battle/laila_damage.png
+%%DATADIR%%/allacrost/img/portraits/battle/rafaela_damage.png
 %%DATADIR%%/allacrost/img/portraits/map/claudius.png
 %%DATADIR%%/allacrost/img/portraits/map/laila.png
 %%DATADIR%%/allacrost/img/portraits/map/marcus.png
+%%DATADIR%%/allacrost/img/portraits/map/rafaela.png
 %%DATADIR%%/allacrost/img/portraits/map/vanica.png
 %%DATADIR%%/allacrost/img/portraits/menu/claudius.png
 %%DATADIR%%/allacrost/img/portraits/menu/claudius_large.png
@@ -123,6 +135,9 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/portraits/menu/laila_large.png
 %%DATADIR%%/allacrost/img/portraits/menu/laila_small.png
 %%DATADIR%%/allacrost/img/portraits/menu/marcus_small.png
+%%DATADIR%%/allacrost/img/portraits/menu/rafaela.png
+%%DATADIR%%/allacrost/img/portraits/menu/rafaela_large.png
+%%DATADIR%%/allacrost/img/portraits/menu/rafaela_small.png
 %%DATADIR%%/allacrost/img/portraits/menu/vanica_small.png
 %%DATADIR%%/allacrost/img/sprites/battle/characters/claudius_idle.png
 %%DATADIR%%/allacrost/img/sprites/battle/characters/laila_idle.png
@@ -151,6 +166,8 @@ bin/allacrost
 %%DATADIR%%/allacrost/img/sprites/map/marcus_walk.png
 %%DATADIR%%/allacrost/img/sprites/map/naga_walk.png
 %%DATADIR%%/allacrost/img/sprites/map/old_woman_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/rafaela_run.png
+%%DATADIR%%/allacrost/img/sprites/map/rafaela_walk.png
 %%DATADIR%%/allacrost/img/sprites/map/scorpion_walk.png
 %%DATADIR%%/allacrost/img/sprites/map/slime_walk.png
 %%DATADIR%%/allacrost/img/sprites/map/snake_walk.png
@@ -181,6 +198,7 @@ bin/allacrost
 %%DATADIR%%/allacrost/snd/battle_encounter_03.ogg
 %%DATADIR%%/allacrost/snd/bump.wav
 %%DATADIR%%/allacrost/snd/cancel.wav
+%%DATADIR%%/allacrost/snd/cave-in.ogg
 %%DATADIR%%/allacrost/snd/chestclose1.wav
 %%DATADIR%%/allacrost/snd/chestclose2.wav
 %%DATADIR%%/allacrost/snd/chestclose3.wav
@@ -214,6 +232,22 @@ bin/allacrost
 %%DATADIR%%/allacrost/snd/swordslice2.wav
 %%DATADIR%%/allacrost/snd/swordslice3.wav
 %%DATADIR%%/allacrost/snd/volume_test.wav
+%%DATADIR%%/allacrost/txt/Makefile
+%%DATADIR%%/allacrost/txt/Makefile.in
+%%DATADIR%%/allacrost/txt/Makefile.in.in
+%%DATADIR%%/allacrost/txt/Makevars
+%%DATADIR%%/allacrost/txt/POTFILES
+%%DATADIR%%/allacrost/txt/POTFILES.in
+%%DATADIR%%/allacrost/txt/Rules-quot
+%%DATADIR%%/allacrost/txt/allacrost.pot
+%%DATADIR%%/allacrost/txt/boldquot.sed
+%%DATADIR%%/allacrost/txt/en@boldquot.header
+%%DATADIR%%/allacrost/txt/en@quot.header
+%%DATADIR%%/allacrost/txt/insert-header.sin
+%%DATADIR%%/allacrost/txt/quot.sed
+%%DATADIR%%/allacrost/txt/remove-potcdate.sin
+%%DATADIR%%/allacrost/txt/stamp-po
+@dirrm %%DATADIR%%/allacrost/txt
 @dirrm %%DATADIR%%/allacrost/snd
 @dirrm %%DATADIR%%/allacrost/mus
 @dirrm %%DATADIR%%/allacrost/img/tilesets
@@ -244,10 +278,12 @@ bin/allacrost
 @dirrm %%DATADIR%%/allacrost/img/backdrops/battle
 @dirrm %%DATADIR%%/allacrost/img/backdrops
 @dirrm %%DATADIR%%/allacrost/img
+@dirrm %%DATADIR%%/allacrost/doc
 @dirrm %%DATADIR%%/allacrost/dat/tilesets
 @dirrm %%DATADIR%%/allacrost/dat/skills
 @dirrm %%DATADIR%%/allacrost/dat/objects
 @dirrm %%DATADIR%%/allacrost/dat/maps
+@dirrm %%DATADIR%%/allacrost/dat/effects
 @dirrm %%DATADIR%%/allacrost/dat/config
 @dirrm %%DATADIR%%/allacrost/dat/actors
 @dirrm %%DATADIR%%/allacrost/dat
