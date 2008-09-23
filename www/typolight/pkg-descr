@@ -1,0 +1,20 @@
+TYPOlight webCMS is a powerful web content management system that
+specializes in accessibility (back end and front end) and uses XHTML
+and CSS to generate W3C/WAI compliant pages.
+
+Here are some prominent features that make TYPOlight stand out from
+the variety of content management systems. If you want to learn more,
+check out the full feature list ( http://www.typolight.org/features.html).
+
+* Live update feature
+* Multilingual documentation
+* Accessible XHTML strict output
+* Uses Ajax and Web 2.0 technologies
+* Multi-language support (character set UTF-8)
+* Cross-browser CSS framework generator (IE7 compatible)
+* Built-in file manager, search engine and form generator
+* Multiple back end languages and back end themes
+* Front end output 100% template based
+* Versioning and undo management
+
+WWW:	http://www.typolight.org
