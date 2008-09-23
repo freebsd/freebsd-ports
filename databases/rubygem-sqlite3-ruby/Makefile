@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	databases rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	sqlite-ruby
+MASTER_SITES=	RUBYFORGE/sqlite-ruby
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
@@ -22,5 +21,13 @@ GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+
+post-install:
+	@${ECHO} ${GEM_CACHE} > ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
