@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.home.unix-ag.org/patrick/software/gnarwl/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
