@@ -1,8 +1,9 @@
 bin/deco
 %%DATADIR%%/7z/extract
+%%DATADIR%%/7z\.[0-9]{2,}
 %%DATADIR%%/a/extract
-%%DATADIR%%/ace|[c0-9][0-9][0-9]/extract
-%%DATADIR%%/ace|[c0-9][0-9][0-9]/permissions
+%%DATADIR%%/ace|[c0-9][0-9]{2}/extract
+%%DATADIR%%/ace|[c0-9][0-9]{2}/permissions
 %%DATADIR%%/alz/extract
 %%DATADIR%%/ape/extract
 %%DATADIR%%/ar
@@ -44,15 +45,17 @@ bin/deco
 %%DATADIR%%/part[0-9]+\.rar
 %%DATADIR%%/pk3
 %%DATADIR%%/pk4
-%%DATADIR%%/rar|[rst][0-9][0-9]/extract
-%%DATADIR%%/rar|[rst][0-9][0-9]/permissions
+%%DATADIR%%/rar|[rst][0-9]{2}/extract
+%%DATADIR%%/rar|[rst][0-9]{2}/permissions
 %%DATADIR%%/rpm/extract
 %%DATADIR%%/rpm/subdirectory
 %%DATADIR%%/shn/extract
 %%DATADIR%%/sue
 %%DATADIR%%/t7z
+%%DATADIR%%/t7z\.[0-9]{2,}
 %%DATADIR%%/tar/extract
 %%DATADIR%%/tar\.7z/extract
+%%DATADIR%%/tar\.7z\.[0-9]{2,}
 %%DATADIR%%/tar\.bz2/extract
 %%DATADIR%%/tar\.gz/extract
 %%DATADIR%%/tar\.lzma/extract
@@ -75,7 +78,7 @@ bin/deco
 @dirrm %%DATADIR%%/tar
 @dirrm %%DATADIR%%/shn
 @dirrm %%DATADIR%%/rpm
-@dirrm %%DATADIR%%/rar|[rst][0-9][0-9]
+@dirrm %%DATADIR%%/rar|[rst][0-9]{2}
 @dirrm %%DATADIR%%/lzo
 @dirrm %%DATADIR%%/lzma
 @dirrm %%DATADIR%%/lha
@@ -89,7 +92,7 @@ bin/deco
 @dirrm %%DATADIR%%/arc
 @dirrm %%DATADIR%%/ape
 @dirrm %%DATADIR%%/alz
-@dirrm %%DATADIR%%/ace|[c0-9][0-9][0-9]
+@dirrm %%DATADIR%%/ace|[c0-9][0-9]{2}
 @dirrm %%DATADIR%%/a
 @dirrm %%DATADIR%%/7z
 @dirrm %%DATADIR%%
