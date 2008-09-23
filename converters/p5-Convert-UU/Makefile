@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Convert-UU
-PORTVERSION=	0.52
+PORTVERSION=	0.52.01
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module for uuencode and uudecode
