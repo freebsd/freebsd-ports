@@ -1,10 +1,10 @@
 etc/hdup/hdup.conf-dist
 etc/hdup/postrun-warn-user
 sbin/hdup
-%%DOCSDIR%%/README
-%%DOCSDIR%%/FAQ.html
-%%EXAMPLESDIR%%/hdup.cron
-%%EXAMPLESDIR%%/no-history-post-run.sh
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hdup.cron
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-history-post-run.sh
 @dirrmtry etc/hdup
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
