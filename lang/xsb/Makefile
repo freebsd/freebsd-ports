@@ -27,8 +27,8 @@ PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.if ${OSVERSION} >= 700042 && ${OSVERSION} < 800000
+BROKEN=	Does not compile on FreeBSD 7.x
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "sparc64"
