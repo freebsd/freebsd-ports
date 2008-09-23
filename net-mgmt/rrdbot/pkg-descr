@@ -1,0 +1,16 @@
+RRDBot is an SNMP polling daemon which writes the polled values to an RRD
+database. It can poll many different SNMP sources in an efficient manner.
+
+It has no large external dependencies, and its configuration is stored in text
+files. It has full support for MIB definition files and using textual MIBs
+instead of numerical OIDs.
+
+A nice feature is the querying of SNMP tables without using a specific index.
+Indexes of the rows in an SNMP table may change from time to time, and are less
+than ideal for long term tracking of a given value. For example RRDBot can
+query the traffic on your router based on the 'xl0' interface name.
+
+RRDBot also contains tools to simplify the creation of RRD files, and the
+various archives contained in them.
+
+WWW: http://memberwebs.com/stef/software/rrdbot/
