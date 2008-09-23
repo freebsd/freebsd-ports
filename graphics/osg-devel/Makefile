@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.6/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
@@ -15,14 +15,15 @@ DISTNAME=	OpenSceneGraph-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
+
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_GL=		gl glu
 WANT_SDL=	yes
-
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+USE_LDCONFIG=	yes
 
 OPTIONS=	CURL		"Support for cURL"		off \
 		FREETYPE	"Support for FreeType"		on \
