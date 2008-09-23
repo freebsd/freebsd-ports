@@ -1418,6 +1418,7 @@
     SUBDIR += twill
     SUBDIR += typo
     SUBDIR += typo3
+    SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += usermanager
