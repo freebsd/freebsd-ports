@@ -43,7 +43,7 @@ PLIST_SUB+=	MAIL=${MAIL}
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
 		SQLITE "Use SQLite backend" off \
-		SPELLCHECK "Enable spellchecking" off \
+		SSL "Enable SSL support (imaps or google spellcheck)" off \
 		LOCALCHECK "Install internal spellchecker" off
 
 .include <bsd.port.pre.mk>
@@ -64,7 +64,7 @@ USE_PHP+=	pgsql
 USE_PHP+=	sqlite
 .endif
 
-.if defined(WITH_SPELLCHECK)
+.if defined(WITH_SSL)
 USE_PHP+=	openssl
 .endif
 
