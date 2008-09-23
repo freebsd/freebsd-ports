@@ -508,6 +508,7 @@
     SUBDIR += tempcontrol
     SUBDIR += termatrix
     SUBDIR += terraform
+    SUBDIR += teseq
     SUBDIR += tet
     SUBDIR += thailocale
     SUBDIR += tkinfo

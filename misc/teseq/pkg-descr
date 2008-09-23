@@ -1,0 +1,23 @@
+GNU Teseq is a tool for translating files that contain control
+characters and terminal control sequences, into human-understandable
+text. It is intended to aid in debugging problems in terminal
+emulators, software that makes use of special terminal features, and
+interactions between the two.
+
+Teseq is primarily targeted at individuals who possess a basic
+understanding of terminal control sequences, especially CSI sequences;
+however, by default Teseq will try to identify and describe the
+sequences that it encounters, and the behavior they might produce in a
+terminal.
+
+Teseq describes control functions as they are interpreted by
+VT100-compatible terminals, and/or terminals compliant with the ECMA-48 /
+ISO/IEC 6429 standard. Teseq does _not_ support describing control
+functions according to terminal-specific definitions in a database such
+as termcap or terminfo, though future versions may include limited
+support for that (*note Future Enhancements::). Therefore, the
+descriptions Teseq uses for control functions may not necessarily match
+their actual interpretation by whatever terminal device the characters
+were actually intended for
+
+WWW:	http://www.gnu.org/software/teseq/
