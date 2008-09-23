@@ -1,3 +1,5 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
 NOTE: This is commercial software that only supplies you with
 an evaluation license valid for 30 days from the date of installation.
 Please read the LICENSE in "%%PREFIX%%/share/doc/ncftpd" before
@@ -10,3 +12,5 @@ in the absence of an FTP user.  For details see the installation help file
 
 Remove "-dist" from the filenames of the configuration files in
 "%%PREFIX%%/etc/ncftpd" and edit them to suit.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
