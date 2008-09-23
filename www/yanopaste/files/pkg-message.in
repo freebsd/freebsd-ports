@@ -1,0 +1,10 @@
+yanopaste has been installed into:
+
+    %%WWWDIR%%
+
+You will probably want to add an alias to your httpd.conf file,
+somethinglike this:
+
+        Alias /yanopaste "%%WWWDIR%%"
+
+And restart Apache.

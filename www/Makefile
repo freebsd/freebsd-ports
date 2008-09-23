@@ -1578,6 +1578,7 @@
     SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yahoo-ui
+    SUBDIR += yanopaste
     SUBDIR += yaws
     SUBDIR += youtube_dl
     SUBDIR += yuicompressor
