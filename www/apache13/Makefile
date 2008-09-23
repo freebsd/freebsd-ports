@@ -45,16 +45,16 @@ CGIBIN_ROOT=${DATADIR}/cgi-bin
 .endif
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 
-.if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
+.if defined(WITHOUT_APACHE_EXPAT)
 EXPAT_CONF+=	--disable-rule=EXPAT
 .else
-.if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
+.if !defined(WITH_APACHE_INTERNAL_EXPAT)
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 EXPAT_CONF+=	--enable-rule=EXPAT
 .endif
 
-.if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
+.if defined(WITH_APACHE_SUEXEC)
 
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
 APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
@@ -128,9 +128,9 @@ CFLAGS+=-DHARD_SERVER_LIMIT=512
 .endif
 
 #
-# Set WITH_APACHE_PERF_TUNING env. variable to yes to get maximum performance
+# Set WITH_APACHE_PERF_TUNING env. variable to get maximum performance
 #
-.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == yes
+.if defined(WITH_APACHE_PERF_TUNING)
 CFLAGS+=-DBUFFERED_LOGS
 # Don't use OPTIM below, it is inserted _before_ CFLAGS
 CFLAGS+=-O3
@@ -138,8 +138,7 @@ CFLAGS+=-O3
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
 
-.if (!defined(WITHOUT_APACHE_EXPAT) || ${WITHOUT_APACHE_EXPAT} != yes) && \
-    (!defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes)
+.if !defined(WITHOUT_APACHE_EXPAT) && !defined(WITH_APACHE_INTERNAL_EXPAT)
 CONFIGURE_ENV+=	\
 		INCLUDES=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
