@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.20080920
+DISTVERSION=	1.3.20080922
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/ \
 		LOCAL/beech \
 		LOCAL/beech:clam \
-		LOCAL/beech:digest \
-		LOCAL/beech:comb \
-		LOCAL/beech:sql_tds
+		LOCAL/beech:digest
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -66,7 +64,6 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		PGSQL "Postgres auth (Can be combined)" off \
 		SQLITE "SQLite auth (Can be combined)" off \
 		ODBC "ODBC (Can be combined)" off \
-		TDS "FreeTDS - Sybase & MS-SQL auth (Exclusive)" off \
 		OPENSSL "Include mod_tls" on \
 		QUOTA "Include mod_quota" off \
 		IFSESSION "Include mod_ifsession" on \
@@ -83,8 +80,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		NLS "Use nls (builds mod_lang)" off \
 		UNIQUE "Include mod_unique_id" off \
 		CLAMAV "Include mod_clamav" off \
-		DIGEST "Include mod_digest" off \
-		COMB "Include mod_comb (multistream upload)" off
+		DIGEST "Include mod_digest" off
 
 MODULES?=
 LIBDIRS?=
@@ -256,26 +252,6 @@ DISTFILES+=	mod_digest.c:digest
 MODULES:=${MODULES}:mod_digest
 .endif
 
-.if defined(WITH_COMB)
-COMB_VERSION=	0.1
-DISTFILES+=	mod_comb-${COMB_VERSION}.tar.bz2:comb
-EXTRACT_ONLY+=	mod_comb-${COMB_VERSION}.tar.bz2
-MODULES:=${MODULES}:mod_comb
-PORTDOCScontrib+=mod_comb.html
-PORTDOCSreadme+=README.mod_comb
-.endif
-
-.if defined(WITH_TDS)
-DISTFILES+=	mod_sql_tds-4.5.tar.bz2:sql_tds
-EXTRACT_ONLY+=	mod_sql_tds-4.5.tar.bz2
-MODULES:=${MODULES}:mod_sql_tds
-MODULES:=mod_sql${MODULES}
-PLIST_FILES+=	include/proftpd/mod_sql.h
-INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
-LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
-.endif
-
 # mod_ifsession should be the last item in the modules list
 .if !defined(WITHOUT_IFSESSION)
 MODULES:=${MODULES}:mod_ifsession
@@ -304,15 +280,6 @@ post-extract:
 .endif
 .if defined(WITH_DIGEST)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
-.endif
-.if defined(WITH_COMB)
-	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.c ${WRKSRC}/contrib/
-	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/README ${WRKSRC}/README.mod_comb
-	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.html ${WRKSRC}/doc/contrib/
-.endif
-
-.if defined(WITH_TDS)
-	 @${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib/
 .endif
 
 post-patch:
