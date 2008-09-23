@@ -6,20 +6,11 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.2rc1
-PORTREVISION=	2
+DISTVERSION=	1.3.20080920
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
-		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
-		ftp://ftp.dataguard.no/ftp/pub/proftpd/distrib/source/ \
-		ftp://spirit.bentel.sk/mirrors/Proftpd/distrib/source/ \
-		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
-		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
-		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
-		CENKES:clam \
-		http://www.smartftp.com/oss/proftpd/:digest \
-		http://lev.serebryakov.spb.ru/mod_comb/:comb\
-		http://labratsoftware.com/mod_sql_tds/:sql_tds \
+MASTER_SITES=	http://www.alaskaparadise.com/freebsd/ \
+		LOCAL/beech \
+		LOCAL/beech:clam \
 		LOCAL/beech:digest \
 		LOCAL/beech:comb \
 		LOCAL/beech:sql_tds
@@ -93,8 +84,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		UNIQUE "Include mod_unique_id" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
-		COMB "Include mod_comb (multistream upload)" off \
-		CODECONV "Use charset conversion (mod_codeconv)" off
+		COMB "Include mod_comb (multistream upload)" off
 
 MODULES?=
 LIBDIRS?=
@@ -247,14 +237,18 @@ MODULES:=${MODULES}:mod_unique_id
 .endif
 
 .if defined(WITH_CLAMAV)
-#http://www.uglyboxindustries.com/mod_clamav_new.c
-DISTFILES+=	mod_clamav-0.5.1.tar.bz2:clam
-EXTRACT_ONLY+=	mod_clamav-0.5.1.tar.bz2
+#http://www.thrallingpenguin.com/resources/mod_clamav-0.10.tar.bz2
+DISTFILES+=	mod_clamav-0.10.tar.bz2:clam
+EXTRACT_ONLY+=	mod_clamav-0.10.tar.bz2
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
 LIB_DEPENDS+=	clamav.5:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB=	CLAMAV=""
+.else
+PLIST_SUB=	CLAMAV="@comment "
 .endif
 
 .if defined(WITH_DIGEST)
@@ -282,15 +276,6 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
 .endif
 
-.if defined(WITH_CODECONV)
-USE_ICONV=	YES
-MODULES:=${MODULES}:mod_codeconv
-INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-sendfile
-PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
-.endif
-
 # mod_ifsession should be the last item in the modules list
 .if !defined(WITHOUT_IFSESSION)
 MODULES:=${MODULES}:mod_ifsession
@@ -315,7 +300,7 @@ MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-extract:
 .if defined(WITH_CLAMAV)
-	@${MV} ${WRKDIR}/mod_clamav_new.c ${WRKSRC}/modules/mod_clamav.c
+	@${CP} ${WRKDIR}/mod_clamav-0.10/mod_clamav.* ${WRKSRC}/contrib
 .endif
 .if defined(WITH_DIGEST)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
@@ -351,7 +336,7 @@ post-configure:
 		${WRKSRC}/utils/ftpcount.1
 
 pre-install:
-	@cd ${LOCALBASE}/lib && ${INSTALL} -d pkgconfig
+	@cd ${PREFIX}/lib && ${INSTALL} -d pkgconfig
 
 post-install:
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
@@ -370,7 +355,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
 .endif
-	@cd ${LOCALBASE}/lib/pkgconfig && ${MV} proftpd.pc ${LOCALBASE}/libdata/pkgconfig
-	@${RM} -r ${LOCALBASE}/lib/pkgconfig
+	@cd ${PREFIX}/lib/pkgconfig && ${MV} proftpd.pc ${PREFIX}/libdata/pkgconfig
+	@${RM} -r ${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.post.mk>
