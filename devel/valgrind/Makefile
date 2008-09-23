@@ -44,7 +44,7 @@ PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7="@comment "
 .endif
 
-PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'
+PROCFS!=	if test -r /proc/curproc/status; then echo "procfs"; else echo ""; fi
 
 pre-everything::
 
