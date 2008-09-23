@@ -8,24 +8,23 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.3.19
+PORTVERSION=	0.3.21
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Direct connect interface library for valknut
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15 automake:110
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	libxml2
 
 post-extract:
 	${CHMOD} 0755 ${WRKSRC}/admin/install-sh
