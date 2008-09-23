@@ -566,6 +566,7 @@
     SUBDIR += pear-File_HtAccess
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-File_SMBPasswd
+    SUBDIR += pear-HTML_Crypt
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Text_Password
