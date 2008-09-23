@@ -7,7 +7,7 @@
 
 PORTNAME=	meta
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	# Empty
 DISTFILES=	# None
@@ -20,6 +20,7 @@ LHORDEDIR?=	www/horde
 
 OPTIONS=	ANSEL "Photo Gallery" off	\
 		CHORA "CVS Web Viewer" off	\
+		DIMP "Dynamic Imp" off	\
 		GOLLEM "Web-Based File Manager" off	\
 		HERMES "Time Tracking Application" off	\
 		HPASSWD "Password Changing Module" off	\
@@ -46,6 +47,11 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/horde-imp
 
 .if defined(WITH_MIMP)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/mimp/index.php:${PORTSDIR}/mail/horde-mimp
+.endif
+
+.if defined(WITH_DIMP)
+RUN_DEPENDS+=
+${LOCALBASE}/${LHORDEDIR}/dimp/compose.php:${PORTSDIR}/mail/horde-dimp
 .endif
 
 .if !defined(WITHOUT_INGO)
