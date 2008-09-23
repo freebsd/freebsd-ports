@@ -7,7 +7,7 @@
 
 PORTNAME=	cfs
 PORTVERSION=	1.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.crypto.com/software/
 
@@ -24,12 +24,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	CFSD_BOOTSTRAP=${CFSD_BOOTSTRAP}
 PLIST_SUB=	CFSD_BOOTSTRAP=${CFSD_BOOTSTRAP}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's/^\.TH SSH/.TH CFSSH/' ${WRKSRC}/cfssh.1
 
@@ -45,4 +39,4 @@ do-install:
 	${INSTALL} -d ${_BINOWNGRP} -m 0 ${CFSD_BOOTSTRAP}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

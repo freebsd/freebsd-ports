@@ -1,9 +1,16 @@
-
 $FreeBSD$
 
---- cfs_fh.c.orig
-+++ cfs_fh.c
-@@ -61,7 +61,7 @@
+--- cfs_fh.c.orig	Thu May  3 11:24:59 2001
++++ cfs_fh.c	Sat Nov 17 19:43:36 2007
+@@ -43,6 +43,7 @@
+ #ifdef NO_UTIMES
+ #include <utime.h>
+ #endif
++#include <string.h>
+ 
+ #include "nfsproto.h"
+ #include "admproto.h"
+@@ -61,7 +62,7 @@
  }
  #endif
  
@@ -12,7 +19,7 @@ $FreeBSD$
  int inst = 0;/* starting point */
  instance *instances[NINSTANCES];
  
-@@ -135,7 +135,6 @@
+@@ -135,7 +136,6 @@
  	int headlen;
  	int writemore=0;
  	struct stat sb;
@@ -20,7 +27,7 @@ $FreeBSD$
  	char buf[8216];	/* big enough, may not even need it */
  
  	/* first, normalize to the proper boundries */
-@@ -763,7 +762,7 @@
+@@ -763,7 +763,7 @@
  	char vect[9];
  	union{
  		u_char ch[9];
@@ -29,7 +36,7 @@ $FreeBSD$
  	} buf;
  	char linkname[NFS_MAXPATHLEN+1];
  	
-@@ -792,8 +791,8 @@
+@@ -792,8 +792,8 @@
  		/*
  		sprintf((char *)buf,"%08x",(u_long)sb.st_ino+(u_long)sb.st_ctime);
  		*/
@@ -40,7 +47,7 @@ $FreeBSD$
  		q_block_cipher("fixedkey",&buf,1);
  		/* des is just used here as a hash fn to spread the bits */
  		/* since we only use 32 bits of the result, its a nonperfect */
-@@ -908,7 +907,7 @@
+@@ -908,7 +908,7 @@
  			f->name=NULL;
  		}
  	} else {
@@ -49,7 +56,7 @@ $FreeBSD$
  			fprintf(stderr,"cfsd: out of memory\n");
  			cfserrno=NFSERR_STALE;	/* bad news */
  			return -2;
-@@ -1146,7 +1145,7 @@
+@@ -1146,7 +1146,7 @@
     break anything */
  struct dirent *
  rootrd(cookie)
@@ -58,7 +65,7 @@ $FreeBSD$
  {
  	static struct dirent d;
  
-@@ -1198,7 +1197,7 @@
+@@ -1198,7 +1198,7 @@
  #endif /* SHORTLINKS */
  					)) == NULL) {
  				if ((f=(cfs_fileid *)
