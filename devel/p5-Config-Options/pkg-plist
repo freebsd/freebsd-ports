@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Config/Options.pm
+%%SITE_PERL%%/Config/Options/Threaded.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Options/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Options
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config/Options
+@dirrmtry %%SITE_PERL%%/Config
