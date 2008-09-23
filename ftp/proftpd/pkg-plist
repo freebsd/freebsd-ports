@@ -59,7 +59,10 @@ include/proftpd/trace.h
 include/proftpd/var.h
 include/proftpd/version.h
 include/proftpd/xferlog.h
+libdata/pkgconfig/proftpd.pc
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
 @dirrm include/proftpd
+@dirrmtry lib/proftpd 
+@dirrmtry libdata/pkgconfig
