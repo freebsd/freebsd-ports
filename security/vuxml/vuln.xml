@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="150e4548-8950-11dd-a6fe-0030843d3802">
+    <topic>phpmyadmin -- Cross-Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.11.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A secunia reports:</p>
+	<blockquote cite="http://secunia.com/Advisories/31974/">
+	  <p>An error exists in the "PMA_escapeJsString()" function in
+	    libraries/js_escape.lib.php, which can be exploited to bypass certain
+	    filters and execute arbitrary HTML and script code in a user's browser
+	    session in context of an affected site when e.g. Microsoft Internet
+	    Explorer is used.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/Advisories/31974/</url>
+    </references>
+    <dates>
+      <discovery>2008-09-23</discovery>
+      <entry>2008-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc9e73b2-8685-11dd-bb64-0030843d3802">
     <topic>gallery -- multiple vulnerabilities</topic>
     <affects>
