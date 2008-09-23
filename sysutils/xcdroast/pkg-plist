@@ -43,7 +43,9 @@ lib/xcdroast-0.98/sound/test.wav
 %%NLS%%share/locale/sv/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xcdroast.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xcdroast.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98/icons

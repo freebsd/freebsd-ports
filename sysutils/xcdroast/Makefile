@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	xcdroast
-PORTVERSION=	0.98.a.15
-PORTREVISION=	9
+PORTVERSION=	0.98.a.16
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.xcdroast.org/download/:src \
-		http://www.xcdroast.org/xcdr098/patches/:patch
+		http://www.xcdroast.org/download/
 MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src new_configure.tar.gz:patch
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
-OPTIONS=	GTK2	"Enable GTK2 support"		off \
+OPTIONS=	GTK2	"Enable GTK2 support"		on  \
 		NONROOT	"Use xcdroast w/o being root"	off \
 		NLS	"Native language support"	on
 
 USE_GETTEXT=	yes
-USE_ICONV=	yes
 USE_CDRTOOLS=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
+USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
@@ -50,7 +47,6 @@ PLIST_SUB=	NLS=""
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=--enable-gtk2
 USE_GNOME=	gtk20
-PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 .else
 CONFIGURE_ARGS+=--disable-gtk2
 USE_GNOME=	gdkpixbuf
@@ -61,6 +57,10 @@ CONFIGURE_ARGS+=--enable-nonrootmode
 .else
 CONFIGURE_ARGS+=--disable-nonrootmode
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ver->minor = ver->patch|& = ver->branch|g' \
+		${WRKSRC}/src/xtools.c
 
 pre-everything::
 .if defined(WITH_NONROOT)
@@ -73,22 +73,6 @@ pre-everything::
 	@${ECHO_MSG} "         the non-root mode inside the application!"
 	@${ECHO_MSG}
 	sleep 5
-.endif
-
-pre-patch:
-	@${CP} ${WRKDIR}/configure ${WRKSRC}
-	@${TOUCH} ${WRKSRC}/stamp-h.in
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gint in, out|gsize in, out|g' \
-		${WRKSRC}/src/xtools.c
-.if defined(WITH_GTK2)
-	@cd ${WRKSRC}/po ; for FILE in *.po ; do \
-		SOURCE=`${AWK} -F'[=\\\\\\\\]' '/charset=/ { print $$2 }' $$FILE` ; \
-		${LOCALBASE}/bin/iconv -f $$SOURCE -t UTF-8 $$FILE > $$FILE.bak ; \
-		${MV} $$FILE.bak $$FILE ; \
-		${REINPLACE_CMD} -e 's|charset='$$SOURCE'|charset=UTF-8|g' $$FILE ; \
-	done
 .endif
 
 .include <bsd.port.post.mk>
