@@ -56,6 +56,8 @@
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/et_EE/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
@@ -89,6 +91,7 @@
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/hu_HU.po
@@ -118,6 +121,8 @@
 %%HORDIR%%/scripts/ingo-postfix-policyd
 %%HORDIR%%/scripts/sql/ingo.oci8.sql
 %%HORDIR%%/scripts/sql/ingo.sql
+%%HORDIR%%/scripts/sql/ingo.xml
+%%HORDIR%%/scripts/upgrades/1.2_to_1.2.1.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/scripts/upgrades/convert_imp_filters.php
 %%HORDIR%%/scripts/upgrades/convert_prefs_to_sql.php
@@ -239,6 +244,8 @@
 @dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/et_EE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
