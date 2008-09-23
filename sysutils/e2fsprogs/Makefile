@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.41.0
+PORTVERSION=	1.41.1
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
 		--with-ccopts='${CFLAGS}' \
 		--with-root-prefix='${PREFIX}'
 CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
-		-I${LOCALBASE}/include'
+		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
 OPTIONS=	NLS "Enable national language support" on
@@ -42,6 +42,8 @@ post-extract:
 	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+
+PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
@@ -107,9 +109,7 @@ post-install:
 	${LN} ${PREFIX}/sbin/e2fsck /sbin/ 2>/dev/null || \
 		${INSTALL_PROGRAM} ${PREFIX}/sbin/e2fsck /sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${PREFIX}/man/man8/
-	[ -f ${PREFIX}/etc/mke2fs.conf ] || \
-		${CP} -p ${PREFIX}/etc/mke2fs.conf.dist \
-			${PREFIX}/etc/mke2fs.conf
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG} ; ${CAT} ${PKGMESSAGE} ; ${ECHO_MSG}
 .endif
 

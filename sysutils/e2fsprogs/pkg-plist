@@ -1,9 +1,6 @@
 bin/chattr
 bin/lsattr
-@unexec if cmp -s %D/etc/mke2fs.conf %D/etc/mke2fs.conf.dist ; then rm -f %D/etc/mke2fs.conf ; else echo "If and only if you are deleting e2fsprogs forever," ; echo "remember to delete %D/etc/mke2fs.conf." ; fi
-@unexec if test -f %D/etc/e2fsck.conf ; then echo "If and only if you are deleting e2fsprogs forever," ; echo "remember to delete %D/etc/e2fsck.conf, too." ; fi
 etc/mke2fs.conf.dist
-@exec test -f %D/etc/mke2fs.conf || cp -p %D/etc/mke2fs.conf.dist %D/etc/mke2fs.conf
 sbin/badblocks
 sbin/blkid
 sbin/debugfs
@@ -35,10 +32,11 @@ sbin/tune2fs
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/e2fsprogs.mo
-%%NLS%%@unexec for i in ca cs de es fr it nl pl sv tr vi ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
+%%NLS%%@unexec for i in ca cs de es fr id it nl pl sv tr vi ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done

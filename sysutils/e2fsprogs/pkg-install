@@ -1,0 +1,57 @@
+#!/bin/sh
+set -e
+
+PKGNAME="$1"
+MODE="$2" # PRE-INSTALL, POST-INSTALL, DEINSTALL, POST-DEINSTALL
+
+case "$MODE" in
+POST-INSTALL)
+	if test -f ${PKG_PREFIX}/etc/mke2fs.conf; then
+		if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+						${PKG_PREFIX}/etc/mke2fs.conf; then
+			true
+		else
+			if grep -q ext4dev ${PKG_PREFIX}/etc/mke2fs.conf ; then
+				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+					${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new
+				echo "==========================================================================="
+				echo "Warning: installing mke2fs.conf in ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-new"
+				echo "Check to see if you need to update your ${PKG_PREFIX}/etc/mke2fs.conf"
+				echo "==========================================================================="
+			else
+				mv ${PKG_PREFIX}/etc/mke2fs.conf \
+				   ${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old
+				cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+					${PKG_PREFIX}/etc/mke2fs.conf
+				echo "==========================================================================="
+				echo "Your mke2fs.conf is too old.  Backing up old version in"
+				echo "${PKG_PREFIX}/etc/mke2fs.conf.e2fsprogs-old.  Please check to see"
+				echo "if you have any local customizations that you wish to preserve."
+				echo "==========================================================================="
+			fi
+			echo " "
+		fi
+	else
+		cp -f -p ${PKG_PREFIX}/etc/mke2fs.conf.dist \
+			${PKG_PREFIX}/etc/mke2fs.conf
+	fi
+	;;
+DEINSTALL)
+	if cmp -s ${PKG_PREFIX}/etc/mke2fs.conf \
+		${PKG_PREFIX}/etc/mke2fs.conf.dist
+	then
+		rm -f ${PKG_PREFIX}/etc/mke2fs.conf
+	else
+		echo "If and only if you are deleting e2fsprogs forever,"
+		echo "remember to delete ${PKG_PREFIX}/etc/mke2fs.conf."
+	fi
+	if test -f ${PKG_PREFIX}/etc/e2fsck.conf
+	then
+		echo "If and only if you are deleting e2fsprogs forever,"
+		echo "remember to delete ${PKG_PREFIX}/etc/e2fsck.conf."
+	fi
+	;;
+PRE-INSTALL|POST-DEINSTALL)
+	true
+	;;
+esac

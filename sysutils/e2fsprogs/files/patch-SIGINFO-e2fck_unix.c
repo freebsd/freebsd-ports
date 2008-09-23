@@ -1,5 +1,14 @@
 --- a/e2fsck/unix.c.orig	2008-04-23 20:56:25.000000000 +0200
 +++ b/e2fsck/unix.c	2008-04-29 09:05:01.000000000 +0200
+@@ -9,8 +9,6 @@
+  * %End-Header%
+  */
+ 
+-#define _XOPEN_SOURCE 600 /* for inclusion of sa_handler in Solaris */
+-
+ #include <stdio.h>
+ #ifdef HAVE_STDLIB_H
+ #include <stdlib.h>
 @@ -462,6 +462,24 @@
  	return 0;
  }
