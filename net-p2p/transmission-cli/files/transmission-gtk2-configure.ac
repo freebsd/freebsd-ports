@@ -1,5 +1,5 @@
---- configure.ac.orig	2008-07-14 14:20:59.000000000 -0500
-+++ configure.ac	2008-07-14 14:28:56.000000000 -0500
+--- configure.ac.orig	2008-09-17 12:23:52.000000000 -0500
++++ configure.ac	2008-09-17 12:28:32.000000000 -0500
 @@ -10,20 +10,16 @@
  AM_INIT_AUTOMAKE([1.9 tar-ustar])
  AC_PROG_LIBTOOL
@@ -21,17 +21,16 @@
  AC_SUBST(LIBNOTIFY_MINIMUM)
  AC_SUBST(DBUS_GLIB_MINIMUM)
  
-@@ -44,7 +40,8 @@
+@@ -44,7 +40,7 @@
  
  AC_SEARCH_LIBS([socket], [socket net])
  AC_SEARCH_LIBS([gethostbyname], [nsl bind])
--PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM])
-+AC_CHECK_LIB([crypto],[CRYPTO_new_ex_data])
-+AC_CHECK_LIB([ssl],[SSL_library_init])
+-PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM], , [CHECK_SSL()])
++CHECK_SSL()
  PKG_CHECK_MODULES(LIBCURL, [libcurl >= $CURL_MINIMUM])
  
  AC_SYS_LARGEFILE
-@@ -87,20 +84,14 @@
+@@ -87,20 +83,14 @@
                     gthread-2.0 >= $GLIB_MINIMUM],
                    [have_gtk=yes],
                    [have_gtk=no])
@@ -56,7 +55,7 @@
  fi
  AM_CONDITIONAL([BUILD_GTK],[test "x$build_gtk" = "xyes"])
  AC_SUBST(GTK_LIBS)
-@@ -158,152 +149,14 @@
+@@ -158,152 +148,14 @@
  
  dnl ----------------------------------------------------------------------------
  dnl
@@ -209,7 +208,7 @@
                   gtk/Makefile
                   gtk/icons/Makefile
                   po/Makefile.in])
-@@ -317,14 +170,9 @@
+@@ -317,14 +169,9 @@
  
          Source code location:       ${srcdir}
          Compiler:                   ${CXX}
@@ -224,9 +223,9 @@
 -        Build wxWidgets client:     ${build_wx}
  
  "
---- Makefile.am.orig	2008-07-14 14:31:57.000000000 -0500
-+++ Makefile.am	2008-07-14 14:33:13.000000000 -0500
-@@ -1,104 +1,6 @@
+--- Makefile.am.orig	2008-09-17 12:23:56.000000000 -0500
++++ Makefile.am	2008-09-17 12:29:33.000000000 -0500
+@@ -1,103 +1,6 @@
  ACLOCAL_AMFLAGS = -I m4
  
 -if BUILD_BEOS
@@ -291,7 +290,6 @@
 -
 -clutch_jquerydir = $(clutch_jsdir)/jquery
 -clutch_jquery_DATA = \
--  web/javascript/jquery \
 -  web/javascript/jquery/json.min.js \
 -  web/javascript/jquery/jquery.contextmenu.min.js \
 -  web/javascript/jquery/jquery.min.js \

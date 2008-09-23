@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -25,6 +25,7 @@ GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/t
 
 USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
 
 MAN1?=		transmissioncli.1
 .endif
@@ -43,8 +44,7 @@ general-patch:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = . sample.*|SUBDIRS = .|g' \
 		${WRKSRC}/third-party/libevent/Makefile.*
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(OPENSSL_CFLAGS)||g ; s|$$(OPENSSL_LIBS)||g ; \
-		s|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
+		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
 
 post-patch: general-patch
 
