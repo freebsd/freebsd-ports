@@ -34,6 +34,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_GNOME=	atk glib20 gtk20 libxml2 pango # See above
 WANT_GSTREAMER=	yes # Can't be set after bsd.port.pre.mk
+USE_XORG=	xv
 
 OPTIONS=	ARTS	  "ARts audio system support" on \
 		GSTREAMER "GStreamer playback support" off \
