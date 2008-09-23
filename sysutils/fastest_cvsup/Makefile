@@ -9,9 +9,9 @@ PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.is-root.com/myports/
+MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Finds fastest CVSup server
 
 DISTVERSION=	0.2.8
