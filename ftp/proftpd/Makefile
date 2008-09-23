@@ -283,6 +283,8 @@ post-configure:
 		${WRKSRC}/utils/ftpcount.1
 
 post-install:
+	@${MV} ${PREFIX}/lib/pkgconfig/proftpd.pc ${PREFIX}/libdata/pkgconfig
+	@${RM} -rf ${PREFIX}/lib/pkgconfig
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
