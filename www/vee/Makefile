@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	vee
-DISTVERSION=	0.9.9-epsilon
+DISTVERSION=	0.9.9-zeta
 CATEGORIES=	www
 MASTER_SITES=	http://www.0x743.com/vee/ CENKES
 # Also here: http://code.google.com/p/vee/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	estrabd@gmail.com
 COMMENT=	Tiny CLI blogging tool
 
 NO_BUILD=	yes
