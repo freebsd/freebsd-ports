@@ -491,6 +491,7 @@
     SUBDIR += p5-MP3-Info
     SUBDIR += p5-MP3-Tag
     SUBDIR += p5-MPEG-ID3v2Tag
+    SUBDIR += p5-Music-Audioscrobbler-MPD
     SUBDIR += p5-MusicBrainz-Client
     SUBDIR += p5-MusicBrainz-Queries
     SUBDIR += p5-MusicBrainz-TRM
