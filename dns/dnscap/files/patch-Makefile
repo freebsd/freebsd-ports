@@ -7,8 +7,9 @@ diff -u -r1.17 Makefile
  #PORTLIBS= -lhplx
  
  # uncomment these if you're building on FreeBSD or where fp_nquery() is in libc
-+HAVE_BINDLIB= 9
-+BINDLIB= -lbind9
- #PORTCFLAGS=
++HAVE_BINDLIB=9
++BINDLIB=
+-#PORTCFLAGS=
++PORTCFLAGS=-I.
  #PORTLDFLAGS=
  #PORTLIBS=

@@ -7,6 +7,7 @@
 
 PORTNAME=	dnscap
 DISTVERSION=	1.0-RC6
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
@@ -19,6 +20,10 @@ WRKSRC=		${WRKDIR}/dnscap/
 
 MAN1=		dnscap.1
 PLIST_FILES=	bin/dnscap
+
+post-extract:
+	${MKDIR} ${WRKSRC}/isc
+	${CP} ${FILESDIR}/*.h ${WRKSRC}/isc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnscap ${PREFIX}/bin
