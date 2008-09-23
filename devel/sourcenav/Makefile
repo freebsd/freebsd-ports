@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sourcenav
-DISTVERSION=	5.2b2
-PORTREVISION=	1
+DISTVERSION=	6.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -37,6 +36,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-fwritable-strings||g' \
 	    ${WRKSRC}/snavigator/configure \
 	    ${WRKSRC}/tix/unix/tk8.3/Makefile.in
+	${REINPLACE_CMD} -e 's|/bin/sed|/usr/bin/sed|g' \
+	    ${WRKSRC}/db4/PORT/libtool
 
 post-install:
 	@${ECHO_CMD}
