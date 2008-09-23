@@ -16,9 +16,10 @@ name=xinetd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/xinetd > /dev/null 2>&1
+pidfile=/var/run/xinetd.pid
 
 xinetd_enable=${xinetd_enable:-"NO"}
-xinetd_flags=${xinetd_flags:-"-f %%PREFIX%%/etc/xinetd.conf"}
+xinetd_flags=${xinetd_flags:-"-f %%PREFIX%%/etc/xinetd.conf -pidfile ${pidfile}"}
 
 load_rc_config $name
 run_rc_command "$1"
