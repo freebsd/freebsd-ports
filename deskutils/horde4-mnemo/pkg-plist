@@ -33,6 +33,8 @@
 %%HORDIR%%/locale/en_US/help.xml
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/mnemo.mo
 %%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/mnemo.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/mnemo.mo
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/mnemo.mo
@@ -74,6 +76,7 @@
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/hu_HU.po
@@ -98,6 +101,7 @@
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/pref_api.php
 %%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/import_text_note.php
 %%HORDIR%%/scripts/import_vnotes.php
 %%HORDIR%%/scripts/sql/mnemo.mssql.sql
 %%HORDIR%%/scripts/sql/mnemo.oci8.sql
@@ -106,6 +110,7 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsq.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.2.1.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/common-header.inc
@@ -219,6 +224,8 @@
 @dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/es_ES
 @dirrm %%HORDIR%%/locale/en_US
