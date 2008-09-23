@@ -963,6 +963,8 @@
     SUBDIR += sc-aspell
     SUBDIR += scew
     SUBDIR += scim
+    SUBDIR += scim-bridge
+    SUBDIR += scim-bridge-qt4
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-imengine
     SUBDIR += scim-kmfl-sil-ipa-unicode5
