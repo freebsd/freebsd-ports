@@ -505,6 +505,7 @@
     SUBDIR += pyzor
     SUBDIR += qar-bufo
     SUBDIR += qconfirm
+    SUBDIR += qgmailnotifier
     SUBDIR += qmail
     SUBDIR += qmail-activedir
     SUBDIR += qmail-auditor
