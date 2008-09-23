@@ -64,7 +64,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://bugs.proftpd.org/show_bug.cgi?id=3115</url>
     </references>
     <dates>
-      <discovery>2008-09-FIXME</discovery>
+      <discovery>2008-09-22</discovery>
       <entry>2008-09-23</entry>
     </dates>
   </vuln>
