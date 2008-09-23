@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.13
+PORTVERSION=	3.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,8 @@ PERL_CONFIGURE=	yes
 MAN1=		prove.1
 MAN3=		App::Prove.3 \
 		App::Prove::State.3 \
+		App::Prove::State::Result.3 \
+		App::Prove::State::Result::Test.3\
 		TAP::Base.3 \
 		TAP::Formatter::Color.3 \
 		TAP::Formatter::Console.3 \
