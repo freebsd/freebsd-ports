@@ -6,28 +6,32 @@
 #
 
 PORTNAME=	traindirector
-PORTVERSION=	1.19c
-PORTREVISION=	4
+PORTVERSION=	3.5
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/119c/
-DISTNAME=	traindir-${PORTVERSION}-src
+MASTER_SITES=	http://www.backerstreet.com/traindir/
+DISTNAME=	tdir35src
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
 
-WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
+NO_WRKSUBDIR=	yes
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
-USE_BZIP2=	yes
+USE_GNOME=	gtk20
+USE_ZIP=	yes
 
-post-extract:
-.for file in Makefile field.c loadsave.c run.c setup_trdir.sh tgraph.c track.c track1.c trsim.c
-	@${TR} -d '\015' < ${WRKSRC}/${file} > ${WRKDIR}/xxxx
-	@${MV} ${WRKDIR}/xxxx ${WRKSRC}/${file}
-.endfor
+USE_WX=		2.8
+WX_COMPS=	wx
+WX_UNICODE=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e 's#PREFIX#${PREFIX}#' ${WRKSRC}/setup_trdir.sh
+DESKTOP_ENTRIES="Train Director" "${COMMENT}" "" "traindir3" \
+		"Game;Simulation;StrategyGame;" false
+
+PLIST_FILES=	bin/traindir3
+
+MAKEFILE=	Makefile.fc9
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/traindir3 ${PREFIX}/bin
 
 .include <bsd.port.mk>
