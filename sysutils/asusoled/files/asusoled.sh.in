@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: asusoled
+# REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+#
+# Add the following lines to /etc/rc.conf to enable the ASUS OLED display:
+#
+# asusoled_enable="YES"
+#
+
+asusoled_enable=${asusoled_enable-"NO"}
+asusoled_flags=${asusoled_flags-"-f %%PREFIX%%/share/asusoled/asus.png"}
+asusoled_command=${asusoled_command-""}
+
+. /etc/rc.subr
+
+name=asusoled
+rcvar=`set_rcvar`
+
+start_cmd=asusoled_start
+stop_cmd=asusoled_stop
+
+asusoled_bin="%%PREFIX%%/sbin/asusoled"
+asusoled_pidfile="/var/run/${name}.pid"
+
+asusoled_start() {
+    if checkyesno asusoled_enable
+    then
+	echo "Starting asusoled."
+	${asusoled_bin} -e || exit 1
+	if test ! -z "${asusoled_command}"
+	then
+	    ${asusoled_bin} ${asusoled_flags} -c "${asusoled_command}"
+	else
+	    ${asusoled_bin} ${asusoled_flags}
+	fi
+    fi
+}
+
+asusoled_stop() {
+    if checkyesno asusoled_enable
+    then
+	echo "Stopping asusoled."
+	test -f ${asusoled_pidfile} &&
+	    ${asusoled_bin} -k -p ${asusoled_pidfile}
+	${asusoled_bin} -d
+    fi
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

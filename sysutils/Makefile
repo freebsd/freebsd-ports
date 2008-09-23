@@ -37,6 +37,7 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asr-utils
+    SUBDIR += asusoled
     SUBDIR += ataidle
     SUBDIR += atitvout
     SUBDIR += automounter

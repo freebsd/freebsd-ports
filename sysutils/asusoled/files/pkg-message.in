@@ -1,0 +1,46 @@
+Please note this utility requires ugen(4).  Try:
+
+	kldstat -m uhub/ugen
+
+If it is loaded, you will see something like the following:
+
+	Id  Refs Name
+	 31    1 uhub/ugen
+
+If it is not loaded, then try:
+
+	kldload ugen
+
+Unfortunately early versions of uhid(4) conflict with ASUS LCM.  If this
+utility does not work for you, try unloading it first:
+
+	kldunload uhid
+
+If the driver is compiled into kernel, you cannot unload it, however.
+If so, you have to recompile kernel without the uhid support or to fix it
+for yourself.  If you don't need uhid, just comment out "device uhid" line
+from your kernel configuration file and recompile kernel.  If you need uhid,
+you have to touch two files:
+
+http://docs.freebsd.org/cgi/mid.cgi?200803141559.m2EFxWs1074538
+
+To build custom kernel, please read "Configuring the FreeBSD Kernel" section
+from the Handbook:
+
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig.html
+
+Also, there are two example rcNG scripts, i.e., asusoled and oled_clock.
+You can enable 'asusoled' by adding:
+
+	asusoled_enable="YES"
+
+in your /etc/rc.conf.  If you just want to test it, run:
+
+	%%PREFIX%%/etc/rc.d/asusoled forcestart
+
+You will see a black ASUS logo on white background from the display.
+Similarly, you can enable or test 'oled_clock', of course. :-)
+
+Enjoy!
+
+Jung-uk Kim <jkim@FreeBSD.org>
