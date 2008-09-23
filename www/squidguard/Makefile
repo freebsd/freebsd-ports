@@ -7,6 +7,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/
 
@@ -71,7 +72,6 @@ post-build:
 	@${MV} -f ${_DATADIR}/blacklists/README ${WRKDIR}/README.blacklists
 	@${MV} -f ${_DATADIR}/blacklists/* ${_DATADIR}/
 	@${RM} -r ${_DATADIR}/blacklists
-	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${_DATADIR}
 .endif
 
 pre-install:
@@ -82,6 +82,7 @@ pre-install:
 	@${ECHO_MSG} "===>   Installing blacklists"
 	@${MKDIR} ${DATADIR}
 	@${CP} -Rpf ${_DATADIR}/* ${DATADIR}/
+	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${DATADIR}
 	@${CHMOD} -R 550 ${DATADIR}
 	@${ECHO_MSG} "       -> Blacklists installed in: ${DATADIR}"
 .else
