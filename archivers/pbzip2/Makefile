@@ -9,17 +9,18 @@
 PORTNAME=	pbzip2
 PORTVERSION=	1.0.2.0.2
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 
-MAN1=	pbzip2.1
-MLINKS=	pbzip2.1 pbunzip2.1
+MAN1=		pbzip2.1
+MLINKS=		pbzip2.1 pbunzip2.1
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -27,8 +28,6 @@ post-patch:
 		s,-O3,${CXXFLAGS},; \
 		s,^CC,#CC,; \
 		s,CC,CXX,' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,PRIu64 "Lu",PRIu64 Lu,;s,"PRIu64",#PRIu64,g' \
-		${WRKSRC}/pbzip2.cpp
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
