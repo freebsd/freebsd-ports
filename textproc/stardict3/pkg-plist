@@ -152,11 +152,14 @@ lib/stardict/plugins/stardict_qqwry.la
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrm lib/stardict/plugins
+@dirrm lib/stardict
 @dirrm share/stardict/sounds
 @dirrm share/stardict/pixmaps
 @dirrm share/stardict/treedict
 @dirrm share/stardict/data/advertisement
 @dirrmtry share/stardict/data
+@dirrmtry share/stardict/dic
 @dirrmtry share/stardict
 %%GNOME%%@dirrm share/omf/stardict
 %%GNOME%%@dirrm share/gnome/help/stardict/C/figures
