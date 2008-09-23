@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Music/Audioscrobbler/Submit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler/Submit/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler/Submit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music
+@dirrmtry %%SITE_PERL%%/Music/Audioscrobbler
+@dirrmtry %%SITE_PERL%%/Music
