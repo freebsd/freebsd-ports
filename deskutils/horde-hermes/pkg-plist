@@ -71,6 +71,7 @@
 %%HORDIR%%/scripts/upgrades/2007-04-20_drop_invoicing.sql
 %%HORDIR%%/scripts/upgrades/2007-04-25_add_jobtype_rate.sql
 %%HORDIR%%/scripts/upgrades/2007-10-17_add_jobtype_billable.sql
+%%HORDIR%%/scripts/upgrades/2008-07-01_deliverables_index.sql
 %%HORDIR%%/search.php
 %%HORDIR%%/start.php
 %%HORDIR%%/templates/common-header.inc
