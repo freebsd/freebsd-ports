@@ -103,12 +103,14 @@
 %%HORDIR%%/po/whups.pot
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
-%%HORDIR%%/query.php
+%%HORDIR%%/query/.htaccess
+%%HORDIR%%/query/index.php
+%%HORDIR%%/query/rss.php
+%%HORDIR%%/query/run.php
 %%HORDIR%%/queue/.htaccess
 %%HORDIR%%/queue/index.php
 %%HORDIR%%/queue/rss.php
 %%HORDIR%%/reports.php
-%%HORDIR%%/runquery.php
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/bugzilla-import.php
 %%HORDIR%%/scripts/mail-filter.php
@@ -139,8 +141,10 @@
 %%HORDIR%%/scripts/upgrades/2008-06-13_add_queue_emails.sql
 %%HORDIR%%/scripts/upgrades/2008-06-17_fix_varchar_lengths.sql
 %%HORDIR%%/scripts/upgrades/2008-06-24_add_replies.sql
+%%HORDIR%%/scripts/upgrades/2008-07-10_add_query_slugs.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
+%%HORDIR%%/search/rss.php
 %%HORDIR%%/templates/.htaccess
 %%HORDIR%%/templates/admin/mtmatrix.inc
 %%HORDIR%%/templates/common-header.inc
@@ -151,8 +155,7 @@
 %%HORDIR%%/templates/renderer/query/render.inc
 %%HORDIR%%/templates/renderer/querysetcurrenttype.inc
 %%HORDIR%%/templates/reports/stats.inc
-%%HORDIR%%/templates/rss/queue.rss
-%%HORDIR%%/templates/rss/ticket.rss
+%%HORDIR%%/templates/rss/items.rss
 %%HORDIR%%/templates/ticket/watchers.inc
 %%HORDIR%%/templates/view/results.inc
 %%HORDIR%%/templates/view/savedqueries.inc
@@ -206,10 +209,12 @@
 @dirrm %%HORDIR%%/templates/prefs
 @dirrm %%HORDIR%%/templates/admin
 @dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/search
 @dirrm %%HORDIR%%/scripts/upgrades
 @dirrm %%HORDIR%%/scripts/sql
 @dirrm %%HORDIR%%/scripts
 @dirrm %%HORDIR%%/queue
+@dirrm %%HORDIR%%/query
 @dirrm %%HORDIR%%/po
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
