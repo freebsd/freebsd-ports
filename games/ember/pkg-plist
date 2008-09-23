@@ -45,6 +45,7 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/Compass.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ConsoleWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Debug.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityBrowser.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/EntityCreator.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityEditor.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Environment.layout
@@ -94,12 +95,14 @@ share/ember/media/shared/scripting/lua/Chat.lua
 share/ember/media/shared/scripting/lua/Compass.lua
 share/ember/media/shared/scripting/lua/Debug.lua
 share/ember/media/shared/scripting/lua/EntityBrowser.lua
+share/ember/media/shared/scripting/lua/EntityCreator.lua
 share/ember/media/shared/scripting/lua/EntityEditor.lua
 share/ember/media/shared/scripting/lua/EntityPicker.lua
 share/ember/media/shared/scripting/lua/Environment.lua
 share/ember/media/shared/scripting/lua/Give.lua
 share/ember/media/shared/scripting/lua/IndirectRenderingChecker.lua
 share/ember/media/shared/scripting/lua/Inventory.lua
+share/ember/media/shared/scripting/lua/Math.lua
 share/ember/media/shared/scripting/lua/MainIconBar.lua
 share/ember/media/shared/scripting/lua/ModelEdit.lua
 share/ember/media/shared/scripting/lua/Mover.lua
@@ -110,6 +113,8 @@ share/ember/media/shared/scripting/lua/ServerBrowser.lua
 share/ember/media/shared/scripting/lua/Status.lua
 share/ember/media/shared/scripting/lua/Tasks.lua
 share/ember/media/shared/scripting/lua/TerrainEditor.lua
+share/ember/media/user/entityrecipes/boulder.entityrecipe
+share/ember/media/user/entityrecipes/test.entityrecipe
 share/ember/media/user/modeldefinitions/acorn.modeldef
 share/ember/media/user/modeldefinitions/apple.modeldef
 share/ember/media/user/modeldefinitions/armory.modeldef
@@ -121,6 +126,7 @@ share/ember/media/user/modeldefinitions/bearded_male.modeldef
 share/ember/media/user/modeldefinitions/bed.modeldef
 share/ember/media/user/modeldefinitions/birchA.modeldef
 share/ember/media/user/modeldefinitions/birchB.modeldef
+share/ember/media/user/modeldefinitions/birchC.modeldef
 share/ember/media/user/modeldefinitions/birch_mk1.modeldef
 share/ember/media/user/modeldefinitions/boat.modeldef
 share/ember/media/user/modeldefinitions/bottle.modeldef
@@ -554,6 +560,9 @@ share/ember/shared/common/3d_objects/plants/shrubs/textures/leaf_green/D.png
 share/ember/shared/common/3d_objects/plants/shrubs/textures/leaf_green/N.png
 share/ember/shared/common/3d_objects/plants/shrubs/textures/leaf_green/S.png
 share/ember/shared/common/3d_objects/plants/tree/models/Straight_up_tree/Straight_up_tree.mesh
+share/ember/shared/common/3d_objects/plants/trees/models/birch/birchC.mesh
+share/ember/shared/common/3d_objects/plants/trees/models/birch/birchA.mesh
+share/ember/shared/common/3d_objects/plants/trees/models/birch/birchB.mesh
 share/ember/shared/common/3d_objects/plants/trees/models/oak/oakA.mesh
 share/ember/shared/common/3d_objects/plants/trees/models/oak/oakB.mesh
 share/ember/shared/common/3d_objects/plants/trees/models/oak/oakC.mesh
@@ -585,6 +594,7 @@ share/ember/shared/common/3d_objects/plants/trees/textures/bark_douglas/N.png
 share/ember/shared/common/3d_objects/plants/trees/textures/bark_fir/D.png
 share/ember/shared/common/3d_objects/plants/trees/textures/bark_fir/N.png
 share/ember/shared/common/3d_objects/plants/trees/textures/bark_fir/S.png
+share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch/D.png
 share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch_bare/D.png
 share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch_bare/N.png
 share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch_bare/S.png
@@ -616,6 +626,7 @@ share/ember/shared/common/3d_objects/plants/trees/textures/tree_stub/N.png
 share/ember/shared/common/3d_objects/primitives/models/arrow.mesh
 share/ember/shared/common/3d_objects/primitives/models/axes.mesh
 share/ember/shared/common/3d_objects/primitives/models/box.mesh
+share/ember/shared/common/3d_objects/primitives/models/sphere.mesh
 share/ember/shared/common/3d_objects/structures/models/castlegrad/cg_armoury.mesh
 share/ember/shared/common/3d_objects/structures/models/castlegrad/cg_baileyA.mesh
 share/ember/shared/common/3d_objects/structures/models/castlegrad/cg_baileyB.mesh
@@ -828,6 +839,15 @@ share/ember/shared/common/3d_skeletons/bipeds/models/goblin/goblin.mesh
 share/ember/shared/common/3d_skeletons/bipeds/races/goblin/male/body/D.png
 share/ember/shared/common/3d_skeletons/bipeds/races/goblin/male/goblin.mesh
 share/ember/shared/common/3d_skeletons/bipeds/races/goblin/male/head/D.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/head/stigand/N.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/head/stigand/D.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/head/stigand/S.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/legionnaire/N.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/legionnaire/D.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/legionnaire/S.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/heavy_infantry/N.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/heavy_infantry/D.png
+share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/heavy_infantry/S.png
 share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/footwear/D.png
 share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/footwear/N.png
 share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/footwear/S.png
@@ -924,6 +944,35 @@ share/ember/shared/common/junkyard/models/skeleton/ribcage.mesh
 share/ember/shared/common/junkyard/models/skeleton/shin.mesh
 share/ember/shared/common/junkyard/models/skeleton/skull.mesh
 share/ember/shared/common/junkyard/models/skeleton/thigh.mesh
+share/ember/shared/common/resources/ogre/caelum/norecurse
+share/ember/shared/common/resources/ogre/caelum/core/CaelumPointStarfield.cg
+share/ember/shared/common/resources/ogre/caelum/core/Starfield.jpg
+share/ember/shared/common/resources/ogre/caelum/core/gpl.txt
+share/ember/shared/common/resources/ogre/caelum/core/moon.material
+share/ember/shared/common/resources/ogre/caelum/core/CloudCoverLookup.png
+share/ember/shared/common/resources/ogre/caelum/core/CaelumLayeredClouds.cg
+share/ember/shared/common/resources/ogre/caelum/core/AtmosphereDepth.png
+share/ember/shared/common/resources/ogre/caelum/core/Haze.program
+share/ember/shared/common/resources/ogre/caelum/core/EarthClearSky2.png
+share/ember/shared/common/resources/ogre/caelum/core/Contributors.txt
+share/ember/shared/common/resources/ogre/caelum/core/noise2.png
+share/ember/shared/common/resources/ogre/caelum/core/SunGradient.png
+share/ember/shared/common/resources/ogre/caelum/core/sun_disc.png
+share/ember/shared/common/resources/ogre/caelum/core/Sun.material
+share/ember/shared/common/resources/ogre/caelum/core/CaelumGroundFog.cg
+share/ember/shared/common/resources/ogre/caelum/core/CaelumSkyDome.cg
+share/ember/shared/common/resources/ogre/caelum/core/Starfield.material
+share/ember/shared/common/resources/ogre/caelum/core/moon_disc.dds
+share/ember/shared/common/resources/ogre/caelum/core/noise4.png
+share/ember/shared/common/resources/ogre/caelum/core/GroundFog.material
+share/ember/shared/common/resources/ogre/caelum/core/CaelumPhaseMoon.cg
+share/ember/shared/common/resources/ogre/caelum/core/GroundFog.program
+share/ember/shared/common/resources/ogre/caelum/core/PointStarfield.material
+share/ember/shared/common/resources/ogre/caelum/core/sphere.mesh
+share/ember/shared/common/resources/ogre/caelum/core/SkyDome.material
+share/ember/shared/common/resources/ogre/caelum/core/noise1.png
+share/ember/shared/common/resources/ogre/caelum/core/LayeredClouds.material
+share/ember/shared/common/resources/ogre/caelum/core/noise3.png
 share/ember/shared/common/resources/ogre/scripts/base.zip
 share/ember/shared/common/resources/ogre/textures/dark.png
 share/ember/shared/common/resources/ogre/textures/flare.png
@@ -933,9 +982,16 @@ share/ember/shared/common/resources/ogre/textures/placeholder.png
 share/ember/shared/common/resources/ogre/textures/smoke.png
 share/ember/shared/common/resources/ogre/textures/snow.png
 share/ember/shared/common/resources/ogre/textures/terraindecal.png
+share/ember/shared/common/soundfx/creatures/pig/snort4.wav
+share/ember/shared/common/soundfx/creatures/pig/snort3.wav
+share/ember/shared/common/soundfx/creatures/pig/snort1.wav
+share/ember/shared/common/soundfx/creatures/pig/eating.wav
+share/ember/shared/common/soundfx/creatures/pig/snort5.wav
+share/ember/shared/common/soundfx/creatures/pig/snort2.wav
+share/ember/shared/common/soundfx/creatures/footsteps/Footsteps_on_grass_sasquatch.wav
+share/ember/shared/common/soundfx/items/saw/sawing2_11khz_mono_jo.wav
 share/ember/shared/common/themes/ember/gui/compass/inner_alpha.png
 share/ember/shared/common/themes/ember/gui/compass/outer_ring.png
-share/ember/shared/common/themes/ember/gui/fonts/.directory
 share/ember/shared/common/themes/ember/gui/fonts/COPYRIGHT.TXT
 share/ember/shared/common/themes/ember/gui/fonts/Vera.ttf
 share/ember/shared/common/themes/ember/gui/fonts/VeraBd.ttf
@@ -955,12 +1011,9 @@ share/ember/shared/gui/icons/iconset_mason.png
 share/ember/shared/gui/icons/iconset_standard.png
 share/ember/shared/gui/status/bars.png
 share/ember/shared/gui/status/main.png
-share/ember/shared/gui/status/normals.png
-share/ember/shared/packs/Caelum.zip
 share/ember/user/COPYING.txt
 share/ember/user/LICENSING.txt
 share/ember/user/README
-share/ember/user/common/resources/ogre/scripts/.directory
 share/ember/user/common/resources/ogre/scripts/materials/buildings.material
 share/ember/user/common/resources/ogre/scripts/materials/clothing.material
 share/ember/user/common/resources/ogre/scripts/materials/creatures.material
@@ -1002,7 +1055,6 @@ share/ember/user/common/resources/ogre/textures/smokecolors.png
 share/ember/user/common/resources/ogre/textures/snow.png
 share/ember/user/common/resources/ogre/textures/terraindecal.png
 share/ember/user/common/resources/ogre/textures/water.png
-share/ember/user/filelist.xsl
 share/ember/user/modeldefinitions/acorn.modeldef
 share/ember/user/modeldefinitions/apple.modeldef
 share/ember/user/modeldefinitions/armory.modeldef
@@ -1014,6 +1066,7 @@ share/ember/user/modeldefinitions/bearded_male.modeldef
 share/ember/user/modeldefinitions/bed.modeldef
 share/ember/user/modeldefinitions/birchA.modeldef
 share/ember/user/modeldefinitions/birchB.modeldef
+share/ember/user/modeldefinitions/birchC.modeldef
 share/ember/user/modeldefinitions/birch_mk1.modeldef
 share/ember/user/modeldefinitions/boat.modeldef
 share/ember/user/modeldefinitions/bottle.modeldef
@@ -1131,7 +1184,6 @@ share/ember/user/modeldefinitions/wooden_fence.modeldef
 share/ember/user/modeldefinitions/wooden_gate.modeldef
 share/ember/user/particle/smoke.particle
 share/ember/user/particle/sun.particle
-share/ember/user/wfut.xml
 share/icons/worldforge/ember.png
 @dirrm etc/ember
 @dirrmtry share/applications
@@ -1156,7 +1208,9 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/media/shared/scripting/lua
 @dirrm share/ember/media/shared/scripting
 @dirrm share/ember/media/shared
+@dirrm share/ember/media/user/entityrecipes
 @dirrm share/ember/media/user/modeldefinitions
+@dirrm share/ember/media/user/sounddefinitions
 @dirrm share/ember/media/user
 @dirrm share/ember/media
 @dirrm share/ember/shared/common/3d_objects/creatures/quadruped/models/dog
@@ -1372,12 +1426,14 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/shared/common/3d_objects/plants/tree/models/Straight_up_tree
 @dirrm share/ember/shared/common/3d_objects/plants/tree/models
 @dirrm share/ember/shared/common/3d_objects/plants/tree
+@dirrm share/ember/shared/common/3d_objects/plants/trees/models/birch
 @dirrm share/ember/shared/common/3d_objects/plants/trees/models/oak
 @dirrm share/ember/shared/common/3d_objects/plants/trees/models/pine
 @dirrm share/ember/shared/common/3d_objects/plants/trees/models
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/bark_birch
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/bark_douglas
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/bark_fir
+@dirrm share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/branches_birch_bare
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/branches_fir
 @dirrm share/ember/shared/common/3d_objects/plants/trees/textures/branches_oak
@@ -1484,6 +1540,12 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/goblin/male/head
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/goblin/male
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/goblin
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/heavy_infantry
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire/legionnaire
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/attire
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/head/stigand
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor/head
+@dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/galbor
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/footwear
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/pants
 @dirrm share/ember/shared/common/3d_skeletons/bipeds/races/human/male/attire/drystan_archer/shirt
@@ -1585,10 +1647,18 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/shared/common/junkyard/models/skeleton
 @dirrm share/ember/shared/common/junkyard/models
 @dirrm share/ember/shared/common/junkyard
+@dirrm share/ember/shared/common/resources/ogre/caelum/core
+@dirrm share/ember/shared/common/resources/ogre/caelum
 @dirrm share/ember/shared/common/resources/ogre/scripts
 @dirrm share/ember/shared/common/resources/ogre/textures
 @dirrm share/ember/shared/common/resources/ogre
 @dirrm share/ember/shared/common/resources
+@dirrm share/ember/shared/common/soundfx/creatures/footsteps
+@dirrm share/ember/shared/common/soundfx/creatures/pig
+@dirrm share/ember/shared/common/soundfx/creatures
+@dirrm share/ember/shared/common/soundfx/items/saw
+@dirrm share/ember/shared/common/soundfx/items
+@dirrm share/ember/shared/common/soundfx
 @dirrm share/ember/shared/common/themes/ember/gui/compass
 @dirrm share/ember/shared/common/themes/ember/gui/fonts
 @dirrm share/ember/shared/common/themes/ember/gui
@@ -1600,7 +1670,6 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/shared/gui/icons
 @dirrm share/ember/shared/gui/status
 @dirrm share/ember/shared/gui
-@dirrm share/ember/shared/packs
 @dirrm share/ember/shared
 @dirrm share/ember/user/common/resources/ogre/scripts/materials
 @dirrm share/ember/user/common/resources/ogre/scripts/overlays
