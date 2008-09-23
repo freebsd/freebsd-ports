@@ -1,67 +1,75 @@
 COPYING
-INSTALL.TXT
-NEWS
-README.TXT
-bin/tixindex
-bin/tclsh8.3
-bin/wish8.3
-bin/tixwish4.1.8.1
+README
+bin/abrowser
+bin/cbrowser
+bin/cbrowser2
+bin/ccase-checkout-exclusive.sh
+bin/ccase-checkout-individual-to-stdout.sh
+bin/ccase-checkout-individual.sh
+bin/ccase-checkout.sh
+bin/ccase-history-individual.sh
+bin/ccase-history.sh
+bin/ccase-lock-individual.sh
+bin/ccase-unlock-individual.sh
 bin/dbcp
 bin/dbdump
 bin/dbimp
-bin/abrowser
-bin/obrowser
-bin/cbrowser
-bin/cbrowser2
-bin/fbrowser
-bin/jbrowser
-bin/tbrowser
-bin/pybrowser
-bin/m4browser
-bin/phpbrowser
 bin/exlbrowser
+bin/fbrowser
 bin/hyper
-bin/snscenario
-bin/snpdbg
+bin/ibrowser
+bin/jbrowser
+bin/m4browser
+bin/obrowser
+bin/phpbrowser
+bin/pybrowser
 bin/snavigator
+bin/snpdbg
+bin/snscenario
+bin/tbrowser
+bin/tclsh8.3
+bin/tixindex
+bin/tixwish4.1.8.1
+bin/wish8.3
 html/cygnus.css
 html/index-1.gif
-html/magnifying_glass.png
 html/index.html
-html/userguide/appendixa.html
-html/userguide/clbrws.html
-html/userguide/clhierbrws.html
-html/userguide/crossref.html
-html/userguide/customsn.html
-html/userguide/debugger.html
-html/userguide/editor.html
-html/userguide/elixcmdline.html
-html/userguide/entuserguideIX.html
-html/userguide/glossary.html
-html/userguide/grep.html
-html/userguide/inclbrws.html
-html/userguide/index_ug.html
-html/userguide/progide.html
-html/userguide/retrvr.html
-html/userguide/symbrws.html
-html/userguide/titlepg.html
-html/userguide/tutorial.html
-html/userguide/usingsn.html
-html/userguide/usrguideLOF.html
-html/userguide/usrguide_intro.html
-html/userguide/versctrl.html
-html/userguide/wrkproj.html
+html/magnifying_glass.png
+html/progref/addparsers-2.gif
+html/progref/addparsers.html
+html/progref/custom-2.gif
+html/progref/custom-3.gif
+html/progref/custom-4.gif
+html/progref/custom.html
+html/progref/dbaseAPI-2.gif
+html/progref/dbaseAPI.html
+html/progref/dbaseutil.html
+html/progref/index_pr.html
+html/progref/interappcomm.html
+html/progref/langspecs-1.gif
+html/progref/langspecs.html
+html/progref/line.gif
+html/progref/progrefIX.html
+html/progref/progrefLOF.html
+html/progref/progref_intro.gif
+html/progref/progref_intro.html
+html/progref/titlepg-1.gif
+html/progref/titlepg.html
+html/progref/versctrl.html
 html/userguide/appendixa-1.gif
+html/userguide/appendixa.html
 html/userguide/clbrws-1.gif
 html/userguide/clbrws-2.gif
 html/userguide/clbrws-3.gif
 html/userguide/clbrws-4.gif
 html/userguide/clbrws-5.gif
 html/userguide/clbrws-6.gif
+html/userguide/clbrws.html
 html/userguide/clhierbrws-1.gif
 html/userguide/clhierbrws-2.gif
 html/userguide/clhierbrws-3.gif
 html/userguide/clhierbrws-4.gif
+html/userguide/clhierbrws.html
 html/userguide/crossref-1.gif
 html/userguide/crossref-2.gif
 html/userguide/crossref-3.gif
@@ -70,6 +78,7 @@ html/userguide/crossref-5.gif
 html/userguide/crossref-6.gif
 html/userguide/crossref-7.gif
 html/userguide/crossref-8.gif
+html/userguide/crossref.html
 html/userguide/customsn-1.gif
 html/userguide/customsn-2.gif
 html/userguide/customsn-3.gif
@@ -78,9 +87,11 @@ html/userguide/customsn-5.gif
 html/userguide/customsn-6.gif
 html/userguide/customsn-7.gif
 html/userguide/customsn-8.gif
+html/userguide/customsn.html
 html/userguide/debugger-1.gif
 html/userguide/debugger-2.gif
 html/userguide/debugger-3.gif
+html/userguide/debugger.html
 html/userguide/editor-1.gif
 html/userguide/editor-2.gif
 html/userguide/editor-3.gif
@@ -90,18 +101,25 @@ html/userguide/editor-6.gif
 html/userguide/editor-7.gif
 html/userguide/editor-8.gif
 html/userguide/editor-9.gif
+html/userguide/editor.html
 html/userguide/elixcmdline-1.gif
+html/userguide/elixcmdline.html
 html/userguide/entuserguideIX-1.gif
+html/userguide/entuserguideIX.html
 html/userguide/glossary-1.gif
+html/userguide/glossary.html
 html/userguide/grep-1.gif
 html/userguide/grep-2.gif
 html/userguide/grep-3.gif
+html/userguide/grep.html
 html/userguide/inclbrws-1.gif
 html/userguide/inclbrws-2.gif
 html/userguide/inclbrws-3.gif
 html/userguide/inclbrws-4.gif
 html/userguide/inclbrws-5.gif
+html/userguide/inclbrws.html
 html/userguide/index_ug-1.gif
+html/userguide/index_ug.html
 html/userguide/progide-1.gif
 html/userguide/progide-10.gif
 html/userguide/progide-11.gif
@@ -148,12 +166,14 @@ html/userguide/progide-6.gif
 html/userguide/progide-7.gif
 html/userguide/progide-8.gif
 html/userguide/progide-9.gif
+html/userguide/progide.html
 html/userguide/retrvr-1.gif
 html/userguide/retrvr-2.gif
 html/userguide/retrvr-3.gif
 html/userguide/retrvr-4.gif
 html/userguide/retrvr-5.gif
 html/userguide/retrvr-6.gif
+html/userguide/retrvr.html
 html/userguide/symbrws-1.gif
 html/userguide/symbrws-10.gif
 html/userguide/symbrws-11.gif
@@ -167,7 +187,9 @@ html/userguide/symbrws-6.gif
 html/userguide/symbrws-7.gif
 html/userguide/symbrws-8.gif
 html/userguide/symbrws-9.gif
+html/userguide/symbrws.html
 html/userguide/titlepg-1.gif
+html/userguide/titlepg.html
 html/userguide/tutorial-1.gif
 html/userguide/tutorial-10.gif
 html/userguide/tutorial-11.gif
@@ -190,6 +212,7 @@ html/userguide/tutorial-6.gif
 html/userguide/tutorial-7.gif
 html/userguide/tutorial-8.gif
 html/userguide/tutorial-9.gif
+html/userguide/tutorial.html
 html/userguide/usingsn-1.gif
 html/userguide/usingsn-10.gif
 html/userguide/usingsn-11.gif
@@ -205,135 +228,50 @@ html/userguide/usingsn-6.gif
 html/userguide/usingsn-7.gif
 html/userguide/usingsn-8.gif
 html/userguide/usingsn-9.gif
+html/userguide/usingsn.html
 html/userguide/usrguideLOF-1.gif
+html/userguide/usrguideLOF.html
 html/userguide/usrguide_intro.gif
+html/userguide/usrguide_intro.html
 html/userguide/versctrl-1.gif
 html/userguide/versctrl-2.gif
 html/userguide/versctrl-3.gif
 html/userguide/versctrl-4.gif
 html/userguide/versctrl-5.gif
 html/userguide/versctrl-6.gif
+html/userguide/versctrl.html
 html/userguide/wrkproj-1.gif
 html/userguide/wrkproj-2.gif
 html/userguide/wrkproj-3.gif
 html/userguide/wrkproj-4.gif
 html/userguide/wrkproj-5.gif
-html/progref/addparsers.html
-html/progref/custom.html
-html/progref/dbaseAPI.html
-html/progref/dbaseutil.html
-html/progref/index_pr.html
-html/progref/interappcomm.html
-html/progref/langspecs.html
-html/progref/progrefIX.html
-html/progref/progrefLOF.html
-html/progref/progref_intro.html
-html/progref/titlepg.html
-html/progref/versctrl.html
-html/progref/addparsers-2.gif
-html/progref/custom-2.gif
-html/progref/custom-3.gif
-html/progref/custom-4.gif
-html/progref/dbaseAPI-2.gif
-html/progref/langspecs-1.gif
-html/progref/line.gif
-html/progref/progref_intro.gif
-html/progref/titlepg-1.gif
+html/userguide/wrkproj.html
 include/itcl.h
-include/tcl.h
-include/tclDecls.h
-include/tk.h
-include/tkInt.h
-include/tkDecls.h
-include/tkIntXlibDecls.h
 include/itclDecls.h
 include/itclInt.h
 include/itclIntDecls.h
 include/itk.h
 include/itkDecls.h
+include/tcl.h
+include/tclDecls.h
 include/tix.h
+include/tk.h
+include/tkDecls.h
+include/tkInt.h
+include/tkIntXlibDecls.h
 lib/itcl3.2/pkgIndex.tcl
-lib/libtcl8.3.a
-lib/tclConfig.sh
-lib/libtclstub8.3.a
-lib/libtk8.3.a
-lib/tkConfig.sh
-lib/libtkstub8.3.a
+lib/itk3.2/pkgIndex.tcl
 lib/libitcl3.2.a
 lib/libitclstub3.2.a
-lib/itk3.2/pkgIndex.tcl
 lib/libitk3.2.a
 lib/libitkstub3.2.a
+lib/libtcl8.3.a
+lib/libtclstub8.3.a
 lib/libtix4.1.8.1.a
-%%DATADIR%%/packages/eventutils/pkgIndex.tcl
-%%DATADIR%%/packages/eventutils/eventutils.tcl
-%%DATADIR%%/packages/snscenario/snscenario.tcl
-%%DATADIR%%/packages/snscenario/sandbox.tcl
-%%DATADIR%%/packages/snscenario/remote.tcl
-%%DATADIR%%/packages/snscenario/pkgIndex.tcl
-%%DATADIR%%/gui/tclIndex
-%%DATADIR%%/gui/sninit.tcl
-%%DATADIR%%/gui/misc.tcl
-%%DATADIR%%/gui/panewd.tcl
-%%DATADIR%%/gui/rcs.tcl
-%%DATADIR%%/gui/paths.tcl
-%%DATADIR%%/gui/printdialog.tcl
-%%DATADIR%%/gui/selector.tcl
-%%DATADIR%%/gui/text.tcl
-%%DATADIR%%/gui/utilities.tcl
-%%DATADIR%%/gui/version.tcl
-%%DATADIR%%/gui/retriever.tcl
-%%DATADIR%%/gui/statistics.tcl
-%%DATADIR%%/gui/multiview.tcl
-%%DATADIR%%/gui/multichild.tcl
-%%DATADIR%%/gui/snpdbg.tcl
-%%DATADIR%%/gui/symbolbrowser.tcl
-%%DATADIR%%/gui/xrefpane.tcl
-%%DATADIR%%/gui/retrieverpane.tcl
-%%DATADIR%%/gui/makepane.tcl
-%%DATADIR%%/gui/preferences.tcl
-%%DATADIR%%/gui/tools.tcl
-%%DATADIR%%/gui/window.tcl
-%%DATADIR%%/gui/projedit.tcl
-%%DATADIR%%/gui/projmng.tcl
-%%DATADIR%%/gui/tmeter.tcl
-%%DATADIR%%/gui/project.tcl
-%%DATADIR%%/gui/targetmgr.tcl
-%%DATADIR%%/gui/targetedit.tcl
-%%DATADIR%%/gui/toolchain.tcl
-%%DATADIR%%/gui/mkfilegen.tcl
-%%DATADIR%%/gui/tree.tcl
-%%DATADIR%%/gui/optiontrace.tcl
-%%DATADIR%%/gui/tclgrepdriver.tcl
-%%DATADIR%%/gui/winprint.tcl
-%%DATADIR%%/gui/bindings.tcl
-%%DATADIR%%/gui/bindxtnd.tcl
-%%DATADIR%%/gui/bugreport.tcl
-%%DATADIR%%/gui/buildtarget.tcl
-%%DATADIR%%/gui/classpane.tcl
-%%DATADIR%%/gui/classtreepane.tcl
-%%DATADIR%%/gui/combo.tcl
-%%DATADIR%%/gui/conftooldlg.tcl
-%%DATADIR%%/gui/dialog.tcl
-%%DATADIR%%/gui/diff.tcl
-%%DATADIR%%/gui/dirdialog.tcl
-%%DATADIR%%/gui/editorpane.tcl
-%%DATADIR%%/gui/elix.tcl
-%%DATADIR%%/gui/emacs.tcl
-%%DATADIR%%/gui/error.tcl
-%%DATADIR%%/gui/execgrepdriver.tcl
-%%DATADIR%%/gui/font.tcl
-%%DATADIR%%/gui/gdbtk.tcl
-%%DATADIR%%/gui/grep.tcl
-%%DATADIR%%/gui/greppane.tcl
-%%DATADIR%%/gui/help.tcl
-%%DATADIR%%/gui/highlight.tcl
-%%DATADIR%%/gui/history.tcl
-%%DATADIR%%/gui/html.tcl
-%%DATADIR%%/gui/i18n.tcl
-%%DATADIR%%/gui/ide.tcl
-%%DATADIR%%/gui/includepane.tcl
-%%DATADIR%%/gui/ipc.tcl
+lib/libtk8.3.a
+lib/libtkstub8.3.a
+lib/tclConfig.sh
+lib/tkConfig.sh
 share/bitmaps/add.xpm
 share/bitmaps/addall.xpm
 share/bitmaps/arrow.xpm
@@ -372,8 +310,6 @@ share/bitmaps/cross_static.xpm
 share/bitmaps/cross_to.xpm
 share/bitmaps/crossref.xpm
 share/bitmaps/cut.xpm
-share/bitmaps/cygcont.gif
-share/bitmaps/cygsol.gif
 share/bitmaps/dbg_redisp.xpm
 share/bitmaps/del.xpm
 share/bitmaps/delall.xpm
@@ -403,8 +339,6 @@ share/bitmaps/grep.xpm
 share/bitmaps/hold.xpm
 share/bitmaps/hold_off.xpm
 share/bitmaps/hold_on.xpm
-share/bitmaps/hourglass.gif
-share/bitmaps/ide_icon.xpm
 share/bitmaps/include.xpm
 share/bitmaps/info.xpm
 share/bitmaps/insert.xpm
@@ -435,11 +369,15 @@ share/bitmaps/right.xpm
 share/bitmaps/rplay.xpm
 share/bitmaps/save.xpm
 share/bitmaps/search.xpm
-share/bitmaps/shadowman.xpm
 share/bitmaps/sign.xpm
 share/bitmaps/sn-text.gif
+share/bitmaps/sn_logo.gif
 share/bitmaps/sourcenav.ico
-share/bitmaps/splash.gif
+share/bitmaps/splashsn.gif
+share/bitmaps/splashsn0.gif
+share/bitmaps/splashsn1.gif
+share/bitmaps/splashsn2.gif
+share/bitmaps/splashsn3.gif
 share/bitmaps/stop.xpm
 share/bitmaps/stree.xpm
 share/bitmaps/trace.xpm
@@ -895,6 +833,7 @@ share/demos/monop/roll.c
 share/demos/monop/spec.c
 share/demos/monop/trade.c
 share/etc/english.txt
+share/etc/french.txt
 share/etc/german.txt
 share/etc/grep.fil
 share/etc/sn.el
@@ -964,13 +903,12 @@ share/sdk/api/tcl/misc/paf_dump.tcl
 share/sdk/api/tcl/misc/paf_rc.tcl
 share/sdk/api/tcl/misc/paf_stat.sh
 share/sdk/api/tcl/misc/sn_report.tcl
-share/sdk/include/cdefs.h
 share/sdk/include/db.h
+share/sdk/include/db_185.h
 share/sdk/include/sn.h
 share/sdk/include/snptools.h
-share/sdk/lib/libdbckalloc.a
+share/sdk/lib/libdb.a
 share/sdk/lib/libdbutils.a
-share/sdk/lib/libpafdb.a
 share/sdk/lib/libsnptools.a
 share/sdk/lib/libtcl8.3.a
 share/sdk/lib/libutils.a
@@ -989,6 +927,75 @@ share/sdk/parsers/examples/elf/Makefile.vc
 share/sdk/parsers/examples/elf/README
 share/sdk/parsers/examples/elf/blobsql.elf
 share/sdk/parsers/examples/elf/ebrowser.l
+share/sourcenav/gui/bindings.tcl
+share/sourcenav/gui/bindxtnd.tcl
+share/sourcenav/gui/bugreport.tcl
+share/sourcenav/gui/buildtarget.tcl
+share/sourcenav/gui/classpane.tcl
+share/sourcenav/gui/classtreepane.tcl
+share/sourcenav/gui/combo.tcl
+share/sourcenav/gui/conftooldlg.tcl
+share/sourcenav/gui/dialog.tcl
+share/sourcenav/gui/diff.tcl
+share/sourcenav/gui/dirdialog.tcl
+share/sourcenav/gui/editorpane.tcl
+share/sourcenav/gui/elix.tcl
+share/sourcenav/gui/emacs.tcl
+share/sourcenav/gui/error.tcl
+share/sourcenav/gui/execgrepdriver.tcl
+share/sourcenav/gui/font.tcl
+share/sourcenav/gui/gdbtk.tcl
+share/sourcenav/gui/grep.tcl
+share/sourcenav/gui/greppane.tcl
+share/sourcenav/gui/help.tcl
+share/sourcenav/gui/highlight.tcl
+share/sourcenav/gui/history.tcl
+share/sourcenav/gui/html.tcl
+share/sourcenav/gui/i18n.tcl
+share/sourcenav/gui/ide.tcl
+share/sourcenav/gui/includepane.tcl
+share/sourcenav/gui/ipc.tcl
+share/sourcenav/gui/makepane.tcl
+share/sourcenav/gui/misc.tcl
+share/sourcenav/gui/mkfilegen.tcl
+share/sourcenav/gui/multichild.tcl
+share/sourcenav/gui/multiview.tcl
+share/sourcenav/gui/optiontrace.tcl
+share/sourcenav/gui/panewd.tcl
+share/sourcenav/gui/paths.tcl
+share/sourcenav/gui/preferences.tcl
+share/sourcenav/gui/printdialog.tcl
+share/sourcenav/gui/project.tcl
+share/sourcenav/gui/projedit.tcl
+share/sourcenav/gui/projmng.tcl
+share/sourcenav/gui/rcs.tcl
+share/sourcenav/gui/retriever.tcl
+share/sourcenav/gui/retrieverpane.tcl
+share/sourcenav/gui/selector.tcl
+share/sourcenav/gui/sninit.tcl
+share/sourcenav/gui/snpdbg.tcl
+share/sourcenav/gui/statistics.tcl
+share/sourcenav/gui/symbolbrowser.tcl
+share/sourcenav/gui/targetedit.tcl
+share/sourcenav/gui/targetmgr.tcl
+share/sourcenav/gui/tclIndex
+share/sourcenav/gui/tclgrepdriver.tcl
+share/sourcenav/gui/text.tcl
+share/sourcenav/gui/tmeter.tcl
+share/sourcenav/gui/toolchain.tcl
+share/sourcenav/gui/tools.tcl
+share/sourcenav/gui/tree.tcl
+share/sourcenav/gui/utilities.tcl
+share/sourcenav/gui/version.tcl
+share/sourcenav/gui/window.tcl
+share/sourcenav/gui/winprint.tcl
+share/sourcenav/gui/xrefpane.tcl
+share/sourcenav/packages/eventutils/eventutils.tcl
+share/sourcenav/packages/eventutils/pkgIndex.tcl
+share/sourcenav/packages/snscenario/pkgIndex.tcl
+share/sourcenav/packages/snscenario/remote.tcl
+share/sourcenav/packages/snscenario/sandbox.tcl
+share/sourcenav/packages/snscenario/snscenario.tcl
 share/tcl8.3/auto.tcl
 share/tcl8.3/encoding/ascii.enc
 share/tcl8.3/encoding/big5.enc
@@ -1435,11 +1442,6 @@ share/tk8.3/tkfbox.tcl
 share/tk8.3/tkfboxTest.tcl
 share/tk8.3/unsupported.tcl
 share/tk8.3/xmfbox.tcl
-@dirrm %%DATADIR%%/packages/snscenario
-@dirrm %%DATADIR%%/packages/eventutils
-@dirrm %%DATADIR%%/packages
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%
 @dirrm share/tk8.3/images
 @dirrm share/tk8.3/demos/images
 @dirrm share/tk8.3/demos
@@ -1457,6 +1459,11 @@ share/tk8.3/xmfbox.tcl
 @dirrm share/tcl8.3/http1.0
 @dirrm share/tcl8.3/encoding
 @dirrm share/tcl8.3
+@dirrm share/sourcenav/packages/snscenario
+@dirrm share/sourcenav/packages/eventutils
+@dirrm share/sourcenav/packages
+@dirrm share/sourcenav/gui
+@dirrm share/sourcenav
 @dirrm share/sdk/parsers/examples/elf
 @dirrm share/sdk/parsers/examples/assembly
 @dirrm share/sdk/parsers/examples
@@ -1520,6 +1527,10 @@ share/tk8.3/xmfbox.tcl
 @dirrm share/demos
 @dirrm share/bitmaps
 @dirrm share
+@dirrm man/mann
+@dirrm man/man3
+@dirrm man/man1
+@dirrm man
 @dirrm lib/itk3.2
 @dirrm lib/itcl3.2
 @dirrm lib
@@ -1528,7 +1539,3 @@ share/tk8.3/xmfbox.tcl
 @dirrm html/progref
 @dirrm html
 @dirrm bin
-@dirrm man/man1
-@dirrm man/man3
-@dirrm man/mann
-@dirrm man
