@@ -108,7 +108,6 @@ share/gnome/help/gnomesword/fr/studypad.xml
 %%DATADIR%%/editor_studypad.xml
 %%DATADIR%%/export-dialog.glade
 %%DATADIR%%/languages
-%%DATADIR%%/languages.cygwin
 %%DATADIR%%/logo.png
 %%DATADIR%%/module-manager.glade
 %%DATADIR%%/navbar_versekey.glade
@@ -123,12 +122,14 @@ share/locale/es/LC_MESSAGES/gnomesword.mo
 share/locale/fa/LC_MESSAGES/gnomesword.mo
 share/locale/fi/LC_MESSAGES/gnomesword.mo
 share/locale/fr/LC_MESSAGES/gnomesword.mo
+share/locale/he_IL/LC_MESSAGES/gnomesword.mo
 share/locale/nb_NO/LC_MESSAGES/gnomesword.mo
 share/locale/nl/LC_MESSAGES/gnomesword.mo
 share/locale/pt/LC_MESSAGES/gnomesword.mo
 share/locale/pt_PT/LC_MESSAGES/gnomesword.mo
 share/locale/ru/LC_MESSAGES/gnomesword.mo
 share/locale/sk/LC_MESSAGES/gnomesword.mo
+share/locale/sv_SE/LC_MESSAGES/gnomesword.mo
 share/locale/uk/LC_MESSAGES/gnomesword.mo
 share/pixmaps/gnomesword/about.png
 share/pixmaps/gnomesword/dlg-un-16.png
@@ -153,8 +154,12 @@ share/pixmaps/gnomesword/sword3.png
 share/pixmaps/gnomesword/tt.png
 @dirrm %%DATADIR%%
 @dirrm share/pixmaps/gnomesword
+@dirrm share/locale/sv_SE/LC_MESSAGES
+@dirrm share/locale/sv_SE
 @dirrm share/locale/nb_NO/LC_MESSAGES
 @dirrm share/locale/nb_NO
+@dirrm share/locale/he_IL/LC_MESSAGES
+@dirrm share/locale/he_IL
 @dirrm share/gnome/help/gnomesword/fr/figures
 @dirrm share/gnome/help/gnomesword/fr
 @dirrm share/gnome/help/gnomesword/C/figures
