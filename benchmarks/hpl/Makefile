@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	hpl
-PORTVERSION=	1.0a
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.netlib.org/benchmark/hpl/ \
-		ftp://ftp.hipecs.hokudai.ac.jp/netlib/benchmark/hpl/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
