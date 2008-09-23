@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.85
+PORTVERSION=	0.87
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,5 @@ MAN1=		approve_friends.1 comment_myspace.1 \
 MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 \
 		WWW::Myspace::FriendChanges.3 \
 		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3
-
 
 .include <bsd.port.mk>
