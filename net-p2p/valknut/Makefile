@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	valknut
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.7
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
 
-LIB_DEPENDS=	dc.1:${PORTSDIR}/net-p2p/dclib \
+LIB_DEPENDS=	dc.3:${PORTSDIR}/net-p2p/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -36,6 +36,7 @@ LDFLAGS+=	-L${QT_LIBDIR}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" ACLOCAL=true \
 		AUTOCONF=true AUTOMAKE=true AUTOHEADER=true \
 		DCLIB_CFLAGS="-I${LOCALBASE}/include"
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g;\
 	    s|-D_XOPEN_SOURCE=500||g' \
