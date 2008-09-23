@@ -848,6 +848,7 @@
     SUBDIR += vectoroids
     SUBDIR += vegastrike
     SUBDIR += vegastrike-data
+    SUBDIR += vitetris
     SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += vultures-claw
