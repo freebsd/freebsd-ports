@@ -1,5 +1,5 @@
---- a/misc/Makefile.in.orig	2008-06-18 05:53:42.000000000 +0200
-+++ b/misc/Makefile.in	2008-07-13 12:55:25.000000000 +0200
+--- a/misc/Makefile.in.orig	2008-08-25 06:19:56.000000000 +0200
++++ b/misc/Makefile.in	2008-09-16 01:40:51.000000000 +0200
 @@ -19,14 +19,14 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs blkid logsave \
@@ -19,16 +19,43 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -337,11 +337,9 @@
+@@ -343,35 +343,10 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done
--	@if ! test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
- 		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
- 		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-	@if test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
+-		if cmp -s $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \
+-			$(srcdir)/mke2fs.conf; then \
+-			true; \
+-		else \
+-			if grep -q ext4dev $(DESTDIR)$(root_sysconfdir)/mke2fs.conf ; then \
+-				echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf.e2fsprogs-new"; \
+-				$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-					$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-new; \
+-				echo "Warning: installing mke2fs.conf in $(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-new"; \
+-				echo "Check to see if you need to update your $(root_sysconfdir)/mke2fs.conf"; \
+-			else \
+-				echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
+-				mv $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \
+-				   $(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-old; \
+-				$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-					$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
+-				echo "Your mke2fs.conf is too old.  Backing up old version in"; \
+-				echo "$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-old.  Please check to see"; \
+-				echo "if you have any local customizations that you wish to preserve."; \
+-			fi; \
+-			echo " "; \
+-		fi; \
+-	else \
+-		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
+-		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
 -			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
 -	fi
-+			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist; \
- 
+-
++	echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
++  	$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
++		$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist
++ 
  install-strip: install
  	@for i in $(SPROGS); do \
+ 		echo "	STRIP $(root_sbindir)/$$i"; \
