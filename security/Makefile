@@ -559,6 +559,7 @@
     SUBDIR += pear-Crypt_DiffieHellman
     SUBDIR += pear-Crypt_GPG
     SUBDIR += pear-Crypt_HMAC
+    SUBDIR += pear-Crypt_MicroID
     SUBDIR += pear-Crypt_RC4
     SUBDIR += pear-Crypt_RSA
     SUBDIR += pear-File_HtAccess
