@@ -470,6 +470,7 @@
     SUBDIR += lmpc
     SUBDIR += lordsawar
     SUBDIR += love
+    SUBDIR += lpairs
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += luola

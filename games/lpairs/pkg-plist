@@ -1,0 +1,34 @@
+bin/lpairs
+%%NLS%%share/locale/de/LC_MESSAGES/lpairs.mo
+%%DATADIR%%/gfx/0.bmp
+%%DATADIR%%/gfx/1.bmp
+%%DATADIR%%/gfx/10.bmp
+%%DATADIR%%/gfx/11.bmp
+%%DATADIR%%/gfx/12.bmp
+%%DATADIR%%/gfx/13.bmp
+%%DATADIR%%/gfx/14.bmp
+%%DATADIR%%/gfx/15.bmp
+%%DATADIR%%/gfx/16.bmp
+%%DATADIR%%/gfx/17.bmp
+%%DATADIR%%/gfx/18.bmp
+%%DATADIR%%/gfx/19.bmp
+%%DATADIR%%/gfx/2.bmp
+%%DATADIR%%/gfx/3.bmp
+%%DATADIR%%/gfx/4.bmp
+%%DATADIR%%/gfx/5.bmp
+%%DATADIR%%/gfx/6.bmp
+%%DATADIR%%/gfx/7.bmp
+%%DATADIR%%/gfx/8.bmp
+%%DATADIR%%/gfx/9.bmp
+%%DATADIR%%/gfx/back.bmp
+%%DATADIR%%/gfx/button.bmp
+%%DATADIR%%/gfx/f_white.bmp
+%%DATADIR%%/gfx/f_yellow.bmp
+%%DATADIR%%/gfx/stan_font.bmp
+%%DATADIR%%/gfx/title.bmp
+%%DATADIR%%/sound/click.wav
+%%DATADIR%%/sound/fail.wav
+%%DATADIR%%/sound/remove.wav
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
