@@ -65,4 +65,3 @@ sbin/in.proftpd
 sbin/proftpd
 @dirrm include/proftpd
 @dirrmtry lib/proftpd 
-@dirrmtry libdata/pkgconfig
