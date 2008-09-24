@@ -32,6 +32,7 @@
     SUBDIR += netpipe
     SUBDIR += nqueens
     SUBDIR += nttcp
+    SUBDIR += octave-forge-benchmark
     SUBDIR += p5-Benchmark-Forking
     SUBDIR += p5-Benchmark-Stopwatch
     SUBDIR += pathchirp
