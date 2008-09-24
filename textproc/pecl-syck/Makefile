@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syck
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
