@@ -173,6 +173,7 @@ www/rth/api/admin_api.php
 www/rth/api/authenticate_user_inc.php
 www/rth/api/authentication_api.php
 www/rth/api/bug_api.php
+www/rth/api/build_api.php
 www/rth/api/date_api.php
 www/rth/api/db_api.php
 www/rth/api/discussion_api.php
@@ -190,6 +191,7 @@ www/rth/api/log_api.php
 www/rth/api/news_api.php
 www/rth/api/project_api.php
 www/rth/api/properties_inc.php-dist
+www/rth/api/release_api.php
 www/rth/api/report_api.php
 www/rth/api/requirement_api.php
 www/rth/api/results_api.php
@@ -1590,11 +1592,13 @@ www/rth/images/icons/zip.jpg
 www/rth/images/info.gif
 www/rth/images/issue.gif
 www/rth/images/load_test.gif
+www/rth/images/locked.png
 www/rth/images/manual.gif
 www/rth/images/paperclip.gif
 www/rth/images/pass.gif
 www/rth/images/pie_chart_2_image.php
 www/rth/images/pie_chart_image.php
+www/rth/images/sign-small.png
 www/rth/images/tree_dots_column.gif
 www/rth/images/tree_dots_L.gif
 www/rth/images/tree_dots_minus.gif
@@ -3125,6 +3129,7 @@ www/rth/sql/1.5.8_update_db.sql
 www/rth/sql/1.5.9_update_db.sql
 www/rth/sql/1.6.1_update_db.sql
 www/rth/sql/1.6.3_update_db.sql
+www/rth/sql/1.7.0_update_db.sql
 www/rth/sql/rth.sql
 www/rth/sql/rth_demo.sql
 www/rth/testset_add_action.php
@@ -3139,6 +3144,8 @@ www/rth/testset_edit_action.php
 www/rth/testset_edit_description_action.php
 www/rth/testset_edit_description_page.php
 www/rth/testset_edit_page.php
+www/rth/testset_lock_action.php
+www/rth/testset_lock_page.php
 www/rth/testset_page.php
 www/rth/testset_plan_file_upload_action.php
 www/rth/testset_show_test_plan_history_page.php
@@ -3146,6 +3153,7 @@ www/rth/testset_signoff_action.php
 www/rth/testset_signoff_page.php
 www/rth/testset_upload_new_test_plan_version_action.php
 www/rth/testset_upload_new_test_plan_version_page.php
+www/rth/testset_viewlast_page.php
 www/rth/test_add_action.php
 www/rth/test_add_doc_version_action.php
 www/rth/test_add_doc_version_page.php
@@ -3154,6 +3162,8 @@ www/rth/test_add_version_action.php
 www/rth/test_add_version_page.php
 www/rth/test_csv_export.php
 www/rth/test_delete_assoc_action.php
+www/rth/test_delete_doc_action.php
+www/rth/test_delete_doc_version.php
 www/rth/test_detail_copy_action.php
 www/rth/test_detail_copy_page.php
 www/rth/test_detail_delete_action.php
