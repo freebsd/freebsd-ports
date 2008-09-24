@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	terminator
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	x11 python
 MASTER_SITES=	https://launchpad.net/terminator/trunk/${PORTVERSION}/+download/ \
 		http://hur.st/mirror/terminator/
@@ -31,7 +31,7 @@ WANT_GNOME=	yes
 
 .ifdef(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
-PYSETUP+=	--without-gettext
+PYSETUP+=	--without-gettext --without-icon-cache
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -45,5 +45,8 @@ USE_GNOME+=	pygtk2
 
 MAN1=	terminator.1
 MAN5=	terminator_config.5
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/0\.10/0.11/' ${WRKSRC}/terminatorlib/version.py
 
 .include <bsd.port.post.mk>
