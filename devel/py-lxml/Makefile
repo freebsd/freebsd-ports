@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	2.1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
 		CHEESESHOP \
@@ -16,12 +16,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 
-LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_INSTALLARGS=	-N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
-PYEASYINSTALL_UNINSTALLARGS=	-q -m -N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
 PYEASYINSTALL_ARCHDEP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -32,16 +31,11 @@ PORTDOCS=	CHANGES.txt \
 		TODO.txt \
 		README.txt
 
-PYLXML_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
-	@${MKDIR} ${DOCSDIR}/doc
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}/doc
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
