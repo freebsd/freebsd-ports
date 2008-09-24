@@ -1,21 +1,61 @@
-bin/gaeo.py
-bin/gaeogen.py
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/gaeo/__init__.py
-%%DATADIR%%/gaeo/controller/__init__.py
-%%DATADIR%%/gaeo/controller/errors.py
-%%DATADIR%%/gaeo/controller/helper.py
-%%DATADIR%%/gaeo/controller/jsonencoder.py
-%%DATADIR%%/gaeo/dispatch/__init__.py
-%%DATADIR%%/gaeo/dispatch/dispatcher.py
-%%DATADIR%%/gaeo/dispatch/router.py
-%%DATADIR%%/gaeo/model/__init__.py
-%%DATADIR%%/gaeo/session/__init__.py
-%%DATADIR%%/gaeo/session/memcache.py
-@dirrm %%DATADIR%%/gaeo/session
-@dirrm %%DATADIR%%/gaeo/model
-@dirrm %%DATADIR%%/gaeo/dispatch
-@dirrm %%DATADIR%%/gaeo/controller
-@dirrm %%DATADIR%%/gaeo
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/gaeogen
+bin/gaeo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeogen.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/release.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeogen.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/release.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/gaeogen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/release.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/helper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/jsonencoder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/helper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/jsonencoder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/helper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller/jsonencoder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/dispatcher.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/router.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/dispatcher.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/router.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/dispatcher.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch/router.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/model/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/model/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/model/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/memcache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/memcache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session/memcache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/bin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/controller
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/dispatch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/model
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo/session
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gaeo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

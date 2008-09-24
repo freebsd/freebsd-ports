@@ -6,33 +6,35 @@
 #
 
 PORTNAME=	gaeo
-PORTVERSION=	68
+PORTVERSION=	0.1
+PORTEPOCH=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-trunk-r${PORTVERSION}
 
 MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	An open-source web framework running on Google App Engine
 
-RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine
+RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \
+		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson
 
 PROJECTHOST=	google-app-engine-oil
 
-NO_BUILD=	yes
-
-USE_PYTHON=	2.5+
 USE_ZIP=	yes
+USE_PYTHON=	2.5+
+USE_PYDISTUTILS=	easy_install
+
+GAEOHOME=	${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
+
+PORTDOCS=	LICENSE NOTICE README.TXT
 
 post-patch:
-	${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/bin/gaeo.py
+	${REINPLACE_CMD} -e "s,%%GAEOHOME%%,${GAEOHOME},g" ${WRKSRC}/bin/gaeo.py
 
-do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "gaeo" ${DATADIR}
+post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}/README
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/gaeo.py ${PREFIX}/bin/gaeo.py
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/gaeogen.py ${PREFIX}/bin/gaeogen.py
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/gaeo.py ${PREFIX}/bin/gaeo
 
 .include <bsd.port.mk>
