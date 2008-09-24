@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive
-PORTVERSION=	0.30
+PORTVERSION=	0.32
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -36,6 +36,7 @@ MAN3=		Graphics::Primitive.3 \
 		Graphics::Primitive::ComponentList.3 \
 		Graphics::Primitive::Container.3 \
 		Graphics::Primitive::Driver.3 \
+		Graphics::Primitive::Driver::TextLayout.3 \
 		Graphics::Primitive::Font.3 \
 		Graphics::Primitive::Image.3 \
 		Graphics::Primitive::Insets.3 \
