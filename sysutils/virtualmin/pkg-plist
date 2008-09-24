@@ -26,6 +26,7 @@ lib/webmin/virtual-server/commands-lib.pl
 lib/webmin/virtual-server/config
 lib/webmin/virtual-server/config-freebsd
 lib/webmin/virtual-server/config.info
+lib/webmin/virtual-server/config.info.cz
 lib/webmin/virtual-server/config.info.fr
 lib/webmin/virtual-server/config_info.pl
 lib/webmin/virtual-server/create-domain.pl
@@ -306,6 +307,7 @@ lib/webmin/virtual-server/help/config_show_ugroup.html
 lib/webmin/virtual-server/help/config_spam.html
 lib/webmin/virtual-server/help/config_spam_delivery.html
 lib/webmin/virtual-server/help/config_spam_level.html
+lib/webmin/virtual-server/help/config_spam_lock.html
 lib/webmin/virtual-server/help/config_spam_white.html
 lib/webmin/virtual-server/help/config_ssl.html
 lib/webmin/virtual-server/help/config_status.html
@@ -503,6 +505,7 @@ lib/webmin/virtual-server/help/template_dns_ns.html
 lib/webmin/virtual-server/help/template_dns_spf_mode.html
 lib/webmin/virtual-server/help/template_dns_spfall.html
 lib/webmin/virtual-server/help/template_dns_spfhosts.html
+lib/webmin/virtual-server/help/template_dns_spfincludes.html
 lib/webmin/virtual-server/help/template_dns_sub.html
 lib/webmin/virtual-server/help/template_domalias.html
 lib/webmin/virtual-server/help/template_domalias_type.html
@@ -699,6 +702,7 @@ lib/webmin/virtual-server/lang/zh_CN.UTF-8
 lib/webmin/virtual-server/lang/zh_TW.Big5
 lib/webmin/virtual-server/lang/zh_TW.UTF-8
 lib/webmin/virtual-server/list-commands.pl
+lib/webmin/virtual-server/list-domains.pl
 lib/webmin/virtual-server/list-features.pl
 lib/webmin/virtual-server/list_admins.cgi
 lib/webmin/virtual-server/list_aliases.cgi
@@ -756,6 +760,7 @@ lib/webmin/virtual-server/newfeatures-all/3.61/1-apihelp
 lib/webmin/virtual-server/newfeatures-all/3.61/2-adminemail
 lib/webmin/virtual-server/newfeatures-all/3.61/5-matchall
 lib/webmin/virtual-server/newfeatures-all/3.61/6-encodings
+lib/webmin/virtual-server/newfeatures-all/3.62/1-sortsub
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -837,6 +842,7 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.62
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.61
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.60
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.59
@@ -848,6 +854,7 @@ lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.62
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.61
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.60
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.59
