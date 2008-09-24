@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Diff
-PORTVERSION=	0.2.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	joseph@randomnetworks.com
@@ -16,16 +16,16 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Text
-FILES=		Diff.php \
-		Diff3.php \
-		Diff/Renderer.php \
-		Diff/Renderer/inline.php \
-		Diff/Renderer/unified.php
-TESTS=		1.txt \
-		2.txt \
-		diff.phpt \
-		inline.phpt \
-		unified.phpt
+FILES=		Diff.php Diff/Engine/native.php Diff/Engine/shell.php \
+		Diff/Engine/string.php Diff/Engine/xdiff.php \
+		Diff/Mapped.php Diff/Renderer.php Diff/Renderer/context.php \
+		Diff/Renderer/inline.php Diff/Renderer/unified.php \
+		Diff/ThreeWay.php Diff3.php
+TESTS=		1.txt 2.txt 3.txt 4.txt 5.txt 6.txt context.patch context.phpt \
+		context2.phpt diff.phpt inline.phpt inline2.phpt \
+		pear_bug12740.phpt pear_bug4879.phpt pear_bug6251.phpt \
+		pear_bug6428.phpt string.phpt unified.patch unified.phpt \
+		unified2.phpt
 EXAMPLES=	1.txt \
 		2.txt \
 		diff.php
