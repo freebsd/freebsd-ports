@@ -1,5 +1,5 @@
---- doc/siproxd.conf.example.orig	Thu Aug 16 20:57:04 2007
-+++ doc/siproxd.conf.example	Wed Nov 14 12:26:19 2007
+--- doc/siproxd.conf.example.orig	2008-05-17 17:56:11.000000000 +0200
++++ doc/siproxd.conf.example	2008-09-23 12:03:33.000000000 +0200
 @@ -17,8 +17,8 @@
  #    or a hostname that resolves to that address (use a dyndns address for
  #    example).
@@ -11,16 +11,16 @@
  # uncomment the following line ONLY IF YOU KNOW WHAT YOU ARE DOING!
  # READ THE FAQ FIRST!
  #host_outbound = 1.2.3.4
-@@ -84,7 +84,7 @@
+@@ -79,7 +79,7 @@
  #   user:	uid/gid to switch to after startup
  #   chrootjail:	path to chroot to (chroot jail)
  user = nobody
 -#chrootjail = /var/lib/siproxd/
-+chrootjail = /usr/local/siproxd/
++chrootjail = %%PREFIX%%/siproxd/
  
  ######################################################################
  # Registration file:
-@@ -93,7 +93,7 @@
+@@ -88,7 +88,7 @@
  #   the specified directory path does exist!
  #   Note: If running in chroot jail, this path starts relative
  #         to the jail.
@@ -29,7 +29,7 @@
  
  ######################################################################
  # Automatically save current registrations every 'n' seconds
-@@ -106,7 +106,7 @@
+@@ -101,7 +101,7 @@
  #   This file holds the PID of the main thread of siproxd.
  #   Note: If running in chroot jail, this path starts relative
  #         to the jail.
@@ -38,3 +38,12 @@
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
+@@ -286,7 +286,7 @@
+ # the processing order is given by the load order.
+ #
+ # plugin_dir: MUST be terminated with '/'
+-plugindir=/home/hb9xar/src/siproxd/src/.libs/
++plugindir=%%PREFIX%%/lib/siproxd/
+ #
+ # List of plugins to load:
+ #load_plugin=plugin_demo.so
