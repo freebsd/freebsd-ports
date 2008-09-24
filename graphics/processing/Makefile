@@ -7,6 +7,7 @@
 
 PORTNAME=	processing
 PORTVERSION=	0135
+PORTREVISION=	1
 CATEGORIES=	graphics cad java
 MASTER_SITES=	http://processing.org./download/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Open source programming language and environment for people who want to program images, animation, and interactions
 
-RUN_DEPENDS=	jikes:${PORTSDIR}/java/jikes
+RUN_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
+		${JAVA_HOME}/jre/RXTXcomm.jar:${PORTSDIR}/comms/rxtx
 
 USE_JAVA=	1.5+
 NO_BUILD=	yes
