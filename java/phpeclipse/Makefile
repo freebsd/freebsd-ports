@@ -6,27 +6,47 @@
 #
 
 PORTNAME=	phpeclipse
-PORTVERSION=	1.1.8
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}.bin.dist
+DISTNAME=	PHPEclipse_${PORTVERSION}_src
 
 MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-PLIST_SUB=	VER=${PORTVERSION}
-
 PLUGIN_PATHS=	features plugins
+PATCH_TASKS=	eclipse.versionReplacer eclipse.idReplacer
 
-NO_BUILD=	yes
+USE_JAVA=	yes
+USE_ANT=	yes
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
 
+WRKSRC=		${WRKDIR}/dist
 ECLIPSE=	${PREFIX}/eclipse
+PLIST_VER=	${PORTVERSION}.200807121925PRD
+
+PLIST_SUB=	VER=${PLIST_VER}
+
+post-patch:
+.for _task in ${PATCH_TASKS}
+	@${FIND} ${WRKDIR} -name build.xml -exec ${REINPLACE_CMD} -E \
+		-e 's|<(${_task})(.*)/>|<!--\1\2/-->|1' \{} \;
+.endfor
+
+do-build:
+	@cd ${WRKDIR}/features; \
+	for feature in `ls`; do \
+		cd "$$feature"; \
+		${ANT} zip.distribution; \
+		cd ..; \
+	done
+	@${MKDIR} ${WRKSRC}
+	@for file in ${WRKDIR}/features/*/*.zip; do \
+		${UNZIP_CMD} "$$file" -d "${WRKSRC}/" ; \
+	done
 
 do-install:
 .for _path in ${PLUGIN_PATHS}
@@ -41,11 +61,11 @@ plist: build
 .for _path in ${PLUGIN_PATHS}
 	@${FIND} ${WRKSRC}/${_path}/ -not -type d \
 		| ${SED} "s|${WRKSRC}|eclipse|1" \
-		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
+		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
 	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d \
 		| ${SED} "s|${WRKSRC}|@dirrm eclipse|1" \
-		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
+		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
 	@${ECHO} "@dirrmtry eclipse/${_path}" >> ${PLIST}
 .endfor
