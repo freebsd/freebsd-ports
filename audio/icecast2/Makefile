@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
 		http://svn.xiph.org/releases/icecast/
 DISTNAME=	icecast-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A streaming mp3/ogg-vorbis audio server
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
