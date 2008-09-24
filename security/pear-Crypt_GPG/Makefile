@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,11 +16,22 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 CATEGORY=	Crypt
-FILES=		GPG.php GPG/Exceptions.php GPG/Key.php \
-		GPG/Signature.php GPG/UserId.php GPG/SubKey.php \
-		GPG/Driver/Php.php GPG/Driver/GnuPG.php
-TESTS=		PhpDriverTestCase.php DriverTestCase.php \
-		GnuPGDriverTestCase.php
+FILES=		GPG/DecryptStatusHandler.php GPG/Key.php GPG/UserId.php \
+		GPG/Engine.php GPG/Signature.php GPG/VerifyStatusHandler.php \
+		GPG/Exceptions.php GPG/SubKey.php
+
+TESTS=		AllTests.php GetFingerprintTestCase.php DecryptTestCase.php \
+		GetKeysTestCase.php DeletePrivateKeyTestCase.php ImportKeyTestCase.php \
+		DeletePublicKeyTestCase.php SignTestCase.php EncryptTestCase.php TestCase.php \
+		ExportPublicKeyTestCase.php VerifyTestCase.php GeneralTestCase.php \
+		data-files/testDecryptFile.asc data-files/testFileSmall.plain \
+		data-files/testDecryptFileDual.asc data-files/testImportKeyFile_private.asc \
+		data-files/testDecryptFileDualOnePassphrase.asc data-files/testImportKeyFile_public.asc \
+		data-files/testDecryptFileKeyNotFoundException.asc data-files/testVerifyFileClearsignedData.asc \
+		data-files/testDecryptFileNoPassphrase.asc data-files/testVerifyFileDualClearsignedData.asc \
+		data-files/testDecryptFileToString.asc data-files/testVerifyFileDualNormalSignedData.asc \
+		data-files/testFileEmpty.plain data-files/testVerifyFileNormalSignedData.asc \
+		data-files/testFileMedium.plain
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
