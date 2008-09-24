@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	freeimage
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -26,5 +25,9 @@ PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimage.a \
 		lib/libfreeimage.so \
 		lib/libfreeimage.so.3
+
+post-patch:
+	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile.gnu
 
 .include <bsd.port.mk>
