@@ -7,7 +7,7 @@ diff -ruN cmd_commit.in.orig cmd_commit.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
@@ -22,7 +22,7 @@ diff -ruN cmd_diff.in.orig cmd_diff.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
@@ -37,7 +37,7 @@ diff -ruN cmd_install.in.orig cmd_install.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
@@ -52,7 +52,7 @@ diff -ruN cmd_submit.in.orig cmd_submit.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
@@ -67,7 +67,7 @@ diff -ruN cmd_test.in.orig cmd_test.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
@@ -82,7 +82,7 @@ diff -ruN cmd_upgrade.in.orig cmd_upgrade.in
  set -- $ARGS
 -for i 
 -do
-+while [ x"" != x"--" -a x"" != x"" ]
++while [ x"$1" != x"--" -a x"$1" != x"" ]
 +do
 +	i=$1
  	case "$i" in
