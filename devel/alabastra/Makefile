@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	alabastra
-PORTVERSION=	0.2b
-PORTREVISION=	2
+PORTVERSION=	0.21b
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	Alabastra-${PORTVERSION}
@@ -16,17 +15,18 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	C++ Editor writen with QT4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build
+QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build \
+		iconengines
+USE_GMAKE=	yes
+ALL_TARGET=	Alabastra
 
-WRKSRC=		${WRKDIR}/Alabastra-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PLIST_FILES=	bin/alabastra
 
-PORTSCOUT=	limit:^0\.21[0-9]*
-
 do-configure:
-	( cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} Alabastra.pro )
+	cd ${WRKSRC} \
+	    && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} Alabastra.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Alabastra ${PREFIX}/bin/alabastra
