@@ -4,7 +4,7 @@ bin/sqlninja
 %%ETCDIR%%/dnstun/dnstun.c
 %%ETCDIR%%/dnstun/dnstun.exe
 %%PORTDOCS%%%%DOCSDIR%%/sqlninja-howto.html
-%%PORTDOCS%%%%DOCSDIR%%/sqlninja.conf.example
+%%PORTDOCS%%%%DOCSDIR%%/sqlninja.conf
 @dirrm %%ETCDIR%%/scripts
 @dirrm %%ETCDIR%%/dnstun
 @dirrm %%ETCDIR%%

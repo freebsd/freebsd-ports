@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlninja
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -28,7 +28,6 @@ do-install:
 	${MKDIR} ${ETCDIR}
 	${MKDIR} ${ETCDIR}/scripts
 	${MKDIR} ${ETCDIR}/dnstun
-	${MKDIR} ${DOCSDIR}
 .	for i in sqlninja
 		${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
 .	endfor
@@ -39,7 +38,8 @@ do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/dnstun/${i} ${ETCDIR}/dnstun
 .	endfor
 .if !defined(NOPORTDOCS)
-.	for i in sqlninja-howto.html sqlninja.conf.example
+	${MKDIR} ${DOCSDIR}
+.	for i in sqlninja-howto.html sqlninja.conf
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .	endfor
 .endif
