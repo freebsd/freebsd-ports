@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Device and library agnostic graphic primitives
 
-BUILD_DEPENDS=	p5-Moose>=0.25:${PORTSDIR}/devel/p5-Moose \
-		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Color>=0:${PORTSDIR}/graphics/p5-Graphics-Color \
-  		p5-MooseX-Clone>=0:${PORTSDIR}/devel/p5-MooseX-Clone \
-  		p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+BUILD_DEPENDS=	p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
+		p5-Geometry-Primitive>=0.11:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+		p5-Graphics-Color>=0.14:${PORTSDIR}/graphics/p5-Graphics-Color \
+  		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
+  		p5-MooseX-AttributeHelpers>=0.12:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Forest>=0:${PORTSDIR}/devel/p5-Forest \
-		p5-Text-Flow>=0:${PORTSDIR}/textproc/p5-Text-Flow
+		p5-Forest>=0.04:${PORTSDIR}/devel/p5-Forest \
+		p5-Text-Flow>=0.01:${PORTSDIR}/textproc/p5-Text-Flow
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
