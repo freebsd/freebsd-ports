@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	siproxd
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -24,13 +23,16 @@ PORTDOCS1=	AUTHORS ChangeLog README RELNOTES
 PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
-PLIST_FILES=	etc/siproxd.conf.example etc/siproxd_passwd.cfg sbin/siproxd
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} >= 500041
 	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+.if !defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+	${WRKSRC}/doc/siproxd.conf.example
 .endif
 
 post-install:
