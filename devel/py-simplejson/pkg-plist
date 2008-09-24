@@ -1,2 +1,19 @@
 @comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/class-simplejson.JSONDecoder.html
+%%PORTDOCS%%%%DOCSDIR%%/class-simplejson.JSONEncoder.html
+%%PORTDOCS%%%%DOCSDIR%%/class_to_source.js
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/layout.css
+%%PORTDOCS%%%%DOCSDIR%%/module-index.html
+%%PORTDOCS%%%%DOCSDIR%%/module-simplejson-index.html
+%%PORTDOCS%%%%DOCSDIR%%/module-simplejson.html
+%%PORTDOCS%%%%DOCSDIR%%/pudge.css
+%%PORTDOCS%%%%DOCSDIR%%/rst.css
+%%PORTDOCS%%%%DOCSDIR%%/simplejson/__init__.py.html
+%%PORTDOCS%%%%DOCSDIR%%/simplejson/decoder.py.html
+%%PORTDOCS%%%%DOCSDIR%%/simplejson/encoder.py.html
+%%PORTDOCS%%%%DOCSDIR%%/simplejson/jsonfilter.py.html
+%%PORTDOCS%%%%DOCSDIR%%/simplejson/scanner.py.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/simplejson
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
