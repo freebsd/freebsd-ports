@@ -1,6 +1,6 @@
---- Makefile.gnu.orig	2007-08-25 18:44:24.000000000 +0900
-+++ Makefile.gnu	2008-03-17 14:49:16.000000000 +0900
-@@ -4,27 +4,27 @@
+--- Makefile.gnu.orig	2008-09-24 22:28:31.000000000 +0200
++++ Makefile.gnu	2008-09-24 22:34:35.000000000 +0200
+@@ -4,17 +4,17 @@
  include Makefile.srcs
  
  # General configuration variables:
@@ -12,8 +12,8 @@
  
 -INCDIR = /usr/include
 -INSTALLDIR = /usr/lib
-+INCDIR = ${PREFIX}/include
-+INSTALLDIR = ${PREFIX}/lib
++INCDIR = %%PREFIX%%/include
++INSTALLDIR = %%PREFIX%%/lib
  
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
@@ -23,11 +23,7 @@
  LIBRARIES = -lstdc++
  
  MODULES = $(SRCS:.c=.o)
- MODULES := $(MODULES:.cpp=.o)
--CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
--CXXFLAGS = $(COMPILERFLAGS)  -Wno-ctor-dtor-privacy $(INCLUDE)
-+CFLAGS = $(COMPILERFLAGS) -fPIC $(INCLUDE)
-+CXXFLAGS = $(COMPILERFLAGS)  -fPIC -Wno-ctor-dtor-privacy $(INCLUDE)
+@@ -24,7 +24,7 @@
  
  TARGET  = freeimage
  STATICLIB = lib$(TARGET).a
@@ -53,12 +49,11 @@
 -	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
 -	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
 -	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
--	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
--	ldconfig
 +	install -m 644 -o root -g wheel $(HEADER) $(INCDIR)
 +	install -m 644 -o root -g wheel $(STATICLIB) $(INSTALLDIR)
 +	install -m 755 -o root -g wheel $(SHAREDLIB) $(INSTALLDIR)
-+	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)
+ 	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
+-	ldconfig
  
  clean:
  	rm -f core Dist/*.* u2dtmp* $(MODULES) $(STATICLIB) $(SHAREDLIB) $(LIBNAME)
