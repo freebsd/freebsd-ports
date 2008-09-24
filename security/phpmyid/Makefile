@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyID
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	security www
 MASTER_SITES=	http://siege.org/projects/phpMyID/
 EXTRACT_SUFX=	.tgz
@@ -17,8 +17,16 @@ COMMENT=	A single user Identity Provider for the OpenID framework
 NO_BUILD=	yes
 USE_PHP=	session
 
+OPTIONS=	BCMATH "Big math using bcmath lib (recommended by author)" on
+
 do-install:
 	${MKDIR} ${PREFIX}/www/${PORTNAME}
 	${CP} -R ${WRKSRC}/ ${PREFIX}/www/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_BCMATH)
+USE_PHP+=	bcmath
+.endif
+
+.include <bsd.port.post.mk>
