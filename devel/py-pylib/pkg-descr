@@ -1,0 +1,14 @@
+The pylib is a development support library featuring these tools and APIs:
+
+    * py.test:
+        cross-project testing tool with many advanced features
+    * py.execnet:
+        ad-hoc code distribution to SSH, Socket and local sub processes
+    * py.magic.greenlet:
+        micro-threads on standard CPython ("stackless-light") and PyPy
+    * py.path:
+        path abstractions over local and subversion files
+    * py.code:
+        dynamic code compile and traceback printing support
+
+WWW:	http://pylib.org
