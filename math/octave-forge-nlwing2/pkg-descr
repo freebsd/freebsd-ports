@@ -1,0 +1,13 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is nlwing2.
+
+This package allows efficient computation of nonlinear aerodynamic properties
+of a wing. It employs 2D section data to build a 3D potential vortex model of
+the flow. It uses a robust Euler-Newton method to track the change of flow
+vorticity quantities as the angle of attack progresses.
+
+WWW: http://octave.sourceforge.net/
