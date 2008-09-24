@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Open source programming language and environment for people who want to program images, animation, and interactions
 
-RUN_DEPENDS=	jikes:${PORTSDIR}/java/jikes
-		${JAVA_HOME}/jre/RXTXcomm.jar:${PORTSDIR}/comms/rxtx
+RUN_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
+		${LOCALBASE}/lib/jre/RXTXcomm.jar:${PORTSDIR}/comms/rxtx
 
 USE_JAVA=	1.5+
 NO_BUILD=	yes
