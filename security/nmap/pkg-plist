@@ -1,7 +1,4 @@
 bin/nmap
-libexec/nmap/nselib-bin/bit.so
-@dirrm libexec/nmap/nselib-bin
-@dirrm libexec/nmap
 %%DATADIR%%/scripts/script.db
 %%DATADIR%%/scripts/xamppDefaultPass.nse
 %%DATADIR%%/scripts/strangeSMTPport.nse
@@ -31,7 +28,6 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/scripts/SSLv2-support.nse
 %%DATADIR%%/scripts/SSHv1-support.nse
 %%DATADIR%%/scripts/SQLInject.nse
-%%DATADIR%%/scripts/SNMPsysdesr.nse
 %%DATADIR%%/scripts/SMTPcommands.nse
 %%DATADIR%%/scripts/SMTP_openrelay_test.nse
 %%DATADIR%%/scripts/RealVNC_auth_bypass.nse
@@ -44,6 +40,14 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/scripts/HTTPAuth.nse
 %%DATADIR%%/scripts/UPnP-info.nse
 %%DATADIR%%/scripts/zoneTrans.nse
+%%DATADIR%%/scripts/whois.nse
+%%DATADIR%%/scripts/popcapa.nse
+%%DATADIR%%/scripts/dns-safe-recursion-txid.nse
+%%DATADIR%%/scripts/dns-safe-recursion-port.nse
+%%DATADIR%%/scripts/brutePOP3.nse
+%%DATADIR%%/scripts/SNMPsysdescr.nse
+%%DATADIR%%/scripts/SNMPcommunitybrute.nse
+%%DATADIR%%/scripts/ASN.nse
 @dirrm %%DATADIR%%/scripts
 %%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/ipOps.lua
@@ -57,6 +61,11 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/nselib/tab.lua
 %%DATADIR%%/nselib/datafiles.lua
 %%DATADIR%%/nselib/comm.lua
+%%DATADIR%%/nselib/base64.lua
+%%DATADIR%%/nselib/unpwdb.lua
+%%DATADIR%%/nselib/snmp.lua
+%%DATADIR%%/nselib/pop3.lua
+%%DATADIR%%/nselib/dns.lua
 @dirrm %%DATADIR%%/nselib
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
