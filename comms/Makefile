@@ -126,6 +126,7 @@
     SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += syncterm
+    SUBDIR += tcpser
     SUBDIR += thebridge
     SUBDIR += tilp2
     SUBDIR += tits
