@@ -64,7 +64,9 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
+%%DATADIR%%/stopwords/.empty_file
 %%DATADIR%%/xapian-powered.png
+@dirrm %%DATADIR%%/stopwords
 @dirrm %%DATADIR%%/engines
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps

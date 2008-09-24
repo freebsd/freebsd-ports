@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -94,6 +94,7 @@ pre-configure:
 		${WRKSRC}/*.desktop
 
 post-install:
+	${TOUCH} ${DATADIR}/stopwords/.empty_file
 	${MKDIR} ${DESKBAR_MOD}
 .for pyscript in pinot-module
 	${INSTALL_DATA} ${WRKSRC}/scripts/python/${pyscript}.py ${DESKBAR_MOD}
