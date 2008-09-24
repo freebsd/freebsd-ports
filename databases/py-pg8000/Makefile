@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	pg8000
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	databases python
-MASTER_SITES=	http://pybrary.net/pg8000/
+MASTER_SITES=	http://pybrary.net/pg8000/:source1 \
+		http://peak.telecommunity.com/dist/:source2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
+		ez_setup.py:source2
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Pure-Python Interface to the PostgreSQL Database
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=easy_install
+
+post-extract:
+	@${CP} ${DISTDIR}/ez_setup.py ${WRKSRC}/ez_setup.py
 
 .include <bsd.port.mk>
