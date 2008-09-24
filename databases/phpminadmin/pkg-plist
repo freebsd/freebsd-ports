@@ -12,6 +12,7 @@
 %%WWWDIR%%/dump.inc.php
 %%WWWDIR%%/edit.inc.php
 %%WWWDIR%%/editing.inc.php
+%%WWWDIR%%/event.inc.php
 %%WWWDIR%%/export.inc.php
 %%WWWDIR%%/foreign.inc.php
 %%WWWDIR%%/functions.inc.php
@@ -34,12 +35,13 @@
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/minus.gif
 %%WWWDIR%%/plus.gif
-%%WWWDIR%%/todo.txt
 %%WWWDIR%%/up.gif
 %%WWWDIR%%/lang/cs.inc.php
 %%WWWDIR%%/lang/de.inc.php
 %%WWWDIR%%/lang/en.inc.php
 %%WWWDIR%%/lang/es.inc.php
+%%WWWDIR%%/lang/et.inc.php
+%%WWWDIR%%/lang/it.inc.php
 %%WWWDIR%%/lang/fr.inc.php
 %%WWWDIR%%/lang/nl.inc.php
 %%WWWDIR%%/lang/sk.inc.php
