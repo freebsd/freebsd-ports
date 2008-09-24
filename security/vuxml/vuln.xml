@@ -39,11 +39,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>2.0.17,1</lt></range>
+	<range><lt>2.0.0.17,1</lt></range>
       </package>
       <package>
         <name>linux-firefox</name>
-	<range><lt>2.0.17</lt></range>
+	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
         <name>firefox3</name>
