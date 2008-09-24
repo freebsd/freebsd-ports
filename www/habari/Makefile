@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	habari
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://habariproject.org/dist/ \
 		http://habari.jp/dist/
@@ -49,9 +49,10 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in LICENSE NOTICE doc/MIT.txt doc/Tiddlywiki_License.txt doc/manual/index.html
+.for file in LICENSE NOTICE doc/MIT.txt doc/Tiddlywiki_License.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} manual ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
