@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Multiplex
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	IO::Multiplex - Manage IO on many file handles
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::Multiplex.3
+# http://search.cpan.org/dist/IO-Multiplex/Changes
 
 .include <bsd.port.pre.mk>
 
