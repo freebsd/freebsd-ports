@@ -536,6 +536,12 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/de_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/en.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/en_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/fr.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/fr_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/it.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/it_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/readme.txt
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typoimages.php
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typolib.php
@@ -1065,6 +1071,7 @@
 %%WWWDIR%%/system/modules/faq/templates/mod_faqreader.tpl
 %%WWWDIR%%/system/modules/frontend/ContentAccordion.php
 %%WWWDIR%%/system/modules/frontend/ContentAlias.php
+%%WWWDIR%%/system/modules/frontend/ContentArticle.php
 %%WWWDIR%%/system/modules/frontend/ContentCode.php
 %%WWWDIR%%/system/modules/frontend/ContentDownload.php
 %%WWWDIR%%/system/modules/frontend/ContentDownloads.php
@@ -1174,6 +1181,7 @@
 %%WWWDIR%%/system/modules/frontend/templates/member_grouped.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article_list.tpl
+%%WWWDIR%%/system/modules/frontend/templates/mod_article_plain.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article_teaser.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_breadcrumb.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_flash.tpl
