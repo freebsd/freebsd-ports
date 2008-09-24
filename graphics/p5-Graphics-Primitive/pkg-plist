@@ -8,10 +8,10 @@
 %%SITE_PERL%%/Graphics/Primitive/ComponentList.pm
 %%SITE_PERL%%/Graphics/Primitive/Container.pm
 %%SITE_PERL%%/Graphics/Primitive/Driver.pm
+%%SITE_PERL%%/Graphics/Primitive/Driver/TextLayout.pm
 %%SITE_PERL%%/Graphics/Primitive/Font.pm
 %%SITE_PERL%%/Graphics/Primitive/Image.pm
 %%SITE_PERL%%/Graphics/Primitive/Insets.pm
-%%SITE_PERL%%/Graphics/Primitive/Operation
 %%SITE_PERL%%/Graphics/Primitive/Operation.pm
 %%SITE_PERL%%/Graphics/Primitive/Operation/Fill.pm
 %%SITE_PERL%%/Graphics/Primitive/Operation/Stroke.pm
@@ -25,5 +25,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Paint
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Operation
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive/Driver
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive
 @dirrmtry %%SITE_PERL%%/Graphics
