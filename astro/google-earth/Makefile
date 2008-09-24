@@ -7,7 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	4.3.7284.3916
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
+USE_XLIB=	yes
 
 REAL_DISTFILE=		GoogleEarthLinux.bin
 TARGET_DISTFILE=	GoogleEarthLinux-${PORTVERSION}.bin
