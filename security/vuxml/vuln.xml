@@ -34,6 +34,92 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2273879e-8a2f-11dd-a6fe-0030843d3802">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.17,1</lt></range>
+      </package>
+      <package>
+        <name>linux-firefox</name>
+	<range><lt>2.0.17</lt></range>
+      </package>
+      <package>
+        <name>firefox3</name>
+	<range><lt>3.0.2,1</lt></range>
+      </package>
+      <package>
+        <name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.12</lt></range>
+      </package>
+      <package>
+        <name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.17</lt></range>
+      </package>
+      <package>
+        <name>flock</name>
+	<name>linux-flock</name>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation, reportss:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2008-37<br/>UTF-8 URL stack buffer overflow</p>
+	  <p>MFSA 2008-38<br/>nsXMLDocument::OnChannelRedirect() same-origin
+	    violation</p>
+	  <p>MFSA 2008-39<br/>Privilege escalation using feed preview page and
+	    XSS flaw</p>
+	  <p>MFSA 2008-40<br/>Forced mouse drag</p>
+	  <p>MFSA 2008-41<br/>Privilege escalation via XPCnativeWrapper
+	    pollution</p>
+	  <p>MFSA 2008-42<br/>Crashes with evidence of memory corruption
+	    (rv:1.9.0.2/1.8.1.17)</p>
+	  <p>MFSA 2008-43<br/>BOM characters stripped from JavaScript before
+	    execution</p>
+	  <p>MFSA 2008-44<br/>resource: traversal vulnerabilities</p>
+	  <p>MFSA 2008-45<br/>XBM image uninitialized memory reading</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0016</cvename>
+      <cvename>CVE-2008-3835</cvename>
+      <cvename>CVE-2008-3836</cvename>
+      <cvename>CVE-2008-3837</cvename>
+      <cvename>CVE-2008-4058</cvename>
+      <cvename>CVE-2008-4059</cvename>
+      <cvename>CVE-2008-4060</cvename>
+      <cvename>CVE-2008-4061</cvename>
+      <cvename>CVE-2008-4062</cvename>
+      <cvename>CVE-2008-4063</cvename>
+      <cvename>CVE-2008-4064</cvename>
+      <cvename>CVE-2008-4065</cvename>
+      <cvename>CVE-2008-4067</cvename>
+      <cvename>CVE-2008-4068</cvename>
+      <cvename>CVE-2008-4069</cvename>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-37.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-38.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-39.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-40.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-41.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-42.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-43.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-44.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-45.html</url>
+    </references>
+    <dates>
+      <discovery>2008-09-24</discovery>
+      <entry>2008-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0afb4b9-89a1-11dd-a65b-00163e000016">
     <topic>squirrelmail -- Session hijacking vulnerability</topic>
     <affects>
