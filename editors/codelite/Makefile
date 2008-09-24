@@ -57,7 +57,6 @@ do-install:
 	${MKDIR} ${DATADIR}/debuggers
 	${MKDIR} ${DATADIR}/plugins
 	${MKDIR} ${DATADIR}/images
-	${MKDIR} ${PREFIX}/include/UnitTest++
 	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/CodeLiteUR ${PREFIX}/bin/CodeLite
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_dos2unix.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_exec.sh ${PREFIX}/bin/
