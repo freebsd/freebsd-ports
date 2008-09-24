@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
-		iconv:${PORTSDIR}/converters/libiconv \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth:${PORTSDIR}/devel/pth
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INFO=		dirmngr
 MAN1=		dirmngr-client.1 dirmngr.1
 
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)
