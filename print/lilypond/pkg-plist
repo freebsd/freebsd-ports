@@ -9,7 +9,37 @@ bin/convert-ly
 bin/etf2ly
 bin/midi2ly
 lib/lilypond/%%PORTVERSION%%/python/midi.so
-%%DATADIR%%/current
+share/emacs/site-lisp/lilypond-font-lock.el
+share/emacs/site-lisp/lilypond-indent.el
+share/emacs/site-lisp/lilypond-init.el
+share/emacs/site-lisp/lilypond-mode.el
+share/emacs/site-lisp/lilypond-song.el
+share/emacs/site-lisp/lilypond-what-beat.el
+share/emacs/site-lisp/lilypond-words.el
+share/locale/cs/LC_MESSAGES/lilypond.mo
+share/locale/da/LC_MESSAGES/lilypond.mo
+share/locale/de/LC_MESSAGES/lilypond.mo
+share/locale/es/LC_MESSAGES/lilypond.mo
+share/locale/fi/LC_MESSAGES/lilypond.mo
+share/locale/fr/LC_MESSAGES/lilypond.mo
+share/locale/it/LC_MESSAGES/lilypond.mo
+share/locale/ja/LC_MESSAGES/lilypond.mo
+share/locale/nl/LC_MESSAGES/lilypond.mo
+share/locale/ru/LC_MESSAGES/lilypond.mo
+share/locale/sv/LC_MESSAGES/lilypond.mo
+share/locale/tr/LC_MESSAGES/lilypond.mo
+share/locale/uk/LC_MESSAGES/lilypond.mo
+share/locale/vi/LC_MESSAGES/lilypond.mo
+share/locale/zh_TW/LC_MESSAGES/lilypond.mo
+share/omf/lilypond/%%PORTVERSION%%/lilypond-internals.html.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.html.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.pdf.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond-program.html.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond-program.pdf.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond.html.omf
+share/omf/lilypond/%%PORTVERSION%%/lilypond.pdf.omf
+share/omf/lilypond/%%PORTVERSION%%/music-glossary.html.omf
+share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/dvips/ps
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Bold.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-BoldItal.otf
@@ -169,9 +199,9 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/paper-defaults.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/params-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/performer-init.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/portugues.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-fretboards-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-fretboards.ly
-%%DATADIR%%/%%PORTVERSION%%/ly/portugues.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/property-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/script-init.ly
@@ -231,6 +261,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/editor.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/encoding.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/file-cache.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/flag-styles.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/font.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/framework-eps.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/framework-null.scm
@@ -289,38 +320,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/vim/syntax/lilypond-words
 %%DATADIR%%/%%PORTVERSION%%/vim/syntax/lilypond-words.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/syntax/lilypond.vim
-share/emacs/site-lisp/lilypond-font-lock.el
-share/emacs/site-lisp/lilypond-indent.el
-share/emacs/site-lisp/lilypond-init.el
-share/emacs/site-lisp/lilypond-mode.el
-share/emacs/site-lisp/lilypond-song.el
-share/emacs/site-lisp/lilypond-what-beat.el
-share/emacs/site-lisp/lilypond-words.el
-share/locale/cs/LC_MESSAGES/lilypond.mo
-share/locale/da/LC_MESSAGES/lilypond.mo
-share/locale/de/LC_MESSAGES/lilypond.mo
-share/locale/es/LC_MESSAGES/lilypond.mo
-share/locale/fi/LC_MESSAGES/lilypond.mo
-share/locale/fr/LC_MESSAGES/lilypond.mo
-share/locale/it/LC_MESSAGES/lilypond.mo
-share/locale/ja/LC_MESSAGES/lilypond.mo
-share/locale/nl/LC_MESSAGES/lilypond.mo
-share/locale/ru/LC_MESSAGES/lilypond.mo
-share/locale/sv/LC_MESSAGES/lilypond.mo
-share/locale/tr/LC_MESSAGES/lilypond.mo
-share/locale/uk/LC_MESSAGES/lilypond.mo
-share/locale/vi/LC_MESSAGES/lilypond.mo
-share/locale/zh_TW/LC_MESSAGES/lilypond.mo
-share/locale/rw/LC_MESSAGES/lilypond.mo
-share/omf/lilypond/%%PORTVERSION%%/lilypond-internals.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-learning.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-program.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond-program.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond.html.omf
-share/omf/lilypond/%%PORTVERSION%%/lilypond.pdf.omf
-share/omf/lilypond/%%PORTVERSION%%/music-glossary.html.omf
-share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
+%%DATADIR%%/current
 %%DOCS%%%%DOCSDIR%%/Documentation/DEDICATION.html
 %%DOCS%%%%DOCSDIR%%/Documentation/DEDICATION.txt
 %%DOCS%%%%DOCSDIR%%/Documentation/THANKS.html
@@ -334,6 +334,13 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/index.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/index.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/index.html
+%%DOCS%%%%DOCSDIR%%/Documentation/lilypond-ie-fixes.css
+%%DOCS%%%%DOCSDIR%%/Documentation/lilypond-mccarty.css
+%%DOCS%%%%DOCSDIR%%/Documentation/lilypond.css
+%%DOCS%%%%DOCSDIR%%/Documentation/texinfo.css
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/00/lily-7e31bae4-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/00/lily-7e31bae4.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/00/lily-7e31bae4.png
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/01/lily-d0b06c62-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/01/lily-d0b06c62.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/01/lily-d0b06c62.png
@@ -374,6 +381,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f6/lily-19a90f72-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f6/lily-19a90f72.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f6/lily-19a90f72.png
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f9/lily-48fb8ab7-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f9/lily-48fb8ab7.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/topdocs/f9/lily-48fb8ab7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/translations.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/translations.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/translations.fr.html
@@ -424,6 +434,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-78f0e531-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-78f0e531.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-78f0e531.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-cf4d3d8d.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-cf4d3d8d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-daa75613-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-daa75613.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-daa75613.png
@@ -435,12 +447,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-f9e4d6db-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-f9e4d6db.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/02/lily-f9e4d6db.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-2b6a1010-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-2b6a1010-2.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-2b6a1010.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-2b6a1010.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-3f34ec89.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-3f34ec89.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-5494dbfa-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-5494dbfa.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-5494dbfa.png
@@ -452,6 +458,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-dacef2cd.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-e0ac5cb0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-e0ac5cb0.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-ea5bb41f-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-ea5bb41f.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/03/lily-ea5bb41f.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-01479027-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-01479027.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-01479027.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-02e4cd7a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-02e4cd7a-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/04/lily-02e4cd7a.ly
@@ -498,8 +510,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-435f8cdf-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-435f8cdf.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-435f8cdf.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-54b66424.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-54b66424.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-82ae106c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-82ae106c-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/06/lily-82ae106c-3.signature
@@ -517,9 +527,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-59b20a78.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-6d423c0d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-6d423c0d.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-85a36808-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-85a36808.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-85a36808.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-b9c1d873-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-b9c1d873.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-b9c1d873.png
@@ -528,25 +535,20 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-bf6f5d56.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-cc377ed1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-cc377ed1.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-e2612525.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/07/lily-e2612525.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-202cfe8f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-202cfe8f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-202cfe8f.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-2fc9f179.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-2fc9f179.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-498647c0-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-498647c0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-498647c0.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-4adf5d64.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-4adf5d64.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-72692924-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-72692924.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-72692924.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-8c820bd2-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-8c820bd2.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/08/lily-8c820bd2.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-0ecba101-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-0ecba101.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-0ecba101.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-5624dece-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-5624dece.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-5624dece.png
@@ -564,6 +566,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-e6a199b2-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-e6a199b2.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-e6a199b2.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-f68d4b7c-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-f68d4b7c.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/09/lily-f68d4b7c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0a/lily-1999afa3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0a/lily-1999afa3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0a/lily-1999afa3.png
@@ -593,15 +598,14 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-3a90e1f8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-83db6dad.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-83db6dad.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-bfb92213-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-bfb92213.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-bfb92213.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-ea989790-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-ea989790.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-ea989790.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-f30e2dbf-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-f30e2dbf.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0b/lily-f30e2dbf.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/0c/lily-0262ad20.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/0c/lily-0262ad20.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0c/lily-254b279d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0c/lily-254b279d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0c/lily-254b279d.png
@@ -628,6 +632,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-122cbec1-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-122cbec1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-122cbec1.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-5a15b79a-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-5a15b79a.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-5a15b79a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-65bfbd2e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-65bfbd2e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/0d/lily-65bfbd2e.png
@@ -718,6 +725,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-bae55716-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-bae55716.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-bae55716.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-f930ebe1-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-f930ebe1.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/10/lily-f930ebe1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/11/lily-27efb20b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/11/lily-27efb20b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/11/lily-44f7ad13.ly
@@ -786,6 +796,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-6c5d118b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-7a604628.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-7a604628.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-8bbe80e6.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-8bbe80e6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-a603033b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-a603033b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/15/lily-a603033b.png
@@ -855,17 +867,20 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-f07e4959-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-f07e4959.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-f07e4959.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-fac66452-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-fac66452.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/18/lily-fac66452.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-3606a374-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-3606a374.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-3606a374.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-4d3e778c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-4d3e778c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-4d3e778c.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-6bdf214f-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-6bdf214f.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-6bdf214f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-7202ee71.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-7202ee71.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-d28ae93e-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-d28ae93e.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-d28ae93e.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-df0cb8dd.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-df0cb8dd.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/19/lily-dfc3a3f7-1.signature
@@ -874,10 +889,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-28d6887a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-28d6887a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-28d6887a.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-54eed956.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-54eed956.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-5c1e8831.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-5c1e8831.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-6eab60ac.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-6eab60ac.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-7f4c0090-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-7f4c0090-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1a/lily-7f4c0090.ly
@@ -966,6 +981,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1e/lily-c8caa18d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1e/lily-cd3a81bb.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1e/lily-cd3a81bb.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-0110def6-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-0110def6.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-0110def6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-50348a76-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-50348a76-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/1f/lily-50348a76.ly
@@ -994,13 +1012,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-1e6bbbdc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-2e932371.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-2e932371.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-4991f0c7.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-4991f0c7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-769c3018-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-769c3018.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-769c3018.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-82c417f7.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-82c417f7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-ece67e19-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-ece67e19.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/20/lily-ece67e19.png
@@ -1052,8 +1066,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-62cf82cd-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-62cf82cd.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-62cf82cd.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-6910a2d0.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-6910a2d0.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-7892cbfc-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-7892cbfc.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-7892cbfc.png
@@ -1062,8 +1074,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-9d26e989-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-9d26e989.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-9d26e989.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-d624a949.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-d624a949.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-de56d6e4-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-de56d6e4.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/23/lily-de56d6e4.png
@@ -1083,6 +1093,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-a54f37a9-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-a54f37a9.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-a54f37a9.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-daedcec5.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-daedcec5.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-e2aec027.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/24/lily-e2aec027.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-1bce053e.ly
@@ -1090,8 +1102,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-2149ef8d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-2149ef8d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-2149ef8d.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-b895c855.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-b895c855.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-baa9ea1d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-baa9ea1d-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-baa9ea1d.ly
@@ -1105,8 +1115,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-be11a812-7.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-be11a812.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-be11a812.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-eeed1fb0.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-eeed1fb0.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-ef4be0b8.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/25/lily-ef4be0b8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/26/lily-06005f85-1.signature
@@ -1157,8 +1165,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-7e628fe0-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-7e628fe0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-7e628fe0.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-9656e72d.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-9656e72d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-c70af11d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-c70af11d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/28/lily-c94c0f5b-1.signature
@@ -1189,6 +1195,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/29/lily-e7bc09ce-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/29/lily-e7bc09ce.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/29/lily-e7bc09ce.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-4c5f0439-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-4c5f0439-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-4c5f0439.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-4c5f0439.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-9baf8971.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-9baf8971.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2a/lily-b1b5208c.ly
@@ -1199,11 +1209,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-6ad9cf29-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-6ad9cf29.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-6ad9cf29.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c337ed5c.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c337ed5c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c3bc008e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c3bc008e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c3bc008e.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c7e58a4e.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/2b/lily-c7e58a4e.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-3a4bdb65-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-3a4bdb65.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-3a4bdb65.png
@@ -1214,9 +1224,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-70b24d95.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-7cabeb63.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-7cabeb63.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-7f299dfb-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-7f299dfb.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/2c/lily-7f299dfb.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-0073d0db-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-0073d0db.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-0073d0db.png
@@ -1229,6 +1236,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-96a23a26.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-9eca118e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-9eca118e.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-a1f3a59b-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-a1f3a59b.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-a1f3a59b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-b5d90089-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-b5d90089-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2d/lily-b5d90089.ly
@@ -1271,9 +1281,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2f/lily-ffb3d27c-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2f/lily-ffb3d27c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/2f/lily-ffb3d27c.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-10eac4f9-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-10eac4f9.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-10eac4f9.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-128118d5-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-128118d5.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/30/lily-128118d5.png
@@ -1303,6 +1310,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-7a96bfab-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-7a96bfab.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-7a96bfab.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-882d4332-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-882d4332.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-882d4332.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-acc74c21.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-acc74c21.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/31/lily-b8a0c434-1.signature
@@ -1334,8 +1344,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-38ebbed9-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-38ebbed9.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-38ebbed9.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-59ab00ac.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-59ab00ac.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-60a8a73b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-60a8a73b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/33/lily-6d308047-1.signature
@@ -1374,8 +1382,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-5ea3524b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-5ea3524b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-5ea3524b.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-8063b5d5.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-8063b5d5.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-bee898be.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-bee898be.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/35/lily-deed8e4f-1.signature
@@ -1433,8 +1439,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/39/lily-cffd7f4d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/39/lily-cffd7f4d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/39/lily-cffd7f4d.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/39/lily-d8c3096b.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/39/lily-d8c3096b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3a/lily-0a067068-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3a/lily-0a067068.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3a/lily-0a067068.png
@@ -1467,9 +1471,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3b/lily-bf4b61d3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-081d70c8.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-081d70c8.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1ac935c7-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1ac935c7.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1ac935c7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1fa8e9b3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1fa8e9b3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3c/lily-1fa8e9b3.png
@@ -1522,9 +1523,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a3e14f0b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a3e14f0b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a3e14f0b.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a46706df-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a46706df.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-a46706df.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-ac5b23e3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-ac5b23e3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/3e/lily-d0eac05d-1.signature
@@ -1574,6 +1572,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-7d46ea46-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-7d46ea46.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-7d46ea46.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-caaef228-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-caaef228.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-caaef228.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-e92589d3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-e92589d3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/40/lily-e92589d3.png
@@ -1587,6 +1588,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/41/lily-48071704.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/41/lily-b6dc3338.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/41/lily-b6dc3338.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-12c25360-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-12c25360.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-12c25360.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-3c1bb0d1-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-3c1bb0d1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/42/lily-3c1bb0d1.png
@@ -1687,10 +1691,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/45/lily-fff78f7a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-4589450f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-4589450f.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-679818cc-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-679818cc-2.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-679818cc.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-679818cc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-81c7b937-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-81c7b937.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/46/lily-81c7b937.png
@@ -1767,8 +1767,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-2413b994-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-2413b994.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-2413b994.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-44cf43cb.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-44cf43cb.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-6afca72e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-6afca72e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/49/lily-6afca72e.png
@@ -1780,6 +1778,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-0f029e29-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-0f029e29.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-0f029e29.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-17e0dd82-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-17e0dd82.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-17e0dd82.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-1fb1964e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-1fb1964e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4a/lily-1fb1964e.png
@@ -1841,9 +1842,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-7e740a2e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-7e740a2e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-7e740a2e.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-c2d206ea-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-c2d206ea.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/4c/lily-c2d206ea.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-119a77cc-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-119a77cc.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-119a77cc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-357c2b91-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-357c2b91.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/4d/lily-357c2b91.png
@@ -1938,6 +1939,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-280ca753-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-280ca753.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-280ca753.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-36dd62c0.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-36dd62c0.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-51069b96.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-51069b96.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-742fb61c-1.signature
@@ -1947,9 +1950,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-89b5ff0f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-aad034d8.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-aad034d8.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-bf25fa42-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-bf25fa42.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-bf25fa42.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-c0795b34-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-c0795b34-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/52/lily-c0795b34.ly
@@ -1973,6 +1973,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-579e611f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-70fa014e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-70fa014e.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-9e6bd609-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-9e6bd609.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-9e6bd609.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-b9eff974-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-b9eff974.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/53/lily-b9eff974.png
@@ -2006,8 +2009,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-c74e800e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-c74e800e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-c74e800e.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-c9d57979.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-c9d57979.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-d01c3ef7-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-d01c3ef7.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/55/lily-d01c3ef7.png
@@ -2234,9 +2235,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-49cc3c0a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-49cc3c0a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-49cc3c0a.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-58a92218-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-58a92218.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-58a92218.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-a03ec769.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-a03ec769.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/57/lily-c18716cc-1.signature
@@ -2267,6 +2265,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-6425f732.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-77750a36.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-77750a36.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-950094ce-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-950094ce-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-950094ce.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-950094ce.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-b3eadb3d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-b3eadb3d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/59/lily-c4ff9864-1.signature
@@ -2283,8 +2285,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-215d36a1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-805d6e75.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-805d6e75.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-b10ecbed.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-b10ecbed.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-9f9b8f37-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-9f9b8f37.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-9f9b8f37.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-ac863dcc.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-ac863dcc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-ce439f35-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-ce439f35.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5a/lily-ce439f35.png
@@ -2328,8 +2333,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-dc486a96-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-dc486a96.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-dc486a96.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-df09d7d3.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-df09d7d3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-eeeae124-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-eeeae124.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5c/lily-eeeae124.png
@@ -2365,6 +2368,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5d/lily-ec2fa514.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-20e29c39.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-20e29c39.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-22b279c1.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-22b279c1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-26da6f1a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-26da6f1a-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/5e/lily-26da6f1a.ly
@@ -2454,6 +2459,15 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-52c5295a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-52c5295a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-52c5295a.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-6aecebad-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-6aecebad.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-6aecebad.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-721d1aa9-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-721d1aa9.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-721d1aa9.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-79df9462-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-79df9462.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-79df9462.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-92b9ad45-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-92b9ad45.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/62/lily-92b9ad45.png
@@ -2471,8 +2485,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-9de28dc9.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-b11e3d66.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-b11e3d66.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-b5269068.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-b5269068.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-d56aeff9-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-d56aeff9.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/63/lily-d56aeff9.png
@@ -2500,16 +2512,15 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-1e1f07d3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-2d8d9cba.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-2d8d9cba.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-6bff00cb.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-6bff00cb.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-81891bd1-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-81891bd1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-81891bd1.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b06fb729-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b06fb729.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b06fb729.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b26bac60-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b26bac60.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b26bac60.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b450069a.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-b450069a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-c4610079-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-c4610079-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-c4610079.ly
@@ -2517,6 +2528,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-f2bc906c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-f2bc906c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/66/lily-f2bc906c.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-0eb91881.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-0eb91881.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-2f97c8d1-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-2f97c8d1-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-2f97c8d1-3.signature
@@ -2527,8 +2540,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-521b4101-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-521b4101.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-521b4101.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-857e7476.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-857e7476.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-882247bf-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-882247bf.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-882247bf.png
@@ -2540,6 +2551,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-a5cd5a00-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-a5cd5a00.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-a5cd5a00.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-c986efc3.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/67/lily-c986efc3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/68/lily-291c494b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/68/lily-291c494b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/68/lily-30d6cb8f-1.signature
@@ -2630,9 +2643,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-840d2d06-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-840d2d06.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-840d2d06.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-b49d1957-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-b49d1957.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-b49d1957.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-b9707e8b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-b9707e8b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/6e/lily-c6626b4f-1.signature
@@ -2706,6 +2716,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-80a4d651-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-80a4d651.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-80a4d651.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-858c8d10.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-858c8d10.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-bbfd371e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-bbfd371e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/71/lily-bbfd371e.png
@@ -2739,6 +2751,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-26476fe0-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-26476fe0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-26476fe0.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-3bcf1b8f.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-3bcf1b8f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-99d9d349-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-99d9d349.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-99d9d349.png
@@ -2750,6 +2764,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/73/lily-bf0ab4e1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-09536d80.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-09536d80.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-176c18b5-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-176c18b5.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-176c18b5.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-b16d9bc0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-b16d9bc0.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-b3a05268-1.signature
@@ -2760,6 +2777,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-be9a03bb.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-cae21093.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-cae21093.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-ee10a7a2.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/74/lily-ee10a7a2.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/75/lily-15822f43.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/75/lily-15822f43.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/75/lily-33b5119a.ly
@@ -2808,11 +2827,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/77/lily-b88f2ebe-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/77/lily-b88f2ebe.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/77/lily-b88f2ebe.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/77/lily-d794b630.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/77/lily-d794b630.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-1319851f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-1319851f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-1319851f.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-584fce89.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-584fce89.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-62d77589-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-62d77589.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/78/lily-62d77589.png
@@ -2890,13 +2909,19 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-4ae7419b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-4f49e056.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-4f49e056.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-75157a81.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-75157a81.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-7b8c2133.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-7b8c2133.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-a544b8f9.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-a544b8f9.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-e44ff74f-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-e44ff74f.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7b/lily-e44ff74f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-4fcb1f1c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-4fcb1f1c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-4fcb1f1c.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-550937f1-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-550937f1.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-550937f1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-6045db5e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-6045db5e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7c/lily-6045db5e.png
@@ -2925,10 +2950,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-bdcb5ee6-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-bdcb5ee6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-bdcb5ee6.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-d5991eab-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-d5991eab.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-d5991eab.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-f7e74e16.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-f7e74e16.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-fc2585be.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7d/lily-fc2585be.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-1161bf75.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-1161bf75.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-22489c98.ly
@@ -2940,14 +2966,15 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-28cd2b35.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-46718741.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-46718741.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-64ebcb29.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-64ebcb29.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-72e02124-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-72e02124.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-72e02124.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7a676b7c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7a676b7c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7a676b7c.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7ad9824c-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7ad9824c.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-7ad9824c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-bcf56005-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-bcf56005.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/7e/lily-bcf56005.png
@@ -3002,7 +3029,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-90d6761c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-90d6761c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-90d6761c.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-b983adc9-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-b983adc9.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-b983adc9.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/81/lily-ca89ab59-1.signature
@@ -3116,8 +3142,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-4cbf1639-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-4cbf1639.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-4cbf1639.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-51b8ff4f.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-51b8ff4f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-5b3b7564-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-5b3b7564.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/88/lily-5b3b7564.png
@@ -3163,6 +3187,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-5c2d9b79-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-5c2d9b79.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-5c2d9b79.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-94b11ea8-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-94b11ea8-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-94b11ea8.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-94b11ea8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-cad96b7d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-cad96b7d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8b/lily-cad96b7d.png
@@ -3210,8 +3238,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-5cb45346.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-5e5cd762.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-5e5cd762.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-7f1337b1.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-7f1337b1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-aaa3322c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-aaa3322c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8d/lily-aaa3322c.png
@@ -3232,6 +3258,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-56060adc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-a1647746.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-a1647746.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-b4788a9d-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-b4788a9d-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-b4788a9d.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/8e/lily-b4788a9d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8f/lily-34a9bb3f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8f/lily-34a9bb3f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/8f/lily-34a9bb3f.png
@@ -3280,6 +3310,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-c6373e0e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-c6373e0e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-c6373e0e.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-e43e2c10-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-e43e2c10.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-e43e2c10.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-fd34a80b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/91/lily-fd34a80b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/92/lily-2799ebc6-1.signature
@@ -3305,8 +3338,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-5edf712b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-5edf712b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-5edf712b.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-75369f43.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-75369f43.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-952e75c8.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-952e75c8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-99a44b4c-1.signature
@@ -3315,8 +3346,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-b0d48487-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-b0d48487.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-b0d48487.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-fb20dfe1.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/93/lily-fb20dfe1.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-06795900-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-06795900.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-06795900.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-25b6ec0d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-25b6ec0d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/94/lily-423c5482-1.signature
@@ -3365,8 +3397,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-3762e42b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-3762e42b.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-3762e42b.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-3cf4aaf6.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-3cf4aaf6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-41a243f7-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-41a243f7.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-41a243f7.png
@@ -3375,12 +3405,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-76325d0f-3.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-76325d0f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-76325d0f.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-d148f691.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-d148f691.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-d9e61a4e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/96/lily-d9e61a4e.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/97/lily-2faa2e59.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/97/lily-2faa2e59.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/97/lily-30752b26.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/97/lily-30752b26.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/97/lily-3a0d912c.ly
@@ -3492,13 +3518,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-0af15c4b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-13c7144a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-13c7144a.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-d4c1e2a1.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-d4c1e2a1.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-e2fd7b7c-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-e2fd7b7c-2.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-e2fd7b7c-3.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-e2fd7b7c.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9c/lily-e2fd7b7c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9d/lily-2eeb87f6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9d/lily-2eeb87f6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9d/lily-3602a67c-1.signature
@@ -3539,8 +3558,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9e/lily-d4bb3f64.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9e/lily-d6e50841.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9e/lily-d6e50841.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9f/lily-72d1df6e.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/9f/lily-72d1df6e.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9f/lily-75801860-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9f/lily-75801860.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/9f/lily-75801860.png
@@ -3570,6 +3587,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a0/lily-b9c2cb19.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-0291c6ce.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-0291c6ce.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-10705460.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-10705460.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-21670f8c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-21670f8c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a1/lily-235dafdf-1.signature
@@ -3597,9 +3616,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-e9448a7f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-e9448a7f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-e9448a7f.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-f2060385-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-f2060385.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/a2/lily-f2060385.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a3/lily-3ced2eb6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a3/lily-3ced2eb6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a3/lily-3fb7949b-1.signature
@@ -3711,6 +3727,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-7fbe9800-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-7fbe9800.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-7fbe9800.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-9b9ba0eb.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-9b9ba0eb.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-b6c54c3c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-b6c54c3c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/a9/lily-b6c54c3c.png
@@ -3745,9 +3763,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-5443f4c3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-5443f4c3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-5443f4c3.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-66c9c5c6-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-66c9c5c6.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-66c9c5c6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8a8da03b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8a8da03b-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8a8da03b.ly
@@ -3756,6 +3771,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8ae3c7ae-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8ae3c7ae.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-8ae3c7ae.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-94447b97.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-94447b97.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-b4a43b4c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-b4a43b4c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-b4a43b4c.png
@@ -3763,6 +3780,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-bb7a4506-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-bb7a4506.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-bb7a4506.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-df2c70c9-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-df2c70c9-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-df2c70c9.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-df2c70c9.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-f3ef3168-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-f3ef3168.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ab/lily-f3ef3168.png
@@ -3850,9 +3871,15 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/af/lily-f99eea3f.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-142ed752.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-142ed752.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-2c1a8c65-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-2c1a8c65.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-2c1a8c65.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-6b478fb6-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-6b478fb6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-6b478fb6.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-98321a5c-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-98321a5c.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-98321a5c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-c998a6bf.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-c998a6bf.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b0/lily-df6535aa.ly
@@ -3919,9 +3946,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-5ba545ac-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-5ba545ac.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-5ba545ac.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-74b3b30a-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-74b3b30a.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-74b3b30a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-8b37ef9b-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-8b37ef9b-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b4/lily-8b37ef9b-3.signature
@@ -3984,6 +4008,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-7a25d23e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-7a25d23e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-7a25d23e.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-c3b117f7-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-c3b117f7.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-c3b117f7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-d3e5f7b3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b7/lily-d3e5f7b3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-78b0125f-1.signature
@@ -3994,9 +4021,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-c089b276.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-d29b0dec.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-d29b0dec.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-e171b676-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-e171b676.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-e171b676.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-eaa113f4-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-eaa113f4.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b8/lily-eaa113f4.png
@@ -4010,6 +4034,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-13dffb8c-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-13dffb8c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-13dffb8c.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-145d031b-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-145d031b.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-145d031b.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-56aea521-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-56aea521.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/b9/lily-56aea521.png
@@ -4053,6 +4080,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-9408ae97-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-9408ae97.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-9408ae97.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-f4c6f93c-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-f4c6f93c.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/bb/lily-f4c6f93c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bc/lily-7c93ef16-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bc/lily-7c93ef16.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/bc/lily-7c93ef16.png
@@ -4125,8 +4155,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c0/lily-ed92322e.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-0bca53c0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-0bca53c0.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-20cf7a13.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-20cf7a13.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-3193c587-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-3193c587.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c1/lily-3193c587.png
@@ -4210,6 +4238,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-3e6a6357.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-43e20801.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-43e20801.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-5f1c9859-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-5f1c9859-2.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-5f1c9859-3.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-5f1c9859.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-5f1c9859.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-786ab575-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-786ab575.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c3/lily-786ab575.png
@@ -4288,8 +4321,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-349c2b17-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-349c2b17.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-349c2b17.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-b458df59.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-b458df59.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-bda27a8f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-bda27a8f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c6/lily-bda27a8f.png
@@ -4347,8 +4378,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-aad01afa-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-aad01afa.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-aad01afa.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-d9003a86.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-d9003a86.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-ef1beb9c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-ef1beb9c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/c9/lily-ef1beb9c.png
@@ -4389,6 +4418,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ca/lily-d2fba75d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ca/lily-d2fba75d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ca/lily-d2fba75d.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/cb/lily-29a18fc4.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/cb/lily-29a18fc4.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cb/lily-5d66cce8-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cb/lily-5d66cce8.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cb/lily-5d66cce8.png
@@ -4412,9 +4443,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cc/lily-f2ec7059-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cc/lily-f2ec7059.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cc/lily-f2ec7059.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-92f31584-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-92f31584.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-92f31584.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-a0d482b6-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-a0d482b6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cd/lily-a0d482b6.png
@@ -4450,11 +4478,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-448b0dda-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-448b0dda.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-448b0dda.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-47ab1e36.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-47ab1e36.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-4daf1523-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-4daf1523.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-4daf1523.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-6019d1f1-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-6019d1f1.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-6019d1f1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-620ab7b3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-620ab7b3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/cf/lily-620ab7b3.png
@@ -4481,10 +4510,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-c357c03e-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-c357c03e.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-c357c03e.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-ea287f85.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-ea287f85.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-316330f4.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-316330f4.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-fe18077d-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-fe18077d.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d0/lily-fe18077d.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-754ec347-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-754ec347.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-754ec347.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-91046071-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-91046071.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d1/lily-91046071.png
@@ -4498,8 +4529,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-0f986976-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-0f986976.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-0f986976.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-927362db.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-927362db.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-a579dbba-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-a579dbba-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-a579dbba.ly
@@ -4513,11 +4542,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-dfedfb12-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-dfedfb12.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d3/lily-dfedfb12.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-159c0ef8-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-159c0ef8.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-159c0ef8.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-21d9e0dc.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-21d9e0dc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-3537d2ad.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d4/lily-3537d2ad.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d5/lily-11233c98.ly
@@ -4534,10 +4558,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d5/lily-8ba39632.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-110a5850.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-110a5850.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-388bd3ed-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-388bd3ed-2.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-388bd3ed.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-388bd3ed.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-40900b8d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-40900b8d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d6/lily-40900b8d.png
@@ -4557,8 +4577,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-88e4ff05-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-88e4ff05.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-88e4ff05.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-a471309e.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-a471309e.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-a62d5203-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-a62d5203.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/d7/lily-a62d5203.png
@@ -4627,8 +4645,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-b539ab92-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-b539ab92.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-b539ab92.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-bb11f581.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-bb11f581.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-c1dd1c9a-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-c1dd1c9a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/db/lily-c1dd1c9a.png
@@ -4647,8 +4663,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-681409d4.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-757be4c1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-757be4c1.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-844ce4b5.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-844ce4b5.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-b0e444b3-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-b0e444b3.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dc/lily-b0e444b3.png
@@ -4690,14 +4704,14 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-d53ef9a1-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-d53ef9a1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-d53ef9a1.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-ec3d2671-1.signature
-%%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-ec3d2671.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/dd/lily-ec3d2671.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-138a2c80.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-138a2c80.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-313a293d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-313a293d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-313a293d.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-a1891739-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-a1891739.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/de/lily-a1891739.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/df/lily-2639ea28.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/df/lily-2639ea28.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/df/lily-7ebd8076.ly
@@ -4755,8 +4769,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-9a2a7276-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-9a2a7276.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-9a2a7276.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-9f941ee3.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-9f941ee3.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-affaaa2a-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-affaaa2a.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-affaaa2a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-e6558ae1.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e2/lily-e6558ae1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-08457982-1.signature
@@ -4780,16 +4795,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-abbae68d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-abbae68d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-abbae68d.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-ada30968.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e3/lily-ada30968.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-063740f7-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-063740f7.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-063740f7.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-3078c876-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-3078c876.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-3078c876.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-3e8cdde5.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-3e8cdde5.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-515fbd42-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-515fbd42.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-515fbd42.png
@@ -4800,11 +4811,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-d029ba12-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-d029ba12.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-d029ba12.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-ea18908a.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e4/lily-ea18908a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-072eded0-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-072eded0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-072eded0.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-65f6b821-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-65f6b821.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-65f6b821.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-69d13563-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-69d13563.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e5/lily-69d13563.png
@@ -4860,6 +4872,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e7/lily-6ed882bb-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e7/lily-6ed882bb.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e7/lily-6ed882bb.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e7/lily-7b74f8f4.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/e7/lily-7b74f8f4.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e8/lily-1163b025-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e8/lily-1163b025.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e8/lily-1163b025.png
@@ -4899,8 +4913,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-798ce3d9.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-82d5d52a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-82d5d52a.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-8cb87ba3.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-8cb87ba3.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-a858edb2-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-a858edb2.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/e9/lily-a858edb2.png
@@ -4928,6 +4940,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-ae3ecbe2-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-ae3ecbe2.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-ae3ecbe2.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e0ee3acd-1.signature
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e0ee3acd.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e0ee3acd.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e63dfe22.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e63dfe22.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ea/lily-e7b9e52b-1.signature
@@ -4951,8 +4966,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/eb/lily-f211c773-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/eb/lily-f211c773.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/eb/lily-f211c773.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-0fbed18c.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-0fbed18c.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-0ff77664-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-0ff77664-2.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-0ff77664-3.signature
@@ -4977,8 +4990,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-8d9beea2-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-8d9beea2.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-8d9beea2.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-c14af4b1.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-c14af4b1.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-c94b8226-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-c94b8226.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ec/lily-c94b8226.png
@@ -4988,6 +4999,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-1345e613-4.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-1345e613.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-1345e613.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-526ad72d.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-526ad72d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-750e12d6.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-750e12d6.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/ed/lily-80b2b894-1.signature
@@ -5049,8 +5062,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-3153e8da.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-36936bd0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-36936bd0.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-533080fc.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-533080fc.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-74604fcd-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-74604fcd.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f0/lily-74604fcd.png
@@ -5090,13 +5101,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f2/lily-607b8294.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f2/lily-ae94d7bc.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f2/lily-ae94d7bc.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f2/lily-d0b63e91.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f2/lily-d0b63e91.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-2174b89c-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-2174b89c.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-2174b89c.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-3a71780a.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-3a71780a.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-3c8032c0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-3c8032c0.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f3/lily-6cdd28c5-1.signature
@@ -5126,16 +5133,12 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-51f98c28-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-51f98c28.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-51f98c28.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-97f58de8.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-97f58de8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9889773d-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9889773d.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9889773d.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9f6a4217-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9f6a4217.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-9f6a4217.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-ea768b68.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f4/lily-ea768b68.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f5/lily-0ae38108-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f5/lily-0ae38108.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f5/lily-0ae38108.png
@@ -5213,10 +5216,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-a3984dce-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-a3984dce.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-a3984dce.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-c3b0e04f.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-c3b0e04f.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-fc3fb3c8.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/f8/lily-fc3fb3c8.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f9/lily-0c529d17.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f9/lily-0c529d17.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/f9/lily-0d833528-1.signature
@@ -5253,8 +5252,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fa/lily-514629ca.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fa/lily-a427346a.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fa/lily-a427346a.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/fb/lily-586d6d69.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/fb/lily-586d6d69.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fb/lily-72bff95f-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fb/lily-72bff95f.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fb/lily-72bff95f.png
@@ -5280,8 +5277,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-ae0fb6f0-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-ae0fb6f0.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-ae0fb6f0.png
-%%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-b2900344.ly
-%%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-b2900344.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-e11ece40-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-e11ece40.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fc/lily-e11ece40.png
@@ -5311,6 +5306,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fd/lily-aaa30e47.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fd/lily-dbbf3a03.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fd/lily-dbbf3a03.png
+%%DOCS%%%%DOCSDIR%%/Documentation/user/fe/lily-33fed250.ly
+%%DOCS%%%%DOCSDIR%%/Documentation/user/fe/lily-33fed250.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fe/lily-6ae75013-1.signature
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fe/lily-6ae75013.ly
 %%DOCS%%%%DOCSDIR%%/Documentation/user/fe/lily-6ae75013.png
@@ -5334,6 +5331,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lily-flat-bw.png
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-big-page.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals-big-page.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals.pdf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/AbsoluteDynamicEvent.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/AbsoluteDynamicEvent.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/AbsoluteDynamicEvent.fr.html
@@ -7642,6 +7640,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/volta_002dbracket_002dinterface.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/volta_002dbracket_002dinterface.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-internals/volta_002dbracket_002dinterface.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning-big-page.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning-big-page.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning.de.pdf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning.es.pdf
@@ -7827,7 +7826,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/General-suggestions.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/General-suggestions.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/How-LilyPond-files-work.de.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/How-LilyPond-files-work.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/How-LilyPond-input-files-work.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/How-LilyPond-input-files-work.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/How-LilyPond-input-files-work.fr.html
@@ -8021,7 +8019,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Style-sheets.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Style-sheets.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Style-sheets.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Suggestions-for-writing-LilyPond-files.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Suggestions-for-writing-LilyPond-files.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Suggestions-for-writing-LilyPond-input-files.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Suggestions-for-writing-LilyPond-input-files.es.html
@@ -8122,7 +8119,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Working-on-input-files.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Working-on-input-files.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Working-on-input-files.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/Working-on-text-files.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/index.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/index.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond-learning/index.fr.html
@@ -8433,7 +8429,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Analysis-brackets.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Analysis-brackets.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Analysis-brackets.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ancient-TODO.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ancient-accidentals.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ancient-accidentals.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ancient-accidentals.fr.html
@@ -8717,10 +8712,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-notation-for-wind-instruments.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-notation-for-wind-instruments.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-notation-for-wind-instruments.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-properties.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-properties.es.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-properties.fr.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Common-properties.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Constructing-a-tweak.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Context-evaluation.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Context-evaluation.es.html
@@ -8742,10 +8734,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-output.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-output.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-output.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-visibility-of-objects.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-visibility-of-objects.es.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-visibility-of-objects.fr.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Controlling-visibility-of-objects.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Creating-MIDI-files.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Creating-MIDI-files.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Creating-MIDI-files.fr.html
@@ -9027,7 +9016,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Graphic.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Graphic.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Graphic.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Gregorian-Chant-contexts.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Gregorian-chant-contexts.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Gregorian-chant-contexts.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Gregorian-chant-contexts.fr.html
@@ -9060,6 +9048,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Hiding-staves.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Hiding-staves.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Hiding-staves.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-dimensions.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-dimensions.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-dimensions.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-dimensions.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-spacing-overview.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-spacing-overview.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Horizontal-spacing-overview.fr.html
@@ -9289,10 +9281,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-context-plug_002dins.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-context-plug_002dins.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-context-plug_002dins.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-ends-of-spanners.de.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-ends-of-spanners.es.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-ends-of-spanners.fr.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-ends-of-spanners.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-properties.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-properties.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Modifying-properties.fr.html
@@ -9353,7 +9341,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Music.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Music.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Music.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Musica-ficta-accidentals.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Musical-notation.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Musical-notation.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Musical-notation.fr.html
@@ -9419,6 +9406,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ossia-staves.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ossia-staves.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Ossia-staves.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other-layout-variables.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other-layout-variables.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other-layout-variables.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other-layout-variables.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other-repeats.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Other.es.html
@@ -9681,6 +9672,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Separate-text.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Separate-text.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Separate-text.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-_003ccode_003eX_002doffset_003c_002fcode_003e-and-_003ccode_003eY_002doffset_003c_002fcode_003e-directly.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-_003ccode_003eX_002doffset_003c_002fcode_003e-and-_003ccode_003eY_002doffset_003c_002fcode_003e-directly.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-_003ccode_003eX_002doffset_003c_002fcode_003e-and-_003ccode_003eY_002doffset_003c_002fcode_003e-directly.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-_003ccode_003eX_002doffset_003c_002fcode_003e-and-_003ccode_003eY_002doffset_003c_002fcode_003e-directly.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-automatic-beam-behavior.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-automatic-beam-behavior.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Setting-automatic-beam-behavior.fr.html
@@ -9943,6 +9938,18 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-tags.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-tags.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-tags.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003ebreak_002daligned_002dinterface_003c_002fcode_003e.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003ebreak_002daligned_002dinterface_003c_002fcode_003e.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003ebreak_002daligned_002dinterface_003c_002fcode_003e.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003ebreak_002daligned_002dinterface_003c_002fcode_003e.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eself_002dalignment_002dinterface_003c_002fcode_003e.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eself_002dalignment_002dinterface_003c_002fcode_003e.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eself_002dalignment_002dinterface_003c_002fcode_003e.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eself_002dalignment_002dinterface_003c_002fcode_003e.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eside_002dposition_002dinterface_003c_002fcode_003e.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eside_002dposition_002dinterface_003c_002fcode_003e.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eside_002dposition_002dinterface_003c_002fcode_003e.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-the-_003ccode_003eside_002dposition_002dinterface_003c_002fcode_003e.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-variables.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-variables.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Using-variables.fr.html
@@ -9951,6 +9958,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-collision-avoidance.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-collision-avoidance.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-collision-avoidance.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-dimensions.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-dimensions.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-dimensions.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-dimensions.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-grouping-of-grobs.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-grouping-of-grobs.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-grouping-of-grobs.fr.html
@@ -9967,6 +9978,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-spacing.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-spacing.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vertical-spacing.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Visibility-of-objects.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Visibility-of-objects.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Visibility-of-objects.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Visibility-of-objects.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vocal-music.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vocal-music.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Vocal-music.fr.html
@@ -10004,7 +10019,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/World-music.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/World-music.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Writing-long-repeats.de.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Writing-long-repeats.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Writing-music-in-parallel.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Writing-music-in-parallel.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/Writing-music-in-parallel.fr.html
@@ -10038,10 +10052,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/index.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/index.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/index.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/old-Contexts-explained.de.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/old-Contexts-explained.es.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/old-Contexts-explained.fr.html
-%%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/old-Contexts-explained.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/set-versus-override.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/set-versus-override.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/lilypond/set-versus-override.fr.html
@@ -10152,6 +10162,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/adagio.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/adagio.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/adagio.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/al-niente.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/al-niente.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/al-niente.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/al-niente.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/allegro.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/allegro.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/allegro.fr.html
@@ -10392,6 +10406,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/da-capo.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/da-capo.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/da-capo.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-niente.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-niente.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-niente.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-niente.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-segno.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-segno.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/dal-segno.fr.html
@@ -10812,6 +10830,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/metronomic-indication.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/metronomic-indication.fr.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/metronomic-indication.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo.de.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo.es.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo.fr.html
+%%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo_002dsoprano.de.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo_002dsoprano.es.html
 %%DOCS%%%%DOCSDIR%%/Documentation/user/music-glossary/mezzo_002dsoprano.fr.html
@@ -11444,6 +11466,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/lsr/28/lily-74c9287c-1.signature
 %%DOCS%%%%DOCSDIR%%/input/lsr/28/lily-74c9287c.ly
 %%DOCS%%%%DOCSDIR%%/input/lsr/28/lily-74c9287c.png
+%%DOCS%%%%DOCSDIR%%/input/lsr/2b/lily-d7496d95-1.signature
+%%DOCS%%%%DOCSDIR%%/input/lsr/2b/lily-d7496d95.ly
+%%DOCS%%%%DOCSDIR%%/input/lsr/2b/lily-d7496d95.png
 %%DOCS%%%%DOCSDIR%%/input/lsr/2c/lily-39f4b2ad-1.signature
 %%DOCS%%%%DOCSDIR%%/input/lsr/2c/lily-39f4b2ad.ly
 %%DOCS%%%%DOCSDIR%%/input/lsr/2c/lily-39f4b2ad.png
@@ -11812,6 +11837,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-7717a836-1.signature
 %%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-7717a836.ly
 %%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-7717a836.png
+%%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-d58b2185-1.signature
+%%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-d58b2185.ly
+%%DOCS%%%%DOCSDIR%%/input/lsr/9e/lily-d58b2185.png
 %%DOCS%%%%DOCSDIR%%/input/lsr/9f/lily-2747fcc3-1.signature
 %%DOCS%%%%DOCSDIR%%/input/lsr/9f/lily-2747fcc3.ly
 %%DOCS%%%%DOCSDIR%%/input/lsr/9f/lily-2747fcc3.png
@@ -12185,13 +12213,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-46.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-47.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-48.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-49.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-5.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-50.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-51.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-52.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-53.signature
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-54.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-6.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-7.signature
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-8.signature
@@ -12200,7 +12222,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-page2.png
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-page3.png
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-page4.png
-%%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3-page5.png
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3.ly
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3.midi
 %%DOCS%%%%DOCSDIR%%/input/mutopia/W.A.Mozart/mozart-hrn-3.pdf
@@ -12486,9 +12507,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5364cef1-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5364cef1.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5364cef1.png
-%%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5e9d1026-1.signature
-%%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5e9d1026.ly
-%%DOCS%%%%DOCSDIR%%/input/regression/21/lily-5e9d1026.png
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-896871a1-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-896871a1-2.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/21/lily-896871a1.ly
@@ -12509,6 +12527,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/22/lily-c8140332-2.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/22/lily-c8140332.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/22/lily-c8140332.png
+%%DOCS%%%%DOCSDIR%%/input/regression/22/lily-e385d113-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/22/lily-e385d113.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/22/lily-e385d113.png
 %%DOCS%%%%DOCSDIR%%/input/regression/23/lily-3ae699ca-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/23/lily-3ae699ca.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/23/lily-3ae699ca.png
@@ -12546,6 +12567,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-0cded0b3-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-0cded0b3.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-0cded0b3.png
+%%DOCS%%%%DOCSDIR%%/input/regression/27/lily-3e8e5dad.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/27/lily-3e8e5dad.png
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-9b86f67f-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-9b86f67f.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/27/lily-9b86f67f.png
@@ -12664,8 +12687,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/35/lily-7391811d-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/35/lily-7391811d.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/35/lily-7391811d.png
-%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-5643c8e1.ly
-%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-5643c8e1.png
+%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-70f8bd78-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-70f8bd78-2.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-70f8bd78-3.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-70f8bd78.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/36/lily-70f8bd78.png
 %%DOCS%%%%DOCSDIR%%/input/regression/36/lily-74c369a7-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/36/lily-74c369a7.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/36/lily-74c369a7.png
@@ -12797,6 +12823,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-c4b3cfab-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-c4b3cfab.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-c4b3cfab.png
+%%DOCS%%%%DOCSDIR%%/input/regression/41/lily-d3b5afd2-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/41/lily-d3b5afd2-2.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/41/lily-d3b5afd2.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/41/lily-d3b5afd2.png
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-f8a1f48a-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-f8a1f48a.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/41/lily-f8a1f48a.png
@@ -12819,6 +12849,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/42/lily-fb3d62e1-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/42/lily-fb3d62e1.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/42/lily-fb3d62e1.png
+%%DOCS%%%%DOCSDIR%%/input/regression/43/lily-87749f15-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/43/lily-87749f15.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/43/lily-87749f15.png
 %%DOCS%%%%DOCSDIR%%/input/regression/44/lily-074e143e-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/44/lily-074e143e.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/44/lily-074e143e.png
@@ -12842,6 +12875,11 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-47d51904-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-47d51904.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-47d51904.png
+%%DOCS%%%%DOCSDIR%%/input/regression/47/lily-9e03b617-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/47/lily-9e03b617-2.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/47/lily-9e03b617-3.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/47/lily-9e03b617.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/47/lily-9e03b617.png
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-c195cd3c-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-c195cd3c.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/47/lily-c195cd3c.png
@@ -12947,6 +12985,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/52/lily-bbea6837-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/52/lily-bbea6837.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/52/lily-bbea6837.png
+%%DOCS%%%%DOCSDIR%%/input/regression/52/lily-d78c8e03-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/52/lily-d78c8e03.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/52/lily-d78c8e03.png
 %%DOCS%%%%DOCSDIR%%/input/regression/53/lily-a4b6aa67-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/53/lily-a4b6aa67.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/53/lily-a4b6aa67.png
@@ -14027,6 +14068,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/d6/lily-f6164eb5-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/d6/lily-f6164eb5.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/d6/lily-f6164eb5.png
+%%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-53fe01bc-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-53fe01bc.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-53fe01bc.png
 %%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-c8534915-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-c8534915.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/d7/lily-c8534915.png
@@ -14300,6 +14344,9 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-304ff73f-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-304ff73f.ly
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-304ff73f.png
+%%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-4f435ad7-1.signature
+%%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-4f435ad7.ly
+%%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-4f435ad7.png
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-95c7b67d-1.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-95c7b67d-2.signature
 %%DOCS%%%%DOCSDIR%%/input/regression/f9/lily-95c7b67d.ly
@@ -14792,6 +14839,8 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 @dirrm lib/lilypond/%%PORTVERSION%%/python
 @dirrm lib/lilypond/%%PORTVERSION%%
 @dirrm lib/lilypond
+@dirrm share/omf/lilypond/%%PORTVERSION%%
+@dirrm share/omf/lilypond
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/syntax
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/indent
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vim/ftplugin
@@ -14811,8 +14860,6 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/dvips
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@dirrm share/omf/lilypond/%%PORTVERSION%%
-@dirrm share/omf/lilypond
 %%DOCS%%@dirrm %%DOCSDIR%%/input/tutorial
 %%DOCS%%@dirrm %%DOCSDIR%%/input/texidocs
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/musicxml/fe
@@ -15058,6 +15105,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/47
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/46
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/44
+%%DOCS%%@dirrm %%DOCSDIR%%/input/regression/43
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/42
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/41
 %%DOCS%%@dirrm %%DOCSDIR%%/input/regression/40
@@ -15252,6 +15300,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/2f
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/2e
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/2c
+%%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/2b
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/28
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/26
 %%DOCS%%@dirrm %%DOCSDIR%%/input/lsr/25
@@ -15532,6 +15581,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/user/01
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/user/00
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/user
+%%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/f9
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/f6
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/d3
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/8d
@@ -15543,9 +15593,10 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/24
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/22
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/01
+%%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs/00
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/topdocs
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/pictures
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/misc
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation/bibliography
 %%DOCS%%@dirrm %%DOCSDIR%%/Documentation
-%%DOCS%%@dirrm %%DOCSDIR%%/
+%%DOCS%%@dirrm %%DOCSDIR%%
