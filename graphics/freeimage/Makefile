@@ -21,6 +21,12 @@ USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimage.a \
 		lib/libfreeimage.so \
@@ -30,4 +36,4 @@ post-patch:
 	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile.gnu
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
