@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sexp
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2.1
+PORTREVISION=	0
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,19 +17,18 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A ruby library to work with s-expressions
 
-RUN_DEPENDS=	${SADIR}/multi.rb:${PORTSDIR}/devel/ruby-multi
+RUN_DEPENDS=	rubygem-rparsec:${PORTSDIR}/devel/rubygem-rparsec
 
 USE_RUBY=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 SADIR=		${RUBY_SITELIBDIR}
 
-EXAMPLES=	sexp_example.rb
+EXAMPLES=	example.rb
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sexp.rb ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sexpressions.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${RUBY_MODEXAMPLESDIR}/
