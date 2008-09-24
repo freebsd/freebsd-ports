@@ -68,6 +68,7 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/ko/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/terminator.mo
