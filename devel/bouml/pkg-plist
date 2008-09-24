@@ -152,6 +152,7 @@ bin/projectSynchro
 %%DATADIR%%/GlobalChange/145408.bodies
 %%DATADIR%%/GlobalChange/145664.bodies
 %%DATADIR%%/GlobalChange/146176.bodies
+%%DATADIR%%/GlobalChange/147202.bodies
 %%DATADIR%%/GlobalChange/1536.bodies
 %%DATADIR%%/GlobalChange/1664.bodies
 %%DATADIR%%/GlobalChange/1792.bodies
@@ -208,6 +209,7 @@ bin/projectSynchro
 %%DATADIR%%/GlobalChange/generation_settings
 %%DATADIR%%/GlobalChange/idl_includes
 %%DATADIR%%/GlobalChange/java_imports
+%%DATADIR%%/GlobalChange/python_imports
 %%DATADIR%%/GlobalChange/stereotypes
 %%DATADIR%%/GlobalChange/tools
 %%DATADIR%%/bouml
