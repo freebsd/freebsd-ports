@@ -23,7 +23,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-docbook
 
-OPTIONS=	AES "Enable support of AES CPU extensions" off \
+OPTIONS=	ACPI "Enable ACPI emulation" off \
+		AES "Enable support of AES CPU extensions" off \
 		CDROM "Enable CDROM support" on \
 		CLGD54XX "Enable Cirrus Logic GD54xx video card" off \
 		DEBUGGER "Enable debugger and disassembler support" off \
@@ -72,6 +73,10 @@ SUB_FILES=	pkg-message
 
 .if defined(WITHOUT_TERM) && defined(WITHOUT_WX) && defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--with-nogui
+.endif
+
+.if defined(WITH_ACPI)
+CONFIGURE_ARGS+=--enable-acpi
 .endif
 
 .if defined(WITH_AES)
