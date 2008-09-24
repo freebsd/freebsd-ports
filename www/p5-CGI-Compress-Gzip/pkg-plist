@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CGI/Compress/Gzip.pm
+%%SITE_PERL%%/CGI/Compress/Gzip/FileHandle.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Compress/Gzip
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Compress
+@dirrmtry %%SITE_PERL%%/CGI/Compress/Gzip
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI/Compress
+@dirrmtry %%SITE_PERL%%/CGI
