@@ -17,6 +17,11 @@ upgrades.
 
 	ScoreboardFile	/var/run/proftpd/proftpd.scoreboard
 
+  Also of note: The third party modules, mod_codeconv, mod_comb
+  and mod_sql_tds are not compatible with this release and have
+  been removed. They will be re-added when the respective authors
+  provide updated versions.
+
 20080909:
   AFFECTS: users of security/logcheck
   AUTHOR: glarkin@FreeBSD.org
