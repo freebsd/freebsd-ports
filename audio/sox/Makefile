@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	14.0.1
-PORTREVISION=	1
+PORTVERSION=	14.1.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -16,15 +15,22 @@ COMMENT=	SOund eXchange - universal sound sample translator
 
 CONFLICTS=	play-[0-9]*
 
-MAN1=		sox.1
+MAN1=		sox.1 soxi.1
 MAN3=		libsox.3
-MAN7=		soxexam.7 soxformat.7 soxeffect.7
+MAN7=		soxformat.7 soxeffect.7
 MLINKS=		sox.1 play.1 sox.1 rec.1
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
+USE_GNOME=	pkgconfig
 # src/Makefile uses ${RM} but never sets it
 MAKE_ENV+=	RM="rm -f"
+
+.if defined(PACKAGE_BUILDING)
+_LAME=	off
+.else
+_LAME=	on
+.endif
 
 OPTIONS=	AO "Enable libao output" on \
 		AMRNB "AMR Speech Codec (Narrowband)" off \
@@ -33,17 +39,20 @@ OPTIONS=	AO "Enable libao output" on \
 		FLAC "Enable flac en/decoding with libflac" on \
 		GSM "Use libgsm from ports (else use bundled lib)" on \
 		LADSPA "Audio plugin support" off \
-		LAME "Enable mp3 encoding with LAME" on \
+		LAME "Enable mp3 encoding with LAME" ${_LAME} \
 		MAD "Enable mp3 decoding with MAD" on \
 		SAMPLERATE "Enable libsamplerate" on \
 		SNDFILE "Enable libsndfile" on \
-		VORBIS "Enable Ogg Vorbis support" on
+		VORBIS "Enable Ogg Vorbis support" on \
+		WAVPACK "Enable Wavpack support" off
 
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
 .if !defined(WITH_LAME) && !defined(WITH_MAD)
 PLIST_SUB+=	PLIST_MP3="@comment "
@@ -154,9 +163,20 @@ LIB_DEPENDS+=		samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--without-samplerate
 .endif
 
+.if defined(WITH_WAVPACK)
+CONFIGURE_ARGS+=	--with-wavpack
+LIB_DEPENDS+=		wavpack.1:${PORTSDIR}/audio/wavpack
+PLIST_SUB+=		PLIST_WAVPACK=""
+.else
+CONFIGURE_ARGS+=	--without-wavpack
+PLIST_SUB+=		PLIST_WAVPACK="@comment "
+.endif
+
 # Tell configure that libgsm's headers are in $LOCALDIR/include
 post-patch:
 	@${REINPLACE_CMD} -Ee 's![[:<:]]gsm/gsm.h!gsm.h!' ${WRKSRC}/configure \
 		${WRKSRC}/src/gsm.c ${WRKSRC}/src/wav.c
+	@${REINPLACE_CMD} -Ee 's!ffmpeg/avformat.h!libavformat/avformat.h!' \
+		${WRKSRC}/configure ${WRKSRC}/src/ffmpeg.c
 
 .include <bsd.port.post.mk>
