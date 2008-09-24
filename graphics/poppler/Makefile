@@ -8,7 +8,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.8.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -90,8 +90,10 @@ CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
 
 .if defined(WITHOUT_CAIRO)
 CONFIGURE_ARGS+=--disable-cairo-output
+PLIST_SUB+=	CAIRO="@comment "
 .else
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+PLIST_SUB+=	CAIRO=""
 .endif
 .endif
 

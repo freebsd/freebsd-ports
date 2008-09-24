@@ -95,7 +95,7 @@ lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
 lib/libpoppler.so.3
-libdata/pkgconfig/poppler-cairo.pc
+%%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc
 @dirrm include/poppler/splash
