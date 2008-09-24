@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
@@ -24,7 +24,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 
 post-install:
-	@${ECHO} "==>  Creating custom user to run pdns_recursor..."
+	@${ECHO} "==>  Creating custom user to run ladvd..."
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
