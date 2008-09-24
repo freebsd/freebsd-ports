@@ -2390,6 +2390,7 @@
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rgl
+    SUBDIR += rubygem-rparsec
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rtags
