@@ -7,7 +7,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.27.57
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -20,7 +20,7 @@ COMMENT=	A user-level file synchronization tool
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
-CONFLICTS=	unison-devel-[0-9]*
+CONFLICTS=	unison-devel-[0-9]* unison-nox11-[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -60,14 +60,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unison ${PREFIX}/bin
 
 post-install:
-.if defined(WITH_GTK2)
-	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}
 .endif
+.if defined(WITH_GTK2)
+	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
+.else
+	@${CAT} ${PKGMESSAGE}.nox11
+.endif
 
 .include <bsd.port.post.mk>
