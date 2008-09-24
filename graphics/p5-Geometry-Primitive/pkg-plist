@@ -1,14 +1,15 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry/Primitive/.packlist
 %%SITE_PERL%%/Geometry/Primitive.pm
-%%SITE_PERL%%/Geometry/Primitive/Polygon.pm
-%%SITE_PERL%%/Geometry/Primitive/Shape.pm
 %%SITE_PERL%%/Geometry/Primitive/Arc.pm
-%%SITE_PERL%%/Geometry/Primitive/Line.pm
-%%SITE_PERL%%/Geometry/Primitive/Rectangle.pm
-%%SITE_PERL%%/Geometry/Primitive/Circle.pm
-%%SITE_PERL%%/Geometry/Primitive/Point.pm
 %%SITE_PERL%%/Geometry/Primitive/Bezier.pm
+%%SITE_PERL%%/Geometry/Primitive/Circle.pm
+%%SITE_PERL%%/Geometry/Primitive/Ellipse.pm
 %%SITE_PERL%%/Geometry/Primitive/Equal.pm
+%%SITE_PERL%%/Geometry/Primitive/Line.pm
+%%SITE_PERL%%/Geometry/Primitive/Point.pm
+%%SITE_PERL%%/Geometry/Primitive/Polygon.pm
+%%SITE_PERL%%/Geometry/Primitive/Rectangle.pm
+%%SITE_PERL%%/Geometry/Primitive/Shape.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry/Primitive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geometry
 @dirrmtry %%SITE_PERL%%/Geometry/Primitive

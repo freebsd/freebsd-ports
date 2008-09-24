@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geometry-Primitive
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -29,14 +29,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		Geometry::Primitive.3 \
-		Geometry::Primitive::Polygon.3 \
-		Geometry::Primitive::Shape.3 \
 		Geometry::Primitive::Arc.3 \
-		Geometry::Primitive::Line.3 \
-		Geometry::Primitive::Rectangle.3 \
+		Geometry::Primitive::Bezier.3 \
 		Geometry::Primitive::Circle.3 \
+		Geometry::Primitive::Ellipse.3 \
 		Geometry::Primitive::Equal.3 \
+		Geometry::Primitive::Line.3 \
 		Geometry::Primitive::Point.3 \
-		Geometry::Primitive::Bezier.3
+		Geometry::Primitive::Polygon.3 \
+		Geometry::Primitive::Rectangle.3 \
+		Geometry::Primitive::Shape.3
 
 .include <bsd.port.mk>
