@@ -1,5 +1,20 @@
 bin/smile
 share/pixmaps/smile.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/bulle_001.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/bird_001.gif
+%%DATADIR%%/BIB_ManSlide/Eff_sup/coeur_001.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/cheval_001.gif
+%%DATADIR%%/BIB_ManSlide/Eff_sup/licence.txt
+%%DATADIR%%/BIB_ManSlide/Eff_sup/trefle_001.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/lapin_001.gif
+%%DATADIR%%/BIB_ManSlide/Eff_sup/monitor.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/abeille_001.gif
+%%DATADIR%%/BIB_ManSlide/Eff_sup/neon_001.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/bulle_002.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/bamboo.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/fleur_001.png
+%%DATADIR%%/BIB_ManSlide/Eff_sup/soleil2.gif
+%%DATADIR%%/BIB_ManSlide/Eff_sup/chevalier_001.gif
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_haut.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Recouvrement_droite.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Zigzag_001.png
@@ -48,9 +63,6 @@ share/pixmaps/smile.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Zigzag_002.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Spirale_002.png
 %%DATADIR%%/BIB_ManSlide/Luma/Zigzag_001.png
-%%DATADIR%%/BIB_ManSlide/Eff_sup/bulle_002.mng
-%%DATADIR%%/BIB_ManSlide/Eff_sup/felix.gif
-%%DATADIR%%/BIB_ManSlide/Eff_sup/bulle_001.mng
 %%DATADIR%%/BIB_ManSlide/Luma/Damier_003.png
 %%DATADIR%%/BIB_ManSlide/Luma/Damier_002.png
 %%DATADIR%%/BIB_ManSlide/Luma/MINI_Damier_001.png
@@ -194,6 +206,12 @@ share/pixmaps/smile.png
 %%DATADIR%%/Interface/Theme/flowersnow.png
 %%DATADIR%%/Interface/Theme/kruler.png
 %%DATADIR%%/Interface/Theme/snowflakes.png
+%%DATADIR%%/Interface/Theme/format_justify_left.png
+%%DATADIR%%/Interface/Theme/format_justify_center.png
+%%DATADIR%%/Interface/Theme/format_justify_right.png
+%%DATADIR%%/Interface/Theme/format_justify_fill.png
+%%DATADIR%%/Interface/Theme/2uparrow.png
+%%DATADIR%%/Interface/Origine/transitions.xcf
 %%DATADIR%%/BIB_ManSlide/Help/doc_fr.html
 %%DATADIR%%/BIB_ManSlide/Help/doc_en.html
 %%DATADIR%%/BIB_ManSlide/Help/style.css
@@ -236,6 +254,7 @@ share/pixmaps/smile.png
 %%DATADIR%%/smile_en.qm
 %%DATADIR%%/smile_it.qm
 %%DATADIR%%/smile_de.qm
+%%DATADIR%%/smile_pl.qm
 @dirrm %%DATADIR%%/BIB_ManSlide/Eff_sup
 @dirrm %%DATADIR%%/BIB_ManSlide/Luma
 @dirrm %%DATADIR%%/BIB_ManSlide/Help/images_en
@@ -244,5 +263,6 @@ share/pixmaps/smile.png
 @dirrm %%DATADIR%%/BIB_ManSlide/Help
 @dirrm %%DATADIR%%/BIB_ManSlide/
 @dirrm %%DATADIR%%/Interface/Theme
+@dirrm %%DATADIR%%/Interface/Origine
 @dirrm %%DATADIR%%/Interface
 @dirrm %%DATADIR%%
