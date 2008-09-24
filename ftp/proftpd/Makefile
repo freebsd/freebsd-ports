@@ -57,6 +57,7 @@ CONFLICTS=	proftpd-devel-1.[0-9].*
 USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
+		--with-pkgconfig=libdata/pkgconfig \
 		--sysconfdir=${PREFIX}/etc \
 		--disable-sendfile
 
@@ -271,7 +272,7 @@ post-patch:
 		${WRKSRC}/contrib/mod_ldap.c
 .endif
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
-
+	
 pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
@@ -283,8 +284,6 @@ post-configure:
 		${WRKSRC}/utils/ftpcount.1
 
 post-install:
-	@${MV} ${PREFIX}/lib/pkgconfig/proftpd.pc ${PREFIX}/libdata/pkgconfig
-	@${RM} -rf ${PREFIX}/lib/pkgconfig
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
