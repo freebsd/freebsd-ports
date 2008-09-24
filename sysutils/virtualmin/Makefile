@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	virtualmin
-PORTVERSION=	3.61
+PORTVERSION=	3.62
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}.gpl
 EXTRACT_SUFX=	.wbm.gz
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A virtual hosting management system based on webmin
 
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
