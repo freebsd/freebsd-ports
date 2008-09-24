@@ -2234,6 +2234,7 @@ dnrd                            ports/dns/dnrd
 dns-proxy-tor                   ports/security/dns-proxy-tor
 dns_balance                     ports/dns/dns_balance
 dns_mre                         ports/dns/dns_mre
+dnscap                          ports/dns/dnscap
 dnscheck                        ports/dns/dnscheck
 dnsdoctor                       ports/dns/dnsdoctor
 dnsflood                        ports/dns/dnsflood
@@ -3584,6 +3585,7 @@ ftjava                          ports/games/ftjava
 ftnchek                         ports/devel/ftnchek
 ftp-proxy                       ports/ftp/ftp-proxy
 ftp-tls                         ports/ftp/ftp-tls
+ftp_tftp-hpa                    ports/ftp/tftp-hpa
 ftpcopy                         ports/ftp/ftpcopy
 ftpcube                         ports/ftp/ftpcube
 ftpd-tls                        ports/ftp/ftpd-tls
@@ -4936,6 +4938,7 @@ hope                            ports/lang/hope
 horde-ansel                     ports/www/horde-ansel
 horde-base                      ports/www/horde-base
 horde-chora                     ports/devel/horde-chora
+horde-dimp                      ports/mail/horde-dimp
 horde-forwards                  ports/mail/horde-forwards
 horde-gollem                    ports/ftp/horde-gollem
 horde-hermes                    ports/deskutils/horde-hermes
@@ -7797,6 +7800,7 @@ lout                            ports/print/lout
 love                            ports/games/love
 lp_solve                        ports/math/lp_solve
 lpac                            ports/audio/lpac
+lpairs                          ports/games/lpairs
 lpe                             ports/editors/lpe
 lphoto                          ports/graphics/lphoto
 lplayer                         ports/audio/lplayer
@@ -7873,6 +7877,7 @@ lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
 lyx15                           ports/print/lyx15
 lzma                            ports/archivers/lzma
+lzmalib                         ports/archivers/lzmalib
 lzmautils                       ports/archivers/lzmautils
 lzo                             ports/archivers/lzo
 lzo2                            ports/archivers/lzo2
@@ -8185,6 +8190,7 @@ mingw32-bin-msvcrt              ports/devel/mingw32-bin-msvcrt
 mingw32-binutils                ports/devel/mingw32-binutils
 mingw32-directx                 ports/devel/mingw32-directx
 mingw32-gcc                     ports/devel/mingw32-gcc
+mingw32-libgmp4                 ports/math/mingw32-libgmp4
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
 mingw32-pthreads                ports/devel/mingw32-pthreads
 mini-xml                        ports/textproc/mini-xml
@@ -8856,6 +8862,7 @@ net-snmp53                      ports/net-mgmt/net-snmp53
 net6                            ports/net/net6
 net_jags                        ports/net/jags
 net_mpd                         ports/net/mpd
+net_tftp-hpa                    ports/net/tftp-hpa
 net_ttt                         ports/net/ttt
 netams                          ports/net-mgmt/netams
 netatalk                        ports/net/netatalk
@@ -10137,6 +10144,7 @@ p5-Config-IniHash               ports/devel/p5-Config-IniHash
 p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
+p5-Config-Options               ports/devel/p5-Config-Options
 p5-Config-Properties            ports/devel/p5-Config-Properties
 p5-Config-Record                ports/devel/p5-Config-Record
 p5-Config-Setting               ports/devel/p5-Config-Setting
@@ -11323,6 +11331,7 @@ p5-Maypole                      ports/www/p5-Maypole
 p5-Maypole-Authentication-UserSessionCookie  ports/www/p5-Maypole-Authentication-UserSessionCookie
 p5-Maypole-Component            ports/www/p5-Maypole-Component
 p5-MediaWiki                    ports/www/p5-MediaWiki
+p5-MediaWiki-API                ports/www/p5-MediaWiki-API
 p5-Memcached-libmemcached       ports/databases/p5-Memcached-libmemcached
 p5-Memoize                      ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU            ports/devel/p5-Memoize-ExpireLRU
@@ -11379,6 +11388,8 @@ p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
+p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
+p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM              ports/audio/p5-MusicBrainz-TRM
@@ -13252,6 +13263,7 @@ p5-config-inihash               ports/devel/p5-Config-IniHash
 p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-objective             ports/devel/p5-Config-Objective
+p5-config-options               ports/devel/p5-Config-Options
 p5-config-properties            ports/devel/p5-Config-Properties
 p5-config-record                ports/devel/p5-Config-Record
 p5-config-setting               ports/devel/p5-Config-Setting
@@ -14444,6 +14456,7 @@ p5-maypole-authentication-usersessioncookie  ports/www/p5-Maypole-Authentication
 p5-maypole-component            ports/www/p5-Maypole-Component
 p5-md5                          ports/security/p5-MD5
 p5-mediawiki                    ports/www/p5-MediaWiki
+p5-mediawiki-api                ports/www/p5-MediaWiki-API
 p5-memcached-libmemcached       ports/databases/p5-Memcached-libmemcached
 p5-memoize                      ports/devel/p5-Memoize
 p5-memoize-expirelru            ports/devel/p5-Memoize-ExpireLRU
@@ -14528,6 +14541,8 @@ p5-mp4-info                     ports/multimedia/p5-MP4-Info
 p5-mpeg-id3v2tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-mro-compat                   ports/devel/p5-MRO-Compat
 p5-mrtg-parse                   ports/net-mgmt/p5-MRTG-Parse
+p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
+p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-client           ports/audio/p5-MusicBrainz-Client
 p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
 p5-musicbrainz-trm              ports/audio/p5-MusicBrainz-TRM
@@ -16016,8 +16031,10 @@ pear-Crypt_CHAP                 ports/security/pear-Crypt_CHAP
 pear-Crypt_DiffieHellman        ports/security/pear-Crypt_DiffieHellman
 pear-Crypt_GPG                  ports/security/pear-Crypt_GPG
 pear-Crypt_HMAC                 ports/security/pear-Crypt_HMAC
+pear-Crypt_MicroID              ports/security/pear-Crypt_MicroID
 pear-Crypt_RC4                  ports/security/pear-Crypt_RC4
 pear-Crypt_RSA                  ports/security/pear-Crypt_RSA
+pear-Crypt_XXTEA                ports/security/pear-Crypt_XXTEA
 pear-DB                         ports/databases/pear-DB
 pear-DBA                        ports/databases/pear-DBA
 pear-DBA_Relational             ports/databases/pear-DBA_Relational
@@ -16068,6 +16085,7 @@ pear-HTML_BBCodeParser          ports/devel/pear-HTML_BBCodeParser
 pear-HTML_CSS                   ports/devel/pear-HTML_CSS
 pear-HTML_Common                ports/devel/pear-HTML_Common
 pear-HTML_Common2               ports/devel/pear-HTML_Common2
+pear-HTML_Crypt                 ports/security/pear-HTML_Crypt
 pear-HTML_Form                  ports/devel/pear-HTML_Form
 pear-HTML_Javascript            ports/devel/pear-HTML_Javascript
 pear-HTML_Page2                 ports/devel/pear-HTML_Page2
@@ -16170,6 +16188,7 @@ pear-PHPUnit                    ports/devel/pear-PHPUnit
 pear-PHPUnit2                   ports/devel/pear-PHPUnit2
 pear-PHPUnit3                   ports/devel/pear-PHPUnit3
 pear-PHP_Archiv                 ports/archivers/pear-PHP_Archiv
+pear-PHP_ArrayOf                ports/devel/pear-PHP_ArrayOf
 pear-PHP_Beautifier             ports/devel/pear-PHP_Beautifier
 pear-PHP_CodeSniffer            ports/devel/pear-PHP_CodeSniffer
 pear-PHP_Compat                 ports/devel/pear-PHP_Compat
@@ -16268,8 +16287,10 @@ pear-crypt_chap                 ports/security/pear-Crypt_CHAP
 pear-crypt_diffiehellman        ports/security/pear-Crypt_DiffieHellman
 pear-crypt_gpg                  ports/security/pear-Crypt_GPG
 pear-crypt_hmac                 ports/security/pear-Crypt_HMAC
+pear-crypt_microid              ports/security/pear-Crypt_MicroID
 pear-crypt_rc4                  ports/security/pear-Crypt_RC4
 pear-crypt_rsa                  ports/security/pear-Crypt_RSA
+pear-crypt_xxtea                ports/security/pear-Crypt_XXTEA
 pear-date                       ports/devel/pear-Date
 pear-date_holidays              ports/devel/pear-Date_Holidays
 pear-date_holidays_austria      ports/devel/pear-Date_Holidays_Austria
@@ -16319,6 +16340,7 @@ pear-html_ajax                  ports/www/pear-HTML_AJAX
 pear-html_bbcodeparser          ports/devel/pear-HTML_BBCodeParser
 pear-html_common                ports/devel/pear-HTML_Common
 pear-html_common2               ports/devel/pear-HTML_Common2
+pear-html_crypt                 ports/security/pear-HTML_Crypt
 pear-html_css                   ports/devel/pear-HTML_CSS
 pear-html_form                  ports/devel/pear-HTML_Form
 pear-html_javascript            ports/devel/pear-HTML_Javascript
@@ -16419,6 +16441,7 @@ pear-pager                      ports/devel/pear-Pager
 pear-pear_info                  ports/devel/pear-PEAR_Info
 pear-pear_packagefilemanager    ports/devel/pear-PEAR_PackageFileManager
 pear-php_archiv                 ports/archivers/pear-PHP_Archiv
+pear-php_arrayof                ports/devel/pear-PHP_ArrayOf
 pear-php_beautifier             ports/devel/pear-PHP_Beautifier
 pear-php_codesniffer            ports/devel/pear-PHP_CodeSniffer
 pear-php_compat                 ports/devel/pear-PHP_Compat
@@ -18232,6 +18255,7 @@ qfsm                            ports/cad/qfsm
 qgfe                            ports/math/qgfe
 qgis                            ports/graphics/qgis
 qglviewer                       ports/graphics/qglviewer
+qgmailnotifier                  ports/mail/qgmailnotifier
 qgo                             ports/games/qgo
 qhacc                           ports/finance/qhacc
 qhull                           ports/math/qhull
@@ -19299,6 +19323,8 @@ scilab                          ports/math/scilab
 scilab-toolbox-sivp             ports/math/scilab-toolbox-sivp
 scilab-toolbox-swt              ports/math/scilab-toolbox-swt
 scim                            ports/textproc/scim
+scim-bridge                     ports/textproc/scim-bridge
+scim-bridge-qt4                 ports/textproc/scim-bridge-qt4
 scim-input-pad                  ports/textproc/scim-input-pad
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
 scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
@@ -20032,6 +20058,7 @@ stardict2                       ports/textproc/stardict2
 stardict2-dictd_mova            ports/textproc/stardict2-dictd_mova
 stardict2-quick                 ports/textproc/stardict2-quick
 stardict2-rptts                 ports/textproc/stardict2-rptts
+stardict3                       ports/textproc/stardict3
 starlanes                       ports/games/starlanes
 starlogo                        ports/lang/starlogo
 staroffice5                     ports/editors/staroffice5
@@ -20425,6 +20452,7 @@ terminus-font                   ports/x11-fonts/terminus-font
 termit                          ports/x11-toolkits/termit
 termlog                         ports/security/termlog
 terraform                       ports/misc/terraform
+teseq                           ports/misc/teseq
 tesseract                       ports/graphics/tesseract
 testdisk                        ports/sysutils/testdisk
 tet                             ports/misc/tet
@@ -20458,7 +20486,6 @@ textproc_crimson                ports/textproc/crimson
 textproc_flip                   ports/textproc/flip
 textproc_muse                   ports/textproc/muse
 texvc                           ports/print/texvc
-tftp-hpa                        ports/ftp/tftp-hpa
 tftpgrab                        ports/net/tftpgrab
 tgif                            ports/graphics/tgif
 tgif2tex                        ports/print/tgif2tex
@@ -20941,6 +20968,7 @@ typetools                       ports/print/typetools
 typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
+typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 u-boot                          ports/devel/u-boot
 uDrawGraph                      ports/graphics/uDrawGraph
@@ -21248,6 +21276,7 @@ visitors                        ports/www/visitors
 visprint                        ports/graphics/visprint
 visualos                        ports/emulators/visualos
 visualworks                     ports/lang/visualworks
+vitetris                        ports/games/vitetris
 viz                             ports/misc/viz
 vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
@@ -22665,6 +22694,7 @@ yaml-mode.el-emacs21            ports/textproc/yaml-mode.el-emacs21
 yammi                           ports/audio/yammi
 yamsweeper                      ports/games/yamsweeper
 yamt                            ports/audio/yamt
+yanopaste                       ports/www/yanopaste
 yap                             ports/graphics/yap
 yape                            ports/emulators/yape
 yapet                           ports/security/yapet
