@@ -14,7 +14,7 @@
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
 -	test -z "$(plugindir)" || $(MKDIR_P) "$(DESTDIR)$(plugindir)"
-+@WITH_MOZILLA_TRUE@	test -z "$(plugindir)" || $(MKDIR_P) -p "$(DESTDIR)$(plugindir)"
++@WITH_MOZILLA_TRUE@	test -z "$(plugindir)" || $(MKDIR_P) "$(DESTDIR)$(plugindir)"
  	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
  	    f=$(am__strip_dir) \
