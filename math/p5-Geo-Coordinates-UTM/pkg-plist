@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Geo/Coordinates/UTM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/UTM/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/UTM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/Geo
