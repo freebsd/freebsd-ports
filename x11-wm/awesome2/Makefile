@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
