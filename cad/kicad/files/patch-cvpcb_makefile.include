@@ -1,11 +1,12 @@
---- cvpcb/makefile.include.orig	Mon Jul  2 22:44:14 2007
-+++ cvpcb/makefile.include	Mon Jul  2 22:46:55 2007
-@@ -1,7 +1,7 @@
- # makefile pour cvpcb (mingw)
- OBJSUFF = o
+--- cvpcb/makefile.include.orig	2008-08-01 20:41:51.000000000 +0200
++++ cvpcb/makefile.include	2008-09-20 18:51:04.000000000 +0200
+@@ -3,7 +3,8 @@
  
--EXTRACPPFLAGS += -DCVPCB -fno-strict-aliasing -I./ -I../cvpcb -I../include -Ibitmaps -I../pcbnew -I../3d-viewer
-+EXTRACPPFLAGS += -DCVPCB -fno-strict-aliasing -I./ -I../cvpcb -I../include -Ibitmaps -I../pcbnew -I../3d-viewer -I${LOCALBASE}/include
- EXTRALIBS = ../common/common.a
+ EXTRACPPFLAGS += -DCVPCB -fno-strict-aliasing\
+ 	-I./ -I../cvpcb -I../include -Ibitmaps\
+-	-I../pcbnew -I../3d-viewer -I ../polygon
++	-I../pcbnew -I../3d-viewer -I ../polygon\
++	-I${LOCALBASE}/include
  
- LIBVIEWER3D = ../3d-viewer/3d-viewer.a
+ EXTRALIBS = ../common/common.a ../bitmaps/libbitmaps.a\
+     ../polygon/lib_polygon.a\
