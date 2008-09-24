@@ -25,6 +25,8 @@ LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick \
 		curl:${PORTSDIR}/ftp/curl
 
 BROKEN=		bad plist
+DEPRECATED=		old version, broken plist
+EXPIRATION_DATE=	2008-12-24
 
 USE_BISON=	build
 USE_GNOME=	gnometarget libxml2 libxslt

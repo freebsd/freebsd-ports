@@ -18,6 +18,9 @@ COMMENT=	Q-Graph -- graph library and editor for the Q language
 
 RUN_DEPENDS=	${LOCALBASE}/bin/q:${PORTSDIR}/lang/q
 
+DEPRECATED=		depends on deprecated port lang/q
+EXPIRATION_DATE=	2008-12-24
+
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
