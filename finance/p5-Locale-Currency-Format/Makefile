@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Locale-Currency-Format
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Perl functions for formatting monetary values
