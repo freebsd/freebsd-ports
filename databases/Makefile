@@ -157,6 +157,7 @@
     SUBDIR += mysql-connector-java50
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
+    SUBDIR += mysql-gui-tools
     SUBDIR += mysql-navigator
     SUBDIR += mysql-proxy
     SUBDIR += mysql-q4m
