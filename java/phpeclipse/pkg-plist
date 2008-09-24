@@ -1,29 +1,85 @@
-eclipse/features/net.sourceforge.phpeclipse_%%VER%%/cpl-v10.html
-eclipse/features/net.sourceforge.phpeclipse_%%VER%%/feature.xml
-eclipse/features/net.sourceforge.phpeclipse_%%VER%%/license.html
-eclipse/features/net.sourceforge.phpeclipse_%%VER%%/phpeclipse.jpeg
-@dirrm eclipse/features/net.sourceforge.phpeclipse_%%VER%%
+eclipse/features/net.sourceforge.phpeclipse.debug.feature_%%VER%%/cpl-v10.html
+eclipse/features/net.sourceforge.phpeclipse.debug.feature_%%VER%%/feature.xml
+eclipse/features/net.sourceforge.phpeclipse.debug.feature_%%VER%%/license.html
+eclipse/features/net.sourceforge.phpeclipse.feature_%%VER%%/cpl-v10.html
+eclipse/features/net.sourceforge.phpeclipse.feature_%%VER%%/feature.xml
+eclipse/features/net.sourceforge.phpeclipse.feature_%%VER%%/license.html
+eclipse/features/net.sourceforge.phpeclipse.feature_%%VER%%/phpeclipse.jpeg
+eclipse/features/net.sourceforge.phpeclipse.xdebug.feature_%%VER%%/feature.xml
+@dirrm eclipse/features/net.sourceforge.phpeclipse.debug.feature_%%VER%%
+@dirrm eclipse/features/net.sourceforge.phpeclipse.feature_%%VER%%
+@dirrm eclipse/features/net.sourceforge.phpeclipse.xdebug.feature_%%VER%%
 @dirrmtry eclipse/features
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full/obj16/smarty_16.gif
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/cpl-v10.html
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/smartyui.jar
-eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%/webcore.jar
-eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/.classpath
-eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/.project
-eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/.template
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/clear.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/collapseall.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/export_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/filter_ps.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/find_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/import_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/open_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/properties.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/refresh.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/remove.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/restore_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/th_horizontal.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16/th_vertical.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/clear.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/collapseall.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/export_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/filter_ps.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/find_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/import_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/open_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/properties.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/refresh.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/remove.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/restore_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/th_horizontal.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16/th_vertical.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/error_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/event_next.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/event_prev.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/hide_pane.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/horizontal_view.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/registry.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16/vertical_view.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/error_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/error_stack.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/ext_point_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/ext_points_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/extension_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/extensions_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/generic_xml_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/info_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/java_lib_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/ok_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/plugin_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/req_plugin_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/req_plugins_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/runtime_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16/warning_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/ovr16/run_co.gif
+eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/sample.gif
 eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/core.jar
 eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/ctool16/run_php.gif
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/dtool16/run_php.gif
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/eview16/arguments_tab.gif
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/obj16/brkp_obj.gif
-eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/.template
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/debug.jar
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/cpl-v10.html
+eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/launch.jar
+eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/plugin.properties
+eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%/webcore.jar
+eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/clcl16/activate.gif
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/clcl16/add_co.gif
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/clcl16/deactivate.gif
@@ -81,22 +137,80 @@ eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/obj16/apa
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/obj16/sql.gif
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/obj16/xampp_start.gif
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/obj16/xampp_stop.gif
+eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/prefs/default_linux.properties
+eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/prefs/default_macosx.properties
+eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/prefs/default_win32.properties
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/externaltools.jar
+eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/.classpath
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/.project
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/.template
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/cpl-v10.html
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/launch.jar
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/plugin.properties
-eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/.classpath
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar01.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar01s02.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar01s03.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar02.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar02s02.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar02s03.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar02s04.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03s02.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03s03.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03s04.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03s05.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar03s06.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar04.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar04s02.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/ar04s03.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/debugbreakpoint.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/debugconfiguration.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/debugconfigurationremote.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/index.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/debugconfigurationremotepathmap.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/debugperspective.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/filenewother.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/findandinstall.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/installupdate.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/maintopic.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/newphpfile.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/newphpproject.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/newupdatesite.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/nightlybuilds.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/phpproject.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/projectcreated.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/pt01.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/remotedebugxdebugvariable.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/remoteexecution.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/subtopic.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/toc.html
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html/xdebugsetup.png
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/build.xml
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/toc.xml
+eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/cpl-v10.html
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/doc.zip
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/phphelp.jar
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/phphelp.xml
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/filterbuilder.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/htmllexer.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/htmlparser.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/junit.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/sax2.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/thumbelina.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/icons/phpmanual.png
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/templates/refpage.html
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/phpmanual.jar
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/plugin.properties
+eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/icons/full/obj16/smarty_16.gif
+eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/cpl-v10.html
+eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/smartyui.jar
+eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/cview16/preview.gif
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/obj16/php.gif
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/obj16/php.png
@@ -104,10 +218,12 @@ eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/ovr16/error_co.
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/ovr16/warning_co.gif
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/templates/default-templates.properties
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/templates/default-templates.xml
+eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/.project
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/cpl-v10.html
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/plugin.xml
 eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/ui.jar
+eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/home/home.html
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/clcl16/add_favorite.gif
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/clcl16/nav_backward.gif
@@ -149,14 +265,17 @@ eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16/frames
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16/external_browser.gif
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16/favorite.gif
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16/internal_browser.gif
+eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/schema/favorites.exsd
+eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/schema/urlMap.exsd
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/defaultBrowsers.xml
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/plugin.xml
 eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/webbrowser.jar
+eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/cpl-v10.html
 eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/plugin.properties
-eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/plugin.xml
 eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/xmlcore.jar
+eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons/basic/obj16/htmledit.gif
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons/basic/obj16/xml.png
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons/element_obj.gif
@@ -164,6 +283,7 @@ eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/cpl-v10.html
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/plugin.xml
 eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/xmlui.jar
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/META-INF/MANIFEST.MF
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/clcl16/add_exc.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/clcl16/alphab_sort_co.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/clcl16/class_obj.gif
@@ -484,6 +604,7 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/quickfix_error_ob
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/quickfix_warning_obj.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/search_decl_obj.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/search_ref_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/searchm_obj.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/skip.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/source_attach_attrib.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/obj16/table_obj.gif
@@ -534,26 +655,71 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/wizban/packrefact_wiz.g
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/wizban/pullup_wiz.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/wizban/refactor_wiz.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/wizban/typerefact_wiz.gif
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/prefs/default_linux.properties
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/prefs/default_macosx.properties
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/prefs/default_win32.properties
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/templates/default-codetemplates.xml
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/templates/default-templates.properties
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/templates/default-templates.xml
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/TODO
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/about.ini
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/cpl-v10.html
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/install.txt
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/phpeclipse.jar
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/phpeclipse16.gif
+eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/phpeclipse32.gif
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.properties
 eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.xml
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full/obj16
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons/full
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%/icons
-@dirrm eclipse/plugins/net.sourceforge.phpdt.smarty.ui_%%VER%%
-@dirrm eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.core_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.core_%%VER%%/core.jar
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.core_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/META-INF/MANIFEST.MF
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/clear_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/export_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/filter_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/import_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/open_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/properties.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/remove_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16/restore_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/eview16/arguments_tab.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/eview16/environment_tab.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/eview16/error_log.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/brkp_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/environment_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/error_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/error_stack.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/field_private_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/field_protected_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/field_public_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/info_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/methpri_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/methpro_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/methpub_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16/warning_st_obj.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/xdebug.gif
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/plugin.xml
+eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/ui.jar
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/dlcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/elcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/eview16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons/ovr16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%/icons
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.core_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/ctool16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/dtool16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/eview16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons/obj16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%/icons
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.debug.ui_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.core_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/clcl16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/ctool16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full/cview16
@@ -566,9 +732,25 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.xml
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/full
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons/obj16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%/prefs
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.externaltools_%%VER%%
-@dirrm eclipse/plugins/net.sourceforge.phpeclipse.launching_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%/html
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.help_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.phphelp_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual.htmlparser_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%/templates
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.phpmanual_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/icons/full/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/icons/full
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.smarty.ui_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/cview16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/obj16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons/full/ovr16
@@ -576,6 +758,7 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.xml
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/icons
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%/templates
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.ui_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/home
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/clcl16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/dlcl16
@@ -583,12 +766,16 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.xml
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16/frames
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons/obj16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%/schema
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.webbrowser_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.core_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons/basic/obj16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons/basic
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%/icons
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse.xml.ui_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/META-INF
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/clcl16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/ctool16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/cview16
@@ -601,7 +788,16 @@ eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/plugin.xml
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/ovr16
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons/wizban
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/prefs
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%/templates
 @dirrm eclipse/plugins/net.sourceforge.phpeclipse_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.core_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.core_%%VER%%
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/META-INF
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/elcl16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/eview16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons/obj16
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%/icons
+@dirrm eclipse/plugins/net.sourceforge.phpeclipse.xdebug.ui_%%VER%%
 @dirrmtry eclipse/plugins
 @dirrmtry eclipse
