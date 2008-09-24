@@ -1,12 +1,36 @@
 %%PYTHON_SITELIBDIR%%/atom/__init__.py
 %%PYTHON_SITELIBDIR%%/atom/__init__.pyc
 %%PYTHON_SITELIBDIR%%/atom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/atom/http.py
+%%PYTHON_SITELIBDIR%%/atom/http.pyc
+%%PYTHON_SITELIBDIR%%/atom/http.pyo
+%%PYTHON_SITELIBDIR%%/atom/http_interface.py
+%%PYTHON_SITELIBDIR%%/atom/http_interface.pyc
+%%PYTHON_SITELIBDIR%%/atom/http_interface.pyo
+%%PYTHON_SITELIBDIR%%/atom/mock_http.py
+%%PYTHON_SITELIBDIR%%/atom/mock_http.pyc
+%%PYTHON_SITELIBDIR%%/atom/mock_http.pyo
+%%PYTHON_SITELIBDIR%%/atom/mock_service.py
+%%PYTHON_SITELIBDIR%%/atom/mock_service.pyc
+%%PYTHON_SITELIBDIR%%/atom/mock_service.pyo
 %%PYTHON_SITELIBDIR%%/atom/service.py
 %%PYTHON_SITELIBDIR%%/atom/service.pyc
 %%PYTHON_SITELIBDIR%%/atom/service.pyo
+%%PYTHON_SITELIBDIR%%/atom/token_store.py
+%%PYTHON_SITELIBDIR%%/atom/token_store.pyc
+%%PYTHON_SITELIBDIR%%/atom/token_store.pyo
+%%PYTHON_SITELIBDIR%%/atom/url.py
+%%PYTHON_SITELIBDIR%%/atom/url.pyc
+%%PYTHON_SITELIBDIR%%/atom/url.pyo
 %%PYTHON_SITELIBDIR%%/gdata/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/alt/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/alt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/alt/appengine.py
+%%PYTHON_SITELIBDIR%%/gdata/alt/appengine.pyc
+%%PYTHON_SITELIBDIR%%/gdata/alt/appengine.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
@@ -34,6 +58,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/client.py
+%%PYTHON_SITELIBDIR%%/gdata/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/client.pyo
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.pyo
@@ -106,16 +133,21 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
 @dirrm %%PYTHON_SITELIBDIR%%/atom
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
+@dirrm %%PYTHON_SITELIBDIR%%/gdata
+@dirrm %%PYTHON_SITELIBDIR%%/atom
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseQueryExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/dryRunInsert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calendarExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
