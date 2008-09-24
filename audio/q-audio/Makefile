@@ -20,6 +20,9 @@ COMMENT=	Q-Audio -- digital audio interface for the Q language
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		q.6:${PORTSDIR}/lang/q
 
+DEPRECATED=		depends on deprecated port lang/q
+EXPIRATION_DATE=	2008-12-24
+
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthread="${PTHREAD_LIBS}"
