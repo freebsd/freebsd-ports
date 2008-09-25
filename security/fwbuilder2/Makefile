@@ -17,7 +17,7 @@ COMMENT=	Firewall Builder GUI and policy compilers
 DEPRECATED=	This version of fwbuilder is no longer supported by its author
 EXPIRATION_DATE=	2008-10-01
 
-CONFLICTS=      libfwbuilder-2.*
+CONFLICTS=      fwbuilder-3.*
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	fwbuilder.7:${PORTSDIR}/security/libfwbuilder2
 
