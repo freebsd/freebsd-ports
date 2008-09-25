@@ -1,4 +1,5 @@
 bin/parrot
+bin/parrot_config
 bin/parrot_debugger
 bin/pbc_disassemble
 bin/pbc_info
@@ -115,6 +116,7 @@ lib/parrot/dynext/dynlexpad.so
 lib/parrot/dynext/libnci_test.so
 lib/parrot/dynext/rational.so
 lib/parrot/dynext/subproxy.so
+lib/parrot/include/fp_equality.pasm
 lib/parrot/include/hllmacros.pir
 lib/parrot/include/sockets.pasm
 lib/parrot/include/test_more.pir
@@ -288,7 +290,8 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/book/ch05_pasm.pod
 %%PARROT_DOCS%%/book/ch06_testing.pod
 %%PARROT_DOCS%%/book/ch07_architecture.pod
-%%PARROT_DOCS%%/book/ch08_reference.pod
+%%PARROT_DOCS%%/book/ch08_pct.pod
+%%PARROT_DOCS%%/book/ch09_reference.pod
 %%PARROT_DOCS%%/book/figs/p6e_0801.png
 %%PARROT_DOCS%%/debugger.pod
 %%PARROT_DOCS%%/dev/byteorder.pod
@@ -349,6 +352,8 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/pdds/draft/pdd14_bignum.pod
 %%PARROT_DOCS%%/pdds/draft/pdd16_native_call.pod
 %%PARROT_DOCS%%/pdds/draft/pdd29_compiler_tools.pod
+%%PARROT_DOCS%%/pdds/draft/pdd30_install.pod
+%%PARROT_DOCS%%/pdds/draft/pdd31_hll_interop.pod
 %%PARROT_DOCS%%/pdds/pdd00_pdd.pod
 %%PARROT_DOCS%%/pdds/pdd03_calling_conventions.pod
 %%PARROT_DOCS%%/pdds/pdd07_codingstd.pod
@@ -521,11 +526,19 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_EXAMPLES%%/mops/mops.rb
 %%PARROT_EXAMPLES%%/mops/mops.scheme
 %%PARROT_EXAMPLES%%/namespace/namespace_dump.pir
+%%PARROT_EXAMPLES%%/nci/Mysql.pir
 %%PARROT_EXAMPLES%%/nci/PQt.C
 %%PARROT_EXAMPLES%%/nci/QtHelloWorld.pasm
+%%PARROT_EXAMPLES%%/nci/Xlib.pir
+%%PARROT_EXAMPLES%%/nci/Xlibconstants.pir
 %%PARROT_EXAMPLES%%/nci/ls.pir
+%%PARROT_EXAMPLES%%/nci/mysqltest.p6
+%%PARROT_EXAMPLES%%/nci/mysqltest.pir
 %%PARROT_EXAMPLES%%/nci/sdl_blue_rectangle.pir
 %%PARROT_EXAMPLES%%/nci/win32api.pir
+%%PARROT_EXAMPLES%%/nci/xlibtest.nqp
+%%PARROT_EXAMPLES%%/nci/xlibtest.p6
+%%PARROT_EXAMPLES%%/nci/xlibtest.pir
 %%PARROT_EXAMPLES%%/opengl/shapes.pir
 %%PARROT_EXAMPLES%%/opengl/triangle.pir
 %%PARROT_EXAMPLES%%/pasm/cat.pasm
@@ -804,6 +817,7 @@ tools/install/smoke.pl
 @dirrm languages/perl6
 @dirrm languages/ook
 @dirrm languages/m4
+@dirrm languages/markdown
 @dirrm languages/lua
 @dirrm languages/lolcode
 @dirrm languages/lisp
