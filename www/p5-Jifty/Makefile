@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty
-PORTVERSION=	0.70422
+PORTVERSION=	0.80408
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	\
 		p5-Class-Accessor-Named>=0:${PORTSDIR}/devel/p5-Class-Accessor-Named \
 		p5-Class-Container>0:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-Trigger>=0.12:${PORTSDIR}/devel/p5-Class-Trigger \
 		p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
 		p5-Compress-Zlib>0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Crypt-CBC>0:${PORTSDIR}/security/p5-Crypt-CBC \
@@ -39,6 +40,7 @@ BUILD_DEPENDS=	\
 		p5-Email-LocalDelivery>0:${PORTSDIR}/mail/p5-Email-LocalDelivery \
 		p5-Email-MIME>0:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-MIME-Creator>0:${PORTSDIR}/mail/p5-Email-MIME-Creator \
+		p5-Email-MIME-CreateHTML>0:${PORTSDIR}/mail/p5-Email-MIME-CreateHTML \
 		p5-Email-MIME-ContentType>0:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-Simple-Creator>0:${PORTSDIR}/mail/p5-Email-Simple-Creator \
@@ -56,26 +58,29 @@ BUILD_DEPENDS=	\
 		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Hook-LexWrap>0:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		p5-IPC-PubSub>=0.23:${PORTSDIR}/devel/p5-IPC-PubSub \
-		p5-Jifty-DBI>=0.40:${PORTSDIR}/databases/p5-Jifty-DBI \
+		p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-Jifty-DBI>=0.42:${PORTSDIR}/databases/p5-Jifty-DBI \
 		p5-Locale-Maketext-Lexicon>=0.60:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Module-CoreList>0:${PORTSDIR}/devel/p5-Module-CoreList \
 		p5-Module-Install>=0.50:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Module-Pluggable>=3.1:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Module-Pluggable>=3.5:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Module-Refresh>=0.09:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-Module-ScanDeps>0:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		p5-Net-Server>0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Object-Declare>=0.13:${PORTSDIR}/devel/p5-Object-Declare \
+		p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker \
 		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-PerlIO-gzip>=0:${PORTSDIR}/archivers/p5-PerlIO-gzip \
 		p5-Pod-Simple>0:${PORTSDIR}/textproc/p5-Pod-Simple \
 		p5-Scalar-Defer>=0.10:${PORTSDIR}/devel/p5-Scalar-Defer \
 		p5-SQL-ReservedWords>0:${PORTSDIR}/databases/p5-SQL-ReservedWords \
 		p5-String-Koremutake>0:${PORTSDIR}/textproc/p5-String-Koremutake \
-		p5-Template-Declare>=0.07:${PORTSDIR}/textproc/p5-Template-Declare \
+		p5-Template-Declare>=0.26:${PORTSDIR}/textproc/p5-Template-Declare \
 		p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
+		p5-Test-Log4perl>0:${PORTSDIR}/devel/p5-Test-Log4perl \
 		p5-Test-MockModule>=0.05:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-Test-MockObject>=1.07:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
@@ -83,7 +88,7 @@ BUILD_DEPENDS=	\
 		p5-Test-WWW-Mechanize>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
-		p5-WWW-Mechanize>=1.12:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-WWW-Mechanize>=1.30:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Writer>0.601:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-XPath>0:${PORTSDIR}/textproc/p5-XML-XPath \
