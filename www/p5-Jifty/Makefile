@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
 BUILD_DEPENDS=	\
