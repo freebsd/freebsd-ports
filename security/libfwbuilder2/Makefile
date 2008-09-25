@@ -16,6 +16,7 @@ COMMENT=	Firewall Builder API
 DEPRECATED=	This version of fwbuilder is no longer supported by its author
 EXPIRATION_DATE=	2008-10-01
 
+CONFLICTS=	libfwbuilder-3.*
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
