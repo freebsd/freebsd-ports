@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whups
-DISTVERSION=	1.0-rc2
+PORTVERSION=	1.0
 CATEGORIES=	devel www
 
 MAINTAINER=	beech@FreeBSD.org

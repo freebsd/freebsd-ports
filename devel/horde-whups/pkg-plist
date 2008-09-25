@@ -120,29 +120,6 @@
 %%HORDIR%%/scripts/sql/whups.oci8.sql
 %%HORDIR%%/scripts/sql/whups.sql
 %%HORDIR%%/scripts/sql/whups.xml
-%%HORDIR%%/scripts/upgrades/2006-07-12_add_due_date.sql
-%%HORDIR%%/scripts/upgrades/2006-08-04_drop_subjectlist.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_add_queries.mssql.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_add_queries.oci8.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_add_queries.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_add_ticket_dates.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_cache_calculated_dates.php
-%%HORDIR%%/scripts/upgrades/2007-01-16_drop_searches.sql
-%%HORDIR%%/scripts/upgrades/2007-01-16_query_share_updates.php
-%%HORDIR%%/scripts/upgrades/2007-01-20_add_indexes.sql
-%%HORDIR%%/scripts/upgrades/2007-09-07_rename_listeners_table.sql
-%%HORDIR%%/scripts/upgrades/2007-12-09_add_slugs.sql
-%%HORDIR%%/scripts/upgrades/2007-12-12_additional_indexes.sql
-%%HORDIR%%/scripts/upgrades/2008-02-27_add_defaults.sql
-%%HORDIR%%/scripts/upgrades/2008-04-29_add_sql_share_tables.sql
-%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.oci8.sql
-%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.pgsql.sql
-%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.sql
-%%HORDIR%%/scripts/upgrades/2008-06-13_add_queue_emails.sql
-%%HORDIR%%/scripts/upgrades/2008-06-17_fix_varchar_lengths.sql
-%%HORDIR%%/scripts/upgrades/2008-06-24_add_replies.sql
-%%HORDIR%%/scripts/upgrades/2008-07-10_add_query_slugs.sql
-%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/search/rss.php
 %%HORDIR%%/templates/.htaccess
@@ -210,7 +187,6 @@
 @dirrm %%HORDIR%%/templates/admin
 @dirrm %%HORDIR%%/templates
 @dirrm %%HORDIR%%/search
-@dirrm %%HORDIR%%/scripts/upgrades
 @dirrm %%HORDIR%%/scripts/sql
 @dirrm %%HORDIR%%/scripts
 @dirrm %%HORDIR%%/queue
