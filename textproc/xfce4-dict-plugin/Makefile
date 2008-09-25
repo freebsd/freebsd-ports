@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-dict
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 PKGNAMESUFFIX=	-plugin
@@ -16,6 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xfce Plugin for searching for the translation or explanation of a word
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
