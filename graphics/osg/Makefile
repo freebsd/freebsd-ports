@@ -115,6 +115,9 @@ PLIST_SUB+=	XINE="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"64"|""|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|cpu_set_t|cpuset_t|g' \
+		${WRKSRC}/src/OpenThreads/pthreads/CMakeLists.txt \
+		${WRKSRC}/src/OpenThreads/pthreads/PThread.c++
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
