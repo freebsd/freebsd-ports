@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.2rc2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -15,10 +16,12 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
+		http://www.alaskaparadise.com/freebsd/:sql_tds \
 		http://www.alaskaparadise.com/freebsd/:clam \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech:clam \
-		LOCAL/beech:digest
+		LOCAL/beech:digest \
+		LOCAL/beech:sql_tds
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -79,6 +82,7 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		RATIO "Include mod_ratio" on \
 		README "Include mod_readme" on \
 		REWRITE "Include mod_rewrite" on \
+		TDS "FreeTDS - Sybase & MS-SQL auth (Exclusive)" off \
 		WRAP "Include mod_wrap2" on \
 		WRAP_FILE "Include mod_wrap2_file" off \
 		WRAP_SQL "Include mod_wrap2_sql" off
@@ -233,6 +237,17 @@ DISTFILES+=	mod_digest.c:digest
 MODULES:=${MODULES}:mod_digest
 .endif
 
+.if defined(WITH_TDS)
+DISTFILES+=	mod_sql_tds-4.6.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.6.tar.bz2
+MODULES:=${MODULES}:mod_sql_tds
+MODULES:=mod_sql${MODULES}
+PLIST_FILES+=	include/proftpd/mod_sql.h
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.endif
+
 # mod_ifsession should be the last item in the modules list
 .if !defined(WITHOUT_IFSESSION)
 MODULES:=${MODULES}:mod_ifsession
@@ -261,6 +276,9 @@ post-extract:
 .endif
 .if defined(WITH_DIGEST)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
+.endif
+.if defined(WITH_TDS)
+	 @${MV} ${WRKDIR}/mod_sql_tds-4.6/mod_sql_tds.c ${WRKSRC}/contrib/
 .endif
 
 post-patch:
