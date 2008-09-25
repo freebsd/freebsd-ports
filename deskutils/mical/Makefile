@@ -20,4 +20,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 MAN1=		micreply.1 micshow.1
 
+BROKEN		= Miscellaneous run-time failures due out of sync with the current versions of dependencies
+
 .include <bsd.port.mk>
