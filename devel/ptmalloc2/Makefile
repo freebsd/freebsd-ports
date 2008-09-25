@@ -5,18 +5,18 @@
 #
 # $FreeBSD$
 
-PORTNAME=	ptmalloc
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTNAME=	ptmalloc2
+PORTVERSION=	20060605
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
-DISTNAME=	${PORTNAME}2-current
+DISTNAME=	${PORTNAME}-current
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative threads-aware malloc
 
 USE_LD_CONFIG=	yes
-WRKSRC=	${WRKDIR}/${PORTNAME}2
+WRKSRC=	${WRKDIR}/${PORTNAME}
+USE_GMAKE=	yes
 ALL_TARGET=	posix
 
 INCDIR=	include/${PORTNAME}
@@ -29,9 +29,9 @@ post-patch:
 do-install:	all
 	${MKDIR} ${PREFIX}/${INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/malloc.h ${PREFIX}/${INCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/malloc.so ${PREFIX}/lib/libptmalloc.so.2
-	${LN} -s ${PREFIX}/lib/ptmalloc.so.2 ${PREFIX}/lib/libptmalloc.so
-	${INSTALL_DATA} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc.a
+	${INSTALL_DATA} ${WRKSRC}/libmalloc.a ${PREFIX}/lib/libptmalloc2.a
+	${INSTALL_DATA} ${WRKSRC}/malloc.so ${PREFIX}/lib/libptmalloc2.so.0
+	${LN} -s ${PREFIX}/lib/ptmalloc.so.2 ${PREFIX}/lib/libptmalloc2.so
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
