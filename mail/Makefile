@@ -249,6 +249,7 @@
     SUBDIR += masqmail
     SUBDIR += mavbiff
     SUBDIR += mb2md
+    SUBDIR += mbox2imap
     SUBDIR += mbox2mdir
     SUBDIR += mboxcheck-applet
     SUBDIR += mboxgrep
