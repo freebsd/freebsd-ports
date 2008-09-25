@@ -670,6 +670,7 @@ astyle                          ports/devel/astyle
 astzclock                       ports/x11-clocks/astzclock
 asunder                         ports/audio/asunder
 asused                          ports/net-mgmt/asused
+asusoled                        ports/sysutils/asusoled
 aswedit                         ports/www/aswedit
 aswiki                          ports/www/aswiki
 asymptote                       ports/math/asymptote
@@ -1288,6 +1289,7 @@ catdoc                          ports/textproc/catdoc
 catdvi                          ports/print/catdvi
 caudium12                       ports/www/caudium12
 cave                            ports/misc/cave
+cave9                           ports/games/cave9
 cavezofphear                    ports/games/cavezofphear
 cbb                             ports/finance/cbb
 cbedic                          ports/textproc/cbedic
@@ -8699,6 +8701,7 @@ mysql-connector-java            ports/databases/mysql-connector-java
 mysql-connector-java50          ports/databases/mysql-connector-java50
 mysql-connector-odbc            ports/databases/mysql-connector-odbc
 mysql-editor                    ports/databases/mysql-editor
+mysql-gui-tools                 ports/databases/mysql-gui-tools
 mysql-navigator                 ports/databases/mysql-navigator
 mysql-proxy                     ports/databases/mysql-proxy
 mysql-q4m                       ports/databases/mysql-q4m
@@ -9222,6 +9225,7 @@ octave-forge-ann                ports/math/octave-forge-ann
 octave-forge-arpack             ports/math/octave-forge-arpack
 octave-forge-audio              ports/math/octave-forge-audio
 octave-forge-base               ports/math/octave-forge-base
+octave-forge-benchmark          ports/benchmarks/octave-forge-benchmark
 octave-forge-bim                ports/math/octave-forge-bim
 octave-forge-bioinfo            ports/math/octave-forge-bioinfo
 octave-forge-civil-engineering  ports/math/octave-forge-civil-engineering
@@ -9252,6 +9256,7 @@ octave-forge-missing-functions  ports/math/octave-forge-missing-functions
 octave-forge-msh                ports/math/octave-forge-msh
 octave-forge-multicore          ports/math/octave-forge-multicore
 octave-forge-nan                ports/math/octave-forge-nan
+octave-forge-nlwing2            ports/math/octave-forge-nlwing2
 octave-forge-nnet               ports/math/octave-forge-nnet
 octave-forge-ocs                ports/math/octave-forge-ocs
 octave-forge-octcdf             ports/math/octave-forge-octcdf
@@ -9849,6 +9854,7 @@ p5-CGI-ArgChecker               ports/www/p5-CGI-ArgChecker
 p5-CGI-Builder                  ports/www/p5-CGI-Builder
 p5-CGI-Builder-TT2              ports/www/p5-CGI-Builder-TT2
 p5-CGI-Cache                    ports/www/p5-CGI-Cache
+p5-CGI-Compress-Gzip            ports/www/p5-CGI-Compress-Gzip
 p5-CGI-Cookie-Splitter          ports/www/p5-CGI-Cookie-Splitter
 p5-CGI-Deurl-XS                 ports/www/p5-CGI-Deurl-XS
 p5-CGI-Ex                       ports/www/p5-CGI-Ex
@@ -10761,6 +10767,7 @@ p5-Gearman-Server               ports/devel/p5-Gearman-Server
 p5-Genezzo                      ports/databases/p5-Genezzo
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
+p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-IP                       ports/net/p5-Geo-IP
 p5-Geo-IP-PurePerl              ports/net/p5-Geo-IP-PurePerl
@@ -13090,6 +13097,7 @@ p5-cgi-argchecker               ports/www/p5-CGI-ArgChecker
 p5-cgi-builder                  ports/www/p5-CGI-Builder
 p5-cgi-builder-tt2              ports/www/p5-CGI-Builder-TT2
 p5-cgi-cache                    ports/www/p5-CGI-Cache
+p5-cgi-compress-gzip            ports/www/p5-CGI-Compress-Gzip
 p5-cgi-cookie-splitter          ports/www/p5-CGI-Cookie-Splitter
 p5-cgi-deurl-xs                 ports/www/p5-CGI-Deurl-XS
 p5-cgi-ex                       ports/www/p5-CGI-Ex
@@ -13894,6 +13902,7 @@ p5-gearman-server               ports/devel/p5-Gearman-Server
 p5-genezzo                      ports/databases/p5-Genezzo
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
+p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-ip                       ports/net/p5-Geo-IP
 p5-geo-ip-pureperl              ports/net/p5-Geo-IP-PurePerl
@@ -17902,6 +17911,7 @@ py-pyftpdlib                    ports/ftp/py-pyftpdlib
 py-pygments                     ports/textproc/py-pygments
 py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
+py-pylib                        ports/devel/py-pylib
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pypcap                       ports/net/py-pypcap
@@ -19173,6 +19183,7 @@ rubygem-rfacebook               ports/www/rubygem-rfacebook
 rubygem-rgl                     ports/devel/rubygem-rgl
 rubygem-rightaws                ports/net/rubygem-rightaws
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
+rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rrdtool                 ports/databases/rubygem-rrdtool
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
@@ -20371,6 +20382,7 @@ tcplist                         ports/sysutils/tcplist
 tcpmssd                         ports/net/tcpmssd
 tcpreen                         ports/net/tcpreen
 tcpreplay                       ports/net-mgmt/tcpreplay
+tcpser                          ports/comms/tcpser
 tcpsg                           ports/net/tcpsg
 tcpshow                         ports/net/tcpshow
 tcpslice                        ports/net/tcpslice
