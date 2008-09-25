@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
