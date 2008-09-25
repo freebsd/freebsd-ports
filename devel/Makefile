@@ -2234,6 +2234,7 @@
     SUBDIR += py-virtualenv
     SUBDIR += py-vmaps
     SUBDIR += py-wsgiutils
+    SUBDIR += py-xattr
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
