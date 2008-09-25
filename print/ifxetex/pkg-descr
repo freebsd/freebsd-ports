@@ -1,0 +1,8 @@
+This very simple package, for both Plain and LaTeX, defines
+the \ifxetex boolean for testing whether the TeX-variant
+XeTeX is being used for typesetting.
+
+Also provides the \RequireXeTeX command which throws
+an error if XeTeX is not the engine in use.
+
+WWW: http://www.ctan.org/tex-archive/macros/generic/ifxetex/
