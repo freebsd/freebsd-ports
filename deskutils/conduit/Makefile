@@ -17,14 +17,14 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-g
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_SITELIBDIR}/vobject/__init__.py:${PORTSDIR}/deskutils/py-vobject \
+		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
-		${PYTHON_SITELIBDIR}/vobject/__init__.py:${PORTSDIR}/deskutils/py-vobject \
+		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		firefox:${PORTSDIR}/www/firefox \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
