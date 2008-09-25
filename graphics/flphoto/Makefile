@@ -19,8 +19,6 @@ COMMENT=	A basic image management and display program
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		does not compile
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
@@ -36,11 +34,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${PREFIX}/bin/flphoto
 	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${MANPREFIX}/man/man1/flphoto.1
 	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${MAN5PREFIX}/man/man5/album.5
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
+.endif
 .for lang in de en_CA en_GB es fr it nl pt
 	@${MKDIR} ${PREFIX}/share/locale/${lang}
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.po \
