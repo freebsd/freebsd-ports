@@ -7,10 +7,11 @@
 
 PORTNAME=	octave-forge-image
 PORTVERSION=	1.0.8
-CATEGORIES=     math
+PORTREVISION=	1
+CATEGORIES=	math
 
 MAINTAINER=	stephen@math.missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick
 
