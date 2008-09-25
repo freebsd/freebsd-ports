@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mksh
-PORTVERSION=		R33d
+DISTVERSION=		R35b
 CATEGORIES=		shells
 MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 			http://pub.allbsd.org/MirOS/dist/mir/mksh/
@@ -18,8 +18,8 @@ COMMENT=		A MirBSD enhanced shell based on pdksh
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 MAN1=			mksh.1
-PLIST_FILES=		bin/mksh share/examples/mksh/dot.mkshrc
-PLIST_DIRS=		share/examples/mksh
+PLIST_FILES=		bin/mksh %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
+PLIST_DIRS=		%%PORTEXAMPLES%%%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
 
@@ -29,13 +29,15 @@ do-extract:
 		${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
 
 do-build:
-	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -q -r
+	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dot.mkshrc ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
+.endif
 
 post-install:
 	@${ECHO_MSG} "updating /etc/shells"
