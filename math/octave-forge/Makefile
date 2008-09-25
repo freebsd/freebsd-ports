@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20080831
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -26,6 +27,7 @@ COMMENT=	Octave-forge metaport for math/octave
 OPTIONS= \
 	ANN "Install package: ann" On \
 	AUDIO "Install package: audio" On \
+	BENCHMARK "Install package: benchmark" On \
 	BIOINFO "Install package: bioinfo" On \
 	COMBINATORICS "Install package: combinatorics" On \
 	COMMUNICATIONS "Install package: communications" On \
@@ -85,6 +87,7 @@ OPTIONS= \
 	MSH "Install package: msh" On \
 	MULTICORE "Install package: multicore" On \
 	NAN "Install package: nan" On \
+	NLWING2 "Install package: nlwing2" On \
 	OCS "Install package: ocs" On \
 	PDB "Install package: pdb" On \
 	SECS1D "Install package: secs1d" On \
@@ -108,6 +111,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/ann.tar.gz:${PORTSDIR}/math/octave-forge-ann
 .endif
 .if defined(WITH_AUDIO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/audio.tar.gz:${PORTSDIR}/math/octave-forge-audio
+.endif
+.if defined(WITH_BENCHMARK)
+RUN_DEPENDS+=  ${TARBALLS_DIR}/benchmark.tar.gz:${PORTSDIR}/benchmarks/octave-forge-benchmark
 .endif
 .if defined(WITH_BIOINFO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioinfo
@@ -283,6 +289,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/multicore.tar.gz:${PORTSDIR}/math/octave-forge-mul
 .endif
 .if defined(WITH_NAN)
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
+.endif
+.if defined(WITH_NLWING2)
+RUN_DEPENDS+=  ${TARBALLS_DIR}/nlwing2.tar.gz:${PORTSDIR}/math/octave-forge-nlwing2
 .endif
 .if defined(WITH_OCS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ocs.tar.gz:${PORTSDIR}/math/octave-forge-ocs
