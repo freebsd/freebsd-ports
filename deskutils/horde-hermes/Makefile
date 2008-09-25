@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hermes
-DISTVERSION=	1.0-rc2
+PORTVERSION=	1.0
 CATEGORIES=	deskutils www
 
 MAINTAINER=	beech@FreeBSD.org
