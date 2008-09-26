@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20080821
+PORTVERSION=	20080924
 CATEGORIES=	games
 MASTER_SITES=	http://wiki.eduke32.com/stuff/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
@@ -54,6 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC=).*|\1${CC}|; \
 		 s|^(CXX=).*|\1${CXX}|; \
+		 /debug=/d; \
 		 s|/usr/X11R6|${LOCALBASE}|; \
 		 s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile \
