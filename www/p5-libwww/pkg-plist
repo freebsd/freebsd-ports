@@ -6,6 +6,7 @@ bin/lwp-rget
 %%SITE_PERL%%/Bundle/LWP.pm
 %%SITE_PERL%%/File/Listing.pm
 %%SITE_PERL%%/HTML/Form.pm
+%%SITE_PERL%%/HTTP/Config.pm
 %%SITE_PERL%%/HTTP/Cookies.pm
 %%SITE_PERL%%/HTTP/Cookies/Microsoft.pm
 %%SITE_PERL%%/HTTP/Cookies/Netscape.pm
