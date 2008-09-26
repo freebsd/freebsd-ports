@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	refdb
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -20,6 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_PERL5=	5.6.0+
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
@@ -41,7 +41,8 @@ MAN1=	bib2ris.1 bib2ris-utf8.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
 	refdb-backup.1 refdb-bug.1 refdb-ms.1 refdb-restore.1 \
 	refdb_dos2unix.1 refdb_latex2utf8txt.1 refdba.1 \
 	refdbc.1 refdbctl.1 refdbd.1 refdbib.1 refdbjade.1 \
-	refdbnd.1 refdbxml.1 refdbxp.1 runbib.1
+	refdbnd.1 refdbxml.1 refdbxp.1 runbib.1 \
+	refdb-sruserver.1 refdbsru.1
 #MAN7=	RefDB.7
 MAN8=	refdb.8 refdb.sh.8 refdb-init.8
 
