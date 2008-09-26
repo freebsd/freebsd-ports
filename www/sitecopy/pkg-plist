@@ -13,5 +13,5 @@ share/locale/ru/LC_MESSAGES/sitecopy.mo
 share/locale/tr/LC_MESSAGES/sitecopy.mo
 %%DATADIR%%/changes.awk
 %%DATADIR%%/examplerc
-@dirrm share/sitecopy
-@dirrm share/doc/sitecopy
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
