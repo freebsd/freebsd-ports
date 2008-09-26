@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	veditor
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	java cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
@@ -17,7 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	A Verilog and VHDL editor plugin for eclipse
 
-#RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 OPTIONS=	VERILOG "Support Verilog with Icarus Verilog" On \
 		VHDL "Support VHDL with FreeHDL" On
