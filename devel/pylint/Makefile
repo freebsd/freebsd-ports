@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/	\
 		http://ftp.logilab.org/pub/pylint/

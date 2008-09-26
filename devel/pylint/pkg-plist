@@ -1,4 +1,6 @@
 bin/pylint
+bin/epylint
+bin/pyreverse
 bin/pylint-gui
 bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/__init__.py
@@ -64,6 +66,24 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/lint.py
 %%PYTHON_SITELIBDIR%%/pylint/lint.pyc
 %%PYTHON_SITELIBDIR%%/pylint/lint.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/__init__.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diadefslib.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diadefslib.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diadefslib.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diagrams.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diagrams.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/diagrams.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/main.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/main.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/main.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/utils.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/utils.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/utils.pyo
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/writer.py
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/writer.pyc
+%%PYTHON_SITELIBDIR%%/pylint/pyreverse/writer.pyo
 %%PYTHON_SITELIBDIR%%/pylint/reporters/__init__.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/__init__.pyo
@@ -73,6 +93,15 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/data/__init__.py
+%%PYTHON_SITELIBDIR%%/pylint/test/data/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/data/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/data/suppliermodule_test.py
+%%PYTHON_SITELIBDIR%%/pylint/test/data/suppliermodule_test.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/data/suppliermodule_test.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/data/clientmodule_test.py
+%%PYTHON_SITELIBDIR%%/pylint/test/data/clientmodule_test.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/data/clientmodule_test.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.py
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.pyo
@@ -642,6 +671,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/precedence_test.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/pygtk_import.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/socketerror_import.py
+%%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/try_finally_disable_msg_crash.py
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/__init__.py
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/rpythoninput/__init__.pyo
@@ -903,6 +933,12 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_lint.py
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_lint.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_lint.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_diadefs.py
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_diadefs.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_diadefs.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_writer.py
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_writer.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_writer.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/utils.py
 %%PYTHON_SITELIBDIR%%/pylint/test/utils.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/utils.pyo
@@ -916,7 +952,9 @@ bin/symilar
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/messages
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test/input
+@dirrm %%PYTHON_SITELIBDIR%%/pylint/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/test
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/reporters
+@dirrm %%PYTHON_SITELIBDIR%%/pylint/pyreverse
 @dirrm %%PYTHON_SITELIBDIR%%/pylint/checkers
 @dirrm %%PYTHON_SITELIBDIR%%/pylint
