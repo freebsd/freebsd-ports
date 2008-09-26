@@ -1,37 +1,41 @@
---- Makefile.orig	Mon Jun 11 09:22:47 2007
-+++ Makefile	Tue Jul 31 21:41:14 2007
-@@ -6,14 +6,9 @@
+--- Makefile.orig	2008-09-22 15:51:25.000000000 +0800
++++ Makefile	2008-09-22 15:56:58.000000000 +0800
+@@ -6,27 +6,27 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
- 
--CC=gcc
--#CFLAGS=-ggdb -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--CFLAGS=-O2 -Wall -fomit-frame-pointer -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--LDFLAGS=-s
--
- # Uncomment for FreeBSD:
- #CC=gcc
--#CFLAGS=-O2 -Wall -fomit-frame-pointer
-+CFLAGS=-O2 -Wall -fomit-frame-pointer
- #LDFLAGS=-s
- 
- # Uncomment for Cygwin:
-@@ -38,12 +33,12 @@
- #CFLAGS=-02 -Wall -fomit-frame-pointer -Zomf -Zsmall-conv
- #LDFLAGS=-s -Zomf -Zsmall-conv
  
 -prefix = /usr
 +prefix = ${PREFIX}
  
- VERSION=1.5.1.1
+ CC=gcc
+ 
+ VERSION=1.5.2.1
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1
 +MAN=man/tree.1
  MANDIR=${prefix}/man/man1
  
- all:	tree
-@@ -58,13 +53,11 @@
+ # Uncomment options below for your particular OS:
+ 
+ # Linux defaults:
+ #CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-LDFLAGS=-s
++#CFLAGS=-O2 -Wall -fomit-frame-pointer -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++#LDFLAGS=-s
+ 
+ # Uncomment for FreeBSD:
+-#CFLAGS=-O2 -Wall -fomit-frame-pointer
+-#LDFLAGS=-s
+-#XOBJS=strverscmp.o
++CFLAGS?=-O2 -Wall -fomit-frame-pointer
++LDFLAGS?=-s
++XOBJS=strverscmp.o
+ 
+ # Uncomment for Cygwin:
+ #CFLAGS=-O2 -Wall -fomit-frame-pointer -DCYGWIN
+@@ -68,13 +68,11 @@
  	if [ -f tree.o ]; then rm *.o; fi
  	rm -f *~
  
