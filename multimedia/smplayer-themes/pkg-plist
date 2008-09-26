@@ -54,6 +54,7 @@
 %%DATADIR%%/themes/Breathless/panscan.png
 %%DATADIR%%/themes/Breathless/pause.png
 %%DATADIR%%/themes/Breathless/play.png
+%%DATADIR%%/themes/Breathless/play_pause.png
 %%DATADIR%%/themes/Breathless/playlist.png
 %%DATADIR%%/themes/Breathless/plus.png
 %%DATADIR%%/themes/Breathless/pref_advanced.png
@@ -143,6 +144,7 @@
 %%DATADIR%%/themes/Gartoon/panscan.png
 %%DATADIR%%/themes/Gartoon/pause.png
 %%DATADIR%%/themes/Gartoon/play.png
+%%DATADIR%%/themes/Gartoon/play_pause.png
 %%DATADIR%%/themes/Gartoon/playlist.png
 %%DATADIR%%/themes/Gartoon/plus.png
 %%DATADIR%%/themes/Gartoon/pref_advanced.png
@@ -245,6 +247,7 @@
 %%DATADIR%%/themes/Gnome/panscan.png
 %%DATADIR%%/themes/Gnome/pause.png
 %%DATADIR%%/themes/Gnome/play.png
+%%DATADIR%%/themes/Gnome/play_pause.png
 %%DATADIR%%/themes/Gnome/playlist.png
 %%DATADIR%%/themes/Gnome/plus.png
 %%DATADIR%%/themes/Gnome/pref_advanced.png
@@ -337,6 +340,7 @@
 %%DATADIR%%/themes/Noia/panscan.png
 %%DATADIR%%/themes/Noia/pause.png
 %%DATADIR%%/themes/Noia/play.png
+%%DATADIR%%/themes/Noia/play_pause.png
 %%DATADIR%%/themes/Noia/playlist.png
 %%DATADIR%%/themes/Noia/plus.png
 %%DATADIR%%/themes/Noia/pref_advanced.png
@@ -432,6 +436,7 @@
 %%DATADIR%%/themes/Nuvola/panscan.png
 %%DATADIR%%/themes/Nuvola/pause.png
 %%DATADIR%%/themes/Nuvola/play.png
+%%DATADIR%%/themes/Nuvola/play_pause.png
 %%DATADIR%%/themes/Nuvola/playlist.png
 %%DATADIR%%/themes/Nuvola/plus.png
 %%DATADIR%%/themes/Nuvola/pref_advanced.png
@@ -527,6 +532,7 @@
 %%DATADIR%%/themes/Oxygen-Refit/panscan.png
 %%DATADIR%%/themes/Oxygen-Refit/pause.png
 %%DATADIR%%/themes/Oxygen-Refit/play.png
+%%DATADIR%%/themes/Oxygen-Refit/play_pause.png
 %%DATADIR%%/themes/Oxygen-Refit/playlist.png
 %%DATADIR%%/themes/Oxygen-Refit/plus.png
 %%DATADIR%%/themes/Oxygen-Refit/pref_advanced.png
@@ -573,6 +579,7 @@
 %%DATADIR%%/themes/Play/osd.png
 %%DATADIR%%/themes/Play/pause.png
 %%DATADIR%%/themes/Play/play.png
+%%DATADIR%%/themes/Play/play_pause.png
 %%DATADIR%%/themes/Play/previous.png
 %%DATADIR%%/themes/Play/screenshot.png
 %%DATADIR%%/themes/Play/speaker.png
@@ -623,6 +630,7 @@
 %%DATADIR%%/themes/Silk/osd.png
 %%DATADIR%%/themes/Silk/pause.png
 %%DATADIR%%/themes/Silk/play.png
+%%DATADIR%%/themes/Silk/play_pause.png
 %%DATADIR%%/themes/Silk/player_start.png
 %%DATADIR%%/themes/Silk/playlist.png
 %%DATADIR%%/themes/Silk/plus.png
@@ -713,6 +721,7 @@
 %%DATADIR%%/themes/Tango/panscan.png
 %%DATADIR%%/themes/Tango/pause.png
 %%DATADIR%%/themes/Tango/play.png
+%%DATADIR%%/themes/Tango/play_pause.png
 %%DATADIR%%/themes/Tango/playlist.png
 %%DATADIR%%/themes/Tango/plus.png
 %%DATADIR%%/themes/Tango/pref_advanced.png
@@ -777,6 +786,7 @@
 %%DATADIR%%/themes/blackPanther-Light/openfolder.png
 %%DATADIR%%/themes/blackPanther-Light/pause.png
 %%DATADIR%%/themes/blackPanther-Light/play.png
+%%DATADIR%%/themes/blackPanther-Light/play_pause.png
 %%DATADIR%%/themes/blackPanther-Light/playlist.png
 %%DATADIR%%/themes/blackPanther-Light/plus.png
 %%DATADIR%%/themes/blackPanther-Light/pref_advanced.png
@@ -833,6 +843,7 @@
 %%DATADIR%%/themes/blackPanther-Real/openfolder.png
 %%DATADIR%%/themes/blackPanther-Real/pause.png
 %%DATADIR%%/themes/blackPanther-Real/play.png
+%%DATADIR%%/themes/blackPanther-Real/play_pause.png
 %%DATADIR%%/themes/blackPanther-Real/playlist.png
 %%DATADIR%%/themes/blackPanther-Real/plus.png
 %%DATADIR%%/themes/blackPanther-Real/pref_advanced.png
@@ -891,6 +902,7 @@
 %%DATADIR%%/themes/blackPanther-VistaLike/openfolder.png
 %%DATADIR%%/themes/blackPanther-VistaLike/pause.png
 %%DATADIR%%/themes/blackPanther-VistaLike/play.png
+%%DATADIR%%/themes/blackPanther-VistaLike/play_pause.png
 %%DATADIR%%/themes/blackPanther-VistaLike/player_start.png
 %%DATADIR%%/themes/blackPanther-VistaLike/player_volume.png
 %%DATADIR%%/themes/blackPanther-VistaLike/playlist.png
