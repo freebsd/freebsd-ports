@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/_cluster_wrap.so
+%%PYTHON_SITELIBDIR%%/hcluster/__init__.py
+%%PYTHON_SITELIBDIR%%/hcluster/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hcluster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hcluster/cluster.py
+%%PYTHON_SITELIBDIR%%/hcluster/cluster.pyc
+%%PYTHON_SITELIBDIR%%/hcluster/cluster.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/hcluster

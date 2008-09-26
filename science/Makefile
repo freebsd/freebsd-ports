@@ -100,6 +100,7 @@
     SUBDIR += pcp
     SUBDIR += pnetcdf
     SUBDIR += psi3
+    SUBDIR += py-hcluster
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-scipy
