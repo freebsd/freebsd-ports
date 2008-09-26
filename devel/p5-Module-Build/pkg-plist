@@ -8,6 +8,7 @@ bin/config_data
 %%SITE_PERL%%/Module/Build/Config.pm
 %%SITE_PERL%%/Module/Build/ConfigData.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
+%%SITE_PERL%%/Module/Build/Dumper.pm
 %%SITE_PERL%%/Module/Build/ModuleInfo.pm
 %%SITE_PERL%%/Module/Build/Notes.pm
 %%SITE_PERL%%/Module/Build/PPMMaker.pm
