@@ -446,6 +446,7 @@
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
+    SUBDIR += monkeytail
     SUBDIR += mono-kmod
     SUBDIR += most
     SUBDIR += mount.app
