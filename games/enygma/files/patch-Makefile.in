@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Sun Feb 29 15:42:32 2004
++++ Makefile.in	Mon Sep 15 01:39:29 2008
+@@ -9,10 +9,12 @@
+ datadir		= @datadir@
+ localstatedir   = @localstatedir@
+ 
++PACKAGE_NAME	= enygma
++
+ CC		= @CC@
+ CFLAGS		= @CFLAGS@ @GCCFLAGS@ -I$(srcdir) -I. \
+-		  -DLEVELDIR=\"@datadir@/enigma/\" \
+-		  -DSAVEDIR=\"@localstatedir@/enigma/\" \
++		  -DLEVELDIR=\"@datadir@/$(PACKAGE_NAME)/\" \
++		  -DSAVEDIR=\"@localstatedir@/$(PACKAGE_NAME)/\" \
+ 		  @CURSES@
+ LDFLAGS		= @LDFLAGS@
+ LIBS            = @LIBS@
+@@ -32,15 +34,15 @@
+ 	$(CC) $(LDFLAGS) -o enigma $(ENIGMA) $(LIBS)
+ 
+ install: enigma
+-	$(INSTALL_PROGRAM) enigma $(bindir)/enigma
+-	-chown root.games $(bindir)/enigma && chmod 2755 $(bindir)/enigma
+-	#$(INSTALL_DATA) $(srcdir)/enigma.1 $(mandir)/man1/enigma.1
+-	mkdir -p $(datadir)/enigma
++	$(INSTALL_PROGRAM) enigma $(bindir)/$(PACKAGE_NAME)
++	-chown root:games $(bindir)/$(PACKAGE_NAME) && chmod 2755 $(bindir)/$(PACKAGE_NAME)
++	#$(INSTALL_DATA) $(srcdir)/enigma.1 $(mandir)/man1/$(PACKAGE_NAME).1
++	mkdir -p $(datadir)/$(PACKAGE_NAME)
+ 	for i in $(srcdir)/levels/*.set $(srcdir)/levels/*.level; do \
+-		$(INSTALL_DATA) $$i $(datadir)/enigma; \
++		$(INSTALL_DATA) $$i $(datadir)/$(PACKAGE_NAME); \
+ 	done
+-	mkdir -p $(localstatedir)/enigma
+-	-chown root.games $(localstatedir)/enigma && chmod 2770 $(localstatedir)/enigma
++	mkdir -p $(localstatedir)/$(PACKAGE_NAME)
++	-chown root:games $(localstatedir)/$(PACKAGE_NAME) && chmod 2770 $(localstatedir)/$(PACKAGE_NAME)
+ 
+ clean:
+ 	rm -f *.o enigma
