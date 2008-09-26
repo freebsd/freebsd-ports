@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rus-ispell
-PORTVERSION=	0.99g4
+PORTVERSION=	0.99g5
 CATEGORIES=	russian textproc
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/ispell/
 
@@ -14,6 +14,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	New Russian dictionaries for ispell
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 .if defined(RUS_ISPELL_WITH_YO_ONLY)
