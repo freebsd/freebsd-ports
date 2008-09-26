@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	antlrworks
-PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
@@ -37,11 +36,6 @@ DESKTOP_ENTRIES="ANTLRWorks" \
 		"antlrworks" \
 		"Application;Development;" \
 		true
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|antlr-3.1|antlr-3.0.1|g' \
-		${WRKSRC}/build.properties
 
 post-build:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/antlrworks
