@@ -193,6 +193,7 @@
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
     SUBDIR += mysqltcl
+    SUBDIR += mysqltuner
     SUBDIR += mytop
     SUBDIR += mywwwatcher
     SUBDIR += namazu2
