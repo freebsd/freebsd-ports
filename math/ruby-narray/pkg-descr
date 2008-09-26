@@ -1,10 +1,4 @@
-NArray is a class of Numerical N-dimensional Array, providing fast and
-efficient computing of the large data arrays.
+NArray is an Numerical N-dimensional Array class. Supported element types are 1/2/4-byte Integer, single/double-precision Real/Complex, and Ruby Object. This extension library incorporates fast calculation and easy manipulation of large numerical arrays into the Ruby language. NArray has features similar to NumPy, but NArray has vector and matrix subclasses.
 
-Element types: Integer, Float, Complex and Ruby Object.
-
-Methods: array manipulation, arithmetic operators and mathematical
-functions (including FFTW and LU factorization).
-
-Author:	Masahiro TANAKA <masa@ir.isas.ac.jp>
-WWW:	http://www.ir.isas.ac.jp/~masa/ruby/index-e.html
+Author:	Masahiro TANAKA <masa16.tanaka @nospam@ gmail.com>
+WWW:	http://narray.rubyforge.org/
