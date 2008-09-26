@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.2-alpha
+DISTVERSION=	0.2-beta
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail
-DISTNAME=	${PORTNAME}mail-${DISTVERSION}.1
+DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}
 NO_BUILD=	yes
 
 RCUBECOMP=	SQL bin config index.php logs program robots.txt skins temp
@@ -99,6 +98,8 @@ post-patch:
 		${WRKSRC}/skins/default/common.css
 	@${REINPLACE_CMD} "s/mail.css/${MAIL}.css/g" \
 		${WRKSRC}/skins/default/templates/*.html
+	@${MV} ${WRKSRC}/program/steps/mail \
+		${WRKSRC}/program/steps/${MAIL}
 	@${MV} ${WRKSRC}/skins/default/images/buttons/mail.gif \
 		${WRKSRC}/skins/default/images/buttons/${MAIL}.gif
 	@${MV} ${WRKSRC}/skins/default/mail.css \
