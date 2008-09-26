@@ -47,17 +47,17 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31633/">
 	  <p>Some security issues have been reported in BitlBee, which can
-	  be exploited by malicious people to bypass certain security
-	  restrictions and hijack accounts.</p>
-		<p>The security issues are caused due to unspecified errors, which
-		can be exploited to overwrite existing accounts.</p>
+	    be exploited by malicious people to bypass certain security
+	    restrictions and hijack accounts.</p>
+	  <p>The security issues are caused due to unspecified errors, which
+	    can be exploited to overwrite existing accounts.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-			<url>http://secunia.com/advisories/31633/</url>
       <cvename>CVE-2008-3920</cvename>
       <cvename>CVE-2008-3969</cvename>
+      <url>http://secunia.com/advisories/31633/</url>
     </references>
     <dates>
       <discovery>2008-08-27</discovery>
