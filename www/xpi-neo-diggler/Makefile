@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	neo-diggler
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	h.schmalzbauer@omnisec.de
+MAINTAINER=	freebsd@omnilan.de
 COMMENT=	URL-related actions through menu button
 
 XPI_DISTNAME=	neo_diggler
