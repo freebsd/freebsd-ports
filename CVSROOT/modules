@@ -8018,6 +8018,7 @@ mbasecalc                       ports/math/mbasecalc
 mbdyn                           ports/science/mbdyn
 mbmon                           ports/sysutils/mbmon
 mbox                            ports/audio/mbox
+mbox2imap                       ports/mail/mbox2imap
 mbox2mdir                       ports/mail/mbox2mdir
 mboxcheck-applet                ports/mail/mboxcheck-applet
 mboxgrep                        ports/mail/mboxgrep
@@ -12011,7 +12012,6 @@ p5-Sledge-SessionManager-CookieStore  ports/www/p5-Sledge-SessionManager-CookieS
 p5-Sledge-Template-Expr         ports/www/p5-Sledge-Template-Expr
 p5-Smart-Comments               ports/devel/p5-Smart-Comments
 p5-Snort-Rule                   ports/security/p5-Snort-Rule
-p5-Socket                       ports/net/p5-Socket
 p5-Socket-Multicast6            ports/net/p5-Socket-Multicast6
 p5-Socket6                      ports/net/p5-Socket6
 p5-Socks                        ports/net/p5-Socks
@@ -15152,7 +15152,6 @@ p5-soap-data-builder            ports/net/p5-SOAP-Data-Builder
 p5-soap-lite                    ports/net/p5-SOAP-Lite
 p5-soap-lite-060                ports/net/p5-SOAP-Lite-060
 p5-soap-mysoap                  ports/net/p5-SOAP-MySOAP
-p5-socket                       ports/net/p5-Socket
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
 p5-socket6                      ports/net/p5-Socket6
 p5-socks                        ports/net/p5-Socks
@@ -18129,6 +18128,7 @@ py-wxpython26-unicode           ports/x11-toolkits/py-wxPython26-unicode
 py-wxpython28                   ports/x11-toolkits/py-wxPython28
 py-wxpython28-common            ports/x11-toolkits/py-wxPython28-common
 py-wxpython28-unicode           ports/x11-toolkits/py-wxPython28-unicode
+py-xattr                        ports/devel/py-xattr
 py-xdg                          ports/devel/py-xdg
 py-xlib                         ports/x11-toolkits/py-xlib
 py-xlwriter                     ports/textproc/py-xlwriter
