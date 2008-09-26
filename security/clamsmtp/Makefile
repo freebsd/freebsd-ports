@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamsmtp
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/stef/software/clamsmtp/
 
