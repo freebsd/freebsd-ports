@@ -22,7 +22,7 @@ modifying its configuration file or by adding command line options.
 
  o Restart OpenVPN server
 
-The next thing you have to to is to configure kovpn itself.
+The next thing you have to do is to configure kovpn itself.
  o Start kovpn
  o right-click on kovpn's icon in the system tray to open the popup menu.
  o left-click on the "Configure kovpn" menu item.
@@ -36,4 +36,4 @@ The next thing you have to to is to configure kovpn itself.
      (the management option in the first step)
  o The other options are not important for kovpn to work but can raise your 
    comfort.
- o That's it click on all OKs and your done.
+ o That's it ! Click on all OKs and you're done.
