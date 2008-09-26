@@ -1,4 +1,7 @@
 %%PYTHON_SITELIBDIR%%/ZopePageTemplates.pth
+%%PYTHON_SITELIBDIR%%/ZopePageTemplates/ComputedAttribute.py
+%%PYTHON_SITELIBDIR%%/ZopePageTemplates/ComputedAttribute.pyc
+%%PYTHON_SITELIBDIR%%/ZopePageTemplates/ComputedAttribute.pyo
 %%PYTHON_SITELIBDIR%%/ZopePageTemplates/Expressions.py
 %%PYTHON_SITELIBDIR%%/ZopePageTemplates/Expressions.pyc
 %%PYTHON_SITELIBDIR%%/ZopePageTemplates/Expressions.pyo
