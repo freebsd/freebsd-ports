@@ -1,0 +1,13 @@
+YABT means Yet another Braille Translator.
+
+YABT is a general purpose Braille translation system
+written in pure python. It is primarily designed to
+be used by the BrlTex Project, but due to its general
+design it may be suited to use in other projects.
+
+Currently YABT has a table for translation in to British
+Braille encoded in ASCII Braille, but tables for other
+codes and other output encodings such as unicode Braille
+are possible.
+
+WWW:	http://pypi.python.org/pypi/YABT/
