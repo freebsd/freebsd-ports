@@ -2129,6 +2129,7 @@
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
     SUBDIR += py-ice
+    SUBDIR += py-icu
     SUBDIR += py-instant
     SUBDIR += py-istring
     SUBDIR += py-jcc
