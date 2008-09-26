@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	narray
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.9p5
 CATEGORIES=	math ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,8 +35,6 @@ post-install:
 .for f in ${DOC_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/speed/*.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
