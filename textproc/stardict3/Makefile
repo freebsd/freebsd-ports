@@ -12,10 +12,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	d9364104@mail.nchu.edu.tw
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
-LIB_DEPENDS=    sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
+LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		enchant.1:${PORTSDIR}/textproc/enchant
 
 GNU_CONFIGURE=	yes
@@ -31,7 +31,7 @@ USE_GETTEXT=	yes
 
 OPTIONS=	GNOMEUI "GNOME support" On
 
-CONFLICTS=      stardict-2.[0-9]*
+CONFLICTS=	stardict-2.[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +47,10 @@ PLIST_SUB=	GNOME="@comment not installed: "
 .endif
 
 MAN1=		stardict.1
+
+.if (${OSVERSION} < 700109)
+EXTRA_PATCHES+=	${FILESDIR}/src_conf.h
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
