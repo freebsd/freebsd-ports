@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
