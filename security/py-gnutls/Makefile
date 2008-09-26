@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,7 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python wrapper for the GNUTLS library
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+RUN_DEPENDS=	${PYCTYPES}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -34,10 +34,4 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
