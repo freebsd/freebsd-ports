@@ -209,6 +209,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/repenv.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rkbang.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rksin.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/rksin3.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rmspk.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/roundinterp.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/s.png
@@ -285,9 +286,12 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/stochastic.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sum2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sum5.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/t5sum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh100.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh3.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/tanhexs.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/tanhsum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/title.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-blank.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-minus.png
@@ -458,6 +462,8 @@ bin/sndrecord
 %%GUILE%%%%DATADIR%%/toolbar.scm
 %%GUILE%%%%DATADIR%%/tools/check-gtk.scm
 %%GUILE%%%%DATADIR%%/tools/check-help.scm
+%%GUILE%%%%DATADIR%%/tools/clisp-number-tests.scm
+%%GUILE%%%%DATADIR%%/tools/clisp-other-tests.scm
 %%GUILE%%%%DATADIR%%/tools/gldata.scm
 %%GUILE%%%%DATADIR%%/tools/lines.scm
 %%GUILE%%%%DATADIR%%/tools/makegl.scm
