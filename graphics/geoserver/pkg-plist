@@ -552,7 +552,6 @@ lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-pool-1.3.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/commons-validator-1.1.4.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/concurrent-1.3.4.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/ecore-2.2.2.jar
-lib/geoserver/webapps/geoserver/WEB-INF/lib/freemarker-2.3.9.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/geoapi-nogenerics-2.1-RC1.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/hsqldb-1.8.0.7.jar
 lib/geoserver/webapps/geoserver/WEB-INF/lib/imageio-ext-arcgrid-1.0-SNAPSHOT.jar
