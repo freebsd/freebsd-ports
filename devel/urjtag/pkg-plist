@@ -11,6 +11,11 @@ bin/jtag
 %%DATADIR%%/altera/ep1c20f400/STEPPINGS
 %%DATADIR%%/altera/ep1c20f400/ep1c20f400
 %%DATADIR%%/altera/ep1c6q240/ep1c6q240
+%%DATADIR%%/altera/ep2c8/STEPPINGS
+%%DATADIR%%/altera/ep2c8/ep2c8
+%%DATADIR%%/altera/ep2c8/f256
+%%DATADIR%%/altera/ep2c8/q208
+%%DATADIR%%/altera/ep2c8/t144
 %%DATADIR%%/altera/epm3064a/STEPPINGS
 %%DATADIR%%/altera/epm3064a/epm3064a
 %%DATADIR%%/altera/epm3064a/l44
@@ -18,21 +23,35 @@ bin/jtag
 %%DATADIR%%/altera/epm3064a/t44
 %%DATADIR%%/altera/epm7128aetc100/STEPPINGS
 %%DATADIR%%/altera/epm7128aetc100/epm7128aetc100
+%%DATADIR%%/analog/PARTS
+%%DATADIR%%/analog/bf527/STEPPINGS
+%%DATADIR%%/analog/bf527/bf527
 %%DATADIR%%/analog/bf533/STEPPINGS
 %%DATADIR%%/analog/bf533/bf533
-%%DATADIR%%/analog/PARTS
+%%DATADIR%%/analog/bf537/STEPPINGS
+%%DATADIR%%/analog/bf537/bf537
+%%DATADIR%%/analog/bf538/STEPPINGS
+%%DATADIR%%/analog/bf538/bf538
+%%DATADIR%%/analog/bf548/STEPPINGS
+%%DATADIR%%/analog/bf548/bf548
+%%DATADIR%%/analog/bf561/STEPPINGS
+%%DATADIR%%/analog/bf561/bf561
 %%DATADIR%%/analog/sharc21065l/STEPPINGS
 %%DATADIR%%/analog/sharc21065l/sharc21065l
 %%DATADIR%%/atheros/ar2312/ar2312
 %%DATADIR%%/atmel/PARTS
+%%DATADIR%%/atmel/at32ap7000/STEPPINGS
+%%DATADIR%%/atmel/at32ap7000/at32ap7000
+%%DATADIR%%/atmel/at91sam7s256/STEPPINGS
+%%DATADIR%%/atmel/at91sam7s256/at91sam7s_tq48v0
+%%DATADIR%%/atmel/at91sam7s256/at91sam7s_tq64v0
+%%DATADIR%%/atmel/atf15xx/STEPPINGS
+%%DATADIR%%/atmel/atf15xx/atf1504asv
 %%DATADIR%%/atmel/atmega128/STEPPINGS
 %%DATADIR%%/atmel/atmega128/atmega128
-%%DATADIR%%/atmel/at91sam7s256/STEPPINGS
-%%DATADIR%%/atmel/at91sam7s256/at91sam7s_tq64v0
-%%DATADIR%%/atmel/at91sam7s256/at91sam7s_tq48v0
+%%DATADIR%%/brecis/PARTS
 %%DATADIR%%/brecis/msp2006/STEPPINGS
 %%DATADIR%%/brecis/msp2006/msp2006
-%%DATADIR%%/brecis/PARTS
 %%DATADIR%%/broadcom/PARTS
 %%DATADIR%%/broadcom/bcm1250/STEPPINGS
 %%DATADIR%%/broadcom/bcm1250/bcm1250
@@ -42,12 +61,17 @@ bin/jtag
 %%DATADIR%%/broadcom/bcm4712/bcm4712
 %%DATADIR%%/broadcom/bcm5421s/STEPPINGS
 %%DATADIR%%/broadcom/bcm5421s/bcm5421s
+%%DATADIR%%/bsdl/STD_1149_1_1990
+%%DATADIR%%/bsdl/STD_1149_1_1994
+%%DATADIR%%/bsdl/STD_1149_1_2001
+%%DATADIR%%/bsdl/STD_1532_2001
+%%DATADIR%%/bsdl/STD_1532_2002
 %%DATADIR%%/dec/PARTS
 %%DATADIR%%/dec/sa1100/STEPPINGS
 %%DATADIR%%/dec/sa1100/sa1100
+%%DATADIR%%/freescale/PARTS
 %%DATADIR%%/freescale/mpc5200/STEPPINGS
 %%DATADIR%%/freescale/mpc5200/mpc5200
-%%DATADIR%%/freescale/PARTS
 %%DATADIR%%/hitachi/PARTS
 %%DATADIR%%/hitachi/ar7300/STEPPINGS
 %%DATADIR%%/hitachi/ar7300/ar7300
@@ -57,10 +81,10 @@ bin/jtag
 %%DATADIR%%/hitachi/sh7729/STEPPINGS
 %%DATADIR%%/hitachi/sh7729/sh7729
 %%DATADIR%%/ibm/PARTS
-%%DATADIR%%/ibm/ppc440gx/STEPPINGS
-%%DATADIR%%/ibm/ppc440gx/ppc440gx
 %%DATADIR%%/ibm/ppc405ep/STEPPINGS
 %%DATADIR%%/ibm/ppc405ep/ppc405ep
+%%DATADIR%%/ibm/ppc440gx/STEPPINGS
+%%DATADIR%%/ibm/ppc440gx/ppc440gx
 %%DATADIR%%/intel/PARTS
 %%DATADIR%%/intel/ixp425/STEPPINGS
 %%DATADIR%%/intel/ixp425/ixp425
@@ -90,17 +114,20 @@ bin/jtag
 %%DATADIR%%/philips/xcr3128xl-vq100/STEPPINGS
 %%DATADIR%%/philips/xcr3128xl-vq100/xcr3128xl-vq100
 %%DATADIR%%/samsung/s3c4510b/s3c4510b
+%%DATADIR%%/sharp/PARTS
 %%DATADIR%%/sharp/lh7a400/STEPPINGS
 %%DATADIR%%/sharp/lh7a400/lh7a400
-%%DATADIR%%/sharp/PARTS
+%%DATADIR%%/sigma/PARTS
+%%DATADIR%%/sigma/smp8634/STEPPINGS
+%%DATADIR%%/sigma/smp8634/smp8634
 %%DATADIR%%/toshiba/PARTS
 %%DATADIR%%/toshiba/tx4925/STEPPINGS
 %%DATADIR%%/toshiba/tx4925/tx4925
 %%DATADIR%%/toshiba/tx4926/STEPPINGS
 %%DATADIR%%/toshiba/tx4926/tx4926
 %%DATADIR%%/xilinx/PARTS
-%%DATADIR%%/xilinx/xc18v04pc44/xc18v04pc44
 %%DATADIR%%/xilinx/xc18v04pc44/STEPPINGS
+%%DATADIR%%/xilinx/xc18v04pc44/xc18v04pc44
 %%DATADIR%%/xilinx/xc2c256-tq144/STEPPINGS
 %%DATADIR%%/xilinx/xc2c256-tq144/xc2c256-tq144
 %%DATADIR%%/xilinx/xc2c256-vq100/STEPPINGS
@@ -110,77 +137,83 @@ bin/jtag
 %%DATADIR%%/xilinx/xc2s200e-pq208/STEPPINGS
 %%DATADIR%%/xilinx/xc2s200e-pq208/xc2s200e-pq208
 %%DATADIR%%/xilinx/xc2s300e/STEPPINGS
-%%DATADIR%%/xilinx/xc2s300e/xc2s300e
-%%DATADIR%%/xilinx/xc2s300e/pq208
-%%DATADIR%%/xilinx/xc2s300e/ft256
 %%DATADIR%%/xilinx/xc2s300e/fg456
-%%DATADIR%%/xilinx/xc3s1000/fg676
-%%DATADIR%%/xilinx/xc3s1000/xc3s1000
-%%DATADIR%%/xilinx/xc3s1000/fg320
-%%DATADIR%%/xilinx/xc3s1000/ft256
+%%DATADIR%%/xilinx/xc2s300e/ft256
+%%DATADIR%%/xilinx/xc2s300e/pq208
+%%DATADIR%%/xilinx/xc2s300e/xc2s300e
+%%DATADIR%%/xilinx/xc2v1000-fg256/STEPPINGS
+%%DATADIR%%/xilinx/xc2v1000-fg256/xc2v1000-fg256
+%%DATADIR%%/xilinx/xc2v250-fg256/STEPPINGS
+%%DATADIR%%/xilinx/xc2v250-fg256/xc2v250-fg256
+%%DATADIR%%/xilinx/xc2v80-fg256/STEPPINGS
+%%DATADIR%%/xilinx/xc2v80-fg256/xc2v80-fg256
 %%DATADIR%%/xilinx/xc3s1000/STEPPINGS
+%%DATADIR%%/xilinx/xc3s1000/fg320
 %%DATADIR%%/xilinx/xc3s1000/fg456
+%%DATADIR%%/xilinx/xc3s1000/fg676
+%%DATADIR%%/xilinx/xc3s1000/ft256
+%%DATADIR%%/xilinx/xc3s1000/xc3s1000
+%%DATADIR%%/xilinx/xc3s100e_die/STEPPINGS
+%%DATADIR%%/xilinx/xc3s100e_die/xc3s100e_die
 %%DATADIR%%/xilinx/xc3s100e_die/xc3s100e_pq208
 %%DATADIR%%/xilinx/xc3s100e_die/xc3s100e_tq144
-%%DATADIR%%/xilinx/xc3s100e_die/xc3s100e_die
-%%DATADIR%%/xilinx/xc3s100e_die/STEPPINGS
 %%DATADIR%%/xilinx/xc3s100e_die/xc3s100e_vq100
-%%DATADIR%%/xilinx/xc3s1500/xc3s1500_fg456
-%%DATADIR%%/xilinx/xc3s1500/xc3s1500l_fg676
-%%DATADIR%%/xilinx/xc3s1500/xc3s1500l
-%%DATADIR%%/xilinx/xc3s1500/xc3s1500l_fg320
-%%DATADIR%%/xilinx/xc3s1500/xc3s1500_fg676
+%%DATADIR%%/xilinx/xc3s1500/STEPPINGS
 %%DATADIR%%/xilinx/xc3s1500/xc3s1500
 %%DATADIR%%/xilinx/xc3s1500/xc3s1500_fg320
-%%DATADIR%%/xilinx/xc3s1500/STEPPINGS
+%%DATADIR%%/xilinx/xc3s1500/xc3s1500_fg456
+%%DATADIR%%/xilinx/xc3s1500/xc3s1500_fg676
+%%DATADIR%%/xilinx/xc3s1500/xc3s1500l
+%%DATADIR%%/xilinx/xc3s1500/xc3s1500l_fg320
 %%DATADIR%%/xilinx/xc3s1500/xc3s1500l_fg456
-%%DATADIR%%/xilinx/xc3s200/xc3s200_tq144
+%%DATADIR%%/xilinx/xc3s1500/xc3s1500l_fg676
+%%DATADIR%%/xilinx/xc3s200/STEPPINGS
 %%DATADIR%%/xilinx/xc3s200/xc3s200
 %%DATADIR%%/xilinx/xc3s200/xc3s200_ft256
-%%DATADIR%%/xilinx/xc3s200/xc3s200_vq100
-%%DATADIR%%/xilinx/xc3s200/STEPPINGS
 %%DATADIR%%/xilinx/xc3s200/xc3s200_pq208
-%%DATADIR%%/xilinx/xc3s2000/xc3s2000_fg676
-%%DATADIR%%/xilinx/xc3s2000/xc3s2000
-%%DATADIR%%/xilinx/xc3s2000/xc3s2000l_fg900
-%%DATADIR%%/xilinx/xc3s2000/xc3s2000_fg900
+%%DATADIR%%/xilinx/xc3s200/xc3s200_tq144
+%%DATADIR%%/xilinx/xc3s200/xc3s200_vq100
 %%DATADIR%%/xilinx/xc3s2000/STEPPINGS
+%%DATADIR%%/xilinx/xc3s2000/xc3s2000
 %%DATADIR%%/xilinx/xc3s2000/xc3s2000_fg456
-%%DATADIR%%/xilinx/xc3s2000/xc3s2000l_fg676
+%%DATADIR%%/xilinx/xc3s2000/xc3s2000_fg676
+%%DATADIR%%/xilinx/xc3s2000/xc3s2000_fg900
 %%DATADIR%%/xilinx/xc3s2000/xc3s2000l
-%%DATADIR%%/xilinx/xc3s400/xc3s400_fg456
-%%DATADIR%%/xilinx/xc3s400/xc3s400_tq144
+%%DATADIR%%/xilinx/xc3s2000/xc3s2000l_fg676
+%%DATADIR%%/xilinx/xc3s2000/xc3s2000l_fg900
+%%DATADIR%%/xilinx/xc3s400/STEPPINGS
 %%DATADIR%%/xilinx/xc3s400/xc3s400
 %%DATADIR%%/xilinx/xc3s400/xc3s400_fg320
+%%DATADIR%%/xilinx/xc3s400/xc3s400_fg456
 %%DATADIR%%/xilinx/xc3s400/xc3s400_ft256
-%%DATADIR%%/xilinx/xc3s400/STEPPINGS
 %%DATADIR%%/xilinx/xc3s400/xc3s400_pq208
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000l
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000_fg676
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000l_fg900
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000_fg900
-%%DATADIR%%/xilinx/xc3s4000/xc3s4000l_fg1156
+%%DATADIR%%/xilinx/xc3s400/xc3s400_tq144
 %%DATADIR%%/xilinx/xc3s4000/STEPPINGS
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000
 %%DATADIR%%/xilinx/xc3s4000/xc3s4000_fg1156
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000_fg676
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000_fg900
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000l
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000l_fg1156
+%%DATADIR%%/xilinx/xc3s4000/xc3s4000l_fg900
+%%DATADIR%%/xilinx/xc3s50/STEPPINGS
+%%DATADIR%%/xilinx/xc3s50/xc3s50
+%%DATADIR%%/xilinx/xc3s50/xc3s50_cp132
 %%DATADIR%%/xilinx/xc3s50/xc3s50_pq208
 %%DATADIR%%/xilinx/xc3s50/xc3s50_tq144
-%%DATADIR%%/xilinx/xc3s50/xc3s50
-%%DATADIR%%/xilinx/xc3s50/STEPPINGS
 %%DATADIR%%/xilinx/xc3s50/xc3s50_vq100
-%%DATADIR%%/xilinx/xc3s50/xc3s50_cp132
-%%DATADIR%%/xilinx/xc3s5000/xc3s5000
-%%DATADIR%%/xilinx/xc3s5000/xc3s5000_fg900
 %%DATADIR%%/xilinx/xc3s5000/STEPPINGS
+%%DATADIR%%/xilinx/xc3s5000/xc3s5000
 %%DATADIR%%/xilinx/xc3s5000/xc3s5000_fg1156
+%%DATADIR%%/xilinx/xc3s5000/xc3s5000_fg900
+%%DATADIR%%/xilinx/xc3s500e_fg320/STEPPINGS
+%%DATADIR%%/xilinx/xc3s500e_fg320/xc3s500e_fg320
 %%DATADIR%%/xilinx/xc3s500e_fg320/xc3s500e_ft256
 %%DATADIR%%/xilinx/xc3s500e_fg320/xc3s500e_pq208
-%%DATADIR%%/xilinx/xc3s500e_fg320/xc3s500e_fg320
-%%DATADIR%%/xilinx/xc3s500e_fg320/STEPPINGS
-%%DATADIR%%/xilinx/xc9572xl_vq44/xc9572xl_vq44
 %%DATADIR%%/xilinx/xc9572xl_vq44/STEPPINGS
-%%DATADIR%%/xilinx/xcf04s/xcf04s
+%%DATADIR%%/xilinx/xc9572xl_vq44/xc9572xl_vq44
 %%DATADIR%%/xilinx/xcf04s/STEPPINGS
+%%DATADIR%%/xilinx/xcf04s/xcf04s
 %%DATADIR%%/xilinx/xcr3032xl-vq44/STEPPINGS
 %%DATADIR%%/xilinx/xcr3032xl-vq44/xcr3032xl-vq44
 %%DATADIR%%/xilinx/xcr3128xl-cs144/STEPPINGS
@@ -188,10 +221,13 @@ bin/jtag
 %%DATADIR%%/xilinx/xcr3128xl-vq100/xcr3128xl-vq100
 %%DATADIR%%/xilinx/xcr3256xl-ft256/STEPPINGS
 %%DATADIR%%/xilinx/xcr3256xl-ft256/xcr3256xl-ft256
+share/locale/fr/LC_MESSAGES/urjtag.mo
+share/locale/rw/LC_MESSAGES/urjtag.mo
+share/locale/sk/LC_MESSAGES/urjtag.mo
 @dirrm %%DATADIR%%/xilinx/xcr3256xl-ft256
-@dirrm %%DATADIR%%/xilinx/xcr3032xl-vq44
 @dirrm %%DATADIR%%/xilinx/xcr3128xl-vq100
 @dirrm %%DATADIR%%/xilinx/xcr3128xl-cs144
+@dirrm %%DATADIR%%/xilinx/xcr3032xl-vq44
 @dirrm %%DATADIR%%/xilinx/xcf04s
 @dirrm %%DATADIR%%/xilinx/xc9572xl_vq44
 @dirrm %%DATADIR%%/xilinx/xc3s500e_fg320
@@ -204,16 +240,21 @@ bin/jtag
 @dirrm %%DATADIR%%/xilinx/xc3s1500
 @dirrm %%DATADIR%%/xilinx/xc3s100e_die
 @dirrm %%DATADIR%%/xilinx/xc3s1000
-@dirrm %%DATADIR%%/xilinx/xc2c64a-vq44
-@dirrm %%DATADIR%%/xilinx/xc2c256-vq100
+@dirrm %%DATADIR%%/xilinx/xc2v80-fg256
+@dirrm %%DATADIR%%/xilinx/xc2v250-fg256
+@dirrm %%DATADIR%%/xilinx/xc2v1000-fg256
 @dirrm %%DATADIR%%/xilinx/xc2s300e
 @dirrm %%DATADIR%%/xilinx/xc2s200e-pq208
+@dirrm %%DATADIR%%/xilinx/xc2c64a-vq44
+@dirrm %%DATADIR%%/xilinx/xc2c256-vq100
 @dirrm %%DATADIR%%/xilinx/xc2c256-tq144
 @dirrm %%DATADIR%%/xilinx/xc18v04pc44
 @dirrm %%DATADIR%%/xilinx
 @dirrm %%DATADIR%%/toshiba/tx4926
 @dirrm %%DATADIR%%/toshiba/tx4925
 @dirrm %%DATADIR%%/toshiba
+@dirrm %%DATADIR%%/sigma/smp8634
+@dirrm %%DATADIR%%/sigma
 @dirrm %%DATADIR%%/sharp/lh7a400
 @dirrm %%DATADIR%%/sharp
 @dirrm %%DATADIR%%/samsung/s3c4510b
@@ -247,6 +288,7 @@ bin/jtag
 @dirrm %%DATADIR%%/freescale
 @dirrm %%DATADIR%%/dec/sa1100
 @dirrm %%DATADIR%%/dec
+@dirrm %%DATADIR%%/bsdl
 @dirrm %%DATADIR%%/broadcom/bcm5421s
 @dirrm %%DATADIR%%/broadcom/bcm4712
 @dirrm %%DATADIR%%/broadcom/bcm3310
@@ -254,20 +296,30 @@ bin/jtag
 @dirrm %%DATADIR%%/broadcom
 @dirrm %%DATADIR%%/brecis/msp2006
 @dirrm %%DATADIR%%/brecis
-@dirrm %%DATADIR%%/atmel/at91sam7s256
 @dirrm %%DATADIR%%/atmel/atmega128
+@dirrm %%DATADIR%%/atmel/atf15xx
+@dirrm %%DATADIR%%/atmel/at91sam7s256
+@dirrm %%DATADIR%%/atmel/at32ap7000
 @dirrm %%DATADIR%%/atmel
 @dirrm %%DATADIR%%/atheros/ar2312
 @dirrm %%DATADIR%%/atheros
 @dirrm %%DATADIR%%/analog/sharc21065l
+@dirrm %%DATADIR%%/analog/bf561
+@dirrm %%DATADIR%%/analog/bf548
+@dirrm %%DATADIR%%/analog/bf538
+@dirrm %%DATADIR%%/analog/bf537
 @dirrm %%DATADIR%%/analog/bf533
+@dirrm %%DATADIR%%/analog/bf527
 @dirrm %%DATADIR%%/analog
 @dirrm %%DATADIR%%/altera/epm7128aetc100
 @dirrm %%DATADIR%%/altera/epm3064a
+@dirrm %%DATADIR%%/altera/ep2c8
 @dirrm %%DATADIR%%/altera/ep1c6q240
 @dirrm %%DATADIR%%/altera/ep1c20f400
 @dirrm %%DATADIR%%/altera/ep1c12
 @dirrm %%DATADIR%%/altera
 @dirrm %%DATADIR%%/admtek/adm5120
 @dirrm %%DATADIR%%/admtek
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm %%DATADIR%%

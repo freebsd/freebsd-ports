@@ -6,28 +6,19 @@
 #
 
 PORTNAME=	urjtag
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=urjtag
+MASTER_SITES=	SF
 
 MAINTAINER=	stevefranks@ieee.org
 COMMENT=	Extended utility to work with JTAG-aware boards
 
-BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+= --without-libusb --without-libftdi --without-ftd2xx \
-		 --disable-nls
 CONFIGURE_ENV+=	CFLAGS=--std=c99
-
-OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
-OPENWINCE_INCLUDE_DEP=${OPENWINCE_INCLUDE}/common.h
 
 MAN1=		jtag.1 bsdl2jtag.1
 
@@ -36,10 +27,5 @@ MAN1=		jtag.1 bsdl2jtag.1
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
-
-post-extract:
-	@${REINPLACE_CMD} -E -e \
-		"s,/usr/local/include/openwince,${OPENWINCE_INCLUDE}," \
-		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
