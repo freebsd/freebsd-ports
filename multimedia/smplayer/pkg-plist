@@ -7,7 +7,9 @@ share/icons/hicolor/32x32/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
+%%DATADIR%%/shortcuts/sda.keys
 %%DATADIR%%/translations/qt_fr.qm
+%%DATADIR%%/translations/smplayer_ar_SY.qm
 %%DATADIR%%/translations/smplayer_bg.qm
 %%DATADIR%%/translations/smplayer_ca.qm
 %%DATADIR%%/translations/smplayer_cs.qm
@@ -23,8 +25,9 @@ share/icons/hicolor/64x64/apps/smplayer.png
 %%DATADIR%%/translations/smplayer_ja.qm
 %%DATADIR%%/translations/smplayer_ka.qm
 %%DATADIR%%/translations/smplayer_ko.qm
-%%DATADIR%%/translations/smplayer_nl.qm
+%%DATADIR%%/translations/smplayer_ku.qm
 %%DATADIR%%/translations/smplayer_mk.qm
+%%DATADIR%%/translations/smplayer_nl.qm
 %%DATADIR%%/translations/smplayer_pl.qm
 %%DATADIR%%/translations/smplayer_pt_BR.qm
 %%DATADIR%%/translations/smplayer_pt_PT.qm
@@ -41,12 +44,4 @@ share/icons/hicolor/64x64/apps/smplayer.png
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/shortcuts
 @dirrmtry %%DATADIR%%
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
+@dirrmtry share/applications
