@@ -1,11 +1,14 @@
 
 POST-INSTALL CONFIGURATION FOR ELGG
 =====================================
+1) Make sure your apache's mod_rewrite extension is working,
+and change the AllowOverride setting of the DocumentRoot to
+    AllowOverride all 
 
-1) Create a user and a database for Elgg to store all
+2) Create a user and a empty database for Elgg to store all
    its tables in (or choose an existing database).
 
-2) Add the following to your Apache configuration, and
+3) Add the following to your Apache configuration, and
    restart the server:
 
    ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
@@ -13,18 +16,25 @@ POST-INSTALL CONFIGURATION FOR ELGG
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
       AllowOverride None
+      Options Indexes FollowSymLinks
       Order Allow,Deny
       Allow from all
    </Directory>
 
-3) Visit your Elgg site with a browser (i.e.,
+4) Visit your Elgg site with a browser (i.e.,
    http://your.server.com/elgg/), and you should
    be taken to the install.php script, which will lead
    you through creating a config.php file and then
    setting up Elgg.
 
+   When ask for the site URL, please input:
+       http://your.server.com/elgg/
+   and for uploaded URL, please input:
+       /usr/local/www/elggdata/
+
 For more information, see the INSTALL DOCUMENTATION:
 
-   http://elgg.org/mod/mediawiki/wiki/index.php/Installation_guide
+   http://docs.elgg.org/wiki/Installation
+   http://docs.elgg.org/wiki/Troubleshooting
 
 =====================================
