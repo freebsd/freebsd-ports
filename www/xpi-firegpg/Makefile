@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	firegpg
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://getfiregpg.org/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	stable
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	An extension that acts as an assistant for using GPG
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 XPI_ID=	firegpg@firegpg.team
 USE_XPI=	*firefox*
