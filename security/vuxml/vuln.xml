@@ -4551,7 +4551,8 @@ Note:  Please add new entries to the beginning of this file.
 	<name>samba</name>
 	<name>samba3</name>
 	<name>ja-samba</name>
-	<range><lt>3.0.28,1</lt></range>
+	<range><lt>3.0.28</lt></range>
+	<range><gt>*,1</gt><lt>3.0.28,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4577,6 +4578,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-12-10</discovery>
       <entry>2007-12-12</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -4927,7 +4929,8 @@ Note:  Please add new entries to the beginning of this file.
 	<name>samba</name>
 	<name>samba3</name>
 	<name>ja-samba</name>
-	<range><lt>3.0.26a_2,1</lt></range>
+	<range><lt>3.0.26a</lt></range>
+	<range><gt>*,1</gt><lt>3.0.26a_2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4959,6 +4962,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-15</discovery>
       <entry>2007-11-21</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -6274,7 +6278,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>samba</name>
-	<range><lt>3.0.26a,1</lt></range>
+	<range><lt>3.0.26a</lt></range>
+	<range><gt>*,1</gt><lt>3.0.26a,1</lt></range>
       </package>
     </affects>
     <description>
@@ -6305,6 +6310,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-11</discovery>
       <entry>2007-09-21</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -8586,7 +8592,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>samba</name>
 	<name>ja-samba</name>
-	<range><gt>3.*</gt><lt>3.0.25,1</lt></range>
+	<range><gt>3.*</gt><lt>3.0.25</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.25,1</lt></range>
       </package>
     </affects>
     <description>
@@ -8640,6 +8647,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-05-14</discovery>
       <entry>2007-05-16</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -32396,12 +32404,14 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba</name>
-	<range><lt>3.0.10,1</lt></range>
+	<range><lt>3.0.10</lt></range>
+	<range><gt>*,1</gt><lt>3.0.10,1</lt></range>
       </package>
       <package>
 	<name>ja-samba</name>
 	<range><lt>2.2.12.j1.0beta1_2</lt></range>
-	<range><gt>3.*</gt><lt>3.0.10,1</lt></range>
+	<range><gt>3.*</gt><lt>3.0.10</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.10,1</lt></range>
       </package>
     </affects>
     <description>
@@ -32432,7 +32442,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-02</discovery>
       <entry>2004-12-21</entry>
-      <modified>2005-05-29</modified>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -33487,7 +33497,8 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba</name>
-	<range><ge>3.*</ge><lt>3.0.8,1</lt></range>
+	<range><ge>3.*</ge><lt>3.0.8</lt></range>
+	<range><ge>3.*,1</ge><lt>3.0.8,1</lt></range>
       </package>
     </affects>
     <description>
@@ -33507,7 +33518,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-15</discovery>
       <entry>2004-11-17</entry>
-      <modified>2004-12-12</modified>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -33648,7 +33659,8 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba</name>
-	<range><ge>3</ge><lt>3.0.8,1</lt></range>
+	<range><gt>3.*</gt><lt>3.0.8</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.8,1</lt></range>
       </package>
     </affects>
     <description>
@@ -33673,6 +33685,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-09-30</discovery>
       <entry>2004-11-12</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -35941,7 +35954,8 @@ http_access deny Gopher</pre>
       <package>
 	<name>samba</name>
 	<range><lt>2.2.12</lt></range>
-	<range><ge>3.a</ge><le>3.0.2a_1,1</le></range>
+	<range><gt>3.*</gt><le>3.0.2a</le></range>
+	<range><gt>3.*,1</gt><le>3.0.2a_1,1</le></range>
       </package>
       <package>
 	<name>ja-samba</name>
@@ -35974,7 +35988,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-09-30</discovery>
       <entry>2004-09-30</entry>
-      <modified>2004-10-15</modified>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -37013,7 +37027,8 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba3</name>
-	<range><lt>3.0.7,1</lt></range>
+	<range><lt>3.0.7</lt></range>
+	<range><gt>*,1</gt><lt>3.0.7,1</lt></range>
       </package>
     </affects>
     <description>
@@ -37031,6 +37046,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-09-02</discovery>
       <entry>2004-09-14</entry>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
@@ -38047,7 +38063,8 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>samba</name>
-	<range><ge>3</ge><lt>3.0.5,1</lt></range>
+	<range><gt>3.*</gt><lt>3.0.5</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.5,1</lt></range>
 	<range><lt>2.2.10</lt></range>
       </package>
       <package>
@@ -38083,7 +38100,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-07-14</discovery>
       <entry>2004-07-21</entry>
-      <modified>2004-08-15</modified>
+      <modified>2008-09-26</modified>
     </dates>
   </vuln>
 
