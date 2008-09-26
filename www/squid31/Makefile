@@ -16,7 +16,7 @@
 #
 # SQUID_LANGUAGES
 #   A list of languages for which error page files should be installed
-#   (default: all)
+#   (default: all available)
 #
 #   E.g. use `make SQUID_LANGUAGES="English French"' if you want to
 #   install the files for these languages only.
@@ -25,7 +25,7 @@
 #
 # SQUID_DEFAULT_LANG
 #   If you define SQUID_LANGUAGES, select which language should be the default
-#   one (this variable defaults to English). This setting can be overwritten
+#   one (this variable defaults to "templates"). This setting can be overwritten
 #   with squid.conf's error_directory directive.
 #
 # SQUID_CONFIGURE_ARGS
@@ -102,7 +102,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	8
+SQUID_STABLE_VER=	9
 
 CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
@@ -147,7 +147,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_ESI "Enable ESI support (experimental)" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
-		SQUID_COSS "Enable the COSS storage scheme" off \
+		SQUID_COSS "Enable COSS (currently not available)" off \
 		SQUID_KQUEUE "Use kqueue(2) (experimental)" on \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
@@ -253,7 +253,9 @@ CONFIGURE_ARGS+=	--with-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
-storage_schemes+=	coss
+# Starting with 3.0.STABLE9, COSS is disabled in Squid-3 until fixes
+# from the 2.x series are backported to 3.x.
+# storage_schemes+=	coss
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
@@ -382,7 +384,7 @@ SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
 			Traditional_Chinese Turkish Ukrainian-1251 \
 			Ukrainian-koi8-u Ukrainian-utf8
-SQUID_DEFAULT_LANG?=	English
+SQUID_DEFAULT_LANG?=	templates
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
 
@@ -397,7 +399,7 @@ PLIST_DIRS=	etc/squid/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
-.for d in ${SQUID_LANGUAGES}
+.for d in ${SQUID_LANGUAGES} templates
 PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
@@ -415,10 +417,10 @@ pre-install:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 # XXX:
-# Remove error pages that were prematurely integrated into 3.0.STABLE2.
+# Remove error pages that were prematurely integrated into 3.0.STABLE.
 # This is done to keep the package list manageable by installing the same
 # set of error files for every language:
-	@for d in Ukrainian-1251 Ukrainian-koi8-u Ukrainian-utf8; \
+	@for d in Ukrainian-1251 Ukrainian-koi8-u Ukrainian-utf8 templates; \
 		do ${RM} -f ${WRKSRC}/errors/$${d}/ERR_SECURE_CONNECT_FAIL; \
 	 done
 
@@ -446,5 +448,10 @@ post-install:
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} ""
+.if defined(WITH_SQUID_COSS)
+	@${ECHO_CMD} "Note: COSS support is currently disabled in Squid-3 by the Squid developers."
+	@${ECHO_CMD} "Please check your squid.conf and comment out any 'cache_dir coss' definitions."
+	@${ECHO_CMD} ""
+.endif
 
 .include <bsd.port.post.mk>

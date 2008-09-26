@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080926:
+  AFFECTS: users of www/squid30
+  AUTHOR: tmseck@netcologne.de
+ 
+  The Squid developers decided to disable COSS support in 3.0, cf
+  the discussion starting with http://www.squid-cache.org/mail-archive/squid-dev/200809/0067.html
+  The correspoding port configuration option WITH_SQUID_COSS
+  is still available but is a no-op for now. If you currently use
+  COSS storage on Squid 3.0 you need to disable it in squid.conf.
+
 20080924:
   AFFECTS: users of ftp/proftpd
   AUTHOR: beech@FreeBSD.org
