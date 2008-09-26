@@ -632,6 +632,7 @@
     SUBDIR += rubygem-god
     SUBDIR += runit
     SUBDIR += runwhen
+    SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah
