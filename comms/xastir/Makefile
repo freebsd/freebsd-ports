@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.9.2
-PORTREVISION=	2
+PORTVERSION=	1.9.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -15,6 +14,7 @@ MASTER_SITE_SUBDIR=	xastir
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	X Amateur Station Tracking and Information Reporting
 
+BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
