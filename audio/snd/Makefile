@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	9.11
-PORTREVISION=	1
+PORTVERSION=	10.0
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://mirror.mcx2.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Multitracking sound editor and utilities
 
 OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
