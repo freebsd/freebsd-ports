@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	freehdl
-PORTVERSION=	0.0.4
-PORTREVISION=	3
+PORTVERSION=	0.0.6
 CATEGORIES=	cad
-MASTER_SITES=	http://www.home.hs-karlsruhe.de/~fado0011/ \
-		http://cran.mit.edu/~enaroska/
+MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 
-MAINTAINER=	lon_kamikaze@gmx.de
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	A free VHDL simulator
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
+USE_GNOME=	gnomehack \
+		pkgconfig
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--infodir=${PREFIX}/info \
 		--mandir=${MANPREFIX}/man
 
 MAN1=		freehdl-config.1 \
 		freehdl-gennodes.1 \
-		freehdl-libtool.1 \
 		freehdl-v2cc.1 \
 		gvhdl.1
 MAN5=		v2cc.libs.5
@@ -53,7 +53,12 @@ plist: build
 		| ${PLIST_REPL} >> ${PLIST}
 	@${FIND} -d ${PLIST_TMP} -type d -mindepth 2 \
 		| ${SED} "s|${PLIST_TMP}|@dirrm |1" \
-		| ${PLIST_REPL} >> ${PLIST}
+		| ${PLIST_REPL} \
+		| ${GREP} -E '%%DATADIR%%|freehdl' >> ${PLIST}
+	@${FIND} -d ${PLIST_TMP} -type d -mindepth 2 \
+		| ${SED} "s|${PLIST_TMP}|@dirrmtry |1" \
+		| ${PLIST_REPL} \
+		| ${GREP} -vE '%%DATADIR%%|freehdl' >> ${PLIST}
 	@${RM} -rf ${PLIST_TMP}
 
 .include <bsd.port.mk>
