@@ -6,35 +6,21 @@
 #
 
 PORTNAME=	privatetickets
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	www devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/T/TracPrivateTickets/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracPrivateTickets-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Modified ticket security for Trac
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracPrivateTickets
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${TRACPRIVATETICKETS_EGG}
-
-TRACPRIVATETICKETS_EGG=	TracPrivateTickets-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		TRACPRIVATETICKETS_EGG=${TRACPRIVATETICKETS_EGG} \
-		TRACPRIVATETICKETS_EGG_VER="TracPrivateTickets==${PORTVERSION}"
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
