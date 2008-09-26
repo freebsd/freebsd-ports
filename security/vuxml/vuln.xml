@@ -88,7 +88,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>thunderbird</name>
 	<name>linux-thunderbird</name>
-	<range><lt>2.0.17</lt></range>
+	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
         <name>flock</name>
@@ -148,6 +148,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-24</discovery>
       <entry>2008-09-24</entry>
+      <modified>2008-09-27</modified>
     </dates>
   </vuln>
 
