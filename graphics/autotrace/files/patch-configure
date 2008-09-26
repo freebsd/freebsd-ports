@@ -1,0 +1,11 @@
+--- configure.orig	2008-09-26 15:52:26.000000000 +0200
++++ configure	2008-09-26 15:52:09.000000000 +0200
+@@ -7973,7 +7973,7 @@
+ 		MAGICK_CFLAGS=${CPPFLAGS}
+ 		CPPFLAGS=${CPPFLAGS_BACKUP}
+ 		if test "x${magick_header_found}" = xyes ; then
+-			MAGICK_LDFLAGS="`Magick-config --ldflags` `Magick-config --libs`"
++			MAGICK_LDFLAGS="`Magick-config --ldflags` `Magick-config --libs` `MagickWand-config --ldflags` `MagickWand-config --libs`"
+ 												echo "$as_me:$LINENO: checking ImageMagick - version >= 5.2.1" >&5
+ echo $ECHO_N "checking ImageMagick - version >= 5.2.1... $ECHO_C" >&6
+ 						MAGICK_VERSION=`Magick-config --version`
