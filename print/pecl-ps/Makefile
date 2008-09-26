@@ -7,7 +7,7 @@
 
 PORTNAME=	ps
 PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
