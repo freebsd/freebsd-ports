@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	speed-dial
-PORTVERSION=	0.7.0.8
+PORTVERSION=	0.7.2
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	h.schmalzbauer@omnisec.de
+MAINTAINER=	freebsd@omnilan.de
 COMMENT=	Access websites through custom thumbnail views
 
 XPI_DISTNAME=	speed_dial
