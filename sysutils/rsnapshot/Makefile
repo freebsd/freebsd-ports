@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -21,7 +20,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		rsnapshot.1
+MAN1=		rsnapshot.1 rsnapshot-diff.1
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
 .if !defined(NOPORTDOCS)
