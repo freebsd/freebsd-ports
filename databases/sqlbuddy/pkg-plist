@@ -11,6 +11,7 @@
 %%WWWDIR%%/config.php
 %%WWWDIR%%/css/common.css
 %%WWWDIR%%/css/navigation.css
+%%WWWDIR%%/css/print.css
 %%WWWDIR%%/dboverview.php
 %%WWWDIR%%/edit.php
 %%WWWDIR%%/editcolumn.php
@@ -47,32 +48,45 @@
 %%WWWDIR%%/images/window-shadow-right.png
 %%WWWDIR%%/import.php
 %%WWWDIR%%/includes/browse.php
-%%WWWDIR%%/includes/gettextreader.php
+%%WWWDIR%%/includes/class/GetTextReader.php
+%%WWWDIR%%/includes/class/Sql-php4.php
+%%WWWDIR%%/includes/class/Sql.php
 %%WWWDIR%%/includes/types.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/insert.php
-%%WWWDIR%%/js/animation.js
-%%WWWDIR%%/js/columnsize.js
 %%WWWDIR%%/js/core.js
-%%WWWDIR%%/js/drag.js
 %%WWWDIR%%/js/helpers.js
 %%WWWDIR%%/js/mootools-1.2-core.js
-%%WWWDIR%%/js/resize.js
+%%WWWDIR%%/js/movement.js
+%%WWWDIR%%/locale/ca_AD.pot
+%%WWWDIR%%/locale/cs_CZ.pot
 %%WWWDIR%%/locale/de_DE.pot
 %%WWWDIR%%/locale/en_US.pot
+%%WWWDIR%%/locale/es_AR.pot
 %%WWWDIR%%/locale/es_ES.pot
+%%WWWDIR%%/locale/fi_FI.pot
+%%WWWDIR%%/locale/fr_FR.pot
+%%WWWDIR%%/locale/hu_HU.pot
 %%WWWDIR%%/locale/it_IT.pot
+%%WWWDIR%%/locale/ja_JP.pot
+%%WWWDIR%%/locale/lo_LA.pot
 %%WWWDIR%%/locale/nl_NL.pot
 %%WWWDIR%%/locale/pl_PL.pot
 %%WWWDIR%%/locale/pt_BR.pot
+%%WWWDIR%%/locale/pt_PT.pot
+%%WWWDIR%%/locale/ro_RO.pot
 %%WWWDIR%%/locale/ru_RU.pot
+%%WWWDIR%%/locale/sk_SK.pot
+%%WWWDIR%%/locale/sl_SI.pot
 %%WWWDIR%%/locale/sv_SE.pot
 %%WWWDIR%%/locale/tl_PH.pot
+%%WWWDIR%%/locale/tr_TR.pot
 %%WWWDIR%%/locale/zh_CN.pot
 %%WWWDIR%%/locale/zh_TW.pot
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/query.php
+%%WWWDIR%%/serve.php
 %%WWWDIR%%/structure.php
 %%WWWDIR%%/themes/bittersweet/css/ie.css
 %%WWWDIR%%/themes/bittersweet/css/main.css
@@ -96,6 +110,7 @@
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/includes/class
 @dirrm %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/exports
