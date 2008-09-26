@@ -1,0 +1,2 @@
+bin/YABT_translate
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
