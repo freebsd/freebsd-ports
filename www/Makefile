@@ -216,6 +216,7 @@
     SUBDIR += formication
     SUBDIR += fpc-httpd
     SUBDIR += free-sa
+    SUBDIR += freeway
     SUBDIR += fswiki
     SUBDIR += g-cows
     SUBDIR += g-gcl
