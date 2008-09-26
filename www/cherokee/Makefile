@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.8/${PORTVERSION}/ \
+MASTER_SITES=	http://www.cherokee-project.com/download/0.9/${PORTVERSION}/ \
 		LOCAL/beech
 
 MAINTAINER=	beech@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	Extremely fast and flexible web server
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
-CONFLICTS=	cherokee-[0-9]*
+CONFLICTS=	cherokee-devel-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
@@ -37,7 +36,7 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
-		spawn-fcgi.1 cherokee-tweak.1 cherokee-guardian.1
+		spawn-fcgi.1 cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
