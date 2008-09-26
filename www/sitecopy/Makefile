@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION=	0.16.3
-PORTREVISION=	2
+PORTVERSION=	0.16.6
 CATEGORIES=	www
-MASTER_SITES=	http://www.lyra.org/${PORTNAME}/ \
+MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
 
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26
+LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
