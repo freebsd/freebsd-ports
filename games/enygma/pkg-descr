@@ -1,0 +1,7 @@
+Enigma is a puzzle game involving falling blocks, exploding bombs, and pushing
+stuff around. It has elements of Boulderdash and elements of Sokoban, and
+anybody old enough to remember XOR on the Spectrum will see large elements of
+that in it.
+The port and executable have been named 'enygma' to avoid a name collision.
+
+WWW: http://www.chiark.greenend.org.uk/~sgtatham/enigma/

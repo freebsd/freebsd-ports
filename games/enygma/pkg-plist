@@ -1,0 +1,19 @@
+bin/enygma
+%%DATADIR%%/original.set
+%%DATADIR%%/original01.level
+%%DATADIR%%/original02.level
+%%DATADIR%%/original03.level
+%%DATADIR%%/original04.level
+%%DATADIR%%/original05.level
+%%DATADIR%%/original06.level
+%%DATADIR%%/original07.level
+%%DATADIR%%/original08.level
+%%DATADIR%%/original09.level
+%%DATADIR%%/original10.level
+%%DATADIR%%/original11.level
+%%DATADIR%%/original12.level
+@dirrm %%DATADIR%%
+@exec mkdir -p %D/var/enygma
+@exec chgrp games %D/var/enygma
+@exec chmod 2770 %D/var/enygma
+@dirrm var/enygma
