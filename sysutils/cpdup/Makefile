@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpdup
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
