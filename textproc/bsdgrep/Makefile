@@ -16,7 +16,7 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	BSD-licensed version of grep from OpenBSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	maybe
 MAN1=		grep.1
 MLINKS=		grep.1 egrep.1 \
 		grep.1 fgrep.1 \
