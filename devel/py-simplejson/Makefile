@@ -7,13 +7,10 @@
 
 PORTNAME=	simplejson
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP:source1 \
-		http://peak.telecommunity.com/dist/:source2
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
-		ez_setup.py:source2
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simplejson is a simple, fast, extensible JSON encoder/decoder
@@ -27,8 +24,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 .endif
-
-post-extract:
-	${CP} ${DISTDIR}/ez_setup.py ${WRKSRC}
 
 .include <bsd.port.mk>
