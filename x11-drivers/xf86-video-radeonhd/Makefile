@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,6 +17,8 @@ OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 
 XORG_CAT=	driver
 USE_XORG=	videoproto xextproto
+
+CONFLICT=	xf86-video-radeonhd-devel-[0-9]*
 
 MAN4=	radeonhd.4x
 
