@@ -7,6 +7,7 @@
 
 PORTNAME=	dblatex
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +32,9 @@ MAN1=		dblatex.1
 MANCOMPRESSED=	yes
 
 post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "/manual.pdf/d" ${WRKSRC}/setup.py
+.endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
