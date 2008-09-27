@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AutoLoader
-PORTVERSION=	5.66
+PORTVERSION=	5.67
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,8 @@ COMMENT=	Load subroutines only on demand
 PERL_CONFIGURE=	yes
 
 MAN3=		AutoLoader.3 AutoSplit.3
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
