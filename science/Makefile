@@ -101,6 +101,7 @@
     SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += py-hcluster
+    SUBDIR += py-mdp
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-scipy
