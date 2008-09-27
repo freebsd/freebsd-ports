@@ -1,11 +1,11 @@
---- Makefile.in.orig	2007-09-03 14:48:29.000000000 +0800
-+++ Makefile.in	2007-10-15 10:11:35.000000000 +0800
+--- Makefile.in.orig	2008-09-25 11:53:31.000000000 +0800
++++ Makefile.in	2008-09-27 22:52:10.000000000 +0800
 @@ -37,7 +37,7 @@
  PRE_UNINSTALL = :
  POST_UNINSTALL = :
  bin_PROGRAMS = msort$(EXEEXT)
--@UNINUMOK_TRUE@am__append_1 = -lgmp -luninum
-+@UNINUMOK_TRUE@am__append_1 = -lgmp -luninum -lintl
+-@UNINUMOK_TRUE@am__append_1 = -luninum
++@UNINUMOK_TRUE@am__append_1 = -luninum -lintl
  @UTF8PROCOK_TRUE@am__append_2 = -lutf8proc
  @UTF8PROCOK_TRUE@am__append_3 = -DUSEUTF8PROC
  @UTF8PROCOK_FALSE@am__append_4 = -licutu
