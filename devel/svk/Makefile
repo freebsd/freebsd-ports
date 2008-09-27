@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTVERSION=	2.2.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -47,6 +46,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
 		p5-SVN-Simple>=0.27:${PORTSDIR}/devel/p5-SVN-Simple \
 		p5-SVN-Mirror>=0.71:${PORTSDIR}/devel/p5-SVN-Mirror \
+		p5-Time-Progress>=0:${PORTSDIR}/devel/p5-Time-Progress \
 		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-version>=0.68:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -59,6 +59,7 @@ MAN3=		SVK.3 \
 		SVK::Command::Add.3 \
 		SVK::Command::Admin.3 \
 		SVK::Command::Annotate.3 \
+		SVK::Command::Branch.3 \
 		SVK::Command::Cat.3 \
 		SVK::Command::Checkout.3 \
 		SVK::Command::Cleanup.3 \
@@ -130,6 +131,7 @@ MAN3=		SVK.3 \
 		SVK::Log::FilterPipeline.3 \
 		SVK::Logger.3 \
 		SVK::Merge.3 \
+		SVK::Merge::Info.3 \
 		SVK::MimeDetect.3 \
 		SVK::MimeDetect::FileLibMagic.3 \
 		SVK::MimeDetect::FileMMagic.3 \
@@ -144,6 +146,7 @@ MAN3=		SVK.3 \
 		SVK::Patchset.3 \
 		SVK::Path.3 \
 		SVK::Path::Checkout.3 \
+		SVK::Project.3 \
 		SVK::Resolve.3 \
 		SVK::Target::Universal.3 \
 		SVK::Util.3 \
@@ -174,5 +177,8 @@ pre-everything::
 	@${ECHO} "If you see some missing dependency, please update your"
 	@${ECHO} "ports tree and upgrade it with 'portupgrade -R svk'."
 	@${ECHO} ""
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>
