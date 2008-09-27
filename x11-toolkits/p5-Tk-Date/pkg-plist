@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Date.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/date.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/localized_date.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Date/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos
