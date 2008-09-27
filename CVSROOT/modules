@@ -17745,6 +17745,7 @@ py-icalendar                    ports/devel/py-icalendar
 py-ice                          ports/devel/py-ice
 py-iconv                        ports/converters/py-iconv
 py-iconvcodec                   ports/converters/py-iconvcodec
+py-icu                          ports/devel/py-icu
 py-id3                          ports/audio/py-id3
 py-igraph                       ports/math/py-igraph
 py-imaging                      ports/graphics/py-imaging
