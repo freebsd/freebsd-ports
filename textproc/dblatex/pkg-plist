@@ -26,6 +26,8 @@ share/dblatex/latex/misc/passivetex/LICENSE
 share/dblatex/latex/misc/passivetex/dummyels.sty
 share/dblatex/latex/misc/passivetex/unicode.sty
 share/dblatex/latex/misc/ragged2e.sty
+share/dblatex/latex/misc/lastpage.sty
+share/dblatex/latex/misc/xelatex/xecyr.sty
 share/dblatex/latex/scripts/doc.ist
 share/dblatex/latex/specs/db2latex.specs
 share/dblatex/latex/specs/native.specs
@@ -286,6 +288,9 @@ share/dblatex/xsl/xref.xsl
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/util.py
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/util.pyc
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/util.pyo
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/xetex.py
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/xetex.pyc
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber/xetex.pyo
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/4xslt.py
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/4xslt.pyc
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/4xslt.pyo
@@ -310,6 +315,7 @@ share/dblatex/xsl/xref.xsl
 @dirrm share/dblatex/latex/specs
 @dirrm share/dblatex/latex/scripts
 @dirrm share/dblatex/latex/misc/passivetex
+@dirrm share/dblatex/latex/misc/xelatex
 @dirrm share/dblatex/latex/misc
 @dirrm share/dblatex/latex/graphics
 @dirrm share/dblatex/latex/contrib/db2latex/graphics
