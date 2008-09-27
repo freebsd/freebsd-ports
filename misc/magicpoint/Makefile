@@ -7,11 +7,11 @@
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
-PORTVERSION=	1.12a
+PORTVERSION=	1.13a
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	An X11-based presentation tool
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
@@ -97,19 +97,19 @@ post-install:
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for i in $(DOCS); do \
+	for i in ${DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
 	done
 	${MKDIR} ${DOCSDIR}/sample
-	for i in $(SAMPLES); do \
+	for i in ${SAMPLES}; do \
 		${INSTALL_DATA} ${WRKSRC}/sample/$$i ${DOCSDIR}/sample; \
 	done
 	${MKDIR} ${DOCSDIR}/emacs-lisp/mgp-el
-	for i in $(EMACS_LISPS); do \
+	for i in ${EMACS_LISPS}; do \
 		${INSTALL_DATA} ${WRKSRC}/contrib/$$i ${DOCSDIR}/emacs-lisp/$$i; \
 	done
 	${MKDIR} ${DOCSDIR}/scripts
-	for i in $(SAMPLE_SCRIPTS); do \
+	for i in ${SAMPLE_SCRIPTS}; do \
 		${INSTALL_SCRIPT} ${WRKSRC}/contrib/$$i ${DOCSDIR}/scripts/$$i; \
 	done
 .endif
