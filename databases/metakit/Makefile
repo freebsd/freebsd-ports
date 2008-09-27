@@ -87,6 +87,8 @@ post-build:
 .if !defined(METAKIT_WITHOUT_PYTHON)
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${WRKSRC}/../python
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		${WRKSRC}/../python
 .endif
 
 post-install:
