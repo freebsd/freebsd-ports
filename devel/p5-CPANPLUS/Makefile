@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.0760
+PORTVERSION=	0.8400
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.076
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
 BUILD_DEPENDS=	p5-File-Fetch>=0.07:${PORTSDIR}/ftp/p5-File-Fetch \
@@ -35,6 +35,7 @@ BUILD_DEPENDS=	p5-File-Fetch>=0.07:${PORTSDIR}/ftp/p5-File-Fetch \
 		p5-Module-Loaded>0:${PORTSDIR}/devel/p5-Module-Loaded
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PERL5=	5.6.1+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
@@ -58,6 +59,7 @@ MAN1=	cpanp.1 cpan2dist.1
 MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend.3 \
 	CPANPLUS::Backend::RV.3 \
+	CPANPLUS::Config.3 \
 	CPANPLUS::Configure.3 \
 	CPANPLUS::Dist.3 \
 	CPANPLUS::Dist::Base.3 \
@@ -78,9 +80,11 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Module::Author::Fake.3 \
 	CPANPLUS::Module::Checksums.3 \
 	CPANPLUS::Module::Fake.3 \
+	CPANPLUS::Selfupdate.3 \
 	CPANPLUS::Shell.3 \
 	CPANPLUS::Shell::Classic.3 \
 	CPANPLUS::Shell::Default.3 \
+	CPANPLUS::Shell::Default::Plugins::CustomSource.3 \
 	CPANPLUS::Shell::Default::Plugins::HOWTO.3 \
 	CPANPLUS::Shell::Default::Plugins::Remote.3 \
 	CPANPLUS::Shell::Default::Plugins::Source.3 \
