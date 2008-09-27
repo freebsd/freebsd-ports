@@ -1,0 +1,8 @@
+Modular toolkit for Data Processing (MDP) is a Python data processing
+framework. Implemented algorithms include: Principal Component
+Analysis (PCA), Independent Component Analysis (ICA), Slow Feature
+Analysis (SFA), Independent Slow Feature Analysis (ISFA), Growing Neural
+Gas (GNG), Factor Analysis, Fisher Discriminant Analysis (FDA), Gaussian
+Classifiers, and Restricted Boltzmann Machines.
+
+WWW: http://mdp-toolkit.sourceforge.net/
