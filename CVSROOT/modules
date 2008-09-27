@@ -21979,6 +21979,7 @@ xf86-video-nv                   ports/x11-drivers/xf86-video-nv
 xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
 xf86-video-r128                 ports/x11-drivers/xf86-video-r128
 xf86-video-radeonhd             ports/x11-drivers/xf86-video-radeonhd
+xf86-video-radeonhd-devel       ports/x11-drivers/xf86-video-radeonhd-devel
 xf86-video-rendition            ports/x11-drivers/xf86-video-rendition
 xf86-video-s3                   ports/x11-drivers/xf86-video-s3
 xf86-video-s3virge              ports/x11-drivers/xf86-video-s3virge
