@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Mirror
-PORTVERSION=	0.74
-PORTREVISION=	3
+PORTVERSION=	0.75
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,5 +29,8 @@ PERL_CONFIGURE=	yes
 
 MAN1=		svm.1
 MAN3=		SVN::Mirror.3
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
