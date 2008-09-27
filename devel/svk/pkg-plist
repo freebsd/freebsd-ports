@@ -5,6 +5,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Add.pm
 %%SITE_PERL%%/SVK/Command/Admin.pm
 %%SITE_PERL%%/SVK/Command/Annotate.pm
+%%SITE_PERL%%/SVK/Command/Branch.pm
 %%SITE_PERL%%/SVK/Command/Cat.pm
 %%SITE_PERL%%/SVK/Command/Checkout.pm
 %%SITE_PERL%%/SVK/Command/Cleanup.pm
@@ -54,6 +55,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Editor/Delay.pm
 %%SITE_PERL%%/SVK/Editor/Diff.pm
 %%SITE_PERL%%/SVK/Editor/Dynamic.pm
+%%SITE_PERL%%/SVK/Editor/FilterProp.pm
 %%SITE_PERL%%/SVK/Editor/InteractiveCommitter.pm
 %%SITE_PERL%%/SVK/Editor/InteractiveStatus.pm
 %%SITE_PERL%%/SVK/Editor/MapRev.pm
@@ -61,9 +63,9 @@ bin/svk
 %%SITE_PERL%%/SVK/Editor/Patch.pm
 %%SITE_PERL%%/SVK/Editor/Rename.pm
 %%SITE_PERL%%/SVK/Editor/Serialize.pm
-%%SITE_PERL%%/SVK/Editor/Sign.pm
 %%SITE_PERL%%/SVK/Editor/Status.pm
 %%SITE_PERL%%/SVK/Editor/SubTree.pm
+%%SITE_PERL%%/SVK/Editor/Tee.pm
 %%SITE_PERL%%/SVK/Editor/Translate.pm
 %%SITE_PERL%%/SVK/Editor/TxnCleanup.pm
 %%SITE_PERL%%/SVK/Editor/View.pm
@@ -94,6 +96,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Log/FilterPipeline.pm
 %%SITE_PERL%%/SVK/Logger.pm
 %%SITE_PERL%%/SVK/Merge.pm
+%%SITE_PERL%%/SVK/Merge/Info.pm
 %%SITE_PERL%%/SVK/MimeDetect.pm
 %%SITE_PERL%%/SVK/MimeDetect/FileLibMagic.pm
 %%SITE_PERL%%/SVK/MimeDetect/FileMMagic.pm
@@ -111,6 +114,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Path/Checkout.pm
 %%SITE_PERL%%/SVK/Path/Txn.pm
 %%SITE_PERL%%/SVK/Path/View.pm
+%%SITE_PERL%%/SVK/Project.pm
 %%SITE_PERL%%/SVK/Resolve.pm
 %%SITE_PERL%%/SVK/Resolve/AraxisMerge.pm
 %%SITE_PERL%%/SVK/Resolve/Emacs.pm
@@ -124,6 +128,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Resolve/TkDiff.pm
 %%SITE_PERL%%/SVK/Resolve/TortoiseMerge.pm
 %%SITE_PERL%%/SVK/Resolve/Vim.pm
+%%SITE_PERL%%/SVK/Resolve/WinMerge.pm
 %%SITE_PERL%%/SVK/Resolve/XXDiff.pm
 %%SITE_PERL%%/SVK/Root.pm
 %%SITE_PERL%%/SVK/Root/Checkout.pm
@@ -142,6 +147,7 @@ bin/svk
 @dirrm %%SITE_PERL%%/SVK/Mirror/Backend
 @dirrm %%SITE_PERL%%/SVK/Mirror
 @dirrm %%SITE_PERL%%/SVK/MimeDetect
+@dirrm %%SITE_PERL%%/SVK/Merge
 @dirrm %%SITE_PERL%%/SVK/Log/Filter
 @dirrm %%SITE_PERL%%/SVK/Log
 @dirrm %%SITE_PERL%%/SVK/Inspector
