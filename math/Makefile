@@ -400,6 +400,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-probstat
     SUBDIR += py-scientific
+    SUBDIR += py-symeig
     SUBDIR += py-sympy
     SUBDIR += qalculate
     SUBDIR += qd
