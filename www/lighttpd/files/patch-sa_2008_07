@@ -1,0 +1,53 @@
+#
+# http://www.lighttpd.net/security/lighttpd_sa_2008_07.txt
+#
+Index: src/request.c
+===================================================================
+--- src/request.c (revision 1947)
++++ src/request.c (revision 2305)
+@@ -826,4 +826,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+@@ -875,4 +876,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+@@ -912,4 +914,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+@@ -937,4 +940,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+@@ -954,4 +958,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+@@ -977,4 +982,5 @@
+ 												con->request.request);
+ 									}
++									array_insert_unique(con->request.headers, (data_unset *)ds);
+ 									return 0;
+ 								}
+Index: NEWS
+===================================================================
+--- NEWS (revision 2304)
++++ NEWS (revision 2305)
+@@ -63,4 +63,5 @@
+   * workaround ldap connection leak if a ldap connection failed (restarting ldap)
+   * fix auth.backend.ldap.bind-dn/pw problems (only read from global context for temporary ldap reconnects, thx ruskie)
++  * fix memleak in request header parsing (#1774, thx qhy)
+ 
+ - 1.4.19 - 2008-03-10

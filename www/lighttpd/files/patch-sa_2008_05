@@ -1,0 +1,91 @@
+#
+# http://www.lighttpd.net/security/lighttpd_sa_2008_05.txt
+#
+Index: src/mod_rewrite.c
+===================================================================
+--- src/mod_rewrite.c (revision 2148)
++++ src/mod_rewrite.c (revision 2278)
+@@ -351,5 +351,9 @@
+ 	if (!p->conf.rewrite) return HANDLER_GO_ON;
+ 
+-	buffer_copy_string_buffer(p->match_buf, con->request.uri);
++	buffer_copy_string_buffer(p->match_buf, con->uri.path);
++	if (con->uri.query->used > 0) {
++		buffer_append_string_len(p->match_buf, CONST_STR_LEN("?"));
++		buffer_append_string_buffer(p->match_buf, con->uri.query);
++	}
+ 
+ 	for (i = 0; i < p->conf.rewrite->used; i++) {
+Index: src/response.c
+===================================================================
+--- src/response.c (revision 2250)
++++ src/response.c (revision 2278)
+@@ -233,25 +233,4 @@
+ 
+ 
+-		/**
+-		 *
+-		 * call plugins
+-		 *
+-		 * - based on the raw URL
+-		 *
+-		 */
+-
+-		switch(r = plugins_call_handle_uri_raw(srv, con)) {
+-		case HANDLER_GO_ON:
+-			break;
+-		case HANDLER_FINISHED:
+-		case HANDLER_COMEBACK:
+-		case HANDLER_WAIT_FOR_EVENT:
+-		case HANDLER_ERROR:
+-			return r;
+-		default:
+-			log_error_write(srv, __FILE__, __LINE__, "sd", "handle_uri_raw: unknown return value", r);
+-			break;
+-		}
+-
+ 		/* build filename
+ 		 *
+@@ -259,5 +238,4 @@
+ 		 * - remove path-modifiers (e.g. /../)
+ 		 */
+-
+ 
+ 
+@@ -275,4 +253,26 @@
+ 			log_error_write(srv, __FILE__, __LINE__,  "s",  "-- sanatising URI");
+ 			log_error_write(srv, __FILE__, __LINE__,  "sb", "URI-path     : ", con->uri.path);
++		}
++
++
++		/**
++		 *
++		 * call plugins
++		 *
++		 * - based on the raw URL
++		 *
++		 */
++
++		switch(r = plugins_call_handle_uri_raw(srv, con)) {
++		case HANDLER_GO_ON:
++			break;
++		case HANDLER_FINISHED:
++		case HANDLER_COMEBACK:
++		case HANDLER_WAIT_FOR_EVENT:
++		case HANDLER_ERROR:
++			return r;
++		default:
++			log_error_write(srv, __FILE__, __LINE__, "sd", "handle_uri_raw: unknown return value", r);
++			break;
+ 		}
+ 
+Index: NEWS
+===================================================================
+--- NEWS (revision 2277)
++++ NEWS (revision 2278)
+@@ -50,4 +50,5 @@
+   * fixed dropping last character of evhost pattern (#161)
+   * print helpful error message on conditionals in global block (#1550)
++  * decode url before matching in mod_rewrite (#1720)
+ 
+ - 1.4.19 - 2008-03-10
