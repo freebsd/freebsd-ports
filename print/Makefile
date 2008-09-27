@@ -121,6 +121,7 @@
     SUBDIR += hugelatex
     SUBDIR += hyperlatex
     SUBDIR += ifhp
+    SUBDIR += ifxetex
     SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
