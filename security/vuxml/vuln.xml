@@ -34,6 +34,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb911e31-8ceb-11dd-bb29-000c6e274733">
+    <topic>lighttpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.19_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lighttpd seurity annoucement:</p>
+	<blockquote cite="http://www.lighttpd.net/security/lighttpd_sa_2008_05.txt">
+	  <p>lighttpd 1.4.19, and possibly other versions before 1.5.0, does
+	    not decode the url before matching against rewrite and redirect
+	    patterns, which allows attackers to bypass rewrites rules. this
+	    can be a security problem in certain configurations if these rules
+	    are used to hide certain urls.</p>
+	</blockquote>
+	<blockquote cite="http://www.lighttpd.net/security/lighttpd_sa_2008_06.txt">
+	  <p>lighttpd 1.4.19, and possibly other versions before 1.5.0, does
+	    not lowercase the filename after generating it from the url in
+	    mod_userdir on case insensitive (file)systems.</p>
+	  <p>As other modules are case sensitive, this may lead to information
+	    disclosure; for example if one configured php to handle files
+	    ending on ".php", an attacker will get the php source with
+	    http://example.com/~user/file.PHP</p>
+	</blockquote>
+	<blockquote cite="http://www.lighttpd.net/security/lighttpd_sa_2008_07.txt">
+	  <p>lighttpd 1.4.19 does not always release a header if it triggered
+	    a 400 (Bad Request) due to a duplicate header.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31434</bid>
+      <url>http://www.lighttpd.net/security/lighttpd_sa_2008_05.txt</url>
+      <url>http://www.lighttpd.net/security/lighttpd_sa_2008_06.txt</url>
+      <url>http://www.lighttpd.net/security/lighttpd_sa_2008_07.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-09-26</discovery>
+      <entry>2008-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24ec781b-8c11-11dd-9923-0016d325a0ed">
     <topic>bitlbee -- account recreation security issues</topic>
     <affects>
