@@ -1,0 +1,49 @@
+#
+# http://www.lighttpd.net/security/lighttpd_sa_2008_06.txt
+#
+Index: src/mod_userdir.c
+===================================================================
+--- src/mod_userdir.c (revision 2120)
++++ src/mod_userdir.c (revision 2283)
+@@ -263,4 +263,7 @@
+ 			}
+ 		}
++		if (con->conf.force_lowercase_filenames) {
++			buffer_to_lower(p->username);
++		}
+ 
+ 		buffer_copy_string_buffer(p->temp_path, p->conf.basepath);
+@@ -285,6 +288,22 @@
+ 	}
+ 
++	/* the physical rel_path is basically the same as uri.path;
++	 * but it is converted to lowercase in case of force_lowercase_filenames and some special handling
++	 * for trailing '.', ' ' and '/' on windows
++	 * we assume that no docroot/physical handler changed this
++	 * (docroot should only set the docroot/server name, phyiscal should only change the phyiscal.path;
++	 *  the exception mod_secure_download doesn't work with userdir anyway)
++	 */
+ 	BUFFER_APPEND_SLASH(p->temp_path);
+-	buffer_append_string(p->temp_path, rel_url + 1); /* skip the / */
++	/* if no second '/' is found, we assume that it was stripped from the uri.path for the special handling
++	 * on windows.
++	 * we do not care about the trailing slash here on windows, as we already ensured it is a directory
++	 *
++	 * TODO: what to do with trailing dots in usernames on windows? they may result in the same directory
++	 *       as a username without them.
++	 */
++	if (NULL != (rel_url = strchr(con->physical.rel_path->ptr + 2, '/'))) {
++		buffer_append_string(p->temp_path, rel_url + 1); /* skip the / */
++	}
+ 	buffer_copy_string_buffer(con->physical.path, p->temp_path);
+ 
+Index: NEWS
+===================================================================
+--- NEWS (revision 2281)
++++ NEWS (revision 2283)
+@@ -53,4 +53,5 @@
+   * fixed conditional patching of ldap filter (#1564)
+   * Match headers case insensitive in response (removing of X-{Sendfile,LIGHTTPD-*}, catching Date/Server)
++  * fixed bug with case-insensitive filenames in mod_userdir (#1589), spotted by "anders1"
+ 
+ - 1.4.19 - 2008-03-10
