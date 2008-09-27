@@ -1,6 +1,5 @@
 bin/cpan2dist
 bin/cpanp
-bin/cpanp-boxed
 bin/cpanp-run-perl
 %%SITE_PERL%%/CPANPLUS.pm
 %%SITE_PERL%%/CPANPLUS/Backend.pm
@@ -31,9 +30,11 @@ bin/cpanp-run-perl
 %%SITE_PERL%%/CPANPLUS/Module/Checksums.pm
 %%SITE_PERL%%/CPANPLUS/Module/Fake.pm
 %%SITE_PERL%%/CPANPLUS/Module/Signature.pm
+%%SITE_PERL%%/CPANPLUS/Selfupdate.pm
 %%SITE_PERL%%/CPANPLUS/Shell.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Classic.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default.pm
+%%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/CustomSource.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/HOWTO.pod
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Source.pm
