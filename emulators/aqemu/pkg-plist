@@ -5,12 +5,14 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_icons/arch.png
 %%DATADIR%%/os_icons/asp.png
 %%DATADIR%%/os_icons/centos.png
+%%DATADIR%%/os_icons/damnsmalllinux.png
 %%DATADIR%%/os_icons/debian.png
 %%DATADIR%%/os_icons/fedora.png
 %%DATADIR%%/os_icons/freebsd.png
 %%DATADIR%%/os_icons/gentoo.png
 %%DATADIR%%/os_icons/knoppix.png
 %%DATADIR%%/os_icons/kubuntu.png
+%%DATADIR%%/os_icons/mac.png
 %%DATADIR%%/os_icons/mandriva.png
 %%DATADIR%%/os_icons/netbsd.png
 %%DATADIR%%/os_icons/openbsd.png
@@ -19,6 +21,7 @@ share/applications/aqemu.desktop
 %%DATADIR%%/os_icons/slackware.png
 %%DATADIR%%/os_icons/solaris.png
 %%DATADIR%%/os_icons/suse.png
+%%DATADIR%%/os_icons/symphony.png
 %%DATADIR%%/os_icons/ubuntu.png
 %%DATADIR%%/os_templates/Linux_2_0.aqvmt
 %%DATADIR%%/os_templates/Linux_2_4.aqvmt
