@@ -6,30 +6,20 @@
 #
 
 PORTNAME=	clientform
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/ \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ClientForm-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Client-side HTTP Form for Python
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	ClientForm
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 
-PYCLIENTFORM_EGG=	ClientForm-${PORTVERSION}-py${PYTHON_VER}.egg
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYCLIENTFORM_EGG=${PYCLIENTFORM_EGG} \
-		PYCLIENTFORM_EGG_VER="ClientForm==${PORTVERSION}"
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
