@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Format.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Formula.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/OLEwriter.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Properties.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Utility.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Workbook.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/WorkbookBig.pm
@@ -90,6 +91,7 @@ bin/chartex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/outline.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/outline_collapsed.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/properties.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/protection.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/regions.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/repeat.pl
