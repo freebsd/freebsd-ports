@@ -7,7 +7,7 @@
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.1
-CATEGORIES=	archivers
+CATEGORIES?=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
