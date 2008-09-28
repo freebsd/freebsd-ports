@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kftseng@iyard.org
 COMMENT=	Perl extension for OpenSSL X509 API
-
-BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install
 
 PERL_CONFIGURE=	yes
 
