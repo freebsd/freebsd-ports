@@ -2780,6 +2780,7 @@ entropy                         ports/math/entropy
 entropyfm                       ports/x11-fm/entropyfm
 env4801                         ports/sysutils/env4801
 envelope                        ports/print/envelope
+enygma                          ports/games/enygma
 eo-aspell                       ports/textproc/eo-aspell
 eog                             ports/graphics/eog
 epdfview                        ports/graphics/epdfview
@@ -3542,6 +3543,7 @@ freetype2                       ports/print/freetype2
 freevo                          ports/multimedia/freevo
 freevrrpd                       ports/net/freevrrpd
 freewais-sf                     ports/net/freewais-sf
+freeway                         ports/www/freeway
 freeze                          ports/archivers/freeze
 frei0r                          ports/graphics/frei0r
 freqsdwn                        ports/sysutils/freqsdwn
@@ -5270,6 +5272,7 @@ inkscape                        ports/graphics/inkscape
 inn                             ports/news/inn
 inn-current                     ports/news/inn-current
 innerspace                      ports/x11/innerspace
+innobackup                      ports/databases/innobackup
 innotop                         ports/databases/innotop
 inplace                         ports/misc/inplace
 inputproto                      ports/x11/inputproto
@@ -8438,6 +8441,7 @@ monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
 monkey                          ports/www/monkey
 monkeybubble                    ports/games/monkeybubble
+monkeytail                      ports/sysutils/monkeytail
 mono                            ports/lang/mono
 mono-addins                     ports/devel/mono-addins
 mono-kmod                       ports/sysutils/mono-kmod
@@ -8738,6 +8742,7 @@ mysqlphp2postgres               ports/www/mysqlphp2postgres
 mysqlreport                     ports/databases/mysqlreport
 mysqlsla                        ports/databases/mysqlsla
 mysqltcl                        ports/databases/mysqltcl
+mysqltuner                      ports/databases/mysqltuner
 mythtv                          ports/multimedia/mythtv
 mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
@@ -16926,6 +16931,7 @@ pidgin-manualsize               ports/net-im/pidgin-manualsize
 pidgin-msn-pecan                ports/net-im/pidgin-msn-pecan
 pidgin-musictracker             ports/audio/pidgin-musictracker
 pidgin-otr                      ports/security/pidgin-otr
+pidgin-pidgimpd                 ports/net-im/pidgin-pidgimpd
 pidgin-rhythmbox                ports/net-im/pidgin-rhythmbox
 pidgin-twitter                  ports/net-im/pidgin-twitter
 pidof                           ports/sysutils/pidof
@@ -17563,6 +17569,7 @@ py-PyX                          ports/graphics/py-PyX
 py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
 py-TurboJinja                   ports/devel/py-TurboJinja
+py-YABT                         ports/misc/py-YABT
 py-adns                         ports/dns/py-adns
 py-albatross                    ports/www/py-albatross
 py-amanith                      ports/graphics/py-amanith
@@ -17734,6 +17741,7 @@ py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
 py-hashlib                      ports/security/py-hashlib
+py-hcluster                     ports/science/py-hcluster
 py-html2text                    ports/textproc/py-html2text
 py-html5lib                     ports/www/py-html5lib
 py-htmlgen                      ports/www/py-HTMLgen
@@ -18145,6 +18153,7 @@ py-xmpppy                       ports/net-im/py-xmpppy
 py-xmpppy-irc                   ports/net-im/py-xmpppy-irc
 py-xmpppy-yahoo                 ports/net-im/py-xmpppy-yahoo
 py-xoltar-toolkit               ports/devel/py-xoltar-toolkit
+py-yabt                         ports/misc/py-YABT
 py-yadis                        ports/net/py-yadis
 py-yaml                         ports/devel/py-yaml
 py-yapsnmp                      ports/net-mgmt/py-yapsnmp
@@ -19245,6 +19254,7 @@ sablevm-classpath               ports/java/sablevm-classpath
 sablotron                       ports/textproc/sablotron
 sabnzbd                         ports/news/sabnzbd
 sabnzbdplus                     ports/news/sabnzbdplus
+safe-rm                         ports/sysutils/safe-rm
 safecat                         ports/sysutils/safecat
 saferpay                        ports/security/saferpay
 safesh                          ports/security/safesh
@@ -21979,7 +21989,6 @@ xf86-video-nv                   ports/x11-drivers/xf86-video-nv
 xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
 xf86-video-r128                 ports/x11-drivers/xf86-video-r128
 xf86-video-radeonhd             ports/x11-drivers/xf86-video-radeonhd
-xf86-video-radeonhd-devel       ports/x11-drivers/xf86-video-radeonhd-devel
 xf86-video-rendition            ports/x11-drivers/xf86-video-rendition
 xf86-video-s3                   ports/x11-drivers/xf86-video-s3
 xf86-video-s3virge              ports/x11-drivers/xf86-video-s3virge
