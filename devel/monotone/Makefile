@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.40
-PORTREVISION=	2
+PORTVERSION=	0.41
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -28,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS+=	--with-system-pcre
 
-PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
+PLIST_FILES=	bin/mtn bin/mtnopt share/zsh/site-functions/_mtn \
 		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
 		"@dirrmtry share/zsh"
 .if !defined(NO_INSTALL_MANPAGES)
