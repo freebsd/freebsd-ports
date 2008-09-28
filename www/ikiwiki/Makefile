@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.61
+PORTVERSION=	2.65
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -74,9 +74,9 @@ post-patch:
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
 		-e 's|$$(PREFIX)/lib/w3m|$$(PREFIX)/libexec/w3m|' \
 		-e 's|-wholename|-path|' \
-		-e 's|\(install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
-		-e 's|\(install -m 0644 wikilist\)|#\1|' \
-		-e 's|\(install -m 0644 auto.setup\)|#\1|' \
+		-e 's|\(-install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
+		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
+		-e 's|\(-install -m 0644 auto.setup\)|#\1|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e \
 		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|g" \
