@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Mouse/Object.pm
 %%SITE_PERL%%/Mouse/Role.pm
 %%SITE_PERL%%/Mouse/TypeRegistry.pm
+%%SITE_PERL%%/Mouse/Util.pm
 %%SITE_PERL%%/Squirrel.pm
 %%SITE_PERL%%/Squirrel/Role.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/.packlist
