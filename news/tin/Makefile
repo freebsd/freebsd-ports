@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/stable/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/stable/
 
-MAINTAINER?=	ache@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
@@ -63,7 +63,10 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 ALL_TARGET=	build
 MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1
-MAN5=		tin.5 mbox.5 mmdf.5
+MAN5=		tin.5
+.if !defined(WITHOUT_TIN_MAILBOX_MANPAGES)
+MAN5+=		mbox.5 mmdf.5
+.endif
 MLINKS=		tin.1 rtin.1
 
 .if defined(WITH_TIN_NNTP_ONLY)
@@ -102,6 +105,9 @@ CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
 post-patch:
+.if defined(WITHOUT_TIN_MAILBOX_MANPAGES)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-no-mbox-manpage
+.endif
 	${REINPLACE_CMD} -e 's:/var/spool/news:/var/news:g' \
 		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:g' \
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:g' \
