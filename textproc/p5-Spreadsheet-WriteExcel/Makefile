@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.23
+PORTVERSION=	2.25
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,7 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::Format.3 \
 		Spreadsheet::WriteExcel::Formula.3 \
 		Spreadsheet::WriteExcel::OLEwriter.3 \
+		Spreadsheet::WriteExcel::Properties.3 \
 		Spreadsheet::WriteExcel::Utility.3 \
 		Spreadsheet::WriteExcel::Workbook.3 \
 		Spreadsheet::WriteExcel::WorkbookBig.3 \
