@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IMAP-Admin
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.6
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,17 +17,18 @@ COMMENT=	Perl module for basic IMAP server administration
 PERL_CONFIGURE=	YES
 
 MAN3=		IMAP::Admin.3
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	create.pl delete.pl
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/create.pl \
-		${WRKSRC}/examples/delete.pl \
-		${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*******************************************************************************"
 	@${ECHO_MSG} "See ${EXAMPLESDIR} for some examples..."
 	@${ECHO_MSG} "*******************************************************************************"
 	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>
