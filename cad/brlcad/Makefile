@@ -24,6 +24,8 @@ USE_XORG=	x11 xt xi xproto xext inputproto
 USE_GMAKE=	yes
 USE_TK=		85
 
+BROKEN=		Does not compile
+
 PREFIX?=	${LOCALBASE}/${PORTNAME}
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
@@ -112,6 +114,10 @@ MANN=	Archetype.n Toplevel.n Widget.n body.n class.n code.n			\
 OPTIONS=	OPTIMIZATION "Build with optimizations" on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800032
+BROKEN=		Does not compile
+.endif
 
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
