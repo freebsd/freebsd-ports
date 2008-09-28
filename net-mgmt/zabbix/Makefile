@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -24,7 +23,8 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		SQLITE "Use SQLite backend" off \
 		LDAP "Support for checking LDAP servers" on \
 		IPV6 "Support for IPv6" on \
-		FPING "Use fping for pinging hosts" on
+		FPING "Use fping for pinging hosts" on \
+		JABBER "Use jabber media type" on
 
 USE_GMAKE=	yes
 USE_PHP=	gd snmp sockets pcre bcmath
@@ -32,12 +32,16 @@ USE_RC_SUBR=	zabbix_server.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-agent --enable-server \
 		--with-net-snmp=${LOCALBASE}/bin/net-snmp-config \
-		--with-curl=${LOCALBASE}/bin/curl-config \
-		--with-jabber=${LOCALBASE}
+		--with-curl=${LOCALBASE}/bin/curl-config
 MAKE_ARGS=	ARCH=freebsd
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.ifndef WITHOUT_JABBER
+USE_JABBER=	yes
+CONFIGURE_ARGS+=--with-jabber=${LOCALBASE}
+.endif
 
 .ifndef WITHOUT_LDAP
 USE_OPENLDAP=	yes
@@ -45,12 +49,15 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
+
 .ifdef WITH_IPV6
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
+
 .ifndef WITHOUT_FPING
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
+
 .ifndef WITHOUT_MYSQL
 USE_MYSQL=	yes
 USE_PHP+=	mysql
@@ -73,6 +80,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test.*rf/s|-rf|-f|;/LDFLAGS/s|-static||;\
 		/LIBS="-lnetsnmp/s|="|="-lcrypto |;s|-lsqlite3|-lsqlite3 ${PTHREAD_LIBS}|'\
 			${WRKSRC}/configure
+
 .ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
