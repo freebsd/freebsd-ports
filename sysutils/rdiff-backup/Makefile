@@ -36,8 +36,8 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
