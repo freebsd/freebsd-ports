@@ -19,6 +19,10 @@
 %%PORTNAME%%/bin/ossec-remoted
 %%PORTNAME%%/bin/ossec-syscheckd
 %%PORTNAME%%/bin/syscheck_update
+%%PORTNAME%%/bin/ossec-csyslogd
+%%PORTNAME%%/bin/agent_control
+%%PORTNAME%%/bin/syscheck_control
+%%PORTNAME%%/bin/rootcheck_control
 %%PORTNAME%%/etc/decoder.xml
 %%PORTNAME%%/etc/internal_options.conf
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
@@ -29,6 +33,9 @@
 %%PORTNAME%%/etc/shared/win_applications_rcl.txt
 %%PORTNAME%%/etc/shared/win_audit_rcl.txt
 %%PORTNAME%%/etc/shared/win_malware_rcl.txt
+%%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
+%%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
+%%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
 %%PORTNAME%%/logs/ossec.log
 %%PORTNAME%%/rules/apache_rules.xml
 %%PORTNAME%%/rules/arpwatch_rules.xml
@@ -73,6 +80,11 @@
 %%PORTNAME%%/rules/vsftpd_rules.xml
 %%PORTNAME%%/rules/web_rules.xml
 %%PORTNAME%%/rules/zeus_rules.xml
+%%PORTNAME%%/rules/vmware_rules.xml
+%%PORTNAME%%/rules/vmpop3d_rules.xml
+%%PORTNAME%%/rules/solaris_bsm_rules.xml
+%%PORTNAME%%/rules/mcafee_av_rules.xml
+%%PORTNAME%%/rules/asterisk_rules.xml
 @dirrmtry %%PORTNAME%%/var/run
 @dirrmtry %%PORTNAME%%/var
 @dirrmtry %%PORTNAME%%/tmp

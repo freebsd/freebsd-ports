@@ -16,3 +16,5 @@ http://www.ossec.net/wiki/index.php/Know_How:DatabaseOutput
 When you deinstall this port after starting the daemons once, many directories that are
 created by the daemons will remain.  To fully remove the port you need to delete those
 directories manually.
+To further enhance the security on your system, you may also enable some checks
+in PAM for a fast reaction against intrusions.
