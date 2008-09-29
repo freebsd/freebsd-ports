@@ -968,6 +968,7 @@
     SUBDIR += unfs3
     SUBDIR += unison
     SUBDIR += unison-devel
+    SUBDIR += unison-nox11
     SUBDIR += unix2tcp
     SUBDIR += uplog
     SUBDIR += uproxy
