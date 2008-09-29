@@ -1247,9 +1247,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/zh_TW/setup.php
-%%SQUIRRELDIR%%/plugins/abook_take/index.php
-%%SQUIRRELDIR%%/plugins/abook_take/setup.php
-%%SQUIRRELDIR%%/plugins/abook_take/take.php
 %%SQUIRRELDIR%%/plugins/administrator/auth.php
 %%SQUIRRELDIR%%/plugins/administrator/defines.php
 %%SQUIRRELDIR%%/plugins/administrator/index.php
@@ -1500,7 +1497,6 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/plugins/calendar
 @dirrm %%SQUIRRELDIR%%/plugins/bug_report
 @dirrm %%SQUIRRELDIR%%/plugins/administrator
-@dirrm %%SQUIRRELDIR%%/plugins/abook_take
 @dirrmtry %%SQUIRRELDIR%%/plugins
 @dirrm %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/zh_TW
