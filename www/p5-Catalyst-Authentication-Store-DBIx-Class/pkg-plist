@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class.pm
+%%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx/Class/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store/DBIx
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/Catalyst
