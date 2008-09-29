@@ -7,24 +7,24 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		emulators
-DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MASTER_SITES=		SF
+DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
-
-BROKEN=			leaves files behind on deinstall
 
 RELEASE_DATE=		2008.07.01
 BUILD_VER=		102166
 
 GNU_CONFIGURE=		yes
+USE_LDCONFIG=		yes
 
 CONFIGURE_ARGS+=	--without-procps
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11="@comment "
 .else
 CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -32,7 +32,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
 USE_GNOME=		gtk20
 PLIST_SUB+=		X11=""
-PLIST=			${PKGDIR}/pkg-plist-x11
 .endif
 
 CONFLICTS=		vmware-guestd* vmware-tools*
@@ -61,16 +60,16 @@ PLIST_SUB+=	FIVEONLY=""
 
 post-patch:
 .if defined(WITHOUT_X11)
-	cd ${WRKSRC} && patch < ${FILESDIR}/optpatch-nox11
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/optpatch-nox11
 .endif
 
 post-build:
 	cd ${WRKSRC}/modules && make
 
 post-install:
-	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/drivers
-	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/input
-	${MKDIR} -p ${PREFIX}/share/vmware-tools
+	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/drivers
+	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/input
+	${MKDIR} ${PREFIX}/share/vmware-tools
 .if ${OSREL} >= 6
 	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount_vmhgfs
 .endif
