@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Validator-HTML-W3C
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Access to the W3Cs online HTML validator
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
