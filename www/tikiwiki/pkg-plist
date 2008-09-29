@@ -46,6 +46,7 @@
 %%WWWDIR%%/db/tiki.sql
 %%WWWDIR%%/db/tiki_1.8to1.9.sql
 %%WWWDIR%%/db/tiki_1.9to2.0.sql
+%%WWWDIR%%/db/tiki-secdb_2.1_mysql.sql
 %%WWWDIR%%/display_banner.php
 %%WWWDIR%%/doc/99_tiki-apache.conf
 %%WWWDIR%%/doc/htaccess
