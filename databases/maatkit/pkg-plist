@@ -1,6 +1,7 @@
 %%SITE_PERL%%/maatkit.pm
 %%SITE_PERL%%/maatkitdsn.pm
 bin/mk-archiver
+bin/mk-audit
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker

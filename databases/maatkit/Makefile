@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	1972
+PORTVERSION=	2325
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Collection of essential command-line utilities for MySQL
@@ -37,7 +37,8 @@ MAN1=	mk-archiver.1 \
 		mk-slave-restart.1 \
 		mk-table-checksum.1 \
 		mk-table-sync.1 \
-		mk-visual-explain.1
+		mk-visual-explain.1 \
+		mk-audit.1
 MAN3=	maatkit.3 maatkitdsn.3
 
 .include <bsd.port.mk>
