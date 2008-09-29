@@ -110,10 +110,14 @@
 # If you want to enable debugging capabilities define:
 #  WITH_MUTT_DEBUG
 #
+# If you do not want to install the manpages mbox.5 and mdf.8 (because that
+# conflicts with other ports which installed these:
+#  WITHOUT_MUTT_MAILBOX_MANPAGES
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.18
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -178,6 +182,7 @@ CD_IFDEF_PATCH_VERSION=	1.5.4
 DW_PATCH_VERSION=	1.5.6
 AC_PATCH_VERSION=	1.5.9
 VC_PATCH_VERSION=	1.5.16
+DW_MBOX_PATCH_VERSION=	1.5.18
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -444,7 +449,6 @@ pre-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-IGNORE=	The WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment.
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
@@ -463,7 +467,10 @@ PATCHFILES+=	mutt-${VC_PATCH_VERSION}.vc.greeting:vc
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1
-MAN5=		muttrc.5 mbox.5 mmdf.5
+MAN5=		muttrc.5
+.if !defined(WITHOUT_MUTT_MAILBOX_MANPAGES)
+MAN5+=		mbox.5 mmdf.5
+.endif
 
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
@@ -472,6 +479,9 @@ post-patch::
 		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.am
+.if defined(WITHOUT_MUTT_MAILBOX_MANPAGES)
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-no-mbox-manpage
+.endif
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)

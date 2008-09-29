@@ -1,0 +1,29 @@
++--- doc/Makefile.am.orig	2008-05-30 08:00:04.000000000 +0100
+++++ doc/Makefile.am	2008-09-19 18:55:55.000000000 +0100
++@@ -18,8 +18,6 @@
++ 	gen-map-doc			\
++ 	muttrc.man.head			\
++ 	muttrc.man.tail			\
++-	mbox.man			\
++-	mmdf.man			\
++ 	manual.xml.head			\
++ 	manual.xml.tail			\
++ 	instdoc.sh.in			\
++@@ -57,8 +55,6 @@
++ 	test x@DOTLOCK_TARGET@ = x || ./instdoc $(srcdir)/dotlock.man \
++ 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
++ 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
++-	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
++-	./instdoc $(srcdir)/mmdf.man $(DESTDIR)$(mandir)/man5/mmdf.5
++ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
++ 	for f in $(topsrcdir_DOCFILES) ; do \
++ 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
++@@ -83,7 +79,7 @@
++ 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
++ 		rm -f $(DESTDIR)$(mandir)/man1/$$f ; \
++ 	done
++-	for f in muttrc.5 mbox.5 mmdf.5 ; do \
+++	for f in muttrc.5 ; do \
++ 		rm -f $(DESTDIR)$(mandir)/man5/$$f ; \
++ 	done
++ 	for f in $(srcdir_DOCFILES) $(topsrcdir_DOCFILES) $(HTML_DOCFILES) ; \
