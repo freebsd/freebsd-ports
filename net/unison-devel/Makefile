@@ -7,7 +7,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.27.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ COMMENT=	A user-level file synchronization tool
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
-CONFLICTS=	unison-[0-9]*
+CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*
 
 .include <bsd.port.pre.mk>
 
