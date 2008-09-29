@@ -9,11 +9,11 @@ etc/vmware-tools/tools.conf
 %%LIB32DIR%%/libguestlib.so
 %%LIB32DIR%%/libguestlib.so.0
 %%LIB32DIR%%/vmware-tools/modules/drivers/linker.hints
-%%FIVEONLY%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko
-%%FIVEONLY%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko
+%%NOTON5%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko
+%%NOTON5%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko
 %%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko
 %%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko
-%%FIVEONLY%%sbin/mount_vmhgfs
+%%NOTON5%%sbin/mount_vmhgfs
 sbin/vmware-guestd
 %%X11%%sbin/vmware-toolbox
 %%X11%%sbin/vmware-user
@@ -25,12 +25,15 @@ share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
-%%X11%%@dirrm share/pixmaps/vmware
 @exec kldxref %%LIB32DIR%%/vmware-tools/modules/drivers 2>/dev/null || true
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
-@dirrmtry %%LIB32DIR%%/vmware-tools/vmware-tools/modules
-@dirrmtry %%LIB32DIR%%/vmware-tools/vmware-tools
+@dirrmtry %%LIB32DIR%%/vmware-tools/modules/input
+@dirrmtry %%LIB32DIR%%/vmware-tools/modules/drivers
+@dirrmtry %%LIB32DIR%%/vmware-tools/modules
+@dirrmtry %%LIB32DIR%%/vmware-tools
+%%X11%%@dirrm share/pixmaps/vmware
+%%X11%%@dirrmtry share/pixmaps
 @dirrmtry etc/vmware-tools
 @dirrmtry share/vmware-tools
 %%X11%%@dirrmtry share/applications
