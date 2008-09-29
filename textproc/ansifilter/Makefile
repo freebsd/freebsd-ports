@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ansifilter
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
@@ -25,7 +25,7 @@ MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog INSTALL README
+PORTDOCS=	ChangeLog README
 .endif
 
 .include <bsd.port.pre.mk>
@@ -39,9 +39,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
