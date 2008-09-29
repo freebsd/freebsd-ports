@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.24
-PORTREVISION=	2
+PORTVERSION=	0.26
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
@@ -23,10 +22,10 @@ COMMENT=	A UML design tool with cognitive support
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 SUB_FILES=	argouml.sh
 .if !defined(NOPORTDOCS)
@@ -39,6 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${DATADIR}
 	@${MKDIR} ${DATADIR}/ext
 	${INSTALL_DATA} ${WRKSRC}/ext/*.jar ${DATADIR}/ext/
+	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/argomanual-${PORTVERSION}.pdf ${DOCSDIR}
