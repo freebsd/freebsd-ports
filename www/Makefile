@@ -743,6 +743,7 @@
     SUBDIR += p5-Catalyst-Plugin-Session-Store-Memcached
     SUBDIR += p5-Catalyst-Plugin-Setenv
     SUBDIR += p5-Catalyst-Plugin-Singleton
+    SUBDIR += p5-Catalyst-Plugin-SmartURI
     SUBDIR += p5-Catalyst-Plugin-StackTrace
     SUBDIR += p5-Catalyst-Plugin-Static
     SUBDIR += p5-Catalyst-Plugin-Static-Simple
