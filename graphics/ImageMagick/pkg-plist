@@ -1294,6 +1294,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/decorate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/deprecate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/display.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/distort.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/draw.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/drawing-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/effect.html
