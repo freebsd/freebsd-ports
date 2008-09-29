@@ -5199,6 +5199,7 @@ ifp-line                        ports/audio/ifp-line
 ifstat                          ports/net/ifstat
 ifstated                        ports/net/ifstated
 iftop                           ports/net-mgmt/iftop
+ifxetex                         ports/print/ifxetex
 igal                            ports/www/igal
 iglooftp                        ports/ftp/IglooFTP
 igraph                          ports/math/igraph
@@ -17809,6 +17810,7 @@ py-markdown                     ports/textproc/py-markdown
 py-mathdom                      ports/math/py-mathdom
 py-matplotlib                   ports/math/py-matplotlib
 py-mcrypt                       ports/security/py-mcrypt
+py-mdp                          ports/science/py-mdp
 py-mechanize                    ports/www/py-mechanize
 py-medusa                       ports/net/py-medusa
 py-meld                         ports/www/py-meld
@@ -18036,6 +18038,7 @@ py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
+py-symeig                       ports/math/py-symeig
 py-sympy                        ports/math/py-sympy
 py-synce-librapi2               ports/palm/py-synce-librapi2
 py-synce-librra                 ports/palm/py-synce-librra
@@ -21989,6 +21992,7 @@ xf86-video-nv                   ports/x11-drivers/xf86-video-nv
 xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
 xf86-video-r128                 ports/x11-drivers/xf86-video-r128
 xf86-video-radeonhd             ports/x11-drivers/xf86-video-radeonhd
+xf86-video-radeonhd-devel       ports/x11-drivers/xf86-video-radeonhd-devel
 xf86-video-rendition            ports/x11-drivers/xf86-video-rendition
 xf86-video-s3                   ports/x11-drivers/xf86-video-s3
 xf86-video-s3virge              ports/x11-drivers/xf86-video-s3virge
