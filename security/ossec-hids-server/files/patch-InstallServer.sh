@@ -1,7 +1,15 @@
-diff -ruN src/InstallServer.sh.orig src/InstallServer.sh
---- src/InstallServer.sh.orig	Sun Jan  7 23:38:16 2007
-+++ src/InstallServer.sh	Thu Apr  5 15:58:08 2007
-@@ -255,12 +255,12 @@
+--- src/InstallServer.sh	2008-08-22 20:42:09.000000000 +0000
++++ src/InstallServer.sh	2008-09-28 22:10:45.000000000 +0000
+@@ -174,7 +174,7 @@
+     fi    
+ fi
+     
+-cp -pr ../etc/rules/* ${DIR}/rules/
++cp -pr ../etc/rules/*.xml ${DIR}/rules/
+ 
+ # If the local_rules is saved, moved it back
+ ls ${DIR}/rules/saved_local_rules.xml.$$ > /dev/null 2>&1
+@@ -284,12 +284,12 @@
  
  ls ../etc/ossec.mc > /dev/null 2>&1
  if [ $? = 0 ]; then
