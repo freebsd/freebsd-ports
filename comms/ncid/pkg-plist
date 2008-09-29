@@ -1,13 +1,17 @@
 sbin/ncidd
 sbin/ncidsip
+sbin/sip2ncid
 bin/ncid
 bin/cidalias
 bin/cidcall
 bin/cidupdate
 bin/yac2ncid
+etc/logrotate.d/ncidd
+@dirrm etc/logrotate.d
 etc/rc.d/ncidd.sh
 etc/rc.d/ncid.sh
 etc/rc.d/ncidsip.sh
+etc/rc.d/yac2ncid.sh
 share/ncid/ncidrotate
 share/ncid/ncid-mythtv
 share/ncid/ncid-page
