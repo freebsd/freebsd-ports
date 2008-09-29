@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ftpsync
-PORTVERSION=	1.2.33
+PORTVERSION=	1.29
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
@@ -19,8 +19,14 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
+PORTDOCS=	README
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
