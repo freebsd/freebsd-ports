@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LIBS="-lm"
+		LIBS="-lm -lintl"
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-lirc # untested
@@ -90,7 +90,7 @@ post-patch:
 .endif
 
 post-install:
-.for ii in default.pa daemon.conf client.conf
+.for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${PREFIX}/etc/pulse/${ii}-dist
 .endfor

@@ -16,6 +16,8 @@ etc/pulse/client.conf-dist
 etc/pulse/daemon.conf-dist
 @unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
 etc/pulse/default.pa-dist
+@unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
+etc/pulse/system.pa-dist
 etc/xdg/autostart/pulseaudio.desktop
 %%AVAHI%%include/pulse/browser.h
 include/pulse/cdecl.h
@@ -23,6 +25,7 @@ include/pulse/channelmap.h
 include/pulse/context.h
 include/pulse/def.h
 include/pulse/error.h
+include/pulse/ext-stream-restore.h
 include/pulse/gccmacro.h
 include/pulse/glib-mainloop.h
 include/pulse/introspect.h
@@ -63,9 +66,9 @@ lib/libpulse.so.0
 lib/libpulsecore.a
 lib/libpulsecore.la
 lib/libpulsecore.so
-lib/libpulsecore.so.6
+lib/libpulsecore.so.7
 lib/libpulsedsp.so
-lib/pulse-%%PULSE_VERSION%%/modules/libauthkey-prop.so
+lib/pulse-%%PULSE_VERSION%%/modules/libauth-cookie.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/libcli.so
@@ -129,6 +132,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-send.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-simple-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-simple-protocol-unix.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-sine.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-stream-restore.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-suspend-on-idle.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-tunnel-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-tunnel-source.so
@@ -144,6 +148,10 @@ libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
 %%GCONF%%libexec/pulse/gconf-helper
 %%HAL%%share/PolicyKit/policy/org.pulseaudio.policy
+share/locale/de/LC_MESSAGES/pulseaudio.mo
+share/locale/el/LC_MESSAGES/pulseaudio.mo
+share/locale/fr/LC_MESSAGES/pulseaudio.mo
+share/locale/sv/LC_MESSAGES/pulseaudio.mo
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%
