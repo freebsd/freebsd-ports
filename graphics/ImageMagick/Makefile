@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.3-6
+DISTVERSION=	6.4.4-0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -49,7 +49,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
-		IMAGEMAGICK_OPENMP	"Enable OpenMP for SMP" off \
+		IMAGEMAGICK_OPENMP	"OpenMP for SMP (needs threads)" off \
 		IMAGEMAGICK_PERL		"Perl support" on \
 		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
