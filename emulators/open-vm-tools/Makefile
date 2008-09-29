@@ -7,7 +7,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		emulators
 MASTER_SITES=		SF
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--without-procps
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
+CONFLICTS=		open-vm-tools-[0-9]*
 .else
 CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -32,9 +33,11 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
 USE_GNOME=		gtk20
 PLIST_SUB+=		X11=""
+CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .endif
 
-CONFLICTS=		vmware-guestd* vmware-tools*
+CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
+SUB_FILES=		pkg-message
 
 .if defined(WITHOUT_DNET)
 CONFIGURE_ARGS+=	--without-dnet
@@ -53,9 +56,9 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-PLIST_SUB+=	FIVEONLY="@comment "
+SUB_LIST+=	NOTON5="@comment "
 .else
-PLIST_SUB+=	FIVEONLY=""
+SUB_LIST+=	NOTON5=""
 .endif
 
 post-patch:
@@ -67,22 +70,15 @@ post-build:
 	cd ${WRKSRC}/modules && make
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/drivers
-	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/input
-	${MKDIR} ${PREFIX}/share/vmware-tools
+	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers
+	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/input
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmmemctl.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmxnet.ko
 .if ${OSREL} >= 6
-	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount_vmhgfs
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmhgfs.ko
+	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmblock.ko
 .endif
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
-.if ${OSREL} >= 6
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
-	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
-.endif
-.if !defined(WITHOUT_X11)
-	${INSTALL} ${WRKSRC}/toolbox/vmware-toolbox ${LOCALBASE}/sbin/vmware-toolbox
-	${INSTALL} ${WRKSRC}/vmware-user/vmware-user ${LOCALBASE}/sbin/vmware-user
-.endif
+	@-kldxref ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers 2>/dev/null
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
