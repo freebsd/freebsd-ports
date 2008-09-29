@@ -4,11 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.17.2
-PORTREVISION=	1
+PORTVERSION=	0.9.20.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
-		http://www.prelude-ids.org/download/releases/old/
+MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for Prelude NIDS
@@ -24,6 +23,7 @@ USE_LDCONFIG=		yes
 CONFIGURE_ARGS=		--localstatedir=/var
 
 MAN1=		prelude-admin.1
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -38,9 +38,8 @@ PLIST_SUB+=		WITH_PERL="@comment "
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		2.3+
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
-PLIST_SUB+=		WITH_PYTHON=""
+PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
@@ -48,15 +47,19 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile
 .endif
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
+.endif
+
+	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
 
 	@if [ ! -f ${PREFIX}/etc/prelude/default/client.conf ]; then \
 	   ${CP} -p ${PREFIX}/etc/prelude/default/client.conf-dist \
@@ -77,7 +80,5 @@ post-install:
 	   ${CP} -p ${PREFIX}/etc/prelude/default/tls.conf-dist \
 	      ${PREFIX}/etc/prelude/default/tls.conf ; \
 	fi
-
-.endif
 
 .include <bsd.port.post.mk>

@@ -21,6 +21,7 @@ include/libprelude/idmef-class.h
 include/libprelude/idmef-criteria.h
 include/libprelude/idmef-criterion-value.h
 include/libprelude/idmef-data.h
+include/libprelude/idmef-message-helpers.h
 include/libprelude/idmef-message-id.h
 include/libprelude/idmef-message-print.h
 include/libprelude/idmef-message-read.h
@@ -61,67 +62,22 @@ include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.la
 lib/libprelude.so
-lib/libprelude.so.14
+lib/libprelude.so.17
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeEasy.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/PreludeEasy.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy/PreludeEasy.so
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeEasy
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-0.0.0-py%%PYTHON_VER%%.egg-info
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 share/aclocal/libprelude.m4
-%%PORTDOCS%%%%DOCSDIR%%/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch04.html
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-additional-data.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-criteria.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-criterion-value.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-data.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-message-print.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-message-read.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-message-write.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-path.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-time.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-tree-wrap.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-idmef-value.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-async.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-client-profile.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-client.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-connection-pool.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-connection.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-error.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-failover.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-hash.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-ident.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-inttypes.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-io.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-linked-object.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-list.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-log.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-msg.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-msgbuf.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-option-wide.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-option.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-plugin.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-string.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude-timer.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude-prelude.html
-%%PORTDOCS%%%%DOCSDIR%%/libprelude.devhelp
-%%PORTDOCS%%%%DOCSDIR%%/libprelude.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%/pt01.html
-%%PORTDOCS%%%%DOCSDIR%%/pt02.html
-%%PORTDOCS%%%%DOCSDIR%%/pt03.html
-%%PORTDOCS%%%%DOCSDIR%%/pt04.html
-%%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libprelude
 @dirrm etc/prelude/default
 @dirrmtry etc/prelude/profile
