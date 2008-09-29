@@ -65,6 +65,7 @@
     SUBDIR += gnome-icons-gentoo-test
     SUBDIR += gnome-icons-gion
     SUBDIR += gnome-icons-iris
+    SUBDIR += gnome-icons-jini
     SUBDIR += gnome-icons-lila
     SUBDIR += gnome-icons-noia-full
     SUBDIR += gnome-icons-noia-warm
