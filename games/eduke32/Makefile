@@ -7,7 +7,7 @@
 PORTNAME=	eduke32
 PORTVERSION=	20080924
 CATEGORIES=	games
-MASTER_SITES=	http://wiki.eduke32.com/stuff/
+MASTER_SITES=	http://wiki.eduke32.com/stuff/source_code/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	olivier@gid0.org
