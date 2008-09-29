@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Network based Caller ID package
 
 USE_TK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		ncid.1 ncidscripts.1 ncidtools.1 yac2ncid.1
-MAN5=		ncid.conf.5 ncidd.alias.5 ncidd.conf.5 ncidscript.conf.5 yac2ncid.conf.5
-MAN8=		ncidd.8 ncidsip.8
+MAN1=		ncid.1 ncidrotate.1 yac2ncid.1 ncidmodules.1 ncidtools.1
+MAN5=		ncid.conf.5 ncidmodules.conf.5 ncidd.alias.5 sip2ncid.conf.5 ncidd.conf.5 yac2ncid.conf.5
+MAN8=		ncidd.8 ncidsip.8 sip2ncid.8
 
 USE_GMAKE=	yes
 ALL_TARGET=	local
 MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH}
-INSTALL_TARGET=	install-freebsd
+INSTALL_TARGET=	freebsd-install
 SUB_FILES=	pkg-message
 
 post-patch:
@@ -31,13 +31,13 @@ post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile|${XARGS} ${REINPLACE_CMD} -Ee\
 		'/install:/s,install-(etc|logrotate),,'
 	@${REINPLACE_CMD} -e 's|source|.|;s|bash|sh|;/test/s|==|=|;/local/s|-i||'\
-		${WRKSRC}/tools/yac2ncid.sh
+		${WRKSRC}/FreeBSD/yac2ncid.sh
 	@${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d;\
 		/CFLAGS.*=/s|=|+=|;s|-O||' ${WRKSRC}/Makefile
 
 post-install:
 	@${INSTALL} -d ${ETCDIR}/
-	@cd ${WRKSRC};for i in *.alias *.conf scripts/*.conf tools/*.conf;do\
+	@cd ${WRKSRC};for i in *.alias *.conf scripts/*.conf;do\
 		ib=`basename $$i`;\
 		${INSTALL_DATA} $$i ${ETCDIR}/$$ib.dist;\
 		${CP} -n ${ETCDIR}/$$ib.dist ${ETCDIR}/$$ib;\
