@@ -122,7 +122,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
-        <name>firefox3</name>
+        <name>firefox</name>
 	<range><lt>3.0.2,1</lt></range>
       </package>
       <package>
@@ -193,7 +193,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-24</discovery>
       <entry>2008-09-24</entry>
-      <modified>2008-09-27</modified>
+      <modified>2008-09-29</modified>
     </dates>
   </vuln>
 
