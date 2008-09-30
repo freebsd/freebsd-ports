@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mwlib
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/m/mwlib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +23,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
+
+post-extract:
+		@${REINPLACE_CMD} -e 's#odfpy==0.7.0#odfpy>=0.7.0#g' \
+			${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
