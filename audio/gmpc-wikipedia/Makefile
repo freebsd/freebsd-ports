@@ -24,4 +24,6 @@ USE_XORG=	x11
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
+IGNORE=		does not work with new gmpc
+
 .include <bsd.port.mk>
