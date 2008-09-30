@@ -1,0 +1,4 @@
+lib/gmpc/plugins/lyricwikiplugin.la
+lib/gmpc/plugins/lyricwikiplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

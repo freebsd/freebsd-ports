@@ -219,6 +219,7 @@
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
+    SUBDIR += gmpc-lyricwiki
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
     SUBDIR += gmpc-mserver
