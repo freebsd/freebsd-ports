@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	execline
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -26,6 +26,8 @@ do-configure:
 		> ${WRKSRC}/conf-compile/import
 	${ECHO_CMD} "${LOCALBASE}/lib/skalibs" \
 		>> ${WRKSRC}/conf-compile/import
+	${REINPLACE_CMD} -e 's|superstrip1|#superstrip1|g' \
+		${WRKSRC}/conf-compile/conf-stripbins
 
 do-build:
 	cd ${WRKSRC} && package/compile

@@ -21,6 +21,7 @@ bin/forbacktick
 bin/foreground
 bin/getpid
 bin/heredoc
+bin/homeof
 bin/if
 bin/ifthenelse
 bin/import
@@ -74,6 +75,7 @@ lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/getpid.html
 %%PORTDOCS%%%%DOCSDIR%%/grammar.html
 %%PORTDOCS%%%%DOCSDIR%%/heredoc.html
+%%PORTDOCS%%%%DOCSDIR%%/homeof.html
 %%PORTDOCS%%%%DOCSDIR%%/if.html
 %%PORTDOCS%%%%DOCSDIR%%/ifthenelse.html
 %%PORTDOCS%%%%DOCSDIR%%/import.html
