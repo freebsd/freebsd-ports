@@ -15,7 +15,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
