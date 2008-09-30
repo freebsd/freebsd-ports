@@ -567,6 +567,7 @@
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-postgres
+    SUBDIR += rubygem-rbase
     SUBDIR += rubygem-rrdtool
     SUBDIR += rubygem-sqlite3
     SUBDIR += sharedance
