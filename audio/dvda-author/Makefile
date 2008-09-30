@@ -6,22 +6,36 @@
 #
 
 PORTNAME=	dvda-author
-PORTVERSION=	20050703
+PORTVERSION=	08.07
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	dvd-audio
+DISTNAME=	${PORTNAME}-core-${PORTVERSION}-2
 
-MAINTAINER=	dieringe@zedat.fu-berlin.de
+MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Author and playback unencrypted and uncompressed Audio-DVDs
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac
+BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+MAN1=		dvda-author.1
+
+LDFLAGS+=	-liberty
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-flac=${LOCALBASE}/lib
+
+# yes, -1. I talked the author.
+WRKSRC=		${WRKDIR}/${PORTNAME}-core-${PORTVERSION}-1
 
 PLIST_FILES=	bin/dvda-author
+#		lib/libc_utils.a
 
 do-install:
-	${INSTALL} ${WRKSRC}/dvda-author ${PREFIX}/bin
+	${INSTALL} ${WRKSRC}/src/dvda ${PREFIX}/bin/dvda-author
+	${INSTALL} ${WRKSRC}/dvda-author.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
