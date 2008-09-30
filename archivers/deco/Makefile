@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	deco
-PORTVERSION=	1.5.5.1
+PORTVERSION=	1.5.5.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/:site1 \
 		http://hartlich.com/deco/archive/download/:site2
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:site1 \
-		${PORTNAME}-archive-1.1.tar.gz:site2
+		${PORTNAME}-archive-1.2.tar.gz:site2
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A program to extract various archive file formats
@@ -35,15 +35,15 @@ CONFLICTS=	deco-[0-9]*
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-	cd ${WRKDIR}/${PORTNAME}-archive-1.1 && ${SETENV} ${MAKE_ENV} \
+	cd ${WRKDIR}/${PORTNAME}-archive-1.2 && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/deco ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 .for i in CREDITS LICENSE Makefile NEWS README config.mk
-	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.1/${i}
+	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.2/${i}
 .endfor
-	@cd ${WRKDIR}/${PORTNAME}-archive-1.1/ && ${CP} -pPR * ${DATADIR}
+	@cd ${WRKDIR}/${PORTNAME}-archive-1.2/ && ${CP} -pPR * ${DATADIR}
 
 .include <bsd.port.mk>

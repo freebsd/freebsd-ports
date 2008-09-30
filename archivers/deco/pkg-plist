@@ -64,6 +64,7 @@ bin/deco
 %%DATADIR%%/tbz
 %%DATADIR%%/tgz
 %%DATADIR%%/tlz
+%%DATADIR%%/udeb
 %%DATADIR%%/wsz
 %%DATADIR%%/xpi
 %%DATADIR%%/z
