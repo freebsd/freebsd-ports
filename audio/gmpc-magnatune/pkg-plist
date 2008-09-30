@@ -1,7 +1,9 @@
+lib/gmpc/plugins/magnatuneplugin.la
+lib/gmpc/plugins/magnatuneplugin.so
 share/gmpc/plugins/magnatune/magnatune.png
 share/gmpc/plugins/magnatune/xdg-open
-share/gmpc/plugins/magnatuneplugin.so
-share/gmpc/plugins/magnatuneplugin.la
 @dirrmtry share/gmpc/plugins/magnatune
 @dirrmtry share/gmpc/plugins
 @dirrmtry share/gmpc
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

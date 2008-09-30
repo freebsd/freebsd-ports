@@ -1,4 +1,4 @@
-share/gmpc/plugins/mdcaplugin.so
-share/gmpc/plugins/mdcaplugin.la
-@dirrm share/gmpc/plugins
-@dirrm share/gmpc
+lib/gmpc/plugins/mdcaplugin.la
+lib/gmpc/plugins/mdcaplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc

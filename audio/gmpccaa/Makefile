@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gmpccaa
-PORTVERSION=	0.15.5.0
-PORTREVISION=	1
+PORTVERSION=	0.16.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 DISTNAME=	gmpc-coveramazon-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	Amazon cover art provider for gmpc
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
+RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
