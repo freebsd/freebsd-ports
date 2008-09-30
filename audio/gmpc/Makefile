@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.15.5.0
-PORTREVISION=	2
+PORTVERSION=	0.16.1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
-		http://download.gna.org/kanicule/freebsd/distfiles/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
-MAINTAINER=	mathias@monnerville.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd
 
+BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.4:${PORTSDIR}/ftp/curl
 

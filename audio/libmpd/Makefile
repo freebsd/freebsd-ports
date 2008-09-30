@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	libmpd
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.16.1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-0.15.5/ \
-		http://download.gna.org/kanicule/freebsd/distfiles/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
-MAINTAINER=	mathias@monnerville.com
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
 USE_AUTOTOOLS=	libtool:15
