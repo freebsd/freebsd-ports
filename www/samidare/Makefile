@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samidare
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.a-k-r.org./samidare/
 
