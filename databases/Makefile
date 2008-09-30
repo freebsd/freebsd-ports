@@ -560,6 +560,7 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
+    SUBDIR += ruby-sybct
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
