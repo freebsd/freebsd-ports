@@ -25,8 +25,6 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USE_IMAKE=	yes
-PREFIX?=	${LOCALBASE}
-USE_XLIB=	yes
 XFREE86_HTML_MAN=	no
 
 MAN1=	oinstant.1
