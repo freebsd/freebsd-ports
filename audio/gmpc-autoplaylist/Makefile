@@ -19,6 +19,8 @@ LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 
+IGNORE=		does not work with new gmpc
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 USE_GNOME=	gnomehack
