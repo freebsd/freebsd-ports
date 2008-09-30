@@ -7,7 +7,7 @@
 
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
 		ftp://ftp.bishopston.net/freebsd/distfiles/ \
@@ -16,23 +16,19 @@ MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	A puzzle game based on hexagonal tiles
 
-NOT_FOR_ARCHS=	amd64 sparc64
-NOT_FOR_ARCHS_REASON_amd64=	Probably an easy fix, but I've no access to an amd64 machine. Offers of help appreciated!
-NOT_FOR_ARCHS_REASON_sparc64=	Probably an easy fix, but I've no access to an sparc64 machine. Offers of help appreciated!
-
 USE_SDL=	sdl
 MAKEFILE=	Makefile.FreeBSD
 ALL_TARGET=	${PORTNAME}
 
-MAKE_ARGS+=	SYSTEM_INSTALL_DIR="${PREFIX}/games/hex-a-hop/"
+MAKE_ARGS+=	SYSTEM_INSTALL_DIR="${DATADIR}/"
 DESKTOP_ENTRIES="Hex-a-Hop" "A puzzle game based on hexagonal tiles" \
 		"${PREFIX}/games/hex-a-hop/graphics/icon.bmp" \
 		"hex-a-hop" "Application;LogicGame;Game;" false
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex-a-hop ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/games/hex-a-hop/graphics/
-	${INSTALL_DATA} ${WRKSRC}/graphics/* ${PREFIX}/games/hex-a-hop/graphics
-	${INSTALL_DATA} ${WRKSRC}/levels.dat ${PREFIX}/games/hex-a-hop
+	${MKDIR} ${DATADIR}/graphics
+	${INSTALL_DATA} ${WRKSRC}/graphics/* ${DATADIR}/graphics/
+	${INSTALL_DATA} ${WRKSRC}/levels.dat ${DATADIR}/
 
 .include <bsd.port.mk>
