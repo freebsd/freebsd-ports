@@ -4,7 +4,7 @@ etc/slsh.rc
 include/slang.h
 include/slcurses.h
 lib/libslang.a
-lib/libslang.so.2.1.3
+lib/libslang.so.%%SHLIB_VERSION%%
 lib/libslang.so.2
 lib/libslang.so
 lib/slang/v2/modules/fcntl-module.so
@@ -12,6 +12,7 @@ lib/slang/v2/modules/fcntl-module.so
 %%PNG%%lib/slang/v2/modules/png-module.so
 %%ICONV%%lib/slang/v2/modules/iconv-module.so
 %%ONIG%%lib/slang/v2/modules/onig-module.so
+lib/slang/v2/modules/rand-module.so
 lib/slang/v2/modules/select-module.so
 lib/slang/v2/modules/slsmg-module.so
 lib/slang/v2/modules/socket-module.so
@@ -21,6 +22,8 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/autoload.sl
 %%DATADIR%%/cmaps/cool.map
 %%DATADIR%%/cmaps/copper.map
+%%DATADIR%%/cmaps/ds9b.map
+%%DATADIR%%/cmaps/ds9sls.map
 %%DATADIR%%/cmaps/drywet.map
 %%DATADIR%%/cmaps/gebco.map
 %%DATADIR%%/cmaps/globe.map
@@ -48,7 +51,9 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/help/onigfuns.hlp
 %%DATADIR%%/help/pcrefuns.hlp
 %%DATADIR%%/help/pngfuns.hlp
+%%DATADIR%%/help/print.hlp
 %%DATADIR%%/help/profile.hlp
+%%DATADIR%%/help/randfuns.hlp
 %%DATADIR%%/help/readascii.hlp
 %%DATADIR%%/help/require.hlp
 %%DATADIR%%/help/sockfuns.hlp
@@ -59,6 +64,7 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/png.sl
 %%DATADIR%%/print.sl
 %%DATADIR%%/profile.sl
+%%DATADIR%%/rand.sl
 %%DATADIR%%/readascii.sl
 %%DATADIR%%/require.sl
 %%DATADIR%%/rline/complete.sl
