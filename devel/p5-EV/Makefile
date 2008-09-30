@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	EV
-PORTVERSION=	3.43.1
+PORTVERSION=	3.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Perl interface to libev, a high performance full-featured event loop
