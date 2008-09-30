@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_Blowfish
-PORTVERSION=	1.1.0.r1
+PORTVERSION=	1.1.0.r2
 CATEGORIES=	security www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
