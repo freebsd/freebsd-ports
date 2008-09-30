@@ -1,4 +1,4 @@
-share/gmpc/plugins/lyricsplugin.so
-share/gmpc/plugins/lyricsplugin.la
-@dirrm share/gmpc/plugins
-@dirrm share/gmpc
+lib/gmpc/plugins/lyricsplugin.la
+lib/gmpc/plugins/lyricsplugin.so
+@dirrm lib/gmpc/plugins
+@dirrm lib/gmpc
