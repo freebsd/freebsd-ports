@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="724e6f93-8f2a-11dd-821f-001cc0377035">
+    <topic>mplayer -- multiple integer overflows</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The oCERT team reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2008-013.html">
+	  <p>The MPlayer multimedia player suffers from a vulnerability which
+	    could result in arbitrary code execution and at the least, in
+	    unexpected process termination. Three integer underflows located
+	    in the Real demuxer code can be used to exploit a heap overflow,
+	    a specific video file can be crafted in order to make the
+	    stream_read function reading or writing arbitrary amounts of
+	    memory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3827</cvename>
+      <url>http://www.ocert.org/advisories/ocert-2008-013.html</url>
+    </references>
+    <dates>
+      <discovery>2008-09-30</discovery>
+      <entry>2008-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb911e31-8ceb-11dd-bb29-000c6e274733">
     <topic>lighttpd -- multiple vulnerabilities</topic>
     <affects>
