@@ -213,6 +213,7 @@
     SUBDIR += gmixer
     SUBDIR += gmm
     SUBDIR += gmpc
+    SUBDIR += gmpc-alarm
     SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-extraplaylist
     SUBDIR += gmpc-favorites

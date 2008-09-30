@@ -1,0 +1,4 @@
+lib/gmpc/plugins/alarmplugin.la
+lib/gmpc/plugins/alarmplugin.so
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc
