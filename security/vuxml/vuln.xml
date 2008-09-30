@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4775c807-8f30-11dd-821f-001cc0377035">
+    <topic>mysql -- command line client input validation vulnerability</topic>
+    <affects>
+      <package>
+	<name>mysql-client</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Thomas Henlich reports:</p>
+	<blockquote cite="http://www.henlich.de/it-security/mysql-command-line-client-html-injection-vulnerability/">
+	  <p>The mysql command-line client does not quote HTML special
+	    characters like &lt; in its output. This allows an attacker who
+	    is able to write data into a table to hide or modify records in
+	    the output, and to inject potentially dangerous code, e. g.
+	    Javascript to perform cross-site scripting or cross-site request
+	    forgery attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31486</bid>
+      <url>http://www.henlich.de/it-security/mysql-command-line-client-html-injection-vulnerability/</url>
+    </references>
+    <dates>
+      <discovery>2007-04-17</discovery>
+      <entry>2008-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="724e6f93-8f2a-11dd-821f-001cc0377035">
     <topic>mplayer -- multiple integer overflows</topic>
     <affects>
