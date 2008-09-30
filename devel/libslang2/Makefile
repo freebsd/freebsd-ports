@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
-		ftp://ftp.ntua.gr/pub/lang/slang/slang/v${PORTVERSION:R}/ \
-		ftp://ftp.plig.org/pub/slang/v${PORTVERSION:R}/
+		ftp://ftp.ntua.gr/pub/lang/slang/slang/v${PORTVERSION:R}/
 DISTNAME=	slang-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
@@ -20,6 +19,7 @@ COMMENT=	Routines for rapid alpha-numeric terminal applications development
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION}
 
 CONFLICTS=	libslang-[0-9]* libslang-1.*.j[0-9]
 
