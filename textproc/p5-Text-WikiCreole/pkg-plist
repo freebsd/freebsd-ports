@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WikiCreole/.packlist
+%%SITE_PERL%%/Text/WikiCreole.pm
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/WikiCreole
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
