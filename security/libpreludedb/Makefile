@@ -4,30 +4,30 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.14.1
-PORTREVISION=	2
+PORTVERSION=	0.9.15.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
-		http://www.prelude-ids.org/download/releases/old/
+MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.14:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.17:${PORTSDIR}/security/libprelude
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-LDCONFIG_DIRS=		%%PREFIX%%/lib \
-			%%PREFIX%%/lib/libpreludedb/plugins/formats
-USE_LDCONFIG=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-OPTIONS=		PERL "Include Perl bindings" off \
-			PYTHON "Include Python bindings" off \
-			MYSQL "Use MySQL backend" on \
-			PGSQL "Use PostgreSQL backend" off \
-			SQLITE "Use SQLite backend" off
+CONFIGURE_ARGS=	--enable-gtk-doc=no
+USE_LDCONFIG=	yes
 
-MAN1=			preludedb-admin.1
+MAN1=		preludedb-admin.1
+PORTDOCS=	*
+
+OPTIONS=	PERL "Include Perl bindings" off \
+		PYTHON "Include Python bindings" off \
+		MYSQL "Use MySQL backend" on \
+		PGSQL "Use PostgreSQL backend" off \
+		SQLITE "Use SQLite backend" off
 
 .include <bsd.port.pre.mk>
 
@@ -42,41 +42,36 @@ PLIST_SUB+=		WITH_PERL="@comment "
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		2.3+
-# Need to manually include bsd.python.mk, because USE_PYTHON is defined
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
-PLIST_SUB+=		WITH_PYTHON=""
+PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if defined(WITH_MYSQL) || exists(${LOCALBASE}/bin/mysql_config)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 PLIST_SUB+=		WITH_MYSQL=""
-LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=		WITH_MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
+.if defined(WITH_PGSQL) || exists(${LOCALBASE}/bin/pg_config)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql
 PLIST_SUB+=		WITH_PGSQL=""
-LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 PLIST_SUB+=		WITH_PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if defined(WITH_SQLITE) || exists(${LOCALBASE}/lib/libsqlite3.so)
 USE_SQLITE=		yes
 CONFIGURE_ARGS+=	--with-sqlite3
 PLIST_SUB+=		WITH_SQLITE=""
 LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
-LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=		WITH_SQLITE="@comment "
@@ -84,11 +79,14 @@ PLIST_SUB+=		WITH_SQLITE="@comment "
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
+.endif
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
 .endif
+
+	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
