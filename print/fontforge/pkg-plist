@@ -199,6 +199,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/MacFeatName.png
 %%PORTDOCS%%%%DOCSDIR%%/MacMapping.png
 %%PORTDOCS%%%%DOCSDIR%%/MassRename.png
+%%PORTDOCS%%%%DOCSDIR%%/MenuWithMacIcons.png
+%%PORTDOCS%%%%DOCSDIR%%/MenuWithoutMacIcons.png
 %%PORTDOCS%%%%DOCSDIR%%/MetricsView-features.png
 %%PORTDOCS%%%%DOCSDIR%%/MetricsView.png
 %%PORTDOCS%%%%DOCSDIR%%/MultiPrint.png
