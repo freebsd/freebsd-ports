@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.0.16
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/\
 		http://tor.eff.org/dist/vidalia-bundles/
@@ -15,14 +14,10 @@ MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/\
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	A graphical Tor controller based on Qt 4.x
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
-
-HAS_CONFIGURE=	yes
-
-USE_GMAKE=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake rcc uic network xml linguist
+QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build network xml linguist
 
 HAVE_TOR!=	if pkg_info -I tor-\* >/dev/null 2>&1 ; then ${ECHO} YES; fi
 
@@ -58,14 +53,5 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor-devel
 .elif defined(WITH_TOR)
 RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
 .endif
-
-post-extract:
-	${REINPLACE_CMD} -e 's@/bin/lrelease@/bin/lrelease-qt4@' ${WRKSRC}/configure
-
-post-configure:
-.if defined(TOR_CONTROL_ADDR)
-	 ${REINPLACE_CMD} -e 's@127\.0\.0\.1@${TOR_CONTROL_ADDR}@' ${WRKSRC}/src/config/torsettings.cpp
-.endif
-	 ${REINPLACE_CMD} -E -e 's@(INCPATH +=)@\1 -I${LOCALBASE}/include@' -e 's@/share(/man/man1)@\1@' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
