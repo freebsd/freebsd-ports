@@ -7,6 +7,7 @@
 
 PORTNAME=	pgfouine
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1334/ \
 		http://pgfouine.projects.postgresql.org/releases/
@@ -15,7 +16,7 @@ MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
 
 NO_BUILD =	Yes
-USE_PHP=	gd
+USE_PHP=	gd pcre
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
