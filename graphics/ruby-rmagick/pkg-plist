@@ -14,7 +14,6 @@
 %%RUBY_SITELIBDIR%%/rvg/text.rb
 %%RUBY_SITELIBDIR%%/rvg/transformable.rb
 %%RUBY_SITELIBDIR%%/rvg/units.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/InitialCoords.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NewCoordSys.rb.html
@@ -64,6 +63,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/compose_mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite_layers.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite_tiled.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/comtasks.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/constants.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/contrast.rb.html
@@ -114,11 +114,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/info.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/level.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/level_colors.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/line.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/line01.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/magick.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/map.rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/map_f.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/matte_fill_to_border.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/matte_floodfill.rb.html
@@ -158,6 +157,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rect02.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rectangle.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/reduce_noise.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/remap.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/remap_images.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/resize_to_fill.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/resize_to_fit.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/roll.rb.html
