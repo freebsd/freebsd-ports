@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jgraph
-PORTVERSION=	5.12.0.4
+PORTVERSION=	5.12.1.0
 CATEGORIES=	java graphics
 MASTER_SITES=	SF \
 		http://www.jgraph.com/pub/
