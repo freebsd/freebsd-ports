@@ -16,4 +16,4 @@ The S-Lang library includes the following:
 	- An embedded stack-based language interpreter with a C-like syntax.
 	- A malloc debugging package
 
-WWW: http://www.jedsoft.org/slang/
+WWW:	http://www.s-lang.org/
