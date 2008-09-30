@@ -4195,8 +4195,10 @@ gnome-icons                     ports/x11-themes/gnome-icons
 gnome-icons-aqua-fusion         ports/x11-themes/gnome-icons-aqua-fusion
 gnome-icons-cool-gorilla        ports/x11-themes/gnome-icons-cool-gorilla
 gnome-icons-crystal             ports/x11-themes/gnome-icons-crystal
+gnome-icons-dropline-nou        ports/x11-themes/gnome-icons-dropline-nou
 gnome-icons-edge                ports/x11-themes/gnome-icons-edge
 gnome-icons-gentoo-test         ports/x11-themes/gnome-icons-gentoo-test
+gnome-icons-gion                ports/x11-themes/gnome-icons-gion
 gnome-icons-iris                ports/x11-themes/gnome-icons-iris
 gnome-icons-lila                ports/x11-themes/gnome-icons-lila
 gnome-icons-noia-full           ports/x11-themes/gnome-icons-noia-full
@@ -9919,8 +9921,10 @@ p5-Carp-Clan                    ports/devel/p5-Carp-Clan
 p5-Carp-Datum                   ports/devel/p5-Carp-Datum
 p5-Catalyst-Action-REST         ports/www/p5-Catalyst-Action-REST
 p5-Catalyst-Action-RenderView   ports/www/p5-Catalyst-Action-RenderView
+p5-Catalyst-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
 p5-Catalyst-Authentication-Store-LDAP  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-Catalyst-Component-ACCEPT_CONTEXT  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
+p5-Catalyst-Component-InstancePerContext  ports/www/p5-Catalyst-Component-InstancePerContext
 p5-Catalyst-Controller-BindLex  ports/www/p5-Catalyst-Controller-BindLex
 p5-Catalyst-Controller-FormBuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-Catalyst-Controller-HTML-FormFu  ports/www/p5-Catalyst-Controller-HTML-FormFu
@@ -9945,6 +9949,7 @@ p5-Catalyst-Model-LDAP          ports/www/p5-Catalyst-Model-LDAP
 p5-Catalyst-Model-Oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-Catalyst-Model-XML-Feed      ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian        ports/www/p5-Catalyst-Model-Xapian
+p5-Catalyst-Plugin-AtomServer   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-Catalyst-Plugin-Authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-OpenID  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
@@ -9970,6 +9975,7 @@ p5-Catalyst-Plugin-FormValidator  ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-FormValidator-Simple  ports/www/p5-Catalyst-Plugin-FormValidator-Simple
 p5-Catalyst-Plugin-HTML-Widget  ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-Catalyst-Plugin-I18N         ports/www/p5-Catalyst-Plugin-I18N
+p5-Catalyst-Plugin-Log-Dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
 p5-Catalyst-Plugin-LogWarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
 p5-Catalyst-Plugin-PageCache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Params-Nested  ports/www/p5-Catalyst-Plugin-Params-Nested
@@ -9989,6 +9995,7 @@ p5-Catalyst-Plugin-Session-Store-File  ports/www/p5-Catalyst-Plugin-Session-Stor
 p5-Catalyst-Plugin-Session-Store-Memcached  ports/www/p5-Catalyst-Plugin-Session-Store-Memcached
 p5-Catalyst-Plugin-Setenv       ports/www/p5-Catalyst-Plugin-Setenv
 p5-Catalyst-Plugin-Singleton    ports/www/p5-Catalyst-Plugin-Singleton
+p5-Catalyst-Plugin-SmartURI     ports/www/p5-Catalyst-Plugin-SmartURI
 p5-Catalyst-Plugin-StackTrace   ports/www/p5-Catalyst-Plugin-StackTrace
 p5-Catalyst-Plugin-Static       ports/www/p5-Catalyst-Plugin-Static
 p5-Catalyst-Plugin-Static-Simple  ports/www/p5-Catalyst-Plugin-Static-Simple
@@ -10858,6 +10865,7 @@ p5-HTML-EscapeEvil              ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
+p5-HTML-FormFu-Model-DBIC       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-HTML-Format                  ports/textproc/p5-HTML-Format
 p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
@@ -12429,6 +12437,7 @@ p5-URI-FromHash                 ports/net/p5-URI-FromHash
 p5-URI-OpenURL                  ports/net/p5-URI-OpenURL
 p5-URI-ParseSearchString        ports/www/p5-URI-ParseSearchString
 p5-URI-Sequin                   ports/www/p5-URI-Sequin
+p5-URI-SmartURI                 ports/net/p5-URI-SmartURI
 p5-URI-Template                 ports/net/p5-URI-Template
 p5-URI-Title                    ports/www/p5-URI-Title
 p5-URI-ToDisk                   ports/www/p5-URI-ToDisk
@@ -12979,8 +12988,10 @@ p5-carp-clan                    ports/devel/p5-Carp-Clan
 p5-carp-datum                   ports/devel/p5-Carp-Datum
 p5-catalyst-action-renderview   ports/www/p5-Catalyst-Action-RenderView
 p5-catalyst-action-rest         ports/www/p5-Catalyst-Action-REST
+p5-catalyst-authentication-store-dbix-class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
 p5-catalyst-authentication-store-ldap  ports/www/p5-Catalyst-Authentication-Store-LDAP
 p5-catalyst-component-accept_context  ports/www/p5-Catalyst-Component-ACCEPT_CONTEXT
+p5-catalyst-component-instancepercontext  ports/www/p5-Catalyst-Component-InstancePerContext
 p5-catalyst-controller-bindlex  ports/www/p5-Catalyst-Controller-BindLex
 p5-catalyst-controller-formbuilder  ports/www/p5-Catalyst-Controller-FormBuilder
 p5-catalyst-controller-html-formfu  ports/www/p5-Catalyst-Controller-HTML-FormFu
@@ -13005,6 +13016,7 @@ p5-catalyst-model-ldap          ports/www/p5-Catalyst-Model-LDAP
 p5-catalyst-model-oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-catalyst-model-xapian        ports/www/p5-Catalyst-Model-Xapian
 p5-catalyst-model-xml-feed      ports/www/p5-Catalyst-Model-XML-Feed
+p5-catalyst-plugin-atomserver   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-catalyst-plugin-authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-catalyst-plugin-authentication-cdbi  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-catalyst-plugin-authentication-openid  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
@@ -13030,6 +13042,7 @@ p5-catalyst-plugin-formvalidator  ports/www/p5-Catalyst-Plugin-FormValidator
 p5-catalyst-plugin-formvalidator-simple  ports/www/p5-Catalyst-Plugin-FormValidator-Simple
 p5-catalyst-plugin-html-widget  ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-catalyst-plugin-i18n         ports/www/p5-Catalyst-Plugin-I18N
+p5-catalyst-plugin-log-dispatch  ports/www/p5-Catalyst-Plugin-Log-Dispatch
 p5-catalyst-plugin-logwarnings  ports/www/p5-Catalyst-Plugin-LogWarnings
 p5-catalyst-plugin-pagecache    ports/www/p5-Catalyst-Plugin-PageCache
 p5-catalyst-plugin-params-nested  ports/www/p5-Catalyst-Plugin-Params-Nested
@@ -13049,6 +13062,7 @@ p5-catalyst-plugin-session-store-file  ports/www/p5-Catalyst-Plugin-Session-Stor
 p5-catalyst-plugin-session-store-memcached  ports/www/p5-Catalyst-Plugin-Session-Store-Memcached
 p5-catalyst-plugin-setenv       ports/www/p5-Catalyst-Plugin-Setenv
 p5-catalyst-plugin-singleton    ports/www/p5-Catalyst-Plugin-Singleton
+p5-catalyst-plugin-smarturi     ports/www/p5-Catalyst-Plugin-SmartURI
 p5-catalyst-plugin-stacktrace   ports/www/p5-Catalyst-Plugin-StackTrace
 p5-catalyst-plugin-static       ports/www/p5-Catalyst-Plugin-Static
 p5-catalyst-plugin-static-simple  ports/www/p5-Catalyst-Plugin-Static-Simple
@@ -14013,6 +14027,7 @@ p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
 p5-html-format                  ports/textproc/p5-HTML-Format
 p5-html-formattext-withlinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-html-formfu                  ports/www/p5-HTML-FormFu
+p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
@@ -15630,6 +15645,7 @@ p5-uri-imaps                    ports/mail/p5-URI-imaps
 p5-uri-openurl                  ports/net/p5-URI-OpenURL
 p5-uri-parsesearchstring        ports/www/p5-URI-ParseSearchString
 p5-uri-sequin                   ports/www/p5-URI-Sequin
+p5-uri-smarturi                 ports/net/p5-URI-SmartURI
 p5-uri-template                 ports/net/p5-URI-Template
 p5-uri-title                    ports/www/p5-URI-Title
 p5-uri-todisk                   ports/www/p5-URI-ToDisk
@@ -21085,6 +21101,7 @@ unicornscan                     ports/security/unicornscan
 unieject                        ports/sysutils/unieject
 unison                          ports/net/unison
 unison-devel                    ports/net/unison-devel
+unison-nox11                    ports/net/unison-nox11
 uniutils                        ports/sysutils/uniutils
 unix2dos                        ports/converters/unix2dos
 unix2tcp                        ports/net/unix2tcp
