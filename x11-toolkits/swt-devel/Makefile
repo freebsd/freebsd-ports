@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	swt-devel
-DISTVERSION=	3.4
+DISTVERSION=	3.5M1
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-3.4-200806172000
+MASTER_SITE_SUBDIR=	S-${DISTVERSION}-200808071402
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@FreeBSD.org
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-${ARCH}-os.c
 
-SWT_VERSION=	3448
+SWT_VERSION=	3504
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -63,7 +63,7 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if defined(WITH_BROWSER)
-USE_GECKO=	mozilla firefox seamonkey
+USE_GECKO=	firefox seamonkey mozilla
 
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
