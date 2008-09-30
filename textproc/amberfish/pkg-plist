@@ -1,0 +1,17 @@
+bin/af
+%%PORTDOCS%%%%DOCSDIR%%/Fields-and-XML.html
+%%PORTDOCS%%%%DOCSDIR%%/Fields.html
+%%PORTDOCS%%%%DOCSDIR%%/Indexing.html
+%%PORTDOCS%%%%DOCSDIR%%/Introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/Listing-database-information.html
+%%PORTDOCS%%%%DOCSDIR%%/More-about-XML.html
+%%PORTDOCS%%%%DOCSDIR%%/Multiple-databases.html
+%%PORTDOCS%%%%DOCSDIR%%/Multiple-documents-in-a-file.html
+%%PORTDOCS%%%%DOCSDIR%%/Phrases.html
+%%PORTDOCS%%%%DOCSDIR%%/Relevance-ranking.html
+%%PORTDOCS%%%%DOCSDIR%%/Right-truncation.html
+%%PORTDOCS%%%%DOCSDIR%%/Searching.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/amberfish.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

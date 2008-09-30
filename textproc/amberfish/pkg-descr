@@ -1,0 +1,21 @@
+Amberfish is general purpose text retrieval software, developed at Etymon
+by Nassib Nassar and distributed as open source software under the terms
+of version 2 of the GNU General Public License (GPL). Its distinguishing
+features are indexing/search of semi-structured text (i.e. both free tex
+and multiply nested fields), built-in support for XML documents using the
+Xerces library, structured queries allowing generalized field/tag paths,
+hierarchical result sets (XML only), automatic searching across multiple
+databases (allowing modular indexing), TREC format results, efficient
+indexing, and relatively low memory requirements during indexing (and the
+ability to index documents larger than available memory). Z39.50 support
+is available. Other features include Boolean queries, right truncation,
+phrase searching, relevance ranking, support for multiple documents per
+file, incremental indexing, and easy integration with other UNIX tools,
+The architecture is also designed to permit proximity queries; however,
+they are not fully implemented at present.
+
+WWW: http://www.etymon.com/tr.html
+
+This port also includes the Porter stemming algorithm for suffix
+stripping, available at:
+     http://www.tartarus.org/~martin/PorterStemmer
