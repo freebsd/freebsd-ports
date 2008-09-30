@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A complete replacement to the CSV standard library
 
 USE_RUBY=	yes
