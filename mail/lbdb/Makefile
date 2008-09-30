@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lbdb
-PORTVERSION=	0.35.1
+PORTVERSION=	0.36
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,8 @@ RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
+			--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
 USE_GMAKE=	YES
 USE_PERL5=	yes
 
@@ -43,8 +44,8 @@ WITH_ABOOK=	yes
 .endif
 
 .if defined(WITH_GPG)
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 PLIST_SUB+=	GPG=""
 .else
 PLIST_SUB+=	GPG="@comment "
