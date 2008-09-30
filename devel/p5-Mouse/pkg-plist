@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Mouse/Meta/Role.pm
 %%SITE_PERL%%/Mouse/Object.pm
 %%SITE_PERL%%/Mouse/Role.pm
+%%SITE_PERL%%/Mouse/Tiny.pm
 %%SITE_PERL%%/Mouse/TypeRegistry.pm
 %%SITE_PERL%%/Mouse/Util.pm
 %%SITE_PERL%%/Squirrel.pm
