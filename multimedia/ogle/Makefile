@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
 USE_LDCONFIG=	yes
 
-DEFAULT_DVD_DEVICE?=	/dev/acd0c
+DEFAULT_DVD_DEVICE?=	/dev/acd0
 
 MAN1=	ogle.1
 MAN5=	oglerc.5
