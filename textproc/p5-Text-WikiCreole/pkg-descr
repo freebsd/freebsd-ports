@@ -1,0 +1,10 @@
+Text::WikiCreole implements the Wiki Creole markup language, version
+1.0, as described at http://www.wikicreole.org.  It reads Creole 1.0
+markup and returns XHTML.
+
+In addition to the official Creole 1.0 markup elements, it also supports
+several extensions, such as plugins, superscript, subscript, underline,
+definition lists, indented paragraphs, plugins, etc.
+
+
+WWW: http://search.cpan.org/dist/Text-WikiCreole/
