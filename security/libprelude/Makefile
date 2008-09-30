@@ -5,6 +5,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.9.20.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
@@ -20,7 +21,8 @@ OPTIONS=	PERL "Include Perl bindings" off \
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-CONFIGURE_ARGS=		--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var \
+			--enable-gtk-doc=no
 
 MAN1=		prelude-admin.1
 PORTDOCS=	*
