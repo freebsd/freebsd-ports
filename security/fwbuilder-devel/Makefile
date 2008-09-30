@@ -14,11 +14,21 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
+CONFLICTS=	fwbuilder-2.*
 LIB_DEPENDS=	fwbuilder.8:${PORTSDIR}/security/libfwbuilder
 
 PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
 USE_QT_VER=	4
+QT_COMPONENTS=	corelib \
+		gui \
+		iconengines \
+		inputmethods \
+		linguist \
+		moc_build \
+		qmake_build \
+		svg \
+		uic_build \
+		xml
 
 QTDIR?=		${QT_PREFIX}
 
