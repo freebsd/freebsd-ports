@@ -7,6 +7,7 @@
 
 PORTNAME=	CPANPLUS
 PORTVERSION=	0.8400
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,25 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
-BUILD_DEPENDS=	p5-File-Fetch>=0.07:${PORTSDIR}/ftp/p5-File-Fetch \
-		p5-IPC-Cmd>=0.24:${PORTSDIR}/devel/p5-IPC-Cmd \
-		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		p5-Log-Message>0:${PORTSDIR}/devel/p5-Log-Message \
-		p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
-		p5-Module-Load-Conditional>=0.07:${PORTSDIR}/devel/p5-Module-Load-Conditional \
-		p5-Params-Check>=0.22:${PORTSDIR}/devel/p5-Params-Check \
-		p5-Package-Constants>0:${PORTSDIR}/devel/p5-Package-Constants \
-		p5-Term-UI>=0.05:${PORTSDIR}/devel/p5-Term-UI \
-		p5-Test-Harness>=2.62:${PORTSDIR}/devel/p5-Test-Harness \
-		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Archive-Extract>=0.07:${PORTSDIR}/archivers/p5-Archive-Extract \
-		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
-		p5-Object-Accessor>=0.03:${PORTSDIR}/devel/p5-Object-Accessor \
-		p5-Module-CoreList>=1.97:${PORTSDIR}/devel/p5-Module-CoreList \
-		p5-Module-Pluggable>=2.4:${PORTSDIR}/devel/p5-Module-Pluggable \
-		p5-Module-Loaded>0:${PORTSDIR}/devel/p5-Module-Loaded
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
 
 USE_PERL5=	5.6.1+
 PERL_CONFIGURE=	yes
@@ -42,18 +25,6 @@ INSTALL_TARGET=	pure_install
 
 OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
 		YAML "Check reports from cpan-testers" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_TEST_REPORTER)
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
-RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
-.endif
-
-.if defined(WITH_YAML)
-BUILD_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-.endif
 
 MAN1=	cpanp.1 cpan2dist.1
 MAN3=	CPANPLUS.3 \
@@ -90,12 +61,46 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Shell::Default::Plugins::Source.3 \
 	CPANPLUS::inc.3
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*\.orig" -delete
+.include <bsd.port.pre.mk>
 
-post-configure:
-	@${REINPLACE_CMD} -Ee \
-		"s|('base' => )'.*(/.cpanplus)',|\1\"\$$ENV{'HOME'}\2\",|" \
-		${WRKSRC}/lib/CPANPLUS/Config.pm
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=0.0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Storable>=0.0:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.if ${PERL_LEVEL} < 500808
+RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.if ${PERL_LEVEL} < 500904
+RUN_DEPENDS+=	p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
+		p5-Module-Loaded>=0.01:${PORTSDIR}/devel/p5-Module-Loaded \
+		p5-Package-Constants>=0.01:${PORTSDIR}/devel/p5-Package-Constants
+.endif
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Archive-Extract>=0.16:${PORTSDIR}/archivers/p5-Archive-Extract \
+		p5-IPC-Cmd>=0.36:${PORTSDIR}/devel/p5-IPC-Cmd \
+		p5-Locale-Maketext-Simple>=0.01:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Log-Message>=0.01:${PORTSDIR}/devel/p5-Log-Message \
+		p5-Module-CoreList>=2.09:${PORTSDIR}/devel/p5-Module-CoreList \
+		p5-Module-Pluggable>=2.4:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Object-Accessor>=0.32:${PORTSDIR}/devel/p5-Object-Accessor \
+		p5-Params-Check>=0.22:${PORTSDIR}/devel/p5-Params-Check
+.endif
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-File-Fetch>=0.13_04:${PORTSDIR}/ftp/p5-File-Fetch \
+		p5-Module-Load-Conditional>=0.18:${PORTSDIR}/devel/p5-Module-Load-Conditional \
+		p5-Term-UI>=0.18:${PORTSDIR}/devel/p5-Term-UI
+.endif
+
+.if defined(WITH_TEST_REPORTER)
+RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
+.endif
+
+.if defined(WITH_YAML)
+RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+.endif
 
 .include <bsd.port.post.mk>
