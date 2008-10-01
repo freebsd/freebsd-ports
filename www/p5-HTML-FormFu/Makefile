@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.03004
+PORTVERSION=	0.03005
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -61,7 +61,6 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Element::Radio.3 \
 	HTML::FormFu::Element::SimpleTable.3 \
 	HTML::FormFu::Element::Block.3 \
-	HTML::FormFu::Element::_DateSelect.3 \
 	HTML::FormFu::Element::Button.3 \
 	HTML::FormFu.3 \
 	HTML::FormFu::Validator::Callback.3 \
@@ -147,6 +146,10 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Filter::CompoundSprintf.3 \
 	HTML::FormFu::Filter::_Compound.3 \
 	HTML::FormFu::Element::reCAPTCHA.3 \
-	HTML::FormFu::Constraint::reCAPTCHA.3
+	HTML::FormFu::Constraint::reCAPTCHA.3 \
+	HTML::FormFu::Element::_MultiElement.3 \
+	HTML::FormFu::Element::_MultiText.3 \
+	HTML::FormFu::Element::_MultiSelect.3 \
+	HTML::FormFu::Element::ComboBox.3
 
 .include <bsd.port.mk>
