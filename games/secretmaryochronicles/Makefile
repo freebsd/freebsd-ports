@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	smclone
@@ -25,11 +24,16 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GL=		gl glu
+USE_GETTEXT=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
 DATADIR=	${PREFIX}/share/smc
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$|$$(INTLLIBS)|' \
+		${WRKSRC}/src/Makefile.in
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	controls.html style.css
