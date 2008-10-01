@@ -82,6 +82,7 @@
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Role
 @dirrmtry %%SITE_PERL%%/Moose/Meta/Method
 @dirrmtry %%SITE_PERL%%/Moose/Meta
+@dirrmtry %%SITE_PERL%%/Moose/Error
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook/Snack
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook/Roles
 @dirrmtry %%SITE_PERL%%/Moose/Cookbook/Meta
