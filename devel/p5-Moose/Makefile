@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -16,7 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.65:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.66:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
@@ -51,6 +51,9 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
 	Moose::Cookbook::WTF.3 \
+	Moose::Error::Confess.3 \
+	Moose::Error::Croak.3 \
+	Moose::Error::Default.3 \
 	Moose::Exporter.3 \
 	Moose::Intro.3 \
 	Moose::Meta::Attribute.3 \
@@ -60,6 +63,7 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Accessor.3 \
 	Moose::Meta::Method::Augmented.3 \
 	Moose::Meta::Method::Constructor.3 \
+	Moose::Meta::Method::Delegation.3 \
 	Moose::Meta::Method::Destructor.3 \
 	Moose::Meta::Method::Overriden.3 \
 	Moose::Meta::Role.3 \
@@ -92,7 +96,10 @@ MAN3=	Moose.3 \
 	Test::Moose.3 \
 	oose.3
 
+post-install:
+	@${CAT} pkg-message
+
 post-extract:
-	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i -ne 'print unless m,build_requires, or m,^check_conflicts,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

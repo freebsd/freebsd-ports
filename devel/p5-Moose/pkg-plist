@@ -25,6 +25,9 @@
 %%SITE_PERL%%/Moose/Cookbook/Snack/Types.pod
 %%SITE_PERL%%/Moose/Cookbook/Style.pod
 %%SITE_PERL%%/Moose/Cookbook/WTF.pod
+%%SITE_PERL%%/Moose/Error/Confess.pm
+%%SITE_PERL%%/Moose/Error/Croak.pm
+%%SITE_PERL%%/Moose/Error/Default.pm
 %%SITE_PERL%%/Moose/Exporter.pm
 %%SITE_PERL%%/Moose/Intro.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
@@ -35,6 +38,7 @@
 %%SITE_PERL%%/Moose/Meta/Method/Augmented.pm
 %%SITE_PERL%%/Moose/Meta/Method/Constructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Destructor.pm
+%%SITE_PERL%%/Moose/Meta/Method/Delegation.pm
 %%SITE_PERL%%/Moose/Meta/Method/Overriden.pm
 %%SITE_PERL%%/Moose/Meta/Role.pm
 %%SITE_PERL%%/Moose/Meta/Role/Application.pm
