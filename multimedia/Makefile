@@ -124,6 +124,7 @@
     SUBDIR += libquicktime
     SUBDIR += libspiff
     SUBDIR += libtheora
+    SUBDIR += libtuner
     SUBDIR += libxine
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
