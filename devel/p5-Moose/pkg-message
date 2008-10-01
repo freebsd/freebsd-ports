@@ -1,0 +1,10 @@
+This release has an incompatible change regarding how roles add methods to a class!
+
+Note that the release is incompatible with older versions of these modules:
+
+        - MooseX::Singleton        <= 0.11
+        - MooseX::Params::Validate <= 0.05
+        - Fey::ORM                 <= 0.10
+
+They will need to be updated.
+
