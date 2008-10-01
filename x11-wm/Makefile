@@ -103,6 +103,7 @@
     SUBDIR += sapphire
     SUBDIR += sawfish
     SUBDIR += selectwm
+    SUBDIR += simple-ccsm
     SUBDIR += skippy
     SUBDIR += skippy-xd
     SUBDIR += stumpwm
