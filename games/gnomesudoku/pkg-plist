@@ -1,7 +1,4 @@
 bin/gnome-sudoku
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/SuperEntry.py
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/SuperEntry.pyc
-%%PYTHON_SITELIBDIR%%/gnome_sudoku/SuperEntry.pyo
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyo
@@ -60,6 +57,7 @@ bin/gnome-sudoku
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyo
 share/applications/gnome-sudoku.desktop
+share/gnome-sudoku/FAQ
 share/gnome-sudoku/Footprints.svg
 share/gnome-sudoku/Winner.png
 share/gnome-sudoku/Winner.svg
@@ -72,23 +70,6 @@ share/gnome-sudoku/starter_puzzles
 share/gnome-sudoku/sudoku.png
 share/gnome-sudoku/sudoku.svg
 share/gnome-sudoku/tracker.glade
-share/locale/af/LC_MESSAGES/gnome-sudoku.mo
-share/locale/ar/LC_MESSAGES/gnome-sudoku.mo
-share/locale/bn/LC_MESSAGES/gnome-sudoku.mo
-share/locale/da/LC_MESSAGES/gnome-sudoku.mo
-share/locale/de/LC_MESSAGES/gnome-sudoku.mo
-share/locale/en_GB/LC_MESSAGES/gnome-sudoku.mo
-share/locale/eo/LC_MESSAGES/gnome-sudoku.mo
-share/locale/es/LC_MESSAGES/gnome-sudoku.mo
-share/locale/fr/LC_MESSAGES/gnome-sudoku.mo
-share/locale/hu/LC_MESSAGES/gnome-sudoku.mo
-share/locale/ku/LC_MESSAGES/gnome-sudoku.mo
-share/locale/nl/LC_MESSAGES/gnome-sudoku.mo
-share/locale/pl/LC_MESSAGES/gnome-sudoku.mo
-share/locale/ro/LC_MESSAGES/gnome-sudoku.mo
-share/locale/sv/LC_MESSAGES/gnome-sudoku.mo
-share/locale/tr/LC_MESSAGES/gnome-sudoku.mo
-share/locale/uk/LC_MESSAGES/gnome-sudoku.mo
 share/pixmaps/sudoku.png
 @dirrm share/gnome-sudoku
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
