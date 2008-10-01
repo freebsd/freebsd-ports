@@ -38,8 +38,11 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Radio.pm
 %%SITE_PERL%%/HTML/FormFu/Element/SimpleTable.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Block.pm
+%%SITE_PERL%%/HTML/FormFu/Element/_MultiElement.pm
+%%SITE_PERL%%/HTML/FormFu/Element/_MultiText.pm
+%%SITE_PERL%%/HTML/FormFu/Element/_MultiSelect.pm
+%%SITE_PERL%%/HTML/FormFu/Element/ComboBox.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Button.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_DateSelect.pm
 %%SITE_PERL%%/HTML/FormFu/Element/_Input.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Multi.pm
 %%SITE_PERL%%/HTML/FormFu/Element/reCAPTCHA.pm
