@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	emerald
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.7.8
+#PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 

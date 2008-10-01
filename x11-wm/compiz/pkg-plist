@@ -3,9 +3,12 @@ bin/compiz
 %%GTK%%bin/gtk-window-decorator
 %%KDE%%bin/kde-window-decorator
 include/compiz/compiz.h
-include/compiz/cube.h
+include/compiz/compiz-common.h
+include/compiz/compiz-core.h
+include/compiz/compiz-cube.h
+include/compiz/compiz-plugin.h
+include/compiz/compiz-scale.h
 include/compiz/decoration.h
-include/compiz/scale.h
 lib/compiz/libannotate.a
 lib/compiz/libannotate.la
 lib/compiz/libannotate.so
@@ -45,12 +48,12 @@ lib/compiz/libminimize.so
 lib/compiz/libmove.a
 lib/compiz/libmove.la
 lib/compiz/libmove.so
+lib/compiz/libobs.a
+lib/compiz/libobs.la
+lib/compiz/libobs.so
 lib/compiz/libplace.a
 lib/compiz/libplace.la
 lib/compiz/libplace.so
-lib/compiz/libplane.a
-lib/compiz/libplane.la
-lib/compiz/libplane.so
 lib/compiz/libpng.a
 lib/compiz/libpng.la
 lib/compiz/libpng.so
@@ -111,10 +114,11 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/icon.png
 %%DATADIR%%/ini.xml
 %%DATADIR%%/inotify.xml
+%%DATADIR%%/kconfig.xml
 %%DATADIR%%/minimize.xml
 %%DATADIR%%/move.xml
+%%DATADIR%%/obs.xml
 %%DATADIR%%/place.xml
-%%DATADIR%%/plane.xml
 %%DATADIR%%/png.xml
 %%DATADIR%%/regex.xml
 %%DATADIR%%/resize.xml
@@ -141,6 +145,7 @@ share/locale/af/LC_MESSAGES/compiz.mo
 share/locale/ar/LC_MESSAGES/compiz.mo
 share/locale/bg/LC_MESSAGES/compiz.mo
 share/locale/bn/LC_MESSAGES/compiz.mo
+share/locale/bn_IN/LC_MESSAGES/compiz.mo
 share/locale/bs/LC_MESSAGES/compiz.mo
 share/locale/ca/LC_MESSAGES/compiz.mo
 share/locale/cs/LC_MESSAGES/compiz.mo
@@ -152,6 +157,7 @@ share/locale/en_GB/LC_MESSAGES/compiz.mo
 share/locale/en_US/LC_MESSAGES/compiz.mo
 share/locale/es/LC_MESSAGES/compiz.mo
 share/locale/et/LC_MESSAGES/compiz.mo
+share/locale/eu/LC_MESSAGES/compiz.mo
 share/locale/fi/LC_MESSAGES/compiz.mo
 share/locale/fr/LC_MESSAGES/compiz.mo
 share/locale/gl/LC_MESSAGES/compiz.mo
@@ -172,6 +178,7 @@ share/locale/mk/LC_MESSAGES/compiz.mo
 share/locale/mr/LC_MESSAGES/compiz.mo
 share/locale/nb/LC_MESSAGES/compiz.mo
 share/locale/nl/LC_MESSAGES/compiz.mo
+share/locale/or/LC_MESSAGES/compiz.mo
 share/locale/pa/LC_MESSAGES/compiz.mo
 share/locale/pl/LC_MESSAGES/compiz.mo
 share/locale/pt/LC_MESSAGES/compiz.mo

@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-main
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.8
 #PORTREVISION=	1
-PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -36,11 +35,15 @@ GCONF_SCHEMAS=	compiz-animation.schemas \
 		compiz-expo.schemas \
 		compiz-ezoom.schemas \
 		compiz-imgjpeg.schemas \
+		compiz-mag.schemas \
+		compiz-mousepoll.schemas \
 		compiz-neg.schemas \
 		compiz-opacify.schemas \
 		compiz-put.schemas \
 		compiz-resizeinfo.schemas \
 		compiz-ring.schemas \
+		compiz-staticswitcher.schemas \
+		compiz-session.schemas \
 		compiz-snap.schemas \
 		compiz-text.schemas \
 		compiz-thumbnail.schemas \
