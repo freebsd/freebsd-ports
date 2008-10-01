@@ -1,22 +1,22 @@
---- src/main.c.orig	2007-08-12 15:59:57.000000000 -0400
-+++ src/main.c	2007-09-05 11:38:34.000000000 -0400
-@@ -550,7 +550,8 @@
+--- src/main.c.orig	2008-04-03 12:04:50.000000000 -0400
++++ src/main.c	2008-05-29 17:02:49.000000000 -0400
+@@ -549,7 +549,8 @@
  	asprintf (&dlname, "%s/.compizconfig/backends/lib%s.so", 
  		  home, backend);
  	dlerror ();
--	dlhand = dlopen (dlname, RTLD_NOW | RTLD_NODELETE | RTLD_GLOBAL);
-+	dlhand = dlopen (dlname, RTLD_NOW | RTLD_GLOBAL);
-+	dlopen (dlname, RTLD_NOW | RTLD_GLOBAL);
+-	dlhand = dlopen (dlname, RTLD_NOW | RTLD_NODELETE | RTLD_LOCAL);
++	dlhand = dlopen (dlname, RTLD_NOW | RTLD_LOCAL);
++	dlopen (dlname, RTLD_NOW | RTLD_LOCAL);
  	err = dlerror ();
      }
  
-@@ -559,7 +560,8 @@
- 	free (dlname);
+@@ -560,7 +561,8 @@
+         }
  	asprintf (&dlname, "%s/compizconfig/backends/lib%s.so", 
  		  LIBDIR, backend);
--	dlhand = dlopen (dlname, RTLD_NOW | RTLD_NODELETE | RTLD_GLOBAL);
-+	dlhand = dlopen (dlname, RTLD_NOW | RTLD_GLOBAL);
-+	dlopen (dlname, RTLD_NOW | RTLD_GLOBAL);
+-	dlhand = dlopen (dlname, RTLD_NOW | RTLD_NODELETE | RTLD_LOCAL);
++	dlhand = dlopen (dlname, RTLD_NOW | RTLD_LOCAL);
++	dlopen (dlname, RTLD_NOW | RTLD_LOCAL);
  	err = dlerror ();
      }
  

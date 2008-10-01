@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-unsupported
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.8
 #PORTREVISION=	1
-PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -30,7 +29,8 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
-GCONF_SCHEMAS=	compiz-fakeargb.schemas \
+GCONF_SCHEMAS=	compiz-atlantis.schemas \
+		compiz-fakeargb.schemas \
 		compiz-mswitch.schemas \
 		compiz-snow.schemas \
 		compiz-tile.schemas

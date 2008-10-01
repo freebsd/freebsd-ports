@@ -53,18 +53,13 @@ share/mime-info/emerald.mime
 %%DATADIR%%/theme/theme.ini
 share/locale/ca/LC_MESSAGES/emerald.mo
 share/locale/cs/LC_MESSAGES/emerald.mo
-share/locale/de_DE/LC_MESSAGES/emerald.mo
+share/locale/da/LC_MESSAGES/emerald.mo
 share/locale/en_GB/LC_MESSAGES/emerald.mo
 share/locale/es_AR/LC_MESSAGES/emerald.mo
-share/locale/gu_IN/LC_MESSAGES/emerald.mo
-share/locale/hu_HU/LC_MESSAGES/emerald.mo
+share/locale/he/LC_MESSAGES/emerald.mo
 share/locale/ja/LC_MESSAGES/emerald.mo
-share/locale/nb_NO/LC_MESSAGES/emerald.mo
 share/locale/nl/LC_MESSAGES/emerald.mo
 share/locale/pt_BR/LC_MESSAGES/emerald.mo
-share/locale/sv_FI/LC_MESSAGES/emerald.mo
-share/locale/sv_SE/LC_MESSAGES/emerald.mo
-share/locale/tr_TR/LC_MESSAGES/emerald.mo
 share/locale/zh_CN/LC_MESSAGES/emerald.mo
 share/locale/zh_HK/LC_MESSAGES/emerald.mo
 share/locale/zh_TW/LC_MESSAGES/emerald.mo
@@ -72,31 +67,35 @@ share/locale/es/LC_MESSAGES/emerald.mo
 share/locale/fr/LC_MESSAGES/emerald.mo
 share/locale/ko/LC_MESSAGES/emerald.mo
 share/locale/pt/LC_MESSAGES/emerald.mo
-share/locale/it_IT/LC_MESSAGES/emerald.mo
+share/locale/ar/LC_MESSAGES/emerald.mo
+share/locale/bn/LC_MESSAGES/emerald.mo
+share/locale/de/LC_MESSAGES/emerald.mo
+share/locale/el/LC_MESSAGES/emerald.mo
+share/locale/eu/LC_MESSAGES/emerald.mo
+share/locale/fa/LC_MESSAGES/emerald.mo
+share/locale/fi/LC_MESSAGES/emerald.mo
+share/locale/gl/LC_MESSAGES/emerald.mo
+share/locale/gu/LC_MESSAGES/emerald.mo
+share/locale/hi/LC_MESSAGES/emerald.mo
+share/locale/hu/LC_MESSAGES/emerald.mo
+share/locale/it/LC_MESSAGES/emerald.mo
+share/locale/nb/LC_MESSAGES/emerald.mo
+share/locale/or/LC_MESSAGES/emerald.mo
+share/locale/pa/LC_MESSAGES/emerald.mo
+share/locale/pl/LC_MESSAGES/emerald.mo
+share/locale/ru/LC_MESSAGES/emerald.mo
+share/locale/sk/LC_MESSAGES/emerald.mo
+share/locale/sv/LC_MESSAGES/emerald.mo
+share/locale/tr/LC_MESSAGES/emerald.mo
+share/locale/bn_IN/LC_MESSAGES/emerald.mo
 share/pixmaps/emerald-theme-manager-icon.png
 @dirrmtry share/mime-info
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/tr_TR/LC_MESSAGES
-@dirrmtry share/locale/tr_TR
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
-@dirrmtry share/locale/sv_FI/LC_MESSAGES
-@dirrmtry share/locale/sv_FI
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/ja_JP/LC_MESSAGES
 @dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/gu_IN/LC_MESSAGES
-@dirrmtry share/locale/gu_IN
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
 @dirrmtry share/locale/ca_ES/LC_MESSAGES
 @dirrmtry share/locale/ca_ES
 @dirrmtry %%DATADIR%%/theme

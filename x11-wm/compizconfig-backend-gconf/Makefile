@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	compizconfig-backend-gconf
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.7.8
+#PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 

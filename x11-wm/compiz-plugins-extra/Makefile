@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-extra
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.8
 #PORTREVISION=	1
-PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -31,22 +30,29 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
-GCONF_SCHEMAS=	compiz-addhelper.schemas \
+GCONF_SCHEMAS=	compiz-3d.schemas \
+		compiz-addhelper.schemas \
+		compiz-animationaddon.schemas \
 		compiz-bench.schemas \
+		compiz-bicubic.schemas \
 		compiz-crashhandler.schemas \
-		compiz-cubecaps.schemas \
-		compiz-cubereflex.schemas \
+		compiz-cubeaddon.schemas \
 		compiz-extrawm.schemas \
 		compiz-fadedesktop.schemas \
 		compiz-firepaint.schemas \
 		compiz-gears.schemas \
 		compiz-group.schemas \
+		compiz-loginout.schemas \
+		compiz-maximumize.schemas \
 		compiz-mblur.schemas \
+		compiz-notification.schemas \
 		compiz-reflex.schemas \
-		compiz-scalefilter.schemas \
+		compiz-shelf.schemas \
 		compiz-showdesktop.schemas \
+		compiz-showmouse.schemas \
 		compiz-splash.schemas \
 		compiz-trailfocus.schemas \
+		compiz-wallpaper.schemas \
 		compiz-widget.schemas
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
