@@ -24,7 +24,7 @@
 %%HORDIR%%/js/KeyNavList.js
 %%HORDIR%%/js/SpellChecker.js
 %%HORDIR%%/js/acl.js
-%%HORDIR%%/js/addressesBlocks.js
+%%HORDIR%%/js/autocomplete.js
 %%HORDIR%%/js/builder.js
 %%HORDIR%%/js/compose.js
 %%HORDIR%%/js/contacts.js
@@ -46,7 +46,7 @@
 %%HORDIR%%/js/src/KeyNavList.js
 %%HORDIR%%/js/src/SpellChecker.js
 %%HORDIR%%/js/src/acl.js
-%%HORDIR%%/js/src/addressesBlocks.js
+%%HORDIR%%/js/src/autocomplete.js
 %%HORDIR%%/js/src/builder.js
 %%HORDIR%%/js/src/compose.js
 %%HORDIR%%/js/src/contacts.js
@@ -110,6 +110,7 @@
 %%HORDIR%%/lib/MIME/Viewer/multipart.php
 %%HORDIR%%/lib/MIME/Viewer/notification.php
 %%HORDIR%%/lib/MIME/Viewer/partial.php
+%%HORDIR%%/lib/MIME/Viewer/pdf.php
 %%HORDIR%%/lib/MIME/Viewer/pgp.php
 %%HORDIR%%/lib/MIME/Viewer/pkcs7.php
 %%HORDIR%%/lib/MIME/Viewer/plain.php
@@ -155,7 +156,9 @@
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/tests/fixtures/maildirsize
 %%HORDIR%%/lib/tests/mime_viewer_html.phpt
+%%HORDIR%%/lib/tests/quota_maildir.phpt
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/.htaccess
 %%HORDIR%%/locale/ar_OM/LC_MESSAGES/imp.mo
@@ -177,6 +180,8 @@
 %%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/et_EE/LC_MESSAGES/imp.mo
 %%HORDIR%%/locale/et_EE/help.xml
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/imp.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fa_IR/LC_MESSAGES/imp.mo
 %%HORDIR%%/locale/fa_IR/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/imp.mo
@@ -243,6 +248,7 @@
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fa_IR.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
@@ -404,6 +410,7 @@
 %%HORDIR%%/themes/graphics/mime/image.png
 %%HORDIR%%/themes/graphics/mime/itip.png
 %%HORDIR%%/themes/graphics/mime/mail.png
+%%HORDIR%%/themes/graphics/mime/pdf.png
 %%HORDIR%%/themes/graphics/mime/text.png
 %%HORDIR%%/themes/graphics/mini-error.png
 %%HORDIR%%/themes/graphics/newmail.png
@@ -473,6 +480,7 @@
 %%HORDIR%%/themes/silver/graphics/mime/image.png
 %%HORDIR%%/themes/silver/graphics/mime/itip.png
 %%HORDIR%%/themes/silver/graphics/mime/mail.png
+%%HORDIR%%/themes/silver/graphics/mime/pdf.png
 %%HORDIR%%/themes/silver/graphics/mime/text.png
 %%HORDIR%%/themes/silver/graphics/mini-error.png
 %%HORDIR%%/themes/silver/graphics/newmail.png
@@ -534,6 +542,7 @@
 %%HORDIR%%/themes/tango-blue/graphics/mime/image.png
 %%HORDIR%%/themes/tango-blue/graphics/mime/itip.png
 %%HORDIR%%/themes/tango-blue/graphics/mime/mail.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/pdf.png
 %%HORDIR%%/themes/tango-blue/graphics/mime/text.png
 %%HORDIR%%/themes/tango-blue/graphics/mini-error.png
 %%HORDIR%%/themes/tango-blue/graphics/newmail.png
@@ -666,6 +675,8 @@
 @dirrm %%HORDIR%%/locale/fi_FI
 @dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/et_EE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
@@ -690,6 +701,7 @@
 @dirrm %%HORDIR%%/locale/ar_OM/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ar_OM
 @dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/lib/tests/fixtures
 @dirrm %%HORDIR%%/lib/tests
 @dirrm %%HORDIR%%/lib/UI
 @dirrm %%HORDIR%%/lib/SpellChecker
