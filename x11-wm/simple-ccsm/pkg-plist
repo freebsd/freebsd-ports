@@ -37,4 +37,5 @@ share/icons/hicolor/22x22/apps/simple-ccsm.png
 @dirrmtry share/simple-ccsm/profiles
 @dirrmtry share/simple-ccsm/images
 @dirrmtry share/simple-ccsm
+@dirrmtry share/applications
 
