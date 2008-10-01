@@ -40,6 +40,7 @@ bin/palomino
 %%DOCSDIR%%/scene.html
 %%DOCSDIR%%/terrain.html
 %%DOCSDIR%%/vocabulary.html
+%%DATADIR%%/data/fonts/arial.ttf
 %%DATADIR%%/data/joystick.conf
 %%DATADIR%%/data/models/README.txt
 %%DATADIR%%/data/models/a4/README.txt
@@ -465,6 +466,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/models/corsair
 @dirrm %%DATADIR%%/data/models/a4
 @dirrm %%DATADIR%%/data/models
+@dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/images
