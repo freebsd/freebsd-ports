@@ -75,7 +75,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>mplayer-gtk2</name>
 	<name>mplayer-gtk-esound</name>
 	<name>mplayer-gtk2-esound</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.99.11_7</lt></range>
       </package>
     </affects>
     <description>
@@ -99,6 +99,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-30</discovery>
       <entry>2008-10-01</entry>
+      <modified>2008-10-02</modified>
     </dates>
   </vuln>
 
