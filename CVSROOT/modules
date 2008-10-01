@@ -432,6 +432,7 @@ amavisd-milter                  ports/security/amavisd-milter
 amavisd-new                     ports/security/amavisd-new
 amaya                           ports/www/amaya
 amb-plugins                     ports/audio/amb-plugins
+amberfish                       ports/textproc/amberfish
 amiwm                           ports/x11-wm/amiwm
 amoebax                         ports/games/amoebax
 amp                             ports/audio/amp
@@ -4109,12 +4110,14 @@ gmm                             ports/audio/gmm
 gmm++                           ports/math/gmm++
 gmp-ecm                         ports/math/gmp-ecm
 gmpc                            ports/audio/gmpc
+gmpc-alarm                      ports/audio/gmpc-alarm
 gmpc-autoplaylist               ports/audio/gmpc-autoplaylist
 gmpc-extraplaylist              ports/audio/gmpc-extraplaylist
 gmpc-favorites                  ports/audio/gmpc-favorites
 gmpc-lastfm                     ports/audio/gmpc-lastfm
 gmpc-libnotify                  ports/audio/gmpc-libnotify
 gmpc-lyrics                     ports/audio/gmpc-lyrics
+gmpc-lyricwiki                  ports/audio/gmpc-lyricwiki
 gmpc-magnatune                  ports/audio/gmpc-magnatune
 gmpc-mdcover                    ports/audio/gmpc-mdcover
 gmpc-mserver                    ports/audio/gmpc-mserver
@@ -4200,6 +4203,7 @@ gnome-icons-edge                ports/x11-themes/gnome-icons-edge
 gnome-icons-gentoo-test         ports/x11-themes/gnome-icons-gentoo-test
 gnome-icons-gion                ports/x11-themes/gnome-icons-gion
 gnome-icons-iris                ports/x11-themes/gnome-icons-iris
+gnome-icons-jini                ports/x11-themes/gnome-icons-jini
 gnome-icons-lila                ports/x11-themes/gnome-icons-lila
 gnome-icons-noia-full           ports/x11-themes/gnome-icons-noia-full
 gnome-icons-noia-warm           ports/x11-themes/gnome-icons-noia-warm
@@ -9361,6 +9365,7 @@ oooqs                           ports/x11/oooqs
 oooqs2                          ports/x11/oooqs2
 oops                            ports/www/oops
 oorexx                          ports/lang/oorexx
+op                              ports/security/op
 opal                            ports/net/opal
 open                            ports/sysutils/open
 open-beagle                     ports/devel/open-beagle
@@ -12335,6 +12340,7 @@ p5-Text-Trim                    ports/textproc/p5-Text-Trim
 p5-Text-Unaccent                ports/textproc/p5-Text-Unaccent
 p5-Text-Unidecode               ports/converters/p5-Text-Unidecode
 p5-Text-VimColor                ports/textproc/p5-Text-VimColor
+p5-Text-WikiCreole              ports/textproc/p5-Text-WikiCreole
 p5-Text-WikiFormat              ports/textproc/p5-Text-WikiFormat
 p5-Text-WordDiff                ports/textproc/p5-Text-WordDiff
 p5-Text-Wrapper                 ports/textproc/p5-Text-Wrapper
@@ -15524,6 +15530,7 @@ p5-text-unidecode               ports/converters/p5-Text-Unidecode
 p5-text-vcard                   ports/textproc/p5-Text-vCard
 p5-text-vfile-asdata            ports/devel/p5-Text-vFile-asData
 p5-text-vimcolor                ports/textproc/p5-Text-VimColor
+p5-text-wikicreole              ports/textproc/p5-Text-WikiCreole
 p5-text-wikiformat              ports/textproc/p5-Text-WikiFormat
 p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
@@ -19103,6 +19110,7 @@ ruby-statgrab                   ports/devel/ruby-statgrab
 ruby-strongtyping               ports/devel/ruby-strongtyping
 ruby-subversion                 ports/devel/ruby-subversion
 ruby-svg                        ports/graphics/ruby-svg
+ruby-sybct                      ports/databases/ruby-sybct
 ruby-sysvipc                    ports/devel/ruby-sysvipc
 ruby-tcpsocketpipe              ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap                    ports/security/ruby-tcpwrap
@@ -19206,6 +19214,7 @@ rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
+rubygem-rbase                   ports/databases/rubygem-rbase
 rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-redcloth                ports/www/rubygem-redcloth
 rubygem-rfacebook               ports/www/rubygem-rfacebook
