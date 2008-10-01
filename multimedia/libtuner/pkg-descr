@@ -1,0 +1,5 @@
+libtuner provides userspace drivers and support routines for
+a variety of TV and radio tuner ICs.  These ICs are usually
+attached to a peripheral bus (such as an I2C bus) embedded 
+on a tuner card, and "stub" device nodes for the ICs will
+be exported by a card-specific driver.
