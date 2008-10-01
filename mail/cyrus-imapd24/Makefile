@@ -137,7 +137,7 @@ CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
 .if ${OSVERSION} >= 800037
-BROKEN=		does not compile
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
 
 CYRUS_USER?=	cyrus
