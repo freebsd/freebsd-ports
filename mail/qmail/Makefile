@@ -599,6 +599,8 @@ post-patch:
 		${WRKSRC}/qmail-smtpd.c
 .  endif
 . endif
+	@${REINPLACE_CMD} -E "/qhpsi *= *\"unknown\"/d; s/(\*qqx *== *'D')/qhpsi \&\& \1/g" \
+		${WRKSRC}/qmail-smtpd.c
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
 		${WRKDIR}/TLS.readme
