@@ -19,6 +19,7 @@
     SUBDIR += castpodder
     SUBDIR += cheese
     SUBDIR += clive
+    SUBDIR += cx88
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dirac-reference
