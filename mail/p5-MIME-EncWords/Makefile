@@ -7,6 +7,7 @@
 
 PORTNAME=	MIME-EncWords
 PORTVERSION=	1.010.101
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,7 @@ RUN_DEPENDS=	p5-MIME-Charset>=1.006.2:${PORTSDIR}/mail/p5-MIME-Charset
 
 PERL_CONFIGURE=	yes
 
-MAN3=		MIME::EncWords.3
+MAN3=		MIME::EncWords.3 MIME::EncWords::JA_JP.3
 
 .include <bsd.port.pre.mk>
 
