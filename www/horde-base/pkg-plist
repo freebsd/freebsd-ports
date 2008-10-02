@@ -4,6 +4,7 @@
 %%HORDIR%%/admin/groups.php
 %%HORDIR%%/admin/index.php
 %%HORDIR%%/admin/locale/en_US/help.xml
+%%HORDIR%%/admin/locale/eu_ES/help.xml
 %%HORDIR%%/admin/locale/fi_FI/help.xml
 %%HORDIR%%/admin/locale/hu_HU/help.xml
 %%HORDIR%%/admin/perms/addchild.php
@@ -41,6 +42,7 @@
 %%HORDIR%%/js/form_helpers.js
 %%HORDIR%%/js/form_sections.js
 %%HORDIR%%/js/hideable.js
+%%HORDIR%%/js/horde-embed.js
 %%HORDIR%%/js/horde-prototype.js
 %%HORDIR%%/js/horde.ie.js
 %%HORDIR%%/js/horde.js
@@ -67,6 +69,7 @@
 %%HORDIR%%/js/src/form_helpers.js
 %%HORDIR%%/js/src/form_sections.js
 %%HORDIR%%/js/src/hideable.js
+%%HORDIR%%/js/src/horde-embed.js
 %%HORDIR%%/js/src/horde-prototype.js
 %%HORDIR%%/js/src/horde.ie.js
 %%HORDIR%%/js/src/horde.js
@@ -139,6 +142,8 @@
 %%HORDIR%%/lib/Horde/Array.php
 %%HORDIR%%/lib/Horde/Auth.php
 %%HORDIR%%/lib/Horde/Auth/Signup.php
+%%HORDIR%%/lib/Horde/Auth/Signup/datatree.php
+%%HORDIR%%/lib/Horde/Auth/Signup/sql.php
 %%HORDIR%%/lib/Horde/Auth/application.php
 %%HORDIR%%/lib/Horde/Auth/auto.php
 %%HORDIR%%/lib/Horde/Auth/composite.php
@@ -225,8 +230,10 @@
 %%HORDIR%%/lib/Horde/Feed.php
 %%HORDIR%%/lib/Horde/Feed/Atom.php
 %%HORDIR%%/lib/Horde/Feed/Base.php
+%%HORDIR%%/lib/Horde/Feed/Blogroll.php
 %%HORDIR%%/lib/Horde/Feed/Entry/Atom.php
 %%HORDIR%%/lib/Horde/Feed/Entry/Base.php
+%%HORDIR%%/lib/Horde/Feed/Entry/Blogroll.php
 %%HORDIR%%/lib/Horde/Feed/Entry/Rss.php
 %%HORDIR%%/lib/Horde/Feed/Exception.php
 %%HORDIR%%/lib/Horde/Feed/Rss.php
@@ -286,20 +293,40 @@
 %%HORDIR%%/lib/Horde/Image/svg.php
 %%HORDIR%%/lib/Horde/Image/swf.php
 %%HORDIR%%/lib/Horde/Kolab.php
-%%HORDIR%%/lib/Horde/Kolab/Date.php
-%%HORDIR%%/lib/Horde/Kolab/Freebusy.php
-%%HORDIR%%/lib/Horde/Kolab/IMAP.php
-%%HORDIR%%/lib/Horde/Kolab/IMAP/cclient.php
-%%HORDIR%%/lib/Horde/Kolab/IMAP/pear.php
-%%HORDIR%%/lib/Horde/Kolab/IMAP/test.php
-%%HORDIR%%/lib/Horde/Kolab/LDAP.php
-%%HORDIR%%/lib/Horde/Kolab/XML.php
-%%HORDIR%%/lib/Horde/Kolab/XML/contact.php
-%%HORDIR%%/lib/Horde/Kolab/XML/distributionlist.php
-%%HORDIR%%/lib/Horde/Kolab/XML/event.php
-%%HORDIR%%/lib/Horde/Kolab/XML/hprefs.php
-%%HORDIR%%/lib/Horde/Kolab/XML/note.php
-%%HORDIR%%/lib/Horde/Kolab/XML/task.php
+%%HORDIR%%/lib/Horde/Kolab/Deprecated.php
+%%HORDIR%%/lib/Horde/Kolab/Format.php
+%%HORDIR%%/lib/Horde/Kolab/Format/Date.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/annotation.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/contact.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/distributionlist.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/event.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/hprefs.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/note.php
+%%HORDIR%%/lib/Horde/Kolab/Format/XML/task.php
+%%HORDIR%%/lib/Horde/Kolab/Server.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/address.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/administrator.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/domainmaintainer.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/group.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/maintainer.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/server.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/sharedfolder.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/user.php
+%%HORDIR%%/lib/Horde/Kolab/Server/ldap.php
+%%HORDIR%%/lib/Horde/Kolab/Server/test.php
+%%HORDIR%%/lib/Horde/Kolab/Storage.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Cache.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Data.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Folder.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/cclient.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/pear.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/test.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/List.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Perms.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Session.php
 %%HORDIR%%/lib/Horde/LDAP.php
 %%HORDIR%%/lib/Horde/Lens.php
 %%HORDIR%%/lib/Horde/Lens/Interface.php
@@ -455,6 +482,7 @@
 %%HORDIR%%/lib/Horde/Routes/Utils.php
 %%HORDIR%%/lib/Horde/SQL.php
 %%HORDIR%%/lib/Horde/SQL/Keywords.php
+%%HORDIR%%/lib/Horde/SQL/Manager.php
 %%HORDIR%%/lib/Horde/Scheduler.php
 %%HORDIR%%/lib/Horde/Scheduler/cron.php
 %%HORDIR%%/lib/Horde/Secret.php
@@ -653,6 +681,8 @@
 %%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/et_EE/LC_MESSAGES/horde.mo
 %%HORDIR%%/locale/et_EE/help.xml
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/horde.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fa_IR/LC_MESSAGES/horde.mo
 %%HORDIR%%/locale/fa_IR/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
@@ -718,6 +748,7 @@
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fa_IR.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
@@ -806,6 +837,8 @@
 %%HORDIR%%/scripts/sql/horde_sessionhandler.pgsql.sql
 %%HORDIR%%/scripts/sql/horde_sessionhandler.sapdb.sql
 %%HORDIR%%/scripts/sql/horde_sessionhandler.sql
+%%HORDIR%%/scripts/sql/horde_signups.mysql.sql
+%%HORDIR%%/scripts/sql/horde_signups.sql
 %%HORDIR%%/scripts/sql/horde_syncml.sql
 %%HORDIR%%/scripts/sql/horde_tokens.sql
 %%HORDIR%%/scripts/sql/horde_users.sql
@@ -820,6 +853,7 @@
 %%HORDIR%%/scripts/upgrades/2.2_to_3.0.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2005-09-22_horde_prefs_varchar2.oci8.sql
 %%HORDIR%%/scripts/upgrades/2006-06-29_horde_prefs_indexes.sql
+%%HORDIR%%/scripts/upgrades/2008-08-29_fix_mdb2_sequences.php
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.mysql.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.oci8.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.sql
@@ -871,6 +905,7 @@
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_button.html
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_checkbox.html
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_colorselector.html
+%%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_div.html
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_docprops.html
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%HORDIR%%/services/editor/fckeditor/editor/dialog/fck_flash.html
@@ -963,6 +998,7 @@
 %%HORDIR%%/services/editor/fckeditor/editor/lang/fr-ca.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/fr.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/gl.js
+%%HORDIR%%/services/editor/fckeditor/editor/lang/gu.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/he.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/hi.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/hr.js
@@ -1011,6 +1047,7 @@
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/fr-ca.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/fr.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/gl.js
+%%HORDIR%%/services/editor/fckeditor/editor/lang/src/gu.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/he.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/hi.js
 %%HORDIR%%/services/editor/fckeditor/editor/lang/src/hr.js
@@ -1541,7 +1578,6 @@
 %%HORDIR%%/templates/javascript/open_calendar.js
 %%HORDIR%%/templates/javascript/open_html_helper.js
 %%HORDIR%%/templates/javascript/print.js
-%%HORDIR%%/templates/javascript/quoteBlocks.js
 %%HORDIR%%/templates/javascript/tree.js
 %%HORDIR%%/templates/login/login.inc
 %%HORDIR%%/templates/login/mobile.inc
@@ -1606,6 +1642,7 @@
 %%HORDIR%%/themes/cornflower/graphics/tab_right.gif
 %%HORDIR%%/themes/cornflower/info.php
 %%HORDIR%%/themes/cornflower/screen.css
+%%HORDIR%%/themes/embed.css
 %%HORDIR%%/themes/fadetogreen/graphics/control.png
 %%HORDIR%%/themes/fadetogreen/graphics/header.png
 %%HORDIR%%/themes/fadetogreen/graphics/headerbox.png
@@ -3972,6 +4009,8 @@
 @dirrm %%HORDIR%%/locale/fi_FI
 @dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/et_EE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
@@ -4057,8 +4096,12 @@
 @dirrm %%HORDIR%%/lib/Horde/Log
 @dirrm %%HORDIR%%/lib/Horde/Lock
 @dirrm %%HORDIR%%/lib/Horde/Lens
-@dirrm %%HORDIR%%/lib/Horde/Kolab/XML
-@dirrm %%HORDIR%%/lib/Horde/Kolab/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Server/Object
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Server
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Format/XML
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Format
 @dirrm %%HORDIR%%/lib/Horde/Kolab
 @dirrm %%HORDIR%%/lib/Horde/Image/Effect/im
 @dirrm %%HORDIR%%/lib/Horde/Image/Effect/gd
@@ -4086,6 +4129,7 @@
 @dirrm %%HORDIR%%/lib/Horde/Browser
 @dirrm %%HORDIR%%/lib/Horde/Block/Layout
 @dirrm %%HORDIR%%/lib/Horde/Block
+@dirrm %%HORDIR%%/lib/Horde/Auth/Signup
 @dirrm %%HORDIR%%/lib/Horde/Auth
 @dirrm %%HORDIR%%/lib/Horde/Argv
 @dirrm %%HORDIR%%/lib/Horde/Alarm
@@ -4104,6 +4148,7 @@
 @dirrm %%HORDIR%%/admin/perms
 @dirrm %%HORDIR%%/admin/locale/hu_HU
 @dirrm %%HORDIR%%/admin/locale/fi_FI
+@dirrm %%HORDIR%%/admin/locale/eu_ES
 @dirrm %%HORDIR%%/admin/locale/en_US
 @dirrm %%HORDIR%%/admin/locale
 @dirrm %%HORDIR%%/admin
