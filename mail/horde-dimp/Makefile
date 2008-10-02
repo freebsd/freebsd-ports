@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dimp
-DISTVERSION=	1.1-rc2
+PORTVERSION=	1.1
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
