@@ -4,7 +4,6 @@
 %%HORDIR%%/addressbooks/edit.php
 %%HORDIR%%/addressbooks/index.php
 %%HORDIR%%/browse.php
-%%HORDIR%%/bug5476.phpt
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/attributes.php.dist
 %%HORDIR%%/config/conf.xml
@@ -79,6 +78,8 @@
 %%HORDIR%%/lib/tests/ListViewTest.php
 %%HORDIR%%/lib/tests/TestBase.php
 %%HORDIR%%/lib/tests/ViewBrowseTest.php
+%%HORDIR%%/lib/tests/az.png
+%%HORDIR%%/lib/tests/bug5476.phpt
 %%HORDIR%%/lib/tests/bug_6518.phpt
 %%HORDIR%%/lib/tests/import.ldif
 %%HORDIR%%/lib/tests/importCRLF.ldif
@@ -102,6 +103,8 @@
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/turba.mo
 %%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/et_EE/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fa_IR/LC_MESSAGES/turba.mo
 %%HORDIR%%/locale/fa_IR/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
@@ -148,6 +151,7 @@
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fa_IR.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
@@ -198,7 +202,9 @@
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_sql_schema.php
+%%HORDIR%%/scripts/upgrades/2.2.1_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2007-06-17_flatten_shares.php
+%%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/scripts/upgrades/create_default_histories.php
 %%HORDIR%%/scripts/upgrades/public_to_horde_share.php
@@ -343,6 +349,8 @@
 @dirrm %%HORDIR%%/locale/fi_FI
 @dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/et_EE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
@@ -375,7 +383,7 @@
 @dirrm %%HORDIR%%/lib
 @dirrm %%HORDIR%%/js/src
 @dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/addressbooks
 @dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/addressbooks
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
