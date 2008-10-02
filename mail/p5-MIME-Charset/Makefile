@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	MIME-Charset
-PORTVERSION=	0.044
+PORTVERSION=	1.006.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Olivier.Girard@univ-angers.fr
-COMMENT=	MIME::Charset - Charset Informations for MIME
+COMMENT=	Charset Informations for MIME
 
 PERL_CONFIGURE=	yes
 
-MAN3=		\
-		MIME::Charset.3 \
-		MIME::Charset-ja_JP.3
+MAN3=		MIME::Charset.3 MIME::Charset::JA_JP.3
 
 .include <bsd.port.mk>
