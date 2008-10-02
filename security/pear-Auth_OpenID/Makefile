@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_OpenID
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.2
 CATEGORIES=	security www pear
 MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 DISTNAME=	php-openid-${PORTVERSION}
@@ -24,7 +24,8 @@ LATEST_LINK=	pear-Auth_OpenID
 
 WRKSRC=		${WRKDIR}/php-openid-${PORTVERSION}
 
-OPTIONS=	BCMATH "Use bcmath instead of libgmp" off
+OPTIONS=	BCMATH "Use bcmath instead of libgmp" off \
+		PEAR_DB "Support SQL stores" off
 
 USE_PHP=	curl dom
 USE_PYTHON_BUILD=	yes
@@ -35,8 +36,9 @@ FILES=		Auth/OpenID.php Auth/OpenID/AX.php \
 		Auth/OpenID/DatabaseConnection.php \
 		Auth/OpenID/DiffieHellman.php Auth/OpenID/Discover.php \
 		Auth/OpenID/DumbStore.php Auth/OpenID/Extension.php \
-		Auth/OpenID/FileStore.php Auth/OpenID/HMACSHA1.php \
+		Auth/OpenID/FileStore.php Auth/OpenID/HMAC.php \
 		Auth/OpenID/Interface.php Auth/OpenID/KVForm.php \
+		Auth/OpenID/MemcachedStore.php \
 		Auth/OpenID/Message.php Auth/OpenID/MySQLStore.php \
 		Auth/OpenID/Nonce.php Auth/OpenID/PAPE.php \
 		Auth/OpenID/Parse.php Auth/OpenID/PostgreSQLStore.php \
@@ -84,6 +86,7 @@ DOCS=		OpenID/Auth_OpenID_AX.html \
 		OpenID/Auth_OpenID_MalformedReturnURL.html \
 		OpenID/Auth_OpenID_MalformedTrustRoot.html \
 		OpenID/Auth_OpenID_Mapping.html \
+		OpenID/Auth_OpenID_MemcachedStore.html \
 		OpenID/Auth_OpenID_Message.html \
 		OpenID/Auth_OpenID_MySQLStore.html \
 		OpenID/Auth_OpenID_NamespaceMap.html \
@@ -134,6 +137,7 @@ DOCS=		OpenID/Auth_OpenID_AX.html \
 		OpenID/_Auth---OpenID---Extension.php.html \
 		OpenID/_Auth---OpenID---FileStore.php.html \
 		OpenID/_Auth---OpenID---Interface.php.html \
+		OpenID/_Auth---OpenID---MemcachedStore.php.html \
 		OpenID/_Auth---OpenID---Message.php.html \
 		OpenID/_Auth---OpenID---MySQLStore.php.html \
 		OpenID/_Auth---OpenID---Nonce.php.html \
@@ -156,8 +160,8 @@ DOCS=		OpenID/Auth_OpenID_AX.html \
 		media/banner.css media/stylesheet.css
 
 EXAMPLES=	README consumer/common.php consumer/finish_auth.php \
-		consumer/index.php consumer/try_auth.php \
-		detect.php server/index.php server/lib/actions.php \
+		consumer/index.php consumer/try_auth.php detect.php \
+		discover.php server/index.php server/lib/actions.php \
 		server/lib/common.php server/lib/render.php \
 		server/lib/render/about.php server/lib/render/idpXrds.php \
 		server/lib/render/idpage.php server/lib/render/login.php \
@@ -175,6 +179,11 @@ EXTRACT_SUFX=	.tar.bz2
 USE_PHP+=	bcmath
 .else
 USE_PHP+=	gmp
+.endif
+
+.ifdef(WITH_PEAR_DB)
+BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
 post-configure:
