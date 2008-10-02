@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	warbler
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	caldersphere
