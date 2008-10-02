@@ -100,12 +100,16 @@ lib/libanl-2.7.so
 lib/libanl.so.1
 lib/libattr.so.1
 lib/libattr.so.1.1.0
+lib/libblkid.so.1
+lib/libblkid.so.1.0
 lib/libbz2.so.1
 lib/libbz2.so.1.0.4
 lib/libc-2.7.so
 lib/libc.so.6
 lib/libcidn-2.7.so
 lib/libcidn.so.1
+lib/libcom_err.so.2
+lib/libcom_err.so.2.1
 lib/libcrypt-2.7.so
 lib/libcrypt.so.1
 lib/libdb-4.2.so
@@ -117,6 +121,10 @@ lib/libdb_cxx-4.3.so
 lib/libdb_cxx-4.5.so
 lib/libdl-2.7.so
 lib/libdl.so.2
+lib/libe2p.so.2
+lib/libe2p.so.2.3
+lib/libext2fs.so.2
+lib/libext2fs.so.2.4
 lib/libgcc_s-4.1.2-20070925.so.1
 lib/libgcc_s.so.1
 lib/libglib-2.0.so.0
@@ -159,6 +167,8 @@ lib/librt-2.7.so
 lib/librt.so.1
 lib/libselinux.so.1
 lib/libsepol.so.1
+lib/libss.so.2
+lib/libss.so.2.0
 lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libthread_db-1.0.so
@@ -167,6 +177,8 @@ lib/libtinfo.so.5
 lib/libtinfo.so.5.6
 lib/libutil-2.7.so
 lib/libutil.so.1
+lib/libuuid.so.1
+lib/libuuid.so.1.2
 lib/libz.so.1
 lib/libz.so.1.2.3
 lib/rtkaio/librt.so.1
@@ -268,6 +280,7 @@ usr/bin/eu-elflint
 usr/bin/eu-findtextrel
 usr/bin/eu-make-debug-archive
 usr/bin/eu-nm
+usr/bin/eu-objdump
 usr/bin/eu-ranlib
 usr/bin/eu-readelf
 usr/bin/eu-size
@@ -896,8 +909,8 @@ usr/share/doc/db4-4.6.21/LICENSE
 usr/share/doc/db4-4.6.21/README
 usr/share/doc/e2fsprogs-1.40.4/README
 usr/share/doc/e2fsprogs-1.40.4/RELEASE-NOTES
-usr/share/doc/elfutils-0.131/README
-usr/share/doc/elfutils-0.131/TODO
+usr/share/doc/elfutils-0.135/README
+usr/share/doc/elfutils-0.135/TODO
 usr/share/doc/fedora-release-8/GPL
 usr/share/doc/freetype-2.3.5/ChangeLog
 usr/share/doc/freetype-2.3.5/README
@@ -6309,7 +6322,7 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/freetype-2.3.5
 @dirrm usr/share/doc/fedora-release-8
-@dirrm usr/share/doc/elfutils-0.131
+@dirrm usr/share/doc/elfutils-0.135
 @dirrm usr/share/doc/e2fsprogs-1.40.4
 @dirrm usr/share/doc/db4-4.6.21
 @dirrm usr/share/doc/coreutils-6.9/textutils
