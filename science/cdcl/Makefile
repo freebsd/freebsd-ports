@@ -7,7 +7,7 @@
 
 PORTNAME=	cdcl
 PORTVERSION=	5.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/ \
 		http://dennou-h.gfd-dennou.org/arch/dcl/ \
@@ -18,6 +18,7 @@ MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
 .if defined(WITHOUT_GTK)
+USE_XORG=	x11
 .else
 USE_GNOME=	gtk20
 .endif
@@ -26,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x
 
 .if defined(WITHOUT_GTK)
-CUNFIGURE_ARGS+=	--disable-gtk --disable-gtk2
+CONFIGURE_ARGS+=	--disable-gtk --disable-gtk2
 .endif
 
 PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
