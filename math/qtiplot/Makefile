@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.7.2
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser \
+		${LOCALBASE}/lib/libboost_date_time.a:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
