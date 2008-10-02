@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	love
-DISTVERSION=	0.4-0
+DISTVERSION=	0.5-0
 CATEGORIES=	games devel
 MASTER_SITES=	SF
 
@@ -23,32 +23,24 @@ USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}"
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
 
-ALL_TARGET=	default
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-PLIST_FILES=	bin/love lib/liblove.a
+PLIST_FILES=	bin/love
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
-
-post-extract:
-	cd ${WRKSRC} && ${FIND} . -name "*.o" -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
 		${WRKSRC}/src/opengl/love_opengl.cpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/love ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bin/liblove.a ${PREFIX}/lib
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demos/*.love ${EXAMPLESDIR}
-.endif
+	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
+		${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in changes.txt readme.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
