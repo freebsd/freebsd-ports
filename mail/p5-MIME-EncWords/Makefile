@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	MIME-EncWords
-PORTVERSION=	0.040
+PORTVERSION=	1.010.101
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Olivier.Girard@univ-angers.fr
-COMMENT=	MIME::EncWords - deal with RFC-1522 encoded words (improved)
+COMMENT=	Deal with RFC 2047 encoded words (improved)
 
-BUILD_DEPENDS=	${SITE_PERL}/MIME/Charset.pm:${PORTSDIR}/mail/p5-MIME-Charset \
-		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools
-RUN_DEPENDS=	${SITE_PERL}/MIME/Charset.pm:${PORTSDIR}/mail/p5-MIME-Charset \
-		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools
+RUN_DEPENDS=	p5-MIME-Charset>=1.006.2:${PORTSDIR}/mail/p5-MIME-Charset
 
 PERL_CONFIGURE=	yes
 
 MAN3=		MIME::EncWords.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+RUN_DEPENDS+=	p5-MIME-Base64>=2.13:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>
