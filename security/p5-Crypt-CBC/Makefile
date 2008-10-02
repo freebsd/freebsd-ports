@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-CBC
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,7 @@ MAN3=		Crypt::CBC.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-MD5>=2.00:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 .include <bsd.port.post.mk>
