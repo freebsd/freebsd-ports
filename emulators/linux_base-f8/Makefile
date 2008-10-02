@@ -7,11 +7,11 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
-			../updates/${PORTVERSION}/${LINUX_RPM_ARCH}
+			../updates/${PORTVERSION}/${LINUX_RPM_ARCH}.newkey
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
@@ -27,22 +27,23 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		compat-db-4.5.20-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-296-2.96-139.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-62.${LINUX_RPM_ARCH}.rpm \
-		coreutils-6.9-17.fc8.${LINUX_RPM_ARCH}.rpm \
+		coreutils-6.9-18.fc8.${LINUX_RPM_ARCH}.rpm \
 		db4-4.6.21-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.131-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.135-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-8-5.noarch.rpm \
 		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.5-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-27.fc7.${LINUX_RPM_ARCH}.rpm \
 		glib-1.2.10-28.fc8.${LINUX_RPM_ARCH}.rpm \
-		glib2-2.14.6-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		glib2-2.14.6-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-57.fc7.${LINUX_RPM_ARCH}.rpm \
 		info-4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		krb5-libs-1.6.2-14.fc8.${LINUX_RPM_ARCH}.rpm \
-		libacl-2.2.39-13.fc8.${LINUX_RPM_ARCH}.rpm \
+		libacl-2.2.39-14.fc8.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.38-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		libgcc-4.1.2-33.${LINUX_RPM_ARCH}.rpm \
 		libselinux-2.0.43-1.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -50,8 +51,8 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		libstdc++-4.1.2-33.${LINUX_RPM_ARCH}.rpm \
 		libtermcap-2.0.8-47.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.6-12.20070812.fc8.${LINUX_RPM_ARCH}.rpm \
-		pcre-7.3-3.fc8.${LINUX_RPM_ARCH}.rpm \
-		popt-1.13-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		pcre-7.3-4.fc8.${LINUX_RPM_ARCH}.rpm \
+		popt-1.13-4.fc8.${LINUX_RPM_ARCH}.rpm \
 		readline-5.2-10.fc8.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-21.fc8.${LINUX_RPM_ARCH}.rpm \
 		setup-2.6.10-1.fc8.noarch.rpm \
@@ -62,25 +63,25 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 .if defined(PACKAGE_BUILDING)
 
 MASTER_SITE_SUBDIR+=	../releases/${PORTVERSION}/Everything/source/SRPMS/ \
-			../updates/${PORTVERSION}/SRPMS
+			../updates/${PORTVERSION}/SRPMS.newkey
 
-SRC_DISTFILES+=	acl-2.2.39-13.fc8.src.rpm \
+SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		attr-2.4.38-2.fc8.src.rpm \
 		basesystem-8.1-1.src.rpm \
 		bash-3.2-20.fc8.src.rpm \
 		bzip2-1.0.4-12.fc8.src.rpm \
 		compat-db-4.5.20-3.fc8.src.rpm \
-		coreutils-6.9-17.fc8.src.rpm \
+		coreutils-6.9-18.fc8.src.rpm \
 		db4-4.6.21-1.fc8.src.rpm \
 		e2fsprogs-1.40.4-2.fc8.src.rpm \
-		elfutils-0.131-1.fc8.src.rpm \
+		elfutils-0.135-1.fc8.src.rpm \
 		fedora-release-8-5.src.rpm \
 		filesystem-2.4.11-1.fc8.src.rpm \
 		freetype-2.3.5-3.fc8.src.rpm \
 		gcc-4.1.2-33.src.rpm \
 		gdbm-1.8.0-27.fc7.src.rpm \
 		glib-1.2.10-28.fc8.src.rpm \
-		glib2-2.14.6-1.fc8.src.rpm \
+		glib2-2.14.6-2.fc8.src.rpm \
 		glibc-2.7-2.src.rpm \
 		grep-2.5.1-57.fc7.src.rpm \
 		krb5-1.6.2-14.fc8.src.rpm \
@@ -88,7 +89,7 @@ SRC_DISTFILES+=	acl-2.2.39-13.fc8.src.rpm \
 		libsepol-2.0.15-1.fc8.src.rpm \
 		libtermcap-2.0.8-47.src.rpm \
 		ncurses-5.6-12.20070812.fc8.src.rpm \
-		pcre-7.3-3.fc8.src.rpm \
+		pcre-7.3-4.fc8.src.rpm \
 		readline-5.2-10.fc8.src.rpm \
 		setserial-2.17-21.fc8.src.rpm \
 		setup-2.6.10-1.fc8.src.rpm \
