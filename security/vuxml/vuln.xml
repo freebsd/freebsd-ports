@@ -158,7 +158,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31633/">
 	  <p>Some security issues have been reported in BitlBee, which can
 	    be exploited by malicious people to bypass certain security
@@ -176,6 +176,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-27</discovery>
       <entry>2008-09-26</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -313,7 +314,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31930/">
 	  <p>The vulnerability is caused due to the application truncating an
 	    overly long FTP command, and improperly interpreting the remainder
@@ -330,6 +331,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-22</discovery>
       <entry>2008-09-23</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -343,7 +345,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/Advisories/31974/">
 	  <p>An error exists in the "PMA_escapeJsString()" function in
 	    libraries/js_escape.lib.php, which can be exploited to bypass certain
@@ -361,6 +363,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-23</discovery>
       <entry>2008-09-23</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -378,7 +381,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A Secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31912/">
 	  <p>An error in the handing of ZIP archives with symbolic links can be
 	    exploited to disclose the contents of arbitrary files.</p>
@@ -398,6 +401,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-18</discovery>
       <entry>2008-09-19</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -541,7 +545,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31842/">
 	  <p>Some vulnerabilities have been reported in various Horde products,
 	    which can be exploited by malicious people to conduct script insertion
@@ -566,6 +570,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-09-10</discovery>
       <entry>2008-09-11</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -5419,7 +5424,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A Secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/26618/">
 	  <p>Some vulnerabilities have been reported in TikiWiki, which
 	    can be exploited by malicious people to conduct cross-site
@@ -5456,6 +5461,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-08-27</discovery>
       <entry>2007-11-09</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
@@ -8304,7 +8310,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/25579/">
 	  <p>The vulnerability is caused due to predictable
 	    DNS "Transaction ID" field in DNS queries and can
@@ -8320,6 +8326,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-06-08</discovery>
       <entry>2007-06-09</entry>
+      <modified>2008-10-03</modified>
     </dates>
   </vuln>
 
