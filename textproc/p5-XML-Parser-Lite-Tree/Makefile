@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	XML-Parser-Lite-Tree
-PORTVERSION=	0.03
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML tree builder
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
-MAN3=	XML::Parser::Lite::Tree.3
+MAN3=		XML::Parser::Lite::Tree.3 XML::Parser::LiteCopy.3
 
 .include <bsd.port.mk>
