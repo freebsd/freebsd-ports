@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Crypt_CBC
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
