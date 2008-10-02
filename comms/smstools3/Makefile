@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	3.1
+PORTVERSION=	3.1.3
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -45,10 +45,10 @@ EXAMPLES=	.procmailrc .qmailrc language-ISO-8859-15.fi \
 		send_sms_unicode.sms smsd.conf.easy smsd.conf.full \
 		smsd.conf.non-root
 
-SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 hex2bin \
-		hex2dec mysmsd pkill regular_run sendsms sms2html sms2unicode \
-		sms2xml sms3 smsevent smsresend smstest.php sql_demo \
-		unicode2sms
+SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 forwardsms \
+		hex2bin hex2dec mysmsd pkill regular_run sendsms sms2html \
+		sms2unicode sms2xml sms3 smsevent smsresend smstest.php \
+		sql_demo unicode2sms
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh \

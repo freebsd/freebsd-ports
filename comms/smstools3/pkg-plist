@@ -6,6 +6,7 @@ bin/unicode2sms
 %%DATADIR%%/checkhandler-utf-8
 %%DATADIR%%/email2sms
 %%DATADIR%%/eventhandler-utf-8
+%%DATADIR%%/forwardsms
 %%DATADIR%%/hex2bin
 %%DATADIR%%/hex2dec
 %%DATADIR%%/mysmsd
