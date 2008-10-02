@@ -30,6 +30,7 @@
 %%HORDIR%%/lib/Forms/task.php
 %%HORDIR%%/lib/Nag.php
 %%HORDIR%%/lib/Notification/Listener/status.php
+%%HORDIR%%/lib/Recurrence.php
 %%HORDIR%%/lib/UI/VarRenderer/nag.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
@@ -48,6 +49,9 @@
 %%HORDIR%%/locale/en_US/help.xml
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
 %%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/et_EE/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/eu_ES/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
 %%HORDIR%%/locale/fi_FI/help.xml
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
@@ -86,6 +90,8 @@
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/el_GR.po
 %%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/hu_HU.po
@@ -121,8 +127,10 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
 %%HORDIR%%/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php
+%%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/scripts/upgrades/create_missing_add_histories_sql.php
 %%HORDIR%%/search.php
@@ -264,6 +272,10 @@
 @dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/es_ES
 @dirrm %%HORDIR%%/locale/en_US
