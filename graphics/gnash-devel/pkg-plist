@@ -1,4 +1,5 @@
 bin/dumpshm
+bin/flvdumper
 bin/gnash
 bin/gprocessor
 bin/soldumper
@@ -12,29 +13,27 @@ bin/soldumper
 %%KONQPLUGIN%%lib/kde3/libklashpart.a
 %%KONQPLUGIN%%lib/kde3/libklashpart.so
 %%KONQPLUGIN%%lib/kde3/libklashpart.la
-etc/gnashpluginrc
-etc/gnashrc
-lib/gnash/libgnashamf-0.8.3.so
-lib/gnash/libgnashamf.a
+@unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
+etc/gnashpluginrc.dist
+@exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
+@unexec if cmp -s %D/etc/gnashrc.dist %D/etc/gnashrc; then rm -f %D/etc/gnashrc; fi
+etc/gnashrc.dist
+@exec if [ ! -f %B/gnashrc ]; then cp -p %D/%F %B/gnashrc; fi
+lib/gnash/libgnashamf-%%GNASHVER%%.so
 lib/gnash/libgnashamf.la
 lib/gnash/libgnashamf.so
-lib/gnash/libgnashbase-0.8.3.so
-lib/gnash/libgnashbase.a
+lib/gnash/libgnashbase-%%GNASHVER%%.so
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
-lib/gnash/libgnashmedia-0.8.3.so
-lib/gnash/libgnashmedia.a
+lib/gnash/libgnashcore-%%GNASHVER%%.so
+lib/gnash/libgnashcore.la
+lib/gnash/libgnashcore.so
+lib/gnash/libgnashmedia-%%GNASHVER%%.so
 lib/gnash/libgnashmedia.la
 lib/gnash/libgnashmedia.so
-lib/gnash/libgnashnet.a
 lib/gnash/libgnashnet.la
 lib/gnash/libgnashnet.so
 lib/gnash/libgnashnet.so.0
-lib/gnash/libgnashserver-0.8.3.so
-lib/gnash/libgnashserver.a
-lib/gnash/libgnashserver.la
-lib/gnash/libgnashserver.so
-%%FFPLUGIN%%lib/gnash/libmozsdk.a
 %%FFPLUGIN%%lib/gnash/libmozsdk.la
 %%FFPLUGIN%%lib/gnash/libmozsdk.so
 %%FFPLUGIN%%lib/gnash/libmozsdk.so.0
@@ -50,6 +49,7 @@ share/locale/es/LC_MESSAGES/gnash.mo
 share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
+share/locale/ja/LC_MESSAGES/gnash.mo
 share/locale/sv/LC_MESSAGES/gnash.mo
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/images

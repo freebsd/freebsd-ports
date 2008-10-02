@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-DISTVERSION=	20080515
-PORTREVISION=	1
+DISTVERSION=	20080927
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
@@ -19,7 +18,8 @@ COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.4:${PORTSDIR}/ftp/curl \
+		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	gnash-[0-9]*
 
@@ -28,11 +28,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
-USE_GCC=	4.2+
+USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:15 automake:19:env autoheader:262:env autoconf:262:env aclocal:19:env libtool:15:env
+USE_AUTOTOOLS=	libltdl:15 libtool:15:env
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -43,7 +43,10 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
 		--with-kde-pluginprefix="${PREFIX}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.3
+GNASHVER=	trunk
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GNASHVER}
+PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
@@ -62,7 +65,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 .include <bsd.port.pre.mk>
 
 # Plugin option processing
-.if defined(WITH_GTK) && !defined(WITHOUT_PLUGIN)
+.if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
 PLIST_SUB+=	FFPLUGIN=""
 .else
 PLIST_SUB+=	FFPLUGIN="@comment "
@@ -100,7 +103,7 @@ PLIST_SUB+=	NLS="@comment "
 #
 GNASH_GUIS=
 
-.if defined(WITH_GTK)
+.if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk20
 GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
@@ -134,7 +137,7 @@ LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--enable-renderer=agg
 .elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
 USE_GL=			yes
-.	if defined(WITH_GTK)
+.	if !defined(WITHOUT_GTK)
 LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
@@ -170,19 +173,27 @@ pre-everything::
 	@sleep 3
 .endif
 
-pre-configure:
-	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen.sh)
-	@${REINPLACE_CMD} -e 's|^LIBS = |&$${INTLLIBS} |' \
-		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
+post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
-	${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
+		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
+	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
+		${WRKSRC}/libbase/Makefile.in
+
+post-install:
+	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/gnashrc.dist \
+			${PREFIX}/etc/gnashrc; \
+	fi
+	if [ ! -f ${PREFIX}/etc/gnashpluginrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/gnashpluginrc.dist \
+			${PREFIX}/etc/gnashpluginrc; \
+	fi
 
 .if !defined(WITHOUT_PLUGIN)
-post-install:
-.if defined(WITH_GTK)
+.if !defined(WITHOUT_GTK)
 	@cd ${INSTALL_WRKSRC}/plugin && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
