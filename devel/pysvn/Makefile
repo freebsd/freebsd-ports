@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysvn
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
@@ -17,10 +17,9 @@ BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.1:${PORTSDIR}/devel/py-cxx
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon.28:${PORTSDIR}/www/neon28
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=yes
-PYDISTUTILS_PKGNAME=${PORTNAME}
 PYDISTUTILS_CONFIGURE_TARGET=configure
 PYDISTUTILS_CONFIGUREARGS=--pycxx-dir=${PYTHON_INCLUDEDIR} \
 		--pycxx-src-dir=${LOCALBASE}/share/${PYTHON_VERSION}/CXX \
@@ -41,6 +40,9 @@ pre-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}/* ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/${PORTNAME}/*.py \
+		${WRKSRC}/${PORTNAME}/*.so \
+		${PYTHON_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
