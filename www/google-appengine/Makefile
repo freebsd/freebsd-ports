@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.4
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME:S|-|_|}_${PORTVERSION}
+DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
+.if !defined(NOPORTDOCS)
+DISTFILES+=	${PORTNAME}-docs-20080816.zip
+.endif
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Development tools for Google App Engine (SDK)
@@ -50,6 +53,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${DOCSDIR}
+	cd ${WRKDIR}/google-appengine-docs-20080816 && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dev_appserver.py ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/appcfg.py ${DATADIR}
