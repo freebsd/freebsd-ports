@@ -8,8 +8,8 @@
 PORTNAME=	mkcmd
 PORTVERSION=	8.14
 CATEGORIES=	devel
-MASTER_SITES=	ftp://archive.progeny.com/pundits/ \
-		ftp://ftp.physics.purdue.edu/pub/pundits/
+MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
+		ftp://archive.progeny.com/pundits/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
