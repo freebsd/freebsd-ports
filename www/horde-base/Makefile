@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3
 DISTVERSIONPREFIX=
 CATEGORIES=	www
 PKGNAMEPREFIX=
@@ -75,7 +75,8 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode	\
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB			\
 		${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File		\
-		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
+		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP	\
+		${PEARDIR}/MDB2/Schema/Validate.php:${PORTSDIR}/databases/pear-MDB2_Schema
 
 CONFLICTS=	horde-2.*
 
