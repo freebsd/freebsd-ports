@@ -1,6 +1,6 @@
 --- ./qtiplot/qtiplot.pro.orig	2008-03-29 10:43:50.000000000 +0300
 +++ ./qtiplot/qtiplot.pro	2008-03-29 10:46:00.000000000 +0300
-@@ -45,12 +45,8 @@
+@@ -45,13 +45,9 @@
  #!!! Warning: You must modify these paths according to your computer settings
  #############################################################################
  
@@ -10,8 +10,10 @@
 -INCLUDEPATH       += ../3rdparty/liborigin
 -INCLUDEPATH       += ../3rdparty/gsl/include
 -INCLUDEPATH       += ../3rdparty/zlib123/include
+-INCLUDEPATH       += ../3rdparty/boost_1_36_0
 +unix:INCLUDEPATH += $$LOCALBASE/include/qwt
 +unix:INCLUDEPATH += $$LOCALBASE/include/qwtplot3d-qt4
++unix:INCLUDEPATH += $$LOCALBASE/include/boost
  
  ##################### 3rd PARTY LIBRARIES SECTION ###########################
  #!!! Warning: You must modify these paths according to your computer settings
