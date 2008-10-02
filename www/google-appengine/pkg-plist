@@ -3,6 +3,173 @@ bin/appcfg.py
 bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/add_domain.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/add_to_domain.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/appengine_helper_for_django.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/bulkload.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/cf1-text.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/create1.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/create_restricted.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/dbg.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/djangoforms.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/domains.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/error_example.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/external_sources.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/helloworld.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/helloworld_structure.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/new_python_interpreter.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/pargs.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/pydev_features_install.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/pydev_update_site.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/python_run_helloworld.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/pythonpath.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/expand.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/filter.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/filter_time.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/gdata.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/images.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/logging.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/logs_admin.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/modeling.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/quotas.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rietveld.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rpc.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/transaction_iso.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/transaction_isolation.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/update_schema.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/versions.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/css/local_extensions.css
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/appcfgpy.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/configuringanapp.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/configuringindexes.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/creatinggettinganddeletingdata.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/entitiesandmodels.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/expandoclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/gqlqueryclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/gqlreference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/keyclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/keysandentitygroups.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/modelclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/propertyclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/queriesandindexes.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/queryclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/transactions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/datastore/typesandpropertyclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/devenvironment.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/handlingforms.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/helloworld.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/staticfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/templates.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/uploading.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/usingdatastore.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/usingusers.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/gettingstarted/usingwebapp.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/imageclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/installingPIL.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_before.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_crop_after.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_fliph_after.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_flipv_after.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_lucky_after.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_resize_after.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/transform_rotate_after.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/usingimages.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/attachments.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/emailmessageclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/emailmessagefields.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/mail/sendingmail.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/memcache/clientclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/memcache/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/memcache/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/memcache/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/memcache/usingmemcache.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/appcaching.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/logging.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/purepython.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/requestsandcgi.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/sandbox.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/thedevwebserver.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/theenvironment.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/revision_history.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/theadminconsole.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/thedevwebserver.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/urlfetch/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/urlfetch/fetchfunction.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/urlfetch/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/urlfetch/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/urlfetch/responseobjects.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/adminusers.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/loginurls.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/userclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/users/userobjects.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/usinggdataservices.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/buildingtheresponse.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/redirects.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/requestclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/requestdata.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/requesthandlerclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/requesthandlers.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/responseclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/running.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/utilmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/webapp/wsgiapplicationclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/whatisgoogleappengine.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/downloads.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/groups.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/demo_video.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/free.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/noassembly.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/scale.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/commontasks.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/general.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/libraries.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/sms.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/privacy.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/program_policies.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/terms.html
+%%PORTDOCS%%%%DOCSDIR%%/css/codesite.pack.01312008.css
+%%PORTDOCS%%%%DOCSDIR%%/css/iehacks.css
+%%PORTDOCS%%%%DOCSDIR%%/css/semantic_headers.css
+%%PORTDOCS%%%%DOCSDIR%%/images/cleardot.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/hide-arrow.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/minus.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/minus_hover.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/plus.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/plus_hover.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/show-arrow.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sprites08132008.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/js/codesite.pack.01312008.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/guestbook.py
 %%DATADIR%%/VERSION
@@ -57,12 +224,15 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/admin/templates/css/base.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/datastore.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/form.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/memcache.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/nav.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/pager.css
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore.html
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore_edit.html
 %%DATADIR%%/google/appengine/ext/admin/templates/images/google.gif
+%%DATADIR%%/google/appengine/ext/admin/templates/interactive-output.html
 %%DATADIR%%/google/appengine/ext/admin/templates/interactive.html
+%%DATADIR%%/google/appengine/ext/admin/templates/memcache.html
 %%DATADIR%%/google/appengine/ext/admin/templates/pager.html
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
 %%DATADIR%%/google/appengine/ext/bulkload/constants.py
@@ -74,6 +244,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/ext/webapp/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/template.py
 %%DATADIR%%/google/appengine/ext/webapp/util.py
+%%DATADIR%%/google/appengine/ext/zipserve/__init__.py
 %%DATADIR%%/google/appengine/runtime/__init__.py
 %%DATADIR%%/google/appengine/runtime/apiproxy.py
 %%DATADIR%%/google/appengine/runtime/apiproxy_errors.py
@@ -85,6 +256,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_info.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
+%%DATADIR%%/google/appengine/tools/os_compat.py
 %%DATADIR%%/google/net/__init__.py
 %%DATADIR%%/google/net/proto/ProtocolBuffer.py
 %%DATADIR%%/google/net/proto/__init__.py
@@ -1210,6 +1382,7 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/net
 @dirrm %%DATADIR%%/google/appengine/tools
 @dirrm %%DATADIR%%/google/appengine/runtime
+@dirrm %%DATADIR%%/google/appengine/ext/zipserve
 @dirrm %%DATADIR%%/google/appengine/ext/webapp
 @dirrm %%DATADIR%%/google/appengine/ext/search
 @dirrm %%DATADIR%%/google/appengine/ext/preload
@@ -1232,4 +1405,23 @@ bin/dev_appserver.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/guestbook
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/kb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/webapp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/urlfetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/memcache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/gettingstarted
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/datastore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/eclipse_img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
