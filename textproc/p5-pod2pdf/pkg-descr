@@ -1,0 +1,4 @@
+pod2pdf converts documents written in Perl's POD (Plain Old
+Documentation) format to PDF files.
+
+WWW: http://search.cpan.org/dist/pod2pdf/

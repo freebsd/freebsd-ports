@@ -1,0 +1,5 @@
+bin/pod2pdf
+%%SITE_PERL%%/App/pod2pdf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/pod2pdf/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pod2pdf
+@dirrmtry %%SITE_PERL%%/App
