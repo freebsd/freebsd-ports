@@ -1887,6 +1887,7 @@ cweb                            ports/devel/cweb
 cwirc                           ports/irc/cwirc
 cwish                           ports/misc/cwish
 cwtext                          ports/textproc/cwtext
+cx88                            ports/multimedia/cx88
 cxmon                           ports/devel/cxmon
 cxref                           ports/devel/cxref
 cxsc                            ports/math/cxsc
@@ -7400,6 +7401,7 @@ libtre                          ports/textproc/libtre
 libtremor                       ports/audio/libtremor
 libtunepimp                     ports/audio/libtunepimp
 libtunepimp-old                 ports/audio/libtunepimp-old
+libtuner                        ports/multimedia/libtuner
 libu77                          ports/devel/libU77
 libublio                        ports/devel/libublio
 libudbc                         ports/databases/libudbc
@@ -19637,6 +19639,7 @@ simgear                         ports/devel/simgear
 simh                            ports/emulators/simh
 simian                          ports/devel/simian
 simlib                          ports/science/simlib
+simple-ccsm                     ports/x11-wm/simple-ccsm
 simplemod                       ports/audio/simplemod
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
