@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gnash
-DISTVERSION=	20080927
+PORTVERSION=	20080927
+PORTREVISION=	1
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.gnashdev.org/dev_snapshots/
 PKGNAMESUFFIX=	-devel
+EXTRACT_SUFX=	.tar.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GNU Flash movie player
@@ -23,7 +25,6 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 
 CONFLICTS=	gnash-[0-9]*
 
-EXTRACT_SUFX=	.tar.tgz
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes

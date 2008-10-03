@@ -10,7 +10,6 @@ bin/soldumper
 %%KONQPLUGIN%%share/apps/klash/pluginsinfo
 %%KONQPLUGIN%%share/apps/klash/klashpartui.rc
 %%KONQPLUGIN%%share/services/klash_part.desktop
-%%KONQPLUGIN%%lib/kde3/libklashpart.a
 %%KONQPLUGIN%%lib/kde3/libklashpart.so
 %%KONQPLUGIN%%lib/kde3/libklashpart.la
 @unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
@@ -34,9 +33,9 @@ lib/gnash/libgnashmedia.so
 lib/gnash/libgnashnet.la
 lib/gnash/libgnashnet.so
 lib/gnash/libgnashnet.so.0
-%%FFPLUGIN%%lib/gnash/libmozsdk.la
-%%FFPLUGIN%%lib/gnash/libmozsdk.so
-%%FFPLUGIN%%lib/gnash/libmozsdk.so.0
+%%GTK%%lib/gnash/libmozsdk.la
+%%GTK%%lib/gnash/libmozsdk.so
+%%GTK%%lib/gnash/libmozsdk.so.0
 %%DOCSDIR%%/gnashuser.html
 %%DOCSDIR%%/images/car_crash.png
 %%DOCSDIR%%/images/rtmp.png
