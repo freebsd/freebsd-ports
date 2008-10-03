@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://getgnash.org/packages/releases/ \
 		${MASTER_SITE_GNU}
@@ -63,7 +64,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 .include <bsd.port.pre.mk>
 
 # Plugin option processing
-.if defined(WITH_GTK) && !defined(WITHOUT_PLUGIN)
+.if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
 PLIST_SUB+=	FFPLUGIN=""
 .else
 PLIST_SUB+=	FFPLUGIN="@comment "
@@ -101,7 +102,7 @@ PLIST_SUB+=	NLS="@comment "
 #
 GNASH_GUIS=
 
-.if defined(WITH_GTK)
+.if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk20
 GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
@@ -135,7 +136,7 @@ LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--enable-renderer=agg
 .elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
 USE_GL=			yes
-.	if defined(WITH_GTK)
+.	if !defined(WITHOUT_GTK)
 LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
@@ -177,10 +178,21 @@ post-patch:
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
+	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
+		${WRKSRC}/libbase/Makefile.in
+
+post-install:
+	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/gnashrc.dist \
+			${PREFIX}/etc/gnashrc; \
+	fi
+	if [ ! -f ${PREFIX}/etc/gnashpluginrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/gnashpluginrc.dist \
+			${PREFIX}/etc/gnashpluginrc; \
+	fi
 
 .if !defined(WITHOUT_PLUGIN)
-post-install:
-.if defined(WITH_GTK)
+.if !defined(WITHOUT_GTK)
 	@cd ${INSTALL_WRKSRC}/plugin && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
