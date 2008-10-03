@@ -10,6 +10,7 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/8beat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/ballad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/ballad128.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/ballad68.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/basicrock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/beguine.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bigband.html
@@ -51,15 +52,20 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/polka.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/popballad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rb-ballad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rb.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rhumba.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rock-128.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rockballad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rockwaltz.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/salsa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/samba.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/showtune.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/shuffleboggie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/ska.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/slowblues.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/slowbolero.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/slowbroadway.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/slowcountry.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/slowjazz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/softrock.html
@@ -73,11 +79,12 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/zydeco.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/mambo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/quando-g.s280.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/salsa1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/salsa2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/w-rock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/yamaha/western.html
 %%PORTDOCS%%%%DOCSDIR%%/html/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/mma.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/crossref.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img10.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img11.png
@@ -98,6 +105,7 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img25.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img26.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img27.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/img28.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img3.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img5.png
@@ -191,6 +199,7 @@ bin/mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/girl.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/harmony/harmony.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/harmony/harmony.mma
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle1.mid
@@ -214,6 +223,7 @@ bin/mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/macros-all.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/macros.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/macros.mma
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/math.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/repeats.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/volumes.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/volumes.mma
@@ -303,6 +313,8 @@ bin/mma
 %%DATADIR%%/MMA/patWalk.pyc
 %%DATADIR%%/MMA/patch.py
 %%DATADIR%%/MMA/patch.pyc
+%%DATADIR%%/MMA/safe_eval.py
+%%DATADIR%%/MMA/safe_eval.pyc
 %%DATADIR%%/MMA/seqrnd.py
 %%DATADIR%%/MMA/seqrnd.pyc
 %%DATADIR%%/MMA/translate.py
@@ -312,7 +324,6 @@ bin/mma
 %%DATADIR%%/includes/README
 %%DATADIR%%/includes/aria/.keepme
 %%DATADIR%%/includes/casio-wk3000.mma
-%%DATADIR%%/includes/casiowk3000.mma
 %%DATADIR%%/includes/init-long.mma
 %%DATADIR%%/includes/init.mma
 %%DATADIR%%/includes/reset.mma
@@ -324,6 +335,7 @@ bin/mma
 %%DATADIR%%/lib/kara/K50s_rock.mma
 %%DATADIR%%/lib/kara/README
 %%DATADIR%%/lib/kara/twi.mma
+%%DATADIR%%/lib/stdlib/#easyswing.mma#
 %%DATADIR%%/lib/stdlib/.mmaDB
 %%DATADIR%%/lib/stdlib/50srock.mma
 %%DATADIR%%/lib/stdlib/60srock.mma
@@ -331,6 +343,7 @@ bin/mma
 %%DATADIR%%/lib/stdlib/README
 %%DATADIR%%/lib/stdlib/ballad.mma
 %%DATADIR%%/lib/stdlib/ballad128.mma
+%%DATADIR%%/lib/stdlib/ballad68.mma
 %%DATADIR%%/lib/stdlib/basicrock.mma
 %%DATADIR%%/lib/stdlib/beguine.mma
 %%DATADIR%%/lib/stdlib/bigband.mma
@@ -372,15 +385,20 @@ bin/mma
 %%DATADIR%%/lib/stdlib/polka.mma
 %%DATADIR%%/lib/stdlib/popballad.mma
 %%DATADIR%%/lib/stdlib/quickstep.mma
+%%DATADIR%%/lib/stdlib/rb-ballad.mma
 %%DATADIR%%/lib/stdlib/rb.mma
 %%DATADIR%%/lib/stdlib/rhumba.mma
 %%DATADIR%%/lib/stdlib/rock-128.mma
 %%DATADIR%%/lib/stdlib/rockballad.mma
+%%DATADIR%%/lib/stdlib/rockwaltz.mma
+%%DATADIR%%/lib/stdlib/salsa.mma
 %%DATADIR%%/lib/stdlib/samba.mma
+%%DATADIR%%/lib/stdlib/showtune.mma
 %%DATADIR%%/lib/stdlib/shuffleboggie.mma
 %%DATADIR%%/lib/stdlib/ska.mma
 %%DATADIR%%/lib/stdlib/slowblues.mma
 %%DATADIR%%/lib/stdlib/slowbolero.mma
+%%DATADIR%%/lib/stdlib/slowbroadway.mma
 %%DATADIR%%/lib/stdlib/slowcountry.mma
 %%DATADIR%%/lib/stdlib/slowjazz.mma
 %%DATADIR%%/lib/stdlib/softrock.mma
@@ -392,23 +410,23 @@ bin/mma
 %%DATADIR%%/lib/stdlib/vienesewaltz.mma
 %%DATADIR%%/lib/stdlib/waltz.mma
 %%DATADIR%%/lib/stdlib/zydeco.mma
+%%DATADIR%%/lib/yamaha/#salsa1.mma#
 %%DATADIR%%/lib/yamaha/.mmaDB
 %%DATADIR%%/lib/yamaha/README
 %%DATADIR%%/lib/yamaha/mambo.mma
 %%DATADIR%%/lib/yamaha/quando-g.s280.mma
+%%DATADIR%%/lib/yamaha/salsa1.mma
+%%DATADIR%%/lib/yamaha/salsa2.mma
 %%DATADIR%%/lib/yamaha/w-rock.mma
 %%DATADIR%%/lib/yamaha/western.mma
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut/mup
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref/mupex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/yamaha
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/stdlib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/kara
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/lib/yamaha
+@dirrm %%DATADIR%%/lib/stdlib
+@dirrm %%DATADIR%%/lib/kara
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/includes/aria
+@dirrm %%DATADIR%%/includes
+@dirrm %%DATADIR%%/MMA
+@dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scales
@@ -420,11 +438,14 @@ bin/mma
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/harmony
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/aria
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/lib/yamaha
-@dirrm %%DATADIR%%/lib/stdlib
-@dirrm %%DATADIR%%/lib/kara
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/includes/aria
-@dirrm %%DATADIR%%/includes
-@dirrm %%DATADIR%%/MMA
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut/mup
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref/mupex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/yamaha
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/stdlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/kara
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
