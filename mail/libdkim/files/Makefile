@@ -1,0 +1,16 @@
+# $FreeBSD$
+
+LIB = 	dkim
+SRCS=	dkim.cpp dns.cpp dkimbase.cpp dkimsign.cpp dkimverify.cpp
+INCS=	dkim.h dns.h dkimbase.h dkimsign.h dkimverify.h
+
+SHLIB_MAJOR=	%%SHLIB_MAJOR%%
+
+LIBDIR=		${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include
+CFLAGS+=	-DOPENSSL_FIPS -I${OPENSSLBASE}/include
+LDFLAGS+=	-lcrypto -L${OPENSSLBASE}/lib
+
+NO_PROFILE=
+
+.include <bsd.lib.mk>

@@ -203,6 +203,7 @@
     SUBDIR += kshowmail
     SUBDIR += lbdb
     SUBDIR += lens
+    SUBDIR += libdkim
     SUBDIR += libdomainkeys
     SUBDIR += libesmtp
     SUBDIR += libetpan
