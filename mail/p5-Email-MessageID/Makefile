@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MessageID
-PORTVERSION=	1.351
+PORTVERSION=	1.400
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate world unique message-ids
 
-BUILD_DEPENDS=	${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Email-Address>=1.80:${PORTSDIR}/mail/p5-Email-Address
 
 PERL_CONFIGURE=	yes
 
