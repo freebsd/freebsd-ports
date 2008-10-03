@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FLV-Info
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
@@ -16,9 +16,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract metadata from Flash Video files
 
 RUN_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
-		p5-Digest-MD5>=2:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
@@ -33,4 +32,11 @@ MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
 post-patch:
 	${REINPLACE_CMD} -e '/Readonly/d' ${WRKSRC}/*.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Digest-MD5>=2:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
