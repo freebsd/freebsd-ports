@@ -12,8 +12,12 @@ bin/soldumper
 %%KONQPLUGIN%%lib/kde3/libklashpart.a
 %%KONQPLUGIN%%lib/kde3/libklashpart.so
 %%KONQPLUGIN%%lib/kde3/libklashpart.la
-etc/gnashpluginrc
-etc/gnashrc
+@unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
+etc/gnashpluginrc.dist
+@exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
+@unexec if cmp -s %D/etc/gnashrc.dist %D/etc/gnashrc; then rm -f %D/etc/gnashrc; fi
+etc/gnashrc.dist
+@exec if [ ! -f %B/gnashrc ]; then cp -p %D/%F %B/gnashrc; fi
 lib/gnash/libgnashamf-%%GNASHVER%%.so
 lib/gnash/libgnashamf.a
 lib/gnash/libgnashamf.la
