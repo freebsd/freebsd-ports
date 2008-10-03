@@ -135,6 +135,8 @@ lib/libgobject-2.0.so.0
 lib/libgobject-2.0.so.0.1400.6
 lib/libgthread-2.0.so.0
 lib/libgthread-2.0.so.0.1400.6
+lib/libkeyutils-1.2.so
+lib/libkeyutils.so.1
 lib/libm-2.7.so
 lib/libm.so.6
 lib/libncurses.so.5
@@ -953,6 +955,7 @@ usr/share/doc/grep-2.5.1/README
 usr/share/doc/grep-2.5.1/THANKS
 usr/share/doc/grep-2.5.1/TODO
 usr/share/doc/info-4.11/COPYING
+usr/share/doc/keyutils-libs-1.2/LICENCE.LGPL
 usr/share/doc/libgcc-4.1.2/COPYING.LIB
 usr/share/doc/ncurses-5.6/ANNOUNCE
 usr/share/doc/ncurses-5.6/AUTHORS
@@ -6313,6 +6316,7 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/doc/pcre
 @dirrm usr/share/doc/ncurses-5.6
 @dirrm usr/share/doc/libgcc-4.1.2
+@dirrm usr/share/doc/keyutils-libs-1.2
 @dirrm usr/share/doc/info-4.11
 @dirrm usr/share/doc/grep-2.5.1
 @dirrm usr/share/doc/glibc-common-2.7

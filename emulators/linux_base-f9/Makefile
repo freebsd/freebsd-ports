@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -42,6 +42,7 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		glibc-common-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-57.fc7.${LINUX_RPM_ARCH}.rpm \
 		info-4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		keyutils-libs-1.2-2.fc6.${LINUX_RPM_ARCH}.rpm \
 		krb5-libs-1.6.2-14.fc8.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.39-14.fc8.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.38-2.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -84,6 +85,7 @@ SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		glib2-2.14.6-2.fc8.src.rpm \
 		glibc-2.7-2.src.rpm \
 		grep-2.5.1-57.fc7.src.rpm \
+		keyutils-1.2-2.fc6.src.rpm \
 		krb5-1.6.2-14.fc8.src.rpm \
 		libselinux-2.0.43-1.fc8.src.rpm \
 		libsepol-2.0.15-1.fc8.src.rpm \
