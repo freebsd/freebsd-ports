@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mma
-DISTVERSION=	1.3a
+DISTVERSION=	1.4
 #PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
@@ -32,6 +32,9 @@ FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
 
 .if !defined (NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
+.if !defined (NO_INSTALL_MANPAGES)
+MAN1=	mma.1 mma-libdoc.1 mma-renum.1
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -53,6 +56,10 @@ do-install:
 	@cd ${WRKSRC} && ${CP_INSTALL_MMA}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/pdf && ${CP} ${WRKDOC}/*.pdf ${DOCSDIR}/pdf/
+	@cd ${DOCSDIR} && ${RM} -R man
+.if !defined(NO_INSTALL_MANPAGES)
+	@cd ${WRKSRC}/docs/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/
+.endif
 .endif
 
 .if defined (WITH_TIMIDITY)

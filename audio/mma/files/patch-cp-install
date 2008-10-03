@@ -1,6 +1,5 @@
-$FreeBSD$
---- cp-install	Wed Mar  7 22:17:56 2007
-+++ cp-install.port	Sat Mar 10 21:47:41 2007
+--- cp-install	2008-09-28 20:33:38.000000000 +0200
++++ cp-install.port	2008-10-03 11:21:43.000000000 +0200
 @@ -42,7 +42,7 @@
  except:
  	u=1
@@ -58,7 +57,7 @@ $FreeBSD$
  
  ###########################################
  ######## Set permissions/udate database
-@@ -127,14 +136,14 @@
+@@ -127,18 +136,18 @@
  print
  print "Updating database file. This uses mma with the -G option."
  print "If this fails, something was not installed properly"
@@ -75,5 +74,10 @@ $FreeBSD$
 +#print "Setting permissions on MMADIR database file for user update."
 +#os.system("chmod a+w " + dest+"/lib/stdlib/.mmaDB")
  
+ ## man pages
+ 
+-print "There are some man pages in %s/docs/man that you may wish to install." % dest
++#print "There are some man pages in %s/docs/man that you may wish to install." % dest
  
  
+ print "Install complete. Have fun!"
