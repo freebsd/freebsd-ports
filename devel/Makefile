@@ -2131,6 +2131,7 @@
     SUBDIR += py-ice
     SUBDIR += py-icu
     SUBDIR += py-instant
+    SUBDIR += py-ipaddr
     SUBDIR += py-istring
     SUBDIR += py-jcc
     SUBDIR += py-json-py
