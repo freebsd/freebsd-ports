@@ -14941,6 +14941,7 @@ p5-pod-tree                     ports/textproc/p5-Pod-Tree
 p5-pod-wsdl                     ports/textproc/p5-Pod-WSDL
 p5-pod-xhtml                    ports/textproc/p5-Pod-Xhtml
 p5-pod-xml                      ports/textproc/p5-Pod-XML
+p5-pod2pdf                      ports/textproc/p5-pod2pdf
 p5-podlators                    ports/textproc/p5-podlators
 p5-podtohtml                    ports/www/p5-PodToHTML
 p5-poe                          ports/devel/p5-POE
