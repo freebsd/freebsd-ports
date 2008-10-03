@@ -2543,6 +2543,7 @@
     SUBDIR += upnp
     SUBDIR += upp
     SUBDIR += uppaal
+    SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
     SUBDIR += valide
