@@ -194,6 +194,7 @@
     SUBDIR += gdk-pixbuf
     SUBDIR += gdtclft
     SUBDIR += geeqie
+    SUBDIR += gegl
     SUBDIR += geist
     SUBDIR += geoapi
     SUBDIR += geomorph
