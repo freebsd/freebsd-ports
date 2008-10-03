@@ -7,11 +7,12 @@
 
 PORTNAME=	gxemul
 PORTVERSION=	0.4.6.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	imp@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
 OPTIONS=	X11	 "X11 support" on
