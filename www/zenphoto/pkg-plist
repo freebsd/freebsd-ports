@@ -25,10 +25,17 @@
 %%WWWDIR%%/themes/effervescence_plus/album.php
 %%WWWDIR%%/themes/effervescence_plus/archive.php
 %%WWWDIR%%/themes/effervescence_plus/customfunctions.php
+%%WWWDIR%%/themes/effervescence_plus/footer.php
+%%WWWDIR%%/themes/effervescence_plus/gallery.php
 %%WWWDIR%%/themes/effervescence_plus/image.php
 %%WWWDIR%%/themes/effervescence_plus/images/err-passwordprotected.gif
 %%WWWDIR%%/themes/effervescence_plus/images/logo.png
 %%WWWDIR%%/themes/effervescence_plus/images/search.png
+%%WWWDIR%%/themes/effervescence_plus/images/multimediaDefault.png
+%%WWWDIR%%/themes/effervescence_plus/images/arrow_right.png
+%%WWWDIR%%/themes/effervescence_plus/images/zen-logo.jpg
+%%WWWDIR%%/themes/effervescence_plus/images/dark_arrow_right.png
+%%WWWDIR%%/themes/effervescence_plus/images/imageDefault.png
 %%WWWDIR%%/themes/effervescence_plus/images/slimbox/closelabel.gif
 %%WWWDIR%%/themes/effervescence_plus/images/slimbox/loading.gif
 %%WWWDIR%%/themes/effervescence_plus/images/slimbox/nextlabel.gif
@@ -43,6 +50,9 @@
 %%WWWDIR%%/themes/effervescence_plus/images/smooth/open.gif
 %%WWWDIR%%/themes/effervescence_plus/images/smooth/open.png
 %%WWWDIR%%/themes/effervescence_plus/index.php
+%%WWWDIR%%/themes/effervescence_plus/indexpage.php
+%%WWWDIR%%/themes/effervescence_plus/pages.php
+%%WWWDIR%%/themes/effervescence_plus/news.php
 %%WWWDIR%%/themes/effervescence_plus/jd.gallery.css
 %%WWWDIR%%/themes/effervescence_plus/scripts/bluranchors.js
 %%WWWDIR%%/themes/effervescence_plus/scripts/jd.gallery.js
@@ -52,6 +62,7 @@
 %%WWWDIR%%/themes/effervescence_plus/scripts/slimbox.js
 %%WWWDIR%%/themes/effervescence_plus/scripts/swfobject.js
 %%WWWDIR%%/themes/effervescence_plus/search.php
+%%WWWDIR%%/themes/effervescence_plus/sidebar.php
 %%WWWDIR%%/themes/effervescence_plus/simpleviewer.swf
 %%WWWDIR%%/themes/effervescence_plus/slideshow-controls.png
 %%WWWDIR%%/themes/effervescence_plus/slideshow.css
@@ -92,42 +103,44 @@
 %%WWWDIR%%/themes/stopdesign/css/master.css
 %%WWWDIR%%/themes/stopdesign/css/photos.css
 %%WWWDIR%%/themes/stopdesign/image.php
-%%WWWDIR%%/themes/stopdesign/img/bg_gal.gif
-%%WWWDIR%%/themes/stopdesign/img/bg_gal.png
-%%WWWDIR%%/themes/stopdesign/img/bg_page.jpg
-%%WWWDIR%%/themes/stopdesign/img/bg_path.gif
-%%WWWDIR%%/themes/stopdesign/img/bg_shadow.png
-%%WWWDIR%%/themes/stopdesign/img/bg_slide.gif
-%%WWWDIR%%/themes/stopdesign/img/bg_slide.png
-%%WWWDIR%%/themes/stopdesign/img/bg_slide_sm.gif
-%%WWWDIR%%/themes/stopdesign/img/bg_slide_sm.png
-%%WWWDIR%%/themes/stopdesign/img/btn_add_a_comment.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_all_favorites.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_gallery_archive.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_go.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_hide.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_preview.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_rss.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_save.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_show.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_submit.gif
-%%WWWDIR%%/themes/stopdesign/img/btn_view_gallery.gif
-%%WWWDIR%%/themes/stopdesign/img/bullet_white.gif
-%%WWWDIR%%/themes/stopdesign/img/canon_sd10.jpg
-%%WWWDIR%%/themes/stopdesign/img/divider_l.gif
-%%WWWDIR%%/themes/stopdesign/img/divider_l.png
-%%WWWDIR%%/themes/stopdesign/img/divider_r.gif
-%%WWWDIR%%/themes/stopdesign/img/divider_r.png
-%%WWWDIR%%/themes/stopdesign/img/icon_pushpin.gif
-%%WWWDIR%%/themes/stopdesign/img/moreslide_next.gif
-%%WWWDIR%%/themes/stopdesign/img/moreslide_prev.gif
-%%WWWDIR%%/themes/stopdesign/img/photonav_next.gif
-%%WWWDIR%%/themes/stopdesign/img/photonav_next.png
-%%WWWDIR%%/themes/stopdesign/img/photonav_prev.gif
-%%WWWDIR%%/themes/stopdesign/img/photonav_prev.png
-%%WWWDIR%%/themes/stopdesign/img/slide_minis.gif
-%%WWWDIR%%/themes/stopdesign/img/txt_backward.gif
-%%WWWDIR%%/themes/stopdesign/img/txt_forward.gif
+%%WWWDIR%%/themes/stopdesign/images/bg_gal.gif
+%%WWWDIR%%/themes/stopdesign/images/bg_gal.png
+%%WWWDIR%%/themes/stopdesign/images/bg_page.jpg
+%%WWWDIR%%/themes/stopdesign/images/bg_path.gif
+%%WWWDIR%%/themes/stopdesign/images/bg_shadow.png
+%%WWWDIR%%/themes/stopdesign/images/bg_slide.gif
+%%WWWDIR%%/themes/stopdesign/images/bg_slide.png
+%%WWWDIR%%/themes/stopdesign/images/bg_slide_sm.gif
+%%WWWDIR%%/themes/stopdesign/images/bg_slide_sm.png
+%%WWWDIR%%/themes/stopdesign/images/btn_add_a_comment.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_all_favorites.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_gallery_archive.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_go.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_hide.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_preview.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_rss.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_save.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_show.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_submit.gif
+%%WWWDIR%%/themes/stopdesign/images/btn_view_gallery.gif
+%%WWWDIR%%/themes/stopdesign/images/bullet_white.gif
+%%WWWDIR%%/themes/stopdesign/images/canon_sd10.jpg
+%%WWWDIR%%/themes/stopdesign/images/divider_l.gif
+%%WWWDIR%%/themes/stopdesign/images/divider_l.png
+%%WWWDIR%%/themes/stopdesign/images/divider_r.gif
+%%WWWDIR%%/themes/stopdesign/images/divider_r.png
+%%WWWDIR%%/themes/stopdesign/images/err-passwordprotected.gif
+%%WWWDIR%%/themes/stopdesign/images/icon_pushpin.gif
+%%WWWDIR%%/themes/stopdesign/images/imageDefault.png
+%%WWWDIR%%/themes/stopdesign/images/moreslide_next.gif
+%%WWWDIR%%/themes/stopdesign/images/moreslide_prev.gif
+%%WWWDIR%%/themes/stopdesign/images/photonav_next.gif
+%%WWWDIR%%/themes/stopdesign/images/photonav_next.png
+%%WWWDIR%%/themes/stopdesign/images/photonav_prev.gif
+%%WWWDIR%%/themes/stopdesign/images/photonav_prev.png
+%%WWWDIR%%/themes/stopdesign/images/slide_minis.gif
+%%WWWDIR%%/themes/stopdesign/images/txt_backward.gif
+%%WWWDIR%%/themes/stopdesign/images/txt_forward.gif
 %%WWWDIR%%/themes/stopdesign/index.php
 %%WWWDIR%%/themes/stopdesign/js/comments.js
 %%WWWDIR%%/themes/stopdesign/js/rememberMe.js
@@ -138,6 +151,7 @@
 %%WWWDIR%%/themes/stopdesign/theme.png
 %%WWWDIR%%/themes/stopdesign/theme_description.php
 %%WWWDIR%%/themes/stopdesign/themeoptions.php
+%%WWWDIR%%/zp-core/404.php
 %%WWWDIR%%/zp-core/admin-albumsort.php
 %%WWWDIR%%/zp-core/admin-cache-images.php
 %%WWWDIR%%/zp-core/admin-comments.php
@@ -159,7 +173,10 @@
 %%WWWDIR%%/zp-core/class-album.php
 %%WWWDIR%%/zp-core/class-gallery.php
 %%WWWDIR%%/zp-core/class-image.php
+%%WWWDIR%%/zp-core/class-load.php
 %%WWWDIR%%/zp-core/class-search.php
+%%WWWDIR%%/zp-core/class-transientimage.php
+%%WWWDIR%%/zp-core/class-video.php
 %%WWWDIR%%/zp-core/classes.php
 %%WWWDIR%%/zp-core/controller.php
 %%WWWDIR%%/zp-core/exif/exif.php
@@ -190,6 +207,7 @@
 %%WWWDIR%%/zp-core/images/err-nogd.gif
 %%WWWDIR%%/zp-core/images/err-passwordprotected.gif
 %%WWWDIR%%/zp-core/images/fail.png
+%%WWWDIR%%/zp-core/images/imageDefault.png
 %%WWWDIR%%/zp-core/images/lock.png
 %%WWWDIR%%/zp-core/images/lock_open.png
 %%WWWDIR%%/zp-core/images/movie.jpg
@@ -199,15 +217,14 @@
 %%WWWDIR%%/zp-core/images/refresh.png
 %%WWWDIR%%/zp-core/images/reset.png
 %%WWWDIR%%/zp-core/images/rss.gif
-%%WWWDIR%%/zp-core/images/thickbox_macFFBg.png
+%%WWWDIR%%/zp-core/images/thickbox_macFFBgHack.png
+%%WWWDIR%%/zp-core/images/thickbox_loadingAnimation.gif
 %%WWWDIR%%/zp-core/images/togglerc.gif
 %%WWWDIR%%/zp-core/images/togglerch.gif
 %%WWWDIR%%/zp-core/images/togglero.gif
 %%WWWDIR%%/zp-core/images/toggleroh.gif
 %%WWWDIR%%/zp-core/images/warn.png
 %%WWWDIR%%/zp-core/images/zen-logo.gif
-%%WWWDIR%%/zp-core/images/zen-logo.jpg
-%%WWWDIR%%/zp-core/images/zenphoto.gif
 %%WWWDIR%%/zp-core/index.php
 %%WWWDIR%%/zp-core/js/admin.js
 %%WWWDIR%%/zp-core/js/ajax.js
@@ -248,6 +265,19 @@
 %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/sr_RS/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/sr_RS/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/en_US/place_holder.txt
+%%WWWDIR%%/zp-core/locale/es_ES/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/es_ES/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/plugins/contact_form.php
+%%WWWDIR%%/zp-core/plugins/contact_form/form.php
 %%WWWDIR%%/zp-core/plugins/GoogleCheckout.php
 %%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCartDefault.css
 %%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCartPostToSandBox.js
@@ -265,8 +295,10 @@
 %%WWWDIR%%/zp-core/plugins/flvplayer/flvplayer.js
 %%WWWDIR%%/zp-core/plugins/flvplayer/flvplayer.swf
 %%WWWDIR%%/zp-core/plugins/google_maps.php
-%%WWWDIR%%/zp-core/plugins/google_maps/phooglelite.php
+%%WWWDIR%%/zp-core/plugins/google_maps/license.txt
+%%WWWDIR%%/zp-core/plugins/google_maps/phoogle.php
 %%WWWDIR%%/zp-core/plugins/image_album_statistics.php
+%%WWWDIR%%/zp-core/plugins/paged_thumbs_nav.php
 %%WWWDIR%%/zp-core/plugins/print_album_menu.php
 %%WWWDIR%%/zp-core/plugins/rating.php
 %%WWWDIR%%/zp-core/plugins/rating/alt_star.png
@@ -285,6 +317,7 @@
 %%WWWDIR%%/zp-core/plugins/spamfilters/none.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/simple.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/spamassassin.php
+%%WWWDIR%%/zp-core/plugins/static_html_cache.php
 %%WWWDIR%%/zp-core/plugins/tag_suggest.php
 %%WWWDIR%%/zp-core/plugins/tag_suggest/tag.css
 %%WWWDIR%%/zp-core/plugins/tag_suggest/tag.js
@@ -313,6 +346,8 @@
 @dirrm %%WWWDIR%%/zp-core/plugins/flv_playlist
 @dirrm %%WWWDIR%%/zp-core/plugins/flowplayer
 @dirrm %%WWWDIR%%/zp-core/plugins/GoogleCheckout
+@dirrmtry %%WWWDIR%%/zp-core/plugins/google_maps
+@dirrm %%WWWDIR%%/zp-core/plugins/contact_form
 @dirrm %%WWWDIR%%/zp-core/plugins
 @dirrm %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/zh_TW
@@ -322,9 +357,22 @@
 @dirrm %%WWWDIR%%/zp-core/locale/fr_FR
 @dirrm %%WWWDIR%%/zp-core/locale/es_LA/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/es_LA
+@dirrm %%WWWDIR%%/zp-core/locale/en_US/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/en_US
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE
+@dirrm %%WWWDIR%%/zp-core/locale/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/zh_CN
+@dirrm %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/pl_PL
+@dirrm %%WWWDIR%%/zp-core/locale/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/it_IT
+@dirrm %%WWWDIR%%/zp-core/locale/sr_RS/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/sr_RS
+@dirrm %%WWWDIR%%/zp-core/locale/en_US/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/en_US
+@dirrm %%WWWDIR%%/zp-core/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/es_ES
 @dirrm %%WWWDIR%%/zp-core/locale
 @dirrm %%WWWDIR%%/zp-core/lib-gettext
 @dirrm %%WWWDIR%%/zp-core/js/scriptaculous
@@ -334,7 +382,7 @@
 @dirrm %%WWWDIR%%/zp-core/exif
 @dirrmtry %%WWWDIR%%/zp-core
 @dirrm %%WWWDIR%%/themes/stopdesign/js
-@dirrm %%WWWDIR%%/themes/stopdesign/img
+@dirrm %%WWWDIR%%/themes/stopdesign/images
 @dirrm %%WWWDIR%%/themes/stopdesign/css
 @dirrm %%WWWDIR%%/themes/stopdesign
 @dirrm %%WWWDIR%%/themes/example
