@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-FormFu
 PORTVERSION=	0.03005
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -37,6 +38,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Regexp-Copy>=0:${PORTSDIR}/textproc/p5-Regexp-Copy \
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Test-NoWarnings>=0.083:${PORTSDIR}/devel/p5-Test-NoWarnings \
