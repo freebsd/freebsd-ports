@@ -1,8 +1,8 @@
 Index: server/Makefile
 diff -u server/Makefile.orig server/Makefile
---- server/Makefile.orig	Tue May 29 04:12:20 2007
-+++ server/Makefile	Sat Jul 21 03:43:25 2007
-@@ -21,6 +21,7 @@
+--- server/Makefile.orig	2008-10-04 06:52:48.000000000 +0900
++++ server/Makefile	2008-10-04 19:48:15.000000000 +0900
+@@ -26,6 +26,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755
  INSTALL ?= install
@@ -10,7 +10,7 @@ diff -u server/Makefile.orig server/Makefile
  LINK_FLAGS ?= -Wl,-E
  EXTRAOBJS =
  
-@@ -48,18 +49,18 @@
+@@ -56,18 +57,18 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0`
  
@@ -19,35 +19,27 @@ diff -u server/Makefile.orig server/Makefile
 +GLIB12_INCLUDE = `$(GLIB_CONFIG) --cflags`
 +GLIB12_LIB = `$(GLIB_CONFIG) --libs glib gmodule`
  
--FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
+-FLAGS = -O2 $(PKG_INCLUDE)
++FLAGS = $(PKG_INCLUDE)
+ 
  ifeq ($(glib12),1)
--FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
+-    FLAGS = -O2 $(GLIB12_INCLUDE)
++    FLAGS = $(GLIB12_INCLUDE)
  endif
  ifeq ($(glib12),yes)
--FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
+-    FLAGS = -O2  $(GLIB12_INCLUDE)
++    FLAGS = $(GLIB12_INCLUDE)
  endif
+-FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
++FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -I$(LOCALBASE)/include -DGKRELLM_SERVER
  
--FLAGS+= $(PTHREAD_INC)
-+FLAGS+= $(PTHREAD_INC) -I$(LOCALBASE)/include
- 
- LIBS = $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
- 
-@@ -111,10 +112,18 @@
+ LIBS = $(PKG_LIB)
+ ifeq ($(glib12),1)
+@@ -116,21 +117,33 @@
  
  all:	gkrellmd
  
 -gkrellmd: $(OBJS) $(EXTRAOBJS)
-+gkrellmd.pc: Makefile
-+	echo "prefix=$(INSTALLROOT)" > gkrellmd.pc
-+	echo "Name: GKrellMd" >> gkrellmd.pc
-+	echo "Description: Extensible GLIB system monitoring application server" >> gkrellmd.pc
-+	echo "Version: $(VERSION)" >> gkrellmd.pc
-+	echo "Requires: glib-2.0" >> gkrellmd.pc
-+	echo "Cflags: -I$(INCLUDEDIR)" >> gkrellmd.pc
-+
 +gkrellmd: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd $(LIBS) $(LINK_FLAGS)
  
@@ -56,7 +48,15 @@ diff -u server/Makefile.orig server/Makefile
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd.static -static \
  		$(LIBS) $(LINK_FLAGS)
  
-@@ -122,10 +131,14 @@
++gkrellmd.pc: Makefile
++	echo "prefix=$(INSTALLROOT)" > gkrellmd.pc
++	echo "Name: GKrellMd" >> gkrellmd.pc
++	echo "Description: Extensible GLIB system monitoring application server" >> gkrellmd.pc
++	echo "Version: $(VERSION)" >> gkrellmd.pc
++	echo "Requires: glib-2.0" >> gkrellmd.pc
++	echo "Cflags: -I$(INCLUDEDIR)" >> gkrellmd.pc
++
+ freebsd2:
  	$(MAKE) GTK_CONFIG=gtk12-config \
  		EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellmd
  
@@ -65,45 +65,49 @@ diff -u server/Makefile.orig server/Makefile
  	$(MAKE) GTK_CONFIG=gtk12-config \
  		EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellmd
  
-+freebsd5 freebsd6 freebsd7 freebsd:
++freebsd5 freebsd6 freebsd7 freebsd8 freebsd:
 +	$(MAKE) GTK_CONFIG=gtk12-config \
 +		EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellmd
 +
  darwin: 
  	$(MAKE) GTK_CONFIG=gtk-config STRIP= \
  		EXTRAOBJS= SYS_LIBS="-lkvm -lmd5" \
-@@ -159,7 +168,7 @@
- 	SYS_LIBS=" -llargeint -lws2_32 -lpdh -lnetapi32 -liphlpapi -lntdll -lintl" \
- 	gkrellmd
+@@ -175,7 +188,7 @@
+ 		SYS_LIBS=" -llargeint -lws2_32 -lpdh -lnetapi32 -liphlpapi -lntdll -lintl" \
+ 		gkrellmd
  
 -install: install_bin install_inc install_man
 +install: install_bin install_inc install_man install_gkrellmd.pc
  
  install_bin:
  	$(INSTALL) -d -m $(INSTALLDIRMODE) $(SINSTALLDIR)
-@@ -171,11 +180,16 @@
+@@ -187,15 +200,20 @@
  
  install_man:
  	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
 -	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).1
 +	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(SMANDIR)/$(PACKAGE_D).8
-+
+ 
+ install_cfg:
+ 	$(INSTALL) -d -m $(CFGDIRMODE) $(CFGDIR)
+ 	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(CFGDIR)/gkrellmd.conf
+ 
 +install_gkrellmd.pc:
 +	$(INSTALL) -d $(PKGCONFIGDIR)
 +	$(INSTALL) -c -m $(INCLUDEMODE) gkrellmd.pc $(PKGCONFIGDIR)
- 
++
  uninstall:
  	rm -f $(SINSTALLDIR)/$(PACKAGE_D)
  	rm -f $(SMANDIR)/$(PACKAGE_D).1
 +	rm -f $(PKGCONFIGDIR)/gkrellmd.pc
  
- install_darwin:
+ install_darwin install_darwin9 install_macosx:
  	$(MAKE) install STRIP=
-@@ -205,6 +219,7 @@
+@@ -226,6 +244,7 @@
  clean:
  	$(RM) *.o *~ *.bak configure.h configure.log gkrellmd gkrellmd.exe \
  		libgkrellmd.a core
 +	$(RM) gkrellmd.pc
  
  SYSDEPS = ../src/sysdeps/bsd-common.c ../src/sysdeps/bsd-net-open.c \
- 	../src/sysdeps/freebsd.c ../src/sysdeps/gtop.c \
+ 	../src/sysdeps/darwin.c \

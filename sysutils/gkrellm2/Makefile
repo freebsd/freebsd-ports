@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.3.1
-PORTREVISION=	5
+PORTVERSION=	2.3.2
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -16,23 +16,31 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
-.if !defined(GKRELLM_SERVER_ONLY)
-CONFLICTS=	gkrellm-1.*
-.endif
-
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_RC_SUBR=	gkrellmd.sh
+WANT_GNOME=	yes
+USE_OPENSSL=	yes		# cannot set after bsd.port.pre.mk
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
+
+OPTIONS=	GKRELLM_CLIENT	"Enable GKrellM Client"			on  \
+		GNUTLS		"Use GnuTLS"				off \
+		NLS		"Enable NLS support"			on  \
+		NTLM		"Enable NTLM support"			on  \
+		OPENSSL		"Use OpenSSL"				on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GKRELLM_CLIENT)
+CONFLICTS=	gkrellm-1.*
+.endif
 
 .if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
 BROKEN=		GnuTLS and OpenSSL is mutually exclusive.
 .endif
 
-.if !defined(WITH_OPENSSL) && !defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
-WITH_GNUTLS=	yes
-.endif
-
-.if defined(GKRELLM_SERVER_ONLY)
+.if !defined(WITH_GKRELLM_CLIENT)
 BUILD_WRKSRC=	${WRKSRC}/server
 INSTALL_WRKSRC=	${WRKSRC}/server
 USE_GNOME=	glib20
@@ -55,12 +63,14 @@ MAKE_ENV+=	without-gnutls=1
 MAKE_ENV+=	without-gnutls=1 without-ssl=1
 .endif
 .endif
-
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+.if defined(WITH_NTLM)
+LIB_DEPENDS+=	ntlm.0:${PORTSDIR}/security/libntlm
+.else
+MAKE_ENV+=	without-ntlm=1
+.endif
 
 PLIST_SUB=	PREFIX=${PREFIX}
-.if defined(GKRELLM_SERVER_ONLY)
+.if !defined(WITH_GKRELLM_CLIENT)
 PLIST_SUB+=	CLIENT="@comment " NLS="@comment "
 .else
 PLIST_SUB+=	CLIENT=""
@@ -76,8 +86,6 @@ MAN8=		gkrellmd.8
 .if !defined(NOPORTDOCS)
 PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 .endif
-
-.include <bsd.port.pre.mk>
 
 ALL_TARGET=	freebsd
 .if ${OSVERSION} < 500000
@@ -96,13 +104,6 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${LOCALBASE}/share/gkrellm2/themes\"' \
 		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"' \
 		-DGKRELLMD_SYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm2/plugins-gkrellmd\"'
 
-pre-everything::
-.if !defined(GKRELLM_SERVER_ONLY)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use GKRELLM_SERVER_ONLY=yes to build gkrellmd only."
-	@${ECHO_MSG} ""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/INCLUDEDIR/SINCLUDEDIR/g' \
 			  -e 's/INSTALLROOT/SINSTALLROOT/g' \
@@ -110,7 +111,7 @@ post-patch:
 			  ${WRKSRC}/server/Makefile
 
 post-install:
-.if !defined(GKRELLM_SERVER_ONLY)
+.if defined(WITH_GKRELLM_CLIENT)
 	@${MKDIR} ${LOCALBASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${LOCALBASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
