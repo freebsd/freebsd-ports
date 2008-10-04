@@ -231,6 +231,9 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # Enable DomainKeys support
 #WITH_DOMAINKEYS=	yes
 #
+# Enable DKIM (DomainKeys Identified Mail) support
+#WITH_DKIM=	yes
+#
 # Enable Sender Rewriting Scheme (SRS)
 #WITH_SRS=		yes
 #
@@ -504,6 +507,15 @@ SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,-ldomainkeys,' \
 		-e 's,^\# (EXPERIMENTAL_DOMAINKEYS=),\1,'
 .else
 SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,,'
+.endif
+
+.if defined(WITH_DKIM)
+USE_OPENSSL=	yes
+LIB_DEPENDS+=	dkim.1:${PORTSDIR}/mail/libdkim
+SEDLIST+=	-e 's,XX_DKIM_LIBS_XX,-ldkim -lstdc++ -lssl,' \
+		-e 's,^\# (EXPERIMENTAL_DKIM=),\1,'
+.else
+SEDLIST+=	-e 's,XX_DKIM_LIBS_XX,,'
 .endif
 
 .if defined(WITH_SRS)
