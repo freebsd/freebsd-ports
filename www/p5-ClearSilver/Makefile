@@ -7,15 +7,16 @@
 
 PORTNAME=	ClearSilver
 PORTVERSION=	0.10.5
+PORTREVISION=	1
 CATEGORIES=	www perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	rink@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver \
-		${NONEXISTENT}:${PORTSDIR}/www/clearsilver:extract
+BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/clearsilver:extract
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include/ClearSilver"
