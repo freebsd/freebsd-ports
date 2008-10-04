@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	7.7
-PORTREVISION=	1
+PORTVERSION=	7.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -50,6 +49,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
 		${WRKSRC}/Makefile.in
 .endif
+	${REINPLACE_CMD} -e 's/\(pkgconfigdir = \).*/\1$$\(DESTDIR\)$$\(prefix\)\/libdata\/pkgconfig/' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
