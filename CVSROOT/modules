@@ -3842,6 +3842,7 @@ geekcode                        ports/misc/geekcode
 geeklog                         ports/www/geeklog
 geeqie                          ports/graphics/geeqie
 geg                             ports/math/geg
+gegl                            ports/graphics/gegl
 geist                           ports/graphics/geist
 geki2                           ports/games/geki2
 geki3                           ports/games/geki3
@@ -6983,6 +6984,7 @@ libdict                         ports/devel/libdict
 libdisasm                       ports/devel/libdisasm
 libdiscid                       ports/audio/libdiscid
 libdjbdns                       ports/dns/libdjbdns
+libdkim                         ports/mail/libdkim
 libdlmalloc                     ports/devel/libdlmalloc
 libdlna                         ports/devel/libdlna
 libdmx                          ports/x11/libdmx
@@ -21151,6 +21153,7 @@ uppc-kmod                       ports/palm/uppc-kmod
 uproxy                          ports/net/uproxy
 upsd                            ports/sysutils/upsd
 upsdaemon                       ports/sysutils/upsdaemon
+upslug                          ports/devel/upslug
 upsmon                          ports/sysutils/upsmon
 uptimec                         ports/sysutils/uptimec
 uptimed                         ports/sysutils/uptimed
