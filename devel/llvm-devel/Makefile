@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .if defined(BOOTSTRAP)
 SVN_SNAPDATE!=	date -v-1d +%Y-%m-%d
 .else
-SVN_SNAPDATE=	2008-08-19
+SVN_SNAPDATE=	2008-10-02
 .endif
 
 SNAPDATE=	${SVN_SNAPDATE:S/-//g}
