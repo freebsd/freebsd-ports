@@ -17,6 +17,8 @@ COMMENT=	A Simple Open Source CMS
 USE_PHP=	mysql tokenizer gd
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=         failed in MD5 check
+
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}
