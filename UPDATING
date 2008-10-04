@@ -9,115 +9,111 @@ upgrades.
 20080926:
   AFFECTS: users of www/squid30
   AUTHOR: tmseck@netcologne.de
- 
-  The Squid developers decided to disable COSS support in 3.0, cf
-  the discussion starting with http://www.squid-cache.org/mail-archive/squid-dev/200809/0067.html
-  The correspoding port configuration option WITH_SQUID_COSS
-  is still available but is a no-op for now. If you currently use
-  COSS storage on Squid 3.0 you need to disable it in squid.conf.
+
+  The Squid developers decided to disable COSS support in 3.0, cf.
+  the discussion starting here:
+
+	http://www.squid-cache.org/mail-archive/squid-dev/200809/0067.html
+
+  The corresponding port configuration option WITH_SQUID_COSS is still
+  available but is a no-op for now.  If you currently use COSS storage with
+  Squid 3.0 you need to disable it in squid.conf.
 
 20080924:
   AFFECTS: users of ftp/proftpd
   AUTHOR: beech@FreeBSD.org
 
-  proftpd now stores its .delay and .scoreboard files in
-  /var/run/proftpd instead of /var/run. If you are updating
-  an existing installation, adjust the following in
-  /usr/local/etc/proftpd.conf:
+  proftpd now stores its .delay and .scoreboard files in /var/run/proftpd
+  instead of /var/run.  If you are updating an existing installation,
+  adjust the following in /usr/local/etc/proftpd.conf:
 
 	ScoreboardFile	/var/run/proftpd/proftpd.scoreboard
 
-  Also of note: The third party modules, mod_codeconv, mod_comb
-  and mod_sql_tds are not compatible with this release and have
-  been removed. They will be re-added when the respective authors
-  provide updated versions.
+  Also of note: The third party modules, mod_codeconv, mod_comb, and
+  mod_sql_tds are not compatible with this release and have been removed.
+  They will be re-added when the respective authors provide updated versions.
 
 20080909:
   AFFECTS: users of security/logcheck
   AUTHOR: glarkin@FreeBSD.org
 
-  logcheck now stores its configuration files in
-  /usr/local/etc/logcheck instead of /usr/local/etc. If you are
-  upgrading the port from version 1.1.1 to version 1.2.54, copy
-  the following files to a temporary directory, in case they are
-  removed during the upgrade:
+  logcheck now stores its configuration files in /usr/local/etc/logcheck
+  instead of /usr/local/etc.  If you are upgrading the port from version
+  1.1.1 to version 1.2.54, copy the following files to a temporary location,
+  in case they are removed during the upgrade:
 
-  /usr/local/etc/logcheck.hacking
-  /usr/local/etc/logcheck.ignore
-  /usr/local/etc/logcheck.violations
-  /usr/local/etc/logcheck.violations.ignore
+	/usr/local/etc/logcheck.hacking
+	/usr/local/etc/logcheck.ignore
+	/usr/local/etc/logcheck.violations
+	/usr/local/etc/logcheck.violations.ignore
 
   e.g.:
-    cd /usr/local/etc
-    mkdir /tmp/logcheck.saveconf
-    cp logcheck.hacking logcheck.ignore logcheck.violations* \
-      /tmp/logcheck.saveconf
+
+	cd /usr/local/etc
+	mkdir /tmp/logcheck.saveconf
+	cp logcheck.hacking logcheck.ignore logcheck.violations* \
+	   /tmp/logcheck.saveconf
 
   After the upgrade, integrate your local changes to the files listed
-  above into the new configuration files found in the following
-  directories:
+  above into the new configuration files found in the following directories:
 
-  /usr/local/etc/logcheck/cracking.d
-  /usr/local/etc/logcheck/ignore.d.paranoid
-  /usr/local/etc/logcheck/ignore.d.server
-  /usr/local/etc/logcheck/ignore.d.workstation
-  /usr/local/etc/logcheck/violations.d
-  /usr/local/etc/logcheck/violations.ignore.d
+	/usr/local/etc/logcheck/cracking.d
+	/usr/local/etc/logcheck/ignore.d.paranoid
+	/usr/local/etc/logcheck/ignore.d.server
+	/usr/local/etc/logcheck/ignore.d.workstation
+	/usr/local/etc/logcheck/violations.d
+	/usr/local/etc/logcheck/violations.ignore.d
 
   Please consult the following files for more information about
   logcheck rules and reporting levels:
 
-  /usr/local/share/doc/logcheck/README.logcheck
-  /usr/local/share/doc/logcheck/README.logcheck-database
+	/usr/local/share/doc/logcheck/README.logcheck
+	/usr/local/share/doc/logcheck/README.logcheck-database
 
   Also note that the upgraded port installs a crontab file for user
   "logcheck" that executes the logcheck script every hour and emails
   the results to root.  If the installation process cannot install
-  the crontab file, it can be installed manually from:
+  the crontab file, it can be installed manually from
+  /usr/local/share/examples/logcheck/crontab.in, e.g.:
 
-  /usr/local/share/examples/logcheck/crontab.in
-
-  e.g.:
-    crontab -u logcheck /usr/local/share/examples/logcheck/crontab.in
+	crontab -u logcheck /usr/local/share/examples/logcheck/crontab.in
 
 20080907:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
 
-  www/mediawiki version is 1.13 now. 1.12 version was preserved on
+  www/mediawiki version is 1.13 now.  1.12 version was preserved as
   www/mediawiki12 port.
 
 20080902:
- AFFECTS: users of net-mgmt/nagios and net-mgmt/nagios-devel
- AUTHOR: Jarrod Sayers <jarrod@netleader.com.au>
+  AFFECTS: users of net-mgmt/nagios and net-mgmt/nagios-devel
+  AUTHOR: Jarrod Sayers <jarrod@netleader.com.au>
 
- The stable Nagios port has now been updated to version 3.0.3.
- Upgrading to this version shouldn't require any configuration
- changes, but note that most sample configuration files have
- moved into an objects/ directory.
+  The stable Nagios port has now been updated to version 3.0.3.  Upgrading
+  to this version shouldn't require any configuration changes, but note that
+  most sample configuration files were moved into objects/ directory.
 
- Nagios 2.12 is still available as net-mgmt/nagios2, use the
- following to remain on this legacy stable branch:
+  Nagios 2.12 is still available as net-mgmt/nagios2, use the following to
+  remain on this legacy stable branch:
 
-   portmaster -o net-mgmt/nagios2 net-mgmt/nagios
-
-  or, if you're using portupgrade:
-
-   portupgrade -o net-mgmt/nagios2 net-mgmt/nagios
-
-  Nagios 3.x development continues in net-mgmt/nagios-devel,
-  users of this port for production use should consider
-  switching to the stable branch using:
-
-    portmaster -o net-mgmt/nagios net-mgmt/nagios-devel
+	portmaster -o net-mgmt/nagios2 net-mgmt/nagios
 
   or, if you're using portupgrade:
 
-    portupgrade -o net-mgmt/nagios net-mgmt/nagios-devel
+	portupgrade -o net-mgmt/nagios2 net-mgmt/nagios
+
+  Nagios 3.x development continues in net-mgmt/nagios-devel, users of this
+  port in production use should consider switching to the stable branch:
+
+	portmaster -o net-mgmt/nagios net-mgmt/nagios-devel
+
+  or, if you're using portupgrade:
+
+	portupgrade -o net-mgmt/nagios net-mgmt/nagios-devel
 
 20080902:
   AFFECTS: users of math/ploticus
-  AUTHOR:  linimon@FreeBSD.org
+  AUTHOR: linimon@FreeBSD.org
 
   This is a major update.
 
@@ -129,19 +125,19 @@ upgrades.
   function instead).
 
   proc rangebar has been renamed proc boxplot and there are major
-  functionality changes. Any script that uses proc rangebar will need
+  functionality changes.  Any script that uses proc rangebar will need
   maintenance.
 
   See http://ploticus.sourceforge.net/doc/news.html for more information.
 
 20080901:
   AFFECTS: users of mail/pine4 and editors/pico
-  AUTHOR:  dougb@FreeBSD.org
+  AUTHOR: dougb@FreeBSD.org
 
-  These two ports have been removed in favor of the new mail/alpine
-  and editors/pico-alpine ports. UW discontinued work on Pine in
-  September of 2005 and is focusing on Alpine. You should be able to
-  directly replace pine with alpine.
+  These two ports have been removed in favor of the new mail/alpine and
+  editors/pico-alpine ports.  UW discontinued work on Pine in September
+  2005 and is focusing on Alpine now.  You should be able to directly
+  replace pine with alpine.
 
   See http://www.washington.edu/alpine/ for more information.
 
@@ -150,23 +146,23 @@ upgrades.
   AUTHOR: lth@FreeBSD.org
 
   Smokeping has been updated to 2.4.1, and the example web server
-  configuration has changed. Please read pkg-message and check that
-  your server configuration is ok.
+  configuration has changed.  Please read pkg-message and check that
+  your server configuration is OK.
 
 20080827:
   AFFECTS: users of devel/git
   AUTHOR: wxs@FreeBSD.org
 
   With the default Makefile settings, most of the programs are now
-  installed outside your $PATH, except for "git", "gitk" and
-  some server side programs that need to be accessible for technical
-  reasons.  Invoking a git subcommand as "git-xyzzy" from the command
-  line has been deprecated since early 2006 (and officially announced in
-  1.5.4 release notes); use of them from your scripts after adding
-  output from "git --exec-path" to the $PATH is still supported in this
-  release, but users are again strongly encouraged to adjust their
-  scripts to use "git xyzzy" form, as we will stop installing
-  "git-xyzzy" hardlinks for built-in commands in later releases.
+  installed outside your $PATH, except for "git", "gitk", and some server
+  side programs that need to be accessible for technical reasons.  Invoking
+  a git subcommand as "git-xyzzy" from the command line has been deprecated
+  since early 2006 (and officially announced in 1.5.4 release notes); use
+  of them from your scripts after adding output from "git --exec-path" to
+  the $PATH is still supported in this release, but users are again
+  strongly encouraged to adjust their scripts to use "git xyzzy" form, as
+  we will stop installing "git-xyzzy" hardlinks for built-in commands in
+  later releases.
 
   Please see this URL for more information:
   http://www.kernel.org/pub/software/scm/git/docs/RelNotes-1.6.0.txt
@@ -183,36 +179,36 @@ upgrades.
   AFFECTS: users of www/p5-Apache-DBI
   AUTHOR: pgollucci@FreeBSD.org
 
-  www/p5-Apache-DBI has been forked into a MASTER and SLAVE
-  setup www/p5-Apache-DBI-mp1 and www/p5-Apache-DBI-mp2
-  so as to work with www/rt38 among possibly other ports.
-  
+  www/p5-Apache-DBI has been forked into a MASTER and SLAVE setup
+  www/p5-Apache-DBI-mp1 and www/p5-Apache-DBI-mp2 so as to work with
+  www/rt38 among possibly other ports.
+
 20080820:
   AFFECTS: users of net/rabbitmq
   AUTHOR: pneumann@gmail.com
 
-  The database schema has changed in this version of RabbitMQ. If you
+  The database schema has changed in this version of RabbitMQ.  If you
   attempt to start RabbitMQ-1.4.0 over top of a previous installation,
-  it will fail, citing "schema_integrity_check_failed". To correct this,
+  it will fail, citing "schema_integrity_check_failed".  To correct this,
   delete your mnesia directory (/var/db/rabbitmq/mnesia) and restart
-  the server. Note that this will destroy all your durable exchanges and
+  the server.  Note that this will destroy all your durable exchanges and
   queues, and all your persisted messages!
 
 20080816:
   AFFECTS: users of mail/assp
   AUTHOR: J.R. Oldroyd <fbsd@opal.com>
 
-  The periodic(8) script no longer outputs to files in the assp dir.
-  You should remove /var/db/assp/nightly.log and nightly.log.old by
-  hand once you are done with them. The information that was stored
-  there will now come in your nightly system email.
+  The periodic(8) script no longer outputs to files in the assp directory.
+  You should remove /var/db/assp/nightly.log and nightly.log.old by hand
+  once you are done with them.  The information that was stored there will
+  now come in your nightly system email.
 
 20080815:
   AFFECTS: users of sysutils/rdiff-backup
   AUTHOR: vd@FreeBSD.org
 
-  sysutils/rdiff-backup has been upgraded from 1.0.5 to 1.2.0. This is
-  an incompatible upgrade. If you need the "old" 1.0.5, you can find it
+  sysutils/rdiff-backup has been upgraded from 1.0.5 to 1.2.0.  This is
+  an incompatible upgrade.  If you need the "old" 1.0.5, you can find it
   in sysutils/rdiff-backup10.
 
 20080813:
@@ -998,7 +994,7 @@ upgrades.
   glib20 port on its own or you will get a failure trying to install
   devel/gio-fam-backend saying it cannot find -lgio-2.0. Portmaster users
   can do:
- 
+
 	portmaster glib-2\*
 
   or, if you're using portupgrade:
@@ -1432,7 +1428,7 @@ upgrades.
   AUTHOR: miwi@FreeBSD.org
 
   databases/mysql-connector-java version is 5.1.5 now. 5.0.8 version was
-  preserved on databases/mysql-connector-java50 port.
+  preserved as databases/mysql-connector-java50 port.
 
 20071009:
   AFFECTS: users of mail/vpopmail
@@ -1446,11 +1442,11 @@ upgrades.
     The WITH_MYSQL_{USER,PASSWD,SERVER,DB} variables should NOT be defined
     when you build the port; place that information in the vpopmail.mysql
     file after vpopmail has been installed!
-  - the default domain is also no longer defined at compile time - you need
+  - the default domain is also no longer defined at compile time -- you need
     to place it in the defaultdomain file after the installation.
   - the defaultdomain and vpopmail.mysql files are no longer blindly removed
     on deinstallation, they are only removed if they have not been modified
-  - in vpopmail 5.4.18, the database schema was changed - some fields were
+  - in vpopmail 5.4.18, the database schema was changed -- some fields were
     extended from 64 to 96 characters.  If you do not apply those changes
     to your database, as explained in the vpopmail/doc/UPGRADE file, your
     vpopmail installation may silently fail or lose the trailing portions
@@ -1574,7 +1570,7 @@ upgrades.
   AUTHOR: timur@FreeBSD.org
 
   This is a cumulative update of net/samba3 from version 3.0.25a to
-  3.0.26a. Detailed list of all the changes can be found:
+  3.0.26a. Detailed list of all the changes can be found here:
 
 	http://www.samba.org/samba/history/samba-3.0.26a.html
 
@@ -1583,7 +1579,7 @@ upgrades.
   Short summary is:
 
   o Memory leaks in Winbind's IDMap manager.
-  o CVE-2007-4138 - Incorrect primary group assignment for domain
+  o CVE-2007-4138 -- Incorrect primary group assignment for domain
     users using the RFC 2307 or sfu winbind nss info plugin.
   o File sharing with Widows 9x clients.
   o Winbind running out of file descriptors due to stalled child
@@ -1669,10 +1665,10 @@ upgrades.
   scanner-queue.pl. You will need to rewrite any rules you had in place within
   the old quarantine-attachments.txt into the new format quarantine-events.txt
 
-  Changed setuid to 6755 - i.e. it's now setuid and setgid. Forcing all files
+  Changed setuid to 6755 -- i.e. it's now setuid and setgid. Forcing all files
   to be group qscand will allow those who wish to do so to keep their AV
   daemons running as other accounts. They just need to ensure those daemons are
-  members of the qscand group - and as such should be able to read the
+  members of the qscand group -- and as such should be able to read the
   necessary files. E.g. clamd could run as "clamav", but as long as account
   "clamav" is a member of group "qscand", clamd is able to read the mail enough
   to scan it.
@@ -2519,12 +2515,11 @@ upgrades.
   AFFECTS: everybody
   AUTHOR: pav@FreeBSD.org
 
-  New ports category was created - /usr/ports/ports-mgmt
+  New ports category was created: ports-mgmt.
 
   Most significant port moved to this new category is portupgrade.
   So don't be alarmed, it was not deleted. You can find it now in
-
-  /usr/ports/ports-mgmt/portupgrade
+  /usr/ports/ports-mgmt/portupgrade.
 
 20070205:
   AFFECTS: users of devel/portmk
@@ -2942,18 +2937,17 @@ upgrades.
   AFFECTS: all GTK+2 and GNOME users
   AUTHOR: gnome@FreeBSD.org
 
-  GNOME has been updated to 2.16. All GTK+2 and GNOME components have
-  been moved from X11BASE (/usr/X11R6) to LOCALBASE (/usr/local). To
-  upgrade your GNOME desktop or/and other applications you will need
-  to use either sysutils/portupgrade or sysutils/portmaster. To use
-  portmaster, make sure you have least 1.9 version to have the
-  upgrade succeed.
+  GNOME has been updated to 2.16.  All GTK+2 and GNOME components have been
+  moved from X11BASE (/usr/X11R6) to LOCALBASE (/usr/local).  To upgrade
+  your GNOME desktop or/and other applications you will need to use either
+  sysutils/portupgrade or sysutils/portmaster.  To use portmaster, make
+  sure you have least 1.9 version to have the upgrade succeed.
 
- Portupgrade users:
+  Portupgrade users:
 	pkgdb -Ff
 	portupgrade -rf pkg-config\*
 
- Portmaster users:
+  Portmaster users:
 	portmaster -r pkg-config\*
 
 20061010:
@@ -2985,14 +2979,15 @@ upgrades.
 	portupgrade -o devel/avr-gcc-3 avr-gcc
 
 20061010:
-  AFFECTS: user of sysutils/flexbackup
+  AFFECTS: users of sysutils/flexbackup
   AUTHOR: Marcus von Appen <mva@sysfault.org>
 
   The port now respects PREFIX:
-   Before:
-   /etc/flexbackup.conf for PREFIX=whatever, WITH_PREFIX_CONF unset
-   Now:
-   PREFIX/etc/flexbackup.conf for PREFIX=whatever
+
+  Before:
+	/etc/flexbackup.conf for PREFIX=whatever, WITH_PREFIX_CONF unset
+  Now:
+	PREFIX/etc/flexbackup.conf for PREFIX=whatever
 
 20061010:
   AFFECTS: users of audio/gtkpod
@@ -3707,11 +3702,13 @@ upgrades.
   AFFECTS: users of www/tinyproxy
   AUTHOR: wxs@csh.rit.edu
 
-  tinyproxy now installs a rc.d script. To enable tinyproxy at boot
+  tinyproxy now installs a rc.d script.  To enable tinyproxy at boot
   time, set the following in rc.conf(5):
-      tinyproxy_enable="YES"
+
+	tinyproxy_enable="YES"
+
   The configuration file for tinyproxy has been moved to
-  ${PREFIX}/etc/tinyproxy.conf. Any old configuration files will need
+  ${PREFIX}/etc/tinyproxy.conf.  Any old configuration files will need
   to be migrated over to the new location.
 
 20060514:
@@ -5132,7 +5129,7 @@ upgrades.
   AFFECTS: users of www/mod_perl2 and all ports depending on it
   AUTHOR: lars.eggert@gmx.net.
 
-  API changed for mod_perl2 - existing code will break!
+  API changed for mod_perl2 -- existing code will break!
   The mod_perl2 developers have significantly changed the API
   in release candidate 2.0.0-RC5. These changes include changed
   names for core packages, causing software that uses the old API
