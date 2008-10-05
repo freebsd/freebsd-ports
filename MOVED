@@ -3615,3 +3615,5 @@ print/sv-acroread|print/sv-acroread8|2008-09-06|Removed because of security vuln
 net/py-zsi-devel|net/py-zsi-devel|2008-09-07|Removed in favor of py-zsi
 audio/squeezecenter-transitionupdater||2008-09-07|Plugin integrated in to SqueezeCenter 7.1
 net/p5-Socket||2008-09-25|Removed because newer version is present inside perl5
+japanese/xjman||2008-10-05|No longer maintained
+japanese/xjman-3||2008-10-05|No longer maintained
