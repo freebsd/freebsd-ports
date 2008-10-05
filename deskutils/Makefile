@@ -135,6 +135,7 @@
     SUBDIR += libopensync-plugin-evolution2-devel
     SUBDIR += libopensync-plugin-python
     SUBDIR += libopensync-plugin-python-devel
+    SUBDIR += libopensync-plugin-synce-devel
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += lightning-xpi
     SUBDIR += linux-sunbird
