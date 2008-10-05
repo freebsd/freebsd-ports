@@ -19,7 +19,6 @@ GS_NO_X11	"Postscript for non-PS printer, no X11"		OFF	\
 GS_PDF_CRYPT	"print encrypted PDF files using gs"		ON	\
 PSUTILS		"for pseudo duplex printing + paper handling"	ON	\
 A2PS		"ASCII files in different styles/orientation"	ON	\
-ACROREAD7	"PDF files, needs Linux emulation"		ON	\
 CONVERT		"support for lots of graphic file formats"	ON	\
 DVIPS		"TeX DVI files"					OFF	\
 FIG2DEV		"XFIG drawings"					OFF	\
@@ -112,14 +111,11 @@ while [ "$1" ]; do
 			;;
 		esac
 		;;
-	\"ACROREAD7\")
-		echo RUN_DEPENDS+=${LOCALBASE}/Adobe/Acrobat7.0/ENU/bin/acroread:${PORTSDIR}/print/acroread7
-		;;
 	\"CONVERT\")
 		echo RUN_DEPENDS+=convert:${PORTSDIR}/graphics/ImageMagick
 		;;
 	\"DVIPS\")
-		echo RUN_DEPENDS+=dvips:${PORTSDIR}/print/teTeX
+		echo RUN_DEPENDS+=dvips:${PORTSDIR}/print/dvipsk-tetex
 		;;
 	\"FIG2DEV\")
 		echo RUN_DEPENDS+=fig2dev:${PORTSDIR}/print/transfig

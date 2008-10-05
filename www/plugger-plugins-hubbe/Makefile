@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
-		acroread8>0:${PORTSDIR}/print/acroread8 \
+		acroread8:${PORTSDIR}/print/acroread8 \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		mikmod:${PORTSDIR}/audio/mikmod \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \

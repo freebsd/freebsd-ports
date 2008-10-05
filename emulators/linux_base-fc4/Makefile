@@ -194,7 +194,7 @@ do-install:
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 #
-# Let some linux applications (e.g. print/acroread7) print with default settings
+# Let some linux applications (e.g. print/acroread8) print with default settings
 #
 	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
 #
