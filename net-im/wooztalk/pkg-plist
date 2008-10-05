@@ -6,14 +6,14 @@ bin/wooztalk
 %%DATADIR%%/img/ampoule.png
 %%DATADIR%%/img/arrow_left.png
 %%DATADIR%%/img/arrow_right.png
+%%DATADIR%%/img/assistant.png
 %%DATADIR%%/img/bell.png
 %%DATADIR%%/img/belldef.png
-%%DATADIR%%/img/bigbell.png
-%%DATADIR%%/img/bigpopup.png
 %%DATADIR%%/img/blush.png
 %%DATADIR%%/img/chat.png
 %%DATADIR%%/img/chatnotsubscribed.png
 %%DATADIR%%/img/chatsubscribed.png
+%%DATADIR%%/img/check.png
 %%DATADIR%%/img/cheeky.png
 %%DATADIR%%/img/configURL.png
 %%DATADIR%%/img/confused.png
@@ -44,8 +44,10 @@ bin/wooztalk
 %%DATADIR%%/img/roomred.png
 %%DATADIR%%/img/sad.png
 %%DATADIR%%/img/sendfile.png
+%%DATADIR%%/img/smallassistant.png
 %%DATADIR%%/img/smallpostit.png
 %%DATADIR%%/img/smileys.png
+%%DATADIR%%/img/target.png
 %%DATADIR%%/img/tb_away.ico
 %%DATADIR%%/img/tb_busy.ico
 %%DATADIR%%/img/tb_disconnected.ico
