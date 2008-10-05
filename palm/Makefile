@@ -44,6 +44,7 @@
     SUBDIR += synce-librra
     SUBDIR += synce-multisync
     SUBDIR += synce-serial
+    SUBDIR += synce-sync-engine
     SUBDIR += synce-trayicon
     SUBDIR += synce-vdccm
     SUBDIR += txt2pdbdoc
