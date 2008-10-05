@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iodine
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/
 
