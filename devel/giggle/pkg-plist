@@ -1,0 +1,21 @@
+bin/giggle
+lib/libgiggle-0.4.so
+lib/libgiggle.la
+lib/libgiggle.so
+share/applications/giggle.desktop
+%%DATADIR%%/glade/main-window.glade
+share/icons/hicolor/16x16/apps/giggle.png
+share/icons/hicolor/22x22/apps/giggle.png
+share/icons/hicolor/32x32/apps/giggle.png
+share/icons/hicolor/48x48/apps/giggle.png
+share/icons/hicolor/scalable/apps/giggle.svg
+share/locale/ca/LC_MESSAGES/giggle.mo
+share/locale/de/LC_MESSAGES/giggle.mo
+share/locale/es/LC_MESSAGES/giggle.mo
+share/locale/fr/LC_MESSAGES/giggle.mo
+share/locale/pl/LC_MESSAGES/giggle.mo
+share/locale/sv/LC_MESSAGES/giggle.mo
+share/locale/vi/LC_MESSAGES/giggle.mo
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
