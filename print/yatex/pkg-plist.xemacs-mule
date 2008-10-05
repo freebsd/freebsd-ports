@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 lib/xemacs/site-packages/lisp/yatex/comment.el
 lib/xemacs/site-packages/lisp/yatex/yahtml.el
 lib/xemacs/site-packages/lisp/yatex/yatex.el

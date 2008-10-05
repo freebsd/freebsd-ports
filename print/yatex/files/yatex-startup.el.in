@@ -1,5 +1,6 @@
 ;; a startup elisp for YaTeX
 ;;   -- S. Taoka <taoka@FreeBSD.org>
+;; $FreeBSD$
 
 ;;;;;;;;;;; %%TARGETNAME%% (Ver.%%VERSION%%) ;;;;;;;;;;;
 
