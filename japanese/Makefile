@@ -390,8 +390,6 @@
     SUBDIR += xdvik
     SUBDIR += xemacs21-canna
     SUBDIR += xgate
-    SUBDIR += xjman
-    SUBDIR += xjman-3
     SUBDIR += xjtext
     SUBDIR += xlockmore
     SUBDIR += xmsgsaver
