@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Dec  5 15:06:00 2006
-+++ Makefile	Tue Dec  5 15:07:24 2006
+--- Makefile.orig	2008-03-16 00:44:45.000000000 +0100
++++ Makefile	2008-09-26 19:44:38.000000000 +0200
 @@ -13,13 +13,14 @@
  	rm -f *~ src/*~
  
@@ -8,12 +8,12 @@
 -	install -d -o $(OWNER) -g $(GROUP) $(ROOT)/logs $(ROOT)/data/pids $(ROOT)/data/httpd
 -	test -f $(ROOT)/conf/httpd.conf || install -m 644 conf/httpd.conf* $(ROOT)/conf
 -	install -b -m 644 conf/countries* conf/regions* $(ROOT)/conf
--	install -b -m 644 docs/crontab docs/httpd.ru.txt $(ROOT)/docs
+-	install -b -m 644 docs/*.txt $(ROOT)/docs
 -	install -b bin/update-countries.sh src/httpd/convert-ranges src/httpd/convert-geoip $(ROOT)/bin
 -	install -b -m 6755 -o $(OWNER) -g $(GROUP) src/httpd/0W-httpd $(ROOT)/bin
 +	test -d $(ROOT)/0W-httpd || (mkdir $(ROOT)/0W-httpd)
 +	install -d $(ROOT)/0W-httpd/data $(ROOT)/0W-httpd/logs $(ROOT)/0W-httpd/pids
-+	install -m 0755 bin/update-countries.sh src/httpd/convert-ranges src/httpd/convert-geoip $(ROOT)/bin
++	install -m 755 bin/update-countries.sh src/httpd/convert-ranges src/httpd/convert-geoip $(ROOT)/bin
 +	install -m 6755 -o $(OWNER) -g $(GROUP) src/httpd/0W-httpd $(ROOT)/sbin
 +	test -d $(ROOT)/etc/0W-httpd || (mkdir $(ROOT)/etc/0W-httpd && cd conf/ && \
 +		cp countries* $(ROOT)/etc/0W-httpd/ && \
@@ -21,4 +21,3 @@
 +	chown -R $(OWNER):$(GROUP) $(ROOT)/sbin/0W-httpd $(ROOT)/0W-httpd/logs $(ROOT)/0W-httpd/data $(ROOT)/0W-httpd/pids
  	@echo
  	@echo "Installed, run as root: $(ROOT)/bin/0W-httpd [-h]"
- 

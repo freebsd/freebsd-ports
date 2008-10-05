@@ -1,17 +1,19 @@
 @unexec %D/etc/rc.d/0W-httpd stop
-bin/update-countries.sh
-bin/convert-ranges
 bin/convert-geoip
-sbin/0W-httpd
+bin/convert-ranges
+bin/update-countries.sh
 etc/0W-httpd/countries
 etc/0W-httpd/countries.ips
 etc/0W-httpd/countries.rus
+@unexec if cmp -s %D/etc/0W-httpd/httpd.conf.sample %D/etc/0W-httpd/httpd.conf; then rm -f %D/etc/0W-httpd/httpd.conf; fi
 etc/0W-httpd/httpd.conf.sample
+@exec if [ ! -f %D/etc/0W-httpd/httpd.conf ] ; then cp -p %D/%F %B/httpd.conf; fi
 @exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/pids
 @exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/data
 @exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/logs
-@dirrm etc/0W-httpd/
+sbin/0W-httpd
+@unexec rm -fr %D/0W-httpd/logs > /dev/null 2>&1 || true
+@dirrmtry etc/0W-httpd
 @dirrm 0W-httpd/pids
 @dirrm 0W-httpd/data
-@unexec rm -fr %D/0W-httpd/logs > /dev/null 2>&1 || true
 @dirrm 0W-httpd
