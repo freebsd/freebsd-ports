@@ -54,6 +54,7 @@
 %%XPI_XPIDIR%%/docs/Bugs.txt
 %%XPI_XPIDIR%%/docs/ReleaseNotes_1.1.txt
 %%XPI_XPIDIR%%/docs/ReleaseNotes_1.2.txt
+%%XPI_XPIDIR%%/docs/ReleaseNotes_1.2.1.txt
 %%XPI_XPIDIR%%/docs/TODO.txt
 %%XPI_XPIDIR%%/docs/index.tpl.html
 %%XPI_XPIDIR%%/icons/default/firebug.ico
