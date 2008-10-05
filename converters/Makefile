@@ -112,5 +112,6 @@
     SUBDIR += vda2fbd
     SUBDIR += xdeview
     SUBDIR += ytnef
+    SUBDIR += zbase32
 
 .include <bsd.port.subdir.mk>
