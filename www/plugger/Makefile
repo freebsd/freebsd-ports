@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
@@ -25,7 +25,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/X11R6/lib/xscreensaver|${LOCALBASE}/bin/xscreensaver-hacks|g ; \
-	s|acroread|acroread7|g ; s|+useFrontEndProgram||g' \
+	s|+useFrontEndProgram||g' \
 		${WRKSRC}/pluggerrc
 
 pre-install:

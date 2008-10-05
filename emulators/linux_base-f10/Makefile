@@ -16,7 +16,6 @@ PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
 EXTRACT_ONLY=		${BIN_DISTFILES}
-
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
@@ -211,7 +210,7 @@ do-install:
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 #
-# Let some linux applications (e.g. print/acroread7) print with default settings
+# Let some linux applications (e.g. print/acroread8) print with default settings
 #
 	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
 
