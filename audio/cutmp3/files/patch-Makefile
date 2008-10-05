@@ -1,0 +1,29 @@
+--- Makefile.orig	2007-04-06 10:19:50.000000000 +0200
++++ Makefile	2008-10-06 15:32:42.000000000 +0200
+@@ -1,13 +1,11 @@
+ NAME=cutmp3
+-VERSION=1.9.2
+-PREFIX=/usr
++PREFIX?= /usr/local
+ BINDIR=${PREFIX}/bin
+ DATADIR=${PREFIX}/share
+-MANDIR=${PREFIX}/share/man/man1
+-DOCDIR=${DATADIR}/doc/${NAME}-${VERSION}
++MANDIR=${PREFIX}/man/man1
++DOCDIR=${DATADIR}/doc/${NAME}
+ 
+ all:
+-	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
+ 	gcc -O ${CFLAGS} -c mpglib.c
+ 	gcc -O ${CFLAGS} -c main.c
+ 	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+@@ -28,9 +26,6 @@
+ 	if [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; fi
+ 	if [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; fi
+ 	if [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
+-	install -d ${DOCDIR}/${NAME}
+-	install -m 644 README* USAGE ${DOCDIR}/${NAME}
+-	install -d ${MANDIR}
+ 	install -m 644 ${NAME}.1.gz ${MANDIR}
+ 
+ uninstall:
