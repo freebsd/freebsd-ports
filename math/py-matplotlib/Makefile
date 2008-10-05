@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	matplotlib
-PORTVERSION=	0.91.2
-PORTREVISION=	1
+PORTVERSION=	0.98.3
 CATEGORIES=	math python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,12 +28,22 @@ RUN_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_GNOME=	gtk20 pygtk2
 USE_TCL_RUN=	yes
 USE_TK_RUN=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+
+WANT_WX=	2.6
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_WXPYTHON) || ${HAVE_WX:Mpython} != ""
+USE_WX=	2.6
+WX_COMPS=	python
+CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
+.endif
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
@@ -55,4 +64,4 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

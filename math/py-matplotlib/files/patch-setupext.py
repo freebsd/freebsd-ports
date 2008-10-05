@@ -1,30 +1,33 @@
---- setupext.py.orig	2007-12-24 13:23:32.000000000 -0500
-+++ setupext.py	2008-02-22 12:23:24.000000000 -0500
-@@ -52,9 +52,11 @@
-     'cygwin' : ['/usr/local', '/usr',],
-     'darwin' : ['/sw/lib/freetype2', '/sw/lib/freetype219', '/usr/local',
-                 '/usr', '/sw', '/usr/X11R6'],
--    'freebsd4' : ['/usr/local', '/usr'],
--    'freebsd5' : ['/usr/local', '/usr'],
--    'freebsd6' : ['/usr/local', '/usr'],
-+    'freebsd4' : ['%%LOCALBASE%%', '/usr'],
-+    'freebsd5' : ['%%LOCALBASE%%', '/usr'],
-+    'freebsd6' : ['%%LOCALBASE%%', '/usr'],
-+    'freebsd7' : ['%%LOCALBASE%%', '/usr'],
-+    'freebsd8' : ['%%LOCALBASE%%', '/usr'],
+--- setupext.py.orig	2008-08-03 13:15:22.000000000 -0500
++++ setupext.py	2008-09-29 13:20:02.000000000 -0500
+@@ -55,6 +55,8 @@
+     'freebsd4' : ['/usr/local', '/usr'],
+     'freebsd5' : ['/usr/local', '/usr'],
+     'freebsd6' : ['/usr/local', '/usr'],
++    'freebsd7' : ['/usr/local', '/usr'],
++    'freebsd8' : ['/usr/local', '/usr'],
      'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
      'gnukfreebsd5' : ['/usr/local', '/usr'],
      'gnukfreebsd6' : ['/usr/local', '/usr'],
-@@ -983,9 +985,9 @@
-             tk_lib = "/usr/local/lib"
-             tk_ver = ""
+@@ -814,7 +816,7 @@
+         module.libraries.extend(wxlibs)
+         return
+ 
+-    get_pkgconfig(module, '', flags='--cppflags --libs', pkg_config_exec='wx-config')
++    get_pkgconfig(module, '', flags='--cppflags --libs', pkg_config_exec=wxconfig)
+ 
+ # Make sure you use the Tk version given by Tkinter.TkVersion
+ # or else you'll build for a wrong version of the Tcl
+@@ -1096,9 +1098,9 @@
+ 
          # Add final versions of directories and libraries to module lists
+         tcl_lib, tcl_inc, tk_lib, tk_inc = result
 -        module.include_dirs.extend([tcl_inc, tk_inc])
 -        module.library_dirs.extend([tcl_lib, tk_lib])
 -        module.libraries.extend(['tk' + tk_ver, 'tcl' + tk_ver])
-+        module.include_dirs.extend(["%%TCL_INCLUDEDIR%%", "%%TK_INCLUDEDIR%%"])
++        module.include_dirs.extend(["/usr/local/include/tcl8.4", "/usr/local/include/tk8.4"])
 +        module.library_dirs.extend(["%%TCL_LIBDIR%%", "%%TK_LIBDIR%%"])
-+        module.libraries.extend(['tk%%USE_TK%%', 'tcl%%USE_TCL%%'])
-     
++        module.libraries.extend(['tk84', 'tcl84'])
+ 
      return message
  
