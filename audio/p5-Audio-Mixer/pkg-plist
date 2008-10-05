@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/volume.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Mixer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/Mixer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/Mixer.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio
