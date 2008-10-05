@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefoxonwooztalk
-PORTVERSION=	1.1.22
+PORTVERSION=	1.1.24
 CATEGORIES=	www
 MASTER_SITES=	http://www.wooztalk.com/common/download/firefox/
 DISTNAME=	${PORTNAME}
