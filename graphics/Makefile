@@ -495,6 +495,7 @@
     SUBDIR += openjpeg
     SUBDIR += openrm
     SUBDIR += ophoto
+    SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += orca
     SUBDIR += osg

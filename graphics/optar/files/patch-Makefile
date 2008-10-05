@@ -1,0 +1,10 @@
+--- ./Makefile.orig	2008-03-02 21:42:19.000000000 +0200
++++ ./Makefile	2008-10-01 19:12:22.000000000 +0300
+@@ -1,6 +1,5 @@
+ LDFLAGS=-lm
+-CFLAGS=-O3 -Wall -Wuninitialized -fomit-frame-pointer -funroll-loops \
+-	-fstrength-reduce -DNODEBUG `libpng-config --I_opts`
++CFLAGS= `libpng-config --I_opts`
+ 
+ all: optar unoptar
+ 
