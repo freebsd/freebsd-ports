@@ -249,8 +249,8 @@ post-install-docs:
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/contrib && \
-		${TAR} cf - ${PORTDOC_FILES} | \
-		( cd ${DOCSDIR} && ${TAR} xof - )
+		${TAR} -cf - ${PORTDOC_FILES} | \
+		( cd ${DOCSDIR} && ${TAR} -xof - )
 
 .if defined(WITH_FT_BRIDGE)
 post-install-fapi:
