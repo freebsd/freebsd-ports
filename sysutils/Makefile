@@ -690,6 +690,7 @@
     SUBDIR += sysgather
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng2
+    SUBDIR += syslogger
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
     SUBDIR += tbku
