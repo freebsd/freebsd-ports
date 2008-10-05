@@ -1,0 +1,10 @@
+Audio::Mixer - Perl extension for Sound Mixer control
+
+This is just a very simple Perl interface which allows to set various
+sound mixer parameters. The most important probably 'vol' (volume). The
+list of all mixer parameters can be obtained using get_mixer_params()
+function.
+
+All values (lcval, rcval) are numbers in 0-100 range.
+
+WWW: http://search.cpan.org/dist/Audio-Mixer/
