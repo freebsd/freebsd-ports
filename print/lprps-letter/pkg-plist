@@ -1,11 +1,10 @@
+@comment $FreeBSD$
 libexec/psif
 libexec/lprps
 libexec/psof
 libexec/psif-text
 libexec/psif-ps
-share/lprps/banner.ps
+%%DATADIR%%/banner.ps
 bin/textps
 bin/psrev
-share/doc/lprps/INSTALL
-@dirrm share/doc/lprps
-@dirrm share/lprps
+@dirrm %%DATADIR%%
