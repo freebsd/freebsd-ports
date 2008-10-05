@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ipguard
-PORTVERSION=	0.04
-PORTREVISION=	2
+PORTVERSION=	1.00
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool designed to protect LAN IP adress space by ARP spoofing
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 MAN8=		ipguard.8
 
@@ -25,7 +24,7 @@ MAKE_ARGS+=	ETHERS=${ETHERS}
 SUB_FILES=	pkg-message
 SUB_LIST=	ETHERS=${ETHERS}
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
