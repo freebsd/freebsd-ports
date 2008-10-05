@@ -1,0 +1,2 @@
+%%PLUGINDIR%%/synce-opensync-plugin.py
+@dirrmtry %%PLUGINDIR%%
