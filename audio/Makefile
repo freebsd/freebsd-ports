@@ -107,6 +107,7 @@
     SUBDIR += csound
     SUBDIR += cue2toc
     SUBDIR += cuetools
+    SUBDIR += cutmp3
     SUBDIR += cymbaline
     SUBDIR += cynthiune
     SUBDIR += dagrab
