@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sakai
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	www java
-MASTER_SITES=	http://source.sakaiproject.org/release/2.5.2/sakai-2-5-2/
+MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/sakai-2-5-3/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
