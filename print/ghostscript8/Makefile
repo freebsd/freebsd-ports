@@ -107,15 +107,28 @@ post-extract: post-extract-epag
 .include "${FILESDIR}/Makefile.pcl3"
 .endif
 
+.if defined(WITHOUT_SVGALIB)
+.undef WITH_GS_lvga256
+.undef WITH_GS_vgalib
+.endif
+
 .if defined(WITH_GS_lvga256) \
 	|| defined(WITH_GS_vgalib)
-. if defined(WITHOUT_SVGALIB)
-. warning drivers incompatible with WITHOUT_SVGALIB will be removed automatically
-. undef WITH_GS_lvga256
-. undef WITH_GS_vgalib
-. else
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-. endif
+.endif
+
+.if defined(WITHOUT_X11)
+. undef WITH_GS_x11
+. undef WITH_GS_x11alpha
+. undef WITH_GS_x11cmyk
+. undef WITH_GS_x11cmyk2
+. undef WITH_GS_x11cmyk4
+. undef WITH_GS_x11cmyk8
+. undef WITH_GS_x11gray2
+. undef WITH_GS_x11gray4
+. undef WITH_GS_x11mono
+. undef WITH_GS_x11rg16x
+. undef WITH_GS_x11rg32x
 .endif
 
 .if defined(WITH_GS_x11) \
@@ -129,20 +142,6 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 	|| defined(WITH_GS_x11mono) \
 	|| defined(WITH_GS_x11rg16x) \
 	|| defined(WITH_GS_x11rg32x)
-. if defined(WITHOUT_X11)
-. warning drivers incompatible with WITHOUT_X11 will be removed automatically
-. undef WITH_GS_x11
-. undef WITH_GS_x11alpha
-. undef WITH_GS_x11cmyk
-. undef WITH_GS_x11cmyk2
-. undef WITH_GS_x11cmyk4
-. undef WITH_GS_x11cmyk8
-. undef WITH_GS_x11gray2
-. undef WITH_GS_x11gray4
-. undef WITH_GS_x11mono
-. undef WITH_GS_x11rg16x
-. undef WITH_GS_x11rg32x
-. endif
 USE_XORG=	xt xext
 CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
@@ -154,18 +153,18 @@ CONFIGURE_ARGS+=--without-x
 CONFLICTS+=	ghostscript8-[0-9]*
 .endif
 
+
+.if defined(WITHOUT_ICONV)
+. undef WITH_GS_oprp
+. undef WITH_GS_opvp
+.endif
+
 _ICONV_ARG=	no
 .if defined(WITH_GS_oprp) \
 	|| defined(WITH_GS_opvp)
-. if defined(WITHOUT_ICONV)
-. warning drivers incompatible with WITHOUT_ICONV will be removed automatically
-. undef WITH_GS_oprp
-. undef WITH_GS_opvp
-. else
 USE_ICONV=	yes
 _ICONV_ARG=	gnu
 EXTRALIBS+=	-liconv
-. endif
 .endif
 CONFIGURE_ARGS+=--with-libiconv=${_ICONV_ARG}
 
