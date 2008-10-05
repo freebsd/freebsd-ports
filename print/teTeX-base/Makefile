@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -110,7 +110,7 @@ PLIST_SUB?=
 
 .if !defined(WITHOUT_X11)
 PLIST_SUB+=	X11BITS=""
-USE_XORG=	x11
+USE_XORG=	x11 xt
 .else
 FLAVOR+=	nox11
 CONFIGURE_ARGS+=--without-x11
