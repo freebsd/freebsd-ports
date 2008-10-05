@@ -28,8 +28,9 @@ XAPPLRESDIR=	lib/X11/ja_JP.eucJP/app-defaults
 do-install:
 	${MKDIR} ${PREFIX}/${XAPPLRESDIR}
 	${INSTALL_DATA} ${FILESDIR}/Tgif.in ${PREFIX}/${XAPPLRESDIR}/Tgif.ja-dist
-.if !exists(${PREFIX}/${XAPPLRESDIR}/Tgif)
-	${INSTALL_DATA} ${FILESDIR}/Tgif.in ${PREFIX}/${XAPPLRESDIR}/Tgif
-.endif
+	if ! test -r ${PREFIX}/${XAPPLRESDIR}/Tgif; then \
+		${INSTALL_DATA} ${FILESDIR}/Tgif.in \
+			${PREFIX}/${XAPPLRESDIR}/Tgif; \
+	fi
 
 .include <bsd.port.mk>
