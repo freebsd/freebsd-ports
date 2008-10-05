@@ -8,7 +8,7 @@
 
 PORTNAME=	spegla
 PORTVERSION=	1.1p4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://subzero.campus.luth.se/pub/spegla/ \
 		ftp://ftp.luth.se/pub/unix/mirror/
@@ -20,21 +20,26 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
 
 MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
+PLIST_FILES=	bin/spegla
+PORTEXAMPLES=	freebsd.org spegla.conf spegla.sh
 
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
 
-post-extract:
-.for file in engine.c regcomp.c regerror.c regexec.c regfree.c cclass.h cname.h regex.h regex2.h utils.h
-	@${CP} ${WRKSRC}/regex/${file} ${WRKSRC}
-.endfor
+OPTIONS=	IPV6	"IPv6 support"	on
 
-pre-install:
-	@${MKDIR} ${EXAMPLESDIR}
-
+.if !defined(NOPORTEXAMPLES)
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/spegla.conf ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/spegla.sh ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} freebsd.org spegla.conf ${EXAMPLESDIR} && \
+		${INSTALL_SCRIPT} spegla.sh ${EXAMPLESDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_IPV6)
+MAKE_ARGS+=	-DINET6
+.endif
+
+.include <bsd.port.post.mk>
