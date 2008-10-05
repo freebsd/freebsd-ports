@@ -8,16 +8,23 @@ bin/cidupdate
 bin/yac2ncid
 etc/logrotate.d/ncidd
 @dirrm etc/logrotate.d
-etc/rc.d/ncidd.sh
-etc/rc.d/ncid.sh
-etc/rc.d/ncidsip.sh
-etc/rc.d/yac2ncid.sh
+etc/rc.d/ncid-page
+etc/rc.d/ncid-samba
+etc/rc.d/ncid-yac
+etc/rc.d/ncidsip
+etc/rc.d/yac2ncid
+etc/rc.d/ncid-mythtv
+etc/rc.d/ncid-popup
+etc/rc.d/ncid-speak
+etc/rc.d/ncidd
+etc/rc.d/sip2ncid
 share/ncid/ncidrotate
 share/ncid/ncid-mythtv
 share/ncid/ncid-page
+share/ncid/ncid-popup
 share/ncid/ncid-samba
+share/ncid/ncid-skel
 share/ncid/ncid-speak
 share/ncid/ncid-tivo
 share/ncid/ncid-yac
-share/ncid/README
 @dirrm share/ncid

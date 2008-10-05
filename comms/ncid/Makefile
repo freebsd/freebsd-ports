@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -25,13 +25,15 @@ MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH}
 INSTALL_TARGET=	freebsd-install
 SUB_FILES=	pkg-message
 
+post-extract:
+	@cd ${WRKSRC}/FreeBSD;for i in *.rc; do \
+		x=`echo $$i | cut -f 1 -d .`; ${CP} $$i $$x; done
+
 post-patch:
 	@${GREP} -lr 'etc/ncid' ${WRKSRC}/|${XARGS} ${REINPLACE_CMD} -Ee\
 		's,(/usr/local/etc/ncid|/etc/ncid),${ETCDIR},g'
 	@${FIND} ${WRKSRC}/ -name Makefile|${XARGS} ${REINPLACE_CMD} -Ee\
 		'/install:/s,install-(etc|logrotate),,'
-	@${REINPLACE_CMD} -e 's|source|.|;s|bash|sh|;/test/s|==|=|;/local/s|-i||'\
-		${WRKSRC}/FreeBSD/yac2ncid.sh
 	@${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d;\
 		/CFLAGS.*=/s|=|+=|;s|-O||' ${WRKSRC}/Makefile
 
