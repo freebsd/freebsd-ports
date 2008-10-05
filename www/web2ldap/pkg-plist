@@ -22,6 +22,7 @@
 %%DATADIR%%/etc/web2ldap/templates/add_orgunit.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_person.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_user.ldif
+%%DATADIR%%/etc/web2ldap/templates/inputform_eduPerson.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_inetOrgPerson.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_msOrganization.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_msPerson.html
@@ -34,6 +35,7 @@
 %%DATADIR%%/etc/web2ldap/templates/print_organizationalUnit.html
 %%DATADIR%%/etc/web2ldap/templates/print_person.html
 %%DATADIR%%/etc/web2ldap/templates/read_bankArrangement.html
+%%DATADIR%%/etc/web2ldap/templates/read_eduPerson.html
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_msOrganization.html
@@ -185,6 +187,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dirx.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/edirectory.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/edirectory.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/eduperson.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/eduperson.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/entrust.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/entrust.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/exchange.py
