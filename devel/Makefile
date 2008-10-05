@@ -407,6 +407,7 @@
     SUBDIR += gettext-msghack
     SUBDIR += getxml
     SUBDIR += gflags
+    SUBDIR += giggle
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
     SUBDIR += git
