@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.9.6
+PORTVERSION=	3.10.0
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear \
 		${LOCALBASE}/share/pear/Auth/Auth.php:${PORTSDIR}/security/pear-Auth \
-		${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
+		${LOCALBASE}/share/pear/MDB2.php:${PORTSDIR}/databases/pear-MDB2 \
 		${LOCALBASE}/share/pear/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
