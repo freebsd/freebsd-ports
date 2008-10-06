@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.4.12
+PORTVERSION=	1.6.5
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/
 DISTNAME=	Botan-${PORTVERSION}
@@ -33,15 +33,4 @@ DOCSDIR=	${PREFIX}/share/doc/Botan-${PORTVERSION}
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-CONFIGURE_ARGS+=	--noauto
-PLIST_SUB+=	OS_4="@comment "
-.else
-PLIST_SUB+=	OS_4=""
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
