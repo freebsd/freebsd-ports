@@ -438,6 +438,7 @@
     SUBDIR += sdpa
     SUBDIR += sdpa-gmp
     SUBDIR += sdpara
+    SUBDIR += sedumi
     SUBDIR += ses
     SUBDIR += simd-viterbi
     SUBDIR += slgrace
