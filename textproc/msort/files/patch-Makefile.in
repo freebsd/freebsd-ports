@@ -1,11 +1,11 @@
---- Makefile.in.orig	2008-09-25 11:53:31.000000000 +0800
-+++ Makefile.in	2008-09-27 22:52:10.000000000 +0800
-@@ -37,7 +37,7 @@
- PRE_UNINSTALL = :
- POST_UNINSTALL = :
- bin_PROGRAMS = msort$(EXEEXT)
--@UNINUMOK_TRUE@am__append_1 = -luninum
-+@UNINUMOK_TRUE@am__append_1 = -luninum -lintl
- @UTF8PROCOK_TRUE@am__append_2 = -lutf8proc
- @UTF8PROCOK_TRUE@am__append_3 = -DUSEUTF8PROC
- @UTF8PROCOK_FALSE@am__append_4 = -licutu
+--- Makefile.in.orig	2008-09-30 07:39:01.000000000 +0800
++++ Makefile.in	2008-10-06 14:09:20.000000000 +0800
+@@ -41,7 +41,7 @@
+ @UTF8PROCOK_TRUE@am__append_2 = -DUSEUTF8PROC
+ @UTF8PROCOK_FALSE@am__append_3 = -licutu
+ @NOCOMPARISONCNT_TRUE@am__append_4 = -DNOCOMPARISONCNT
+-@UNINUMOK_TRUE@am__append_5 = -DUSEUNINUMOK
++@UNINUMOK_TRUE@am__append_5 = -DUSEUNINUMOK -lintl
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(dist_man_MANS) \
+ 	$(noinst_HEADERS) $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
