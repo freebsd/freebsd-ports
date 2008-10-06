@@ -14,6 +14,10 @@ MASTER_SITES=	http://www.synacklabs.net/projects/cutlass/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Encrypted peer-to-peer voice, text, and file transmission protocol
 
+IGNORE=		only works with botan 1.4.x
+DEPRECIATED=	${IGNORE}
+EXPIRE_DATE=	2008-12-31
+
 BUILD_DEPENDS=	botan-config:${PORTSDIR}/security/botan \
 		speexdec:${PORTSDIR}/audio/speex
 
