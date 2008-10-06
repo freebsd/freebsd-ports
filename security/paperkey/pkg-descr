@@ -1,0 +1,8 @@
+From the paperkey README file:
+  A reasonable way to achieve a long term backup of OpenPGP (GnuPG, PGP,
+  etc) keys is to print them out on paper.  Paper and ink have amazingly
+  long retention qualities - far longer than the magnetic or optical
+  means that are generally used to back up computer data.
+
+WWW:	http://www.jabberwocky.com/software/paperkey/	
+Author:	David Shaw <dshaw@jabberwocky.com>

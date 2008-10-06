@@ -546,6 +546,7 @@
     SUBDIR += pamsfs
     SUBDIR += pamtester
     SUBDIR += pantera
+    SUBDIR += paperkey
     SUBDIR += parano
     SUBDIR += pbnj
     SUBDIR += pdfcrack
