@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FLV-Info
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
@@ -17,9 +17,10 @@ COMMENT=	Extract metadata from Flash Video files
 
 RUN_DEPENDS=	p5-AMF-Perl>=0.15:${PORTSDIR}/www/p5-AMF-Perl \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-SWF-File>=0.033:${PORTSDIR}/graphics/p5-SWF-File
 
-PERL_CONFIGURE=	5.8.0+
+PERL_MODBUILD=	5.8.0+
 
 MAN1=		flv2mp3.1 flv2flv.1 flv2swf.1 flvinfo.1 swf2flv.1
 MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
@@ -27,16 +28,4 @@ MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
 		FLV::FromSWF.3 FLV::Header.3 FLV::Info.3 FLV::MetaTag.3 \
 	       	FLV::Tag.3 FLV::ToMP3.3 FLV::ToSWF.3 FLV::VideoTag.3
 
-# the dependency of Readonly was removed since 0.12, however,
-# the author forget to update Makefile.PL and Build.PL correspondingly
-post-patch:
-	${REINPLACE_CMD} -e '/Readonly/d' ${WRKSRC}/*.PL
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS+=	p5-Digest-MD5>=2:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
