@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gegl
-PORTVERSION=	0.0.18
+PORTVERSION=	0.0.${GEGL_MINOR}
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
@@ -30,6 +30,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GEGL_MINOR=	20
+PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 
 EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
 		geglbuffer-clock hello-world hello-world-video
