@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aws
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.4
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
