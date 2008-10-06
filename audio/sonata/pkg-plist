@@ -33,6 +33,7 @@ share/locale/ca/LC_MESSAGES/sonata.mo
 share/locale/cs/LC_MESSAGES/sonata.mo
 share/locale/da/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
+share/locale/el_GR/LC_MESSAGES/sonata.mo
 share/locale/es/LC_MESSAGES/sonata.mo
 share/locale/et/LC_MESSAGES/sonata.mo
 share/locale/fi/LC_MESSAGES/sonata.mo
@@ -62,4 +63,6 @@ share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrmtry share/locale/el_GR/LC_MESSAGES
+@dirrmtry share/locale/el_GR
 @dirrm %%PYTHON_SITELIBDIR%%/sonata
