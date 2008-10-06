@@ -1840,6 +1840,7 @@ cursor-polar-theme              ports/x11-themes/cursor-polar-theme
 cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
 cutlass                         ports/security/cutlass
+cutmp3                          ports/audio/cutmp3
 cuttlefish                      ports/graphics/cuttlefish
 cvc3                            ports/math/cvc3
 cvm                             ports/security/cvm
@@ -3949,6 +3950,7 @@ giftoxic                        ports/net-p2p/giftoxic
 giftrans                        ports/graphics/giftrans
 giftui                          ports/net-p2p/giftui
 gigabase                        ports/databases/gigabase
+giggle                          ports/devel/giggle
 gigi                            ports/x11-toolkits/gigi
 gillo                           ports/games/gillo
 gimageview                      ports/graphics/gimageview
@@ -5873,8 +5875,6 @@ ja-xdtp                         ports/japanese/xdtp
 ja-xdvik                        ports/japanese/xdvik
 ja-xemacs21-canna               ports/japanese/xemacs21-canna
 ja-xgate                        ports/japanese/xgate
-ja-xjman                        ports/japanese/xjman
-ja-xjman-3                      ports/japanese/xjman-3
 ja-xjtext                       ports/japanese/xjtext
 ja-xlockmore                    ports/japanese/xlockmore
 ja-xmsgsaver                    ports/japanese/xmsgsaver
@@ -7255,6 +7255,8 @@ libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
 libopensync-plugin-evolution2-devel  ports/deskutils/libopensync-plugin-evolution2-devel
 libopensync-plugin-python       ports/deskutils/libopensync-plugin-python
 libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
+libopensync-plugin-synce        ports/deskutils/libopensync-plugin-synce
+libopensync-plugin-synce-devel  ports/deskutils/libopensync-plugin-synce-devel
 libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
 libopensync022                  ports/devel/libopensync022
 liboping                        ports/net/liboping
@@ -9495,6 +9497,7 @@ ophoto                          ports/graphics/ophoto
 opieprint                       ports/security/opieprint
 opmixer                         ports/audio/opmixer
 oproute                         ports/net-mgmt/oproute
+optar                           ports/graphics/optar
 optimax                         ports/games/optimax
 optimfrog                       ports/audio/optimfrog
 optipng                         ports/graphics/optipng
@@ -9714,6 +9717,7 @@ p5-Audio                        ports/audio/p5-Audio
 p5-Audio-Beep                   ports/audio/p5-Audio-Beep
 p5-Audio-CD                     ports/audio/p5-Audio-CD
 p5-Audio-FLAC-Header            ports/audio/p5-Audio-FLAC-Header
+p5-Audio-Mixer                  ports/audio/p5-Audio-Mixer
 p5-Audio-Musepack               ports/audio/p5-Audio-Musepack
 p5-Audio-Scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-Audio-TagLib                 ports/audio/p5-Audio-TagLib
@@ -12846,6 +12850,7 @@ p5-audio                        ports/audio/p5-Audio
 p5-audio-beep                   ports/audio/p5-Audio-Beep
 p5-audio-cd                     ports/audio/p5-Audio-CD
 p5-audio-flac-header            ports/audio/p5-Audio-FLAC-Header
+p5-audio-mixer                  ports/audio/p5-Audio-Mixer
 p5-audio-musepack               ports/audio/p5-Audio-Musepack
 p5-audio-scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-audio-taglib                 ports/audio/p5-Audio-TagLib
@@ -17913,6 +17918,7 @@ py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
 py-pg8000                       ports/databases/py-pg8000
 py-phpserialize                 ports/devel/py-phpserialize
+py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
@@ -19170,6 +19176,7 @@ rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
+rubygem-exifr                   ports/graphics/rubygem-exifr
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-facets                  ports/devel/rubygem-facets
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
@@ -20300,6 +20307,7 @@ synce-librra                    ports/palm/synce-librra
 synce-libsynce                  ports/palm/synce-libsynce
 synce-multisync                 ports/palm/synce-multisync
 synce-serial                    ports/palm/synce-serial
+synce-sync-engine               ports/palm/synce-sync-engine
 synce-trayicon                  ports/palm/synce-trayicon
 synce-vdccm                     ports/palm/synce-vdccm
 syncterm                        ports/comms/syncterm
@@ -20315,6 +20323,7 @@ sysfsutils                      ports/devel/sysfsutils
 sysgather                       ports/sysutils/sysgather
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng2                      ports/sysutils/syslog-ng2
+syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
 system-config-printer           ports/print/system-config-printer
 system-tools-backends           ports/sysutils/system-tools-backends
@@ -22806,6 +22815,7 @@ zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
+zbase32                         ports/converters/zbase32
 zbgset                          ports/deskutils/zbgset
 zbgset-admin                    ports/deskutils/zbgset-admin
 zccron                          ports/sysutils/zccron
