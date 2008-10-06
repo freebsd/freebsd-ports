@@ -928,6 +928,7 @@
     SUBDIR += ruby-htmltools
     SUBDIR += ruby-htree
     SUBDIR += ruby-libxml
+    SUBDIR += ruby-liquid
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-quixml
