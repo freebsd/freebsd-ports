@@ -18,6 +18,7 @@
    SUBDIR += p5-FreeBSD-Ports-INDEXhash
    SUBDIR += pib
    SUBDIR += pkg-orphan
+   SUBDIR += pkg_add_it
    SUBDIR += pkg_cleanup
    SUBDIR += pkg_cutleaves
    SUBDIR += pkg_install
