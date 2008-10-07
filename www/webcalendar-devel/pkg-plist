@@ -72,6 +72,7 @@
 %%WWWDIR%%/images/cursor.gif
 %%WWWDIR%%/images/delete.png
 %%WWWDIR%%/images/down.png
+%%WWWDIR%%/images/error.gif
 %%WWWDIR%%/images/event.gif
 %%WWWDIR%%/images/firstmoon.gif
 %%WWWDIR%%/images/fullmoon.gif
@@ -83,6 +84,7 @@
 %%WWWDIR%%/images/login.gif
 %%WWWDIR%%/images/new.gif
 %%WWWDIR%%/images/newmoon.gif
+%%WWWDIR%%/images/ok.gif
 %%WWWDIR%%/images/pix.gif
 %%WWWDIR%%/images/pixb.gif
 %%WWWDIR%%/images/register.gif
@@ -296,9 +298,11 @@
 %%WWWDIR%%/remotes.php
 %%WWWDIR%%/report.php
 %%WWWDIR%%/rss.php
+%%WWWDIR%%/rss_activity_log.php
 %%WWWDIR%%/rss_unapproved.php
 %%WWWDIR%%/search.php
 %%WWWDIR%%/search_handler.php
+%%WWWDIR%%/security_audit.php
 %%WWWDIR%%/select_user.php
 %%WWWDIR%%/set_entry_cat.php
 %%WWWDIR%%/tests/add_duration_test.php
@@ -361,8 +365,10 @@
 %%WWWDIR%%/translations/Lithuanian.txt
 %%WWWDIR%%/translations/Norwegian.txt
 %%WWWDIR%%/translations/Polish.txt
+%%WWWDIR%%/translations/Polish-utf8.txt
 %%WWWDIR%%/translations/Portuguese.txt
 %%WWWDIR%%/translations/Portuguese_BR.txt
+%%WWWDIR%%/translations/Portuguese_BR_utf8.txt
 %%WWWDIR%%/translations/Romanian.txt
 %%WWWDIR%%/translations/Russian.txt
 %%WWWDIR%%/translations/Russian_utf8.txt
