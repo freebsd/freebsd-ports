@@ -2370,6 +2370,7 @@
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += ruby-zoom
+    SUBDIR += rubygem-abstract
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-builder
