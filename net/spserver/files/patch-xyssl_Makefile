@@ -1,0 +1,23 @@
+--- xyssl/Makefile.orig	2008-10-04 23:25:56.000000000 +0800
++++ xyssl/Makefile	2008-10-04 23:27:00.000000000 +0800
+@@ -5,16 +5,16 @@
+ AR = ar cru
+ CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
+-LDFLAGS = -lstdc++ -lpthread -lresolv
++LDFLAGS = -lstdc++ -lpthread
+ 
+ LINKER = $(CC)
+ LINT = lint -c
+ RM = /bin/rm -f
+ 
+-XYSSL_INCL = -I$(HOME)/xyssl-0.9/include
+-XYSSL_LIB  = -L$(HOME)/xyssl-0.9/library -lxyssl
++XYSSL_INCL = -I%PREFIX%/include
++XYSSL_LIB  = -L%PREFIX%/lib -lxyssl
+ 
+-LIBEVENT_LIB  = -L$(HOME)/libevent -levent
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
+ 
+ SPSERVER_INCL = -I../spserver
+ SPSERVER_LIB  = -L../spserver -lspserver
