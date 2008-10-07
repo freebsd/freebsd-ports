@@ -4,6 +4,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/contrib/cicq2mcabber.pl
 %%DATADIR%%/contrib/events/eventcmd
 %%DATADIR%%/contrib/events/eventcmd.osd
+%%DATADIR%%/contrib/events/eventcmd.pastebin
 %%DATADIR%%/contrib/events/mcnotify.py
 %%DATADIR%%/contrib/filter_statusmsg.py
 %%DATADIR%%/contrib/mcwizz.rb
@@ -23,6 +24,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/de/hlp_connect.txt
 %%DATADIR%%/help/de/hlp_del.txt
 %%DATADIR%%/help/de/hlp_disconnect.txt
+%%DATADIR%%/help/de/hlp_echo.txt
 %%DATADIR%%/help/de/hlp_event.txt
 %%DATADIR%%/help/de/hlp_group.txt
 %%DATADIR%%/help/de/hlp_help.txt
@@ -59,6 +61,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/en/hlp_connect.txt
 %%DATADIR%%/help/en/hlp_del.txt
 %%DATADIR%%/help/en/hlp_disconnect.txt
+%%DATADIR%%/help/en/hlp_echo.txt
 %%DATADIR%%/help/en/hlp_event.txt
 %%DATADIR%%/help/en/hlp_group.txt
 %%DATADIR%%/help/en/hlp_help.txt
@@ -95,6 +98,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/fr/hlp_connect.txt
 %%DATADIR%%/help/fr/hlp_del.txt
 %%DATADIR%%/help/fr/hlp_disconnect.txt
+%%DATADIR%%/help/fr/hlp_echo.txt
 %%DATADIR%%/help/fr/hlp_event.txt
 %%DATADIR%%/help/fr/hlp_group.txt
 %%DATADIR%%/help/fr/hlp_help.txt
@@ -131,6 +135,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/it/hlp_connect.txt
 %%DATADIR%%/help/it/hlp_del.txt
 %%DATADIR%%/help/it/hlp_disconnect.txt
+%%DATADIR%%/help/it/hlp_echo.txt
 %%DATADIR%%/help/it/hlp_event.txt
 %%DATADIR%%/help/it/hlp_group.txt
 %%DATADIR%%/help/it/hlp_help.txt
@@ -167,6 +172,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/nl/hlp_connect.txt
 %%DATADIR%%/help/nl/hlp_del.txt
 %%DATADIR%%/help/nl/hlp_disconnect.txt
+%%DATADIR%%/help/nl/hlp_echo.txt
 %%DATADIR%%/help/nl/hlp_event.txt
 %%DATADIR%%/help/nl/hlp_group.txt
 %%DATADIR%%/help/nl/hlp_help.txt
@@ -203,6 +209,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_connect.txt
 %%DATADIR%%/help/pl/hlp_del.txt
 %%DATADIR%%/help/pl/hlp_disconnect.txt
+%%DATADIR%%/help/pl/hlp_echo.txt
 %%DATADIR%%/help/pl/hlp_event.txt
 %%DATADIR%%/help/pl/hlp_group.txt
 %%DATADIR%%/help/pl/hlp_help.txt
@@ -239,6 +246,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/ru/hlp_connect.txt
 %%DATADIR%%/help/ru/hlp_del.txt
 %%DATADIR%%/help/ru/hlp_disconnect.txt
+%%DATADIR%%/help/ru/hlp_echo.txt
 %%DATADIR%%/help/ru/hlp_event.txt
 %%DATADIR%%/help/ru/hlp_group.txt
 %%DATADIR%%/help/ru/hlp_help.txt
@@ -275,6 +283,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/uk/hlp_connect.txt
 %%DATADIR%%/help/uk/hlp_del.txt
 %%DATADIR%%/help/uk/hlp_disconnect.txt
+%%DATADIR%%/help/uk/hlp_echo.txt
 %%DATADIR%%/help/uk/hlp_event.txt
 %%DATADIR%%/help/uk/hlp_group.txt
 %%DATADIR%%/help/uk/hlp_help.txt
