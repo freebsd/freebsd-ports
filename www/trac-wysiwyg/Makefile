@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wysiwyg
-PORTVERSION=	0.2.4214
+PORTVERSION=	0.2.4353
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
