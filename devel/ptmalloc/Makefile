@@ -32,7 +32,7 @@ do-install:	all
 	${INSTALL_DATA} ${WRKSRC}/malloc-2.8.3.h ${PREFIX}/${INCDIR}/malloc.h
 	${INSTALL_DATA} ${WRKSRC}/libptmalloc3.a ${PREFIX}/lib/libptmalloc.a
 	${INSTALL_DATA} ${WRKSRC}/ptmalloc3.so ${PREFIX}/lib/libptmalloc.so.3
-	${LN} -s ${PREFIX}/lib/ptmalloc.so.3 ${PREFIX}/lib/libptmalloc.so
+	${LN} -s ${PREFIX}/lib/libptmalloc.so.3 ${PREFIX}/lib/libptmalloc.so
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
