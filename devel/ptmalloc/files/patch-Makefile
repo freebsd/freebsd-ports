@@ -44,7 +44,7 @@
  	$(CC) $(SH_FLAGS) $(CFLAGS) $(M_FLAGS) $(MALLOC_OBJ) -o $@
  
 +ptmalloc3.so: ptmalloc3.c malloc-2.8.3.h
-+	$(CC) $(SH_FLAGS) $(CFLAGS) $(M_FLAGS) ptmalloc3.c -o $@
++	$(CC) $(SH_FLAGS) $(CFLAGS) $(M_FLAGS) malloc.c -o $@
 +
  again:
  	$(RM) $(TESTS)
