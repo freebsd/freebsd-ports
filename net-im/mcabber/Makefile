@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -33,10 +32,6 @@ OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-BROKEN=	Unicoded ncurses require 5.3
-.endif
-
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
@@ -56,7 +51,7 @@ CONFIGURE_ARGS+=--disable-aspell
 .endif
 
 .if defined(WITH_OTR)
-LIB_DEPENDS+=	otr.3:${PORTSDIR}/security/libotr \
+LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr \
 		gcrypt.15:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
 .else
