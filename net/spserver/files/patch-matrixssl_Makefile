@@ -1,0 +1,35 @@
+--- matrixssl/Makefile.orig	2008-06-27 23:18:00.000000000 +0800
++++ matrixssl/Makefile	2008-10-06 11:21:47.000000000 +0800
+@@ -3,18 +3,18 @@
+ 
+ CC = gcc
+ AR = ar cru
+-CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
++CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC -Dlinux
+ SOFLAGS = -shared
+-LDFLAGS = -lstdc++ -lpthread -lresolv
++LDFLAGS = -lstdc++ -lpthread
+ 
+ LINKER = $(CC)
+ LINT = lint -c
+ RM = /bin/rm -f
+ 
+-MASSL_INCL = -I$(HOME)/matrixssl-1-8-3-open/
+-MASSL_LIB  = -L$(HOME)/matrixssl-1-8-3-open/src -lmatrixssl
++MASSL_INCL = -I/usr/local/include
++MASSL_LIB  = -L/usr/local/lib -lmatrixsslstatic
+ 
+-LIBEVENT_LIB  = -L$(HOME)/libevent -levent
++LIBEVENT_LIB  = -L/usr/local/lib -levent
+ 
+ SPSERVER_INCL = -I../spserver
+ SPSERVER_LIB  = -L../spserver -lspserver
+@@ -37,7 +37,7 @@
+ 	$(LINKER) $(SOFLAGS) $^ -o $@
+ 
+ testechos: testechos.o
+-	$(LINKER) $(LDFLAGS) $^ -L. -lspmatrixssl -o $@
++	$(LINKER) $(LDFLAGS) $^ -L. -lspmatrixssl -lmatrixsslstatic -o $@
+ 
+ clean:
+ 	@( $(RM) *.o vgcore.* core core.* $(TARGET) )

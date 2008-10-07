@@ -1,0 +1,23 @@
+--- gnutls/Makefile.orig	2008-10-06 11:34:04.000000000 +0800
++++ gnutls/Makefile	2008-10-06 11:34:35.000000000 +0800
+@@ -5,16 +5,16 @@
+ AR = ar cru
+ CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
+-LDFLAGS = -lstdc++ -lpthread -lresolv
++LDFLAGS = -lstdc++ -lpthread
+ 
+ LINKER = $(CC)
+ LINT = lint -c
+ RM = /bin/rm -f
+ 
+-GNUTLS_INCL = -I/usr/local/include/
+-GNUTLS_LIB  = -L/usr/local/lib -lgcrypt -lgpg-error -lgnutls -lgnutls-extra -lstdc++
++GNUTLS_INCL = -I%PREFIX%/include/
++GNUTLS_LIB  = -L%PREFIX%/lib -lgcrypt -lgpg-error -lgnutls -lgnutls-extra -lstdc++
+ 
+-LIBEVENT_LIB  = -L$(HOME)/libevent -levent
++LIBEVENT_LIB  = -L%PREFIX%/libevent -levent
+ 
+ SPSERVER_INCL = -I../spserver
+ SPSERVER_LIB  = -L../spserver -lspserver
