@@ -6,25 +6,20 @@
 #
 
 PORTNAME=	schism
-DISTVERSION=	0.2a
-PORTREVISION=	3
+PORTVERSION=	20081004
 CATEGORIES=	audio
-MASTER_SITES=	http://rigelseven.com/schism/dl/ \
+MASTER_SITES=	http://nimh.org/schism/ \
 		CRITICAL
+DISTNAME=	cvs-snapshot
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A module tracker editor/player resembling impulse tracker
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
-
-# Dies with bus error unless building debug version
-CXXFLAGS=	-g
-CFLAGS=		-g
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
@@ -33,7 +28,9 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
