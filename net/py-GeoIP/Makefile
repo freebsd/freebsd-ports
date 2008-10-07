@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	1.2.2
 CATEGORIES=	net python geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,12 +21,11 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	GeoIP-Python
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 EXAMPLE_FILES=	README test.py test_city.py test_org.py test_region.py
-DOCSDIR=	${EXAMPLESDIR}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GeoIP.so
-PORTDOCS=	README test.py test_city.py test_org.py test_region.py
+PORTEXAMPLES=	README test.py test_city.py test_org.py test_region.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -37,8 +35,8 @@ post-patch:
 		${WRKSRC}/test_org.py \
 		${WRKSRC}/test_region.py
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLE_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
