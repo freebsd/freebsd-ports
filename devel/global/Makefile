@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	5.7.1
+PORTVERSION=	5.7.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
