@@ -30,7 +30,7 @@ include/google/protobuf/wire_format_inl.h
 lib/libprotobuf.a
 lib/libprotobuf.la
 lib/libprotobuf.so
-lib/libprotobuf.so.0
+lib/libprotobuf.so.2
 lib/libprotoc.a
 lib/libprotoc.la
 lib/libprotoc.so
