@@ -15960,6 +15960,7 @@ pantera                         ports/security/pantera
 pantomime                       ports/mail/pantomime
 pantry                          ports/misc/pantry
 papercut                        ports/news/papercut
+paperkey                        ports/security/paperkey
 papi                            ports/devel/papi
 paprefs                         ports/audio/paprefs
 paps                            ports/print/paps
@@ -17060,6 +17061,7 @@ pkfonts400                      ports/print/pkfonts400
 pkfonts600                      ports/print/pkfonts600
 pkg-config                      ports/devel/pkg-config
 pkg-orphan                      ports/ports-mgmt/pkg-orphan
+pkg_add_it                      ports/ports-mgmt/pkg_add_it
 pkg_cleanup                     ports/ports-mgmt/pkg_cleanup
 pkg_cutleaves                   ports/ports-mgmt/pkg_cutleaves
 pkg_remove                      ports/ports-mgmt/pkg_remove
@@ -19027,6 +19029,7 @@ ruby-libart2                    ports/graphics/ruby-libart2
 ruby-libglade2                  ports/devel/ruby-libglade2
 ruby-libpng                     ports/graphics/ruby-libpng
 ruby-libxml                     ports/textproc/ruby-libxml
+ruby-liquid                     ports/textproc/ruby-liquid
 ruby-locale                     ports/devel/ruby-locale
 ruby-log4r                      ports/sysutils/ruby-log4r
 ruby-lua                        ports/lang/ruby-lua
@@ -19494,6 +19497,7 @@ security_gag                    ports/security/gag
 security_hydra                  ports/security/hydra
 seda                            ports/net/seda
 sedsed                          ports/devel/sedsed
+sedumi                          ports/math/sedumi
 see                             ports/lang/see
 see-devel                       ports/lang/see-devel
 seed7                           ports/lang/seed7
