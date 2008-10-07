@@ -5,6 +5,7 @@ bin/le_killproc.sh
 bin/ctags-le
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
+%%DATADIR%%/config/build_settings.xml.default.win
 %%DATADIR%%/config/codelite.layout.default
 %%DATADIR%%/config/codelite.xml.default
 %%DATADIR%%/config/codelite.xml.default.gtk
@@ -34,6 +35,9 @@ bin/ctags-le
 %%DATADIR%%/templates/gizmos/mainframe.h.wizard
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
 %%DATADIR%%/templates/gizmos/plugin.cpp.wizard
+%%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
+%%DATADIR%%/templates/formbuilder/FrameTemplate.fbp
+%%DATADIR%%/templates/formbuilder/PanelTemplate.fbp
 %%DATADIR%%/plugins/CodeFormatter.so
 %%DATADIR%%/plugins/Subversion.so
 %%DATADIR%%/plugins/cscope.so
@@ -83,6 +87,7 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/UnitTest++
 @dirrm %%DATADIR%%/templates/projects
 @dirrm %%DATADIR%%/templates/gizmos
+@dirrm %%DATADIR%%/templates/formbuilder
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/plugins
