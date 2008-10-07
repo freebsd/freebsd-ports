@@ -1,6 +1,8 @@
+bin/jack_alias
 bin/jack_bufsize
 bin/jack_connect
 bin/jack_disconnect
+bin/jack_evmon
 bin/jack_freewheel
 bin/jack_impulse_grabber
 bin/jack_load
@@ -11,6 +13,7 @@ bin/jack_midisine
 bin/jack_monitor_client
 bin/jack_showtime
 bin/jack_simple_client
+bin/jack_transport
 bin/jack_unload
 bin/jackd
 bin/jackrec
@@ -43,6 +46,15 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/functions.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/functions_vars.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x65.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x69.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x6a.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x6d.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x6f.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x70.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x72.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x73.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_0x74.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_defs.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_enum.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_eval.html
@@ -67,10 +79,10 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h-source.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/struct__jack__midi__event.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__midi__event__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__position__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__data__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__t.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__transport__info__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/structport__pair__t.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/thread_8h-source.html
@@ -81,10 +93,9 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/transport_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/types_8h-source.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/types_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/fsm.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.css
-%%DOCS%%share/jack-audio-connection-kit/reference/html/hierarchy.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/struct__jack__midi__port__info.html
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference/html
 %%DOCS%%@dirrm share/jack-audio-connection-kit/reference
 %%DOCS%%@dirrm share/jack-audio-connection-kit

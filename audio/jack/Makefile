@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.103.0
-PORTREVISION=	1
+PORTVERSION=	0.109.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -24,6 +23,8 @@ LATEST_LINK=	jack
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+CONFIGURE_ARGS+=--enable-portaudio \
+		--with-default-tmpdir=/tmp
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
