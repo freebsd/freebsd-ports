@@ -7,8 +7,8 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		4
-CATEGORIES=		emulators
+PORTREVISION=		5
+CATEGORIES=		emulators kld
 MASTER_SITES=		SF
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 
@@ -55,11 +55,15 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-SUB_LIST+=	NOTON5="@comment "
+.if ${OSVERSION} >= 600000
+NOTON5=		""
 .else
-SUB_LIST+=	NOTON5=""
+NOTON5=		"@comment "
 .endif
+
+PLIST_SUB+=	NOTON5=${NOTON5}
+
+SUB_LIST+=	NOTON5=${NOTON5}
 
 post-patch:
 .if defined(WITHOUT_X11)
@@ -67,14 +71,14 @@ post-patch:
 .endif
 
 post-build:
-	cd ${WRKSRC}/modules && make
+	(cd ${WRKSRC}/modules && ${MAKE})
 
 post-install:
 	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers
 	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/input
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmmemctl.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmxnet.ko
-.if ${OSREL} >= 6
+.if ${OSVERSION} >= 600000
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmhgfs.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmblock.ko
 .endif
