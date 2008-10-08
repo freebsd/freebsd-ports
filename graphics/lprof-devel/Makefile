@@ -7,7 +7,7 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 USE_BZIP2=	yes
 USE_XORG=	x11 xext sm ice xxf86vm
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qt3support assistantclient moc uic rcc qmake linguist
+QT_COMPONENTS=	corelib gui qt3support assistantclient linguist_build qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 
 CMAKE_ARGS=	-DQTTRANS_LRELEASE_EXECUTABLE="${LOCALBASE}/bin/lrelease-qt4"
