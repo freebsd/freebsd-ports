@@ -41,6 +41,11 @@ post-install:
 		(${GREP} -v ${PREFIX}/bin/fdsh /etc/shells.bak; \
 		${ECHO_CMD} ${PREFIX}/bin/fdsh) > /etc/shells; \
 		${RM} -f /etc/shells.bak
+	@${INSTALL_DATA} ${WRKSRC}/_fdrc.orig ${PREFIX}/etc/fd2rc.dist
+	@${INSTALL_DATA} ${WRKSRC}/_fdrc ${PREFIX}/etc/fd2rc.sample
+	if [ ! -f ${PREFIX}/etc/fd2rc ]; then \
+		${CP} -p ${PREFIX}/etc/fd2rc.sample ${PREFIX}/etc/fd2rc; \
+	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
@@ -50,11 +55,6 @@ post-install:
 	@for i in ${DOCS_JA}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ja/${PORTNAME}; \
 	done
-	@${INSTALL_DATA} ${WRKSRC}/_fdrc.orig ${PREFIX}/etc/fd2rc.dist
-	@${INSTALL_DATA} ${WRKSRC}/_fdrc ${PREFIX}/etc/fd2rc.sample
-	if [ ! -f ${PREFIX}/etc/fd2rc ]; then \
-		${CP} -p ${PREFIX}/etc/fd2rc.sample ${PREFIX}/etc/fd2rc; \
-	fi
 	@${CAT} ${PKGMESSAGE}
 .endif
 
