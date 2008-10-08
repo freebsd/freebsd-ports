@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.20.2
+PORTVERSION=	2.20.3
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
