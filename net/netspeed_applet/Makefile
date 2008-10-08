@@ -6,8 +6,7 @@
 #    $MCom: ports/net/netspeed_applet/Makefile,v 1.2 2007/05/19 21:36:17 marcus Exp $
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.14
-PORTREVISION=	2
+PORTVERSION=	0.15
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
@@ -21,6 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
