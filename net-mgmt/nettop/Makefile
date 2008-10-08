@@ -7,13 +7,14 @@
 
 PORTNAME=	nettop
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://srparish.net/scripts/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A program which looks like top, but is for network packets
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-slang-libraries=${LOCALBASE}/lib \
