@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	RDF-Simple
-PORTVERSION=	0.30
+PORTVERSION=	0.30.5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.3
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write RDF without complication
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
 MAN3=	RDF::Simple.3 \
 	RDF::Simple::NS.3 \
 	RDF::Simple::Parser.3 \
-	RDF::Simple::Serialiser.3
+	RDF::Simple::Serialiser.3 \
+	RDF::Simple::Serializer.3
 
 .include <bsd.port.mk>

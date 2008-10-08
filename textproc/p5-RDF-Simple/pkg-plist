@@ -2,6 +2,7 @@
 %%SITE_PERL%%/RDF/Simple/NS.pm
 %%SITE_PERL%%/RDF/Simple/Parser.pm
 %%SITE_PERL%%/RDF/Simple/Serialiser.pm
+%%SITE_PERL%%/RDF/Simple/Serializer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF
