@@ -1,10 +1,12 @@
-%%WWWDIR%%/.htaccess
-%%WWWDIR%%/app/.htaccess
+%%HTACCESS%%%%WWWDIR%%/.htaccess
+%%HTACCESS%%%%WWWDIR%%/app/.htaccess
 %%WWWDIR%%/app/config/acl.ini.php
 %%WWWDIR%%/app/config/bootstrap.php
 %%WWWDIR%%/app/config/core.php
 @unexec rm -f %D/%%WWWDIR%%/app/config/core.php.orig
+@unexec if cmp -s %D/%%WWWDIR%%/app/config/database.php.default %D/%%WWWDIR%%/app/config/database.php; then rm -f %D/%%WWWDIR%%/app/config/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/database.php has not been removed"; fi
 %%WWWDIR%%/app/config/database.php.default
+@exec if [ ! -f %D/%%WWWDIR%%/app/config/database.php ]; then cp -p %D/%F %B/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/database.php has not been overwritten"; fi
 %%WWWDIR%%/app/config/inflections.php
 %%WWWDIR%%/app/config/routes.php
 %%WWWDIR%%/app/config/sql/db_acl.php
@@ -40,11 +42,8 @@
 %%WWWDIR%%/app/views/layouts/js/empty
 %%WWWDIR%%/app/views/layouts/rss/empty
 %%WWWDIR%%/app/views/layouts/xml/empty
-%%WWWDIR%%/app/views/pages/js/empty
-%%WWWDIR%%/app/views/pages/rss/empty
-%%WWWDIR%%/app/views/pages/xml/empty
 %%WWWDIR%%/app/views/scaffolds/empty
-%%WWWDIR%%/app/webroot/.htaccess
+%%HTACCESS%%%%WWWDIR%%/app/webroot/.htaccess
 %%WWWDIR%%/app/webroot/css.php
 %%WWWDIR%%/app/webroot/css/cake.generic.css
 %%WWWDIR%%/app/webroot/favicon.ico
@@ -59,17 +58,14 @@
 %%WWWDIR%%/cake/bootstrap.php
 %%WWWDIR%%/cake/config/config.php
 %%WWWDIR%%/cake/config/paths.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0000_007f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0080_00ff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0100_017f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0180_024F.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0300_036f.php
+%%WWWDIR%%/cake/config/unicode/casefolding/0250_02af.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0370_03ff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0400_04ff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0500_052f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/0530_058f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/10400_1044f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/10a0_10ff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/1e00_1eff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/1f00_1fff.php
 %%WWWDIR%%/cake/config/unicode/casefolding/2100_214f.php
@@ -78,7 +74,6 @@
 %%WWWDIR%%/cake/config/unicode/casefolding/2c00_2c5f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/2c60_2c7f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/2c80_2cff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/fb00_fb4f.php
 %%WWWDIR%%/cake/config/unicode/casefolding/ff00_ffef.php
 %%WWWDIR%%/cake/console/cake
 %%WWWDIR%%/cake/console/cake.bat
@@ -97,8 +92,9 @@
 %%WWWDIR%%/cake/console/libs/tasks/model.php
 %%WWWDIR%%/cake/console/libs/tasks/plugin.php
 %%WWWDIR%%/cake/console/libs/tasks/project.php
+%%WWWDIR%%/cake/console/libs/tasks/test.php
 %%WWWDIR%%/cake/console/libs/tasks/view.php
-%%WWWDIR%%/cake/console/libs/templates/skel/.htaccess
+%%HTACCESS%%%%WWWDIR%%/cake/console/libs/templates/skel/.htaccess
 %%WWWDIR%%/cake/console/libs/templates/skel/app_controller.php
 %%WWWDIR%%/cake/console/libs/templates/skel/app_helper.php
 %%WWWDIR%%/cake/console/libs/templates/skel/app_model.php
@@ -151,7 +147,7 @@
 %%WWWDIR%%/cake/console/libs/templates/skel/views/layouts/xml/default.ctp
 %%WWWDIR%%/cake/console/libs/templates/skel/views/pages/empty
 %%WWWDIR%%/cake/console/libs/templates/skel/views/scaffolds/empty
-%%WWWDIR%%/cake/console/libs/templates/skel/webroot/.htaccess
+%%HTACCESS%%%%WWWDIR%%/cake/console/libs/templates/skel/webroot/.htaccess
 %%WWWDIR%%/cake/console/libs/templates/skel/webroot/css.php
 %%WWWDIR%%/cake/console/libs/templates/skel/webroot/css/cake.generic.css
 %%WWWDIR%%/cake/console/libs/templates/skel/webroot/favicon.ico
@@ -164,12 +160,12 @@
 %%WWWDIR%%/cake/console/libs/templates/views/home.ctp
 %%WWWDIR%%/cake/console/libs/templates/views/index.ctp
 %%WWWDIR%%/cake/console/libs/templates/views/view.ctp
+%%WWWDIR%%/cake/console/libs/testsuite.php
 %%WWWDIR%%/cake/dispatcher.php
 %%WWWDIR%%/cake/libs/cache.php
 %%WWWDIR%%/cake/libs/cache/apc.php
 %%WWWDIR%%/cake/libs/cache/file.php
 %%WWWDIR%%/cake/libs/cache/memcache.php
-%%WWWDIR%%/cake/libs/cache/model.php
 %%WWWDIR%%/cake/libs/cache/xcache.php
 %%WWWDIR%%/cake/libs/cake_log.php
 %%WWWDIR%%/cake/libs/class_registry.php
@@ -199,6 +195,7 @@
 %%WWWDIR%%/cake/libs/model/app_model.php
 %%WWWDIR%%/cake/libs/model/behavior.php
 %%WWWDIR%%/cake/libs/model/behaviors/acl.php
+%%WWWDIR%%/cake/libs/model/behaviors/containable.php
 %%WWWDIR%%/cake/libs/model/behaviors/translate.php
 %%WWWDIR%%/cake/libs/model/behaviors/tree.php
 %%WWWDIR%%/cake/libs/model/connection_manager.php
@@ -218,6 +215,7 @@
 %%WWWDIR%%/cake/libs/model/db_acl.php
 %%WWWDIR%%/cake/libs/model/model.php
 %%WWWDIR%%/cake/libs/model/schema.php
+%%WWWDIR%%/cake/libs/multibyte.php
 %%WWWDIR%%/cake/libs/object.php
 %%WWWDIR%%/cake/libs/overloadable.php
 %%WWWDIR%%/cake/libs/overloadable_php4.php
@@ -279,15 +277,19 @@
 %%WWWDIR%%/cake/libs/view/theme.php
 %%WWWDIR%%/cake/libs/view/view.php
 %%WWWDIR%%/cake/libs/xml.php
+%%WWWDIR%%/cake/tests/cases/basics.test.php
+%%WWWDIR%%/cake/tests/cases/console/cake.test.php
 %%WWWDIR%%/cake/tests/cases/dispatcher.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cache.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cache/apc.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cache/file.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cache/memcache.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache/model.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cache/xcache.test.php
 %%WWWDIR%%/cake/tests/cases/libs/cake_log.test.php
+%%WWWDIR%%/cake/tests/cases/libs/cake_test_case.test.php
+%%WWWDIR%%/cake/tests/cases/libs/cake_test_fixture.test.php
 %%WWWDIR%%/cake/tests/cases/libs/class_registry.test.php
+%%WWWDIR%%/cake/tests/cases/libs/code_coverage_manager.test.php
 %%WWWDIR%%/cake/tests/cases/libs/configure.test.php
 %%WWWDIR%%/cake/tests/cases/libs/controller/component.test.php
 %%WWWDIR%%/cake/tests/cases/libs/controller/components/acl.test.php
@@ -309,17 +311,24 @@
 %%WWWDIR%%/cake/tests/cases/libs/i18n.test.php
 %%WWWDIR%%/cake/tests/cases/libs/inflector.test.php
 %%WWWDIR%%/cake/tests/cases/libs/l10n.test.php
-%%WWWDIR%%/cake/tests/cases/libs/loader.test.php
 %%WWWDIR%%/cake/tests/cases/libs/magic_db.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/behavior.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/acl.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/containable.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/behaviors/translate.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/behaviors/tree.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_adodb.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_mssql.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_mysql.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_oracle.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_postgres.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_sqlite.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo_source.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/db_acl.test.php
 %%WWWDIR%%/cake/tests/cases/libs/model/model.test.php
+%%WWWDIR%%/cake/tests/cases/libs/model/models.php
 %%WWWDIR%%/cake/tests/cases/libs/model/schema.test.php
+%%WWWDIR%%/cake/tests/cases/libs/multibyte.test.php
 %%WWWDIR%%/cake/tests/cases/libs/object.test.php
 %%WWWDIR%%/cake/tests/cases/libs/overloadable.test.php
 %%WWWDIR%%/cake/tests/cases/libs/router.test.php
@@ -347,13 +356,19 @@
 %%WWWDIR%%/cake/tests/cases/libs/view/theme.test.php
 %%WWWDIR%%/cake/tests/cases/libs/view/view.test.php
 %%WWWDIR%%/cake/tests/cases/libs/xml.test.php
+%%WWWDIR%%/cake/tests/fixtures/account_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/aco_action_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/aco_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/aco_two_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/ad_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/advertisement_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/after_tree_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/another_article_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/apple_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/aro_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/aro_two_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/aros_aco_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/aros_aco_two_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/article_featured_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/article_featureds_tags_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/article_fixture.php
@@ -361,11 +376,22 @@
 %%WWWDIR%%/cake/tests/fixtures/attachment_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/auth_user_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/author_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/basket_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/bid_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/binary_test_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/book_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/cache_test_model_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/callback_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/campaign_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/category_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/category_thread_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/cd_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/comment_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/content_account_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/content_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/data_test_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/datatype_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/dependency_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/device_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/device_type_category_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/device_type_fixture.php
@@ -374,29 +400,55 @@
 %%WWWDIR%%/cake/tests/fixtures/exterior_type_category_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/feature_set_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/featured_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/film_file_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/flag_tree_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/home_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/image_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/item_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/items_portfolio_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/join_a_b_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/join_a_c_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/join_a_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/join_b_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/join_c_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/join_thing_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/message_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/my_categories_my_products_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/my_categories_my_users_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/my_category_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/my_product_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/my_user_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/node_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/number_tree_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/numeric_article_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/overall_favorite_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/person_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/portfolio_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/post_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/posts_tag_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/primary_model_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/product_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/project_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/sample_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/secondary_model_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/session_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/something_else_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/something_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/stories_tag_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/story_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/syfile_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/tag_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/test_plugin_article_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/test_plugin_comment_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/the_paper_monkies_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/thread_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/translate_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/translate_table_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/translated_item_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/underscore_field_fixture.php
 %%WWWDIR%%/cake/tests/fixtures/user_fixture.php
+%%WWWDIR%%/cake/tests/fixtures/uuid_fixture.php
+%%WWWDIR%%/cake/tests/groups/acl.group.php
 %%WWWDIR%%/cake/tests/groups/cache.group.php
 %%WWWDIR%%/cake/tests/groups/components.group.php
 %%WWWDIR%%/cake/tests/groups/configure.group.php
@@ -406,47 +458,131 @@
 %%WWWDIR%%/cake/tests/groups/model.group.php
 %%WWWDIR%%/cake/tests/groups/no_database.group.php
 %%WWWDIR%%/cake/tests/groups/routing_system.group.php
+%%WWWDIR%%/cake/tests/groups/socket.group.php
+%%WWWDIR%%/cake/tests/groups/test_suite.group.php
 %%WWWDIR%%/cake/tests/groups/view.group.php
+%%WWWDIR%%/cake/tests/groups/xml.group.php
 %%WWWDIR%%/cake/tests/lib/cake_reporter.php
 %%WWWDIR%%/cake/tests/lib/cake_test_case.php
 %%WWWDIR%%/cake/tests/lib/cake_test_fixture.php
 %%WWWDIR%%/cake/tests/lib/cake_test_model.php
 %%WWWDIR%%/cake/tests/lib/cake_web_test_case.php
 %%WWWDIR%%/cake/tests/lib/cli_reporter.php
+%%WWWDIR%%/cake/tests/lib/code_coverage_manager.php
 %%WWWDIR%%/cake/tests/lib/content.php
 %%WWWDIR%%/cake/tests/lib/footer.php
 %%WWWDIR%%/cake/tests/lib/header.php
 %%WWWDIR%%/cake/tests/lib/simpletest.php
 %%WWWDIR%%/cake/tests/lib/test_manager.php
+%%WWWDIR%%/cake/tests/lib/xdebug.php
+%%WWWDIR%%/cake/tests/test_app/config/acl.ini.php
 %%WWWDIR%%/cake/tests/test_app/controllers/components/empty
+%%WWWDIR%%/cake/tests/test_app/controllers/tests_apps_controller.php
+%%WWWDIR%%/cake/tests/test_app/controllers/tests_apps_posts_controller.php
+%%WWWDIR%%/cake/tests/test_app/locale/po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES/default.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES/core.po
+%%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES/default.po
 %%WWWDIR%%/cake/tests/test_app/models/behaviors/empty
 %%WWWDIR%%/cake/tests/test_app/models/datasources/empty
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/other_component.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/plugins_component.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_component.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_other_component.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/tests_controller.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/test_plugin_post.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/test_plugin_app_controller.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/test_plugin_app_model.php
 %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/css/test_plugin_asset.css
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/img/cake.icon.gif
 %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/sample/sample_plugin.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/test_plugin_helper.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/test_plugin_other_helper.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/welcome.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/other_helper.php
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/plugged_helper.php
 %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/layouts/default.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/test_plugin/index.ctp
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests/index.ctp
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests/scaffold.edit.ctp
 %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/layouts/default.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/test_plugin/index.ctp
+%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/tests/index.ctp
+%%WWWDIR%%/cake/tests/test_app/tmp/dir_map
+%%WWWDIR%%/cake/tests/test_app/vendors/Test/MyTest.php
+%%WWWDIR%%/cake/tests/test_app/vendors/Test/hello.php
 %%WWWDIR%%/cake/tests/test_app/vendors/css/test_asset.css
+%%WWWDIR%%/cake/tests/test_app/vendors/img/test.jpg
 %%WWWDIR%%/cake/tests/test_app/vendors/sample/sample.php
 %%WWWDIR%%/cake/tests/test_app/vendors/shells/tasks/empty
 %%WWWDIR%%/cake/tests/test_app/vendors/shells/templates/empty
+%%WWWDIR%%/cake/tests/test_app/vendors/somename/some.name.php
+%%WWWDIR%%/cake/tests/test_app/vendors/welcome.php
+%%WWWDIR%%/cake/tests/test_app/views/elements/email/html/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/elements/email/text/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/elements/email/text/wide.ctp
 %%WWWDIR%%/cake/tests/test_app/views/elements/empty
+%%WWWDIR%%/cake/tests/test_app/views/elements/test_element.ctp
 %%WWWDIR%%/cake/tests/test_app/views/errors/empty
 %%WWWDIR%%/cake/tests/test_app/views/helpers/empty
 %%WWWDIR%%/cake/tests/test_app/views/layouts/ajax.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/ajax2.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/cache_layout.ctp
 %%WWWDIR%%/cake/tests/test_app/views/layouts/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/email/html/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/email/html/thin.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/email/text/default.ctp
 %%WWWDIR%%/cake/tests/test_app/views/layouts/flash.ctp
 %%WWWDIR%%/cake/tests/test_app/views/layouts/js/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/multi_cache.ctp
 %%WWWDIR%%/cake/tests/test_app/views/layouts/rss/default.ctp
+%%WWWDIR%%/cake/tests/test_app/views/layouts/session_helper.ctp
 %%WWWDIR%%/cake/tests/test_app/views/layouts/xml/default.ctp
 %%WWWDIR%%/cake/tests/test_app/views/pages/empty
 %%WWWDIR%%/cake/tests/test_app/views/pages/home.ctp
 %%WWWDIR%%/cake/tests/test_app/views/posts/index.ctp
+%%WWWDIR%%/cake/tests/test_app/views/posts/scaffold.edit.ctp
+%%WWWDIR%%/cake/tests/test_app/views/posts/sequencial_nocache.ctp
 %%WWWDIR%%/cake/tests/test_app/views/posts/test_nocache_tags.ctp
 %%WWWDIR%%/cake/tests/test_app/views/scaffolds/empty
+%%WWWDIR%%/cake/tests/test_app/views/tests_apps/index.ctp
 %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/layouts/default.ctp
 %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/posts/index.ctp
 %%WWWDIR%%/index.php
@@ -459,12 +595,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/libs/validators
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/libs/templates/skel/webroot/files
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/cases/scripts/tasks
-@exec mkdir -p %D/%%WWWDIR%%/app/webroot/files
 @dirrm %%WWWDIR%%/vendors/shells/templates
 @dirrm %%WWWDIR%%/vendors/shells/tasks
 @dirrm %%WWWDIR%%/vendors/shells
@@ -475,32 +605,44 @@
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/layouts
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/themed
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/tests_apps
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/scaffolds
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/posts
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/pages
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/xml
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/rss
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/js
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email/text
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email/html
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/helpers
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/errors
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email/text
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email/html
+@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email
 @dirrm %%WWWDIR%%/cake/tests/test_app/views/elements
 @dirrm %%WWWDIR%%/cake/tests/test_app/views
+@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/somename
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/templates
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/tasks
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors/sample
+@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/img
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors/css
+@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/Test
 @dirrm %%WWWDIR%%/cake/tests/test_app/vendors
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/test_plugin
+@dirrmtry %%WWWDIR%%/cake/tests/test_app/tmp
+@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/tests
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme/layouts
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed/test_plugin_theme
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/themed
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/test_plugin
+@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/layouts
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/sample
+@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/img
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/css
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors
 @dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors
@@ -512,8 +654,56 @@
 @dirrm %%WWWDIR%%/cake/tests/test_app/models/datasources
 @dirrm %%WWWDIR%%/cake/tests/test_app/models/behaviors
 @dirrm %%WWWDIR%%/cake/tests/test_app/models
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/po/LC_MESSAGES
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale/po
+@dirrm %%WWWDIR%%/cake/tests/test_app/locale
 @dirrm %%WWWDIR%%/cake/tests/test_app/controllers/components
 @dirrm %%WWWDIR%%/cake/tests/test_app/controllers
+@dirrm %%WWWDIR%%/cake/tests/test_app/config
 @dirrm %%WWWDIR%%/cake/tests/test_app
 @dirrm %%WWWDIR%%/cake/tests/lib
 @dirrm %%WWWDIR%%/cake/tests/groups
@@ -530,6 +720,7 @@
 @dirrm %%WWWDIR%%/cake/tests/cases/libs/controller
 @dirrm %%WWWDIR%%/cake/tests/cases/libs/cache
 @dirrm %%WWWDIR%%/cake/tests/cases/libs
+@dirrm %%WWWDIR%%/cake/tests/cases/console
 @dirrm %%WWWDIR%%/cake/tests/cases
 @dirrm %%WWWDIR%%/cake/tests
 @dirrm %%WWWDIR%%/cake/libs/view/scaffolds
@@ -583,14 +774,14 @@
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/vendors/shells/tasks
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/vendors/shells
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/vendors
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/tests
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/sessions
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/logs
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/views
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/persistent
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/models
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache
-@dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tmp
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/tests
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/sessions
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/logs
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/views
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/persistent
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache/models
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp/cache
+@dirrmtry %%WWWDIR%%/cake/console/libs/templates/skel/tmp
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tests/groups
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tests/fixtures
 @dirrm %%WWWDIR%%/cake/console/libs/templates/skel/tests/cases/models
@@ -626,9 +817,6 @@
 @dirrm %%WWWDIR%%/app/webroot/css
 @dirrm %%WWWDIR%%/app/webroot
 @dirrm %%WWWDIR%%/app/views/scaffolds
-@dirrm %%WWWDIR%%/app/views/pages/xml
-@dirrm %%WWWDIR%%/app/views/pages/rss
-@dirrm %%WWWDIR%%/app/views/pages/js
 @dirrm %%WWWDIR%%/app/views/pages
 @dirrm %%WWWDIR%%/app/views/layouts/xml
 @dirrm %%WWWDIR%%/app/views/layouts/rss
@@ -642,14 +830,14 @@
 @dirrm %%WWWDIR%%/app/vendors/shells/tasks
 @dirrm %%WWWDIR%%/app/vendors/shells
 @dirrm %%WWWDIR%%/app/vendors
-@dirrm %%WWWDIR%%/app/tmp/tests
-@dirrm %%WWWDIR%%/app/tmp/sessions
-@unexec rm -rf %D/%%WWWDIR%%/app/tmp/logs 2>&1 >/dev/null || true
-@dirrm %%WWWDIR%%/app/tmp/cache/views
-@unexec rm -rf %D/%%WWWDIR%%/app/tmp/cache/persistent 2>&1 >/dev/null || true
-@dirrm %%WWWDIR%%/app/tmp/cache/models
-@dirrm %%WWWDIR%%/app/tmp/cache
-@dirrm %%WWWDIR%%/app/tmp
+@dirrmtry %%WWWDIR%%/app/tmp/tests
+@dirrmtry %%WWWDIR%%/app/tmp/sessions
+@dirrmtry %%WWWDIR%%/app/tmp/logs
+@dirrmtry %%WWWDIR%%/app/tmp/cache/views
+@dirrmtry %%WWWDIR%%/app/tmp/cache/persistent
+@dirrmtry %%WWWDIR%%/app/tmp/cache/models
+@dirrmtry %%WWWDIR%%/app/tmp/cache
+@dirrmtry %%WWWDIR%%/app/tmp
 @dirrm %%WWWDIR%%/app/tests/groups
 @dirrm %%WWWDIR%%/app/tests/fixtures
 @dirrm %%WWWDIR%%/app/tests/cases/models
@@ -669,6 +857,12 @@
 @dirrm %%WWWDIR%%/app/controllers/components
 @dirrm %%WWWDIR%%/app/controllers
 @dirrm %%WWWDIR%%/app/config/sql
-@dirrm %%WWWDIR%%/app/config
-@dirrm %%WWWDIR%%/app
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/app/config
+@dirrmtry %%WWWDIR%%/app
+@dirrmtry %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors
+@exec mkdir -p %D/%%WWWDIR%%/cake/tests/cases/scripts/tasks
+@exec mkdir -p %D/%%WWWDIR%%/cake/console/libs/validators
+@exec mkdir -p %D/%%WWWDIR%%/cake/console/libs/templates/skel/webroot/files
+@exec mkdir -p %D/%%WWWDIR%%/app/webroot/files
+@exec mkdir -p %D/%%WWWDIR%%/app/views/pages

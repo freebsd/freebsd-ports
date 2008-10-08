@@ -5,24 +5,21 @@
 # $FreeBSD$
 #
 
-# http://cakeforge.org/frs/download.php/554/cake_1.2.0.5875-pre-beta.tar.gz
-
-PORTNAME=	cakephp-devel
-PORTVERSION=	1.2.0.6311
+PORTNAME=	cakephp
+PORTVERSION=	1.2.0.7692
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/595/
-DISTNAME=	cake_${PORTVERSION}-beta
+MASTER_SITES=	http://cakeforge.org/frs/download.php/672/ \
+		LOCAL/glarkin
+PKGNAMESUFFIX=	-devel
+DISTNAME=	cake_${PORTVERSION}-rc3
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_BZIP2=	yes
 DISTFILE_SUFFIX=/donation=complete
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${TARGET_DISTFILE}
+FETCH_BEFORE_ARGS=	-o -
 TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
-
-WWWDIR=		${PREFIX}/www/cakephp
-DOCSDIR=	${PREFIX}/share/doc/cakephp
 
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
@@ -30,21 +27,20 @@ SLAVE_PORT_MODULES=	rewrite
 CONFLICTS=	cakephp-[0-9]*
 
 NO_BUILD=	yes
+USE_GETTEXT=	yes
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST+=	FIND=${FIND} CHOWN=${CHOWN} CHMOD=${CHMOD} XARGS=${XARGS} \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+CAKE_CONF_FILES=app/config/database.php
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+SUB_FILES=	pkg-message
 
-OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
+OPTIONS=	PROD "Install for production server (make confighelp)" Off \
 		MYSQL "Check for/install MySQL support in PHP" Off \
 		PGSQL "Check for/install PostgreSQL support in PHP" Off \
-		SQLITE "Check for/install SQLite support in PHP" Off
-
-PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
+		SQLITE "Check for/install SQLite support in PHP" Off \
+		APC "Enable APC caching engine" Off \
+		MEMCACHE "Enable Memcached caching engine client" Off
 
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
@@ -66,13 +62,18 @@ SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
 .if defined(WITH_PROD)
 PROD=		production
+HTACCESS=	""
 .else
 PROD=		development
-EXTRA_PATCHES=	${FILESDIR}/development-app-config-core.php.patch
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-app__config__core.php
+HTACCESS=	"@comment "
 .endif
 
 CONF=		cakephp-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
+
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
+		HTACCESS=${HTACCESS}
 
 DB_DEFINED=	no
 
@@ -96,9 +97,24 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/p
 		${DB_DEPENDS}
 .endif
 
+.if defined(WITH_APC)
+USE_PHP+=	apc
+.endif
+
+.if defined(WITH_MEMCACHE)
+USE_PHP+=	memcache
+.endif
+
 do-fetch:
+	@${INSTALL} -d ${DISTDIR}
 .if !exists(${DISTDIR}/${TARGET_DISTFILE})
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${TARGET_DISTFILE}${DISTFILE_SUFFIX}|g}
+# Ok, this is a bit strange.  Since the cakeforge.org download URL has a
+# PATH_INFO element at the end of it, the -o argument to fetch(1) is
+# treated as a directory instead of a filename.  Instead of using
+# "-o ${DISTDIR}/${TARGET_DISTFILE}", I have to use "-o -" and redirect
+# stdout to the actual filename.
+	@${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${TARGET_DISTFILE}${DISTFILE_SUFFIX}|g} | ${CAT} > ${DISTDIR}/${TARGET_DISTFILE}
+	@${ECHO_MSG} ${TARGET_DISTFILE} has been downloaded.
 .endif
 
 confighelp:
@@ -117,15 +133,27 @@ confighelp:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/.htaccess \
-			${WRKSRC}/app \
-			${WRKSRC}/cake \
-			${WRKSRC}/index.php \
-			${WRKSRC}/vendors ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		".htaccess app cake index.php vendors" ${WWWDIR}
+.if !defined(WITH_PROD)
+# If installed in development mode, get rid of .htaccess files,
+# as noted by:
+# http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
+	@${FIND} ${WWWDIR} -name .htaccess -exec ${RM} {} \;
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -name .htaccess -exec ${RM} {} \;' >> ${TMPPLIST}
+.endif
+	@for i in ${CAKE_CONF_FILES}; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i.default ${WWWDIR}/$$i; \
+	done
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
+		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \

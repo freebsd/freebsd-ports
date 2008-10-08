@@ -7,4 +7,5 @@ DocumentRoot %%WWWDIR%%/app/webroot
     DirectoryIndex index.php
     Order deny,allow
     Allow from all
+    AllowOverride all
 </Location>

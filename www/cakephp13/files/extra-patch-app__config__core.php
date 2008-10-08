@@ -1,5 +1,5 @@
---- app/config/core.php.orig	Thu Jan  3 17:07:25 2008
-+++ app/config/core.php	Thu Jan  3 17:09:11 2008
+--- ./app/config/core.php.orig	2008-10-02 00:56:53.000000000 -0400
++++ ./app/config/core.php	2008-10-08 08:42:15.000000000 -0400
 @@ -56,7 +56,7 @@
   *
   * And uncomment the App.baseUrl below:
@@ -9,10 +9,3 @@
  /**
   * Uncomment the define below to use CakePHP admin routes.
   *
-@@ -226,4 +226,4 @@
-  * 					);
-  */
- 	Cache::config('default', array('engine' => 'File'));
--?>
-\ No newline at end of file
-+?>
