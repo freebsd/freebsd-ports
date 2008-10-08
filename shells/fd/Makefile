@@ -33,7 +33,7 @@ DOCS_JA=	FAQ \
 		TECHKNOW \
 		ToAdmin
 
-post-patch:
+post-configure:
 	${REINPLACE_CMD} -E -e 's|^(#[[:space:]]*define[[:space:]]+EXTENDCCOPT[[:space:]]+"([^"]+ )?)-O(["[:space:]])|\1${CFLAGS}\3|' ${WRKSRC}/machine.h
 
 post-install:
