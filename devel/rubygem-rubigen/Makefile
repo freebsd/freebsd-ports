@@ -1,0 +1,21 @@
+# Ports collection makefile for:	rubygem-rubigen
+# Date created:				8 October 2008
+# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	rubigen
+PORTVERSION=	1.3.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	A Ruby generic generator framework
+
+BUILD_DEPENDS=	rubygem-activesupport>=1.4.4:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
