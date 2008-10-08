@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	2.09i
-PORTREVISION=	1
-CATEGORIES=	shells
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/old/ \
-		ftp://ftp.unixusers.net/src/fdclone/old/
+PORTVERSION=	3.00c
+CATEGORIES=	shells net
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
+		ftp://ftp.unixusers.net/src/fdclone/
 DISTNAME=	FD-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
