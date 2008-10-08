@@ -19,6 +19,7 @@ include/telepathy-1.0/telepathy-glib/base-connection-manager.h
 include/telepathy-1.0/telepathy-glib/base-connection.h
 include/telepathy-1.0/telepathy-glib/channel-factory-iface.h
 include/telepathy-1.0/telepathy-glib/channel-iface.h
+include/telepathy-1.0/telepathy-glib/channel-manager.h
 include/telepathy-1.0/telepathy-glib/channel.h
 include/telepathy-1.0/telepathy-glib/connection-manager.h
 include/telepathy-1.0/telepathy-glib/connection.h
@@ -30,6 +31,7 @@ include/telepathy-1.0/telepathy-glib/debug.h
 include/telepathy-1.0/telepathy-glib/defs.h
 include/telepathy-1.0/telepathy-glib/enums.h
 include/telepathy-1.0/telepathy-glib/errors.h
+include/telepathy-1.0/telepathy-glib/exportable-channel.h
 include/telepathy-1.0/telepathy-glib/group-mixin.h
 include/telepathy-1.0/telepathy-glib/gtypes.h
 include/telepathy-1.0/telepathy-glib/handle-repo-dynamic.h
@@ -60,7 +62,10 @@ lib/libtelepathy-glib.so.0
 libdata/pkgconfig/telepathy-glib.pc
 share/gtk-doc/html/telepathy-glib/TpBaseConnection.html
 share/gtk-doc/html/telepathy-glib/TpBaseConnectionManager.html
+share/gtk-doc/html/telepathy-glib/TpChannelFactoryIface.html
 share/gtk-doc/html/telepathy-glib/TpChannelIface.html
+share/gtk-doc/html/telepathy-glib/TpChannelManager.html
+share/gtk-doc/html/telepathy-glib/TpExportableChannel.html
 share/gtk-doc/html/telepathy-glib/TpDynamicHandleRepo.html
 share/gtk-doc/html/telepathy-glib/TpStaticHandleRepo.html
 share/gtk-doc/html/telepathy-glib/ch-client.html
@@ -76,7 +81,6 @@ share/gtk-doc/html/telepathy-glib/index.sgml
 share/gtk-doc/html/telepathy-glib/left.png
 share/gtk-doc/html/telepathy-glib/right.png
 share/gtk-doc/html/telepathy-glib/style.css
-share/gtk-doc/html/telepathy-glib/telepathy-glib-TpChannelFactoryIface.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpContactsMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpGroupMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpHeap.html
@@ -97,6 +101,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-caps.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-contacts.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-requests.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus-properties-mixin.html
