@@ -16,7 +16,7 @@ etc/pulse/client.conf-dist
 etc/pulse/daemon.conf-dist
 @unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
 etc/pulse/default.pa-dist
-@unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
+@unexec if cmp -s %D/etc/pulse/system.pa %D/etc/pulse/system.pa-dist; then rm -f %D/etc/pulse/system.pa; fi
 etc/pulse/system.pa-dist
 etc/xdg/autostart/pulseaudio.desktop
 %%AVAHI%%include/pulse/browser.h
@@ -66,7 +66,7 @@ lib/libpulse.so.0
 lib/libpulsecore.a
 lib/libpulsecore.la
 lib/libpulsecore.so
-lib/libpulsecore.so.7
+lib/libpulsecore.so.8
 lib/libpulsedsp.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauth-cookie.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey.so
