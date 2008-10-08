@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	YAML-Tiny
-PORTVERSION=	1.25
+PORTVERSION=	1.32
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	YAML::Tiny - Read/Write YAML files with as little code as possible
+COMMENT=	Read/Write YAML files with as little code as possible
 
 PERL_CONFIGURE=	yes
-
-BUILD_DEPENDS+=	p5-Test-Base>=0.47:${PORTSDIR}/devel/p5-Test-Base
 
 MAN3=	YAML::Tiny.3
 
