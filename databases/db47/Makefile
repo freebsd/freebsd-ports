@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db47
-PORTVERSION=	4.7.25.0
+PORTVERSION=	4.7.25.1
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -14,6 +14,12 @@ MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
+
+PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION:R}/
+PATCHFILES=	patch.4.7.25.1
+PATCH_DIST_STRIP=	-d .. --ignore-whitespace
+# * patch.4.7.25.1: -----------------------------------------------------------
+# # [#16406] Replication clients should be able to open a sequence.
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
