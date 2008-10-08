@@ -180,7 +180,23 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babymatch/sun.png
 %%DATADIR%%/boards/babymatch/umbrella.png
 %%DATADIR%%/boards/babyshapes.xml
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/1.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/2.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/3.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/4.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/5.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/6.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04/background.png
 %%DATADIR%%/boards/babyshapes/Makefile.in.bak
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006/background.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006/chien.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006/jeunes_filles.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006/statue.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel/background.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel/fillette.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel/mur.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel/musicien.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel/service.png
 %%DATADIR%%/boards/babyshapes/T_baby_bottle.png
 %%DATADIR%%/boards/babyshapes/T_banana.png
 %%DATADIR%%/boards/babyshapes/T_bread_slice.png
@@ -198,6 +214,12 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babyshapes/T_round_cookie.png
 %%DATADIR%%/boards/babyshapes/T_suggar_box.png
 %%DATADIR%%/boards/babyshapes/T_yahourt.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/1.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/2.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/3.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/4.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/5.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011/background.png
 %%DATADIR%%/boards/babyshapes/board1_0.xml
 %%DATADIR%%/boards/babyshapes/board2_0.xml
 %%DATADIR%%/boards/babyshapes/board3_0.xml
@@ -205,6 +227,11 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babyshapes/board5_0.xml
 %%DATADIR%%/boards/babyshapes/board6_0.xml
 %%DATADIR%%/boards/babyshapes/board7_0.xml
+%%DATADIR%%/boards/babyshapes/board8_0.xml
+%%DATADIR%%/boards/babyshapes/board8_1.xml
+%%DATADIR%%/boards/babyshapes/board8_2.xml
+%%DATADIR%%/boards/babyshapes/board8_3.xml
+%%DATADIR%%/boards/babyshapes/board8_4.xml
 %%DATADIR%%/boards/babyshapes/dog1/dog.png
 %%DATADIR%%/boards/babyshapes/dog1/dog1.png
 %%DATADIR%%/boards/babyshapes/dog1/dog2.png
@@ -223,6 +250,12 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babyshapes/dog3/dog4.png
 %%DATADIR%%/boards/babyshapes/dog3/dog5.png
 %%DATADIR%%/boards/babyshapes/dog3/dog6.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/1.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/2.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/3.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/4.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/5.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn/background.png
 %%DATADIR%%/boards/ballcatch.xml
 %%DATADIR%%/boards/bargame.xml
 %%DATADIR%%/boards/bargame/blue_ball.png
@@ -571,6 +604,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/flags/ta.png
 %%DATADIR%%/boards/flags/th.png
 %%DATADIR%%/boards/flags/tr.png
+%%DATADIR%%/boards/flags/uk.png
 %%DATADIR%%/boards/flags/ur.png
 %%DATADIR%%/boards/flags/vi.png
 %%DATADIR%%/boards/flags/wa.png
@@ -3549,6 +3583,81 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/uruguay.ogg
 %%DATADIR%%/boards/voices/en/geography/usa.ogg
 %%DATADIR%%/boards/voices/en/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/en/intro/advanced_colors.ogg
+%%DATADIR%%/boards/voices/en/intro/algorithm.ogg
+%%DATADIR%%/boards/voices/en/intro/awele.ogg
+%%DATADIR%%/boards/voices/en/intro/babymatch.ogg
+%%DATADIR%%/boards/voices/en/intro/babyshapes.ogg
+%%DATADIR%%/boards/voices/en/intro/ballcatch.ogg
+%%DATADIR%%/boards/voices/en/intro/bargame.ogg
+%%DATADIR%%/boards/voices/en/intro/canal_lock.ogg
+%%DATADIR%%/boards/voices/en/intro/chat.ogg
+%%DATADIR%%/boards/voices/en/intro/chess_computer.ogg
+%%DATADIR%%/boards/voices/en/intro/chess_movelearn.ogg
+%%DATADIR%%/boards/voices/en/intro/chess_partyend.ogg
+%%DATADIR%%/boards/voices/en/intro/chronos.ogg
+%%DATADIR%%/boards/voices/en/intro/click_on_letter.ogg
+%%DATADIR%%/boards/voices/en/intro/clickanddraw.ogg
+%%DATADIR%%/boards/voices/en/intro/clickgame.ogg
+%%DATADIR%%/boards/voices/en/intro/clockgame.ogg
+%%DATADIR%%/boards/voices/en/intro/colors.ogg
+%%DATADIR%%/boards/voices/en/intro/connect4-2players.ogg
+%%DATADIR%%/boards/voices/en/intro/connect4.ogg
+%%DATADIR%%/boards/voices/en/intro/crane.ogg
+%%DATADIR%%/boards/voices/en/intro/doubleentry.ogg
+%%DATADIR%%/boards/voices/en/intro/enumerate.ogg
+%%DATADIR%%/boards/voices/en/intro/erase.ogg
+%%DATADIR%%/boards/voices/en/intro/erase_click.ogg
+%%DATADIR%%/boards/voices/en/intro/fifteen.ogg
+%%DATADIR%%/boards/voices/en/intro/followline.ogg
+%%DATADIR%%/boards/voices/en/intro/geography.ogg
+%%DATADIR%%/boards/voices/en/intro/gletters.ogg
+%%DATADIR%%/boards/voices/en/intro/gnumch-inequality.ogg
+%%DATADIR%%/boards/voices/en/intro/guesscount.ogg
+%%DATADIR%%/boards/voices/en/intro/guessnumber.ogg
+%%DATADIR%%/boards/voices/en/intro/hexagon.ogg
+%%DATADIR%%/boards/voices/en/intro/imageid.ogg
+%%DATADIR%%/boards/voices/en/intro/imagename.ogg
+%%DATADIR%%/boards/voices/en/intro/leftright.ogg
+%%DATADIR%%/boards/voices/en/intro/magic_hat_add.ogg
+%%DATADIR%%/boards/voices/en/intro/magic_hat_minus.ogg
+%%DATADIR%%/boards/voices/en/intro/maze.ogg
+%%DATADIR%%/boards/voices/en/intro/maze2DRelative.ogg
+%%DATADIR%%/boards/voices/en/intro/mazeInvisible.ogg
+%%DATADIR%%/boards/voices/en/intro/maze_3D.ogg
+%%DATADIR%%/boards/voices/en/intro/melody.ogg
+%%DATADIR%%/boards/voices/en/intro/memory.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_add_minus_mult_div_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_add_minus_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_add_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_div_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_minus_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_mult_div_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_mult_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_sound.ogg
+%%DATADIR%%/boards/voices/en/intro/memory_sound_tux.ogg
+%%DATADIR%%/boards/voices/en/intro/missing_letter.ogg
+%%DATADIR%%/boards/voices/en/intro/money.ogg
+%%DATADIR%%/boards/voices/en/intro/money_cents.ogg
+%%DATADIR%%/boards/voices/en/intro/mosaic.ogg
+%%DATADIR%%/boards/voices/en/intro/paintings.ogg
+%%DATADIR%%/boards/voices/en/intro/planegame.ogg
+%%DATADIR%%/boards/voices/en/intro/railroad.ogg
+%%DATADIR%%/boards/voices/en/intro/read_colors.ogg
+%%DATADIR%%/boards/voices/en/intro/readingh.ogg
+%%DATADIR%%/boards/voices/en/intro/readingv.ogg
+%%DATADIR%%/boards/voices/en/intro/redraw.ogg
+%%DATADIR%%/boards/voices/en/intro/redraw_symmetrical.ogg
+%%DATADIR%%/boards/voices/en/intro/reversecount.ogg
+%%DATADIR%%/boards/voices/en/intro/smallnumbers.ogg
+%%DATADIR%%/boards/voices/en/intro/sudoku.ogg
+%%DATADIR%%/boards/voices/en/intro/superbrain.ogg
+%%DATADIR%%/boards/voices/en/intro/tangram.ogg
+%%DATADIR%%/boards/voices/en/intro/target.ogg
+%%DATADIR%%/boards/voices/en/intro/traffic.ogg
+%%DATADIR%%/boards/voices/en/intro/watercycle.ogg
+%%DATADIR%%/boards/voices/en/intro/wordprocessor.ogg
+%%DATADIR%%/boards/voices/en/intro/wordsgame.ogg
 %%DATADIR%%/boards/voices/en/misc/README
 %%DATADIR%%/boards/voices/en/misc/awesome.ogg
 %%DATADIR%%/boards/voices/en/misc/back.ogg
@@ -4159,6 +4268,90 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/fr/geography/uruguay.ogg
 %%DATADIR%%/boards/voices/fr/geography/usa.ogg
 %%DATADIR%%/boards/voices/fr/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/fr/intro/advanced_colors.ogg
+%%DATADIR%%/boards/voices/fr/intro/algorithm.ogg
+%%DATADIR%%/boards/voices/fr/intro/awele.ogg
+%%DATADIR%%/boards/voices/fr/intro/babymatch.ogg
+%%DATADIR%%/boards/voices/fr/intro/babyshapes.ogg
+%%DATADIR%%/boards/voices/fr/intro/ballcatch.ogg
+%%DATADIR%%/boards/voices/fr/intro/bargame.ogg
+%%DATADIR%%/boards/voices/fr/intro/canal_lock.ogg
+%%DATADIR%%/boards/voices/fr/intro/chat.ogg
+%%DATADIR%%/boards/voices/fr/intro/chess_computer.ogg
+%%DATADIR%%/boards/voices/fr/intro/chess_movelearn.ogg
+%%DATADIR%%/boards/voices/fr/intro/chess_partyend.ogg
+%%DATADIR%%/boards/voices/fr/intro/chronos.ogg
+%%DATADIR%%/boards/voices/fr/intro/click_on_letter.ogg
+%%DATADIR%%/boards/voices/fr/intro/clickanddraw.ogg
+%%DATADIR%%/boards/voices/fr/intro/clickgame.ogg
+%%DATADIR%%/boards/voices/fr/intro/clockgame.ogg
+%%DATADIR%%/boards/voices/fr/intro/colors.ogg
+%%DATADIR%%/boards/voices/fr/intro/connect4-2players.ogg
+%%DATADIR%%/boards/voices/fr/intro/connect4.ogg
+%%DATADIR%%/boards/voices/fr/intro/crane.ogg
+%%DATADIR%%/boards/voices/fr/intro/doubleentry.ogg
+%%DATADIR%%/boards/voices/fr/intro/drawnumber.ogg
+%%DATADIR%%/boards/voices/fr/intro/enumerate.ogg
+%%DATADIR%%/boards/voices/fr/intro/erase.ogg
+%%DATADIR%%/boards/voices/fr/intro/erase_click.ogg
+%%DATADIR%%/boards/voices/fr/intro/fifteen.ogg
+%%DATADIR%%/boards/voices/fr/intro/followline.ogg
+%%DATADIR%%/boards/voices/fr/intro/geo_country.ogg
+%%DATADIR%%/boards/voices/fr/intro/geography.ogg
+%%DATADIR%%/boards/voices/fr/intro/gletters.ogg
+%%DATADIR%%/boards/voices/fr/intro/gnumch-equality.ogg
+%%DATADIR%%/boards/voices/fr/intro/gnumch-factors.ogg
+%%DATADIR%%/boards/voices/fr/intro/gnumch-inequality.ogg
+%%DATADIR%%/boards/voices/fr/intro/gnumch-multiples.ogg
+%%DATADIR%%/boards/voices/fr/intro/gnumch-primes.ogg
+%%DATADIR%%/boards/voices/fr/intro/guesscount.ogg
+%%DATADIR%%/boards/voices/fr/intro/guessnumber.ogg
+%%DATADIR%%/boards/voices/fr/intro/hexagon.ogg
+%%DATADIR%%/boards/voices/fr/intro/imageid.ogg
+%%DATADIR%%/boards/voices/fr/intro/imagename.ogg
+%%DATADIR%%/boards/voices/fr/intro/leftright.ogg
+%%DATADIR%%/boards/voices/fr/intro/magic_hat_add.ogg
+%%DATADIR%%/boards/voices/fr/intro/magic_hat_minus.ogg
+%%DATADIR%%/boards/voices/fr/intro/maze.ogg
+%%DATADIR%%/boards/voices/fr/intro/maze2DRelative.ogg
+%%DATADIR%%/boards/voices/fr/intro/mazeInvisible.ogg
+%%DATADIR%%/boards/voices/fr/intro/maze_3D.ogg
+%%DATADIR%%/boards/voices/fr/intro/melody.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_add_minus_mult_div_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_add_minus_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_add_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_div_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_minus_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_mult_div_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_mult_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_sound.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_sound_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/memory_tux.ogg
+%%DATADIR%%/boards/voices/fr/intro/missing_letter.ogg
+%%DATADIR%%/boards/voices/fr/intro/money.ogg
+%%DATADIR%%/boards/voices/fr/intro/money_cents.ogg
+%%DATADIR%%/boards/voices/fr/intro/mosaic.ogg
+%%DATADIR%%/boards/voices/fr/intro/paintings.ogg
+%%DATADIR%%/boards/voices/fr/intro/planegame.ogg
+%%DATADIR%%/boards/voices/fr/intro/railroad.ogg
+%%DATADIR%%/boards/voices/fr/intro/read_colors.ogg
+%%DATADIR%%/boards/voices/fr/intro/readingh.ogg
+%%DATADIR%%/boards/voices/fr/intro/readingv.ogg
+%%DATADIR%%/boards/voices/fr/intro/redraw.ogg
+%%DATADIR%%/boards/voices/fr/intro/redraw_symmetrical.ogg
+%%DATADIR%%/boards/voices/fr/intro/reversecount.ogg
+%%DATADIR%%/boards/voices/fr/intro/scalesboard.ogg
+%%DATADIR%%/boards/voices/fr/intro/smallnumbers.ogg
+%%DATADIR%%/boards/voices/fr/intro/smallnumbers2.ogg
+%%DATADIR%%/boards/voices/fr/intro/sudoku.ogg
+%%DATADIR%%/boards/voices/fr/intro/superbrain.ogg
+%%DATADIR%%/boards/voices/fr/intro/tangram.ogg
+%%DATADIR%%/boards/voices/fr/intro/target.ogg
+%%DATADIR%%/boards/voices/fr/intro/traffic.ogg
+%%DATADIR%%/boards/voices/fr/intro/watercycle.ogg
+%%DATADIR%%/boards/voices/fr/intro/wordprocessor.ogg
+%%DATADIR%%/boards/voices/fr/intro/wordsgame.ogg
 %%DATADIR%%/boards/voices/fr/misc/README
 %%DATADIR%%/boards/voices/fr/misc/about.ogg
 %%DATADIR%%/boards/voices/fr/misc/awesome.ogg
@@ -7045,6 +7238,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/wordsgame/default-eu.xml
 %%DATADIR%%/boards/wordsgame/default-fi.xml
 %%DATADIR%%/boards/wordsgame/default-fr.xml
+%%DATADIR%%/boards/wordsgame/default-he.xml
 %%DATADIR%%/boards/wordsgame/default-hu.xml
 %%DATADIR%%/boards/wordsgame/default-id.xml
 %%DATADIR%%/boards/wordsgame/default-it.xml
@@ -7187,6 +7381,7 @@ share/locale/sv/LC_MESSAGES/gcompris.mo
 share/locale/ta/LC_MESSAGES/gcompris.mo
 share/locale/th/LC_MESSAGES/gcompris.mo
 share/locale/tr/LC_MESSAGES/gcompris.mo
+share/locale/uk/LC_MESSAGES/gcompris.mo
 share/locale/ur/LC_MESSAGES/gcompris.mo
 share/locale/vi/LC_MESSAGES/gcompris.mo
 share/locale/wa/LC_MESSAGES/gcompris.mo
@@ -7284,6 +7479,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/he/alphabet
 @dirrm %%DATADIR%%/boards/voices/he
 @dirrm %%DATADIR%%/boards/voices/fr/misc
+@dirrm %%DATADIR%%/boards/voices/fr/intro
 @dirrm %%DATADIR%%/boards/voices/fr/geography
 @dirrm %%DATADIR%%/boards/voices/fr/france_region
 @dirrm %%DATADIR%%/boards/voices/fr/colors
@@ -7305,6 +7501,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/es/alphabet
 @dirrm %%DATADIR%%/boards/voices/es
 @dirrm %%DATADIR%%/boards/voices/en/misc
+@dirrm %%DATADIR%%/boards/voices/en/intro
 @dirrm %%DATADIR%%/boards/voices/en/geography
 @dirrm %%DATADIR%%/boards/voices/en/colors
 @dirrm %%DATADIR%%/boards/voices/en/alphabet
@@ -7444,9 +7641,14 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/cardimage
 @dirrm %%DATADIR%%/boards/canal_lock
 @dirrm %%DATADIR%%/boards/bargame
+@dirrm %%DATADIR%%/boards/babyshapes/lady_unicorn
 @dirrm %%DATADIR%%/boards/babyshapes/dog3
 @dirrm %%DATADIR%%/boards/babyshapes/dog2
 @dirrm %%DATADIR%%/boards/babyshapes/dog1
+@dirrm %%DATADIR%%/boards/babyshapes/Van_Gogh_0011
+@dirrm %%DATADIR%%/boards/babyshapes/Pieter_Bruegel
+@dirrm %%DATADIR%%/boards/babyshapes/Paul_Gauguin_006
+@dirrm %%DATADIR%%/boards/babyshapes/Bosschaert_04
 @dirrm %%DATADIR%%/boards/babyshapes
 @dirrm %%DATADIR%%/boards/babymatch
 @dirrm %%DATADIR%%/boards/awele
