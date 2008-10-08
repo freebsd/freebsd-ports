@@ -1,0 +1,18 @@
+# Ports collection makefile for:	rubygem-mime-types
+# Date created:				7 Oct 2008
+# Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	mime-types
+PORTVERSION=	1.15
+CATEGORIES=	misc rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	clsung@freebsd.org
+COMMENT=	Ruby gem which provides a mailcap-like MIME Content-Type lookup
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
