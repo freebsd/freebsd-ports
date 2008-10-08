@@ -6,7 +6,7 @@
 
 PORTNAME=	qnetwalk
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://qt.osdn.org.ua/ \
 		http://www.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib gui moc rcc
+QT_COMPONENTS=	qmake corelib gui moc_build rcc_build
 
 MAN6=		qnetwalk.6
 
