@@ -1,19 +1,6 @@
---- Makefile.in	2007-11-28 08:38:48.000000000 +0100
-+++ Makefile.in.port	2007-12-27 18:16:24.000000000 +0100
-@@ -24,9 +24,9 @@
- CLEAN = camp.output asy.list
- NAME = asy
- XNAME = x$(NAME)
--EXTRA = asy-mode.el asy-keywords.el asy-init.el asy.vim asymptote.py
--KEYWORDS = base $(ASYMPTOTE_SITEDIR)
--LATEXFILES = asymptote.sty asycolors.sty
-+EXTRA = base/asy-mode.el base/asy-keywords.el base/asy-init.el base/asy.vim base/asymptote.py
-+KEYWORDS = base/*.asy
-+LATEXFILES = doc/asymptote.sty doc/asycolors.sty
- ASY = ./asy -dir base -config ""
- 
- DEFS = @DEFS@ @OPTIONS@
-@@ -50,7 +50,7 @@
+--- Makefile.in	2008-10-06 12:16:51.000000000 +0200
++++ Makefile.in.port	2008-10-07 13:28:38.000000000 +0200
+@@ -54,7 +54,7 @@
  asydir = $(datadir)/asymptote
  GUIdir = $(asydir)/GUI
  docdir = $(DESTDIR)@docdir@
@@ -22,7 +9,7 @@
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
  INSTALL = @INSTALL@
-@@ -81,7 +81,7 @@
+@@ -106,7 +106,7 @@
  	fi
  	cd $(GC); \
  	./configure $(GCOPTIONS); \
@@ -31,28 +18,3 @@
  
  $(GCPPLIB): $(GCLIB)
  
-@@ -114,7 +114,7 @@
- 
- asy-keywords.el: asy asy-list.pl
- 	$(ASY) -l > asy.list
--	ls $(addsuffix /*.asy,$(KEYWORDS)) | grep -v plain\* | grep -v featpost3D | xargs $(ASY) -l >> asy.list
-+	ls $(KEYWORDS) | grep -v plain\* | grep -v featpost3D | xargs $(ASY) -l >> asy.list
- 	./asy-list.pl asy.list @VERSION@
- 	ln -sf ../asy-keywords.el base/
- 
-@@ -127,13 +127,13 @@
-           $(animationsdir)
- 	-${INSTALL} -d $(latexdir)
- 	${INSTALL} -p -m 755 $(NAME) $(bindir)
--	${INSTALL} -p -m 644 base/*.asy $(addprefix base/,$(EXTRA)) $(asydir)
-+	${INSTALL} -p -m 644 base/*.asy $(EXTRA) $(asydir)
- 	${INSTALL} -p -m 755 GUI/*.py $(GUIdir)
- 	ln -sf @datadir@/asymptote/GUI/xasy.py $(bindir)/$(XNAME)
- 	${INSTALL} -p -m 644 examples/*.asy examples/piicon.eps doc/*.asy \
- 	  doc/extra/*.asy doc/*.csv doc/*.dat doc/latexusage.tex $(exampledir)
- 	${INSTALL} -p -m 644 examples/animations/*.asy $(animationsdir)
--	-${INSTALL} -p -m 644 $(addprefix doc/,$(LATEXFILES)) $(latexdir)
-+	-${INSTALL} -p -m 644 $(LATEXFILES) $(latexdir)
- 	-if test -z "$(DESTDIR)"; then \
- 	  texhash; \
- 	fi
