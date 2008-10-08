@@ -114,6 +114,7 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/info_timezone_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/linked_timezone_info_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/linked_timezone_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/ruby_core_support_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/offset_rationals_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/time_or_datetime_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/tzinfo/timezone_definition_rb.html
@@ -710,6 +711,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/info_timezone.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/linked_timezone.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/linked_timezone_info.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/ruby_core_support.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/offset_rationals.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/time_or_datetime.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/timezone.rb
@@ -730,6 +732,7 @@
 %%GEM_LIB_DIR%%/test/tc_info_timezone.rb
 %%GEM_LIB_DIR%%/test/tc_linked_timezone.rb
 %%GEM_LIB_DIR%%/test/tc_linked_timezone_info.rb
+%%GEM_LIB_DIR%%/test/tc_ruby_core_support.rb
 %%GEM_LIB_DIR%%/test/tc_offset_rationals.rb
 %%GEM_LIB_DIR%%/test/tc_time_or_datetime.rb
 %%GEM_LIB_DIR%%/test/tc_timezone.rb
