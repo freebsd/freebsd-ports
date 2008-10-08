@@ -1,0 +1,24 @@
+--- src/argyll/CMakeLists.txt.orig	2008-09-08 00:27:28.000000000 +0400
++++ src/argyll/CMakeLists.txt	2008-09-08 00:27:28.000000000 +0400
+@@ -83,3 +83,21 @@
+     PROPERTIES
+     COMPILE_FLAGS "${argyll_flags}"
+ )
++
++SET(SPYD2ENLPROF_SOURCES
++    spectro/vinflate.c
++    spectro/spyd2en.c
++)
++
++ADD_EXECUTABLE(spyd2enlprof
++    ${SPYD2ENLPROF_SOURCES}
++)
++
++TARGET_LINK_LIBRARIES(spyd2enlprof argyll lcmslocal ${COMMON_PLATFORM_LIBS}) # liblprof lcmslocal ${COMMON_PLATFORM_LIBS})
++
++INSTALL(
++    TARGETS spyd2enlprof
++    RUNTIME DESTINATION ${BINDIR}
++    LIBRARY DESTINATION ${DYNLIBDIR}
++    ARCHIVE DESTINATION ${STATICLIBDIR}
++)

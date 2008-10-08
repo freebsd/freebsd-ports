@@ -1,5 +1,6 @@
 bin/icc2it8
 bin/lprof
+bin/spyd2enlprof
 share/applications/lprof.desktop
 %%DATADIR%%/data/help/en/about.txt
 %%DATADIR%%/data/help/en/calreports.html
