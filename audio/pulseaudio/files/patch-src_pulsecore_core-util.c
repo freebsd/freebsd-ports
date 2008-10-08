@@ -47,15 +47,3 @@
              return 0;
      }
  
-@@ -2334,7 +2336,11 @@ int pa_reset_sigs(int except, ...) {
- int pa_reset_sigsv(const int except[]) {
-     int sig;
- 
-+#ifdef _NSIG
-     for (sig = 1; sig < _NSIG; sig++) {
-+#else
-+    for (sig = 1; sig < NSIG; sig++) {
-+#endif
-         pa_bool_t reset = TRUE;
- 
-         switch (sig) {

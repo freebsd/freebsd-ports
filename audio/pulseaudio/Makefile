@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
