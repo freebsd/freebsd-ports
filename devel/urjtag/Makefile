@@ -22,7 +22,31 @@ CONFIGURE_ENV+=	CFLAGS=--std=c99
 
 MAN1=		jtag.1 bsdl2jtag.1
 
+CONFLICTS=	libflash-0.*
+
+OPTIONS=	\
+	USB	"Build support for USB JTAG adapters"		 Off	\
+	FTDI	"Build support for FTDI-based USB JTAG adapters" Off	\
+	JEDEC	"Enable experimental JEDEC flash detection"	 Off
+
 .include <bsd.port.pre.mk>
+
+BUILD_DEPENDS+=		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=		LEX=${LOCALBASE}/bin/flex
+
+.if defined(WITH_JEDEC)
+CONFIGURE_ARGS+=	--enable-jedec
+.endif
+
+.if defined(WITH_USB) || defined(WITH_FTDI)
+CONFIGURE_ARGS+=	--with-libusb
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
+
+.if defined(WITH_FTDI)
+CONFIGURE_ARGS+=	--with-libftdi
+LIB_DEPENDS+=	ftdi.10:${PORTSDIR}/devel/libftdi
+.endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
