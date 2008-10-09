@@ -19179,6 +19179,7 @@ rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-daemons                 ports/devel/rubygem-daemons
+rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
@@ -19206,6 +19207,7 @@ rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
+rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
@@ -19244,6 +19246,7 @@ rubygem-rrdtool                 ports/databases/rubygem-rrdtool
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
 rubygem-rtags                   ports/devel/rubygem-rtags
+rubygem-rubigen                 ports/devel/rubygem-rubigen
 rubygem-ruby-debug              ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base         ports/devel/rubygem-ruby-debug-base
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
