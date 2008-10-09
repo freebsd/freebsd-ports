@@ -1,15 +1,14 @@
-# New ports collection makefile for:	cx88
-# Date created:		7 September 2008
-# Whom:			jah
+# New ports collection makefile for:   cx88
+# Date created:        7 September 2008
+# Whom:                jah
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cx88
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
-EXTRACT_ONLY=	cx88-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jason.harmening@gmail.com
 COMMENT=	Drivers for Conexant CX23880/1/2/3-based TV/radio capture cards
