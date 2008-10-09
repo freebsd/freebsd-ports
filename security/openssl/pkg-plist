@@ -75,6 +75,7 @@ include/openssl/x509v3.h
 %%OPENSSL_BETA%%lib/engines/lib4758cca.so
 %%OPENSSL_BETA%%lib/engines/libaep.so
 %%OPENSSL_BETA%%lib/engines/libatalla.so
+%%OPENSSL_BETA%%lib/engines/libcapi.so
 %%OPENSSL_BETA%%lib/engines/libchil.so
 %%OPENSSL_BETA%%lib/engines/libcswift.so
 %%OPENSSL_BETA%%lib/engines/libgmp.so
