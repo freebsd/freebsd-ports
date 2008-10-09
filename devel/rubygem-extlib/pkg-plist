@@ -1,0 +1,39 @@
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/LICENSE
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/lib/extlib.rb
+%%GEM_LIB_DIR%%/lib/extlib/assertions.rb
+%%GEM_LIB_DIR%%/lib/extlib/blank.rb
+%%GEM_LIB_DIR%%/lib/extlib/boolean.rb
+%%GEM_LIB_DIR%%/lib/extlib/class.rb
+%%GEM_LIB_DIR%%/lib/extlib/datetime.rb
+%%GEM_LIB_DIR%%/lib/extlib/dictionary.rb
+%%GEM_LIB_DIR%%/lib/extlib/hash.rb
+%%GEM_LIB_DIR%%/lib/extlib/hook.rb
+%%GEM_LIB_DIR%%/lib/extlib/inflection.rb
+%%GEM_LIB_DIR%%/lib/extlib/lazy_array.rb
+%%GEM_LIB_DIR%%/lib/extlib/logger.rb
+%%GEM_LIB_DIR%%/lib/extlib/mash.rb
+%%GEM_LIB_DIR%%/lib/extlib/module.rb
+%%GEM_LIB_DIR%%/lib/extlib/nil.rb
+%%GEM_LIB_DIR%%/lib/extlib/numeric.rb
+%%GEM_LIB_DIR%%/lib/extlib/object.rb
+%%GEM_LIB_DIR%%/lib/extlib/object_space.rb
+%%GEM_LIB_DIR%%/lib/extlib/pathname.rb
+%%GEM_LIB_DIR%%/lib/extlib/pooling.rb
+%%GEM_LIB_DIR%%/lib/extlib/rubygems.rb
+%%GEM_LIB_DIR%%/lib/extlib/simple_set.rb
+%%GEM_LIB_DIR%%/lib/extlib/string.rb
+%%GEM_LIB_DIR%%/lib/extlib/struct.rb
+%%GEM_LIB_DIR%%/lib/extlib/symbol.rb
+%%GEM_LIB_DIR%%/lib/extlib/tasks/release.rb
+%%GEM_LIB_DIR%%/lib/extlib/time.rb
+%%GEM_LIB_DIR%%/lib/extlib/version.rb
+%%GEM_LIB_DIR%%/lib/extlib/virtual_file.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/lib/extlib/tasks
+@dirrm %%GEM_LIB_DIR%%/lib/extlib
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
