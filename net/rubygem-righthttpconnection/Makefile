@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	righthttpconnection
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rightaws
