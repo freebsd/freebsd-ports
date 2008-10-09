@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	LabPlot
-PORTVERSION=	1.6.0.1
+PORTVERSION=	1.6.0.2
 CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=labplot
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	LabPlot : Data analysis and visualisation
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -22,6 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		qwtplot3d.0:${PORTSDIR}/math/qwtplot3d \
 		origin.0:${PORTSDIR}/math/liborigin
 
+USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GL=		glu
