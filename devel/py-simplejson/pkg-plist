@@ -1,19 +1,25 @@
 @comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%%%DOCSDIR%%/class-simplejson.JSONDecoder.html
-%%PORTDOCS%%%%DOCSDIR%%/class-simplejson.JSONEncoder.html
-%%PORTDOCS%%%%DOCSDIR%%/class_to_source.js
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/interface.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/navigation.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/rightsidebar.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sphinxdoc.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/stickysidebar.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/traditional.css
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/layout.css
-%%PORTDOCS%%%%DOCSDIR%%/module-index.html
-%%PORTDOCS%%%%DOCSDIR%%/module-simplejson-index.html
-%%PORTDOCS%%%%DOCSDIR%%/module-simplejson.html
-%%PORTDOCS%%%%DOCSDIR%%/pudge.css
-%%PORTDOCS%%%%DOCSDIR%%/rst.css
-%%PORTDOCS%%%%DOCSDIR%%/simplejson/__init__.py.html
-%%PORTDOCS%%%%DOCSDIR%%/simplejson/decoder.py.html
-%%PORTDOCS%%%%DOCSDIR%%/simplejson/encoder.py.html
-%%PORTDOCS%%%%DOCSDIR%%/simplejson/jsonfilter.py.html
-%%PORTDOCS%%%%DOCSDIR%%/simplejson/scanner.py.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/simplejson
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.json
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
