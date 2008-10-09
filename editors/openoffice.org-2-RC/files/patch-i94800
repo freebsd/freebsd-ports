@@ -1,0 +1,16 @@
+Index: libxslt/libxslt-1.1.16.patch
+===================================================================
+RCS file: /cvs/external/libxslt/Attic/libxslt-1.1.16.patch,v
+retrieving revision 1.5
+diff -u -r1.5 libxslt-1.1.16.patch
+--- libxslt/libxslt-1.1.16.patch	19 Jul 2007 13:25:43 -0000	1.5
++++ libxslt/libxslt-1.1.16.patch	9 Oct 2008 08:03:50 -0000
+@@ -30,7 +30,7 @@
+   fi
+   
+   
+-! if test "1" == "1"
++! if test "1" = "1"
+   then
+   	XMLVERS=`$XML_CONFIG --version`
+   	if test `echo $XMLVERS | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'` -ge `echo $LIBXML_REQUIRED_VERSION | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
