@@ -1,5 +1,10 @@
-%%PYTHON_SITELIBDIR%%/PyLucene.py
-%%PYTHON_SITELIBDIR%%/_PyLucene.so
-%%PYTHON_SITELIBDIR%%/security/classpath.security
-%%PYTHON_SITELIBDIR%%/security/libgcj.security
-@dirrmtry %%PYTHON_SITELIBDIR%%/security
+%%PYTHON_SITELIBDIR%%/%%EGG_INFO%%
+%%PYTHON_SITELIBDIR%%/lucene/_lucene.so
+%%PYTHON_SITELIBDIR%%/lucene/__init__.py
+%%PYTHON_SITELIBDIR%%/lucene/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lucene/lucene-core-2.3.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-snowball-2.3.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-highlighter-2.3.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-analyzers-2.3.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-queries-2.3.2.jar
+@dirrm %%PYTHON_SITELIBDIR%%/lucene

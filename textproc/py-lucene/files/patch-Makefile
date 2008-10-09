@@ -1,0 +1,80 @@
+--- Makefile.orig	2008-05-06 12:59:04.000000000 +0800
++++ Makefile	2008-05-15 22:27:11.000000000 +0800
+@@ -78,8 +78,8 @@
+ #PREFIX_PYTHON=/usr
+ #ANT=ant
+ #PYTHON=$(PREFIX_PYTHON)/bin/python
+-#JCC=$(PYTHON) -m jcc
+-#NUM_FILES=1
++JCC=$(PYTHON) -m jcc
++NUM_FILES=1
+ 
+ # Solaris   (Solaris 11, Python 2.4 32-bit, Sun Studio 12, Java 1.6)
+ #PREFIX_PYTHON=/usr
+@@ -108,12 +108,12 @@
+ 
+ DEFINES=-DPYLUCENE_VER="\"$(VERSION)\"" -DLUCENE_VER="\"$(LUCENE_VER)\""
+ 
+-LUCENE_JAR=$(LUCENE)/build/lucene-core-$(LUCENE_VER).jar
+-SNOWBALL_JAR=$(LUCENE)/build/contrib/snowball/lucene-snowball-$(LUCENE_VER).jar
+-HIGHLIGHTER_JAR=$(LUCENE)/build/contrib/highlighter/lucene-highlighter-$(LUCENE_VER).jar
+-ANALYZERS_JAR=$(LUCENE)/build/contrib/analyzers/lucene-analyzers-$(LUCENE_VER).jar
+-REGEX_JAR=$(LUCENE)/build/contrib/regex/lucene-regex-$(LUCENE_VER).jar
+-QUERIES_JAR=$(LUCENE)/build/contrib/queries/lucene-queries-$(LUCENE_VER).jar
++LUCENE_JAR=$(LUCENE)/lucene-core-$(LUCENE_VER).jar
++SNOWBALL_JAR=$(LUCENE)/contrib/snowball/lucene-snowball-$(LUCENE_VER).jar
++HIGHLIGHTER_JAR=$(LUCENE)/contrib/highlighter/lucene-highlighter-$(LUCENE_VER).jar
++ANALYZERS_JAR=$(LUCENE)/contrib/analyzers/lucene-analyzers-$(LUCENE_VER).jar
++REGEX_JAR=$(LUCENE)/contrib/regex/lucene-regex-$(LUCENE_VER).jar
++QUERIES_JAR=$(LUCENE)/contrib/queries/lucene-queries-$(LUCENE_VER).jar
+ EXTENSIONS_JAR=build/jar/extensions.jar
+ 
+ PYLUCENE_CP:=$(LUCENE_JAR):$(HIGHLIGHTER_JAR):$(SNOWBALL_JAR):$(ANALYZERS_JAR):$(CLASSES):$(REGEX_JAR)
+@@ -124,12 +124,7 @@
+ 
+ default: all
+ 
+-$(LUCENE):
+-	svn export -r $(LUCENE_SVN_VER) $(LUCENE_SVN) $(LUCENE)
+-
+-sources: $(LUCENE)
+-
+-to-orig: sources
++to-orig: 
+ 	mkdir -p $(LUCENE)-orig
+ 	tar -C $(LUCENE) -cf - . | tar -C $(LUCENE)-orig -xvf -
+ 
+@@ -149,27 +144,27 @@
+ 	cd $(LUCENE); $(ANT) -Dversion=$(LUCENE_VER)
+ 
+ $(SNOWBALL_JAR): $(LUCENE_JAR)
+-	cd $(LUCENE)/contrib/snowball; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/snowball; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
+ 
+ $(HIGHLIGHTER_JAR): $(LUCENE_JAR)
+-	cd $(LUCENE)/contrib/highlighter; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/highlighter; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
+ 
+ $(ANALYZERS_JAR): $(LUCENE_JAR)
+-	cd $(LUCENE)/contrib/analyzers; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/analyzers; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
+ 
+ $(REGEX_JAR): $(LUCENE_JAR)
+ 	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/lucene/search/regex/JakartaRegexpCapabilities.java
+ 	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/regexp/RegexpTunnel.java
+-	cd $(LUCENE)/contrib/regex; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/regex; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
+ 
+ $(QUERIES_JAR): $(LUCENE_JAR)
+-	cd $(LUCENE)/contrib/queries; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/queries; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
+ 
+ $(EXTENSIONS_JAR): $(LUCENE_JAR)
+ 	$(ANT) -Dlucene.dir=$(LUCENE)
+ 
+ JARS=$(LUCENE_JAR) $(SNOWBALL_JAR) $(HIGHLIGHTER_JAR) $(ANALYZERS_JAR) \
+-     $(REGEX_JAR) $(QUERIES_JAR) $(EXTENSIONS_JAR)
++     $(QUERIES_JAR)
+ 
+ 
+ jars: $(JARS)

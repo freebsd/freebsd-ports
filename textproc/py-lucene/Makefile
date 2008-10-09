@@ -7,49 +7,39 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.2
 CATEGORIES=	textproc devel python
-MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/src/
+MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}${PATCHSET}
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PATCHSET}-src-jcc
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A GCJ-compiled version of Java Lucene integrated with Python
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gcj41:${PORTSDIR}/lang/gcc41
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
+		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc
+EXTRACT_DEPENDS=lucene>=2.3.2:${PORTSDIR}/textproc/lucene:extract
 
 USE_PYTHON=	2.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 PATCHSET=	-1
+EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
 
-OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${PATCHSET}
+PLIST_SUB=	EGG_INFO=${EGG_INFO}
 
-OPTIONS=	BDB "Compile with support for Berkley DB" Off
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Broken dependency on !i386
-.endif
-
-_GCC_LIBDIR!=	(cd ${PORTSDIR}/lang/gcc41;make -V TARGLIB)
-GCC_LIBDIR=	${_GCC_LIBDIR:S/${PREFIX}/${LOCALBASE}/}
-
+MAKE_ENV+=	LD_LIBRARY_PATH="${JAVA_HOME}/jre/lib/${ARCH}:${JAVA_HOME}/jre/lib/${ARCH}/server"
 MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} GCJ_HOME=${LOCALBASE} \
-		GCJ_LIBDIR=${GCC_LIBDIR} CC=${LOCALBASE}/bin/gcc41 CXX=${LOCALBASE}/bin/g++41 \
-		JCC=${LOCALBASE}/bin/gcj41 JCCH=${LOCALBASE}/bin/gcjh41 PYTHON=${PYTHON_CMD} \
+		ANT=${LOCALBASE}/bin/ant PYTHON=${PYTHON_CMD} \
 		LDFLAGS+=-L${LOCALBASE}/lib PYTHON_INC=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITE=${PYTHON_SITELIBDIR}
 
-.if defined(WITH_BDB)
-BROKEN=		Will not compile with BDB support
-REAL_BDB_VER=	${BDB_VER:C/([0-9])([0-9])/\1.\2/g}
-_BDB_WRKSRC!=	(cd ../../databases/db44;make -V WRKSRC)
-BDB_WRKSRC=	${_BDB_WRKSRC:S/\/build_unix//}
-MAKE_ARGS+=	DB=${BDB_WRKSRC} PREFIX_DB=${LOCALBASE} DB_VER=${REAL_BDB_VER} DB_LIB_VER=${REAL_BDB_VER}
-USE_BDB=	44
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/db44:extract
-.endif
+post-extract:
+		${CP} -R ${PORTSDIR}/textproc/lucene/work/lucene-${PORTVERSION} ${WRKSRC}/lucene-java-${PORTVERSION}
 
-.include <bsd.port.post.mk>
+#regression-test:
+#		cd ${WRKSRC}; env ${MAKE_ARGS} ${MAKE_ENV} ${GMAKE} test
+
+.include <bsd.port.mk>
