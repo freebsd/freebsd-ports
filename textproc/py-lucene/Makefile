@@ -8,6 +8,7 @@
 
 PORTNAME=	PyLucene
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,8 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${PATCHSET}
 PLIST_SUB=	EGG_INFO=${EGG_INFO}
 
 MAKE_ENV+=	LD_LIBRARY_PATH="${JAVA_HOME}/jre/lib/${ARCH}:${JAVA_HOME}/jre/lib/${ARCH}/server"
-MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} GCJ_HOME=${LOCALBASE} \
-		ANT=${LOCALBASE}/bin/ant PYTHON=${PYTHON_CMD} \
+MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} PYTHON=${PYTHON_CMD} \
 		LDFLAGS+=-L${LOCALBASE}/lib PYTHON_INC=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITE=${PYTHON_SITELIBDIR}
 
@@ -40,6 +40,6 @@ post-extract:
 		${CP} -R ${PORTSDIR}/textproc/lucene/work/lucene-${PORTVERSION} ${WRKSRC}/lucene-java-${PORTVERSION}
 
 #regression-test:
-#		cd ${WRKSRC}; env ${MAKE_ARGS} ${MAKE_ENV} ${GMAKE} test
+#		cd ${WRKSRC}; env ${MAKE_ENV} ${GMAKE} test
 
 .include <bsd.port.mk>

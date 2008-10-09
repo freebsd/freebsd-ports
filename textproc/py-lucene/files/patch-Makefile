@@ -1,17 +1,24 @@
 --- Makefile.orig	2008-05-06 12:59:04.000000000 +0800
-+++ Makefile	2008-05-15 22:27:11.000000000 +0800
-@@ -78,8 +78,8 @@
- #PREFIX_PYTHON=/usr
- #ANT=ant
- #PYTHON=$(PREFIX_PYTHON)/bin/python
++++ Makefile	2008-10-09 23:12:12.000000000 +0800
+@@ -75,11 +75,12 @@
+ #NUM_FILES=2
+ 
+ # FreeBSD
+-#PREFIX_PYTHON=/usr
+-#ANT=ant
+-#PYTHON=$(PREFIX_PYTHON)/bin/python
 -#JCC=$(PYTHON) -m jcc
 -#NUM_FILES=1
++PREFIX_PYTHON=$(PREFIX)
++JAR=$(PREFIX)/bin/jar
++ANT=$(PREFIX)/bin/ant
++PYTHON=$(PREFIX_PYTHON)/bin/python
 +JCC=$(PYTHON) -m jcc
 +NUM_FILES=1
  
  # Solaris   (Solaris 11, Python 2.4 32-bit, Sun Studio 12, Java 1.6)
  #PREFIX_PYTHON=/usr
-@@ -108,12 +108,12 @@
+@@ -108,12 +109,12 @@
  
  DEFINES=-DPYLUCENE_VER="\"$(VERSION)\"" -DLUCENE_VER="\"$(LUCENE_VER)\""
  
@@ -30,7 +37,7 @@
  EXTENSIONS_JAR=build/jar/extensions.jar
  
  PYLUCENE_CP:=$(LUCENE_JAR):$(HIGHLIGHTER_JAR):$(SNOWBALL_JAR):$(ANALYZERS_JAR):$(CLASSES):$(REGEX_JAR)
-@@ -124,12 +124,7 @@
+@@ -124,12 +125,7 @@
  
  default: all
  
@@ -44,7 +51,7 @@
  	mkdir -p $(LUCENE)-orig
  	tar -C $(LUCENE) -cf - . | tar -C $(LUCENE)-orig -xvf -
  
-@@ -149,27 +144,27 @@
+@@ -149,27 +145,29 @@
  	cd $(LUCENE); $(ANT) -Dversion=$(LUCENE_VER)
  
  $(SNOWBALL_JAR): $(LUCENE_JAR)
@@ -60,9 +67,13 @@
 +	cd $(LUCENE)/contrib/analyzers; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
  
  $(REGEX_JAR): $(LUCENE_JAR)
- 	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/lucene/search/regex/JakartaRegexpCapabilities.java
- 	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/regexp/RegexpTunnel.java
+-	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/lucene/search/regex/JakartaRegexpCapabilities.java
+-	rm -f $(LUCENE)/contrib/regex/src/java/org/apache/regexp/RegexpTunnel.java
 -	cd $(LUCENE)/contrib/regex; $(ANT) -Dversion=$(LUCENE_VER)
++	cd $(LUCENE)/contrib/regex; $(JAR) xf lucene-regex-$(LUCENE_VER).jar
++	rm -f $(LUCENE)/contrib/regex/org/apache/lucene/search/regex/JakartaRegexpCapabilities.class
++	rm -f $(LUCENE)/contrib/regex/org/apache/regexp/RegexpTunnel.class
++	cd $(LUCENE)/contrib/regex; $(JAR) cf lucene-regex-$(LUCENE_VER).jar org
 +	cd $(LUCENE)/contrib/regex; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
  
  $(QUERIES_JAR): $(LUCENE_JAR)
@@ -70,11 +81,12 @@
 +	cd $(LUCENE)/contrib/queries; $(ANT) -buildfile ../../build.xml -Dversion=$(LUCENE_VER)
  
  $(EXTENSIONS_JAR): $(LUCENE_JAR)
- 	$(ANT) -Dlucene.dir=$(LUCENE)
+-	$(ANT) -Dlucene.dir=$(LUCENE)
++	$(ANT) -buildfile build.xml -Dlucene.dir=$(LUCENE)
  
  JARS=$(LUCENE_JAR) $(SNOWBALL_JAR) $(HIGHLIGHTER_JAR) $(ANALYZERS_JAR) \
 -     $(REGEX_JAR) $(QUERIES_JAR) $(EXTENSIONS_JAR)
-+     $(QUERIES_JAR)
++     $(REGEX_JAR) $(QUERIES_JAR)
  
  
  jars: $(JARS)
