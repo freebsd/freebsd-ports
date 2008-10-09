@@ -2376,6 +2376,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-eventmachine
+    SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
