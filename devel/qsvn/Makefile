@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qsvn
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt based GUI frontend for Subversion
 
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
