@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl-ball
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arkanoid/Breakout clone with pretty graphics
 
 USE_BZIP2=	yes
-USE_SDL=	sdl image ttf
+USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

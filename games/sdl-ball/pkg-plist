@@ -4,6 +4,16 @@ bin/sdl-ball
 %%DATADIR%%/gfx/ball/fireball.png
 %%DATADIR%%/gfx/ball/tail.png
 %%DATADIR%%/gfx/ball/test.png
+%%DATADIR%%/gfx/bg/1.jpg
+%%DATADIR%%/gfx/bg/2.jpg
+%%DATADIR%%/gfx/bg/23.jpg
+%%DATADIR%%/gfx/bg/24.jpg
+%%DATADIR%%/gfx/bg/25.jpg
+%%DATADIR%%/gfx/bg/3.jpg
+%%DATADIR%%/gfx/bg/4.jpg
+%%DATADIR%%/gfx/bg/5.jpg
+%%DATADIR%%/gfx/bg/6.jpg
+%%DATADIR%%/gfx/bg/7.jpg
 %%DATADIR%%/gfx/border.png
 %%DATADIR%%/gfx/brick/ani1.png
 %%DATADIR%%/gfx/brick/base.png
@@ -19,7 +29,6 @@ bin/sdl-ball
 %%DATADIR%%/gfx/menu/but1.png
 %%DATADIR%%/gfx/menu/but2.png
 %%DATADIR%%/gfx/menu/highscorebg.png
-%%DATADIR%%/gfx/menu/life.png
 %%DATADIR%%/gfx/menu/menu0.png
 %%DATADIR%%/gfx/paddle/aim.png
 %%DATADIR%%/gfx/paddle/base.png
@@ -50,11 +59,35 @@ bin/sdl-ball
 %%DATADIR%%/gfx/powerup/smallball.png
 %%DATADIR%%/levels.txt
 %%DATADIR%%/powerups.txt
+%%DATADIR%%/snd/LICENSE.txt
+%%DATADIR%%/snd/ball-drop.ogg
+%%DATADIR%%/snd/ball-hit-border.ogg
+%%DATADIR%%/snd/ball-hit-paddle.ogg
+%%DATADIR%%/snd/cement-brick-hit.ogg
+%%DATADIR%%/snd/die.ogg
+%%DATADIR%%/snd/doom-brick-break.ogg
+%%DATADIR%%/snd/evil-po-hit-paddle.ogg
+%%DATADIR%%/snd/expl-brick-break.ogg
+%%DATADIR%%/snd/gameover.ogg
+%%DATADIR%%/snd/glass-brick-break.ogg
+%%DATADIR%%/snd/glass-brick-hit.ogg
+%%DATADIR%%/snd/glue-ball-hit-paddle.ogg
+%%DATADIR%%/snd/good-po-hit-paddle.ogg
+%%DATADIR%%/snd/highscore.ogg
+%%DATADIR%%/snd/invisible-brick-appear.ogg
+%%DATADIR%%/snd/menuclick.ogg
+%%DATADIR%%/snd/nextlevel.ogg
+%%DATADIR%%/snd/norm-brick-break.ogg
+%%DATADIR%%/snd/po-hit-border.ogg
+%%DATADIR%%/snd/shot.ogg
+%%DATADIR%%/snd/start.ogg
+@dirrm %%DATADIR%%/snd
 @dirrm %%DATADIR%%/gfx/powerup
 @dirrm %%DATADIR%%/gfx/paddle
 @dirrm %%DATADIR%%/gfx/menu
 @dirrm %%DATADIR%%/gfx/highscore
 @dirrm %%DATADIR%%/gfx/brick
+@dirrm %%DATADIR%%/gfx/bg
 @dirrm %%DATADIR%%/gfx/ball
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/font
