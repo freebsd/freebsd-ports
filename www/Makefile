@@ -1262,6 +1262,7 @@
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
+    SUBDIR += rubygem-merb
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-rack
