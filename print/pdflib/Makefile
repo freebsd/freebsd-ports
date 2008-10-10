@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.3
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
