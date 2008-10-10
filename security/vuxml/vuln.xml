@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+	<vuln vid="fb84d5dd-9528-11dd-9a00-001999392805">
+		<topic>opera -- multiple vulnerabilities</topic>
+		<affects>
+			<package>
+				<name>opera</name>
+				<range><lt>9.60.20081004</lt></range>
+			</package>
+		</affects>
+		<description>
+			<body xmlns="http://www.w3.org/1999/xhtml">
+				<p>Opera reports:</p>
+				<blockquote cite="http://www.opera.com/support/search/view/901/">
+					<p>If a malicious page redirects Opera to a specially crafted 
+						address (URL), it can cause Opera to crash. Given sufficient 
+						address content, the crash could cause execution of code 
+						controlled by the attacking page.</p>
+				</blockquote>
+				<blockquote cite="http://www.opera.com/support/search/view/902/">
+					<p>Once a Java applet has been cached, if a page can predict the 
+						cache path for that applet, it can load the applet from the 
+						cache, causing it to run in the context of the local machine. 
+						This allows it to read other cache files on the computer or 
+						perform other normally more restrictive actions. These files 
+						could contain sensitive information, which could then be sent 
+						to the attacker.</p>
+				</blockquote>
+			</body>
+		</description>
+		<references>
+			<url>http://www.opera.com/support/search/view/901/</url>
+			<url>http://www.opera.com/support/search/view/902/</url>
+		</references>
+		<dates>
+			<discovery>2008-10-04</discovery>
+			<entry>2008-10-08</entry>
+		</dates>
+  </vuln>
+
   <vuln vid="4775c807-8f30-11dd-821f-001cc0377035">
     <topic>mysql -- command line client input validation vulnerability</topic>
     <affects>
