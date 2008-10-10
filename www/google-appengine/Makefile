@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-docs-20080816.zip
+DISTFILES+=	${PORTNAME}-docs-${GAEDOCSREL}.zip
 .endif
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -39,6 +39,7 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
+GAEDOCSREL=	20081003
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
@@ -53,7 +54,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${DOCSDIR}
-	cd ${WRKDIR}/google-appengine-docs-20080816 && ${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dev_appserver.py ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/appcfg.py ${DATADIR}
