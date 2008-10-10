@@ -14,7 +14,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for building/running QT GUIs for commmand line programs
+COMMENT=	A tool for building/running QT GUIs for command line programs
 
 USE_XORG=	x11 ice xext
 USE_QT_VER=	3
