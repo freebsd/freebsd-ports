@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce29ce1d-971a-11dd-ab7e-001c2514716c">
+    <topic>cups -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>1.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The release note of cups 1.3.9 reports:</p>
+	<blockquote cite="http://cups.org/articles.php?L575">
+	  <p>It contains the following fixes:</p>
+	  <ul>
+	    <li>SECURITY: The HP-GL/2 filter did not range check
+	      pen numbers (STR #2911)</li>
+	    <li>SECURITY: The SGI image file reader did not range
+	      check 16-bit run lengths (STR #2918)</li>
+	    <li>SECURITY: The text filter did not range check cpi,
+	      lpi, or column values (STR #2919)</li>
+	  </ul>
+	</blockquote>
+	<p>Exploitation of this vulnerability results in the execution
+	  of arbitrary code with the privileges of the affected service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3639</cvename>
+      <cvename>CVE-2008-3640</cvename>
+      <cvename>CVE-2008-3641</cvename>
+    </references>
+    <dates>
+      <discovery>2008-10-09</discovery>
+      <entry>2008-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb84d5dd-9528-11dd-9a00-001999392805">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
