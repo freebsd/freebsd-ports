@@ -6,12 +6,14 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/add_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/add_to_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/appengine_helper_for_django.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/auth.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/bulkload.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/cf1-text.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/create1.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/create_restricted.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/dbg.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django10_zipimport.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/djangoforms.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/domains.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse.html
@@ -26,6 +28,8 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/python_run_helloworld.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/eclipse_img/pythonpath.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/expand.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/extending_models.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/extending_models/date.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/filter.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/filter_time.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/gdata.html
@@ -34,6 +38,7 @@ bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/logging.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/logs_admin.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/modeling.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/pure_django.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/quotas.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rietveld.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rpc.html
@@ -1421,6 +1426,7 @@ bin/dev_appserver.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/datastore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/extending_models
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/eclipse_img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine
