@@ -48,14 +48,14 @@ ANTHOLOGY=	yes
 RELEASE_MSG=	"Unreal Anthology"
 MANUALFILES=	Manual.pdf
 PORTDOCS+=	${MANUALFILES}
-BUILD_DEPENDS+=	unshield:${PORTSDIR}/archivers/unshield \
-		xdelta:${PORTSDIR}/misc/xdelta
+EXTRACT_DEPENDS+=	unshield:${PORTSDIR}/archivers/unshield
+PATCH_DEPENDS+=	xdelta:${PORTSDIR}/misc/xdelta
 # Original CD
 .elif exists(${CDROM_MOUNT}/SYSTEM/UPak.u)
 ORIGINAL=	yes
 RELEASE_MSG=	"original"
 PORTDOCS+=	${MANUALFILES}
-BUILD_DEPENDS+=	xdelta:${PORTSDIR}/misc/xdelta
+PATCH_DEPENDS+=	xdelta:${PORTSDIR}/misc/xdelta
 # TheSINHumanHead CD
 .elif exists(${CDROM_MOUNT}/System-int.tar.bz2)
 RAVAGE=		yes
