@@ -3,6 +3,7 @@ lib/libtuxguitar-oss-jni.so
 lib/libtuxguitar-fluidsynth-jni.so
 share/pixmaps/tuxguitar.xpm
 share/applications/tuxguitar.desktop
+%%DATADIR%%/8MBGMSFX.SF2
 %%DATADIR%%/tuxguitar.jar
 %%DATADIR%%/tuxguitar.tg
 %%DATADIR%%/scales/scales.xml
@@ -513,5 +514,4 @@ share/applications/tuxguitar.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

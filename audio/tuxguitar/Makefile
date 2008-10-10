@@ -7,10 +7,14 @@
 #
 
 PORTNAME=	tuxguitar
-DISTVERSION=	1.0
+PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio java
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-src-${DISTVERSION}
+MASTER_SITES=	SF:src \
+		http://www.alsa-project.org/~james/sound-fonts/:fluid
+DISTFILES=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}:src \
+		8MBGMSFX.SF2:fluid
+EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Multitrack tablature editor and player
@@ -33,6 +37,8 @@ JAVA_VERSION=	1.4+
 JAVA_VENDOR=	bsdjava sun blackdown
 NOCCACHE=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
+
 .if !defined(WITHOUT_MAN)
 MAN1=		tuxguitar.1
 .endif
@@ -40,7 +46,7 @@ MAN1=		tuxguitar.1
 USE_GECKO=	mozilla firefox seamonkey
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/Mk/bsd.gecko.mk"
 
 PLUGINS=	ascii compat converter gtp jsa lilypond midi musicxml \
 		oss pdf ptb tef tray fluidsynth
@@ -50,6 +56,9 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		PREFIX=${PREFIX} \
 		JAVALIBDIR=${JAVALIBDIR} \
 		GECKO=${GECKO}
+
+post-extract:
+	${CP} ${DISTDIR}/8MBGMSFX.SF2 ${WRKDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|linux|freebsd|;s|JAVA_VERS|JAVA_PORT_VERSION|g; \
@@ -90,6 +99,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/tuxguitar ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar/tuxguitar.jar ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/misc/*.tg ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/8MBGMSFX.SF2 ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${PREFIX}/lib
 .for p in ${PLUGINS}
@@ -119,5 +129,11 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/TuxGuitar/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
+	@${ECHO}
+	@${ECHO} "SoundFonts for the FluidSynth plugin are available at:"
+	@${ECHO} "${DATADIR}/8MBGMSFX.SF2"
+	@${ECHO} "Add this path in the FluidSynth plugin configuration to"
+	@${ECHO} "enable them."
+	@${ECHO}
 
 .include <bsd.port.post.mk>
