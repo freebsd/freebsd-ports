@@ -10,3 +10,6 @@ SIZE (diablo-caffe-freebsd7-amd64-1.6.0_07-b02.tar.bz2) = 62778916
 MD5 (diablo-caffe-freebsd7-i386-1.6.0_07-b02.tar.bz2) = 39d0af2a6dbffc51ea4e465f4bd9f33d
 SHA256 (diablo-caffe-freebsd7-i386-1.6.0_07-b02.tar.bz2) = 971a537f8e852166fa94a9666b14e2f0a8ee51dcf7a470ab7bcb5be0dba05409
 SIZE (diablo-caffe-freebsd7-i386-1.6.0_07-b02.tar.bz2) = 64093245
+MD5 (jce_policy-6.zip) = b20f9d6ed14e55d73a5ed204bca01e7a
+SHA256 (jce_policy-6.zip) = d0c2258c3364120b4dbf7dd1655c967eee7057ac6ae6334b5ea8ceb8bafb9262
+SIZE (jce_policy-6.zip) = 9101
