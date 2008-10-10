@@ -7,11 +7,13 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	diablo-
 DISTNAME=	${PKGNAMEPREFIX}caffe-${JDK_OSREL}-${ARCH}-${JDK_VERSION}_${RELEASE_VERSION}-b${BUILD_VERSION}
-EXTRACT_SUFX=	.tar.bz2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_VERSION}_${RELEASE_VERSION}.${BUILD_VERSION}
@@ -33,6 +35,10 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}16
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}jdk${JDK_VERSION}_${RELEASE_VERSION}
 NO_BUILD=	yes
+
+OPTIONS=	POLICY	"Install the Unlimited Strength Policy Files" off
+
+POLICYFILE=	jce_policy-6.zip
 
 SUB_FILES+=	pkg-install \
 		pkg-deinstall
@@ -61,18 +67,30 @@ PLIST_SUB+=	CLIENTVM=""
 PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
+.if defined(WITH_POLICY)
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+DISTFILES+=	${POLICYFILE}
+.endif
+
+.if !defined(PACKAGE_BUILDING) && defined(JDK_OSREL) && (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})))#{
 DISTFILE_INSTRUCTIONS=\n\
 Because of licensing restrictions, you must fetch the distribution\n\
-manually.\n\n\
-Please access\n\
-\n\
-  ${DOWNLOAD_URL}\n\
-\n\
+manually.\n\n
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})#{
+DISTFILE_INSTRUCTIONS+=Please access\n\n\
+\ \ \ \ ${DOWNLOAD_URL}\n\n\
 with a web browser and \"Accept\" the End User License Agreement for\n\
-\"Caffe Diablo ${JDK_VERSION}\".  Please place the downloaded\n\
-${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n\n
-.endif
+\"Caffe Diablo ${JDK_VERSION}\".\n\n
+.endif#}
+.if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
+DISTFILE_INSTRUCTIONS+=Please open\n\n\
+\ \ \ \ http://java.sun.com/javase/downloads/\n\n\
+in a web browser and follow the \"Download\" link for \"Java\n\
+Cryptography Extension (JCE) Unlimited Strength Jurisdiction\n\
+Policy Files 6\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
+.endif#}
+DISTFILE_INSTRUCTIONS+=Please place the downloaded file(s) in ${DISTDIR}.\n\n
+.endif#}
 
 pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
@@ -80,10 +98,20 @@ pre-fetch:
 	@exit 1
 .endif
 
+.if defined(WITH_POLICY)
+post-extract:
+	@unzip -qo ${DISTDIR}/${POLICYFILE} -d ${WRKDIR}
+.endif
+
 do-install:
 	${MKDIR} "${INSTALL_DIR}"
 	cd "${WRKSRC}" && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} "${INSTALL_DIR}"
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+		${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}/jre/lib/security/cacerts
+.if defined(WITH_POLICY)
+	${INSTALL_DATA} ${WRKDIR}/jce/*.jar ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}/jre/lib/security
+.endif
 
 post-install:
 	# Register the VM
