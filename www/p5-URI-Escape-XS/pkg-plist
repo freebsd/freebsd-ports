@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/XS.so
+%%SITE_PERL%%/%%PERL_ARCH%%/URI/Escape/XS.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI/Escape/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/URI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape/XS/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Escape
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
