@@ -198,12 +198,14 @@ share/locale/es/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo

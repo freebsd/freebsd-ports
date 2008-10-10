@@ -160,7 +160,8 @@ gst_cdparanoia_EXTRA_LIBS+=	-lgstcdda-${VERSION}
 gst_cdparanoia_DIST=	base
 
 # cdio
-gst_cdio_LIB_DEPENDS+=	cdio.7:${PORTSDIR}/sysutils/libcdio
+gst_cdio_LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+gst_cdio_DIST=		ugly
 
 # dts
 gst_dts_LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
@@ -318,7 +319,11 @@ gst_nas_PLIST_FILES=	${GST_LIB_DIR}/libgstnassink.a \
 		${GST_LIB_DIR}/libgstnassink.so
 
 # neon
+.if exists(${LOCALBASE}/lib/libneon.so.26)
 gst_neon_LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
+.else
+gst_neon_LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
+.endif
 gst_neon_CONFIGURE_ENV+=	NEON_CFLAGS="-I${LOCALBASE}/include/neon"
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.a \
 			${GST_LIB_DIR}/libgstneonhttpsrc.la \
