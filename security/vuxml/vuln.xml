@@ -77,7 +77,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mysql-client</name>
-	<range><gt>0</gt></range>
+	<range><gt>5.1</gt><lt>5.1.28_1</lt></range>
+	<range><gt>5.0</gt><lt>5.0.67_1</lt></range>
       </package>
     </affects>
     <description>
@@ -100,6 +101,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-04-17</discovery>
       <entry>2008-10-01</entry>
+      <modified>2008-10-10</modified>
     </dates>
   </vuln>
 
@@ -670,14 +672,14 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="388d9ee4-7f22-11dd-a66a-0019666436c2">
-    <topic>mysql -- MyISAM table privileges secuity bypass vulnerability</topic>
+    <topic>mysql -- MyISAM table privileges security bypass vulnerability</topic>
     <affects>
       <package>
 	<name>mysql-server</name>
 	<range><ge>6.0</ge><lt>6.0.5</lt></range>
 	<range><ge>5.1</ge><lt>5.1.24</lt></range>
 	<range><ge>5.0</ge><lt>5.0.67</lt></range>
-	<range><ge>4.1</ge><lt>5.0</lt></range>
+	<range><ge>4.1</ge><lt>4.1.22_1</lt></range>
       </package>
     </affects>
     <description>
@@ -698,6 +700,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-05-05</discovery>
       <entry>2008-09-10</entry>
+      <modified>2008-10-10</modified>
     </dates>
   </vuln>
 
