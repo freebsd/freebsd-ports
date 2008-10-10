@@ -7,7 +7,7 @@
 
 PORTNAME=	Genshi
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 #PORTEPOCH=	0
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://ftp.edgewall.com/pub/${PORTNAME:L}/ \
