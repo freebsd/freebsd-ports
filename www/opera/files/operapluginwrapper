@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ brandelf $3 | grep "FreeBSD" ]; then
+	exec $0.freebsd $@
+else
+	exec $0.linux $@
+fi
