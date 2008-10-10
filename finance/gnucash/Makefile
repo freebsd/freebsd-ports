@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.7
+PORTREVISION=	0
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -57,13 +57,13 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_dialog_common.schemas \
 		apps_gnucash_dialog_prices.schemas \
 		apps_gnucash_dialog_print_checks.schemas \
-		apps_gnucash_import_qif.schemas \
 		apps_gnucash_dialog_reconcile.schemas \
 		apps_gnucash_dialog_scheduled_transctions.schemas \
 		apps_gnucash_dialog_totd.schemas \
 		apps_gnucash_general.schemas \
 		apps_gnucash_history.schemas \
 		apps_gnucash_import_generic_matcher.schemas \
+		apps_gnucash_import_qif.schemas \
 		apps_gnucash_warnings.schemas \
 		apps_gnucash_window_pages_account_tree.schemas \
 		apps_gnucash_window_pages_register.schemas
@@ -74,6 +74,7 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 .if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
 LIB_DEPENDS+=	aqbanking.21:${PORTSDIR}/finance/aqbanking \
 		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
+GCONF_SCHEMAS+=	apps_gnucash_dialog_hbci.schemas
 CONFIGURE_ARGS+=--enable-hbci
 GC_LIBS+=	-laqbanking
 PLIST_SUB+=	AQBANKING=""
