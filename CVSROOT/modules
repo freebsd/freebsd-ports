@@ -19182,6 +19182,7 @@ rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
+rubygem-extlib                  ports/devel/rubygem-extlib
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-facets                  ports/devel/rubygem-facets
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
@@ -19204,9 +19205,11 @@ rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
+rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
+rubygem-merb                    ports/www/rubygem-merb
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-mongrel                 ports/www/rubygem-mongrel
@@ -20801,12 +20804,14 @@ tr2latex                        ports/print/tr2latex
 trac                            ports/www/trac
 trac-accountmanager             ports/www/trac-accountmanager
 trac-addcomment                 ports/www/trac-addcomment
+trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
 trac-blog                       ports/www/trac-blog
 trac-bzr                        ports/www/trac-bzr
 trac-calendar                   ports/www/trac-calendar
 trac-codetags                   ports/www/trac-codetags
 trac-ctxtnavadd                 ports/www/trac-ctxtnavadd
 trac-customfieldadmin           ports/www/trac-customfieldadmin
+trac-customroadmap              ports/www/trac-customroadmap
 trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
 trac-gantt                      ports/www/trac-gantt
