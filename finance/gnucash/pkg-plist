@@ -258,6 +258,8 @@ lib/gnucash/libgncqof-backend-qsf.so
 lib/libgnc-backend-file-utils.la
 lib/libgnc-backend-file-utils.so
 lib/libgnc-backend-file-utils.so.0
+%%PGBACKEND%%lib/libgnc-backend-postgres.la
+%%PGBACKEND%%lib/libgnc-backend-postgres.so
 lib/libgnc-business-ledger.la
 lib/libgnc-business-ledger.so
 lib/libgnc-business-ledger.so.0
@@ -846,6 +848,7 @@ share/locale/en_GB/LC_MESSAGES/gnucash.mo
 share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/es_NI/LC_MESSAGES/gnucash.mo
 share/locale/eu/LC_MESSAGES/gnucash.mo
+share/locale/fi/LC_MESSAGES/gnucash.mo
 share/locale/fr/LC_MESSAGES/gnucash.mo
 share/locale/he/LC_MESSAGES/gnucash.mo
 share/locale/hu/LC_MESSAGES/gnucash.mo
@@ -876,13 +879,14 @@ share/xml/gnucash/xsl/string.xsl
 share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 @dirrmtry share/locale/es_NI/LC_MESSAGES
 @dirrmtry share/locale/es_NI
 @dirrmtry share/locale/de_CH/LC_MESSAGES
 @dirrmtry share/locale/de_CH
 @dirrm share/xml/gnucash/xsl
 @dirrm share/xml/gnucash
-@dirrmtry share/xml
 @dirrm share/gnucash/xml/qsf
 @dirrm share/gnucash/xml
 @dirrm share/gnucash/ui
