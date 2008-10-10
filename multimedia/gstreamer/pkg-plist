@@ -133,10 +133,12 @@ share/locale/es/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/rw/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gstreamer-%%VERSION%%.mo

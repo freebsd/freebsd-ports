@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.20
+PORTVERSION=	0.10.21
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+		GNOME
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
