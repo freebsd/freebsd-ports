@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
@@ -21,7 +20,8 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
 
-RUN_DEPENDS=	gcc42:${PORTSDIR}/lang/gcc42
+RUN_DEPENDS=	gcc42:${PORTSDIR}/lang/gcc42 \
+		nosetests:${PORTSDIR}/devel/py-nose
 
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
