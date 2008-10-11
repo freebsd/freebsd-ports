@@ -25,8 +25,8 @@ MAN1=		jtag.1 bsdl2jtag.1
 CONFLICTS=	libflash-0.*
 
 OPTIONS=	\
-	USB	"Build support for USB JTAG adapters"		 Off	\
-	FTDI	"Build support for FTDI-based USB JTAG adapters" Off	\
+	USB	"Build support for USB JTAG adapters"		 On	\
+	FTDI	"Build support for FTDI-based USB JTAG adapters" On	\
 	JEDEC	"Enable experimental JEDEC flash detection"	 Off
 
 .include <bsd.port.pre.mk>
@@ -38,12 +38,12 @@ CONFIGURE_ENV+=		LEX=${LOCALBASE}/bin/flex
 CONFIGURE_ARGS+=	--enable-jedec
 .endif
 
-.if defined(WITH_USB) || defined(WITH_FTDI)
+.if !defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--with-libusb
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
-.if defined(WITH_FTDI)
+.if !defined(WITHOUT_FTDI)
 CONFIGURE_ARGS+=	--with-libftdi
 LIB_DEPENDS+=	ftdi.10:${PORTSDIR}/devel/libftdi
 .endif
