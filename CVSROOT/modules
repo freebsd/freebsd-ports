@@ -9976,6 +9976,7 @@ p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
 p5-Catalyst-Plugin-Cache-FileCache  ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-Catalyst-Plugin-Cache-Memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
+p5-Catalyst-Plugin-Cache-Memcached-Fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-Catalyst-Plugin-Cache-Store-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-Catalyst-Plugin-Captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-Catalyst-Plugin-ConfigLoader  ports/www/p5-Catalyst-Plugin-ConfigLoader
@@ -12445,6 +12446,7 @@ p5-UNIVERSAL-moniker            ports/devel/p5-UNIVERSAL-moniker
 p5-UNIVERSAL-require            ports/devel/p5-UNIVERSAL-require
 p5-UNIVERSAL-which              ports/devel/p5-UNIVERSAL-which
 p5-URI                          ports/net/p5-URI
+p5-URI-Escape-XS                ports/www/p5-URI-Escape-XS
 p5-URI-Fetch                    ports/www/p5-URI-Fetch
 p5-URI-Find                     ports/textproc/p5-URI-Find
 p5-URI-FromHash                 ports/net/p5-URI-FromHash
@@ -13045,6 +13047,7 @@ p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-catalyst-plugin-cache-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
 p5-catalyst-plugin-cache-filecache  ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-catalyst-plugin-cache-memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
+p5-catalyst-plugin-cache-memcached-fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-catalyst-plugin-cache-store-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-catalyst-plugin-captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-catalyst-plugin-configloader  ports/www/p5-Catalyst-Plugin-ConfigLoader
@@ -15654,6 +15657,7 @@ p5-unix-processors              ports/sysutils/p5-Unix-Processors
 p5-unix-statgrab                ports/devel/p5-Unix-Statgrab
 p5-unix-syslog                  ports/sysutils/p5-Unix-Syslog
 p5-uri                          ports/net/p5-URI
+p5-uri-escape-xs                ports/www/p5-URI-Escape-XS
 p5-uri-fetch                    ports/www/p5-URI-Fetch
 p5-uri-find                     ports/textproc/p5-URI-Find
 p5-uri-fromhash                 ports/net/p5-URI-FromHash
