@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 
 COMMENT=	High performance media player supporting many formats
 
@@ -19,6 +19,11 @@ OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
 OPTIONS+=	SIMD "Allow mplayer to use vector engines (MMX...)" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
+OPTIONS+=	X11XV "X11 video drivers: XV" on
+OPTIONS+=	X11DGA "X11 video drivers: DGA" on
+OPTIONS+=	X11GL "X11 video drivers: OpenGL" on
+OPTIONS+=	X11XIN "X11 video drivers: Xinerama" on
+OPTIONS+=	X11VM "X11 VidMode support" on
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
 OPTIONS+=	SDL "Enable SDL video output" off
 OPTIONS+=	VIDIX "Enable VIDIX video output on supported archs" on
@@ -88,7 +93,7 @@ CONFIGURE_ARGS+=--disable-vidix-internal
 CONFIGURE_ARGS+=--disable-vidix-internal
 .endif
 
-.if !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 PLIST_SUB+=	GMPLAYER=""
 DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "${DATADIR}/skins/Blue/icons/icon32x32.png" "gmplayer" "" false
 .if !defined(WITHOUT_SKINS)
@@ -119,8 +124,33 @@ CONFIGURE_ARGS+=	--disable-freetype
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
+.if !defined(WITHOUT_X11XV)
+USE_XORG+=	xv
 .else
-WITHOUT_GUI=	yes
+CONFIGURE_ARGS+=--disable-xv
+.endif
+.if !defined(WITHOUT_X11DGA)
+USE_XORG+=	xxf86dga
+.else
+CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
+.endif
+.if !defined(WITHOUT_X11GL)
+USE_XORG+=	glproto
+LIB_DEPENDS+=	GL.1:${PORTSDIR}/graphics/libGL
+.else
+CONFIGURE_ARGS+=--disable-gl
+.endif
+.if !defined(WITHOUT_X11XIN)
+USE_XORG+=	xinerama xineramaproto
+.else
+CONFIGURE_ARGS+=--disable-xinerama
+.endif
+.if !defined(WITHOUT_X11VM)
+USE_XORG+=	xxf86vm
+.else
+CONFIGURE_ARGS+=--disable-vm
+.endif
+.else				#WITHOUT_X11
 CONFIGURE_ARGS+=--disable-x11 \
 		--disable-fontconfig
 .endif
@@ -206,7 +236,7 @@ pre-everything::
 	@${ECHO_MSG} "OPTIONS framework. You might want to check the Makefile in"
 	@${ECHO_MSG} "order to learn more about them."
 
-.if !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
 	@${ECHO_MSG} "or download official skin collections from"
@@ -257,7 +287,7 @@ post-install:
 	@${CHMOD} 755 ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/DOCS/HTML/en/* ${DOCSDIR}
 .endif
-.if !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
 .endif
 	@${CAT} ${PKGMESSAGE}
