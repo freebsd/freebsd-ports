@@ -3,6 +3,7 @@ bin/tunapie
 @unexec if cmp -s %D/etc/tunapie.config %D/etc/tunapie.config.default; then rm -f %D/etc/tunapie.config; fi
 etc/tunapie.config.default
 @exec [ -f %B/tunapie.config ] || cp %B/%f %B/tunapie.config
+%%DESKTOPDIR%%/tunapie.desktop
 share/pixmaps/tplogo.xpm
 %%DATADIR%%/AboutTuner.py
 %%DATADIR%%/AboutTuner.pyc
@@ -34,7 +35,5 @@ share/pixmaps/tplogo.xpm
 %%DATADIR%%/tuner.py
 %%DATADIR%%/tuner.pyc
 %%DATADIR%%/tv.png
-%%DESKTOPDIR%%/tunapie.desktop
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry %%DESKTOPDIR%%
