@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svn
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -22,8 +21,5 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,apr-0,apr-1,' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
