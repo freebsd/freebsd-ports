@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yolk
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
