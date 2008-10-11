@@ -1,0 +1,14 @@
+Unworkable is a BSD-licensed BitTorrent implementation
+for UNIX written from-scratch in C. It uses libevent
+for scalable asynchronous networking and the mmap()
+system call for local data access. Some of the goals of
+the project include (in no particular order) high code
+quality, efficiency, simplicity and security.
+
+Unworkable is still in an early stage of development,
+and is far behind most other BitTorrent implementations.
+However, it is usable for some basic things and the
+source code is quite minimal(4,000 lines of C compared
+to rTorrent's 40,000+ of C++).
+
+WWW: http://p2presearch.com/unworkable/

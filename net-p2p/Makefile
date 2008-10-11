@@ -125,6 +125,7 @@
     SUBDIR += transmission-gtk2
     SUBDIR += tribler
     SUBDIR += tvrss
+    SUBDIR += unworkable
     SUBDIR += valknut
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
