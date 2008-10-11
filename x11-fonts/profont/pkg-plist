@@ -1,0 +1,10 @@
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+%%FONTDIR%%/ProFont_r400-10.pcf.gz
+%%FONTDIR%%/ProFont_r400-11.pcf.gz
+%%FONTDIR%%/ProFont_r400-12.pcf.gz
+%%FONTDIR%%/ProFont_r400-15.pcf.gz
+%%FONTDIR%%/ProFont_r400-17.pcf.gz
+%%FONTDIR%%/ProFont_r400-22.pcf.gz
+%%FONTDIR%%/ProFont_r400-29.pcf.gz
+@dirrm %%FONTDIR%%
