@@ -933,6 +933,7 @@
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-Cache
+    SUBDIR += p5-App-Cmd
     SUBDIR += p5-App-Control
     SUBDIR += p5-App-Info
     SUBDIR += p5-App-Options
