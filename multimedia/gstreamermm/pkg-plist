@@ -1,8 +1,10 @@
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm.h
+include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/audioclock.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/colorbalance.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/colorbalancechannel.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/gst_wrap_init.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/init.h
+include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/private/audioclock_p.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/private/colorbalance_p.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/private/colorbalancechannel_p.h
 include/gstreamerbasemm-%%GST_VERSION%%/gstreamerbasemm/private/xoverlay_p.h
@@ -30,6 +32,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/index.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/indexfactory.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/init.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/interface.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/iterator.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/message.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/miniobject.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/object.h
@@ -58,6 +61,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/format_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/index_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/indexfactory_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/interface_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/iterator_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/message_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/miniobject_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/object_p.h
