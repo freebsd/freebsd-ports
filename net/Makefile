@@ -17,6 +17,7 @@
     SUBDIR += adasockets
     SUBDIR += aget
     SUBDIR += apinger
+    SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpd
     SUBDIR += arpdig
