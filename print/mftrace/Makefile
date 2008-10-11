@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.2.14
-PORTREVISION=	2
+PORTVERSION=	1.2.15
+#PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	LOCAL/chinsan \
+MASTER_SITES=	LOCAL/nivit/${PORTNAME}/ \
 		http://lilypond.org/download/sources/mftrace/
 
 MAINTAINER=	nivit@FreeBSD.org
