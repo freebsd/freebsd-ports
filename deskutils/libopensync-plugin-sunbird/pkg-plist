@@ -1,0 +1,7 @@
+lib/opensync/plugins/sunbird_sync.so
+lib/opensync/plugins/sunbird_sync.la
+share/opensync/defaults/sunbird-sync
+@dirrmtry lib/opensync/plugins
+@dirrmtry lib/opensync
+@dirrmtry share/opensync/defaults
+@dirrmtry share/opensync
