@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	que_deseja@hotmail.com
 COMMENT=	Makefile framework
 
 # XXX: This case is not handled by USE_AUTOTOOLS as kmk bootstrap involves
