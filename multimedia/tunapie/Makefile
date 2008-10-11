@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.11
 #PORTREVISION=	0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
@@ -29,7 +29,7 @@ OPTIONS=	ADULT	"non-censored TV listings" off \
 		AUDACIOUS	"use audacious instead of xmms" off \
 		BEEP_MEDIA_PLAYER	"use beep-media-player instead of xmms" off
 
-.if !defined(NOMANPAGES)
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=	tunapie.1
 .endif
 
@@ -50,8 +50,8 @@ post-patch:
 do-install:
 	@${MKDIR} ${DESKTOPDIR}
 	@cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
-.if !defined(NOMANPAGES)
-	${CP} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
+.if !defined(NO_INSTALL_MANPAGES)
+	@${CP} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
 .endif
 
 .include <bsd.port.pre.mk>
