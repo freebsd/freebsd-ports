@@ -6,6 +6,7 @@
 
 PORTNAME=	exifr
 PORTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RF
 
@@ -16,9 +17,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
 post-install:
-	cd ${PREFIX}/${GEM_LIB_DIR}/bin && \
-		${PATCH} -p0 < ${FILESDIR}/exifr.patch && \
-		${RM} -f ${PREFIX}/${GEM_LIB_DIR}/bin/exifr.orig
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | \
 		${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | \
