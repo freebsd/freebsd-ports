@@ -176,6 +176,7 @@
     SUBDIR += p5-Nagios-Plugin
     SUBDIR += p5-Nagios-Plugins-Memcached
     SUBDIR += p5-Net-ACL
+    SUBDIR += p5-Net-Abuse-Utils
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IP-Match-Regexp
