@@ -7,6 +7,7 @@
 
 PORTNAME=	sqldeveloper
 PORTVERSION=	1.5.1.54.40
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -21,7 +22,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_ZIP=	yes
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.5
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 
