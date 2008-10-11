@@ -111,6 +111,7 @@
     SUBDIR += p5-type1inst
     SUBDIR += pcf2bdf
     SUBDIR += ppantsfonts
+    SUBDIR += profont
     SUBDIR += proggy_fonts
     SUBDIR += sgifonts
     SUBDIR += sharefonts
