@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc11
+DISTVERSION=	2.1_rc13
 CATEGORIES=	security net
 MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
@@ -79,7 +79,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
 	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
-.for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL NEWS \
+.for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL \
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
 .endfor
