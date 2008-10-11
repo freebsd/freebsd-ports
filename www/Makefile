@@ -1215,6 +1215,7 @@
     SUBDIR += py-webware-component
     SUBDIR += py-wsgiref
     SUBDIR += pyblosxom
+    SUBDIR += pyjamas
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qt4-webkit
