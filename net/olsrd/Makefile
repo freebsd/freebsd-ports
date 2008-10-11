@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	olsrd
-PORTVERSION=	0.5.4
+DISTVERSION=	0.5.6-r2
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.5/ \
-		http://bernd.petrovitsch.priv.at/olsr-ng/
+		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
 
-MAINTAINER=	dave@dogwood.com
+MAINTAINER=	jhay@freebsd.org
 COMMENT=	OLSR routing daemon
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
@@ -48,7 +48,7 @@ CFLAGS+=	-fPIC
 .if !defined(WITH_MULTI_IF)
 pre-everything::
 	@${ECHO_MSG}	""
-	@${ECHO_MSG}	" To enable multiple interface support make with"
+	@${ECHO_MSG}	" To enable IPv4 multiple interface support make with"
 	@${ECHO_MSG}	" WITH_MULTI_IF defined"
 	@${ECHO_MSG}	""
 .endif
