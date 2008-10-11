@@ -86,7 +86,6 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/default.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/doctools.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/file.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/interface.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/jquery.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/minus.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/static/navigation.png
@@ -151,6 +150,9 @@ bin/sphinx-quickstart
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/stemmer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util/texescape.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/texinputs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinx/templates/web/admin
