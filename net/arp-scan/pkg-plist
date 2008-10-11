@@ -1,0 +1,8 @@
+bin/arp-scan
+bin/get-oui
+bin/get-iab
+bin/arp-fingerprint
+%%DATADIR%%/ieee-oui.txt
+%%DATADIR%%/ieee-iab.txt
+%%DATADIR%%/mac-vendor.txt
+@dirrm %%DATADIR%%
