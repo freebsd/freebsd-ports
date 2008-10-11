@@ -79,6 +79,7 @@
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
     SUBDIR += venice
+    SUBDIR += weberp
     SUBDIR += wmstock
     SUBDIR += xinvest
     SUBDIR += xquote
