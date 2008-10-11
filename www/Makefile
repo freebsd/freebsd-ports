@@ -506,6 +506,7 @@
     SUBDIR += mozilla
     SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
+    SUBDIR += multisort
     SUBDIR += myfaces
     SUBDIR += myghty
     SUBDIR += mysar
