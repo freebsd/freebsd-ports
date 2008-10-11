@@ -6,22 +6,29 @@
 # $FreeBSD$
 
 PORTNAME=	ttyload
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/
+MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/ \
+		http://mirror.mcx2.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Give a color-coded graph of load averages over time
 
-PLIST_FILES=	bin/ttyload
 ALL_TARGET=	default
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
-		s,^DEBUG,#DEBUG,g ; \
-		s,^CFLAGS\t=,CFLAGS+=,g" ${WRKSRC}/Makefile
+PLIST_FILES=	bin/ttyload
+PORTDOCS=	*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ttyload ${PREFIX}/bin
+post-install:
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/LICENSE
+.endif
 
-.include	<bsd.port.mk>
+	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
+
+.include <bsd.port.mk>
