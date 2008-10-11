@@ -1,0 +1,65 @@
+--- Makefile.orig	2005-09-09 23:52:11.000000000 +0400
++++ Makefile	2008-10-11 18:04:07.000000000 +0400
+@@ -4,21 +4,18 @@
+ 
+ # change this if you want to use 'make install' and have it go
+ # somewhere else:
+-INSTALLDIR	= /usr/local/bin
++PREFIX?= /usr/local
+ 
+-ARCH	= `uname -s | sed -e 's/ /-/g'`
++OS	= `uname -s | sed -e 's/ /-/g'`
+ LDFLAGS	= `./ldflags`
+ 
+-OBJS	=	arch/${ARCH}/getload.o	\
+-		arch/${ARCH}/terminfo.o	\
++OBJS	=	arch/${OS}/getload.o	\
++		arch/${OS}/terminfo.o	\
+ 		${NULL}
+ 
+-# this is what I use most places...
+-CC=gcc -pedantic -Wall
+-
+ # for the things in the sub-directory:
+ INCLUDES	=	-I$${PWD:-.} \
+-			-I$${PWD:-.}/arch/${ARCH} \
++			-I$${PWD:-.}/arch/${OS} \
+ 			-I$${PWD:-.}/arch/default
+ 
+ # Debugging compiles?
+@@ -26,7 +23,7 @@
+ 
+ VERSION	= -DVERSION='"'`cat Version`'"'
+ 
+-CFLAGS	= $(INCLUDES) $(OTHER_FLAGS) $(DEBUG) $(VERSION)
++CFLAGS+= $(INCLUDES) $(OTHER_FLAGS) $(DEBUG) $(VERSION) -pedantic -Wall
+ 
+ # most people won't want loader, so don't bother building it:
+ # PROGRAMS =	archbuild loader
+@@ -57,12 +54,12 @@
+ 	ln -s FreeBSD $@
+ 
+ $(ARCHLINKS_THISARCH):
+-	ln -s ${ARCH} $@
++	ln -s ${OS} $@
+ 
+ archlinks: $(ARCHLINKS)
+ 
+ archbuild: archlinks
+-	make archtest ttyload ARCH=$(ARCH)
++	make archtest ttyload OS=$(OS)
+ 
+ ttyload.c:	ttyload.h Version
+ 	touch ttyload.c
+@@ -82,7 +79,10 @@
+ 
+ # install, gently.  not much to it:
+ install:	$(PROGRAMS)
+-	/bin/cp ttyload ${INSTALLDIR}/ttyload
++	install -m 755 ttyload ${PREFIX}/bin/
++
++deinstall:
++	rm -f ${PREFIX}/bin/ttyload
+ 
+ # because different systems' make have different behaviors on how they
+ # deal with building stuff in subdirectories, and because I don't feel
