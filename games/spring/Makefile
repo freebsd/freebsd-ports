@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.76b1
-PORTREVISION=	3
-CATEGORIES=	games java
+PORTVERSION=	0.77b3
+CATEGORIES=	games
 MASTER_SITES=	http://spring.clan-sy.com/dl/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	TA Spring is a project aiming to create a new RTS
+COMMENT=	A project aiming to create a new and versatile RTS Engine
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		openal.0:${PORTSDIR}/audio/openal \
@@ -27,47 +26,33 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
-USE_PYTHON=	2.4+
-USE_GL=		yes
-USE_GMAKE=	yes
+USE_GL=		gl glu
+USE_XORG=	x11 xcursor
+USE_LDCONFIG=	yes
+# built with < 4.0 will not sync in multiplayer...
+# ...but it won't build with gcc42 from ports
+#USE_GCC=	4.2+
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-
-USE_SCONS=	yes
-SCONS_ARGS=	prefix="${PREFIX}" datadir="share/${PORTNAME}" \
-		bindir="bin"
-SCONS_BUILDENV=	JAVA_INC="${JAVA_HOME}/include" ${SCONS_ENV}
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
+		-DMARCH_FLAG:STRING=
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-PORTDOCS=	README.html
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
-		${WRKSRC}/rts/build/scons/config.py
-	@${REINPLACE_CMD} -e 's|"make "|"${GMAKE} "|' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
-		${WRKSRC}/rts/System/Platform/Linux/UnixFileSystemHandler.cpp
-
-do-configure:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} \
-		${SCONS_ENV} ${SCONS_ARGS} configure
+	@${REINPLACE_CMD} -E -e '/FIND_PACKAGE.*(Python|JNI)/ d' \
+		${WRKSRC}/tools/unitsync/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|x1F3F|x0F3F|g' \
+		${WRKSRC}/rts/System/FPUCheck.h
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/spring
-	@${ECHO_CMD} '$$HOME/.spring' > ${PREFIX}/etc/spring/datadir
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/Documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
