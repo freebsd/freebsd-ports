@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	tilda
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.9.6
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	Drop down x11 terminal with transparency support
@@ -18,7 +16,8 @@ COMMENT=	Drop down x11 terminal with transparency support
 LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 vte
+USE_GNOME=	gtk20 libglade2 vte
+USE_GMAKE=	yes
 
 DOCS=		AUTHORS ChangeLog README TODO
 
