@@ -15,6 +15,9 @@
 
 . %%RC_SUBR%%
 
+# Set some defaults
+teamspeak_user=${teamspeak_user:-"teamspeak"}
+
 name=teamspeak
 rcvar=${name}_enable
 
