@@ -1,9 +1,9 @@
 Index: src/sysdeps/freebsd.c
 diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
---- src/sysdeps/freebsd.c.orig	2007-07-07 08:53:07.000000000 +0900
-+++ src/sysdeps/freebsd.c	2008-02-19 19:21:10.000000000 +0900
-@@ -21,10 +21,16 @@
- |  along with this program. If not, see http://www.gnu.org/licenses/
+--- src/sysdeps/freebsd.c.orig	2008-10-04 09:45:56.000000000 +0900
++++ src/sysdeps/freebsd.c	2008-10-13 02:35:16.000000000 +0900
+@@ -33,14 +33,20 @@
+ |  as that of the covered work.
  */
  
 +#include <sys/param.h>
@@ -19,7 +19,12 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  
  // extern gboolean force_meminfo_update(void);
-@@ -39,7 +45,9 @@ gkrellm_sys_main_init(void)
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__amd64__)
+ static void scan_for_sensors();
+ #endif
+ 
+@@ -51,13 +57,15 @@ gkrellm_sys_main_init(void)
  	/* We just ignore error, here.  Even if GKrellM doesn't have
  	|  kmem privilege, it runs with available information.
  	*/
@@ -29,7 +34,14 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if (setgid(getgid()) != 0)
  		{
  		fprintf(stderr, "Can't drop setgid privileges.");
-@@ -60,9 +68,6 @@ gkrellm_sys_main_cleanup(void)
+ 		exit(1);
+ 		}
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__amd64__)
+ 	scan_for_sensors();
+ #endif
+ 	if (setuid(getuid()) != 0)
+@@ -72,9 +80,6 @@ gkrellm_sys_main_cleanup(void)
  	{
  	}
  
@@ -39,7 +51,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  static int
  gk_sysctlnametomib(const char *name, int *mibp, size_t *lenp)
  	{
-@@ -78,16 +83,11 @@ gk_sysctlnametomib(const char *name, int
+@@ -90,16 +95,11 @@ gk_sysctlnametomib(const char *name, int
  /* ===================================================================== */
  /* CPU monitor interface */
  
@@ -56,7 +68,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  static int	oid_cp_time[CTL_MAXNAME + 2];
  static size_t	oid_cp_time_len = sizeof(oid_cp_time);
-@@ -97,12 +97,14 @@ void
+@@ -109,12 +109,14 @@ void
  gkrellm_sys_cpu_read_data(void)
  	{
  	long		cp_time[CPUSTATES];
@@ -72,7 +84,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (have_cp_time)
  		{
-@@ -110,6 +112,7 @@ gkrellm_sys_cpu_read_data(void)
+@@ -122,6 +124,7 @@ gkrellm_sys_cpu_read_data(void)
  			   cp_time, &len, 0, 0) < 0)
  			return;
  		}
@@ -80,7 +92,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	else
  		{
  		if (kvmd == NULL)
-@@ -121,6 +124,7 @@ gkrellm_sys_cpu_read_data(void)
+@@ -133,6 +136,7 @@ gkrellm_sys_cpu_read_data(void)
  			     sizeof(cp_time)) != sizeof(cp_time))
  			return;
  		}
@@ -88,7 +100,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	/* Currently, SMP is not supported */
  	gkrellm_cpu_assign_data(0, cp_time[CP_USER], cp_time[CP_NICE],
-@@ -144,8 +148,6 @@ gkrellm_sys_cpu_init(void)
+@@ -156,8 +160,6 @@ gkrellm_sys_cpu_init(void)
  /* ===================================================================== */
  /* Proc monitor interface */
  
@@ -97,7 +109,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #if __FreeBSD_version >= 400000
  #include <sys/user.h>
  #endif
-@@ -163,13 +165,10 @@ gkrellm_sys_cpu_init(void)
+@@ -175,13 +177,10 @@ gkrellm_sys_cpu_init(void)
  #undef KERNEL
  #endif
  
@@ -111,7 +123,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  static int	oid_v_forks[CTL_MAXNAME + 2];
  static int	oid_v_vforks[CTL_MAXNAME + 2];
  static int	oid_v_rforks[CTL_MAXNAME + 2];
-@@ -203,17 +202,19 @@ gkrellm_sys_proc_read_data(void)
+@@ -215,17 +214,19 @@ gkrellm_sys_proc_read_data(void)
  	static int	oid_proc[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
  #endif
  	double		avenrun;
@@ -134,7 +146,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (getloadavg(&avenrun, 1) <= 0)
  		avenrun = 0;
-@@ -234,6 +235,7 @@ gkrellm_sys_proc_read_data(void)
+@@ -246,6 +247,7 @@ gkrellm_sys_proc_read_data(void)
  		if (r_forks >= 0 && r_vforks >= 0 && r_rforks >= 0)
  			n_forks = n_forks + n_vforks + n_rforks;
  		}
@@ -142,7 +154,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	else
  		{
  		/* workaround: Can I get total number of processes? */
-@@ -256,6 +258,7 @@ gkrellm_sys_proc_read_data(void)
+@@ -268,6 +270,7 @@ gkrellm_sys_proc_read_data(void)
  				}
  			}
  		}
@@ -150,7 +162,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  #if __FreeBSD_version >= 400000
  	if (sysctl(oid_proc, 3, NULL, &len, NULL, 0) >= 0)
-@@ -306,10 +309,6 @@ gkrellm_sys_proc_read_users(void)
+@@ -318,10 +321,6 @@ gkrellm_sys_proc_read_users(void)
  #if __FreeBSD_version >= 300000
  #include <devstat.h>
  static struct statinfo	statinfo_cur;
@@ -161,7 +173,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #endif
  
  gchar *
-@@ -467,11 +466,7 @@ gkrellm_sys_disk_init(void)
+@@ -479,11 +478,7 @@ gkrellm_sys_disk_init(void)
  #include <netinet6/tcp6_var.h>
  #endif
  
@@ -173,7 +185,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #endif
  
  
-@@ -570,7 +565,7 @@ gkrellm_sys_inet_read_tcp_data(void)
+@@ -582,7 +577,7 @@ gkrellm_sys_inet_read_tcp_data(void)
  	gint		tcp_status;
  	struct xinpgen	*xig, *oxig;
  	gchar		*buf;
@@ -182,7 +194,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (!initialized)
  		{
-@@ -643,17 +638,14 @@ gkrellm_sys_inet_init(void)
+@@ -655,17 +650,14 @@ gkrellm_sys_inet_init(void)
  /* ===================================================================== */
  /* Memory/Swap monitor interface */
  
@@ -201,7 +213,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  static struct nlist nl_mem[] = {
  #define N_CNT		0
  	{ "_cnt" },
-@@ -675,17 +667,20 @@ static struct nlist nl_mem[] = {
+@@ -687,17 +679,20 @@ static struct nlist nl_mem[] = {
  #endif
  	{ "" }
  };
@@ -226,7 +238,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #else
  	char *header;
  	int hlen, nswap, nswdev, dmmax;
-@@ -722,21 +717,37 @@ swapmode(guint64 *retavail, guint64 *ret
+@@ -734,21 +729,37 @@ swapmode(guint64 *retavail, guint64 *ret
  		}
  	warning--;		/* decrease counter, see end of function */
  
@@ -269,7 +281,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if (kvm_read(kvmd, nl_mem[VM_NSWAP].n_value,
  		     &nswap, sizeof(nswap)) != sizeof(nswap))
  		return(0);
-@@ -930,9 +941,9 @@ static struct mibtab mibs[] = {
+@@ -942,9 +953,9 @@ static struct mibtab mibs[] = {
  #endif
  
  static guint64	swapin,
@@ -282,12 +294,13 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  void
  gkrellm_sys_mem_read_data(void)
-@@ -942,15 +953,14 @@ gkrellm_sys_mem_read_data(void)
+@@ -954,15 +965,14 @@ gkrellm_sys_mem_read_data(void)
  	static gint	swappgsin = -1;
  	static gint	swappgsout = -1;
  	gint		dpagein, dpageout;
 -	struct vmmeter	sum;
- 	guint64		total, used, x_used, free, shared, buffers, cached;
+-	guint64		total, used, x_used, free, shared, buffers, cached;
++	guint64		total, used, x_used, free, shared, buffers = 0, cached;
  	struct vmtotal	vmt;
  	size_t		length_vmt = sizeof(vmt);
  	static int	oid_vmt[] = { CTL_VM, VM_TOTAL };
@@ -300,7 +313,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #endif
  
  #if 0
-@@ -969,60 +979,49 @@ gkrellm_sys_mem_read_data(void)
+@@ -981,60 +991,49 @@ gkrellm_sys_mem_read_data(void)
  		}
  
  	shared = 0;
@@ -398,7 +411,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if (nl_mem[0].n_type == 0)
  		if (kvm_nlist(kvmd, nl_mem) < 0 || nl_mem[0].n_type == 0)
  			return;
-@@ -1039,6 +1038,7 @@ gkrellm_sys_mem_read_data(void)
+@@ -1051,6 +1050,7 @@ gkrellm_sys_mem_read_data(void)
  	cached = sum.v_cache_count << pshift;
  	used = x_used - buffers - cached;
  	gkrellm_mem_assign_data(total, used, free, shared, buffers, cached);
@@ -406,7 +419,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if (swappgsin < 0)
  		{
  		dpagein = 0;
-@@ -1046,11 +1046,12 @@ gkrellm_sys_mem_read_data(void)
+@@ -1058,11 +1058,12 @@ gkrellm_sys_mem_read_data(void)
  		}
  	else
  		{
@@ -421,7 +434,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (dpagein > 0 || dpageout > 0 || first_time_done == 0)
  		{
-@@ -1078,8 +1079,8 @@ gkrellm_sys_mem_init(void)
+@@ -1090,8 +1091,8 @@ gkrellm_sys_mem_init(void)
  /* ===================================================================== */
  /* Battery monitor interface */
  
@@ -431,7 +444,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #include <machine/apm_bios.h>
  #define	APMDEV		"/dev/apm"
  
-@@ -1087,6 +1088,7 @@ gkrellm_sys_mem_init(void)
+@@ -1099,6 +1100,7 @@ gkrellm_sys_mem_init(void)
  #define	L_ON_LINE		1
  #define	L_CHARGING		3
  #define L_UNKNOWN		0xFF
@@ -439,7 +452,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  /* following two definitions are taken from sys/dev/acpica/acpiio.h */
  #define ACPI_BATT_STAT_CHARGING		0x0002
-@@ -1113,16 +1115,18 @@ gkrellm_sys_battery_read_data(void)
+@@ -1125,16 +1127,18 @@ gkrellm_sys_battery_read_data(void)
  	size_t		size;
  	int		acpi_info[4];
  	int		i;
@@ -460,7 +473,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  		/*
  		 * XXX: Disable getting battery information via ACPI
  		 * to support multiple batteries via APM sim until
-@@ -1162,6 +1166,7 @@ gkrellm_sys_battery_read_data(void)
+@@ -1174,6 +1178,7 @@ gkrellm_sys_battery_read_data(void)
  			return;
  		}
  
@@ -468,7 +481,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if ((f = open(APMDEV, O_RDONLY)) == -1)
  		return;
  	if ((r = ioctl(f, APMIO_GETINFO, &info)) == -1) {
-@@ -1219,6 +1224,7 @@ gkrellm_sys_battery_read_data(void)
+@@ -1231,6 +1236,7 @@ gkrellm_sys_battery_read_data(void)
  #endif
  
  	close(f);
@@ -476,7 +489,16 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	}
  
  gboolean
-@@ -1274,7 +1280,6 @@ static VoltDefault	voltdefault0[] =
+@@ -1258,7 +1264,7 @@ gkrellm_sys_battery_init(void)
+ /* ===================================================================== */
+ /* Sensor monitor interface */
+ 
+-#if defined(__i386__)
++#if defined(__i386__) || defined(__amd64__)
+ 
+ typedef struct
+ 	{
+@@ -1286,7 +1292,6 @@ static VoltDefault	voltdefault0[] =
  	};
  
  #include <dirent.h>
@@ -484,7 +506,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  #include <machine/cpufunc.h>
  #if __FreeBSD_version >= 500042
  #include <dev/smbus/smb.h>
-@@ -1286,6 +1291,7 @@ static VoltDefault	voltdefault0[] =
+@@ -1298,6 +1303,7 @@ static VoltDefault	voltdefault0[] =
  #define INTERFACE_IO		0
  #define INTERFACE_SMB		1
  #define INTERFACE_ACPI		2
@@ -492,7 +514,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  /* Addresses to use for /dev/io */
  #define WBIO1			0x295
-@@ -1319,7 +1325,7 @@ get_data(int iodev, u_char command, int 
+@@ -1331,7 +1337,7 @@ get_data(int iodev, u_char command, int 
  		struct smbcmd cmd;
  
  		bzero(&cmd, sizeof(cmd));
@@ -501,7 +523,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  		cmd.slave         = 0x5a;
  		cmd.cmd           = command;
  		if (ioctl(iodev, SMB_READB, (caddr_t)&cmd) == -1)
-@@ -1345,6 +1351,8 @@ gkrellm_sys_sensors_get_temperature(gcha
+@@ -1357,6 +1363,8 @@ gkrellm_sys_sensors_get_temperature(gcha
  
  	{
  	u_char byte;
@@ -510,7 +532,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (interface == MBMON_INTERFACE)
  		{
-@@ -1354,15 +1362,24 @@ gkrellm_sys_sensors_get_temperature(gcha
+@@ -1366,15 +1374,24 @@ gkrellm_sys_sensors_get_temperature(gcha
  
  	if (interface == INTERFACE_ACPI)
  		{
@@ -538,7 +560,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	if (get_data(iodev, LM78_TEMP, interface, &byte))
  		{
  		if (temp)
-@@ -1435,7 +1452,7 @@ gkrellm_sys_sensors_init(void)
+@@ -1447,7 +1464,7 @@ gkrellm_sys_sensors_init(void)
  	gchar		mib_name[256], label[8];
  	gint		interface, id;
  	int		oid_acpi_temp[CTL_MAXNAME + 2];
@@ -547,7 +569,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  	GList		*list;
  	struct freebsd_sensor *sensor;
  
-@@ -1443,10 +1460,12 @@ gkrellm_sys_sensors_init(void)
+@@ -1455,10 +1472,12 @@ gkrellm_sys_sensors_init(void)
  	*/
  	gkrellm_sys_sensors_mbmon_check(TRUE);
  
@@ -562,7 +584,7 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  		if (gk_sysctlnametomib(mib_name, oid_acpi_temp,
  				       &oid_acpi_temp_len) < 0)
  			break;
-@@ -1458,7 +1477,27 @@ gkrellm_sys_sensors_init(void)
+@@ -1470,7 +1489,27 @@ gkrellm_sys_sensors_init(void)
  		gkrellm_sensors_add_sensor(SENSOR_TEMPERATURE, NULL,
  					   mib_name, 0, 0,
  					   interface, 1.0, 0.0, NULL, label);
@@ -591,3 +613,18 @@ diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
  
  	if (freebsd_sensor_list)
  		{
+@@ -1504,13 +1543,7 @@ sensors_add_sensor(gint type, gchar *id_
+ 	sensor->factor = factor;
+ 	sensor->offset = offset;
+ 	sensor->default_label = default_label ? g_strdup(default_label) : NULL;
+-	if (g_list_append(freebsd_sensor_list, sensor) == NULL) {
+-		g_free(sensor->id_name);
+-		if (sensor->default_label)
+-			g_free(sensor->default_label);
+-		g_free(sensor);
+-		return FALSE;
+-	}
++	freebsd_sensor_list = g_list_append(freebsd_sensor_list, sensor);
+ 	return TRUE;
+ }
+ 
