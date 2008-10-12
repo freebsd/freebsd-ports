@@ -321,7 +321,6 @@ bin/room
 bin/rpatch
 bin/rt
 bin/rt_bot_faces
-bin/rt_simple
 bin/rtarea
 bin/rtcell
 bin/rtcheck
@@ -420,7 +419,6 @@ include/bltVecInt.h
 include/bltVector.h
 include/bltWait.h
 include/bltWin.h
-include/bot.h
 include/brlcad/RtServerImpl.h
 include/brlcad/anim.h
 include/brlcad/blt.h
@@ -453,6 +451,7 @@ include/brlcad/bltVector.h
 include/brlcad/bltWait.h
 include/brlcad/bltWin.h
 include/brlcad/bn.h
+include/brlcad/bot.h
 include/brlcad/brep.h
 include/brlcad/brlcad.h
 include/brlcad/brlcad_config.h
@@ -511,7 +510,6 @@ include/brlcad/vector_x86.h
 include/brlcad/vfont-if.h
 include/brlcad/vmath.h
 include/brlcad/wdb.h
-include/fixpt.h
 include/itcl.h
 include/itclDecls.h
 include/itclInt.h
@@ -870,17 +868,17 @@ lib/tkimg.a
 lib/tkimg.la
 lib/tkimg.so
 lib/tkimg.so.0
-libdata/pkgconfig/bn.pc
-libdata/pkgconfig/brlcad.pc
-libdata/pkgconfig/bu.pc
-libdata/pkgconfig/dm.pc
-libdata/pkgconfig/fb.pc
-libdata/pkgconfig/fft.pc
-libdata/pkgconfig/multispectral.pc
-libdata/pkgconfig/optical.pc
-libdata/pkgconfig/pkg.pc
-libdata/pkgconfig/rt.pc
-libdata/pkgconfig/wdb.pc
+libdata/pkgconfig/libbn.pc
+libdata/pkgconfig/libbrlcad.pc
+libdata/pkgconfig/libbu.pc
+libdata/pkgconfig/libdm.pc
+libdata/pkgconfig/libfb.pc
+libdata/pkgconfig/libfft.pc
+libdata/pkgconfig/libmultispectral.pc
+libdata/pkgconfig/liboptical.pc
+libdata/pkgconfig/libpkg.pc
+libdata/pkgconfig/librt.pc
+libdata/pkgconfig/libwdb.pc
 %%DATADIR%%/%%PORTVERSION%%/AUTHORS
 %%DATADIR%%/%%PORTVERSION%%/COPYING
 %%DATADIR%%/%%PORTVERSION%%/HACKING
@@ -958,7 +956,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/doc/legal/lgpl.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/mater.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/matrix.txt
-%%DATADIR%%/%%PORTVERSION%%/doc/mged.tr
+%%DATADIR%%/%%PORTVERSION%%/doc/mged.sh
 %%DATADIR%%/%%PORTVERSION%%/doc/mk.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/movie.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/old-mged.tr
@@ -1276,6 +1274,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/nirt/csv-gap.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/csv.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/default.nrt
+%%DATADIR%%/%%PORTVERSION%%/nirt/entryexit.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/gap1.nrt
 %%DATADIR%%/%%PORTVERSION%%/nirt/gap2.nrt
 %%DATADIR%%/%%PORTVERSION%%/pix/bldg391.log
@@ -1302,7 +1301,6 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g-xxx_facets.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/g_transfer.c
-%%DATADIR%%/%%PORTVERSION%%/sample_applications/g_xxx.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/nurb_example.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/pl-dm.c
 %%DATADIR%%/%%PORTVERSION%%/sample_applications/raydebug.tcl
