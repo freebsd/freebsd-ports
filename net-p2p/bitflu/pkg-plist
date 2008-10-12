@@ -1,0 +1,17 @@
+bin/bitflu
+bin/fluconvert.pl
+%%PORTDOCS%%%%DOCSDIR%%/fluconvert-README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bitflu.config
+%%PLUGINSDIR%%/Bitflu/00_StorageFarabDb.pm
+%%PLUGINSDIR%%/Bitflu/00_StorageVFS.pm
+%%PLUGINSDIR%%/Bitflu/10_AdminHTTP.pm
+%%PLUGINSDIR%%/Bitflu/10_AdminTelnet.pm
+%%PLUGINSDIR%%/Bitflu/20_DownloadBitTorrent.pm
+%%PLUGINSDIR%%/Bitflu/20_DownloadHTTP.pm
+%%PLUGINSDIR%%/Bitflu/30_SourcesBitTorrent.pm
+%%PLUGINSDIR%%/Bitflu/30_SourcesBitTorrentKademlia.pm
+%%PLUGINSDIR%%/Bitflu/99_Cron.pm
+@dirrm %%PLUGINSDIR%%/Bitflu
+@dirrm %%PLUGINSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
