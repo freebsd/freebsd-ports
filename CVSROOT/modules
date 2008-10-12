@@ -584,6 +584,7 @@ arm-rtems-objc                  ports/devel/arm-rtems-objc
 armagetron                      ports/games/armagetron
 arora                           ports/www/arora
 aros-sdk                        ports/devel/aros-sdk
+arp-scan                        ports/net/arp-scan
 arp-sk                          ports/net/arp-sk
 arpack                          ports/math/arpack
 arpack++                        ports/math/arpack++
@@ -7255,6 +7256,7 @@ libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
 libopensync-plugin-evolution2-devel  ports/deskutils/libopensync-plugin-evolution2-devel
 libopensync-plugin-python       ports/deskutils/libopensync-plugin-python
 libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
+libopensync-plugin-sunbird      ports/deskutils/libopensync-plugin-sunbird
 libopensync-plugin-synce        ports/deskutils/libopensync-plugin-synce
 libopensync-plugin-synce-devel  ports/deskutils/libopensync-plugin-synce-devel
 libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
@@ -8635,6 +8637,7 @@ multi-aterm                     ports/x11/multi-aterm
 multi-backgrounds-daemon        ports/deskutils/multi-backgrounds-daemon
 multi-gnome-terminal            ports/x11/multi-gnome-terminal
 multiget                        ports/ftp/multiget
+multisort                       ports/www/multisort
 multisuck                       ports/news/multisuck
 multisync                       ports/deskutils/multisync
 multisync-backup                ports/deskutils/multisync-backup
@@ -9680,6 +9683,7 @@ p5-ApacheDBILogConfig           ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger              ports/databases/p5-ApacheDBILogger
 p5-App-CLI                      ports/devel/p5-App-CLI
 p5-App-Cache                    ports/devel/p5-App-Cache
+p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
 p5-App-Info                     ports/devel/p5-App-Info
 p5-App-Options                  ports/devel/p5-App-Options
@@ -11442,6 +11446,7 @@ p5-Net-ACL                      ports/net-mgmt/p5-Net-ACL
 p5-Net-AIM                      ports/net-im/p5-Net-AIM
 p5-Net-AOLIM                    ports/net-im/p5-Net-AOLIM
 p5-Net-ARP                      ports/net/p5-Net-ARP
+p5-Net-Abuse-Utils              ports/net-mgmt/p5-Net-Abuse-Utils
 p5-Net-Address-Ethernet         ports/net/p5-Net-Address-Ethernet
 p5-Net-Address-IPv4-Local       ports/net/p5-Net-Address-IPv4-Local
 p5-Net-Akismet                  ports/www/p5-Net-Akismet
@@ -12814,6 +12819,7 @@ p5-apachedbilogconfig           ports/databases/p5-ApacheDBILogConfig
 p5-apachedbilogger              ports/databases/p5-ApacheDBILogger
 p5-app-cache                    ports/devel/p5-App-Cache
 p5-app-cli                      ports/devel/p5-App-CLI
+p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-options                  ports/devel/p5-App-Options
@@ -14601,6 +14607,7 @@ p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
 p5-nagios-plugins-memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-namespace-clean              ports/devel/p5-namespace-clean
 p5-net                          ports/net/p5-Net
+p5-net-abuse-utils              ports/net-mgmt/p5-Net-Abuse-Utils
 p5-net-acl                      ports/net-mgmt/p5-Net-ACL
 p5-net-address-ethernet         ports/net/p5-Net-Address-Ethernet
 p5-net-address-ipv4-local       ports/net/p5-Net-Address-IPv4-Local
@@ -17442,6 +17449,7 @@ processing-devel                ports/graphics/processing-devel
 procmail                        ports/mail/procmail
 procmap                         ports/sysutils/procmap
 prodosemu                       ports/emulators/prodosemu
+profont                         ports/x11-fonts/profont
 proftpd                         ports/ftp/proftpd
 proftpd-devel                   ports/ftp/proftpd-devel
 proftpd-mysql                   ports/ftp/proftpd-mysql
@@ -18229,6 +18237,7 @@ pydf                            ports/sysutils/pydf
 pyephem                         ports/astro/pyephem
 pygmy                           ports/mail/pygmy
 pygopherd                       ports/net/pygopherd
+pyjamas                         ports/www/pyjamas
 pykawari                        ports/games/pykawari
 pyla                            ports/comms/pyla
 pylint                          ports/devel/pylint
@@ -21167,6 +21176,7 @@ unrtf                           ports/textproc/unrtf
 unshield                        ports/archivers/unshield
 untahris                        ports/games/untahris
 untar                           ports/archivers/untar
+unworkable                      ports/net-p2p/unworkable
 unzip                           ports/archivers/unzip
 unzoo                           ports/archivers/unzoo
 uox3                            ports/games/uox3
@@ -21518,6 +21528,7 @@ webcheck                        ports/www/webcheck
 webcopy                         ports/www/webcopy
 webcpp                          ports/textproc/webcpp
 webcrawl                        ports/www/webcrawl
+weberp                          ports/finance/weberp
 webfonts                        ports/x11-fonts/webfonts
 webfs                           ports/www/webfs
 webfwlog                        ports/security/webfwlog
