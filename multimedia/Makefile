@@ -105,6 +105,7 @@
     SUBDIR += kissdx
     SUBDIR += kmenc15
     SUBDIR += kmplayer
+    SUBDIR += kmplayer-kde4
     SUBDIR += konverter
     SUBDIR += kplayer
     SUBDIR += ksubeditor
