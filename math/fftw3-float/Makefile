@@ -7,7 +7,6 @@
 
 PORTREVISION=	0
 
-MAINTAINER=	ahze@ahze.net
 COMMENT=	Fast C routines (Single Percision)
 
 FFTW3_FLAVOR=	float
