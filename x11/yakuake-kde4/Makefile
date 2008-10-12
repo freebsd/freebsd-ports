@@ -1,26 +1,22 @@
 # New ports collection makefile for:   yakuake
-# Date created:                        1st November, 2005
-# Whom:                                decept
+# Date created:                        7th September, 2008
+# Whom:                                Shane Bell <decept0@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	yakuake
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.9.4
 CATEGORIES=	x11 kde
 MASTER_SITES=	BERLIOS
+PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	decept0@gmail.com
-COMMENT=	Quake-style terminal emulator based on KDE's Konsole
+COMMENT=	Drop-down terminal emulator based on KDE's Konsole
 
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_KDEBASE_VER=3
-USE_GMAKE=	yes
+USE_CMAKE=	yes
+USE_KDE4=	kdebase kdeprefix automoc4
 USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
-
-CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
