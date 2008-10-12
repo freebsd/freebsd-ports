@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://research.edm.uhasselt.be/jori/klat/ \
 		http://research.edm.luc.ac.be/jori/klat/
 
-MAINTAINER=	laddassm@hotmail.com
+MAINTAINER=	laddassm@gmail.com
 COMMENT=	A LaTeX source editor for KDE
 
 GNU_CONFIGURE=	yes
