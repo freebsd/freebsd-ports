@@ -1,5 +1,3 @@
-bin/kdcraw
-include/libkdcraw/dcrawbinary.h
 include/libkdcraw/dcrawinfocontainer.h
 include/libkdcraw/dcrawsettingswidget.h
 include/libkdcraw/kdcraw.h
