@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -18,6 +19,8 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 		FFTW3	"Use FFTW"				on  \
 		GSL	"Use GNU Scientific Library"		on  \
 		GUILE	"Use Guile as the extension language"	on  \
+		GAUCHE	"Use Gauche as the extension language"	off  \
+		S7	"Use S7 as the extension language"	off  \
 		LADSPA	"Include support for LADSPA plugins"	on  \
 		NLS	"Native Language Support"		on  \
 		RUBY	"Use Ruby as the extension language"	off \
@@ -61,10 +64,24 @@ CONFIGURE_ARGS+=	--without-gsl
 
 .if !defined(WITHOUT_GUILE)
 LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
-PLIST_SUB+=	GUILE=""
+PLIST_SUB+=	SCHEME=""
 .else
 CONFIGURE_ARGS+=	--without-guile
-PLIST_SUB+=	GUILE="@comment "
+.endif
+
+.if !defined(WITHOUT_GAUCHE)
+CONFIGURE_ARGS+=	--with-gauche
+LIB_DEPENDS+=	gauche.0:${PORTSDIR}/lang/gauche
+PLIST_SUB+=	SCHEME=""
+.else
+CONFIGURE_ARGS+=	--without-gauche
+.endif
+
+.if !defined(WITHOUT_S7)
+CONFIGURE_ARGS+=	--with-s7
+PLIST_SUB+=	SCHEME=""
+.else
+CONFIGURE_ARGS+=	--without-s7
 .endif
 
 .if !defined(WITHOUT_LADSPA)
@@ -86,6 +103,7 @@ PLIST_SUB+=	NLS="@comment "
 USE_RUBY=	yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 CONFIGURE_ARGS+=	--with-ruby
+PLIST_SUB+=	SCHEME="@comment "
 .endif
 
 .if defined(WITHOUT_X11)
@@ -119,6 +137,22 @@ do-install:
 		${PREFIX}/share/locale/de/LC_MESSAGES/snd.mo
 .endif
 .if !defined(WITHOUT_GUILE)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
+	@${MKDIR} ${DATADIR}/tools
+	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
+	@${MKDIR} ${DATADIR}/sndins/samples
+	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
+.endif
+.if !defined(WITHOUT_GAUCHE)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
+	@${MKDIR} ${DATADIR}/tools
+	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
+	@${MKDIR} ${DATADIR}/sndins/samples
+	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
+.endif
+.if !defined(WITHOUT_S7)
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
 	@${MKDIR} ${DATADIR}/tools
