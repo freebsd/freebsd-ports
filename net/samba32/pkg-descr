@@ -1,0 +1,8 @@
+Samba is an Open Source/Free Software suite that provides seamless file
+and print services to SMB/CIFS clients.
+
+Samba is freely available, unlike other SMB/CIFS implementations, and
+allows for interoperability between Linux/Unix servers and Windows-based
+clients.
+
+WWW: http://www.samba.org/
