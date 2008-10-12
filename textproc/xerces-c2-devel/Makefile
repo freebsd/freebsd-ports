@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xerces-c2
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTNAME=	xerces-c2-devel
+PORTVERSION=	2.8.0
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_APACHE_XML}
-MASTER_SITE_SUBDIR=	xerces-c/source
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	xerces/c/sources
 DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	kenm@icarz.com
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Validating XML parser from the Apache XML Project
 
 OPTIONS=	THREADS "Build a thread enabled shared library." on \
