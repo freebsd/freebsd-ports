@@ -1,5 +1,5 @@
---- features/org.eclipse.equinox.executable/library/gtk/build.sh.orig	2008-08-02 22:30:31.469155349 -0400
-+++ features/org.eclipse.equinox.executable/library/gtk/build.sh	2008-08-02 22:32:13.519781895 -0400
+--- features/org.eclipse.equinox.executable/library/gtk/build.sh.orig	2008-09-30 19:29:09.000000000 -0400
++++ features/org.eclipse.equinox.executable/library/gtk/build.sh	2008-09-30 19:28:40.000000000 -0400
 @@ -53,6 +53,7 @@
  	"Linux")
  		makefile="make_linux.mak"
@@ -8,7 +8,7 @@
  		case $MODEL in
  			"x86_64")
  				defaultOSArch="x86_64"
-@@ -93,9 +94,30 @@
+@@ -94,9 +95,31 @@
  				;;
  		esac
  		;;
@@ -16,6 +16,7 @@
 +		makefile="make_freebsd.mak"
 +		defaultOS="freebsd"
 +		MAKE=gmake
++		javaHome="$JAVA_HOME"
 +		case $MODEL in
 +			"amd64")
 +				defaultOSArch="amd64"
@@ -36,19 +37,19 @@
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
 +		MAKE=make
+ 		javaHome="/usr/jdk/jdk1.5.0_01"
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  		#PATH=/usr/ccs/bin:/opt/SUNWspro/bin:$PATH
- 		PATH=/usr/ccs/bin:/export/home/SUNWspro/bin:$PATH
-@@ -149,7 +171,7 @@
- DEFAULT_OS="$defaultOS"
- DEFAULT_OS_ARCH="$defaultOSArch"
- DEFAULT_WS="$defaultWS"
--JAVA_HOME=$javaHome
-+#JAVA_HOME=$javaHome
+@@ -154,7 +177,7 @@
+ JAVA_HOME=$javaHome
  DEFAULT_JAVA=$defaultJava
  
- export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT_OS DEFAULT_OS_ARCH DEFAULT_WS JAVA_HOME DEFAULT_JAVA
-@@ -157,13 +179,13 @@
+-LIBRARY_DIR="../../../org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.$defaultWS.$defaultOS.$defaultOSArch"
++LIBRARY_DIR="../../../../plugins/org.eclipse.equinox.launcher.$defaultWS.$defaultOS.$defaultOSArch"
+ OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
+ 
+ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT_OS DEFAULT_OS_ARCH DEFAULT_WS JAVA_HOME DEFAULT_JAVA LIBRARY_DIR
+@@ -162,13 +185,13 @@
  # If the OS is supported (a makefile exists)
  if [ "$makefile" != "" ]; then
  	if [ "$extraArgs" != "" ]; then

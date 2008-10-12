@@ -1,12 +1,9 @@
---- features/org.eclipse.rcp/feature.xml.orig	2008-08-02 15:35:43.000000000 -0400
-+++ features/org.eclipse.rcp/feature.xml	2008-08-02 15:36:20.000000000 -0400
-@@ -205,7 +205,18 @@
-          version="0.0.0"
-          fragment="true"
+--- features/org.eclipse.rcp/feature.xml.orig	2008-09-26 19:47:12.000000000 -0400
++++ features/org.eclipse.rcp/feature.xml	2008-09-26 19:46:59.000000000 -0400
+@@ -207,6 +207,17 @@
           unpack="false"/>
--         
-+
-+  <plugin
+ 
+    <plugin
 +         id="org.eclipse.swt.gtk.freebsd.x86"
 +         os="freebsd"
 +         ws="gtk"
@@ -16,10 +13,11 @@
 +         version="0.0.0"
 +         fragment="true"
 +         unpack="false"/>
-+ 
-   <plugin
++
++   <plugin
           id="org.eclipse.swt.gtk.linux.s390"
           os="linux"
+          ws="gtk"
 @@ -273,6 +284,17 @@
           unpack="false"/>
  
@@ -38,12 +36,10 @@
           id="org.eclipse.swt.carbon.macosx"
           os="macosx"
           ws="carbon"
-@@ -448,6 +470,17 @@
-          version="0.0.0"
-          fragment="true"
-          unpack="true"/>
-+
-+        <plugin
+@@ -448,6 +470,16 @@
+          fragment="true"/>
+ 
+    <plugin
 +         id="org.eclipse.equinox.launcher.gtk.freebsd.x86"
 +         os="freebsd"
 +         ws="gtk"
@@ -51,17 +47,16 @@
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"
-+         fragment="true"
-+         unpack="true"/>
-          
-     <plugin
-          id="org.eclipse.equinox.launcher.gtk.linux.s390"
-@@ -492,6 +525,17 @@
-          version="0.0.0"
-          fragment="true"
-          unpack="true"/>
++         fragment="true"/>
 +
-+        <plugin
++   <plugin
+          id="org.eclipse.equinox.launcher.gtk.linux.s390"
+          os="linux"
+          ws="gtk"
+@@ -488,6 +520,16 @@
+          fragment="true"/>
+ 
+    <plugin
 +         id="org.eclipse.equinox.launcher.gtk.freebsd.amd64"
 +         os="freebsd"
 +         ws="gtk"
@@ -69,8 +64,9 @@
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"
-+         fragment="true"
-+         unpack="true"/>
-          
- 	<plugin
++         fragment="true"/>
++
++   <plugin
           id="org.eclipse.equinox.launcher.motif.aix.ppc"
+          os="aix"
+          ws="motif"
