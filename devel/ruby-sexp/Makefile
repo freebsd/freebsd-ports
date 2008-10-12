@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A ruby library to work with s-expressions
 
-RUN_DEPENDS=	rubygem-rparsec:${PORTSDIR}/devel/rubygem-rparsec
+RUN_DEPENDS=	rubygem-rparsec>0:${PORTSDIR}/devel/rubygem-rparsec
 
 USE_RUBY=	yes
 NO_BUILD=	yes
