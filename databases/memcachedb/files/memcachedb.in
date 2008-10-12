@@ -18,7 +18,7 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-command="%%PREFIX%%/sbin/${name}"
+command="%%PREFIX%%/bin/${name}"
 
 : ${memcachedb_flags="-p11211 -l 127.0.0.1 -d -u nobody -f /var/db/memcachedb/default.db -H /var/db/memcachedb -P /var/run/memcachedb.pid"}
 

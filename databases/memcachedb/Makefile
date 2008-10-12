@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	memcachedb
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://freebsd.csie.nctu.edu.tw/~gslin/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meritus@innervision.pl
 COMMENT=	Distributed storage system designed for persistent
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
@@ -24,7 +22,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 LDFLAGS=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
 MCDBDIR?=	/var/db/memcachedb
-USE_BDB=	46+
+USE_BDB=	47+
 USE_RC_SUBR=	${PORTNAME}
 
 post-install:
