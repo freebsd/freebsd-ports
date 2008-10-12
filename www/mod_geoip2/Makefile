@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 
 CONFLICTS=	mod_geoip-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 USE_APACHE=	2.0+
 MODULENAME=	mod_geoip
