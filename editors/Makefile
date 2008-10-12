@@ -82,6 +82,7 @@
     SUBDIR += kate-plugins
     SUBDIR += kile
     SUBDIR += klat
+    SUBDIR += klat4
     SUBDIR += koffice-kde3
     SUBDIR += komodo-edit
     SUBDIR += kxmleditor
