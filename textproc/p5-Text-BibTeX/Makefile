@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:C/$/:text,btparse/g}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AM/AMBS/Text/:text \
