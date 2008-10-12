@@ -477,6 +477,7 @@
     SUBDIR += xxkb
     SUBDIR += xzoom
     SUBDIR += yakuake
+    SUBDIR += yakuake-kde4
     SUBDIR += yalias
     SUBDIR += yeahconsole
     SUBDIR += yelp
