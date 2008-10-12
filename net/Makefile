@@ -681,6 +681,7 @@
     SUBDIR += pear-Services_Pingback
     SUBDIR += pear-URI_Template
     SUBDIR += pear-XML_RPC
+    SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-cvsclient
     SUBDIR += pecl-geoip
     SUBDIR += pecl-radius
