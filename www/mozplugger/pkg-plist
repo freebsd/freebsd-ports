@@ -1,5 +1,6 @@
-bin/mozplugger-helper
 bin/mozplugger-controller
+bin/mozplugger-helper
+bin/mozplugger-linker
 etc/mozpluggerrc
 lib/browser_plugins/mozplugger.so
 @dirrmtry lib/browser_plugins
