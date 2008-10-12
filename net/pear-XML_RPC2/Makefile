@@ -1,31 +1,53 @@
-# Ports collection makefile for:  pear-XML_RPC
-# Date created:		7 Feb 2007
-# Whom:			Alex Dupre <ale@FreeBSD.org>
+# Ports collection makefile for:  pear-XML_RPC2
+# Date created:		11 September 2008
+# Whom:			Wen Heping <wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	XML_RPC
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTNAME=	XML_RPC2
+PORTVERSION=	1.0.5
 CATEGORIES=	net devel pear
 
-MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	PHP implementation of the XML-RPC protocol
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	XML-RPC client/server library
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
+		${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	xml
+USE_PHP=	curl
 
 CATEGORY=	XML
-FILES=		RPC.php RPC/Server.php RPC/Dump.php
-TESTS=		allgot.inc empty-value-struct.php empty-value.php \
-		extra-lines.php protoport.php test_Dump.php types.php
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/RPC
-	@${MV} ${WRKSRC}/Server.php ${WRKSRC}/Dump.php ${WRKSRC}/RPC
+FILES=		XML/RPC2/Backend/Php/Value/Array.php \
+		XML/RPC2/Backend/Php/Value/Base64.php \
+		XML/RPC2/Backend/Php/Value/Boolean.php \
+		XML/RPC2/Backend/Php/Value/Datetime.php \
+		XML/RPC2/Backend/Php/Value/Double.php \
+		XML/RPC2/Backend/Php/Value/Integer.php \
+		XML/RPC2/Backend/Php/Value/Scalar.php \
+		XML/RPC2/Backend/Php/Value/String.php \
+		XML/RPC2/Backend/Php/Value/Struct.php \
+		XML/RPC2/Backend/Php/Client.php \
+		XML/RPC2/Backend/Php/Request.php \
+		XML/RPC2/Backend/Php/Response.php \
+		XML/RPC2/Backend/Php/Server.php \
+		XML/RPC2/Backend/Php/Value.php \
+		XML/RPC2/Backend/Xmlrpcext/Client.php \
+		XML/RPC2/Backend/Xmlrpcext/Server.php \
+		XML/RPC2/Backend/Xmlrpcext/Value.php \
+		XML/RPC2/Server/CallHandler/Class.php \
+		XML/RPC2/Server/CallHandler/Instance.php \
+		XML/RPC2/Server/CallHandler.php \
+		XML/RPC2/Server/Method.php \
+		XML/RPC2/Util/HTTPRequest.php \
+		XML/RPC2/Backend.php \
+		XML/RPC2/CachedClient.php \
+		XML/RPC2/CachedServer.php \
+		XML/RPC2/Client.php \
+		XML/RPC2/Exception.php \
+		XML/RPC2/Server.php \
+		XML/RPC2/Value.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
