@@ -83,7 +83,7 @@ sbin/nmbd
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
-%%SMBPASS%%%%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
+%%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
 %%EXAMPLESDIR%%/pcap2nbench/COPYING
 %%EXAMPLESDIR%%/pcap2nbench/Makefile
 %%EXAMPLESDIR%%/pcap2nbench/README
