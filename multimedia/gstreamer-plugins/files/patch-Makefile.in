@@ -1,9 +1,10 @@
---- Makefile.in.orig	Tue Jun  5 12:43:40 2007
-+++ Makefile.in	Tue Jun  5 12:43:53 2007
-@@ -423,14 +423,12 @@
+--- Makefile.in.orig	2008-10-02 22:46:23.000000000 +0000
++++ Makefile.in	2008-10-12 17:59:39.000000000 +0000
+@@ -359,19 +359,15 @@
+ 	gst-libs 		\
  	gst sys $(SUBDIRS_EXT) 	\
  	tools 			\
- 	tests 			\
+-	tests 			\
 -	docs			\
  	po 			\
  	common 			\
@@ -15,3 +16,7 @@
  	gst-libs		\
  	gst sys ext		\
  	tools 			\
+-	tests 			\
+ 	po 			\
+ 	common 			\
+ 	m4 			\
