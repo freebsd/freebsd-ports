@@ -1,11 +1,11 @@
---- build.xml.orig	2008-08-04 19:39:49.000000000 -0400
-+++ build.xml	2008-08-04 19:17:16.000000000 -0400
+--- build.xml.orig	2008-09-29 19:16:32.000000000 -0400
++++ build.xml	2008-09-29 19:19:37.000000000 -0400
 @@ -1,7 +1,7 @@
  <project name="Eclipse SDK Source Build" default="run" basedir=".">
  
  	<!--  default target that runs complete build  -->
 -	<target name="run" depends="fetch,insertBuildId,compile,install" />
-+	<target name="run" depends="fetch,insertBuildId,compile,compilelibs,install" />
++	<target name="run" depends="fetch,insertBuildId,compilelibs,compile,install" />
  
  	<!--  all features required to build eclipse sdk and javadoc  -->
  	<target name="allElements">
@@ -26,11 +26,11 @@
  		<copy todir="${linux.gtk.x86_64.rootfiles}">
  			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.x86_64" includes="
  				about_files/mpl-v11.txt" />
-@@ -71,6 +81,32 @@
+@@ -71,6 +81,25 @@
  		<record name="compilelog.txt" action="stop" />
  	</target>
  
-+        <target name="compilelibs" depends="init,clean,compile" if="libsconfig">
++        <target name="compilelibs" depends="init,clean" if="libsconfig">
 +		<echo message="Compiling SWT native libraries..."/>
 +		<ant dir="${buildDirectory}/plugins/org.eclipse.swt.${installWs}.${installOs}.${installArch}" antfile="build.xml" target="build.jnilibs"/>
 +
@@ -39,13 +39,6 @@
 +                <exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
 +                        <arg line="build.sh install" />
 +                </exec>
-+
-+                <property name="launcherfragment" value="org.eclipse.equinox.launcher.${installWs}.${installOs}.${installArch}" />
-+                <copy todir="${buildDirectory}/plugins/${launcherfragment}">
-+			<fileset dir="${launcherlibs}/bin/${installWs}/${installOs}/${installArch}">
-+                                <include name="**/*.so" />
-+                        </fileset>
-+                </copy>
 +
 +		<echo message="Compiling liblocalfile..."/>
 +                <exec dir="plugins/org.eclipse.core.filesystem/natives/unix/freebsd" executable="make" failonerror="true" />
@@ -59,7 +52,7 @@
  	<!--create an installable eclipse runtime-->
  	<target name="install" depends="init">
  		<echo message="Assembling..." />
-@@ -277,6 +313,8 @@
+@@ -277,6 +306,8 @@
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-motif-x86" />
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-s390" />
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="linux-gtk-s390x" />								
@@ -68,7 +61,7 @@
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="solaris-gtk-x86" />
  				<equals arg1="${installOs}-${installWs}-${installArch}" arg2="hpux-motif-PA_RISC" />
  			</or>
-@@ -284,7 +322,10 @@
+@@ -284,7 +315,10 @@
  
  		<!--used to add doc plug-ins to result after initial assembly-->
  		<condition property="archive.format" value="tar">

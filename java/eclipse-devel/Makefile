@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eclipse-devel
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200806172000
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200809111700
 DISTNAME=	eclipse-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -18,7 +18,7 @@ COMMENT=	An open extensible IDE for anything and nothing in particular
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip \
-		${EXTRACT_DEPENDS} 
+		unzip:${PORTSDIR}/archivers/unzip
 PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
 
 ECLIPSE=	${PORTNAME}
@@ -31,7 +31,7 @@ USE_GL=		glu
 PATCH=		${LOCALBASE}/bin/gpatch
 
 .if !defined(WITHOUT_MOZILLA)
-USE_GECKO=	firefox xulrunner mozilla seamonkey
+USE_GECKO=	firefox xulrunner seamonkey
 .endif
 
 USE_JAVA=	yes
@@ -100,7 +100,7 @@ SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI
 SWTMOZ=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT Mozilla
 
 ECLIPSE_IU=FreeBSD Eclipse SDK
-ECLIPSE_IU_VERSION=${PORTVERSION}.0.${PORTREVISION}
+ECLIPSE_IU_VERSION=${PORTVERSION}.${PORTREVISION}
 
 post-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} -d "${SWTBASE}" -i ${FILESDIR}/post-patch-plugins-org.eclipse.swt-Eclipse_SWT-gtk-org-eclipse-swt-widgets-FileDialog.java
@@ -115,7 +115,7 @@ do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
 	./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs)
 	@${JAVA} \
-	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.100.v20080509-1800.jar \
+	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.101.R34x_v20080819.jar \
 	  -data ${WRKSRC}/workspace \
 	  -application org.eclipse.equinox.p2.metadata.generator.EclipseGenerator \
 	  -flavor tooling \
@@ -133,7 +133,7 @@ do-install:
 	@${MKDIR} ${PORTDESTDIR}
 	@${JAVA} \
 	  -Declipse.p2.data.area="file:${PORTDESTDIR}/p2" \
-	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.100.v20080509-1800.jar \
+	  -jar ${WRKSRC}/eclipse/plugins/org.eclipse.equinox.launcher_1.0.101.R34x_v20080819.jar \
 	  -data ${WRKSRC}/workspace \
 	  -application org.eclipse.equinox.p2.director.app.application \
 	  -flavor tooling \
