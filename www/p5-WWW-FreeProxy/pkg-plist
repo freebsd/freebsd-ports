@@ -1,0 +1,10 @@
+%%SITE_PERL%%/WWW/FreeProxy.pm
+%%SITE_PERL%%/WWW/FreeProxy/Look.pm
+%%SITE_PERL%%/WWW/FreeProxy/Proxy4Free.pm
+%%SITE_PERL%%/WWW/FreeProxy/PublicProxyServers.pm
+%%SITE_PERL%%/WWW/FreeProxy/Samair.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/FreeProxy/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/FreeProxy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/FreeProxy
+@dirrmtry %%SITE_PERL%%/WWW
