@@ -18,4 +18,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Text::CSV_PP.3
 
+DEPRECATED=	textproc/Text-CSV_PP was merged into textproc/p5-Text-CSV
+EXPIRATION_DATE=2008-12-11
+
 .include <bsd.port.mk>
