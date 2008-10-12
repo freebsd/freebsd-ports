@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.12.4
+PORTVERSION=	7.12.6
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -23,8 +23,6 @@ USE_GL=		gl
 USE_XORG=	x11 xt xi xproto xext inputproto
 USE_GMAKE=	yes
 USE_TK=		85
-
-BROKEN=		Does not compile
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -114,10 +112,6 @@ MANN=	Archetype.n Toplevel.n Widget.n body.n class.n code.n			\
 OPTIONS=	OPTIMIZATION "Build with optimizations" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800032
-BROKEN=		Does not compile
-.endif
 
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
