@@ -1,0 +1,5 @@
+lib/kde4/teacooker.so
+share/apps/desktoptheme/default/widgets/teacooker.svg
+share/apps/teacooker/teacooker.notifyrc
+share/kde4/services/plasma-applet-teacooker.desktop
+@dirrm share/apps/teacooker
