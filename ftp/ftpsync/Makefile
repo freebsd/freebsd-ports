@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	ftpsync
-PORTVERSION=	1.29
+PORTVERSION=	1.2.34
+PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://mirror.mcx2.org/
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Synchronizes a local and a remote FTP directory trees
