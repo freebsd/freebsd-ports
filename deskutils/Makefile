@@ -187,6 +187,7 @@
     SUBDIR += planner.el
     SUBDIR += plans
     SUBDIR += plasma-applet-panelspacer
+    SUBDIR += plasma-applet-quicklauncher
     SUBDIR += plopfolio
     SUBDIR += preferencepanes
     SUBDIR += preferences.app
