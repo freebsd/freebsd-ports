@@ -34,6 +34,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12efc567-9879-11dd-a5e7-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.11</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/318706">
+	  <p>A logic error in the core upload module validation allowed
+	    unprivileged users to attach files to content. Users can view files
+	    attached to content which they do not otherwise have access to.
+	    If the core upload module is not enabled, your site will not be
+	    affected.</p>
+	  <p>A deficiency in the user module allowed users who had been blocked
+	    by access rules to continue logging into the site under certain
+	    conditions. If you do not use the 'access rules' functionality in core,
+	    your site will not be affected.</p>
+	  <p>The BlogAPI module does not implement correct validation for
+	    certain content fields, allowing for values to be set for fields which
+	    would otherwise be inaccessible on an internal Drupal form. We have
+	    hardened these checks in BlogAPI module for this release, but the
+	    security team would like to re-iterate that the 'Administer content
+	    with BlogAPI' permission should only be given to trusted users.
+	    If the core BlogAPI module is not enabled, your site will not be
+	    affected.</p>
+	  <p>A weakness in the node module API allowed for node validation to be
+	    bypassed in certain circumstances for contributed modules implementing
+	    the API. Additional checks have been added to ensure that validation
+	    is performed in all cases. This vulnerability only affects sites using
+	    one of a very small number of contributed modules, all of which will
+	    continue to work correctly with the improved API. None of them were
+	    found vulnerable, so our correction is a preventative measure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/318706</url>
+      <url>http://secunia.com/advisories/32200/</url>
+      <url>http://secunia.com/advisories/32201/</url>
+      <url>http://secunia.com/advisories/32198/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-8</discovery>
+      <entry>2008-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce29ce1d-971a-11dd-ab7e-001c2514716c">
     <topic>cups -- multiple vulnerabilities</topic>
     <affects>
