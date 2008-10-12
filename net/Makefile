@@ -825,6 +825,7 @@
     SUBDIR += samba-pdbsql
     SUBDIR += samba-smbclient
     SUBDIR += samba3
+    SUBDIR += samba32-devel
     SUBDIR += samba4wins
     SUBDIR += sambasentinel
     SUBDIR += sbd
