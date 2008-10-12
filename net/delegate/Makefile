@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	portsFreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 IS_INTERACTIVE=	YES
