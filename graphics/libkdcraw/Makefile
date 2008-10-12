@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	libkdcraw
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kipi
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A C++ interface around a dcraw binary program
+COMMENT=	A C++ interface around the LibRaw library
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 

@@ -1,4 +1,4 @@
-libkdcraw is a C++ interface around a dcraw binary program
+libkdcraw is a C++ interface around the LibRaw library
 used to decode RAW picture files.
 
 WWW: http://www.kipi-plugins.org/
