@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.7
 PORTREVISION=	1
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
@@ -66,6 +66,15 @@ USE_PERL5_RUN=	yes
 USE_OPENLDAP=	yes
 
 .if !defined(WITHOUT_DHCP_LDAP_SSL)
+. if !defined(WITHOUT_OPENSSL_BASE)
+.  if defined(WITH_OPENSSL_PORT)
+BROKEN=		Multiple OpenSSL versions selected. Run 'make config' again!
+.  endif
+. else
+.  if !defined(WITH_OPENSSL_PORT)
+BROKEN=		No OpenSSL versions selected. Run 'make config' again!
+.  endif
+. endif
 USE_OPENSSL=	yes
 # hack to get bsd.openssl.mk included at this late state
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
