@@ -1,5 +1,5 @@
---- Makefile.orig	2008-03-22 16:47:51.000000000 -0500
-+++ Makefile	2008-07-05 15:24:56.000000000 -0500
+--- Makefile.orig	2008-10-04 16:12:18.000000000 -0500
++++ Makefile	2008-10-04 16:14:19.000000000 -0500
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
@@ -24,7 +24,7 @@
  LD=gcc
  BINFORMAT=bin
  
-@@ -66,7 +66,7 @@
+@@ -70,7 +70,7 @@
  	${MAKE} all CC=gcc XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
  
  freebsd:
@@ -33,16 +33,16 @@
  
  openbsd:
  	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
-@@ -109,7 +109,7 @@
- 	  mozplugger-helper \
- 	  mozplugger-controller
+@@ -114,7 +114,7 @@
+ 	  mozplugger-controller \
+ 	  mozplugger-linker
  
 -DEFINES= -DXP_UNIX -DVERSION=\"$(VERSION)\" -D$(BUILD) #-D__amd64__
 +DEFINES= -DXP_UNIX -DVERSION=\"$(VERSION)\" -DPREFIX=\"$(prefix)\" -D$(BUILD) #-D__amd64__
  INCLUDES= -Inpapi/include -I$(X11)/include
- RPM_OPT_FLAGS=-O2
+ RPM_OPT_FLAGS ?= -O2
  COMMON_CFLAGS=$(RPM_OPT_FLAGS) $(INCLUDES) $(DEFINES)
-@@ -175,14 +175,14 @@
+@@ -185,15 +185,15 @@
  
  install:
  	-@mkdir -p $(root)$(prefix)/bin
@@ -54,6 +54,7 @@
 +	-@mkdir -p $(root)$(prefix)/etc
  	cp mozplugger-helper $(root)$(prefix)/bin/
  	cp mozplugger-controller $(root)$(prefix)/bin/
+ 	cp mozplugger-linker $(root)$(prefix)/bin/
 -	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
 -	cp mozpluggerrc $(root)/etc/
 -	cp mozplugger.7 $(root)$(prefix)/share/man/man7/
