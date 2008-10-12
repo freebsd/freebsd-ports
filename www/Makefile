@@ -1004,6 +1004,7 @@
     SUBDIR += p5-WWW-DHL
     SUBDIR += p5-WWW-Dilbert
     SUBDIR += p5-WWW-Facebook-API
+    SUBDIR += p5-WWW-FreeProxy
     SUBDIR += p5-WWW-Google-Calculator
     SUBDIR += p5-WWW-Google-News
     SUBDIR += p5-WWW-Google-News-TW
