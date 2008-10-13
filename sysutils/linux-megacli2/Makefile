@@ -7,7 +7,7 @@
 
 PORTNAME=	megacli
 PORTVERSION=	1.01.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/
 PKGNAMEPREFIX=	linux-
@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 SUB_FILES=	megacli.sh
 SUB_FILES+=	407.status-mfi-raid
+SUB_FILES+=	mfi_tty_log
 
 # From bsd.linux.rpm.mk
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
@@ -39,6 +40,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/megacli.sh ${PREFIX}/sbin/megacli
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/407.status-mfi-raid ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKSRC}/mfi_tty_log ${PREFIX}/etc/rc.d
 	${INSTALL_PROGRAM} ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli ${PREFIX}/libexec
 
 post-install:
