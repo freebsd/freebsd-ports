@@ -7,22 +7,21 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
+MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.1-history
 PKGNAMEPREFIX=	isc-
-PKGNAMESUFFIX=	3-${SUBSYS}
+PKGNAMESUFFIX=	31-${SUBSYS}
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
-BROKEN=		Not yet integrated
+BROKEN=		Not yet integrated and tested
 
-PORTREVISION_SERVER=	2
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 PORTREVISION_DEVEL=	0
@@ -37,11 +36,8 @@ OPTIONS=	INTERFACE_POLLING "interface polling support" on
 OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 		DHCP_JAIL "add -chroot and -jail options" on \
 		DHCP_SOCKETS "use sockets instead of /dev/bpf (jail-only)" off \
-		DHCP_LDAP "add experimental LDAP backend support" off \
-		DHCP_LDAP_SSL "support LDAP connection over SSL/TLS" on \
 		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
-		OPENSSL_PORT "use OpenSSL from ports (required by TLS)" off \
-		DHCP_LQ "DHCPLEASEQUERY support used by Cisco uBR's" off
+		OPENSSL_PORT "use OpenSSL from ports (required by TLS)" off
 .endif
 
 # PORTREVISION handling
@@ -56,30 +52,6 @@ DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
-# Based on patch from Brian Masney :
-PATCH_SITES=	http://www.newwave.net/~masneyb/:ldap \
-		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/:ldap
-PATCHFILES=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-ldap-patch:ldap
-PATCH_DIST_STRIP=	-p1
-
-USE_PERL5_RUN=	yes
-USE_OPENLDAP=	yes
-
-.if !defined(WITHOUT_DHCP_LDAP_SSL)
-USE_OPENSSL=	yes
-# hack to get bsd.openssl.mk included at this late state
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-.endif
-.endif
-
-.if ${SUBSYS} == server && defined(WITH_DHCP_LQ)
-# Based on patch from Dmitry Sukhodoev :
-PATCH_SITES+=	http://bingo.ru/~raven/FreeBSD/patches/:dlq \
-		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/:dlq
-PATCHFILES+=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-dlq-patch:dlq
-.endif
 
 # Global variables
 #
@@ -161,11 +133,6 @@ BIN_FILES=	dhcpd omshell
 USE_RC_SUBR=	isc-dhcpd
 SAMP_FILES=	server/dhcpd.conf
 DATA_FILES=	dhcpd.leases
-.if defined(WITH_DHCP_LDAP)
-PORTDOCS+=	README.ldap
-LDAP_SCRIPT=	contrib/dhcpd-conf-to-ldap.pl
-LDAP_SCHEMA=	contrib/dhcp.schema
-.endif
 .elif ${SUBSYS} == relay
 BIN_FILES=	dhcrelay
 USE_RC_SUBR=	isc-dhcrelay
@@ -179,11 +146,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
 
 PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}"
-.if defined(WITH_DHCP_LDAP)
-PLIST_SUB+=	LDAP=""
-.else
 PLIST_SUB+=	LDAP="@comment "
-.endif
 REINPLACE_SUB=	PREFIX=${PREFIX}
 .if ${OSVERSION} >= 502100
 SUB_LIST+=	NOLOGIN=/usr/sbin/nologin
@@ -222,8 +185,7 @@ extract-script:
 
 post-patch: patch-scripts patch-makefile-conf \
 	    patch-makefiles-dist patch-man-pages \
-	    patch-pkgmessage patch-site-conf \
-	    patch-dlq
+	    patch-pkgmessage patch-site-conf
 
 patch-scripts:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -242,15 +204,6 @@ patch-site-conf:
 	@${ECHO_CMD} CFLAGS += -DJAIL >> ${WRKSRC}/site.conf
 .if defined(WITH_DHCP_SOCKETS)
 	@${ECHO_CMD} CFLAGS += -DUSE_SOCKETS >> ${WRKSRC}/site.conf
-.endif
-.endif
-.if defined(WITH_DHCP_LDAP)
-	@${ECHO_CMD} CFLAGS += -I${LOCALBASE}/include >> ${WRKSRC}/site.conf
-	@${ECHO_CMD} LIBS += -L${LOCALBASE}/lib >> ${WRKSRC}/site.conf
-.if !defined(WITHOUT_DHCP_LDAP_SSL)
-	@${ECHO_CMD} CFLAGS += -DUSE_SSL -I${OPENSSLINC} >> ${WRKSRC}/site.conf
-	@${ECHO_CMD} LIBS += -L${OPENSSLLIB} >> ${WRKSRC}/site.conf
-	@${ECHO_CMD} LIBS += -lcrypto -lssl >> ${WRKSRC}/site.conf
 .endif
 .endif
 .endif
@@ -273,20 +226,7 @@ patch-pkgmessage:
 .if ${SUBSYS} != devel
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
-.if defined(WITH_DHCP_LDAP)
-	@${REINPLACE_CMD} -e 's|^%%LDAP%%||g' ${PKGMESSAGE}
-.else
 	@${REINPLACE_CMD} -e '/^%%LDAP%%/d' ${PKGMESSAGE}
-.endif
-.endif
-
-patch-dlq:
-.if ${SUBSYS} == server && defined(WITH_DHCP_LQ)
-.if defined(WITH_DHCP_LDAP)
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-dlq-ldap
-.else
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-dlq
-.endif
 .endif
 
 # Post-install
@@ -299,7 +239,7 @@ post-install: ${POST-INSTALL}
 
 parallel-post-install: \
 	strip-binary-files \
-	install-doc-files install-ldap-files install-sample-files \
+	install-doc-files install-sample-files \
 	create-conf-files create-data-files
 
 strip-binary-files:
@@ -318,13 +258,6 @@ install-doc-files:
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
-.endif
-
-install-ldap-files:
-.if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
-	@${INSTALL_SCRIPT} ${WRKSRC}/${LDAP_SCRIPT} ${PREFIX}/bin
-	@${MKDIR} ${SCHEMA_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/${LDAP_SCHEMA} ${SCHEMA_DIR}
 .endif
 
 install-sample-files:

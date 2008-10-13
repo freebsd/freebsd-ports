@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	Thu Apr 27 23:38:29 2006
-+++ client/dhclient.c	Sat May  6 17:34:55 2006
+--- client/dhclient.c.orig	2008-01-23 06:02:50.000000000 +1100
++++ client/dhclient.c	2008-10-13 22:47:51.000000000 +1100
 @@ -38,6 +38,13 @@
  #include "dhcpd.h"
  #include "version.h"
@@ -27,7 +27,7 @@
  
  static void usage PROTO ((void));
  
-@@ -174,6 +184,9 @@
+@@ -181,6 +191,9 @@
  		} else if (!strcmp (argv [i], "-q")) {
  			quiet = 1;
  			quiet_interface_discovery = 1;
@@ -37,7 +37,7 @@
  		} else if (!strcmp (argv [i], "-s")) {
  			if (++i == argc)
  				usage ();
-@@ -187,6 +200,19 @@
+@@ -194,6 +207,19 @@
  		} else if (!strcmp (argv [i], "-n")) {
  			/* do not start up any interfaces */
  			interfaces_requested = 1;
@@ -57,7 +57,7 @@
  		} else if (!strcmp (argv [i], "-w")) {
  			/* do not exit if there are no broadcast interfaces. */
  			persist = 1;
-@@ -215,7 +241,16 @@
+@@ -222,7 +248,16 @@
  		    if (strlen(argv[i]) >= sizeof(tmp->name))
  			    log_fatal("%s: interface name too long (is %ld)",
  				       argv [i], (long)strlen(argv[i]));
@@ -75,7 +75,7 @@
  		    if (interfaces) {
  			    interface_reference (&tmp -> next,
  						 interfaces, MDL);
-@@ -375,6 +410,16 @@
+@@ -380,6 +415,16 @@
  					     INTERFACE_AUTOMATIC)) !=
  			     INTERFACE_REQUESTED))
  				continue;
@@ -92,7 +92,7 @@
  			script_init (ip -> client,
  				     "PREINIT", (struct string_list *)0);
  			if (ip -> client -> alias)
-@@ -417,8 +462,13 @@
+@@ -424,8 +469,13 @@
  				client -> state = S_INIT;
  				/* Set up a timeout to start the initialization
  				   process. */
@@ -106,20 +106,20 @@
  			}
  		}
  	}
-@@ -476,9 +526,9 @@
+@@ -483,9 +533,10 @@
  	log_info (arr);
  	log_info (url);
  
--	log_error ("Usage: dhclient [-1dqr] [-nw] [-p <port>] %s",
--		   "[-s server]");
+-	log_error ("Usage: dhclient [-1dqrx] [-nw] [-p <port>] %s",
++	log_error ("Usage: dhclient [-1dqrvx] [-i polling-interval] %s",\
++		   "[-nw] [-p <port>] %s",
+ 		   "[-s server]");
 -	log_error ("                [-cf config-file] [-lf lease-file]%s",
-+	log_error ("Usage: dhclient [-1Ddqrv] [-i polling-interval] %s",
-+		   "[-nw] [-p <port>] [-s server]");
 +	log_error ("                [-cf config-file] [-lf lease-file] %s",
  		   "[-pf pid-file] [-e VAR=val]");
  	log_fatal ("                [-sf script-file] [interface]");
  }
-@@ -879,6 +929,15 @@
+@@ -886,6 +937,15 @@
  	/* Write out the new lease. */
  	write_client_lease (client, client -> new, 0, 0);
  
@@ -135,7 +135,7 @@
  	/* Replace the old active lease with the new one. */
  	if (client -> active)
  		destroy_client_lease (client -> active);
-@@ -893,6 +952,12 @@
+@@ -900,6 +960,12 @@
  	      piaddr (client -> active -> address),
  	      (long)(client -> active -> renewal - cur_time));
  	client -> state = S_BOUND;
@@ -148,7 +148,7 @@
  	reinitialize_interfaces ();
  	go_daemon ();
  	if (client -> config -> do_forward_update) {
-@@ -1357,6 +1422,11 @@
+@@ -1422,6 +1488,11 @@
  	int interval;
  	int increase = 1;
  
@@ -160,7 +160,7 @@
  	/* Figure out how long it's been since we started transmitting. */
  	interval = cur_time - client -> first_sending;
  
-@@ -1457,6 +1527,9 @@
+@@ -1522,6 +1593,9 @@
  	struct client_lease *loop;
  	struct client_lease *lp;
  
@@ -170,7 +170,7 @@
  	loop = lp = client -> active;
  
  	log_info ("No DHCPOFFERS received.");
-@@ -1489,6 +1562,10 @@
+@@ -1554,6 +1628,10 @@
  				log_info ("bound: renewal in %ld %s.",
  					  (long)(client -> active -> renewal -
  						 cur_time), "seconds");
@@ -181,7 +181,7 @@
  				add_timeout (client -> active -> renewal,
  					     state_bound, client, 0, 0);
  			    } else {
-@@ -1496,6 +1573,11 @@
+@@ -1561,6 +1639,11 @@
  				log_info ("bound: immediate renewal.");
  				state_bound (client);
  			    }
@@ -193,7 +193,7 @@
  			    reinitialize_interfaces ();
  			    go_daemon ();
  			    return;
-@@ -1541,6 +1623,12 @@
+@@ -1606,6 +1689,12 @@
  	}
  
  	log_info ("No working leases in persistent database - sleeping.");
@@ -206,7 +206,7 @@
  	script_init (client, "FAIL", (struct string_list *)0);
  	if (client -> alias)
  		script_write_params (client, "alias_", client -> alias);
-@@ -1682,6 +1770,18 @@
+@@ -1747,6 +1836,18 @@
  			client -> packet.secs = htons (65535);
  	}
  
@@ -225,7 +225,7 @@
  	log_info ("DHCPREQUEST on %s to %s port %d",
  	      client -> name ? client -> name : client -> interface -> name,
  	      inet_ntoa (destination.sin_addr),
-@@ -1703,6 +1803,16 @@
+@@ -1768,6 +1869,16 @@
  				      from, &destination,
  				      (struct hardware *)0);
  
@@ -242,7 +242,7 @@
  	add_timeout (cur_time + client -> interval,
  		     send_request, client, 0, 0);
  }
-@@ -2600,6 +2710,13 @@
+@@ -2654,6 +2765,13 @@
  			wstatus = 0;
  		}
  	} else {
@@ -253,10 +253,10 @@
 +			if (i > STDERR_FILENO)
 +				close(i);
 +		}
- 		execve (scriptName, argv, envp);
- 		log_error ("execve (%s, ...): %m", scriptName);
- 		exit (0);
-@@ -2786,8 +2903,10 @@
+ 		/* We don't want to pass an open file descriptor for
+ 		 * dhclient.leases when executing dhclient-script.
+ 		 */
+@@ -2840,8 +2958,10 @@
  			      case S_STOPPED:
  				break;
  			}
@@ -267,7 +267,7 @@
  		}
  	}
  }
-@@ -3015,7 +3134,9 @@
+@@ -3069,7 +3189,9 @@
  		    break;
  
  		  case server_awaken:
@@ -277,7 +277,7 @@
  		    break;
  		}
  	    }
-@@ -3153,3 +3274,265 @@
+@@ -3207,3 +3329,265 @@
  	data_string_forget (&ddns_dhcid, MDL);
  	return rcode;
  }
