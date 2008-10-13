@@ -1,5 +1,14 @@
 --- bsd.c.orig	Sun Jul 30 11:18:07 2006
 +++ bsd.c	Sun Jul 30 11:20:30 2006
+@@ -408,7 +408,7 @@
+   /* Ensure the endpoint address is correct */
+   ep |= USB_ENDPOINT_IN;
+
+-  fd = ensure_ep_open(dev, ep, O_RDONLY);
++  fd = ensure_ep_open(dev, ep, O_RDONLY | O_NONBLOCK);
+   if (fd < 0) {
+       if (usb_debug >= 2) {
+  #ifdef __FreeBSD_kernel__
 @@ -623,9 +623,21 @@
  
  int usb_clear_halt(usb_dev_handle *dev, unsigned int ep)
