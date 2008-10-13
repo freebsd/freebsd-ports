@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://www.hinadori.dyn.to/~wills/program/
+PATCH_SITES=	http://www.hinadori.atnifty.com/~wills/program/
 PATCHFILES=	grep-2.4.2-mlb2.patch.gz
 PATCH_DIST_STRIP=	-p1
 

@@ -11,7 +11,7 @@ CATEGORIES=	japanese lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://www.hinadori.dyn.to/~wills/program/
+PATCH_SITES=	http://www.hinadori.atnifty.com/~wills/program/
 PATCHFILES=	${PORTNAME}mb115.diff.gz
 PATCH_DIST_STRIP=	-p1
 
