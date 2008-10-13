@@ -6,7 +6,7 @@
 #    $MCom: ports/misc/pciids/Makefile,v 1.11 2008/03/23 06:57:57 marcus Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20080901
+PORTVERSION=	20081012
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -16,14 +16,12 @@ COMMENT=	Database of all known ID's used in PCI devices
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-PLIST_FILES=	%%DATADIR%%/pci.ids \
-		%%DATADIR%%/pci.db
+PLIST_FILES=	%%DATADIR%%/pci.ids
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pci.db ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +31,7 @@ CT_WRKSRC=	${WRKDIR}/tmp
 CT_DESTDIR=	${PORTNAME}-${CT_DATE}
 CT_TEMPDIR=	${CT_WRKSRC}/${CT_DESTDIR}
 CT_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
-CT_DISTFILES=	pci.ids pci.db
+CT_DISTFILES=	pci.ids
 
 maketar: extract
 	${MKDIR} ${CT_TEMPDIR}
