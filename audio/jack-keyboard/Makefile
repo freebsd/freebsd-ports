@@ -9,9 +9,8 @@ PORTNAME=	jack-keyboard
 DISTVERSION=	2.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trasz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	jack-keyboard
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
