@@ -232,6 +232,7 @@
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox10
     SUBDIR += ruby-fox12
+    SUBDIR += ruby-fox16
     SUBDIR += ruby-gnomeprintui
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
