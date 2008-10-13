@@ -561,6 +561,7 @@
     SUBDIR += opencity
     SUBDIR += openglad
     SUBDIR += openjazz
+    SUBDIR += openlierox
     SUBDIR += openmortal
     SUBDIR += openttd
     SUBDIR += openyahtzee
