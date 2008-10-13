@@ -7,6 +7,7 @@
 
 PORTNAME=	numeric
 PORTVERSION=	24.2
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
@@ -23,6 +24,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Numeric
 PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/Numeric
+
+# PYDISTUTILS_NOEGGINFO is used as a temporary workaround to fix the plist
+PYDISTUTILS_NOEGGINFO=yes
 
 WRKSRC=		${WRKDIR}/Numeric-${PORTVERSION}
 
