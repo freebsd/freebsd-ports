@@ -3617,6 +3617,6 @@ audio/squeezecenter-transitionupdater||2008-09-07|Plugin integrated in to Squeez
 net/p5-Socket||2008-09-25|Removed because newer version is present inside perl5
 japanese/xjman||2008-10-05|No longer maintained
 japanese/xjman-3||2008-10-05|No longer maintained
-net/isc3-server|net/isc30-server|Swap to multiple versions
-net/isc3-relay|net/isc30-relay|Swap to multiple versions
-net/isc3-client|net/isc30-client|Swap to multiple versions
+net/isc3-server|net/isc30-server|2008-10-13|Swap to multiple versions
+net/isc3-relay|net/isc30-relay|2008-10-13|Swap to multiple versions
+net/isc3-client|net/isc30-client|2008-10-13|Swap to multiple versions
