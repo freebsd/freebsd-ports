@@ -7,11 +7,14 @@
 
 PORTNAME=	glib2
 PORTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	devel linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Version 2.X Linux/i386 binary port of GLib
+
+CONFLICTS=	linux_base-fc6 linux_base-f7 linux_base-f8
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
