@@ -1,19 +1,18 @@
-? vcl/unxfbsdi.pro
 Index: vcl/source/glyphs/makefile.mk
 ===================================================================
 RCS file: /cvs/gsl/vcl/source/glyphs/makefile.mk,v
-retrieving revision 1.13
-diff -u -r1.13 makefile.mk
---- vcl/source/glyphs/makefile.mk	11 Apr 2008 08:59:18 -0000	1.13
-+++ vcl/source/glyphs/makefile.mk	20 Jul 2008 03:14:41 -0000
-@@ -42,9 +42,17 @@
+retrieving revision 1.13.106.1
+diff -u -r1.13.106.1 makefile.mk
+--- vcl/source/glyphs/makefile.mk	31 Jul 2008 20:14:59 -0000	1.13.106.1
++++ vcl/source/glyphs/makefile.mk	10 Aug 2008 01:06:59 -0000
+@@ -41,9 +41,17 @@
+ .INCLUDE :  settings.mk
  .INCLUDE :  $(PRJ)$/util$/makefile2.pmk
  
- .IF "$(SYSTEM_FREETYPE)" == "YES"
 +.IF "$(OS)" != "FREEBSD"
- CFLAGS+=-DSYSTEM_FREETYPE $(FREETYPE_CFLAGS)
+ CFLAGS+= $(FREETYPE_CFLAGS)
 +.ELSE
-+ADDCDEFS+=-DSYSTEM_FREETYPE $(FREETYPE_CFLAGS)
++ADDCDEFS+= $(FREETYPE_CFLAGS)
 +.ENDIF
  .IF "$(USE_FT_EMBOLDEN)" == "YES"
 +.IF "$(OS)" != "FREEBSD"
@@ -22,5 +21,5 @@ diff -u -r1.13 makefile.mk
 +ADDCDEFS+=-DUSE_FT_EMBOLDEN
 +.ENDIF
  .ENDIF
- .ENDIF
  
+ # --- Files --------------------------------------------------------
