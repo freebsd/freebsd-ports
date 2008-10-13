@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.4.7
+DISTVERSION=	2.6.1
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
@@ -81,13 +81,12 @@ LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
 
 .else
 
-MAN1+=	gimp-2.4.1 gimp-remote-2.4.1 gimptool-2.0.1
-MAN5+=	gimprc-2.4.5
-MLINKS=	gimp-2.4.1 gimp.1 \
-	gimp-2.4.1 gimp-console-2.4.1 \
-	gimp-console-2.4.1 gimp-console.1 \
-	gimp-remote-2.4.1 gimp-remote.1 \
-	gimprc-2.4.5 gimprc.5
+MAN1+=	gimp-2.6.1 gimptool-2.0.1
+MAN5+=	gimprc-2.6.5
+MLINKS=	gimp-2.6.1 gimp.1 \
+	gimp-2.6.1 gimp-console-2.6.1 \
+	gimp-console-2.6.1 gimp-console.1 \
+	gimprc-2.6.5 gimprc.5
 
 .if defined(WITHOUT_RSVG)
 CONFIGURE_ARGS+=	--without-librsvg
@@ -146,15 +145,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(GIMP_SLAVE)
-.  if ${HAVE_GNOME:Mgnomehier}!="" || defined(WITH_GNOME)
-	${MKDIR} ${PREFIX}/share/mime-info ${PREFIX}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.applications \
-		${PREFIX}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.keys \
-		${PREFIX}/share/mime-info
-.  endif
-.endif
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>
