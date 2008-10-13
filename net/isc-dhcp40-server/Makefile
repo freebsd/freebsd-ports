@@ -20,6 +20,8 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
+BROKEN=		Not yet integrated
+
 PORTREVISION_SERVER=	2
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
