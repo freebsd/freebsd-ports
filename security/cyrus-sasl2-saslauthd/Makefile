@@ -7,7 +7,7 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.22
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -26,6 +26,8 @@ MD5_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
+
+MAN8=		saslauthd.8
 
 USE_RC_SUBR=	saslauthd.sh
 
@@ -50,7 +52,9 @@ OPTIONS=	BDB		"Use Berkeley DB"			off \
 
 .if defined(WITH_BDB)
 USE_BDB=	yes
-CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
+INVALID_BDB_VER=2
+CONFIGURE_ARGS+=--with-dblib=berkeley \
+		--with-bdb-libdir=${BDB_LIB_DIR} \
 		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb=${BDB_LIB_NAME}
 .else
@@ -118,7 +122,6 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
-	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
 	cd ${WRKSRC}/include && ${MAKE}
 	cd ${WRKSRC}/sasldb && ${MAKE}
 	cd ${WRKSRC}/saslauthd && ${MAKE}
@@ -130,11 +133,10 @@ post-install:
 		${PREFIX}/sbin/saslcache
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
 		${PREFIX}/sbin/testsaslauthd
-	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
 .if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
-	@${ECHO_MSG} "Make sure to have ${SASLAUTHD_RUNPATH} by yourself."
+	@${ECHO_MSG} "Make sure you create ${SASLAUTHD_RUNPATH}."
 	@${ECHO_MSG} ""
 .else
 	${MKDIR} -m 770 ${SASLAUTHD_RUNPATH}
