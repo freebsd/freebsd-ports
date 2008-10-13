@@ -1,11 +1,11 @@
---- Modules/_ctypes/libffi/configure.orig	Sun Mar 26 13:22:58 2006
-+++ Modules/_ctypes/libffi/configure	Sun Mar 26 13:23:07 2006
-@@ -3520,7 +3520,7 @@
- cris-*-*) TARGET=LIBFFI_CRIS; TARGETDIR=cris;;
- s390-*-linux-*) TARGET=S390; TARGETDIR=s390;;
- s390x-*-linux-*) TARGET=S390; TARGETDIR=s390;;
--x86_64-*-linux* | x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
-+amd64-*-freebsd* | x86_64-*-linux* | x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
- sh-*-linux* | sh[34]*-*-linux*) TARGET=SH; TARGETDIR=sh;;
- sh-*-rtems*) TARGET=SH; TARGETDIR=sh;;
- sh64-*-linux* | sh5*-*-linux*) TARGET=SH64; TARGETDIR=sh64;;
+--- Modules/_ctypes/libffi/configure.orig	2008-05-24 00:06:50.000000000 +0900
++++ Modules/_ctypes/libffi/configure	2008-10-09 20:24:02.000000000 +0900
+@@ -4725,7 +4725,7 @@
+   rm -rf conftest*
+   ;;
+ 
+-x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
++amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
+ s390*-*linux*|sparc*-*linux*)
+   # Find out which ABI we are using.
+   echo 'int i;' > conftest.$ac_ext
