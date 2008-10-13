@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -27,20 +27,20 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		compat-libstdc++-296-2.96-139.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-62.${LINUX_RPM_ARCH}.rpm \
 		coreutils-6.9-18.fc8.${LINUX_RPM_ARCH}.rpm \
-		db4-4.6.21-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		db4-4.6.21-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-libs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.135-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-8-5.noarch.rpm \
 		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.5-3.fc8.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.5-4.fc8.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-27.fc7.${LINUX_RPM_ARCH}.rpm \
 		glib-1.2.10-28.fc8.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.14.6-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-57.fc7.${LINUX_RPM_ARCH}.rpm \
-		info-4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		info-4.11-5.fc8.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.2-2.fc6.${LINUX_RPM_ARCH}.rpm \
 		krb5-libs-1.6.2-14.fc8.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.39-14.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -72,12 +72,12 @@ SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		bzip2-1.0.4-12.fc8.src.rpm \
 		compat-db-4.5.20-3.fc8.src.rpm \
 		coreutils-6.9-18.fc8.src.rpm \
-		db4-4.6.21-1.fc8.src.rpm \
+		db4-4.6.21-2.fc8.src.rpm \
 		e2fsprogs-1.40.4-2.fc8.src.rpm \
 		elfutils-0.135-1.fc8.src.rpm \
 		fedora-release-8-5.src.rpm \
 		filesystem-2.4.11-1.fc8.src.rpm \
-		freetype-2.3.5-3.fc8.src.rpm \
+		freetype-2.3.5-4.fc8.src.rpm \
 		gcc-4.1.2-33.src.rpm \
 		gdbm-1.8.0-27.fc7.src.rpm \
 		glib-1.2.10-28.fc8.src.rpm \
@@ -96,12 +96,14 @@ SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		setup-2.6.10-1.fc8.src.rpm \
 		slang-2.1.2-2.fc8.src.rpm \
 		termcap-5.5-1.20060701.1.src.rpm \
+		texinfo-4.11-5.fc8.src.rpm \
 		zlib-1.2.3-14.fc8.src.rpm
 
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6 linux_base-f7
+CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6 \
+			linux_base-f7 linux-glib2
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
