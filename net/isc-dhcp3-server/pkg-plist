@@ -1,9 +1,0 @@
-@comment $FreeBSD$
-@unexec %D/etc/rc.d/isc-dhcpd.sh forcestop 2>/dev/null || true
-@unexec %D/etc/rc.d/isc-dhcpd forcestop 2>/dev/null || true
-bin/omshell
-%%LDAP%%bin/dhcpd-conf-to-ldap.pl
-etc/dhcpd.conf.sample
-sbin/dhcpd
-%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
-%%LDAP%%@dirrm %%SCHEMA_DIR%%

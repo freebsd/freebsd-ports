@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	Thu Apr 27 23:38:29 2006
-+++ client/dhclient.c	Sat May  6 17:34:55 2006
+--- client/dhclient.c.orig	2008-01-22 17:28:23.000000000 +0000
++++ client/dhclient.c	2008-05-26 08:17:53.000000000 +0000
 @@ -38,6 +38,13 @@
  #include "dhcpd.h"
  #include "version.h"
@@ -75,7 +75,7 @@
  		    if (interfaces) {
  			    interface_reference (&tmp -> next,
  						 interfaces, MDL);
-@@ -375,6 +410,16 @@
+@@ -373,6 +408,16 @@
  					     INTERFACE_AUTOMATIC)) !=
  			     INTERFACE_REQUESTED))
  				continue;
@@ -92,7 +92,7 @@
  			script_init (ip -> client,
  				     "PREINIT", (struct string_list *)0);
  			if (ip -> client -> alias)
-@@ -417,8 +462,13 @@
+@@ -415,8 +460,13 @@
  				client -> state = S_INIT;
  				/* Set up a timeout to start the initialization
  				   process. */
@@ -106,7 +106,7 @@
  			}
  		}
  	}
-@@ -476,9 +526,9 @@
+@@ -474,9 +524,9 @@
  	log_info (arr);
  	log_info (url);
  
@@ -119,7 +119,7 @@
  		   "[-pf pid-file] [-e VAR=val]");
  	log_fatal ("                [-sf script-file] [interface]");
  }
-@@ -879,6 +929,15 @@
+@@ -877,6 +927,15 @@
  	/* Write out the new lease. */
  	write_client_lease (client, client -> new, 0, 0);
  
@@ -135,7 +135,7 @@
  	/* Replace the old active lease with the new one. */
  	if (client -> active)
  		destroy_client_lease (client -> active);
-@@ -893,6 +952,12 @@
+@@ -891,6 +950,12 @@
  	      piaddr (client -> active -> address),
  	      (long)(client -> active -> renewal - cur_time));
  	client -> state = S_BOUND;
@@ -148,7 +148,7 @@
  	reinitialize_interfaces ();
  	go_daemon ();
  	if (client -> config -> do_forward_update) {
-@@ -1357,6 +1422,11 @@
+@@ -1376,6 +1441,11 @@
  	int interval;
  	int increase = 1;
  
@@ -160,7 +160,7 @@
  	/* Figure out how long it's been since we started transmitting. */
  	interval = cur_time - client -> first_sending;
  
-@@ -1457,6 +1527,9 @@
+@@ -1476,6 +1546,9 @@
  	struct client_lease *loop;
  	struct client_lease *lp;
  
@@ -170,7 +170,7 @@
  	loop = lp = client -> active;
  
  	log_info ("No DHCPOFFERS received.");
-@@ -1489,6 +1562,10 @@
+@@ -1508,6 +1581,10 @@
  				log_info ("bound: renewal in %ld %s.",
  					  (long)(client -> active -> renewal -
  						 cur_time), "seconds");
@@ -181,7 +181,7 @@
  				add_timeout (client -> active -> renewal,
  					     state_bound, client, 0, 0);
  			    } else {
-@@ -1496,6 +1573,11 @@
+@@ -1515,6 +1592,11 @@
  				log_info ("bound: immediate renewal.");
  				state_bound (client);
  			    }
@@ -193,7 +193,7 @@
  			    reinitialize_interfaces ();
  			    go_daemon ();
  			    return;
-@@ -1541,6 +1623,12 @@
+@@ -1560,6 +1642,12 @@
  	}
  
  	log_info ("No working leases in persistent database - sleeping.");
@@ -206,7 +206,7 @@
  	script_init (client, "FAIL", (struct string_list *)0);
  	if (client -> alias)
  		script_write_params (client, "alias_", client -> alias);
-@@ -1682,6 +1770,18 @@
+@@ -1701,6 +1789,18 @@
  			client -> packet.secs = htons (65535);
  	}
  
@@ -225,7 +225,7 @@
  	log_info ("DHCPREQUEST on %s to %s port %d",
  	      client -> name ? client -> name : client -> interface -> name,
  	      inet_ntoa (destination.sin_addr),
-@@ -1703,6 +1803,16 @@
+@@ -1722,6 +1822,16 @@
  				      from, &destination,
  				      (struct hardware *)0);
  
@@ -242,10 +242,10 @@
  	add_timeout (cur_time + client -> interval,
  		     send_request, client, 0, 0);
  }
-@@ -2600,6 +2710,13 @@
- 			wstatus = 0;
- 		}
- 	} else {
+@@ -2624,6 +2734,13 @@
+ 		 */
+ 		if (leaseFile != NULL)
+ 			fclose(leaseFile);
 +		if ((i = open(_PATH_DEVNULL, O_RDWR)) != -1) {
 +			dup2(i, STDIN_FILENO);
 +			dup2(i, STDOUT_FILENO);
@@ -256,7 +256,7 @@
  		execve (scriptName, argv, envp);
  		log_error ("execve (%s, ...): %m", scriptName);
  		exit (0);
-@@ -2786,8 +2903,10 @@
+@@ -2810,8 +2927,10 @@
  			      case S_STOPPED:
  				break;
  			}
@@ -267,7 +267,7 @@
  		}
  	}
  }
-@@ -3015,7 +3134,9 @@
+@@ -3039,7 +3158,9 @@
  		    break;
  
  		  case server_awaken:
@@ -277,7 +277,7 @@
  		    break;
  		}
  	    }
-@@ -3153,3 +3274,265 @@
+@@ -3177,3 +3298,265 @@
  	data_string_forget (&ddns_dhcid, MDL);
  	return rcode;
  }
