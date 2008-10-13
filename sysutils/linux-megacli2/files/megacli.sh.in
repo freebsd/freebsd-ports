@@ -8,10 +8,31 @@ then
 	exit 1
 fi
 
-if ! [ `sysctl -n compat.linux.osrelease` = "2.6.12" ]; then
-	echo "You need to set compat.linux.osrelease to 2.6.12 to run `basename $0`." >&2
-	exit 1
+osrelease=`sysctl -n compat.linux.osrelease`
+
+case $osrelease in
+	2.6.*)
+		if [ `echo $osrelease | cut -d . -f 3` -lt 12 ]; then
+		osrelease=TOOLOW
+		fi
+	;;
+	2.*)
+		if [ `echo $osrelease | cut -d . -f 2` -lt 6 ]; then
+		osrelease=TOOLOW
+		fi
+	;;
+	*)
+		if [ `echo $osrelease | cut -d . -f 1` -lt 2 ]; then
+		osrelease=TOOLOW
+		fi
+	;;
+esac
+
+if [ $osrelease = "TOOLOW" ]; then
+        echo "You need to set compat.linux.osrelease to atleast 2.6.12 to run `basename $0`." >&2
+        exit 1
 fi
+
 
 lpfs=`mount -t linprocfs | awk 'END{ print NR }'`
 if [ ${lpfs} -le 0 ]; then

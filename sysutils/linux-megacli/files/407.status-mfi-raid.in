@@ -16,6 +16,7 @@ fi
 : ${daily_status_mfi_raid_enable:=NO}
 : ${daily_status_mfi_raid_verbose:=NO}
 : ${daily_status_mfi_raid_persist_logs:=YES}
+: ${daily_status_mfi_raid_tty_log:=NO}
 
 megacli=${megacli:-%%PREFIX%%/sbin/megacli}
 logdir=${logdir:-/var/log}
@@ -67,7 +68,8 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 			E=-1; S=-1; D=-1; s=-1; mec=-1; oec=-1; pfc=-1; lpfeqn=-1;
 			state="";
 		}
-		/^Enclosure (Number|Device ID):/ { E=$3; }
+		/^Enclosure (Number:/ { E=$3; }
+		/^Enclosure Device ID:/ { E=$4; }
 		/^Slot Number:/ { S=$3; }
 		/^Device Id:/ { D=$3; }
 		/^Sequence Number:/ { s=$3; }
@@ -222,7 +224,31 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	if test $raid_rc -eq 0; then
 		echo "  No new log messages."
 	fi
-	[ $rc -eq 0 ] && [ $raid_rc -ne 0 ] && rc=3
+
+	# TTY Log
+	echo "TTY Log:"
+	tty_log=${logdir}/mfi_raid_${ctrl}_tty
+	tty_rc=0
+	case "$daily_status_mfi_raid_tty_log" in
+	[Yy][Ee][Ss])
+		if test ! -f ${tty_log}.today; then
+			touch ${tty_log}.today
+		fi
+		mv -f ${tty_log}.today ${tty_log}.yesterday
+		${megacli} -FwTermLog Dsply -a${ctrl} > ${tty_log}.today
+		cmp -s ${tty_log}.yesterday ${tty_log}.today
+		tty_rc=$?
+		if test $tty_rc -ne 0; then
+			diff -u ${tty_log}.yesterday ${tty_log}.today | \
+				grep -v '^-\|^$'
+		else
+			echo "  No new TTY log messages."
+		fi
+		;;
+	*)
+		;;
+	esac
+	[ $rc -eq 0 ] && [ $raid_rc -ne 0 -o $tty_rc -ne 0 ] && rc=3
 done
 
 exit ${rc}

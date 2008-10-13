@@ -1,6 +1,7 @@
 sbin/megacli
 libexec/MegaCli
 etc/periodic/daily/407.status-mfi-raid
+etc/rc.d/mfi_tty_log
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-status-mfi-raid.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
