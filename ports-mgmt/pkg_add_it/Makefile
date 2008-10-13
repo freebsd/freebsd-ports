@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_add_it
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.unix-heaven.org/ports-mgmt/
 
