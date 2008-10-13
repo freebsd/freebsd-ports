@@ -630,7 +630,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_dbm.so
 %%PYTHON_LIBDIR%%/lib-dynload/_elementtree.so
 %%PYTHON_LIBDIR%%/lib-dynload/_functools.so
-%%PYTHON_LIBDIR%%/lib-dynload/_gdbm.so
 %%PYTHON_LIBDIR%%/lib-dynload/_hashlib.so
 %%PYTHON_LIBDIR%%/lib-dynload/_heapq.so
 %%PYTHON_LIBDIR%%/lib-dynload/_json.so
