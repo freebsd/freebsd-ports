@@ -8,10 +8,8 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
@@ -33,7 +31,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 .endif
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	3.0.0.b2
+OOOVERSION=	3.0.0
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
@@ -74,8 +72,8 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		3
-OOOTAG?=		BEB300_m${MILESTONE}
+MILESTONE?=		9
+OOOTAG?=		OOO300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
@@ -87,9 +85,9 @@ EXECBASE=		openoffice.org-${OOOVERSION}-${WITH_CWS}
 DIST_SUBDIR=		openoffice.org3
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
-PACKAGE_BASENAME=	OOo_Dev_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86-64
+PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86-64
 .else
-PACKAGE_BASENAME=	OOo_Dev_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 .endif
 
 LOCALIZED_LANG?=	en-US
@@ -151,6 +149,9 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
+.if (${OSVERSION} >= 700042)
+EXTRA_PATCHES+=	${FILESDIR}/amd64-gcc42-workaround
+.endif
 .endif
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
