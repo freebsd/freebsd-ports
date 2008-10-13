@@ -1882,6 +1882,7 @@
     SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
+    SUBDIR += pcl
     SUBDIR += pcre
     SUBDIR += pcre++
     SUBDIR += pcsc-lite

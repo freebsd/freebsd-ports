@@ -1,0 +1,5 @@
+include/pcl.h
+lib/libpcl.a
+lib/libpcl.la
+lib/libpcl.so
+lib/libpcl.so.1
