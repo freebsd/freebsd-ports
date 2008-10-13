@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.4.4-1
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -261,12 +262,8 @@ CONFIGURE_ARGS+=	--without-fontconfig
 
 # WMF (Windows Meta File) images
 .if defined(WITH_IMAGEMAGICK_WMF)
-.if defined(WITHOUT_X11)
-IGNORE=			WMF support requires X11 libraries, please unset WITHOUT_X11
-.else
 LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf
 CONFIGURE_ARGS+=	--with-wmf=yes
-.endif
 .else
 CONFIGURE_ARGS+=	--without-wmf
 .endif
@@ -279,10 +276,9 @@ CONFIGURE_ARGS+=	--with-xml
 .else
 CONFIGURE_ARGS+=	--without-xml
 .endif
-.if defined(WITH_IMAGEMAGICK_SVG)
-.if defined(WITHOUT_X11)
-IGNORE=			SVG support requires X11 libraries, please unset WITHOUT_X11
-.endif
+
+# SVG (Scalable Vector Graphics) requires X11
+.if defined(WITH_IMAGEMAGICK_SVG) && !defined(WITHOUT_X11)
 LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2" \
@@ -348,6 +344,14 @@ post-patch:
 # deprecated gvCleanup
 	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
 		${WRKSRC}/coders/dot.c
+
+
+pre-configure:
+.if defined(WITH_IMAGEMAGICK_SVG) && defined(WITHOUT_X11)
+	@${ECHO_CMD} "******************** WARNING *********************"
+	@${ECHO_CMD} "* SVG support requires X11, building without SVG *"
+	@${ECHO_CMD} "**************************************************"
+.endif
 
 post-install:
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
