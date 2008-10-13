@@ -239,10 +239,10 @@
     SUBDIR += ipw-firmware
     SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
-    SUBDIR += isc-dhcp3-client
+    SUBDIR += isc-dhcp30-client
     SUBDIR += isc-dhcp3-devel
-    SUBDIR += isc-dhcp3-relay
-    SUBDIR += isc-dhcp3-server
+    SUBDIR += isc-dhcp30-relay
+    SUBDIR += isc-dhcp30-server
     SUBDIR += iscsi-target
     SUBDIR += iwi-firmware
     SUBDIR += iwi-firmware-kmod
