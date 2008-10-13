@@ -197,6 +197,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ibmds.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/krb5.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/krb5.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/lotusdomino.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/lotusdomino.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/msperson.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/msperson.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/nis.py
@@ -209,6 +211,8 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pilotperson.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ppolicy.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ppolicy.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/quirks.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/quirks.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/samba.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/samba.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/subentries.py
