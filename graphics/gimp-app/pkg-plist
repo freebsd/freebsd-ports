@@ -1,9 +1,7 @@
 bin/gimp
-bin/gimp-2.4
+bin/gimp-2.6
 bin/gimp-console
-bin/gimp-console-2.4
-bin/gimp-remote
-bin/gimp-remote-2.4
+bin/gimp-console-2.6
 bin/gimptool-2.0
 etc/gimp/2.2/controllerrc
 etc/gimp/2.2/gimprc
@@ -101,6 +99,7 @@ include/gimp-2.0/libgimp/gimpselectbutton.h
 include/gimp-2.0/libgimp/gimpselection.h
 include/gimp-2.0/libgimp/gimpselection_pdb.h
 include/gimp-2.0/libgimp/gimpselectiontools_pdb.h
+include/gimp-2.0/libgimp/gimptextlayer_pdb.h
 include/gimp-2.0/libgimp/gimptexttool_pdb.h
 include/gimp-2.0/libgimp/gimptile.h
 include/gimp-2.0/libgimp/gimptransformtools_pdb.h
@@ -167,6 +166,7 @@ include/gimp-2.0/libgimpthumb/gimpthumb.h
 include/gimp-2.0/libgimpthumb/gimpthumbnail.h
 include/gimp-2.0/libgimpwidgets/gimpbrowser.h
 include/gimp-2.0/libgimpwidgets/gimpbutton.h
+include/gimp-2.0/libgimpwidgets/gimpcairo-utils.h
 include/gimp-2.0/libgimpwidgets/gimpcellrenderercolor.h
 include/gimp-2.0/libgimpwidgets/gimpcellrenderertoggle.h
 include/gimp-2.0/libgimpwidgets/gimpchainbutton.h
@@ -207,6 +207,8 @@ include/gimp-2.0/libgimpwidgets/gimppreview.h
 include/gimp-2.0/libgimpwidgets/gimppreviewarea.h
 include/gimp-2.0/libgimpwidgets/gimppropwidgets.h
 include/gimp-2.0/libgimpwidgets/gimpquerybox.h
+include/gimp-2.0/libgimpwidgets/gimpruler.h
+include/gimp-2.0/libgimpwidgets/gimpscaleentry.h
 include/gimp-2.0/libgimpwidgets/gimpscrolledpreview.h
 include/gimp-2.0/libgimpwidgets/gimpsizeentry.h
 include/gimp-2.0/libgimpwidgets/gimpstock.h
@@ -257,208 +259,206 @@ libdata/pkgconfig/gimpthumb-2.0.pc
 libdata/pkgconfig/gimpui-2.0.pc
 libexec/gimp/2.2/environ/default.env
 libexec/gimp/2.2/interpreters/default.interp
-libexec/gimp/2.2/modules/libcdisplay_colorblind.a
-libexec/gimp/2.2/modules/libcdisplay_colorblind.la
-libexec/gimp/2.2/modules/libcdisplay_colorblind.so
-libexec/gimp/2.2/modules/libcdisplay_gamma.a
-libexec/gimp/2.2/modules/libcdisplay_gamma.la
-libexec/gimp/2.2/modules/libcdisplay_gamma.so
-libexec/gimp/2.2/modules/libcdisplay_highcontrast.a
-libexec/gimp/2.2/modules/libcdisplay_highcontrast.la
-libexec/gimp/2.2/modules/libcdisplay_highcontrast.so
-libexec/gimp/2.2/modules/libcdisplay_lcms.a
-libexec/gimp/2.2/modules/libcdisplay_lcms.la
-libexec/gimp/2.2/modules/libcdisplay_lcms.so
-libexec/gimp/2.2/modules/libcdisplay_proof.a
-libexec/gimp/2.2/modules/libcdisplay_proof.la
-libexec/gimp/2.2/modules/libcdisplay_proof.so
-libexec/gimp/2.2/modules/libcolorsel_cmyk.a
-libexec/gimp/2.2/modules/libcolorsel_cmyk.la
-libexec/gimp/2.2/modules/libcolorsel_cmyk.so
-libexec/gimp/2.2/modules/libcolorsel_triangle.a
-libexec/gimp/2.2/modules/libcolorsel_triangle.la
-libexec/gimp/2.2/modules/libcolorsel_triangle.so
-libexec/gimp/2.2/modules/libcolorsel_water.a
-libexec/gimp/2.2/modules/libcolorsel_water.la
-libexec/gimp/2.2/modules/libcolorsel_water.so
-libexec/gimp/2.2/modules/libcontroller_midi.a
-libexec/gimp/2.2/modules/libcontroller_midi.la
-libexec/gimp/2.2/modules/libcontroller_midi.so
-libexec/gimp/2.2/plug-ins/AlienMap2
-libexec/gimp/2.2/plug-ins/CEL
-libexec/gimp/2.2/plug-ins/CML_explorer
-libexec/gimp/2.2/plug-ins/FractalExplorer
-libexec/gimp/2.2/plug-ins/Lighting
-libexec/gimp/2.2/plug-ins/MapObject
-libexec/gimp/2.2/plug-ins/aa
-libexec/gimp/2.2/plug-ins/align_layers
-libexec/gimp/2.2/plug-ins/animationplay
-libexec/gimp/2.2/plug-ins/animoptimize
+libexec/gimp/2.2/modules/libcolor-selector-cmyk.a
+libexec/gimp/2.2/modules/libcolor-selector-cmyk.la
+libexec/gimp/2.2/modules/libcolor-selector-cmyk.so
+libexec/gimp/2.2/modules/libcolor-selector-water.a
+libexec/gimp/2.2/modules/libcolor-selector-water.la
+libexec/gimp/2.2/modules/libcolor-selector-water.so
+libexec/gimp/2.2/modules/libcolor-selector-wheel.a
+libexec/gimp/2.2/modules/libcolor-selector-wheel.la
+libexec/gimp/2.2/modules/libcolor-selector-wheel.so
+libexec/gimp/2.2/modules/libcontroller-midi.a
+libexec/gimp/2.2/modules/libcontroller-midi.la
+libexec/gimp/2.2/modules/libcontroller-midi.so
+libexec/gimp/2.2/modules/libdisplay-filter-color-blind.a
+libexec/gimp/2.2/modules/libdisplay-filter-color-blind.la
+libexec/gimp/2.2/modules/libdisplay-filter-color-blind.so
+libexec/gimp/2.2/modules/libdisplay-filter-gamma.a
+libexec/gimp/2.2/modules/libdisplay-filter-gamma.la
+libexec/gimp/2.2/modules/libdisplay-filter-gamma.so
+libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.a
+libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.la
+libexec/gimp/2.2/modules/libdisplay-filter-high-contrast.so
+libexec/gimp/2.2/modules/libdisplay-filter-lcms.a
+libexec/gimp/2.2/modules/libdisplay-filter-lcms.la
+libexec/gimp/2.2/modules/libdisplay-filter-lcms.so
+libexec/gimp/2.2/modules/libdisplay-filter-proof.a
+libexec/gimp/2.2/modules/libdisplay-filter-proof.la
+libexec/gimp/2.2/modules/libdisplay-filter-proof.so
+libexec/gimp/2.2/plug-ins/alien-map
+libexec/gimp/2.2/plug-ins/align-layers
+libexec/gimp/2.2/plug-ins/animation-optimize
+libexec/gimp/2.2/plug-ins/animation-play
 libexec/gimp/2.2/plug-ins/antialias
-libexec/gimp/2.2/plug-ins/apply_lens
-libexec/gimp/2.2/plug-ins/autocrop
-libexec/gimp/2.2/plug-ins/autostretch_hsv
+libexec/gimp/2.2/plug-ins/apply-canvas
 libexec/gimp/2.2/plug-ins/blinds
 libexec/gimp/2.2/plug-ins/blur
-libexec/gimp/2.2/plug-ins/bmp
-libexec/gimp/2.2/plug-ins/borderaverage
-libexec/gimp/2.2/plug-ins/bumpmap
-libexec/gimp/2.2/plug-ins/c_astretch
+libexec/gimp/2.2/plug-ins/blur-gauss
+libexec/gimp/2.2/plug-ins/blur-gauss-selective
+libexec/gimp/2.2/plug-ins/blur-motion
+libexec/gimp/2.2/plug-ins/border-average
+libexec/gimp/2.2/plug-ins/bump-map
 libexec/gimp/2.2/plug-ins/cartoon
-libexec/gimp/2.2/plug-ins/ccanalyze
-libexec/gimp/2.2/plug-ins/channel_mixer
+libexec/gimp/2.2/plug-ins/channel-mixer
 libexec/gimp/2.2/plug-ins/checkerboard
-libexec/gimp/2.2/plug-ins/color_enhance
+libexec/gimp/2.2/plug-ins/cml-explorer
+libexec/gimp/2.2/plug-ins/color-cube-analyze
+libexec/gimp/2.2/plug-ins/color-enhance
+libexec/gimp/2.2/plug-ins/color-exchange
+libexec/gimp/2.2/plug-ins/color-rotate
+libexec/gimp/2.2/plug-ins/color-to-alpha
 libexec/gimp/2.2/plug-ins/colorify
 libexec/gimp/2.2/plug-ins/colormap-remap
-libexec/gimp/2.2/plug-ins/colortoalpha
 libexec/gimp/2.2/plug-ins/compose
-libexec/gimp/2.2/plug-ins/compressor
-libexec/gimp/2.2/plug-ins/convmatrix
-libexec/gimp/2.2/plug-ins/csource
+libexec/gimp/2.2/plug-ins/contrast-normalize
+libexec/gimp/2.2/plug-ins/contrast-retinex
+libexec/gimp/2.2/plug-ins/contrast-stretch
+libexec/gimp/2.2/plug-ins/contrast-stretch-hsv
+libexec/gimp/2.2/plug-ins/convolution-matrix
+libexec/gimp/2.2/plug-ins/crop-auto
+libexec/gimp/2.2/plug-ins/crop-zealous
 libexec/gimp/2.2/plug-ins/cubism
-libexec/gimp/2.2/plug-ins/curve_bend
+libexec/gimp/2.2/plug-ins/curve-bend
 libexec/gimp/2.2/plug-ins/decompose
 libexec/gimp/2.2/plug-ins/deinterlace
-libexec/gimp/2.2/plug-ins/depthmerge
-libexec/gimp/2.2/plug-ins/desktop-link
+libexec/gimp/2.2/plug-ins/depth-merge
 libexec/gimp/2.2/plug-ins/despeckle
 libexec/gimp/2.2/plug-ins/destripe
-libexec/gimp/2.2/plug-ins/dicom
 libexec/gimp/2.2/plug-ins/diffraction
 libexec/gimp/2.2/plug-ins/displace
-libexec/gimp/2.2/plug-ins/dog
 libexec/gimp/2.2/plug-ins/edge
+libexec/gimp/2.2/plug-ins/edge-dog
+libexec/gimp/2.2/plug-ins/edge-laplace
+libexec/gimp/2.2/plug-ins/edge-neon
+libexec/gimp/2.2/plug-ins/edge-sobel
 libexec/gimp/2.2/plug-ins/emboss
 libexec/gimp/2.2/plug-ins/engrave
-libexec/gimp/2.2/plug-ins/exchange
-libexec/gimp/2.2/plug-ins/faxg3
+libexec/gimp/2.2/plug-ins/file-aa
+libexec/gimp/2.2/plug-ins/file-bmp
+libexec/gimp/2.2/plug-ins/file-cel
+libexec/gimp/2.2/plug-ins/file-compressor
+libexec/gimp/2.2/plug-ins/file-csource
+libexec/gimp/2.2/plug-ins/file-desktop-link
+libexec/gimp/2.2/plug-ins/file-dicom
+libexec/gimp/2.2/plug-ins/file-faxg3
+libexec/gimp/2.2/plug-ins/file-fits
+libexec/gimp/2.2/plug-ins/file-fli
+libexec/gimp/2.2/plug-ins/file-gbr
+libexec/gimp/2.2/plug-ins/file-gif-load
+libexec/gimp/2.2/plug-ins/file-gif-save
+libexec/gimp/2.2/plug-ins/file-gih
+libexec/gimp/2.2/plug-ins/file-glob
+libexec/gimp/2.2/plug-ins/file-header
+libexec/gimp/2.2/plug-ins/file-html-table
+libexec/gimp/2.2/plug-ins/file-ico
+libexec/gimp/2.2/plug-ins/file-jpeg
+libexec/gimp/2.2/plug-ins/file-mng
+libexec/gimp/2.2/plug-ins/file-pat
+libexec/gimp/2.2/plug-ins/file-pcx
+libexec/gimp/2.2/plug-ins/file-pdf
+libexec/gimp/2.2/plug-ins/file-pix
+libexec/gimp/2.2/plug-ins/file-png
+libexec/gimp/2.2/plug-ins/file-pnm
+libexec/gimp/2.2/plug-ins/file-ps
+libexec/gimp/2.2/plug-ins/file-psd-load
+libexec/gimp/2.2/plug-ins/file-psd-save
+libexec/gimp/2.2/plug-ins/file-psp
+libexec/gimp/2.2/plug-ins/file-raw
+libexec/gimp/2.2/plug-ins/file-sgi
+libexec/gimp/2.2/plug-ins/file-sunras
+libexec/gimp/2.2/plug-ins/file-svg
+libexec/gimp/2.2/plug-ins/file-tga
+libexec/gimp/2.2/plug-ins/file-tiff-load
+libexec/gimp/2.2/plug-ins/file-tiff-save
+libexec/gimp/2.2/plug-ins/file-uri
+libexec/gimp/2.2/plug-ins/file-wmf
+libexec/gimp/2.2/plug-ins/file-xbm
+libexec/gimp/2.2/plug-ins/file-xjt
+libexec/gimp/2.2/plug-ins/file-xpm
+libexec/gimp/2.2/plug-ins/file-xwd
 libexec/gimp/2.2/plug-ins/film
-libexec/gimp/2.2/plug-ins/fits
+libexec/gimp/2.2/plug-ins/filter-pack
 libexec/gimp/2.2/plug-ins/flame
-libexec/gimp/2.2/plug-ins/flarefx
-libexec/gimp/2.2/plug-ins/fp
-libexec/gimp/2.2/plug-ins/fractaltrace
-libexec/gimp/2.2/plug-ins/gauss
-libexec/gimp/2.2/plug-ins/gbr
+libexec/gimp/2.2/plug-ins/fractal-explorer
+libexec/gimp/2.2/plug-ins/fractal-trace
 libexec/gimp/2.2/plug-ins/gee
-libexec/gimp/2.2/plug-ins/gee_zoom
+libexec/gimp/2.2/plug-ins/gee-zoom
 libexec/gimp/2.2/plug-ins/gfig
-libexec/gimp/2.2/plug-ins/gflare
-libexec/gimp/2.2/plug-ins/gfli
-libexec/gimp/2.2/plug-ins/gif-load
-libexec/gimp/2.2/plug-ins/gif-save
-libexec/gimp/2.2/plug-ins/gih
 libexec/gimp/2.2/plug-ins/gimpressionist
-libexec/gimp/2.2/plug-ins/glasstile
-libexec/gimp/2.2/plug-ins/glob
-libexec/gimp/2.2/plug-ins/gqbist
-libexec/gimp/2.2/plug-ins/gradmap
+libexec/gimp/2.2/plug-ins/gradient-flare
+libexec/gimp/2.2/plug-ins/gradient-map
 libexec/gimp/2.2/plug-ins/grid
-libexec/gimp/2.2/plug-ins/gtm
 libexec/gimp/2.2/plug-ins/guillotine
-libexec/gimp/2.2/plug-ins/header
 libexec/gimp/2.2/plug-ins/help
-%%HELPBROWSER%%libexec/gimp/2.2/plug-ins/helpbrowser
+libexec/gimp/2.2/plug-ins/help-browser
 libexec/gimp/2.2/plug-ins/hot
-libexec/gimp/2.2/plug-ins/ifscompose
+libexec/gimp/2.2/plug-ins/ifs-compose
 libexec/gimp/2.2/plug-ins/illusion
 libexec/gimp/2.2/plug-ins/imagemap
 libexec/gimp/2.2/plug-ins/iwarp
 libexec/gimp/2.2/plug-ins/jigsaw
-libexec/gimp/2.2/plug-ins/jpeg
-libexec/gimp/2.2/plug-ins/laplace
 libexec/gimp/2.2/plug-ins/lcms
-libexec/gimp/2.2/plug-ins/lens
-libexec/gimp/2.2/plug-ins/lic
+libexec/gimp/2.2/plug-ins/lens-apply
+libexec/gimp/2.2/plug-ins/lens-distortion
+libexec/gimp/2.2/plug-ins/lens-flare
+libexec/gimp/2.2/plug-ins/lighting
 libexec/gimp/2.2/plug-ins/mail
-libexec/gimp/2.2/plug-ins/mapcolor
-libexec/gimp/2.2/plug-ins/max_rgb
+libexec/gimp/2.2/plug-ins/map-object
+libexec/gimp/2.2/plug-ins/max-rgb
 libexec/gimp/2.2/plug-ins/maze
-libexec/gimp/2.2/plug-ins/mblur
 libexec/gimp/2.2/plug-ins/metadata
-libexec/gimp/2.2/plug-ins/mng
 libexec/gimp/2.2/plug-ins/mosaic
-libexec/gimp/2.2/plug-ins/neon
 libexec/gimp/2.2/plug-ins/newsprint
-libexec/gimp/2.2/plug-ins/nlfilt
-libexec/gimp/2.2/plug-ins/noisify
-libexec/gimp/2.2/plug-ins/normalize
+libexec/gimp/2.2/plug-ins/nl-filter
+libexec/gimp/2.2/plug-ins/noise-hsv
+libexec/gimp/2.2/plug-ins/noise-randomize
+libexec/gimp/2.2/plug-ins/noise-rgb
+libexec/gimp/2.2/plug-ins/noise-solid
+libexec/gimp/2.2/plug-ins/noise-spread
 libexec/gimp/2.2/plug-ins/nova
 libexec/gimp/2.2/plug-ins/oilify
 libexec/gimp/2.2/plug-ins/pagecurl
-libexec/gimp/2.2/plug-ins/papertile
-libexec/gimp/2.2/plug-ins/pat
-libexec/gimp/2.2/plug-ins/pcx
 libexec/gimp/2.2/plug-ins/photocopy
-libexec/gimp/2.2/plug-ins/pix
 libexec/gimp/2.2/plug-ins/pixelize
 libexec/gimp/2.2/plug-ins/plasma
 libexec/gimp/2.2/plug-ins/plugin-browser
-libexec/gimp/2.2/plug-ins/png
-libexec/gimp/2.2/plug-ins/pnm
-libexec/gimp/2.2/plug-ins/polar
-libexec/gimp/2.2/plug-ins/poppler
-libexec/gimp/2.2/plug-ins/postscript
+libexec/gimp/2.2/plug-ins/polar-coords
 libexec/gimp/2.2/plug-ins/procedure-browser
-libexec/gimp/2.2/plug-ins/psd-load
-libexec/gimp/2.2/plug-ins/psd-save
-libexec/gimp/2.2/plug-ins/psp
-libexec/gimp/2.2/plug-ins/randomize
-libexec/gimp/2.2/plug-ins/raw
-libexec/gimp/2.2/plug-ins/rcm
-libexec/gimp/2.2/plug-ins/redeye
-libexec/gimp/2.2/plug-ins/retinex
+libexec/gimp/2.2/plug-ins/qbist
+libexec/gimp/2.2/plug-ins/red-eye-removal
 libexec/gimp/2.2/plug-ins/ripple
 libexec/gimp/2.2/plug-ins/rotate
-libexec/gimp/2.2/plug-ins/sample_colorize
-libexec/gimp/2.2/plug-ins/scatter_hsv
+libexec/gimp/2.2/plug-ins/sample-colorize
 libexec/gimp/2.2/plug-ins/screenshot
 libexec/gimp/2.2/plug-ins/script-fu
-libexec/gimp/2.2/plug-ins/sel2path
-libexec/gimp/2.2/plug-ins/sel_gauss
-libexec/gimp/2.2/plug-ins/semiflatten
-libexec/gimp/2.2/plug-ins/sgi
+libexec/gimp/2.2/plug-ins/selection-to-path
+libexec/gimp/2.2/plug-ins/semi-flatten
 libexec/gimp/2.2/plug-ins/sharpen
 libexec/gimp/2.2/plug-ins/shift
 libexec/gimp/2.2/plug-ins/sinus
-libexec/gimp/2.2/plug-ins/smooth_palette
-libexec/gimp/2.2/plug-ins/snoise
-libexec/gimp/2.2/plug-ins/sobel
+libexec/gimp/2.2/plug-ins/smooth-palette
 libexec/gimp/2.2/plug-ins/softglow
 libexec/gimp/2.2/plug-ins/sparkle
-libexec/gimp/2.2/plug-ins/spheredesigner
-libexec/gimp/2.2/plug-ins/spread
-libexec/gimp/2.2/plug-ins/struc
-libexec/gimp/2.2/plug-ins/sunras
-%%SVG%%libexec/gimp/2.2/plug-ins/svg
-libexec/gimp/2.2/plug-ins/tga
-libexec/gimp/2.2/plug-ins/threshold_alpha
-libexec/gimp/2.2/plug-ins/tiff-load
-libexec/gimp/2.2/plug-ins/tiff-save
+libexec/gimp/2.2/plug-ins/sphere-designer
+libexec/gimp/2.2/plug-ins/threshold-alpha
 libexec/gimp/2.2/plug-ins/tile
-libexec/gimp/2.2/plug-ins/tileit
-libexec/gimp/2.2/plug-ins/tiler
-libexec/gimp/2.2/plug-ins/uniteditor
-libexec/gimp/2.2/plug-ins/unsharp
-libexec/gimp/2.2/plug-ins/uri
+libexec/gimp/2.2/plug-ins/tile-glass
+libexec/gimp/2.2/plug-ins/tile-paper
+libexec/gimp/2.2/plug-ins/tile-seamless
+libexec/gimp/2.2/plug-ins/tile-small
+libexec/gimp/2.2/plug-ins/unit-editor
+libexec/gimp/2.2/plug-ins/unsharp-mask
+libexec/gimp/2.2/plug-ins/value-invert
+libexec/gimp/2.2/plug-ins/value-propagate
+libexec/gimp/2.2/plug-ins/van-gogh-lic
 libexec/gimp/2.2/plug-ins/video
-libexec/gimp/2.2/plug-ins/vinvert
-libexec/gimp/2.2/plug-ins/vpropagate
 libexec/gimp/2.2/plug-ins/warp
 libexec/gimp/2.2/plug-ins/waves
-libexec/gimp/2.2/plug-ins/webbrowser
-libexec/gimp/2.2/plug-ins/whirlpinch
+libexec/gimp/2.2/plug-ins/web-browser
+libexec/gimp/2.2/plug-ins/whirl-pinch
 libexec/gimp/2.2/plug-ins/wind
-libexec/gimp/2.2/plug-ins/winicon
-libexec/gimp/2.2/plug-ins/wmf
-libexec/gimp/2.2/plug-ins/xbm
-libexec/gimp/2.2/plug-ins/xjt
-libexec/gimp/2.2/plug-ins/xpm
-libexec/gimp/2.2/plug-ins/xwd
-libexec/gimp/2.2/plug-ins/zealouscrop
 share/aclocal/gimp-2.0.m4
-%%GNOME%%share/application-registry/gimp.applications
 share/applications/gimp.desktop
 share/doc/gimp/libgimp/GimpAspectPreview.html
 share/doc/gimp/libgimp/GimpBrushSelectButton.html
@@ -530,6 +530,7 @@ share/doc/gimp/libgimp/libgimp-gimpprocview.html
 share/doc/gimp/libgimp/libgimp-gimpprogress.html
 share/doc/gimp/libgimp/libgimp-gimpregioniterator.html
 share/doc/gimp/libgimp/libgimp-gimpselection.html
+share/doc/gimp/libgimp/libgimp-gimptextlayer.html
 share/doc/gimp/libgimp/libgimp-gimptexttool.html
 share/doc/gimp/libgimp/libgimp-gimptile.html
 share/doc/gimp/libgimp/libgimp-gimptools.html
@@ -540,6 +541,7 @@ share/doc/gimp/libgimp/libgimp-image.html
 share/doc/gimp/libgimp/libgimp-index-deprecated.html
 share/doc/gimp/libgimp/libgimp-index-new-in-2-2.html
 share/doc/gimp/libgimp/libgimp-index-new-in-2-4.html
+share/doc/gimp/libgimp/libgimp-index-new-in-2-6.html
 share/doc/gimp/libgimp/libgimp-index.html
 share/doc/gimp/libgimp/libgimp-selectors.html
 share/doc/gimp/libgimp/libgimp.devhelp
@@ -573,6 +575,7 @@ share/doc/gimp/libgimpbase/libgimpbase-gimpversion.html
 share/doc/gimp/libgimpbase/libgimpbase-index-deprecated.html
 share/doc/gimp/libgimpbase/libgimpbase-index-new-in-2-2.html
 share/doc/gimp/libgimpbase/libgimpbase-index-new-in-2-4.html
+share/doc/gimp/libgimpbase/libgimpbase-index-new-in-2-6.html
 share/doc/gimp/libgimpbase/libgimpbase-index.html
 share/doc/gimp/libgimpbase/libgimpbase.devhelp
 share/doc/gimp/libgimpbase/libgimpbase.devhelp2
@@ -594,6 +597,7 @@ share/doc/gimp/libgimpcolor/libgimpcolor-GimpRGB.html
 share/doc/gimp/libgimpcolor/libgimpcolor-index-deprecated.html
 share/doc/gimp/libgimpcolor/libgimpcolor-index-new-in-2-2.html
 share/doc/gimp/libgimpcolor/libgimpcolor-index-new-in-2-4.html
+share/doc/gimp/libgimpcolor/libgimpcolor-index-new-in-2-6.html
 share/doc/gimp/libgimpcolor/libgimpcolor-index.html
 share/doc/gimp/libgimpcolor/libgimpcolor.devhelp
 share/doc/gimp/libgimpcolor/libgimpcolor.devhelp2
@@ -618,6 +622,7 @@ share/doc/gimp/libgimpconfig/libgimpconfig-gimpconfig-utils.html
 share/doc/gimp/libgimpconfig/libgimpconfig-hierarchy.html
 share/doc/gimp/libgimpconfig/libgimpconfig-index-deprecated.html
 share/doc/gimp/libgimpconfig/libgimpconfig-index-new-in-2-4.html
+share/doc/gimp/libgimpconfig/libgimpconfig-index-new-in-2-6.html
 share/doc/gimp/libgimpconfig/libgimpconfig-index.html
 share/doc/gimp/libgimpconfig/libgimpconfig.devhelp
 share/doc/gimp/libgimpconfig/libgimpconfig.devhelp2
@@ -636,6 +641,7 @@ share/doc/gimp/libgimpmath/libgimpmath-GimpVector.html
 share/doc/gimp/libgimpmath/libgimpmath-index-deprecated.html
 share/doc/gimp/libgimpmath/libgimpmath-index-new-in-2-2.html
 share/doc/gimp/libgimpmath/libgimpmath-index-new-in-2-4.html
+share/doc/gimp/libgimpmath/libgimpmath-index-new-in-2-6.html
 share/doc/gimp/libgimpmath/libgimpmath-index.html
 share/doc/gimp/libgimpmath/libgimpmath.devhelp
 share/doc/gimp/libgimpmath/libgimpmath.devhelp2
@@ -652,6 +658,7 @@ share/doc/gimp/libgimpmodule/left.png
 share/doc/gimp/libgimpmodule/libgimpmodule-index-deprecated.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index-new-in-2-2.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index-new-in-2-4.html
+share/doc/gimp/libgimpmodule/libgimpmodule-index-new-in-2-6.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index.html
 share/doc/gimp/libgimpmodule/libgimpmodule.devhelp
 share/doc/gimp/libgimpmodule/libgimpmodule.devhelp2
@@ -670,6 +677,7 @@ share/doc/gimp/libgimpthumb/libgimpthumb-gimpthumb-utils.html
 share/doc/gimp/libgimpthumb/libgimpthumb-index-deprecated.html
 share/doc/gimp/libgimpthumb/libgimpthumb-index-new-in-2-2.html
 share/doc/gimp/libgimpthumb/libgimpthumb-index-new-in-2-4.html
+share/doc/gimp/libgimpthumb/libgimpthumb-index-new-in-2-6.html
 share/doc/gimp/libgimpthumb/libgimpthumb-index.html
 share/doc/gimp/libgimpthumb/libgimpthumb.devhelp
 share/doc/gimp/libgimpthumb/libgimpthumb.devhelp2
@@ -713,6 +721,7 @@ share/doc/gimp/libgimpwidgets/GimpPickButton.html
 share/doc/gimp/libgimpwidgets/GimpPixmap.html
 share/doc/gimp/libgimpwidgets/GimpPreview.html
 share/doc/gimp/libgimpwidgets/GimpPreviewArea.html
+share/doc/gimp/libgimpwidgets/GimpRuler.html
 share/doc/gimp/libgimpwidgets/GimpScrolledPreview.html
 share/doc/gimp/libgimpwidgets/GimpSizeEntry.html
 share/doc/gimp/libgimpwidgets/GimpStringComboBox.html
@@ -747,6 +756,7 @@ share/doc/gimp/libgimpwidgets/home.png
 share/doc/gimp/libgimpwidgets/index.html
 share/doc/gimp/libgimpwidgets/index.sgml
 share/doc/gimp/libgimpwidgets/left.png
+share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpCairoUtils.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpEnumWidgets.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpHintBox.html
@@ -765,6 +775,7 @@ share/doc/gimp/libgimpwidgets/libgimpwidgets-hierarchy.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-index-deprecated.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-index-new-in-2-2.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-index-new-in-2-4.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-index-new-in-2-6.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-index.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-utils.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-widgets.html
@@ -860,6 +871,8 @@ share/doc/gimp/libgimpwidgets/stock-floating-selection-24.png
 share/doc/gimp/libgimpwidgets/stock-floating-selection-32.png
 share/doc/gimp/libgimpwidgets/stock-floating-selection-48.png
 share/doc/gimp/libgimpwidgets/stock-frame-64.png
+share/doc/gimp/libgimpwidgets/stock-gegl-16.png
+share/doc/gimp/libgimpwidgets/stock-gegl-22.png
 share/doc/gimp/libgimpwidgets/stock-gradient-bilinear-16.png
 share/doc/gimp/libgimpwidgets/stock-gradient-conical-asymmetric-16.png
 share/doc/gimp/libgimpwidgets/stock-gradient-conical-symmetric-16.png
@@ -1066,6 +1079,10 @@ share/doc/gimp/libgimpwidgets/stock-transparency-16.png
 share/doc/gimp/libgimpwidgets/stock-transparency-24.png
 share/doc/gimp/libgimpwidgets/stock-undo-history-16.png
 share/doc/gimp/libgimpwidgets/stock-undo-history-24.png
+share/doc/gimp/libgimpwidgets/stock-user-manual-16.png
+share/doc/gimp/libgimpwidgets/stock-user-manual-24.png
+share/doc/gimp/libgimpwidgets/stock-user-manual-32.png
+share/doc/gimp/libgimpwidgets/stock-user-manual-64.png
 share/doc/gimp/libgimpwidgets/stock-vcenter-24.png
 share/doc/gimp/libgimpwidgets/stock-vchain-24.png
 share/doc/gimp/libgimpwidgets/stock-vchain-broken-24.png
@@ -1078,7 +1095,6 @@ share/doc/gimp/libgimpwidgets/stock-web-16.png
 share/doc/gimp/libgimpwidgets/stock-web-24.png
 share/doc/gimp/libgimpwidgets/stock-wilber-16.png
 share/doc/gimp/libgimpwidgets/stock-wilber-22.png
-share/doc/gimp/libgimpwidgets/stock-wilber-48.png
 share/doc/gimp/libgimpwidgets/stock-wilber-64.png
 share/doc/gimp/libgimpwidgets/stock-wilber-eek-64.png
 share/doc/gimp/libgimpwidgets/stock-zoom-follow-window-12.png
@@ -1130,7 +1146,6 @@ share/gimp/brushes/hsparks.gih
 share/gimp/brushes/pepper.gbr
 share/gimp/brushes/pixel.gbr
 share/gimp/brushes/vine.gih
-@exec mkdir -p %D/share/gimp/fonts
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
@@ -1355,6 +1370,7 @@ share/gimp/gradients/Yellow_Contrast.ggr
 share/gimp/gradients/Yellow_Orange.ggr
 share/gimp/images/gimp-logo.png
 share/gimp/images/gimp-splash.png
+share/gimp/images/wilber.png
 share/gimp/menus/brush-editor-menu.xml
 share/gimp/menus/brushes-menu.xml
 share/gimp/menus/buffers-menu.xml
@@ -1379,7 +1395,6 @@ share/gimp/menus/selection-menu.xml
 share/gimp/menus/templates-menu.xml
 share/gimp/menus/text-editor-toolbar.xml
 share/gimp/menus/tool-options-menu.xml
-share/gimp/menus/toolbox-menu.xml
 share/gimp/menus/tools-menu.xml
 share/gimp/menus/undo-menu.xml
 share/gimp/menus/vectors-menu.xml
@@ -1569,10 +1584,8 @@ share/gimp/scripts/selection-round.scm
 share/gimp/scripts/slide.scm
 share/gimp/scripts/sota-chrome-logo.scm
 share/gimp/scripts/speed-text.scm
-share/gimp/scripts/sphere.scm
 share/gimp/scripts/spinning-globe.scm
 share/gimp/scripts/spyrogimp.scm
-share/gimp/scripts/starburst-logo.scm
 share/gimp/scripts/starscape-logo.scm
 share/gimp/scripts/swirltile.scm
 share/gimp/scripts/swirly-pattern.scm
@@ -1661,12 +1674,17 @@ share/icons/hicolor/32x32/apps/gimp.png
 share/icons/hicolor/48x48/apps/gimp.png
 share/icons/hicolor/64x64/apps/gimp.png
 share/icons/hicolor/scalable/apps/gimp.svg
+share/locale/am/LC_MESSAGES/gimp20.mo
 share/locale/ar/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ar/LC_MESSAGES/gimp20-python.mo
 share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ar/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ar/LC_MESSAGES/gimp20-tips.mo
 share/locale/ar/LC_MESSAGES/gimp20.mo
+share/locale/az/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/az/LC_MESSAGES/gimp20-python.mo
+share/locale/az/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/az/LC_MESSAGES/gimp20.mo
 share/locale/be/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/be/LC_MESSAGES/gimp20-python.mo
 share/locale/be/LC_MESSAGES/gimp20-script-fu.mo
@@ -1719,7 +1737,6 @@ share/locale/el/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/el/LC_MESSAGES/gimp20-python.mo
 share/locale/el/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/el/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/el/LC_MESSAGES/gimp20-tips.mo
 share/locale/el/LC_MESSAGES/gimp20.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-python.mo
@@ -1736,7 +1753,6 @@ share/locale/en_GB/LC_MESSAGES/gimp20.mo
 share/locale/eo/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/eo/LC_MESSAGES/gimp20-python.mo
 share/locale/eo/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/eo/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/eo/LC_MESSAGES/gimp20-tips.mo
 share/locale/eo/LC_MESSAGES/gimp20.mo
 share/locale/es/LC_MESSAGES/gimp20-libgimp.mo
@@ -1779,7 +1795,6 @@ share/locale/ga/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ga/LC_MESSAGES/gimp20-python.mo
 share/locale/ga/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ga/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/ga/LC_MESSAGES/gimp20-tips.mo
 share/locale/ga/LC_MESSAGES/gimp20.mo
 share/locale/gl/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/gl/LC_MESSAGES/gimp20-python.mo
@@ -1794,11 +1809,11 @@ share/locale/gu/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/gu/LC_MESSAGES/gimp20-tips.mo
 share/locale/gu/LC_MESSAGES/gimp20.mo
 share/locale/he/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/he/LC_MESSAGES/gimp20-python.mo
 share/locale/he/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/he/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/he/LC_MESSAGES/gimp20-tips.mo
 share/locale/he/LC_MESSAGES/gimp20.mo
+share/locale/hi/LC_MESSAGES/gimp20.mo
 share/locale/hr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/hr/LC_MESSAGES/gimp20-python.mo
 share/locale/hr/LC_MESSAGES/gimp20-script-fu.mo
@@ -1812,11 +1827,15 @@ share/locale/hu/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/hu/LC_MESSAGES/gimp20-tips.mo
 share/locale/hu/LC_MESSAGES/gimp20.mo
 share/locale/id/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/id/LC_MESSAGES/gimp20-python.mo
 share/locale/id/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/id/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/id/LC_MESSAGES/gimp20-tips.mo
 share/locale/id/LC_MESSAGES/gimp20.mo
+share/locale/is/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/is/LC_MESSAGES/gimp20-python.mo
+share/locale/is/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/is/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/is/LC_MESSAGES/gimp20-tips.mo
+share/locale/is/LC_MESSAGES/gimp20.mo
 share/locale/it/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/it/LC_MESSAGES/gimp20-python.mo
 share/locale/it/LC_MESSAGES/gimp20-script-fu.mo
@@ -1829,6 +1848,7 @@ share/locale/ja/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20-tips.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
+share/locale/ka/LC_MESSAGES/gimp20.mo
 share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/km/LC_MESSAGES/gimp20-python.mo
 share/locale/km/LC_MESSAGES/gimp20-script-fu.mo
@@ -1847,12 +1867,15 @@ share/locale/lt/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/lt/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/lt/LC_MESSAGES/gimp20-tips.mo
 share/locale/lt/LC_MESSAGES/gimp20.mo
+share/locale/lv/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/lv/LC_MESSAGES/gimp20.mo
 share/locale/mk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/mk/LC_MESSAGES/gimp20-python.mo
 share/locale/mk/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/mk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/mk/LC_MESSAGES/gimp20-tips.mo
 share/locale/mk/LC_MESSAGES/gimp20.mo
+share/locale/ml/LC_MESSAGES/gimp20.mo
 share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ms/LC_MESSAGES/gimp20-python.mo
 share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
@@ -1887,7 +1910,6 @@ share/locale/oc/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/oc/LC_MESSAGES/gimp20-python.mo
 share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/oc/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/oc/LC_MESSAGES/gimp20-tips.mo
 share/locale/oc/LC_MESSAGES/gimp20.mo
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/pa/LC_MESSAGES/gimp20-python.mo
@@ -1949,29 +1971,24 @@ share/locale/sr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sr/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/sr/LC_MESSAGES/gimp20-tips.mo
 share/locale/sr/LC_MESSAGES/gimp20.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20-python.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20-tips.mo
-share/locale/sr@Latn/LC_MESSAGES/gimp20.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20-python.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20-tips.mo
+share/locale/sr@latin/LC_MESSAGES/gimp20.mo
 share/locale/sv/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sv/LC_MESSAGES/gimp20-python.mo
 share/locale/sv/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sv/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/sv/LC_MESSAGES/gimp20-tips.mo
 share/locale/sv/LC_MESSAGES/gimp20.mo
+share/locale/th/LC_MESSAGES/gimp20.mo
 share/locale/tr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/tr/LC_MESSAGES/gimp20-python.mo
 share/locale/tr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/tr/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/tr/LC_MESSAGES/gimp20-tips.mo
 share/locale/tr/LC_MESSAGES/gimp20.mo
-share/locale/tt/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/tt/LC_MESSAGES/gimp20-python.mo
-share/locale/tt/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/tt/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/tt/LC_MESSAGES/gimp20-tips.mo
 share/locale/tt/LC_MESSAGES/gimp20.mo
 share/locale/uk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp20-python.mo
@@ -1989,13 +2006,10 @@ share/locale/xh/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/xh/LC_MESSAGES/gimp20-python.mo
 share/locale/xh/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/xh/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/xh/LC_MESSAGES/gimp20-tips.mo
 share/locale/xh/LC_MESSAGES/gimp20.mo
 share/locale/yi/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/yi/LC_MESSAGES/gimp20-python.mo
 share/locale/yi/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/yi/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/yi/LC_MESSAGES/gimp20-tips.mo
 share/locale/yi/LC_MESSAGES/gimp20.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-python.mo
@@ -2003,13 +2017,33 @@ share/locale/zh_CN/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-python.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
-%%GNOME%%share/mime-info/gimp.keys
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrm share/gimp/tips
 @dirrm share/gimp/themes/Small
 @dirrm share/gimp/themes/Default/images/preferences
@@ -2062,19 +2096,3 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm etc/gimp
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia

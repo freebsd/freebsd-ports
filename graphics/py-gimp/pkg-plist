@@ -2,13 +2,13 @@ libexec/gimp/2.2/environ/pygimp.env
 libexec/gimp/2.2/interpreters/pygimp.interp
 libexec/gimp/2.2/plug-ins/colorxhtml.py
 libexec/gimp/2.2/plug-ins/foggify.py
-libexec/gimp/2.2/plug-ins/gimpcons.py
-libexec/gimp/2.2/plug-ins/happy-valley-relief.py
 libexec/gimp/2.2/plug-ins/palette-offset.py
 libexec/gimp/2.2/plug-ins/palette-sort.py
 libexec/gimp/2.2/plug-ins/palette-to-gradient.py
 libexec/gimp/2.2/plug-ins/py-slice.py
 libexec/gimp/2.2/plug-ins/pyconsole.py
+libexec/gimp/2.2/plug-ins/python-console.py
+libexec/gimp/2.2/plug-ins/python-eval.py
 libexec/gimp/2.2/python/_gimpenums.a
 libexec/gimp/2.2/python/_gimpenums.la
 libexec/gimp/2.2/python/_gimpenums.so
