@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perl-MinimumVersion
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Find a minimum required version of perl for Perl code
 
-RUN_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-PPI>=1.118:${PORTSDIR}/textproc/p5-PPI \
-		p5-Params-Util>=0.06:${PORTSDIR}/devel/p5-Params-Util \
+RUN_DEPENDS=	p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-File-Find-Rule-Perl>=1.04:${PORTSDIR}/devel/p5-File-Find-Rule-Perl \
+		p5-PPI>=1.201:${PORTSDIR}/textproc/p5-PPI \
+		p5-Params-Util>=0.25:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-version>=0.72.03:${PORTSDIR}/devel/p5-version
+		p5-version>=0.76:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
