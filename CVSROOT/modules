@@ -6468,6 +6468,7 @@ klamav                          ports/security/klamav
 klaptopdaemon                   ports/sysutils/klaptopdaemon
 klassmodeler                    ports/devel/klassmodeler
 klat                            ports/editors/klat
+klat4                           ports/editors/klat4
 klavaro                         ports/games/klavaro
 klayout                         ports/cad/klayout
 kldfind                         ports/sysutils/kldfind
@@ -6494,6 +6495,7 @@ kmobiletools                    ports/comms/kmobiletools
 kmovisto                        ports/science/kmovisto
 kmp                             ports/audio/kmp
 kmplayer                        ports/multimedia/kmplayer
+kmplayer-kde4                   ports/multimedia/kmplayer-kde4
 kmquake2                        ports/games/kmquake2
 kmuddy                          ports/net/kmuddy
 kmyirc                          ports/irc/kmyirc
@@ -10295,6 +10297,7 @@ p5-Curses-Forms                 ports/devel/p5-Curses-Forms
 p5-Curses-UI                    ports/devel/p5-Curses-UI
 p5-Curses-Widgets               ports/devel/p5-Curses-Widgets
 p5-Cvs                          ports/devel/p5-Cvs
+p5-Cwd                          ports/devel/p5-Cwd
 p5-DBD-AnyData                  ports/databases/p5-DBD-AnyData
 p5-DBD-CSV                      ports/databases/p5-DBD-CSV
 p5-DBD-Excel                    ports/databases/p5-DBD-Excel
@@ -12508,6 +12511,7 @@ p5-WWW-Curl                     ports/www/p5-WWW-Curl
 p5-WWW-DHL                      ports/www/p5-WWW-DHL
 p5-WWW-Dilbert                  ports/www/p5-WWW-Dilbert
 p5-WWW-Facebook-API             ports/www/p5-WWW-Facebook-API
+p5-WWW-FreeProxy                ports/www/p5-WWW-FreeProxy
 p5-WWW-GMail                    ports/mail/p5-WWW-GMail
 p5-WWW-Google-Calculator        ports/www/p5-WWW-Google-Calculator
 p5-WWW-Google-News              ports/www/p5-WWW-Google-News
@@ -13441,6 +13445,7 @@ p5-curses-forms                 ports/devel/p5-Curses-Forms
 p5-curses-ui                    ports/devel/p5-Curses-UI
 p5-curses-widgets               ports/devel/p5-Curses-Widgets
 p5-cvs                          ports/devel/p5-Cvs
+p5-cwd                          ports/devel/p5-Cwd
 p5-dTemplate                    ports/textproc/p5-dTemplate
 p5-daemon-generic               ports/net/p5-Daemon-Generic
 p5-danga-socket                 ports/devel/p5-Danga-Socket
@@ -15730,6 +15735,7 @@ p5-www-curl                     ports/www/p5-WWW-Curl
 p5-www-dhl                      ports/www/p5-WWW-DHL
 p5-www-dilbert                  ports/www/p5-WWW-Dilbert
 p5-www-facebook-api             ports/www/p5-WWW-Facebook-API
+p5-www-freeproxy                ports/www/p5-WWW-FreeProxy
 p5-www-gmail                    ports/mail/p5-WWW-GMail
 p5-www-google-calculator        ports/www/p5-WWW-Google-Calculator
 p5-www-google-news              ports/www/p5-WWW-Google-News
@@ -16314,6 +16320,7 @@ pear-XML_NITF                   ports/devel/pear-XML_NITF
 pear-XML_Parser                 ports/devel/pear-XML_Parser
 pear-XML_Query2XML              ports/databases/pear-XML_Query2XML
 pear-XML_RPC                    ports/net/pear-XML_RPC
+pear-XML_RPC2                   ports/net/pear-XML_RPC2
 pear-XML_RSS                    ports/devel/pear-XML_RSS
 pear-XML_SVG                    ports/devel/pear-XML_SVG
 pear-XML_Serializer             ports/devel/pear-XML_Serializer
@@ -16570,6 +16577,7 @@ pear-xml_nitf                   ports/devel/pear-XML_NITF
 pear-xml_parser                 ports/devel/pear-XML_Parser
 pear-xml_query2xml              ports/databases/pear-XML_Query2XML
 pear-xml_rpc                    ports/net/pear-XML_RPC
+pear-xml_rpc2                   ports/net/pear-XML_RPC2
 pear-xml_rss                    ports/devel/pear-XML_RSS
 pear-xml_serializer             ports/devel/pear-XML_Serializer
 pear-xml_svg                    ports/devel/pear-XML_SVG
@@ -17115,6 +17123,9 @@ planets                         ports/astro/planets
 planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
+plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
+plasma-applet-quicklauncher     ports/deskutils/plasma-applet-quicklauncher
+plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
 plasma-kmod                     ports/graphics/plasma-kmod
 platon                          ports/biology/platon
 play                            ports/audio/play
@@ -19338,6 +19349,7 @@ samba-pdbsql                    ports/net/samba-pdbsql
 samba-smbclient                 ports/net/samba-smbclient
 samba-vscan                     ports/security/samba-vscan
 samba3                          ports/net/samba3
+samba32-devel                   ports/net/samba32-devel
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
 samefile                        ports/sysutils/samefile
@@ -22009,6 +22021,7 @@ xephem                          ports/astro/xephem
 xephyr                          ports/x11-servers/xephyr
 xerces-c                        ports/textproc/xerces-c
 xerces-c2                       ports/textproc/xerces-c2
+xerces-c2-devel                 ports/textproc/xerces-c2-devel
 xerces-j                        ports/textproc/xerces-j
 xev                             ports/x11/xev
 xevil                           ports/games/xevil
@@ -22784,6 +22797,7 @@ yagiuda                         ports/comms/yagiuda
 yahoo-ui                        ports/www/yahoo-ui
 yahtzee                         ports/games/yahtzee
 yakuake                         ports/x11/yakuake
+yakuake-kde4                    ports/x11/yakuake-kde4
 yale-tftpd                      ports/ftp/yale-tftpd
 yalias                          ports/x11/yalias
 yamcha                          ports/textproc/yamcha
