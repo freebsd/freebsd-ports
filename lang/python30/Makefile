@@ -1,12 +1,11 @@
-# New ports collection makefile for:    python25
+# New ports collection makefile for:    python30
 # Date created:         3 July 2003
 # Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	python25
-PORTVERSION=	2.5.2
-PORTREVISION=	3
+PORTNAME=	python30
+PORTVERSION=	3.0.rc1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -27,23 +26,25 @@ INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.5
+PYTHON_VERSION=	python3.0
 PYTHON_NO_DEPENDS=	yes
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST=		${WRKDIR}/PLIST
 PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
-		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
+		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
 		plat-freebsd7 plat-freebsd8
 
-BIN_SCRIPTS=	idle pydoc python python-shared smtpd.py python-config \
-		python-shared-config
+BIN_SCRIPTS=	2to3 idle pydoc smtpd.py
+BIN_FILES=	python python-shared python-config python-shared-config \
+		${BIN_SCRIPTS}
 BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
+		-e 's,2to3,2to3-${PYTHON_VER},' \
 		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
 OPTIONS=	THREADS "Enable thread support" on \
@@ -121,12 +122,12 @@ CONFIGURE_ARGS+= --with-fpectl
 
 pre-patch:
 	${MKDIR} ${WRKSRC} ${SHARED_WRKSRC}/Modules
+	${LN} ${PATCH_WRKSRC}/Lib/smtpd.py ${PATCH_WRKSRC}/Tools/scripts/
+.for script in ${BIN_SCRIPTS}
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${PATCH_WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.5
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${PATCH_WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.5
-	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${PATCH_WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.5.py
+		${PATCH_WRKSRC}/Tools/scripts/${script} \
+		> ${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB}`
+.endfor
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${PATCH_WRKSRC}/Lib/pydoc.py
@@ -202,14 +203,17 @@ post-install:
 		${PREFIX}/bin
 
 	@# additional files installing by ports
-	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.5 ${WRKDIR}/idle2.5 \
-		${WRKDIR}/smtpd2.5.py ${PREFIX}/bin
+.for script in ${BIN_SCRIPTS}
+	${INSTALL_SCRIPT} \
+		${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB}` \
+		${PREFIX}/bin
+.endfor
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-	for f in ${BIN_SCRIPTS}; do \
+	for f in ${BIN_FILES}; do \
 		TARGET=`${ECHO_CMD} $$f | ${SED} -E ${BINLINKS_SUB}`; \
 		cd ${PREFIX}/bin && ${LN} -f $$TARGET $$f; \
 	done
