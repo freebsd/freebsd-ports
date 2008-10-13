@@ -73,7 +73,9 @@ OPTIONS=	BDB		"Use Berkeley DB"			off \
 
 .if defined(WITH_BDB)
 USE_BDB=	yes
-CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
+INVALID_BDB_VER=2
+CONFIGURE_ARGS+=--with-dblib=berkeley \
+		--with-bdb-libdir=${BDB_LIB_DIR} \
 		--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb=${BDB_LIB_NAME}
 SASLDB_NAME=	sasldb2

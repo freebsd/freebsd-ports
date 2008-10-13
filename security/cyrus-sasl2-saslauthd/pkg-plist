@@ -1,4 +1,3 @@
-man/cat8/saslauthd.8.gz
 sbin/saslauthd
 sbin/saslcache
 sbin/testsaslauthd
