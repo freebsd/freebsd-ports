@@ -1,0 +1,16 @@
+netaddr is a Python library for the manipulation of various common
+network address notations and representations.
+
+It takes the hassle out of fiddling with innumerable variations of
+network addresses, presenting a consistent, extensible, easy-to-use
+and (above all) Pythonic API.
+
+With it you can validate, convert, categorise, iterate, generate,
+slice (and dice):
+    * IP version 4
+    * IP version 6
+    * CIDR (Classless Inter-Domain Routing)
+    * MAC (Media Access Control)
+    * IEEE EUI-48 and EUI-64 
+
+WWW:	http://code.google.com/p/netaddr/

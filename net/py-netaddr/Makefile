@@ -1,0 +1,36 @@
+# New ports collection makefile for:	py-netaddr
+# Date created:		2008-10-14
+# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	netaddr
+PORTVERSION=	0.5.2
+CATEGORIES=	net python
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yzlin@cs.nctu.edu.tw
+COMMENT=	A python library for the manipulation of network address manipulation
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
+PORTDOCS=	AUTHORS CHANGELOG GLOSSARY README
+TESTFILES=	ut_address.py ut_run_all.py ut_strategy.py
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+
+regression-test:
+.for f in ${TESTFILES}
+	(cd ${WRKSRC}/tests && ${PYTHON_CMD} $f)
+.endfor
+
+.include <bsd.port.mk>
