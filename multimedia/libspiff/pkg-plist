@@ -6,7 +6,6 @@ include/spiff/ProjectOpus/ProjectOpusPlaylistExtensionWriter.h
 include/spiff/Spiff.h
 include/spiff/SpiffChunkCallback.h
 include/spiff/SpiffData.h
-include/spiff/SpiffDataWriter.h
 include/spiff/SpiffDateTime.h
 include/spiff/SpiffDefines.h
 include/spiff/SpiffExtension.h
@@ -15,15 +14,12 @@ include/spiff/SpiffExtensionReaderFactory.h
 include/spiff/SpiffExtensionWriter.h
 include/spiff/SpiffIndentFormatter.h
 include/spiff/SpiffProps.h
-include/spiff/SpiffPropsWriter.h
 include/spiff/SpiffReader.h
 include/spiff/SpiffReaderCallback.h
 include/spiff/SpiffSeamlessFormatter.h
-include/spiff/SpiffSkipExtensionReader.h
 include/spiff/SpiffStack.h
 include/spiff/SpiffToolbox.h
 include/spiff/SpiffTrack.h
-include/spiff/SpiffTrackWriter.h
 include/spiff/SpiffVersion.h
 include/spiff/SpiffWriter.h
 include/spiff/SpiffXmlFormatter.h
@@ -31,6 +27,6 @@ include/spiff/spiff_c.h
 lib/libspiff.a
 lib/libspiff.la
 lib/libspiff.so
-lib/libspiff.so.1
+lib/libspiff.so.4
 @dirrm include/spiff/ProjectOpus
 @dirrm include/spiff
