@@ -14,7 +14,6 @@
 %%WWWDIR%%/wp-admin/admin-post.php
 %%WWWDIR%%/wp-admin/admin.php
 %%WWWDIR%%/wp-admin/async-upload.php
-%%WWWDIR%%/wp-admin/bookmarklet.php
 %%WWWDIR%%/wp-admin/categories.php
 %%WWWDIR%%/wp-admin/comment.php
 %%WWWDIR%%/wp-admin/css/colors-classic-rtl.css
@@ -341,6 +340,7 @@
 %%WWWDIR%%/wp-includes/general-template.php
 %%WWWDIR%%/wp-includes/gettext.php
 %%WWWDIR%%/wp-includes/images/audio.png
+%%WWWDIR%%/wp-includes/images/blank.gif
 %%WWWDIR%%/wp-includes/images/crystal/archive.png
 %%WWWDIR%%/wp-includes/images/crystal/audio.png
 %%WWWDIR%%/wp-includes/images/crystal/code.png
@@ -398,7 +398,6 @@
 %%WWWDIR%%/wp-includes/js/crop/marqueeVert.gif
 %%WWWDIR%%/wp-includes/js/jquery/interface.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.color.js
-%%WWWDIR%%/wp-includes/js/jquery/jquery.dimensions.min.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.form.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.schedule.js
@@ -427,6 +426,7 @@
 %%WWWDIR%%/wp-includes/js/swfupload/swfupload.js
 %%WWWDIR%%/wp-includes/js/swfupload/swfupload_f9.swf
 %%WWWDIR%%/wp-includes/js/thickbox/loadingAnimation.gif
+%%WWWDIR%%/wp-includes/js/thickbox/macFFBgHack.png
 %%WWWDIR%%/wp-includes/js/thickbox/tb-close.png
 %%WWWDIR%%/wp-includes/js/thickbox/thickbox.css
 %%WWWDIR%%/wp-includes/js/thickbox/thickbox.js
@@ -497,7 +497,6 @@
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/toolbars.gif
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/video.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/popups.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage/css/editimage-rtl.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage/css/editimage.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wpeditimage/editimage.html
@@ -564,7 +563,6 @@
 %%WWWDIR%%/wp-includes/js/tinymce/wp-mce-help.php
 %%WWWDIR%%/wp-includes/js/tw-sack.js
 %%WWWDIR%%/wp-includes/js/wp-ajax-response.js
-%%WWWDIR%%/wp-includes/js/wp-ajax.js
 %%WWWDIR%%/wp-includes/js/wp-lists.js
 %%WWWDIR%%/wp-includes/kses.php
 %%WWWDIR%%/wp-includes/l10n.php
@@ -596,6 +594,7 @@
 %%WWWDIR%%/wp-includes/wp-db.php
 %%WWWDIR%%/wp-includes/wp-diff.php
 %%WWWDIR%%/wp-includes/wpmu-functions.php
+%%WWWDIR%%/wp-includes/wpmu-default-filters.php
 %%WWWDIR%%/wp-links-opml.php
 %%WWWDIR%%/wp-load.php
 %%WWWDIR%%/wp-login.php
