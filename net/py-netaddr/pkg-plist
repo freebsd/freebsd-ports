@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/netaddr/__init__.py
+%%PYTHON_SITELIBDIR%%/netaddr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/address.py
+%%PYTHON_SITELIBDIR%%/netaddr/address.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/address.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/strategy.py
+%%PYTHON_SITELIBDIR%%/netaddr/strategy.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/strategy.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr
