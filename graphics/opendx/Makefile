@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -64,32 +64,25 @@ CONFIGURE_ARGS+=	--without-javadx
 PLIST_SUB+=	JAVA="@comment "
 .endif
 
+PLIST_SUB+=	UNAMEP=${ARCH}
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-.if ${OSVERSION} >= 502126
-PLIST_SUB+=	UNAMEP=${ARCH} ARCHDIR=""
-.else
-PLIST_SUB+=	UNAMEP=${OPSYS:L} ARCHDIR="@comment "
-.endif
-
-pre-configure:
+post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
 .for dir in doc help html man
 	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
-	${REINPLACE_CMD} -e "s;-lpthread;${PTHREAD_LIBS};g"	\
+	@${REINPLACE_CMD} -e "s;-lpthread;${PTHREAD_LIBS};g"	\
 		-e "s;/usr/X11R6;${LOCALBASE};g"			\
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|startserver.bat||" \
+		${WRKSRC}/src/uipp/java/server/Makefile.in
 
 post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
 .if !defined(WITHOUT_JAVA)
-	@${RM} ${PREFIX}/dx/java/server/bin/startserver.bat
 	${CHMOD} 0775 ${PREFIX}/dx/java/server/nets
 	${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
 	@${ECHO} "---------------------------------------------------------"	\

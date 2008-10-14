@@ -2327,7 +2327,7 @@ dx/ui/viewer.net
 @dirrm dx/man/manl
 @dirrm dx/man/catl
 @dirrm dx/man
-%%ARCHDIR%%@dirrm dx/lib_%%UNAMEP%%
+@dirrm dx/lib_%%UNAMEP%%
 @dirrm dx/lib_%%ARCH%%
 @dirrm dx/lib
 %%JAVA%%@dirrm dx/java/user
