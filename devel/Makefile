@@ -446,6 +446,7 @@
     SUBDIR += gonzui
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
+    SUBDIR += googletest
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gpsim
