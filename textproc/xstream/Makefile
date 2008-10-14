@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xstream
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	textproc java
-MASTER_SITES=	http://dist.codehaus.org/xstream/distributions/
+MASTER_SITES=	http://repository.codehaus.org/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-distribution-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A simple library to serialize Java objects to XML
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 USE_ZIP=	yes
 USE_JAVA=	yes
 USE_ANT=	yes
@@ -28,14 +29,14 @@ ALL_TARGET+=	javadoc
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-SNAPSHOT.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/ && ${FIND} javadoc \
+	@cd ${WRKSRC}/target/ && ${FIND} javadoc \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/../,} ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 

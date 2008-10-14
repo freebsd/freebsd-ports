@@ -1,0 +1,12 @@
+--- build.xml.orig	2008-10-14 17:50:58.000000000 +0200
++++ build.xml	2008-10-14 17:51:26.000000000 +0200
+@@ -146,9 +146,6 @@
+         <jar jarfile="${build.dir}/xstream-${version}.jar">
+             <fileset dir="${java.build.dir}"/>
+         </jar>
+-        <jar jarfile="${build.dir}/xstream-benchmark-${version}.jar">
+-            <fileset dir="${benchmark.build.dir}"/>
+-        </jar>
+         <antcall target="jdk-check"/>
+     </target>
+ 
