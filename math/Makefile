@@ -254,6 +254,7 @@
     SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
     SUBDIR += oleo
+    SUBDIR += open-axiom
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
