@@ -6,49 +6,35 @@
 #
 
 PORTNAME=	kmymoney2
-PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTVERSION=	0.8.9
 CATEGORIES=	finance
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	KDE-based personal finance assistant
 
 LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-# Currently no possibility to enable OFX; requires additional work
-.undef WITH_OFX
-WITHOUT_OFX=	yes
+LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
 
-.if defined(WITH_OFX)
-LIB_DEPENDS+=	ofx.3:${PORTSDIR}/finance/libofx
-CONFIGURE_ARGS=	--enable-ofxplugin
-OFXPLUGIN=
-.else
-CONFIGURE_ARGS=	--enable-ofxplugin=no
-OFXPLUGIN=	"@comment "
-.endif
-
-PLIST_SUB+=	OFXPLUGIN=${OFXPLUGIN}
-
-USE_KDELIBS_VER=	3
-USE_GMAKE=		yes
+USE_KDELIBS_VER=3
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_PERL5=		yes
-USE_BZIP2=		yes
+USE_PERL5=	yes
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 
 INSTALLS_ICONS=	yes
 
-MAN1=			kmymoney2.1
+MAN1=		kmymoney2.1
 MANCOMPRESSED=	yes
 
-DATADIR=		${PREFIX}/share/apps/${PORTNAME}
-DOCSDIR=		${PREFIX}/share/doc/HTML/en/${PORTNAME}
+DATADIR=	${PREFIX}/share/apps/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -E -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
