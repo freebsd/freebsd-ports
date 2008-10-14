@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://getgnash.org/packages/releases/ \
 		${MASTER_SITE_GNU}
@@ -18,7 +17,8 @@ COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		curl.4:${PORTSDIR}/ftp/curl
+		curl.4:${PORTSDIR}/ftp/curl \
+		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	gnash-devel-[0-9]*
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
 		--with-kde-pluginprefix="${PREFIX}"
 
-GNASHVER=	${DISTVERSION}
+GNASHVER=	${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GNASHVER}
 PLIST_SUB+=	GNASHVER="${GNASHVER}"
