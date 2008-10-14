@@ -728,6 +728,7 @@
     SUBDIR += p5-XML-RSS-SimpleGen
     SUBDIR += p5-XML-RSSLite
     SUBDIR += p5-XML-RegExp
+    SUBDIR += p5-XML-Rules
     SUBDIR += p5-XML-SAX
     SUBDIR += p5-XML-SAX-Expat
     SUBDIR += p5-XML-SAX-Expat-Incremental

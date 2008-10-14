@@ -1,0 +1,4 @@
+bin/dtd2XMLRules.pl
+bin/xml2XMLRules.pl
+%%SITE_PERL%%/XML/Rules.pm
+@dirrmtry %%SITE_PERL%%/XML
