@@ -422,6 +422,7 @@
     SUBDIR += glibmm
     SUBDIR += glibmm-reference
     SUBDIR += global
+    SUBDIR += glog
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
