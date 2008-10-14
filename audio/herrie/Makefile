@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
-		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
 
 MAINTAINER=	ed@FreeBSD.org
@@ -75,7 +74,7 @@ LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
 CONFIGURE_ARGS+=xcurses
 .endif
 .if !defined(WITHOUT_XSPF)
-LIB_DEPENDS+=	spiff.1:${PORTSDIR}/multimedia/libspiff
+LIB_DEPENDS+=	spiff.4:${PORTSDIR}/multimedia/libspiff
 .else
 CONFIGURE_ARGS+=no_xspf
 .endif
