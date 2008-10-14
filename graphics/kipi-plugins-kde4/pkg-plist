@@ -371,6 +371,7 @@ share/doc/HTML/es/kipi-plugins/flickrexportuploaddialog.png
 share/doc/HTML/es/kipi-plugins/flickrexportuploading.png
 share/doc/HTML/es/kipi-plugins/galleryexport.docbook
 share/doc/HTML/es/kipi-plugins/geolocalization.docbook
+share/doc/HTML/es/kipi-plugins/geolocation.docbook
 share/doc/HTML/es/kipi-plugins/imagegallery_albumsettings.png
 share/doc/HTML/es/kipi-plugins/imagegallery_collectionselection.png
 share/doc/HTML/es/kipi-plugins/imagegallery_looksettings.png
@@ -414,11 +415,14 @@ share/doc/HTML/et/kipi-plugins/filterimages.docbook
 share/doc/HTML/et/kipi-plugins/findduplicateimages.docbook
 share/doc/HTML/et/kipi-plugins/flickrexport.docbook
 share/doc/HTML/et/kipi-plugins/galleryexport.docbook
+share/doc/HTML/et/kipi-plugins/geolocation.docbook
 share/doc/HTML/et/kipi-plugins/imagesgallery.docbook
+share/doc/HTML/et/kipi-plugins/imageviewer.docbook
 share/doc/HTML/et/kipi-plugins/index.cache.bz2
 share/doc/HTML/et/kipi-plugins/index.docbook
 share/doc/HTML/et/kipi-plugins/jpeglossless.docbook
 share/doc/HTML/et/kipi-plugins/kameraklient.docbook
+share/doc/HTML/et/kipi-plugins/metadataeditor.docbook
 share/doc/HTML/et/kipi-plugins/mpegencoder.docbook
 share/doc/HTML/et/kipi-plugins/printwizard.docbook
 share/doc/HTML/et/kipi-plugins/rawconverter.docbook
