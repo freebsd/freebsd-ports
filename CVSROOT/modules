@@ -9433,6 +9433,7 @@ openldap23-server               ports/net/openldap23-server
 openldap24-client               ports/net/openldap24-client
 openldap24-sasl-client          ports/net/openldap24-sasl-client
 openldap24-server               ports/net/openldap24-server
+openlierox                      ports/games/openlierox
 openlldp                        ports/net-mgmt/openlldp
 openmap                         ports/astro/openmap
 openmcu                         ports/net/openmcu
