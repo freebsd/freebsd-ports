@@ -19294,6 +19294,7 @@ rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-thin                    ports/www/rubygem-thin
 rubygem-tidy                    ports/textproc/rubygem-tidy
+rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
 rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
