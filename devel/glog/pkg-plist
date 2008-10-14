@@ -1,0 +1,19 @@
+include/glog/log_severity.h
+include/glog/logging.h
+include/glog/raw_logging.h
+include/glog/vlog_is_on.h
+include/glog/stl_logging.h
+lib/libglog.so.0
+lib/libglog.so
+lib/libglog.la
+lib/libglog.a
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/designstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/glog.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/glog
