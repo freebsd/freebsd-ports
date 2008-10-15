@@ -1219,6 +1219,7 @@
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakTrace
+    SUBDIR += p5-Devel-LeakTrace-Fast
     SUBDIR += p5-Devel-LexAlias
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
