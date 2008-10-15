@@ -112,6 +112,9 @@ share/X11/xkb/keymap.dir
 share/X11/xkb/rules/base
 share/X11/xkb/rules/base.lst
 share/X11/xkb/rules/base.xml
+share/X11/xkb/rules/evdev
+share/X11/xkb/rules/evdev.lst
+share/X11/xkb/rules/evdev.xml
 share/X11/xkb/rules/xfree98
 share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
