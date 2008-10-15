@@ -4077,6 +4077,7 @@ glmaze                          ports/games/glmaze
 glob2                           ports/games/glob2
 global                          ports/devel/global
 globus4                         ports/net/globus4
+glog                            ports/devel/glog
 glom                            ports/databases/glom
 gloox                           ports/net-im/gloox
 glpi                            ports/www/glpi
@@ -4393,6 +4394,7 @@ google-gadgets                  ports/deskutils/google-gadgets
 google-perftools                ports/devel/google-perftools
 google-sitemapgen               ports/www/google-sitemapgen
 google-sparsehash               ports/devel/google-sparsehash
+googletest                      ports/devel/googletest
 googlog                         ports/sysutils/googlog
 googolplex                      ports/net/googolplex
 goom                            ports/graphics/goom
@@ -5402,10 +5404,13 @@ isaac-cfd                       ports/science/isaac-cfd
 isabelle                        ports/math/isabelle
 isakmpd                         ports/security/isakmpd
 isc-cron                        ports/sysutils/isc-cron
-isc-dhcp3-client                ports/net/isc-dhcp3-client
 isc-dhcp3-devel                 ports/net/isc-dhcp3-devel
-isc-dhcp3-relay                 ports/net/isc-dhcp3-relay
-isc-dhcp3-server                ports/net/isc-dhcp3-server
+isc-dhcp30-client               ports/net/isc-dhcp30-client
+isc-dhcp30-relay                ports/net/isc-dhcp30-relay
+isc-dhcp30-server               ports/net/isc-dhcp30-server
+isc-dhcp31-client               ports/net/isc-dhcp31-client
+isc-dhcp31-relay                ports/net/isc-dhcp31-relay
+isc-dhcp31-server               ports/net/isc-dhcp31-server
 iscsi-target                    ports/net/iscsi-target
 isearch                         ports/textproc/isearch
 iselect                         ports/misc/iselect
@@ -10679,6 +10684,7 @@ p5-File-Fetch                   ports/ftp/p5-File-Fetch
 p5-File-Find-Object             ports/devel/p5-File-Find-Object
 p5-File-Find-Rule               ports/devel/p5-File-Find-Rule
 p5-File-Find-Rule-Filesys-Virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
+p5-File-Find-Rule-Perl          ports/devel/p5-File-Find-Rule-Perl
 p5-File-Finder                  ports/devel/p5-File-Finder
 p5-File-Flat                    ports/devel/p5-File-Flat
 p5-File-Flock                   ports/devel/p5-File-Flock
@@ -12661,6 +12667,7 @@ p5-XML-RSS-Parser               ports/textproc/p5-XML-RSS-Parser
 p5-XML-RSS-SimpleGen            ports/textproc/p5-XML-RSS-SimpleGen
 p5-XML-RSSLite                  ports/textproc/p5-XML-RSSLite
 p5-XML-RegExp                   ports/textproc/p5-XML-RegExp
+p5-XML-Rules                    ports/textproc/p5-XML-Rules
 p5-XML-SAX                      ports/textproc/p5-XML-SAX
 p5-XML-SAX-Expat                ports/textproc/p5-XML-SAX-Expat
 p5-XML-SAX-Expat-Incremental    ports/textproc/p5-XML-SAX-Expat-Incremental
@@ -13831,6 +13838,7 @@ p5-file-fetch                   ports/ftp/p5-File-Fetch
 p5-file-find-object             ports/devel/p5-File-Find-Object
 p5-file-find-rule               ports/devel/p5-File-Find-Rule
 p5-file-find-rule-filesys-virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
+p5-file-find-rule-perl          ports/devel/p5-File-Find-Rule-Perl
 p5-file-finder                  ports/devel/p5-File-Finder
 p5-file-flat                    ports/devel/p5-File-Flat
 p5-file-flock                   ports/devel/p5-File-Flock
@@ -15867,6 +15875,7 @@ p5-xml-rss-libxml               ports/textproc/p5-XML-RSS-LibXML
 p5-xml-rss-parser               ports/textproc/p5-XML-RSS-Parser
 p5-xml-rss-simplegen            ports/textproc/p5-XML-RSS-SimpleGen
 p5-xml-rsslite                  ports/textproc/p5-XML-RSSLite
+p5-xml-rules                    ports/textproc/p5-XML-Rules
 p5-xml-sablotron                ports/textproc/p5-XML-Sablotron
 p5-xml-sax                      ports/textproc/p5-XML-SAX
 p5-xml-sax-expat                ports/textproc/p5-XML-SAX-Expat
@@ -16037,6 +16046,7 @@ pcgen                           ports/games/pcgen
 pchar                           ports/net/pchar
 pciids                          ports/misc/pciids
 pciutils                        ports/sysutils/pciutils
+pcl                             ports/devel/pcl
 pclock                          ports/x11-clocks/pclock
 pclprint                        ports/print/pclprint
 pcmanfm                         ports/x11-fm/pcmanfm
@@ -17901,6 +17911,7 @@ py-mysqldb                      ports/databases/py-MySQLdb
 py-mysqldb-devel                ports/databases/py-MySQLdb-devel
 py-nautilus                     ports/x11-fm/py-nautilus
 py-ncurses                      ports/devel/py-ncurses
+py-netaddr                      ports/net/py-netaddr
 py-netstring                    ports/net/py-netstring
 py-networkx                     ports/math/py-networkx
 py-nevow                        ports/www/py-nevow
@@ -18997,6 +19008,7 @@ ruby-format                     ports/textproc/ruby-format
 ruby-formvalidator              ports/textproc/ruby-formvalidator
 ruby-fox10                      ports/x11-toolkits/ruby-fox10
 ruby-fox12                      ports/x11-toolkits/ruby-fox12
+ruby-fox16                      ports/x11-toolkits/ruby-fox16
 ruby-freedb                     ports/audio/ruby-freedb
 ruby-frontbase                  ports/databases/ruby-frontbase
 ruby-game                       ports/devel/ruby-game
