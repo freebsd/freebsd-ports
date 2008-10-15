@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmol
-PORTVERSION=	11.4.6
+PORTVERSION=	11.6
 CATEGORIES=	science java
 MASTER_SITES=	SF:source1 \
 		http://jmol.svn.sourceforge.net/viewvc/*checkout*/jmol/trunk/Jmol/selfSignedCertificate/:source2
@@ -19,16 +19,16 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open-Source Java Viewer for Chemical Structures in 3D
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JMOL_FILES=	Jmol.jar JmolApplet.jar JmolApplet0.jar \
-		JmolApplet0_Core.jar JmolApplet0_Jars.jar \
-		JmolApplet0_Jvxl.jar JmolApplet0_Main.jar \
+		JmolApplet0_Minimize.jar \
 		JmolApplet0_Popup.jar JmolApplet0_Quantum.jar \
 		JmolApplet0_ReadersCifPdb.jar JmolApplet0_ReadersMolXyz.jar \
 		JmolApplet0_ReadersMore.jar JmolApplet0_ReadersXml.jar \
 		JmolApplet0_ShapeBio.jar JmolApplet0_ShapeSpecial.jar \
-		JmolApplet0_Smiles.jar JmolApplet0_Viewer.jar \
+		JmolApplet0_ShapeSurface.jar \
+		JmolApplet0_Smiles.jar JmolApplet0_Symmetry.jar \
 		JmolApplet0_i18n.jar
 JMOL_FILES_EXT=	Jmol.js
 SIGN_DIR=	${WRKSRC}/selfSignedCertificate

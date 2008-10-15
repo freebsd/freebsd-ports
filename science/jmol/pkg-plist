@@ -16,7 +16,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/JmolUserGuide/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/JmolUserGuide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/docbook-xml-4.4.zip
-%%PORTDOCS%%%%DOCSDIR%%/docbook-xsl-1.73.2.tar.gz
+%%PORTDOCS%%%%DOCSDIR%%/docbook-xsl-1.74.0.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/ibm.license.html
 %%PORTDOCS%%%%DOCSDIR%%/jcfl-1.2.6-source.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/jpegEncoder.license
@@ -75,10 +75,7 @@
 %%JAVAJARDIR%%/Jmol.js
 %%JAVAJARDIR%%/JmolApplet.jar
 %%JAVAJARDIR%%/JmolApplet0.jar
-%%JAVAJARDIR%%/JmolApplet0_Core.jar
-%%JAVAJARDIR%%/JmolApplet0_Jars.jar
-%%JAVAJARDIR%%/JmolApplet0_Jvxl.jar
-%%JAVAJARDIR%%/JmolApplet0_Main.jar
+%%JAVAJARDIR%%/JmolApplet0_Minimize.jar
 %%JAVAJARDIR%%/JmolApplet0_Popup.jar
 %%JAVAJARDIR%%/JmolApplet0_Quantum.jar
 %%JAVAJARDIR%%/JmolApplet0_ReadersCifPdb.jar
@@ -87,8 +84,9 @@
 %%JAVAJARDIR%%/JmolApplet0_ReadersXml.jar
 %%JAVAJARDIR%%/JmolApplet0_ShapeBio.jar
 %%JAVAJARDIR%%/JmolApplet0_ShapeSpecial.jar
+%%JAVAJARDIR%%/JmolApplet0_ShapeSurface.jar
+%%JAVAJARDIR%%/JmolApplet0_Symmetry.jar
 %%JAVAJARDIR%%/JmolApplet0_Smiles.jar
-%%JAVAJARDIR%%/JmolApplet0_Viewer.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/xml2po-modes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/po
