@@ -657,6 +657,7 @@
     SUBDIR += libmimedir
     SUBDIR += libmowgli
     SUBDIR += libmpcbdm
+    SUBDIR += libmsocket
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnotify
