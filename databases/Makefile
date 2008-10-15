@@ -442,6 +442,7 @@
     SUBDIR += phpminadmin
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
+    SUBDIR += phpmyadmin211
     SUBDIR += phppgadmin
     SUBDIR += postgis
     SUBDIR += postgis-jdbc

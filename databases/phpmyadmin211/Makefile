@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phpMyAdmin
+PORTNAME=	phpMyAdmin211
 DISTVERSION=	2.11.9.2
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
-DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
+DISTNAME=	${PORTNAME:S/211//}-${DISTVERSION}-all-languages
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
@@ -115,6 +115,9 @@ do-build:
 	@${DO_NADA}
 
 pre-everything::
+	${ECHO_MSG} ""
+	${ECHO_MSG} "This is the legacy version of phpMyAdmin that will"
+	${ECHO_MSG} "work with PHP4 and versions of MySQL older than 5.0"
 	${ECHO_MSG} ""
 	${ECHO_MSG} "You may use the following additional build option:"
 	${ECHO_MSG} ""
