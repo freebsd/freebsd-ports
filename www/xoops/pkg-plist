@@ -52,6 +52,7 @@
 %%WWWDIR%%/htdocs/class/captcha/image/fonts/VeraMono.ttf
 %%WWWDIR%%/htdocs/class/captcha/image/fonts/VeraSe.ttf
 %%WWWDIR%%/htdocs/class/captcha/image/fonts/verasebd.ttf
+%%WWWDIR%%/htdocs/class/captcha/image/index.html
 %%WWWDIR%%/htdocs/class/captcha/image/scripts/image.php
 %%WWWDIR%%/htdocs/class/captcha/image/scripts/index.html
 %%WWWDIR%%/htdocs/class/captcha/image.php
@@ -212,26 +213,38 @@
 %%WWWDIR%%/htdocs/class/template.php
 %%WWWDIR%%/htdocs/class/textsanitizer/censor/censor.php
 %%WWWDIR%%/htdocs/class/textsanitizer/censor/config.php
+%%WWWDIR%%/htdocs/class/textsanitizer/censor/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/flash/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/flash/flash.php
+%%WWWDIR%%/htdocs/class/textsanitizer/flash/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/iframe/iframe.php
+%%WWWDIR%%/htdocs/class/textsanitizer/iframe/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/image/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/image/image.js
 %%WWWDIR%%/htdocs/class/textsanitizer/image/image.php
+%%WWWDIR%%/htdocs/class/textsanitizer/image/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/index.html
+%%WWWDIR%%/htdocs/class/textsanitizer/mms/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/mms/mms.php
+%%WWWDIR%%/htdocs/class/textsanitizer/mp3/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/mp3/mp3.php
 %%WWWDIR%%/htdocs/class/textsanitizer/readme.txt
+%%WWWDIR%%/htdocs/class/textsanitizer/rtsp/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/rtsp/rtsp.php
 %%WWWDIR%%/htdocs/class/textsanitizer/syntaxhighlight/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/syntaxhighlight/geshi.php
+%%WWWDIR%%/htdocs/class/textsanitizer/syntaxhighlight/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/syntaxhighlight/syntaxhighlight.php
 %%WWWDIR%%/htdocs/class/textsanitizer/textfilter/config.php
+%%WWWDIR%%/htdocs/class/textsanitizer/textfilter/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/textfilter/textfilter.php
 %%WWWDIR%%/htdocs/class/textsanitizer/wiki/config.php
+%%WWWDIR%%/htdocs/class/textsanitizer/wiki/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/wiki/wiki.php
+%%WWWDIR%%/htdocs/class/textsanitizer/wmp/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/wmp/wmp.php
+%%WWWDIR%%/htdocs/class/textsanitizer/youtube/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/youtube/youtube.php
 %%WWWDIR%%/htdocs/class/theme.php
 %%WWWDIR%%/htdocs/class/theme_blocks.php
@@ -830,11 +843,15 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/textarea/textarea.php
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/editor_registry.php
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/formtinymce.php
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/language/english.php
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/language/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/language/schinese.php
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/language/schinese_utf8.php
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/settings.php
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/changelog.txt
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/ar.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/bg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/bs.js
@@ -854,6 +871,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/hu.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/ia.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/ii.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/is.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/it.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/ja.js
@@ -885,8 +903,11 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/langs/zh.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/license.txt
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/css/advhr.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/js/rule.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/bg_dlg.js
@@ -907,6 +928,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/ja_dlg.js
@@ -938,11 +960,15 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/langs/zh_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advhr/rule.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/css/advimage.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/image.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/img/sample.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/js/image.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/bg_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/bs_dlg.js
@@ -962,6 +988,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/ja_dlg.js
@@ -992,9 +1019,12 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/vi_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advimage/langs/zh_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/css/advlink.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/js/advlink.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/bg_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/bs_dlg.js
@@ -1014,6 +1044,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/langs/ja_dlg.js
@@ -1046,17 +1077,23 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/advlink/link.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/autosave/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/bbcode/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/bbcode/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/compat2x/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/compat2x/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/compat2x/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/contextmenu/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/contextmenu/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/directionality/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/directionality/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/emotions.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-cool.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-cry.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-embarassed.gif
@@ -1073,7 +1110,9 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-undecided.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-wink.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/img/smiley-yell.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/js/emotions.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/bg_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/bs_dlg.js
@@ -1093,6 +1132,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/emotions/langs/ja_dlg.js
@@ -1126,14 +1166,21 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/img/example.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/img/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/js/dialog.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/langs/en.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/example/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/js/fullpage.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/bg_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/bs_dlg.js
@@ -1153,6 +1200,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullpage/langs/ja_dlg.js
@@ -1185,35 +1233,48 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullscreen/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullscreen/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/fullscreen/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/iespell/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/iespell/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/button.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/skins/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/inlinepopups/template.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/insertdatetime/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/insertdatetime/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/layer/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/layer/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/css/content.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/css/media.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/flash.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/flv_player.swf
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/quicktime.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/realmedia.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/shockwave.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/trans.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/img/windowsmedia.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/js/embed.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/js/media.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/bg_dlg.js
@@ -1234,6 +1295,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/langs/ja_dlg.js
@@ -1266,18 +1328,26 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/media/media.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/nonbreaking/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/nonbreaking/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/nonbreaking/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/noneditable/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/noneditable/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/css/content.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/img/pagebreak.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/img/trans.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/pagebreak/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/blank.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/css/blank.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/css/pasteword.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/js/pastetext.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/js/pasteword.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/ar_dlg.js
@@ -1299,6 +1369,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/paste/langs/ja_dlg.js
@@ -1333,18 +1404,26 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/editor_plugin_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/example.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/jscripts/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/preview/preview.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/print/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/print/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/safari/blank.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/safari/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/safari/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/safari/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/save/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/save/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/css/searchreplace.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/js/searchreplace.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/bg_dlg.js
@@ -1365,6 +1444,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/ja_dlg.js
@@ -1396,12 +1476,18 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/langs/zh_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/searchreplace/searchreplace.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/css/content.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/spellchecker/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/css/props.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/js/props.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/bg_dlg.js
@@ -1422,6 +1508,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/langs/ja_dlg.js
@@ -1454,11 +1541,14 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/style/props.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/cell.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/css/cell.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/css/row.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/css/table.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/js/cell.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/js/merge_cells.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/js/row.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/js/table.js
@@ -1481,6 +1571,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/langs/ja_dlg.js
@@ -1514,9 +1605,12 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/row.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/table/table.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/blank.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/css/template.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/js/template.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/bg_dlg.js
@@ -1537,6 +1631,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/langs/ja_dlg.js
@@ -1569,15 +1664,18 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/template/template.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/visualchars/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/visualchars/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/abbr.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/acronym.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/attributes.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/cite.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/css/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/css/popup.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/del.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/editor_plugin.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/editor_plugin_src.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/ins.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/abbr.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/acronym.js
@@ -1585,6 +1683,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/cite.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/del.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/element_common.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/js/ins.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/ar_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/bg_dlg.js
@@ -1605,6 +1704,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/hu_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/it_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/plugins/xhtmlxtras/langs/ja_dlg.js
@@ -1710,11 +1810,14 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/image.htm
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/img/colorpicker.jpg
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/img/icons.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/img/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/about.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/anchor.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/charmap.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/color_picker.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/image.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/link.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/js/source_editor.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/ar.js
@@ -1755,6 +1858,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/ia_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/ii.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/ii_dlg.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/is.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/is_dlg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/langs/it.js
@@ -1817,24 +1921,32 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/content.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/dialog.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/items.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/menu_arrow.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/menu_check.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/progress.gif
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/content.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/dialog.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg.png
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg_black.png
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/img/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/ui.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/ui_black.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/skins/o2k7/ui_silver.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/advanced/source_editor.htm
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/editor_template.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/editor_template_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/img/icons.gif
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/img/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/ar.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/bg.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/bs.js
@@ -1854,6 +1966,7 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/hu.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/ia.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/ii.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/is.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/it.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/ja.js
@@ -1884,15 +1997,20 @@
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/vi.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/langs/zh.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/default/content.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/default/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/default/ui.css
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/o2k7/content.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/o2k7/img/index.html
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/o2k7/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/themes/simple/skins/o2k7/ui.css
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/tiny_mce.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/tiny_mce_popup.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/tiny_mce_src.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/utils/editable_selects.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/utils/form_utils.js
+%%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/utils/index.html
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/utils/mctabs.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce/jscripts/utils/validate.js
 %%WWWDIR%%/htdocs/class/xoopseditor/tinymce/tinymce.php
@@ -1952,7 +2070,6 @@
 %%WWWDIR%%/htdocs/Frameworks/art/functions.admin.php
 %%WWWDIR%%/htdocs/Frameworks/art/functions.cache.php
 %%WWWDIR%%/htdocs/Frameworks/art/functions.config.php
-%%WWWDIR%%/htdocs/Frameworks/art/functions.filter.php
 %%WWWDIR%%/htdocs/Frameworks/art/functions.ini.php
 %%WWWDIR%%/htdocs/Frameworks/art/functions.locale.php
 %%WWWDIR%%/htdocs/Frameworks/art/functions.php
@@ -1994,6 +2111,7 @@
 %%WWWDIR%%/htdocs/images/form/iframe.gif
 %%WWWDIR%%/htdocs/images/form/image.gif
 %%WWWDIR%%/htdocs/images/form/imgsrc.gif
+%%WWWDIR%%/htdocs/images/form/index.html
 %%WWWDIR%%/htdocs/images/form/italic.gif
 %%WWWDIR%%/htdocs/images/form/linethrough.gif
 %%WWWDIR%%/htdocs/images/form/list.gif
@@ -2037,6 +2155,7 @@
 %%WWWDIR%%/htdocs/images/italic.gif
 %%WWWDIR%%/htdocs/images/linethrough.gif
 %%WWWDIR%%/htdocs/images/logo.gif
+%%WWWDIR%%/htdocs/images/logo.png
 %%WWWDIR%%/htdocs/images/pagact.gif
 %%WWWDIR%%/htdocs/images/paginact.gif
 %%WWWDIR%%/htdocs/images/pagneutral.gif
@@ -2100,6 +2219,7 @@
 %%WWWDIR%%/htdocs/index.php
 %%WWWDIR%%/htdocs/install/class/cachemanager.php
 %%WWWDIR%%/htdocs/install/class/dbmanager.php
+%%WWWDIR%%/htdocs/install/class/index.html
 %%WWWDIR%%/htdocs/install/common.inc.php
 %%WWWDIR%%/htdocs/install/img/background.png
 %%WWWDIR%%/htdocs/install/img/banner_bg.png
@@ -2111,6 +2231,7 @@
 %%WWWDIR%%/htdocs/install/img/ffffff-75.png
 %%WWWDIR%%/htdocs/install/img/form-input.png
 %%WWWDIR%%/htdocs/install/img/help.png
+%%WWWDIR%%/htdocs/install/img/index.html
 %%WWWDIR%%/htdocs/install/img/logo.png
 %%WWWDIR%%/htdocs/install/img/no.png
 %%WWWDIR%%/htdocs/install/img/no_big.png
@@ -2120,18 +2241,20 @@
 %%WWWDIR%%/htdocs/install/img/title-br.png
 %%WWWDIR%%/htdocs/install/img/title-inner.png
 %%WWWDIR%%/htdocs/install/img/title-tl.png
-%%WWWDIR%%/htdocs/install/img/title-tr.png
-%%WWWDIR%%/htdocs/install/img/yes.png
 %%WWWDIR%%/htdocs/install/img/warning.png
+%%WWWDIR%%/htdocs/install/img/title-tr.png
 %%WWWDIR%%/htdocs/install/img/wizard_bg.png
+%%WWWDIR%%/htdocs/install/img/yes.png
 %%WWWDIR%%/htdocs/install/img/yes_big.png
 %%WWWDIR%%/htdocs/install/index.php
 %%WWWDIR%%/htdocs/install/install_tpl.php
 %%WWWDIR%%/htdocs/install/language/english/finish.php
+%%WWWDIR%%/htdocs/install/language/english/index.html
 %%WWWDIR%%/htdocs/install/language/english/install.php
 %%WWWDIR%%/htdocs/install/language/english/install2.php
 %%WWWDIR%%/htdocs/install/language/english/mysql.lang.data.sql
 %%WWWDIR%%/htdocs/install/language/english/welcome.php
+%%WWWDIR%%/htdocs/install/language/index.html
 %%WWWDIR%%/htdocs/install/makedata.php
 %%WWWDIR%%/htdocs/install/page_configsave.php
 %%WWWDIR%%/htdocs/install/page_dbconnection.php
@@ -2145,6 +2268,7 @@
 %%WWWDIR%%/htdocs/install/page_tablescreate.php
 %%WWWDIR%%/htdocs/install/page_tablesfill.php
 %%WWWDIR%%/htdocs/install/prototype.js
+%%WWWDIR%%/htdocs/install/sql/index.html
 %%WWWDIR%%/htdocs/install/sql/mysql.data.sql
 %%WWWDIR%%/htdocs/install/sql/mysql.structure.sql
 %%WWWDIR%%/htdocs/install/style.css
@@ -2399,6 +2523,7 @@
 %%WWWDIR%%/htdocs/modules/system/blocks/system_blocks.php
 %%WWWDIR%%/htdocs/modules/system/class/cpanel.php
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/cp_functions.php
+%%WWWDIR%%/htdocs/modules/system/class/gui/default/css/index.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/css/style.css
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/default.php
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/images/bg-ad-top.png
@@ -2424,6 +2549,7 @@
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/images/xoops-logo.png
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/images/xoops2.gif
 %%WWWDIR%%/htdocs/modules/system/class/gui/default/images/xoops23.gif
+%%WWWDIR%%/htdocs/modules/system/class/gui/default/index.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/css/en.css
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/css/index.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/css/style.css
@@ -2551,7 +2677,6 @@
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/templates/admin/system_adm_navbar.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/templates/admin/system_indexcp.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/exm/templates/index.html
-%%WWWDIR%%/htdocs/modules/system/class/gui/gui.php
 %%WWWDIR%%/htdocs/modules/system/class/gui/index.html
 %%WWWDIR%%/htdocs/modules/system/class/gui/legacy/cp_functions.php
 %%WWWDIR%%/htdocs/modules/system/class/gui/legacy/index.html
@@ -2640,30 +2765,26 @@
 %%WWWDIR%%/htdocs/modules/thadmin/admin/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/admin/index.php
 %%WWWDIR%%/htdocs/modules/thadmin/admin/menu.php
-%%WWWDIR%%/htdocs/modules/thadmin/admin/tabs.php
 %%WWWDIR%%/htdocs/modules/thadmin/admin/templates/admin_index.html
 %%WWWDIR%%/htdocs/modules/thadmin/admin/templates/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/admin/upload.php
 %%WWWDIR%%/htdocs/modules/thadmin/class/dUnzip.php
 %%WWWDIR%%/htdocs/modules/thadmin/class/dZip.php
 %%WWWDIR%%/htdocs/modules/thadmin/class/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/class/tabs.php
+%%WWWDIR%%/htdocs/modules/thadmin/class/menu.php
 %%WWWDIR%%/htdocs/modules/thadmin/class/theme.php
 %%WWWDIR%%/htdocs/modules/thadmin/css/help.css
 %%WWWDIR%%/htdocs/modules/thadmin/css/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/css/tabs.css
-%%WWWDIR%%/htdocs/modules/thadmin/extras/cp_functions.php
-%%WWWDIR%%/htdocs/modules/thadmin/extras/index.html
+%%WWWDIR%%/htdocs/modules/thadmin/css/menu.css
 %%WWWDIR%%/htdocs/modules/thadmin/images/icons/idea.png
 %%WWWDIR%%/htdocs/modules/thadmin/images/icons/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/images/icons/no.png
 %%WWWDIR%%/htdocs/modules/thadmin/images/icons/yes.png
 %%WWWDIR%%/htdocs/modules/thadmin/images/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/images/tabs/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/images/tabs/left.png
-%%WWWDIR%%/htdocs/modules/thadmin/images/tabs/left_on.png
-%%WWWDIR%%/htdocs/modules/thadmin/images/tabs/right.png
-%%WWWDIR%%/htdocs/modules/thadmin/images/tabs/right_on.png
+%%WWWDIR%%/htdocs/modules/thadmin/images/menu/bg.gif
+%%WWWDIR%%/htdocs/modules/thadmin/images/menu/index.html
+%%WWWDIR%%/htdocs/modules/thadmin/images/menu/left_both.gif
+%%WWWDIR%%/htdocs/modules/thadmin/images/menu/right_both.gif
 %%WWWDIR%%/htdocs/modules/thadmin/include/action.module.php
 %%WWWDIR%%/htdocs/modules/thadmin/include/cp_functions.php
 %%WWWDIR%%/htdocs/modules/thadmin/include/functions.php
@@ -2678,14 +2799,14 @@
 %%WWWDIR%%/htdocs/modules/thadmin/language/french/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/language/french/modinfo.php
 %%WWWDIR%%/htdocs/modules/thadmin/language/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/templates/index.html
-%%WWWDIR%%/htdocs/modules/thadmin/templates/thadmin_footer.html
-%%WWWDIR%%/htdocs/modules/thadmin/templates/thadmin_header.html
 %%WWWDIR%%/htdocs/modules/thadmin/thadmin.png
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/class.css
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/content.css
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/forms.css
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/index.html
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/lang/ar.css
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/lang/fa.css
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/lang/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/main.css
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/menu.css
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/pngbehavior.htc
@@ -2746,6 +2867,9 @@
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/ie5.js
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/ie5.src.js
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/index.html
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/lang/ar.js
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/lang/fa.js
+%%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/lang/index.html
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/mootools.js
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/screenshot.gif
 %%WWWDIR%%/htdocs/modules/thadmin/themes/default/theme.html
@@ -2772,6 +2896,7 @@
 %%WWWDIR%%/htdocs/templates_c/readme.txt
 %%WWWDIR%%/htdocs/themes/default/hbar.gif
 %%WWWDIR%%/htdocs/themes/default/icons/favicon.ico
+%%WWWDIR%%/htdocs/themes/default/icons/index.html
 %%WWWDIR%%/htdocs/themes/default/index.html
 %%WWWDIR%%/htdocs/themes/default/logo.gif
 %%WWWDIR%%/htdocs/themes/default/poweredby.gif
@@ -2890,6 +3015,8 @@
 %%WWWDIR%%/htdocs/xoops_data/configs/xoopsconfig.php
 %%WWWDIR%%/htdocs/xoops_data/index.html
 %%WWWDIR%%/htdocs/xoops_data/readme.txt
+%%WWWDIR%%/htdocs/xoops_lib/index.html
+%%WWWDIR%%/htdocs/xoops_lib/modules/index.html
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/admin/advisory.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/admin/index.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/admin/mymenu.php
@@ -2968,6 +3095,10 @@
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/russian/index.html
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/russian/main.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/russian/modinfo.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/schinese_utf8/admin.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/schinese_utf8/index.html
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/schinese_utf8/main.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/schinese_utf8/modinfo.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/spanish/admin.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/spanish/index.html
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/spanish/main.php
@@ -3180,6 +3311,8 @@
 %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/pathcontroller.php
 %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/settings_db.php
 %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/settings_path.php
+%%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1/index.php
+%%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1/mysql.structure.sql
 %%WWWDIR%%/upgrade/upgrade_tpl.php
 @dirrm %%WWWDIR%%/docs/images
 @dirrm %%WWWDIR%%/docs
@@ -3504,18 +3637,18 @@
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/admin
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/class
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/css
-@dirrm %%WWWDIR%%/htdocs/modules/thadmin/extras
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/images/icons
-@dirrm %%WWWDIR%%/htdocs/modules/thadmin/images/tabs
+@dirrm %%WWWDIR%%/htdocs/modules/thadmin/images/menu
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/images
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/include
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/language/english
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/language/french
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/language
-@dirrm %%WWWDIR%%/htdocs/modules/thadmin/templates
+@dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css/lang
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/css
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/icons
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/img
+@dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js/lang
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/js
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default/xotpl
 @dirrm %%WWWDIR%%/htdocs/modules/thadmin/themes/default
@@ -3560,6 +3693,7 @@
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/polish
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/portuguesebr
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/russian
+@dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/schinese_utf8
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/spanish
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/library/HTMLPurifier/AttrDef/CSS
@@ -3610,5 +3744,6 @@
 @dirrm %%WWWDIR%%/upgrade/upd-2.0.17-to-2.0.18
 @dirrm %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/language
 @dirrm %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0
+@dirrm %%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1
 @dirrm %%WWWDIR%%/upgrade
 @dirrm %%WWWDIR%%
