@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI_Template
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
