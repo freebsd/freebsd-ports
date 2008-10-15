@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://getgnash.org/packages/releases/ \
 		${MASTER_SITE_GNU}
@@ -160,6 +161,7 @@ USE_SDL+=		sdl
 .elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER)
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
+USE_SDL+=		sdl
 .elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=	--enable-media=none
 .else
