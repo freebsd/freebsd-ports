@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d71da236-9a94-11dd-8f42-001c2514716c">
+    <topic>libxml2 -- two vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31558/">
+	  <p>Two vulnerabilities have been reported in Libxml2, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service)
+	    or potentially compromise an application using the library.</p>
+	  <p>1) A recursion error exists when processing certain XML content.
+	    This can be exploited to e.g. exhaust all available memory and CPU
+	    resources by tricking an application using Libxml2 into processing
+	    specially crafted XML documents.</p>
+	  <p>2) A boundary error in the processing of long XML entity names
+	    in parser.c can be exploited to cause a heap-based buffer overflow
+	    when specially crafted XML content is parsed.</p>
+	  <p>Successful exploitation may allow execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3281</cvename>
+      <cvename>CVE-2008-3529</cvename>
+    </references>
+    <dates>
+      <discovery>2008-08-22</discovery>
+      <entry>2008-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12efc567-9879-11dd-a5e7-0030843d3802">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
