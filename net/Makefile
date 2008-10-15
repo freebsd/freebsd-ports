@@ -665,6 +665,7 @@
     SUBDIR += pear-Net_LDAP2
     SUBDIR += pear-Net_MAC
     SUBDIR += pear-Net_NNTP
+    SUBDIR += pear-Net_Nmap
     SUBDIR += pear-Net_POP3
     SUBDIR += pear-Net_Ping
     SUBDIR += pear-Net_SMS
