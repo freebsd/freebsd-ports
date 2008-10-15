@@ -21,6 +21,13 @@ PLIST=		${.CURDIR}/pkg-plist
 
 RRA_SLAVE=	pythonb
 
+pre-patch:
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/lib/librra.la|${PREFIX}/lib/librra.la|g' \
+		${WRKSRC}/python/Makefile.in
+
+do-build:
+	@(cd ${WRKSRC}/python && ${MAKE})
+
 do-install:
 	@(cd ${WRKSRC}/python && ${MAKE} install)
 
