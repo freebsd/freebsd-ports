@@ -2,43 +2,86 @@
 # $FreeBSD$
 
 # PROVIDE: nginx
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
 
-# Define these nginx_* variables in one of these files:
-#       /etc/rc.conf
-#       /etc/rc.conf.local
-#       /etc/rc.conf.d/nginx
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-nginx_enable=${nginx_enable-"NO"}
-nginx_flags=${nginx_flags-""}
-nginx_pidfile=${nginx_pidfile-"/var/run/nginx.pid"}
+# Add the following lines to /etc/rc.conf to enable nginx:
+# nginx_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable nginx
+# nginx_profiles (str):		Set to "NO" by default.
+#				Unsupported feature, reserved for future releases.
+# nginxlimits_enable (bool):	Set to "NO" by default.
+#				Set it to yes to run `limits $limits_args`
+#				just before nginx starts.
+# nginx_flags (str):		Set to "" by default.
+#				Extra flags passed to start command.
+# nginxlimits_args (str):	Default to "-e -U %%WWWOWN%%"
+#				Arguments of pre-start limits run.
 
 . %%RC_SUBR%%
 
 name="nginx"
 rcvar=`set_rcvar`
+
+start_precmd="nginx_precmd"
+restart_precmd="nginx_checkconfig"
+reload_precmd="nginx_checkconfig"
+configtest_cmd="nginx_checkconfig"
+upgrade_precmd="nginx_checkconfig"
+upgrade_cmd="nginx_upgrade"
 command="%%PREFIX%%/sbin/nginx"
+_pidprefix="/var/run/nginx"
+pidfile="${_pidprefix}.pid"
+required_files=%%PREFIX%%/etc/nginx/nginx.conf
+
+[ -z "$nginx_enable" ]       && nginx_enable="NO"
+[ -z "$nginx_profiles" ]     && nginx_profiles="NO"
+[ -z "$nginx_flags" ]        && nginx_flags=""
+[ -z "$nginxlimits_enable" ] && nginxlimits_enable="NO"
+[ -z "$nginxlimits_args" ]   && nginxlimits_args="-e -U %%WWWOWN%%"
 
 load_rc_config $name
 
-pidfile="${nginx_pidfile}"
+if [ -n "$2" ]; then
+	echo "Profiles are unsupported by this version, exit..."
+	exit 1
+fi
 
-extra_commands="configtest reload"
-
-configtest_cmd="configtest_cmd"
-configtest_cmd()  {
-	echo "Configuration syntax test for ${name}."
-	if ${command} ${nginx_flags} -t; then
-		:
-	else
-		err 8 "FATAL: bad config for ${name}"
-	fi
+nginx_checkconfig()
+{
+	echo "Performing sanity check on nginx configuration:"
+	eval ${command} ${nginx_flags} -t
 }
 
-start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command} ${nginx_flags}"
+nginx_upgrade()
+{
+	echo "Upgrading nginx binary:"
 
+	reload_precmd=""
+	sig_reload="USR2"
+	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
+
+	sleep 1
+
+	echo "Stopping old binary:"
+
+	sig_reload="QUIT"
+	pidfile="$pidfile.oldbin"
+	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
+}
+
+nginx_precmd() 
+{
+	nginx_checkconfig
+
+	if checkyesno nginxlimits_enable
+	then
+		eval `/usr/bin/limits ${nginxlimits_args}` 2>/dev/null
+	else
+		return 0
+        fi
+}
+
+extra_commands="reload configtest upgrade"
 run_rc_command "$1"
