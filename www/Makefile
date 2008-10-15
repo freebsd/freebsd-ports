@@ -1574,6 +1574,7 @@
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-speed-dial
+    SUBDIR += xpi-splash
     SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-stylish
