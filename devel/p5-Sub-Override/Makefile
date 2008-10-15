@@ -7,15 +7,15 @@
 
 PORTNAME=	Sub-Override
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars.eggert@gmx.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for easily overriding subroutines
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
