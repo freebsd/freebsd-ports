@@ -20,7 +20,7 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/pxe"
 required_files=%%PREFIX%%/etc/pxe.conf
 command_args="-c ${required_files}"
-pidfile=/var/pxe/${name}.pid
+pidfile=/var/run/${name}.pid
 
 # set defaults
 pxe_enable=${pxe_enable:-"NO"}
