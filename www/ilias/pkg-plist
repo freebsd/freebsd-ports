@@ -849,6 +849,7 @@
 %%WWWDIR%%/Modules/Scorm2004/data/mysql_schema.sql
 %%WWWDIR%%/Modules/Scorm2004/data/sampledata/adl_testcases.sql
 %%WWWDIR%%/Modules/Scorm2004/data/xmldb-mapping.xls
+%%WWWDIR%%/Modules/Scorm2004/scripts/buildrte/rte.js
 %%WWWDIR%%/Modules/Scorm2004/scripts/buildrte/rte-min.js
 %%WWWDIR%%/Modules/Scorm2004/scripts/converter/GenericRunTimeWrapper1.0_aadlc/GenericRunTimeWrapper.htm
 %%WWWDIR%%/Modules/Scorm2004/scripts/converter/GenericRunTimeWrapper1.0_aadlc/readme.txt
@@ -1063,7 +1064,6 @@
 %%WWWDIR%%/Modules/ScormAicc/templates/default/tpl_scorm_track_items_search.html
 %%WWWDIR%%/Modules/ScormAicc/validation/vali.jar
 %%WWWDIR%%/Modules/ScormAicc/validation/vali.java
-%%WWWDIR%%/Modules/Session/classes/class.ilEvent.php
 %%WWWDIR%%/Modules/Session/classes/class.ilEventItems.php
 %%WWWDIR%%/Modules/Session/classes/class.ilEventParticipants.php
 %%WWWDIR%%/Modules/Session/classes/class.ilEventRecurrence.php
@@ -1449,6 +1449,7 @@
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_explorer.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_export.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_question.html
+%%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_questiontype.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_filter_questions.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_imagemap_feedback.html
 %%WWWDIR%%/Modules/TestQuestionPool/templates/default/tpl.il_as_qpl_imagemap_question.html
@@ -1886,6 +1887,8 @@
 %%WWWDIR%%/Services/Calendar/templates/default/delos.css
 %%WWWDIR%%/Services/Calendar/templates/default/tpl.appointment_panel.html
 %%WWWDIR%%/Services/Calendar/templates/default/tpl.cal_side_block.html
+%%WWWDIR%%/Services/Calendar/templates/default/tpl.cal_reference_links.html
+%%WWWDIR%%/Services/Calendar/templates/default/tpl.calendar_block_frame.html
 %%WWWDIR%%/Services/Calendar/templates/default/tpl.calendar_block.html
 %%WWWDIR%%/Services/Calendar/templates/default/tpl.calendar_inbox_shared_row.html
 %%WWWDIR%%/Services/Calendar/templates/default/tpl.calendar_selection.html
