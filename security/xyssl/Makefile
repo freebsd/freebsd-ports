@@ -13,8 +13,11 @@ MASTER_SITES=	http://xyssl.org/code/download/ \
 DISTNAME=	xyssl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mdh@solitox.net
+MAINTAINER=	mattdharris@users.sourceforge.net
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
+
+DEPRECATED=	Download sites are down, cannot update due to software website being down.
+EXPIRATION_DATE=2008-12-01
 
 # HAS_CONFIGURE=	no
 # GNU_CONFIGURE=	no
