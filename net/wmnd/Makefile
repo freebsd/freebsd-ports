@@ -10,7 +10,7 @@ PORTVERSION=	0.4.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
 
 USE_GNOME=	gnometarget
