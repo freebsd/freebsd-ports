@@ -19,6 +19,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
