@@ -93,16 +93,10 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/AAI/cfg/map/Winter_Wonderland.cfg
 %%DATADIR%%/AI/AAI/cfg/map/aftershock.cfg
 %%DATADIR%%/AI/AAI/cfg/map/cathralda.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/1944DemoReleasev0.01b.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/1944publicalpha_v0.01b3d.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/A-A-SBetaPack1.9B.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/AA3.2.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/AA5.0project.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/AAIA10.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BA58.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BA591.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BA60.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/BA621.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/BA_Installer_Version.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/BOTA_13.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/BOTA_14.cfg
@@ -110,14 +104,13 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/AAI/cfg/mod/Expand&Exterminate v0.163.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/FF 1.21 S.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/FleabowlNR10.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/KuroTA-v047.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/OTA_Classic_TA.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/OTA_Shiny_TA.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/OTA_with_Evolva_models.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/OTA_with_UTASP_BP.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/PURE0.51.cfg
-%%DATADIR%%/AI/AAI/cfg/mod/S44LiteRelease.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/S44_Installer_Version.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/SmallMod.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/SpringWD5B65.cfg
 %%DATADIR%%/AI/AAI/cfg/mod/StarWars01.cfg
