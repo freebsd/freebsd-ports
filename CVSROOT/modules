@@ -7218,6 +7218,7 @@ libmpeg2                        ports/multimedia/libmpeg2
 libmpeg3                        ports/multimedia/libmpeg3
 libmrss                         ports/textproc/libmrss
 libmsn                          ports/net-im/libmsn
+libmsocket                      ports/devel/libmsocket
 libmspack                       ports/archivers/libmspack
 libmt_client                    ports/games/libmt_client
 libmtp                          ports/audio/libmtp
@@ -9384,6 +9385,7 @@ oorexx                          ports/lang/oorexx
 op                              ports/security/op
 opal                            ports/net/opal
 open                            ports/sysutils/open
+open-axiom                      ports/math/open-axiom
 open-beagle                     ports/devel/open-beagle
 open-cobol                      ports/lang/open-cobol
 open-motif                      ports/x11-toolkits/open-motif
@@ -10520,6 +10522,7 @@ p5-Devel-GlobalDestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-Devel-Leak                   ports/devel/p5-Devel-Leak
 p5-Devel-Leak-Object            ports/devel/p5-Devel-Leak-Object
 p5-Devel-LeakTrace              ports/devel/p5-Devel-LeakTrace
+p5-Devel-LeakTrace-Fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-Devel-LexAlias               ports/devel/p5-Devel-LexAlias
 p5-Devel-Messenger              ports/devel/p5-Devel-Messenger
 p5-Devel-Modlist                ports/devel/p5-Devel-Modlist
@@ -13665,6 +13668,7 @@ p5-devel-globaldestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-devel-leak                   ports/devel/p5-Devel-Leak
 p5-devel-leak-object            ports/devel/p5-Devel-Leak-Object
 p5-devel-leaktrace              ports/devel/p5-Devel-LeakTrace
+p5-devel-leaktrace-fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-devel-lexalias               ports/devel/p5-Devel-LexAlias
 p5-devel-messenger              ports/devel/p5-Devel-Messenger
 p5-devel-modlist                ports/devel/p5-Devel-Modlist
@@ -16238,6 +16242,7 @@ pear-Net_LDAP2                  ports/net/pear-Net_LDAP2
 pear-Net_LMTP                   ports/mail/pear-Net_LMTP
 pear-Net_MAC                    ports/net/pear-Net_MAC
 pear-Net_NNTP                   ports/net/pear-Net_NNTP
+pear-Net_Nmap                   ports/net/pear-Net_Nmap
 pear-Net_POP3                   ports/net/pear-Net_POP3
 pear-Net_Ping                   ports/net/pear-Net_Ping
 pear-Net_SMS                    ports/net/pear-Net_SMS
@@ -16494,6 +16499,7 @@ pear-net_ldap                   ports/net/pear-Net_LDAP
 pear-net_ldap2                  ports/net/pear-Net_LDAP2
 pear-net_lmtp                   ports/mail/pear-Net_LMTP
 pear-net_mac                    ports/net/pear-Net_MAC
+pear-net_nmap                   ports/net/pear-Net_Nmap
 pear-net_nntp                   ports/net/pear-Net_NNTP
 pear-net_ping                   ports/net/pear-Net_Ping
 pear-net_pop3                   ports/net/pear-Net_POP3
@@ -16943,6 +16949,7 @@ phpminadmin                     ports/databases/phpminadmin
 phpminiadmin                    ports/databases/phpminiadmin
 phpmp                           ports/www/phpmp
 phpmyadmin                      ports/databases/phpmyadmin
+phpmyadmin211                   ports/databases/phpmyadmin211
 phpmyfaq                        ports/www/phpmyfaq
 phpmyid                         ports/security/phpmyid
 phppdflib                       ports/print/phppdflib
@@ -22589,6 +22596,7 @@ xpi-searchstatus                ports/www/xpi-searchstatus
 xpi-server_switcher             ports/www/xpi-server_switcher
 xpi-sessionmanager              ports/www/xpi-sessionmanager
 xpi-speed-dial                  ports/www/xpi-speed-dial
+xpi-splash                      ports/www/xpi-splash
 xpi-statusbarclock              ports/www/xpi-statusbarclock
 xpi-stumbleupon                 ports/www/xpi-stumbleupon
 xpi-stylish                     ports/www/xpi-stylish
