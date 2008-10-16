@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,17 +21,19 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Finance::Quote.3 Finance::Quote::AEX.3 Finance::Quote::AIAHK.3 \
-		Finance::Quote::ASEGR.3 Finance::Quote::ASX.3 \
-		Finance::Quote::BMONesbittBurns.3 Finance::Quote::Bourso.3 \
-		Finance::Quote::Cdnfundlibrary.3 Finance::Quote::DWS.3 \
+MAN3=		Finance::Quote.3 Finance::Quote::AEX.3 \
+		Finance::Quote::AIAHK.3 Finance::Quote::ASEGR.3 \
+		Finance::Quote::ASX.3 Finance::Quote::BMONesbittBurns.3 \
+		Finance::Quote::Bourso.3 Finance::Quote::Cdnfundlibrary.3 \
+		Finance::Quote::Cominvest.3 Finance::Quote::DWS.3 \
 		Finance::Quote::Deka.3 Finance::Quote::FTPortfolios.3 \
 		Finance::Quote::Fidelity.3 Finance::Quote::FinanceCanada.3 \
-		Finance::Quote::Fool.3 Finance::Quote::HEX.3 \
-		Finance::Quote::IndiaMutual.3 Finance::Quote::LeRevenu.3 \
-		Finance::Quote::ManInvestments.3 Finance::Quote::NZX.3 \
-		Finance::Quote::Platinum.3 Finance::Quote::SEB.3 \
-		Finance::Quote::TSP.3 Finance::Quote::Tdefunds.3 \
+		Finance::Quote::Finanzpartner.3 Finance::Quote::Fool.3 \
+		Finance::Quote::HEX.3 Finance::Quote::IndiaMutual.3 \
+		Finance::Quote::LeRevenu.3 Finance::Quote::ManInvestments.3 \
+		Finance::Quote::NZX.3 Finance::Quote::Platinum.3 \
+		Finance::Quote::SEB.3 Finance::Quote::TSP.3 \
+		Finance::Quote::TSX.3 Finance::Quote::Tdefunds.3 \
 		Finance::Quote::Tdwaterhouse.3 Finance::Quote::Tiaacref.3 \
 		Finance::Quote::Troweprice.3 Finance::Quote::Trustnet.3 \
 		Finance::Quote::USFedBonds.3 Finance::Quote::Union.3 \
