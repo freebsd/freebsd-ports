@@ -37,6 +37,18 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/auth.py
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyc
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyo
@@ -118,6 +130,13 @@
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.py
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/webmastertools/service.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/webmastertools
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/youtube
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
@@ -130,9 +149,9 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
-@dirrm %%PYTHON_SITELIBDIR%%/gdata
-@dirrm %%PYTHON_SITELIBDIR%%/atom
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/alt
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
 @dirrm %%PYTHON_SITELIBDIR%%/atom
@@ -144,6 +163,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/AddDeleteExampleDotCom.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitemapsFeedSummary.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webmastertools/SitesFeedSummary.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webmastertools
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
