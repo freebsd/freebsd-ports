@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	An xbiff-like Window Maker dock app
 
 OPTIONS=	GNUTLS "Support for SSL" off

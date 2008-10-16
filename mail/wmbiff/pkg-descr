@@ -4,5 +4,3 @@ mailboxes.  It is also possible to execute user-defined commands on new
 mail arrival (for example, play a .wav file).
 
 WWW:	http://wmbiff.sourceforge.net/
-
-- Jim <jim@FreeBSD.org>
