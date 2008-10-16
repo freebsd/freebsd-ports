@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nzbget
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 
 OPTIONS=	PARCHECK "Enable autopar/parcheck (Requires libpar2)" On
 
-PLIST_FILES=	bin/nzbget etc/nzbget.conf.example
+PLIST_FILES=	bin/nzbget
 PORTDOCS=	README
 PORTEXAMPLES=	nzbget.conf.example
 
@@ -37,9 +37,7 @@ CONFIGURE_ARGS+=	--enable-parcheck
 LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
 .endif
 
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/nzbget.conf.example ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/nzbget ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

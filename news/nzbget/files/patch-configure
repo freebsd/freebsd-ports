@@ -1,14 +1,13 @@
---- configure.old	2008-02-29 12:18:26.000000000 -0300
-+++ configure	2008-02-29 12:20:35.000000000 -0300
-@@ -2362,7 +2362,10 @@
-     CPPFLAGS1="${CPPFLAGS} -D_GNU_SOURCE"
+--- configure	2008-09-21 09:18:06.000000000 -0700
++++ configure	2008-10-02 17:12:54.000000000 -0700
+@@ -2389,7 +2389,9 @@
+     LIBPREF1="/usr"
      ;;
    *-freebsd*)
 -    LIBPREF1="/usr/local"
 +    LIBPREF1="${LOCALBASE}"
 +    CFLAGS="${CFLAGS}"
 +    CPPFLAGS="${CPPFLAGS}"
-+    PLATFORM="FreeBSD"
      ;;
    *-solaris*)
      LIBPREF1="/usr"
