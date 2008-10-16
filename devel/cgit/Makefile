@@ -37,6 +37,8 @@ post-extract:
 post-install:
 	@${MKDIR} /var/cache/${PORTNAME} ${DOCSDIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} /var/cache/${PORTNAME}
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
