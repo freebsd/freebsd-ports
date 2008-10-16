@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		shrinksafe
-PORTVERSION=		1.1.1
-PORTREVISION=	1
+PORTVERSION=		1.2.0
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
-			LOCAL/beech
+			LOCAL/glarkin
 PKGNAMEPREFIX=		dojo-
 DISTNAME=		${PKGNAMEPREFIX}release-${PORTVERSION}-${PORTNAME}
 
@@ -28,7 +27,7 @@ SUB_FILES=	${PKGNAMEPREFIX}${PORTNAME}
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${INSTALL} -d ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/custom_rhino.jar ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} ${PREFIX}/bin
 	@${CAT} pkg-message
