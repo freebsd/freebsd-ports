@@ -1,0 +1,12 @@
+Tuntun is an applet for Gnome panel that manage a list of vpn connections
+through the OpenVPN Management Interface.
+
+Main features
+
+ * Simple & lightweight just a client GUI to start/stop your OpenVPN tunnels
+   and nothing more
+ * Integrated with the Gnome Desktop (support for the Keyring and notification
+   daemon)
+ * Support for Auth and Private-Key OpenVPN authentication methods
+
+ WWW:	http://code.google.com/p/tuntun/

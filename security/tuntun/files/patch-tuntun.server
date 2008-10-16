@@ -1,0 +1,10 @@
+--- src/tuntun.server.in	2008-09-16 11:10:52.000000000 -0300
++++ src/tuntun.server.in	2008-09-16 11:11:36.000000000 -0300
+@@ -1,6 +1,6 @@
+ <oaf_info>
+ <oaf_server iid="OAFIID:GNOME_Tuntun_Factory" type="exe"
+-            location="/usr/lib/gnome-applets/tuntun">
++            location="/usr/local/libexec/tuntun">
+ 
+         <oaf_attribute name="repo_ids" type="stringv">
+                 <item value="IDL:Bonobo/GenericFactory:1.0"/>
