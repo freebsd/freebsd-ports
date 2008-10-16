@@ -99,18 +99,18 @@ bin/mkCSGB2312
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/APPLE
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/IBM
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ISO
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unicode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/APPLE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/IBM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/ISO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/MS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map/NEXT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Map
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Map
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
