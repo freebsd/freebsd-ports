@@ -150,6 +150,7 @@
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
     SUBDIR += cgilib
+    SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
     SUBDIR += cil

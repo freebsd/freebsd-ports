@@ -1,0 +1,7 @@
+%%WWWDIR%%/cgit.cgi
+%%WWWDIR%%/cgit.css
+%%WWWDIR%%/cgit.png
+%%PORTDOCS%%%%DOCSDIR%%/cgitrc.5.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p /var/cache/%%PORTNAME%%
+@unexec rmdir /var/cache/%%PORTNAME%% 2>/dev/null || true
