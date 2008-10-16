@@ -18,6 +18,8 @@ GIT_VERSION=	1.6.0.2
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
