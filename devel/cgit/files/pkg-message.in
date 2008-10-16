@@ -1,0 +1,16 @@
+---------------------------------------------------
+%%PORTNAME%% has been successfully installed.
+
+Now you need to change your webserver configuration
+as follows:
+
+  <Directory "%%WWWDIR%%/cgit/">
+      AllowOverride None
+      Options ExecCGI
+      Order allow,deny
+      Allow from all
+  </Directory>
+
+Documentation and sample configuration can be found
+in %%DOCSDIR%%/cgitrc.5.txt.
+---------------------------------------------------

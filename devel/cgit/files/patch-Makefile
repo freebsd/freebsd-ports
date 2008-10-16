@@ -1,0 +1,23 @@
+--- Makefile.orig	2008-04-14 23:00:11.000000000 +0100
++++ Makefile	2008-04-17 01:29:10.000000000 +0100
+@@ -1,8 +1,8 @@
+ CGIT_VERSION = v0.7.2
+ CGIT_SCRIPT_NAME = cgit.cgi
+-CGIT_SCRIPT_PATH = /var/www/htdocs/cgit
+-CGIT_CONFIG = /etc/cgitrc
+-CACHE_ROOT = /var/cache/cgit
++CGIT_SCRIPT_PATH ?= /var/www/htdocs/cgit
++CGIT_CONFIG ?= /etc/cgitrc
++CACHE_ROOT ?= /var/cache/cgit
+ SHA1_HEADER = <openssl/sha.h>
+ GIT_VER = 1.5.5
+ GIT_URL = http://www.kernel.org/pub/software/scm/git/git-$(GIT_VER).tar.bz2
+@@ -46,7 +46,7 @@
+ 	$(QUIET_CC)$(CC) -o $*.o -c $(CFLAGS) $<
+ 
+ 
+-EXTLIBS = git/libgit.a git/xdiff/lib.a -lz -lcrypto
++EXTLIBS = git/libgit.a git/xdiff/lib.a -lz -lcrypto -L${LOCALBASE}/lib -liconv
+ OBJECTS =
+ OBJECTS += cache.o
+ OBJECTS += cgit.o
