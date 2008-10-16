@@ -156,9 +156,6 @@ EXTRA_PATCHES+=	${FILESDIR}/amd64-gcc42-workaround
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
-.if !defined(WITH_SYSTEM_FREETYPE) && defined(WITH_TTF_BYTECODE_ENABLED)
-EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
-.endif
 
 ICONS=	${WRKSRC}/sysui/desktop/icons
 
