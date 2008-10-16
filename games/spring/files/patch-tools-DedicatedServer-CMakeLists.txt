@@ -1,15 +1,9 @@
---- tools/DedicatedServer/CMakeLists.txt.orig	2008-10-08 19:59:52.000000000 +0400
-+++ tools/DedicatedServer/CMakeLists.txt	2008-10-10 01:23:52.000000000 +0400
-@@ -50,12 +50,12 @@
- 	../../rts/Lua/LuaUtils
- 	../../rts/Map/MapParser
- 	../../rts/Rendering/Textures/TAPalette)
--TARGET_LINK_LIBRARIES(springserver SDL hpiutil2 7zip minizip lua)
-+TARGET_LINK_LIBRARIES(springserver ${SDL_LIBRARY} hpiutil2 7zip minizip lua)
+--- tools/DedicatedServer/CMakeLists.txt.orig	2008-10-12 02:53:10.000000000 +0400
++++ tools/DedicatedServer/CMakeLists.txt	2008-10-15 18:43:49.000000000 +0400
+@@ -54,7 +54,7 @@
  if (MINGW)
- 	TARGET_LINK_LIBRARIES (springserver ws2_32 boost_thread-mt boost_regex-mt)
+ 	TARGET_LINK_LIBRARIES (springserver ws2_32)
  else (MINGW)
- 	TARGET_LINK_LIBRARIES (springserver ${Boost_REGEX_LIBRARY} ${Boost_THREAD_LIBRARY})
 -	ADD_DEFINITIONS (-fvisibility=default ) #overwrite hidden visibility
 +	ADD_DEFINITIONS (${VISIBILITY_DEFAULT}) #overwrite hidden visibility
  endif (MINGW)
