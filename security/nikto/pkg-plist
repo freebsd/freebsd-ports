@@ -12,6 +12,7 @@ etc/nikto.conf.sample
 %%DATADIR%%/plugins/db_variables
 %%DATADIR%%/plugins/nikto_apache_expect_xss.plugin
 %%DATADIR%%/plugins/nikto_apacheusers.plugin
+%%DATADIR%%/plugins/nikto_cgi.plugin
 %%DATADIR%%/plugins/nikto_core.plugin
 %%DATADIR%%/plugins/nikto_favicon.plugin
 %%DATADIR%%/plugins/nikto_headers.plugin
