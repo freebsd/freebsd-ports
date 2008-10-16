@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
@@ -20,6 +20,8 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	CHANGES.txt LICENSE.txt nikto_manual.html
 
