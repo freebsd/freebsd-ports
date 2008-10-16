@@ -1,2 +1,9 @@
 sbin/ipguard
-etc/rc.d/ipguard.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.tcpdump
+%%PORTDOCS%%%%DOCSDIR%%/README.log
+%%PORTDOCS%%%%DOCSDIR%%/ethers.sample
+%%PORTDOCS%%%%DOCSDIR%%/rfc826.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
