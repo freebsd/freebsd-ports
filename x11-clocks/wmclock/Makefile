@@ -7,11 +7,16 @@
 
 PORTNAME=	wmclock
 PORTVERSION=	1.0.12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://www.jmknoble.net/WindowMaker/wmclock/
+MASTER_SITES=	http://www.jmknoble.net/WindowMaker/wmclock/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	http://www.jmknoble.net/WindowMaker/wmclock/
+PATCHFILES=	wmclock_nopolling.patch.gz
+
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A dockable clock applet for Window Maker
 
 USE_IMAKE=	yes
