@@ -1,5 +1,5 @@
-# New ports collection makefile for:    ipguard
-# Date created:                         2 Sep 2005
+# Ports collection makefile for:        ipguard
+# Date created:                         6 Oct 2008
 # Whom:                                 SeaD
 #
 # $FreeBSD$
@@ -7,37 +7,25 @@
 
 PORTNAME=	ipguard
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	http://ipguard.deep.perm.ru/files/
+MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipguard/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sead@deep.perm.ru
 COMMENT=	Tool designed to protect LAN IP adress space by ARP spoofing
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
-MAN8=		ipguard.8
-
-ETHERS?=	/etc/ethers
-
-MAKE_ARGS+=	ETHERS=${ETHERS}
-
-SUB_FILES=	pkg-message
-SUB_LIST=	ETHERS=${ETHERS}
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
-post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|libnet-config|${LIBNET_CONFIG}|; \
-		 s|^(INCLUDES=).*|\1`${LIBNET_CONFIG} --cflags`|' \
-		${WRKSRC}/${MAKEFILE}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ipguard ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/doc/ipguard.8 ${MANPREFIX}/man/man8
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/ipguard.sh.sample ${PREFIX}/etc/rc.d
+USE_RC_SUBR=	${PORTNAME}
+MAN8=		${PORTNAME}.8
+DOCS=		COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
