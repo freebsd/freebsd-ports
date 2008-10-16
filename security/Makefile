@@ -790,6 +790,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += tthsum
+    SUBDIR += tuntun
     SUBDIR += uberkey
     SUBDIR += umit
     SUBDIR += unicornscan
