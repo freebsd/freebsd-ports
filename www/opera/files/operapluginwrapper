@@ -1,7 +1,19 @@
 #!/bin/sh
 
-if [ brandelf $3 | grep "FreeBSD" ]; then
-	exec $0.freebsd $@
-else
-	exec $0.linux $@
+if [ -n "$4" ]; then
+ELFTYPE=`brandelf $4`
+elif [ -n "$3" ]; then
+ELFTYPE=`brandelf $3`
 fi
+
+WRAPPER="freebsd"
+case "${ELFTYPE}" in
+*SVR4*|*Linux*)
+if [ -x "$0.linux" ]; then
+WRAPPER="linux"
+fi
+;;
+esac
+
+exec $0.$WRAPPER $@
+
