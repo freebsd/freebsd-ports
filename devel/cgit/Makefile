@@ -7,6 +7,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES= 	http://hjemli.net/git/cgit/snapshot/:cgit \
 		http://www.kernel.org/pub/software/scm/git/:git
@@ -38,9 +39,10 @@ post-extract:
 	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
 
 post-install:
-	@${MKDIR} /var/cache/${PORTNAME} ${DOCSDIR}
+	@${MKDIR} /var/cache/${PORTNAME}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} /var/cache/${PORTNAME}
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc.5.txt ${DOCSDIR}/
 .endif
 
