@@ -13,6 +13,7 @@
 %%HORDIR%%/lib/MIME/Viewer/multipart.php
 %%HORDIR%%/lib/MIME/Viewer/plain.php
 %%HORDIR%%/lib/MIME/Viewer/related.php
+%%HORDIR%%/lib/MIME/Viewer/status.php
 %%HORDIR%%/lib/MIMP.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
@@ -20,6 +21,7 @@
 %%HORDIR%%/locale/ca_ES/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/eu_ES/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/mimp.mo
@@ -28,6 +30,7 @@
 %%HORDIR%%/locale/lt_LT/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/nl_NL/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/pl_PL/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/pt_PT/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/mimp.mo
 %%HORDIR%%/locale/ru_RU/LC_MESSAGES/mimp.mo
@@ -39,6 +42,7 @@
 %%HORDIR%%/po/ca_ES.po
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/eu_ES.po
 %%HORDIR%%/po/fi_FI.po
 %%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/hu_HU.po
@@ -48,6 +52,7 @@
 %%HORDIR%%/po/mimp.pot
 %%HORDIR%%/po/nl_NL.po
 %%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
 %%HORDIR%%/po/pt_PT.po
 %%HORDIR%%/po/ro_RO.po
 %%HORDIR%%/po/ru_RU.po
@@ -82,6 +87,8 @@
 @dirrm %%HORDIR%%/locale/ro_RO
 @dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
 @dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/pl_PL
 @dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
@@ -98,6 +105,8 @@
 @dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu_ES
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/es_ES
 @dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
