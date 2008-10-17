@@ -15,16 +15,19 @@ include/perforce/hostenv.h
 include/perforce/i18napi.h
 include/perforce/ident.h
 include/perforce/keepalive.h
+include/perforce/mapapi.h
 include/perforce/msgclient.h
+include/perforce/msgserver.h
 include/perforce/netconnect.h
 include/perforce/ntservice.h
 include/perforce/options.h
-include/perforce/p4api.txt
 include/perforce/p4tags.h
 include/perforce/pathsys.h
+include/perforce/runcmd.h
 include/perforce/signaler.h
 include/perforce/spec.h
 include/perforce/stdhdrs.h
+include/perforce/strarray.h
 include/perforce/strbuf.h
 include/perforce/strdict.h
 include/perforce/strops.h
@@ -34,5 +37,13 @@ include/perforce/vararray.h
 lib/perforce/libclient.a
 lib/perforce/librpc.a
 lib/perforce/libsupp.a
+%%PORTDOCS%%%%DOCSDIR%%/p4api.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jamfile.api
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jamrules
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Version
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clientuser.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/p4api.cc
 @dirrm include/perforce
 @dirrm lib/perforce
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
