@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	glib20
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lpthread"
 CONFIGURE_ARGS=	--disable-unicode
 
 OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
@@ -30,8 +30,8 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 .include <bsd.port.pre.mk>
 
 PLIST_FILES=	bin/ncmpcpp \
-		%%DOCSDIR%%/ncmpcpprc \
-		%%DOCSDIR%%/ncmpcpp_keys \
+		%%DOCSDIR%%/config \
+		%%DOCSDIR%%/keys \
 		%%DOCSDIR%%/NEWS \
 		%%DOCSDIR%%/AUTHORS
 PLIST_DIRS=	%%DOCSDIR%%
@@ -57,8 +57,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}/NEWS
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/AUTHORS
-	${INSTALL_DATA} ${WRKSRC}/doc/ncmpcpprc ${DOCSDIR}/ncmpcpprc
-	${INSTALL_DATA} ${WRKSRC}/doc/ncmpcpp_keys ${DOCSDIR}/ncmpcpp_keys
+	${INSTALL_DATA} ${WRKSRC}/doc/config ${DOCSDIR}/config
+	${INSTALL_DATA} ${WRKSRC}/doc/keys ${DOCSDIR}/keys
 .endif
 
 	@${ECHO_MSG} ""
