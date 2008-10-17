@@ -48,6 +48,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/coalesce.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/compactref.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/do_prefix.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/full.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/full6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/hostenum.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/mod_version.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/nprefix.al
