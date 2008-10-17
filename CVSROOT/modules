@@ -1385,6 +1385,7 @@ cgihtml                         ports/www/cgihtml
 cgiirc                          ports/irc/cgiirc
 cgilib                          ports/devel/cgilib
 cgiparse                        ports/www/cgiparse
+cgit                            ports/devel/cgit
 cgiwrap                         ports/www/cgiwrap
 cgnslib                         ports/science/cgnslib
 cgoban                          ports/games/cgoban
