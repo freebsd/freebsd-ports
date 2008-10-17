@@ -1,58 +1,139 @@
 bin/datastudio.sh
+bin/runscript.sh
 %%DATADIR%%/License.txt
-%%DATADIR%%/PAD_FILE.XML
 %%DATADIR%%/changelog.txt
+%%DATADIR%%/datastudio-128x128.png
+%%DATADIR%%/datastudio-16x16.png
+%%DATADIR%%/datastudio-24x24.png
+%%DATADIR%%/datastudio-32x32.png
+%%DATADIR%%/datastudio-48x48.png
 %%DATADIR%%/datastudio.gif
 %%DATADIR%%/datastudio.ico
-%%DATADIR%%/lib/ads.jar
 %%DATADIR%%/lib/activation.jar
-%%DATADIR%%/lib/aqua2.jar
+%%DATADIR%%/lib/ads.jar
 %%DATADIR%%/lib/aqua-lib.jar
+%%DATADIR%%/lib/aqua2.jar
 %%DATADIR%%/lib/aspc.jar
-%%DATADIR%%/lib/db2java.jar
-%%DATADIR%%/lib/db2jcc.jar
-%%DATADIR%%/lib/db2jcc_license_cu.jar
-%%DATADIR%%/lib/derby.jar
-%%DATADIR%%/lib/derbyclient.jar
-%%DATADIR%%/lib/ifxjdbc.jar
-%%DATADIR%%/lib/jaxb1-impl.jar
-%%DATADIR%%/lib/jaxb-api.jar
-%%DATADIR%%/lib/jaxb-impl.jar
-%%DATADIR%%/lib/jaxb-xjc.jar
-%%DATADIR%%/lib/jconnect60.jar
-%%DATADIR%%/lib/jide-action.jar
-%%DATADIR%%/lib/jide-beaninfo.jar
-%%DATADIR%%/lib/jide-common.jar
-%%DATADIR%%/lib/jide-components.jar
-%%DATADIR%%/lib/jide-dialogs.jar
-%%DATADIR%%/lib/jide-dock.jar
-%%DATADIR%%/lib/jide-grids.jar
-%%DATADIR%%/lib/jide-pivot.jar
-%%DATADIR%%/lib/jide-shortcut.jar
-%%DATADIR%%/lib/jsr173_1.0_api.jar
-%%DATADIR%%/lib/jtds-src.jar
-%%DATADIR%%/lib/jtds.jar
+%%DATADIR%%/lib/drivers/db2java.jar
+%%DATADIR%%/lib/drivers/db2jcc.jar
+%%DATADIR%%/lib/drivers/db2jcc_license_cu.jar
+%%DATADIR%%/lib/drivers/derby.jar
+%%DATADIR%%/lib/drivers/derbyclient.jar
+%%DATADIR%%/lib/drivers/derbynet.jar
+%%DATADIR%%/lib/drivers/ifxjdbc.jar
+%%DATADIR%%/lib/drivers/jconnect60.jar
+%%DATADIR%%/lib/drivers/jt400.jar
+%%DATADIR%%/lib/drivers/jtds-src.jar
+%%DATADIR%%/lib/drivers/jtds.jar
+%%DATADIR%%/lib/drivers/mysql-src.jar
+%%DATADIR%%/lib/drivers/mysql.jar
+%%DATADIR%%/lib/drivers/nlscharset12.jar
+%%DATADIR%%/lib/drivers/oracle.jar
+%%DATADIR%%/lib/drivers/postgresql.jar
+%%DATADIR%%/lib/drivers/util400.jar
+%%DATADIR%%/lib/drivers/xdb.jar
+%%DATADIR%%/lib/drivers/xmlparserv2.jar
+%%DATADIR%%/lib/gluegen-rt.jar
+%%DATADIR%%/lib/infragistics.jar
+%%DATADIR%%/lib/jide/jide-action.jar
+%%DATADIR%%/lib/jide/jide-beaninfo.jar
+%%DATADIR%%/lib/jide/jide-common.jar
+%%DATADIR%%/lib/jide/jide-components.jar
+%%DATADIR%%/lib/jide/jide-dialogs.jar
+%%DATADIR%%/lib/jide/jide-dock.jar
+%%DATADIR%%/lib/jide/jide-grids.jar
+%%DATADIR%%/lib/jide/jide-pivot.jar
+%%DATADIR%%/lib/jide/jide-properties.jar
+%%DATADIR%%/lib/jide/jide-shortcut.jar
+%%DATADIR%%/lib/jinterop/j-interop.jar
+%%DATADIR%%/lib/jinterop/j-interopdeps.jar
+%%DATADIR%%/lib/jinterop/jcifs.jar
+%%DATADIR%%/lib/jna.jar
+%%DATADIR%%/lib/jogl.jar
 %%DATADIR%%/lib/mail.jar
-%%DATADIR%%/lib/mysql-src.jar
-%%DATADIR%%/lib/mysql.jar
-%%DATADIR%%/lib/nlscharset12.jar
-%%DATADIR%%/lib/oracle.jar
-%%DATADIR%%/lib/postgresql.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-fold.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-lib.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-lib2.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-plain-lib.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor-util.jar
+%%DATADIR%%/lib/nb/eapi/org-netbeans-modules-editor.jar
+%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsf-api.jar
+%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsf.jar
+%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-gsfpath-api.jar
+%%DATADIR%%/lib/nb/gsf/org-netbeans-modules-javascript-editing.jar
+%%DATADIR%%/lib/nb/mlkup/org-netbeans-modules-editor-mimelookup.jar
+%%DATADIR%%/lib/nb/mlkup/org-netbeans-modules-editor-settings.jar
+%%DATADIR%%/lib/nb/msc/core.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-diff.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-editor-structure.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-editor-lib.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-editor.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-html-lexer.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-languages.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-lexer.jar
+%%DATADIR%%/lib/nb/msc/org-netbeans-modules-xml-core.jar
+%%DATADIR%%/lib/nb/msc/org-openide-explorer.jar
+%%DATADIR%%/lib/nb/org-mozilla-rhino-aqua.jar
+%%DATADIR%%/lib/nb/org-netbeans-modules-editor-indent.jar
+%%DATADIR%%/lib/nb/org-netbeans-modules-editor-settings-storage.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-actions.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-awt.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-dialogs.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-filesystems.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-loaders.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-nodes.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-options.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-text.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-util.jar
+%%DATADIR%%/lib/nb/pcore/org-openide-windows.jar
+%%DATADIR%%/lib/nb/ql/org-netbeans-api-xml.jar
+%%DATADIR%%/lib/nb/ql/org-netbeans-modules-db-sql-editor.jar
+%%DATADIR%%/lib/nb/ql/org-netbeans-modules-dbapi.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-core.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-bracesmatching.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-codetemplates.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-completion.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-modules-editor-errorstripe.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-modules-options-editor.jar
+%%DATADIR%%/lib/nb/tc/org-netbeans-spi-editor-hints.jar
+%%DATADIR%%/lib/nb/tc/swing-layout.jar
+%%DATADIR%%/lib/nb/v/org-netbeans-modules-editor-errorstripe-api.jar
+%%DATADIR%%/lib/nb/v/org-netbeans-modules-masterfs.jar
+%%DATADIR%%/lib/nb/v/org-netbeans-modules-queries.jar
+%%DATADIR%%/lib/nb/v/org-netbeans-modules-versioning.jar
+%%DATADIR%%/lib/nb/vapi/org-netbeans-api-visual.jar
+%%DATADIR%%/lib/nb/xed/org-netbeans-modules-xml-lexer.jar
+%%DATADIR%%/lib/nb/xed/org-netbeans-modules-xml-text.jar
+%%DATADIR%%/lib/ssh2/ssh2.jar
 %%DATADIR%%/lib/stringtemplate.jar
 %%DATADIR%%/lib/tools.jar
-%%DATADIR%%/lib/xdb.jar
-%%DATADIR%%/lib/xmlparserv2.jar
 %%DATADIR%%/license/ANTLR-LICENSE.txt
 %%DATADIR%%/license/Apache-2.txt
-%%DATADIR%%/license/DB2-JDBC-LICENSE.txt
 %%DATADIR%%/license/CDDL-LICENSE.txt
+%%DATADIR%%/license/DB2-JDBC-LICENSE.txt
 %%DATADIR%%/license/EPL-LICENSE.txt
 %%DATADIR%%/license/JGoodies-LICENSE.txt
 %%DATADIR%%/license/MySQL-JDBC-LICENSE.txt
 %%DATADIR%%/license/Oracle-JDBC-LICENSE.txt
 %%DATADIR%%/license/Postgresql-JDBC-LICENSE.txt
+%%DATADIR%%/license/TableLayout-LICENSE.txt
 %%DATADIR%%/license/jConnect-LICENSE.txt
 %%DATADIR%%/license/jTDS-LICENSE.txt
-@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/lib/ssh2
+@dirrm %%DATADIR%%/lib/nb/xed
+@dirrm %%DATADIR%%/lib/nb/vapi
+@dirrm %%DATADIR%%/lib/nb/v
+@dirrm %%DATADIR%%/lib/nb/tc
+@dirrm %%DATADIR%%/lib/nb/ql
+@dirrm %%DATADIR%%/lib/nb/pcore
+@dirrm %%DATADIR%%/lib/nb/msc
+@dirrm %%DATADIR%%/lib/nb/mlkup
+@dirrm %%DATADIR%%/lib/nb/gsf
+@dirrm %%DATADIR%%/lib/nb/eapi
+@dirrm %%DATADIR%%/lib/nb
+@dirrm %%DATADIR%%/lib/jinterop
+@dirrm %%DATADIR%%/lib/jide
+@dirrm %%DATADIR%%/lib/drivers
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
