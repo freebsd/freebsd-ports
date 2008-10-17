@@ -7,12 +7,12 @@
 
 PORTNAME=	p4api
 PORTVERSION=	${VERSION}
-PORTREVISION=	${REVISION}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/:tar \
-		http://www.perforce.com/perforce/doc.${DOCVER}/user/:txt
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}${PLATFORM_SUFX}/:tar \
+		http://www.perforce.com/perforce/doc.${DOCVER}/manuals/p4api/:pdf
+
 EXTRACT_SUFX=
-DISTFILES=	${TAR_FILES}:tar p4api.txt:txt
+DISTFILES=	${TAR_FILES}:tar p4api.pdf:pdf
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}-${PLATFORM}
 EXTRACT_ONLY=	${TAR_FILES}
 
@@ -20,22 +20,26 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/p4api-2008.1.158777
 
-VERSION=	03.1
-REVISION=	1
+VERSION=	08.1
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-.if ${OSVERSION} >= 501103
-PLATFORM=	freebsd5
-.else
-PLATFORM=	freebsd4
-.endif
-TAR_FILES=	p4api.tar
+PLATFORM_SUFX=	x86
+.elif ${ARCH} == amd64
+PLATFORM_SUFX=	x86_64
 .else
 IGNORE=		"Unsupported platform, sorry."
+.endif
+
+TAR_FILES=	p4api.tgz
+
+.if ${OSVERSION} >= 600034
+PLATFORM=	freebsd60
+.else
+PLATFORM=	freebsd54
 .endif
 
 DOCVER=		${VERSION:S/.//}
@@ -43,14 +47,24 @@ DOCVER=		${VERSION:S/.//}
 do-install:
 	${MKDIR} ${PREFIX}/include/perforce
 	${MKDIR} ${PREFIX}/lib/perforce
-	cd ${WRKSRC}; \
+	cd ${WRKSRC}/include/p4; \
 	 for i in *.h; \
 	 do ${INSTALL_DATA} $${i} ${PREFIX}/include/perforce; \
 	 done
-	cd ${WRKSRC}; \
+	cd ${WRKSRC}/lib; \
 	 for i in lib*.a; \
 	 do ${INSTALL_DATA} $${i} ${PREFIX}/lib/perforce; \
 	 done
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.txt ${PREFIX}/include/perforce
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/sample; \
+	 for i in *; \
+	 do ${INSTALL_DATA} $${i} ${EXAMPLESDIR}; \
+	 done
+.endif
 
 .include <bsd.port.post.mk>
