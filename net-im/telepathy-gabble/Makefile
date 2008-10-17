@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.2 2008/02/27 14:17:54 ahze Exp $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
