@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	6.5.12
+PORTVERSION=	7.0.0
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION:R}.0/java/
 DISTNAME=	ads-java-novm-${PORTVERSION}
@@ -14,10 +14,11 @@ DISTNAME=	ads-java-novm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database query and administration tool
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
+		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 RESTRICTED=	See <http://www.aquafold.com/licensing.html>
@@ -25,14 +26,15 @@ NO_CDROM=	${RESTRICTED}
 
 WRKSRC=		${WRKDIR}/datastudio
 
-INSTFILES=	License.txt PAD_FILE.XML changelog.txt datastudio.gif	\
+INSTFILES=	License.txt changelog.txt datastudio-*.png datastudio.gif	\
 		datastudio.ico lib license
-EXTRACT_AFTER_ARGS=|${TAR} -xpf - ./datastudio/datastudio.sh
+INSTSCRIPTS=	datastudio runscript
+EXTRACT_AFTER_ARGS=|${TAR} -xpf - ${INSTSCRIPTS:S|^|./datastudio/|:S|$|.sh|}
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%ADS_HOME%%|${DATADIR}|"	\
 		-e "s|^java |JAVA_VERSION=${JAVA_VERSION} exec ${LOCALBASE}/bin/java -Xmx256M |"	\
-		${WRKSRC}/datastudio.sh
+		${INSTSCRIPTS:S|^|${WRKSRC}/|:S|$|.sh|}
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -40,7 +42,7 @@ do-install:
 		${INSTFILES:S|^|./datastudio/|}
 	${MV} ${DATADIR}/datastudio/* ${DATADIR}
 	${RMDIR} ${DATADIR}/datastudio
-	${INSTALL_SCRIPT} ${WRKSRC}/datastudio.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${INSTSCRIPTS:S|^|${WRKSRC}/|:S|$|.sh|} ${PREFIX}/bin
 
 post-install:
 	@${ECHO_MSG}
