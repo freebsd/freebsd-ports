@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.6
-PORTREVISION=	1
+PORTVERSION=	1.5.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	mwisnicki+freebsd@gmail.com
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A documentation system for C, C++ and other languages
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_ICONV=	yes
 ALL_TARGET=	all
 
