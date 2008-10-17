@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	0.628
+PORTVERSION=	0.629
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -16,15 +16,12 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Model to create configuration validation tool
 
 BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
+		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 PERL_MODBUILD=	5.8.0+
 
@@ -43,4 +40,11 @@ MAN3=		Config::Model.3 Config::Model::AnyId.3 \
 		Config::Model::WarpedNode.3 Config::Model::WarpedThing.3 \
 		Config::Model::WizardHelper.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
