@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
 
@@ -21,9 +21,11 @@ LIB_DEPENDS=	db-4.5:${PORTSDIR}/databases/db45 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
 		pcre.0:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed \
+		perl:${PORTSDIR}/lang/perl5.8
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen \
+		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
 
 DB_VERSION?=	45
