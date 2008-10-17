@@ -912,6 +912,7 @@
     SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-WithCache
     SUBDIR += p5-LWPx-ParanoidAgent
+    SUBDIR += p5-Markup-Perl
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Profiler
     SUBDIR += p5-MasonX-Request-WithApacheSession
