@@ -7,35 +7,39 @@ etc/ntop/oui.txt.gz
 etc/ntop/p2c.opt.table.gz
 etc/ntop/specialMAC.txt.gz
 @dirrm etc/ntop
-lib/libicmpPlugin-%%PORTVERSION%%
-lib/libicmpPlugin
+lib/libcpacketPlugin-%%PORTVERSION%%.so
+lib/libcpacketPlugin.so
+lib/libcpacketPlugin.a
+lib/libicmpPlugin-%%PORTVERSION%%.so
+lib/libicmpPlugin.so
 lib/libicmpPlugin.a
-lib/liblastSeenPlugin-%%PORTVERSION%%
-lib/liblastSeenPlugin
+lib/liblastSeenPlugin-%%PORTVERSION%%.so
+lib/liblastSeenPlugin.so
 lib/liblastSeenPlugin.a
-lib/libnetflowPlugin-%%PORTVERSION%%
-lib/libnetflowPlugin
+lib/libnetflowPlugin-%%PORTVERSION%%.so
+lib/libnetflowPlugin.so
 lib/libnetflowPlugin.a
-lib/libntop-%%PORTVERSION%%
-lib/libntop
+lib/libntop-%%PORTVERSION%%.so
+lib/libntop.so
 lib/libntop.a
 lib/libntop.la
-lib/libntopreport-%%PORTVERSION%%
-lib/libntopreport
+lib/libntopreport-%%PORTVERSION%%.so
+lib/libntopreport.so
 lib/libntopreport.a
 lib/libntopreport.la
-lib/libpdaPlugin-%%PORTVERSION%%
-lib/libpdaPlugin
+lib/libpdaPlugin-%%PORTVERSION%%.so
+lib/libpdaPlugin.so
 lib/libpdaPlugin.a
-lib/libremotePlugin-%%PORTVERSION%%
-lib/libremotePlugin
+lib/libremotePlugin-%%PORTVERSION%%.so
+lib/libremotePlugin.so
 lib/libremotePlugin.a
-lib/librrdPlugin-%%PORTVERSION%%
-lib/librrdPlugin
+lib/librrdPlugin-%%PORTVERSION%%.so
+lib/librrdPlugin.so
 lib/librrdPlugin.a
-lib/libsflowPlugin-%%PORTVERSION%%
-lib/libsflowPlugin
+lib/libsflowPlugin-%%PORTVERSION%%.so
+lib/libsflowPlugin.so
 lib/libsflowPlugin.a
+lib/ntop/plugins/cpacketPlugin.so
 lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/lastSeenPlugin.so
 lib/ntop/plugins/netflowPlugin.so
@@ -45,6 +49,11 @@ lib/ntop/plugins/rrdPlugin.so
 lib/ntop/plugins/sflowPlugin.so
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
+%%DATADIR%%/perl/report/basic.xml
+%%DATADIR%%/perl/report.pl
+%%DATADIR%%/perl/test.pl
+%%DATADIR%%/html/ntop_logo.png
+%%DATADIR%%/html/line-bottom.png
 %%DATADIR%%/html/autosuggest.js
 %%DATADIR%%/html/calendar-setup.js
 %%DATADIR%%/html/calendar.js
@@ -63,7 +72,6 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/theme.js
 %%DATADIR%%/html/arrow.gif
 %%DATADIR%%/html/blank.gif
-%%DATADIR%%/html/ntop_logo.gif
 %%DATADIR%%/html/spacer.gif
 %%DATADIR%%/html/theme.css
 %%DATADIR%%/html/statsicons/flags/local.gif
@@ -417,6 +425,8 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/jscalendar/calendar-setup.js
 %%DATADIR%%/html/jscalendar/calendar.js
 %%DATADIR%%/html/jscalendar/lang/calendar-en.js
+@dirrm %%DATADIR%%/perl/report/
+@dirrm %%DATADIR%%/perl
 @dirrm %%DATADIR%%/html/jscalendar/lang
 @dirrm %%DATADIR%%/html/jscalendar
 @dirrm %%DATADIR%%/html/img_inquisitor
