@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -16,10 +16,14 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
+USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	MYSQL "Install MySQL PDO support" Off \
+OPTIONS=	\
+		EDOJO "Install embedded Dojo" On \
+		PDOJO "Install Dojo from ports" Off \
+		MYSQL "Install MySQL PDO support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
 		PGSQL "Install PostgreSQL PDO support" Off \
 		OCI "Install Oracle OCI 8 PDO support" Off \
@@ -28,9 +32,33 @@ OPTIONS=	MYSQL "Install MySQL PDO support" Off \
 		REQPHP "Install required PHP dependencies" On \
 		OPTPHP "Install optional PHP dependencies" Off
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	INSTALL.txt README.txt
+.endif
+
 .include <bsd.port.pre.mk>
 
 IGNORE_WITH_PHP=4
+
+# Check for mutually-exclusive options
+.if defined(WITH_EDOJO) && defined(WITH_PDOJO)
+IGNORE=		please select only one type of Dojo installation
+.endif
+
+INSTALL_DIRS=	library
+
+.if defined(WITH_EDOJO)
+DOJO=		""
+INSTALL_DIRS+=	externals
+CONFLICTS+=	dojo-1.*
+.else
+DOJO=		"@comment "
+.endif
+PLIST_SUB+=	DOJO=${DOJO}
+
+.if defined(WITH_PDOJO)
+RUN_DEPENDS+=	dojo>=0:${PORTSDIR}/www/dojo
+.endif
 
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
@@ -71,18 +99,34 @@ USE_PHP+=	pdo_sqlite
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${INSTALL_DIRS}" ${DATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+.if !defined(NOPORTEXAMPLES)
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "demos tests" ${EXAMPLESDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EXAMPLESDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
+		${EXAMPLESDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+	@${FIND} ${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
+	@${FIND} ${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+.endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
