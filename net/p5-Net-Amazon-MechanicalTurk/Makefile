@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Amazon-MechanicalTurk
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,9 +40,11 @@ SUB_LIST+=	HOME=${HOME} EXAMPLESDIR=${EXAMPLESDIR}
 SUB_FILES=	pkg-message
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
-	cd ${WRKSRC}/samples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} -d ${EXAMPLESDIR}
+	@cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${INSTALL} -d ${EXAMPLESDIR}/{} \;
+	@cd ${WRKSRC}/samples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

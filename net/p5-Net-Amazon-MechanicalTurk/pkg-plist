@@ -39,54 +39,56 @@
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Transport/RESTTransport.pm
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/XMLParser.pm
 %%SITE_PERL%%/Net/Amazon/mturk_install.pl
-%%EXAMPLESDIR%%/accountBalance/README.txt
-%%EXAMPLESDIR%%/accountBalance/accountbalance.pl
-%%EXAMPLESDIR%%/best_image/BestImage.pl
-%%EXAMPLESDIR%%/best_image/README.txt
-%%EXAMPLESDIR%%/best_image/best_image.properties
-%%EXAMPLESDIR%%/best_image/best_image.question
-%%EXAMPLESDIR%%/helloworld/README.txt
-%%EXAMPLESDIR%%/helloworld/helloworld-answer.pl
-%%EXAMPLESDIR%%/helloworld/helloworld-create.pl
-%%EXAMPLESDIR%%/listHITs/README.txt
-%%EXAMPLESDIR%%/listHITs/listHITs.pl
-%%EXAMPLESDIR%%/loadHITs/README.txt
-%%EXAMPLESDIR%%/loadHITs/approveRemaining.pl
-%%EXAMPLESDIR%%/loadHITs/getresults.pl
-%%EXAMPLESDIR%%/loadHITs/loadhits-input.csv
-%%EXAMPLESDIR%%/loadHITs/loadhits.pl
-%%EXAMPLESDIR%%/loadHITs/reject.pl
-%%EXAMPLESDIR%%/loadHITs/removehits.pl
-%%EXAMPLESDIR%%/loadHITsFromCustomCode/README.txt
-%%EXAMPLESDIR%%/loadHITsFromCustomCode/cities.xml
-%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits.pl
-%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits2.pl
-%%EXAMPLESDIR%%/loadHITsFromDB/README.txt
-%%EXAMPLESDIR%%/loadHITsFromDB/createdb.pl
-%%EXAMPLESDIR%%/loadHITsFromDB/dumptables.pl
-%%EXAMPLESDIR%%/loadHITsFromDB/loadhits.pl
-%%EXAMPLESDIR%%/removeAllHITs/README.txt
-%%EXAMPLESDIR%%/removeAllHITs/removeAllHITs.pl
-%%EXAMPLESDIR%%/simple_survey/README.txt
-%%EXAMPLESDIR%%/simple_survey/SimpleSurvey.pl
-%%EXAMPLESDIR%%/simple_survey/simple_survey.question
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accountBalance/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accountBalance/accountbalance.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/BestImage.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/best_image.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/best_image.question
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/helloworld-answer.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/helloworld-create.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listHITs/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listHITs/listHITs.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/approveRemaining.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/getresults.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/loadhits-input.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/loadhits.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/reject.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/removehits.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/cities.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits2.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/createdb.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/dumptables.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/loadhits.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeAllHITs/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeAllHITs/removeAllHITs.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/SimpleSurvey.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/simple_survey.question
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Transport
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Template
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/RowData
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/QAPValidator
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Command
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk
-@dirrm %%SITE_PERL%%/Net/Amazon
-@dirrm %%EXAMPLESDIR%%/simple_survey
-@dirrm %%EXAMPLESDIR%%/removeAllHITs
-@dirrm %%EXAMPLESDIR%%/loadHITsFromDB
-@dirrm %%EXAMPLESDIR%%/loadHITsFromCustomCode
-@dirrm %%EXAMPLESDIR%%/loadHITs
-@dirrm %%EXAMPLESDIR%%/listHITs
-@dirrm %%EXAMPLESDIR%%/helloworld
-@dirrm %%EXAMPLESDIR%%/best_image
-@dirrm %%EXAMPLESDIR%%/accountBalance
-@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/Net/Amazon
+@dirrmtry %%SITE_PERL%%/Net
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple_survey
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/removeAllHITs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITsFromDB
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITsFromCustomCode
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/listHITs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/helloworld
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/best_image
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/accountBalance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
