@@ -11,7 +11,7 @@ You need to do some things before you can use the Amazon Mechanical Turk:
    %%HOME%%/.aws/auth.
 
 3) Try out the samples in %%EXAMPLESDIR%%,
-   if you like.
+   if you installed them.
 
 4) Use the MTurk Sandbox to create HITs in a development environment for
    free. This Perl module uses the sandbox by default.
