@@ -1473,6 +1473,7 @@
     SUBDIR += p5-Module-Compile
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Dependency
+    SUBDIR += p5-Module-Depends
     SUBDIR += p5-Module-ExtractUse
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Info

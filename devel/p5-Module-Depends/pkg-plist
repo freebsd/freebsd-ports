@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Module/Depends.pm
+%%SITE_PERL%%/Module/Depends/Intrusive.pm
+@dirrmtry %%SITE_PERL%%/Module/Depends
+@dirrmtry %%SITE_PERL%%/Module

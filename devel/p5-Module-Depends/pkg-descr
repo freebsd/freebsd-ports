@@ -1,0 +1,9 @@
+Module::Depends extracts module dependencies from an unpacked distribution
+tree.
+
+Module::Depends only evaluates the META.yml shipped with a distribution.
+This won't be effective until all distributions ship META.yml files, so we
+suggest you take your life in your hands and look at
+Module::Depends::Intrusive.
+
+WWW:	http://search.cpan.org/dist/Module-Depends/
