@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	IPC-Cmd
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	IPC::Cmd - finding and running system commands made easy
-
-RUN_DEPENDS=	${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		${SITE_PERL}/Module/Load/Conditional.pm:${PORTSDIR}/devel/p5-Module-Load-Conditional \
-		p5-IPC-Run>=0.55:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-Params-Check>=0.20:${PORTSDIR}/devel/p5-Params-Check
-BUILD_DEPENDS=	${RUN_DEPENDS}
+COMMENT=	Finding and running system commands made easy
 
 PERL_CONFIGURE=	yes
 
 MAN3=	IPC::Cmd.3
 
-post-patch:
-	${RM} -f ${WRKSRC}/lib/IPC/Cmd.pm.orig
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Module-Load-Conditional>=0:${PORTSDIR}/devel/p5-Module-Load-Conditional \
+		p5-Params-Check>=0.20:${PORTSDIR}/devel/p5-Params-Check
+.endif
+
+.include <bsd.port.post.mk>
