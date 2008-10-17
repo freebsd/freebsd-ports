@@ -66,6 +66,7 @@
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
+    SUBDIR += bsdhwmon
     SUBDIR += bsdsar
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
