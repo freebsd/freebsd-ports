@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	Test-Simple
-PORTVERSION=	0.80
+PORTVERSION=	0.84
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic utilities for writing tests in perl
-
-RUN_DEPENDS=	${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
