@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-flashplugin</name>
-	<range><lt>9.0r124_1</lt></range>
+	<range><le>9.0r124_1</le></range>
       </package>
     </affects>
     <description>
