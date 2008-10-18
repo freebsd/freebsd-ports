@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	klat4
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.algebraic.ru/klat4/
 
@@ -15,6 +15,6 @@ COMMENT=	A LaTeX source editor for KDE4
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4= 	kdeprefix kdelibs automoc4
+USE_KDE4=	kdeprefix kdelibs automoc4
 
 .include <bsd.port.mk>
