@@ -41,6 +41,7 @@
     SUBDIR += etoile-babbler
     SUBDIR += etoile-multimediakit
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flv2mpeg4
     SUBDIR += flvtool++
