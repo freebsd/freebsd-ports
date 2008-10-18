@@ -45,13 +45,12 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Adobe Product Security Incident Response Team reports:</p>
-	<blockquote
-	cite="http://www.adobe.com/support/security/bulletins/apsb08-18.html">
-	  <p>Potential vulnerabilities have been identified in Adobe Flash
-	  Player 9.0.124.0 and earlier that could allow an attacker who
-	  successfully exploits these potential vulnerabilities to bypass Flash
-	  Player security controls. Adobe recommends users update to the most
-	  current version of Flash Player available for their platform.</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb08-18.html">
+	  <p>Potential vulnerabilities have been identified in Adobe Flash 
+	    Player 9.0.124.0 and earlier that could allow an attacker who
+	    successfully exploits these potential vulnerabilities to bypass Flash
+	    Player security controls. Adobe recommends users update to the most
+	    current version of Flash Player available for their platform.</p>
 	</blockquote>
       </body>
     </description>
