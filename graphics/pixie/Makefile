@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	Pixie-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
 
 BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex \
