@@ -2706,6 +2706,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/rolemap.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/actionicons.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/controlpanel.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/jsregistry.xml
@@ -3709,6 +3710,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/images/test.png
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/mails.txt
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/messages.txt
+%%ZOPEPRODUCTDIR%%/CMFPlone/tests/redirection.txt
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/scripts.txt
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testActionIconsTool.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/tests/testActionIconsTool.pyc
@@ -7312,6 +7314,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/form/save.kupu
 %%ZOPEPRODUCTDIR%%/kupu/i18n.bat
 %%ZOPEPRODUCTDIR%%/kupu/i18n/README.txt
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-bg.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-bg.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ca.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ca.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-cs.mo
@@ -7380,6 +7384,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-cs.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-da.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-da.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-de.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-de.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-es.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-es.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-eu.mo
@@ -7489,11 +7495,13 @@
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/contextmenu.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/cross-browser.js
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/dist-mmbase.kupu
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/divstool.js
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/attachments.items.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/collection.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/drawer.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/drawer.xsl.jspx
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/flashobjects.items.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/images.items.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/kupudrawerstyles.css
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/kupuimages/kupublank.html
@@ -7506,8 +7514,11 @@
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/test.post.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/texts.items.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/upload.jspx
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/uploadfields.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/drawers/urls.items.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/error.jspx
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/flashtool.js
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/flash.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/head-mmbase.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/head.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/html.kupu
@@ -7523,6 +7534,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/it.po
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/nl.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/icons/flash.png
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/icons/map-open.gif
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/icons/map.gif
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/include.kupu
