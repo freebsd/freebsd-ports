@@ -20986,6 +20986,7 @@ tulip                           ports/graphics/tulip
 tumgreyspf                      ports/mail/tumgreyspf
 tunapie                         ports/multimedia/tunapie
 tuneradio                       ports/audio/tuneradio
+tuntun                          ports/security/tuntun
 tux-aqfh                        ports/games/tux-aqfh
 tuxcards                        ports/deskutils/tuxcards
 tuxguitar                       ports/audio/tuxguitar
