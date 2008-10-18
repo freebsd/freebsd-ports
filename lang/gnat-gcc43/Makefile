@@ -8,15 +8,14 @@
 #
 
 PORTNAME=		gnat-gcc
-PORTVERSION=		4.3.0
-PORTREVISION=		3
+PORTVERSION=		4.3.2
 CATEGORIES=		lang
-MASTER_SITES=		GCC/snapshots/${versionstring} \
+MASTER_SITES=		GCC/releases/gcc-${PORTVERSION} \
 			CENKES:boot \
 			http://lovetemple.net/data/:boot
-DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
-			gcc-ada-${versionstring}${EXTRACT_SUFX} \
-			gcc-testsuite-${versionstring}${EXTRACT_SUFX} \
+DISTFILES=		gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+			gcc-ada-${PORTVERSION}${EXTRACT_SUFX} \
+			gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
 			gnat-gcc41-boot-${boot_stamp}.tbz:boot
 
 MAINTAINER=		karel@lovetemple.net
@@ -55,15 +54,13 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-gcc_snapshot=		20071019
-versionstring=		${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
-srcdir=			${WRKDIR}/gcc-${versionstring}
+srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		43
 fsf_mans=		fsf-funding gfdl gpl
 fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc-${PORTVERSION}
 gcc_link=		${PREFIX}/bin/gcc${gcc_suffix}/gcc
-boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//}
+boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//:S/8/7/}
 check_target=		check # XXX
 
 PATCH_WRKSRC=		${srcdir}
