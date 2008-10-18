@@ -40,6 +40,6 @@ esac
 : ${postfwd_enable="NO"}
 : ${postfwd_config="%%PREFIX%%/etc/${name}.conf"}
 
-command_args="-d -f ${required_files} -i 127.0.0.1 -p 10040 -u nobody -g nobody -S"
+command_args="--shortlog --summary=600 --cache=600 --cache-rbl-timeout=3600 --cleanup-requests=1200 --cleanup-rbls=1800 --cleanup-rates=1200 -d -f ${required_files} -i 127.0.0.1 -p 10040 -u nobody -g nobody"
 
 run_rc_command "$1"
