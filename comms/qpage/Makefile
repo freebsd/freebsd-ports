@@ -7,12 +7,12 @@
 
 PORTNAME=	qpage
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jfb@mr-happy.com
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
 GNU_CONFIGURE=	yes
