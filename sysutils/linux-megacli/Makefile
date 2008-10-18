@@ -25,6 +25,8 @@ SUB_FILES=	megacli.sh
 SUB_FILES+=	407.status-mfi-raid
 SUB_FILES+=	mfi_tty_log
 
+BROKEN=		Unfetchable
+
 # From bsd.linux.rpm.mk
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
