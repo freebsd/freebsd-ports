@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mixi-Scraper
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -46,6 +46,10 @@ MAN3=		WWW::Mixi::Scraper::Utils.3 \
 		WWW::Mixi::Scraper::Plugin::ViewDiary.3 \
 		WWW::Mixi::Scraper::Plugin::ViewBBS.3 \
 		WWW::Mixi::Scraper::Plugin::NewVideo.3 \
-		WWW::Mixi::Scraper::Plugin::ListBookmark.3
+		WWW::Mixi::Scraper::Plugin::ListBookmark.3 \
+		WWW::Mixi::Scraper::Plugin::ResEcho.3 \
+		WWW::Mixi::Scraper::Plugin::ViewEcho.3 \
+		WWW::Mixi::Scraper::Plugin::ListEcho.3 \
+		WWW::Mixi::Scraper::Plugin::RecentEcho.3
 
 .include <bsd.port.mk>
