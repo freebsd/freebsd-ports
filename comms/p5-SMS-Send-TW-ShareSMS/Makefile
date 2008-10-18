@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	SMS-Send-TW-ShareSMS
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	SMS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for www.ShareSMS.com
 
-RUN_DEPENDS=	${SITE_PERL}/SMS/Send.pm:${PORTSDIR}/comms/p5-SMS-Send \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${SITE_PERL}/SMS/Send.pm:${PORTSDIR}/comms/p5-SMS-Send \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-SMS-Send>=0.03:${PORTSDIR}/comms/p5-SMS-Send \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=2:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
