@@ -1,0 +1,12 @@
+--- doc/Makefile.in.orig	Tue Sep  9 08:52:20 2008
++++ doc/Makefile.in	Sat Oct 18 17:51:51 2008
+@@ -447,8 +447,7 @@
+ @HAVE_DOXYGEN_TRUE@	doxygen kate.doxygen
+ @HAVE_DOXYGEN_TRUE@	touch .doc-dummy-target
+ @HAVE_DOXYGEN_FALSE@.doc-dummy-target:
+-@HAVE_DOXYGEN_FALSE@	echo "doxygen not found, cannot build docs"
+-@HAVE_DOXYGEN_FALSE@	/bin/false
++@HAVE_DOXYGEN_FALSE@	echo "doxygen not found, oops"
+ 
+ dist-hook: .doc-dummy-target
+ 	cp -fR * $(distdir)
