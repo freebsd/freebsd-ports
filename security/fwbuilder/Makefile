@@ -25,6 +25,7 @@ QT_COMPONENTS=	corelib \
 		inputmethods \
 		linguist \
 		moc_build \
+		rcc_build \
 		qmake_build \
 		svg \
 		uic_build \
