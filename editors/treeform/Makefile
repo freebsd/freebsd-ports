@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	treeform
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	editors java
 MASTER_SITES=	SF
-DISTNAME=	TreeForm_9_10
+DISTNAME=	TreeForm_1_0_3
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A Linguistic Syntax/Semantics tree drawing editor
