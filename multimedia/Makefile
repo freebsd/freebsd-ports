@@ -119,6 +119,7 @@
     SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libfame
+    SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
