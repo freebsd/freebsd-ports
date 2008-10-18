@@ -144,6 +144,7 @@
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
+    SUBDIR += tkabbur
     SUBDIR += tmsnc
     SUBDIR += trix
     SUBDIR += vicq
