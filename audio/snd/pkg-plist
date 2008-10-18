@@ -437,6 +437,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/rubber.scm
 %%SCHEME%%%%DATADIR%%/selection.scm
 %%SCHEME%%%%DATADIR%%/singer.scm
+%%SCHEME%%%%DATADIR%%/s7test.scm
 %%SCHEME%%%%DATADIR%%/snd-gl.scm
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-hobbit.scm
@@ -462,8 +463,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/toolbar.scm
 %%SCHEME%%%%DATADIR%%/tools/check-gtk.scm
 %%SCHEME%%%%DATADIR%%/tools/check-help.scm
-%%SCHEME%%%%DATADIR%%/tools/clisp-number-tests.scm
-%%SCHEME%%%%DATADIR%%/tools/clisp-other-tests.scm
 %%SCHEME%%%%DATADIR%%/tools/gldata.scm
 %%SCHEME%%%%DATADIR%%/tools/lines.scm
 %%SCHEME%%%%DATADIR%%/tools/makegl.scm
