@@ -19,11 +19,15 @@ using the following rc.d script command:
 
 An update of the ban.db database will be necessary if upgrading from a
 pre-beta5 release. Those upgrading from 3.0.0-beta5 or later, to this
-version should be able to omit this step. Though it doesn't do any harm to
+version, should be able to omit this step. Though it doesn't do any harm to
 check anyway. Database updates must be performed using 'bantool -u' while
 no ircd is running and before starting the newer version.
 
 	%%PREFIX%%/bin/bantool -u
+
+Note that the ssl_only_channel configure option has been removed and is
+now available as a setting in the channel section of the ircd
+configuration file.
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------
