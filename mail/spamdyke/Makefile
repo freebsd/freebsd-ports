@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamdyke
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
