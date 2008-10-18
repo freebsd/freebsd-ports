@@ -12,6 +12,43 @@ share/applications/mcabber.desktop
 %%DATADIR%%/contrib/themes/light.txt
 %%DATADIR%%/contrib/themes/light2.txt
 %%DATADIR%%/contrib/themes/oliver.txt
+%%DATADIR%%/help/cs/hlp.txt
+%%DATADIR%%/help/cs/hlp_add.txt
+%%DATADIR%%/help/cs/hlp_alias.txt
+%%DATADIR%%/help/cs/hlp_authorization.txt
+%%DATADIR%%/help/cs/hlp_bind.txt
+%%DATADIR%%/help/cs/hlp_buffer.txt
+%%DATADIR%%/help/cs/hlp_chat_disable.txt
+%%DATADIR%%/help/cs/hlp_clear.txt
+%%DATADIR%%/help/cs/hlp_color.txt
+%%DATADIR%%/help/cs/hlp_connect.txt
+%%DATADIR%%/help/cs/hlp_del.txt
+%%DATADIR%%/help/cs/hlp_disconnect.txt
+%%DATADIR%%/help/cs/hlp_echo.txt
+%%DATADIR%%/help/cs/hlp_event.txt
+%%DATADIR%%/help/cs/hlp_group.txt
+%%DATADIR%%/help/cs/hlp_help.txt
+%%DATADIR%%/help/cs/hlp_iline.txt
+%%DATADIR%%/help/cs/hlp_info.txt
+%%DATADIR%%/help/cs/hlp_move.txt
+%%DATADIR%%/help/cs/hlp_msay.txt
+%%DATADIR%%/help/cs/hlp_otr.txt
+%%DATADIR%%/help/cs/hlp_otrpolicy.txt
+%%DATADIR%%/help/cs/hlp_pgp.txt
+%%DATADIR%%/help/cs/hlp_quit.txt
+%%DATADIR%%/help/cs/hlp_rawxml.txt
+%%DATADIR%%/help/cs/hlp_rename.txt
+%%DATADIR%%/help/cs/hlp_request.txt
+%%DATADIR%%/help/cs/hlp_room.txt
+%%DATADIR%%/help/cs/hlp_roster.txt
+%%DATADIR%%/help/cs/hlp_say.txt
+%%DATADIR%%/help/cs/hlp_say_to.txt
+%%DATADIR%%/help/cs/hlp_screen_refresh.txt
+%%DATADIR%%/help/cs/hlp_set.txt
+%%DATADIR%%/help/cs/hlp_source.txt
+%%DATADIR%%/help/cs/hlp_status.txt
+%%DATADIR%%/help/cs/hlp_status_to.txt
+%%DATADIR%%/help/cs/hlp_version.txt
 %%DATADIR%%/help/de/hlp.txt
 %%DATADIR%%/help/de/hlp_add.txt
 %%DATADIR%%/help/de/hlp_alias.txt
@@ -312,6 +349,7 @@ share/applications/mcabber.desktop
 @dirrm %%DATADIR%%/contrib/events
 @dirrm %%DATADIR%%/contrib/themes
 @dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/help/cs
 @dirrm %%DATADIR%%/help/de
 @dirrm %%DATADIR%%/help/en
 @dirrm %%DATADIR%%/help/fr
