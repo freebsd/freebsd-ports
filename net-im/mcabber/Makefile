@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Small Jabber console client
 
 USE_BZIP2=	yes
