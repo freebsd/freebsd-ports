@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	FormValidator-Simple-Plugin-Number-Phone-JP
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Japanese phone number validation
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-FormValidator-Simple>=0.03:${PORTSDIR}/textproc/p5-FormValidator-Simple \
 	ja-p5-Number-Phone-JP>=0.03:${PORTSDIR}/japanese/p5-Number-Phone-JP
 
