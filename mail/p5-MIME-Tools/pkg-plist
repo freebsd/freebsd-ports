@@ -21,9 +21,9 @@
 %%SITE_PERL%%/MIME/WordDecoder.pm
 %%SITE_PERL%%/MIME/Words.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/tools/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/tools
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
-@dirrm %%SITE_PERL%%/MIME/Field
-@dirrm %%SITE_PERL%%/MIME/Decoder
-@dirrm %%SITE_PERL%%/MIME/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/tools
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
+@dirrmtry %%SITE_PERL%%/MIME/Field
+@dirrmtry %%SITE_PERL%%/MIME/Decoder
+@dirrmtry %%SITE_PERL%%/MIME/Parser
 @dirrmtry %%SITE_PERL%%/MIME
