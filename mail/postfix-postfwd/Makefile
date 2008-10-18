@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	postfwd
-DISTVERSION=	1.10.7b
+DISTVERSION=	1.10.8b
 CATEGORIES=	mail
 MASTER_SITES=	http://www.postfwd.org/old/
 PKGNAMEPREFIX=	postfix-
-DISTNAME=	postfwd-1.10pre7b
+DISTNAME=	postfwd-1.10pre8b
 
 MAINTAINER=	sahil@tandon.net
 COMMENT=	A postfix firewall policy daemon
 
-RUN_DEPENDS=	${SITE_PERL}/Net/DNS/Async.pm:${PORTSDIR}/dns/p5-Net-DNS-Async \
-		${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
 
 PORTDOCS=	CHANGELOG postfwd.html postfwd.txt
-PORTEXAMPLES=	postfwd-rblcheck.pl request.sample
+PORTEXAMPLES=	request.sample
 PLIST_FILES=	bin/postfwd etc/postfwd.conf.sample
 
 SUB_FILES=	pkg-message
@@ -29,14 +28,14 @@ USE_RC_SUBR=	postfwd
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-MAN1=		postfwd.1
+MAN8=		postfwd.8
 
 .include <bsd.port.pre.mk>
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sbin/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.cf ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${MAN1} ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/man/man8/${MAN8} ${MANPREFIX}/man/man8/
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -45,7 +44,6 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/postfwd-rblcheck.pl ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/request.sample ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
