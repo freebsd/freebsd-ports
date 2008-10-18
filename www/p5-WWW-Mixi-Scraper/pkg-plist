@@ -19,6 +19,10 @@
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewBBS.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/NewVideo.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListBookmark.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ResEcho.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewEcho.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListEcho.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/RecentEcho.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
