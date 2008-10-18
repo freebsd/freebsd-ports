@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	clojure
-PORTVERSION=	20080612
+PORTVERSION=	20080916
 CATEGORIES=	lang lisp java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,6 +26,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/clojure ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/clojure.jar ${JAVAJARDIR}
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/src/boot.clj ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/src/clj/clojure/boot.clj ${DATADIR}
 
 .include <bsd.port.mk>

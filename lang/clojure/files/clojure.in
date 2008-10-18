@@ -2,9 +2,11 @@
 #
 # $FreeBSD$
 
-if [ -z "$@" ]
+if [ -z "$1" ]
 then
     JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Repl
 else
-    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Script "$@"
+    SCRIPT="$1"
+    shift 1
+    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Script "$SCRIPT" -- "$@"
 fi
