@@ -7,6 +7,7 @@
 
 PORTNAME=	opensaml
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${DISTVERSION}/
 
@@ -16,7 +17,7 @@ COMMENT=	Open source implentation of SAML
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		xml-security-c.13:${PORTSDIR}/security/apache-xml-security-c
+		xml-security-c.14:${PORTSDIR}/security/apache-xml-security-c
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
