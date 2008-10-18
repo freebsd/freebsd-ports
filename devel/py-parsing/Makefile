@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	parsing
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/pyparsing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyparsing-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	General parsing module for Python
 
 USE_PYTHON=	2.3+
