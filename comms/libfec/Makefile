@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	libfec
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	fec-${PORTVERSION}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
 MAKEFILE=	makefile
