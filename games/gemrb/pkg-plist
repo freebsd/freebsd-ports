@@ -68,6 +68,9 @@ lib/gemrb/libMVEPlayer.so.0
 lib/gemrb/libNullSound.la
 lib/gemrb/libNullSound.so
 lib/gemrb/libNullSound.so.0
+lib/gemrb/libOpenALAudio.la
+lib/gemrb/libOpenALAudio.so
+lib/gemrb/libOpenALAudio.so.0
 lib/gemrb/libPLTImporter.la
 lib/gemrb/libPLTImporter.so
 lib/gemrb/libPLTImporter.so.0
@@ -107,6 +110,7 @@ lib/gemrb/libZLibMgr.so.0
 lib/libgemrb_core.la
 lib/libgemrb_core.so
 lib/libgemrb_core.so.0
+%%DATADIR%%/GUIScripts/ie_restype.py
 %%DATADIR%%/GUIScripts/GUICommon.py
 %%DATADIR%%/GUIScripts/GUIDefines.py
 %%DATADIR%%/GUIScripts/bg1/CharGen.py
@@ -154,6 +158,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/bg1/Start.py
 %%DATADIR%%/GUIScripts/bg1/TextScreen.py
 %%DATADIR%%/GUIScripts/bg2/CharGen.py
+%%DATADIR%%/GUIScripts/bg2/CharGenCommon.py
 %%DATADIR%%/GUIScripts/bg2/CharGen2.py
 %%DATADIR%%/GUIScripts/bg2/CharGen3.py
 %%DATADIR%%/GUIScripts/bg2/CharGen4.py
@@ -267,6 +272,7 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/iwd2/CharGen7.py
 %%DATADIR%%/GUIScripts/iwd2/CharGen8.py
 %%DATADIR%%/GUIScripts/iwd2/CharGen9.py
+%%DATADIR%%/GUIScripts/iwd2/CharOverview.py
 %%DATADIR%%/GUIScripts/iwd2/CharSound.py
 %%DATADIR%%/GUIScripts/iwd2/Class.py
 %%DATADIR%%/GUIScripts/iwd2/Enemy.py
@@ -325,62 +331,6 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/GUIScripts/test1/CharSet.py
 %%DATADIR%%/GUIScripts/test1/LoadScreen.py
 %%DATADIR%%/GUIScripts/test1/Start.py
-%%DATADIR%%/GUIScripts/tob/CharGen.py
-%%DATADIR%%/GUIScripts/tob/CharGen2.py
-%%DATADIR%%/GUIScripts/tob/CharGen3.py
-%%DATADIR%%/GUIScripts/tob/CharGen4.py
-%%DATADIR%%/GUIScripts/tob/CharGen5.py
-%%DATADIR%%/GUIScripts/tob/CharGen6.py
-%%DATADIR%%/GUIScripts/tob/CharGen7.py
-%%DATADIR%%/GUIScripts/tob/CharGen8.py
-%%DATADIR%%/GUIScripts/tob/CharGen9.py
-%%DATADIR%%/GUIScripts/tob/ExportFile.py
-%%DATADIR%%/GUIScripts/tob/GUICG1.py
-%%DATADIR%%/GUIScripts/tob/GUICG10.py
-%%DATADIR%%/GUIScripts/tob/GUICG12.py
-%%DATADIR%%/GUIScripts/tob/GUICG13.py
-%%DATADIR%%/GUIScripts/tob/GUICG15.py
-%%DATADIR%%/GUIScripts/tob/GUICG19.py
-%%DATADIR%%/GUIScripts/tob/GUICG2.py
-%%DATADIR%%/GUIScripts/tob/GUICG22.py
-%%DATADIR%%/GUIScripts/tob/GUICG23.py
-%%DATADIR%%/GUIScripts/tob/GUICG24.py
-%%DATADIR%%/GUIScripts/tob/GUICG3.py
-%%DATADIR%%/GUIScripts/tob/GUICG4.py
-%%DATADIR%%/GUIScripts/tob/GUICG5.py
-%%DATADIR%%/GUIScripts/tob/GUICG6.py
-%%DATADIR%%/GUIScripts/tob/GUICG7.py
-%%DATADIR%%/GUIScripts/tob/GUICG8.py
-%%DATADIR%%/GUIScripts/tob/GUICG9.py
-%%DATADIR%%/GUIScripts/tob/GUICommonWindows.py
-%%DATADIR%%/GUIScripts/tob/GUIINV.py
-%%DATADIR%%/GUIScripts/tob/GUIJRNL.py
-%%DATADIR%%/GUIScripts/tob/GUILOAD.py
-%%DATADIR%%/GUIScripts/tob/GUIMA.py
-%%DATADIR%%/GUIScripts/tob/GUIMG.py
-%%DATADIR%%/GUIScripts/tob/GUIMOVIE.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT10.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT12.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT6.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT7.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT8.py
-%%DATADIR%%/GUIScripts/tob/GUIOPT9.py
-%%DATADIR%%/GUIScripts/tob/GUIPR.py
-%%DATADIR%%/GUIScripts/tob/GUIREC.py
-%%DATADIR%%/GUIScripts/tob/GUISAVE.py
-%%DATADIR%%/GUIScripts/tob/GUISONGS.py
-%%DATADIR%%/GUIScripts/tob/GUISTORE.py
-%%DATADIR%%/GUIScripts/tob/GUIWORLD.py
-%%DATADIR%%/GUIScripts/tob/ImportFile.py
-%%DATADIR%%/GUIScripts/tob/ImportGame.py
-%%DATADIR%%/GUIScripts/tob/LoadScreen.py
-%%DATADIR%%/GUIScripts/tob/MessageWindow.py
-%%DATADIR%%/GUIScripts/tob/QuitGame.py
-%%DATADIR%%/GUIScripts/tob/Start.py
-%%DATADIR%%/GUIScripts/tob/Start2.py
-%%DATADIR%%/GUIScripts/tob/StartOpt.py
-%%DATADIR%%/GUIScripts/tob/TextScreen.py
 %%DATADIR%%/override/bg1/ability.2da
 %%DATADIR%%/override/bg1/aligns.2da
 %%DATADIR%%/override/bg1/avatars.2da
@@ -687,61 +637,6 @@ lib/libgemrb_core.so.0
 %%DATADIR%%/override/test1/slottype.2da
 %%DATADIR%%/override/test1/strings.2da
 %%DATADIR%%/override/test1/testing.chu
-%%DATADIR%%/override/tob/ability.2da
-%%DATADIR%%/override/tob/aligns.2da
-%%DATADIR%%/override/tob/areapro.2da
-%%DATADIR%%/override/tob/avatars.2da
-%%DATADIR%%/override/tob/avprefc.2da
-%%DATADIR%%/override/tob/avprefg.2da
-%%DATADIR%%/override/tob/avprefix.2da
-%%DATADIR%%/override/tob/avprefr.2da
-%%DATADIR%%/override/tob/cgtable.2da
-%%DATADIR%%/override/tob/classes.2da
-%%DATADIR%%/override/tob/clowncol.2da
-%%DATADIR%%/override/tob/clskills.2da
-%%DATADIR%%/override/tob/containr.2da
-%%DATADIR%%/override/tob/damage.2da
-%%DATADIR%%/override/tob/defsound.2da
-%%DATADIR%%/override/tob/effects.ids
-%%DATADIR%%/override/tob/fistweap.2da
-%%DATADIR%%/override/tob/fonts.2da
-%%DATADIR%%/override/tob/formatio.2da
-%%DATADIR%%/override/tob/gemrb.ini
-%%DATADIR%%/override/tob/guibtact.2da
-%%DATADIR%%/override/tob/guils.chu
-%%DATADIR%%/override/tob/item_use.2da
-%%DATADIR%%/override/tob/itemsnd.2da
-%%DATADIR%%/override/tob/itemspec.2da
-%%DATADIR%%/override/tob/itemtype.2da
-%%DATADIR%%/override/tob/itemuse.2da
-%%DATADIR%%/override/tob/k_bn_d.2da
-%%DATADIR%%/override/tob/k_bn_e.2da
-%%DATADIR%%/override/tob/k_bn_h.2da
-%%DATADIR%%/override/tob/k_m_e.2da
-%%DATADIR%%/override/tob/k_m_g.2da
-%%DATADIR%%/override/tob/k_m_h.2da
-%%DATADIR%%/override/tob/k_m_he.2da
-%%DATADIR%%/override/tob/magesch.2da
-%%DATADIR%%/override/tob/minorglb.vvc
-%%DATADIR%%/override/tob/overlay.2da
-%%DATADIR%%/override/tob/pathfind.2da
-%%DATADIR%%/override/tob/pdolls.2da
-%%DATADIR%%/override/tob/pictures.2da
-%%DATADIR%%/override/tob/qslots.2da
-%%DATADIR%%/override/tob/races.2da
-%%DATADIR%%/override/tob/randitem.2da
-%%DATADIR%%/override/tob/restmov.2da
-%%DATADIR%%/override/tob/sanctry.vvc
-%%DATADIR%%/override/tob/savegame.2da
-%%DATADIR%%/override/tob/script.2da
-%%DATADIR%%/override/tob/shtable.2da
-%%DATADIR%%/override/tob/skills.2da
-%%DATADIR%%/override/tob/slottype.2da
-%%DATADIR%%/override/tob/spentaci.vvc
-%%DATADIR%%/override/tob/splspec.2da
-%%DATADIR%%/override/tob/spshield.vvc
-%%DATADIR%%/override/tob/stats.ids
-%%DATADIR%%/override/tob/strings.2da
 %%DOCSDIR%%/Building-cmake.txt
 %%DOCSDIR%%/Building.txt
 %%DOCSDIR%%/CVS.txt
@@ -754,6 +649,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/Engine/Usability.txt
 %%DOCSDIR%%/EngineChanges.txt
 %%DOCSDIR%%/GUIScript/AdjustScrolling.txt
+%%DOCSDIR%%/GUIScript/AttachScrollBar.txt
 %%DOCSDIR%%/GUIScript/ApplyEffect.txt
 %%DOCSDIR%%/GUIScript/CanUseItemType.txt
 %%DOCSDIR%%/GUIScript/ChangeContainerItem.txt
@@ -762,11 +658,13 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/CheckFeatCondition.txt
 %%DOCSDIR%%/GUIScript/CheckVar.txt
 %%DOCSDIR%%/GUIScript/ClearActions.txt
+%%DOCSDIR%%/GUIScript/ConvertEdit.txt
 %%DOCSDIR%%/GUIScript/CountEffects.txt
 %%DOCSDIR%%/GUIScript/CreateButton.txt
 %%DOCSDIR%%/GUIScript/CreateCreature.txt
 %%DOCSDIR%%/GUIScript/CreateItem.txt
 %%DOCSDIR%%/GUIScript/CreateLabel.txt
+%%DOCSDIR%%/GUIScript/CreateLabelOnButton.txt
 %%DOCSDIR%%/GUIScript/CreateMapControl.txt
 %%DOCSDIR%%/GUIScript/CreateMovement.txt
 %%DOCSDIR%%/GUIScript/CreatePlayer.txt
@@ -789,6 +687,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/ExploreArea.txt
 %%DOCSDIR%%/GUIScript/FillPlayerInfo.txt
 %%DOCSDIR%%/GUIScript/FindTableValue.txt
+%%DOCSDIR%%/GUIScript/GameControlGetTargetMode.txt
 %%DOCSDIR%%/GUIScript/GameControlSetScreenFlags.txt
 %%DOCSDIR%%/GUIScript/GameControlSetTargetMode.txt
 %%DOCSDIR%%/GUIScript/GameGetFirstSelectedPC.txt
@@ -801,6 +700,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/GamePause.txt
 %%DOCSDIR%%/GUIScript/GameSelectPC.txt
 %%DOCSDIR%%/GUIScript/GameSelectPCSingle.txt
+%%DOCSDIR%%/GUIScript/GameSetExpansion.txt
 %%DOCSDIR%%/GUIScript/GameSetFormation.txt
 %%DOCSDIR%%/GUIScript/GameSetPartyGold.txt
 %%DOCSDIR%%/GUIScript/GameSetPartySize.txt
@@ -808,6 +708,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/GameSetReputation.txt
 %%DOCSDIR%%/GUIScript/GameSetScreenFlags.txt
 %%DOCSDIR%%/GUIScript/GetAbilityBonus.txt
+%%DOCSDIR%%/GUIScript/GetCharacters.txt
 %%DOCSDIR%%/GUIScript/GetCharSounds.txt
 %%DOCSDIR%%/GUIScript/GetContainer.txt
 %%DOCSDIR%%/GUIScript/GetContainerItem.txt
@@ -835,6 +736,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/GetPartySize.txt
 %%DOCSDIR%%/GUIScript/GetPlayerName.txt
 %%DOCSDIR%%/GUIScript/GetPlayerPortrait.txt
+%%DOCSDIR%%/GUIScript/GetPlayerScript.txt
 %%DOCSDIR%%/GUIScript/GetPlayerStat.txt
 %%DOCSDIR%%/GUIScript/GetPlayerStates.txt
 %%DOCSDIR%%/GUIScript/GetRumour.txt
@@ -852,6 +754,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/GetSymbolValue.txt
 %%DOCSDIR%%/GUIScript/GetSystemVariable.txt
 %%DOCSDIR%%/GUIScript/GetTableColumnCount.txt
+%%DOCSDIR%%/GUIScript/GetTableColumnIndex.txt
 %%DOCSDIR%%/GUIScript/GetTableColumnName.txt
 %%DOCSDIR%%/GUIScript/GetTableRowCount.txt
 %%DOCSDIR%%/GUIScript/GetTableRowIndex.txt
@@ -908,6 +811,7 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/SetControlSize.txt
 %%DOCSDIR%%/GUIScript/SetControlStatus.txt
 %%DOCSDIR%%/GUIScript/SetDefaultActions.txt
+%%DOCSDIR%%/GUIScript/SetDefaultScrollbar.txt
 %%DOCSDIR%%/GUIScript/SetEquippedQuickSlot.txt
 %%DOCSDIR%%/GUIScript/SetEvent.txt
 %%DOCSDIR%%/GUIScript/SetFullScreen.txt
@@ -922,13 +826,17 @@ lib/libgemrb_core.so.0
 %%DOCSDIR%%/GUIScript/SetModalState.txt
 %%DOCSDIR%%/GUIScript/SetNextScript.txt
 %%DOCSDIR%%/GUIScript/SetPlayerName.txt
+%%DOCSDIR%%/GUIScript/SetPlayerScript.txt
+%%DOCSDIR%%/GUIScript/SetPlayerSound.txt
 %%DOCSDIR%%/GUIScript/SetPlayerStat.txt
+%%DOCSDIR%%/GUIScript/SetPurchasedAmount.txt
 %%DOCSDIR%%/GUIScript/SetSaveGamePortrait.txt
 %%DOCSDIR%%/GUIScript/SetSaveGamePreview.txt
 %%DOCSDIR%%/GUIScript/SetSpellIcon.txt
 %%DOCSDIR%%/GUIScript/SetTAHistory.txt
 %%DOCSDIR%%/GUIScript/SetText.txt
 %%DOCSDIR%%/GUIScript/SetTextAreaFlags.txt
+%%DOCSDIR%%/GUIScript/SetTimedEvent.txt
 %%DOCSDIR%%/GUIScript/SetToken.txt
 %%DOCSDIR%%/GUIScript/SetTooltip.txt
 %%DOCSDIR%%/GUIScript/SetVar.txt
@@ -1010,7 +918,6 @@ lib/libgemrb_core.so.0
 @dirrm %%DATADIR%%/GUIScripts/iwd2
 @dirrm %%DATADIR%%/GUIScripts/pst
 @dirrm %%DATADIR%%/GUIScripts/test1
-@dirrm %%DATADIR%%/GUIScripts/tob
 @dirrm %%DATADIR%%/GUIScripts
 @dirrm %%DATADIR%%/override/bg1
 @dirrm %%DATADIR%%/override/bg2
@@ -1019,7 +926,6 @@ lib/libgemrb_core.so.0
 @dirrm %%DATADIR%%/override/iwd2
 @dirrm %%DATADIR%%/override/pst
 @dirrm %%DATADIR%%/override/test1
-@dirrm %%DATADIR%%/override/tob
 @dirrm %%DATADIR%%/override
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/Engine
