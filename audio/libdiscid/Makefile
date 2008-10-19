@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	libdiscid
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://users.musicbrainz.org/~matt/
+MASTER_SITES=	http://users.musicbrainz.org/~matt/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library for creating MusicBrainz DiscIDs
