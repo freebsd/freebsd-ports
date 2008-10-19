@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	st
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	state-threads
+MASTER_SITES=	SF/state-threads
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
 
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 alpha amd64
+
+DOCS=		fig.gif notes.html reference.html st.html \
+		timeout_heap.txt
+EXAMPLES=	Makefile README error.c lookupdns.c proxy.c \
+		res.c server.c
 
 .include <bsd.port.pre.mk>
 
@@ -26,22 +29,12 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile.examples ${WRKSRC}/examples/Makefile
 
 post-install:
-	@${MKDIR} ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/public.h ${PREFIX}/include/st.h
-	@${MKDIR} ${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/Makefile	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/README	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/error.c	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/lookupdns.c	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/proxy.c	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/res.c	${PREFIX}/share/examples/st
-	@${INSTALL_DATA} ${WRKSRC}/examples/server.c	${PREFIX}/share/examples/st
+	@${CP} ${WRKSRC}/public.h ${PREFIX}/include/st.h
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/st
-	@${INSTALL_DATA} ${WRKSRC}/docs/fig.gif		${PREFIX}/share/doc/st
-	@${INSTALL_DATA} ${WRKSRC}/docs/notes.html	${PREFIX}/share/doc/st
-	@${INSTALL_DATA} ${WRKSRC}/docs/reference.html	${PREFIX}/share/doc/st
-	@${INSTALL_DATA} ${WRKSRC}/docs/st.html		${PREFIX}/share/doc/st
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.post.mk>
