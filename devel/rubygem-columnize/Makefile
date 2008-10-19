@@ -1,0 +1,19 @@
+# Ports collection makefile for:	rubygem-columnize
+# Date created:				17 Oct 2008
+# Whom:					Wen Heping <wenheping@gmail.com>
+#
+# $FreeBSD$
+
+PORTNAME=	columnize
+PORTVERSION=	0.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	rocky-hacks
+
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	Sorts an Array in Column Order
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
