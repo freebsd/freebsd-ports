@@ -46,12 +46,16 @@ share/applications/exaile.desktop
 %%DATADIR%%/lib/feedparser.py
 %%DATADIR%%/lib/feedparser.pyc
 %%DATADIR%%/lib/feedparser.pyo
+%%DATADIR%%/lib/scrobbler.py
+%%DATADIR%%/lib/scrobbler.pyc
+%%DATADIR%%/lib/scrobbler.pyo
 %%DATADIR%%/lib/wmainfo.py
 %%DATADIR%%/lib/wmainfo.pyc
 %%DATADIR%%/lib/wmainfo.pyo
 %%DATADIR%%/sql/changes0001.sql
 %%DATADIR%%/sql/changes0002.sql
 %%DATADIR%%/sql/changes0003.sql
+%%DATADIR%%/sql/changes0004.sql
 %%DATADIR%%/sql/db.sql
 %%DATADIR%%/xl/__init__.py
 %%DATADIR%%/xl/__init__.pyc
@@ -116,6 +120,9 @@ share/applications/exaile.desktop
 %%DATADIR%%/xl/gui/statsdialog.py
 %%DATADIR%%/xl/gui/statsdialog.pyc
 %%DATADIR%%/xl/gui/statsdialog.pyo
+%%DATADIR%%/xl/gui/tray.py
+%%DATADIR%%/xl/gui/tray.pyc
+%%DATADIR%%/xl/gui/tray.pyo
 %%DATADIR%%/xl/library.py
 %%DATADIR%%/xl/library.pyc
 %%DATADIR%%/xl/library.pyo
@@ -196,15 +203,17 @@ share/applications/exaile.desktop
 %%DATADIR%%/xl/xlmisc.pyc
 %%DATADIR%%/xl/xlmisc.pyo
 share/pixmaps/exaile.png
-@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/xl/plugins
+@dirrm %%DATADIR%%/xl/panels
+@dirrm %%DATADIR%%/xl/media
+@dirrm %%DATADIR%%/xl/gui
+@dirrm %%DATADIR%%/xl
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/images/default_theme
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%/xl/gui
-@dirrm %%DATADIR%%/xl/media
-@dirrm %%DATADIR%%/xl/panels
-@dirrm %%DATADIR%%/xl/plugins
-@dirrm %%DATADIR%%/xl
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
