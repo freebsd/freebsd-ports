@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmusicbrainz3
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/ \
@@ -18,10 +17,9 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
-		neon.26:${PORTSDIR}/www/neon26
+		neon.28:${PORTSDIR}/www/neon28
 
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
