@@ -38,7 +38,7 @@ LIBSILO=	Silo
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.ifdef WITH_FORTRAN
+.ifdef WITH_HDF5
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	${MAKE_ENV}
 CONFIGURE_ARGS+=	--enable-fortran
@@ -48,15 +48,14 @@ CONFIGURE_ARGS+=	--disable-fortran
 
 .ifdef WITH_HDF5
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
-CONFIGURE_ARGS= --with-hdf5=${LOCALBASE}
+CONFIGURE_ARGS=	--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
 PLIST_SUB+=	WITH_HDF5=""
-PLIST_SUB+=	WITH_HDF5="@comment "
+PLIST_SUB+=	WITH_NCDF="@comment "
 LIBSILO=	libsiloh5
 .else
 PLIST_SUB+=	WITH_HDF5="@comment "
 PLIST_SUB+=	WITH_NCDF=""
 LIBSILO=	libsilo
-
 .endif
 
 .ifdef WITH_OPTIMIZATION
@@ -64,7 +63,7 @@ CONFIGURE_ARGS+=	--enable-optimization
 .endif
 
 post-install:
-	@${RM} ${PREFIX}/lib/libsilo.settings
+	@${RM} ${PREFIX}/lib/libsilo*.settings
 	@${MV} ${PREFIX}/lib/${LIBSILO}.so ${PREFIX}/lib/${LIBSILO}.so.4
 	@${LN} -sf ${PREFIX}/lib/${LIBSILO}.so.4 ${PREFIX}/lib/${LIBSILO}.so
 
