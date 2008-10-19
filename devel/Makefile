@@ -2528,6 +2528,7 @@
     SUBDIR += terminality
     SUBDIR += thistest
     SUBDIR += thrift
+    SUBDIR += thunar-svn-plugin
     SUBDIR += tide
     SUBDIR += tig
     SUBDIR += tigcc

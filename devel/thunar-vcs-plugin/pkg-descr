@@ -1,0 +1,9 @@
+The Thunar SVN Plugin adds Subversion actions to the context menu of thunar.
+
+The current features are:
+Most of the svn action: add, blame, checkout, cleanup, commit, copy, delete,
+export, import, lock, log, move, properties, relocate, resolved, revert, status,
+switch, unlock, update.
+Subversion info in file properties dialog.
+
+WWW: http://goodies.xfce.org/projects/thunar-plugins/thunar-svn-plugin
