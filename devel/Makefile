@@ -2396,6 +2396,7 @@
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-linecache
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-open4
