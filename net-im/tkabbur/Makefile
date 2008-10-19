@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tkabbur
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Is a modification of XMPP/Jabber client Tkabber
@@ -21,6 +20,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_BZIP2=	yes
 NO_BUILD=	yes
 
 SUBDIRS=	contrib emoticons ifacetk jabberlib mclistbox \
