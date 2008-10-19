@@ -107,6 +107,7 @@
 %%DATADIR%%/templates/editfailedsave.tmpl
 %%DATADIR%%/templates/editpagegone.tmpl
 %%DATADIR%%/templates/feedlink.tmpl
+%%DATADIR%%/templates/googleform.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
 %%DATADIR%%/templates/misc.tmpl
 %%DATADIR%%/templates/page.tmpl
@@ -145,6 +146,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
 %%SITE_PERL%%/IkiWiki/Plugin/git.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/google.pm
 %%SITE_PERL%%/IkiWiki/Plugin/googlecalendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
