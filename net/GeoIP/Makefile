@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	net geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
+MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
+		http://mirror.mcx2.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 USE_GNOME=	gnometarget
