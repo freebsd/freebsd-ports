@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.86
+PORTVERSION=	8.88
 CATEGORIES=	graphics
-MASTER_SITES=	CENKES
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -22,12 +22,12 @@ MAN1=		dcraw.1
 PLIST_FILES=	bin/dcraw
 
 do-build:
-	@cd ${BUILD_WRKSRC}/&&${CC} -o dcraw ${CFLAGS} -I${PREFIX}/include\
-		dcraw.c -L${PREFIX}/lib -lm -ljpeg -llcms
+	cd "${BUILD_WRKSRC}/" && ${CC} -o dcraw ${CFLAGS} -I"${PREFIX}"/include \
+		dcraw.c -L"${PREFIX}"/lib -lm -ljpeg -llcms
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} "${WRKSRC}"/${PORTNAME} "${PREFIX}"/bin/
+	${INSTALL_MAN} "${WRKSRC}"/${MAN1} "${PREFIX}"/man/man1/
 
 make-dist:
 	@${RM} -rf ${WRKDIR};${MKDIR} ${WRKDIR};cd ${WRKDIR};\
