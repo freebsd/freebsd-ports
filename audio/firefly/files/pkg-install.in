@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/audio/firefly/files/Attic/pkg-install.in,v 1.1 2008-10-19 15:59:16 miwi Exp $
+# formerly $ FreeBSD: ports/audio/mt-daapd/pkg-install,v 1.1 2004/08/05 23:00:09 edwin Exp $
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
+
+  if pw showgroup "daapd" 2>/dev/null; then
+    echo "---> Using existing group \"daapd\""
+  else
+    echo "---> Adding group \"daapd\""
+    pw addgroup daapd -h - || exit 1
+  fi
+
+
+  # Create user if required
+  if pw showuser "daapd" 2>/dev/null; then
+    echo "---> Using existing user \"daapd\""
+  else
+    echo "---> Adding user \"daapd\""
+    pw adduser daapd -g daapd -h - \
+      -d "/nonexistent" -s "/sbin/nologin" -c "daapd User" || exit 1
+  fi
+
+  ;;
+
+esac
