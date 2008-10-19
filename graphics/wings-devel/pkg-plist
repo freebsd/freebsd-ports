@@ -130,16 +130,21 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/autouv/wpc_wood.auv
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_move.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_scale.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_arc_intersect.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_bend.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_circularise.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_connect_tool.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_constraints.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_contour.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_cylindrilize.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_doosabin.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_intersect_edge.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_intersect_vertex.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_move_planar.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_region.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shear.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shift.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_sweep_extrude.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_turnedge.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_tweak.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_untriangulate.beam
@@ -188,6 +193,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_collapse.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_color.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_console.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_cs.lang
+lib/erlang/lib/wings-%%VERSION%%/src/wings_de.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wings_deform.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_dissolve.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_dl.erl
@@ -252,6 +258,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_sv.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wings_tesselation.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_text.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_toolbar.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_tr.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wings_u.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_undo.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_util.erl
