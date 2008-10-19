@@ -2384,6 +2384,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-columnize
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
