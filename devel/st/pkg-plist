@@ -2,16 +2,17 @@ include/st.h
 lib/libst.a
 lib/libst.so.1
 lib/libst.so
-%%PORTDOCS%%share/doc/st/fig.gif
-%%PORTDOCS%%share/doc/st/notes.html
-%%PORTDOCS%%share/doc/st/reference.html
-%%PORTDOCS%%share/doc/st/st.html
-%%PORTDOCS%%@dirrm share/doc/st
-share/examples/st/Makefile
-share/examples/st/README
-share/examples/st/error.c
-share/examples/st/lookupdns.c
-share/examples/st/proxy.c
-share/examples/st/res.c
-share/examples/st/server.c
-@dirrm share/examples/st
+%%PORTDOCS%%%%DOCSDIR%%/fig.gif
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/st.html
+%%PORTDOCS%%%%DOCSDIR%%/timeout_heap.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/error.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookupdns.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxy.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/res.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
