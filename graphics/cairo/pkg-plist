@@ -5,6 +5,8 @@ include/cairo/cairo-ft.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-svg.h
+%%XCB%%include/cairo/cairo-xcb-xrender.h
+%%XCB%%include/cairo/cairo-xcb.h
 %%X11%%include/cairo/cairo-xlib-xrender.h
 %%X11%%include/cairo/cairo-xlib.h
 include/cairo/cairo.h
@@ -19,6 +21,7 @@ libdata/pkgconfig/cairo-pdf.pc
 libdata/pkgconfig/cairo-png.pc
 libdata/pkgconfig/cairo-ps.pc
 libdata/pkgconfig/cairo-svg.pc
+%%XCB%%libdata/pkgconfig/cairo-xcb.pc
 %%X11%%libdata/pkgconfig/cairo-xlib.pc
 %%X11%%libdata/pkgconfig/cairo-xlib-xrender.pc
 @dirrm include/cairo
