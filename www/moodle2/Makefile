@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable19/
 EXTRACT_SUFX=	.tgz
