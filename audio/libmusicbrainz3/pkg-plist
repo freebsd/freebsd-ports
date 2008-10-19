@@ -27,6 +27,6 @@ include/musicbrainz3/utils.h
 include/musicbrainz3/webservice.h
 lib/libmusicbrainz3.so
 lib/libmusicbrainz3.so.6
-lib/libmusicbrainz3.so.6.1.1
+lib/libmusicbrainz3.so.6.2.0
 libdata/pkgconfig/libmusicbrainz3.pc
 @dirrm include/musicbrainz3
