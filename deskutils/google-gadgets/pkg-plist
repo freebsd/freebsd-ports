@@ -19,10 +19,12 @@ include/google-gadgets/ggadget/dbus/dbus_proxy.h
 include/google-gadgets/ggadget/dbus/dbus_result_receiver.h
 include/google-gadgets/ggadget/decorated_view_host.h
 include/google-gadgets/ggadget/details_view_data.h
+include/google-gadgets/ggadget/details_view_decorator.h
 include/google-gadgets/ggadget/digest_utils.h
 include/google-gadgets/ggadget/dir_file_manager.h
 include/google-gadgets/ggadget/display_window.h
 include/google-gadgets/ggadget/div_element.h
+include/google-gadgets/ggadget/docked_main_view_decorator.h
 include/google-gadgets/ggadget/edit_element_base.h
 include/google-gadgets/ggadget/element_factory.h
 include/google-gadgets/ggadget/elements.h
@@ -33,7 +35,9 @@ include/google-gadgets/ggadget/file_manager_factory.h
 include/google-gadgets/ggadget/file_manager_interface.h
 include/google-gadgets/ggadget/file_manager_wrapper.h
 include/google-gadgets/ggadget/file_system_interface.h
+include/google-gadgets/ggadget/floating_main_view_decorator.h
 include/google-gadgets/ggadget/font_interface.h
+include/google-gadgets/ggadget/framed_view_decorator_base.h
 include/google-gadgets/ggadget/framework_interface.h
 include/google-gadgets/ggadget/gadget.h
 include/google-gadgets/ggadget/gadget_consts.h
@@ -49,6 +53,7 @@ include/google-gadgets/ggadget/graphics_interface.h
 %%GTK%%include/google-gadgets/ggadget/gtk/utilities.h
 %%GTK%%include/google-gadgets/ggadget/gtk/view_widget_binder.h
 include/google-gadgets/ggadget/host_interface.h
+include/google-gadgets/ggadget/host_utils.h
 include/google-gadgets/ggadget/image_cache.h
 include/google-gadgets/ggadget/image_interface.h
 include/google-gadgets/ggadget/img_element.h
@@ -61,14 +66,17 @@ include/google-gadgets/ggadget/locales.h
 include/google-gadgets/ggadget/localized_file_manager.h
 include/google-gadgets/ggadget/logger.h
 include/google-gadgets/ggadget/main_loop_interface.h
+include/google-gadgets/ggadget/main_view_decorator_base.h
 include/google-gadgets/ggadget/math_utils.h
-include/google-gadgets/ggadget/mediaplayer_element_base.h
 include/google-gadgets/ggadget/memory_options.h
 include/google-gadgets/ggadget/menu_interface.h
 include/google-gadgets/ggadget/messages.h
 include/google-gadgets/ggadget/module.h
 include/google-gadgets/ggadget/object_element.h
+include/google-gadgets/ggadget/object_videoplayer.h
 include/google-gadgets/ggadget/options_interface.h
+include/google-gadgets/ggadget/permissions.h
+include/google-gadgets/ggadget/popout_main_view_decorator.h
 include/google-gadgets/ggadget/progressbar_element.h
 %%QT%%include/google-gadgets/ggadget/qt/qt_graphics.h
 %%QT%%include/google-gadgets/ggadget/qt/qt_main_loop.h
@@ -84,6 +92,7 @@ include/google-gadgets/ggadget/script_runtime_interface.h
 include/google-gadgets/ggadget/script_runtime_manager.h
 include/google-gadgets/ggadget/scriptable_array.h
 include/google-gadgets/ggadget/scriptable_binary_data.h
+include/google-gadgets/ggadget/scriptable_enumerator.h
 include/google-gadgets/ggadget/scriptable_event.h
 include/google-gadgets/ggadget/scriptable_file_system.h
 include/google-gadgets/ggadget/scriptable_framework.h
@@ -107,10 +116,14 @@ include/google-gadgets/ggadget/text_frame.h
 include/google-gadgets/ggadget/texture.h
 include/google-gadgets/ggadget/unicode_utils.h
 include/google-gadgets/ggadget/variant.h
+include/google-gadgets/ggadget/video_element_base.h
 include/google-gadgets/ggadget/view.h
+include/google-gadgets/ggadget/view_decorator_base.h
 include/google-gadgets/ggadget/view_element.h
 include/google-gadgets/ggadget/view_host_interface.h
 include/google-gadgets/ggadget/view_interface.h
+include/google-gadgets/ggadget/xdg/desktop_entry.h
+include/google-gadgets/ggadget/xdg/utilities.h
 include/google-gadgets/ggadget/xml_dom.h
 include/google-gadgets/ggadget/xml_dom_interface.h
 include/google-gadgets/ggadget/xml_http_request_interface.h
@@ -137,9 +150,9 @@ lib/google-gadgets/modules/google-gadget-manager.so
 lib/google-gadgets/modules/gst-audio-framework.a
 lib/google-gadgets/modules/gst-audio-framework.la
 lib/google-gadgets/modules/gst-audio-framework.so
-lib/google-gadgets/modules/gst-mediaplayer-element.a
-lib/google-gadgets/modules/gst-mediaplayer-element.la
-lib/google-gadgets/modules/gst-mediaplayer-element.so
+lib/google-gadgets/modules/gst-video-element.a
+lib/google-gadgets/modules/gst-video-element.la
+lib/google-gadgets/modules/gst-video-element.so
 %%GTK%%lib/google-gadgets/modules/gtk-edit-element.a
 %%GTK%%lib/google-gadgets/modules/gtk-edit-element.la
 %%GTK%%lib/google-gadgets/modules/gtk-edit-element.so
@@ -190,19 +203,36 @@ lib/libggadget-js-1.0.so.0
 %%QT%%lib/libggadget-qt-1.0.la
 %%QT%%lib/libggadget-qt-1.0.so
 %%QT%%lib/libggadget-qt-1.0.so.0
+lib/libggadget-xdg-1.0.a
+lib/libggadget-xdg-1.0.la
+lib/libggadget-xdg-1.0.so
+lib/libggadget-xdg-1.0.so.0
 libdata/pkgconfig/libggadget-1.0.pc
 libdata/pkgconfig/libggadget-dbus-1.0.pc
 %%GTK%%libdata/pkgconfig/libggadget-gtk-1.0.pc
 libdata/pkgconfig/libggadget-js-1.0.pc
 %%QT%%libdata/pkgconfig/libggadget-qt-1.0.pc
+libdata/pkgconfig/libggadget-xdg-1.0.pc
 %%GTK%%share/applications/ggl-gtk.desktop
 %%QT%%share/applications/ggl-qt.desktop
 %%DATADIR%%/analog_clock.gg
+%%DATADIR%%/designer.gg
 %%DATADIR%%/digital_alarm_clock.gg
 %%DATADIR%%/google-gadget-browser.gg
 %%DATADIR%%/igoogle.gg
+%%DATADIR%%/photos.gg
 %%DATADIR%%/resources.gg
 %%DATADIR%%/rss.gg
+share/icons/hicolor/128x128/apps/google-gadgets.png
+share/icons/hicolor/128x128/mimetypes/application-x-google-gadgets.png
+share/icons/hicolor/192x192/apps/google-gadgets.png
+share/icons/hicolor/192x192/mimetypes/application-x-google-gadgets.png
+share/icons/hicolor/32x32/apps/google-gadgets.png
+share/icons/hicolor/32x32/mimetypes/application-x-google-gadgets.png
+share/icons/hicolor/48x48/apps/google-gadgets.png
+share/icons/hicolor/48x48/mimetypes/application-x-google-gadgets.png
+share/icons/hicolor/64x64/apps/google-gadgets.png
+share/icons/hicolor/64x64/mimetypes/application-x-google-gadgets.png
 share/mime/packages/00-google-gadgets.xml
 share/pixmaps/google-gadgets.png
 @dirrm %%DATADIR%%
@@ -212,6 +242,7 @@ share/pixmaps/google-gadgets.png
 @dirrm lib/google-gadgets
 %%QT%%@dirrm include/google-gadgets/ggadget/qt
 @dirrm include/google-gadgets/ggadget/js
+@dirrm include/google-gadgets/ggadget/xdg
 %%GTK%%@dirrm include/google-gadgets/ggadget/gtk
 @dirrm include/google-gadgets/ggadget/dbus
 @dirrm include/google-gadgets/ggadget
