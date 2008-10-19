@@ -300,7 +300,6 @@ bin/tkabbur
 %%DATADIR%%/plugins/chat/draw_timestamp.tcl
 %%DATADIR%%/plugins/chat/draw_xhtml_message.tcl
 %%DATADIR%%/plugins/chat/empty_body.tcl
-%%DATADIR%%/plugins/chat/events.tcl
 %%DATADIR%%/plugins/chat/exec_command.tcl
 %%DATADIR%%/plugins/chat/histool.tcl
 %%DATADIR%%/plugins/chat/history.tcl
@@ -472,8 +471,6 @@ bin/tkabbur
 %%DATADIR%%/plugins/other/ctcomp/ctcomp.tcl
 %%DATADIR%%/plugins/other/ctcomp/license.terms
 %%DATADIR%%/plugins/other/custom-urls/custom-urls.tcl
-%%DATADIR%%/plugins/other/cyrillize/cyrillize.tcl
-%%DATADIR%%/plugins/other/cyrillize/engrus.tbl
 %%DATADIR%%/plugins/other/debug/debug.tcl
 %%DATADIR%%/plugins/other/debug/msgs/de.msg
 %%DATADIR%%/plugins/other/debug/msgs/es.msg
@@ -1118,7 +1115,6 @@ bin/tkabbur
 @dirrm %%DATADIR%%/plugins/other/ejabberd
 @dirrm %%DATADIR%%/plugins/other/debug/msgs
 @dirrm %%DATADIR%%/plugins/other/debug
-@dirrm %%DATADIR%%/plugins/other/cyrillize
 @dirrm %%DATADIR%%/plugins/other/custom-urls
 @dirrm %%DATADIR%%/plugins/other/ctcomp
 @dirrm %%DATADIR%%/plugins/other/chess/pixmaps/xboard
