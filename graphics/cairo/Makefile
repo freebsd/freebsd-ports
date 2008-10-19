@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.6.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -42,7 +42,8 @@ USE_XORG+=	xrender
 PLIST_SUB+=	X11=""
 .endif
 
-OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off
+OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off \
+		XCB "Enable XCB (X C-language Binding) Support" On
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +54,16 @@ PLIST_SUB+=	GLITZ=""
 .else
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=	GLITZ="@comment "
+.endif
+
+.ifdef(WITH_XCB)
+BUILD_DEPENDS+= 	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util
+RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util
+CONFIGURE_ARGS+=	--enable-xcb
+PLIST_SUB+=		XCB=""
+.else
+CONFIGURE_ARGS+=	--disable-xcb
+PLIST_SUB+=		XCB="@comment "
 .endif
 
 post-patch:
