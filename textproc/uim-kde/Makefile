@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-kde
 
 COMMENT=	KDE panel applet of uim input method
 
+USE_GCC=	4.2
 USE_KDELIBS_VER=3
 USE_QT_VER=	3
 USE_AUTOTOOLS=	libtool:15
@@ -22,7 +23,7 @@ CONFIGURE_ARGS=	--with-qt --enable-pref --enable-default-toolkit=qt \
 		--enable-kde-applet
 CONFIGURE_ENV=	QTDIR=${X11BASE}/lib QTINCDIR=${X11BASE}/include \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		CXX="${CXX} -lc" \
+		CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
