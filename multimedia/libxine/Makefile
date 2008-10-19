@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.15
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -69,7 +69,7 @@ MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.23"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.24"
 
 .include <bsd.port.pre.mk>
 
