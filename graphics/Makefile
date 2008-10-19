@@ -740,6 +740,7 @@
     SUBDIR += sdl_gfx
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
+    SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += separate
     SUBDIR += sharpconstruct

@@ -1,0 +1,5 @@
+The Seam Carving GUI is a GUI front end to CAIR, which is an implementation of
+Arial Shamir's seam carving algorithm (aka content aware image resizing, aka
+image retargeting).
+
+WWW: http://code.google.com/p/seam-carving-gui/
