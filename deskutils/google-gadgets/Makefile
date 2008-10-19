@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-gadgets
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -31,6 +30,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox \
 		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GCC=	4.2+
@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	--enable-ltdl-install=no
 USE_AUTOTOOLS=	libtool:15:env autoconf:262:env automake:110:env aclocal:110:env libltdl:15
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
+INSTALLS_ICONS=	yes
 
 OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
 		GTK		"Build GTK Host"			on\
