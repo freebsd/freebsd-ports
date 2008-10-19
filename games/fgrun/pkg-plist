@@ -1,0 +1,19 @@
+bin/fgrun
+share/locale/de/LC_MESSAGES/fgrun.mo
+share/locale/fr/LC_MESSAGES/fgrun.mo
+share/locale/it/LC_MESSAGES/fgrun.mo
+share/locale/nl/LC_MESSAGES/fgrun.mo
+share/locale/pl/LC_MESSAGES/fgrun.mo
+share/locale/pt/LC_MESSAGES/fgrun.mo
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/it
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt
