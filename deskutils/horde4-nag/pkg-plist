@@ -127,6 +127,7 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/2.2_to_2.3.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
 %%HORDIR%%/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php
