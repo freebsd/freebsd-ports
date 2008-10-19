@@ -1,0 +1,40 @@
+--- contrib/mt-daapd.conf.templ	2008-09-23 23:16:46.000000000 -0700
++++ contrib/mt-daapd.conf.templ	2008-09-23 23:40:43.000000000 -0700
+@@ -105,7 +105,7 @@
+ # This is also ignored on Windows.
+ #
+ 
+-runas = nobody
++runas = daapd
+ 
+ #
+ # password (optional)
+@@ -136,7 +136,7 @@
+ # --enable-musepack.
+ #
+ 
+-extensions = .mp3,.m4a,.m4p
++extensions = .mp3,.m4a,.m4p,.ogg,.flac
+ 
+ #
+ # ssc_codectypes (optional)
+@@ -194,8 +194,8 @@
+ # will vary the amount of logging you get.
+ #
+ 
+-#logfile = /var/log/mt-daapd.log
+-
++logfile = /var/log/mt-daapd.log
++debuglevel = 5  
+ #
+ # rescan_interval
+ #
+@@ -252,7 +252,7 @@
+ #   the file is indexed.
+ # 
+ 
+-scan_type = 2
++scan_type = 0
+ 
+ #
+ # compress

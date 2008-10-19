@@ -184,6 +184,7 @@
     SUBDIR += festvox-us1-mbrola
     SUBDIR += festvox-us2-mbrola
     SUBDIR += festvox-us3-mbrola
+    SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
     SUBDIR += flite
