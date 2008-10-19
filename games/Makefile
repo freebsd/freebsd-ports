@@ -223,6 +223,7 @@
     SUBDIR += fargoal
     SUBDIR += fgfs-base
     SUBDIR += fgkicker
+    SUBDIR += fgrun
     SUBDIR += fgsd
     SUBDIR += fillets-ng
     SUBDIR += filters
