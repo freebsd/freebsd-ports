@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	2.2.0.83
-PORTREVISION=	2
+PORTVERSION=	3.2.6.106
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +15,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
+#WRKSRC= 	${WRKDIR}/${PORTNAME}/lib
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
@@ -27,10 +28,12 @@ JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 
 DOC_FILES=	Phex_other.htm Phex_win.htm
 JAR_FILES=	\
+		MRJAdapter.jar \
+		commons-collections-3.2.jar \
+		commons-httpclient-3.0.1.jar \
 		commons-logging.jar \
-		forms-1.0.5.jar \
-		jaxb.jar \
-		looks-1.3rc.jar \
+		forms-1.1.0.jar \
+		looks-2.1.4.jar \
 		phex.jar
 
 PORTDOCS=	${DOC_FILES}
@@ -57,7 +60,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${jar} ${PREFIX}/${JAR_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${jar} ${PREFIX}/${JAR_DIR}
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}
 .ifndef(NOPORTDOCS)
