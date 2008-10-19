@@ -105,6 +105,7 @@
     SUBDIR += pebrot
     SUBDIR += pidgin
     SUBDIR += pidgin-facebookchat
+    SUBDIR += pidgin-fetion
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
