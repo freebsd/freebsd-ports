@@ -1150,6 +1150,7 @@ bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
 bsddiff                         ports/textproc/bsddiff
 bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgrep                         ports/textproc/bsdgrep
+bsdhwmon                        ports/sysutils/bsdhwmon
 bsdiff                          ports/misc/bsdiff
 bsdproxy                        ports/net/bsdproxy
 bsdsar                          ports/sysutils/bsdsar
@@ -3139,6 +3140,7 @@ ffcall                          ports/devel/ffcall
 ffe                             ports/textproc/ffe
 ffff                            ports/graphics/ffff
 ffmpeg                          ports/multimedia/ffmpeg
+ffmpeg2theora                   ports/multimedia/ffmpeg2theora
 ffmpegthumbnailer               ports/multimedia/ffmpegthumbnailer
 ffproxy                         ports/www/ffproxy
 ffs2recov                       ports/sysutils/ffs2recov
@@ -7170,6 +7172,7 @@ libjackasyn                     ports/audio/libjackasyn
 libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
+libkate                         ports/multimedia/libkate
 libkdcraw                       ports/graphics/libkdcraw
 libkexif                        ports/graphics/libkexif
 libkexiv2                       ports/graphics/libkexiv2
@@ -11311,6 +11314,7 @@ p5-Make                         ports/devel/p5-Make
 p5-Make-Cache                   ports/devel/p5-Make-Cache
 p5-Makefile-DOM                 ports/textproc/p5-Makefile-DOM
 p5-Makefile-Parser              ports/textproc/p5-Makefile-Parser
+p5-Markup-Perl                  ports/www/p5-Markup-Perl
 p5-MasonX-Interp-WithCallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Profiler              ports/www/p5-MasonX-Profiler
 p5-MasonX-Request-WithApacheSession  ports/www/p5-MasonX-Request-WithApacheSession
@@ -11399,6 +11403,7 @@ p5-Module-CPANTS-Analyse        ports/devel/p5-Module-CPANTS-Analyse
 p5-Module-Compile               ports/devel/p5-Module-Compile
 p5-Module-CoreList              ports/devel/p5-Module-CoreList
 p5-Module-Dependency            ports/devel/p5-Module-Dependency
+p5-Module-Depends               ports/devel/p5-Module-Depends
 p5-Module-ExtractUse            ports/devel/p5-Module-ExtractUse
 p5-Module-Find                  ports/devel/p5-Module-Find
 p5-Module-Info                  ports/devel/p5-Module-Info
@@ -14454,6 +14459,7 @@ p5-makefile-parser              ports/textproc/p5-Makefile-Parser
 p5-marc                         ports/textproc/p5-MARC
 p5-marc-lint                    ports/textproc/p5-MARC-Lint
 p5-marc-record                  ports/textproc/p5-MARC-Record
+p5-markup-perl                  ports/www/p5-Markup-Perl
 p5-masonx-interp-withcallbacks  ports/www/p5-MasonX-Interp-WithCallbacks
 p5-masonx-profiler              ports/www/p5-MasonX-Profiler
 p5-masonx-request-withapachesession  ports/www/p5-MasonX-Request-WithApacheSession
@@ -14562,6 +14568,7 @@ p5-module-compile               ports/devel/p5-Module-Compile
 p5-module-corelist              ports/devel/p5-Module-CoreList
 p5-module-cpants-analyse        ports/devel/p5-Module-CPANTS-Analyse
 p5-module-dependency            ports/devel/p5-Module-Dependency
+p5-module-depends               ports/devel/p5-Module-Depends
 p5-module-extractuse            ports/devel/p5-Module-ExtractUse
 p5-module-find                  ports/devel/p5-Module-Find
 p5-module-info                  ports/devel/p5-Module-Info
@@ -18845,6 +18852,7 @@ rqm                             ports/mbone/rqm
 rrdman                          ports/databases/rrdman
 rrdtool                         ports/databases/rrdtool
 rrdtool10                       ports/databases/rrdtool10
+rrdtool12                       ports/databases/rrdtool12
 rscheme                         ports/lang/rscheme
 rshell                          ports/net/rshell
 rsibreak                        ports/x11/rsibreak
