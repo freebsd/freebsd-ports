@@ -393,6 +393,7 @@
     SUBDIR += py-igraph
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
+    SUBDIR += py-mpmath
     SUBDIR += py-mpz
     SUBDIR += py-networkx
     SUBDIR += py-numarray
