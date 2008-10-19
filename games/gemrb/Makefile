@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,8 +20,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--enable-openal \
-					--libdir=${LOCALBASE}/lib \
+CONFIGURE_ARGS=		--libdir=${LOCALBASE}/lib \
 					--includedir=${LOCALBASE}/include
 
 USE_GZIP=	yes
