@@ -46,6 +46,7 @@ cyrus/bin/proxyd
 cyrus/bin/quota
 cyrus/bin/reconstruct
 cyrus/bin/sievec
+cyrus/bin/sieved
 cyrus/bin/smmapd
 cyrus/bin/squatter
 %%REPLICATION%%cyrus/bin/sync_client
