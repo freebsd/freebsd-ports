@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/jcc/__init__.py
 %%PYTHON_SITELIBDIR%%/jcc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/jcc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/jcc/__main__.py
+%%PYTHON_SITELIBDIR%%/jcc/__main__.pyc
+%%PYTHON_SITELIBDIR%%/jcc/__main__.pyo
 %%PYTHON_SITELIBDIR%%/jcc/_jcc.so
 %%PYTHON_SITELIBDIR%%/jcc/config.py
 %%PYTHON_SITELIBDIR%%/jcc/config.pyc
@@ -8,9 +11,11 @@
 %%PYTHON_SITELIBDIR%%/jcc/cpp.py
 %%PYTHON_SITELIBDIR%%/jcc/cpp.pyc
 %%PYTHON_SITELIBDIR%%/jcc/cpp.pyo
+%%PYTHON_SITELIBDIR%%/jcc/patches/patch.43
 %%PYTHON_SITELIBDIR%%/jcc/python.py
 %%PYTHON_SITELIBDIR%%/jcc/python.pyc
 %%PYTHON_SITELIBDIR%%/jcc/python.pyo
+%%PYTHON_SITELIBDIR%%/jcc/sources/JArray.cpp
 %%PYTHON_SITELIBDIR%%/jcc/sources/JArray.h
 %%PYTHON_SITELIBDIR%%/jcc/sources/JCCEnv.cpp
 %%PYTHON_SITELIBDIR%%/jcc/sources/JCCEnv.h
@@ -23,4 +28,5 @@
 %%PYTHON_SITELIBDIR%%/jcc/sources/macros.h
 %%PYTHON_SITELIBDIR%%/jcc/sources/types.cpp
 @dirrm %%PYTHON_SITELIBDIR%%/jcc/sources
+@dirrm %%PYTHON_SITELIBDIR%%/jcc/patches
 @dirrm %%PYTHON_SITELIBDIR%%/jcc
