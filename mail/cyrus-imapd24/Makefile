@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.12p2
-PORTREVISION=	1
+PORTVERSION=	2.3.13
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
 		http://ftp.andrew.cmu.edu/pub/cyrus/ \
@@ -45,9 +45,12 @@ OPTIONS=	BDB		"Use Berkeley DB"			on \
 		LDAP_PTLOADER	"Enable LDAP ptloader"			off \
 		LISTEXT		"Enable IMAP List extensions"		off \
 		MURDER		"Enable IMAP Murder support"		off \
+		MYSQL		"Use MySQL (experimental)"		off \
 		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
 		NNTP		"Enable NNTP support"			off \
+		PGSQL		"Use PostgreSQL (experimental)"		off \
 		REPLICATION	"Enable replication"			off \
+		SQLITE		"Use SQLite (experimental)"		off \
 		SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 
@@ -83,6 +86,21 @@ CONFIGURE_ARGS+=--enable-idled
 PLIST_SUB+=	IDLED=""
 .else
 PLIST_SUB+=	IDLED="@comment "
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=	yes
+CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .endif
 
 .if defined(WITH_REPLICATION)
