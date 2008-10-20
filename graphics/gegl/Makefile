@@ -7,6 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.0.${GEGL_MINOR}
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
@@ -30,6 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--disable-sse \
+		--disable-mmx
 
 GEGL_MINOR=	20
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
