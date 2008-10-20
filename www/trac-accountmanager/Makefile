@@ -27,6 +27,8 @@ PYDISTUTILS_PKGNAME=	TracAccountManager
 PYDISTUTILS_PKGVERSION=	0.2.1dev
 WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 
+EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+
 pre-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py bdist_egg
 
