@@ -49,6 +49,7 @@ libdata/pkgconfig/libepc-ui-1.0.pc
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 %%DOCSDIR%%/widgets.html
+share/locale/ar/LC_MESSAGES/libepc.mo
 share/locale/ca/LC_MESSAGES/libepc.mo
 share/locale/de/LC_MESSAGES/libepc.mo
 share/locale/el/LC_MESSAGES/libepc.mo
@@ -56,7 +57,14 @@ share/locale/en_GB/LC_MESSAGES/libepc.mo
 share/locale/es/LC_MESSAGES/libepc.mo
 share/locale/fi/LC_MESSAGES/libepc.mo
 share/locale/fr/LC_MESSAGES/libepc.mo
+share/locale/it/LC_MESSAGES/libepc.mo
+share/locale/ja/LC_MESSAGES/libepc.mo
+share/locale/nb/LC_MESSAGES/libepc.mo
+share/locale/pt_BR/LC_MESSAGES/libepc.mo
+share/locale/sl/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
