@@ -227,6 +227,12 @@ share/pixmaps/spring.png
 %%DATADIR%%/startscripts/ordertroops.lua
 %%DATADIR%%/teamcolors.lua
 %%DATADIR%%/uikeys.txt
+@exec mkdir -p %D/%%DATADIR%%/AI/AAI/cache
+@exec mkdir -p %D/%%DATADIR%%/AI/AAI/learn/map
+@exec mkdir -p %D/%%DATADIR%%/AI/AAI/learn/mod
+@exec mkdir -p %D/%%DATADIR%%/AI/AAI/log
+@exec mkdir -p %D/%%DATADIR%%/maps
+@exec mkdir -p %D/%%DATADIR%%/mods
 @dirrm %%DATADIR%%/startscripts
 @dirrm %%DATADIR%%/mods
 @dirrm %%DATADIR%%/maps
