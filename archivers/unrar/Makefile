@@ -9,7 +9,7 @@ PORTNAME=	unrar
 PORTVERSION=	3.80
 PORTEPOCH=	5
 CATEGORIES+=	archivers
-MASTER_SITES=	RAR
+MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-3.8.4
 
 MAINTAINER?=	ache@FreeBSD.org
