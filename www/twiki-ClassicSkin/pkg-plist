@@ -34,9 +34,6 @@
 %%TWDIR%%/templates/oopsmore.classic.tmpl
 %%TWDIR%%/templates/preview.classic.tmpl
 %%TWDIR%%/templates/rdiff.classic.tmpl
-%%TWDIR%%/templates/registerconfirm.classic.tmpl
-%%TWDIR%%/templates/registernotify.classic.tmpl
-%%TWDIR%%/templates/registernotifyadmin.classic.tmpl
 %%TWDIR%%/templates/rename.classic.tmpl
 %%TWDIR%%/templates/renamebase.classic.tmpl
 %%TWDIR%%/templates/renameconfirm.classic.tmpl
