@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.14
-PORTREVISION=	2
+PORTVERSION=	1.4.15
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -30,7 +29,11 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo
+		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
+		share/applications/mhwaveedit.desktop \
+		share/pixmaps/mhwaveedit.xpm
+
+PLIST_DIRS=	share/applications
 
 OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		SNDFILE "libsndfile support" on \
