@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	0.99c
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
@@ -25,6 +25,9 @@ ALL_TARGET=	all
 .ifndef NOPORTDOCS
 ALL_TARGET+=	doc
 PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e '/VIEWER_DIR. doc/d' ${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${DOCSDIR}
