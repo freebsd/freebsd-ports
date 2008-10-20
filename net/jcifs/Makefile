@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.24
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
