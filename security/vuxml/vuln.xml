@@ -103,7 +103,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><lt>2.7.0</lt></range>
+	<range><lt>2.6.32_1</lt></range>
       </package>
     </affects>
     <description>
@@ -131,6 +131,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-22</discovery>
       <entry>2008-10-15</entry>
+      <modified>2008-10-20</modified>
     </dates>
   </vuln>
 
