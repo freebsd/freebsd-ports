@@ -8,7 +8,7 @@
 
 PORTNAME=	PyLucene
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 EXTRACT_DEPENDS=lucene>=2.3.2:${PORTSDIR}/textproc/lucene:extract
 
 USE_PYTHON=	2.4+
+USE_GCC=	4.2+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_GMAKE=	yes
