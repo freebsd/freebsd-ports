@@ -8,6 +8,7 @@
 
 PORTNAME=	nawk
 PORTVERSION=	20071023
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.princeton.edu/~bwk/btl.mirror/
 DISTNAME=	awk
