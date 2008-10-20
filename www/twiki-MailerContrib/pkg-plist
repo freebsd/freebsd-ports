@@ -2,6 +2,7 @@
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/Change.pm
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/CompatibilityHacks.pm
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/Config.spec
+%%TWDIR%%/lib/TWiki/Contrib/MailerContrib/Constants.pm
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/MailerContrib/Subscriber.pm
