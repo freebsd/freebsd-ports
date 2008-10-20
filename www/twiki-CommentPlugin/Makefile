@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	CommentPlugin
-SVNREV=		16647
+SVNREV=		17567
 
 COMMENT=	Post comments easily
 

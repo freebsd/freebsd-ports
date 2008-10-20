@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	SlideShowPlugin
-SVNREV=		16417
+SVNREV=		17261
 
 COMMENT=	Convert a topic with headings into a slideshow
 

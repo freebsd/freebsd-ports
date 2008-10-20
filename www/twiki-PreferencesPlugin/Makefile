@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	PreferencesPlugin
-SVNREV=		16417
+SVNREV=		17568
 
 COMMENT=	Edit preferences in-place
 

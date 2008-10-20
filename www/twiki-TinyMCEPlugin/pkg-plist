@@ -486,6 +486,7 @@
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/wikiringlogo20x20.png
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/wysiwyg.css
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/wysiwyg_src.css
+%%TWDIR%%/pub/TWiki/TinyMCEQuickHelp/Format_Drop_Down.gif
 %%TWDIR%%/pub/TWiki/TinyMCEQuickHelp/Format_Drop_Down.png
 %%TWDIR%%/pub/TWiki/TinyMCEQuickHelp/Styles_Drop_Down.png
 @dirrm %%TWDIR%%/data/TWiki

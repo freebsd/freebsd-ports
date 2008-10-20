@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	InterwikiPlugin
-SVNREV=		16417
+SVNREV=		17303
 
 COMMENT=	Wikilink to external sites
 

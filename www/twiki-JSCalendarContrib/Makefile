@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	JSCalendarContrib
-SVNREV=		16516
+SVNREV=		17493
 
 COMMENT=	Mishoo JSCalendar repackaged
 

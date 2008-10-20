@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	SubscribePlugin
-SVNREV=		16430
+SVNREV=		17123
 
 COMMENT=	Add an easy subscription link to topics
 

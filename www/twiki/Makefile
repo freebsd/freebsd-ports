@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTVERSION=	4.2.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -17,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Flexible, powerful, and easy to use enterprise wiki
-
-FORBIDDEN=	Contains security exploit: http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2008-3195
 
 RUN_DEPENDS=	\
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
@@ -34,12 +31,14 @@ RUN_DEPENDS=	\
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Time-Local>=0:${PORTSDIR}/devel/p5-Time-Local \
+		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
 
 USE_PERL5=	yes
 
 post-extract:
-	@cd ${WRKDIR}/ && ${MKDIR} .t/ && ${MV} * .t/ && ${MV} .t ${WRKSRC}
+	@cd ${WRKDIR}/ && ${INSTALL} -d .t/ && ${MV} * .t/ && ${MV} .t ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/lib/CPAN
 	@${CAT} ${.CURDIR}/../twiki-*/pkg-plist |\
 		${SED} -e 's|%%TWDIR%%|${WRKSRC}|;/^@/d' |\

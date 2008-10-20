@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	ClassicSkin
-SVNREV=		16604
+SVNREV=		17365
 
 COMMENT=	The Classic TWiki skin
 
