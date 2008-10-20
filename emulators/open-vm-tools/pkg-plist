@@ -1,7 +1,5 @@
 bin/vmware-checkvm
 bin/vmware-hgfsclient
-%%X11%%bin/vmware-toolbox
-%%X11%%bin/vmware-user
 bin/vmware-xferlogs
 etc/vmware-tools/tools.conf
 %%LIB32DIR%%/libguestlib.a
