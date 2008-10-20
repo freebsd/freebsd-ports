@@ -1217,6 +1217,7 @@ bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-gtk                         ports/devel/bzr-gtk
 bzrtools                        ports/devel/bzrtools
+c-a-i-r                         ports/graphics/c-a-i-r
 c-ares                          ports/dns/c-ares
 c-hey                           ports/misc/c-hey
 c-icap                          ports/www/c-icap
@@ -3153,6 +3154,7 @@ fga                             ports/devel/fga
 fget                            ports/ftp/fget
 fgfs-base                       ports/games/fgfs-base
 fgkicker                        ports/games/fgkicker
+fgrun                           ports/games/fgrun
 fgsd                            ports/games/fgsd
 fhist                           ports/devel/fhist
 fhourstones                     ports/benchmarks/fhourstones
@@ -3196,6 +3198,7 @@ firebird2-client                ports/databases/firebird2-client
 firebird2-server                ports/databases/firebird2-server
 firedns                         ports/dns/firedns
 fireflies                       ports/x11/fireflies
+firefly                         ports/audio/firefly
 firefox                         ports/www/firefox
 firefox-devel                   ports/www/firefox-devel
 firefox-i18n                    ports/www/firefox-i18n
@@ -17003,6 +17006,7 @@ pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
 pidgin-encryption               ports/security/pidgin-encryption
 pidgin-facebookchat             ports/net-im/pidgin-facebookchat
+pidgin-fetion                   ports/net-im/pidgin-fetion
 pidgin-guifications             ports/net-im/pidgin-guifications
 pidgin-hotkeys                  ports/net-im/pidgin-hotkeys
 pidgin-latex                    ports/net-im/pidgin-latex
@@ -17909,6 +17913,7 @@ py-ming                         ports/graphics/py-ming
 py-mnemosyne                    ports/games/py-mnemosyne
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
+py-mpmath                       ports/math/py-mpmath
 py-mpz                          ports/math/py-mpz
 py-msnp                         ports/net-im/py-msnp
 py-mssql                        ports/databases/py-mssql
@@ -19231,6 +19236,7 @@ rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
+rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
@@ -19258,6 +19264,7 @@ rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
+rubygem-linecache               ports/devel/rubygem-linecache
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mechanize               ports/www/rubygem-mechanize
@@ -19544,6 +19551,7 @@ sdts++                          ports/devel/sdts++
 seabattle                       ports/games/seabattle
 seahaven                        ports/games/seahaven
 seahorse                        ports/security/seahorse
+seam-carving-gui                ports/graphics/seam-carving-gui
 seamonkey                       ports/www/seamonkey
 searchmonkey                    ports/sysutils/searchmonkey
 seatools                        ports/sysutils/seatools
@@ -20647,6 +20655,7 @@ thumbnail_index                 ports/www/thumbnail_index
 thunar                          ports/x11-fm/thunar
 thunar-archive-plugin           ports/archivers/thunar-archive-plugin
 thunar-media-tags-plugin        ports/audio/thunar-media-tags-plugin
+thunar-svn-plugin               ports/devel/thunar-svn-plugin
 thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
 thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
@@ -20731,6 +20740,7 @@ tkXwin                          ports/x11/tkXwin
 tkabber                         ports/net-im/tkabber
 tkabber-devel                   ports/net-im/tkabber-devel
 tkabber-plugins                 ports/net-im/tkabber-plugins
+tkabbur                         ports/net-im/tkabbur
 tkcon                           ports/devel/tkcon
 tkcvs                           ports/devel/tkcvs
 tkdesk                          ports/x11-fm/tkdesk
