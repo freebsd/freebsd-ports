@@ -18,7 +18,9 @@
 #varnishd_config="%%PREFIX%%/etc/varnish/default.vcl"
 #varnishd_telnet="localhost:6082"
 #varnishd_storage="file,/tmp,50%"
-#varnishd_flags="-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage}"
+#varnishd_user="www"
+#varnishd_group="www"
+#varnishd_flags="-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"
 #
 # See varnishd(1) for a detailed overview of command-line options.
 #
@@ -38,6 +40,8 @@ load_rc_config ${name}
 : ${varnishd_config="%%PREFIX%%/etc/varnish/default.vcl"}
 : ${varnishd_telnet="localhost:6082"}
 : ${varnishd_storage="file,/tmp,50%"}
-: ${varnishd_flags="-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage}"}
+: ${varnishd_user="www"}
+: ${varnishd_group="www"}
+: ${varnishd_flags="-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"}
 
 run_rc_command "$1"
