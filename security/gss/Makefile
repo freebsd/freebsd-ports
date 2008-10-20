@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.0.23
-PORTREVISION=	1
+PORTVERSION=	0.0.24
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
