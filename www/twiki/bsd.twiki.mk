@@ -20,7 +20,8 @@ PKGNAMEPREFIX?=	twiki-
 PNAME=	${PORTNAME}
 FILESDIR?=	${.CURDIR}/../twiki/files
 .endif
-MASTER_SITES?=	CENKES/myports/twiki
+MASTER_SITES?=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 CATEGORIES?=	www
 SVNURL?=	http://svn.twiki.org/svn/twiki/trunk/${PNAME}
 NO_BUILD=	yes
@@ -34,7 +35,7 @@ DIST_SUBDIR?=	twiki
 RUN_DEPENDS+=	${TWDEP:C/([^=<>]*)([=<>]*)(.*)/twiki-\1\20.0.\3:${PORTSDIR}\/www\/twiki-\1/}
 
 make-dist:
-	@${MKDIR} ${WRKDIR}/
+	@${INSTALL} -d ${WRKDIR}/
 	@cd ${WRKDIR}/ && svn export -r ${SVNREV} ${SVNURL} && \
 		${MV} ${PNAME} ${DISTNAME} && \
 		${FIND} . -type d -empty | ${SED} -e 's|$$|/.keep_me|' | \

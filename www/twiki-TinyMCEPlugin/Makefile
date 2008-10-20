@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TinyMCEPlugin
-SVNREV=		16650
+SVNREV=		17303
 
 COMMENT=	TinyMCE WYSIWYG editor integration
 

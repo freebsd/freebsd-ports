@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TwistyContrib
-SVNREV=		16417
+SVNREV=		17596
 
 COMMENT=	JS library and CSS for Twisty sections
 

@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TablePlugin
-SVNREV=		16549
+SVNREV=		17558
 
 COMMENT=	Extra control of table display
 

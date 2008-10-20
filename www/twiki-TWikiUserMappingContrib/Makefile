@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TWikiUserMappingContrib
-SVNREV=		16678
+SVNREV=		17569
 
 COMMENT=	Traditional topic-based user mapping and management
 

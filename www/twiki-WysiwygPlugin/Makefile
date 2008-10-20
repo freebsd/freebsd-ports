@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	WysiwygPlugin
-SVNREV=		16655
+SVNREV=		17570
 
 COMMENT=	Translator framework for Wysiwyg editors
 

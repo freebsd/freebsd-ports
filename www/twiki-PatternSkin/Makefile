@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	PatternSkin
-SVNREV=		16572
+SVNREV=		17425
 
 COMMENT=	A CSS-based skin
 

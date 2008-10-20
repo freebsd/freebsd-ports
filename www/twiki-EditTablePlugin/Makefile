@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	EditTablePlugin
-SVNREV=		16620
+SVNREV=		17542
 
 COMMENT=	Edit tables in-place
 

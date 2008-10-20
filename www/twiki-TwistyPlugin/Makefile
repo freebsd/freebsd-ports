@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TwistyPlugin
-SVNREV=		16417
+SVNREV=		17602
 
 COMMENT=	Show and hide content in JS-based sections
 

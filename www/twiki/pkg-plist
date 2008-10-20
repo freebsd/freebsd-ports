@@ -44,8 +44,6 @@
 %%TWDIR%%/data/Main/TWikiGroups.txt,v
 %%TWDIR%%/data/Main/TWikiGuest.txt
 %%TWDIR%%/data/Main/TWikiGuest.txt,v
-%%TWDIR%%/data/Main/TWikiGuestLeftBar.txt
-%%TWDIR%%/data/Main/TWikiGuestLeftBar.txt,v
 %%TWDIR%%/data/Main/TWikiPreferences.txt
 %%TWDIR%%/data/Main/TWikiPreferences.txt,v
 %%TWDIR%%/data/Main/UnknownUser.txt
@@ -460,6 +458,8 @@
 %%TWDIR%%/data/TWiki/TWikiUserMappingDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersApacheHtpasswdUserDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersApacheHtpasswdUserDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiUsersBaseUserMappingDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiUsersBaseUserMappingDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersGuide.txt
@@ -532,6 +532,8 @@
 %%TWDIR%%/data/TWiki/VarDISPLAYTIME.txt,v
 %%TWDIR%%/data/TWiki/VarDISPLAYTIME2.txt
 %%TWDIR%%/data/TWiki/VarDISPLAYTIME2.txt,v
+%%TWDIR%%/data/TWiki/VarEDITACTION.txt
+%%TWDIR%%/data/TWiki/VarEDITACTION.txt,v
 %%TWDIR%%/data/TWiki/VarENCODE.txt
 %%TWDIR%%/data/TWiki/VarENCODE.txt,v
 %%TWDIR%%/data/TWiki/VarENDCOLOR.txt
@@ -1064,14 +1066,16 @@
 %%TWDIR%%/locale/da.po
 %%TWDIR%%/locale/de.po
 %%TWDIR%%/locale/es.po
+%%TWDIR%%/locale/fi.po
 %%TWDIR%%/locale/fr.po
 %%TWDIR%%/locale/it.po
-%%TWDIR%%/locale/jp.po
+%%TWDIR%%/locale/ja.po
 %%TWDIR%%/locale/nl.po
 %%TWDIR%%/locale/pl.po
 %%TWDIR%%/locale/pt.po
 %%TWDIR%%/locale/ru.po
 %%TWDIR%%/locale/sv.po
+%%TWDIR%%/locale/uk.po
 %%TWDIR%%/locale/zh-cn.po
 %%TWDIR%%/locale/zh-tw.po
 %%TWDIR%%/pub/Main/WebPreferences/favicon.ico
@@ -1118,6 +1122,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/TWikiDocGraphics_Text_updated.psd
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/_filetypes.txt
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/addon.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/air.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/application.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/arrowbdown.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/arrowbleft.gif
@@ -1149,6 +1154,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/choice-yes.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/closed.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/code.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/css.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/days.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/detail.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/dll.gif
@@ -1235,6 +1241,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ul.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ulr.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ur.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/line_ur_gray.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lock.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lockfolder.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/lockfoldergray.gif
@@ -1258,6 +1265,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/note.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/notify.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/package.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/parent_gray.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/parked.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/parts.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/pdf.gif
@@ -1340,6 +1348,8 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/unchecked.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/up.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/updated.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/useractive.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/userinactive.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-bo.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-bo12.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/uweb-g.gif
@@ -1456,6 +1466,7 @@
 %%TWDIR%%/templates/editform.tmpl
 %%TWDIR%%/templates/edittext.tmpl
 %%TWDIR%%/templates/form.tmpl
+%%TWDIR%%/templates/form.pattern.tmpl
 %%TWDIR%%/templates/formtables.tmpl
 %%TWDIR%%/templates/login.sudo.tmpl
 %%TWDIR%%/templates/login.tmpl
@@ -1486,7 +1497,6 @@
 %%TWDIR%%/templates/renamewebbase.tmpl
 %%TWDIR%%/templates/renamewebconfirm.tmpl
 %%TWDIR%%/templates/renamewebdelete.tmpl
-%%TWDIR%%/templates/search.classic.tmpl
 %%TWDIR%%/templates/search.text.tmpl
 %%TWDIR%%/templates/search.tmpl
 %%TWDIR%%/templates/searchbookview.tmpl

@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	TagMePlugin
-SVNREV=		16417
+SVNREV=		17472
 
 COMMENT=	Collaborative content tagging
 
