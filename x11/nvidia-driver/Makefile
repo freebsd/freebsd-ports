@@ -1,4 +1,4 @@
-# New ports collection makefile for:	nvidia-driver
+# New ports collection makefile for:	nvidia-driver (latest and master port)
 # Date created:				4 December 2002
 # Whom:					Stijn Hoop <stijn@win.tue.nl>
 #
@@ -27,7 +27,6 @@ MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
-		VM86_INT10CALL	"Use VM86 interface for video BIOS calls" off \
 		ACPI		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
 
@@ -88,10 +87,6 @@ post-patch: .SILENT
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
-		${WRKSRC}/src/nv-freebsd.h
-.endif
-.if defined(WITH_VM86_INT10CALL)
-	${REINPLACE_CMD} -E 's/undef (NV_USE_OS_VM86_INT10CALL)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_ACPI)
