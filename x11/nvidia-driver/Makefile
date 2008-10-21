@@ -42,14 +42,14 @@ NVVERSION=	${DISTVERSION:S/.//g}
 
 # XXX Should use ${PKG_INFO} XXX
 #
-XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || /usr/sbin/pkg_info -qO x11-servers/xorg-server-snap 2>/dev/null || true
-XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O graphics/libGL 2>/dev/null | ${GREP} libGL- || true
+XSERVVERSION!=	/usr/sbin/pkg_info -qO x11-servers/xorg-server 2>/dev/null || true
+LIBGLVERSION!=	/usr/sbin/pkg_info -qO graphics/libGL 2>/dev/null || true
 
 .if empty(XSERVVERSION)
 IGNORE=		needs an X server implementation installed
 .endif
 
-PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
+PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
 		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
 
@@ -79,11 +79,6 @@ post-patch: .SILENT
 .if ${OSVERSION} >= 800004
 	${REINPLACE_CMD} -e 's,pci/agpvar\.h,dev/agp/agpvar.h,' \
 		${WRKSRC}/src/nv-freebsd.h
-.endif
-# Building with -Werror requires prototype for suser() which was moved
-.if ${OSVERSION} >= 700048
-	${REINPLACE_CMD} -e '15s,^,#include <sys/priv.h>,' \
-		${WRKSRC}/src/nvidia_os.c
 .endif
 # Switch from suser() to priv_check() API on recent -CURRENT
 .if ${OSVERSION} >= 800049
