@@ -1,0 +1,3 @@
+WSGI application for a simple xmlrpc method dispatching. 
+
+WWW: http://code.google.com/p/wsgi-xmlrpc/
