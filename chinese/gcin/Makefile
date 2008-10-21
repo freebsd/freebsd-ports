@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -40,7 +41,7 @@ MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
 		LOCAL/chinsan/gcin:boshiamy \
 		http://edt1023.sayya.org/gcin/:boshiamy
 DISTFILES+=	${BOSHIAMY_FILE}:boshiamy
-BOSHIAMY_FILE=	noseeing-11.tar.gz
+BOSHIAMY_FILE=	noseeing-12.tar.gz
 post-extract:
 	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
 		noseeing.cin
