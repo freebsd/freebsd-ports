@@ -24,8 +24,10 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
 		HTTP_FLV_MODULE "Enable http_flv module" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
+		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE "Enable http_realip module" off \
 		HTTP_REWRITE_MODULE "Enable http_rewrite module" on \
+		HTTP_SECURE_LINK_MODULE "Enable http_secure_link module" off \
 		HTTP_SSL_MODULE "Enable http_ssl module" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
@@ -102,8 +104,16 @@ CONFIGURE_ARGS+=--with-http_perl_module
 USE_PERL5=	yes
 .endif
 
+.if defined(WITH_HTTP_RANDOM_INDEX_MODULE)
+CONFIGURE_ARGS+=--with-http_random_index_module
+.endif
+
 .if defined(WITH_HTTP_REALIP_MODULE)
 CONFIGURE_ARGS+=--with-http_realip_module
+.endif
+
+.if defined(WITH_HTTP_SECURE_LINK_MODULE)
+CONFIGURE_ARGS+=--with-http_secure_link_module
 .endif
 
 .if defined(WITH_HTTP_SSL_MODULE)
@@ -120,7 +130,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.0.6
+NGINX_UPLOAD_MODULE_VERSION=	2.0.7
 MASTER_SITES+=	http://grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
