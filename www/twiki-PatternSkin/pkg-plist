@@ -95,6 +95,7 @@
 %%TWDIR%%/templates/changes.pattern.tmpl
 %%TWDIR%%/templates/css.pattern.tmpl
 %%TWDIR%%/templates/edit.pattern.tmpl
+%%TWDIR%%/templates/form.pattern.tmpl
 %%TWDIR%%/templates/formtables.pattern.tmpl
 %%TWDIR%%/templates/login.pattern.tmpl
 %%TWDIR%%/templates/oops.pattern.tmpl
