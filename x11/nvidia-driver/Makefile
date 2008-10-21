@@ -31,7 +31,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		ACPI		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
 
-# Starting with version 7667, NVidia has dropped support for numerous
+# Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
@@ -102,7 +102,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-# Don't build any binaries (nvidia-settings and nvidia-xconfig)
+# Don't build any binaries (nvidia-settings and nvidia-xconfig) and manuals
 .if ${NVVERSION} < 974600
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else

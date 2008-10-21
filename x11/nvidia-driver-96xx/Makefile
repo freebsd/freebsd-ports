@@ -1,4 +1,4 @@
-# New ports collection makefile for:	nvidia-driver, legacy version 96xx
+# New ports collection makefile for:	nvidia-driver, legacy version 96.43.xx
 # Date created:				08 Feb 2007
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
