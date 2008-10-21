@@ -7,6 +7,7 @@
 
 PORTNAME=	ezload
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://proj.bpsw.biz/ezload/downloads/
 
