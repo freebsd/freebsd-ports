@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apparix
-PORTVERSION=	20070918
+PORTVERSION=	20080725
 CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
-DISTNAME=	${PORTNAME}-07-261
+DISTNAME=	${PORTNAME}-08-206
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
@@ -26,9 +26,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
