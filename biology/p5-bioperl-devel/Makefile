@@ -33,6 +33,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/Text/Wrap.pm:${PORTSDIR}/lang/
 		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG \
 		${SITE_PERL}/SVG/Graph.pm:${PORTSDIR}/graphics/p5-SVG-Graph \
+		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
 		${SITE_PERL}/Text/Shellwords.pm:${PORTSDIR}/textproc/p5-Text-Shellwords \
 		${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
 		${SITE_PERL}/XML/DOM/XPath.pm:${PORTSDIR}/textproc/p5-XML-DOM-XPath \
@@ -53,17 +54,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/Text/Wrap.pm:${PORTSDIR}/lang/
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		missing dependencies
-
 CONFLICTS=	p5-bioperl-1.[02468]*
 
 LATEST_LINK=	p5-bioperl-devel
 
 PERL_MODBUILD=	YES
-
-NOPORTDOCS=	yes
-NOPORTEXAMPLES=	yes
-NOPORTDATA=	yes
 
 MAN1=		bp_aacomp.pl.1 \
 		bp_biblio.pl.1 \
@@ -106,6 +101,7 @@ MAN1=		bp_aacomp.pl.1 \
 		bp_nrdb.pl.1 \
 		bp_oligo_count.pl.1 \
 		bp_pairwise_kaks.pl.1 \
+		bp_parse_hmmsearch.pl.1 \
 		bp_process_gadfly.pl.1 \
 		bp_process_sgd.pl.1 \
 		bp_process_wormbase.pl.1 \
@@ -123,6 +119,7 @@ MAN1=		bp_aacomp.pl.1 \
 		bp_split_seq.pl.1 \
 		bp_sreformat.pl.1 \
 		bp_taxid4species.pl.1 \
+		bp_taxonomy2tree.pl.1 \
 		bp_translate_seq.pl.1 \
 		bp_tree2pag.pl.1 \
 		bp_unflatten_seq.pl.1
@@ -1006,4 +1003,3 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
-
