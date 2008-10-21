@@ -292,7 +292,6 @@ share/icons/Tango/16x16/apps/gnome-settings-accessibility-technologies.png
 share/icons/Tango/16x16/apps/gnome-settings-background.png
 share/icons/Tango/16x16/apps/gnome-settings-font.png
 share/icons/Tango/16x16/apps/gnome-settings-keybindings.png
-share/icons/Tango/16x16/apps/gnome-settings-sound.png
 share/icons/Tango/16x16/apps/gnome-settings-theme.png
 share/icons/Tango/16x16/apps/gnome-terminal.png
 share/icons/Tango/16x16/apps/gnome-window-manager.png
@@ -311,7 +310,6 @@ share/icons/Tango/16x16/apps/kedit.png
 share/icons/Tango/16x16/apps/key_bindings.png
 share/icons/Tango/16x16/apps/kfm.png
 share/icons/Tango/16x16/apps/khelpcenter.png
-share/icons/Tango/16x16/apps/knotify.png
 share/icons/Tango/16x16/apps/konsole.png
 share/icons/Tango/16x16/apps/krfb.png
 share/icons/Tango/16x16/apps/kscreensaver.png
@@ -327,9 +325,9 @@ share/icons/Tango/16x16/apps/preferences-desktop-assistive-technology.png
 share/icons/Tango/16x16/apps/preferences-desktop-font.png
 share/icons/Tango/16x16/apps/preferences-desktop-keyboard-shortcuts.png
 share/icons/Tango/16x16/apps/preferences-desktop-locale.png
+share/icons/Tango/16x16/apps/preferences-desktop-multimedia.png
 share/icons/Tango/16x16/apps/preferences-desktop-remote-desktop.png
 share/icons/Tango/16x16/apps/preferences-desktop-screensaver.png
-share/icons/Tango/16x16/apps/preferences-desktop-sound.png
 share/icons/Tango/16x16/apps/preferences-desktop-theme.png
 share/icons/Tango/16x16/apps/preferences-desktop-wallpaper.png
 share/icons/Tango/16x16/apps/preferences-system-network-proxy.png
@@ -363,7 +361,6 @@ share/icons/Tango/16x16/apps/xfce-mail.png
 share/icons/Tango/16x16/apps/xfce-terminal.png
 share/icons/Tango/16x16/apps/xfce4-backdrop.png
 share/icons/Tango/16x16/apps/xfce4-session.png
-share/icons/Tango/16x16/apps/xfce4-sound.png
 share/icons/Tango/16x16/apps/xfwm4.png
 share/icons/Tango/16x16/apps/ximian-evolution-calendar.png
 share/icons/Tango/16x16/apps/xscreensaver.png
@@ -525,7 +522,7 @@ share/icons/Tango/16x16/emblems/emblem-unreadable.png
 share/icons/Tango/16x16/emblems/stock_mail-priority-high.png
 share/icons/Tango/16x16/emotes/face-angel.png
 share/icons/Tango/16x16/emotes/face-crying.png
-share/icons/Tango/16x16/emotes/face-devil-grin.png
+share/icons/Tango/16x16/emotes/face-devilish.png
 share/icons/Tango/16x16/emotes/face-glasses.png
 share/icons/Tango/16x16/emotes/face-grin.png
 share/icons/Tango/16x16/emotes/face-kiss.png
@@ -799,6 +796,8 @@ share/icons/Tango/16x16/status/nm-device-wired.png
 share/icons/Tango/16x16/status/nm-device-wireless.png
 share/icons/Tango/16x16/status/nm-no-connection.png
 share/icons/Tango/16x16/status/printer-error.png
+share/icons/Tango/16x16/status/software-update-available.png
+share/icons/Tango/16x16/status/software-update-urgent.png
 share/icons/Tango/16x16/status/stock_attach.png
 share/icons/Tango/16x16/status/stock_dialog-error.png
 share/icons/Tango/16x16/status/stock_dialog-info.png
@@ -1127,7 +1126,6 @@ share/icons/Tango/22x22/apps/gnome-settings-accessibility-technologies.png
 share/icons/Tango/22x22/apps/gnome-settings-background.png
 share/icons/Tango/22x22/apps/gnome-settings-font.png
 share/icons/Tango/22x22/apps/gnome-settings-keybindings.png
-share/icons/Tango/22x22/apps/gnome-settings-sound.png
 share/icons/Tango/22x22/apps/gnome-settings-theme.png
 share/icons/Tango/22x22/apps/gnome-terminal.png
 share/icons/Tango/22x22/apps/gnome-window-manager.png
@@ -1146,7 +1144,6 @@ share/icons/Tango/22x22/apps/kedit.png
 share/icons/Tango/22x22/apps/key_bindings.png
 share/icons/Tango/22x22/apps/kfm.png
 share/icons/Tango/22x22/apps/khelpcenter.png
-share/icons/Tango/22x22/apps/knotify.png
 share/icons/Tango/22x22/apps/konsole.png
 share/icons/Tango/22x22/apps/krfb.png
 share/icons/Tango/22x22/apps/kscreensaver.png
@@ -1162,9 +1159,9 @@ share/icons/Tango/22x22/apps/preferences-desktop-assistive-technology.png
 share/icons/Tango/22x22/apps/preferences-desktop-font.png
 share/icons/Tango/22x22/apps/preferences-desktop-keyboard-shortcuts.png
 share/icons/Tango/22x22/apps/preferences-desktop-locale.png
+share/icons/Tango/22x22/apps/preferences-desktop-multimedia.png
 share/icons/Tango/22x22/apps/preferences-desktop-remote-desktop.png
 share/icons/Tango/22x22/apps/preferences-desktop-screensaver.png
-share/icons/Tango/22x22/apps/preferences-desktop-sound.png
 share/icons/Tango/22x22/apps/preferences-desktop-theme.png
 share/icons/Tango/22x22/apps/preferences-desktop-wallpaper.png
 share/icons/Tango/22x22/apps/preferences-system-network-proxy.png
@@ -1198,7 +1195,6 @@ share/icons/Tango/22x22/apps/xfce-mail.png
 share/icons/Tango/22x22/apps/xfce-terminal.png
 share/icons/Tango/22x22/apps/xfce4-backdrop.png
 share/icons/Tango/22x22/apps/xfce4-session.png
-share/icons/Tango/22x22/apps/xfce4-sound.png
 share/icons/Tango/22x22/apps/xfwm4.png
 share/icons/Tango/22x22/apps/ximian-evolution-calendar.png
 share/icons/Tango/22x22/apps/xscreensaver.png
@@ -1360,7 +1356,7 @@ share/icons/Tango/22x22/emblems/emblem-unreadable.png
 share/icons/Tango/22x22/emblems/stock_mail-priority-high.png
 share/icons/Tango/22x22/emotes/face-angel.png
 share/icons/Tango/22x22/emotes/face-crying.png
-share/icons/Tango/22x22/emotes/face-devil-grin.png
+share/icons/Tango/22x22/emotes/face-devilish.png
 share/icons/Tango/22x22/emotes/face-glasses.png
 share/icons/Tango/22x22/emotes/face-grin.png
 share/icons/Tango/22x22/emotes/face-kiss.png
@@ -1634,6 +1630,8 @@ share/icons/Tango/22x22/status/nm-device-wired.png
 share/icons/Tango/22x22/status/nm-device-wireless.png
 share/icons/Tango/22x22/status/nm-no-connection.png
 share/icons/Tango/22x22/status/printer-error.png
+share/icons/Tango/22x22/status/software-update-available.png
+share/icons/Tango/22x22/status/software-update-urgent.png
 share/icons/Tango/22x22/status/stock_attach.png
 share/icons/Tango/22x22/status/stock_dialog-error.png
 share/icons/Tango/22x22/status/stock_dialog-info.png
@@ -1960,7 +1958,6 @@ share/icons/Tango/24x24/apps/gnome-settings-accessibility-technologies.png
 share/icons/Tango/24x24/apps/gnome-settings-background.png
 share/icons/Tango/24x24/apps/gnome-settings-font.png
 share/icons/Tango/24x24/apps/gnome-settings-keybindings.png
-share/icons/Tango/24x24/apps/gnome-settings-sound.png
 share/icons/Tango/24x24/apps/gnome-settings-theme.png
 share/icons/Tango/24x24/apps/gnome-terminal.png
 share/icons/Tango/24x24/apps/gnome-window-manager.png
@@ -1979,7 +1976,6 @@ share/icons/Tango/24x24/apps/kedit.png
 share/icons/Tango/24x24/apps/key_bindings.png
 share/icons/Tango/24x24/apps/kfm.png
 share/icons/Tango/24x24/apps/khelpcenter.png
-share/icons/Tango/24x24/apps/knotify.png
 share/icons/Tango/24x24/apps/konsole.png
 share/icons/Tango/24x24/apps/krfb.png
 share/icons/Tango/24x24/apps/kscreensaver.png
@@ -1995,9 +1991,9 @@ share/icons/Tango/24x24/apps/preferences-desktop-assistive-technology.png
 share/icons/Tango/24x24/apps/preferences-desktop-font.png
 share/icons/Tango/24x24/apps/preferences-desktop-keyboard-shortcuts.png
 share/icons/Tango/24x24/apps/preferences-desktop-locale.png
+share/icons/Tango/24x24/apps/preferences-desktop-multimedia.png
 share/icons/Tango/24x24/apps/preferences-desktop-remote-desktop.png
 share/icons/Tango/24x24/apps/preferences-desktop-screensaver.png
-share/icons/Tango/24x24/apps/preferences-desktop-sound.png
 share/icons/Tango/24x24/apps/preferences-desktop-theme.png
 share/icons/Tango/24x24/apps/preferences-desktop-wallpaper.png
 share/icons/Tango/24x24/apps/preferences-system-network-proxy.png
@@ -2031,7 +2027,6 @@ share/icons/Tango/24x24/apps/xfce-mail.png
 share/icons/Tango/24x24/apps/xfce-terminal.png
 share/icons/Tango/24x24/apps/xfce4-backdrop.png
 share/icons/Tango/24x24/apps/xfce4-session.png
-share/icons/Tango/24x24/apps/xfce4-sound.png
 share/icons/Tango/24x24/apps/xfwm4.png
 share/icons/Tango/24x24/apps/ximian-evolution-calendar.png
 share/icons/Tango/24x24/apps/xscreensaver.png
@@ -2193,7 +2188,7 @@ share/icons/Tango/24x24/emblems/emblem-unreadable.png
 share/icons/Tango/24x24/emblems/stock_mail-priority-high.png
 share/icons/Tango/24x24/emotes/face-angel.png
 share/icons/Tango/24x24/emotes/face-crying.png
-share/icons/Tango/24x24/emotes/face-devil-grin.png
+share/icons/Tango/24x24/emotes/face-devilish.png
 share/icons/Tango/24x24/emotes/face-glasses.png
 share/icons/Tango/24x24/emotes/face-grin.png
 share/icons/Tango/24x24/emotes/face-kiss.png
@@ -2467,6 +2462,8 @@ share/icons/Tango/24x24/status/nm-device-wired.png
 share/icons/Tango/24x24/status/nm-device-wireless.png
 share/icons/Tango/24x24/status/nm-no-connection.png
 share/icons/Tango/24x24/status/printer-error.png
+share/icons/Tango/24x24/status/software-update-available.png
+share/icons/Tango/24x24/status/software-update-urgent.png
 share/icons/Tango/24x24/status/stock_attach.png
 share/icons/Tango/24x24/status/stock_dialog-error.png
 share/icons/Tango/24x24/status/stock_dialog-info.png
@@ -2795,7 +2792,6 @@ share/icons/Tango/32x32/apps/gnome-settings-accessibility-technologies.png
 share/icons/Tango/32x32/apps/gnome-settings-background.png
 share/icons/Tango/32x32/apps/gnome-settings-font.png
 share/icons/Tango/32x32/apps/gnome-settings-keybindings.png
-share/icons/Tango/32x32/apps/gnome-settings-sound.png
 share/icons/Tango/32x32/apps/gnome-settings-theme.png
 share/icons/Tango/32x32/apps/gnome-terminal.png
 share/icons/Tango/32x32/apps/gnome-window-manager.png
@@ -2814,7 +2810,6 @@ share/icons/Tango/32x32/apps/kedit.png
 share/icons/Tango/32x32/apps/key_bindings.png
 share/icons/Tango/32x32/apps/kfm.png
 share/icons/Tango/32x32/apps/khelpcenter.png
-share/icons/Tango/32x32/apps/knotify.png
 share/icons/Tango/32x32/apps/konsole.png
 share/icons/Tango/32x32/apps/krfb.png
 share/icons/Tango/32x32/apps/kscreensaver.png
@@ -2830,9 +2825,9 @@ share/icons/Tango/32x32/apps/preferences-desktop-assistive-technology.png
 share/icons/Tango/32x32/apps/preferences-desktop-font.png
 share/icons/Tango/32x32/apps/preferences-desktop-keyboard-shortcuts.png
 share/icons/Tango/32x32/apps/preferences-desktop-locale.png
+share/icons/Tango/32x32/apps/preferences-desktop-multimedia.png
 share/icons/Tango/32x32/apps/preferences-desktop-remote-desktop.png
 share/icons/Tango/32x32/apps/preferences-desktop-screensaver.png
-share/icons/Tango/32x32/apps/preferences-desktop-sound.png
 share/icons/Tango/32x32/apps/preferences-desktop-theme.png
 share/icons/Tango/32x32/apps/preferences-desktop-wallpaper.png
 share/icons/Tango/32x32/apps/preferences-system-network-proxy.png
@@ -2866,7 +2861,6 @@ share/icons/Tango/32x32/apps/xfce-mail.png
 share/icons/Tango/32x32/apps/xfce-terminal.png
 share/icons/Tango/32x32/apps/xfce4-backdrop.png
 share/icons/Tango/32x32/apps/xfce4-session.png
-share/icons/Tango/32x32/apps/xfce4-sound.png
 share/icons/Tango/32x32/apps/xfwm4.png
 share/icons/Tango/32x32/apps/ximian-evolution-calendar.png
 share/icons/Tango/32x32/apps/xscreensaver.png
@@ -3028,7 +3022,7 @@ share/icons/Tango/32x32/emblems/emblem-unreadable.png
 share/icons/Tango/32x32/emblems/stock_mail-priority-high.png
 share/icons/Tango/32x32/emotes/face-angel.png
 share/icons/Tango/32x32/emotes/face-crying.png
-share/icons/Tango/32x32/emotes/face-devil-grin.png
+share/icons/Tango/32x32/emotes/face-devilish.png
 share/icons/Tango/32x32/emotes/face-glasses.png
 share/icons/Tango/32x32/emotes/face-grin.png
 share/icons/Tango/32x32/emotes/face-kiss.png
@@ -3302,6 +3296,8 @@ share/icons/Tango/32x32/status/nm-device-wired.png
 share/icons/Tango/32x32/status/nm-device-wireless.png
 share/icons/Tango/32x32/status/nm-no-connection.png
 share/icons/Tango/32x32/status/printer-error.png
+share/icons/Tango/32x32/status/software-update-available.png
+share/icons/Tango/32x32/status/software-update-urgent.png
 share/icons/Tango/32x32/status/stock_attach.png
 share/icons/Tango/32x32/status/stock_dialog-error.png
 share/icons/Tango/32x32/status/stock_dialog-info.png
@@ -3627,7 +3623,6 @@ share/icons/Tango/scalable/apps/gnome-settings-accessibility-technologies.svg
 share/icons/Tango/scalable/apps/gnome-settings-background.svg
 share/icons/Tango/scalable/apps/gnome-settings-font.svg
 share/icons/Tango/scalable/apps/gnome-settings-keybindings.svg
-share/icons/Tango/scalable/apps/gnome-settings-sound.svg
 share/icons/Tango/scalable/apps/gnome-settings-theme.svg
 share/icons/Tango/scalable/apps/gnome-terminal.svg
 share/icons/Tango/scalable/apps/gnome-window-manager.svg
@@ -3646,7 +3641,6 @@ share/icons/Tango/scalable/apps/kedit.svg
 share/icons/Tango/scalable/apps/key_bindings.svg
 share/icons/Tango/scalable/apps/kfm.svg
 share/icons/Tango/scalable/apps/khelpcenter.svg
-share/icons/Tango/scalable/apps/knotify.svg
 share/icons/Tango/scalable/apps/konsole.svg
 share/icons/Tango/scalable/apps/krfb.svg
 share/icons/Tango/scalable/apps/kscreensaver.svg
@@ -3662,9 +3656,9 @@ share/icons/Tango/scalable/apps/preferences-desktop-assistive-technology.svg
 share/icons/Tango/scalable/apps/preferences-desktop-font.svg
 share/icons/Tango/scalable/apps/preferences-desktop-keyboard-shortcuts.svg
 share/icons/Tango/scalable/apps/preferences-desktop-locale.svg
+share/icons/Tango/scalable/apps/preferences-desktop-multimedia.svg
 share/icons/Tango/scalable/apps/preferences-desktop-remote-desktop.svg
 share/icons/Tango/scalable/apps/preferences-desktop-screensaver.svg
-share/icons/Tango/scalable/apps/preferences-desktop-sound.svg
 share/icons/Tango/scalable/apps/preferences-desktop-theme.svg
 share/icons/Tango/scalable/apps/preferences-desktop-wallpaper.svg
 share/icons/Tango/scalable/apps/preferences-system-network-proxy.svg
@@ -3698,7 +3692,6 @@ share/icons/Tango/scalable/apps/xfce-mail.svg
 share/icons/Tango/scalable/apps/xfce-terminal.svg
 share/icons/Tango/scalable/apps/xfce4-backdrop.svg
 share/icons/Tango/scalable/apps/xfce4-session.svg
-share/icons/Tango/scalable/apps/xfce4-sound.svg
 share/icons/Tango/scalable/apps/xfwm4.svg
 share/icons/Tango/scalable/apps/ximian-evolution-calendar.svg
 share/icons/Tango/scalable/apps/xscreensaver.svg
@@ -3860,7 +3853,7 @@ share/icons/Tango/scalable/emblems/emblem-unreadable.svg
 share/icons/Tango/scalable/emblems/stock_mail-priority-high.svg
 share/icons/Tango/scalable/emotes/face-angel.svg
 share/icons/Tango/scalable/emotes/face-crying.svg
-share/icons/Tango/scalable/emotes/face-devil-grin.svg
+share/icons/Tango/scalable/emotes/face-devilish.svg
 share/icons/Tango/scalable/emotes/face-glasses.svg
 share/icons/Tango/scalable/emotes/face-grin.svg
 share/icons/Tango/scalable/emotes/face-kiss.svg
@@ -4142,6 +4135,8 @@ share/icons/Tango/scalable/status/nm-device-wired.svg
 share/icons/Tango/scalable/status/nm-device-wireless.svg
 share/icons/Tango/scalable/status/nm-no-connection.svg
 share/icons/Tango/scalable/status/printer-error.svg
+share/icons/Tango/scalable/status/software-update-available.svg
+share/icons/Tango/scalable/status/software-update-urgent.svg
 share/icons/Tango/scalable/status/stock_attach.svg
 share/icons/Tango/scalable/status/stock_dialog-error.svg
 share/icons/Tango/scalable/status/stock_dialog-info.svg
@@ -4176,6 +4171,7 @@ share/icons/Tango/scalable/status/weather-showers.svg
 share/icons/Tango/scalable/status/weather-snow.svg
 share/icons/Tango/scalable/status/weather-storm.svg
 share/icons/Tango/scalable/status/xfce-trash_full.svg
+@dirrmtry share/locale
 @dirrm share/icons/Tango/scalable/status
 @dirrm share/icons/Tango/scalable/places
 @dirrm share/icons/Tango/scalable/mimetypes
