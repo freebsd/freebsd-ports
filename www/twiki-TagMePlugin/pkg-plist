@@ -19,9 +19,13 @@
 %%TWDIR%%/pub/TWiki/TagMePlugin/tag_remove.gif
 %%TWDIR%%/pub/TWiki/TagMePlugin/tagme.css
 %%TWDIR%%/pub/TWiki/TagMePlugin/topictags.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/topictags_styleblog.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/topictags_styleblog_open.gif
 %%TWDIR%%/pub/_work_areas_doc_example_TagMePlugin.zip
 %%TWDIR%%/templates/view.tagme.tmpl
 %%TWDIR%%/templates/view.tagme04x01.tmpl
+%%TWDIR%%/templates/view.tagme_styleblogbutton.tmpl
+%%TWDIR%%/templates/view.tagme_styleblog.tmpl
 @dirrm %%TWDIR%%/data/TWiki
 @dirrm %%TWDIR%%/data
 @dirrm %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin
