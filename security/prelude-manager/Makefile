@@ -24,6 +24,8 @@ USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
 
+BROKEN=		does not build with current lib
+
 PRELUDEUSER?=	prelude
 PRELUDEGROUP?=	prelude
 PRELUDEDIR?=	/nonexistent
