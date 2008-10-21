@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -34,6 +34,12 @@ CONFIGURE_ARGS=	--enable-opi \
 		--with-t1-includes="${LOCALBASE}/include" \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2"
+
+OPTIONS=       LIBPAPER "Enable libpaper"      off     \
+               DRAW    "Enable drawing annotations" on \
+               X11     "Enable X11 support"    on      \
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBPAPER)
 LIB_DEPENDS+=	paper.2:${PORTSDIR}/print/libpaper
@@ -82,4 +88,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
