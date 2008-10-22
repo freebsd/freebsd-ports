@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	0.629
+PORTVERSION=	0.630
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -40,11 +40,4 @@ MAN3=		Config::Model.3 Config::Model::AnyId.3 \
 		Config::Model::WarpedNode.3 Config::Model::WarpedThing.3 \
 		Config::Model::WizardHelper.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
