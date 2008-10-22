@@ -26,7 +26,7 @@ ALL_TARGET=	ng
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
-.if !defined(WITHOUT_OCC)
+.if defined(WITH_OCC)
 LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
 CXXFLAGS+=	-DOCCGEOMETRY -DOCC52 -DHAVE_WOK_CONFIG_H -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/OpenCAS/ros/inc
 .endif
@@ -56,13 +56,13 @@ BROKEN=		internal gcc error (Bug 23159)
 
 pre-everything::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Define WITHOUT_OCC if IGES and STEP support is not required."
+	@${ECHO_MSG} "Define WITH_OCC if IGES and STEP support is required."
 	@${ECHO_MSG}
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
 		${WRKSRC}/ngtcltk/ngappinit.cpp
-.if !defined(WITHOUT_OCC)
+.if defined(WITH_OCC)
 	${REINPLACE_CMD} -e 's|^# occlib|occlib|;s|-pthread|${PTHREAD_LIBS}|'	\
 		${WRKSRC}/libsrc/makefile.mach.FREEBSD	\
 		${WRKSRC}/Makefile
