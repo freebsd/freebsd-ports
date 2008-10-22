@@ -9,7 +9,6 @@ etc/openslp/slp.conf.default
 etc/openslp/slp.spi.default
 @exec [ -f %B/slp.spi ] || cp %B/%f %B/slp.spi
 @dirrm etc/openslp
-etc/rc.d/001slpd.sh
 include/slp.h
 lib/libslp.a
 lib/libslp.la

@@ -7,7 +7,7 @@
 
 PORTNAME=	openslp
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
@@ -22,8 +22,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 		--localstatedir=/var
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	slpd
 
 OPTIONS=	SLP_SECURITY "Turn on SLPv2 security support" off \
 		ASYNC_API "Enable asynchronous communication API" off
@@ -42,14 +41,11 @@ post-extract:
 	@(cd ${WRKSRC}; \
 		${FIND} doc -type f -path '*/CVS/*' -delete; \
 		${FIND} doc -type d -name CVS -delete)
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/slpd.sh.sample > ${WRKSRC}/slpd.sh
 
 post-install:
 .for FILE in slp.conf slp.reg slp.spi
 	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${PREFIX}/etc/openslp/${FILE}.default
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/slpd.sh ${PREFIX}/etc/rc.d/001slpd.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc; \
