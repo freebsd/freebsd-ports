@@ -103,9 +103,9 @@ CONFIGURE_ARGS+=	--with-libgif=${LOCALBASE}
 .endif
 
 .if defined(WITH_GRASS)
-LIB_DEPENDS+=		grass_gis:${PORTSDIR}/databases/grass
-CONFIGURE_ARGS+=	--with-grass=${LOCALBASE} \
-			--with-grasslib=${LOCALBASE}/lib
+GRASS_INST_DIR=		grass
+CONFIGURE_ARGS+=	--with-grass=${LOCALBASE}/${GRASS_INST_DIR} \
+			--with-grasslib=${LOCALBASE}/${GRASS_INST_DIR}/lib
 .else
 CONFIGURE_ARGS+=	--with-grass=no
 .endif
