@@ -37,6 +37,10 @@ CMAKE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY:FILEPATH=${LOCALBASE}/lib/libboost_
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e '54s/$$/ || defined(__sparc64__)/' \
+	    ${WRKSRC}/renderer/ddmanager/ndspy.h
+
 post-configure:
 	${FIND} ${WRKSRC} -name "build.make" -o -name "link.txt" -o -name "relink.txt" \
 	    | ${XARGS} ${REINPLACE_CMD} -i "" -e 's|-ldl||g'
