@@ -7,11 +7,10 @@
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 
-PREFIX=%%PREFIX%%
 . %%RC_SUBR%%
 
 # Global
-checkvm_cmd="${PREFIX}/bin/vmware-checkvm > /dev/null"
+checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 
 # VMware guest daemon
 name="vmware_guestd"
@@ -20,7 +19,7 @@ start_precmd="${checkvm_cmd}"
 unset start_cmd
 stop_precmd="${checkvm_cmd}"
 unset stop_cmd
-command="${PREFIX}/sbin/vmware-guestd"
+command="%%PREFIX%%/sbin/vmware-guestd"
 command_args="--halt-command '/sbin/shutdown -p now' >/dev/null 2>&1"
 pidfile="/var/run/${name}.pid"
 

@@ -7,32 +7,31 @@
 # REQUIRE: FILESYSTEMS
 # BEFORE: netif
 
-PREFIX=%%PREFIX%%
 . %%RC_SUBR%%
 
 # Global
-checkvm_cmd="${PREFIX}/bin/vmware-checkvm > /dev/null"
+checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 
 # Functions
 vmware_guest_vmmemctl_start()
 {
 	echo 'Loading vmmemctl kernel module.'
-	kldload ${PREFIX}/%%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko >/dev/null 2>&1
 }
 vmware_guest_vmxnet_start()
 {
 	echo 'Loading vmxnet kernel module.'
-	kldload ${PREFIX}/%%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
+	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
 }
 %%NOTON5%%vmware_guest_vmblock_start()
 %%NOTON5%%{
 %%NOTON5%%	echo 'Loading vmblock kernel module.'
-%%NOTON5%%	kldload ${PREFIX}/%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
+%%NOTON5%%	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
 %%NOTON5%%}
 %%NOTON5%%vmware_guest_vmhgfs_start()
 %%NOTON5%%{
 %%NOTON5%%	echo 'Loading vmhgfs kernel module.'
-%%NOTON5%%	kldload ${PREFIX}/%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
+%%NOTON5%%	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
 %%NOTON5%%}
 
 # VMware kernel module: vmmemctl
