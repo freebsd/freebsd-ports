@@ -1224,6 +1224,7 @@
     SUBDIR += p5-Devel-LexAlias
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
+    SUBDIR += p5-Devel-NYTProf
     SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-PPPort
     SUBDIR += p5-Devel-Pointer

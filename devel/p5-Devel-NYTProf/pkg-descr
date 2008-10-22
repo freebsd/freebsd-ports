@@ -1,0 +1,21 @@
+Devel::NYTProf is a powerful feature-rich perl source code profiler.
+
+ * Performs per-line statement profiling for fine detail
+ * Performs per-subroutine statement profiling for overview
+ * Performs per-block statement profiling (the first profiler to do so)
+ * Accounts correctly for time spent after calls return
+ * Performs inclusive and exclusive timing of subroutines
+ * Subroutine times are per calling location (a powerful feature)
+ * Can profile compile-time activity, just run-time, or just END time
+ * Uses novel techniques for efficient profiling
+ * Sub-microsecond (100ns) resolution on systems with clock_gettime()
+ * Very fast - the fastest statement and subroutine profilers for perl
+ * Handles applications that fork, with no performance cost
+ * Immune from noise caused by profiling overheads and I/O
+ * Program being profiled can stop/start the profiler
+ * Generates richly annotated and cross-linked html reports
+ * Trivial to use with mod_perl - add one line to httpd.conf
+ * Includes an extensive test suite
+ * Tested on very large codebases
+
+WWW:	http://search.cpan.org/dist/Devel-NYTProf/
