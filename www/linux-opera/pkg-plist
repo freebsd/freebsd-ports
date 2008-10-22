@@ -67,6 +67,10 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/locale/es-LA/license.txt
 %%DATADIR%%/locale/es-LA/opera6.adr
 %%DATADIR%%/locale/es-LA/search.ini
+%%DATADIR%%/locale/et/eesti.lng
+%%DATADIR%%/locale/et/license.txt
+%%DATADIR%%/locale/et/opera6.adr
+%%DATADIR%%/locale/et/search.ini
 %%DATADIR%%/locale/fi/license.txt
 %%DATADIR%%/locale/fi/opera6.adr
 %%DATADIR%%/locale/fi/search.ini
@@ -155,6 +159,14 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/locale/sv/opera6.adr
 %%DATADIR%%/locale/sv/search.ini
 %%DATADIR%%/locale/sv/svenska.lng
+%%DATADIR%%/locale/ta/license.txt
+%%DATADIR%%/locale/ta/opera6.adr
+%%DATADIR%%/locale/ta/search.ini
+%%DATADIR%%/locale/ta/tamil.lng
+%%DATADIR%%/locale/te/license.txt
+%%DATADIR%%/locale/te/opera6.adr
+%%DATADIR%%/locale/te/search.ini
+%%DATADIR%%/locale/te/telugu.lng
 %%DATADIR%%/locale/tr/license.txt
 %%DATADIR%%/locale/tr/opera6.adr
 %%DATADIR%%/locale/tr/search.ini
@@ -241,6 +253,8 @@ share/pixmaps/linux-opera.png
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/te
+@dirrm %%DATADIR%%/locale/ta
 @dirrm %%DATADIR%%/locale/sv
 @dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale/pt-BR
@@ -263,6 +277,7 @@ share/pixmaps/linux-opera.png
 @dirrm %%DATADIR%%/locale/fr-CA
 @dirrm %%DATADIR%%/locale/fr
 @dirrm %%DATADIR%%/locale/fi
+@dirrm %%DATADIR%%/locale/et
 @dirrm %%DATADIR%%/locale/es-LA
 @dirrm %%DATADIR%%/locale/es-ES
 @dirrm %%DATADIR%%/locale/en-GB
