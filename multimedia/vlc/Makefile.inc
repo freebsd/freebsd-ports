@@ -187,10 +187,6 @@
 # WITH_SSL=yes
 #  Enable TLS/SSL Support for web (httpd) interface
 #
-# WITHOUT_SLP=yes
-#  Disable SLP service discovery support
-#  * recommended if you want to stream media
-#
 # WITH_OPTIMIZED_CFLAGS=yes
 #  Compile with -O2 -ffast-math -fomit-frame-pointer
 #
