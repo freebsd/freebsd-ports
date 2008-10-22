@@ -26,6 +26,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_PERL_MODULE "Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE "Enable http_realip module" off \
+		HTTP_RESPONSE_MODULE "Enable http_response module" off \
 		HTTP_REWRITE_MODULE "Enable http_rewrite module" on \
 		HTTP_SECURE_LINK_MODULE "Enable http_secure_link module" off \
 		HTTP_SSL_MODULE "Enable http_ssl module" off \
@@ -110,6 +111,14 @@ CONFIGURE_ARGS+=--with-http_random_index_module
 
 .if defined(WITH_HTTP_REALIP_MODULE)
 CONFIGURE_ARGS+=--with-http_realip_module
+.endif
+
+.if defined(WITH_HTTP_RESPONSE_MODULE)
+NGINX_RESPONSE_MODULE_VERSION=	0.1
+PATCH_SITES+=	http://catap.ru/patches/nginx/:response
+PATCHFILES+=	ngx_http_response_module-${NGINX_RESPONSE_MODULE_VERSION}.dpatch:response
+PATCH_DIST_STRIP=	-p1
+CONFIGURE_ARGS+=--with-http_response_module
 .endif
 
 .if defined(WITH_HTTP_SECURE_LINK_MODULE)

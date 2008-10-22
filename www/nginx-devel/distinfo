@@ -4,3 +4,6 @@ SIZE (nginx-0.7.19.tar.gz) = 550633
 MD5 (nginx_upload_module-2.0.7.tar.gz) = d6c03a1cf954cda8af9cc8834337d51c
 SHA256 (nginx_upload_module-2.0.7.tar.gz) = 19869b4078bedfb70bd71543bf14a517eecf1dfcaa2bd48dd1804ac421056e0c
 SIZE (nginx_upload_module-2.0.7.tar.gz) = 17378
+MD5 (ngx_http_response_module-0.1.dpatch) = ef3b95ed0ba5a9a8f633aadd5dd80117
+SHA256 (ngx_http_response_module-0.1.dpatch) = 5b37a84108480c5375ea524bb147f105d2ef32af94dcacba1c15a137a0149782
+SIZE (ngx_http_response_module-0.1.dpatch) = 9763
