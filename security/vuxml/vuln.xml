@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="706c9eef-a077-11dd-b413-001372fd0af2">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.12</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/324824">
+	  <p>On a server configured for IP-based virtual hosts, Drupal may be
+            caused to include and execute specifically named files outside
+            of its root directory.  This bug affects both Drupal 5 and
+            Drupal 6.</p>  
+          <p>The title of book pages is not always properly escaped, enabling
+            users with the "create book content" permission or the
+            permission to edit any node in the book hierarchy to insert
+            arbitrary HTML and script code into pages. Such a Cross site
+            scripting attack may lead to the attacker gaining administrator
+            access. This bug affects Drupal 6.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/324824</url>
+    </references>
+    <dates>
+      <discovery>2008-10-22</discovery>
+      <entry>2008-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06eac338-9ddf-11dd-813f-000e35248ad7">
     <topic>libxine -- denial of service vulnerability</topic>
     <affects>
