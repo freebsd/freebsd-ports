@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-Path-Class
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A Path::Class type library for Moose
 
-RUN_DEPENDS=	p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-MooseX-Getopt>=0.05:${PORTSDIR}/devel/p5-MooseX-Getopt \
+RUN_DEPENDS=	p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
+		p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
