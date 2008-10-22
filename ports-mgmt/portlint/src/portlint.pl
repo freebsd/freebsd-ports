@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.161 2008/10/21 22:37:28 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.162 2008/10/22 22:04:38 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -750,7 +750,7 @@ sub checkplist {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
 			} elsif ($_ =~ /^\@(owner|group|mode)\s/) {
 				&perror("WARN", $file, $., "\@$1 should not be needed");
-			| elsif ($_ =~ m!^\@(dirrm|dirrmtry)\s+/! ) {
+			} elsif ($_ =~ m!^\@(dirrm|dirrmtry)\s+/!) {
 				&perror("WARN", $file, $., "Using \@$1 with absolute path ".
 					"will not work as you expected in most cases.  Use ".
 					"pkg-deinstall or \@unexec rmdir ... if you want to ".
