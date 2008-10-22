@@ -930,10 +930,10 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>wordpress</name>
 	<name>de-wordpress</name>
+	<name>wordpress-mu</name>
 	<range><lt>2.6.2</lt></range>
       </package>
       <package>
-	<name>wordpress-mu</name>
 	<name>zh-wordpress</name>
 	<range><gt>0</gt></range>
       </package>
@@ -959,7 +959,7 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2008-09-08</discovery>
-      <entry>2008-09-10</entry>
+      <entry>2008-10-22</entry>
     </dates>
   </vuln>
 
