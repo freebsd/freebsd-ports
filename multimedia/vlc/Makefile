@@ -18,7 +18,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
 		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
 		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
 
-MAINTAINER=	jsa@dmz.wickedmachine.net
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
