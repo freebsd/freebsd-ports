@@ -42,7 +42,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.12</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.6</lt></range>
       </package>
     </affects>
@@ -51,15 +51,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Drupal Project reports:</p>
 	<blockquote cite="http://drupal.org/node/324824">
 	  <p>On a server configured for IP-based virtual hosts, Drupal may be
-            caused to include and execute specifically named files outside
-            of its root directory.  This bug affects both Drupal 5 and
-            Drupal 6.</p>  
-          <p>The title of book pages is not always properly escaped, enabling
-            users with the "create book content" permission or the
-            permission to edit any node in the book hierarchy to insert
-            arbitrary HTML and script code into pages. Such a Cross site
-            scripting attack may lead to the attacker gaining administrator
-            access. This bug affects Drupal 6.</p>
+	    caused to include and execute specifically named files outside
+	    of its root directory.  This bug affects both Drupal 5 and
+	    Drupal 6.</p>
+	  <p>The title of book pages is not always properly escaped, enabling
+	    users with the "create book content" permission or the
+	    permission to edit any node in the book hierarchy to insert
+	    arbitrary HTML and script code into pages. Such a Cross site
+	    scripting attack may lead to the attacker gaining administrator
+	    access. This bug affects Drupal 6.</p>
 	</blockquote>
       </body>
     </description>
