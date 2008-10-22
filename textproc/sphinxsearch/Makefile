@@ -6,9 +6,11 @@
 #
 # Note: the Sphinx Storage Engine MySQL plugin is not supported by
 # this port.  You need a patched version of mysql server for that.
+# See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 DISTNAME=	sphinx-${PORTVERSION}
@@ -18,10 +20,19 @@ COMMENT=	Sphinx Full-Text Search Engine
 
 CONFLICTS=	sphinxsearch-devel-[0-9]*
 
-OPTIONS=	MYSQL            "MySQL support"                   on  \
-		PGSQL            "PostgreSQL support"              off \
-		ICONV		 "Iconv support"		   on  \
-		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)" off
+# If expat is present on the system and configure finds it, it will
+# unconditionally link the output binary against it.  There's no way
+# of turning this off. So for consistency, make sure it's always on.
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+OPTIONS=	MYSQL            "MySQL support"                    on  \
+		PGSQL            "PostgreSQL support"               off \
+		ICONV		 "Iconv support"		    on  \
+		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)"  off \
+		ID64		 "use 64-bit document and word IDs" off
+
+## FFR
+##		LIBSTEMMER	 "compile with libstemmer support"  off
 
 SPHINX_USR?=	_sphinx
 SPHINX_UID?=	312
@@ -87,6 +98,30 @@ CONFIGURE_ARGS+=	--without-iconv
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CXXFLAGS+=		-O3 -fomit-frame-pointer
 .endif
+
+# Changes document and word IDs to a 64bit type, useful if you have
+# more than about 4.2E9 such items to deal with.  Means corresponding
+# changes in DB schema.  Disabled by default.
+.if defined(WITH_ID64)
+CONFIGURE_ARGS+=	--enable-id64
+.endif
+
+## FFR.  The snowball project doesn't release numbered versions of it's
+## pre-processors.  Instead, at arbitrary intervals a snapshot of their
+## source repository is turned into a tarball (always the same filename)
+## and placed on their web site.  It's like they want to make it as hard
+## as possible for anyone to package and use their software.
+##
+## # Adds support for two additional word stemmming pre-processors from
+## # the Snowball project (http://snowball.tartarus.org/) -- these
+## # essentially do exactly the same thing as the built in English and
+## # Russian stemmers but are slightly slower and may produce subtly
+## # different output. Disabled by default.
+## .if defined(WITH_LIBSTEMMER) && !defined(WITHOUT_LIBSTEMMER)
+## CONFIGURE_ARGS+=	--with-libstemmer
+## .else
+## CONFIGURE_ARGS+=	--without-libstemmer
+## .endif
 
 # Fix up the sample configuration file to correspond to FreeBSD norms
 
