@@ -18,8 +18,8 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
-SNAPSHOT=	20080804
-REVISION=	1251
+SNAPSHOT=	20080912
+REVISION=	1263
 
 CONFLICTS=	powerdns-[0-2]*
 
