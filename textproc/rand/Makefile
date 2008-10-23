@@ -8,7 +8,7 @@
 PORTNAME=	rand
 PORTVERSION=	1.8
 CATEGORIES=	textproc
-MASTER_SITES=	http://math.missouristate.edu/~erik/files/
+MASTER_SITES=	http://bzflag.bz/~erik/files/
 
 MAINTAINER=	domi@saargate.de
 COMMENT=	Utility to display files or streams in random order
