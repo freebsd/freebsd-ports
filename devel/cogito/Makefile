@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cogito
-PORTVERSION=	0.17.2
-PORTREVISION=	4
+PORTVERSION=	0.18.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/cogito/ \
 		http://www.uk.kernel.org/pub/software/scm/cogito/ \
@@ -62,6 +61,7 @@ MAN1 =		cg-add.1 \
 		cg-switch.1 \
 		cg-tag-ls.1 \
 		cg-tag.1 \
+		cg-tag-show.1 \
 		cg-update.1 \
 		cg-version.1 \
 		cg.1
