@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ushare
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1a
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
@@ -15,21 +14,26 @@ MAINTAINER=	votdev@gmx.de
 COMMENT=	A lightweight UPnP (TM) A/V Media Server
 
 LIB_DEPENDS=	upnp.3:${PORTSDIR}/devel/upnp
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+
+HAS_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	CFLAGS="${PTHREAD_LIBS} -I${LOCALBASE}/include -I${WRKSRC}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample etc/rc.d/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib \
-		--with-libintl-prefix=${LOCALBASE}/lib \
-		--with-libupnp-prefix=${LOCALBASE}
+OPTIONS=	LIBDLNA "Enable DLNA (PS3) support" off
 
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	${PTHREAD_LIBS}
+.if defined(WITH_LIBDLNA)
+LIB_DEPENDS+=	dlna:${PORTSDIR}/devel/libdlna
+CONFIGURE_ARGS=	--enable-dlna
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
