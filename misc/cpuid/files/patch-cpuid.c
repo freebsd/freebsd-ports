@@ -1,5 +1,5 @@
---- cpuid.c.orig	Tue Nov 14 10:17:30 2006
-+++ cpuid.c	Tue Nov 14 11:24:57 2006
+--- cpuid.c.orig	2002-01-02 01:14:51.000000000 -0500
++++ cpuid.c	2007-11-11 22:12:08.000000000 -0500
 @@ -10,6 +10,8 @@
   * http://developer.intel.com/design/Pentium4/manuals/24547103.pdf
   * http://developer.intel.com/design/pentiumiii/applnots/24512501.pdf (AP-909)
@@ -326,7 +326,7 @@
    case 0x82:
      printf("2nd-level cache: 256KB, 8-way set assoc, 32 byte line size\n");
      break;
-@@ -486,44 +655,97 @@
+@@ -486,44 +655,132 @@
    case 0x85:
      printf("2nd-level cache: 2MB, 8-way set assoc, 32 byte line size\n");
      break;
@@ -447,16 +447,51 @@
 +  "MMX    MMX instructions",
 +  "FXSR   Fast FP/MMX Streaming SIMD Extensions save/restore",
 +  "FFXSR  FXSAVE and FXRSTOR instruction optimizations",
-+  "26     Reserved",
++  "Pge1GB 1GB Page Support",
 +  "RDTSCP RDTSCP instruction",
 +  "28     Reserved",
 +  "LM     64 bit long mode",
 +  "3DNowE 3DNow! instruction extensions",
 +  "3DNow  3DNow! instructions",
++};
++
++char *AMD_feature_flags3[] = {
++  "LhfSaf LAHF and SAHF instructions in 65-bit mode",
++  "CmpLeg Core Multi-Processing mode",
++  "SVM    Secure Virtual Machine",
++  "XAPSPC Extended APIC Register Space",
++  "AltMC8 LOCK MOV CR0 means MOV CR8",
++  "ABM    Advanced Bit Manipulation",
++  "SSE4A  EXTRQ, INSERTQ, MOVNTSS, and MOVNTSD support",
++  "MASSE  Misaligned SSE mode",
++  "3DNPFC PREFETCH and PREFETCHW support",
++  "OSVW   OS Visible Workaround support",
++  "10     Reserved",
++  "11     Reserved",
++  "SKINIT SKINIT, STGI, and DEV support",
++  "WDT    Watchdog Timer support"
++  "14     Reserved",
++  "15     Reserved",
++  "16     Reserved",
++  "17     Reserved",
++  "18     Reserved",
++  "19     Reserved",
++  "20     Reserved",
++  "21     Reserved",
++  "22     Reserved",
++  "23     Reserved",
++  "24     Reserved",
++  "25     Reserved",
++  "26     Reserved",
++  "27     Reserved",
++  "28     Reserved",
++  "29     Reserved",
++  "30     Reserved",
++  "31     Reserved",
  };
  
  char *Assoc[] = {
-@@ -657,7 +879,7 @@
+@@ -657,10 +914,16 @@
  	printf("Global Paging Extensions\n");
        } else {
  	if(edx & (1<<i)){
@@ -465,3 +500,12 @@
  	}
        }
      }
++    printf("\nExtended Miscellaneous feature flags %08lx:\n", ecx);
++    for(i=0;i<32;i++){
++      if(ecx & (1<<i)){
++        printf("%s\n",AMD_feature_flags3[i]);
++      }
++    }
+   }
+   printf("\n");
+   if(maxei >= 0x80000002){
