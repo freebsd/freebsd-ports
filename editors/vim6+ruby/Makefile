@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../vim
+MASTERDIR=	${.CURDIR}/../vim6
 
-PORTREVISION=	6
+PORTREVISION=	7
 
 CATEGORIES=	editors ruby
 PKGNAMESUFFIX=	+ruby
