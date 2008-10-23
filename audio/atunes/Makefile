@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	atunes
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	aTunes_${PORTVERSION}
@@ -56,13 +55,13 @@ DESKTOP_ENTRIES="aTunes" \
 
 INSTALL_FILES=	aTunes.ico aTunes.jar build.properties changelog.txt \
 		extendedLog.properties license.txt log4j.properties \
-		lyricsEngines.properties presets.properties shortcutSpec.xml
+		presets.properties shortcutSpec.xml
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/translations
 	@${MKDIR} ${DATADIR}/lib
 	@${MKDIR} ${DATADIR}/settings
+	@${MKDIR} ${DATADIR}/translations
 	${INSTALL_SCRIPT} ${WRKDIR}/atunes ${PREFIX}/bin
 .for file in ${INSTALL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
