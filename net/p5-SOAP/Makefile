@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	p5-SOAP-Lite-[0-9]*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		SOAP.3 SOAP::SimpleTypeWrapper.3 SOAP::Parser.3 \
