@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.69
+PORTVERSION=	0.710.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -49,6 +49,7 @@ MAN3=		Apache::SOAP.3 \
 		SOAP::Fault.3 \
 		SOAP::Header.3 \
 		SOAP::Lite.3 \
+		SOAP::Lite::Packager.3 \
 		SOAP::Packager.3 \
 		SOAP::SOM.3 \
 		SOAP::Schema.3 \
@@ -57,6 +58,7 @@ MAN3=		Apache::SOAP.3 \
 		SOAP::Test.3 \
 		SOAP::Trace.3 \
 		SOAP::Transport.3 \
+		SOAP::Transport::LOOPBACK.3 \
 		SOAP::Transport::POP3.3 \
 		SOAP::Utils.3 \
 		UDDI::Lite.3 \
@@ -69,6 +71,6 @@ MAN3=		Apache::SOAP.3 \
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|^#!.*perl|#!${PERL}|' \
-		${WRKSRC}/bin/* ${WRKSRC}/t/*
+		${WRKSRC}/bin/* ${WRKSRC}/t/*.t ${WRKSRC}/t/*.pl
 
 .include <bsd.port.mk>

@@ -3,22 +3,29 @@ bin/stubmaker.pl
 bin/XMLRPCsh.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
 %%SITE_PERL%%/SOAP/Packager.pm
-%%SITE_PERL%%/SOAP/Data.pm
+%%SITE_PERL%%/SOAP/Data.pod
 %%SITE_PERL%%/SOAP/Test.pm
-%%SITE_PERL%%/SOAP/Transport.pm
-%%SITE_PERL%%/SOAP/Deserializer.pm
-%%SITE_PERL%%/SOAP/Trace.pm
-%%SITE_PERL%%/SOAP/Schema.pm
-%%SITE_PERL%%/SOAP/Server.pm
-%%SITE_PERL%%/SOAP/Utils.pm
+%%SITE_PERL%%/SOAP/Transport.pod
+%%SITE_PERL%%/SOAP/Deserializer.pod
+%%SITE_PERL%%/SOAP/Trace.pod
+%%SITE_PERL%%/SOAP/Schema.pod
+%%SITE_PERL%%/SOAP/Server.pod
+%%SITE_PERL%%/SOAP/Utils.pod
 %%SITE_PERL%%/SOAP/Constants.pm
-%%SITE_PERL%%/SOAP/Serializer.pm
-%%SITE_PERL%%/SOAP/Client.pm
-%%SITE_PERL%%/SOAP/SOM.pm
-%%SITE_PERL%%/SOAP/Header.pm
+%%SITE_PERL%%/SOAP/Serializer.pod
+%%SITE_PERL%%/SOAP/Client.pod
+%%SITE_PERL%%/SOAP/SOM.pod
+%%SITE_PERL%%/SOAP/Header.pod
 %%SITE_PERL%%/SOAP/Lite.pm
-%%SITE_PERL%%/SOAP/Fault.pm
+%%SITE_PERL%%/SOAP/Lite/Deserializer/XMLSchema1999.pm
+%%SITE_PERL%%/SOAP/Lite/Deserializer/XMLSchema2001.pm
+%%SITE_PERL%%/SOAP/Lite/Deserializer/XMLSchemaSOAP1_1.pm
+%%SITE_PERL%%/SOAP/Lite/Deserializer/XMLSchemaSOAP1_2.pm
+%%SITE_PERL%%/SOAP/Lite/Packager.pm
+%%SITE_PERL%%/SOAP/Lite/Utils.pm
+%%SITE_PERL%%/SOAP/Fault.pod
 %%SITE_PERL%%/SOAP/Transport/JABBER.pm
+%%SITE_PERL%%/SOAP/Transport/LOOPBACK.pm
 %%SITE_PERL%%/SOAP/Transport/MAILTO.pm
 %%SITE_PERL%%/SOAP/Transport/POP3.pm
 %%SITE_PERL%%/SOAP/Transport/MQ.pm
@@ -51,7 +58,9 @@ bin/XMLRPCsh.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
 @dirrm %%SITE_PERL%%/Apache/XMLRPC
-@dirrm %%SITE_PERL%%/SOAP/Transport
+@dirrm %%SITE_PERL%%/SOAP/Lite/Deserializer
+@dirrm %%SITE_PERL%%/SOAP/Lite
+@dirrmtry %%SITE_PERL%%/SOAP/Transport
 @dirrm %%SITE_PERL%%/UDDI
 @dirrm %%SITE_PERL%%/XMLRPC/Transport
 @dirrm %%SITE_PERL%%/XMLRPC
