@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -125,6 +125,8 @@ CONFIGURE_ARGS+=--enable-keep-db-open
 
 .if defined(WITHOUT_AUTHDAEMOND)
 CONFIGURE_ARGS+=--with-authdaemond=no
+.else
+CONFIGURE_ARGS+=--with-authdaemond=/var/run/authdaemond/socket
 .endif
 
 .if defined(WITHOUT_LOGIN)
