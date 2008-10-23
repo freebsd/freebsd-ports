@@ -7,7 +7,7 @@
 
 PORTNAME=	numeric
 PORTVERSION=	24.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
@@ -17,16 +17,16 @@ DISTFILES=	Numeric-${PORTVERSION}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc
 EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Numeric Extension to Python
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Numeric
 PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/Numeric
 
 # PYDISTUTILS_NOEGGINFO is used as a temporary workaround to fix the plist
-PYDISTUTILS_NOEGGINFO=yes
+PYDISTUTILS_NOEGGINFO=	yes
 
 WRKSRC=		${WRKDIR}/Numeric-${PORTVERSION}
 
@@ -34,6 +34,19 @@ DOCSDIR=	${PREFIX}/share/doc/py-numeric
 EXAMPLESDIR=	${PREFIX}/share/examples/py-numeric
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/easy_install)
+# py-setuptools is installed - adjust pkg-plist to work with
+# implicit usage in setup.py
+EASY=""
+NOTEASY="@comment "
+.else
+# py-setuptools is not installed - adjust pkg-plist
+EASY="@comment "
+NOTEASY=""
+.endif
+
+PLIST_SUB+=	EASY=${EASY} NOTEASY=${NOTEASY}
 
 pre-fetch:
 .if ${PYTHON_REL} < 200
@@ -46,12 +59,14 @@ post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} -d ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/NumTut
 	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLESDIR}/NumTut
+.endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy.pdf ${DOCSDIR}
 .endif
 
