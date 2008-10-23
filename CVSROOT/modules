@@ -17726,6 +17726,7 @@ py-cups                         ports/print/py-cups
 py-curl                         ports/ftp/py-curl
 py-cxx                          ports/devel/py-cxx
 py-cyruslib                     ports/mail/py-cyruslib
+py-dal                          ports/devel/py-dal
 py-dateutil                     ports/devel/py-dateutil
 py-dbus                         ports/devel/py-dbus
 py-dbutils                      ports/databases/py-dbutils
@@ -18216,6 +18217,7 @@ py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
+py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
 py-wsgiref                      ports/www/py-wsgiref
 py-wsgiutils                    ports/devel/py-wsgiutils
 py-wxPython24                   ports/x11-toolkits/py-wxPython24
