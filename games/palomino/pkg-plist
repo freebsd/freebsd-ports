@@ -14,6 +14,7 @@ bin/palomino
 %%DOCSDIR%%/images/sprite1.png
 %%DOCSDIR%%/images/sprite2.png
 %%DOCSDIR%%/images/sprite3.png
+%%DOCSDIR%%/lua_scripts.html
 %%DOCSDIR%%/manual.css
 %%DOCSDIR%%/manual.html
 %%DOCSDIR%%/math.html
@@ -22,12 +23,12 @@ bin/palomino
 %%DOCSDIR%%/module_collision.html
 %%DOCSDIR%%/module_control.html
 %%DOCSDIR%%/module_fx.html
+%%DOCSDIR%%/module_game.html
 %%DOCSDIR%%/module_graph.html
 %%DOCSDIR%%/module_gui.html
 %%DOCSDIR%%/module_hud.html
 %%DOCSDIR%%/module_init.html
 %%DOCSDIR%%/module_input.html
-%%DOCSDIR%%/module_libnoise.html
 %%DOCSDIR%%/module_lua.html
 %%DOCSDIR%%/module_math.html
 %%DOCSDIR%%/module_object.html
@@ -37,9 +38,9 @@ bin/palomino
 %%DOCSDIR%%/module_sound.html
 %%DOCSDIR%%/module_view.html
 %%DOCSDIR%%/module_world.html
+%%DOCSDIR%%/rules.html
 %%DOCSDIR%%/scene.html
 %%DOCSDIR%%/terrain.html
-%%DOCSDIR%%/vocabulary.html
 %%DATADIR%%/data/fonts/arial.ttf
 %%DATADIR%%/data/joystick.conf
 %%DATADIR%%/data/models/README.txt
@@ -89,6 +90,17 @@ bin/palomino
 %%DATADIR%%/data/models/corsair/turn.ac
 %%DATADIR%%/data/models/corsair/vac.ac
 %%DATADIR%%/data/models/corsair/vsi.ac
+%%DATADIR%%/data/models/f14/README.txt
+%%DATADIR%%/data/models/f14/common.png
+%%DATADIR%%/data/models/f14/common2.png
+%%DATADIR%%/data/models/f14/f14-fx.ac.gz
+%%DATADIR%%/data/models/f14/f14b.osg.gz
+%%DATADIR%%/data/models/f14/grip.png
+%%DATADIR%%/data/models/f14/pilot-handle.png
+%%DATADIR%%/data/models/f14/side1.png
+%%DATADIR%%/data/models/f14/side2.png
+%%DATADIR%%/data/models/f14/topbottom1.png
+%%DATADIR%%/data/models/f14/topbottom2.png
 %%DATADIR%%/data/models/f15c/F15CCockpit.png
 %%DATADIR%%/data/models/f15c/F15CNose.png
 %%DATADIR%%/data/models/f15c/F15CRudder.png
@@ -131,6 +143,8 @@ bin/palomino
 %%DATADIR%%/data/models/mirage2000/mirage2000.ac.gz
 %%DATADIR%%/data/models/mirage2000/mirage2000.png
 %%DATADIR%%/data/models/mirage2000/mirage2000bottom.png
+%%DATADIR%%/data/models/misc/aim9.ac.gz
+%%DATADIR%%/data/models/misc/aim9.png
 %%DATADIR%%/data/models/misc/crashTruck.ac.gz
 %%DATADIR%%/data/models/misc/lighthouse.ac.gz
 %%DATADIR%%/data/models/misc/lighthouse.png
@@ -376,6 +390,7 @@ bin/palomino
 %%DATADIR%%/data/palomino.conf
 %%DATADIR%%/data/physics_a4.conf
 %%DATADIR%%/data/physics_corsair.conf
+%%DATADIR%%/data/physics_f14.conf
 %%DATADIR%%/data/physics_f15.conf
 %%DATADIR%%/data/physics_f16.conf
 %%DATADIR%%/data/physics_f18.conf
@@ -434,6 +449,7 @@ bin/palomino
 %%DATADIR%%/scripts/scene_GoldenGate.lua
 %%DATADIR%%/scripts/sim.lua
 %%DATADIR%%/scripts/startup.lua
+%%DATADIR%%/scripts/tests/DerivedClass.lua
 %%DATADIR%%/scripts/tests/bools.lua
 %%DATADIR%%/scripts/tests/class_Test.lua
 %%DATADIR%%/scripts/tests/numbers.lua
@@ -442,7 +458,9 @@ bin/palomino
 %%DATADIR%%/scripts/tests/tables.lua
 %%DATADIR%%/scripts/tests/vec.lua
 %%DATADIR%%/scripts/tick.lua
+%%DATADIR%%/scripts/timer.lua
 %%DATADIR%%/scripts/views.lua
+%%DATADIR%%/scripts/weapons.lua
 @dirrm %%DATADIR%%/scripts/tests
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/data/textures
@@ -463,6 +481,7 @@ bin/palomino
 @dirrm %%DATADIR%%/data/models/f18
 @dirrm %%DATADIR%%/data/models/f16
 @dirrm %%DATADIR%%/data/models/f15c
+@dirrm %%DATADIR%%/data/models/f14
 @dirrm %%DATADIR%%/data/models/corsair
 @dirrm %%DATADIR%%/data/models/a4
 @dirrm %%DATADIR%%/data/models
