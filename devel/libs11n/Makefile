@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libs11n
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	s11n
 DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for easily serializing a wide variety of objects
