@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	6.0.6
-PORTREVISION?=	1
+PORTVERSION=	6.0.7
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-6.0
@@ -22,6 +22,8 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
+		--infodir=${PREFIX}/info \
+		--mandir=${PREFIX}/man \
 		--without-debug \
 		--without-readline \
 		--without-libedit \
