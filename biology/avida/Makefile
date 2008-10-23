@@ -6,47 +6,32 @@
 #
 
 PORTNAME=	avida
-PORTVERSION=	2.4.3
+PORTVERSION=	2.8.1
 CATEGORIES=	biology
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+USE_CMAKE=	yes
+USE_GCC=	4.2+
 
-CMAKE_ARGS=	-DPROJECT_BINARY_DIR=${WRKSRC}/build/work \
-		-DAVD_CONSISTENCY_TEST_PRIMITIVE:BOOL=OFF \
-		-DAVD_GUI_NCURSES:BOOL=ON \
-		-DAVD_PRIMITIVE:BOOL=ON \
-		-DAVD_UNIT_TESTS:BOOL=OFF\
-		-DCMAKE_BUILD_TYPE:STRING=Release
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PORTDOCS=	*
 
-do-build:
-	@(cd ${BUILD_WRKSRC}; \
-	${MKDIR} build build/work; \
-	cd build; \
-	cmake ${CMAKE_ARGS} ..; \
-	${MAKE})
-
-do-install:
-	@(cd ${BUILD_WRKSRC}; \
-	cd build; \
-	${MAKE} install)
+post-extract:
+	@${RM} -f ${WRKSRC}/documentation/.[D_]*
 
 post-install:
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
-	(cd ${WRKSRC}/build/work/work; \
-	${INSTALL_PROGRAM} AvidaConsole ${PREFIX}/bin; \
-	${INSTALL_PROGRAM} task_event_gen ${PREFIX}/bin; \
-	${INSTALL_DATA} analyze.cfg environment.cfg events.cfg genesis genesis.4stack inst_set.4stack inst_set.default organism.default ${PREFIX}/share/${PORTNAME} )
+	${INSTALL_PROGRAM} ${WRKSRC}/work/avida ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/work/avida-viewer ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/work/*.cfg ${WRKSRC}/work/*.org ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	(${CP} -RP ${WRKSRC}/documentation/ ${DOCSDIR})
+	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
