@@ -16,6 +16,7 @@ MAINTAINER=		daniel@roe.ch
 COMMENT=		Library that allows email systems such as Exim to check SPF records
 
 DEPRECATED=		Superceded by mail/libspf2
+EXPIRATION_DATE=	2008-11-23
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=		yes
