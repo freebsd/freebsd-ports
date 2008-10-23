@@ -24,6 +24,7 @@ bin/heredoc
 bin/homeof
 bin/if
 bin/ifthenelse
+bin/ifte
 bin/import
 bin/importas
 bin/loopwhile
@@ -33,6 +34,7 @@ bin/piperw
 bin/redirfd
 bin/runblock
 bin/shift
+bin/tryexec
 bin/umask
 bin/unexport
 bin/wait
@@ -77,6 +79,7 @@ lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/heredoc.html
 %%PORTDOCS%%%%DOCSDIR%%/homeof.html
 %%PORTDOCS%%%%DOCSDIR%%/if.html
+%%PORTDOCS%%%%DOCSDIR%%/ifte.html
 %%PORTDOCS%%%%DOCSDIR%%/ifthenelse.html
 %%PORTDOCS%%%%DOCSDIR%%/import.html
 %%PORTDOCS%%%%DOCSDIR%%/importas.html
@@ -90,6 +93,7 @@ lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/redirfd.html
 %%PORTDOCS%%%%DOCSDIR%%/runblock.html
 %%PORTDOCS%%%%DOCSDIR%%/shift.html
+%%PORTDOCS%%%%DOCSDIR%%/tryexec.html
 %%PORTDOCS%%%%DOCSDIR%%/umask.html
 %%PORTDOCS%%%%DOCSDIR%%/unexport.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
