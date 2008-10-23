@@ -9,7 +9,7 @@ PORTNAME=	file
 PORTVERSION=	4.26
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
-		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
+		ftp://ftp.gw.com/mirrors/unix/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
 MAINTAINER=	jharris@widomaker.com
