@@ -9,7 +9,7 @@ PORTNAME=	libunrar
 PORTVERSION=	3.7.8
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	RAR
+MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
