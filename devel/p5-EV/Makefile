@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	EV
-PORTVERSION=	3.44
+PORTVERSION=	3.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
@@ -19,6 +19,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
 
 MAN3=	EV.3 \
-	EV::MakeMaker.3
+	EV::MakeMaker.3 \
+	EV::libev.3
 
 .include <bsd.port.mk>
