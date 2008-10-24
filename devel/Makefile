@@ -1217,6 +1217,7 @@
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-EvalContext
     SUBDIR += p5-Devel-Events
+    SUBDIR += p5-Devel-Events-Objects
     SUBDIR += p5-Devel-Gladiator
     SUBDIR += p5-Devel-GlobalDestruction
     SUBDIR += p5-Devel-Leak
