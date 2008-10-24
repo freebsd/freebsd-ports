@@ -2326,6 +2326,7 @@
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
+    SUBDIR += rsvndump
     SUBDIR += rth
     SUBDIR += ruby-amstd
     SUBDIR += ruby-aspectr
