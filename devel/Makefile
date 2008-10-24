@@ -1515,6 +1515,7 @@
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-Singleton
     SUBDIR += p5-MooseX-Storage
+    SUBDIR += p5-MooseX-StrictConstructor
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-Mouse

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooseX/StrictConstructor.pm
+%%SITE_PERL%%/MooseX/StrictConstructor/Role/Meta/Method/Constructor.pm
+%%SITE_PERL%%/MooseX/StrictConstructor/Role/Object.pm
+@dirrm %%SITE_PERL%%/MooseX/StrictConstructor/Role/Meta/Method
+@dirrm %%SITE_PERL%%/MooseX/StrictConstructor/Role/Meta
+@dirrm %%SITE_PERL%%/MooseX/StrictConstructor/Role
+@dirrm %%SITE_PERL%%/MooseX/StrictConstructor
+@dirrmtry %%SITE_PERL%%/MooseX
