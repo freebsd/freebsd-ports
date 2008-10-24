@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.58
+PORTVERSION=	4.60
 CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
 DISTNAME=	lzma${PORTVERSION:S/.//g}
@@ -24,11 +24,18 @@ BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/LZMA_Alone
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
+.ifdef(WITH_LZMA_PROB32)
+#increase the speed of decoding on some 32-bit CPUs, at the expense of doubled
+#memory usage for CLzmaDec::probs
+CFLAGS+=	-D_LZMA_PROB32
+.endif
+.ifdef(WITH_LZMA_SIZE_OPT)
+#enable some optimizations in LZMA Decoder to get smaller executable code
+CFLAGS+=	-D_LZMA_SIZE_OPT
+.endif
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|4\.56|${DISTVERSION}|' \
-		${BUILD_WRKSRC}/LzmaAlone.cpp
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
 		${WRKSRC}/CPP/7zip/Common/FileStreams.h
 	@${REINPLACE_CMD} -e \
@@ -41,5 +48,8 @@ do-install:
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
+
+regression-test: build
+	${BUILD_WRKSRC}/${PORTNAME} b
 
 .include <bsd.port.mk>
