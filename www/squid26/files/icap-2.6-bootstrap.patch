@@ -7,10 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2008-06-29
+Patch last updated: 2008-10-20
 
---- configure.orig	2008-06-29 14:48:32.000000000 +0200
-+++ configure	2008-06-29 14:48:41.000000000 +0200
+--- configure.orig	2008-10-20 20:42:14.000000000 +0200
++++ configure	2008-10-20 20:42:58.000000000 +0200
 @@ -728,6 +728,8 @@
  ENABLE_PINGER_FALSE
  USE_DELAY_POOLS_TRUE
@@ -43,8 +43,8 @@ Patch last updated: 2008-06-29
  
  # Define the identity of the package.
   PACKAGE='squid'
-- VERSION='2.6.STABLE21'
-+ VERSION='2.6.STABLE21+ICAP'
+- VERSION='2.6.STABLE22'
++ VERSION='2.6.STABLE22+ICAP'
  
  
  cat >>confdefs.h <<_ACEOF
@@ -89,7 +89,7 @@ Patch last updated: 2008-06-29
  # Check whether --enable-useragent-log was given.
  if test "${enable_useragent_log+set}" = set; then
    enableval=$enable_useragent_log;  if test "$enableval" = "yes" ; then
-@@ -24861,6 +24902,8 @@
+@@ -24870,6 +24911,8 @@
  	srand48 \
  	srandom \
  	statfs \
@@ -98,7 +98,7 @@ Patch last updated: 2008-06-29
  	strsep \
  	strtoll \
  	sysconf \
-@@ -25566,6 +25609,52 @@
+@@ -25575,6 +25618,52 @@
  
  
  if false; then
@@ -151,7 +151,7 @@ Patch last updated: 2008-06-29
    NEED_OWN_STRSEP_TRUE=
    NEED_OWN_STRSEP_FALSE='#'
  else
-@@ -27156,6 +27245,20 @@
+@@ -27166,6 +27255,20 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -172,7 +172,7 @@ Patch last updated: 2008-06-29
  if test -z "${USE_SNMP_TRUE}" && test -z "${USE_SNMP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_SNMP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -27317,6 +27420,34 @@
+@@ -27327,6 +27430,34 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -207,7 +207,7 @@ Patch last updated: 2008-06-29
  if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -28063,6 +28194,8 @@
+@@ -28073,6 +28204,8 @@
  ENABLE_PINGER_FALSE!$ENABLE_PINGER_FALSE$ac_delim
  USE_DELAY_POOLS_TRUE!$USE_DELAY_POOLS_TRUE$ac_delim
  USE_DELAY_POOLS_FALSE!$USE_DELAY_POOLS_FALSE$ac_delim
@@ -216,7 +216,7 @@ Patch last updated: 2008-06-29
  USE_SNMP_TRUE!$USE_SNMP_TRUE$ac_delim
  USE_SNMP_FALSE!$USE_SNMP_FALSE$ac_delim
  SNMPLIB!$SNMPLIB$ac_delim
-@@ -28132,6 +28265,10 @@
+@@ -28142,6 +28275,10 @@
  USE_DEVPOLL_FALSE!$USE_DEVPOLL_FALSE$ac_delim
  NEED_OWN_SNPRINTF_TRUE!$NEED_OWN_SNPRINTF_TRUE$ac_delim
  NEED_OWN_SNPRINTF_FALSE!$NEED_OWN_SNPRINTF_FALSE$ac_delim
@@ -227,7 +227,7 @@ Patch last updated: 2008-06-29
  NEED_OWN_STRSEP_TRUE!$NEED_OWN_STRSEP_TRUE$ac_delim
  NEED_OWN_STRSEP_FALSE!$NEED_OWN_STRSEP_FALSE$ac_delim
  REGEXLIB!$REGEXLIB$ac_delim
-@@ -28142,7 +28279,7 @@
+@@ -28152,7 +28289,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  

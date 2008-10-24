@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.21
+PORTVERSION=	2.6.22
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE21
+DISTNAME=	squid-2.6.STABLE22
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -115,7 +115,7 @@ COMMENT=	HTTP Caching Proxy
 LATEST_LINK=	squid26
 
 DEPRECATED=	The 2.6 series is no longer actively maintained by the Squid developers
-EXPIRATION_DATE=	2008-12-31
+EXPIRATION_DATE=	2009-03-31
 
 CONFLICTS=	squid-2.[^6]* squid-3.* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
