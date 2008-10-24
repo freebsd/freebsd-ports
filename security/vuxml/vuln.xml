@@ -87,7 +87,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>A new xine-lib version is now available. This release contains
 	    some security fixes, notably a DoS via corrupted Ogg files
 	    (CVE-2008-3231), some related fixes, and fixes for a few possible
-	    buffer overflows. </p>
+	    buffer overflows.</p>
 	</blockquote>
       </body>
     </description>
