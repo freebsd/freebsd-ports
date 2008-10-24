@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tkabber-plugins
-PORTVERSION=	20080323
+PORTVERSION=	20081023
 CATEGORIES=	net-im
-MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
+MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	External Plugins for Tkabber
 
-RUN_DEPENDS=	tkabber-devel>=0.10.a.20071015:${PORTSDIR}/net-im/tkabber-devel
+RUN_DEPENDS=	tkabber-devel>=0.11.1.a.20081023:${PORTSDIR}/net-im/tkabber-devel
 
 USE_BZIP2=	yes
 
@@ -23,10 +23,11 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUBDIRS=	aniemoticons attline bc browser checkers chess ctcomp \
-		custom-urls cyrillize debug ejabberd floatinglog georoster \
-		gmail iconsets jidlink latex mute openurl osd presencecmd \
-		quiz renju reversi socials spy tclchat tkabber-khim traffic \
-		whiteboard
+		custom-urls cyrillize debug ejabberd floatingcontact \
+		floatinglog georoster gmail iconsets jidlink latex mute \
+		openurl osd presencecmd quiz quotelastmsg receipts renju \
+		reversi singularity socials spy stripes tclchat tkabber-khim \
+		traffic unixkeys whiteboard
 
 do-install:
 	${MKDIR} ${DATADIR}

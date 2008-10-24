@@ -14,6 +14,7 @@
 %%DATADIR%%/bc/ru.dic
 %%DATADIR%%/browser/browser.tcl
 %%DATADIR%%/browser/msgs/de.msg
+%%DATADIR%%/browser/msgs/es.msg
 %%DATADIR%%/browser/msgs/pl.msg
 %%DATADIR%%/browser/msgs/ru.msg
 %%DATADIR%%/checkers/README
@@ -120,6 +121,9 @@
 %%DATADIR%%/ejabberd/msgs/pl.msg
 %%DATADIR%%/ejabberd/msgs/ru.msg
 %%DATADIR%%/ejabberd/msgs/uk.msg
+%%DATADIR%%/floatingcontact/README
+%%DATADIR%%/floatingcontact/floatingcontact.tcl
+%%DATADIR%%/floatingcontact/msgs/ru.msg
 %%DATADIR%%/floatinglog/AUTHORS
 %%DATADIR%%/floatinglog/ChangeLog
 %%DATADIR%%/floatinglog/INSTALL
@@ -433,6 +437,7 @@
 %%DATADIR%%/jidlink/README
 %%DATADIR%%/jidlink/jidlink.tcl
 %%DATADIR%%/jidlink/msgs/de.msg
+%%DATADIR%%/jidlink/msgs/es.msg
 %%DATADIR%%/jidlink/msgs/pl.msg
 %%DATADIR%%/jidlink/msgs/ru.msg
 %%DATADIR%%/jidlink/plugins/dtcp.tcl
@@ -465,6 +470,24 @@
 %%DATADIR%%/presencecmd/presencecmd.tcl
 %%DATADIR%%/quiz/quiz.tcl
 %%DATADIR%%/quiz/quizdata.txt
+%%DATADIR%%/quotelastmsg/AUTHORS
+%%DATADIR%%/quotelastmsg/INSTALL
+%%DATADIR%%/quotelastmsg/README
+%%DATADIR%%/quotelastmsg/license.terms
+%%DATADIR%%/quotelastmsg/quotelastmsg.tcl
+%%DATADIR%%/receipts/AUTHORS
+%%DATADIR%%/receipts/INSTALL
+%%DATADIR%%/receipts/README
+%%DATADIR%%/receipts/TODO
+%%DATADIR%%/receipts/images/confirmed.gif
+%%DATADIR%%/receipts/images/unconfirmed.gif
+%%DATADIR%%/receipts/license.terms
+%%DATADIR%%/receipts/msgs/de.msg
+%%DATADIR%%/receipts/msgs/es.msg
+%%DATADIR%%/receipts/msgs/pl.msg
+%%DATADIR%%/receipts/msgs/ru.msg
+%%DATADIR%%/receipts/receipts.tcl
+%%DATADIR%%/renju/msgs/es.msg
 %%DATADIR%%/renju/msgs/ru.msg
 %%DATADIR%%/renju/pixmaps/black/b.gif
 %%DATADIR%%/renju/pixmaps/black/bot.gif
@@ -511,6 +534,11 @@
 %%DATADIR%%/reversi/pixmaps/xboard/wf.gif
 %%DATADIR%%/reversi/proto
 %%DATADIR%%/reversi/reversi.tcl
+%%DATADIR%%/singularity/AUTHORS
+%%DATADIR%%/singularity/INSTALL
+%%DATADIR%%/singularity/README
+%%DATADIR%%/singularity/license.terms
+%%DATADIR%%/singularity/singularity.tcl
 %%DATADIR%%/socials/ChangeLog
 %%DATADIR%%/socials/README
 %%DATADIR%%/socials/socials.en
@@ -522,6 +550,12 @@
 %%DATADIR%%/spy/msgs/ru.msg
 %%DATADIR%%/spy/msgs/uk.msg
 %%DATADIR%%/spy/spy.tcl
+%%DATADIR%%/stripes/AUTHORS
+%%DATADIR%%/stripes/INSTALL
+%%DATADIR%%/stripes/README
+%%DATADIR%%/stripes/license.terms
+%%DATADIR%%/stripes/stripes.tcl
+%%DATADIR%%/tclchat/msgs/es.msg
 %%DATADIR%%/tclchat/msgs/ru.msg
 %%DATADIR%%/tclchat/tclchat.tcl
 %%DATADIR%%/tclchat/tclchat_commands.tcl
@@ -534,6 +568,7 @@
 %%DATADIR%%/tkabber-khim/khim/da.msg
 %%DATADIR%%/tkabber-khim/khim/de.msg
 %%DATADIR%%/tkabber-khim/khim/en.msg
+%%DATADIR%%/tkabber-khim/khim/es.msg
 %%DATADIR%%/tkabber-khim/khim/khim.tcl
 %%DATADIR%%/tkabber-khim/khim/pkgIndex.tcl
 %%DATADIR%%/tkabber-khim/khim/pl.msg
@@ -552,6 +587,12 @@
 %%DATADIR%%/traffic/msgs/uk.msg
 %%DATADIR%%/traffic/traffic.tcl
 %%DATADIR%%/traffic/version.txt
+%%DATADIR%%/unixkeys/AUTHORS
+%%DATADIR%%/unixkeys/INSTALL
+%%DATADIR%%/unixkeys/README
+%%DATADIR%%/unixkeys/TODO
+%%DATADIR%%/unixkeys/license.terms
+%%DATADIR%%/unixkeys/unixkeys.tcl
 %%DATADIR%%/whiteboard/ChangeLog
 %%DATADIR%%/whiteboard/msgs/de.msg
 %%DATADIR%%/whiteboard/msgs/es.msg
@@ -591,6 +632,8 @@
 @dirrm %%DATADIR%%/debug
 @dirrm %%DATADIR%%/ejabberd/msgs
 @dirrm %%DATADIR%%/ejabberd
+@dirrm %%DATADIR%%/floatingcontact/msgs
+@dirrm %%DATADIR%%/floatingcontact
 @dirrm %%DATADIR%%/floatinglog/msgs
 @dirrm %%DATADIR%%/floatinglog
 @dirrm %%DATADIR%%/georoster/msgs
@@ -643,6 +686,11 @@
 @dirrm %%DATADIR%%/presencecmd/msgs
 @dirrm %%DATADIR%%/presencecmd
 @dirrm %%DATADIR%%/quiz
+@dirrm %%DATADIR%%/quotelastmsg/msgs
+@dirrm %%DATADIR%%/quotelastmsg
+@dirrm %%DATADIR%%/receipts/images
+@dirrm %%DATADIR%%/receipts/msgs
+@dirrm %%DATADIR%%/receipts
 @dirrm %%DATADIR%%/renju/pixmaps/stones
 @dirrm %%DATADIR%%/renju/pixmaps/black
 @dirrm %%DATADIR%%/renju/pixmaps
@@ -653,9 +701,12 @@
 @dirrm %%DATADIR%%/reversi/pixmaps
 @dirrm %%DATADIR%%/reversi/msgs
 @dirrm %%DATADIR%%/reversi
+@dirrm %%DATADIR%%/singularity/msgs
+@dirrm %%DATADIR%%/singularity
 @dirrm %%DATADIR%%/socials
 @dirrm %%DATADIR%%/spy/msgs
 @dirrm %%DATADIR%%/spy
+@dirrm %%DATADIR%%/stripes
 @dirrm %%DATADIR%%/tclchat/msgs
 @dirrm %%DATADIR%%/tclchat
 @dirrm %%DATADIR%%/tkabber-khim/khim
@@ -663,6 +714,7 @@
 @dirrm %%DATADIR%%/tkabber-khim
 @dirrm %%DATADIR%%/traffic/msgs
 @dirrm %%DATADIR%%/traffic
+@dirrm %%DATADIR%%/unixkeys
 @dirrm %%DATADIR%%/whiteboard/msgs
 @dirrm %%DATADIR%%/whiteboard
 @dirrm %%DATADIR%%
