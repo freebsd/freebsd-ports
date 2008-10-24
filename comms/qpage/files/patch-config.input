@@ -1,5 +1,5 @@
---- config.input.orig	Thu Nov  5 07:05:36 1998
-+++ config.input	Mon May 17 23:14:53 2004
+--- config.input.orig	1998-11-05 01:05:36.000000000 -0500
++++ config.input	2008-10-19 14:08:35.109933521 -0400
 @@ -20,7 +20,7 @@
  # See the QuickPage documentation for complete details about
  # the syntax of the configuration file.
@@ -23,7 +23,16 @@
  # assigned to that user.
  #
 -DAEMON_USER="daemon"
-+DAEMON_USER="uucp"
++DAEMON_USER="%%WITH_QPAGE_USER%%"
+ 
+ 
+ #
+@@ -59,7 +59,7 @@
+ # used by QuickPage to log messages.  See the syslog
+ # documentation (i.e. "man syslog") for more information.
+ #
+-SYSLOG_FACILITY=LOG_DAEMON
++SYSLOG_FACILITY=%%WITH_QPAGE_SYSLOG_FACILITY%%
  
  
  #
