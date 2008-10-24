@@ -7,6 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.6.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -55,8 +56,8 @@ PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
 		p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
-
 LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
