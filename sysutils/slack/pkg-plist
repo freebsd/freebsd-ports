@@ -1,0 +1,20 @@
+@unexec if cmp -s %D/etc/slack.conf.sample %D/etc/slack.conf; then rm -f %D/etc/slack.conf; fi
+etc/slack.conf.sample
+@exec if [ ! -f %D/etc/slack.conf ]; then cp -p %D/%F %B/slack.conf; chmod 644 %B/slack.conf; fi
+bin/slack-diff
+lib/slack/Slack.pm
+libexec/slack/slack-getroles
+libexec/slack/slack-installfiles
+libexec/slack/slack-rolediff
+libexec/slack/slack-runscript
+libexec/slack/slack-stage
+libexec/slack/slack-sync
+sbin/slack
+@exec install -d -m 0700 /var/lib/slack
+@exec install -d -m 0700 /var/cache/slack
+@unexec rmdir /var/lib/slack 2>/dev/null || true
+@unexec rmdir /var/lib 2>/dev/null || true
+@unexec rmdir /var/cache/slack 2>/dev/null || true
+@unexec rmdir /var/cache 2>/dev/null || true
+@dirrm lib/slack
+@dirrm libexec/slack
