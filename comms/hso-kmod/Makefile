@@ -7,6 +7,7 @@
 
 PORTNAME=	hso
 PORTVERSION=	20080514
+PORTREVISION=	1
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -30,9 +31,14 @@ MAN4=	hso.4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800045
+BROKEN=	Does not compile with the new MPSAFE TTY layer
+.endif
+
 .if !defined(WITHOUT_HSOCTL)
-DISTFILES+=	hsoctl-${PORTVERSION}${EXTRACT_SUFX}
-WRKSRC_HSOCTL=	${WRKDIR}/hsoctl-${PORTVERSION}
+HSOCTL_VERSION=	20080812
+DISTFILES+=	hsoctl-${HSOCTL_VERSION}${EXTRACT_SUFX}
+WRKSRC_HSOCTL=	${WRKDIR}/hsoctl-${HSOCTL_VERSION}
 PLIST_SUB+=	PL_HSOCTL=""
 MAN1=	hsoctl.1
 .else
