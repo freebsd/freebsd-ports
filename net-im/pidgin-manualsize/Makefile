@@ -14,7 +14,7 @@ MASTER_SITES=	http://myfotomx.com/files/ \
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jsatkinson@embarqmail.com
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Plugin to allow manual resizing of Pidgin's message input area
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
