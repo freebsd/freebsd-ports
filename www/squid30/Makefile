@@ -94,15 +94,14 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
-PATCHFILES=
-PATCH_DIST_STRIP=	-p1
+PATCHFILES=	b8920.patch
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	9
+SQUID_STABLE_VER=	10
 
 CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
