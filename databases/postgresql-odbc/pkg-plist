@@ -15,6 +15,6 @@ lib/psqlodbcw.so
 %%PORTDOCS%%%%DOCSDIR%%/odbc/unix-compilation.html
 %%PORTDOCS%%%%DOCSDIR%%/odbc/win32-compilation.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/odbc
-share/postgresql/odbc/odbc-drop.sql
-share/postgresql/odbc/odbc.sql
-@dirrm share/postgresql/odbc
+%%PORTDATA%%%%DATADIR%%/odbc/odbc-drop.sql
+%%PORTDATA%%%%DATADIR%%/odbc/odbc.sql
+%%PORTDATA%%@dirrm %%DATADIR%%/odbc

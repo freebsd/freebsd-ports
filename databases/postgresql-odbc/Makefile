@@ -20,7 +20,7 @@
 # this is considered to be a part of the `postgresql' port.
 
 PORTNAME=		postgresql
-PORTVERSION=		08.03.0200
+PORTVERSION=		08.03.0300
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
@@ -55,18 +55,13 @@ PKGNAMESUFFIX=	-iodbc
 DATADIR_1=	${DATADIR}/odbc
 DOCSDIR_1=	${DOCSDIR}/odbc
 post-install:
+.if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR_1}
-	${INSTALL_DATA} ${WRKSRC}/odbc.sql ${DATADIR_1}
-	${INSTALL_DATA} ${WRKSRC}/odbc-drop.sql ${DATADIR_1}
+	${INSTALL_DATA} ${WRKSRC}/*.sql ${DATADIR_1}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR_1}
-	${TAR} -C ${WRKSRC}/docs --exclude '*Makefile*' -cf - . \
-	 | ${TAR} -C ${DOCSDIR_1} --unlink -xf -
-.if !defined(INSTALL_AS_USER)
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR_1}
-	${FIND} ${DOCSDIR_1} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	${FIND} ${DOCSDIR_1} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-.endif
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR_1}
 .endif
 
 .include <bsd.port.mk>
