@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a4a3e9c-a1fe-11dd-81be-001c2514716c">
+    <topic>wordpress -- snoopy "_httpsrequest()" shell command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<name>wordpress-mu</name>
+	<range><lt>2.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Wordpress development team reports:</p>
+	<blockquote cite="http://wordpress.org/development/2008/10/wordpress-263/">
+	  <p>A <a href="http://secunia.com/Advisories/32361/">vulnerability</a>
+	    in the <a href="http://sourceforge.net/projects/snoopy/">Snoopy</a>
+	    library was announced today.  WordPress uses Snoopy to fetch the feeds
+	    shown in the Dashboard.   Although this seems to be a low risk
+	    vulnerability for WordPress users, we wanted to get an update out
+	    immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31887</bid>
+      <url>http://secunia.com/Advisories/32361/</url>
+      <url>http://wordpress.org/development/2008/10/wordpress-263/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-23</discovery>
+      <entry>2008-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="706c9eef-a077-11dd-b413-001372fd0af2">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
