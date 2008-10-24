@@ -8,7 +8,7 @@
 
 PORTNAME=	PyLucene
 PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A GCJ-compiled version of Java Lucene integrated with Python
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc
-EXTRACT_DEPENDS=lucene>=2.3.2:${PORTSDIR}/textproc/lucene:extract
+		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc \
+		${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
 USE_PYTHON=	2.4+
 USE_GCC=	4.2+
@@ -37,8 +37,8 @@ MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} PYTHON=${PYTHON_CMD} \
 		LDFLAGS+=-L${LOCALBASE}/lib PYTHON_INC=${PYTHON_INCLUDEDIR} \
 		PYTHON_SITE=${PYTHON_SITELIBDIR}
 
-post-extract:
-		${CP} -R ${PORTSDIR}/textproc/lucene/work/lucene-${PORTVERSION} ${WRKSRC}/lucene-java-${PORTVERSION}
+pre-build:
+		${CP} -R ${WRKDIR}/../../lucene/work/lucene-${PORTVERSION} ${WRKSRC}/lucene-java-${PORTVERSION}
 
 #regression-test:
 #		cd ${WRKSRC}; env ${MAKE_ENV} ${GMAKE} test
