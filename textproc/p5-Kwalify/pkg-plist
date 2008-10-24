@@ -1,0 +1,7 @@
+bin/pkwalify
+%%SITE_PERL%%/Kwalify.pm
+%%SITE_PERL%%/Schema/Kwalify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwalify/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwalify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/Schema

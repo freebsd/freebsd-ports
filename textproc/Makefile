@@ -410,6 +410,7 @@
     SUBDIR += p5-IO-CSVHeaderFile
     SUBDIR += p5-JavaScript-Minifier-XS
     SUBDIR += p5-KinoSearch
+    SUBDIR += p5-Kwalify
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Conjunction
     SUBDIR += p5-Lingua-EN-AddressParse
