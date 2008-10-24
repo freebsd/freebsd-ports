@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	File
-PORTVERSION=	1.3.0r1
-PORTEPOCH=	1
+PORTVERSION=	1.3.0
+PORTEPOCH=	2
 CATEGORIES=	sysutils www pear
-DISTNAME=	${PORTNAME}-1.3.0RC1
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR common file and directory routines
