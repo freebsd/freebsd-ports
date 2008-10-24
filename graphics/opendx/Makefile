@@ -50,13 +50,14 @@ LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=	--without-netcdf
 .endif
 
-.if !defined(WITHOUT_JAVA)
+.if defined(WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
 RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
-CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar	\
-			--with-java40jar-path=${JAVALIBDIR}/java40.jar
+CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar \
+			--with-java40jar-path=${JAVALIBDIR}/java40.jar \
+			--with-jni-path=${JAVA_HOME}/include:${JAVA_HOME}/include/freebsd
 PLIST_SUB+=	JAVA=""
 DIR2PRUNE=	dx/java/user dx/java/server/nets
 .else
@@ -67,6 +68,10 @@ PLIST_SUB+=	JAVA="@comment "
 PLIST_SUB+=	UNAMEP=${ARCH}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_JAVA) && ${ARCH} != "i386"
+BROKEN=		does not build
+.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
@@ -82,7 +87,7 @@ post-patch:
 
 post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-.if !defined(WITHOUT_JAVA)
+.if defined(WITH_JAVA)
 	${CHMOD} 0775 ${PREFIX}/dx/java/server/nets
 	${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
 	@${ECHO} "---------------------------------------------------------"	\
