@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DBICx/TestDatabase.pm
+%%SITE_PERL%%/DBICx/TestDatabase/Subclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/TestDatabase/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/TestDatabase
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/DBICx/TestDatabase
+@dirrmtry %%SITE_PERL%%/DBICx
