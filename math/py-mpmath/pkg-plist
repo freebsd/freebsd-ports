@@ -191,7 +191,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/interface.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/navigation.png
