@@ -663,6 +663,7 @@
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill
+    SUBDIR += slack
     SUBDIR += sleuthkit
     SUBDIR += slmon
     SUBDIR += sloth

@@ -1,0 +1,8 @@
+slack is an evolution from the usual "put files in some central directory"
+that is fairly common practice. It's descended from an earlier system its
+author also wrote, called "subsets", and uses a multi-stage rsync to fix
+some of the problems he had there.
+
+Basically, it's a glorified wrapper around rsync.
+
+WWW: http://code.google.com/p/slack/

@@ -1,0 +1,187 @@
+diff -uNr ./Makefile.common ../slack-0.15.2/Makefile.common
+--- ./Makefile.common	2008-04-20 18:06:15.000000000 -0700
++++ ../slack-0.15.2/Makefile.common	2008-10-05 09:04:50.000000000 -0700
+@@ -6,7 +6,7 @@
+ 
+ DESTDIR		=
+ 
+-prefix		= /
++prefix		=
+ exec_prefix	= /usr
+ sysconfdir	= ${prefix}/etc
+ mandir		= ${exec_prefix}/share/man
+diff -uNr ./src/Makefile ../slack-0.15.2/src/Makefile
+--- ./src/Makefile	2008-04-20 18:06:15.000000000 -0700
++++ ../slack-0.15.2/src/Makefile	2008-10-06 22:48:40.000000000 -0700
+@@ -2,35 +2,53 @@
+
+ include ../Makefile.common
+ 
++BUILDDIR = build
++
+ BACKENDS = slack-getroles slack-installfiles slack-runscript slack-sync slack-stage slack-rolediff
+ 
+-all:
++TARGETS = $(addprefix $(BUILDDIR)/,$(BACKENDS)) \
++	  $(BUILDDIR)/Slack.pm \
++	  $(BUILDDIR)/slack \
++	  $(BUILDDIR)/slack-diff \
++	  $(BUILDDIR)/slack.conf
++
++all: $(TARGETS)
++
++$(BUILDDIR)/%: %
++	mkdir -p $(BUILDDIR)
++	sed -e 's#@SYSCONFDIR@#$(sysconfdir)#g' \
++	-e 's#@SLACK_LIBDIR@#$(slack_libdir)#g' \
++	-e 's#@SLACK_LIBEXECDIR@#$(slack_libexecdir)#g' \
++	-e 's#@SLACK_LOCALSTATEDIR@#$(slack_localstatedir)#g' \
++	-e 's#@SLACK_LOCALCACHEDIR@#$(slack_localcachedir)#g' $< > $@
+ 
+ install: install-bin install-conf install-lib install-man
+ 
+ install-bin: all
+ 	$(MKDIR) $(DESTDIR)$(sbindir)
+-	$(INSTALL) slack $(DESTDIR)$(sbindir)
++	$(INSTALL) $(BUILDDIR)/slack $(DESTDIR)$(sbindir)
+ 	$(MKDIR) $(DESTDIR)$(bindir)
+-	$(INSTALL) slack-diff $(DESTDIR)$(bindir)
++	$(INSTALL) $(BUILDDIR)/slack-diff $(DESTDIR)$(bindir)
+ 	$(MKDIR) $(DESTDIR)$(slack_libexecdir)
+ 	@set -ex;\
+ 	for i in $(BACKENDS); do \
+-	$(INSTALL) $$i $(DESTDIR)$(slack_libexecdir); done
++	$(INSTALL) $(BUILDDIR)/$$i $(DESTDIR)$(slack_libexecdir); done
+ 	$(INSTALL) -d -m $(PRIVDIRMODE) $(DESTDIR)$(slack_localstatedir)
+ 	$(INSTALL) -d -m $(PRIVDIRMODE) $(DESTDIR)$(slack_localcachedir)
+ 
+ install-conf: all
+ 	$(MKDIR) $(DESTDIR)$(sysconfdir)
+-	$(INSTALL) -m 0644 slack.conf $(DESTDIR)$(sysconfdir)
++	test -f $(DESTDIR)$(sysconfdir)/slack.conf || \
++	$(INSTALL) -m 0644 $(BUILDDIR)/slack.conf $(DESTDIR)$(sysconfdir)
+ 
+ install-lib: all
+ 	$(MKDIR) $(DESTDIR)$(slack_libdir)
+-	$(INSTALL) -m 0644 Slack.pm $(DESTDIR)$(slack_libdir)
++	$(INSTALL) -m 0644 $(BUILDDIR)/Slack.pm $(DESTDIR)$(slack_libdir)
+ 
+ install-man: all
+ 
+ clean:
++	rm -rf $(BUILDDIR)
+ 
+ realclean: clean
+ 
+diff -uNr ./src/slack ../slack-0.15.2/src/slack
+--- ./src/slack	2008-04-20 18:06:15.000000000 -0700
++++ ../slack-0.15.2/src/slack	2008-10-06 20:38:16.000000000 -0700
+@@ -19,8 +19,8 @@
+ use File::Find;
+ use POSIX; # for strftime
+ 
+-use constant LIBEXEC_DIR => '/usr/lib/slack';
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIBEXEC_DIR => '@SLACK_LIBEXECDIR@';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/slack.conf ../slack-0.15.2/src/slack.conf
+--- ./src/slack.conf	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack.conf	2008-10-06 20:37:03.000000000 -0700
+@@ -3,7 +3,7 @@
+ # See slack.conf(5)
+ ROLE_LIST=etc/roles.conf
+ SOURCE=slack-master::slack
+-CACHE=/var/cache/slack
+-STAGE=/var/lib/slack/stage
++CACHE=@SLACK_LOCALCACHEDIR@
++STAGE=@SLACK_LOCALSTATEDIR@/stage
+ ROOT=/
+-BACKUP_DIR=/var/lib/slack/backups
++BACKUP_DIR=@SLACK_LOCALSTATEDIR@/backups
+diff -uNr ./src/slack-getroles ../slack-0.15.2/src/slack-getroles
+--- ./src/slack-getroles	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack-getroles	2008-10-06 20:37:17.000000000 -0700
+@@ -17,7 +17,7 @@
+ 
+ use File::Path;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/slack-installfiles ../slack-0.15.2/src/slack-installfiles
+--- ./src/slack-installfiles	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack-installfiles	2008-10-06 20:37:26.000000000 -0700
+@@ -17,7 +17,7 @@
+ 
+ use File::Path;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/Slack.pm ../slack-0.15.2/src/Slack.pm
+--- ./src/Slack.pm	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/Slack.pm	2008-10-06 20:37:38.000000000 -0700
+@@ -19,7 +19,7 @@
+ @EXPORT    = qw();
+ @EXPORT_OK = qw();
+ 
+-$DEFAULT_CONFIG_FILE = '/etc/slack.conf';
++$DEFAULT_CONFIG_FILE = '@SYSCONFDIR@/slack.conf';
+ 
+ my $term;
+ 
+diff -uNr ./src/slack-rolediff ../slack-0.15.2/src/slack-rolediff
+--- ./src/slack-rolediff	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack-rolediff	2008-10-06 20:37:45.000000000 -0700
+@@ -18,7 +18,7 @@
+ use File::Path;
+ use File::Find;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/slack-runscript ../slack-0.15.2/src/slack-runscript
+--- ./src/slack-runscript	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack-runscript	2008-10-06 20:37:52.000000000 -0700
+@@ -17,7 +17,7 @@
+ use File::Path;
+ use File::Find;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/slack-stage ../slack-0.15.2/src/slack-stage
+--- ./src/slack-stage	2008-04-20 18:06:15.000000000 -0700
++++ ../slack-0.15.2/src/slack-stage	2008-10-06 20:38:01.000000000 -0700
+@@ -19,7 +19,7 @@
+ use File::Path;
+ use File::Find;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
+diff -uNr ./src/slack-sync ../slack-0.15.2/src/slack-sync
+--- ./src/slack-sync	2008-04-20 18:06:14.000000000 -0700
++++ ../slack-0.15.2/src/slack-sync	2008-10-06 20:38:07.000000000 -0700
+@@ -17,7 +17,7 @@
+ 
+ use File::Path;
+ 
+-use constant LIB_DIR => '/usr/lib/slack';
++use constant LIB_DIR => '@SLACK_LIBDIR@';
+ use lib LIB_DIR;
+ use Slack;
+ 
