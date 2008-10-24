@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.15.3
+DISTVERSION=	0.16.2
 CATEGORIES=	www
 MASTER_SITES=	SFE
 DISTNAME=	${PORTNAME}c-${DISTVERSION}
@@ -25,11 +25,18 @@ GNU_CONFIGURE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	bg ca da de es el fi fr he hu id it ja nl nn pl pt_BR ru sv th tr zh_CN
+LINGUAS=	bg ca da de es en@boldquot en@quot el fi fr he hu id it ja nl nn pl pt_BR ru sv \
+		sr th tr uk vi zh_CN zh_TW
 .endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
 MAN1=		aria2c.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		Does not compile on FreeBSD 6.X
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-dist_docDATA||'\
@@ -38,4 +45,4 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e '/SETMODE/d' ${WRKSRC}/config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
