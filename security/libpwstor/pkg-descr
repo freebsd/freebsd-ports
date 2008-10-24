@@ -1,0 +1,13 @@
+libpwstor is a library implementing a password storage format
+for C programmers.  This format provides a reasonable level of
+security by utilizing SHA-256 in addition to a random salt to
+mitigate dictionary and rainbow table attacks.
+
+In addition to the core functionality, libpwstor also offers
+some additional functions such as Base64 encoding and decoding.
+All functionality is implemented and designed in such a way as
+to be easy to use for C programmers of varying skill levels,
+while preserving reasonable security in the underlying storage
+format.
+
+WWW: http://sourceforge.net/projects/kageki

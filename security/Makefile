@@ -251,6 +251,7 @@
     SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libpreludedb
+    SUBDIR += libpwstor
     SUBDIR += libsectok
     SUBDIR += libssh2
     SUBDIR += libtasn1
