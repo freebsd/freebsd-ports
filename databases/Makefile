@@ -270,6 +270,7 @@
     SUBDIR += p5-DBD-mysql60
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
+    SUBDIR += p5-DBICx-MapMaker
     SUBDIR += p5-DBICx-TestDatabase
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-Abstract
