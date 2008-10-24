@@ -1,0 +1,4 @@
+This module provides a Perlish interface to the Mosso CloudFiles
+service.
+
+WWW:	http://search.cpan.org/dist/Net-Mosso-CloudFiles/
