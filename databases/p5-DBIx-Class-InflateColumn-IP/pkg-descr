@@ -1,0 +1,5 @@
+The Perl 5 module DBIx::Class::InflateColumn::IP is a DBIx::Class
+component to declare columns as IP addresses and treat them as
+NetAddr::IP objects.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-InflateColumn-IP/

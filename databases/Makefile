@@ -281,6 +281,7 @@
     SUBDIR += p5-DBIx-Class-DynamicSubclass
     SUBDIR += p5-DBIx-Class-EncodeColumns
     SUBDIR += p5-DBIx-Class-FrozenColumns
+    SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-UUIDColumns
