@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.2.7
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
 USE_GMAKE=	yes
