@@ -18,13 +18,51 @@ and manually adapted because of changes in the Squid code base.
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2007-05-17
+Patch last updated: 2008-10-20
 
 Note: ICAP client support for Squid-2 is no longer supported by
       the Squid developers. This means that even known bugs in this
       code will not be fixed. If you need ICAP support please try
       Squid-3.
 
+Index: errors/Armenian/ERR_ICAP_FAILURE
+===================================================================
+RCS file: errors/Armenian/ERR_ICAP_FAILURE
+diff -N errors/Armenian/ERR_ICAP_FAILURE
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ errors/Armenian/ERR_ICAP_FAILURE	17 May 2006 17:57:59 -0000	1.1.14.1
+@@ -0,0 +1,31 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While attempting to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++the following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++<P>
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
++<P>Your cache administrator is <A HREF="mailto:%w">%w</A>. 
++
 Index: errors/Azerbaijani/ERR_ICAP_FAILURE
 ===================================================================
 RCS file: errors/Azerbaijani/ERR_ICAP_FAILURE
@@ -1135,6 +1173,120 @@ RCS file: errors/Turkish/ERR_ICAP_FAILURE
 diff -N errors/Turkish/ERR_ICAP_FAILURE
 --- /dev/null	1 Jan 1970 00:00:00 -0000
 +++ errors/Turkish/ERR_ICAP_FAILURE	17 May 2006 17:58:00 -0000	1.1.14.1
+@@ -0,0 +1,31 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While attempting to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++the following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++<P>
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
++<P>Your cache administrator is <A HREF="mailto:%w">%w</A>. 
++
+Index: errors/Ukrainian-1251/ERR_ICAP_FAILURE
+===================================================================
+RCS file: errors/Ukrainian-1251/ERR_ICAP_FAILURE
+diff -N errors/Ukrainian-1251/ERR_ICAP_FAILURE
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ errors/Ukrainian-1251/ERR_ICAP_FAILURE	17 May 2006 17:58:00 -0000	1.1.14.1
+@@ -0,0 +1,31 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While attempting to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++the following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++<P>
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
++<P>Your cache administrator is <A HREF="mailto:%w">%w</A>. 
++
+Index: errors/Ukrainian-koi8-u/ERR_ICAP_FAILURE
+===================================================================
+RCS file: errors/Ukrainian-koi8-u/ERR_ICAP_FAILURE
+diff -N errors/Ukrainian-koi8-u/ERR_ICAP_FAILURE
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ errors/Ukrainian-koi8-u/ERR_ICAP_FAILURE	17 May 2006 17:58:00 -0000	1.1.14.1
+@@ -0,0 +1,31 @@
++<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
++<HTML><HEAD>
++<TITLE>ERROR: The requested URL could not be retrieved</TITLE>
++<STYLE type="text/css"><!--BODY{background-color:#ffffff; font-family:verdana,sans-serif}--></STYLE>
++</HEAD><BODY>
++<H1>ERROR</H1>
++<H2>The requested URL could not be retrieved</H2>
++<HR noshade size="1px">
++<P>
++While attempting to retrieve the URL:
++<A HREF="%U">%U</A>
++<P>
++the following error was encountered:
++<UL>
++<LI>
++<STRONG>
++ICAP protocol error.
++</STRONG>
++</UL>
++
++<P>
++<P>
++Some aspect of the ICAP communication failed. Possible problems:
++<UL>
++<LI>ICAP server is not reachable.
++<LI>Illegal response from ICAP server.
++</UL>
++</P>
++
++<P>Your cache administrator is <A HREF="mailto:%w">%w</A>. 
++
+Index: errors/Ukrainian-utf8/ERR_ICAP_FAILURE
+===================================================================
+RCS file: errors/Ukrainian-utf8/ERR_ICAP_FAILURE
+diff -N errors/Ukrainian-utf8/ERR_ICAP_FAILURE
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ errors/Ukrainian-utf8/ERR_ICAP_FAILURE	17 May 2006 17:58:00 -0000	1.1.14.1
 @@ -0,0 +1,31 @@
 +<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 +<HTML><HEAD>
