@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ppmd
-PORTVERSION=	4.57
+PORTVERSION=	4.58
 CATEGORIES=	archivers
 MASTER_SITES=	SF/p7zip
 PKGNAMESUFFIX=	-7z
@@ -26,10 +26,13 @@ MAKE_ARGS=	PROG=${PORTNAME} CXX="${CXX}" LIB="${PTHREAD_LIBS}"
 post-patch:
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
 		${WRKSRC}/CPP/7zip/Common/FileStreams.h
-	@${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|;s|-o|${CFLAGS} -o|'\
+	@${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|;s|-o |${CFLAGS} -o |'\
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PKGBASE}
+
+regression-test: build
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
