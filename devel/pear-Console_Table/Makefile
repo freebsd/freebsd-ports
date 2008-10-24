@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_Table
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
