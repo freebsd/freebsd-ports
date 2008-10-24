@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Test/Fixture/DBIC/Schema.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixture/DBIC/Schema/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixture/DBIC/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixture/DBIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fixture
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/Test/Fixture/DBIC
+@dirrmtry %%SITE_PERL%%/Test/Fixture
+@dirrmtry %%SITE_PERL%%/Test
