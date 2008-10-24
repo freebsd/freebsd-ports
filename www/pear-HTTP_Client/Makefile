@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Client
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	www pear
 
 MAINTAINER=	joseph@randomnetworks.com
