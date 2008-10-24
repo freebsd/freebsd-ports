@@ -9,7 +9,7 @@ PORTNAME=	ftpsync
 PORTVERSION=	1.2.34
 PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	SF \
+MASTER_SITES=	http://ftpsync.sourceforge.net/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	adox@mcx2.org
