@@ -1,5 +1,5 @@
---- makefile.old	Fri Nov 23 11:14:23 2007
-+++ makefile	Fri Nov 23 11:16:22 2007
+--- makefile.old	2008-05-01 09:40:28.000000000 -0400
++++ makefile	2008-10-19 12:49:42.000000000 -0400
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -39,9 +39,9 @@
  
  $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
--	JobQueue.o GTKMutex.o $(COMPLIB) $(LUA_OBJS)
+-	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
 -	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
-+	JobQueue.o GTKMutex.o $(LUA_OBJS)
++	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
 +	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers \
 +	-rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@
  
