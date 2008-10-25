@@ -1535,6 +1535,7 @@ clearlooks-themes-extras        ports/x11-themes/clearlooks-themes-extras
 clearsilver                     ports/www/clearsilver
 clearsilver-python              ports/www/clearsilver-python
 clementine                      ports/x11-wm/clementine
+clewn                           ports/devel/clewn
 clex                            ports/misc/clex
 clhep                           ports/science/clhep
 cli-msn                         ports/net-im/cli-msn
@@ -7315,6 +7316,7 @@ libpst                          ports/mail/libpst
 libpthread-stubs                ports/devel/libpthread-stubs
 libpurple                       ports/net-im/libpurple
 libpuzzle                       ports/graphics/libpuzzle
+libpwstor                       ports/security/libpwstor
 libqalculate                    ports/math/libqalculate
 libqglviewer                    ports/graphics/libqglviewer
 libqrencode                     ports/graphics/libqrencode
@@ -10339,6 +10341,9 @@ p5-DBD-mysql51                  ports/databases/p5-DBD-mysql51
 p5-DBD-mysql60                  ports/databases/p5-DBD-mysql60
 p5-DBI                          ports/databases/p5-DBI
 p5-DBI-Shell                    ports/databases/p5-DBI-Shell
+p5-DBICx-Deploy                 ports/databases/p5-DBICx-Deploy
+p5-DBICx-MapMaker               ports/databases/p5-DBICx-MapMaker
+p5-DBICx-TestDatabase           ports/databases/p5-DBICx-TestDatabase
 p5-DBIWrapper                   ports/databases/p5-DBIWrapper
 p5-DBIx-Abstract                ports/databases/p5-DBIx-Abstract
 p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
@@ -10349,6 +10354,7 @@ p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
+p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
@@ -10525,6 +10531,9 @@ p5-Devel-DProfPP                ports/devel/p5-Devel-DProfPP
 p5-Devel-Declare                ports/devel/p5-Devel-Declare
 p5-Devel-Diagram                ports/devel/p5-Devel-Diagram
 p5-Devel-EvalContext            ports/devel/p5-Devel-EvalContext
+p5-Devel-Events                 ports/devel/p5-Devel-Events
+p5-Devel-Events-Objects         ports/devel/p5-Devel-Events-Objects
+p5-Devel-Gladiator              ports/devel/p5-Devel-Gladiator
 p5-Devel-GlobalDestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-Devel-Leak                   ports/devel/p5-Devel-Leak
 p5-Devel-Leak-Object            ports/devel/p5-Devel-Leak-Object
@@ -11143,6 +11152,7 @@ p5-Jemplate                     ports/www/p5-Jemplate
 p5-Jifty                        ports/www/p5-Jifty
 p5-Jifty-DBI                    ports/databases/p5-Jifty-DBI
 p5-KinoSearch                   ports/textproc/p5-KinoSearch
+p5-Kwalify                      ports/textproc/p5-Kwalify
 p5-Kwiki                        ports/www/p5-Kwiki
 p5-LEGO-RCX                     ports/misc/p5-LEGO-RCX
 p5-LJ-Cache                     ports/sysutils/p5-LJ-Cache
@@ -11448,6 +11458,7 @@ p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
+p5-MooseX-StrictConstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-Mouse                        ports/devel/p5-Mouse
@@ -11946,6 +11957,7 @@ p5-Return-Value                 ports/devel/p5-Return-Value
 p5-Roman                        ports/math/p5-Roman
 p5-Rose-DB                      ports/databases/p5-Rose-DB
 p5-Rose-DB-Object               ports/databases/p5-Rose-DB-Object
+p5-Rose-DBx-Object-MoreHelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
 p5-Rose-DateTime                ports/devel/p5-Rose-DateTime
 p5-Rose-Object                  ports/devel/p5-Rose-Object
 p5-RunApp                       ports/devel/p5-RunApp
@@ -12237,6 +12249,7 @@ p5-Test-Exception               ports/devel/p5-Test-Exception
 p5-Test-Expect                  ports/devel/p5-Test-Expect
 p5-Test-File                    ports/devel/p5-Test-File
 p5-Test-File-Contents           ports/devel/p5-Test-File-Contents
+p5-Test-Fixture-DBIC-Schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-Test-Group                   ports/devel/p5-Test-Group
 p5-Test-HTML-Tidy               ports/devel/p5-Test-HTML-Tidy
 p5-Test-HTTP                    ports/www/p5-Test-HTTP
@@ -13622,6 +13635,9 @@ p5-dbd-sybase                   ports/databases/p5-DBD-Sybase
 p5-dbd-xbase                    ports/databases/p5-DBD-XBase
 p5-dbi                          ports/databases/p5-DBI
 p5-dbi-shell                    ports/databases/p5-DBI-Shell
+p5-dbicx-deploy                 ports/databases/p5-DBICx-Deploy
+p5-dbicx-mapmaker               ports/databases/p5-DBICx-MapMaker
+p5-dbicx-testdatabase           ports/databases/p5-DBICx-TestDatabase
 p5-dbiwrapper                   ports/databases/p5-DBIWrapper
 p5-dbix-abstract                ports/databases/p5-DBIx-Abstract
 p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
@@ -13632,6 +13648,7 @@ p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
+p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
@@ -13674,6 +13691,9 @@ p5-devel-diagram                ports/devel/p5-Devel-Diagram
 p5-devel-dprofpp                ports/devel/p5-Devel-DProfPP
 p5-devel-ebug                   ports/devel/p5-Devel-ebug
 p5-devel-evalcontext            ports/devel/p5-Devel-EvalContext
+p5-devel-events                 ports/devel/p5-Devel-Events
+p5-devel-events-objects         ports/devel/p5-Devel-Events-Objects
+p5-devel-gladiator              ports/devel/p5-Devel-Gladiator
 p5-devel-globaldestruction      ports/devel/p5-Devel-GlobalDestruction
 p5-devel-leak                   ports/devel/p5-Devel-Leak
 p5-devel-leak-object            ports/devel/p5-Devel-Leak-Object
@@ -14306,6 +14326,7 @@ p5-json-dwiw                    ports/converters/p5-JSON-DWIW
 p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
+p5-kwalify                      ports/textproc/p5-Kwalify
 p5-kwiki                        ports/www/p5-Kwiki
 p5-layout-manager               ports/graphics/p5-Layout-Manager
 p5-lchown                       ports/sysutils/p5-Lchown
@@ -14615,6 +14636,7 @@ p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
+p5-moosex-strictconstructor     ports/devel/p5-MooseX-StrictConstructor
 p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-mouse                        ports/devel/p5-Mouse
@@ -15134,6 +15156,7 @@ p5-roman                        ports/math/p5-Roman
 p5-rose-datetime                ports/devel/p5-Rose-DateTime
 p5-rose-db                      ports/databases/p5-Rose-DB
 p5-rose-db-object               ports/databases/p5-Rose-DB-Object
+p5-rose-dbx-object-morehelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
 p5-rose-object                  ports/devel/p5-Rose-Object
 p5-rpc-simple                   ports/net/p5-RPC-Simple
 p5-rpc-xml                      ports/net/p5-RPC-XML
@@ -15437,6 +15460,7 @@ p5-test-exception               ports/devel/p5-Test-Exception
 p5-test-expect                  ports/devel/p5-Test-Expect
 p5-test-file                    ports/devel/p5-Test-File
 p5-test-file-contents           ports/devel/p5-Test-File-Contents
+p5-test-fixture-dbic-schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-test-group                   ports/devel/p5-Test-Group
 p5-test-harness                 ports/devel/p5-Test-Harness
 p5-test-hasversion              ports/devel/p5-Test-HasVersion
@@ -19801,6 +19825,7 @@ skyutils                        ports/misc/skyutils
 sl                              ports/games/sl
 sl-aspell                       ports/textproc/sl-aspell
 sl2tps                          ports/net/sl2tps
+slack                           ports/sysutils/slack
 slash                           ports/www/slash
 slashem-tty                     ports/games/slashem-tty
 slate                           ports/net-mgmt/slate
