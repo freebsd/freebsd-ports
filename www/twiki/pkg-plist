@@ -1466,7 +1466,6 @@
 %%TWDIR%%/templates/editform.tmpl
 %%TWDIR%%/templates/edittext.tmpl
 %%TWDIR%%/templates/form.tmpl
-%%TWDIR%%/templates/form.pattern.tmpl
 %%TWDIR%%/templates/formtables.tmpl
 %%TWDIR%%/templates/login.sudo.tmpl
 %%TWDIR%%/templates/login.tmpl
