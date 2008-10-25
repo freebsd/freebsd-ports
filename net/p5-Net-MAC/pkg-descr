@@ -1,0 +1,7 @@
+The Perl 5 module Net::MAC allows you to
+    - store a MAC address in a Perl object
+    - find out information about a stored MAC address
+    - convert a MAC address into a specified format
+    - easily compare two MAC addresses for string or numeric equality
+
+ WWW: http://search.cpan.org/dist/Net-MAC/
