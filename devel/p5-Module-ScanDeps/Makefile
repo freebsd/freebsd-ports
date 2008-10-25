@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.84
+PORTVERSION=	0.86
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,27 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Recursively scan Perl code for dependencies
 
-BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
-RUN_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
-
 PERL_CONFIGURE=	yes
 
 MAN1=		scandeps.pl.1
 MAN3=		Module::ScanDeps.3 Module::ScanDeps::DataFeed.3
+
+post-extract:
+	@${RM} ${WRKSRC}/lib/Module/.ScanDeps.pm.swp
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl \
 		${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500904
+RUN_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.if ${PERL_LEVEL} < 500900
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
