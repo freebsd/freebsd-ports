@@ -108,10 +108,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_REPOSITORY_CREATION)
-	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
+	@${ECHO_MSG} "I will create (or use, if it exists) '${SVNUSER}' user and '${SVNGROUP}' group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
+	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with user '${SVNUSER}' and group '${SVNGROUP}'."
 	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
 	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP and SVNFSTYPE."
 .else
@@ -133,7 +133,7 @@ pre-everything::
 	@${ECHO_MSG} "asvn will be installed"
 	@${ECHO_MSG} ""
 .endif
-	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}}"
+	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
 
 pre-configure:
 	@if [ ! -x ${APR_APU_DIR}/${APR_CONFIG} -o ! -x ${APR_APU_DIR}/${APU_CONFIG} ] ; then \
@@ -203,17 +203,29 @@ _mkrepos:	.USE
 	        ${FALSE}; \
 	    fi; \
 	fi
+	@if /usr/sbin/pw usershow "${SVNUSER}" >/dev/null 2>&1; then \
+	    ${ECHO_MSG} "You already have a user \"${SVNUSER}\", so I will use it."; \
+	else \
+	    if /usr/sbin/pw useradd ${SVNUSER} -h -; \
+	    then \
+	        ${ECHO_MSG} "Added user \"${SVNUSER}\"."; \
+	    else \
+	        ${ECHO_MSG} "Adding user \"${SVNUSER}\" failed..."; \
+	        ${ECHO_MSG} "Please create it, and try again."; \
+	        ${FALSE}; \
+	    fi; \
+	fi
 .endif
 	@${MKDIR} ${SVNREPOS}
 	@${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
 .if defined(WITH_SVNSERVE_WRAPPER)
-	@${CHGRP} ${SVNGROUP} ${SVNGRPFILES}
+	@${CHOWN} ${SVNUSER}:${SVNGROUP} ${SVNGRPFILES}
 	@${CHMOD} g+w ${SVNGRPFILES}
 	@for i in ${SVNREPOS}/db/* ; do \
 	    i=$${i##*/}; \
 	    case $$i in \
 	    DB_CONFIG|fs-type|uuid) ;; \
-	    *) ${CHGRP} -R ${SVNGROUP} ${SVNREPOS}/db/$$i; \
+	    *) ${CHOWN} -R ${SVNUSER}:${SVNGROUP} ${SVNREPOS}/db/$$i; \
 	       ${CHMOD} -R g+w ${SVNREPOS}/db/$$i; \
 	       ;; \
 	    esac; \
