@@ -7,6 +7,7 @@
 
 PORTNAME=	Danga-Socket
 PORTVERSION=	1.59
+PORTREVISION=	1
 CATEGORIES=	devel net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Event loop and event-driven async socket base class
 
-BUILD_DEPENDS=	${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/IO/KQueue.pm:${PORTSDIR}/devel/p5-IO-KQueue \
-		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
-		${SITE_PERL}/${PERL_ARCH}/IO/Poll.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-IO-KQueue>=0:${PORTSDIR}/devel/p5-IO-KQueue \
+		p5-Sys-Syscall>=0:${PORTSDIR}/devel/p5-Sys-Syscall
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Danga::Socket.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
