@@ -3,7 +3,6 @@ bin/kphononplayer
 lib/kde4/libkmplayerpart.so
 lib/libkdeinit4_kmplayer.so
 lib/libkmplayercommon.so
-share/applications/kde4/kmplayer.desktop
 share/apps/kmplayer/bookmarks.xml
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
