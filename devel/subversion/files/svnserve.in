@@ -22,7 +22,7 @@
 # Set some defaults
 svnserve_enable=${svnserve_enable:-"NO"}
 svnserve_flags=${svnserve_flags:-"-d --listen-port=3690"}
-svnserve_data=${svnserve_data:-"%%PREFIX%%/repositories"}
+svnserve_data=${svnserve_data:-"/home/svn/repos"}
 svnserve_user=${svnserve_user:-"svn"}
 svnserve_group=${svnserve_group:-"svn"}
 
