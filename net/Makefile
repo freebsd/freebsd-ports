@@ -522,6 +522,7 @@
     SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-LDAP-Makepath
     SUBDIR += p5-Net-Libdnet
+    SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
