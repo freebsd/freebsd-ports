@@ -61,7 +61,7 @@ Note:  Please add new entries to the beginning of this file.
 	    code in a query and at the same time causing it to fail by
 	    submitting invalid data, an XSS hole can be exploited.</p>
 	  <p>There is an XSS problem in the task history attached to
-	    comments, since the application fails to sanitize the the
+	    comments, since the application fails to sanitize the
 	    old_value and new_value database fields for changed task
 	    summaries.</p>
 	</blockquote>
