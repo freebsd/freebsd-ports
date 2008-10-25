@@ -108,6 +108,7 @@ include/wine/windows/clusapi.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
+include/wine/windows/commctrl.rh
 include/wine/windows/commdlg.h
 include/wine/windows/compobj.h
 include/wine/windows/control.h
@@ -123,6 +124,7 @@ include/wine/windows/cvconst.h
 include/wine/windows/d3d.h
 include/wine/windows/d3d10.h
 include/wine/windows/d3d10.idl
+include/wine/windows/d3d10misc.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
@@ -429,6 +431,7 @@ include/wine/windows/servprov.h
 include/wine/windows/servprov.idl
 include/wine/windows/setupapi.h
 include/wine/windows/sfc.h
+include/wine/windows/shdispid.h
 include/wine/windows/shellapi.h
 include/wine/windows/shldisp.h
 include/wine/windows/shldisp.idl
@@ -511,6 +514,7 @@ include/wine/windows/wintabx.h
 include/wine/windows/winternl.h
 include/wine/windows/wintrust.h
 include/wine/windows/winuser.h
+include/wine/windows/winuser.rh
 include/wine/windows/winver.h
 include/wine/windows/wmistr.h
 include/wine/windows/wnaspi32.h
@@ -539,6 +543,10 @@ include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
+include/wine/windows/ddk/usb.h
+include/wine/windows/ddk/usb100.h
+include/wine/windows/ddk/usb200.h
+include/wine/windows/ddk/usbdlib.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winddiui.h
 include/wine/windows/ddk/winsplp.h
@@ -635,6 +643,7 @@ lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dwmapi.dll.so
 lib/wine/dxdiagn.dll.so
+lib/wine/dxgi.dll.so
 lib/wine/eject.exe.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
@@ -694,7 +703,9 @@ lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
 lib/wine/libcryptdll.def
 lib/wine/libcryptnet.def
+lib/wine/libcryptui.def
 lib/wine/libctl3d32.def
+lib/wine/libd3d10.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dim.def
@@ -717,6 +728,7 @@ lib/wine/libdsound.def
 lib/wine/libdwmapi.def
 lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
+lib/wine/libdxgi.def
 lib/wine/libdxguid.a
 lib/wine/libgdi32.def
 lib/wine/libgdiplus.def
