@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55616fda-a2d0-11dd-a9f9-0030843d3802">
+    <topic>openx -- sql injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>openx</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32114/">
+	  <p>OpenX can be exploited by malicious people to conduct SQL injection
+	    attacks.</p>
+	  <p>Input passed to the "bannerid" parameter in www/delivery/ac.php is
+	    not properly sanitised before being used in SQL queries. This can be
+	    exploited to manipulate SQL queries by injecting arbitrary SQL
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/32114/</url>
+      <url>http://blog.openx.org/10/openx-security-update/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-03</discovery>
+      <entry>2008-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d3020e4-a2c4-11dd-a9f9-0030843d3802">
     <topic>flyspray -- multiple vulnerabilities</topic>
     <affects>
