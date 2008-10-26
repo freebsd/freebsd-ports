@@ -16,10 +16,10 @@ PATCH_SITES=	http://quasiquote.org/files/
 PATCHFILES=	${PORTNAME}-qq-2.0.1.21.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
-
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Japanese input method, binary part
+
+LIB_DEPENDS=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
 
 USE_RC_SUBR=	sj3.sh
 USE_IMAKE=	yes
@@ -45,7 +45,7 @@ POSTPATCHES.nodocports= \
 
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
-.if defined(NODOCPORTS)
+.if defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES.nodocports} | ${PATCH}
 .endif
 
