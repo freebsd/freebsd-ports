@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ARGS=	--enable-s3=yes
+CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}/libdata
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
 CFLAGS+=	${PTHREAD_LIBS}
