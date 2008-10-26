@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 PATH=/bin:/usr/sbin
 
@@ -24,7 +25,7 @@ case $2 in
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d /nonexistent -s /sbin/nologin -c "SJ3 Daemon"
+			-d /nonexistent -s /usr/sbin/nologin -c "SJ3 Daemon"
 		then
 			echo "Added user \"${USER}\"."
 		else
