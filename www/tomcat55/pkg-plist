@@ -91,6 +91,7 @@
 %%T%%/server/webapps/host-manager/manager.xml
 %%T%%/server/webapps/manager/WEB-INF/lib/catalina-manager.jar
 %%T%%/server/webapps/manager/WEB-INF/lib/commons-fileupload-1.2.jar
+%%T%%/server/webapps/manager/WEB-INF/lib/commons-io-1.4.jar
 %%T%%/server/webapps/manager/WEB-INF/web.xml
 %%T%%/server/webapps/manager/html-manager-howto.html
 %%T%%/server/webapps/manager/images/add.gif
@@ -546,11 +547,13 @@
 %%T%%/webapps/tomcat-docs/config/printer/resources.html
 %%T%%/webapps/tomcat-docs/config/printer/server.html
 %%T%%/webapps/tomcat-docs/config/printer/service.html
+%%T%%/webapps/tomcat-docs/config/printer/systemprops.html
 %%T%%/webapps/tomcat-docs/config/printer/valve.html
 %%T%%/webapps/tomcat-docs/config/realm.html
 %%T%%/webapps/tomcat-docs/config/resources.html
 %%T%%/webapps/tomcat-docs/config/server.html
 %%T%%/webapps/tomcat-docs/config/service.html
+%%T%%/webapps/tomcat-docs/config/systemprops.html
 %%T%%/webapps/tomcat-docs/config/valve.html
 %%T%%/webapps/tomcat-docs/connectors.html
 %%T%%/webapps/tomcat-docs/default-servlet.html
