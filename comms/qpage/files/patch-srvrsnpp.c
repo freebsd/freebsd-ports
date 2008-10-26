@@ -1,5 +1,5 @@
 --- srvrsnpp.c.orig	1998-10-25 14:55:05.000000000 -0500
-+++ srvrsnpp.c	2008-10-18 18:09:44.175331511 -0400
++++ srvrsnpp.c	2008-10-24 11:00:36.226381386 -0400
 @@ -523,6 +523,7 @@
  	char		*errmsg;
  	char		*a;
@@ -13,7 +13,7 @@
  				p->created = time(NULL);
  				(void)sprintf(buff, "%d", pagecount++);
 -				(void)strcat(p->messageid, buff);
-+				m = (void *)malloc(sizeof(*m) * strlen(p->messageid) + sizeof(*m) * strlen(buff));
++				m = (void *)malloc(sizeof(*m) * (strlen(p->messageid) + strlen(buff) + 1));
 +				if ( m == NULL ) {
 +					message("554 Message failed (out of memory)");
 +					qpage_log(LOG_ERR, "snpp(): cannot allocate memory for p->messageid");
