@@ -1,0 +1,13 @@
+--- makerule.mk.in.orig	2008-10-27 03:37:44.000000000 +0900
++++ makerule.mk.in	2008-10-27 03:38:15.000000000 +0900
+@@ -42,8 +42,8 @@
+ # for libtool (AM_PROG_LIBTOOL)
+ #     top_builddir = @abs_top_srcdir@
+ 
+-           MANDIR = @mandir@/man$(MANSUFFIX)
+-        LIBMANDIR = @mandir@/man$(LIBMANSUFFIX)
++           MANDIR = @mandir@/${MANLANG}/man$(MANSUFFIX)
++        LIBMANDIR = @mandir@/${MANLANG}/man$(LIBMANSUFFIX)
+ 
+         MANSUFFIX = 1
+      LIBMANSUFFIX = 3

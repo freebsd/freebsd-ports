@@ -5,12 +5,14 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-lib
 CATEGORIES=	chinese
-MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
+PKGNAMESUFFIX=	-lib
+
 COMMENT=	A Japanese/Chinese/Korean input method (Chinese client libraries)
 
+MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}
-WNN=		cWnn
+
+WNNTYPE=	CWNN
 
 .include "${MASTERDIR}/Makefile"

@@ -5,11 +5,75 @@
 # $FreeBSD$
 #
 
+PORTNAME=	FreeWnn
+PORTVERSION=	1.1.1.a021
+PORTREVISION=	3
+CATEGORIES?=	japanese
+MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
+		${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	FreeWnn/alpha \
+			freewnn/17724
 PKGNAMESUFFIX=	-server
-COMMENT=	A Japanese/Chinese/Korean input method (Japanese server)
+DISTNAME=	${PORTNAME}-1.1.1-a021
 
-MASTERDIR=	${.CURDIR}/../FreeWnn-lib
-PKGDIR=		${.CURDIR}
-PATCHDIR=	${.CURDIR}/files
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
-.include "${MASTERDIR}/Makefile"
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	yes
+MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}"
+ALL_TARGET=	includes all
+INSTALL_TARGET=	install install.man
+SUB_FILES=	pkg-install
+SUB_LIST=	RC_SUBR=${RC_SUBR}
+PKGINSTALL=	${WRKDIR}/pkg-install
+
+WNNTYPE?=	WNN
+CONFIGURE_ARGS=	--enable-library=no ${CONFIGURE_ARGS.${WNNTYPE}}
+
+# Wnn
+LIB_DEPENDS.WNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+CONFIGURE_ARGS.WNN= 	--enable-cWnn=no --enable-kWnn=no \
+			--with-libwnn=-lwnn \
+			--with-wnn-libraries="${PREFIX}/lib"
+MAN1.WNN=	atod.1 atof.1 dtoa.1 jserver.1 oldatonewa.1 uum.1 wddel.1 \
+		wdreg.1 wnnkill.1 wnnstat.1 wnntouch.1
+MAN4.WNN=	2a_ctrl.4 2b_romkana.4 cvt_key_tbl.4 fzk.data.4 fzk.u.4	\
+		hinsi_data.4 jserverrc.4 mode.4 serverdefs.4 ujis_dic.4	\
+		uumkey.4 uumrc.4 wnnenvrc.4
+MAN5.WNN=	pubdic.5 usr_dic.5
+MANLANG.WNN=	ja
+
+# CWnn
+CONFIGURE_ARGS.CWNN+=	--enable-Wnn=no --enable-kWnn=no		\
+			--with-libcwnn=-lcwnn \
+			--with-cwnn-libraries="${PREFIX}/lib"
+LIB_DEPENDS.CWNN=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
+MAN1.CWNN=	cserver.1 cuum.1 cwnnkill.1 cwnnstat.1 catod.1 catof.1	\
+		cdicsort.1 cdtoa.1 cwddel.1 cwdreg.1 cwnntouch.1
+MAN4.CWNN=	cst_end.4 cwnn.4 cenv.4 ckey.4
+
+# KWnn
+CONFIGURE_ARGS.KWNN+=	--enable-Wnn=no --enable-cWnn=no \
+			--with-libkwnn=-lkwnn \
+			--with-kwnn-libraries="${PREFIX}/lib"
+LIB_DEPENDS.KWNN=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
+
+.for M in LIB_DEPENDS MAN1 MAN4 MAN5 MLINKS MANLANG
+. if defined(${M}.${WNNTYPE})
+${M}+=		${${M}.${WNNTYPE}}
+. endif
+.endfor
+
+pre-install:
+	${SETENV} BATCH=${BATCH} \
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	${SETENV} PKG_PREFIX=${PREFIX} \
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include <bsd.port.mk>

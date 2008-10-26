@@ -2,24 +2,6 @@
 # $FreeBSD$
 # an installation script for Wnn4.2
 
-check_pw()
-{
-    if which -s pw; then
-	:
-    else
-	cat <<EOF
-
-This system looks like a pre-2.2 version of FreeBSD.  We see that it
-is missing the "pw" utility.  We need this utility.  Please get and
-install it, and try again.  You can get the source from:
-
-  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
-EOF
-	exit 1
-    fi
-}
-
 ask() {
     local question default answer
 
@@ -118,8 +100,6 @@ EOF
     echo "You need an account 'wnn' whose ID number is 69"
     if [ -z "${BATCH}" ]; then
 	if yesno "Would you like to create it automatically?" y; then
-	    # We need a command 'pw(8)'
-	    check_pw
 	    pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
 		    -s /nonexistent -c Wnn || exit
 	else
