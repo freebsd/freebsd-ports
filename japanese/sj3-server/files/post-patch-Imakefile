@@ -1,0 +1,14 @@
+--- Imakefile.orig	2008-09-07 16:30:58.000000000 +0900
++++ Imakefile	2008-09-07 16:34:36.000000000 +0900
+@@ -62,11 +62,6 @@
+ 	echo "#define DEFKEYFILE	\"$(SJ3CONFDIR)/cvtkey.\"") \	@@\
+ 	>> include/Paths.h
+ 
+-install::
+-	$(MKDIRHIER) $(SJ3VARRUNDIR)
+-	chown $(SJ3OWNER) $(SJ3VARRUNDIR)
+-	chgrp $(SJ3GROUP) $(SJ3VARRUNDIR)
+-
+ clean::
+ 	rm -f include/Paths.h
+ 

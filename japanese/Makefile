@@ -329,7 +329,8 @@
     SUBDIR += seaside
     SUBDIR += sed
     SUBDIR += shinonome
-    SUBDIR += sj3
+    SUBDIR += sj3-lib
+    SUBDIR += sj3-server
     SUBDIR += skk
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb

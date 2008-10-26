@@ -1,0 +1,5 @@
+/* $FreeBSD$ */
+
+SJ3TOP=		%%PREFIX%%
+SJ3DICTDIR=	$(SJ3LIBDIR)/sh3/dict
+SJ3VARRUNDIR=	%%DESTDIR%%$(VARDIR)/run/sj3

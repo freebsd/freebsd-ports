@@ -23,6 +23,13 @@ sj3_enable=${sj3_enable:-"NO"}		# Enable sj3
 name="sj3"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/sj3serv"
+start_precmd="sj3serv_precmd"
+
+sj3serv_precmd()
+{
+	mkdir -p -m 0755 /var/run/sj3
+	chown _sj3:_sj3 /var/run/sj3
+}
 
 load_rc_config $name
 run_rc_command "$1"

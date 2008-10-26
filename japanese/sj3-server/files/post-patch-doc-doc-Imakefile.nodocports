@@ -1,0 +1,8 @@
+--- doc/doc/Imakefile.orig	2008-09-07 17:04:18.000000000 +0900
++++ doc/doc/Imakefile	2008-09-07 17:04:24.000000000 +0900
+@@ -45,5 +45,3 @@
+ all::
+ 
+ depend::
+-
+-InstallMultiple($(DOCLIST),$(SJ3DOCDIR))
