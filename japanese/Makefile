@@ -110,14 +110,6 @@
     SUBDIR += jmode-skk
     SUBDIR += jpilot
     SUBDIR += jstrings
-    SUBDIR += jvim
-    SUBDIR += jvim-canna
-    SUBDIR += jvim-canna+freewnn
-    SUBDIR += jvim-canna+wnn6
-    SUBDIR += jvim-canna+wnn7
-    SUBDIR += jvim-freewnn
-    SUBDIR += jvim-wnn6
-    SUBDIR += jvim-wnn7
     SUBDIR += jvim3
     SUBDIR += jvim3-canna
     SUBDIR += jvim3-canna+freewnn
