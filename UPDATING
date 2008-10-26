@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081026:
+  AFFECTS: users of japanese/sj3-server
+  AUTHOR: hrs@FreeBSD.org
+
+  The sj3serv daemon in japanese/sj3-server port now uses "localhost"
+  as the default listen address for security reason.  If you need
+  the wildcard address (INADDR_ANY), you have to explicitly set
+  "servername" to 0.0.0.0 in ${PREFIX}/etc/sj3/serverrc.
+
+20081026:
+  AFFECTS: users of japanese/Canna and japanese/sj3
+  AUTHOR: hrs@FreeBSD.org
+
+  The japanese/Canna and japanese/sj3 port have been split into
+  japanese/canna-server and japanese/canna-lib, and japanese/sj3-server
+  and japanese/sj3-lib, respectively for more fine-grained dependency
+  management in the Ports Collection.
+
 20080926:
   AFFECTS: users of www/squid30
   AUTHOR: tmseck@netcologne.de
