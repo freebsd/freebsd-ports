@@ -5,7 +5,6 @@
 
     SUBDIR += ASCIIdates98-fpw
     SUBDIR += CGdic-fpw
-    SUBDIR += Canna
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += VTPSfont
@@ -23,6 +22,8 @@
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
     SUBDIR += bugzilla
+    SUBDIR += canna-lib
+    SUBDIR += canna-server
     SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw

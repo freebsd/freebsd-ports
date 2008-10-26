@@ -22,22 +22,29 @@ canna_flags=${canna_flags:-"-u bin"}		# Flags to canna program
 # connection instead of a UNIX domain socket.
 #canna_flags="-u bin -inet"
 
-. @RC_SUBR@
+. /etc/rc.subr
 
 name="canna"
 rcvar=`set_rcvar`
-command="@PREFIX@/sbin/cannaserver"
-start_precmd="canna_prestart"
+command="%%PREFIX%%/sbin/cannaserver"
+start_precmd="canna_precmd"
 stop_cmd="canna_stop"
 
-canna_prestart() {
-	@RM@ -f /tmp/.iroha_unix/IROHA
-	@TOUCH@ /var/log/CANNA0msgs
-	@CHOWN@ bin:bin /var/log/CANNA0msgs
+canna_precmd() {
+	rm -f /tmp/.iroha_unix/IROHA
+	touch /var/log/CANNA0msgs
+	mkdir -p -m 0775 \
+		%%PREFIX%%/share/canna/dic/user/user \
+		%%PREFIX%%/share/canna/dic/group
+	chown bin:bin /var/log/CANNA0msgs \
+		%%PREFIX%%/share/canna/dic/user/user \
+		%%PREFIX%%/share/canna/dic/user \
+		%%PREFIX%%/share/canna/dic/group
 }
 
 canna_stop() {
-	@PREFIX@/sbin/cannakill && echo "Stopping ${name}."
+	echo "Stopping ${name}."
+	%%PREFIX%%/sbin/cannakill
 }
 
 load_rc_config $name
