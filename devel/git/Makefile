@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.0.2
+PORTVERSION=	1.6.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -21,7 +21,6 @@ COMMENT=	Distributed source code management tool
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		cvsps:${PORTSDIR}/devel/cvsps \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -51,9 +50,6 @@ MAN1=		git-add.1 \
 		git-commit.1 \
 		git-config.1 \
 		git-count-objects.1 \
-		git-cvsexportcommit.1 \
-		git-cvsimport.1 \
-		git-cvsserver.1 \
 		git-daemon.1 \
 		git-describe.1 \
 		git-diff-files.1 \
@@ -139,7 +135,6 @@ MAN1=		git-add.1 \
 		git-status.1 \
 		git-stripspace.1 \
 		git-submodule.1 \
-		git-svn.1 \
 		git-symbolic-ref.1 \
 		git-tag.1 \
 		git-tar-tree.1 \
@@ -166,13 +161,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_PYTHON=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
-		PYTHON_PATH=${LOCALBASE}/bin/python \
 		PERL_PATH=${PERL} \
 		LIBMD_SHA1=yes
 MAKE_ARGS+=	prefix="${PREFIX}"
@@ -183,9 +176,20 @@ SHELLS=		/etc/shells
 
 OPTIONS=	GUI "Enable building of GUI tools" on \
 		SVN "Enable required dependencies for SVN tools" off \
-		GITWEB "Install gitweb" off
+		GITWEB "Install gitweb" off \
+		P4  "Enable Perforce support" on \
+		CVS "Enable CVS support" on \
+		HTMLDOCS "Install additional documentation" off
 
 .include <bsd.port.pre.mk>
+
+.ifdef (WITH_HTMLDOCS)
+RUN_DEPENDS+=	${LOCALBASE}/bin/asciidoc:${PORTSDIR}/textproc/asciidoc \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+PLIST_SUB+=	HTMLDOCS=""
+.else
+PLIST_SUB+=	HTMLDOCS="@comment "
+.endif
 
 .ifndef (WITHOUT_GUI)
 MAN1+=		git-citool.1 \
@@ -203,6 +207,10 @@ MAKE_ENV+=	NO_TCLTK=yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		svn:${PORTSDIR}/devel/subversion
+PLIST_SUB+=	SVN=""
+MAN1+=		git-svn.1
+.else
+PLIST_SUB+=	SVN="@comment "
 .endif
 
 .ifdef (WITH_GITWEB)
@@ -211,17 +219,50 @@ PLIST_SUB+=	GITWEB=""
 PLIST_SUB+=	GITWEB="@comment "
 .endif
 
+.ifdef (WITH_P4)
+#USE_PYTHON=	yes
+# Can't set USE_PYTHON here just yet.  See ports/89648.
+# Instead we will do it this way:
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+RUN_DEPENDS+=	python:${PORTSDIR}/lang/python
+MAKE_ENV+=	PYTHON_PATH=${LOCALBASE}/bin/python
+PLIST_SUB+=	P4=""
+.else
+PLIST_SUB+=	P4="@comment "
+.endif
+
+.ifdef (WITH_CVS)
+MAN1+=		git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
+PLIST_SUB+=	CVS=""
+RUN_DEPENDS+=	cvsps:${PORTSDIR}/devel/cvsps
+.else
+PLIST_SUB+=	CVS="@comment "
+.endif
+
 verify: checksum
 	gpg --verify ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
 		${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
+.ifndef (WITH_CVS)
+	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
+		/git-cvsimport.perl/d; \
+		/git-cvsserver.perl/d; \
+		/documented,gitcvs-migration/d' \
+		${WRKSRC}/Makefile
+.endif
+
+.ifndef (WITH_SVN)
+	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
+.endif
 
 post-build:
-	@${SED} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+.ifdef (WITH_P4)
+	@${REINPLACE_CMD} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
 		${WRKSRC}/contrib/p4import/git-p4import.py > \
 		${WRKSRC}/contrib/p4import/git-p4import
+.endif
 
 post-install:
 .for i in ${MAN1}
@@ -233,6 +274,10 @@ post-install:
 .for i in ${MAN7}
 	${INSTALL_MAN} ${WRKDIR}/man7/${i} ${MANPREFIX}/man/man7/
 .endfor
+
+.ifdef (WITH_HTMLDOCS)
+	${GMAKE} -C ${WRKSRC} install-html ${MAKE_ENV} ${MAKE_ARGS}
+.endif
 
 	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
@@ -246,10 +291,13 @@ post-install:
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/vc-git.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/vc-git.el
 
+.ifdef (WITH_P4)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import \
 		${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
 		${PREFIX}/bin/
+.endif
+
 .ifdef (WITH_GITWEB)
 	@${ECHO_MSG} "===> Installing gitweb files"
 	${MKDIR} ${EXAMPLESDIR}/gitweb
