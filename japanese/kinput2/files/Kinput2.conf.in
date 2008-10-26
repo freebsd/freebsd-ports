@@ -1,0 +1,7 @@
+XCOMM $FreeBSD$
+
+CCDEF_DIR = $(LIBDIR)/ccdef
+
+#include "Kinput2_im.conf"
+
+TRANSPORTDEFS = 
