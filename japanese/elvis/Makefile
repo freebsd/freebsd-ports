@@ -7,7 +7,7 @@
 
 PORTNAME=	elvis
 PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/
 DISTNAME=	${PORTNAME}-1.8
@@ -19,7 +19,7 @@ PATCHFILES=	j${PORTNAME}1.8p4-j1.1.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, the standard UNIX editor, with Japanese patch
 
-LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
 NO_WRKSUBDIR=	yes
 PATCH_DIST_STRIP=	-p1

@@ -7,7 +7,7 @@
 
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1a
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -52,7 +52,7 @@ FEPOPT=		-DJP_DEF=\"EEE\"
 #######
 .if defined(DIRECT_CANNA)
 INPUT_METHOD+=	direct_canna
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 FEPOPT+=	-DCANNA
 FEPLIBS=	-lcanna
 FEPOBJS=	fepcanna.o
@@ -62,7 +62,7 @@ FEPOBJS=	fepcanna.o
 #######
 .if defined(CANNA)
 INPUT_METHOD+=	canna
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 FEPLIBS+=	-lcanna
 .endif
 .if defined(FREEWNN)
@@ -89,7 +89,7 @@ INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 FEPOPT+=	-DFEPCTRL
 .if !defined(DIRECT_CANNA)
 # For ONEW library
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew
 FEPOPT+=	-DONEW
 # If we use ONEW libray, then -lonew-* needs appear
 # before the other libraries in ${FEPLIBS}.
