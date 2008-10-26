@@ -219,13 +219,7 @@
     SUBDIR += ochusha
     SUBDIR += okphone
     SUBDIR += oleo
-    SUBDIR += onew-canna
-    SUBDIR += onew-canna+freewnn
-    SUBDIR += onew-canna+wnn6
-    SUBDIR += onew-canna+wnn7
-    SUBDIR += onew-freewnn
-    SUBDIR += onew-wnn6
-    SUBDIR += onew-wnn7
+    SUBDIR += onew
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Acme-Lou
     SUBDIR += p5-Date-Japanese-Era

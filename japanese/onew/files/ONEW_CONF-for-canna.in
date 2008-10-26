@@ -1,0 +1,8 @@
+CANNAINC	= -I%%LOCALBASE%%/include
+CANNAOBJ	= Canna.o CannaRk.o
+CANNALIB	= -L%%LOCALBASE%%/lib -lcanna
+CANNA_RKPATH	= '".:$$HOME:%%LOCALBASE%%/lib/canna/dic:/tmp/onew_rktabs/canna"'
+CANNA_RKTAB	= '"default.cbp"'
+RKKLIBS		= $(CANNALIB)
+RKKOBJS		= $(CANNAOBJ)
+ONEW_ENGINE	= '"canna/canna"'

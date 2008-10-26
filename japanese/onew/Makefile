@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ONEW for FreeWnn
+# New ports collection makefile for:	ONEW
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -6,87 +6,71 @@
 #
 
 PORTNAME=	onew
-PORTVERSION?=	2.2.10
-PORTREVISION=	1
-PKGNAMESUFFIX=	${INPUT_METHOD}
+PORTVERSION=	2.2.10
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 DISTNAME=	jvim2.0r+${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	A library for a Japanese Input Method: FreeWnn
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	A library for Japanese Input Methods
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-# A value 'all' must not be set to TARGET.
-ALL_TARGET=	
+ALL_TARGET=
+PORTDOCS=	README.ONEW
 
-.if !defined(CANNA) && !defined(FREEWNN) && !defined(WNN6) && !defined(WNN7)
-# For this port
-FREEWNN=	yes
-.endif
-# Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
-# LIB_DEPENDS, etc.
-.if defined(CANNA)
-INPUT_METHOD+=	canna
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
-JPLIB+=		-lcanna
-.endif
-.if defined(FREEWNN)
-INPUT_METHOD+=	freewnn
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
-JPLIB+=		-ljd -lcrypt
-JPDEF+=		-DWNN_ISDIR
-.elif defined(WNN6)
-INPUT_METHOD+=	wnn6
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
-JPLIB+=		-ljd -lcrypt
-JPDEF+=		-DWNN_ISDIR
-RK_DIR=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
-.elif defined(WNN7)
-INPUT_METHOD+=	wnn7
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
-JPLIB+=		-ljd -lcrypt
-JPDEF+=		-DWNN_ISDIR
-RK_DIR=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7
-.endif
-#
-# Make a value of INPUT_METHOD
-.if defined(INPUT_METHOD)
-INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
-.endif
-#
-ONEW_CONF=	${FILESDIR}/ONEW_CONF-for${INPUT_METHOD}
-LIB_NAME=	libonew${INPUT_METHOD}.a
-PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
+OPTIONS=	CANNA	"Build Canna-backend library" on \
+		CANNA_FREEWNN	"Build Canna+FreeWnn-backend library" on \
+		CANNA_WNN6	"Build Canna+Wnn6-backend library" on \
+		CANNA_WNN7	"Build Canna+Wnn7-backend library" on \
+		FREEWNN	"Build FreeWnn-backend library" on \
+		WNN6	"Build Wnn6-backend library" on \
+		WNN7	"Build Wnn7-backend library" on
+
+LIB_DEPENDS.CANNA=	canna.1:${PORTSDIR}/japanese/canna-lib
+BUILD_DEPENDS.CANNA_FREEWNN=	${BUILD_DEPENDS.FREEWNN}
+BUILD_DEPENDS.CANNA_WNN6=	${BUILD_DEPENDS.WNN6}
+BUILD_DEPENDS.CANNA_WNN7=	${BUILD_DEPENDS.WNN7}
+RK_DIR.CANNA_WNN6=	${RKDIR.WNN6}
+RK_DIR.CANNA_WNN7=	${RKDIR.WNN7}
+
+BUILD_DEPENDS.FREEWNN=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
+BUILD_DEPENDS.WNN6=	${BUILD_DEPENDS.FREEWNN}
+RK_DIR.WNN6=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
+
+BUILD_DEPENDS.WNN7=	${BUILD_DEPENDS.FREEWNN}
+RK_DIR.WNN7=		${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
-		${ONEW_CONF} > ${WRKSRC}/ONEW_CONF
+.for I in WITH_CANNA WITH_FREEWNN WITH_WNN6 WITH_WNN7 WITH_CANNA_FREEWNN WITH_CANNA_WNN6 WITH_CANNA_WNN7
+.if defined(${I})
+INPUT_METHOD+=	${I:S/^WITH_//:S/_/+/g:L}
+SUB_FILES+=	ONEW_CONF-for-${I:S/^WITH_//:S/_/+/g:L}
+PLIST_FILES+=	lib/libonew-${I:S/^WITH_//:S/_/+/g:L}.a
+LIB_DEPENDS+=	${LIB_DEPENDS.${I:S/^WITH_//}}
+BUILD_DEPENDS+=	${BUILD_DEPENDS.${I:S/^WITH_//}}
+RK_DIR+=	${RK_DIR.${I:S/^WITH_//}}
+.endif
+.endfor
+
+pre-build: apply-slist
+
+do-build:
+.for I in ${INPUT_METHOD}
+	${INSTALL_DATA} ${WRKDIR}/ONEW_CONF-for-${I} ${WRKSRC}/ONEW_CONF
+	cd ${WRKSRC} && ${MAKE} clean && ${MAKE}
+	${INSTALL_DATA} ${WRKSRC}/libonew.a ${WRKDIR}/libonew-${I}.a
+.endfor
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libonew.a ${LOCALBASE}/lib/${LIB_NAME}
+.for I in ${INPUT_METHOD}
+	${INSTALL_DATA} ${WRKDIR}/libonew-${I}.a ${PREFIX}/lib/libonew-${I}.a
+.endfor
 .if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${PORT_DOCDIR}
-.endif
-.endif
-.if defined(WNN6) || defined(WNN7)
-	${MKDIR} ${RK_DIR}
-	for file in 1B_TOUPPER 1B_ZENHIRA 1B_ZENKATA 1B_newTOUPPER \
-			2A_CTRL 2B_DAKUTEN 2B_JIS 2B_ROMKANA 2_TCODE \
-			3B_HANKATA 3B_KATAKANA 3B_ZENKAKU autork \
-			mode mode.hankata mode.nohankata; do \
-		${INSTALL_DATA} ${LOCALBASE}/lib/wnn/ja_JP/rk/$${file} \
-			 ${RK_DIR}; \
-	done
-	@${ECHO} "############################################################"
-	@${ECHO} "We install all files in ${LOCALBASE}/lib/wnn/ja_JP/rk/"
-	@${ECHO} "  into a new directory ${RK_DIR}"
-	@${ECHO} "############################################################"
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
