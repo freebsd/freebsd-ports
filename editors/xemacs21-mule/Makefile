@@ -146,13 +146,13 @@ CONFIGURE_ARGS+=--with-athena=xaw
 BINNAMEEXT=		-mule
 .if defined(CANNA) && defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib \
 			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 PLIST_SUB+=		CANNA=""
 .elif defined(CANNA) && defined(WNN6)
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 CONFIGURE_ARGS+=	--with-canna --with-wnn6
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib \
 			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 PLIST_SUB+=		CANNA=""
 .elif defined(FREEWNN)
@@ -164,7 +164,7 @@ CONFIGURE_ARGS+=	--with-wnn6 --with-canna=no
 LIB_DEPENDS+=		wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(CANNA)
 CONFIGURE_ARGS+=	--with-canna --with-wnn=no --with-wnn6=no
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 PLIST_SUB+=		CANNA=""
 .else
 CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
