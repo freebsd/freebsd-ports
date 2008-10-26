@@ -44,7 +44,7 @@ BINSTUFF=	jed rgrep
 CONFIGURE_ARGS+=	--with-canna=no
 .else
 CONFIGURE_ARGS+=	--with-canna=yes
-LIBDEP_CANNA=		canna.1:${PORTSDIR}/japanese/Canna
+LIBDEP_CANNA=		canna.1:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .if defined(WITHOUT_X11)
