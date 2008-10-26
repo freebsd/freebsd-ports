@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kid3
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
@@ -23,7 +23,8 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build
+QT_COMPONENTS=	svg gui network dbus xml \
+		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
