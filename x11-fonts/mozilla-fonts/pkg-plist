@@ -85,6 +85,6 @@ lib/X11/fonts/mozilla/timesi4.pcf
 lib/X11/fonts/mozilla/timesi5.pcf
 lib/X11/fonts/mozilla/timesi6.pcf
 lib/X11/fonts/mozilla/timesi7.pcf
-share/doc/mozilla-fonts/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm lib/X11/fonts/mozilla
-@dirrm share/doc/mozilla-fonts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
