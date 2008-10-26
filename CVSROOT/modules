@@ -11577,6 +11577,7 @@ p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
 p5-Net-MAC-Vendor               ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN                      ports/net-im/p5-Net-MSN
 p5-Net-ManageSieve              ports/mail/p5-Net-ManageSieve
+p5-Net-Mosso-CloudFiles         ports/net/p5-Net-Mosso-CloudFiles
 p5-Net-MovableType              ports/net/p5-Net-MovableType
 p5-Net-NBName                   ports/net/p5-Net-NBName
 p5-Net-NBsocket                 ports/net/p5-Net-NBsocket
@@ -14762,6 +14763,7 @@ p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
 p5-net-mac-vendor               ports/net/p5-Net-MAC-Vendor
 p5-net-managesieve              ports/mail/p5-Net-ManageSieve
+p5-net-mosso-cloudfiles         ports/net/p5-Net-Mosso-CloudFiles
 p5-net-movabletype              ports/net/p5-Net-MovableType
 p5-net-msn                      ports/net-im/p5-Net-MSN
 p5-net-nbname                   ports/net/p5-Net-NBName
@@ -18897,6 +18899,7 @@ rsstail                         ports/www/rsstail
 rsstool                         ports/www/rsstool
 rst.el                          ports/textproc/rst.el
 rstart                          ports/x11/rstart
+rsvndump                        ports/devel/rsvndump
 rsync                           ports/net/rsync
 rsyncbackup                     ports/sysutils/rsyncbackup
 rsyncmanager                    ports/sysutils/rsyncmanager
