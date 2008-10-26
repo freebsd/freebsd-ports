@@ -27,7 +27,6 @@ bin/mshsort
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/encode.script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/fields.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/filter.geo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/gen_earth_100km.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/hex.geo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/isosurf.script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/lowmem-anim.geo
