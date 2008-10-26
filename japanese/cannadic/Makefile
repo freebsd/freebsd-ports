@@ -7,14 +7,15 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.95c
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
 MAINTAINER=	toga@puyo.org
 COMMENT=	A canna dictionary containing a lot of words
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/Canna
-BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/Canna
+RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/canna-server
+BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/canna-server
 
 ALL_TARGET=	maindic
 

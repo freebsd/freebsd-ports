@@ -7,7 +7,7 @@
 
 PORTNAME=	ng
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -34,7 +34,7 @@ PLIST_FILES=	bin/ng
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CANNA)
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 
 CFLAGS+=	-I${LOCALBASE}/include -DCANNA
 LIBS+=		-L${LOCALBASE}/lib -lcanna

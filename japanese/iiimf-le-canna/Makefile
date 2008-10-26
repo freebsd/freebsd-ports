@@ -7,7 +7,7 @@
 
 PORTNAME=	le-canna
 PORTVERSION=	12.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -16,7 +16,7 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Canna language engine for IIIMF
 
-LIB_DEPENDS=	canna16.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS=	canna16.1:${PORTSDIR}/japanese/canna-lib
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server \
 		${LOCALBASE}/lib/iiim/csconv/csconv.so:${PORTSDIR}/textproc/iiimf-csconv
 
