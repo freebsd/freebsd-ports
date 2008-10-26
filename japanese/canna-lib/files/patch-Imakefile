@@ -1,0 +1,19 @@
+--- Imakefile.orig	2004-05-20 00:39:22.000000000 +0900
++++ Imakefile	2008-09-07 15:25:52.000000000 +0900
+@@ -129,7 +129,7 @@
+ install:: mkbindir mklibdir mkdicdir mkerrdir
+ instserver:: mkdicdir mkerrdir
+ instclient:: mkbindir mkdicdir
+-instsgs:: mklibdir
++instsgs::
+ instmost:: mkbindir mklibdir mkdicdir mkerrdir
+ 
+ MakeDirectories(mkbindir, $(cannaBinDir))
+@@ -184,6 +184,7 @@
+ 		(cd $$i ; echo "installing" "in $(CURRENT_DIR)/$$i..."; \
+ 		$(MAKE) $(MFLAGS) DESTDIR='$(DESTDIR)' install); \
+ 	done
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) pubconf.h $(DESTDIR)$(cannaIncDir)
+ 
+ instmost::
+ 	@case '${MFLAGS}' in *[ik]*) set +e;; esac; \
