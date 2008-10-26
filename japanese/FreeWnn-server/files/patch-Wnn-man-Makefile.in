@@ -1,0 +1,11 @@
+--- Wnn/man/Makefile.in.orig	2008-10-27 03:58:56.000000000 +0900
++++ Wnn/man/Makefile.in	2008-10-27 04:04:06.000000000 +0900
+@@ -32,7 +32,7 @@
+ include @top_srcdir@/makerule.mk
+ top_builddir = ../..
+ 
+-LIB_WNNMANDIR = 3.libwnn
++#LIB_WNNMANDIR = 3.libwnn
+ 
+ SERVER_WNNMANDIR = 2.env 4.cmd 6.jutil
+ 

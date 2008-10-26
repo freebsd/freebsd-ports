@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-server
 CATEGORIES=	chinese
-MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
+PKGNAMESUFFIX=	-server
+
 COMMENT=	A Japanese/Chinese/Korean input method (Chinese server)
 
+MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-server
 PKGDIR=		${.CURDIR}
-PKGINSTALL=	${.CURDIR}/../../japanese/FreeWnn-server/pkg-install
-WNN=		cWnn
+
+WNNTYPE=	CWNN
 
 .include "${MASTERDIR}/Makefile"
