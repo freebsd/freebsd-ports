@@ -1,0 +1,7 @@
+%%SITE_PERL%%/B/Hooks/EndOfScope.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/EndOfScope/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks/EndOfScope
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Hooks
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
+@dirrmtry %%SITE_PERL%%/B/Hooks
+@dirrmtry %%SITE_PERL%%/B
