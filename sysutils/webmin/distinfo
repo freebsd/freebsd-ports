@@ -4,3 +4,6 @@ SIZE (webmin-1.440.tar.gz) = 13877508
 MD5 (useradmin-1.440-6.wbm.gz) = bdffa70628ba02843bea78e5f26089e8
 SHA256 (useradmin-1.440-6.wbm.gz) = 6e4613b1f50922d2bb6488a493b7f752880abb74364f96ba11370985ba1dd02e
 SIZE (useradmin-1.440-6.wbm.gz) = 292878
+MD5 (ldap-useradmin-1.440-1.wbm.gz) = 0e2d3458386f96d5e1b702339c248293
+SHA256 (ldap-useradmin-1.440-1.wbm.gz) = daa3aa56d568259c55c9b928694f052899450621f2eda21a33de921a1f54aa3d
+SIZE (ldap-useradmin-1.440-1.wbm.gz) = 57353
