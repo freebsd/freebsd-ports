@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mumps
-PORTVERSION=	4.7.3
+PORTVERSION=	4.8.3
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -94,21 +94,22 @@ post-patch:
 .endif
 
 pre-build:
-	@${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	@${REINPLACE_CMD} -e 's+@CC@+${CC}+g ; s+@FC@+${FC}+g ; \
+	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+	${REINPLACE_CMD} -e 's+@CC@+${CC}+g ; s+@FC@+${FC}+g ; \
 	s+@CFLAGS@+${CFLAGS}+g; \
 	s+@FCFLAGS@+${FCFLAGS}+g; \
 	s+@GCCLIBDIR@+${GCCLIBDIR}+g; \
 	s+@FORTRANLIBS@+${FORTRANLIBS}+g; \
 	s+@PTHREAD_LIBS@+${PTHREAD_LIBS}+g; \
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
+	s+../PORD+${WRKSRC}/PORD+; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
 		${WRKSRC}/Makefile.inc
 .ifdef WITH_MPI
-	@${REINPLACE_CMD} -e 's+@LAPACK_LIBS@+${LAPACK_LIBS}+g;' ${WRKSRC}/Makefile.inc
+	${REINPLACE_CMD} -e 's+@LAPACK_LIBS@+${LAPACK_LIBS}+g;' ${WRKSRC}/Makefile.inc
 .endif
 .ifdef WITH_METIS
-	@${REINPLACE_CMD} -e 's+#LMETIS+LMETIS+' ${WRKSRC}/Makefile.inc
+	${REINPLACE_CMD} -e 's+#LMETIS+LMETIS+' ${WRKSRC}/Makefile.inc
 .endif
 
 do-install:
@@ -123,6 +124,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.ps ${DOCSDIR}
 	${GZIP_CMD} ${DOCSDIR}/userguide_${PORTVERSION}.ps
 .endif
+.ifndef NOPORTEXAMPLES
+	@${MKDIR} ${EXAMPLESDIR}
+. for ex in Makefile README *.c *.F input_simpletest_*
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+. endfor
+. for ex in c_example *simpletest
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+. endfor
+.endif
 
 .if defined(MAINTAINER_MODE)
 regression-test:
@@ -133,7 +143,7 @@ regression-test:
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 .  endif
 	${LOCALBASE}/mpich2/bin/mpd &
-	(cd ${WRKSRC}/test &&	\
+	(cd ${WRKSRC}/examples &&	\
 	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./ssimpletest < input_simpletest_real ;	\
 	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./dsimpletest < input_simpletest_real ;	\
 	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./csimpletest < input_simpletest_cmplx ;	\
@@ -143,7 +153,7 @@ regression-test:
 	${ECHO_MSG} "The solution should be (1,2)")
 	${LOCALBASE}/mpich2/bin/mpdallexit
 . else
-	(cd ${WRKSRC}/test &&	\
+	(cd ${WRKSRC}/examples &&	\
 	./ssimpletest < input_simpletest_real ;			\
 	./dsimpletest < input_simpletest_real ;			\
 	./csimpletest < input_simpletest_cmplx ;		\
