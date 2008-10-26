@@ -82,16 +82,20 @@ case "$2" in
 POST-INSTALL)
 	cd ${X_FONTSDIR}
 	touch fonts.dir
-	(catfontsdir < fonts.dir; addentries) > fonts.dir.tmp
-	nfonts < fonts.dir.tmp > fonts.dir
-	cat fonts.dir.tmp >> fonts.dir
-	rm -f fonts.dir.tmp
+	exec < fonts.dir; rm -f fonts.dir
+	(catfontsdir; addentries) > fonts.dir
+	_num=`nfonts fonts.dir`
+	exec < fonts.dir; rm -f fonts.dir
+	(echo "${_num}"; cat) > fonts.dir
+	chmod 0444 fonts.dir
 	;;
 DEINSTALL)
 	cd ${X_FONTSDIR}
-	catfontsdir < fonts.dir > fonts.dir.tmp
-	nfonts < fonts.dir.tmp > fonts.dir
-	cat fonts.dir.tmp >> fonts.dir
-	rm -f fonts.dir.tmp
+	exec < fonts.dir; rm -f fonts.dir
+	catfontsdir > fonts.dir
+	_num=`nfonts fonts.dir`
+	exec < fonts.dir; rm -f fonts.dir
+	(echo "${_num}"; cat) > fonts.dir
+	chmod 0444 fonts.dir
 	;;
 esac
