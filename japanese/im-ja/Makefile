@@ -42,7 +42,7 @@ LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
 .if defined(WITHOUT_CANNA)
 CONFIGURE_ARGS+=	--disable-canna
 .else
-LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .if defined(WITHOUT_WNN)

@@ -16,7 +16,7 @@ MAINTAINER=	nork@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Canna
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool:15

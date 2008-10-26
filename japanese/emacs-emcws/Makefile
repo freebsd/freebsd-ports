@@ -76,12 +76,12 @@ LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 CONFIGURE_ARGS+=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .if (${WITH_SJ3} == "yes" || ${WITH_SJ3} == "YES")
 CONFIGURE_ARGS+=	--with-sj3
-BUILD_DEPENDS+=		sj3serv:${PORTSDIR}/japanese/sj3
+BUILD_DEPENDS+=		sj3serv:${PORTSDIR}/japanese/sj3-lib
 .endif
 
 DOC_FILE=	DOC-EMCWS-${EMACS_VER}.1

@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SKK's dictionary for Canna
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/Canna
-BUILD_DEPENDS=	mkbindic:${PORTSDIR}/japanese/Canna
+RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/canna-server
+BUILD_DEPENDS=	mkbindic:${PORTSDIR}/japanese/canna-server
 
 NO_WRKSUBDIR=	yes
 
