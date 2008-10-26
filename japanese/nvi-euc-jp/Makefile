@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-eucjp
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
-LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
 CATEGORIES=	japanese editors
 
