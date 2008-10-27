@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.3.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -63,13 +62,13 @@ PLIST_SUB+=	OPT_MTP="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/bin/sh|' \
-				${WRKSRC}/src/Clients/banshee-1.in \
+				${WRKSRC}/src/Clients/Booter/banshee-1.in \
 				${WRKSRC}/build/icon-theme-installer \
 				${WRKSRC}/build/private-icon-theme-installer
 	@${REINPLACE_CMD} 's|\[\[|\[|g;s|\]\]|\]|g;s|==|=|g;s/||/-o/g' \
 				${WRKSRC}/build/private-icon-theme-installer
 	@${REINPLACE_CMD} 's|-a banshee-1||' \
-				${WRKSRC}/src/Clients/banshee-1.in
+				${WRKSRC}/src/Clients/Booter/banshee-1.in
 	@${REINPLACE_CMD} 's|sed -r|sed -E|' \
 				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
 #				${WRKSRC}/configure \
