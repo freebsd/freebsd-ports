@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	ticketdelete
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	2.0.3543
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Ticket and ticket change deletion
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
+USE_PYDISTUTILS=        easy_install
+PYDISTUTILS_PKGNAME=    TracTicketDelete
+PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION:R} PYTHONVERSION=${_PYTHON_VERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.mk>
