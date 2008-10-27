@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
 USE_GETTEXT=	yes
