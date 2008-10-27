@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	173.14.12
+DISTVERSION?=	177.80
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -33,9 +33,17 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
-# `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
+# `x11/nvidia-driver-71xx', `x11/nvidia-driver-96xx', or `x11/nvidia-driver-173'
+# slave ports.
 #
+# XXX Until NVidia starts to name their releases consistently, employ this
+# ugly hack to derive NVVERSION. XXX
+#
+.if ${DISTVERSION:C/[0-9]+//g} == ".."			# major.minor.update
 NVVERSION=	${DISTVERSION:S/.//g}
+.else							# major.minor
+NVVERSION=	${DISTVERSION:S/.//g}00
+.endif
 
 .include <bsd.port.pre.mk>
 
