@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2ddbfd29-a455-11dd-a55e-00163e000016">
+    <topic>libspf2 -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libspf2</name>
+	<range><lt>1.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2469">
+	  <p>Heap-based buffer overflow in the SPF_dns_resolv_lookup function
+	  in Spf_dns_resolv.c in libspf2 before 1.2.8 allows remote attackers
+	  to execute arbitrary code via a long DNS TXT record with a modified
+	  length field.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31881</bid>
+      <cvename>CVE-2008-2469</cvename>
+    </references>
+    <dates>
+      <discovery>2008-10-21</discovery>
+      <entry>2008-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55616fda-a2d0-11dd-a9f9-0030843d3802">
     <topic>openx -- sql injection vulnerability</topic>
     <affects>
