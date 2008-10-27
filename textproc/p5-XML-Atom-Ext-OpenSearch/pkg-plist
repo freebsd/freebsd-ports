@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Ext/OpenSearch/.packlist
+%%SITE_PERL%%/XML/Atom/Ext/OpenSearch.pm
+%%SITE_PERL%%/XML/Atom/Ext/OpenSearch/Query.pm
+@dirrmtry %%SITE_PERL%%/XML/Atom/Ext/OpenSearch
+@dirrmtry %%SITE_PERL%%/XML/Atom/Ext
+@dirrmtry %%SITE_PERL%%/XML/Atom
+@dirrmtry %%SITE_PERL%%/XML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Ext/OpenSearch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Ext
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
