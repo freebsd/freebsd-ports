@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	tocmacro
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	11.0.0.3
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Table of contents macro
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_BUILD=	yes
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=1.0 PYTHONVERSION=${_PYTHON_VERSION}
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	TracTocMacro
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.mk>
