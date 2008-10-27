@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imerge
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
