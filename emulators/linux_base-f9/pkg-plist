@@ -65,8 +65,10 @@ etc/pam.d/su-l
 etc/pki/rpm-gpg/RPM-GPG-KEY
 etc/pki/rpm-gpg/RPM-GPG-KEY-beta
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora
+etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-8-and-9
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-rawhide
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test
+etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test-8-and-9
 etc/pki/rpm-gpg/RPM-GPG-KEY-rawhide
 etc/profile
 etc/profile.d/colorls.csh
@@ -86,7 +88,9 @@ etc/termcap
 @unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf; then rm -f %D/etc/yp.conf; fi
 etc/yp.conf.sample
 etc/yum.repos.d/fedora-development.repo
+etc/yum.repos.d/fedora-updates-newkey.repo
 etc/yum.repos.d/fedora-updates-testing.repo
+etc/yum.repos.d/fedora-updates-testing-newkey.repo
 etc/yum.repos.d/fedora-updates.repo
 etc/yum.repos.d/fedora.repo
 lib/ld-2.7.so
