@@ -1,11 +1,13 @@
---- Makefile	Tue Mar 27 18:14:20 2007
-+++ Makefile	Thu Feb 28 14:49:56 2008
+Index: Makefile
+===================================================================
+--- Makefile	(revision 45)
++++ Makefile	(working copy)
 @@ -1,7 +1,7 @@
  # Makefile for ptpd
  
  RM = rm -f
 -CFLAGS = -Wall
-+CFLAGS+= -Wall -DBSD_INTERFACE_FUNCTIONS
++CFLAGS = -Wall -BSD_INTERFACE_FUNCTIONS
  #CPPFLAGS = -DPTPD_DBG -DPTPD_NO_DAEMON
  
  PROG = ptpd

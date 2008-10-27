@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	ptpd
-DISTVERSION=	1rc1
+DISTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	ptpd_${DISTVERSION}
 
 MAINTAINER=	gnn@freebsd.org
 COMMENT=	An implementation of the precision time protocol IEEE 1588
 
-WRKSRC=		${WRKDIR}/ptpd/src
+WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
 PLIST_FILES=	bin/ptpd
 
