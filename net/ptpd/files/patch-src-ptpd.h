@@ -1,5 +1,7 @@
---- ptpd.h	Tue Mar 27 18:14:20 2007
-+++ ptpd.h	Thu Feb 28 14:03:43 2008
+Index: ptpd.h
+===================================================================
+--- ptpd.h	(revision 45)
++++ ptpd.h	(working copy)
 @@ -4,6 +4,7 @@
  #define PTPD_H
  
