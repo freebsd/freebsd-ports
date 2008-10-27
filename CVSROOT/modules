@@ -9790,6 +9790,7 @@ p5-AxKit-XSP-WebUtils           ports/www/p5-AxKit-XSP-WebUtils
 p5-B-Deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
+p5-B-Hooks-EndOfScope           ports/devel/p5-B-Hooks-EndOfScope
 p5-B-Keywords                   ports/devel/p5-B-Keywords
 p5-B-LexInfo                    ports/www/p5-B-LexInfo
 p5-B-Size                       ports/devel/p5-B-Size
@@ -11574,6 +11575,7 @@ p5-Net-LDAP-LDAPhash            ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LDAP-Makepath            ports/net/p5-Net-LDAP-Makepath
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
+p5-Net-MAC                      ports/net/p5-Net-MAC
 p5-Net-MAC-Vendor               ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN                      ports/net-im/p5-Net-MSN
 p5-Net-ManageSieve              ports/mail/p5-Net-ManageSieve
@@ -12947,6 +12949,7 @@ p5-axkit-xsp-webutils           ports/www/p5-AxKit-XSP-WebUtils
 p5-b-deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
+p5-b-hooks-endofscope           ports/devel/p5-B-Hooks-EndOfScope
 p5-b-keywords                   ports/devel/p5-B-Keywords
 p5-b-lexinfo                    ports/www/p5-B-LexInfo
 p5-b-size                       ports/devel/p5-B-Size
@@ -14761,6 +14764,7 @@ p5-net-ldap-ldaphash            ports/net/p5-Net-LDAP-LDAPhash
 p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
+p5-net-mac                      ports/net/p5-Net-MAC
 p5-net-mac-vendor               ports/net/p5-Net-MAC-Vendor
 p5-net-managesieve              ports/mail/p5-Net-ManageSieve
 p5-net-mosso-cloudfiles         ports/net/p5-Net-Mosso-CloudFiles
