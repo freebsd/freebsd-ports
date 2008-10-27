@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_GMAKE=	yes

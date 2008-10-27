@@ -11,7 +11,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
 USE_AUTOTOOLS=	libtool:15

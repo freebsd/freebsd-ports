@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kcd
 DISTNAME=	kcd-${PORTVERSION}
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
 USE_GETTEXT=	yes
