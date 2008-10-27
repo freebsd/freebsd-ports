@@ -9,6 +9,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/ASF.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
+%%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
@@ -18,6 +19,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Casio.pm
 %%SITE_PERL%%/Image/ExifTool/DICOM.pm
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
+%%SITE_PERL%%/Image/ExifTool/DjVu.pm
+%%SITE_PERL%%/Image/ExifTool/EXE.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/FLAC.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
@@ -66,6 +69,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
+%%SITE_PERL%%/Image/ExifTool/Rawzor.pm
 %%SITE_PERL%%/Image/ExifTool/Real.pm
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
@@ -88,8 +92,11 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/WriteXMP.pl
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
+%%SITE_PERL%%/Image/ExifTool/XMP2.pm
+%%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/ExifTool.html
+%%PORTDOCS%%%%DOCSDIR%%/MIE1.1-20070121.pdf
 %%PORTDOCS%%%%DOCSDIR%%/canon_raw.html
 %%PORTDOCS%%%%DOCSDIR%%/commentary.html
 %%PORTDOCS%%%%DOCSDIR%%/config.html
@@ -106,7 +113,6 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
-%%PORTDOCS%%%%DOCSDIR%%/MIE1.1-20070121.pdf
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APE.html
@@ -121,6 +127,8 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Composite.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DICOM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DNG.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/DjVu.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/EXE.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FLAC.html
@@ -137,8 +145,8 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ITC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JFIF.html
-%%PORTDOCS%%%%DOCSDIR%%/TagNames/JVC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JPEG.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/JVC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/KyoceraRaw.html
@@ -164,6 +172,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Rawzor.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Real.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
@@ -174,6 +183,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Vorbis.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/ZIP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
