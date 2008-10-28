@@ -7,35 +7,46 @@
 
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1a
-PORTREVISION=	3
-PKGNAMESUFFIX=	${INPUT_METHOD}
+PORTREVISION=	4
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		http://hp.vector.co.jp/authors/VA003457/vim/vim3/2.1a/
-DISTFILES=	vim-3.0.tar.gz \
-		${JPATCH}
+DISTFILES=	vim-3.0.tar.gz jvim.2.1a.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	Japanized Vim-3.0
+COMMENT=	Japanized Vim-3.0
 
-NO_LATEST_LINK=	YES	# waiting for jgrep, jfold, jcat
-PATCHDIR=	${.CURDIR}/../jvim3/files
-FILESDIR=	${.CURDIR}/../jvim3/files
-PLIST=		${.CURDIR}/../jvim3/pkg-plist
-EXTRACT_ONLY=	vim-3.0.tar.gz
+EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}.diff
 WRKSRC=		${WRKDIR}/vim
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	makjunix.mak
+ALL_TARGET=	# empty
+PLIST_SUB=	VERSION=${PORTVERSION}
+MAKE_ARGS=	FEPOPT='${FEPOPT}' \
+		FEPLIBS="${FEPLIBS}" \
+		FEPOBJS="${FEPOBJS}" \
+		MACHINE="${MACHINE}" \
+		CC="${CC}" \
+		LIBS="${LIBS}"
+
 MAN1=		jvim3.1
 
-.include <bsd.port.pre.mk>
+OPTIONS=	X11	"X11 support"				on \
+		CANNA	"Canna support (via ONEW library)"	on \
+		DIRECT_CANNA	"Canna support (direct)"	off \
+		FREEWNN	"FreeWnn support (via ONEW library)"	on \
+		WNN6	"Wnn6 support"				off \
+		WNN7	"Wnn7 support"				off
 
-JPATCH=		jvim.2.1a.tar.gz
-PLIST_SUB=	VERSION=${PORTVERSION}
-PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${PORTVERSION}
+PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
+		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
+
 # -DUSE_X11 is the cause of a problem treating Japanese
 MACHINE=	-DBSD_UNIX -DUSE_LOCALE
-CC=		cc ${CFLAGS} -Wall
 LIBS=		-ltermlib -L${PREFIX}/lib
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
@@ -44,101 +55,70 @@ CC+=		-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
 .endif
 
-# Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
-# LIB_DEPENDS, etc.
-FEPOPT=		-DJP_DEF=\"EEE\"
-#######
 #  Direct connection to Canna
-#######
-.if defined(DIRECT_CANNA)
+.if !defined(WITHOUT_DIRECT_CANNA)
 INPUT_METHOD+=	direct_canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
-FEPOPT+=	-DCANNA
+FEPOPT+=	-DJP_DEF=\"EEE\" -DCANNA -DFEPCTRL
 FEPLIBS=	-lcanna
 FEPOBJS=	fepcanna.o
-.else # DIRECT_CANNA
-#######
+JVIM3RC=	"set fepctrl"
+.else # !WITHOUT_DIRECT_CANNA
+
 # Connection by using ONEW library
-#######
-.if defined(CANNA)
+.if !defined(WITHOUT_CANNA)
 INPUT_METHOD+=	canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
-FEPLIBS+=	-lcanna
-.endif
-.if defined(FREEWNN)
-INPUT_METHOD+=	freewnn
-LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
-FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
-.elif defined(WNN6)
-INPUT_METHOD+=	wnn6
-LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew
-FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
-.elif defined(WNN7)
-INPUT_METHOD+=	wnn7
-LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7/2B_ROMKANA:${PORTSDIR}/japanese/onew
-FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
-.endif
-.endif # DIRECT_CANNA
-#
-.if defined(INPUT_METHOD)
-# Make a value of INPUT_METHOD
-## 'sed' in the next line cannot be replaced with '${SED}'
-INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
-FEPOPT+=	-DFEPCTRL
-.if !defined(DIRECT_CANNA)
-# For ONEW library
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew
-FEPOPT+=	-DONEW
-# If we use ONEW libray, then -lonew-* needs appear
-# before the other libraries in ${FEPLIBS}.
-## 'sed' in the next line cannot be replaced with '${SED}'
-FEPLIBS!=	${ECHO_CMD} ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
+FEPLIBS+=	-L${LOCALBASE}/lib -lonew-canna -lcanna
+FEPOPT+=	-DJP_DEF=\"EEE\" -DONEW -DFEPCTRL
 FEPOBJS=	feponew.o
-###
-.endif
-PLIST_SUB+=     HAS_JVIM3RC=""
-.else
-PLIST_SUB+=     HAS_JVIM3RC="@comment "
+JVIM3RC=	"set fepctrl onewredraw"
 .endif
 
-post-extract:
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}${JPATCH} \
-		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
+.if !defined(WITHOUT_FREEWNN)
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-freewnn.a:${PORTSDIR}/japanese/onew
+FEPLIBS+=	-L${LOCALBASE}/lib -lonew-freewnn -ljd -lcrypt
+FEPOPT+=	-DJP_DEF=\"EEE\" -DONEW -DFEPCTRL
+FEPOBJS=	feponew.o
+JVIM3RC=	"set fepctrl onewredraw"
+.endif
 
-pre-patch:
-	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/jvim.diff
+.if !defined(WITHOUT_WNN6)
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-wnn6.a:${PORTSDIR}/japanese/onew
+FEPLIBS+=	-L${LOCALBASE}/lib -lonew-wnn6 -ljd -lcrypt
+FEPOPT+=	-DJP_DEF=\"EEE\" -DONEW -DFEPCTRL
+FEPOBJS=	feponew.o
+JVIM3RC=	"set fepctrl onewredraw"
+.endif
 
-do-build:
-	cd ${WRKSRC}/src; \
-	make -f ${MAKEFILE} 'FEPOPT=${FEPOPT}' 'FEPLIBS=${FEPLIBS}' \
-		'FEPOBJS=${FEPOBJS}' 'MACHINE=${MACHINE}' 'CC=${CC}' \
-		'LIBS=${LIBS}'
+.if !defined(WITHOUT_WNN7)
+LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-wnn7.a:${PORTSDIR}/japanese/onew
+FEPLIBS+=	-L${LOCALBASE}/lib -lonew-wnn7 -ljd -lcrypt
+FEPOPT+=	-DJP_DEF=\"EEE\" -DONEW -DFEPCTRL
+FEPOBJS=	feponew.o
+JVIM3RC=	"set fepctrl onewredraw"
+.endif
+.endif # !WITHOUT_DIRECT_CANNA
 
-do-install:
-	cd ${WRKSRC}/src; make -f ${MAKEFILE} install
+post-build:
+	${CP} ${WRKSRC}/doc.j/tutor/tutor.j ${WRKSRC}/doc.j
+
+post-install:
 	${LN} -sf ${PREFIX}/bin/jvim3 ${PREFIX}/bin/jvim
-	if [ -e ${PREFIX}/etc/jvim3rc ]; then \
-		${MV} ${PREFIX}/etc/jvim3rc ${PREFIX}/etc/jvim3rc.bak; \
-	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep ${PREFIX}/bin/jgrep
-.if defined(INPUT_METHOD)
-.if defined(DIRECT_CANNA)
-	${ECHO_CMD} "set fepctrl" > ${PREFIX}/etc/jvim3rc
-.else
-	${ECHO_CMD} "set fepctrl onewredraw" > ${PREFIX}/etc/jvim3rc
+.if defined(JVIM3RC)
+	${ECHO_CMD} "${JVIM3RC}" > ${WRKSRC}/jvim3rc.dist
+	${INSTALL_DATA} ${WRKSRC}/jvim3rc.dist ${PREFIX}/etc/
 .endif
+.if !exists(${PREFIX}/etc/jvim3rc)
+	${INSTALL_DATA} ${PREFIX}/etc/jvim3rc.dist ${PREFIX}/etc/jvim3rc
 .endif
 .if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
-	for file in cygwin.txt differen.doc fepctrl.doc readme.doc \
-		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor/tutor.j ; do \
-		${INSTALL_DATA} ${WRKSRC}/doc.j/$$file ${PORT_DOCDIR}; \
-	done
-
-.endif
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc.j && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

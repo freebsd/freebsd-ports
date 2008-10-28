@@ -111,14 +111,6 @@
     SUBDIR += jpilot
     SUBDIR += jstrings
     SUBDIR += jvim3
-    SUBDIR += jvim3-canna
-    SUBDIR += jvim3-canna+freewnn
-    SUBDIR += jvim3-canna+wnn6
-    SUBDIR += jvim3-canna+wnn7
-    SUBDIR += jvim3-direct_canna
-    SUBDIR += jvim3-freewnn
-    SUBDIR += jvim3-wnn6
-    SUBDIR += jvim3-wnn7
     SUBDIR += jyuroku
     SUBDIR += k10
     SUBDIR += k12

@@ -1,16 +1,8 @@
+@comment $FreeBSD$
 bin/jvim
 bin/jvim3
 bin/jgrep
 lib/jvim3.hlp
-@exec ([ -f %D/etc/jvim3rc ] && mv %D/etc/jvim3rc %D/etc/jvim3rc.bak) || /usr/bin/true
-%%HAS_JVIM3RC%%etc/jvim3rc
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/cygwin.txt
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/differen.doc
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/fepctrl.doc
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/readme.doc
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/termcap.dos
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/tutor.j
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/uganda.jp
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/vim-jp.htm
-%%PORTDOCS%%share/doc/ja-jvim-%%VERSION%%/vim32.ini
-%%PORTDOCS%%@dirrm share/doc/ja-jvim-%%VERSION%%
+@unexec if cmp -s %D/etc/jvim3rc %D/etc/jvim3rc.dist; then rm -f %D/etc/jvim3rc; fi
+etc/jvim3rc.dist
+@exec if [ ! -f %D/etc/jvim3rc ]; then cp %D/etc/jvim3rc.dist %D/etc/jvim3rc; fi
