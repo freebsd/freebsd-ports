@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kiconvtool
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL}
