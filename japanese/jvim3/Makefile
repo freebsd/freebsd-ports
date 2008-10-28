@@ -72,12 +72,12 @@ FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
 .elif defined(WNN6)
 INPUT_METHOD+=	wnn6
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew
 FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
 .elif defined(WNN7)
 INPUT_METHOD+=	wnn7
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn7/2B_ROMKANA:${PORTSDIR}/japanese/onew
 FEPLIBS+=	-L${LOCALBASE}/lib -ljd -lcrypt
 .endif
 .endif # DIRECT_CANNA
