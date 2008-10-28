@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Net/SSH/Perl/Comp/Zlib.pm
 %%SITE_PERL%%/Net/SSH/Perl/Config.pm
 %%SITE_PERL%%/Net/SSH/Perl/Constants.pm
+%%SITE_PERL%%/Net/SSH/Perl/Handle.pm
 %%SITE_PERL%%/Net/SSH/Perl/Handle/SSH1.pm
 %%SITE_PERL%%/Net/SSH/Perl/Handle/SSH2.pm
 %%SITE_PERL%%/Net/SSH/Perl/Kex.pm
@@ -36,6 +37,8 @@
 %%SITE_PERL%%/Net/SSH/Perl/Packet.pm
 %%SITE_PERL%%/Net/SSH/Perl/SSH1.pm
 %%SITE_PERL%%/Net/SSH/Perl/SSH2.pm
+%%SITE_PERL%%/Net/SSH/Perl/Subsystem/Client.pm
+%%SITE_PERL%%/Net/SSH/Perl/Subsystem/Server.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util/Authfile.pm
 %%SITE_PERL%%/Net/SSH/Perl/Util/Hosts.pm
@@ -49,6 +52,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Util
+@dirrm %%SITE_PERL%%/Net/SSH/Perl/Subsystem
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Key
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Kex
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Handle
