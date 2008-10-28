@@ -23,11 +23,7 @@ COMMENT=	Dynamic pixel format conversion library
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	pkgconfig gnomeprefix ltverhack
+USE_GNOME=	pkgconfig gnomehack ltverhack
 USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
