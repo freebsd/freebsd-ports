@@ -29,7 +29,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/general/errors.html
 %%PORTDOCS%%%%DOCSDIR%%/general/helpers.html
 %%PORTDOCS%%%%DOCSDIR%%/general/hooks.html
-%%PORTDOCS%%%%DOCSDIR%%/general/index.html
 %%PORTDOCS%%%%DOCSDIR%%/general/libraries.html
 %%PORTDOCS%%%%DOCSDIR%%/general/managing_apps.html
 %%PORTDOCS%%%%DOCSDIR%%/general/models.html
@@ -41,6 +40,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/general/routing.html
 %%PORTDOCS%%%%DOCSDIR%%/general/scaffolding.html
 %%PORTDOCS%%%%DOCSDIR%%/general/security.html
+%%PORTDOCS%%%%DOCSDIR%%/general/styleguide.html
 %%PORTDOCS%%%%DOCSDIR%%/general/urls.html
 %%PORTDOCS%%%%DOCSDIR%%/general/views.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/array_helper.html
@@ -71,9 +71,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/ci_quick_ref.png
 %%PORTDOCS%%%%DOCSDIR%%/images/file.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/folder.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/nav_bg.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/nav_separator.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/nav_toggle.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/nav_bg_darker.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/nav_separator_darker.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/nav_toggle_darker.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/smile.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/transparent.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -95,6 +95,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_161.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_162.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_163.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_170.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_b11.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/benchmark.html
@@ -103,6 +104,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/libraries/email.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/file_uploading.html
+%%PORTDOCS%%%%DOCSDIR%%/libraries/form_validation.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/ftp.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/image_lib.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/input.html
@@ -114,6 +116,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/libraries/sessions.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/table.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/trackback.html
+%%PORTDOCS%%%%DOCSDIR%%/libraries/typography.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/unit_testing.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/uri.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/user_agent.html
@@ -130,6 +133,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview/appflow.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/at_a_glance.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/features.html
+%%PORTDOCS%%%%DOCSDIR%%/overview/getting_started.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/goals.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/index.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/mvc.html
@@ -260,6 +264,7 @@
 %%WWWDIR%%/system/language/english/date_lang.php
 %%WWWDIR%%/system/language/english/db_lang.php
 %%WWWDIR%%/system/language/english/email_lang.php
+%%WWWDIR%%/system/language/english/form_validation_lang.php
 %%WWWDIR%%/system/language/english/ftp_lang.php
 %%WWWDIR%%/system/language/english/imglib_lang.php
 %%WWWDIR%%/system/language/english/index.html
@@ -277,6 +282,7 @@
 %%WWWDIR%%/system/libraries/Email.php
 %%WWWDIR%%/system/libraries/Encrypt.php
 %%WWWDIR%%/system/libraries/Exceptions.php
+%%WWWDIR%%/system/libraries/Form_validation.php
 %%WWWDIR%%/system/libraries/Ftp.php
 %%WWWDIR%%/system/libraries/Hooks.php
 %%WWWDIR%%/system/libraries/Image_lib.php
@@ -295,6 +301,7 @@
 %%WWWDIR%%/system/libraries/Sha1.php
 %%WWWDIR%%/system/libraries/Table.php
 %%WWWDIR%%/system/libraries/Trackback.php
+%%WWWDIR%%/system/libraries/Typography.php
 %%WWWDIR%%/system/libraries/Unit_test.php
 %%WWWDIR%%/system/libraries/Upload.php
 %%WWWDIR%%/system/libraries/URI.php
