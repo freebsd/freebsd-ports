@@ -94,9 +94,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2469">
 	  <p>Heap-based buffer overflow in the SPF_dns_resolv_lookup function
-	  in Spf_dns_resolv.c in libspf2 before 1.2.8 allows remote attackers
-	  to execute arbitrary code via a long DNS TXT record with a modified
-	  length field.</p>
+	    in Spf_dns_resolv.c in libspf2 before 1.2.8 allows remote attackers
+	    to execute arbitrary code via a long DNS TXT record with a modified
+	    length field.</p>
 	</blockquote>
       </body>
     </description>
