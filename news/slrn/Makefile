@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.9p1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://angel.sovam.com/pub/tools/net/news/ \
@@ -16,17 +15,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.plig.org/pub/slrn/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://slrn.sourceforge.net/patches/
-PATCHFILES=	slrn-0.9.8.1-fetch.diff \
-		slrn-0.9.8.1-lastchar2.diff
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
@@ -41,7 +34,6 @@ PLIST_SUB+=	NLS=""
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \
 			--with-libiconv-prefix=${LOCALBASE}
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	YES
@@ -50,20 +42,16 @@ CONFIGURE_ARGS+=	--with-ssl
 
 .if defined(WITH_DEVIEW)
 LIB_DEPENDS+=	uu.3:${PORTSDIR}/converters/uulib
-CONFIGURE_ARGS+=	--with-uudeview
+CONFIGURE_ARGS+=	--with-uulib
 .endif
 
 ALL_TARGET=	all
 
 MAN1=		slrn.1 slrnpull.1
 
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
-		${WRKSRC}/src/slrnfeat.h
+		${WRKSRC}/src/slrnfeat.hin
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' \
 		${WRKSRC}/src/jdmacros.h
 
