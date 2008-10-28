@@ -1,7 +1,7 @@
 ************************************************************
 Quickstart:
-	cp ${PREFIX}/lib/jed/lib/jed.rc ~/.jedrc
+	cp ${PREFIX}/share/jed/lib/jed.rc ~/.jedrc
 	jed ~/.jedrc
 
-Read ${PREFIX}/lib/jed/doc/jed-j.doc for details.
+Read ${PREFIX}/share/doc/jed/jed-j.doc for details.
 ************************************************************

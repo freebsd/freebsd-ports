@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese editors
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.kondara.org/~g/slang/
@@ -19,8 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SLang-based text editor (w/ Japanese support)
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
-		${LIBDEP_CANNA}
+LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 
 VERSION=	0.99.8
 JP_VERSION=	067
@@ -35,8 +34,11 @@ MAN1=		jed.1 rgrep.1
 INFO=		jed
 .endif
 
-JED_ROOT=	${PREFIX}/lib/jed
+JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
+
+OPTIONS=	CANNA	"Canna support"	on \
+		X11	"X11 support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -44,19 +46,15 @@ BINSTUFF=	jed rgrep
 CONFIGURE_ARGS+=	--with-canna=no
 .else
 CONFIGURE_ARGS+=	--with-canna=yes
-LIBDEP_CANNA=		canna.1:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 .endif
 
 .if defined(WITHOUT_X11)
-WITHOUT_XJED=	yes
-.endif
-
-.if defined(WITHOUT_XJED) || defined(XJED_BROKEN)
-PLIST_SUB=	XJED_ENTRY="@comment xjed is not installed"
+PLIST_SUB=	X11="@comment "
 .else
 USE_XORG=	x11 xext
 BINSTUFF+=	xjed
-PLIST_SUB=	XJED_ENTRY="bin/xjed"
+PLIST_SUB=	X11="bin/xjed"
 .endif
 
 _OBJDIR=	${WRKSRC}/src/${ARCH}objs
@@ -64,46 +62,39 @@ _DOCDIR=	${WRKSRC}/doc
 _INFODIR=	${WRKSRC}/info
 _LIBDIR=	${WRKSRC}/lib
 
-pre-fetch:
-.if !defined(WITHOUT_CANNA)
-	@${ECHO_MSG} "To build this port without Canna, define \"WITHOUT_CANNA\"."
-.endif
-.if !defined(WITHOUT_XJED)
-.if defined(XJED_BROKEN)
-	@${ECHO_MSG} "Sorry, I will not build xjed since it is broken on 3.x-STABLE for the present."
-.else
-	@${ECHO_MSG} "To build this port without xjed, define \"WITHOUT_XJED\"."
-.endif
-.endif
+PORTDOCS= abbrev.txt color.txt dfa.txt edt.txt emacs.txt fold.txt	\
+	hooks.txt ide-mode.txt jed_faq.txt jedfuns.txt libfuns.txt	\
+	menus.txt mouse.txt pc-keys.txt program.txt rgrep.txt		\
+	rmail.txt script.txt slangfun.txt syntax.txt undo.txt wjed.txt	\
+	wordstar.txt xjed.txt yankpop.txt README jed.tex jed-j.doc
 
 post-extract:
 	@cd ${WRKDIR} && ${MV} *.sl ${_LIBDIR}/
+	@${CP} ${WRKSRC}/jed-j.doc ${_DOCDIR}/
 
 post-patch:
 	@${RM} ${_INFODIR}/*.orig
 
 do-install:
-	@${MKDIR} ${JED_ROOT}
-.for d in bin doc lib lib/colors lib/tm
-	@${MKDIR} ${JED_ROOT}/${d}
-.endfor
-.for f in ${BINSTUFF}
-	${INSTALL_PROGRAM} ${_OBJDIR}/${f} ${PREFIX}/bin/
-.endfor
+	${MKDIR} ${JED_ROOT}
+	cd ${JED_ROOT} && ${MKDIR} bin lib lib/colors lib/tm
+	cd ${_OBJDIR} && ${INSTALL_PROGRAM} ${BINSTUFF} ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${_OBJDIR}/getmail ${JED_ROOT}/bin/
-	${INSTALL_DATA} ${_LIBDIR}/*.sl ${_LIBDIR}/*.dat ${_LIBDIR}/*.hlp ${_LIBDIR}/jed.rc ${JED_ROOT}/lib/
+	${INSTALL_DATA} ${_LIBDIR}/*.sl \
+		${_LIBDIR}/*.dat \
+		${_LIBDIR}/*.hlp \
+		${_LIBDIR}/jed.rc \
+		${JED_ROOT}/lib/
 	${INSTALL_DATA} ${_LIBDIR}/colors/* ${JED_ROOT}/lib/colors/
 	${INSTALL_DATA} ${_LIBDIR}/tm/* ${JED_ROOT}/lib/tm/
-.for f in ${MAN1}
-	${INSTALL_MAN} ${_DOCDIR}/${f} ${PREFIX}/man/man1/
-.endfor
+	cd ${_DOCDIR} && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${_INFODIR}/jed.info ${PREFIX}/info/
 	${INSTALL_DATA} ${_INFODIR}/jed.1in ${PREFIX}/info/jed.info-1
 	${INSTALL_DATA} ${_INFODIR}/jed.2in ${PREFIX}/info/jed.info-2
 	${INSTALL_DATA} ${_INFODIR}/jed.3in ${PREFIX}/info/jed.info-3
-	@${MKDIR} ${JED_ROOT}/doc/
-	${INSTALL_DATA} ${_DOCDIR}/README ${_DOCDIR}/*.txt ${_DOCDIR}/jed.tex ${WRKSRC}/jed-j.doc ${JED_ROOT}/doc/
+	${MKDIR} ${DOCSDIR}
+	cd ${_DOCDIR} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
