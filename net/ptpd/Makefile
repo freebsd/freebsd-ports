@@ -7,11 +7,12 @@
 
 PORTNAME=	ptpd
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gnn@freebsd.org
+MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	An implementation of the precision time protocol IEEE 1588
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
