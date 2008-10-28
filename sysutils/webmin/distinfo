@@ -7,3 +7,6 @@ SIZE (useradmin-1.440-6.wbm.gz) = 292878
 MD5 (ldap-useradmin-1.440-1.wbm.gz) = 0e2d3458386f96d5e1b702339c248293
 SHA256 (ldap-useradmin-1.440-1.wbm.gz) = daa3aa56d568259c55c9b928694f052899450621f2eda21a33de921a1f54aa3d
 SIZE (ldap-useradmin-1.440-1.wbm.gz) = 57353
+MD5 (blue-theme-1.440-1.wbt.gz) = 9ff99eaa02f262e781c5fde3b7eddcd7
+SHA256 (blue-theme-1.440-1.wbt.gz) = 0decc7c77dbba4a12b1f1f1704a14803d9e58ec7143bc9e19cbe45f67a29e288
+SIZE (blue-theme-1.440-1.wbt.gz) = 2060607
