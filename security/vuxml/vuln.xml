@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5c4d7f7-9f4b-11dd-bab1-001999392805">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<range><lt>9.61.20081017</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/view/903/">
+	  <p>Certain constructs are not escaped correctly by Opera's
+	    History Search results. These can be used to inject scripts
+	    into the page, which can then be used to look through the user's
+	    browsing history, including the contents of the pages they have
+	    visited. These may contain sensitive information.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/904/">
+	  <p>If a link that uses a JavaScript URL triggers Opera's Fast
+	    Forward feature, when the user activates Fast Forward, the
+	    script should run on the current page. When a page is held in a
+	    frame, the script is incorrectly executed on the outermost page,
+	    not the page where the URL was located. This can be used to
+	    execute scripts in the context of an unrelated frame, which
+	    allows cross-site scripting.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/905/">
+	  <p>When Opera is previewing a news feed, some scripts are not
+	    correctly blocked. These scripts are able to subscribe the user
+	    to any feed URL that the attacker chooses, and can also view
+	    the contents of any feeds that the user is subscribed to.
+	    These may contain sensitive information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/search/view/903/</url>
+      <url>http://www.opera.com/support/search/view/904/</url>
+      <url>http://www.opera.com/support/search/view/905/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-17</discovery>
+      <entry>2008-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ddbfd29-a455-11dd-a55e-00163e000016">
     <topic>libspf2 -- Buffer overflow</topic>
     <affects>
