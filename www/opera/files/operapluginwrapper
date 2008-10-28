@@ -1,18 +1,19 @@
 #!/bin/sh
 
 if [ -n "$4" ]; then
-ELFTYPE=`brandelf $4`
+	ELFTYPE=`brandelf $4`
 elif [ -n "$3" ]; then
-ELFTYPE=`brandelf $3`
+	ELFTYPE=`brandelf $3`
 fi
 
 WRAPPER="freebsd"
+
 case "${ELFTYPE}" in
-*SVR4*|*Linux*)
-if [ -x "$0.linux" ]; then
-WRAPPER="linux"
-fi
-;;
+	*SVR4*|*Linux*)
+		if [ -x "$0.linux" ]; then
+			WRAPPER="linux"
+		fi
+	;;
 esac
 
 exec $0.$WRAPPER $@

@@ -29,13 +29,13 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}.gcc3-shared-qt3.i386
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Linux plugin support for the native Opera browser
 
-RUN_DEPENDS=	${LOCALBASE}/share/opera/bin/operapluginwrapper:${PORTSDIR}/www/opera
+RUN_DEPENDS=	${PREFIX}/share/opera/bin/operapluginwrapper:${PORTSDIR}/www/opera
 
-OPERA_VER=	9.60
+OPERA_VER=	9.61
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20081004
-OPERA_BUILD=	2444
+OPERA_DATE=	20081017
+OPERA_BUILD=	2456
 
 USE_BZIP2=	yes
 USE_LINUX=	yes

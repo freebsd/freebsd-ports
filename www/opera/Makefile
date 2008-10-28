@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
 		ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
@@ -30,11 +29,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.60
+OPERA_VER=	9.61
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20081004
-OPERA_BUILD=	2444
+OPERA_DATE=	20081017
+OPERA_BUILD=	2456
 OPERA_LIB=	shared
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
