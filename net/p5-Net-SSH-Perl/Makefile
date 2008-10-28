@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.33
 CATEGORIES=		net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -66,6 +65,8 @@ MAN3=	Net::SSH::Perl.3 \
 	Net::SSH::Perl::Packet.3 \
 	Net::SSH::Perl::SSH1.3 \
 	Net::SSH::Perl::SSH2.3 \
+	Net::SSH::Perl::Subsystem::Client.3 \
+	Net::SSH::Perl::Subsystem::Server.3 \
 	Net::SSH::Perl::Util.3
 
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="1"
