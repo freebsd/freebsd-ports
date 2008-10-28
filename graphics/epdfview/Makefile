@@ -7,7 +7,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		LOCAL/chinsan
@@ -27,6 +27,18 @@ USE_GNOME=	gtk20 intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=	CUPS	"Use cups printing system"		off \
+		NLS	"Native language support"		on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CUPS)
+CONFIGURE_ARGS+=--with-cups
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+.else
+CONFIGURE_ARGS+=--without-cups
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -43,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/${PORTNAME}.desktop ${PREFIX}/share/applications/
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
