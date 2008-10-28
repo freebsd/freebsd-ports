@@ -480,6 +480,7 @@
     SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-FLAC-Header
+    SUBDIR += p5-Audio-MPD
     SUBDIR += p5-Audio-MPD-Common
     SUBDIR += p5-Audio-Mixer
     SUBDIR += p5-Audio-Musepack
