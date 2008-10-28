@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	www
-MASTER_SITES=	http://codeigniter.com/download_files/
+MASTER_SITES=	http://codeigniter.com/download_files/ \
+		LOCAL/glarkin
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
