@@ -1,0 +1,20 @@
+This is a multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
+which can assemble code for multiple CPUs in the same source file.
+
+Current CPUs supported:
+
+ * RCA 1802
+ * MOS Technology 6502, 65C02 and 6502 with undocumented instructions
+ * WDC 65816 (lacks some addressing mode support)
+ * Motorola 6809
+ * Motorola 6800/6801/68HC11 and Hitachi 6303
+ * Motorola 6805/68HSC08
+ * Motorola 68HC16
+ * Motorola 68000/68010
+ * Intel 8051
+ * Intel 8080, 8085, and 8085 with undocumented instructions
+ * Fairchild F8
+ * Atari Jaguar "Tom" and "Jerry" coprocessors
+ * Zilog Z-80 and Nintendo Gameboy Z-80 variant 
+
+WWW: http://xi6.com/projects/asmx/

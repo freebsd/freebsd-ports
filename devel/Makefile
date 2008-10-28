@@ -58,6 +58,7 @@
     SUBDIR += asis-gpl
     SUBDIR += asl
     SUBDIR += asmutils
+    SUBDIR += asmx
     SUBDIR += astyle
     SUBDIR += atlas
     SUBDIR += atlas-devel
