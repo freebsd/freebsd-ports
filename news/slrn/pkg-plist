@@ -1,31 +1,31 @@
 bin/slrn
 bin/slrnpull
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FIRST_STEPS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.GroupLens
-%%PORTDOCS%%%%DOCSDIR%%/README.SSL
-%%PORTDOCS%%%%DOCSDIR%%/README.macros
-%%PORTDOCS%%%%DOCSDIR%%/README.multiuser
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/help.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/score.sl
-%%PORTDOCS%%%%DOCSDIR%%/score.txt
-%%PORTDOCS%%%%DOCSDIR%%/slrn-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/slrn.rc
-%%PORTDOCS%%%%DOCSDIR%%/slrnfuns.txt
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/README
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/README.offline
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/SETUP
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/score
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/setgid.txt
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrn.rc
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrnpull.conf
-%%PORTDOCS%%%%DOCSDIR%%/slrnpull/slrnpull.sh
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/COPYRIGHT
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/FIRST_STEPS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.GroupLens
+%%DOCSDIR%%/README.SSL
+%%DOCSDIR%%/README.macros
+%%DOCSDIR%%/README.multiuser
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/changes.txt
+%%DOCSDIR%%/help.txt
+%%DOCSDIR%%/manual.txt
+%%DOCSDIR%%/score.sl
+%%DOCSDIR%%/score.txt
+%%DOCSDIR%%/slrn-doc.html
+%%DOCSDIR%%/slrn.rc
+%%DOCSDIR%%/slrnfuns.txt
+%%DOCSDIR%%/slrnpull/README
+%%DOCSDIR%%/slrnpull/README.offline
+%%DOCSDIR%%/slrnpull/SETUP
+%%DOCSDIR%%/slrnpull/score
+%%DOCSDIR%%/slrnpull/setgid.txt
+%%DOCSDIR%%/slrnpull/slrn.rc
+%%DOCSDIR%%/slrnpull/slrnpull.conf
+%%DOCSDIR%%/slrnpull/slrnpull.sh
 %%NLS%%share/locale/be/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/da/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/de/LC_MESSAGES/slrn.mo
@@ -39,21 +39,22 @@ bin/slrnpull
 %%NLS%%share/locale/ru/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/slrn.mo
-%%DATADIR%%/macros/color.sl
-%%DATADIR%%/macros/gsort.sl
-%%DATADIR%%/macros/ispell.sl
-%%DATADIR%%/macros/latin2.sl
-%%DATADIR%%/macros/multipart.sl
-%%DATADIR%%/macros/nn.sl
-%%DATADIR%%/macros/posthook.sl
-%%DATADIR%%/macros/search.sl
-%%DATADIR%%/macros/tin-art.sl
-%%DATADIR%%/macros/tin-group.sl
-%%DATADIR%%/macros/ttyprint.sl
-%%DATADIR%%/macros/util.sl
-%%DATADIR%%/macros/varset.sl
-%%DATADIR%%/macros/xcomment.sl
-@dirrm %%DATADIR%%/macros
+%%DATADIR%%/slang/color.sl
+%%DATADIR%%/slang/gsort.sl
+%%DATADIR%%/slang/ispell.sl
+%%DATADIR%%/slang/latin2.sl
+%%DATADIR%%/slang/multipart.sl
+%%DATADIR%%/slang/nn.sl
+%%DATADIR%%/slang/posthook.sl
+%%DATADIR%%/slang/search.sl
+%%DATADIR%%/slang/slrn.sl
+%%DATADIR%%/slang/tin-art.sl
+%%DATADIR%%/slang/tin-group.sl
+%%DATADIR%%/slang/ttyprint.sl
+%%DATADIR%%/slang/util.sl
+%%DATADIR%%/slang/varset.sl
+%%DATADIR%%/slang/xcomment.sl
+@dirrm %%DATADIR%%/slang
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/slrnpull
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/slrnpull
+@dirrm %%DOCSDIR%%
