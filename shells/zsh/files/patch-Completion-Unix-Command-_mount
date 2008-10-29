@@ -1,13 +1,105 @@
---- Completion/Unix/Command/_mount.orig	2006-05-28 13:46:56.000000000 -0500
-+++ Completion/Unix/Command/_mount	2007-08-20 21:22:22.000000000 -0500
-@@ -859,8 +859,8 @@
+--- Completion/Unix/Command/_mount.orig	2008-01-22 04:13:35.000000000 -0600
++++ Completion/Unix/Command/_mount	2008-10-28 18:23:46.000000000 -0500
+@@ -41,10 +41,10 @@
+ 
+ local curcontext="$curcontext" state line expl suf ret=1
+ local args deffs=iso9660 tmp typeops=-t _nfs_access _fs_nfs _nfs_ufs \
+-_fs_ufs _fs_efs _fs_iso9660 _fs_cachefs _fs_s5fs _fs_tmpfs _fs_pcfs _fs_hsfs \
+-_fs_advfs _fs_cdfs _fs_affs _fs_ext2 _fs_fat _fs_ext3 _fs_msdos _fs_umsdos \
+-_fs_vfat _fs_hpfs _fs_ntfs _fs_reiserfs _fs_smbfs _fs_xfs _fs_std _fs_devfs \
+-_fs_fdesc _fs_kernfs _fs_linprocfs _fs_procfs
++_fs_ufs _fs_efs _fs_cd9660 _fs_iso9660 _fs_cachefs _fs_s5fs _fs_tmpfs _fs_pcfs \
++_fs_hsfs _fs_advfs _fs_cdfs _fs_affs _fs_ext2 _fs_fat _fs_ext3 _fs_msdos \
++_fs_msdosfs _fs_umsdos _fs_vfat _fs_hpfs _fs_ntfs _fs_reiserfs _fs_smbfs \
++_fs_xfs _fs_std _fs_devfs _fs_fdesc _fs_kernfs _fs_linprocfs _fs_procfs
+ 
+ typeset -A opt_args
+ 
+@@ -527,7 +527,7 @@
+       'swidth[specify stripe width]:size'
+     )
+     ;;
+-  *freebsd*|dragonfly*)
++  freebsd*|dragonfly*)
+     _fs_any=(
+       '(sync)async[do all I/O asynchronously]'
+       'current[use current options on already mounted file system]'
+@@ -548,12 +548,12 @@
+       'update[change status of already mounted filesystem]'
+       'union[cause the namespace at the mount point to appear as the union of the mounted filesystem and the existing directory]'
+     )
+-    _fs_iso9660=(
+-      'extatt[enable use of extended attributes]'
+-      "gens[don't strip version number on files]"
+-      "joliet[don't use any Joliet extensions]"
+-      "rrip[don't use any Rockridge extensions]"
+-      'strictjoliet[relax checking for Supplementary Volume Descriptor Flags field which is set to a wrong value on some Joliet formatted disks]'
++    _fs_cd9660=(
++      'extatt[enable the use of extended attributes]'
++      'gens[do not strip version numbers on files]'
++      'nojoliet[do not use any Joliet extensions]'
++      'norrip[do not use any Rockridge extensions]'
++      'nostrictjoliet[relax checking for Supplementary Volume Descriptor Flags field]'
+     )
+     _fs_std=(
+       "nodev[don't interpret devices]"
+@@ -568,10 +568,13 @@
+     _fs_linprocfs=( "$_fs_std[@]" )
+     _fs_procfs=( "$_fs_std[@]" )
+     _fs_msdos=(
+-      'shortnames[]'
+-      'longnames[]'
+-      'nowin95[]'
++      'shortnames[force only the old MS-DOS 8.3 style filenames to be visible]'
++      'longnames[force Windows 95 long filenames to be visible]'
++      'nowin95[completely ignore Windows 95 extended file information]'
+     )
++    if [[ "${OSTYPE}" =~ freebsd.* ]]; then
++      _fs_msdosfs=( "$_fs_msdos[@]" )
++    fi
+     ;;
+   esac
+ fi
+@@ -682,7 +685,7 @@
+     deffs=hsfs
+     typeops=-F
+     ;;
+-  *freebsd*|dragonfly*)
++  freebsd*|dragonfly*)
+     args=( -s
+       '(:)-a[mount all filesystems in fstab]'
+       '-d[cause everything to be done except for the actual system call]'      
+@@ -757,7 +760,7 @@
+ 	'*:dev or dir:->udevordir'
+       )
+     ;;
+-    *freebsd*|dragonfly*)
++    freebsd*|dragonfly*)
+       args=(
+ 	'(*)-a[unmount all mounted file systems]'
+ 	'-A[unmount all mounted file systems except the root]'
+@@ -819,7 +822,7 @@
+   fi
+ 
+   case "$OSTYPE" in
+-  *freebsd*|dragonfly*)
++  freebsd*|dragonfly*)
+     while read mline; do 
+       case $mline[(w)1] in
+ 	\#* )
+@@ -861,8 +864,13 @@
      ;;
    *)
      /sbin/mount | while read mline; do
 -      mp_tmp+=( $mline[(w)1] )
 -      dev_tmp+=( $mline[(w)3] )
-+      dev_tmp+=( $mline[(w)1] )
-+      mp_tmp+=( $mline[(w)3] )
++      if [[ "$OSTYPE" =~ .*freebsd.* ]]; then
++        dev_tmp+=( $mline[(w)1] )
++        mp_tmp+=( $mline[(w)3] )
++      else
++        mp_tmp+=( $mline[(w)1] )
++        dev_tmp+=( $mline[(w)3] )
++      fi
      done
      ;;
    esac
