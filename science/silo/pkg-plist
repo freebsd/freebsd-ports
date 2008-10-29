@@ -2,6 +2,7 @@ bin/browser
 bin/silodiff
 bin/silex
 bin/silock
+bin/silofile
 include/silo.h
 include/silo.inc
 include/pmpio.h
