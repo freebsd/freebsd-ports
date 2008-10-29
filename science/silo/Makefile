@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silo
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -67,7 +67,9 @@ post-install:
 	@${MV} ${PREFIX}/lib/${LIBSILO}.so ${PREFIX}/lib/${LIBSILO}.so.4
 	@${LN} -sf ${PREFIX}/lib/${LIBSILO}.so.4 ${PREFIX}/lib/${LIBSILO}.so
 
+.ifdef MAINTAINER_MODE
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+.endif
 
 .include <bsd.port.mk>
