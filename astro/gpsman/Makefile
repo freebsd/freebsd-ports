@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.3.2
+PORTVERSION=	6.4
 CATEGORIES=	astro tk geography
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/
 MASTER_SITE_SUBDIR=	science/cartography
@@ -28,8 +28,10 @@ NO_BUILD=	yes
 
 .if ${OSVERSION} < 600000
 GPSMAN_DEFAULT_PORT?=	/dev/cuaa0
-.else
+.elif ${OSVERSION} < 800045
 GPSMAN_DEFAULT_PORT?=	/dev/cuad0
+.else
+GPSMAN_DEFAULT_PORT?=	/dev/cuau0
 .endif
 
 post-patch:

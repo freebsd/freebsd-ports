@@ -101,6 +101,8 @@ bin/gpsman
 %%DATADIR%%/gmsrc/gmicons/cntct_sumo15x15.gif
 %%DATADIR%%/gmsrc/gmicons/coast_guard15x15.gif
 %%DATADIR%%/gmsrc/gmicons/controlled15x15.gif
+%%DATADIR%%/gmsrc/gmicons/cross15x15.gif
+%%DATADIR%%/gmsrc/gmicons/cross_3p15x15.gif
 %%DATADIR%%/gmsrc/gmicons/crossing15x15.gif
 %%DATADIR%%/gmsrc/gmicons/dam15x15.gif
 %%DATADIR%%/gmsrc/gmicons/danger15x15.gif
@@ -288,6 +290,7 @@ bin/gpsman
 %%DATADIR%%/gmsrc/gmicons/wreck15x15.gif
 %%DATADIR%%/gmsrc/gmicons/zoo15x15.gif
 %%DATADIR%%/gmsrc/gpsinfo.tcl
+%%DATADIR%%/gmsrc/i18n-utf8.tcl
 %%DATADIR%%/gmsrc/isolatin1.tcl
 %%DATADIR%%/gmsrc/know.tcl
 %%DATADIR%%/gmsrc/langdeutsch.tcl
@@ -298,6 +301,7 @@ bin/gpsman
 %%DATADIR%%/gmsrc/langit.tcl
 %%DATADIR%%/gmsrc/langnl.tcl
 %%DATADIR%%/gmsrc/langport.tcl
+%%DATADIR%%/gmsrc/langru.tcl
 %%DATADIR%%/gmsrc/lists.tcl
 %%DATADIR%%/gmsrc/lowrance.tcl
 %%DATADIR%%/gmsrc/lowrance_nmea.tcl
@@ -313,6 +317,7 @@ bin/gpsman
 %%DATADIR%%/gmsrc/options.tcl
 %%DATADIR%%/gmsrc/posncomp.tcl
 %%DATADIR%%/gmsrc/projections.tcl
+%%DATADIR%%/gmsrc/projs_main.tcl
 %%DATADIR%%/gmsrc/realtime.tcl
 %%DATADIR%%/gmsrc/recdefs.tcl
 %%DATADIR%%/gmsrc/recmodels.tcl
