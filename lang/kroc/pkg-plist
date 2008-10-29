@@ -421,9 +421,6 @@
 %%PORTEXAMPLES%%lib/kroc/examples/occade/breakout
 %%PORTEXAMPLES%%lib/kroc/examples/occade/collision-test
 %%PORTEXAMPLES%%lib/kroc/examples/occade/parrot_attack
-%%PORTEXAMPLES%%lib/kroc/examples/robots/bomberman
-%%PORTEXAMPLES%%lib/kroc/examples/robots/mandelbrot
-%%PORTEXAMPLES%%lib/kroc/examples/robots/occman
 %%PORTEXAMPLES%%lib/kroc/examples/robots/particles-ats
 %%PORTEXAMPLES%%lib/kroc/examples/robots/robot
 %%PORTEXAMPLES%%lib/kroc/examples/robots/robot2
@@ -443,6 +440,9 @@
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/sdlstar8
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/sdltest
 %%PORTEXAMPLES%%lib/kroc/examples/sdlraster/starfield
+%%PORTEXAMPLES%%lib/kroc/examples/ttygames/bomberman
+%%PORTEXAMPLES%%lib/kroc/examples/ttygames/occman
+%%PORTEXAMPLES%%lib/kroc/examples/ttygames/mandelbrot
 %%PORTEXAMPLES%%lib/kroc/examples/useful/test-format
 bin/ilibr
 bin/kmakef
@@ -610,6 +610,7 @@ lib/liboccam_useful.so
 libdata/pkgconfig/ccsp-1.6.pc
 share/aclocal/occbuild.m4
 %%PORTEXAMPLES%%@dirrm lib/kroc/examples/useful
+%%PORTEXAMPLES%%@dirrm lib/kroc/examples/ttygames
 %%PORTEXAMPLES%%@dirrm lib/kroc/examples/sdlraster
 %%PORTEXAMPLES%%@dirrm lib/kroc/examples/robots
 %%PORTEXAMPLES%%@dirrm lib/kroc/examples/occade
