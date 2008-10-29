@@ -7,6 +7,7 @@
 
 PORTNAME=		zkt
 PORTVERSION=		0.97
+PORTREVISION=		1
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.hznet.de/dns/zkt/
@@ -25,6 +26,9 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/named/|${DIR_NAMED_CONF}/|g' ${WRKSRC}/*.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnssec-zkt ${PREFIX}/sbin/
