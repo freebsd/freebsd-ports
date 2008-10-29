@@ -39,7 +39,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>opera</name>
-	<range><lt>9.61.20081017</lt></range>
+	<name>linux-opera</name>
+	<range><lt>9.61</lt></range>
       </package>
     </affects>
     <description>
@@ -78,6 +79,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-10-17</discovery>
       <entry>2008-10-28</entry>
+      <modified>2008-10-29</modified>
     </dates>
   </vuln>
 
@@ -463,7 +465,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>opera</name>
-	<range><lt>9.60.20081004</lt></range>
+	<name>linux-opera</name>
+	<range><lt>9.60</lt></range>
       </package>
     </affects>
     <description>
@@ -493,6 +496,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-10-04</discovery>
       <entry>2008-10-10</entry>
+      <modified>2008-10-29</modified>
     </dates>
   </vuln>
 
@@ -1321,7 +1325,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>opera</name>
 	<name>linux-opera</name>
-	<range><lt>9.52.20080814</lt></range>
+	<range><lt>9.52</lt></range>
       </package>
     </affects>
     <description>
@@ -1386,6 +1390,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-08-20</discovery>
       <entry>2008-08-25</entry>
+      <modified>2008-10-29</modified>
     </dates>
   </vuln>
 
