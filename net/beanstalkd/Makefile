@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	1.0
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://xph.us/software/beanstalkd/rel/
 
