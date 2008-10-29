@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-OpenID-Server
-PORTVERSION=	0.13
+PORTVERSION=	1.01
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	kappa@rambler-co.ru
 COMMENT=	Reference implementation of OpenID server
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
