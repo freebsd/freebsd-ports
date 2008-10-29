@@ -33,6 +33,7 @@ OPTIONS=	DEBUG "Enable nginx debugging" off \
 		HTTP_STATUS_MODULE "Enable http_stub_status module" on \
 		HTTP_SUB_MODULE "Enable http_sub module" off \
 		HTTP_UPLOAD_MODULE "Enable upload module" off \
+		HTTP_UPSTREAM_KEEPALIVE "Enable upstream keepalive module" off \
 		HTTP_XSLT_MODULE "Enable http_xslt module" off \
 		MAIL_MODULE "Enable IMAP4/POP3/SMTP proxy module" off \
 		MAIL_IMAP_MODULE "Enable IMAP4 proxy module" off \
@@ -143,6 +144,13 @@ NGINX_UPLOAD_MODULE_VERSION=	2.0.7
 MASTER_SITES+=	http://grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
+NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.1
+MASTER_SITES+=	http://mdounin.ru/files/:upstream
+DISTFILES+=	ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}.tar.gz:upstream
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_XSLT_MODULE)
