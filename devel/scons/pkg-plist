@@ -127,6 +127,9 @@ lib/scons-%%SCONS_VER%%/SCons/Scanner/LaTeX.pyo
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.py
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.pyc
 lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.pyo
+lib/scons-%%SCONS_VER%%/SCons/Scanner/RC.py
+lib/scons-%%SCONS_VER%%/SCons/Scanner/RC.pyc
+lib/scons-%%SCONS_VER%%/SCons/Scanner/RC.pyo
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.pyo
