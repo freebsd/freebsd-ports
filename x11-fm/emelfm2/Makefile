@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
 
+USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.5
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -33,7 +34,7 @@ OPTIONS=	DEBUG	"Enable debugging messages" off \
 		NLS	"Enable gettext support" on
 
 DOCFILES=	ACTIONS CONFIGURATION CREDITS GPL HACKING INSTALL LGPL NEWS \
-		README SPEC TODO USAGE WARNING help.txt
+		README SPEC TODO USAGE WARNING
 
 .include <bsd.port.pre.mk>
 
