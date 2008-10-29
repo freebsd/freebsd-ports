@@ -1,22 +1,22 @@
---- bin/tSmoke.dist.orig	Mon Sep 19 00:50:50 2005
-+++ bin/tSmoke.dist	Mon Sep 19 00:54:58 2005
+--- ./bin/tSmoke.dist.orig	2008-10-29 15:06:25.000000000 +0100
++++ ./bin/tSmoke.dist	2008-10-29 15:07:53.000000000 +0100
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!%%PERL%%
  #
  #-----------------------------------------------
  # tSmoke.pl
-@@ -50,8 +50,7 @@
+@@ -51,8 +51,7 @@ use warnings;
  # -- Getopt::Long
  #
  # Point the lib variables to your implementation
 -use lib qw(lib);
--use lib "/usr/local/rrdtool-1.0.39/lib/perl";
+-use lib qw(/usr/local/rrdtool-1.0.39/lib/perl);
 +use lib qw(%%PREFIX%%/smokeping/lib);
  
- use Smokeping 2.004001;
+ use Smokeping 2.004002;
  use Net::SMTP;
-@@ -60,7 +59,7 @@
+@@ -61,7 +60,7 @@ use Pod::Usage;
  use RRDs;
  
  # Point to your Smokeping config file
@@ -25,7 +25,7 @@
  
  # global variables
  my $cfg;
-@@ -479,33 +478,8 @@
+@@ -482,33 +481,8 @@ Typical crontab used to invoke this are
  
  =head1 SETUP
  

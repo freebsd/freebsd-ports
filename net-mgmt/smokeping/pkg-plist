@@ -129,7 +129,6 @@ smokeping/htdocs/resource/qx/icon/CrystalClear/16/actions/view-refresh.png
 smokeping/htdocs/resource/qx/icon/Nuvola/16/actions/view-refresh.png
 smokeping/htdocs/resource/qx/static/image/blank.gif
 smokeping/htdocs/resource/qx/static/image/dotted_white.gif
-smokeping/htdocs/resource/qx/static/log/log.html
 smokeping/htdocs/resource/qx/widget/Windows/arrows/down.gif
 smokeping/htdocs/resource/qx/widget/Windows/arrows/down_small.gif
 smokeping/htdocs/resource/qx/widget/Windows/arrows/next.gif
@@ -248,7 +247,6 @@ smokeping/lib/Smokeping/sorters/base.pm
 @dirrm smokeping/htdocs/resource/qx/widget/Windows/arrows
 @dirrm smokeping/htdocs/resource/qx/widget/Windows
 @dirrm smokeping/htdocs/resource/qx/widget
-@dirrm smokeping/htdocs/resource/qx/static/log
 @dirrm smokeping/htdocs/resource/qx/static/image
 @dirrm smokeping/htdocs/resource/qx/static
 @dirrm smokeping/htdocs/resource/qx/icon/Nuvola/16/actions
