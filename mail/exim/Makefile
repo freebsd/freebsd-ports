@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -492,7 +493,7 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .endif
 
 .if defined(WITH_SPF)
-LIB_DEPENDS+=	spf2.2:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
 		-e 's,XX_SPF_LIBS_XX,-lspf2 ${PTHREAD_LIBS},' \
 		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
