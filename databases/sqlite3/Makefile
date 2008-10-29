@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.5.6
+PORTVERSION=	3.6.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -19,7 +19,6 @@ CONFLICTS=	sqlite34-[0-9]*
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
-USE_DOS2UNIX=	*.pc.in
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX}
@@ -28,6 +27,7 @@ OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \
 		RAMTABLE	"Store temporary tables in RAM"		off \
 		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
+		METADATA	"Enable column metadata"		on \
 		THREADS		"Enable threads support"		on
 
 .include <bsd.port.pre.mk>
@@ -58,6 +58,10 @@ CONFIGURE_ARGS+=	--disable-tcl
 PLIST_SUB+=		WITH_TCLWRAPPER="@comment "
 .endif
 
+.if !defined(WITHOUT_METADATA)
+CFLAGS+=		-DSQLITE_ENABLE_COLUMN_METADATA=1
+.endif
+
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threadsafe \
 			--enable-cross-thread-connections \
@@ -80,6 +84,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s|-lpthread||g" \
 		${WRKSRC}/sqlite.pc.in ${WRKSRC}/sqlite3.pc.in
 .endif
+	@${REINPLACE_CMD} -e "s|fts3.c||g" ${WRKSRC}/tool/mksqlite3c.tcl
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
