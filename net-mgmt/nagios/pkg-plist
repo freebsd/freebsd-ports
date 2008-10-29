@@ -380,7 +380,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets
 @dirrmtry %%NAGIOSWWWDIR%%
-@dirrmtry %%NAGIOSDIR%%/archives
-@dirrmtry %%NAGIOSDIR%%/checkresults
-@dirrmtry %%NAGIOSDIR%%/rw
-@dirrmtry %%NAGIOSDIR%%
+@unexec rmdir %%NAGIOSDIR%%/archives 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%%/checkresults 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%%/rw 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%% 2>/dev/null || true
