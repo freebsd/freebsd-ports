@@ -5471,7 +5471,6 @@ ixlib                           ports/devel/ixlib
 j2sdkee13                       ports/java/j2sdkee13
 ja-ASCIIdates98-fpw             ports/japanese/ASCIIdates98-fpw
 ja-CGdic-fpw                    ports/japanese/CGdic-fpw
-ja-Canna                        ports/japanese/Canna
 ja-FreeWnn-lib                  ports/japanese/FreeWnn-lib
 ja-FreeWnn-server               ports/japanese/FreeWnn-server
 ja-VTPSfont                     ports/japanese/VTPSfont
@@ -10823,6 +10822,7 @@ p5-Geometry-Primitive           ports/graphics/p5-Geometry-Primitive
 p5-Getargs-Long                 ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile              ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare               ports/devel/p5-Getopt-Declare
+p5-Getopt-Euclid                ports/devel/p5-Getopt-Euclid
 p5-Getopt-Long                  ports/devel/p5-Getopt-Long
 p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
@@ -12594,6 +12594,7 @@ p5-X11-Protocol                 ports/x11/p5-X11-Protocol
 p5-X500-DN                      ports/net/p5-X500-DN
 p5-XML-ApacheFOP                ports/print/p5-XML-ApacheFOP
 p5-XML-Atom                     ports/textproc/p5-XML-Atom
+p5-XML-Atom-Ext-OpenSearch      ports/textproc/p5-XML-Atom-Ext-OpenSearch
 p5-XML-Atom-Filter              ports/textproc/p5-XML-Atom-Filter
 p5-XML-Atom-SimpleFeed          ports/textproc/p5-XML-Atom-SimpleFeed
 p5-XML-Atom-Stream              ports/textproc/p5-XML-Atom-Stream
@@ -13992,6 +13993,7 @@ p5-geometry-primitive           ports/graphics/p5-Geometry-Primitive
 p5-getargs-long                 ports/devel/p5-Getargs-Long
 p5-getopt-argvfile              ports/devel/p5-Getopt-ArgvFile
 p5-getopt-declare               ports/devel/p5-Getopt-Declare
+p5-getopt-euclid                ports/devel/p5-Getopt-Euclid
 p5-getopt-long                  ports/devel/p5-Getopt-Long
 p5-getopt-long-descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
@@ -15820,6 +15822,7 @@ p5-x500-dn                      ports/net/p5-X500-DN
 p5-xango                        ports/www/p5-Xango
 p5-xml-apachefop                ports/print/p5-XML-ApacheFOP
 p5-xml-atom                     ports/textproc/p5-XML-Atom
+p5-xml-atom-ext-opensearch      ports/textproc/p5-XML-Atom-Ext-OpenSearch
 p5-xml-atom-filter              ports/textproc/p5-XML-Atom-Filter
 p5-xml-atom-simplefeed          ports/textproc/p5-XML-Atom-SimpleFeed
 p5-xml-atom-stream              ports/textproc/p5-XML-Atom-Stream
