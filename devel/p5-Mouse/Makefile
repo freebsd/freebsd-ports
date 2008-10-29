@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
@@ -24,7 +24,8 @@ MAN3=	Mouse.3 \
 	Mouse::Role.3 \
 	Mouse::TypeRegistry.3 \
 	Mouse::Util.3 \
-	Squirrel.3
+	Squirrel.3 \
+	ouse.3
 
 post-install:
 	@${CAT} pkg-message
