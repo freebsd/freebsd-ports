@@ -66,6 +66,7 @@ _ospfd:*:131:
 _spamd:*:132:
 freeradius:*:133:
 undernet:*:134:
+rabbitmq:*:135:
 dovecot:*:143:
 rbldns:*:153:
 sfs:*:171:

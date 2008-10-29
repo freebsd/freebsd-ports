@@ -14,28 +14,17 @@
 
 . "%%RC_SUBR%%"
 
+name=rabbitmq
+rcvar=`set_rcvar`
+
 # Set some defaults
 rabbitmq_enable=${rabbitmq_enable:-"NO"}
+rabbitmq_user=${rabbitmq_user:-"rabbitmq"}
 
 prefix=%%PREFIX%%
-name=rabbitmq
-start_cmd="${name}_start"
-stop_cmd="${name}_stop"
+start_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${prefix}/sbin/rabbitmq-server -detached\"'"
+stop_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${prefix}/sbin/rabbitmqctl stop\"'"
 
-rabbitmq_start()
-{
-	${prefix}/sbin/rabbitmq-server -detached
-	echo "RabbitMQ started"
-}
-
-rabbitmq_stop()
-{
-	${prefix}/sbin/rabbitmqctl stop
-}
-
-rcvar=`set_rcvar`
 load_rc_config $name
-
-
 
 run_rc_command "$1"
