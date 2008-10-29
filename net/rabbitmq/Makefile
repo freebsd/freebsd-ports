@@ -7,7 +7,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -24,6 +24,9 @@ MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" 
 SCRIPTS_DIR=	${WRKSRC}/scripts/
 USE_RC_SUBR=	rabbitmq
 PLIST_SUB=	"VERSION=${PORTVERSION}"
+SUB_FILES=	pkg-install
+RABBITMQ_USER=	rabbitmq
+RABBITMQ_GROUP=	${RABBITMQ_USER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/default|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${PREFIX}/bin/erl|g' \
@@ -31,7 +34,10 @@ post-patch:
 
 	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
-post-install:
-	@${MKDIR} /var/log/rabbitmq /var/db/rabbitmq/mnesia ${PREFIX}/etc/rabbitmq
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	
 .include <bsd.port.mk>
