@@ -7,6 +7,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.6.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
 
@@ -33,7 +34,6 @@ QT_COMPONENTS=	moc uic
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-pythonmodule
 PLIST_SUB+=	WITH_PYTHON=""
-LIBSILO=	Silo
 .else
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
