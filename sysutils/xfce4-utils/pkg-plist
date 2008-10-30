@@ -19,6 +19,7 @@ share/locale/bg/LC_MESSAGES/xfce-utils.mo
 share/locale/bn_IN/LC_MESSAGES/xfce-utils.mo
 share/locale/ca/LC_MESSAGES/xfce-utils.mo
 share/locale/cs/LC_MESSAGES/xfce-utils.mo
+share/locale/da/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/dz/LC_MESSAGES/xfce-utils.mo
 share/locale/el/LC_MESSAGES/xfce-utils.mo
@@ -37,10 +38,12 @@ share/locale/he/LC_MESSAGES/xfce-utils.mo
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
 share/locale/hu/LC_MESSAGES/xfce-utils.mo
 share/locale/hy/LC_MESSAGES/xfce-utils.mo
+share/locale/id/LC_MESSAGES/xfce-utils.mo
 share/locale/it/LC_MESSAGES/xfce-utils.mo
 share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ka/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
+share/locale/ku/LC_MESSAGES/xfce-utils.mo
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
 share/locale/lv/LC_MESSAGES/xfce-utils.mo
 share/locale/mk/LC_MESSAGES/xfce-utils.mo
@@ -54,11 +57,13 @@ share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ro/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
+share/locale/si/LC_MESSAGES/xfce-utils.mo
 share/locale/sk/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
 share/locale/ta/LC_MESSAGES/xfce-utils.mo
 share/locale/tr/LC_MESSAGES/xfce-utils.mo
 share/locale/uk/LC_MESSAGES/xfce-utils.mo
+share/locale/ur/LC_MESSAGES/xfce-utils.mo
 share/locale/vi/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_CN/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_TW/LC_MESSAGES/xfce-utils.mo
@@ -107,10 +112,16 @@ share/xfce4/doc/xfce-mouse.png
 @dirrmtry share/icons
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr

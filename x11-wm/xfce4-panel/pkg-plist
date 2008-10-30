@@ -86,6 +86,7 @@ share/locale/bg/LC_MESSAGES/xfce4-panel.mo
 share/locale/bn_IN/LC_MESSAGES/xfce4-panel.mo
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 share/locale/cs/LC_MESSAGES/xfce4-panel.mo
+share/locale/da/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/dz/LC_MESSAGES/xfce4-panel.mo
 share/locale/el/LC_MESSAGES/xfce4-panel.mo
@@ -104,6 +105,7 @@ share/locale/he/LC_MESSAGES/xfce4-panel.mo
 share/locale/hi/LC_MESSAGES/xfce4-panel.mo
 share/locale/hu/LC_MESSAGES/xfce4-panel.mo
 share/locale/hy/LC_MESSAGES/xfce4-panel.mo
+share/locale/id/LC_MESSAGES/xfce4-panel.mo
 share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ka/LC_MESSAGES/xfce4-panel.mo
@@ -121,11 +123,13 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-panel.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-panel.mo
 share/locale/ro/LC_MESSAGES/xfce4-panel.mo
 share/locale/ru/LC_MESSAGES/xfce4-panel.mo
+share/locale/si/LC_MESSAGES/xfce4-panel.mo
 share/locale/sk/LC_MESSAGES/xfce4-panel.mo
 share/locale/sv/LC_MESSAGES/xfce4-panel.mo
 share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
 share/locale/uk/LC_MESSAGES/xfce4-panel.mo
+share/locale/ur/LC_MESSAGES/xfce4-panel.mo
 share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo

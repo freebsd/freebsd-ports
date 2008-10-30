@@ -25,6 +25,7 @@ share/locale/bg/LC_MESSAGES/xfwm4.mo
 share/locale/bn_IN/LC_MESSAGES/xfwm4.mo
 share/locale/ca/LC_MESSAGES/xfwm4.mo
 share/locale/cs/LC_MESSAGES/xfwm4.mo
+share/locale/da/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
 share/locale/dz/LC_MESSAGES/xfwm4.mo
 share/locale/el/LC_MESSAGES/xfwm4.mo
@@ -42,6 +43,7 @@ share/locale/gu/LC_MESSAGES/xfwm4.mo
 share/locale/he/LC_MESSAGES/xfwm4.mo
 share/locale/hi/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
+share/locale/id/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/LC_MESSAGES/xfwm4.mo
@@ -64,6 +66,7 @@ share/locale/sv/LC_MESSAGES/xfwm4.mo
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
 share/locale/uk/LC_MESSAGES/xfwm4.mo
+share/locale/ur/LC_MESSAGES/xfwm4.mo
 share/locale/vi/LC_MESSAGES/xfwm4.mo
 share/locale/zh_CN/LC_MESSAGES/xfwm4.mo
 share/locale/zh_TW/LC_MESSAGES/xfwm4.mo
@@ -1285,6 +1288,8 @@ share/xfwm4/defaults
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr/images

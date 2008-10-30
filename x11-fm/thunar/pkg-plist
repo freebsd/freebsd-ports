@@ -330,6 +330,7 @@ share/locale/ar/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
+share/locale/da/LC_MESSAGES/Thunar.mo
 share/locale/de/LC_MESSAGES/Thunar.mo
 share/locale/dz/LC_MESSAGES/Thunar.mo
 share/locale/el/LC_MESSAGES/Thunar.mo
@@ -343,15 +344,18 @@ share/locale/fr/LC_MESSAGES/Thunar.mo
 share/locale/gl/LC_MESSAGES/Thunar.mo
 share/locale/he/LC_MESSAGES/Thunar.mo
 share/locale/hu/LC_MESSAGES/Thunar.mo
+share/locale/id/LC_MESSAGES/Thunar.mo
 share/locale/it/LC_MESSAGES/Thunar.mo
 share/locale/ja/LC_MESSAGES/Thunar.mo
 share/locale/ka/LC_MESSAGES/Thunar.mo
 share/locale/ko/LC_MESSAGES/Thunar.mo
+share/locale/ku/LC_MESSAGES/Thunar.mo
 share/locale/lt/LC_MESSAGES/Thunar.mo
 share/locale/lv/LC_MESSAGES/Thunar.mo
 share/locale/mk/LC_MESSAGES/Thunar.mo
 share/locale/nb_NO/LC_MESSAGES/Thunar.mo
 share/locale/nl/LC_MESSAGES/Thunar.mo
+share/locale/nn_NO/LC_MESSAGES/Thunar.mo
 share/locale/pa/LC_MESSAGES/Thunar.mo
 share/locale/pl/LC_MESSAGES/Thunar.mo
 share/locale/pt_BR/LC_MESSAGES/Thunar.mo
@@ -422,4 +426,6 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/nn_NO/LC_MESSAGES
+@dirrmtry share/locale/nn_NO
 @dirrm share/thumbnailers

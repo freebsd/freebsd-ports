@@ -1,8 +1,8 @@
 bin/orage
 libexec/xfce4/panel-plugins/orageclock
-lib/xfce4/mcs-plugins/orage_plugin.a
-lib/xfce4/mcs-plugins/orage_plugin.la
 lib/xfce4/mcs-plugins/orage_plugin.so
+lib/xfce4/mcs-plugins/orage_plugin.la
+lib/xfce4/mcs-plugins/orage_plugin.a
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
 share/icons/hicolor/48x48/apps/xfcalendar.png
@@ -11,6 +11,7 @@ share/locale/am/LC_MESSAGES/orage.mo
 share/locale/ar/LC_MESSAGES/orage.mo
 share/locale/az/LC_MESSAGES/orage.mo
 share/locale/bg/LC_MESSAGES/orage.mo
+share/locale/da/LC_MESSAGES/orage.mo
 share/locale/de/LC_MESSAGES/orage.mo
 share/locale/dz/LC_MESSAGES/orage.mo
 share/locale/en_AU/LC_MESSAGES/orage.mo
@@ -25,6 +26,7 @@ share/locale/gu/LC_MESSAGES/orage.mo
 share/locale/he/LC_MESSAGES/orage.mo
 share/locale/hi/LC_MESSAGES/orage.mo
 share/locale/hu/LC_MESSAGES/orage.mo
+share/locale/id/LC_MESSAGES/orage.mo
 share/locale/it/LC_MESSAGES/orage.mo
 share/locale/ja/LC_MESSAGES/orage.mo
 share/locale/ka/LC_MESSAGES/orage.mo
@@ -40,6 +42,7 @@ share/locale/ru/LC_MESSAGES/orage.mo
 share/locale/sv/LC_MESSAGES/orage.mo
 share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
+share/locale/ur/LC_MESSAGES/orage.mo
 share/locale/vi/LC_MESSAGES/orage.mo
 share/locale/be/LC_MESSAGES/orage.mo
 share/locale/ca/LC_MESSAGES/orage.mo
@@ -68,8 +71,8 @@ share/orage/doc/C/images/orage_calendar_file_menu.png
 share/orage/doc/C/images/orage_calendar_help_menu.png
 share/orage/doc/C/images/orage_calendar_view_menu.png
 share/orage/doc/C/images/orage_desktop_menuitem.png
-share/orage/doc/C/images/orage_preferences_display.png
 share/orage/doc/C/images/orage_preferences_archives.png
+share/orage/doc/C/images/orage_preferences_display.png
 share/orage/doc/C/images/orage_preferences_sound.png
 share/orage/doc/C/images/orage_preferences_timezone.png
 share/orage/doc/C/orage.html
@@ -466,6 +469,7 @@ share/xfce4/panel-plugins/orageclock.desktop
 @dirrm share/orage/doc
 @dirrm share/orage/sounds
 @dirrm share/orage/zoneinfo/Africa
+@dirrm share/orage/zoneinfo/America/Argentina
 @dirrm share/orage/zoneinfo/America/Indiana
 @dirrm share/orage/zoneinfo/America/Kentucky
 @dirrm share/orage/zoneinfo/America

@@ -43,6 +43,7 @@ etc/xdg/xfce4/desktop/menu.xml.nl
 etc/xdg/xfce4/desktop/menu.xml.pa
 etc/xdg/xfce4/desktop/menu.xml.pl
 etc/xdg/xfce4/desktop/menu.xml.pt_BR
+etc/xdg/xfce4/desktop/menu.xml.pt_PT
 etc/xdg/xfce4/desktop/menu.xml.ro
 etc/xdg/xfce4/desktop/menu.xml.ru
 etc/xdg/xfce4/desktop/menu.xml.sk
@@ -78,6 +79,7 @@ share/locale/bg/LC_MESSAGES/xfdesktop.mo
 share/locale/bn_IN/LC_MESSAGES/xfdesktop.mo
 share/locale/ca/LC_MESSAGES/xfdesktop.mo
 share/locale/cs/LC_MESSAGES/xfdesktop.mo
+share/locale/da/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo
 share/locale/dz/LC_MESSAGES/xfdesktop.mo
 share/locale/el/LC_MESSAGES/xfdesktop.mo
@@ -96,6 +98,7 @@ share/locale/he/LC_MESSAGES/xfdesktop.mo
 share/locale/hi/LC_MESSAGES/xfdesktop.mo
 share/locale/hu/LC_MESSAGES/xfdesktop.mo
 share/locale/hy/LC_MESSAGES/xfdesktop.mo
+share/locale/id/LC_MESSAGES/xfdesktop.mo
 share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ka/LC_MESSAGES/xfdesktop.mo
@@ -118,6 +121,7 @@ share/locale/sv/LC_MESSAGES/xfdesktop.mo
 share/locale/ta/LC_MESSAGES/xfdesktop.mo
 share/locale/tr/LC_MESSAGES/xfdesktop.mo
 share/locale/uk/LC_MESSAGES/xfdesktop.mo
+share/locale/ur/LC_MESSAGES/xfdesktop.mo
 share/locale/vi/LC_MESSAGES/xfdesktop.mo
 share/locale/zh_CN/LC_MESSAGES/xfdesktop.mo
 share/locale/zh_TW/LC_MESSAGES/xfdesktop.mo
@@ -180,6 +184,8 @@ share/xfce4-menueditor/xfce4-menueditor.ui
 @dirrm share/xfce4-menueditor
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/pixmaps/xfdesktop
 @dirrmtry share/pixmaps/xfce4/xfdesktop
 @dirrmtry share/pixmaps/xfce4
