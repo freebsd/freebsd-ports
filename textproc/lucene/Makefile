@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java,}
 DISTNAME=	lucene-${PORTVERSION}
@@ -26,6 +25,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 CONTRIBS=	analyzers \
 		ant \
 		benchmark \
+		instantiated \
 		highlighter \
 		lucli \
 		memory \
