@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipaddr
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipaddr-py.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
