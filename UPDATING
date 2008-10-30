@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081030:
+  AFFECTS: users of japanese/FreeWnn-server
+  AUTHOR: hrs@FreeBSD.org
+
+  The jserver daemon in japanese/FreeWnn-server port now uses "127.0.0.1"
+  as the default listen address for security reason.  If you need
+  the wildcard address (INADDR_ANY), you have to explicitly set
+  "listenaddr" to 0.0.0.0 in ${PREFIX}/lib/wnn/ja_JP/jserverrc or
+  add "-a 0.0.0.0" to ${wnn_flags} in /etc/rc.conf.
+
 20081026:
   AFFECTS: users of www/asterisk-gui
   AUTHOR: pneumann@gmail.com
