@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.71.0
+PORTVERSION=	0.72.0
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -44,7 +44,7 @@ PLIST_SUB=	EMAV="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|"-O2"|"${CFLAGS}"|' \
-		${WRKSRC}/makers/unicc/unicc_gnu.pl
+		${WRKSRC}/makers/unicc/plugins/unicc_gnu.pm
 .if defined(WITHOUT_XINE)
 	@${RM} -f ${WRKSRC}/makers/emAv.maker.pm
 .endif

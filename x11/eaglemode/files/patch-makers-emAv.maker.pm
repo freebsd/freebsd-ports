@@ -1,6 +1,6 @@
---- makers/emAv.maker.pm.orig	2008-05-23 08:42:14.000000000 +0400
-+++ makers/emAv.maker.pm	2008-06-02 19:16:54.000000000 +0400
-@@ -89,8 +89,7 @@
+--- makers/emAv.maker.pm.orig	2008-10-29 08:27:34.000000000 +0300
++++ makers/emAv.maker.pm	2008-10-30 00:03:52.000000000 +0300
+@@ -87,8 +87,7 @@
  		$options{'xine-lib-dir'} ne '' ? (
  			"--lib-search-dir", $options{'xine-lib-dir'}
  		) : (),
