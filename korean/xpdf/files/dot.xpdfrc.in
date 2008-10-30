@@ -1,16 +1,16 @@
 #Korean PDF resources
 # $FreeBSD$
-cidToUnicode	Adobe-Korea1	%%PREFIX%%/share/xpdf/korean/Adobe-Korea1.cidToUnicode
-unicodeMap	ISO-2022-KR	%%PREFIX%%/share/xpdf/korean/ISO-2022-KR.unicodeMap
+cidToUnicode	Adobe-Korea1	%%DATADIR%%/korean/Adobe-Korea1.cidToUnicode
+unicodeMap	ISO-2022-KR	%%DATADIR%%/korean/ISO-2022-KR.unicodeMap
 cMapDir		Adobe-Korea1	%%ADOBECMAPDIR%%
 toUnicodeDir			%%ADOBECMAPDIR%%
-displayNamedCIDFontTT	Batang		"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnBatang.ttf"
-displayNamedCIDFontTT	Batang,Bold	"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnBatangBold.ttf"
-displayNamedCIDFontTT	Dotum		"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnDotum.ttf"
-displayNamedCIDFontTT	Dotum,Bold	"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnDotumBold.ttf"
-displayNamedCIDFontTT	Gulim		"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnGraphic.ttf"
-displayNamedCIDFontTT	Gulim,Bold	"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnGraphicBold.ttf"
-displayNamedCIDFontTT	Gungsuh		"%%LOCALBASE%%/lib/X11/fonts/TrueType/UnGungseo.ttf"
+displayNamedCIDFontTT	Batang		"%%FONTSDIR%%/UnBatang.ttf"
+displayNamedCIDFontTT	Batang,Bold	"%%FONTSDIR%%/UnBatangBold.ttf"
+displayNamedCIDFontTT	Dotum		"%%FONTSDIR%%/UnDotum.ttf"
+displayNamedCIDFontTT	Dotum,Bold	"%%FONTSDIR%%/UnDotumBold.ttf"
+displayNamedCIDFontTT	Gulim		"%%FONTSDIR%%/UnGraphic.ttf"
+displayNamedCIDFontTT	Gulim,Bold	"%%FONTSDIR%%/UnGraphicBold.ttf"
+displayNamedCIDFontTT	Gungsuh		"%%FONTSDIR%%/UnGungseo.ttf"
 
 psFont16	Adobe-Korea1	H	Batang-UniKS-UCS2-H		UCS-2
 psFont16	Adobe-Korea1	V	Batang-UniKS-UCS2-V		UCS-2
