@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ultimatestunts
-PORTVERSION=	0.7.4.1
-PORTREVISION=	2
+PORTVERSION=	0.7.5.1
 DISTVERSIONPREFIX=	srcdata-
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
@@ -40,8 +39,6 @@ post-patch:
 post-install:
 	@cd ${WRKSRC}/data/&&${COPYTREE_SHARE} "cars environment lang misc music textures\
 		textures.dat tiles tracks" ${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@cd ${PREFIX}/etc/&&${CP} -n ${PORTNAME}.conf.sample ${PORTNAME}.conf
 .ifndef NOPORTDOCS
 	@cd ${WRKSRC}/doc/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
