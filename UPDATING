@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081026:
+  AFFECTS: users of www/asterisk-gui
+  AUTHOR: pneumann@gmail.com
+
+  The upgrade to version 2.0 will modify your asterisk dialplan when login
+  to the page. Hardware autodetection will not work, pending update of
+  misc/zaptel.
+
 20081028:
   AFFECTS: users of www/codeigniter
   AUTHOR: glarkin@FreeBSD.org
