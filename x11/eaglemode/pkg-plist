@@ -56,6 +56,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_eps.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_fig.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_g3.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_html.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_iso.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pdf.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pov.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_rpm.emFpPlugin
@@ -65,15 +66,18 @@ lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_xwd.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTreeDump.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emXbm.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emXpm.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/version
 lib/eaglemode/etc/emFileMan/Commands/Advanced.props
 lib/eaglemode/etc/emFileMan/Commands/Advanced/CopyAs.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/Exchange.pl
-lib/eaglemode/etc/emFileMan/Commands/Advanced/FileInfo.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/MoveAs.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/SelectRecursively.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/SymLink.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/chmod.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/chown.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/grp1.props
+lib/eaglemode/etc/emFileMan/Commands/Advanced/grp1/CreateISO.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/grp1/FileInfo.pl
 lib/eaglemode/etc/emFileMan/Commands/Advanced/touch.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive.props
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands.props
@@ -136,34 +140,36 @@ lib/eaglemode/etc/emFileMan/Commands/StructuredText/Konqueror.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/OpenOfficeOrg.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/Xpdf.pl
 lib/eaglemode/etc/emFileMan/Commands/Terminal.pl
+lib/eaglemode/etc/emFileMan/Commands/version
 lib/eaglemode/etc/emMain/CreateInitialBookmarks.pl
-lib/eaglemode/etc/emMain/VcFiles/AboutEagleMode.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/ChangeLog.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/Chess1.silchess
-lib/eaglemode/etc/emMain/VcFiles/Clock1.emClock
-lib/eaglemode/etc/emMain/VcFiles/Clock2.emClock
-lib/eaglemode/etc/emMain/VcFiles/DebugTreeDump.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/DebugTreeDump.txt
-lib/eaglemode/etc/emMain/VcFiles/FS.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/GeneralUserGuide.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/InstallAndStart.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/Julia1.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia2.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia3.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia4.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia5.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia6.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia7.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia8.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Julia9.emFractal
-lib/eaglemode/etc/emMain/VcFiles/License.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/Mandelbrot.emFractal
-lib/eaglemode/etc/emMain/VcFiles/Mines1.emMines
-lib/eaglemode/etc/emMain/VcFiles/MultiJulia.emFractal
-lib/eaglemode/etc/emMain/VcFiles/SystemRequirements.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/TestPanel.emTestPanel
-lib/eaglemode/etc/emMain/VcFiles/emFileManCustomization.emFileLink
-lib/eaglemode/etc/emMain/VcFiles/emFileManUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/AboutEagleMode.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/ChangeLog.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/Chess1.silchess
+lib/eaglemode/etc/emMain/VcItemFiles/Clock1.emClock
+lib/eaglemode/etc/emMain/VcItemFiles/Clock2.emClock
+lib/eaglemode/etc/emMain/VcItemFiles/DebugTreeDump.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/DebugTreeDump.txt
+lib/eaglemode/etc/emMain/VcItemFiles/FS.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/GeneralUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/InstallAndStart.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/Julia1.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia2.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia3.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia4.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia5.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia6.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia7.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia8.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Julia9.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/License.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/Mandelbrot.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Mines1.emMines
+lib/eaglemode/etc/emMain/VcItemFiles/MultiJulia.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/SystemRequirements.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/TestPanel.emTestPanel
+lib/eaglemode/etc/emMain/VcItemFiles/emFileManCustomization.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/emFileManUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/version
 lib/eaglemode/etc/emMain/VcItems/AboutEagleMode.emVcItem
 lib/eaglemode/etc/emMain/VcItems/ChangeLog.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Chess1.emVcItem
@@ -191,6 +197,7 @@ lib/eaglemode/etc/emMain/VcItems/SystemRequirements.emVcItem
 lib/eaglemode/etc/emMain/VcItems/TestPanel.emVcItem
 lib/eaglemode/etc/emMain/VcItems/emFileManCustomization.emVcItem
 lib/eaglemode/etc/emMain/VcItems/emFileManUserGuide.emVcItem
+lib/eaglemode/etc/emMain/VcItems/version
 lib/eaglemode/include/SilChess/SilChessControlPanel.h
 lib/eaglemode/include/SilChess/SilChessMachine.h
 lib/eaglemode/include/SilChess/SilChessModel.h
@@ -316,6 +323,7 @@ lib/eaglemode/include/emWnds/emWndsScheduler.h
 lib/eaglemode/include/emWnds/emWndsScreen.h
 lib/eaglemode/include/emWnds/emWndsWindowPort.h
 lib/eaglemode/include/emX11/emX11Clipboard.h
+lib/eaglemode/include/emX11/emX11ExtDynamic.h
 lib/eaglemode/include/emX11/emX11Screen.h
 lib/eaglemode/include/emX11/emX11WindowPort.h
 lib/eaglemode/include/emXbm/emXbmImageFileModel.h
@@ -434,7 +442,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/include/SilChess
 @dirrm lib/eaglemode/include
 @dirrm lib/eaglemode/etc/emMain/VcItems
-@dirrm lib/eaglemode/etc/emMain/VcFiles
+@dirrm lib/eaglemode/etc/emMain/VcItemFiles
 @dirrm lib/eaglemode/etc/emMain
 @dirrm lib/eaglemode/etc/emFileMan/Commands/StructuredText
 @dirrm lib/eaglemode/etc/emFileMan/Commands/Run
@@ -445,6 +453,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands
 @dirrm lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands
 @dirrm lib/eaglemode/etc/emFileMan/Commands/Archive
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Advanced/grp1
 @dirrm lib/eaglemode/etc/emFileMan/Commands/Advanced
 @dirrm lib/eaglemode/etc/emFileMan/Commands
 @dirrm lib/eaglemode/etc/emFileMan
