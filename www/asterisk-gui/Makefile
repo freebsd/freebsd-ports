@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	asterisk-gui
-PORTVERSION=	0.0.1r20070801
-PORTREVISION=	3
+PORTVERSION=	2.0.3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-snap-2007-08-01
+MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk-gui/releases/
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	An asterisk ajax web manager
 
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk \
+		wget:${PORTSDIR}/ftp/wget
 
 PROJECTHOST=	asterisk-bsd
 USE_AUTOTOOLS=	autoconf:262 automake:19
@@ -23,18 +22,16 @@ USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-OPTIONS=	SIP_QUEUES	"In queues register users as SIP, not Agents" off \
-		SAMPLE_CONFIG   "Install sample configuration files" off
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/config/backup.html \
-		${WRKSRC}/config/syslog.html \
-		${WRKSRC}/config/scripts/astman.js \
-		${WRKSRC}/tools/zapscan.c \
-		${WRKSRC}/tools/zapscan \
-		${WRKSRC}/scripts/gui_sysinfo \
-		${WRKSRC}/scripts/listfiles
+	@${GREP} -Rl '/var/lib' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g'
+	@${GREP} -Rl '/etc' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g'
+	@${GREP} -Rl '/bin/grep' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -e 's|/bin/grep|grep|g'
+	@${GREP} -Rl 'bash' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -e 's|bash|sh|g'
+
 	@${FIND} ${WRKSRC} -name "*.orig" -o -name "*.bak" | ${XARGS} ${RM}
 
 run-autotools:
@@ -45,14 +42,7 @@ checkconfig:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SIP_QUEUES)
-EXTRA_PATCHES+=	${FILESDIR}/extra-config-queues.html
-.endif
-
 post-install:
-.if defined(WITH_SAMPLE_CONFIG)
-		@cd ${WRKSRC} && ${GMAKE} samples
-.endif
-		@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

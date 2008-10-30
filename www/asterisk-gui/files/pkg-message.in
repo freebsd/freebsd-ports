@@ -9,8 +9,8 @@ Make sure to check out the following items:
 	* Asterisk is running
 	* manager.conf has 'write' uncommented
 
-You should be able to access the setup process in:
-http://localhost:8088/asterisk/static/config/setup/install.html
+You should be able to access the web gui in:
+http://localhost:8088/asterisk/static/config/index.html
 
 Good luck!
 
