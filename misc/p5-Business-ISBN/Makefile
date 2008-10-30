@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-ISBN
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Work with International Standard Book Numbers
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/ISBN/Data.pm:${PORTSDIR}/misc/p5-Business-ISBN-Data
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Business-ISBN-Data>=20081020:${PORTSDIR}/misc/p5-Business-ISBN-Data
 
 PERL_CONFIGURE=	yes
 
@@ -26,4 +25,17 @@ PLIST_FILES=	${SITE_PERL_REL}/Business/ISBN.pm \
 		${SITE_PERL_REL}/Business/ISBN13.pm \
 		${SITE_PERL_REL}/${PERL_ARCH}/auto/Business/ISBN/.packlist
 
-.include <bsd.port.mk>
+OPTIONS=	BARCODE "Barcode support" off \
+		XISBN "xISBN support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_BARCODE)
+RUN_DEPENDS+=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
+.endif
+
+.if defined(WITH_XISBN)
+RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+.endif
+
+.include <bsd.port.post.mk>
