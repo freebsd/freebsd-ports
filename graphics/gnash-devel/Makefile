@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	20080927
-PORTREVISION=	1
+PORTVERSION=	20081030
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.gnashdev.org/dev_snapshots/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-trunk-${SVNREV}
 EXTRACT_SUFX=	.tar.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -24,6 +24,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	gnash-[0-9]*
+
+SVNREV=		10051
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -51,7 +53,7 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 gnash.1 gprocessor.1 soldumper.1 dumpshm.1
+MAN1=		cygnal.1 dumpshm.1 flvdumper.1 gnash.1 gprocessor.1 soldumper.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
