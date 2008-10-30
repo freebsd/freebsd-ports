@@ -34,6 +34,8 @@ PLIST_FILES=	bin/playgsf
 # contains x86 assembler
 ONLY_FOR_ARCHS=	i386
 
+PORTSCOUT=	skipv:0.7.2
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(@LDFLAGS@\)|\1 ${LDFLAGS}|' \
