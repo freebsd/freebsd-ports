@@ -2,6 +2,7 @@ bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/icons/hicolor/48x48/apps/xfce4-appfinder.png
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/da/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/de/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/dz/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-appfinder.mo
@@ -15,6 +16,7 @@ share/locale/fr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/gu/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/he/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hu/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/id/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/it/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ja/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ka/LC_MESSAGES/xfce4-appfinder.mo
@@ -26,8 +28,10 @@ share/locale/pa/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ru/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/si/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/sv/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/tr/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ur/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/be/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ca/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/cs/LC_MESSAGES/xfce4-appfinder.mo
