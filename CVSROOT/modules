@@ -638,6 +638,7 @@ asmixer                         ports/audio/asmixer
 asmodem                         ports/comms/asmodem
 asmon                           ports/sysutils/asmon
 asmutils                        ports/devel/asmutils
+asmx                            ports/devel/asmx
 asn1c                           ports/lang/asn1c
 asp2php                         ports/www/asp2php
 aspathtree                      ports/net-mgmt/aspathtree
@@ -5583,14 +5584,6 @@ ja-jmode-skk                    ports/japanese/jmode-skk
 ja-jpilot                       ports/japanese/jpilot
 ja-jstrings                     ports/japanese/jstrings
 ja-jvim3                        ports/japanese/jvim3
-ja-jvim3-canna                  ports/japanese/jvim3-canna
-ja-jvim3-canna+freewnn          ports/japanese/jvim3-canna+freewnn
-ja-jvim3-canna+wnn6             ports/japanese/jvim3-canna+wnn6
-ja-jvim3-canna+wnn7             ports/japanese/jvim3-canna+wnn7
-ja-jvim3-direct_canna           ports/japanese/jvim3-direct_canna
-ja-jvim3-freewnn                ports/japanese/jvim3-freewnn
-ja-jvim3-wnn6                   ports/japanese/jvim3-wnn6
-ja-jvim3-wnn7                   ports/japanese/jvim3-wnn7
 ja-jyuroku                      ports/japanese/jyuroku
 ja-k10                          ports/japanese/k10
 ja-k12                          ports/japanese/k12
@@ -9713,6 +9706,8 @@ p5-Audio                        ports/audio/p5-Audio
 p5-Audio-Beep                   ports/audio/p5-Audio-Beep
 p5-Audio-CD                     ports/audio/p5-Audio-CD
 p5-Audio-FLAC-Header            ports/audio/p5-Audio-FLAC-Header
+p5-Audio-MPD                    ports/audio/p5-Audio-MPD
+p5-Audio-MPD-Common             ports/audio/p5-Audio-MPD-Common
 p5-Audio-Mixer                  ports/audio/p5-Audio-Mixer
 p5-Audio-Musepack               ports/audio/p5-Audio-Musepack
 p5-Audio-Scrobbler              ports/audio/p5-Audio-Scrobbler
@@ -12875,6 +12870,8 @@ p5-audio-beep                   ports/audio/p5-Audio-Beep
 p5-audio-cd                     ports/audio/p5-Audio-CD
 p5-audio-flac-header            ports/audio/p5-Audio-FLAC-Header
 p5-audio-mixer                  ports/audio/p5-Audio-Mixer
+p5-audio-mpd                    ports/audio/p5-Audio-MPD
+p5-audio-mpd-common             ports/audio/p5-Audio-MPD-Common
 p5-audio-musepack               ports/audio/p5-Audio-Musepack
 p5-audio-scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-audio-taglib                 ports/audio/p5-Audio-TagLib
@@ -13750,6 +13747,7 @@ p5-dns-config                   ports/dns/p5-DNS-Config
 p5-dns-easydns                  ports/dns/p5-DNS-EasyDNS
 p5-dns-zone                     ports/dns/p5-DNS-Zone
 p5-dns-zoneparse                ports/dns/p5-DNS-ZoneParse
+p5-doxygenfilter                ports/devel/p5-doxygenfilter
 p5-dtemplate                    ports/textproc/p5-dTemplate
 p5-dwh_file                     ports/databases/p5-DWH_File
 p5-ePerl                        ports/lang/p5-ePerl
