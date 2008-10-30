@@ -7,6 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont
@@ -44,6 +45,6 @@ post-install:
 		  ${ECHO_CMD} "include ${EXTRARC}" ) \
 		> ${LOCALBASE}/etc/xpdfrc
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${LOCALBASE}/etc/xpdfrc
-	${CHMOD} 0644 ${LOCALBASE}/etc/xpdfrc
+	${CHMOD} 0444 ${LOCALBASE}/etc/xpdfrc
 
 .include <bsd.port.mk>
