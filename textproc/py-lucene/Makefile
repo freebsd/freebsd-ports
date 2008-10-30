@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	2.3.2
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/jcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
