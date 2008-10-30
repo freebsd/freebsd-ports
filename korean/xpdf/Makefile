@@ -26,7 +26,7 @@ SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
 PLIST_SUB=	EXTRARC=${EXTRARC}
 DATADIR=	${PREFIX}/share/xpdf
 
-FONTSDIR=	${LOCALBASE}/share/fonts/TrueType
+FONTSDIR=	${LOCALBASE}/lib/X11/fonts/TrueType
 EXTRARC=	${DATADIR}/korean/dot.xpdfrc
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
@@ -44,6 +44,6 @@ post-install:
 		  ${ECHO_CMD} "include ${EXTRARC}" ) \
 		> ${LOCALBASE}/etc/xpdfrc
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${LOCALBASE}/etc/xpdfrc
-	${CHMOD} 0444 ${LOCALBASE}/etc/xpdfrc
+	${CHMOD} 0644 ${LOCALBASE}/etc/xpdfrc
 
 .include <bsd.port.mk>

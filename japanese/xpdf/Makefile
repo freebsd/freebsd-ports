@@ -45,6 +45,6 @@ post-install:
 		  ${ECHO_CMD} "include ${EXTRARC}" ) \
 		> ${LOCALBASE}/etc/xpdfrc
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${LOCALBASE}/etc/xpdfrc
-	${CHMOD} 0444 ${LOCALBASE}/etc/xpdfrc
+	${CHMOD} 0644 ${LOCALBASE}/etc/xpdfrc
 
 .include <bsd.port.mk>
