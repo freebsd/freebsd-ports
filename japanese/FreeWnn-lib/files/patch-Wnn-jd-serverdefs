@@ -1,5 +1,5 @@
---- Wnn/jd/serverdefs.orig	Tue May 20 13:56:08 2003
-+++ Wnn/jd/serverdefs	Tue May 20 13:56:46 2003
+--- Wnn/jd/serverdefs.orig	2008-10-30 15:08:34.000000000 +0900
++++ Wnn/jd/serverdefs	2008-10-30 15:09:22.000000000 +0900
 @@ -30,12 +30,12 @@
  ;
  
