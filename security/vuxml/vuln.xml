@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85b0bbc8-a7a5-11dd-8283-001c2514716c">
+    <topic>phpmyadmin -- Cross-Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><gt>3.0</gt><lt>3.0.1.1</lt></range>
+	<range><lt>2.11.9.3</lt></range>
+      </package>
+      <package>
+	<name>phpMyAdmin211</name>
+	<range><lt>2.11.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/31928">
+	  <p>phpMyAdmin is prone to a cross-site scripting vulnerability
+	    because it fails to sufficiently sanitize user-supplied data.</p>
+	  <p>An attacker may leverage this issue to execute arbitrary
+	    script code in the browser of an unsuspecting user in the
+	    context of the affected site. This may allow the attacker
+	    to steal cookie-based authentication credentials and to
+	    launch other attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>21928</bid>
+    </references>
+    <dates>
+      <discovery>2008-10-30</discovery>
+      <entry>2008-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5c4d7f7-9f4b-11dd-bab1-001999392805">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
