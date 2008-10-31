@@ -462,7 +462,7 @@
     SUBDIR += mapyrus
     SUBDIR += maverik
     SUBDIR += megapov
-    SUBDIR += mesa
+    SUBDIR += mesagl
     SUBDIR += mesa-demos
     SUBDIR += meshviewer
     SUBDIR += metacam
