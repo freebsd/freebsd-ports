@@ -5,7 +5,7 @@
  
  #define RANDOM_SOURCE "/dev/urandom"
 -#define RANDOM_SIZE 128
-+#define RANDOM_SIZE 64
++#define RANDOM_SIZE 20
  #define MAX_SIGSIZE 256
  
  extern int match_user(X509 * x509, const char *login);
