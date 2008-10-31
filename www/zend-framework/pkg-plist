@@ -1869,6 +1869,7 @@
 %%DATADIR%%/library/Zend/Form/Decorator/Errors.php
 %%DATADIR%%/library/Zend/Form/Decorator/Exception.php
 %%DATADIR%%/library/Zend/Form/Decorator/Fieldset.php
+%%DATADIR%%/library/Zend/Form/Decorator/File.php
 %%DATADIR%%/library/Zend/Form/Decorator/Form.php
 %%DATADIR%%/library/Zend/Form/Decorator/FormElements.php
 %%DATADIR%%/library/Zend/Form/Decorator/HtmlTag.php
@@ -2792,6 +2793,7 @@
 %%DATADIR%%/library/Zend/Paginator.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Array.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/DbSelect.php
+%%DATADIR%%/library/Zend/Paginator/Adapter/DbTableSelect.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Interface.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Iterator.php
 %%DATADIR%%/library/Zend/Paginator/Adapter/Null.php
@@ -3143,9 +3145,13 @@
 %%DATADIR%%/library/Zend/Validate/EmailAddress.php
 %%DATADIR%%/library/Zend/Validate/Exception.php
 %%DATADIR%%/library/Zend/Validate/File/Count.php
+%%DATADIR%%/library/Zend/Validate/File/ExcludeExtension.php
+%%DATADIR%%/library/Zend/Validate/File/ExcludeMimeType.php
 %%DATADIR%%/library/Zend/Validate/File/Exists.php
 %%DATADIR%%/library/Zend/Validate/File/Extension.php
 %%DATADIR%%/library/Zend/Validate/File/FilesSize.php
+%%DATADIR%%/library/Zend/Validate/File/IsCompressed.php
+%%DATADIR%%/library/Zend/Validate/File/IsImage.php
 %%DATADIR%%/library/Zend/Validate/File/ImageSize.php
 %%DATADIR%%/library/Zend/Validate/File/MimeType.php
 %%DATADIR%%/library/Zend/Validate/File/NotExists.php
@@ -3340,6 +3346,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/IndexController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/ZendDbProfilerFirebugController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/ZendLogWriterFirebugController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/ZendWildfirePluginFirePhpController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/error/error.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/index/index.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-db-profiler-firebug/test-logging.phtml
@@ -3347,6 +3354,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-error-controller.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-large-message.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-logging.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-wildfire-plugin-firephp/test-groups.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/public/.htaccess
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Db-Profiler-Firebug/TestDocExample.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Log-Writer-Firebug/TestDocExample.php
@@ -3789,6 +3797,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/DescriptionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/ErrorsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/FieldsetTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/FileTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/FormTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/HtmlTagTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Form/Decorator/ImageTest.php
@@ -4070,6 +4079,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testResetParameters.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testSimpleRequests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testUploads.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4238-zerolineresponse.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieJarTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/ResponseTest.php
@@ -4232,6 +4242,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/OpenId/ResponseHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/OpenIdTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/ArrayTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/DbTableSelectTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/DbSelectTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/IteratorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/NullTest.php
@@ -4614,9 +4625,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/CountTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/ExistsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/ExcludeExtensionTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/ExcludeMimeTypeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/ExtensionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/FilesSizeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/ImageSizeTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/IsCompressedTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/IsImageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/MimeTypeTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/NotExistsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/SizeTest.php
@@ -4627,6 +4642,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize2.mo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize3.mo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize4.mo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/test.zip
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/FloatTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/GreaterThanTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/HexTest.php
@@ -5054,6 +5070,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Db-Profiler-Firebug
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-wildfire-plugin-firephp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-db-profiler-firebug
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/index
