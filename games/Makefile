@@ -95,6 +95,7 @@
     SUBDIR += bomns
     SUBDIR += boswars
     SUBDIR += braincurses
+    SUBDIR += brainworkshop
     SUBDIR += brickshooter
     SUBDIR += briquolo
     SUBDIR += brutalchess
