@@ -25,6 +25,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
+IGNORE=		please use openoffice.org-2 port which is newer
+
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${WITH_CWS}
 DISTFILES+=	${CWSARCHIVE}:cws
