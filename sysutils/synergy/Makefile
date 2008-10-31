@@ -7,7 +7,7 @@
 
 PORTNAME=	synergy
 PORTVERSION= 	1.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}2
@@ -31,6 +31,8 @@ post-install:
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@cd ${WRKSRC}/doc && ${TAR} cf - *.html *.css images | \
+		${TAR} -C ${DOCSDIR} -xpf -
 .endif
 	${MKDIR} ${PREFIX}/share/examples/synergy
 	${INSTALL_DATA} ${WRKSRC}/examples/synergy.conf ${PREFIX}/share/examples/synergy
