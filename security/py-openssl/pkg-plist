@@ -4,10 +4,20 @@
 %%PYTHON_SITELIBDIR%%/OpenSSL/__init__.pyo
 %%PYTHON_SITELIBDIR%%/OpenSSL/crypto.so
 %%PYTHON_SITELIBDIR%%/OpenSSL/rand.so
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_crypto.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/test/test_ssl.pyo
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyo
 %%PYTHON_SITELIBDIR%%/OpenSSL/version.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/version.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/OpenSSL/test
 @dirrm %%PYTHON_SITELIBDIR%%/OpenSSL
