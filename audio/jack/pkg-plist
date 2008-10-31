@@ -41,6 +41,7 @@ lib/libjack.so
 lib/libjack.so.0
 libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/annotated.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/classes.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/deprecated.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/files.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/functions.html
