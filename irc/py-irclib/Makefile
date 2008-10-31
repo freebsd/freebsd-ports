@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irclib
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.8
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-irclib
@@ -21,10 +21,11 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-irclib
 EXAMPLEFILES=	irccat irccat2 servermap testbot.py \
 		dccreceive dccsend
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLEFILES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${EXAMPLESDIR}/
 .endfor
