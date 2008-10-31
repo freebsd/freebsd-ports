@@ -63,10 +63,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>21928</bid>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-9</url>
     </references>
     <dates>
       <discovery>2008-10-30</discovery>
       <entry>2008-10-31</entry>
+      <modified>2008-10-31</modified>
     </dates>
   </vuln>
 
