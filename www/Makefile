@@ -1540,6 +1540,7 @@
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-hit-a-hint
+    SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-imglikeopera
