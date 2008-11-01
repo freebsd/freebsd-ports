@@ -1,5 +1,5 @@
---- skkserv/skkserv.h.orig	1997-01-20 20:16:36.000000000 +0100
-+++ skkserv/skkserv.h	2008-01-01 19:58:41.000000000 +0100
+--- skkserv/skkserv.h.orig	1997-01-21 04:16:36.000000000 +0900
++++ skkserv/skkserv.h	2008-11-01 23:53:43.000000000 +0900
 @@ -37,6 +37,8 @@
  /* Necessary for SunOS 3.x and maybe other old systems */
  
