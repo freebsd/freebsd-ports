@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	skalibs
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	General purpose C libraries used by skarnet.org software
 
 LDFLAGS?=	-s

@@ -95,6 +95,7 @@ lib/skalibs/libwebipc.a
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb.html
 %%PORTDOCS%%%%DOCSDIR%%/libttymodes.html
 %%PORTDOCS%%%%DOCSDIR%%/libwebipc.html
+%%PORTDOCS%%%%DOCSDIR%%/selfpipe.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/skalibs
