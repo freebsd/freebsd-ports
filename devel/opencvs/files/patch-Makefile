@@ -1,0 +1,19 @@
+--- Makefile	2008-06-21 17:39:15.000000000 +0200
++++ Makefile	2008-11-01 14:42:14.000000000 +0100
+@@ -12,14 +12,7 @@
+ 	server.c status.c tag.c trigger.c worklist.c util.c update.c version.c \
+ 	watch.c xmalloc.c
+ 
+-CFLAGS+=-Wall
+-CFLAGS+=-Wstrict-prototypes -Wmissing-prototypes
+-CFLAGS+=-Wmissing-declarations
+-CFLAGS+=-Wshadow -Wpointer-arith -Wcast-qual
+-CFLAGS+=-Wsign-compare
+-DEBUG=	-g -ggdb
+-YFLAGS=
+-
+-INSTALL_STRIP=
++DPADD+= ${LIBZ}
++LDADD+= -lz -lmd
+ 
+ .include <bsd.prog.mk>
