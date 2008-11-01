@@ -72,6 +72,7 @@
     SUBDIR += stars
     SUBDIR += stellarium
     SUBDIR += sunclock
+    SUBDIR += swe
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
     SUBDIR += viking
