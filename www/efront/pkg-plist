@@ -79,8 +79,6 @@
 %%WWWDIR%%/libraries/external/tcpdf/tcpdf.php
 %%WWWDIR%%/libraries/external/tcpdf/unicode_data.php
 %%WWWDIR%%/libraries/external/Zip.php
-%%WWWDIR%%/libraries/filesystem.class.php
-%%WWWDIR%%/libraries/filesystem.php
 %%WWWDIR%%/libraries/filesystem3.class.php
 %%WWWDIR%%/libraries/globals.php
 %%WWWDIR%%/libraries/group.class.php
@@ -89,7 +87,6 @@
 %%WWWDIR%%/libraries/lesson.class.php
 %%WWWDIR%%/libraries/manifest.class.php
 %%WWWDIR%%/libraries/menu.class.php
-%%WWWDIR%%/libraries/scorm/LMSFunctions.js
 %%WWWDIR%%/libraries/metadata.class.php
 %%WWWDIR%%/libraries/module.class.php
 %%WWWDIR%%/libraries/module_hcd_tools.php
@@ -140,7 +137,6 @@
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printLessonsList.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printMenu.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printMessage.php
-%%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printMiniFM.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printNavigation.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printNewContent.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/function.eF_template_printNews.php
@@ -161,6 +157,7 @@
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.eF_template_formatTimestamp.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.eF_template_includeScripts.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.eF_template_replacePng.php
+%%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.eF_template_setInnerLinks.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.gzip.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/custom/outputfilter.gzip2.php
 %%WWWDIR%%/libraries/smarty/libs/plugins/function.assign_debug_info.php
@@ -218,6 +215,7 @@
 %%WWWDIR%%/libraries/smarty/templates/analyze_code.tpl
 %%WWWDIR%%/libraries/smarty/templates/apidemo.tpl
 %%WWWDIR%%/libraries/smarty/templates/browse.tpl
+%%WWWDIR%%/libraries/smarty/templates/browsecontent.tpl
 %%WWWDIR%%/libraries/smarty/templates/calendar.tpl
 %%WWWDIR%%/libraries/smarty/templates/change_style.tpl
 %%WWWDIR%%/libraries/smarty/templates/charts.tpl
@@ -270,21 +268,19 @@
 %%WWWDIR%%/libraries/smarty/templates/show_avatars.tpl
 %%WWWDIR%%/libraries/smarty/templates/show_log.tpl
 %%WWWDIR%%/libraries/smarty/templates/show_print_friendly.tpl
-%%WWWDIR%%/libraries/smarty/templates/sidebar_frame.tpl
 %%WWWDIR%%/libraries/smarty/templates/stress_tool.tpl
 %%WWWDIR%%/libraries/smarty/templates/student.tpl
 %%WWWDIR%%/libraries/smarty/templates/system_announcements.tpl
 %%WWWDIR%%/libraries/smarty/templates/user_course.tpl
 %%WWWDIR%%/libraries/smarty/templates/user_lesson.tpl
+%%WWWDIR%%/libraries/smarty/templates/view_resource.tpl
 %%WWWDIR%%/libraries/smarty/templates/view_test.tpl
 %%WWWDIR%%/libraries/statistics.class.php
-%%WWWDIR%%/libraries/statistics.php
 %%WWWDIR%%/libraries/system.class.php
 %%WWWDIR%%/libraries/test.class.php
 %%WWWDIR%%/libraries/tools.php
 %%WWWDIR%%/libraries/tree.class.php
 %%WWWDIR%%/libraries/user.class.php
-%%WWWDIR%%/modules/.htaccess
 %%WWWDIR%%/PEAR/.htaccess
 %%WWWDIR%%/PEAR/Archive/Tar.php
 %%WWWDIR%%/PEAR/Archive/Zip.php
@@ -1161,6 +1157,7 @@
 %%WWWDIR%%/www/forum/manage_folders.php
 %%WWWDIR%%/www/forum/messages_index.php
 %%WWWDIR%%/www/forum/new_message.php
+%%WWWDIR%%/www/images/default_logo.png
 %%WWWDIR%%/www/images/12x12/about.gif
 %%WWWDIR%%/www/images/12x12/about.png
 %%WWWDIR%%/www/images/12x12/arrow_left_blue.gif
@@ -1188,12 +1185,16 @@
 %%WWWDIR%%/www/images/16x16/add2_gray.png
 %%WWWDIR%%/www/images/16x16/address_book2.gif
 %%WWWDIR%%/www/images/16x16/address_book2.png
+%%WWWDIR%%/www/images/16x16/arrow_down_blue.gif
+%%WWWDIR%%/www/images/16x16/arrow_down_blue.png
 %%WWWDIR%%/www/images/16x16/arrow_left_blue.gif
 %%WWWDIR%%/www/images/16x16/arrow_left_blue.png
 %%WWWDIR%%/www/images/16x16/arrow_right_blue.gif
 %%WWWDIR%%/www/images/16x16/arrow_right_blue.png
 %%WWWDIR%%/www/images/16x16/arrow_right_green.gif
 %%WWWDIR%%/www/images/16x16/arrow_right_green.png
+%%WWWDIR%%/www/images/16x16/arrow_up_blue.gif
+%%WWWDIR%%/www/images/16x16/arrow_up_blue.png
 %%WWWDIR%%/www/images/16x16/bookmark.gif
 %%WWWDIR%%/www/images/16x16/bookmark.png
 %%WWWDIR%%/www/images/16x16/books.gif
@@ -1204,6 +1205,8 @@
 %%WWWDIR%%/www/images/16x16/book_blue.png
 %%WWWDIR%%/www/images/16x16/book_green.gif
 %%WWWDIR%%/www/images/16x16/book_green.png
+%%WWWDIR%%/www/images/16x16/book_open.gif
+%%WWWDIR%%/www/images/16x16/book_open.png
 %%WWWDIR%%/www/images/16x16/book_open2.gif
 %%WWWDIR%%/www/images/16x16/book_open2.png
 %%WWWDIR%%/www/images/16x16/book_open2_gray.gif
@@ -1380,6 +1383,8 @@
 %%WWWDIR%%/www/images/16x16/index.gif
 %%WWWDIR%%/www/images/16x16/index.png
 %%WWWDIR%%/www/images/16x16/information.png
+%%WWWDIR%%/www/images/16x16/layout_center.gif
+%%WWWDIR%%/www/images/16x16/layout_center.png
 %%WWWDIR%%/www/images/16x16/lessons.gif
 %%WWWDIR%%/www/images/16x16/lessons.png
 %%WWWDIR%%/www/images/16x16/lightbulb_on.gif
@@ -1617,6 +1622,7 @@
 %%WWWDIR%%/www/images/32x32/arrow_right_blue.png
 %%WWWDIR%%/www/images/32x32/battery.gif
 %%WWWDIR%%/www/images/32x32/battery.png
+%%WWWDIR%%/www/images/32x32/banners.png
 %%WWWDIR%%/www/images/32x32/board.gif
 %%WWWDIR%%/www/images/32x32/board.png
 %%WWWDIR%%/www/images/32x32/bookmark.gif
@@ -1813,10 +1819,13 @@
 %%WWWDIR%%/www/images/32x32/key1.png
 %%WWWDIR%%/www/images/32x32/keys.gif
 %%WWWDIR%%/www/images/32x32/keys.png
+%%WWWDIR%%/www/images/32x32/layout_center.gif
+%%WWWDIR%%/www/images/32x32/layout_center.png
 %%WWWDIR%%/www/images/32x32/lightbulb_on.gif
 %%WWWDIR%%/www/images/32x32/lightbulb_on.png
 %%WWWDIR%%/www/images/32x32/lightbulb_on_gray.gif
 %%WWWDIR%%/www/images/32x32/lightbulb_on_gray.png
+%%WWWDIR%%/www/images/32x32/link.png
 %%WWWDIR%%/www/images/32x32/lock.gif
 %%WWWDIR%%/www/images/32x32/lock.png
 %%WWWDIR%%/www/images/32x32/mail.gif
@@ -1880,6 +1889,7 @@
 %%WWWDIR%%/www/images/32x32/printer.png
 %%WWWDIR%%/www/images/32x32/question_and_answer.gif
 %%WWWDIR%%/www/images/32x32/question_and_answer.png
+%%WWWDIR%%/www/images/32x32/quote.png
 %%WWWDIR%%/www/images/32x32/recycle.gif
 %%WWWDIR%%/www/images/32x32/recycle.png
 %%WWWDIR%%/www/images/32x32/recycle_gray.gif
@@ -1916,6 +1926,10 @@
 %%WWWDIR%%/www/images/32x32/text_marked.png
 %%WWWDIR%%/www/images/32x32/text_ok.gif
 %%WWWDIR%%/www/images/32x32/text_ok.png
+%%WWWDIR%%/www/images/32x32/text_tree.gif
+%%WWWDIR%%/www/images/32x32/text_tree.png
+%%WWWDIR%%/www/images/32x32/text_tree_gray.gif
+%%WWWDIR%%/www/images/32x32/text_tree_gray.png
 %%WWWDIR%%/www/images/32x32/trafficlight_on.gif
 %%WWWDIR%%/www/images/32x32/trafficlight_on.png
 %%WWWDIR%%/www/images/32x32/trafficlight_on_gray.gif
@@ -1960,6 +1974,10 @@
 %%WWWDIR%%/www/images/32x32/workstation1.png
 %%WWWDIR%%/www/images/32x32/wrench.gif
 %%WWWDIR%%/www/images/32x32/wrench.png
+%%WWWDIR%%/www/images/48x48/book_open.gif
+%%WWWDIR%%/www/images/48x48/book_open.png
+%%WWWDIR%%/www/images/48x48/book_open2.gif
+%%WWWDIR%%/www/images/48x48/book_open2.png
 %%WWWDIR%%/www/images/48x48/box.gif
 %%WWWDIR%%/www/images/48x48/box.png
 %%WWWDIR%%/www/images/48x48/box_next.gif
@@ -1968,13 +1986,28 @@
 %%WWWDIR%%/www/images/48x48/box_out.png
 %%WWWDIR%%/www/images/48x48/cabinet.gif
 %%WWWDIR%%/www/images/48x48/cabinet.png
+%%WWWDIR%%/www/images/48x48/calendar.gif
+%%WWWDIR%%/www/images/48x48/calendar.png
+%%WWWDIR%%/www/images/48x48/cart-add.gif
 %%WWWDIR%%/www/images/48x48/cart-add.png
 %%WWWDIR%%/www/images/48x48/checks.gif
 %%WWWDIR%%/www/images/48x48/checks.png
+%%WWWDIR%%/www/images/48x48/contract.gif
+%%WWWDIR%%/www/images/48x48/contract.png
 %%WWWDIR%%/www/images/48x48/desktop.gif
 %%WWWDIR%%/www/images/48x48/desktop.png
+%%WWWDIR%%/www/images/48x48/disk_blue.gif
+%%WWWDIR%%/www/images/48x48/disk_blue.png
 %%WWWDIR%%/www/images/48x48/help2.gif
 %%WWWDIR%%/www/images/48x48/help2.png
+%%WWWDIR%%/www/images/48x48/mail2.gif
+%%WWWDIR%%/www/images/48x48/mail2.png
+%%WWWDIR%%/www/images/48x48/messages.gif
+%%WWWDIR%%/www/images/48x48/messages.png
+%%WWWDIR%%/www/images/48x48/news.gif
+%%WWWDIR%%/www/images/48x48/news.png
+%%WWWDIR%%/www/images/48x48/note.gif
+%%WWWDIR%%/www/images/48x48/note.png
 %%WWWDIR%%/www/images/48x48/stopwatch.gif
 %%WWWDIR%%/www/images/48x48/stopwatch.png
 %%WWWDIR%%/www/images/avatars/system_avatars/angel.gif
@@ -2193,10 +2226,18 @@
 %%WWWDIR%%/www/images/others/blank.gif
 %%WWWDIR%%/www/images/others/blue.jpg
 %%WWWDIR%%/www/images/others/blue2.jpg
+%%WWWDIR%%/www/images/others/calendar_thumbnail.png
+%%WWWDIR%%/www/images/others/comments_thumbnail.png
+%%WWWDIR%%/www/images/others/content_tree_thumbnail.png
+%%WWWDIR%%/www/images/others/control_panel_thumbnail.png
+%%WWWDIR%%/www/images/others/digital_library_thumbnail.png
+%%WWWDIR%%/www/images/others/forum_thumbnail.png
 %%WWWDIR%%/www/images/others/grd-4px_1.1.gif
 %%WWWDIR%%/www/images/others/logo.jpg
 %%WWWDIR%%/www/images/others/minus.gif
 %%WWWDIR%%/www/images/others/minus.png
+%%WWWDIR%%/www/images/others/news_thumbnail.png
+%%WWWDIR%%/www/images/others/personal_messages_thumbnail.png
 %%WWWDIR%%/www/images/others/pixel.png
 %%WWWDIR%%/www/images/others/plaisio_logo.gif
 %%WWWDIR%%/www/images/others/plus.gif
@@ -2205,6 +2246,7 @@
 %%WWWDIR%%/www/images/others/progress2.gif
 %%WWWDIR%%/www/images/others/progress3.gif
 %%WWWDIR%%/www/images/others/progress_big.gif
+%%WWWDIR%%/www/images/others/projects_thumbnail.png
 %%WWWDIR%%/www/images/others/search_bg.png
 %%WWWDIR%%/www/images/others/spacer.gif
 %%WWWDIR%%/www/images/others/tooltip_arrow.gif
@@ -2295,17 +2337,17 @@
 %%WWWDIR%%/www/set_positions.php
 %%WWWDIR%%/www/show_avatars.php
 %%WWWDIR%%/www/show_chart.php
-%%WWWDIR%%/www/show_data.php
 %%WWWDIR%%/www/show_log.php
 %%WWWDIR%%/www/show_print_friendly.php
-%%WWWDIR%%/www/sidebar_frame.php
 %%WWWDIR%%/www/student.php
 %%WWWDIR%%/www/studentpage.php
 %%WWWDIR%%/www/templates/online_users.php
 %%WWWDIR%%/www/user_course.php
 %%WWWDIR%%/www/user_lesson.php
 %%WWWDIR%%/www/view_file.php
+%%WWWDIR%%/www/view_resource.php
 %%WWWDIR%%/www/view_test.php
+%%WWWDIR%%/www/xml_indexer.php
 %%WWWDIR%%/backups/.htaccess
 @dirrm %%WWWDIR%%/libraries/adodb/cache
 @dirrm %%WWWDIR%%/libraries/adodb/drivers
@@ -2320,7 +2362,6 @@
 @dirrm %%WWWDIR%%/libraries/external/tcpdf
 @dirrm %%WWWDIR%%/libraries/external
 @dirrm %%WWWDIR%%/libraries/language
-@dirrm %%WWWDIR%%/libraries/scorm
 @dirrm %%WWWDIR%%/libraries/smarty/configs
 @dirrm %%WWWDIR%%/libraries/smarty/libs/internals
 @dirrm %%WWWDIR%%/libraries/smarty/libs/plugins/custom
