@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	# defined below
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}"
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
@@ -46,6 +46,7 @@ MAN4.WNN=	2a_ctrl.4 2b_romkana.4 cvt_key_tbl.4 fzk.data.4 fzk.u.4	\
 		uumkey.4 uumrc.4 wnnenvrc.4
 MAN5.WNN=	pubdic.5 usr_dic.5
 MANLANG.WNN=	ja
+USE_RC_SUBR.WNN=	wnn.sh
 
 # CWnn
 CONFIGURE_ARGS.CWNN+=	--enable-Wnn=no --enable-kWnn=no		\
@@ -55,14 +56,16 @@ LIB_DEPENDS.CWNN=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
 MAN1.CWNN=	cserver.1 cuum.1 cwnnkill.1 cwnnstat.1 catod.1 catof.1	\
 		cdicsort.1 cdtoa.1 cwddel.1 cwdreg.1 cwnntouch.1
 MAN4.CWNN=	cst_end.4 cwnn.4 cenv.4 ckey.4
+USE_RC_SUBR.CWNN=	cwnn.sh twnn.sh
 
 # KWnn
 CONFIGURE_ARGS.KWNN+=	--enable-Wnn=no --enable-cWnn=no \
 			--with-libkwnn=-lkwnn \
 			--with-kwnn-libraries="${PREFIX}/lib"
 LIB_DEPENDS.KWNN=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
+USE_RC_SUBR.KWNN=	kwnn.sh
 
-.for M in LIB_DEPENDS MAN1 MAN4 MAN5 MLINKS MANLANG
+.for M in LIB_DEPENDS MAN1 MAN4 MAN5 MLINKS MANLANG USE_RC_SUBR
 . if defined(${M}.${WNNTYPE})
 ${M}+=		${${M}.${WNNTYPE}}
 . endif

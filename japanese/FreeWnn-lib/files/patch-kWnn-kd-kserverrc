@@ -1,0 +1,11 @@
+--- kWnn/kd/kserverrc.orig	2001-06-15 02:56:06.000000000 +0900
++++ kWnn/kd/kserverrc	2008-11-01 23:35:57.000000000 +0900
+@@ -29,6 +29,8 @@
+ ; Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ ;
+ 
++listenaddr 127.0.0.1
++
+ max_client 64
+ 
+ jserver_dir	@LIBDIR/@LANG/dic

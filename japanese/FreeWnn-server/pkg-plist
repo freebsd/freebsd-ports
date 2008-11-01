@@ -10,7 +10,6 @@ bin/Wnn4/wnnkill
 bin/Wnn4/wnnstat
 bin/Wnn4/wnntouch
 @dirrm bin/Wnn4
-etc/rc.d/wnn.sh
 lib/wnn/ja_JP/dic/gerodic/g-jinmei.dic
 lib/wnn/ja_JP/dic/pubdic/bio.dic
 lib/wnn/ja_JP/dic/pubdic/chimei.dic

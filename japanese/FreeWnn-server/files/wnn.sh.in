@@ -1,0 +1,28 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: wnn
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. %%RC_SUBR%%
+
+name=wnn
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/Wnn4/jserver
+procname=%%PREFIX%%/bin/Wnn4/jserver
+
+
+start_precmd()
+{
+	rm -f /tmp/jd_sockV4
+}
+
+stop_postcmd()
+{
+	rm -f /tmp/jd_sockV4
+}
+
+load_rc_config ${name}
+run_rc_command $1

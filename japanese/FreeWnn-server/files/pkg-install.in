@@ -1,175 +1,46 @@
 #!/bin/sh
 # $FreeBSD$
-# an installation script for Wnn4.2
-
-ask() {
-    local question default answer
-
-    question=$1
-    default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
-	read -p "${question} (y/n) [${default}]? " answer
-    fi
-    if [ x${answer} = x ]; then
-	answer=${default}
-    fi
-    echo ${answer}
-}
-
-yesno() {
-    local dflt question answer
-
-    question=$1
-    dflt=$2
-    while :; do
-	answer=$(ask "${question}" "${dflt}")
-	case "${answer}" in
-	[Yy]*)		return 0;;
-	[Nn]*)		return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
-}
-
-mk_startup_script() {
-	_wnnname=$1
-	_wnnserver=$2
-	_wnn_socket=$3
-	_scriptfile=${PKG_PREFIX}/etc/rc.d/${_wnnname}.sh
-
-      echo "Installing ${_scriptfile} startup file.";
-      cat << EOF > ${_scriptfile}
-#!/bin/sh
-#
-# PROVIDE: ${_wnnname}
-# REQUIRE: LOGIN
-#
-
-. %%RC_SUBR%%
-
-name=${_wnnname}
-rcvar=\`set_rcvar\`
-command=${_wnnserver}
-procname=${_wnnserver}
-
-load_rc_config \${name}
-
-start_precmd()
-{
-	rm -f ${_wnn_socket}
-}
-
-stop_postcmd()
-{
-	rm -f ${_wnn_socket}
-}
-
-run_rc_command "\$1"
-EOF
-	chmod 0555 ${_scriptfile}
-
-}
 
 case $2 in
 PRE-INSTALL)
-
-    ## Hack /etc/master.passwd ##
-    # check
-    id_69=`id -u 69 2> /dev/null`
-    id_wnn=`id -u wnn 2> /dev/null`
-    if [ X"$id_wnn" != X ];then
-	exit 0
-    elif [ X"$id_69" != X ]; then
-	cat <<EOF
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-This system already has an account whose name is not 'wnn' and ID
-number is 69.
-
-   '`id 69`'
-
-For Wnn4.2 in this port or package, ID number of 'wnn' has to be 69.
-Please try again after you delete the account.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-EOF
-	exit 1
-    fi
-
-    # add an account 'wnn' to this system
-    echo ""
-    echo "You need an account 'wnn' whose ID number is 69"
-    if [ -z "${BATCH}" ]; then
-	if yesno "Would you like to create it automatically?" y; then
-	    pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
-		    -s /nonexistent -c Wnn || exit
+	if id -u wnn > /dev/null 2>&1; then
+		echo "INFO: wnn user already exists.  FreeWnn will use it."
 	else
-	    echo "Please create it, and try again."
-	    exit 1
+		echo "INFO: Creating 'wnn' user..."
+		if pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
+			-s /nonexistent -c Wnn; then
+			echo "INFO: Created."
+		else
+			echo "ERROR: wnn user cannot create."
+			exit 1
+		fi
 	fi
-    else
-	echo "Create it automatically!"
-	check_pw
-	pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
-	    -s /nonexistent -c Wnn || exit
-    fi
-    ;;
-
+	;;
 POST-INSTALL)
-
-    case $1 in
-      ja-FreeWnn-*)
-	sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons ${PKG_PREFIX}/lib/wnn/ja_JP/dic/gerodic"
-	usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
-	wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
-	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
-	wnnstat=${PKG_PREFIX}/bin/Wnn4/wnnstat
-	wnnkill=${PKG_PREFIX}/bin/Wnn4/wnnkill
-	wnnname=wnn
-	wnn_socket=/tmp/jd_sockV4
-	wnn_lang=ja_JP
-	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
-	;;
-      zh-FreeWnn-*)
-	sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
-	usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
-	wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
-	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
-	wnnstat=${PKG_PREFIX}/bin/cWnn4/cwnnstat
-	wnnkill=${PKG_PREFIX}/bin/cWnn4/cwnnkill
-	wnnname=cwnn
-	wnn_socket=/tmp/cd_sockV4
-	wnn_lang=zh_CN
-	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
-	
-	wnnserver=${PKG_PREFIX}/bin/cWnn4/tserver
-	wnn_lang=zh_TW
-	wnnname=twnn
-	wnn_socket=/tmp/td_sockV4
-	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
-	;;
-      ko-FreeWnn-*)
-	sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
-	usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
-	wnnserver=${PKG_PREFIX}/bin/kWnn4/kserver
-	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
-	wnnstat=${PKG_PREFIX}/bin/kWnn4/kwnnstat
-	wnnkill=${PKG_PREFIX}/bin/kWnn4/kwnnkill
-	wnnname=kwnn
-	wnn_socket=/tmp/kd_sockV4
-	wnn_lang=ko_KR
-	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
-	;;
-    esac
-
-    chown wnn $wnnserver
-    for dir in $sys_dirs; do
-      $wnntouch $dir/*
-    done
-    for dir in $usr_dirs; do
-      if [ ! -d $dir ]; then
-	mkdir -p $dir
-      fi
-      chown wnn $dir
-    done
-	;;
+	case $1 in
+	ja-FreeWnn-*)
+		mkdir -p ${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
+		chown wnn ${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
+		chown wnn ${PKG_PREFIX}/bin/Wnn4/jserver
+		${PKG_PREFIX}/bin/Wnn4/wnntouch \
+			${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic/* \
+			${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons/* \
+			${PKG_PREFIX}/lib/wnn/ja_JP/dic/gerodic/*
+		;;
+	zh-FreeWnn-*)
+		mkdir -p ${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr
+		chown wnn ${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr
+		chown wnn ${PKG_PREFIX}/bin/cWnn4/cserver ${PKG_PREFIX}/bin/cWnn4/tserver
+		${PKG_PREFIX}/bin/cWnn4/cwnntouch \
+			${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys/* \
+			${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys/*
+		;;
+	ko-FreeWnn-*)
+		mkdir -p ${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
+		chown wnn ${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
+		chown wnn ${PKG_PREFIX}/bin/kWnn4/kserver
+		${PKG_PREFIX}/bin/kWnn4/kwnntouch \
+			${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys/*
+		;;
+	esac
 esac

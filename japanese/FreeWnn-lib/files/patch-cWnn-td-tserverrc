@@ -1,0 +1,11 @@
+--- cWnn/td/tserverrc.orig	2001-06-15 02:56:03.000000000 +0900
++++ cWnn/td/tserverrc	2008-11-01 23:35:24.000000000 +0900
+@@ -35,6 +35,8 @@
+ 
+ readfile	sys/full.con
+ 
++listenaddr	127.0.0.1
++
+ max_client	32
+ max_sticky_env	10
+ 

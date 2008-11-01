@@ -9,7 +9,6 @@ bin/kWnn4/kwnnkill
 bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
 @dirrm bin/kWnn4
-etc/rc.d/kwnn.sh
 lib/wnn/ko_KR/dic/sys/full.fzk
 lib/wnn/ko_KR/dic/sys/hword.dic
 lib/wnn/ko_KR/dic/sys/single.dic
