@@ -216,6 +216,7 @@
     SUBDIR += mxico
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
+    SUBDIR += nvidia-driver-173
     SUBDIR += nvidia-driver-71xx
     SUBDIR += nvidia-driver-96xx
     SUBDIR += nvidia-settings
