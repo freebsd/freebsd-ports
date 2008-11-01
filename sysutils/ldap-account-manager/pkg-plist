@@ -15,6 +15,7 @@
 %%WWWDIR%%/config/pdf/logos/.htaccess
 %%WWWDIR%%/config/pdf/logos/printLogo.jpg
 %%WWWDIR%%/config/profiles/.htaccess
+%%WWWDIR%%/config/profiles/default.dhcp
 %%WWWDIR%%/config/profiles/default.group
 %%WWWDIR%%/config/profiles/default.host
 %%WWWDIR%%/config/profiles/default.mailAlias
@@ -23,6 +24,7 @@
 %%WWWDIR%%/config/selfService/.htaccess
 %%WWWDIR%%/config/selfService/default.user
 %%WWWDIR%%/config/shells
+%%WWWDIR%%/graphics/.htaccess
 %%WWWDIR%%/graphics/add.png
 %%WWWDIR%%/graphics/back.gif
 %%WWWDIR%%/graphics/banner.jpg
@@ -34,6 +36,7 @@
 %%WWWDIR%%/graphics/delete.gif
 %%WWWDIR%%/graphics/delete.png
 %%WWWDIR%%/graphics/device.png
+%%WWWDIR%%/graphics/dhcp.png
 %%WWWDIR%%/graphics/document.png
 %%WWWDIR%%/graphics/door.png
 %%WWWDIR%%/graphics/down.gif
@@ -101,6 +104,7 @@
 %%WWWDIR%%/graphics/userDefault.png
 %%WWWDIR%%/graphics/warn.png
 %%WWWDIR%%/help/help.inc
+%%WWWDIR%%/help/.htaccess
 %%WWWDIR%%/index.html
 %%WWWDIR%%/lib/.htaccess
 %%WWWDIR%%/lib/account.inc
@@ -134,6 +138,10 @@
 %%WWWDIR%%/lib/ldap.inc
 %%WWWDIR%%/lib/lists.inc
 %%WWWDIR%%/lib/modules.inc
+%%WWWDIR%%/lib/modules/ddns.inc
+%%WWWDIR%%/lib/modules/dhcp_settings.inc
+%%WWWDIR%%/lib/modules/fixed_ip.inc
+%%WWWDIR%%/lib/modules/range.inc
 %%WWWDIR%%/lib/modules/account.inc
 %%WWWDIR%%/lib/modules/ieee802device.inc
 %%WWWDIR%%/lib/modules/inetLocalMailRecipient.inc
@@ -161,6 +169,7 @@
 %%WWWDIR%%/lib/status.inc
 %%WWWDIR%%/lib/tree.inc
 %%WWWDIR%%/lib/types.inc
+%%WWWDIR%%/lib/types/dhcp.inc
 %%WWWDIR%%/lib/types/group.inc
 %%WWWDIR%%/lib/types/host.inc
 %%WWWDIR%%/lib/types/mailAlias.inc
@@ -168,6 +177,7 @@
 %%WWWDIR%%/lib/types/user.inc
 %%WWWDIR%%/lib/ufpdf.php
 %%WWWDIR%%/lib/xml_parser.inc
+%%WWWDIR%%/locale/.htaccess
 %%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
@@ -197,12 +207,15 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/sess/.htaccess
+%%WWWDIR%%/style/.htaccess
+%%WWWDIR%%/style/type_dhcp.css
 %%WWWDIR%%/style/layout.css
 %%WWWDIR%%/style/type_group.css
 %%WWWDIR%%/style/type_host.css
 %%WWWDIR%%/style/type_mailAlias.css
 %%WWWDIR%%/style/type_smbDomain.css
 %%WWWDIR%%/style/type_user.css
+%%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/account/edit.php
 %%WWWDIR%%/templates/config/conflogin.php
 %%WWWDIR%%/templates/config/confmain.php
