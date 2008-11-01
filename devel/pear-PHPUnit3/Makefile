@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.2.21
+PORTVERSION=	3.3.2
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -92,7 +92,6 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/Database/ITester.php \
 		PHPUnit/Extensions/Database/TestCase.php \
 		PHPUnit/Extensions/PhptTestCase/Logger.php \
-		PHPUnit/Extensions/ExceptionTestCase.php \
 		PHPUnit/Extensions/OutputTestCase.php \
 		PHPUnit/Extensions/PerformanceTestCase.php \
 		PHPUnit/Extensions/PhptTestCase.php \
@@ -100,7 +99,6 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/RepeatedTest.php \
 		PHPUnit/Extensions/SeleniumTestCase.php \
 		PHPUnit/Extensions/TestDecorator.php \
-		PHPUnit/Extensions/TestSetup.php \
 		PHPUnit/Extensions/SeleniumTestCase/append.php \
 		PHPUnit/Extensions/SeleniumTestCase/phpunit_coverage.php \
 		PHPUnit/Extensions/SeleniumTestCase/prepend.php \
@@ -167,7 +165,6 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/ExpectationFailedException.php \
 		PHPUnit/Framework/IncompleteTest.php \
 		PHPUnit/Framework/IncompleteTestError.php \
-		PHPUnit/Framework/Notice.php \
 		PHPUnit/Framework/SelfDescribing.php \
 		PHPUnit/Framework/SkippedTest.php \
 		PHPUnit/Framework/SkippedTestError.php \
@@ -189,7 +186,6 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/TextUI/ResultPrinter.php \
 		PHPUnit/TextUI/TestRunner.php \
 		PHPUnit/Util/Log/CodeCoverage/Database.php \
-		PHPUnit/Util/Log/CodeCoverage/XML.php \
 		PHPUnit/Util/Log/Database/MySQL.sql \
 		PHPUnit/Util/Log/Database/SQLite3.sql \
 		PHPUnit/Util/Log/PMD/Rule/Class/DepthOfInheritanceTree.php \
@@ -229,26 +225,13 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Report/Template/close12_1.gif \
 		PHPUnit/Util/Report/Template/container-min.js \
 		PHPUnit/Util/Report/Template/container.css \
-		PHPUnit/Util/Report/Template/directory.html \
-		PHPUnit/Util/Report/Template/file.html \
-		PHPUnit/Util/Report/Template/file_no_yui.html \
 		PHPUnit/Util/Report/Template/glass.png \
-		PHPUnit/Util/Report/Template/item.html \
-		PHPUnit/Util/Report/Template/method_item.html \
 		PHPUnit/Util/Report/Template/scarlet_red.png \
 		PHPUnit/Util/Report/Template/snow.png \
 		PHPUnit/Util/Report/Template/style.css \
 		PHPUnit/Util/Report/Template/yahoo-dom-event.js \
 		PHPUnit/Util/Report/Template/yui_item.js \
 		PHPUnit/Util/Report/Node.php \
-		PHPUnit/Util/Skeleton/IncompleteTestMethod.tpl \
-		PHPUnit/Util/Skeleton/TestClass.tpl \
-		PHPUnit/Util/Skeleton/TestMethod.tpl \
-		PHPUnit/Util/Skeleton/TestMethodBool.tpl \
-		PHPUnit/Util/Skeleton/TestMethodBoolStatic.tpl \
-		PHPUnit/Util/Skeleton/TestMethodException.tpl \
-		PHPUnit/Util/Skeleton/TestMethodExceptionStatic.tpl \
-		PHPUnit/Util/Skeleton/TestMethodStatic.tpl \
 		PHPUnit/Util/TestDox/ResultPrinter/HTML.php \
 		PHPUnit/Util/TestDox/ResultPrinter/Text.php \
 		PHPUnit/Util/TestDox/NamePrettifier.php \
@@ -273,6 +256,76 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Timer.php \
 		PHPUnit/Util/Type.php \
 		PHPUnit/Util/XML.php \
+		PHPUnit/Extensions/Database/DataSet/CompositeDataSet.php \
+		PHPUnit/Extensions/Database/DataSet/CsvDataSet.php \
+		PHPUnit/Extensions/Database/DataSet/IPersistable.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Abstract.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/FlatXml.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Xml.php \
+		PHPUnit/Extensions/Database/DataSet/QueryDataSet.php \
+		PHPUnit/Extensions/Database/DataSet/QueryTable.php \
+		PHPUnit/Extensions/Database/DataSet/ReplacementDataSet.php \
+		PHPUnit/Extensions/Database/DataSet/ReplacementTable.php \
+		PHPUnit/Extensions/Database/DataSet/ReplacementTableIterator.php \
+		PHPUnit/Extensions/Database/TestCase.php \
+		PHPUnit/Extensions/GroupTestSuite.php \
+		PHPUnit/Extensions/SeleniumTestCase.php \
+		PHPUnit/Extensions/SeleniumTestCase/Driver.php \
+		PHPUnit/Extensions/Story/Given.php \
+		PHPUnit/Extensions/Story/ResultPrinter.php \
+		PHPUnit/Extensions/Story/ResultPrinter/HTML.php \
+		PHPUnit/Extensions/Story/ResultPrinter/Template/scenario.html.dist \
+		PHPUnit/Extensions/Story/ResultPrinter/Template/scenario_header.html.dist \
+		PHPUnit/Extensions/Story/ResultPrinter/Template/scenarios.html.dist \
+		PHPUnit/Extensions/Story/ResultPrinter/Template/step.html.dist \
+		PHPUnit/Extensions/Story/ResultPrinter/Text.php \
+		PHPUnit/Extensions/Story/Scenario.php \
+		PHPUnit/Extensions/Story/SeleniumTestCase.php \
+		PHPUnit/Extensions/Story/Step.php \
+		PHPUnit/Extensions/Story/TestCase.php \
+		PHPUnit/Extensions/Story/Then.php \
+		PHPUnit/Extensions/Story/When.php \
+		PHPUnit/Framework/Constraint/IsFalse.php \
+		PHPUnit/Framework/Constraint/IsNull.php \
+		PHPUnit/Framework/Constraint/IsTrue.php \
+		PHPUnit/Framework/Error/Notice.php \
+		PHPUnit/Framework/Error/Warning.php \
+		PHPUnit/Framework/MockObject/Stub/ReturnArgument.php \
+		PHPUnit/Framework/MockObject/Stub/ReturnCallback.php \
+		PHPUnit/Framework/Test.php \
+		PHPUnit/Framework/TestCase.php \
+		PHPUnit/Framework/Warning.php \
+		PHPUnit/Samples/BowlingGame/BowlingGame.php \
+		PHPUnit/Samples/BowlingGame/BowlingGameSpec.php \
+		PHPUnit/Samples/BowlingGame/BowlingGameTest.php \
+		PHPUnit/TextUI/ResultPrinter.php \
+		PHPUnit/Util/Class.php \
+		PHPUnit/Util/Log/CodeCoverage/XML/Clover.php \
+		PHPUnit/Util/Log/CodeCoverage/XML/Source.php \
+		PHPUnit/Util/Log/PMD/Rule/Class.php \
+		PHPUnit/Util/Metrics/Class.php \
+		PHPUnit/Util/Report/Template/directory.html.dist \
+		PHPUnit/Util/Report/Template/directory_item.html.dist \
+		PHPUnit/Util/Report/Template/file.html.dist \
+		PHPUnit/Util/Report/Template/file_item.html.dist \
+		PHPUnit/Util/Report/Template/file_no_yui.html.dist \
+		PHPUnit/Util/Report/Template/method_item.html.dist \
+		PHPUnit/Util/Skeleton/Class.php \
+		PHPUnit/Util/Skeleton/Template/Class.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/IncompleteTestMethod.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/Method.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestClass.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethod.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethodBool.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethodBoolStatic.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethodException.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethodExceptionStatic.tpl.dist \
+		PHPUnit/Util/Skeleton/Template/TestMethodStatic.tpl.dist \
+		PHPUnit/Util/Skeleton/Test.php \
+		PHPUnit/Util/Test.php \
+		PHPUnit/Util/TestDox/ResultPrinter.php \
+		PHPUnit/Util/TestDox/ResultPrinter/HTML.php \
+		PHPUnit/Util/TestDox/ResultPrinter/Text.php \
 		PHPUnit/Framework.php
 EXAMPLES=	BankAccount/BankAccount.php \
 		BankAccount/BankAccountTest.php \
@@ -287,6 +340,9 @@ EXAMPLES=	BankAccount/BankAccount.php \
 		Money/Money.php \
 		Money/MoneyBag.php \
 		Money/MoneyTest.php \
+		BowlingGame/BowlingGame.php \
+		BowlingGame/BowlingGameSpec.php \
+		BowlingGame/BowlingGameTest.php \
 		FailureTest.php
 TESTS=		Extensions/Database/DataSet/AllTests.php \
 		Extensions/Database/DataSet/FilterTest.php \
@@ -334,11 +390,6 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		Util/AllTests.php \
 		Util/TimerTest.php \
 		_files/AnInterface.php \
-		_files/BankAccount.json \
-		_files/BankAccount.metrics \
-		_files/BankAccount.pmd \
-		_files/BankAccount.tap \
-		_files/BankAccount.xml \
 		_files/ClassWithNonPublicAttributes.php \
 		_files/DoubleTestCase.php \
 		_files/Error.php \
@@ -356,7 +407,6 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		_files/OverrideTestCase.php \
 		_files/SampleClass.php \
 		_files/SetupFailure.php \
-		_files/Sleep.php \
 		_files/Struct.php \
 		_files/Success.php \
 		_files/TearDownFailure.php \
@@ -372,7 +422,67 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		_files/foo.xml \
 		_files/bar.xml \
 		AllTests.php \
-		TestConfiguration.php.dist
+		Extensions/Database/DataSet/CompositeDataSetTest.php \
+		Extensions/Database/DataSet/CsvDataSetTest.php \
+		Extensions/Database/DataSet/PersistorTest.php \
+		Extensions/Database/DataSet/QueryDataSetTest.php \
+		Extensions/Database/DataSet/QueryTableTest.php \
+		Extensions/Database/DataSet/ReplacementDataSetTest.php \
+		Extensions/Database/DataSet/ReplacementTableTest.php \
+		Framework/TestFailureTest.php \
+		Regression/578.phpt \
+		Regression/Issue578Test.php \
+		TextUI/coverage-clover-class-extended.phpt \
+		TextUI/coverage-clover-class.phpt \
+		TextUI/coverage-clover-method.phpt \
+		TextUI/coverage-clover-not-private.phpt \
+		TextUI/coverage-clover-not-protected.phpt \
+		TextUI/coverage-clover-not-public.phpt \
+		TextUI/coverage-clover-private.phpt \
+		TextUI/coverage-clover-protected.phpt \
+		TextUI/coverage-clover-public.phpt \
+		TextUI/coverage-clover.phpt \
+		TextUI/coverage-source.phpt \
+		TextUI/dataset-log-xml.phpt \
+		TextUI/default.phpt \
+		TextUI/exclude-group.phpt \
+		TextUI/filter-class.phpt \
+		TextUI/filter-method.phpt \
+		TextUI/group.phpt \
+		TextUI/help.phpt \
+		TextUI/help2.phpt \
+		TextUI/list-groups.phpt \
+		TextUI/log-graphviz.phpt \
+		TextUI/log-json.phpt \
+		TextUI/log-tap.phpt \
+		TextUI/log-xml.phpt \
+		TextUI/repeat.phpt \
+		TextUI/skeleton.phpt \
+		TextUI/story.phpt \
+		TextUI/tap.phpt \
+		TextUI/testdox-html.phpt \
+		TextUI/testdox-text.phpt \
+		TextUI/testdox.phpt \
+		TextUI/verbose.phpt \
+		Util/ConfigurationTest.php \
+		Util/XMLTest.php \
+		_files/Calculator.php \
+		_files/CoverageClassExtendedTest.php \
+		_files/CoverageClassTest.php \
+		_files/CoverageMethodTest.php \
+		_files/CoverageNotPrivateTest.php \
+		_files/CoverageNotProtectedTest.php \
+		_files/CoverageNotPublicTest.php \
+		_files/CoveragePrivateTest.php \
+		_files/CoverageProtectedTest.php \
+		_files/CoveragePublicTest.php \
+		_files/CoveredClass.php \
+		_files/DataSetTest.php \
+		_files/FunctionCallback.php \
+		_files/MethodCallback.php \
+		_files/PartialMockTestClass.php \
+		_files/SleepTest.php \
+		config.xml.dist 
 SCRIPTFILES=	phpunit
 _EXAMPLESDIR=	PHPUnit/Samples
 _TESTSDIR=	PHPUnit/Tests
