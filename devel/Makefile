@@ -2431,6 +2431,7 @@
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
+    SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-rubyforge
