@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	mp3burn
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Command line tool for making audio CDs from mp3s
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
@@ -27,7 +26,6 @@ USE_PERL5=	yes
 USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
-MAN1=		mp3burn.1
 PLIST_FILES=	bin/mp3burn
 
 post-patch:
@@ -35,6 +33,5 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3burn ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mp3burn.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
