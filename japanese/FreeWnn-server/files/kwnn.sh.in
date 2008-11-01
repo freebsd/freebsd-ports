@@ -1,0 +1,27 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: kwnn
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. %%RC_SUBR%%
+
+name=kwnn
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/kWnn4/kserver
+procname=%%PREFIX%%/bin/kWnn4/kserver
+
+start_precmd()
+{
+	rm -f /tmp/kd_sockV4
+}
+
+stop_postcmd()
+{
+	rm -f /tmp/kd_sockV4
+}
+
+load_rc_config ${name}
+run_rc_command $1

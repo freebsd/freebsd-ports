@@ -10,8 +10,6 @@ bin/cWnn4/cwnnstat
 bin/cWnn4/cwnntouch
 bin/cWnn4/tserver
 @dirrm bin/cWnn4
-etc/rc.d/cwnn.sh
-etc/rc.d/twnn.sh
 lib/wnn/zh_CN/dic/sys/QianMa.dic
 lib/wnn/zh_CN/dic/sys/WuBi.dic
 lib/wnn/zh_CN/dic/sys/basic.dic

@@ -1,0 +1,27 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: cwnn
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+
+. %%RC_SUBR%%
+
+name=cwnn
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/cWnn4/cserver
+procname=%%PREFIX%%/bin/cWnn4/cserver
+
+start_precmd()
+{
+	rm -f /tmp/cd_sockV4
+}
+
+stop_postcmd()
+{
+	rm -f /tmp/cd_sockV4
+}
+
+load_rc_config ${name}
+run_rc_command $1
