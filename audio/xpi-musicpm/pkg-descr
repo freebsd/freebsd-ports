@@ -1,0 +1,6 @@
+Music Player Minion is a client for the Music Player Daemon network
+music player. The purpose of MPD and it's clients is to allow music
+playback on one PC (such as a home media server) to be controlled
+from another over the network.
+
+WWW: http://code.google.com/p/musicpm/
