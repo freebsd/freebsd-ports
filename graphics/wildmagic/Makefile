@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	WildMagic
-DISTVERSION=	4p5
+DISTVERSION=	4p8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geometrictools.com/Downloads/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Wild Magic Real-Time 3D Graphics Engine
 
 USE_ZIP=	yes
@@ -67,10 +67,12 @@ pre-configure:
 		${WRKSRC}/LibFoundation/System/Wm4System.cpp
 
 post-build:
-.for sd in ${SAMPLEDIRS}
+.if !defined(WITH_DEBUG)
+. for sd in ${SAMPLEDIRS}
 	${FIND} ${WRKSRC}/${sd} -type f -perm 755 -exec	\
 		${STRIP_CMD} {} \;
-.endfor
+. endfor
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/Wm${MV} ${DATADIR}
@@ -84,7 +86,7 @@ do-install:
 	${FIND} ${WRKSRC}/SDK/Include  -name "Wm*" -exec	\
 		${INSTALL_DATA} {} ${PREFIX}/include/Wm${MV} \;
 	${CP} -R ${WRKSRC}/Data ${DATADIR}
-.ifndef NOPORTDOCS
+.ifndef NOPORTEXAMPLES
 	${MKDIR} ${EXAMPLESDIR}
 . for sd in ${SAMPLEDIRS}
 	${CP} -R ${WRKSRC}/${sd} ${EXAMPLESDIR}
