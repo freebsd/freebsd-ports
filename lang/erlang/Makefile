@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r12b4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -82,7 +83,7 @@ ERLANG_DOCS=	otp_doc_html_R12B-4.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
-CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib
+CONFIGURE_ARGS+=	--enable-threads --enable-dynamic-ssl-lib --enable-sctp
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=	-I${LOCALBASE}/include
