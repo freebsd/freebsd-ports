@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	osh
-DISTVERSION=	20080629
+DISTVERSION=	20081026
 CATEGORIES=	shells
-MASTER_SITES=	http://www.v6shell.org/src/
+MASTER_SITES=	http://www.v6shell.org/src/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An implementation of the UNIX 6th Edition shell
