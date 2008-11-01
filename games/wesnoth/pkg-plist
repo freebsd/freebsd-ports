@@ -8664,6 +8664,8 @@ bin/wesnoth
 @dirrmtry man/sr@latin
 @dirrmtry man/zh_CN/man6
 @dirrmtry man/zh_CN
+@dirrmtry man/zh_TW/man6
+@dirrmtry man/zh_TW
 share/applications/wesnoth.desktop
 %%EDITOR%%share/applications/wesnoth_editor.desktop
 share/pixmaps/wesnoth-icon.png
