@@ -1,0 +1,8 @@
+OpenCVS is a FREE implementation of the Concurrent Versions System, the most
+popular open source revision control software. It can be used as both client
+and server for repositories and provides granular access control over data
+stored in the repository. It aims to be as compatible as possible with other
+CVS implementations, except when particular features reduce the overall
+security of the system.
+
+WWW: http://www.opencvs.org/
