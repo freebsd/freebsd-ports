@@ -8,7 +8,7 @@ $FreeBSD$
  -export([notify/2, confirm/2, confirm_yesno/2, request/2]).
  
 +%% Browser executable list (openURL command line protocol required)
-+-define(BROWSERS, ["netscape", "mozilla", "MozillaFirebird", "opera"]).
++-define(BROWSERS, ["netscape", "mozilla", "MozillaFirebird", "opera", "firefox", "seamonkey"]).
 +
  %%----------------------------------------------------------------------
  %% open_help(GS, File)
