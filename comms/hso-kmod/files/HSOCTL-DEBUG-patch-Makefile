@@ -1,9 +1,10 @@
---- Makefile.orig	2008-05-14 14:18:53.751411172 +0200
-+++ Makefile	2008-05-14 14:19:01.497294028 +0200
-@@ -1,5 +1,5 @@
+--- Makefile.orig	2008-10-23 15:45:28.158855941 +0200
++++ Makefile	2008-10-23 15:45:53.171672654 +0200
+@@ -1,6 +1,6 @@
  SRCS=	hsoctl.c
  PROG=	hsoctl
 -CFLAGS+=	-g
 +#CFLAGS+=	-g
+ LDFLAGS+=	-lutil
+ DESTDIR?= /usr/local
  
- .include <bsd.prog.mk>
