@@ -1,0 +1,7 @@
+MonteCarlo is a bitmap font suitable for code editors. All the characters
+have the same width, which is ideal for alignment. It is loosely derived
+from the look of the Monaco screen font that was available on the old MacOS
+systems. Some changes have been made to make it easier to differentiate
+certain symbols.
+
+WWW: http://bok.net/MonteCarlo/
