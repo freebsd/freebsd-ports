@@ -1,0 +1,63 @@
+--- configure.ac	2006-08-28 04:12:33.000000000 +0800
++++ configure.ac	2008-10-15 10:46:23.000000000 +0800
+@@ -240,7 +240,7 @@ RT_PACKAGE_FIND([fuse], [-D_FILE_OFFSET_
+ ** $FUSE_MSG_ERRORS
+ 	])])
+ 
+-FUSE_CFLAGS="$FUSE_CFLAGS -DFUSE_USE_VERSION=22"
++FUSE_CFLAGS="$FUSE_CFLAGS -DFUSE_USE_VERSION=25"
+ 
+ 
+ #
+--- configure	2006-08-28 04:13:13.000000000 +0800
++++ configure	2008-10-15 10:46:23.000000000 +0800
+@@ -26489,7 +26489,7 @@ fi
+ 
+ 
+ 
+-FUSE_CFLAGS="$FUSE_CFLAGS -DFUSE_USE_VERSION=22"
++FUSE_CFLAGS="$FUSE_CFLAGS -DFUSE_USE_VERSION=25"
+ 
+ 
+ #
+diff -purN djmount/cache.h djmount/cache.h
+--- djmount/cache.h	2006-08-28 04:12:20.000000000 +0800
++++ djmount/cache.h	2008-10-15 11:12:35.000000000 +0800
+@@ -25,6 +25,9 @@
+ 
+ #include <stdlib.h>
+ #include <stdbool.h>
++#ifdef __FreeBSD__
++#include <time.h>
++#endif
+ 
+ 
+ /******************************************************************************
+diff -purN djmount/fuse_main.c djmount/fuse_main.c
+--- djmount/fuse_main.c	2006-08-28 04:12:20.000000000 +0800
++++ djmount/fuse_main.c	2008-10-15 11:12:21.000000000 +0800
+@@ -32,7 +32,9 @@
+ #include <fcntl.h>
+ #include <dirent.h>
+ #include <errno.h>
++#ifdef __linux__
+ #include <sys/statfs.h>
++#endif
+ #ifdef HAVE_SETXATTR
+ #	include <sys/xattr.h>
+ #endif
+diff -purN djmount/string_util.c djmount/string_util.c
+--- djmount/string_util.c	2006-08-28 04:12:20.000000000 +0800
++++ djmount/string_util.c	2008-10-15 11:12:03.000000000 +0800
+@@ -251,7 +251,11 @@ StringStream_GetSnapshot (StringStream* 
+ 		if (res && slen)
+ 			*slen = ss->size;
+ #else
++#ifdef __linux__
+ 		off_t const size = ftello (ss->file);
++#else
++		size_t const size = ftello (ss->file);
++#endif
+ 		res = talloc_size (result_context, size+1);
+ 		if (res) {
+ 			rewind (ss->file);
