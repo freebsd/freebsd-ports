@@ -56,6 +56,7 @@
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-metar
+    SUBDIR += py-pyfits
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += rmap

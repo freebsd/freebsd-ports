@@ -1,0 +1,8 @@
+PyFITS provides an interface to FITS formatted files
+under the Python scripting language. It is useful for
+interactive data analysis and for writing analysis
+scripts in Python using FITS files as either input or
+output. PyFITS is a development project of the Science
+Software Branch at the Space Telescope Science Institute.
+
+WWW: http://www.stsci.edu/resources/software_hardware/pyfits

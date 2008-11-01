@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/pyfits/NA_pyfits.py
+%%PYTHON_SITELIBDIR%%/pyfits/NA_pyfits.pyc
+%%PYTHON_SITELIBDIR%%/pyfits/NA_pyfits.pyo
+%%PYTHON_SITELIBDIR%%/pyfits/NP_pyfits.py
+%%PYTHON_SITELIBDIR%%/pyfits/NP_pyfits.pyc
+%%PYTHON_SITELIBDIR%%/pyfits/NP_pyfits.pyo
+%%PYTHON_SITELIBDIR%%/pyfits/__init__.py
+%%PYTHON_SITELIBDIR%%/pyfits/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyfits/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyfits/rec.py
+%%PYTHON_SITELIBDIR%%/pyfits/rec.pyc
+%%PYTHON_SITELIBDIR%%/pyfits/rec.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyfits
