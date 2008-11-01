@@ -802,6 +802,7 @@
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope
+    SUBDIR += xpi-musicpm
     SUBDIR += xsidplay
     SUBDIR += xsynth-dssi
     SUBDIR += xtuner
