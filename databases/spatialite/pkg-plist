@@ -1,11 +1,14 @@
 bin/spatialite
+lib/libsqlite3.la
+lib/libsqlite3.a
+lib/libsqlite3.so
+lib/libsqlite3.so.3
 lib/libspatialite.la
 lib/libspatialite.a
 lib/libspatialite.so
 lib/libspatialite.so.2
 include/spatialite.h
 include/spatialite/gaiageo.h
-include/spatialite/rtree.h
 include/spatialite/spatialite.h
 include/spatialite/sqlite3.h
 include/spatialite/sqlite3ext.h
