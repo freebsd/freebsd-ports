@@ -1,0 +1,10 @@
+%%XPI_XPIDIR%%/chrome/httpfox.jar
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/HttpFoxService.js
+%%XPI_XPIDIR%%/defaults/preferences/HttpFox.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/license.txt
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
