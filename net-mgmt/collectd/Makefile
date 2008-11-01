@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTVERSION=	4.5.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
@@ -31,10 +30,11 @@ OPTIONS=	CGI	"Install collection.cgi (requires RRDTOOL)" Off \
 		XMMS	"Input: XMMS" Off \
 		RRDTOOL	"Output: RRDTool" On
 
-MAN1=		collectd.1 collectd-nagios.1
+MAN1=		collectd.1 collectd-nagios.1 collectdmon.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
-		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5
-USE_RC_SUBR=	collectd
+		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
+		types.db.5
+USE_RC_SUBR=	collectd collectdmon
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -45,17 +45,43 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BROKEN=		Need bind9 import post 6.1
 .endif
 
+# NOTE: Feel free to submit patches adding support for any of these
+#       disabled plugins.  If a plugin requires external dependencies,
+#       make it optional through OPTIONS.  Some of these are Linux
+#       specific, but others will probably run on FreeBSD as well,
+#       given a bit of careful attention.
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-apple_sensors \
+		--disable-ascent \
 		--disable-battery \
+		--disable-cpufreq \
+		--disable-disk \
+		--disable-entropy \
 		--disable-hddtemp \
-		--disable-multimeter \
 		--disable-iptables \
+		--disable-ipmi \
+		--disable-ipvs \
+		--disable-irq \
+		--disable-libvirt \
+		--disable-multimeter \
+		--disable-netlink \
+		--disable-nfs \
+		--disable-nginx \
+		--disable-notify_desktop \
+		--disable-notify_email \
+		--disable-nut \
+		--disable-onewire \
 		--disable-perl \
+		--disable-postgresql \
 		--disable-sensors \
 		--disable-serial \
+		--disable-tape \
+		--disable-thermal \
+		--disable-users \
+		--disable-vmem \
 		--disable-vserver \
-		--disable-wireless
+		--disable-wireless \
+		--without-perl-bindings
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
