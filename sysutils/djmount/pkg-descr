@@ -1,0 +1,12 @@
+djmount is a UPnP AV client. It mounts as a Linux filesystem the media
+content of compatible UPnP AV devices.
+Djmount discovers automatically all UPnP AV Media Servers on the network,
+and make the content available in a directory tree. All shared files
+(e.g. Audio or Video files) are directly visible and can be played using
+your favorite media player.
+
+djmount is written in C for the Linux operating system.
+It is free software, licensed under the terms of the GNU General Public
+License (GNU GPL).
+
+WWW: http://djmount.sourceforge.net/

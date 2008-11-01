@@ -149,6 +149,7 @@
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
+    SUBDIR += djmount
     SUBDIR += dmidecode
     SUBDIR += dolly
     SUBDIR += dolly+
