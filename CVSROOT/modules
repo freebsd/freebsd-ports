@@ -1129,6 +1129,7 @@ br-aspell                       ports/textproc/br-aspell
 braa                            ports/net-mgmt/braa
 brag                            ports/news/brag
 braincurses                     ports/games/braincurses
+brainworkshop                   ports/games/brainworkshop
 brasero                         ports/sysutils/brasero
 brickshooter                    ports/games/brickshooter
 bricolage                       ports/www/bricolage
@@ -8092,6 +8093,7 @@ mergelog                        ports/www/mergelog
 merlin                          ports/games/merlin
 merlinmon                       ports/net/merlinmon
 mesa-demos                      ports/graphics/mesa-demos
+mesagl                          ports/graphics/mesagl
 mesgui                          ports/x11-toolkits/mesgui
 meshviewer                      ports/graphics/meshviewer
 mess822                         ports/mail/mess822
@@ -18018,6 +18020,7 @@ py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
 py-pydot                        ports/graphics/py-pydot
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
+py-pyglet                       ports/graphics/py-pyglet
 py-pygments                     ports/textproc/py-pygments
 py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
