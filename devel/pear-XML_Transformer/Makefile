@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	XML_Transformer
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	PEAR XML Transformations in PHP
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
@@ -19,12 +19,13 @@ CATEGORY=	XML
 FILES=		Transformer/Driver/Cache.php Transformer/Driver/OutputBuffer.php \
 		Transformer/Namespace/Anchor.php Transformer/Namespace/DocBook.php \
 		Transformer/Namespace/Image.php Transformer/Namespace/PHP.php \
-		Transformer/Namespace/Widget.php Transformer/Tests/AllTests.php \
-		Transformer/Tests/TestNamespace.php Transformer/Tests/TransformerTest.php \
+		Transformer/Namespace/Widget.php \
 		Transformer/CallbackRegistry.php Transformer/Namespace.php \
 		Transformer.php
 DOCS=		README
 _DOCSDIR=	.
+TESTS=		AllTests.php TestNamespace.php TransformerTest.php
+_TESTSDIR=	Transformer/Tests
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
