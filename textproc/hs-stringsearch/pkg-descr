@@ -1,0 +1,5 @@
+This library provides Boyer-Moore and Knuth-Morris-Pratt string search
+implementations for Haskell bytestrings (with support for all strict and
+lazy ByteString permutations).
+
+WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/stringsearch
