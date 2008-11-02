@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-radeonhd
-PORTVERSION=	1.2.1.20080906
+PORTVERSION=	1.2.3.20081103
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -21,7 +21,7 @@ OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 
 XORG_CAT=	driver
 USE_XORG=	damageproto videoproto xextproto xf86driproto
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	aclocal:19 autoconf:262
 
 CONFLICT=	xf86-video-radeonhd-[0-9]*
 
