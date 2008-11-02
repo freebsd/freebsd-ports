@@ -19,7 +19,7 @@ COMMENT=	Java Runtime Environment ${JRE_VERSION}_${RELEASE_VERSION}.${BUILD_VERS
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-RESTRICTED=	"License doesn't allow distribution with fee"
+RESTRICTED=	License does not allow distribution with fee
 
 USE_BZIP2=	yes
 USE_XORG+=	xi xp xt xtst
@@ -53,7 +53,7 @@ JRE_OSREL=	freebsd6
 .elif ${ARCH} == "i386"
 JRE_OSREL=	freebsd5
 .else
-IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
+IGNORE=		only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
 .if defined(WITH_TZUPDATE)
@@ -101,7 +101,7 @@ time zone update file, ${TZUPDATEFILE}.\n\n
 
 pre-fetch:
 .if defined(DISTFILE_INSTRUCTIONS)
-	@printf "${DISTFILE_INSTRUCTIONS}"
+	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
 .endif
 
@@ -110,10 +110,10 @@ post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
 
 pre-install:
-	@echo -n "Updating time zones..."
+	@${ECHO_CMD} -n "Updating time zones..."
 	@${WRKSRC}/bin/java -jar \
 		${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
-	@echo "done"
+	@${ECHO_CMD} "done"
 	@${RM} -rf ${WRKSRC}/lib/zi.tzdata*
 .endif
 
