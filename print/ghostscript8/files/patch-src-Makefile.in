@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2008-02-29 17:13:08.000000000 +0900
-+++ src/Makefile.in	2008-03-05 00:25:31.000000000 +0900
+--- src/Makefile.in.orig	2008-06-22 15:43:28.000000000 +0900
++++ src/Makefile.in	2008-11-03 00:09:12.000000000 +0900
 @@ -46,9 +46,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -44,7 +44,7 @@
  
 -CFLAGS_STANDARD=@OPT_CFLAGS@
 +CFLAGS_STANDARD?=@OPT_CFLAGS@
- CFLAGS_DEBUG=-g -O
+ CFLAGS_DEBUG=-g -O0
  CFLAGS_PROFILE=-pg @OPT_CFLAGS@
  CFLAGS_SO=@DYNAMIC_CFLAGS@
 @@ -295,7 +294,7 @@
@@ -56,16 +56,12 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -340,10 +339,10 @@
- 
- # If POSIX sync primitives are used, also change the STDLIBS to include
- # the pthread library.
--#SYNC=posync
+@@ -339,7 +338,7 @@
+ # the pthread library. Otherwise use SYNC=nosync
+ #SYNC=posync
+ #SYNC=nosync
+-SYNC=@SYNC@
 +SYNC=posync
- 
- # Default is No sync primitives since some platforms don't have it (HP-UX)
--SYNC=nosync
-+#SYNC=nosync
  
  # programs we use
  RM=rm -f
