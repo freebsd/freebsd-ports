@@ -1,5 +1,5 @@
---- src/iat.c.orig	Fri Mar 30 22:39:59 2007
-+++ src/iat.c	Fri Mar 30 22:40:46 2007
+--- src/iat.c.orig	2008-11-02 05:00:31.000000000 +0300
++++ src/iat.c	2008-11-02 05:01:16.000000000 +0300
 @@ -14,12 +14,20 @@
      along with this program; if not, write to the
      Free Software Foundation, Inc.,
@@ -35,6 +35,15 @@
  /* Signature for Image ISO-9660 */
  const char ISO_9660_START[] = { 
    (char) 0x01,
+@@ -91,7 +105,7 @@
+ };
+ 
+ 
+-long img_size;
++off_t img_size;
+ int  img_detect = 2;
+ 
+ int  img_header = 0;
 @@ -106,35 +120,49 @@
  
  int previous_percent=-1;
@@ -104,7 +113,33 @@
  }
  
  
-@@ -163,21 +191,24 @@
+@@ -142,15 +170,15 @@
+ int image_convert()
+ {
+ 	
+-	long source_length, i;
++	off_t source_length, i;
+ 	char buf[2448];
+ 
+ 
+-	fseek (fsource, 0L, SEEK_END);
+-	source_length = (ftell (fsource) - img_offset) / img_size_sector;
++	fseeko (fsource, 0L, SEEK_END);
++	source_length = (ftello (fsource) - img_offset) / img_size_sector;
+ 	
+ 	  
+-	      fseek (fsource, img_offset, SEEK_SET);
++	      fseeko (fsource, img_offset, SEEK_SET);
+ 
+ 	      {
+ 		for (i = 0; i < source_length; i++)
+@@ -158,26 +186,29 @@
+ 		  {
+ 		    main_percent(i*100/source_length);
+ 		    	
+-		    fseek (fsource, img_header, SEEK_CUR);
++		    fseeko (fsource, img_header, SEEK_CUR);
+ 		    if (fread (buf, sizeof (char),  BLOCK_ISO_CD, fsource));
  
  		    else
  		      {
@@ -120,7 +155,8 @@
 +        fprintf (stderr, "%s\n", strerror (errno));
  			exit (EXIT_FAILURE);
  		      };
- 		    fseek (fsource, img_ecc, SEEK_CUR);
+-		    fseek (fsource, img_ecc, SEEK_CUR);
++		    fseeko (fsource, img_ecc, SEEK_CUR);
  	      	}
  	      }
 - 	printf ("100%% [:=====================:]\n");	
@@ -133,7 +169,22 @@
  }
  
  
-@@ -207,12 +238,12 @@
+@@ -196,23 +227,23 @@
+     int raw_check = 0;
+ 
+ 
+-    	fseek(fsource, 0L, SEEK_END);
+-    	img_size = (((ftell(fsource))) / 8);
++    	fseeko(fsource, 0L, SEEK_END);
++    	img_size = (((ftello(fsource))) / 8);
+ 	for (i = 0; img_detect == 2; i = i + 1)
+ 	{
+-		fseek(fsource, 0L, SEEK_SET);
+-		fseek(fsource, i, SEEK_CUR);
++		fseeko(fsource, 0L, SEEK_SET);
++		fseeko(fsource, i, SEEK_CUR);
+ 		fread(buf, sizeof(char), 8, fsource);
+ 		fread(raw, sizeof(char), 12, fsource);
  		
  		if (!memcmp(ISO_9660_START, buf, 8))
  	    	{
