@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ghostscript8
-PORTVERSION=	8.62
-PORTREVISION=	5
+PORTVERSION=	8.63
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -152,7 +152,6 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFIGURE_ARGS+=--without-x
 CONFLICTS+=	ghostscript8-[0-9]*
 .endif
-
 
 .if defined(WITHOUT_ICONV)
 . undef WITH_GS_oprp

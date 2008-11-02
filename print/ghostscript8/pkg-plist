@@ -369,7 +369,6 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/doc/Readme.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Release.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Source.htm
-%%DATADIR%%/%%GS_VERSION%%/doc/Testing.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Unix-lpr.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Use.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Xfonts.htm
