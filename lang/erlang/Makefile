@@ -141,11 +141,17 @@ post-install:
 
 # All non-library files.
 
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d -empty \
+		| ${GREP} -v "^lib/erlang/lib" \
+		| ${SORT} \
+		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
+		> ${ERLANG_PLIST}
+
 	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 		| ${SORT} \
-		> ${ERLANG_PLIST}
+		>> ${ERLANG_PLIST}
 
 # Stock OTP libraries.
 
