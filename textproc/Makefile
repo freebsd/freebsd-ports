@@ -206,6 +206,7 @@
     SUBDIR += hil-aspell
     SUBDIR += hr-aspell
     SUBDIR += hs-haxml
+    SUBDIR += hs-stringsearch
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
