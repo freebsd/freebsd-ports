@@ -7,7 +7,7 @@
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -24,7 +24,8 @@ OPTIONS=	CANNA	"Canna support" on \
 		FREEWNN	"FreeWnn support " on \
 		WNN6	"Wnn6 support" off \
 		WNN7	"Wnn7 support" off \
-		SJ3	"SJ3 support" on
+		SJ3	"SJ3 support" on \
+		TCP	"TCP transport support (not needed for most cases)" off
 
 LIB_DEPENDS.CANNA=	canna16.1:${PORTSDIR}/japanese/canna-lib
 CONF.CANNA=		'\#define UseCanna' \
@@ -65,6 +66,10 @@ PLIST_SUB+=	${I:S/^WITH_//}=""
 PLIST_SUB+=	${I:S/^WITH_//}="@comment "
 .endif
 .endfor
+
+.if !defined(WITH_TCP)
+CONF+=		TRANSPORTDEFS="-DNO_TCP_TRANSPORT"
+.endif
 
 pre-configure: apply-slist
 	${INSTALL_DATA} ${WRKDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
