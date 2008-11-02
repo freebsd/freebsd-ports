@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="07bb3bd2-a920-11dd-8503-0211060005df">
+    <topic>qemu -- Heap overflow in Cirrus emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.9.1_10</lt></range>
+	<range><ge>0.9.1s.20080101*</ge><lt>0.9.1s.20080620_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aurelien Jarno reports:</p>
+	<blockquote cite="http://lists.gnu.org/archive/html/qemu-devel/2008-10/msg01363.html">
+	  <p>CVE-2008-4539: fix a heap overflow in Cirrus emulation</p>
+	  <p>The code in hw/cirrus_vga.c has changed a lot between
+	    CVE-2007-1320 has been announced and the patch has been applied.
+	    As a consequence it has wrongly applied and QEMU is still
+	    vulnerable to this bug if using VNC.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4539</cvename>
+      <mlist msgid="E1Kw4kF-0001Mx-KA@cvs.savannah.gnu.org">http://lists.gnu.org/archive/html/qemu-devel/2008-10/msg01363.html</mlist>
+    </references>
+    <dates>
+      <discovery>2008-11-01</discovery>
+      <entry>2008-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85b0bbc8-a7a5-11dd-8283-001c2514716c">
     <topic>phpmyadmin -- Cross-Site Scripting Vulnerability</topic>
     <affects>
