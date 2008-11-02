@@ -1796,6 +1796,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Recife
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Regina
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Resolute
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Rio_Branco
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santarem
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santiago
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santo_Domingo
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Sao_Paulo
