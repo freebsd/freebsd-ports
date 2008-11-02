@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.6.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -27,7 +28,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
 
-MAN1=		git-add.1 \
+MAN1=		git.1 \
+		git-add.1 \
 		git-am.1 \
 		git-annotate.1 \
 		git-apply.1 \
@@ -311,8 +313,8 @@ post-install:
 
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
-	@(${GREP} -v ${PREFIX}/bin/git-shell ${SHELLS}.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/git-shell) > ${SHELLS}
+	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
+	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
 
 .ifdef (WITH_GITWEB)
