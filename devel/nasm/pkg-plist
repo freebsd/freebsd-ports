@@ -1,11 +1,11 @@
+bin/ldrdf
 bin/nasm
 bin/ndisasm
-bin/rdfdump
-bin/ldrdf
-bin/rdx
-bin/rdflib
 bin/rdf2bin
-bin/rdf2ihx
 bin/rdf2com
+bin/rdf2ihx
+bin/rdfdump
+bin/rdflib
+bin/rdx
 %%PORTDOCS%%%%DOCSDIR%%/nasmdoc.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
