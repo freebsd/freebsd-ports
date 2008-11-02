@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- erts/etc/common/Install.orig
++++ erts/etc/common/Install
+@@ -148,4 +148,4 @@
+     ./misc/format_man_pages $ERL_ROOT
+ fi
+ 
+-
++exit 0
