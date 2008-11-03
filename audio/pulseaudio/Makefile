@@ -88,6 +88,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Wl,-no-undefined||' \
 	    	${WRKSRC}/src/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		${WRKSRC}/configure
 
 post-install:
 .for ii in default.pa daemon.conf client.conf system.pa
