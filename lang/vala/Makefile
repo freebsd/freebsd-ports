@@ -8,7 +8,7 @@
 
 PORTNAME=	vala
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -27,10 +27,11 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_VAIPGEN)
+.if defined(WITH_VAPIGEN)
 CONFIGURE_ARGS+=	--enable-vapigen
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+MAN1+=		vala-gen-introspect.1 vapigen.1
 PLIST_SUB+=	VAPIGEN=""
 .else
 CONFIGURE_ARGS+=	--disable-vapigen
