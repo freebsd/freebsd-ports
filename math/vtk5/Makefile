@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTVERSION=	5.0.4
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -34,7 +33,7 @@ VTKSRCDIR=	${WRKDIR}/VTK
 VTKDATAROOT=	${EXAMPLESDIR}/VTKData
 PYDISTUTILS_PKGNAME=	VTK
 
-CONFLICTS=	vtk-4* vtk-5.0.[012456789]*
+CONFLICTS=	vtk-4* vtk-5.0.[012356789]*
 NO_FILTER_SHLIBS=	yes
 
 VTK_KITS=	Common Filtering GenericFiltering Graphics \
@@ -49,7 +48,8 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off
+OPTIONS=	MANGLEDMESA	"Use off-screen (Mangled) Mesa" Off \
+		VTKMPEG2	"Install patented MPEG2 encoder module" Off
 
 PLIST_SUB=	VER=${PORTVERSION} VER1=${PORTVERSION:R} VER2=${PORTVERSION:R:R}
 
@@ -80,7 +80,23 @@ CMAKE_ARGS+=	${VTKSRCDIR} \
 		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR} \
 		-DDESIRED_QT_VERSION:STRING=3 \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T:BOOL=ON \
-		-DVTK_DATA_ROOT:PATH=${VTKDATAROOT}
+		-DVTK_DATA_ROOT:PATH=${VTKDATAROOT} \
+		-DOPENGL_INCLUDE_DIR:PATH=${LOCALBASE}/include \
+		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGL.so \
+		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGLU.so
+
+.if defined(WITH_MANGLEDMESA)
+LIB_DEPENDS+=	MesaGL.14:${PORTSDIR}/graphics/mesagl
+CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=OFF	\
+		-DVTK_USE_MANGLED_MESA:BOOL=ON \
+		-DMANGLED_MESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+		-DMANGLED_MESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaGL.so \
+		-DMANGLED_OSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+		-DMANGLED_OSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaOSMesa.so
+#.else
+#CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
+#		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
+.endif
 
 .if defined(WITH_VTKMPEG2)
 LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
@@ -99,13 +115,13 @@ post-extract:
 # FSL links directly to libQVTKWidgetPlugin.so, so put it in a standard
 # library directory.
 pre-install:
-	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${PREFIX}/lib/vtk-5.0
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${VTKSRCDIR}/README.html ${DOCSDIR}
-.endif
 	${INSTALL_DATA} ${WRKSRC}/bin/libQVTKWidgetPlugin.so ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/vtk.3 ${MANPREFIX}/man/man3
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${VTKSRCDIR}/README.html ${DOCSDIR}
+.endif
 
 # Ports system wants us to conform to lib.so.x format, but VTK5
 # only installs lib.so.x.y and lib.so.5.x.y.z.
