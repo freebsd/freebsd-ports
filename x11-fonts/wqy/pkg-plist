@@ -1,8 +1,6 @@
-%%CONFAVAILDIR%%/85-wqy-bitmapsong.conf
-%%CONFDDIR%%/85-wqy-bitmapsong.conf
-%%WITHALIAS%%%%FONTSDIR%%/fonts.alias
+%%CONFAVAILDIR%%/85-wqy.conf
+%%CONFDDIR%%/85-wqy.conf
 %%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/wenquanyi_10pt.pcf
 %%FONTSDIR%%/wenquanyi_10ptb.pcf
 %%FONTSDIR%%/wenquanyi_11pt.pcf
@@ -11,4 +9,6 @@
 %%FONTSDIR%%/wenquanyi_12ptb.pcf
 %%FONTSDIR%%/wenquanyi_9pt.pcf
 %%FONTSDIR%%/wenquanyi_9ptb.pcf
+%%FONTSDIR%%/wqy-unibit.pcf
+%%FONTSDIR%%/wqy-zenhei.ttc
 @dirrm %%FONTSDIR%%

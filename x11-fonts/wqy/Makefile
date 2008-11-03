@@ -5,22 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wqy
-PORTVERSION=	0.8.0
-PORTREVISION=	4
+PORTNAME=	wqy-fonts
+PORTVERSION=	20081102
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	wqy
-DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-6
+DISTFILES=	wqy-bitmapfont-pcf-0.9.9-0.tar.gz \
+		wqy-unibit-bdf-1.1.0-1.tar.gz \
+		wqy-zenhei-0.8.34-cvs20081027.tar.gz
 
 MAINTAINER=	intron@intron.ac
-COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
+COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-bitmapfont
-NO_BUILD=	yes
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
 USE_XORG=	x11
+USE_PERL5=	yes
+
 FONTSDIR=	lib/X11/fonts/wqy
 CONFDDIR=	etc/fonts/conf.d
 CONFAVAILDIR=	etc/fonts/conf.avail
@@ -29,45 +34,60 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 		CONFDDIR=${CONFDDIR} \
 		CONFAVAILDIR=${CONFAVAILDIR}
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-OPTIONS=	ALIAS	"Install fonts.alias" off
+SUB_FILES=	pkg-message
+SUB_LIST=	FONTSDIR=${PREFIX}/${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL INSTALL.zh.gb2312 LOGO.png README
+PORTDOCS=	AUTHORS.bitmap AUTHORS.truetype \
+		ChangeLog.bitmap ChangeLog.truetype \
+		README.bitmap README.truetype \
+		COPYING LOGO.png
 .endif
 
-.if defined(WITH_ALIAS)
-PLIST_SUB+=	WITHALIAS=""
-.else
-PLIST_SUB+=	WITHALIAS="@comment "
-.endif
+do-build:
+	${PERL} ${WRKDIR}/wqy-unibit/bdfmerge.pl 0x0--0xFFFF ${WRKDIR}/wqy-unibit/wqy-unibit.bdf > ${WRKDIR}/wqy-unibit/wqy-unibit_cjk.bdf
+	bdftopcf ${WRKDIR}/wqy-unibit/wqy-unibit_cjk.bdf > ${WRKDIR}/wqy-unibit/wqy-unibit.pcf
+	${CP} ${WRKDIR}/wqy-bitmapfont/AUTHORS ${WRKDIR}/wqy-bitmapfont/AUTHORS.bitmap
+	${CP} ${WRKDIR}/wqy-bitmapfont/ChangeLog ${WRKDIR}/wqy-bitmapfont/ChangeLog.bitmap
+	${CP} ${WRKDIR}/wqy-bitmapfont/README ${WRKDIR}/wqy-bitmapfont/README.bitmap
+	${CP} ${WRKDIR}/wqy-zenhei/AUTHORS ${WRKDIR}/wqy-zenhei/AUTHORS.truetype
+	${CP} ${WRKDIR}/wqy-zenhei/ChangeLog ${WRKDIR}/wqy-zenhei/ChangeLog.truetype
+	${CP} ${WRKDIR}/wqy-zenhei/README ${WRKDIR}/wqy-zenhei/README.truetype
 
 do-install:
-	@${MKDIR} ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pcf ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/85-wqy-bitmapsong.conf ${PREFIX}/${CONFAVAILDIR}
-	${LN} -s ${PREFIX}/${CONFAVAILDIR}/85-wqy-bitmapsong.conf ${PREFIX}/${CONFDDIR}/85-wqy-bitmapsong.conf
+	${MKDIR} ${PREFIX}/${FONTSDIR} ${PREFIX}/${CONFDDIR} ${PREFIX}/${CONFAVAILDIR}
+# WQY Bitmap Song
+	${INSTALL_DATA} ${WRKDIR}/wqy-bitmapfont/*.pcf ${PREFIX}/${FONTSDIR}
+# WQY Bitmap Song
+	${INSTALL_DATA} ${WRKDIR}/wqy-unibit/wqy-unibit.pcf ${PREFIX}/${FONTSDIR}
+# WQY TrueType
+	${INSTALL_DATA} ${WRKDIR}/wqy-zenhei/wqy-zenhei.ttc ${PREFIX}/${FONTSDIR}
 
-post-install:
-	@${RM} ${PREFIX}/${FONTSDIR}/fonts* >/dev/null 2>&1 || true
-	@command mkfontdir ${PREFIX}/${FONTSDIR} || true
-	@${CP} ${PREFIX}/${FONTSDIR}/fonts.dir ${PREFIX}/${FONTSDIR}/fonts.scale || true
-	@command fc-cache -v ${PREFIX}/${FONTSDIR} || true
-.if defined(WITH_ALIAS)
-	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${PREFIX}/${FONTSDIR}
-.endif
+	${INSTALL_DATA} ${FILESDIR}/85-wqy.conf ${PREFIX}/${CONFAVAILDIR}
+	${LN} -sf ${PREFIX}/${CONFAVAILDIR}/85-wqy.conf ${PREFIX}/${CONFDDIR}/85-wqy.conf
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} \
+		${WRKDIR}/wqy-bitmapfont/AUTHORS.bitmap \
+		${WRKDIR}/wqy-bitmapfont/ChangeLog.bitmap \
+		${WRKDIR}/wqy-bitmapfont/README.bitmap \
+		${WRKDIR}/wqy-bitmapfont/COPYING \
+		${WRKDIR}/wqy-bitmapfont/LOGO.png \
+		${WRKDIR}/wqy-zenhei/AUTHORS.truetype \
+		${WRKDIR}/wqy-zenhei/ChangeLog.truetype \
+		${WRKDIR}/wqy-zenhei/README.truetype \
+			${DOCSDIR}
 .endif
+
+post-install:
+	@${RM} -f ${PREFIX}/${FONTSDIR}/fonts.dir
+	@${RM} -f ${PREFIX}/${FONTSDIR}/fonts.scale
+	@command mkfontscale -b ${PREFIX}/${FONTSDIR}
+	@command fc-cache -fv ${PREFIX}/${FONTSDIR}
+
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
