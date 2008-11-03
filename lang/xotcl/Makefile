@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES?=	lang tcl
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://media.wu-wien.ac.at/download/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
