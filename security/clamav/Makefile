@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.94
-PORTREVISION=	1
+DISTVERSION=	0.94.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -40,7 +39,8 @@ PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
+		--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
