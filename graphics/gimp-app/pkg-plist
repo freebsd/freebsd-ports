@@ -367,7 +367,7 @@ libexec/gimp/2.2/plug-ins/file-psp
 libexec/gimp/2.2/plug-ins/file-raw
 libexec/gimp/2.2/plug-ins/file-sgi
 libexec/gimp/2.2/plug-ins/file-sunras
-libexec/gimp/2.2/plug-ins/file-svg
+%%SVG%%libexec/gimp/2.2/plug-ins/file-svg
 libexec/gimp/2.2/plug-ins/file-tga
 libexec/gimp/2.2/plug-ins/file-tiff-load
 libexec/gimp/2.2/plug-ins/file-tiff-save
@@ -391,7 +391,7 @@ libexec/gimp/2.2/plug-ins/gradient-map
 libexec/gimp/2.2/plug-ins/grid
 libexec/gimp/2.2/plug-ins/guillotine
 libexec/gimp/2.2/plug-ins/help
-libexec/gimp/2.2/plug-ins/help-browser
+%%HELPBROWSER%%libexec/gimp/2.2/plug-ins/help-browser
 libexec/gimp/2.2/plug-ins/hot
 libexec/gimp/2.2/plug-ins/ifs-compose
 libexec/gimp/2.2/plug-ins/illusion
