@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -115,11 +115,11 @@ PLIST_SUB+=		GNOME="@comment "
 .endif
 
 .if defined(WITH_HELPBROWSER)
-USE_GNOME+=		libgtkhtml
-CONFIGURE_ARGS+=	--with-gtkhtml2
+LIB_DEPENDS+=		webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
+CONFIGURE_ARGS+=	--with-webkit
 PLIST_SUB+=		HELPBROWSER=""
 .else
-CONFIGURE_ARGS+=	--without-gtkhtml2
+CONFIGURE_ARGS+=	--without-webkit
 PLIST_SUB+=		HELPBROWSER="@comment "
 .endif
 
