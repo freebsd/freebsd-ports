@@ -2215,6 +2215,7 @@ djgame2                         ports/games/djgame2
 djgpp-binutils                  ports/devel/djgpp-binutils
 djgpp-crx                       ports/devel/djgpp-crx
 djgpp-gcc                       ports/devel/djgpp-gcc
+djmount                         ports/sysutils/djmount
 djview4                         ports/graphics/djview4
 djvulibre                       ports/graphics/djvulibre
 djvulibre-nox11                 ports/graphics/djvulibre-nox11
@@ -5030,6 +5031,7 @@ hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
+hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
 hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
@@ -8453,6 +8455,7 @@ monotone                        ports/devel/monotone
 monotone-viz                    ports/devel/monotone-viz
 monster-masher                  ports/games/monster-masher
 monsterz                        ports/games/monsterz
+montecarlo_fonts                ports/x11-fonts/montecarlo_fonts
 moo                             ports/math/moo
 moodin                          ports/x11-themes/moodin
 moodle                          ports/www/moodle
@@ -9390,6 +9393,7 @@ opencity                        ports/games/opencity
 openclipart                     ports/graphics/openclipart
 openct                          ports/security/openct
 opencv                          ports/graphics/opencv
+opencvs                         ports/devel/opencvs
 opencyc                         ports/misc/opencyc
 opendbx                         ports/databases/opendbx
 opendchub                       ports/net-p2p/opendchub
@@ -18020,6 +18024,7 @@ py-pycrypto                     ports/security/py-pycrypto
 py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
 py-pydot                        ports/graphics/py-pydot
+py-pyfits                       ports/astro/py-pyfits
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
 py-pyglet                       ports/graphics/py-pyglet
 py-pygments                     ports/textproc/py-pygments
@@ -19326,6 +19331,7 @@ rubygem-rtags                   ports/devel/rubygem-rtags
 rubygem-rubigen                 ports/devel/rubygem-rubigen
 rubygem-ruby-debug              ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base         ports/devel/rubygem-ruby-debug-base
+rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
 rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
 rubygem-rubyforge               ports/devel/rubygem-rubyforge
@@ -20350,6 +20356,7 @@ swami                           ports/audio/swami
 swapd                           ports/sysutils/swapd
 swarp                           ports/x11/swarp
 swatch                          ports/security/swatch
+swe                             ports/astro/swe
 sweep                           ports/audio/sweep
 swfdec                          ports/graphics/swfdec
 swfdec-gnome                    ports/multimedia/swfdec-gnome
@@ -22596,6 +22603,7 @@ xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-greasemonkey                ports/www/xpi-greasemonkey
 xpi-hit-a-hint                  ports/www/xpi-hit-a-hint
+xpi-httpfox                     ports/www/xpi-httpfox
 xpi-imagezoom                   ports/www/xpi-imagezoom
 xpi-imdbpreview                 ports/www/xpi-imdbpreview
 xpi-imglikeopera                ports/www/xpi-imglikeopera
@@ -22613,6 +22621,7 @@ xpi-mldonkey                    ports/www/xpi-mldonkey
 xpi-mousegestures               ports/www/xpi-mousegestures
 xpi-mozex                       ports/www/xpi-mozex
 xpi-mrtech-local-install        ports/www/xpi-mrtech-local-install
+xpi-musicpm                     ports/audio/xpi-musicpm
 xpi-neo-diggler                 ports/www/xpi-neo-diggler
 xpi-no-referrer                 ports/www/xpi-no-referrer
 xpi-noscript                    ports/www/xpi-noscript
