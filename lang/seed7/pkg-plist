@@ -22,6 +22,7 @@ lib/seed7/float.s7i
 lib/seed7/getf.s7i
 lib/seed7/graph.s7i
 lib/seed7/gtkserver.s7i
+lib/seed7/gzip.s7i
 lib/seed7/html_ent.s7i
 lib/seed7/keybd.s7i
 lib/seed7/line.s7i
