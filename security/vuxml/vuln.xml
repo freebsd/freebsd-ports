@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e30e802-a9db-11dd-93a2-000bcdf0a03b">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>linux-opera</name>
+	<range><lt>9.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/view/906/">
+	  <p>When certain parameters are passed to Opera's History
+	    Search, they can cause content not to be correctly
+	    sanitized.  This can allow scripts to be injected into the
+	    History Search results page.  Such scripts can then run with
+	    elevated privileges and interact with Opera's configuration,
+	    allowing them to execute arbitrary code.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/view/907/">
+	  <p>The links panel shows links in all frames on the current
+	    page, including links with JavaScript URLs.  When a page is
+	    held in a frame, the script is incorrectly executed on the
+	    outermost page, not the page where the URL was located.
+	    This can be used to execute scripts in the context of an
+	    unrelated frame, which allows cross-site scripting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/search/view/906/</url>
+      <url>http://www.opera.com/support/search/view/907/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-03</discovery>
+      <entry>2008-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07bb3bd2-a920-11dd-8503-0211060005df">
     <topic>qemu -- Heap overflow in Cirrus emulation</topic>
     <affects>
