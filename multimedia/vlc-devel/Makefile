@@ -9,19 +9,15 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0-test1
-PORTREVISION=	2
+DISTVERSION=	0.9.5
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/
-#MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
-#MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
-#		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	funman@videolan.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
