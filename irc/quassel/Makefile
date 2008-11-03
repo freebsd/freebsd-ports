@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-DISTVERSION=	0.3.0.2
+DISTVERSION=	0.3.0.3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
