@@ -1,0 +1,17 @@
+**************************************************************************
+Please add %%FONTSDIR%% for your X server by either:
+
+# xset fp+ %%FONTSDIR%%
+# xset fp rehash
+
+or by adding the following line to the section "Files" of
+your X-server configuration file (usually /etc/X11/xorg.conf)
+and restarting the X-server:
+
+Section "Files"
+...
+    FontPath   "%%FONTSDIR%%"
+...
+EndSection
+
+**************************************************************************
