@@ -21,7 +21,7 @@ OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
 
 XORG_CAT=	driver
 USE_XORG=	damageproto videoproto xextproto xf86driproto
-USE_AUTOTOOLS=	aclocal:19 autoconf:262
+USE_AUTOTOOLS=	aclocal:19 autoconf:262 libtool:15
 
 CONFLICT=	xf86-video-radeonhd-[0-9]*
 
@@ -29,6 +29,7 @@ MAN4=		radeonhd.4x
 
 # EXA is usable rather than XAA.  DRI is not usable in this time.
 CONFIGURE_ARGS=	--enable-exa --disable-dri
+ACLOCAL_ARGS=   --acdir=${LOCALBASE}/share/aclocal
 
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF} -i
@@ -38,8 +39,8 @@ pre-configure:
 .if defined(WITH_UTILS)
 LIB_DEPENDS+=	pci.2:${PORTSDIR}/devel/libpci
 PLIST_SUB=	UTILS=""
-CONFIGURE_ENV+=	PCIUTILS_CFLAGS="-I${LOCALBASE}/include -lpci -lz" \
-		PCIUTILS_LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	PCIUTILS_CFLAGS="-I${LOCALBASE}/include" \
+		PCIUTILS_LIBS="-L${LOCALBASE}/lib -lpci -lz"
 .else
 PLIST_SUB=	UTILS="@comment "
 .endif
