@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +18,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		scandeps.pl.1
 MAN3=		Module::ScanDeps.3 Module::ScanDeps::DataFeed.3
-
-post-extract:
-	@${RM} ${WRKSRC}/lib/Module/.ScanDeps.pm.swp
 
 post-patch:
 	@${REINPLACE_CMD} -e \
