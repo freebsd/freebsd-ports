@@ -24,6 +24,7 @@ include/telepathy-1.0/telepathy-glib/channel.h
 include/telepathy-1.0/telepathy-glib/connection-manager.h
 include/telepathy-1.0/telepathy-glib/connection.h
 include/telepathy-1.0/telepathy-glib/contacts-mixin.h
+include/telepathy-1.0/telepathy-glib/contact.h
 include/telepathy-1.0/telepathy-glib/dbus-properties-mixin.h
 include/telepathy-1.0/telepathy-glib/dbus.h
 include/telepathy-1.0/telepathy-glib/debug-ansi.h
@@ -104,6 +105,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-requests.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-contact.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus-properties-mixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-dbus.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-debug-ansi.html
