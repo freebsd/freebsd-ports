@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBD/PgLite.pm
+%%SITE_PERL%%/DBD/PgLite/MirrorPgToSQLite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgLite/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/PgLite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+@dirrmtry %%SITE_PERL%%/DBD/PgLite
+@dirrmtry %%SITE_PERL%%/DBD
