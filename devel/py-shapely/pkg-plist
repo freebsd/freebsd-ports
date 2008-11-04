@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.pyo
