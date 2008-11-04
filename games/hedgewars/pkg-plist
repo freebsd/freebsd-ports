@@ -22,10 +22,12 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Cake_down.png
 %%DATADIR%%/Data/Graphics/Cake_walk.png
 %%DATADIR%%/Data/Graphics/Case.png
+%%DATADIR%%/Data/Graphics/Censored.png
 %%DATADIR%%/Data/Graphics/ClBomb.png
 %%DATADIR%%/Data/Graphics/ClParticle.png
 %%DATADIR%%/Data/Graphics/Clouds.png
 %%DATADIR%%/Data/Graphics/Crosshair.png
+%%DATADIR%%/Data/Graphics/EvilTrace.png
 %%DATADIR%%/Data/Graphics/Expl50.png
 %%DATADIR%%/Data/Graphics/ExplPart.png
 %%DATADIR%%/Data/Graphics/ExplPart2.png
@@ -46,8 +48,60 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Graves/star.png
 %%DATADIR%%/Data/Graphics/Grenade.png
 %%DATADIR%%/Data/Graphics/HHDeath.png
+%%DATADIR%%/Data/Graphics/HHDress.png
 %%DATADIR%%/Data/Graphics/Hammer.png
+%%DATADIR%%/Data/Graphics/Hats/Bandit.png
+%%DATADIR%%/Data/Graphics/Hats/BlueCap.png
+%%DATADIR%%/Data/Graphics/Hats/BlueHair.png
+%%DATADIR%%/Data/Graphics/Hats/Bunny.png
+%%DATADIR%%/Data/Graphics/Hats/Cowboy.png
+%%DATADIR%%/Data/Graphics/Hats/Glasses.png
+%%DATADIR%%/Data/Graphics/Hats/GreenCap.png
+%%DATADIR%%/Data/Graphics/Hats/GreenHair.png
+%%DATADIR%%/Data/Graphics/Hats/GreyHair.png
+%%DATADIR%%/Data/Graphics/Hats/HogInTheHat.png
+%%DATADIR%%/Data/Graphics/Hats/IndianChief.png
+%%DATADIR%%/Data/Graphics/Hats/KirbyMask.png
+%%DATADIR%%/Data/Graphics/Hats/MegaHogX.png
+%%DATADIR%%/Data/Graphics/Hats/NoHat.png
+%%DATADIR%%/Data/Graphics/Hats/OrangeHair.png
+%%DATADIR%%/Data/Graphics/Hats/PinkHair.png
+%%DATADIR%%/Data/Graphics/Hats/Pumpkin Hat.png
+%%DATADIR%%/Data/Graphics/Hats/PurpleHair.png
+%%DATADIR%%/Data/Graphics/Hats/RedCap.png
+%%DATADIR%%/Data/Graphics/Hats/RedHair.png
+%%DATADIR%%/Data/Graphics/Hats/RobinHood.png
 %%DATADIR%%/Data/Graphics/Hats/Samurai.png
+%%DATADIR%%/Data/Graphics/Hats/Santa.png
+%%DATADIR%%/Data/Graphics/Hats/Sonic.png
+%%DATADIR%%/Data/Graphics/Hats/SparkleSuperFun.png
+%%DATADIR%%/Data/Graphics/Hats/Sunglasses.png
+%%DATADIR%%/Data/Graphics/Hats/Viking.png
+%%DATADIR%%/Data/Graphics/Hats/WhySoSerious.png
+%%DATADIR%%/Data/Graphics/Hats/WizardHat.png
+%%DATADIR%%/Data/Graphics/Hats/YellowCap.png
+%%DATADIR%%/Data/Graphics/Hats/YellowHair.png
+%%DATADIR%%/Data/Graphics/Hats/apple.png
+%%DATADIR%%/Data/Graphics/Hats/banana.png
+%%DATADIR%%/Data/Graphics/Hats/beefeater.png
+%%DATADIR%%/Data/Graphics/Hats/clown-copper.png
+%%DATADIR%%/Data/Graphics/Hats/clown-crossed.png
+%%DATADIR%%/Data/Graphics/Hats/clown.png
+%%DATADIR%%/Data/Graphics/Hats/darthvader.png
+%%DATADIR%%/Data/Graphics/Hats/kiss_criss.png
+%%DATADIR%%/Data/Graphics/Hats/kiss_frehley.png
+%%DATADIR%%/Data/Graphics/Hats/kiss_simmons.png
+%%DATADIR%%/Data/Graphics/Hats/kiss_stanley.png
+%%DATADIR%%/Data/Graphics/Hats/lemon.png
+%%DATADIR%%/Data/Graphics/Hats/orange.png
+%%DATADIR%%/Data/Graphics/Hats/pirate_jack.png
+%%DATADIR%%/Data/Graphics/Hats/pirate_jack_bandana.png
+%%DATADIR%%/Data/Graphics/Hats/royalguard.png
+%%DATADIR%%/Data/Graphics/Hats/slowpoke.png
+%%DATADIR%%/Data/Graphics/Hats/spartan.png
+%%DATADIR%%/Data/Graphics/Hats/stormtrooper.png
+%%DATADIR%%/Data/Graphics/Hats/ushanka.png
+%%DATADIR%%/Data/Graphics/Hats/venom.png
 %%DATADIR%%/Data/Graphics/Hedgehog.png
 %%DATADIR%%/Data/Graphics/Hedgehog/Hurrah.png
 %%DATADIR%%/Data/Graphics/Hedgehog/ILoveLemonade.png
@@ -67,6 +121,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hedgehog/amShotgun.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amShotgun_w.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amWhip.png
+%%DATADIR%%/Data/Graphics/HellishBomb.png
 %%DATADIR%%/Data/Graphics/Lag.png
 %%DATADIR%%/Data/Graphics/MineOff.png
 %%DATADIR%%/Data/Graphics/MineOn.png
@@ -77,12 +132,14 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Progress.png
 %%DATADIR%%/Data/Graphics/RopeHook.png
 %%DATADIR%%/Data/Graphics/RopeNode.png
+%%DATADIR%%/Data/Graphics/Seduction.png
 %%DATADIR%%/Data/Graphics/SmokeTrace.png
 %%DATADIR%%/Data/Graphics/Switch.png
 %%DATADIR%%/Data/Graphics/Target.png
 %%DATADIR%%/Data/Graphics/Targetp.png
 %%DATADIR%%/Data/Graphics/Teleport.png
 %%DATADIR%%/Data/Graphics/UFO.png
+%%DATADIR%%/Data/Graphics/Watermelon.png
 %%DATADIR%%/Data/Graphics/WindBar.png
 %%DATADIR%%/Data/Graphics/WindL.png
 %%DATADIR%%/Data/Graphics/WindR.png
@@ -92,47 +149,86 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/hhMask.png
 %%DATADIR%%/Data/Graphics/thinking.png
 %%DATADIR%%/Data/Locale/bg.txt
+%%DATADIR%%/Data/Locale/cz.txt
 %%DATADIR%%/Data/Locale/de.txt
 %%DATADIR%%/Data/Locale/en.txt
+%%DATADIR%%/Data/Locale/es.txt
 %%DATADIR%%/Data/Locale/fr.txt
 %%DATADIR%%/Data/Locale/hedgewars_bg.qm
+%%DATADIR%%/Data/Locale/hedgewars_cs.qm
 %%DATADIR%%/Data/Locale/hedgewars_de.qm
+%%DATADIR%%/Data/Locale/hedgewars_es.qm
 %%DATADIR%%/Data/Locale/hedgewars_fr.qm
 %%DATADIR%%/Data/Locale/hedgewars_it.qm
 %%DATADIR%%/Data/Locale/hedgewars_pl.qm
+%%DATADIR%%/Data/Locale/hedgewars_pt_BR.qm
 %%DATADIR%%/Data/Locale/hedgewars_ru.qm
 %%DATADIR%%/Data/Locale/hedgewars_sk.qm
+%%DATADIR%%/Data/Locale/hedgewars_sv.qm
 %%DATADIR%%/Data/Locale/it.txt
 %%DATADIR%%/Data/Locale/pl.txt
 %%DATADIR%%/Data/Locale/ru.txt
 %%DATADIR%%/Data/Locale/sk.txt
+%%DATADIR%%/Data/Locale/sv.txt
+%%DATADIR%%/Data/Locale/uk.txt
 %%DATADIR%%/Data/Maps/Bamboo/map.cfg
 %%DATADIR%%/Data/Maps/Bamboo/map.png
+%%DATADIR%%/Data/Maps/Bamboo/preview.png
 %%DATADIR%%/Data/Maps/BambooPlinko/map.cfg
 %%DATADIR%%/Data/Maps/BambooPlinko/map.png
+%%DATADIR%%/Data/Maps/BambooPlinko/preview.png
 %%DATADIR%%/Data/Maps/Bath/map.cfg
 %%DATADIR%%/Data/Maps/Bath/map.png
+%%DATADIR%%/Data/Maps/Bath/preview.png
+%%DATADIR%%/Data/Maps/Castle/map.cfg
+%%DATADIR%%/Data/Maps/Castle/map.png
+%%DATADIR%%/Data/Maps/Castle/preview.png
 %%DATADIR%%/Data/Maps/EarthRise/map.cfg
 %%DATADIR%%/Data/Maps/EarthRise/map.png
+%%DATADIR%%/Data/Maps/EarthRise/preview.png
 %%DATADIR%%/Data/Maps/Hedgelove/map.cfg
 %%DATADIR%%/Data/Maps/Hedgelove/map.png
+%%DATADIR%%/Data/Maps/Hedgelove/preview.png
 %%DATADIR%%/Data/Maps/Hedgewars/map.cfg
 %%DATADIR%%/Data/Maps/Hedgewars/map.png
+%%DATADIR%%/Data/Maps/Hedgewars/preview.png
 %%DATADIR%%/Data/Maps/Hydrant/map.cfg
 %%DATADIR%%/Data/Maps/Hydrant/map.png
+%%DATADIR%%/Data/Maps/Hydrant/preview.png
 %%DATADIR%%/Data/Maps/Lonely_Island/map.cfg
 %%DATADIR%%/Data/Maps/Lonely_Island/map.png
+%%DATADIR%%/Data/Maps/Lonely_Island/preview.png
+%%DATADIR%%/Data/Maps/PirateFlag/map.cfg
+%%DATADIR%%/Data/Maps/PirateFlag/map.png
+%%DATADIR%%/Data/Maps/PirateFlag/preview.png
 %%DATADIR%%/Data/Maps/Plane/map.cfg
 %%DATADIR%%/Data/Maps/Plane/map.png
+%%DATADIR%%/Data/Maps/Plane/preview.png
+%%DATADIR%%/Data/Maps/Sheep/map.cfg
+%%DATADIR%%/Data/Maps/Sheep/map.png
+%%DATADIR%%/Data/Maps/Sheep/preview.png
 %%DATADIR%%/Data/Maps/cheese/map.cfg
 %%DATADIR%%/Data/Maps/cheese/map.png
+%%DATADIR%%/Data/Maps/cheese/preview.png
 %%DATADIR%%/Data/Maps/mushrooms/map.cfg
 %%DATADIR%%/Data/Maps/mushrooms/map.png
+%%DATADIR%%/Data/Maps/mushrooms/preview.png
 %%DATADIR%%/Data/Music/Nature.ogg
 %%DATADIR%%/Data/Music/city.ogg
+%%DATADIR%%/Data/Music/hell.ogg
+%%DATADIR%%/Data/Music/main theme.ogg
 %%DATADIR%%/Data/Music/oriental.ogg
 %%DATADIR%%/Data/Music/pirate.ogg
 %%DATADIR%%/Data/Music/snow.ogg
+%%DATADIR%%/Data/Sounds/Firepunch1.ogg
+%%DATADIR%%/Data/Sounds/Firepunch2.ogg
+%%DATADIR%%/Data/Sounds/Firepunch3.ogg
+%%DATADIR%%/Data/Sounds/Firepunch4.ogg
+%%DATADIR%%/Data/Sounds/Firepunch5.ogg
+%%DATADIR%%/Data/Sounds/Firepunch6.ogg
+%%DATADIR%%/Data/Sounds/Hellish.ogg
+%%DATADIR%%/Data/Sounds/Melon.ogg
+%%DATADIR%%/Data/Sounds/Yoohoo.ogg
 %%DATADIR%%/Data/Sounds/cake2.ogg
 %%DATADIR%%/Data/Sounds/explosion.ogg
 %%DATADIR%%/Data/Sounds/graveimpact.ogg
@@ -206,21 +302,40 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Whoopsee.ogg
 %%DATADIR%%/Data/Sounds/voices/Yessir.ogg
 %%DATADIR%%/Data/Sounds/voices/Youllregretthat.ogg
+%%DATADIR%%/Data/Themes/Bamboo/Bamboo.png
+%%DATADIR%%/Data/Themes/Bamboo/Bamboo2.png
+%%DATADIR%%/Data/Themes/Bamboo/Bamboo3.png
+%%DATADIR%%/Data/Themes/Bamboo/Border.png
 %%DATADIR%%/Data/Themes/Bamboo/Clouds.png
 %%DATADIR%%/Data/Themes/Bamboo/Flake.png
+%%DATADIR%%/Data/Themes/Bamboo/Flower.png
+%%DATADIR%%/Data/Themes/Bamboo/Girder.png
+%%DATADIR%%/Data/Themes/Bamboo/LandTex.png
 %%DATADIR%%/Data/Themes/Bamboo/Sky.png
 %%DATADIR%%/Data/Themes/Bamboo/horizont.png
+%%DATADIR%%/Data/Themes/Bamboo/icon.png
 %%DATADIR%%/Data/Themes/Bamboo/theme.cfg
+%%DATADIR%%/Data/Themes/Bath/Border.png
+%%DATADIR%%/Data/Themes/Bath/Bubble.png
 %%DATADIR%%/Data/Themes/Bath/Clouds.png
+%%DATADIR%%/Data/Themes/Bath/Duck.png
+%%DATADIR%%/Data/Themes/Bath/Duck2.png
 %%DATADIR%%/Data/Themes/Bath/Flake.png
+%%DATADIR%%/Data/Themes/Bath/Girder.png
+%%DATADIR%%/Data/Themes/Bath/LandTex.png
 %%DATADIR%%/Data/Themes/Bath/Sky.png
+%%DATADIR%%/Data/Themes/Bath/Toothbrush.png
+%%DATADIR%%/Data/Themes/Bath/Toothbrush_b.png
+%%DATADIR%%/Data/Themes/Bath/Toothbrush_g.png
 %%DATADIR%%/Data/Themes/Bath/horizont.png
+%%DATADIR%%/Data/Themes/Bath/icon.png
 %%DATADIR%%/Data/Themes/Bath/theme.cfg
 %%DATADIR%%/Data/Themes/City/Border.png
 %%DATADIR%%/Data/Themes/City/Flake.png
 %%DATADIR%%/Data/Themes/City/LandTex.png
 %%DATADIR%%/Data/Themes/City/Sky.png
 %%DATADIR%%/Data/Themes/City/horizont.png
+%%DATADIR%%/Data/Themes/City/icon.png
 %%DATADIR%%/Data/Themes/City/plant1.png
 %%DATADIR%%/Data/Themes/City/plant2.png
 %%DATADIR%%/Data/Themes/City/plant3.png
@@ -230,16 +345,33 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/EarthRise/Clouds.png
 %%DATADIR%%/Data/Themes/EarthRise/Flake.png
 %%DATADIR%%/Data/Themes/EarthRise/LandTex.png
+%%DATADIR%%/Data/Themes/EarthRise/Rock.png
+%%DATADIR%%/Data/Themes/EarthRise/RockShort.png
 %%DATADIR%%/Data/Themes/EarthRise/Sky.png
 %%DATADIR%%/Data/Themes/EarthRise/horizont.png
-%%DATADIR%%/Data/Themes/EarthRise/rock1.png
-%%DATADIR%%/Data/Themes/EarthRise/rock2.png
+%%DATADIR%%/Data/Themes/EarthRise/icon.png
 %%DATADIR%%/Data/Themes/EarthRise/theme.cfg
+%%DATADIR%%/Data/Themes/Freeway/AppleDirt.png
+%%DATADIR%%/Data/Themes/Freeway/AppleSmall.png
+%%DATADIR%%/Data/Themes/Freeway/Border.png
+%%DATADIR%%/Data/Themes/Freeway/BottleDirt.png
+%%DATADIR%%/Data/Themes/Freeway/Clouds.png
+%%DATADIR%%/Data/Themes/Freeway/FishDirt.png
+%%DATADIR%%/Data/Themes/Freeway/Flake.png
+%%DATADIR%%/Data/Themes/Freeway/LandTex.png
+%%DATADIR%%/Data/Themes/Freeway/Sky.png
+%%DATADIR%%/Data/Themes/Freeway/Tire.png
+%%DATADIR%%/Data/Themes/Freeway/TireDirt.png
+%%DATADIR%%/Data/Themes/Freeway/horizont.png
+%%DATADIR%%/Data/Themes/Freeway/icon.png
+%%DATADIR%%/Data/Themes/Freeway/theme.cfg
 %%DATADIR%%/Data/Themes/Island/Border.png
 %%DATADIR%%/Data/Themes/Island/Flake.png
 %%DATADIR%%/Data/Themes/Island/LandTex.png
 %%DATADIR%%/Data/Themes/Island/Sky.png
+%%DATADIR%%/Data/Themes/Island/anchor.png
 %%DATADIR%%/Data/Themes/Island/horizont.png
+%%DATADIR%%/Data/Themes/Island/icon.png
 %%DATADIR%%/Data/Themes/Island/plant1.png
 %%DATADIR%%/Data/Themes/Island/plant2.png
 %%DATADIR%%/Data/Themes/Island/plant3.png
@@ -249,25 +381,79 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Planes/Sky.png
 %%DATADIR%%/Data/Themes/Planes/horizont.png
 %%DATADIR%%/Data/Themes/Planes/theme.cfg
+%%DATADIR%%/Data/Themes/Sheep/Border.png
+%%DATADIR%%/Data/Themes/Sheep/Clouds.png
+%%DATADIR%%/Data/Themes/Sheep/Flake.png
+%%DATADIR%%/Data/Themes/Sheep/Girder.png
+%%DATADIR%%/Data/Themes/Sheep/LandTex.png
+%%DATADIR%%/Data/Themes/Sheep/Sky.png
+%%DATADIR%%/Data/Themes/Sheep/barriere.png
+%%DATADIR%%/Data/Themes/Sheep/fleur.png
+%%DATADIR%%/Data/Themes/Sheep/fleurland.png
+%%DATADIR%%/Data/Themes/Sheep/fleurland2.png
+%%DATADIR%%/Data/Themes/Sheep/fleurland3.png
+%%DATADIR%%/Data/Themes/Sheep/fleurland4.png
+%%DATADIR%%/Data/Themes/Sheep/grass.png
+%%DATADIR%%/Data/Themes/Sheep/grass2.png
+%%DATADIR%%/Data/Themes/Sheep/grassp.png
+%%DATADIR%%/Data/Themes/Sheep/grassp2.png
+%%DATADIR%%/Data/Themes/Sheep/horizont.png
+%%DATADIR%%/Data/Themes/Sheep/icon.png
+%%DATADIR%%/Data/Themes/Sheep/mouton1.png
+%%DATADIR%%/Data/Themes/Sheep/mouton2.png
+%%DATADIR%%/Data/Themes/Sheep/mouton3.png
+%%DATADIR%%/Data/Themes/Sheep/mouton4.png
+%%DATADIR%%/Data/Themes/Sheep/rocher.png
+%%DATADIR%%/Data/Themes/Sheep/theme.cfg
 %%DATADIR%%/Data/Themes/Snow/Border.png
 %%DATADIR%%/Data/Themes/Snow/Flake.png
 %%DATADIR%%/Data/Themes/Snow/LandTex.png
 %%DATADIR%%/Data/Themes/Snow/Sky.png
 %%DATADIR%%/Data/Themes/Snow/horizont.png
+%%DATADIR%%/Data/Themes/Snow/icon.png
 %%DATADIR%%/Data/Themes/Snow/plant1.png
 %%DATADIR%%/Data/Themes/Snow/plant2.png
 %%DATADIR%%/Data/Themes/Snow/plant3.png
 %%DATADIR%%/Data/Themes/Snow/plant4.png
 %%DATADIR%%/Data/Themes/Snow/theme.cfg
+%%DATADIR%%/Data/Themes/Underwater/BlueWater.png
+%%DATADIR%%/Data/Themes/Underwater/Border.png
+%%DATADIR%%/Data/Themes/Underwater/Clouds.png
+%%DATADIR%%/Data/Themes/Underwater/Flake.png
+%%DATADIR%%/Data/Themes/Underwater/Girder.png
+%%DATADIR%%/Data/Themes/Underwater/LandTex.png
+%%DATADIR%%/Data/Themes/Underwater/Sky.png
+%%DATADIR%%/Data/Themes/Underwater/anchor.png
+%%DATADIR%%/Data/Themes/Underwater/clam.png
+%%DATADIR%%/Data/Themes/Underwater/coral.png
+%%DATADIR%%/Data/Themes/Underwater/coral2.png
+%%DATADIR%%/Data/Themes/Underwater/crab.png
+%%DATADIR%%/Data/Themes/Underwater/horizont.png
+%%DATADIR%%/Data/Themes/Underwater/icon.png
+%%DATADIR%%/Data/Themes/Underwater/theme.cfg
 %%DATADIR%%/Data/Themes/cheese/Flake.png
 %%DATADIR%%/Data/Themes/cheese/Sky.png
 %%DATADIR%%/Data/Themes/cheese/horizont.png
 %%DATADIR%%/Data/Themes/cheese/theme.cfg
+%%DATADIR%%/Data/Themes/hell/BlueWater.png
+%%DATADIR%%/Data/Themes/hell/Border.png
+%%DATADIR%%/Data/Themes/hell/Clouds.png
+%%DATADIR%%/Data/Themes/hell/Flake.png
+%%DATADIR%%/Data/Themes/hell/LandTex.png
+%%DATADIR%%/Data/Themes/hell/Sky.png
+%%DATADIR%%/Data/Themes/hell/horizont.png
+%%DATADIR%%/Data/Themes/hell/icon.png
+%%DATADIR%%/Data/Themes/hell/plant1.png
+%%DATADIR%%/Data/Themes/hell/plant2.png
+%%DATADIR%%/Data/Themes/hell/plant3.png
+%%DATADIR%%/Data/Themes/hell/plant4.png
+%%DATADIR%%/Data/Themes/hell/theme.cfg
 %%DATADIR%%/Data/Themes/nature/Border.png
 %%DATADIR%%/Data/Themes/nature/Flake.png
 %%DATADIR%%/Data/Themes/nature/LandTex.png
 %%DATADIR%%/Data/Themes/nature/Sky.png
 %%DATADIR%%/Data/Themes/nature/horizont.png
+%%DATADIR%%/Data/Themes/nature/icon.png
 %%DATADIR%%/Data/Themes/nature/plant1.png
 %%DATADIR%%/Data/Themes/nature/plant2.png
 %%DATADIR%%/Data/Themes/nature/plant3.png
@@ -278,10 +464,14 @@ bin/hwengine
 %%DATADIR%%/Data/Trainings/002_Bazooka.txt
 @dirrm %%DATADIR%%/Data/Trainings
 @dirrm %%DATADIR%%/Data/Themes/nature
+@dirrm %%DATADIR%%/Data/Themes/hell
 @dirrm %%DATADIR%%/Data/Themes/cheese
+@dirrm %%DATADIR%%/Data/Themes/Underwater
 @dirrm %%DATADIR%%/Data/Themes/Snow
+@dirrm %%DATADIR%%/Data/Themes/Sheep
 @dirrm %%DATADIR%%/Data/Themes/Planes
 @dirrm %%DATADIR%%/Data/Themes/Island
+@dirrm %%DATADIR%%/Data/Themes/Freeway
 @dirrm %%DATADIR%%/Data/Themes/EarthRise
 @dirrm %%DATADIR%%/Data/Themes/City
 @dirrm %%DATADIR%%/Data/Themes/Bath
@@ -292,12 +482,15 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Music
 @dirrm %%DATADIR%%/Data/Maps/mushrooms
 @dirrm %%DATADIR%%/Data/Maps/cheese
+@dirrm %%DATADIR%%/Data/Maps/Sheep
 @dirrm %%DATADIR%%/Data/Maps/Plane
+@dirrm %%DATADIR%%/Data/Maps/PirateFlag
 @dirrm %%DATADIR%%/Data/Maps/Lonely_Island
 @dirrm %%DATADIR%%/Data/Maps/Hydrant
 @dirrm %%DATADIR%%/Data/Maps/Hedgewars
 @dirrm %%DATADIR%%/Data/Maps/Hedgelove
 @dirrm %%DATADIR%%/Data/Maps/EarthRise
+@dirrm %%DATADIR%%/Data/Maps/Castle
 @dirrm %%DATADIR%%/Data/Maps/Bath
 @dirrm %%DATADIR%%/Data/Maps/BambooPlinko
 @dirrm %%DATADIR%%/Data/Maps/Bamboo
