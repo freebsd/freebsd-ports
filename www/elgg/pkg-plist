@@ -3,6 +3,7 @@
 %%WWWDIR%%/_graphics/icons/default/medium.png
 %%WWWDIR%%/_graphics/icons/default/small.png
 %%WWWDIR%%/_graphics/icons/default/tiny.png
+%%WWWDIR%%/_graphics/icons/default/topbar.png
 %%WWWDIR%%/_graphics/river_icons/river_icon_blog.gif
 %%WWWDIR%%/_graphics/river_icons/river_icon_bookmarks.gif
 %%WWWDIR%%/_graphics/river_icons/river_icon_comment.gif
@@ -16,24 +17,20 @@
 %%WWWDIR%%/_graphics/river_icons/river_icon_profile.gif
 %%WWWDIR%%/_graphics/river_icons/river_icon_status.gif
 %%WWWDIR%%/_graphics/ajax_loader.gif
-%%WWWDIR%%/_graphics/avatar_menu_arrow.gif
-%%WWWDIR%%/_graphics/avatar_menu_arrow_hover.gif
-%%WWWDIR%%/_graphics/avatar_menu_arrow_open.gif
+%%WWWDIR%%/_graphics/avatar_menu_arrows.gif
 %%WWWDIR%%/_graphics/elgg_bookmarklet.gif
 %%WWWDIR%%/_graphics/elgg_toolbar_logo.gif
 %%WWWDIR%%/_graphics/elgg_toolbar_logout.gif
 %%WWWDIR%%/_graphics/footer_back.gif
-%%WWWDIR%%/_graphics/friends_picker_arrow_left.gif
-%%WWWDIR%%/_graphics/friends_picker_arrow_right.gif
-%%WWWDIR%%/_graphics/gallery_back_icon.gif
-%%WWWDIR%%/_graphics/gallery_back_icon_on.gif
+%%WWWDIR%%/_graphics/friends_picker_arrows.gif
 %%WWWDIR%%/_graphics/icon_bookmarkthis.gif
-%%WWWDIR%%/_graphics/icon_odd.gif
 %%WWWDIR%%/_graphics/icon_customise_drag.gif
 %%WWWDIR%%/_graphics/icon_customise_info.gif
 %%WWWDIR%%/_graphics/icon_customise_remove.gif
 %%WWWDIR%%/_graphics/icon_customise_remove.png
 %%WWWDIR%%/_graphics/icon_gallery.gif
+%%WWWDIR%%/_graphics/icon_odd.gif
+%%WWWDIR%%/_graphics/spacer.gif
 %%WWWDIR%%/_graphics/icon_reportthis.gif
 %%WWWDIR%%/_graphics/icon_rss.gif
 %%WWWDIR%%/_graphics/icon_tag.gif
@@ -44,9 +41,7 @@
 %%WWWDIR%%/_graphics/page_back_linen_shadow.gif
 %%WWWDIR%%/_graphics/powered_by_elgg_badge_drk_bckgnd.gif
 %%WWWDIR%%/_graphics/powered_by_elgg_badge_light_bckgnd.gif
-%%WWWDIR%%/_graphics/shout_speech_bubble.gif
 %%WWWDIR%%/_graphics/skyscraper.gif
-%%WWWDIR%%/_graphics/spacer.gif
 %%WWWDIR%%/_graphics/spotlight_back.gif
 %%WWWDIR%%/_graphics/toolbar_arrow.png
 %%WWWDIR%%/_graphics/toolbar_arrow_ie.gif
@@ -57,6 +52,7 @@
 %%WWWDIR%%/account/register.php
 %%WWWDIR%%/actions/admin/plugins/disable.php
 %%WWWDIR%%/actions/admin/plugins/enable.php
+%%WWWDIR%%/actions/admin/plugins/reorder.php
 %%WWWDIR%%/actions/admin/site/update_basic.php
 %%WWWDIR%%/actions/admin/user/ban.php
 %%WWWDIR%%/actions/admin/user/delete.php
@@ -65,7 +61,6 @@
 %%WWWDIR%%/actions/admin/user/unban.php
 %%WWWDIR%%/actions/comments/add.php
 %%WWWDIR%%/actions/comments/delete.php
-%%WWWDIR%%/actions/email/confirm.php
 %%WWWDIR%%/actions/email/save.php
 %%WWWDIR%%/actions/entities/delete.php
 %%WWWDIR%%/actions/friends/add.php
@@ -103,6 +98,8 @@
 %%WWWDIR%%/engine/handlers/cron_handler.php
 %%WWWDIR%%/engine/handlers/pagehandler.php
 %%WWWDIR%%/engine/handlers/xml-rpc_handler.php
+%%WWWDIR%%/engine/lib/upgrades/2008100701.php
+%%WWWDIR%%/engine/lib/upgrades/2008101303.php
 %%WWWDIR%%/engine/lib/access.php
 %%WWWDIR%%/engine/lib/actions.php
 %%WWWDIR%%/engine/lib/admin.php
@@ -110,6 +107,7 @@
 %%WWWDIR%%/engine/lib/api.php
 %%WWWDIR%%/engine/lib/cache.php
 %%WWWDIR%%/engine/lib/configuration.php
+%%WWWDIR%%/engine/lib/cron.php
 %%WWWDIR%%/engine/lib/database.php
 %%WWWDIR%%/engine/lib/elgglib.php
 %%WWWDIR%%/engine/lib/entities.php
@@ -146,6 +144,11 @@
 %%WWWDIR%%/engine/lib/widgets.php
 %%WWWDIR%%/engine/lib/xml-rpc.php
 %%WWWDIR%%/engine/lib/xml.php
+%%WWWDIR%%/engine/schema/upgrades/2008092301.sql
+%%WWWDIR%%/engine/schema/upgrades/2008100601.sql
+%%WWWDIR%%/engine/schema/upgrades/2008101601.sql
+%%WWWDIR%%/engine/schema/upgrades/2008101701.sql
+%%WWWDIR%%/engine/schema/upgrades/2008102101.sql
 %%WWWDIR%%/engine/schema/mysql.sql
 %%WWWDIR%%/engine/settings.example.php
 %%WWWDIR%%/engine/start.php
@@ -157,9 +160,15 @@
 %%WWWDIR%%/friends/index.php
 %%WWWDIR%%/friends/of.php
 %%WWWDIR%%/friends/pickercallback.php
-%%WWWDIR%%/javascript/friendsPickerv1.js
-%%WWWDIR%%/javascript/initialise_elgg.js
 %%WWWDIR%%/languages/en.php
+%%WWWDIR%%/mod/apiadmin/actions/generate.php
+%%WWWDIR%%/mod/apiadmin/actions/revokekey.php
+%%WWWDIR%%/mod/apiadmin/languages/en.php
+%%WWWDIR%%/mod/apiadmin/views/default/apiadmin/forms/add_key.php
+%%WWWDIR%%/mod/apiadmin/views/default/object/api_key.php
+%%WWWDIR%%/mod/apiadmin/index.php
+%%WWWDIR%%/mod/apiadmin/manifest.xml
+%%WWWDIR%%/mod/apiadmin/start.php
 %%WWWDIR%%/mod/blog/actions/add.php
 %%WWWDIR%%/mod/blog/actions/delete.php
 %%WWWDIR%%/mod/blog/actions/edit.php
@@ -172,9 +181,9 @@
 %%WWWDIR%%/mod/blog/views/default/blog/notfound.php
 %%WWWDIR%%/mod/blog/views/default/blog/view.php
 %%WWWDIR%%/mod/blog/views/default/object/blog.php
-%%WWWDIR%%/mod/blog/views/default/river/blog/annotate.php
-%%WWWDIR%%/mod/blog/views/default/river/blog/create.php
-%%WWWDIR%%/mod/blog/views/default/river/blog/update.php
+%%WWWDIR%%/mod/blog/views/default/river/object/blog/annotate.php
+%%WWWDIR%%/mod/blog/views/default/river/object/blog/create.php
+%%WWWDIR%%/mod/blog/views/default/river/object/blog/update.php
 %%WWWDIR%%/mod/blog/add.php
 %%WWWDIR%%/mod/blog/edit.php
 %%WWWDIR%%/mod/blog/everyone.php
@@ -191,8 +200,8 @@
 %%WWWDIR%%/mod/bookmarks/views/default/bookmarks/form.php
 %%WWWDIR%%/mod/bookmarks/views/default/bookmarks/sharing.php
 %%WWWDIR%%/mod/bookmarks/views/default/object/bookmarks.php
-%%WWWDIR%%/mod/bookmarks/views/default/river/bookmarks/annotate.php
-%%WWWDIR%%/mod/bookmarks/views/default/river/bookmarks/create.php
+%%WWWDIR%%/mod/bookmarks/views/default/river/object/bookmarks/annotate.php
+%%WWWDIR%%/mod/bookmarks/views/default/river/object/bookmarks/create.php
 %%WWWDIR%%/mod/bookmarks/views/default/widgets/bookmarks/edit.php
 %%WWWDIR%%/mod/bookmarks/views/default/widgets/bookmarks/view.php
 %%WWWDIR%%/mod/bookmarks/views/rss/object/bookmarks.php
@@ -273,8 +282,8 @@
 %%WWWDIR%%/mod/file/views/default/file/typecloud.php
 %%WWWDIR%%/mod/file/views/default/file/upload.php
 %%WWWDIR%%/mod/file/views/default/object/file.php
-%%WWWDIR%%/mod/file/views/default/river/file/annotate.php
-%%WWWDIR%%/mod/file/views/default/river/file/create.php
+%%WWWDIR%%/mod/file/views/default/river/object/file/annotate.php
+%%WWWDIR%%/mod/file/views/default/river/object/file/create.php
 %%WWWDIR%%/mod/file/views/default/widgets/filerepo/edit.php
 %%WWWDIR%%/mod/file/views/default/widgets/filerepo/view.php
 %%WWWDIR%%/mod/file/views/rss/object/file.php
@@ -294,6 +303,10 @@
 %%WWWDIR%%/mod/friends/collections.php
 %%WWWDIR%%/mod/friends/edit.php
 %%WWWDIR%%/mod/friends/start.php
+%%WWWDIR%%/mod/garbagecollector/languages/en.php
+%%WWWDIR%%/mod/garbagecollector/views/default/settings/garbagecollector/edit.php
+%%WWWDIR%%/mod/garbagecollector/manifest.xml
+%%WWWDIR%%/mod/garbagecollector/start.php
 %%WWWDIR%%/mod/groups/actions/forums/addpost.php
 %%WWWDIR%%/mod/groups/actions/forums/addtopic.php
 %%WWWDIR%%/mod/groups/actions/forums/deletepost.php
@@ -304,10 +317,10 @@
 %%WWWDIR%%/mod/groups/actions/join.php
 %%WWWDIR%%/mod/groups/actions/joinrequest.php
 %%WWWDIR%%/mod/groups/actions/leave.php
-%%WWWDIR%%/mod/groups/graphics/defaultlarge.jpg
-%%WWWDIR%%/mod/groups/graphics/defaultmedium.jpg
-%%WWWDIR%%/mod/groups/graphics/defaultsmall.jpg
-%%WWWDIR%%/mod/groups/graphics/defaulttiny.jpg
+%%WWWDIR%%/mod/groups/graphics/defaultlarge.gif
+%%WWWDIR%%/mod/groups/graphics/defaultmedium.gif
+%%WWWDIR%%/mod/groups/graphics/defaultsmall.gif
+%%WWWDIR%%/mod/groups/graphics/defaulttiny.gif
 %%WWWDIR%%/mod/groups/graphics/icon.php
 %%WWWDIR%%/mod/groups/languages/en.php
 %%WWWDIR%%/mod/groups/views/default/forms/forums/addpost.php
@@ -327,8 +340,12 @@
 %%WWWDIR%%/mod/groups/views/default/groups/icon.php
 %%WWWDIR%%/mod/groups/views/default/groups/members.php
 %%WWWDIR%%/mod/groups/views/default/groups/profileitems.php
+%%WWWDIR%%/mod/groups/views/default/icon/group/default/large.php
+%%WWWDIR%%/mod/groups/views/default/icon/group/default/medium.php
+%%WWWDIR%%/mod/groups/views/default/icon/group/default/small.php
+%%WWWDIR%%/mod/groups/views/default/icon/group/default/tiny.php
 %%WWWDIR%%/mod/groups/views/default/object/groupforumtopic.php
-%%WWWDIR%%/mod/groups/views/default/river/ElggRelationship/create.php
+%%WWWDIR%%/mod/groups/views/default/river/relationship/member/create.php
 %%WWWDIR%%/mod/groups/views/default/sharing/invite.php
 %%WWWDIR%%/mod/groups/views/default/widgets/a_users_groups/edit.php
 %%WWWDIR%%/mod/groups/views/default/widgets/a_users_groups/view.php
@@ -376,6 +393,10 @@
 %%WWWDIR%%/mod/logbrowser/index.php
 %%WWWDIR%%/mod/logbrowser/manifest.xml
 %%WWWDIR%%/mod/logbrowser/start.php
+%%WWWDIR%%/mod/logrotate/languages/en.php
+%%WWWDIR%%/mod/logrotate/views/default/settings/logrotate/edit.php
+%%WWWDIR%%/mod/logrotate/manifest.xml
+%%WWWDIR%%/mod/logrotate/start.php
 %%WWWDIR%%/mod/messageboard/actions/add.php
 %%WWWDIR%%/mod/messageboard/actions/delete.php
 %%WWWDIR%%/mod/messageboard/ajax_endpoint/load.php
@@ -385,9 +406,9 @@
 %%WWWDIR%%/mod/messageboard/views/default/messageboard/group_messageboard.php
 %%WWWDIR%%/mod/messageboard/views/default/messageboard/messageboard.php
 %%WWWDIR%%/mod/messageboard/views/default/messageboard/messageboard_content.php
-%%WWWDIR%%/mod/messageboard/views/default/river/widget/messageboard/annotate.php
-%%WWWDIR%%/mod/messageboard/views/default/river/widget/messageboard/create.php
-%%WWWDIR%%/mod/messageboard/views/default/river/widget/messageboard/update.php
+%%WWWDIR%%/mod/messageboard/views/default/river/object/widget/messageboard/annotate.php
+%%WWWDIR%%/mod/messageboard/views/default/river/object/widget/messageboard/create.php
+%%WWWDIR%%/mod/messageboard/views/default/river/object/widget/messageboard/update.php
 %%WWWDIR%%/mod/messageboard/views/default/widgets/messageboard/edit.php
 %%WWWDIR%%/mod/messageboard/views/default/widgets/messageboard/view.php
 %%WWWDIR%%/mod/messageboard/history.php
@@ -436,7 +457,8 @@
 %%WWWDIR%%/mod/pages/images/linux.png
 %%WWWDIR%%/mod/pages/images/minus.gif
 %%WWWDIR%%/mod/pages/images/music.png
-%%WWWDIR%%/mod/pages/images/pages_icon.png
+%%WWWDIR%%/mod/pages/images/pages.gif
+%%WWWDIR%%/mod/pages/images/pages_lrg.gif
 %%WWWDIR%%/mod/pages/images/pdf.png
 %%WWWDIR%%/mod/pages/images/php.png
 %%WWWDIR%%/mod/pages/images/picture.png
@@ -466,6 +488,10 @@
 %%WWWDIR%%/mod/pages/views/default/annotation/page.php
 %%WWWDIR%%/mod/pages/views/default/forms/pages/edit.php
 %%WWWDIR%%/mod/pages/views/default/forms/pages/editwelcome.php
+%%WWWDIR%%/mod/pages/views/default/icon/object/page/medium.php
+%%WWWDIR%%/mod/pages/views/default/icon/object/page/small.php
+%%WWWDIR%%/mod/pages/views/default/icon/object/page_top/medium.php
+%%WWWDIR%%/mod/pages/views/default/icon/object/page_top/small.php
 %%WWWDIR%%/mod/pages/views/default/object/page.php
 %%WWWDIR%%/mod/pages/views/default/object/page_top.php
 %%WWWDIR%%/mod/pages/views/default/pages/sidebar/sidebarthis.php
@@ -481,6 +507,8 @@
 %%WWWDIR%%/mod/pages/views/default/pages/pagelisting.php
 %%WWWDIR%%/mod/pages/views/default/pages/pageprofile.php
 %%WWWDIR%%/mod/pages/views/default/pages/welcome.php
+%%WWWDIR%%/mod/pages/views/default/widgets/pages/edit.php
+%%WWWDIR%%/mod/pages/views/default/widgets/pages/view.php
 %%WWWDIR%%/mod/pages/edit.php
 %%WWWDIR%%/mod/pages/history.php
 %%WWWDIR%%/mod/pages/index.php
@@ -492,14 +520,23 @@
 %%WWWDIR%%/mod/pages/welcome.php
 %%WWWDIR%%/mod/pages/world.php
 %%WWWDIR%%/mod/profile/actions/cropicon.php
+%%WWWDIR%%/mod/profile/actions/deletedefaultprofileitem.php
 %%WWWDIR%%/mod/profile/actions/edit.php
+%%WWWDIR%%/mod/profile/actions/editdefault.php
 %%WWWDIR%%/mod/profile/actions/iconupload.php
+%%WWWDIR%%/mod/profile/actions/resetdefaultprofile.php
 %%WWWDIR%%/mod/profile/graphics/defaultlarge.jpg
 %%WWWDIR%%/mod/profile/graphics/defaultmaster.jpg
 %%WWWDIR%%/mod/profile/graphics/defaultmedium.jpg
 %%WWWDIR%%/mod/profile/graphics/defaultsmall.jpg
 %%WWWDIR%%/mod/profile/graphics/defaulttiny.jpg
 %%WWWDIR%%/mod/profile/graphics/defaulttopbar.jpg
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/large.php
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/master.php
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/medium.php
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/small.php
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/tiny.php
+%%WWWDIR%%/mod/profile/views/default/icon/user/default/topbar.php
 %%WWWDIR%%/mod/profile/views/default/js/jquery.imgareaselect-0.4.2.js
 %%WWWDIR%%/mod/profile/views/default/js/jquery.imgareaselect-0.4.2.min.js
 %%WWWDIR%%/mod/profile/views/default/profile/menu/actions.php
@@ -509,6 +546,7 @@
 %%WWWDIR%%/mod/profile/views/default/profile/menu/linksownpage.php
 %%WWWDIR%%/mod/profile/views/default/profile/css.php
 %%WWWDIR%%/mod/profile/views/default/profile/edit.php
+%%WWWDIR%%/mod/profile/views/default/profile/editdefaultprofile.php
 %%WWWDIR%%/mod/profile/views/default/profile/editicon.php
 %%WWWDIR%%/mod/profile/views/default/profile/gallery.php
 %%WWWDIR%%/mod/profile/views/default/profile/hoverover.php
@@ -519,8 +557,9 @@
 %%WWWDIR%%/mod/profile/views/default/profile/profilelinks.php
 %%WWWDIR%%/mod/profile/views/default/profile/submenu.php
 %%WWWDIR%%/mod/profile/views/default/profile/userdetails.php
-%%WWWDIR%%/mod/profile/views/default/river/ElggUser/profileiconupdate.php
-%%WWWDIR%%/mod/profile/views/default/river/ElggUser/profileupdate.php
+%%WWWDIR%%/mod/profile/views/default/river/user/default/profileiconupdate.php
+%%WWWDIR%%/mod/profile/views/default/river/user/default/profileupdate.php
+%%WWWDIR%%/mod/profile/defaultprofile.php
 %%WWWDIR%%/mod/profile/edit.php
 %%WWWDIR%%/mod/profile/editicon.php
 %%WWWDIR%%/mod/profile/icon.php
@@ -552,7 +591,7 @@
 %%WWWDIR%%/mod/status/ajax_endpoint/load.php
 %%WWWDIR%%/mod/status/languages/en.php
 %%WWWDIR%%/mod/status/views/default/object/status.php
-%%WWWDIR%%/mod/status/views/default/river/status/create.php
+%%WWWDIR%%/mod/status/views/default/river/object/status/create.php
 %%WWWDIR%%/mod/status/views/default/status/css.php
 %%WWWDIR%%/mod/status/views/default/status/friends_view.php
 %%WWWDIR%%/mod/status/views/default/status/notfound.php
@@ -815,13 +854,18 @@
 %%WWWDIR%%/mod/updateclient/index.php
 %%WWWDIR%%/mod/updateclient/manifest.xml
 %%WWWDIR%%/mod/updateclient/start.php
+%%WWWDIR%%/mod/uservalidationbyemail/actions/email/confirm.php
+%%WWWDIR%%/mod/uservalidationbyemail/languages/en.php
+%%WWWDIR%%/mod/uservalidationbyemail/manifest.xml
+%%WWWDIR%%/mod/uservalidationbyemail/start.php
 %%WWWDIR%%/search/index.php
 %%WWWDIR%%/search/users.php
 %%WWWDIR%%/services/api/rest.php
 %%WWWDIR%%/services/export/handler.php
-%%WWWDIR%%/settings/statistics/index.php
-%%WWWDIR%%/settings/user/index.php
 %%WWWDIR%%/settings/index.php
+%%WWWDIR%%/settings/plugins.php
+%%WWWDIR%%/settings/statistics.php
+%%WWWDIR%%/settings/user.php
 %%WWWDIR%%/vendors/calendarpopup/CalendarPopup.js
 %%WWWDIR%%/vendors/jquery/jquery-1.2.6.pack.js
 %%WWWDIR%%/vendors/jquery/jquery-easing-compatibility.1.2.pack.js
@@ -908,6 +952,8 @@
 %%WWWDIR%%/views/default/input/tags.php
 %%WWWDIR%%/views/default/input/text.php
 %%WWWDIR%%/views/default/input/url.php
+%%WWWDIR%%/views/default/js/friendsPickerv1.php
+%%WWWDIR%%/views/default/js/initialise_elgg.php
 %%WWWDIR%%/views/default/messages/errors/error.php
 %%WWWDIR%%/views/default/messages/errors/list.php
 %%WWWDIR%%/views/default/messages/exceptions/exception.php
@@ -915,7 +961,6 @@
 %%WWWDIR%%/views/default/messages/messages/message.php
 %%WWWDIR%%/views/default/messages/list.php
 %%WWWDIR%%/views/default/navigation/pagination.php
-%%WWWDIR%%/views/default/navigation/toolbox.php
 %%WWWDIR%%/views/default/navigation/topbar_tools.php
 %%WWWDIR%%/views/default/navigation/viewtype.php
 %%WWWDIR%%/views/default/notifications/settings/usersettings.php
@@ -924,12 +969,14 @@
 %%WWWDIR%%/views/default/object/plugin.php
 %%WWWDIR%%/views/default/object/widget.php
 %%WWWDIR%%/views/default/output/calendar.php
+%%WWWDIR%%/views/default/output/checkboxes.php
 %%WWWDIR%%/views/default/output/confirmlink.php
 %%WWWDIR%%/views/default/output/date.php
 %%WWWDIR%%/views/default/output/email.php
 %%WWWDIR%%/views/default/output/iframe.php
 %%WWWDIR%%/views/default/output/longtext.php
 %%WWWDIR%%/views/default/output/pulldown.php
+%%WWWDIR%%/views/default/output/radio.php
 %%WWWDIR%%/views/default/output/tagcloud.php
 %%WWWDIR%%/views/default/output/tags.php
 %%WWWDIR%%/views/default/output/text.php
@@ -941,7 +988,7 @@
 %%WWWDIR%%/views/default/page_elements/spotlight.php
 %%WWWDIR%%/views/default/page_elements/title.php
 %%WWWDIR%%/views/default/pageshells/pageshell.php
-%%WWWDIR%%/views/default/river/ElggRelationship/create.php
+%%WWWDIR%%/views/default/river/relationship/friend/create.php
 %%WWWDIR%%/views/default/river/dashboard.php
 %%WWWDIR%%/views/default/river/wrapper.php
 %%WWWDIR%%/views/default/search/entity_list.php
@@ -951,6 +998,7 @@
 %%WWWDIR%%/views/default/search/startblurb.php
 %%WWWDIR%%/views/default/settings/install.php
 %%WWWDIR%%/views/default/settings/system.php
+%%WWWDIR%%/views/default/settings/upgrading.php
 %%WWWDIR%%/views/default/site/default.php
 %%WWWDIR%%/views/default/spotlight/default.php
 %%WWWDIR%%/views/default/text/about.php
@@ -1058,12 +1106,15 @@
 %%WWWDIR%%/INSTALL.txt
 %%WWWDIR%%/LICENCE.txt
 %%WWWDIR%%/README.txt
+%%WWWDIR%%/UPGRADE.txt
+%%WWWDIR%%/crontab.example
 %%WWWDIR%%/htaccess_dist
-%%WWWDIR%%/htaccess_dist.orig
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
 %%WWWDIR%%/register.php
+%%WWWDIR%%/upgrade.php
 %%WWWDIR%%/version.php
+%%WWWDIR%%/htaccess_dist.orig
 @dirrm %%WWWDIR%%/_css
 @dirrm %%WWWDIR%%/_graphics/icons/default
 @dirrm %%WWWDIR%%/_graphics/icons
@@ -1097,7 +1148,9 @@
 @dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%/dashboard
 @dirrm %%WWWDIR%%/engine/handlers
+@dirrm %%WWWDIR%%/engine/lib/upgrades
 @dirrm %%WWWDIR%%/engine/lib
+@dirrm %%WWWDIR%%/engine/schema/upgrades
 @dirrm %%WWWDIR%%/engine/schema
 @dirrm %%WWWDIR%%/engine/vendors
 @dirrm %%WWWDIR%%/engine
@@ -1105,12 +1158,21 @@
 @dirrm %%WWWDIR%%/friends
 @dirrm %%WWWDIR%%/javascript
 @dirrm %%WWWDIR%%/languages
+@dirrm %%WWWDIR%%/mod/apiadmin/actions
+@dirrm %%WWWDIR%%/mod/apiadmin/languages
+@dirrm %%WWWDIR%%/mod/apiadmin/views/default/apiadmin/forms
+@dirrm %%WWWDIR%%/mod/apiadmin/views/default/apiadmin
+@dirrm %%WWWDIR%%/mod/apiadmin/views/default/object
+@dirrm %%WWWDIR%%/mod/apiadmin/views/default
+@dirrm %%WWWDIR%%/mod/apiadmin/views
+@dirrm %%WWWDIR%%/mod/apiadmin
 @dirrm %%WWWDIR%%/mod/blog/actions
 @dirrm %%WWWDIR%%/mod/blog/languages
 @dirrm %%WWWDIR%%/mod/blog/views/default/blog/forms
 @dirrm %%WWWDIR%%/mod/blog/views/default/blog
 @dirrm %%WWWDIR%%/mod/blog/views/default/object
-@dirrm %%WWWDIR%%/mod/blog/views/default/river/blog
+@dirrm %%WWWDIR%%/mod/blog/views/default/river/object/blog
+@dirrm %%WWWDIR%%/mod/blog/views/default/river/object
 @dirrm %%WWWDIR%%/mod/blog/views/default/river
 @dirrm %%WWWDIR%%/mod/blog/views/default
 @dirrm %%WWWDIR%%/mod/blog/views
@@ -1119,7 +1181,8 @@
 @dirrm %%WWWDIR%%/mod/bookmarks/languages
 @dirrm %%WWWDIR%%/mod/bookmarks/views/default/bookmarks
 @dirrm %%WWWDIR%%/mod/bookmarks/views/default/object
-@dirrm %%WWWDIR%%/mod/bookmarks/views/default/river/bookmarks
+@dirrm %%WWWDIR%%/mod/bookmarks/views/default/river/object/bookmarks
+@dirrm %%WWWDIR%%/mod/bookmarks/views/default/river/object
 @dirrm %%WWWDIR%%/mod/bookmarks/views/default/river
 @dirrm %%WWWDIR%%/mod/bookmarks/views/default/widgets/bookmarks
 @dirrm %%WWWDIR%%/mod/bookmarks/views/default/widgets
@@ -1149,7 +1212,8 @@
 @dirrm %%WWWDIR%%/mod/file/views/default/file/specialcontent
 @dirrm %%WWWDIR%%/mod/file/views/default/file
 @dirrm %%WWWDIR%%/mod/file/views/default/object
-@dirrm %%WWWDIR%%/mod/file/views/default/river/file
+@dirrm %%WWWDIR%%/mod/file/views/default/river/object/file
+@dirrm %%WWWDIR%%/mod/file/views/default/river/object
 @dirrm %%WWWDIR%%/mod/file/views/default/river
 @dirrm %%WWWDIR%%/mod/file/views/default/widgets/filerepo
 @dirrm %%WWWDIR%%/mod/file/views/default/widgets
@@ -1164,6 +1228,12 @@
 @dirrm %%WWWDIR%%/mod/friends/views/default
 @dirrm %%WWWDIR%%/mod/friends/views
 @dirrm %%WWWDIR%%/mod/friends
+@dirrm %%WWWDIR%%/mod/garbagecollector/languages
+@dirrm %%WWWDIR%%/mod/garbagecollector/views/default/settings/garbagecollector
+@dirrm %%WWWDIR%%/mod/garbagecollector/views/default/settings
+@dirrm %%WWWDIR%%/mod/garbagecollector/views/default
+@dirrm %%WWWDIR%%/mod/garbagecollector/views
+@dirrm %%WWWDIR%%/mod/garbagecollector
 @dirrm %%WWWDIR%%/mod/groups/actions/forums
 @dirrm %%WWWDIR%%/mod/groups/actions
 @dirrm %%WWWDIR%%/mod/groups/graphics
@@ -1174,8 +1244,12 @@
 @dirrm %%WWWDIR%%/mod/groups/views/default/forum
 @dirrm %%WWWDIR%%/mod/groups/views/default/group
 @dirrm %%WWWDIR%%/mod/groups/views/default/groups
+@dirrm %%WWWDIR%%/mod/groups/views/default/icon/group/default
+@dirrm %%WWWDIR%%/mod/groups/views/default/icon/group
+@dirrm %%WWWDIR%%/mod/groups/views/default/icon
 @dirrm %%WWWDIR%%/mod/groups/views/default/object
-@dirrm %%WWWDIR%%/mod/groups/views/default/river/ElggRelationship
+@dirrm %%WWWDIR%%/mod/groups/views/default/river/relationship/member
+@dirrm %%WWWDIR%%/mod/groups/views/default/river/relationship
 @dirrm %%WWWDIR%%/mod/groups/views/default/river
 @dirrm %%WWWDIR%%/mod/groups/views/default/sharing
 @dirrm %%WWWDIR%%/mod/groups/views/default/widgets/a_users_groups
@@ -1202,14 +1276,21 @@
 @dirrm %%WWWDIR%%/mod/logbrowser/views/default
 @dirrm %%WWWDIR%%/mod/logbrowser/views
 @dirrm %%WWWDIR%%/mod/logbrowser
+@dirrm %%WWWDIR%%/mod/logrotate/languages
+@dirrm %%WWWDIR%%/mod/logrotate/views/default/settings/logrotate
+@dirrm %%WWWDIR%%/mod/logrotate/views/default/settings
+@dirrm %%WWWDIR%%/mod/logrotate/views/default
+@dirrm %%WWWDIR%%/mod/logrotate/views
+@dirrm %%WWWDIR%%/mod/logrotate
 @dirrm %%WWWDIR%%/mod/messageboard/actions
 @dirrm %%WWWDIR%%/mod/messageboard/ajax_endpoint
 @dirrm %%WWWDIR%%/mod/messageboard/graphics
 @dirrm %%WWWDIR%%/mod/messageboard/languages
 @dirrm %%WWWDIR%%/mod/messageboard/views/default/messageboard/forms
 @dirrm %%WWWDIR%%/mod/messageboard/views/default/messageboard
-@dirrm %%WWWDIR%%/mod/messageboard/views/default/river/widget/messageboard
-@dirrm %%WWWDIR%%/mod/messageboard/views/default/river/widget
+@dirrm %%WWWDIR%%/mod/messageboard/views/default/river/object/widget/messageboard
+@dirrm %%WWWDIR%%/mod/messageboard/views/default/river/object/widget
+@dirrm %%WWWDIR%%/mod/messageboard/views/default/river/object
 @dirrm %%WWWDIR%%/mod/messageboard/views/default/river
 @dirrm %%WWWDIR%%/mod/messageboard/views/default/widgets/messageboard
 @dirrm %%WWWDIR%%/mod/messageboard/views/default/widgets
@@ -1234,18 +1315,28 @@
 @dirrm %%WWWDIR%%/mod/pages/views/default/annotation
 @dirrm %%WWWDIR%%/mod/pages/views/default/forms/pages
 @dirrm %%WWWDIR%%/mod/pages/views/default/forms
+@dirrm %%WWWDIR%%/mod/pages/views/default/icon/object/page
+@dirrm %%WWWDIR%%/mod/pages/views/default/icon/object/page_top
+@dirrm %%WWWDIR%%/mod/pages/views/default/icon/object
+@dirrm %%WWWDIR%%/mod/pages/views/default/icon
 @dirrm %%WWWDIR%%/mod/pages/views/default/object
 @dirrm %%WWWDIR%%/mod/pages/views/default/pages/sidebar
 @dirrm %%WWWDIR%%/mod/pages/views/default/pages
+@dirrm %%WWWDIR%%/mod/pages/views/default/widgets/pages
+@dirrm %%WWWDIR%%/mod/pages/views/default/widgets
 @dirrm %%WWWDIR%%/mod/pages/views/default
 @dirrm %%WWWDIR%%/mod/pages/views
 @dirrm %%WWWDIR%%/mod/pages
 @dirrm %%WWWDIR%%/mod/profile/actions
 @dirrm %%WWWDIR%%/mod/profile/graphics
+@dirrm %%WWWDIR%%/mod/profile/views/default/icon/user/default
+@dirrm %%WWWDIR%%/mod/profile/views/default/icon/user
+@dirrm %%WWWDIR%%/mod/profile/views/default/icon
 @dirrm %%WWWDIR%%/mod/profile/views/default/js
 @dirrm %%WWWDIR%%/mod/profile/views/default/profile/menu
 @dirrm %%WWWDIR%%/mod/profile/views/default/profile
-@dirrm %%WWWDIR%%/mod/profile/views/default/river/ElggUser
+@dirrm %%WWWDIR%%/mod/profile/views/default/river/user/default
+@dirrm %%WWWDIR%%/mod/profile/views/default/river/user
 @dirrm %%WWWDIR%%/mod/profile/views/default/river
 @dirrm %%WWWDIR%%/mod/profile/views/default
 @dirrm %%WWWDIR%%/mod/profile/views
@@ -1268,7 +1359,8 @@
 @dirrm %%WWWDIR%%/mod/status/ajax_endpoint
 @dirrm %%WWWDIR%%/mod/status/languages
 @dirrm %%WWWDIR%%/mod/status/views/default/object
-@dirrm %%WWWDIR%%/mod/status/views/default/river/status
+@dirrm %%WWWDIR%%/mod/status/views/default/river/object/status
+@dirrm %%WWWDIR%%/mod/status/views/default/river/object
 @dirrm %%WWWDIR%%/mod/status/views/default/river
 @dirrm %%WWWDIR%%/mod/status/views/default/status
 @dirrm %%WWWDIR%%/mod/status/views/default/widgets/status
@@ -1391,13 +1483,15 @@
 @dirrm %%WWWDIR%%/mod/updateclient/views/default
 @dirrm %%WWWDIR%%/mod/updateclient/views
 @dirrm %%WWWDIR%%/mod/updateclient
+@dirrm %%WWWDIR%%/mod/uservalidationbyemail/actions/email
+@dirrm %%WWWDIR%%/mod/uservalidationbyemail/actions
+@dirrm %%WWWDIR%%/mod/uservalidationbyemail/languages
+@dirrm %%WWWDIR%%/mod/uservalidationbyemail
 @dirrm %%WWWDIR%%/mod
 @dirrm %%WWWDIR%%/search
 @dirrm %%WWWDIR%%/services/api
 @dirrm %%WWWDIR%%/services/export
 @dirrm %%WWWDIR%%/services
-@dirrm %%WWWDIR%%/settings/statistics
-@dirrm %%WWWDIR%%/settings/user
 @dirrm %%WWWDIR%%/settings
 @dirrm %%WWWDIR%%/vendors/calendarpopup
 @dirrm %%WWWDIR%%/vendors/jquery
@@ -1429,6 +1523,7 @@
 @dirrm %%WWWDIR%%/views/default/graphics
 @dirrm %%WWWDIR%%/views/default/group
 @dirrm %%WWWDIR%%/views/default/input
+@dirrm %%WWWDIR%%/views/default/js
 @dirrm %%WWWDIR%%/views/default/messages/errors
 @dirrm %%WWWDIR%%/views/default/messages/exceptions
 @dirrm %%WWWDIR%%/views/default/messages/messages
@@ -1440,7 +1535,8 @@
 @dirrm %%WWWDIR%%/views/default/output
 @dirrm %%WWWDIR%%/views/default/page_elements
 @dirrm %%WWWDIR%%/views/default/pageshells
-@dirrm %%WWWDIR%%/views/default/river/ElggRelationship
+@dirrm %%WWWDIR%%/views/default/river/relationship/friend
+@dirrm %%WWWDIR%%/views/default/river/relationship
 @dirrm %%WWWDIR%%/views/default/river
 @dirrm %%WWWDIR%%/views/default/search
 @dirrm %%WWWDIR%%/views/default/settings
@@ -1526,5 +1622,5 @@
 @dirrm %%WWWDIR%%/views/xml/xml-rpc
 @dirrm %%WWWDIR%%/views/xml
 @dirrm %%WWWDIR%%/views
-@dirrm %%WWWDIR%%
+@dirrm %%WWWDIR%%/
 @dirrm www/elggdata
