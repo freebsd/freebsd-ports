@@ -77,7 +77,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::View.3
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGDIR}/pkg-message
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
