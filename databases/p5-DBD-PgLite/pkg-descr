@@ -1,0 +1,6 @@
+The module automatically and transparently transforms a broad range of
+SQL statements typical of PostgreSQL into a form suitable for use in
+SQLite. This involves both (a) parsing and filtering of the SQL; and
+(b) the addition of several PostgreSQL-compatible functions to SQLite.
+
+WWW: http://search.cpan.org/dist/DBD-PgLite/
