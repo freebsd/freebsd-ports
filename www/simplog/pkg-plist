@@ -334,6 +334,8 @@
 %%DATADIR%%/simplog.js
 %%DATADIR%%/simplog.css
 %%DATADIR%%/rss2.php
+@exec [ -e %D/%%DATADIR%%/cache ] || mkdir -p %D/%%DATADIR%%/cache
+@unexec [ -e %D/%%DATADIR%%/cache ] && rm -rf %D/%%DATADIR%%/cache
 @dirrm %%DATADIR%%/adodb/tests
 @dirrm %%DATADIR%%/adodb/session/old
 @dirrm %%DATADIR%%/adodb/session
@@ -352,7 +354,6 @@
 @dirrm %%DATADIR%%/images/smile
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/cache
 @dirrm %%DATADIR%%/install
 @dirrm %%DATADIR%%/templates/images
 @dirrm %%DATADIR%%/templates

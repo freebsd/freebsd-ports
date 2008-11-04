@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	simplog
-PORTVERSION=	0.9.3.2
+PORTVERSION=	0.9.3.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF:src \
+		http://www.simplog.org/dl/:update
+DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
+		${PORTNAME}_update_only-${PORTVERSION}.tar.gz:update
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete and powerful blogging tool
@@ -23,8 +25,7 @@ do-install:
 	@${ECHO} ""
 	@${ECHO} "===> Installing simplog"
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -R adodb doc images install templates * \
-	${DATADIR}
+	cd ${WRKSRC} && ${CP} -r * ${DATADIR}
 
 post-install:
 	@${ECHO} ""
@@ -33,5 +34,6 @@ post-install:
 	README in ${DATADIR} first."
 	@${ECHO} "For more informations, documentation is available at\
 	${DATADIR}/doc/index.php."
+	@${ECHO} ""
 
 .include <bsd.port.mk>
