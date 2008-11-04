@@ -1,0 +1,17 @@
+--- ambfor/makefile.orig	2008-10-30 10:06:37.000000000 +0100
++++ ambfor/makefile	2008-10-30 10:07:19.000000000 +0100
+@@ -14,11 +14,11 @@
+ #
+ #CC = cc
+ 
+-CFLAGS = -c
+-FC = g77
++CFLAGS += -DFREEBSD=1
++#FC = g77
+ FFLAGS = -c -O3 -ffast-math
+ LIBS =  -lm
+-LDR = g77 
++LDR = $(FC) 
+ 
+ OBJS = ambfor.o angle.o bond.o charge.o conn.o enegrd.o getinp.o \
+ 	param.o tors.o vdwlj.o math.o optimise.o wrtout.o

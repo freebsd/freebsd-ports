@@ -6,30 +6,24 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	4.5
-PORTREVISION=	2
+PORTVERSION=	4.7
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PKGNAME}
-EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oivulf@gmail.com
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
 USE_XORG=	x11 xmu
 USE_GL=		glut
+USE_FORTRAN=	yes
 
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 MAKEFILE=	${WRKSRC}/makefile
 
-.include <bsd.port.pre.mk>
-
-USE_FORTRAN=	yes
-
 post-patch:
-	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
+	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
 
 post-configure:
 	@${ECHO_MSG} "********************"
@@ -40,7 +34,9 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/molden ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/moldenogl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/molden
 	${MKDIR} ${PREFIX}/share/molden/test
@@ -50,4 +46,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/utils/* ${PREFIX}/share/molden/utils
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- makefile.orig	Thu Sep  7 19:55:00 2006
-+++ makefile	Tue Apr 24 16:40:19 2007
-@@ -12,9 +12,27 @@
+--- makefile.orig	2008-08-25 19:55:57.000000000 +0200
++++ makefile	2008-11-01 21:48:37.000000000 +0100
+@@ -12,9 +12,23 @@
  #
  #	Disregard compiler warnings on rdmolf.f
  #
@@ -15,10 +15,6 @@
 +#CC = gcc
 +CFLAGS += -c -DDOBACK -DHASTIMER -I${LOCALBASE}/include
 +#FC = f77
-+.if ${MACHINE_ARCH} == i386
-+FFLAGS += -malign-double
-+CFLAGS += -malign-double
-+.endif
 +.if ${OSVERSION} < 400005
 +FFLAGS += -Nn802 -Nx400
 +.else
@@ -30,9 +26,9 @@
  
  # Silicon Graphics
  #CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
-@@ -46,11 +64,11 @@
- # when using gfortran, replace g77 with gfortran and comment out the line
- # 'external iargc' in molden.f
+@@ -52,11 +66,11 @@
+ # with GCC4.0 or higher replace the line with:
+ # 'external gfortran_iargc'
  #
 -CFLAGS = -c -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
 -FC = g77
@@ -47,8 +43,8 @@
  # 64 bit machines:
  #LIBS =  -L/usr/X11R6/lib64 -lX11 -lm
  #
-@@ -178,7 +196,7 @@
- # and the full opengl version of molden 'gmolden'
+@@ -191,7 +205,7 @@
+ # and the full opengl version of molden 'gmolden', (does not need glut)
  # (make gmolden)
  #
 -LIBSOGL = -lglut -lGLU -lGL -lXmu -lX11 -lm
@@ -56,12 +52,12 @@
  #
  # on linux :
  #
-@@ -201,7 +219,7 @@
- #
- #LIBSG = -L/usr/X11R6/lib -Wl,-framework -Wl,GLUT -Wl,-framework -Wl,OpenGL -Wl,-framework -Wl,Cocoa -lGLU -lGL -lXmu -lX11 -lm
+@@ -227,7 +241,7 @@
+ 	$(MAKE) -C ambfor
  
--
-+all: molden moldenogl
+ surf/surf:	surf/*.h surf/*.c
+-	$(MAKE) -C surf depend
++#	$(MAKE) -C surf depend
+ 	$(MAKE) -C surf
  
- molden:	$(OBJS) mpdum.o xwin.o 
- 	$(LDR) -o molden $(OBJS) $(SOBJ) mpdum.o xwin.o $(LIBS)
+ # noxwin will not work as long as the old ocglbck calls arent in dummys
