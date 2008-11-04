@@ -25,4 +25,17 @@ EXAMPLESDIR=	${PREFIX}/share/examples/check-${PORTVERSION}
 
 INFO=		check
 
+post-patch:
+.ifdef (NOPORTDOCS)
+	@${REINPLACE_CMD} \
+		's/^install-data-am: install-docDATA/install-data-am:/' \
+		${WRKSRC}/Makefile.in
+.endif
+.ifdef (NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e \
+		's/^\(install-data-am:\) install-exampleDATA install-examplesrcDATA/\1/; \
+		s/.*install-exampletestsDATA \(install-info-am\)/\1/' \
+		${WRKSRC}/doc/Makefile.in
+.endif
+
 .include <bsd.port.mk>
