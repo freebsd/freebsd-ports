@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	games
 MASTER_SITES=	http://hedgewars.org/download/ \
 		http://www.amdmi3.ru/distfiles/
@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Worms-like turn based strategy game
+
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
