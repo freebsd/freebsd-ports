@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brainworkshop
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -24,9 +24,8 @@ USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^FOLDER_RES = / s|res|${DATADIR}|' \
-		${WRKSRC}/brainworkshop.pyw
-	@${REINPLACE_CMD} -e '/^FOLDER_DATA = / s|.data.|os.environ["HOME"]+"/.brainworkshop"|' \
+	@${REINPLACE_CMD} -e '/^FOLDER_RES = / s|res|${DATADIR}|; \
+		/^FOLDER_DATA = / s|.data.|os.environ["HOME"]+"/.brainworkshop"|' \
 		${WRKSRC}/brainworkshop.pyw
 
 do-install:
