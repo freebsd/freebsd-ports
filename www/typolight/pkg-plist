@@ -746,6 +746,7 @@
 %%WWWDIR%%/system/config/config.php
 %%WWWDIR%%/system/config/countries.php
 %%WWWDIR%%/system/config/dcaconfig.php
+%%WWWDIR%%/system/config/langconfig.php
 %%WWWDIR%%/system/config/languages.php
 %%WWWDIR%%/system/config/localconfig.php
 %%WWWDIR%%/system/config/tcpdf.php
@@ -1108,6 +1109,7 @@
 %%WWWDIR%%/system/modules/frontend/Module.php
 %%WWWDIR%%/system/modules/frontend/ModuleArticle.php
 %%WWWDIR%%/system/modules/frontend/ModuleArticleList.php
+%%WWWDIR%%/system/modules/frontend/ModuleArticleNav.php
 %%WWWDIR%%/system/modules/frontend/ModuleBreadcrumb.php
 %%WWWDIR%%/system/modules/frontend/ModuleCustomnav.php
 %%WWWDIR%%/system/modules/frontend/ModuleFlash.php
@@ -1181,6 +1183,7 @@
 %%WWWDIR%%/system/modules/frontend/templates/member_grouped.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article_list.tpl
+%%WWWDIR%%/system/modules/frontend/templates/mod_article_nav.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article_plain.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_article_teaser.tpl
 %%WWWDIR%%/system/modules/frontend/templates/mod_breadcrumb.tpl
@@ -1223,6 +1226,27 @@
 %%WWWDIR%%/system/modules/listing/templates/.htaccess
 %%WWWDIR%%/system/modules/listing/templates/info_default.tpl
 %%WWWDIR%%/system/modules/listing/templates/list_default.tpl
+%%WWWDIR%%/system/modules/memberlist/ModuleMemberlist.php
+%%WWWDIR%%/system/modules/memberlist/config/.htaccess
+%%WWWDIR%%/system/modules/memberlist/config/config.php
+%%WWWDIR%%/system/modules/memberlist/config/database.sql
+%%WWWDIR%%/system/modules/memberlist/dca/.htaccess
+%%WWWDIR%%/system/modules/memberlist/dca/tl_member.php
+%%WWWDIR%%/system/modules/memberlist/dca/tl_module.php
+%%WWWDIR%%/system/modules/memberlist/html/details.gif
+%%WWWDIR%%/system/modules/memberlist/languages/de/.htaccess
+%%WWWDIR%%/system/modules/memberlist/languages/de/default.php
+%%WWWDIR%%/system/modules/memberlist/languages/de/modules.php
+%%WWWDIR%%/system/modules/memberlist/languages/de/tl_member.php
+%%WWWDIR%%/system/modules/memberlist/languages/de/tl_module.php
+%%WWWDIR%%/system/modules/memberlist/languages/en/.htaccess
+%%WWWDIR%%/system/modules/memberlist/languages/en/default.php
+%%WWWDIR%%/system/modules/memberlist/languages/en/modules.php
+%%WWWDIR%%/system/modules/memberlist/languages/en/tl_member.php
+%%WWWDIR%%/system/modules/memberlist/languages/en/tl_module.php
+%%WWWDIR%%/system/modules/memberlist/templates/.htaccess
+%%WWWDIR%%/system/modules/memberlist/templates/mod_memberlist.tpl
+%%WWWDIR%%/system/modules/memberlist/templates/mod_memberlist_detail.tpl
 %%WWWDIR%%/system/modules/news/Comments.php
 %%WWWDIR%%/system/modules/news/ModuleNews.php
 %%WWWDIR%%/system/modules/news/ModuleNewsArchive.php
@@ -1346,6 +1370,68 @@
 %%WWWDIR%%/system/modules/registration/templates/.htaccess
 %%WWWDIR%%/system/modules/registration/templates/mod_message.tpl
 %%WWWDIR%%/system/modules/registration/templates/mod_password.tpl
+%%WWWDIR%%/system/modules/rep_base/GPL3.txt
+%%WWWDIR%%/system/modules/rep_base/LGPL3.txt
+%%WWWDIR%%/system/modules/rep_base/LICENSE.txt
+%%WWWDIR%%/system/modules/rep_base/Repository.php
+%%WWWDIR%%/system/modules/rep_base/RepositorySettings.php
+%%WWWDIR%%/system/modules/rep_base/dca/.htaccess
+%%WWWDIR%%/system/modules/rep_base/dca/tl_settings.php
+%%WWWDIR%%/system/modules/rep_base/languages/de/.htaccess
+%%WWWDIR%%/system/modules/rep_base/languages/de/modules.php
+%%WWWDIR%%/system/modules/rep_base/languages/de/tl_repository.php
+%%WWWDIR%%/system/modules/rep_base/languages/de/tl_settings.php
+%%WWWDIR%%/system/modules/rep_base/languages/en/.htaccess
+%%WWWDIR%%/system/modules/rep_base/languages/en/modules.php
+%%WWWDIR%%/system/modules/rep_base/languages/en/tl_repository.php
+%%WWWDIR%%/system/modules/rep_base/languages/en/tl_settings.php
+%%WWWDIR%%/system/modules/rep_client/DatabaseInstaller.php
+%%WWWDIR%%/system/modules/rep_client/RepositoryBackendModule.php
+%%WWWDIR%%/system/modules/rep_client/RepositoryBackendTheme.php
+%%WWWDIR%%/system/modules/rep_client/RepositoryCatalog.php
+%%WWWDIR%%/system/modules/rep_client/RepositoryManager.php
+%%WWWDIR%%/system/modules/rep_client/config/.htaccess
+%%WWWDIR%%/system/modules/rep_client/config/config.php
+%%WWWDIR%%/system/modules/rep_client/config/database.sql
+%%WWWDIR%%/system/modules/rep_client/dca/.htaccess
+%%WWWDIR%%/system/modules/rep_client/dca/tl_settings.php
+%%WWWDIR%%/system/modules/rep_client/languages/de/.htaccess
+%%WWWDIR%%/system/modules/rep_client/languages/de/modules.php
+%%WWWDIR%%/system/modules/rep_client/languages/de/tl_repository.php
+%%WWWDIR%%/system/modules/rep_client/languages/de/tl_settings.php
+%%WWWDIR%%/system/modules/rep_client/languages/en/.htaccess
+%%WWWDIR%%/system/modules/rep_client/languages/en/modules.php
+%%WWWDIR%%/system/modules/rep_client/languages/en/tl_repository.php
+%%WWWDIR%%/system/modules/rep_client/languages/en/tl_settings.php
+%%WWWDIR%%/system/modules/rep_client/templates/.htaccess
+%%WWWDIR%%/system/modules/rep_client/templates/repository_catlist.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_catview.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_mgredit.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_mgrinst.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_mgrlist.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_mgruist.tpl
+%%WWWDIR%%/system/modules/rep_client/templates/repository_mgrupdt.tpl
+%%WWWDIR%%/system/modules/rep_client/themes/default/backend.css
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/alpha16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/back.gif
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/back16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/beta16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/blank16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/catalog16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/dbcheck16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/default.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/edit.gif
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/edit16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/forum16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/info.gif
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/info16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/install16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/manual16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/rc16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/stable16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/stop128.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/uninst16.png
+%%WWWDIR%%/system/modules/rep_client/themes/default/images/uninstall.gif
 %%WWWDIR%%/system/modules/rss_reader/ModuleRssReader.php
 %%WWWDIR%%/system/modules/rss_reader/config/.htaccess
 %%WWWDIR%%/system/modules/rss_reader/config/config.php
@@ -1397,6 +1483,7 @@
 %%WWWDIR%%/system/themes/default/images/cache.gif
 %%WWWDIR%%/system/themes/default/images/changelog.gif
 %%WWWDIR%%/system/themes/default/images/clipboard.gif
+%%WWWDIR%%/system/themes/default/images/close.gif
 %%WWWDIR%%/system/themes/default/images/collapse.gif
 %%WWWDIR%%/system/themes/default/images/copy.gif
 %%WWWDIR%%/system/themes/default/images/copy_.gif
@@ -1747,6 +1834,14 @@
 @dirrm %%WWWDIR%%/system/modules/listing/languages
 @dirrm %%WWWDIR%%/system/modules/listing/templates
 @dirrm %%WWWDIR%%/system/modules/listing
+@dirrm %%WWWDIR%%/system/modules/memberlist/config
+@dirrm %%WWWDIR%%/system/modules/memberlist/dca
+@dirrm %%WWWDIR%%/system/modules/memberlist/html
+@dirrm %%WWWDIR%%/system/modules/memberlist/languages/de
+@dirrm %%WWWDIR%%/system/modules/memberlist/languages/en
+@dirrm %%WWWDIR%%/system/modules/memberlist/languages
+@dirrm %%WWWDIR%%/system/modules/memberlist/templates
+@dirrm %%WWWDIR%%/system/modules/memberlist
 @dirrm %%WWWDIR%%/system/modules/news/config
 @dirrm %%WWWDIR%%/system/modules/news/dca
 @dirrm %%WWWDIR%%/system/modules/news/html
@@ -1776,6 +1871,21 @@
 @dirrm %%WWWDIR%%/system/modules/registration/languages
 @dirrm %%WWWDIR%%/system/modules/registration/templates
 @dirrm %%WWWDIR%%/system/modules/registration
+@dirrm %%WWWDIR%%/system/modules/rep_base/dca
+@dirrm %%WWWDIR%%/system/modules/rep_base/languages/de
+@dirrm %%WWWDIR%%/system/modules/rep_base/languages/en
+@dirrm %%WWWDIR%%/system/modules/rep_base/languages
+@dirrm %%WWWDIR%%/system/modules/rep_base
+@dirrm %%WWWDIR%%/system/modules/rep_client/config
+@dirrm %%WWWDIR%%/system/modules/rep_client/dca
+@dirrm %%WWWDIR%%/system/modules/rep_client/languages/de
+@dirrm %%WWWDIR%%/system/modules/rep_client/languages/en
+@dirrm %%WWWDIR%%/system/modules/rep_client/languages
+@dirrm %%WWWDIR%%/system/modules/rep_client/templates
+@dirrm %%WWWDIR%%/system/modules/rep_client/themes/default/images
+@dirrm %%WWWDIR%%/system/modules/rep_client/themes/default
+@dirrm %%WWWDIR%%/system/modules/rep_client/themes
+@dirrm %%WWWDIR%%/system/modules/rep_client
 @dirrm %%WWWDIR%%/system/modules/rss_reader/config
 @dirrm %%WWWDIR%%/system/modules/rss_reader/dca
 @dirrm %%WWWDIR%%/system/modules/rss_reader/languages/de
