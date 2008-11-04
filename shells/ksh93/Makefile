@@ -17,6 +17,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
@@ -26,6 +27,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
+CONFLICTS=	ksh93-devel-200*
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
 VERSION=	2008-07-25
