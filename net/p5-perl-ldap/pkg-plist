@@ -17,6 +17,9 @@
 %%SITE_PERL%%/Net/LDAP/Control/ProxyAuth.pm
 %%SITE_PERL%%/Net/LDAP/Control/Sort.pm
 %%SITE_PERL%%/Net/LDAP/Control/SortResult.pm
+%%SITE_PERL%%/Net/LDAP/Control/SyncDone.pm
+%%SITE_PERL%%/Net/LDAP/Control/SyncRequest.pm
+%%SITE_PERL%%/Net/LDAP/Control/SyncState.pm
 %%SITE_PERL%%/Net/LDAP/Control/VLV.pm
 %%SITE_PERL%%/Net/LDAP/Control/VLVResponse.pm
 %%SITE_PERL%%/Net/LDAP/DSML.pm
@@ -31,6 +34,8 @@
 %%SITE_PERL%%/Net/LDAP/Filter.pm
 %%SITE_PERL%%/Net/LDAP/Filter.pod
 %%SITE_PERL%%/Net/LDAP/FilterMatch.pm
+%%SITE_PERL%%/Net/LDAP/Intermediate.pm
+%%SITE_PERL%%/Net/LDAP/Intermediate/SyncInfo.pm
 %%SITE_PERL%%/Net/LDAP/LDIF.pm
 %%SITE_PERL%%/Net/LDAP/LDIF.pod
 %%SITE_PERL%%/Net/LDAP/Message.pm
@@ -50,6 +55,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/LDAP/Control
+@dirrm %%SITE_PERL%%/Net/LDAP/Intermediate
 @dirrm %%SITE_PERL%%/Net/LDAP/Extension
 @dirrm %%SITE_PERL%%/Net/LDAP
 @dirrm %%SITE_PERL%%/Bundle/Net
