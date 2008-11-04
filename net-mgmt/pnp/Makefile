@@ -7,7 +7,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pnp4nagios
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
-USE_PHP=	zlib gd xml
+USE_PHP=	zlib gd xml pcre
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
 MAN1=		pnpsender.1
