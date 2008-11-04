@@ -9,7 +9,7 @@ PORTNAME=	rt
 PORTVERSION?=	3.6.7
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
+MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/devel/
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vivek@khera.org
-COMMENT?=	RT is an industrial-grade ticketing system written in Perl
+COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
