@@ -7,6 +7,7 @@
 
 PORTNAME=	Perl-Version
 PORTVERSION=	1.007
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +30,7 @@ BUILD_DEPENDS+=	p5-Pod-Parser>=1.3:${PORTSDIR}/textproc/p5-Pod-Parser
 RUN_DEPENDS+=	p5-Pod-Parser>=1.3:${PORTSDIR}/textproc/p5-Pod-Parser
 .endif
 BUILD_DEPENDS+=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp
-RUND_DEPENDS+=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp
+RUN_DEPENDS+=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp
 MAN1=		perl-reversion.1
 PROMPT=		Y
 PLIST_SUB=	PERLREVERSION=
