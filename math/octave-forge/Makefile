@@ -21,8 +21,6 @@ COMMENT=	Octave-forge metaport for math/octave
 #    work on these, I would appreciate it.
 #  * vrml builds, but is non functional, as it depends on freewrl, which is
 #    not yet available on FreeBSD.
-#  * fpl builds, but will not function on amd64 or sparc64, as it depends on
-#    opendx, which does not build on those architectures.
 
 OPTIONS= \
 	ANN "Install package: ann" On \
