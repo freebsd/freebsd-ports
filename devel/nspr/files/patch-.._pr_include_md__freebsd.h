@@ -1,6 +1,15 @@
---- ../pr/include/md/_freebsd.h.orig	Mon Nov 22 16:24:53 2004
-+++ ../pr/include/md/_freebsd.h	Sun Jul 23 13:15:29 2006
-@@ -106,6 +106,16 @@
+--- ../pr/include/md/_freebsd.h
++++ ../pr/include/md/_freebsd.h
+@@ -57,6 +57,8 @@
+ #define _PR_SI_ARCHITECTURE "ia64"
+ #elif defined(__amd64__)
+ #define _PR_SI_ARCHITECTURE "amd64"
++#elif defined(__powerpc__)
++#define _PR_SI_ARCHITECTURE "powerpc"
+ #else
+ #error "Unknown CPU architecture"
+ #endif
+@@ -106,6 +108,16 @@
  #define _PR_IPV6_V6ONLY_PROBE
  #endif
  
