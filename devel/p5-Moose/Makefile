@@ -98,7 +98,7 @@ MAN3=	Moose.3 \
 	oose.3
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGDIR}/pkg-message
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires, or m,^check_conflicts,' ${WRKSRC}/Makefile.PL

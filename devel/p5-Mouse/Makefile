@@ -28,7 +28,7 @@ MAN3=	Mouse.3 \
 	ouse.3
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGDIR}/pkg-message
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
