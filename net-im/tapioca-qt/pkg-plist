@@ -4,7 +4,6 @@ lib/libQtTapioca.so.0
 lib/libQtTapioca.so
 include/QtTapioca/Avatar
 include/QtTapioca/avatar.h
-include/QtTapioca/CMakeLists.txt
 include/QtTapioca/Channel
 include/QtTapioca/channel.h
 include/QtTapioca/ChannelTarget
@@ -34,5 +33,7 @@ include/QtTapioca/usercontact.h
 include/QtTapioca/TextChannel
 include/QtTapioca/textchannel.h
 include/QtTapioca/StreamChannel
+include/QtTapioca/streamchannel.h
 include/QtTapioca/Stream
+include/QtTapioca/stream.h
 @dirrm include/QtTapioca
