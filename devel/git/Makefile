@@ -7,7 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.6.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -155,8 +155,16 @@ MAN1=		git.1 \
 		git-write-tree.1
 MAN3=		Git.3
 MAN5=		gitattributes.5 \
+		githooks.5 \
 		gitignore.5 \
-		gitmodules.5
+		gitmodules.5 \
+		gitrepository-layout.5
+MAN7=		gitcli.7 \
+		gitglossary.7 \
+		gittutorial.7 \
+		gitcore-tutorial.7 \
+		gitdiffcore.7 \
+		gittutorial-2.7
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -235,6 +243,7 @@ PLIST_SUB+=	P4="@comment "
 
 .ifdef (WITH_CVS)
 MAN1+=		git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
+MAN7+=		gitcvs-migration.7
 PLIST_SUB+=	CVS=""
 RUN_DEPENDS+=	cvsps:${PORTSDIR}/devel/cvsps
 .else
