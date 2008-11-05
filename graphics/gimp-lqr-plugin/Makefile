@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	gimp-lqr-plugin
-DISTVERSION=	0.4.0-4
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://liquidrescale.wikidot.com/local--files/en:download-page/ \
+MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
 
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		lqr-1.0:${PORTSDIR}/graphics/liblqr-1
+		lqr-1.1:${PORTSDIR}/graphics/liblqr-1
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
