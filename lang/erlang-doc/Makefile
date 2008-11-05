@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	erlang-doc
-PORTVERSION=	r12b4
+PORTVERSION=	r12b5
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.erlang.org/documentation/doc-5.6.4/pdf/:release \
+MASTER_SITES=	http://www.erlang.org/documentation/doc-5.6.5/pdf/:release \
 		http://erlang.org/download/:erlangorg \
 		http://www.erlang.se/doc/:erlangse \
 		http://www.erlang.se/publications/:publications \
@@ -18,61 +18,64 @@ MASTER_SITES=	http://www.erlang.org/documentation/doc-5.6.4/pdf/:release \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	olgeni/:local
 DISTFILES=	appmon-2.1.9.pdf:release \
-		asn1-1.6.pdf:release \
-		common_test-1.3.3.pdf:release \
-		compiler-4.5.4.pdf:release \
-		cosEvent-2.1.3.pdf:release \
-		cosEventDomain-1.1.3.pdf:release \
-		cosFileTransfer-1.1.5.pdf:release \
-		cosNotification-1.1.7.pdf:release \
-		cosProperty-1.1.6.pdf:release \
-		cosTime-1.1.3.pdf:release \
-		cosTransactions-1.2.4.pdf:release \
-		crypto-1.5.2.1.pdf:release \
-		debugger-3.1.1.3.pdf:release \
-		design_principles-5.6.4.pdf:release \
-		dialyzer-1.8.2.pdf:release \
+		asn1-1.6.2.pdf:release \
+		common_test-1.3.4.pdf:release \
+		compiler-4.5.5.pdf:release \
+		cosEvent-2.1.4.pdf:release \
+		cosEventDomain-1.1.4.pdf:release \
+		cosFileTransfer-1.1.6.pdf:release \
+		cosNotification-1.1.9.pdf:release \
+		cosProperty-1.1.7.pdf:release \
+		cosTime-1.1.4.pdf:release \
+		cosTransactions-1.2.5.pdf:release \
+		crypto-1.5.3.pdf:release \
+		debugger-3.1.1.4.pdf:release \
+		design_principles-5.6.5.pdf:release \
+		dialyzer-1.8.3.pdf:release \
 		docbuilder-0.9.8.4.pdf:release \
-		edoc-0.7.6.pdf:release \
-		efficiency_guide-5.6.4.pdf:release \
-		embedded-5.6.4.pdf:release \
-		erl_interface-3.5.8.pdf:release \
-		erts-5.6.4.pdf:release \
+		edoc-0.7.6.2.pdf:release \
+		efficiency_guide-5.6.5.pdf:release \
+		embedded-5.6.5.pdf:release \
+		erl_interface-3.5.9.pdf:release \
+		erts-5.6.5.pdf:release \
 		et-1.3.pdf:release \
-		getting_started-5.6.4.pdf:release \
+		eunit-2.0.pdf:release \
+		getting_started-5.6.5.pdf:release \
 		gs-1.5.9.pdf:release \
-		ic-4.2.18.pdf:release \
-		inets-5.0.10.pdf:release \
-		installation_guide-5.6.4.pdf:release \
+		ic-4.2.19.pdf:release \
+		index.html:release \
+		inets-5.0.12.pdf:release \
+		installation_guide-5.6.5.pdf:release \
 		inviso-0.6.pdf:release \
-		jinterface-1.4.1.pdf:release \
-		kernel-2.12.4.pdf:release \
-		megaco-3.8.1.pdf:release \
-		mnesia-4.4.5.pdf:release \
-		oam-5.6.4.pdf:release \
+		jinterface-1.4.2.pdf:release \
+		kernel-2.12.5.pdf:release \
+		megaco-3.9.1.1.pdf:release \
+		mnesia-4.4.7.pdf:release \
+		oam-5.6.5.pdf:release \
 		observer-0.9.7.4.pdf:release \
 		odbc-2.10.3.pdf:release \
-		orber-3.6.9.pdf:release \
-		os_mon-2.1.7.pdf:release \
+		orber-3.6.10.pdf:release \
+		os_mon-2.1.8.pdf:release \
 		otp_mibs-1.0.4.1.pdf:release \
 		parsetools-1.4.5.pdf:release \
-		percept-0.7.2.pdf:release \
+		percept-0.7.3.pdf:release \
 		pman-2.6.pdf:release \
-		programming_examples-5.6.4.pdf:release \
-		reference_manual-5.6.4.pdf:release \
-		runtime_tools-1.7.2.pdf:release \
-		sasl-2.1.5.3.pdf:release \
-		snmp-4.11.1.pdf:release \
-		ssh-1.0.pdf:release \
-		ssl-3.9.pdf:release \
-		stdlib-1.15.4.pdf:release \
-		syntax_tools-1.5.5.pdf:release \
-		system_architecture_intro-5.6.4.pdf:release \
-		system_principles-5.6.4.pdf:release \
-		test_server-3.2.3.pdf:release \
+		programming_examples-5.6.5.pdf:release \
+		public_key-0.1.pdf:release \
+		reference_manual-5.6.5.pdf:release \
+		runtime_tools-1.7.3.pdf:release \
+		sasl-2.1.5.4.pdf:release \
+		snmp-4.12.pdf:release \
+		ssh-1.0.2.pdf:release \
+		ssl-3.10.pdf:release \
+		stdlib-1.15.5.pdf:release \
+		syntax_tools-1.5.6.pdf:release \
+		system_architecture_intro-5.6.5.pdf:release \
+		system_principles-5.6.5.pdf:release \
+		test_server-3.2.4.pdf:release \
 		toolbar-1.3.0.1.pdf:release \
 		tools-2.6.2.pdf:release \
-		tutorial-5.6.4.pdf:release \
+		tutorial-5.6.5.pdf:release \
 		tv-2.1.4.2.pdf:release \
 		webtool-0.8.3.2.pdf:release \
 		xmerl-1.1.10.pdf:release \
@@ -82,7 +85,6 @@ DISTFILES=	appmon-2.1.9.pdf:release \
 		mnesia_overview.pdf:publications \
 		programming_rules.pdf:erlangse \
 		master_thesis_patterns.pdf:local
-
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
