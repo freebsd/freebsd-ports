@@ -7,14 +7,15 @@
 
 PORTNAME=	gimpfx-foundry
 PORTVERSION=	20080323
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-scriptpack-${PORTVERSION}
 
 MAINTAINER=	cmt@burggraben.net
-COMMENT=	A collection of scripts for The Gimp 2.4
+COMMENT=	A collection of scripts for The Gimp 2.6
 
-RUN_DEPENDS=	gimp-2.4:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	gimp-2.6:${PORTSDIR}/graphics/gimp-app
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
