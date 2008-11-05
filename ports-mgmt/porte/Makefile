@@ -6,6 +6,7 @@
 
 PORTNAME=	porte
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt haskell
 MASTER_SITES=	http://kerneled.org/releases/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	stringsearch
 PORTVERSION=	0.2.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/stringsearch/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
