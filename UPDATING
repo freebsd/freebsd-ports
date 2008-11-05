@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081105:
+  AFFECTS: users of french/pluxm-devel
+  AUTHOR: jadawin@FreeBSD.org
+
+  Please, use
+  http://download.pluxml.org/plugins/migration-blog-beta3x-beta4.zip to
+  migrate. It's strongly advised to backup your blog before updating.
+
 20081102:
   AFFECTS: users of devel/git
   AUTHOR: wxs@FreeBSD.org
