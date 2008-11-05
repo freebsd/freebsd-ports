@@ -177,6 +177,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	et_viewer.3 \
 	etop.3 \
 	ets.3 \
+	eunit.3 \
 	file.3 \
 	file_sorter.3 \
 	filelib.3 \
@@ -274,6 +275,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	prettypr.3 \
 	proc_lib.3 \
 	proplists.3 \
+	public_key.3 \
 	qlc.3 \
 	queue.3 \
 	random.3 \

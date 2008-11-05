@@ -12,11 +12,3 @@ $FreeBSD$
      echo "$as_me:$LINENO: checking for netinet/sctp.h" >&5
  echo $ECHO_N "checking for netinet/sctp.h... $ECHO_C" >&6
  if test "${ac_cv_header_netinet_sctp_h+set}" = set; then
-@@ -10679,7 +10679,6 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lsctp  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
