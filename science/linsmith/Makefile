@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.10
-PORTREVISION=	0
-CATEGORIES=	science
+PORTVERSION=	0.99.11
+CATEGORIES=	science hamradio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Smith charting program
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
