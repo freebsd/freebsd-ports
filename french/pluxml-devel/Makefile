@@ -4,13 +4,13 @@
 # $FreeBSD$
 
 PORTNAME=	pluxml
-PORTVERSION=	3
+PORTVERSION=	4
 CATEGORIES=	french www
 MASTER_SITES=	http://pluxml.org/download/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-blog-beta${PORTVERSION}
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small weblog in php and xml
 
 USE_ZIP=	yes
@@ -31,10 +31,7 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 do-install:
 	${MKDIR} ${WWWDIR}
-.for  data in core images version
-	${CP} -R ${WRKSRC}/${data} ${WWWDIR}
-.endfor
-	${CP} ${WRKSRC}/*.php ${WWWDIR}
+	${CP} -R ${WRKSRC} ${WWWDIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:

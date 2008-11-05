@@ -1,3 +1,10 @@
+*******
+WARNING
+*******
+
+Use http://download.pluxml.org/plugins/migration-blog-beta3x-beta4.zip
+if you migrate to version 4 from 3
+
 ---------------------------------------------------------------------------
 
 Browse http://your.host.tld/%%PORTNAME%%/install.php to configure your blog
