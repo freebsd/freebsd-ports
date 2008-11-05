@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pspp
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -43,6 +43,7 @@ PLIST_SUB+=	NLS=""
 
 .if defined(WITH_GUI)
 LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
+RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 USE_GNOME+=	libglade2
 PLIST_SUB+=	GUI=""
 .else

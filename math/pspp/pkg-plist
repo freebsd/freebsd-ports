@@ -21,7 +21,6 @@ etc/pspp/psfonts/Times-Roman.afm
 %%GUI%%lib/pspp/libpsppwidgets.la
 %%GUI%%lib/pspp/libpsppwidgets.so
 %%GUI%%lib/pspp/libpsppwidgets.so.0
-%%NLS%%share/locale/de/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/pspp.mo
 %%GUI%%%%DATADIR%%/crosstabs.glade
 %%GUI%%%%DATADIR%%/data-editor.glade
