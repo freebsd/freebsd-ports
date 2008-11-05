@@ -39,6 +39,7 @@
    SUBDIR += portcheckout
    SUBDIR += portconf
    SUBDIR += portdowngrade
+   SUBDIR += porte
    SUBDIR += porteasy
    SUBDIR += portell
    SUBDIR += portless
