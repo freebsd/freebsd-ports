@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	basicdsp
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	cad hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/ \
 		${MASTER_SITE_LOCAL}
@@ -28,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%WX_CONFIG%%|${WX_CONFIG}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_MAN}	${FILESDIR}/basicdsp.1 ${MANPREFIX}/man/man1/basicdsp.1
+	${INSTALL_MAN}	${WRKSRC}/basicdsp.1 ${MANPREFIX}/man/man1/basicdsp.1
 	${INSTALL_PROGRAM}	${WRKSRC}/basicdsp ${PREFIX}/bin/
 
 .include <bsd.port.mk>
