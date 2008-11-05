@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.0
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -32,7 +32,6 @@ CONFLICTS=	samhain-client-2*
 
 .if ${ARCH} == "amd64"
 CFLAGS+=        -fPIC
-BROKEN=		does not compile
 .endif
 
 .if defined(WITH_GPG)
