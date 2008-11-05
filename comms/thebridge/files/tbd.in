@@ -1,9 +1,18 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
 # PROVIDE: tbd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
 # KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable tbd:
+#
+# tbd_enable="YES"
+#
 
 tbd_enable=${tbd_enable-"NO"}
 tbd_flags=${tbd_flags-""}

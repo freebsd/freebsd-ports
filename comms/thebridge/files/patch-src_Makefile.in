@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2008-03-06 09:42:41.000000000 -0500
-+++ src/Makefile.in	2008-03-21 16:04:16.000000000 -0400
-@@ -114,7 +114,7 @@
+--- src/Makefile.in.orig	2008-09-15 02:08:08.000000000 +0900
++++ src/Makefile.in	2008-11-05 20:19:18.000000000 +0900
+@@ -117,7 +117,7 @@
  tbd_OBJECTS = $(am_tbd_OBJECTS)
  am__DEPENDENCIES_1 =
  @LINK_BOX_FALSE@tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
@@ -9,27 +9,27 @@
  @LINK_BOX_FALSE@	$(am__DEPENDENCIES_1)
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
-@@ -223,12 +223,12 @@
- @LINK_BOX_TRUE@		   dirclient.c dirclient.h thebridge.c users.c users.h \
- @LINK_BOX_TRUE@		   hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
+@@ -226,12 +226,12 @@
+ @LINK_BOX_TRUE@                   dirclient.c dirclient.h thebridge.c users.c users.h \
+ @LINK_BOX_TRUE@                   hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
  
 -@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib -I$(top_srcdir)/spandsp \
 +@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/spandsp \
- @LINK_BOX_FALSE@	      -DSYSCON_DIR=\"$(sysconfdir)\"
+ @LINK_BOX_FALSE@              -DSYSCON_DIR=\"$(sysconfdir)\"
  
  @LINK_BOX_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/inc \
  @LINK_BOX_TRUE@	-I$(top_srcdir)/gsm/inc -DLINK_BOX \
 -@LINK_BOX_TRUE@	-I$(top_srcdir)/zlib -I$(top_srcdir)/linkbox \
 +@LINK_BOX_TRUE@	-I$(top_srcdir)/linkbox \
  @LINK_BOX_TRUE@	-DSYSCON_DIR=\"$(sysconfdir)\" $(am__append_1)
- @LINK_BOX_FALSE@AM_CFLAGS = -Wall -lm $(am__append_2)
+ @LINK_BOX_FALSE@AM_CFLAGS = -Wall $(am__append_2)
  @LINK_BOX_TRUE@AM_CFLAGS = -Wall $(am__append_2)
-@@ -236,7 +236,7 @@
- @LINK_BOX_FALSE@	dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
- @LINK_BOX_FALSE@	eventhook.c eventhook.h avrs.c avrs.h
+@@ -239,7 +239,7 @@
+ @LINK_BOX_FALSE@        dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
+ @LINK_BOX_FALSE@        eventhook.c eventhook.h avrs.c avrs.h
  
 -@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a $(top_builddir)/zlib/libzlib.a \
 +@LINK_BOX_FALSE@tbd_LDADD = $(top_builddir)/common/libcommon.a -lz \
- @LINK_BOX_FALSE@	    $(LIBDMALLOC)
+ @LINK_BOX_FALSE@            $(LIBDMALLOC) -lm
  
  all: all-am
