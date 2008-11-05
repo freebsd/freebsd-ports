@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	liblqr-1
-DISTVERSION=	0.1.0-1
-PORTREVISION=	1
+DISTVERSION=	0.2.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://liblqr.wikidot.com/local--files/en:download-page/ \
+MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An easy to use C/C++ seam carving library
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 pkgconfig
 
@@ -25,7 +25,8 @@ USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
 
 PORTDOCS=	*
 .endif
@@ -38,15 +39,19 @@ PKGMESSAGE=	${WRKDIR}/pkg_message
 .include <bsd.port.pre.mk>
 
 post-patch:
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e 's|-fvisibility=hidden||' ${WRKSRC}/lqr/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e '/^lqr_pkgconfigdir/ s|$$(libdir)|$${exec_prefix}/libdata|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr.*chunk\.xsl|${LOCALBASE}/share/xsl/docbook/html/chunk.xsl|' \
 		${WRKSRC}/docs/lqr_style.xsl
+	@${REINPLACE_CMD} -e 's|/usr.*docbookx.dtd|${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd|' \
+		${WRKSRC}/docs/liblqr_manual.docbook
 
 post-build:
 .if !defined(NOPORTDOCS)
-	${RM} ${WRKSRC}/examples/*.orig
-	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE} xml
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE} html
 .endif
 
 post-install:
