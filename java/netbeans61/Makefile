@@ -12,7 +12,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-200805300101-ml
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_ZIP=	yes

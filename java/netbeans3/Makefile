@@ -12,7 +12,7 @@ CATEGORIES=	java devel
 MASTER_SITES=
 DISTNAME=	netbeans-3_6
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_BZIP2=	yes
