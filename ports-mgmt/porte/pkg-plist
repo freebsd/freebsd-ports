@@ -10,6 +10,7 @@ share/doc/porte-%%PORTVERSION%%/LICENSE
 @dirrm lib/porte-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Porte
 @dirrm lib/porte-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
 @dirrm lib/porte-%%PORTVERSION%%
+@exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister porte
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

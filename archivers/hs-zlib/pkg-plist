@@ -13,6 +13,7 @@ share/doc/zlib-%%PORTVERSION%%/LICENSE
 @dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Codec
 @dirrm lib/zlib-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
 @dirrm lib/zlib-%%PORTVERSION%%
+@exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister zlib
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -10,6 +10,7 @@ share/doc/stringsearch-%%PORTVERSION%%/LICENSE
 @dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
 @dirrm lib/stringsearch-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
 @dirrm lib/stringsearch-%%PORTVERSION%%
+@exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister stringsearch 
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

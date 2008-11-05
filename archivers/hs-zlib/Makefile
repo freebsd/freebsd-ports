@@ -6,6 +6,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	0.5.0.0
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://kerneled.org/tmp/
