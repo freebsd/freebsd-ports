@@ -7,7 +7,7 @@
 
 PORTNAME=	libsyncml
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://libsyncml.opensync.org/download/releases/${PORTVERSION}/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
@@ -18,8 +18,6 @@ COMMENT=	SyncML protocol library for PIM data synchronization
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2 \
 		openobex:${PORTSDIR}/comms/openobex \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup22
-
-BROKEN=		does not compile
 
 USE_AUTOTOOLS=	autoheader:262 automake:110 libtool:15
 GNU_CONFIGURE=	yes
@@ -34,5 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC}; ${ACLOCAL}
 
 .include <bsd.port.mk>
