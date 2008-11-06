@@ -15,11 +15,14 @@ COMMENT=	Client side ident protocol daemon wrapper
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 
+PORTDOCS=	README
+PLIST_FILES=	libexec/identify
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/identify ${PREFIX}/libexec
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/identify
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/identify
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
