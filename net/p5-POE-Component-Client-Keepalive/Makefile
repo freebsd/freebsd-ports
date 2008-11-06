@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	POE-Component-Client-Keepalive
-PORTVERSION=	0.1000
+PORTVERSION=	0.2100
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for managing connections, with keep-alive
