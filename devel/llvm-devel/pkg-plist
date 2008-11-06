@@ -68,12 +68,14 @@ include/llvm/ADT/Tree.h
 include/llvm/ADT/Trie.h
 include/llvm/ADT/UniqueVector.h
 include/llvm/ADT/VectorExtras.h
+include/llvm/ADT/hash_map.cmake
 include/llvm/ADT/hash_map.h
+include/llvm/ADT/hash_set.cmake
 include/llvm/ADT/hash_set.h
 include/llvm/ADT/ilist.h
 include/llvm/ADT/ilist_node.h
+include/llvm/ADT/iterator.cmake
 include/llvm/ADT/iterator.h
-include/llvm/ADT/iterator
 include/llvm/AbstractTypeUser.h
 include/llvm/Analysis/AliasAnalysis.h
 include/llvm/Analysis/AliasSetTracker.h
@@ -83,6 +85,7 @@ include/llvm/Analysis/ConstantFolding.h
 include/llvm/Analysis/ConstantsScanner.h
 include/llvm/Analysis/DominatorInternals.h
 include/llvm/Analysis/Dominators.h
+include/llvm/Analysis/EscapeAnalysis.h
 include/llvm/Analysis/FindUsedTypes.h
 include/llvm/Analysis/Interval.h
 include/llvm/Analysis/IntervalIterator.h
@@ -110,6 +113,7 @@ include/llvm/Assembly/AsmAnnotationWriter.h
 include/llvm/Assembly/Parser.h
 include/llvm/Assembly/PrintModulePass.h
 include/llvm/Assembly/Writer.h
+include/llvm/Attributes.h
 include/llvm/AutoUpgrade.h
 include/llvm/BasicBlock.h
 include/llvm/Bitcode/Archive.h
@@ -175,8 +179,15 @@ include/llvm/CodeGen/SelectionDAGISel.h
 include/llvm/CodeGen/SelectionDAGNodes.h
 include/llvm/CodeGen/ValueTypes.h
 include/llvm/CodeGen/ValueTypes.td
+include/llvm/CompilerDriver/Action.h
+include/llvm/CompilerDriver/Tool.h
+include/llvm/CompilerDriver/Plugin.h
+include/llvm/CompilerDriver/Tools.td
+include/llvm/CompilerDriver/CompilationGraph.h
+include/llvm/CompilerDriver/Common.td
 include/llvm/Config/alloca.h
 include/llvm/Config/config.h
+include/llvm/Config/config.h.cmake
 include/llvm/Constant.h
 include/llvm/Constants.h
 include/llvm/Debugger/Debugger.h
@@ -204,6 +215,7 @@ include/llvm/IntrinsicInst.h
 include/llvm/Intrinsics.gen
 include/llvm/Intrinsics.h
 include/llvm/Intrinsics.td
+include/llvm/IntrinsicsAlpha.td
 include/llvm/IntrinsicsARM.td
 include/llvm/IntrinsicsCellSPU.td
 include/llvm/IntrinsicsPowerPC.td
@@ -214,7 +226,6 @@ include/llvm/Linker.h
 include/llvm/Module.h
 include/llvm/ModuleProvider.h
 include/llvm/OperandTraits.h
-include/llvm/ParameterAttributes.h
 include/llvm/Pass.h
 include/llvm/PassAnalysisSupport.h
 include/llvm/PassManager.h
@@ -234,11 +245,14 @@ include/llvm/Support/ConstantFolder.h
 include/llvm/Support/DOTGraphTraits.h
 include/llvm/Support/DataFlow.h
 include/llvm/Support/DataTypes.h
+include/llvm/Support/DataTypes.h.cmake
 include/llvm/Support/Debug.h
+include/llvm/Support/DebugInfoBuilder.h
 include/llvm/Support/Dwarf.h
 include/llvm/Support/DynamicLinker.h
 include/llvm/Support/ELF.h
 include/llvm/Support/FileUtilities.h
+include/llvm/Support/Format.h
 include/llvm/Support/GetElementPtrTypeIterator.h
 include/llvm/Support/GraphWriter.h
 include/llvm/Support/IRBuilder.h
@@ -474,6 +488,7 @@ lib/libLLVMipo.a
 @dirrm include/llvm/ExecutionEngine
 @dirrm include/llvm/Debugger
 @dirrm include/llvm/Config
+@dirrm include/llvm/CompilerDriver
 @dirrm include/llvm/CodeGen
 @dirrm include/llvm/Bitcode
 @dirrm include/llvm/Assembly
