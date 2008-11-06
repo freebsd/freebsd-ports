@@ -1,0 +1,12 @@
+The filter aims to make SMTP data transparent just before going onto the
+wire as per RFC 821 Simple Mail Transfer Protocol Section 4.5.2.
+TRANSPARENCY.  See http://www.faqs.org/rfcs/rfc821.html for details.
+
+Conversely the filter takes transparent data from the wire and converts
+it to the original format.
+
+The main purpose of this filter is to help POE::Component::Client::SMTP
+create transparent messages when comunicating with an SMTP server.
+However the filter can be used by any Perl SMTP client or server.
+
+WWW: http://search.cpan.org/dist/POE-Filter-Transparent-SMTP/
