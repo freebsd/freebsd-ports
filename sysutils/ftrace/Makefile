@@ -26,7 +26,9 @@ PORTDOCS=	COPYING README TODO ChangeLog
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/ftrace ${PREFIX}/bin
 		${INSTALL_DATA} ${WRKSRC}/libftrace.so ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
