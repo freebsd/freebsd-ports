@@ -31,6 +31,7 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/base_8h-source.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/byteorder_8c.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/byteorder_8h-source.html
+%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/classes.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/cursesplay_8c-example.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/datafile_8c.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/datafile_8h-source.html
