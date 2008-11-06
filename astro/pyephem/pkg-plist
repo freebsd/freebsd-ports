@@ -29,6 +29,9 @@
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_236872.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_244811.py
+%%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_244811.pyc
+%%PYTHON_SITELIBDIR%%/ephem/tests/launchpad_244811.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_angles.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_angles.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_angles.pyo

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pyephem
-PORTVERSION=	3.7.3.1
+PORTVERSION=	3.7.3.3
 PORTEPOCH=	1
 CATEGORIES=	astro math hamradio
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP:S"%SUBDIR%"source/p/pyephem"} \
 		${MASTER_SITE_LOCAL:S"%SUBDIR%"db"}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Scientific-grade astronomical computations for Python
 
 USE_PYTHON=	2.4+
