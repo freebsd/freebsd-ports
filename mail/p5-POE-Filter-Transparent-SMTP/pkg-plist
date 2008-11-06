@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP/.packlist
+%%SITE_PERL%%/POE/Filter/Transparent/SMTP.pm
+@dirrmtry %%SITE_PERL%%/POE/Filter/Transparent
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent/SMTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/Transparent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
