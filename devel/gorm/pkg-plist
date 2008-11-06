@@ -151,6 +151,9 @@ System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.go
 System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/objects.gorm
@@ -166,6 +169,9 @@ System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/object
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/objects.gorm
@@ -192,7 +198,13 @@ System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/
 System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/FileIcon_gmodel.tiff
+System/Applications/Gorm.app/Resources/GModel.plugin/GModel
+System/Applications/Gorm.app/Resources/GModel.plugin/Resources/Info-gnustep.plist
+System/Applications/Gorm.app/Resources/GModel.plugin/stamp.make
 System/Applications/Gorm.app/Resources/Gorm.desktop
+System/Applications/Gorm.app/Resources/Gorm.plugin/Gorm
+System/Applications/Gorm.app/Resources/Gorm.plugin/Resources/Info-gnustep.plist
+System/Applications/Gorm.app/Resources/Gorm.plugin/stamp.make
 System/Applications/Gorm.app/Resources/Gorm.tiff
 System/Applications/Gorm.app/Resources/GormAction.tiff
 System/Applications/Gorm.app/Resources/GormActionSelected.tiff
@@ -227,6 +239,9 @@ System/Applications/Gorm.app/Resources/GormView.tiff
 System/Applications/Gorm.app/Resources/GormWindow.tiff
 System/Applications/Gorm.app/Resources/Info-gnustep.plist
 System/Applications/Gorm.app/Resources/LeftArr.tiff
+System/Applications/Gorm.app/Resources/Nib.plugin/Nib
+System/Applications/Gorm.app/Resources/Nib.plugin/Resources/Info-gnustep.plist
+System/Applications/Gorm.app/Resources/Nib.plugin/stamp.make
 System/Applications/Gorm.app/Resources/RightArr.tiff
 System/Applications/Gorm.app/Resources/Sunday_seurat.tiff
 System/Applications/Gorm.app/Resources/VersionProfiles.plist
@@ -295,6 +310,8 @@ System/Library/Headers/GormCore/GormOpenGLView.h
 System/Library/Headers/GormCore/GormOutlineView.h
 System/Library/Headers/GormCore/GormPalettesManager.h
 System/Library/Headers/GormCore/GormPlacementInfo.h
+System/Library/Headers/GormCore/GormPlugin.h
+System/Library/Headers/GormCore/GormPluginManager.h
 System/Library/Headers/GormCore/GormPrivate.h
 System/Library/Headers/GormCore/GormProtocol.h
 System/Library/Headers/GormCore/GormResource.h
@@ -332,6 +349,7 @@ System/Library/Headers/GormPrefs/GormGeneralPref.h
 System/Library/Headers/GormPrefs/GormGuidelinePref.h
 System/Library/Headers/GormPrefs/GormHeadersPref.h
 System/Library/Headers/GormPrefs/GormPalettesPref.h
+System/Library/Headers/GormPrefs/GormPluginsPref.h
 System/Library/Headers/GormPrefs/GormPrefController.h
 System/Library/Headers/GormPrefs/GormShelfPref.h
 System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
@@ -373,17 +391,27 @@ System/Tools/Gorm
 @dirrm System/Library/Headers/GormPrefs
 @dirrm System/Library/Headers/GormObjCHeaderParser
 @dirrm System/Library/Headers/GormCore
+@dirrm System/Library/Headers
+@dirrm System/Library
+@dirrm System/Applications/Gorm.app/Resources/Nib.plugin/Resources
+@dirrm System/Applications/Gorm.app/Resources/Nib.plugin
+@dirrm System/Applications/Gorm.app/Resources/Gorm.plugin/Resources
+@dirrm System/Applications/Gorm.app/Resources/Gorm.plugin
+@dirrm System/Applications/Gorm.app/Resources/GModel.plugin/Resources
+@dirrm System/Applications/Gorm.app/Resources/GModel.plugin
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm
