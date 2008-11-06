@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20081030
+PORTREVISION=	1
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
@@ -112,6 +113,7 @@ GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
+BROKEN=		doesn't build without GTK gui at the moment
 .endif
 
 .if defined(WITH_KDE)
@@ -164,6 +166,7 @@ USE_SDL+=		sdl
 .elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER)
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
+USE_SDL+=		sdl
 .elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=	--enable-media=none
 .else
