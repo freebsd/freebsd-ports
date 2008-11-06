@@ -18,11 +18,14 @@ COMMENT=	A stacheldraht (DOS attack) agent detector
 
 ALL_TARGET=	gag
 
+PORTDOCS=	README
+PLIST_FILES=	sbin/gag
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gag ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gag
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/gag
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
