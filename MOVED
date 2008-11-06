@@ -3659,3 +3659,5 @@ japanese/jvim3-direct_canna|japanese/jvim3|2008-10-28|Integrated into japanese/j
 japanese/jvim3-freewnn|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-wnn6|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-wnn7|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
+security/libfwbuilder2|security/libfwbuilder|2008-11-05|replaced by libfwbuilder 3.0
+security/fwbuilder2|security/fwbuilder|2008-11-05|replaced by fwbuilder 3.0
