@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://libsyncml.opensync.org/download/releases/${PORTVERSION}/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	SyncML protocol library for PIM data synchronization
 
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2 \
