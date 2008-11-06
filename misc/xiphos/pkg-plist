@@ -141,8 +141,12 @@ share/pixmaps/gnomesword/epiphany-unsecure.png
 share/pixmaps/gnomesword/gnome-session.png
 share/pixmaps/gnomesword/gnome-window-manager.png
 share/pixmaps/gnomesword/gnome-windows.png
+share/pixmaps/gnomesword/gnomesword.svg
+share/pixmaps/gnomesword/gs2-48x48-old.ico
+share/pixmaps/gnomesword/gs2-48x48-old.png
 share/pixmaps/gnomesword/gs2-48x48.ico
 share/pixmaps/gnomesword/gs2-48x48.png
+share/pixmaps/gnomesword/gs2.xpm
 share/pixmaps/gnomesword/init-settings.png
 share/pixmaps/gnomesword/logo.png
 share/pixmaps/gnomesword/mozilla-icon.png
