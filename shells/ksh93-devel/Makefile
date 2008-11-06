@@ -41,6 +41,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T Beta release of KornShell 93
 
+EXPIRATION_DATE=	2008-12-06
+DEPRECATED=	This port is Outdated.  Please use shells/ksh93
+
 CONFLICTS=	ksh93-200*
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
