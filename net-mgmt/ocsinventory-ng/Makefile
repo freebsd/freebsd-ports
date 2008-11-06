@@ -6,7 +6,7 @@
 
 PORTNAME=	ocsinventory-ng
 PORTVERSION=	1.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ocsinventory
@@ -15,7 +15,7 @@ DISTNAME=	OCSNG_LINUX_SERVER_${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Open Computer and Software Inventory Next Generation
 
-RUN_DEPENDS=	${PORTSDIR}/www/mod_perl \
+RUN_DEPENDS=	${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 
-USE_APACHE=	1.3+
+USE_APACHE=	2.0+
 USE_MYSQL=	yes
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
