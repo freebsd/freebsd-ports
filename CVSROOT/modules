@@ -5036,6 +5036,7 @@ hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
 hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
 hs-x11-ghc                      ports/x11/hs-x11-ghc
+hs-zlib                         ports/archivers/hs-zlib
 hsb-aspell                      ports/textproc/hsb-aspell
 hsetroot                        ports/graphics/hsetroot
 hsftp                           ports/ftp/hsftp
@@ -6664,6 +6665,7 @@ krusader                        ports/x11-fm/krusader
 kscope                          ports/devel/kscope
 kseg                            ports/math/kseg
 ksh93                           ports/shells/ksh93
+ksh93-devel                     ports/shells/ksh93-devel
 kshowmail                       ports/mail/kshowmail
 kshutdown                       ports/sysutils/kshutdown
 ksig                            ports/misc/ksig
@@ -17302,6 +17304,7 @@ portcheck                       ports/ports-mgmt/portcheck
 portcheckout                    ports/ports-mgmt/portcheckout
 portconf                        ports/ports-mgmt/portconf
 portdowngrade                   ports/ports-mgmt/portdowngrade
+porte                           ports/ports-mgmt/porte
 porteasy                        ports/ports-mgmt/porteasy
 portell                         ports/ports-mgmt/portell
 portfwd                         ports/net/portfwd
