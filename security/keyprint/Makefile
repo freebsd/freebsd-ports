@@ -16,6 +16,8 @@ COMMENT=	Print S/Key keys on a piece of paper, twice the size of a credit card
 
 NO_BUILD=	yes
 
+PORTDOCS=	README
+
 post-patch:
 	${REINPLACE_CMD} -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint
 
@@ -24,7 +26,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/keyblank.ps ${PREFIX}/share/keyprint
 	${INSTALL_SCRIPT} ${WRKSRC}/keyprint ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/keyprint
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
