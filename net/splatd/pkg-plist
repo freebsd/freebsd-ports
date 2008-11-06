@@ -27,6 +27,9 @@ sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.py
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyc
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyo
+%%PYTHON_SITELIBDIR%%/splat/helpers/opennms.py
+%%PYTHON_SITELIBDIR%%/splat/helpers/opennms.pyc
+%%PYTHON_SITELIBDIR%%/splat/helpers/opennms.pyo
 %%PYTHON_SITELIBDIR%%/splat/data/splat_conf.xml
 %%PYTHON_SITELIBDIR%%/splat/ldaputils/__init__.py
 %%PYTHON_SITELIBDIR%%/splat/ldaputils/__init__.pyc
@@ -46,6 +49,7 @@ sbin/splatd
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s04.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s05.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/ch02s06.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/ch03s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/docbook.css
