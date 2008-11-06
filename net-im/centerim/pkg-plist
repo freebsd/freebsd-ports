@@ -1,3 +1,4 @@
+bin/CenterIMLog2HTML.py
 bin/centerim
 bin/cimconv
 %%DATADIR%%/email.wav
