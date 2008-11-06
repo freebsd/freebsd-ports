@@ -7,7 +7,6 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	${RELEASE}
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
 
-RELEASE=	5.6
+RELEASE=	5.7
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
