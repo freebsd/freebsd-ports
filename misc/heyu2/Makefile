@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -33,7 +32,9 @@ MAN5=		x10config.5 \
 OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
 		EXTENDED	"Extended Type 0 (Shutter/Shade) Support"	on \
 		RFXSENS		"RFXSensors (RF) Support"			on \
-		RFXMETER	"RFXMeter (RF) Support"				on
+		RFXMETER	"RFXMeter (RF) Support"				on \
+		DMX		"Digimax Thermostat Support"			on \
+		OREGON	 	"Oregon Support"				on
 
 .if !defined(WITH_CM17A)
 CONFIGURE_ARGS+=	nocm17a
@@ -49,6 +50,14 @@ CONFIGURE_ARGS+=	norfxs
 
 .if !defined(WITH_RFXMETER)
 CONFIGURE_ARGS+=	norfxm
+.endif
+
+.if !defined(WITH_DMX)
+CONFIGURE_ARGS+=	nodmx
+.endif
+
+.if !defined(WITH_OREGON)
+CONFIGURE_ARGS+=	noore
 .endif
 
 post-patch:
