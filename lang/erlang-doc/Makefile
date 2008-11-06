@@ -43,7 +43,6 @@ DISTFILES=	appmon-2.1.9.pdf:release \
 		getting_started-5.6.5.pdf:release \
 		gs-1.5.9.pdf:release \
 		ic-4.2.19.pdf:release \
-		index.html:release \
 		inets-5.0.12.pdf:release \
 		installation_guide-5.6.5.pdf:release \
 		inviso-0.6.pdf:release \
