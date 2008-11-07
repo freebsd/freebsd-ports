@@ -48,7 +48,7 @@ consider running the SQL script %%PREFIX%%/share/postgresql/odbc.sql
 to get the functions required for ODBC compliance.
 
 Please note that if you use the rc script,
-%%PREFIX%%/etc/rc.conf/postgresql, to initialize the database, unicode
+%%PREFIX%%/etc/rc.d/postgresql, to initialize the database, unicode
 (UTF-8) will be used to store character data by default.  Set
 postgresql_initdb_flags or use login.conf settings described below to
 alter this behaviour. See the start rc script for more info.

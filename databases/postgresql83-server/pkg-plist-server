@@ -321,6 +321,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Resolute
 %%TZDATA%%share/postgresql/timezone/America/Rio_Branco
 %%TZDATA%%share/postgresql/timezone/America/Rosario
+%%TZDATA%%share/postgresql/timezone/America/Santarem
 %%TZDATA%%share/postgresql/timezone/America/Santiago
 %%TZDATA%%share/postgresql/timezone/America/Santo_Domingo
 %%TZDATA%%share/postgresql/timezone/America/Sao_Paulo
