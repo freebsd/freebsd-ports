@@ -698,6 +698,7 @@
     SUBDIR += wmymail
     SUBDIR += xbuffy
     SUBDIR += xc-mail
+    SUBDIR += xcite
     SUBDIR += xf-spf
     SUBDIR += xfaces
     SUBDIR += xfce4-mailwatch-plugin
