@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PKGNAME}
 MAINTAINER=	oivulf@gmail.com
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
+BROKEN=		Does not fetch
+
 USE_XORG=	x11 xmu
 USE_GL=		glut
 USE_FORTRAN=	yes
