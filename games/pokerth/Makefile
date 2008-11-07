@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	PokerTH-${PORTVERSION}-1.src
+DISTNAME=	PokerTH-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mad@madpilot.net
 COMMENT=	A poker game written in C++/QT4
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-		mikmod.2:${PORTSDIR}/audio/libmikmod
-
-MANUAL_PACKAGE_BUILD=	requires large memory to build
+		mikmod.2:${PORTSDIR}/audio/libmikmod \
+		gnutls.26:${PORTSDIR}/security/gnutls \
+		curl.4:${PORTSDIR}/ftp/curl
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
@@ -26,8 +25,6 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib qmake_build moc_build rcc_build uic_build
 USE_SDL=	mixer
-
-WRKSRC=		${WRKDIR}/PokerTH-${PORTVERSION}
 
 PLIST_FILES=	bin/pokerth %%DATADIR%%/pokerth share/pixmaps/pokerth.png
 
@@ -48,8 +45,8 @@ MAKE_ENV+=	QTDIR="${QT_PREFIX}"
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|/usr/([a-z|/]+)|${LOCALBASE}/\1|g' \
-		-e 's|(-lcrypto)|\1 -liconv|g' \
+		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
+		-e 's|(-lcurl)|\1 -liconv|g' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
 		${WRKSRC}/*.pro
 
