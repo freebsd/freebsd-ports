@@ -1,0 +1,9 @@
+bin/bgavdump
+include/gmerlin/avdec.h
+include/gmerlin/bgav_version.h
+lib/libgmerlin_avdec.la
+lib/libgmerlin_avdec.so
+lib/libgmerlin_avdec.so.0
+libdata/pkgconfig/gmerlin_avdec.pc
+share/locale/de/LC_MESSAGES/gmerlin-avdecoder.mo
+@dirrmtry include/gmerlin
