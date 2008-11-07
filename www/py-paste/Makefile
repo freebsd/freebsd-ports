@@ -14,7 +14,7 @@ MASTER_SITES=	http://pypi.python.org/packages/source/P/Paste/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 USE_PYTHON=	2.4+

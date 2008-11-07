@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	source/M/Mako
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Mako-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Super-fast templating language in Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=0.9:${PORTSDIR}/www/py-beaker \
