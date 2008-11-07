@@ -30,6 +30,9 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+.else
+# no need to use ncurses-config if we use ncurses from the base system
+CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
 
 PLIST_FILES=	bin/ncmpcpp \
@@ -46,7 +49,7 @@ CONFIGURE_ARGS+=	--with-curl
 CONFIGURE_ARGS+=	--with-curl=no
 .endif
 
-.if !defined(WITH_TAGLIB)
+.if !defined(WITHOUT_TAGLIB)
 LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
