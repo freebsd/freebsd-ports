@@ -7,14 +7,13 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
-
-LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -28,6 +27,10 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		TAGLIB "Enable taglib support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+.endif
 
 PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/config \
