@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
 
+DEPRECATED=	no longer under development, use misc/heyu2
+EXPIRATION_DATE=	2008-12-06
+
 CONFLICTS=	heyu2-[0-9]*
 
 ALL_TARGET=	heyu
