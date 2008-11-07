@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.matthiaswinkelmann.com/files/
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Gateway betwean IRC server and PHP-powered Web server
 
+BROKEN=		Does not build with newer st
+
 LIB_DEPENDS=	st.1:${PORTSDIR}/devel/st
 
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
