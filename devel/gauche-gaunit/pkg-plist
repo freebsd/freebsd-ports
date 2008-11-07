@@ -18,6 +18,8 @@ share/gauche/site/lib/test/unit/test-case.scm
 share/gauche/site/lib/test/unit/ui/gtk.scm
 share/gauche/site/lib/test/unit/ui/text.scm
 share/gauche/site/lib/test/unit/ui.scm
+share/gauche/site/lib/test/unit/gauche-compatible.scm
+share/gauche/site/lib/test/unit/gauche.scm
 share/gauche/site/lib/test/unit.scm
 @dirrm share/gauche/site/lib/test/unit/ui
 @dirrm share/gauche/site/lib/test/unit
