@@ -198,6 +198,7 @@ share/postgresql/timezone/America/Argentina/Jujuy
 share/postgresql/timezone/America/Argentina/La_Rioja
 share/postgresql/timezone/America/Argentina/Mendoza
 share/postgresql/timezone/America/Argentina/Rio_Gallegos
+share/postgresql/timezone/America/Argentina/Salta
 share/postgresql/timezone/America/Argentina/San_Juan
 share/postgresql/timezone/America/Argentina/San_Luis
 share/postgresql/timezone/America/Argentina/Tucuman
@@ -313,6 +314,7 @@ share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Regina
 share/postgresql/timezone/America/Rio_Branco
 share/postgresql/timezone/America/Rosario
+share/postgresql/timezone/America/Santarem
 share/postgresql/timezone/America/Santiago
 share/postgresql/timezone/America/Santo_Domingo
 share/postgresql/timezone/America/Sao_Paulo
