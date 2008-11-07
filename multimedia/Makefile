@@ -53,6 +53,7 @@
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
+    SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
     SUBDIR += gnome-subtitles
     SUBDIR += gnustep-mplayer

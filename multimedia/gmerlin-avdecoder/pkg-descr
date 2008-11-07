@@ -1,0 +1,18 @@
+Gmerlin_avdecoder is a general purpose media decoding library. It
+was written as a support library for gmerlin, but it can also be
+used by other applications. You don't even need gmerlin installed,
+only gavl. Most of it was written completely from scratch, but the
+sourcetrees of some other great software packages were used as
+reference documentation. Credits go to the authors of Xine, MPlayer,
+quicktime4linux and ffmpeg.
+
+Gmerlin_avdecoder is one of the most complete general purpose media
+decoding libraries. The supported formats and codecs span a wide
+range of applications from consumer level (mp3, divx etc.) to high
+end production formats like 32 bit PCM and some professional
+uncompressed video codecs.
+Using gmerlin_avdecoder in your playback for transcoding application
+means rock solid media format support with an ever growing list of
+supported codecs and formats.
+
+WWW: http://gmerlin.sourceforge.net/
