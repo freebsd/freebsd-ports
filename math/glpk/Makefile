@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.31
+PORTVERSION=	4.33
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	bench.txt bench1.txt bench2.txt glpk.ps glpk_faq.txt gmpl.ps \
-		opb.txt tables.txt dfeas.djvu gomory.djvu scaling.djvu \
+		opb.txt tables.ps dfeas.djvu gomory.djvu scaling.djvu \
 		subset.djvu updating.djvu
 .endif
 
