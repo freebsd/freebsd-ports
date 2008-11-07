@@ -245,7 +245,6 @@ System/Tools/ProjectCenter
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions
 @dirrm System/Library/Frameworks/ProjectCenter.framework
-@dirrm System/Library/Frameworks
 @dirrm System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm
 @dirrm System/Applications/ProjectCenter.app/Resources/Tool.project/Resources
 @dirrm System/Applications/ProjectCenter.app/Resources/Tool.project
