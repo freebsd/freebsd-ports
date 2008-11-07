@@ -7,7 +7,7 @@
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -17,6 +17,7 @@ COMMENT=	A Japanese text input server for X11 applications
 
 USE_IMAKE=	yes
 SUB_FILES=	Kinput2.conf
+PLIST_FILES=	${PLIST_ALL:O:u}
 
 MAN1=		kinput2.1
 
@@ -37,22 +38,43 @@ CONF.WNN6=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
+PLIST.WNN6=		${PLIST.FREEWNN}
 
 LIB_DEPENDS.WNN7=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 CONF.WNN7=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
+PLIST.WNN7=		${PLIST.FREEWNN}
 
 LIB_DEPENDS.FREEWNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 CONF.FREEWNN+=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
+PLIST.FREEWNN+=		lib/X11/ccdef/ccdef.kinput2 \
+			lib/X11/ccdef/rule.eggfunc \
+			lib/X11/ccdef/rule.func \
+			lib/X11/ccdef/rule.greek \
+			lib/X11/ccdef/rule.kana \
+			lib/X11/ccdef/rule.kana2 \
+			lib/X11/ccdef/rule.roma \
+			lib/X11/ccdef/rule.wnnroma \
+			lib/X11/ccdef/rule.zascii \
+			lib/X11/ccdef/ccdef.kinput2.egg \
+			lib/X11/ccdef/rule.hiragana.egg \
+			lib/X11/ccdef/rule.katakana.egg \
+			lib/X11/ccdef/rule.kigou.egg
+
 LIB_DEPENDS.SJ3=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
 CONF.SJ3+=		'\#define UseSj3' \
 			SJ3SRC=${LOCALBASE}/include \
 			SJ3LIB="-L${LOCALBASE}/lib -lsj3lib" \
 			SJ3DEF_DIR=\$${LIBDIR}/ccdef
+PLIST.SJ3=		lib/X11/ccdef/sjhk \
+			lib/X11/ccdef/sjrc \
+			lib/X11/ccdef/sjrk \
+			lib/X11/ccdef/sjsb \
+			lib/X11/ccdef/sjzh
 
 .include <bsd.port.pre.mk>
 
@@ -61,9 +83,7 @@ CONF.SJ3+=		'\#define UseSj3' \
 LIB_DEPENDS+=	${LIB_DEPENDS.${I:S/^WITH_//}}
 BUILD_DEPENDS+=	${BUILD_DEPENDS.${I:S/^WITH_//}}
 CONF+=		${CONF.${I:S/^WITH_//}}
-PLIST_SUB+=	${I:S/^WITH_//}=""
-.else
-PLIST_SUB+=	${I:S/^WITH_//}="@comment "
+PLIST_ALL+=	${PLIST.${I:S/^WITH_//}}
 .endif
 .endfor
 
