@@ -206,6 +206,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Argentina/La_Rioja
 %%TZDATA%%share/postgresql/timezone/America/Argentina/Mendoza
 %%TZDATA%%share/postgresql/timezone/America/Argentina/Rio_Gallegos
+%%TZDATA%%share/postgresql/timezone/America/Argentina/Salta
 %%TZDATA%%share/postgresql/timezone/America/Argentina/San_Juan
 %%TZDATA%%share/postgresql/timezone/America/Argentina/San_Luis
 %%TZDATA%%share/postgresql/timezone/America/Argentina/Tucuman
