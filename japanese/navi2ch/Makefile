@@ -6,25 +6,28 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 INFO=		navi2ch
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch \
-		--with-emacs=${EMACS_CMD}
-
-DOCDIR=		share/doc/ja/navi2ch
+CONFIGURE_ENV=	EMACS="${EMACS_CMD}"
+CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/${PORTNAME}
+PORTDOCS=	${PORTDOC_FILES} contrib
 PLIST_SUB=	LISPDIR=${LISPDIR}
+
+PORTDOC_FILES=	ChangeLog README TODO
+PORTDOC_LISPS=	gikope.el navi2ch-logo.el navi2ch-migemo.el
+
+.include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule
 LISPDIR=	${EMACS_SITE_LISPDIR}
@@ -37,16 +40,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanes
 .endif
 .endif
 
-post-install:
-	@${MKDIR} ${PREFIX}/${DOCDIR}
 .if !defined(NOPORTDOCS)
-.for i in ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
-.endfor
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${PORTDOC_FILES} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/contrib
+	cd ${WRKSRC}/contrib && \
+		${INSTALL_DATA} ${PORTDOC_LISPS} ${DOCSDIR}/contrib
 .endif
-	@${MKDIR} ${PREFIX}/${DOCDIR}/contrib
-.for i in gikope.el navi2ch-logo.el navi2ch-migemo.el
-	${INSTALL_DATA} ${WRKSRC}/contrib/$i ${PREFIX}/${DOCDIR}/contrib
-.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

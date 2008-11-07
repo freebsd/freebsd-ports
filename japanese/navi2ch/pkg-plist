@@ -1,11 +1,4 @@
-%%PORTDOCS%%share/doc/ja/navi2ch/ChangeLog
-%%PORTDOCS%%share/doc/ja/navi2ch/README
-%%PORTDOCS%%share/doc/ja/navi2ch/TODO
-share/doc/ja/navi2ch/contrib/gikope.el
-share/doc/ja/navi2ch/contrib/navi2ch-logo.el
-share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
-@dirrm share/doc/ja/navi2ch/contrib
-@dirrm share/doc/ja/navi2ch
+@comment $FreeBSD$
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/plugged.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/unplugged.xpm
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons
