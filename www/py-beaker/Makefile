@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beaker
-PORTVERSION=	0.9
+PORTVERSION=	1.0.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://dryice.name/computer/FreeBSD/distfiles/
