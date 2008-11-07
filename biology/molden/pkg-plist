@@ -2,9 +2,9 @@ bin/ambfor
 bin/gmolden
 bin/molden
 bin/surf
-share/doc/molden/figures.ps.Z
-share/doc/molden/manual.ps.Z
-share/doc/molden/manual.txt.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt.Z
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.Z
+%%PORTDOCS%%%%DOCSDIR%%/figures.ps.Z
 share/molden/test/adf.molf
 share/molden/test/ambfor_amber.xyz
 share/molden/test/ambfor_gaff.xyz
@@ -58,4 +58,3 @@ share/molden/utils/multi_vrml_orbitals.csh
 @dirrm share/molden/utils
 @dirrm share/molden/test
 @dirrm share/molden
-@dirrm share/doc/molden
