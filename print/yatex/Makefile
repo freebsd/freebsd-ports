@@ -7,7 +7,7 @@
 
 PORTNAME=	yatex
 PORTVERSION=	1.73
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -100,16 +100,13 @@ do-build:
 	@${DO_NADA}
 # For XEmacs, yatexj (a Japanese info file) should be remade.
 .if (${EMACS_PORT_NAME} == xemacs21-mule)
-	(cd ${WRKSRC}/docs; \
+	cd ${WRKSRC}/docs && \
 	${SETENV} LANG=ja_JP.eucJP ${EMACS_CMD} -no-site-file -no-init-file \
-		-batch -l texinfmt -f batch-texinfo-format yatexj.tex; \
-	)
+		-batch -l texinfmt -f batch-texinfo-format yatexj.tex
 .endif
 
 do-install:
-	${MKDIR} ${ELISPDIR}/yatex
-	${MKDIR} ${HELPDIR} ${INFODIR}
-	${MKDIR} ${INFODIR}
+	${MKDIR} ${ELISPDIR}/yatex ${HELPDIR} ${INFODIR}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${EL_FILES} ${ELISPDIR}/yatex && \
 		${INSTALL_DATA} ${HELP} ${HELPDIR}

@@ -21,7 +21,6 @@ lib/xemacs/site-packages/info/yahtmle.info
 lib/xemacs/site-packages/info/yatexe.info
 lib/xemacs/site-lisp/YATEXHLP.eng
 @dirrm lib/xemacs/site-packages/lisp/yatex
-@dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs/site-packages/lisp
 @dirrmtry lib/xemacs/site-packages/info
 @dirrmtry lib/xemacs/site-packages/pkginfo
