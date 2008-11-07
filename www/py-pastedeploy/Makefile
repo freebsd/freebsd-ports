@@ -14,7 +14,7 @@ MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteDeploy/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Load, configure, and compose WSGI applications and servers
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \

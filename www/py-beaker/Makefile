@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/B/Beaker
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Beaker-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Session and Caching library with WSGI Middleware
 
 USE_PYTHON=	yes

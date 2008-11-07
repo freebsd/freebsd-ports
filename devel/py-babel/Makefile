@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/babel/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A collection of tools for internationalizing Python applications
 
 USE_PYTHON=	2.3+
