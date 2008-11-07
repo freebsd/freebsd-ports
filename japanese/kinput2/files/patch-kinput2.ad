@@ -1,8 +1,11 @@
---- cmd/Kinput2.ad.orig	Tue May 20 14:13:43 2003
-+++ cmd/Kinput2.ad	Tue May 20 14:14:46 2003
-@@ -34,7 +34,10 @@
+--- cmd/Kinput2.ad.orig	2002-10-03 18:35:26.000000000 +0900
++++ cmd/Kinput2.ad	2008-11-08 03:30:03.000000000 +0900
+@@ -32,9 +32,12 @@
  !!
- !*CcWnn.Jserver:	"primary-jserver-host"
+ !!	Wnn setup
+ !!
+-!*CcWnn.Jserver:	"primary-jserver-host"
++*CcWnn.Jserver:	unix
  !*CcWnn.jserver2nd:	"secondary-jserver-host-if-any"
 -*CcWnn.ccdef:		ccdef.kinput2
 +!!! Uncomment below if you like legacy key bindings
