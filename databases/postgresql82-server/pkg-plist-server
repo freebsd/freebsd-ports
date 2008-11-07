@@ -310,6 +310,7 @@ share/postgresql/timezone/America/Regina
 share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Rio_Branco
 share/postgresql/timezone/America/Rosario
+share/postgresql/timezone/America/Santarem
 share/postgresql/timezone/America/Santiago
 share/postgresql/timezone/America/Santo_Domingo
 share/postgresql/timezone/America/Sao_Paulo
