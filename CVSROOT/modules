@@ -3666,7 +3666,6 @@ fvwm95                          ports/x11-wm/fvwm95
 fvwm95-i18n                     ports/x11-wm/fvwm95-i18n
 fwanalog                        ports/security/fwanalog
 fwbuilder                       ports/security/fwbuilder
-fwbuilder2                      ports/security/fwbuilder2
 fwipe                           ports/security/fwipe
 fwknop                          ports/security/fwknop
 fwlogwatch                      ports/security/fwlogwatch
@@ -7027,7 +7026,6 @@ libfs                           ports/x11-fonts/libFS
 libfs++                         ports/devel/libfs++
 libftdi                         ports/devel/libftdi
 libfwbuilder                    ports/security/libfwbuilder
-libfwbuilder2                   ports/security/libfwbuilder2
 libg++                          ports/devel/libg++
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
@@ -11774,6 +11772,7 @@ p5-POE-Filter-IRCD              ports/irc/p5-POE-Filter-IRCD
 p5-POE-Filter-LZF               ports/archivers/p5-POE-Filter-LZF
 p5-POE-Filter-LZO               ports/archivers/p5-POE-Filter-LZO
 p5-POE-Filter-LZW               ports/archivers/p5-POE-Filter-LZW
+p5-POE-Filter-Transparent-SMTP  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-POE-Filter-XML               ports/textproc/p5-POE-Filter-XML
 p5-POE-Filter-Zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-POE-Session-MultiDispatch    ports/devel/p5-POE-Session-MultiDispatch
@@ -15069,6 +15068,7 @@ p5-poe-filter-ircd              ports/irc/p5-POE-Filter-IRCD
 p5-poe-filter-lzf               ports/archivers/p5-POE-Filter-LZF
 p5-poe-filter-lzo               ports/archivers/p5-POE-Filter-LZO
 p5-poe-filter-lzw               ports/archivers/p5-POE-Filter-LZW
+p5-poe-filter-transparent-smtp  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-poe-filter-xml               ports/textproc/p5-POE-Filter-XML
 p5-poe-filter-zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-poe-session-multidispatch    ports/devel/p5-POE-Session-MultiDispatch
