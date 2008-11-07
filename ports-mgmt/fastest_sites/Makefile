@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	fastest_sites
-PORTVERSION=	20080320
-PORTREVISION=	1
+PORTVERSION=	20081104
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.semicomplete.com/files/fastest_sites/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://www.semicomplete.com/files/fastest_sites/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.py
 EXTRACT_SUFX=	# nada
 
