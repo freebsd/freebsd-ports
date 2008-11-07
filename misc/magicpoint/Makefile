@@ -4,15 +4,15 @@
 #
 # $FreeBSD$
 #
-# "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
+PORTREVISION=	1
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
-MAINTAINER?=	dinoex@FreeBSD.org
-COMMENT?=	An X11-based presentation tool
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	An X11-based presentation tool
 
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
@@ -20,6 +20,7 @@ RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-vflib
 
 OPTIONS+=	FREETYPE	"With FreeType support" on \
 		XFT		"With Xft2 support" on \
@@ -28,7 +29,7 @@ OPTIONS+=	FREETYPE	"With FreeType support" on \
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
-DOCSDIR=	${PREFIX}/share/doc/mgp
+PORTDOCS=	${DOCS} sample emacs-lisp scripts
 DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
 	README.lang RELNOTES SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
@@ -38,15 +39,16 @@ SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
 		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp \
 		tutorial.mgp v6-jp.mgp v6.mgp v6header.eps v6header.jpg
-EMACS_LISPS=	mgp-mode.el mgp-el/COPYING mgp-el/README \
-		mgp-el/mgp.el mgp-el/mgp.sty mgp-el/sample.tex
+EMACS_LISPS=	mgp-mode.el
+EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREETYPE)
 USE_FREETYPE=	yes
-CONFIGURE_ARGS+=	--enable-freetype
+CONFIGURE_ARGS+=	--enable-freetype \
+			--enable-freetype-charset16
 .else
 CONFIGURE_ARGS+=	--disable-freetype
 .endif
@@ -72,46 +74,33 @@ CONFIGURE_ARGS+=	--enable-imlib
 CONFIGURE_ARGS+=	--disable-imlib
 .endif
 
-.if defined(WITH_JAPANESE)
-LIB_DEPENDS+=	VFlib2.24:${PORTSDIR}/japanese/vflib
-CONFIGURE_ARGS+=	--enable-vflib \
-			--with-vfontcap=`${LS} -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1` \
-			--enable-freetype-charset16
-.else
-CONFIGURE_ARGS+=	--disable-vflib
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|varargs.h|stdarg.h|' \
-		${WRKSRC}/image/rlelib.c
-
 post-configure:
-	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
+	cd ${WRKSRC}/contrib/xmindpath && \
+		${SH} ${CONFIGURE_SCRIPT} --prefix=${PREFIX}
 
 post-build:
-	(cd ${WRKSRC}/contrib/xmindpath; make)
+	cd ${WRKSRC}/contrib/xmindpath && \
+		${MAKE}
 
-# NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
-	(cd ${WRKSRC}/contrib/xmindpath; make install)
-	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
+	cd ${WRKSRC}/contrib/xmindpath && \
+		${MAKE} ${INSTALL_TARGET}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for i in ${DOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
-	done
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/sample
-	for i in ${SAMPLES}; do \
-		${INSTALL_DATA} ${WRKSRC}/sample/$$i ${DOCSDIR}/sample; \
-	done
+	cd ${WRKSRC}/sample && \
+		${INSTALL_DATA} ${SAMPLES} ${DOCSDIR}/sample/
+	${MKDIR} ${DOCSDIR}/emacs-lisp
+	cd ${WRKSRC}/contrib && \
+		${INSTALL_DATA} ${EMACS_LISPS} ${DOCSDIR}/emacs-lisp/
 	${MKDIR} ${DOCSDIR}/emacs-lisp/mgp-el
-	for i in ${EMACS_LISPS}; do \
-		${INSTALL_DATA} ${WRKSRC}/contrib/$$i ${DOCSDIR}/emacs-lisp/$$i; \
-	done
+	cd ${WRKSRC}/contrib/mgp-el && \
+		${INSTALL_DATA} ${EMACS_LISPS_MGP} ${DOCSDIR}/emacs-lisp/mgp-el
 	${MKDIR} ${DOCSDIR}/scripts
-	for i in ${SAMPLE_SCRIPTS}; do \
-		${INSTALL_SCRIPT} ${WRKSRC}/contrib/$$i ${DOCSDIR}/scripts/$$i; \
-	done
+	cd ${WRKSRC}/contrib && \
+		${INSTALL_SCRIPT} ${SAMPLE_SCRIPTS} ${DOCSDIR}/scripts/
 .endif
 
 .include <bsd.port.post.mk>

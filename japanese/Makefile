@@ -150,7 +150,6 @@
     SUBDIR += lsd-fpw
     SUBDIR += lynx
     SUBDIR += lynx-current
-    SUBDIR += magicpoint
     SUBDIR += mailman
     SUBDIR += makejvf
     SUBDIR += man

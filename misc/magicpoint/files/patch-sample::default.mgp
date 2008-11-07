@@ -1,0 +1,15 @@
+--- sample/default.mgp.orig	Sat Aug 11 01:40:54 2001
++++ sample/default.mgp	Tue Jan 25 13:56:12 2005
+@@ -12,9 +12,9 @@
+ %% into the "tfdir" directory above:
+ %%	ftp://ftp.mew.org/pub/mgp/ttf-jp.tar.gz
+ %%
+-%deffont "standard"   tfont "standard.ttf",   tmfont "kochi-mincho.ttf"
+-%deffont "thick"      tfont "thick.ttf",      tmfont "goth.ttf"
+-%deffont "typewriter" tfont "typewriter.ttf", tmfont "goth.ttf"
++%deffont "standard"   xfont "Times",     xfont "IPAMincho" "jisx0208.1983-*"
++%deffont "thick"      xfont "Helvetica", xfont "IPAGothic" "jisx0208.1983-*"
++%deffont "typewriter" xfont "Courier",   xfont "IPAGothic" "jisx0208.1983-*"
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%
+ %% Default settings per each line numbers.
