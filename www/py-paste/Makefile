@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Paste
-PORTVERSION=	1.6
+PORTVERSION=	1.7.2
 CATEGORIES=	www python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/Paste/ \
+MASTER_SITES=	http://pypi.python.org/packages/source/P/Paste/ \
 		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	dryice
@@ -17,21 +17,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-PASTEVER?=	${PORTVERSION}
-PYTHONVER?=	${_PYTHON_VERSION}
-PLIST_SUB=	PASTEVER=${PASTEVER} \
-		PYTHONVER=${PYTHONVER}
-
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="${PORTNAME}==${PORTVERSION}"
-
-PYPASTE_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.mk>
