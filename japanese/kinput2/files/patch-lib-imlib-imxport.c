@@ -1,6 +1,11 @@
 --- lib/imlib/imxport.c.orig	2002-10-03 18:35:31.000000000 +0900
-+++ lib/imlib/imxport.c	2008-11-02 01:23:56.000000000 +0900
-@@ -35,6 +35,7 @@
++++ lib/imlib/imxport.c	2008-11-08 16:02:24.000000000 +0900
+@@ -31,10 +31,12 @@
+ 
+ #ifdef IM_UNIX_TRANSPORT
+ #include <sys/un.h>
++#include <sys/stat.h>
+ #endif
  
  #ifdef IM_TCP_TRANSPORT
  #include <netinet/in.h> 
@@ -8,7 +13,7 @@
  #endif
  
  extern int errno;
-@@ -412,8 +413,9 @@
+@@ -412,8 +414,9 @@
  
  #ifdef IM_TCP_TRANSPORT
  int
@@ -19,7 +24,7 @@
  {
      struct sockaddr_in addr;
      int optval = 1;
-@@ -431,7 +433,22 @@
+@@ -431,7 +434,22 @@
  		     (char *)&optval, sizeof(optval));
  #endif /* SO_REUSEADDR */
  
@@ -42,4 +47,34 @@
 +    }
      addr.sin_family = AF_INET;
      addr.sin_port = htons(*portp);
+ 
+@@ -495,6 +513,7 @@
+ {
+     struct sockaddr_un addr;
+     int sock;
++    mode_t oldumask;
+ 
+     TRACE(("IMCreateUnixService(%s)\n", path));
+     if ((sock = socket(PF_UNIX, SOCK_STREAM, 0)) < 0) {
+@@ -510,15 +529,21 @@
+      * Remove socket which is created by the previous process.
+      */
+     (void)unlink(path);
++    oldumask = umask(S_IRGRP|S_IWGRP|S_IXGRP|S_IROTH|S_IWOTH|S_IXOTH);
+ 
+     if (bind(sock, (struct sockaddr *)&addr, strlen(path) + 2) < 0) {
+ 	DPRINT(("bind() failed with %d\n", errno));
++	umask(oldumask);
+ 	return -1;
+     }
++
++    umask(oldumask);
++	
+     if (listen(sock, 4) < 0) {
+ 	DPRINT(("listen() failed with %d\n", errno));
+ 	return -1;
+     }
++
+     return sock;
+ }
  
