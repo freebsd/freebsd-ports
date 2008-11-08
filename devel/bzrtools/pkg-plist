@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/command_classes.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/dotgraph.pyo
