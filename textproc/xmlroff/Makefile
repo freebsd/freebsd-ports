@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmlroff
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://xmlroff.org/download/
 
