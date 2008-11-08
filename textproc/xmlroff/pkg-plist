@@ -1,46 +1,50 @@
 @comment $FreeBSD$
 bin/xmlroff
-include/libfo-0.5/libfo/area/fo-area.h
-include/libfo-0.5/libfo/fo/fo-fo.h
-include/libfo-0.5/libfo/datatype/fo-datatype.h
-include/libfo-0.5/libfo/datatype/fo-enum.h
-include/libfo-0.5/libfo/property/fo-property.h
-include/libfo-0.5/libfo/util/fo-hash-table.h
-include/libfo-0.5/libfo/util/fo-image.h
-include/libfo-0.5/libfo/util/fo-pixbuf.h
-include/libfo-0.5/libfo/fo-object.h
-include/libfo-0.5/libfo/fo-node.h
-include/libfo-0.5/libfo/fo-context.h
-include/libfo-0.5/libfo/fo-doc-cairo.h
-include/libfo-0.5/libfo/fo-doc-cairo-private.h
-include/libfo-0.5/libfo/fo-layout-cairo.h
-include/libfo-0.5/libfo/fo-layout-cairo-private.h
-include/libfo-0.5/libfo/fo-doc-gp.h
-include/libfo-0.5/libfo/fo-doc-gp-private.h
-include/libfo-0.5/libfo/fo-layout-gp.h
-include/libfo-0.5/libfo/fo-layout-gp-private.h
-include/libfo-0.5/libfo/fo-doc.h
-include/libfo-0.5/libfo/fo-doc-private.h
-include/libfo-0.5/libfo/fo-utils.h
-include/libfo-0.5/libfo/fo-font-desc.h
-include/libfo-0.5/libfo/fo-layout.h
-include/libfo-0.5/libfo/fo-font-desc-private.h
-include/libfo-0.5/libfo/fo-layout-private.h
-include/libfo-0.5/libfo/fo-libfo.h
-include/libfo-0.5/libfo/fo-libfo-basic.h
-include/libfo-0.5/libfo/fo-libfo-context.h
-include/libfo-0.5/libfo/fo-xml-doc-private.h
-include/libfo-0.5/libfo/fo-xml-doc.h
-include/libfo-0.5/libfo/fo-xml-node-private.h
-include/libfo-0.5/libfo/fo-xml-node.h
-include/libfo-0.5/libfo/fo-xsl-formatter.h
-include/libfo-0.5/libfo/fo-xslt-transformer.h
-include/libfo-0.5/libfo/libfo-compat.h
-lib/libfo-0.5.a
-lib/libfo-0.5.la
-lib/libfo-0.5.so
-lib/libfo-0.5.so.505
-libdata/pkgconfig/libfo-0.5.pc
+include/libfo-0.6/libfo/area/fo-area.h
+include/libfo-0.6/libfo/fo/fo-fo.h
+include/libfo-0.6/libfo/datatype/fo-datatype.h
+include/libfo-0.6/libfo/datatype/fo-enum.h
+include/libfo-0.6/libfo/property/fo-property.h
+include/libfo-0.6/libfo/util/fo-hash-table.h
+include/libfo-0.6/libfo/util/fo-image.h
+include/libfo-0.6/libfo/util/fo-pixbuf.h
+include/libfo-0.6/libfo/fo-object.h
+include/libfo-0.6/libfo/fo-node.h
+include/libfo-0.6/libfo/fo-context.h
+include/libfo-0.6/libfo/fo-doc-cairo.h
+include/libfo-0.6/libfo/fo-doc-cairo-private.h
+include/libfo-0.6/libfo/fo-layout-cairo.h
+include/libfo-0.6/libfo/fo-layout-cairo-private.h
+include/libfo-0.6/libfo/fo-doc-gp.h
+include/libfo-0.6/libfo/fo-doc-gp-private.h
+include/libfo-0.6/libfo/fo-layout-gp.h
+include/libfo-0.6/libfo/fo-layout-gp-private.h
+include/libfo-0.6/libfo/fo-doc.h
+include/libfo-0.6/libfo/fo-doc-private.h
+include/libfo-0.6/libfo/fo-utils.h
+include/libfo-0.6/libfo/fo-font-desc.h
+include/libfo-0.6/libfo/fo-layout.h
+include/libfo-0.6/libfo/fo-font-desc-private.h
+include/libfo-0.6/libfo/fo-layout-private.h
+include/libfo-0.6/libfo/fo-libfo.h
+include/libfo-0.6/libfo/fo-libfo-basic.h
+include/libfo-0.6/libfo/fo-libfo-context.h
+include/libfo-0.6/libfo/fo-xml-doc-private.h
+include/libfo-0.6/libfo/fo-xml-doc.h
+include/libfo-0.6/libfo/fo-xml-node-private.h
+include/libfo-0.6/libfo/fo-xml-node.h
+include/libfo-0.6/libfo/fo-xsl-formatter.h
+include/libfo-0.6/libfo/fo-xslt-transformer.h
+include/libfo-0.6/libfo/fo-libfo-module-private.h
+include/libfo-0.6/libfo/fo-libfo-module.h
+include/libfo-0.6/libfo/libfo-features.h
+include/libfo-0.6/libfo/libfo-version.h
+include/libfo-0.6/libfo/libfo-compat.h
+lib/libfo-0.6.a
+lib/libfo-0.6.la
+lib/libfo-0.6.so
+lib/libfo-0.6.so.600
+libdata/pkgconfig/libfo-0.6.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
 %%DOCSDIR%%/FoAreaLayout.html
@@ -105,10 +109,10 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/areas.html
 %%DOCSDIR%%/backends.html
 %%DOCSDIR%%/basic-interface.html
-%%DOCSDIR%%/conformance.html
 %%DOCSDIR%%/context.html
 %%DOCSDIR%%/datatypes.html
 %%DOCSDIR%%/debugging.html
+%%DOCSDIR%%/developers.html
 %%DOCSDIR%%/directory-structure.html
 %%DOCSDIR%%/fo-area-c-file.html
 %%DOCSDIR%%/fo-c-file.html
@@ -119,7 +123,6 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/interfaces.html
-%%DOCSDIR%%/introduction.html
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/node.html
 %%DOCSDIR%%/object.html
@@ -129,8 +132,14 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+%%DOCSDIR%%/users.html
 %%DOCSDIR%%/utility-modules.html
 %%DOCSDIR%%/utility-objects.html
+%%DOCSDIR%%/xmlroff-code-rules.html
+%%DOCSDIR%%/xmlroff-fo-utils.html
+%%DOCSDIR%%/xmlroff-libfo-version.html
+%%DOCSDIR%%/xmlroff.1.html
+%%DOCSDIR%%/xmlroff.css
 %%DOCSDIR%%/xmlroff-Additional-Pango-attributes-needed-by-LibFO.html
 %%DOCSDIR%%/xmlroff-FoDoc.html
 %%DOCSDIR%%/xmlroff-FoPcw.html
@@ -378,16 +387,16 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-writing-mode.html
 %%DOCSDIR%%/xmlroff.devhelp
 %%DOCSDIR%%/xmlroff.devhelp2
-share/xml/libfo-0.5.5/catalog.xml
-share/xml/libfo-0.5.5/libfo-compat.xsl
-share/xml/libfo-0.5.5/xmlroff.fo
-share/xml/libfo-0.5.5/xmlroff.xml
-@dirrm share/xml/libfo-0.5.5
+share/xml/libfo-0.6.1/catalog.xml
+share/xml/libfo-0.6.1/libfo-compat.xsl
+share/xml/libfo-0.6.1/xmlroff.fo
+share/xml/libfo-0.6.1/xmlroff.xml
+@dirrm share/xml/libfo-0.6.1
 @dirrm %%DOCSDIR%%
-@dirrm include/libfo-0.5/libfo/util
-@dirrm include/libfo-0.5/libfo/property
-@dirrm include/libfo-0.5/libfo/fo
-@dirrm include/libfo-0.5/libfo/datatype
-@dirrm include/libfo-0.5/libfo/area
-@dirrm include/libfo-0.5/libfo
-@dirrm include/libfo-0.5
+@dirrm include/libfo-0.6/libfo/util
+@dirrm include/libfo-0.6/libfo/property
+@dirrm include/libfo-0.6/libfo/fo
+@dirrm include/libfo-0.6/libfo/datatype
+@dirrm include/libfo-0.6/libfo/area
+@dirrm include/libfo-0.6/libfo
+@dirrm include/libfo-0.6
