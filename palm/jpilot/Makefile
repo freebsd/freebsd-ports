@@ -7,8 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.9
-PORTREVISION=	3
+PORTVERSION=	1.6.0
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -18,6 +17,7 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
+USE_GMAKE=	yes
 USE_GNOME=	gnomehier
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -49,6 +49,8 @@ MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
 PORTDOCS=	*
 .endif
 
+post-build:
+	cd ${WRKSRC}/docs && ${GMAKE}
 post-install:
 	@${FIND} ${PREFIX}/lib/jpilot ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
