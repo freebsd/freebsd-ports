@@ -5627,7 +5627,6 @@ ja-lookup-emacs21               ports/japanese/lookup-emacs21
 ja-lsd-fpw                      ports/japanese/lsd-fpw
 ja-lynx                         ports/japanese/lynx
 ja-lynx-current                 ports/japanese/lynx-current
-ja-magicpoint                   ports/japanese/magicpoint
 ja-mailman                      ports/japanese/mailman
 ja-makejvf                      ports/japanese/makejvf
 ja-man-doc                      ports/japanese/man-doc
@@ -22007,6 +22006,7 @@ xcheckers                       ports/games/xcheckers
 xchm                            ports/deskutils/xchm
 xchomp                          ports/games/xchomp
 xcircuit                        ports/cad/xcircuit
+xcite                           ports/mail/xcite
 xclasses                        ports/x11-toolkits/xclasses
 xclick                          ports/x11/xclick
 xclip                           ports/x11/xclip
