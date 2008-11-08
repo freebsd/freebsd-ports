@@ -1,6 +1,6 @@
-# New ports collection makefile for:	mac
-# Date created:		8 Aug 2004
-# Whom:			dieringe
+# New ports collection makefile for:	Monkey's Audio Codec
+# Date created:				8 Aug 2004
+# Whom:			Martin Dieringer <Martin.Dieringer@t-online.de>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CENKES
 DISTNAME=	${PORTNAME}-3.99-u4-b5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
 USE_AUTOTOOLS=	libtool:15
@@ -27,8 +27,5 @@ BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
-#	@${REINPLACE_CMD} -e '/GetInfo/s|intptr_t|long|g' ${WRKSRC}/src/MACLib/*.*
-#	@${REINPLACE_CMD} -e 's|wcsnicmp|wcsncmp|g;s|wcsicmp|wcscmp|g;s|_wcsicmp|wcscmp|g;s|\.__pos||g' \
-#		${WRKSRC}/src/MACLib/*.* ${WRKSRC}/src/Shared/*.*
 
 .include <bsd.port.post.mk>
