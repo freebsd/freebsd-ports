@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpd-l2tp-ipv6pd-client
-PORTVERSION=	20080101
+PORTVERSION=	20081105
 #PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	# none
@@ -15,16 +15,33 @@ DISTFILES=	# none
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A sample implementaiton set of "L2TP-IPv6PD" client using mpd
 
-BUILD_DEPENDS=	${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
-RUN_DEPENDS=	dhcp6ctl:${PORTSDIR}/net/dhcp6 \
-		${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
-
 MANUAL_PACKAGE_BUILD=yes
 NO_PACKAGE=	yes
 USE_RC_SUBR=	yes
 
+OPTIONS=	MPD4		"Use mpd4"			on \
+		MPD5		"Use mpd5"			off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MPD5) && defined(WITH_MPD4)
+BROKEN=		Multiple mpd versions selected.  Run 'make config' again!
+.endif
+
+.if defined(WITH_MPD4)
+MPD_NAME=	mpd4
+MPD4=		""
+.else
+MPD_NAME=	mpd5
+MPD4=		"@comment "
+.endif
+
+BUILD_DEPENDS=	${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
+RUN_DEPENDS=	dhcp6ctl:${PORTSDIR}/net/dhcp6 \
+		${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
+
 CONF_DIR?=	etc/${MPD_NAME}
-CONF_FILES=	dhcp6c.conf.in mpd.conf mpd.links rtadvd.conf
+CONF_FILES=	dhcp6c.conf.in rtadvd.conf
 SCRIPT_FILES=	dhcp6c_pd.sh linkdown.sh linkup.sh
 SECRET_FILES=	mpd.secret
 
@@ -43,18 +60,11 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}" \
 		SED="${SED}" \
 		WHICH="${WHICH}"
 
-PLIST_SUB=	CONF_DIR="${CONF_DIR}" \
-		MPD_NAME="${MPD_NAME}"
+PLIST_SUB=	CONF_DIR=${CONF_DIR} \
+		MPD_NAME=${MPD_NAME} \
+		MPD4=${MPD4}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.if defined(WITH_MPD5)
-MPD_NAME=	mpd5
-.else
-MPD_NAME=	mpd4
-.endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 602106 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700031)
 IGNORE=		does not work with old ng_ksocket
@@ -76,6 +86,12 @@ do-install:
 		exit 1; \
 	fi
 	@${MKDIR} ${PREFIX}/${CONF_DIR}
+.if defined(WITH_MPD4)
+	@${INSTALL_DATA} ${WRKDIR}/mpd.conf ${PREFIX}/${CONF_DIR}/mpd.conf
+	@${INSTALL_DATA} ${WRKDIR}/mpd.links ${PREFIX}/${CONF_DIR}/mpd.links
+.else
+	@${INSTALL_DATA} ${WRKDIR}/mpd5.conf ${PREFIX}/${CONF_DIR}/mpd.conf
+.endif
 .for f in ${CONF_FILES}
 	@${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${CONF_DIR}/${f}
 .endfor

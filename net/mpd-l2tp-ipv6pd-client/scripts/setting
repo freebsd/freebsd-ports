@@ -63,27 +63,29 @@ case $retval in
 esac
 
 # Set PPP Interface
-tempfile=`${MKTEMP} -t ipv6pd`
-${DIALOG} --title "L2TP-IPv6PD Setup Helper" \
-	  --inputbox "Please Input PPP Interface (default: ng0):" -1 -1 \
-	2> ${tempfile}
-case $retval in
-0)
-	interface=`${CAT} ${tempfile}`
-	if [ -z "${interface}" ]; then
-		interface="ng0"
-	fi
-	${RM} ${tempfile}
-	;;
-1)
-	${RM} ${tempfile}
-	exit
-	;;
-255)
-	${RM} ${tempfile}
-	exit
-	;;
-esac
+if [ "${MPD_NAME}" = "mpd4" ]; then
+	tempfile=`${MKTEMP} -t ipv6pd`
+	${DIALOG} --title "L2TP-IPv6PD Setup Helper" \
+		--inputbox "Please Input PPP Interface (default: ng0):" \
+		-1 -1 2> ${tempfile}
+	case $retval in
+	0)
+		interface=`${CAT} ${tempfile}`
+		if [ -z "${interface}" ]; then
+			interface="ng0"
+		fi
+		${RM} ${tempfile}
+		;;
+	1)
+		${RM} ${tempfile}
+		exit
+		;;
+	    255)
+		${RM} ${tempfile}
+		exit
+		;;
+	esac
+fi
 
 # Set Prefix Delegation Interface
 tempfile=`${MKTEMP} -t ipv6pd`

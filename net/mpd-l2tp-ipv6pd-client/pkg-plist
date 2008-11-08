@@ -3,7 +3,7 @@
 %%CONF_DIR%%/linkdown.sh
 %%CONF_DIR%%/linkup.sh
 %%CONF_DIR%%/mpd.conf
-%%CONF_DIR%%/mpd.links
+%%MPD4%%%%CONF_DIR%%/mpd.links
 %%CONF_DIR%%/mpd.secret
 %%CONF_DIR%%/%%MPD_NAME%%
 %%CONF_DIR%%/rtadvd.conf
