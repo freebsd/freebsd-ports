@@ -74,6 +74,7 @@
 %%T%%/db/bin/stopNetworkServer.bat
 %%T%%/db/bin/sysinfo
 %%T%%/db/bin/sysinfo.bat
+%%T%%/db/demo/README.txt
 %%T%%/db/demo/databases/toursdb.jar
 %%T%%/db/demo/databases/toursdb/log/log.ctrl
 %%T%%/db/demo/databases/toursdb/log/log1.dat
@@ -127,24 +128,28 @@
 %%T%%/db/demo/databases/toursdb/seg0/c3b1.dat
 %%T%%/db/demo/databases/toursdb/seg0/c3c0.dat
 %%T%%/db/demo/databases/toursdb/seg0/c3d1.dat
-%%T%%/db/demo/databases/toursdb/seg0/c3e0.dat
+%%T%%/db/demo/databases/toursdb/seg0/c3e1.dat
 %%T%%/db/demo/databases/toursdb/seg0/c3f1.dat
-%%T%%/db/demo/databases/toursdb/seg0/c401.dat
+%%T%%/db/demo/databases/toursdb/seg0/c400.dat
 %%T%%/db/demo/databases/toursdb/seg0/c41.dat
-%%T%%/db/demo/databases/toursdb/seg0/c410.dat
-%%T%%/db/demo/databases/toursdb/seg0/c421.dat
+%%T%%/db/demo/databases/toursdb/seg0/c411.dat
+%%T%%/db/demo/databases/toursdb/seg0/c420.dat
 %%T%%/db/demo/databases/toursdb/seg0/c431.dat
-%%T%%/db/demo/databases/toursdb/seg0/c440.dat
-%%T%%/db/demo/databases/toursdb/seg0/c451.dat
+%%T%%/db/demo/databases/toursdb/seg0/c441.dat
+%%T%%/db/demo/databases/toursdb/seg0/c450.dat
 %%T%%/db/demo/databases/toursdb/seg0/c461.dat
 %%T%%/db/demo/databases/toursdb/seg0/c471.dat
 %%T%%/db/demo/databases/toursdb/seg0/c480.dat
 %%T%%/db/demo/databases/toursdb/seg0/c491.dat
 %%T%%/db/demo/databases/toursdb/seg0/c4a1.dat
-%%T%%/db/demo/databases/toursdb/seg0/c4b0.dat
-%%T%%/db/demo/databases/toursdb/seg0/c4c1.dat
-%%T%%/db/demo/databases/toursdb/seg0/c4d0.dat
+%%T%%/db/demo/databases/toursdb/seg0/c4b1.dat
+%%T%%/db/demo/databases/toursdb/seg0/c4c0.dat
+%%T%%/db/demo/databases/toursdb/seg0/c4d1.dat
+%%T%%/db/demo/databases/toursdb/seg0/c4e1.dat
+%%T%%/db/demo/databases/toursdb/seg0/c4f0.dat
+%%T%%/db/demo/databases/toursdb/seg0/c501.dat
 %%T%%/db/demo/databases/toursdb/seg0/c51.dat
+%%T%%/db/demo/databases/toursdb/seg0/c510.dat
 %%T%%/db/demo/databases/toursdb/seg0/c60.dat
 %%T%%/db/demo/databases/toursdb/seg0/c71.dat
 %%T%%/db/demo/databases/toursdb/seg0/c81.dat
@@ -158,6 +163,7 @@
 %%T%%/db/demo/databases/toursdb/service.properties
 %%T%%/db/demo/programs/csfull.css
 %%T%%/db/demo/programs/demo.html
+%%T%%/db/demo/programs/derbylogo128_bluebg.png
 %%T%%/db/demo/programs/localcal/README
 %%T%%/db/demo/programs/localcal/src/AddEventRequest.java
 %%T%%/db/demo/programs/localcal/src/CalEvent.java
@@ -202,11 +208,12 @@
 %%T%%/db/demo/programs/simple/SimpleApp.java
 %%T%%/db/demo/programs/simple/derby.properties
 %%T%%/db/demo/programs/simple/example.html
-%%T%%/db/demo/programs/toursdb/BART.gif
-%%T%%/db/demo/programs/toursdb/Caltrain.gif
-%%T%%/db/demo/programs/toursdb/LightRail.gif
+%%T%%/db/demo/programs/simplemobile/SimpleMobileApp.class
+%%T%%/db/demo/programs/simplemobile/SimpleMobileApp.java
+%%T%%/db/demo/programs/simplemobile/readme.html
 %%T%%/db/demo/programs/toursdb/ToursDB_schema.sql
 %%T%%/db/demo/programs/toursdb/build.xml
+%%T%%/db/demo/programs/toursdb/cupisle.gif
 %%T%%/db/demo/programs/toursdb/disconnect.sql
 %%T%%/db/demo/programs/toursdb/insertMaps.java
 %%T%%/db/demo/programs/toursdb/loadAIRLINES.sql
@@ -217,7 +224,33 @@
 %%T%%/db/demo/programs/toursdb/loadFLIGHTS1.sql
 %%T%%/db/demo/programs/toursdb/loadFLIGHTS2.sql
 %%T%%/db/demo/programs/toursdb/loadTables.sql
+%%T%%/db/demo/programs/toursdb/smallisle.gif
 %%T%%/db/demo/programs/toursdb/toursdb_readme.html
+%%T%%/db/demo/programs/toursdb/witchisle.gif
+%%T%%/db/demo/programs/vtis/README
+%%T%%/db/demo/programs/vtis/data/ApacheServerLog.xml
+%%T%%/db/demo/programs/vtis/data/DerbyJiraReport.xml
+%%T%%/db/demo/programs/vtis/data/svn_log.txt
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/FlatFileVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/QueryRow.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/QueryVTIHelper.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/StringColumnVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/VTIHelper.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/VTITemplate.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/XMLRow.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core/XmlVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/ApacheServerLogVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/DerbyJiraReportVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/LineListVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/PropertyFileVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/SubversionLogVTI.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/VTIs.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example/WorldDBSnapshot.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SnapshotQuery.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/Subscription.java
+%%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot/SubscriptionSignature.java
+%%T%%/db/demo/programs/vtis/sql/demoFileVtis.sql
+%%T%%/db/demo/programs/vtis/sql/demoForeignDbmsVtis.sql
 %%T%%/db/demo/programs/workingwithderby/WwdClientExample.class
 %%T%%/db/demo/programs/workingwithderby/WwdClientExample.java
 %%T%%/db/demo/programs/workingwithderby/WwdEmbedded.class
@@ -284,6 +317,12 @@
 %%T%%/db/docs/html/adminguide/cadminpreface22460.html
 %%T%%/db/docs/html/adminguide/cadminpreface23947.html
 %%T%%/db/docs/html/adminguide/cadminpreface30074.html
+%%T%%/db/docs/html/adminguide/cadminreplication.html
+%%T%%/db/docs/html/adminguide/cadminreplicfailover.html
+%%T%%/db/docs/html/adminguide/cadminreplicfailures.html
+%%T%%/db/docs/html/adminguide/cadminreplicsecurity.html
+%%T%%/db/docs/html/adminguide/cadminreplicstartrun.html
+%%T%%/db/docs/html/adminguide/cadminreplicstop.html
 %%T%%/db/docs/html/adminguide/cadminrollforward.html
 %%T%%/db/docs/html/adminguide/cadminservlet98430.html
 %%T%%/db/docs/html/adminguide/cadminspace21579.html
@@ -356,6 +395,7 @@
 %%T%%/db/docs/html/adminguide/tadminnetservcustom.html
 %%T%%/db/docs/html/adminguide/tadminnetservopen.html
 %%T%%/db/docs/html/adminguide/tadminnetservrun.html
+%%T%%/db/docs/html/adminguide/tadminnetservusrauth.html
 %%T%%/db/docs/html/adminguide/tadminovclirun.html
 %%T%%/db/docs/html/adminguide/tadminovnsrundemo.html
 %%T%%/db/docs/html/adminguide/tadminovrunsrvprgm.html
@@ -476,7 +516,6 @@
 %%T%%/db/docs/html/devguide/cdevdgpref23947.html
 %%T%%/db/docs/html/devguide/cdevdgpref24290.html
 %%T%%/db/docs/html/devguide/cdevdgpref29520.html
-%%T%%/db/docs/html/devguide/cdevdvlp10252.html
 %%T%%/db/docs/html/devguide/cdevdvlp13018.html
 %%T%%/db/docs/html/devguide/cdevdvlp14839.html
 %%T%%/db/docs/html/devguide/cdevdvlp17453.html
@@ -488,7 +527,6 @@
 %%T%%/db/docs/html/devguide/cdevdvlp21955.html
 %%T%%/db/docs/html/devguide/cdevdvlp22619.html
 %%T%%/db/docs/html/devguide/cdevdvlp24155.html
-%%T%%/db/docs/html/devguide/cdevdvlp25174.html
 %%T%%/db/docs/html/devguide/cdevdvlp25820.html
 %%T%%/db/docs/html/devguide/cdevdvlp25889.html
 %%T%%/db/docs/html/devguide/cdevdvlp27610.html
@@ -497,7 +535,6 @@
 %%T%%/db/docs/html/devguide/cdevdvlp34964.html
 %%T%%/db/docs/html/devguide/cdevdvlp39409.html
 %%T%%/db/docs/html/devguide/cdevdvlp39943.html
-%%T%%/db/docs/html/devguide/cdevdvlp40170.html
 %%T%%/db/docs/html/devguide/cdevdvlp40350.html
 %%T%%/db/docs/html/devguide/cdevdvlp40653.html
 %%T%%/db/docs/html/devguide/cdevdvlp40724.html
@@ -533,6 +570,13 @@
 %%T%%/db/docs/html/devguide/cdevspecial76763.html
 %%T%%/db/docs/html/devguide/cdevspecial847513.html
 %%T%%/db/docs/html/devguide/cdevspecial93497.html
+%%T%%/db/docs/html/devguide/cdevspecialtabfuncs.html
+%%T%%/db/docs/html/devguide/cdevspecialtfbasic.html
+%%T%%/db/docs/html/devguide/cdevspecialtfexample.html
+%%T%%/db/docs/html/devguide/cdevspecialtfgetxxx.html
+%%T%%/db/docs/html/devguide/cdevspecialtfoptexample.html
+%%T%%/db/docs/html/devguide/cdevspecialtfoptimizer.html
+%%T%%/db/docs/html/devguide/cdevspecialtfopttune.html
 %%T%%/db/docs/html/devguide/cdevstandards806118.html
 %%T%%/db/docs/html/devguide/cdevstandardsxml.html
 %%T%%/db/docs/html/devguide/cdevstart16043.html
@@ -598,12 +642,12 @@
 %%T%%/db/docs/html/devguide/rdevcsecure871406.html
 %%T%%/db/docs/html/devguide/rdevcsecure871422.html
 %%T%%/db/docs/html/devguide/rdevcsecure871439.html
+%%T%%/db/docs/html/devguide/rdevcsecureclientexample.html
 %%T%%/db/docs/html/devguide/rdevdeploy856845.html
 %%T%%/db/docs/html/devguide/rdevdeploy856880.html
 %%T%%/db/docs/html/devguide/rdevdeploy856912.html
 %%T%%/db/docs/html/devguide/rdevdeploy856948.html
 %%T%%/db/docs/html/devguide/rdevdvlp22102.html
-%%T%%/db/docs/html/devguide/rdevdvlp38881.html
 %%T%%/db/docs/html/devguide/rdevdvlp847152.html
 %%T%%/db/docs/html/devguide/rdevexudclass.html
 %%T%%/db/docs/html/devguide/rdevlicense.html
@@ -632,7 +676,6 @@
 %%T%%/db/docs/html/devguide/tdevdvlp14496.html
 %%T%%/db/docs/html/devguide/tdevdvlp20349.html
 %%T%%/db/docs/html/devguide/tdevdvlp36289.html
-%%T%%/db/docs/html/devguide/tdevdvlp38381.html
 %%T%%/db/docs/html/devguide/tdevdvlp39090.html
 %%T%%/db/docs/html/devguide/tdevdvlp40140.html
 %%T%%/db/docs/html/devguide/tdevdvlp40464.html
@@ -688,9 +731,7 @@
 %%T%%/db/docs/html/getstart/twwdactivity2.html
 %%T%%/db/docs/html/getstart/twwdactivity3_Setup.html
 %%T%%/db/docs/html/getstart/twwdactivity4.html
-%%T%%/db/docs/html/images/java_db_type.gif
 %%T%%/db/docs/html/images/java_db_type.jpg
-%%T%%/db/docs/html/images/javadb.jpg
 %%T%%/db/docs/html/images/logowithtext.jpg
 %%T%%/db/docs/html/ref/crefjavadb.html
 %%T%%/db/docs/html/ref/crefjavbclobnot.html
@@ -748,10 +789,22 @@
 %%T%%/db/docs/html/ref/rrefattrib88843.html
 %%T%%/db/docs/html/ref/rrefattribcollation.html
 %%T%%/db/docs/html/ref/rrefattribencryptkey.html
+%%T%%/db/docs/html/ref/rrefattribfailover.html
 %%T%%/db/docs/html/ref/rrefattribnewbootpw.html
 %%T%%/db/docs/html/ref/rrefattribnewencryptkey.html
 %%T%%/db/docs/html/ref/rrefattribsecmech.html
+%%T%%/db/docs/html/ref/rrefattribslavehost.html
+%%T%%/db/docs/html/ref/rrefattribslaveport.html
 %%T%%/db/docs/html/ref/rrefattribssl.html
+%%T%%/db/docs/html/ref/rrefattribstartmaster.html
+%%T%%/db/docs/html/ref/rrefattribstartslave.html
+%%T%%/db/docs/html/ref/rrefattribstopmaster.html
+%%T%%/db/docs/html/ref/rrefattribstopslave.html
+%%T%%/db/docs/html/ref/rrefattribtracedirectory.html
+%%T%%/db/docs/html/ref/rrefattribtracefile.html
+%%T%%/db/docs/html/ref/rrefattribtracefileappend.html
+%%T%%/db/docs/html/ref/rrefattribtracelevel.html
+%%T%%/db/docs/html/ref/rrefattribupgrade.html
 %%T%%/db/docs/html/ref/rrefbackupdbenablelognowaitproc.html
 %%T%%/db/docs/html/ref/rrefbackupdbenablelogproc.html
 %%T%%/db/docs/html/ref/rrefbackupdbnowaitproc.html
@@ -789,6 +842,7 @@
 %%T%%/db/docs/html/ref/rrefdropfunctionstatement.html
 %%T%%/db/docs/html/ref/rrefdropprocedurestatement.html
 %%T%%/db/docs/html/ref/rrefdttlimits.html
+%%T%%/db/docs/html/ref/rrefemptystmtcache.html
 %%T%%/db/docs/html/ref/rrefexcept16677.html
 %%T%%/db/docs/html/ref/rrefexcept71493.html
 %%T%%/db/docs/html/ref/rrefexportproc.html
@@ -801,6 +855,8 @@
 %%T%%/db/docs/html/ref/rreffuncatan.html
 %%T%%/db/docs/html/ref/rreffuncceil.html
 %%T%%/db/docs/html/ref/rreffunccos.html
+%%T%%/db/docs/html/ref/rreffunccosh.html
+%%T%%/db/docs/html/ref/rreffunccot.html
 %%T%%/db/docs/html/ref/rreffuncdegrees.html
 %%T%%/db/docs/html/ref/rreffuncexp.html
 %%T%%/db/docs/html/ref/rreffuncfloor.html
@@ -808,13 +864,20 @@
 %%T%%/db/docs/html/ref/rreffunclog10.html
 %%T%%/db/docs/html/ref/rreffuncpi.html
 %%T%%/db/docs/html/ref/rreffuncradians.html
+%%T%%/db/docs/html/ref/rreffuncrand.html
+%%T%%/db/docs/html/ref/rreffuncrandom.html
+%%T%%/db/docs/html/ref/rreffuncrownumber.html
+%%T%%/db/docs/html/ref/rreffuncsign.html
 %%T%%/db/docs/html/ref/rreffuncsin.html
+%%T%%/db/docs/html/ref/rreffuncsinh.html
 %%T%%/db/docs/html/ref/rreffunctan.html
+%%T%%/db/docs/html/ref/rreffunctanh.html
 %%T%%/db/docs/html/ref/rreffuncxmlexists.html
 %%T%%/db/docs/html/ref/rreffuncxmlparse.html
 %%T%%/db/docs/html/ref/rreffuncxmlquery.html
 %%T%%/db/docs/html/ref/rreffuncxmlserialize.html
 %%T%%/db/docs/html/ref/rrefgetdbpropfunc.html
+%%T%%/db/docs/html/ref/rrefgetuseraccess.html
 %%T%%/db/docs/html/ref/rrefgpc1.html
 %%T%%/db/docs/html/ref/rrefhourfunc.html
 %%T%%/db/docs/html/ref/rrefidentityvallocal.html
@@ -909,6 +972,7 @@
 %%T%%/db/docs/html/ref/rrefselectexpression.html
 %%T%%/db/docs/html/ref/rrefsetdbpropproc.html
 %%T%%/db/docs/html/ref/rrefsetstatstimingproc.html
+%%T%%/db/docs/html/ref/rrefsetuseraccess.html
 %%T%%/db/docs/html/ref/rrefsimplecolumnname.html
 %%T%%/db/docs/html/ref/rrefsistabs12085.html
 %%T%%/db/docs/html/ref/rrefsistabs12813.html
@@ -1039,6 +1103,7 @@
 %%T%%/db/docs/html/ref/rrefsqljrenamecolumnstatement.html
 %%T%%/db/docs/html/ref/rrefsqljrenametablestatement.html
 %%T%%/db/docs/html/ref/rrefsqljrevoke.html
+%%T%%/db/docs/html/ref/rrefsqljtfinvoke.html
 %%T%%/db/docs/html/ref/rrefsqljtypexml.html
 %%T%%/db/docs/html/ref/rrefstringlimits.html
 %%T%%/db/docs/html/ref/rrefsynonymname.html
@@ -1256,6 +1321,7 @@
 %%T%%/db/docs/html/tuning/ctunperf816059.html
 %%T%%/db/docs/html/tuning/ctunperf816635.html
 %%T%%/db/docs/html/tuning/ctunperf98197.html
+%%T%%/db/docs/html/tuning/ctunperftablefunctions.html
 %%T%%/db/docs/html/tuning/ctunproper22250.html
 %%T%%/db/docs/html/tuning/ctunproper51399.html
 %%T%%/db/docs/html/tuning/ctunpropref1002477.html
@@ -1349,9 +1415,15 @@
 %%T%%/db/docs/html/tuning/rtunproper81359.html
 %%T%%/db/docs/html/tuning/rtunproper81405.html
 %%T%%/db/docs/html/tuning/rtunproper98166.html
+%%T%%/db/docs/html/tuning/rtunproperbootall.html
 %%T%%/db/docs/html/tuning/rtunpropercachedn.html
 %%T%%/db/docs/html/tuning/rtunproperdurability.html
+%%T%%/db/docs/html/tuning/rtunproperlogbuffersize.html
+%%T%%/db/docs/html/tuning/rtunpropermaxlogshippinginterval.html
+%%T%%/db/docs/html/tuning/rtunproperminlogshippinginterval.html
+%%T%%/db/docs/html/tuning/rtunpropernoautoboot.html
 %%T%%/db/docs/html/tuning/rtunpropersqlauth.html
+%%T%%/db/docs/html/tuning/rtunproperverbose.html
 %%T%%/db/docs/html/tuning/rtunproperxatrantimeout.html
 %%T%%/db/docs/html/tuning/rtunsearchauthdn.html
 %%T%%/db/docs/html/tuning/rtunsearchauthpw.html
@@ -1380,34 +1452,6 @@
 %%T%%/db/docs/pdf/ref/refderby.pdf
 %%T%%/db/docs/pdf/tools/derbytools.pdf
 %%T%%/db/docs/pdf/tuning/tuningderby.pdf
-%%T%%/db/frameworks.DEPRECATED.txt
-%%T%%/db/frameworks/NetworkServer/bin/NetworkServerControl.bat
-%%T%%/db/frameworks/NetworkServer/bin/NetworkServerControl.ksh
-%%T%%/db/frameworks/NetworkServer/bin/dblook.bat
-%%T%%/db/frameworks/NetworkServer/bin/dblook.ksh
-%%T%%/db/frameworks/NetworkServer/bin/ij.bat
-%%T%%/db/frameworks/NetworkServer/bin/ij.ksh
-%%T%%/db/frameworks/NetworkServer/bin/setNetworkClientCP.bat
-%%T%%/db/frameworks/NetworkServer/bin/setNetworkClientCP.ksh
-%%T%%/db/frameworks/NetworkServer/bin/setNetworkServerCP.bat
-%%T%%/db/frameworks/NetworkServer/bin/setNetworkServerCP.ksh
-%%T%%/db/frameworks/NetworkServer/bin/startNetworkServer.bat
-%%T%%/db/frameworks/NetworkServer/bin/startNetworkServer.ksh
-%%T%%/db/frameworks/NetworkServer/bin/stopNetworkServer.bat
-%%T%%/db/frameworks/NetworkServer/bin/stopNetworkServer.ksh
-%%T%%/db/frameworks/NetworkServer/bin/sysinfo.bat
-%%T%%/db/frameworks/NetworkServer/bin/sysinfo.ksh
-%%T%%/db/frameworks/NetworkServer/readme.html
-%%T%%/db/frameworks/embedded/bin/dblook.bat
-%%T%%/db/frameworks/embedded/bin/dblook.ksh
-%%T%%/db/frameworks/embedded/bin/ij.bat
-%%T%%/db/frameworks/embedded/bin/ij.ksh
-%%T%%/db/frameworks/embedded/bin/setEmbeddedCP.bat
-%%T%%/db/frameworks/embedded/bin/setEmbeddedCP.ksh
-%%T%%/db/frameworks/embedded/bin/sysinfo.bat
-%%T%%/db/frameworks/embedded/bin/sysinfo.ksh
-%%T%%/db/frameworks/embedded/readme.html
-%%T%%/db/frameworks/readme.html
 %%T%%/db/index.html
 %%T%%/db/javadoc/jdbc3/allclasses-frame.html
 %%T%%/db/javadoc/jdbc3/allclasses-noframe.html
@@ -1438,17 +1482,37 @@
 %%T%%/db/javadoc/jdbc3/org/apache/derby/jdbc/package-frame.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/jdbc/package-summary.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/jdbc/package-tree.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/JDBCMBean.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/Management.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/ManagementMBean.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/VersionMBean.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/drda/NetworkServerMBean.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/drda/package-frame.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/drda/package-summary.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/drda/package-tree.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/package-frame.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/package-summary.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/package-tree.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/security/SystemPermission.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/security/package-frame.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/security/package-summary.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/security/package-tree.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/dblook.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/ij.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/package-frame.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/package-summary.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/package-tree.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/sysinfo.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/VTICosting.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/VTIEnvironment.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/package-frame.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/package-summary.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/package-tree.html
 %%T%%/db/javadoc/jdbc3/overview-frame.html
 %%T%%/db/javadoc/jdbc3/overview-summary.html
 %%T%%/db/javadoc/jdbc3/overview-tree.html
 %%T%%/db/javadoc/jdbc3/package-list
-%%T%%/db/javadoc/jdbc3/packages.html
+%%T%%/db/javadoc/jdbc3/resources/derby_logo64.png
 %%T%%/db/javadoc/jdbc3/resources/inherit.gif
 %%T%%/db/javadoc/jdbc3/serialized-form.html
 %%T%%/db/javadoc/jdbc3/stylesheet.css
@@ -1480,16 +1544,37 @@
 %%T%%/db/javadoc/jdbc4/org/apache/derby/jdbc/package-frame.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/jdbc/package-summary.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/jdbc/package-tree.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/JDBCMBean.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/Management.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/ManagementMBean.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/VersionMBean.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/drda/NetworkServerMBean.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/drda/package-frame.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/drda/package-summary.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/drda/package-tree.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/package-frame.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/package-summary.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/package-tree.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/security/SystemPermission.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/security/package-frame.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/security/package-summary.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/security/package-tree.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/dblook.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/ij.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/package-frame.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/package-summary.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/package-tree.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/sysinfo.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/VTICosting.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/VTIEnvironment.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/package-frame.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/package-summary.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/package-tree.html
 %%T%%/db/javadoc/jdbc4/overview-frame.html
 %%T%%/db/javadoc/jdbc4/overview-summary.html
 %%T%%/db/javadoc/jdbc4/overview-tree.html
 %%T%%/db/javadoc/jdbc4/package-list
+%%T%%/db/javadoc/jdbc4/resources/derby_logo64.png
 %%T%%/db/javadoc/jdbc4/resources/inherit.gif
 %%T%%/db/javadoc/jdbc4/serialized-form.html
 %%T%%/db/javadoc/jdbc4/stylesheet.css
@@ -1844,6 +1929,8 @@
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
 %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
+%%T%%/demo/jfc/Laffy/laffy.png
+%%T%%/demo/jfc/Laffy/readme.html
 %%T%%/demo/jfc/Metalworks/Metalworks.jar
 %%T%%/demo/jfc/Metalworks/README.txt
 %%T%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
@@ -2151,6 +2238,8 @@
 %%T%%/demo/jfc/SwingSet2/src/resources/swingset_zh_CN.properties
 %%T%%/demo/jfc/SwingSet2/src/resources/title.html
 %%T%%/demo/jfc/SwingSet2/src/resources/tree.txt
+%%T%%/demo/jfc/SwingSet3/readme.html
+%%T%%/demo/jfc/SwingSet3/swingset3.png
 %%T%%/demo/jfc/TableExample/README.txt
 %%T%%/demo/jfc/TableExample/TableExample.jar
 %%T%%/demo/jfc/TableExample/src/JDBCAdapter.java
@@ -2239,6 +2328,7 @@
 %%T%%/demo/jvmti/hprof/src/linux/hprof_md.c
 %%T%%/demo/jvmti/hprof/src/manual.html
 %%T%%/demo/jvmti/hprof/src/sample.makefile.txt
+%%T%%/demo/jvmti/index.html
 %%T%%/demo/jvmti/java_crw_demo/README.txt
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.c
 %%T%%/demo/jvmti/java_crw_demo/src/java_crw_demo.h
@@ -2289,6 +2379,7 @@
 %%T%%/demo/management/VerboseGC/VerboseGC.jar
 %%T%%/demo/management/VerboseGC/src/PrintGCStat.java
 %%T%%/demo/management/VerboseGC/src/VerboseGC.java
+%%T%%/demo/management/index.html
 %%T%%/demo/nbproject/README.txt
 %%T%%/demo/nbproject/jfc/FileChooserDemo/build.properties
 %%T%%/demo/nbproject/jfc/FileChooserDemo/build.xml
@@ -2713,6 +2804,8 @@
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/Rotate.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/SelectTx.java
 %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms/TransformAnim.java
+%%T%%/demo/plugin/jfc/Laffy/laffy.png
+%%T%%/demo/plugin/jfc/Laffy/readme.html
 %%T%%/demo/plugin/jfc/Metalworks/Metalworks.jar
 %%T%%/demo/plugin/jfc/Metalworks/README.txt
 %%T%%/demo/plugin/jfc/Metalworks/src/AquaMetalTheme.java
@@ -3020,6 +3113,8 @@
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/swingset_zh_CN.properties
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/title.html
 %%T%%/demo/plugin/jfc/SwingSet2/src/resources/tree.txt
+%%T%%/demo/plugin/jfc/SwingSet3/readme.html
+%%T%%/demo/plugin/jfc/SwingSet3/swingset3.png
 %%T%%/demo/plugin/jfc/TableExample/README.txt
 %%T%%/demo/plugin/jfc/TableExample/TableExample.jar
 %%T%%/demo/plugin/jfc/TableExample/src/JDBCAdapter.java
@@ -3098,7 +3193,7 @@
 %%T%%/jre/lib/deploy/messages_zh_CN.properties
 %%T%%/jre/lib/deploy/messages_zh_HK.properties
 %%T%%/jre/lib/deploy/messages_zh_TW.properties
-%%T%%/jre/lib/deploy/splash.jpg
+%%T%%/jre/lib/deploy/splash.gif
 %%T%%/jre/lib/desktop/applications/sun-java.desktop
 %%T%%/jre/lib/desktop/applications/sun-javaws.desktop
 %%T%%/jre/lib/desktop/applications/sun_java.desktop
@@ -3221,6 +3316,7 @@
 %%T%%/jre/lib/i386/libnative_chmod_g.so
 %%T%%/jre/lib/i386/libnet.so
 %%T%%/jre/lib/i386/libnio.so
+%%T%%/jre/lib/i386/libnpjp2.so
 %%T%%/jre/lib/i386/libnpt.so
 %%T%%/jre/lib/i386/librmi.so
 %%T%%/jre/lib/i386/libsaproc.so
@@ -4001,6 +4097,7 @@
 %%T%%/man/ja_JP.eucJP/man1/jstack.1
 %%T%%/man/ja_JP.eucJP/man1/jstat.1
 %%T%%/man/ja_JP.eucJP/man1/jstatd.1
+%%T%%/man/ja_JP.eucJP/man1/jvisualvm.1
 %%T%%/man/ja_JP.eucJP/man1/keytool.1
 %%T%%/man/ja_JP.eucJP/man1/native2ascii.1
 %%T%%/man/ja_JP.eucJP/man1/orbd.1
@@ -4568,6 +4665,7 @@
 @dirrm %%T%%/demo/scripting
 @dirrm %%T%%/demo/plugin/jfc/TableExample/src
 @dirrm %%T%%/demo/plugin/jfc/TableExample
+@dirrm %%T%%/demo/plugin/jfc/SwingSet3
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tooltip
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/toolbar
 @dirrm %%T%%/demo/plugin/jfc/SwingSet2/src/resources/images/tabbedpane
@@ -4603,6 +4701,7 @@
 @dirrm %%T%%/demo/plugin/jfc/Metalworks/src/resources
 @dirrm %%T%%/demo/plugin/jfc/Metalworks/src
 @dirrm %%T%%/demo/plugin/jfc/Metalworks
+@dirrm %%T%%/demo/plugin/jfc/Laffy
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
 @dirrm %%T%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint
@@ -4741,6 +4840,7 @@
 @dirrm %%T%%/demo/jpda
 @dirrm %%T%%/demo/jfc/TableExample/src
 @dirrm %%T%%/demo/jfc/TableExample
+@dirrm %%T%%/demo/jfc/SwingSet3
 @dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/tooltip
 @dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/toolbar
 @dirrm %%T%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane
@@ -4776,6 +4876,7 @@
 @dirrm %%T%%/demo/jfc/Metalworks/src/resources
 @dirrm %%T%%/demo/jfc/Metalworks/src
 @dirrm %%T%%/demo/jfc/Metalworks
+@dirrm %%T%%/demo/jfc/Laffy
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Transforms
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Paths
 @dirrm %%T%%/demo/jfc/Java2D/src/java2d/demos/Paint
@@ -4839,7 +4940,11 @@
 @dirrm %%T%%/demo
 @dirrm %%T%%/db/lib
 @dirrm %%T%%/db/javadoc/jdbc4/resources
+@dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/vti
 @dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/tools
+@dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/security
+@dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans/drda
+@dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/mbeans
 @dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/jdbc
 @dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/drda
 @dirrm %%T%%/db/javadoc/jdbc4/org/apache/derby/authentication
@@ -4848,7 +4953,11 @@
 @dirrm %%T%%/db/javadoc/jdbc4/org
 @dirrm %%T%%/db/javadoc/jdbc4
 @dirrm %%T%%/db/javadoc/jdbc3/resources
+@dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/vti
 @dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/tools
+@dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/security
+@dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans/drda
+@dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/mbeans
 @dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/jdbc
 @dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/drda
 @dirrm %%T%%/db/javadoc/jdbc3/org/apache/derby/authentication
@@ -4857,11 +4966,6 @@
 @dirrm %%T%%/db/javadoc/jdbc3/org
 @dirrm %%T%%/db/javadoc/jdbc3
 @dirrm %%T%%/db/javadoc
-@dirrm %%T%%/db/frameworks/embedded/bin
-@dirrm %%T%%/db/frameworks/embedded
-@dirrm %%T%%/db/frameworks/NetworkServer/bin
-@dirrm %%T%%/db/frameworks/NetworkServer
-@dirrm %%T%%/db/frameworks
 @dirrm %%T%%/db/docs/pdf/tuning
 @dirrm %%T%%/db/docs/pdf/tools
 @dirrm %%T%%/db/docs/pdf/ref
@@ -4880,7 +4984,19 @@
 @dirrm %%T%%/db/docs
 @dirrm %%T%%/db/demo/templates
 @dirrm %%T%%/db/demo/programs/workingwithderby
+@dirrm %%T%%/db/demo/programs/vtis/sql
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/snapshot
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/example
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis/core
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo/vtis
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache/derbyDemo
+@dirrm %%T%%/db/demo/programs/vtis/java/org/apache
+@dirrm %%T%%/db/demo/programs/vtis/java/org
+@dirrm %%T%%/db/demo/programs/vtis/java
+@dirrm %%T%%/db/demo/programs/vtis/data
+@dirrm %%T%%/db/demo/programs/vtis
 @dirrm %%T%%/db/demo/programs/toursdb
+@dirrm %%T%%/db/demo/programs/simplemobile
 @dirrm %%T%%/db/demo/programs/simple
 @dirrm %%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc
 @dirrm %%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores
