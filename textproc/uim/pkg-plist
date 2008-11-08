@@ -235,6 +235,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/tutcode-bushudic.scm
 %%DATADIR%%/tutcode-custom.scm
 %%DATADIR%%/tutcode-key-custom.scm
+%%DATADIR%%/tutcode-kigoudic.scm
 %%DATADIR%%/tutcode-rule.scm
 %%DATADIR%%/tutcode.scm
 %%DATADIR%%/uim-module-manager.scm
