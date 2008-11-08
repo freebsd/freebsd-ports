@@ -1,3 +1,4 @@
+include/jit/jit-arch.h
 include/jit/jit-apply.h
 include/jit/jit-block.h
 include/jit/jit-common.h
