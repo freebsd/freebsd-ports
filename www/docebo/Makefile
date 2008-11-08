@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	docebo
-PORTVERSION=	3.5.0.4
+PORTVERSION=	3.6.0.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.docebo.org/doceboCms/index.php?mn=docs&op=download&pi=5_4&id=57/
-DISTNAME=	${PORTNAME}3504
+MASTER_SITES=	http://www.docebo.org/doceboCms/index.php?mn=docs&op=download&pi=5_4&id=86/
+DISTNAME=	${PORTNAME}_3602
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source e-Learning platform (LMS and LCMS)
