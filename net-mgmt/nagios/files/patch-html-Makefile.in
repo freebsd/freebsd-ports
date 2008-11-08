@@ -1,5 +1,5 @@
---- html/Makefile.in.orig	2008-01-10 04:21:25.000000000 +1030
-+++ html/Makefile.in	2008-01-30 23:02:38.000000000 +1030
+--- html/Makefile.in.orig	2008-11-03 04:02:03.000000000 +1030
++++ html/Makefile.in	2008-11-05 15:11:08.000000000 +1030
 @@ -33,39 +33,39 @@
  devclean: distclean
  
@@ -29,9 +29,9 @@
  	for file in *.html; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
- 	for file in media/*.wav; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
-+	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
+ #	for file in media/*.wav; \
+-#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
++#	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
  	for file in stylesheets/*.css; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
