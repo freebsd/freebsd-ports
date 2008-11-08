@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libjit
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.southern-storm.com.au/download/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/dotgnu-pnet/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
