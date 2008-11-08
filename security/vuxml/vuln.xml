@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b09378e-addb-11dd-a578-0030843d3802">
+    <topic>vlc -- cue processing stack overflow</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><lt>0.8.6i_2,2</lt></range>
+      </package>
+      <package>
+        <name>vlc-devel</name>
+	<range><lt>0.9.6,3</lt></range>
+      </package>	
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The VLC Team reports:</p>
+	<blockquote cite="http://www.videolan.org/security/sa0810.html">
+	  <p>The VLC media player contains a stack overflow vulnerability while
+	    parsing malformed cue files. The vulnerability may be exploited by a (remote)
+	    attacker to execute arbitrary code in the context of VLC media player.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.videolan.org/security/sa0810.html</url>
+      <url>http://www.trapkit.de/advisories/TKADV2008-012.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-11-05</discovery>
+      <entry>2008-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e30e802-a9db-11dd-93a2-000bcdf0a03b">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
