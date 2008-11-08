@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openalchemist
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,14 +15,37 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Tetris-like game
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
+LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
+	jpeg.9:${PORTSDIR}/graphics/jpeg \
+	png.5:${PORTSDIR}/graphics/png
 
-USE_GNOME=	pkgconfig
-MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		DATADIR="${DATADIR}"
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262
+# Necessary to find pkg.m4 (PKG_CHECK_MODULES)
+ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+USE_GNOME=	pkgconfig pygtk2
+USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
+USE_GL=		gl glu
+USE_SDL=	sdl gfx
+USE_ICONV=	yes
 
-# Allow relocation of skins (by default, must be in the skins/ sub-dir)
+PORTDOCS=	AUTHORS CODE-LICENSE COPYING ChangeLog GRAPHICS-LICENSE README TODO
+
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|CL_System::get_exe_path\(\) \+ "skins/|"${DATADIR}/skins/|g' ${WRKSRC}/src/*.cpp
+	@${REINPLACE_CMD} -E -e 's|^%|#|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -E -e 's|^dist_pkgdata_DATA =.*|dist_pkgdata_DATA = data/* skins/aqua.zip skins/brushed.zip skins/vectoriel.zip|g' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -E -e 's|^#!/usr/bin/python|#!${LOCALBASE}/bin/python|g' ${WRKSRC}/openalchemist-config
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

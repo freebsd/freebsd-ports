@@ -1,5 +1,9 @@
 bin/openalchemist
-%%DATADIR%%/skins/aqua.zip
-%%DATADIR%%/skins/brushed.zip
-@dirrm %%DATADIR%%/skins
+bin/openalchemist-config
+%%DATADIR%%/loading.png
+%%DATADIR%%/logo.png
+%%DATADIR%%/logo_svg.svg
+%%DATADIR%%/aqua.zip
+%%DATADIR%%/brushed.zip
+%%DATADIR%%/vectoriel.zip
 @dirrm %%DATADIR%%
