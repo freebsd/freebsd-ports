@@ -77,7 +77,7 @@ dhcp6c_pd_prestart()
 	# create dhcp6c.conf
 	${SED} -e "s/__INTERFACE__/${dhcp6c_pd_interface}/" \
 	       -e "s/__PD_INTERFACE__/${dhcp6c_pd_rtadvd_interface}/" \
-	    < ${dhcp6c_pd_conf}.in > ${dhcp6c_pd_conf}.${dhcp6c_pd_interface}
+	    < ${dhcp6c_pd_conf_in} > ${dhcp6c_pd_conf}.${dhcp6c_pd_interface}
 
 	# create dhcp6cctlkey
 	#if [ ! -f ${prefix}/etc/dhcp6cctlkey ]; then
@@ -115,16 +115,16 @@ dhcp6c_pd_stop()
 }
 
 load_rc_config ${name}
-dhcp6c_pd_conf=${dhcp6c_pd_conf:-"${prefix}/%%CONF_DIR%%/dhcp6c.conf"}
+dhcp6c_pd_conf_in=${dhcp6c_pd_conf_in:-"${prefix}/%%CONF_DIR%%/dhcp6c.conf.in"}
+dhcp6c_pd_conf=${dhcp6c_pd_conf:-"/var/run/dhcp6c.conf"}
 dhcp6c_pd_interface=${2:-${dhcp6c_pd_interface}}
 dhcp6c_pd_localaddr=${3:-${dhcp6c_pd_localaddr}}
 dhcp6c_pd_rtadvd_enable=${dhcp6c_pd_rtadvd_enable:-"NO"}
 dhcp6c_pd_rtadvd_interface=${dhcp6c_pd_rtadvd_interface:-"%%PD_INTERFACE%%"}
 dhcp6c_pd_rtadvd_conf=${dhcp6c_pd_rtadvd_conf:-"${prefix}/%%CONF_DIR%%/rtadvd.conf"}
-required_files="${dhcp6c_pd_conf}.in"
+required_files="${dhcp6c_pd_conf_in}"
 pidfile=/var/run/dhcp6c-${dhcp6c_pd_interface}.pid
-dhcp6c_pd_flags="-p ${pidfile} ${dhcp6c_pd_flags}"
-command_args="-c ${dhcp6c_pd_conf}.${dhcp6c_pd_interface} ${dhcp6c_pd_interface}"
+command_args="-p ${pidfile} -c ${dhcp6c_pd_conf}.${dhcp6c_pd_interface} ${dhcp6c_pd_interface}"
 if [ -n "${dhcp6c_pd_localaddr}" ]; then
 	command_args="-A ${dhcp6c_pd_localaddr} ${command_args}"
 fi

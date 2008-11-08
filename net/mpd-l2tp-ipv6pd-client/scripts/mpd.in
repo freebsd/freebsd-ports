@@ -1,5 +1,5 @@
 mpd_confdir="%%PREFIX%%/%%CONF_DIR%%"
-mpd_interfaces="%%INTERFACE%%"
+mpd_rundir="/var/run"
 
 mpd_enable="YES"
 mpd_flags="-b -d ${mpd_confdir}"
@@ -8,7 +8,11 @@ stop_precmd="mpd_prestop"
 
 mpd_prestop()
 {
-	for iface in ${mpd_interfaces}; do
+	local ifaces
+
+	ifaces=$(find ${mpd_rundir} -name dhcp6c.conf.\* -print | \
+		sed -e "s|${mpd_rundir}/dhcp6c\.conf\.||")
+	for iface in ${ifaces}; do
 		${mpd_confdir}/dhcp6c_pd.sh stop ${iface}
 	done
 	sleep 2
