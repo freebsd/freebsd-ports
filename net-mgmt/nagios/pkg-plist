@@ -106,6 +106,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/cgiauth.html
 %%NAGIOSWWWDIR%%/docs/cgiincludes.html
 %%NAGIOSWWWDIR%%/docs/cgis.html
+%%NAGIOSWWWDIR%%/docs/cgisecurity.html
 %%NAGIOSWWWDIR%%/docs/checkscheduling.html
 %%NAGIOSWWWDIR%%/docs/clusters.html
 %%NAGIOSWWWDIR%%/docs/config.html
@@ -346,9 +347,6 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/zoom2.gif
 %%NAGIOSWWWDIR%%/index.html
 %%NAGIOSWWWDIR%%/main.html
-%%NAGIOSWWWDIR%%/media/critical.wav
-%%NAGIOSWWWDIR%%/media/hostdown.wav
-%%NAGIOSWWWDIR%%/media/warning.wav
 %%NAGIOSWWWDIR%%/robots.txt
 %%NAGIOSWWWDIR%%/side.html
 %%NAGIOSWWWDIR%%/stylesheets/avail.css

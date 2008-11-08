@@ -1,5 +1,5 @@
---- sample-config/nagios.cfg.in.orig	2008-10-16 09:10:08.000000000 +1030
-+++ sample-config/nagios.cfg.in	2008-10-23 10:35:10.000000000 +1030
+--- sample-config/nagios.cfg.in.orig	2008-11-03 05:21:30.000000000 +1030
++++ sample-config/nagios.cfg.in	2008-11-05 15:17:25.000000000 +1030
 @@ -32,7 +32,7 @@
  cfg_file=@sysconfdir@/objects/timeperiods.cfg
  cfg_file=@sysconfdir@/objects/templates.cfg
@@ -9,12 +9,3 @@
  cfg_file=@sysconfdir@/objects/localhost.cfg
  
  # Definitions for monitoring a Windows machine
-@@ -548,7 +548,7 @@
- # These options determine when Nagios will react to detected changes
- # in system time (either forward or backwards).
- 
--time_change_threshold=
-+time_change_threshold=900
- 
- 
- 
