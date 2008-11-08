@@ -23,8 +23,8 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps

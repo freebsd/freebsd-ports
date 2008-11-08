@@ -27,8 +27,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps
