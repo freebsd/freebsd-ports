@@ -27,11 +27,12 @@ canna_flags=${canna_flags:-"-u bin"}		# Flags to canna program
 name="canna"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/cannaserver"
-start_precmd="canna_precmd"
-stop_cmd="canna_stop"
+start_precmd="canna_start_precmd"
+stop_cmd="canna_stop_cmd"
 
-canna_precmd() {
-	rm -f /tmp/.iroha_unix/IROHA
+canna_start_precmd() {
+	rm -f /tmp/.iroha_unix/IROHA*
+	rmdir /tmp/.iroha_unix > /dev/null 2>&1 || true
 	touch /var/log/CANNA0msgs
 	mkdir -p -m 0775 \
 		%%PREFIX%%/share/canna/dic/user/user \
@@ -42,9 +43,12 @@ canna_precmd() {
 		%%PREFIX%%/share/canna/dic/group
 }
 
-canna_stop() {
+canna_stop_cmd() {
 	echo "Stopping ${name}."
-	%%PREFIX%%/sbin/cannakill
+	if %%PREFIX%%/sbin/cannakill; then
+		rm -f /tmp/.iroha_unix/IROHA*
+		rmdir /tmp/.iroha_unix > /dev/null 2>&1 || true
+	fi
 }
 
 load_rc_config $name
