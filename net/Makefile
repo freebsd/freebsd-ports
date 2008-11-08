@@ -317,6 +317,7 @@
     SUBDIR += linc
     SUBDIR += linc-reference
     SUBDIR += link-monitor-applet
+    SUBDIR += linknx
     SUBDIR += linneighborhood
     SUBDIR += linphone
     SUBDIR += linphone-base
