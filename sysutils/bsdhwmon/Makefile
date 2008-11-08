@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdhwmon
-PORTVERSION=	20081005
+PORTVERSION=	20081107
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsdhwmon.parodius.com/dist/
 
