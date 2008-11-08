@@ -1,5 +1,5 @@
---- Makefile.orig	2008-09-03 14:35:44.168798355 +0200
-+++ Makefile	2008-09-03 14:46:25.884603576 +0200
+--- Makefile.orig	2008-10-28 13:39:40.000000000 +0100
++++ Makefile	2008-11-04 15:51:07.000000000 +0100
 @@ -13,6 +13,7 @@
  prefix=/usr
  bindir=$(prefix)/bin
@@ -8,7 +8,7 @@
  
  # define top of RPM build area
  topdir=/usr/src/redhat
-@@ -591,18 +592,21 @@
+@@ -592,18 +593,21 @@
  pouninstall:
  	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
  	@echo done uninstalling translations
@@ -33,7 +33,7 @@
  	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
  	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
  		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
-@@ -794,7 +798,7 @@
+@@ -800,7 +804,7 @@
  #
  # Note: first "make" command forces generating correct help file path in "config.h"
  #
