@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostess
 PORTVERSION=	20061127
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 
@@ -17,7 +17,12 @@ COMMENT=	Graphical DSSI host with JACK MIDI support
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		lo.6:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
+		jackit>=0.109.2:${PORTSDIR}/audio/jack
+
+# Between 0.109.0 and earlier versions there was an api change in JACK.
+# However, the library version number was not changed.  The line above
+# is supposed to work around that.
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jackmidi
