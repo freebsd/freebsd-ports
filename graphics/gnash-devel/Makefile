@@ -7,13 +7,13 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20081030
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.gnashdev.org/dev_snapshots/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-trunk-${SVNREV}
+DISTNAME=	${PORTNAME}-trunk-${REVISION}
 EXTRACT_SUFX=	.tar.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -26,7 +26,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 
 CONFLICTS=	gnash-[0-9]*
 
-SVNREV=		10051
+REVISION=	10051
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -113,7 +113,6 @@ GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
-BROKEN=		doesn't build without GTK gui at the moment
 .endif
 
 .if defined(WITH_KDE)
@@ -180,13 +179,16 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
 		${WRKSRC}/libbase/Makefile.in
+	@${REINPLACE_CMD} -e '/^gprocessor_LDFLAGS =/ s|$$| $$(AM_LDFLAGS)|' \
+		${WRKSRC}/utilities/Makefile.in
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
