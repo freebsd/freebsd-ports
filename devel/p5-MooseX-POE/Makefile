@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-POE
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,9 +27,11 @@ MAN3=	MooseX::POE.3 \
 	MooseX::POE::Aliased.3 \
 	MooseX::POE::Meta::Instance.3 \
 	MooseX::POE::Object.3 \
-	MooseX::POE::Role.3
+	MooseX::POE::Role.3 \
+	MooseX::POE::SweetArgs.3
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
+	@${RM} ${WRKSRC}/lib/MooseX/._POE.pm
 
 .include <bsd.port.mk>
