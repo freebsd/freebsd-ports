@@ -471,6 +471,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/message.py
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/message.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/message.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/smart/packrepository.py
+%%PYTHON_SITELIBDIR%%/bzrlib/smart/packrepository.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/smart/packrepository.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/protocol.py
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/protocol.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/smart/protocol.pyo
@@ -588,6 +591,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_dump_btree.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_exceptions.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_exceptions.pyo
@@ -870,6 +876,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.pyo
