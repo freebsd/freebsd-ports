@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libshout
 # Date created:				06 Jun 2000
-# Whom:					zach@pabst.bendnet.com
+# Whom:					Zach Zurflu <zach@pabst.bendnet.com>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 DISTNAME=	libshout-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Routines for connecting and transmitting data to the icecast server
+COMMENT=	Connect and transmit data to an Icecast media streaming server
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
@@ -27,12 +27,13 @@ USE_GMAKE=	yes
 USE_GNOME+=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFLICTS=	libshout-1.0.7
+DOCSDIR=	${PREFIX}/share/doc/libshout
 
 pre-configure:
-	@ ${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure
 
 post-configure:
-	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
+	@${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
