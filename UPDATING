@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081108:
+  AFFECTS: users of editors/tamago
+  AUTHOR: hrs@FreeBSD.org
+
+  The Wnn backend of editors/tamago port now uses unix domain socket
+  to communicate the server by default.  If $[CJKT]SERVER environment
+  variable is defined, the value is used as the server host name.  In
+  JSERVER case, for example, the server name is determined in the
+  following way:
+ 
+  $JSERVER --(if null)--> wnn-jserver --(if null)--> "unix"
+ 
+  If the server host name is null or matches "^unix$", unix domain
+  socket is used.  The path name of the socket can be specified in
+  wnn-[cjkt]udpath custom variable.
+
 20081105:
   AFFECTS: users of french/pluxm-devel
   AUTHOR: jadawin@FreeBSD.org
