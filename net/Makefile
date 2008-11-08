@@ -685,6 +685,7 @@
     SUBDIR += pear-Net_Whois
     SUBDIR += pear-SOAP
     SUBDIR += pear-Services_Pingback
+    SUBDIR += pear-Services_Twitter
     SUBDIR += pear-URI_Template
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
