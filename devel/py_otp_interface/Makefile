@@ -23,8 +23,8 @@ OTP_LIBS=	__init__.py erl_async_conn.py erl_common.py erl_epmd.py \
 OTP_DOCS=	COPYING.LIB README
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PYTHON_SITELIBDIR}/py_interface

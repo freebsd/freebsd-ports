@@ -11,16 +11,22 @@ apps/VideoThumbnail/Options.xml
 apps/VideoThumbnail/VideoThumbnail.xml
 apps/VideoThumbnail/extopts.py
 apps/VideoThumbnail/extopts.pyc
+apps/VideoThumbnail/extopts.pyo
 apps/VideoThumbnail/findrox.py
 apps/VideoThumbnail/findrox.pyc
+apps/VideoThumbnail/findrox.pyo
 apps/VideoThumbnail/manage.py
 apps/VideoThumbnail/manage.pyc
+apps/VideoThumbnail/manage.pyo
 apps/VideoThumbnail/options.py
 apps/VideoThumbnail/options.pyc
+apps/VideoThumbnail/options.pyo
 apps/VideoThumbnail/thumb.py
 apps/VideoThumbnail/thumb.pyc
+apps/VideoThumbnail/thumb.pyo
 apps/VideoThumbnail/vidthumb.py
 apps/VideoThumbnail/vidthumb.pyc
+apps/VideoThumbnail/vidthumb.pyo
 @dirrm apps/VideoThumbnail/Messages
 @dirrm apps/VideoThumbnail/Help
 @dirrm apps/VideoThumbnail
