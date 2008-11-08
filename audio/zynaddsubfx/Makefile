@@ -7,7 +7,7 @@
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zynaddsubfx
@@ -25,7 +25,12 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		jack.0:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mini-xml
+BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mini-xml \
+		jackit>=0.109.2:${PORTSDIR}/audio/jack
+
+# Between 0.109.0 and earlier versions there was an api change in JACK.
+# However, the library version number was not changed.  The line above
+# is supposed to work around that.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -45,10 +50,4 @@ do-install:
 		cd ${WRKDIR}/${DISTNAME}/presets && ${FIND} . -type f \
 			-exec ${INSTALL_DATA} {} ${DATADIR}/presets/{} \;
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 4.x and 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
