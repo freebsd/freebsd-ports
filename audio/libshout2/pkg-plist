@@ -5,10 +5,10 @@ lib/libshout.so
 lib/libshout.so.5
 libdata/pkgconfig/shout.pc
 share/aclocal/shout.m4
-share/doc/libshout/COPYING
-share/doc/libshout/NEWS
-share/doc/libshout/README
-share/doc/libshout/example.c
-share/doc/libshout/nonblocking.c
-@dirrm share/doc/libshout
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/example.c
+%%DOCSDIR%%/nonblocking.c
+@dirrm %%DOCSDIR%%
 @dirrm include/shout
