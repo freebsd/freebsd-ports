@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	tta
-PORTVERSION=	3.3
+PORTVERSION=	3.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.true-audio.com/ftp/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}enc-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The True Audio Encoder, lossless (de)compressor
 
-USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
-
-LDFLAGS+=	-lm
-
 PROGRAM=	ttaenc
 
-PORTDOCS=	Readme
+PORTDOCS=	README
 PLIST_FILES=	bin/ttaenc
 
+post-patch:
+	@${REINPLACE_CMD} -e '/ifdef _BIG_ENDIAN/s|ifdef|if _BYTE_ORDER ==|' \
+		${WRKSRC}/${PROGRAM}.h
+
 do-build:
-	${CC} ${CFLAGS} -c ${WRKSRC}/${PROGRAM}.c -o ${WRKSRC}/${PROGRAM}.o
-	${CC} ${LDFLAGS} -o ${WRKSRC}/${PROGRAM} ${WRKSRC}/${PROGRAM}.o
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/${PROGRAM} \
+		${WRKSRC}/${PROGRAM}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} ${PREFIX}/bin
