@@ -49,6 +49,8 @@ share/freepops/lua/updater_common.lua
 share/freepops/lua/updater_php.lua
 share/freepops/lua/version_comparer.lua
 share/freepops/lua/xml2table.lua
+share/freepops/lua/wel.lua
+share/freepops/lua/smartlog.lua
 share/freepops/lua/xml2tex.lua
 share/freepops/lua/yahoo.lua
 @dirrm share/freepops/lua/soap
