@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.34
+PORTVERSION=	1.38
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
@@ -39,12 +39,8 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -D_FILE_OFFSET_BITS=64
 CFLAGS+=	-D_FILE_OFFSET_BITS=64
 .endif
 
-# Does not build with GCC 4.2
-.if ${OSVERSION} >= 700042
-USE_GCC=	3.4
-.if ${ARCH} == "sparc64"
+.if ${OSVERSION} >= 700042 && ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64-7
-.endif
 .endif
 
 ALL_TARGET=	generic

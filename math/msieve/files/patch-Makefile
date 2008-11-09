@@ -7,8 +7,8 @@
 -CC = gcc
 +#CC = gcc
  WARN_FLAGS = -Wall -W -Wconversion
--OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
-+#OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
+-OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon-xp -D_FILE_OFFSET_BITS=64
++#OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon-xp -D_FILE_OFFSET_BITS=64
  #OPT_FLAGS = -O3 -fomit-frame-pointer -march=k8
  
 -CFLAGS = $(OPT_FLAGS) $(MACHINE_FLAGS) $(WARN_FLAGS) -Iinclude -Ignfs/poly
