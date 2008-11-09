@@ -8,6 +8,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/macosx-clipboard
 %%PERL%%lib/urxvt/perl/matcher
 %%PERL%%lib/urxvt/perl/option-popup
+%%PERL%%lib/urxvt/perl/overlay-osc
 %%PERL%%lib/urxvt/perl/readline
 %%PERL%%lib/urxvt/perl/remote-clipboard
 %%PERL%%lib/urxvt/perl/searchable-scrollback
