@@ -7,6 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin
 
@@ -17,34 +18,48 @@ LIB_DEPENDS=	gavl.0:${PORTSDIR}/multimedia/gavl
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--without-cpuflags --without-doxygen --disable-gmerlin
-USE_GNOME=	gnomehack
+CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	README
 
-OPTIONS=	FFMPEG "Enable ffmpeg support" on \
-		THEORA "Enable theora support" on \
-		SPEEX "Enable speex support" on \
+OPTIONS=	GMERLIN	"Enable gmerlin support" on \
+		FFMPEG	"Enable ffmpeg support" on \
+		THEORA	"Enable theora support" on \
+		SPEEX	"Enable speex support" on \
 		MJPEGTOOLS "Enable mjpegtools support" on \
-		VORBIS "Enable vorbis support" on \
-		MPEG2 "Enable MPEG2 support" on \
-		TIFF "Enable TIFF support" on \
-		SAMBA "Enable samba support" on \
-		PNG "Enable libpng support" on \
-		FAAD "Enabled FAAD2 support" on \
+		VORBIS	"Enable vorbis support" on \
+		MPEG2	"Enable MPEG2 support" on \
+		TIFF	"Enable TIFF support" on \
+		SAMBA	"Enable samba support" on \
+		PNG	"Enable libpng support" on \
+		FAAD	"Enabled FAAD2 support" on \
 		DVDREAD "Enable libdvdread support" on \
-		FLAC "Enable FLAC support" on \
+		FLAC	"Enable FLAC support" on \
 		MUSEPACK "Enable musepack (mpc) support" on \
-		MAD "Enable mp3 support" on \
-		A52 "Enable A52 support" on \
-		DCA "Enable DTS Coherent Acoustics decoder" on \
-		LIBCDIO "Enable libcdio support" on \
+		MAD	"Enable mp3 support" on \
+		A52	"Enable A52 support" on \
+		DCA	"Enable DTS Coherent Acoustics decoder" on \
+		LIBCDIO	"Enable libcdio support" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" on
 
 .include <bsd.port.pre.mk>
+
+# Hack for 6.x to properly detect ffmpeg
+.if ${OSVERSION} < 700000
+CONFIGURE_ENV+=	AVCODEC_LIBS="`pkg-config --libs libavcodec` ${PTHREAD_LIBS}"
+.endif
+
+.if !defined(WITHOUT_GMERLIN)
+LIB_DEPENDS+=	gmerlin.0:${PORTSDIR}/multimedia/gmerlin
+PLIST_SUB+=	GMERLIN=""
+.else
+CONFIGURE_ARGS+=--disable-gmerlin
+PLIST_SUB+=	GMERLIN="@comment "
+.endif
 
 .if !defined(WITHOUT_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
@@ -166,16 +181,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -ffast-math||g; \
 		/LIBS/ s|-ldl||g; s|^LDFLAGS="|&$${LDFLAGS} |' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^LIBS = / s|$$|@LIBINTL@ -lz|' \
+	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| @LIBINTL@ -lz|' \
 		${WRKSRC}/tests/Makefile.in
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/in_smb.c
 
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
