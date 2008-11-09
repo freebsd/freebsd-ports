@@ -957,6 +957,7 @@
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-rak
+    SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-spreadsheet-excel
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-tidy
