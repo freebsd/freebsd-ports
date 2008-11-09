@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -393,7 +393,6 @@ CONFIGURE_ARGS+=--disable-a52
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 USE_GECKO=	firefox mozilla seamonkey nvu
-.include <bsd.gecko.mk>
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"
