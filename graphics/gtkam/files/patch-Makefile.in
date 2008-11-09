@@ -13,7 +13,7 @@
  
  info-am:
  
--install-data-am: install-desktopDATA install-gtkamdocDATA \
+-install-data-am: install-ApplicationsDATA install-gtkamdocDATA \
 -	install-iconDATA
 +install-data-am:
  

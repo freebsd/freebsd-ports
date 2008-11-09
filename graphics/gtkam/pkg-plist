@@ -58,6 +58,8 @@ share/locale/sl/LC_MESSAGES/gtkam.mo
 share/locale/sv/LC_MESSAGES/gtkam.mo
 share/locale/vi/LC_MESSAGES/gtkam.mo
 share/locale/uk/LC_MESSAGES/gtkam.mo
+share/locale/zh_CN/LC_MESSAGES/gtkam.mo
+share/pixmaps/gtkam-camera.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%

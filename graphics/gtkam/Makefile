@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.15
-PORTREVISION=	1
+PORTVERSION=	0.1.16
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto
 
@@ -19,6 +18,7 @@ LIB_DEPENDS=	exif-gtk.5:${PORTSDIR}/graphics/libexif-gtk \
 
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
