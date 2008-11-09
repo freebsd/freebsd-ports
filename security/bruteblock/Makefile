@@ -27,12 +27,6 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 PORTDOCS=	FAQ README CHANGES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-IGNORE=		requires FreeBSD >= 5.3
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblock ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${PREFIX}/sbin/
@@ -56,4 +50,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
