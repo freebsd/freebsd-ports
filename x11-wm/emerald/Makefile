@@ -15,7 +15,7 @@ MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Emerald Window Decorator
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
