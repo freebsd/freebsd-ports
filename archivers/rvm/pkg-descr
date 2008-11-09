@@ -1,5 +1,5 @@
 RVM is an archive manager that uses rsync to manage backups of multiple
-clients across multiple logical partitions (vaults). It has some features
+clients across multiple logical partitions (vaults).  It has some features
 that some other rsync-based backup schemes lack, such as being written in
 C++, needing no scripts or other programs than rsync and any binaries on
 which rsync depends (such as SSH), the ability to manage multiple instances

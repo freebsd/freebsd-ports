@@ -1,7 +1,7 @@
 # ex:ts=8
-# Ports collection Makefile for:	rvm
-# Date created:			Mar 15, 2004
-# Whom:				ijliao
+# New ports collection makefile for:	rvm
+# Date created:				Mar 15, 2004
+# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An archive manager that uses rsync to manage backups
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_LATEST_LINK=	yes
