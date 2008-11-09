@@ -1,4 +1,4 @@
-# New ports collection makefile for:	replay
+# New ports collection makefile for:	proxy-connect
 # Date created:				22 Jun 2005
 # Whom:					alfred@freebsd.org
 #
@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	proxy-connect
-PORTVERSION=	1.96
+PORTVERSION=	100
 CATEGORIES=	net
-MASTER_SITES=	http://people.freebsd.org/~alfred/sources/proxy-connect/
+MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/ \
+				http://www.atarininja.org/distfiles/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION)
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A socks4, socks5 and http proxy tool
+MAINTAINER=	skreuzer@exit2shell.com
+COMMENT=	Command to make network connections via SOCKS and HTTPS proxies
 
 USE_BZIP2=	yes
 
