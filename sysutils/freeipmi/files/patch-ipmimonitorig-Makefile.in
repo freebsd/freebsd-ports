@@ -1,0 +1,22 @@
+--- ipmimonitoring/Makefile.in.orig	Sat Nov  8 06:11:22 2008
++++ ipmimonitoring/Makefile.in	Sat Nov  8 16:24:12 2008
+@@ -355,8 +355,8 @@
+ 	@list='$(Monitoringconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(MonitoringconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(Monitoringconfdir)/$$f'"; \
+-	  $(MonitoringconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(Monitoringconfdir)/$$f"; \
++	  echo " $(MonitoringconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(Monitoringconfdir)/$$f.sample'"; \
++	  $(MonitoringconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(Monitoringconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-MonitoringconfDATA:
+@@ -649,8 +649,6 @@
+ 	$(CPP) -C -P -I. $@.pre  $@
+ 
+ install-data-local:
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)
+-	$(INSTALL) -m 755 $(srcdir)/ipmi_monitoring_sensors.conf $(DESTDIR)$(IPMI_MONITORING_SENSOR_CONFIG_FILE_DEFAULT)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

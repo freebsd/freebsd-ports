@@ -1,0 +1,22 @@
+--- etc/Makefile.in.orig	Sat Nov  8 06:11:17 2008
++++ etc/Makefile.in	Sat Nov  8 16:25:31 2008
+@@ -239,8 +239,8 @@
+ 	@list='$(Freeipmiconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(FreeipmiconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(Freeipmiconfdir)/$$f'"; \
+-	  $(FreeipmiconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(Freeipmiconfdir)/$$f"; \
++	  echo " $(FreeipmiconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(Freeipmiconfdir)/$$f.sample'"; \
++	  $(FreeipmiconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(Freeipmiconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-FreeipmiconfDATA:
+@@ -377,8 +377,6 @@
+ 
+ 
+ install-data-local:
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)
+-	$(INSTALL) -m 755 $(srcdir)/freeipmi.conf $(DESTDIR)$(sysconfdir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
