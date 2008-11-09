@@ -1,0 +1,7 @@
+share/opensync/defaults/file-sync
+lib/opensync/plugins/file_sync.la
+lib/opensync/plugins/file_sync.so
+@dirrmtry lib/opensync/plugins
+@dirrmtry lib/opensync
+@dirrmtry share/opensync/defaults
+@dirrmtry share/opensync
