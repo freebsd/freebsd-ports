@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nmap-i18n-man
-PORTVERSION=	4.76.20080914
+PORTVERSION=	4.76.20081109
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/data/man-xlate/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/${PORTVERSION}/
@@ -36,6 +36,7 @@ OPTIONS=	MAN_ES "Spanish" On \
 		MAN_PT_BR "Portuguese (Brazil)" On \
 		MAN_PT_PT "Portuguese (Portugal)" On \
 		MAN_RO "Romanian" On \
+		MAN_RU "Russian" On \
 		MAN_SK "Slovak" On \
 		MAN_ZH "Chinese" On
 
@@ -71,6 +72,9 @@ LANG_MAP+=	pt-pt=pt.ISO8859-1
 .endif
 .if !defined(WITHOUT_MAN_RO)
 LANG_MAP+=	ro=ro.ISO8859-2
+.endif
+.if !defined(WITHOUT_MAN_RU)
+LANG_MAP+=	ru=ru.KOI8-R
 .endif
 .if !defined(WITHOUT_MAN_SK)
 LANG_MAP+=	sk=sk.ISO8859-2

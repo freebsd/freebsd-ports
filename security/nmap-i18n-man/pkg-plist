@@ -18,6 +18,8 @@
 @dirrmtry man/pt.ISO8859-1
 @dirrmtry man/ro.ISO8859-2/man1
 @dirrmtry man/ro.ISO8859-2
+@dirrmtry man/ro.KOI8-R/man1
+@dirrmtry man/ro.KOI8-R
 @dirrmtry man/sk.ISO8859-2/man1
 @dirrmtry man/sk.ISO8859-2
 @dirrmtry man/zh.Big5/man1
