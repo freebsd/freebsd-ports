@@ -1,8 +1,5 @@
-This is a port of wots, a Perl script for monitoring multiple system
+This is a port of WOTS, a Perl script for monitoring multiple system
 logfiles and allowing actions to be carried out upon regexps being matched.
-wots is able to alert the administrator using email, can perform syntax
+WOTS is able to alert the administrator using email, can perform syntax
 coloring of messages (for use with roottail or, better still, in a small
-'always-on-top' rxvt window - or, as I prefer, on a dedicated vty).
-
-Bruce
-bms@spc.org
+'always-on-top' rxvt window -- or, as I prefer, on a dedicated vty).

@@ -1,6 +1,6 @@
-# New ports collection makefile for:	wots
-# Date created: 		26-Nov-2001
-# Whom:				Bruce M Simpson <bms@FreeBSD.org>
+# New ports collection makefile for:	WOTS
+# Date created:				26-Nov-2001
+# Whom:					Bruce M Simpson <bms@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ COMMENT=	System log watch/alert utility, similar to swatch, written in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
