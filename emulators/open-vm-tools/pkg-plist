@@ -13,8 +13,8 @@ etc/vmware-tools/tools.conf
 %%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko
 %%NOTON5%%sbin/mount_vmhgfs
 sbin/vmware-guestd
-%%X11%%sbin/vmware-toolbox
-%%X11%%sbin/vmware-user
+%%X11%%bin/vmware-toolbox
+%%X11%%bin/vmware-user
 %%X11%%share/applications/vmware-toolbox.desktop
 %%X11%%share/applications/vmware-user.desktop
 %%X11%%share/pixmaps/vmware/vmware-toolbox.xpm
