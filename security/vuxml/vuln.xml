@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c89a3ebb-ae07-11dd-b4b2-001f3c8eabeb">
+    <topic>trac -- potential DOS vulnerability</topic>
+    <affects>
+      <package>
+	<name>trac</name>
+	<range><lt>0.11.2</lt></range>
+      </package>
+      <package>
+	<name>ja-trac</name>
+	<range><lt>0.11.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Trac development team reports:</p>
+	<blockquote cite="http://groups.google.com/group/trac-announce/browse_thread/thread/67f7a22ec818d97d">
+	  <p>0.11.2 is a new stable maintenance release. It contains
+	    several security fixes and everyone is recommended to
+	    upgrade their installations.</p>
+	  <p>Bug fixes:</p>
+	  <p>Fixes potential DOS vulnerability with certain wiki markup.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://groups.google.com/group/trac-announce/browse_thread/thread/67f7a22ec818d97d</url>
+    </references>
+    <dates>
+      <discovery>2008-11-08</discovery>
+      <entry>2008-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b09378e-addb-11dd-a578-0030843d3802">
     <topic>vlc -- cue processing stack overflow</topic>
     <affects>
