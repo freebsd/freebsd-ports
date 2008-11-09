@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Clp
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
@@ -35,7 +34,7 @@ CONFIGURE_ARGS+=--with-gmpl-incdir=${LOCALBASE}/include	\
 		--with-gmpl-lib="-L${LOCALBASE}/lib -lglpk"
 .endif
 
-regression-test:
+regression-test: build
 	(cd ${WRKSRC}/Clp && ${MAKE} unitTest )
 
 .include <bsd.port.mk>
