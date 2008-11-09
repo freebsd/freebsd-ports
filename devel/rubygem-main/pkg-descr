@@ -1,0 +1,18 @@
+main.rb features the following:
+    - unification of option, argument, keyword, and environment
+      parameter parsing
+    - auto generation of usage and help messages
+    - support for mode/sub-commands
+    - io redirection support
+    - logging hooks using ruby's built-in logging mechanism
+    - intelligent error handling and exit codes
+    - use as dsl or library for building Main objects
+    - parsing user defined ARGV and ENV
+    - zero requirements for understanding the obtuse apis of any
+      command line option parsers
+    - leather pants
+
+  In short main.rb aims to drastically lower the barrier to writing
+  uniform command line applications.
+
+WWW:	http://codeforpeople.com/lib/ruby/main/
