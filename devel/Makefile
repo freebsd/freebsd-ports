@@ -2408,6 +2408,7 @@
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-git
+    SUBDIR += rubygem-grit
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
