@@ -295,6 +295,7 @@
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
     SUBDIR += rubygem-pdfwriter
+    SUBDIR += rubygem-prawn
     SUBDIR += scribus
     SUBDIR += sgf2tex
     SUBDIR += splix
