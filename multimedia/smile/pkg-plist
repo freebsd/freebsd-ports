@@ -263,6 +263,7 @@ share/pixmaps/smile.png
 %%DATADIR%%/smile_it.qm
 %%DATADIR%%/smile_de.qm
 %%DATADIR%%/smile_pl.qm
+%%DATADIR%%/smile_ru.qm
 @dirrm %%DATADIR%%/BIB_ManSlide/Eff_sup
 @dirrm %%DATADIR%%/BIB_ManSlide/Luma
 @dirrm %%DATADIR%%/BIB_ManSlide/Help/images_en
