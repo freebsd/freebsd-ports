@@ -76,6 +76,9 @@ lib/libgphoto2/%%VERSION%%/jamcam.so
 lib/libgphoto2/%%VERSION%%/jd11.a
 lib/libgphoto2/%%VERSION%%/jd11.la
 lib/libgphoto2/%%VERSION%%/jd11.so
+lib/libgphoto2/%%VERSION%%/jl2005a.a
+lib/libgphoto2/%%VERSION%%/jl2005a.la
+lib/libgphoto2/%%VERSION%%/jl2005a.so
 lib/libgphoto2/%%VERSION%%/kodak_dc120.a
 lib/libgphoto2/%%VERSION%%/kodak_dc120.la
 lib/libgphoto2/%%VERSION%%/kodak_dc120.so
@@ -216,10 +219,13 @@ lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
+share/doc/libgphoto2/ABOUT-NLS
 share/doc/libgphoto2/AUTHORS
+share/doc/libgphoto2/ChangeLog
 share/doc/libgphoto2/COPYING
 share/doc/libgphoto2/NEWS
 share/doc/libgphoto2/README
+share/doc/libgphoto2/README.packaging
 share/doc/libgphoto2/camlibs/README.adc65
 share/doc/libgphoto2/camlibs/README.agfa-cl20
 share/doc/libgphoto2/camlibs/README.aox
@@ -229,6 +235,7 @@ share/doc/libgphoto2/camlibs/README.enigma13
 share/doc/libgphoto2/camlibs/README.gsmart300
 share/doc/libgphoto2/camlibs/README.iclick
 share/doc/libgphoto2/camlibs/README.jamcam
+share/doc/libgphoto2/camlibs/README.jl2005a
 share/doc/libgphoto2/camlibs/README.konica
 share/doc/libgphoto2/camlibs/README.largan-lmini
 share/doc/libgphoto2/camlibs/README.lg_gsm

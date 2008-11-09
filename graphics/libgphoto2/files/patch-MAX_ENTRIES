@@ -1,0 +1,11 @@
+--- libgphoto2/gphoto2-list.c.orig	2007-07-27 07:52:55.000000000 +0200
++++ libgphoto2/gphoto2-list.c	2008-11-09 17:04:16.000000000 +0100
+@@ -72,7 +72,7 @@
+ 
+ #ifdef CAMERALIST_STRUCT_COMPATIBILITY
+ 
+-#define MAX_ENTRIES 1024
++#define MAX_ENTRIES 8192
+ #define MAX_LIST_STRING_LENGTH 128
+ struct _CameraList {
+ 	int  count;
