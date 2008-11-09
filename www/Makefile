@@ -150,6 +150,7 @@
     SUBDIR += drupal5-imagefield
     SUBDIR += drupal5-insert-view
     SUBDIR += drupal5-nice_menus
+    SUBDIR += drupal5-nodewords
     SUBDIR += drupal5-securepages
     SUBDIR += drupal5-simplenews
     SUBDIR += drupal5-tagadelic
