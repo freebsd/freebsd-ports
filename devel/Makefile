@@ -2444,6 +2444,7 @@
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-uuid
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-zentest
     SUBDIR += rudeconfig
