@@ -1,7 +1,13 @@
-etc/freeipmi/ipmi_monitoring_sensors.conf
+@unexec [ -f %D/etc/freeipmi/freeipmi.conf ] && cmp -s %D/etc/freeipmi/freeipmi.conf.sample %D/etc/freeipmi/freeipmi.conf && rm -f %D/etc/freeipmi/freeipmi.conf
+etc/freeipmi/freeipmi.conf.sample
+@exec [ -f %D/etc/freeipmi/freeipmi.conf ] || cp -p %D/etc/freeipmi/freeipmi.conf.sample %D/etc/freeipmi/freeipmi.conf
+@unexec [ -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf ] && cmp -s %D/etc/freeipmi/ipmi_monitoring_sensors.conf.sample %D/etc/freeipmi/ipmi_monitoring_sensors.conf && rm -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf
+etc/freeipmi/ipmi_monitoring_sensors.conf.sample
+@exec [ -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf ] || cp -p %D/etc/freeipmi/ipmi_monitoring_sensors.conf.sample %D/etc/freeipmi/ipmi_monitoring_sensors.conf
 include/freeipmi/api/ipmi-api.h
 include/freeipmi/api/ipmi-chassis-cmds-api.h
 include/freeipmi/api/ipmi-device-global-cmds-api.h
+include/freeipmi/api/ipmi-event-cmds-api.h
 include/freeipmi/api/ipmi-fru-inventory-device-cmds-api.h
 include/freeipmi/api/ipmi-lan-cmds-api.h
 include/freeipmi/api/ipmi-messaging-support-cmds-api.h
@@ -15,6 +21,7 @@ include/freeipmi/api/ipmi-sol-cmds-api.h
 include/freeipmi/cmds/ipmi-bmc-watchdog-timer-cmds.h
 include/freeipmi/cmds/ipmi-chassis-cmds.h
 include/freeipmi/cmds/ipmi-device-global-cmds.h
+include/freeipmi/cmds/ipmi-event-cmds.h
 include/freeipmi/cmds/ipmi-fru-inventory-device-cmds.h
 include/freeipmi/cmds/ipmi-lan-cmds.h
 include/freeipmi/cmds/ipmi-messaging-support-cmds.h
@@ -30,8 +37,10 @@ include/freeipmi/debug/ipmi-debug.h
 include/freeipmi/driver/ipmi-kcs-driver.h
 include/freeipmi/driver/ipmi-openipmi-driver.h
 include/freeipmi/driver/ipmi-ssif-driver.h
+include/freeipmi/driver/ipmi-sunbmc-driver.h
 include/freeipmi/fiid/fiid.h
 include/freeipmi/freeipmi.h
+include/freeipmi/interface/ipmi-ipmb-interface.h
 include/freeipmi/interface/ipmi-kcs-interface.h
 include/freeipmi/interface/ipmi-lan-interface.h
 include/freeipmi/interface/ipmi-rmcpplus-interface.h
@@ -64,6 +73,7 @@ include/freeipmi/spec/ipmi-sol-parameter-spec.h
 include/freeipmi/spec/ipmi-system-software-id-spec.h
 include/freeipmi/util/ipmi-cipher-suite-util.h
 include/freeipmi/util/ipmi-error-util.h
+include/freeipmi/util/ipmi-ipmb-util.h
 include/freeipmi/util/ipmi-lan-util.h
 include/freeipmi/util/ipmi-rmcpplus-util.h
 include/freeipmi/util/ipmi-sensor-and-event-code-tables-util.h
@@ -90,9 +100,11 @@ lib/libipmimonitoring.la
 lib/libipmimonitoring.so
 lib/libipmimonitoring.so.%%IPMIMONITORING_SHLIBVER%%
 sbin/bmc-config
+sbin/bmc-device
 sbin/bmc-info
 sbin/bmc-watchdog
 sbin/ipmi-chassis
+sbin/ipmi-chassis-config
 sbin/ipmi-fru
 sbin/ipmi-locate
 sbin/ipmi-oem
@@ -108,7 +120,6 @@ sbin/ipmiping
 sbin/ipmipower
 sbin/pef-config
 sbin/rmcpping
-@dirrmtry etc/freeipmi
 @dirrm include/freeipmi/util
 @dirrm include/freeipmi/spec
 @dirrm include/freeipmi/sdr-cache
@@ -121,6 +132,7 @@ sbin/rmcpping
 @dirrm include/freeipmi/cmds
 @dirrm include/freeipmi/api
 @dirrm include/freeipmi
+@dirrmtry etc/freeipmi
 @exec mkdir -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
 @exec touch %%RUN_DIR%%/ipckey
 @exec chmod 0700 %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
