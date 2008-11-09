@@ -53,6 +53,7 @@
     SUBDIR += gdvrecv
     SUBDIR += ggrab
     SUBDIR += gmencoder
+    SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
     SUBDIR += gnome-subtitles
