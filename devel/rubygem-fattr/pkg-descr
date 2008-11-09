@@ -1,0 +1,8 @@
+fattr.rb is a "fatter attr" for ruby.
+
+fattr.rb supercedes attributes.rb as that library,
+even though it added only one method to the global
+namespace, collided too frequently with user code
+in particular rails' code.
+
+WWW:	http://codeforpeople.com/lib/ruby/fattr/
