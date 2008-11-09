@@ -1,0 +1,12 @@
+arrayfields allow keyword access to array instances.
+arrayfields works by adding only a few methods to arrays,
+namely #fields= and fields, but the #fields= method is
+hooked to extend an array on a per object basis.In
+otherwords __only__ those arrays whose fields are set
+will have auto-magical keyword access bestowed on
+them - all other arrays remain unaffected.arrays with
+keyword access require much less memory when compared
+to hashes/objects and yet still provide fast lookup and
+preserve data order.
+
+WWW:	http://codeforpeople.com/lib/ruby/arrayfields/

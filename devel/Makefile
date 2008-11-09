@@ -2398,6 +2398,7 @@
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-analogger
+    SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-daemons
