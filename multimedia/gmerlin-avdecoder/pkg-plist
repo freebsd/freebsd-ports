@@ -1,6 +1,12 @@
 bin/bgavdump
 include/gmerlin/avdec.h
 include/gmerlin/bgav_version.h
+%%GMERLIN%%lib/gmerlin/plugins/i_avdec.la
+%%GMERLIN%%lib/gmerlin/plugins/i_avdec.so
+%%GMERLIN%%lib/gmerlin/plugins/i_dvd.la
+%%GMERLIN%%lib/gmerlin/plugins/i_dvd.so
+%%GMERLIN%%lib/gmerlin/plugins/i_vcd.la
+%%GMERLIN%%lib/gmerlin/plugins/i_vcd.so
 lib/libgmerlin_avdec.la
 lib/libgmerlin_avdec.so
 lib/libgmerlin_avdec.so.0
