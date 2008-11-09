@@ -1,0 +1,486 @@
+diff -ur configure.in anyremote-4.11-fbsd/configure.in
+--- configure.in	2008-10-16 20:56:17.000000000 +0200
++++ configure.in	2008-10-31 13:09:34.000000000 +0100
+@@ -53,14 +53,31 @@
+ #AC_CONFIG_FILES([Makefile
+ #                 src/Makefile])
+ 
+-AC_ARG_ENABLE(bluez,
+-  [  --disable-bluez        disable bluez support])
++AC_CANONICAL_HOST
+ 
+-if test x"$enable_bluez" != xno; then
+-  AC_CHECK_HEADERS([bluetooth/bluetooth.h], [], [echo "Can not find bluetooth.h ! Install it or use --disable-bluez";exit])
+-  AR_EXTRAFLAGS="$AR_EXTRAFLAGS -DUSE_BT=1"
+-  AR_EXTRALIBS="$AR_EXTRALIBS -lbluetooth"
+-fi
++case "$host_os" in
++linux*)
++	AC_ARG_ENABLE(bluez,
++	[  --disable-bluez        disable bluez support])
++
++	if test x"$enable_bluez" != xno; then
++		AC_CHECK_HEADERS([bluetooth/bluetooth.h], [], [echo "Can not find bluetooth.h ! Install it or use --disable-bluez";exit])
++		AR_EXTRAFLAGS="$AR_EXTRAFLAGS -DUSE_BT=1"
++		AR_EXTRALIBS="$AR_EXTRALIBS -lbluetooth"
++	fi
++	AR_EXTRAFLAGS="$AR_EXTRAFLAGS -DHAVE_GETLINE=1"
++	;;
++freebsd*)
++	AC_ARG_ENABLE(bluetooth,
++	[  --disable-bluetooth        disable bluetooth support])
++
++	if test x"$enable_bluetooth" != xno; then
++		AC_CHECK_HEADERS([bluetooth.h], [], [echo "Can not find bluetooth.h ! Install it or use --disable-bluetooth";exit])
++		AR_EXTRAFLAGS="$AR_EXTRAFLAGS -DUSE_BT_FBSD=1"
++		AR_EXTRALIBS="$AR_EXTRALIBS -lbluetooth -lsdp"
++	fi
++	;;
++esac
+ 
+ AC_ARG_ENABLE(xtext,
+   [  --disable-xtest        disable xtest support])
+Only in anyremote-4.11-fbsd/: configure.in~
+Only in anyremote-4.11-fbsd/: configure.lineno
+diff -ur anyremote-4.11/src/Makefile.am anyremote-4.11-fbsd/src/Makefile.am
+--- src/Makefile.am	2008-09-29 20:54:38.000000000 +0200
++++ src/Makefile.am	2008-10-31 13:08:21.000000000 +0100
+@@ -19,7 +19,7 @@
+ # 
+ 
+ bin_PROGRAMS = anyremote
+-anyremote_SOURCES = atsend.c btio.c main.c cmds.c parse.c utils.c xemulate.c conf.c atsend.h common.h btio.h common.h parse.h cmds.h utils.h xemulate.h conf.h
++anyremote_SOURCES = atsend.c btio.c main.c cmds.c parse.c utils.c xemulate.c conf.c atsend.h common.h btio.h common.h parse.h cmds.h utils.h xemulate.h conf.h getline.h getline.c
+ anyremote_LDFLAGS = @LDFLAGS@
+ anyremote_LDADD = @AR_EXTRALIBS@
+ AM_CFLAGS = @AR_EXTRAFLAGS@
+diff -ur anyremote-4.11/src/btio.c anyremote-4.11-fbsd/src/btio.c
+--- src/btio.c	2008-09-29 20:54:38.000000000 +0200
++++ src/btio.c	2008-11-01 20:04:02.000000000 +0100
+@@ -40,12 +40,19 @@
+ #include <netdb.h> 
+ 
+ //#define USE_BT
++// #define USE_BT_FBSD
+ 
+ #ifdef USE_BT
+ #include <bluetooth/bluetooth.h>
+ #include <bluetooth/rfcomm.h>
+ #endif
+ 
++#ifdef USE_BT_FBSD
++#include <bluetooth.h> 
++#include <sdp.h> 
++#include <err.h>
++#endif
++
+ #include "btio.h"
+ #include "common.h"
+ #include "parse.h"
+@@ -576,6 +583,39 @@
+ }
+ #endif
+ 
++#ifdef USE_BT_FBSD
++void			*session = NULL;
++uint32_t		 record;
++
++
++void sdpRegister(int port)
++{
++	int channel,service;
++	bdaddr_t		 bt_addr_any;
++	sdp_lan_profile_t	 lan;
++	
++	channel = port;
++	service = SDP_SERVICE_CLASS_SERIAL_PORT;	
++	
++	session = sdp_open_local(NULL);
++	if (session == NULL)
++		errx(1, "Unable to create local SDP session");
++	if (sdp_error(session) != 0)
++	errx(1, "Unable to open local SDP session. %s (%d)",
++		strerror(sdp_error(session)), sdp_error(session));
++	memset(&lan, 0, sizeof(lan));
++	lan.server_channel = channel;
++	
++	memcpy(&bt_addr_any, NG_HCI_BDADDR_ANY, sizeof(bt_addr_any));
++	if (sdp_register_service(session, service, &bt_addr_any,
++		(void *)&lan, sizeof(lan), &record) != 0) {
++	errx(1, "Unable to register LAN service with "
++		"local SDP daemon. %s (%d)",
++		strerror(sdp_error(session)), sdp_error(session));
++		}
++}
++#endif
++
+ void sdpDeregister()
+ {
+     #ifdef USE_BT
+@@ -585,6 +625,13 @@
+         //sdp_record_free(record);
+     }
+     #endif
++    #ifdef USE_BT_FBSD
++    if (session != NULL) {
++	    sdp_unregister_service(session, record);
++	    sdp_close(session);
++	    session = NULL;
++    }
++    #endif
+ }
+ 
+ //
+@@ -598,11 +645,15 @@
+ 	#ifdef USE_BT
+ 	struct sockaddr_rc bt_addr;
+ 	#endif
++	#ifdef USE_BT_FBSD
++	struct sockaddr_rfcomm bt_addr;
++	#endif
+ 	
+ 	struct sockaddr*   socketaddr = NULL;
+ 
+ 	int addFamily = 0;
+ 	int proto     = 0;
++	int sz;
+ 
+ 	if (sportfd) { 
+ 		logger("ERROR", "socket was already opened");
+@@ -619,6 +670,10 @@
+ 		addFamily = PF_BLUETOOTH;
+ 		proto	  = BTPROTO_RFCOMM;
+ 		#endif
++		#ifdef USE_BT_FBSD
++		addFamily = PF_BLUETOOTH;
++		proto	  = BLUETOOTH_PROTO_RFCOMM;
++		#endif
+ 	} else if (type == SERVER_UX) {
+ 		addFamily = AF_UNIX;
+ 		proto	  = 0;
+@@ -654,10 +709,12 @@
+ 		tcp_addr.sin_port = htons(port);
+ 	
+ 		socketaddr=(struct sockaddr *)&tcp_addr;
++		sz = sizeof(tcp_addr);
+ 		
+ 	} else if (type == SERVER_BT){	// SERVER_BT
+ 		#ifdef USE_BT
+ 		memset((void *) &bt_addr, 0, sizeof(bt_addr));
++		sz = sizeof(bt_addr);
+ 		
+ 		// bind socket to the specified port of the first available local bluetooth adapter
+ 		bt_addr.rc_family = AF_BLUETOOTH;
+@@ -673,8 +730,21 @@
+                 sdpRegister(port);
+ 		sprintf(tmp, "registered SP for channel %i", port);
+ 		logger("INFO", tmp);
++		socketaddr=(struct sockaddr *)&bt_addr;
++		#endif
++		
++		#ifdef USE_BT_FBSD
++		memset(&bt_addr, 0, sizeof(bt_addr));
+ 
++		bt_addr.rfcomm_len = sizeof(bt_addr);
++		bt_addr.rfcomm_family = AF_BLUETOOTH;
++		bt_addr.rfcomm_channel =  (uint8_t) port;;
++		sdpRegister(port);
++		sprintf(tmp, "registered SP for channel %i", port);
++		logger("INFO", tmp);
++		
+ 		socketaddr=(struct sockaddr *)&bt_addr;
++		sz = sizeof(bt_addr);
+ 		#endif
+ 	} else if (type == SERVER_UX && path != NULL){
+ 	
+@@ -683,16 +753,16 @@
+ 		strncpy(un_addr.sun_path, path, sizeof un_addr.sun_path - 1);
+ 		printf("ERROR: SOCKET %s\n", path);
+ 		socketaddr=(struct sockaddr *)&un_addr;
++		sz = sizeof(un_addr);
+ 	
+ 	} else {
+ 		logger("ERROR", "incorrect input 2");
+ 		return -1;
+ 	}
+ 
+-	if (bind(sportfd, (struct sockaddr *) socketaddr, sizeof(*socketaddr)) < 0) {
++	if (bind(sportfd, (struct sockaddr *) socketaddr, sz) < 0) {
+ 		logger("ERROR", "on binding");
+ 		printf("ERROR: on binding %d->%s\n", errno, strerror(errno));
+-	
+ 		return -1;
+ 	}
+ 	
+@@ -735,11 +805,15 @@
+ 	bdaddr_t ba;
+ 	#endif
+ 
++	#ifdef USE_BT_FBSD
++	struct sockaddr_rfcomm bt_addr;
++	#endif
++
+ 	logger("INFO", "listenAndAcceptSocketConn");
+ 	cnt = 0;
+ 
+ 	if (type == SERVER_BT) {
+-		#ifdef USE_BT
++		#if defined(USE_BT) || defined(USE_BT_FBSD)
+ 		socketaddr=(struct sockaddr *)&bt_addr;
+ 		sz = sizeof(bt_addr);
+ 		#endif
+@@ -789,7 +863,6 @@
+ 		#ifdef USE_BT
+ 		if (type == SERVER_BT) {
+ 			baswap(&ba, &bt_addr.rc_bdaddr);
+-
+ 			if (btAddress) {
+ 				free(btAddress);
+ 			}
+@@ -799,6 +872,17 @@
+ 			logger("INFO", tmp);
+ 		}
+ 		#endif
++		#ifdef USE_BT_FBSD
++		if (type == SERVER_BT) {
++			if (btAddress) {
++				free(btAddress);
++			}
++			btAddress = strdup(bt_ntoa(&bt_addr.rfcomm_bdaddr, NULL));
++			
++			sprintf(tmp, "listenAndAcceptSocketConn: remote BT address is %s", btAddress);
++			logger("INFO", tmp);
++		}
++		#endif
+ 	
+ 		break;
+ 	}
+Only in anyremote-4.11-fbsd/src: btio.c~
+diff -ur anyremote-4.11/src/cmds.c anyremote-4.11-fbsd/src/cmds.c
+--- src/cmds.c	2008-10-01 20:23:20.000000000 +0200
++++ src/cmds.c	2008-10-31 11:29:24.000000000 +0100
+@@ -39,6 +39,9 @@
+ #include "parse.h"
+ #include "utils.h"
+ #include "xemulate.h"
++#ifndef HAVE_GETLINE
++	#include "getline.h"
++#endif
+ 
+ extern void closePort(int final);
+ extern int  isConnected;
+Only in anyremote-4.11-fbsd/src: cmds.c~
+Only in anyremote-4.11-fbsd/src: fileManager.cfg
+Only in anyremote-4.11-fbsd/src: getline.c
+Only in anyremote-4.11-fbsd/src: getline.c~
+Only in anyremote-4.11-fbsd/src: getline.h
+Only in anyremote-4.11-fbsd/src: getline.h~
+diff -ur anyremote-4.11/src/main.c anyremote-4.11-fbsd/src/main.c
+--- src/main.c	2008-10-16 20:59:27.000000000 +0200
++++ src/main.c	2008-11-01 20:33:35.000000000 +0100
+@@ -32,6 +32,9 @@
+ #include <sys/wait.h>
+ #include <time.h>
+ #include <unistd.h>
++#ifdef __FreeBSD__
++	#include <signal.h>
++#endif
+ 
+ #include "atsend.h"
+ #include "btio.h"
+@@ -46,6 +49,8 @@
+ #define ALARM_CLEAN 	0
+ #define ALARM_CHECK 	1
+ 
++extern CONF       conf;
++
+ static void mainRoutine     (void);
+ static int  isBemusedCommand(char *cmd);
+ static int  isInpLircCommand(char *cmd);
+@@ -201,6 +206,13 @@
+                 }
+                 initialized++;
+         }
++	
++	// setgid
++	if(conf.uid && getuid()==0){
++		DEBUG2("setuid/setgid %d,%d",conf.uid,conf.gid);
++		setgid(conf.gid);	
++		setuid(conf.uid);
++	}
+         return 1;
+ }
+ 
+@@ -216,6 +228,9 @@
+         	closedir(d);
+         } else {
+ 		mkdir(dd, S_IRWXU);
++		if(getuid()==0 && conf.uid) { // do not create as superuser
++			chown(dd,conf.uid,conf.gid);
++		}
+ 	}
+ }
+ 
+@@ -309,8 +324,6 @@
+                 }
+         }
+ 	
+-        createDataDir();
+-	
+         if (argv[1] && (strcmp(argv[1],"-h")==0 || strcmp(argv[1],"--help")==0)) {
+ 		 //Just print help and exit
+ 		 printHelp();
+@@ -334,7 +347,8 @@
+                 freeCfg();
+                 exit(1);
+         }
+-        
++
++        createDataDir();
+         initLog();
+         
+         // Not to core dump if connection will close
+Only in anyremote-4.11-fbsd/src: main.c~
+Only in anyremote-4.11-fbsd/src: make.sh
+diff -ur anyremote-4.11/src/parse.c anyremote-4.11-fbsd/src/parse.c
+--- src/parse.c	2008-10-06 15:19:34.000000000 +0200
++++ src/parse.c	2008-11-01 19:58:30.000000000 +0100
+@@ -50,7 +50,7 @@
+ #define REGEX_TIMER  "[[:space:]]*([^[:space:]]+)[[:space:]]*,[[:space:]]*([[:digit:]]*)[[:space:]]*,[[:space:]]*([[:digit:]]*)[[:space:]]*$|[[:space:]]*([^[:space:]]+)[[:space:]]*,[[:space:]]*(cancel|pause|continue)"
+ #define REGEX_MAKE   "[[:space:]]*(remote|mode|var)[[:space:]]*,[[:space:]]*(.*)[[:space:]]*|[[:space:]]*(exit|flush|disconnect|none)[[:space:]]*"
+ 
+-#define REGEX_SET_TL "[[:space:]]*(fg|bg|font|select)[[:space:]]*,(.*)|[[:space:]]*(add|replace)[[:space:]]*,[[:space:]]*([^[:space:]]{1}[^,]*[^[:space:]]{1})[[:space:]]*,[[:space:]]*(.*)|[[:space:]]*(close)[[:space:]]*,[[:space:]]**(clear)[[:space:]]*|[[:space:]]*(clear|close|show)[[:space:]]*"
++#define REGEX_SET_TL "[[:space:]]*(fg|bg|font|select)[[:space:]]*,(.*)|[[:space:]]*(add|replace)[[:space:]]*,[[:space:]]*([^[:space:]]{1}[^,]*[^[:space:]]{1})[[:space:]]*,[[:space:]]*(.*)|[[:space:]]*(close)[[:space:]]*,[[:space:]]*(clear)[[:space:]]*|[[:space:]]*(clear|close|show)[[:space:]]*"
+ #define REGEX_SET_MN "[[:space:]]*(add|replace)[[:space:]]*,(.*)|[[:space:]]*(clear)[[:space:]]*"
+ #define REGEX_SET_WM "[[:space:]]*(icon|window)[[:space:]]*,(.*)|[[:space:]]*(remove_all|show|close|cursor|nocursor|dynamic_cursor)[[:space:]]*|[[:space:]]*(set_cursor),[[:space:]]*(.*)[[:space:]]*"
+ #define REGEX_SET_FM "[[:space:]]*(add|replace|select)[[:space:]]*,[[:space:]]*(left|right)[[:space:]]*,[[:space:]]*(.*)|[[:space:]]*(close|show)[[:space:]]*"
+@@ -85,7 +85,9 @@
+ 	      MODEL_DEFAULT,	// Model
+ 	      NULL,             // Cfg. dir
+ 	      -1,		// Front-end port    
+-	      0};        	// Work with anyremote2html                         
++	      0,		// Work with anyremote2html
++	      0,		// set uid
++	      0};        	// set gid
+ 
+ type_key* findExact(mode *mode, char *key)
+ {
+@@ -216,6 +218,9 @@
+ 			conf.http = 1;
+ 		} else if (strcmp(argv[i],"--autoconnect")==0 || strcmp(argv[i],"-a")==0) {
+ 			conf.autoConnect = 1;
++		} else if (strcmp(argv[i],"--user")==0 || strcmp(argv[i],"-u")==0) {
++			if(getUidGid(argv[++i], &conf.uid, &conf.gid)!=EXIT_OK)
++				printf("WARNING: bad username %s\n", argv[i]);
+ 		} else if (strcmp(argv[i],"-f")==0) {
+ 			++i;
+ 			continue;   // already processed this parameter
+Only in anyremote-4.11-fbsd/src: parse.c~
+diff -ur anyremote-4.11/src/parse.h anyremote-4.11-fbsd/src/parse.h
+--- src/parse.h	2008-09-29 20:54:38.000000000 +0200
++++ src/parse.h	2008-11-01 19:47:18.000000000 +0100
+@@ -23,6 +23,8 @@
+ #define _PARSE_H_ 1
+ 
+ #include "common.h"
++#include <sys/types.h>
++#include <unistd.h>
+ 
+ #define CFGFILE 	"/.anyremote.cfg"
+ 
+@@ -241,6 +243,8 @@
+         char* cfgDir;
+         int   frontEnd;
+         int   http;
++        uid_t   uid;
++	gid_t   gid;
+ } CONF;
+ 
+ 
+Only in anyremote-4.11-fbsd/src: parse.h~
+diff -ur anyremote-4.11/src/utils.c anyremote-4.11-fbsd/src/utils.c
+--- src/utils.c	2008-10-20 20:13:39.000000000 +0200
++++ src/utils.c	2008-11-01 20:42:28.000000000 +0100
+@@ -23,12 +23,16 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
++#include <sys/types.h>
++#include <pwd.h>
+ 
+ #include "common.h"
+ #include "utils.h"
+ #include "conf.h"
+ 
++
+ extern char tmp[MAXMAXLEN];
++extern CONF       conf;
+ 
+ // Some globals
+ 
+@@ -91,7 +95,11 @@
+                 FILE *fplog = fopen(logfile, "w");
+                 if (fplog) {
+                 	fclose(fplog);
+-                }      
++                } 
++		if(getuid()==0 && conf.uid) { // do not open file as superuser
++			chown(logfile,conf.uid,conf.gid);
++		}
++
+                 printConf();
+         }
+ }
+@@ -451,7 +459,9 @@
+ 	printf(" -n	do not send any AT+CKPD command to the phone\n");
+ 	printf(" -a	reconnect automatically in case of connection failure\n");
+ 	printf(" -fe <port> work as backend for GUI frontend. Use specified port to connect to frontend.\n");
+-	printf(" -http  tune work with anyremote2html\n\n");
++	printf(" -http  tune work with anyremote2html\n");
++	printf(" -u|--user <username>  causes  to run  as a user other than root. \n\n");
++
+ }
+ 
+ int flushData() 
+@@ -486,4 +496,21 @@
+         flushAliases = NULL;
+ }
+ 
++int getUidGid(char *username, uid_t *uid, gid_t *gid) {
++	/* Set uid and gid to the preferred user (found in setuid.h). Can either be
++	* numeric or a string, found in /etc/passwd.	*/
++	struct passwd *pw;
++	
++	if ((pw = getpwnam(username))) {
++		// Name exists
++		*uid = pw->pw_uid;
++		*gid = pw->pw_gid;
++		return EXIT_OK;
++	}
++	/* something Bad happened, so send back an error */
++	return EXIT_NOK;
++}
++
++
++
+ //////////////////////////////////////////////////////////////////////////////////
+Only in anyremote-4.11-fbsd/src: utils.c~
+diff -ur anyremote-4.11/src/utils.h anyremote-4.11-fbsd/src/utils.h
+--- src/utils.h	2008-09-29 20:54:38.000000000 +0200
++++ src/utils.h	2008-11-01 19:52:34.000000000 +0100
+@@ -23,6 +23,8 @@
+ #define _UTILS_H
+ 
+ #include "parse.h"
++#include <sys/types.h>
++#include <pwd.h>
+ 
+ #define LOGFILE 	"/anyremote.log"
+ 
+@@ -78,4 +80,6 @@
+ void        setResFile      (void);
+ char*       getResFile      (void);
+ 
++int getUidGid(char *username, uid_t *uid, gid_t *gid) ;
++
+ #endif

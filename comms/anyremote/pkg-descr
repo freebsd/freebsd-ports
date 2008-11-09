@@ -1,0 +1,11 @@
+The overall goal of this project is to provide remote control service on Linux
+through Bluetooth, InfraRed, Wi-Fi or just TCP/IP connection.
+
+anyRemote supports wide range of modern cell phones like Nokia, SonyEricsson,
+Motorola and others.
+
+It was developed as thin communication layer between Bluetooth (or IR, Wi-Fi)
+capabled phone and UNIX, and in principle could be configured to manage almost
+any software.
+
+WWW:	http://anyremote.sourceforge.net/
