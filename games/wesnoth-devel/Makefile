@@ -1,13 +1,14 @@
-# New ports collection makefile for:	wesnoth
-# Date created:			22 December 2003
-# Whom:				Mezz <mezz7@cox.net>
+# New ports collection makefile for:	wesnoth-devel
+# Date created:			7 September 2008
+# Whom:				Philip Paeps <philip@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.4.5
+PORTVERSION=	1.5.5
 CATEGORIES=	games
+PKGNAMESUFFIX=	-devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
@@ -18,8 +19,10 @@ COMMENT=	A fantasy turn-based strategy game
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_SDL=	image mixer net
-USE_GNOME=	gnometarget
+CONFLICTS=	wesnoth-1.4*
+
+USE_SDL=	image mixer net ttf
+USE_GNOME=	gnometarget pango
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_BZIP2=	yes
@@ -27,15 +30,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-freetype-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS} -ftemplate-depth-45" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
-MAN6=		wesnoth.6
-MANLANG=	"" ca_ES@valencia cs da de es fr gl hu it ja
+MANLANG=	"" ca_ES@valencia cs da de es fr hu it ja
 MANLANG+=	lt nl pl sk sr sr@latin sv tr zh_CN zh_TW
+
+MAN6_CS=	wesnoth.6
+MAN6_EN=	wesnoth.6
+MAN6_HU=	wesnoth.6
+MAN6_TR=	wesnoth.6
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \
 		EDITOR	"Enable map editor"  On \
@@ -58,9 +61,8 @@ PLIST_SUB+=		CAMPAIGN=""
 
 .if defined(WITHOUT_EDITOR)
 PLIST_SUB+=		EDITOR="@comment "
+CONFIGURE_ARGS+=	--disable-editor
 .else
-CONFIGURE_ARGS+=	--enable-editor
-MAN6+=			wesnoth_editor.6
 PLIST_SUB+=		EDITOR=""
 .endif
 
