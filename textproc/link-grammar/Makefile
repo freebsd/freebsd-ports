@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.2.4
+PORTVERSION=	4.3.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A grammar checking library
 
-USE_GNOME=	gnometarget ltverhack
+USE_GNOME=	gnomehack gnometarget ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ARGS=	--enable-pthreads
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
+MAN1=		link-parser.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure ${WRKSRC}/${PORTNAME}/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
