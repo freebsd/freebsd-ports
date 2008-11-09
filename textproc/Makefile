@@ -951,6 +951,7 @@
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
+    SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-formosa
     SUBDIR += rubygem-htmltools
