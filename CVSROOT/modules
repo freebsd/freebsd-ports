@@ -4111,6 +4111,7 @@ gmastermind                     ports/games/gmastermind
 gmat                            ports/textproc/gmat
 gmcal                           ports/deskutils/gmcal
 gmencoder                       ports/multimedia/gmencoder
+gmerlin-avdecoder               ports/multimedia/gmerlin-avdecoder
 gmessage                        ports/x11/gmessage
 gmetadom                        ports/textproc/gmetadom
 gmfsk                           ports/comms/gmfsk
@@ -10805,6 +10806,7 @@ p5-Gearman-Server               ports/devel/p5-Gearman-Server
 p5-Genezzo                      ports/databases/p5-Genezzo
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
+p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-IP                       ports/net/p5-Geo-IP
@@ -10896,6 +10898,7 @@ p5-HTML-FormatText-WithLinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
 p5-HTML-FromANSI                ports/www/p5-HTML-FromANSI
 p5-HTML-FromText                ports/www/p5-HTML-FromText
+p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
 p5-HTML-LinkExtractor           ports/www/p5-HTML-LinkExtractor
 p5-HTML-Lint                    ports/www/p5-HTML-Lint
@@ -13981,6 +13984,7 @@ p5-gearman-server               ports/devel/p5-Gearman-Server
 p5-genezzo                      ports/databases/p5-Genezzo
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
+p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-ip                       ports/net/p5-Geo-IP
@@ -14091,6 +14095,7 @@ p5-html-formfu-model-dbic       ports/www/p5-HTML-FormFu-Model-DBIC
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
+p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
 p5-html-lint                    ports/www/p5-HTML-Lint
