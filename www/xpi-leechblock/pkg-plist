@@ -1,3 +1,5 @@
+%%XPI_XPIDIR%%/chrome/content/accesscode.js
+%%XPI_XPIDIR%%/chrome/content/accesscode.xul
 %%XPI_XPIDIR%%/chrome/content/browser.js
 %%XPI_XPIDIR%%/chrome/content/browser.xul
 %%XPI_XPIDIR%%/chrome/content/extensions.js
@@ -14,6 +16,8 @@
 %%XPI_XPIDIR%%/chrome/locale/it-IT/blocked.html
 %%XPI_XPIDIR%%/chrome/locale/it-IT/leechblock.dtd
 %%XPI_XPIDIR%%/chrome/locale/it-IT/leechblock.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/blocked.html
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/leechblock.dtd
 %%XPI_XPIDIR%%/chrome/skin/leechblock32.png
 %%XPI_XPIDIR%%/chrome/skin/leechblock64.png
 %%XPI_XPIDIR%%/chrome.manifest
@@ -23,6 +27,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
