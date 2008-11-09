@@ -8,7 +8,7 @@
 
 PORTNAME?=	gcc
 PORTVERSION=	4.4.0
-PORTREVISION=	20081017
+PORTREVISION=	20081107
 CATEGORIES=	lang java
 VERSIONSTRING=	4.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -106,6 +106,7 @@ MAN1+=		aot-compile${SUFFIX}.1 \
 		gjar${SUFFIX}.1 \
 		gjarsigner${SUFFIX}.1 \
 		gjavah${SUFFIX}.1 \
+		gjdoc${SUFFIX}.1 \
 		gjnih${SUFFIX}.1 \
 		gkeytool${SUFFIX}.1 \
 		gnative2ascii${SUFFIX}.1 \
