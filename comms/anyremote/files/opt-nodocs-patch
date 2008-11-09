@@ -1,0 +1,15 @@
+--- Makefile.am	2008-10-16 21:00:58.000000000 +0200
++++ Makefile.am	2008-11-05 12:23:19.000000000 +0100
+@@ -24,12 +24,8 @@
+ 
+ install-data-local:
+ 	test -z $(DESTDIR)$(pkgdatadir) || mkdir -p -- . $(DESTDIR)$(pkgdatadir)
+-	test -z $(DESTDIR)$(datadir)/doc/anyremote || mkdir -p -- . $(DESTDIR)$(datadir)/doc/anyremote
+ 	cp -r cfg-data $(DESTDIR)$(pkgdatadir)
+-	cp -r doc-html ChangeLog README COPYING AUTHORS $(DESTDIR)$(datadir)/doc/anyremote/
+-	find $(DESTDIR)$(pkgdatadir) $(DESTDIR)$(datadir)/doc/anyremote -type f -exec chmod 644 {} \;
+ 	chmod -R a+x $(DESTDIR)$(pkgdatadir)/cfg-data/Utils
+-	find $(DESTDIR)$(pkgdatadir) $(DESTDIR)$(datadir)/doc/anyremote  -type d -exec chmod 755 {} \;
+ 	test -z $(DESTDIR)$(datadir)/man/man1 || mkdir -p -- . $(DESTDIR)$(datadir)/man/man1
+ 	cp -r anyremote.1.gz $(DESTDIR)$(datadir)/man/man1
+ 	chmod 644 $(DESTDIR)$(datadir)/man/man1/anyremote.1.gz
