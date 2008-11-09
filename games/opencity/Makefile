@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opencity
-PORTVERSION=	0.0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.0.6
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable
@@ -19,17 +18,13 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image net
-USE_GL=		yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.5stable
+USE_GL=		gl glu
 
 PORTDOCS=	*
 
 MAN6=		opencity.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(defined(__WIN32__) && \)\(!defined(log2)\)|\2|' \
-		${WRKSRC}/src/mapgen/mapmaker.cpp
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-docsDATA||' \
 		${WRKSRC}/docs/Makefile.in

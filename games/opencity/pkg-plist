@@ -106,7 +106,6 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/firedept/medium/texture.png
 %%DATADIR%%/graphism/gui/back.png
 %%DATADIR%%/graphism/gui/back_over.png
-%%DATADIR%%/graphism/gui/blank.png
 %%DATADIR%%/graphism/gui/bulldozer.png
 %%DATADIR%%/graphism/gui/bulldozer_over.png
 %%DATADIR%%/graphism/gui/commercial.png
@@ -121,7 +120,6 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/gui/fire_over.png
 %%DATADIR%%/graphism/gui/government.png
 %%DATADIR%%/graphism/gui/government_over.png
-%%DATADIR%%/graphism/gui/grass.png
 %%DATADIR%%/graphism/gui/hospital.png
 %%DATADIR%%/graphism/gui/hospital_over.png
 %%DATADIR%%/graphism/gui/industrial.png
@@ -143,6 +141,8 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/gui/nature.png
 %%DATADIR%%/graphism/gui/nature_over.png
 %%DATADIR%%/graphism/gui/park.png
+%%DATADIR%%/graphism/gui/park_city.png
+%%DATADIR%%/graphism/gui/park_city_over.png
 %%DATADIR%%/graphism/gui/park_over.png
 %%DATADIR%%/graphism/gui/police.png
 %%DATADIR%%/graphism/gui/police_over.png
@@ -155,19 +155,20 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/gui/power_plant_nuclear.png
 %%DATADIR%%/graphism/gui/power_plant_nuclear_over.png
 %%DATADIR%%/graphism/gui/query.png
-%%DATADIR%%/graphism/gui/query_commercial.png
-%%DATADIR%%/graphism/gui/query_commercial_over.png
-%%DATADIR%%/graphism/gui/query_electricity.png
-%%DATADIR%%/graphism/gui/query_electricity_over.png
-%%DATADIR%%/graphism/gui/query_gas.png
-%%DATADIR%%/graphism/gui/query_gas_over.png
-%%DATADIR%%/graphism/gui/query_industrial.png
-%%DATADIR%%/graphism/gui/query_industrial_over.png
+%%DATADIR%%/graphism/gui/query_commercial_off.png
+%%DATADIR%%/graphism/gui/query_commercial_on.png
+%%DATADIR%%/graphism/gui/query_electricity_off.png
+%%DATADIR%%/graphism/gui/query_electricity_on.png
+%%DATADIR%%/graphism/gui/query_gas_off.png
+%%DATADIR%%/graphism/gui/query_gas_on.png
+%%DATADIR%%/graphism/gui/query_industrial_off.png
+%%DATADIR%%/graphism/gui/query_industrial_on.png
 %%DATADIR%%/graphism/gui/query_over.png
-%%DATADIR%%/graphism/gui/query_residential.png
-%%DATADIR%%/graphism/gui/query_residential_over.png
-%%DATADIR%%/graphism/gui/query_water.png
-%%DATADIR%%/graphism/gui/query_water_over.png
+%%DATADIR%%/graphism/gui/query_residential_off.png
+%%DATADIR%%/graphism/gui/query_residential_on.png
+%%DATADIR%%/graphism/gui/query_water_off.png
+%%DATADIR%%/graphism/gui/query_water_on.png
+%%DATADIR%%/graphism/gui/querycircle_bg.png
 %%DATADIR%%/graphism/gui/raise.png
 %%DATADIR%%/graphism/gui/raise_over.png
 %%DATADIR%%/graphism/gui/residential.png
@@ -230,6 +231,8 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/gui/vehicle_over.png
 %%DATADIR%%/graphism/gui/water.png
 %%DATADIR%%/graphism/gui/water_over.png
+%%DATADIR%%/graphism/gui/zone.png
+%%DATADIR%%/graphism/gui/zone_over.png
 %%DATADIR%%/graphism/hospitaldept/large/large.ac
 %%DATADIR%%/graphism/hospitaldept/large/large.conf
 %%DATADIR%%/graphism/hospitaldept/large/large.png
@@ -378,6 +381,9 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/residential/viny-world/viny-world.ac
 %%DATADIR%%/graphism/residential/viny-world/viny-world.conf
 %%DATADIR%%/graphism/residential/viny-world/viny-world.xml
+%%DATADIR%%/graphism/texture/blue_water_512.png
+%%DATADIR%%/graphism/texture/cloud.png
+%%DATADIR%%/graphism/texture/terrain_64x4096_texture.png
 %%DATADIR%%/graphism/tree/fir1/IMG_5215-2.png
 %%DATADIR%%/graphism/tree/fir1/fir1.ac
 %%DATADIR%%/graphism/tree/fir1/fir1.conf
@@ -420,35 +426,26 @@ share/applications/opencity.desktop
 %%DATADIR%%/graphism/vehicle/truck/truck.ac
 %%DATADIR%%/graphism/vehicle/truck/truck.conf
 %%DATADIR%%/graphism/vehicle/truck/truck.xml
-%%DATADIR%%/graphism/water/texture/blue_water_512.png
-%%DATADIR%%/model/com_7.ocm
-%%DATADIR%%/model/com_9.ocm
-%%DATADIR%%/model/ind_7.ocm
-%%DATADIR%%/model/ind_9.ocm
-%%DATADIR%%/model/res_7.ocm
-%%DATADIR%%/model/res_9.ocm
-%%DATADIR%%/model/road_n_e.ocm
-%%DATADIR%%/model/road_n_w.ocm
-%%DATADIR%%/model/road_n_w_e.ocm
-%%DATADIR%%/model/road_o_e.ocm
-%%DATADIR%%/model/road_o_n.ocm
-%%DATADIR%%/model/road_o_s.ocm
-%%DATADIR%%/model/road_o_w.ocm
-%%DATADIR%%/model/road_s_e.ocm
-%%DATADIR%%/model/road_s_n.ocm
-%%DATADIR%%/model/road_s_n_e.ocm
-%%DATADIR%%/model/road_s_n_w.ocm
-%%DATADIR%%/model/road_s_n_w_e.ocm
-%%DATADIR%%/model/road_s_w.ocm
-%%DATADIR%%/model/road_s_w_e.ocm
-%%DATADIR%%/model/road_w_e.ocm
-%%DATADIR%%/model/terrain_plane.ocm
-%%DATADIR%%/model/vehicle_bus.ocm
-%%DATADIR%%/model/vehicle_sport.ocm
-%%DATADIR%%/model/vehicule_0.ocm
-%%DATADIR%%/model/vehicule_1.ocm
-%%DATADIR%%/model/vehicule_bus.ocm
-%%DATADIR%%/model/vehicule_sport.ocm
+%%DATADIR%%/map/heightmap/Athenes-1024x1024.png
+%%DATADIR%%/map/heightmap/Athenes-1024x1024.xml
+%%DATADIR%%/map/heightmap/Athenes-51x51.png
+%%DATADIR%%/map/heightmap/Athenes-51x51.xml
+%%DATADIR%%/map/heightmap/Dakar-51x51.png
+%%DATADIR%%/map/heightmap/Dakar-51x51.xml
+%%DATADIR%%/map/heightmap/Ibiza-101x101.png
+%%DATADIR%%/map/heightmap/Ibiza-101x101.xml
+%%DATADIR%%/map/heightmap/Istanbul-1025x1025.png
+%%DATADIR%%/map/heightmap/Istanbul-1025x1025.xml
+%%DATADIR%%/map/heightmap/Mallorca-93x61.png
+%%DATADIR%%/map/heightmap/Mallorca-93x61.xml
+%%DATADIR%%/map/heightmap/Palermo-51x51.png
+%%DATADIR%%/map/heightmap/Palermo-51x51.xml
+%%DATADIR%%/map/heightmap/Sao_Tome-101x101.png
+%%DATADIR%%/map/heightmap/Sao_Tome-101x101.xml
+%%DATADIR%%/map/heightmap/Strasbourg-1025x1025.png
+%%DATADIR%%/map/heightmap/Strasbourg-1025x1025.xml
+%%DATADIR%%/map/heightmap/Woodstock-51x51.png
+%%DATADIR%%/map/heightmap/Woodstock-51x51.xml
 %%DATADIR%%/sound/destroy.wav
 %%DATADIR%%/sound/eline.wav
 %%DATADIR%%/sound/eline2.wav
@@ -459,42 +456,10 @@ share/applications/opencity.desktop
 %%DATADIR%%/sound/sound.m3u
 %%DATADIR%%/sound/terrain.wav
 %%DATADIR%%/sound/wroum.wav
-%%DATADIR%%/texture/c_7.png
-%%DATADIR%%/texture/c_9.png
-%%DATADIR%%/texture/cloud.png
-%%DATADIR%%/texture/empty_grass.png
-%%DATADIR%%/texture/empty_grass.xcf
-%%DATADIR%%/texture/empty_grass_128.png
-%%DATADIR%%/texture/empty_grass_128.xcf
-%%DATADIR%%/texture/i_7.png
-%%DATADIR%%/texture/i_9.png
-%%DATADIR%%/texture/r_7.png
-%%DATADIR%%/texture/r_9.png
-%%DATADIR%%/texture/road_empty.png
-%%DATADIR%%/texture/road_empty.xcf
-%%DATADIR%%/texture/road_n_e.png
-%%DATADIR%%/texture/road_n_w.png
-%%DATADIR%%/texture/road_n_w_e.png
-%%DATADIR%%/texture/road_o_e.png
-%%DATADIR%%/texture/road_o_n.png
-%%DATADIR%%/texture/road_o_s.png
-%%DATADIR%%/texture/road_o_w.png
-%%DATADIR%%/texture/road_s_e.png
-%%DATADIR%%/texture/road_s_n.png
-%%DATADIR%%/texture/road_s_n_e.png
-%%DATADIR%%/texture/road_s_n_w.png
-%%DATADIR%%/texture/road_s_n_w_e.png
-%%DATADIR%%/texture/road_s_w.png
-%%DATADIR%%/texture/road_s_w_e.png
-%%DATADIR%%/texture/road_w_e.png
-%%DATADIR%%/texture/terrain_64x4096_texture.png
-%%DATADIR%%/texture/terrain_plane_128.png
 share/pixmaps/opencity.png
-@dirrm %%DATADIR%%/texture
 @dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/model
-@dirrm %%DATADIR%%/graphism/water/texture
-@dirrm %%DATADIR%%/graphism/water
+@dirrm %%DATADIR%%/map/heightmap
+@dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/graphism/vehicle/truck
 @dirrm %%DATADIR%%/graphism/vehicle/renault8-sport
 @dirrm %%DATADIR%%/graphism/vehicle/police
@@ -508,6 +473,7 @@ share/pixmaps/opencity.png
 @dirrm %%DATADIR%%/graphism/tree/peking-willow1
 @dirrm %%DATADIR%%/graphism/tree/fir1
 @dirrm %%DATADIR%%/graphism/tree
+@dirrm %%DATADIR%%/graphism/texture
 @dirrm %%DATADIR%%/graphism/residential/viny-world
 @dirrm %%DATADIR%%/graphism/residential/r_zone
 @dirrm %%DATADIR%%/graphism/residential/mep
@@ -590,6 +556,6 @@ share/pixmaps/opencity.png
 @dirrm %%DATADIR%%/graphism/commercial
 @dirrm %%DATADIR%%/graphism
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm etc/opencity/config
 @dirrm etc/opencity
-@dirrmtry share/applications
