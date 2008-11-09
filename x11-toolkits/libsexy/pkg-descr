@@ -1,4 +1,7 @@
-A library with extension widgets for GTK+. Included are a clickable URL
-label, a text entry with icon support, and others.
+This library provides collection of GTK+ widgets that extend functionality
+of such standard widgets as GtkEntry and GtkLabel by subclassing them and
+working around the limitations of the widgets.  "Sexy" widgets include
+support for inline icons, spell checking (via Enchant), embedded hyperlinks,
+and more.
 
-WWW: http://www.chipx86.com/wiki/Libsexy
+WWW: http://www.chipx86.com/w/index.php/Libsexy
