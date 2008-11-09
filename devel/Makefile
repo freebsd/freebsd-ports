@@ -2407,6 +2407,7 @@
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-gem_plugin
+    SUBDIR += rubygem-git
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
