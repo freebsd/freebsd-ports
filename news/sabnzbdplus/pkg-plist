@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/sabnzbd/codecs.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
