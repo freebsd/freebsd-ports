@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20081031
+PORTVERSION=	20081108
 CATEGORIES=	irc
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
