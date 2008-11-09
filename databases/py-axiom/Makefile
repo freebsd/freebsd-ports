@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsil
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_TWISTED=	yes
+USE_TWISTED=	conch
 NO_BUILD=	yes
 PYDISTUTILS_PKGNAME=	Axiom
 
