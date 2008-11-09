@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a52
+PORTVERSION=	2.01.01a53
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -116,7 +116,7 @@ post-patch:
 .endif
 .for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
 	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
-	cdrecord/defaults.c include/schily/deflts.h librscg/scsi-remote.c \
+	include/schily/deflts.h libcdrdeflt/cdrdeflt.c librscg/scsi-remote.c \
 	readcd/readcd.1 rscsi/rscsi.1 rscsi/rscsi.c rscsi/rscsi.dfl \
 	scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
