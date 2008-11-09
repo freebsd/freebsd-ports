@@ -528,6 +528,7 @@ include/wine/windows/wtsapi32.h
 include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/xcmc.h
+include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
 include/wine/windows/xmldom.idl
 include/wine/windows/xmldomdid.h
