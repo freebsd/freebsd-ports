@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rolo
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vCard query utility for mutt
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libvc.so:${PORTSDIR}/devel/libvc
