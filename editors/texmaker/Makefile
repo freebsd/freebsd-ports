@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
@@ -23,7 +22,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	gui network moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

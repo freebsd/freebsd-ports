@@ -40,9 +40,14 @@ share/icons/hicolor/scalable/apps/texmaker.svg
 %%DATADIR%%/next_d.gif
 %%DATADIR%%/prev.gif
 %%DATADIR%%/prev_d.gif
+%%DATADIR%%/qt_de.qm
+%%DATADIR%%/qt_fr.qm
+%%DATADIR%%/qt_zh.qm
 %%DATADIR%%/psheader.txt
 %%DATADIR%%/style.css
+%%DATADIR%%/texmaker_de.qm
 %%DATADIR%%/texmaker_fr.qm
+%%DATADIR%%/texmaker_zh.qm
 %%DATADIR%%/up.gif
 %%DATADIR%%/up_d.gif
 %%DATADIR%%/usermanual_en.html
