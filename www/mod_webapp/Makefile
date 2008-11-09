@@ -17,6 +17,8 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
 
 USE_APACHE=	yes
