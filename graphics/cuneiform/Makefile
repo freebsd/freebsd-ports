@@ -16,6 +16,8 @@ COMMENT=	OCR system developed and open sourced by Cognitive technologies
 
 LIB_DEPENDS=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -ldlmalloc"
