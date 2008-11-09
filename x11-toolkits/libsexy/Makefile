@@ -1,4 +1,4 @@
-# Ports collection makefile for:	libsexy
+# New ports collection makefile for:	libsexy
 # Date created:				2005-11-06
 # Whom:					Andreas Kohn <andreas@syndrom23.de>
 #
@@ -17,7 +17,7 @@ COMMENT=	Extension widgets for GTK+
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack lthack gtk20 libxml2
