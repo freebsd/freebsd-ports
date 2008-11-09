@@ -35,6 +35,7 @@
     SUBDIR += compaq-cc
     SUBDIR += csharp-mode.el
     SUBDIR += cu-prolog
+    SUBDIR += cython
     SUBDIR += dice
     SUBDIR += diveintopython
     SUBDIR += dlv
