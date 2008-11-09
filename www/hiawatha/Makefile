@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.7
+PORTVERSION=	6.10
 CATEGORIES=	www
-MASTER_SITES=	http://hiawatha.leisink.org/files/
+MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
 MAINTAINER=	hugo@leisink.net
 COMMENT=	An advanced and secure webserver for Unix
@@ -29,7 +29,7 @@ OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \
 		IPV6 "Enable IPv6 Support" Off \
 		SSL "Support for Secure Sockets Layer (SSL)" On \
-		REWRITE "Enable URL rewriting" On \
+		TOOLKIT "Enable URL Toolkit" On \
 		XSLT "XSLT support" Off
 
 .include <bsd.port.pre.mk>
@@ -42,8 +42,8 @@ CONFIGURE_ARGS+=	--disable-ssl
 CONFIGURE_ARGS+=	--disable-cache
 .endif
 
-.if !defined(WITH_REWRITE)
-CONFIGURE_ARGS+=	--disable-rewrite
+.if !defined(WITH_TOOLKIT)
+CONFIGURE_ARGS+=	--disable-toolkit
 .endif
 
 .if defined(WITH_COMMAND)
