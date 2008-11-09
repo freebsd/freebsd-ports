@@ -1,7 +1,7 @@
 # ex:ts=8
-# Ports collection makefile for:	imc
-# Date created:			Apr 30, 2002
-# Whom:				ijliao
+# New ports collection makefile for:	imc
+# Date created:				Apr 30, 2002
+# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -17,18 +17,20 @@ COMMENT=	Image Compiler
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 
-MAN1=	imc.1
+MAN1=		imc.1
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
