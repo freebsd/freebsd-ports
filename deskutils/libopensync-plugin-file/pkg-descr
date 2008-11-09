@@ -1,0 +1,4 @@
+The file-sync opensync plugin is intended to synchronize all kinds of data 
+directly to the file-system. It is mainly used for backup and testing.
+
+WWW: http://www.opensync.org/
