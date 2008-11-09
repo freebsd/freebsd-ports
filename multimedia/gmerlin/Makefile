@@ -7,6 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -23,6 +24,7 @@ USE_GNOME=	gtk20 gnomehack libxml2
 USE_GL=		gl
 USE_XORG=	x11 xv xinerama ice
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
