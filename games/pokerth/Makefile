@@ -7,6 +7,7 @@
 
 PORTNAME=	pokerth
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -25,47 +26,30 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib qmake_build moc_build rcc_build uic_build
 USE_SDL=	mixer
+HAS_CONFIGURE=	yes
+QMAKE_ARGS+=	-unix PREFIX=${PREFIX}
 
-PLIST_FILES=	bin/pokerth %%DATADIR%%/pokerth share/pixmaps/pokerth.png
-
-PORTDOCS=	COPYING ChangeLog INSTALL TODO
-
-PORTDATA=	data
-
+PORTDOCS=	server_setup_howto.txt
 MAN1=		pokerth.1
-
-DESKTOP_ENTRIES=	"PokerTH" \
-			"A poker game written in C++/Qt 4" \
-			"pokerth.png" \
-			"pokerth" \
-			"Application;Game;CardGame;" \
-			"false"
-
-MAKE_ENV+=	QTDIR="${QT_PREFIX}"
 
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
 		-e 's|(-lcurl)|\1 -liconv|g' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
+		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
 		${WRKSRC}/*.pro
 
 do-configure:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix pokerth.pro
+	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} pokerth.pro
 
-do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/pokerth ${DATADIR}/pokerth
-	@${CP} -R ${WRKSRC}/${PORTDATA} ${DATADIR}
-	@${ECHO_CMD} "exec ${DATADIR}/pokerth" > ${WRKSRC}/pokerth.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/pokerth.sh ${PREFIX}/bin/pokerth
-	@${INSTALL_DATA} ${WRKSRC}/pokerth.png ${PREFIX}/share/pixmaps/pokerth.png
-	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MANPREFIX}/man/man1/
+post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/pokerth ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
