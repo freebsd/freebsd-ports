@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -33,7 +33,8 @@ post-patch:
 		 s|/usr/local|${LOCALBASE}|; \
 		 s|^CC=$${CC:-gcc}||; \
 		 s|^CXX=$${CXX:-g++}||; \
-		 s|=$${CFLAGS:-"-O2 -g3 \(.*\)"}|="$${CFLAGS} \1"|' \
+		 s|=$${CFLAGS:-"-O2 -g3 \(.*\)"}|="$${CFLAGS} \1"|; \
+		 s|^LDFLAGS="$$LDFLAGS -L/usr/local/lib"|LDFLAGS="$$LDFLAGS -L/usr/local/lib -lintl"|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e \
 		's|$$(PREFIX)|${PREFIX}/|; \
