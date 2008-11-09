@@ -134,7 +134,6 @@ share/locale/el_GR/LC_MESSAGES/gtk2_ardour.mo
 share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/ru_RU/LC_MESSAGES/libardour2.mo
 share/locale/ru_RU/LC_MESSAGES/gtk2_ardour.mo
-share/locale/po_PO/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/pt_BR/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pt_PT/LC_MESSAGES/gtk2_ardour.mo
@@ -146,6 +145,11 @@ share/locale/it_IT/LC_MESSAGES/gtk2_ardour.mo
 share/locale/sv_SE/LC_MESSAGES/libardour2.mo
 share/locale/sv_SE/LC_MESSAGES/gtk2_ardour.mo
 share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
+share/locale/pl_PL/LC_MESSAGES/libardour2.mo
+share/locale/pl_PL/LC_MESSAGES/libgtkmm2ext.mo
+share/locale/pl_PL/LC_MESSAGES/gtk2_ardour.mo
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
@@ -156,5 +160,3 @@ share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/locale/po_PO/LC_MESSAGES
-@dirrmtry share/locale/po_PO

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	audio
-MASTER_SITES=	http://ardour.org/files/releases/
+MASTER_SITES=	http://releases.ardour.org/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
 EXTRACT_ONLY=	ardour-${DISTVERSION}.tar.bz2
 
@@ -28,7 +27,13 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		SoundTouch.0:${PORTSDIR}/audio/soundtouch \
 		usb:${PORTSDIR}/devel/libusb \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
-		fftw3:${PORTSDIR}/math/fftw3
+		fftw3:${PORTSDIR}/math/fftw3 \
+		aubio.3:${PORTSDIR}/audio/aubio
+BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
+
+# Between 0.109.0 and earlier versions there was an api change in JACK.
+# However, the library version number was not changed.  The line above
+# is supposed to work around that.
 
 USE_SCONS=	yes
 SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
