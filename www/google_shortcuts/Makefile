@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbutts
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.8
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,7 +15,8 @@ COMMENT=	Display all of your Google Services as buttons just next to your addres
 
 XPI_ID=		{5C46D283-ABDE-4dce-B83C-08881401921C}
 XPI_NUM=	3576
-XPI_FILES=	chrome/gbutts.jar defaults/preferences/install.js install.rdf
+XPI_FILES=	chrome/gbutts.jar defaults/preferences/install.js \
+		install.rdf chrome.manifest
 XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
