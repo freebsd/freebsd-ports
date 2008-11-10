@@ -5,23 +5,9 @@
 # $FreeBSD$
 #
 
-# The following compile-time options are available:
-# NO_SHARED=yes		compile a static version of zsh
-#			(default: use dynamically loadable modules)
-# ZSH_ETCDIR=<dir>	directory for zsh system-wide configuration files:
-#			zshenv, zlogin, zprofile, zshrc, zlogout.
-#			e.g. use this to put config files inside ${PREFIX}
-#			(default: /etc)
-#			NOTE: does NOT have to be inside ${PREFIX} tree
-# ZSH_FNDIR=<dir>	directory for zsh functions (part of distribution)
-#			(default: ${PREFIX}/share/zsh/${ZSH_VER}/functions)
-#			NOTE: should be inside ${PREFIX} tree
-# ZSH_SITEFNDIR=<dir>	directory for zsh site functions (locally developed)
-#			(default: ${PREFIX}/share/zsh/site-functions)
-#			NOTE: does NOT have to be inside ${PREFIX} tree
-
 PORTNAME=	zsh
 PORTVERSION=	4.3.9
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -42,23 +28,15 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
-		--enable-etcdir=${ZSH_ETCDIR} \
-		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \
-		--enable-site-fndir=${ZSH_SITEFNDIR}
+		--enable-function-subdirs
 
 OPTIONS=	ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
 		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
 		ZSH_MULTIBYTE	"Enable multibyte character support" on \
-		ZSH_PCRE	"Enable PCRE support" off
+		ZSH_PCRE	"Enable PCRE support" off \
+		ZSH_STATIC	"Build static executable" off
 
-# These variables can be overriden by user
-ZSH_ETCDIR?=	/etc
-ZSH_FNDIR?=	${DATADIR}/${ZSH_VER}/functions
-ZSH_SITEFNDIR?=	${DATADIR}/site-functions
-
-PLIST_SUB+=	ZSH_VER="${ZSH_VER}" ZSHETCDIR="${ZSH_ETCDIR}" \
-		ZSH_FNDIR="${ZSH_FNDIR:S!${PREFIX}/!!}" \
-		ZSH_SITEFNDIR="${ZSH_SITEFNDIR}"
+PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
@@ -89,13 +67,13 @@ CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
-.if defined(NO_SHARED)
+.if defined(WITH_ZSH_STATIC)
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
 CONFIGURE_ARGS+=	--disable-dynamic
-PLIST_SUB+=		NO_STATIC="@comment "
+PLIST_SUB+=		SHARED="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-dynamic
-PLIST_SUB+=		NO_STATIC=""
+PLIST_SUB+=		SHARED=""
 .endif
 
 .if defined(WITH_ZSH_MULTIBYTE)
