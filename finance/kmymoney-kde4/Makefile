@@ -7,6 +7,7 @@
 
 PORTNAME=	kmymoney2
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
@@ -17,7 +18,18 @@ LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking
+.else
 CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
+
+# Add more build-time dependencies to generate the PDF docs
+BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
+		pdfjadetex:${PORTSDIR}/print/jadetex \
+		html2ps:${PORTSDIR}/print/html2ps-letter \
+		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular
+.endif
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
@@ -35,8 +47,5 @@ MANCOMPRESSED=	yes
 
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
-
-post-patch:
-	${REINPLACE_CMD} -E -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
