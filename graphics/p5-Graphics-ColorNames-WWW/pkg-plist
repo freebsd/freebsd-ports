@@ -6,3 +6,4 @@
 @dirrmtry %%SITE_PERL%%/mach/auto/Graphics/ColorNames
 @dirrmtry %%SITE_PERL%%/mach/auto/Graphics
 @dirrmtry %%SITE_PERL%%/Graphics/ColorNames
+@dirrmtry %%SITE_PERL%%/Graphics
