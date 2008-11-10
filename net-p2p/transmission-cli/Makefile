@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.34
+PORTVERSION=	1.40
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -25,7 +25,8 @@ GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/t
 
 USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} \
+		--with-zlib=/usr
 
 MAN1?=		transmissioncli.1
 .endif
@@ -45,15 +46,20 @@ general-patch:
 		${WRKSRC}/third-party/libevent/Makefile.*
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
+	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}|g ; \
+		s|%%CXXFLAGS%%|${CXXFLAGS}|g' \
+			${WRKSRC}/configure.ac
+.if ${SLAVEPORT}!="gtk2"
+	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \
+		${WRKSRC}/libtransmission/utils.h
+.endif
 
 post-patch: general-patch
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none)
 	@${REINPLACE_CMD} -e \
-		's|CFLAGS="-g -Wall.*"|CFLAGS="${CFLAGS} -Wall -W"|g ; \
-		s|CXXFLAGS="-g -Wall.*"|CXXFLAGS="${CXXFLAGS} -Wall -W"|g ; \
-		s|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g' \
+		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lrt||g' \
 		${WRKSRC}/third-party/libevent/configure
