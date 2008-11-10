@@ -20,8 +20,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
-CONFIGURE_ENV+=	CFLAGS="${PTHREAD_LIBS} -I${LOCALBASE}/include -I${WRKSRC}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}
 
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample etc/rc.d/${PORTNAME}
 MAN1=		${PORTNAME}.1
