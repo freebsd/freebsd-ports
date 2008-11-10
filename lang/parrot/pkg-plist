@@ -64,9 +64,9 @@ include/parrot/key.h
 include/parrot/library.h
 include/parrot/list.h
 include/parrot/longopt.h
+include/parrot/multidispatch.h
 include/parrot/memory.h
 include/parrot/misc.h
-include/parrot/mmd.h
 include/parrot/nci.h
 include/parrot/oo.h
 include/parrot/oo_private.h
@@ -282,16 +282,21 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/art/pp001-intro.pod
 %%PARROT_DOCS%%/art/pp002-pmc.pod
 %%PARROT_DOCS%%/art/pp003-oop.pod
+%%PARROT_DOCS%%/book/README
 %%PARROT_DOCS%%/book/appendix.pod
 %%PARROT_DOCS%%/book/ch01_overview.pod
 %%PARROT_DOCS%%/book/ch02_getting_started.pod
 %%PARROT_DOCS%%/book/ch03_pir_basics.pod
 %%PARROT_DOCS%%/book/ch04_pir_subroutines.pod
 %%PARROT_DOCS%%/book/ch05_pasm.pod
-%%PARROT_DOCS%%/book/ch06_testing.pod
-%%PARROT_DOCS%%/book/ch07_architecture.pod
-%%PARROT_DOCS%%/book/ch08_pct.pod
-%%PARROT_DOCS%%/book/ch09_reference.pod
+%%PARROT_DOCS%%/book/ch06_library.pod
+%%PARROT_DOCS%%/book/ch07_testing_and_debugging.pod
+%%PARROT_DOCS%%/book/ch08_architecture.pod
+%%PARROT_DOCS%%/book/ch09_pct.pod
+%%PARROT_DOCS%%/book/ch10_hlls.pod
+%%PARROT_DOCS%%/book/ch11_pmcs.pod
+%%PARROT_DOCS%%/book/ch12_opcodes.pod
+%%PARROT_DOCS%%/book/ch13_reference.pod
 %%PARROT_DOCS%%/book/figs/p6e_0801.png
 %%PARROT_DOCS%%/debugger.pod
 %%PARROT_DOCS%%/dev/byteorder.pod
@@ -315,8 +320,8 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/imcc/operation.pod
 %%PARROT_DOCS%%/intro.pod
 %%PARROT_DOCS%%/jit.pod
+%%PARROT_DOCS%%/multidispatch.pod
 %%PARROT_DOCS%%/memory_internals.pod
-%%PARROT_DOCS%%/mmd.pod
 %%PARROT_DOCS%%/native_exec.pod
 %%PARROT_DOCS%%/ops/bit.pod
 %%PARROT_DOCS%%/ops/cmp.pod
@@ -382,6 +387,7 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_DOCS%%/pmc/subs.pod
 %%PARROT_DOCS%%/pmc2c.pod
 %%PARROT_DOCS%%/porting_intro.pod
+%%PARROT_DOCS%%/project/branching_guide.pod
 %%PARROT_DOCS%%/project/cage_cleaners_guide.pod
 %%PARROT_DOCS%%/project/committer_guide.pod
 %%PARROT_DOCS%%/project/debian_packaging_guide.pod
@@ -539,6 +545,7 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_EXAMPLES%%/nci/xlibtest.nqp
 %%PARROT_EXAMPLES%%/nci/xlibtest.p6
 %%PARROT_EXAMPLES%%/nci/xlibtest.pir
+%%PARROT_EXAMPLES%%/nci/xlibtest.rb
 %%PARROT_EXAMPLES%%/opengl/shapes.pir
 %%PARROT_EXAMPLES%%/opengl/triangle.pir
 %%PARROT_EXAMPLES%%/pasm/cat.pasm
@@ -563,6 +570,7 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_EXAMPLES%%/pge/simple.pir
 %%PARROT_EXAMPLES%%/pir/circle.pir
 %%PARROT_EXAMPLES%%/pir/euclid.pir
+%%PARROT_EXAMPLES%%/pir/genprog.bas
 %%PARROT_EXAMPLES%%/pir/hanoi.pir
 %%PARROT_EXAMPLES%%/pir/hello-dwim.pir
 %%PARROT_EXAMPLES%%/pir/io.pir
@@ -570,6 +578,8 @@ runtime/parrot/include/warnings.pasm
 %%PARROT_EXAMPLES%%/pir/life.pir
 %%PARROT_EXAMPLES%%/pir/local_label.pir
 %%PARROT_EXAMPLES%%/pir/mandel.pir
+%%PARROT_EXAMPLES%%/pir/mysqltest.bas
+%%PARROT_EXAMPLES%%/pir/pirric.pir
 %%PARROT_EXAMPLES%%/pir/queens_r.pir
 %%PARROT_EXAMPLES%%/pir/quine_ord.pir
 %%PARROT_EXAMPLES%%/pir/readline.pir
@@ -805,8 +815,6 @@ tools/install/smoke.pl
 @dirrm lib/parrot/include
 @dirrm lib/parrot/dynext
 @dirrm lib/parrot
-@dirrm languages/tcl/runtime
-@dirrm languages/tcl
 @dirrm languages/squaak
 @dirrm languages/pynie
 @dirrm languages/punie
