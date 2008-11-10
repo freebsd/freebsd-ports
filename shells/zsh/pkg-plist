@@ -46,7 +46,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh
 @exec   mkdir %%ZSH_SITEFNDIR%% 2> /dev/null || true
-@unexec rmdir %%ZSH_SITEFNDIR%% 2> /dev/null || true
+@dirrmtry %%ZSH_SITEFNDIR%%
 %%ZSH_FNDIR%%/Calendar/age
 %%ZSH_FNDIR%%/Calendar/calendar
 %%ZSH_FNDIR%%/Calendar/calendar_add
@@ -76,13 +76,10 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/BSD/_fetch
 %%ZSH_FNDIR%%/Completion/BSD/_freebsd-update
 %%ZSH_FNDIR%%/Completion/BSD/_kld
+%%ZSH_FNDIR%%/Completion/BSD/_portaudit
 %%ZSH_FNDIR%%/Completion/BSD/_portlint
 %%ZSH_FNDIR%%/Completion/BSD/_portsnap
 %%ZSH_FNDIR%%/Completion/BSD/_powerd
-%%ZSH_FNDIR%%/Completion/BSD/_zfs
-%%ZSH_FNDIR%%/Completion/BSD/_zfs_dataset
-%%ZSH_FNDIR%%/Completion/BSD/_zfs_pool
-%%ZSH_FNDIR%%/Completion/BSD/_zpool
 %%ZSH_FNDIR%%/Completion/Base/_all_labels
 %%ZSH_FNDIR%%/Completion/Base/_all_matches
 %%ZSH_FNDIR%%/Completion/Base/_alternative
@@ -188,6 +185,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Debian/_dpkg_source
 %%ZSH_FNDIR%%/Completion/Debian/_dput
 %%ZSH_FNDIR%%/Completion/Debian/_dupload
+%%ZSH_FNDIR%%/Completion/Debian/_grep-excuses
 %%ZSH_FNDIR%%/Completion/Debian/_invoke-rc.d
 %%ZSH_FNDIR%%/Completion/Debian/_lighttpd
 %%ZSH_FNDIR%%/Completion/Debian/_linda
@@ -212,9 +210,13 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Linux/_acpitool
 %%ZSH_FNDIR%%/Completion/Linux/_analyseplugin
 %%ZSH_FNDIR%%/Completion/Linux/_brctl
+%%ZSH_FNDIR%%/Completion/Linux/_chrt
+%%ZSH_FNDIR%%/Completion/Linux/_ethtool
 %%ZSH_FNDIR%%/Completion/Linux/_fuse_arguments
 %%ZSH_FNDIR%%/Completion/Linux/_fuse_values
 %%ZSH_FNDIR%%/Completion/Linux/_fusermount
+%%ZSH_FNDIR%%/Completion/Linux/_ionice
+%%ZSH_FNDIR%%/Completion/Linux/_ipset
 %%ZSH_FNDIR%%/Completion/Linux/_iptables
 %%ZSH_FNDIR%%/Completion/Linux/_iwconfig
 %%ZSH_FNDIR%%/Completion/Linux/_losetup
@@ -224,6 +226,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Linux/_mondo
 %%ZSH_FNDIR%%/Completion/Linux/_pkgtool
 %%ZSH_FNDIR%%/Completion/Linux/_sshfs
+%%ZSH_FNDIR%%/Completion/Linux/_strace
 %%ZSH_FNDIR%%/Completion/Linux/_tpb
 %%ZSH_FNDIR%%/Completion/Linux/_tpconfig
 %%ZSH_FNDIR%%/Completion/Linux/_tune2fs
@@ -247,6 +250,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_arp
 %%ZSH_FNDIR%%/Completion/Unix/_arping
 %%ZSH_FNDIR%%/Completion/Unix/_attr
+%%ZSH_FNDIR%%/Completion/Unix/_awk
 %%ZSH_FNDIR%%/Completion/Unix/_baz
 %%ZSH_FNDIR%%/Completion/Unix/_bind_addresses
 %%ZSH_FNDIR%%/Completion/Unix/_bison
@@ -286,6 +290,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_diffstat
 %%ZSH_FNDIR%%/Completion/Unix/_dir_list
 %%ZSH_FNDIR%%/Completion/Unix/_directories
+%%ZSH_FNDIR%%/Completion/Unix/_django
 %%ZSH_FNDIR%%/Completion/Unix/_dmidecode
 %%ZSH_FNDIR%%/Completion/Unix/_domains
 %%ZSH_FNDIR%%/Completion/Unix/_du
@@ -318,6 +323,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_global
 %%ZSH_FNDIR%%/Completion/Unix/_global_tags
 %%ZSH_FNDIR%%/Completion/Unix/_gnu_generic
+%%ZSH_FNDIR%%/Completion/Unix/_gnupod
 %%ZSH_FNDIR%%/Completion/Unix/_gnutls
 %%ZSH_FNDIR%%/Completion/Unix/_gpg
 %%ZSH_FNDIR%%/Completion/Unix/_gphoto2
@@ -333,6 +339,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_iconv
 %%ZSH_FNDIR%%/Completion/Unix/_id
 %%ZSH_FNDIR%%/Completion/Unix/_ifconfig
+%%ZSH_FNDIR%%/Completion/Unix/_iftop
 %%ZSH_FNDIR%%/Completion/Unix/_imagemagick
 %%ZSH_FNDIR%%/Completion/Unix/_init_d
 %%ZSH_FNDIR%%/Completion/Unix/_ip
@@ -341,6 +348,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_java
 %%ZSH_FNDIR%%/Completion/Unix/_java_class
 %%ZSH_FNDIR%%/Completion/Unix/_joe
+%%ZSH_FNDIR%%/Completion/Unix/_join
 %%ZSH_FNDIR%%/Completion/Unix/_killall
 %%ZSH_FNDIR%%/Completion/Unix/_knock
 %%ZSH_FNDIR%%/Completion/Unix/_kvno
@@ -406,6 +414,10 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_pine
 %%ZSH_FNDIR%%/Completion/Unix/_ping
 %%ZSH_FNDIR%%/Completion/Unix/_pkg-config
+%%ZSH_FNDIR%%/Completion/Unix/_pkg_instance
+%%ZSH_FNDIR%%/Completion/Unix/_pkgadd
+%%ZSH_FNDIR%%/Completion/Unix/_pkginfo
+%%ZSH_FNDIR%%/Completion/Unix/_pkgrm
 %%ZSH_FNDIR%%/Completion/Unix/_pon
 %%ZSH_FNDIR%%/Completion/Unix/_ports
 %%ZSH_FNDIR%%/Completion/Unix/_postfix
@@ -427,6 +439,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_renice
 %%ZSH_FNDIR%%/Completion/Unix/_ri
 %%ZSH_FNDIR%%/Completion/Unix/_rlogin
+%%ZSH_FNDIR%%/Completion/Unix/_rm
 %%ZSH_FNDIR%%/Completion/Unix/_rrdtool
 %%ZSH_FNDIR%%/Completion/Unix/_rsync
 %%ZSH_FNDIR%%/Completion/Unix/_rubber
@@ -443,9 +456,11 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_sisu
 %%ZSH_FNDIR%%/Completion/Unix/_slrn
 %%ZSH_FNDIR%%/Completion/Unix/_socket
+%%ZSH_FNDIR%%/Completion/Unix/_sort
 %%ZSH_FNDIR%%/Completion/Unix/_spamassassin
 %%ZSH_FNDIR%%/Completion/Unix/_sqsh
 %%ZSH_FNDIR%%/Completion/Unix/_ssh
+%%ZSH_FNDIR%%/Completion/Unix/_stgit
 %%ZSH_FNDIR%%/Completion/Unix/_strip
 %%ZSH_FNDIR%%/Completion/Unix/_stty
 %%ZSH_FNDIR%%/Completion/Unix/_su
@@ -456,6 +471,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_tar
 %%ZSH_FNDIR%%/Completion/Unix/_tar_archive
 %%ZSH_FNDIR%%/Completion/Unix/_tardy
+%%ZSH_FNDIR%%/Completion/Unix/_tcpdump
 %%ZSH_FNDIR%%/Completion/Unix/_tcptraceroute
 %%ZSH_FNDIR%%/Completion/Unix/_telnet
 %%ZSH_FNDIR%%/Completion/Unix/_terminals
@@ -500,7 +516,11 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_yp
 %%ZSH_FNDIR%%/Completion/Unix/_zcat
 %%ZSH_FNDIR%%/Completion/Unix/_zdump
+%%ZSH_FNDIR%%/Completion/Unix/_zfs
+%%ZSH_FNDIR%%/Completion/Unix/_zfs_dataset
+%%ZSH_FNDIR%%/Completion/Unix/_zfs_pool
 %%ZSH_FNDIR%%/Completion/Unix/_zip
+%%ZSH_FNDIR%%/Completion/Unix/_zpool
 %%ZSH_FNDIR%%/Completion/X/_acroread
 %%ZSH_FNDIR%%/Completion/X/_dcop
 %%ZSH_FNDIR%%/Completion/X/_gnome-gv
@@ -567,6 +587,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_directory_stack
 %%ZSH_FNDIR%%/Completion/Zsh/_dirs
 %%ZSH_FNDIR%%/Completion/Zsh/_disable
+%%ZSH_FNDIR%%/Completion/Zsh/_dynamic_directory_name
 %%ZSH_FNDIR%%/Completion/Zsh/_echotc
 %%ZSH_FNDIR%%/Completion/Zsh/_echoti
 %%ZSH_FNDIR%%/Completion/Zsh/_emulate
@@ -607,6 +628,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_stat
 %%ZSH_FNDIR%%/Completion/Zsh/_subscript
 %%ZSH_FNDIR%%/Completion/Zsh/_suffix_alias_files
+%%ZSH_FNDIR%%/Completion/Zsh/_tcpsys
 %%ZSH_FNDIR%%/Completion/Zsh/_tilde
 %%ZSH_FNDIR%%/Completion/Zsh/_trap
 %%ZSH_FNDIR%%/Completion/Zsh/_ttyctl
@@ -619,6 +641,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_vars
 %%ZSH_FNDIR%%/Completion/Zsh/_wait
 %%ZSH_FNDIR%%/Completion/Zsh/_which
+%%ZSH_FNDIR%%/Completion/Zsh/_zcalc_line
 %%ZSH_FNDIR%%/Completion/Zsh/_zcompile
 %%ZSH_FNDIR%%/Completion/Zsh/_zed
 %%ZSH_FNDIR%%/Completion/Zsh/_zftp
@@ -675,6 +698,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Prompts/prompt_fire_setup
 %%ZSH_FNDIR%%/Prompts/prompt_off_setup
 %%ZSH_FNDIR%%/Prompts/prompt_oliver_setup
+%%ZSH_FNDIR%%/Prompts/prompt_pws_setup
 %%ZSH_FNDIR%%/Prompts/prompt_redhat_setup
 %%ZSH_FNDIR%%/Prompts/prompt_special_chars
 %%ZSH_FNDIR%%/Prompts/prompt_suse_setup
@@ -699,6 +723,41 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/TCP/tcp_spam
 %%ZSH_FNDIR%%/TCP/tcp_talk
 %%ZSH_FNDIR%%/TCP/tcp_wait
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_bzr
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_cdv
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_cvs
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_darcs
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_git
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_hg
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_mtn
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_p4
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_svk
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_svn
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_detect_tla
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_bzr
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_cdv
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_cvs
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_darcs
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_git
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_hg
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_mtn
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_p4
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_svk
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_svn
+%%ZSH_FNDIR%%/VCS_Info/Backends/VCS_INFO_get_data_tla
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_adjust
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_bydir_detect
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_check_com
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_formats
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_maxexports
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_nvcsformats
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_realpath
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_reposub
+%%ZSH_FNDIR%%/VCS_Info/VCS_INFO_set
+%%ZSH_FNDIR%%/VCS_Info/vcs_info
+%%ZSH_FNDIR%%/VCS_Info/vcs_info_lastmsg
+%%ZSH_FNDIR%%/VCS_Info/vcs_info_printsys
+%%ZSH_FNDIR%%/VCS_Info/vcs_info_setsys
 %%ZSH_FNDIR%%/Zftp/zfanon
 %%ZSH_FNDIR%%/Zftp/zfautocheck
 %%ZSH_FNDIR%%/Zftp/zfcd
@@ -772,29 +831,31 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Zle/which-command
 %%ZSH_FNDIR%%/Zle/zed-set-file-name
 %%DATADIR%%/%%ZSH_VER%%/scripts/newuser
-@dirrm %%ZSH_FNDIR%%/Calendar
-@dirrm %%ZSH_FNDIR%%/Completion/AIX
-@dirrm %%ZSH_FNDIR%%/Completion/BSD
-@dirrm %%ZSH_FNDIR%%/Completion/Base
-@dirrm %%ZSH_FNDIR%%/Completion/Cygwin
-@dirrm %%ZSH_FNDIR%%/Completion/Darwin
-@dirrm %%ZSH_FNDIR%%/Completion/Debian
-@dirrm %%ZSH_FNDIR%%/Completion/Linux
-@dirrm %%ZSH_FNDIR%%/Completion/Mandriva
-@dirrm %%ZSH_FNDIR%%/Completion/Redhat
-@dirrm %%ZSH_FNDIR%%/Completion/Unix
-@dirrm %%ZSH_FNDIR%%/Completion/X
-@dirrm %%ZSH_FNDIR%%/Completion/Zsh
-@dirrm %%ZSH_FNDIR%%/Completion
-@dirrm %%ZSH_FNDIR%%/Exceptions
-@dirrm %%ZSH_FNDIR%%/MIME
-@dirrm %%ZSH_FNDIR%%/Misc
-@dirrm %%ZSH_FNDIR%%/Newuser
-@dirrm %%ZSH_FNDIR%%/Prompts
-@dirrm %%ZSH_FNDIR%%/TCP
-@dirrm %%ZSH_FNDIR%%/Zftp
 @dirrm %%ZSH_FNDIR%%/Zle
+@dirrm %%ZSH_FNDIR%%/Zftp
+@dirrm %%ZSH_FNDIR%%/VCS_Info/Backends
+@dirrm %%ZSH_FNDIR%%/VCS_Info
+@dirrm %%ZSH_FNDIR%%/TCP
+@dirrm %%ZSH_FNDIR%%/Prompts
+@dirrm %%ZSH_FNDIR%%/Newuser
+@dirrm %%ZSH_FNDIR%%/Misc
+@dirrm %%ZSH_FNDIR%%/MIME
+@dirrm %%ZSH_FNDIR%%/Exceptions
+@dirrm %%ZSH_FNDIR%%/Completion/Zsh
+@dirrm %%ZSH_FNDIR%%/Completion/X
+@dirrm %%ZSH_FNDIR%%/Completion/Unix
+@dirrm %%ZSH_FNDIR%%/Completion/Redhat
+@dirrm %%ZSH_FNDIR%%/Completion/Mandriva
+@dirrm %%ZSH_FNDIR%%/Completion/Linux
+@dirrm %%ZSH_FNDIR%%/Completion/Debian
+@dirrm %%ZSH_FNDIR%%/Completion/Darwin
+@dirrm %%ZSH_FNDIR%%/Completion/Cygwin
+@dirrm %%ZSH_FNDIR%%/Completion/Base
+@dirrm %%ZSH_FNDIR%%/Completion/BSD
+@dirrm %%ZSH_FNDIR%%/Completion/AIX
+@dirrm %%ZSH_FNDIR%%/Completion
+@dirrm %%ZSH_FNDIR%%/Calendar
 @dirrm %%ZSH_FNDIR%%
 @dirrm %%DATADIR%%/%%ZSH_VER%%/scripts
 @dirrm %%DATADIR%%/%%ZSH_VER%%
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
