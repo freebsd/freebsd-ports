@@ -134,9 +134,8 @@ do-install:
 . endfor
 .endif
 
-.if defined(MAINTAINER_MODE)
 regression-test:
-. if defined (WITH_MPI)
+.if defined (WITH_MPI) && defined(MAINTAINER_MODE)
 .  if !exists(${HOME}/.mpd.conf)
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
 	${CHMOD} go-r ${HOME}/.mpd.conf
@@ -152,7 +151,7 @@ regression-test:
 	${LOCALBASE}/mpich2/bin/mpirun -np 3 ./c_example ;	\
 	${ECHO_MSG} "The solution should be (1,2)")
 	${LOCALBASE}/mpich2/bin/mpdallexit
-. else
+.else
 	(cd ${WRKSRC}/examples &&	\
 	./ssimpletest < input_simpletest_real ;			\
 	./dsimpletest < input_simpletest_real ;			\
@@ -161,7 +160,6 @@ regression-test:
 	${ECHO_MSG} "The solution should be (1,2,3,4,5)" ;	\
 	./c_example ;						\
 	${ECHO_MSG} "The solution should be (1,2)")
-. endif
 .endif
 
 .include <bsd.port.post.mk>
