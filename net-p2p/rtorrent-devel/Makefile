@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	rtorrent-devel
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-BUILD_DEPENDS=	libtorrent-devel=0.12.2:${PORTSDIR}/net-p2p/libtorrent-devel
-RUN_DEPENDS=	libtorrent-devel=0.12.2:${PORTSDIR}/net-p2p/libtorrent-devel
+BUILD_DEPENDS=	libtorrent-devel=0.12.3:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel=0.12.3:${PORTSDIR}/net-p2p/libtorrent-devel
 
 MASTERDIR=	${.CURDIR}/../rtorrent
 MD5_FILE=	${.CURDIR}/distinfo
@@ -24,5 +24,6 @@ DESCR=		${MASTERDIR}/pkg-descr
 CONFLICTS=	rtorrent-[0-9]*
 
 USE_GCC=	4.2+
+EXTRA_PATCHES=	${.CURDIR}/files/devel-*
 
 .include "${MASTERDIR}/Makefile"
