@@ -7,6 +7,7 @@
 
 PORTNAME=	slgtkdatabox
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://laurent.perez2.free.fr/comp/slang/modules/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +16,7 @@ MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	S-Lang binding for gtkdatabox
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2 \
-		gtkdatabox-0.9.0.0:${PORTSDIR}/x11-toolkits/gtkdatabox
+		gtkdatabox-0.9.0.1:${PORTSDIR}/x11-toolkits/gtkdatabox
 RUN_DEPENDS=	imdisplay:${PORTSDIR}/x11-toolkits/slgtk
 
 OPTIONS=	SLGLADE	"Enable slglade support (run-time)" off
