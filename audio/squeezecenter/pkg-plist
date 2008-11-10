@@ -635,16 +635,16 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog7.html
 %%SLIMDIR%%/Firmware/boom.version
 %%SLIMDIR%%/Firmware/boom_30.bin
-%%SLIMDIR%%/Firmware/boom_32.bin
+%%SLIMDIR%%/Firmware/boom_33.bin
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_47.bin
+%%SLIMDIR%%/Firmware/receiver_48.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_112.bin
+%%SLIMDIR%%/Firmware/squeezebox2_113.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_62.bin
+%%SLIMDIR%%/Firmware/transporter_63.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
@@ -941,7 +941,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/trigger.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/trigger.psd
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/gradient-bg.gif
-%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/Thumbs.db
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/arrow-left-white.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/arrow-right-white.gif
 %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/col-move-bottom.gif
@@ -1154,6 +1153,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/images/slimp3_logo.small.gif
 %%SLIMDIR%%/HTML/EN/html/images/softsqueeze.png
 %%SLIMDIR%%/HTML/EN/html/images/spacer.gif
+%%SLIMDIR%%/HTML/EN/html/images/squeezebox-family.jpg
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox.jpg
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.gif
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.small.gif
@@ -1181,6 +1181,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/setup.html
 %%SLIMDIR%%/HTML/EN/html/silence.mp3
 %%SLIMDIR%%/HTML/EN/html/silentpacket.mp3
+%%SLIMDIR%%/HTML/EN/html/slim-backup-alarm.mp3
 %%SLIMDIR%%/HTML/EN/html/softsqueeze/LICENSE.txt
 %%SLIMDIR%%/HTML/EN/html/softsqueeze/SoftSqueeze.jar
 %%SLIMDIR%%/HTML/EN/html/softsqueeze/applet.html
@@ -1925,10 +1926,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/install.xml
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/strings.txt
-%%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/MyRadio/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/MyRadio/install.xml
-%%SLIMDIR%%/Slim/Plugin/MyRadio/strings.txt
 %%SLIMDIR%%/Slim/Plugin/OPMLBased.pm
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_down.gif
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_up.gif
@@ -2334,13 +2331,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Pandora
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN/plugins
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML/EN
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio/HTML
-@dirrm %%SLIMDIR%%/Slim/Plugin/MyRadio
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html
