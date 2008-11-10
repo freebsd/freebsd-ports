@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="66657bd5-ac92-11dd-b541-001f3b19d541">
+    <topic>emacs -- run-python vulnerability</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<range><le>22.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Emacs developers report:</p>
+	<blockquote cite="http://lists.gnu.org/archive/html/emacs-devel/2008-09/msg00215.html">
+	  <p>The Emacs command `run-python' launches an interactive
+	    Python interpreter.  After the Python process starts up,
+	    Emacs automatically sends it the line:</p>
+
+	  <p>import emacs</p>
+
+	  <p>which normally imports a script named emacs.py which is
+	    distributed with Emacs.  This script, which is typically
+	    located in a write-protected installation directory with
+	    other Emacs program files, defines various functions to help
+	    the Python process communicate with Emacs.</p>
+
+	  <p>The vulnerability arises because Python, by default,
+	    prepends '' to the module search path, so modules are looked
+	    for in the current directory.  If the current directory is
+	    world-writable, an attacker may insert malicious code by
+	    adding a fake Python module named emacs.py into that
+	    directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.gnu.org/archive/html/emacs-devel/2008-09/msg00215.html</url>
+    </references>
+    <dates>
+      <discovery>2008-09-05</discovery>
+      <entry>2008-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24b64fb0-af1d-11dd-8a16-001b1116b350">
     <topic>clamav -- off-by-one heap overflow in VBA project parser</topic>
     <affects>
