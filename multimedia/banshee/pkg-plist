@@ -8,6 +8,7 @@ lib/banshee-1/Backends/Banshee.Hal.dll.mdb
 lib/banshee-1/Backends/Banshee.NowPlaying.X11.dll
 lib/banshee-1/Backends/Banshee.NowPlaying.X11.dll.mdb
 lib/banshee-1/Backends/Banshee.Unix.dll
+lib/banshee-1/Backends/Banshee.Unix.dll.config
 lib/banshee-1/Backends/Banshee.Unix.dll.mdb
 lib/banshee-1/Backends/libbnpx11.a
 lib/banshee-1/Backends/libbnpx11.la
@@ -26,6 +27,7 @@ lib/banshee-1/Banshee.Widgets.dll
 lib/banshee-1/Banshee.Widgets.dll.config
 lib/banshee-1/Banshee.Widgets.dll.mdb
 lib/banshee-1/Banshee.exe
+lib/banshee-1/Banshee.exe.config
 lib/banshee-1/Banshee.exe.mdb
 lib/banshee-1/Beroe.exe
 lib/banshee-1/Beroe.exe.mdb
@@ -43,6 +45,8 @@ lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll.mdb
 %%OPT_MTP%%lib/banshee-1/Extensions/Banshee.Dap.Mtp.dll.mdb
 lib/banshee-1/Extensions/Banshee.Dap.dll
 lib/banshee-1/Extensions/Banshee.Dap.dll.mdb
+%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/Banshee.Dap.Ipod.dll.mdb
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll.mdb
 lib/banshee-1/Extensions/Banshee.InternetRadio.dll
@@ -62,6 +66,10 @@ lib/banshee-1/Extensions/Banshee.PlayQueue.dll
 lib/banshee-1/Extensions/Banshee.PlayQueue.dll.mdb
 lib/banshee-1/Extensions/Banshee.Podcasting.dll
 lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll.mdb
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll.mdb
 lib/banshee-1/Halie.exe
 lib/banshee-1/Halie.exe.mdb
 lib/banshee-1/Hyena.Gui.dll
@@ -126,10 +134,25 @@ share/banshee-1/icons/hicolor/16x16/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/16x16/categories/podcast.png
 share/banshee-1/icons/hicolor/16x16/categories/source-playlist.png
 share/banshee-1/icons/hicolor/16x16/categories/source-smart-playlist.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-U2-color.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-U2-monochrome.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-blue.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-gold.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-green.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-pink.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-silver.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-nano-black.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-nano-white.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-shuffle.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-standard-color.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-standard-monochrome.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-black.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-white.png
 share/banshee-1/icons/hicolor/16x16/status/podcast-new.png
 share/banshee-1/icons/hicolor/22x22/actions/encode.png
 share/banshee-1/icons/hicolor/22x22/actions/media-import-audio-cd.png
 share/banshee-1/icons/hicolor/22x22/actions/media-write-cd.png
+share/banshee-1/icons/hicolor/22x22/categories/amazon-mp3-source.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-audioscrobbler.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-neighbour.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-personal.png
@@ -139,11 +162,39 @@ share/banshee-1/icons/hicolor/22x22/categories/podcast.png
 share/banshee-1/icons/hicolor/22x22/categories/radio.png
 share/banshee-1/icons/hicolor/22x22/categories/source-playlist.png
 share/banshee-1/icons/hicolor/22x22/categories/source-smart-playlist.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-U2-color.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-U2-monochrome.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-blue.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-gold.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-green.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-pink.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-silver.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-nano-black.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-nano-white.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-shuffle.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-standard-color.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-standard-monochrome.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-video-black.png
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-video-white.png
 share/banshee-1/icons/hicolor/32x32/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/48x48/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/48x48/categories/podcast.png
 share/banshee-1/icons/hicolor/48x48/categories/radio.png
 share/banshee-1/icons/hicolor/scalable/categories/radio.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-color.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-monochrome.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-blue.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-gold.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-green.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-pink.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-silver.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-nano-black.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-nano-white.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-shuffle.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-standard-color.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-standard-monochrome.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-video-black.svg
+%%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-video-white.svg
 share/dbus-1/services/org.bansheeproject.Banshee.service
 share/dbus-1/services/org.bansheeproject.CollectionIndexer.service
 share/icons/hicolor/16x16/apps/media-player-banshee.png
@@ -187,27 +238,33 @@ share/locale/sr/LC_MESSAGES/banshee-1.mo
 share/locale/sr@Latn/LC_MESSAGES/banshee-1.mo
 share/locale/sv/LC_MESSAGES/banshee-1.mo
 share/locale/th/LC_MESSAGES/banshee-1.mo
+share/locale/uk/LC_MESSAGES/banshee-1.mo
 share/locale/vi/LC_MESSAGES/banshee-1.mo
 share/locale/zh_CN/LC_MESSAGES/banshee-1.mo
 share/locale/zh_HK/LC_MESSAGES/banshee-1.mo
 share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
 @dirrm share/banshee-1/icons/hicolor/scalable/status
+@dirrm share/banshee-1/icons/hicolor/scalable/devices
 @dirrm share/banshee-1/icons/hicolor/scalable/categories
 @dirrm share/banshee-1/icons/hicolor/scalable/actions
 @dirrm share/banshee-1/icons/hicolor/scalable
 @dirrm share/banshee-1/icons/hicolor/48x48/status
+@dirrm share/banshee-1/icons/hicolor/48x48/devices
 @dirrm share/banshee-1/icons/hicolor/48x48/categories
 @dirrm share/banshee-1/icons/hicolor/48x48/actions
 @dirrm share/banshee-1/icons/hicolor/48x48
 @dirrm share/banshee-1/icons/hicolor/32x32/status
+@dirrm share/banshee-1/icons/hicolor/32x32/devices
 @dirrm share/banshee-1/icons/hicolor/32x32/categories
 @dirrm share/banshee-1/icons/hicolor/32x32/actions
 @dirrm share/banshee-1/icons/hicolor/32x32
 @dirrm share/banshee-1/icons/hicolor/22x22/status
+@dirrm share/banshee-1/icons/hicolor/22x22/devices
 @dirrm share/banshee-1/icons/hicolor/22x22/categories
 @dirrm share/banshee-1/icons/hicolor/22x22/actions
 @dirrm share/banshee-1/icons/hicolor/22x22
 @dirrm share/banshee-1/icons/hicolor/16x16/status
+@dirrm share/banshee-1/icons/hicolor/16x16/devices
 @dirrm share/banshee-1/icons/hicolor/16x16/categories
 @dirrm share/banshee-1/icons/hicolor/16x16/actions
 @dirrm share/banshee-1/icons/hicolor/16x16
