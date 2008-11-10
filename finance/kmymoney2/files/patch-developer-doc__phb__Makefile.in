@@ -1,0 +1,29 @@
+--- ./developer-doc/phb/Makefile.in.orig	2008-11-07 15:38:59.000000000 -0500
++++ ./developer-doc/phb/Makefile.in	2008-11-07 15:42:05.000000000 -0500
+@@ -314,7 +314,7 @@
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@PDF_TARGET = kmymoney-phb.pdf
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@PDF_TARGET = kmymoney-phb.pdf
+ STYLESHEET = kde-nochunk.xsl
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@DOCBOOK_DSL = /usr/share/sgml/docbook/dsssl-stylesheets/print/docbook.dsl
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@DOCBOOK_DSL = /usr/local/share/sgml/docbook/dsssl/modular/print/docbook.dsl
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am
+@@ -532,13 +532,13 @@
+ 
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@kmymoney-phb.pdf: phb.docbook.tex
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating PDF document"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex phb.docbook.tex > errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex phb.docbook.tex > errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating bookmarks"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex phb.docbook.tex >> errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex phb.docbook.tex >> errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating page numbers for table of contents"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex phb.docbook.tex >> errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex phb.docbook.tex >> errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	mv phb.docbook.pdf kmymoney-phb.pdf
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	rm phb.docbook.aux phb.docbook.log phb.docbook.out errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	rm -f phb.docbook.aux phb.docbook.log phb.docbook.out errorlog
+ 
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@kmymoney-phb.pdf: phb.html
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	html2ps -D -t phb.html | ps2pdf14 - phb.pdf

@@ -1,0 +1,66 @@
+--- ./doc/en/Makefile.in.orig	2008-03-24 10:50:03.000000000 -0400
++++ ./doc/en/Makefile.in	2008-11-07 15:27:27.000000000 -0500
+@@ -347,7 +347,7 @@
+ KDE_DOCS = kmymoney2 - $(DOCBOOK_FILES) $(SCREENSHOT_FILES)
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@PDF_TARGET = kmymoney-user.pdf
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@PDF_TARGET = kmymoney-user.pdf
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@DOCBOOK_DSL = /usr/share/sgml/docbook/dsssl-stylesheets/print/docbook.dsl
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@DOCBOOK_DSL = /usr/local/share/sgml/docbook/dsssl/modular/print/docbook.dsl
+ #>- all: $(BUILT_SOURCES)
+ #>+ 1
+ all: docs-am  $(BUILT_SOURCES)
+@@ -571,11 +571,11 @@
+ 		cd online-manual; \
+ 		splitup-kde-chunk-online; \
+ 		cd ..; \
+-		make get-files; \
++		${MAKE} get-files; \
+ 		for file in $(SCREENSHOT_FILES); do \
+ 			cp $$file online-manual; \
+ 		done; \
+-		make clear-files; \
++		${MAKE} clear-files; \
+ 		cp $(kde_libs_htmldir)/en/common/* common; \
+ 		tar -cjf online-manual.tar.bz2 common online-manual; \
+ 		rm -rf index.xml online-manual common; \
+@@ -607,31 +607,31 @@
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	fi
+ 
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@index.docbook.tex: $(DOCBOOK_FILES) $(SCREENSHOTFILES)
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	make get-files
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	${MAKE} get-files
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	-jade -t tex -d $(DOCBOOK_DSL) -D `dirname $(KDE_XSL_STYLESHEET)` -D $(kde_libs_htmldir)/en/common index.docbook
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	make clear-files
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	${MAKE} clear-files
+ 
+ #index.docbook.tex: index.cache.bz2
+ #	-jade -t tex -d $(DOCBOOK_DSL) -D `dirname $(KDE_XSL_STYLESHEET)` -D $(kde_libs_htmldir)/en/common index.docbook
+ #
+ 
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@kmymoney-user.pdf: index.docbook.tex
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	make get-files
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	${MAKE} get-files
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating PDF document"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex index.docbook.tex > errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex index.docbook.tex > errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating bookmarks"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex index.docbook.tex >> errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex index.docbook.tex >> errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@echo "Generating page numbers for table of contents"
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@pdfjadetex index.docbook.tex >> errorlog
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@-pdfjadetex index.docbook.tex >> errorlog
+ @HAVE_DSSSLCONVERSIONTOOLS_TRUE@	@mv index.docbook.pdf kmymoney-user.pdf
+-@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	make clear-files
++@HAVE_DSSSLCONVERSIONTOOLS_TRUE@	${MAKE} clear-files
+ 
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@kmymoney-user.pdf: index.html
+-@HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	make get-files
++@HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	${MAKE} get-files
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	html2ps -D -t -o index.ps index.html
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	ps2pdf14 index.ps kmymoney-user.pdf
+ @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	rm index.ps
+-@HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	make clear-files
++@HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@	${MAKE} clear-files
+ 
+ # The automatic KDE install installs some files,
+ # that we don't need, so we remove them immediately.
