@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	habari
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://habariproject.org/dist/ \
 		http://habari.jp/dist/
