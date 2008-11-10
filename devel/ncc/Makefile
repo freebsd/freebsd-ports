@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	ncc
-PORTVERSION=	2.3
+PORTVERSION=	2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Program analysis tool and call-graph navigator
 
-USE_GMAKE=	yes
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CXX}" LCFLAGS="${CFLAGS}"
 
@@ -29,6 +28,7 @@ MAN1=		ncc.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/NOGNU/d' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e '/#include <alloca.h>/d' ${WRKSRC}/dbstree.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/objdir/ncc ${PREFIX}/bin
