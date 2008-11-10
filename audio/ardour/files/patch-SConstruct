@@ -1,5 +1,5 @@
---- SConstruct.orig	2008-07-07 17:29:40.000000000 +0200
-+++ SConstruct	2008-07-22 20:53:29.000000000 +0200
+--- SConstruct.orig	2008-10-25 15:06:02.000000000 +0200
++++ SConstruct	2008-11-09 09:44:10.000000000 +0100
 @@ -48,7 +48,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
@@ -18,20 +18,7 @@
      if os.path.isfile('.personal_use_only'):
          print "Enabling VST support. Note that distributing a VST-enabled ardour\nis a violation of several different licences.\nBuild with VST=false if you intend to distribute ardour to others."
      else:
-@@ -551,9 +551,9 @@
- 
-         conf = Configure(libraries['aubio'])
- 
--        if conf.CheckHeader ('aubio/aubio.h') == False:
--            print ('AUBIO-related features be compiled without the aubio headers, which do not seem to be installed')
--            env['AUBIO'] = 0
-+#        if conf.CheckHeader ('aubio/aubio.h') == False:
-+#            print ('AUBIO-related features be compiled without the aubio headers, which do not seem to be installed')
-+#            env['AUBIO'] = 0
-         conf.Finish()
- 
- if env['FREESOUND']:
-@@ -711,9 +711,9 @@
+@@ -698,9 +698,9 @@
      opt_flags.extend (["-mhard-float", "-mpowerpc-gfxopt"])
      opt_flags.extend (["-Os"])
  
@@ -41,9 +28,9 @@
 -    build_host_supports_sse = 0
 +    build_host_supports_sse = 1
      
-     debug_flags.append ("-DARCH_X86")
-     opt_flags.append ("-DARCH_X86")
-@@ -758,12 +758,7 @@
+     if (re.search ("i[0-9]86", config[config_cpu]) != None):
+         debug_flags.append ("-DARCH_X86")
+@@ -746,12 +746,7 @@
              print "\nWarning: you are building Ardour with SSE support even though your system does not support these instructions. (This may not be an error, especially if you are a package maintainer)"
  # end optimization section
  
@@ -57,7 +44,7 @@
  
  #
  # a single way to test if we're on OS X
-@@ -794,13 +789,7 @@
+@@ -789,13 +784,7 @@
  # prepend boiler plate optimization flags
  #
  
@@ -72,7 +59,7 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -890,6 +879,7 @@
+@@ -887,6 +876,7 @@
  
  libraries['usb'] = LibraryInfo ()
  prep_libcheck(env, libraries['usb'])
@@ -80,7 +67,7 @@
  
  conf = Configure (libraries['usb'])
  if conf.CheckLib ('usb', 'usb_interrupt_write'):
-@@ -948,6 +938,7 @@
+@@ -945,6 +935,7 @@
  if env['LIBLO']:
      libraries['lo'] = LibraryInfo ()
      prep_libcheck(env, libraries['lo'])
@@ -88,7 +75,7 @@
  
      conf = Configure (libraries['lo'])
      if conf.CheckLib ('lo', 'lo_server_new') == False:
-@@ -961,6 +952,7 @@
+@@ -958,6 +949,7 @@
  
  libraries['dmalloc'] = LibraryInfo ()
  prep_libcheck(env, libraries['dmalloc'])
@@ -96,7 +83,7 @@
  
  #
  # look for the threaded version
-@@ -1018,8 +1010,10 @@
+@@ -1015,8 +1007,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -109,19 +96,7 @@
  
  env = conf.Finish()
  
-@@ -1073,9 +1067,9 @@
- 
- #    libraries['flowcanvas'] = LibraryInfo(LIBS='flowcanvas', LIBPATH='#/libs/flowcanvas', CPPPATH='#libs/flowcanvas')
-     libraries['soundtouch'] = LibraryInfo()
--    #libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
-+    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
-     # Comment the previous line and uncomment this for Debian:
--    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs libSoundTouch')
-+    #libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs libSoundTouch')
- 
-     libraries['appleutility'] = LibraryInfo(LIBS='libappleutility',
-                                             LIBPATH='#libs/appleutility',
-@@ -1191,8 +1185,7 @@
+@@ -1190,8 +1184,7 @@
  surface_subdirs = [ 'libs/surfaces/control_protocol',
                      'libs/surfaces/generic_midi',
                      'libs/surfaces/tranzport',
@@ -131,7 +106,7 @@
                      ]
  
  if env['SURFACES']:
-@@ -1297,8 +1290,8 @@
+@@ -1296,8 +1289,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
