@@ -1,23 +1,27 @@
-# New ports collection makefile for:    husky-htick
-# Date created:                         6 January 2003
-# Whom:                                 Max Khon
+# New ports collection makefile for:	husky-htick-devel
+# Date created:				2008-10-25
+# Whom:					Andrew Clarke <mail@ozzmosis.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	htick
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	1.4-rc5
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	FTN File ticker
+MAINTAINER=	mail@ozzmosis.com
+COMMENT=	FTN File ticker, development version
 
-LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
+LIB_DEPENDS=	fidoconfig.1:${PORTSDIR}/news/husky-fidoconf-devel
+
+CONFLICTS=	husky-htick-[0-9]*
 
 MAN1=		htick.1
 INFO=		htick
+
+PLIST_FILES=	bin/htick \
+		share/doc/husky/htick.html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
@@ -30,5 +34,5 @@ post-install:
 	@cd ${WRKSRC}/doc && ${GMAKE} ${MAKE_ARGS} install
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/news/husky-base/Makefile.inc"
+.include "${PORTSDIR}/news/husky-base-devel/Makefile.inc"
 .include <bsd.port.post.mk>
