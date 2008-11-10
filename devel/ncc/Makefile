@@ -41,7 +41,9 @@ do-install:
 	${MKDIR} ${PREFIX}/include/ncc
 	${INSTALL_DATA}	${WRKSRC}/doc/nognu ${PREFIX}/include/ncc
 	${INSTALL_MAN} ${WRKSRC}/ncc.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
