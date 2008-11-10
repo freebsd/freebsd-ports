@@ -33,6 +33,7 @@
     SUBDIR += husky-hptsqfix
     SUBDIR += husky-hpucode
     SUBDIR += husky-htick
+    SUBDIR += husky-htick-devel
     SUBDIR += husky-msged
     SUBDIR += husky-nltools
     SUBDIR += husky-smapi
