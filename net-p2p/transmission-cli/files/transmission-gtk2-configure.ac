@@ -1,11 +1,11 @@
---- configure.ac.orig	2008-09-17 12:23:52.000000000 -0500
-+++ configure.ac	2008-09-17 12:28:32.000000000 -0500
-@@ -10,20 +10,16 @@
- AM_INIT_AUTOMAKE([1.9 tar-ustar])
- AC_PROG_LIBTOOL
+--- configure.ac.orig	2008-11-08 14:51:27.000000000 -0600
++++ configure.ac	2008-11-08 14:54:58.000000000 -0600
+@@ -23,28 +23,24 @@
+ fi
+ AM_CONDITIONAL(TR_UNSTABLE, test "x$TR_UNSTABLE" = "xyes")
  
 -OPENSSL_MINIMUM=0.9.4
- CURL_MINIMUM=7.15.0
+ CURL_MINIMUM=7.16.3
  GIO_MINIMUM=2.15.5
  GLIB_MINIMUM=2.6.0
  GTK_MINIMUM=2.6.0
@@ -21,16 +21,26 @@
  AC_SUBST(LIBNOTIFY_MINIMUM)
  AC_SUBST(DBUS_GLIB_MINIMUM)
  
-@@ -44,7 +40,7 @@
+ AC_PROG_CC
+ AC_PROG_CXX
+ if test "x$GCC" = "xyes" ; then
+-    CFLAGS="-g -Wall -Wformat-security -W -Wmissing-prototypes -Wdeclaration-after-statement -O3 -funroll-loops"
+-    CXXFLAGS="-g -Wall -Wformat-security -W -O3 -funroll-loops"
++    CFLAGS="-Wall -Wformat-security -W -Wmissing-prototypes -Wdeclaration-after-statement"
++    CXXFLAGS="-Wall -Wformat-security -W"
+ fi
+ 
+ AC_HEADER_STDC
+@@ -56,7 +52,7 @@
  
  AC_SEARCH_LIBS([socket], [socket net])
  AC_SEARCH_LIBS([gethostbyname], [nsl bind])
 -PKG_CHECK_MODULES(OPENSSL, [openssl >= $OPENSSL_MINIMUM], , [CHECK_SSL()])
 +CHECK_SSL()
  PKG_CHECK_MODULES(LIBCURL, [libcurl >= $CURL_MINIMUM])
+ AC_PATH_ZLIB
  
- AC_SYS_LARGEFILE
-@@ -87,20 +83,14 @@
+@@ -100,20 +96,14 @@
                     gthread-2.0 >= $GLIB_MINIMUM],
                    [have_gtk=yes],
                    [have_gtk=no])
@@ -55,10 +65,12 @@
  fi
  AM_CONDITIONAL([BUILD_GTK],[test "x$build_gtk" = "xyes"])
  AC_SUBST(GTK_LIBS)
-@@ -158,152 +148,14 @@
+@@ -176,127 +166,8 @@
+ AC_SUBST(transmissionlocaledir)
  
- dnl ----------------------------------------------------------------------------
- dnl
+ 
+-dnl ----------------------------------------------------------------------------
+-dnl
 -dnl  wxWidgets detection for the wxWidgets client
 -
 -AM_OPTIONS_WXCONFIG
@@ -86,13 +98,13 @@
 -AC_CANONICAL_HOST
 -have_beos="no"
 -have_darwin="no"
--have_msw="no"
+ have_msw="no"
 -case $host_os in
 -
 -   *cygwin|*mingw32*)
 -     have_msw="yes"
 -     CXXFLAGS="$CXXFLAGS -mms-bitfields -mwin32 -mwindows"
--     CPPFLAGS="$CPPFLAGS -DWIN32 -DWIN32_LEAN_AND_MEAN"
+-     CPPFLAGS="$CPPFLAGS -DWIN32 -D_WIN32 -DWIN32_LEAN_AND_MEAN"
 -     LIBS="$LIBS -lshell32 -lws2_32"
 -     transmissionlocaledir="locale"
 -     if test -z "$host_alias"; then
@@ -100,11 +112,7 @@
 -     else
 -       hostaliaswindres="$host_alias-windres";
 -     fi
--     AC_PATH_PROGS([WINDRES], [windres $hostaliaswindres $host_os-windres])
--     if test "x$WINDRES" = "x"; then
--       AC_MSG_ERROR([windres could not be found within your path.])
--     fi
--     AC_SUBST(WINDRES)
+-     AC_CHECK_TOOL(WINDRES, windres)
 -     ;;
 -
 -  *beos*)
@@ -150,7 +158,7 @@
 -    ;;
 -
 -esac
--
+ 
 -AC_ARG_ENABLE([beos],
 -              [AC_HELP_STRING([--enable-beos],[build OS X client])],
 -              [build_beos=${enableval}],
@@ -163,11 +171,11 @@
 -              [build_cli="yes"])
 -AM_CONDITIONAL([BUILD_CLI],[test "x$build_cli" = "xyes"])
 -
--AC_ARG_ENABLE([darwin],
--              [AC_HELP_STRING([--enable-darwin],[build OS X client])],
--              [build_darwin=${enableval}],
--              [build_darwin=${have_darwin}])
--AM_CONDITIONAL([BUILD_DARWIN],[test "x$build_darwin" = "xyes"])
+-AC_ARG_ENABLE([mac],
+-              [AC_HELP_STRING([--enable-mac],[build OS X client])],
+-              [build_mac=${enableval}],
+-              [build_mac=${have_darwin}])
+-AM_CONDITIONAL([BUILD_MAC],[test "x$build_mac" = "xyes"])
 -
 -AC_ARG_ENABLE([daemon],
 -              [AC_HELP_STRING([--enable-daemon],[build daemon])],
@@ -182,13 +190,10 @@
 -if test "x$have_darwin" = "xyes"; then
 -    AC_DEFINE([HAVE_DARWIN], 1)
 -fi
--if test "x$have_msw" = "xyes"; then
--    AC_DEFINE([HAVE_MSW], 1)
--fi
--
--
--dnl ----------------------------------------------------------------------------
--dnl
+ if test "x$have_msw" = "xyes"; then
+     AC_DEFINE([HAVE_MSW], 1)
+ fi
+@@ -307,18 +178,10 @@
  dnl  Generate the output
  
  AC_CONFIG_FILES([Makefile
@@ -201,14 +206,13 @@
                   third-party/Makefile
                   third-party/miniupnp/Makefile
                   third-party/libnatpmp/Makefile
-                  third-party/shttpd/Makefile
 -                 macosx/Makefile
 -                 wx/Makefile
 -                 wx/images/Makefile
                   gtk/Makefile
                   gtk/icons/Makefile
                   po/Makefile.in])
-@@ -317,14 +169,9 @@
+@@ -332,14 +195,9 @@
  
          Source code location:       ${srcdir}
          Compiler:                   ${CXX}
@@ -219,13 +223,13 @@
            ... gio support:          ${use_gio}
            ... dbus-glib support:    ${use_dbus_glib}
            ... libnotify support:    ${use_libnotify}
--        Build OS X client:          ${build_darwin}
+-        Build OS X client:          ${build_mac}
 -        Build wxWidgets client:     ${build_wx}
  
  "
---- Makefile.am.orig	2008-09-17 12:23:56.000000000 -0500
-+++ Makefile.am	2008-09-17 12:29:33.000000000 -0500
-@@ -1,103 +1,6 @@
+--- Makefile.am.orig	2008-11-08 14:51:30.000000000 -0600
++++ Makefile.am	2008-11-08 14:55:30.000000000 -0600
+@@ -1,108 +1,6 @@
  ACLOCAL_AMFLAGS = -I m4
  
 -if BUILD_BEOS
@@ -235,13 +239,15 @@
 -  CLI_DIR = cli
 -endif
 -if BUILD_DAEMON
+-if !WIN32
 -  DAEMON_DIR = daemon
 -endif
--if BUILD_DARWIN
--  MAC_DIR = macosx
 -endif
 -if BUILD_GTK
 -  GTK_DIR = gtk po
+-endif
+-if BUILD_MAC
+-  MAC_DIR = macosx
 -endif
 -if BUILD_WX
 -  WX_DIR = wx
@@ -264,6 +270,7 @@
 -  AUTHORS \
 -  COPYING \
 -  README \
+-  autogen.sh \
 -  Transmission.xcodeproj/project.pbxproj \
 -  intltool-extract.in \
 -  intltool-merge.in \
@@ -295,11 +302,12 @@
 -  web/javascript/jquery/jquery.min.js \
 -  web/javascript/jquery/jquery.form.min.js \
 -  web/javascript/jquery/jquery.transmenu.min.js \
--  web/javascript/jquery/jquery-dimensions.min.js
+-  web/javascript/jquery/jquery.dimensions.min.js
 -
 -clutch_imagesdir = $(clutchdir)/images
 -clutch_images_DATA = \
 -  web/images/favicon.ico \
+-  web/images/favicon.png \
 -  web/images/webclip-icon.png
 -
 -clutch_graphicsdir = $(clutch_imagesdir)/graphics
@@ -310,6 +318,7 @@
 -  web/images/graphics/iphone_chrome.png \
 -  web/images/graphics/browser_opera.gif \
 -  web/images/graphics/filter_bar.png \
+-  web/images/graphics/filter_icon.png \
 -  web/images/graphics/transfer_arrows.png \
 -  web/images/graphics/browser_safari.gif
 -

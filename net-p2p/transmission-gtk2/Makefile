@@ -20,7 +20,7 @@ RUN_DEPENDS=	${GEN_RUN_DEPENDS} \
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
-SLAVEPORT=	gtk
+SLAVEPORT=	gtk2
 
 USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
 USE_GETTEXT=	yes

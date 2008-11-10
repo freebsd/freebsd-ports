@@ -9,11 +9,13 @@
 %%DATADIR%%/web/images/buttons/toolbar_buttons.png
 %%DATADIR%%/web/images/buttons/torrent_buttons.png
 %%DATADIR%%/web/images/favicon.ico
+%%DATADIR%%/web/images/favicon.png
 %%DATADIR%%/web/images/graphics/browser_firefox.gif
 %%DATADIR%%/web/images/graphics/browser_opera.gif
 %%DATADIR%%/web/images/graphics/browser_safari.gif
 %%DATADIR%%/web/images/graphics/chrome.png
 %%DATADIR%%/web/images/graphics/filter_bar.png
+%%DATADIR%%/web/images/graphics/filter_icon.png
 %%DATADIR%%/web/images/graphics/iphone_chrome.png
 %%DATADIR%%/web/images/graphics/logo.png
 %%DATADIR%%/web/images/graphics/transfer_arrows.png
@@ -22,8 +24,8 @@
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/javascript/common.js
 %%DATADIR%%/web/javascript/dialog.js
-%%DATADIR%%/web/javascript/jquery/jquery-dimensions.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.contextmenu.min.js
+%%DATADIR%%/web/javascript/jquery/jquery.dimensions.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.form.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.min.js
 %%DATADIR%%/web/javascript/jquery/jquery.transmenu.min.js
