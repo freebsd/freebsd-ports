@@ -3,6 +3,6 @@
 %%SITE_PERL%%/Imager/Graph/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph
-@dirrmtry %%SITE_PERL%%/Imager/Graph
-@dirrmtry %%SITE_PERL%%/Imager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
+@dirrm %%SITE_PERL%%/Imager/Graph
+@dirrmtry %%SITE_PERL%%/Imager
