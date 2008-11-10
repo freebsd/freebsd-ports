@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24b64fb0-af1d-11dd-8a16-001b1116b350">
+    <topic>clamav -- off-by-one heap overflow in VBA project parser</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.94.1</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20081105</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Advisory from Moritz Jodeit, November 8th, 2008:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/498169/30/0/threaded">
+	  <p>ClamAV contains an off-by-one heap overflow vulnerability
+	  in the code responsible for parsing VBA project files.
+	  Successful exploitation could allow an attacker to execute
+	  arbitrary code with the privileges of the `clamd' process by
+	  sending an email with a prepared attachment.</p>
+	  <p>A VBA project file embedded inside an OLE2 office document
+	  send as an attachment can trigger the off-by-one.</p>
+	</blockquote>
+	<p>Entry from Thu Oct 30 13:52:42 CET 2008 (acab) in ChangeLog:</p>
+	<blockquote cite="http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog">
+	  <p>libclamav/vba_extract.c: get_unicode_name off-by-one,
+	  bb#1239 reported by Moritz Jodeit &gt;moritz*jodeit.org&lt;</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.securityfocus.com/archive/1/498169/30/0/threaded</url>
+      <url>http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2008-11-08</discovery>
+      <entry>2008-11-10</entry>
+    </dates>
+  </vuln>
   <vuln vid="c89a3ebb-ae07-11dd-b4b2-001f3c8eabeb">
     <topic>trac -- potential DOS vulnerability</topic>
     <affects>
