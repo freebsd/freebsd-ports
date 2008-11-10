@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	separate
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
@@ -18,7 +18,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
 
 BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
-		gimp-2.4:${PORTSDIR}/graphics/gimp
+		gimp-2.6:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
