@@ -5,11 +5,11 @@
 #
 
 PORTNAME=	omegaT
-PORTVERSION=	1.7.3.2
+PORTVERSION=	1.7.3.4
 CATEGORIES=	editors java x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	omegat
-DISTNAME=	OmegaT_1.7.3_02_Source
+DISTNAME=	OmegaT_1.7.3_04_Source
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A powerfull translation memory application written in Java
