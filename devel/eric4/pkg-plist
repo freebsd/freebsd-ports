@@ -1655,6 +1655,7 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric_small.png
 %%PYTHON_SITELIBDIR%%/eric4/uninstall.py
 %%PYTHON_SITELIBDIR%%/eric4/uninstall.pyc
+%%PYTHON_SITELIBDIR%%/eric4.pth
 %%PYTHON_SITELIBDIR%%/eric4config.py
 %%PYTHON_SITELIBDIR%%/eric4config.pyc
 %%PYTHON_SITELIBDIR%%/eric4plugins/__init__.py
