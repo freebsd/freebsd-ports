@@ -2381,10 +2381,10 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/artist.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bib-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bib-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex-style.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex-style.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/bibtex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/conf-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/conf-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/css-mode.el.gz
@@ -2403,6 +2403,16 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-export-latex.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-export-latex.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-irc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-irc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-mac-message.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-mac-message.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-mouse.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-mouse.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-publish.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org-publish.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/org.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/page-ext.el.gz
@@ -2620,9 +2630,10 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/site-lisp/subdirs.el
 var/games/emacs/snake-scores
 var/games/emacs/tetris-scores
-@dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
-@dirrm libexec/emacs/%%EMACS_VER%%
-@dirrm libexec/emacs
+@dirrmtry var/games/emacs
+@dirrmtry var/games
+@dirrmtry var
+@dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
@@ -2658,8 +2669,7 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrm %%DATADIR%%/%%EMACS_VER%%
-@dirrmtry var/games/emacs
-@dirrmtry var/games
-@dirrmtry var
+@dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
+@dirrm libexec/emacs/%%EMACS_VER%%
+@dirrm libexec/emacs
