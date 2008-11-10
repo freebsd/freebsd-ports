@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	funkload
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	www python
 MASTER_SITES=	http://funkload.nuxeo.org/ \
 		CHEESESHOP
@@ -17,8 +16,8 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	FunkLoad is a functional and load web tester
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils \
-		${PYTHON_SITELIBDIR}/gdchart.so:${PORTSDIR}/graphics/py-gdchart \
-		${PYTHON_SITELIBDIR}/webunit/__init__.py:${PORTSDIR}/www/py-webunit \
+		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
+		${PYTHON_PKGNAMEPREFIX}webunit>=1.3.8:${PORTSDIR}/www/py-webunit \
 		${PYXML} \
 		tcpwatch.py:${PORTSDIR}/net/tcpwatch
 
