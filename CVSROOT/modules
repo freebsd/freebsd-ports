@@ -476,6 +476,7 @@ antlr                           ports/devel/antlr
 antlrworks                      ports/devel/antlrworks
 antrix                          ports/games/antrix
 anubis                          ports/mail/anubis
+anyremote                       ports/comms/anyremote
 aoi                             ports/graphics/aoi
 aolserver                       ports/www/aolserver
 aolserver-nscache               ports/www/aolserver-nscache
@@ -2386,6 +2387,7 @@ drupal5-imagecache              ports/www/drupal5-imagecache
 drupal5-imagefield              ports/www/drupal5-imagefield
 drupal5-insert-view             ports/www/drupal5-insert-view
 drupal5-nice_menus              ports/www/drupal5-nice_menus
+drupal5-nodewords               ports/www/drupal5-nodewords
 drupal5-securepages             ports/www/drupal5-securepages
 drupal5-simplenews              ports/www/drupal5-simplenews
 drupal5-tagadelic               ports/www/drupal5-tagadelic
@@ -4111,6 +4113,7 @@ gmastermind                     ports/games/gmastermind
 gmat                            ports/textproc/gmat
 gmcal                           ports/deskutils/gmcal
 gmencoder                       ports/multimedia/gmencoder
+gmerlin                         ports/multimedia/gmerlin
 gmerlin-avdecoder               ports/multimedia/gmerlin-avdecoder
 gmessage                        ports/x11/gmessage
 gmetadom                        ports/textproc/gmetadom
@@ -7239,11 +7242,13 @@ libopenraw                      ports/graphics/libopenraw
 libopensync                     ports/devel/libopensync
 libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
 libopensync-plugin-evolution2-devel  ports/deskutils/libopensync-plugin-evolution2-devel
+libopensync-plugin-file         ports/deskutils/libopensync-plugin-file
 libopensync-plugin-python       ports/deskutils/libopensync-plugin-python
 libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
 libopensync-plugin-sunbird      ports/deskutils/libopensync-plugin-sunbird
 libopensync-plugin-synce        ports/deskutils/libopensync-plugin-synce
 libopensync-plugin-synce-devel  ports/deskutils/libopensync-plugin-synce-devel
+libopensync-plugin-syncml       ports/deskutils/libopensync-plugin-syncml
 libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
 libopensync022                  ports/devel/libopensync022
 liboping                        ports/net/liboping
@@ -7526,6 +7531,7 @@ link-monitor-applet             ports/net/link-monitor-applet
 linkcheck                       ports/www/linkcheck
 linkchecker                     ports/www/linkchecker
 linklint                        ports/www/linklint
+linknx                          ports/net/linknx
 links                           ports/www/links
 links1                          ports/www/links1
 linm                            ports/misc/linm
@@ -16323,6 +16329,7 @@ pear-Services_Google            ports/www/pear-Services_Google
 pear-Services_Pingback          ports/net/pear-Services_Pingback
 pear-Services_SharedBook        ports/www/pear-Services_SharedBook
 pear-Services_TinyURL           ports/www/pear-Services_TinyURL
+pear-Services_Twitter           ports/net/pear-Services_Twitter
 pear-Services_W3C_CSSValidator  ports/www/pear-Services_W3C_CSSValidator
 pear-Services_W3C_HTMLValidator  ports/www/pear-Services_W3C_HTMLValidator
 pear-Services_Weather           ports/misc/pear-Services_Weather
@@ -16580,6 +16587,7 @@ pear-services_google            ports/www/pear-Services_Google
 pear-services_pingback          ports/net/pear-Services_Pingback
 pear-services_sharedbook        ports/www/pear-Services_SharedBook
 pear-services_tinyurl           ports/www/pear-Services_TinyURL
+pear-services_twitter           ports/net/pear-Services_Twitter
 pear-services_urltea            ports/www/pear-Services_urlTea
 pear-services_w3c_cssvalidator  ports/www/pear-Services_W3C_CSSValidator
 pear-services_w3c_htmlvalidator  ports/www/pear-Services_W3C_HTMLValidator
@@ -19278,6 +19286,7 @@ rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
+rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
 rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-haml                    ports/www/rubygem-haml
