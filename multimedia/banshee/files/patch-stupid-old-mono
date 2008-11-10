@@ -1,0 +1,11 @@
+--- src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageDevice.cs.orig	2008-11-07 16:37:50.000000000 +0000
++++ src/Dap/Banshee.Dap.MassStorage/Banshee.Dap.MassStorage/MassStorageDevice.cs	2008-11-07 16:36:52.000000000 +0000
+@@ -69,7 +69,7 @@
+             }
+             
+             try {
+-                foreach (var item in new KeyValueParser (reader = new StreamReader (path))) {
++                foreach (KeyValuePair<string, string []> item in new KeyValueParser (reader = new StreamReader (path))) {
+                     try {
+                         switch (item.Key) {
+                             case "name": name = item.Value[0]; break;

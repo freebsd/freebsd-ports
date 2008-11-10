@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -25,6 +25,7 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 
 OPTIONS=	DOCS "Install documentation" on \
 		MTP "Enable MTP support" on
+#		IPOD "Enable iPod support" on \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -38,7 +39,7 @@ USE_XORG=	xrandr xxf86vm
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--disable-boo --disable-ipod
+CONFIGURE_ARGS+=	--disable-boo
 
 # Need absolute path for build/icon-install-theme.
 INSTALL=	/usr/bin/install
@@ -51,6 +52,14 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/monodocer:${PORTSDIR}/devel/monodoc
 .else
 CONFIGURE_ARGS+=	--disable-docs
 .endif
+
+#.if !defined(WITHOUT_IPOD)
+#LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/ipod-sharp-ui.pc:${PORTSDIR}/audio/ipod-sharp
+#PLIST_SUB+=	OPT_IPOD=""
+#.else
+CONFIGURE_ARGS+=	--disable-ipod
+PLIST_SUB+=	OPT_IPOD="@comment "
+#.endif
 
 .if !defined(WITHOUT_MTP)
 LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
@@ -86,7 +95,7 @@ pre-build:
 # XXX - This one is the best.
 pre-install:
 .for i in 16x16 22x22 32x32 48x48 scalable
-. for j in actions categories status
+. for j in actions categories devices status
 	${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/$j/
 . endfor
 .endfor
