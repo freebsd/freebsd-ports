@@ -8,6 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -17,7 +18,8 @@ COMMENT=	Sound server for UNIX
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		oil-0.3.0:${PORTSDIR}/devel/liboil \
 		speexdsp.1:${PORTSDIR}/audio/speex \
-		dbus-1.3:${PORTSDIR}/devel/dbus
+		dbus-1.3:${PORTSDIR}/devel/dbus \
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	gnometarget gnomehack glib20 ltverhack
 USE_XORG=	x11 sm
