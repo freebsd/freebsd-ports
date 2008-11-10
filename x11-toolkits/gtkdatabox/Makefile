@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	gtkdatabox
-PORTVERSION=	0.9.0.0
+PORTVERSION=	0.9.0.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
+MASTER_SITES=	SF http://www.eudoxos.de/gtk/gtkdatabox/download/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
