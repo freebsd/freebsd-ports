@@ -7,7 +7,7 @@
 
 PORTNAME?=	rtorrent
 PORTVERSION?=	0.7.9
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -27,6 +27,8 @@ MAN1=		rtorrent.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 
+EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README
@@ -37,7 +39,7 @@ OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on
 
 .if !defined(WITHOUT_XMLRPC)
 CONFIGURE_ARGS+=	--with-xmlrpc-c
-LIB_DEPENDS+=	xmlrpc.9:${PORTSDIR}/net/xmlrpc-c
+LIB_DEPENDS+=	xmlrpc.14:${PORTSDIR}/net/xmlrpc-c-devel
 .else
 CONFIGURE_ARGS+=	--with-xmlrpc-c=no
 .endif
