@@ -21,8 +21,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.6
-PORTREVISION=	8
+PORTVERSION=	4.3.9
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
