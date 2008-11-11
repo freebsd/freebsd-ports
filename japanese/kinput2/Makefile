@@ -17,7 +17,7 @@ COMMENT=	A Japanese text input server for X11 applications
 
 USE_IMAKE=	yes
 SUB_FILES=	Kinput2.conf
-PLIST_FILES=	${PLIST_ALL:O:u}
+PLIST_FILES=	${PLIST_ALL}
 
 MAN1=		kinput2.1
 
@@ -38,20 +38,30 @@ CONF.WNN6=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
-PLIST.WNN6=		${PLIST.FREEWNN}
 
 LIB_DEPENDS.WNN7=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 CONF.WNN7=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
-PLIST.WNN7=		${PLIST.FREEWNN}
 
 LIB_DEPENDS.FREEWNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 CONF.FREEWNN+=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
-PLIST.FREEWNN+=		lib/X11/ccdef/ccdef.kinput2 \
+
+LIB_DEPENDS.SJ3=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
+CONF.SJ3+=		'\#define UseSj3' \
+			SJ3SRC=${LOCALBASE}/include \
+			SJ3LIB="-L${LOCALBASE}/lib -lsj3lib" \
+			SJ3DEF_DIR=\$${LIBDIR}/ccdef
+PLIST.SJ3=		lib/X11/ccdef/sjhk \
+			lib/X11/ccdef/sjrc \
+			lib/X11/ccdef/sjrk \
+			lib/X11/ccdef/sjsb \
+			lib/X11/ccdef/sjzh
+
+PLIST.WNN=		lib/X11/ccdef/ccdef.kinput2 \
 			lib/X11/ccdef/rule.eggfunc \
 			lib/X11/ccdef/rule.func \
 			lib/X11/ccdef/rule.greek \
@@ -65,18 +75,11 @@ PLIST.FREEWNN+=		lib/X11/ccdef/ccdef.kinput2 \
 			lib/X11/ccdef/rule.katakana.egg \
 			lib/X11/ccdef/rule.kigou.egg
 
-LIB_DEPENDS.SJ3=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
-CONF.SJ3+=		'\#define UseSj3' \
-			SJ3SRC=${LOCALBASE}/include \
-			SJ3LIB="-L${LOCALBASE}/lib -lsj3lib" \
-			SJ3DEF_DIR=\$${LIBDIR}/ccdef
-PLIST.SJ3=		lib/X11/ccdef/sjhk \
-			lib/X11/ccdef/sjrc \
-			lib/X11/ccdef/sjrk \
-			lib/X11/ccdef/sjsb \
-			lib/X11/ccdef/sjzh
-
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_FREEWNN) || defined(WITH_WNN6) || defined(WITH_WNN7)
+PLIST_ALL+=	${PLIST.WNN}
+.endif
 
 .for I in WITH_CANNA WITH_FREEWNN WITH_WNN6 WITH_WNN7 WITH_SJ3
 .if defined(${I})
