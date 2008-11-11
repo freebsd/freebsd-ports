@@ -7,7 +7,7 @@
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -43,7 +43,7 @@ LIB_DEPENDS.WNN7=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 CONF.WNN7=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
-			WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
+			WNNLIB="-L$(LOCALBASE)/lib -lwnn7 -lcrypt"
 
 LIB_DEPENDS.FREEWNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 CONF.FREEWNN+=		'\#define UseWnn' \
