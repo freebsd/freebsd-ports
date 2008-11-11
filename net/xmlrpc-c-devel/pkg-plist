@@ -1,5 +1,4 @@
 bin/xmlrpc-c-config
-include/xmlrpc-c
 include/xmlrpc-c/config.h
 include/xmlrpc-c/c_util.h
 include/xmlrpc-c/util.h
