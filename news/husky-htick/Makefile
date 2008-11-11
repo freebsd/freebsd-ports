@@ -7,14 +7,16 @@
 
 PORTNAME=	htick
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news mail
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	FTN File ticker
+COMMENT=	FTN file ticker
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
+
+CONFLICTS=	husky-htick-devel-[0-9]*
 
 MAN1=		htick.1
 INFO=		htick
