@@ -13,6 +13,7 @@
 %%SITE_PERL%%/AnyEvent/Impl/Tk.pm
 %%SITE_PERL%%/AnyEvent/Intro.pod
 %%SITE_PERL%%/AnyEvent/Socket.pm
+%%SITE_PERL%%/AnyEvent/Strict.pm
 %%SITE_PERL%%/AnyEvent/Util.pm
 @dirrmtry %%SITE_PERL%%/AnyEvent/Impl
 @dirrmtry %%SITE_PERL%%/AnyEvent
