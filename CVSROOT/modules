@@ -1918,6 +1918,7 @@ cyrus-sasl2                     ports/security/cyrus-sasl2
 cyrus-sasl2-ldapdb              ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd           ports/security/cyrus-sasl2-saslauthd
 cyrus2courier                   ports/mail/cyrus2courier
+cython                          ports/lang/cython
 d2x                             ports/games/d2x
 da-aspell                       ports/textproc/da-aspell
 daa2iso                         ports/sysutils/daa2iso
@@ -5111,6 +5112,7 @@ husky-hptkill                   ports/news/husky-hptkill
 husky-hptsqfix                  ports/news/husky-hptsqfix
 husky-hpucode                   ports/news/husky-hpucode
 husky-htick                     ports/news/husky-htick
+husky-htick-devel               ports/news/husky-htick-devel
 husky-msged                     ports/news/husky-msged
 husky-nltools                   ports/news/husky-nltools
 husky-smapi                     ports/news/husky-smapi
@@ -19266,6 +19268,7 @@ rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
+rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-bluecloth               ports/www/rubygem-bluecloth
 rubygem-builder                 ports/devel/rubygem-builder
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
@@ -19274,6 +19277,7 @@ rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-daemons                 ports/devel/rubygem-daemons
+rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
@@ -19282,12 +19286,14 @@ rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-facets                  ports/devel/rubygem-facets
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
 rubygem-fastthread              ports/devel/rubygem-fastthread
+rubygem-fattr                   ports/devel/rubygem-fattr
 rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
+rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-haml                    ports/www/rubygem-haml
 rubygem-highline                ports/devel/rubygem-highline
@@ -19302,13 +19308,16 @@ rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
+rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
+rubygem-main                    ports/devel/rubygem-main
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-merb                    ports/www/rubygem-merb
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
+rubygem-mojombo-grit            ports/devel/rubygem-mojombo-grit
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-mp3info                 ports/audio/rubygem-mp3info
@@ -19324,6 +19333,7 @@ rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-postgres                ports/databases/rubygem-postgres
+rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-railroad                ports/graphics/rubygem-railroad
@@ -19336,6 +19346,7 @@ rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
 rubygem-rbase                   ports/databases/rubygem-rbase
 rubygem-rcov                    ports/devel/rubygem-rcov
+rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-redcloth                ports/www/rubygem-redcloth
 rubygem-rfacebook               ports/www/rubygem-rfacebook
 rubygem-rgl                     ports/devel/rubygem-rgl
@@ -19373,6 +19384,7 @@ rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
+rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
