@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -32,6 +32,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/PDF/API2.pm:${PORTSDIR}/textproc/p5-PDF-API2 \
+		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -63,10 +64,9 @@ DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Net Text XML auto
-CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
-		scripts/redhat* scripts/DBUpdate*
+CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat*
 
-USE_APACHE=	YES
+USE_APACHE=	1.3+
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
@@ -139,7 +139,8 @@ do-install:
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${OTRSDIR}/Kernel
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][lh] ${OTRSDIR}/scripts/
-	@${INSTALL_DATA} ${WRKSRC}/scripts/*.p[hm]* ${WRKSRC}/scripts/apache* ${OTRSDIR}/scripts/
+	@${INSTALL_DATA} ${WRKSRC}/scripts/*.p[hm]* ${WRKSRC}/scripts/apache* \
+		${WRKSRC}/scripts/*.sql ${OTRSDIR}/scripts/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/update/*.* ${OTRSDIR}/scripts/database/update/
 	@${INSTALL_DATA} ${WRKSRC}/scripts/database/*.* ${OTRSDIR}/scripts/database/
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/test/*.t ${OTRSDIR}/scripts/test/
