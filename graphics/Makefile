@@ -603,6 +603,7 @@
     SUBDIR += phplot
     SUBDIR += phpsview
     SUBDIR += picturebook
+    SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pixelize
     SUBDIR += pixen
