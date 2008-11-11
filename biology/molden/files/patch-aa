@@ -1,5 +1,5 @@
---- makefile.orig	2008-08-25 19:55:57.000000000 +0200
-+++ makefile	2008-11-01 21:48:37.000000000 +0100
+--- makefile.orig	2008-06-24 15:44:16.000000000 +0200
++++ makefile	2008-11-10 22:53:22.000000000 +0100
 @@ -12,9 +12,23 @@
  #
  #	Disregard compiler warnings on rdmolf.f
@@ -57,7 +57,7 @@
  
  surf/surf:	surf/*.h surf/*.c
 -	$(MAKE) -C surf depend
-+#	$(MAKE) -C surf depend
++	#$(MAKE) -C surf depend
  	$(MAKE) -C surf
  
  # noxwin will not work as long as the old ocglbck calls arent in dummys
