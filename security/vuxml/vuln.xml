@@ -154,7 +154,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>vlc</name>
-	<range><lt>0.8.6i_2,2</lt></range>
+	<range><lt>0.8.6.i_2,2</lt></range>
       </package>
       <package>
         <name>vlc-devel</name>
@@ -179,6 +179,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-11-05</discovery>
       <entry>2008-11-08</entry>
+      <modified>2008-11-11</modified>
     </dates>
   </vuln>
 
