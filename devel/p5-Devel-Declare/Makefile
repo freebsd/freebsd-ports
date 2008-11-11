@@ -6,13 +6,19 @@
 #
 
 PORTNAME=	Devel-Declare
-PORTVERSION=	0.002000
+PORTVERSION=	0.003003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Declare subroutines
+COMMENT=	Adding keywords to perl, in perl
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sub/Name.pm:${PORTSDIR}/devel/p5-Sub-Name \
+		${SITE_PERL}/B/Hooks/EndOfScope.pm:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
+		${SITE_PERL}/${PERL_ARCH}/B/Hooks/OP/Check.pm:${PORTSDIR}/devel/p5-B-Hooks-OP-Check
+BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
