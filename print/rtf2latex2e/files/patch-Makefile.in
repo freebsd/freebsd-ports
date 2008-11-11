@@ -1,0 +1,24 @@
+--- Makefile.in~	2008-10-13 05:34:25.000000000 +0200
++++ Makefile.in	2008-10-13 05:34:25.000000000 +0200
+@@ -6,7 +6,7 @@
+ # IMPORTANT!!!!!
+ # if you edit the install directory (INSTALL_DIR), 
+ # make sure it ends with rtf2latex2e!!!!
+-INSTALL_DIR = /usr/local/rtf2latex2e
++INSTALL_DIR = ${PREFIX}/share/rtf2latex2e
+ #----------------------------------------------------------------
+ 
+ 
+@@ -61,10 +61,10 @@
+ 	cp -r ../pref $(INSTALL_DIR)/
+ 	cp -r ../src $(INSTALL_DIR)/
+ 	cp -r ../Unix $(INSTALL_DIR)/
+-	ln -sf $(INSTALL_DIR)/rtf2latex2e.bin /usr/bin/rtf2latex2e
++	ln -sf $(INSTALL_DIR)/rtf2latex2e.bin ${PREFIX}/bin/rtf2latex2e
+ 	@echo
+ 	@echo "rtf2latex2e has been installed in $(INSTALL_DIR)"
+-	@echo "A symbolic link /usr/bin/rtf2latex2e has been created"
++	@echo "A symbolic link ${PREFIX}/bin/rtf2latex2e has been created"
+ 	@echo
+ 	@echo "Please set the environment variable RTF2LATEX2E_DIR to $(INSTALL_DIR)."
+ 	@echo
