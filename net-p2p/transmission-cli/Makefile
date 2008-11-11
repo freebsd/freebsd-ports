@@ -58,6 +58,9 @@ post-patch: general-patch
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -W none)
+.if ${SLAVEPORT}=="gtk2"
+	@(cd ${WRKSRC} && intltoolize --copy --force --automake)
+.endif
 	@${REINPLACE_CMD} -e \
 		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g' \
 			${WRKSRC}/configure
