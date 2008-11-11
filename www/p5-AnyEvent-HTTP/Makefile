@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	AnyEvent-HTTP
-PORTVERSION=	1.05
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Simple but non-blocking HTTP/HTTPS client
 
-BUILD_DEPENDS=	p5-AnyEvent>=4.14:${PORTSDIR}/devel/p5-AnyEvent
+BUILD_DEPENDS=	p5-AnyEvent>=4.31:${PORTSDIR}/devel/p5-AnyEvent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
