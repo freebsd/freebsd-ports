@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source J2EE application server (4.x family)
 
 LATEST_LINK=	jboss4
