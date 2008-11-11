@@ -1,0 +1,8 @@
+This module is another attempt to fight the horrors of
+non-blocking I/O programming. It tries to bring back the
+simplicity of the declarative programming style, that is
+only otherwise available when one employs threads,
+coroutines, or co-processes.
+
+WWW: http://search.cpan.org/~karasik/IO-Lambda-0.36/
+Author: Dmitry Karasik <dmitry@karasik.eu.org>
