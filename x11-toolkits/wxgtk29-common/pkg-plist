@@ -12,6 +12,7 @@ include/wx-2.8/wx/arrimpl.cpp
 include/wx-2.8/wx/arrstr.h
 include/wx-2.8/wx/artprov.h
 include/wx-2.8/wx/aui/aui.h
+include/wx-2.8/wx/aui/auibar.h
 include/wx-2.8/wx/aui/auibook.h
 include/wx-2.8/wx/aui/dockart.h
 include/wx-2.8/wx/aui/floatpane.h
