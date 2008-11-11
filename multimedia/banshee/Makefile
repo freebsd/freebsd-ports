@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.4.0.1
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/banshee/
 DISTNAME=	${PORTNAME}-1-${PORTVERSION}
@@ -14,7 +14,10 @@ DISTNAME=	${PORTNAME}-1-${PORTVERSION}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Music management and playback for gnome
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+# Could do without bash, but it's brought in by gnome anyway.
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono.pc:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus \
@@ -70,13 +73,9 @@ PLIST_SUB+=	OPT_MTP="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|#!/bin/bash|#!/bin/sh|' \
-				${WRKSRC}/src/Clients/Booter/banshee-1.in \
+	@${REINPLACE_CMD} "s|!/bin/bash|!${PREFIX}/bin/bash|" \
 				${WRKSRC}/build/icon-theme-installer \
-				${WRKSRC}/build/private-icon-theme-installer
-	@${REINPLACE_CMD} 's|\[\[|\[|g;s|\]\]|\]|g;s|==|=|g;s/||/-o/g' \
-				${WRKSRC}/build/private-icon-theme-installer
-	@${REINPLACE_CMD} 's|-a banshee-1||' \
+				${WRKSRC}/build/private-icon-theme-installer \
 				${WRKSRC}/src/Clients/Booter/banshee-1.in
 	@${REINPLACE_CMD} 's|sed -r|sed -E|' \
 				${WRKSRC}/data/icon-theme-hicolor/Makefile.in
@@ -94,9 +93,9 @@ pre-build:
 
 # XXX - This one is the best.
 pre-install:
-.for i in 16x16 22x22 32x32 48x48 scalable
+.for i in 16x16 22x22 32x32 48x48 128x128 scalable
 . for j in actions categories devices status
-	${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/$j/
+	@${MKDIR} ${PREFIX}/share/banshee-1/icons/hicolor/$i/$j/
 . endfor
 .endfor
 
