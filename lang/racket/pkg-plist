@@ -1,5 +1,6 @@
 bin/drscheme
 bin/mred
+bin/mred-text
 bin/mzc
 bin/mzpp
 bin/mzscheme
@@ -32,11 +33,11 @@ include/plt/schvers.h
 include/plt/sconfig.h
 include/plt/stypes.h
 include/plt/uconfig.h
-lib/libmred3m-4.0.2.so
+lib/libmred3m-4.1.2.so
 lib/libmred3m.a
 lib/libmred3m.la
 lib/libmred3m.so
-lib/libmzscheme3m-4.0.2.so
+lib/libmzscheme3m-4.1.2.so
 lib/libmzscheme3m.a
 lib/libmzscheme3m.la
 lib/libmzscheme3m.so
@@ -197,6 +198,8 @@ lib/plt/collects/compiler/compiled/compiler-unit_ss.dep
 lib/plt/collects/compiler/compiled/compiler-unit_ss.zo
 lib/plt/collects/compiler/compiled/compiler_ss.dep
 lib/plt/collects/compiler/compiled/compiler_ss.zo
+lib/plt/collects/compiler/compiled/decompile_ss.dep
+lib/plt/collects/compiler/compiled/decompile_ss.zo
 lib/plt/collects/compiler/compiled/distribute_ss.dep
 lib/plt/collects/compiler/compiled/distribute_ss.zo
 lib/plt/collects/compiler/compiled/embed-sig_ss.dep
@@ -221,8 +224,11 @@ lib/plt/collects/compiler/compiled/to-core_ss.dep
 lib/plt/collects/compiler/compiled/to-core_ss.zo
 lib/plt/collects/compiler/compiled/xform_ss.dep
 lib/plt/collects/compiler/compiled/xform_ss.zo
+lib/plt/collects/compiler/compiled/zo-parse_ss.dep
+lib/plt/collects/compiler/compiled/zo-parse_ss.zo
 lib/plt/collects/compiler/compiler-unit.ss
 lib/plt/collects/compiler/compiler.ss
+lib/plt/collects/compiler/decompile.ss
 lib/plt/collects/compiler/distribute.ss
 lib/plt/collects/compiler/embed-sig.ss
 lib/plt/collects/compiler/embed-unit.ss
@@ -324,6 +330,7 @@ lib/plt/collects/compiler/sig.ss
 lib/plt/collects/compiler/src2src.ss
 lib/plt/collects/compiler/to-core.ss
 lib/plt/collects/compiler/xform.ss
+lib/plt/collects/compiler/zo-parse.ss
 lib/plt/collects/config/compiled/config_scrbl.dep
 lib/plt/collects/config/compiled/config_scrbl.zo
 lib/plt/collects/config/compiled/config_ss.dep
@@ -372,18 +379,23 @@ lib/plt/collects/drscheme/pltdoc.icns
 lib/plt/collects/drscheme/private/app.ss
 lib/plt/collects/drscheme/private/auto-language.ss
 lib/plt/collects/drscheme/private/bindings-browser.ss
+lib/plt/collects/drscheme/private/bitmap-message.ss
 lib/plt/collects/drscheme/private/compiled/app_ss.dep
 lib/plt/collects/drscheme/private/compiled/app_ss.zo
 lib/plt/collects/drscheme/private/compiled/auto-language_ss.dep
 lib/plt/collects/drscheme/private/compiled/auto-language_ss.zo
 lib/plt/collects/drscheme/private/compiled/bindings-browser_ss.dep
 lib/plt/collects/drscheme/private/compiled/bindings-browser_ss.zo
+lib/plt/collects/drscheme/private/compiled/bitmap-message_ss.dep
+lib/plt/collects/drscheme/private/compiled/bitmap-message_ss.zo
 lib/plt/collects/drscheme/private/compiled/debug_ss.dep
 lib/plt/collects/drscheme/private/compiled/debug_ss.zo
 lib/plt/collects/drscheme/private/compiled/drscheme-normal_ss.dep
 lib/plt/collects/drscheme/private/compiled/drscheme-normal_ss.zo
 lib/plt/collects/drscheme/private/compiled/drsig_ss.dep
 lib/plt/collects/drscheme/private/compiled/drsig_ss.zo
+lib/plt/collects/drscheme/private/compiled/embedded-snip-utils_ss.dep
+lib/plt/collects/drscheme/private/compiled/embedded-snip-utils_ss.zo
 lib/plt/collects/drscheme/private/compiled/eval_ss.dep
 lib/plt/collects/drscheme/private/compiled/eval_ss.zo
 lib/plt/collects/drscheme/private/compiled/font_ss.dep
@@ -424,10 +436,14 @@ lib/plt/collects/drscheme/private/compiled/module-browser_ss.dep
 lib/plt/collects/drscheme/private/compiled/module-browser_ss.zo
 lib/plt/collects/drscheme/private/compiled/module-language_ss.dep
 lib/plt/collects/drscheme/private/compiled/module-language_ss.zo
+lib/plt/collects/drscheme/private/compiled/mred-typed_ss.dep
+lib/plt/collects/drscheme/private/compiled/mred-typed_ss.zo
 lib/plt/collects/drscheme/private/compiled/multi-file-search_ss.dep
 lib/plt/collects/drscheme/private/compiled/multi-file-search_ss.zo
 lib/plt/collects/drscheme/private/compiled/number-snip_ss.dep
 lib/plt/collects/drscheme/private/compiled/number-snip_ss.zo
+lib/plt/collects/drscheme/private/compiled/prefs-contract_ss.dep
+lib/plt/collects/drscheme/private/compiled/prefs-contract_ss.zo
 lib/plt/collects/drscheme/private/compiled/recon_ss.dep
 lib/plt/collects/drscheme/private/compiled/recon_ss.zo
 lib/plt/collects/drscheme/private/compiled/rep_ss.dep
@@ -438,8 +454,6 @@ lib/plt/collects/drscheme/private/compiled/syncheck-debug_ss.dep
 lib/plt/collects/drscheme/private/compiled/syncheck-debug_ss.zo
 lib/plt/collects/drscheme/private/compiled/text_ss.dep
 lib/plt/collects/drscheme/private/compiled/text_ss.zo
-lib/plt/collects/drscheme/private/compiled/time-keystrokes_ss.dep
-lib/plt/collects/drscheme/private/compiled/time-keystrokes_ss.zo
 lib/plt/collects/drscheme/private/compiled/tool-contract-language_ss.dep
 lib/plt/collects/drscheme/private/compiled/tool-contract-language_ss.zo
 lib/plt/collects/drscheme/private/compiled/tools_ss.dep
@@ -451,6 +465,7 @@ lib/plt/collects/drscheme/private/compiled/unit_ss.zo
 lib/plt/collects/drscheme/private/debug.ss
 lib/plt/collects/drscheme/private/drscheme-normal.ss
 lib/plt/collects/drscheme/private/drsig.ss
+lib/plt/collects/drscheme/private/embedded-snip-utils.ss
 lib/plt/collects/drscheme/private/eval.ss
 lib/plt/collects/drscheme/private/font.ss
 lib/plt/collects/drscheme/private/frame.ss
@@ -471,14 +486,15 @@ lib/plt/collects/drscheme/private/main.ss
 lib/plt/collects/drscheme/private/modes.ss
 lib/plt/collects/drscheme/private/module-browser.ss
 lib/plt/collects/drscheme/private/module-language.ss
+lib/plt/collects/drscheme/private/mred-typed.ss
 lib/plt/collects/drscheme/private/multi-file-search.ss
 lib/plt/collects/drscheme/private/number-snip.ss
+lib/plt/collects/drscheme/private/prefs-contract.ss
 lib/plt/collects/drscheme/private/recon.ss
 lib/plt/collects/drscheme/private/rep.ss
 lib/plt/collects/drscheme/private/stick-figures.ss
 lib/plt/collects/drscheme/private/syncheck-debug.ss
 lib/plt/collects/drscheme/private/text.ss
-lib/plt/collects/drscheme/private/time-keystrokes.ss
 lib/plt/collects/drscheme/private/tool-contract-language.ss
 lib/plt/collects/drscheme/private/tools.ss
 lib/plt/collects/drscheme/private/ts.ss
@@ -579,8 +595,6 @@ lib/plt/collects/embedded-gui/private/compiled/grey-editor_ss.dep
 lib/plt/collects/embedded-gui/private/compiled/grey-editor_ss.zo
 lib/plt/collects/embedded-gui/private/compiled/grid-alignment_ss.dep
 lib/plt/collects/embedded-gui/private/compiled/grid-alignment_ss.zo
-lib/plt/collects/embedded-gui/private/compiled/info_ss.dep
-lib/plt/collects/embedded-gui/private/compiled/info_ss.zo
 lib/plt/collects/embedded-gui/private/compiled/interface_ss.dep
 lib/plt/collects/embedded-gui/private/compiled/interface_ss.zo
 lib/plt/collects/embedded-gui/private/compiled/lines_ss.dep
@@ -615,7 +629,6 @@ lib/plt/collects/embedded-gui/private/embedded-message.ss
 lib/plt/collects/embedded-gui/private/fixed-width-label-snip.ss
 lib/plt/collects/embedded-gui/private/grey-editor.ss
 lib/plt/collects/embedded-gui/private/grid-alignment.ss
-lib/plt/collects/embedded-gui/private/info.ss
 lib/plt/collects/embedded-gui/private/interface.ss
 lib/plt/collects/embedded-gui/private/lines.ss
 lib/plt/collects/embedded-gui/private/locked-pasteboard.ss
@@ -630,6 +643,7 @@ lib/plt/collects/embedded-gui/private/stretchable-editor-snip.ss
 lib/plt/collects/embedded-gui/private/suppress-modify-editor.ss
 lib/plt/collects/embedded-gui/private/tabbable-text.ss
 lib/plt/collects/embedded-gui/private/tests/alignment-test.ss
+lib/plt/collects/embedded-gui/private/tests/info.ss
 lib/plt/collects/embedded-gui/private/tests/not-stetching.ss
 lib/plt/collects/embedded-gui/private/tests/only-one-child.ss
 lib/plt/collects/embedded-gui/private/tests/peer-stretchables.ss
@@ -722,7 +736,7 @@ lib/plt/collects/eopl/compiled/eopl_ss.zo
 lib/plt/collects/eopl/compiled/info_ss.dep
 lib/plt/collects/eopl/compiled/info_ss.zo
 lib/plt/collects/eopl/datatype.ss
-lib/plt/collects/eopl/eopl-small.gif
+lib/plt/collects/eopl/eopl-small.png
 lib/plt/collects/eopl/eopl-tool.ss
 lib/plt/collects/eopl/eopl.scrbl
 lib/plt/collects/eopl/eopl.ss
@@ -820,6 +834,9 @@ lib/plt/collects/file/gif.ss
 lib/plt/collects/file/gunzip.ss
 lib/plt/collects/file/gzip.ss
 lib/plt/collects/file/md5.ss
+lib/plt/collects/file/private/compiled/octree-quantize_ss.dep
+lib/plt/collects/file/private/compiled/octree-quantize_ss.zo
+lib/plt/collects/file/private/octree-quantize.ss
 lib/plt/collects/file/scribblings/common.ss
 lib/plt/collects/file/scribblings/compiled/common_ss.dep
 lib/plt/collects/file/scribblings/compiled/common_ss.zo
@@ -955,12 +972,12 @@ lib/plt/collects/framework/private/compiled/preferences_ss.dep
 lib/plt/collects/framework/private/compiled/preferences_ss.zo
 lib/plt/collects/framework/private/compiled/scheme_ss.dep
 lib/plt/collects/framework/private/compiled/scheme_ss.zo
+lib/plt/collects/framework/private/compiled/search_ss.dep
+lib/plt/collects/framework/private/compiled/search_ss.zo
 lib/plt/collects/framework/private/compiled/sig_ss.dep
 lib/plt/collects/framework/private/compiled/sig_ss.zo
 lib/plt/collects/framework/private/compiled/standard-menus-items_ss.dep
 lib/plt/collects/framework/private/compiled/standard-menus-items_ss.zo
-lib/plt/collects/framework/private/compiled/tex-table_ss.dep
-lib/plt/collects/framework/private/compiled/tex-table_ss.zo
 lib/plt/collects/framework/private/compiled/text_ss.dep
 lib/plt/collects/framework/private/compiled/text_ss.zo
 lib/plt/collects/framework/private/compiled/version_ss.dep
@@ -987,10 +1004,10 @@ lib/plt/collects/framework/private/pasteboard.ss
 lib/plt/collects/framework/private/path-utils.ss
 lib/plt/collects/framework/private/preferences.ss
 lib/plt/collects/framework/private/scheme.ss
+lib/plt/collects/framework/private/search.ss
 lib/plt/collects/framework/private/sig.ss
 lib/plt/collects/framework/private/standard-menus-items.ss
 lib/plt/collects/framework/private/standard-menus.ss
-lib/plt/collects/framework/private/tex-table.ss
 lib/plt/collects/framework/private/text.ss
 lib/plt/collects/framework/private/version.ss
 lib/plt/collects/framework/splash.ss
@@ -1062,6 +1079,8 @@ lib/plt/collects/frtime/compiled/mzscheme-core_ss.dep
 lib/plt/collects/frtime/compiled/mzscheme-core_ss.zo
 lib/plt/collects/frtime/compiled/mzscheme-utils_ss.dep
 lib/plt/collects/frtime/compiled/mzscheme-utils_ss.zo
+lib/plt/collects/frtime/compiled/reactive_ss.dep
+lib/plt/collects/frtime/compiled/reactive_ss.zo
 lib/plt/collects/frtime/compiled/struct_ss.dep
 lib/plt/collects/frtime/compiled/struct_ss.zo
 lib/plt/collects/frtime/date.ss
@@ -1142,6 +1161,10 @@ lib/plt/collects/frtime/mzscheme-utils.ss
 lib/plt/collects/frtime/private/compiled/mkmatch_ss.dep
 lib/plt/collects/frtime/private/compiled/mkmatch_ss.zo
 lib/plt/collects/frtime/private/mkmatch.ss
+lib/plt/collects/frtime/reactive.ss
+lib/plt/collects/frtime/reactive/lang/compiled/reader_ss.dep
+lib/plt/collects/frtime/reactive/lang/compiled/reader_ss.zo
+lib/plt/collects/frtime/reactive/lang/reader.ss
 lib/plt/collects/frtime/struct.ss
 lib/plt/collects/games/aces/aces.png
 lib/plt/collects/games/aces/aces.scm
@@ -1300,6 +1323,20 @@ lib/plt/collects/games/cards/make-cards.ss
 lib/plt/collects/games/cards/region.ss
 lib/plt/collects/games/cards/snipclass.ss
 lib/plt/collects/games/cards/utils.ss
+lib/plt/collects/games/chat-noir/chat-noir-module.ss
+lib/plt/collects/games/chat-noir/chat-noir-unit.ss
+lib/plt/collects/games/chat-noir/chat-noir.png
+lib/plt/collects/games/chat-noir/chat-noir.ss
+lib/plt/collects/games/chat-noir/compiled/chat-noir-module_ss.dep
+lib/plt/collects/games/chat-noir/compiled/chat-noir-module_ss.zo
+lib/plt/collects/games/chat-noir/compiled/chat-noir-unit_ss.dep
+lib/plt/collects/games/chat-noir/compiled/chat-noir-unit_ss.zo
+lib/plt/collects/games/chat-noir/compiled/hash_ss.dep
+lib/plt/collects/games/chat-noir/compiled/hash_ss.zo
+lib/plt/collects/games/chat-noir/compiled/info_ss.dep
+lib/plt/collects/games/chat-noir/compiled/info_ss.zo
+lib/plt/collects/games/chat-noir/hash.ss
+lib/plt/collects/games/chat-noir/info.ss
 lib/plt/collects/games/checkers/checkers.png
 lib/plt/collects/games/checkers/checkers.ss
 lib/plt/collects/games/checkers/compiled/checkers_ss.dep
@@ -1618,12 +1655,15 @@ lib/plt/collects/games/same/same.png
 lib/plt/collects/games/same/same.ss
 lib/plt/collects/games/scribblings/aces.scrbl
 lib/plt/collects/games/scribblings/blackjack.scrbl
+lib/plt/collects/games/scribblings/chat-noir.scrbl
 lib/plt/collects/games/scribblings/checkers.scrbl
 lib/plt/collects/games/scribblings/common.ss
 lib/plt/collects/games/scribblings/compiled/aces_scrbl.dep
 lib/plt/collects/games/scribblings/compiled/aces_scrbl.zo
 lib/plt/collects/games/scribblings/compiled/blackjack_scrbl.dep
 lib/plt/collects/games/scribblings/compiled/blackjack_scrbl.zo
+lib/plt/collects/games/scribblings/compiled/chat-noir_scrbl.dep
+lib/plt/collects/games/scribblings/compiled/chat-noir_scrbl.zo
 lib/plt/collects/games/scribblings/compiled/checkers_scrbl.dep
 lib/plt/collects/games/scribblings/compiled/checkers_scrbl.zo
 lib/plt/collects/games/scribblings/compiled/common_ss.dep
@@ -1790,6 +1830,8 @@ lib/plt/collects/gui-debugger/marks.ss
 lib/plt/collects/help/bug-report.ss
 lib/plt/collects/help/compiled/bug-report_ss.dep
 lib/plt/collects/help/compiled/bug-report_ss.zo
+lib/plt/collects/help/compiled/help-utils_ss.dep
+lib/plt/collects/help/compiled/help-utils_ss.zo
 lib/plt/collects/help/compiled/help_ss.dep
 lib/plt/collects/help/compiled/help_ss.zo
 lib/plt/collects/help/compiled/info_ss.dep
@@ -1798,6 +1840,7 @@ lib/plt/collects/help/compiled/installer_ss.dep
 lib/plt/collects/help/compiled/installer_ss.zo
 lib/plt/collects/help/compiled/search_ss.dep
 lib/plt/collects/help/compiled/search_ss.zo
+lib/plt/collects/help/help-utils.ss
 lib/plt/collects/help/help.creator
 lib/plt/collects/help/help.icns
 lib/plt/collects/help/help.ico
@@ -1808,14 +1851,8 @@ lib/plt/collects/help/private/buginfo.ss
 lib/plt/collects/help/private/compiled/buginfo_ss.dep
 lib/plt/collects/help/private/compiled/buginfo_ss.zo
 lib/plt/collects/help/search.ss
-lib/plt/collects/hierlist/compiled/hierlist-sig_ss.dep
-lib/plt/collects/hierlist/compiled/hierlist-sig_ss.zo
-lib/plt/collects/hierlist/compiled/hierlist-unit_ss.dep
-lib/plt/collects/hierlist/compiled/hierlist-unit_ss.zo
 lib/plt/collects/hierlist/compiled/hierlist_ss.dep
 lib/plt/collects/hierlist/compiled/hierlist_ss.zo
-lib/plt/collects/hierlist/hierlist-sig.ss
-lib/plt/collects/hierlist/hierlist-unit.ss
 lib/plt/collects/hierlist/hierlist.ss
 lib/plt/collects/htdch/Examples/blink-java.ss
 lib/plt/collects/htdch/Examples/draw-multiple-canvas.java
@@ -2012,6 +2049,7 @@ lib/plt/collects/htdp/Test/guess1.ss
 lib/plt/collects/htdp/Test/guess2.ss
 lib/plt/collects/htdp/Test/guess3.ss
 lib/plt/collects/htdp/Test/gui.ss
+lib/plt/collects/htdp/Test/hangman-error.ss
 lib/plt/collects/htdp/Test/hangman1.ss
 lib/plt/collects/htdp/Test/lkup-gui.ss
 lib/plt/collects/htdp/Test/master-play.ss
@@ -2096,6 +2134,7 @@ lib/plt/collects/htdp/draw-sig.ss
 lib/plt/collects/htdp/draw.ss
 lib/plt/collects/htdp/elevator.ss
 lib/plt/collects/htdp/error.ss
+lib/plt/collects/htdp/error.txt
 lib/plt/collects/htdp/graphing.ss
 lib/plt/collects/htdp/guess-gui.ss
 lib/plt/collects/htdp/guess.ss
@@ -2179,6 +2218,7 @@ lib/plt/collects/icons/book.gif
 lib/plt/collects/icons/break.png
 lib/plt/collects/icons/bug09.png
 lib/plt/collects/icons/checksyn.jpg
+lib/plt/collects/icons/close.png
 lib/plt/collects/icons/eli-purple.jpg
 lib/plt/collects/icons/eof.gif
 lib/plt/collects/icons/execute.bmp
@@ -2231,6 +2271,7 @@ lib/plt/collects/icons/schemedoc.ico
 lib/plt/collects/icons/semicolon.gif
 lib/plt/collects/icons/sk.jpg
 lib/plt/collects/icons/slash-slash.gif
+lib/plt/collects/icons/small-planet.png
 lib/plt/collects/icons/stop-16x16.png
 lib/plt/collects/icons/stop-22x22.png
 lib/plt/collects/icons/stop-32x32.png
@@ -2246,6 +2287,7 @@ lib/plt/collects/icons/turn-up.png
 lib/plt/collects/icons/unlock.gif
 lib/plt/collects/icons/up-down-cursor.xbm
 lib/plt/collects/icons/up-down-mask.xbm
+lib/plt/collects/icons/very-small-planet.png
 lib/plt/collects/icons/wizard-image.jpg
 lib/plt/collects/icons/xml-box-open.jpg
 lib/plt/collects/icons/xml-box.jpg
@@ -2411,8 +2453,6 @@ lib/plt/collects/lazy/compiled/main_ss.dep
 lib/plt/collects/lazy/compiled/main_ss.zo
 lib/plt/collects/lazy/compiled/mz-without-promises_ss.dep
 lib/plt/collects/lazy/compiled/mz-without-promises_ss.zo
-lib/plt/collects/lazy/compiled/promise_ss.dep
-lib/plt/collects/lazy/compiled/promise_ss.zo
 lib/plt/collects/lazy/force.ss
 lib/plt/collects/lazy/info.ss
 lib/plt/collects/lazy/lang/compiled/reader_ss.dep
@@ -2422,7 +2462,6 @@ lib/plt/collects/lazy/lazy.scrbl
 lib/plt/collects/lazy/lazy.ss
 lib/plt/collects/lazy/main.ss
 lib/plt/collects/lazy/mz-without-promises.ss
-lib/plt/collects/lazy/promise.ss
 lib/plt/collects/macro-debugger/compiled/expand_ss.dep
 lib/plt/collects/macro-debugger/compiled/expand_ss.zo
 lib/plt/collects/macro-debugger/compiled/info_ss.dep
@@ -2666,6 +2705,8 @@ lib/plt/collects/mred/compiled/edit_ss.dep
 lib/plt/collects/mred/compiled/edit_ss.zo
 lib/plt/collects/mred/compiled/info_ss.dep
 lib/plt/collects/mred/compiled/info_ss.zo
+lib/plt/collects/mred/compiled/installer_ss.dep
+lib/plt/collects/mred/compiled/installer_ss.zo
 lib/plt/collects/mred/compiled/main_ss.dep
 lib/plt/collects/mred/compiled/main_ss.zo
 lib/plt/collects/mred/compiled/mred-sig_ss.dep
@@ -2674,12 +2715,11 @@ lib/plt/collects/mred/compiled/mred-unit_ss.dep
 lib/plt/collects/mred/compiled/mred-unit_ss.zo
 lib/plt/collects/mred/compiled/mred_ss.dep
 lib/plt/collects/mred/compiled/mred_ss.zo
-lib/plt/collects/mred/compiled/script-installer_ss.dep
-lib/plt/collects/mred/compiled/script-installer_ss.zo
 lib/plt/collects/mred/doc.txt
 lib/plt/collects/mred/edit-main.ss
 lib/plt/collects/mred/edit.ss
 lib/plt/collects/mred/info.ss
+lib/plt/collects/mred/installer.ss
 lib/plt/collects/mred/lang/compiled/main_ss.dep
 lib/plt/collects/mred/lang/compiled/main_ss.zo
 lib/plt/collects/mred/lang/compiled/reader_ss.dep
@@ -2822,11 +2862,11 @@ lib/plt/collects/mred/private/wxtabgroup.ss
 lib/plt/collects/mred/private/wxtextfield.ss
 lib/plt/collects/mred/private/wxtop.ss
 lib/plt/collects/mred/private/wxwindow.ss
-lib/plt/collects/mred/script-installer.ss
 lib/plt/collects/mrlib/aligned-pasteboard.ss
 lib/plt/collects/mrlib/bitmap-label.ss
 lib/plt/collects/mrlib/cache-image-snip.ss
 lib/plt/collects/mrlib/click-forwarding-editor.ss
+lib/plt/collects/mrlib/close-icon.ss
 lib/plt/collects/mrlib/compiled/aligned-pasteboard_ss.dep
 lib/plt/collects/mrlib/compiled/aligned-pasteboard_ss.zo
 lib/plt/collects/mrlib/compiled/bitmap-label_ss.dep
@@ -2835,6 +2875,8 @@ lib/plt/collects/mrlib/compiled/cache-image-snip_ss.dep
 lib/plt/collects/mrlib/compiled/cache-image-snip_ss.zo
 lib/plt/collects/mrlib/compiled/click-forwarding-editor_ss.dep
 lib/plt/collects/mrlib/compiled/click-forwarding-editor_ss.zo
+lib/plt/collects/mrlib/compiled/close-icon_ss.dep
+lib/plt/collects/mrlib/compiled/close-icon_ss.zo
 lib/plt/collects/mrlib/compiled/gif_ss.dep
 lib/plt/collects/mrlib/compiled/gif_ss.zo
 lib/plt/collects/mrlib/compiled/graph_ss.dep
@@ -2859,11 +2901,19 @@ lib/plt/collects/mrlib/compiled/syntax-browser_ss.dep
 lib/plt/collects/mrlib/compiled/syntax-browser_ss.zo
 lib/plt/collects/mrlib/compiled/tab-choice_ss.dep
 lib/plt/collects/mrlib/compiled/tab-choice_ss.zo
+lib/plt/collects/mrlib/compiled/tex-table_ss.dep
+lib/plt/collects/mrlib/compiled/tex-table_ss.zo
 lib/plt/collects/mrlib/compiled/text-string-style-desc_ss.dep
 lib/plt/collects/mrlib/compiled/text-string-style-desc_ss.zo
 lib/plt/collects/mrlib/gif.ss
 lib/plt/collects/mrlib/graph.ss
 lib/plt/collects/mrlib/hierlist.ss
+lib/plt/collects/mrlib/hierlist/compiled/hierlist-sig_ss.dep
+lib/plt/collects/mrlib/hierlist/compiled/hierlist-sig_ss.zo
+lib/plt/collects/mrlib/hierlist/compiled/hierlist-unit_ss.dep
+lib/plt/collects/mrlib/hierlist/compiled/hierlist-unit_ss.zo
+lib/plt/collects/mrlib/hierlist/hierlist-sig.ss
+lib/plt/collects/mrlib/hierlist/hierlist-unit.ss
 lib/plt/collects/mrlib/include-bitmap.ss
 lib/plt/collects/mrlib/interactive-value-port.ss
 lib/plt/collects/mrlib/matrix-snip.ss
@@ -2956,11 +3006,14 @@ lib/plt/collects/mrlib/scribblings/aligned-pasteboard/stretchable-snip-intf.scrb
 lib/plt/collects/mrlib/scribblings/aligned-pasteboard/vertical-pasteboard-class.scrbl
 lib/plt/collects/mrlib/scribblings/bitmap-label.scrbl
 lib/plt/collects/mrlib/scribblings/cache-image-snip.scrbl
+lib/plt/collects/mrlib/scribblings/close-icon.scrbl
 lib/plt/collects/mrlib/scribblings/common.ss
 lib/plt/collects/mrlib/scribblings/compiled/bitmap-label_scrbl.dep
 lib/plt/collects/mrlib/scribblings/compiled/bitmap-label_scrbl.zo
 lib/plt/collects/mrlib/scribblings/compiled/cache-image-snip_scrbl.dep
 lib/plt/collects/mrlib/scribblings/compiled/cache-image-snip_scrbl.zo
+lib/plt/collects/mrlib/scribblings/compiled/close-icon_scrbl.dep
+lib/plt/collects/mrlib/scribblings/compiled/close-icon_scrbl.zo
 lib/plt/collects/mrlib/scribblings/compiled/common_ss.dep
 lib/plt/collects/mrlib/scribblings/compiled/common_ss.zo
 lib/plt/collects/mrlib/scribblings/compiled/gif_scrbl.dep
@@ -2981,6 +3034,8 @@ lib/plt/collects/mrlib/scribblings/compiled/plot_scrbl.dep
 lib/plt/collects/mrlib/scribblings/compiled/plot_scrbl.zo
 lib/plt/collects/mrlib/scribblings/compiled/switchable-button_scrbl.dep
 lib/plt/collects/mrlib/scribblings/compiled/switchable-button_scrbl.zo
+lib/plt/collects/mrlib/scribblings/compiled/tex-table_scrbl.dep
+lib/plt/collects/mrlib/scribblings/compiled/tex-table_scrbl.zo
 lib/plt/collects/mrlib/scribblings/gif.scrbl
 lib/plt/collects/mrlib/scribblings/graph/common.ss
 lib/plt/collects/mrlib/scribblings/graph/compiled/common_ss.dep
@@ -3023,9 +3078,11 @@ lib/plt/collects/mrlib/scribblings/name-message.scrbl
 lib/plt/collects/mrlib/scribblings/path-dialog.scrbl
 lib/plt/collects/mrlib/scribblings/plot.scrbl
 lib/plt/collects/mrlib/scribblings/switchable-button.scrbl
+lib/plt/collects/mrlib/scribblings/tex-table.scrbl
 lib/plt/collects/mrlib/switchable-button.ss
 lib/plt/collects/mrlib/syntax-browser.ss
 lib/plt/collects/mrlib/tab-choice.ss
+lib/plt/collects/mrlib/tex-table.ss
 lib/plt/collects/mrlib/text-string-style-desc.ss
 lib/plt/collects/mysterx/compiled/info_ss.dep
 lib/plt/collects/mysterx/compiled/info_ss.zo
@@ -3272,9 +3329,6 @@ lib/plt/collects/mzlib/plt-match.ss
 lib/plt/collects/mzlib/port.ss
 lib/plt/collects/mzlib/pregexp.ss
 lib/plt/collects/mzlib/pretty.ss
-lib/plt/collects/mzlib/private/cm-ctime.ss
-lib/plt/collects/mzlib/private/compiled/cm-ctime_ss.dep
-lib/plt/collects/mzlib/private/compiled/cm-ctime_ss.zo
 lib/plt/collects/mzlib/private/compiled/contract-arr-checks_ss.dep
 lib/plt/collects/mzlib/private/compiled/contract-arr-checks_ss.zo
 lib/plt/collects/mzlib/private/compiled/contract-arr-obj-helpers_ss.dep
@@ -3295,8 +3349,6 @@ lib/plt/collects/mzlib/private/compiled/port_ss.dep
 lib/plt/collects/mzlib/private/compiled/port_ss.zo
 lib/plt/collects/mzlib/private/compiled/runtime-path-table_ss.dep
 lib/plt/collects/mzlib/private/compiled/runtime-path-table_ss.zo
-lib/plt/collects/mzlib/private/compiled/sandbox-coverage_ss.dep
-lib/plt/collects/mzlib/private/compiled/sandbox-coverage_ss.zo
 lib/plt/collects/mzlib/private/compiled/sigmatch_ss.dep
 lib/plt/collects/mzlib/private/compiled/sigmatch_ss.zo
 lib/plt/collects/mzlib/private/compiled/sigutil_ss.dep
@@ -3327,7 +3379,6 @@ lib/plt/collects/mzlib/private/info.ss
 lib/plt/collects/mzlib/private/package-helper.ss
 lib/plt/collects/mzlib/private/port.ss
 lib/plt/collects/mzlib/private/runtime-path-table.ss
-lib/plt/collects/mzlib/private/sandbox-coverage.ss
 lib/plt/collects/mzlib/private/shared-body.ss
 lib/plt/collects/mzlib/private/sigmatch.ss
 lib/plt/collects/mzlib/private/sigutil.ss
@@ -3766,7 +3817,10 @@ lib/plt/collects/parser-tools/compiled/yacc-to-scheme_ss.zo
 lib/plt/collects/parser-tools/compiled/yacc_ss.dep
 lib/plt/collects/parser-tools/compiled/yacc_ss.zo
 lib/plt/collects/parser-tools/examples/calc.ss
-lib/plt/collects/parser-tools/examples/example-parser.ss
+lib/plt/collects/parser-tools/examples/compiled/calc_ss.dep
+lib/plt/collects/parser-tools/examples/compiled/calc_ss.zo
+lib/plt/collects/parser-tools/examples/compiled/read_ss.dep
+lib/plt/collects/parser-tools/examples/compiled/read_ss.zo
 lib/plt/collects/parser-tools/examples/read.ss
 lib/plt/collects/parser-tools/info.ss
 lib/plt/collects/parser-tools/lex-plt-v200.ss
@@ -3780,8 +3834,6 @@ lib/plt/collects/parser-tools/private-lex/compiled/deriv_ss.dep
 lib/plt/collects/parser-tools/private-lex/compiled/deriv_ss.zo
 lib/plt/collects/parser-tools/private-lex/compiled/front_ss.dep
 lib/plt/collects/parser-tools/private-lex/compiled/front_ss.zo
-lib/plt/collects/parser-tools/private-lex/compiled/info_ss.dep
-lib/plt/collects/parser-tools/private-lex/compiled/info_ss.zo
 lib/plt/collects/parser-tools/private-lex/compiled/re_ss.dep
 lib/plt/collects/parser-tools/private-lex/compiled/re_ss.zo
 lib/plt/collects/parser-tools/private-lex/compiled/stx_ss.dep
@@ -3797,7 +3849,6 @@ lib/plt/collects/parser-tools/private-lex/compiled/util_ss.zo
 lib/plt/collects/parser-tools/private-lex/deriv.ss
 lib/plt/collects/parser-tools/private-lex/error-tests.ss
 lib/plt/collects/parser-tools/private-lex/front.ss
-lib/plt/collects/parser-tools/private-lex/info.ss
 lib/plt/collects/parser-tools/private-lex/re.ss
 lib/plt/collects/parser-tools/private-lex/stx.ss
 lib/plt/collects/parser-tools/private-lex/token-syntax.ss
@@ -3876,12 +3927,15 @@ lib/plt/collects/planet/private/compiled/prefix-dispatcher_ss.dep
 lib/plt/collects/planet/private/compiled/prefix-dispatcher_ss.zo
 lib/plt/collects/planet/private/compiled/short-syntax-helpers_ss.dep
 lib/plt/collects/planet/private/compiled/short-syntax-helpers_ss.zo
+lib/plt/collects/planet/private/compiled/test_ss.dep
+lib/plt/collects/planet/private/compiled/test_ss.zo
 lib/plt/collects/planet/private/data.ss
 lib/plt/collects/planet/private/define-config.ss
 lib/plt/collects/planet/private/linkage.ss
 lib/plt/collects/planet/private/planet-shared.ss
 lib/plt/collects/planet/private/prefix-dispatcher.ss
 lib/plt/collects/planet/private/short-syntax-helpers.ss
+lib/plt/collects/planet/private/test.ss
 lib/plt/collects/planet/resolver.ss
 lib/plt/collects/planet/util.ss
 lib/plt/collects/plot/compiled/extend_ss.dep
@@ -4508,6 +4562,8 @@ lib/plt/collects/r6rs/private/compiled/check-pattern_ss.dep
 lib/plt/collects/r6rs/private/compiled/check-pattern_ss.zo
 lib/plt/collects/r6rs/private/compiled/conds_ss.dep
 lib/plt/collects/r6rs/private/compiled/conds_ss.zo
+lib/plt/collects/r6rs/private/compiled/encode-name_ss.dep
+lib/plt/collects/r6rs/private/compiled/encode-name_ss.zo
 lib/plt/collects/r6rs/private/compiled/exns_ss.dep
 lib/plt/collects/r6rs/private/compiled/exns_ss.zo
 lib/plt/collects/r6rs/private/compiled/find-version_ss.dep
@@ -4535,6 +4591,7 @@ lib/plt/collects/r6rs/private/compiled/records-explicit_ss.zo
 lib/plt/collects/r6rs/private/compiled/vector-types_ss.dep
 lib/plt/collects/r6rs/private/compiled/vector-types_ss.zo
 lib/plt/collects/r6rs/private/conds.ss
+lib/plt/collects/r6rs/private/encode-name.ss
 lib/plt/collects/r6rs/private/exns.ss
 lib/plt/collects/r6rs/private/find-version.ss
 lib/plt/collects/r6rs/private/identifier-syntax.ss
@@ -4576,6 +4633,168 @@ lib/plt/collects/readline/readline.scrbl
 lib/plt/collects/readline/readline.ss
 lib/plt/collects/readline/rep-start.ss
 lib/plt/collects/readline/rep.ss
+lib/plt/collects/redex/HISTORY
+lib/plt/collects/redex/compiled/gui_ss.dep
+lib/plt/collects/redex/compiled/gui_ss.zo
+lib/plt/collects/redex/compiled/info_ss.dep
+lib/plt/collects/redex/compiled/info_ss.zo
+lib/plt/collects/redex/compiled/main_ss.dep
+lib/plt/collects/redex/compiled/main_ss.zo
+lib/plt/collects/redex/compiled/pict_ss.dep
+lib/plt/collects/redex/compiled/pict_ss.zo
+lib/plt/collects/redex/compiled/redex_scrbl.dep
+lib/plt/collects/redex/compiled/redex_scrbl.zo
+lib/plt/collects/redex/compiled/reduction-semantics_ss.dep
+lib/plt/collects/redex/compiled/reduction-semantics_ss.zo
+lib/plt/collects/redex/doc.txt
+lib/plt/collects/redex/examples/arithmetic.ss
+lib/plt/collects/redex/examples/beginner.ss
+lib/plt/collects/redex/examples/church.ss
+lib/plt/collects/redex/examples/combinators.ss
+lib/plt/collects/redex/examples/compatible-closure.ss
+lib/plt/collects/redex/examples/compiled/arithmetic_ss.dep
+lib/plt/collects/redex/examples/compiled/arithmetic_ss.zo
+lib/plt/collects/redex/examples/compiled/beginner_ss.dep
+lib/plt/collects/redex/examples/compiled/beginner_ss.zo
+lib/plt/collects/redex/examples/compiled/church_ss.dep
+lib/plt/collects/redex/examples/compiled/church_ss.zo
+lib/plt/collects/redex/examples/compiled/combinators_ss.dep
+lib/plt/collects/redex/examples/compiled/combinators_ss.zo
+lib/plt/collects/redex/examples/compiled/compatible-closure_ss.dep
+lib/plt/collects/redex/examples/compiled/compatible-closure_ss.zo
+lib/plt/collects/redex/examples/compiled/info_ss.dep
+lib/plt/collects/redex/examples/compiled/info_ss.zo
+lib/plt/collects/redex/examples/compiled/letrec_ss.dep
+lib/plt/collects/redex/examples/compiled/letrec_ss.zo
+lib/plt/collects/redex/examples/compiled/omega_ss.dep
+lib/plt/collects/redex/examples/compiled/omega_ss.zo
+lib/plt/collects/redex/examples/compiled/semaphores_ss.dep
+lib/plt/collects/redex/examples/compiled/semaphores_ss.zo
+lib/plt/collects/redex/examples/compiled/subject-reduction_ss.dep
+lib/plt/collects/redex/examples/compiled/subject-reduction_ss.zo
+lib/plt/collects/redex/examples/compiled/subst_ss.dep
+lib/plt/collects/redex/examples/compiled/subst_ss.zo
+lib/plt/collects/redex/examples/compiled/threads_ss.dep
+lib/plt/collects/redex/examples/compiled/threads_ss.zo
+lib/plt/collects/redex/examples/compiled/types_ss.dep
+lib/plt/collects/redex/examples/compiled/types_ss.zo
+lib/plt/collects/redex/examples/info.ss
+lib/plt/collects/redex/examples/letrec.ss
+lib/plt/collects/redex/examples/omega.ss
+lib/plt/collects/redex/examples/semaphores.ss
+lib/plt/collects/redex/examples/subject-reduction.ss
+lib/plt/collects/redex/examples/subst.ss
+lib/plt/collects/redex/examples/threads.ss
+lib/plt/collects/redex/examples/types.ss
+lib/plt/collects/redex/gui.ss
+lib/plt/collects/redex/info.ss
+lib/plt/collects/redex/main.ss
+lib/plt/collects/redex/pict.ss
+lib/plt/collects/redex/private/arrow.ss
+lib/plt/collects/redex/private/bitmap-test-util.ss
+lib/plt/collects/redex/private/bitmap-test.ss
+lib/plt/collects/redex/private/bmps/extended-language.png
+lib/plt/collects/redex/private/bmps/extended-reduction-relation.png
+lib/plt/collects/redex/private/bmps/language-nox.png
+lib/plt/collects/redex/private/bmps/language.png
+lib/plt/collects/redex/private/bmps/lw.png
+lib/plt/collects/redex/private/bmps/metafunction.png
+lib/plt/collects/redex/private/bmps/reduction-relation.png
+lib/plt/collects/redex/private/color-test.ss
+lib/plt/collects/redex/private/compiled/arrow_ss.dep
+lib/plt/collects/redex/private/compiled/arrow_ss.zo
+lib/plt/collects/redex/private/compiled/bitmap-test-util_ss.dep
+lib/plt/collects/redex/private/compiled/bitmap-test-util_ss.zo
+lib/plt/collects/redex/private/compiled/bitmap-test_ss.dep
+lib/plt/collects/redex/private/compiled/bitmap-test_ss.zo
+lib/plt/collects/redex/private/compiled/color-test_ss.dep
+lib/plt/collects/redex/private/compiled/color-test_ss.zo
+lib/plt/collects/redex/private/compiled/core-layout-test_ss.dep
+lib/plt/collects/redex/private/compiled/core-layout-test_ss.zo
+lib/plt/collects/redex/private/compiled/core-layout_ss.dep
+lib/plt/collects/redex/private/compiled/core-layout_ss.zo
+lib/plt/collects/redex/private/compiled/dot_ss.dep
+lib/plt/collects/redex/private/compiled/dot_ss.zo
+lib/plt/collects/redex/private/compiled/error_ss.dep
+lib/plt/collects/redex/private/compiled/error_ss.zo
+lib/plt/collects/redex/private/compiled/loc-wrapper_ss.dep
+lib/plt/collects/redex/private/compiled/loc-wrapper_ss.zo
+lib/plt/collects/redex/private/compiled/lw-test-util_ss.dep
+lib/plt/collects/redex/private/compiled/lw-test-util_ss.zo
+lib/plt/collects/redex/private/compiled/lw-test_ss.dep
+lib/plt/collects/redex/private/compiled/lw-test_ss.zo
+lib/plt/collects/redex/private/compiled/matcher-test_ss.dep
+lib/plt/collects/redex/private/compiled/matcher-test_ss.zo
+lib/plt/collects/redex/private/compiled/matcher_ss.dep
+lib/plt/collects/redex/private/compiled/matcher_ss.zo
+lib/plt/collects/redex/private/compiled/pict-test_ss.dep
+lib/plt/collects/redex/private/compiled/pict-test_ss.zo
+lib/plt/collects/redex/private/compiled/pict_ss.dep
+lib/plt/collects/redex/private/compiled/pict_ss.zo
+lib/plt/collects/redex/private/compiled/red-sem-macro-helpers_ss.dep
+lib/plt/collects/redex/private/compiled/red-sem-macro-helpers_ss.zo
+lib/plt/collects/redex/private/compiled/reduction-semantics_ss.dep
+lib/plt/collects/redex/private/compiled/reduction-semantics_ss.zo
+lib/plt/collects/redex/private/compiled/rewrite-side-conditions_ss.dep
+lib/plt/collects/redex/private/compiled/rewrite-side-conditions_ss.zo
+lib/plt/collects/redex/private/compiled/rg-test_ss.dep
+lib/plt/collects/redex/private/compiled/rg-test_ss.zo
+lib/plt/collects/redex/private/compiled/rg_ss.dep
+lib/plt/collects/redex/private/compiled/rg_ss.zo
+lib/plt/collects/redex/private/compiled/run-tests_ss.dep
+lib/plt/collects/redex/private/compiled/run-tests_ss.zo
+lib/plt/collects/redex/private/compiled/sexp-diffs_ss.dep
+lib/plt/collects/redex/private/compiled/sexp-diffs_ss.zo
+lib/plt/collects/redex/private/compiled/size-snip_ss.dep
+lib/plt/collects/redex/private/compiled/size-snip_ss.zo
+lib/plt/collects/redex/private/compiled/stepper_ss.dep
+lib/plt/collects/redex/private/compiled/stepper_ss.zo
+lib/plt/collects/redex/private/compiled/struct_ss.dep
+lib/plt/collects/redex/private/compiled/struct_ss.zo
+lib/plt/collects/redex/private/compiled/term-fn_ss.dep
+lib/plt/collects/redex/private/compiled/term-fn_ss.zo
+lib/plt/collects/redex/private/compiled/term-test_ss.dep
+lib/plt/collects/redex/private/compiled/term-test_ss.zo
+lib/plt/collects/redex/private/compiled/term_ss.dep
+lib/plt/collects/redex/private/compiled/term_ss.zo
+lib/plt/collects/redex/private/compiled/test-util_ss.dep
+lib/plt/collects/redex/private/compiled/test-util_ss.zo
+lib/plt/collects/redex/private/compiled/tl-test_ss.dep
+lib/plt/collects/redex/private/compiled/tl-test_ss.zo
+lib/plt/collects/redex/private/compiled/traces_ss.dep
+lib/plt/collects/redex/private/compiled/traces_ss.zo
+lib/plt/collects/redex/private/compiled/underscore-allowed_ss.dep
+lib/plt/collects/redex/private/compiled/underscore-allowed_ss.zo
+lib/plt/collects/redex/private/core-layout-test.ss
+lib/plt/collects/redex/private/core-layout.ss
+lib/plt/collects/redex/private/dot.ss
+lib/plt/collects/redex/private/error.ss
+lib/plt/collects/redex/private/loc-wrapper.ss
+lib/plt/collects/redex/private/lw-test-util.ss
+lib/plt/collects/redex/private/lw-test.ss
+lib/plt/collects/redex/private/matcher-test.ss
+lib/plt/collects/redex/private/matcher.ss
+lib/plt/collects/redex/private/pict-test.ss
+lib/plt/collects/redex/private/pict.ss
+lib/plt/collects/redex/private/red-sem-macro-helpers.ss
+lib/plt/collects/redex/private/reduction-semantics.ss
+lib/plt/collects/redex/private/rewrite-side-conditions.ss
+lib/plt/collects/redex/private/rg-test.ss
+lib/plt/collects/redex/private/rg.ss
+lib/plt/collects/redex/private/run-tests.ss
+lib/plt/collects/redex/private/sexp-diffs.ss
+lib/plt/collects/redex/private/size-snip.ss
+lib/plt/collects/redex/private/stepper.ss
+lib/plt/collects/redex/private/struct.ss
+lib/plt/collects/redex/private/term-fn.ss
+lib/plt/collects/redex/private/term-test.ss
+lib/plt/collects/redex/private/term.ss
+lib/plt/collects/redex/private/test-util.ss
+lib/plt/collects/redex/private/tl-test.ss
+lib/plt/collects/redex/private/traces.ss
+lib/plt/collects/redex/private/underscore-allowed.ss
+lib/plt/collects/redex/redex.scrbl
+lib/plt/collects/redex/reduction-semantics.ss
 lib/plt/collects/rnrs/arithmetic/bitwise-6.ss
 lib/plt/collects/rnrs/arithmetic/compiled/bitwise-6_ss.dep
 lib/plt/collects/rnrs/arithmetic/compiled/bitwise-6_ss.zo
@@ -4724,6 +4943,8 @@ lib/plt/collects/scheme/compiled/nest_ss.dep
 lib/plt/collects/scheme/compiled/nest_ss.zo
 lib/plt/collects/scheme/compiled/path_ss.dep
 lib/plt/collects/scheme/compiled/path_ss.zo
+lib/plt/collects/scheme/compiled/place_ss.dep
+lib/plt/collects/scheme/compiled/place_ss.zo
 lib/plt/collects/scheme/compiled/port_ss.dep
 lib/plt/collects/scheme/compiled/port_ss.zo
 lib/plt/collects/scheme/compiled/pretty_ss.dep
@@ -4750,6 +4971,8 @@ lib/plt/collects/scheme/compiled/serialize_ss.dep
 lib/plt/collects/scheme/compiled/serialize_ss.zo
 lib/plt/collects/scheme/compiled/shared_ss.dep
 lib/plt/collects/scheme/compiled/shared_ss.zo
+lib/plt/collects/scheme/compiled/splicing_ss.dep
+lib/plt/collects/scheme/compiled/splicing_ss.zo
 lib/plt/collects/scheme/compiled/string_ss.dep
 lib/plt/collects/scheme/compiled/string_ss.zo
 lib/plt/collects/scheme/compiled/struct-info_ss.dep
@@ -4855,11 +5078,15 @@ lib/plt/collects/scheme/mpair.ss
 lib/plt/collects/scheme/mzscheme.ss
 lib/plt/collects/scheme/nest.ss
 lib/plt/collects/scheme/path.ss
+lib/plt/collects/scheme/place.ss
 lib/plt/collects/scheme/port.ss
 lib/plt/collects/scheme/pretty.ss
+lib/plt/collects/scheme/private/at-syntax.ss
 lib/plt/collects/scheme/private/class-events.ss
 lib/plt/collects/scheme/private/class-internal.ss
 lib/plt/collects/scheme/private/classidmap.ss
+lib/plt/collects/scheme/private/compiled/at-syntax_ss.dep
+lib/plt/collects/scheme/private/compiled/at-syntax_ss.zo
 lib/plt/collects/scheme/private/compiled/class-events_ss.dep
 lib/plt/collects/scheme/private/compiled/class-events_ss.zo
 lib/plt/collects/scheme/private/compiled/class-internal_ss.dep
@@ -4934,6 +5161,8 @@ lib/plt/collects/scheme/private/compiled/qqstx_ss.dep
 lib/plt/collects/scheme/private/compiled/qqstx_ss.zo
 lib/plt/collects/scheme/private/compiled/reqprov_ss.dep
 lib/plt/collects/scheme/private/compiled/reqprov_ss.zo
+lib/plt/collects/scheme/private/compiled/sandbox-coverage_ss.dep
+lib/plt/collects/scheme/private/compiled/sandbox-coverage_ss.zo
 lib/plt/collects/scheme/private/compiled/sc_ss.dep
 lib/plt/collects/scheme/private/compiled/sc_ss.zo
 lib/plt/collects/scheme/private/compiled/serialize-structs_ss.dep
@@ -4996,6 +5225,7 @@ lib/plt/collects/scheme/private/pre-base.ss
 lib/plt/collects/scheme/private/qq-and-or.ss
 lib/plt/collects/scheme/private/qqstx.ss
 lib/plt/collects/scheme/private/reqprov.ss
+lib/plt/collects/scheme/private/sandbox-coverage.ss
 lib/plt/collects/scheme/private/sc.ss
 lib/plt/collects/scheme/private/serialize-structs.ss
 lib/plt/collects/scheme/private/serialize.ss
@@ -5027,6 +5257,7 @@ lib/plt/collects/scheme/signature/lang.ss
 lib/plt/collects/scheme/signature/lang/compiled/reader_ss.dep
 lib/plt/collects/scheme/signature/lang/compiled/reader_ss.zo
 lib/plt/collects/scheme/signature/lang/reader.ss
+lib/plt/collects/scheme/splicing.ss
 lib/plt/collects/scheme/string.ss
 lib/plt/collects/scheme/struct-info.ss
 lib/plt/collects/scheme/stxparam-exptime.ss
@@ -5062,8 +5293,6 @@ lib/plt/collects/scribble/compiled/decode-struct_ss.dep
 lib/plt/collects/scribble/compiled/decode-struct_ss.zo
 lib/plt/collects/scribble/compiled/decode_ss.dep
 lib/plt/collects/scribble/compiled/decode_ss.zo
-lib/plt/collects/scribble/compiled/defreader_ss.dep
-lib/plt/collects/scribble/compiled/defreader_ss.zo
 lib/plt/collects/scribble/compiled/doclang_ss.dep
 lib/plt/collects/scribble/compiled/doclang_ss.zo
 lib/plt/collects/scribble/compiled/eval_ss.dep
@@ -5109,8 +5338,9 @@ lib/plt/collects/scribble/compiled/xref_ss.zo
 lib/plt/collects/scribble/config.ss
 lib/plt/collects/scribble/decode-struct.ss
 lib/plt/collects/scribble/decode.ss
-lib/plt/collects/scribble/defreader.ss
 lib/plt/collects/scribble/doc.txt
+lib/plt/collects/scribble/doc/compiled/main_ss.dep
+lib/plt/collects/scribble/doc/compiled/main_ss.zo
 lib/plt/collects/scribble/doc/compiled/reader_ss.dep
 lib/plt/collects/scribble/doc/compiled/reader_ss.zo
 lib/plt/collects/scribble/doc/lang/compiled/reader_ss.dep
@@ -5141,9 +5371,18 @@ lib/plt/collects/scribble/struct.ss
 lib/plt/collects/scribble/test-reader.ss
 lib/plt/collects/scribble/text-render.ss
 lib/plt/collects/scribble/text.ss
+lib/plt/collects/scribble/text/compiled/output_ss.dep
+lib/plt/collects/scribble/text/compiled/output_ss.zo
+lib/plt/collects/scribble/text/compiled/syntax-utils_ss.dep
+lib/plt/collects/scribble/text/compiled/syntax-utils_ss.zo
+lib/plt/collects/scribble/text/compiled/textlang_ss.dep
+lib/plt/collects/scribble/text/compiled/textlang_ss.zo
 lib/plt/collects/scribble/text/lang/compiled/reader_ss.dep
 lib/plt/collects/scribble/text/lang/compiled/reader_ss.zo
 lib/plt/collects/scribble/text/lang/reader.ss
+lib/plt/collects/scribble/text/output.ss
+lib/plt/collects/scribble/text/syntax-utils.ss
+lib/plt/collects/scribble/text/textlang.ss
 lib/plt/collects/scribble/urls.ss
 lib/plt/collects/scribble/xref.ss
 lib/plt/collects/scribblings/compiled/icons_ss.dep
@@ -5274,6 +5513,8 @@ lib/plt/collects/scribblings/framework/compiled/info_ss.dep
 lib/plt/collects/scribblings/framework/compiled/info_ss.zo
 lib/plt/collects/scribblings/framework/compiled/keymap_scrbl.dep
 lib/plt/collects/scribblings/framework/compiled/keymap_scrbl.zo
+lib/plt/collects/scribblings/framework/compiled/main-extracts_ss.dep
+lib/plt/collects/scribblings/framework/compiled/main-extracts_ss.zo
 lib/plt/collects/scribblings/framework/compiled/menu_scrbl.dep
 lib/plt/collects/scribblings/framework/compiled/menu_scrbl.zo
 lib/plt/collects/scribblings/framework/compiled/mode-helpers_ss.dep
@@ -5312,6 +5553,7 @@ lib/plt/collects/scribblings/framework/handler.scrbl
 lib/plt/collects/scribblings/framework/icon.scrbl
 lib/plt/collects/scribblings/framework/info.ss
 lib/plt/collects/scribblings/framework/keymap.scrbl
+lib/plt/collects/scribblings/framework/main-extracts.ss
 lib/plt/collects/scribblings/framework/main.scrbl
 lib/plt/collects/scribblings/framework/menu.scrbl
 lib/plt/collects/scribblings/framework/mode-helpers.ss
@@ -5323,6 +5565,7 @@ lib/plt/collects/scribblings/framework/path-utils.scrbl
 lib/plt/collects/scribblings/framework/preferences-text.scrbl
 lib/plt/collects/scribblings/framework/preferences.scrbl
 lib/plt/collects/scribblings/framework/scheme.scrbl
+lib/plt/collects/scribblings/framework/standard-menus.scrbl
 lib/plt/collects/scribblings/framework/test.scrbl
 lib/plt/collects/scribblings/framework/text.scrbl
 lib/plt/collects/scribblings/framework/tmp.scrbl
@@ -6066,6 +6309,7 @@ lib/plt/collects/scribblings/main/private/compiled/utils_ss.dep
 lib/plt/collects/scribblings/main/private/compiled/utils_ss.zo
 lib/plt/collects/scribblings/main/private/make-search.ss
 lib/plt/collects/scribblings/main/private/manuals.ss
+lib/plt/collects/scribblings/main/private/search-context.html
 lib/plt/collects/scribblings/main/private/search.js
 lib/plt/collects/scribblings/main/private/utils.ss
 lib/plt/collects/scribblings/main/release.scrbl
@@ -6111,6 +6355,8 @@ lib/plt/collects/scribblings/mzc/compiled/cc_scrbl.dep
 lib/plt/collects/scribblings/mzc/compiled/cc_scrbl.zo
 lib/plt/collects/scribblings/mzc/compiled/common_ss.dep
 lib/plt/collects/scribblings/mzc/compiled/common_ss.zo
+lib/plt/collects/scribblings/mzc/compiled/decompile_scrbl.dep
+lib/plt/collects/scribblings/mzc/compiled/decompile_scrbl.zo
 lib/plt/collects/scribblings/mzc/compiled/dist-api_scrbl.dep
 lib/plt/collects/scribblings/mzc/compiled/dist-api_scrbl.zo
 lib/plt/collects/scribblings/mzc/compiled/dist_scrbl.dep
@@ -6135,6 +6381,7 @@ lib/plt/collects/scribblings/mzc/compiled/sa_scrbl.dep
 lib/plt/collects/scribblings/mzc/compiled/sa_scrbl.zo
 lib/plt/collects/scribblings/mzc/compiled/zo_scrbl.dep
 lib/plt/collects/scribblings/mzc/compiled/zo_scrbl.zo
+lib/plt/collects/scribblings/mzc/decompile.scrbl
 lib/plt/collects/scribblings/mzc/dist-api.scrbl
 lib/plt/collects/scribblings/mzc/dist.scrbl
 lib/plt/collects/scribblings/mzc/exe-api.scrbl
@@ -6287,6 +6534,8 @@ lib/plt/collects/scribblings/reference/compiled/io_scrbl.dep
 lib/plt/collects/scribblings/reference/compiled/io_scrbl.zo
 lib/plt/collects/scribblings/reference/compiled/load-lang_scrbl.dep
 lib/plt/collects/scribblings/reference/compiled/load-lang_scrbl.zo
+lib/plt/collects/scribblings/reference/compiled/logging_scrbl.dep
+lib/plt/collects/scribblings/reference/compiled/logging_scrbl.zo
 lib/plt/collects/scribblings/reference/compiled/macros_scrbl.dep
 lib/plt/collects/scribblings/reference/compiled/macros_scrbl.zo
 lib/plt/collects/scribblings/reference/compiled/match-grammar_ss.dep
@@ -6468,6 +6717,7 @@ lib/plt/collects/scribblings/reference/info.ss
 lib/plt/collects/scribblings/reference/init.scrbl
 lib/plt/collects/scribblings/reference/io.scrbl
 lib/plt/collects/scribblings/reference/load-lang.scrbl
+lib/plt/collects/scribblings/reference/logging.scrbl
 lib/plt/collects/scribblings/reference/macros.scrbl
 lib/plt/collects/scribblings/reference/match-grammar.ss
 lib/plt/collects/scribblings/reference/match-parse.ss
@@ -6653,6 +6903,8 @@ lib/plt/collects/scribblings/tools/compiled/modes_scrbl.dep
 lib/plt/collects/scribblings/tools/compiled/modes_scrbl.zo
 lib/plt/collects/scribblings/tools/compiled/rep_scrbl.dep
 lib/plt/collects/scribblings/tools/compiled/rep_scrbl.zo
+lib/plt/collects/scribblings/tools/compiled/tool-lib-extracts_ss.dep
+lib/plt/collects/scribblings/tools/compiled/tool-lib-extracts_ss.zo
 lib/plt/collects/scribblings/tools/compiled/tools_scrbl.dep
 lib/plt/collects/scribblings/tools/compiled/tools_scrbl.zo
 lib/plt/collects/scribblings/tools/compiled/unit_scrbl.dep
@@ -6667,6 +6919,7 @@ lib/plt/collects/scribblings/tools/language-configuration.scrbl
 lib/plt/collects/scribblings/tools/language.scrbl
 lib/plt/collects/scribblings/tools/modes.scrbl
 lib/plt/collects/scribblings/tools/rep.scrbl
+lib/plt/collects/scribblings/tools/tool-lib-extracts.ss
 lib/plt/collects/scribblings/tools/tools.scrbl
 lib/plt/collects/scribblings/tools/unit.scrbl
 lib/plt/collects/setup/compiled/configtab_ss.dep
@@ -6739,8 +6992,11 @@ lib/plt/collects/setup/plt-installer-sig.ss
 lib/plt/collects/setup/plt-installer-unit.ss
 lib/plt/collects/setup/plt-installer.ss
 lib/plt/collects/setup/plt-single-installer.ss
+lib/plt/collects/setup/private/compiled/omitted-paths_ss.dep
+lib/plt/collects/setup/private/compiled/omitted-paths_ss.zo
 lib/plt/collects/setup/private/compiled/path-utils_ss.dep
 lib/plt/collects/setup/private/compiled/path-utils_ss.zo
+lib/plt/collects/setup/private/omitted-paths.ss
 lib/plt/collects/setup/private/path-utils.ss
 lib/plt/collects/setup/scribble.ss
 lib/plt/collects/setup/setup-cmdline.ss
@@ -7025,8 +7281,8 @@ lib/plt/collects/srfi/32/compiled/info_ss.dep
 lib/plt/collects/srfi/32/compiled/info_ss.zo
 lib/plt/collects/srfi/32/compiled/lmsort_scm.dep
 lib/plt/collects/srfi/32/compiled/lmsort_scm.zo
-lib/plt/collects/srfi/32/compiled/sort_scm.dep
-lib/plt/collects/srfi/32/compiled/sort_scm.zo
+lib/plt/collects/srfi/32/compiled/sort_ss.dep
+lib/plt/collects/srfi/32/compiled/sort_ss.zo
 lib/plt/collects/srfi/32/compiled/sortp_scm.dep
 lib/plt/collects/srfi/32/compiled/sortp_scm.zo
 lib/plt/collects/srfi/32/compiled/vbinsearch_scm.dep
@@ -7042,7 +7298,7 @@ lib/plt/collects/srfi/32/compiled/vmsort_scm.zo
 lib/plt/collects/srfi/32/delndups.scm
 lib/plt/collects/srfi/32/info.ss
 lib/plt/collects/srfi/32/lmsort.scm
-lib/plt/collects/srfi/32/sort.scm
+lib/plt/collects/srfi/32/sort.ss
 lib/plt/collects/srfi/32/sort.txt
 lib/plt/collects/srfi/32/sortp.scm
 lib/plt/collects/srfi/32/test.scm
@@ -7080,12 +7336,49 @@ lib/plt/collects/srfi/41/derived.ss
 lib/plt/collects/srfi/41/primitive.ss
 lib/plt/collects/srfi/41/streams.ss
 lib/plt/collects/srfi/42.ss
-lib/plt/collects/srfi/42/compiled/comprehensions_ss.dep
-lib/plt/collects/srfi/42/compiled/comprehensions_ss.zo
-lib/plt/collects/srfi/42/compiled/examples-42_ss.dep
-lib/plt/collects/srfi/42/compiled/examples-42_ss.zo
-lib/plt/collects/srfi/42/comprehensions.ss
-lib/plt/collects/srfi/42/examples-42.ss
+lib/plt/collects/srfi/42/compiled/comprehension-struct_scm.dep
+lib/plt/collects/srfi/42/compiled/comprehension-struct_scm.zo
+lib/plt/collects/srfi/42/compiled/comprehensions_scm.dep
+lib/plt/collects/srfi/42/compiled/comprehensions_scm.zo
+lib/plt/collects/srfi/42/compiled/dispatching_scm.dep
+lib/plt/collects/srfi/42/compiled/dispatching_scm.zo
+lib/plt/collects/srfi/42/compiled/ec-core_scm.dep
+lib/plt/collects/srfi/42/compiled/ec-core_scm.zo
+lib/plt/collects/srfi/42/compiled/ec_ss.dep
+lib/plt/collects/srfi/42/compiled/ec_ss.zo
+lib/plt/collects/srfi/42/compiled/expansion_scm.dep
+lib/plt/collects/srfi/42/compiled/expansion_scm.zo
+lib/plt/collects/srfi/42/compiled/extra-generators_scm.dep
+lib/plt/collects/srfi/42/compiled/extra-generators_scm.zo
+lib/plt/collects/srfi/42/compiled/generator-definitions_scm.dep
+lib/plt/collects/srfi/42/compiled/generator-definitions_scm.zo
+lib/plt/collects/srfi/42/compiled/generator-struct_scm.dep
+lib/plt/collects/srfi/42/compiled/generator-struct_scm.zo
+lib/plt/collects/srfi/42/compiled/generators_scm.dep
+lib/plt/collects/srfi/42/compiled/generators_scm.zo
+lib/plt/collects/srfi/42/compiled/loops_scm.dep
+lib/plt/collects/srfi/42/compiled/loops_scm.zo
+lib/plt/collects/srfi/42/compiled/simplifier_scm.dep
+lib/plt/collects/srfi/42/compiled/simplifier_scm.zo
+lib/plt/collects/srfi/42/comprehension-struct.scm
+lib/plt/collects/srfi/42/comprehensions.scm
+lib/plt/collects/srfi/42/dispatching.scm
+lib/plt/collects/srfi/42/ec-core.scm
+lib/plt/collects/srfi/42/ec.ss
+lib/plt/collects/srfi/42/expansion.scm
+lib/plt/collects/srfi/42/extra-generators.scm
+lib/plt/collects/srfi/42/generator-definitions.scm
+lib/plt/collects/srfi/42/generator-struct.scm
+lib/plt/collects/srfi/42/generators.scm
+lib/plt/collects/srfi/42/loops.scm
+lib/plt/collects/srfi/42/simplifier.scm
+lib/plt/collects/srfi/42ref.ss
+lib/plt/collects/srfi/42ref/compiled/comprehensions_ss.dep
+lib/plt/collects/srfi/42ref/compiled/comprehensions_ss.zo
+lib/plt/collects/srfi/42ref/compiled/examples-42_ss.dep
+lib/plt/collects/srfi/42ref/compiled/examples-42_ss.zo
+lib/plt/collects/srfi/42ref/comprehensions.ss
+lib/plt/collects/srfi/42ref/examples-42.ss
 lib/plt/collects/srfi/43.ss
 lib/plt/collects/srfi/43/compiled/vector-lib_ss.dep
 lib/plt/collects/srfi/43/compiled/vector-lib_ss.zo
@@ -7238,6 +7531,8 @@ lib/plt/collects/srfi/compiled/41_ss.dep
 lib/plt/collects/srfi/compiled/41_ss.zo
 lib/plt/collects/srfi/compiled/42_ss.dep
 lib/plt/collects/srfi/compiled/42_ss.zo
+lib/plt/collects/srfi/compiled/42ref_ss.dep
+lib/plt/collects/srfi/compiled/42ref_ss.zo
 lib/plt/collects/srfi/compiled/43_ss.dep
 lib/plt/collects/srfi/compiled/43_ss.zo
 lib/plt/collects/srfi/compiled/45_ss.dep
@@ -7571,9 +7866,12 @@ lib/plt/collects/syntax/private/compiled/boundmap_ss.dep
 lib/plt/collects/syntax/private/compiled/boundmap_ss.zo
 lib/plt/collects/syntax/private/compiled/doctable_ss.dep
 lib/plt/collects/syntax/private/compiled/doctable_ss.zo
+lib/plt/collects/syntax/private/compiled/modcollapse-noctc_ss.dep
+lib/plt/collects/syntax/private/compiled/modcollapse-noctc_ss.zo
 lib/plt/collects/syntax/private/compiled/modhelp_ss.dep
 lib/plt/collects/syntax/private/compiled/modhelp_ss.zo
 lib/plt/collects/syntax/private/doctable.ss
+lib/plt/collects/syntax/private/modcollapse-noctc.ss
 lib/plt/collects/syntax/private/modhelp.ss
 lib/plt/collects/syntax/readerr.ss
 lib/plt/collects/syntax/scribblings/boundmap.scrbl
@@ -7673,6 +7971,8 @@ lib/plt/collects/teachpack/compiled/turtles_ss.dep
 lib/plt/collects/teachpack/compiled/turtles_ss.zo
 lib/plt/collects/teachpack/compiled/value-turtles_ss.dep
 lib/plt/collects/teachpack/compiled/value-turtles_ss.zo
+lib/plt/collects/teachpack/door-real.png
+lib/plt/collects/teachpack/door-sim.png
 lib/plt/collects/teachpack/htdc/colors.ss
 lib/plt/collects/teachpack/htdc/compiled/draw_ss.dep
 lib/plt/collects/teachpack/htdc/compiled/draw_ss.zo
@@ -7727,6 +8027,8 @@ lib/plt/collects/teachpack/htdp/compiled/lkup-gui_ss.dep
 lib/plt/collects/teachpack/htdp/compiled/lkup-gui_ss.zo
 lib/plt/collects/teachpack/htdp/compiled/master_ss.dep
 lib/plt/collects/teachpack/htdp/compiled/master_ss.zo
+lib/plt/collects/teachpack/htdp/compiled/matrix_ss.dep
+lib/plt/collects/teachpack/htdp/compiled/matrix_ss.zo
 lib/plt/collects/teachpack/htdp/compiled/servlet2_ss.dep
 lib/plt/collects/teachpack/htdp/compiled/servlet2_ss.zo
 lib/plt/collects/teachpack/htdp/compiled/servlet_ss.dep
@@ -7750,6 +8052,7 @@ lib/plt/collects/teachpack/htdp/hangman.ss
 lib/plt/collects/teachpack/htdp/image.ss
 lib/plt/collects/teachpack/htdp/lkup-gui.ss
 lib/plt/collects/teachpack/htdp/master.ss
+lib/plt/collects/teachpack/htdp/matrix.ss
 lib/plt/collects/teachpack/htdp/scribblings/arrow-gui.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/arrow.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/compiled/arrow-gui_scrbl.dep
@@ -7780,6 +8083,10 @@ lib/plt/collects/teachpack/htdp/scribblings/compiled/image_scrbl.dep
 lib/plt/collects/teachpack/htdp/scribblings/compiled/image_scrbl.zo
 lib/plt/collects/teachpack/htdp/scribblings/compiled/master_scrbl.dep
 lib/plt/collects/teachpack/htdp/scribblings/compiled/master_scrbl.zo
+lib/plt/collects/teachpack/htdp/scribblings/compiled/matrix_scrbl.dep
+lib/plt/collects/teachpack/htdp/scribblings/compiled/matrix_scrbl.zo
+lib/plt/collects/teachpack/htdp/scribblings/compiled/shared_ss.dep
+lib/plt/collects/teachpack/htdp/scribblings/compiled/shared_ss.zo
 lib/plt/collects/teachpack/htdp/scribblings/compiled/show-queen_scrbl.dep
 lib/plt/collects/teachpack/htdp/scribblings/compiled/show-queen_scrbl.zo
 lib/plt/collects/teachpack/htdp/scribblings/compiled/world_scrbl.dep
@@ -7798,8 +8105,10 @@ lib/plt/collects/teachpack/htdp/scribblings/htdp.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/image.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/lkup-gui.thtml
 lib/plt/collects/teachpack/htdp/scribblings/master.scrbl
+lib/plt/collects/teachpack/htdp/scribblings/matrix.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/servlet.thtml
 lib/plt/collects/teachpack/htdp/scribblings/servlet2.thtml
+lib/plt/collects/teachpack/htdp/scribblings/shared.ss
 lib/plt/collects/teachpack/htdp/scribblings/show-queen.scrbl
 lib/plt/collects/teachpack/htdp/scribblings/world.scrbl
 lib/plt/collects/teachpack/htdp/servlet.ss
@@ -7811,6 +8120,7 @@ lib/plt/collects/teachpack/info.ss
 lib/plt/collects/teachpack/teachpack.scrbl
 lib/plt/collects/teachpack/turtles.ss
 lib/plt/collects/teachpack/value-turtles.ss
+lib/plt/collects/teachpack/world.png
 lib/plt/collects/test-box-recovery/compiled/info_ss.dep
 lib/plt/collects/test-box-recovery/compiled/info_ss.zo
 lib/plt/collects/test-box-recovery/compiled/test-box-recovery_scrbl.dep
@@ -7857,6 +8167,8 @@ lib/plt/collects/tests/aligned-pasteboard/test-pasteboard-lib.ss
 lib/plt/collects/tests/aligned-pasteboard/test-snip-lib.ss
 lib/plt/collects/tests/aligned-pasteboard/test.ss
 lib/plt/collects/tests/aligned-pasteboard/test2.ss
+lib/plt/collects/tests/compiled/eli-tester_ss.dep
+lib/plt/collects/tests/compiled/eli-tester_ss.zo
 lib/plt/collects/tests/compiled/info_ss.dep
 lib/plt/collects/tests/compiled/info_ss.zo
 lib/plt/collects/tests/drscheme/README
@@ -7868,6 +8180,8 @@ lib/plt/collects/tests/drscheme/compiled/io_ss.dep
 lib/plt/collects/tests/drscheme/compiled/io_ss.zo
 lib/plt/collects/tests/drscheme/compiled/language-test_ss.dep
 lib/plt/collects/tests/drscheme/compiled/language-test_ss.zo
+lib/plt/collects/tests/drscheme/compiled/module-lang-test-utils_ss.dep
+lib/plt/collects/tests/drscheme/compiled/module-lang-test-utils_ss.zo
 lib/plt/collects/tests/drscheme/compiled/module-lang-test_ss.dep
 lib/plt/collects/tests/drscheme/compiled/module-lang-test_ss.zo
 lib/plt/collects/tests/drscheme/compiled/repl-test_ss.dep
@@ -7884,12 +8198,15 @@ lib/plt/collects/tests/drscheme/compiled/syncheck-test_ss.dep
 lib/plt/collects/tests/drscheme/compiled/syncheck-test_ss.zo
 lib/plt/collects/tests/drscheme/compiled/teachpack_ss.dep
 lib/plt/collects/tests/drscheme/compiled/teachpack_ss.zo
+lib/plt/collects/tests/drscheme/compiled/time-keystrokes_ss.dep
+lib/plt/collects/tests/drscheme/compiled/time-keystrokes_ss.zo
 lib/plt/collects/tests/drscheme/compiled/tool_ss.dep
 lib/plt/collects/tests/drscheme/compiled/tool_ss.zo
 lib/plt/collects/tests/drscheme/drscheme-test-util.ss
 lib/plt/collects/tests/drscheme/info.ss
 lib/plt/collects/tests/drscheme/io.ss
 lib/plt/collects/tests/drscheme/language-test.ss
+lib/plt/collects/tests/drscheme/module-lang-test-utils.ss
 lib/plt/collects/tests/drscheme/module-lang-test.ss
 lib/plt/collects/tests/drscheme/repl-test.ss
 lib/plt/collects/tests/drscheme/run-tests.ss
@@ -7898,7 +8215,9 @@ lib/plt/collects/tests/drscheme/sample-solutions-testsuite-tp.scm
 lib/plt/collects/tests/drscheme/stepper-test.ss
 lib/plt/collects/tests/drscheme/syncheck-test.ss
 lib/plt/collects/tests/drscheme/teachpack.ss
+lib/plt/collects/tests/drscheme/time-keystrokes.ss
 lib/plt/collects/tests/drscheme/tool.ss
+lib/plt/collects/tests/eli-tester.ss
 lib/plt/collects/tests/framework/README
 lib/plt/collects/tests/framework/canvas.ss
 lib/plt/collects/tests/framework/compiled/canvas_ss.dep
@@ -7931,6 +8250,8 @@ lib/plt/collects/tests/framework/compiled/pasteboard_ss.dep
 lib/plt/collects/tests/framework/compiled/pasteboard_ss.zo
 lib/plt/collects/tests/framework/compiled/prefs_ss.dep
 lib/plt/collects/tests/framework/compiled/prefs_ss.zo
+lib/plt/collects/tests/framework/compiled/search_ss.dep
+lib/plt/collects/tests/framework/compiled/search_ss.zo
 lib/plt/collects/tests/framework/compiled/test-suite-utils_ss.dep
 lib/plt/collects/tests/framework/compiled/test-suite-utils_ss.zo
 lib/plt/collects/tests/framework/compiled/text_ss.dep
@@ -7952,10 +8273,14 @@ lib/plt/collects/tests/framework/mem.ss
 lib/plt/collects/tests/framework/panel.ss
 lib/plt/collects/tests/framework/pasteboard.ss
 lib/plt/collects/tests/framework/prefs.ss
+lib/plt/collects/tests/framework/search.ss
 lib/plt/collects/tests/framework/test-suite-utils.ss
 lib/plt/collects/tests/framework/text.ss
 lib/plt/collects/tests/framework/utils.ss
 lib/plt/collects/tests/info.ss
+lib/plt/collects/tests/lazy/compiled/main_ss.dep
+lib/plt/collects/tests/lazy/compiled/main_ss.zo
+lib/plt/collects/tests/lazy/main.ss
 lib/plt/collects/tests/macro-debugger/all-tests.ss
 lib/plt/collects/tests/macro-debugger/gentest-framework.ss
 lib/plt/collects/tests/macro-debugger/gentests.ss
@@ -8133,6 +8458,7 @@ lib/plt/collects/tests/mzscheme/benchmarks/common/traverse.sch
 lib/plt/collects/tests/mzscheme/benchmarks/common/triangle.sch
 lib/plt/collects/tests/mzscheme/benchmarks/common/triangle.ss
 lib/plt/collects/tests/mzscheme/benchmarks/common/wrap.ss
+lib/plt/collects/tests/mzscheme/benchmarks/mz/comprehensions.ss
 lib/plt/collects/tests/mzscheme/benchmarks/mz/expand-class.scm
 lib/plt/collects/tests/mzscheme/benchmarks/mz/input.xml
 lib/plt/collects/tests/mzscheme/benchmarks/mz/parsing.scm
@@ -8157,16 +8483,20 @@ lib/plt/collects/tests/mzscheme/benchmarks/shootout/fibo.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash2.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/heapsort.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/hello.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/k-nucleotide.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/lists.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/mandelbrot.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/matrix.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/meteor.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/moments.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/nbody-vec.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/nbody.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/nestedloop.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/nsieve.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/nsievebits.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/partialsums.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/pidigits-gmp.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/pidigits.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/pidigits1.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/random.ss
@@ -8182,6 +8512,7 @@ lib/plt/collects/tests/mzscheme/benchmarks/shootout/spellcheck.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/strcat.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/sumcol-input.txt
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/sumcol.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/thread-ring.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/wc.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/wordfreq.ss
 lib/plt/collects/tests/mzscheme/binc.ss
@@ -8191,6 +8522,7 @@ lib/plt/collects/tests/mzscheme/censor.ss
 lib/plt/collects/tests/mzscheme/char-set.ss
 lib/plt/collects/tests/mzscheme/chez-module.ss
 lib/plt/collects/tests/mzscheme/chkdoc.ss
+lib/plt/collects/tests/mzscheme/cm.ss
 lib/plt/collects/tests/mzscheme/cmdline.ss
 lib/plt/collects/tests/mzscheme/compat.ss
 lib/plt/collects/tests/mzscheme/compfile.ss
@@ -8206,10 +8538,14 @@ lib/plt/collects/tests/mzscheme/date.ss
 lib/plt/collects/tests/mzscheme/deep.ss
 lib/plt/collects/tests/mzscheme/dict.ss
 lib/plt/collects/tests/mzscheme/em-imp.ss
+lib/plt/collects/tests/mzscheme/embed-in-c.c
+lib/plt/collects/tests/mzscheme/embed-in-c.ss
 lib/plt/collects/tests/mzscheme/embed-me1.ss
 lib/plt/collects/tests/mzscheme/embed-me10.ss
 lib/plt/collects/tests/mzscheme/embed-me11-rd.ss
 lib/plt/collects/tests/mzscheme/embed-me11.ss
+lib/plt/collects/tests/mzscheme/embed-me1b.ss
+lib/plt/collects/tests/mzscheme/embed-me1c.ss
 lib/plt/collects/tests/mzscheme/embed-me2.ss
 lib/plt/collects/tests/mzscheme/embed-me3.ss
 lib/plt/collects/tests/mzscheme/embed-me4.ss
@@ -8243,9 +8579,11 @@ lib/plt/collects/tests/mzscheme/intmlam-adv.ss
 lib/plt/collects/tests/mzscheme/iobuf.ss
 lib/plt/collects/tests/mzscheme/ktest.ss
 lib/plt/collects/tests/mzscheme/kw.ss
+lib/plt/collects/tests/mzscheme/lang/reader.ss
 lib/plt/collects/tests/mzscheme/list.ss
 lib/plt/collects/tests/mzscheme/loadable.ss
 lib/plt/collects/tests/mzscheme/loadtest.ss
+lib/plt/collects/tests/mzscheme/logger.ss
 lib/plt/collects/tests/mzscheme/loop.ss
 lib/plt/collects/tests/mzscheme/ltest.ss
 lib/plt/collects/tests/mzscheme/macro.ss
@@ -8254,10 +8592,11 @@ lib/plt/collects/tests/mzscheme/makeflat.ss
 lib/plt/collects/tests/mzscheme/makeflats.ss
 lib/plt/collects/tests/mzscheme/md5.ss
 lib/plt/collects/tests/mzscheme/moddep.ss
+lib/plt/collects/tests/mzscheme/module-reader.ss
 lib/plt/collects/tests/mzscheme/module.ss
 lib/plt/collects/tests/mzscheme/mpair.ss
-lib/plt/collects/tests/mzscheme/mz.ss
-lib/plt/collects/tests/mzscheme/mzlib.ss
+lib/plt/collects/tests/mzscheme/mz-tests.ss
+lib/plt/collects/tests/mzscheme/mzlib-tests.ss
 lib/plt/collects/tests/mzscheme/mzlonglong.c
 lib/plt/collects/tests/mzscheme/mzq.ss
 lib/plt/collects/tests/mzscheme/mzthr.ss
@@ -8296,7 +8635,7 @@ lib/plt/collects/tests/mzscheme/restart.ss
 lib/plt/collects/tests/mzscheme/runflats.ss
 lib/plt/collects/tests/mzscheme/rx.ss
 lib/plt/collects/tests/mzscheme/sandbox.ss
-lib/plt/collects/tests/mzscheme/scheme.ss
+lib/plt/collects/tests/mzscheme/scheme-tests.ss
 lib/plt/collects/tests/mzscheme/serialize.ss
 lib/plt/collects/tests/mzscheme/shared-tests.ss
 lib/plt/collects/tests/mzscheme/shared.ss
@@ -8311,6 +8650,7 @@ lib/plt/collects/tests/mzscheme/stx.ss
 lib/plt/collects/tests/mzscheme/subproc2.ss
 lib/plt/collects/tests/mzscheme/subprocess.ss
 lib/plt/collects/tests/mzscheme/sync.ss
+lib/plt/collects/tests/mzscheme/syntax-tests.ss
 lib/plt/collects/tests/mzscheme/syntax.ss
 lib/plt/collects/tests/mzscheme/tcp.ss
 lib/plt/collects/tests/mzscheme/testing.ss
@@ -8332,6 +8672,7 @@ lib/plt/collects/tests/mzscheme/uni-norm.ss
 lib/plt/collects/tests/mzscheme/unicode.ss
 lib/plt/collects/tests/mzscheme/unit.ss
 lib/plt/collects/tests/mzscheme/unitsig.ss
+lib/plt/collects/tests/mzscheme/version.ss
 lib/plt/collects/tests/mzscheme/will.ss
 lib/plt/collects/tests/mzscheme/ztest.ss
 lib/plt/collects/tests/plot/3d-mesh.png
@@ -8344,6 +8685,7 @@ lib/plt/collects/tests/plot/run-tests.ss
 lib/plt/collects/tests/plot/shade.png
 lib/plt/collects/tests/plot/size.png
 lib/plt/collects/tests/plot/vector-field.png
+lib/plt/collects/tests/profj/TestEngineTest.ss
 lib/plt/collects/tests/profj/advanced-tests.ss
 lib/plt/collects/tests/profj/all-tests.ss
 lib/plt/collects/tests/profj/beginner-tests.ss
@@ -8351,34 +8693,81 @@ lib/plt/collects/tests/profj/beginnerTest.java
 lib/plt/collects/tests/profj/full-tests.ss
 lib/plt/collects/tests/profj/intermediate-tests.ss
 lib/plt/collects/tests/profj/intermediateTest.java
-lib/plt/collects/tests/profj/TestEngineTest.ss
 lib/plt/collects/tests/profj/profj-testing.ss
-lib/plt/collects/tests/r6rs/arithmetic/bitwise.ss
-lib/plt/collects/tests/r6rs/arithmetic/fixnums.ss
-lib/plt/collects/tests/r6rs/arithmetic/flonums.ss
-lib/plt/collects/tests/r6rs/base.ss
-lib/plt/collects/tests/r6rs/bytevectors.ss
-lib/plt/collects/tests/r6rs/conditions.ss
-lib/plt/collects/tests/r6rs/control.ss
-lib/plt/collects/tests/r6rs/enums.ss
-lib/plt/collects/tests/r6rs/eval.ss
-lib/plt/collects/tests/r6rs/exceptions.ss
-lib/plt/collects/tests/r6rs/hashtables.ss
-lib/plt/collects/tests/r6rs/io/ports.ss
-lib/plt/collects/tests/r6rs/io/simple.ss
-lib/plt/collects/tests/r6rs/lists.ss
-lib/plt/collects/tests/r6rs/mutable-pairs.ss
-lib/plt/collects/tests/r6rs/mutable-strings.ss
-lib/plt/collects/tests/r6rs/programs.ss
-lib/plt/collects/tests/r6rs/r5rs.ss
-lib/plt/collects/tests/r6rs/reader.ss
-lib/plt/collects/tests/r6rs/records/procedural.ss
-lib/plt/collects/tests/r6rs/records/syntactic.ss
-lib/plt/collects/tests/r6rs/run.ss
-lib/plt/collects/tests/r6rs/sorting.ss
-lib/plt/collects/tests/r6rs/syntax-case.ss
-lib/plt/collects/tests/r6rs/test.ss
-lib/plt/collects/tests/r6rs/unicode.ss
+lib/plt/collects/tests/r6rs/README.txt
+lib/plt/collects/tests/r6rs/arithmetic/bitwise.sls
+lib/plt/collects/tests/r6rs/arithmetic/fixnums.sls
+lib/plt/collects/tests/r6rs/arithmetic/flonums.sls
+lib/plt/collects/tests/r6rs/base.sls
+lib/plt/collects/tests/r6rs/bytevectors.sls
+lib/plt/collects/tests/r6rs/conditions.sls
+lib/plt/collects/tests/r6rs/contrib.sls
+lib/plt/collects/tests/r6rs/contrib/helper1.sls
+lib/plt/collects/tests/r6rs/control.sls
+lib/plt/collects/tests/r6rs/enums.sls
+lib/plt/collects/tests/r6rs/eval.sls
+lib/plt/collects/tests/r6rs/exceptions.sls
+lib/plt/collects/tests/r6rs/hashtables.sls
+lib/plt/collects/tests/r6rs/io/ports.sls
+lib/plt/collects/tests/r6rs/io/simple.sls
+lib/plt/collects/tests/r6rs/lists.sls
+lib/plt/collects/tests/r6rs/mutable-pairs.sls
+lib/plt/collects/tests/r6rs/mutable-strings.sls
+lib/plt/collects/tests/r6rs/programs.sls
+lib/plt/collects/tests/r6rs/r5rs.sls
+lib/plt/collects/tests/r6rs/reader.sls
+lib/plt/collects/tests/r6rs/records/procedural.sls
+lib/plt/collects/tests/r6rs/records/syntactic.sls
+lib/plt/collects/tests/r6rs/run-via-eval.sps
+lib/plt/collects/tests/r6rs/run.sps
+lib/plt/collects/tests/r6rs/run/arithmetic/bitwise.sps
+lib/plt/collects/tests/r6rs/run/arithmetic/fixnums.sps
+lib/plt/collects/tests/r6rs/run/arithmetic/flonums.sps
+lib/plt/collects/tests/r6rs/run/base.sps
+lib/plt/collects/tests/r6rs/run/bytevectors.sps
+lib/plt/collects/tests/r6rs/run/conditions.sps
+lib/plt/collects/tests/r6rs/run/contrib.sps
+lib/plt/collects/tests/r6rs/run/control.sps
+lib/plt/collects/tests/r6rs/run/enums.sps
+lib/plt/collects/tests/r6rs/run/eval.sps
+lib/plt/collects/tests/r6rs/run/exceptions.sps
+lib/plt/collects/tests/r6rs/run/hashtables.sps
+lib/plt/collects/tests/r6rs/run/io/ports.sps
+lib/plt/collects/tests/r6rs/run/io/simple.sps
+lib/plt/collects/tests/r6rs/run/lists.sps
+lib/plt/collects/tests/r6rs/run/mutable-pairs.sps
+lib/plt/collects/tests/r6rs/run/mutable-strings.sps
+lib/plt/collects/tests/r6rs/run/programs.sps
+lib/plt/collects/tests/r6rs/run/r5rs.sps
+lib/plt/collects/tests/r6rs/run/reader.sps
+lib/plt/collects/tests/r6rs/run/records/procedural.sps
+lib/plt/collects/tests/r6rs/run/records/syntactic.sps
+lib/plt/collects/tests/r6rs/run/run.sps
+lib/plt/collects/tests/r6rs/run/sorting.sps
+lib/plt/collects/tests/r6rs/run/syntax-case.sps
+lib/plt/collects/tests/r6rs/run/test.sps
+lib/plt/collects/tests/r6rs/run/unicode.sps
+lib/plt/collects/tests/r6rs/sorting.sls
+lib/plt/collects/tests/r6rs/syntax-case.sls
+lib/plt/collects/tests/r6rs/test.sls
+lib/plt/collects/tests/r6rs/unicode.sls
+lib/plt/collects/tests/scribble/compiled/main_ss.dep
+lib/plt/collects/tests/scribble/compiled/main_ss.zo
+lib/plt/collects/tests/scribble/main.ss
+lib/plt/collects/tests/scribble/text/compiled/i1_ss.dep
+lib/plt/collects/tests/scribble/text/compiled/i1_ss.zo
+lib/plt/collects/tests/scribble/text/compiled/i2_ss.dep
+lib/plt/collects/tests/scribble/text/compiled/i2_ss.zo
+lib/plt/collects/tests/scribble/text/compiled/i3_ss.dep
+lib/plt/collects/tests/scribble/text/compiled/i3_ss.zo
+lib/plt/collects/tests/scribble/text/i1.ss
+lib/plt/collects/tests/scribble/text/i2.ss
+lib/plt/collects/tests/scribble/text/i3.ss
+lib/plt/collects/tests/scribble/text/i3a
+lib/plt/collects/tests/scribble/text/i3b
+lib/plt/collects/tests/scribble/text/o1.txt
+lib/plt/collects/tests/scribble/text/o2.txt
+lib/plt/collects/tests/scribble/text/o3.txt
 lib/plt/collects/tests/srfi/1/alist-test.ss
 lib/plt/collects/tests/srfi/1/all-1-tests.ss
 lib/plt/collects/tests/srfi/1/cons-test.ss
@@ -8458,20 +8847,32 @@ lib/plt/collects/tests/typed-scheme/660-examples/hw04.scm
 lib/plt/collects/tests/typed-scheme/660-examples/hw05.scm
 lib/plt/collects/tests/typed-scheme/660-examples/slow.ss
 lib/plt/collects/tests/typed-scheme/660-examples/support.ss
+lib/plt/collects/tests/typed-scheme/fail/ann-map-funcs.ss
+lib/plt/collects/tests/typed-scheme/fail/apply-dots.ss
 lib/plt/collects/tests/typed-scheme/fail/back-and-forth.ss
 lib/plt/collects/tests/typed-scheme/fail/bad-type-app.ss
 lib/plt/collects/tests/typed-scheme/fail/box-fail.ss
+lib/plt/collects/tests/typed-scheme/fail/cl-bug.ss
 lib/plt/collects/tests/typed-scheme/fail/cnt-err1.ss
+lib/plt/collects/tests/typed-scheme/fail/dotted-identity.ss
+lib/plt/collects/tests/typed-scheme/fail/formal-len-mismatches.ss
 lib/plt/collects/tests/typed-scheme/fail/gadt.ss
+lib/plt/collects/tests/typed-scheme/fail/infer-dots.ss
+lib/plt/collects/tests/typed-scheme/fail/nested-tvars.ss
 lib/plt/collects/tests/typed-scheme/fail/pr9053-fail.ss
 lib/plt/collects/tests/typed-scheme/fail/set-struct.ss
 lib/plt/collects/tests/typed-scheme/fail/set-tests.ss
+lib/plt/collects/tests/typed-scheme/fail/unbound-type.ss
+lib/plt/collects/tests/typed-scheme/fail/values-dots.ss
 lib/plt/collects/tests/typed-scheme/main.ss
 lib/plt/collects/tests/typed-scheme/run
+lib/plt/collects/tests/typed-scheme/run.ss
 lib/plt/collects/tests/typed-scheme/stress.ss
 lib/plt/collects/tests/typed-scheme/succeed/andmap.ss
+lib/plt/collects/tests/typed-scheme/succeed/ann-map-funcs.ss
 lib/plt/collects/tests/typed-scheme/succeed/annotation-test.ss
 lib/plt/collects/tests/typed-scheme/succeed/apply-append.ss
+lib/plt/collects/tests/typed-scheme/succeed/apply-dots.ss
 lib/plt/collects/tests/typed-scheme/succeed/area.ss
 lib/plt/collects/tests/typed-scheme/succeed/bad-map-infer.ss
 lib/plt/collects/tests/typed-scheme/succeed/barland.ss
@@ -8479,19 +8880,29 @@ lib/plt/collects/tests/typed-scheme/succeed/basic-tests.ss
 lib/plt/collects/tests/typed-scheme/succeed/batched-queue.scm
 lib/plt/collects/tests/typed-scheme/succeed/box-num.ss
 lib/plt/collects/tests/typed-scheme/succeed/broken-let-syntax.ss
+lib/plt/collects/tests/typed-scheme/succeed/cl-bug.ss
 lib/plt/collects/tests/typed-scheme/succeed/cl-tests.ss
 lib/plt/collects/tests/typed-scheme/succeed/cl.ss
 lib/plt/collects/tests/typed-scheme/succeed/do.ss
+lib/plt/collects/tests/typed-scheme/succeed/dot-intro.ss
+lib/plt/collects/tests/typed-scheme/succeed/dotted-identity.ss
 lib/plt/collects/tests/typed-scheme/succeed/fix.ss
+lib/plt/collects/tests/typed-scheme/succeed/fold-left-inst.ss
+lib/plt/collects/tests/typed-scheme/succeed/fold-left.ss
 lib/plt/collects/tests/typed-scheme/succeed/foldo.scm
 lib/plt/collects/tests/typed-scheme/succeed/foo.scm
+lib/plt/collects/tests/typed-scheme/succeed/force-delay.ss
 lib/plt/collects/tests/typed-scheme/succeed/hw01.scm
 lib/plt/collects/tests/typed-scheme/succeed/if-splitting-test.ss
+lib/plt/collects/tests/typed-scheme/succeed/infer-dots.ss
+lib/plt/collects/tests/typed-scheme/succeed/inst-dots.ss
 lib/plt/collects/tests/typed-scheme/succeed/int-def-colon.ss
+lib/plt/collects/tests/typed-scheme/succeed/kw.ss
 lib/plt/collects/tests/typed-scheme/succeed/leftist-heap.ss
 lib/plt/collects/tests/typed-scheme/succeed/let-values-tests.ss
 lib/plt/collects/tests/typed-scheme/succeed/list-ref-vec.ss
 lib/plt/collects/tests/typed-scheme/succeed/little-schemer.ss
+lib/plt/collects/tests/typed-scheme/succeed/lots-o-bugs.ss
 lib/plt/collects/tests/typed-scheme/succeed/manual-examples.ss
 lib/plt/collects/tests/typed-scheme/succeed/map1.ss
 lib/plt/collects/tests/typed-scheme/succeed/map2.ss
@@ -8500,11 +8911,13 @@ lib/plt/collects/tests/typed-scheme/succeed/match.ss
 lib/plt/collects/tests/typed-scheme/succeed/metrics.ss
 lib/plt/collects/tests/typed-scheme/succeed/module-lang.ss
 lib/plt/collects/tests/typed-scheme/succeed/mu-rec.ss
+lib/plt/collects/tests/typed-scheme/succeed/nested-poly.ss
 lib/plt/collects/tests/typed-scheme/succeed/overloading.ss
 lib/plt/collects/tests/typed-scheme/succeed/pair-test.ss
 lib/plt/collects/tests/typed-scheme/succeed/param.ss
 lib/plt/collects/tests/typed-scheme/succeed/patch.ss
 lib/plt/collects/tests/typed-scheme/succeed/poly-struct.ss
+lib/plt/collects/tests/typed-scheme/succeed/poly-subtype.ss
 lib/plt/collects/tests/typed-scheme/succeed/poly-tests.ss
 lib/plt/collects/tests/typed-scheme/succeed/pr9043.ss
 lib/plt/collects/tests/typed-scheme/succeed/pr9046.ss
@@ -8518,23 +8931,31 @@ lib/plt/collects/tests/typed-scheme/succeed/random-bits.ss
 lib/plt/collects/tests/typed-scheme/succeed/rec-types.ss
 lib/plt/collects/tests/typed-scheme/succeed/require-poly.ss
 lib/plt/collects/tests/typed-scheme/succeed/require-tests.ss
+lib/plt/collects/tests/typed-scheme/succeed/require-typed-rename.ss
 lib/plt/collects/tests/typed-scheme/succeed/richard-bugs.ss
 lib/plt/collects/tests/typed-scheme/succeed/scratch.ss
 lib/plt/collects/tests/typed-scheme/succeed/seasoned-schemer.ss
 lib/plt/collects/tests/typed-scheme/succeed/simple-poly.ss
+lib/plt/collects/tests/typed-scheme/succeed/star-sizes.ss
 lib/plt/collects/tests/typed-scheme/succeed/string-const.ss
 lib/plt/collects/tests/typed-scheme/succeed/struct-cert.ss
 lib/plt/collects/tests/typed-scheme/succeed/struct-exec.ss
 lib/plt/collects/tests/typed-scheme/succeed/typeann-letrec.ss
 lib/plt/collects/tests/typed-scheme/succeed/typed-list.ss
+lib/plt/collects/tests/typed-scheme/succeed/unholy-terror.ss
+lib/plt/collects/tests/typed-scheme/succeed/values-dots.ss
 lib/plt/collects/tests/typed-scheme/succeed/varargs-tests.ss
 lib/plt/collects/tests/typed-scheme/succeed/vec-tests.ss
+lib/plt/collects/tests/typed-scheme/succeed/with-handlers.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/all-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/infer-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/module-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/new-fv-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/parse-type-tests.ss
+lib/plt/collects/tests/typed-scheme/unit-tests/planet-requires.ss
+lib/plt/collects/tests/typed-scheme/unit-tests/random-testing.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/remove-intersect-tests.ss
+lib/plt/collects/tests/typed-scheme/unit-tests/subst-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/subtype-tests.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/test-utils.ss
 lib/plt/collects/tests/typed-scheme/unit-tests/type-annotation-test.ss
@@ -8549,105 +8970,49 @@ lib/plt/collects/tests/utils/compiled/sexp-diff_ss.zo
 lib/plt/collects/tests/utils/gui.ss
 lib/plt/collects/tests/utils/mz-testing.ss
 lib/plt/collects/tests/utils/sexp-diff.ss
-lib/plt/collects/tests/web-server/answers/a-module
-lib/plt/collects/tests/web-server/answers/b-module
-lib/plt/collects/tests/web-server/answers/bad-require
-lib/plt/collects/tests/web-server/answers/incremental
-lib/plt/collects/tests/web-server/answers/incremental2
-lib/plt/collects/tests/web-server/answers/mime-servlet
-lib/plt/collects/tests/web-server/answers/non-unit
-lib/plt/collects/tests/web-server/answers/suspended-module
-lib/plt/collects/tests/web-server/answers/test.servlet-1
-lib/plt/collects/tests/web-server/answers/test.servlet-2
-lib/plt/collects/tests/web-server/build-plt.ss
-lib/plt/collects/tests/web-server/configuration-table
-lib/plt/collects/tests/web-server/my-url.ss
-lib/plt/collects/tests/web-server/new/pr7823.ss
-lib/plt/collects/tests/web-server/perf-tests.ss
-lib/plt/collects/tests/web-server/scheme-units/assertions.ss
-lib/plt/collects/tests/web-server/scheme-units/configuration-table
-lib/plt/collects/tests/web-server/scheme-units/test-authentication.ss
-lib/plt/collects/tests/web-server/scheme-units/test-channel.ss
-lib/plt/collects/tests/web-server/scheme-units/test-errors.ss
-lib/plt/collects/tests/web-server/scheme-units/test-serve-static-html.ss
-lib/plt/collects/tests/web-server/scheme-units/test-serve-static-jpeg.ss
-lib/plt/collects/tests/web-server/scheme-units/test-servlets.ss
-lib/plt/collects/tests/web-server/scheme-units/test-suite.ss
-lib/plt/collects/tests/web-server/scheme-units/test-timeout.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/forbidden.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/not-found.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/passwords-refresh.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/protocol-error.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/servlet-error.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf/servlet-refresh.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/index.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/me.jpg
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/me2.JPG
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/secret/index.html
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/raise-exception.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test1.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test2-incremental.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test2.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test3.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test4.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test5.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test6.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test7.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output/test8.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/log
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/passwords
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/bad-require.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/raise-exception.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test1-incremental.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test1.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test2-incremental-unitsig.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test2-incremental.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test2.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test3.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test4-incremental.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test4.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test5.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test6.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test7.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets/test8.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-server-process.ss
-lib/plt/collects/tests/web-server/scheme-units/test-web-server.ss
-lib/plt/collects/tests/web-server/sclient.ss
-lib/plt/collects/tests/web-server/servlets/color2.ss
-lib/plt/collects/tests/web-server/servlets/dir-tp.ss
-lib/plt/collects/tests/web-server/servlets/s1.ss
-lib/plt/collects/tests/web-server/servlets/sparrow.ss
-lib/plt/collects/tests/web-server/suite.ss
-lib/plt/collects/tests/web-server/web-hammer.ss
-lib/plt/collects/tests/web-server/web-root/conf/forbidden.html
-lib/plt/collects/tests/web-server/web-root/conf/not-found.html
-lib/plt/collects/tests/web-server/web-root/conf/passwords-refresh.html
-lib/plt/collects/tests/web-server/web-root/conf/protocol-error.html
-lib/plt/collects/tests/web-server/web-root/conf/servlet-error.html
-lib/plt/collects/tests/web-server/web-root/conf/servlet-refresh.html
-lib/plt/collects/tests/web-server/web-root/htdocs/10k.html
-lib/plt/collects/tests/web-server/web-root/htdocs/1k.html
-lib/plt/collects/tests/web-server/web-root/htdocs/index.html
-lib/plt/collects/tests/web-server/web-root/htdocs/me.jpg
-lib/plt/collects/tests/web-server/web-root/htdocs/me2.JPG
-lib/plt/collects/tests/web-server/web-root/htdocs/secret/index.html
-lib/plt/collects/tests/web-server/web-root/passwords
-lib/plt/collects/tests/web-server/web-root/servlets/configure.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/a-module.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/b-module.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/bad-require.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/bad-return.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/broken.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/cut-module.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/incremental.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/mime.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/module-suspended-init.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/non-unit.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/response.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/size.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/suspended-module.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/test.ss
-lib/plt/collects/tests/web-server/web-root/servlets/tests/url.ss
+lib/plt/collects/tests/web-server/all-web-server-tests.ss
+lib/plt/collects/tests/web-server/configuration/all-configuration-tests.ss
+lib/plt/collects/tests/web-server/configuration/configuration-table-test.ss
+lib/plt/collects/tests/web-server/dispatchers/all-dispatchers-tests.ss
+lib/plt/collects/tests/web-server/dispatchers/dispatch-files-test.ss
+lib/plt/collects/tests/web-server/dispatchers/dispatch-host-test.ss
+lib/plt/collects/tests/web-server/dispatchers/dispatch-lang-test.ss
+lib/plt/collects/tests/web-server/dispatchers/dispatch-passwords-test.ss
+lib/plt/collects/tests/web-server/dispatchers/dispatch-servlets-test.ss
+lib/plt/collects/tests/web-server/dispatchers/filesystem-map-test.ss
+lib/plt/collects/tests/web-server/dispatchers/servlet-test-util.ss
+lib/plt/collects/tests/web-server/info.ss
+lib/plt/collects/tests/web-server/lang-test.ss
+lib/plt/collects/tests/web-server/lang/abort-resume-test.ss
+lib/plt/collects/tests/web-server/lang/all-lang-tests.ss
+lib/plt/collects/tests/web-server/lang/anormal-test.ss
+lib/plt/collects/tests/web-server/lang/defun-test.ss
+lib/plt/collects/tests/web-server/lang/file-box-test.ss
+lib/plt/collects/tests/web-server/lang/labels-test.ss
+lib/plt/collects/tests/web-server/lang/stuff-url-test.ss
+lib/plt/collects/tests/web-server/lang/web-param-test.ss
+lib/plt/collects/tests/web-server/managers/all-managers-tests.ss
+lib/plt/collects/tests/web-server/private/all-private-tests.ss
+lib/plt/collects/tests/web-server/private/cache-table-test.ss
+lib/plt/collects/tests/web-server/private/connection-manager-test.ss
+lib/plt/collects/tests/web-server/private/define-closure-test.ss
+lib/plt/collects/tests/web-server/private/mime-types-test.ss
+lib/plt/collects/tests/web-server/private/mod-map-test.ss
+lib/plt/collects/tests/web-server/private/request-test.ss
+lib/plt/collects/tests/web-server/private/response-test.ss
+lib/plt/collects/tests/web-server/private/session-test.ss
+lib/plt/collects/tests/web-server/private/url-param-test.ss
+lib/plt/collects/tests/web-server/private/util-test.ss
+lib/plt/collects/tests/web-server/run
+lib/plt/collects/tests/web-server/run-all-tests.ss
+lib/plt/collects/tests/web-server/servlet-env-test.ss
+lib/plt/collects/tests/web-server/servlet/all-servlet-tests.ss
+lib/plt/collects/tests/web-server/servlet/basic-auth-test.ss
+lib/plt/collects/tests/web-server/servlet/bindings-test.ss
+lib/plt/collects/tests/web-server/servlet/helpers-test.ss
+lib/plt/collects/tests/web-server/servlet/servlet-url-test.ss
+lib/plt/collects/tests/web-server/servlet/web-test.ss
+lib/plt/collects/tests/web-server/util.ss
 lib/plt/collects/tex2page/compiled/info_ss.dep
 lib/plt/collects/tex2page/compiled/info_ss.zo
 lib/plt/collects/tex2page/compiled/main_ss.dep
@@ -8759,93 +9124,96 @@ lib/plt/collects/typed-scheme/compiled/main_ss.dep
 lib/plt/collects/typed-scheme/compiled/main_ss.zo
 lib/plt/collects/typed-scheme/compiled/minimal_ss.dep
 lib/plt/collects/typed-scheme/compiled/minimal_ss.zo
+lib/plt/collects/typed-scheme/compiled/no-check_ss.dep
+lib/plt/collects/typed-scheme/compiled/no-check_ss.zo
 lib/plt/collects/typed-scheme/compiled/typed-reader_ss.dep
 lib/plt/collects/typed-scheme/compiled/typed-reader_ss.zo
 lib/plt/collects/typed-scheme/compiled/typed-scheme_scrbl.dep
 lib/plt/collects/typed-scheme/compiled/typed-scheme_scrbl.zo
 lib/plt/collects/typed-scheme/compiled/typed-scheme_ss.dep
 lib/plt/collects/typed-scheme/compiled/typed-scheme_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/init-envs_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/init-envs_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/lexical-env_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/lexical-env_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/type-alias-env_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/type-alias-env_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/type-env_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/type-env_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/type-environments_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/type-environments_ss.zo
+lib/plt/collects/typed-scheme/env/compiled/type-name-env_ss.dep
+lib/plt/collects/typed-scheme/env/compiled/type-name-env_ss.zo
+lib/plt/collects/typed-scheme/env/init-envs.ss
+lib/plt/collects/typed-scheme/env/lexical-env.ss
+lib/plt/collects/typed-scheme/env/type-alias-env.ss
+lib/plt/collects/typed-scheme/env/type-env.ss
+lib/plt/collects/typed-scheme/env/type-environments.ss
+lib/plt/collects/typed-scheme/env/type-name-env.ss
+lib/plt/collects/typed-scheme/infer/compiled/constraint-structs_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/constraint-structs_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/constraints_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/constraints_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/dmap_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/dmap_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/infer-dummy_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/infer-dummy_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/infer-unit_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/infer-unit_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/infer_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/infer_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/promote-demote_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/promote-demote_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/restrict_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/restrict_ss.zo
+lib/plt/collects/typed-scheme/infer/compiled/signatures_ss.dep
+lib/plt/collects/typed-scheme/infer/compiled/signatures_ss.zo
+lib/plt/collects/typed-scheme/infer/constraint-structs.ss
+lib/plt/collects/typed-scheme/infer/constraints.ss
+lib/plt/collects/typed-scheme/infer/dmap.ss
+lib/plt/collects/typed-scheme/infer/infer-dummy.ss
+lib/plt/collects/typed-scheme/infer/infer-unit.ss
+lib/plt/collects/typed-scheme/infer/infer.ss
+lib/plt/collects/typed-scheme/infer/promote-demote.ss
+lib/plt/collects/typed-scheme/infer/restrict.ss
+lib/plt/collects/typed-scheme/infer/signatures.ss
 lib/plt/collects/typed-scheme/info.ss
 lib/plt/collects/typed-scheme/lang/compiled/reader_ss.dep
 lib/plt/collects/typed-scheme/lang/compiled/reader_ss.zo
 lib/plt/collects/typed-scheme/lang/reader.ss
 lib/plt/collects/typed-scheme/main.ss
 lib/plt/collects/typed-scheme/minimal.ss
+lib/plt/collects/typed-scheme/no-check.ss
+lib/plt/collects/typed-scheme/no-check/lang/compiled/reader_ss.dep
+lib/plt/collects/typed-scheme/no-check/lang/compiled/reader_ss.zo
+lib/plt/collects/typed-scheme/no-check/lang/reader.ss
 lib/plt/collects/typed-scheme/private/base-env.ss
+lib/plt/collects/typed-scheme/private/base-special-env.ss
 lib/plt/collects/typed-scheme/private/base-types.ss
-lib/plt/collects/typed-scheme/private/check-subforms-unit.ss
 lib/plt/collects/typed-scheme/private/compiled/base-env_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/base-env_ss.zo
+lib/plt/collects/typed-scheme/private/compiled/base-special-env_ss.dep
+lib/plt/collects/typed-scheme/private/compiled/base-special-env_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/base-types_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/base-types_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/check-subforms-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/check-subforms-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/def-binding_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/def-binding_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/defstruct-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/defstruct-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/effect-rep_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/effect-rep_ss.zo
+lib/plt/collects/typed-scheme/private/compiled/env-lang_ss.dep
+lib/plt/collects/typed-scheme/private/compiled/env-lang_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/extra-procs_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/extra-procs_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/free-variance_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/free-variance_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/infer-ops_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/infer-ops_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/infer_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/infer_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/init-envs_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/init-envs_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/internal-forms_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/internal-forms_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/interning_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/interning_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/lexical-env_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/lexical-env_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/mutated-vars_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/mutated-vars_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/parse-type_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/parse-type_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/planet-requires_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/planet-requires_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/prims_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/prims_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/provide-handling_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/provide-handling_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/remove-intersect_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/remove-intersect_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/rep-utils_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/rep-utils_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/require-contract_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/require-contract_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/resolve-type_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/resolve-type_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/signatures_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/signatures_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/subtype_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/subtype_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/syntax-traversal_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/syntax-traversal_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tables_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tables_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-app-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-app-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-expr-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-expr-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-if-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-if-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-lambda-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-lambda-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-let-unit_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-let-unit_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-structs_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-structs_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-toplevel_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-toplevel_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/tc-utils_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/tc-utils_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/type-alias-env_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/type-alias-env_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/type-annotation_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/type-annotation_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/type-comparison_ss.dep
@@ -8856,77 +9224,101 @@ lib/plt/collects/typed-scheme/private/compiled/type-effect-convenience_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/type-effect-convenience_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/type-effect-printer_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/type-effect-printer_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/type-env_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/type-env_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/type-environments_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/type-environments_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/type-name-env_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/type-name-env_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/type-rep_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/type-rep_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/type-utils_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/type-utils_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/typechecker_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/typechecker_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/unify_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/unify_ss.zo
 lib/plt/collects/typed-scheme/private/compiled/union_ss.dep
 lib/plt/collects/typed-scheme/private/compiled/union_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/unit-utils_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/unit-utils_ss.zo
-lib/plt/collects/typed-scheme/private/compiled/utils_ss.dep
-lib/plt/collects/typed-scheme/private/compiled/utils_ss.zo
-lib/plt/collects/typed-scheme/private/def-binding.ss
-lib/plt/collects/typed-scheme/private/defstruct-unit.ss
-lib/plt/collects/typed-scheme/private/effect-rep.ss
+lib/plt/collects/typed-scheme/private/env-lang.ss
 lib/plt/collects/typed-scheme/private/extra-procs.ss
-lib/plt/collects/typed-scheme/private/free-variance.ss
-lib/plt/collects/typed-scheme/private/infer-ops.ss
-lib/plt/collects/typed-scheme/private/infer.ss
-lib/plt/collects/typed-scheme/private/init-envs.ss
-lib/plt/collects/typed-scheme/private/internal-forms.ss
-lib/plt/collects/typed-scheme/private/interning.ss
-lib/plt/collects/typed-scheme/private/lexical-env.ss
 lib/plt/collects/typed-scheme/private/mutated-vars.ss
 lib/plt/collects/typed-scheme/private/parse-type.ss
-lib/plt/collects/typed-scheme/private/planet-requires.ss
 lib/plt/collects/typed-scheme/private/prims.ss
-lib/plt/collects/typed-scheme/private/provide-handling.ss
 lib/plt/collects/typed-scheme/private/remove-intersect.ss
-lib/plt/collects/typed-scheme/private/rep-utils.ss
 lib/plt/collects/typed-scheme/private/require-contract.ss
 lib/plt/collects/typed-scheme/private/resolve-type.ss
-lib/plt/collects/typed-scheme/private/signatures.ss
 lib/plt/collects/typed-scheme/private/subtype.ss
-lib/plt/collects/typed-scheme/private/syntax-traversal.ss
-lib/plt/collects/typed-scheme/private/tables.ss
-lib/plt/collects/typed-scheme/private/tc-app-unit.ss
-lib/plt/collects/typed-scheme/private/tc-expr-unit.ss
-lib/plt/collects/typed-scheme/private/tc-if-unit.ss
-lib/plt/collects/typed-scheme/private/tc-lambda-unit.ss
-lib/plt/collects/typed-scheme/private/tc-let-unit.ss
-lib/plt/collects/typed-scheme/private/tc-structs.ss
-lib/plt/collects/typed-scheme/private/tc-toplevel.ss
-lib/plt/collects/typed-scheme/private/tc-utils.ss
-lib/plt/collects/typed-scheme/private/type-alias-env.ss
 lib/plt/collects/typed-scheme/private/type-annotation.ss
 lib/plt/collects/typed-scheme/private/type-comparison.ss
 lib/plt/collects/typed-scheme/private/type-contract.ss
 lib/plt/collects/typed-scheme/private/type-effect-convenience.ss
 lib/plt/collects/typed-scheme/private/type-effect-printer.ss
-lib/plt/collects/typed-scheme/private/type-env.ss
-lib/plt/collects/typed-scheme/private/type-environments.ss
-lib/plt/collects/typed-scheme/private/type-name-env.ss
-lib/plt/collects/typed-scheme/private/type-rep.ss
 lib/plt/collects/typed-scheme/private/type-utils.ss
-lib/plt/collects/typed-scheme/private/typechecker.ss
-lib/plt/collects/typed-scheme/private/unify.ss
 lib/plt/collects/typed-scheme/private/union.ss
-lib/plt/collects/typed-scheme/private/unit-utils.ss
-lib/plt/collects/typed-scheme/private/utils.ss
+lib/plt/collects/typed-scheme/rep/compiled/effect-rep_ss.dep
+lib/plt/collects/typed-scheme/rep/compiled/effect-rep_ss.zo
+lib/plt/collects/typed-scheme/rep/compiled/free-variance_ss.dep
+lib/plt/collects/typed-scheme/rep/compiled/free-variance_ss.zo
+lib/plt/collects/typed-scheme/rep/compiled/interning_ss.dep
+lib/plt/collects/typed-scheme/rep/compiled/interning_ss.zo
+lib/plt/collects/typed-scheme/rep/compiled/rep-utils_ss.dep
+lib/plt/collects/typed-scheme/rep/compiled/rep-utils_ss.zo
+lib/plt/collects/typed-scheme/rep/compiled/type-rep_ss.dep
+lib/plt/collects/typed-scheme/rep/compiled/type-rep_ss.zo
+lib/plt/collects/typed-scheme/rep/effect-rep.ss
+lib/plt/collects/typed-scheme/rep/free-variance.ss
+lib/plt/collects/typed-scheme/rep/interning.ss
+lib/plt/collects/typed-scheme/rep/rep-utils.ss
+lib/plt/collects/typed-scheme/rep/type-rep.ss
+lib/plt/collects/typed-scheme/typecheck/check-subforms-unit.ss
+lib/plt/collects/typed-scheme/typecheck/compiled/check-subforms-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/check-subforms-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/def-binding_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/def-binding_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/defstruct-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/defstruct-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/internal-forms_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/internal-forms_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/provide-handling_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/provide-handling_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/signatures_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/signatures_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-app-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-app-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-dots-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-dots-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-expr-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-expr-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-if-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-if-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-lambda-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-lambda-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-let-unit_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-let-unit_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-structs_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-structs_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-toplevel_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/tc-toplevel_ss.zo
+lib/plt/collects/typed-scheme/typecheck/compiled/typechecker_ss.dep
+lib/plt/collects/typed-scheme/typecheck/compiled/typechecker_ss.zo
+lib/plt/collects/typed-scheme/typecheck/def-binding.ss
+lib/plt/collects/typed-scheme/typecheck/defstruct-unit.ss
+lib/plt/collects/typed-scheme/typecheck/internal-forms.ss
+lib/plt/collects/typed-scheme/typecheck/provide-handling.ss
+lib/plt/collects/typed-scheme/typecheck/signatures.ss
+lib/plt/collects/typed-scheme/typecheck/tc-app-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-dots-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-expr-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-if-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-lambda-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-let-unit.ss
+lib/plt/collects/typed-scheme/typecheck/tc-structs.ss
+lib/plt/collects/typed-scheme/typecheck/tc-toplevel.ss
+lib/plt/collects/typed-scheme/typecheck/typechecker.ss
 lib/plt/collects/typed-scheme/typed-reader.ss
 lib/plt/collects/typed-scheme/typed-scheme.scrbl
 lib/plt/collects/typed-scheme/typed-scheme.ss
+lib/plt/collects/typed-scheme/utils/compiled/syntax-traversal_ss.dep
+lib/plt/collects/typed-scheme/utils/compiled/syntax-traversal_ss.zo
+lib/plt/collects/typed-scheme/utils/compiled/tc-utils_ss.dep
+lib/plt/collects/typed-scheme/utils/compiled/tc-utils_ss.zo
+lib/plt/collects/typed-scheme/utils/compiled/unit-utils_ss.dep
+lib/plt/collects/typed-scheme/utils/compiled/unit-utils_ss.zo
+lib/plt/collects/typed-scheme/utils/compiled/utils_ss.dep
+lib/plt/collects/typed-scheme/utils/compiled/utils_ss.zo
+lib/plt/collects/typed-scheme/utils/syntax-traversal.ss
+lib/plt/collects/typed-scheme/utils/tc-utils.ss
+lib/plt/collects/typed-scheme/utils/unit-utils.ss
+lib/plt/collects/typed-scheme/utils/utils.ss
 lib/plt/collects/version/check.ss
 lib/plt/collects/version/compiled/check_ss.dep
 lib/plt/collects/version/compiled/check_ss.zo
@@ -8946,6 +9338,8 @@ lib/plt/collects/version/patchlevel.ss
 lib/plt/collects/version/tool.ss
 lib/plt/collects/version/utils.ss
 lib/plt/collects/version/version.scrbl
+lib/plt/collects/web-server/compiled/formlets_ss.dep
+lib/plt/collects/web-server/compiled/formlets_ss.zo
 lib/plt/collects/web-server/compiled/gui_ss.dep
 lib/plt/collects/web-server/compiled/gui_ss.zo
 lib/plt/collects/web-server/compiled/info_ss.dep
@@ -9023,6 +9417,7 @@ lib/plt/collects/web-server/default-web-root/htdocs/Defaults/documentation/terms
 lib/plt/collects/web-server/default-web-root/htdocs/Defaults/documentation/terms/waiting.html
 lib/plt/collects/web-server/default-web-root/htdocs/Defaults/documentation/web-server.gif
 lib/plt/collects/web-server/default-web-root/htdocs/Defaults/index.html
+lib/plt/collects/web-server/default-web-root/htdocs/error.css
 lib/plt/collects/web-server/default-web-root/htdocs/index.html
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add-param.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add-simple.ss
@@ -9031,7 +9426,6 @@ lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add01.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add02.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add03.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add04.ss
-lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add05.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/add06.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/check-dir.ss
 lib/plt/collects/web-server/default-web-root/htdocs/lang-servlets/mm00.ss
@@ -9059,6 +9453,8 @@ lib/plt/collects/web-server/default-web-root/servlets/examples/english-measure-q
 lib/plt/collects/web-server/default-web-root/servlets/examples/error.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/hello.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/quiz.ss
+lib/plt/collects/web-server/default-web-root/servlets/examples/wc-fake.ss
+lib/plt/collects/web-server/default-web-root/servlets/examples/wc.ss
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-files_ss.dep
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-files_ss.zo
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-filter_ss.dep
@@ -9101,8 +9497,30 @@ lib/plt/collects/web-server/dispatchers/dispatch-stat.ss
 lib/plt/collects/web-server/dispatchers/dispatch-timeout.ss
 lib/plt/collects/web-server/dispatchers/dispatch.ss
 lib/plt/collects/web-server/dispatchers/filesystem-map.ss
+lib/plt/collects/web-server/formlets.ss
+lib/plt/collects/web-server/formlets/compiled/date_ss.dep
+lib/plt/collects/web-server/formlets/compiled/date_ss.zo
+lib/plt/collects/web-server/formlets/compiled/input_ss.dep
+lib/plt/collects/web-server/formlets/compiled/input_ss.zo
+lib/plt/collects/web-server/formlets/compiled/lib_ss.dep
+lib/plt/collects/web-server/formlets/compiled/lib_ss.zo
+lib/plt/collects/web-server/formlets/compiled/servlet_ss.dep
+lib/plt/collects/web-server/formlets/compiled/servlet_ss.zo
+lib/plt/collects/web-server/formlets/compiled/syntax_ss.dep
+lib/plt/collects/web-server/formlets/compiled/syntax_ss.zo
+lib/plt/collects/web-server/formlets/date.ss
+lib/plt/collects/web-server/formlets/input.ss
+lib/plt/collects/web-server/formlets/lib.ss
+lib/plt/collects/web-server/formlets/servlet.ss
+lib/plt/collects/web-server/formlets/syntax.ss
 lib/plt/collects/web-server/gui.ss
 lib/plt/collects/web-server/info.ss
+lib/plt/collects/web-server/insta/compiled/insta_ss.dep
+lib/plt/collects/web-server/insta/compiled/insta_ss.zo
+lib/plt/collects/web-server/insta/insta.ss
+lib/plt/collects/web-server/insta/lang/compiled/reader_ss.dep
+lib/plt/collects/web-server/insta/lang/compiled/reader_ss.zo
+lib/plt/collects/web-server/insta/lang/reader.ss
 lib/plt/collects/web-server/lang.ss
 lib/plt/collects/web-server/lang/abort-resume.ss
 lib/plt/collects/web-server/lang/anormal.ss
@@ -9118,8 +9536,6 @@ lib/plt/collects/web-server/lang/compiled/elim-letrec_ss.dep
 lib/plt/collects/web-server/lang/compiled/elim-letrec_ss.zo
 lib/plt/collects/web-server/lang/compiled/file-box_ss.dep
 lib/plt/collects/web-server/lang/compiled/file-box_ss.zo
-lib/plt/collects/web-server/lang/compiled/freevars_ss.dep
-lib/plt/collects/web-server/lang/compiled/freevars_ss.zo
 lib/plt/collects/web-server/lang/compiled/labels_ss.dep
 lib/plt/collects/web-server/lang/compiled/labels_ss.zo
 lib/plt/collects/web-server/lang/compiled/lang-api_ss.dep
@@ -9144,7 +9560,6 @@ lib/plt/collects/web-server/lang/defun.ss
 lib/plt/collects/web-server/lang/elim-callcc.ss
 lib/plt/collects/web-server/lang/elim-letrec.ss
 lib/plt/collects/web-server/lang/file-box.ss
-lib/plt/collects/web-server/lang/freevars.ss
 lib/plt/collects/web-server/lang/labels.ss
 lib/plt/collects/web-server/lang/lang-api.ss
 lib/plt/collects/web-server/lang/reader.ss
@@ -9184,8 +9599,12 @@ lib/plt/collects/web-server/private/compiled/dispatch-server-sig_ss.dep
 lib/plt/collects/web-server/private/compiled/dispatch-server-sig_ss.zo
 lib/plt/collects/web-server/private/compiled/dispatch-server-unit_ss.dep
 lib/plt/collects/web-server/private/compiled/dispatch-server-unit_ss.zo
+lib/plt/collects/web-server/private/compiled/gzip_ss.dep
+lib/plt/collects/web-server/private/compiled/gzip_ss.zo
 lib/plt/collects/web-server/private/compiled/launch_ss.dep
 lib/plt/collects/web-server/private/compiled/launch_ss.zo
+lib/plt/collects/web-server/private/compiled/md5-store_ss.dep
+lib/plt/collects/web-server/private/compiled/md5-store_ss.zo
 lib/plt/collects/web-server/private/compiled/mime-types_ss.dep
 lib/plt/collects/web-server/private/compiled/mime-types_ss.zo
 lib/plt/collects/web-server/private/compiled/mod-map_ss.dep
@@ -9217,7 +9636,9 @@ lib/plt/collects/web-server/private/connection-manager.ss
 lib/plt/collects/web-server/private/define-closure.ss
 lib/plt/collects/web-server/private/dispatch-server-sig.ss
 lib/plt/collects/web-server/private/dispatch-server-unit.ss
+lib/plt/collects/web-server/private/gzip.ss
 lib/plt/collects/web-server/private/launch.ss
+lib/plt/collects/web-server/private/md5-store.ss
 lib/plt/collects/web-server/private/mime-types.ss
 lib/plt/collects/web-server/private/mod-map.ss
 lib/plt/collects/web-server/private/request-structs.ss
@@ -9242,6 +9663,8 @@ lib/plt/collects/web-server/scribblings/compiled/dummy-servlet_ss.dep
 lib/plt/collects/web-server/scribblings/compiled/dummy-servlet_ss.zo
 lib/plt/collects/web-server/scribblings/compiled/faq_scrbl.dep
 lib/plt/collects/web-server/scribblings/compiled/faq_scrbl.zo
+lib/plt/collects/web-server/scribblings/compiled/formlets_scrbl.dep
+lib/plt/collects/web-server/scribblings/compiled/formlets_scrbl.zo
 lib/plt/collects/web-server/scribblings/compiled/lang_scrbl.dep
 lib/plt/collects/web-server/scribblings/compiled/lang_scrbl.zo
 lib/plt/collects/web-server/scribblings/compiled/managers_scrbl.dep
@@ -9267,12 +9690,50 @@ lib/plt/collects/web-server/scribblings/dispatchers.scrbl
 lib/plt/collects/web-server/scribblings/dummy-language-servlet.ss
 lib/plt/collects/web-server/scribblings/dummy-servlet.ss
 lib/plt/collects/web-server/scribblings/faq.scrbl
+lib/plt/collects/web-server/scribblings/formlets.scrbl
 lib/plt/collects/web-server/scribblings/lang.scrbl
 lib/plt/collects/web-server/scribblings/managers.scrbl
 lib/plt/collects/web-server/scribblings/private.scrbl
 lib/plt/collects/web-server/scribblings/running.scrbl
 lib/plt/collects/web-server/scribblings/servlet-env.scrbl
 lib/plt/collects/web-server/scribblings/servlet.scrbl
+lib/plt/collects/web-server/scribblings/tutorial/compiled/continue_scrbl.dep
+lib/plt/collects/web-server/scribblings/tutorial/compiled/continue_scrbl.zo
+lib/plt/collects/web-server/scribblings/tutorial/compiled/dummy-sqlite_ss.dep
+lib/plt/collects/web-server/scribblings/tutorial/compiled/dummy-sqlite_ss.zo
+lib/plt/collects/web-server/scribblings/tutorial/compiled/tutorial-util_ss.dep
+lib/plt/collects/web-server/scribblings/tutorial/compiled/tutorial-util_ss.zo
+lib/plt/collects/web-server/scribblings/tutorial/continue.scrbl
+lib/plt/collects/web-server/scribblings/tutorial/dummy-sqlite.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/dummy-10.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/dummy-3.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/htdocs/test-static.css
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-1.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-10.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-2.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-3.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-4.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-5.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-6.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-7.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-8.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-9.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/iteration-9s.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/model-2.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/model-3.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/model.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/no-use-redirect.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/send-suspend-1.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/send-suspend-2.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/test-static.ss
+lib/plt/collects/web-server/scribblings/tutorial/examples/use-redirect.ss
+lib/plt/collects/web-server/scribblings/tutorial/images/flow1.dia
+lib/plt/collects/web-server/scribblings/tutorial/images/flow1.png
+lib/plt/collects/web-server/scribblings/tutorial/images/flow2.dia
+lib/plt/collects/web-server/scribblings/tutorial/images/flow2.png
+lib/plt/collects/web-server/scribblings/tutorial/images/flow3.dia
+lib/plt/collects/web-server/scribblings/tutorial/images/flow3.png
+lib/plt/collects/web-server/scribblings/tutorial/tutorial-util.ss
 lib/plt/collects/web-server/scribblings/web-config-unit.scrbl
 lib/plt/collects/web-server/scribblings/web-server-unit.scrbl
 lib/plt/collects/web-server/scribblings/web-server.scrbl
@@ -9300,47 +9761,12 @@ lib/plt/collects/web-server/servlet/servlet-structs.ss
 lib/plt/collects/web-server/servlet/servlet-url.ss
 lib/plt/collects/web-server/servlet/web-cells.ss
 lib/plt/collects/web-server/servlet/web.ss
-lib/plt/collects/web-server/tests/all-web-server-tests.ss
-lib/plt/collects/web-server/tests/configuration/all-configuration-tests.ss
-lib/plt/collects/web-server/tests/configuration/configuration-table-test.ss
-lib/plt/collects/web-server/tests/dispatchers/all-dispatchers-tests.ss
-lib/plt/collects/web-server/tests/dispatchers/dispatch-files-test.ss
-lib/plt/collects/web-server/tests/dispatchers/dispatch-host-test.ss
-lib/plt/collects/web-server/tests/dispatchers/dispatch-lang-test.ss
-lib/plt/collects/web-server/tests/dispatchers/dispatch-passwords-test.ss
-lib/plt/collects/web-server/tests/dispatchers/dispatch-servlets-test.ss
-lib/plt/collects/web-server/tests/dispatchers/filesystem-map-test.ss
-lib/plt/collects/web-server/tests/info.ss
-lib/plt/collects/web-server/tests/lang-test.ss
-lib/plt/collects/web-server/tests/lang/all-lang-tests.ss
-lib/plt/collects/web-server/tests/lang/anormal-test.ss
-lib/plt/collects/web-server/tests/lang/defun-test.ss
-lib/plt/collects/web-server/tests/lang/file-box-test.ss
-lib/plt/collects/web-server/tests/lang/labels-test.ss
-lib/plt/collects/web-server/tests/lang/stuff-url-test.ss
-lib/plt/collects/web-server/tests/lang/web-param-test.ss
-lib/plt/collects/web-server/tests/managers/all-managers-tests.ss
-lib/plt/collects/web-server/tests/private/all-private-tests.ss
-lib/plt/collects/web-server/tests/private/cache-table-test.ss
-lib/plt/collects/web-server/tests/private/connection-manager-test.ss
-lib/plt/collects/web-server/tests/private/define-closure-test.ss
-lib/plt/collects/web-server/tests/private/mime-types-test.ss
-lib/plt/collects/web-server/tests/private/mod-map-test.ss
-lib/plt/collects/web-server/tests/private/request-test.ss
-lib/plt/collects/web-server/tests/private/response-test.ss
-lib/plt/collects/web-server/tests/private/session-test.ss
-lib/plt/collects/web-server/tests/private/url-param-test.ss
-lib/plt/collects/web-server/tests/private/util-test.ss
-lib/plt/collects/web-server/tests/run
-lib/plt/collects/web-server/tests/run-all-tests.ss
-lib/plt/collects/web-server/tests/servlet-env-test.ss
-lib/plt/collects/web-server/tests/servlet/all-servlet-tests.ss
-lib/plt/collects/web-server/tests/servlet/basic-auth-test.ss
-lib/plt/collects/web-server/tests/servlet/bindings-test.ss
-lib/plt/collects/web-server/tests/servlet/helpers-test.ss
-lib/plt/collects/web-server/tests/servlet/servlet-url-test.ss
-lib/plt/collects/web-server/tests/servlet/web-test.ss
-lib/plt/collects/web-server/tests/util.ss
+lib/plt/collects/web-server/template/examples/basic.html
+lib/plt/collects/web-server/template/examples/compiled/run_ss.dep
+lib/plt/collects/web-server/template/examples/compiled/run_ss.zo
+lib/plt/collects/web-server/template/examples/if.html
+lib/plt/collects/web-server/template/examples/run.ss
+lib/plt/collects/web-server/template/examples/static.html
 lib/plt/collects/web-server/web-config-sig.ss
 lib/plt/collects/web-server/web-config-unit.ss
 lib/plt/collects/web-server/web-server-sig.ss
@@ -9469,11 +9895,19 @@ share/plt/doc/cffi/out.sxref
 share/plt/doc/config/in.sxref
 share/plt/doc/config/index.html
 share/plt/doc/config/out.sxref
+share/plt/doc/continue/flow1.png
+share/plt/doc/continue/flow2.png
+share/plt/doc/continue/flow3.png
+share/plt/doc/continue/in.sxref
+share/plt/doc/continue/index.html
+share/plt/doc/continue/out.sxref
 share/plt/doc/doc-license.txt
 share/plt/doc/drscheme/Graphical_Syntax.html
 share/plt/doc/drscheme/Interface_Reference.html
 share/plt/doc/drscheme/Keyboard_Shortcuts.html
 share/plt/doc/drscheme/Menus.html
+share/plt/doc/drscheme/Searching.html
+share/plt/doc/drscheme/Tabbed_Editing.html
 share/plt/doc/drscheme/buttons.html
 share/plt/doc/drscheme/choose-language.html
 share/plt/doc/drscheme/create-exe.html
@@ -9540,6 +9974,7 @@ share/plt/doc/errortrace/out.sxref
 share/plt/doc/errortrace/quick-instructions.html
 share/plt/doc/errortrace/stacktrace.html
 share/plt/doc/errortrace/using-errortrace.html
+share/plt/doc/file/doc-bibliography.html
 share/plt/doc/file/doc-index.html
 share/plt/doc/file/gif.html
 share/plt/doc/file/gunzip.html
@@ -9613,6 +10048,8 @@ share/plt/doc/games/aces.png
 share/plt/doc/games/blackjack.html
 share/plt/doc/games/blackjack.png
 share/plt/doc/games/bundled.html
+share/plt/doc/games/chat-noir.html
+share/plt/doc/games/chat-noir.png
 share/plt/doc/games/checkers.html
 share/plt/doc/games/checkers.png
 share/plt/doc/games/crazy8s.html
@@ -9704,6 +10141,7 @@ share/plt/doc/gui/cursor_.html
 share/plt/doc/gui/dc-path_.html
 share/plt/doc/gui/dc___.html
 share/plt/doc/gui/dialog_.html
+share/plt/doc/gui/doc-bibliography.html
 share/plt/doc/gui/doc-index.html
 share/plt/doc/gui/drawing-overview.html
 share/plt/doc/gui/editor-admin_.html
@@ -9804,7 +10242,6 @@ share/plt/doc/guide/Looking_Ahead_and_Behind.html
 share/plt/doc/guide/Module_Syntax.html
 share/plt/doc/guide/More_Libraries.html
 share/plt/doc/guide/Pairs__Lists__and_Scheme_Syntax.html
-share/plt/doc/guide/Pairs_and_Lists.html
 share/plt/doc/guide/Quasiquoting__quasiquote_and__.html
 share/plt/doc/guide/Reading_and_Writing_Scheme_Data.html
 share/plt/doc/guide/Signatures_and_Units.html
@@ -9861,6 +10298,7 @@ share/plt/doc/guide/modules.html
 share/plt/doc/guide/mzscheme.html
 share/plt/doc/guide/numbers.html
 share/plt/doc/guide/out.sxref
+share/plt/doc/guide/pairs.html
 share/plt/doc/guide/pattern-macros.html
 share/plt/doc/guide/performance.html
 share/plt/doc/guide/proc-macros.html
@@ -10046,6 +10484,7 @@ share/plt/doc/make/overview.html
 share/plt/doc/make/setup-extension.html
 share/plt/doc/master-index/aces.png
 share/plt/doc/master-index/blackjack.png
+share/plt/doc/master-index/chat-noir.png
 share/plt/doc/master-index/checkers.png
 share/plt/doc/master-index/crazy8s.png
 share/plt/doc/master-index/gcalc.png
@@ -10082,7 +10521,8 @@ share/plt/doc/mrlib/Acknowledgments.html
 share/plt/doc/mrlib/Aligned_Pasteboard.html
 share/plt/doc/mrlib/Bitmap_Label.html
 share/plt/doc/mrlib/Cache-image_Snip.html
-share/plt/doc/mrlib/GIF_and_Animated_GFI_Writing.html
+share/plt/doc/mrlib/Close_Icon.html
+share/plt/doc/mrlib/GIF_and_Animated_GIF_Writing.html
 share/plt/doc/mrlib/Graph_Functions.html
 share/plt/doc/mrlib/Graphs.html
 share/plt/doc/mrlib/Hierarchical_List_Control.html
@@ -10093,6 +10533,7 @@ share/plt/doc/mrlib/Path_Dialog.html
 share/plt/doc/mrlib/Plot.html
 share/plt/doc/mrlib/Snips_in_a_hierarchical-list__Instance.html
 share/plt/doc/mrlib/Switchable_Button.html
+share/plt/doc/mrlib/TeX_Table.html
 share/plt/doc/mrlib/aligned-editor-canvas_.html
 share/plt/doc/mrlib/aligned-editor-snip_.html
 share/plt/doc/mrlib/aligned-pasteboard-parent___.html
@@ -10134,6 +10575,7 @@ share/plt/doc/mzc/Running_mzc.html
 share/plt/doc/mzc/Scheme_API_for_Compilation.html
 share/plt/doc/mzc/c-mods.html
 share/plt/doc/mzc/cc.html
+share/plt/doc/mzc/decompile.html
 share/plt/doc/mzc/doc-index.html
 share/plt/doc/mzc/exe-dist.html
 share/plt/doc/mzc/exe.html
@@ -10512,6 +10954,18 @@ share/plt/doc/r6rs/out.sxref
 share/plt/doc/readline/in.sxref
 share/plt/doc/readline/index.html
 share/plt/doc/readline/out.sxref
+share/plt/doc/redex/GUI.html
+share/plt/doc/redex/Languages.html
+share/plt/doc/redex/Metafunctions.html
+share/plt/doc/redex/Patterns.html
+share/plt/doc/redex/Reduction_Relations.html
+share/plt/doc/redex/Terms.html
+share/plt/doc/redex/Testing.html
+share/plt/doc/redex/Typesetting.html
+share/plt/doc/redex/doc-index.html
+share/plt/doc/redex/in.sxref
+share/plt/doc/redex/index.html
+share/plt/doc/redex/out.sxref
 share/plt/doc/reference/Attaching_Contracts_to_Values.html
 share/plt/doc/reference/Building_New_Contract_Combinators.html
 share/plt/doc/reference/Byte_and_String_Input.html
@@ -10606,6 +11060,7 @@ share/plt/doc/reference/linecol.html
 share/plt/doc/reference/linkinference.html
 share/plt/doc/reference/load-lang.html
 share/plt/doc/reference/local.html
+share/plt/doc/reference/logging.html
 share/plt/doc/reference/magnify.png
 share/plt/doc/reference/match.html
 share/plt/doc/reference/memory.html
@@ -10620,6 +11075,7 @@ share/plt/doc/reference/nest.html
 share/plt/doc/reference/networking.html
 share/plt/doc/reference/numbers.html
 share/plt/doc/reference/objcreation.html
+share/plt/doc/reference/objectprinting.html
 share/plt/doc/reference/objectserialize.html
 share/plt/doc/reference/objectutils.html
 share/plt/doc/reference/os.html
@@ -10742,6 +11198,7 @@ share/plt/doc/scribble/struct.html
 share/plt/doc/scribble/xref.html
 share/plt/doc/search/aces.png
 share/plt/doc/search/blackjack.png
+share/plt/doc/search/chat-noir.png
 share/plt/doc/search/checkers.png
 share/plt/doc/search/crazy8s.png
 share/plt/doc/search/gcalc.png
@@ -10760,6 +11217,7 @@ share/plt/doc/search/parcheesi.png
 share/plt/doc/search/plt-index.js
 share/plt/doc/search/pousse.png
 share/plt/doc/search/same.png
+share/plt/doc/search/search-context.html
 share/plt/doc/search/search.js
 share/plt/doc/search/slidey.png
 share/plt/doc/search/spider.png
@@ -10951,6 +11409,8 @@ share/plt/doc/teachpack/colors.html
 share/plt/doc/teachpack/convert.html
 share/plt/doc/teachpack/dir.html
 share/plt/doc/teachpack/docs.html
+share/plt/doc/teachpack/door-real.png
+share/plt/doc/teachpack/door-sim.png
 share/plt/doc/teachpack/draw.html
 share/plt/doc/teachpack/elevator.html
 share/plt/doc/teachpack/geometry.html
@@ -10965,9 +11425,11 @@ share/plt/doc/teachpack/image.html
 share/plt/doc/teachpack/in.sxref
 share/plt/doc/teachpack/index.html
 share/plt/doc/teachpack/master.html
+share/plt/doc/teachpack/matrix.html
 share/plt/doc/teachpack/out.sxref
 share/plt/doc/teachpack/show-queen.html
 share/plt/doc/teachpack/world.html
+share/plt/doc/teachpack/world.png
 share/plt/doc/test-box-recovery/in.sxref
 share/plt/doc/test-box-recovery/index.html
 share/plt/doc/test-box-recovery/out.sxref
@@ -11006,7 +11468,11 @@ share/plt/doc/typed-scheme/out.sxref
 share/plt/doc/version/in.sxref
 share/plt/doc/version/index.html
 share/plt/doc/version/out.sxref
+share/plt/doc/web-server/Basic_Formlet_Usage.html
+share/plt/doc/web-server/Functional_Usage.html
+share/plt/doc/web-server/Syntactic_Shorthand.html
 share/plt/doc/web-server/Troubleshooting.html
+share/plt/doc/web-server/Utilities.html
 share/plt/doc/web-server/ack.html
 share/plt/doc/web-server/basic-auth_ss.html
 share/plt/doc/web-server/bindings_ss.html
@@ -11035,9 +11501,12 @@ share/plt/doc/web-server/dispatch_ss.html
 share/plt/doc/web-server/dispatchers.html
 share/plt/doc/web-server/doc-index.html
 share/plt/doc/web-server/filesystem-map_ss.html
+share/plt/doc/web-server/formlets.html
 share/plt/doc/web-server/helpers_ss.html
 share/plt/doc/web-server/in.sxref
 share/plt/doc/web-server/index.html
+share/plt/doc/web-server/input-formlets.html
+share/plt/doc/web-server/insta.html
 share/plt/doc/web-server/lang-servlets.html
 share/plt/doc/web-server/lang.html
 share/plt/doc/web-server/lang_file-box_ss.html
@@ -11108,6 +11577,7 @@ share/plt/doc/xml/out.sxref
 @dirrm share/plt/doc/release-notes
 @dirrm share/plt/doc/release
 @dirrm share/plt/doc/reference
+@dirrm share/plt/doc/redex
 @dirrm share/plt/doc/readline
 @dirrm share/plt/doc/r6rs-std
 @dirrm share/plt/doc/r6rs-lib-std
@@ -11153,6 +11623,7 @@ share/plt/doc/xml/out.sxref
 @dirrm share/plt/doc/embedded-gui
 @dirrm share/plt/doc/dynext
 @dirrm share/plt/doc/drscheme
+@dirrm share/plt/doc/continue
 @dirrm share/plt/doc/config
 @dirrm share/plt/doc/cffi
 @dirrm share/plt/doc/cards
@@ -11169,15 +11640,16 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/wxme/private
 @dirrm lib/plt/collects/wxme/compiled
 @dirrm lib/plt/collects/wxme
-@dirrm lib/plt/collects/web-server/tests/servlet
-@dirrm lib/plt/collects/web-server/tests/private
-@dirrm lib/plt/collects/web-server/tests/managers
-@dirrm lib/plt/collects/web-server/tests/lang
-@dirrm lib/plt/collects/web-server/tests/dispatchers
-@dirrm lib/plt/collects/web-server/tests/configuration
-@dirrm lib/plt/collects/web-server/tests
+@dirrm lib/plt/collects/web-server/template/examples/compiled
+@dirrm lib/plt/collects/web-server/template/examples
+@dirrm lib/plt/collects/web-server/template
 @dirrm lib/plt/collects/web-server/servlet/compiled
 @dirrm lib/plt/collects/web-server/servlet
+@dirrm lib/plt/collects/web-server/scribblings/tutorial/images
+@dirrm lib/plt/collects/web-server/scribblings/tutorial/examples/htdocs
+@dirrm lib/plt/collects/web-server/scribblings/tutorial/examples
+@dirrm lib/plt/collects/web-server/scribblings/tutorial/compiled
+@dirrm lib/plt/collects/web-server/scribblings/tutorial
 @dirrm lib/plt/collects/web-server/scribblings/compiled
 @dirrm lib/plt/collects/web-server/scribblings
 @dirrm lib/plt/collects/web-server/private/compiled
@@ -11186,6 +11658,12 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/web-server/managers
 @dirrm lib/plt/collects/web-server/lang/compiled
 @dirrm lib/plt/collects/web-server/lang
+@dirrm lib/plt/collects/web-server/insta/lang/compiled
+@dirrm lib/plt/collects/web-server/insta/lang
+@dirrm lib/plt/collects/web-server/insta/compiled
+@dirrm lib/plt/collects/web-server/insta
+@dirrm lib/plt/collects/web-server/formlets/compiled
+@dirrm lib/plt/collects/web-server/formlets
 @dirrm lib/plt/collects/web-server/dispatchers/compiled
 @dirrm lib/plt/collects/web-server/dispatchers
 @dirrm lib/plt/collects/web-server/default-web-root/servlets/examples
@@ -11205,10 +11683,23 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/web-server
 @dirrm lib/plt/collects/version/compiled
 @dirrm lib/plt/collects/version
+@dirrm lib/plt/collects/typed-scheme/utils/compiled
+@dirrm lib/plt/collects/typed-scheme/utils
+@dirrm lib/plt/collects/typed-scheme/typecheck/compiled
+@dirrm lib/plt/collects/typed-scheme/typecheck
+@dirrm lib/plt/collects/typed-scheme/rep/compiled
+@dirrm lib/plt/collects/typed-scheme/rep
 @dirrm lib/plt/collects/typed-scheme/private/compiled
 @dirrm lib/plt/collects/typed-scheme/private
+@dirrm lib/plt/collects/typed-scheme/no-check/lang/compiled
+@dirrm lib/plt/collects/typed-scheme/no-check/lang
+@dirrm lib/plt/collects/typed-scheme/no-check
 @dirrm lib/plt/collects/typed-scheme/lang/compiled
 @dirrm lib/plt/collects/typed-scheme/lang
+@dirrm lib/plt/collects/typed-scheme/infer/compiled
+@dirrm lib/plt/collects/typed-scheme/infer
+@dirrm lib/plt/collects/typed-scheme/env/compiled
+@dirrm lib/plt/collects/typed-scheme/env
 @dirrm lib/plt/collects/typed-scheme/compiled
 @dirrm lib/plt/collects/typed-scheme
 @dirrm lib/plt/collects/trace/scribblings/compiled
@@ -11221,22 +11712,12 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/texpict
 @dirrm lib/plt/collects/tex2page/compiled
 @dirrm lib/plt/collects/tex2page
-@dirrm lib/plt/collects/tests/web-server/web-root/servlets/tests
-@dirrm lib/plt/collects/tests/web-server/web-root/servlets
-@dirrm lib/plt/collects/tests/web-server/web-root/htdocs/secret
-@dirrm lib/plt/collects/tests/web-server/web-root/htdocs
-@dirrm lib/plt/collects/tests/web-server/web-root/conf
-@dirrm lib/plt/collects/tests/web-server/web-root
-@dirrm lib/plt/collects/tests/web-server/servlets
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root/servlets
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/servlet-output
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs/secret
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root/htdocs
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root/conf
-@dirrm lib/plt/collects/tests/web-server/scheme-units/test-web-root
-@dirrm lib/plt/collects/tests/web-server/scheme-units
-@dirrm lib/plt/collects/tests/web-server/new
-@dirrm lib/plt/collects/tests/web-server/answers
+@dirrm lib/plt/collects/tests/web-server/servlet
+@dirrm lib/plt/collects/tests/web-server/private
+@dirrm lib/plt/collects/tests/web-server/managers
+@dirrm lib/plt/collects/tests/web-server/lang
+@dirrm lib/plt/collects/tests/web-server/dispatchers
+@dirrm lib/plt/collects/tests/web-server/configuration
 @dirrm lib/plt/collects/tests/web-server
 @dirrm lib/plt/collects/tests/utils/compiled
 @dirrm lib/plt/collects/tests/utils
@@ -11258,13 +11739,23 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/tests/srfi/13
 @dirrm lib/plt/collects/tests/srfi/1
 @dirrm lib/plt/collects/tests/srfi
+@dirrm lib/plt/collects/tests/scribble/text/compiled
+@dirrm lib/plt/collects/tests/scribble/text
+@dirrm lib/plt/collects/tests/scribble/compiled
+@dirrm lib/plt/collects/tests/scribble
+@dirrm lib/plt/collects/tests/r6rs/run/records
+@dirrm lib/plt/collects/tests/r6rs/run/io
+@dirrm lib/plt/collects/tests/r6rs/run/arithmetic
+@dirrm lib/plt/collects/tests/r6rs/run
 @dirrm lib/plt/collects/tests/r6rs/records
 @dirrm lib/plt/collects/tests/r6rs/io
+@dirrm lib/plt/collects/tests/r6rs/contrib
 @dirrm lib/plt/collects/tests/r6rs/arithmetic
 @dirrm lib/plt/collects/tests/r6rs
 @dirrm lib/plt/collects/tests/profj
 @dirrm lib/plt/collects/tests/plot
 @dirrm lib/plt/collects/tests/mzscheme/ttt
+@dirrm lib/plt/collects/tests/mzscheme/lang
 @dirrm lib/plt/collects/tests/mzscheme/benchmarks/shootout
 @dirrm lib/plt/collects/tests/mzscheme/benchmarks/rx
 @dirrm lib/plt/collects/tests/mzscheme/benchmarks/mz
@@ -11278,6 +11769,8 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/tests/match
 @dirrm lib/plt/collects/tests/macro-debugger/tests
 @dirrm lib/plt/collects/tests/macro-debugger
+@dirrm lib/plt/collects/tests/lazy/compiled
+@dirrm lib/plt/collects/tests/lazy
 @dirrm lib/plt/collects/tests/framework/compiled
 @dirrm lib/plt/collects/tests/framework
 @dirrm lib/plt/collects/tests/drscheme/compiled
@@ -11363,6 +11856,8 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/srfi/45
 @dirrm lib/plt/collects/srfi/43/compiled
 @dirrm lib/plt/collects/srfi/43
+@dirrm lib/plt/collects/srfi/42ref/compiled
+@dirrm lib/plt/collects/srfi/42ref
 @dirrm lib/plt/collects/srfi/42/compiled
 @dirrm lib/plt/collects/srfi/42
 @dirrm lib/plt/collects/srfi/41/compiled
@@ -11470,6 +11965,7 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/scribblings
 @dirrm lib/plt/collects/scribble/text/lang/compiled
 @dirrm lib/plt/collects/scribble/text/lang
+@dirrm lib/plt/collects/scribble/text/compiled
 @dirrm lib/plt/collects/scribble/text
 @dirrm lib/plt/collects/scribble/doc/lang/compiled
 @dirrm lib/plt/collects/scribble/doc/lang
@@ -11514,6 +12010,13 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/rnrs/arithmetic/compiled
 @dirrm lib/plt/collects/rnrs/arithmetic
 @dirrm lib/plt/collects/rnrs
+@dirrm lib/plt/collects/redex/private/compiled
+@dirrm lib/plt/collects/redex/private/bmps
+@dirrm lib/plt/collects/redex/private
+@dirrm lib/plt/collects/redex/examples/compiled
+@dirrm lib/plt/collects/redex/examples
+@dirrm lib/plt/collects/redex/compiled
+@dirrm lib/plt/collects/redex
 @dirrm lib/plt/collects/readline/compiled
 @dirrm lib/plt/collects/readline
 @dirrm lib/plt/collects/r6rs/scribblings/compiled
@@ -11571,6 +12074,7 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/parser-tools/private-yacc
 @dirrm lib/plt/collects/parser-tools/private-lex/compiled
 @dirrm lib/plt/collects/parser-tools/private-lex
+@dirrm lib/plt/collects/parser-tools/examples/compiled
 @dirrm lib/plt/collects/parser-tools/examples
 @dirrm lib/plt/collects/parser-tools/compiled
 @dirrm lib/plt/collects/parser-tools
@@ -11613,6 +12117,8 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/mrlib/private/aligned-pasteboard/compiled
 @dirrm lib/plt/collects/mrlib/private/aligned-pasteboard
 @dirrm lib/plt/collects/mrlib/private
+@dirrm lib/plt/collects/mrlib/hierlist/compiled
+@dirrm lib/plt/collects/mrlib/hierlist
 @dirrm lib/plt/collects/mrlib/compiled
 @dirrm lib/plt/collects/mrlib
 @dirrm lib/plt/collects/mred/private/compiled
@@ -11728,6 +12234,8 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/games/compiled
 @dirrm lib/plt/collects/games/checkers/compiled
 @dirrm lib/plt/collects/games/checkers
+@dirrm lib/plt/collects/games/chat-noir/compiled
+@dirrm lib/plt/collects/games/chat-noir
 @dirrm lib/plt/collects/games/cards/locolor
 @dirrm lib/plt/collects/games/cards/hicolor
 @dirrm lib/plt/collects/games/cards/compiled
@@ -11737,6 +12245,9 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/games/aces/compiled
 @dirrm lib/plt/collects/games/aces
 @dirrm lib/plt/collects/games
+@dirrm lib/plt/collects/frtime/reactive/lang/compiled
+@dirrm lib/plt/collects/frtime/reactive/lang
+@dirrm lib/plt/collects/frtime/reactive
 @dirrm lib/plt/collects/frtime/private/compiled
 @dirrm lib/plt/collects/frtime/private
 @dirrm lib/plt/collects/frtime/lang/compiled
@@ -11753,6 +12264,8 @@ share/plt/doc/xml/out.sxref
 @dirrm lib/plt/collects/framework
 @dirrm lib/plt/collects/file/scribblings/compiled
 @dirrm lib/plt/collects/file/scribblings
+@dirrm lib/plt/collects/file/private/compiled
+@dirrm lib/plt/collects/file/private
 @dirrm lib/plt/collects/file/compiled
 @dirrm lib/plt/collects/file
 @dirrm lib/plt/collects/ffi/examples
