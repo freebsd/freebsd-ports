@@ -1,0 +1,22 @@
+%%SITE_PERL%%/IO/Lambda.pm
+%%SITE_PERL%%/IO/Lambda/DBI.pm
+%%SITE_PERL%%/IO/Lambda/DNS.pm
+%%SITE_PERL%%/IO/Lambda/Fork.pm
+%%SITE_PERL%%/IO/Lambda/HTTP.pm
+%%SITE_PERL%%/IO/Lambda/HTTP/Authen/NTLM.pm
+%%SITE_PERL%%/IO/Lambda/HTTP/Authen/Negotiate.pm
+%%SITE_PERL%%/IO/Lambda/HTTPS.pm
+%%SITE_PERL%%/IO/Lambda/Loop/AnyEvent.pm
+%%SITE_PERL%%/IO/Lambda/Loop/Prima.pm
+%%SITE_PERL%%/IO/Lambda/Loop/Select.pm
+%%SITE_PERL%%/IO/Lambda/Message.pm
+%%SITE_PERL%%/IO/Lambda/SNMP.pm
+%%SITE_PERL%%/IO/Lambda/Signal.pm
+%%SITE_PERL%%/IO/Lambda/Socket.pm
+%%SITE_PERL%%/IO/Lambda/Thread.pm
+%%SITE_PERL%%/mach/auto/IO/Lambda/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/IO/Lambda
+@dirrm %%SITE_PERL%%/IO/Lambda/Loop
+@dirrm %%SITE_PERL%%/IO/Lambda/HTTP/Authen
+@dirrm %%SITE_PERL%%/IO/Lambda/HTTP
+@dirrm %%SITE_PERL%%/IO/Lambda
