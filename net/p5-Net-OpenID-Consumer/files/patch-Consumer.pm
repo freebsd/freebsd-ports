@@ -1,6 +1,6 @@
---- Consumer.pm	2007-08-04 02:38:53.000000000 +0400
-+++ lib/Net/OpenID/Consumer.pm	2008-06-04 19:10:37.000000000 +0400
-@@ -235,7 +235,7 @@
+--- lib/Net/OpenID/Consumer.pm.orig	2008-10-14 12:38:16.000000000 +0800
++++ lib/Net/OpenID/Consumer.pm	2008-11-11 15:20:06.000000000 +0800
+@@ -255,7 +255,7 @@
          # OpenID servers / delegated identities
          # <link rel="openid.server" href="http://www.livejournal.com/misc/openid.bml" />
          if ($type eq "link" &&
@@ -9,17 +9,7 @@
              $val =~ m!\bhref=[\"\']([^\"\']+)[\"\']!i) {
              $ret->{"openid.$temp"} = $1;
              next;
-@@ -301,7 +301,8 @@
-         $ret->{$k} =~ s/&(\w+);/$emap->{$1} || ""/eg;
-     }
- 
--    $self->_debug("semantic info ($url) = " . join(", ", %$ret));
-+    $self->_debug("semantic info ($url) = " . join(", ", 
-+        map { defined($ret->{$_}) ? ($_ => $ret->{$_}) : () } keys %$ret));
- 
-     return $ret;
- }
-@@ -543,6 +544,7 @@
+@@ -909,6 +909,7 @@
  sub hmac {
      my($data, $key, $hash_func, $block_size) = @_;
      $block_size ||= 64;
