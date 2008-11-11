@@ -213,7 +213,7 @@ post-patch:
 		${WRKSRC}/version.h
 .endif
 
-pre-install:
+pre-su-install:
 .if defined(WITH_OVERWRITE_BASE)
 	@${MKDIR} ${EMPTYDIR}
 .else
