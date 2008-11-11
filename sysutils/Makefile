@@ -227,6 +227,7 @@
     SUBDIR += freesbie
     SUBDIR += freqsdwn
     SUBDIR += fsbackup
+    SUBDIR += fstyp
     SUBDIR += ftrace
     SUBDIR += ftwin
     SUBDIR += fusefs-chironfs
