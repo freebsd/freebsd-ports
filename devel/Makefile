@@ -959,6 +959,7 @@
     SUBDIR += p5-B-Generate
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Hooks-EndOfScope
+    SUBDIR += p5-B-Hooks-OP-Check
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-Size
     SUBDIR += p5-B-Utils
