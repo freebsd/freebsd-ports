@@ -42,6 +42,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/collapse.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_ancount.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_arcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_ns.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_nscount.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_qdcount.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/getflags.al
