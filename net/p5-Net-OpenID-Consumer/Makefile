@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	Net-OpenID-Consumer
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	net security perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -26,7 +24,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::OpenID::Association.3 Net::OpenID::ClaimedIdentity.3 \
-		Net::OpenID::Consumer.3 Net::OpenID::VerifiedIdentity.3
+		Net::OpenID::Consumer.3 Net::OpenID::IndirectMessage.3 \
+    		Net::OpenID::URIFetch.3 Net::OpenID::VerifiedIdentity.3 \
+		Net::OpenID::Yadis.3 Net::OpenID::Yadis::Service.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
