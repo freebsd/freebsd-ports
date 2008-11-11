@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics geography
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dyeske@gmail.com
 COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
