@@ -126,6 +126,7 @@ include/ImageMagick/wand/magick-wand.h
 include/ImageMagick/wand/mogrify.h
 include/ImageMagick/wand/montage.h
 include/ImageMagick/wand/pixel-iterator.h
+include/ImageMagick/wand/pixel-view.h
 include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
 lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
@@ -1315,6 +1316,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/montage.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/paint.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-iterator.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/profile.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/property.html
