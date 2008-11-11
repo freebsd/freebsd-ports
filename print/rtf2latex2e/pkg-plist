@@ -1,0 +1,93 @@
+bin/rtf2latex2e
+%%DATADIR%%/rtf2latex2e.bin
+%%DATADIR%%/INSTALL
+%%DATADIR%%/Unix/Makefile
+%%DATADIR%%/Unix/mkinstalldirs
+%%DATADIR%%/Unix/Makefile.in
+%%DATADIR%%/Unix/install-sh
+%%DATADIR%%/Unix/config.status
+%%DATADIR%%/Unix/config.sub
+%%DATADIR%%/Unix/configure.in
+%%DATADIR%%/Unix/.DS_Store
+%%DATADIR%%/Unix/aclocal.m4
+%%DATADIR%%/Unix/Makefile.in.orig
+%%DATADIR%%/Unix/config.guess
+%%DATADIR%%/Unix/configure
+%%DATADIR%%/src/.DS_Store
+%%DATADIR%%/src/common/jpeg2eps.c
+%%DATADIR%%/src/common/LaTeX2e-writer.c
+%%DATADIR%%/src/common/rtf2LaTeX2e-driver.c
+%%DATADIR%%/src/common/cole/cole.c
+%%DATADIR%%/src/common/cole/internal.c
+%%DATADIR%%/src/common/cole/oledecod.c
+%%DATADIR%%/src/common/cole/version.c.in
+%%DATADIR%%/src/common/cole/support.c
+%%DATADIR%%/src/common/cole/olecod.c
+%%DATADIR%%/src/common/cole/version.c
+%%DATADIR%%/src/common/cole/oledecod.c.orig
+%%DATADIR%%/src/common/.DS_Store
+%%DATADIR%%/src/common/reader.c
+%%DATADIR%%/src/common/figure2eps.c
+%%DATADIR%%/src/common/tokenscan.c
+%%DATADIR%%/src/common/eqn.c
+%%DATADIR%%/src/include/internal.h
+%%DATADIR%%/src/include/rtf-namedef.h
+%%DATADIR%%/src/include/cole.h
+%%DATADIR%%/src/include/rtf-ctrldef.h
+%%DATADIR%%/src/include/eqn.h
+%%DATADIR%%/src/include/.DS_Store
+%%DATADIR%%/src/include/config.h
+%%DATADIR%%/src/include/jpeg2eps.h
+%%DATADIR%%/src/include/stdcharnames.h
+%%DATADIR%%/src/include/support.h
+%%DATADIR%%/src/include/tokenscan.h
+%%DATADIR%%/src/include/config.h.in
+%%DATADIR%%/src/include/rtf2LaTeX2e.h
+%%DATADIR%%/src/include/stamp-h
+%%DATADIR%%/src/include/cole.h.in
+%%DATADIR%%/src/include/rtf.h
+%%DATADIR%%/README
+%%DATADIR%%/examples/table.rtf
+%%DATADIR%%/examples/Equation.rtf
+%%DATADIR%%/examples/JPEG_Image.rtf
+%%DATADIR%%/examples/test.rtf
+%%DATADIR%%/doc/rtfReader.tex
+%%DATADIR%%/doc/rtf2LaTeX2eDoc.dvi
+%%DATADIR%%/doc/rtfReader.pdf
+%%DATADIR%%/doc/rtf2LaTeX2eDoc.tex
+%%DATADIR%%/doc/rtf2LaTeX2eDoc.pdf
+%%DATADIR%%/doc/rtfReader.dvi
+%%DATADIR%%/doc/Release-notes.txt
+%%DATADIR%%/doc/rtf2latex2eSWP.tex
+%%DATADIR%%/doc/rtf2LaTeX2eDoc.html
+%%DATADIR%%/doc/GPL_license
+%%DATADIR%%/pref/TeX-map.cp1252
+%%DATADIR%%/pref/TeX-map.default
+%%DATADIR%%/pref/TeX-map
+%%DATADIR%%/pref/pc-sym
+%%DATADIR%%/pref/cp1254.map
+%%DATADIR%%/pref/cp437.map
+%%DATADIR%%/pref/rtf-ctrl
+%%DATADIR%%/pref/applemac.map
+%%DATADIR%%/pref/r2l-map
+%%DATADIR%%/pref/ansi-sym
+%%DATADIR%%/pref/TeX-map.cp1250
+%%DATADIR%%/pref/mac-sym
+%%DATADIR%%/pref/cp850.map
+%%DATADIR%%/pref/cp1250.map
+%%DATADIR%%/pref/TeX-map.german
+%%DATADIR%%/pref/r2l-pref
+%%DATADIR%%/pref/TeX-map.applemac
+%%DATADIR%%/pref/TeX-map.latin1
+%%DATADIR%%/pref/r2l-head
+%%DATADIR%%/pref/cp1252.map
+%%DATADIR%%/pref/pca-sym
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/src/common/cole
+@dirrm %%DATADIR%%/src/common
+@dirrm %%DATADIR%%/src/include
+@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/Unix
+@dirrm %%DATADIR%%/pref
+@dirrm %%DATADIR%%

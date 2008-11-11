@@ -1,0 +1,5 @@
+rtf2latex2e is a program that translates RTF (rich text format) files into
+LaTeX files. It translates text formatting, tables, figures, and equations.
+The resulting LaTeX files are quite readable and suitable for editing.
+
+WWW: http://sourceforge.net/project/showfiles.php?group_id=22324

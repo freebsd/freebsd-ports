@@ -289,6 +289,7 @@
     SUBDIR += rlpr
     SUBDIR += rprint
     SUBDIR += rtf2latex
+    SUBDIR += rtf2latex2e
     SUBDIR += ruby-gnomeprint
     SUBDIR += ruby-panda
     SUBDIR += ruby-pdflib
