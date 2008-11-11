@@ -39,7 +39,9 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${INSTALLDIR}
 	@${CP} -p ${WRKSRC}/.htpasswd.autoindex ${INSTALLDIR}/.htpasswd.autoindex-dist
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
-	@${CHMOD} -R 644 ${INSTALLDIR}/*
+	@${CHMOD} -R 644 ${INSTALLDIR}/* ${INSTALLDIR}/.htpasswd.autoindex-dist
+	@${CHMOD} 755 ${INSTALLDIR}/classes ${INSTALLDIR}/index_icons ${INSTALLDIR}/languages ${INSTALLDIR}/templates
+	@${CHMOD} 755 ${INSTALLDIR}/index_icons/* ${INSTALLDIR}/templates/default ${INSTALLDIR}/templates/simple_image_gallery
 	@${CHMOD} 664 ${INSTALLDIR}/config.php
 	@${ECHO_CMD} ""
 
