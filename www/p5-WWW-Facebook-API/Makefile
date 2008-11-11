@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Facebook-API
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Facebook::API.3 \
+		WWW::Facebook::API::Admin.3 \
+		WWW::Facebook::API::Application.3 \
 		WWW::Facebook::API::Auth.3 \
 		WWW::Facebook::API::Canvas.3 \
 		WWW::Facebook::API::Data.3 \
@@ -39,6 +41,7 @@ MAN3=		WWW::Facebook::API.3 \
 		WWW::Facebook::API::Pages.3 \
 		WWW::Facebook::API::Photos.3 \
 		WWW::Facebook::API::Profile.3 \
+		WWW::Facebook::API::SMS.3 \
 		WWW::Facebook::API::Users.3
 
 .include <bsd.port.pre.mk>
