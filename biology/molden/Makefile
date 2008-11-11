@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	4.7
+PORTVERSION=	4.6
+PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -14,8 +15,6 @@ DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	oivulf@gmail.com
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
-
-BROKEN=		Does not fetch
 
 USE_XORG=	x11 xmu
 USE_GL=		glut
@@ -27,9 +26,6 @@ MAKEFILE=	${WRKSRC}/makefile
 .if !defined(NOPORTDOCS)
 PORTDOCS=	docs/*
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
 
 post-configure:
 	@${ECHO_MSG} "********************"
@@ -47,9 +43,11 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/share/molden/test
-	${MKDIR} ${PREFIX}/share/molden/utils
-	${INSTALL_DATA} ${WRKSRC}/test/* ${PREFIX}/share/molden/test
-	${INSTALL_DATA} ${WRKSRC}/utils/* ${PREFIX}/share/molden/utils
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}/test
+	${MKDIR} ${DATADIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
+	${INSTALL_DATA} ${WRKSRC}/utils/* ${DATADIR}/utils
+.endif
 
 .include <bsd.port.mk>
