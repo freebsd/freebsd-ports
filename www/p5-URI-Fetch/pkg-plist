@@ -1,4 +1,7 @@
 %%SITE_PERL%%/URI/Fetch.pm
 %%SITE_PERL%%/URI/Fetch/Response.pm
-@dirrm %%SITE_PERL%%/URI/Fetch
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Fetch/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Fetch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
+@dirrmtry %%SITE_PERL%%/URI/Fetch
 @dirrmtry %%SITE_PERL%%/URI
