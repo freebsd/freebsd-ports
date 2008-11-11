@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.11.59
+PORTVERSION=	2.11.63
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
@@ -22,7 +22,7 @@ COMMENT=	The GNU music typesetter
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		pdftexi2dvi:${PORTSDIR}/print/texinfo
+		texi2html:${PORTSDIR}/textproc/texi2html
 LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
@@ -50,6 +50,10 @@ NOCCACHE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_WEBDOCS)
+IGNORE=	documentation is broken. Run make config again and uncheck WEBDOCS
+.endif
 
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm
