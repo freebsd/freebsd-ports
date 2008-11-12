@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.0.3
-PORTREVISION=	2
+PORTVERSION=	1.6.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -260,7 +259,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
 		/git-cvsserver.perl/d; \
-		/documented,gitcvs-migration/d' \
+		/documented,gitcvs-migration/d; \
+		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 .endif
 

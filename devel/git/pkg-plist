@@ -4,6 +4,8 @@ bin/git
 bin/git-upload-pack
 bin/git-receive-pack
 bin/git-upload-archive
+%%CVS%%bin/git-cvsserver
+bin/git-shell
 libexec/git-core/git-add
 libexec/git-core/git-add--interactive
 libexec/git-core/git-am
@@ -490,6 +492,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/i18n.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.5.5.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.0.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.0.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-merge.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-gc.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitattributes.txt
