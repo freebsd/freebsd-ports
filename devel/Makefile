@@ -1065,6 +1065,7 @@
     SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Class-Workflow
     SUBDIR += p5-Class-XPath
+    SUBDIR += p5-Class-XSAccessor
     SUBDIR += p5-Clone
     SUBDIR += p5-Clone-Fast
     SUBDIR += p5-Clone-More
