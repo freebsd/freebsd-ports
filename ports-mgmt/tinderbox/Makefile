@@ -100,6 +100,7 @@ post-patch:
 	@${RM} ${WRKSRC}/webui/core/TinderboxDS.php.orig
 	@${RM} ${WRKSRC}/webui/module/moduleBuildPorts.php.orig
 .endif
+	@${RM} ${WRKSRC}/lib/tc_command.sh.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
