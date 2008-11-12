@@ -7,6 +7,7 @@
 
 PORTNAME=	unfs3
 PORTVERSION=	0.9.21
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,5 +25,8 @@ PLIST_FILES=	sbin/unfsd
 .if defined(WITH_CLUSTER_EXT)
 CONFIGURE_ARGS+=	--enable-cluster
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/no_all_sqash/no_all_squash/' ${WRKSRC}/Config/exports.y
 
 .include <bsd.port.mk>
