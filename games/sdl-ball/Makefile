@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl-ball
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,16 +16,13 @@ COMMENT=	Arkanoid/Breakout clone with pretty graphics
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
+MAKE_ENV=	DATADIR=${DATADIR}/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' \
-		${WRKSRC}/main.cpp ${WRKSRC}/menu.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdl-ball ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}
+	cd ${WRKSRC}/themes && ${COPYTREE_SHARE} . ${DATADIR}
 
 .include <bsd.port.mk>
