@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+
+# PROVIDE: anope
+# REQUIRE: LOGIN mysql
+
+#
+# Add the following line to /etc/rc.conf to enable quagga:
+#anope_enable="YES"
+#
+# Also, to prevent running anope as root You may use
+# anope_user="nobody"
+# and
+# anope_chroot="%%PREFIX%%/share/anope"
+#
+
+. %%RC_SUBR%%
+
+name="anope"
+rcvar=`set_rcvar`
+command=%%PREFIX%%/libexec/anope/services
+
+# set defaults
+
+load_rc_config $name
+
+: ${anope_enable="NO"}
+
+run_rc_command "$1"
