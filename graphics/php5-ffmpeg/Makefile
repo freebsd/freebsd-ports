@@ -5,13 +5,27 @@
 # $FreeBSD$
 #
 
+PORTNAME=	ffmpeg
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics
-
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}-php
 PKGNAMEPREFIX=	php5-
+DISTNAME=	${PORTNAME}-php-${PORTVERSION}
+EXTRACT_SUFX=	.tbz2
 
-MASTERDIR=	${.CURDIR}/../../graphics/php4-ffmpeg
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	The ffmpeg shared extension for php
 
-IGNORE_WITH_PHP=4
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+
+CFLAGS+=	-I${LOCALBASE}/include
 DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
+USE_BZIP2=	yes
+USE_PHP=	yes
+USE_PHPIZE=	yes
+USE_PHPEXT=	yes
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
