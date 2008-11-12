@@ -6,11 +6,14 @@
 
 PORTNAME=	tinderbox
 #DISTVERSION=	${PORTVERSION}-${PORTREVISION}
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.1.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
-#DIST_SUBDIR=	tinderbox
+MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:SOURCES \
+		favicon.ico:FAVICON
+DIST_SUBDIR=	tinderbox
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
@@ -41,6 +44,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webui__module__moduleBuildPorts.php \
+		${FILESDIR}/extra-patch-webui__core__TinderboxDS.php
 .else
 PLIST_SUB+=	WEBUI="@comment "
 .endif
@@ -84,16 +89,16 @@ pre-everything::
 	@${FALSE}
 .endif
 
-post-extract:
 .if !defined(WITH_WEBUI)
+post-extract:
 	@${RM} -R ${WRKSRC}/webui
-.endif
-
+.else
+post-extract:
+	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/webui
 post-patch:
-	${RM} ${WRKSRC}/lib/Tinderbox/TinderboxDS.pm.orig \
-		${WRKSRC}/lib/tc_command.pl.orig \
-		${WRKSRC}/sql/schema.pgsql.pre.orig \
-		${WRKSRC}/sql/genschema.orig
+	@${RM} ${WRKSRC}/webui/core/TinderboxDS.php.orig
+	@${RM} ${WRKSRC}/webui/module/moduleBuildPorts.php.orig
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
@@ -101,7 +106,7 @@ do-install:
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 		cd ${WRKSRC} && ${RM} -r ${WRKSRC}/man
 	@${ECHO_CMD} "Installing rc script ..."
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd.sh ${PREFIX}/etc/rc.d/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/tinderd ${PREFIX}/etc/rc.d/${PORTNAME}
 	@${ECHO_CMD} "Installing tinderbox ..."
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
 	@${ECHO_CMD} "All Done"

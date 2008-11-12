@@ -2,7 +2,7 @@ etc/rc.d/tinderbox
 tinderbox/scripts/README
 tinderbox/scripts/ds.ph.dist
 tinderbox/scripts/etc/env/.keep_me
-tinderbox/scripts/etc/rc.d/tinderd.sh
+tinderbox/scripts/etc/rc.d/tinderd
 tinderbox/scripts/lib/Tinderbox/Build.pm
 tinderbox/scripts/lib/Tinderbox/BuildPortsQueue.pm
 tinderbox/scripts/lib/Tinderbox/Config.pm
@@ -40,13 +40,14 @@ tinderbox/scripts/sql/values.pfr
 tinderbox/scripts/tc
 tinderbox/scripts/tinderbox.ph.dist
 tinderbox/scripts/tinderd
-tinderbox/scripts/upgrade/.keep_me
 tinderbox/scripts/upgrade/build_ports.map
 tinderbox/scripts/upgrade/build_ports_queue.map
 tinderbox/scripts/upgrade/builds.map
 tinderbox/scripts/upgrade/config.map
 tinderbox/scripts/upgrade/hooks.map
 tinderbox/scripts/upgrade/jails.map
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-3.0_to_3.1.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-3.0_to_3.1.sql
 tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
@@ -86,6 +87,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/default/list_tinderd_queue.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/messages.inc
 %%WEBUI%%tinderbox/scripts/webui/templates/default/please_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/rss.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/tinderstyle.css
 %%WEBUI%%tinderbox/scripts/webui/templates/default/user_admin.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/user_permissions.tpl
