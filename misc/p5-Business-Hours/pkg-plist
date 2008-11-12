@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Hours/.packlist
+%%SITE_PERL%%/Business/Hours.pm
+@dirrmtry %%SITE_PERL%%/Business
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/Hours
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business

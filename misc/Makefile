@@ -398,6 +398,7 @@
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Array-RefElem
     SUBDIR += p5-Asterisk
+    SUBDIR += p5-Business-Hours
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
     SUBDIR += p5-Business-ISIN
