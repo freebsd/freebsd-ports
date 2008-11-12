@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zfs-replicate
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://blogs.sun.com/constantin/resource/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -24,9 +23,9 @@ USE_BZIP2=	yes
 PLIST_FILES=	sbin/zfs-replicate
 
 do-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/ksh|#!${PREFIX}/bin/ksh|g' ${WRKSRC}/zfs-replicate
+	@${REINPLACE_CMD} -e 's|^#!/bin/ksh|#!${PREFIX}/bin/ksh|g' ${WRKSRC}/zfs-replicate_v${PORTVERSION}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/zfs-replicate ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/zfs-replicate_v${PORTVERSION} ${PREFIX}/sbin/zfs-replicate
 
 .include <bsd.port.mk>
