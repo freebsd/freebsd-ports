@@ -1,0 +1,6 @@
+This module is a simple tool for calculating business hours in a time
+period. Over time, additional functionality will be added to make it
+easy to calculate the number of business hours between arbitrary
+dates.
+
+WWW: http://search.cpan.org/perldoc?Business::Hours
