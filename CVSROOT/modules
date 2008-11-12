@@ -3590,6 +3590,7 @@ fspclient                       ports/net/fspclient
 fspd                            ports/net/fspd
 fsplib                          ports/net/fsplib
 fstobdf                         ports/x11/fstobdf
+fstyp                           ports/sysutils/fstyp
 fsv                             ports/x11-fm/fsv
 fsviewer                        ports/x11-fm/FSViewer
 fswatch                         ports/security/fswatch
@@ -9774,6 +9775,7 @@ p5-B-Deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
 p5-B-Hooks-EndOfScope           ports/devel/p5-B-Hooks-EndOfScope
+p5-B-Hooks-OP-Check             ports/devel/p5-B-Hooks-OP-Check
 p5-B-Keywords                   ports/devel/p5-B-Keywords
 p5-B-LexInfo                    ports/www/p5-B-LexInfo
 p5-B-Size                       ports/devel/p5-B-Size
@@ -11043,6 +11045,7 @@ p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-INET6                     ports/net/p5-IO-INET6
 p5-IO-Interface                 ports/net/p5-IO-Interface
 p5-IO-KQueue                    ports/devel/p5-IO-KQueue
+p5-IO-Lambda                    ports/devel/p5-IO-Lambda
 p5-IO-LockedFile                ports/devel/p5-IO-LockedFile
 p5-IO-Multiplex                 ports/devel/p5-IO-Multiplex
 p5-IO-NestedCapture             ports/devel/p5-IO-NestedCapture
@@ -12941,6 +12944,7 @@ p5-b-deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
 p5-b-hooks-endofscope           ports/devel/p5-B-Hooks-EndOfScope
+p5-b-hooks-op-check             ports/devel/p5-B-Hooks-OP-Check
 p5-b-keywords                   ports/devel/p5-B-Keywords
 p5-b-lexinfo                    ports/www/p5-B-LexInfo
 p5-b-size                       ports/devel/p5-B-Size
@@ -14262,6 +14266,7 @@ p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-inet6                     ports/net/p5-IO-INET6
 p5-io-interface                 ports/net/p5-IO-Interface
 p5-io-kqueue                    ports/devel/p5-IO-KQueue
+p5-io-lambda                    ports/devel/p5-IO-Lambda
 p5-io-lockedfile                ports/devel/p5-IO-LockedFile
 p5-io-multiplex                 ports/devel/p5-IO-Multiplex
 p5-io-nestedcapture             ports/devel/p5-IO-NestedCapture
@@ -17033,6 +17038,7 @@ pico-alpine                     ports/editors/pico-alpine
 picp                            ports/devel/picp
 picprog                         ports/devel/picprog
 picturebook                     ports/graphics/picturebook
+picviz                          ports/graphics/picviz
 piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
@@ -18933,6 +18939,7 @@ rtc                             ports/emulators/rtc
 rtcw                            ports/games/rtcw
 rtf2html                        ports/textproc/rtf2html
 rtf2latex                       ports/print/rtf2latex
+rtf2latex2e                     ports/print/rtf2latex2e
 rtfm                            ports/misc/rtfm
 rtfreader                       ports/textproc/rtfreader
 rtfx                            ports/textproc/rtfx
