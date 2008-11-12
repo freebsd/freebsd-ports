@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="445ed958-b0d9-11dd-a55e-00163e000016">
+    <topic>faad2 -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>faad2</name>
+	<range><lt>2.6.1_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4201">
+	  <p>Heap-based buffer overflow in the decodeMP4file function
+	    (frontend/main.c) in FAAD2 2.6.1 and earlier allows remote
+	    attackers to cause a denial of service (crash) and possibly
+	    execute arbitrary code via a crafted MPEG-4 (MP4) file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4201</cvename>
+    </references>
+    <dates>
+      <discovery>2008-09-16</discovery>
+      <entry>2008-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66657bd5-ac92-11dd-b541-001f3b19d541">
     <topic>emacs -- run-python vulnerability</topic>
     <affects>
