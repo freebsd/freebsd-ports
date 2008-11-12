@@ -7,6 +7,7 @@
 PORTNAME=	tinderbox
 #DISTVERSION=	${PORTVERSION}-${PORTREVISION}
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
