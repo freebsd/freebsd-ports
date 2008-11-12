@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sergei
+MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
