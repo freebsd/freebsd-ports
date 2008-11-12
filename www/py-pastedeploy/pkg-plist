@@ -1,54 +1,54 @@
 @comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/entry_points.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/namespace_packages.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/requires.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/config.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/config.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/config.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/converters.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/converters.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/converters.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/epdesc.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/epdesc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/epdesc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/interfaces.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/interfaces.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/interfaces.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/loadwsgi.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/loadwsgi.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/loadwsgi.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/docs/devel_config.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/sampleapp.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/wsgiapp.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/fixtypeerror.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/fixtypeerror.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/fixtypeerror.pyo
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/threadinglocal.py
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/threadinglocal.pyc
-%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/threadinglocal.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/docs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/converters.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/converters.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/converters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/epdesc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/epdesc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/epdesc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/interfaces.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/loadwsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/loadwsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/loadwsgi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/docs/devel_config.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/sampleapp.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/wsgiapp.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/fixtypeerror.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/fixtypeerror.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/fixtypeerror.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
