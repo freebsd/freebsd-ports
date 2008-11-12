@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PasteDeploy
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www python
 MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteDeploy/ \
 		${MASTER_SITE_LOCAL} \
@@ -17,24 +17,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Load, configure, and compose WSGI applications and servers
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_SITELIBDIR}/${PYPASTE_EGG}/paste/__init__.py:${PORTSDIR}/www/py-paste
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.6:${PORTSDIR}/www/py-paste
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-
-PLIST_SUB=	PYPASTEDEPLOY_EGG=${PYPASTEDEPLOY_EGG}
-
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="${PORTNAME}==${PORTVERSION}"
-
-PYPASTEDEPLOY_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.pre.mk>
-
-PYPASTE_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-paste/Makefile -V PYPASTE_EGG
 
 .include <bsd.port.post.mk>
