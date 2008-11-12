@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,80 +17,27 @@ COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	pkgconfig gnomehack libxml2
 USE_PERL5=	yes
+USE_TCL=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD}
-PLIST_SUB=	VER=${PORTVERSION}
+CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD} \
+		--with-tcl=${TCL_LIBDIR} --with-tcl-binding \
+		--with-python-binding --without-with-rigmatrix
+PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
 MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
-MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8
+MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8 rotctld.8
 
-OPTIONS	=	PYTHON	"Define if you want PYTHON bindings" OFF \
-		TCL	"Define if you want TCL bindings" OFF \
-		XML	"Define if you want XML" OFF \
-		RIGMATRIX	"Define if you want rigmatrix support" OFF
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_XML)
-USE_GNOME+=		libxml2
-PLIST_SUB+=		XML=""
-.else
-CONFIGURE_ARGS+=	--disable-xmltest
-PLIST_SUB+=		XML="@comment "
-.endif
-
-.if defined(WITH_TCL)
-LIB_DEPENDS+=		tcl84.1:${PORTSDIR}/lang/tcl84
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 --with-tcl-binding
-PLIST_SUB+=		TCL=""
-.else
-CONFIGURE_ARGS+=	--without-tcl-binding
-PLIST_SUB+=		TCL="@comment "
-.endif
-
-.if defined(WITH_PYTHON)
-CONFIGURE_ARGS+=	--with-python-binding
-PLIST_SUB+=		PYTHON=""
-.else
-CONFIGURE_ARGS+=	--without-python-binding
-PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if defined(WITH_RIGMATRIX)
-LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
-CONFIGURE_ARGS+=	--with-rigmatrix
-PLIST_SUB+=		RIGMATRIX=""
-.else
-CONFIGURE_ARGS+=	--without-with-rigmatrix
-PLIST_SUB+=		RIGMATRIX="@comment "
-.endif
-
-.if defined(WITH_GNURADIO)
-CONFIGURE_ARGS+=	--with-gnuradio
-PLIST_SUB+=		GNURADIO=""
-.else
-CONFIGURE_ARGS+=	--without-gnuradio
-PLIST_SUB+=		GNURADIO="@comment "
-.endif
-
-.if defined(WITH_TCL) && defined(WITH_PYTHON)
-PLIST_SUB+=		PYTHON_TCL=""
-.else
-PLIST_SUB+=		PYTHON_TCL="@comment "
-.endif
-
-pre-everything::
-	@${MAKE} showconfig
-	@${ECHO_MSG} "Use make config to set or unset above options"
-	@${ECHO_MSG} ""
-
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
+		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \
+		${WRKSRC}/bindings/Makefile.in
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
 		${WRKSRC}/bindings/Hamlib-pl.mk
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

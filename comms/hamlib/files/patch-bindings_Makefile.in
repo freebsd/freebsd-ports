@@ -1,79 +1,20 @@
---- bindings/Makefile.in.orig	Thu Feb 22 14:24:58 2007
-+++ bindings/Makefile.in	Thu Feb 22 14:24:59 2007
+--- bindings/Makefile.in.orig	2008-11-07 19:43:46.000000000 -0500
++++ bindings/Makefile.in	2008-11-09 10:57:50.000000000 -0500
 @@ -273,7 +273,7 @@
- prefix = @prefix@
  program_transform_name = @program_transform_name@
+ psdir = @psdir@
  pyexecdir = @pyexecdir@
 -pythondir = $(prefix)/lib/python
-+pythondir = @pyexecdir@
++pythondir = %%PYTHON_SITELIBDIR%%
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  subdirs = @subdirs@
-@@ -286,13 +286,13 @@
+@@ -289,7 +289,7 @@
  ##########################################
  # Tcl binding
  tcl_ltlib = hamlibtcl.la
 -tcldir = $(prefix)/lib/tcl
-+tcldir = $(TCL_BIN_DIR)
++tcldir = %%TCL_LIBDIR%%
  PKG_VER = 1.0
  DLL = hamlibtcl-$(PKG_VER)@TCL_SHLIB_SUFFIX@
  nodist_hamlibtcl_la_SOURCES = hamlibtcl_wrap.c
- hamlibtcl_la_LDFLAGS = -no-undefined -module -release $(PKG_VER) -avoid-version @TCL_LIB_SPEC@
- hamlibtcl_la_LIBADD = $(top_builddir)/src/libhamlib.la
--hamlibtcl_ladir = $(tcldir)
-+hamlibtcl_ladir = $(tcldir)/hamlib
- hamlibtcl_la_DATA = pkgIndex.tcl
- 
- ##########################################
-@@ -305,7 +305,8 @@
- python_PYTHON = Hamlib.py
- 
- ##########################################
--lib_LTLIBRARIES = $(tcl_ltlib) $(python_ltlib)
-+#lib_LTLIBRARIES = $(tcl_ltlib) $(python_ltlib)
-+lib_LTLIBRARIES = @BINDING_LIB_TARGETS@
- EXTRA_DIST = hamlib.swg ignore.swg rig.swg rotator.swg \
- 			Makefile.PL perltest.pl tcltest.tcl pytest.py
- 
-@@ -424,6 +425,7 @@
- 	-rm -f libtool
- uninstall-info-am:
- install-pythonPYTHON: $(python_PYTHON)
-+install-py:
- 	@$(NORMAL_INSTALL)
- 	test -z "$(pythondir)" || $(mkdir_p) "$(DESTDIR)$(pythondir)"
- 	@list='$(python_PYTHON)'; dlist=''; for p in $$list; do\
-@@ -452,6 +454,7 @@
- 	  rm -f "$(DESTDIR)$(pythondir)/$${f}o"; \
- 	done
- install-hamlibtcl_laDATA: $(hamlibtcl_la_DATA)
-+install-tcl: install-libLTLIBRARIES
- 	@$(NORMAL_INSTALL)
- 	test -z "$(hamlibtcl_ladir)" || $(mkdir_p) "$(DESTDIR)$(hamlibtcl_ladir)"
- 	@list='$(hamlibtcl_la_DATA)'; for p in $$list; do \
-@@ -554,7 +557,8 @@
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
- 	done
- install: $(BUILT_SOURCES)
--	$(MAKE) $(AM_MAKEFLAGS) install-am
-+#	$(MAKE) $(AM_MAKEFLAGS) install-am
-+	$(MAKE) $(AM_MAKEFLAGS) $(BINDING_INSTALL_EXEC)
- install-exec: install-exec-am
- install-data: install-data-am
- uninstall: uninstall-am
-@@ -700,7 +704,6 @@
- check-tcl: all-tcl
- 	TCLLIBPATH=$(builddir)/.libs $(srcdir)/tcltest.tcl || echo "Tcl test failed" 1>&2
- 
--install-tcl: 
- clean-tcl:
- distclean-tcl: clean-tcl
- uninstall-tcl: 
-@@ -715,7 +718,6 @@
- check-py: all-py
- 	$(srcdir)/pytest.py || echo "Python test failed" 1>&2
- 
--install-py:
- clean-py:
- distclean-py:
- uninstall-py: 

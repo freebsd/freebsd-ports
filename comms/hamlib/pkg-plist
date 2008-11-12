@@ -4,6 +4,7 @@ bin/rigmem
 bin/rigsmtr
 bin/rigswr
 bin/rotctl
+bin/rotctld
 include/hamlib/rig.h
 include/hamlib/rig_dll.h
 include/hamlib/rigclass.h
@@ -11,9 +12,9 @@ include/hamlib/riglist.h
 include/hamlib/rotator.h
 include/hamlib/rotclass.h
 include/hamlib/rotlist.h
-%%PYTHON_TCL%%lib/_Hamlib.a
-%%PYTHON_TCL%%lib/_Hamlib.la
-%%PYTHON_TCL%%lib/_Hamlib.so
+lib/_Hamlib.a
+lib/_Hamlib.la
+lib/_Hamlib.so
 lib/hamlib-alinco.a
 lib/hamlib-alinco.la
 lib/hamlib-alinco.so
@@ -35,6 +36,9 @@ lib/hamlib-flexradio.so
 lib/hamlib-fodtrack.a
 lib/hamlib-fodtrack.la
 lib/hamlib-fodtrack.so
+lib/hamlib-gs232a.so
+lib/hamlib-gs232a.la
+lib/hamlib-gs232a.a
 lib/hamlib-icom.a
 lib/hamlib-icom.la
 lib/hamlib-icom.so
@@ -53,9 +57,6 @@ lib/hamlib-kit.so
 lib/hamlib-lowe.a
 lib/hamlib-lowe.la
 lib/hamlib-lowe.so
-lib/hamlib-microtune.a
-lib/hamlib-microtune.la
-lib/hamlib-microtune.so
 lib/hamlib-pcr.a
 lib/hamlib-pcr.la
 lib/hamlib-pcr.so
@@ -101,11 +102,11 @@ lib/hamlib-wj.so
 lib/hamlib-yaesu.a
 lib/hamlib-yaesu.la
 lib/hamlib-yaesu.so
-%%TCL%%lib/hamlibtcl-1.0.so
-%%TCL%%lib/hamlibtcl.a
-%%TCL%%lib/hamlibtcl.la
-%%TCL%%lib/hamlibtcl.so
-%%TCL%%lib/tcl8.4/hamlib/pkgIndex.tcl
+lib/hamlibtcl-1.0.so
+lib/hamlibtcl.a
+lib/hamlibtcl.la
+lib/hamlibtcl.so
+lib/tcl%%TCL_VER%%/hamlib/pkgIndex.tcl
 lib/libhamlib++.so
 lib/libhamlib++.so.2
 lib/libhamlib++.a
@@ -119,13 +120,13 @@ lib/libhamlib.la
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hamlib/Hamlib.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Hamlib.pm
 %%SITE_PERL%%/mach/perltest.pl
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/Hamlib.pyo
+%%PYTHON_SITELIBDIR%%/Hamlib.py
+%%PYTHON_SITELIBDIR%%/Hamlib.pyc
+%%PYTHON_SITELIBDIR%%/Hamlib.pyo
 libdata/pkgconfig/hamlib.pc
 sbin/rpc.rigd
 sbin/rpc.rotd
 share/aclocal/hamlib.m4
-%%TCL%%@dirrm lib/tcl8.4/hamlib
+@dirrm lib/tcl%%TCL_VER%%/hamlib
 @dirrm %%SITE_PERL%%/mach/auto/Hamlib
 @dirrm include/hamlib
