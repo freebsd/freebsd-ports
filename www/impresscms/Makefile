@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	impresscms
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
@@ -32,20 +32,6 @@ do-install:
 		>> ${TMPPLIST}
 
 post-install:
-	@${CHMOD} -R 777 ${WWWDIR}/htdocs/cache
-	@${CHMOD} -R 777 ${WWWDIR}/htdocs/uploads
-	@${CHMOD} -R 777 ${WWWDIR}/htdocs/templates_c
-	@${CHMOD} -R 666 ${WWWDIR}/htdocs/mainfile.php
-
-	@${ECHO_CMD} '@exec ${CHMOD} 777 -R ${WWWDIR}/htdocs/cache' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 -R ${WWWDIR}/htdocs/uploads' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 777 -R ${WWWDIR}/htdocs/templates_c' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 666 -R ${WWWDIR}/htdocs/mainfile.php' \
-		>> ${TMPPLIST}
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
