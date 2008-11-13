@@ -212,6 +212,7 @@
     SUBDIR += html
     SUBDIR += html-pretty
     SUBDIR += html2fo
+    SUBDIR += html2tex
     SUBDIR += html2text
     SUBDIR += htmldoc
     SUBDIR += htmlise
