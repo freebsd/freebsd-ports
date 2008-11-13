@@ -150,10 +150,13 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-4201</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=499899</url>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200811-03.xml</url>
     </references>
     <dates>
       <discovery>2008-09-16</discovery>
       <entry>2008-11-12</entry>
+      <modified>2008-11-13</modified>
     </dates>
   </vuln>
 
@@ -172,21 +175,18 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The Emacs command `run-python' launches an interactive
 	    Python interpreter.  After the Python process starts up,
 	    Emacs automatically sends it the line:</p>
-
-	  <p>import emacs</p>
-
-	  <p>which normally imports a script named emacs.py which is
-	    distributed with Emacs.  This script, which is typically
-	    located in a write-protected installation directory with
-	    other Emacs program files, defines various functions to help
-	    the Python process communicate with Emacs.</p>
-
-	  <p>The vulnerability arises because Python, by default,
-	    prepends '' to the module search path, so modules are looked
-	    for in the current directory.  If the current directory is
-	    world-writable, an attacker may insert malicious code by
-	    adding a fake Python module named emacs.py into that
-	    directory.</p>
+	 <p>import emacs</p>
+	 <p>which normally imports a script named emacs.py which is
+	   distributed with Emacs.  This script, which is typically
+	   located in a write-protected installation directory with
+	   other Emacs program files, defines various functions to help
+	   the Python process communicate with Emacs.</p>
+	 <p>The vulnerability arises because Python, by default,
+	   prepends '' to the module search path, so modules are looked
+	   for in the current directory.  If the current directory is
+	   world-writable, an attacker may insert malicious code by
+	   adding a fake Python module named emacs.py into that
+	   directory.</p>
 	</blockquote>
       </body>
     </description>
@@ -216,17 +216,17 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Advisory from Moritz Jodeit, November 8th, 2008:</p>
 	<blockquote cite="http://www.securityfocus.com/archive/1/498169/30/0/threaded">
 	  <p>ClamAV contains an off-by-one heap overflow vulnerability
-	  in the code responsible for parsing VBA project files.
-	  Successful exploitation could allow an attacker to execute
-	  arbitrary code with the privileges of the `clamd' process by
-	  sending an email with a prepared attachment.</p>
+	    in the code responsible for parsing VBA project files.
+	    Successful exploitation could allow an attacker to execute
+	    arbitrary code with the privileges of the `clamd' process by
+	    sending an email with a prepared attachment.</p>
 	  <p>A VBA project file embedded inside an OLE2 office document
-	  send as an attachment can trigger the off-by-one.</p>
+	    send as an attachment can trigger the off-by-one.</p>
 	</blockquote>
 	<p>Entry from Thu Oct 30 13:52:42 CET 2008 (acab) in ChangeLog:</p>
 	<blockquote cite="http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog">
 	  <p>libclamav/vba_extract.c: get_unicode_name off-by-one,
-	  bb#1239 reported by Moritz Jodeit &gt;moritz*jodeit.org&lt;</p>
+	    bb#1239 reported by Moritz Jodeit &gt;moritz*jodeit.org&lt;</p>
 	</blockquote>
       </body>
     </description>
@@ -239,6 +239,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2008-11-10</entry>
     </dates>
   </vuln>
+
   <vuln vid="c89a3ebb-ae07-11dd-b4b2-001f3c8eabeb">
     <topic>trac -- potential DOS vulnerability</topic>
     <affects>
