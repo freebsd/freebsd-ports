@@ -1,4 +1,5 @@
 %%WWWDIR%%/_compile.php
+%%WWWDIR%%/_coverage.php
 %%WWWDIR%%/_lang.php
 %%WWWDIR%%/abstraction.inc.php
 %%WWWDIR%%/auth.inc.php
@@ -26,6 +27,7 @@
 %%WWWDIR%%/select.inc.php
 %%WWWDIR%%/sql.inc.php
 %%WWWDIR%%/table.inc.php
+%%WWWDIR%%/todo.txt
 %%WWWDIR%%/trigger.inc.php
 %%WWWDIR%%/user.inc.php
 %%WWWDIR%%/view.inc.php
@@ -46,5 +48,28 @@
 %%WWWDIR%%/lang/nl.inc.php
 %%WWWDIR%%/lang/sk.inc.php
 %%WWWDIR%%/lang/zh.inc.php
+%%WWWDIR%%/tests/0-login.html
+%%WWWDIR%%/tests/1-create-database.html
+%%WWWDIR%%/tests/10-clone.html
+%%WWWDIR%%/tests/11-reference.html
+%%WWWDIR%%/tests/12-update.html
+%%WWWDIR%%/tests/13-delete.html
+%%WWWDIR%%/tests/14-truncate.html
+%%WWWDIR%%/tests/15-privileges.html
+%%WWWDIR%%/tests/16-processlist.html
+%%WWWDIR%%/tests/17-export.html
+%%WWWDIR%%/tests/18-events.html
+%%WWWDIR%%/tests/19-procedures.html
+%%WWWDIR%%/tests/2-create-table.html
+%%WWWDIR%%/tests/3-create-index.html
+%%WWWDIR%%/tests/4-create-table-2.html
+%%WWWDIR%%/tests/5-foreign-key.html
+%%WWWDIR%%/tests/6-alter-table.html
+%%WWWDIR%%/tests/7-create-trigger.html
+%%WWWDIR%%/tests/8-create-view.html
+%%WWWDIR%%/tests/9-insert.html
+%%WWWDIR%%/tests/logout.html
+%%WWWDIR%%/tests/selenium.html
 @dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%
