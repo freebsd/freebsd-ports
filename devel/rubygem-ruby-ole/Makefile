@@ -7,13 +7,15 @@
 
 PORTNAME=	ruby-ole
 PORTVERSION=	1.2.8.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	A library for easy read/write access to OLE compound documents for Ruby
+COMMENT=	A library for easy read/write access to OLE compound documents
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 USE_RUBYGEMS=	yes
 
 post-install:
