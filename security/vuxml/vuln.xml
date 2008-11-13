@@ -34,6 +34,101 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f29fea8f-b19f-11dd-a55e-00163e000016">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.18,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.18</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <p>MFSA 2008-58  Parsing error in E4X default namespace</p>
+	  <p>MFSA 2008-57 -moz-binding property bypasses security checks on
+	    codebase principals</p>
+	  <p>MFSA 2008-56 nsXMLHttpRequest::NotifyEventListeners() same-origin
+	    violation</p>
+	  <p>MFSA 2008-55 Crash and remote code execution in
+	    nsFrameManager</p>
+	  <p>MFSA 2008-54 Buffer overflow in http-index-format parser</p>
+	  <p>MFSA 2008-53 XSS and JavaScript privilege escalation via session
+	    restore</p>
+	  <p>MFSA 2008-52 Crashes with evidence of memory corruption
+	    (rv:1.9.0.4/1.8.1.18)</p>
+	  <p>MFSA 2008-51 file: URIs inherit chrome privileges when opened
+	    from chrome</p>
+	  <p>MFSA 2008-50  Crash and remote code execution via __proto__
+	    tampering</p>
+	  <p>MFSA 2008-49  Arbitrary code execution via Flash Player dynamic
+	    module unloading</p>
+	  <p>MFSA 2008-48 Image stealing via canvas and HTTP redirect</p>
+	  <p>MFSA 2008-47 Information stealing via local shortcut files</p>
+	  <p>MFSA 2008-46  Heap overflow when canceling newsgroup message</p>
+	  <p>MFSA 2008-44 resource: traversal vulnerabilities</p>
+	  <p>MFSA 2008-43 BOM characters stripped from JavaScript before
+	    execution</p>
+	  <p>MFSA 2008-42 Crashes with evidence of memory corruption
+	    (rv:1.9.0.2/1.8.1.17)</p>
+	  <p>MFSA 2008-41 Privilege escalation via XPCnativeWrapper
+	    pollution</p>
+	  <p>MFSA 2008-38 nsXMLDocument::OnChannelRedirect() same-origin
+	    violation</p>
+	  <p>MFSA 2008-37 UTF-8 URL stack buffer overflow </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0017</cvename>
+      <cvename>CVE-2008-4582</cvename>
+      <cvename>CVE-2008-5012</cvename>
+      <cvename>CVE-2008-5013</cvename>
+      <cvename>CVE-2008-5014</cvename>
+      <cvename>CVE-2008-5015</cvename>
+      <cvename>CVE-2008-5016</cvename>
+      <cvename>CVE-2008-5017</cvename>
+      <cvename>CVE-2008-5018</cvename>
+      <cvename>CVE-2008-5019</cvename>
+      <cvename>CVE-2008-5021</cvename>
+      <cvename>CVE-2008-5022</cvename>
+      <cvename>CVE-2008-5023</cvename>
+      <cvename>CVE-2008-5024</cvename>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-47.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-48.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-49.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-50.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-51.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-52.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-53.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-54.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-55.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-56.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-57.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-58.html</url>
+    </references>
+    <dates>
+      <discovery>2008-11-13</discovery>
+      <entry>2008-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="445ed958-b0d9-11dd-a55e-00163e000016">
     <topic>faad2 -- heap overflow vulnerability</topic>
     <affects>
