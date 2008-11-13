@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A general dictionary/search engine front-end for X
 
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 
 USE_XORG=	x11 xt xext ice sm
