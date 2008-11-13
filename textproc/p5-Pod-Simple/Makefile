@@ -6,16 +6,13 @@
 
 PORTNAME=	Pod-Simple
 PORTVERSION=	3.07
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Framework for parsing Pod
-
-BUILD_DEPENDS=	${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
-		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -44,4 +41,10 @@ MAN3=		Pod::Simple.3 \
 		perlpod.3 \
 		perlpodspec.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-Pod-Escapes>=1.04:${PORTSDIR}/textproc/p5-Pod-Escapes
+.endif
+
+.include <bsd.port.post.mk>
