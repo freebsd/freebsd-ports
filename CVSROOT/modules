@@ -9761,6 +9761,7 @@ p5-Authen-TacacsPlus            ports/security/p5-Authen-TacacsPlus
 p5-Authen-Ticket                ports/security/p5-Authen-Ticket
 p5-Authen-TypeKey               ports/security/p5-Authen-TypeKey
 p5-AutoLoader                   ports/devel/p5-AutoLoader
+p5-AutoXS-Header                ports/devel/p5-AutoXS-Header
 p5-AxKit                        ports/www/p5-AxKit
 p5-AxKit-XSP-Cookie             ports/www/p5-AxKit-XSP-Cookie
 p5-AxKit-XSP-ESQL               ports/www/p5-AxKit-XSP-ESQL
@@ -9814,6 +9815,7 @@ p5-Bundle-Perl6                 ports/devel/p5-Bundle-Perl6
 p5-Bundle-Slash                 ports/www/p5-Bundle-Slash
 p5-Bundle-Sledge                ports/www/p5-Bundle-Sledge
 p5-Business-CreditCard          ports/finance/p5-Business-CreditCard
+p5-Business-Hours               ports/misc/p5-Business-Hours
 p5-Business-ISBN                ports/misc/p5-Business-ISBN
 p5-Business-ISBN-Data           ports/misc/p5-Business-ISBN-Data
 p5-Business-ISIN                ports/misc/p5-Business-ISIN
@@ -10158,6 +10160,7 @@ p5-Class-Virtual                ports/devel/p5-Class-Virtual
 p5-Class-WhiteHole              ports/devel/p5-Class-WhiteHole
 p5-Class-Workflow               ports/devel/p5-Class-Workflow
 p5-Class-XPath                  ports/devel/p5-Class-XPath
+p5-Class-XSAccessor             ports/devel/p5-Class-XSAccessor
 p5-ClearSilver                  ports/www/p5-ClearSilver
 p5-Clipboard                    ports/x11/p5-Clipboard
 p5-Clone                        ports/devel/p5-Clone
@@ -12930,6 +12933,7 @@ p5-authen-tacacsplus            ports/security/p5-Authen-TacacsPlus
 p5-authen-ticket                ports/security/p5-Authen-Ticket
 p5-authen-typekey               ports/security/p5-Authen-TypeKey
 p5-autoloader                   ports/devel/p5-AutoLoader
+p5-autoxs-header                ports/devel/p5-AutoXS-Header
 p5-axkit                        ports/www/p5-AxKit
 p5-axkit-xsp-cookie             ports/www/p5-AxKit-XSP-Cookie
 p5-axkit-xsp-esql               ports/www/p5-AxKit-XSP-ESQL
@@ -12989,6 +12993,7 @@ p5-bundle-perl6                 ports/devel/p5-Bundle-Perl6
 p5-bundle-slash                 ports/www/p5-Bundle-Slash
 p5-bundle-sledge                ports/www/p5-Bundle-Sledge
 p5-business-creditcard          ports/finance/p5-Business-CreditCard
+p5-business-hours               ports/misc/p5-Business-Hours
 p5-business-isbn                ports/misc/p5-Business-ISBN
 p5-business-isbn-data           ports/misc/p5-Business-ISBN-Data
 p5-business-isin                ports/misc/p5-Business-ISIN
@@ -13323,6 +13328,7 @@ p5-class-virtual                ports/devel/p5-Class-Virtual
 p5-class-whitehole              ports/devel/p5-Class-WhiteHole
 p5-class-workflow               ports/devel/p5-Class-Workflow
 p5-class-xpath                  ports/devel/p5-Class-XPath
+p5-class-xsaccessor             ports/devel/p5-Class-XSAccessor
 p5-clearsilver                  ports/www/p5-ClearSilver
 p5-clipboard                    ports/x11/p5-Clipboard
 p5-clone                        ports/devel/p5-Clone
