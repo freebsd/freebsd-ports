@@ -4,6 +4,7 @@ bin/template-converter
 include/google/per_expand_data.h
 include/google/template.h
 include/google/template_dictionary.h
+include/google/template_dictionary_interface.h
 include/google/template_enums.h
 include/google/template_emitter.h
 include/google/template_from_string.h
