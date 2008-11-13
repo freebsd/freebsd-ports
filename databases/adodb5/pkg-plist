@@ -1,4 +1,5 @@
 %%ADODB_DIR%%/adodb-active-record.inc.php
+%%ADODB_DIR%%/adodb-active-recordx.inc.php
 %%ADODB_DIR%%/adodb-csvlib.inc.php
 %%ADODB_DIR%%/adodb-datadict.inc.php
 %%ADODB_DIR%%/adodb-error.inc.php
@@ -31,6 +32,7 @@
 %%ADODB_DIR%%/datadict/datadict-ibase.inc.php
 %%ADODB_DIR%%/datadict/datadict-informix.inc.php
 %%ADODB_DIR%%/datadict/datadict-mssql.inc.php
+%%ADODB_DIR%%/datadict/datadict-mssqlnative.inc.php
 %%ADODB_DIR%%/datadict/datadict-mysql.inc.php
 %%ADODB_DIR%%/datadict/datadict-oci8.inc.php
 %%ADODB_DIR%%/datadict/datadict-postgres.inc.php
@@ -52,17 +54,15 @@
 %%ADODB_DIR%%/drivers/adodb-informix72.inc.php
 %%ADODB_DIR%%/drivers/adodb-ldap.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql.inc.php
-%%ADODB_DIR%%/drivers/adodb-mssql.inc.php.bak
+%%ADODB_DIR%%/drivers/adodb-mssqlnative.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql_n.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysql.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqli.inc.php
-%%ADODB_DIR%%/drivers/adodb-mysqli.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-mysqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqlt.inc.php
 %%ADODB_DIR%%/drivers/adodb-netezza.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8.inc.php
-%%ADODB_DIR%%/drivers/adodb-oci8.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-oci8.old.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci805.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8po.inc.php
@@ -78,6 +78,7 @@
 %%ADODB_DIR%%/drivers/adodb-pdo_mysql.inc.php
 %%ADODB_DIR%%/drivers/adodb-pdo_oci.inc.php
 %%ADODB_DIR%%/drivers/adodb-pdo_pgsql.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo_sqlite.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres64.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres7.inc.php
@@ -118,6 +119,7 @@
 %%ADODB_DIR%%/perf/perf-db2.inc.php
 %%ADODB_DIR%%/perf/perf-informix.inc.php
 %%ADODB_DIR%%/perf/perf-mssql.inc.php
+%%ADODB_DIR%%/perf/perf-mssqlnative.inc.php
 %%ADODB_DIR%%/perf/perf-mysql.inc.php
 %%ADODB_DIR%%/perf/perf-oci8.inc.php
 %%ADODB_DIR%%/perf/perf-postgres.inc.php
@@ -156,6 +158,8 @@
 %%TESTS%%%%ADODB_DIR%%/tests/pdo.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-active-record.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-active-recs2.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-active-relations.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-active-relationsx.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-perf.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-pgblob.php
