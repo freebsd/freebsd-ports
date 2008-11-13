@@ -255,7 +255,6 @@ include/irssi/src/lib-config/module.h
 %%DATADIR%%/help/voice
 %%DATADIR%%/help/wait
 %%DATADIR%%/help/wall
-%%DATADIR%%/help/wallchops
 %%DATADIR%%/help/wallops
 %%DATADIR%%/help/watch
 %%DATADIR%%/help/who
