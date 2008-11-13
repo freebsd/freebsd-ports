@@ -112,7 +112,6 @@ WITH_IMAGEMAGICK_THREADS=yes
 CONFIGURE_ARGS+=	--without-threads
 .undef WITH_IMAGEMAGICK_THREADS
 .if defined(WITH_IMAGEMAGICK_DJVU)
-.	warning DjVu requires threads and will not be supported
 .	undef WITH_IMAGEMAGICK_DJVU
 .endif
 .endif
@@ -312,6 +311,10 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install install-data-html
 .endif
 
+.if ${OSVERSION} >= 800000
+WITHOUT_IMAGEMAGICK_TESTS=yes
+.endif
+
 post-patch:
 # prevent perllocal.pod from being written
 	@${REINPLACE_CMD} -e "/PERL/s|install$$|pure_install|" ${WRKSRC}/Makefile.in
@@ -344,12 +347,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
 		${WRKSRC}/coders/dot.c
 
-
 pre-configure:
 .if defined(WITH_IMAGEMAGICK_SVG) && defined(WITHOUT_X11)
-	@${ECHO_CMD} "******************** WARNING *********************"
-	@${ECHO_CMD} "* SVG support requires X11, building without SVG *"
-	@${ECHO_CMD} "**************************************************"
+	@${ECHO_CMD} "WARNING: SVG support requires X11, building without SVG."
+.endif
+.if defined(WITH_IMAGEMAGICK_DJVU) && !defined(WITH_IMAGEMAGICK_THREADS)
+	@${ECHO_CMD} "WARNING: DjVu requires threads and will not be supported."
+.endif
+.if ${OSVERSION} >= 800000
+	@${ECHO_CMD} "WARNING: constitute (cmy) tests fail on 8.x. Disabling tests."
 .endif
 
 post-install:
@@ -364,15 +370,9 @@ post-install:
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
 
-.if ${OSVERSION} >= 800000
-.	warning Constitute tests fail on 8.x (constitute_*_cmy.sh). Disabling tests.
-WITHOUT_IMAGEMAGICK_TESTS=yes
-.endif
-
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 .	for m in TTF
 .		if defined(WITHOUT_IMAGEMAGICK_$m)
-.			warning	Absence of $m breaks self-tests. Disabling them.
 WITHOUT_IMAGEMAGICK_TESTS=yes
 .		endif
 .	endfor
@@ -380,7 +380,6 @@ WITHOUT_IMAGEMAGICK_TESTS=yes
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 .	for m in MODULES HDRI
 .		if defined(WITH_IMAGEMAGICK_$m)
-.			warning	Presence of $m breaks self-tests. Disabling them.
 WITHOUT_IMAGEMAGICK_TESTS=yes
 .		endif
 .	endfor
