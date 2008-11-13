@@ -93,6 +93,7 @@
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv
     SUBDIR += py-iconvcodec
+    SUBDIR += py-svglib
     SUBDIR += recode
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv

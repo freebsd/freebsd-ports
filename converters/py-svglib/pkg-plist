@@ -1,0 +1,2 @@
+bin/svg2pdf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
