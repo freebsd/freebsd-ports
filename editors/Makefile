@@ -45,6 +45,7 @@
     SUBDIR += em
     SUBDIR += emacs
     SUBDIR += emacs-devel
+    SUBDIR += emacs-nox11
     SUBDIR += emacs.app
     SUBDIR += emacs21
     SUBDIR += etoile-typewriter
