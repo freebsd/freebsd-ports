@@ -1,0 +1,6 @@
+The supertabular bundle defines the supertabular and supertabular*
+environments.  They make it possible to have a tabular that spans multiple
+pages.  Each page is its own tabular environment, thus the various parts may
+have different widths.
+
+WWW: http://www.ctan.org/tex-archive/macros/latex/contrib/supertabular/

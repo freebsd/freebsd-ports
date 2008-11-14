@@ -1,0 +1,10 @@
+%%PORTDOCS%%%%DOCSDIR%%/CATALOG
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/supertabular.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/supertabular.dtx
+%%CLASSDIR%%/supertabular.ins
+%%CLASSDIR%%/supertabular.sty
+@exec %%MKTEXLSR%% %D/%%TEXMFLOCAL%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFLOCAL%%

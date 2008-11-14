@@ -153,6 +153,7 @@
     SUBDIR += latex-prettyref
     SUBDIR += latex-resume
     SUBDIR += latex-subfloat
+    SUBDIR += latex-supertabular
     SUBDIR += latex-svninfo
     SUBDIR += latex-timing
     SUBDIR += latex-tipa
