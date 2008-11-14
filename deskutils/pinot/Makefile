@@ -7,6 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.89
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -17,7 +18,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal search and metasearch for the Free Desktop
 
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
-LIB_DEPENDS=	xapian.20:${PORTSDIR}/databases/xapian-core	\
+LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core	\
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
 		textcat.0:${PORTSDIR}/textproc/libtextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
