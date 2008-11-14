@@ -6,38 +6,32 @@
 #
 
 PORTNAME=	sams
-DISTVERSION=	20070524
-PORTREVISION=	2
+DISTVERSION=	1.0.3
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://sams.irc.perm.ru/downloads/ \
-		http://www.dindin.ru/download/
+MASTER_SITES=	http://sams.perm.ru/download/ \
+		http://grishin.000webhost.info/sams/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dindin@dindin.ru
-COMMENT=	Squid Accounting Management System
+MAINTAINER=	uzgrishin@mail.ru
+COMMENT=	Squid 2.x Accounting Management System
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	sams.sh
 
-USE_PHP=	gd mysql ldap
-USE_MYSQL=	4.1
-
 OPTIONS=	NTLM	"NTLM autorization/ActiveDirectory support"	off \
-		APACHE2	"Use apache version 2"	off
-
-OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+		APACHE2	"Use apache version 2"	on
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_PHP=	gd mysql ldap
+USE_MYSQL=	5.0
 
-CONFIGURE_ARGS=--with-configfile=${LOCALBASE}/etc/sams.conf \
-	       --with-rcd-locations=${LOCALBASE}/etc/rc.d/ \
-	       --with-httpd-locations=${DOCUMENT_ROOT}
+CONFIGURE_ARGS=	--with-configfile=${LOCALBASE}/etc/sams.conf \
+		--with-rcd-locations=${LOCALBASE}/etc/rc.d/ \
+		--with-httpd-locations=${DOCUMENT_ROOT}
 
 SUB_FILES=	pkg-message
 
