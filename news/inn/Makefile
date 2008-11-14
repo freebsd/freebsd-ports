@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	inn
-PORTVERSION?=	2.4.3
-PORTREVISION?=	3
+PORTVERSION?=	2.4.5
+PORTREVISION?=	0
 CATEGORIES=	news ipv6
 MASTER_SITES?=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR?=	${PORTNAME}
@@ -33,6 +33,7 @@ OPTIONS=	PERL		"Embedded Perl script support"			On	\
 		TCL		"Embedded TCL support"				Off	\
 		KERBEROS	"Enable Kerberos auth support"			Off	\
 		SASL		"Enable SASL support (for imapfeed auth)"	Off	\
+		SSL		"Enable OpenSSL support (for NNTP over SSL)"	On	\
 		TAGGED_HASH	"Use tagged hash table for history"		Off	\
 		LARGE_FILES	"Support for files larger than 2GB"		Off	\
 		KEYWORDS	"Automatic keyword generation support"		On	\
@@ -58,32 +59,28 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BERKELEYDB)
-CONFIGURE_ARGS+=	--with-berkeleydb
-.    if !defined(WITH_BDB_VER)
-WITH_BDB_VER=	4
-.    endif
-.    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
-LIB_DEPENDS+=		db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
-.    elif ${WITH_BDB_VER} == 2
-BROKEN=		Does not compile with db2
-.    else
-BROKEN=		Unknown BerkeleyDB version
-.    endif
-CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
+USE_BDB=		3+
+CONFIGURE_ENV+=		DB_VER=db${BDB_VER}
+CONFIGURE_ENV+=		DB_LIB=${BDB_LIB_NAME}
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
+.endif
+
+.if defined(WITH_SSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_KERBEROS)
 .    if exists(${LOCALBASE}/bin/krb5-config)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
-CONFIGURE_ARGS+=	--enable-kerberos=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-kerberos=${LOCALBASE}
 .    else
-CONFIGURE_ARGS+=	--enable-kerberos=/usr
+CONFIGURE_ARGS+=	--with-kerberos=/usr
 .    endif
-CONFIGURE_ENV+=		ac_cv_search_krb5_parse_name="-lcrypt -lcrypto -lkrb5 -lasn1 -lroken"
+CONFIGURE_ENV+=		ac_cv_search_krb5_parse_name="-lcrypt -lcrypto -lkrb5 -lasn1 -lroken -lhx509"
 CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
 .else
-CONFIGURE_ARGS+=	--disable-kerberos
+CONFIGURE_ARGS+=	--without-kerberos
 .endif
 
 .if !defined(WITHOUT_PERL)
@@ -98,6 +95,7 @@ CONFIGURE_ARGS+=	--with-python
 .endif
 
 .if defined(WITH_TCL)
+USE_TCL=		84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 .endif
@@ -135,7 +133,7 @@ PLIST_SUB+=		WITHOUT_TAGGED_HASH=""
 .endif
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
-HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
+HEADERS=	clibrary.h config.h dbz.h
 
 MAN1=		convdate.1 fastrm.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
 		innfeed.1 innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
@@ -159,25 +157,14 @@ MAN8=		actsync.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 		radius.8 rc.news.8 scanlogs.8 send-nntp.8 send-uucp.8 sendinpaths.8 \
 		tally.control.8 tdx-util.8 writelog.8
 
-.if ${BRANCH} != "current"
-MAN1+=		startinnfeed.1
-MAN3+=		parsedate.3
-MAN5+=		sasl.conf.5
-MAN8+=		actsyncd.8 inndstart.8
-PLIST_SUB+=	NOTCURRENT=""
-.else
-PLIST_SUB+=	NOTCURRENT="@comment "
-MAN8+=		innbind.8 tinyleaf.8
-.endif
-
 .if defined(WITH_KERBEROS)
 MAN8+=		auth_krb5.8
 .endif
 
 TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident bin/auth/passwd/auth_smb \
 		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
-		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/inndstart bin/nnrpd \
-		bin/innfeed bin/startinnfeed bin/imapfeed bin/convdate bin/expire \
+		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/nnrpd \
+		bin/innfeed bin/imapfeed bin/convdate bin/expire \
 		bin/expireover bin/fastrm bin/grephistory bin/makedbz bin/makehistory \
 		bin/prunehistory bin/ctlinnd bin/getlist bin/inews bin/innconfval \
 		bin/ovdb_init bin/ovdb_monitor bin/ovdb_server bin/ovdb_stat bin/rnews \
@@ -192,6 +179,19 @@ CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl cycbuff.conf 
 		passwd.nntp radius.conf readers.conf sasl.conf storage.conf \
 		subscriptions
 
+.if ${BRANCH} != "current"
+MAN1+=		startinnfeed.1
+MAN3+=		parsedate.3
+MAN5+=		sasl.conf.5
+MAN8+=		actsyncd.8 inndstart.8
+TO_BE_STRIPPED+=bin/inndstart bin/startinnfeed
+HEADERS+=	libinn.h storage.h
+PLIST_SUB+=	NOTCURRENT=""
+.else
+PLIST_SUB+=	NOTCURRENT="@comment "
+MAN8+=		innbind.8 tinyleaf.8
+.endif
+
 SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
 
@@ -199,8 +199,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
 	                  ${WRKSRC}/site/Makefile
 .if defined(WITH_TCL)
-	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.3/tcl.h>!' ${WRKSRC}/innd/innd.h
-	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl83!'			\
+	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.4/tcl.h>!' ${WRKSRC}/innd/innd.h
+	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl84!'			\
 	                  ${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's!et/com_err\.h!com_err.h!g'	\
@@ -224,7 +224,7 @@ post-build:
 post-install:
 .if !defined(WITHOUT_STRIP)
 .    for FILE in ${TO_BE_STRIPPED}
-	@[ -e ${INN_NEWSBASE}/${FILE} ] && ${STRIP_CMD} ${INN_NEWSBASE}/${FILE}
+	[ -e ${INN_NEWSBASE}/${FILE} ] && ${STRIP_CMD} ${INN_NEWSBASE}/${FILE}
 .    endfor
 .endif
 	${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man ${PREFIX}/man/man1 ${PREFIX}/man/man3 \
@@ -240,8 +240,8 @@ post-install:
 .for FILE in ${HEADERS}
 	${INSTALL_DATA} ${WRKSRC}/include/${FILE} ${INN_NEWSBASE}/include/
 .endfor
-	@${CHOWN} ${BINOWN}:news ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
-	@${CHMOD} 4755 ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
+	${CHOWN} ${BINOWN}:news ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
+	${CHMOD} 4755 ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${INN_ETCDIR}
 	@(if [ ! -f ${INN_DBDIR}/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
