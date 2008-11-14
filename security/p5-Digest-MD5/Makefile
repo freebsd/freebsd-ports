@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Digest-MD5
-PORTVERSION=	2.36
-PORTREVISION=	1
+PORTVERSION=	2.37
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +17,9 @@ COMMENT=	Perl5 interface to the MD5 algorithm
 PERL_CONFIGURE=	yes
 
 MAN3=		Digest::MD5.3
+
+post-extract:
+	${RM} -f ${WRKSRC}/._*
 
 .include <bsd.port.pre.mk>
 
