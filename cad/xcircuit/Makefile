@@ -1,27 +1,26 @@
 # New ports collection makefile for:	xcircuit
 # Date created:		3 Apr 1998
-# Whom:			giffunip@asme.org
+# Whom:			Pedro F. Giffuni
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.4.22
-PORTREVISION=	2
+PORTVERSION=	3.4.30
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
 USE_XORG=	xpm xt
-USE_TCL=	84
-USE_TCL_BUILD=	84
-USE_TK=		84
-USE_TK_BUILD=	84
+USE_TCL=	85
+USE_TCL_BUILD=	85
+USE_TK=		85
+USE_TK_BUILD=	85
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
