@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Dec 25 11:22:30 2006
-+++ Makefile.in	Mon Dec 25 11:23:23 2006
+--- Makefile.in.orig	2008-11-12 13:17:41.950768912 -0500
++++ Makefile.in	2008-11-12 13:21:44.532888985 -0500
 @@ -201,12 +201,11 @@
  		echo "move old sams.conf to sams.conf.old"; \
  		mv /etc/sams.conf /etc/sams.conf.old; \
@@ -10,14 +10,14 @@
  	cp ./samsf $(bindir);
  	cp ./samsredir $(bindir);
  	cp ./samsdaemon $(bindir);
--	cp ./etc/samsd $(RCDPATH);
+-	cp ./etc/sams $(RCDPATH);
  	cp ./mysql/recover_admin_passwd $(bindir);
  	-@if test ! -d $(datadir); then \
  		echo "creating $(datadir)"; \
-@@ -235,10 +234,6 @@
- 	chmod 777 $(datadir)/sams/data; 
- 	rm -f $(datadir)/sams/data/*;
- 	cp -R doc $(datadir)/sams/;
+@@ -243,10 +242,6 @@
+ 	cp ./mysql/sams_db.sql $(datadir)/sams/data;
+ 	cp ./mysql/squid_db.sql $(datadir)/sams/data;
+ 	cp ./update/upgrade_mysql_table.php $(datadir)/sams/data;
 -	-@if test ! -d $(HTTPDPATH)/sams; then \
 -		echo "creating symlink to sams directory"; \
 -		ln -s $(datadir)/sams $(HTTPDPATH)/sams; \

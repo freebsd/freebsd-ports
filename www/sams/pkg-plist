@@ -9,11 +9,11 @@ etc/sams.conf.sample
 %%DATADIR%%/bin/freemem
 %%DATADIR%%/bin/freeswap
 %%DATADIR%%/bin/fsusage
+%%DATADIR%%/bin/getuptime
 %%DATADIR%%/bin/getwbinfousers
 %%DATADIR%%/bin/samsdf
 %%DATADIR%%/bin/testwbinfopasswd
 %%DATADIR%%/bin/updateuserlist
-%%DATADIR%%/bin/uptime
 %%DATADIR%%/config.php
 %%DATADIR%%/createpdf.php
 %%DATADIR%%/doc/EN/admin.html
@@ -29,37 +29,37 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/EN/sams_conf.html
 %%DATADIR%%/doc/EN/squid.html
 %%DATADIR%%/doc/EN/upgrade.html
-%%DATADIR%%/doc/KOI8-R/about.html
-%%DATADIR%%/doc/KOI8-R/addusers.html
-%%DATADIR%%/doc/KOI8-R/adldap.html
-%%DATADIR%%/doc/KOI8-R/apache.html
-%%DATADIR%%/doc/KOI8-R/backup.html
-%%DATADIR%%/doc/KOI8-R/faq.html
-%%DATADIR%%/doc/KOI8-R/groups.html
-%%DATADIR%%/doc/KOI8-R/gui.html
-%%DATADIR%%/doc/KOI8-R/index.html
-%%DATADIR%%/doc/KOI8-R/index.html.2966.backup
-%%DATADIR%%/doc/KOI8-R/install.html
-%%DATADIR%%/doc/KOI8-R/localhost.html
-%%DATADIR%%/doc/KOI8-R/log.html
-%%DATADIR%%/doc/KOI8-R/mysql.html
-%%DATADIR%%/doc/KOI8-R/mysql_install.html
-%%DATADIR%%/doc/KOI8-R/osandsoft.html
-%%DATADIR%%/doc/KOI8-R/pdfreport.html
-%%DATADIR%%/doc/KOI8-R/redirector.html
-%%DATADIR%%/doc/KOI8-R/samba.html
-%%DATADIR%%/doc/KOI8-R/samba3.html
-%%DATADIR%%/doc/KOI8-R/sams_conf.html
-%%DATADIR%%/doc/KOI8-R/script.html
-%%DATADIR%%/doc/KOI8-R/settings.html
-%%DATADIR%%/doc/KOI8-R/several.html
-%%DATADIR%%/doc/KOI8-R/shablons.html
-%%DATADIR%%/doc/KOI8-R/soft.html
-%%DATADIR%%/doc/KOI8-R/squid.html
-%%DATADIR%%/doc/KOI8-R/upgrade.html
-%%DATADIR%%/doc/KOI8-R/urllists.html
-%%DATADIR%%/doc/KOI8-R/users.html
-%%DATADIR%%/doc/KOI8-R/weather.php
+%%DATADIR%%/doc/RU/redirector.html
+%%DATADIR%%/doc/RU/script.html
+%%DATADIR%%/doc/RU/settings.html
+%%DATADIR%%/doc/RU/samba.html
+%%DATADIR%%/doc/RU/weather.php
+%%DATADIR%%/doc/RU/apache.html
+%%DATADIR%%/doc/RU/groups.html
+%%DATADIR%%/doc/RU/users.html
+%%DATADIR%%/doc/RU/about.html
+%%DATADIR%%/doc/RU/gui.html
+%%DATADIR%%/doc/RU/urllists.html
+%%DATADIR%%/doc/RU/addusers.html
+%%DATADIR%%/doc/RU/shablons.html
+%%DATADIR%%/doc/RU/install.html
+%%DATADIR%%/doc/RU/osandsoft.html
+%%DATADIR%%/doc/RU/filerecovery.html
+%%DATADIR%%/doc/RU/log.html
+%%DATADIR%%/doc/RU/several.html
+%%DATADIR%%/doc/RU/soft.html
+%%DATADIR%%/doc/RU/squid.html
+%%DATADIR%%/doc/RU/samba3.html
+%%DATADIR%%/doc/RU/pdfreport.html
+%%DATADIR%%/doc/RU/mysql_install.html
+%%DATADIR%%/doc/RU/adldap.html
+%%DATADIR%%/doc/RU/backup.html
+%%DATADIR%%/doc/RU/localhost.html
+%%DATADIR%%/doc/RU/upgrade.html
+%%DATADIR%%/doc/RU/index.html
+%%DATADIR%%/doc/RU/mysql.html
+%%DATADIR%%/doc/RU/sams_conf.html
+%%DATADIR%%/doc/RU/faq.html
 %%DATADIR%%/doc/img/10.jpg
 %%DATADIR%%/doc/img/11.jpg
 %%DATADIR%%/doc/img/12.jpg
@@ -123,6 +123,7 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/img/pfile.gif
 %%DATADIR%%/doc/img/pobject.gif
 %%DATADIR%%/doc/img/reconfig.jpg
+%%DATADIR%%/doc/img/recovery.jpg
 %%DATADIR%%/doc/img/redir.jpg
 %%DATADIR%%/doc/img/redirect.gif
 %%DATADIR%%/doc/img/sams_work.gif
@@ -143,6 +144,9 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/img/usergroup_32.jpg
 %%DATADIR%%/doc/img/userlog-32.gif
 %%DATADIR%%/doc/img/websettings.jpg
+%%DATADIR%%/data/upgrade_mysql_table.php
+%%DATADIR%%/data/sams_db.sql
+%%DATADIR%%/data/squid_db.sql
 %%DATADIR%%/icon/bumper/adir.gif
 %%DATADIR%%/icon/bumper/allow_48.jpg
 %%DATADIR%%/icon/bumper/backup_48.jpg
@@ -156,6 +160,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/bumper/db_48.jpg
 %%DATADIR%%/icon/bumper/dbcheck_32.jpg
 %%DATADIR%%/icon/bumper/dbcheck_48.jpg
+%%DATADIR%%/icon/bumper/dbupgrade_32.jpg
+%%DATADIR%%/icon/bumper/dbupgrade_48.jpg
 %%DATADIR%%/icon/bumper/denied.gif
 %%DATADIR%%/icon/bumper/denied_48.jpg
 %%DATADIR%%/icon/bumper/denied_rus.gif
@@ -229,7 +235,6 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/bumper/redirect.gif
 %%DATADIR%%/icon/bumper/redirect_48.jpg
 %%DATADIR%%/icon/bumper/sams.gif
-%%DATADIR%%/icon/bumper/sams_icon.zip
 %%DATADIR%%/icon/bumper/sams_old.gif
 %%DATADIR%%/icon/bumper/savebase_32.jpg
 %%DATADIR%%/icon/bumper/savebase_48.jpg
@@ -278,6 +283,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/ark_48.jpg
 %%DATADIR%%/icon/classic/backup_48.jpg
 %%DATADIR%%/icon/classic/blank.gif
+%%DATADIR%%/icon/classic/cache_32.jpg
+%%DATADIR%%/icon/classic/cache_48.jpg
 %%DATADIR%%/icon/classic/chname_32.jpg
 %%DATADIR%%/icon/classic/chname_48.jpg
 %%DATADIR%%/icon/classic/config_20.jpg
@@ -287,6 +294,8 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/db_48.jpg
 %%DATADIR%%/icon/classic/dbcheck_32.jpg
 %%DATADIR%%/icon/classic/dbcheck_48.jpg
+%%DATADIR%%/icon/classic/dbupgrade_32.jpg
+%%DATADIR%%/icon/classic/dbupgrade_48.jpg
 %%DATADIR%%/icon/classic/denied.gif
 %%DATADIR%%/icon/classic/denied_48.jpg
 %%DATADIR%%/icon/classic/denied_big.gif
@@ -466,6 +475,7 @@ etc/sams.conf.sample
 %%DATADIR%%/icon/classic/web.gif
 %%DATADIR%%/icon/classic/webinterface.gif
 %%DATADIR%%/index.html
+%%DATADIR%%/install.php
 %%DATADIR%%/lang/koi8r-2-utf8
 %%DATADIR%%/lang/koi8r-2-win1251
 %%DATADIR%%/lang/koi8r-2-win1251.php
@@ -518,27 +528,19 @@ etc/sams.conf.sample
 %%DATADIR%%/lib/fpdf.php
 %%DATADIR%%/lib/rgb.php
 %%DATADIR%%/main.php
-%%DATADIR%%/menu/CVS/Entries
-%%DATADIR%%/menu/CVS/Entries.Extra
-%%DATADIR%%/menu/CVS/Repository
-%%DATADIR%%/menu/CVS/Root
 %%DATADIR%%/menu/ftiens4.js
 %%DATADIR%%/menu/ftiens4.js.work
 %%DATADIR%%/menu/menu.js
 %%DATADIR%%/menu/script.js
 %%DATADIR%%/menu/ua.js
-%%DATADIR%%/messages/EN/blocked.php
-%%DATADIR%%/messages/EN/config.php
-%%DATADIR%%/messages/KOI8-R/blocked.php
-%%DATADIR%%/messages/KOI8-R/config.php
-%%DATADIR%%/messages/WIN1251/blocked.php
-%%DATADIR%%/messages/WIN1251/config.php
+%%DATADIR%%/messages/blocked.php
+%%DATADIR%%/messages/config.php
 %%DATADIR%%/messages/denied.gif
 %%DATADIR%%/messages/denied.html
-%%DATADIR%%/messages/koi8r-win1251
 %%DATADIR%%/messages/urldenied.html
 %%DATADIR%%/mysqltools.php
 %%DATADIR%%/rgb.php
+%%DATADIR%%/src/_adldap.php
 %%DATADIR%%/src/_lffolder_6_users.php
 %%DATADIR%%/src/_usersbuttom_1_ldap.php
 %%DATADIR%%/src/adldap.php
@@ -566,6 +568,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/dbbuttom_1_dbcheck.php
 %%DATADIR%%/src/dbbuttom_6_statdb.php
 %%DATADIR%%/src/dbbuttom_7_chname.php
+%%DATADIR%%/src/dbbuttom_9_upgr.php
 %%DATADIR%%/src/dbtray.php
 %%DATADIR%%/src/deniedbuttom_1_loadlist.php
 %%DATADIR%%/src/deniedbuttom_2_savelist.php
@@ -633,6 +636,7 @@ etc/sams.conf.sample
 %%DATADIR%%/src/squidbuttom_2_loadbase.php
 %%DATADIR%%/src/squidbuttom_3_delete.php
 %%DATADIR%%/src/squidbuttom_4_addcache.php
+%%DATADIR%%/src/squidbuttom_5_readcache.php
 %%DATADIR%%/src/squidtray.php
 %%DATADIR%%/src/urllistfunction.php
 %%DATADIR%%/src/user.php
@@ -640,12 +644,12 @@ etc/sams.conf.sample
 %%DATADIR%%/src/userbuttom_2_traffic.php
 %%DATADIR%%/src/userbuttom_3_file.php
 %%DATADIR%%/src/userbuttom_4_site.php
+%%DATADIR%%/src/usersbuttom_4_site.php
 %%DATADIR%%/src/userbuttom_4_time.php
 %%DATADIR%%/src/userbuttom_5_clear.php
 %%DATADIR%%/src/userbuttom_6_chpasswd.php
 %%DATADIR%%/src/userbuttom_9_delete.php
 %%DATADIR%%/src/userbuttom_9_logoff.php
-%%DATADIR%%/src/usersbuttom_0_switch.php
 %%DATADIR%%/src/usersbuttom_1_adldap.php
 %%DATADIR%%/src/usersbuttom_1_domain.php
 %%DATADIR%%/src/usersbuttom_1_ncsa.php
@@ -663,11 +667,7 @@ etc/sams.conf.sample
 %%DATADIR%%/tray.php
 @dirrm %%DATADIR%%/src/script
 @dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/messages/WIN1251
-@dirrm %%DATADIR%%/messages/KOI8-R
-@dirrm %%DATADIR%%/messages/EN
 @dirrm %%DATADIR%%/messages
-@dirrm %%DATADIR%%/menu/CVS
 @dirrm %%DATADIR%%/menu
 @dirrm %%DATADIR%%/lib/font/makefont
 @dirrm %%DATADIR%%/lib/font
@@ -677,8 +677,8 @@ etc/sams.conf.sample
 @dirrm %%DATADIR%%/icon/bumper
 @dirrm %%DATADIR%%/icon
 @dirrm %%DATADIR%%/doc/img
-@dirrm %%DATADIR%%/doc/KOI8-R
 @dirrm %%DATADIR%%/doc/EN
+@dirrm %%DATADIR%%/doc/RU
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/bin

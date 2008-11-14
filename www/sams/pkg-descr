@@ -1,5 +1,6 @@
 SAMS (Squid Account Management System) is a WEB-based interface and tool to
-manage users of SQUID proxy server. Main features are:
+manage users of SQUID proxy server. NOTE: SQUID 2.x branch is suppoted only.
+Main features are:
 
     * manage users access to SQUID - proxy with NTLM, NCSA authorization
       or IP address
@@ -10,7 +11,7 @@ manage users of SQUID proxy server. Main features are:
     * switch of users access to SQUID proxy if his traffic quota is off
     * manage a delay pools for users groups
 
-WWW: http://sams.irc.perm.ru/
+WWW: http://sams.perm.ru/
 
-- Dindin
-dindin@freebsd.org.ua
+- GrishinUS
+uzgrishin@mail.ru
