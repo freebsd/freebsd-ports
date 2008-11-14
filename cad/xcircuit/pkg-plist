@@ -7,6 +7,7 @@ lib/X11/xcircuit/asg_spice.lps
 lib/X11/xcircuit/avlsi.lps
 lib/X11/xcircuit/bparams.tcl
 lib/X11/xcircuit/console.tcl
+lib/X11/xcircuit/matgen.tcl
 lib/X11/xcircuit/digital.lps
 lib/X11/xcircuit/fonts/courier.lps
 lib/X11/xcircuit/fonts/courier.xfe
