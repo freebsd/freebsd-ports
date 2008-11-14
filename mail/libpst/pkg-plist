@@ -1,0 +1,19 @@
+bin/lspst
+bin/pst2ldif
+bin/readpst
+bin/readpstlog
+%%PST2DII%%bin/pst2dii
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libpst.pdf
+%%PORTDOCS%%%%DOCSDIR%%/rn01re01.html
+%%PORTDOCS%%%%DOCSDIR%%/rn01re02.html
+%%PORTDOCS%%%%DOCSDIR%%/rn01re03.html
+%%PORTDOCS%%%%DOCSDIR%%/rn01re04.html
+%%PORTDOCS%%%%DOCSDIR%%/rn01re05.html
+%%PORTDOCS%%%%DOCSDIR%%/rn01re06.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
