@@ -74,6 +74,7 @@
     SUBDIR += freefem++
     SUBDIR += freemat
     SUBDIR += freemat-mpi
+    SUBDIR += fricas
     SUBDIR += fudgit
     SUBDIR += fung-calc
     SUBDIR += fxt
