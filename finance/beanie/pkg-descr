@@ -1,0 +1,19 @@
+Beanie is a flexible, distributed accounting system for medium-sized
+companies. It includes back-end batch processing as well as a
+(skeleton) GTK GUI and provides automated purchases, sales, and
+nominal ledgers as well as automated invoicing (via email). It also
+supports VAT and payroll.
+
+The latest version has considerable updates over the earlier releases
+and isn't particularly backwards-compatible. The installation and
+compilation is streamlined and the multi-database schema has been
+reduced to a single database per company. The gnome GUI is still
+lacking, but the command-line interface now has support for automated
+bank reconciliation (from online banking QIF files), payroll,
+automated billing and reminders, invoice PDF generation, statement
+PDF generation, and a general journal.
+
+WWW: http://beanie.sf.net/
+
+- Dermot Tynan
+dtynan@kalopa.com
