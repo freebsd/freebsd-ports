@@ -7,6 +7,7 @@
 
 PORTNAME=	knock
 PORTVERSION=	0.5.20051124
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
