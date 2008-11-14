@@ -6,10 +6,11 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	6.5
+PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/beta/zip/
+MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/rc/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${PORTVERSION}beta-200808111757
+DISTNAME=	netbeans-${PORTVERSION}rc2-200810270001-ml
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
