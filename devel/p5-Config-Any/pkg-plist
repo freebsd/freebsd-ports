@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Config/Any.pm
+%%SITE_PERL%%/Config/Any/Base.pm
 %%SITE_PERL%%/Config/Any/General.pm
 %%SITE_PERL%%/Config/Any/INI.pm
 %%SITE_PERL%%/Config/Any/JSON.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Any
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Config::Any.3 \
+	Config::Any::Base.3 \
 	Config::Any::General.3 \
 	Config::Any::INI.3 \
 	Config::Any::JSON.3 \
