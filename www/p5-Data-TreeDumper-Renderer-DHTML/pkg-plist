@@ -5,6 +5,11 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/DHTML
 @dirrm %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/DHTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/auto/Data/TreeDumper/Renderer
+@dirrmtry %%SITE_PERL%%/auto/Data/TreeDumper
+@dirrmtry %%SITE_PERL%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/TreeDumper/Renderer
 @dirrmtry %%SITE_PERL%%/Data/TreeDumper
+@dirrmtry %%SITE_PERL%%/Data
