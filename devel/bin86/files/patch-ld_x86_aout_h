@@ -1,0 +1,12 @@
+--- ld/x86_aout.h.orig	2008-07-14 15:03:10.000000000 -0500
++++ ld/x86_aout.h	2008-07-14 15:04:55.000000000 -0500
+@@ -12,6 +12,9 @@
+ #if defined(i386) || defined(__BCC__) || defined(MSDOS)
+ typedef long Long;
+ #define __OUT_OK 1
++#elif __amd64__
++typedef int Long;
++#define __OUT_OK 1
+ #else
+ typedef char Long[4];
+ #endif

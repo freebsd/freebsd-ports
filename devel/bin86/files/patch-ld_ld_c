@@ -1,9 +1,11 @@
---- ld/ld.c.orig	Wed Dec 30 12:20:50 1998
-+++ ld/ld.c	Thu Oct 19 17:04:00 2000
-@@ -2,6 +2,7 @@
+--- ld/ld.c.orig	2004-01-21 16:17:09.000000000 -0500
++++ ld/ld.c	2008-07-14 14:56:28.000000000 -0500
+@@ -2,6 +2,9 @@
  
  /* Copyright (C) 1994 Bruce Evans */
  
++#include <errno.h>
++
 +#undef BUGCOMPAT
  #include "syshead.h"
  #include "const.h"

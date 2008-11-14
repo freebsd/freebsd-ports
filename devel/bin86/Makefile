@@ -19,7 +19,7 @@ CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
 PORTDOCS=	ChangeLog README README-0.4
 MAN1=		as86.1 ld86.1
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES+=	${BINS:C/..\//bin\//g}
 
