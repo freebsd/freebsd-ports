@@ -43,6 +43,8 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-accept-recipient.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-accept-sender.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-accept.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-api.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-template.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-add-received.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-check-fqdn.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-clamav.html
@@ -55,7 +57,6 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-reject.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-relayclient.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-require-auth.html
-%%PORTDOCS%%%%DOCSDIR%%/plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3front.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-qmqp.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-qmtp.html

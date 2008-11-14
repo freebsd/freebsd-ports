@@ -7,6 +7,7 @@
 
 PORTNAME=	mailfront
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
