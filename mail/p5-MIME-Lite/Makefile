@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MIME-Lite
-PORTVERSION=	3.02.1
+PORTVERSION=	3.02.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]+)$/\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple interface for creating (not parsing!) MIME messages
 
-RUN_DEPENDS=	p5-Mail-Tools>=1.62:${PORTSDIR}/mail/p5-Mail-Tools \
+RUN_DEPENDS=	p5-Email-Date-Format>=1.000:${PORTSDIR}/mail/p5-Email-Date-Format \
 		p5-MIME-Types>=1.13:${PORTSDIR}/mail/p5-MIME-Types \
-		p5-Email-Date-Format>=1:${PORTSDIR}/mail/p5-Email-Date-Format
+		p5-Mail-Tools>=1.62:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -26,7 +26,7 @@ MAN3=		MIME::Lite.3 MIME::changes.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
