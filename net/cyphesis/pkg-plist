@@ -54,7 +54,6 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
 %%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
-%%DATADIR%%/rulesets/mason/__init__.py
 %%DATADIR%%/rulesets/mason/define_world.py
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
