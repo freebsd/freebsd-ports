@@ -16,7 +16,7 @@ COMMENT=	Tools to handle Short Message Service
 
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
-CONFLICTS=	smstools-3.*
+CONFLICTS=	smstools-3.* sendsms-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
