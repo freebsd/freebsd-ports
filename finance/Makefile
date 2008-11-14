@@ -5,6 +5,7 @@
 
     SUBDIR += aqbanking
     SUBDIR += aqmoney
+    SUBDIR += beanie
     SUBDIR += cbb
     SUBDIR += eqonomize
     SUBDIR += expense
