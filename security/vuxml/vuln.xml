@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="daf045d7-b211-11dd-a987-000c29ca8953">
+    <topic>net-snmp -- Denial of Service for SNMP agent via crafted GETBULK request</topic>
+    <affects>
+      <package>
+				<name>net-snmp</name>
+				<range><lt>5.4.2.1</lt></range>
+      </package>
+			<package>
+				<name>net-snmp53</name>
+				<range><lt>5.3.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+				<p>Wes Hardaker reports through sourceforge.net forum:</p>
+				<blockquote cite="http://sourceforge.net/forum/forum.php?forum_id=882903">
+					<p>SECURITY ISSUE: A bug in the getbulk handling code could
+						let anyone with even minimal access crash the agent. If you
+						have open access to your snmp agents (bad bad bad; stop doing
+						that!) or if you don't trust everyone that does have access to
+						your agents you should updated immediately to prevent
+						potential denial of service attacks.</p>
+				</blockquote>
+				<p>Description at cve.mitre.org additionally clarifies:</p>
+				<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4309">
+					<p>Integer overflow in the netsnmp_create_subtree_cache
+						function in agent/snmp_agent.c in net-snmp 5.4 before
+						5.4.2.1, 5.3 before 5.3.2.3, and 5.2 before 5.2.5.1 allows
+						remote attackers to cause a denial of service (crash) via
+						a crafted SNMP GETBULK request, which triggers a heap-based
+						buffer overflow, related to the number of responses or
+						repeats.</p>
+				</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4309</cvename>
+      <url>http://sourceforge.net/forum/forum.php?forum_id=882903</url>
+      <url>http://www.openwall.com/lists/oss-security/2008/10/31/1</url>
+      <url>http://net-snmp.svn.sourceforge.net/viewvc/net-snmp/tags/Ext-5-2-5-1/net-snmp/agent/snmp_agent.c?r1=17271&amp;r2=17272&amp;pathrev=17272</url>
+    </references>
+    <dates>
+      <discovery>2008-1</discovery>
+      <entry>2008-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f29fea8f-b19f-11dd-a55e-00163e000016">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
