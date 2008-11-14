@@ -7,6 +7,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
@@ -32,6 +33,8 @@ CONFIGURE_ARGS+=		\
 	--disable-legacy	\
 	--disable-lynx
 
+INSTALLED_MODULES=nss_mdns nss_mdns_minimal
+
 #
 # libtool is used, therefore we must perform a GNU make based install,
 # followed by removal of build rubble; we must create our own .so symlinks;
@@ -40,8 +43,10 @@ CONFIGURE_ARGS+=		\
 #
 do-install:
 	@( cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
-	( cd ${PREFIX}/lib ; ${LN} -s nss_mdns.so.1 nss_mdns.so )
-	${RM} ${PREFIX}/lib/nss_mdns.a ${PREFIX}/lib/nss_mdns.la
+.for INSTALLED_MODULE in ${INSTALLED_MODULES}
+	( cd ${PREFIX}/lib ; ${LN} -s ${INSTALLED_MODULE}.so.1 ${INSTALLED_MODULE}.so )
+	${RM} ${PREFIX}/lib/${INSTALLED_MODULE}.a ${PREFIX}/lib/${INSTALLED_MODULE}.la
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/README ${DOCSDIR}
@@ -50,7 +55,7 @@ do-install:
 
 # TODO: Print a message about the etc directory used for mdns.allow
 # being relative to ${PREFIX}.
-PLIST_FILES=	lib/nss_mdns.so	lib/nss_mdns.so.1
+PLIST_FILES=	${INSTALLED_MODULES:C/^/lib\//:C/$/.so/} ${INSTALLED_MODULES:C/^/lib\//:C/$/.so.1/}
 PORTDOCS=	README README.html
 
 .include <bsd.port.pre.mk>
