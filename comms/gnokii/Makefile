@@ -39,6 +39,8 @@ PORTDOCS=	*
 MAN1=		gnokii.1 sendsms.1
 MAN8=		gnokiid.8 mgnokiidev.8
 
+CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
+
 OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 		USB	"Build with libusb support"		off \
 		PCSC	"Build with PC/SC-Lite support"		off \

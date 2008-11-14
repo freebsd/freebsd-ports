@@ -16,7 +16,7 @@ COMMENT=	SMS Gateway software for GSM modems and mobile phones
 
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
-CONFLICTS=	smstools-2.* sendsms-[0-9]*
+CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
 
 WRKSRC=		${WRKDIR}/smstools3
 USE_GMAKE=	yes
