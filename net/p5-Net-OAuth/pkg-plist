@@ -1,8 +1,8 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/Net/OAuth
 %%SITE_PERL%%/Net/OAuth.pm
 %%SITE_PERL%%/Net/OAuth/AccessTokenRequest.pm
 %%SITE_PERL%%/Net/OAuth/AccessTokenResponse.pm
+%%SITE_PERL%%/Net/OAuth/ConsumerRequest.pm
 %%SITE_PERL%%/Net/OAuth/Message.pm
 %%SITE_PERL%%/Net/OAuth/ProtectedResourceRequest.pm
 %%SITE_PERL%%/Net/OAuth/Request.pm
