@@ -353,6 +353,7 @@
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
     SUBDIR += liblo
+    SUBDIR += liblscp
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
