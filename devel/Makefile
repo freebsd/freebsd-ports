@@ -488,6 +488,7 @@
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
+    SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-fps
     SUBDIR += hs-haddock
