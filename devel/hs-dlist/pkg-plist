@@ -1,0 +1,13 @@
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSdlist-%%PORTVERSION%%.a
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSdlist-%%PORTVERSION%%.o
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/DList.hi
+%%SUBDIR%%/register.sh
+share/doc/dlist-%%PORTVERSION%%/LICENSE
+@dirrm share/doc/dlist-%%PORTVERSION%%
+@dirrm lib/dlist-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
+@dirrm lib/dlist-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
+@dirrm lib/dlist-%%PORTVERSION%%
+@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister dlist
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
