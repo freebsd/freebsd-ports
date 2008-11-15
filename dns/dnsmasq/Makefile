@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.45
+PORTVERSION=	2.46
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_GENTOO}
