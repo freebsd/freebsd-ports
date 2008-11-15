@@ -1088,6 +1088,7 @@
     SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session2
     SUBDIR += pear-HTTP_Upload
+    SUBDIR += pear-HTTP_WebDAV_Server
     SUBDIR += pear-Services_Blogging
     SUBDIR += pear-Services_Compete
     SUBDIR += pear-Services_Delicious
