@@ -588,6 +588,7 @@
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
     SUBDIR += libbonobomm
+    SUBDIR += libburn
     SUBDIR += libcapsinetwork
     SUBDIR += libccid
     SUBDIR += libcfg

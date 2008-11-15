@@ -1,0 +1,8 @@
+bin/cdrskin
+include/libburn/libburn.h
+lib/libburn.a
+lib/libburn.so
+lib/libburn.so.23
+lib/libburn.la
+libdata/pkgconfig/libburn-1.pc
+@dirrm include/libburn
