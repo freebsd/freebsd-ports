@@ -267,6 +267,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.mfd.conf
 %%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
+%%DATADIR%%/mib2c.perl.conf
 %%DATADIR%%/mib2c.scalar.conf
 %%DATADIR%%/mib2c.table_data.conf
 %%DATADIR%%/mib2c-data/default-mfd-top.m2c
@@ -370,6 +371,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/RFC1155-SMI.txt
 %%DATADIR%%/mibs/RFC1213-MIB.txt
 %%DATADIR%%/mibs/RMON-MIB.txt
+%%DATADIR%%/mibs/SCTP-MIB.txt
 %%DATADIR%%/mibs/SMUX-MIB.txt
 %%DATADIR%%/mibs/SNMP-COMMUNITY-MIB.txt
 %%DATADIR%%/mibs/SNMP-FRAMEWORK-MIB.txt
