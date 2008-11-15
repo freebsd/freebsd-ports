@@ -51,7 +51,7 @@ OPTIONS+=	SDL "SDL video output" On
 OPTIONS+=	SVG "SVG graphics support" Off
 OPTIONS+=	SVGALIB "SVGALIB video output" Off
 OPTIONS+=	SHOUT "Shout2 support" Off
-OPTIONS+=	SKINS "Enable winamp skins interface" Off
+OPTIONS+=	SKINS "Enable winamp skins interface (requires QT4)" Off
 OPTIONS+=	SPEEX "Speex voice codec support" On
 OPTIONS+=	THEORA "OGG/Vorbis video codec support" On
 OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" On
@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=--enable-notify
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4)
 CONFIGURE_ARGS+=--enable-skins2
 .else
 CONFIGURE_ARGS+=--disable-skins2
