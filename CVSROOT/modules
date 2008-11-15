@@ -898,6 +898,7 @@ bdftopcf                        ports/x11-fonts/bdftopcf
 be-aspell                       ports/textproc/be-aspell
 be_agent                        ports/sysutils/be_agent
 beacon                          ports/net/beacon
+beanie                          ports/finance/beanie
 beanstalkd                      ports/net/beanstalkd
 beast                           ports/audio/beast
 beastie                         ports/x11-themes/beastie
@@ -2724,6 +2725,7 @@ emacs-calc                      ports/math/emacs-calc
 emacs-chess                     ports/games/emacs-chess
 emacs-devel                     ports/editors/emacs-devel
 emacs-lisp-intro                ports/lang/emacs-lisp-intro
+emacs-nox11                     ports/editors/emacs-nox11
 emacs-w3m                       ports/www/emacs-w3m
 emacs-w3m-emacs21               ports/www/emacs-w3m-emacs21
 emacs-w3m-xemacs21-mule         ports/www/emacs-w3m-xemacs21-mule
@@ -3569,6 +3571,7 @@ fressh                          ports/security/fressh
 fretsonfire                     ports/games/fretsonfire
 fretsonfire-data                ports/games/fretsonfire-data
 fribidi                         ports/converters/fribidi
+fricas                          ports/math/fricas
 frickin                         ports/net/frickin
 frikqcc                         ports/games/frikqcc
 frink                           ports/devel/frink
@@ -5057,6 +5060,7 @@ html2hdml                       ports/www/html2hdml
 html2latex                      ports/print/html2latex
 html2ps-a4                      ports/print/html2ps-a4
 html2ps-letter                  ports/print/html2ps-letter
+html2tex                        ports/textproc/html2tex
 html2text                       ports/textproc/html2text
 html2wml                        ports/www/html2wml
 htmldoc                         ports/textproc/htmldoc
@@ -6771,6 +6775,7 @@ latex-prettyref                 ports/print/latex-prettyref
 latex-resume                    ports/print/latex-resume
 latex-service                   ports/textproc/latex-service
 latex-subfloat                  ports/print/latex-subfloat
+latex-supertabular              ports/print/latex-supertabular
 latex-svninfo                   ports/print/latex-svninfo
 latex-timing                    ports/print/latex-timing
 latex-tipa                      ports/print/latex-tipa
@@ -18176,6 +18181,7 @@ py-stripogram                   ports/textproc/py-stripogram
 py-subversion                   ports/devel/py-subversion
 py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
+py-svglib                       ports/converters/py-svglib
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
 py-symeig                       ports/math/py-symeig
