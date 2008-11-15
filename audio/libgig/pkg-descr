@@ -1,0 +1,7 @@
+libgig is a C++ library written for accessing Gigasampler files and
+DLS Level 1 and 2 files, that is for reading and writing of those
+files.  libgig is used by linuxsampler to load Gigasampler files and
+it can be used by qsampler to retrieve additional informations about
+Gigasampler files.
+
+WWW:	http://www.linuxsampler.org/

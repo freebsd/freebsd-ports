@@ -1,0 +1,12 @@
+bin/rifftree
+bin/dlsdump
+bin/gigdump
+bin/gigextract
+include/RIFF.h
+include/DLS.h
+include/gig.h
+lib/libgig.so.9
+lib/libgig.so
+lib/libgig.la
+lib/libgig.a
+libdata/pkgconfig/gig.pc

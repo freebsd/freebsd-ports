@@ -348,6 +348,7 @@
     SUBDIR += libconvolve
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
+    SUBDIR += libgig
     SUBDIR += libgpod
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
