@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smplayer
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 
