@@ -1,0 +1,7 @@
+I wrote this module as an example of both using closures and using
+File::Find. Students are always asking me what closures are good for,
+and here's some examples. The functions mostly stand alone (i.e. they
+don't need the rest of the module), so rather than creating a
+dependency in your code, just lift the parts you want).
+
+WWW:	http://search.cpan.org/dist/File-Find-Closures/
