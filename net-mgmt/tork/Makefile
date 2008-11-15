@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tork
-PORTVERSION=	0.29.2
+PORTVERSION=	0.30
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	SF
 
