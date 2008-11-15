@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/github_creator/.packlist
+bin/github_creator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/github_creator
