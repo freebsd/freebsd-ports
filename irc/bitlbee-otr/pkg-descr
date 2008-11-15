@@ -1,8 +1,5 @@
-An IRC to other chat networks gateway. This program can be used
-as an IRC server which forwards everything you say to people on
-other chat networks like MSN/ICQ/Jabber.
+This is an otr-enabled branch of the mainline
+BitlBee development version. This is not any
+official bitlbee version.
 
-WWW: http://www.bitlbee.org/
-
-- Peter van Dijk
-peter@dataloss.nl
+WWW: http://www.khjk.org/bitlbee-otr/
