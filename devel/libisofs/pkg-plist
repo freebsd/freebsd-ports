@@ -1,0 +1,7 @@
+include/libisofs/libisofs.h
+lib/libisofs.a
+lib/libisofs.la
+lib/libisofs.so
+lib/libisofs.so.12
+libdata/pkgconfig/libisofs-1.pc
+@dirrm include/libisofs

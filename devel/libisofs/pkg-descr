@@ -1,0 +1,6 @@
+libburnia is a project for reading, mastering and writing optical
+discs. Currently it is comprised of libraries named libisofs,
+libburn, libisoburn, a cdrecord emulator named cdrskin, and an
+integrated multi-session tool named xorriso.
+
+WWW: http://libburnia-project.org/
