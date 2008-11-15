@@ -473,6 +473,7 @@
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unixstat
+    SUBDIR += unuran
     SUBDIR += vtk
     SUBDIR += vtk-data
     SUBDIR += vtk-examples

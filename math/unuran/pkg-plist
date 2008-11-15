@@ -1,0 +1,9 @@
+include/unuran.h
+include/unuran_tests.h
+include/unuran_urng_gsl.h
+include/unuran_urng_prng.h
+include/unuran_urng_rngstreams.h
+lib/libunuran.a
+lib/libunuran.la
+lib/libunuran.so
+lib/libunuran.so.9

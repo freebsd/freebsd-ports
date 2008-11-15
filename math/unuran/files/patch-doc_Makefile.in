@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2008-11-14 16:43:07.846169643 -0500
++++ doc/Makefile.in	2008-11-14 16:43:34.409120521 -0500
+@@ -47,7 +47,7 @@
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
+-INFO_DEPS = $(srcdir)/unuran.info $(srcdir)/unuran_win32.info
++INFO_DEPS = $(srcdir)/unuran.info
+ am__TEXINFO_TEX_DIR = $(srcdir)/./src
+ DVIS = unuran.dvi unuran_win32.dvi
+ PDFS = unuran.pdf unuran_win32.pdf
