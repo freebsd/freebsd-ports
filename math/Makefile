@@ -419,6 +419,7 @@
     SUBDIR += rascal
     SUBDIR += reed-solomon
     SUBDIR += rkward
+    SUBDIR += rngstreams
     SUBDIR += rpc
     SUBDIR += rpy
     SUBDIR += ruby-algebra

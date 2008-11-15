@@ -1,0 +1,13 @@
+RngStreams is a C implementation of a high-quality uniform random number
+generator that supports multiple "independent" streams of uniform random
+numbers.
+
+It was written by Pierre L'Ecuyer and Richard Simard, who have a website
+at:
+
+http://www.iro.umontreal.ca/~simardr/indexe.html
+
+This GNU-style package is compiled and maintained by Josef Leydold and
+released under the GNU Public License (GPL).
+
+WWW: http://statmath.wu-wien.ac.at/software/RngStreams/
