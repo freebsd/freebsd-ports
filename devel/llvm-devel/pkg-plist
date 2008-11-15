@@ -339,6 +339,7 @@ lib/LLVMARMAsmPrinter.o
 lib/LLVMARMCodeGen.o
 lib/LLVMAlpha.o
 lib/LLVMCBackend.o
+lib/LLVMCBase.o
 lib/LLVMCellSPU.o
 lib/LLVMCppBackend.o
 lib/LLVMExecutionEngine.o
