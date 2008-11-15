@@ -1,0 +1,23 @@
+UNU.RAN (Universal Non-Uniform RAndom Number generator) is a collection of
+algorithms for generating non-uniform pseudorandom variates as a library of C
+functions designed and implemented by the ARVAG (Automatic Random VAriate
+Generation) project group in Vienna, and released under the GNU Public License
+(GPL). It is especially designed for situations where:
+
+- a non-standard distribution or a truncated distribution is needed;
+- experiments with different types of distributions are made;
+- random variates for variance reduction techniques are used; or
+- fast generators of predictable quality are necessary.
+
+UNU.RAN provides generators that are superior in many aspects to those found in
+quite a number of other libraries; however, due to its more sophisticated
+programming interface, it might not be as easy to use.
+
+It uses an object-oriented interface in which distributions and generators are
+treated as independent objects, so that different methods for generating
+non-uniform random variates may be chosen according to various criteria, such
+as speed, quality, and variance reduction. It is flexible enough to permit
+sampling from non-standard distributions, such as distributions that arise in
+a model and can only be computed in complicated subroutines.
+
+WWW: http://statmath.wu-wien.ac.at/unuran/
