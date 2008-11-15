@@ -12,7 +12,7 @@ include/libwfut-0.2/libwfut/types.h
 lib/libwfut-0.2.a
 lib/libwfut-0.2.la
 lib/libwfut-0.2.so
-lib/libwfut-0.2.so.1
+lib/libwfut-0.2.so.2
 libdata/pkgconfig/libwfut-0.2.pc
 @dirrm include/libwfut-0.2/libwfut
 @dirrm include/libwfut-0.2
