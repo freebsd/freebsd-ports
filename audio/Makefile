@@ -202,6 +202,7 @@
     SUBDIR += gdam
     SUBDIR += gdrdao
     SUBDIR += ghostess
+    SUBDIR += gigedit
     SUBDIR += gimmix
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
