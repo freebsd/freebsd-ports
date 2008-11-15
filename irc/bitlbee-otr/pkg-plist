@@ -1,8 +1,8 @@
 sbin/bitlbee
-%%DATADIR%%/help.txt
-@dirrm %%DATADIR%%
+share/bitlbee/help.txt
+@dirrm share/bitlbee
 @dirrmtry etc/bitlbee
 @exec mkdir -p %D/etc/bitlbee
 @exec mkdir -m 0700 -p /var/db/bitlbee
 @exec chown -R %%BITLBEEUSER%%:%%BITLBEEGROUP%% /var/db/bitlbee
-@unexec rmdir /var/db/bitlbee 2>/dev/null || true
+@dirrmtry /var/db/bitlbee
