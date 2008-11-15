@@ -649,6 +649,7 @@
     SUBDIR += libical
     SUBDIR += libiqxmlrpc
     SUBDIR += libisc
+    SUBDIR += libisofs
     SUBDIR += libixp
     SUBDIR += liblas
     SUBDIR += libleaftag
