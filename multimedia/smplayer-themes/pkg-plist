@@ -182,6 +182,7 @@
 %%DATADIR%%/themes/Gnome/aspect.png
 %%DATADIR%%/themes/Gnome/audio_channels.png
 %%DATADIR%%/themes/Gnome/audio_down.png
+%%DATADIR%%/themes/Gnome/audio_equalizer.png
 %%DATADIR%%/themes/Gnome/audio_filters.png
 %%DATADIR%%/themes/Gnome/audio_track.png
 %%DATADIR%%/themes/Gnome/audio_up.png
@@ -233,12 +234,13 @@
 %%DATADIR%%/themes/Gnome/logs.png
 %%DATADIR%%/themes/Gnome/main_toolbar.png
 %%DATADIR%%/themes/Gnome/minus.png
+%%DATADIR%%/themes/Gnome/mirror.png
 %%DATADIR%%/themes/Gnome/monitor.png
 %%DATADIR%%/themes/Gnome/motion_vectors.png
 %%DATADIR%%/themes/Gnome/mouse.png
 %%DATADIR%%/themes/Gnome/mute.png
 %%DATADIR%%/themes/Gnome/next.png
-%%DATADIR%%/themes/Gnome/ok_small.png
+%%DATADIR%%/themes/Gnome/ok.png
 %%DATADIR%%/themes/Gnome/ontop.png
 %%DATADIR%%/themes/Gnome/open.png
 %%DATADIR%%/themes/Gnome/open_playlist.png
@@ -268,6 +270,7 @@
 %%DATADIR%%/themes/Gnome/rotate.png
 %%DATADIR%%/themes/Gnome/saturation.png
 %%DATADIR%%/themes/Gnome/save.png
+%%DATADIR%%/themes/Gnome/screen.png
 %%DATADIR%%/themes/Gnome/screenshot.png
 %%DATADIR%%/themes/Gnome/shuffle.png
 %%DATADIR%%/themes/Gnome/speed.png
@@ -277,7 +280,9 @@
 %%DATADIR%%/themes/Gnome/sub_down.png
 %%DATADIR%%/themes/Gnome/sub_up.png
 %%DATADIR%%/themes/Gnome/systray.png
+%%DATADIR%%/themes/Gnome/tips.png
 %%DATADIR%%/themes/Gnome/title.png
+%%DATADIR%%/themes/Gnome/toolbars.png
 %%DATADIR%%/themes/Gnome/translators.png
 %%DATADIR%%/themes/Gnome/unload.png
 %%DATADIR%%/themes/Gnome/up.png
@@ -288,6 +293,7 @@
 %%DATADIR%%/themes/Gnome/video.png
 %%DATADIR%%/themes/Gnome/video_filters.png
 %%DATADIR%%/themes/Gnome/video_size.png
+%%DATADIR%%/themes/Gnome/video_track.png
 %%DATADIR%%/themes/Gnome/volume.png
 %%DATADIR%%/themes/Noia/README.txt
 %%DATADIR%%/themes/Noia/angle.png
