@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	dovecot
 # Date created:				12/08/2002
 # Whom:			Dominic Marks <dominic.marks@btinternet.com>
@@ -7,12 +6,11 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
-MAINTAINER=	yds@coolrat.org
+MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes

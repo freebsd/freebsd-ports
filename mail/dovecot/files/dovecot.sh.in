@@ -30,8 +30,8 @@ dovecot_prestart()
 {	# Ensure runtime directories exist with correct permissions
 	local base user gid
 	base=/var/run/${name}
-	user=$(awk -F '[[:space:]]*=[[:space:]]*' '/^[[:space:]]*login_user[[:space:]]*=/ { print $2 }' ${required_files})
-	gid=$(pw usershow -n "${user:-${name}}" 2>/dev/null | cut -d: -f4)
+	user=$(/usr/bin/awk -F '[[:space:]]*=[[:space:]]*' '/^[[:space:]]*login_user[[:space:]]*=/ { print $2 }' ${required_files})
+	gid=$(/usr/sbin/pw usershow -n "${user:-${name}}" 2>/dev/null | /usr/bin/cut -d: -f4)
 	/usr/bin/install -o root -g wheel -m 0755 -d ${base}
 	/usr/bin/install -o root -g ${gid} -m 0750 -d ${base}/login
 }
