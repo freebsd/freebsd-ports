@@ -1304,6 +1304,7 @@
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-ExtAttr
     SUBDIR += p5-File-FTS
+    SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
