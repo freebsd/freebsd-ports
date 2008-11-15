@@ -1,0 +1,24 @@
+At the suggestion of Linas Vepstas on the Gnu Scientific Library (GSL) list,
+this GPL'd suite of random number tests will be named "Dieharder". Using a
+movie sequel pun for the name is a double tribute to George Marsaglia, whose
+"Diehard battery of tests" of random number generators has enjoyed years of
+enduring usefulness as a test suite.
+
+The dieharder suite is more than just the diehard tests cleaned up and given a
+pretty GPL'd source face in native C: tests from the Statistical Test Suite
+(STS) developed by the National Institute for Standards and Technology (NIST)
+are being incorporated, as are new tests developed by rgb. Where possible,
+tests are parametrized and controllable so that failure, at least, is
+unambiguous.
+
+A further design goal is to provide some indication of *why* a generator fails
+a test, where such information can be extracted during the test process and
+placed in usable form. For example, the bit-distribution tests should
+(eventually) be able to display the actual histogram for the different bit
+n-tuplets.
+
+Dieharder is by design extensible. It is intended to be the "Swiss army knife
+of random number test suites", or if you prefer, "the last suite you'll ever
+ware" for testing random numbers.
+
+WWW: http://www.phy.duke.edu/~rgb/General/dieharder.php
