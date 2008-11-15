@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	14.1.0
+PORTVERSION=	14.2.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -17,14 +17,12 @@ CONFLICTS=	play-[0-9]*
 
 MAN1=		sox.1 soxi.1
 MAN3=		libsox.3
-MAN7=		soxformat.7 soxeffect.7
-MLINKS=		sox.1 play.1 sox.1 rec.1
+MAN7=		soxformat.7
+MLINKS=		sox.1 play.1 sox.1 rec.1 sox.1 soxeffect.7
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig
-# src/Makefile uses ${RM} but never sets it
-MAKE_ENV+=	RM="rm -f"
 
 .if defined(PACKAGE_BUILDING)
 _LAME=	off
