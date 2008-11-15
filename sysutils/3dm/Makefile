@@ -14,7 +14,7 @@ MASTER_SITES=	http://3ware.com/download/Escalade9650SE-Series/9.4.0.1/
 DISTNAME=	3DM2-freebsd-9.4.0.1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
