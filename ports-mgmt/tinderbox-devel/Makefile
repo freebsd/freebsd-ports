@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
+BROKEN=		To many little annoying bugs, wait for 3.1.2
+
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
 		CSUP  "Use csup for updates" On \
