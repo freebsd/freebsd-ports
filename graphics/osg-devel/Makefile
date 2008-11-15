@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-2.6/
+MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -24,6 +24,8 @@ USE_CMAKE=	yes
 USE_GL=		gl glu
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	OSG_VERSION=2.6.1 OSG_SHLIBVER=48
 
 OPTIONS=	CURL		"Support for cURL"		off \
 		FREETYPE	"Support for FreeType"		on \
