@@ -55,6 +55,7 @@
     SUBDIR += position
     SUBDIR += pp3
     SUBDIR += ptiger
+    SUBDIR += py-aipy
     SUBDIR += py-metar
     SUBDIR += py-pyfits
     SUBDIR += pyephem
