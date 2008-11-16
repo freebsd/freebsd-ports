@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsmapfs
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.netsw.org/softeng/versioncontrol/repository/cvs/cvsmapfs/
 
@@ -20,12 +21,12 @@ NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 
 do-install:
-	$(INSTALL_SCRIPT) $(WRKSRC)/cvsmapfs $(PREFIX)/bin/cvsmapfs
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsmapfs ${PREFIX}/bin/cvsmapfs
 
 post-install:
 .if !defined(NOPORTDOCS)
-	$(MKDIR) $(PREFIX)/share/doc/cvsmapfs
-	$(INSTALL_DATA) $(WRKSRC)/README $(PREFIX)/share/doc/cvsmapfs
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
