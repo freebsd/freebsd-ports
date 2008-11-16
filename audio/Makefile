@@ -575,6 +575,7 @@
     SUBDIR += quelcom
     SUBDIR += raop_play
     SUBDIR += raproxy
+    SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
     SUBDIR += resid
