@@ -521,6 +521,7 @@
     SUBDIR += padevchooser
     SUBDIR += paman
     SUBDIR += paprefs
+    SUBDIR += patchage
     SUBDIR += pavucontrol
     SUBDIR += pavumeter
     SUBDIR += pd
