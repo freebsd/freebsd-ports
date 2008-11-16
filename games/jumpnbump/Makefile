@@ -7,11 +7,11 @@
 
 PORTNAME=	jumpnbump
 PORTVERSION=	1.41
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
-	http://www.vlaadworld.net/jumpnbump/ \
-	http://jumpnbump.linuxsys.de/
+		http://www.vlaadworld.net/jumpnbump/ \
+		http://jumpnbump.linuxsys.de/
 
 MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	A fun multiplayer game with cute fluffy bunnies and bloody explosions
@@ -30,7 +30,7 @@ MAN6=	jumpnbump.6
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 .if !defined (WITHOUT_TCL)
@@ -45,12 +45,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jnbunpack ${PREFIX}/bin/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/jumpbump.dat ${DATADIR}/
+	${INSTALL_MAN} ${WRKSRC}/jumpnbump.6 ${MAN6PREFIX}/man/man6/
 .if !defined(WITHOUT_TCL)
 	${INSTALL_SCRIPT} ${WRKSRC}/jnbmenu.tcl ${PREFIX}/bin/jnbmenu
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/jumpnbump.6 ${MANPREFIX}/man/man6/
 	${INSTALL_MAN} ${WRKSRC}/jumpnbump.html ${DOCSDIR}
 .for i in jumpnbump_levelmaking.htm level.pcx making1.gif making2.gif \
 	making3.gif pack.gif
