@@ -1,7 +1,7 @@
 bin/aoi
-%%DOCSDIR%%/HISTORY
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/ArtOfIllusion.jar
 %%DATADIR%%/Icons/32x32.png
 %%DATADIR%%/Icons/48x48.png
@@ -37,4 +37,4 @@ bin/aoi
 @dirrm %%DATADIR%%/Plugins
 @dirrm %%DATADIR%%/Icons
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
