@@ -1,0 +1,66 @@
+@comment $FreeBSD: /tmp/pcvs/ports/editors/nano-devel/pkg-plist,v 1.1 2008-11-16 23:59:19 wxs Exp $
+bin/nano
+bin/rnano
+%%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/da/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/de/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/es/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/id/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/it/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
+%%EXAMPLESDIR%%/nanorc.sample
+share/nano/awk.nanorc
+share/nano/fortran.nanorc
+share/nano/xml.nanorc
+share/nano/php.nanorc
+share/nano/tcl.nanorc
+share/nano/ocaml.nanorc
+share/nano/debian.nanorc
+share/nano/css.nanorc
+share/nano/objc.nanorc
+share/nano/gentoo.nanorc
+share/nano/asm.nanorc
+share/nano/c.nanorc
+share/nano/groff.nanorc
+share/nano/html.nanorc
+share/nano/java.nanorc
+share/nano/man.nanorc
+share/nano/mutt.nanorc
+share/nano/nanorc.nanorc
+share/nano/patch.nanorc
+share/nano/perl.nanorc
+share/nano/pov.nanorc
+share/nano/python.nanorc
+share/nano/ruby.nanorc
+share/nano/sh.nanorc
+share/nano/tex.nanorc
+@dirrm share/nano
+@dirrm %%EXAMPLESDIR%%
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry man/fr/man5
+%%NLS%%@dirrmtry man/fr/man1
+%%NLS%%@dirrmtry man/fr
