@@ -1,0 +1,14 @@
+--- configs/Makefile.in.orig	2008-03-30 22:08:38.000000000 +0900
++++ configs/Makefile.in	2008-08-02 02:18:10.000000000 +0900
+@@ -182,9 +182,9 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-ftsymdir = $(sysconfdir)/sym
++ftsymdir = $(sysconfdir)/flow-tools
+ dist_ftsym_DATA = ip-prot.sym ip-type.sym tcp-port.sym asn.sym tag.sym
+-ftcfgdir = $(sysconfdir)/cfg
++ftcfgdir = $(sysconfdir)/flow-tools
+ dist_ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg xlate.cfg
+ all: all-am
+ 
