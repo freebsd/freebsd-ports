@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -42,7 +41,9 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
-		llvmgxx.1 opt.1 stkrc.1 tblgen.1
+		llvmgxx.1 opt.1 tblgen.1
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
@@ -62,7 +63,13 @@ post-install:
 	@${RM} ${PREFIX}/bin/.dir \
 	   ${PREFIX}/lib/.dir
 
-regression-test: build
-	(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
+regression-test: ${BUILD_COOKIE}
+	if [ `${ID} -u` = 0 ]; then \
+		${CHOWN} -R nobody ${WRKSRC}/test; \
+		su -m nobody -c ${TEST_CMD}; \
+	else \
+		${SH} -c ${TEST_CMD}; \
+	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
