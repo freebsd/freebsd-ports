@@ -7,6 +7,7 @@
 
 PORTNAME=	americasarmy
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://195.222.33.239/pub/games/americasarmy/ \
 		ftp://ftp.bih.net.ba/pub/games/americasarmy/ \
