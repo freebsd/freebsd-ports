@@ -1,6 +1,6 @@
---- Makefile.orig	2008-04-28 16:55:08.000000000 -0500
-+++ Makefile	2008-04-28 16:56:07.000000000 -0500
-@@ -9,13 +9,10 @@
+--- Makefile.orig	2008-05-31 16:03:10.000000000 +0800
++++ Makefile	2008-11-17 02:23:39.000000000 +0800
+@@ -9,29 +9,14 @@
  ####### Compiler, tools and options
  
  CC	?=	gcc
@@ -8,15 +8,17 @@
 -CC	:=	gcc
 -endif
  INCPATH :=	.
--CFLAGS	:=	-Wall -W -O2 -DNO_DEBUG
+-CFLAGS	?=	-O2
+-CFLAGS	:=	$(CFLAGS) -Wall -W -DNO_DEBUG
 +CFLAGS	+=	-Wall -W
  LDLIBS	:=	
 -LDFLAGS	:=	
+-
+-# 64 bit file offsets even on 32 bit
+-# platforms (LFS, if supported by the
+-# operating system): yes or no.
+-USE_LARGEFILE:=	yes
 +LDFLAGS	+=	
- 
- # 64 bit file offsets even on 32 bit
- # platforms (LFS, if supported by the
-@@ -24,13 +21,7 @@
  
  INSTALL_PATH :=	/usr/local/bin
  
@@ -29,13 +31,4 @@
 -endif
  
  ####### Files
- 
-@@ -54,7 +45,7 @@
- 	$(CC) $(LDFLAGS) -o $(BINARY) $(OBJECTS) $(LDLIBS)
- 
- uoff_t.h: mkuoff_t.c
--	$(CC) $(FILESIZE_DEFS) -o mkuoff_t mkuoff_t.c
-+	$(CC) $(CFLAGS) $(FILESIZE_DEFS) -o mkuoff_t mkuoff_t.c
- 	@echo "Generating uoff_t.h"
- 	@./mkuoff_t
  
