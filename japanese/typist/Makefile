@@ -18,13 +18,24 @@ COMMENT=	Typing lessons (Japanese version)
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		typist.1
 
-post-install:
-	@strip ${PREFIX}/bin/typist
-.if !defined(NOPORTDOCS)
-	${MKDIR} $(PREFIX)/share/doc/typist
-	${INSTALL_DATA} ${WRKSRC}/../doc/INSTALL.txt $(PREFIX)/share/doc/typist
-	${INSTALL_DATA} ${WRKSRC}/../doc/README.J $(PREFIX)/share/doc/typist
-	${INSTALL_DATA} ${WRKSRC}/../doc/README.orig $(PREFIX)/share/doc/typist
+PORTDOCS=	INSTALL.txt README.J README.orig
+
+OPTIONS=	KEYMAP106JP	"Japanese 106 Keymap"	on \
+		KEYMAP101	"101 Keymap"		off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_KEYMAP101)
+MAKE_ARGS=	KEYTYPE="e"
+.elif !defined(WITHOUT_KEYMAP106JP)
+MAKE_ARGS=	KEYTYPE="j"
 .endif
 
-.include <bsd.port.mk>
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/typist
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
+
+.include <bsd.port.post.mk>

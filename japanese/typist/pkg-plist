@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/typist
 lib/typist/click.snd
 lib/typist/e.map
@@ -15,8 +16,4 @@ lib/typist/t.typ
 lib/typist/typist.idx
 lib/typist/u.typ
 lib/typist/v.typ
-share/doc/typist/INSTALL.txt
-share/doc/typist/README.J
-share/doc/typist/README.orig
 @dirrm lib/typist
-@dirrm share/doc/typist

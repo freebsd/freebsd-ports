@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May 20 21:41:33 1997
-+++ Makefile	Sun Oct 19 03:09:37 2003
+--- Makefile.orig	1997-05-21 13:41:33.000000000 +0900
++++ Makefile	2008-11-16 21:34:28.000000000 +0900
 @@ -49,18 +49,19 @@
  
  # following options for SGI IRIX
@@ -22,7 +22,7 @@
  MAB=
  
 -CFLAGS=$(DEBUG) $(MAB) -DTERMIO
-+CFLAGS+=$(DEBUG) $(MAB) -DTERMIO -DLESSONDIR=\"$(LESSONDIR)\" -DKEYTYPE=\"j\"
++CFLAGS+=$(DEBUG) $(MAB) -DTERMIO -DLESSONDIR=\"$(LESSONDIR)\" -DKEYTYPE=\"${KEYTYPE}\"
  # -DKEYTYPE=\"e\"
  # -DLESSONDIR=\"$(LESSONDIR)\"
  # -DVANISHCHAR
