@@ -49,3 +49,20 @@
 -  return (int) Tcl_GetAssocData (interp, ASSOC, &proc);
 +  return (int)(long) Tcl_GetAssocData (interp, ASSOC, &proc);
  }
+--- generic/zero.c	2004-11-09 19:07:03.000000000 -0500
++++ generic/zero.c	2008-11-15 14:49:50.000000000 -0500
+@@ -33,4 +33,5 @@
+ 
+ #include "memchanInt.h"
++#include <string.h>
+ 
+ /*
+--- generic/random.c	2004-11-09 19:07:01.000000000 -0500
++++ generic/random.c	2008-11-15 14:51:14.000000000 -0500
+@@ -34,4 +34,6 @@
+ #include "../isaac/rand.h"
+ #include <time.h>
++#include <string.h>
++
+ /*
+  * Forward declarations of internal procedures.
