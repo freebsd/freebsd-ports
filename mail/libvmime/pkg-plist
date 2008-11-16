@@ -19,15 +19,6 @@ include/vmime/dateTime.hpp
 include/vmime/defaultAttachment.hpp
 include/vmime/disposition.hpp
 include/vmime/emptyContentHandler.hpp
-include/vmime/encoder.hpp
-include/vmime/encoder7bit.hpp
-include/vmime/encoder8bit.hpp
-include/vmime/encoderB64.hpp
-include/vmime/encoderBinary.hpp
-include/vmime/encoderDefault.hpp
-include/vmime/encoderFactory.hpp
-include/vmime/encoderQP.hpp
-include/vmime/encoderUUE.hpp
 include/vmime/encoding.hpp
 include/vmime/exception.hpp
 include/vmime/fileAttachment.hpp
@@ -65,10 +56,13 @@ include/vmime/net/imap/IMAPStore.hpp
 include/vmime/net/imap/IMAPTag.hpp
 include/vmime/net/imap/IMAPUtils.hpp
 include/vmime/net/maildir/maildirFolder.hpp
+include/vmime/net/maildir/maildirFormat.hpp
 include/vmime/net/maildir/maildirMessage.hpp
 include/vmime/net/maildir/maildirServiceInfos.hpp
 include/vmime/net/maildir/maildirStore.hpp
 include/vmime/net/maildir/maildirUtils.hpp
+include/vmime/net/maildir/format/courierMaildirFormat.hpp
+include/vmime/net/maildir/format/kmailMaildirFormat.hpp
 include/vmime/net/message.hpp
 include/vmime/net/pop3/POP3Folder.hpp
 include/vmime/net/pop3/POP3Message.hpp
@@ -139,6 +133,15 @@ include/vmime/text.hpp
 include/vmime/textPart.hpp
 include/vmime/textPartFactory.hpp
 include/vmime/types.hpp
+include/vmime/utility/encoder/binaryEncoder.hpp
+include/vmime/utility/encoder/encoder.hpp
+include/vmime/utility/encoder/sevenBitEncoder.hpp
+include/vmime/utility/encoder/b64Encoder.hpp
+include/vmime/utility/encoder/defaultEncoder.hpp
+include/vmime/utility/encoder/encoderFactory.hpp
+include/vmime/utility/encoder/uuEncoder.hpp
+include/vmime/utility/encoder/qpEncoder.hpp
+include/vmime/utility/encoder/eightBitEncoder.hpp
 include/vmime/utility/childProcess.hpp
 include/vmime/utility/datetimeUtils.hpp
 include/vmime/utility/file.hpp
@@ -147,6 +150,7 @@ include/vmime/utility/path.hpp
 include/vmime/utility/progressListener.hpp
 include/vmime/utility/random.hpp
 include/vmime/utility/smartPtr.hpp
+include/vmime/utility/smartPtrInt.hpp
 include/vmime/utility/stream.hpp
 include/vmime/utility/stringProxy.hpp
 include/vmime/utility/stringUtils.hpp
@@ -167,6 +171,7 @@ libdata/pkgconfig/vmime.pc
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 @dirrm %%DOCSDIR%%
+@dirrm include/vmime/utility/encoder
 @dirrm include/vmime/utility
 @dirrm include/vmime/security/sasl
 @dirrm include/vmime/security/digest/sha1
@@ -181,6 +186,7 @@ libdata/pkgconfig/vmime.pc
 @dirrm include/vmime/net/smtp
 @dirrm include/vmime/net/sendmail
 @dirrm include/vmime/net/pop3
+@dirrm include/vmime/net/maildir/format
 @dirrm include/vmime/net/maildir
 @dirrm include/vmime/net/imap
 @dirrm include/vmime/net
