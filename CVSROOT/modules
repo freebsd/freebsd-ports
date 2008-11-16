@@ -7072,6 +7072,7 @@ libggz                          ports/games/libggz
 libghemical                     ports/science/libghemical
 libghthash                      ports/devel/libghthash
 libghttp                        ports/www/libghttp
+libgig                          ports/audio/libgig
 libgii                          ports/devel/libgii
 libgiigic                       ports/devel/libgiigic
 libgksu                         ports/sysutils/libgksu
@@ -7171,6 +7172,7 @@ liblo                           ports/audio/liblo
 liblogging                      ports/devel/liblogging
 liblqr-1                        ports/graphics/liblqr-1
 liblrdf                         ports/textproc/liblrdf
+liblscp                         ports/audio/liblscp
 libltdl15                       ports/devel/libltdl15
 liblug                          ports/graphics/liblug
 liblzxcomp                      ports/archivers/liblzxcomp
