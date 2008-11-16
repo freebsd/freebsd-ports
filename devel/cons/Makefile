@@ -7,6 +7,7 @@
 
 PORTNAME=	cons
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -27,14 +28,15 @@ MANCOMPRESSED=	yes
 MAN1=		cons.1
 DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
 		cons.html TODO
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
 	${INSTALL_MAN} ${WRKSRC}/cons.1.gz ${PREFIX}/man/man1/cons.1.gz
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PKGNAME}
+	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL} -c ${WRKSRC}/$f ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL} -c ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 .endif
 
