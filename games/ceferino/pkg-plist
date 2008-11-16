@@ -1,9 +1,9 @@
 bin/ceferino
 bin/ceferinoeditor
 bin/ceferinosetup
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/ca/LC_MESSAGES/ceferino.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ceferino.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ceferino.mo
@@ -59,7 +59,7 @@ bin/ceferinosetup
 %%DATADIR%%/sounds/tic.wav
 %%DATADIR%%/sounds/tiro.wav
 %%DATADIR%%/sounds/toc.wav
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/ima
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/levels
