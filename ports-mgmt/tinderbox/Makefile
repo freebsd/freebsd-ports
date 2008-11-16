@@ -5,9 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-#DISTVERSION=	${PORTVERSION}-${PORTREVISION}
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
@@ -18,8 +16,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
-
-BROKEN=		To many little annoying bugs, wait for 3.1.2
 
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
@@ -47,8 +43,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webui__module__moduleBuildPorts.php \
-		${FILESDIR}/extra-patch-webui__core__TinderboxDS.php
 .else
 PLIST_SUB+=	WEBUI="@comment "
 .endif
@@ -98,11 +92,7 @@ post-extract:
 .else
 post-extract:
 	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/webui
-post-patch:
-	@${RM} ${WRKSRC}/webui/core/TinderboxDS.php.orig
-	@${RM} ${WRKSRC}/webui/module/moduleBuildPorts.php.orig
 .endif
-	@${RM} ${WRKSRC}/lib/tc_command.sh.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
