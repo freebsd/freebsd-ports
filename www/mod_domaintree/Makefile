@@ -22,6 +22,10 @@ AP_GENPLIST=	YES
 
 PORTDOCS=	LICENSE.txt ChangeLog
 
+PLIST_FILES=	share/doc/mod_domaintree/LICENSE.txt \
+		share/doc/mod_domaintree/ChangeLog
+PLIST_DIRS=	share/doc/mod_domaintree
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
