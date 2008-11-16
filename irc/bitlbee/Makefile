@@ -7,6 +7,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -35,7 +36,6 @@ OPTIONS=	DEBUG "Enable debug support" Off \
 		OSCAR "Enable OSCAR (ICQ, AIM) protocol support" On \
 		YAHOO "Enable Yahoo! protocol support" On
 
-
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
 BITLBEEUSER?=	bitlbee
@@ -55,6 +55,8 @@ SUB_LIST+=	BITLBEEUSER=${BITLBEEUSER} \
 		BITLBEEGID=${BITLBEEGID}
 
 SUB_FILES+=	pkg-install pkg-deinstall
+
+CONFLICTS=	bitlbee-otr-[0-9]*
 
 .include <bsd.port.pre.mk>
 
