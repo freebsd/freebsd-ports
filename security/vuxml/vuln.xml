@@ -89,7 +89,7 @@ Note:  Please add new entries to the beginning of this file.
 	    your agents you should updated immediately to prevent
 	    potential denial of service attacks.</p>
 	</blockquote>
-	  <p>Description at cve.mitre.org additionally clarifies:</p>
+	<p>Description at cve.mitre.org additionally clarifies:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4309">
 	  <p>Integer overflow in the netsnmp_create_subtree_cache
 	    function in agent/snmp_agent.c in net-snmp 5.4 before
