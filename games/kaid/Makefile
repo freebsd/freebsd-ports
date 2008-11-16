@@ -7,7 +7,7 @@
 
 PORTNAME=		kaid
 PORTVERSION=		7.0.0.4b
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games net
 MASTER_SITES=		http://www.teamxlink.co.uk/binary/
 MASTER_SITE_SUBDIR=
@@ -27,7 +27,7 @@ MAKE_ARGS=		PREFIX="${PREFIX}" SYSTEM_CFLAGS="${CFLAGS}"
 
 NO_PACKAGE=		contains compile time path info, ignores cc cxx
 
-post-patch:
+pre-configure:
 	@${GMAKE} -C ${WRKSRC} dist-clean
 
 do-install:
