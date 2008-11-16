@@ -7,12 +7,14 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
+
+CONFLICTS=	flow-tools-ng-[0-9]*
 
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
