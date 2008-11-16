@@ -188,6 +188,8 @@
 %%DOCSDIR%%/empty_html/class149632.html
 %%DOCSDIR%%/empty_html/class149762.html
 %%DOCSDIR%%/empty_html/class149888.html
+%%DOCSDIR%%/empty_html/class150016.html
+%%DOCSDIR%%/empty_html/class150144.html
 %%DOCSDIR%%/empty_html/class1536.html
 %%DOCSDIR%%/empty_html/class1664.html
 %%DOCSDIR%%/empty_html/class1792.html
@@ -662,6 +664,7 @@
 %%DOCSDIR%%/figs/expansionregiondrawingsettings.png
 %%DOCSDIR%%/figs/expansionregionedit1.png
 %%DOCSDIR%%/figs/expansionregionpictmenu.png
+%%DOCSDIR%%/figs/extension.png
 %%DOCSDIR%%/figs/extramember.png
 %%DOCSDIR%%/figs/extramemberadd.png
 %%DOCSDIR%%/figs/extramemberedit1.png
@@ -690,6 +693,7 @@
 %%DOCSDIR%%/figs/flowpictmenu.png
 %%DOCSDIR%%/figs/flowstereotypes.png
 %%DOCSDIR%%/figs/fragment.png
+%%DOCSDIR%%/figs/fragmentedit.png
 %%DOCSDIR%%/figs/fragmentmenu1.png
 %%DOCSDIR%%/figs/free_package.png
 %%DOCSDIR%%/figs/globalchange1.png

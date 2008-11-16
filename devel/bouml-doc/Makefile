@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml-doc
-PORTVERSION=	4.5
+PORTVERSION=	4.8.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
 		http://bouml.free.fr/
