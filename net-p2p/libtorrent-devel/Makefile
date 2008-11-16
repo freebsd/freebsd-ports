@@ -22,6 +22,8 @@ CONFLICTS=	libtorrent-[0-9]* \
 		rblibtorrent-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
+.if exists(${.CURDIR}/files/devel-*)
 EXTRA_PATCHES=	${.CURDIR}/files/devel-*
+.endif
 
 .include "${MASTERDIR}/Makefile"

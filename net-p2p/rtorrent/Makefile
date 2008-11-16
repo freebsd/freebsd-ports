@@ -27,7 +27,9 @@ MAN1=		rtorrent.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 
+.if exists(${.CURDIR}/files/stable-*)
 EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
+.endif
 
 SUB_FILES=	pkg-message
 

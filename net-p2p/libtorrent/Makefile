@@ -28,7 +28,9 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+.if exists(${.CURDIR}/files/stable-*)
 EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
+.endif
 
 OPTIONS=	KQUEUE "Use kqueue(2) support" on
 

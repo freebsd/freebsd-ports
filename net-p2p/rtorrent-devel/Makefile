@@ -24,6 +24,9 @@ DESCR=		${MASTERDIR}/pkg-descr
 CONFLICTS=	rtorrent-[0-9]*
 
 USE_GCC=	4.2+
+
+.if exists(${.CURDIR}/files/devel-*)
 EXTRA_PATCHES=	${.CURDIR}/files/devel-*
+.endif
 
 .include "${MASTERDIR}/Makefile"
