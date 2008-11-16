@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	couchdb
-PORTVERSION=	0.7.0
+PORTVERSION=	0.9.0a
 CATEGORIES=	databases
-MASTER_SITES=	http://couchdb.googlecode.com/files/
+MASTER_SITES=	http://people.apache.org/~nslater/build/latest/
+DISTNAME=	apache-couchdb-0.9.0a-incubating
 
-MAINTAINER=	ditesh@gathani.org
+MAINTAINER=	jan@apache.org
 COMMENT=	A document database server, accessible via a RESTful JSON API
 
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang
+LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
+		js:${PORTSDIR}/lang/spidermonkey
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
@@ -23,15 +25,13 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|),Linux|),FreeBSD|g" ${WRKSRC}/src/js/config.mk
-
 MAN1=	couchdb.1 couchjs.1
 
-.include <bsd.port.pre.mk>
+PLIST_SUB=	COUCHVERSION=couch-${PORTVERSION}-incubating
 
-.if ${ARCH} != "i386"
-BROKEN=		does not compile
+post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
