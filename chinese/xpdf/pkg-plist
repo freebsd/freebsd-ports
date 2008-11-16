@@ -9,7 +9,7 @@
 %%DATADIR%%/chinese-traditional/Big5ascii.unicodeMap
 %%DATADIR%%/chinese-traditional/README
 @exec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; ( grep -v "%%EXTRARC%%"; echo "include %%EXTRARC%%" ) > %D/etc/xpdfrc; chmod 0444 %D/etc/xpdfrc
-@unexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; grep -v "%%EXTRARC%%" > %D/etc/xpdfrc
+@unexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; grep -v "%%EXTRARC%%" > %D/etc/xpdfrc; chmod 0444 %D/etc/xpdfrc
 %%DATADIR%%/chinese-traditional/dot.xpdfrc
 @dirrm %%DATADIR%%/chinese-simplified
 @dirrm %%DATADIR%%/chinese-traditional
