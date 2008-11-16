@@ -4,12 +4,12 @@ bin/jnbpack
 bin/jnbunpack
 share/jumpnbump/jumpbump.dat
 %%WITH_TCL%%bin/jnbmenu
-%%PORTDOCS%%share/doc/jumpnbump/jumpnbump.html
-%%PORTDOCS%%share/doc/jumpnbump/jumpnbump_levelmaking.htm
-%%PORTDOCS%%share/doc/jumpnbump/level.pcx
-%%PORTDOCS%%share/doc/jumpnbump/making1.gif
-%%PORTDOCS%%share/doc/jumpnbump/making2.gif
-%%PORTDOCS%%share/doc/jumpnbump/making3.gif
-%%PORTDOCS%%share/doc/jumpnbump/pack.gif
+%%PORTDOCS%%%%DOCSDIR%%/jumpnbump.html
+%%PORTDOCS%%%%DOCSDIR%%/jumpnbump_levelmaking.htm
+%%PORTDOCS%%%%DOCSDIR%%/level.pcx
+%%PORTDOCS%%%%DOCSDIR%%/making1.gif
+%%PORTDOCS%%%%DOCSDIR%%/making2.gif
+%%PORTDOCS%%%%DOCSDIR%%/making3.gif
+%%PORTDOCS%%%%DOCSDIR%%/pack.gif
 @dirrm share/jumpnbump
-@dirrm share/doc/jumpnbump
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
