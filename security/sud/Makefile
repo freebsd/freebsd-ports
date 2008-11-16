@@ -7,11 +7,11 @@
 
 PORTNAME=	sud
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	bugghy@SAFe-mail.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute processes with special privileges in a nosuid environment
 
 GNU_CONFIGURE=	yes
@@ -24,11 +24,9 @@ post-patch:
 		${WRKSRC}/miscs/sud.conf.sample
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/sud.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/suz.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/ilogin.1 ${MAN1PREFIX}/man/man1
-.endif
 
 .for i in issue.suz motd.suz sud.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/miscs/${i} ${PREFIX}/etc
