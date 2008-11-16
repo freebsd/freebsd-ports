@@ -1,3 +1,3 @@
-MD5 (couchdb-0.7.0.tar.gz) = 2e214874e9063cc178bde7ab0f703b89
-SHA256 (couchdb-0.7.0.tar.gz) = 34311f849512e557e565417fd97a87a8db8cf704956373a83613606e9a545ecd
-SIZE (couchdb-0.7.0.tar.gz) = 1602625
+MD5 (apache-couchdb-0.9.0a-incubating.tar.gz) = a4bee75260a7e89de600841f392b846c
+SHA256 (apache-couchdb-0.9.0a-incubating.tar.gz) = 790dd3f12051ff1e92f4f7cfd840cdfd4d4efd241e2ee56a706f195dd3e914d3
+SIZE (apache-couchdb-0.9.0a-incubating.tar.gz) = 567412
