@@ -7,6 +7,7 @@
 
 PORTNAME=	pushover
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -25,7 +26,6 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|lua5.1|lua-5.1|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/levels\/av/ d' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
