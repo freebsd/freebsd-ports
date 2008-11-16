@@ -89,6 +89,8 @@ bin/tftopl-ptex
 @dirrm %%TEXMFDIR%%/fonts/tfm/ascgrp
 %%TEXMFDIR%%/fonts/tfm/ptex/gbmv.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/gbm.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/rml.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/rmlv.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/goth10.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/goth5.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/goth6.tfm
@@ -113,8 +115,10 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/fonts/tfm/ptex/nmin7.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/nmin8.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/nmin9.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/rml.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/rmlv.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/gbmv.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/gbm.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/rml.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/rmlv.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/tgoth10.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/tgoth5.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/tgoth6.tfm
@@ -135,16 +139,16 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/fonts/tfm/ptex/jisgn.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/jisn-v.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/jisn.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/futogo-b-v.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/futogo-b.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/futomin-b-v.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/futomin-b.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/gtbbb-m-v.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/gtbbb-m.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/jun101-l-v.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/jun101-l.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/ryumin-l-v.tfm
-%%TEXMFDIR%%/fonts/tfm/ptex/ryumin-l.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/futogo-b-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/futogo-b.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/futomin-b-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/futomin-b.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/gtbbb-m-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/gtbbb-m.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/jun101-l-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/jun101-l.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/ryumin-l-v.tfm
+%%TEXMFDIR%%/fonts/tfm/ptex/dvips/ryumin-l.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/FutoGoB101-Bold-H.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/FutoMinA101-Bold-H.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/GothicBBB-Medium-H.tfm
@@ -160,6 +164,7 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/fonts/tfm/ptex/GothicBBB-Medium-V.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/Jun101-Light-V.tfm
 %%TEXMFDIR%%/fonts/tfm/ptex/Ryumin-Light-V.tfm
+@dirrm %%TEXMFDIR%%/fonts/tfm/ptex/dvips
 @dirrm %%TEXMFDIR%%/fonts/tfm/ptex
 %%TEXMFDIR%%/fonts/vf/ptex/goth10.vf
 %%TEXMFDIR%%/fonts/vf/ptex/goth5.vf
@@ -315,8 +320,8 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/ptex/platex/config/hyphen.cfg
 %%TEXMFDIR%%/ptex/platex/config/platex.ini
 @dirrm %%TEXMFDIR%%/ptex/platex/config
-%%MAPDIR%%/jis.map
-%%MAPDIR%%/morisawa.map
+%%TEXMFDIR%%/fonts/map/ptex/dvips/jis.map
+%%TEXMFDIR%%/fonts/map/ptex/dvips/morisawa.map
 @dirrmtry %%TEXMFDIR%%/dvips/ptex
 @exec /bin/mkdir -p %D/%%TEXMFCONFIGDIR%%/dvips/ptex
 @dirrmtry %%TEXMFCONFIGDIR%%/dvips/ptex
@@ -361,62 +366,3 @@ bin/tftopl-ptex
 @dirrm %%TEXMFVARDIR%%/fonts/map/ptex
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
-@comment the following entries will not be used for packaging
-@comment INSTALL_DATA jis/jis.map %%MAPDIR%%
-@comment INSTALL_DATA morisawa/morisawa.map %%MAPDIR%%
-@comment INSTALL_DATA jis/vf/jis.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisg.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jis-v.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisg-v.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisgn-v.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisgn.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisn-v.vf %%VFDIR%%
-@comment INSTALL_DATA jis/vf/jisn.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoGoB101-Bold-H.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoGoB101-Bold-J.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoGoB101-Bold-V.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoMinA101-Bold-H.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoMinA101-Bold-J.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/FutoMinA101-Bold-V.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/GothicBBB-Medium-H.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/GothicBBB-Medium-J.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/GothicBBB-Medium-V.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Jun101-Light-H.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Jun101-Light-J.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Jun101-Light-V.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Ryumin-Light-H.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Ryumin-Light-J.vf %%VFDIR%%
-@comment INSTALL_DATA morisawa/vf/Ryumin-Light-V.vf %%VFDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jis.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisg.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jis-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisg-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisgn-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisgn.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisn-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA jis/tfm/ptex/jisn.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/futogo-b-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/futogo-b.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/futomin-b-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/futomin-b.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/gtbbb-m-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/gtbbb-m.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/jun101-l-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/jun101-l.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/ryumin-l-v.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/dvips/ryumin-l.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoGoB101-Bold-H.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoMinA101-Bold-H.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/GothicBBB-Medium-H.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Jun101-Light-H.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Ryumin-Light-H.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoGoB101-Bold-J.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoMinA101-Bold-J.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/GothicBBB-Medium-J.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Jun101-Light-J.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Ryumin-Light-J.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoGoB101-Bold-V.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/FutoMinA101-Bold-V.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/GothicBBB-Medium-V.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Jun101-Light-V.tfm %%TFMDIR%%
-@comment INSTALL_DATA morisawa/tfm/ptex/Ryumin-Light-V.tfm %%TFMDIR%%

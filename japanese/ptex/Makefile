@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptex
-PORTVERSION=	3.1.9
-PORTREVISION=	8
+PORTVERSION=	3.1.10
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -39,8 +38,8 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 USE_GMAKE=	yes
-.if make(post-extract) || make(do-build)
-MAKE_ENV=	TEXMFLOCALDIR=${WRKDIR}/texmf-tmp \
+.if make(do-build)
+MAKE_ENV=	TEXMFLOCALDIR=${WRKDIR}/ptex-texmf \
 		TEXMFDUMP=${LOCALBASE}/${TEXMFLOCALDIR} \
 		TEXMFDISTDIR=${LOCALBASE}/${TEXMFDISTDIR}
 .endif
@@ -51,23 +50,14 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
 		TEXMFDIR=${TEXMFDIR} \
 		UPDMAP_SYS="${UPDMAP_SYS}" \
-		UPDMAPDIR=${UPDMAPDIR} \
-		MAPDIR=${MAPDIR} \
-		VFDIR=${VFDIR} \
-		TFMDIR=${TFMDIR}
+		UPDMAPDIR=${UPDMAPDIR}
 
-.if !make(do-patch)
-WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex-${VER_PTEX}
-.else
-WRKSRC=		${WRKDIR}/${TETEX_SRC}
-.endif
-
-WRKSRC_TETEX=	${WRKDIR}/${TETEX_SRC}
-WRKSRC_PTEX=	${WRKDIR}/ptex-src-${VER_PTEX}
+PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}
+WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex
 
 TETEX_SRC=	tetex-src-3.0
 VER_PTEX=	${PORTVERSION}
-VER_PTEXTEXMF=	2.4
+VER_PTEXTEXMF=	2.5
 KANJICODE?=	euc
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
@@ -94,25 +84,33 @@ SUB_LIST=	PREFIX=${PREFIX} \
 		FONTSMAPVARDIR=${FONTSMAPVARDIR} \
 		UPDMAPDIR=${UPDMAPDIR}
 
-INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
-MAPDIR=		${TEXMFDIR}/fonts/map/ptex/dvips
-VFDIR=		${TEXMFDIR}/fonts/vf/ptex
-TFMDIR=		${TEXMFDIR}/fonts/tfm/ptex
-
 post-extract:
-	${MV} ${WRKSRC_PTEX} ${WRKSRC}
-	${MKDIR} ${WRKDIR}/texmf-tmp
+	${MV} ${WRKDIR}/ptex-src-${VER_PTEX} ${WRKSRC}
+	${MKDIR} ${WRKDIR}/ptex-texmf/fonts/map/ptex/dvips \
+		${WRKDIR}/ptex-texmf/fonts/tfm/ptex/dvips \
+		${WRKDIR}/ptex-texmf/fonts/vf/ptex
+	${MV} ${WRKDIR}/jis/tfm/ptex/* \
+		${WRKDIR}/morisawa/tfm/ptex/* \
+		${WRKDIR}/ptex-texmf/fonts/tfm/ptex/
+	${MV} ${WRKDIR}/jis/tfm/dvips/* \
+		${WRKDIR}/morisawa/tfm/dvips/* \
+		${WRKDIR}/ptex-texmf/fonts/tfm/ptex/dvips/
+	${MV} ${WRKDIR}/jis/vf/* \
+		${WRKDIR}/morisawa/vf/* \
+		${WRKDIR}/ptex-texmf/fonts/vf/ptex/
+	${MV} ${WRKDIR}/jis/jis.map \
+		${WRKDIR}/morisawa/morisawa.map \
+		${WRKDIR}/ptex-texmf/fonts/map/ptex/dvips/
 	cd ${WRKDIR} && \
-		${MV} ${INSTDIRS} texmf-tmp && \
-		${RM} -f texmf-tmp/ptex/platex/base/.cvsignore && \
-		${FIND} texmf-tmp -type d | ${XARGS} ${CHMOD} 755 && \
-		${FIND} texmf-tmp -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+		${RM} -f ptex-texmf/ptex/platex/base/.cvsignore && \
+		${FIND} ptex-texmf -type d | ${XARGS} ${CHMOD} 755 && \
+		${FIND} ptex-texmf -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 pre-configure:
-	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/texmf-tmp
-	cd ${WRKSRC_TETEX} && \
+	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/ptex-texmf
+	cd ${WRKDIR}/${TETEX_SRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
 			--prefix=${PREFIX} \
 			--disable-multiplatform \
@@ -130,28 +128,28 @@ pre-configure:
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
 
 post-install:
-	cd ${WRKDIR}/texmf-tmp && \
-		${TAR} cf - ${INSTDIRS} | \
-			(cd ${PREFIX}/${TEXMFDIR} && ${TAR} xf -)
-	cd ${WRKDIR} && \
+	cd ${WRKDIR}/ptex-texmf && \
+		${TAR} cf - --exclude="*.orig" doc fonts jbibtex ptex | \
+			(cd ${PREFIX}/${TEXMFDIR} && ${TAR} xopf -) && \
 		${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/${TEXMFDIR}/doc/ptex
-	${AWK} '/@comment INSTALL_DATA/{printf "${MKDIR} ${PREFIX}/%s && ${INSTALL_DATA} ${WRKDIR}/%s ${PREFIX}/%s\n",$$4,$$3,$$4}' < ${TMPPLIST} | ${SH}
-	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig/ptex
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig/ptex \
+		 ${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex \
+		 ${PREFIX}/${TEXMFCONFIGDIR}/dvips/ptex
 	${INSTALL_DATA} ${FILESDIR}/tcfmgr.map \
 		${PREFIX}/${TEXMFCONFIGDIR}/texconfig/ptex/tcfmgr.map
 	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
 		${PREFIX}/${TEXMFDIR}/web2c/ptex/updmap.cfg
-	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex
 	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
 		${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex/updmap.cfg
-	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/dvips/ptex
-.for F in dvips dvipdfm pdftex
-	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/${F}/updmap
-	${MKDIR} ${PREFIX}/${FONTSMAPVARDIR}/${F}/updmap
-.endfor
+	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/dvips/updmap \
+		${PREFIX}/${FONTSMAPVARDIR}/dvips/updmap \
+		${PREFIX}/${FONTSMAPDIR}/dvipdfm/updmap \
+		${PREFIX}/${FONTSMAPVARDIR}/dvipdfm/updmap \
+		${PREFIX}/${FONTSMAPDIR}/pdftex/updmap \
+		${PREFIX}/${FONTSMAPVARDIR}/pdftex/updmap
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/${UPDMAPDIR}/updmap.ptex
 	${MKTEXLSR}
-	if ${PREFIX}/bin/kpsewhich -format=map psfonts_jp.map > /dev/null 2>&1; then \
+	if ${LOCALBASE}/bin/kpsewhich -format=map psfonts_jp.map > /dev/null 2>&1; then \
 		${SH} ${UPDMAP_SYS} --enable Map=psfonts_jp.map; \
 	else \
 		${SH} ${UPDMAP_SYS}; \
