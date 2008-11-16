@@ -19,17 +19,22 @@ USE_BISON=	build
 USE_GNOME=	imlib
 
 SUB_FILES=	pkg-message
+PLIST_FILES=	bin/xjtext
+PORTDOCS=	README.txt
+PORTEXAMPLES=	FSS README YAMA Ao.png Back2.png Brown.png Royal.png Royal2.png
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xjtext ${PREFIX}/bin
+
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+.if !deinfed(NOPORTEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
-.for file in FSS README YAMA Ao.png Back2.png Brown.png Royal.png Royal2.png
-	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
