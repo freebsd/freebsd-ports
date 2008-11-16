@@ -1,17 +1,17 @@
 LIBNAME=	Memchan
 SHLIB_NAME=	lib${LIBNAME}.so.2
 
-.PATH:	${.CURDIR}/generic
+.PATH:	${.CURDIR}/generic ${.CURDIR}/isaac
 
 SRCS=	memchan.c init.c counter.c fifo.c fifo2.c null.c buf.c	\
 	bufFix.c bufExt.c bufRange.c bufQueue.c bufStubInit.c	\
-	bufStubLib.c
+	bufStubLib.c memchanStubInit.c zero.c random.c randport.c
 
 TCL_VER?=	8.3
 LOCALBASE?=	/usr/local
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} \
-		-DMEMCHAN_VERSION='"${SHLIB_MAJOR}.${SHLIB_MINOR}"'
+		-DMEMCHAN_VERSION='"${PORTVERSION}"'
 
 LDADD=		-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}
 
