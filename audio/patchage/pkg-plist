@@ -1,0 +1,12 @@
+bin/patchage
+share/applications/patchage.desktop
+@dirrmtry share/applications
+share/icons/hicolor/16x16/apps/patchage.png
+share/icons/hicolor/22x22/apps/patchage.png
+share/icons/hicolor/24x24/apps/patchage.png
+share/icons/hicolor/32x32/apps/patchage.png
+share/icons/hicolor/48x48/apps/patchage.png
+share/icons/hicolor/scalable/apps/patchage.svg
+share/icons/hicolor/icon-theme.cache
+%%DATADIR%%/patchage.glade
+@dirrm %%DATADIR%%
