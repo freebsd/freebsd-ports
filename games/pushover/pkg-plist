@@ -21,6 +21,7 @@ bin/pushover
 %%DATADIR%%/data/box.png
 %%DATADIR%%/data/carried.png
 %%DATADIR%%/data/dominos.png
+%%DATADIR%%/levels/av.gz
 %%DATADIR%%/levels/original.gz
 %%DATADIR%%/themes/aztec.lua
 %%DATADIR%%/themes/aztec.png
