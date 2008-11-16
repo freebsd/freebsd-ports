@@ -624,6 +624,7 @@
     SUBDIR += primateplunge
     SUBDIR += ptkei
     SUBDIR += ptools
+    SUBDIR += pushover
     SUBDIR += pvpgn
     SUBDIR += py-anki
     SUBDIR += py-mnemosyne
