@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%DATADIR%%/chinese-simplified/Adobe-GB1.cidToUnicode
 %%DATADIR%%/chinese-simplified/EUC-CN.unicodeMap
 %%DATADIR%%/chinese-simplified/GBK.unicodeMap
@@ -7,10 +8,9 @@
 %%DATADIR%%/chinese-traditional/Big5.unicodeMap
 %%DATADIR%%/chinese-traditional/Big5ascii.unicodeMap
 %%DATADIR%%/chinese-traditional/README
-@unexec cp %D/etc/xpdfrc %D/etc/xpdfrc.chinese-traditional
-@unexec grep -F -v --file=%D/%%DATADIR%%/chinese-traditional/dot.xpdfrc %D/etc/xpdfrc.chinese-traditional > %D/etc/xpdfrc
+@exec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; ( grep -v "%%EXTRARC%%"; echo "include %%EXTRARC%%" ) > %D/etc/xpdfrc; chmod 0444 %D/etc/xpdfrc
+@unexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; grep -v "%%EXTRARC%%" > %D/etc/xpdfrc
 %%DATADIR%%/chinese-traditional/dot.xpdfrc
-@rmtry etc/xpdfrc.chinese-traditional
 @dirrm %%DATADIR%%/chinese-simplified
 @dirrm %%DATADIR%%/chinese-traditional
 @dirrmtry %%DATADIR%%
