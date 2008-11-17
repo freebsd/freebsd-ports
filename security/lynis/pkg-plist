@@ -1,0 +1,55 @@
+bin/lynis
+etc/lynis/default.prf
+%%DATADIR%%/db/fileperms.db
+%%DATADIR%%/db/integrity.db
+%%DATADIR%%/db/malware.db
+%%DATADIR%%/db/sbl.db
+%%DATADIR%%/dev/README
+%%DATADIR%%/dev/build-lynis.sh
+%%DATADIR%%/dev/files.dat
+%%DATADIR%%/dev/openbsd/+CONTENTS
+%%DATADIR%%/include/consts
+%%DATADIR%%/include/functions
+%%DATADIR%%/include/osdetection
+%%DATADIR%%/include/parameters
+%%DATADIR%%/include/profiles
+%%DATADIR%%/include/tests_accounting
+%%DATADIR%%/include/tests_authentication
+%%DATADIR%%/include/tests_banners
+%%DATADIR%%/include/tests_boot_services
+%%DATADIR%%/include/tests_crypto
+%%DATADIR%%/include/tests_databases
+%%DATADIR%%/include/tests_file_integrity
+%%DATADIR%%/include/tests_file_permissions
+%%DATADIR%%/include/tests_filesystems
+%%DATADIR%%/include/tests_firewalls
+%%DATADIR%%/include/tests_hardening
+%%DATADIR%%/include/tests_homedirs
+%%DATADIR%%/include/tests_kernel
+%%DATADIR%%/include/tests_ldap
+%%DATADIR%%/include/tests_logging
+%%DATADIR%%/include/tests_mac_frameworks
+%%DATADIR%%/include/tests_mail_messaging
+%%DATADIR%%/include/tests_malware
+%%DATADIR%%/include/tests_memory_processes
+%%DATADIR%%/include/tests_nameserver
+%%DATADIR%%/include/tests_networking
+%%DATADIR%%/include/tests_php
+%%DATADIR%%/include/tests_ports_packages
+%%DATADIR%%/include/tests_printers_spools
+%%DATADIR%%/include/tests_scheduling
+%%DATADIR%%/include/tests_shells
+%%DATADIR%%/include/tests_storage
+%%DATADIR%%/include/tests_time
+%%DATADIR%%/include/tests_virtualization
+%%DATADIR%%/include/tests_webservers
+%%DATADIR%%/plugins/README
+%%DATADIR%%/plugins/security_rootkit
+%%DATADIR%%/plugins/security_webvuln
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/dev/openbsd
+@dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%
+@dirrm etc/lynis
