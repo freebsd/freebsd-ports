@@ -2,17 +2,17 @@ bin/cdgaiji
 bin/cdrom2
 lib/cdrom2/kojien3.tbl
 lib/cdrom2/ruigo.tbl
-share/doc/cdrom2/errata.doc
-share/doc/cdrom2/gaiji.txt
-share/doc/cdrom2/index.doc
-share/doc/cdrom2/install.doc
-share/doc/cdrom2/kekka.txt
-share/doc/cdrom2/kojien3.doc
-share/doc/cdrom2/menu.doc
-share/doc/cdrom2/readers.doc
-share/doc/cdrom2/readme.doc
-share/doc/cdrom2/readme.org
-share/doc/cdrom2/ruigo.doc
-share/doc/cdrom2/x_option.doc
-@dirrm share/doc/cdrom2
+%%PORTDOCS%%%%DOCSDIR%%/errata.doc
+%%PORTDOCS%%%%DOCSDIR%%/gaiji.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.doc
+%%PORTDOCS%%%%DOCSDIR%%/install.doc
+%%PORTDOCS%%%%DOCSDIR%%/kekka.txt
+%%PORTDOCS%%%%DOCSDIR%%/kojien3.doc
+%%PORTDOCS%%%%DOCSDIR%%/menu.doc
+%%PORTDOCS%%%%DOCSDIR%%/readers.doc
+%%PORTDOCS%%%%DOCSDIR%%/readme.doc
+%%PORTDOCS%%%%DOCSDIR%%/readme.org
+%%PORTDOCS%%%%DOCSDIR%%/ruigo.doc
+%%PORTDOCS%%%%DOCSDIR%%/x_option.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cdrom2
