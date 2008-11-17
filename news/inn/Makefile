@@ -33,7 +33,6 @@ OPTIONS=	PERL		"Embedded Perl script support"			On	\
 		TCL		"Embedded TCL support"				Off	\
 		KERBEROS	"Enable Kerberos auth support"			Off	\
 		SASL		"Enable SASL support (for imapfeed auth)"	Off	\
-		SSL		"Enable OpenSSL support (for NNTP over SSL)"	On	\
 		TAGGED_HASH	"Use tagged hash table for history"		Off	\
 		LARGE_FILES	"Support for files larger than 2GB"		Off	\
 		KEYWORDS	"Automatic keyword generation support"		On	\
@@ -54,6 +53,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-etc-dir=${INN_ETCDIR}		\
 			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
+			--with-ssl=${OPENSSLBASE}		\
 			--enable-ipv6
 
 .include <bsd.port.pre.mk>
@@ -63,11 +63,6 @@ USE_BDB=		3+
 CONFIGURE_ENV+=		DB_VER=db${BDB_VER}
 CONFIGURE_ENV+=		DB_LIB=${BDB_LIB_NAME}
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
-.endif
-
-.if defined(WITH_SSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_KERBEROS)
@@ -97,7 +92,6 @@ CONFIGURE_ARGS+=	--with-python
 .if defined(WITH_TCL)
 USE_TCL=		84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
-BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 .endif
 
 .if defined(WITH_MAXSOCKET)
