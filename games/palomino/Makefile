@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20081112
+PORTVERSION=	20081114
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim \
 		ftp://ftp.palomino3d.org/sim/
@@ -19,7 +19,7 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Action flight simulator with its own 3D engine
 
-LIB_DEPENDS=	osg.44:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	osg.48:${PORTSDIR}/graphics/osg
 
 USE_BZIP2=	yes
 USE_GL=		gl
