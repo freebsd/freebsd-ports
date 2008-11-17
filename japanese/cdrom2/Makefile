@@ -7,6 +7,7 @@
 
 PORTNAME=	cdrom2
 PORTVERSION=	1996.06.16
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.nerimadors.or.jp/~jiro/cdrom2/
 DISTNAME=	euc
@@ -20,15 +21,17 @@ DOCS=		errata.doc gaiji.txt index.doc install.doc kekka.txt \
 		kojien3.doc menu.doc readers.doc readme.doc readme.org \
 		ruigo.doc x_option.doc
 
+SUB_FILES+=	pkg-message
+
 do-configure:
 	@${ECHO_MSG} "Copying custom Makefile."
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/cdrom2
+	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/cdrom2
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${CAT} ${PKGMESSAGE}
 .endif

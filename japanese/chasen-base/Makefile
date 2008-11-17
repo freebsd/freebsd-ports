@@ -8,7 +8,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 PKGNAMESUFFIX=	-base
@@ -32,8 +32,8 @@ post-install:
 	${RM} -f ${PREFIX}/lib/libchasen.la
 	${MKDIR} ${PREFIX}/share/chasen/dic
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/chasen/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/manual* ${PREFIX}/share/chasen/doc/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/manual* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
