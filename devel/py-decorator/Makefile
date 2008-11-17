@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	decorator
-PORTVERSION=	2.0.1
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.phyast.pitt.edu/~micheles/python/ \
 		http://pylonshq.com/download/0.9.5/
