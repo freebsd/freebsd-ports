@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/pythonutils.pth
 %%PYTHON_SITELIBDIR%%/pythonutils/__init__.py
 %%PYTHON_SITELIBDIR%%/pythonutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pythonutils/__init__.pyo
@@ -7,9 +8,6 @@
 %%PYTHON_SITELIBDIR%%/pythonutils/configobj.py
 %%PYTHON_SITELIBDIR%%/pythonutils/configobj.pyc
 %%PYTHON_SITELIBDIR%%/pythonutils/configobj.pyo
-%%PYTHON_SITELIBDIR%%/pythonutils/listquote.py
-%%PYTHON_SITELIBDIR%%/pythonutils/listquote.pyc
-%%PYTHON_SITELIBDIR%%/pythonutils/listquote.pyo
 %%PYTHON_SITELIBDIR%%/pythonutils/odict.py
 %%PYTHON_SITELIBDIR%%/pythonutils/odict.pyc
 %%PYTHON_SITELIBDIR%%/pythonutils/odict.pyo
@@ -25,18 +23,15 @@
 %%PYTHON_SITELIBDIR%%/pythonutils/validate.py
 %%PYTHON_SITELIBDIR%%/pythonutils/validate.pyc
 %%PYTHON_SITELIBDIR%%/pythonutils/validate.pyo
-%%PYTHON_SITELIBDIR%%/pythonutils.pth
 %%PORTDOCS%%%%DOCSDIR%%/BSD-LICENSE.html
 %%PORTDOCS%%%%DOCSDIR%%/BSD-LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/cgiutils.html
 %%PORTDOCS%%%%DOCSDIR%%/cgiutils.txt
 %%PORTDOCS%%%%DOCSDIR%%/configobj.html
 %%PORTDOCS%%%%DOCSDIR%%/configobj.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/PythonPowered.png
 %%PORTDOCS%%%%DOCSDIR%%/images/osi-certified-120x100.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/powered_by_python.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/PythonPowered.png
-%%PORTDOCS%%%%DOCSDIR%%/listquote.html
-%%PORTDOCS%%%%DOCSDIR%%/listquote.txt
 %%PORTDOCS%%%%DOCSDIR%%/odict.html
 %%PORTDOCS%%%%DOCSDIR%%/odict.txt
 %%PORTDOCS%%%%DOCSDIR%%/pathutils.html
@@ -58,8 +53,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/urlpath.txt
 %%PORTDOCS%%%%DOCSDIR%%/validate.html
 %%PORTDOCS%%%%DOCSDIR%%/validate.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pythonutils
