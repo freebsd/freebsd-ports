@@ -1,0 +1,12 @@
+Lynis is an auditing tool for Unix (specialists). It scans the
+system and available software, to detect security issues. Beside
+security related information it will also scan for general system
+information, installed packages and configuration mistakes.
+
+This software aims in assisting automated auditing, software patch
+management, vulnerability and malware scanning of Unix based systems.
+It can be run without prior installation, so inclusion on read only
+storage is no problem (USB stick, cd/dvd).
+
+WWW: http://www.rootkit.nl/projects/lynis.html
+Author: Michael Boelen

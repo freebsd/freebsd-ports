@@ -262,6 +262,7 @@
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
+    SUBDIR += lynis
     SUBDIR += mac-robber
     SUBDIR += maia
     SUBDIR += makepasswd
