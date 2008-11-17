@@ -312,6 +312,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <url>http://www.securityfocus.com/archive/1/498169/30/0/threaded</url>
       <url>http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog</url>
+      <cvename>CVE-2008-5050</cvename>
     </references>
     <dates>
       <discovery>2008-11-08</discovery>
