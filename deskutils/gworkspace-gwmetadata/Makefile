@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
+#MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	usr-apps
 PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -29,7 +30,7 @@ USE_SQLITE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}/GWMetadata
+WRKSRC=		${WRKDIR}/gworkspace-${PORTVERSION}/GWMetadata
 CONFIGURE_ARGS+=	--with-sqlite-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-sqlite-library=${LOCALBASE}/lib
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
@@ -37,5 +38,13 @@ DEFAULT_LIBVERSION=	0.1.0
 
 GWORKSPACE_PORT?=	deskutils/gworkspace
 PREFERENCEPANES_PORT?=	deskutils/preferencepanes
+
+post-patch:
+	${CP} ${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile.in \
+		${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile
+	${CP} ${FILESDIR}/Preferences-GNUmakefile \
+		${WRKSRC}/Preferences/GNUmakefile
+	${CP} ${FILESDIR}/MDFinder-GNUmakefile \
+		${WRKSRC}/MDFinder/GNUmakefile
 
 .include <bsd.port.mk>
