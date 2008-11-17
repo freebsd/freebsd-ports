@@ -32,11 +32,6 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 
 OPTIONS=	EXTCOLORS "Enable 256-color support (only for ncursesw)" off
 
-# needed by devel/py-ncurses port
-.if defined(WITH_TRACE)
-CONFIGURE_ARGS+=	--with-trace
-.endif
-
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
@@ -85,6 +80,11 @@ WITHOUT_WIDEC=	yes
 CONFIGURE_ARGS_WIDEC=--enable-widec
 .if defined(WITH_EXTCOLORS)
 CONFIGURE_ARGS_WIDEC+=--enable-ext-colors
+.endif
+
+# needed by devel/py-ncurses port
+.if defined(WITH_TRACE)
+CONFIGURE_ARGS+=	--with-trace
 .endif
 
 .if !defined(WITHOUT_PROFILE) && !defined(NO_PROFILE) && !defined(NOPROFILE)
