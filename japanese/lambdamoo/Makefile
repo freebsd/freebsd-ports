@@ -7,12 +7,13 @@
 
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	japanese net
-MASTER_SITES=	http://download.sourceforge.net/lambdamoo/ \
-		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
+MASTER_SITES=	SF\
+		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/:MN
 DISTNAME=	LambdaMOO-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mnews122.tar.gz
+		mnews122.tar.gz:MN
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	flathill
@@ -24,6 +25,7 @@ COMMENT=	The most commonly used program to run MOOs
 WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ALL_TARGET=
+DOCSDIR=	${PREFIX}/share/doc/LambdaMOO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/moo ${PREFIX}/sbin
@@ -35,13 +37,13 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/LambdaMOO
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC};\
 	${INSTALL_MAN} Minimal.db README README.Minimal \
-		${PREFIX}/share/doc/LambdaMOO; \
+		${DOCSDIR}; \
 	)
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD \
-		${PREFIX}/share/doc/LambdaMOO
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
