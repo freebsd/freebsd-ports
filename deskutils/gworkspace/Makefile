@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
+#MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	usr-apps
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
@@ -22,7 +23,6 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
-WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ADDITIONAL_LDFLAGS+=	-L${WRKSRC}/FSNode/FSNode.framework/Versions/A
 DEFAULT_LIBVERSION2=	0.1.0
@@ -38,6 +38,9 @@ PLIST_SUB+=	PDFVIEW="@comment "
 PLIST_SUB+=	PDFVIEW=""
 USE_GHOSTSCRIPT=	yes
 .endif
+
+pre-configure:
+	${RM} -rf ${WRKSRC}/GWMetadata
 
 post-install:
 	${CP} ${WRKSRC}/Inspector/ContentViewersProtocol.h \
