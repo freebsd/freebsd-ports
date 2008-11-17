@@ -7,7 +7,7 @@
 
 PORTNAME=	elisa8x8
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10
@@ -27,7 +27,6 @@ BDFTOPCF_CMD=	${PREFIX}/bin/bdftopcf
 MKFONTDIR_CMD=	${PREFIX}/bin/mkfontdir
 FONTSDIR=	lib/X11/fonts/local
 INSTALLDIR=	${PREFIX}/${FONTSDIR}
-DOCDIR=		${PREFIX}/share/doc/elisa
 MYPORTDOCS=	elisa100.doc elisat10.doc elisat10.html
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
@@ -43,7 +42,7 @@ pre-install:
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
-	@${MKDIR} ${INSTALLDIR} ${DOCDIR}
+	@${MKDIR} ${INSTALLDIR}
 	@(cd ${WRKSRC} ;\
 	${INSTALL_DATA} elisat10.pcf.gz ${INSTALLDIR} ;\
 	${INSTALL_DATA} jpnhn4-jis.pcf.gz ${INSTALLDIR} ;\
@@ -53,10 +52,8 @@ do-install:
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	@(cd ${WRKSRC} ;\
-	${INSTALL_DATA} ${MYPORTDOCS} ${DOCDIR} ;\
-	)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${MYPORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
