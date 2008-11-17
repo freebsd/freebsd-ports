@@ -27,12 +27,12 @@ lib/tcl8.0jp/http2.0/http.tcl
 lib/tcl8.0jp/http2.0/pkgIndex.tcl
 lib/tcl8.0jp/opt0.1/optparse.tcl
 lib/tcl8.0jp/opt0.1/pkgIndex.tcl
-share/doc/tcl8.0jp/README
-share/doc/tcl8.0jp/changes
-share/doc/tcl8.0jp/README.JP
-share/doc/tcl8.0jp/changes.JP
-share/doc/tcl8.0jp/Incompat80jp
-share/doc/tcl8.0jp/README.FreeBSD.JP
+%%PORTDOCS%%share/doc/tcl8.0jp/README
+%%PORTDOCS%%share/doc/tcl8.0jp/changes
+%%PORTDOCS%%share/doc/tcl8.0jp/README.JP
+%%PORTDOCS%%share/doc/tcl8.0jp/changes.JP
+%%PORTDOCS%%share/doc/tcl8.0jp/Incompat80jp
+%%PORTDOCS%%share/doc/tcl8.0jp/README.FreeBSD.JP
 @dirrm include/tcl8.0jp/generic
 @dirrm include/tcl8.0jp/unix
 @dirrm include/tcl8.0jp
@@ -40,4 +40,4 @@ share/doc/tcl8.0jp/README.FreeBSD.JP
 @dirrm lib/tcl8.0jp/http1.0
 @dirrm lib/tcl8.0jp/opt0.1
 @dirrm lib/tcl8.0jp
-@dirrm share/doc/tcl8.0jp
+%%PORTDOCS%%@dirrm share/doc/tcl8.0jp

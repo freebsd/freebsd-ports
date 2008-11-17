@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese lang tcl
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=tcl8_0
@@ -37,7 +37,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
+BROKEN=		Does not compile on sparc64 (needs -fPIC)
 .endif
 
 .if !defined(NOPORTDOCS)
