@@ -7,7 +7,7 @@
 
 PORTNAME=	jyuroku
 PORTVERSION=	1.32
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://homepage3.nifty.com/seto-yoneji/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -29,8 +29,8 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jyuroku
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/jyuroku
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
