@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
 CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-LIB_DEPENDS+=	lthread.[35]:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 .else
 CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
