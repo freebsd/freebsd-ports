@@ -7,13 +7,14 @@
 
 PORTNAME=	kaname12
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.din.or.jp/~storm/fonts/
 DISTNAME=	kaname_k12_bdf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		knm_new_linux.tar.gz
+EXTRACT_ONLY=	knm_new_linux.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	X11 12-dot kanji font
@@ -25,11 +26,11 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/fonts
-EXTRACT_ONLY=	knm_new_linux.tar.gz
 
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
+DOCSDIR=	${PREFIX}/share/doc/k12
 
 post-extract:
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -41,10 +42,10 @@ pre-install:
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/k12
-	@${INSTALL_DATA} ${WRKSRC}/readme            ${PREFIX}/share/doc/k12
-	@${INSTALL_DATA} ${WRKSRC}/readme.kaname_bdf ${PREFIX}/share/doc/k12
-	@${INSTALL_DATA} ${WRKSRC}/doc.orig/*        ${PREFIX}/share/doc/k12
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme            ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.kaname_bdf ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc.orig/*        ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
