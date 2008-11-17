@@ -991,6 +991,7 @@ bitedit                         ports/editors/bitedit
 bitefusion                      ports/games/bitefusion
 bitflu                          ports/net-p2p/bitflu
 bitlbee                         ports/irc/bitlbee
+bitlbee-otr                     ports/irc/bitlbee-otr
 bitmap-emacs21                  ports/editors/bitmap-emacs21
 bitmap-fonts                    ports/x11-fonts/bitmap-fonts
 bitstream-vera                  ports/x11-fonts/bitstream-vera
@@ -1177,6 +1178,7 @@ bsvc                            ports/emulators/bsvc
 btc                             ports/audio/btc
 btoa                            ports/converters/btoa
 btparse                         ports/textproc/btparse
+btpd                            ports/net-p2p/btpd
 btpeer                          ports/net-p2p/btpeer
 btqueue                         ports/net-p2p/btqueue
 bubblegum                       ports/security/bubblegum
@@ -2161,6 +2163,7 @@ diction                         ports/misc/diction
 dictionary                      ports/textproc/dictionary
 didentd                         ports/security/didentd
 diehard                         ports/math/diehard
+dieharder                       ports/math/dieharder
 diff-mode.el                    ports/textproc/diff-mode.el
 diffconvert                     ports/devel/diffconvert
 diffmark                        ports/textproc/diffmark
@@ -3967,6 +3970,7 @@ giftoxic                        ports/net-p2p/giftoxic
 giftrans                        ports/graphics/giftrans
 giftui                          ports/net-p2p/giftui
 gigabase                        ports/databases/gigabase
+gigedit                         ports/audio/gigedit
 giggle                          ports/devel/giggle
 gigi                            ports/x11-toolkits/gigi
 gillo                           ports/games/gillo
@@ -5020,6 +5024,7 @@ hs-alex                         ports/devel/hs-alex
 hs-buddha                       ports/devel/hs-buddha
 hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
+hs-dlist                        ports/devel/hs-dlist
 hs-drift                        ports/devel/hs-drift
 hs-fps                          ports/devel/hs-fps
 hs-frantk                       ports/x11-toolkits/hs-frantk
@@ -6941,6 +6946,7 @@ libbonoboui                     ports/x11-toolkits/libbonoboui
 libbonoboui-reference           ports/x11-toolkits/libbonoboui-reference
 libbonobouimm                   ports/x11-toolkits/libbonobouimm
 libbt                           ports/net-p2p/libbt
+libburn                         ports/devel/libburn
 libcabinet                      ports/archivers/libcabinet
 libcaca                         ports/graphics/libcaca
 libcanberra                     ports/audio/libcanberra
@@ -7152,6 +7158,7 @@ libiodbc                        ports/databases/libiodbc
 libiptcdata                     ports/graphics/libiptcdata
 libiqxmlrpc                     ports/devel/libiqxmlrpc
 libirman                        ports/comms/libirman
+libisofs                        ports/devel/libisofs
 libixp                          ports/devel/libixp
 libjackasyn                     ports/audio/libjackasyn
 libjbigi                        ports/math/libjbigi
@@ -8540,6 +8547,7 @@ mpc                             ports/audio/mpc
 mpd-l2tp-ipv6pd-client          ports/net/mpd-l2tp-ipv6pd-client
 mpd4                            ports/net/mpd4
 mpd5                            ports/net/mpd5
+mpdas                           ports/audio/mpdas
 mpdcon                          ports/audio/mpdcon
 mpdscribble                     ports/audio/mpdscribble
 mpeg                            ports/multimedia/mpeg
@@ -10698,6 +10706,7 @@ p5-File-DirSync                 ports/devel/p5-File-DirSync
 p5-File-ExtAttr                 ports/devel/p5-File-ExtAttr
 p5-File-FTS                     ports/devel/p5-File-FTS
 p5-File-Fetch                   ports/ftp/p5-File-Fetch
+p5-File-Find-Closures           ports/devel/p5-File-Find-Closures
 p5-File-Find-Object             ports/devel/p5-File-Find-Object
 p5-File-Find-Rule               ports/devel/p5-File-Find-Rule
 p5-File-Find-Rule-Filesys-Virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
@@ -13884,6 +13893,7 @@ p5-file-desktopentry            ports/devel/p5-File-DesktopEntry
 p5-file-dirsync                 ports/devel/p5-File-DirSync
 p5-file-extattr                 ports/devel/p5-File-ExtAttr
 p5-file-fetch                   ports/ftp/p5-File-Fetch
+p5-file-find-closures           ports/devel/p5-File-Find-Closures
 p5-file-find-object             ports/devel/p5-File-Find-Object
 p5-file-find-rule               ports/devel/p5-File-Find-Rule
 p5-file-find-rule-filesys-virtual  ports/devel/p5-File-Find-Rule-Filesys-Virtual
@@ -14036,6 +14046,7 @@ p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
 p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
+p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
 p5-glib2                        ports/devel/p5-Glib2
 p5-gmail-imapd                  ports/mail/p5-GMail-IMAPD
@@ -16252,6 +16263,8 @@ pear-HTTP_Request               ports/www/pear-HTTP_Request
 pear-HTTP_Server                ports/www/pear-HTTP_Server
 pear-HTTP_Session2              ports/www/pear-HTTP_Session2
 pear-HTTP_Upload                ports/www/pear-HTTP_Upload
+pear-HTTP_WebDAV_Client         ports/www/pear-HTTP_WebDAV_Client
+pear-HTTP_WebDAV_Server         ports/www/pear-HTTP_WebDAV_Server
 pear-I18N                       ports/devel/pear-I18N
 pear-I18Nv2                     ports/sysutils/pear-I18Nv2
 pear-Image_3D                   ports/graphics/pear-Image_3D
@@ -16511,6 +16524,8 @@ pear-http_request               ports/www/pear-HTTP_Request
 pear-http_server                ports/www/pear-HTTP_Server
 pear-http_session2              ports/www/pear-HTTP_Session2
 pear-http_upload                ports/www/pear-HTTP_Upload
+pear-http_webdav_client         ports/www/pear-HTTP_WebDAV_Client
+pear-http_webdav_server         ports/www/pear-HTTP_WebDAV_Server
 pear-i18n                       ports/devel/pear-I18N
 pear-i18nv2                     ports/sysutils/pear-I18Nv2
 pear-image_3d                   ports/graphics/pear-Image_3D
@@ -17664,6 +17679,7 @@ pure-xemacs21-mule              ports/irc/pure-xemacs21-mule
 pureadmin                       ports/ftp/pureadmin
 puredb                          ports/databases/puredb
 pushmi                          ports/devel/pushmi
+pushover                        ports/games/pushover
 putty                           ports/security/putty
 pv                              ports/sysutils/pv
 pvk                             ports/security/pvk
@@ -17712,6 +17728,7 @@ py-SciParam                     ports/x11-toolkits/py-SciParam
 py-TurboJinja                   ports/devel/py-TurboJinja
 py-YABT                         ports/misc/py-YABT
 py-adns                         ports/dns/py-adns
+py-aipy                         ports/astro/py-aipy
 py-albatross                    ports/www/py-albatross
 py-amanith                      ports/graphics/py-amanith
 py-amf                          ports/www/py-amf
@@ -18698,6 +18715,7 @@ ratmenu                         ports/x11-wm/ratmenu
 ratpoison                       ports/x11-wm/ratpoison
 ratproxy                        ports/security/ratproxy
 rats                            ports/security/rats
+raul                            ports/audio/raul
 rawdog                          ports/news/rawdog
 rawio                           ports/benchmarks/rawio
 rawrec                          ports/audio/rawrec
@@ -18854,6 +18872,7 @@ rmonitor                        ports/sysutils/rmonitor
 rmsg                            ports/net/rmsg
 rname                           ports/misc/rname
 rnews                           ports/www/rnews
+rngstreams                      ports/math/rngstreams
 rnv                             ports/textproc/rnv
 ro-aspell                       ports/textproc/ro-aspell
 roadmap                         ports/astro/roadmap
@@ -21302,6 +21321,7 @@ unrtf                           ports/textproc/unrtf
 unshield                        ports/archivers/unshield
 untahris                        ports/games/untahris
 untar                           ports/archivers/untar
+unuran                          ports/math/unuran
 unworkable                      ports/net-p2p/unworkable
 unzip                           ports/archivers/unzip
 unzoo                           ports/archivers/unzoo
