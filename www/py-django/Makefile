@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Django-${PORTVERSION}
+DISTNAME=	Django-${PORTVERSION}-final
 DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
