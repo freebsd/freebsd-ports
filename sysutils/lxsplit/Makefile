@@ -10,7 +10,7 @@ PORTVERSION=	0.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Simple program to split or join files
 
 PLIST_FILES=	bin/lxsplit
