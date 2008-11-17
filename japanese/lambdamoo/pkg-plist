@@ -1,6 +1,6 @@
 sbin/moo
-share/doc/LambdaMOO/Minimal.db
-share/doc/LambdaMOO/README
-share/doc/LambdaMOO/README.FreeBSD
-share/doc/LambdaMOO/README.Minimal
-@dirrm share/doc/LambdaMOO
+%%PORTDOCS%%%%DOCSDIR%%/Minimal.db
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/README.Minimal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
