@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pysvn
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
-BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.1:${PORTSDIR}/devel/py-cxx
+BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.2:${PORTSDIR}/devel/py-cxx
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon.28:${PORTSDIR}/www/neon28
 
@@ -36,13 +36,13 @@ do-build:
 	cd ${WRKSRC} && ${MAKE}
 
 pre-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}
-	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/${PORTNAME}/*.py \
 		${WRKSRC}/${PORTNAME}/*.so \
-		${PYTHON_SITELIBDIR}/${PORTNAME}
+		${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
