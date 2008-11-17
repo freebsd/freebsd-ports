@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20081105
+PORTVERSION=	20081117
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -29,7 +29,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_GMAKE=	yes
@@ -46,7 +46,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
-		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
