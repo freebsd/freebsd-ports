@@ -14,6 +14,8 @@ DISTNAME=	tdir35src
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
 
+BROKEN=		linker error (linker error: http://T64.TecNik93.com/logs/7-STABLE-FTP/traindirector-3.5.log)
+
 NO_WRKSUBDIR=	yes
 
 USE_GMAKE=	yes
