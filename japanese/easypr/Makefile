@@ -7,7 +7,7 @@
 
 PORTNAME=	easypr
 PORTVERSION=	0.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 DISTNAME=	print-${PORTVERSION}
@@ -30,8 +30,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lpr2 ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/setcap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja-easypr
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja-easypr/README.jp
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.jp
 .endif
 
 .include <bsd.port.mk>

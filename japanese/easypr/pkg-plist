@@ -1,5 +1,5 @@
 bin/easypr
 bin/lpr2
 bin/setcap
-share/doc/ja-easypr/README.jp
-@dirrm share/doc/ja-easypr
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
