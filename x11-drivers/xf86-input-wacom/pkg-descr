@@ -1,0 +1,17 @@
+This package contains the X.Org linuxwacom driver, a Wacom kernel module
+and a script to configure Xorg.
+
+The kernel module is provided by Bartosz Fabianowski <freebsd@chillt.de> and
+supports the following devices:
+	Graphire*, Graphire2*, Graphire3, Graphire4
+	Bamboo, Bamboo One*, Bamboo Fun
+	Intuos3, Cintiq 21UX
+	Volito*, Volito2*
+	PenStation2*, PenPartner2*
+
+* not tested
+
+WWW: http://linuxwacom.sourceforge.net/
+
+- Kamikaze
+kamikaze@bsdforen.de

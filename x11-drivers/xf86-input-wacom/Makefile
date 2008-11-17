@@ -1,0 +1,105 @@
+# New ports collection makefile for:	xf86-input-wacom
+# Date Created:				24 Oct 2008
+# Whom:					Dominic Fandrey <kamikaze@bsdforen.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xf86-input-wacom
+PORTVERSION=	${WACOM_VERSION:C/-/./g}.${KLD_VERSION}
+CATEGORIES=	x11-drivers kld
+MASTER_SITES=	http://www.chillt.de/bsdwacom/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	linuxwacom
+DISTFILES=	${BSDWACOM}.tbz \
+		${LINUXWACOM}.tar.bz2
+EXTRACT_ONLY=	${BSDWACOM}.tbz
+
+MAINTAINER=	kamikaze@bsdforen.de
+COMMENT=	X.Org Wacom tablet driver and kernel module
+
+MAN4=		wacom.4x
+MANCOMPRESSED=	yes
+
+USE_GMAKE=	yes
+USE_RC_SUBR=	wacom
+
+KMODDIR?=	/boot/modules
+XINPUTMODDIR=	lib/xorg/modules/input
+MAN4DIR=	man/man4
+WRKSRC=		${WRKDIR}
+
+PLIST_SUB+=	KMODDIR=${KMODDIR} \
+		XINPUTMODDIR=${XINPUTMODDIR}
+SUB_LIST:=	${PLIST_SUB}
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+XORG_CAT=	driver
+
+LINUXWACOM=	linuxwacom-${WACOM_VERSION}
+BSDWACOM=	bsdwacom-${KLD_VERSION}
+WACOM_VERSION=	0.8.1-3
+KLD_VERSION=	38
+
+OPTIONS=	UWACOMKLD "Install USB kernel module" On
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_UWACOMKLD)
+PLIST_SUB+=	UWACOMKLD="uwacom.ko"
+.else
+PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
+.endif
+
+do-configure:
+	@cd ${WRKDIR}/linuxwacom \
+		&& ${LN} -s ${DISTDIR}/${DIST_SUBDIR}/${LINUXWACOM}.tar.bz2 \
+		&& ./run_configure
+
+do-build:
+.if defined(WITH_UWACOMKLD)
+	@cd ${WRKDIR}/uwacom \
+		&& ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
+.endif
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM} \
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS}
+
+do-install:
+.if defined(WITH_UWACOMKLD)
+	@${MKDIR} ${KMODDIR}
+	@${INSTALL_KLD} ${WRKDIR}/uwacom/uwacom.ko ${KMODDIR}/
+.endif
+	@${MKDIR} ${PREFIX}/${XINPUTMODDIR} ${PREFIX}/${MAN4DIR}
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util/ \
+		&& ${GMAKE} install
+	@${INSTALL} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/xdrv/wacom_drv.so \
+		${PREFIX}/${XINPUTMODDIR}/
+	@${INSTALL_MAN} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/wacom.4x.gz \
+		${PREFIX}/${MAN4DIR}/
+
+plist: clean configure
+	@${ECHO} "===>  Rebuilding PLIST."
+	@${TOUCH} ${PLIST}
+	@${RM} ${PLIST}
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM} \
+		&& ./configure --prefix=${WRKDIR}/plist
+	@${MKDIR} ${WRKDIR}/plist
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util && ${GMAKE} install
+	@cd ${WRKDIR}/linuxwacom \
+		&& ./run_configure
+	@${FIND} ${WRKDIR}/plist/ -not -type d \
+		| ${SED} "s|${WRKDIR}/plist/||1" \
+		>> ${PLIST}
+	@${FIND} -d ${WRKDIR}/plist/ -mindepth 2 -type d \
+		| ${SED} "s|${WRKDIR}/plist/|@dirrm |1" \
+		>> ${PLIST}
+	@${ECHO} "%%XINPUTMODDIR%%/wacom_drv.so" >> ${PLIST}
+	@${ECHO} "@cwd %%KMODDIR%%" >> ${PLIST}
+	@${ECHO} "%%UWACOMKLD%%" >> ${PLIST}
+
+post-install:
+	@${ECHO} "===>  Displaying pkg-message."
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
