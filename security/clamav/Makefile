@@ -26,7 +26,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		STDERR "Print logs to stderr instead of stdout" Off \
 		EXPERIMENTAL "Build experimental code" Off
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -42,7 +42,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
-		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
