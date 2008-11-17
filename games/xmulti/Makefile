@@ -7,7 +7,7 @@
 
 PORTNAME=	xmulti
 PORTVERSION=	2.00b4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.denpa.org/~go/xmulti/
 DISTFILES=	xmul200b4.tgz
@@ -21,12 +21,13 @@ USE_IMAKE=	yes
 
 MAN1=		xmaid.1
 NOMANCOMPRESS=	yes
+DOCSDIR=	${PREFIX}/share/doc/ja/{PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/xmulti
+	${MKDIR} ${DOCSDIR}
 .for i in MODULE.jp README.jp STYLESHEET.jp XMULTI.jp
-	${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/xmulti
+	${INSTALL_MAN} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

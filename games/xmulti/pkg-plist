@@ -59,11 +59,11 @@ lib/X11/xmaid/multi/suwari.gif
 lib/X11/xmaid/multi/xmultiback.gif
 lib/X11/xmaid/multi/xmultimark.gif
 lib/X11/xmaid/multi/xmultimark2.gif
-share/doc/ja/xmulti/MODULE.jp
-share/doc/ja/xmulti/README.jp
-share/doc/ja/xmulti/STYLESHEET.jp
-share/doc/ja/xmulti/XMULTI.jp
+%%PORTDOCS%%%%DOCSDIR%%/MODULE.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/STYLESHEET.jp
+%%PORTDOCS%%%%DOCSDIR%%/XMULTI.jp
 @dirrm lib/X11/xmaid/datas
 @dirrm lib/X11/xmaid/multi
 @dirrm lib/X11/xmaid
-@dirrm share/doc/ja/xmulti
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
