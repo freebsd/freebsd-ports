@@ -474,11 +474,11 @@ do-configure:
 do-build:
 .if defined(USE_GNUSTEP_MAKE_DIRS)
 .for i in ${USE_GNUSTEP_MAKE_DIRS}
-	@(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	@(cd ${BUILD_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endfor
 .else
-	@(cd ${WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	@(cd ${BUILD_WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 .endif
 
@@ -491,11 +491,11 @@ do-build:
 do-install:
 .if defined(USE_GNUSTEP_MAKE_DIRS)
 .for i in ${USE_GNUSTEP_MAKE_DIRS}
-	@(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	@(cd ${INSTALL_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
 .else
-	@(cd ${WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	@(cd ${INSTALL_WRKSRC}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endif
 .if defined(PACKAGE_BUILDING) || defined(BATCH) || defined(CLEAN_ROOT)
