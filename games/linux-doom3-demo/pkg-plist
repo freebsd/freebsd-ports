@@ -4,6 +4,6 @@ lib/linux-doom3-demo/doom.x86
 lib/linux-doom3-demo/gamex86.so
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm lib/doom3-demo/demo
-@dirrm lib/doom3-demo
+@dirrm lib/linux-doom3-demo/demo
+@dirrm lib/linux-doom3-demo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
