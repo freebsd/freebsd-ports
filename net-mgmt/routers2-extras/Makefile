@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	routers2-extras
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
@@ -40,18 +40,18 @@ do-install:
 			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
 		done
 .endif
-		for file in buildwan.pl cfgmaker_host.pl check_esx2 check_foundry checkagent \
+		for file in buildwan.pl cfgmaker_host.pl check_vmware.pl check_foundry checkagent \
 			gather.pl getstats.sh graphprune.pl mrtg-apache mrtg-nrpe.pl mrtg-nrpe.sh \
 			mrtg-pnsclient.pl mrtg-portsinuse.pl rrd-archive-clean.pl \
-			rrd-archive.pl rrdextend.pl vmware_monitor.pl vmware_monitor2.pl \
-			winalert.pl targetnames/targetnames.pl 95.pl; do \
+			rrd-archive.pl rrdextend.pl \
+			winalert.pl targetnames/targetnames.pl; do \
 			${INSTALL_SCRIPT} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras; \
 		done
 		for file in mrtg-nrpe.cfg mrtg-pnsclient.cfg rrd-archive.conf winalert.conf ; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras; \
 		done
 		${MKDIR} -m 755 ${PREFIX}/www/routers2/extras/templates
-		for file in templates/* ; do \
+		for file in mrtg-templates/* ; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras/templates; \
 		done
 
