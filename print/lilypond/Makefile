@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.11.63
+PORTVERSION=	2.11.64
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
