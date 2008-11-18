@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
 PKGNAMESUFFIX=	2
@@ -27,12 +27,11 @@ USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-LIBNET_CONFIG?= ${LOCALBASE}/bin/libnet11-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking --mandir=${PREFIX}/man \
-		--with-libnet=${LOCALBASE}/bin
-CONFIGURE_ENV=  CFLAGS="`${LIBNET_CONFIG} --cflags`" \
+		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
+CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags`" \
 		LDFLAGS="`${LIBNET_CONFIG} --libs`"
 
 .if defined(WITH_TCP_WRAPPERS)
