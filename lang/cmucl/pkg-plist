@@ -13,9 +13,9 @@ lib/cmucl/lib/subsystems/simple-streams-library.x86f
 lib/cmucl/lisp.map
 lib/cmucl/lisp.nm
 lib/cmucl/sample-wrapper
-%%DOCSDIR%%/README
-%%DOCSDIR%%/release-19c.txt
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/release-19c.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
