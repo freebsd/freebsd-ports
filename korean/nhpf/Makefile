@@ -7,6 +7,7 @@
 
 PORTNAME=	nhpf
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
@@ -17,9 +18,8 @@ do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nhpf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nhpf
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nhpf
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	@strip ${PREFIX}/bin/nhpf
 
 .include <bsd.port.mk>
