@@ -7,6 +7,7 @@
 
 PORTNAME=	dcdflib.c
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://odin.mda.uth.tmc.edu/pub/source/
 
@@ -17,15 +18,17 @@ WRKSRC=		${WRKDIR}/dcdflib.c/src
 
 USE_LDCONFIG=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/.c//}
+
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dcdflib
-	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.chs ${PREFIX}/share/doc/dcdflib
-	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.fdoc ${PREFIX}/share/doc/dcdflib
-	@${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/dcdflib
+	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.chs ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.fdoc ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
