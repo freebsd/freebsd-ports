@@ -1,3 +1,3 @@
 bin/nhpf
-share/doc/nhpf/README
-@dirrm share/doc/nhpf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
