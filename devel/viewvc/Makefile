@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTVERSION=	1.0.7
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/41694/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/44050/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
