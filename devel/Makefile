@@ -1304,6 +1304,7 @@
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CreationTime
     SUBDIR += p5-File-DesktopEntry
+    SUBDIR += p5-File-Dir-Dumper
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-ExtAttr
     SUBDIR += p5-File-FTS

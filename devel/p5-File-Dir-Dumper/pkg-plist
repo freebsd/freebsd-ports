@@ -1,0 +1,11 @@
+bin/dir-dump
+%%SITE_PERL%%/File/Dir/Dumper.pm
+%%SITE_PERL%%/File/Dir/Dumper/App.pm
+%%SITE_PERL%%/File/Dir/Dumper/Base.pm
+%%SITE_PERL%%/File/Dir/Dumper/Scanner.pm
+%%SITE_PERL%%/File/Dir/Dumper/Stream/JSON/Reader.pm
+%%SITE_PERL%%/File/Dir/Dumper/Stream/JSON/Writer.pm
+@dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream/JSON
+@dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream
+@dirrm %%SITE_PERL%%/File/Dir/Dumper
+@dirrm %%SITE_PERL%%/File/Dir
