@@ -1,11 +1,10 @@
---- routers2.cgi.pl.orig	2008-06-09 07:18:11.000000000 +0200
-+++ routers2.cgi.pl	2008-07-07 22:43:34.000000000 +0200
+--- routers2.cgi.pl.orig	2008-11-06 11:17:27.000000000 +0100
++++ routers2.cgi.pl	2008-11-06 11:19:06.000000000 +0100
 @@ -1,9 +1,9 @@
 -#!/usr/bin/perl 
--# DONT FORGET TO CHANGE THE ABOVE PATH TO MATCH YOUR PERL LOCATION! 
 +#!%%LOCALBASE%%/bin/perl
-+# DONT FORGET TO CHANGE THE ABOVE PATH TO MATCH YOUR PERL LOCATION!
- # vim:ts=4
+ # DONT FORGET TO CHANGE THE ABOVE PATH TO MATCH YOUR PERL LOCATION! 
+ #vim:ts=4
  ##############################################################################
  # To use Speedycgi, you need to change the first line to this:
 -##!/usr/bin/speedy -- -M20 -t3600 -gnone -r500
@@ -18,7 +17,7 @@
  ##CONFIG#START################################################################
  # You MUST set this to the location of the configuration file!
 -my ($conffile) = '/u01/etc/routers2.conf';
-+my ($conffile) = '/usr/local/etc/routers2.conf';
++my ($conffile) = '%%LOCALBASE%%/etc/routers2.conf';
  ##############################################################################
  # Are we running in speedycgi or mod_perl mode?  Can we cache configs?
  # If you set this to 1 when you dont have speedycgi or mod_perl, it will
