@@ -7,7 +7,7 @@
 
 PORTNAME=	jruby
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/ \
 		http://repo2.maven.org/maven/jruby/ \
@@ -88,6 +88,8 @@ do-install:
 	  && ${COPYTREE_SHARE} [A-Z]\* ${DOCSDIR})
 	@(cd ${WRKSRC}/docs \
 	  && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/samples \
 	  && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
