@@ -2,13 +2,13 @@ bin/mka2bkvf
 bin/mka2nvf
 bin/mkn2avf
 bin/mkp2nvf
-share/doc/vftool/MKASC2BKall
-share/doc/vftool/MKASC2NTT
-share/doc/vftool/MKNTT2ASC
-share/doc/vftool/MKPTEX2PNTT
-share/doc/vftool/Makefile
-share/doc/vftool/README
-share/doc/vftool/vfdata.doc
+%%PORTDOCS%%%%DOCSDIR%%/MKASC2BKall
+%%PORTDOCS%%%%DOCSDIR%%/MKASC2NTT
+%%PORTDOCS%%%%DOCSDIR%%/MKNTT2ASC
+%%PORTDOCS%%%%DOCSDIR%%/MKPTEX2PNTT
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/vfdata.doc
 share/fonts/vf-a2bk/gbm.tfm
 share/fonts/vf-a2bk/gbmv.tfm
 share/fonts/vf-a2bk/goth10.vf
@@ -655,7 +655,7 @@ share/fonts/vf-p2pn/tmin6.vf
 share/fonts/vf-p2pn/tmin7.vf
 share/fonts/vf-p2pn/tmin8.vf
 share/fonts/vf-p2pn/tmin9.vf
-@dirrm share/doc/vftool
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/fonts/vf-a2bk
 @dirrm share/fonts/vf-a2n
 @dirrm share/fonts/vf-n2a
