@@ -202,6 +202,7 @@ share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
 %%DATADIR%%/%%PORTVERSION%%/ly/portugues.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-fretboards-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-fretboards.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-ninth-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/property-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/script-init.ly
