@@ -1,5 +1,5 @@
 bin/gotmail
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/sample.gotmailrc
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/sample.gotmailrc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
