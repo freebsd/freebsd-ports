@@ -1,39 +1,39 @@
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/COPYING.CPL
-%%DOCSDIR%%/COPYING.GPL
-%%DOCSDIR%%/COPYING.LGPL
-%%DOCSDIR%%/CodeConventions.txt
-%%DOCSDIR%%/LICENCE.bsf
-%%DOCSDIR%%/LICENSE.ant
-%%DOCSDIR%%/LICENSE.bouncycastle
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.coverage
-%%DOCSDIR%%/README.test
-%%DOCSDIR%%/jvyaml/CREDITS
-%%DOCSDIR%%/jvyaml/LICENSE
-%%DOCSDIR%%/jvyaml/README
-%%EXAMPLESDIR%%/duby/README
-%%EXAMPLESDIR%%/duby/arraylist.rb
-%%EXAMPLESDIR%%/duby/constructors.rb
-%%EXAMPLESDIR%%/duby/operators.rb
-%%EXAMPLESDIR%%/duby/recursive.duby
-%%EXAMPLESDIR%%/duby/statics.rb
-%%EXAMPLESDIR%%/duby/stringthing.rb
-%%EXAMPLESDIR%%/duby/superfib.rb
-%%EXAMPLESDIR%%/error.rb
-%%EXAMPLESDIR%%/ext/extconf.rb
-%%EXAMPLESDIR%%/ext/mytest.c
-%%EXAMPLESDIR%%/irb-applet.html
-%%EXAMPLESDIR%%/java2.rb
-%%EXAMPLESDIR%%/jirb.jnlp
-%%EXAMPLESDIR%%/minijava/arraylist.rb
-%%EXAMPLESDIR%%/minijava/arrays.rb
-%%EXAMPLESDIR%%/minijava/interfaces.rb
-%%EXAMPLESDIR%%/minijava/method_missing.rb
-%%EXAMPLESDIR%%/minijava/swing.rb
-%%EXAMPLESDIR%%/swing2.rb
-%%EXAMPLESDIR%%/thread.rb
-%%EXAMPLESDIR%%/xslt.rb
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.CPL
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
+%%PORTDOCS%%%%DOCSDIR%%/CodeConventions.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.bsf
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.ant
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.bouncycastle
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.coverage
+%%PORTDOCS%%%%DOCSDIR%%/README.test
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/arraylist.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/constructors.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/operators.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/recursive.duby
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/statics.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/stringthing.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duby/superfib.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/error.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ext/extconf.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ext/mytest.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/irb-applet.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java2.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jirb.jnlp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minijava/arraylist.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minijava/arrays.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minijava/interfaces.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minijava/method_missing.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minijava/swing.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/swing2.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thread.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xslt.rb
 bin/jirb
 bin/jruby
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/gem
@@ -13506,19 +13506,19 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/created.rid
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/bin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%
-@dirrm %%EXAMPLESDIR%%/minijava
-@dirrm %%EXAMPLESDIR%%/ext
-@dirrm %%EXAMPLESDIR%%/duby
-@dirrm %%EXAMPLESDIR%%
-@exec mkdir -p %D/%%DOCSDIR%%/rbyaml
-@dirrm %%DOCSDIR%%/rbyaml
-@exec mkdir -p %D/%%DOCSDIR%%/patches/rubylib
-@dirrm %%DOCSDIR%%/patches/rubylib
-@exec mkdir -p %D/%%DOCSDIR%%/patches/rails
-@dirrm %%DOCSDIR%%/patches/rails
-@exec mkdir -p %D/%%DOCSDIR%%/patches
-@dirrm %%DOCSDIR%%/patches
-@dirrm %%DOCSDIR%%/jvyaml
-@exec mkdir -p %D/%%DOCSDIR%%/api
-@dirrm %%DOCSDIR%%/api
-@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/minijava
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ext
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/duby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/rbyaml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rbyaml
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/patches/rubylib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches/rubylib
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/patches/rails
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches/rails
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/patches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jvyaml
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
