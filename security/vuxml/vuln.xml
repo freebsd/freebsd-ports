@@ -99,6 +99,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2008-11-16</entry>
     </dates>
   </vuln>
+
   <vuln vid="daf045d7-b211-11dd-a987-000c29ca8953">
     <topic>net-snmp -- DoS for SNMP agent via crafted GETBULK request</topic>
     <affects>
