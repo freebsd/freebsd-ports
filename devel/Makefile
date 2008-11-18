@@ -996,6 +996,7 @@
     SUBDIR += p5-Chooser
     SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-Accessor-Chained
+    SUBDIR += p5-Class-Accessor-Fast-XS
     SUBDIR += p5-Class-Accessor-Grouped
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-Accessor-Named

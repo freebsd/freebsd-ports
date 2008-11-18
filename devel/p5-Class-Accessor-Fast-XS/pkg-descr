@@ -1,0 +1,7 @@
+This module is a XS based replacement for Class::Accessor::Fast.
+Just replace Class::Accessor::Fast with Class::Accessor::Fast::XS
+and it should just work.
+
+Read Class::Accessor::Fast and Class::Accessor for API docs and usage.
+
+WWW: http://search.cpan.org/dist/Class-Accessor-Fast-XS/
