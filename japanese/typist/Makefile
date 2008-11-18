@@ -7,6 +7,7 @@
 
 PORTNAME=	typist
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://tuba.csedu.kobe-u.ac.jp/pub/UNIX/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -18,7 +19,9 @@ COMMENT=	Typing lessons (Japanese version)
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		typist.1
 
+.ifndef (NOPORTDOCS)
 PORTDOCS=	INSTALL.txt README.J README.orig
+.endif
 
 OPTIONS=	KEYMAP106JP	"Japanese 106 Keymap"	on \
 		KEYMAP101	"101 Keymap"		off
@@ -34,8 +37,8 @@ MAKE_ARGS=	KEYTYPE="j"
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/typist
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/../doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
