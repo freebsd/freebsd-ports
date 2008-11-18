@@ -6,7 +6,7 @@ lib/quranref/xxxxqurrtv.IS
 lib/quranref/xxxxqurrtv.LIM
 lib/quranref/xxxxqurrtv.OFS
 lib/quranref/xxxxqurrtv.UNT
-share/doc/quranref/README
-share/doc/quranref/README.2000
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.2000
 @dirrm lib/quranref
-@dirrm share/doc/quranref
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
