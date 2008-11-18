@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="75f2382e-b586-11dd-95f9-00e0815b8da8">
+    <topic>syslog-ng2 -- startup directory leakage in the chroot environment</topic>
+    <affects>
+      <package>
+	<name>syslog-ng2</name>
+	<range><lt>2.0.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Florian Grandel reports:</p>
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505791">
+	  <p>I have not had the time to analyze all of syslog-ng code.
+	    But by reading the code section near the chroot call and looking
+	    at strace results I believe that syslog-ng does not chdir to the
+	    chroot jail's location before chrooting into it.</p>
+	  <p>This opens up ways to work around the chroot jail.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5110</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505791</url>
+      <url>http://www.openwall.com/lists/oss-security/2008/11/17/3</url>
+    </references>
+    <dates>
+      <discovery>2008-11-15</discovery>
+      <entry>2008-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1126054-b57c-11dd-8892-0017319806e7">
     <topic>enscript -- arbitrary code execution vulnerability</topic>
     <affects>
