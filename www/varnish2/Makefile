@@ -18,7 +18,8 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 USE_LDCONFIG=	yes
 
 MAN1=		varnishadm.1 varnishd.1 varnishhist.1 varnishlog.1 \
-		varnishncsa.1 varnishreplay.1 varnishstat.1 varnishtop.1
+		varnishncsa.1 varnishreplay.1 varnishstat.1 varnishtest.1 \
+		varnishtop.1
 MAN7=		vcl.7
 USE_REINPLACE=	YES
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
