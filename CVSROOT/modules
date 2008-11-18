@@ -3273,6 +3273,7 @@ florist-gpl                     ports/devel/florist-gpl
 flounder                        ports/science/flounder
 flow-extract                    ports/net-mgmt/flow-extract
 flow-tools                      ports/net-mgmt/flow-tools
+flow-tools-ng                   ports/net-mgmt/flow-tools-ng
 flowcanvas                      ports/x11-toolkits/flowcanvas
 flowd                           ports/net-mgmt/flowd
 flowdesigner                    ports/devel/flowdesigner
@@ -7900,6 +7901,7 @@ lxsession-lite                  ports/x11-wm/lxsession-lite
 lxsplit                         ports/sysutils/lxsplit
 lxtask                          ports/sysutils/lxtask
 lybniz                          ports/math/lybniz
+lynis                           ports/security/lynis
 lyntin                          ports/net/lyntin
 lynx                            ports/www/lynx
 lynx-current                    ports/www/lynx-current
@@ -8807,6 +8809,7 @@ namazu2                         ports/databases/namazu2
 namefix                         ports/sysutils/namefix
 nana                            ports/devel/nana
 nano                            ports/editors/nano
+nano-devel                      ports/editors/nano-devel
 nanoblogger                     ports/www/nanoblogger
 nant                            ports/devel/nant
 napshare                        ports/net-p2p/napshare
@@ -16090,6 +16093,7 @@ passivetex                      ports/print/passivetex
 passlogd                        ports/net/passlogd
 pastebinit                      ports/misc/pastebinit
 patanjali                       ports/misc/patanjali
+patchage                        ports/audio/patchage
 patchutils                      ports/misc/patchutils
 pathalias                       ports/mail/pathalias
 pathchar                        ports/net/pathchar
@@ -22189,6 +22193,7 @@ xf86-input-summa                ports/x11-drivers/xf86-input-summa
 xf86-input-tek4957              ports/x11-drivers/xf86-input-tek4957
 xf86-input-vmmouse              ports/x11-drivers/xf86-input-vmmouse
 xf86-input-void                 ports/x11-drivers/xf86-input-void
+xf86-input-wacom                ports/x11-drivers/xf86-input-wacom
 xf86-video-apm                  ports/x11-drivers/xf86-video-apm
 xf86-video-ark                  ports/x11-drivers/xf86-video-ark
 xf86-video-ati                  ports/x11-drivers/xf86-video-ati
