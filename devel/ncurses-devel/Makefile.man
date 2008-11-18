@@ -11,6 +11,7 @@ MAN1=	\
 	infotocap.1m \
 	tic.1m \
 	toe.1m \
+	tabs.1 \
 	tput.1 \
 	tset.1
 MLINKS+=tset.1 reset.1
@@ -47,6 +48,7 @@ MAN3=	curs_addch.3x \
 	curs_inwstr.3x \
 	curs_kernel.3x \
 	curs_legacy.3x \
+	curs_memleaks.3x \
 	curs_mouse.3x \
 	curs_move.3x \
 	curs_opaque.3x \
@@ -295,6 +297,8 @@ MLINKS+=\
 	curs_legacy.3x getmaxy.3x \
 	curs_legacy.3x getparx.3x \
 	curs_legacy.3x getpary.3x \
+	curs_memleaks.3x _nc_free_and_exit.3x \
+	curs_memleaks.3x _nc_freeall.3x \
 	curs_mouse.3x getmouse.3x \
 	curs_mouse.3x mouse_trafo.3x \
 	curs_mouse.3x mouseinterval.3x \
