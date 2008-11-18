@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -33,10 +32,5 @@ BROKEN=		does not compile
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-
-post-install:
-	${MKDIR} ${PREFIX}/etc/varnish
-	@[ -f ${PREFIX}/etc/varnish/default.vcl ] || \
-	    ${INSTALL_DATA} ${WRKSRC}/etc/default.vcl ${PREFIX}/etc/varnish/
 
 .include <bsd.port.post.mk>

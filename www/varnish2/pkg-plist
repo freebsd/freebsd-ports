@@ -33,4 +33,4 @@ sbin/varnishd
 @exec mkdir %D/varnish
 @dirrmtry varnish
 @dirrm include/varnish
-@dirrm etc/varnish
+@dirrmtry etc/varnish
