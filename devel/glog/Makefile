@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glog
-DISTVERSION=	0.1
+DISTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://google-glog.googlecode.com/files/
 
