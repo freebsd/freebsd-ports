@@ -7,6 +7,7 @@
 
 PORTNAME=	otter
 PORTVERSION=	3.3f
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www-unix.mcs.anl.gov/AR/otter/dist33/
 
@@ -24,7 +25,7 @@ do-install:
 .for prog in ${PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${prog} ${PREFIX}/bin
 .endfor
-.if !defined{NOPORTDOCS}
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/documents/${doc} ${DOCSDIR}
