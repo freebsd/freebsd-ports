@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a1126054-b57c-11dd-8892-0017319806e7">
+    <topic>enscript -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>enscript-a4</name>
+	<name>enscript-letter</name>
+	<name>enscript-letterdj</name>
+	<range><lt>1.6.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Harnhammar of Secunia Research reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3863">
+	  <p>Stack-based buffer overflow in the read_special_escape function
+	    in src/psgen.c in GNU Enscript 1.6.1 and 1.6.4 beta, when the -e
+	    (aka special escapes processing) option is enabled, allows
+	    user-assisted remote attackers to execute arbitrary code via a
+	    crafted ASCII file, related to the setfilename command.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3863</cvename>
+      <cvename>CVE-2008-4306</cvename>
+      <url>http://secunia.com/secunia_research/2008-41/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-22</discovery>
+      <entry>2008-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45298931-b3bf-11dd-80f8-001cc0377035">
     <topic>gnutls -- X.509 certificate chain validation vulnerability</topic>
     <affects>
