@@ -35,7 +35,7 @@ RABINDIR=	${PREFIX}/bin
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 .else
-PLIST_SUB+=	NLS=""
+PLIST_SUB+=	NLS="" LINUXBASE="${LINUXBASE}"
 .endif
 
 .include <bsd.port.pre.mk>
@@ -93,6 +93,10 @@ do-install:
 	@${MKDIR} ${RADIR}/share/locale
 	${CP} -Rp ${WRKSRC}/share/locale/* ${RADIR}/share/locale
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${RADIR}/share/locale
+.for c in de es fr hi it ja ko pl pt_BR zh_CN zh_TW
+	${LN} -sf ${RADIR}/share/locale/${c}/player.mo \
+		${LINUXBASE}/usr/share/locale/${c}/LC_MESSAGES/realplay.mo
+.endfor
 .endif
 
 	@${MKDIR} ${PLUGINSDIR}
