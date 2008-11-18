@@ -1,0 +1,16 @@
+To setup the wacom driver for X and start the kernel module upon boot
+run the following commands as the root user:
+
+# echo 'wacom_enable="YES"' >> /etc/rc.conf
+# %%PREFIX%%/etc/rc.d/wacom setup
+
+You can unload the driver and clean up the Xorg configuration by
+running the following lines before deinstalling:
+# %%PREFIX%%/etc/rc.d/wacom cleanup
+# %%PREFIX%%/etc/rc.d/wacom stop
+
+To activate the driver without rebooting run:
+
+# %%PREFIX%%/etc/rc.d/wacom start
+
+Now (re)plug in your tablet and restart X.
