@@ -102,13 +102,16 @@ post-patch:
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
 	@${REINPLACE_CMD} -E \
-		-e "s,^(CFLAGS=).*,\1${CFLAGS} -fno-strict-aliasing," \
-		-e "s,^(LDFLAGS=).*,\1${LDFLAGS}," \
+		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
+		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile.target
 	@${REINPLACE_CMD} -E \
-		-e "s,^(CFLAGS=).*,\1${CFLAGS} -fno-strict-aliasing -I.," \
-		-e "s,^(LDFLAGS=).*,\1${LDFLAGS}," \
+		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
+		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E \
+		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
+		${WRKSRC}/texi2pod.pl
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
