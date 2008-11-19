@@ -7,6 +7,7 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	1.7.b2
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
@@ -23,7 +24,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python \
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix kdelibs workspace automoc4
+USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui xml
