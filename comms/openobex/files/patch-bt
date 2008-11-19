@@ -1,0 +1,12 @@
+diff -ur lib/bluez_compat.h work.2/openobex-1.4/lib/bluez_compat.h
+--- lib/bluez_compat.h	2008-11-07 14:36:09.000000000 +0200
++++ lib/bluez_compat.h	2008-11-19 02:34:53.000000000 +0200
+@@ -53,6 +53,8 @@
+ #define rc_family   rfcomm_family
+ #define rc_bdaddr   rfcomm_bdaddr
+ #define rc_channel  rfcomm_channel
++#define BDADDR_ANY  NG_HCI_BDADDR_ANY
++#define BTPROTO_RFCOMM BLUETOOTH_PROTO_RFCOMM
+ 
+ #elif defined(HAVE_BLUETOOTH_NETBSD)
+ #include <bluetooth.h>

@@ -6,24 +6,29 @@
 #
 
 PORTNAME=	openobex
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	comms net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.kernel.org/pub/linux/bluetooth/ \
+		http://www.de.kernel.org/pub/linux/bluetooth/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Open source implementation of the OBEX protocol
 
-USE_AUTOTOOLS=	automake:14:env autoheader:262 autoconf:262 libtool:15
-USE_GMAKE=		yes
-USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--program-transform-name="" \
-			--disable-usb
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 
-post-patch:
-	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
-		${WRKSRC}/Makefile.in
+OPTIONS=	LIBUSB "Enable OBEX over USB" no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBUSB)
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+CONFIGURE_ARGS+=--enable-usb
+CFLAGS+=	-I${PREFIX}/include
+.else
+CONFIGURE_ARGS+=--disable-usb
+.endif
+
+.include <bsd.port.post.mk>
