@@ -1,0 +1,65 @@
+--- lib/usbobex.c	2008-11-07 14:36:09.000000000 +0200
++++ lib/usbobex.c	2008-11-19 02:47:39.000000000 +0200
+@@ -392,25 +392,8 @@
+ 
+ 	DEBUG(4, "\n");
+ 
+-	self->trans.self.usb.dev_control = usb_open(self->trans.self.usb.device);
+ 	self->trans.self.usb.dev_data = usb_open(self->trans.self.usb.device);
+ 
+-	ret = usb_set_configuration(self->trans.self.usb.dev_control, self->trans.self.usb.configuration);
+-	if (ret < 0)
+-		DEBUG(4, "Can't set configuration %d", ret);
+-
+-	ret = usb_claim_interface(self->trans.self.usb.dev_control, self->trans.self.usb.control_interface);
+-	if (ret < 0) {
+-		DEBUG(4, "Can't claim control interface %d", ret);
+-		goto err1;
+-	}
+-
+-	ret = usb_set_altinterface(self->trans.self.usb.dev_control, self->trans.self.usb.control_setting);
+-	if (ret < 0) {
+-		DEBUG(4, "Can't set control setting %d", ret);
+-		goto err2;
+-	}
+-
+ 	ret = usb_claim_interface(self->trans.self.usb.dev_data, self->trans.self.usb.data_interface);
+ 	if (ret < 0) {
+ 		DEBUG(4, "Can't claim data interface %d", ret);
+@@ -430,10 +413,8 @@
+ err3:
+ 	usb_release_interface(self->trans.self.usb.dev_data, self->trans.self.usb.data_interface);
+ err2:
+-	usb_release_interface(self->trans.self.usb.dev_control, self->trans.self.usb.control_interface);
+ err1:
+ 	usb_close(self->trans.self.usb.dev_data);
+-	usb_close(self->trans.self.usb.dev_control);
+ 	return ret;
+ }
+ 
+@@ -450,21 +431,19 @@
+ 		return 0;
+ 
+ 	DEBUG(4, "\n");
++
++	usb_clear_halt(self->trans.self.usb.dev_data, self->trans.self.usb.data_endpoint_read);
++	usb_clear_halt(self->trans.self.usb.dev_data, self->trans.self.usb.data_endpoint_write);
++
+ 	ret = usb_set_altinterface(self->trans.self.usb.dev_data, self->trans.self.usb.data_idle_setting);
+ 	if (ret < 0)
+ 		DEBUG(4, "Can't set data idle setting %d", ret);
+ 	ret = usb_release_interface(self->trans.self.usb.dev_data, self->trans.self.usb.data_interface);
+ 	if (ret < 0)
+ 		DEBUG(4, "Can't release data interface %d", ret);
+-	ret = usb_release_interface(self->trans.self.usb.dev_control, self->trans.self.usb.control_interface);
+-	if (ret < 0)
+-		DEBUG(4, "Can't release control interface %d", ret);
+ 	ret = usb_close(self->trans.self.usb.dev_data);
+ 	if (ret < 0)
+ 		DEBUG(4, "Can't close data interface %d", ret);
+-	ret = usb_close(self->trans.self.usb.dev_control);
+-	if (ret < 0)
+-		DEBUG(4, "Can't close control interface %d", ret);
+ 
+ 	return ret;
+ }

@@ -1,9 +1,8 @@
 include/openobex/obex.h
 include/openobex/obex_const.h
-lib/libopenobex.so.4
+lib/libopenobex.so.5
 lib/libopenobex.a
 lib/libopenobex.la
 lib/libopenobex.so
 libdata/pkgconfig/openobex.pc
-share/aclocal/openobex.m4
 @dirrm include/openobex
