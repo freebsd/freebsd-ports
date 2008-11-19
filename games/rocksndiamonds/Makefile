@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.2.4
-PORTREVISION=	2
+PORTVERSION=	3.2.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/

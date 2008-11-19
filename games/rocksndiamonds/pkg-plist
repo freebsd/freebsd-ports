@@ -237,6 +237,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/wall_slippery.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/yamyam.txt
 %%DATADIR%%/graphics/gfx_classic/RocksBusy.pcx
+%%DATADIR%%/graphics/gfx_classic/RocksCE.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDC.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDC2.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDoor.pcx
