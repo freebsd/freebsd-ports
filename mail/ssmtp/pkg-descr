@@ -1,9 +1,10 @@
-A secure, effective and simple way of getting mail off a system to your
-mail hub. It contains no suid-binaries or other dangerous things - no mail
-spool to poke around in, and no daemons running in the background. Mail is
-simply forwarded to the configured mailhost. Extremely easy configuration.
+A secure, effective and simple way of getting mail off a system to
+your mail hub. It does not include a mail spool to poke around in,
+and no daemons running in the background. Mail is simply forwarded
+to the configured mailhost. Extremely easy configuration.
 
-WARNING: the above is all it does; it does not receive mail, expand aliases
-or manage a queue. That belongs on a mail hub with a system administrator.
+WARNING: the above is all it does; it does not receive mail, expand
+aliases or manage a queue. That belongs on a mail hub with a system
+administrator.
 
-WWW: http://packages.debian.org/stable/mail/ssmtp
+WWW:    http://packages.debian.org/stable/mail/ssmtp
