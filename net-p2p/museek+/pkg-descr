@@ -1,5 +1,0 @@
-Museek+ (or Museek-Plus) is an enhanced fork of Museek, a file-sharing
-application for the Soulseek peer-to-peer network. The actual SoulSeek client
-and the GUI are separate programs that communicate via Unix or network sockets.
-
-WWW:	http://www.museek-plus.org/

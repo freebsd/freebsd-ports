@@ -9,19 +9,15 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0-test1
-PORTREVISION=	2
+DISTVERSION=	0.9.6
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/
-#MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
-#MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
-#		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	funman@videolan.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
@@ -397,7 +393,6 @@ CONFIGURE_ARGS+=--disable-a52
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 USE_GECKO=	firefox mozilla seamonkey nvu
-.include <bsd.gecko.mk>
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"

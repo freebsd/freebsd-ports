@@ -1,0 +1,189 @@
+Index: src/main.c
+===================================================================
+RCS file: /cvsroot/proftp/proftpd/src/main.c,v
+retrieving revision 1.344
+diff -u -r1.344 main.c
+--- src/main.c	8 Sep 2008 00:47:11 -0000	1.344
++++ src/main.c	20 Sep 2008 20:10:49 -0000
+@@ -516,20 +516,32 @@
+ static long get_max_cmd_len(size_t buflen) {
+   long res;
+   int *bufsz = NULL;
++  size_t default_cmd_bufsz;
+ 
++  /* It's possible for the admin to select a PR_TUNABLE_BUFFER_SIZE which
++   * is smaller than PR_DEFAULT_CMD_BUFSZ.  We need to handle such cases
++   * properly.
++   */
++  default_cmd_bufsz = PR_DEFAULT_CMD_BUFSZ;
++  if (default_cmd_bufsz > buflen) {
++    default_cmd_bufsz = buflen;
++  }
++ 
+   bufsz = get_param_ptr(main_server->conf, "CommandBufferSize", FALSE);
+   if (bufsz == NULL) {
+-    res = PR_DEFAULT_CMD_BUFSZ;
++    res = default_cmd_bufsz;
+ 
+   } else if (*bufsz <= 0) {
+     pr_log_pri(PR_LOG_WARNING, "invalid CommandBufferSize size (%d) given, "
+-      "using default buffer size (%u) instead", *bufsz, PR_DEFAULT_CMD_BUFSZ);
+-    res = PR_DEFAULT_CMD_BUFSZ;
++      "using default buffer size (%lu) instead", *bufsz,
++      (unsigned long) default_cmd_bufsz);
++    res = default_cmd_bufsz;
+ 
+   } else if (*bufsz + 1 > buflen) {
+     pr_log_pri(PR_LOG_WARNING, "invalid CommandBufferSize size (%d) given, "
+-      "using default buffer size (%u) instead", *bufsz, PR_DEFAULT_CMD_BUFSZ);
+-    res = PR_DEFAULT_CMD_BUFSZ;
++      "using default buffer size (%lu) instead", *bufsz,
++      (unsigned long) default_cmd_bufsz);
++    res = default_cmd_bufsz;
+ 
+   } else {
+     pr_log_debug(DEBUG1, "setting CommandBufferSize to %d", *bufsz);
+@@ -577,11 +589,26 @@
+     return -1;
+   }
+ 
+-  memset(buf, '\0', sizeof(buf));
++  while (TRUE) {
++    pr_signals_handle();
+ 
+-  if (pr_netio_telnet_gets(buf, sizeof(buf)-1, session.c->instrm,
+-      session.c->outstrm) == NULL)
+-    return -1;
++    memset(buf, '\0', sizeof(buf));
++
++    if (pr_netio_telnet_gets(buf, sizeof(buf)-1, session.c->instrm,
++        session.c->outstrm) == NULL) {
++
++      if (errno == E2BIG) {
++        /* The client sent a too-long command which was ignored; give
++         * them another chance?
++         */
++       continue;
++      }
++
++      return -1;
++    }
++
++    break;
++  }
+ 
+   if (cmd_bufsz == -1)
+     cmd_bufsz = get_max_cmd_len(sizeof(buf));
+Index: src/netio.c
+===================================================================
+RCS file: /cvsroot/proftp/proftpd/src/netio.c,v
+retrieving revision 1.33
+diff -u -r1.33 netio.c
+--- src/netio.c	3 Apr 2008 03:14:31 -0000	1.33
++++ src/netio.c	20 Sep 2008 20:10:49 -0000
+@@ -1,6 +1,6 @@
+ /*
+  * ProFTPD - FTP server daemon
+- * Copyright (c) 2001-2007 The ProFTPD Project team
++ * Copyright (c) 2001-2008 The ProFTPD Project team
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -30,19 +30,19 @@
+ #include <signal.h>
+ 
+ #ifndef IAC
+-#define IAC	255
++# define IAC	255
+ #endif
+ #ifndef DONT
+-#define DONT	254
++# define DONT	254
+ #endif
+ #ifndef DO
+-#define DO	253
++# define DO	253
+ #endif
+ #ifndef WONT
+-#define WONT	252
++# define WONT	252
+ #endif
+ #ifndef WILL
+-#define WILL	251
++# define WILL	251
+ #endif
+ 
+ static const char *trace_channel = "netio";
+@@ -51,6 +51,17 @@
+ static pr_netio_t *core_data_netio = NULL, *data_netio = NULL;
+ static pr_netio_t *core_othr_netio = NULL, *othr_netio = NULL;
+ 
++/* Used to track whether the previous text read from the client's control
++ * connection was a properly-terminated command.  If so, then read in the
++ * next/current text as per normal.  If NOT (e.g. the client sent a too-long
++ * command), then read in the next/current text, but ignore it.  Only clear
++ * this flag if the next/current command can be read as per normal.
++ *
++ * The pr_netio_telnet_gets() uses this variable, in conjunction with its
++ * saw_newline flag, for handling too-long commands from clients.
++ */
++static int properly_terminated_prev_command = TRUE;
++
+ static pr_netio_stream_t *netio_stream_alloc(pool *parent_pool) {
+   pool *netio_pool = NULL;
+   pr_netio_stream_t *nstrm = NULL;
+@@ -950,7 +961,7 @@
+   char *bp = buf;
+   unsigned char cp;
+   static unsigned char mode = 0;
+-  int toread, handle_iac = TRUE;
++  int toread, handle_iac = TRUE, saw_newline = FALSE;
+   pr_buffer_t *pbuf = NULL;
+ 
+   if (buflen == 0) {
+@@ -983,8 +994,9 @@
+           *bp = '\0';
+           return buf;
+ 
+-        } else
++        } else {
+           return NULL;
++        }
+       }
+ 
+       pbuf->remaining = pbuf->buflen - toread;
+@@ -1049,6 +1061,8 @@
+       toread--;
+       *bp++ = *pbuf->current++;
+       pbuf->remaining++;
++
++      saw_newline = TRUE;
+       break;
+     }
+ 
+@@ -1056,6 +1070,25 @@
+       pbuf->current = NULL;
+   }
+ 
++  if (!saw_newline) {
++    /* If we haven't seen a newline, then assume the client is deliberately
++     * sending a too-long command, trying to exploit buffer sizes and make
++     * the server make some possibly bad assumptions.
++     */
++
++    properly_terminated_prev_command = FALSE;
++    errno = E2BIG;
++    return NULL;
++  }
++
++  if (!properly_terminated_prev_command) {
++    properly_terminated_prev_command = TRUE;
++    pr_log_pri(PR_LOG_NOTICE, "client sent too-long command, ignoring");
++    errno = E2BIG;
++    return NULL;
++  }
++
++  properly_terminated_prev_command = TRUE;
+   *bp = '\0';
+   return buf;
+ }

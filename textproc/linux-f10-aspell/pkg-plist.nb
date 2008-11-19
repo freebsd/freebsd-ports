@@ -1,7 +1,0 @@
-usr/lib/aspell/bokmal.alias
-usr/lib/aspell/bokmål.alias
-usr/lib/aspell/nb.multi
-usr/lib/aspell/nb.rws
-usr/lib/aspell/no.alias
-usr/lib/aspell/norsk.alias
-usr/share/aspell/nb.dat

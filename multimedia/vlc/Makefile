@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6i
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -17,7 +18,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
 		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
 		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
 
-MAINTAINER=	funman@videolan.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
@@ -452,12 +453,6 @@ LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else
 CONFIGURE_ARGS+=--disable-gnutls
-.endif
-
-.if !defined(WITHOUT_SLP)
-LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
-.else
-CONFIGURE_ARGS+=--disable-slp
 .endif
 
 .if !defined(WITHOUT_SPEEX)

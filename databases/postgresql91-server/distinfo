@@ -1,6 +1,0 @@
-MD5 (postgresql/postgresql-8.3.3.tar.bz2) = 0ae4bd9620e84d3e08dcf923808d14d0
-SHA256 (postgresql/postgresql-8.3.3.tar.bz2) = e9406b93794dc4fd15b21e10512d2b694236d79b018d29b9ca86311d5cca2437
-SIZE (postgresql/postgresql-8.3.3.tar.bz2) = 14004538
-MD5 (postgresql/pg-833-icu-xx-2008-08-28.diff.gz) = 94fb6634636cd36cb5fde449d76ece65
-SHA256 (postgresql/pg-833-icu-xx-2008-08-28.diff.gz) = c7d77dafe78afcf2e92567c7cdfda45dcfe41ea71efb2e326ef4f7eb66ec416b
-SIZE (postgresql/pg-833-icu-xx-2008-08-28.diff.gz) = 5302

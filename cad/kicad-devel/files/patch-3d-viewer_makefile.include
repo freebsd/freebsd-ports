@@ -1,9 +1,0 @@
---- 3d-viewer/makefile.include.orig	Mon Jul  2 19:55:19 2007
-+++ 3d-viewer/makefile.include	Mon Jul  2 19:57:07 2007
-@@ -1,5 +1,5 @@
- EXTRALIBS =
--EXTRACPPFLAGS= -I./ -I../include -I../common -I../pcbnew
-+EXTRACPPFLAGS= -I./ -I../include -I../common -I../pcbnew -I${LOCALBASE}/include
- 
- CPPFLAGS += $(EXTRACPPFLAGS)
- 

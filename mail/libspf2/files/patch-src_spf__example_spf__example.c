@@ -1,34 +1,5 @@
 --- src/spf_example/spf_example.c.orig	Mon Mar 28 14:17:20 2005
 +++ src/spf_example/spf_example.c	Mon Mar 28 14:22:46 2005
-@@ -90,17 +90,17 @@
- 	"\n"
- 	"Valid data options are:\n"
- 	"	-i <IP address>			The IP address that is sending email\n"
--	"	-s <email address>		 The email address used as the\n"
--	"							   envelope-from.  If no username (local\n"
--	"							   part) is given, 'postmaster' will be\n"
--	"							   assumed.\n"
--	"	-r <email address>		 [optional] The email address used as\n"
--	"							   the envelope-to email address, for\n"
--	"							   secondary-MX checking.\n"
--	"	-h <domain name>		   The domain name given on the SMTP HELO\n"
--	"							   command.  This is only needed if the\n"
--	"							   -sender option is not given.\n"
--	"	-d [debug level]		   debug level.\n"
-+	"	-s <email address>		The email address used as the\n"
-+	"					envelope-from.  If no username (local\n"
-+	"					part) is given, 'postmaster' will be\n"
-+	"					assumed.\n"
-+	"	-r <email address>		[optional] The email address used as\n"
-+	"					the envelope-to email address, for\n"
-+	"					secondary-MX checking.\n"
-+	"	-h <domain name>		The domain name given on the SMTP HELO\n"
-+	"					command.  This is only needed if the\n"
-+	"					-sender option is not given.\n"
-+	"	-d [debug level]		debug level.\n"
- 	);
- }
- 
 @@ -206,7 +206,7 @@
  	 * destroyed when you are finished.
  	 */

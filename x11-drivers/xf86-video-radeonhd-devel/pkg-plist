@@ -1,7 +1,0 @@
-lib/xorg/modules/drivers/radeonhd_drv.la
-lib/xorg/modules/drivers/radeonhd_drv.so
-%%UTILS%%sbin/rhd_conntest
-%%UTILS%%sbin/rhd_dump
-@dirrmtry lib/xorg/modules/drivers
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg

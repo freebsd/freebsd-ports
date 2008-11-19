@@ -1,3 +1,0 @@
-etc/idled.cf.template
-etc/rc.d/idled%%RC_SUFX%%
-libexec/idled

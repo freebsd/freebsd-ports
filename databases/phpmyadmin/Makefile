@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	2.11.9.1
+DISTVERSION=	3.0.1.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -14,10 +14,12 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
+IGNORE_WITH_PHP=	4
+IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql pcre session
+USE_PHP=	ctype mysql pcre session spl
 .endif
 
 # Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
@@ -121,12 +123,10 @@ pre-everything::
 	${ECHO_MSG} "    WITH_SUPHP=yes   Install appropriately for use with"
 	${ECHO_MSG} "                     the www/suphp port [default: no]"
 	${ECHO_MSG} ""
-	${ECHO_MSG} "Note that selecting the MYSQLI option will only work"
-	${ECHO_MSG} "with PHP5 and MySQL 4.1.x"
-	${ECHO_MSG} ""
-	${ECHO_MSG} "If you want to use PHP4, for best results, please"
-	${ECHO_MSG} "install lang/php4 before attempting to install"
-	${ECHO_MSG} "databases/phpmyadmin"
+	${ECHO_MSG} "This version of phpmyadmin requires PHP 5.2+ and MySQL"
+	${ECHO_MSG} "5.0+.  If you need to use an older version of PHP or"
+	${ECHO_MSG} "manage older MYSQL databases, please use the"
+	${ECHO_MSG} "databases/phpmyadmin211 port instead."
 	${ECHO_MSG} ""
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 	@if ${PW} show -n phpmyadm >/dev/null 2>&1 ; then                     \

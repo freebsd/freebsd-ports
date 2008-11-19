@@ -1,8 +1,0 @@
---- codec/h263/Util.h	Thu Sep  9 08:45:56 1999
-+++ codec/h263/Util.h	Thu Sep 23 18:31:34 2004
-@@ -7,5 +7,4 @@
- #define _UTIL_
- 
--#include <malloc.h>
- #include "error.h"
- #include <stdlib.h>

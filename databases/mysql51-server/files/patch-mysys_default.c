@@ -1,6 +1,6 @@
---- mysys/default.c.orig	2008-04-08 13:23:13.000000000 +0200
-+++ mysys/default.c	2008-04-21 19:20:44.000000000 +0200
-@@ -623,7 +623,7 @@
+--- mysys/default.c.orig	2008-08-28 17:40:47.000000000 +0200
++++ mysys/default.c	2008-09-16 08:20:23.000000000 +0200
+@@ -638,7 +638,7 @@
    {
      MY_STAT stat_info;
      if (!my_stat(name,&stat_info,MYF(0)))
@@ -9,11 +9,14 @@
      /*
        Ignore world-writable regular files.
        This is mainly done to protect us to not read a file created by
-@@ -1105,6 +1105,7 @@
- #ifdef DEFAULT_SYSCONFDIR
+@@ -1091,7 +1091,10 @@
+ 
+ #if defined(DEFAULT_SYSCONFDIR)
    if (DEFAULT_SYSCONFDIR != "")
-     ADD_DIRECTORY(DEFAULT_SYSCONFDIR);
-+    ADD_DIRECTORY(DEFAULT_SYSCONFDIR "/mysql/");
++  {
+     errors += add_directory(alloc, DEFAULT_SYSCONFDIR, dirs);
++    errors += add_directory(alloc, DEFAULT_SYSCONFDIR "/mysql", dirs);
++  }
+ #endif /* DEFAULT_SYSCONFDIR */
+ 
  #endif
-   ADD_COMMON_DIRECTORIES();
-   ADD_DIRECTORY("~/");
