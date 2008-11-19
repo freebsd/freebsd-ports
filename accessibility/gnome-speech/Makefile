@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	gnome-speech
-PORTVERSION=	0.4.21
+PORTVERSION=	0.4.22
 CATEGORIES=	accessibility audio gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	GNOME text-to-speech API
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libbonobo
+USE_GNOME=	gnomehack gnomeprefix libbonobo
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
