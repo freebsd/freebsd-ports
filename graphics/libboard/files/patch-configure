@@ -1,0 +1,52 @@
+--- configure.orig	2007-12-17 11:15:52.000000000 +0100
++++ configure	2008-11-19 19:05:16.000000000 +0100
+@@ -60,7 +60,7 @@
+ ##
+ ## Are we on a powerpc (Mac ?)
+ ##
+-if [ `arch` = "ppc" ]; then
++if [ `uname -m` = "ppc" ]; then
+     LDFLAGSLIB=-dynamiclib
+     DYNLIB_EXTENSION=dynlib
+ fi
+@@ -68,23 +68,23 @@
+ ##
+ ## Are we on a 64 bits arch
+ ##
+-${ECHO} -n "Checking for 64 bits architecture..."
+-cat > is64.c <<EOF
+-int main() {
+- unsigned long n = 0;
+- n = ~n;
+- return n == 0xFFFFFFFF;
+-}
+-EOF
+-gcc -o is64 is64.c
+-if is64; then
+-CXX64FLAGS="-fPIC"
+-echo yes
+-else
+-CXX64FLAGS=""
+-echo no
+-fi
+-rm -f is64 is64.c
++#${ECHO} -n "Checking for 64 bits architecture..."
++#cat > is64.c <<EOF
++#int main() {
++# unsigned long n = 0;
++# n = ~n;
++# return n == 0xFFFFFFFF;
++#}
++#EOF
++#gcc -o is64 is64.c
++#if is64; then
++#CXX64FLAGS="-fPIC"
++#echo yes
++#else
++#CXX64FLAGS=""
++#echo no
++#fi
++#rm -f is64 is64.c
+ 
+ 
+ cat > Makefile <<EOF
