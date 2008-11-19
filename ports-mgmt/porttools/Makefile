@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
