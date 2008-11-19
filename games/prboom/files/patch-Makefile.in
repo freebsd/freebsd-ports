@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Oct 12 14:26:41 2007
-+++ Makefile.in	Fri Oct 12 14:27:32 2007
-@@ -269,22 +269,8 @@
+--- Makefile.in.orig	2008-11-09 14:22:16.000000000 -0500
++++ Makefile.in	2008-11-18 18:16:54.000000000 -0500
+@@ -258,22 +258,8 @@
+ prboom.spec: $(top_builddir)/config.status $(srcdir)/prboom.spec.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
- uninstall-info-am:
  install-docDATA: $(doc_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
 -	@list='$(doc_DATA)'; for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 -	  f=$(am__strip_dir) \
