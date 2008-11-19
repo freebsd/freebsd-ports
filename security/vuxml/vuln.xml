@@ -34,6 +34,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="937adf01-b64a-11dd-a55e-00163e000016">
+    <topic>openfire -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openfire</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andreas Kurtz reports:</p>
+	<blockquote cite="http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt">
+	  <p>The jabber server Openfire (&lt;= version 3.6.0a) contains several
+	    serious vulnerabilities. Depending on the particular runtime
+	    environment these issues can potentially even be used by an
+	    attacker to execute code on operating system level.</p>
+
+	  <ol>
+	    <li>Authentication bypass - This vulnerability provides an attacker
+	     full access to all functions in the admin webinterface without
+	     providing any user credentials.  The Tomcat filter which is
+	     responsible for authentication could be completely
+	     circumvented.</li>
+	   
+	    <li>SQL injection - It is possible to pass SQL statements to the
+	     backend database through a SQL injection vulnerability. Depending
+	     on the particular runtime environment and database permissions it
+	     is even possible to write files to disk and execute code on
+	     operating system level.</li>
+	   
+	    <li>Multiple Cross-Site Scripting  - Permits arbitrary insertion
+	     of HTML- and JavaScript code in login.jsp.  An attacker could
+	     also manipulate a parameter to specify a destination to which a
+	     user will be forwarded to after successful authentication.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt</url>
+      <url>http://www.igniterealtime.org/builds/openfire/docs/latest/changelog.html</url>
+      <url>http://secunia.com/Advisories/32478/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-07</discovery>
+      <entry>2008-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75f2382e-b586-11dd-95f9-00e0815b8da8">
     <topic>syslog-ng2 -- startup directory leakage in the chroot environment</topic>
     <affects>
