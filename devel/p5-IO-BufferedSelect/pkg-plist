@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/BufferedSelect/.packlist
+%%SITE_PERL%%/IO/BufferedSelect.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/BufferedSelect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO
