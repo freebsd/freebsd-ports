@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		libboard
-PORTVERSION=		0.8.0
+PORTVERSION=		0.8.2
 CATEGORIES=		graphics
 MASTER_SITES=		http://www.greyc.ensicaen.fr/~seb/board/download/
 
@@ -37,6 +37,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${DOCSDIR}/
+	${RM} -rf ${DOCSDIR}/.svn
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+	${RM} -rf ${EXAMPLESDIR}/.svn
 .endif
 
 regression-test:

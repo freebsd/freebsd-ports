@@ -3,9 +3,18 @@ include/board/Board.h
 include/board/Color.h
 include/board/Point.h
 include/board/Rect.h
+include/board/ShapeList.h
 include/board/Shapes.h
 include/board/Transforms.h
 lib/libboard.a
 lib/libboard.so
 lib/libboard.so.0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arithmetic.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ellipse.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/board
