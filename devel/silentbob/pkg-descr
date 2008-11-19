@@ -1,0 +1,17 @@
+"SilentBob" is a tool to help a programmer/team manager to digest
+and comprehend either a simple program or a big source code tree
+based on the source code by presenting the code in a searcheable
+and tagged way.
+
+It helps to speed up the learning curve and to make it more convenient
+to get hands on a code from somebody, or also is convenient to
+browse your own projects.
+
+It includes functionality from such tools as: ctags, cscope and
+ctree, but it is faster than any of them, and is offering the
+features in one package.
+
+In some way it can be viewed as a superset of ctags, cscope and
+ctree.
+
+WWW:	http://silentbob.sourceforge.net/

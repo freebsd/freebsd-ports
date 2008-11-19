@@ -2492,6 +2492,7 @@
     SUBDIR += sid
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
+    SUBDIR += silentbob
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simpletest
