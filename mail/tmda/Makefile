@@ -9,18 +9,11 @@ PORTNAME=	tmda
 PORTVERSION=	1.1.12
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
-		http://tmda.sourceforge.net/releases/ \
-		http://tmda.mirrors.summersault.com/releases/ \
-		http://mirrors.standblue.net/tmda.net/releases/ \
-		http://tmda.paracoda.com/releases/ \
-		ftp://ftp.heanet.ie/mirrors/tmda.net/releases/ \
-		ftp://gd.tuwien.ac.at/infosys/mail/tmda/releases/ \
-		http://dl.ambiweb.de/mirrors/www.tmda.net/releases/ \
-		http://tmda.pradnik.net/releases/ \
-		http://tmda.planetmirror.com/releases/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sergei
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Python-based SPAM reduction system
 
 .if defined(WITH_CDB)
