@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="75c24c1d-b688-11dd-88fd-001c2514716c">
+    <topic>dovecot -- ACL plugin bypass vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timo Sirainen reports in dovecot 1.1.4 release notes:</p>
+	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2008-October/000085.html">
+	  <p>ACL plugin fixes: Negative rights were actually treated
+	  as positive rights. 'k' right didn't prevent creating
+	  parent/child/child mailbox.  ACL groups weren't working.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>31587</bid>
+      <cvename>CVE-2008-4577</cvename>
+      <cvename>CVE-2008-4578</cvename>
+    </references>
+    <dates>
+      <discovery>2008-10-05</discovery>
+      <entry>2008-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1e0164e-b67b-11dd-a55e-00163e000016">
     <topic>libxml2 -- multiple vulnerabilities</topic>
     <affects>
