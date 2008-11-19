@@ -1,0 +1,8 @@
+sSMTP has been installed successfully.
+
+To replace sendmail with ssmtp type "make replace"
+
+However, before you can use the program, you should copy the files
+"revaliases.sample" and "ssmtp.conf.sample" in %%PREFIX%%/etc/ssmtp
+to "revaliases" and "ssmtp.conf" respectively and edit them to suit
+your needs.

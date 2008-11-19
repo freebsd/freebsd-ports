@@ -7,6 +7,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.61.11.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_2.61.orig
@@ -14,7 +15,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		ssmtp_2.61-11.1.diff.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.61
@@ -24,13 +25,23 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+SSMTP_GROUP=	ssmtp
+SSMTP_GID=	916
+
+SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_LIST+=	SSMTP_GROUP="${SSMTP_GROUP}" \
+		SSMTP_GID="${SSMTP_GID}" \
+		ETCDIR="${ETCDIR}" \
+		CHOWN="${CHOWN}" CHMOD="${CHMOD}" PW="${PW}"
+
 CONFIGURE_ARGS=	--enable-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAILERCONF=	/etc/mail/mailer.conf
-TRUE=		/usr/bin/true
 
 MAN8=		ssmtp.8
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_LOGFILE)
 CONFIGURE_ARGS+=	--enable-logfile
@@ -65,12 +76,14 @@ replace:
 	@${ECHO_CMD} "hoststat	${TRUE}" >> ${MAILERCONF}
 	@${ECHO_CMD} "purgestat	${TRUE}" >> ${MAILERCONF}
 
-post-install:
-	@${ECHO_MSG} --------------------------------------------------
-	@${ECHO_MSG}
-	@${ECHO_MSG} "To replace sendmail with ssmtp type make replace"
-	@${ECHO_MSG}
-	@${ECHO_MSG} --------------------------------------------------
-	@${SED} 's#%%PREFIX%%#${PREFIX}#' < ${PKGMESSAGE}
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-.include <bsd.port.mk>
+post-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
