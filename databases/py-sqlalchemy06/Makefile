@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.8
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://pypi.python.org/packages/source/S/SQLAlchemy/ \
@@ -22,8 +21,7 @@ COMMENT=	A Python SQL toolkit and Object Relational Mapper
 USE_PYTHON=	2.3+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHONVERSION=${_PYTHON_VERSION} \
-		EGG="SQLAlchemy==${PORTVERSION}" \
-		EXAMPLEDIR=share/examples/${PORTNAME}
+		EGG="SQLAlchemy==${PORTVERSION}"
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SQLAlchemy
 PYDISTUTILS_NOEGGINFO=	yes
@@ -81,9 +79,11 @@ post-install:
 .endfor
 .endif
 
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 .for i in ${PORTEXAMPLES}
 	${CP} -r ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
 .endfor
+.endif
 
 .include <bsd.port.post.mk>
