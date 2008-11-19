@@ -5317,6 +5317,7 @@ innerspace                      ports/x11/innerspace
 innobackup                      ports/databases/innobackup
 innotop                         ports/databases/innotop
 inplace                         ports/misc/inplace
+input-wacom                     ports/x11-drivers/input-wacom
 inputproto                      ports/x11/inputproto
 insighttoolkit                  ports/science/InsightToolkit
 inspircd                        ports/irc/inspircd
@@ -10075,6 +10076,7 @@ p5-Cisco-IPPhone                ports/net/p5-Cisco-IPPhone
 p5-Cisco-Reconfig               ports/net-mgmt/p5-Cisco-Reconfig
 p5-Class-Accessor               ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained       ports/devel/p5-Class-Accessor-Chained
+p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
 p5-Class-Accessor-Grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-Class-Accessor-Lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-Accessor-Named         ports/devel/p5-Class-Accessor-Named
@@ -10705,6 +10707,7 @@ p5-File-Copy-Recursive          ports/devel/p5-File-Copy-Recursive
 p5-File-CounterFile             ports/misc/p5-File-CounterFile
 p5-File-CreationTime            ports/devel/p5-File-CreationTime
 p5-File-DesktopEntry            ports/devel/p5-File-DesktopEntry
+p5-File-Dir-Dumper              ports/devel/p5-File-Dir-Dumper
 p5-File-DirSync                 ports/devel/p5-File-DirSync
 p5-File-ExtAttr                 ports/devel/p5-File-ExtAttr
 p5-File-FTS                     ports/devel/p5-File-FTS
@@ -13244,6 +13247,7 @@ p5-cisco-reconfig               ports/net-mgmt/p5-Cisco-Reconfig
 p5-class                        ports/devel/p5-CLASS
 p5-class-accessor               ports/devel/p5-Class-Accessor
 p5-class-accessor-chained       ports/devel/p5-Class-Accessor-Chained
+p5-class-accessor-fast-xs       ports/devel/p5-Class-Accessor-Fast-XS
 p5-class-accessor-grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-class-accessor-lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-class-accessor-named         ports/devel/p5-Class-Accessor-Named
@@ -13893,6 +13897,7 @@ p5-file-copy-recursive          ports/devel/p5-File-Copy-Recursive
 p5-file-counterfile             ports/misc/p5-File-CounterFile
 p5-file-creationtime            ports/devel/p5-File-CreationTime
 p5-file-desktopentry            ports/devel/p5-File-DesktopEntry
+p5-file-dir-dumper              ports/devel/p5-File-Dir-Dumper
 p5-file-dirsync                 ports/devel/p5-File-DirSync
 p5-file-extattr                 ports/devel/p5-File-ExtAttr
 p5-file-fetch                   ports/ftp/p5-File-Fetch
@@ -22193,7 +22198,6 @@ xf86-input-summa                ports/x11-drivers/xf86-input-summa
 xf86-input-tek4957              ports/x11-drivers/xf86-input-tek4957
 xf86-input-vmmouse              ports/x11-drivers/xf86-input-vmmouse
 xf86-input-void                 ports/x11-drivers/xf86-input-void
-xf86-input-wacom                ports/x11-drivers/xf86-input-wacom
 xf86-video-apm                  ports/x11-drivers/xf86-video-apm
 xf86-video-ark                  ports/x11-drivers/xf86-video-ark
 xf86-video-ati                  ports/x11-drivers/xf86-video-ati
