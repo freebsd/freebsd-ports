@@ -6,6 +6,8 @@ lib/libunbound.la
 lib/libunbound.a
 sbin/unbound
 sbin/unbound-checkconf
+sbin/unbound-control
+sbin/unbound-control-setup
 sbin/unbound-host
 @dirrmtry etc/unbound
 @dirrmtry /var/run/unbound

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -25,10 +24,11 @@ USE_RC_SUBR=	unbound
 MAN1=		unbound-host.1
 MAN3=		libunbound.3
 MAN5=		unbound.conf.5
-MAN8=		unbound.8 unbound-checkconf.8
+MAN8=		unbound.8 unbound-control.8 unbound-checkconf.8
 
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
-		README.tests TODO plan requirements.txt
+		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
+		ietf67-design-02.pdf requirements.txt
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
