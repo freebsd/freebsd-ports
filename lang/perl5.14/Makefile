@@ -21,8 +21,18 @@ PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/tobez\//} \
 		http://www.tobez.org/download/port-mirrors/lang/perl58/
 PATCHFILES=	defined-or-5.8.8.bz2
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
+
+CONFLICTS=	perl-5.6.* perl-5.10.*
+
+OPTIONS=	DEBUGGING	"Build with debugging support"		off \
+		GDBM		"Build GDBM_File extension"		off \
+		PERL_MALLOC	"Use Perl malloc"			on  \
+		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
+		THREADS		"Build threaded perl"			off \
+		SUIDPERL	"Build set-user-id suidperl binary"	off \
+		USE_PERL	"Rewrite links in /usr/bin"		on
 
 PERL_VER=	5.8.8
 PERL_ARCH=	mach
@@ -67,12 +77,12 @@ STRIP_CMD=	${TRUE}
 CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
 .endif
 
-.if defined(ENABLE_SUIDPERL)
+.if defined(ENABLE_SUIDPERL) || defined(WITH_SUIDPERL)
 CONFIGURE_ARGS+=	-Dd_dosuid=define
-PLIST_SUB+=		ENABLE_SUIDPERL=""
+PLIST_SUB+=		SUIDPERL=""
 .else
 CONFIGURE_ARGS+=	-Ud_dosuid
-PLIST_SUB+=		ENABLE_SUIDPERL="@comment "
+PLIST_SUB+=		SUIDPERL="@comment "
 .endif
 
 .if defined(WITH_GDBM)
@@ -108,7 +118,7 @@ CONFIGURE_ARGS+=	-Dusemymalloc=y
 CONFIGURE_ARGS+=	-Dusemymalloc=n
 .endif
 
-.if !defined(WITHOUT_PERL_64BITINT)
+.if defined(WITH_PERL_64BITINT)
 CONFIGURE_ARGS+=	-Duse64bitint
 .endif
 
@@ -139,21 +149,6 @@ BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_DEBUGGING=yes	  Build perl with debugging support."
-	@${ECHO} "	WITH_GDBM=yes		  Build GDBM_File extension."
-	@${ECHO} "	WITHOUT_PERL_MALLOC=yes	  Use FreeBSD system malloc"
-	@${ECHO} "				  (uses less memory, but slower)."
-	@${ECHO} "	WITHOUT_PERL_64BITINT=yes Disable 64 bit integers"
-	@${ECHO} "				  (affects only 32-bit platforms)."
-	@${ECHO} "	WITH_THREADS=yes	  Build threaded perl."
-	@${ECHO} "	ENABLE_SUIDPERL=yes	  Also build set-user-id suidperl binary."
-	@${ECHO} "      WITHOUT_USE_PERL=yes      Do not rewrite links in /usr/bin"
-	@${ECHO} ""
-
 post-patch:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
@@ -177,7 +172,7 @@ post-patch:
 		${WRKSRC}/hints/freebsd.sh
 .endif
 
-pre-install:
+pre-su-install:
 	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
 	@${RM} -f ${PREFIX}/bin/perl
 
@@ -193,7 +188,7 @@ post-install:
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
 		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
-.ifndef WITHOUT_USE_PERL
+.if defined(WITH_USE_PERL)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if ${OSVERSION} < 500036
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
