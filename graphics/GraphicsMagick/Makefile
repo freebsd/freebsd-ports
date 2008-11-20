@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -16,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
-CONFLICTS=	GraphicsMagick-1.2.*
+CONFLICTS=	GraphicsMagick-1.[23].*
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
@@ -60,6 +61,12 @@ test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.pre.mk>
+
+.if defined(NOPORTDOCS)
+# Get rid of the Makefile targets that install the documentation
+# and HTML files into DOCSDIR
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
+.endif
 
 .if defined(WITH_WINDOWS_FONT_DIR)
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
