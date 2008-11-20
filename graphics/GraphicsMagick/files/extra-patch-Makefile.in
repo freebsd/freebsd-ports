@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2008-05-12 12:42:50.000000000 -0400
++++ Makefile.in	2008-11-19 18:44:40.000000000 -0500
+@@ -848,7 +848,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-docDATA
++install-data-am: install-data-local
+ 
+ install-dvi: install-dvi-recursive
+ 
+@@ -1029,7 +1029,7 @@
+ install-exec-local: install-exec-perl
+ 
+ # Install arch-independent package data
+-install-data-local: install-data-html
++install-data-local:
+ 
+ # Uninstall arch-independent package data
+ uninstall-local: uninstall-data-html uninstall-exec-perl
