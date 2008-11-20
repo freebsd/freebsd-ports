@@ -17,8 +17,10 @@ MASTER_SITE_SUBDIR=	../../src \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
+
+CONFLICTS=	perl-5.8.* perl-5.10.*
 
 PERL_VER=	5.6.2
 PERL_ARCH=	mach
@@ -78,7 +80,7 @@ WITH_PERL_MALLOC=	yes
 .endif
 
 .if defined(WITH_THREADS)
-IGNORE=	Threads are not very useful in perl ${PERL_VERSION}, please use lang/perl5.8
+IGNORE=	threads are not very useful in perl ${PERL_VERSION}, please use lang/perl5.8
 .endif
 
 .if defined(WITH_PERL_MALLOC)
@@ -130,7 +132,7 @@ post-patch:
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
 
-pre-install:
+pre-su-install:
 	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
 	@${RM} -f ${PREFIX}/bin/perl
 
