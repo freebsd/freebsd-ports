@@ -2,3 +2,4 @@ Tie::CPHash is a Perl module implementing a case preserving but case
 insensitive hash table.
 
 Author: CJM <cjm@pobox.com>
+WWW: http://search.cpan.org/dist/Tie-CPHash/
