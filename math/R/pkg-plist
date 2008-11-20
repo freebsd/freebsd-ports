@@ -193,11 +193,13 @@ lib/R/library/MASS/R-ex/oats.R
 lib/R/library/MASS/R-ex/parcoord.R
 lib/R/library/MASS/R-ex/petrol.R
 lib/R/library/MASS/R-ex/plot.mca.R
+lib/R/library/MASS/R-ex/plot.profile.R
 lib/R/library/MASS/R-ex/polr.R
 lib/R/library/MASS/R-ex/predict.glmmPQL.R
 lib/R/library/MASS/R-ex/predict.lda.R
 lib/R/library/MASS/R-ex/predict.lqs.R
 lib/R/library/MASS/R-ex/predict.qda.R
+lib/R/library/MASS/R-ex/profile.glm.R
 lib/R/library/MASS/R-ex/qda.R
 lib/R/library/MASS/R-ex/rational.R
 lib/R/library/MASS/R-ex/renumerate.R
@@ -335,12 +337,14 @@ lib/R/library/MASS/help/petrol
 lib/R/library/MASS/help/phones
 lib/R/library/MASS/help/plot.lda
 lib/R/library/MASS/help/plot.mca
+lib/R/library/MASS/help/plot.profile
 lib/R/library/MASS/help/polr
 lib/R/library/MASS/help/predict.glmmPQL
 lib/R/library/MASS/help/predict.lda
 lib/R/library/MASS/help/predict.lqs
 lib/R/library/MASS/help/predict.mca
 lib/R/library/MASS/help/predict.qda
+lib/R/library/MASS/help/profile.glm
 lib/R/library/MASS/help/qda
 lib/R/library/MASS/help/quine
 lib/R/library/MASS/help/rational
@@ -490,12 +494,14 @@ lib/R/library/MASS/html/petrol.html
 lib/R/library/MASS/html/phones.html
 lib/R/library/MASS/html/plot.lda.html
 lib/R/library/MASS/html/plot.mca.html
+lib/R/library/MASS/html/plot.profile.html
 lib/R/library/MASS/html/polr.html
 lib/R/library/MASS/html/predict.glmmPQL.html
 lib/R/library/MASS/html/predict.lda.html
 lib/R/library/MASS/html/predict.lqs.html
 lib/R/library/MASS/html/predict.mca.html
 lib/R/library/MASS/html/predict.qda.html
+lib/R/library/MASS/html/profile.glm.html
 lib/R/library/MASS/html/qda.html
 lib/R/library/MASS/html/quine.html
 lib/R/library/MASS/html/rational.html
@@ -644,12 +650,14 @@ lib/R/library/MASS/latex/petrol.tex
 lib/R/library/MASS/latex/phones.tex
 lib/R/library/MASS/latex/plot.lda.tex
 lib/R/library/MASS/latex/plot.mca.tex
+lib/R/library/MASS/latex/plot.profile.tex
 lib/R/library/MASS/latex/polr.tex
 lib/R/library/MASS/latex/predict.glmmPQL.tex
 lib/R/library/MASS/latex/predict.lda.tex
 lib/R/library/MASS/latex/predict.lqs.tex
 lib/R/library/MASS/latex/predict.mca.tex
 lib/R/library/MASS/latex/predict.qda.tex
+lib/R/library/MASS/latex/profile.glm.tex
 lib/R/library/MASS/latex/qda.tex
 lib/R/library/MASS/latex/quine.tex
 lib/R/library/MASS/latex/rational.tex
@@ -8823,6 +8831,14 @@ libdata/pkgconfig/libR.pc
 %%DVI_MANUAL%%%%DOCSDIR%%/manual/images/ice.eps
 %%DVI_MANUAL%%%%DOCSDIR%%/manual/refman.dvi
 %%DVI_MANUAL%%@dirrm %%DOCSDIR%%/manual/images
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-admin.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-data.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-exts.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-intro.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-ints.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-lang.pdf
+%%PDF_MANUAL%%%%DOCSDIR%%/manual/refman.pdf
 @dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%/html/search
 @dirrm %%DOCSDIR%%/html
