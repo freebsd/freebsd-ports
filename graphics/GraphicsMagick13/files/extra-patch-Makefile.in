@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2008-11-17 17:54:43.000000000 -0500
++++ Makefile.in	2008-11-17 17:55:27.000000000 -0500
+@@ -9600,7 +9600,7 @@
+ info-am:
+ 
+ install-data-am: install-codersLTLIBRARIES install-configlibDATA \
+-	install-configshareDATA install-data-local install-docDATA \
++	install-configshareDATA install-data-local \
+ 	install-filtersLTLIBRARIES install-includeHEADERS \
+ 	install-ltdlincludeHEADERS install-magickincHEADERS \
+ 	install-magickppincHEADERS install-magickpptopincHEADERS \
+@@ -10006,8 +10006,7 @@
+ 	$(UTILITIES_INSTALL_EXEC_LOCAL_TARGETS)
+ 
+ install-data-local: $(MAGICK_INSTALL_DATA_LOCAL_TARGETS) \
+-	$(PERLMAGICK_INSTALL_DATA_LOCAL_TARGETS) \
+-	$(HTML_INSTALL_DATA_TARGETS)
++	$(PERLMAGICK_INSTALL_DATA_LOCAL_TARGETS)
+ 
+ uninstall-local: $(MAGICK_UNINSTALL_LOCAL_TARGETS) \
+ 	$(PERLMAGICK_UNINSTALL_LOCAL_TARGETS) \
