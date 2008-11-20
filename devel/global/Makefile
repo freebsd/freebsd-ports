@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	5.7.2
+PORTVERSION=	5.7.3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
