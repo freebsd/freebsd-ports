@@ -27,4 +27,6 @@ CONFIGURE_ARGS+=	--enable-color-interface
 MAN1=		mikmod.1
 PLIST_FILES=	bin/mikmod
 
+PORTSCOUT=	skipv:3.3.0
+
 .include <bsd.port.mk>
