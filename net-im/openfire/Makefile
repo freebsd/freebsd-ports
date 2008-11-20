@@ -11,7 +11,7 @@ CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	qpadla@gmail.com
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
