@@ -7,6 +7,7 @@
 
 PORTNAME=	Parse-RecDescent
 PORTVERSION=	1.96.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
@@ -15,8 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.Org
 COMMENT=	A recursive descent parsing framework for Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -28,4 +28,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tutorial/* ${DOCSDIR}/tutorial
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
+.endif
+
+.include <bsd.port.post.mk>
