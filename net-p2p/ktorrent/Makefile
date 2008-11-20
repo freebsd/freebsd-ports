@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
 		http://www.brueffer.de/distfiles/
@@ -17,6 +17,7 @@ COMMENT=	BitTorrent client for KDE
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 CONFLICTS=	ktorrent-devel-[0-9]*
+LATEST_LINK=	${PORTNAME}2
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
