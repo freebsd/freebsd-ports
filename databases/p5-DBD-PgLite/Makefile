@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DBD-PgLite
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	PostgreSQL emulation mode for SQLite
 
 RUN_DEPENDS=	p5-DBD-SQLite>=1.0:${PORTSDIR}/databases/p5-DBD-SQLite \
