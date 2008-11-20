@@ -11060,6 +11060,7 @@ p5-IO                           ports/devel/p5-IO
 p5-IO-AIO                       ports/devel/p5-IO-AIO
 p5-IO-All                       ports/devel/p5-IO-All
 p5-IO-Async                     ports/devel/p5-IO-Async
+p5-IO-BufferedSelect            ports/devel/p5-IO-BufferedSelect
 p5-IO-CSVHeaderFile             ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Capture                   ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput             ports/devel/p5-IO-CaptureOutput
@@ -14288,6 +14289,7 @@ p5-io                           ports/devel/p5-IO
 p5-io-aio                       ports/devel/p5-IO-AIO
 p5-io-all                       ports/devel/p5-IO-All
 p5-io-async                     ports/devel/p5-IO-Async
+p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
 p5-io-capture                   ports/devel/p5-IO-Capture
 p5-io-captureoutput             ports/devel/p5-IO-CaptureOutput
 p5-io-compress-base             ports/archivers/p5-IO-Compress-Base
@@ -19810,6 +19812,7 @@ silc-client                     ports/net/silc-client
 silc-irssi-plugin               ports/net/silc-irssi-plugin
 silc-server                     ports/net/silc-server
 silc-toolkit                    ports/devel/silc-toolkit
+silentbob                       ports/devel/silentbob
 silktools                       ports/security/silktools
 silkymail                       ports/mail/silkymail
 silvercity                      ports/textproc/silvercity
