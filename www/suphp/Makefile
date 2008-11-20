@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
 
-MAINTAINER=	koitsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes

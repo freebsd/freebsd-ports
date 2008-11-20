@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	koitsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Relay Authorization Control, a POP-before-SMTP implementation
 
 .if defined(WITH_POSTFIX_DB3)

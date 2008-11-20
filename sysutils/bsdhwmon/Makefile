@@ -10,7 +10,7 @@ PORTVERSION=	20081107
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsdhwmon.parodius.com/dist/
 
-MAINTAINER=	koitsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hardware sensor monitoring utility for FreeBSD
 
 PLIST_FILES=	sbin/bsdhwmon

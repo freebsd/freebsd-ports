@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	koitsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

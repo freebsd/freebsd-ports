@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MM/MMATHEWS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Markup-Perl-${PORTVERSION}
 
-MAINTAINER=	koitsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support perl code inside CGI scripts using simple tags
 
 USE_PERL5=	yes
