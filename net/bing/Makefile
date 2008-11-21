@@ -7,9 +7,10 @@
 
 PORTNAME=	bing
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/ \
-		ftp://ftp.ens.fr/pub/unix/syst/ \
+		ftp://ftp.ens.fr/pub/unix/syst/
 
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool
