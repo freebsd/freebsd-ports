@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Modules to assemble/disassemble network packets at the protocol level
 
 PERL_CONFIGURE=	yes
