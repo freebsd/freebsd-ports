@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -27,7 +27,8 @@ EXAMPLES=	composite.php console.php display.php error_log.php \
 		file.php firebug.php mail.php null.php observer_mail.php \
 		pear_error_handler.php php_error_handler.php sql.php \
 		sqlite.php syslog.php win.php
-TESTS=		composite.phpt console.phpt display.phpt error_log.phpt \
+TESTS=		backtrace.phpt composite.phpt console.phpt \
+		display.phpt error_log.phpt format.phpt \
 		extract-zend1.phpt extract-zend2.0.phpt extract-zend2.2.phpt \
 		factory.phpt file.phpt firebug.phpt levels.phpt null.phpt \
 		priority.phpt singleton.phpt sqlite.phpt sql_ident.phpt
