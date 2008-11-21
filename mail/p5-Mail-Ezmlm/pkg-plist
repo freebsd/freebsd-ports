@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Mail/Ezmlm.pm
+%%SITE_PERL%%/Mail/Ezmlm/GpgEzmlm.pm
+%%SITE_PERL%%/Mail/Ezmlm/GpgKeyRing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Ezmlm/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Ezmlm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/Ezmlm
 @dirrmtry %%SITE_PERL%%/Mail
