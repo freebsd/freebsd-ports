@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -239,13 +240,13 @@ pre-su-install:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tSmoke ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1)
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5)
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN7} ${PREFIX}/man/man7)
 .for FILE in ${MAN3}
 	${INSTALL_MAN} `${FIND} ${WRKSRC}/doc -name ${FILE}` ${PREFIX}/man/man3
 .endfor
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/Config
 	${MKDIR} ${DOCSDIR}/Smokeping/matchers
@@ -260,11 +261,11 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR})
 .endif
-	${MKDIR} ${PREFIX}/etc/smokeping
+	${MKDIR} ${ETCDIR}
 .for FILE in ${ETC1}
-	${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping
-	if [ ! -f ${PREFIX}/etc/smokeping/${FILE} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping/${FILE} ; \
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${ETCDIR}
+	if [ ! -f ${ETCDIR}/${FILE} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${ETCDIR}/${FILE} ; \
 	fi
 .endfor
 	${MKDIR} ${PREFIX}/smokeping/htdocs
