@@ -671,6 +671,7 @@
     SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-CSS-DOM
     SUBDIR += p5-Catalyst-Action-REST
     SUBDIR += p5-Catalyst-Action-RenderView
     SUBDIR += p5-Catalyst-Authentication-Store-DBIx-Class
