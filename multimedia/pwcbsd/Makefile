@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
+BROKEN=		doesn't fetch
+
 MAN4=		pwc.4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
