@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -116,6 +116,11 @@ post-install:
 		${PREFIX}/etc/nsd/nsd.conf.sample
 	@${MKDIR} ${NSDDBDIR}
 	@${CHOWN} -R ${NSDUSER} ${NSDDBDIR}
+
+.if exists(${PREFIX}/etc/nsd/nsd.conf)
+	@${ECHO_MSG} "Upgrading to new ixfr.db format if needed"
+	${PREFIX}/sbin/nsdc patch
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

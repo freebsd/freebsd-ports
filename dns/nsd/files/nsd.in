@@ -24,5 +24,16 @@ load_rc_config ${name}
 
 nsd_enable=${nsd_enable-"NO"}
 
+stop_cmd="nsd_stop"
+
+nsd_stop()
+{
+	echo "Merging nsd zone transfer changes to zone files."
+	%%PREFIX%%/sbin/nsdc patch
+
+	echo "Stopping nsd."
+	%%PREFIX%%/sbin/nsdc stop
+}
+
 run_rc_command "$1"
 
