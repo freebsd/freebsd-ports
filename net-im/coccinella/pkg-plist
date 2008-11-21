@@ -408,11 +408,11 @@ bin/coccinella
 %%LIBTARGETDIR%%/whiteboard/Whiteboard.tcl
 %%LIBTARGETDIR%%/whiteboard/pkgIndex.tcl
 %%LIBTARGETDIR%%/whiteboard/tclIndex
-share/doc/coccinella/CHANGES
-share/doc/coccinella/README
-share/doc/coccinella/README-jabber
-share/doc/coccinella/README-smileys
-@dirrm share/doc/coccinella
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-jabber
+%%PORTDOCS%%%%DOCSDIR%%/README-smileys
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIBTARGETDIR%%/whiteboard
 @dirrm %%LIBTARGETDIR%%/sounds
 @dirrm %%LIBTARGETDIR%%/resources
