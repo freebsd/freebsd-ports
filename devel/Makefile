@@ -1369,6 +1369,7 @@
     SUBDIR += p5-Getopt-Long-Descriptive
     SUBDIR += p5-Getopt-Mixed
     SUBDIR += p5-Getopt-Popt
+    SUBDIR += p5-Git-PurePerl
     SUBDIR += p5-Glib2
     SUBDIR += p5-Gnome2-GConf
     SUBDIR += p5-Google-Checkout
