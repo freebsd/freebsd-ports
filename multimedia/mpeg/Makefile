@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
 		ftp://ftp.mni.mcgill.ca/pub/mpeg/ \
@@ -27,9 +28,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mpeg.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mpeg
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mpeg/README
-	${INSTALL_DATA} ${WRKSRC}/doc.ps ${PREFIX}/share/doc/mpeg/doc.ps
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
