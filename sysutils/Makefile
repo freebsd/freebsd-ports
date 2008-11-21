@@ -677,6 +677,7 @@
     SUBDIR += socklog
     SUBDIR += sortu
     SUBDIR += spassgen
+    SUBDIR += spindown
     SUBDIR += spinner
     SUBDIR += srmt
     SUBDIR += ssync
