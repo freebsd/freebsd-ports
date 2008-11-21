@@ -1,0 +1,8 @@
+SCSI / firewire harddrive spindown daemon
+
+This is a small program for handling automated spinning down of
+SCSI harddrives. With SCSI devices it is not as common to spindown
+for power management purposes as for ATA however it might be required
+to spin down a disk contained in a firewire enclosure for instance.
+
+WWW: http://www.noresult.net/freebsd/spindown/
