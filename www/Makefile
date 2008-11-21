@@ -34,6 +34,7 @@
     SUBDIR += arora
     SUBDIR += ashe
     SUBDIR += asp2php
+    SUBDIR += asql
     SUBDIR += asterisk-fop
     SUBDIR += asterisk-gui
     SUBDIR += asterisk-stat
