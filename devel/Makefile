@@ -1805,6 +1805,7 @@
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-UseAllModules
     SUBDIR += p5-Test-WWW-Mechanize
+    SUBDIR += p5-Test-WWW-Mechanize-CGIApp
     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
