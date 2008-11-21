@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.44.1.7
+PORTVERSION=	5.44.1.11
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wintcltk
-DISTNAME=	expect-cvs-20080412
+DISTNAME=	expect-cvs-20081121
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
