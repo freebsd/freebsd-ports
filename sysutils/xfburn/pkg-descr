@@ -1,0 +1,6 @@
+Xfburn is a simple CD/DVD burning tool based on libburnia libraries.
+It can blank CD/DVD-RWs, burn and create iso images, as well as
+burn personal compositions of data to either CD or DVD. It Is
+currently under heavy development.
+
+WWW: http://www.xfce.org/projects/xfburn/
