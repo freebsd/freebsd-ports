@@ -10,13 +10,12 @@ PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	multimedia sysutils kld
 MASTER_SITES=	http://raaf.atspace.org/ \
+		http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
-
-BROKEN=		doesn't fetch
 
 MAN4=		pwc.4
 
@@ -27,10 +26,6 @@ OPTIONS=	PROGRAMS	"Build the programs"			on \
 		MMAP		"Enable mmap support (MAY CRASH YOUR SYSTEM)"	off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504000
-IGNORE=		requires FreeBSD 5.4 or superior
-.endif
 
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
