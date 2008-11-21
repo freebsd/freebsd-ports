@@ -74,6 +74,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_fetch
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_freebsd-update
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_kld
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_pfctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portaudit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portlint
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_portsnap
