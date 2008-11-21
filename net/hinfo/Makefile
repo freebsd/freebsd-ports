@@ -7,7 +7,7 @@
 
 PORTNAME=	hinfo
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net perl5
 # note: the "true" MASTER_SITE is http://www.blars.org, but
 # due to policies on that site, it is not reachable from the
@@ -27,8 +27,8 @@ DATADIR?=	${PREFIX}/lib/${PORTNAME}
 HINFO_DBFILES=	dnsbl.ins.pl whois.ins.pl
 HINFO_SCRIPTS=	hinfo hinfo-update myhostinfo.cgi
 
-#MAN1=		hinfo.1
-#MAN5=		hinfo.conf.5
+MAN1=		hinfo.1
+MAN5=		hinfo.conf.5
 
 NO_BUILD=	yes
 
@@ -46,10 +46,8 @@ do-install:
 .if !exists({PREFIX}/etc/hinfo.conf)
 	${INSTALL_DATA} ${WRKSRC}/hinfo.conf ${PREFIX}/etc/hinfo.conf
 .endif
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/hinfo.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/hinfo.conf.5 ${PREFIX}/man/man5/
-.endif
 	@${MKDIR} ${DATADIR}
 .for filename in ${HINFO_DBFILES}
 	${INSTALL_DATA} ${WRKSRC}/${filename} ${DATADIR}
