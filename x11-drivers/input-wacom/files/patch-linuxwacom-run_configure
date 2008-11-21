@@ -1,0 +1,8 @@
+--- linuxwacom/run_configure.orig	2008-11-18 22:53:45.000000000 +0100
++++ linuxwacom/run_configure	2008-11-18 22:56:25.000000000 +0100
+@@ -13,4 +13,4 @@
+ cp files/input.h linuxwacom-0.8.1-3/src/xdrv/linux
+ cd linuxwacom-0.8.1-3
+ patch < ../files/patch_configure
+-./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 CFLAGS="-I/usr/local/include"
++./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 CFLAGS="-I/usr/local/include" --prefix=${PREFIX} --enable-dlloader

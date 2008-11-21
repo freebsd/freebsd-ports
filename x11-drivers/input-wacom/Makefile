@@ -56,7 +56,7 @@ PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
 do-configure:
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${LN} -s ${DISTDIR}/${DIST_SUBDIR}/${LINUXWACOM}.tar.bz2 \
-		&& ./run_configure
+		&& ${SETENV} PREFIX=${PREFIX} ./run_configure
 
 do-build:
 .if defined(WITH_UWACOMKLD)
@@ -83,12 +83,12 @@ plist: clean configure
 	@${ECHO} "===>  Rebuilding PLIST."
 	@${TOUCH} ${PLIST}
 	@${RM} ${PLIST}
-	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM} \
-		&& ./configure --prefix=${WRKDIR}/plist
+	@cd ${WRKDIR}/linuxwacom \
+		&& ${SETENV} PREFIX=${WRKDIR}/plist ./run_configure
 	@${MKDIR} ${WRKDIR}/plist
 	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util && ${GMAKE} install
 	@cd ${WRKDIR}/linuxwacom \
-		&& ./run_configure
+		&& ${SETENV} PREFIX=${PREFIX} ./run_configure
 	@${FIND} ${WRKDIR}/plist/ -not -type d \
 		| ${SED} "s|${WRKDIR}/plist/||1" \
 		>> ${PLIST}
@@ -96,6 +96,7 @@ plist: clean configure
 		| ${SED} "s|${WRKDIR}/plist/|@dirrm |1" \
 		>> ${PLIST}
 	@${ECHO} "%%XINPUTMODDIR%%/wacom_drv.so" >> ${PLIST}
+	@${ECHO} "@dirrmtry %%XINPUTMODDIR%%" >> ${PLIST}
 	@${ECHO} "@cwd %%KMODDIR%%" >> ${PLIST}
 	@${ECHO} "%%UWACOMKLD%%" >> ${PLIST}
 
