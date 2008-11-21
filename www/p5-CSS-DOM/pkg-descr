@@ -1,0 +1,7 @@
+This module provides the CSS-specific interfaces described in the W3C
+DOM recommendation.
+
+The CSS::DOM class itself implements the StyleSheet and CSSStyleSheet
+DOM interfaces.
+
+WWW:	http://search.cpan.org/dist/CSS-DOM/
