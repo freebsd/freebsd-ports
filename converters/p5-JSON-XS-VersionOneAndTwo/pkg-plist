@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/XS/VersionOneAndTwo/.packlist
+%%SITE_PERL%%/JSON/XS/VersionOneAndTwo.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/XS/VersionOneAndTwo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrmtry %%SITE_PERL%%/JSON/XS
+@dirrmtry %%SITE_PERL%%/JSON
