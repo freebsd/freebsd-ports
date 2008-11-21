@@ -91,8 +91,11 @@ etc/smsd.conf.sample
 %%PORTDOCS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/slideshow
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing %%SPOOLDIR%%/checked
+@exec mkdir -p %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing %%SPOOLDIR%%/checked %%LOGDIR%% %%PIDDIR%%
+@exec chown -R %%SMSD_USER%%:%%SMSD_GROUP%% %%SPOOLDIR%% %%LOGDIR%% %%PIDDIR%%
 @unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 @unexec echo "If you are permanently removing smstools, you should also:" | /usr/bin/fmt
 @unexec echo "'rm -rf %%SPOOLDIR%%'" | /usr/bin/fmt
+@unexec echo "'rm -rf %%LOGDIR%%'" | /usr/bin/fmt
+@unexec echo "'rm -rf %%PIDDIR%%'" | /usr/bin/fmt
 @unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="

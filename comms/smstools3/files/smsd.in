@@ -10,25 +10,22 @@
 #
 # smsd_enable="YES"
 #
-smsd_enable=${smsd_enable-"NO"}
-
-. %%RC_SUBR%%
+. "%%RC_SUBR%%"
 
 name="smsd"
+
+load_rc_config ${name}
+: ${smsd_enable="NO"}
+: ${smsd_pidfile="%%PIDDIR%%/smsd.pid"}
+: ${smsd_infofile="%%PIDDIR%%/smsd.working"}
+: ${smsd_logfile="%%LOGDIR%%/smsd.log"}
+: ${smsd_config="%%PREFIX%%/etc/smsd.conf"}
+: ${smsd_user="uucp"}
+: ${smsd_group="dialer"}
+
 rcvar=`set_rcvar`
-load_rc_config $name
-pidfile="/var/run/smsd.pid"
+pidfile=${smsd_pidfile}
 command="%%PREFIX%%/bin/smsd"
-command_args='&'
+command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile} -l${smsd_logfile} -u${smsd_user} -g${smsd_group}"
 
-# Unfortunally we need to this because as the program won't
-# exit cleanly and the terminal will be stuck forever in waitpid.
-case "$1" in
-	stop)
-		pkill smsd
-		;;
-	*)
-		run_rc_command "$1"
-		;;
-esac
-
+run_rc_command "$1"
