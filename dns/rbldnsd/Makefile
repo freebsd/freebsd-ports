@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rbldnsd
-PORTVERSION=	0.996a
+PORTVERSION=	0.996b
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
 		http://www.it.ca/~paul/src/:0
