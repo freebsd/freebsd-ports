@@ -1,5 +1,10 @@
-*************************************************************************
-Available variables you add/set to /etc/rc.conf:
-- nrpe2_enable (bool):	Set to "NO" by default
-- nrpe2_flags (string):	Set to "" by default
-*************************************************************************
+**********************************************************************
+
+ Enable NRPE in /etc/rc.conf with the following line:
+
+   nrpe2_enable="YES"
+
+ A sample configuration is available in %%PREFIX%%/etc/nrpe.cfg-sample.
+ Copy to nrpe.cfg where required and edit to suit your needs.
+
+**********************************************************************

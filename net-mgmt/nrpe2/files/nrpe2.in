@@ -9,25 +9,31 @@
 
 #
 # Add the following lines to /etc/rc.conf to enable nrpe2:
-#
-#nrpe2_enable="YES"
-#
+# nrpe2_enable (bool):    Set to "NO" by default.
+#                         Set it to "YES" to enable nrpe2.
+# nrpe2_flags (str):      Set to "" by default.
+# nrpe2_configfile (str): Set to "%%PREFIX%%/etc/nrpe.cfg" by default.
 #
 
 . %%RC_SUBR%%
 
-name=nrpe2
+name="nrpe2"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/nrpe2"
-required_files=%%PREFIX%%/etc/nrpe.cfg
-command_args="-c ${required_files} -d"
-pidfile=/var/run/${name}.pid
+command_args="-d"
+extra_commands="reload"
+pidfile="%%NAGIOSDIR%%/nrpe2.pid"
 
-# set defaults
+sig_reload=HUP
 
-nrpe2_enable=${nrpe2_enable:-"NO"}
-nrpe2_flags=${nrpe2_flags:-""}
+[ -z "${nrpe2_enable}" ] && nrpe2_enable="NO"
+[ -z "${nrpe2_flags}" ] && nrpe2_flags=""
+[ -z "${nrpe2_configfile}" ] && nrpe2_configfile="%%PREFIX%%/etc/nrpe.cfg"
 
-load_rc_config ${name}
+load_rc_config "${name}"
+
+required_files="${nrpe2_configfile}"
+command_args="${command_args} -c ${nrpe2_configfile}"
+
 run_rc_command "$1"
