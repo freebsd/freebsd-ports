@@ -1,0 +1,14 @@
+--- Makefile.orig	2008-10-15 09:37:42.000000000 +0800
++++ Makefile	2008-10-15 09:38:00.000000000 +0800
+@@ -40,9 +40,8 @@
+ 	hg diff 2>/dev/null
+ 
+ install:
+-	mkdir -p ${PREFIX}/usr/bin/
+-	cp bin/asql ${PREFIX}/usr/bin/asql
+-	chmod 755 ${PREFIX}/usr/bin/asql
++	cp bin/asql ${PREFIX}/bin/asql
++	chmod 755 ${PREFIX}/bin/asql
+ 
+ 
+ release: clean commands
