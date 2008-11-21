@@ -88,9 +88,9 @@ etc/smsd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smsd.conf.full
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smsd.conf.non-root
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/slideshow
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
 @exec mkdir -p %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing %%SPOOLDIR%%/checked %%LOGDIR%% %%PIDDIR%%
 @exec chown -R %%SMSD_USER%%:%%SMSD_GROUP%% %%SPOOLDIR%% %%LOGDIR%% %%PIDDIR%%
 @unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
