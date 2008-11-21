@@ -6,15 +6,15 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.9.1
-PORTREVISION=	1
+PORTVERSION=		0.10
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
 MAINTAINER=		jadawin@FreeBSD.org
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
 
-RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils \
+			p5-IO-BufferedSelect>=0:${PORTSDIR}/devel/p5-IO-BufferedSelect
 
 MAN8=			tenshi.8
 
@@ -42,14 +42,12 @@ post-patch:
 		' ${WRKSRC}/tenshi
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${PREFIX}/etc/tenshi.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${PREFIX}/etc/tenshi.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for doc in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$doc ${DOCSDIR}; \
-	done
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
