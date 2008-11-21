@@ -16,6 +16,9 @@ DISTNAME=	SABnzbd-${PORTVERSION}
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
+DEPRECATED=	no longer developed, use news/sabnzbdplus instead
+EXPIRATION_DATE=	2008-12-21
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
