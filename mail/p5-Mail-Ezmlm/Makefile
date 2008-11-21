@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Mail-Ezmlm
-PORTVERSION=	0.07.2
+PORTVERSION=	0.08.2
 CATEGORIES=	mail perl5
-MASTER_SITES=	CPAN \
-		ftp://ftp.rucus.ru.ac.za/users/guy/ezmlm/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Ezmlm-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Perl module to allow object methods for ezmlm-idx mailing lists
 
 BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
@@ -26,6 +25,6 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	BSD_BATCH_INSTALL=yes
 .endif
 
-MAN3=		Mail::Ezmlm.3
+MAN3=		Mail::Ezmlm.3 Mail::Ezmlm::GpgKeyRing.3 Mail::Ezmlm::GpgEzmlm.3
 
 .include <bsd.port.mk>
