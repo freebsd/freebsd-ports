@@ -11,15 +11,15 @@ PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-snapshot.${SNAPSHOT}.${REVISION}
+DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-rc1.${SNAPSHOT}.${REVISION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
-SNAPSHOT=	20080912
-REVISION=	1263
+SNAPSHOT=	20081116
+REVISION=	1293
 
 CONFLICTS=	powerdns-[0-2]*
 
