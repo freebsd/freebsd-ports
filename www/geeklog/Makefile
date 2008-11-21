@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geeklog
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}

@@ -481,8 +481,6 @@ www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckcommands.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckconfig.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdebug.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog_gecko.js
-www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdialog_ie.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdocumentprocessor.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fckdomtools.js
 www/data/geeklog/public_html/fckeditor/editor/_source/internals/fcklanguagemanager.js
@@ -660,60 +658,14 @@ www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images
 www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/spacer.gif
 www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js/common.js
 www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js/fckxml.js
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/basexml.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/class_upload.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/commands.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/config.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/connector.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/io.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/upload.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp/util.asp
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/aspx/config.ascx
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/aspx/connector.aspx
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/aspx/upload.aspx
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/ImageObject.cfc
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf5_connector.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf5_upload.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_basexml.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_commands.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_connector.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_io.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_upload.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/cf_util.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/config.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/connector.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/image.cfc
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm/upload.cfm
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/lasso/config.lasso
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/lasso/connector.lasso
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/lasso/upload.lasso
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/basexml.pl
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/commands.pl
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/connector.cgi
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/io.pl
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/upload.cgi
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/upload_fck.pl
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl/util.pl
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/basexml.php
+www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/util.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/commands.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/config.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/connector.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/io.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/phpcompat.php
 www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/upload.php
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/util.php
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/config.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/connector.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/fckcommands.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/fckconnector.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/fckoutput.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/fckutil.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/htaccess.txt
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/upload.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/wsgi.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py/zope.py
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/test.html
-www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/uploadtest.html
+www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php/basexml.php
 www/data/geeklog/public_html/fckeditor/editor/images/anchor.gif
 www/data/geeklog/public_html/fckeditor/editor/images/arrow_ltr.gif
 www/data/geeklog/public_html/fckeditor/editor/images/arrow_rtl.gif
@@ -1076,6 +1028,7 @@ www/data/geeklog/public_html/layout/professional/images/deleteitem.png
 www/data/geeklog/public_html/layout/professional/images/edit.png
 www/data/geeklog/public_html/layout/professional/images/expand.png
 www/data/geeklog/public_html/layout/professional/images/external.png
+www/data/geeklog/public_html/layout/professional/images/feed.png
 www/data/geeklog/public_html/layout/professional/images/header-bg.png
 www/data/geeklog/public_html/layout/professional/images/icon_info.png
 www/data/geeklog/public_html/layout/professional/images/icons/block.png
@@ -1238,6 +1191,8 @@ www/data/geeklog/sql/updates/mysql_1.3.9_to_1.3.10.php
 www/data/geeklog/sql/updates/mysql_1.3_to_1.3.1.php
 www/data/geeklog/sql/updates/mysql_1.4.0_to_1.4.1.php
 www/data/geeklog/sql/updates/mysql_1.4.1_to_1.5.0.php
+www/data/geeklog/sql/updates/mysql_1.5.0_to_1.5.1.php
+www/data/geeklog/sql/updates/mssql_1.5.0_to_1.5.1.php
 www/data/geeklog/system/classes/authentication/LDAP.auth.class.php
 www/data/geeklog/system/classes/authentication/LiveJournal.auth.class.php
 www/data/geeklog/system/classes/authentication/ldap/config.php
@@ -1276,7 +1231,6 @@ www/data/geeklog/system/databases/mysql.class.php
 www/data/geeklog/system/lib-admin.php
 www/data/geeklog/system/lib-comment.php
 www/data/geeklog/system/lib-custom.php
-www/data/geeklog/system/lib-custom.php.dist
 www/data/geeklog/system/lib-database.php
 www/data/geeklog/system/lib-mbyte.php
 www/data/geeklog/system/lib-pingback.php
@@ -1822,13 +1776,7 @@ www/data/geeklog/system/pear/scripts/peclcmd.php
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images/smiley/msn
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images/smiley
 @dirrm www/data/geeklog/public_html/fckeditor/editor/images
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/py
 @dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/php
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/perl
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/lasso
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/cfm
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/aspx
-@dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors/asp
 @dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/connectors
 @dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/js
 @dirrm www/data/geeklog/public_html/fckeditor/editor/filemanager/browser/default/images/icons/32
