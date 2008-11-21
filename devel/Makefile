@@ -1890,6 +1890,7 @@
     SUBDIR += p5-aliased
     SUBDIR += p5-base
     SUBDIR += p5-capitalization
+    SUBDIR += p5-constant-lexical
     SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
     SUBDIR += p5-forks
