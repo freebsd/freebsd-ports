@@ -8,5 +8,6 @@ bin/xsetwacom
 include/wacomcfg/wacomcfg.h
 @dirrm include/wacomcfg
 %%XINPUTMODDIR%%/wacom_drv.so
+@dirrmtry %%XINPUTMODDIR%%
 @cwd %%KMODDIR%%
 %%UWACOMKLD%%
