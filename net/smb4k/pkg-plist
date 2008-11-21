@@ -2,8 +2,7 @@ bin/smb4k
 bin/smb4k_mount
 bin/smb4k_umount
 bin/smb4k_kill
-bin/smb4k_cat
-bin/smb4k_mv
+bin/smb4k_sudowriter
 bin/smb2awk
 bin/smb2nsmbrc
 include/smb4kglobal.h
