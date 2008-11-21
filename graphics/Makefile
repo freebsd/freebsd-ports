@@ -458,6 +458,7 @@
     SUBDIR += lphoto
     SUBDIR += lprof-devel
     SUBDIR += makehuman
+    SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
     SUBDIR += maverik
