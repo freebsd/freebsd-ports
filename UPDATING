@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081121:
+  AFFECTS: users of comms/smstools3
+  AUTHOR: mm@FreeBSD.org
+
+  The startup script of comms/smstools3 has changed. For increased security 
+  smstools now runs as user uucp / group dialer by default. The script 
+  commands like sendsms etc. should be executed as user uucp.
+  To restore the old behaviour, set smsd_user="root" and smsd_group="wheel"
+  in your /etc/rc.conf. 
+  Hint: use security/sudo for running smsd scripts as user uucp
+
 20081108:
   AFFECTS: users of editors/tamago
   AUTHOR: hrs@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	smstools
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -14,16 +15,21 @@ DISTNAME=	smstools3-${PORTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
 
-LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
-
 CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
+OPTIONS=	STATS "Build status and statistics support" on
 
 WRKSRC=		${WRKDIR}/smstools3
 USE_GMAKE=	yes
 USE_RC_SUBR=	smsd
 SPOOLDIR?=	/var/spool/sms
-PLIST_SUB+=	PREFIX="${PREFIX}" \
-		SPOOLDIR="${SPOOLDIR}"
+LOGDIR?=	/var/log/smsd
+PIDDIR?=	/var/run/smsd
+SMSD_USER?=	uucp
+SMSD_GROUP?=	dialer
+SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
+		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
+PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
+		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 
 DOCS=		alarmhandler.html blacklist.html book.html compiling.html \
 		configure.html configure2.html costs.html eventhandler.html \
@@ -50,6 +56,15 @@ SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 forwardsms \
 		sms2unicode sms2xml sms3 smsevent smsresend smstest.php \
 		sql_demo unicode2sms
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_STATS)
+LIB_DEPENDS+=	mm.14:${PORTSDIR}/devel/mm
+CFLAGS+=	-I${LOCALBASE}/include
+.else
+CFLAGS+=	-D NOSTATS
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh \
 		${WRKSRC}/src/smsd_cfg.c
@@ -62,12 +77,14 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/scripts/,} ${DATADIR}
 .for FILE in sendsms sms2html sms2unicode unicode2sms
-	@${LN} -s ${DATADIR}/${FILE} ${PREFIX}/bin/${FILE}
+	@${LN} -sf ${DATADIR}/${FILE} ${PREFIX}/bin/${FILE}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/examples/smsd.conf.easy ${PREFIX}/etc/smsd.conf.sample
 	@if [ ! -f ${PREFIX}/etc/smsd.conf ]; then \
 		${CP} ${PREFIX}/etc/smsd.conf.sample ${PREFIX}/etc/smsd.conf; \
 	fi
+	@${MKDIR} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
+	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/slideshow
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
@@ -78,4 +95,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
