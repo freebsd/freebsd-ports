@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	phpeclipse
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	PHPEclipse_${PORTVERSION}_src
 
-MAINTAINER=	lon_kamikaze@gmx.de
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
@@ -26,7 +26,7 @@ USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/dist
 ECLIPSE=	${PREFIX}/eclipse
-PLIST_VER=	${PORTVERSION}.200807121925PRD
+PLIST_VER=	${PORTVERSION}.200810130444PRD
 
 PLIST_SUB=	VER=${PLIST_VER}
 
