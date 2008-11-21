@@ -18,6 +18,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Port of Gnome's notification-daemon for the Xfce desktop
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
