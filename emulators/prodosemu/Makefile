@@ -8,8 +8,7 @@
 PORTNAME=	prodosemu
 PORTVERSION=	0.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://downloads.planetmirror.com/pub/apple2/emulators/prodosemu/ \
-		http://www.apple2.org.za/mirrors/apple2.caltech.edu/emulators/
+MASTER_SITES=	http://mirrors.apple2.org.za/apple2.caltech.edu/emulators/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
