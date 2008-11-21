@@ -109,10 +109,8 @@ post-build:
 post-install:
 	${LN} -sf ${PREFIX}/bin/jvim3 ${PREFIX}/bin/jvim
 	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep ${PREFIX}/bin/jgrep
-.if defined(JVIM3RC)
 	${ECHO_CMD} "${JVIM3RC}" > ${WRKSRC}/jvim3rc.dist
 	${INSTALL_DATA} ${WRKSRC}/jvim3rc.dist ${PREFIX}/etc/
-.endif
 .if !exists(${PREFIX}/etc/jvim3rc)
 	${INSTALL_DATA} ${PREFIX}/etc/jvim3rc.dist ${PREFIX}/etc/jvim3rc
 .endif
