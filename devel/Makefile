@@ -1711,6 +1711,7 @@
     SUBDIR += p5-String-RexxParse
     SUBDIR += p5-String-Similarity
     SUBDIR += p5-Sub-Current
+    SUBDIR += p5-Sub-Delete
     SUBDIR += p5-Sub-Exporter
     SUBDIR += p5-Sub-Identify
     SUBDIR += p5-Sub-Install
