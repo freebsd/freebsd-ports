@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/lexical/.packlist
+%%SITE_PERL%%/constant/lexical.pm
+@dirrmtry %%SITE_PERL%%/constant
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/lexical
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
