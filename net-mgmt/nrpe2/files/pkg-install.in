@@ -39,7 +39,7 @@ yesno() {
         ;;
     esac
     echo "Please answer yes or no."
-   done
+  done
 }
 
 if [ "$2" = "PRE-INSTALL" ]; then
@@ -70,5 +70,11 @@ if [ "$2" = "PRE-INSTALL" ]; then
       echo "Please create the \"${NAGIOSUSER}\" user manually and try again."
       exit 1
     fi
+  fi
+elif [ "$2" = "POST-INSTALL" ]; then
+  if [ ! -e "${NAGIOSDIR}" ]; then
+    /bin/mkdir -p "${NAGIOSDIR}"
+    /bin/chmod 775 "${NAGIOSDIR}"
+    /usr/sbin/chown "${NAGIOSUSER}":"${NAGIOSGROUP}" "${NAGIOSDIR}"
   fi
 fi
