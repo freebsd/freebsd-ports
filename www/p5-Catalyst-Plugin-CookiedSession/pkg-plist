@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/CookiedSession/.packlist
+%%SITE_PERL%%/Catalyst/Plugin/CookiedSession.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/CookiedSession/
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/
+@dirrmtry %%SITE_PERL%%/Catalyst/
