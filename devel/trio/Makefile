@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	trio
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ctrio
+MASTER_SITES=	SF/ctrio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A fully matured and stable set of printf and string functions
 
 GNU_CONFIGURE=	yes
