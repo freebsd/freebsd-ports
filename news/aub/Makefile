@@ -8,6 +8,7 @@
 
 PORTNAME=	aub
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://yukidoke.org/~mako/projects/aub/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
