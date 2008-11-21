@@ -1,0 +1,46 @@
+bin/hgview
+%%PYTHON_SITELIBDIR%%/hgview/__init__.py
+%%PYTHON_SITELIBDIR%%/hgview/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgview/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgview/__pkginfo__.py
+%%PYTHON_SITELIBDIR%%/hgview/__pkginfo__.pyc
+%%PYTHON_SITELIBDIR%%/hgview/__pkginfo__.pyo
+%%PYTHON_SITELIBDIR%%/hgview/buildtree.py
+%%PYTHON_SITELIBDIR%%/hgview/buildtree.pyc
+%%PYTHON_SITELIBDIR%%/hgview/buildtree.pyo
+%%PYTHON_SITELIBDIR%%/hgview/fixes.py
+%%PYTHON_SITELIBDIR%%/hgview/fixes.pyc
+%%PYTHON_SITELIBDIR%%/hgview/fixes.pyo
+%%PYTHON_SITELIBDIR%%/hgview/gtk/__init__.py
+%%PYTHON_SITELIBDIR%%/hgview/gtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgview/gtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgview/gtk/diffstatrenderer.py
+%%PYTHON_SITELIBDIR%%/hgview/gtk/diffstatrenderer.pyc
+%%PYTHON_SITELIBDIR%%/hgview/gtk/diffstatrenderer.pyo
+%%PYTHON_SITELIBDIR%%/hgview/gtk/graphrenderer.py
+%%PYTHON_SITELIBDIR%%/hgview/gtk/graphrenderer.pyc
+%%PYTHON_SITELIBDIR%%/hgview/gtk/graphrenderer.pyo
+%%PYTHON_SITELIBDIR%%/hgview/gtk/hgview_gtk.py
+%%PYTHON_SITELIBDIR%%/hgview/gtk/hgview_gtk.pyc
+%%PYTHON_SITELIBDIR%%/hgview/gtk/hgview_gtk.pyo
+%%PYTHON_SITELIBDIR%%/hgview/hgrepo.py
+%%PYTHON_SITELIBDIR%%/hgview/hgrepo.pyc
+%%PYTHON_SITELIBDIR%%/hgview/hgrepo.pyo
+%%PYTHON_SITELIBDIR%%/hgview/hgviewrc.py
+%%PYTHON_SITELIBDIR%%/hgview/hgviewrc.pyc
+%%PYTHON_SITELIBDIR%%/hgview/hgviewrc.pyo
+%%PYTHON_SITELIBDIR%%/hgview/qt4/__init__.py
+%%PYTHON_SITELIBDIR%%/hgview/qt4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgview/qt4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgrepomodel.py
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgrepomodel.pyc
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgrepomodel.pyo
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgview_qt4.py
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgview_qt4.pyc
+%%PYTHON_SITELIBDIR%%/hgview/qt4/hgview_qt4.pyo
+%%DATADIR%%/hgview.glade
+%%DATADIR%%/hgview.ui
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/hgview/qt4
+@dirrm %%PYTHON_SITELIBDIR%%/hgview/gtk
+@dirrm %%PYTHON_SITELIBDIR%%/hgview

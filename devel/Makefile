@@ -478,6 +478,7 @@
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hgsvn
+    SUBDIR += hgview
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
     SUBDIR += horde-whups
