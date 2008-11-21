@@ -1,6 +1,6 @@
 bin/gps
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/features.html
-%%DOCSDIR%%/links.html
-%%DOCSDIR%%/usage.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/links.html
+%%PORTDOCS%%%%DOCSDIR%%/usage.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
