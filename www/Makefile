@@ -1286,6 +1286,7 @@
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
+    SUBDIR += rubygem-sinatra
     SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
