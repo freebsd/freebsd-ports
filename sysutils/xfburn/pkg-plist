@@ -1,0 +1,150 @@
+%%DATADIR%%/xfburn-toolbars.ui
+%%DATADIR%%/xfburn.ui
+bin/xfburn
+share/applications/xfburn.desktop
+share/icons/hicolor/16x16/stock/media/stock_xfburn-audio-cd.png
+share/icons/hicolor/16x16/stock/media/stock_xfburn-blank-cdrw.png
+share/icons/hicolor/16x16/stock/media/stock_xfburn-burn-cd.png
+share/icons/hicolor/16x16/stock/media/stock_xfburn-data-copy.png
+share/icons/hicolor/16x16/stock/media/stock_xfburn-import-session.png
+share/icons/hicolor/16x16/stock/media/stock_xfburn-new-data-composition.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-audio-cd.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-blank-cdrw.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-burn-cd.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-data-copy.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-import-session.png
+share/icons/hicolor/22x22/stock/media/stock_xfburn-new-data-composition.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-audio-cd.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-audio-copy.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-blank-cdrw.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-burn-cd.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-data-copy.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-format-dvdrw.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-import-session.png
+share/icons/hicolor/24x24/stock/media/stock_xfburn-new-data-composition.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-audio-cd.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-blank-cdrw.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-burn-cd.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-data-copy.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-import-session.png
+share/icons/hicolor/32x32/stock/media/stock_xfburn-new-data-composition.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-audio-cd.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-blank-cdrw.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-burn-cd.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-data-copy.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-import-session.png
+share/icons/hicolor/48x48/stock/media/stock_xfburn-new-data-composition.png
+share/icons/hicolor/icon-theme.cache
+share/icons/hicolor/scalable/stock/media/stock_xfburn-audio-cd.svg
+share/icons/hicolor/scalable/stock/media/stock_xfburn-blank-cdrw.svg
+share/icons/hicolor/scalable/stock/media/stock_xfburn-burn-cd.svg
+share/icons/hicolor/scalable/stock/media/stock_xfburn-data-copy.svg
+share/icons/hicolor/scalable/stock/media/stock_xfburn-import-session.svg
+share/icons/hicolor/scalable/stock/media/stock_xfburn-new-data-composition.svg
+share/locale/ar/LC_MESSAGES/xfburn.mo
+share/locale/ca/LC_MESSAGES/xfburn.mo
+share/locale/cs/LC_MESSAGES/xfburn.mo
+share/locale/da/LC_MESSAGES/xfburn.mo
+share/locale/de/LC_MESSAGES/xfburn.mo
+share/locale/dz/LC_MESSAGES/xfburn.mo
+share/locale/el/LC_MESSAGES/xfburn.mo
+share/locale/en_GB/LC_MESSAGES/xfburn.mo
+share/locale/es/LC_MESSAGES/xfburn.mo
+share/locale/et/LC_MESSAGES/xfburn.mo
+share/locale/eu/LC_MESSAGES/xfburn.mo
+share/locale/fi/LC_MESSAGES/xfburn.mo
+share/locale/fr/LC_MESSAGES/xfburn.mo
+share/locale/gl/LC_MESSAGES/xfburn.mo
+share/locale/he/LC_MESSAGES/xfburn.mo
+share/locale/hu/LC_MESSAGES/xfburn.mo
+share/locale/id/LC_MESSAGES/xfburn.mo
+share/locale/it/LC_MESSAGES/xfburn.mo
+share/locale/ja/LC_MESSAGES/xfburn.mo
+share/locale/ko/LC_MESSAGES/xfburn.mo
+share/locale/lt/LC_MESSAGES/xfburn.mo
+share/locale/lv/LC_MESSAGES/xfburn.mo
+share/locale/nb_NO/LC_MESSAGES/xfburn.mo
+share/locale/nl/LC_MESSAGES/xfburn.mo
+share/locale/pa/LC_MESSAGES/xfburn.mo
+share/locale/pl/LC_MESSAGES/xfburn.mo
+share/locale/pt_BR/LC_MESSAGES/xfburn.mo
+share/locale/pt_PT/LC_MESSAGES/xfburn.mo
+share/locale/ru/LC_MESSAGES/xfburn.mo
+share/locale/sq/LC_MESSAGES/xfburn.mo
+share/locale/sv/LC_MESSAGES/xfburn.mo
+share/locale/uk/LC_MESSAGES/xfburn.mo
+share/locale/ur/LC_MESSAGES/xfburn.mo
+share/locale/zh_CN/LC_MESSAGES/xfburn.mo
+share/locale/zh_TW/LC_MESSAGES/xfburn.mo
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/et/LC_MESSAGES
+@dirrmtry share/locale/et
+@dirrmtry share/locale/eu/LC_MESSAGES
+@dirrmtry share/locale/eu
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/he/LC_MESSAGES
+@dirrmtry share/locale/he
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/id/LC_MESSAGES
+@dirrmtry share/locale/id
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/lt/LC_MESSAGES
+@dirrmtry share/locale/lt
+@dirrmtry share/locale/lv/LC_MESSAGES
+@dirrmtry share/locale/lv
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/pa/LC_MESSAGES
+@dirrmtry share/locale/pa
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/pt_PT/LC_MESSAGES
+@dirrmtry share/locale/pt_PT
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/sq/LC_MESSAGES
+@dirrmtry share/locale/sq
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
