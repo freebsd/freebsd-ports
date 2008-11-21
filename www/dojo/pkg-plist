@@ -1394,7 +1394,6 @@
 %%WWWDIR%%/dojox/grid/compat/tests/test_yahoo_images.html
 %%WWWDIR%%/dojox/grid/compat/tests/test_yahoo_search.html
 %%WWWDIR%%/dojox/grid/compat/tests/yahooSearch.js
-%%WWWDIR%%/dojox/grid/nls/grid.js
 %%WWWDIR%%/dojox/grid/resources/Grid.css
 %%WWWDIR%%/dojox/grid/resources/Grid_rtl.css
 %%WWWDIR%%/dojox/grid/resources/View.html
@@ -1911,7 +1910,6 @@
 @dirrm %%WWWDIR%%/dojox/help
 @dirrm %%WWWDIR%%/dojox/grid/resources/images
 @dirrm %%WWWDIR%%/dojox/grid/resources
-@dirrm %%WWWDIR%%/dojox/grid/nls
 @dirrm %%WWWDIR%%/dojox/grid/compat/tests/support
 @dirrm %%WWWDIR%%/dojox/grid/compat/tests/images
 @dirrm %%WWWDIR%%/dojox/grid/compat/tests
