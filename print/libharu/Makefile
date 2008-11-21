@@ -7,31 +7,19 @@
 #
 
 PORTNAME=	libharu
-PORTVERSION=	2.0.8
+PORTVERSION=	2.1.0
 CATEGORIES=	print
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://libharu.org/files/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--shared \
-		--prefix=${PREFIX} \
-		--cflags="${CFLAGS}"
+GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
-
-PLIST_FILES=	include/hpdf.h \
-		include/hpdf_consts.h \
-		include/hpdf_types.h \
-		lib/libhpdf.so \
-		lib/libhpdf.so.1 \
-		lib/libhpdf.so.1.0.0
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
