@@ -93,7 +93,7 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dft-pw ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/dft-wl ${PREFIX}/bin
-.if !defined(NOPOREXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dft.in     ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/output     ${EXAMPLESDIR}
