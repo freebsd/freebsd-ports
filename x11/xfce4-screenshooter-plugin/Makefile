@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.3.9.3
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -17,6 +17,7 @@ COMMENT=	Desktop Screenshot plugin for xfce
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
 MAN1=		xfce4-screenshooter.1
