@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -231,7 +231,7 @@
+ 	LOG4CPP.LICENSE
+ 
+ pkgdoc_DATA = $(docfiles)
+-EXTRA_DIST = $(docfiles) api
++EXTRA_DIST = $(docfiles)
+ all: all-am
+ 
+ .SUFFIXES:
