@@ -142,7 +142,6 @@ share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-H-Mac
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-PS-H
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-PS-V
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-UCS2
-share/poppler/cMap/Adobe-Japan1/Adobe-Japan2-0
 share/poppler/cMap/Adobe-Japan1/EUC-H
 share/poppler/cMap/Adobe-Japan1/EUC-V
 share/poppler/cMap/Adobe-Japan1/Ext-H
@@ -198,6 +197,7 @@ share/poppler/cMap/Adobe-Japan1/UniJISX02132004-UTF32-H
 share/poppler/cMap/Adobe-Japan1/UniJISX02132004-UTF32-V
 share/poppler/cMap/Adobe-Japan1/V
 share/poppler/cMap/Adobe-Japan1/WP-Symbol
+share/poppler/cMap/Adobe-Japan2/Adobe-Japan2-0
 share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-0
 share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-1
 share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-2
@@ -238,6 +238,7 @@ share/poppler/cMap/Adobe-Vietnam1/TCVN-RKSJ-H
 share/poppler/cidToUnicode/Adobe-CNS1
 share/poppler/cidToUnicode/Adobe-GB1
 share/poppler/cidToUnicode/Adobe-Japan1
+share/poppler/cidToUnicode/Adobe-Japan2
 share/poppler/cidToUnicode/Adobe-Korea1
 share/poppler/nameToUnicode/Bulgarian
 share/poppler/nameToUnicode/Greek
@@ -264,9 +265,10 @@ share/poppler/unicodeMap/Windows-1255
 @dirrm share/poppler/cidToUnicode
 @dirrm share/poppler/cMap/Adobe-Vietnam1
 @dirrm share/poppler/cMap/Adobe-Korea1
+@dirrm share/poppler/cMap/Adobe-Japan2
 @dirrm share/poppler/cMap/Adobe-Japan1
-@dirrm share/poppler/cMap/Adobe-GB1
 @dirrm share/poppler/cMap/Adobe-HongKong1
+@dirrm share/poppler/cMap/Adobe-GB1
 @dirrm share/poppler/cMap/Adobe-CNS1
 @dirrm share/poppler/cMap
 @dirrmtry share/poppler
