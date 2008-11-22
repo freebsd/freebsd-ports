@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-SAX-Machines
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +28,7 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 		XML::SAX::Manifold.3 XML::SAX::Pipeline.3 XML::SAX::Tap.3
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 		@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 		@${MKDIR} ${EXAMPLESDIR}
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}

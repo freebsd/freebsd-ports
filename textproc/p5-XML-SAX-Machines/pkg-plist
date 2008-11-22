@@ -20,8 +20,8 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-%%EXAMPLESDIR%%/append_to_xml_file
-%%EXAMPLESDIR%%/output_to_process
-%%EXAMPLESDIR%%/xml_records_thru_libxslt
-%%EXAMPLESDIR%%/xml_records_to_data_structures
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/append_to_xml_file
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/output_to_process
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_thru_libxslt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml_records_to_data_structures
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
