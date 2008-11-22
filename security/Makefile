@@ -307,6 +307,7 @@
     SUBDIR += openct
     SUBDIR += openfwtk
     SUBDIR += opensaml
+    SUBDIR += opensaml2
     SUBDIR += opensc
     SUBDIR += openscep
     SUBDIR += openssh-askpass
