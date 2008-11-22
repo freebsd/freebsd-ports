@@ -68,6 +68,9 @@ pre-configure:
 .if defined(NOPORTEXAMPLES)
 	${REINPLACE_CMD} -e 's|pixmaps \\|pixmaps|;s|examples$$||'	\
 		${WRKSRC}/Makefile.in
+	${FIND} ${WRKSRC}/src/plug-ins -name Makefile.in | ${XARGS} \
+	${REINPLACE_CMD} -e	\
+	's|install-v_simexamplesDATA install-v_simpixmapsDATA|install-v_simpixmapsDATA|'
 .endif
 
 .include <bsd.port.mk>
