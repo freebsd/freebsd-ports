@@ -7,6 +7,7 @@
 
 PORTNAME=	saint
 PORTVERSION=	3.5.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://147.102.222.211/pub/security/scanners/saint/
 
@@ -30,9 +31,7 @@ INSTALL_TARGET=	all
 do-install:
 	@${MKDIR} ${PREFIX}/saint
 	${TAR} -C ${WRKSRC} -cf - -X ${FILESDIR}/excludefiles . | ${TAR} -C ${PREFIX}/saint -xf -
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-.endif
 
 post-install:
 	@${RM} -rf ${PREFIX}/saint/include/ASM-i386
