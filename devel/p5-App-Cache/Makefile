@@ -7,6 +7,7 @@
 
 PORTNAME=	App-Cache
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +15,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy application-level caching
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
-		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
-		${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		App::Cache.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
