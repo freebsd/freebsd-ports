@@ -7,7 +7,7 @@
 
 PORTNAME=		xvidcap
 DISTVERSION=		1.1.4p1
-PORTREVISION=	3
+PORTREVISION=		3
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		SF
@@ -47,8 +47,14 @@ MAN1=			xvidcap.1
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|pkgdataDATA install-xvidcapdocDATA|pkgdataDATA|'	\
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${RM} ${NULLDOCS:S|^|${DOCSDIR}/|}
+.endif
 
 .include <bsd.port.mk>
