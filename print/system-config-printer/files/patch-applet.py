@@ -1,5 +1,5 @@
---- applet.py.orig	2008-05-23 04:57:31.000000000 -0700
-+++ applet.py	2008-05-26 23:23:31.512688566 -0700
+--- applet.py.orig	2008-11-21 10:58:21.000000000 -0600
++++ applet.py	2008-11-22 11:28:38.936928214 -0600
 @@ -43,7 +43,7 @@
      os.environ['LC_ALL'] = 'C'
      locale.setlocale (locale.LC_ALL, "")
@@ -13,12 +13,12 @@
      STATUS_GENERIC_DRIVER = 2
      STATUS_NO_DRIVER = 3
  
--    INSTALL_PACKAGES_COMMAND="/usr/bin/system-install-packages"
+-    INSTALL_PACKAGES_COMMAND="/usr/bin/gpk-install-package-name"
 +    INSTALL_PACKAGES_COMMAND="/usr/bin/true"
  
      def __init__ (self, bus):
          self.bus = bus
-@@ -170,7 +170,7 @@
+@@ -173,7 +173,7 @@
          pid = os.fork ()
          if pid == 0:
              # Child.
