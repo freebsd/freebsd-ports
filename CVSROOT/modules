@@ -4938,6 +4938,7 @@ hfs                             ports/emulators/hfs
 hfsutils                        ports/emulators/hfsutils
 hgrep                           ports/textproc/hgrep
 hgsvn                           ports/devel/hgsvn
+hgview                          ports/devel/hgview
 hhm                             ports/textproc/hhm
 hi-aspell                       ports/textproc/hi-aspell
 hiawatha                        ports/www/hiawatha
@@ -7687,6 +7688,7 @@ linux-relview                   ports/math/linux-relview
 linux-runrev                    ports/devel/linux-runrev
 linux-savage                    ports/games/linux-savage
 linux-savage-samuraiwars        ports/games/linux-savage-samuraiwars
+linux-scim-gtk                  ports/textproc/linux-scim-gtk
 linux-scim-libs                 ports/textproc/linux-scim-libs
 linux-sdl12                     ports/devel/linux-sdl12
 linux-sdl_image                 ports/graphics/linux-sdl_image
@@ -10011,6 +10013,7 @@ p5-Catalyst-Plugin-Cache-Store-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-Stor
 p5-Catalyst-Plugin-Captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-Catalyst-Plugin-ConfigLoader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-Catalyst-Plugin-ConfigLoader-Environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
+p5-Catalyst-Plugin-CookiedSession  ports/www/p5-Catalyst-Plugin-CookiedSession
 p5-Catalyst-Plugin-DefaultEnd   ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-Catalyst-Plugin-FillInForm   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormBuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
@@ -10867,6 +10870,7 @@ p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
 p5-Getopt-Mixed                 ports/devel/p5-Getopt-Mixed
 p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
+p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Glade2                       ports/x11-toolkits/p5-Glade2
 p5-Glib2                        ports/devel/p5-Glib2
 p5-Gnome                        ports/x11-toolkits/p5-Gnome
@@ -11155,6 +11159,7 @@ p5-JSON                         ports/converters/p5-JSON
 p5-JSON-Any                     ports/converters/p5-JSON-Any
 p5-JSON-DWIW                    ports/converters/p5-JSON-DWIW
 p5-JSON-XS                      ports/converters/p5-JSON-XS
+p5-JSON-XS-VersionOneAndTwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-JSON1                        ports/converters/p5-JSON1
 p5-Jabber-Connection            ports/net-im/p5-Jabber-Connection
 p5-Jabber-Lite                  ports/net-im/p5-Jabber-Lite
@@ -13123,6 +13128,7 @@ p5-catalyst-plugin-cache-store-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-Stor
 p5-catalyst-plugin-captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-catalyst-plugin-configloader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-catalyst-plugin-configloader-environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
+p5-catalyst-plugin-cookiedsession  ports/www/p5-Catalyst-Plugin-CookiedSession
 p5-catalyst-plugin-defaultend   ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-catalyst-plugin-fillinform   ports/www/p5-Catalyst-Plugin-FillInForm
 p5-catalyst-plugin-formbuilder  ports/www/p5-Catalyst-Plugin-FormBuilder
@@ -14055,6 +14061,7 @@ p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
 p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
+p5-git-pureperl                 ports/devel/p5-Git-PurePerl
 p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
 p5-glib2                        ports/devel/p5-Glib2
@@ -14363,6 +14370,7 @@ p5-json                         ports/converters/p5-JSON
 p5-json-any                     ports/converters/p5-JSON-Any
 p5-json-dwiw                    ports/converters/p5-JSON-DWIW
 p5-json-xs                      ports/converters/p5-JSON-XS
+p5-json-xs-versiononeandtwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
 p5-kwalify                      ports/textproc/p5-Kwalify
