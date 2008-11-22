@@ -1,31 +1,36 @@
-# New ports collection makefile for:	opensaml
-# Date created:				06 Febuary 2007
-# Whom:					Tony Maher
+# New ports collection makefile for:	opensaml2
+# Date created:				15 September 2008
+# Whom:					Janos Mohacsi
 #
 # $FreeBSD$
 #
 
-PORTNAME=	opensaml
-DISTVERSION=	1.1.1
+PORTNAME=	opensaml2
+DISTVERSION=	2.1
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${DISTVERSION}/
+DISTNAME=	opensaml-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open source implentation of SAML
+MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Open source implentation of SAML2
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
-		log4cpp.4:${PORTSDIR}/devel/log4cpp \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		xml-security-c.13:${PORTSDIR}/security/apache-xml-security-c
+		log4shib.1:${PORTSDIR}/devel/log4shib \
+		xerces-c.28:${PORTSDIR}/textproc/xerces-c2-devel \
+		xmltooling.2:${PORTSDIR}/devel/xmltooling
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} \
+		--with-xmltooling=${LOCALBASE}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    ${WRKSRC}/configure
+
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
 .endif
