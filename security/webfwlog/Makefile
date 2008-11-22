@@ -7,9 +7,9 @@
 
 PORTNAME=	webfwlog
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	A web-based firewall log analyzer
@@ -56,7 +56,6 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/mysql
 	@${MKDIR} ${DOCSDIR}/pgsql
 	@(cd ${WRKSRC}/mysql/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/mysql/)
