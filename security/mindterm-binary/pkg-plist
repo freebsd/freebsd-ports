@@ -1,9 +1,9 @@
-share/doc/mindterm/CHANGES
-share/doc/mindterm/FAQ
-share/doc/mindterm/FEATURES
-share/doc/mindterm/PLATFORMS
-share/doc/mindterm/TODO
-share/doc/mindterm/mindterm-ssh.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/PLATFORMS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/mindterm-ssh.html
 share/java/mindterm/mindterm.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/java/mindterm
-@dirrm share/doc/mindterm
