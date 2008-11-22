@@ -15,6 +15,7 @@ share/apps/kile/complete/dictionary/example.cwl
 share/apps/kile/complete/dictionary/metapost.cwl
 share/apps/kile/complete/tex/acronym.cwl
 share/apps/kile/complete/tex/afterpage.cwl
+share/apps/kile/complete/tex/allrunes.cwl
 share/apps/kile/complete/tex/amsbsy.cwl
 share/apps/kile/complete/tex/amsfonts.cwl
 share/apps/kile/complete/tex/amsmath.cwl
@@ -91,6 +92,8 @@ share/apps/kile/complete/tex/scrlfile.cwl
 share/apps/kile/complete/tex/scrpage2.cwl
 share/apps/kile/complete/tex/scrtime.cwl
 share/apps/kile/complete/tex/setspace.cwl
+share/apps/kile/complete/tex/siunitx-special.cwl
+share/apps/kile/complete/tex/siunitx.cwl
 share/apps/kile/complete/tex/subfig.cwl
 share/apps/kile/complete/tex/supertabular.cwl
 share/apps/kile/complete/tex/svn-multi.cwl
