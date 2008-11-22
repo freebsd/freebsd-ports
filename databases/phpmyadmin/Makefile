@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
+USE_MYSQL=	yes
 IGNORE_WITH_PHP=	4
 IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
