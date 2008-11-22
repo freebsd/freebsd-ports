@@ -47,8 +47,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Timo Sirainen reports in dovecot 1.1.4 release notes:</p>
 	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2008-October/000085.html">
 	  <p>ACL plugin fixes: Negative rights were actually treated
-	  as positive rights. 'k' right didn't prevent creating
-	  parent/child/child mailbox.  ACL groups weren't working.</p>
+	    as positive rights. 'k' right didn't prevent creating
+	    parent/child/child mailbox.  ACL groups weren't working.</p>
 	</blockquote>
       </body>
     </description>
@@ -119,21 +119,18 @@ Note:  Please add new entries to the beginning of this file.
 	    serious vulnerabilities. Depending on the particular runtime
 	    environment these issues can potentially even be used by an
 	    attacker to execute code on operating system level.</p>
-
 	  <ol>
-	    <li>Authentication bypass - This vulnerability provides an attacker
+	  <li>Authentication bypass - This vulnerability provides an attacker
 	     full access to all functions in the admin webinterface without
 	     providing any user credentials.  The Tomcat filter which is
 	     responsible for authentication could be completely
 	     circumvented.</li>
-	   
-	    <li>SQL injection - It is possible to pass SQL statements to the
+	  <li>SQL injection - It is possible to pass SQL statements to the
 	     backend database through a SQL injection vulnerability. Depending
 	     on the particular runtime environment and database permissions it
 	     is even possible to write files to disk and execute code on
 	     operating system level.</li>
-	   
-	    <li>Multiple Cross-Site Scripting  - Permits arbitrary insertion
+	  <li>Multiple Cross-Site Scripting  - Permits arbitrary insertion
 	     of HTML- and JavaScript code in login.jsp.  An attacker could
 	     also manipulate a parameter to specify a destination to which a
 	     user will be forwarded to after successful authentication.</li>
