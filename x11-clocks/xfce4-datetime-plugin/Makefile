@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
