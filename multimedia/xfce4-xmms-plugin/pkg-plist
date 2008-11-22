@@ -11,6 +11,16 @@ share/locale/lt/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/ar/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/da/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/gl/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/id/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/pt_PT/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/uk/LC_MESSAGES/xfce4-xmms-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-xmms-plugin.mo
 share/xfce4/panel-plugins/xfce4-xmms-plugin.desktop
 share/xfce4/xfce4-xmms-plugin/xmms-plugin-menu.png
 share/xfce4/xfce4-xmms-plugin/xmms-plugin-next.png
