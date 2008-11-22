@@ -11,6 +11,6 @@ libexec/chasen/makemat
 @exec mkdir -p %D/share/chasen/dic >/dev/null 2>&1 || true
 @dirrm share/chasen/dic
 %%PORTDOCS%%%%DOCSDIR%%/manual-j.pdf
-%%PORTDOCS%%%%DOCSDIR%%share/chasen/doc/manual-j.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual-j.tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/chasen
