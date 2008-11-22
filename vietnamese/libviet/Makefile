@@ -8,6 +8,7 @@
 
 PORTNAME=	libviet
 PORTVERSION=	20010210
+PORTREVISION=	1
 CATEGORIES=	vietnamese devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
@@ -26,9 +27,9 @@ do-install:
 		charset.h charseta.h charsetv.h ctype.h portable.h vncompos.h vnkeys.h vntype.h  \
 		${PREFIX}/include/viet
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/libviet \
-		&& ${CHMOD} a+rx ${PREFIX}/share/doc/libviet
-	@${INSTALL_MAN} ${WRKSRC}/../README.lib ${PREFIX}/share/doc/libviet
+	@${MKDIR} ${DOCSDIR} \
+		&& ${CHMOD} a+rx ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/../README.lib ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
