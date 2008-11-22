@@ -1,28 +1,113 @@
-bin/signtest
-include/saml/SAMLDateTime.h
-include/saml/config_pub.h
-include/saml/hresult.h
-include/saml/saml.h
+bin/samlsign
+include/saml/encryption/EncryptedKeyResolver.h
+include/saml/Assertion.h
+include/saml/base.h
+include/saml/exceptions.h
 include/saml/version.h
-lib/libsaml.a
+include/saml/RootObject.h
+include/saml/SAMLConfig.h
+include/saml/saml1/binding/SAMLArtifactType0001.h
+include/saml/saml1/binding/SAMLArtifactType0002.h
+include/saml/saml1/binding/SAML1MessageDecoder.h
+include/saml/saml1/binding/SAML1SOAPClient.h
+include/saml/saml1/core/Assertions.h
+include/saml/saml1/core/Protocols.h
+include/saml/saml1/profile/AssertionValidator.h
+include/saml/saml1/profile/BrowserSSOProfileValidator.h
+include/saml/saml2/binding/SAML2Artifact.h
+include/saml/saml2/binding/SAML2ArtifactType0004.h
+include/saml/saml2/binding/SAML2MessageDecoder.h
+include/saml/saml2/binding/SAML2Redirect.h
+include/saml/saml2/binding/SAML2SOAPClient.h
+include/saml/saml2/core/Assertions.h
+include/saml/saml2/core/Protocols.h
+include/saml/saml2/metadata/AbstractMetadataProvider.h
+include/saml/saml2/metadata/ChainingMetadataProvider.h
+include/saml/saml2/metadata/DynamicMetadataProvider.h
+include/saml/saml2/metadata/EndpointManager.h
+include/saml/saml2/metadata/Metadata.h
+include/saml/saml2/metadata/MetadataCredentialContext.h
+include/saml/saml2/metadata/MetadataCredentialCriteria.h
+include/saml/saml2/metadata/MetadataFilter.h
+include/saml/saml2/metadata/MetadataProvider.h
+include/saml/saml2/metadata/ObservableMetadataProvider.h
+include/saml/saml2/profile/AssertionValidator.h
+include/saml/saml2/profile/BrowserSSOProfileValidator.h
+include/saml/binding/ArtifactMap.h
+include/saml/binding/MessageDecoder.h
+include/saml/binding/MessageEncoder.h
+include/saml/binding/SAMLArtifact.h
+include/saml/binding/SecurityPolicy.h
+include/saml/binding/SecurityPolicyRule.h
+include/saml/binding/SOAPClient.h
+include/saml/signature/ContentReference.h
+include/saml/signature/SignableObject.h
+include/saml/signature/SignatureProfileValidator.h
+include/saml/util/CommonDomainCookie.h
+include/saml/util/SAMLConstants.h
+lib/libsaml.so.3
 lib/libsaml.so
-lib/libsaml.so.5
-%%PORTDOCS%%%%DOCSDIR%%/CURL.LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL-WIN32.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
-%%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
-%%PORTDOCS%%%%DOCSDIR%%/OPENSSL.LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
+share/xml/opensaml/saml20-catalog.xml
+share/xml/opensaml/saml10-catalog.xml
+share/xml/opensaml/saml11-catalog.xml
 share/xml/opensaml/cs-sstc-schema-assertion-01.xsd
-share/xml/opensaml/cs-sstc-schema-assertion-1.1.xsd
 share/xml/opensaml/cs-sstc-schema-protocol-01.xsd
+share/xml/opensaml/cs-sstc-schema-assertion-1.1.xsd
 share/xml/opensaml/cs-sstc-schema-protocol-1.1.xsd
-share/xml/opensaml/soap-envelope.xsd
-share/xml/opensaml/xml.xsd
-share/xml/opensaml/xmldsig-core-schema.xsd
-@dirrm include/saml
-@dirrm share/xml/opensaml
+share/xml/opensaml/saml-schema-assertion-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-auth-telephony-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-ip-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-pgp-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-ippword-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-kerberos-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-mobileonefactor-reg-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-mobileonefactor-unreg-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-mobiletwofactor-reg-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-mobiletwofactor-unreg-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-nomad-telephony-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-personal-telephony-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-ppt-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-pword-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-session-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-smartcard-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-smartcardpki-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-softwarepki-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-spki-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-srp-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-sslcert-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-telephony-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-timesync-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-types-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-x509-2.0.xsd
+share/xml/opensaml/saml-schema-authn-context-xmldsig-2.0.xsd
+share/xml/opensaml/saml-schema-dce-2.0.xsd
+share/xml/opensaml/saml-schema-ecp-2.0.xsd
+share/xml/opensaml/saml-schema-metadata-2.0.xsd
+share/xml/opensaml/saml-schema-protocol-2.0.xsd
+share/xml/opensaml/saml-schema-x500-2.0.xsd
+share/xml/opensaml/saml-schema-xacml-2.0.xsd
+share/xml/opensaml/sstc-saml1x-metadata.xsd
+share/xml/opensaml/sstc-saml-metadata-ext-query.xsd
+share/xml/opensaml/sstc-saml-protocol-ext-thirdparty.xsd
+@dirrmtry share/xml/opensaml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/doc/opensaml
+@dirrmtry include/saml/util
+@dirrmtry include/saml/signature
+@dirrmtry include/saml/saml2/profile
+@dirrmtry include/saml/saml2/metadata
+@dirrmtry include/saml/saml2/core
+@dirrmtry include/saml/saml2/binding
+@dirrmtry include/saml/saml2
+@dirrmtry include/saml/saml1/profile
+@dirrmtry include/saml/saml1/core
+@dirrmtry include/saml/saml1/binding
+@dirrmtry include/saml/saml1
+@dirrmtry include/saml/encryption
+@dirrmtry include/saml/binding
+@dirrmtry include/saml
