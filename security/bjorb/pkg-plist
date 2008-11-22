@@ -1,17 +1,17 @@
 etc/bjorb.conf.sample
 etc/rc.d/bjorb.sh.sample
 sbin/bjorb
-share/doc/bjorb/ChangeLog
-share/doc/bjorb/COPYRIGHT
-share/doc/bjorb/INSTALL
-share/doc/bjorb/README
-share/doc/bjorb/ChangeLog.jp
-share/doc/bjorb/COPYRIGHT.jp
-share/doc/bjorb/INSTALL.jp
-share/doc/bjorb/README.jp
-share/doc/bjorb/bjorb.conf.5.jp.txt
-share/doc/bjorb/features.jp
-@dirrm share/doc/bjorb
-share/examples/bjorb/bjorb.conf.doc
-@dirrm share/examples/bjorb
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.jp
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/bjorb.conf.5.jp.txt
+%%PORTDOCS%%%%DOCSDIR%%/features.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjorb.conf.doc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @exec ( [ -f %D/certs/bjorb.pem ] && exit ; echo "Making certificate files" ; cd %D/certs ; openssl req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; ln -s bjorb.pem `openssl x509 -noout -hash < bjorb.pem`.0 ; chmod 644 %D/certs/bjorb.pem )
