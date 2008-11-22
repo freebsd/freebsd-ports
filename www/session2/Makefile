@@ -7,7 +7,7 @@
 
 PORTNAME=	session2
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://quixote.idyll.org/session2/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
