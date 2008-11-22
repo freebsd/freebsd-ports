@@ -15,7 +15,7 @@ etc/xdg/autostart/redhat-print-applet.desktop
 share/applications/redhat-manage-print-jobs.desktop
 share/applications/redhat-my-default-printer.desktop
 share/applications/redhat-system-config-printer.desktop
-share/locale/ar/LC_MESSAGES/system-config-printer.mo
+share/elocale/ar/LC_MESSAGES/system-config-printer.mo
 share/locale/as/LC_MESSAGES/system-config-printer.mo
 share/locale/bg/LC_MESSAGES/system-config-printer.mo
 share/locale/bn/LC_MESSAGES/system-config-printer.mo
@@ -34,6 +34,7 @@ share/locale/fa/LC_MESSAGES/system-config-printer.mo
 share/locale/fi/LC_MESSAGES/system-config-printer.mo
 share/locale/fr/LC_MESSAGES/system-config-printer.mo
 share/locale/gu/LC_MESSAGES/system-config-printer.mo
+share/locale/he/LC_MESSAGES/system-config-printer.mo
 share/locale/hi/LC_MESSAGES/system-config-printer.mo
 share/locale/hr/LC_MESSAGES/system-config-printer.mo
 share/locale/hu/LC_MESSAGES/system-config-printer.mo
