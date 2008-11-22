@@ -7,7 +7,7 @@
 
 PORTNAME=	dft++
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://dft.physics.cornell.edu/src/ \
 		http://dft.physics.cornell.edu/example/:example
@@ -28,19 +28,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
-FORTRANLIBS=    -lgfortranbegin -lgfortran
+FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas -lcblas
 LAPACK=		-lalapack
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -93,7 +93,7 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dft-pw ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/dft-wl ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if !defined(NOPOREXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dft.in     ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/output     ${EXAMPLESDIR}
