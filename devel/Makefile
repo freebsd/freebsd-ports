@@ -2627,6 +2627,7 @@
     SUBDIR += xfce4-dev-tools
     SUBDIR += xlslib
     SUBDIR += xmake
+    SUBDIR += xmltooling
     SUBDIR += xorg-macros
     SUBDIR += xparam
     SUBDIR += xtl

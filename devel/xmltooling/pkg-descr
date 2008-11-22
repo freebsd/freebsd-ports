@@ -1,0 +1,5 @@
+Shibboleth 2.x relies on OpenSAML 2, which in turn requires this
+lower-level library that provides a higher level interface to XML
+processing, particularly in light of signing and encryption.
+
+WWW: https://spaces.internet2.edu/display/OpenSAML/XMLTooling-C
