@@ -1,9 +1,9 @@
-%%DOCSDIR%%/ChangeLog.txt
-%%DOCSDIR%%/LICENSE.txt
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%WWWDIR%%/index.inc.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/style.css
 @dirrm %%WWWDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
