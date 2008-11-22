@@ -50,7 +50,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|-lgfortran|-L${FORTRANLIBDIR2} -lgfortran|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|rkward po doc debian|rkward po debian|'	\
+	${REINPLACE_CMD} -e 's|rkward po doc|rkward po|'	\
 		${WRKSRC}/Makefile.in
 .endif
 .if defined(WITHOUT_NLS)
