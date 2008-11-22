@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt
 
@@ -15,7 +15,6 @@ COMMENT=	A bug tracking system written in PHP
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_APACHE=	1.3+
 USE_PHP=	pcre
 
 SUB_FILES=	pkg-message
