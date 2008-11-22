@@ -1,15 +1,15 @@
---- configure.orig	2008-07-07 15:13:33.000000000 +0200
-+++ configure	2008-07-22 17:36:11.000000000 +0200
-@@ -3668,7 +3668,7 @@
+--- configure.orig	2008-11-08 19:30:00.000000000 +0100
++++ configure	2008-11-22 09:25:38.000000000 +0100
+@@ -3688,7 +3688,7 @@
  
    GMSH_DIRS="Common Geo Mesh Post Plugin Numeric Parser Graphics Fltk"
-   GMSH_LIBS="-Llib -lGmshFltk -lGmshCommon -lGmshGeo -lGmshMesh -lGmshPost -lGmshPlugin"
+   GMSH_LIBS="-Llib -lGmshFltk -lGmshCommon -lGmshMesh -lGmshGeo -lGmshPost -lGmshPlugin"
 -  GMSH_LIBS="${GMSH_LIBS} -lGmshCommon -lGmshGraphics -lGmshParser -lGmshNumeric"
 +  GMSH_LIBS="${GMSH_LIBS} -lGmshCommon -lGmshGraphics -lGmshParser -lGmshNumeric ${LDFLAGS}"
    FLAGS="-DHAVE_FLTK ${FLAGS}"
  
    if test "x${FLTK_PREFIX}" != "x" ; then
-@@ -4943,7 +4943,7 @@
+@@ -4895,7 +4895,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5003,7 +5003,7 @@
+@@ -4955,7 +4955,7 @@
        GMSH_LIBS="${GMSH_LIBS} -lcgns"
        FLAGS="${FLAGS} -DHAVE_LIBCGNS"
      else
@@ -27,7 +27,7 @@
        FLAGS="${FLAGS} -DHAVE_LIBCGNS -I${CGNS_PREFIX}/include"
      fi
    fi
-@@ -5094,7 +5094,7 @@
+@@ -5046,7 +5046,7 @@
        FLAGS="${FLAGS} -DHAVE_OCC"
      else
        GMSH_LIBS="${GMSH_LIBS} -L${OCC_PREFIX}/lib ${OCC_LIBS}"
