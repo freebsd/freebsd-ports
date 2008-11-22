@@ -20,7 +20,7 @@
 # this is considered to be a part of the `postgresql' port.
 
 PORTNAME=		postgresql
-PORTVERSION=		08.03.0300
+PORTVERSION=		08.03.0400
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
