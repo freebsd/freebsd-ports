@@ -7,6 +7,7 @@
 
 PORTNAME=	bjorb
 PORTVERSION=	0.5.5p1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 
@@ -41,10 +42,12 @@ EXAMPLES=	doc/sample/bjorb.conf.doc
 post-install:
 	@${INSTALL_SCRIPT} ${DOCSRC}/doc/sample/bjorb.sh ${PREFIX}/etc/rc.d/bjorb.sh.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/bjorb
+	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${DOCSRC}/$i ${PREFIX}/share/doc/bjorb
+	@${INSTALL_DATA} ${DOCSRC}/$i ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${PREFIX}/share/examples/bjorb
 .for i in ${EXAMPLES}
 	@${INSTALL_DATA} ${DOCSRC}/$i ${PREFIX}/share/examples/bjorb
