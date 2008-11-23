@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d4caee0-b939-11dd-a578-0030843d3802">
+    <topic>streamripper -- multiple buffer overflows</topic>
+    <affects>
+      <package>
+	<name>streamripper</name>
+	<range><lt>1.64.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/secunia_research/2008-50/">
+	  <p>A boundary error exists within http_parse_sc_header() in lib/http.c
+	    when parsing an overly long HTTP header starting with "Zwitterion v".</p>
+	  <p>A boundary error exists within http_get_pls() in lib/http.c when
+	    parsing a specially crafted pls playlist containing an overly long
+	    entry.</p>
+	  <p>A boundary error exists within http_get_m3u() in lib/http.c when
+	    parsing a specially crafted m3u playlist containing an overly long
+	    "File" entry.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4829</cvename>
+      <url>http://secunia.com/secunia_research/2008-50/</url>
+      <url>http://streamripper.cvs.sourceforge.net/viewvc/streamripper/sripper_1x/CHANGES?revision=1.196</url>
+    </references>
+    <dates>
+      <discovery>2008-11-05</discovery>
+      <entry>2008-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00d6040a-b8e0-11dd-a578-0030843d3802">
     <topic>mantis -- session hijacking vulnerability</topic>
     <affects>
