@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://geos.refractions.net/downloads/
+MASTER_SITES=	http://download.osgeo.org/geos/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	konstantin@saurbier.net
