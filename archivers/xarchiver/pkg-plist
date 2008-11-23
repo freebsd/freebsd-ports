@@ -30,20 +30,63 @@ share/applications/xarchiver.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s05.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s06.html
 %%PORTDOCS%%%%DOCSDIR%%/html/images/add_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/archive_comment_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/archive_properties.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/extract_dialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/iso_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/multi_extract_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/new_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/password_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xarchiver.css
-share/icons/hicolor/48x48/apps/xarchiver.png
+%%NLS%%share/icons/hicolor/16x16/apps/xarchiver.png
+%%NLS%%share/icons/hicolor/24x24/apps/xarchiver.png
+%%NLS%%share/icons/hicolor/48x48/apps/xarchiver.png
+%%NLS%%share/icons/hicolor/scalable/apps/xarchiver.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xarchiver.mo
 share/pixmaps/xarchiver/xarchiver-add.png
-share/pixmaps/xarchiver/xarchiver-add_button.png
-share/pixmaps/xarchiver/xarchiver-close.png
 share/pixmaps/xarchiver/xarchiver-extract.png
-share/pixmaps/xarchiver/xarchiver-extract_button.png
+share/pixmaps/xarchiver/xarchiver-html.png
+%%NLS%%@dirrm share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrm share/locale/nb_NO
 @dirrm share/pixmaps/xarchiver
+@dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/pixmaps/hicolor/48x48/apps
+@dirrmtry share/pixmaps/hicolor/24x24/apps
+@dirrmtry share/pixmaps/hicolor/16x16/apps
 @dirrmtry libexec/thunar-archive-plugin
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
