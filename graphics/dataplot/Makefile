@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	dataplot
-PORTVERSION=	20070224
+PORTVERSION=	20080225
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc \
 		LOCAL/beech:doc
-DISTFILES=	dpsrc.02_24_2007${EXTRACT_SUFX}:source \
+DISTFILES=	dpsrc.02_25_2008${EXTRACT_SUFX}:source \
 		dpsnapsh.pdf:doc
 DIST_SUBDIR=	dataplot
-EXTRACT_ONLY=	dpsrc.02_24_2007${EXTRACT_SUFX}
+EXTRACT_ONLY=	dpsrc.02_25_2008${EXTRACT_SUFX}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
@@ -28,7 +28,7 @@ USE_FORTRAN=	yes
 FFLAGS+=	-fno-range-check
 USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
-MAXOBV?=	100000	# Change if you need more observations/variable
+MAXOBV?=	1000000	# Change if you need more observations/variable
 
 .include <bsd.port.pre.mk>
 
@@ -37,11 +37,16 @@ post-extract:
 	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
 	s;%%LOCALBASE%%;${LOCALBASE};g' \
 	${WRKSRC}/Makefile
-	@${MV} ${WRKSRC}/gl_src.c ${WRKSRC}/gl_src.c.bogus
+	@${MV} ${WRKSRC}/aqua_src.c ${WRKSRC}/aqua_src.c.nop
+	@${MV} ${WRKSRC}/gl_src.c ${WRKSRC}/gl_src.c.nop
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's/MAXOBV=100000/MAXOBV=${MAXOBV}/' \
+	@${REINPLACE_CMD} -e 's/MAXOBV=1000000/MAXOBV=${MAXOBV}/' \
 	${WRKSRC}/DPCOPA.INC
+.if ((${ARCH}=="amd64") || (${ARCH}=="sparc64") || (${ARCH}=="ia64"))
+	@${REINPLACE_CMD} -e 's;dp1_linux;dp1_linux_dp;g' \
+	${WRKSRC}/Makefile
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
