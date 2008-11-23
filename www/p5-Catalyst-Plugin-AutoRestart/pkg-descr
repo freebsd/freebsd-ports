@@ -1,0 +1,7 @@
+Catalyst plugin to force the application to restart server processes
+when they reach a configurable memory threshold. Memory checks are
+performed every 'N' requests. This is intended as a band-aid to
+deal with problems like memory leaks; it's here to buy you time to
+find and solve the underlying issues.
+
+WWW:	http://search.cpan.org/dist/Catalyst-Plugin-AutoRestart/
