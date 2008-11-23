@@ -11,7 +11,7 @@ CATEGORIES=	graphics www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl5 module to determine the size of images in several common formats
 
 RUN_DEPENDS=	p5-Compress-Zlib>=2:${PORTSDIR}/archivers/p5-Compress-Zlib
