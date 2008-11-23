@@ -1,0 +1,32 @@
+--- Makefile.orig	2008-11-04 10:13:20.000000000 -0700
++++ Makefile
+@@ -3,12 +3,15 @@ VERSION=1.4
+ 
+ # CC = gcc
+ CPPFLAGS=-DVERSION_STR=\"$(VERSION)\" -DUUCP_LOCK_DIR=\"/var/lock\"
+-CFLAGS = -Wall -g
++CFLAGS = -Wall -g -I$(PREFIX)/include
+ 
+ # LD = gcc
+-LDFLAGS = -g
++LDFLAGS = -g -Wl,-R$(PREFIX)/lib -L$(PREFIX)/lib -lcurses
+ LDLIBS =
+ 
++BIN = $(PREFIX)/bin
++MAN8 = $(PREFIX)/man/man8
++
+ picocom : picocom.o term.o
+ #	$(LD) $(LDFLAGS) -o $@ $+ $(LDLIBS)
+ 
+@@ -17,6 +20,12 @@ term.o : term.c term.h
+ 
+ doc : picocom.8 picocom.8.html picocom.8.ps
+ 
++install:
++	-install -d $(BIN)
++	install -o root picocom $(BIN)
++	-install -d $(MAN8)
++	install -o root picocom.8 $(MAN8)
++
+ changes : 
+ 	svn log -v . > CHANGES

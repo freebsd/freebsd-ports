@@ -95,6 +95,7 @@
     SUBDIR += p5-SMS-Send-TW-PChome
     SUBDIR += p5-SMS-Send-TW-ShareSMS
     SUBDIR += p5-SMS-Send-TW-emome
+    SUBDIR += picocom
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += predict
