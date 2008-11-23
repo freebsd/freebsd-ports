@@ -7,7 +7,7 @@
 
 PORTNAME=	gems
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -52,6 +52,8 @@ do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
 post-install:
+	@${MKDIR} ${PREFIX}/${GEMS_DOC_BASE_DIR}/
+	@${TOUCH} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
 	@${LN} -sf ${PREFIX}/bin/gem18 ${PREFIX}/bin/gem
 
 # This target is only meant to be used by the port maintainer.
@@ -75,7 +77,8 @@ x-generate-plist:
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P}/gems >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P}/cache >> pkg-plist.new
 	${FIND} ${PREFIX}/${GEMS_DOC_DIR} -type d | ${SORT} -r | ${SED} -e 's,${PREFIX}/${GEMS_DOC_DIR},%%PORTDOCS%%@dirrm ${GEMS_DOC_DIR_P},' >> pkg-plist.new
-	${ECHO} %%PORTDOCS%%@dirrmtry ${GEMS_DOC_BASE_DIR_P} >> pkg-plist.new
+	${ECHO} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this  >> pkg-plist.new
+	${ECHO} @dirrmtry ${GEMS_DOC_BASE_DIR_P} >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_VER_DIR_P} >> pkg-plist.new
 	${ECHO} @dirrmtry ${GEMS_BASE_DIR_P} >> pkg-plist.new
 

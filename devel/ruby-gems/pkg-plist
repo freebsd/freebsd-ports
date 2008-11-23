@@ -90,6 +90,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
+lib/ruby/gems/%%RUBY_VER%%/doc/.keep_this
 %%PORTDOCS%%lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Config.html
 %%PORTDOCS%%lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Config.src/M000006.html
 %%PORTDOCS%%lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes/Gem.html
@@ -1739,6 +1740,6 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%PORTDOCS%%@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc/classes
 %%PORTDOCS%%@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/rdoc
 %%PORTDOCS%%@dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%
-%%PORTDOCS%%@dirrmtry lib/ruby/gems/%%RUBY_VER%%/doc
+@dirrmtry lib/ruby/gems/%%RUBY_VER%%/doc
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%
 @dirrmtry lib/ruby/gems
