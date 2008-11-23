@@ -206,6 +206,7 @@
     SUBDIR += firefox3
     SUBDIR += firefox-devel
     SUBDIR += firefox-i18n
+    SUBDIR += firefox3-i18n
     SUBDIR += firefox-remote
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
