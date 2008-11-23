@@ -19,6 +19,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
+SUB_FILES=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -43,5 +45,8 @@ do-install:
 	@(cd ${WRKSRC}; ${FIND} . ! -type d) | ${SORT} | ${SED} "s|^.|${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d) | ${SORT} -r | ${SED} "s|^.|@dirrm ${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@exec mkdir -p ${PORTNAME}|" >> ${TMPPLIST}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
