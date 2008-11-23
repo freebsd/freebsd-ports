@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.7.5
+PORTVERSION=	3.7.6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
