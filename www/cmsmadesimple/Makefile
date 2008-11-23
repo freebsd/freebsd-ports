@@ -8,7 +8,7 @@
 PORTNAME=	cmsmadesimple
 PORTVERSION=	1.4.1
 CATEGORIES=	www
-MASTER_SITES=	http://dev.cmsmadesimple.org/frs/download.php/2536/
+MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/2536/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
 MAINTAINER=	wenheping@gmail.com
@@ -16,8 +16,6 @@ COMMENT=	A Simple Open Source CMS
 
 USE_PHP=	mysql tokenizer gd
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BROKEN=         failed in MD5 check
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
