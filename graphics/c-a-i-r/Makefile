@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	c-a-i-r
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-DISTNAME=	CAIR_MT_v2.16
+DISTNAME=	CAIR_MT_v2.17
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Content Aware Image Resizer is an implementation of seam carving
@@ -21,13 +21,7 @@ WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/cair
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-EXTRA_PATCHES=	${PATCHDIR}/amd64-CAIR.cpp
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/cair ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
