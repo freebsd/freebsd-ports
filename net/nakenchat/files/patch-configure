@@ -1,0 +1,40 @@
+--- ./configure.orig	2007-06-27 22:06:34.000000000 -0400
++++ ./configure	2008-11-23 14:23:54.364898213 -0500
+@@ -2,11 +2,11 @@
+ 
+ # Based on FFMPEG's configure (http://ffmpeg.sourceforge.net/)
+ 
+-PREFIX=/usr/local
+-CC=gcc
++PREFIX=${PREFIX:=/usr/local}
++CC=${CC:=gcc}
+ COMPILER_PREFIX=
+ FLAGS=""
+-CFLAGS="-Wall"
++CFLAGS="${CFLAGS}"
+ LDFLAGS=""
+ LANGUAGE="english"
+ CONFIG_USER_CHAN_LIST="-DUSER_LIST_CHAN"
+@@ -134,7 +134,7 @@
+   case "$option" in
+   --help) show_help
+   ;;
+-  --cflags=*) CFLAGS="${CFLAGS} $optval"
++  --cflags=*) CFLAGS="$optval"
+   ;;
+   --compiler-prefix=*) COMPILER_PREFIX="$optval"
+   ;;
+@@ -158,12 +158,9 @@
+ 
+ done
+ 
+-if test_compiler "gcc"
++if ! test_compiler $CC
+ then
+   CC="gcc"
+-elif test_compiler "cc"
+-then
+-  CC="cc"
+ fi
+ 
+ if test_lib "-lpthread"; then LDFLAGS="${LDFLAGS} -lpthread"; fi
