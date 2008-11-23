@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	geoapi
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	SF
-DISTNAME=	GeoAPI-2_1_0
+DISTNAME=	GeoAPI-2_1_1
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Java interface API based upon OGC Standards
@@ -29,10 +28,10 @@ do-install:
 .endfor
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC}/javadoc ; \
-	${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; ;\
-	${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKDIR}/javadoc \
+		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endif
 
 .include <bsd.port.mk>
