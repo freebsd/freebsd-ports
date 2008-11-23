@@ -22,6 +22,7 @@
     SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
+    SUBDIR += dns2tcp
     SUBDIR += dns_balance
     SUBDIR += dns_mre
     SUBDIR += dnscap
