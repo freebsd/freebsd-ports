@@ -7,8 +7,7 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-#PORTVERSION=	3.0.0
-DISTVERSION=	3.0.0rc3
+PORTVERSION=	3.0.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -68,8 +67,8 @@ CONFIGURE_ARGS+=	--enable-openssl
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITHOUT_ZIPLINKS)
@@ -122,8 +121,8 @@ pre-configure:
 
 pre-build:
 	@${REINPLACE_CMD} -e "s#-O2##" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		  \
-			  ${WRKSRC}/doc/example.conf		  \
+	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		\
+			  ${WRKSRC}/doc/example.conf		\
 			  ${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%LOGDIR%%#${LOGDIR}#g"		\
 				${WRKSRC}/doc/example.conf	\
