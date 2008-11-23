@@ -214,6 +214,7 @@
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pear-File_PDF
+    SUBDIR += pecl-haru
     SUBDIR += pecl-pdflib
     SUBDIR += pecl-ps
     SUBDIR += perlftlib
