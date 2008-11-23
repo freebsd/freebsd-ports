@@ -19,7 +19,13 @@
 %%PYTHON_SITELIBDIR%%/graph/sorting.py
 %%PYTHON_SITELIBDIR%%/graph/sorting.pyc
 %%PYTHON_SITELIBDIR%%/graph/sorting.pyo
+%%PYTHON_SITELIBDIR%%/graph/traversal.py
+%%PYTHON_SITELIBDIR%%/graph/traversal.pyc
+%%PYTHON_SITELIBDIR%%/graph/traversal.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/graph
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png
@@ -27,12 +33,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/epydoc.js
 %%PORTDOCS%%%%DOCSDIR%%/graph-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.accessibility-module.html
+%%PORTDOCS%%%%DOCSDIR%%/graph.digraph-class.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.generators-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.graph-class.html
+%%PORTDOCS%%%%DOCSDIR%%/graph.hypergraph-class.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.minmax-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.readwrite-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.searching-module.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.sorting-module.html
+%%PORTDOCS%%%%DOCSDIR%%/graph.traversal-module.html
 %%PORTDOCS%%%%DOCSDIR%%/help.html
 %%PORTDOCS%%%%DOCSDIR%%/identifier-index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -40,7 +49,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/redirect.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/drawhyper.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.tls
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lts2graph.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/read.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/write.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
