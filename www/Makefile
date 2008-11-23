@@ -1105,6 +1105,7 @@
     SUBDIR += pear-Services_W3C_HTMLValidator
     SUBDIR += pear-Services_Yadis
     SUBDIR += pear-Services_urlTea
+    SUBDIR += pear-Structures_DataGrid_Renderer_Smarty
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pear-XML_GRDDL
