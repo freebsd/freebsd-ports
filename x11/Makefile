@@ -74,6 +74,7 @@
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += etoile
+    SUBDIR += etoile-idle
     SUBDIR += etoile-iterm
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += evieext
