@@ -501,6 +501,7 @@
     SUBDIR += hs-hpl
     SUBDIR += hs-idoc
     SUBDIR += hs-tclhaskell-ghc
+    SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
     SUBDIR += hypersrc
