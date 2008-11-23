@@ -1,0 +1,24 @@
+libFIRM provides a graph-based intermediate representation (IR), which operates
+exclusively in SSA-form, starting at IR construction until assembler code
+emission.  It offers many analyses and optimizations, provides extensive debug
+support and includes a backend framework.
+
+* analyses: dominance, loop tree, execution frequency, control dependencies,
+  call graph, rapid type, def-use, alias analysis, class hierarchy analysis
+* optimizations: dead code elimination (happens implicitly), constant folding,
+  local common subexpression elimination, arithmetic identities (happens on the
+  fly), unreachable code elimination, global common subexpression elimination,
+  code placement, strength reduction, scalar replacement, if-conversion,
+  load/store optimization, control flow optimizations, reassociation, partial
+  condition evaluation, tail recursion elimination, inlining, procedure cloning
+* enhanced debugging support: extensive checkers, breakpoints on node creation,
+  entity creation, graph dumping
+* lowering of intrinsics, double word arithmetics, bitfields
+* generic backend features:
+  * novel SSA based register allocator
+  * several SSA copy coalescing and spilling algorithms
+  * algorithms for instruction and basic block scheduling
+* working ia32 backend, unfinished backends for MIPS, ARM, PPC32
+* handwritten recursive descent C89/C99 frontend available (lang/cparser)
+
+WWW: http://libfirm.org/
