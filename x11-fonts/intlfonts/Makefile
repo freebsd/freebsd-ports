@@ -7,7 +7,7 @@
 
 PORTNAME=	intlfonts
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	intlfonts
@@ -21,8 +21,8 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 RUN_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 USE_XORG=	x11
-PLIST_SUB=	FONTSDIR=${FONTSDIR} T1_FONTSDIR=${T1_FONTSDIR} \
-		TT_FONTSDIR=${TT_FONTSDIR} DOCDIR=${DOCDIR}
+PLIST_SUB+=	FONTSDIR=${FONTSDIR} T1_FONTSDIR=${T1_FONTSDIR} \
+		TT_FONTSDIR=${TT_FONTSDIR}
 
 NORMAL_FONTS=	Asian		\
 		Chinese		\
@@ -40,7 +40,6 @@ T1_FONTSDIR=	lib/X11/fonts/Type1
 TT_FONTSDIR=	lib/X11/fonts/TrueType
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
-DOCDIR=		share/doc/${DISTNAME}
 
 do-build:
 	cd ${WRKSRC}; \
@@ -52,12 +51,12 @@ do-build:
 				> $$pcf_gz; \
 		done \
 	done
-	for file in INSTALL DEINSTALL; do \
+	for f in INSTALL DEINSTALL; do \
 		${SED} -e 's,%%FONTSDIR%%,${FONTSDIR},g' \
 			-e 's,%%T1_FONTSDIR%%,${T1_FONTSDIR},g' \
 			-e 's,%%TT_FONTSDIR%%,${TT_FONTSDIR},g' \
 			-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-			< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+			< ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
 	done
 
 pre-install:
@@ -80,10 +79,9 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/Emacs.ap ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/Emacs.ap ${WRKSRC}/NEWS \
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

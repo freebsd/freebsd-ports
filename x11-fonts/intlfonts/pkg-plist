@@ -220,8 +220,8 @@
 %%TT_FONTSDIR%%/lt5-i-omega-serif.ttf
 %%TT_FONTSDIR%%/lt5-r-omega-serif.ttf
 %%TT_FONTSDIR%%/viscii-omega-serif.ttf
-%%DOCDIR%%/README
-%%DOCDIR%%/Emacs.ap
-%%DOCDIR%%/NEWS
-@dirrm %%DOCDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Emacs.ap
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%TT_FONTSDIR%%
