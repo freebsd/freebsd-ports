@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- extensions/gst_video_element/gst_video_element.cc.orig
 +++ extensions/gst_video_element/gst_video_element.cc
-@@ -127,7 +127,7 @@
+@@ -125,7 +125,7 @@
      return;
    } else {
      g_object_get(G_OBJECT(videosink_),
@@ -12,7 +12,7 @@ $FreeBSD$
      if (!receive_image_handler_) {
        gst_object_unref(GST_OBJECT(playbin_));
        gst_object_unref(GST_OBJECT(videosink_));
-@@ -137,7 +137,7 @@
+@@ -135,7 +135,7 @@
    }
  
    // Set videosink to receive video output.
@@ -21,7 +21,7 @@ $FreeBSD$
  
    // Create new audio sink with panorama support if possible.
    GstElement *audiosink = NULL;
-@@ -163,15 +163,15 @@
+@@ -161,15 +161,15 @@
      GstElement *audiobin = gst_bin_new("audiobin");
      GstPad *sinkpad;
      if (volume_ && panorama_) {
@@ -41,7 +41,7 @@ $FreeBSD$
        gst_element_link(panorama_, audiosink);
        sinkpad = gst_element_get_pad(panorama_, "sink");
      }
-@@ -181,7 +181,7 @@
+@@ -179,7 +179,7 @@
    }
  
    // Set audio-sink to our new audiosink.
@@ -50,17 +50,16 @@ $FreeBSD$
  
    // Watch the message bus.
    // The host using this class must use a g_main_loop to capture the
-@@ -361,7 +361,7 @@
+@@ -357,14 +357,14 @@
  
      src_ = src;
      media_changed_ = true;
 -    g_object_set(G_OBJECT(playbin_), "uri", src_.c_str(), NULL);
 +    g_object_set(G_OBJECT(playbin_), "uri", src_.c_str(), (gchar*)0);
-     if (GetAutoPlay())
-       Play();
    }
-@@ -370,7 +370,7 @@
- int GstVideoElement::GetVolume() {
+ }
+ 
+ int GstVideoElement::GetVolume() const {
    if (playbin_) {
      double volume;
 -    g_object_get(G_OBJECT(playbin_), "volume", &volume, NULL);
@@ -68,7 +67,7 @@ $FreeBSD$
      int gg_volume = static_cast<int>((volume / kMaxGstVolume) *
                                       (kMaxVolume - kMinVolume) + kMinVolume);
      return Clamp(gg_volume, kMinVolume, kMaxVolume);
-@@ -387,7 +387,7 @@
+@@ -381,7 +381,7 @@
      }
      gdouble gg_volume = ((gdouble(volume - kMinVolume) /
                            (kMaxVolume - kMinVolume)) * kMaxGstVolume);
@@ -77,8 +76,8 @@ $FreeBSD$
    } else {
      DLOG("Playbin was not initialized correctly.");
    }
-@@ -409,7 +409,7 @@
- int GstVideoElement::GetBalance() {
+@@ -403,7 +403,7 @@
+ int GstVideoElement::GetBalance() const {
    if (playbin_ && panorama_) {
      gfloat balance;
 -    g_object_get(G_OBJECT(panorama_), "panorama", &balance, NULL);
@@ -86,7 +85,7 @@ $FreeBSD$
      int gg_balance = static_cast<int>(((balance + 1) / 2) *
                                        (kMaxBalance - kMinBalance) +
                                        kMinBalance);
-@@ -432,7 +432,7 @@
+@@ -426,7 +426,7 @@
      }
      gfloat gg_balance = (gfloat(balance - kMinBalance) /
                            (kMaxBalance - kMinBalance)) * 2 - 1;
@@ -95,8 +94,8 @@ $FreeBSD$
    } else {
      if (!playbin_)
        DLOG("Playbin was not initialized correctly.");
-@@ -444,7 +444,7 @@
- bool GstVideoElement::GetMute() {
+@@ -438,7 +438,7 @@
+ bool GstVideoElement::IsMute() const {
    if (playbin_ && volume_) {
      gboolean mute;
 -    g_object_get(G_OBJECT(volume_), "mute", &mute, NULL);
@@ -104,7 +103,7 @@ $FreeBSD$
      return static_cast<bool>(mute);
    } else {
      if (!playbin_)
-@@ -457,7 +457,7 @@
+@@ -451,7 +451,7 @@
  
  void GstVideoElement::SetMute(bool mute) {
    if (playbin_ && volume_) {
@@ -113,7 +112,7 @@ $FreeBSD$
    } else {
      if (!playbin_)
        DLOG("Playbin was not initialized correctly.");
-@@ -470,7 +470,7 @@
+@@ -464,7 +464,7 @@
    if (playbin_ && videosink_) {
      g_object_set(G_OBJECT(videosink_),
                   "geometry-width", static_cast<int>(width),
