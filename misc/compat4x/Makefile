@@ -53,7 +53,7 @@ PLIST_SUB+=		LIBDIR="lib"
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab
 .else
-IGNORE=			in unsupported (FreeBSD 4.x did not run on this architecture)
+IGNORE=			is unsupported (FreeBSD 4.x did not run on this architecture)
 .endif
 
 .if ${COMPAT4X_ARCH} == i386
