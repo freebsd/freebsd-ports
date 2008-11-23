@@ -1,18 +1,38 @@
---- setup.py.orig	2007-12-22 03:44:22.000000000 +0800
-+++ setup.py	2008-06-16 05:02:58.000000000 +0800
-@@ -33,11 +33,11 @@
-           "networkx.tests.readwrite",
+--- setup.py.orig	2008-11-19 21:40:27.000000000 +0800
++++ setup.py	2008-11-19 21:41:15.000000000 +0800
+@@ -37,27 +37,6 @@
+           "networkx.tests",
            ]
  
 -docdirbase  = 'share/doc/networkx-%s' % version
-+docdirbase  = '%%DOCSDIR%%'
- data = [(docdirbase, glob("doc/*.txt")),
--        (os.path.join(docdirbase, 'examples'),glob("doc/examples/*.py")),
--        (os.path.join(docdirbase, 'examples'),glob("doc/examples/*.dat")),
--        (os.path.join(docdirbase, 'examples'),glob("doc/examples/*.edges")),
-+        ('%%EXAMPLESDIR%%',glob("doc/examples/*.py")),
-+        ('%%EXAMPLESDIR%%',glob("doc/examples/*.dat")),
-+        ('%%EXAMPLESDIR%%',glob("doc/examples/*.edges")),
-         (os.path.join(docdirbase, 'data'),glob("doc/data/*ls")),
-         ]
- 
+-# add basic documentation 
+-data = [(docdirbase, glob("*.txt"))]
+-# add examples
+-for d in ['advanced',
+-          'algorithms',
+-          'basic',
+-          'drawing',
+-          'graph',
+-          'multigraph',
+-          'pygraphviz',
+-          'readwrite',
+-          'ubigraph']:
+-    dd=os.path.join(docdirbase,'examples',d)
+-    pp=os.path.join('examples',d)
+-    data.append((dd,glob(os.path.join(pp,"*.py"))))
+-    data.append((dd,glob(os.path.join(pp,"*.bz2"))))
+-    data.append((dd,glob(os.path.join(pp,"*.gz"))))
+-    data.append((dd,glob(os.path.join(pp,"*.mbox"))))
+-    data.append((dd,glob(os.path.join(pp,"*.edgelist"))))
+-
+ # add the tests
+ package_data     = {'': ['tests/*.py'],
+                     '': ['tests/*.txt'],
+@@ -77,7 +56,6 @@
+       url              = url,      
+       download_url     = download_url,
+       packages         = packages,
+-      data_files       = data,
+       package_data     = package_data, 
+       classifiers      = classifiers,
+       )
