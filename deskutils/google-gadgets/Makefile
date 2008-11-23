@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-gadgets
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -49,6 +49,10 @@ OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+IGNORE=This port needs 7.X or higher
+.endif
+
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -60,6 +64,8 @@ CONFIGURE_ARGS+=	--disable-gtk-host --disable-libggadget-gtk --disable-gtkmoz-br
 USE_GNOME=	gtk20
 PLIST_SUB+=	GTK=""
 CONFIGURE_ARGS+=	--enable-gtk-host
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libstartup-notification-1.0.pc:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 .endif
 
 .if defined(WITHOUT_QT)
@@ -82,6 +88,7 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autotools/bootstrap.sh && ${CP} ${AUTOMAKE_DIR}/mkinstalldirs libltdl/
+	@cd ${WRKSRC} && ${CHMOD} +x autotools/install-sh
 
 post-install:
 	@-update-desktop-database
