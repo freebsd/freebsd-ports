@@ -647,6 +647,7 @@ aspell                          ports/textproc/aspell
 aspell-without-dicten           ports/textproc/aspell-without-dicten
 aspostit                        ports/deskutils/aspostit
 asprint                         ports/print/asprint
+asql                            ports/www/asql
 asr-manpages                    ports/misc/asr-manpages
 asr-utils                       ports/sysutils/asr-utils
 asr10                           ports/converters/asr10
@@ -8010,6 +8011,7 @@ mapagi                          ports/print/mapagi
 mapchan                         ports/sysutils/mapchan
 maplay                          ports/audio/maplay
 mapm3                           ports/biology/mapm3
+mapnik                          ports/graphics/mapnik
 mapserver                       ports/graphics/mapserver
 mapyrus                         ports/graphics/mapyrus
 mar                             ports/archivers/mar
@@ -9479,6 +9481,7 @@ openradius                      ports/net/openradius
 openresolv                      ports/dns/openresolv
 openrm                          ports/graphics/openrm
 opensaml                        ports/security/opensaml
+opensaml2                       ports/security/opensaml2
 opensc                          ports/security/opensc
 openscep                        ports/security/openscep
 opensched                       ports/textproc/opensched
@@ -9943,6 +9946,7 @@ p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
 p5-CQL-Parser                   ports/textproc/p5-CQL-Parser
 p5-CSP                          ports/security/p5-CSP
 p5-CSS                          ports/textproc/p5-CSS
+p5-CSS-DOM                      ports/www/p5-CSS-DOM
 p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
 p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
 p5-CSS-Squish                   ports/textproc/p5-CSS-Squish
@@ -11462,6 +11466,7 @@ p5-Module-ScanDeps              ports/devel/p5-Module-ScanDeps
 p5-Module-Signature             ports/security/p5-Module-Signature
 p5-Module-Starter               ports/devel/p5-Module-Starter
 p5-Module-Starter-PBP           ports/devel/p5-Module-Starter-PBP
+p5-Module-Starter-Plugin-SimpleStore  ports/devel/p5-Module-Starter-Plugin-SimpleStore
 p5-Module-Util                  ports/devel/p5-Module-Util
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
@@ -12167,6 +12172,7 @@ p5-String-Similarity            ports/devel/p5-String-Similarity
 p5-String-Strip                 ports/textproc/p5-String-Strip
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
 p5-Sub-Current                  ports/devel/p5-Sub-Current
+p5-Sub-Delete                   ports/devel/p5-Sub-Delete
 p5-Sub-Exporter                 ports/devel/p5-Sub-Exporter
 p5-Sub-Identify                 ports/devel/p5-Sub-Identify
 p5-Sub-Install                  ports/devel/p5-Sub-Install
@@ -12318,6 +12324,7 @@ p5-Test-URI                     ports/net/p5-Test-URI
 p5-Test-Unit                    ports/devel/p5-Test-Unit
 p5-Test-UseAllModules           ports/devel/p5-Test-UseAllModules
 p5-Test-WWW-Mechanize           ports/devel/p5-Test-WWW-Mechanize
+p5-Test-WWW-Mechanize-CGIApp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
 p5-Test-WWW-Mechanize-Catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-Test-Warn                    ports/devel/p5-Test-Warn
 p5-Test-XML                     ports/devel/p5-Test-XML
@@ -13397,6 +13404,7 @@ p5-config-std                   ports/devel/p5-Config-Std
 p5-config-tiny                  ports/devel/p5-Config-Tiny
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
+p5-constant-lexical             ports/devel/p5-constant-lexical
 p5-contextual-return            ports/devel/p5-Contextual-Return
 p5-continuity                   ports/www/p5-Continuity
 p5-convert-ascii-armour         ports/converters/p5-Convert-ASCII-Armour
@@ -13503,6 +13511,7 @@ p5-crypt-x509                   ports/security/p5-Crypt-X509
 p5-crypt-xdbm_file              ports/security/p5-Crypt-xDBM_File
 p5-csp                          ports/security/p5-CSP
 p5-css                          ports/textproc/p5-CSS
+p5-css-dom                      ports/www/p5-CSS-DOM
 p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
 p5-css-sac                      ports/textproc/p5-CSS-SAC
 p5-css-squish                   ports/textproc/p5-CSS-Squish
@@ -14664,6 +14673,7 @@ p5-module-scandeps              ports/devel/p5-Module-ScanDeps
 p5-module-signature             ports/security/p5-Module-Signature
 p5-module-starter               ports/devel/p5-Module-Starter
 p5-module-starter-pbp           ports/devel/p5-Module-Starter-PBP
+p5-module-starter-plugin-simplestore  ports/devel/p5-Module-Starter-Plugin-SimpleStore
 p5-module-util                  ports/devel/p5-Module-Util
 p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
@@ -15376,6 +15386,7 @@ p5-string-similarity            ports/devel/p5-String-Similarity
 p5-string-strip                 ports/textproc/p5-String-Strip
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
 p5-sub-current                  ports/devel/p5-Sub-Current
+p5-sub-delete                   ports/devel/p5-Sub-Delete
 p5-sub-exporter                 ports/devel/p5-Sub-Exporter
 p5-sub-identify                 ports/devel/p5-Sub-Identify
 p5-sub-install                  ports/devel/p5-Sub-Install
@@ -15557,6 +15568,7 @@ p5-test-useallmodules           ports/devel/p5-Test-UseAllModules
 p5-test-warn                    ports/devel/p5-Test-Warn
 p5-test-www-mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-test-www-mechanize-catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
+p5-test-www-mechanize-cgiapp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
 p5-test-xml                     ports/devel/p5-Test-XML
 p5-test-xml-valid               ports/devel/p5-Test-XML-Valid
 p5-test-yaml-meta               ports/devel/p5-Test-YAML-Meta
@@ -19428,6 +19440,7 @@ rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
+rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-spreadsheet-excel       ports/textproc/rubygem-spreadsheet-excel
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
@@ -20142,6 +20155,7 @@ spigot                          ports/multimedia/spigot
 spike-proxy                     ports/security/spike-proxy
 spim                            ports/emulators/spim
 spin                            ports/devel/spin
+spindown                        ports/sysutils/spindown
 spinner                         ports/sysutils/spinner
 spip                            ports/www/spip
 spiralloops                     ports/audio/spiralloops
@@ -22259,6 +22273,7 @@ xf86rushproto                   ports/x11/xf86rushproto
 xf86vidmodeproto                ports/x11/xf86vidmodeproto
 xface.el                        ports/graphics/xface.el
 xfaces                          ports/mail/xfaces
+xfburn                          ports/sysutils/xfburn
 xfc                             ports/devel/xfc
 xfce                            ports/x11-wm/xfce
 xfce4                           ports/x11-wm/xfce4
@@ -22492,6 +22507,7 @@ xmlsec1                         ports/security/xmlsec1
 xmlstarlet                      ports/textproc/xmlstarlet
 xmltex                          ports/print/xmltex
 xmlto                           ports/textproc/xmlto
+xmltooling                      ports/devel/xmltooling
 xmlwrapp                        ports/textproc/xmlwrapp
 xmmix                           ports/audio/xmmix
 xmms                            ports/multimedia/xmms
