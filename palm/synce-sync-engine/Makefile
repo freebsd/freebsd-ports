@@ -6,6 +6,7 @@
 
 PORTNAME?=	sync-engine
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES?=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
@@ -18,7 +19,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/pyrtfcomp.so:${PORTSDIR}/archivers/py-librtfcomp \
-		${PYTHON_SITELIBDIR}/pywbxml.so:${PORTSDIR}/textproc/py-wbxml \
 		${PYTHON_SITELIBDIR}/pyrra.so:${PORTSDIR}/palm/py-synce-librra \
 		${PYTHON_SITELIBDIR}/pyrapi2.so:${PORTSDIR}/palm/py-synce-librapi2
 
