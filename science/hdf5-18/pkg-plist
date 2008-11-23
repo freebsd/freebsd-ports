@@ -37,7 +37,6 @@ include/H5Epublic.h
 include/H5Exception.h
 include/H5FDcore.h
 include/H5FDfamily.h
-include/H5FDgass.h
 include/H5FDlog.h
 include/H5FDmpi.h
 include/H5FDmpio.h
@@ -45,7 +44,6 @@ include/H5FDmpiposix.h
 include/H5FDmulti.h
 include/H5FDpublic.h
 include/H5FDsec2.h
-include/H5FDsrb.h
 include/H5FDstdio.h
 include/H5FaccProp.h
 include/H5FcreatProp.h
@@ -148,7 +146,6 @@ lib/libhdf5_hl.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/h5_reference.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/h5_select.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/h5_write.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/ph5example.c
 %%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/attrexample.f90
 %%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/compound.f90
 %%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/dsetexample.f90
