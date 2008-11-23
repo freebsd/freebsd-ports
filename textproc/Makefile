@@ -625,6 +625,7 @@
     SUBDIR += p5-Text-Similarity
     SUBDIR += p5-Text-SimpleTable
     SUBDIR += p5-Text-SimpleTemplate
+    SUBDIR += p5-Text-SpellChecker
     SUBDIR += p5-Text-Striphigh
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Tabs+Wrap
