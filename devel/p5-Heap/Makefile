@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl extensions for keeping data partially sorted
 
 PERL_CONFIGURE=	yes
