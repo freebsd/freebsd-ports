@@ -1,6 +1,16 @@
---- execinfo.c.orig	Sun Jul 18 22:21:09 2004
-+++ execinfo.c	Wed Feb  9 16:56:51 2005
-@@ -78,7 +78,6 @@
+--- execinfo.c.orig
++++ execinfo.c
+@@ -69,7 +69,8 @@
+ char **
+ backtrace_symbols(void *const *buffer, int size)
+ {
+-    int i, clen, alen, offset;
++    size_t clen, alen;
++    int i, offset;
+     char **rval;
+     char *cp;
+     Dl_info info;
+@@ -78,7 +79,6 @@
      rval = malloc(clen);
      if (rval == NULL)
          return NULL;
@@ -8,7 +18,7 @@
      for (i = 0; i < size; i++) {
          if (dladdr(buffer[i], &info) != 0) {
              if (info.dli_sname == NULL)
-@@ -92,14 +91,14 @@
+@@ -92,14 +92,14 @@
                     2 +                      /* " <" */
                     strlen(info.dli_sname) + /* "function" */
                     1 +                      /* "+" */
@@ -25,7 +35,7 @@
                buffer[i], info.dli_sname, offset, info.dli_fname);
          } else {
              alen = 2 +                      /* "0x" */
-@@ -108,11 +107,14 @@
+@@ -108,12 +108,15 @@
              rval = realloc_safe(rval, clen + alen);
              if (rval == NULL)
                  return NULL;
@@ -37,9 +47,10 @@
 +        rval[i] = (char *) clen;
 +        clen += alen;
      }
-+
-+    for (i = 0; i < size; i++)
-+        rval[i] += (int) rval;
  
++    for (i = 0; i < size; i++)
++        rval[i] += (long) rval;
++
      return rval;
  }
+ 
