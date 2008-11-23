@@ -7,7 +7,7 @@
 
 PORTNAME=	workplace
 PORTVERSION=	1.0.a3
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -32,13 +32,15 @@ do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/workplace ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/include/X11/pixmaps
 	@ ${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps
-	@ ${MKDIR} ${PREFIX}/share/doc/workplace
 .if !defined(NOPORTDOCS)
 .for file in AUTHORS INSTALL README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/workplace
+	@ ${MKDIR} ${PREFIX}/share/doc/workplace
+	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	@ ${MKDIR} ${PREFIX}/share/examples/workplace
-	@ ${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/share/examples/workplace
+.if !defined(NOPORTEXAMPLES)
+	@ ${MKDIR} ${EXAMPLESDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>

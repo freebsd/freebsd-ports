@@ -61,12 +61,12 @@ include/X11/pixmaps/WWW.xpm
 include/X11/pixmaps/Window.xpm
 include/X11/pixmaps/Write.xpm
 include/X11/pixmaps/WriteMail.xpm
-share/doc/workplace/AUTHORS
-share/doc/workplace/INSTALL
-share/doc/workplace/README
-share/doc/workplace/TODO
-share/examples/workplace/WPPref
-share/examples/workplace/WPSuffix
-@dirrm share/doc/workplace
-@dirrm share/examples/workplace
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WPPref
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/WPSuffix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry include/X11/pixmaps
