@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTVERSION=	0.9.14
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
