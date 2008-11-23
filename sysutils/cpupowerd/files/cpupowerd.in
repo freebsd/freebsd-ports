@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: cpupowerd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: nojail
+#
+# Add the following line to /etc/rc.conf[.local] to enable cpupowerd
+#
+# cpupowerd_enable (bool):      Set to "NO" by default.
+#                               Set it to "YES" to enable cpupowerd.
+# cpupowerd_config (str):       Custom config file for cpupowerd.
+#                               (default /usr/local/etc/cpupowerd.conf)
+# cpupowerd_flags (str):        Custom additional arguments to be passed
+#                               to cpupowerd (default -d -c cpupowerd.conf).
+#
+
+. %%RC_SUBR%%
+
+name="cpupowerd"
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+if [ ! -c "/dev/cpu0" -a ! -c "/dev/cpuctl0" ]; then
+    kldload cpu
+fi
+
+# set default
+: ${cpupowerd_enable="NO"}
+: ${cpupowerd_config="%%PREFIX%%/etc/cpupowerd.conf"}
+: ${cpupowerd_flags=""}
+
+command_args="-d -c ${cpupowerd_config} ${cpupowerd_flags}"
+
+run_rc_command "$1"

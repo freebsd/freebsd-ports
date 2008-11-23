@@ -1,0 +1,7 @@
+A daemon which controls the frequency and voltage of CPUs.
+
+This userland program adjusts the frequency and voltage
+according to the CPUs load. Its capabilities include
+overvolting as well as undervolting.
+
+WWW: http://cpupowerd.sourceforge.net/

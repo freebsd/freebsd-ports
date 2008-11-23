@@ -115,6 +115,7 @@
     SUBDIR += cpdup
     SUBDIR += cpu
     SUBDIR += cpuburn
+    SUBDIR += cpupowerd
     SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += cromwell
