@@ -24,15 +24,23 @@ USE_XORG=	x11
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	6.8.3
 SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		SUBDIR=${SUBDIR}
+
+.ifndef (NOPORTDOCS)
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX}
 
 do-build:
 	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} register --gen-script
+.ifndef (NOPORTDOCS)
+	cd ${WRKSRC} && ${CABALCMD} haddock
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${CABALCMD} install

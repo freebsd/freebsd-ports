@@ -137,8 +137,153 @@
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/XUtils.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSxmonad-contrib-%%PORTVERSION%%.a
 %%SUBDIR%%/register.sh
-share/doc/xmonad-contrib-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/xmonad-contrib-%%PORTVERSION%%
+%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Commands.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-ConstrainedResize.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-CopyWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-CycleRecentWS.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-CycleSelectedLayouts.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-CycleWS.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-DeManage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-DwmPromote.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-DynamicWorkspaces.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-FindEmptyWorkspace.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-FlexibleManipulate.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-FlexibleResize.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-FloatKeys.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-FocusNth.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-MouseGestures.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-MouseResize.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-NoBorders.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-PerWorkspaceKeys.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Plane.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Promote.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-RotSlaves.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Search.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-SimpleDate.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-SinkAll.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Submap.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-SwapWorkspaces.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-TagWindows.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-UpdatePointer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-Warp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-WindowBringer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-WindowGo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Actions-WindowNavigation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Arossato.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Desktop.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Droundy.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Gnome.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Kde.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-PlainConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Sjanssen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config-Xfce.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Doc-Configuring.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Doc-Developing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Doc-Extending.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Doc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-DynamicHooks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-DynamicLog.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-EventHook.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-EwmhDesktops.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-FadeInactive.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-ManageDocks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-ManageHelpers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-Script.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-ServerMode.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-SetWMName.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-UrgencyHook.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Hooks-XPropManage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Accordion.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-BoringWindows.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Circle.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Combo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Decoration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-DecorationMadness.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Dishes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-DragPane.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-DwmStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Gaps.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Grid.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-HintedGrid.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-HintedTile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-IM.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-LayoutCombinators.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-LayoutHints.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-LayoutModifier.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-LayoutScreens.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-MagicFocus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Magnifier.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Master.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Maximize.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-MosaicAlt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-MultiToggle-Instances.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-MultiToggle.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Named.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-NoBorders.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-PerWorkspace.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Reflect.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-ResizableTile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-ResizeScreen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Roledex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-ShowWName.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-SimpleDecoration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-SimpleFloat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Simplest.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-SimplestFloat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Spiral.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Square.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-StackTile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-TabBarDecoration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-Tabbed.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-ThreeColumns.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-ToggleLayouts.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-TwoPane.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-WindowArranger.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-WindowNavigation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout-WorkspaceDir.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-AppLauncher.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-AppendFile.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-DirExec.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Directory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Email.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Input.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Layout.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Man.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-RunOrRaise.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Ssh.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Theme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Window.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-Workspace.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt-XMonad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Prompt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-CustomKeys.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Dmenu.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Dzen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-EZConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Font.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Invisible.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Loggers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-NamedWindows.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Run.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Scratchpad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Themes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-Timer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-WindowProperties.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-WorkspaceCompare.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-XSelection.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Util-XUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
+%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/xmonad-contrib.haddock
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/MultiToggle
@@ -149,7 +294,7 @@ share/doc/xmonad-contrib-%%PORTVERSION%%/LICENSE
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%
-@dirrm lib/xmonad-contrib-%%PORTVERSION%%
+@dirrm %%SUBDIR%%
 @exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister xmonad-contrib
