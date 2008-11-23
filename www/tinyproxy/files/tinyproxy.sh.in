@@ -17,9 +17,12 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
+# Make sure the pidfile matches what's in the config file.
 : ${tinyproxy_enable="NO"}
+: ${tinyproxy_pidfile="/var/run/tinyproxy.pid"}
 : ${tinyproxy_config="%%PREFIX%%/etc/tinyproxy.conf"}
 
+pidfile=${tinyproxy_pidfile}
 command=%%PREFIX%%/sbin/tinyproxy
 command_args="-c $tinyproxy_config 2> /dev/null"
 
