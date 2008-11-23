@@ -265,6 +265,9 @@
 %%WWWDIR%%/etc/curl-ca-bundle.crt
 %%WWWDIR%%/etc/database_action.xml
 %%WWWDIR%%/etc/dist.conf.php
+%%WWWDIR%%/etc/permanentcache/cache_adnetworks_getcategories.bin
+%%WWWDIR%%/etc/permanentcache/cache_adnetworks_getcountries.bin
+%%WWWDIR%%/etc/permanentcache/cache_adnetworks_getlanguages.bin
 %%WWWDIR%%/etc/sim.conf.php
 %%WWWDIR%%/etc/tables_core.xml
 %%WWWDIR%%/etc/tables_temp_priority.xml
@@ -2972,8 +2975,8 @@
 %%WWWDIR%%/www/admin/account-settings-geotargeting.php
 %%WWWDIR%%/www/admin/account-settings-index.php
 %%WWWDIR%%/www/admin/account-settings-maintenance.php
-%%WWWDIR%%/www/admin/account-settings-synchronisation.php
 %%WWWDIR%%/www/admin/account-settings-tracking.php
+%%WWWDIR%%/www/admin/account-settings-update.php
 %%WWWDIR%%/www/admin/account-settings-user-interface.php
 %%WWWDIR%%/www/admin/account-switch.php
 %%WWWDIR%%/www/admin/account-user-email.php
@@ -3368,6 +3371,7 @@
 %%WWWDIR%%/www/admin/assets/images/icon-tracker.gif
 %%WWWDIR%%/www/admin/assets/images/icon-warning.gif
 %%WWWDIR%%/www/admin/assets/images/icon-weekly.gif
+%%WWWDIR%%/www/admin/assets/images/icon-x-grey.gif
 %%WWWDIR%%/www/admin/assets/images/icon-x.gif
 %%WWWDIR%%/www/admin/assets/images/icon-zone-click-d.gif
 %%WWWDIR%%/www/admin/assets/images/icon-zone-click.gif
@@ -3493,7 +3497,6 @@
 %%WWWDIR%%/www/admin/assets/images/triangle-u.gif
 %%WWWDIR%%/www/admin/assets/images/warning.gif
 %%WWWDIR%%/www/admin/assets/images/watermark.gif
-%%WWWDIR%%/www/admin/assets/images/watermark.png
 %%WWWDIR%%/www/admin/assets/js/boxrow.js
 %%WWWDIR%%/www/admin/assets/js/datecheck.js
 %%WWWDIR%%/www/admin/assets/js/formValidation.js
