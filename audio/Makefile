@@ -399,6 +399,7 @@
     SUBDIR += lmms
     SUBDIR += lpac
     SUBDIR += lplayer
+    SUBDIR += lv2core
     SUBDIR += mac
     SUBDIR += mad
     SUBDIR += madman
