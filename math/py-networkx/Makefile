@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-PORTVERSION=	0.36
+PORTVERSION=	0.99
 CATEGORIES=	math python
 MASTER_SITES=	https://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -14,13 +14,22 @@ MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Tools for complex network
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%DOCSDIR%%,${DOCSDIR},' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},' ${WRKSRC}/setup.py
+USE_PYDISTUTILS=	easy_install
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples \
+		&& ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
+.endif
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.txt ${DOCSDIR}
+.endif
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
