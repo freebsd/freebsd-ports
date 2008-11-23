@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	postmarkup
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.4
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ COMMENT=	A library to parse the BBcode written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_ZIP=	yes
+#USE_ZIP=	yes
 
 .include <bsd.port.mk>
