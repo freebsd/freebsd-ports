@@ -1993,6 +1993,7 @@
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Structures_DataGrid
+    SUBDIR += pear-Structures_DataGrid_Renderer_HTMLTable
     SUBDIR += pear-Structures_DataGrid_Renderer_XUL
     SUBDIR += pear-System_Command
     SUBDIR += pear-Testing_Selenium
