@@ -386,6 +386,7 @@
     SUBDIR += pear-MDB_QueryTool
     SUBDIR += pear-Structures_DataGrid_DataSource_Array
     SUBDIR += pear-Structures_DataGrid_DataSource_CSV
+    SUBDIR += pear-Structures_DataGrid_DataSource_DB
     SUBDIR += pear-Structures_DataGrid_DataSource_DBQuery
     SUBDIR += pear-Structures_DataGrid_DataSource_DBTable
     SUBDIR += pear-Structures_DataGrid_DataSource_DataObject
