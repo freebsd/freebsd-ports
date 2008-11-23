@@ -10,11 +10,28 @@ bin/xmonad
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/StackSet.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSxmonad-%%PORTVERSION%%.a
 %%SUBDIR%%/register.sh
-share/doc/xmonad-%%PORTVERSION%%/LICENSE
-@dirrm share/doc/xmonad-%%PORTVERSION%%
+%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Config.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Core.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Layout.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Main.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-ManageHook.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-Operations.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad-StackSet.html
+%%PORTDOCS%%%%DOCSDIR%%/html/XMonad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doc-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock-util.js
+%%PORTDOCS%%%%DOCSDIR%%/html/haddock.css
+%%PORTDOCS%%%%DOCSDIR%%/html/haskell_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/minus.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/plus.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/xmonad.haddock
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%
-@dirrm lib/xmonad-%%PORTVERSION%%
+@dirrm %%SUBDIR%%
 @exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister xmonad
