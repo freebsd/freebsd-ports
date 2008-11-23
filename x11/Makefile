@@ -129,6 +129,7 @@
     SUBDIR += gxset
     SUBDIR += hotwire-shell
     SUBDIR += hs-x11-ghc
+    SUBDIR += hs-x11-xft-ghc
     SUBDIR += iceauth
     SUBDIR += ico
     SUBDIR += idesk
