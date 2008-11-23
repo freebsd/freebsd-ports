@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.org/projects/3/files/ \
@@ -23,17 +23,16 @@ RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_BZIP2=	yes
 USE_XORG=	xft xpm x11
+USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \
 		--enable-image-png --disable-debug \
 		--disable-pedantic --enable-menus --enable-harbour
-CFLAGS+=	-DICONV_CONST
+CFLAGS+=	-DICONV_CONST -I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 MAN1=		pekwm.1
 MANCOMPRESSED=	no
-
-post-configure:
-	@${REINPLACE_CMD} 's|-lX11|-liconv -lX11|' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
