@@ -1,0 +1,8 @@
+%%SITE_PERL%%/IO/TieCombine.pm
+%%SITE_PERL%%/IO/TieCombine/Handle.pm
+%%SITE_PERL%%/IO/TieCombine/Scalar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/TieCombine/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/TieCombine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO/TieCombine
+@dirrmtry %%SITE_PERL%%/IO
