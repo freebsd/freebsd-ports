@@ -1,0 +1,15 @@
+=============================================================================
+
+cpupowerd was installed.
+
+To generate a safe dafault config for you cpu you can use the "-a" or
+"--autoconfig" switch.
+
+cpupowerd -a /usr/local/etc/cpupowerd.conf
+
+Please follow the README to customize this values for your CPU but be
+carefully because you can REALLY DAMAGE YOUR CPU with that!
+
+Please, report any problems to maintainer. Thanks!
+
+=============================================================================
