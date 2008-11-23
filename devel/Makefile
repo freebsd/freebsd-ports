@@ -1404,6 +1404,7 @@
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Tee
+    SUBDIR += p5-IO-TieCombine
     SUBDIR += p5-IO-Toolkit
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-Util
