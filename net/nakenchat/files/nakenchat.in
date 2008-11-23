@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: nakenchat
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable nakenchat:
+#
+# nakenchat_enable (bool):             Set it to "YES" to enable nakenchat.
+#                              Default is "NO".
+#
+
+. /etc/rc.subr
+
+name="nakenchat"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${nakenchat_enable="NO"}
+
+command=/usr/local/bin/nakenchat
+command_args="&"
+
+run_rc_command "$1"
