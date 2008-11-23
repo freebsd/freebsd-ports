@@ -8,9 +8,10 @@
 PORTNAME=	calife
 PORTVERSION=	3.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://frmug.org/pub/calife/ \
-		http://www.keltia.net/download/
-DISTNAME=	calife-3.0pre6
+MASTER_SITES=	ftp://postfix.eu.org/pub/calife/ \
+		http://www.keltia.net/download/ \
+		http://dev.keltia.net/attachments/download/4/
+DISTNAME=	calife-3.0
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
