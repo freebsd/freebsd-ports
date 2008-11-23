@@ -13,7 +13,7 @@ MASTER_SITES=	http://pylonshq.com/download/0.9.5/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pylons-${PORTVERSION}
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	magik@back-up.pl
 COMMENT=	Pylons Web Framework
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
