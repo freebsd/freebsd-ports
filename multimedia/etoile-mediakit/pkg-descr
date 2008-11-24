@@ -1,0 +1,5 @@
+This is a work-in-progress replacement for MultimediaKit.  It currently only
+plays music files. It uses OSS for sound output and libavcodec / libavformat for
+file parsing.
+
+WWW: http://www.etoile-project.org/
