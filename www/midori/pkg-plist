@@ -1,9 +1,31 @@
 bin/midori
-share/applications/midori.desktop
-share/locale/de/LC_MESSAGES/midori.mo
-share/locale/fr/LC_MESSAGES/midori.mo
-share/locale/pl/LC_MESSAGES/midori.mo
-share/locale/sv/LC_MESSAGES/midori.mo
+%%NLS%%share/applications/midori.desktop
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+share/icons/hicolor/16x16/apps/midori.png
+share/icons/hicolor/16x16/categories/extension.png
+share/icons/hicolor/16x16/status/news-feed.png
+share/icons/hicolor/22x22/apps/midori.png
+share/icons/hicolor/22x22/categories/extension.png
+share/icons/hicolor/22x22/status/news-feed.png
+share/icons/hicolor/32x32/apps/midori.png
+share/icons/hicolor/32x32/categories/extension.png
+share/icons/hicolor/32x32/status/news-feed.png
+share/icons/hicolor/48x48/apps/midori.png
+share/icons/hicolor/48x48/categories/extension.png
+share/icons/hicolor/48x48/status/news-feed.png
+%%NLS%%share/locale/de/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/es/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/et/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/midori.mo
+share/midori/logo-shade.png
+@dirrm share/midori
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm %%DOCSDIR%%
