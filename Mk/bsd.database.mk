@@ -435,13 +435,15 @@ USE_FIREBIRD=	${WITH_FIREBIRD_VER}
 .endif
 
 .if ${USE_FIREBIRD:L} == "yes"
-FIREBIRD_VER=	2
+FIREBIRD_VER=	20
 .else
 FIREBIRD_VER=	${USE_FIREBIRD}
 .endif
 
 .if ${FIREBIRD_VER} == "2"
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird2-client
+LIB_DEPENDS+=	fbclient.2.0:${PORTSDIR}/databases/firebird20-client
+.if ${FIREBIRD_VER} == "20"
+LIB_DEPENDS+=	fbclient.2.0:${PORTSDIR}/databases/firebird20-client
 .elif ${FIREBIRD_VER} == "1"
 LIB_DEPENDS+=	fbclient.1:${PORTSDIR}/databases/firebird-client
 .else

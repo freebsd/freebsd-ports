@@ -17,7 +17,7 @@ DISTNAME=	Firebird-2.0.3.12981-1
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
-LATEST_LINK=	${PORTNAME}2${PKGNAMESUFFIX}
+LATEST_LINK=	${PORTNAME}20${PKGNAMESUFFIX}
 
 USE_BISON=	build
 USE_BZIP2=	yes
@@ -40,13 +40,14 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS=	firebird-client-1* firebird-server-1*
+CONFLICTS=	firebird-client-1* firebird-server-1* \
+		firebird-client-2.1* firebird-server-2.1*
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird2-client
+LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird20-client
 
 AUTOGENARGS=	--with-lock-manager
 
@@ -201,12 +202,15 @@ do-install:
 		${WRKSRC}/gen/firebird/lib/libfbembed.so.${PORTVERSION} \
 		${PREFIX}/lib
 
+	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so.2.0
 	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so.2
 	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so
 
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so.2.0
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so.2
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so
 
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libgds.so.2.0
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libgds.so.2
 	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libgds.so
 

@@ -34,7 +34,7 @@ MAN1=		flamerobin.1
 .if defined(WITH_FIREBIRD)
 LIB_DEPENDS+=	fbclient.1:${PORTSDIR}/databases/firebird-client
 .else
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird2-client
+LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
 .endif
 
 .if exists(${WX_CONFIG})
