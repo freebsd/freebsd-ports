@@ -11,7 +11,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -53,7 +53,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-dlgui
 .endif
 
-CONFLICTS=	dillo-i18n-*[0-9]*
+CONFLICTS=	dillo-i18n-*[0-9]* \
+		dillo-[2-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
