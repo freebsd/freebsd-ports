@@ -1,0 +1,26 @@
+bin/nathive
+%%DATADIR%%/cfg/cfg.xml
+%%DATADIR%%/img/about.png
+%%DATADIR%%/img/brush.png
+%%DATADIR%%/img/circle.png
+%%DATADIR%%/img/icon.png
+%%DATADIR%%/img/mask.png
+%%DATADIR%%/img/picker.png
+%%DATADIR%%/img/select.png
+%%DATADIR%%/img/square.png
+%%DATADIR%%/lang/chinese.xml
+%%DATADIR%%/lang/english.xml
+%%DATADIR%%/lang/german.xml
+%%DATADIR%%/lang/hungarian.xml
+%%DATADIR%%/lang/polish.xml
+%%DATADIR%%/lang/spanish.xml
+%%DATADIR%%/palettes/01.xml
+%%DATADIR%%/palettes/02.xml
+%%DATADIR%%/text/credits
+%%DATADIR%%/text/license
+@dirrm %%DATADIR%%/text
+@dirrm %%DATADIR%%/palettes
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/cfg
+@dirrm %%DATADIR%%

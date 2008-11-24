@@ -478,6 +478,7 @@
     SUBDIR += multivideo
     SUBDIR += mxp
     SUBDIR += mypaint
+    SUBDIR += nathive
     SUBDIR += netpbm
     SUBDIR += netpbm-devel
     SUBDIR += nip2
