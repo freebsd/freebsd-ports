@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="910486d5-ba4d-11dd-8f23-0019666436c2">
+    <topic>imlib2 -- XPM processing buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>imlib2</name>
+	<name>imlib2-nox11</name>
+	<range><lt>1.4.1.000_1,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/Advisories/32796/">
+	  <p>A vulnerability has been discovered in imlib2, which can
+	    be exploited by malicious people to potentially compromise
+	    an application using the library.</p>
+	  <p>The vulnerability is caused due to a pointer arithmetic
+	    error within the "load()" function provided by the XPM
+	    loader. This can be exploited to cause a heap-based buffer
+	    overflow via a specially crafted XPM file.</p>
+	  <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>32371</bid>
+      <cvename>CVE-2008-5187</cvename>
+      <url>http://secunia.com/Advisories/32796/</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=505714#15</url>
+      <url>http://bugzilla.enlightenment.org/show_bug.cgi?id=547</url>
+    </references>
+    <dates>
+      <discovery>2008-11-20</discovery>
+      <entry>2008-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d4caee0-b939-11dd-a578-0030843d3802">
     <topic>streamripper -- multiple buffer overflows</topic>
     <affects>
