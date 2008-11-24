@@ -320,6 +320,7 @@
     SUBDIR += etl
     SUBDIR += etoile-collectionkit
     SUBDIR += etoile-foundation
+    SUBDIR += etoile-serialize
     SUBDIR += etoile-unitkit
     SUBDIR += eventxx
     SUBDIR += evfs

@@ -1,0 +1,33 @@
+Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize
+Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize.framework
+Local/Library/Frameworks/EtoileSerialize.framework/Headers
+Local/Library/Frameworks/EtoileSerialize.framework/Resources
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/EtoileSerialize
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ESProxy.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializer.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackend.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackendBinary.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectStore.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializer.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackend.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendBinary.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendExample.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendXML.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerNullBackend.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETUtility.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/EtoileSerialize.h
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%MAJORVERSION%%
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%LIBVERSION%%
+Local/Library/Frameworks/EtoileSerialize.framework/Versions/Current
+Local/Library/Frameworks/EtoileSerialize.framework/libEtoileSerialize.so
+Local/Library/Headers/EtoileSerialize
+Local/Library/Libraries/libEtoileSerialize.so
+Local/Library/Libraries/libEtoileSerialize.so.%%MAJORVERSION%%
+Local/Library/Libraries/libEtoileSerialize.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%
+@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions
+@dirrm Local/Library/Frameworks/EtoileSerialize.framework
