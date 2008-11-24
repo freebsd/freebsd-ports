@@ -6,23 +6,35 @@
 #    $MCom: ports/www/midori/Makefile,v 1.3 2008/03/21 18:31:39 ahze Exp $
 
 PORTNAME=	midori
-PORTVERSION=	0.0.18
-PORTREVISION=	2
+PORTVERSION=	0.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://software.twotoasts.de/media/${PORTNAME}/
+MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
-LIB_DEPENDS=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2 \
-		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
+LIB_DEPENDS=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		rsvg-convert:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/WebKit/webkit -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+CONFIGURE_ARGS+=--disable-unique \
+		--disable-gio \
+		--disable-sqlite
 
-pre-install:
-	${CHMOD} +x ${WRKSRC}/install-sh
+HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_GNOME=	glib20 gtk20 intltool libxml2 pkgconfig
+INSTALLS_ICONS=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
