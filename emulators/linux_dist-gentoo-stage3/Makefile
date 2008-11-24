@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	2006.0
-PORTREVISION=	2
+PORTVERSION=	2008.0
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
@@ -44,7 +43,15 @@ PREFIX_SUBDIR=	${PORTNAME}/
 
 .include <bsd.port.pre.mk>
 
-.if (${GENTOO_OPTIMIZED} == "i586" || ${GENTOO_OPTIMIZED} == "i686")
+LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+
+.if ${LINUX_OSRELEASE}x == "x"
+IGNORE=			linuxulator is not (kld)loaded
+.elif ${LINUX_OSRELEASE} == "2.4.2"
+IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
+.endif
+
+.if (${GENTOO_OPTIMIZED} == "i686")
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
 DISTNAME=	stage3-${GENTOO_OPTIMIZED}-${PORTVERSION}
 .else
@@ -77,7 +84,7 @@ pre-fetch:
 	@${ECHO_MSG} "You can select your processor class for installing optimized"
 	@${ECHO_MSG} "Gentoo binaries with setting this knob"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "GENTOO_OPTIMIZED=[x86|i586|i686]."
+	@${ECHO_MSG} "GENTOO_OPTIMIZED=[x86|i686]."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default is x86 for 386/486 compatibility."
 
@@ -95,5 +102,13 @@ do-install:
 		| ${GREP} ELF | ${CUT} -d : -f 1 | ${XARGS} ${BRANDELF} -t Linux
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
+
+plist:
+	${TOUCH} pkg-plist.new
+	${FIND} /usr/local/gentoo-stage3 -type f -o -type l | ${SORT} | \
+		${SED} 's|/usr/local/gentoo-stage3/|%%PREFIX_SUBDIR%%|g' >>pkg-plist.new
+	${FIND} /usr/local/gentoo-stage3 -type d | ${SORT} -r | \
+		${SED} 's|/usr/local/gentoo-stage3/|@dirrm %%PREFIX_SUBDIR%%|g' >>pkg-plist.new
+	${ECHO_CMD} "@dirrmtry %%PREFIX_SUBDIR%%" >>pkg-plist.new
 
 .include <bsd.port.post.mk>
