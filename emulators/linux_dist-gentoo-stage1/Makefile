@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gentoo-stage1
-PORTVERSION=	2006.0
-PORTREVISION=	3
+PORTVERSION=	2008.0
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
@@ -44,8 +43,12 @@ PREFIX_SUBDIR=	${PORTNAME}/
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "amd64")
-LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
+LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+
+.if ${LINUX_OSRELEASE}x == "x"
+IGNORE=			linuxulator is not (kld)loaded
+.elif ${LINUX_OSRELEASE} == "2.4.2"
+IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
 do-extract:
@@ -85,5 +88,14 @@ do-install:
 		| ${XARGS} ${BRANDELF} -t Linux
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
+
+plist:
+	${TOUCH} pkg-plist.new
+	${FIND} /usr/local/gentoo-stage1 -type f -o -type l | ${SORT} | \
+		${SED} 's|/usr/local/gentoo-stage1/|%%PREFIX_SUBDIR%%|g' >>pkg-plist.new
+	${FIND} /usr/local/gentoo-stage1 -type d | ${SORT} -r | \
+		${SED} 's|/usr/local/gentoo-stage1/|@dirrm %%PREFIX_SUBDIR%%|g' >>pkg-plist.new
+	${ECHO_CMD} "@dirrmtry %%PREFIX_SUBDIR%%" >>pkg-plist.new
+	${MV} pkg-plist.new pkg-plist
 
 .include <bsd.port.post.mk>
