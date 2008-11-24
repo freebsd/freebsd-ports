@@ -33,6 +33,7 @@
     SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += compaq-cc
+    SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cu-prolog
     SUBDIR += cython
