@@ -1,0 +1,8 @@
+This collection of classes is used by CoreObject to perform serialization
+and deserialization of arbitrary objects.
+
+So far, serialization and deserialization work for all simple types, object,
+selectors and classes. Arrays and structures are believed to work, however
+arrays containing structures and vice versa have not been tested.
+
+WWW: http://www.etoile-project.org/
