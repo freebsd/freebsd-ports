@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpnc
-PORTVERSION=	0.5.1
-PORTREVISION=	7
+PORTVERSION=	0.5.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		CRITICAL
