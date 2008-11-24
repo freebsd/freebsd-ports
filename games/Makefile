@@ -491,6 +491,7 @@
     SUBDIR += masterserver
     SUBDIR += memonix
     SUBDIR += meqcc
+    SUBDIR += meritous
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mindguard
