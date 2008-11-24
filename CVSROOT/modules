@@ -1738,6 +1738,7 @@ cproto                          ports/devel/cproto
 cpu                             ports/sysutils/cpu
 cpuburn                         ports/sysutils/cpuburn
 cpuid                           ports/misc/cpuid
+cpupowerd                       ports/sysutils/cpupowerd
 cqcam                           ports/graphics/cqcam
 crack                           ports/security/crack
 crack-attack                    ports/games/crack-attack
@@ -2252,6 +2253,7 @@ dnetc                           ports/misc/dnetc
 dnews                           ports/news/dnews
 dnrd                            ports/dns/dnrd
 dns-proxy-tor                   ports/security/dns-proxy-tor
+dns2tcp                         ports/dns/dns2tcp
 dns_balance                     ports/dns/dns_balance
 dns_mre                         ports/dns/dns_mre
 dnscap                          ports/dns/dnscap
@@ -2892,6 +2894,7 @@ etoile-extendedworkspacekit     ports/deskutils/etoile-extendedworkspacekit
 etoile-foundation               ports/devel/etoile-foundation
 etoile-hardware                 ports/deskutils/etoile-hardware
 etoile-iconkit                  ports/x11-themes/etoile-iconkit
+etoile-idle                     ports/x11/etoile-idle
 etoile-inspectorkit             ports/deskutils/etoile-inspectorkit
 etoile-installer                ports/sysutils/etoile-installer
 etoile-io                       ports/lang/etoile-io
@@ -3217,6 +3220,7 @@ firefox-devel                   ports/www/firefox-devel
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox3                        ports/www/firefox3
+firefox3-i18n                   ports/www/firefox3-i18n
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
 fireprofile                     ports/databases/fireprofile
@@ -5049,9 +5053,11 @@ hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
+hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
 hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
 hs-x11-ghc                      ports/x11/hs-x11-ghc
+hs-x11-xft-ghc                  ports/x11/hs-x11-xft-ghc
 hs-zlib                         ports/archivers/hs-zlib
 hsb-aspell                      ports/textproc/hsb-aspell
 hsetroot                        ports/graphics/hsetroot
@@ -10007,6 +10013,7 @@ p5-Catalyst-Plugin-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Plugin
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
+p5-Catalyst-Plugin-AutoRestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-Catalyst-Plugin-C3           ports/www/p5-Catalyst-Plugin-C3
 p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
@@ -11091,6 +11098,7 @@ p5-IO-Socket-Multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-IO-Socket-SSL                ports/security/p5-IO-Socket-SSL
 p5-IO-String                    ports/devel/p5-IO-String
 p5-IO-Tee                       ports/devel/p5-IO-Tee
+p5-IO-TieCombine                ports/devel/p5-IO-TieCombine
 p5-IO-Toolkit                   ports/devel/p5-IO-Toolkit
 p5-IO-Tty                       ports/devel/p5-IO-Tty
 p5-IO-Util                      ports/devel/p5-IO-Util
@@ -12119,6 +12127,7 @@ p5-Sort-ArrayOfArrays           ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields                  ports/textproc/p5-Sort-Fields
 p5-Sort-Key                     ports/devel/p5-Sort-Key
 p5-Sort-Key-DateTime            ports/devel/p5-Sort-Key-DateTime
+p5-Sort-Key-IPv4                ports/net/p5-Sort-Key-IPv4
 p5-Sort-Key-Top                 ports/devel/p5-Sort-Key-Top
 p5-Sort-Maker                   ports/devel/p5-Sort-Maker
 p5-Sort-Naturally               ports/textproc/p5-Sort-Naturally
@@ -12409,6 +12418,7 @@ p5-Text-Shellwords              ports/textproc/p5-Text-Shellwords
 p5-Text-Similarity              ports/textproc/p5-Text-Similarity
 p5-Text-SimpleTable             ports/textproc/p5-Text-SimpleTable
 p5-Text-SimpleTemplate          ports/textproc/p5-Text-SimpleTemplate
+p5-Text-SpellChecker            ports/textproc/p5-Text-SpellChecker
 p5-Text-Striphigh               ports/textproc/p5-Text-Striphigh
 p5-Text-Table                   ports/textproc/p5-Text-Table
 p5-Text-Tabs+Wrap               ports/textproc/p5-Text-Tabs+Wrap
@@ -13125,6 +13135,7 @@ p5-catalyst-plugin-authentication-store-dbix-class  ports/www/p5-Catalyst-Plugin
 p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
+p5-catalyst-plugin-autorestart  ports/www/p5-Catalyst-Plugin-AutoRestart
 p5-catalyst-plugin-c3           ports/www/p5-Catalyst-Plugin-C3
 p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-catalyst-plugin-cache-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
@@ -14329,6 +14340,7 @@ p5-io-socket-ssl                ports/security/p5-IO-Socket-SSL
 p5-io-string                    ports/devel/p5-IO-String
 p5-io-stringy                   ports/devel/p5-IO-stringy
 p5-io-tee                       ports/devel/p5-IO-Tee
+p5-io-tiecombine                ports/devel/p5-IO-TieCombine
 p5-io-toolkit                   ports/devel/p5-IO-Toolkit
 p5-io-tty                       ports/devel/p5-IO-Tty
 p5-io-util                      ports/devel/p5-IO-Util
@@ -15322,6 +15334,7 @@ p5-sort-arrayofarrays           ports/devel/p5-Sort-ArrayOfArrays
 p5-sort-fields                  ports/textproc/p5-Sort-Fields
 p5-sort-key                     ports/devel/p5-Sort-Key
 p5-sort-key-datetime            ports/devel/p5-Sort-Key-DateTime
+p5-sort-key-ipv4                ports/net/p5-Sort-Key-IPv4
 p5-sort-key-top                 ports/devel/p5-Sort-Key-Top
 p5-sort-maker                   ports/devel/p5-Sort-Maker
 p5-sort-naturally               ports/textproc/p5-Sort-Naturally
@@ -15652,6 +15665,7 @@ p5-text-shellwords              ports/textproc/p5-Text-Shellwords
 p5-text-similarity              ports/textproc/p5-Text-Similarity
 p5-text-simpletable             ports/textproc/p5-Text-SimpleTable
 p5-text-simpletemplate          ports/textproc/p5-Text-SimpleTemplate
+p5-text-spellchecker            ports/textproc/p5-Text-SpellChecker
 p5-text-striphigh               ports/textproc/p5-Text-Striphigh
 p5-text-table                   ports/textproc/p5-Text-Table
 p5-text-tabs+wrap               ports/textproc/p5-Text-Tabs+Wrap
@@ -16403,6 +16417,7 @@ pear-Spreadsheet_Excel_Writer   ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Structures_DataGrid        ports/devel/pear-Structures_DataGrid
 pear-Structures_DataGrid_DataSource_Array  ports/databases/pear-Structures_DataGrid_DataSource_Array
 pear-Structures_DataGrid_DataSource_CSV  ports/databases/pear-Structures_DataGrid_DataSource_CSV
+pear-Structures_DataGrid_DataSource_DB  ports/databases/pear-Structures_DataGrid_DataSource_DB
 pear-Structures_DataGrid_DataSource_DBQuery  ports/databases/pear-Structures_DataGrid_DataSource_DBQuery
 pear-Structures_DataGrid_DataSource_DBTable  ports/databases/pear-Structures_DataGrid_DataSource_DBTable
 pear-Structures_DataGrid_DataSource_DataObject  ports/databases/pear-Structures_DataGrid_DataSource_DataObject
@@ -16411,8 +16426,15 @@ pear-Structures_DataGrid_DataSource_PDO  ports/databases/pear-Structures_DataGri
 pear-Structures_DataGrid_DataSource_RSS  ports/textproc/pear-Structures_DataGrid_DataSource_RSS
 pear-Structures_DataGrid_DataSource_XML  ports/textproc/pear-Structures_DataGrid_DataSource_XML
 pear-Structures_DataGrid_Renderer_CSV  ports/textproc/pear-Structures_DataGrid_Renderer_CSV
+pear-Structures_DataGrid_Renderer_Console  ports/devel/pear-Structures_DataGrid_Renderer_Console
+pear-Structures_DataGrid_Renderer_Flexy  ports/www/pear-Structures_DataGrid_Renderer_Flexy
+pear-Structures_DataGrid_Renderer_HTMLSortForm  ports/devel/pear-Structures_DataGrid_Renderer_HTMLSortForm
+pear-Structures_DataGrid_Renderer_HTMLTable  ports/devel/pear-Structures_DataGrid_Renderer_HTMLTable
+pear-Structures_DataGrid_Renderer_Pager  ports/www/pear-Structures_DataGrid_Renderer_Pager
+pear-Structures_DataGrid_Renderer_Smarty  ports/www/pear-Structures_DataGrid_Renderer_Smarty
 pear-Structures_DataGrid_Renderer_XLS  ports/textproc/pear-Structures_DataGrid_Renderer_XLS
 pear-Structures_DataGrid_Renderer_XML  ports/textproc/pear-Structures_DataGrid_Renderer_XML
+pear-Structures_DataGrid_Renderer_XUL  ports/devel/pear-Structures_DataGrid_Renderer_XUL
 pear-System_Command             ports/devel/pear-System_Command
 pear-Testing_Selenium           ports/devel/pear-Testing_Selenium
 pear-Text_Diff                  ports/devel/pear-Text_Diff
@@ -16665,15 +16687,23 @@ pear-structures_datagrid        ports/devel/pear-Structures_DataGrid
 pear-structures_datagrid_datasource_array  ports/databases/pear-Structures_DataGrid_DataSource_Array
 pear-structures_datagrid_datasource_csv  ports/databases/pear-Structures_DataGrid_DataSource_CSV
 pear-structures_datagrid_datasource_dataobject  ports/databases/pear-Structures_DataGrid_DataSource_DataObject
+pear-structures_datagrid_datasource_db  ports/databases/pear-Structures_DataGrid_DataSource_DB
 pear-structures_datagrid_datasource_dbquery  ports/databases/pear-Structures_DataGrid_DataSource_DBQuery
 pear-structures_datagrid_datasource_dbtable  ports/databases/pear-Structures_DataGrid_DataSource_DBTable
 pear-structures_datagrid_datasource_mdb2  ports/databases/pear-Structures_DataGrid_DataSource_MDB2
 pear-structures_datagrid_datasource_pdo  ports/databases/pear-Structures_DataGrid_DataSource_PDO
 pear-structures_datagrid_datasource_rss  ports/textproc/pear-Structures_DataGrid_DataSource_RSS
 pear-structures_datagrid_datasource_xml  ports/textproc/pear-Structures_DataGrid_DataSource_XML
+pear-structures_datagrid_renderer_console  ports/devel/pear-Structures_DataGrid_Renderer_Console
 pear-structures_datagrid_renderer_csv  ports/textproc/pear-Structures_DataGrid_Renderer_CSV
+pear-structures_datagrid_renderer_flexy  ports/www/pear-Structures_DataGrid_Renderer_Flexy
+pear-structures_datagrid_renderer_htmlsortform  ports/devel/pear-Structures_DataGrid_Renderer_HTMLSortForm
+pear-structures_datagrid_renderer_htmltable  ports/devel/pear-Structures_DataGrid_Renderer_HTMLTable
+pear-structures_datagrid_renderer_pager  ports/www/pear-Structures_DataGrid_Renderer_Pager
+pear-structures_datagrid_renderer_smarty  ports/www/pear-Structures_DataGrid_Renderer_Smarty
 pear-structures_datagrid_renderer_xls  ports/textproc/pear-Structures_DataGrid_Renderer_XLS
 pear-structures_datagrid_renderer_xml  ports/textproc/pear-Structures_DataGrid_Renderer_XML
+pear-structures_datagrid_renderer_xul  ports/devel/pear-Structures_DataGrid_Renderer_XUL
 pear-system_command             ports/devel/pear-System_Command
 pear-testing_selenium           ports/devel/pear-Testing_Selenium
 pear-text_diff                  ports/devel/pear-Text_Diff
@@ -16733,6 +16763,7 @@ pecl-filter                     ports/security/pecl-filter
 pecl-fribidi                    ports/converters/pecl-fribidi
 pecl-geoip                      ports/net/pecl-geoip
 pecl-gnupg                      ports/security/pecl-gnupg
+pecl-haru                       ports/print/pecl-haru
 pecl-hash                       ports/security/pecl-hash
 pecl-hidef                      ports/devel/pecl-hidef
 pecl-html_parse                 ports/textproc/pecl-html_parse
@@ -17094,6 +17125,7 @@ picard                          ports/audio/picard
 picasm                          ports/devel/picasm
 picmonger                       ports/news/PicMonger
 pico-alpine                     ports/editors/pico-alpine
+picocom                         ports/comms/picocom
 picp                            ports/devel/picp
 picprog                         ports/devel/picprog
 picturebook                     ports/graphics/picturebook
