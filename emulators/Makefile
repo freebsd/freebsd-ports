@@ -84,10 +84,8 @@
     SUBDIR += linux_base-f7
     SUBDIR += linux_base-f8
     SUBDIR += linux_base-gentoo-stage1
-    SUBDIR += linux_base-gentoo-stage2
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += linux_dist-gentoo-stage1
-    SUBDIR += linux_dist-gentoo-stage2
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += lisaem
     SUBDIR += loemu
