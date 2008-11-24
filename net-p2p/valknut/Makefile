@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	valknut
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
 
-LIB_DEPENDS=	dc.3:${PORTSDIR}/net-p2p/dclib \
+LIB_DEPENDS=	dc.4:${PORTSDIR}/net-p2p/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
