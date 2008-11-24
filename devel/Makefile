@@ -319,6 +319,7 @@
     SUBDIR += esvn
     SUBDIR += etl
     SUBDIR += etoile-collectionkit
+    SUBDIR += etoile-coreobject
     SUBDIR += etoile-foundation
     SUBDIR += etoile-serialize
     SUBDIR += etoile-unitkit
