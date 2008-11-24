@@ -18,6 +18,9 @@ COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
+EXPIRATION_DATE=	2009-02-24
+DEPRECATED=	no longer under development, please consider using Firebird2
+
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
