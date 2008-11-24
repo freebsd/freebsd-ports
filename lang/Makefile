@@ -54,6 +54,7 @@
     SUBDIR += erlang-doc
     SUBDIR += erlang-lite
     SUBDIR += etoile-io
+    SUBDIR += etoile-scriptkit
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += expect-devel

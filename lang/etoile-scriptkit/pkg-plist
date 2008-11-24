@@ -1,0 +1,22 @@
+Local/Library/Frameworks/ScriptKit.framework/Headers
+Local/Library/Frameworks/ScriptKit.framework/Resources
+Local/Library/Frameworks/ScriptKit.framework/ScriptKit
+Local/Library/Frameworks/ScriptKit.framework/ScriptKit.framework
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ScriptCenter.h
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Tell.h
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/ScriptKit
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/libScriptKit.so
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/libScriptKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/libScriptKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/ScriptKit.framework/Versions/Current
+Local/Library/Frameworks/ScriptKit.framework/libScriptKit.so
+Local/Library/Headers/ScriptKit
+Local/Library/Libraries/libScriptKit.so
+Local/Library/Libraries/libScriptKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libScriptKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/ScriptKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/ScriptKit.framework/Versions
+@dirrm Local/Library/Frameworks/ScriptKit.framework
