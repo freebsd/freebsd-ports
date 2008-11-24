@@ -85,7 +85,6 @@ bin/valknut
 %%DATADIR%%/icons/emot/default/emoticons.xpm
 %%DATADIR%%/icons/emot/simple/emoticons.xml
 %%DATADIR%%/icons/emot/simple/simple-tango.xpm
-%%DATADIR%%/icons/user/default/usericons.xml
 %%DATADIR%%/icons/user/default/usericons.xpm
 %%DATADIR%%/translation/valknut.bs.qm
 %%DATADIR%%/translation/valknut.cs.qm
@@ -110,14 +109,15 @@ bin/valknut
 %%DATADIR%%/translation/valknut.sr@latin.qm
 %%DATADIR%%/translation/valknut.sr.qm
 %%DATADIR%%/translation/valknut.sv.qm
-share/icons/hicolor/16x16/apps/icon_16x16.png
-share/icons/hicolor/22x22/apps/icon_22x22.png
-share/icons/hicolor/24x24/apps/icon_24x24.png
-share/icons/hicolor/32x32/apps/icon_32x32.png
-share/icons/hicolor/48x48/apps/icon_48x48.png
-share/icons/hicolor/64x64/apps/icon_64x64.png
-share/icons/hicolor/128x128/apps/icon_128x128.png
 share/applications/valknut.desktop
+share/icons/hicolor/16x16/apps/valknut.png
+share/icons/hicolor/22x22/apps/valknut.png
+share/icons/hicolor/24x24/apps/valknut.png
+share/icons/hicolor/32x32/apps/valknut.png
+share/icons/hicolor/48x48/apps/valknut.png
+share/icons/hicolor/64x64/apps/valknut.png
+share/icons/hicolor/128x128/apps/valknut.png
+share/pixmaps/valknut.png
 @dirrm %%DATADIR%%/translation
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
@@ -130,6 +130,7 @@ share/applications/valknut.desktop
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor/22x22/apps
