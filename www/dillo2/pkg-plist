@@ -1,9 +1,12 @@
-@comment $FreeBSD$
 bin/dillo
 bin/dpid
 bin/dpidc
-etc/dillorc.sample
-etc/dpidrc
+@unexec if cmp -s %D/etc/dillorc.dist %D/etc/dillorc; then rm -f %D/etc/dillorc; fi
+etc/dillorc.dist
+@exec if [ ! -f %B/dillorc ]; then cp -p %D/%F %B/dillorc; fi
+@unexec if cmp -s %D/etc/dpidrc.dist %D/etc/dpidrc; then rm -f %D/etc/dpidrc; fi
+etc/dpidrc.dist
+@exec if [ ! -f %B/dpidrc ]; then cp -p %D/%F %B/dpidrc; fi
 libexec/dillo/dpi/bookmarks/bookmarks.dpi
 libexec/dillo/dpi/cookies/cookies.dpi
 libexec/dillo/dpi/datauri/datauri.filter.dpi

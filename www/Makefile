@@ -120,6 +120,7 @@
     SUBDIR += diamanda
     SUBDIR += dillo
     SUBDIR += dillo-i18n
+    SUBDIR += dillo2
     SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
