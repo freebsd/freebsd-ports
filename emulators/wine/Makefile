@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.1.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -37,7 +38,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glut
-USE_XORG=	xpm
+USE_XORG=	xpm xrender
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
