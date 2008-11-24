@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://releases.ardour.org/
-DISTFILES=	ardour-${DISTVERSION}-4010.tar.bz2
-EXTRACT_ONLY=	ardour-${DISTVERSION}-4010.tar.bz2
+DISTFILES=	ardour-${DISTVERSION}.tar.bz2
+EXTRACT_ONLY=	ardour-${DISTVERSION}.tar.bz2
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Ardour - a digital audio workstation

@@ -30,7 +30,12 @@ etc/ardour2/ardour2_ui_default.conf
 etc/ardour2/ardour-sae.menus
 etc/ardour2/ergonomic-us.bindings
 etc/ardour2/mnemonic-us.bindings
-etc/ardour2/SAE-de.bindings
+etc/ardour2/ardour2_ui_dark_sae.rc
+etc/ardour2/ardour2_ui_light_sae.rc
+etc/ardour2/SAE-de-keypad.bindings
+etc/ardour2/SAE-us-keypad.bindings
+etc/ardour2/SAE-de-nokeypad.bindings
+etc/ardour2/SAE-us-nokeypad.bindings
 @dirrmtry etc/ardour2
 share/ardour2/splash.png
 share/ardour2/pixmaps/hslider00.xpm
@@ -120,6 +125,11 @@ share/ardour2/icons/fader_belt_h.png
 share/ardour2/icons/application-x-ardour_32px.png
 share/ardour2/icons/application-x-ardour_48px.png
 share/ardour2/icons/application-x-ardour_16px.png
+share/ardour2/icons/computer_keyboard.png
+share/ardour2/icons/poweron.png
+share/ardour2/icons/computer_keyboard_active.png
+share/ardour2/icons/poweroff.png
+share/ardour2/icons/ardour-sae.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
