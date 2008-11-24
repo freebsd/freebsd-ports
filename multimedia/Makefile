@@ -39,6 +39,7 @@
     SUBDIR += emovix
     SUBDIR += enjoympeg
     SUBDIR += etoile-babbler
+    SUBDIR += etoile-mediakit
     SUBDIR += etoile-multimediakit
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg2theora
