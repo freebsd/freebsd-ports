@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	Firebird-2 database client
 
-MASTERDIR=	${.CURDIR}/../firebird2-server
+MASTERDIR=	${.CURDIR}/../firebird20-server
 
 PLIST=		${PKGDIR}/pkg-plist.client
 

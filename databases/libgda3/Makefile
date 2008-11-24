@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${LIBGDA3_SLAVE}=="firebird"
-LIB_DEPENDS+=		gds.2:${PORTSDIR}/databases/firebird2-client
+LIB_DEPENDS+=		gds.2:${PORTSDIR}/databases/firebird20-client
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-firebird

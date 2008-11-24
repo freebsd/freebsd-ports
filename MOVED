@@ -3663,3 +3663,5 @@ security/libfwbuilder2|security/libfwbuilder|2008-11-05|replaced by libfwbuilder
 security/fwbuilder2|security/fwbuilder|2008-11-05|replaced by fwbuilder 3.0
 japanese/magicpoint|misc/magicpoint|2008-11-07|Integrated into misc/magicpoint
 x11-drivers/xf86-input-wacom|x11-drivers/input-wacom|2008-11-18|Port was renamed
+databases/firebird2-client|databases/firebird20-client|2008-11-24|Renamed
+databases/firebird2-server|databases/firebird20-server|2008-11-24|Renamed

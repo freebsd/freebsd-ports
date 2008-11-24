@@ -79,7 +79,7 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(WITH_FIREBIRD)
-LIB_DEPENDS+=	gds.2:${PORTSDIR}/databases/firebird2-client
+LIB_DEPENDS+=	gds.2:${PORTSDIR}/databases/firebird20-client
 CONFIGURE_ARGS+=	--with-firebird
 PLIST_SUB+=	FIREBIRD=""
 .else
