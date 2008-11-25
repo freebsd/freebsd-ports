@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httrack
-DISTVERSION=	3.42-3
+DISTVERSION=	3.43
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/ \
 		http://sunpoet.net/distfiles/
@@ -15,7 +15,8 @@ MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Easy-to-use offline browser utility and website copier
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DISTREVISION=	1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.${DISTREVISION}
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
