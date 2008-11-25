@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.5
+PORTVERSION=	1.98.6
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/tt++
 
 .include <bsd.port.pre.mk>
 
-DOCS=		BUGS CREDITS FAQ README TODO \
+DOCS=		CREDITS FAQ README SCRIPTS TODO \
 		docs/chat_protocol.txt docs/tintin19.txt
 PORTDOCS=	${DOCS:T}
 
