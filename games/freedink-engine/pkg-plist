@@ -1,0 +1,12 @@
+bin/dink
+bin/dinkedit
+bin/freedink
+bin/freedinkedit
+share/applications/freedink.desktop
+share/applications/freedinkedit.desktop
+%%DATADIR%%/LiberationSans-Regular.ttf
+%%DATADIR%%/jump.wav
+%%DATADIR%%/stop.wav
+share/pixmaps/freedink.png
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
