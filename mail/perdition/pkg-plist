@@ -56,6 +56,6 @@ sbin/perdition.pop3s
 sbin/perdition.imap4
 sbin/perdition.imap4s
 sbin/perdition.imaps
-%%DOCSDIR%%/perdition-pam.sample
+%%PORTDOCS%%%%DOCSDIR%%/perdition-pam.sample
 @dirrmtry etc/perdition
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
