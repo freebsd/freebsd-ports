@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	popplerkit
-PORTVERSION=	0.0.${SNAPSHOT}
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://download.gna.org/gsimageapps/PopplerKit/
-DISTNAME=	PopplerKit-${SNAPSHOT}
+MASTER_SITES=	http://download.gna.org/etoile/
+DISTNAME=	etoile-0.4.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Framework that supports rendering of PDF content
 
 LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
@@ -24,12 +24,7 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 USE_GNOME=	gnomeprefix gnomehack gtk20
 
-SNAPSHOT=	20050720
-WRKSRC=		${WRKDIR}/PopplerKit
-ADDITIONAL_CPPFLAGS+=	-DPOPPLER_0_5
-
-post-patch:
-	${REINPLACE_CMD} -e 's|poppler-cairo|poppler-cairo-broken|' \
-		${WRKSRC}/config.sh
+WRKSRC=	${WRKDIR}/Etoile-0.4.0
+USE_GNUSTEP_MAKE_DIRS+=	Frameworks/PopplerKit
 
 .include <bsd.port.mk>

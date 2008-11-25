@@ -1,6 +1,4 @@
-
-Lucene is a high-performance, full-featured text search engine library in Java.
-LuceneKit is a class-to-class port of Lucene in GNUstep. It is a technology
-suitable for nearly any application that requires full-text search.
+Lucene is a high-performance, full-featured text search engine library. It is a
+technology suitable for nearly any application that requires full-text search.
 
 WWW: http://www.etoile-project.org/

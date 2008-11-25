@@ -7,23 +7,27 @@
 
 PORTNAME=	vindaloo
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://download.gna.org/gsimageapps/Vindaloo/
-DISTNAME=	Vindaloo-${PORTVERSION}
+MASTER_SITES=	http://download.gna.org/etoile/
+DISTNAME=	etoile-0.4.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PDF Reader for GNUstep
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LOCAL_LIBS+=	PopplerKit:${POPPLERKIT_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	IconKit:${ICONKIT_PORT}
 
-WRKSRC=		${WRKDIR}/Vindaloo
+WRKSRC=	${WRKDIR}/Etoile-0.4.0
+USE_GNUSTEP_MAKE_DIRS+=	Services/User/Vindaloo
 
 POPPLERKIT_PORT?=	graphics/popplerkit
+ICONKIT_PORT?=	x11-themes/etoile-iconkit
 
 .include <bsd.port.mk>

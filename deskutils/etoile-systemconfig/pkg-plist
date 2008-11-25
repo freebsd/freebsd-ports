@@ -1,11 +1,15 @@
 Local/Library/Frameworks/SystemConfig.framework/Headers
 Local/Library/Frameworks/SystemConfig.framework/Resources
 Local/Library/Frameworks/SystemConfig.framework/SystemConfig
+Local/Library/Frameworks/SystemConfig.framework/SystemConfig.framework
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCConfig.h
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCKeyboard.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCMachineInfo.h
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCMonitor.h
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCMouse.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCPower.h
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCSound.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/X11Keyboard.h
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/SystemConfig
 Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/libSystemConfig.so
