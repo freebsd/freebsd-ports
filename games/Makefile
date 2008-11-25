@@ -248,6 +248,7 @@
     SUBDIR += freeciv-nox11
     SUBDIR += freeciv-sounds
     SUBDIR += freecol
+    SUBDIR += freedink
     SUBDIR += freedink-data
     SUBDIR += freedink-dfarc
     SUBDIR += freedink-engine
