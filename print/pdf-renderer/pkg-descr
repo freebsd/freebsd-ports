@@ -1,0 +1,15 @@
+The PDF Renderer is an open source, all Java library which renders
+PDF documents to the screen using Java2D.
+
+Some features:
+
+ * view PDFs in your own app
+ * print-preview before exporting PDF files
+ * render PDFs to PNGs in a server-side web application
+ * view PDFs in a 3D scene
+ * draw on top of PDFs and annotate them in a networked viewer
+
+WWW: https://pdf-renderer.dev.java.net/
+
+- Alex Dupre
+ale@FreeBSD.org
