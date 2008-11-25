@@ -6,31 +6,31 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
+DISTNAME=	CherryPy-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A pythonic, object-oriented web development framework
 
-USE_PYTHON=	2.3+
+.if !defined(NOPORTEXAMPLES)
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+.endif
+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 
-REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
-
-.if defined(NOPORTEXAMPLES)
-MAKE_ENV+=	NOPORTEXAMPLES=${NOPORTEXAMPLES}
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${PYTHONPREFIX_SITELIBDIR}/cherrypy && ${COPYTREE_SHARE} tutorial ${EXAMPLESDIR}
 .endif
-
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	 NOPORTDOCS=${NOPORTDOCS}
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} ${WRKSRC}/${PYSETUP}
+	${RM} -R ${PYTHONPREFIX_SITELIBDIR}/cherrypy/tutorial
 
 .include <bsd.port.mk>
