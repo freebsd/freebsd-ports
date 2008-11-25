@@ -3,7 +3,6 @@
 %%SITE_PERL%%/Finance/QuoteTW/Allianz.pm
 %%SITE_PERL%%/Finance/QuoteTW/Blackrock.pm
 %%SITE_PERL%%/Finance/QuoteTW/Capital.pm
-%%SITE_PERL%%/Finance/QuoteTW/Cathay.pm
 %%SITE_PERL%%/Finance/QuoteTW/Franklin.pm
 %%SITE_PERL%%/Finance/QuoteTW/Iit.pm
 %%SITE_PERL%%/Finance/QuoteTW/Jpmrich.pm
