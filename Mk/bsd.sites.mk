@@ -763,20 +763,36 @@ MASTER_SITE_MOZDEV+= \
 	http://ftp.osuosl.org/pub/mozdev/%SUBDIR%/
 .endif
 
+# releases.mozilla.org mirror sites
+#
+# For the full list, see the following:
+#
+#	http://www.mozilla.org/mirrors.html
+#
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
 MASTER_SITE_MOZILLA+= \
 	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://mirror3.mirrors.tds.net/pub/mozilla.org/%SUBDIR%/ \
+	http://mozilla.isc.org/pub/mozilla.org/%SUBDIR%/ \
+	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/ \
+	http://jp-nii01.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://jp-nii02.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://mozilla.mtk.nao.ac.jp/pub/mozilla.org/%SUBDIR%/ \
+	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/ \
+	http://ftp.acc.umu.se/pub/mozilla.org/%SUBDIR%/ \
+	http://mozilla.c3sl.ufpr.br/releases/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
-	http://mozilla.gnusoft.net/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://ftp.belnet.be/packages/mozilla/%SUBDIR%/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
-	ftp://ftp.uni-bayreuth.de/pub/packages/netscape/mozilla/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	ftp://ftp.kaist.ac.kr/pub/mozilla/%SUBDIR%/ \
 	ftp://mozilla.mirror.pacific.net.au/mozilla/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
+	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/ \
+	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/ \
+	http://ftp.isu.edu.tw/pub/Mozilla/%SUBDIR%/ \
+	http://ftp.ntu.edu.tw/pub/mozilla/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_EXTENDED)
