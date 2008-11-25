@@ -104,3 +104,6 @@ SIZE (qmail/smtpextfork-spamcontrol-2418_1.patch) = 7609
 MD5 (qmail/README.smtpextfork) = e783965f5a7510c38b30f0ba3cda1e11
 SHA256 (qmail/README.smtpextfork) = c43122d27d4e20dd955c30ca402903d2e9a6a1820c3cf11902e2477316abdcbb
 SIZE (qmail/README.smtpextfork) = 7618
+MD5 (qmail/qmail-ldap-1.03-queue-custom-error.patch) = c584cc3f14e92dbaa4d86333c7eb8efc
+SHA256 (qmail/qmail-ldap-1.03-queue-custom-error.patch) = 77536616109591ef5f4bc0f309879167a14b3d6ce4778ff3f2dcaee9a424c25a
+SIZE (qmail/qmail-ldap-1.03-queue-custom-error.patch) = 2472
