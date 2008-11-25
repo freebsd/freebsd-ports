@@ -6,10 +6,14 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	security
+.if defined(BUILD)
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
+.else
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
@@ -60,6 +64,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/fwbuilder
 	@${ECHO} If you are upgrading from a previous version of fwbuilder,
 	@${ECHO} please make sure to backup your fwbuilder database files
 	@${ECHO} prior to invoking fwbuilder for the first time.
