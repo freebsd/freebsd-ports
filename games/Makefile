@@ -248,6 +248,7 @@
     SUBDIR += freeciv-nox11
     SUBDIR += freeciv-sounds
     SUBDIR += freecol
+    SUBDIR += freedink-data
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
