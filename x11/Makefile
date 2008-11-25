@@ -432,6 +432,7 @@
     SUBDIR += xprop
     SUBDIR += xproto
     SUBDIR += xproxymanagementprotocol
+    SUBDIR += xpyb
     SUBDIR += xrandr
     SUBDIR += xrdb
     SUBDIR += xrefresh
