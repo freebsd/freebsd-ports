@@ -7,9 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.0.2.0.2
-DISTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -21,6 +19,8 @@ PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 
 MAN1=		pbzip2.1
 MLINKS=		pbzip2.1 pbunzip2.1
+
+USE_GMAKE=	YES
 
 post-patch:
 	@${REINPLACE_CMD} \
