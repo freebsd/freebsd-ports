@@ -184,6 +184,7 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/__init__.py
 %%DATADIR%%/google/appengine/api/__init__.py
 %%DATADIR%%/google/appengine/api/api_base_pb.py
+%%DATADIR%%/google/appengine/api/apiproxy_stub.py
 %%DATADIR%%/google/appengine/api/apiproxy_stub_map.py
 %%DATADIR%%/google/appengine/api/app_logging.py
 %%DATADIR%%/google/appengine/api/appinfo.py
