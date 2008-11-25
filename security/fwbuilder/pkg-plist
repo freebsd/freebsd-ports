@@ -12,7 +12,10 @@ share/fwbuilder-%%BUILD_VERSION%%/templates.xml
 share/fwbuilder-%%BUILD_VERSION%%/resources.xml
 share/fwbuilder-%%BUILD_VERSION%%/help/iptAdvancedDialog_en_US.html
 share/fwbuilder-%%BUILD_VERSION%%/help/linux24AdvancedDialog_en_US.html
+share/fwbuilder-%%BUILD_VERSION%%/help/main_en_US.html
 share/fwbuilder-%%BUILD_VERSION%%/help/pfAdvancedDialog_en_US.html
+share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ja.qm
+share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ru.qm
 share/fwbuilder-%%BUILD_VERSION%%/platform/iosacl.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/iptables.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/ipf.xml

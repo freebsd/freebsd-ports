@@ -5,10 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	security
+.if defined(BUILD)
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
+.else
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder API
@@ -45,8 +49,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-install:
-	${RM} ${PREFIX}/lib/libfwbuilder.so.8.0
-	${RM} ${PREFIX}/lib/libfwcompiler.so.8.0
+	${RM} ${PREFIX}/lib/libfwbuilder.so.8.1
+	${RM} ${PREFIX}/lib/libfwcompiler.so.8.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

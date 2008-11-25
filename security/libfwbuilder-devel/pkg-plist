@@ -71,10 +71,10 @@ include/fwb-3/fwbuilder/libfwbuilder-config.h
 include/fwb-3/fwbuilder/libfwbuilder-version.h
 include/fwb-3/fwbuilder/physAddress.h
 include/fwb-3/fwbuilder/snmp.h
-lib/libfwcompiler.so.8.0.0
+lib/libfwcompiler.so.8.1.0
 lib/libfwcompiler.so.8
 lib/libfwcompiler.so
-lib/libfwbuilder.so.8.0.0
+lib/libfwbuilder.so.8.1.0
 lib/libfwbuilder.so.8
 lib/libfwbuilder.so
 share/libfwbuilder-%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.5.xslt
