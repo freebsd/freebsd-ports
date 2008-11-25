@@ -117,7 +117,6 @@ bin/sdl-ball
 %%DATADIR%%/default/icon32.png
 %%DATADIR%%/default/levels.txt
 %%DATADIR%%/default/powerupdescriptions.txt
-%%DATADIR%%/default/powerupdescriptions.txt~
 %%DATADIR%%/default/powerups.txt
 %%DATADIR%%/default/snd/ball-hit-border.ogg
 %%DATADIR%%/default/snd/ball-hit-paddle.ogg
