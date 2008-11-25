@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	unitkit
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
-DISTNAME=	etoile-0.2
+DISTNAME=	etoile-0.4.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project UnitKit test framework on GNUstep
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
@@ -23,7 +23,7 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-WRKSRC=	${WRKDIR}/Etoile-0.2
+WRKSRC=	${WRKDIR}/Etoile-0.4.0
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/UnitKit
 
 .include <bsd.port.mk>

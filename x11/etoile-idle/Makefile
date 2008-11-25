@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	idle
-PORTVERSION=	0.2
+PORTVERSION=	0.4.0
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -17,6 +17,7 @@ COMMENT=	Etoile Project Idle event generator
 
 BUILD_DEPENDS=	${LOCALBASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/scrnsaverproto
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes

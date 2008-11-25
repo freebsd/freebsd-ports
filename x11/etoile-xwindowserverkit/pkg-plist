@@ -12,6 +12,7 @@ System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%
 System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/libXWindowServerKit.so.%%LIBVERSION%%
 System/Library/Frameworks/XWindowServerKit.framework/Versions/Current
 System/Library/Frameworks/XWindowServerKit.framework/XWindowServerKit
+System/Library/Frameworks/XWindowServerKit.framework/XWindowServerKit.framework
 System/Library/Frameworks/XWindowServerKit.framework/libXWindowServerKit.so
 System/Library/Headers/XWindowServerKit
 System/Library/Libraries/libXWindowServerKit.so

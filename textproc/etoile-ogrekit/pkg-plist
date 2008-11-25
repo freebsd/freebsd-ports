@@ -1,5 +1,6 @@
 Local/Library/Frameworks/OgreKit.framework/Headers
 Local/Library/Frameworks/OgreKit.framework/OgreKit
+Local/Library/Frameworks/OgreKit.framework/OgreKit.framework
 Local/Library/Frameworks/OgreKit.framework/Resources
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSString_OgreKitAdditions.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OGAttributedString.h
@@ -15,6 +16,7 @@ Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OGReplaceExpression.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OGString.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OgreFindAllThread.h
+Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OgreFindPanel.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OgreFindPanelController.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OgreFindResultBranch.h
 Local/Library/Frameworks/OgreKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OgreFindResultLeaf.h
