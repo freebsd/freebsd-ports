@@ -1,0 +1,921 @@
+share/dink/dink/Dink.dat
+share/dink/dink/Dink.ini
+share/dink/dink/Hard.dat
+share/dink/dink/Map.dat
+share/dink/dink/Sound/1.ogg
+share/dink/dink/Sound/1003.mid
+share/dink/dink/Sound/104.mid
+share/dink/dink/Sound/105.mid
+share/dink/dink/Sound/106.ogg
+share/dink/dink/Sound/2.mid
+share/dink/dink/Sound/dance.mid
+share/dink/dink/Sound/denube.ogg
+share/dink/dink/Sound/fire.wav
+share/dink/dink/Sound/gold.wav
+share/dink/dink/Sound/insper.mid
+share/dink/dink/Sound/intro.wav
+share/dink/dink/Sound/lively.mid
+share/dink/dink/Sound/love.mid
+share/dink/dink/Sound/secret.wav
+share/dink/dink/Story/1GOLD.c
+share/dink/dink/Story/APOTION.c
+share/dink/dink/Story/BAR-DP.c
+share/dink/dink/Story/BAR-E.c
+share/dink/dink/Story/BAR-F1.c
+share/dink/dink/Story/BAR-GH.c
+share/dink/dink/Story/BAR-M.c
+share/dink/dink/Story/BAR-SH.c
+share/dink/dink/Story/BAR-SP.c
+share/dink/dink/Story/BOX1-E.c
+share/dink/dink/Story/BOX2-E.c
+share/dink/dink/Story/BOX2-SP.c
+share/dink/dink/Story/BPOTION.c
+share/dink/dink/Story/BUTTON6.c
+share/dink/dink/Story/CH1-AP.c
+share/dink/dink/Story/CH1-G.c
+share/dink/dink/Story/CH1-GH.c
+share/dink/dink/Story/CH1-MP.c
+share/dink/dink/Story/CH1-PAP.c
+share/dink/dink/Story/CH1-SP.c
+share/dink/dink/Story/CH2-500.c
+share/dink/dink/Story/CH2-AP.c
+share/dink/dink/Story/CH2-GH.c
+share/dink/dink/Story/CH2-SFB.c
+share/dink/dink/Story/CH3-AP.c
+share/dink/dink/Story/CH3-H.c
+share/dink/dink/Story/DAM-A1.c
+share/dink/dink/Story/DAM-BOM.c
+share/dink/dink/Story/DAM-BOM2.c
+share/dink/dink/Story/DAM-BOMN.c
+share/dink/dink/Story/DAM-FIRE.c
+share/dink/dink/Story/DAM-ICE.c
+share/dink/dink/Story/DAM-ICEE.c
+share/dink/dink/Story/DAM-SFB.c
+share/dink/dink/Story/DDIE5.c
+share/dink/dink/Story/DIE.c
+share/dink/dink/Story/DIE5.c
+share/dink/dink/Story/DINFO.c
+share/dink/dink/Story/DUCK.c
+share/dink/dink/Story/EMAKE.c
+share/dink/dink/Story/EN-BONC.c
+share/dink/dink/Story/EN-BONC1.c
+share/dink/dink/Story/EN-BONCD.c
+share/dink/dink/Story/EN-BONG.c
+share/dink/dink/Story/EN-DRAG.c
+share/dink/dink/Story/EN-GH.c
+share/dink/dink/Story/EN-GS.c
+share/dink/dink/Story/EN-PBON.c
+share/dink/dink/Story/EN-PILL.c
+share/dink/dink/Story/EN-PILL1.c
+share/dink/dink/Story/EN-PILL2.c
+share/dink/dink/Story/EN-PILLF.c
+share/dink/dink/Story/EN-SLAY.c
+share/dink/dink/Story/EN-SLIM.c
+share/dink/dink/Story/EN-SLIMB.c
+share/dink/dink/Story/EN-SLIMG.c
+share/dink/dink/Story/EN-STG.c
+share/dink/dink/Story/ESCAPE.c
+share/dink/dink/Story/FINDDUCK.c
+share/dink/dink/Story/FIRE.c
+share/dink/dink/Story/FISH1.c
+share/dink/dink/Story/GET-FB.c
+share/dink/dink/Story/GET-SFB.c
+share/dink/dink/Story/GHEART.c
+share/dink/dink/Story/GOLD200.c
+share/dink/dink/Story/GOLD500.c
+share/dink/dink/Story/HEART.c
+share/dink/dink/Story/ITEM-AXE.c
+share/dink/dink/Story/ITEM-B1.c
+share/dink/dink/Story/ITEM-B2.c
+share/dink/dink/Story/ITEM-B3.c
+share/dink/dink/Story/ITEM-BOM.c
+share/dink/dink/Story/ITEM-ELI.c
+share/dink/dink/Story/ITEM-FB.c
+share/dink/dink/Story/ITEM-ICE.c
+share/dink/dink/Story/ITEM-NUT.c
+share/dink/dink/Story/ITEM-P1.c
+share/dink/dink/Story/ITEM-PIG.c
+share/dink/dink/Story/ITEM-SFB.c
+share/dink/dink/Story/ITEM-SW1.c
+share/dink/dink/Story/ITEM-SW2.c
+share/dink/dink/Story/ITEM-SW3.c
+share/dink/dink/Story/KEY-80.c
+share/dink/dink/Story/KING.c
+share/dink/dink/Story/LGOLD.c
+share/dink/dink/Story/LRAISE.c
+share/dink/dink/Story/MAG-STAR.c
+share/dink/dink/Story/MAIN.c
+share/dink/dink/Story/MAKE.c
+share/dink/dink/Story/MGOLD.c
+share/dink/dink/Story/PAPGOLD.c
+share/dink/dink/Story/PDIE.c
+share/dink/dink/Story/POSTER.c
+share/dink/dink/Story/PPOTION.c
+share/dink/dink/Story/RPOTION.c
+share/dink/dink/Story/S1-BLOVE.c
+share/dink/dink/Story/S1-BLS.c
+share/dink/dink/Story/S1-BOAT.c
+share/dink/dink/Story/S1-BOOT.c
+share/dink/dink/Story/S1-BOOTH.c
+share/dink/dink/Story/S1-BRG.c
+share/dink/dink/Story/S1-BRG2.c
+share/dink/dink/Story/S1-BUL.c
+share/dink/dink/Story/S1-CAVE.c
+share/dink/dink/Story/S1-CAVEM.c
+share/dink/dink/Story/S1-CAVES.c
+share/dink/dink/Story/S1-DUCK.c
+share/dink/dink/Story/S1-ELTR.c
+share/dink/dink/Story/S1-FARM.c
+share/dink/dink/Story/S1-FARM2.c
+share/dink/dink/Story/S1-FARMS.c
+share/dink/dink/Story/S1-FMONS.c
+share/dink/dink/Story/S1-FOUNT.c
+share/dink/dink/Story/S1-GATE.c
+share/dink/dink/Story/S1-GG.c
+share/dink/dink/Story/S1-H1-1.c
+share/dink/dink/Story/S1-H1-1C.c
+share/dink/dink/Story/S1-H1-2.c
+share/dink/dink/Story/S1-H1-3.c
+share/dink/dink/Story/S1-H1-4.c
+share/dink/dink/Story/S1-H1-M.c
+share/dink/dink/Story/S1-H1-O.c
+share/dink/dink/Story/S1-H1-S.c
+share/dink/dink/Story/S1-H2-1.c
+share/dink/dink/Story/S1-H2-2.c
+share/dink/dink/Story/S1-H2-3.c
+share/dink/dink/Story/S1-H2-DK.c
+share/dink/dink/Story/S1-H2-O.c
+share/dink/dink/Story/S1-H2-S.c
+share/dink/dink/Story/S1-H3-1.c
+share/dink/dink/Story/S1-H3-2.c
+share/dink/dink/Story/S1-H3-3.c
+share/dink/dink/Story/S1-H3-4.c
+share/dink/dink/Story/S1-H3-5.c
+share/dink/dink/Story/S1-H3-6.c
+share/dink/dink/Story/S1-H3-7.c
+share/dink/dink/Story/S1-H3-8.c
+share/dink/dink/Story/S1-H3-9.c
+share/dink/dink/Story/S1-H3-L.c
+share/dink/dink/Story/S1-H3-OF.c
+share/dink/dink/Story/S1-H3-S.c
+share/dink/dink/Story/S1-HOLE.c
+share/dink/dink/Story/S1-HOLE3.c
+share/dink/dink/Story/S1-HSIGN.c
+share/dink/dink/Story/S1-LG.c
+share/dink/dink/Story/S1-LTR.c
+share/dink/dink/Story/S1-MAGIC.c
+share/dink/dink/Story/S1-MH-F.c
+share/dink/dink/Story/S1-MH-M.c
+share/dink/dink/Story/S1-MH-O.c
+share/dink/dink/Story/S1-MH-S.c
+share/dink/dink/Story/S1-NOPAS.c
+share/dink/dink/Story/S1-NTREE.c
+share/dink/dink/Story/S1-NUT.c
+share/dink/dink/Story/S1-OLDD.c
+share/dink/dink/Story/S1-RAND.c
+share/dink/dink/Story/S1-ROB.c
+share/dink/dink/Story/S1-ROB2.c
+share/dink/dink/Story/S1-ROC.c
+share/dink/dink/Story/S1-SACK.c
+share/dink/dink/Story/S1-SIGN2.c
+share/dink/dink/Story/S1-SLIM.c
+share/dink/dink/Story/S1-SS2.c
+share/dink/dink/Story/S1-VIC.c
+share/dink/dink/Story/S1-VIL.c
+share/dink/dink/Story/S1-VIL2.c
+share/dink/dink/Story/S1-WAND.c
+share/dink/dink/Story/S1-WAND2.c
+share/dink/dink/Story/S1-WIZ.c
+share/dink/dink/Story/S2-AUNT.c
+share/dink/dink/Story/S2-AUNTP.c
+share/dink/dink/Story/S2-BAR.c
+share/dink/dink/Story/S2-CA-G.c
+share/dink/dink/Story/S2-CA-O.c
+share/dink/dink/Story/S2-CAVE.c
+share/dink/dink/Story/S2-CAVE2.c
+share/dink/dink/Story/S2-CBON.c
+share/dink/dink/Story/S2-CG1.c
+share/dink/dink/Story/S2-CG2.c
+share/dink/dink/Story/S2-CG3.c
+share/dink/dink/Story/S2-CG4.c
+share/dink/dink/Story/S2-CG5.c
+share/dink/dink/Story/S2-CGIRL.c
+share/dink/dink/Story/S2-CMAN.c
+share/dink/dink/Story/S2-CRIME.c
+share/dink/dink/Story/S2-CROCK.c
+share/dink/dink/Story/S2-CSLAY.c
+share/dink/dink/Story/S2-CULG.c
+share/dink/dink/Story/S2-CULT.c
+share/dink/dink/Story/S2-DAMS.c
+share/dink/dink/Story/S2-DS.c
+share/dink/dink/Story/S2-FGATE.c
+share/dink/dink/Story/S2-FIGHT.c
+share/dink/dink/Story/S2-H1-S.c
+share/dink/dink/Story/S2-H2-S.c
+share/dink/dink/Story/S2-HEALP.c
+share/dink/dink/Story/S2-IDOL.c
+share/dink/dink/Story/S2-JACK.c
+share/dink/dink/Story/S2-MAN1.c
+share/dink/dink/Story/S2-MAN2.c
+share/dink/dink/Story/S2-MDOOR.c
+share/dink/dink/Story/S2-MH-M.c
+share/dink/dink/Story/S2-MYBED.c
+share/dink/dink/Story/S2-NA1.c
+share/dink/dink/Story/S2-NA2.c
+share/dink/dink/Story/S2-NAD.c
+share/dink/dink/Story/S2-NADP.c
+share/dink/dink/Story/S2-OUT.c
+share/dink/dink/Story/S2-QGIRL.c
+share/dink/dink/Story/S2-RAND.c
+share/dink/dink/Story/S2-RYAN2.c
+share/dink/dink/Story/S2-RYAN3.c
+share/dink/dink/Story/S2-RYANT.c
+share/dink/dink/Story/S2-SALE.c
+share/dink/dink/Story/S2-SALE2.c
+share/dink/dink/Story/S2-SEC1.c
+share/dink/dink/Story/S2-SEC2.c
+share/dink/dink/Story/S2-SEC3.c
+share/dink/dink/Story/S2-SIGN3.c
+share/dink/dink/Story/S2-SIGNE.c
+share/dink/dink/Story/S2-SK.c
+share/dink/dink/Story/S2-STAT.c
+share/dink/dink/Story/S2-T1S.c
+share/dink/dink/Story/S2-T2S.c
+share/dink/dink/Story/S2-TABLE.c
+share/dink/dink/Story/S2-TDOOR.c
+share/dink/dink/Story/S2-TDS.c
+share/dink/dink/Story/S2-WAND.c
+share/dink/dink/Story/S2-WANT.c
+share/dink/dink/Story/S2-WELL1.c
+share/dink/dink/Story/S2-WENCH.c
+share/dink/dink/Story/S3-1ST.c
+share/dink/dink/Story/S3-BH.c
+share/dink/dink/Story/S3-BLOCK.c
+share/dink/dink/Story/S3-BOWL.c
+share/dink/dink/Story/S3-CAMP.c
+share/dink/dink/Story/S3-CAMPS.c
+share/dink/dink/Story/S3-CH1.c
+share/dink/dink/Story/S3-CHICK.c
+share/dink/dink/Story/S3-DORKS.c
+share/dink/dink/Story/S3-FOUNT.c
+share/dink/dink/Story/S3-FREAK.c
+share/dink/dink/Story/S3-GH.c
+share/dink/dink/Story/S3-GOB.c
+share/dink/dink/Story/S3-GOB2.c
+share/dink/dink/Story/S3-GOBG.c
+share/dink/dink/Story/S3-GOBS.c
+share/dink/dink/Story/S3-GS.c
+share/dink/dink/Story/S3-GSIGN.c
+share/dink/dink/Story/S3-H1.c
+share/dink/dink/Story/S3-LARRY.c
+share/dink/dink/Story/S3-LOSER.c
+share/dink/dink/Story/S3-MAYOR.c
+share/dink/dink/Story/S3-MDOOR.c
+share/dink/dink/Story/S3-MOG.c
+share/dink/dink/Story/S3-PEEPS.c
+share/dink/dink/Story/S3-ROCK.c
+share/dink/dink/Story/S3-SEC1.c
+share/dink/dink/Story/S3-SIGN1.c
+share/dink/dink/Story/S3-SIGN2.c
+share/dink/dink/Story/S3-SIGN3.c
+share/dink/dink/Story/S3-SIGN6.c
+share/dink/dink/Story/S3-SIGN7.c
+share/dink/dink/Story/S3-ST1.c
+share/dink/dink/Story/S3-ST1O.c
+share/dink/dink/Story/S3-ST1P.c
+share/dink/dink/Story/S3-ST2.c
+share/dink/dink/Story/S3-ST2P.c
+share/dink/dink/Story/S3-ST3.c
+share/dink/dink/Story/S3-TC.c
+share/dink/dink/Story/S4-1ST.c
+share/dink/dink/Story/S4-DG.c
+share/dink/dink/Story/S4-DGS.c
+share/dink/dink/Story/S4-DSIGN.c
+share/dink/dink/Story/S4-DUCK.c
+share/dink/dink/Story/S4-DUCKS.c
+share/dink/dink/Story/S4-END.c
+share/dink/dink/Story/S4-GS.c
+share/dink/dink/Story/S4-H1.c
+share/dink/dink/Story/S4-H1P.c
+share/dink/dink/Story/S4-H2.c
+share/dink/dink/Story/S4-H2P1.c
+share/dink/dink/Story/S4-H2P2.c
+share/dink/dink/Story/S4-H2P3.c
+share/dink/dink/Story/S4-HEALP.c
+share/dink/dink/Story/S4-MD2.c
+share/dink/dink/Story/S4-MD3.c
+share/dink/dink/Story/S4-MDOOR.c
+share/dink/dink/Story/S4-NOT.c
+share/dink/dink/Story/S4-ROCK.c
+share/dink/dink/Story/S4-SEC1.c
+share/dink/dink/Story/S4-SIGN1.c
+share/dink/dink/Story/S4-SIGN2.c
+share/dink/dink/Story/S4-SIGN3.c
+share/dink/dink/Story/S4-ST1.c
+share/dink/dink/Story/S4-ST1P.c
+share/dink/dink/Story/S4-ST2.c
+share/dink/dink/Story/S4-ST2P.c
+share/dink/dink/Story/S4-ST3.c
+share/dink/dink/Story/S4-ST3P.c
+share/dink/dink/Story/S4-STAT.c
+share/dink/dink/Story/S4-TREE.c
+share/dink/dink/Story/S5-BASE.c
+share/dink/dink/Story/S5-END.c
+share/dink/dink/Story/S5-FD.c
+share/dink/dink/Story/S5-FGUY.c
+share/dink/dink/Story/S5-FMOM.c
+share/dink/dink/Story/S5-GUY.c
+share/dink/dink/Story/S5-HEALS.c
+share/dink/dink/Story/S5-JOPS.c
+share/dink/dink/Story/S5-MOM.c
+share/dink/dink/Story/S5-SEC1.c
+share/dink/dink/Story/S5-SIGN1.c
+share/dink/dink/Story/S5-ST1.c
+share/dink/dink/Story/S5-ST1P.c
+share/dink/dink/Story/S6-CHUR.c
+share/dink/dink/Story/S6-FOUNT.c
+share/dink/dink/Story/S6-G1.c
+share/dink/dink/Story/S6-G2.c
+share/dink/dink/Story/S6-HOLE.c
+share/dink/dink/Story/S6-HOLE2.c
+share/dink/dink/Story/S6-HOLES.c
+share/dink/dink/Story/S6-SIGN1.c
+share/dink/dink/Story/S6-SIGN5.c
+share/dink/dink/Story/S6-ST1.c
+share/dink/dink/Story/S6-ST1P.c
+share/dink/dink/Story/S6-VEND.c
+share/dink/dink/Story/S6-WARP.c
+share/dink/dink/Story/S7-BOAT.c
+share/dink/dink/Story/S7-BONG.c
+share/dink/dink/Story/S7-DGIRL.c
+share/dink/dink/Story/S7-DINK.c
+share/dink/dink/Story/S7-DRAG.c
+share/dink/dink/Story/S7-DUCK.c
+share/dink/dink/Story/S7-GIRL.c
+share/dink/dink/Story/S7-HELL.c
+share/dink/dink/Story/S7-MIL.c
+share/dink/dink/Story/S7-MOM.c
+share/dink/dink/Story/S7-PILL.c
+share/dink/dink/Story/S7-SLAY.c
+share/dink/dink/Story/S7-SLIMB.c
+share/dink/dink/Story/S7-WARP.c
+share/dink/dink/Story/S8-DA.c
+share/dink/dink/Story/S8-DISH.c
+share/dink/dink/Story/S8-DUCK.c
+share/dink/dink/Story/S8-DUCK2.c
+share/dink/dink/Story/S8-DUCK3.c
+share/dink/dink/Story/S8-DUCK4.c
+share/dink/dink/Story/S8-GUY.c
+share/dink/dink/Story/S8-SIGN.c
+share/dink/dink/Story/S8-WELL.c
+share/dink/dink/Story/SAVEBOT.c
+share/dink/dink/Story/SAVETOP.c
+share/dink/dink/Story/SC-DRAG.c
+share/dink/dink/Story/SC-END.c
+share/dink/dink/Story/SC-ENT.c
+share/dink/dink/Story/SC-LOCK.c
+share/dink/dink/Story/SC-PILL.c
+share/dink/dink/Story/SC-SLAY.c
+share/dink/dink/Story/SC-WIZ.c
+share/dink/dink/Story/SFOOD.c
+share/dink/dink/Story/SGOLD.c
+share/dink/dink/Story/SHEART.c
+share/dink/dink/Story/SHRINK.c
+share/dink/dink/Story/SOUNDOFF.c
+share/dink/dink/Story/SPARKLE.c
+share/dink/dink/Story/SPICE.c
+share/dink/dink/Story/START-1.c
+share/dink/dink/Story/START-2.c
+share/dink/dink/Story/START-3.c
+share/dink/dink/Story/START-4.c
+share/dink/dink/Story/START.c
+share/dink/dink/Story/THES.c
+share/dink/dink/Story/THORN.c
+share/dink/dink/Story/TREEDUCK.c
+share/dink/dink/Story/WATER.c
+share/dink/dink/Story/XLGOLD.c
+share/dink/dink/Story/en-gmog.c
+share/dink/dink/Story/item-bt.c
+share/dink/dink/Story/item-fst.c
+share/dink/dink/Story/s7-boss.c
+share/dink/dink/Tiles/Esplash.bmp
+share/dink/dink/Tiles/S01.bmp
+share/dink/dink/Tiles/S02.bmp
+share/dink/dink/Tiles/S03.bmp
+share/dink/dink/Tiles/S04.bmp
+share/dink/dink/Tiles/S05.bmp
+share/dink/dink/Tiles/S06.bmp
+share/dink/dink/Tiles/S07.bmp
+share/dink/dink/Tiles/S08.bmp
+share/dink/dink/Tiles/S09.bmp
+share/dink/dink/Tiles/Splash.bmp
+share/dink/dink/Tiles/Ts01.bmp
+share/dink/dink/Tiles/Ts02.bmp
+share/dink/dink/Tiles/Ts03.bmp
+share/dink/dink/Tiles/Ts04.bmp
+share/dink/dink/Tiles/Ts05.bmp
+share/dink/dink/Tiles/Ts06.bmp
+share/dink/dink/Tiles/Ts07.bmp
+share/dink/dink/Tiles/Ts08.bmp
+share/dink/dink/Tiles/Ts09.bmp
+share/dink/dink/Tiles/Ts10.bmp
+share/dink/dink/Tiles/Ts11.bmp
+share/dink/dink/Tiles/Ts12.bmp
+share/dink/dink/Tiles/Ts13.bmp
+share/dink/dink/Tiles/Ts14.bmp
+share/dink/dink/Tiles/Ts15.bmp
+share/dink/dink/Tiles/Ts16.bmp
+share/dink/dink/Tiles/Ts17.bmp
+share/dink/dink/Tiles/Ts18.bmp
+share/dink/dink/Tiles/Ts19.bmp
+share/dink/dink/Tiles/Ts20.bmp
+share/dink/dink/Tiles/Ts21.bmp
+share/dink/dink/Tiles/Ts22.bmp
+share/dink/dink/Tiles/Ts23.bmp
+share/dink/dink/Tiles/Ts24.bmp
+share/dink/dink/Tiles/Ts25.bmp
+share/dink/dink/Tiles/Ts26.bmp
+share/dink/dink/Tiles/Ts27.bmp
+share/dink/dink/Tiles/Ts28.bmp
+share/dink/dink/Tiles/Ts29.bmp
+share/dink/dink/Tiles/Ts30.bmp
+share/dink/dink/Tiles/Ts31.bmp
+share/dink/dink/Tiles/Ts32.bmp
+share/dink/dink/Tiles/Ts33.bmp
+share/dink/dink/Tiles/Ts34.bmp
+share/dink/dink/Tiles/Ts35.bmp
+share/dink/dink/Tiles/Ts41.bmp
+share/dink/dink/Tiles/cd.BMP
+share/dink/dink/Tiles/map1.bmp
+share/dink/dink/Tiles/s10.BMP
+share/dink/dink/Tiles/s11.bmp
+share/dink/dink/Tiles/s12.bmp
+share/dink/dink/Tiles/s13.bmp
+share/dink/dink/Tiles/ts36.BMP
+share/dink/dink/Tiles/ts37.BMP
+share/dink/dink/Tiles/ts38.BMP
+share/dink/dink/Tiles/ts39.BMP
+share/dink/dink/Tiles/ts40.bmp
+share/dink/dink/dmod.diz
+share/dink/dink/graphics/Animals/Duck/death/dir.ff
+share/dink/dink/graphics/Animals/Duck/dir.ff
+share/dink/dink/graphics/Animals/Fish/Fish1/dir.ff
+share/dink/dink/graphics/Animals/Fish/Fish2/dir.ff
+share/dink/dink/graphics/Animals/Fish/Flop/dir.ff
+share/dink/dink/graphics/Animals/Pig/dir.ff
+share/dink/dink/graphics/Bonuses/Barrels/dir.ff
+share/dink/dink/graphics/Bonuses/Chest/dir.ff
+share/dink/dink/graphics/Bonuses/Coins/dir.ff
+share/dink/dink/graphics/Bonuses/Heart/dir.ff
+share/dink/dink/graphics/Bonuses/bottles/dir.ff
+share/dink/dink/graphics/Dink/Die/dir.ff
+share/dink/dink/graphics/Dink/Seed/dir.ff
+share/dink/dink/graphics/Dink/bow/hit/dir.ff
+share/dink/dink/graphics/Dink/bow/idle/dir.ff
+share/dink/dink/graphics/Dink/bow/walk/dir.ff
+share/dink/dink/graphics/Dink/crawl/dir.ff
+share/dink/dink/graphics/Dink/fall/ds-f2-01.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-02.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-03.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-04.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-05.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-06.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-07.bmp
+share/dink/dink/graphics/Dink/fall/ds-f2-08.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-01.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-02.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-03.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-04.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-05.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-06.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-07.bmp
+share/dink/dink/graphics/Dink/fall/ds-f4-08.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-01.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-02.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-03.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-04.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-05.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-06.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-07.bmp
+share/dink/dink/graphics/Dink/fall/ds-f6-08.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-01.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-02.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-03.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-04.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-05.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-06.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-07.bmp
+share/dink/dink/graphics/Dink/fall/ds-f8-08.bmp
+share/dink/dink/graphics/Dink/hit/magic/dir.ff
+share/dink/dink/graphics/Dink/hit/normal/dir.ff
+share/dink/dink/graphics/Dink/idle/dir.ff
+share/dink/dink/graphics/Dink/morph/dinkm-01.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-02.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-03.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-04.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-05.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-06.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-07.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-08.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-09.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-10.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-11.bmp
+share/dink/dink/graphics/Dink/morph/dinkm-12.bmp
+share/dink/dink/graphics/Dink/push/dir.ff
+share/dink/dink/graphics/Dink/sword/hit/dir.ff
+share/dink/dink/graphics/Dink/sword/idle/dir.ff
+share/dink/dink/graphics/Dink/sword/walk/dir.ff
+share/dink/dink/graphics/Dink/walk/dir.ff
+share/dink/dink/graphics/Effects/Atomic/dir.ff
+share/dink/dink/graphics/Effects/Circles/dir.ff
+share/dink/dink/graphics/Effects/Comets/Sm-comt1/dir.ff
+share/dink/dink/graphics/Effects/Comets/Sm-comt2/dir.ff
+share/dink/dink/graphics/Effects/Magic/dir.ff
+share/dink/dink/graphics/Effects/Seed/dir.ff
+share/dink/dink/graphics/Effects/Shadows/dir.ff
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-01.BMP
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-02.BMP
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-03.BMP
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-04.BMP
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-05.BMP
+share/dink/dink/graphics/Effects/Shiny/blue/shiny-06.BMP
+share/dink/dink/graphics/Effects/Shiny/dir.ff
+share/dink/dink/graphics/Effects/Shiny/green/shiny-01.BMP
+share/dink/dink/graphics/Effects/Shiny/green/shiny-02.BMP
+share/dink/dink/graphics/Effects/Shiny/green/shiny-03.BMP
+share/dink/dink/graphics/Effects/Shiny/green/shiny-04.BMP
+share/dink/dink/graphics/Effects/Shiny/green/shiny-05.BMP
+share/dink/dink/graphics/Effects/Shiny/green/shiny-06.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-01.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-02.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-03.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-04.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-05.BMP
+share/dink/dink/graphics/Effects/Shiny/purple/shiny-06.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-01.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-02.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-03.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-04.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-05.BMP
+share/dink/dink/graphics/Effects/Shiny/red/shiny-06.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-01.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-02.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-03.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-04.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-05.BMP
+share/dink/dink/graphics/Effects/Shiny/yellow/shiny-06.BMP
+share/dink/dink/graphics/Effects/Sparks/dir.ff
+share/dink/dink/graphics/Effects/Splash/dir.ff
+share/dink/dink/graphics/Effects/Spurt/dir.ff
+share/dink/dink/graphics/Effects/Stars/dir.ff
+share/dink/dink/graphics/Effects/arrow/dir.ff
+share/dink/dink/graphics/Effects/axe/dir.ff
+share/dink/dink/graphics/Effects/boom/dir.ff
+share/dink/dink/graphics/Effects/fire/dir.ff
+share/dink/dink/graphics/Effects/hammer/dir.ff
+share/dink/dink/graphics/Effects/splode/dir.ff
+share/dink/dink/graphics/Items/Bomb/dir.ff
+share/dink/dink/graphics/Items/Boxes/dir.ff
+share/dink/dink/graphics/Items/Cup/dir.ff
+share/dink/dink/graphics/Items/Food/dir.ff
+share/dink/dink/graphics/Items/Paper/dir.ff
+share/dink/dink/graphics/Items/Tomb/dir.ff
+share/dink/dink/graphics/Items/Tools/dir.ff
+share/dink/dink/graphics/Items/grain/dir.ff
+share/dink/dink/graphics/People/Boatman/dir.ff
+share/dink/dink/graphics/People/Fairy/dir.ff
+share/dink/dink/graphics/People/Girl/dir.ff
+share/dink/dink/graphics/People/Gnome/Blue/dir.ff
+share/dink/dink/graphics/People/Gnome/Green/dir.ff
+share/dink/dink/graphics/People/Gnome/Purple/dir.ff
+share/dink/dink/graphics/People/Knight/Blue/Attack/dir.ff
+share/dink/dink/graphics/People/Knight/Blue/dir.ff
+share/dink/dink/graphics/People/Knight/Gold/Attack/dir.ff
+share/dink/dink/graphics/People/Knight/Gold/dir.ff
+share/dink/dink/graphics/People/Knight/Red/Attack/dir.ff
+share/dink/dink/graphics/People/Knight/Red/dir.ff
+share/dink/dink/graphics/People/Knight/Silver/Attack/dir.ff
+share/dink/dink/graphics/People/Knight/Silver/dir.ff
+share/dink/dink/graphics/People/Maiden/Blue/dir.ff
+share/dink/dink/graphics/People/Maiden/Brown/dir.ff
+share/dink/dink/graphics/People/Maiden/Red/dir.ff
+share/dink/dink/graphics/People/Merchant/Blue/dir.ff
+share/dink/dink/graphics/People/Merchant/Green/dir.ff
+share/dink/dink/graphics/People/Merchant/Purple/dir.ff
+share/dink/dink/graphics/People/Merchant/dir.ff
+share/dink/dink/graphics/People/Mom/Brown/dir.ff
+share/dink/dink/graphics/People/Mom/dir.ff
+share/dink/dink/graphics/People/Oldman/dir.ff
+share/dink/dink/graphics/People/Peasant2/dir.ff
+share/dink/dink/graphics/People/Soldier/dir.ff
+share/dink/dink/graphics/Startme/options/dir.ff
+share/dink/dink/graphics/Startme/vstart/dir.ff
+share/dink/dink/graphics/foes/Bonca/Attack/dir.ff
+share/dink/dink/graphics/foes/Bonca/Death/dir.ff
+share/dink/dink/graphics/foes/Bonca/Gray/Attack/dir.ff
+share/dink/dink/graphics/foes/Bonca/Gray/Walk/dir.ff
+share/dink/dink/graphics/foes/Bonca/Magic/F03m2-01.bmp
+share/dink/dink/graphics/foes/Bonca/Magic/F03m2-02.bmp
+share/dink/dink/graphics/foes/Bonca/Magic/F03m2-03.bmp
+share/dink/dink/graphics/foes/Bonca/Magic/F03m2-04.bmp
+share/dink/dink/graphics/foes/Bonca/Magic/F03m2-05.bmp
+share/dink/dink/graphics/foes/Bonca/Purple/Attack/dir.ff
+share/dink/dink/graphics/foes/Bonca/Purple/Walk/dir.ff
+share/dink/dink/graphics/foes/Bonca/Walk/dir.ff
+share/dink/dink/graphics/foes/Dragon/dir.ff
+share/dink/dink/graphics/foes/Pill/dir.ff
+share/dink/dink/graphics/foes/Puddle/Blue/Death/dir.ff
+share/dink/dink/graphics/foes/Puddle/Blue/Walk/dir.ff
+share/dink/dink/graphics/foes/Puddle/Green/Death/dir.ff
+share/dink/dink/graphics/foes/Puddle/Green/Walk/dir.ff
+share/dink/dink/graphics/foes/Puddle/Red/Death/dir.ff
+share/dink/dink/graphics/foes/Puddle/Red/Walk/dir.ff
+share/dink/dink/graphics/foes/Slayers/Attack/dir.ff
+share/dink/dink/graphics/foes/Slayers/Walk/dir.ff
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-01.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-02.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-03.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-04.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-05.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-06.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-07.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i1-08.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-01.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-02.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-03.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-04.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-05.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-06.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-07.bmp
+share/dink/dink/graphics/foes/Spike/Idle/F07i3-08.bmp
+share/dink/dink/graphics/foes/Spike/Walk/dir.ff
+share/dink/dink/graphics/foes/Stonegnt/Attack/dir.ff
+share/dink/dink/graphics/foes/Stonegnt/walk/dir.ff
+share/dink/dink/graphics/foes/goblin/Hammer/attack/dir.ff
+share/dink/dink/graphics/foes/goblin/Hammer/walk/dir.ff
+share/dink/dink/graphics/foes/goblin/Horns/attack/dir.ff
+share/dink/dink/graphics/foes/goblin/Horns/attack2/dir.ff
+share/dink/dink/graphics/foes/goblin/Horns/walk/dir.ff
+share/dink/dink/graphics/foes/goblin/Soldier/attack/dir.ff
+share/dink/dink/graphics/foes/goblin/Soldier/walk/dir.ff
+share/dink/dink/graphics/inner/dir.ff
+share/dink/dink/graphics/inside/details/dir.ff
+share/dink/dink/graphics/inside/innwalls/Door/dir.ff
+share/dink/dink/graphics/inside/innwalls/Floor/fl-wood.bmp
+share/dink/dink/graphics/inside/innwalls/Walls/dir.ff
+share/dink/dink/graphics/inside/stairs/dir.ff
+share/dink/dink/graphics/inside/stnwalls/dir.ff
+share/dink/dink/graphics/inside/stnwalls/snake/dir.ff
+share/dink/dink/graphics/inter/Level#/Ln-01.bmp
+share/dink/dink/graphics/inter/Level#/Ln-02.bmp
+share/dink/dink/graphics/inter/Level#/Ln-03.bmp
+share/dink/dink/graphics/inter/Level#/Ln-04.bmp
+share/dink/dink/graphics/inter/Level#/Ln-05.bmp
+share/dink/dink/graphics/inter/Level#/Ln-06.bmp
+share/dink/dink/graphics/inter/Level#/Ln-07.bmp
+share/dink/dink/graphics/inter/Level#/Ln-08.bmp
+share/dink/dink/graphics/inter/Level#/Ln-09.bmp
+share/dink/dink/graphics/inter/Level#/Ln-10.bmp
+share/dink/dink/graphics/inter/Menu/dir.ff
+share/dink/dink/graphics/inter/Numbers/dir.ff
+share/dink/dink/graphics/inter/Text-box/dir.ff
+share/dink/dink/graphics/inter/arrow/Arowl-01.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-02.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-03.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-04.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-05.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-06.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-07.bmp
+share/dink/dink/graphics/inter/arrow/Arowl-08.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-01.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-02.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-03.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-04.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-05.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-06.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-07.bmp
+share/dink/dink/graphics/inter/arrow/Arowr-08.bmp
+share/dink/dink/graphics/inter/health/dir.ff
+share/dink/dink/graphics/inter/save/dir.ff
+share/dink/dink/graphics/inter/status/dir.ff
+share/dink/dink/graphics/lands/Details/dir.ff
+share/dink/dink/graphics/lands/Fence/dir.ff
+share/dink/dink/graphics/lands/Garden/dir.ff
+share/dink/dink/graphics/lands/Grass/dir.ff
+share/dink/dink/graphics/lands/Rocks/dir.ff
+share/dink/dink/graphics/lands/Shrubs/dir.ff
+share/dink/dink/graphics/lands/Trees/Treefire/dir.ff
+share/dink/dink/graphics/lands/Trees/dir.ff
+share/dink/dink/graphics/lands/firemoun/dir.ff
+share/dink/dink/graphics/struct/Bridge/dir.ff
+share/dink/dink/graphics/struct/Building/dir.ff
+share/dink/dink/graphics/struct/Cabin/dir.ff
+share/dink/dink/graphics/struct/Castle/dir.ff
+share/dink/dink/graphics/struct/Cataplt/dir.ff
+share/dink/dink/graphics/struct/Church/dir.ff
+share/dink/dink/graphics/struct/Details/Damage/dir.ff
+share/dink/dink/graphics/struct/Details/Door/dir.ff
+share/dink/dink/graphics/struct/Home/dir.ff
+share/dink/dink/graphics/struct/Island/dir.ff
+share/dink/dink/graphics/struct/Landmark/dir.ff
+share/dink/dink/graphics/struct/Stone/mdink/dir.ff
+share/dink/dink/graphics/struct/Teleport/dir.ff
+share/dink/dink/graphics/struct/outinn/dir.ff
+share/dink/dink/preview.bmp
+@dirrm share/dink/dink/graphics/struct/outinn
+@dirrm share/dink/dink/graphics/struct/Teleport
+@dirrm share/dink/dink/graphics/struct/Stone/mdink
+@dirrm share/dink/dink/graphics/struct/Stone
+@dirrm share/dink/dink/graphics/struct/Landmark
+@dirrm share/dink/dink/graphics/struct/Island
+@dirrm share/dink/dink/graphics/struct/Home
+@dirrm share/dink/dink/graphics/struct/Details/Door
+@dirrm share/dink/dink/graphics/struct/Details/Damage
+@dirrm share/dink/dink/graphics/struct/Details
+@dirrm share/dink/dink/graphics/struct/Church
+@dirrm share/dink/dink/graphics/struct/Cataplt
+@dirrm share/dink/dink/graphics/struct/Castle
+@dirrm share/dink/dink/graphics/struct/Cabin
+@dirrm share/dink/dink/graphics/struct/Building
+@dirrm share/dink/dink/graphics/struct/Bridge
+@dirrm share/dink/dink/graphics/struct
+@dirrm share/dink/dink/graphics/lands/firemoun
+@dirrm share/dink/dink/graphics/lands/Trees/Treefire
+@dirrm share/dink/dink/graphics/lands/Trees
+@dirrm share/dink/dink/graphics/lands/Shrubs
+@dirrm share/dink/dink/graphics/lands/Rocks
+@dirrm share/dink/dink/graphics/lands/Grass
+@dirrm share/dink/dink/graphics/lands/Garden
+@dirrm share/dink/dink/graphics/lands/Fence
+@dirrm share/dink/dink/graphics/lands/Details
+@dirrm share/dink/dink/graphics/lands
+@dirrm share/dink/dink/graphics/inter/status
+@dirrm share/dink/dink/graphics/inter/save
+@dirrm share/dink/dink/graphics/inter/health
+@dirrm share/dink/dink/graphics/inter/arrow
+@dirrm share/dink/dink/graphics/inter/Text-box
+@dirrm share/dink/dink/graphics/inter/Numbers
+@dirrm share/dink/dink/graphics/inter/Menu
+@dirrm share/dink/dink/graphics/inter/Level#
+@dirrm share/dink/dink/graphics/inter
+@dirrm share/dink/dink/graphics/inside/stnwalls/snake
+@dirrm share/dink/dink/graphics/inside/stnwalls
+@dirrm share/dink/dink/graphics/inside/stairs
+@dirrm share/dink/dink/graphics/inside/innwalls/Walls
+@dirrm share/dink/dink/graphics/inside/innwalls/Floor
+@dirrm share/dink/dink/graphics/inside/innwalls/Door
+@dirrm share/dink/dink/graphics/inside/innwalls
+@dirrm share/dink/dink/graphics/inside/details
+@dirrm share/dink/dink/graphics/inside
+@dirrm share/dink/dink/graphics/inner
+@dirrm share/dink/dink/graphics/foes/goblin/Soldier/walk
+@dirrm share/dink/dink/graphics/foes/goblin/Soldier/attack
+@dirrm share/dink/dink/graphics/foes/goblin/Soldier
+@dirrm share/dink/dink/graphics/foes/goblin/Horns/walk
+@dirrm share/dink/dink/graphics/foes/goblin/Horns/attack2
+@dirrm share/dink/dink/graphics/foes/goblin/Horns/attack
+@dirrm share/dink/dink/graphics/foes/goblin/Horns
+@dirrm share/dink/dink/graphics/foes/goblin/Hammer/walk
+@dirrm share/dink/dink/graphics/foes/goblin/Hammer/attack
+@dirrm share/dink/dink/graphics/foes/goblin/Hammer
+@dirrm share/dink/dink/graphics/foes/goblin
+@dirrm share/dink/dink/graphics/foes/Stonegnt/walk
+@dirrm share/dink/dink/graphics/foes/Stonegnt/Attack
+@dirrm share/dink/dink/graphics/foes/Stonegnt
+@dirrm share/dink/dink/graphics/foes/Spike/Walk
+@dirrm share/dink/dink/graphics/foes/Spike/Idle
+@dirrm share/dink/dink/graphics/foes/Spike
+@dirrm share/dink/dink/graphics/foes/Slayers/Walk
+@dirrm share/dink/dink/graphics/foes/Slayers/Attack
+@dirrm share/dink/dink/graphics/foes/Slayers
+@dirrm share/dink/dink/graphics/foes/Puddle/Red/Walk
+@dirrm share/dink/dink/graphics/foes/Puddle/Red/Death
+@dirrm share/dink/dink/graphics/foes/Puddle/Red
+@dirrm share/dink/dink/graphics/foes/Puddle/Green/Walk
+@dirrm share/dink/dink/graphics/foes/Puddle/Green/Death
+@dirrm share/dink/dink/graphics/foes/Puddle/Green
+@dirrm share/dink/dink/graphics/foes/Puddle/Blue/Walk
+@dirrm share/dink/dink/graphics/foes/Puddle/Blue/Death
+@dirrm share/dink/dink/graphics/foes/Puddle/Blue
+@dirrm share/dink/dink/graphics/foes/Puddle
+@dirrm share/dink/dink/graphics/foes/Pill
+@dirrm share/dink/dink/graphics/foes/Dragon
+@dirrm share/dink/dink/graphics/foes/Bonca/Walk
+@dirrm share/dink/dink/graphics/foes/Bonca/Purple/Walk
+@dirrm share/dink/dink/graphics/foes/Bonca/Purple/Attack
+@dirrm share/dink/dink/graphics/foes/Bonca/Purple
+@dirrm share/dink/dink/graphics/foes/Bonca/Magic
+@dirrm share/dink/dink/graphics/foes/Bonca/Gray/Walk
+@dirrm share/dink/dink/graphics/foes/Bonca/Gray/Attack
+@dirrm share/dink/dink/graphics/foes/Bonca/Gray
+@dirrm share/dink/dink/graphics/foes/Bonca/Death
+@dirrm share/dink/dink/graphics/foes/Bonca/Attack
+@dirrm share/dink/dink/graphics/foes/Bonca
+@dirrm share/dink/dink/graphics/foes
+@dirrm share/dink/dink/graphics/Startme/vstart
+@dirrm share/dink/dink/graphics/Startme/options
+@dirrm share/dink/dink/graphics/Startme
+@dirrm share/dink/dink/graphics/People/Soldier
+@dirrm share/dink/dink/graphics/People/Peasant2
+@dirrm share/dink/dink/graphics/People/Oldman
+@dirrm share/dink/dink/graphics/People/Mom/Brown
+@dirrm share/dink/dink/graphics/People/Mom
+@dirrm share/dink/dink/graphics/People/Merchant/Purple
+@dirrm share/dink/dink/graphics/People/Merchant/Green
+@dirrm share/dink/dink/graphics/People/Merchant/Blue
+@dirrm share/dink/dink/graphics/People/Merchant
+@dirrm share/dink/dink/graphics/People/Maiden/Red
+@dirrm share/dink/dink/graphics/People/Maiden/Brown
+@dirrm share/dink/dink/graphics/People/Maiden/Blue
+@dirrm share/dink/dink/graphics/People/Maiden
+@dirrm share/dink/dink/graphics/People/Knight/Silver/Attack
+@dirrm share/dink/dink/graphics/People/Knight/Silver
+@dirrm share/dink/dink/graphics/People/Knight/Red/Attack
+@dirrm share/dink/dink/graphics/People/Knight/Red
+@dirrm share/dink/dink/graphics/People/Knight/Gold/Attack
+@dirrm share/dink/dink/graphics/People/Knight/Gold
+@dirrm share/dink/dink/graphics/People/Knight/Blue/Attack
+@dirrm share/dink/dink/graphics/People/Knight/Blue
+@dirrm share/dink/dink/graphics/People/Knight
+@dirrm share/dink/dink/graphics/People/Gnome/Purple
+@dirrm share/dink/dink/graphics/People/Gnome/Green
+@dirrm share/dink/dink/graphics/People/Gnome/Blue
+@dirrm share/dink/dink/graphics/People/Gnome
+@dirrm share/dink/dink/graphics/People/Girl
+@dirrm share/dink/dink/graphics/People/Fairy
+@dirrm share/dink/dink/graphics/People/Boatman
+@dirrm share/dink/dink/graphics/People
+@dirrm share/dink/dink/graphics/Items/grain
+@dirrm share/dink/dink/graphics/Items/Tools
+@dirrm share/dink/dink/graphics/Items/Tomb
+@dirrm share/dink/dink/graphics/Items/Paper
+@dirrm share/dink/dink/graphics/Items/Food
+@dirrm share/dink/dink/graphics/Items/Cup
+@dirrm share/dink/dink/graphics/Items/Boxes
+@dirrm share/dink/dink/graphics/Items/Bomb
+@dirrm share/dink/dink/graphics/Items
+@dirrm share/dink/dink/graphics/Effects/splode
+@dirrm share/dink/dink/graphics/Effects/hammer
+@dirrm share/dink/dink/graphics/Effects/fire
+@dirrm share/dink/dink/graphics/Effects/boom
+@dirrm share/dink/dink/graphics/Effects/axe
+@dirrm share/dink/dink/graphics/Effects/arrow
+@dirrm share/dink/dink/graphics/Effects/Stars
+@dirrm share/dink/dink/graphics/Effects/Spurt
+@dirrm share/dink/dink/graphics/Effects/Splash
+@dirrm share/dink/dink/graphics/Effects/Sparks
+@dirrm share/dink/dink/graphics/Effects/Shiny/yellow
+@dirrm share/dink/dink/graphics/Effects/Shiny/red
+@dirrm share/dink/dink/graphics/Effects/Shiny/purple
+@dirrm share/dink/dink/graphics/Effects/Shiny/green
+@dirrm share/dink/dink/graphics/Effects/Shiny/blue
+@dirrm share/dink/dink/graphics/Effects/Shiny
+@dirrm share/dink/dink/graphics/Effects/Shadows
+@dirrm share/dink/dink/graphics/Effects/Seed
+@dirrm share/dink/dink/graphics/Effects/Magic
+@dirrm share/dink/dink/graphics/Effects/Comets/Sm-comt2
+@dirrm share/dink/dink/graphics/Effects/Comets/Sm-comt1
+@dirrm share/dink/dink/graphics/Effects/Comets
+@dirrm share/dink/dink/graphics/Effects/Circles
+@dirrm share/dink/dink/graphics/Effects/Atomic
+@dirrm share/dink/dink/graphics/Effects
+@dirrm share/dink/dink/graphics/Dink/walk
+@dirrm share/dink/dink/graphics/Dink/sword/walk
+@dirrm share/dink/dink/graphics/Dink/sword/idle
+@dirrm share/dink/dink/graphics/Dink/sword/hit
+@dirrm share/dink/dink/graphics/Dink/sword
+@dirrm share/dink/dink/graphics/Dink/push
+@dirrm share/dink/dink/graphics/Dink/morph
+@dirrm share/dink/dink/graphics/Dink/idle
+@dirrm share/dink/dink/graphics/Dink/hit/normal
+@dirrm share/dink/dink/graphics/Dink/hit/magic
+@dirrm share/dink/dink/graphics/Dink/hit
+@dirrm share/dink/dink/graphics/Dink/fall
+@dirrm share/dink/dink/graphics/Dink/crawl
+@dirrm share/dink/dink/graphics/Dink/bow/walk
+@dirrm share/dink/dink/graphics/Dink/bow/idle
+@dirrm share/dink/dink/graphics/Dink/bow/hit
+@dirrm share/dink/dink/graphics/Dink/bow
+@dirrm share/dink/dink/graphics/Dink/Seed
+@dirrm share/dink/dink/graphics/Dink/Die
+@dirrm share/dink/dink/graphics/Dink
+@dirrm share/dink/dink/graphics/Bonuses/bottles
+@dirrm share/dink/dink/graphics/Bonuses/Heart
+@dirrm share/dink/dink/graphics/Bonuses/Coins
+@dirrm share/dink/dink/graphics/Bonuses/Chest
+@dirrm share/dink/dink/graphics/Bonuses/Barrels
+@dirrm share/dink/dink/graphics/Bonuses
+@dirrm share/dink/dink/graphics/Animals/Pig
+@dirrm share/dink/dink/graphics/Animals/Fish/Flop
+@dirrm share/dink/dink/graphics/Animals/Fish/Fish2
+@dirrm share/dink/dink/graphics/Animals/Fish/Fish1
+@dirrm share/dink/dink/graphics/Animals/Fish
+@dirrm share/dink/dink/graphics/Animals/Duck/death
+@dirrm share/dink/dink/graphics/Animals/Duck
+@dirrm share/dink/dink/graphics/Animals
+@dirrm share/dink/dink/graphics
+@dirrm share/dink/dink/Tiles
+@dirrm share/dink/dink/Story
+@dirrm share/dink/dink/Sound
+@dirrm share/dink/dink
+@dirrm share/dink
