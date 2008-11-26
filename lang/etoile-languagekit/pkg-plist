@@ -1,0 +1,43 @@
+Local/Library/Frameworks/LanguageKit.framework/Headers
+Local/Library/Frameworks/LanguageKit.framework/LanguageKit
+Local/Library/Frameworks/LanguageKit.framework/LanguageKit.framework
+Local/Library/Frameworks/LanguageKit.framework/Resources
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AST.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ArrayExpr.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AssignExpr.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BlockExpr.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Category.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGen.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenBlock.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenModule.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Comment.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Comparison.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DeclRef.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCompiler.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LanguageKit.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Literal.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MessageSend.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Method.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Module.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Return.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Subclass.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/SymbolRef.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/SymbolTable.h
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/LanguageKit
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/MsgSendSmallInt.bc
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjCConstants.plist
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/LanguageKit.framework/Versions/Current
+Local/Library/Frameworks/LanguageKit.framework/libLanguageKit.so
+Local/Library/Headers/LanguageKit
+Local/Library/Libraries/libLanguageKit.so
+Local/Library/Libraries/libLanguageKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libLanguageKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions
+@dirrm Local/Library/Frameworks/LanguageKit.framework
