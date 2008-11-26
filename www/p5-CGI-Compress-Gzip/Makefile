@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	CGI-Compress-Gzip
-PORTVERSION=	0.22
+PORTVERSION=	1.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	CGI::Compress::Gzip - CGI with automatically compressed output
 
-BUILD_DEPENDS=	p5-IO-Zlib>=1.01:${PORTSDIR}/archivers/p5-IO-Zlib
+BUILD_DEPENDS=	p5-IO-Zlib>=1.01:${PORTSDIR}/archivers/p5-IO-Zlib \
+		p5-Compress-Zlib>=2:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
