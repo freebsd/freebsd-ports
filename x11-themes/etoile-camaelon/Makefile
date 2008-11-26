@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	camaelon
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	x11-themes gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -16,6 +15,7 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project Camaelon bundle
 
+USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
