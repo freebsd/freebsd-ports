@@ -7,13 +7,15 @@
 
 PORTNAME=	idesk
 PORTVERSION=	0.7.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
+
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -26,18 +28,10 @@ CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`
 MAKE_ARGS=	cc="${CXX}" cflags="${CXXFLAGS}"
 SUB_FILES=	pkg-message
 
-OPTIONS=	XFT	"XFT antialias support"	on \
-		SHAPE	"Enable support of the XShape extension"	on \
+OPTIONS=	SHAPE	"Enable support of the XShape extension"	on \
 		SN	"Startup notification support"	off
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-CONFIGURE_ARGS+=	--enable-xft
-.else
-CONFIGURE_ARGS+=	--disable-xft
-.endif
 
 .if !defined(WITHOUT_SHAPE)
 CONFIGURE_ARGS+=	--enable-shape
