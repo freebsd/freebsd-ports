@@ -7,7 +7,7 @@
 
 PORTNAME=	numeric
 PORTVERSION=	24.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
@@ -35,7 +35,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-numeric
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/easy_install)
+.if exists(${LOCALBASE}/bin/easy_install-${PYTHON_VER})
 # py-setuptools is installed - adjust pkg-plist to work with
 # implicit usage in setup.py
 EASY=""
@@ -46,7 +46,19 @@ EASY="@comment "
 NOTEASY=""
 .endif
 
-PLIST_SUB+=	EASY=${EASY} NOTEASY=${NOTEASY}
+# Adjusting pkg-plist gets weirder here. Python 2.5+ incorporates
+# install_egg_info functionality into distutils, so if py-numeric
+# is installed into a lesser Python version, make sure all egg-related
+# pkg-plist entries are omitted
+.if ${PYTHON_SUFFIX} < 25
+NOEGGINFO="@comment "
+.else
+NOEGGINFO=""
+.endif
+
+PLIST_SUB+=	EASY=${EASY} NOTEASY=${NOTEASY} \
+		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO} \
+		NOEGGINFO=${NOEGGINFO}
 
 pre-fetch:
 .if ${PYTHON_REL} < 200
@@ -57,12 +69,19 @@ pre-fetch:
 
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
+#
+# Force the setup.py file to use a specific version of Python,
+# since more than one may be installed, and we want to use
+# the correct one, because if one has setuptools and another
+# doesn't, that could mess with how pkg-plist is constructed.
+#
+	@${REINPLACE_CMD} -e "s|/usr/bin/env python|/usr/bin/env python${PYTHON_VER}|" ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/NumTut
+	@${INSTALL} -d ${EXAMPLESDIR}/NumTut
 	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLESDIR}/NumTut
 .endif
 .if !defined(NOPORTDOCS)
