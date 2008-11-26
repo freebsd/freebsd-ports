@@ -5,7 +5,7 @@ include/oniguruma.h
 lib/libonig.a
 lib/libonig.la
 lib/libonig.so
-lib/libonig.so.1
+lib/libonig.so.2
 %%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/API.ja
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -18,6 +18,7 @@ lib/libonig.so.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crnl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/encode.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listcap.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/names.c
