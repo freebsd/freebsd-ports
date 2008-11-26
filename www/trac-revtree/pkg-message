@@ -10,4 +10,11 @@ Next, visit:
 http://trac-hacks.org/wiki/RevtreePlugin#Configuration
 
 for additional configuration instructions.
+
+If you enabled the optional display enhancers,
+please visit the following URLs for their
+configuration instructions:
+
+http://trac-hacks.org/wiki/RevtreePlugin/MergeInfoEnhancer
+http://trac-hacks.org/wiki/RevtreePlugin/LogEnhancer
 **************************************************
