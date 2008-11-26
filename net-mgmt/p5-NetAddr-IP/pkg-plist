@@ -42,8 +42,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/simple_pack.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/slowadd128.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/sub128.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/threads.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_compV6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_compact_v6.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_splitplan.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_splitref.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/coalesce.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/compactref.al
@@ -57,8 +60,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/re.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/re6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/short.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/split.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/splitref.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/wildcard.al
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util
