@@ -33,11 +33,11 @@ load_rc_config $name
 
 : ${dhcp6relay_enable="NO"}
 
-command_args="${dhcp6relay_flags} ${dhcp6relay_interfaces}"
+command_args="${dhcp6relay_interfaces}"
 
 dhcp6relay_precmd()
 {
-	if [ -z ${dhcp6relay_interfaces} ]; then
+	if [ -z "${dhcp6relay_interfaces}" ]; then
 		warn "dhcp6relay_interfaces is not set."
 		return 1
 	fi
