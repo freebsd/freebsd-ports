@@ -1401,6 +1401,7 @@
     SUBDIR += trac-privatetickets
     SUBDIR += trac-remind
     SUBDIR += trac-restrictedarea
+    SUBDIR += trac-revtree
     SUBDIR += trac-robotstxt
     SUBDIR += trac-simpleticket
     SUBDIR += trac-spam-filter

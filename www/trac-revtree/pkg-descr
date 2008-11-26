@@ -1,0 +1,17 @@
+This Trac plugin renders a graphical representation of the repository.
+The plugin collects the repository's revisions and rebuilds the
+branches based on the names of the files changed in each revision.
+
+Filters can be used to choose which branches and which revisions
+are to be displayed.  Each depicted changeset is a clickable item
+that redirects the browser to the appropriate changeset view.
+
+Whenever the mouse cursor is hovered over a revtree changeset, the
+browser opens a tool tip box that shows the revision number, the
+author and the date of the revision along with the wiki-formatted
+log message.
+
+The plugin also shows branch cloning/tagging operations, and can
+be extended to render other kinds of operations such as merging.
+
+WWW:    http://trac-hacks.org/wiki/RevtreePlugin
