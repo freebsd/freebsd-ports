@@ -58,6 +58,11 @@ www/icons/gallery/video-mov.png
 www/icons/gallery/video-mpeg.png
 www/icons/gallery/video-mpg.png
 www/icons/gallery/video-wmv.png
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
 @dirrmtry %%SITE_PERL%%/Apache
 @dirrm %%DATADIR%%/templates/default
@@ -65,3 +70,4 @@ www/icons/gallery/video-wmv.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrm www/icons/gallery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

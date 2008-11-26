@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	1.0RC3
-PORTREVISION=	1
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PORTSUBVER}
 
 MAINTAINER=	kvs@pil.dk
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
@@ -37,21 +38,29 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl 
 
 PERL_CONFIGURE=	yes
 APACHE_COMPAT=	yes
+PORTSUBVER=	RC3
 
 MAN3=		Apache::Gallery.3
+DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/www/icons/gallery/
+	@${MKDIR} ${PREFIX}/www/icons/gallery/
 	${INSTALL_DATA} ${WRKSRC}/htdocs/* \
-		${PREFIX}/www/icons/gallery
-	${MKDIR} ${DATADIR}/templates/default
-	${MKDIR} ${DATADIR}/templates/new
+		${PREFIX}/www/icons/gallery/
+	@${MKDIR} ${DATADIR}/templates/default
+	@${MKDIR} ${DATADIR}/templates/new
 	${INSTALL_DATA} ${WRKSRC}/templates/default/* \
-		${DATADIR}/templates/default
+		${DATADIR}/templates/default/
 	${INSTALL_DATA} ${WRKSRC}/templates/new/* \
-		${DATADIR}/templates/new
+		${DATADIR}/templates/new/
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
+.endfor
 .endif
+
 .if !defined(BATCH)
 	@${SED} s!%%DATADIR%%!${DATADIR}!g ${PKGMESSAGE}
 .endif
