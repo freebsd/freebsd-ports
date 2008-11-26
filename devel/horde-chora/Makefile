@@ -7,7 +7,7 @@
 
 PORTNAME=	chora
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
@@ -32,7 +32,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 .endif
 
 .if !defined(WITHOUT_CVSPS)
-RUN_DEPENDS+=	${LOCALBASE}/bin/cvsps:${PORTSDIR}/devel/cvsps-devel
+RUN_DEPENDS+=	${LOCALBASE}/bin/cvsps:${PORTSDIR}/devel/cvsps
 .endif
 
 .if !defined(WITHOUT_CVSGRAPH)
@@ -57,14 +57,6 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|%%CVSROOT%%|${CVSROOT}|"		\
 		-e "s|%%CONFDIR%%|${CONFDIR}|"				\
 		${WRKSRC}/config/sourceroots.php.dist
-
-pre-install:
-.if !defined(WITHOUT_CVSPS)
-	@if ! ${PKG_INFO} -I -x cvsps-devel > /dev/null ; then \
-	  ${ECHO_MSG} "Error: cvsps-devel is required, not cvsps." ; \
-	  ${FALSE} ; \
-	fi
-.endif
 
 .include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
 .include <bsd.port.mk>
