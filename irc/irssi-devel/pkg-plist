@@ -274,6 +274,7 @@ include/irssi/src/lib-config/module.h
 %%DATADIR%%/scripts/msg-event.pl
 %%DATADIR%%/scripts/quitmsg.pl
 %%DATADIR%%/scripts/redirect.pl
+%%DATADIR%%/scripts/sb_search.pl
 %%DATADIR%%/scripts/scriptassist.pl
 %%DATADIR%%/scripts/splitlong.pl
 %%DATADIR%%/scripts/usercount.pl
