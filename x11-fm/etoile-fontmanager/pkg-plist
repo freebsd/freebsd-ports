@@ -1,0 +1,21 @@
+Local/Applications/FontManager.app/FontManager
+Local/Applications/FontManager.app/Resources/Document-Font.tif
+Local/Applications/FontManager.app/Resources/English.lproj/FontDocument.gorm/data.classes
+Local/Applications/FontManager.app/Resources/English.lproj/FontDocument.gorm/data.info
+Local/Applications/FontManager.app/Resources/English.lproj/FontDocument.gorm/objects.gorm
+Local/Applications/FontManager.app/Resources/English.lproj/Localizable.strings
+Local/Applications/FontManager.app/Resources/English.lproj/MainMenu.gorm/data.classes
+Local/Applications/FontManager.app/Resources/English.lproj/MainMenu.gorm/data.info
+Local/Applications/FontManager.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/FontManager.app/Resources/FontManager.desktop
+Local/Applications/FontManager.app/Resources/FontManager.tif
+Local/Applications/FontManager.app/Resources/Info-gnustep.plist
+Local/Applications/FontManager.app/Resources/UnicodeBlockNames.plist
+Local/Applications/FontManager.app/Resources/UnicodeBlocks.plist
+Local/Applications/FontManager.app/stamp.make
+Local/Tools/FontManager
+@dirrm Local/Applications/FontManager.app/Resources/English.lproj/MainMenu.gorm
+@dirrm Local/Applications/FontManager.app/Resources/English.lproj/FontDocument.gorm
+@dirrm Local/Applications/FontManager.app/Resources/English.lproj
+@dirrm Local/Applications/FontManager.app/Resources
+@dirrm Local/Applications/FontManager.app
