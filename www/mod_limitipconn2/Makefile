@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_limitipconn
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 DIST_SUBDIR=	apache2
@@ -16,8 +16,8 @@ COMMENT=	Allows you to limit the number of simultaneous connexions
 
 LATEST_LINK=	mod_limitipconn2
 
-USE_APACHE=	YES
-WITH_APACHE2=	YES
+USE_APACHE=	2.0+
+USE_BZIP2=	YES
 
 PORTDOCS=	ChangeLog INSTALL README
 
