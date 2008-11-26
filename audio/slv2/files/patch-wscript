@@ -1,0 +1,12 @@
+--- wscript.orig	2008-11-15 18:35:35.000000000 +0300
++++ wscript	2008-11-27 01:14:25.000000000 +0300
+@@ -116,9 +116,6 @@
+ 			obj.inst_dir     = bld.env()['BINDIRNAME']
+ 	
+ 	# Documentation
+-	autowaf.build_dox(bld, 'SLV2', SLV2_VERSION, srcdir, blddir)
+-	install_files('HTMLDIR', '', blddir + '/default/doc/html/*')
+-	install_files('MANDIR', 'man3', blddir + '/default/doc/man/man3/*')
+ 
+ def shutdown():
+ 	autowaf.shutdown()
