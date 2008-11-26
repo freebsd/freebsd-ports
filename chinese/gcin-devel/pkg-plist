@@ -30,6 +30,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/script/noseeing-inst
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
+%%DATADIR%%/table/ar30-big.gtab
 %%DATADIR%%/table/cj-punc.gtab
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
@@ -66,7 +67,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/tsin32.idx
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 share/applications/gcin
 share/applications/gcin-setup
