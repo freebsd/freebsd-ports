@@ -1,6 +1,7 @@
 bin/skype
 share/pixmaps/skype.png
 share/applications/skype.desktop
+%%SKYPEDIR%%/skype
 %%SKYPEDIR%%/avatars/Angel Skype.png
 %%SKYPEDIR%%/avatars/Architect Skype.png
 %%SKYPEDIR%%/avatars/Beach Skype.png

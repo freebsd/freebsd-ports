@@ -1,0 +1,3 @@
+#!/bin/sh
+%%PREFIX%%/%%SKYPEDIR%%/skype --resources=%%PREFIX%%/%%SKYPEDIR%% $@
+

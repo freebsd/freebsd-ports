@@ -37,9 +37,9 @@ RESTRICTED=	Redistribution prohibited.
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss
 SKYPEDIR=	share/skype
 PORTDOCS=	LICENSE README
-SUB_FILES=	pkg-message
-SUB_LIST=	SKYPEDIR=${SKYPEDIR}
-PLIST_SUB=	SKYPEDIR=${SKYPEDIR}
+PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
+SUB_FILES=	skype.sh
+SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -58,26 +58,24 @@ pre-fetch:
 	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
 	@${ECHO_MSG}	""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|Exec=skype|Exec=skype --resources=${PREFIX}/${SKYPEDIR}|' \
-		${WRKSRC}/skype.desktop
-
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/skype
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
-	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype
-	@${CHMOD} a+rx ${PREFIX}/bin/skype
 	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "avatars icons sounds lang" ${PREFIX}/${SKYPEDIR}/
+
+# The binary main program
+	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/${SKYPEDIR}/
+
+# The wrapper for main program
+	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
