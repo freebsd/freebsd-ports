@@ -1,0 +1,13 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+revtree.* = enabled
+
+to your trac.ini to enable the plugin.
+
+Next, visit:
+http://trac-hacks.org/wiki/RevtreePlugin#Configuration
+
+for additional configuration instructions.
+**************************************************
