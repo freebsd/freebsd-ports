@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 USE_GNOME=	pkgconfig
+USE_LDCONFIG=	yes
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} DESTDIR=${LOCALBASE} ./waf configure
