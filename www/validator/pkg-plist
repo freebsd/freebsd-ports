@@ -70,6 +70,11 @@ www/validator/htdocs/dev/tests/html401_doctypecase.html
 www/validator/htdocs/dev/tests/html401-strict.html
 www/validator/htdocs/dev/tests/html401-strict.xhtml
 www/validator/htdocs/dev/tests/html401_system.html
+www/validator/htdocs/dev/tests/html5-error-explanation.html
+www/validator/htdocs/dev/tests/html5-ok.html
+www/validator/htdocs/dev/tests/html5-precise-error.html
+www/validator/htdocs/dev/tests/html5-range-error.html
+www/validator/htdocs/dev/tests/html5-warning.html
 www/validator/htdocs/dev/tests/html_xmlns.html.utf8
 www/validator/htdocs/dev/tests/index.html
 www/validator/htdocs/dev/tests/invalid_meta_multibyte.html
@@ -335,9 +340,6 @@ www/validator/htdocs/results.css
 www/validator/htdocs/robots.txt
 www/validator/htdocs/scripts/mootools.js
 www/validator/htdocs/scripts/w3c-validator.js
-www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml-basic11.dtd
-www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml11-model-1.mod
-www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713/xhtml11.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict.dtd
@@ -560,6 +562,12 @@ www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11-f.dtd
 www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11-model-1.mod
 www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11.cat
 www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705/xhtml-basic11.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xhtml11-flat.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xhtml11-model-1.mod
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xhtml11.cat
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xhtml11.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xml1.dcl
+www/validator/htdocs/sgml-lib/WD-xhtml11-20070216/xml1n.dcl
 www/validator/htdocs/sgml-lib/sgml.dcl
 www/validator/htdocs/sgml-lib/sgml.dtd
 www/validator/htdocs/sgml-lib/sgml.soc
@@ -625,6 +633,7 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/httpd
 @dirrm www/validator/htdocs/style
 @dirrm www/validator/htdocs/source
+@dirrm www/validator/htdocs/sgml-lib/WD-xhtml11-20070216
 @dirrm www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
 @dirrm www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
@@ -647,7 +656,6 @@ www/validator/share/templates/en_US/xml_output.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML2-20031021
 @dirrm www/validator/htdocs/sgml-lib/ISO-HTML
 @dirrm www/validator/htdocs/sgml-lib/IETF
-@dirrm www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713
 @dirrm www/validator/htdocs/sgml-lib
 @dirrm www/validator/htdocs/scripts
 @dirrm www/validator/htdocs/misc

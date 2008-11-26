@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -65,7 +64,6 @@ do-install:
 	${MKDIR} ${PREFIX}/www/validator/htdocs/misc
 	${MKDIR} ${PREFIX}/www/validator/htdocs/scripts
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/IETF
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/ISO-HTML
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021
@@ -88,6 +86,7 @@ do-install:
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml11-20070216
 	${MKDIR} ${PREFIX}/www/validator/htdocs/source
 	${MKDIR} ${PREFIX}/www/validator/htdocs/style
 	${MKDIR} ${PREFIX}/www/validator/httpd
@@ -106,7 +105,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/misc/* ${PREFIX}/www/validator/htdocs/misc
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/scripts -type f -depth 1` ${PREFIX}/www/validator/htdocs/scripts
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/sgml-lib -type f -depth 1` ${PREFIX}/www/validator/htdocs/sgml-lib
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/CR-xhtml-basic-20070713/* ${PREFIX}/www/validator/htdocs/sgml-lib/CR-xhtml-basic-20070713
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/IETF/* ${PREFIX}/www/validator/htdocs/sgml-lib/IETF
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/ISO-HTML/* ${PREFIX}/www/validator/htdocs/sgml-lib/ISO-HTML
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021 -type f -depth 1` ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021
@@ -129,6 +127,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml11-20010531/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-xhtml-basic-20060705/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-xhtml11-20070216/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml11-20070216
 	${INSTALL_DATA} ${WRKSRC}/htdocs/source/* ${PREFIX}/www/validator/htdocs/source
 	${INSTALL_DATA} ${WRKSRC}/htdocs/style/* ${PREFIX}/www/validator/htdocs/style
 	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${PREFIX}/www/validator/httpd/cgi-bin
