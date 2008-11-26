@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.3.pre8
-PORTREVISION=	1
+PORTVERSION=	1.4.3.pre9
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
   		http://cle.linux.org.tw/gcin/download/:main \
@@ -112,10 +111,20 @@ PLIST_SUB+=	QT_IM_MODULE=""
 PLIST_SUB+=	QT_IM_MODULE="@comment "
 .endif
 
+post-build:
+.if !defined(DEBUG_FLAGS)
+	@${FIND} ${WRKSRC} -name "*.so*" | ${XARGS} strip
+.endif
+
 post-install:
+.if !defined(DEBUG_FLAGS)
+.for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts*
+	@strip ${PREFIX}/bin/${f}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in Changelog README.html
+.for file in Changelog.html README.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
