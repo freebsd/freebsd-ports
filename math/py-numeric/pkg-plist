@@ -31,12 +31,12 @@
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.py
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyo
-%%NOTEASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info
-%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info/PKG-INFO
-%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info/SOURCES.txt
-%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info/dependency_links.txt
-%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info/not-zip-safe
-%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info/top_level.txt
+%%NOEGGINFO%%%%NOTEASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%
+%%NOEGGINFO%%%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%/PKG-INFO
+%%NOEGGINFO%%%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%/SOURCES.txt
+%%NOEGGINFO%%%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%/dependency_links.txt
+%%NOEGGINFO%%%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%/not-zip-safe
+%%NOEGGINFO%%%%EASY%%%%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%/top_level.txt
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.py
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyo
@@ -87,7 +87,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
 %%EASY%%@dirrm %%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers/Numeric
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers
-%%EASY%%@dirrm %%PYTHON_SITELIBDIR%%/Numeric/Numeric-24.2-py2.5.egg-info
+%%NOEGGINFO%%%%EASY%%@dirrm %%PYTHON_SITELIBDIR%%/Numeric/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/FFT
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric
