@@ -3533,6 +3533,10 @@ freecol                         ports/games/freecol
 freecolor                       ports/sysutils/freecolor
 freedbd                         ports/net/freedbd
 freedialog                      ports/misc/freedialog
+freedink                        ports/games/freedink
+freedink-data                   ports/games/freedink-data
+freedink-dfarc                  ports/games/freedink-dfarc
+freedink-engine                 ports/games/freedink-engine
 freedoko                        ports/games/freedoko
 freedroid                       ports/games/freedroid
 freedroidrpg                    ports/games/freedroidrpg
@@ -7752,10 +7756,8 @@ linux_base-f8                   ports/emulators/linux_base-f8
 linux_base-fc4                  ports/emulators/linux_base-fc4
 linux_base-fc6                  ports/emulators/linux_base-fc6
 linux_base-gentoo-stage1        ports/emulators/linux_base-gentoo-stage1
-linux_base-gentoo-stage2        ports/emulators/linux_base-gentoo-stage2
 linux_base-gentoo-stage3        ports/emulators/linux_base-gentoo-stage3
 linux_dist-gentoo-stage1        ports/emulators/linux_dist-gentoo-stage1
-linux_dist-gentoo-stage2        ports/emulators/linux_dist-gentoo-stage2
 linux_dist-gentoo-stage3        ports/emulators/linux_dist-gentoo-stage3
 linux_dri                       ports/graphics/linux_dri
 linux_dri-devel                 ports/graphics/linux_dri-devel
@@ -12344,6 +12346,7 @@ p5-Test-URI                     ports/net/p5-Test-URI
 p5-Test-Unit                    ports/devel/p5-Test-Unit
 p5-Test-UseAllModules           ports/devel/p5-Test-UseAllModules
 p5-Test-WWW-Mechanize           ports/devel/p5-Test-WWW-Mechanize
+p5-Test-WWW-Mechanize-CGI       ports/devel/p5-Test-WWW-Mechanize-CGI
 p5-Test-WWW-Mechanize-CGIApp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
 p5-Test-WWW-Mechanize-Catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-Test-Warn                    ports/devel/p5-Test-Warn
@@ -12610,6 +12613,7 @@ p5-WWW-Hotmail                  ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
 p5-WWW-Link                     ports/www/p5-WWW-Link
 p5-WWW-Mechanize                ports/www/p5-WWW-Mechanize
+p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
 p5-WWW-Mechanize-DecodedContent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-WWW-Mechanize-FormFiller     ports/www/p5-WWW-Mechanize-FormFiller
 p5-WWW-Mechanize-Pluggable      ports/www/p5-WWW-Mechanize-Pluggable
@@ -15592,6 +15596,7 @@ p5-test-useallmodules           ports/devel/p5-Test-UseAllModules
 p5-test-warn                    ports/devel/p5-Test-Warn
 p5-test-www-mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-test-www-mechanize-catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
+p5-test-www-mechanize-cgi       ports/devel/p5-Test-WWW-Mechanize-CGI
 p5-test-www-mechanize-cgiapp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
 p5-test-xml                     ports/devel/p5-Test-XML
 p5-test-xml-valid               ports/devel/p5-Test-XML-Valid
@@ -15885,6 +15890,7 @@ p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
 p5-www-link                     ports/www/p5-WWW-Link
 p5-www-mechanize                ports/www/p5-WWW-Mechanize
+p5-www-mechanize-cgi            ports/www/p5-WWW-Mechanize-CGI
 p5-www-mechanize-decodedcontent  ports/www/p5-WWW-Mechanize-DecodedContent
 p5-www-mechanize-formfiller     ports/www/p5-WWW-Mechanize-FormFiller
 p5-www-mechanize-pluggable      ports/www/p5-WWW-Mechanize-Pluggable
@@ -16191,6 +16197,7 @@ pdb                             ports/net/pdb
 pdbar                           ports/palm/pdbar
 pdbc                            ports/palm/pdbc
 pdcurses                        ports/devel/pdcurses
+pdf-renderer                    ports/print/pdf-renderer
 pdf2djvu                        ports/converters/pdf2djvu
 pdfcrack                        ports/security/pdfcrack
 pdfcube                         ports/print/pdfcube
@@ -22838,6 +22845,7 @@ xpuyopuyo                       ports/games/xpuyopuyo
 xpuzzletama                     ports/games/xpuzzletama
 xpvm                            ports/net/xpvm
 xpx                             ports/graphics/xpx
+xpyb                            ports/x11/xpyb
 xpyraminx                       ports/games/xpyraminx
 xqf                             ports/games/xqf
 xqilla                          ports/textproc/xqilla
