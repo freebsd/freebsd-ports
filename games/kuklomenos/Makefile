@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kuklomenos
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ LOCAL/chinsan/games
 
