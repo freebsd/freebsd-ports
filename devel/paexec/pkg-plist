@@ -28,6 +28,7 @@ bin/paexec
 %%EXAMPLESDIR%%/make_package/make_package_cmd__m4
 %%EXAMPLESDIR%%/make_package/make_package_tasks
 %%EXAMPLESDIR%%/make_package/make_package_tasks2
+%%EXAMPLESDIR%%/make_package/make_package_tasks_cycle
 %%EXAMPLESDIR%%/toupper/toupper_cmd
 %%EXAMPLESDIR%%/toupper/toupper_run
 @dirrm %%EXAMPLESDIR%%/1_div_X
