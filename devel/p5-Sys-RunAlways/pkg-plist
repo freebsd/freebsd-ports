@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Sys/RunAlways.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/RunAlways/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/RunAlways
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/Sys
