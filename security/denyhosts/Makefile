@@ -7,7 +7,7 @@
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +30,7 @@ post-patch:
 		${WRKSRC}/daemon-control-dist \
 		${WRKSRC}/denyhosts.cfg-dist \
 		${WRKSRC}/setup.py
+	@${RM} ${WRKSRC}/scripts/restricted_from_passwd.py.orig
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.conf-dist
