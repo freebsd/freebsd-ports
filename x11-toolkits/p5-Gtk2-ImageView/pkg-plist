@@ -1,0 +1,28 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView/ImageView.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView/ImageView.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf/Draw/Cache.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Anim.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install/gtkimageviewperl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Nav.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/ScrollWin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Dragger.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Painter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool/Selector.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Zoom.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/index.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/ImageView
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Tool
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ImageView
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf/Draw
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2
