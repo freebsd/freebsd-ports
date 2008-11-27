@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gtkimageview
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	CENKES
+MASTER_SITES=	LOCAL/chinsan http://people.freebsd.org/~chinsan/
 # http://trac.bjourne.webfactional.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Simple image viewer widget
 
 GNU_CONFIGURE=	yes
