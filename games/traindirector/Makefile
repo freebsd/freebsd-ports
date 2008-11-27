@@ -7,14 +7,13 @@
 
 PORTNAME=	traindirector
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.backerstreet.com/traindir/
 DISTNAME=	tdir35src
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
-
-BROKEN=		linker error (linker error: http://T64.TecNik93.com/logs/7-STABLE-FTP/traindirector-3.5.log)
 
 NO_WRKSUBDIR=	yes
 
