@@ -56,6 +56,7 @@
     SUBDIR += etoile-io
     SUBDIR += etoile-languagekit
     SUBDIR += etoile-scriptkit
+    SUBDIR += etoile-smalltalkkit
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += expect-devel
