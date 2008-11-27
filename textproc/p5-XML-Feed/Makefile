@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.30
+PORTVERSION=	0.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
@@ -24,11 +24,11 @@ RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
 		p5-XML-Atom>=0.23:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-RSS>=1.31:${PORTSDIR}/textproc/p5-XML-RSS \
+		p5-XML-RSS>=1.37:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.5+
 
 MAN3=		XML::Feed.3 \
 		XML::Feed::Content.3 \
