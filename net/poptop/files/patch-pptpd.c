@@ -1,5 +1,5 @@
---- pptpd.c.orig	Tue Sep  5 01:17:25 2006
-+++ pptpd.c	Tue Jul 31 08:19:38 2007
+--- pptpd.c.orig	2006-09-05 01:17:25.000000000 +0200
++++ pptpd.c	2008-11-27 22:09:53.000000000 +0100
 @@ -98,18 +98,21 @@
  	printf(" [-i] [--noipparam]        Suppress the passing of the client's IP address\n");
  	printf("                           to PPP, which is done by default otherwise.\n");
@@ -22,7 +22,7 @@
  #endif
  	printf(" [-t] [--stimeout seconds] Specifies the timeout for the first packet. This is a DOS protection\n");
 -	printf("                           (default is 10).\n");
-+	printf("                           (default is %s).\n",STIMEOUT_DEFAULT);
++	printf("                           (default is %d).\n",STIMEOUT_DEFAULT);
  	printf(" [-v] [--version]          Displays the pptpd version number.\n");
  	printf(" [-w] [--logwtmp]          Update wtmp as users login.\n");
  	printf(" [-C] [--connections n]    Limit on number of connections.\n");

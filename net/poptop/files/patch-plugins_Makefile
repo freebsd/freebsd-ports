@@ -1,0 +1,16 @@
+--- plugins/Makefile.orig	2006-08-03 04:02:01.000000000 +0200
++++ plugins/Makefile	2008-11-27 22:19:48.000000000 +0100
+@@ -1,10 +1,10 @@
+-CC	= gcc
+-COPTS	= -O2 -g
++CC	?= gcc
++CPP	?= $(CXX)
+ CFLAGS	= $(COPTS) -I.. -I../../include -fPIC
+ LDFLAGS	= -shared
+ LDADD   = -lutil
+ INSTALL	= install -o root
+-prefix  = /usr/local
++prefix  = $(PREFIX)
+ 
+ PLUGINS = pptpd-logwtmp.so
+ 
