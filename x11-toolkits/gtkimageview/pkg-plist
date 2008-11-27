@@ -1,4 +1,5 @@
 include/gtkimageview/cursors.h
+include/gtkimageview/gdkpixbufdrawcache.h
 include/gtkimageview/gtkanimview.h
 include/gtkimageview/gtkiimagetool.h
 include/gtkimageview/gtkimagenav.h
@@ -7,8 +8,8 @@ include/gtkimageview/gtkimagetooldragger.h
 include/gtkimageview/gtkimagetoolpainter.h
 include/gtkimageview/gtkimagetoolselector.h
 include/gtkimageview/gtkimageview.h
+include/gtkimageview/gtkimageview-typebuiltins.h
 include/gtkimageview/gtkzooms.h
-include/gtkimageview/image_view_drawer.h
 include/gtkimageview/mouse_handler.h
 include/gtkimageview/utils.h
 lib/libgtkimageview.la
@@ -28,6 +29,7 @@ share/gtk-doc/html/gtkimageview/compiling.html
 share/gtk-doc/html/gtkimageview/dirstructure.html
 share/gtk-doc/html/gtkimageview/ex-mini.png
 share/gtk-doc/html/gtkimageview/ex-monitor-selection.png
+share/gtk-doc/html/gtkimageview/gtkimageview-gdkpixbufdrawcache.html
 share/gtk-doc/html/gtkimageview/gtkimageview-gtkzooms.html
 share/gtk-doc/html/gtkimageview/gtkimageview-in-window.png
 share/gtk-doc/html/gtkimageview/gtkimageview.devhelp
