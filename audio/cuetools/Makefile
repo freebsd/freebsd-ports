@@ -7,7 +7,7 @@
 
 PORTNAME=	cuetools
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/cuetools/
 
