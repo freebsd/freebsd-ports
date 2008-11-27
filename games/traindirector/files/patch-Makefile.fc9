@@ -1,5 +1,5 @@
---- Makefile.fc9.orig	2008-08-31 18:53:10.000000000 +0300
-+++ Makefile.fc9	2008-09-07 04:07:22.000000000 +0300
+--- Makefile.fc9.orig	2008-08-31 18:53:10.000000000 +0200
++++ Makefile.fc9	2008-11-26 17:42:43.000000000 +0100
 @@ -20,16 +20,16 @@
  LDFLAGS_GUI = 
  CXX = g++
@@ -8,15 +8,16 @@
 +CXXFLAGS += -pthread -Wall -Wundef -Wno-ctor-dtor-privacy
  #CPPFLAGS = -D__WXDEBUG__  -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.
 -CPPFLAGS = -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.  -I/usr/include/wx-2.8 -I/usr/lib/wx/include/gtk2-unicode-release-2.8
+-LDFLAGS = -pthread   -L/usr/X11R6/lib 
 +CPPFLAGS += -DGTK_NO_CHECK_CASTS -pthread -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D_LARGEFILE_SOURCE=1 -DwxUSE_UNICODE=1 -I.  -I/usr/local/include/wx-2.8 -I/usr/local/lib/wx/include/gtk2-unicode-release-2.8
- LDFLAGS = -pthread   -L/usr/X11R6/lib 
++LDFLAGS = -pthread   -L/usr/local/lib 
  WX_LIB_FLAVOUR = 
  TOOLKIT = GTK
  TOOLKIT_LOWERCASE = gtk
  TOOLKIT_VERSION = 2
 -EXTRALIBS = -pthread   -L/usr/X11R6/lib -lz -ldl -lm 
 -EXTRALIBS_GUI = -Wl,--export-dynamic -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl -lgthread-2.0 -lglib-2.0 -lXinerama -lXxf86vm -lpng -lz -ljpeg -ltiff
-+EXTRALIBS = -pthread   -L/usr/X11R6/lib -lz -lm 
++EXTRALIBS = -pthread   -L/usr/local/lib -lz -lm 
 +EXTRALIBS_GUI = -Wl,--export-dynamic -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lglib-2.0 -lXinerama -lXxf86vm -lpng -lz -ljpeg -ltiff
  EXTRALIBS_SDL = 
  HOST_SUFFIX = 
