@@ -109,6 +109,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.py
 %%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/util.py
+%%PYTHON_SITELIBDIR%%/duplicity/util.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity/backends
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
