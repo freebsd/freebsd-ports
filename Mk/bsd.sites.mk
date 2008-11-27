@@ -56,7 +56,6 @@ MASTER_SITE_AFTERSTEP+=	\
 MASTER_SITE_APACHE+=	\
 	http://www.apache.org/dist/%SUBDIR%/ \
 	http://archive.apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.pop-mg.com.br/data/apache/dist/%SUBDIR%/ \
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
@@ -213,7 +212,6 @@ MASTER_SITE_ECLIPSE+= \
 	http://www.dawnspill.hu/mirror/eclipse/downloads/drops/%SUBDIR%/ \
 	http://mirrors.ibiblio.org/pub/mirrors/eclipse/eclipse/downloads/drops/%SUBDIR%/ \
 	http://www.eclipse.ps.pl/downloads/drops/%SUBDIR%/ \
-	http://eclipse.planetmirror.com/downloads/drops/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/eclipse/downloads/drops/&,} \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/
 .endif
@@ -508,7 +506,6 @@ MASTER_SITE_GENTOO+=	\
 	ftp://gentoo.inode.at/source/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	ftp://files.gentoo.gr/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ecc.u-tokyo.ac.jp/GENTOO/%SUBDIR%/ \
 	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 .endif
@@ -579,7 +576,6 @@ MASTER_SITE_GNUPG+= 	\
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
 MASTER_SITE_GNUSTEP+= \
-	ftp://ftp.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/
 .endif
@@ -614,7 +610,6 @@ MASTER_SITE_HORDE+=	\
 	ftp://ftp.horde.org/pub/%SUBDIR%/ \
 	ftp://ftp.at.horde.org/mirror/horde/%SUBDIR%/ \
 	ftp://ftp.it.horde.org/horde/pub/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/horde/%SUBDIR%/ \
 	ftp://ftp.es.horde.org/pub/%SUBDIR%/ \
 	ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/%SUBDIR%/
 .endif
@@ -631,7 +626,6 @@ MASTER_SITE_IDSOFTWARE+=	\
 	ftp://ftp.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/%SUBDIR%/ \
 	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/ \
-	http://ftp.planetmirror.com/pub/idgames/idstuff/%SUBDIR%/ \
 	ftp://ftp.sunsite.org.uk/sites/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
 	ftp://ftp.idsoftware.com/idstuff/%SUBDIR%/
 .endif
@@ -723,8 +717,6 @@ MASTER_SITE_KDE+=	\
 	http://ftp.yz.yamagata-u.ac.jp/pub/X11/wm/kde/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/kde/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/kde/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
 	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
 	ftp://mirror.pacific.net.au/kde/%SUBDIR%/ \
@@ -1072,7 +1064,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
-	http://qmail.planetmirror.com/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
@@ -1108,7 +1099,6 @@ MASTER_SITE_QT+= \
 	ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/%SUBDIR%/ \
 	ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/%SUBDIR%/ \
 	ftp://ftp.silug.org/mirrors/ftp.trolltech.com/qt/source/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com.au/pub/trolltech/qt/source/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/X11/gui/Qt/source/%SUBDIR%/ \
 	ftp://ftp.trolltech.com/qt/source/%SUBDIR%/
 .endif
@@ -1329,7 +1319,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.neva.ru/.1/Linux-Distrib/Suse/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/SuSE/suse/%SUBDIR%/ \
 	http://mirror.pacific.net.au/linux/suse/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/linux/suse/suse/%SUBDIR%/ \
 	ftp://mirror.aarnet.edu.au/pub/suse/%SUBDIR%/
 .endif
 
