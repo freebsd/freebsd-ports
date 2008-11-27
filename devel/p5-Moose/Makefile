@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DR/DROLSKY
@@ -17,10 +17,11 @@ COMMENT=	A complete modern object system for Perl 5
 
 RUN_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.68:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.71:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
-	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
+	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple \
+	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
