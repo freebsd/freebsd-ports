@@ -2894,6 +2894,7 @@ etoile-dictionaryreader         ports/deskutils/etoile-dictionaryreader
 etoile-distributedview          ports/deskutils/etoile-distributedview
 etoile-etoilemenus              ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit     ports/deskutils/etoile-extendedworkspacekit
+etoile-fontmanager              ports/x11-fm/etoile-fontmanager
 etoile-foundation               ports/devel/etoile-foundation
 etoile-hardware                 ports/deskutils/etoile-hardware
 etoile-iconkit                  ports/x11-themes/etoile-iconkit
