@@ -13,7 +13,7 @@ diff -u -r1.12 hunspell-1.1.12.patch
 ++++ misc/build/hunspell-1.1.12/tests/test.sh	2008-08-10 10:00:33.000000000 +0900
 +@@ -1,4 +1,4 @@
 +-#!/bin/bash
-++#!/usr/local/bin/bash
+++#!/usr/bin/env bash
 + export LC_ALL="C"
 + 
 + function check_valgrind_log () {
