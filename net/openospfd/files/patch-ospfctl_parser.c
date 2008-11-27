@@ -1,5 +1,5 @@
---- ospfctl/parser.c.orig	Fri Jul 27 15:11:46 2007
-+++ ospfctl/parser.c	Fri Jul 27 15:12:01 2007
+--- ospfctl/parser.c.orig	2008-02-07 19:13:50.000000000 +0300
++++ ospfctl/parser.c	2008-02-07 19:15:47.000000000 +0300
 @@ -32,23 +32,6 @@
  
  #include "parser.h"
