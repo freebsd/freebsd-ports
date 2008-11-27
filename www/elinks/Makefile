@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	elinks
-DISTVERSION=	0.11.4
+DISTVERSION=	0.11.5
 CATEGORIES=	www
-MASTER_SITES=	http://elinks.or.cz/download/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	http://elinks.or.cz/download/
 
-MAINTAINER=	jharris@widomaker.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elinks - links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
