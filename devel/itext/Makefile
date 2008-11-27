@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	itext
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -26,7 +25,6 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 		${JAVAJARDIR}/pdf-renderer.jar:${PORTSDIR}/print/pdf-renderer
 
 WRKSRC=		${WRKDIR}/src
-EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKDIR} && ${TAR} -xf - -C ${WRKDIR})
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
