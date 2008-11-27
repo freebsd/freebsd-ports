@@ -1,6 +1,6 @@
---- ospfctl/parser.h.orig	Fri Jul 27 15:11:55 2007
-+++ ospfctl/parser.h	Fri Jul 27 15:12:01 2007
-@@ -50,6 +50,23 @@
+--- ospfctl/parser.h.orig	2008-02-07 19:12:58.000000000 +0300
++++ ospfctl/parser.h	2008-02-07 19:15:45.000000000 +0300
+@@ -50,6 +50,16 @@
  	RELOAD
  };
  
@@ -14,6 +14,13 @@
 +	IFNAME
 +};
 +
+ struct parse_result {
+ 	struct in_addr	addr;
+ 	char		ifname[IF_NAMESIZE];
+@@ -58,6 +68,13 @@
+ 	u_int8_t	prefixlen;
+ };
+ 
 +struct token {
 +	enum token_type		 type;
 +	const char		*keyword;
@@ -21,6 +28,6 @@
 +	const struct token	*next;
 +};
 +
- struct parse_result {
- 	struct in_addr	addr;
- 	char		ifname[IF_NAMESIZE];
+ struct parse_result	*parse(int, char *[]);
+ const struct token	*match_token(const char *, const struct token []);
+ void			 show_valid_args(const struct token []);

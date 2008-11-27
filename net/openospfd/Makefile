@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openospfd
-PORTVERSION=	4.0
-PORTREVISION=	3
+PORTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.dkuug.dk/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
