@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zeroinstall-injector
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=zero-install
@@ -22,6 +22,6 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-MAN1=		0launch.1 0alias.1 0store.1 0store-secure-add.1
+MAN1=		0launch.1 0alias.1 0store.1 0store-secure-add.1 0desktop.1
 
 .include <bsd.port.mk>
