@@ -17,8 +17,13 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux pango binary
 
 # these libraries are required by pango-querymodules
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
-		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+.if !defined(OVERRIDE_LINUX_BASE_PORT) || \
+    (${OVERRIDE_LINUX_BASE_PORT} != "fc6" && \
+    ${OVERRIDE_LINUX_BASE_PORT} != "f7" && \
+    ${OVERRIDE_LINUX_BASE_PORT} != "f8")
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
+.endif
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libcairo.so.2.2.3:${PORTSDIR}/graphics/linux-cairo \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
