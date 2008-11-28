@@ -16,7 +16,7 @@ PATCH_SITES=	http://stephane.carrez.free.fr/snapshots/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20040801.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	andrew+ports@fubar.geek.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The binutils cross-toolchain for the 6811
 
 NOT_FOR_ARCHS=	amd64

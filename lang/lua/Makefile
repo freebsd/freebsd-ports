@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
 
-MAINTAINER=	andrew+ports@fubar.geek.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 USE_LUA=	5.1
