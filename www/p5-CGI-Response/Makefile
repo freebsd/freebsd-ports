@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	guy@device.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module allowing response construction for CGI applications
 
 PERL_CONFIGURE=	yes
