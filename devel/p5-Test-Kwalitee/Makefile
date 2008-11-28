@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Kwalitee
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +26,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Module/CPANTS/Analyse.pm:${PORTSDIR}/devel/p5-Module-
 		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	5.6.2+
+PERL_MODBUILD=	yes
 
 MAN3=		Test::Kwalitee.3
 
