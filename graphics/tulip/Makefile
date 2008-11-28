@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber:src \
-		http://tulip.labri.fr/userHandbook/:doc
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src\
-		userManual.pdf:doc
+    		http://tulip.labri.fr/userHandbook/:doc
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
+    		userManual.pdf:doc
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -32,20 +31,20 @@ USE_GNOME=	libxml2
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
+PORTDOCS=	userManual.pdf
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
-PORTDOCS=	userManual.pdf
-
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
 post-patch:
-	@${REINPLACE_CMD} -e '/#include <qvariant.h>/d' \
-	    ${WRKSRC}/library/tulip-qt/include/tulip/LayerManagerWidgetData.h
 	@${REINPLACE_CMD} -e 's|<qdir.h>|<QtCore/qdir.h>|' \
 	    ${WRKSRC}/software/tulip/src/Application.cpp
 	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|' \
