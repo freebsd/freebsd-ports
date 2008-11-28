@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
 DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 
-MAINTAINER=		guy@device.dyndns.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
 BUILD_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
