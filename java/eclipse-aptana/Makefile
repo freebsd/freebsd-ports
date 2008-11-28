@@ -10,7 +10,7 @@ PORTVERSION=	1.2.0.018852
 #PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://update.aptana.com/install/studio/${ECLIPSE_VER}/
+MASTER_SITES=	http://update.aptana.com/install/studio/3.2/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	aptana_update_${PORTVERSION:E}
 
@@ -18,8 +18,6 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Web Development Tools (Eclipse plugin)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
-
-ECLIPSE_VER=	3.3
 
 JAVA_OS=	native
 JAVA_VENDOR=	bsdjava
