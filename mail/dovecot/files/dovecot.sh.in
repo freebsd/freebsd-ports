@@ -7,34 +7,44 @@
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
 
-# Define these dovecot_* variables in one of these files:
+# Define dovecot_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/dovecot
-#
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-: ${dovecot_enable:="NO"}
 
 . %%RC_SUBR%%
 
 name=dovecot
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/${name}
-required_files=%%PREFIX%%/etc/${name}.conf
-start_precmd="${name}_prestart"
+# read configuration and set defaults
+load_rc_config ${name}
+: ${dovecot_enable:="NO"}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-c ${dovecot_config:="%%PREFIX%%/etc/${name}.conf"}"
+required_files="${dovecot_config}"
+start_precmd="start_precmd"
+stop_postcmd="stop_postcmd"
 extra_commands="restart"
 
-dovecot_prestart()
+base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
+login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
+login_user=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_user:/ { print $2 }')
+
+pidfile="${base_dir}/master.pid"
+
+start_precmd()
 {	# Ensure runtime directories exist with correct permissions
-	local base user gid
-	base=/var/run/${name}
-	user=$(/usr/bin/awk -F '[[:space:]]*=[[:space:]]*' '/^[[:space:]]*login_user[[:space:]]*=/ { print $2 }' ${required_files})
-	gid=$(/usr/sbin/pw usershow -n "${user:-${name}}" 2>/dev/null | /usr/bin/cut -d: -f4)
-	/usr/bin/install -o root -g wheel -m 0755 -d ${base}
-	/usr/bin/install -o root -g ${gid} -m 0750 -d ${base}/login
+	local gid
+	gid=$(/usr/sbin/pw usershow -n "${login_user}" 2>/dev/null | /usr/bin/cut -d: -f4)
+	/usr/bin/install -o root -g wheel -m 0755 -d ${base_dir}
+	/usr/bin/install -o root -g ${gid} -m 0750 -d ${login_dir}
 }
 
-load_rc_config ${name}
+stop_postcmd()
+{	# Cleanup runtime directories
+	rm -rf ${base_dir} 2>/dev/null
+}
+
 run_rc_command "$1"
