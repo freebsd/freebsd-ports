@@ -7,6 +7,8 @@
 
 PORTNAME=	fwbuilder
 PORTVERSION=	3.0.2
+PORTREVISION=	1
+BUILD=		676
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
