@@ -7,7 +7,7 @@
 
 PORTNAME=	Parse-RecDescent
 PORTVERSION=	1.96.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
@@ -29,6 +29,10 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500900
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
 
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
