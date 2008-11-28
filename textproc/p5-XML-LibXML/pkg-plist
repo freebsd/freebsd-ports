@@ -9,6 +9,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/DocumentFragment.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Dtd.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Element.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/ErrNo.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/ErrNo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Error.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Error.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/InputCallback.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Literal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Namespace.pod
@@ -17,6 +21,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Number.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/PI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Parser.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Pattern.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Reader.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/RelaxNG.pod
@@ -30,6 +35,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Text.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/XPathContext.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/XPathContext.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/XPathExpression.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.so
