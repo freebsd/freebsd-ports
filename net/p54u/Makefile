@@ -10,10 +10,12 @@ PORTVERSION=	0.8
 CATEGORIES=	net kld
 MASTER_SITES=	http://www.prism54.org/p54u/releases/
 
-MAINTAINER=	lekernel@prism54.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for USB wireless devices with Conexant (Prism 54) chipsets
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
+DEPRECATED=	website disappeared
+EXPIRATION_DATE=	2008-01-28
 
 USE_BZIP2=	yes
 MANCOMPRESSED=	yes
