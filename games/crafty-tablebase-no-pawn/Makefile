@@ -46,7 +46,7 @@ krrnk.nbb.emd krrnk.nbw.emd krrrk.nbb.emd krrrk.nbw.emd
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=
 
-MAINTAINER=	shoemaker@bluebottle.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are the tablebases for crafty, minus the pawn tbs
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
