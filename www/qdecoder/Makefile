@@ -5,30 +5,73 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qDecoder
-PORTVERSION=	7.0
+PORTNAME=	qdecoder
+PORTVERSION=	9.0.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
+DISTNAME=	qDecoder-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
-COMMENT=	CGI library for C/C++ language programming
+COMMENT=	C/C++ language library including CGI supports
 
-GNU_CONFIGURE=	yes
+CONFLICTS=	qDecoder-[5-7]*
+
+HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-post-install:
-	${MKDIR} ${PREFIX}/share/doc/qDecoder
-.for doc in AUTHORS DISCLAIMER README REFERENCE qDecoder.jpg
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${PREFIX}/share/doc/qDecoder
-.endfor
-	${MKDIR} ${PREFIX}/share/examples/qDecoder
-	-${RM} ${WRKSRC}/examples/*.o ${WRKSRC}/examples/*.cgi \
-	      ${WRKSRC}/examples/Makefile.in
-	${INSTALL_DATA} ${WRKSRC}/examples/Makefile ${PREFIX}/share/examples/qDecoder
-	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${PREFIX}/share/examples/qDecoder
-	${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${PREFIX}/share/examples/qDecoder
-	${INSTALL_DATA} ${WRKSRC}/examples/*.html ${PREFIX}/share/examples/qDecoder
-	${INSTALL_DATA} ${WRKSRC}/examples/*.in ${PREFIX}/share/examples/qDecoder
+OPTIONS=	Q_DEBUG "Debug printout" off
+OPTIONS+=	Q_64BIT "64bit support" off
+OPTIONS+=	Q_SENDFILE "Use sendfile()" off
+OPTIONS+=	Q_MYSQL "Use MySQL" off
+OPTIONS+=	Q_CGISUPPORT "CGI API support" on
+OPTIONS+=	Q_SOCKET "Socket API support" on
+OPTIONS+=	Q_IPC "IPC API support" on
+OPTIONS+=	Q_DATASTRUCTURE "Datastructure API support" on
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_Q_DEBUG)
+CONFIGURE_ARGS+="--enable-debug"
+.endif
+
+.if defined(WITH_Q_64BIT)
+CONFIGURE_ARGS+="--enable-64bit"
+.endif
+
+.if defined(WITH_Q_SENDFILE)
+CONFIGURE_ARGS+="--enable-sendfile"
+.endif
+
+.if defined(WITH_Q_MYSQL)
+CONFIGURE_ARGS+="--enable-mysql=${LOCALBASE}/include/mysql"
+USE_MYSQL=yes
+.endif
+
+.if defined(WITHOUT_Q_CGISUPPORT)
+CONFIGURE_ARGS+="--disable-cgisupport"
+.endif
+
+.if defined(WITHOUT_Q_SOCKET)
+CONFIGURE_ARGS+="--disable-socket"
+.endif
+
+.if defined(WITHOUT_Q_IPC)
+CONFIGURE_ARGS+="--disable-ipc"
+.endif
+
+.if defined(WITHOUT_Q_DATASTRUCTURE)
+CONFIGURE_ARGS+="--disable-datastructure"
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS CHANGES COPYING INSTALL qDecoder.jpg" ${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "html" ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "Makefile *.c *.conf *.html* qDecoder-upload" ${EXAMPLESDIR})
+.endif
+
+.include <bsd.port.post.mk>
