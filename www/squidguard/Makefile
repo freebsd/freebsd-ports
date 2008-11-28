@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/
 
-MAINTAINER=	ports@tyfon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast redirector for squid
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
