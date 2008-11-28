@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.9.4
+PORTVERSION=	0.11.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.9/${PORTVERSION}/ \
+MASTER_SITES=	http://www.cherokee-project.com/download/0.11/${PORTVERSION}/ \
 		LOCAL/beech
 
 MAINTAINER=	beech@FreeBSD.org
@@ -83,6 +83,10 @@ post-patch:
 		${WRKSRC}/contrib/06to07.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/contrib/07to08.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/08to09.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/09to010.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
