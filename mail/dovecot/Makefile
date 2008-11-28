@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
@@ -19,7 +18,9 @@ USE_RC_SUBR=	dovecot.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--localstatedir=/var --without-shadow
+CONFIGURE_ARGS=		--localstatedir=/var \
+			--with-statedir=/var/db/dovecot \
+			--without-shadow
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	${PREFIX}/lib/dovecot \
