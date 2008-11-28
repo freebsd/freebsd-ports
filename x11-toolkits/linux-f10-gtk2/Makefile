@@ -16,8 +16,13 @@ COMMENT=	GTK+ library, version 2.X, Linux binary
 
 # these libraries are required by gtk-query-immodules-2.0 or
 # gdk-pixbuf-query-loaders
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
-		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
+.if !defined(OVERRIDE_LINUX_BASE_PORT) || \
+    (${OVERRIDE_LINUX_BASE_PORT} != "fc6" && \
+    ${OVERRIDE_LINUX_BASE_PORT} != "f7" && \
+    ${OVERRIDE_LINUX_BASE_PORT} != "f8")
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
+.endif
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
