@@ -2,7 +2,9 @@
 
 # Common code for pear- ports.
 
-MASTER_SITES?=	http://pear.php.net/get/
+MASTER_SITES?=	http://pear.php.net/get/ \
+		http://us.pear.php.net/get/ \
+		http://de.pear.php.net/get/
 PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
@@ -44,7 +46,7 @@ INSTDIR=	${PHP_BASE}/${LINSTDIR}
 .if !defined(USE_PHPIZE) && !exists(${.CURDIR}/pkg-plist)
 PLIST=		${WRKDIR}/PLIST
 .endif
-PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
+PLIST_SUB+=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
 		TESTSDIR=${LTESTSDIR} INSTDIR=${LINSTDIR} SQLSDIR=${LSQLSDIR} \
 		SCRIPTFILESDIR=${LCRIPTSDIR}
 
