@@ -2903,6 +2903,7 @@ etoile-inspectorkit             ports/deskutils/etoile-inspectorkit
 etoile-installer                ports/sysutils/etoile-installer
 etoile-io                       ports/lang/etoile-io
 etoile-iterm                    ports/x11/etoile-iterm
+etoile-languagekit              ports/lang/etoile-languagekit
 etoile-login                    ports/x11-wm/etoile-login
 etoile-lookandbehavior          ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit                ports/textproc/etoile-lucenekit
@@ -2917,6 +2918,7 @@ etoile-rsskit                   ports/www/etoile-rsskit
 etoile-scriptkit                ports/lang/etoile-scriptkit
 etoile-serialize                ports/devel/etoile-serialize
 etoile-servicesbarkit           ports/deskutils/etoile-servicesbarkit
+etoile-smalltalkkit             ports/lang/etoile-smalltalkkit
 etoile-system                   ports/sysutils/etoile-system
 etoile-systemconfig             ports/deskutils/etoile-systemconfig
 etoile-trackerkit               ports/deskutils/etoile-trackerkit
@@ -9402,6 +9404,7 @@ oneko-sakura                    ports/games/oneko-sakura
 onenetd                         ports/net/onenetd
 oniguruma                       ports/devel/oniguruma
 oniguruma4                      ports/devel/oniguruma4
+oniguruma5                      ports/devel/oniguruma5
 onion-fec                       ports/net/onion-fec
 onis                            ports/irc/onis
 online-desktop                  ports/net/online-desktop
@@ -10931,6 +10934,7 @@ p5-Gtk2-Ex-Simple-List          ports/x11-toolkits/p5-Gtk2-Ex-Simple-List
 p5-Gtk2-Ex-Utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-Gtk2-GladeXML                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-Gtk2-Html2                   ports/x11-toolkits/p5-Gtk2-Html2
+p5-Gtk2-ImageView               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-GtkXmHTML                    ports/x11-toolkits/p5-GtkXmHTML
@@ -12220,6 +12224,8 @@ p5-Sys-Hostname-FQDN            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long            ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-MemInfo                  ports/devel/p5-Sys-MemInfo
 p5-Sys-Mmap                     ports/devel/p5-Sys-Mmap
+p5-Sys-RunAlone                 ports/devel/p5-Sys-RunAlone
+p5-Sys-RunAlways                ports/devel/p5-Sys-RunAlways
 p5-Sys-Sig                      ports/devel/p5-Sys-Sig
 p5-Sys-SigAction                ports/devel/p5-Sys-SigAction
 p5-Sys-Syscall                  ports/devel/p5-Sys-Syscall
@@ -14138,6 +14144,7 @@ p5-gtk2-ex-simple-list          ports/x11-toolkits/p5-Gtk2-Ex-Simple-List
 p5-gtk2-ex-utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-gtk2-gladexml                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-gtk2-html2                   ports/x11-toolkits/p5-Gtk2-Html2
+p5-gtk2-imageview               ports/x11-toolkits/p5-Gtk2-ImageView
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-gtkxmhtml                    ports/x11-toolkits/p5-GtkXmHTML
@@ -15468,6 +15475,8 @@ p5-sys-hostname-fqdn            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-sys-hostname-long            ports/sysutils/p5-Sys-Hostname-Long
 p5-sys-meminfo                  ports/devel/p5-Sys-MemInfo
 p5-sys-mmap                     ports/devel/p5-Sys-Mmap
+p5-sys-runalone                 ports/devel/p5-Sys-RunAlone
+p5-sys-runalways                ports/devel/p5-Sys-RunAlways
 p5-sys-sig                      ports/devel/p5-Sys-Sig
 p5-sys-sigaction                ports/devel/p5-Sys-SigAction
 p5-sys-syscall                  ports/devel/p5-Sys-Syscall
@@ -20022,6 +20031,7 @@ slurm                           ports/net/slurm
 slurp                           ports/news/slurp
 slurpie                         ports/security/slurpie
 slush                           ports/security/slush
+slv2                            ports/audio/slv2
 sma                             ports/mail/sma
 smail                           ports/mail/smail
 smake                           ports/devel/smake
@@ -21069,6 +21079,7 @@ trac-pendingticket              ports/www/trac-pendingticket
 trac-privatetickets             ports/www/trac-privatetickets
 trac-remind                     ports/www/trac-remind
 trac-restrictedarea             ports/www/trac-restrictedarea
+trac-revtree                    ports/www/trac-revtree
 trac-robotstxt                  ports/www/trac-robotstxt
 trac-simpleticket               ports/www/trac-simpleticket
 trac-spam-filter                ports/www/trac-spam-filter
