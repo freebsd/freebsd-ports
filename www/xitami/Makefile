@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.xitami.com/
 DISTNAME=	xiopen_2_5_src
 
-MAINTAINER=	bdluevel@heitec.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, portable multithreaded web server
 
 NO_WRKSUBDIR=	yes

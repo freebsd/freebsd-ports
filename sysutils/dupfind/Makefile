@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
-MAINTAINER=	bdluevel@heitec.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds duplicate files in directory trees
 
 LIB_DEPENDS=	fcrc.1:${PORTSDIR}/devel/fastcrc
