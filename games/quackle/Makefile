@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://web.mit.edu/jasonkb/www/quackle/downloads/${PORTNAME}-${PORTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tar.gz
 
-MAINTAINER=	shoemaker@bluebottle.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scrabble-like word game utilizing qt4
 
 USE_SCONS=	yes

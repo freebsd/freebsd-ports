@@ -17,5 +17,3 @@ desired.
 skill.  Skill 70 will drop the playing Elo by about 200 points.  Skill
 50 will drop it about 400 points.  The curve is not linear, and the
 closer you get to 1, the lower the rating.
-
-// J Shoemaker
