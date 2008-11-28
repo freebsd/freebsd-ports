@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
-MAINTAINER=	bdluevel@heitec.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads temperatures from a Voltcraft 304 thermometer
 
 MAN1=		vc304.1

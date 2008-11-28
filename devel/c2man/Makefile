@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/ \
 		ftp://ftp.ntua.gr/pub/linux/openpkg/sources/DST/c2man/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION:C/\.([0-9]*)$/@\1/)
 
-MAINTAINER=	bdluevel@heitec.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates man pages from C sources
 
 NO_WRKSUBDIR=	yes
