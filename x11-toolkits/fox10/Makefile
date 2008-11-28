@@ -35,6 +35,9 @@ CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
 
+DEPRECATED=		does not compile with latest gcc; use x11-toolkits/fox16 instead
+EXPIRATION_DATE=	2009-01-28
+
 MAN1=	reswrap.1
 
 OPTIONS=	SHM	"Enable Shared Memory support" on \
