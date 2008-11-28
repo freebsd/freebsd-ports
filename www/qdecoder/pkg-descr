@@ -1,14 +1,20 @@
-qDecoder
-========
+The qDecoder Project
+====================
 
-"qDecoder is a CGI library for C/C++ language programming and
- a solution product for developers. The Query Fetch algorithm
- of qDecoder which is based on linked-list gives developers
- more simple library interface without regard to a method of GET
- or POST. Also because it gives transperance with a subordinate
- layer, web-based softwares - CGI - is designed and embodied in
- reliability further. The source code for qDecoder is freely
- available to everyone."
+qDecoder is a C/C++ language library including CGI supports.
+Distributed under 2-clause BSD-like license since 9 release.
+
+  CGI Interfaces
+    o Request Parser, Response Generator, Session, Cookies
+  Network & IPC Interfaces
+    o Socket, Shared memory, Semaphore, Database wrapper
+  Data structures
+    o Linked-list, Hash tables, Queue, qDecoder implementation of Obstack
+  Useful APIs 
+    o Configuration parser, Automated file logger, Server side includes
+  Common Utilities
+    o String libraries, File libraries, Hashes & En/decoders
+  And more... 
 
 --
 Ports by CHOI Junho <cjh@FreeBSD.org>
