@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://siag.nu/pub/dwatch/ \
 		http://siag.nu/pub/dwatch/
 
-MAINTAINER=	andrew+ports@fubar.geek.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dwatch - A Daemon Watcher
 
 MAN1=		dwatch.1

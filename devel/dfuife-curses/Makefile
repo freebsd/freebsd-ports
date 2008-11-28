@@ -10,7 +10,7 @@ PORTVERSION=	1.5.1.20050829
 CATEGORIES=	devel
 MASTER_SITES=	http://exodus.xmms.se/~alex/
 
-MAINTAINER=	andrew+ports@fubar.geek.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI curses frontend
 
 LIB_DEPENDS=	aura3.3:${PORTSDIR}/devel/libaura \

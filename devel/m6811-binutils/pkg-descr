@@ -5,6 +5,3 @@ utilities. The format of object files is ELF-32. The GNU Binutils support
 translation to other formats such as S-records, Intel HEX records, ...
 
 WWW: http://www.gnu-m68hc11.org/
-
--- 
-jburkhol@home.com
