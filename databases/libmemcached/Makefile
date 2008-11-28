@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.23
-PORTREVISION=	2
+PORTVERSION=	0.25
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
 USE_LDCONFIG=	yes
