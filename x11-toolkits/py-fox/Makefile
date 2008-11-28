@@ -19,6 +19,9 @@ COMMENT=	Python interface to FOX Graphics library
 
 LIB_DEPENDS=	FOX-1.0:${PORTSDIR}/x11-toolkits/fox10
 
+DEPRECATED=		depends on deprecated port x11-toolkits/fox10
+EXPIRATION_DATE=	2009-01-28
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes

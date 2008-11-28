@@ -24,6 +24,9 @@ LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox10 \
 		fxscintilla.19:${PORTSDIR}/x11-toolkits/fxscintilla-fox10 \
 		glut.4:${PORTSDIR}/graphics/libglut
 
+DEPRECATED=		depends on deprecated port x11-toolkits/fox10
+EXPIRATION_DATE=	2009-01-28
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}10
 
 USE_RUBY=	yes
