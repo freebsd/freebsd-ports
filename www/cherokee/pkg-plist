@@ -23,6 +23,7 @@ include/cherokee/config_entry.h
 include/cherokee/config_node.h
 include/cherokee/connection.h
 include/cherokee/connection_info.h
+include/cherokee/cryptor.h
 include/cherokee/downloader.h
 include/cherokee/encoder.h
 include/cherokee/fdpoll.h
@@ -30,6 +31,7 @@ include/cherokee/handler.h
 include/cherokee/header.h
 include/cherokee/http.h
 include/cherokee/init.h
+include/cherokee/iocache.h
 include/cherokee/list.h
 include/cherokee/logger.h
 include/cherokee/macros.h
@@ -52,6 +54,8 @@ lib/cherokee/libplugin_admin.la
 lib/cherokee/libplugin_admin.so
 lib/cherokee/libplugin_and.la
 lib/cherokee/libplugin_and.so
+lib/cherokee/libplugin_authlist.la
+lib/cherokee/libplugin_authlist.so
 lib/cherokee/libplugin_cgi.la
 lib/cherokee/libplugin_cgi.so
 lib/cherokee/libplugin_combined.la
@@ -72,6 +76,8 @@ lib/cherokee/libplugin_error_nn.la
 lib/cherokee/libplugin_error_nn.so
 lib/cherokee/libplugin_error_redir.la
 lib/cherokee/libplugin_error_redir.so
+lib/cherokee/libplugin_exists.la
+lib/cherokee/libplugin_exists.so
 lib/cherokee/libplugin_extensions.la
 lib/cherokee/libplugin_extensions.so
 lib/cherokee/libplugin_fastcgi.la
@@ -92,6 +98,10 @@ lib/cherokee/libplugin_htpasswd.la
 lib/cherokee/libplugin_htpasswd.so
 lib/cherokee/libplugin_ldap.la
 lib/cherokee/libplugin_ldap.so
+lib/cherokee/libplugin_libssl.la
+lib/cherokee/libplugin_libssl.so
+lib/cherokee/libplugin_method.la
+lib/cherokee/libplugin_method.so
 lib/cherokee/libplugin_mirror.la
 lib/cherokee/libplugin_mirror.so
 lib/cherokee/libplugin_mysql.la
@@ -120,6 +130,8 @@ lib/cherokee/libplugin_scgi.la
 lib/cherokee/libplugin_scgi.so
 lib/cherokee/libplugin_server_info.la
 lib/cherokee/libplugin_server_info.so
+lib/cherokee/libplugin_ssi.la
+lib/cherokee/libplugin_ssi.so
 lib/cherokee/libplugin_w3c.la
 lib/cherokee/libplugin_w3c.so
 lib/libcherokee-base.la
@@ -151,6 +163,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleAdmin.pyc
 %%DATADIR%%/admin/ModuleAuth.py
 %%DATADIR%%/admin/ModuleAuth.pyc
+%%DATADIR%%/admin/ModuleAuthlist.py
+%%DATADIR%%/admin/ModuleAuthlist.pyc
 %%DATADIR%%/admin/ModuleBalancer.py
 %%DATADIR%%/admin/ModuleBalancer.pyc
 %%DATADIR%%/admin/ModuleCgi.py
@@ -171,6 +185,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleErrorNn.pyc
 %%DATADIR%%/admin/ModuleErrorRedir.py
 %%DATADIR%%/admin/ModuleErrorRedir.pyc
+%%DATADIR%%/admin/ModuleExists.py
+%%DATADIR%%/admin/ModuleExists.pyc
 %%DATADIR%%/admin/ModuleExtensions.py
 %%DATADIR%%/admin/ModuleExtensions.pyc
 %%DATADIR%%/admin/ModuleFcgi.py
@@ -189,6 +205,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleHtpasswd.pyc
 %%DATADIR%%/admin/ModuleLdap.py
 %%DATADIR%%/admin/ModuleLdap.pyc
+%%DATADIR%%/admin/ModuleMethod.py
+%%DATADIR%%/admin/ModuleMethod.pyc
 %%DATADIR%%/admin/ModuleMirror.py
 %%DATADIR%%/admin/ModuleMirror.pyc
 %%DATADIR%%/admin/ModuleMysql.py
@@ -197,6 +215,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModulePam.pyc
 %%DATADIR%%/admin/ModulePlain.py
 %%DATADIR%%/admin/ModulePlain.pyc
+%%DATADIR%%/admin/ModuleProxy.py
+%%DATADIR%%/admin/ModuleProxy.pyc
 %%DATADIR%%/admin/ModuleRedir.py
 %%DATADIR%%/admin/ModuleRedir.pyc
 %%DATADIR%%/admin/ModuleRequest.py
@@ -207,6 +227,8 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleScgi.pyc
 %%DATADIR%%/admin/ModuleServerInfo.py
 %%DATADIR%%/admin/ModuleServerInfo.pyc
+%%DATADIR%%/admin/ModuleSsi.py
+%%DATADIR%%/admin/ModuleSsi.pyc
 %%DATADIR%%/admin/Page.py
 %%DATADIR%%/admin/Page.pyc
 %%DATADIR%%/admin/PageAdvanced.py
@@ -518,6 +540,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/static/images/flags/za.png
 %%DATADIR%%/admin/static/images/flags/zm.png
 %%DATADIR%%/admin/static/images/flags/zw.png
+%%DATADIR%%/admin/static/images/forbidden.png
 %%DATADIR%%/admin/static/images/help.png
 %%DATADIR%%/admin/static/images/loadingAnimation.gif
 %%DATADIR%%/admin/static/images/macFFBgHack.png
@@ -599,8 +622,8 @@ www/cherokee/index.html
 @dirrm %%DATADIR%%/admin/static/images
 @dirrm %%DATADIR%%/admin/static/css
 @dirrm %%DATADIR%%/admin/static
-@dirrmtry %%DATADIR%%/admin
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/admin
+@dirrm %%DATADIR%%
 @dirrm lib/cherokee
 @dirrm include/cherokee
 @dirrmtry etc/cherokee/ssl
