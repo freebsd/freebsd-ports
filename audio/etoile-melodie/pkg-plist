@@ -1,0 +1,15 @@
+Local/Applications/Melodie.app/Melodie
+Local/Applications/Melodie.app/Resources/ETPlaylist.st
+Local/Applications/Melodie.app/Resources/Info-gnustep.plist
+Local/Applications/Melodie.app/Resources/Melodie.desktop
+Local/Applications/Melodie.app/Resources/Melodie.gorm/data.classes
+Local/Applications/Melodie.app/Resources/Melodie.gorm/data.info
+Local/Applications/Melodie.app/Resources/Melodie.gorm/objects.gorm
+Local/Applications/Melodie.app/Resources/Melodie.tiff
+Local/Applications/Melodie.app/Resources/MelodieController.st
+Local/Applications/Melodie.app/Resources/MusicPlayerController.st
+Local/Applications/Melodie.app/stamp.make
+Local/Tools/Melodie
+@dirrm Local/Applications/Melodie.app/Resources/Melodie.gorm
+@dirrm Local/Applications/Melodie.app/Resources
+@dirrm Local/Applications/Melodie.app
