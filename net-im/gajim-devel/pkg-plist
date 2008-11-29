@@ -23,6 +23,7 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/no/LC_MESSAGES/gajim.mo
@@ -38,6 +39,85 @@ lib/gajim/trayicon.so
 share/applications/gajim.desktop
 share/pixmaps/gajim.png
 share/pixmaps/gajim_about.png
+%%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
+%%DATADIR%%/data/activities/default/doing_chores/category.png
+%%DATADIR%%/data/activities/default/doing_chores/cleaning.png
+%%DATADIR%%/data/activities/default/doing_chores/cooking.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_maintenance.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_the_dishes.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_the_laundry.png
+%%DATADIR%%/data/activities/default/doing_chores/gardening.png
+%%DATADIR%%/data/activities/default/doing_chores/running_an_errand.png
+%%DATADIR%%/data/activities/default/doing_chores/walking_the_dog.png
+%%DATADIR%%/data/activities/default/drinking/category.png
+%%DATADIR%%/data/activities/default/drinking/having_a_beer.png
+%%DATADIR%%/data/activities/default/drinking/having_coffee.png
+%%DATADIR%%/data/activities/default/drinking/having_tea.png
+%%DATADIR%%/data/activities/default/eating/category.png
+%%DATADIR%%/data/activities/default/eating/having_a_snack.png
+%%DATADIR%%/data/activities/default/eating/having_breakfast.png
+%%DATADIR%%/data/activities/default/eating/having_dinner.png
+%%DATADIR%%/data/activities/default/eating/having_lunch.png
+%%DATADIR%%/data/activities/default/exercising/category.png
+%%DATADIR%%/data/activities/default/exercising/cycling.png
+%%DATADIR%%/data/activities/default/exercising/dancing.png
+%%DATADIR%%/data/activities/default/exercising/hiking.png
+%%DATADIR%%/data/activities/default/exercising/jogging.png
+%%DATADIR%%/data/activities/default/exercising/playing_sports.png
+%%DATADIR%%/data/activities/default/exercising/running.png
+%%DATADIR%%/data/activities/default/exercising/skiing.png
+%%DATADIR%%/data/activities/default/exercising/swimming.png
+%%DATADIR%%/data/activities/default/exercising/working_out.png
+%%DATADIR%%/data/activities/default/grooming/at_the_spa.png
+%%DATADIR%%/data/activities/default/grooming/brushing_teeth.png
+%%DATADIR%%/data/activities/default/grooming/category.png
+%%DATADIR%%/data/activities/default/grooming/getting_a_haircut.png
+%%DATADIR%%/data/activities/default/grooming/shaving.png
+%%DATADIR%%/data/activities/default/grooming/taking_a_bath.png
+%%DATADIR%%/data/activities/default/grooming/taking_a_shower.png
+%%DATADIR%%/data/activities/default/having_appointment/category.png
+%%DATADIR%%/data/activities/default/inactive/category.png
+%%DATADIR%%/data/activities/default/inactive/day_off.png
+%%DATADIR%%/data/activities/default/inactive/hanging_out.png
+%%DATADIR%%/data/activities/default/inactive/hiding.png
+%%DATADIR%%/data/activities/default/inactive/on_vacation.png
+%%DATADIR%%/data/activities/default/inactive/praying.png
+%%DATADIR%%/data/activities/default/inactive/scheduled_holiday.png
+%%DATADIR%%/data/activities/default/inactive/sleeping.png
+%%DATADIR%%/data/activities/default/inactive/thinking.png
+%%DATADIR%%/data/activities/default/relaxing/category.png
+%%DATADIR%%/data/activities/default/relaxing/fishing.png
+%%DATADIR%%/data/activities/default/relaxing/gaming.png
+%%DATADIR%%/data/activities/default/relaxing/going_out.png
+%%DATADIR%%/data/activities/default/relaxing/partying.png
+%%DATADIR%%/data/activities/default/relaxing/reading.png
+%%DATADIR%%/data/activities/default/relaxing/rehearsing.png
+%%DATADIR%%/data/activities/default/relaxing/shopping.png
+%%DATADIR%%/data/activities/default/relaxing/smoking.png
+%%DATADIR%%/data/activities/default/relaxing/socializing.png
+%%DATADIR%%/data/activities/default/relaxing/sunbathing.png
+%%DATADIR%%/data/activities/default/relaxing/watching_a_movie.png
+%%DATADIR%%/data/activities/default/relaxing/watching_tv.png
+%%DATADIR%%/data/activities/default/talking/category.png
+%%DATADIR%%/data/activities/default/talking/in_real_life.png
+%%DATADIR%%/data/activities/default/talking/on_the_phone.png
+%%DATADIR%%/data/activities/default/talking/on_video_phone.png
+%%DATADIR%%/data/activities/default/traveling/category.png
+%%DATADIR%%/data/activities/default/traveling/commuting.png
+%%DATADIR%%/data/activities/default/traveling/cycling.png
+%%DATADIR%%/data/activities/default/traveling/driving.png
+%%DATADIR%%/data/activities/default/traveling/in_a_car.png
+%%DATADIR%%/data/activities/default/traveling/on_a_bus.png
+%%DATADIR%%/data/activities/default/traveling/on_a_plane.png
+%%DATADIR%%/data/activities/default/traveling/on_a_train.png
+%%DATADIR%%/data/activities/default/traveling/on_a_trip.png
+%%DATADIR%%/data/activities/default/traveling/walking.png
+%%DATADIR%%/data/activities/default/unknown/category.png
+%%DATADIR%%/data/activities/default/working/category.png
+%%DATADIR%%/data/activities/default/working/coding.png
+%%DATADIR%%/data/activities/default/working/in_a_meeting.png
+%%DATADIR%%/data/activities/default/working/studying.png
+%%DATADIR%%/data/activities/default/working/writing.png
 %%DATADIR%%/data/emoticons/animated/angry.png
 %%DATADIR%%/data/emoticons/animated/bat.gif
 %%DATADIR%%/data/emoticons/animated/beer.png
@@ -201,7 +281,6 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/history_window.glade
 %%DATADIR%%/data/glade/input_dialog.glade
 %%DATADIR%%/data/glade/input_text_dialog.glade
-%%DATADIR%%/data/glade/invitation_received_dialog.glade
 %%DATADIR%%/data/glade/join_groupchat_window.glade
 %%DATADIR%%/data/glade/manage_accounts_window.glade
 %%DATADIR%%/data/glade/manage_bookmarks_window.glade
@@ -249,6 +328,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/crystal/16x16/opened.png
 %%DATADIR%%/data/iconsets/crystal/16x16/requested.png
 %%DATADIR%%/data/iconsets/crystal/16x16/xa.png
+%%DATADIR%%/data/iconsets/crystal/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/crystal/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/crystal/48x48/offline.png
 %%DATADIR%%/data/iconsets/crystal/48x48/online.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/away.png
@@ -363,6 +444,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gossip/16x16/opened.png
 %%DATADIR%%/data/iconsets/gossip/16x16/requested.png
 %%DATADIR%%/data/iconsets/gossip/16x16/xa.png
+%%DATADIR%%/data/iconsets/gossip/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/gossip/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/gossip/48x48/offline.png
 %%DATADIR%%/data/iconsets/gossip/48x48/online.png
 %%DATADIR%%/data/iconsets/gota/16x16/away.png
@@ -445,6 +528,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/opened.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/requested.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/xa.png
+%%DATADIR%%/data/iconsets/nuvola/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/nuvola/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/nuvola/48x48/offline.png
 %%DATADIR%%/data/iconsets/nuvola/48x48/online.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/away.png
@@ -463,6 +548,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/opened.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/requested.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/xa.png
+%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/simplebulb/48x48/offline.png
 %%DATADIR%%/data/iconsets/simplebulb/48x48/online.png
 %%DATADIR%%/data/iconsets/stellar/16x16/away.png
@@ -481,6 +568,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/stellar/16x16/opened.png
 %%DATADIR%%/data/iconsets/stellar/16x16/requested.png
 %%DATADIR%%/data/iconsets/stellar/16x16/xa.png
+%%DATADIR%%/data/iconsets/stellar/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/stellar/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/stellar/48x48/offline.png
 %%DATADIR%%/data/iconsets/stellar/48x48/online.png
 %%DATADIR%%/data/iconsets/sun/16x16/away.png
@@ -665,6 +754,91 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/xa.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/offline.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/online.png
+%%DATADIR%%/data/moods/default/afraid.png
+%%DATADIR%%/data/moods/default/amazed.png
+%%DATADIR%%/data/moods/default/amorous.png
+%%DATADIR%%/data/moods/default/angry.png
+%%DATADIR%%/data/moods/default/annoyed.png
+%%DATADIR%%/data/moods/default/anxious.png
+%%DATADIR%%/data/moods/default/aroused.png
+%%DATADIR%%/data/moods/default/ashamed.png
+%%DATADIR%%/data/moods/default/bored.png
+%%DATADIR%%/data/moods/default/brave.png
+%%DATADIR%%/data/moods/default/calm.png
+%%DATADIR%%/data/moods/default/cautious.png
+%%DATADIR%%/data/moods/default/cold.png
+%%DATADIR%%/data/moods/default/confident.png
+%%DATADIR%%/data/moods/default/confused.png
+%%DATADIR%%/data/moods/default/contemplative.png
+%%DATADIR%%/data/moods/default/contented.png
+%%DATADIR%%/data/moods/default/cranky.png
+%%DATADIR%%/data/moods/default/crazy.png
+%%DATADIR%%/data/moods/default/creative.png
+%%DATADIR%%/data/moods/default/curious.png
+%%DATADIR%%/data/moods/default/dejected.png
+%%DATADIR%%/data/moods/default/depressed.png
+%%DATADIR%%/data/moods/default/disappointed.png
+%%DATADIR%%/data/moods/default/disgusted.png
+%%DATADIR%%/data/moods/default/dismayed.png
+%%DATADIR%%/data/moods/default/distracted.png
+%%DATADIR%%/data/moods/default/embarrassed.png
+%%DATADIR%%/data/moods/default/envious.png
+%%DATADIR%%/data/moods/default/excited.png
+%%DATADIR%%/data/moods/default/flirtatious.png
+%%DATADIR%%/data/moods/default/frustrated.png
+%%DATADIR%%/data/moods/default/grateful.png
+%%DATADIR%%/data/moods/default/grieving.png
+%%DATADIR%%/data/moods/default/grumpy.png
+%%DATADIR%%/data/moods/default/guilty.png
+%%DATADIR%%/data/moods/default/happy.png
+%%DATADIR%%/data/moods/default/hopeful.png
+%%DATADIR%%/data/moods/default/hot.png
+%%DATADIR%%/data/moods/default/humbled.png
+%%DATADIR%%/data/moods/default/humiliated.png
+%%DATADIR%%/data/moods/default/hungry.png
+%%DATADIR%%/data/moods/default/hurt.png
+%%DATADIR%%/data/moods/default/impressed.png
+%%DATADIR%%/data/moods/default/in_awe.png
+%%DATADIR%%/data/moods/default/in_love.png
+%%DATADIR%%/data/moods/default/indignant.png
+%%DATADIR%%/data/moods/default/interested.png
+%%DATADIR%%/data/moods/default/intoxicated.png
+%%DATADIR%%/data/moods/default/invincible.png
+%%DATADIR%%/data/moods/default/jealous.png
+%%DATADIR%%/data/moods/default/lonely.png
+%%DATADIR%%/data/moods/default/lost.png
+%%DATADIR%%/data/moods/default/lucky.png
+%%DATADIR%%/data/moods/default/mean.png
+%%DATADIR%%/data/moods/default/moody.png
+%%DATADIR%%/data/moods/default/nervous.png
+%%DATADIR%%/data/moods/default/neutral.png
+%%DATADIR%%/data/moods/default/offended.png
+%%DATADIR%%/data/moods/default/outraged.png
+%%DATADIR%%/data/moods/default/playful.png
+%%DATADIR%%/data/moods/default/proud.png
+%%DATADIR%%/data/moods/default/relaxed.png
+%%DATADIR%%/data/moods/default/relieved.png
+%%DATADIR%%/data/moods/default/remorseful.png
+%%DATADIR%%/data/moods/default/restless.png
+%%DATADIR%%/data/moods/default/sad.png
+%%DATADIR%%/data/moods/default/sarcastic.png
+%%DATADIR%%/data/moods/default/satisfied.png
+%%DATADIR%%/data/moods/default/serious.png
+%%DATADIR%%/data/moods/default/shocked.png
+%%DATADIR%%/data/moods/default/shy.png
+%%DATADIR%%/data/moods/default/sick.png
+%%DATADIR%%/data/moods/default/sleepy.png
+%%DATADIR%%/data/moods/default/spontaneous.png
+%%DATADIR%%/data/moods/default/stressed.png
+%%DATADIR%%/data/moods/default/strong.png
+%%DATADIR%%/data/moods/default/surprised.png
+%%DATADIR%%/data/moods/default/thankful.png
+%%DATADIR%%/data/moods/default/thirsty.png
+%%DATADIR%%/data/moods/default/tired.png
+%%DATADIR%%/data/moods/default/undefined.png
+%%DATADIR%%/data/moods/default/unknown.png
+%%DATADIR%%/data/moods/default/weak.png
+%%DATADIR%%/data/moods/default/worried.png
 %%DATADIR%%/data/other/cacerts.pem
 %%DATADIR%%/data/other/servers.xml
 %%DATADIR%%/data/pixmaps/agents/aim.png
@@ -704,8 +878,12 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/kbd_input.png
 %%DATADIR%%/data/pixmaps/muc_separator.png
 %%DATADIR%%/data/pixmaps/person.png
+%%DATADIR%%/data/pixmaps/receipt_missing.png
+%%DATADIR%%/data/pixmaps/security-high-big.png
 %%DATADIR%%/data/pixmaps/security-high.png
+%%DATADIR%%/data/pixmaps/security-low-big.png
 %%DATADIR%%/data/pixmaps/security-low.png
+%%DATADIR%%/data/pixmaps/upload.png
 %%DATADIR%%/data/sounds/bounce.wav
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -975,12 +1153,6 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/src/htmltextview.py
 %%DATADIR%%/src/htmltextview.pyc
 %%DATADIR%%/src/htmltextview.pyo
-%%DATADIR%%/src/lastfm.py
-%%DATADIR%%/src/lastfm.pyc
-%%DATADIR%%/src/lastfm.pyo
-%%DATADIR%%/src/lastfm_track_listener.py
-%%DATADIR%%/src/lastfm_track_listener.pyc
-%%DATADIR%%/src/lastfm_track_listener.pyo
 %%DATADIR%%/src/message_control.py
 %%DATADIR%%/src/message_control.pyc
 %%DATADIR%%/src/message_control.pyo
@@ -1053,6 +1225,22 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/pixmaps/agents
 @dirrm %%DATADIR%%/data/pixmaps/events
 @dirrm %%DATADIR%%/data/pixmaps
+@dirrm %%DATADIR%%/data/moods/default
+@dirrm %%DATADIR%%/data/moods
+@dirrm %%DATADIR%%/data/activities/default/doing_chores
+@dirrm %%DATADIR%%/data/activities/default/drinking
+@dirrm %%DATADIR%%/data/activities/default/eating
+@dirrm %%DATADIR%%/data/activities/default/exercising
+@dirrm %%DATADIR%%/data/activities/default/grooming
+@dirrm %%DATADIR%%/data/activities/default/having_appointment
+@dirrm %%DATADIR%%/data/activities/default/inactive
+@dirrm %%DATADIR%%/data/activities/default/relaxing
+@dirrm %%DATADIR%%/data/activities/default/talking
+@dirrm %%DATADIR%%/data/activities/default/traveling
+@dirrm %%DATADIR%%/data/activities/default/unknown
+@dirrm %%DATADIR%%/data/activities/default/working
+@dirrm %%DATADIR%%/data/activities/default
+@dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data/emoticons/animated
@@ -1060,6 +1248,7 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/emoticons/static-big
 @dirrm %%DATADIR%%/data/emoticons
 @dirrm %%DATADIR%%/data/iconsets/crystal/16x16
+@dirrm %%DATADIR%%/data/iconsets/crystal/32x32
 @dirrm %%DATADIR%%/data/iconsets/crystal/48x48
 @dirrm %%DATADIR%%/data/iconsets/crystal
 @dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
@@ -1075,6 +1264,7 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/goojim/48x48
 @dirrm %%DATADIR%%/data/iconsets/goojim
 @dirrm %%DATADIR%%/data/iconsets/gossip/16x16
+@dirrm %%DATADIR%%/data/iconsets/gossip/32x32
 @dirrm %%DATADIR%%/data/iconsets/gossip/48x48
 @dirrm %%DATADIR%%/data/iconsets/gossip
 @dirrm %%DATADIR%%/data/iconsets/gota/16x16
@@ -1086,12 +1276,15 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
 @dirrm %%DATADIR%%/data/iconsets/jabberbulb
 @dirrm %%DATADIR%%/data/iconsets/nuvola/16x16
+@dirrm %%DATADIR%%/data/iconsets/nuvola/32x32
 @dirrm %%DATADIR%%/data/iconsets/nuvola/48x48
 @dirrm %%DATADIR%%/data/iconsets/nuvola
 @dirrm %%DATADIR%%/data/iconsets/simplebulb/16x16
+@dirrm %%DATADIR%%/data/iconsets/simplebulb/32x32
 @dirrm %%DATADIR%%/data/iconsets/simplebulb/48x48
 @dirrm %%DATADIR%%/data/iconsets/simplebulb
 @dirrm %%DATADIR%%/data/iconsets/stellar/16x16
+@dirrm %%DATADIR%%/data/iconsets/stellar/32x32
 @dirrm %%DATADIR%%/data/iconsets/stellar/48x48
 @dirrm %%DATADIR%%/data/iconsets/stellar
 @dirrm %%DATADIR%%/data/iconsets/sun/16x16

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20080713
+PORTVERSION=	20081128
 CATEGORIES=	net-im
-MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
+MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2008-07-13
+DISTNAME=	${PORTNAME}-2008-11-28
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -35,13 +35,15 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.4.4-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.12.0.1-svn
 
 MAN1=		gajim.1
 
+ACTIVITIES=	default
 EMOTICONS=	animated static static-big
 ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
 		simplebulb stellar sun transports
+MOODS=		default
 
 .if !defined(WITHOUT_DBUS)
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
@@ -65,6 +67,10 @@ pre-build:
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 post-install:
+		${MKDIR} ${DATADIR}/data/activities
+		(cd ${WRKSRC}/data/activities && \
+		${COPYTREE_SHARE} "${ACTIVITIES}" ${DATADIR}/data/activities)
+
 		${MKDIR} ${DATADIR}/data/emoticons
 		(cd ${WRKSRC}/data/emoticons && \
 		${COPYTREE_SHARE} "${EMOTICONS}" ${DATADIR}/data/emoticons)
@@ -72,6 +78,10 @@ post-install:
 		${MKDIR} ${DATADIR}/data/iconsets
 		(cd ${WRKSRC}/data/iconsets && \
 		${COPYTREE_SHARE} "${ICONSETS}" ${DATADIR}/data/iconsets)
+
+		${MKDIR} ${DATADIR}/data/moods
+		(cd ${WRKSRC}/data/moods && \
+		${COPYTREE_SHARE} "${MOODS}" ${DATADIR}/data/moods)
 
 .include <bsd.port.pre.mk>
 
