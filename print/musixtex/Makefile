@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
 DISTFILES=	musixtex-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of TeX macros to typeset music
 
 BUILD_DEPENDS=	initex:${PORTSDIR}/print/tex

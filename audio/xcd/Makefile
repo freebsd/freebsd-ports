@@ -12,7 +12,7 @@ CATEGORIES=	audio tk
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk CD player
 
 USE_TK=		yes

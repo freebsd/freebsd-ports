@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}sc.2_41
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 image grabber
 
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb

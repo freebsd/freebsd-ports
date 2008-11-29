@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 		ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 dropping jewels game
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \

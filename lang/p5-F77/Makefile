@@ -12,7 +12,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helps link C programs with Fortran subroutines
 
 PERL_CONFIGURE=	yes

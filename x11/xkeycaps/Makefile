@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
 
 USE_IMAKE=	yes

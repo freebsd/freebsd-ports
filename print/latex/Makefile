@@ -15,7 +15,7 @@ DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
 		latex_base-${PORTVERSION}.tar.gz latex_tools-${PORTVERSION}.tar.gz \
 		latex_graphics-${PORTVERSION}.tar.gz latex_psnfss-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TeX macro package
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex

@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://ftp.chg.ru/pub/math/Fudgit/
 DISTFILES=	fudgit_${PORTVERSION}.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose data-processing and fitting program
 
 USE_GMAKE=	yes

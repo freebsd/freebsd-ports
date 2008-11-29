@@ -12,7 +12,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 DISTNAME=	PGPLOT-${PORTVERSION}
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 extension which makes available the pgplot library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot

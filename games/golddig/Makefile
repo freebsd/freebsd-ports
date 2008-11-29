@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTNAME=	golddig2
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting the Gold and Avoiding Death
 
 MAN6=		golddig.6

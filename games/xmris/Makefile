@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of the Mr Do video arcade game for X11
 
 USE_IMAKE=	yes

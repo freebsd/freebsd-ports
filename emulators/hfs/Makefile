@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read Macintosh HFS floppy disks, hard drives and CDROMs
 
 CONFLICTS=	hfsutils-[0-9]*
