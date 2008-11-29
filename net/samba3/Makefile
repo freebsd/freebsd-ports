@@ -7,12 +7,16 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.0.32
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
+
+PATCH_SITES=		http://us1.samba.org/samba/ftp/patches/security/
+PATCHFILES=		samba-3.0.32-CVE-2008-4314.patch
+PATCH_DIST_STRIP=	-p2
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
