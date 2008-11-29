@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-dict
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	textproc xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 PKGNAMESUFFIX=	-plugin
