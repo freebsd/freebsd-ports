@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 PKGNAMEPREFIX=	linux-
 DISTFILES=	# empty
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
