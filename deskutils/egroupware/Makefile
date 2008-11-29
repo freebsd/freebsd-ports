@@ -4,36 +4,41 @@
 #
 # $FreeBSD$
 
-PORTNAME=	eGroupWare
-PORTVERSION=	1.4.004
-PORTREVISION=	1
+PORTNAME=	eGroupware
+PORTVERSION=	1.6.001
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A web based GroupWare system
 
+BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
+		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP \
+		${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve \
+		${PEARDIR}/XML/Feed/Parser.php:${PORTSDIR}/textproc/pear-XML_Feed_Parser \
+		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log \
+		${PEARDIR}/HTTP/WebDAV/Server.php:${PORTSDIR}/www/pear-HTTP_WebDAV_Server
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PEARDIR=	${LOCALBASE}/share/pear
 USE_BZIP2=	yes
 NO_BUILD=	yes
-#WRKSRC=		${DEST}
-
-DEST=		${PREFIX}/www/data-dist/egroupware
+PLIST=		${WRKDIR}/plist
+SUB_FILES=	pkg-message
+SUB_LIST=	EG_DIR=${EG_DIR} \
+		EG_DATA=${EG_DATA}
 
 OPTIONS=	MYSQL "Use MySQL database" on \
 		POSTGRE "Use PostgreSQL Database" off \
 		IMAP "Enable Mail support in eGroupware" on \
 		GD "Enable graphic support (needs xorg-libraries)" off \
-		PEAR "Req. by SyncML (see pkg-msg for php.ini)" on \
-		LDAP "Contacts can be stored using OpenLDAP" off
-#	doesn't work!	MBSTRING "Support for complete UTF-8 charsets" off
+		LDAP "Contacts can be stored using OpenLDAP" off \
+		MBSTRING "Support for complete UTF-8 charsets" off
 
 .include <bsd.port.pre.mk>
-
-USE_PHP=	pcre session xml
-
 .if defined(WITH_MYSQL)
 USE_PHP+=	mysql
+USE_PHP+=	pdo_mysql
 .endif
 .if defined(WITH_POSTGRE)
 USE_PHP+=	pgsql
@@ -47,48 +52,42 @@ USE_PHP+=	imap
 .if defined(WITH_GD)
 USE_PHP+=	gd
 .endif
-.if defined(WITH_PEAR)
-RUN_DEPENDS=	${LOCALBASE}/share/pear/Log/null.php:${PORTSDIR}/sysutils/pear-Log
-.endif
 .if defined(WITH_LDAP)
 USE_PHP+=	ldap
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.php.mk"
+WRKSRC=	${WRKDIR}/egroupware
+EG_DIR=	www/eg
+EG_WWWDIR=	${PREFIX}/${EG_DIR}
+EG_DATA=	www/egdata
+EG_DATADIR=	${PREFIX}/www/egdata
 
-do-extract:
-	${MKDIR} ${WRKDIR}
+pre-install:
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${EG_DIR}#g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dirrm ${EG_DIR}#g" >> ${PLIST}
+	@${ECHO} @dirrm ${EG_DATA}/files >> ${PLIST}
+	@${ECHO} @dirrm ${EG_DATA}/backup >> ${PLIST}
+	@${ECHO} @dirrm ${EG_DATA} >> ${PLIST}
 
 do-install:
-	${MKDIR} ${DEST}
-	cd ${DEST}/.. && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS}
-	@${FIND} ${DEST} -name .svn -type d | ${XARGS} ${RM} -rf
-	${MKDIR} /var/db/egroupware/default
-	${MKDIR} /var/db/egroupware/default/files
-	${MKDIR} /var/db/egroupware/default/backup
-	${MKDIR} /var/db/egroupware/default/sessions
-	${CHMOD} g+w ${DEST} ${DEST}/phpgwapi/images
-	${CHMOD} -R g+w /var/db/egroupware
-	${CHGRP} ${WWWGRP} ${DEST} ${DEST}/phpgwapi/images
-	${CHGRP} -R ${WWWGRP} /var/db/egroupware
-	${MV} ${DEST}/setup/inc/class.setup_process.inc.php ${WRKDIR}
-	${SED} s,/var/lib/,/var/db/, ${WRKDIR}/class.setup_process.inc.php > \
-		${DEST}/setup/inc/class.setup_process.inc.php
+	${MKDIR} ${EG_WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${EG_WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_WWWDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_WWWDIR}' \
+		>> ${TMPPLIST}
+	${CHMOD} -R 755 ${EG_WWWDIR}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${EG_WWWDIR}' >> ${TMPPLIST}
 
-# --- postgresql.conf
-# tcpip_socket = true
-# ports = 5432
-#
-# --- pg_hba.conf
-# local $dbname trust
-# host  $dbname all   127.0.0.1 255.255.255.255 md5
-#
-# --- php.ini
-# memory_limit = 16M (or above)
-#
-# createuser $dbuser -P -A -d
-# createdb -U $dbuser $dbname
-#
-# Open http://localhost/egroupware/setup/index.php
+	${MKDIR} ${EG_DATADIR}
+	${MKDIR} ${EG_DATADIR}/files
+	${MKDIR} ${EG_DATADIR}/backup
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_DATADIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EG_DATADIR}' \
+		>> ${TMPPLIST}
+	${CHMOD} -R 755 ${EG_DATADIR}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${EG_DATADIR}' >> ${TMPPLIST}
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
