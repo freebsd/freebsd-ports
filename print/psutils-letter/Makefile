@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
 		ftp://ftp.knackered.org/pub/psutils/
 DISTNAME=	psutils-p17
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for manipulating PostScript documents
 
 USE_PERL5=	yes

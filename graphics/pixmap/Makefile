@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/pixmap
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pixmap editor based on XPM library
 
 # requires rgb.txt

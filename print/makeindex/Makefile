@@ -12,7 +12,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose, formatter-independent index processor
 
 WRKSRC=		${WRKDIR}/makeindex

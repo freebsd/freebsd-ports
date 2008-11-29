@@ -19,7 +19,7 @@ DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 EXTRACT_ONLY=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TeX and METAFONT
 
 DIST_SUBDIR=	tex

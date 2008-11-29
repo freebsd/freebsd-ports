@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade action game for X11
 
 USE_IMAKE=	yes

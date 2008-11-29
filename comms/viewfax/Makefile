@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ping.de/pub/unix/ \
 		ftp://ftp.leo.org/historic/comp/os/unix/networking/mgetty/
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display files containing g3 and/or g4 coded fax pages
 
 USE_IMAKE=	yes

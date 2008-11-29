@@ -10,7 +10,7 @@ PORTVERSION=	2.12.3.3
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
 USE_BZIP2=	yes

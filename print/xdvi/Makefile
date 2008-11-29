@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}-20
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DVI Previewer for the X Window System
 
 CONFLICTS=	teTeX-*

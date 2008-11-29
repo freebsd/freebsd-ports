@@ -16,7 +16,7 @@ PATCH_SITES=	http://mtools.linux.lu/
 PATCHFILES=	mtools-3.9.10-20060525.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of tools for manipulating MSDOS files
 
 GNU_CONFIGURE=	yes

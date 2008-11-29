@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

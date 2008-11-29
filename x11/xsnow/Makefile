@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.euronet.nl/~rja/Xsnow/
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
 USE_IMAKE=	yes
