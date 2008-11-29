@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="842bafdd-be2f-11dd-a578-0030843d3802">
+    <topic>openoffice -- arbitrary code execution vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openoffice.org-2</name>
+	<name>openoffice.org-2-RC</name>
+	<name>openoffice.org-2-devel</name>
+	<range><ge>2.4</ge><lt>2.4.2</lt></range>
+	<range><ge>2.4.20040402</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenOffice Team reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2008-2237.html">
+	  <p>A security vulnerability with the way OpenOffice 2.x process WMF
+	    files may allow a remote unprivileged user who provides a
+	    StarOffice/StarSuite document that is opened by a local user to
+	    execute arbitrary commands on the system with the privileges of the
+	    user running StarOffice/StarSuite. No working exploit is known right
+	    now.</p>
+	</blockquote>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2008-2238.html">
+	  <p>A security vulnerability with the way OpenOffice 2.x process EMF
+	    files may allow a remote unprivileged user who provides a
+	    StarOffice/StarSuite document that is opened by a local user to
+	    execute arbitrary commands on the system with the privileges of the
+	    user running StarOffice/StarSuite. No working exploit is known right
+	    now.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2237</cvename>
+      <cvename>CVE-2008-2238</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2008-2237.html</url>
+      <url>http://www.openoffice.org/security/cves/CVE-2008-2238.html</url>
+    </references>
+    <dates>
+      <discovery>2008-11-FIXME</discovery>
+      <entry>2008-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="622bc638-be27-11dd-a578-0030843d3802">
     <topic>wordpress -- header rss feed script insertion vulnerability</topic>
     <affects>
