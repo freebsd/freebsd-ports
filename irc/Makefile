@@ -70,6 +70,7 @@
     SUBDIR += kvirc
     SUBDIR += kvirc-devel
     SUBDIR += kwirc
+    SUBDIR += libircclient
     SUBDIR += lostirc
     SUBDIR += miau
     SUBDIR += muh
