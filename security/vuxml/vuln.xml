@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="37940643-be1b-11dd-a578-0030843d3802">
+    <topic>hplip -- hpssd Denial of Service</topic>
+    <affects>
+      <package>
+	<name>hplip</name>
+	<range><lt>2.8.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31470">
+	  <p>A security issue has been reported in hplip, which can be
+	    exploited by malicious, local users to cause a DoS.</p>
+	  <p>The security issue is caused due to an error within hpssd.py when
+	    parsing certain requests. This can be exploited to crash the service
+	    by sending specially crafted requests to the default port 2207/TCP.
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2940</cvename>
+      <cvename>CVE-2008-2941</cvename>
+      <bid>30683</bid>
+      <url>https://rhn.redhat.com/errata/RHSA-2008-0818.html</url>
+      <url>http://secunia.com/advisories/31470</url>
+    </references>
+    <dates>
+      <discovery>2008-08-14</discovery>
+      <entry>2008-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="87106b67-be13-11dd-a578-0030843d3802">
     <topic>cups -- multiple vulnerabilities</topic>
     <affects>
