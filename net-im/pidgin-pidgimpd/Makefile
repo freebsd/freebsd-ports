@@ -11,7 +11,7 @@ CATEGORIES=	net-im audio
 MASTER_SITES=	http://ayeon.org/projects/pidgimpd/
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	hrkfrd@googlemail.com
+MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	PidgiMPD is a Pidgin plugin for monitoring/controlling MPD
 
 LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple \

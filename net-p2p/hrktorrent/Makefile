@@ -10,7 +10,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://50hz.ws/hrktorrent/
 
-MAINTAINER=	hrkfrd@googlemail.com
+MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	A light console torrent client using rasterbar's libtorrent
 
 LIB_DEPENDS=	torrent.1:${PORTSDIR}/net-p2p/rblibtorrent
