@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="87106b67-be13-11dd-a578-0030843d3802">
+    <topic>cups -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>1.3.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cups reports:</p>
+	<blockquote cite="http://www.cups.org/str.php?L2974">
+	  <p>The PNG image reading code did not validate the image size
+	    properly, leading to a potential buffer overflow (STR #2974)</p>
+	  <p>The web interface (cgi-bin/admin.c) in CUPS uses the
+	    guest username when a user is not logged on to the web server, which
+	    makes it easier for remote attackers to bypass intended policy and
+	    conduct CSRF attacks via the (1) add and (2) cancel RSS subscription
+	    functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1722</cvename>
+      <cvename>CVE-2008-5184</cvename>
+      <url>http://secunia.com/advisories/30190</url>
+      <url>http://www.cups.org/str.php?L2974</url>
+    </references>
+    <dates>
+      <discovery>2008-10-17</discovery>
+      <entry>2008-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="910486d5-ba4d-11dd-8f23-0019666436c2">
     <topic>imlib2 -- XPM processing buffer overflow vulnerability</topic>
     <affects>
