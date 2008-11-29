@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://hectigo.net/puskutraktori/whichwayisup/ CENKES
 DISTNAME=	${PORTNAME}_b${DISTVERSION}
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
 
 RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game
