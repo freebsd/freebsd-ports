@@ -7,7 +7,6 @@ www/extman/Version
 www/extman/addon/README
 www/extman/addon/cleanup.sql
 www/extman/addon/courbd.ttf
-www/extman/addon/courier-authlib-ldap.patch
 www/extman/addon/font.ttf
 www/extman/addon/mailgraph_ext/AUTHORS
 www/extman/addon/mailgraph_ext/CHANGES
@@ -21,7 +20,6 @@ www/extman/addon/mailgraph_ext/qmonitor-init
 www/extman/addon/mailgraph_ext/qmonitor.pl
 www/extman/addon/mailgraph_ext/queue_mkrrd.sh
 www/extman/addon/mailgraph_ext/queue_stat.sh
-www/extman/addon/passwd2ext.pl
 www/extman/addon/upgrade_0.16_to_0.2beta3.sql
 www/extman/addon/upgrade_0.2.0_to_0.2.1.sql
 www/extman/addon/upgrade_0.2.1_to_0.2.2.sql
@@ -39,6 +37,15 @@ www/extman/cgi/overview.cgi
 www/extman/cgi/signup.cgi
 www/extman/cgi/user.cgi
 www/extman/cgi/viewlog.cgi
+www/extman/contrib/README
+www/extman/contrib/backup.sh
+www/extman/contrib/courier-authlib-ldap.patch
+www/extman/contrib/makegbook.pl
+www/extman/contrib/makeglobabook.pl
+www/extman/contrib/passwd2ext.pl
+www/extman/contrib/reset_extman_mysql_passwd.pl
+www/extman/contrib/sender.pl
+www/extman/contrib/updatecf.pl
 www/extman/docs/README.postfix
 www/extman/docs/backport
 www/extman/docs/extmail.schema
@@ -224,6 +231,7 @@ www/extman/libs/Ext/Passwd.pm
 www/extman/libs/Ext/RFC822.pm
 www/extman/libs/Ext/Session.pm
 www/extman/libs/Ext/Template.pm
+www/extman/libs/Ext/Unicode/Iconv.pm
 www/extman/libs/Ext/Utils.pm
 www/extman/libs/Ext/buildpkg.sh
 www/extman/libs/HTML/KTemplate.pm
@@ -233,15 +241,14 @@ www/extman/tools/diffinfo.pl
 www/extman/tools/domainctl.pl
 www/extman/tools/expireusers.pl
 www/extman/tools/maildirmake.pl
-www/extman/tools/makegbook.pl
 www/extman/tools/purgeuser.pl
 www/extman/tools/reportusage.pl
 www/extman/tools/setid.pl
-www/extman/tools/t_hashdir.pl
 www/extman/tools/userctl.pl
 www/extman/webman.cf
 @dirrm www/extman/tools
 @dirrm www/extman/libs/HTML
+@dirrm www/extman/libs/Ext/Unicode
 @dirrm www/extman/libs/Ext/MgrApp
 @dirrm www/extman/libs/Ext/Mgr
 @dirrm www/extman/libs/Ext
@@ -257,6 +264,7 @@ www/extman/webman.cf
 @dirrm www/extman/html/default
 @dirrm www/extman/html
 @dirrm www/extman/docs
+@dirrm www/extman/contrib
 @dirrm www/extman/cgi
 @dirrm www/extman/addon/mailgraph_ext
 @dirrm www/extman/addon
