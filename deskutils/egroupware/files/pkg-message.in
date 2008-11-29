@@ -1,0 +1,45 @@
+==============================================================
+POST-INSTALL CONFIGURATION FOR eGroupware
+
+
+Make sure in your php.ini session.save_path='/tmp' is writable
+upload_max_filesize >= 8M
+
+1) Create a user and a database for eGroupware to store all
+   its tables in (or choose an existing database).
+   It doesn't matter what the database or user names are,
+   as this will be configured in a later step.
+
+2) Add the following to your Apache configuration, and
+   restart the server:
+
+   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   Alias /eg %%PREFIX%%/%%EG_DIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%EG_DIR%%>
+      AllowOverride None
+      Order Allow,Deny
+      Allow from all 
+   </Directory>
+   <Directory %%PREFIX%%/%%EG_DATA%%>
+      AllowOverride None
+      Order Allow,Deny
+      Deny from all 
+   </Directory>
+
+3) Visit your eGroupware site with a browser (i.e.,
+   http://your.server.com/eg/), and you should
+   be taken to the install.php script, which will lead
+   you through creating a config file and then
+   setting up eGroupware, creating an admin account, etc.
+
+4) When you come to the setup page,please set the files'
+and backup's full path with:
+   %%PREFIX%%/%%EG_DATA%%/files
+   %%PREFIX%%/%%EG_DATA%%/backup
+
+For more information, see the INSTALL DOCUMENTATION:
+
+http://www.egroupware.org/index.php?page_name=wiki&lang=&wikipage=ManualSetup
+
+======================================================
