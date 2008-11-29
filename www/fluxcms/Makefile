@@ -7,11 +7,11 @@
 
 PORTNAME=	fluxcms
 PORTVERSION=	1.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://bitflux.org/download/ \
 		http://www.chruetertee.ch/files/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20080801
+DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20081127
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@chruetertee.ch
@@ -37,7 +37,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TIDY)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/tidy.so:${PORTSDIR}/${tidy_DEPENDS}
+USE_PHP+=	tidy
 .endif
 
 post-patch:
