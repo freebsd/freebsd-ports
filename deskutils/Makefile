@@ -50,6 +50,7 @@
     SUBDIR += etoile-menuserver
     SUBDIR += etoile-panekit
     SUBDIR += etoile-scriptservices
+    SUBDIR += etoile-servicemenulet
     SUBDIR += etoile-servicesbarkit
     SUBDIR += etoile-systemconfig
     SUBDIR += etoile-trackerkit
