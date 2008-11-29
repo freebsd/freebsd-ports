@@ -26,5 +26,6 @@ post-install:
 		${MKDIR} ${PREFIX}/libdata/pkgconfig
 		${MV} ${PREFIX}/lib/pkgconfig/${PORTNAME}-1.pc ${PREFIX}/libdata/pkgconfig/${PORTNAME}-1.pc
 		${RMDIR} ${PREFIX}/lib/pkgconfig
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
