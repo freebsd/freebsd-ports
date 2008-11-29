@@ -37,4 +37,10 @@ do-install:	all
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		does not build: hangs while building on sparc64
+.endif
+
+.include <bsd.port.post.mk>
