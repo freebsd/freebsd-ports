@@ -17,6 +17,8 @@ COMMENT=	ChaSen library module for Perl5
 
 LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
+BROKEN=		does not install
+
 MD5_FILE=	${.CURDIR}/../chasen-base/distinfo
 
 CHASEN_VERSION=	2.3.3
