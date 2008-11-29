@@ -1,0 +1,8 @@
+To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf:
+
+smtpd_recipient_restrictions =
+			...
+			reject_unauth_destination
+			check_policy_service inet:127.0.0.1:10030
+			...
+127.0.0.1:10030_time_limit = 3600

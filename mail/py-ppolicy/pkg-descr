@@ -1,0 +1,11 @@
+Modular Python Postfix Policy Server
+
+Modular Python Postfix Policy Server is tool for extending Postfix
+checking capabilities. It uses Postfix access policy delegation
+(http://www.postfix.org/SMTPD_POLICY_README.html) to check incoming
+SMTP request and accept or reject it according provided data. It can
+reduce mailserver load with rejecting incorrect mail during SMTP
+connection. It was made with stress to height reliability and performance
+by providing caching of required data and results.
+
+WWW: http://bimbo.fjfi.cvut.cz/ppolicy
