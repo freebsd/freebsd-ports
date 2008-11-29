@@ -14,7 +14,7 @@ DISTNAME=	youtube-dl-${PORTVERSION}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	pankov_p@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for downloading videos from YouTube.com
 
 NO_WRKSUBDIR=	yes
