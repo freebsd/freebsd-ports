@@ -1761,6 +1761,9 @@
 %%WWWDIR%%/installation/installer/views/index.html
 %%WWWDIR%%/installation/installer/views/install/index.html
 %%WWWDIR%%/installation/installer/views/install/view.php
+%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.ini
+%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.xml
+%%WWWDIR%%/installation/language/ar-DZ/index.html
 %%WWWDIR%%/installation/language/be-BY/be-BY.ini
 %%WWWDIR%%/installation/language/be-BY/be-BY.xml
 %%WWWDIR%%/installation/language/be-BY/index.html
@@ -1846,6 +1849,9 @@
 %%WWWDIR%%/installation/language/lv-LV/index.html
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.ini
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.xml
+%%WWWDIR%%/installation/language/mk-MK/index.html
+%%WWWDIR%%/installation/language/mk-MK/mk-MK.ini
+%%WWWDIR%%/installation/language/mk-MK/mk-MK.xml
 %%WWWDIR%%/installation/language/nb-NO/index.htm
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.ini
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.xml
@@ -1876,6 +1882,9 @@
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
+%%WWWDIR%%/installation/language/sq-AL/index.html
+%%WWWDIR%%/installation/language/sq-AL/sq-AL.ini
+%%WWWDIR%%/installation/language/sq-AL/sq-AL.xml
 %%WWWDIR%%/installation/language/sr-ME/index.html
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.ini
 %%WWWDIR%%/installation/language/sr-ME/sr-ME.xml
@@ -3381,8 +3390,8 @@
 %%WWWDIR%%/templates/beez/html/com_weblinks/category/default_items.php
 %%WWWDIR%%/templates/beez/html/com_weblinks/category/index.html
 %%WWWDIR%%/templates/beez/html/com_weblinks/index.html
-%%WWWDIR%%/templates/beez/html/com_weblinks/weblinks/form.php
-%%WWWDIR%%/templates/beez/html/com_weblinks/weblinks/index.html
+%%WWWDIR%%/templates/beez/html/com_weblinks/weblink/form.php
+%%WWWDIR%%/templates/beez/html/com_weblinks/weblink/index.html
 %%WWWDIR%%/templates/beez/html/editor_content.css
 %%WWWDIR%%/templates/beez/html/index.html
 %%WWWDIR%%/templates/beez/html/mod_latestnews/default.php
@@ -3972,9 +3981,9 @@
 @dirrm %%WWWDIR%%/templates/beez/html/mod_newsflash
 @dirrm %%WWWDIR%%/templates/beez/html/mod_login
 @dirrm %%WWWDIR%%/templates/beez/html/mod_latestnews
-@dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/weblinks
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/category
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/categories
+@dirrm %%WWWDIR%%/templates/beez/html/com_weblinks/weblink
 @dirrm %%WWWDIR%%/templates/beez/html/com_weblinks
 @dirrm %%WWWDIR%%/templates/beez/html/com_user/user
 @dirrm %%WWWDIR%%/templates/beez/html/com_user/reset
@@ -4304,6 +4313,7 @@
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-ME
+@dirrm %%WWWDIR%%/installation/language/sq-AL
 @dirrm %%WWWDIR%%/installation/language/sk-SK
 @dirrm %%WWWDIR%%/installation/language/si-LK
 @dirrm %%WWWDIR%%/installation/language/sd-PK
@@ -4314,6 +4324,7 @@
 @dirrm %%WWWDIR%%/installation/language/pl-PL
 @dirrm %%WWWDIR%%/installation/language/nl-NL
 @dirrm %%WWWDIR%%/installation/language/nb-NO
+@dirrm %%WWWDIR%%/installation/language/mk-MK
 @dirrm %%WWWDIR%%/installation/language/lv-LV
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lo-LA
@@ -4342,6 +4353,7 @@
 @dirrm %%WWWDIR%%/installation/language/bn-IN
 @dirrm %%WWWDIR%%/installation/language/bg-BG
 @dirrm %%WWWDIR%%/installation/language/be-BY
+@dirrm %%WWWDIR%%/installation/language/ar-DZ
 @dirrm %%WWWDIR%%/installation/language
 @dirrm %%WWWDIR%%/installation/installer/views/install
 @dirrm %%WWWDIR%%/installation/installer/views
