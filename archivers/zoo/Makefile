@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	zoo-2.10pl1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Manipulate archives of files in compressed form
 
 NO_WRKSUBDIR=	yes
