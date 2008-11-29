@@ -52,6 +52,10 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		fails to build python rlm module
+.endif
+
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
 
