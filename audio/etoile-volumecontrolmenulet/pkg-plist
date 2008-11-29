@@ -1,0 +1,9 @@
+Local/Library/Bundles/VolumeControlMenulet.menulet/Resources/Info-gnustep.plist
+Local/Library/Bundles/VolumeControlMenulet.menulet/Resources/VolumeControl_0.tif
+Local/Library/Bundles/VolumeControlMenulet.menulet/Resources/VolumeControl_1.tif
+Local/Library/Bundles/VolumeControlMenulet.menulet/Resources/VolumeControl_2.tif
+Local/Library/Bundles/VolumeControlMenulet.menulet/Resources/VolumeControl_3.tif
+Local/Library/Bundles/VolumeControlMenulet.menulet/VolumeControlMenulet
+Local/Library/Bundles/VolumeControlMenulet.menulet/stamp.make
+@dirrm Local/Library/Bundles/VolumeControlMenulet.menulet/Resources
+@dirrm Local/Library/Bundles/VolumeControlMenulet.menulet
