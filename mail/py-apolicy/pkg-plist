@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/apolicy/__init__.py
+%%PYTHON_SITELIBDIR%%/apolicy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/apolicy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/apolicy/base.py
+%%PYTHON_SITELIBDIR%%/apolicy/base.pyc
+%%PYTHON_SITELIBDIR%%/apolicy/base.pyo
+%%PYTHON_SITELIBDIR%%/apolicy/config.py
+%%PYTHON_SITELIBDIR%%/apolicy/config.pyc
+%%PYTHON_SITELIBDIR%%/apolicy/config.pyo
+%%PYTHON_SITELIBDIR%%/apolicy/parser.py
+%%PYTHON_SITELIBDIR%%/apolicy/parser.pyc
+%%PYTHON_SITELIBDIR%%/apolicy/parser.pyo
+%%PYTHON_SITELIBDIR%%/apolicy/server.py
+%%PYTHON_SITELIBDIR%%/apolicy/server.pyc
+%%PYTHON_SITELIBDIR%%/apolicy/server.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/apolicy
+etc/apolicy/main.conf
+etc/apolicy/policy.conf
+@dirrmtry etc/apolicy
