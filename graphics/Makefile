@@ -728,6 +728,7 @@
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gruff
+    SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
