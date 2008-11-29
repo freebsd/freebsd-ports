@@ -1,0 +1,13 @@
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSStream-%%PORTVERSION%%.a
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSStream-%%PORTVERSION%%.o
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/Data/Stream.hi
+%%SUBDIR%%/register.sh
+share/doc/Stream-%%PORTVERSION%%/LICENSE
+@dirrm share/doc/Stream-%%PORTVERSION%%
+@dirrm lib/Stream-%%PORTVERSION%%/ghc-%%GHC_VERSION%%/Data
+@dirrm lib/Stream-%%PORTVERSION%%/ghc-%%GHC_VERSION%%
+@dirrm lib/Stream-%%PORTVERSION%%
+@exec /bin/sh %D/%%SUBDIR%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister Stream
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
