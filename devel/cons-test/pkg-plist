@@ -1,11 +1,11 @@
 bin/cons-test
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/CHANGES
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/COPYING
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/COPYRIGHT
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/README
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/TODO
-%%PORTDOCS%%share/doc/%%CONS_TEST%%/Tests.txt
-%%PORTDOCS%%@dirrm share/doc/%%CONS_TEST%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/Tests.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 lib/%%CONS_TEST%%/t/t0001.t
 lib/%%CONS_TEST%%/t/t0002.t
 lib/%%CONS_TEST%%/t/t0003.t
