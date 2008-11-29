@@ -407,6 +407,7 @@
     SUBDIR += xmascot
     SUBDIR += xmessage
     SUBDIR += xmh
+    SUBDIR += xmobar
     SUBDIR += xmodmap
     SUBDIR += xmold
     SUBDIR += xmon
