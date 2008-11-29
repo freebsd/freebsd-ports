@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	etoile
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -51,10 +50,17 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	PaneKit:deskutils/etoile-panekit \
 	SystemConfig:deskutils/etoile-systemconfig \
 	MultimediaKit:multimedia/etoile-multimediakit \
+	EtoileSerialize:devel/etoile-serialize \
+	CoreObject:devel/etoile-coreobject \
 	EtoileUI:deskutils/etoile-ui \
 	DistributedView:deskutils/etoile-distributedview \
 	InspectorKit:deskutils/etoile-inspectorkit \
 	OPMLKit:textproc/etoile-opmlkit \
+	ScriptKit:lang/etoile-scriptkit \
+	MediaKit:multimedia/etoile-mediakit \
+	LanguageKit:lang/etoile-languagekit \
+	SmalltalkKit:lang/etoile-smalltalkkit \
+	XMPPKit:net-im/etoile-xmppkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -68,12 +74,18 @@ USE_GNUSTEP_SYSTEM_THEMES+=	\
 USE_GNUSTEP_LOCAL_THEMES+=	\
 	WildMenus:x11-themes/etoile-wildmenus \
 
+USE_GNUSTEP_LOCAL_MENULETS+=	\
+	PowerMenulet.menulet:sysutils/etoile-powermenulet \
+	ServiceMenulet.menulet:deskutils/etoile-servicemenulet \
+	VolumeControlMenulet.menulet:audio/etoile-volumecontrolmenulet \
+
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	Azalea:x11-wm/etoile-azalea \
 	AZDock:x11-wm/etoile-azdock \
 	AZBackground:x11-themes/etoile-azbackground \
 	AZSwitch:x11-wm/etoile-azswitch \
 	Login:x11-wm/etoile-login \
+	EtoileMenuServer:deskutils/etoile-menuserver \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	DictionaryReader:deskutils/etoile-dictionaryreader \
@@ -81,15 +93,23 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Installer:sysutils/etoile-installer \
 	Hardware:deskutils/etoile-hardware \
 	LookAndBehavior:deskutils/etoile-lookandbehavior \
-	EtoileMenuServer:deskutils/etoile-menuserver \
 	Vindaloo:graphics/vindaloo \
 	Typewriter:editors/etoile-typewriter \
 	Babbler:multimedia/etoile-babbler \
 	Mollusk:www/etoile-mollusk \
+	FontManager:x11-fm/etoile-fontmanager \
+	ScriptServices:deskutils/etoile-scriptservices \
+	Melodie:audio/etoile-melodie \
+	StepChat:net-im/etoile-stepchat \
 
 #	Mantella:www/etoile-mantella \
 
+USE_GNUSTEP_SYSTEM_TOOLS+=	\
+	Idle:x11/etoile-idle \
+	Corner:deskutils/etoile-corner \
+
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	ioobjc:lang/etoile-io \
+	edlc:lang/etoile-compiler \
 
 .include <bsd.port.mk>
