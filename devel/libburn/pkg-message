@@ -1,0 +1,17 @@
+You will need to enable CAM support in the kernel.  Your kernel
+configuation should include:
+    for SCSI CD/DVD devices:
+	device scbus
+	device cd
+	device pass
+    for ATA CD/DVD devices you will need the above, plus:
+	device atapicam
+
+You will also want to make the CD devices world read- and writable.
+In /etc/devfs.rules, add the following:
+	[system=10]
+	add path 'acd*' mode 0666
+	add path 'cd*' mode 0666
+	add path 'pass*' mode 0666
+	add path 'xpt*' mode 0666
+
