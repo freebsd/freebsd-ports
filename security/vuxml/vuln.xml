@@ -34,6 +34,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1583640d-be20-11dd-a578-0030843d3802">
+    <topic>samba -- potential leakage of arbitrary memory contents</topic>
+    <affects>
+      <package>
+        <name>samba</name>
+	<name>samba3</name>
+	<name>ja-samba</name>
+	<range><ge>3.0.29,1</ge><lt>3.0.32_2,1</lt></range>
+      </package>
+      <package>
+        <name>samba32-devel</name>
+	<range><lt>3.2.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba Team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2008-4314.html">
+	  <p>Samba 3.0.29 and beyond contain a change to deal with gcc 4
+	    optimizations. Part of the change modified range checking for
+	    client-generated offsets of secondary trans, trans2 and nttrans
+	    requests. These requests are used to transfer arbitrary amounts
+	    of memory from clients to servers and back using small SMB
+	    requests and contain two offsets: One offset (A) pointing into
+	    the PDU sent by the client and one (B) to direct the transferred
+	    contents into the buffer built on the server side. While the range
+	    checking for offset (B) is correct, a cut and paste error lets offset
+	    (A) pass completely unchecked against overflow.</p>
+	  <p>The buffers passed into trans, trans2 and nttrans undergo higher-level
+	    processing like DCE/RPC requests or listing directories. The missing
+	    bounds check means that a malicious client can make the server do this
+	    higher-level processing on arbitrary memory contents of the smbd process
+	    handling the request. It is unknown if that can be abused to pass arbitrary
+	    memory contents back to the client, but an important barrier is missing from
+	    the affected Samba versions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4314</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2008-4314.html</url>
+      <url>http://secunia.com/advisories/32813/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-27</discovery>
+      <entry>2008-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37940643-be1b-11dd-a578-0030843d3802">
     <topic>hplip -- hpssd Denial of Service</topic>
     <affects>
@@ -50,7 +99,7 @@ Note:  Please add new entries to the beginning of this file.
 	    exploited by malicious, local users to cause a DoS.</p>
 	  <p>The security issue is caused due to an error within hpssd.py when
 	    parsing certain requests. This can be exploited to crash the service
-	    by sending specially crafted requests to the default port 2207/TCP.
+	    by sending specially crafted requests to the default port 2207/TCP.</p>
 	</blockquote>
       </body>
     </description>
