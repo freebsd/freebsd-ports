@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox3-i18n
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -23,9 +24,9 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 NO_BUILD=	yes
 USE_XPI=	*firefox3
 
-FIREFOX_I18N_ALL=	af ar be bn-IN ca cs da de el en-GB es-AR es-ES eu fi \
+FIREFOX_I18N_ALL=	af ar be bg bn-IN ca cs cy da de el en-GB es-AR es-ES et eu fi \
 			fr fy-NL ga-IE gl gu-IN he hi-IN hu id is it ja ka kn \
-			ko ku lt mk mn mr nb-NO nl nn-NO pa-IN pl pt-BR pt-PT \
+			ko ku lt lv mk mn mr nb-NO nl nn-NO pa-IN pl pt-BR pt-PT \
 			ro ru si sk sl sq sr sv-SE te th tr uk zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 FIREFOX_I18N?=	all
