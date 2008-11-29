@@ -7,6 +7,7 @@
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -23,7 +24,8 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 CONS_TEST=	cons-${PORTVERSION}/test
 WRKSRC=		${WRKDIR}/${CONS_TEST}
-PLIST_SUB=	CONS_VER=${PORTVERSION} CONS_TEST=${CONS_TEST}
+PLIST_SUB+=	CONS_VER=${PORTVERSION} CONS_TEST=${CONS_TEST}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test
 
 MAN1=		cons-test.1
 MANCOMPRESSED=	yes
@@ -63,10 +65,10 @@ do-install:
 #
 # Install the documentation
 #
-	${MKDIR} ${PREFIX}/share/doc/${CONS_TEST}
+	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL} -c ${WRKSRC}/$f \
-		${PREFIX}/share/doc/${CONS_TEST}
+		${DOCSDIR}
 .endfor
 .endif
 
