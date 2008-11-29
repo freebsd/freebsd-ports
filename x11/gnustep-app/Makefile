@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.14.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -75,10 +75,17 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	PaneKit:deskutils/etoile-panekit \
 	SystemConfig:deskutils/etoile-systemconfig \
 	MultimediaKit:multimedia/etoile-multimediakit \
+	EtoileSerialize:devel/etoile-serialize \
+	CoreObject:devel/etoile-coreobject \
 	EtoileUI:deskutils/etoile-ui \
 	DistributedView:deskutils/etoile-distributedview \
 	InspectorKit:deskutils/etoile-inspectorkit \
 	OPMLKit:textproc/etoile-opmlkit \
+	ScriptKit:lang/etoile-scriptkit \
+	MediaKit:multimedia/etoile-mediakit \
+	LanguageKit:lang/etoile-languagekit \
+	SmalltalkKit:lang/etoile-smalltalkkit \
+	XMPPKit:net-im/etoile-xmppkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -86,14 +93,18 @@ USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	\
 	Cddb:audio/cddb-bundle	\
+	Burn/MP3ToWav:audio/mp3towav-bundle \
 
 USE_GNUSTEP_SYSTEM_THEMES+=	\
 	Camaelon:x11-themes/etoile-camaelon \
 
-#	MP3ToWav:audio/mp3towav-bundle \
-
 USE_GNUSTEP_LOCAL_THEMES+=	\
-	WildMenus:x11-themes/etoile-wildmenus
+	WildMenus:x11-themes/etoile-wildmenus \
+
+USE_GNUSTEP_LOCAL_MENULETS+=	\
+	PowerMenulet:sysutils/etoile-powermenulet \
+	ServiceMenulet:deskutils/etoile-servicemenulet \
+	VolumeControlMenulet:audio/etoile-volumecontrolmenulet \
 
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	Gorm:devel/gorm \
@@ -116,6 +127,7 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	MDFinder:deskutils/gworkspace-gwmetadata \
 	AZSwitch:x11-wm/etoile-azswitch \
 	Login:x11-wm/etoile-login \
+	EtoileMenuServer:deskutils/etoile-menuserver \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
@@ -179,7 +191,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Installer:sysutils/etoile-installer \
 	Hardware:deskutils/etoile-hardware \
 	LookAndBehavior:deskutils/etoile-lookandbehavior \
-	EtoileMenuServer:deskutils/etoile-menuserver \
 	Expense:finance/expense \
 	FreeTar:archivers/freetar \
 	CodeEditor:editors/codeeditor \
@@ -203,14 +214,23 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	BioCocoa:biology/biococoa \
 	Yap:graphics/yap \
 	Sudoku:games/gnustep-sudoku \
+	FontManager:x11-fm/etoile-fontmanager \
+	ScriptServices:deskutils/etoile-scriptservices \
+	Melodie:audio/etoile-melodie \
+	StepChat:net-im/etoile-stepchat \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
+
+USE_GNUSTEP_SYSTEM_TOOLS+=	\
+	Idle:x11/etoile-idle \
+	Corner:deskutils/etoile-corner \
 
 USE_GNUSTEP_LOCAL_TOOLS+=	\
 	zillion:net/zillion \
 	adtool:mail/addresses-goodies \
 	ioobjc:lang/etoile-io \
+	edlc:lang/etoile-compiler \
 
 #	open:deskutils/openapp \
 
