@@ -1,0 +1,4 @@
+A small library that allows you to parse CSV formatted data efficiently
+with Haskell.
+
+WWW: http://code.haskell.org/~dons/code/bytestring-csv
