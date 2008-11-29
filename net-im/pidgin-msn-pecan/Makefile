@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	hrkfrd@googlemail.com
+MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Alternative MSN protocol plugin for libpurple
 
 LIB_DEPENDS=	purple.5:${PORTSDIR}/net-im/libpurple

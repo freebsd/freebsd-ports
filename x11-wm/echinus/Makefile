@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://rootshell.be/~polachok/code/
 
-MAINTAINER=	hrkfrd@googlemail.com
+MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	A dynamic window manager for X11 based on dwm
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
