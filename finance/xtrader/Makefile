@@ -12,7 +12,7 @@ CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
 
 LIB_DEPENDS=	ptypes.21:${PORTSDIR}/devel/ptypes \
