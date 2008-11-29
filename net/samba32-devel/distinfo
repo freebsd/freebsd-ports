@@ -1,3 +1,6 @@
 MD5 (samba-3.2.4.tar.gz) = 7870a6bb3a025c6081cd56688acd494a
 SHA256 (samba-3.2.4.tar.gz) = a85ea5eee24453dbc227835124166f9fca769bc067b77fda048343572fbf3eeb
 SIZE (samba-3.2.4.tar.gz) = 25160752
+MD5 (samba-3.2.4-CVE-2008-4314.patch) = dc60e0f9d8c3d2447e25240dfb8a5db0
+SHA256 (samba-3.2.4-CVE-2008-4314.patch) = 66b0c6b9c493bc70f6ea7df55bda8d1ffdd4baf844ef3240a2d6b35d1a78ac38
+SIZE (samba-3.2.4-CVE-2008-4314.patch) = 1846
