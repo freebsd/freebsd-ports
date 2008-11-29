@@ -40,7 +40,7 @@ regression-test: build
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-IGNORE=		does not build: hangs while building on sparc64
+BROKEN=		hangs while building on sparc64
 .endif
 
 .include <bsd.port.post.mk>
