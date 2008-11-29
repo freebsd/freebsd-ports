@@ -31,7 +31,6 @@ share/vmware-tools/vm-support
 @dirrmtry %%LIB32DIR%%/vmware-tools/modules
 @dirrmtry %%LIB32DIR%%/vmware-tools
 %%X11%%@dirrm share/pixmaps/vmware
-%%X11%%@dirrmtry share/pixmaps
 @dirrmtry etc/vmware-tools
 @dirrmtry share/vmware-tools
 %%X11%%@dirrmtry share/applications
