@@ -18,6 +18,8 @@ COMMENT=	Open-source J2EE application server (5.x family)
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
+BROKEN=		does not build
+
 LATEST_LINK=	jboss5
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
