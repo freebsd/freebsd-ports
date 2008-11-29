@@ -40,6 +40,7 @@
     SUBDIR += egroupware
     SUBDIR += estickies
     SUBDIR += etask
+    SUBDIR += etoile-corner
     SUBDIR += etoile-dictionaryreader
     SUBDIR += etoile-distributedview
     SUBDIR += etoile-extendedworkspacekit
