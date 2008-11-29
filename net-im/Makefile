@@ -23,6 +23,7 @@
     SUBDIR += ejabberd
     SUBDIR += emesene
     SUBDIR += empathy
+    SUBDIR += etoile-stepchat
     SUBDIR += etoile-xmppkit
     SUBDIR += eva
     SUBDIR += finch
