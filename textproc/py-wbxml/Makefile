@@ -26,4 +26,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pywbxml.a \
 		%%PYTHON_SITELIBDIR%%/pywbxml.la \
 		%%PYTHON_SITELIBDIR%%/pywbxml.so
 
+DEPRECATED=	No longer supported by developers
+EXPIRATION_DATE=	2009-01-24
+
 .include <bsd.port.mk>
