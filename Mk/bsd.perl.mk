@@ -73,7 +73,7 @@
 #				  port.  The version requirement can be specified
 #				  here, as well.
 #
-# WANT_PERL5	- Set this is your port conditionally depends on Perl.
+# WANT_PERL		- Set this if your port conditionally depends on Perl.
 #				  This MUST appear before the inclusion of bsd.port.pre.mk.
 
 .if !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
