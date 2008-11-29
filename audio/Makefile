@@ -142,6 +142,7 @@
     SUBDIR += espeak
     SUBDIR += esperanza
     SUBDIR += etktab
+    SUBDIR += etoile-melodie
     SUBDIR += euphoria
     SUBDIR += exaile
     SUBDIR += extace
