@@ -1,0 +1,14 @@
+Local/Applications/ScriptServices.app/Resources/Info-gnustep.plist
+Local/Applications/ScriptServices.app/Resources/ScriptServices.desktop
+Local/Applications/ScriptServices.app/Resources/Scripts/Calculate_.sh
+Local/Applications/ScriptServices.app/Resources/Scripts/Current_Time_.sh
+Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wikipedia.sh
+Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wiktionary.sh
+Local/Applications/ScriptServices.app/Resources/Scripts/today.plist
+Local/Applications/ScriptServices.app/Resources/Scripts/today.sh
+Local/Applications/ScriptServices.app/ScriptServices
+Local/Applications/ScriptServices.app/stamp.make
+Local/Tools/ScriptServices
+@dirrm Local/Applications/ScriptServices.app/Resources/Scripts
+@dirrm Local/Applications/ScriptServices.app/Resources
+@dirrm Local/Applications/ScriptServices.app

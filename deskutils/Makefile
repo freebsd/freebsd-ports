@@ -48,6 +48,7 @@
     SUBDIR += etoile-lookandbehavior
     SUBDIR += etoile-menuserver
     SUBDIR += etoile-panekit
+    SUBDIR += etoile-scriptservices
     SUBDIR += etoile-servicesbarkit
     SUBDIR += etoile-systemconfig
     SUBDIR += etoile-trackerkit
