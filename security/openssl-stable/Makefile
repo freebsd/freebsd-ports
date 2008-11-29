@@ -12,6 +12,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 MASTERDIR?=	${.CURDIR}/../openssl
 WITH_OPENSSL_STABLE=	yes
 
+DEPRICATED=	OpenSSSL 0.9.8 is out
+EXPIRATION_DATE=2008-11-01
+
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
