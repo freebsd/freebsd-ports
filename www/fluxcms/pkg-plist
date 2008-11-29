@@ -400,6 +400,7 @@
 %%INSTALLDIR%%/inc/Date/TimeZone.php
 %%INSTALLDIR%%/inc/DirectoryIterator.php
 %%INSTALLDIR%%/inc/FDB2.php
+%%INSTALLDIR%%/inc/FirePHP.php
 %%INSTALLDIR%%/inc/HTTP/Client.php
 %%INSTALLDIR%%/inc/HTTP/Client/CookieManager.php
 %%INSTALLDIR%%/inc/HTTP/Request.php
@@ -954,6 +955,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/xmlfile.php
 %%INSTALLDIR%%/inc/bx/plugins/xmlrpc.php
 %%INSTALLDIR%%/inc/bx/plugins/xmlrpc/weblog.php
+%%INSTALLDIR%%/inc/bx/plugins/yahoosearch.php
 %%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcms.php
 %%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcmsadmin.php
 %%INSTALLDIR%%/inc/bx/popoon/components/actions/bxcmsauth.php
@@ -1024,6 +1026,7 @@
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/configsinstall.php
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/mdbschema2forms.xsl
 %%INSTALLDIR%%/inc/bx/tools/mdb2forms/reverse_engineer_xml_schema.php
+%%INSTALLDIR%%/inc/bx/tools/newclient.sh
 %%INSTALLDIR%%/inc/bx/tools/newsmailer/newsmailer.php
 %%INSTALLDIR%%/inc/bx/tools/newsmailer/newsmailer.sh
 %%INSTALLDIR%%/inc/bx/tools/svnsync
@@ -1035,6 +1038,7 @@
 %%INSTALLDIR%%/inc/bx/xml.php
 %%INSTALLDIR%%/inc/bx/xsl/plugin2xml.xsl
 %%INSTALLDIR%%/inc/bx/xsl/tree2kupulibrary.xsl
+%%INSTALLDIR%%/inc/lx/externalinput/clean.php
 %%INSTALLDIR%%/inc/magpie/AUTHORS
 %%INSTALLDIR%%/inc/magpie/CHANGES
 %%INSTALLDIR%%/inc/magpie/ChangeLog
@@ -2130,6 +2134,7 @@
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_button.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_checkbox.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_colorselector.html
+%%INSTALLDIR%%/webinc/fck/editor/dialog/fck_div.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_docprops.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_docprops/fck_document_preview.html
 %%INSTALLDIR%%/webinc/fck/editor/dialog/fck_find.html
@@ -2800,6 +2805,8 @@
 @dirrm %%INSTALLDIR%%/inc/minify
 @dirrm %%INSTALLDIR%%/inc/magpie/extlib
 @dirrm %%INSTALLDIR%%/inc/magpie
+@dirrm %%INSTALLDIR%%/inc/lx/externalinput
+@dirrm %%INSTALLDIR%%/inc/lx
 @dirrm %%INSTALLDIR%%/inc/bx/xsl
 @dirrm %%INSTALLDIR%%/inc/bx/versioning
 @dirrm %%INSTALLDIR%%/inc/bx/tools/newsmailer
