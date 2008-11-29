@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="622bc638-be27-11dd-a578-0030843d3802">
+    <topic>wordpress -- header rss feed script insertion vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<name>wordpress-mu</name>
+	<range><lt>2.6.5</lt></range>
+      </package>
+      <package>
+        <name>zh-wordpress</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32882/">
+	  <p>Input passed via the HTTP "Host" header is not properly sanitised
+	    before being used. This can be exploited to execute arbitrary HTML and
+	    script code in a user's browser session in context of an affected site
+	    if malicious data is viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/32882/</url>
+      <url>http://wordpress.org/development/2008/11/wordpress-265/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-26</discovery>
+      <entry>2008-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1583640d-be20-11dd-a578-0030843d3802">
     <topic>samba -- potential leakage of arbitrary memory contents</topic>
     <affects>
