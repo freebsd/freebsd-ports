@@ -19021,6 +19021,7 @@ rpm5                            ports/archivers/rpm5
 rprint                          ports/print/rprint
 rpy                             ports/math/rpy
 rqm                             ports/mbone/rqm
+rrdbot                          ports/net-mgmt/rrdbot
 rrdman                          ports/databases/rrdman
 rrdtool                         ports/databases/rrdtool
 rrdtool10                       ports/databases/rrdtool10
