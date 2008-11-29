@@ -7,7 +7,7 @@
 
 PORTNAME=	qtstalker
 PORTVERSION=	0.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance kde
 MASTER_SITES=	SF
 
@@ -98,9 +98,16 @@ pre-install:
 	@${REINPLACE_CMD} -E \
 		-e 's|\(INSTALL_FILE\)|(BSD_INSTALL_PROGRAM)|' \
 		${WRKSRC}/src/${MAKEFILE}
+.ifdef(NOPORTDOCS)
+# disable docs installation
+	@${REINPLACE_CMD} -E \
+		-e 's|^.+cd[[:space:]]+docs[[:space:]]+.+$$|#|' \
+		${WRKSRC}/${MAKEFILE}
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 # additional docs
 .for doc in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
