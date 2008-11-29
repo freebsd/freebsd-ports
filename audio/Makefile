@@ -143,6 +143,7 @@
     SUBDIR += esperanza
     SUBDIR += etktab
     SUBDIR += etoile-melodie
+    SUBDIR += etoile-volumecontrolmenulet
     SUBDIR += euphoria
     SUBDIR += exaile
     SUBDIR += extace
