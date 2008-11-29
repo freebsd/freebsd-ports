@@ -1,0 +1,11 @@
+--- ppolicy.tap.orig	2008-11-27 09:31:42.000000000 +0000
++++ ppolicy.tap	2008-11-27 09:32:20.000000000 +0000
+@@ -20,7 +20,7 @@
+ 
+ # default config
+ config = {
+-    'configFile'   : '/etc/postfix/ppolicy.conf',
++    'configFile'   : '/usr/local/etc/ppolicy.conf',
+     'logLevel'     : logging.WARN,
+     'admin'        : 'postmaster',
+     'domain'       : socket.gethostname(),
