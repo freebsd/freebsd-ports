@@ -73,7 +73,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.openoffice.org/security/cves/CVE-2008-2238.html</url>
     </references>
     <dates>
-      <discovery>2008-11-FIXME</discovery>
+      <discovery>2008-10-29</discovery>
       <entry>2008-11-29</entry>
     </dates>
   </vuln>
