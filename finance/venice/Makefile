@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mov
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merchant Of Venice, a stock market trading program
 
 BUILD_DEPENDS=	${JYTHON_PREFIX}/jython.jar:${PORTSDIR}/lang/jython
