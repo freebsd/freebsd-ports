@@ -7,6 +7,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.3.91
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
 
@@ -16,7 +17,8 @@ COMMENT=	CD/DVD burning tool for Xfce
 LIB_DEPENDS=	burn.23:${PORTSDIR}/devel/libburn \
 		isofs.12:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	hal-device:${PORTSDIR}/sysutils/hal \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao
+		cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=${PREFIX}/bin/msgfmt DATADIRNAME=share
