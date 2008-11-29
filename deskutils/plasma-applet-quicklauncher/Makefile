@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	quicklauncher
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
+MASTER_SITES=	http://www.svenstorp.com/plasma/applets/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	plasma-applet-
-DISTNAME=	78061-${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Quicklauncher plasma applet for KDE4
@@ -21,7 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}/src/
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 PLIST_FILES=	lib/kde4/plasma_applet_quicklauncher.so \
 		share/kde4/services/plasma-applet-quicklauncher.desktop
