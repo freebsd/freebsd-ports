@@ -487,6 +487,7 @@
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
+    SUBDIR += hs-Stream
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
