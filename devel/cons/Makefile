@@ -7,7 +7,7 @@
 
 PORTNAME=	cons
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -28,7 +28,7 @@ MANCOMPRESSED=	yes
 MAN1=		cons.1
 DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
 		cons.html TODO
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
