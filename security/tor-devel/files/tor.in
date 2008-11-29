@@ -15,7 +15,6 @@
 # tor_conf (str):	Points to your tor conf file
 #			Default: %%PREFIX%%/etc/tor/torrc
 # tor_user (str):	Tor Daemon user. Default _tor
-# tor_group (str):	Tor Daemon group. Default _tor
 # tor_datadir (str):	Tor DataDir.  Defaults /var/db/tor
 # tor_logfile (str):	Tor Log File.  Defaults /var/log/tor
 #
@@ -30,7 +29,6 @@ load_rc_config ${name}
 : ${tor_enable="NO"}
 : ${tor_conf="%%PREFIX%%/etc/tor/torrc"}
 : ${tor_user="_tor"}
-: ${tor_group="_tor"}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
 : ${tor_logfile="/var/log/tor"}
 : ${tor_datadir="/var/db/tor"}
@@ -39,7 +37,7 @@ required_files=${tor_conf}
 required_dirs=${tor_datadir}
 pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --User ${tor_user} --Group ${tor_group} --Log notice\ file\ ${tor_logfile}"
+command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --User ${tor_user} --Log notice\ file\ ${tor_logfile}"
 extra_commands="log"
 log_cmd="${name}_log"
 
