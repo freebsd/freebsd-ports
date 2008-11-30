@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.alhem.net/Sockets/
 PKGNAMESUFFIX?=	-devel
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for BSD-style sockets
 
 USE_GMAKE=	yes

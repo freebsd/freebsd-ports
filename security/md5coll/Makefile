@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MD5 collision generator
 
 ONLY_FOR_ARCHS=	i386
