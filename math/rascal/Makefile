@@ -30,6 +30,8 @@ MAN1=	rascal.1
 
 .if ${OSVERSION} >= 700042
 BROKEN=		Does not compile with GCC 4.2
+.else
+BROKEN=		does not link
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
