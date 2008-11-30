@@ -9,7 +9,4 @@ the world is rendered in three dimensions. Worlds are not tile-based, but
 polygon-based -- rooms and hallways can be made to any shape imaginable,
 allowing for some rather impressive architecture.
 
-WWW: http://sdb.gamecreation.org/
-
-- Dmitry Marakasov
-amdmi3@mail.ru
+WWW: http://www.gamecreation.org/games/shotgun-debugger
