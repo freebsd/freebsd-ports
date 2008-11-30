@@ -7,54 +7,57 @@
 
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://sdb.gamecreation.org/ \
+MASTER_SITES=	http://stage.gamecreation.org/shotgund/ \
 		http://www.amdmi3.ru/distfiles/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic overhead shooter
 
 USE_SDL=	mixer image sdl
-USE_GL=		yes
+USE_GL=		gl glu
 USE_GMAKE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
-LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU
-MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}"
+CXXFLAGS+=	`${SDL_CONFIG} --cflags`
+LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
+MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 
-PLIST_FILES=	bin/sdb
-PLIST_DIRS=	%%DATADIR%%
-PORTDOCS=	README
+PORTDOCS=	*
 
-PLIST=		${WRKDIR}/pkg-plist
-DATADIRS=	levels models snd sprites
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
+PLIST_SUB+=	MODEL_SUFFIX="md2"
+.else
+# big-endian requires different set of models
+DISTFILES+=	shotgun-debugger-1.0.mac-ppc.zip
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+PLIST_SUB+=	MODEL_SUFFIX="md2b"
+
+post-extract:
+	${RM} ${WRKSRC}/models/*
+	@cd ${WRKSRC}/models && \
+		${RM} -f * && \
+		unzip -qj ${DISTDIR}/shotgun-debugger-1.0.mac-ppc.zip \
+			'sdb-1.0-macosx/models/*.md2b'
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<SDL/|<|' ${WRKSRC}/src/sdb.h
 	@${REINPLACE_CMD} -Ee 's,(levels|models|snd|sprites)/,${DATADIR}/&,g' \
 		${WRKSRC}/src/sdb.h ${WRKSRC}/src/game.cpp
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC} && \
-	${FIND} ${DATADIRS} ! -type d | ${SORT} \
-		| ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-	${FIND} ${DATADIRS} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sdb ${PREFIX}/bin
-	cd ${WRKSRC} && \
-	${FIND} ${DATADIRS} -type d ! -empty -exec \
-		${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} ${DATADIRS} ! -type d -exec \
-		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "levels models snd sprites" ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
