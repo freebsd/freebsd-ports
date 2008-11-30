@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	mwlib
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/m/mwlib/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python's MediaWiki Parser and Utility Library
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
-		${PYTHON_PKGNAMEPREFIX}odfpy>0.6:${PORTSDIR}/devel/py-odfpy \
+		${PYTHON_PKGNAMEPREFIX}odfpy>=0.7:${PORTSDIR}/devel/py-odfpy \
 		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}flup>0.9:${PORTSDIR}/www/py-flup \
+		${PYTHON_PKGNAMEPREFIX}flup>=1.0:${PORTSDIR}/www/py-flup \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
-post-extract:
-		@${REINPLACE_CMD} -e 's#odfpy==0.7.0#odfpy>=0.7.0#g' \
-			${WRKSRC}/setup.py
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|install_requires=install_requires,||' \
+		-e 's,checkpil()$$,,' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
