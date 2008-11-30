@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/Exporter/Tidy.pm:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		${SITE_PERL}/Term/ReadLine/Zoid.pm:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
 		${SITE_PERL}/Env/PS1.pm:${PORTSDIR}/devel/p5-Env-PS1
 
+BROKEN=		does not package
+
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	install_path=doc="${DOCSDIR}" \
 		install_path=share="${DATADIR}"
