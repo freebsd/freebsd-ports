@@ -8,6 +8,7 @@
 
 PORTNAME=	afflib
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
@@ -25,12 +26,16 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}/libdata
+CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
 CFLAGS+=	${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/lib|' \
+		 ${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/libdata|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
