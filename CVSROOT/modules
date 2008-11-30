@@ -2889,7 +2889,9 @@ etoile-behavior                 ports/sysutils/etoile-behavior
 etoile-bookmarkkit              ports/www/etoile-bookmarkkit
 etoile-camaelon                 ports/x11-themes/etoile-camaelon
 etoile-collectionkit            ports/devel/etoile-collectionkit
+etoile-compiler                 ports/lang/etoile-compiler
 etoile-coreobject               ports/devel/etoile-coreobject
+etoile-corner                   ports/deskutils/etoile-corner
 etoile-dictionaryreader         ports/deskutils/etoile-dictionaryreader
 etoile-distributedview          ports/deskutils/etoile-distributedview
 etoile-etoilemenus              ports/x11-themes/etoile-etoilemenus
@@ -2908,15 +2910,19 @@ etoile-login                    ports/x11-wm/etoile-login
 etoile-lookandbehavior          ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit                ports/textproc/etoile-lucenekit
 etoile-mediakit                 ports/multimedia/etoile-mediakit
+etoile-melodie                  ports/audio/etoile-melodie
 etoile-menuserver               ports/deskutils/etoile-menuserver
 etoile-mollusk                  ports/www/etoile-mollusk
 etoile-multimediakit            ports/multimedia/etoile-multimediakit
 etoile-ogrekit                  ports/textproc/etoile-ogrekit
 etoile-opmlkit                  ports/textproc/etoile-opmlkit
 etoile-panekit                  ports/deskutils/etoile-panekit
+etoile-powermenulet             ports/sysutils/etoile-powermenulet
 etoile-rsskit                   ports/www/etoile-rsskit
 etoile-scriptkit                ports/lang/etoile-scriptkit
+etoile-scriptservices           ports/deskutils/etoile-scriptservices
 etoile-serialize                ports/devel/etoile-serialize
+etoile-servicemenulet           ports/deskutils/etoile-servicemenulet
 etoile-servicesbarkit           ports/deskutils/etoile-servicesbarkit
 etoile-smalltalkkit             ports/lang/etoile-smalltalkkit
 etoile-system                   ports/sysutils/etoile-system
@@ -2925,6 +2931,7 @@ etoile-trackerkit               ports/deskutils/etoile-trackerkit
 etoile-typewriter               ports/editors/etoile-typewriter
 etoile-ui                       ports/deskutils/etoile-ui
 etoile-unitkit                  ports/devel/etoile-unitkit
+etoile-volumecontrolmenulet     ports/audio/etoile-volumecontrolmenulet
 etoile-wildmenus                ports/x11-themes/etoile-wildmenus
 etoile-xwindowserverkit         ports/x11/etoile-xwindowserverkit
 etrace                          ports/net/etrace
