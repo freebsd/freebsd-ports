@@ -21,6 +21,8 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
 
 USE_RUBY=	yes
 
+BROKEN=		does not compile
+
 P4APIVER=	2003.01
 P4APIDIR=	${WRKDIR}/p4api
 INSTALL_TARGET=	site-install
