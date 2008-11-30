@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Algorithm/Dependency.pm:${PORTSDIR}/devel/p5-Algorithm-Dependency \
 		${SITE_PERL}/File/Flat.pm:${PORTSDIR}/devel/p5-File-Flat \
