@@ -7,9 +7,9 @@
 
 PORTNAME=	gfp
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	finance java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	SFE
 MASTER_SITE_SUBDIR=	gfd
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -27,9 +27,6 @@ WRKSRC=		${WRKDIR}/GFP
 
 JAVAVM=		${LOCALBASE}/bin/java
 JAR_FILE=	gfd.jar
-
-PLIST_DIRS+=	\
-		${DATADIR_REL}
 
 PLIST_FILES+=	\
 		bin/${PORTNAME}
@@ -70,6 +67,7 @@ do-install:
 		| ${SED} -ne 's,^,${DATADIR:S,^${PREFIX}/,,}/,p' >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} -s -d * -type d) \
 		| ${SED} -ne 's,^,@dirrm ${DATADIR:S,^${PREFIX}/,,}/,p' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${DATADIR_REL}' >> ${TMPPLIST}
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
