@@ -10,7 +10,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
