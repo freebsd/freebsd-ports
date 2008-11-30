@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small network application for automatic maintenance of peer lists
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets

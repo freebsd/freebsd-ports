@@ -13,7 +13,7 @@ MASTER_SITES=	http://mikelin.mit.edu/xmpp/jabbr/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	jabbr
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Messaging and Presence Protocol a.k.a. Jabber for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

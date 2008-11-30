@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/trackerbt/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BitTorrent tracker with additional distributed functionality
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets

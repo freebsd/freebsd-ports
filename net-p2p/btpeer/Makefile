@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/btpeer/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client functionality of bittorrent protocol, network only environment
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets-devel.a:${PORTSDIR}/net/Sockets-devel
