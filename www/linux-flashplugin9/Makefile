@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	9.0r124
-PORTREVISION=	2
+PORTVERSION=	9.0r151
+#PORTREVISION=	2
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
+MASTER_SITES=	http://download.macromedia.com/pub/flashplayer/installers/current/9/:plugin \
 		http://tijl.ulyssis.be/mirror/:suplib
 PKGNAMEPREFIX=	linux-
-DISTFILES=	install_flash_player_9_linux.tar.gz:plugin \
+DISTFILES=	install_flash_player_9.tar.gz:plugin \
 		libflashsupport.so:suplib
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
-EXTRACT_ONLY=	install_flash_player_9_linux.tar.gz
+EXTRACT_ONLY=	install_flash_player_9.tar.gz
 
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	Adobe Flash Player NPAPI Plugin
@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 
 RESTRICTED=	Redistribution not allowed
+RESTRICTED_FILES=	${DISTFILES:Nlibflashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/install_flash_player_9_linux
