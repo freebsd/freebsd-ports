@@ -20,9 +20,9 @@ include/afflib/afflib_sha256.h
 include/afflib/aftimer.h
 include/afflib/threaded_hash.h
 include/afflib/utils.h
-libdata/libafflib.a
-libdata/libafflib.la
-libdata/libafflib.so
-libdata/libafflib.so.0
+lib/libafflib.a
+lib/libafflib.la
+lib/libafflib.so
+lib/libafflib.so.0
 libdata/pkgconfig/afflib.pc
 @dirrm include/afflib
