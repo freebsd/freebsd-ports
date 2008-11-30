@@ -366,6 +366,7 @@
     SUBDIR += kuickshow
     SUBDIR += l2p
     SUBDIR += landscape
+    SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
     SUBDIR += leafpak

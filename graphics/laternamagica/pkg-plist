@@ -1,0 +1,11 @@
+Local/Applications/LaternaMagica.app/LaternaMagica
+Local/Applications/LaternaMagica.app/Resources/Info-gnustep.plist
+Local/Applications/LaternaMagica.app/Resources/LaternaMagica.desktop
+Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.classes
+Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.info
+Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/objects.gorm
+Local/Applications/LaternaMagica.app/stamp.make
+Local/Tools/LaternaMagica
+@dirrm Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm
+@dirrm Local/Applications/LaternaMagica.app/Resources
+@dirrm Local/Applications/LaternaMagica.app
