@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Oct 10 16:19:22 2006
-+++ Imakefile
+--- Imakefile.orig	2006-10-10 16:19:22.000000000 -0700
++++ Imakefile	2008-11-28 17:11:28.000000000 -0800
 @@ -30,9 +30,9 @@
  XCOMM Also, you may have to uncomment and redefine MKDIRHIER because "make" looks
  XCOMM for it relative to the BINDIR variable.
@@ -127,8 +127,29 @@
  
  XCOMM Install program, libraries and documentation with "make install.all"
  install.all::
-@@ -415,13 +416,13 @@
+@@ -396,11 +397,15 @@
+ XCOMM Install the documentation here with "make install.doc"
+ install.doc::
+ 	@echo Installing man pages to $(MANDIR)
+-	@if [ -d $(DESTDIR)$(XFIGDOCDIR) ]; then set +x; \
+-		else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGDOCDIR) ; set +x; ); fi
++	@$(MAKE) install.docdir
+ 	@$(MAKE) install.man
+ 	@$(MAKE) install.html
+ 
++install.docdir::
++	@if [ -d $(DESTDIR)$(XFIGDOCDIR) ]; then set +x; \
++		else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGDOCDIR) ; set +x; ); fi
++	
++
+ XCOMM Install the HTML documentation here with "make install.html"
+ 
+ #ifdef I18N
+@@ -413,25 +418,27 @@
+ #endif
+ 
  install.rhtml::
++	@$(MAKE) install.docdir
  	@(cd Doc ; \
  	echo Copying pdf and html files to $(DESTDIR)$(XFIGDOCDIR) ; \
 -	$(INSTALL) -m 644 -c xfig_man.html $(DESTDIR)$(XFIGDOCDIR) ; \
@@ -145,7 +166,9 @@
  	) ;
  
  #ifdef I18N
-@@ -430,8 +431,8 @@
+ install.jhtml::
+ 	@echo "Copying japanese html files to $(DESTDIR)$(XFIGDOCDIR)"
++	@$(MAKE) install.docdir
  	@(cd Doc/html/japanese ; \
  	if [ -d $(DESTDIR)$(XFIGDOCDIR)/html/japanese ]; then set +x; \
  	   else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGDOCDIR)/html/japanese ); fi ; \
@@ -156,7 +179,7 @@
  #endif
  
  XCOMM Install the object libraries here with "make install.libs"
-@@ -440,7 +441,7 @@
+@@ -440,7 +447,7 @@
  	@if [ -d $(DESTDIR)$(OBJLIBDIR) ]; then set +x; \
  		else (set -x; $(MKDIRHIER) $(DESTDIR)$(OBJLIBDIR) ; set +x; ); fi
  	@if [ -d Libraries ]; then \
