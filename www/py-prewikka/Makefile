@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Frontend for the Prelude IDS
 
 BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah

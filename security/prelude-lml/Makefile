@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	r.gruyters@snow.nl
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
 LIB_DEPENDS+=	prelude.17:${PORTSDIR}/security/libprelude \
