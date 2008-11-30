@@ -1,147 +1,21 @@
-%%GEM_SPEC%%
 %%GEM_CACHE%%
-%%GEM_LIB_DIR%%/CHANGES
-%%GEM_LIB_DIR%%/History.txt
-%%GEM_LIB_DIR%%/License.txt
-%%GEM_LIB_DIR%%/MIT-LICENSE
-%%GEM_LIB_DIR%%/Manifest.txt
-%%GEM_LIB_DIR%%/PostInstall.txt
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/README.txt
-%%GEM_LIB_DIR%%/Rakefile
-%%GEM_LIB_DIR%%/config/hoe.rb
-%%GEM_LIB_DIR%%/config/requirements.rb
-%%GEM_LIB_DIR%%/lib/scruffy.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/background.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/base.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/data_markers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/graphs.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/grid.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/label.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/legend.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/style_info.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/title.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/value_markers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/components/viewport.rb
-%%GEM_LIB_DIR%%/lib/scruffy/formatters.rb
-%%GEM_LIB_DIR%%/lib/scruffy/graph.rb
-%%GEM_LIB_DIR%%/lib/scruffy/graph_state.rb
-%%GEM_LIB_DIR%%/lib/scruffy/helpers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/helpers/canvas.rb
-%%GEM_LIB_DIR%%/lib/scruffy/helpers/layer_container.rb
-%%GEM_LIB_DIR%%/lib/scruffy/helpers/meta.rb
-%%GEM_LIB_DIR%%/lib/scruffy/helpers/point_container.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/all_smiles.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/area.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/average.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/bar.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/base.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/line.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/pie.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/pie_slice.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/scatter.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/sparkline_bar.rb
-%%GEM_LIB_DIR%%/lib/scruffy/layers/stacked.rb
-%%GEM_LIB_DIR%%/lib/scruffy/rasterizers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/rasterizers/batik_rasterizer.rb
-%%GEM_LIB_DIR%%/lib/scruffy/rasterizers/rmagick_rasterizer.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/base.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/cubed.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/cubed3d.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/empty.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/pie.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/reversed.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/sparkline.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/split.rb
-%%GEM_LIB_DIR%%/lib/scruffy/renderers/standard.rb
-%%GEM_LIB_DIR%%/lib/scruffy/themes.rb
-%%GEM_LIB_DIR%%/lib/scruffy/version.rb
-%%GEM_LIB_DIR%%/script/console
-%%GEM_LIB_DIR%%/script/destroy
-%%GEM_LIB_DIR%%/script/generate
-%%GEM_LIB_DIR%%/script/txt2html
-%%GEM_LIB_DIR%%/setup.rb
-%%GEM_LIB_DIR%%/spec/scruffy/graph_spec.rb
-%%GEM_LIB_DIR%%/spec/scruffy/layers/base_spec.rb
-%%GEM_LIB_DIR%%/spec/scruffy/layers/line_spec.rb
-%%GEM_LIB_DIR%%/spec/spec_helper.rb
-%%GEM_LIB_DIR%%/tasks/deployment.rake
-%%GEM_LIB_DIR%%/tasks/environment.rake
-%%GEM_LIB_DIR%%/tasks/website.rake
-%%GEM_LIB_DIR%%/test/graph_creation_test.rb
-%%GEM_LIB_DIR%%/test/test_helper.rb
-%%GEM_LIB_DIR%%/test/test_scruffy.rb
-%%GEM_LIB_DIR%%/website/images/blank.gif.html
-%%GEM_LIB_DIR%%/website/images/graphs/all_smiles.png
-%%GEM_LIB_DIR%%/website/images/graphs/bar_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/bar_test.svg
-%%GEM_LIB_DIR%%/website/images/graphs/line_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/line_test.svg
-%%GEM_LIB_DIR%%/website/images/graphs/multi_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/multi_test.svg
-%%GEM_LIB_DIR%%/website/images/graphs/pie_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/pie_test.svg
-%%GEM_LIB_DIR%%/website/images/graphs/split_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/split_test.svg
-%%GEM_LIB_DIR%%/website/images/graphs/stacking_test.png
-%%GEM_LIB_DIR%%/website/images/graphs/stacking_test.svg
-%%GEM_LIB_DIR%%/website/images/header.png
-%%GEM_LIB_DIR%%/website/images/header_gradient.png
-%%GEM_LIB_DIR%%/website/images/overlay.png
-%%GEM_LIB_DIR%%/website/images/scruffy.png
-%%GEM_LIB_DIR%%/website/index.html
-%%GEM_LIB_DIR%%/website/index.txt
-%%GEM_LIB_DIR%%/website/javascripts/application.js
-%%GEM_LIB_DIR%%/website/javascripts/controls.js
-%%GEM_LIB_DIR%%/website/javascripts/dragdrop.js
-%%GEM_LIB_DIR%%/website/javascripts/effects.js
-%%GEM_LIB_DIR%%/website/javascripts/lightbox.js
-%%GEM_LIB_DIR%%/website/javascripts/prototype.js
-%%GEM_LIB_DIR%%/website/javascripts/rounded_corners_lite.inc.js
-%%GEM_LIB_DIR%%/website/stylesheets/lightbox.css
-%%GEM_LIB_DIR%%/website/stylesheets/screen.css
-%%GEM_LIB_DIR%%/website/stylesheets/scruffy.css
-%%GEM_LIB_DIR%%/website/template.html.erb
-@dirrm %%GEM_LIB_DIR%%/website/stylesheets
-@dirrm %%GEM_LIB_DIR%%/website/javascripts
-@dirrm %%GEM_LIB_DIR%%/website/images/graphs
-@dirrm %%GEM_LIB_DIR%%/website/images
-@dirrm %%GEM_LIB_DIR%%/website
-@dirrm %%GEM_LIB_DIR%%/test
-@dirrm %%GEM_LIB_DIR%%/tasks
-@dirrm %%GEM_LIB_DIR%%/spec/scruffy/layers
-@dirrm %%GEM_LIB_DIR%%/spec/scruffy
-@dirrm %%GEM_LIB_DIR%%/spec
-@dirrm %%GEM_LIB_DIR%%/script
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy/renderers
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy/rasterizers
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy/layers
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy/helpers
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy/components
-@dirrm %%GEM_LIB_DIR%%/lib/scruffy
-@dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEM_LIB_DIR%%/config
-@dirrm %%GEM_LIB_DIR%%
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Background.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Background.src/M000015.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000011.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000012.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Base.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/DataMarkers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/DataMarkers.src/M000016.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Graphs.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Graphs.src/M000006.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Graphs.src/M000007.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Grid.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Grid.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Grid.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Label.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Label.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Legend.html
@@ -149,10 +23,10 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Legend.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Legend.src/M000004.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/StyleInfo.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/StyleInfo.src/M0000%%RUBY_SHLIBVER%%.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/StyleInfo.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/StyleInfo.src/M000018.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Title.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Title.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Title.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/ValueMarkers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/ValueMarkers.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Components/Viewport.html
@@ -183,43 +57,43 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/GraphState.src/M000124.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/Canvas.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/LayerContainer.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer.src/M000057.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Array.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Array.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Array.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Helpers/PointContainer/Hash.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000068.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/AllSmiles.src/M000073.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Area.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Area.src/M000074.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Average.src/M000099.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Bar.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Bar.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Bar.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Bar.src/M000102.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Base.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Base.src/M000079.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Base.src/M000080.html
@@ -237,25 +111,25 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Line.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Line.src/M000103.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000069.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000070.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Pie.src/M000073.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/PieSlice.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/PieSlice.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/PieSlice.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/RenderError.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Scatter.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Scatter.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Scatter.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/SparklineBar.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/SparklineBar.src/M000075.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/SparklineBar.src/M000076.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000094.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000095.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Layers/Stacked.src/M000099.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Rasterizers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Rasterizers/BatikRasterizer.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Rasterizers/BatikRasterizer.src/M000021.html
@@ -264,44 +138,44 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Rasterizers/RMagickRasterizer.src/M000023.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Base.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed3d.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed3d.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Cubed3d.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Empty.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Empty.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Empty.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Pie.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Pie.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Pie.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Reversed.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Reversed.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Reversed.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Sparkline.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Sparkline.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Sparkline.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Split.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Renderers/Standard.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Apples.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Apples.src/M000120.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.src/M0001%%RUBY_SHLIBVER%%.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.src/M000116.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.src/M000118.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/Base.src/M000119.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/CareBears.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scruffy/Themes/CareBears.src/M000115.html
@@ -375,6 +249,131 @@
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/CHANGES
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/License.txt
+%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/PostInstall.txt
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/config/hoe.rb
+%%GEM_LIB_DIR%%/config/requirements.rb
+%%GEM_LIB_DIR%%/lib/scruffy.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/background.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/base.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/data_markers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/graphs.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/grid.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/label.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/legend.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/style_info.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/title.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/value_markers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/components/viewport.rb
+%%GEM_LIB_DIR%%/lib/scruffy/formatters.rb
+%%GEM_LIB_DIR%%/lib/scruffy/graph.rb
+%%GEM_LIB_DIR%%/lib/scruffy/graph_state.rb
+%%GEM_LIB_DIR%%/lib/scruffy/helpers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/helpers/canvas.rb
+%%GEM_LIB_DIR%%/lib/scruffy/helpers/layer_container.rb
+%%GEM_LIB_DIR%%/lib/scruffy/helpers/meta.rb
+%%GEM_LIB_DIR%%/lib/scruffy/helpers/point_container.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/all_smiles.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/area.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/average.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/bar.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/base.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/line.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/pie.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/pie_slice.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/scatter.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/sparkline_bar.rb
+%%GEM_LIB_DIR%%/lib/scruffy/layers/stacked.rb
+%%GEM_LIB_DIR%%/lib/scruffy/rasterizers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/rasterizers/batik_rasterizer.rb
+%%GEM_LIB_DIR%%/lib/scruffy/rasterizers/rmagick_rasterizer.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/base.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/cubed.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/cubed3d.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/empty.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/pie.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/reversed.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/sparkline.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/split.rb
+%%GEM_LIB_DIR%%/lib/scruffy/renderers/standard.rb
+%%GEM_LIB_DIR%%/lib/scruffy/themes.rb
+%%GEM_LIB_DIR%%/lib/scruffy/version.rb
+%%GEM_LIB_DIR%%/script/console
+%%GEM_LIB_DIR%%/script/destroy
+%%GEM_LIB_DIR%%/script/generate
+%%GEM_LIB_DIR%%/script/txt2html
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/spec/scruffy/graph_spec.rb
+%%GEM_LIB_DIR%%/spec/scruffy/layers/base_spec.rb
+%%GEM_LIB_DIR%%/spec/scruffy/layers/line_spec.rb
+%%GEM_LIB_DIR%%/spec/spec_helper.rb
+%%GEM_LIB_DIR%%/tasks/deployment.rake
+%%GEM_LIB_DIR%%/tasks/environment.rake
+%%GEM_LIB_DIR%%/tasks/website.rake
+%%GEM_LIB_DIR%%/test/graph_creation_test.rb
+%%GEM_LIB_DIR%%/test/test_helper.rb
+%%GEM_LIB_DIR%%/website/images/blank.gif.html
+%%GEM_LIB_DIR%%/website/images/graphs/all_smiles.png
+%%GEM_LIB_DIR%%/website/images/graphs/bar_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/bar_test.svg
+%%GEM_LIB_DIR%%/website/images/graphs/line_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/line_test.svg
+%%GEM_LIB_DIR%%/website/images/graphs/multi_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/multi_test.svg
+%%GEM_LIB_DIR%%/website/images/graphs/pie_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/pie_test.svg
+%%GEM_LIB_DIR%%/website/images/graphs/split_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/split_test.svg
+%%GEM_LIB_DIR%%/website/images/graphs/stacking_test.png
+%%GEM_LIB_DIR%%/website/images/graphs/stacking_test.svg
+%%GEM_LIB_DIR%%/website/images/header.png
+%%GEM_LIB_DIR%%/website/images/header_gradient.png
+%%GEM_LIB_DIR%%/website/images/overlay.png
+%%GEM_LIB_DIR%%/website/images/scruffy.png
+%%GEM_LIB_DIR%%/website/index.html
+%%GEM_LIB_DIR%%/website/index.txt
+%%GEM_LIB_DIR%%/website/javascripts/application.js
+%%GEM_LIB_DIR%%/website/javascripts/controls.js
+%%GEM_LIB_DIR%%/website/javascripts/dragdrop.js
+%%GEM_LIB_DIR%%/website/javascripts/effects.js
+%%GEM_LIB_DIR%%/website/javascripts/lightbox.js
+%%GEM_LIB_DIR%%/website/javascripts/prototype.js
+%%GEM_LIB_DIR%%/website/javascripts/rounded_corners_lite.inc.js
+%%GEM_LIB_DIR%%/website/stylesheets/lightbox.css
+%%GEM_LIB_DIR%%/website/stylesheets/screen.css
+%%GEM_LIB_DIR%%/website/stylesheets/scruffy.css
+%%GEM_LIB_DIR%%/website/template.html.erb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/website/stylesheets
+@dirrm %%GEM_LIB_DIR%%/website/javascripts
+@dirrm %%GEM_LIB_DIR%%/website/images/graphs
+@dirrm %%GEM_LIB_DIR%%/website/images
+@dirrm %%GEM_LIB_DIR%%/website
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/tasks
+@dirrm %%GEM_LIB_DIR%%/spec/scruffy/layers
+@dirrm %%GEM_LIB_DIR%%/spec/scruffy
+@dirrm %%GEM_LIB_DIR%%/spec
+@dirrm %%GEM_LIB_DIR%%/script
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy/renderers
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy/rasterizers
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy/layers
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy/helpers
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy/components
+@dirrm %%GEM_LIB_DIR%%/lib/scruffy
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/config
+@dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/website
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/scruffy/renderers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/scruffy/rasterizers
