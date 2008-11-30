@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.26
+PORTVERSION=	0.26.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
