@@ -24,6 +24,8 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+BROKEN=		Does not compile		
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
 		${WRKSRC}/doc/Makefile.in
