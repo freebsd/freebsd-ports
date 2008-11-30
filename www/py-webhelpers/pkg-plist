@@ -1,7 +1,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/__init__.pyc
@@ -18,6 +20,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/markdown.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/markdown.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/markdown.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/compress_resources.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/compress_resources.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/compress_resources.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/pagination/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/pagination/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/pagination/__init__.pyo
@@ -52,6 +60,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts/prototype.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts/scriptaculous.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts/slider.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts/sound.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts/unittest.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/number.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/number.pyc
@@ -62,6 +71,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/scriptaculous.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/scriptaculous.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/scriptaculous.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/secure_form_tag.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/secure_form_tag.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/secure_form_tag.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/tags.pyo
@@ -77,6 +89,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/pagination
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails/javascripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/webhelpers/rails
