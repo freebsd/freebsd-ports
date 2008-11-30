@@ -31,6 +31,8 @@ RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay \
 		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 
+IGNORE=		does not work with Gimp 2.6, and no update available
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
