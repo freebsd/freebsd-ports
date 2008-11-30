@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	2008-09-22 13:41:08.000000000 -0500
-+++ util/fluxbox-generate_menu.in	2008-09-22 14:00:24.000000000 -0500
+--- util/fluxbox-generate_menu.in.orig	2008-07-14 21:33:31.000000000 +0200
++++ util/fluxbox-generate_menu.in	2008-11-30 16:58:28.000000000 +0100
 @@ -45,7 +45,7 @@
  
  
@@ -187,13 +187,16 @@
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
 -    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
-+    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
++    for browser in firefox firefox3 mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla seamonkey galeon konqueror dillo netscape w3m amaya links lynx; do
          if find_it_options $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1559,7 +1579,8 @@
+@@ -1557,9 +1577,10 @@
+ 
+ case "$DEFAULT_BROWSERNAME" in
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
-     firefox|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+-    firefox|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
++    firefox|firefox3|firebird|mozilla|seamonkey|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
 -    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
 +    linux-opera) append "[exec] (linux-opera) {linux-opera}" ;;
@@ -201,9 +204,12 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1578,7 +1599,8 @@
+@@ -1576,9 +1597,10 @@
+ 
+ append_submenu "${NETMENU}"
      append_submenu "${BROWSERMENU}"
-         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
+-        normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
++        normal_find firefox firefox3 mozilla-firefox MozillaFirefox galeon mozilla seamonkey dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
 -        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
 +        find_it linux-opera append "[exec]   (linux-opera) {linux-opera}"
