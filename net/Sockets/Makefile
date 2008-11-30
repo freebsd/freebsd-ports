@@ -36,7 +36,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-SocketHandler.h
 .endif
 
 .include <bsd.port.post.mk>
