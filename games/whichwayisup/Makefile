@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	whichwayisup
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.9
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
-MASTER_SITES=	http://hectigo.net/puskutraktori/whichwayisup/ CENKES
+MASTER_SITES=	http://hectigo.net/puskutraktori/whichwayisup/
 DISTNAME=	${PORTNAME}_b${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,11 +21,14 @@ USE_PYTHON=	yes
 USE_ZIP=	yes
 PORTDOCS=	README.txt changelog.txt
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 post-patch:
 	@${REINPLACE_CMD} -e '/libdir =/s|=.*|= "${PYTHON_SITELIBDIR}/${PORTNAME}"|'\
 		${WRKSRC}/run_game.py
 	@${REINPLACE_CMD} -e '/data_dir =/s|data_py.*data.|"${DATADIR}"|'\
 		${WRKSRC}/lib/data.py
+	@${RM} ${WRKSRC}/lib/data.py.bak
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib/
