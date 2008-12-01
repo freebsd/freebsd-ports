@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -25,8 +24,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LUA=	5.1
-USE_SQLITE=	yes
-USE_SDL=	sdl mixer ttf
+USE_SQLITE=	3
+USE_SDL=	sdl mixer ttf net
+USE_GL=		gl glu
 USE_DOS2UNIX=	src/*.cpp src/*.h
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -37,25 +37,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
-OPTIONS=	ZOOM	"Enable zooming"	on \
-		SDL_GFX	"Use sdl_gfx rendering instead of OpenGL (broken)"	off
+OPTIONS=	ASIAN_TTF "Use asian TTF font" off
 
 MAN6=		xmoto.6
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ZOOM)
-CONFIGURE_ARGS+=	--with-enable-zoom=1
+.if defined(WITH_ASIAN_TTF)
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
+CONFIGURE_ARGS+=--with-asian-ttf-file=${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf
 .else
-CONFIGURE_ARGS+=	--with-enable-zoom=0
-.endif
-
-.if defined(WITH_SDL_GFX)
-USE_SDL+=	gfx
-CONFIGURE_ARGS+=--with-renderer-sdlGfx=1 --with-renderer-openGl=0
-.else
-USE_GL=		yes
-CONFIGURE_ARGS+=--with-renderer-sdlGfx=0 --with-renderer-openGl=1
+CONFIGURE_ARGS+=--without-asian-ttf-file
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -66,11 +58,6 @@ CONFIGURE_ENV+=	LIBS="-lintl"
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
