@@ -294,7 +294,11 @@
 %%BUGZILLADIR%%/js/params.js
 %%BUGZILLADIR%%/js/productform.js
 %%BUGZILLADIR%%/js/util.js
+%%BUGZILLADIR%%/js/yui/calendar.js
+%%BUGZILLADIR%%/js/yui/yahoo-dom-event.js
 %%BUGZILLADIR%%/js/TUI.js
+%%BUGZILLADIR%%/skins/contrib/Dusk/buglist.css
+%%BUGZILLADIR%%/skins/contrib/Dusk/global.css
 %%BUGZILLADIR%%/skins/standard/IE-fixes.css
 %%BUGZILLADIR%%/skins/standard/admin.css
 %%BUGZILLADIR%%/skins/standard/buglist.css
@@ -312,10 +316,16 @@
 %%BUGZILLADIR%%/skins/standard/show_multiple.css
 %%BUGZILLADIR%%/skins/standard/summarize-time.css
 %%BUGZILLADIR%%/skins/standard/voting.css
+%%BUGZILLADIR%%/skins/standard/dependency-tree/bug-item.png
+%%BUGZILLADIR%%/skins/standard/dependency-tree/tree-closed.png
+%%BUGZILLADIR%%/skins/standard/dependency-tree/tree-open.png
+%%BUGZILLADIR%%/skins/standard/dependency-tree/tree.png
 %%BUGZILLADIR%%/skins/standard/global/body-back.gif
 %%BUGZILLADIR%%/skins/standard/global/calendar.png
 %%BUGZILLADIR%%/skins/standard/global/header.png
 %%BUGZILLADIR%%/skins/standard/index/front.png
+%%BUGZILLADIR%%/skins/standard/yui/calendar.css
+%%BUGZILLADIR%%/skins/standard/yui/sprite.png
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/README
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/README
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/bugdata.txt
@@ -730,10 +740,15 @@
 @dirrmtry %%BUGZILLADIR%%/data
 @dirrmtry %%BUGZILLADIR%%/graphs
 @dirrm %%BUGZILLADIR%%/images
+@dirrm %%BUGZILLADIR%%/js/yui
 @dirrm %%BUGZILLADIR%%/js
+@dirrm %%BUGZILLADIR%%/skins/standard/yui
 @dirrm %%BUGZILLADIR%%/skins/standard/index
 @dirrm %%BUGZILLADIR%%/skins/standard/global
+@dirrm %%BUGZILLADIR%%/skins/standard/dependency-tree
 @dirrm %%BUGZILLADIR%%/skins/standard
+@dirrm %%BUGZILLADIR%%/skins/contrib/Dusk
+@dirrm %%BUGZILLADIR%%/skins/contrib
 @dirrm %%BUGZILLADIR%%/skins
 @dirrmtry %%BUGZILLADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTMLBatch
