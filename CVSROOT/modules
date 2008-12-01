@@ -2925,6 +2925,7 @@ etoile-serialize                ports/devel/etoile-serialize
 etoile-servicemenulet           ports/deskutils/etoile-servicemenulet
 etoile-servicesbarkit           ports/deskutils/etoile-servicesbarkit
 etoile-smalltalkkit             ports/lang/etoile-smalltalkkit
+etoile-stepchat                 ports/net-im/etoile-stepchat
 etoile-system                   ports/sysutils/etoile-system
 etoile-systemconfig             ports/deskutils/etoile-systemconfig
 etoile-trackerkit               ports/deskutils/etoile-trackerkit
@@ -2933,6 +2934,7 @@ etoile-ui                       ports/deskutils/etoile-ui
 etoile-unitkit                  ports/devel/etoile-unitkit
 etoile-volumecontrolmenulet     ports/audio/etoile-volumecontrolmenulet
 etoile-wildmenus                ports/x11-themes/etoile-wildmenus
+etoile-xmppkit                  ports/net-im/etoile-xmppkit
 etoile-xwindowserverkit         ports/x11/etoile-xwindowserverkit
 etrace                          ports/net/etrace
 etracer                         ports/games/etracer
@@ -5048,8 +5050,10 @@ hptools                         ports/devel/hptools
 hr-aspell                       ports/textproc/hr-aspell
 hrktorrent                      ports/net-p2p/hrktorrent
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
+hs-Stream                       ports/devel/hs-Stream
 hs-alex                         ports/devel/hs-alex
 hs-buddha                       ports/devel/hs-buddha
+hs-bytestring-csv               ports/textproc/hs-bytestring-csv
 hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
 hs-dlist                        ports/devel/hs-dlist
@@ -5072,6 +5076,7 @@ hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
+hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
@@ -6786,6 +6791,7 @@ laspack                         ports/math/laspack
 lasso                           ports/security/lasso
 last.fm                         ports/audio/last.fm
 latd                            ports/net/latd
+laternamagica                   ports/graphics/laternamagica
 latex                           ports/print/latex
 latex-aa                        ports/print/latex-aa
 latex-aastex                    ports/print/latex-aastex
@@ -7189,6 +7195,7 @@ libint                          ports/science/libint
 libiodbc                        ports/databases/libiodbc
 libiptcdata                     ports/graphics/libiptcdata
 libiqxmlrpc                     ports/devel/libiqxmlrpc
+libircclient                    ports/irc/libircclient
 libirman                        ports/comms/libirman
 libisofs                        ports/devel/libisofs
 libixp                          ports/devel/libixp
@@ -10403,6 +10410,7 @@ p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
+p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
@@ -11500,6 +11508,7 @@ p5-Module-Signature             ports/security/p5-Module-Signature
 p5-Module-Starter               ports/devel/p5-Module-Starter
 p5-Module-Starter-PBP           ports/devel/p5-Module-Starter-PBP
 p5-Module-Starter-Plugin-SimpleStore  ports/devel/p5-Module-Starter-Plugin-SimpleStore
+p5-Module-Starter-Plugin-TT2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-Module-Util                  ports/devel/p5-Module-Util
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
@@ -13734,6 +13743,7 @@ p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
+p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
@@ -14716,6 +14726,7 @@ p5-module-signature             ports/security/p5-Module-Signature
 p5-module-starter               ports/devel/p5-Module-Starter
 p5-module-starter-pbp           ports/devel/p5-Module-Starter-PBP
 p5-module-starter-plugin-simplestore  ports/devel/p5-Module-Starter-Plugin-SimpleStore
+p5-module-starter-plugin-tt2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-module-util                  ports/devel/p5-Module-Util
 p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
@@ -16816,6 +16827,7 @@ pecl-mcve                       ports/devel/pecl-mcve
 pecl-mdbtools                   ports/databases/pecl-mdbtools
 pecl-memcache                   ports/databases/pecl-memcache
 pecl-mnogosearch                ports/www/pecl-mnogosearch
+pecl-oauth                      ports/net/pecl-oauth
 pecl-operator                   ports/devel/pecl-operator
 pecl-params                     ports/devel/pecl-params
 pecl-pdflib                     ports/print/pecl-pdflib
@@ -17836,6 +17848,7 @@ py-anygui                       ports/x11-toolkits/py-anygui
 py-ao                           ports/audio/py-ao
 py-apachelog                    ports/www/py-apachelog
 py-apetag                       ports/audio/py-apetag
+py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
 py-astng                        ports/devel/py-astng
@@ -18155,6 +18168,7 @@ py-posix1e                      ports/security/py-posix1e
 py-postmarkup                   ports/www/py-postmarkup
 py-pow                          ports/security/py-pow
 py-pp                           ports/devel/py-pp
+py-ppolicy                      ports/mail/py-ppolicy
 py-pqueue                       ports/devel/py-pqueue
 py-prewikka                     ports/www/py-prewikka
 py-probstat                     ports/math/py-probstat
@@ -18429,6 +18443,7 @@ py-yolk                         ports/misc/py-yolk
 py-zconfig                      ports/devel/py-zconfig
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeinterface                ports/devel/py-zopeInterface
+py-zopetesting                  ports/devel/py-zopetesting
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
 py2html                         ports/textproc/py2html
@@ -19466,6 +19481,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-parsetree               ports/devel/rubygem-parsetree
@@ -20651,6 +20667,7 @@ tbb                             ports/devel/tbb
 tbclock                         ports/games/tbclock
 tbku                            ports/sysutils/tbku
 tcb                             ports/misc/tcb
+tcc                             ports/lang/tcc
 tcd                             ports/audio/tcd
 tcl-Mysql                       ports/databases/tcl-Mysql
 tcl-manual                      ports/lang/tcl-manual
@@ -22666,6 +22683,7 @@ xmms-xymms                      ports/audio/xmms-xymms
 xmms2                           ports/audio/xmms2
 xmms2-scrobbler                 ports/audio/xmms2-scrobbler
 xmmsctrl                        ports/audio/xmmsctrl
+xmobar                          ports/x11/xmobar
 xmodmap                         ports/x11/xmodmap
 xmold                           ports/x11/xmold
 xmolwt                          ports/biology/xmolwt
