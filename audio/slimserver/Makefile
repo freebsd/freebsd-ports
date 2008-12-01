@@ -9,7 +9,7 @@ PORTNAME=	slimserver
 PORTVERSION=	6.5.4
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
+MASTER_SITES=	http://downloads.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
 DIST_SUBDIR=	slimserver
 
