@@ -7,6 +7,7 @@
 
 PORTNAME?=	bugzilla
 PORTVERSION?=	3.2
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -61,8 +62,7 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
-DATA_DIRS_LIST=	images js skins/standard skins/standard/global \
-		skins/standard/index
+DATA_DIRS_LIST=	images js skins
 
 .include <bsd.port.pre.mk>
 
@@ -164,7 +164,7 @@ do-install:
 		${INSTALL_SCRIPT} {} ${BUGZILLADIR} \;
 	@${MKDIR} ${DATA_DIRS_LIST:S!^!${BUGZILLADIR}/!}
 .for D in ${DATA_DIRS_LIST}
-	${INSTALL_DATA} ${WRKSRC}/${D}/*.* ${BUGZILLADIR}/${D}
+	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${BUGZILLADIR}/${D})
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
 .ifndef NOPORTDOCS
