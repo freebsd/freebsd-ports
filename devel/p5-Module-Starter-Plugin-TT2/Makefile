@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
-COMMENT=	MOOSE
+COMMENT=	TT2 templates for Module::Starter::Template
 
 BUILD_DEPENDS=	p5-Module-Starter>=1.47.0:${PORTSDIR}/devel/p5-Module-Starter \
 		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
