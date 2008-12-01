@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcpp
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ MAN1=		mcpp.1
 
 PLIST_FILES=	bin/mcpp    \
 		lib/libmcpp.so	\
-		lib/libmcpp.so.2	\
+		lib/libmcpp.so.3	\
 		lib/libmcpp.a	\
 		lib/libmcpp.la	\
 		include/mcpp_lib.h \
