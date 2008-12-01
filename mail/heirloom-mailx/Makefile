@@ -7,6 +7,7 @@
 
 PORTNAME=	mailx
 PORTVERSION=	12.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	heirloom
@@ -16,6 +17,8 @@ MAINTAINER=	ports@logvinov.com
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP and S/MIME extensions
 
 OPTIONS=	IPV6	"Enable IPv6 Support"	On
+
+CONFLICTS=	mailx-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
