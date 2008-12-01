@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	</dev/null
 
 MAN3=	Mail::IMAPClient.3 \
 	Mail::IMAPClient::BodyStructure.3 \
