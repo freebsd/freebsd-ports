@@ -1,124 +1,189 @@
-%%PORTDOCS%%%%DOCSDIR%%/html/Bugzilla-Guide.html
-%%PORTDOCS%%%%DOCSDIR%%/html/about.html
-%%PORTDOCS%%%%DOCSDIR%%/html/administration.html
-%%PORTDOCS%%%%DOCSDIR%%/html/attachments.html
-%%PORTDOCS%%%%DOCSDIR%%/html/bug_page.html
-%%PORTDOCS%%%%DOCSDIR%%/html/bugreports.html
-%%PORTDOCS%%%%DOCSDIR%%/html/classifications.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cmdline-bugmail.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cmdline.html
-%%PORTDOCS%%%%DOCSDIR%%/html/components.html
-%%PORTDOCS%%%%DOCSDIR%%/html/configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/html/conventions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/html/credits.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cust-change-permissions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cust-hooks.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cust-skins.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cust-templates.html
-%%PORTDOCS%%%%DOCSDIR%%/html/customization.html
-%%PORTDOCS%%%%DOCSDIR%%/html/custom-fields.html
-%%PORTDOCS%%%%DOCSDIR%%/html/disclaimer.html
-%%PORTDOCS%%%%DOCSDIR%%/html/edit-values.html
-%%PORTDOCS%%%%DOCSDIR%%/html/extraconfig.html
-%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/html/flags-overview.html
-%%PORTDOCS%%%%DOCSDIR%%/html/flags.html
-%%PORTDOCS%%%%DOCSDIR%%/html/general-advice.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-0.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-9.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl-howto.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gfdl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/html/groups.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hintsandtips.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/install-perlmodules-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/html/installation.html
-%%PORTDOCS%%%%DOCSDIR%%/html/installing-bugzilla.html
-%%PORTDOCS%%%%DOCSDIR%%/html/integration.html
-%%PORTDOCS%%%%DOCSDIR%%/html/keywords.html
-%%PORTDOCS%%%%DOCSDIR%%/html/lifecycle.html
-%%PORTDOCS%%%%DOCSDIR%%/html/milestones.html
-%%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-download.html
-%%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-instructions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-optional.html
-%%PORTDOCS%%%%DOCSDIR%%/html/multiple-bz-dbs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/myaccount.html
-%%PORTDOCS%%%%DOCSDIR%%/html/newversions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/nonroot.html
-%%PORTDOCS%%%%DOCSDIR%%/html/os-specific.html
-%%PORTDOCS%%%%DOCSDIR%%/html/parameters.html
-%%PORTDOCS%%%%DOCSDIR%%/html/paranoid-security.html
-%%PORTDOCS%%%%DOCSDIR%%/html/patches.html
-%%PORTDOCS%%%%DOCSDIR%%/html/products.html
-%%PORTDOCS%%%%DOCSDIR%%/html/query.html
-%%PORTDOCS%%%%DOCSDIR%%/html/quips.html
-%%PORTDOCS%%%%DOCSDIR%%/html/reporting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sanitycheck.html
-%%PORTDOCS%%%%DOCSDIR%%/html/security-bugzilla.html
-%%PORTDOCS%%%%DOCSDIR%%/html/security-mysql.html
-%%PORTDOCS%%%%DOCSDIR%%/html/security-os.html
-%%PORTDOCS%%%%DOCSDIR%%/html/security-webserver.html
-%%PORTDOCS%%%%DOCSDIR%%/html/security.html
-%%PORTDOCS%%%%DOCSDIR%%/html/timetracking.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-dbdsponge.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-passwd-encryption.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-perlmodule.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-relogin-everyone.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-relogin-some.html
-%%PORTDOCS%%%%DOCSDIR%%/html/trbl-testserver.html
-%%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/html/useradmin.html
-%%PORTDOCS%%%%DOCSDIR%%/html/userpreferences.html
-%%PORTDOCS%%%%DOCSDIR%%/html/using-intro.html
-%%PORTDOCS%%%%DOCSDIR%%/html/using.html
-%%PORTDOCS%%%%DOCSDIR%%/html/versions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/voting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/whining.html
-%%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
-%%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
-%%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/callouts/2.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/callouts/3.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/note.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/tip.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/bugzilla.ent
 %%PORTDOCS%%%%DOCSDIR%%/makedocs.pl
-%%PORTDOCS%%%%DOCSDIR%%/pdf/Bugzilla-Guide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/rel_notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/Bugzilla-Guide.txt
-%%PORTDOCS%%%%DOCSDIR%%/xml/Bugzilla-Guide.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/about.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/administration.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/bugzilla.ent
-%%PORTDOCS%%%%DOCSDIR%%/xml/conventions.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/customization.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/faq.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/gfdl.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/glossary.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/index.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/installation.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/integration.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/introduction.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/modules.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/patches.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/requiredsoftware.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/security.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/troubleshooting.xml
-%%PORTDOCS%%%%DOCSDIR%%/xml/using.xml
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Attachment.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth/Login.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth/Verify.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/CGI.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Classification.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Component.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config/Common.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Mysql.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Oracle.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Pg.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Schema.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Error.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Flag.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/FlagType.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Group.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Hook.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/CPAN.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/DB.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Filesystem.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Localconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Requirements.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Keyword.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Milestone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Object.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Product.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Search/Saved.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Status.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Parser.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Hook.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Token.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Update.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting/Lang.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting/Skin.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Version.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bug.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Product.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/checksetup.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bz_webservice_demo.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bzdbcopy.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/merge-users.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/recode.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/email_in.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/importxml.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/install-module.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/sanitycheck.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/Bugzilla-Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/about.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/administration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/attachments.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bug_page.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bug_status_workflow.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bugreports.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/classifications.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cmdline-bugmail.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cmdline.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/components.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/conventions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-change-permissions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-hooks.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-skins.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-templates.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/customization.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/custom-fields.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/disclaimer.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/edit-values.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/extraconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/flags-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/flags.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/general-advice.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-0.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-10.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-5.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-6.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-7.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-8.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-9.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-howto.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/groups.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/hintsandtips.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/install-perlmodules-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/installing-bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/integration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/keywords.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/lifecycle.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/milestones.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-download.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-instructions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-optional.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/multiple-bz-dbs.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/myaccount.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/newversions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/nonroot.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/os-specific.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/parameters.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/paranoid-security.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/patches.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/products.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/query.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/quips.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/reporting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/sanitycheck.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-mysql.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-os.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-webserver.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/timetracking.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-dbdsponge.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-passwd-encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-perlmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-relogin-everyone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-relogin-some.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-testserver.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/useradmin.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/userpreferences.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/using-intro.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/using.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/versions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/voting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/whining.html
+%%PORTDOCS%%%%DOCSDIR%%/en/images/bzLifecycle.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/bzLifecycle.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/1.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/2.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/3.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/note.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tip.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/pdf/Bugzilla-Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/en/txt/Bugzilla-Guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/Bugzilla-Guide.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/about.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/administration.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/bugzilla.ent
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/conventions.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/customization.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/gfdl.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/glossary.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/installation.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/integration.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/introduction.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/modules.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/patches.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/requiredsoftware.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/security.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/troubleshooting.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/using.xml
+%%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTML/Bugzilla.pm
+%%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTMLBatch/Bugzilla.pm
 %%BUGZILLADIR%%/Bugzilla/Attachment.pm
 %%BUGZILLADIR%%/Bugzilla/Attachment/PatchReader.pm
 %%BUGZILLADIR%%/Bugzilla/Auth.pm
@@ -131,6 +196,7 @@
 %%BUGZILLADIR%%/Bugzilla/Auth/Persist/Cookie.pm
 %%BUGZILLADIR%%/Bugzilla/Auth/Verify/DB.pm
 %%BUGZILLADIR%%/Bugzilla/Auth/Verify/LDAP.pm
+%%BUGZILLADIR%%/Bugzilla/Auth/Verify/RADIUS.pm
 %%BUGZILLADIR%%/Bugzilla/Auth/Verify/Stack.pm
 %%BUGZILLADIR%%/Bugzilla/Bug.pm
 %%BUGZILLADIR%%/Bugzilla/BugMail.pm
@@ -149,20 +215,22 @@
 %%BUGZILLADIR%%/Bugzilla/Config/Core.pm
 %%BUGZILLADIR%%/Bugzilla/Config/DependencyGraph.pm
 %%BUGZILLADIR%%/Bugzilla/Config/GroupSecurity.pm
-%%BUGZILLADIR%%/Bugzilla/Config/L10n.pm
 %%BUGZILLADIR%%/Bugzilla/Config/LDAP.pm
 %%BUGZILLADIR%%/Bugzilla/Config/MTA.pm
 %%BUGZILLADIR%%/Bugzilla/Config/PatchViewer.pm
 %%BUGZILLADIR%%/Bugzilla/Config/Query.pm
+%%BUGZILLADIR%%/Bugzilla/Config/RADIUS.pm
 %%BUGZILLADIR%%/Bugzilla/Config/ShadowDB.pm
 %%BUGZILLADIR%%/Bugzilla/Config/UserMatch.pm
 %%BUGZILLADIR%%/Bugzilla/Constants.pm
 %%BUGZILLADIR%%/Bugzilla/DB.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Mysql.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Pg.pm
+%%BUGZILLADIR%%/Bugzilla/DB/Oracle.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Schema.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Schema/Mysql.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Schema/Pg.pm
+%%BUGZILLADIR%%/Bugzilla/DB/Schema/Oracle.pm
 %%BUGZILLADIR%%/Bugzilla/Error.pm
 %%BUGZILLADIR%%/Bugzilla/Field.pm
 %%BUGZILLADIR%%/Bugzilla/Flag.pm
@@ -171,9 +239,11 @@
 %%BUGZILLADIR%%/Bugzilla/Hook.pm
 %%BUGZILLADIR%%/Bugzilla/Install.pm
 %%BUGZILLADIR%%/Bugzilla/Install/DB.pm
+%%BUGZILLADIR%%/Bugzilla/Install/CPAN.pm
 %%BUGZILLADIR%%/Bugzilla/Install/Filesystem.pm
 %%BUGZILLADIR%%/Bugzilla/Install/Localconfig.pm
 %%BUGZILLADIR%%/Bugzilla/Install/Requirements.pm
+%%BUGZILLADIR%%/Bugzilla/Install/Util.pm
 %%BUGZILLADIR%%/Bugzilla/Keyword.pm
 %%BUGZILLADIR%%/Bugzilla/Mailer.pm
 %%BUGZILLADIR%%/Bugzilla/Milestone.pm
@@ -183,13 +253,16 @@
 %%BUGZILLADIR%%/Bugzilla/Search/Quicksearch.pm
 %%BUGZILLADIR%%/Bugzilla/Search/Saved.pm
 %%BUGZILLADIR%%/Bugzilla/Series.pm
+%%BUGZILLADIR%%/Bugzilla/Status.pm
 %%BUGZILLADIR%%/Bugzilla/Template.pm
+%%BUGZILLADIR%%/Bugzilla/Template/Parser.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Bugzilla.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Hook.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/User.pm
 %%BUGZILLADIR%%/Bugzilla/Token.pm
 %%BUGZILLADIR%%/Bugzilla/User.pm
 %%BUGZILLADIR%%/Bugzilla/User/Setting.pm
+%%BUGZILLADIR%%/Bugzilla/User/Setting/Lang.pm
 %%BUGZILLADIR%%/Bugzilla/User/Setting/Skin.pm
 %%BUGZILLADIR%%/Bugzilla/Update.pm
 %%BUGZILLADIR%%/Bugzilla/Util.pm
@@ -203,6 +276,7 @@
 %%BUGZILLADIR%%/Bugzilla.pm
 %%BUGZILLADIR%%/QUICKSTART
 %%BUGZILLADIR%%/README
+%%BUGZILLADIR%%/admin.cgi
 %%BUGZILLADIR%%/attachment.cgi
 %%BUGZILLADIR%%/buglist.cgi
 %%BUGZILLADIR%%/bugzilla.dtd
@@ -211,10 +285,15 @@
 %%BUGZILLADIR%%/colchange.cgi
 %%BUGZILLADIR%%/collectstats.pl
 %%BUGZILLADIR%%/config.cgi
+%%BUGZILLADIR%%/sanitycheck.pl
 %%BUGZILLADIR%%/js/attachment.js
 %%BUGZILLADIR%%/js/duplicates.js
 %%BUGZILLADIR%%/js/expanding-tree.js
+%%BUGZILLADIR%%/js/field.js
+%%BUGZILLADIR%%/js/help.js
+%%BUGZILLADIR%%/js/params.js
 %%BUGZILLADIR%%/js/productform.js
+%%BUGZILLADIR%%/js/util.js
 %%BUGZILLADIR%%/js/TUI.js
 %%BUGZILLADIR%%/skins/standard/IE-fixes.css
 %%BUGZILLADIR%%/skins/standard/admin.css
@@ -224,14 +303,17 @@
 %%BUGZILLADIR%%/skins/standard/duplicates.css
 %%BUGZILLADIR%%/skins/standard/editusers.css
 %%BUGZILLADIR%%/skins/standard/global.css
+%%BUGZILLADIR%%/skins/standard/help.css
 %%BUGZILLADIR%%/skins/standard/index.css
 %%BUGZILLADIR%%/skins/standard/panel.css
 %%BUGZILLADIR%%/skins/standard/params.css
 %%BUGZILLADIR%%/skins/standard/release-notes.css
+%%BUGZILLADIR%%/skins/standard/show_bug.css
 %%BUGZILLADIR%%/skins/standard/show_multiple.css
 %%BUGZILLADIR%%/skins/standard/summarize-time.css
 %%BUGZILLADIR%%/skins/standard/voting.css
 %%BUGZILLADIR%%/skins/standard/global/body-back.gif
+%%BUGZILLADIR%%/skins/standard/global/calendar.png
 %%BUGZILLADIR%%/skins/standard/global/header.png
 %%BUGZILLADIR%%/skins/standard/index/front.png
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/README
@@ -282,9 +364,12 @@
 %%BUGZILLADIR%%/editvalues.cgi
 %%BUGZILLADIR%%/editversions.cgi
 %%BUGZILLADIR%%/editwhines.cgi
+%%BUGZILLADIR%%/editworkflow.cgi
 %%BUGZILLADIR%%/email_in.pl
 %%BUGZILLADIR%%/enter_bug.cgi
 %%BUGZILLADIR%%/images/padlock.png
+%%BUGZILLADIR%%/images/favicon.ico
+%%BUGZILLADIR%%/install-module.pl
 %%BUGZILLADIR%%/importxml.pl
 %%BUGZILLADIR%%/index.cgi
 %%BUGZILLADIR%%/long_list.cgi
@@ -292,7 +377,6 @@
 %%BUGZILLADIR%%/page.cgi
 %%BUGZILLADIR%%/post_bug.cgi
 %%BUGZILLADIR%%/process_bug.cgi
-%%BUGZILLADIR%%/productmenu.js
 %%BUGZILLADIR%%/query.cgi
 %%BUGZILLADIR%%/quips.cgi
 %%BUGZILLADIR%%/relogin.cgi
@@ -329,64 +413,49 @@
 %%BUGZILLADIR%%/template/en/default/account/prefs/saved-searches.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/prefs/settings.html.tmpl
 %%BUGZILLADIR%%/template/en/default/account/profile-activity.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/admin.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/confirm-action.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/sudo.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/table.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/add.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/del.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/classifications/delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/edit.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/classifications/new.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/reclassify.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/select.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/classifications/update.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/components/created.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/components/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/select-product.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/components/updated.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/custom_fields/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/custom_fields/create.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/custom_fields/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/custom_fields/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/fieldvalues/created.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/fieldvalues/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/fieldvalues/select-field.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/fieldvalues/updated.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/flag-type/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/flag-type/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/flag-type/list.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/groups/change.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/groups/confirm-remove.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/groups/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/groups/created.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/groups/delete.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/groups/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/groups/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/groups/list.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/groups/remove.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/keywords/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/keywords/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/keywords/created.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/keywords/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/keywords/list.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/keywords/rebuild-cache.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/milestones/created.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/milestones/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/select-product.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/milestones/updated.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/admin.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/attachment.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/auth.html.tmpl
@@ -399,17 +468,15 @@
 %%BUGZILLADIR%%/template/en/default/admin/params/editparams.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/groupsecurity.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/index.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/params/l10n.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/ldap.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/mta.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/patchviewer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/query.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/params/radius.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/shadowdb.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/usermatch.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/products/created.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/confirm-delete.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/products/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/edit-common.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/footer.html.tmpl
@@ -419,24 +486,26 @@
 %%BUGZILLADIR%%/template/en/default/admin/products/groupcontrol/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/groupcontrol/updated.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/products/updated.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/sanitycheck/list.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/sanitycheck/messages.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/settings/edit.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/settings/updated.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/create.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/listselectvars.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/users/responsibilities.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/search.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/users/userdata.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/create.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/versions/created.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/versions/deleted.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/versions/select-product.html.tmpl
-%%BUGZILLADIR%%/template/en/default/admin/versions/updated.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/workflow/comment.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/workflow/edit.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/cancel-create-dupe.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/choose.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/confirm-delete.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/content-types.html.tmpl
@@ -449,6 +518,7 @@
 %%BUGZILLADIR%%/template/en/default/attachment/diff-header.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/edit.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/list.html.tmpl
+%%BUGZILLADIR%%/template/en/default/attachment/midair.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/show-multiple.html.tmpl
 %%BUGZILLADIR%%/template/en/default/attachment/updated.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/activity/show.html.tmpl
@@ -485,6 +555,7 @@
 %%BUGZILLADIR%%/template/en/default/bug/votes/list-for-user.html.tmpl
 %%BUGZILLADIR%%/template/en/default/config.js.tmpl
 %%BUGZILLADIR%%/template/en/default/config.rdf.tmpl
+%%BUGZILLADIR%%/template/en/default/email/sanitycheck.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/sudo.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/newchangedmail.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/votes-removed.txt.tmpl
@@ -501,7 +572,6 @@
 %%BUGZILLADIR%%/template/en/default/global/field-descs.none.tmpl
 %%BUGZILLADIR%%/template/en/default/global/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/header.html.tmpl
-%%BUGZILLADIR%%/template/en/default/global/help-header.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/help.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/hidden-fields.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/initialize.none.tmpl
@@ -578,6 +648,7 @@
 %%BUGZILLADIR%%/template/en/default/search/search-report-table.html.tmpl
 %%BUGZILLADIR%%/template/en/default/search/search-specific.html.tmpl
 %%BUGZILLADIR%%/template/en/default/search/tabs.html.tmpl
+%%BUGZILLADIR%%/template/en/default/setup/strings.txt.pl
 %%BUGZILLADIR%%/template/en/default/sidebar.xul.tmpl
 %%BUGZILLADIR%%/template/en/default/welcome-admin.html.tmpl
 %%BUGZILLADIR%%/template/en/default/whine/mail.html.tmpl
@@ -596,6 +667,7 @@
 %%BUGZILLADIR%%/xmlrpc.cgi
 @dirrm %%BUGZILLADIR%%/template/en/extension
 @dirrm %%BUGZILLADIR%%/template/en/default/whine
+@dirrm %%BUGZILLADIR%%/template/en/default/setup
 @dirrm %%BUGZILLADIR%%/template/en/default/search
 @dirrm %%BUGZILLADIR%%/template/en/default/request
 @dirrm %%BUGZILLADIR%%/template/en/default/reports
@@ -610,9 +682,11 @@
 @dirrm %%BUGZILLADIR%%/template/en/default/bug/activity
 @dirrm %%BUGZILLADIR%%/template/en/default/bug
 @dirrm %%BUGZILLADIR%%/template/en/default/attachment
+@dirrm %%BUGZILLADIR%%/template/en/default/admin/workflow
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/versions
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/users
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/settings
+@dirrm %%BUGZILLADIR%%/template/en/default/admin/sanitycheck
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/products/groupcontrol
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/products
 @dirrm %%BUGZILLADIR%%/template/en/default/admin/params
@@ -662,11 +736,30 @@
 @dirrm %%BUGZILLADIR%%/skins/standard
 @dirrm %%BUGZILLADIR%%/skins
 @dirrmtry %%BUGZILLADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTMLBatch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTML
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User/Setting
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Search
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Install
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/DB
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Auth
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry www/data

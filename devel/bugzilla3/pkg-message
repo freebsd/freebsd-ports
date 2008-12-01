@@ -20,5 +20,14 @@
 
   For more complete database setup and post-installation instructions
   and security tips/notes please read "Bugzilla Guide" in
-  %%DOCSDIR%%/html/ (chapter 2: "Installing Bugzilla")
+  %%DOCSDIR%%/en/html/ (chapter 2: "Installing Bugzilla")
+==========================================================================
+
+For upgrades:
+  0. Back up your data.
+  1. Run "./checksetup.pl" inside %%BUGZILLADIR%%.  You may need to
+     run it several times.
+  2. Restart your Web server, especially if you're using mod_perl: this
+     will save you from a number of troubles.
+
 ==========================================================================
