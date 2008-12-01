@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.14.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -218,6 +218,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	ScriptServices:deskutils/etoile-scriptservices \
 	Melodie:audio/etoile-melodie \
 	StepChat:net-im/etoile-stepchat \
+	LaternaMagica:graphics/laternamagica \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
