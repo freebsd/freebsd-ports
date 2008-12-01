@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msn-pecan
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.17
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	pidgin-
@@ -25,7 +25,7 @@ USE_GETTEXT=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=	does not compile on FreeBSD 6.X		
+BROKEN=		does not compile on FreeBSD 6.X		
 .endif
 
 post-install:
