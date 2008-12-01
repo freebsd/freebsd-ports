@@ -7,7 +7,7 @@
 
 PORTNAME=	meritous
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.asceai.net/files/ \
 		http://www.amdmi3.ru/distfiles/
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 ALL_TARGET=	default
+USE_DOS2UNIX=	dat/d/helpfile.txt
 
 PORTDOCS=	*
 
