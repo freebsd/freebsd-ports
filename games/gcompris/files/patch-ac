@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Dec 24 11:46:58 2006
-+++ Makefile.in	Sun Dec 24 11:46:58 2006
-@@ -789,7 +789,7 @@
+--- Makefile.in.orig	2008-11-30 18:14:25.000000000 -0500
++++ Makefile.in	2008-11-30 18:20:07.000000000 -0500
+@@ -841,7 +841,7 @@ info: info-recursive
  
  info-am:
  
@@ -8,4 +8,13 @@
 +install-data-am: install-ApplicationsDATA \
  	install-data-local install-iconDATA
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
+@@ -911,7 +911,7 @@ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/$(PACKAGE_DATA_DIR); then \
+ 	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR); \
+-	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .svn --mode 644 * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; \
++	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .svn * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf - ; find . -type d -exec chmod 755 '{}' \; ; find . -type f -exec chmod 644 '{}' \;) ; cd .. ; \
+ 	fi
+ 
+ uninstall-local:
