@@ -8,13 +8,13 @@
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.1
 CATEGORIES=	java editors devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	PHPEclipse_${PORTVERSION}_src
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 PLUGIN_PATHS=	features plugins
