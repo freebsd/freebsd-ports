@@ -34,7 +34,6 @@ PLISTDIR=	${PYTHON_SITELIBDIR}/matplotlib/toolkits/basemap \
 		${PYTHON_SITELIBDIR}/shptree.so \
 		${PYTHON_SITELIBDIR}/shapelibc.so \
 		${PYTHON_SITELIBDIR}/pyproj.so \
-		${PYTHON_SITELIBDIR}/basemap-0.9.2-py2.5.egg-info \
 		${DATADIR}
 .if !defined(NOPORTDOCS)
 PLISTDIR+=	${EXAMPLESDIR}
@@ -56,5 +55,6 @@ post-install:
 	@${FIND} ${dir} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
+	@${ECHO} "@unexec rmdir %D/${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/matplotlib/toolkits 2> /dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
