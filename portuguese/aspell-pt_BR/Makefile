@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aspell-pt_BR
+PORTNAME=	aspell
 DISTVERSION=	6-pt_BR-20080707-0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	portuguese textproc
+PKGNAMEPREFIX?=	pt_BR-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Brazilian Portuguese dictionary
