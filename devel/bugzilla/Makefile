@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	3.0.6
+PORTVERSION?=	3.2
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -28,19 +28,21 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		GRAPHVIZ "Use GraphViz" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
 		CONTRIB	"Install user-contributed scripts" off \
-		LDAP "LDAP Authentication" off
+		LDAP "LDAP Authentication" off \
+		RADIUS "RADIUS Authentication" off
 
 RUN_DEPENDS+=	\
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
+		p5-CGI.pm>=3.21:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Template-Toolkit>=2.15:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send \
-		${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-Modifier
+		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
+		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Email-MIME-Modifier>=1.442:${PORTSDIR}/mail/p5-Email-MIME-Modifier
 
-CONFLICTS?=	ja-bugzilla-2.*
+CONFLICTS?=	ja-bugzilla-2.* bugzilla-2.*
 
 PORTSCOUT=	limitw:1,even
 
@@ -87,7 +89,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
 .endif
 
 .ifdef WITH_PATCH_VIEWER
-RUN_DEPENDS+=	${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader \
+RUN_DEPENDS+=	p5-PatchReader>=0.9.4:${PORTSDIR}/devel/p5-PatchReader \
 		interdiff:${PORTSDIR}/misc/patchutils
 .endif
 
@@ -138,6 +140,10 @@ PLIST_SUB+=	CONTRIB="@comment "
 RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
+.ifdef WITH_RADIUS
+RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s!(?<=webservergroup_default = ')apache!www!" \
 		${WRKSRC}/checksetup.pl
@@ -162,10 +168,8 @@ do-install:
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
 .ifndef NOPORTDOCS
-.for D in html images/callouts images pdf txt xml ""
-	${MKDIR} ${DOCSDIR}/${D}
-	${INSTALL_DATA} ${WRKSRC}/docs/${D}/*.* ${DOCSDIR}/${D}/
-.endfor
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
 .endif
 .ifdef WITH_CONTRIB
 	${MKDIR} ${BUGZILLADIR}/contrib
