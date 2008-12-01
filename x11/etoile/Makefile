@@ -75,9 +75,9 @@ USE_GNUSTEP_LOCAL_THEMES+=	\
 	WildMenus:x11-themes/etoile-wildmenus \
 
 USE_GNUSTEP_LOCAL_MENULETS+=	\
-	PowerMenulet.menulet:sysutils/etoile-powermenulet \
-	ServiceMenulet.menulet:deskutils/etoile-servicemenulet \
-	VolumeControlMenulet.menulet:audio/etoile-volumecontrolmenulet \
+	PowerMenulet:sysutils/etoile-powermenulet \
+	ServiceMenulet:deskutils/etoile-servicemenulet \
+	VolumeControlMenulet:audio/etoile-volumecontrolmenulet \
 
 USE_GNUSTEP_SYSTEM_APPS+=	\
 	Azalea:x11-wm/etoile-azalea \
