@@ -14,7 +14,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.2.2.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.2.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-0.7.html
-%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-1.0rc1.html
+%%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/SampleAdmin.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/SampleError.html
 %%WEBWARE_MASTER_DIR%%/CGIWrapper/Docs/Source/ClassHierarchy.html
@@ -101,7 +101,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/COMKit/Properties.pyc
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.py
 %%WEBWARE_MASTER_DIR%%/COMKit/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0rc1.html
+%%WEBWARE_MASTER_DIR%%/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/DocSupport/.checksrc.config
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.py
 %%WEBWARE_MASTER_DIR%%/DocSupport/ClassList.pyc
@@ -282,6 +282,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.2.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.3.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-0.9.html
+%%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/ClassHierarchy.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/ClassList.html
 %%WEBWARE_MASTER_DIR%%/MiddleKit/Docs/Source/FileList.html
@@ -683,7 +684,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/__init__.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0rc1.html
+%%WEBWARE_MASTER_DIR%%/MiscUtils/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Error.py
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Error.pyc
 %%WEBWARE_MASTER_DIR%%/MiscUtils/Funcs.py
@@ -876,7 +877,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/__init__.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/TaskKit/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-1.0rc1.html
+%%WEBWARE_MASTER_DIR%%/TaskKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/TaskKit/Properties.py
 %%WEBWARE_MASTER_DIR%%/TaskKit/Properties.pyc
 %%WEBWARE_MASTER_DIR%%/TaskKit/Scheduler.py
@@ -1307,7 +1308,7 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/__init__.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/docutils.conf
 %%WEBWARE_MASTER_DIR%%/WebKit/Docs/index.html
-%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0rc1.html
+%%WEBWARE_MASTER_DIR%%/WebKit/Docs/RelNotes-1.0.html
 %%WEBWARE_MASTER_DIR%%/WebKit/ErrorMsgs/_README
 %%WEBWARE_MASTER_DIR%%/WebKit/Examples/AjaxPage.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Examples/AjaxPage.pyc
@@ -1451,7 +1452,6 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Tasks/SessionTask.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tasks/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tasks/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/CountVisits.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/DebugPage.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/DebugPage.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Dir/File.html
@@ -1478,14 +1478,12 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Forward3Target.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/IncludeURLTest.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/IncludeURLTest.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/ListBox.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Main.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Main.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Servlet.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/Servlet.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/SetCookie.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/SetCookie.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/ShowTime.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/TestCases.data
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/TestIMS.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/TestIMS.pyc
@@ -1529,11 +1527,8 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts/Main.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/Welcome.rr
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/__init__.pyc
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/stress.py
-%%WEBWARE_MASTER_DIR%%/WebKit/Testing/stress.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/test.html
 %%WEBWARE_MASTER_DIR%%/WebKit/Testing/test.text
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/AppServerTest.py
@@ -1570,6 +1565,19 @@ etc/rc.d/webkit.sh-dist
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Test.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/__init__.py
 %%WEBWARE_MASTER_DIR%%/WebKit/Tests/__init__.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/CountVisits.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ShowTime.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/ListBox.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.py
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/Welcome.rr
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress/stress.pyc
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Docs.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/WebKit.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Admin.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/MKBrowser.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/Testing.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/KidKit.twill
+%%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill/PSP.twill
 %%WEBWARE_MASTER_DIR%%/WebKit/ThreadedAppServer.py
 %%WEBWARE_MASTER_DIR%%/WebKit/ThreadedAppServer.pyc
 %%WEBWARE_MASTER_DIR%%/WebKit/Transaction.py
@@ -1712,6 +1720,8 @@ www/webkit/webkit
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/TestContext
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic/Configs
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/Basic
+@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/stress
+@dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests/twill
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Tests
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/vhosts
 @dirrmtry %%WEBWARE_MASTER_DIR%%/WebKit/Testing/URL/test5join2

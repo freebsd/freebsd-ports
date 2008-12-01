@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	webware
-DISTVERSION=	1.0r1
+DISTVERSION=	1.0
 CATEGORIES=	www python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Webware-1.0rc1
+DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A versatile web application server written in Python
