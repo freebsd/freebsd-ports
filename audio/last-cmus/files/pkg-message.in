@@ -1,0 +1,11 @@
+=====================================================================
+
+To start using last-cmus.py, please complete the following steps:
+
+1. Edit the %%PREFIX%%/bin/last-cmus.py file with right
+   username and password.
+
+2. Enable it by appending this setting to your ~/.cmus/rc:
+      set status_display_program=%%PREFIX%%/bin/last-cmus.py
+
+=====================================================================

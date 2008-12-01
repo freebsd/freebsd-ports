@@ -335,6 +335,7 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
+    SUBDIR += last-cmus
     SUBDIR += last.fm
     SUBDIR += laudio
     SUBDIR += liba52
