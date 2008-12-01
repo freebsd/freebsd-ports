@@ -140,7 +140,7 @@ MASTER_SITE_COMP_SOURCES+=	\
 MASTER_SITE_CRITICAL+=	\
 	http://critical.ch/distfiles/%SUBDIR%/ \
 	http://energy.critical.ch/distfiles/%SUBDIR%/ \
-	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/
+	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/ \
 	http://snow.critical.ch/distfiles/%SUBDIR%/
 .endif
 
