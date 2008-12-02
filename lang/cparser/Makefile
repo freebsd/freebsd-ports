@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	cparser
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.info.uni-karlsruhe.de/software/libfirm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	A C99 compiler using libFIRM as backend
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libfirm.a:${PORTSDIR}/devel/libfirm
 LIB_DEPENDS=	firm.0:${PORTSDIR}/devel/libfirm
 
 USE_BZIP2=	yes
@@ -23,7 +23,10 @@ PLIST_FILES=	bin/cparser
 
 .include <bsd.port.pre.mk>
 
+MAN1=	cparser.1
+
 do-install:
 	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/cparser ${PREFIX}/bin
+	@${INSTALL_MAN} ${INSTALL_WRKSRC}/cparser.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
