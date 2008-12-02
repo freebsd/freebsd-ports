@@ -5,30 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-DISTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.sa-mp.com/files/ \
-		http://eu.littlewhitey.com/ \
-		http://dedi.azer.nl/upload/ \
-		http://www.kfcgang.com/files/ \
-		http://files.gtanet.com/samp/ \
-		http://thegtaplanet.net/download/ \
-		http://sa-mp.popznet.com/files/
-DISTNAME=	samp022svr
+MASTER_SITES=	http://files.sa-mp.com/
+DISTNAME=	samp02Xsvr
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/samp022
-USE_DOS2UNIX=	server.cfg *.pwn
+WRKSRC=		${WRKDIR}/${DISTNAME:S,svr,,}
+USE_DOS2UNIX=	*.txt *.pwn
 USE_RC_SUBR=	sampd
-SAMPDIR=	${PREFIX}/lib/${PORTNAME}
+SAMPDIR=	${PREFIX}/libexec/${PORTNAME}
 PORTDOCS=	README
-PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}"
+PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}" SAMPBIN=${DISTNAME}
 SUB_FILES=	pkg-message
-SUB_LIST=	SAMPDIR="${SAMPDIR}"
+SUB_LIST=	SAMPDIR="${SAMPDIR}" SAMPBIN=${DISTNAME}
 .if !defined(NOPORTDOCS)
 SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README to configure SA-MP Server"
 .else
@@ -39,20 +33,20 @@ SUB_LIST+=	NOTEWORK=""
 
 do-install:
 	${MKDIR} ${SAMPDIR}
-.for i in samp022svr announce
+.for i in ${DISTNAME} announce
 	${BRANDELF} -t Linux ${WRKSRC}/${i}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
 .endfor
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \
 	${FIND} . -type d ! -empty -exec \
-		${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} filterscripts -type f -exec \
-		${INSTALL_DATA} "{}" "${DATADIR}/{}" \; && \
-	${FIND} gamemodes -type f -exec \
+		${MKDIR} "${DATADIR}/{}" \;
+.for i in filterscripts gamemodes scriptfiles
+	cd ${WRKSRC} && \
+	${FIND} ${i} -type f -exec \
 		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-	${LN} -sf ${DATADIR}/filterscripts/ ${SAMPDIR}/filterscripts
-	${LN} -sf ${DATADIR}/gamemodes/ ${SAMPDIR}/gamemodes
+	${LN} -sf ${DATADIR}/${i}/ ${SAMPDIR}/${i}
+.endfor	
 .if !exists(${PREFIX}/etc/${PORTNAME}.cfg)
 	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/etc/${PORTNAME}.cfg
 .endif

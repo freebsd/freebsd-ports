@@ -1,12 +1,12 @@
 @unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
 etc/sampsvr.cfg.dist
 @exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
-%%SAMPDIR%%/samp022svr
+%%SAMPDIR%%/%%SAMPBIN%%
 %%SAMPDIR%%/announce
 %%SAMPDIR%%/server.cfg
 %%SAMPDIR%%/filterscripts
 %%SAMPDIR%%/gamemodes
-%%DATADIR%%/filterscripts/DEBUG_05.amx
+%%SAMPDIR%%/scriptfiles
 %%DATADIR%%/filterscripts/actions.amx
 %%DATADIR%%/filterscripts/actions.pwn
 %%DATADIR%%/filterscripts/adminspec.amx
@@ -43,7 +43,25 @@ etc/sampsvr.cfg.dist
 %%DATADIR%%/gamemodes/sniper.pwn
 %%DATADIR%%/gamemodes/timertest.pwn
 %%DATADIR%%/gamemodes/timertest.amx
+%%DATADIR%%/scriptfiles/vehiclelists/README.txt
+%%DATADIR%%/scriptfiles/vehiclelists/bone.txt
+%%DATADIR%%/scriptfiles/vehiclelists/flint.txt
+%%DATADIR%%/scriptfiles/vehiclelists/ls_airport.txt
+%%DATADIR%%/scriptfiles/vehiclelists/ls_gen_inner.txt
+%%DATADIR%%/scriptfiles/vehiclelists/ls_gen_outer.txt
+%%DATADIR%%/scriptfiles/vehiclelists/ls_law.txt
+%%DATADIR%%/scriptfiles/vehiclelists/lv_airport.txt
+%%DATADIR%%/scriptfiles/vehiclelists/lv_gen.txt
+%%DATADIR%%/scriptfiles/vehiclelists/lv_law.txt
+%%DATADIR%%/scriptfiles/vehiclelists/red_county.txt
+%%DATADIR%%/scriptfiles/vehiclelists/sf_airport.txt
+%%DATADIR%%/scriptfiles/vehiclelists/sf_gen.txt
+%%DATADIR%%/scriptfiles/vehiclelists/sf_law.txt
+%%DATADIR%%/scriptfiles/vehiclelists/tierra.txt
+%%DATADIR%%/scriptfiles/vehiclelists/whetstone.txt
 @dirrmtry %%DATADIR%%/gamemodes
 @dirrmtry %%DATADIR%%/filterscripts
+@dirrmtry %%DATADIR%%/scriptfiles/vehiclelists
+@dirrmtry %%DATADIR%%/scriptfiles
 @dirrmtry %%DATADIR%%
 @dirrmtry %%SAMPDIR%%
