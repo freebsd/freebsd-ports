@@ -29,6 +29,7 @@ lib/xmms/Output/libdisk_writer.so
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libsanalyzer.so
 share/aclocal/xmms.m4
+share/applications/xmms.desktop
 share/locale/af/LC_MESSAGES/xmms.mo
 share/locale/az/LC_MESSAGES/xmms.mo
 share/locale/be/LC_MESSAGES/xmms.mo
@@ -85,6 +86,7 @@ share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
 %%DATADIR%%/wmxmms.xpm
+@dirrmtry share/applications
 @dirrmtry %%DATADIR%%/Skins
 @dirrm %%DATADIR%%
 @dirrmtry lib/xmms/Visualization

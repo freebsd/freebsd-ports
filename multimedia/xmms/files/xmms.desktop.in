@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=xmms %U
+Icon=xmms
+GenericName=XMMS Player
+Comment=Audio Player
+Terminal=false
+Name=xmms
+MimeType=application/x-xmms
