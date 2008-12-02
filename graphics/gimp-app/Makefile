@@ -56,7 +56,7 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary \
-		--disable-gvfs
+		--without-gvfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
