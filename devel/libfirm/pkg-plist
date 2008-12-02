@@ -28,7 +28,6 @@ include/libfirm/adt/unionfind.h
 include/libfirm/adt/util.h
 include/libfirm/adt/xmalloc.h
 include/libfirm/analyze_irg_args.h
-include/libfirm/archop.h
 include/libfirm/be.h
 include/libfirm/callgraph.h
 include/libfirm/cdep.h

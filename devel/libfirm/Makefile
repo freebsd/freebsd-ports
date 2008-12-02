@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libfirm
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 CATEGORIES=	devel lang
-MASTER_SITES=	http://www.info.uni-karlsruhe.de/software/libfirm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	A graph-based SSA intermediate representation library for compilers
