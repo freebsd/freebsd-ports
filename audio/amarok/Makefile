@@ -28,7 +28,6 @@ USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=
 INSTALLS_ICONS=	yes
 
 OPTIONS=	GPOD "iPod support" on \
@@ -76,7 +75,6 @@ PLIST_SUB+=	MTP=""
 CONFIGURE_ARGS+=--without-libvisual
 .else
 LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
-USE_GNOME+=	gnomelibs
 .endif
 
 .if defined(WITHOUT_OPENGL)
