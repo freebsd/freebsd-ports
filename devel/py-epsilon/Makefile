@@ -17,7 +17,8 @@ EXTRACT_SUFX=	.tar.gz?format=raw
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
