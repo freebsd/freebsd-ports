@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kBuild
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,26 +14,38 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	que_deseja@hotmail.com
 COMMENT=	Makefile framework
 
-# XXX: This case is not handled by USE_AUTOTOOLS as kmk bootstrap involves
-# running these directly.
-BUILD_DEPENDS=	automake-1.9:${PORTSDIR}/devel/automake19 \
-		autoconf-2.62:${PORTSDIR}/devel/autoconf262
-
-BROKEN=		changes permissions on already installed binaries
+USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE=	yes
+KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
+KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
+		AUTOMAKE=${AUTOMAKE} \
+		AUTORECONF=${AUTORECONF}
+KBUILD_BINS=	kmk_sed kmk kmk_append kmk_cat kmk_chmod kmk_cp kmk_cmp \
+		kmk_echo kmk_expr kmk_md5sum kmk_mkdir kmk_mv kmk_install \
+		kmk_ln kmk_printf kmk_redirect kmk_rm kmk_rmdir kmk_test \
+		kDepIDB kmk_gmake kmk_ash kDepPre kObjCache
+
+post-patch:
+	${REINPLACE_CMD} -e '161d' ${WRKSRC}/bootstrap.gmk
+
+# Override autotools
+run-autotools:
+do-configure:
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ACLOCAL=aclocal-1.9 AUTOMAKE=automake-1.9 AUTORECONF=autoreconf-2.62 ./kBuild/env.sh --full ${GMAKE} -f bootstrap.gmk
+	cd ${WRKSRC} && ${SETENV} ${KBUILD_ENV} ./kBuild/env.sh --full ${GMAKE} -f bootstrap.gmk
 	cd ${WRKSRC} && ${RM} -rf out
 	cd ${WRKSRC} && ./kBuild/env.sh kmk
 	cd ${WRKSRC} && ./kBuild/env.sh kmk NIX_INSTALL_DIR=${PREFIX} BUILD_TYPE=release -C ${WRKSRC}
 
 do-install:
-	(cd ${WRKSRC}/out/freebsd.${MACHINE_ARCH}/release${PREFIX}/bin && ${COPYTREE_BIN} \* ${PREFIX}/bin)
+.for bin in ${KBUILD_BINS}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/bin/${bin} ${PREFIX}/bin
+.endfor
 	${MKDIR) ${DATADIR}
-	(cd ${WRKSRC}/out/freebsd.${MACHINE_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
+	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .include <bsd.port.mk>

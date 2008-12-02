@@ -1,9 +1,11 @@
 bin/kmk
 bin/kmk_append
 bin/kmk_cat
+bin/kmk_chmod
 bin/kmk_cp
 bin/kmk_cmp
 bin/kmk_echo
+bin/kmk_expr
 bin/kmk_md5sum
 bin/kmk_mkdir
 bin/kmk_mv
@@ -71,6 +73,11 @@ bin/kmk_ash
 %%DATADIR%%/sdks/WIN32SDK.kmk
 %%DATADIR%%/sdks/WIN32SDK2002.kmk
 %%DATADIR%%/sdks/WIN64SDK.kmk
+%%DATADIR%%/sdks/WINDDK.kmk
+%%DATADIR%%/sdks/WINDDKW2K.kmk
+%%DATADIR%%/sdks/WINDDKWLH.kmk
+%%DATADIR%%/sdks/WINDDKWNET.kmk
+%%DATADIR%%/sdks/WINDDKWXP.kmk
 %%DATADIR%%/sdks/WINPSDK.kmk
 %%DATADIR%%/sdks/WINPSDKINCS.kmk
 %%DATADIR%%/msgstyles/brief.kmk
