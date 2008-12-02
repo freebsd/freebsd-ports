@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		LOCAL/beech
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 CONFIGURE_ARGS=	--enable-static=no
 MAN1=		wmxmms.1 xmms.1
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message xmms.desktop
 
 CONFLICTS=	ru-xmms-[0-9]*
 
@@ -157,9 +157,12 @@ post-patch:
 .if ${HAVE_GNOME:Mesound}==""
 	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
 .endif
+	@${CP} ${FILESDIR}/xmms.desktop.in ${WRKSRC}/xmms.desktop
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/xmms/Skins
+	@${INSTALL} -d ${PREFIX}/share/xmms/Skins
+	@${INSTALL} -d ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/xmms.desktop ${PREFIX}/share/applications/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
