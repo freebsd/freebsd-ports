@@ -1,0 +1,86 @@
+--- configure.orig	2008-12-03 10:08:14.000000000 +0100
++++ configure	2008-12-03 10:09:20.000000000 +0100
+@@ -28920,83 +28920,6 @@
+ Usually this means the macro was only invoked conditionally." >&2;}
+    { (exit 1); exit 1; }; }
+ fi
+-if test -z "${HAVE_MOZILLA_TOOLKIT_TRUE}" && test -z "${HAVE_MOZILLA_TOOLKIT_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_MOZILLA_TOOLKIT\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_MOZILLA_TOOLKIT\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_DEBUG_TRUE}" && test -z "${HAVE_GECKO_DEBUG_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_DEBUG\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_DEBUG\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_1_7_TRUE}" && test -z "${HAVE_GECKO_1_7_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_1_7\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_1_7\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_1_8_TRUE}" && test -z "${HAVE_GECKO_1_8_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_1_8\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_1_8\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_1_8_1_TRUE}" && test -z "${HAVE_GECKO_1_8_1_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_1_8_1\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_1_8_1\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_1_9_TRUE}" && test -z "${HAVE_GECKO_1_9_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_1_9\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_1_9\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_HOME_TRUE}" && test -z "${HAVE_GECKO_HOME_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_HOME\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_HOME\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_DEBUG_TRUE}" && test -z "${HAVE_GECKO_DEBUG_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_DEBUG\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_DEBUG\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${HAVE_GECKO_XPCOM_GLUE_TRUE}" && test -z "${HAVE_GECKO_XPCOM_GLUE_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"HAVE_GECKO_XPCOM_GLUE\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"HAVE_GECKO_XPCOM_GLUE\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${WITH_XULRUNNER_TRUE}" && test -z "${WITH_XULRUNNER_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"WITH_XULRUNNER\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"WITH_XULRUNNER\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-if test -z "${WITH_MOZILLA_TRUE}" && test -z "${WITH_MOZILLA_FALSE}"; then
+-  { { echo "$as_me:$LINENO: error: conditional \"WITH_MOZILLA\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&5
+-echo "$as_me: error: conditional \"WITH_MOZILLA\" was never defined.
+-Usually this means the macro was only invoked conditionally." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+ if test -z "${WITH_WEBKIT_TRUE}" && test -z "${WITH_WEBKIT_FALSE}"; then
+   { { echo "$as_me:$LINENO: error: conditional \"WITH_WEBKIT\" was never defined.
+ Usually this means the macro was only invoked conditionally." >&5

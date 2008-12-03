@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.22
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -16,7 +16,7 @@ COMMENT=	Simple RSS/RDF feed reader
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-USE_GNOME=	gnomeprefix gnomehack libgtkhtml libglade2
+USE_GNOME=	gnomeprefix gnomehack libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,6 +30,8 @@ INSTALLS_ICONS=	yes
 OPTIONS=	LIBNOTIFY "Enable libnotify support" on \
 		DBUS "Enable dbus support" on \
 		GNUTLS "Enable SSL/HTTPS support" on \
+		GTKHTML "Use GtkHtml for rendering" on \
+		WEBKIT "Use Webkit for rendering" off \
 		MOZILLA "Use Firefox for rendering" off \
 		XULRUNNER "Use Xulrunner for rendering" off
 
@@ -47,6 +49,24 @@ PLIST_SUB+=	NOTIFY=""
 CONFIGURE_ARGS+=--disable-gnutls
 .else
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+.endif
+
+.ifdef WITH_GTKHTML
+USE_GNOME+=	libgtkhtml
+CONFIGURE_ARGS+=--enable-gtkhtml2
+PLIST_SUB+=	GTKHTML=""
+.else
+CONFIGURE_ARGS+=--disable-gtkhtml2
+PLIST_SUB+=	GTKHTML="@comment "
+.endif
+
+.ifdef WITH_WEBKIT
+LIB_DEPENDS+=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+CONFIGURE_ARGS+=--enable-webkit
+PLIST_SUB+=	WEBKIT=""
+.else
+CONFIGURE_ARGS+=--disable-webkit
+PLIST_SUB+=	WEBKIT="@comment "
 .endif
 
 .ifdef WITH_MOZILLA
