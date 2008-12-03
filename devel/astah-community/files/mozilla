@@ -4,7 +4,7 @@
 PATH=${PATH#$(dirname $0)}
 
 # add your favorite browser in the top of the list
-for browser in mozilla linux-mozilla firefox linux-mozillafirebird opera linux-opera
+for browser in mozilla linux-mozilla firefox3 firefox linux-firefox firebird opera linux-opera
 do
     type $browser > /dev/null 2>&1 && exec $browser "$@"
 done
