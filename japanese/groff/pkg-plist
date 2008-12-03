@@ -321,6 +321,7 @@ bin/troff
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/X.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/Xps.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/a4.tmac
+%%DATADIR%%/%%GROFF_VERSION%%/tmac/an-ext.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/an-old.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/an.tmac
 %%DATADIR%%/%%GROFF_VERSION%%/tmac/andoc.tmac
