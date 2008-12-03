@@ -49,10 +49,6 @@ OPTIONS=MESAGL			"Enable Mesa 3D (for GL modes)"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-.undef WITH_MESAGL
-.endif
-
 .if defined(WITH_MESAGL)
 CONFIGURE_ARGS+=	--with-mesa
 MESALIB=${PTHREAD_LIBS}
