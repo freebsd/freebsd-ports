@@ -4,6 +4,7 @@ share/asterisk/scripts/editzap.sh
 share/asterisk/scripts/gui_sysinfo
 share/asterisk/scripts/listfiles
 share/asterisk/scripts/mastercsvexists
+share/asterisk/scripts/registerg729.sh
 share/asterisk/scripts/restorebackup
 share/asterisk/scripts/takebackup
 share/asterisk/static-http/config/asterisklogs.html
@@ -78,6 +79,7 @@ share/asterisk/static-http/config/js/astman.js
 share/asterisk/static-http/config/js/guiversion.js
 share/asterisk/static-http/config/js/index.js
 share/asterisk/static-http/config/js/jquery.date_input.js
+share/asterisk/static-http/config/js/jquery.fixedheader.js
 share/asterisk/static-http/config/js/jquery.js
 share/asterisk/static-http/config/js/jquery.tooltip.js
 share/asterisk/static-http/config/js/pbx.js
@@ -90,10 +92,12 @@ share/asterisk/static-http/config/menus.html
 share/asterisk/static-http/config/misdn.html
 share/asterisk/static-http/config/mohfiles.html
 share/asterisk/static-http/config/networking.html
+share/asterisk/static-http/config/paging.html
 share/asterisk/static-http/config/password.html
 share/asterisk/static-http/config/preferences.html
 share/asterisk/static-http/config/queues.html
 share/asterisk/static-http/config/reboot.html
+share/asterisk/static-http/config/registerg729.html
 share/asterisk/static-http/config/reset_defaults.html
 share/asterisk/static-http/config/ringgroups.html
 share/asterisk/static-http/config/sip.html
