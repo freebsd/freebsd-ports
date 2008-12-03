@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
@@ -15,12 +15,14 @@ MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distf
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Suite of tools used to connect and sync your Palm handled
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
-CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits
+CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits --enable-xsltproc
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:S/-Werror//}" # clear -Werror from CFLAGS
 USE_LDCONFIG=	yes
 

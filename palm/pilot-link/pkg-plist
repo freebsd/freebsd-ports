@@ -1,11 +1,3 @@
-bin/pilot-install-datebook
-bin/pilot-install-expenses
-bin/pilot-install-hinote
-bin/pilot-install-memo
-bin/pilot-install-netsync
-bin/pilot-install-todo
-bin/pilot-install-todos
-bin/pilot-install-user
 bin/pilot-addresses
 bin/pilot-clip
 bin/pilot-csd
@@ -14,17 +6,22 @@ bin/pilot-dedupe
 bin/pilot-dlpsh
 bin/pilot-file
 bin/pilot-foto
+bin/pilot-foto-treo600
+bin/pilot-foto-treo650
 bin/pilot-getram
 bin/pilot-getrom
 bin/pilot-getromtoken
 bin/pilot-hinotes
+bin/pilot-install-datebook
+bin/pilot-install-expenses
+bin/pilot-install-hinote
+bin/pilot-install-memo
+bin/pilot-install-netsync
+bin/pilot-install-todo
+bin/pilot-install-todos
+bin/pilot-install-user
 bin/pilot-memos
 bin/pilot-nredir
-bin/pilot-reminders
-bin/pilot-schlep
-bin/pilot-treofoto
-bin/pilot-wav
-bin/pilot-xfer
 bin/pilot-read-expenses
 bin/pilot-read-ical
 bin/pilot-read-notepad
@@ -32,10 +29,14 @@ bin/pilot-read-palmpix
 bin/pilot-read-screenshot
 bin/pilot-read-todos
 bin/pilot-read-veo
-bin/pilot-650foto
+bin/pilot-reminders
+bin/pilot-schlep
+bin/pilot-wav
+bin/pilot-xfer
 include/pi-address.h
 include/pi-appinfo.h
 include/pi-args.h
+include/pi-bluetooth.h
 include/pi-buffer.h
 include/pi-cmp.h
 include/pi-contact.h
@@ -73,13 +74,12 @@ include/pi-util.h
 include/pi-veo.h
 include/pi-versamail.h
 include/pi-version.h
-include/pi-bluetooth.h
 lib/libpisock.a
 lib/libpisock.so
 lib/libpisock.so.9
 lib/libpisync.a
 lib/libpisync.so
-lib/libpisync.so.0
+lib/libpisync.so.1
 libdata/pkgconfig/pilot-link.pc
 share/aclocal/pilot-link.m4
 %%DATADIR%%/pix/b1.gif
@@ -95,7 +95,7 @@ share/aclocal/pilot-link.m4
 %%DATADIR%%/prc/getrom.prc
 %%DATADIR%%/prc/getrom2.prc
 %%DATADIR%%/udev/60-libpisock.rules
-@dirrm %%DATADIR%%/pix
-@dirrm %%DATADIR%%/prc
 @dirrm %%DATADIR%%/udev
+@dirrm %%DATADIR%%/prc
+@dirrm %%DATADIR%%/pix
 @dirrm %%DATADIR%%
