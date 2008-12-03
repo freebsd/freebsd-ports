@@ -6789,6 +6789,7 @@ lash                            ports/audio/lash
 lasi                            ports/devel/lasi
 laspack                         ports/math/laspack
 lasso                           ports/security/lasso
+last-cmus                       ports/audio/last-cmus
 last.fm                         ports/audio/last.fm
 latd                            ports/net/latd
 laternamagica                   ports/graphics/laternamagica
@@ -10500,6 +10501,7 @@ p5-Data-TreeDumper-Renderer-DHTML  ports/www/p5-Data-TreeDumper-Renderer-DHTML
 p5-Data-TreeDumper-Renderer-GTK  ports/devel/p5-Data-TreeDumper-Renderer-GTK
 p5-Data-Types                   ports/devel/p5-Data-Types
 p5-Data-UUID                    ports/devel/p5-Data-UUID
+p5-Data-Uniqid                  ports/devel/p5-Data-Uniqid
 p5-Data-Validate                ports/devel/p5-Data-Validate
 p5-Data-Validate-Domain         ports/dns/p5-Data-Validate-Domain
 p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
@@ -13626,6 +13628,7 @@ p5-data-treedumper              ports/devel/p5-Data-TreeDumper
 p5-data-treedumper-renderer-dhtml  ports/www/p5-Data-TreeDumper-Renderer-DHTML
 p5-data-treedumper-renderer-gtk  ports/devel/p5-Data-TreeDumper-Renderer-GTK
 p5-data-types                   ports/devel/p5-Data-Types
+p5-data-uniqid                  ports/devel/p5-Data-Uniqid
 p5-data-uuid                    ports/devel/p5-Data-UUID
 p5-data-validate                ports/devel/p5-Data-Validate
 p5-data-validate-domain         ports/dns/p5-Data-Validate-Domain
@@ -18402,6 +18405,7 @@ py-webware-component            ports/www/py-webware-component
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
 py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
+py-wsgiauth                     ports/www/py-wsgiauth
 py-wsgiref                      ports/www/py-wsgiref
 py-wsgiutils                    ports/devel/py-wsgiutils
 py-wxPython24                   ports/x11-toolkits/py-wxPython24
