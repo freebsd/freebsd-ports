@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	ledgersmb
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.17
 CATEGORIES=	finance perl5
 MASTER_SITES=	SF/ledger-smb
 
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	A double entry accounting system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
+			${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+			${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	ledgersmb12

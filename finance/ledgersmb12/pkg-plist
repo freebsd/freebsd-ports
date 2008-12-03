@@ -607,6 +607,7 @@ ledgersmb/sql/US_General-chart.sql
 ledgersmb/sql/US_Manufacturing-chart.sql
 ledgersmb/sql/US_Service_Company-chart.sql
 ledgersmb/sql/Venezuela_Default-chart.sql
+ledgersmb/sql/fixes/ar_ap_summary_fix_1.2.14.sql
 ledgersmb/sql/fixes/inventory_lost_on_order_conversion.sql
 ledgersmb/sql/fixes/recurring_pkey_duplicate.sql
 ledgersmb/sql/fixes/tax_pkey_duplicate.sql
