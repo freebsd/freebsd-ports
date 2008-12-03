@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.71.2
+DISTVERSION=	0.71.3
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
