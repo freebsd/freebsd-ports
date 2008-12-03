@@ -30,6 +30,12 @@ CONFIGURE_ARGS+=--with-ofx
 CONFIGURE_ARGS+=--without-ofx
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+IGNORE=does not compile on FreeBSD 6.x and below, might be fixed in 4.0.1
+.endif
+
 post-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -40,4 +46,4 @@ post-install:
 	@-update-desktop-database
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
