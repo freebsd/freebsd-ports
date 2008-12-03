@@ -212,7 +212,6 @@
     SUBDIR += librfc822
     SUBDIR += libsieve
     SUBDIR += libspf
-    SUBDIR += libspf-alt
     SUBDIR += libspf2
     SUBDIR += libspf2-10
     SUBDIR += libsrs
