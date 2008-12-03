@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	5.2.2
+PORTVERSION=	5.4
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -39,52 +39,49 @@ NO_BUILD=	yes
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 
 RESTRICTED=	See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html
-
 WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
-
-DOWNLOAD_URL=	http://jude.change-vision.com/jude-web/download/index.html
-
-PLIST_FILES=	bin/jude share/${PORTNAME}/mozilla
-DATA_FILES=	${PORTNAME}.jar jude-api.jar jude-gui_en.properties_org \
-		jude.ico jude-doc.ico Welcome.jude Welcome_ja.jude \
-		template/project/Java1.4.jude template/project/Java5.jude
-
-.for file in ${DATA_FILES}
-PLIST_FILES+=	share/${PORTNAME}/${file}
-.endfor
-.if defined(WITH_EXPORT_HTML)
-PLIST_FILES+=	share/${PORTNAME}/tools.jar
-.endif
-PLIST_DIRS=	share/${PORTNAME}/template/project \
-		share/${PORTNAME}/template \
-		share/${PORTNAME}
-
-.if !defined(NOPORTDOCS)
-PORTDOCS+=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html \
-		ProductInformation.txt
-.endif
+REINPLACE_ARGS=	-i ""
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+DOWNLOAD_URL=	http://jude.change-vision.com/jude-web/download/index.html
 IGNORE=		needs you to fetch manually the distribution file\
 		from ${DOWNLOAD_URL}, \
 		then place it in ${DISTDIR} and run make again
+.endif
+
+PLIST_FILES=	bin/jude
+.if !defined(NOPORTDATA)
+PORTDATA=	${PORTNAME}.jar jude-api.jar jude-gui_en.properties_org \
+		jude.ico jude-doc.ico Welcome.jude Welcome_ja.jude \
+		template \
+		mozilla
+.endif
+.if defined(WITH_EXPORT_HTML)
+PORTDATA+=	tools.jar
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html \
+		ProductInformation.txt
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!; \
 	                     s!%%DATADIR%%!${DATADIR}!" ${WRKSRC}/jude
 .if !defined(NOPORTDOCS)
-	${REINPLACE_CMD} 's/png\\/png\//' ${WRKSRC}/api/*/doc/index.html
+	${REINPLACE_CMD} 's/png\\/png\//' ${WRKSRC}/api/*/doc/JudeAPI_reference.html
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA:Nmozilla}" ${DATADIR})
 	${INSTALL_SCRIPT} ${FILESDIR}/mozilla ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_FILES}" ${DATADIR})
 .if defined(WITH_EXPORT_HTML)
 	# ExportHTML needs lib/tools.jar of JDK1.4
 	${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
+.endif
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
