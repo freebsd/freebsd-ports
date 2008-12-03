@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	0.7.r3135
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	vd/hugin
+MASTER_SITES=	SF
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
@@ -22,15 +21,14 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_date_time:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
-		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool
+		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
+		gmake:${PORTSDIR}/devel/gmake
 
 # TODO add autopano-sift-C to the ports collection and hook it here as
 # an optional dependency
 
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
 		AUTOPANOSIFT "Install graphics/autopano-sift" on
-
-USE_BZIP2=	yes
 
 USE_CMAKE=	yes
 
