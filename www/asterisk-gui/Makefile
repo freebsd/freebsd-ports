@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk-gui
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk-gui/releases/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk \
 PROJECTHOST=	asterisk-bsd
 USE_AUTOTOOLS=	autoconf:262 automake:19
 USE_GMAKE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 post-patch:
@@ -40,9 +39,7 @@ run-autotools:
 checkconfig:
 	@cd ${WRKSRC} && ${GMAKE} checkconfig
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
