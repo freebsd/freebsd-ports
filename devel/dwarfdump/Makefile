@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dwarfdump
-DISTVERSION=	20070703
-PORTREVISION=	1
+PORTVERSION=	20080615
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgiweb.org/davea/
 DISTNAME=	libdwarf-${PORTVERSION}
@@ -15,22 +14,25 @@ DISTNAME=	libdwarf-${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A tool to display DWARF debugging information in ELF files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libelf.so.0:${PORTSDIR}/devel/libelf \
-		${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
-RUN_DEPENDS=	${LOCALBASE}/lib/libelf.so.0:${PORTSDIR}/devel/libelf
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
 
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.if (${MACHINE_ARCH} == "amd64")
-ARCH=		x86_64
-.endif
 
 MAN1=		dwarfdump.1
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+LIB_DEPENDS+=	elf.0:${PORTSDIR}/devel/libelf
+.endif
+
+.if (${ARCH} == "amd64")
+ARCH=		x86_64
+.endif
 
 FILES_TO_PATCH=print_reloc.c
 
