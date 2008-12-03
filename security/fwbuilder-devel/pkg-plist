@@ -39,3 +39,4 @@ share/fwbuilder-%%BUILD_VERSION%%/os/unknown_os.xml
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/locale
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/help
 @dirrm share/fwbuilder-%%BUILD_VERSION%%
+@dirrmtry share/applications
