@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	finance german
 MASTER_SITES=	SF
 
