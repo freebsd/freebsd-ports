@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	ctags
-PORTVERSION=	5.6j1
+PORTVERSION=	5.7j1
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA025040/ctags/downloads/
 
 MAINTAINER=	issei@issei.org
 COMMENT=	A feature-filled tagfile generator with Japanese support
 
+WRKSRC=	${WRKDIR}/${DISTNAME:S/j1//}
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-macro-patterns --with-readlib
 
 MAN1=		jexctags.1
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -28,7 +30,6 @@ post-install:
 .endfor
 .endif
 	@${STRIP_CMD} ${PREFIX}/bin/jexctags
-	@${SED} 's:%%PREFIX%%:'${PREFIX}':' < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
