@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--disable-debug
 USE_LDCONFIG=	yes
 INFO=		jakelib2
 
+PORTSCOUT=	limit:2.0.3
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
