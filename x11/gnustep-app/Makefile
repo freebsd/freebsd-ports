@@ -93,7 +93,8 @@ USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 
 USE_GNUSTEP_LOCAL_BUNDLES+=	\
 	Cddb:audio/cddb-bundle	\
-	Burn/MP3ToWav:audio/mp3towav-bundle \
+
+#	Burn/MP3ToWav:audio/mp3towav-bundle \
 
 USE_GNUSTEP_SYSTEM_THEMES+=	\
 	Camaelon:x11-themes/etoile-camaelon \
