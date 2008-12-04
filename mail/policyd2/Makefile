@@ -48,7 +48,7 @@ do-install:
 	@cd ${WRKSRC} && ${CP} -Rpf cbp ${SITE_PERL}
 	${INSTALL_SCRIPT} -m 0755 ${WRKSRC}/cbpadmin ${PREFIX}/bin
 	${INSTALL_SCRIPT} -m 0755 ${WRKSRC}/cbpolicyd ${PREFIX}/bin
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/cluebringer.conf ${PREFIX}/etc
+	${INSTALL_DATA} -m 0644 ${WRKSRC}/cluebringer.conf ${PREFIX}/etc/cluebringer.conf.sample
 
 post-install:
 .if !defined(NOPORTDATA)

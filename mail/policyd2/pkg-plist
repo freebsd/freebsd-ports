@@ -119,7 +119,7 @@ www/policyd/tooltips/bt.gif
 %%SITE_PERL%%/cbp/version.pm
 bin/cbpadmin
 bin/cbpolicyd
-etc/cluebringer.conf
+etc/cluebringer.conf.sample
 @dirrm www/policyd/tooltips
 @dirrm www/policyd/includes
 @dirrm www/policyd/images
