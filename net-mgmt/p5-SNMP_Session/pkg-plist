@@ -2,8 +2,8 @@
 %%SITE_PERL%%/SNMP_Session.pm
 %%SITE_PERL%%/SNMP_util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP_Session/.packlist
-%%PORTDOCS%%share/doc/SNMP_Session/README
-%%PORTDOCS%%share/doc/SNMP_Session/README.SNMP_util
-%%PORTDOCS%%share/doc/SNMP_Session/index.html
-%%PORTDOCS%%@dirrm share/doc/SNMP_Session
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SNMP_util
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP_Session
