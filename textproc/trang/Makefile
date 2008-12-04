@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	trang
-PORTVERSION=	2003.06.19
-PORTREVISION=	2
+PORTVERSION=	2008.10.28
 CATEGORIES=	textproc java
-MASTER_SITES=	http://www.thaiopensource.com/download/
+MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
