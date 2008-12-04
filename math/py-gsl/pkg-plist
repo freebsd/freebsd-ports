@@ -73,6 +73,7 @@
 %%PYTHON_SITELIBDIR%%/pygsl/_block.py
 %%PYTHON_SITELIBDIR%%/pygsl/_block.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/_block.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/_bspline.so
 %%PYTHON_SITELIBDIR%%/pygsl/_callback.py
 %%PYTHON_SITELIBDIR%%/pygsl/_callback.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/_callback.pyo
