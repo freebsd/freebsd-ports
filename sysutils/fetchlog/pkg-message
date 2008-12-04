@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-
-Note:	If you are upgrading, you must remove the old bookmarkfiles. 
-	When calling fetchlog 1.0 with old bookmarkfiles generated from
-	version 0.94 or older you will see this error message:
-
-	ERROR: fetchlog: no file/wrong size: /path/to/bookmark/file
-
--------------------------------------------------------------------------------
