@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pylons
-PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTVERSION=	0.9.6.2
 CATEGORIES=	www python
-MASTER_SITES=	http://pylonshq.com/download/0.9.5/
+MASTER_SITES=	http://pylonshq.com/download/0.9.6.2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pylons-${PORTVERSION}
 
@@ -28,11 +27,12 @@ RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_PKGNAMEPREFIX}nose>=0.9.2:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}routes>=1.6.3:${PORTSDIR}/www/py-routes \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.3:${PORTSDIR}/www/py-webhelpers \
+		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.3.2:${PORTSDIR}/www/py-webhelpers \
 		myghty>=1.1:${PORTSDIR}/www/myghty
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.5
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_NOEGGINFO=1
 
 PYPYLONS_EGG=	Pylons-${PORTVERSION}-py${PYTHON_VER}.egg
 
@@ -41,17 +41,10 @@ PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
 post-install:
 	${FIND} ${PYTHON_SITELIBDIR}/${PYPYLONS_EGG} \
 		-type d -exec ${CHMOD} 755 {} +
 	${FIND} ${PYTHON_SITELIBDIR}/${PYPYLONS_EGG} \
 		-type f -exec ${CHMOD} ${SHAREMODE} {} +
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
