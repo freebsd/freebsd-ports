@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprecipebook
-PORTVERSION=	2.38
+PORTVERSION=	2.39
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 
