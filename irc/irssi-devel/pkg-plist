@@ -133,6 +133,7 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
+include/irssi/src/fe-text/statusbar-item.h
 %%DOCSDIR%%/design.txt
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/faq.txt
@@ -304,6 +305,7 @@ include/irssi/src/lib-config/module.h
 @dirrm include/irssi/src/fe-common/irc
 @dirrm include/irssi/src/fe-common/core
 @dirrm include/irssi/src/fe-common
+@dirrm include/irssi/src/fe-text
 @dirrm include/irssi/src/core
 @dirrm include/irssi/src
 @dirrm include/irssi
