@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Data/Stream/Bulk.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Array.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Callback.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Cat.pm
+%%SITE_PERL%%/Data/Stream/Bulk/DBI.pm
+%%SITE_PERL%%/Data/Stream/Bulk/DBIC.pm
+%%SITE_PERL%%/Data/Stream/Bulk/DoneFlag.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Filter.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Nil.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Path/Class.pm
+%%SITE_PERL%%/Data/Stream/Bulk/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream/Bulk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Stream/Bulk/Path
+@dirrmtry %%SITE_PERL%%/Data/Stream/Bulk
+@dirrmtry %%SITE_PERL%%/Data/Stream
+@dirrmtry %%SITE_PERL%%/Data

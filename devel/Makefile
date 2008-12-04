@@ -1141,6 +1141,7 @@
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-Stag
+    SUBDIR += p5-Data-Stream-Bulk
     SUBDIR += p5-Data-Structure-Util
     SUBDIR += p5-Data-Swap
     SUBDIR += p5-Data-Table
