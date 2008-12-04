@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	shoutcast
-PORTVERSION=	1.9.7
-PORTREVISION=	1
+PORTVERSION=	1.9.8
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
-DISTNAME=	${PORTNAME}-1-9-7-freebsd5-elf
+MASTER_SITES=	http://yp.shoutcast.com/downloads/sc1-9-8/
+DISTNAME=	sc_serv_${PORTVERSION}_FreeBSD5
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (binary port)
