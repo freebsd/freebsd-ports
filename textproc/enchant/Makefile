@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	gnome2
