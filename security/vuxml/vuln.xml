@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d1ce8a4f-c235-11dd-8cbc-00163e000016">
+    <topic>squirrelmail -- Cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<range><lt>1.4.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squirrelmail team reports:</p>
+	<blockquote
+	cite="http://sourceforge.net/project/shownotes.php?release_id=644750&amp;group_id=311">
+	  <p>An issue was fixed that allowed an attacker to send specially-
+	  crafted hyperlinks in a message that could execute cross-site
+	  scripting (XSS) when the user viewed the message in SquirrelMail.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2379</cvename>
+      <url>http://secunia.com/Advisories/32143/</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=644750&amp;group_id=311</url>
+    </references>
+    <dates>
+      <discovery>2008-12-03</discovery>
+      <entry>2008-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="842bafdd-be2f-11dd-a578-0030843d3802">
     <topic>openoffice -- arbitrary code execution vulnerabilities</topic>
     <affects>
