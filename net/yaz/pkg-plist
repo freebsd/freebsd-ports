@@ -27,6 +27,7 @@ include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/marcdisp.h
 include/yaz/match_glob.h
+include/yaz/matchstr.h
 include/yaz/mutex.h
 include/yaz/nmem.h
 include/yaz/nmem_xml.h
@@ -46,6 +47,8 @@ include/yaz/querytowrbuf.h
 include/yaz/readconf.h
 include/yaz/record_conv.h
 include/yaz/retrieval.h
+include/yaz/rpn2cql.h
+include/yaz/sc.h
 include/yaz/snprintf.h
 include/yaz/soap.h
 include/yaz/sortspec.h
