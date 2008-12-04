@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.8.14
+DISTVERSION=	0.16.8.15-${E16_SNAPSHOT}
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
-DISTNAME=	e16-${PORTVERSION}
+DISTNAME=	e16-${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
 DATADIR=	${PREFIX}/share/e16
+E16_SNAPSHOT=	0.01
 
 USE_XORG=	xbitmaps xft x11
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-fsstd --disable-esdtest --disable-dependency-tracking \
+CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
 		--disable-rpath
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
