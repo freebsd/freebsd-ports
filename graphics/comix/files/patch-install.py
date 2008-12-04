@@ -1,13 +1,80 @@
---- install.py.orig	2008-07-08 15:03:56.000000000 -0500
-+++ install.py	2008-07-08 15:04:27.000000000 -0500
-@@ -181,8 +181,8 @@
-         print "Updated mime database."
-         schemas = \
-             no_balloon and "comicbook-no-balloon.schemas" or "comicbook.schemas"
--        os.popen("export GCONF_CONFIG_SOURCE=`gconftool-2 "
--                 "--get-default-source 2>/dev/null` && gconftool-2 "
-+        os.popen("export GCONF_CONFIG_SOURCE=%%GCONF_CONFIG_SOURCE%% "
-+                 "&& gconftool-2 "
-                  "--makefile-install-rule ./mime/%s 2>/dev/null" % schemas)
-         print
-         print "Registered comic archive thumbnailer in gconf (if available)."
+--- install.py.orig	2008-12-04 11:57:28.000000000 -0600
++++ install.py	2008-12-04 12:02:45.000000000 -0600
+@@ -36,68 +36,37 @@
+ 
+ # Files to be installed, as (source file, destination directory)
+ FILES = (("src/about.py", "share/comix/src"),
+-         ("src/about.pyc", "share/comix/src"),
+          ("src/archive.py", "share/comix/src"),
+-         ("src/archive.pyc", "share/comix/src"),
+          ("src/bookmark.py", "share/comix/src"),
+-         ("src/bookmark.pyc", "share/comix/src"),
+          ("src/comix.py", "share/comix/src"),
+          ("src/comment.py", "share/comix/src"),
+-         ("src/comment.pyc", "share/comix/src"),
+          ("src/constants.py", "share/comix/src"),
+-         ("src/constants.pyc", "share/comix/src"),
+          ("src/cursor.py", "share/comix/src"),
+-         ("src/cursor.pyc", "share/comix/src"),
+          ("src/deprecated.py", "share/comix/src"),
+-         ("src/deprecated.pyc", "share/comix/src"),
+          ("src/edit.py", "share/comix/src"),
+-         ("src/edit.pyc", "share/comix/src"),
+          ("src/encoding.py", "share/comix/src"),
+-         ("src/encoding.pyc", "share/comix/src"),
+          ("src/enhance.py", "share/comix/src"),
+-         ("src/enhance.pyc", "share/comix/src"),
+          ("src/event.py", "share/comix/src"),
+-         ("src/event.pyc", "share/comix/src"),
+          ("src/filechooser.py", "share/comix/src"),
+-         ("src/filechooser.pyc", "share/comix/src"),
+          ("src/filehandler.py", "share/comix/src"),
+-         ("src/filehandler.pyc", "share/comix/src"),
+          ("src/histogram.py", "share/comix/src"),
+-         ("src/histogram.pyc", "share/comix/src"),
+          ("src/icons.py", "share/comix/src"),
+-         ("src/icons.pyc", "share/comix/src"),
+          ("src/image.py", "share/comix/src"),
+-         ("src/image.pyc", "share/comix/src"),
+          ("src/labels.py", "share/comix/src"),
+-         ("src/labels.pyc", "share/comix/src"),
+          ("src/lens.py", "share/comix/src"),
+-         ("src/lens.pyc", "share/comix/src"),
+          ("src/library.py", "share/comix/src"),
+-         ("src/library.pyc", "share/comix/src"),
+          ("src/librarybackend.py", "share/comix/src"),
+-         ("src/librarybackend.pyc", "share/comix/src"),
+          ("src/main.py", "share/comix/src"),
+-         ("src/main.pyc", "share/comix/src"),
+          ("src/preferences.py", "share/comix/src"),
+-         ("src/preferences.pyc", "share/comix/src"),
+          ("src/process.py", "share/comix/src"),
+-         ("src/process.pyc", "share/comix/src"),
+          ("src/properties.py", "share/comix/src"),
+-         ("src/properties.pyc", "share/comix/src"),
+          ("src/recent.py", "share/comix/src"),
+-         ("src/recent.pyc", "share/comix/src"),
+          ("src/slideshow.py", "share/comix/src"),
+-         ("src/slideshow.pyc", "share/comix/src"),
+          ("src/status.py", "share/comix/src"),
+-         ("src/status.pyc", "share/comix/src"),
+          ("src/thumbbar.py", "share/comix/src"),
+-         ("src/thumbbar.pyc", "share/comix/src"),
+          ("src/thumbnail.py", "share/comix/src"),
+-         ("src/thumbnail.pyc", "share/comix/src"),
+          ("src/thumbremover.py", "share/comix/src"),
+-         ("src/thumbremover.pyc", "share/comix/src"),
+          ("src/ui.py", "share/comix/src"),
+-         ("src/ui.pyc", "share/comix/src"),
+          ("images/16x16/comix.png", "share/comix/images/16x16"),
+          ("images/comix.svg", "share/comix/images"),
+          ("images/double-page.png", "share/comix/images"),
+@@ -313,7 +282,7 @@
+             os.path.join(install_dir, 'share/mime'))
+         print '\nUpdated mime database (added .cbz, .cbr and .cbt file types.)'
+         schema = os.path.join(source_dir, 'mime/comicbook.schemas')
+-        os.popen('GCONF_CONFIG_SOURCE=$(gconftool-2 --get-default-source) '
++        os.popen('GCONF_CONFIG_SOURCE=%%GCONF_CONFIG_SOURCE%% '
+                  'gconftool-2 --makefile-install-rule "%s" 2>/dev/null' %
+                     schema)
+         print '\nRegistered comic archive thumbnailer in gconf (if available).'

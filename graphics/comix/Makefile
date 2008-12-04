@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	3.6.5
+PORTVERSION=	4.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A GTK2 comic book viewer for .cbz, .cbr and .cbt files
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 NO_BUILD=	yes
 USE_GNOME=	desktopfileutils pygtk2
@@ -42,28 +42,27 @@ PLIST_SUB+=	THUMBNAILS:="@comment "
 
 post-extract:
 	@${FIND} ${WRKSRC} -name \*.gz | ${XARGS} ${GUNZIP_CMD}
+	@${RM} -f ${WRKSRC}/src/*.pyc
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|share/man|man|g ; s|1.gz|1|g ; \
-		s|/usr/share/mime|${PREFIX}/share/mime|g ; \
-		s|'/usr'|'${PREFIX}'|g ; \
 		s|%%GCONF_CONFIG_SOURCE%%|${GCONF_CONFIG_SOURCE}|g" \
 			${WRKSRC}/install.py
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
-		${WRKSRC}/comix
+	@${REINPLACE_CMD} -e "s|\[base,.*\]:|\[base, '/usr/local'\]:|g" \
+		${WRKSRC}/src/about.py ${WRKSRC}/src/icons.py
 
 do-install:
 .if defined(THUMBNAILS_ENABLED)
 	@${MKDIR} ${PREFIX}/share/mime/packages
 	@(cd ${WRKSRC} ; \
-		${PYTHON_CMD} install.py install --installdir ${PREFIX})
+		${PYTHON_CMD} install.py install --dir ${PREFIX})
 	@${MKDIR} ${PREFIX}/etc/gconf/schemas
 	@${INSTALL_DATA} ${WRKSRC}/mime/comicbook.schemas \
 		${PREFIX}/etc/gconf/schemas/
 .else
 	@(cd ${WRKSRC} ; \
 		${PYTHON_CMD} install.py install \
-			--installdir ${PREFIX} --no-mime)
+			--dir ${PREFIX} --no-mime)
 .endif
 
 post-install:
@@ -74,5 +73,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/src
 
 .include <bsd.port.post.mk>
