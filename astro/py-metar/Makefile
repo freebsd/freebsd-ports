@@ -29,8 +29,14 @@ PORTDOCS=	COPYING README THANKS librarydoc.txt
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 post-patch:
+.ifndef NOPORTDOCS
 	@${REINPLACE_CMD} \
 		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|"${DOCSDIR}"|' \
 		${WRKSRC}/setup.py
+.else
+	@${REINPLACE_CMD} \
+		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|""|' \
+		-e "s|\['README.*'\]|[]|" ${WRKSRC}/setup.py
+.endif
 
 .include <bsd.port.mk>
