@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biblatex
-PORTVERSION=	0.8
+PORTVERSION=	0.8a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/exptl
@@ -35,9 +35,10 @@ CLASSNAME=	${PORTNAME}
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${CLASSNAME}
 BSTDIR=		${TEXMFLOCAL}/bibtex/bst
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 CLASS_FILES=	biblatex.cfg biblatex.def bibnatex.def biblatex.sty
-DOC_FILES=	README RELEASE doc/biblatex.pdf
+DOC_FILES=	README RELEASE doc/biblatex.pdf LICENSE VERSION
 BST_FILES=	biblatex.bst
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
@@ -60,13 +61,15 @@ pre-install:
 	(for F in ${DOC_FILES:S,^doc/,,}; do \
 		${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
 		done;) >> ${PLIST}
-	(for F in `${LS} -F ${WRKSRC}/doc | ${GREP} "/"`; do \
-			for G in `${LS} ${WRKSRC}/doc/$${F}`; do \
-				${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}$${G}"; \
-			done; \
-			${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
+	(for F in `${LS} ${WRKSRC}/doc/resources`; do \
+			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/resources/$${F}"; \
 		done;) >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/resources" >> ${PLIST}
 	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}"  >> ${PLIST}
+	(for F in `${LS} ${WRKSRC}/doc/examples`; do \
+			${ECHO_CMD} "${EXAMPLESDIR:S,^${PREFIX}/,,}/$${F}"; \
+		done;) >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,}"  >> ${PLIST}
 .endif
 	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
@@ -77,8 +80,11 @@ do-install:
 	${INSTALL_DATA} ${BST_FILES:S@^@${WRKSRC}/bibtex/@} ${PREFIX}/${BSTDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/resources
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/doc/resources && ${COPYTREE_SHARE} \* ${DOCSDIR}/resources)
+	(cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 post-install:
