@@ -45,12 +45,10 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Squirrelmail team reports:</p>
-	<blockquote
-	cite="http://sourceforge.net/project/shownotes.php?release_id=644750&amp;group_id=311">
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?release_id=644750&amp;group_id=311">
 	  <p>An issue was fixed that allowed an attacker to send specially-
-	  crafted hyperlinks in a message that could execute cross-site
-	  scripting (XSS) when the user viewed the message in SquirrelMail.
-	  </p>
+	    crafted hyperlinks in a message that could execute cross-site
+	    scripting (XSS) when the user viewed the message in SquirrelMail.</p>
 	</blockquote>
       </body>
     </description>
