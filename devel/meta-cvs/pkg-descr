@@ -12,7 +12,7 @@ Its main features are:
  * Tracking of third party code containing moves and renames.
  * Ease of deployment.
 
-WWW: http://users.footprints.net/~kaz/mcvs.html
+WWW: http://common-lisp.net/project/meta-cvs/
 
 - Johannes Groedem
 johs@copyleft.no
