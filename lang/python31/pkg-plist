@@ -112,6 +112,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/_weakrefset.py
 %%PYTHON_LIBDIR%%/abc.py
 %%PYTHON_LIBDIR%%/aifc.py
+%%PYTHON_LIBDIR%%/antigravity.py
 %%PYTHON_LIBDIR%%/ast.py
 %%PYTHON_LIBDIR%%/asynchat.py
 %%PYTHON_LIBDIR%%/asyncore.py
@@ -672,9 +673,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/unicodedata.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar3.0.0.candidate.1.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar3.0.0.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.0.0.candidate.1.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.0.0.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -690,6 +691,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_filter.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_funcattrs.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_future.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_has_key.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_idioms.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_import.py
@@ -713,6 +715,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_raw_input.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_renames.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_repr.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_standarderror.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_sys_exc.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_throw.py
@@ -746,6 +749,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_fixers.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_parser.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
+%%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_util.py
 %%PYTHON_LIBDIR%%/linecache.py
 %%PYTHON_LIBDIR%%/locale.py
@@ -1089,7 +1093,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_builtin.py
 %%PYTHON_LIBDIR%%/test/test_bytes.py
 %%PYTHON_LIBDIR%%/test/test_bz2.py
-%%PYTHON_LIBDIR%%/test/test_cProfile.py
 %%PYTHON_LIBDIR%%/test/test_calendar.py
 %%PYTHON_LIBDIR%%/test/test_call.py
 %%PYTHON_LIBDIR%%/test/test_capi.py
@@ -1125,6 +1128,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_contextlib.py
 %%PYTHON_LIBDIR%%/test/test_copy.py
 %%PYTHON_LIBDIR%%/test/test_copyreg.py
+%%PYTHON_LIBDIR%%/test/test_cprofile.py
 %%PYTHON_LIBDIR%%/test/test_crypt.py
 %%PYTHON_LIBDIR%%/test/test_csv.py
 %%PYTHON_LIBDIR%%/test/test_ctypes.py
@@ -1183,6 +1187,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_future2.py
 %%PYTHON_LIBDIR%%/test/test_future3.py
 %%PYTHON_LIBDIR%%/test/test_future4.py
+%%PYTHON_LIBDIR%%/test/test_future5.py
 %%PYTHON_LIBDIR%%/test/test_gc.py
 %%PYTHON_LIBDIR%%/test/test_generators.py
 %%PYTHON_LIBDIR%%/test/test_genericpath.py
@@ -1420,12 +1425,12 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/tkinter/scrolledtext.py
 %%PYTHON_LIBDIR%%/tkinter/simpledialog.py
 %%PYTHON_LIBDIR%%/tkinter/tix.py
-%%PYTHON_LIBDIR%%/tkinter/turtle.py
 %%PYTHON_LIBDIR%%/token.py
 %%PYTHON_LIBDIR%%/tokenize.py
 %%PYTHON_LIBDIR%%/trace.py
 %%PYTHON_LIBDIR%%/traceback.py
 %%PYTHON_LIBDIR%%/tty.py
+%%PYTHON_LIBDIR%%/turtle.py
 %%PYTHON_LIBDIR%%/types.py
 %%PYTHON_LIBDIR%%/unittest.py
 %%PYTHON_LIBDIR%%/urllib/__init__.py
@@ -1501,6 +1506,11 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/curses/repeat.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/curses/tclock.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/curses/xmas.py
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/distutils/test2to3/README
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/distutils/test2to3/maintest.py
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/distutils/test2to3/setup.py
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/distutils/test2to3/test2to3/__init__.py
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/distutils/test2to3/test2to3/hello.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/Makefile
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/embed/demo.c
@@ -2004,6 +2014,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/md5test
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/imputil
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/embed
+%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/distutils/test2to3/test2to3
+%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/distutils/test2to3
+%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/distutils
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/curses
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/comparisons
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/classes
