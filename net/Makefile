@@ -772,6 +772,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-yadis
+    SUBDIR += py-zopeproxy
     SUBDIR += py-zsi
     SUBDIR += pygopherd
     SUBDIR += pynids
