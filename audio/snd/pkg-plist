@@ -375,8 +375,6 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/fmv.scm
 %%SCHEME%%%%DATADIR%%/frame.scm
 %%SCHEME%%%%DATADIR%%/freeverb.scm
-%%SCHEME%%%%DATADIR%%/gauche-format.scm
-%%SCHEME%%%%DATADIR%%/gauche-optargs.scm
 %%SCHEME%%%%DATADIR%%/generators.scm
 %%SCHEME%%%%DATADIR%%/grani.scm
 %%SCHEME%%%%DATADIR%%/gtk-effects-utils.scm
@@ -405,6 +403,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/noise.scm
 %%SCHEME%%%%DATADIR%%/numerics.scm
 %%SCHEME%%%%DATADIR%%/oo.scm
+%%SCHEME%%%%DATADIR%%/osc.scm
 %%SCHEME%%%%DATADIR%%/oscope.scm
 %%SCHEME%%%%DATADIR%%/panic.scm
 %%SCHEME%%%%DATADIR%%/pd-add.scm
@@ -451,6 +450,7 @@ bin/sndrecord
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd_conffile.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
+%%SCHEME%%%%DATADIR%%/sndlib-ws.scm
 %%SCHEME%%%%DATADIR%%/sndins/samples/agn.scm
 %%SCHEME%%%%DATADIR%%/sndins/samples/fmviolin.scm
 %%SCHEME%%%%DATADIR%%/sndins/samples/ws_s.scm
