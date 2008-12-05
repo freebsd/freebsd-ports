@@ -1567,6 +1567,7 @@ share/gimp/scripts/old-photo.scm
 share/gimp/scripts/paste-as-brush.scm
 share/gimp/scripts/paste-as-pattern.scm
 share/gimp/scripts/perspective-shadow.scm
+share/gimp/scripts/plug-in-compat.init
 share/gimp/scripts/predator.scm
 share/gimp/scripts/pupi-button.scm
 share/gimp/scripts/rendermap.scm
