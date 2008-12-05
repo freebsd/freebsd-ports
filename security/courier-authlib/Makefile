@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.61.0
+PORTVERSION=	0.61.1
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -84,7 +84,8 @@ CONFIGURE_ARGS+=--with-base --with-authpam
 MAN1=		courierlogger.1 authtest.1
 
 MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
-		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
+		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3 \
+		auth_sasl_ex.3
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		README.authdebug.html README_authlib.html

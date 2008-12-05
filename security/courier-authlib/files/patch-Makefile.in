@@ -131,7 +131,7 @@
  
 -man1 = authpasswd.1 authtest.1
 +man1 = authtest.1
- man_MANS = $(man1) $(man3)
+ man_MANS = $(man1) $(man3) auth_sasl_ex.3
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
 @@ -756,6 +777,8 @@
