@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.2.8
+PORTVERSION=	3.1.5
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
-		http://www.brueffer.de/distfiles/
+MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
-
-CONFLICTS=	ktorrent-devel-[0-9]*
-LATEST_LINK=	${PORTNAME}2
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+		qca.2:${PORTSDIR}/devel/qca \
+		streamanalyzer.0:${PORTSDIR}/deskutils/strigi
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
-USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|zeroconf||' ${WRKSRC}/plugins/Makefile.in
+USE_KDE4=	kdelibs kdehier kdeprefix automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	qt3support dbus gui network sql svg xml \
+		qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
