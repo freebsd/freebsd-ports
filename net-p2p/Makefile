@@ -54,6 +54,7 @@
     SUBDIR += kmldonkey
     SUBDIR += ktorrent
     SUBDIR += ktorrent-devel
+    SUBDIR += ktorrent2
     SUBDIR += libbt
     SUBDIR += liberator
     SUBDIR += libpdtp
