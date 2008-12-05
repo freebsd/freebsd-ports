@@ -3668,3 +3668,4 @@ databases/firebird2-server|databases/firebird20-server|2008-11-24|Renamed
 emulators/linux_base-gentoo-stage2||2008-11-24|Removed
 emulators/linux_dist-gentoo-stage2||2008-11-24|Removed
 mail/libspf-alt||2008-12-03|Removed
+databases/freetds-msdblib||2008-12-04|Removed, now in /databases/freetds options
