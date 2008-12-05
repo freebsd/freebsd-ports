@@ -50,17 +50,6 @@
  #elif HAVE_GRANTPT
  
  #include <stropts.h>
-@@ -78,8 +121,8 @@
- 
-   if ((fdm = open ("/dev/ptmx", O_RDWR)) < 0)
-     return (GFTP_ERETRYABLE);
--
--  if (grantpt (fdm) < 0)
-+  
-+  if (grantpt (fdm) < 0)   
-     {
-       close (fdm);
-       return (GFTP_ERETRYABLE);
 @@ -123,49 +166,6 @@
  #endif
  
