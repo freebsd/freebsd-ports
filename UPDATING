@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081205:
+  AFFECTS: users of net-p2p/ktorrent
+  AUTHOR: makc@FreeBSD.org
+
+  ktorrent has been updated to 3.1.5 for KDE 4. The last release of ktorrent
+  for KDE 3 is available under net-p2p/ktorrent2.
+
 20081121:
   AFFECTS: users of comms/smstools3
   AUTHOR: mm@FreeBSD.org
