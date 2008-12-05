@@ -35,6 +35,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS=	FLAC		"Support FLAC audio format"		on \
 		VORBIS		"Support OGG Vorbis audio format"	on \
+		TREMOR		"Support Tremor (integer-only Vorbis)"	off \
 		WAV		"Support WAV audio format"		on \
 		AAC		"Support MP4/AAC audio format"		off \
 		MUSEPACK	"Support MPC audio format"		off \
@@ -61,6 +62,11 @@ LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--disable-ogg
 .else
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if defined(WITH_TREMOR)
+CONFIGURE_ARGS+=--with-tremor
+LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .endif
 
 .if defined(WITHOUT_WAV)
@@ -119,7 +125,11 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.if defined(WITHOUT_SHOUTCAST)
+# libshout streaming support will be disabled by configure script when built
+# also with tremor since the latter does not support vorbis encoding
+.if defined(WITH_SHOUTCAST) && !defined(WITH_TREMOR)
+LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+.else
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
