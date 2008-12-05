@@ -1695,6 +1695,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/Jujuy
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/La_Rioja
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/Mendoza
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/Rio_Gallegos
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/Salta
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/San_Juan
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/San_Luis
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Argentina/Tucuman
