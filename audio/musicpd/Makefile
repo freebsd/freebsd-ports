@@ -1,6 +1,6 @@
-# New ports collection makefile for:	musicpd
-# Date created:		Tue Oct 02 2003
-# Whom:			Mark Reidel <ports@mark.reidel.info>
+# New ports collection makefile for:	Music Player Daemon
+# Date created:				Thu Oct 02 2003
+# Whom:					Mark Reidel <ports@mark.reidel.info>
 #
 # $FreeBSD$
 #
@@ -14,14 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	jo.lindqvist@gmail.com
-COMMENT=	A remote-controllable music-daemon
+COMMENT=	A remote-controllable music daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	musicpd.sh
-PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -34,97 +33,97 @@ DOCSDIR=	${PREFIX}/share/doc/mpd
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	FLAC "Support for FLAC Audio" on \
-		VORBIS "Support for OGG Vorbis Audio" on \
-		WAV "Support for WAV Audio" on \
-		AAC "Support for MP4/AAC Audio" off \
-		MUSEPACK "Support for MPC Audio" off \
-		MOD "Support for MOD Audio" off \
-		ICONV "Support for international characters" on \
-	        ID3TAG "Support for id3v1 tag encoding" off \
-		IPV6 "Support for IPV6" on \
-		AO "Support for libao" off \
-		PULSE "Support for PulseAudio" off \
-		JACK "Support for JACK" off \
-		SHOUT "Support for Icecast and Shoutcast" on \
-		SAMPLERATE "Support for ibsamplerate" on
+OPTIONS=	FLAC		"Support FLAC audio format"		on \
+		VORBIS		"Support OGG Vorbis audio format"	on \
+		WAV		"Support WAV audio format"		on \
+		AAC		"Support MP4/AAC audio format"		off \
+		MUSEPACK	"Support MPC audio format"		off \
+		MOD		"Support MOD audio format"		off \
+		ICONV		"Support international characters"	on \
+	        ID3TAG		"Support id3v1 tag encoding"		off \
+		IPV6		"Support IPv6 protocol"			on \
+		AO		"Support libao audio library"		off \
+		PULSEAUDIO	"Support PulseAudio sound server"	off \
+		JACK		"Support JACK audio server"		off \
+		SHOUTCAST	"Support for Icecast and Shoutcast"	off \
+		SAMPLERATE	"Support sample rate conversion"	off
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WITHOUT_FLAC)
+.if defined(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-flac \
 		--disable-oggflac
 .else
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .endif
 
-.ifdef(WITHOUT_VORBIS)
+.if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=--disable-ogg
 .else
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
-.ifdef(WITHOUT_WAV)
+.if defined(WITHOUT_WAV)
 CONFIGURE_ARGS+=--disable-audiofile
 .else
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .endif
 
-.ifdef(WITH_AAC)
+.if defined(WITH_AAC)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 .endif
 
-.ifdef(WITH_MUSEPACK)
+.if defined(WITH_MUSEPACK)
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
 
-.ifdef(WITH_MOD)
+.if defined(WITH_MOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 .else
 CONFIGURE_ARGS+=--disable-mod
 .endif
 
-.ifdef(WITHOUT_ICONV)
+.if defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--disable-iconv
 .else
 USE_ICONV=	yes
 .endif
 
-.ifdef(WITH_ID3TAG)
+.if defined(WITH_ID3TAG)
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=--enable-mpd-id3tag
 .endif
 
-.ifdef(WITHOUT_IPV6)
+.if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.ifdef(WITH_AO)
+.if defined(WITH_AO)
 CONFIGURE_ARGS+=--enable-ao
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 .endif
 
-.ifdef(WITH_PULSE)
+.if defined(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--disable-pulse
 .endif
 
-.ifdef(WITH_JACK)
+.if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.ifdef(WITHOUT_SHOUT)
+.if defined(WITHOUT_SHOUTCAST)
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
-.ifdef(WITHOUT_SAMPLERATE)
+.if defined(WITHOUT_SAMPLERATE)
 CONFIGURE_ARGS+=--disable-lsr
 .else
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
@@ -137,6 +136,8 @@ post-patch:
 .endif
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
