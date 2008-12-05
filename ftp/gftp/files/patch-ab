@@ -1,8 +1,8 @@
---- docs/Makefile.in.orig	Wed Nov 10 20:13:26 2004
-+++ docs/Makefile.in	Wed Nov 10 20:15:59 2004
-@@ -167,16 +167,20 @@
+--- docs/Makefile.in.orig	2008-12-04 19:27:08.000000000 +0100
++++ docs/Makefile.in	2008-12-04 19:30:20.000000000 +0100
+@@ -247,14 +247,18 @@
+ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- 
  man_MANS = gftp.1
 +.ifndef WITHOUT_X11
  SUBDIRS = sample.gftp
@@ -10,14 +10,12 @@
  EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png parse-netrc.pl \
             gftp-faq.sgml
  
- 
 +.ifdef HAVE_GNOME
  Utilitiesdir = $(datadir)/applications
  Utilities_DATA = gftp.desktop
- 
  Iconsdir = $(datadir)/pixmaps
  Icons_DATA = gftp.png
 +.endif
- subdir = docs
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ all: all-recursive
+ 
+ .SUFFIXES:

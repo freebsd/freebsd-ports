@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.18
-PORTREVISION=	7
+PORTVERSION=	2.0.19
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
@@ -24,9 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 WANT_GNOME=	yes
 
-OPTIONS=	X11 "Build with X11 frontend" on \
-		GTK1 "gtk12 instead of gtk2" off \
-		NLS "Native Language Support via gettext utilities" on
+OPTIONS=	X11	"Build with X11 frontend"			on \
+		NLS	"Native Language Support via gettext utilities"	on
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
@@ -37,21 +35,15 @@ USE_XORG=	x11
 USE_GNOME+=	gnomehack
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
+CONFIGURE_ARGS+=--disable-gtkport
 PKGNAMESUFFIX=	-nox11
-USE_GNOME+=	glib12
+USE_GNOME+=	glib20
 PLIST_SUB+=	NOX11:="@comment "
 .else
 PLIST_SUB+=	NOX11:=""
 WANT_GNOME=	yes
-.if defined(WITH_GTK1)
-USE_GNOME+=	gtk12
-CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-12"
-CONFIGURE_ARGS+=--disable-gtk20
-.else
 USE_GNOME+=	gtk20
 CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-2.0"
-.endif
 .endif
 
 MAN1=		gftp.1
@@ -77,6 +69,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		s|"-lssl |& -lcrypto|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|size_t dest_len|size_t *dest_len|g ; \
+		s|\(gftp_filename_from_utf8 (gftp_request \* request,\) int force_local,|\1|' \
+		${WRKSRC}/lib/charset-conv.c
 .if defined(WITHOUT_X11)
 	@${REINPLACE_CMD} -e 's|: install-pkgdataDATA|: |' \
 		${WRKSRC}/docs/sample.gftp/Makefile.in
