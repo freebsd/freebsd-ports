@@ -22,6 +22,7 @@
     SUBDIR += caml-light
     SUBDIR += ccscript
     SUBDIR += cduce
+    SUBDIR += cfortran
     SUBDIR += chameleon
     SUBDIR += chicken
     SUBDIR += cim
