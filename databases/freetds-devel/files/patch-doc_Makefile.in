@@ -1,0 +1,103 @@
+--- doc/Makefile.in.orig	2008-11-11 04:55:16.000000000 -0900
++++ doc/Makefile.in	2008-12-04 01:16:56.000000000 -0900
+@@ -408,25 +408,25 @@
+ 	  echo " rm -f '$(DESTDIR)$(man5dir)/$$inst'"; \
+ 	  rm -f "$(DESTDIR)$(man5dir)/$$inst"; \
+ 	done
+-install-nobase_dataDATA: $(nobase_data_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
+-	@$(am__vpath_adj_setup) \
+-	list='$(nobase_data_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  $(am__vpath_adj) \
+-	  echo " $(nobase_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
+-	  $(nobase_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
+-	done
+-
+-uninstall-nobase_dataDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@$(am__vpath_adj_setup) \
+-	list='$(nobase_data_DATA)'; for p in $$list; do \
+-	  $(am__vpath_adj) \
+-	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
+-	done
++#install-nobase_dataDATA: $(nobase_data_DATA)
++#	@$(NORMAL_INSTALL)
++#	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
++#	@$(am__vpath_adj_setup) \
++#	list='$(nobase_data_DATA)'; for p in $$list; do \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  $(am__vpath_adj) \
++#	  echo " $(nobase_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
++#	  $(nobase_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
++#	done
++
++#uninstall-nobase_dataDATA:
++#	@$(NORMAL_UNINSTALL)
++#	@$(am__vpath_adj_setup) \
++#	list='$(nobase_data_DATA)'; for p in $$list; do \
++#	  $(am__vpath_adj) \
++#	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
++#	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
++#	done
+ tags: TAGS
+ TAGS:
+ 
+@@ -508,12 +508,11 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-man \
+-	install-nobase_dataDATA
++install-data-am: install-man 
+ 
+ install-exec-am:
+ 
+-install-info: install-info-am
++#install-info: install-info-am
+ 
+ install-man: install-man1 install-man5
+ 
+@@ -535,8 +534,8 @@
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-info-am uninstall-local uninstall-man \
+-	uninstall-nobase_dataDATA
++#uninstall-am: uninstall-info-am uninstall-local uninstall-man \
++
+ 
+ uninstall-man: uninstall-man1 uninstall-man5
+ 
+@@ -554,21 +553,21 @@
+ 	uninstall-nobase_dataDATA
+ 
+ 
+-$(DOCDIR)/userguide: $(DOCDIR)/userguide/index.htm
++#$(DOCDIR)/userguide: $(DOCDIR)/userguide/index.htm
+ 
+-$(DOCDIR)/reference: $(DOCDIR)/reference/index.html
++#$(DOCDIR)/reference: $(DOCDIR)/reference/index.html
+ 
+-doc:  $(DOCDIR)/userguide $(DOCDIR)/reference
++#doc:  $(DOCDIR)/userguide $(DOCDIR)/reference
+ 
+ dist:	man
+ 
+ man:	$(man_MANS)
+ 
+-installdirs: 
+-	$(mkinstalldirs)	$(TARGET_DOCDIR)/userguide    \
+-				$(TARGET_DOCDIR)/reference    \
+-				$(TARGET_DOCDIR)/images       \
+-				$(TARGET_DOCDIR)/images/callouts 2>&1
++#installdirs: 
++#	$(mkinstalldirs)	$(TARGET_DOCDIR)/userguide    \
++#				$(TARGET_DOCDIR)/reference    \
++#				$(TARGET_DOCDIR)/images       \
++#				$(TARGET_DOCDIR)/images/callouts 2>&1
+ 
+ freebcp.1: freebcp.txt
+ 	$(TXT2MAN) $(MANOPTS) $(srcdir)/freebcp.txt >.$@
