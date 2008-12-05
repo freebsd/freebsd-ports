@@ -7401,7 +7401,6 @@ libsoup22                       ports/devel/libsoup22
 libspectre                      ports/print/libspectre
 libspectrum                     ports/emulators/libspectrum
 libspf                          ports/mail/libspf
-libspf-alt                      ports/mail/libspf-alt
 libspf2                         ports/mail/libspf2
 libspf2-10                      ports/mail/libspf2-10
 libspiff                        ports/multimedia/libspiff
@@ -10489,6 +10488,7 @@ p5-Data-Serializer              ports/devel/p5-Data-Serializer
 p5-Data-ShowTable               ports/devel/p5-Data-ShowTable
 p5-Data-SpreadPagination        ports/textproc/p5-Data-SpreadPagination
 p5-Data-Stag                    ports/devel/p5-Data-Stag
+p5-Data-Stream-Bulk             ports/devel/p5-Data-Stream-Bulk
 p5-Data-Structure-Util          ports/devel/p5-Data-Structure-Util
 p5-Data-Swap                    ports/devel/p5-Data-Swap
 p5-Data-Table                   ports/devel/p5-Data-Table
@@ -13617,6 +13617,7 @@ p5-data-serializer              ports/devel/p5-Data-Serializer
 p5-data-showtable               ports/devel/p5-Data-ShowTable
 p5-data-spreadpagination        ports/textproc/p5-Data-SpreadPagination
 p5-data-stag                    ports/devel/p5-Data-Stag
+p5-data-stream-bulk             ports/devel/p5-Data-Stream-Bulk
 p5-data-structure-util          ports/devel/p5-Data-Structure-Util
 p5-data-swap                    ports/devel/p5-Data-Swap
 p5-data-table                   ports/devel/p5-Data-Table
@@ -17415,6 +17416,7 @@ poink                           ports/net/poink
 poker-engine                    ports/games/poker-engine
 poker-eval                      ports/games/poker-eval
 pokerth                         ports/games/pokerth
+policyd2                        ports/mail/policyd2
 policykit                       ports/sysutils/policykit
 policykit-gnome                 ports/sysutils/policykit-gnome
 polipo                          ports/www/polipo
@@ -18447,6 +18449,7 @@ py-yolk                         ports/misc/py-yolk
 py-zconfig                      ports/devel/py-zconfig
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeinterface                ports/devel/py-zopeInterface
+py-zopeproxy                    ports/net/py-zopeproxy
 py-zopetesting                  ports/devel/py-zopetesting
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
