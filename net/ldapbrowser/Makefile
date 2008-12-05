@@ -9,13 +9,13 @@ PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	2
 CATEGORIES=	net java
-MASTER_SITES=	http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
+MASTER_SITES=	http://www.mcs.anl.gov/~gawor/ldapcommon/bin/
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
-RESTRICTED=	"No reply from author regarding redistribution licensing"
+RESTRICTED=	No reply from author regarding redistribution licensing
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
