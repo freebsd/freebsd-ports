@@ -830,6 +830,30 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/which-command
 %%DATADIR%%/%%ZSH_VER%%/functions/Zle/zed-set-file-name
 %%DATADIR%%/%%ZSH_VER%%/scripts/newuser
+%%DATADIR%%/%%ZSH_VER%%/functions/Zle.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Zftp.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/Backends.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/TCP.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Prompts.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Newuser.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Misc.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/MIME.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Exceptions.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Redhat.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Mandriva.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Cygwin.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/AIX.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Calendar.zwc
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zle
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zftp
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/Backends

@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -124,5 +124,11 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/zsh ${SHELLS}.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
+	@${PREFIX}/bin/zsh -fc ' \
+		setopt extendedglob; \
+		for i in ${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
+			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
+			chmod 644 $$i.zwc ; \
+		done'
 
 .include <bsd.port.post.mk>
