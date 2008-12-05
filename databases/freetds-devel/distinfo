@@ -1,3 +1,3 @@
-MD5 (freetds-0.64.tar.gz) = ecfee5d6c96932172a1f29fb215c9d23
-SHA256 (freetds-0.64.tar.gz) = 27eeef4049590f459189f859fa73dae27604ea0bf4f197e304f9934c39312c3b
-SIZE (freetds-0.64.tar.gz) = 1414954
+MD5 (freetds-patched.tgz) = 70a0fbb639dca41cd74acf621d93c04a
+SHA256 (freetds-patched.tgz) = 8332c626e8fe056185484ad2a990b81e112969a75143e9b128c824dca97a5aec
+SIZE (freetds-patched.tgz) = 1643212
