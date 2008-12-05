@@ -1,0 +1,5 @@
+cfortran.h is an easy-to-use powerful bridge between C and FORTRAN.
+It provides a transparent, machine independent interface between
+C and FORTRAN routines and global data.
+
+WWW: http://www-zeus.desy.de/~burow/cfortran/
