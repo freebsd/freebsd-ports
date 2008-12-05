@@ -219,6 +219,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Jujuy
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/La_Rioja
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Mendoza
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Rio_Gallegos
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Salta
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/San_Juan
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/San_Luis
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Tucuman
