@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nav
-PORTVERSION=	3.2.2
-PORTREVISION=	2
+PORTVERSION=	3.4.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://launchpadlibrarian.net/18978371/
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Network Administration Visualized
@@ -63,16 +61,16 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 MAKE_ENV+=	CLASSPATH=${CLASSPATH}
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.5+
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-USE_APACHE=	2.0+
+JAVA_VERSION=	1.5+
+USE_APACHE=	2.2+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_PHP=	ctype gettext overload pcre pgsql posix \
+USE_PHP=	ctype gettext pcre pgsql posix \
 		session tokenizer xml zlib
-DEFAULT_PHP_VER=4
-IGNORE_WITH_PHP=5
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
 WANT_PHP_MOD=	yes
 USE_REINPLACE_CMD=	yes
 
@@ -81,10 +79,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/nav ${CONFIGURE_TARGET}
 PKGDEINSTALL=	${PKGDIR}/pkg-install
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		does not compile
-.endif
 
 post-patch:
 	@(${FIND} ${WRKSRC} -name '*.py' -print0 | \
@@ -113,27 +107,12 @@ pre-install:
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/apache.conf ${PREFIX}/${APACHEETCDIR}/Includes/nav.conf.sample
 	@${CHOWN} -R navcron:nav ${PREFIX}/nav/var
-.ifdef NOTDEF
-	@LOCALBASE=${LOCALBASE} JAVA_HOME=${JAVA_HOME} ${SH} ${SCRIPTDIR}/navenv w >${WRKSRC}/navenv.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/navenv.sh ${PREFIX}/nav/bin/
-	@${ECHO}
-	@${ECHO_MSG} "===> You need to set up some environment variables for your nav installation."
-	@${ECHO_MSG} "===> To source/set the environment, please add this to /etc/profile or where"
-	@${ECHO_MSG} "===> you want it."
-	@${ECHO}
-	@${ECHO_MSG} ". ${PREFIX}/nav/bin/navenv.sh"
-	@${ECHO}
-	@${ECHO_MSG} "Now is also a good time to configure username and password for the NAV"
-	@${ECHO_MSG} "PostgreSQL database in ${PREFIX}/nav/etc/db.conf. Make sure it is possible to"
-	@${ECHO_MSG} "log into it using TCP/IP, check tcpip_socket in postgresql.conf."
-	@${ECHO}
-.endif # NOTDEF
 	@${ECHO_MSG} "===> Consider using make auto-config. It will auto-configure NAV, setting up"
 	@${ECHO_MSG} "===> shell environment and PostgreSQL database."
 	@${ECHO}
 
 auto-config:
-	@LOCALBASE=${LOCALBASE} PORTSDIR=${PORTSDIR} ${SH} ${SCRIPTDIR}/myautoconf
+	@env LOCALBASE=${LOCALBASE} PORTSDIR=${PORTSDIR} ${SH} ${SCRIPTDIR}/myautoconf
 
 # TODO
 #

@@ -31,7 +31,7 @@ then
 fi
 
 setdbcvar() {
-	# $1: variable $2: password $3: config
+	# $1: variable $2: value $3: config
 	sed -e "s/^$1=.*/$1=$2/" $3 >$3.tmp
 	cp $3.tmp $3
 	rm -f $3.tmp
@@ -104,7 +104,7 @@ then
 #			firstdb=`su -l pgsql -c "$LOCALBASE/bin/psql -l -t -A" | head -1 | cut -d'|' -f1`
 			PGUSER=pgsql
 			export PGUSER
-			$LOCALBASE/bin/createuser -A -D nav
+			$LOCALBASE/bin/createuser -A -D -R nav
 			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 arnold
 			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 manage
 			$LOCALBASE/bin/createdb --owner nav --encoding UTF-8 navprofiles
