@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	ALPHA/${PORTNAME}/stable
 DISTNAME=	freetds-patched
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cowbert@gmail.com
+MAINTAINER???=	cowbert@gmail.com
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 WRKSRC=		${WRKDIR}/freetds-0.82.1.dev.20081111
@@ -70,7 +70,7 @@ PLIST_SUB+=	ODBC="@comment "
 # relies on sybase-style dblib
 .if defined(WITH_MSDBLIB)
 CONFIGURE_ARGS+=	--enable-msdblib
-TDS_VER=	7.0
+TDS_VER?=	7.0
 .endif
 
 post-extract:
