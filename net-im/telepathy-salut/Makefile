@@ -7,6 +7,7 @@
 
 PORTNAME=	telepathy-salut
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -15,7 +16,8 @@ COMMENT=	Link-local Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		avahi-glib.pc:${PORTSDIR}/net/avahi-app \
-		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
+		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
+		libsoup-2.2.pc:${PORTSDIR}/devel/libsoup22
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
