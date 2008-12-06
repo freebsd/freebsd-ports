@@ -199,6 +199,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/skewy.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/smile.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/solarize.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sparse_color.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/splice.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/spread.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/stegano.rb.html
