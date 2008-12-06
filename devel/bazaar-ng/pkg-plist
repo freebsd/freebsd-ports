@@ -240,6 +240,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/foreign.py
+%%PYTHON_SITELIBDIR%%/bzrlib/foreign.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/foreign.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/generate_ids.py
 %%PYTHON_SITELIBDIR%%/bzrlib/generate_ids.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/generate_ids.pyo
@@ -447,6 +450,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/rules.py
 %%PYTHON_SITELIBDIR%%/bzrlib/rules.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/rules.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf.py
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf_ui.py
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf_ui.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/shelf_ui.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/shellcomplete.py
 %%PYTHON_SITELIBDIR%%/bzrlib/shellcomplete.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/shellcomplete.pyo
@@ -1110,6 +1119,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ftp_transport.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ftp_transport.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ftp_transport.pyo
@@ -1319,6 +1331,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_sftp_transport.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_sftp_transport.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_sftp_transport.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf_ui.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf_ui.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_shelf_ui.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_smart.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_smart.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_smart.pyo
