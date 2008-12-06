@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-prof
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,17 +16,13 @@ COMMENT=	A fast profiler for Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
-	| ${SED} -E \
-		's,.*share/nls/.+$$,,g \
-		;s,^${GEM_CACHE}$$,%%GEM_CACHE%%,g \
-		;s,${GEM_DOC_DIR}(/.+)?$$,%%GEM_DOC_DIR%%\1,g \
-		;s,${GEM_LIB_DIR}(/.+)?$$,%%GEM_LIB_DIR%%\1,g \
-		;s,^${GEM_SPEC}$$,%%GEM_SPEC%%,g \
-		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
-		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
-		' | ${TR} -s '\n') > temp-pkg-plist
+post-install:
+	@${ECHO} bin/ruby-prof > ${TMPPLIST}
+	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
