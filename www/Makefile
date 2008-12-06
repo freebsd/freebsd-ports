@@ -549,6 +549,7 @@
     SUBDIR += opera
     SUBDIR += opera-devel
     SUBDIR += opera-linuxplugins
+    SUBDIR += orangehrm
     SUBDIR += osb-browser
     SUBDIR += osb-nrcit
     SUBDIR += osb-nrcore
