@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="acf80afa-c3ef-11dd-a721-0030843d3802">
+    <topic>vlc -- arbitrary code execution in the RealMedia processor</topic>
+    <affects>
+      <package>
+	<name>vlc-devel</name>
+	<range><lt>0.9.8a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tobias Klein from TrapKit reports:</p>
+	<blockquote cite="http://www.trapkit.de/advisories/TKADV2008-013.txt">
+	  <p>The VLC media player contains an integer overflow vulnerability
+	    while parsing malformed RealMedia (.rm) files. The vulnerability
+	    leads to a heap overflow that can be exploited by a (remote)
+	    attacker to execute arbitrary code in the context of VLC media
+	    player.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5276</cvename>
+      <url>http://www.trapkit.de/advisories/TKADV2008-013.txt</url>
+      <url>http://www.videolan.org/security/sa0811.html</url>
+    </references>
+    <dates>
+      <discovery>2008-11-30</discovery>
+      <entry>2008-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af2745c0-c3e0-11dd-a721-0030843d3802">
     <topic>mantis -- php code execution vulnerability</topic>
     <affects>
