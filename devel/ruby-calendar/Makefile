@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	1.11.2r
+PORTVERSION=	1.11.4r
 PORTEPOCH=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
