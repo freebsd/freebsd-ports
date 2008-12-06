@@ -31,7 +31,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/testlib.py
 %%PYTHON_SITELIBDIR%%/logilab/common/changelog.py
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.py
-%%PYTHON_SITELIBDIR%%/logilab/common/context.py
 %%PYTHON_SITELIBDIR%%/logilab/common/corbautils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.py
 %%PYTHON_SITELIBDIR%%/logilab/common/astutils.py
@@ -69,7 +68,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_ureports_text.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.py
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_context.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_modutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_date.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_umessage.py
@@ -166,7 +164,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_ureports_text.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_context.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_modutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_date.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_umessage.pyc
@@ -192,7 +189,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_ureports_text.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_changelog.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_context.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_modutils.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_date.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_umessage.pyo
@@ -240,7 +236,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/testlib.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/changelog.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/context.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/corbautils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/astutils.pyc
@@ -285,7 +280,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/testlib.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/changelog.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/sqlgen.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/context.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/corbautils.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/astutils.pyo
