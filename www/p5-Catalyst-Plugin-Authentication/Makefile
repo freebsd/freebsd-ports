@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication
-PORTVERSION=	0.10008
+PORTVERSION=	0.100091
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ PERL_CONFIGURE=	5.8.1+
 MAN3=	Catalyst::Authentication::Credential::Password.3 \
 	Catalyst::Authentication::Realm.3 \
 	Catalyst::Authentication::Realm::Compatibility.3 \
+	Catalyst::Authentication::Realm::Progressive.3 \
 	Catalyst::Authentication::Store.3 \
 	Catalyst::Authentication::Store::Minimal.3 \
 	Catalyst::Authentication::Store::Null.3 \
