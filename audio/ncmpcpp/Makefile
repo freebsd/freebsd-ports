@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -39,7 +38,8 @@ PLIST_FILES=	bin/ncmpcpp \
 		%%DOCSDIR%%/config \
 		%%DOCSDIR%%/keys \
 		%%DOCSDIR%%/NEWS \
-		%%DOCSDIR%%/AUTHORS
+		%%DOCSDIR%%/AUTHORS \
+		%%DOCSDIR%%/COPYING
 PLIST_DIRS=	%%DOCSDIR%%
 
 .if !defined(WITHOUT_CURL)
@@ -63,6 +63,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}/NEWS
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/AUTHORS
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/COPYING
 	${INSTALL_DATA} ${WRKSRC}/doc/config ${DOCSDIR}/config
 	${INSTALL_DATA} ${WRKSRC}/doc/keys ${DOCSDIR}/keys
 .endif
