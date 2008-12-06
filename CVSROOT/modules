@@ -1378,6 +1378,7 @@ cflow                           ports/devel/cflow
 cflow2vcg                       ports/devel/cflow2vcg
 cflowd                          ports/net-mgmt/cflowd
 cfm                             ports/x11-fm/cfm
+cfortran                        ports/lang/cfortran
 cfs                             ports/security/cfs
 cftp                            ports/ftp/cftp
 cfv                             ports/security/cfv
@@ -12767,6 +12768,7 @@ p5-XML-Parser-Lite-Tree         ports/textproc/p5-XML-Parser-Lite-Tree
 p5-XML-Parser-Style-Elemental   ports/textproc/p5-XML-Parser-Style-Elemental
 p5-XML-Quote                    ports/textproc/p5-XML-Quote
 p5-XML-RAI                      ports/textproc/p5-XML-RAI
+p5-XML-RPC                      ports/net/p5-XML-RPC
 p5-XML-RSS                      ports/textproc/p5-XML-RSS
 p5-XML-RSS-Feed                 ports/textproc/p5-XML-RSS-Feed
 p5-XML-RSS-JavaScript           ports/textproc/p5-XML-RSS-JavaScript
@@ -16034,6 +16036,7 @@ p5-xml-parser-style-elemental   ports/textproc/p5-XML-Parser-Style-Elemental
 p5-xml-quote                    ports/textproc/p5-XML-Quote
 p5-xml-rai                      ports/textproc/p5-XML-RAI
 p5-xml-regexp                   ports/textproc/p5-XML-RegExp
+p5-xml-rpc                      ports/net/p5-XML-RPC
 p5-xml-rss                      ports/textproc/p5-XML-RSS
 p5-xml-rss-feed                 ports/textproc/p5-XML-RSS-Feed
 p5-xml-rss-javascript           ports/textproc/p5-XML-RSS-JavaScript
