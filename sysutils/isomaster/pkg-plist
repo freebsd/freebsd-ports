@@ -28,10 +28,10 @@ bin/isomaster
 %%NLS%%share/locale/ro/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/isomaster.mo
-%%NLS%%share/locale/sr@Latn/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/sr@Latn/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/isomaster.mo
@@ -45,3 +45,6 @@ bin/isomaster
 @dirrmtry %%NLS%%share/locale/fo
 @dirrmtry %%NLS%%share/locale/sr@latin/LC_MESSAGES
 @dirrmtry %%NLS%%share/locale/sr@latin
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
