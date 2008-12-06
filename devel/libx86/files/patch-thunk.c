@@ -4,7 +4,7 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <sys/mman.h>
-+#if 0
++#ifndef __FreeBSD__
  #include <sys/io.h>
 +#endif
  #include <string.h>
