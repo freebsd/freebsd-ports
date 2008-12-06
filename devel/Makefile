@@ -736,6 +736,7 @@
     SUBDIR += libvc
     SUBDIR += libvolume_id
     SUBDIR += libwfut
+    SUBDIR += libx86
     SUBDIR += libxalloc
     SUBDIR += libytnef
     SUBDIR += libzrtpcpp
