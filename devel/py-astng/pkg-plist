@@ -11,6 +11,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/utils.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/inspector.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_nodes.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_inference.py
