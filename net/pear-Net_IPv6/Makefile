@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_IPv6
-DISTVERSION=	1.1.0RC1
+DISTVERSION=	1.1.0RC2
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
