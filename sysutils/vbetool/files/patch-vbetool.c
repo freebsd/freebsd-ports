@@ -42,7 +42,7 @@
  
  	LRMI_free_real(data);
  
-+#ifdef __linux__
++#ifndef __FreeBSD__
  	ioctl(0, KDSETMODE, KD_TEXT);
 +#endif
  
@@ -52,7 +52,7 @@
  		return 11;
  	}
  
-+#ifdef __linux__
++#ifndef __FreeBSD__
  	ioctl(0, KDSETMODE, KD_GRAPHICS);
 +#endif
  	return 0;
