@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.8.1.2008.05.29
+PORTVERSION=	2.8.5.2008.12.05
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://tijl.ulyssis.be/mirror/
-DISTNAME=	${PORTNAME}-src-20080529-5183
+DISTNAME=	${PORTNAME}-src-20081205-5276
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -143,9 +143,7 @@ post-patch:
 	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
 		${WRKSRC}/device/lib/pic/Makefile.common.in \
 		${WRKSRC}/device/lib/pic/Makefile.rules \
-		${WRKSRC}/device/lib/pic16/Makefile.common.in \
-		${WRKSRC}/device/lib/pic16/Makefile.rules \
-		${WRKSRC}/device/lib/pic16/libio/Makefile.in
+		${WRKSRC}/device/lib/pic16/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \

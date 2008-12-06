@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig	2007-09-28 16:29:43.000000000 +0200
-+++ device/lib/Makefile.in	2007-09-28 16:30:14.000000000 +0200
-@@ -345,23 +345,6 @@
+--- device/lib/Makefile.in.orig	2008-08-24 22:30:52.000000000 +0200
++++ device/lib/Makefile.in	2008-12-06 14:39:15.000000000 +0100
+@@ -355,25 +355,6 @@
  # ---------------------------------------------------
  install: all installdirs
  	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -12,15 +12,17 @@
 -	for src in $(MODELS) ds390 ds400 gbz80 z80 hc08 pic pic16; do \
 -	  find $(sdcc_libdir)/src/$$src -depth \
 -	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
--	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
--	    -name 'Makefile*' \) \
--	    -exec rm -rf {}+ \; ; \
+-	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'autom4te.cache' -o \
+-	    -name 'build' -o -name 'bin' -o -name 'Makefile*' -o -name 'config*' -o \
+-	    -name 'depcomp' -o -name 'missing' -o -name 'install-sh' -o \
+-	    -name 'bootstrap.sh' \) \
+-	    -exec rm -rf {} + ; \
 -	done
 -	find $(sdcc_libdir)/src/mcs51 -depth \
 -	  \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
 -	  -name '*.lst' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
 -	  -name 'Makefile*' \) \
--	  -exec rm -rf {}+ \;
+-	  -exec rm -rf {} +
  
  # Deleting all the installed files
  # --------------------------------
