@@ -1,9 +1,27 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3/.packlist
 %%SITE_PERL%%/Net/Amazon/S3.pm
 %%SITE_PERL%%/Net/Amazon/S3/Bucket.pm
-@dirrmtry %%SITE_PERL%%/Net/Amazon/S3
-@dirrmtry %%SITE_PERL%%/Net/Amazon
+%%SITE_PERL%%/Net/Amazon/S3/Client.pm
+%%SITE_PERL%%/Net/Amazon/S3/Client/Bucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Client/Object.pm
+%%SITE_PERL%%/Net/Amazon/S3/HTTPRequest.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/CreateBucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/DeleteBucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/DeleteObject.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketLocationConstraint.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/GetObject.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/GetObjectAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/ListAllMyBuckets.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/ListBucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/PutObject.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/SetBucketAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/SetObjectAccessControl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/S3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Amazon/S3/Request
+@dirrmtry %%SITE_PERL%%/Net/Amazon/S3/Client
+@dirrmtry %%SITE_PERL%%/Net/Amazon/S3
+@dirrmtry %%SITE_PERL%%/Net/Amazon

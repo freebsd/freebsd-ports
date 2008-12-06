@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.45
-PORTREVISION=	1
+PORTVERSION=	0.48
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +25,24 @@ BUILD_DEPENDS+=	p5-Digest-MD5-File>=0:${PORTSDIR}/security/p5-Digest-MD5-File
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3
+MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
+		Net::Amazon::S3::Request::GetObjectAccessControl.3 \
+		Net::Amazon::S3::Client.3 \
+		Net::Amazon::S3::Client::Bucket.3 \
+		Net::Amazon::S3::Request::ListAllMyBuckets.3 \
+		Net::Amazon::S3::Request::PutObject.3 \
+		Net::Amazon::S3::HTTPRequest.3 \
+		Net::Amazon::S3::Request::ListBucket.3 \
+		Net::Amazon::S3::Request::DeleteObject.3 \
+		Net::Amazon::S3::Request::DeleteBucket.3 \
+		Net::Amazon::S3::Client::Object.3 \
+		Net::Amazon::S3::Request::GetBucketLocationConstraint.3 \
+		Net::Amazon::S3::Request::SetBucketAccessControl.3 \
+		Net::Amazon::S3::Request::SetObjectAccessControl.3 \
+		Net::Amazon::S3::Request::GetBucketAccessControl.3 \
+		Net::Amazon::S3::Request::GetObject.3 \
+		Net::Amazon::S3::Request.3 \
+		Net::Amazon::S3::Request::CreateBucket.3
 
 .include <bsd.port.pre.mk>
 
