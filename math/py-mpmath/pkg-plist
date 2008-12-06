@@ -185,8 +185,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/summation.html
 %%PORTDOCS%%%%DOCSDIR%%/technical.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
@@ -201,7 +202,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/stickysidebar.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/traditional.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/searchindex.json
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
