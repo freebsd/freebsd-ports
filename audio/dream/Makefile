@@ -18,7 +18,8 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		qwt4.4:${PORTSDIR}/x11-toolkits/qwt4 \
 		faad.0:${PORTSDIR}/audio/faad
 
-BROKEN=		Needs DRM enabled in FAAD
+DEPRECATED=		Needs DRM enabled in FAAD
+EXPIRATION_DATE=	2009-01-06
 
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
