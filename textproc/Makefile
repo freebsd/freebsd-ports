@@ -208,6 +208,7 @@
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-haxml
     SUBDIR += hs-stringsearch
+    SUBDIR += hs-utf8-string
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
