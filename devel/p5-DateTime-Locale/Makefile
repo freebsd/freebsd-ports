@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	0.40.01
-PORTREVISION=	2
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Localization support for DateTime
 
 RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -68,9 +68,6 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::bn.3 \
 		DateTime::Locale::bn_BD.3 \
 		DateTime::Locale::bn_IN.3 \
-		DateTime::Locale::bo.3 \
-		DateTime::Locale::bo_CN.3 \
-		DateTime::Locale::bo_IN.3 \
 		DateTime::Locale::bs.3 \
 		DateTime::Locale::bs_BA.3 \
 		DateTime::Locale::byn.3 \
@@ -80,11 +77,6 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::cch.3 \
 		DateTime::Locale::cch_NG.3 \
 		DateTime::Locale::cop.3 \
-		DateTime::Locale::cop_Arab.3 \
-		DateTime::Locale::cop_Arab_EG.3 \
-		DateTime::Locale::cop_Arab_US.3 \
-		DateTime::Locale::cop_EG.3 \
-		DateTime::Locale::cop_US.3 \
 		DateTime::Locale::cs.3 \
 		DateTime::Locale::cs_CZ.3 \
 		DateTime::Locale::cy.3 \
@@ -116,6 +108,8 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::en_BW.3 \
 		DateTime::Locale::en_BZ.3 \
 		DateTime::Locale::en_CA.3 \
+		DateTime::Locale::en_Dsrt.3 \
+		DateTime::Locale::en_Dsrt_US.3 \
 		DateTime::Locale::en_GB.3 \
 		DateTime::Locale::en_GU.3 \
 		DateTime::Locale::en_HK.3 \
@@ -130,6 +124,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::en_PH.3 \
 		DateTime::Locale::en_PK.3 \
 		DateTime::Locale::en_SG.3 \
+		DateTime::Locale::en_Shaw.3 \
 		DateTime::Locale::en_TT.3 \
 		DateTime::Locale::en_UM.3 \
 		DateTime::Locale::en_US.3 \
@@ -169,6 +164,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::fi.3 \
 		DateTime::Locale::fi_FI.3 \
 		DateTime::Locale::fil.3 \
+		DateTime::Locale::fil_PH.3 \
 		DateTime::Locale::fo.3 \
 		DateTime::Locale::fo_FO.3 \
 		DateTime::Locale::fr.3 \
@@ -178,6 +174,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::fr_FR.3 \
 		DateTime::Locale::fr_LU.3 \
 		DateTime::Locale::fr_MC.3 \
+		DateTime::Locale::fr_SN.3 \
 		DateTime::Locale::fur.3 \
 		DateTime::Locale::fur_IT.3 \
 		DateTime::Locale::ga.3 \
@@ -196,6 +193,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::ha.3 \
 		DateTime::Locale::ha_Arab.3 \
 		DateTime::Locale::ha_Arab_NG.3 \
+		DateTime::Locale::ha_Arab_SD.3 \
 		DateTime::Locale::ha_GH.3 \
 		DateTime::Locale::ha_Latn.3 \
 		DateTime::Locale::ha_Latn_GH.3 \
@@ -203,6 +201,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::ha_Latn_NG.3 \
 		DateTime::Locale::ha_NE.3 \
 		DateTime::Locale::ha_NG.3 \
+		DateTime::Locale::ha_SD.3 \
 		DateTime::Locale::haw.3 \
 		DateTime::Locale::haw_US.3 \
 		DateTime::Locale::he.3 \
@@ -240,8 +239,10 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::kcg.3 \
 		DateTime::Locale::kcg_NG.3 \
 		DateTime::Locale::kfo.3 \
-		DateTime::Locale::kfo_NG.3 \
+		DateTime::Locale::kfo_CI.3 \
 		DateTime::Locale::kk.3 \
+		DateTime::Locale::kk_Cyrl.3 \
+		DateTime::Locale::kk_Cyrl_KZ.3 \
 		DateTime::Locale::kk_KZ.3 \
 		DateTime::Locale::kl.3 \
 		DateTime::Locale::kl_GL.3 \
@@ -258,14 +259,8 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::kpe_LR.3 \
 		DateTime::Locale::ku.3 \
 		DateTime::Locale::ku_Arab.3 \
-		DateTime::Locale::ku_IQ.3 \
-		DateTime::Locale::ku_IR.3 \
 		DateTime::Locale::ku_Latn.3 \
-		DateTime::Locale::ku_Latn_IQ.3 \
-		DateTime::Locale::ku_Latn_IR.3 \
-		DateTime::Locale::ku_Latn_SY.3 \
 		DateTime::Locale::ku_Latn_TR.3 \
-		DateTime::Locale::ku_SY.3 \
 		DateTime::Locale::ku_TR.3 \
 		DateTime::Locale::kw.3 \
 		DateTime::Locale::kw_GB.3 \
@@ -285,7 +280,13 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::ml.3 \
 		DateTime::Locale::ml_IN.3 \
 		DateTime::Locale::mn.3 \
+		DateTime::Locale::mn_CN.3 \
+		DateTime::Locale::mn_Cyrl.3 \
+		DateTime::Locale::mn_Cyrl_MN.3 \
 		DateTime::Locale::mn_MN.3 \
+		DateTime::Locale::mn_Mong.3 \
+		DateTime::Locale::mn_Mong_CN.3 \
+		DateTime::Locale::mo.3 \
 		DateTime::Locale::mr.3 \
 		DateTime::Locale::mr_IN.3 \
 		DateTime::Locale::ms.3 \
@@ -298,12 +299,14 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::nb.3 \
 		DateTime::Locale::nb_NO.3 \
 		DateTime::Locale::ne.3 \
+		DateTime::Locale::ne_IN.3 \
 		DateTime::Locale::ne_NP.3 \
 		DateTime::Locale::nl.3 \
 		DateTime::Locale::nl_BE.3 \
 		DateTime::Locale::nl_NL.3 \
 		DateTime::Locale::nn.3 \
 		DateTime::Locale::nn_NO.3 \
+		DateTime::Locale::no.3 \
 		DateTime::Locale::nr.3 \
 		DateTime::Locale::nr_ZA.3 \
 		DateTime::Locale::nso.3 \
@@ -330,6 +333,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::pt_BR.3 \
 		DateTime::Locale::pt_PT.3 \
 		DateTime::Locale::ro.3 \
+		DateTime::Locale::ro_MD.3 \
 		DateTime::Locale::ro_RO.3 \
 		DateTime::Locale::root.3 \
 		DateTime::Locale::ru.3 \
@@ -346,6 +350,8 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::sh_BA.3 \
 		DateTime::Locale::sh_CS.3 \
 		DateTime::Locale::sh_YU.3 \
+		DateTime::Locale::si.3 \
+		DateTime::Locale::si_LK.3 \
 		DateTime::Locale::sid.3 \
 		DateTime::Locale::sid_ET.3 \
 		DateTime::Locale::sk.3 \
@@ -378,8 +384,10 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::sr_RS.3 \
 		DateTime::Locale::sr_YU.3 \
 		DateTime::Locale::ss.3 \
+		DateTime::Locale::ss_SZ.3 \
 		DateTime::Locale::ss_ZA.3 \
 		DateTime::Locale::st.3 \
+		DateTime::Locale::st_LS.3 \
 		DateTime::Locale::st_ZA.3 \
 		DateTime::Locale::sv.3 \
 		DateTime::Locale::sv_FI.3 \
@@ -394,6 +402,8 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::te.3 \
 		DateTime::Locale::te_IN.3 \
 		DateTime::Locale::tg.3 \
+		DateTime::Locale::tg_Cyrl.3 \
+		DateTime::Locale::tg_Cyrl_TJ.3 \
 		DateTime::Locale::tg_TJ.3 \
 		DateTime::Locale::th.3 \
 		DateTime::Locale::th_TH.3 \
@@ -402,6 +412,7 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::ti_ET.3 \
 		DateTime::Locale::tig.3 \
 		DateTime::Locale::tig_ER.3 \
+		DateTime::Locale::tl.3 \
 		DateTime::Locale::tn.3 \
 		DateTime::Locale::tn_ZA.3 \
 		DateTime::Locale::to.3 \
@@ -413,10 +424,11 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::tt.3 \
 		DateTime::Locale::tt_RU.3 \
 		DateTime::Locale::ug.3 \
+		DateTime::Locale::ug_Arab.3 \
+		DateTime::Locale::ug_Arab_CN.3 \
+		DateTime::Locale::ug_CN.3 \
 		DateTime::Locale::uk.3 \
 		DateTime::Locale::uk_UA.3 \
-		DateTime::Locale::und.3 \
-		DateTime::Locale::und_ZZ.3 \
 		DateTime::Locale::ur.3 \
 		DateTime::Locale::ur_IN.3 \
 		DateTime::Locale::ur_PK.3 \
@@ -436,8 +448,6 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::wal.3 \
 		DateTime::Locale::wal_ET.3 \
 		DateTime::Locale::wo.3 \
-		DateTime::Locale::wo_Arab.3 \
-		DateTime::Locale::wo_Arab_SN.3 \
 		DateTime::Locale::wo_Latn.3 \
 		DateTime::Locale::wo_Latn_SN.3 \
 		DateTime::Locale::wo_SN.3 \
@@ -450,6 +460,8 @@ MAN3=		DateTime::Locale.3 DateTime::Locale::Base.3 DateTime::LocaleCatalog.3 \
 		DateTime::Locale::zh_HK.3 \
 		DateTime::Locale::zh_Hans.3 \
 		DateTime::Locale::zh_Hans_CN.3 \
+		DateTime::Locale::zh_Hans_HK.3 \
+		DateTime::Locale::zh_Hans_MO.3 \
 		DateTime::Locale::zh_Hans_SG.3 \
 		DateTime::Locale::zh_Hant.3 \
 		DateTime::Locale::zh_Hant_HK.3 \
