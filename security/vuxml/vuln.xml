@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="29255141-c3df-11dd-a721-0030843d3802">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30270/">
+	  <p>Some vulnerabilities have been reported in Mantis, which can be
+	    exploited by malicious users to compromise a vulnerable system and
+	    malicious people to conduct cross-site scripting and request forgery
+	    attacks.</p>
+	  <p>Input passed to the "filter_target" parameter in
+	    return_dynamic_filters.php is not properly sanitised before being
+	    returned to a user. This can be exploited to execute arbitrary HTML
+	    and script code in a user's browser session in context of an affected
+	    site.</p>
+	  <p>A vulnerability is caused due to the application allowing users to
+	    perform certain actions via HTTP requests without performing any
+	    validity checks to verify the request. This can be exploited to e.g.
+	    add a new user with administrative privileges by enticing a logged-in
+	    administrator to visit a malicious site.</p>
+	  <p>Input passed to the "value" parameter in adm_config_set.php is not
+	    properly sanitised before being used in an "eval()" statement. This
+	    can be exploited to e.g. execute arbitrary PHP commands via a
+	    specially crafted request.</p>
+	  <p>Input passed to the "language" parameter in account_prefs_update.php
+	    is not properly verified before being used to include files. This
+	    can be exploited to include arbitrary files from local
+	    resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2276</cvename>
+      <cvename>CVE-2008-3331</cvename>
+      <cvename>CVE-2008-3332</cvename>
+      <cvename>CVE-2008-3333</cvename>
+      <url>http://secunia.com/advisories/30270/</url>
+    </references>
+    <dates>
+      <discovery>2008-05-15</discovery>
+      <entry>2008-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1ce8a4f-c235-11dd-8cbc-00163e000016">
     <topic>squirrelmail -- Cross site scripting vulnerability</topic>
     <affects>
