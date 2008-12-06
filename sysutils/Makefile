@@ -588,6 +588,7 @@
     SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
+    SUBDIR += py-zdaemon
     SUBDIR += pydf
     SUBDIR += pyrenamer
     SUBDIR += qlogtools
