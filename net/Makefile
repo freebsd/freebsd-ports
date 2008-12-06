@@ -751,6 +751,7 @@
     SUBDIR += py-mp-random
     SUBDIR += py-netaddr
     SUBDIR += py-netstring
+    SUBDIR += py-oauth
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
