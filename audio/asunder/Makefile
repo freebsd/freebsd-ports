@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	1.6
+PORTVERSION=	1.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
