@@ -1018,6 +1018,7 @@
     SUBDIR += xvmines
     SUBDIR += xwelltris
     SUBDIR += xword
+    SUBDIR += xwordpy
     SUBDIR += xworm
     SUBDIR += xye
     SUBDIR += xzip

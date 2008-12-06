@@ -1,0 +1,11 @@
+--- xword.orig	2008-12-01 20:07:26.768695743 -0500
++++ xword	2008-12-01 20:08:01.929339903 -0500
+@@ -51,7 +51,7 @@
+ import pickle
+ import ConfigParser
+ 
+-HOME_PATH = os.path.dirname(sys.argv[0])
++HOME_PATH = %%DATADIR%%
+ CHECK_ICON = HOME_PATH + '/crossword-check.png'
+ CHECK_ALL_ICON = HOME_PATH + '/crossword-check-all.png'
+ SOLVE_ICON = HOME_PATH + '/crossword-solve.png'
