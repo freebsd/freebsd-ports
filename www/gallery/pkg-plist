@@ -100,45 +100,6 @@
 %%WWWDIR%%/docs/context-help/search.php
 %%WWWDIR%%/docs/context-help/slideshow.php
 %%WWWDIR%%/docs/context-help/test.php
-%%WWWDIR%%/docs/g1package/gallery1-admin.backup.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.basics.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.embedding.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.mirroring.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.offline.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.patching.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.performance.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.securing.html
-%%WWWDIR%%/docs/g1package/gallery1-admin.users.html
-%%WWWDIR%%/docs/g1package/gallery1-install.config-wizard.html
-%%WWWDIR%%/docs/g1package/gallery1-install.credits.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.a.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.b.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.c.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.d.html
-%%WWWDIR%%/docs/g1package/gallery1-install.faq.html
-%%WWWDIR%%/docs/g1package/gallery1-install.features.html
-%%WWWDIR%%/docs/g1package/gallery1-install.help.html
-%%WWWDIR%%/docs/g1package/gallery1-install.html
-%%WWWDIR%%/docs/g1package/gallery1-install.language-packs.html
-%%WWWDIR%%/docs/g1package/gallery1-install.overview.html
-%%WWWDIR%%/docs/g1package/gallery1-install.remote-applets.html
-%%WWWDIR%%/docs/g1package/gallery1-install.required-programs.html
-%%WWWDIR%%/docs/g1package/gallery1-install.requirements.html
-%%WWWDIR%%/docs/g1package/gallery1-install.unix-ftp.html
-%%WWWDIR%%/docs/g1package/gallery1-install.unix-shell.html
-%%WWWDIR%%/docs/g1package/gallery1-install.upgrade.html
-%%WWWDIR%%/docs/g1package/gallery1-install.windows-iis.html
-%%WWWDIR%%/docs/g1package/gallery1-install.windows.html
-%%WWWDIR%%/docs/g1package/gallery1-user.html
-%%WWWDIR%%/docs/g1package/gallery1-user.import.html
-%%WWWDIR%%/docs/g1package/gallery1-user.watermark.html
-%%WWWDIR%%/docs/g1package/html.css
-%%WWWDIR%%/docs/g1package/images/basic-auth.gif
-%%WWWDIR%%/docs/g1package/images/up-up.gif
-%%WWWDIR%%/docs/g1package/images/up.gif
-%%WWWDIR%%/docs/g1package/index.html
-%%WWWDIR%%/docs/g1package/pretty-html.css
 %%WWWDIR%%/docs/gallery1-admin.backup.html
 %%WWWDIR%%/docs/gallery1-admin.basics.html
 %%WWWDIR%%/docs/gallery1-admin.embedding.html
@@ -438,17 +399,16 @@
 %%WWWDIR%%/images/gallery1.gif
 %%WWWDIR%%/images/green_trafficlight.gif
 %%WWWDIR%%/images/icons/2downarrow.gif
-%%WWWDIR%%/images/icons/admin.gif
-%%WWWDIR%%/images/icons/behavior-capplet.gif
 %%WWWDIR%%/images/icons/camera.gif
+%%WWWDIR%%/images/icons/cog.png
+%%WWWDIR%%/images/icons/comments.png
 %%WWWDIR%%/images/icons/compressed.gif
 %%WWWDIR%%/images/icons/decrypted.gif
 %%WWWDIR%%/images/icons/delete.gif
-%%WWWDIR%%/images/icons/display.gif
 %%WWWDIR%%/images/icons/ecard.gif
 %%WWWDIR%%/images/icons/editcopy.gif
 %%WWWDIR%%/images/icons/exit.gif
-%%WWWDIR%%/images/icons/folder_new.gif
+%%WWWDIR%%/images/icons/folder_new.png
 %%WWWDIR%%/images/icons/frame_query.gif
 %%WWWDIR%%/images/icons/help.gif
 %%WWWDIR%%/images/icons/history.gif
@@ -466,6 +426,8 @@
 %%WWWDIR%%/images/icons/locked.gif
 %%WWWDIR%%/images/icons/login.gif
 %%WWWDIR%%/images/icons/logout.gif
+%%WWWDIR%%/images/icons/map.png
+%%WWWDIR%%/images/icons/monitor.png
 %%WWWDIR%%/images/icons/navigation/nav_dot.gif
 %%WWWDIR%%/images/icons/navigation/nav_dot_left.gif
 %%WWWDIR%%/images/icons/navigation/nav_dot_right.gif
@@ -476,12 +438,12 @@
 %%WWWDIR%%/images/icons/navigation/nav_page.gif
 %%WWWDIR%%/images/icons/navigation/nav_prev.gif
 %%WWWDIR%%/images/icons/navigation/return_to.gif
-%%WWWDIR%%/images/icons/new_album.gif
 %%WWWDIR%%/images/icons/no_idea.gif
 %%WWWDIR%%/images/icons/notice/error.gif
 %%WWWDIR%%/images/icons/notice/information.gif
 %%WWWDIR%%/images/icons/notice/success.gif
 %%WWWDIR%%/images/icons/notice/warning.gif
+%%WWWDIR%%/images/icons/picture_edit.png
 %%WWWDIR%%/images/icons/preferences.gif
 %%WWWDIR%%/images/icons/register.gif
 %%WWWDIR%%/images/icons/reload.gif
@@ -490,14 +452,12 @@
 %%WWWDIR%%/images/icons/slideshow/1rightarrow.gif
 %%WWWDIR%%/images/icons/slideshow/play_stop.gif
 %%WWWDIR%%/images/icons/tab_duplicate.gif
-%%WWWDIR%%/images/icons/thumbnail.gif
+%%WWWDIR%%/images/icons/text_list_numbers.png
 %%WWWDIR%%/images/icons/tree/join-left.gif
 %%WWWDIR%%/images/icons/tree/join-right.gif
 %%WWWDIR%%/images/icons/tree/joinbottom-left.gif
 %%WWWDIR%%/images/icons/tree/joinbottom-right.gif
-%%WWWDIR%%/images/icons/unsortedList.gif
 %%WWWDIR%%/images/icons/user_gray.gif
-%%WWWDIR%%/images/icons/view_comment.gif
 %%WWWDIR%%/images/icons/viewmag1.gif
 %%WWWDIR%%/images/icons/window_fullscreen.gif
 %%WWWDIR%%/images/icons/window_nofullscreen.gif
@@ -625,8 +585,10 @@
 %%NLS%%%%WWWDIR%%/locale/ar_EG/ar_EG-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/ar_EG/ar_EG-nls.php
 %%NLS%%%%WWWDIR%%/locale/ar_EG/flagimage/ar_EG.gif
+%%NLS%%%%WWWDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/bg_BG/LC_MESSAGES/bg_BG-gallery_core.mo
+%%NLS%%%%WWWDIR%%/locale/bg_BG/bg_BG-gallery_common.po
 %%NLS%%%%WWWDIR%%/locale/bg_BG/bg_BG-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/bg_BG/bg_BG-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/bg_BG/bg_BG-nls.php
@@ -643,14 +605,18 @@
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.cp1250/cs_CZ.cp1250-nls.php
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.cp1250/flagimage/cs_CZ.cp1250.gif
+%%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/LC_MESSAGES/cs_CZ.iso-8859-2-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/LC_MESSAGES/cs_CZ.iso-8859-2-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/LC_MESSAGES/cs_CZ.iso-8859-2-gallery_core.mo
+%%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/cs_CZ.iso-8859-2-gallery_common.po
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/cs_CZ.iso-8859-2-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/cs_CZ.iso-8859-2-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/cs_CZ.iso-8859-2-nls.php
 %%NLS%%%%WWWDIR%%/locale/cs_CZ.iso-8859-2/flagimage/cs_CZ.iso-8859-2.gif
+%%NLS%%%%WWWDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/da_DK/LC_MESSAGES/da_DK-gallery_core.mo
+%%NLS%%%%WWWDIR%%/locale/da_DK/da_DK-gallery_common.po
 %%NLS%%%%WWWDIR%%/locale/da_DK/da_DK-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/da_DK/da_DK-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/da_DK/da_DK-nls.php
@@ -669,7 +635,7 @@
 %%NLS%%%%WWWDIR%%/locale/en_GB/en_GB-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/en_GB/en_GB-nls.php
 %%NLS%%%%WWWDIR%%/locale/en_GB/flagimage/en_GB.gif
-%%WWWDIR%%/locale/en_US/flagimage/en_US.gif
+%%NLS%%%%WWWDIR%%/locale/en_US/flagimage/en_US.gif
 %%NLS%%%%WWWDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_core.mo
@@ -706,9 +672,11 @@
 %%NLS%%%%WWWDIR%%/locale/hu_HU/hu_HU-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/hu_HU/hu_HU-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/hu_HU/hu_HU-nls.php
+%%NLS%%%%WWWDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/is_IS/LC_MESSAGES/is_IS-gallery_core.mo
 %%NLS%%%%WWWDIR%%/locale/is_IS/flagimage/is_IS.gif
+%%NLS%%%%WWWDIR%%/locale/is_IS/is_IS-gallery_common.po
 %%NLS%%%%WWWDIR%%/locale/is_IS/is_IS-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/is_IS/is_IS-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/is_IS/is_IS-nls.php
@@ -734,9 +702,11 @@
 %%NLS%%%%WWWDIR%%/locale/ja_JP/ja_JP-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/ja_JP/ja_JP-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/ja_JP/ja_JP-nls.php
+%%NLS%%%%WWWDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_common.mo
 %%NLS%%%%WWWDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_config.mo
 %%NLS%%%%WWWDIR%%/locale/ko_KR/LC_MESSAGES/ko_KR-gallery_core.mo
 %%NLS%%%%WWWDIR%%/locale/ko_KR/flagimage/ko_KR.gif
+%%NLS%%%%WWWDIR%%/locale/ko_KR/ko_KR-gallery_common.po
 %%NLS%%%%WWWDIR%%/locale/ko_KR/ko_KR-gallery_config.po
 %%NLS%%%%WWWDIR%%/locale/ko_KR/ko_KR-gallery_core.po
 %%NLS%%%%WWWDIR%%/locale/ko_KR/ko_KR-nls.php
@@ -1308,8 +1278,8 @@
 %%NLS%%@dirrm %%WWWDIR%%/locale/es_ES/flagimage
 %%NLS%%@dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
 %%NLS%%@dirrm %%WWWDIR%%/locale/es_ES
-@dirrm %%WWWDIR%%/locale/en_US/flagimage
-@dirrm %%WWWDIR%%/locale/en_US
+%%NLS%%@dirrm %%WWWDIR%%/locale/en_US/flagimage
+%%NLS%%@dirrm %%WWWDIR%%/locale/en_US
 %%NLS%%@dirrm %%WWWDIR%%/locale/en_GB/flagimage
 %%NLS%%@dirrm %%WWWDIR%%/locale/en_GB/LC_MESSAGES
 %%NLS%%@dirrm %%WWWDIR%%/locale/en_GB
@@ -1337,7 +1307,7 @@
 %%NLS%%@dirrm %%WWWDIR%%/locale/af_ZA/flagimage
 %%NLS%%@dirrm %%WWWDIR%%/locale/af_ZA/LC_MESSAGES
 %%NLS%%@dirrm %%WWWDIR%%/locale/af_ZA
-@dirrm %%WWWDIR%%/locale
+%%NLS%%@dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/layout
 @dirrm %%WWWDIR%%/js/wz/tip_balloon
@@ -1381,8 +1351,6 @@
 @dirrm %%WWWDIR%%/html
 @dirrm %%WWWDIR%%/help
 @dirrm %%WWWDIR%%/docs/images
-@dirrm %%WWWDIR%%/docs/g1package/images
-@dirrm %%WWWDIR%%/docs/g1package
 @dirrm %%WWWDIR%%/docs/context-help
 @dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/css
