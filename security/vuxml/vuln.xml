@@ -44,7 +44,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/32314/">
 	  <p>EgiX has discovered a vulnerability in Mantis, which can be
 	    exploited by malicious users to compromise a vulnerable system.</p>
@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/30270/">
 	  <p>Some vulnerabilities have been reported in Mantis, which can be
 	    exploited by malicious users to compromise a vulnerable system and
