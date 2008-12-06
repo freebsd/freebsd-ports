@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af2745c0-c3e0-11dd-a721-0030843d3802">
+    <topic>mantis -- php code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32314/">
+	  <p>EgiX has discovered a vulnerability in Mantis, which can be
+	    exploited by malicious users to compromise a vulnerable system.</p>
+	  <p>Input passed to the "sort" parameter in manage_proj_page.php is not
+	    properly sanitised before being used in a "create_function()" call.
+	    This can be exploited to execute arbitrary PHP code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4687</cvename>
+      <url>http://secunia.com/advisories/32314/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-17</discovery>
+      <entry>2008-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29255141-c3df-11dd-a721-0030843d3802">
     <topic>mantis -- multiple vulnerabilities</topic>
     <affects>
