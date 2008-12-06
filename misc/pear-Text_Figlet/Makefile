@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Figlet
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	misc www pear
 
 MAINTAINER=	miwi@FreeBSD.org
