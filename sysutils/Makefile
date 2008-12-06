@@ -764,6 +764,7 @@
     SUBDIR += usrinfo
     SUBDIR += utcount
     SUBDIR += uwatch
+    SUBDIR += vbetool
     SUBDIR += vcp
     SUBDIR += videogen
     SUBDIR += vii
