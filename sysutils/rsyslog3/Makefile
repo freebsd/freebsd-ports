@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Enhanced syslog daemon
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
-		${WRKSRC}/syslogd.c
+		${WRKSRC}/tools/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
