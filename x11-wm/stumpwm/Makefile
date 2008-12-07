@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stumpwm
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SAVANNAH
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=clisp
+STRIP=
 
 PLIST_FILES=	bin/stumpwm
 INFO=		stumpwm
