@@ -28,6 +28,8 @@ lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
 lib/rsyslog/omtesting.la
 lib/rsyslog/omtesting.so
+lib/rsyslog/lmnsd_gtls.la
+lib/rsyslog/lmnsd_gtls.so
 sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/build_from_repo.html
