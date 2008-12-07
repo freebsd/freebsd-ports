@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	6.1
-PORTREVISION=	2
+PORTVERSION=	6.5
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-200805300101-ml
+MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/final/zip/
+DISTNAME=	netbeans-${PORTVERSION}-200811100001-ml
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_ZIP=	yes
@@ -22,27 +21,14 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
 
-SUB_FILES=	pkg-install pkg-deinstall
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
-	@${REINPLACE_CMD} -e "s@%%GREP%%@${GREP}@" \
-		-e "s@%%GCONFTOOL%%@${LOCALBASE}/bin/gconftool-2@" \
-		${WRKSRC}/platform8/lib/nbexec
-
-do-configure:
-	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/etc/netbeans.conf
-	@${RM} ${WRKSRC}/etc/netbeans.conf.bak
+do-patch:
+	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
+	    ${WRKSRC}/etc/netbeans.conf
 
 do-install:
-	@${MKDIR} ${PREFIX}/netbeans
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-	@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
-	@(cd ${WRKDIR}; ${FIND} -s netbeans -not -type d) >> ${TMPPLIST}
-	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d) | ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
-	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d -empty) | ${SED} -ne 's,^,@exec mkdir -p %D/,p' >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/netbeans65
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIX}/netbeans65)
+	@${CHMOD} ${BINMODE} ${PREFIX}/netbeans65/bin/netbeans
+	@${LN} -sf ${PREFIX}/netbeans65/bin/netbeans ${PREFIX}/bin/netbeans65
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
