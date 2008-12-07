@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pecl_http
-DISTVERSION=	1.6.0
-PORTREVISION=	1
+DISTVERSION=	1.6.2
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
