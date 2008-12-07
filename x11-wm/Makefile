@@ -53,7 +53,6 @@
     SUBDIR += fluxconf
     SUBDIR += fluxspace
     SUBDIR += fluxter
-    SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
@@ -70,7 +69,6 @@
     SUBDIR += ion-2
     SUBDIR += jewel
     SUBDIR += jwm
-    SUBDIR += kahakai
     SUBDIR += kappdock
     SUBDIR += kompmgr
     SUBDIR += larswm

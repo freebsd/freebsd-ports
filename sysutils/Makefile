@@ -157,13 +157,11 @@
     SUBDIR += downtime
     SUBDIR += dt
     SUBDIR += dtc
-    SUBDIR += dtc-toaster
     SUBDIR += du2ps
     SUBDIR += dump9660
     SUBDIR += dupfind
     SUBDIR += duplicity
     SUBDIR += durep
-    SUBDIR += dusage
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp

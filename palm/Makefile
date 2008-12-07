@@ -35,14 +35,11 @@
     SUBDIR += py-synce-librra
     SUBDIR += romeo
     SUBDIR += sitescooper
-    SUBDIR += synce-gnomevfs
     SUBDIR += synce-gvfs
     SUBDIR += synce-hal
-    SUBDIR += synce-kde
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
     SUBDIR += synce-librra
-    SUBDIR += synce-multisync
     SUBDIR += synce-serial
     SUBDIR += synce-sync-engine
     SUBDIR += synce-trayicon

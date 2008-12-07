@@ -18,7 +18,6 @@
     SUBDIR += heirloom-sh
     SUBDIR += ibsh
     SUBDIR += ksh93
-    SUBDIR += ksh93-devel
     SUBDIR += mksh
     SUBDIR += nologinmsg
     SUBDIR += osh
