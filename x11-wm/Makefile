@@ -53,6 +53,7 @@
     SUBDIR += fluxconf
     SUBDIR += fluxspace
     SUBDIR += fluxter
+    SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
