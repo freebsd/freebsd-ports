@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44ee8160-c453-11dd-a721-0030843d3802">
+    <topic>mgetty+sendfax -- symlink attack via insecure temporary files</topic>
+    <affects>
+      <package>
+	<name>mgetty+sendfax</name>
+	<range><lt>1.1.35_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote
+	cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496403">
+	  <p>axspool in mgetty 1.1.36 allows local users to overwrite
+	    arbitrary files via a symlink attack on a /tmp/faxsp.####
+	    temporary file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4936</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496403</url>
+      <url>https://bugs.gentoo.org/show_bug.cgi?id=235806</url>
+    </references>
+    <dates>
+      <discovery>2008-08-24</discovery>
+      <entry>2008-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3efc106e-c451-11dd-a721-0030843d3802">
     <topic>dovecot-managesieve -- Script Name Directory Traversal Vulnerability</topic>
     <affects>
