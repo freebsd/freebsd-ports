@@ -7,9 +7,10 @@
 
 PORTNAME=	aspell
 DISTVERSION=	6-pt_PT-20070510-0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	portuguese textproc
+PKGNAMEPREFIX?=	pt_PT-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Portuguese dictionary
