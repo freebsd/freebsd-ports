@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.2.3.20081114
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -17,19 +18,23 @@ COMMENT=	X.Org ati RadeonHD display driver development version
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg-macros
 
+.if !exists(${LOCALBASE}/lib/libpci.so.2)
 OPTIONS=	UTILS "Install rhd_conntest and rhd_dump utilities" off
+.else
+WITH_UTILS=	yes
+.endif
 
 XORG_CAT=	driver
 USE_XORG=	damageproto videoproto xextproto xf86driproto
 USE_AUTOTOOLS=	aclocal:19 autoconf:262 libtool:15
 
-CONFLICT=	xf86-video-radeonhd-[0-9]*
+CONFLICTS=	xf86-video-radeonhd-[0-9]* xf86-video-ati-[0-9]*
 
 MAN4=		radeonhd.4x
 
 # EXA is usable rather than XAA.  DRI is not usable in this time.
 CONFIGURE_ARGS=	--enable-exa --disable-dri
-ACLOCAL_ARGS=   --acdir=${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	--acdir=${LOCALBASE}/share/aclocal
 
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF} -i
