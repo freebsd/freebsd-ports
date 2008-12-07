@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="578f6322-c450-11dd-a721-0030843d3802">
+    <topic>habari -- Cross-Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>habari</name>
+	<range><lt>0.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32311/">
+	  <p>Input passed via the "habari_username" parameter when logging in is
+	    not properly sanitised before being returned to the user. This can
+	    be exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4601</cvename>
+      <url>http://packetstorm.linuxsecurity.com/0810-exploits/habaricms-xss.txt</url>
+      <url>http://secunia.com/advisories/32311/</url>
+    </references>
+    <dates>
+      <discovery>2008-10-17</discovery>
+      <entry>2008-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="acf80afa-c3ef-11dd-a721-0030843d3802">
     <topic>vlc -- arbitrary code execution in the RealMedia processor</topic>
     <affects>
