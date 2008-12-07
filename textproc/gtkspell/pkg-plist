@@ -6,6 +6,7 @@ lib/libgtkspell.so.0
 libdata/pkgconfig/gtkspell-2.0.pc
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/cs/LC_MESSAGES/gtkspell.mo
+share/locale/da/LC_MESSAGES/gtkspell.mo
 share/locale/de/LC_MESSAGES/gtkspell.mo
 share/locale/el/LC_MESSAGES/gtkspell.mo
 share/locale/eo/LC_MESSAGES/gtkspell.mo
