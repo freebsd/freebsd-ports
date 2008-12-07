@@ -2,6 +2,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.INSTALL
 %%DATADIR%%/create_database.sql
 %%DATADIR%%/db_migrate_1.5_to_1.6.sql
+%%DATADIR%%/db_migrate_2.1_to_2.2.sql
 %%DATADIR%%/insert_initial_data.sql
 %%WWWDIR%%/admin_flag_active_players.php
 %%WWWDIR%%/admin_notification.php
@@ -108,6 +109,7 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/mail_ticker.php
+%%WWWDIR%%/mcc_ajax.php
 %%WWWDIR%%/mcc_common.php
 %%WWWDIR%%/mcc_email.php
 %%WWWDIR%%/mcc_enums.php
@@ -130,11 +132,13 @@
 %%WWWDIR%%/rankings.php
 %%WWWDIR%%/sample_dnd.php
 %%WWWDIR%%/search.php
-@dirrm %%DATADIR%%
+%%WWWDIR%%/service/gameStatus.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/images/lightbox
-@dirrm %%WWWDIR%%/images/wcg
-@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/service
 @dirrm %%WWWDIR%%/js
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%/images/wcg
+@dirrm %%WWWDIR%%/images/lightbox
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%
+@dirrm %%DATADIR%%
