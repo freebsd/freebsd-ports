@@ -17086,7 +17086,6 @@ php5-oci8                       ports/databases/php5-oci8
 php5-odbc                       ports/databases/php5-odbc
 php5-openssl                    ports/security/php5-openssl
 php5-pcntl                      ports/devel/php5-pcntl
-php5-pcre                       ports/devel/php5-pcre
 php5-pdo                        ports/databases/php5-pdo
 php5-pdo_dblib                  ports/databases/php5-pdo_dblib
 php5-pdo_firebird               ports/databases/php5-pdo_firebird

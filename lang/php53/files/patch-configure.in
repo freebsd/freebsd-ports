@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Jun  4 08:08:43 2007
-+++ configure.in	Mon Jun  4 08:13:47 2007
-@@ -233,7 +233,6 @@
+--- configure.in.orig	2008-12-05 07:58:47.000000000 +0100
++++ configure.in	2008-12-05 08:02:26.000000000 +0100
+@@ -270,7 +270,6 @@
  dnl .
  dnl -------------------------------------------------------------------------
  
@@ -8,7 +8,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_SAPI=default
-@@ -258,7 +257,6 @@
+@@ -295,7 +294,6 @@
  
  if test "$enable_maintainer_zts" = "yes"; then
    PTHREADS_ASSIGN_VARS
@@ -16,7 +16,7 @@
  fi
  
  divert(3)
-@@ -1123,7 +1121,7 @@
+@@ -1136,7 +1134,7 @@
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -25,13 +25,13 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1295,22 +1293,19 @@
+@@ -1344,22 +1342,19 @@
  INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
--all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET)"
+-all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET)"
 -install_targets="$install_modules install-build install-headers install-programs $install_pear"
-+all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET)"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET)"
 +install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear"
  
  case $PHP_SAPI in
