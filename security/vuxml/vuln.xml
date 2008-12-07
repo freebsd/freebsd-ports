@@ -55,6 +55,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>32545</bid>
       <cvename>CVE-2008-5276</cvename>
       <url>http://www.trapkit.de/advisories/TKADV2008-013.txt</url>
       <url>http://www.videolan.org/security/sa0811.html</url>
@@ -62,6 +63,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-11-30</discovery>
       <entry>2008-12-06</entry>
+      <modified>2008-12-07</modified>
     </dates>
   </vuln>
 
