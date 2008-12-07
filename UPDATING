@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081207:
+  AFFECTS: users of games/mkgichessclub
+  AUTHOR: nivit@FreeBSD.org
+
+  After the update to the version 2.2.0, please, alter the SQL tables
+  with the command:
+
+    mysql _mkgichessclub_ < /usr/local/share/mkgichessclub/db_migrate_2.1_to_2.2.sql
+
+  where _mkgichessclub_ is the database name chosen during the installation
+  of the port.
+
 20081205:
   AFFECTS: users of net-p2p/ktorrent
   AUTHOR: makc@FreeBSD.org
