@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20081207:
+  AFFECTS: users of lang/php5
+  AUTHOR: pav@FreeBSD.org
+
+  As of php 5.2.7, pcre extension is distributed with the core php5 package,
+  and not as a standalone module anymore.  Follow these steps to update your
+  installation:
+
+  pkg_delete -f php5-pcre-5.2.6
+  pkgdb -F
+  portupgrade as usual
+
+20081207:
   AFFECTS: users of games/mkgichessclub
   AUTHOR: nivit@FreeBSD.org
 
