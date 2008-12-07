@@ -1,7 +1,0 @@
-bin/sjog
-bin/setbrightness
-etc/sjogrc
-share/sjog/pixmaps/sjog-brightness.xpm
-share/sjog/pixmaps/sjog-volume.xpm
-@dirrm share/sjog/pixmaps
-@dirrm share/sjog
