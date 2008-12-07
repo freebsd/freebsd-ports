@@ -755,6 +755,7 @@
     SUBDIR += shim
     SUBDIR += show
     SUBDIR += showimg
+    SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += skanlite
     SUBDIR += skencil
