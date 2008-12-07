@@ -6,34 +6,22 @@
 #
 
 PORTNAME=	flwm
-PORTVERSION=	1.00
-PORTREVISION=	2
+PORTVERSION=	1.02
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	gj
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
-
-DEPRECATED=	Project is dead, and uses obsolete version of fltk
-EXPIRATION_DATE=	2008-10-19
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
-
 GNU_CONFIGURE=	yes
+
 MAN1=		flwm.1
 PLIST_FILES=	bin/flwm
 
-.include <bsd.port.pre.mk>
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-# could be a problem if both versions of freetype are installed
-.if exists(${LOCALBASE}/include/freetype1/freetype/freetype.h)
-CONFIGURE_ARGS= --includedir="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1"
-.elif exists(${LOCALBASE}/include/freetype2/freetype/freetype.h)
-CONFIGURE_ARGS= --includedir="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
