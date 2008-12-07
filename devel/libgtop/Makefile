@@ -40,6 +40,9 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 PKGMESSAGE=	${FILESDIR}/pkg-message
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
+
 post-install:
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
 	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
