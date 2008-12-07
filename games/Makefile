@@ -100,6 +100,7 @@
     SUBDIR += briquolo
     SUBDIR += brutalchess
     SUBDIR += bs
+    SUBDIR += bsdrain
     SUBDIR += bsdtris
     SUBDIR += bsp
     SUBDIR += bubbros
