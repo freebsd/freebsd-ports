@@ -1,0 +1,23 @@
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen/Simple.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/DBI.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Dummy.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/crypt.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/lc.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/md5.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/sha1.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/strip.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter/uc.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Generic.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/HTPasswd.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store/Cookie.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store/Session.pm
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Store
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application
