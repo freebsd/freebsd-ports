@@ -628,6 +628,7 @@
     SUBDIR += p5-CGI-Application-Dispatch-Server
     SUBDIR += p5-CGI-Application-Plugin-AnyTemplate
     SUBDIR += p5-CGI-Application-Plugin-Authentication
+    SUBDIR += p5-CGI-Application-Plugin-Authorization
     SUBDIR += p5-CGI-Application-Plugin-AutoRunmode
     SUBDIR += p5-CGI-Application-Plugin-DBH
     SUBDIR += p5-CGI-Application-Plugin-DebugScreen
