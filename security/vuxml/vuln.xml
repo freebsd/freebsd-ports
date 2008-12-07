@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3efc106e-c451-11dd-a721-0030843d3802">
+    <topic>dovecot-managesieve -- Script Name Directory Traversal Vulnerability</topic>
+    <affects>
+      <package>
+	<name>dovecot-managesieve</name>
+	<range><lt>0.10.4</lt></range>
+	<range><ge>0.11.0</ge><lt>0.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/Advisories/32768/">
+	  <p>The security issue is caused due to an input validation error when
+	    processing script names. This can be exploited to read or modify
+	    arbitrary files having ".sieve" extensions via directory traversal
+	    attacks, with the privileges of the attacker's user id.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5301</cvename>
+      <url>http://www.vupen.com/english/advisories/2008/3190</url>
+      <url>http://secunia.com/Advisories/32768/</url>
+      <url>http://dovecot.org/list/dovecot/2008-November/035259.html</url>
+    </references>
+    <dates>
+      <discovery>2008-11-18</discovery>
+      <entry>2008-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="578f6322-c450-11dd-a721-0030843d3802">
     <topic>habari -- Cross-Site Scripting Vulnerability</topic>
     <affects>
