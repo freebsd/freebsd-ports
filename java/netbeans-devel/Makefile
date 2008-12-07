@@ -6,7 +6,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/rc/zip/
 PKGNAMESUFFIX=	-devel
@@ -21,6 +21,8 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
+
+IGNORE=		6.5 is not the stable version. Please use java/netbeans instead
 
 do-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
