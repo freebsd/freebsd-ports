@@ -60,5 +60,6 @@
    SUBDIR += qtpkg
    SUBDIR += tinderbox
    SUBDIR += vulnerability-test-port
+   SUBDIR += xps
 
 .include <bsd.port.subdir.mk>
