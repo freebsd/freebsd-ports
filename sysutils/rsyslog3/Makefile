@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	rsyslog
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Enhanced syslog daemon
+
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
@@ -16,7 +18,7 @@ MAN8=	rsyslogd.8
 MAN5=	rsyslog.conf.5
 
 CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
-		--enable-imfile --enable-imtemplate --enable-openssl
+		--enable-imfile --enable-imtemplate --enable-gnutls
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
