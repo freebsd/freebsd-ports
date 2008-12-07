@@ -1,7 +1,7 @@
 ======================================================================
 
-Minimal setup
-
+ Minimal setup
+ 
 1. Make sure your mysql-server is running
 
 2. Create an account and a database on the MySQL server
@@ -48,4 +48,15 @@ Minimal setup
 
    http://localhost/mkgichessclub/
 
-==================================================================
+----------------------------------------------------------------------
+
+ Upgrading to 2.2.0 from version 2.1.0
+
+1. You have to alter the SQL tables with the command
+
+    mysql _mkgichessclub_ < %%DATADIR%%/db_migrate_2.1_to_2.2.sql
+
+   where _mkgichessclub_ is the database name chosen during the
+   installation of the port.
+
+======================================================================
