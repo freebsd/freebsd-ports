@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="baece347-c489-11dd-a721-0030843d3802">
+    <topic>wireshark -- SMTP Processing Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><lt>1.0.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/32840/">
+	  <p>A vulnerability has been reported in Wireshark, which can be
+	    exploited by malicious people to cause a DoS.</p>
+	  <p>The vulnerability is caused due to an error in the SMTP dissector
+	    and can be exploited to trigger the execution of an infinite loop via
+	    a large SMTP packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5285</cvename>
+      <url>http://secunia.com/advisories/32840/</url>
+      <url>http://lists.grok.org.uk/pipermail/full-disclosure/2008-November/065840.html</url>
+    </references>
+    <dates>
+      <discovery>2008-11-24</discovery>
+      <entry>2008-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27d01223-c457-11dd-a721-0030843d3802">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
