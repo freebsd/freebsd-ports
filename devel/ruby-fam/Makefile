@@ -20,7 +20,6 @@ COMMENT=	FAM bindings for Ruby
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=yes
 USE_FAM=	yes
-WANT_FAM_SYSTEM=fam
 
 INSTALL_TARGET=	site-install
 
