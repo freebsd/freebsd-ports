@@ -101,7 +101,6 @@
     SUBDIR += py-bittorrent-core
     SUBDIR += py-fngrab
     SUBDIR += py-kenosis
-    SUBDIR += py-kenosis-bittorrent
     SUBDIR += py-py2play
     SUBDIR += py-vertex
     SUBDIR += pyslsk

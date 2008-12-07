@@ -68,7 +68,6 @@
     SUBDIR += diction
     SUBDIR += display
     SUBDIR += dnetc
-    SUBDIR += documancer
     SUBDIR += dotfile
     SUBDIR += dphys-config
     SUBDIR += dtach
@@ -166,7 +165,6 @@
     SUBDIR += imerge
     SUBDIR += inplace
     SUBDIR += instant-server
-    SUBDIR += ipbt
     SUBDIR += iselect
     SUBDIR += iso-codes
     SUBDIR += jargon

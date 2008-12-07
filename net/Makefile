@@ -171,7 +171,6 @@
     SUBDIR += gkrellmwireless
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
-    SUBDIR += globus4
     SUBDIR += gnet
     SUBDIR += gnet2
     SUBDIR += gnetcat
@@ -605,7 +604,6 @@
     SUBDIR += p5-POE-Component-Jabber
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-Spread
-    SUBDIR += p5-Parallel-MPI
     SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-PlRPC
     SUBDIR += p5-Queue-Beanstalk
@@ -644,7 +642,6 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-ZConf
     SUBDIR += p5-perl-ldap
-    SUBDIR += p54u
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
     SUBDIR += passlogd

@@ -145,7 +145,6 @@
     SUBDIR += lxdvdrip
     SUBDIR += mandvd
     SUBDIR += manencode
-    SUBDIR += manslide
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms

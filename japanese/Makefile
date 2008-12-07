@@ -61,7 +61,6 @@
     SUBDIR += emacs-manual
     SUBDIR += epic4
     SUBDIR += epwutil
-    SUBDIR += escpf
     SUBDIR += esecanna
     SUBDIR += esecanna-module-vje25
     SUBDIR += esecanna-module-vje30

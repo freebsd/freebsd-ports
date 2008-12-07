@@ -1251,7 +1251,6 @@
     SUBDIR += retawq
     SUBDIR += rnews
     SUBDIR += roundup
-    SUBDIR += roxen
     SUBDIR += rssowl
     SUBDIR += rsstail
     SUBDIR += rsstool
