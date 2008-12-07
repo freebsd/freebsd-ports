@@ -134,7 +134,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Debian reports:</p>
 	<blockquote
 	cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496403">
-	  <p>axspool in mgetty 1.1.36 allows local users to overwrite
+	  <p>Faxspool in mgetty 1.1.36 allows local users to overwrite
 	    arbitrary files via a symlink attack on a /tmp/faxsp.####
 	    temporary file.</p>
 	</blockquote>
