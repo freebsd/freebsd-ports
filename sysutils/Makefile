@@ -390,6 +390,7 @@
     SUBDIR += libgksu
     SUBDIR += libgksuui
     SUBDIR += libieee1284
+    SUBDIR += libisoburn
     SUBDIR += libretto-config
     SUBDIR += libutempter
     SUBDIR += lineak-defaultplugin
