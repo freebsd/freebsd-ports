@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyjamas
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 #PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	SF
@@ -36,14 +36,13 @@ do-install:
 	${RM} ${RM_OPTS} ${DATADIR}/doc
 .endif
 
+post-install:
+	${CHMOD} a+x ${DATADIR}/builder/build.py ${DATADIR}/pyjs/pyjs.py
 .if !defined(NOPORTEXAMPLES)
 	${MV} ${DATADIR}/examples ${EXAMPLESDIR}
+	${FIND} ${EXAMPLESDIR} -type f -name "*.sh" -print0 | ${XARGS} -0 ${CHMOD} a+x
 .else
 	${RM} ${RM_OPTS} ${DATADIR}/examples
 .endif
-
-post-install:
-	${FIND} ${EXAMPLESDIR} -type f -name "*.sh" -print0 | ${XARGS} -0 ${CHMOD} a+x
-	${CHMOD} a+x ${DATADIR}/builder/build.py ${DATADIR}/pyjs/pyjs.py
 
 .include <bsd.port.mk>
