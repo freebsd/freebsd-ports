@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_TagCloud
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	www devel pear
 
 MAINTAINER=	wenheping@gmail.com
