@@ -3670,3 +3670,12 @@ emulators/linux_dist-gentoo-stage2||2008-11-24|Removed
 mail/libspf-alt||2008-12-03|Removed
 devel/php5-pcre|lang/php5|2008-12-07|Integrated in base php
 portuguese/aspell|portuguese/aspell-pt_PT|2008-12-07|Repocopy finished for proper package naming
+x11-wm/flwm||2008-12-07|Has expired: Project is dead, and uses obsolete version of fltk
+x11-wm/kahakai||2008-12-07|Has expired: "Development ceased"
+palm/synce-gnomevfs||2008-12-07|Has expired: No longer supported by developers
+palm/synce-kde||2008-12-07|Has expired: No longer supported by developers
+palm/synce-multisync||2008-12-07|Has expired: No longer supported by developers
+shells/ksh93-devel||2008-12-07|Has expired: This port is Outdated.  Please use shells/ksh93
+sysutils/dtc-toaster||2008-12-07|Has expired: Has been broken for more than 6 months
+sysutils/dusage||2008-12-07|Has expired: Has been broken for more than 6 months
+games/linux-alienarena||2008-12-07|Has expired: Has been broken for more than 6 months
