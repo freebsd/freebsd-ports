@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/ \
 		http://chicken.wiki.br/releases/${PORTVERSION}/
@@ -47,5 +47,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/benchmarks
 	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

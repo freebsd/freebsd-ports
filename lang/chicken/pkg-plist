@@ -17,6 +17,7 @@ lib/libuchicken.so
 %%DATADIR%%/data-structures.exports
 %%DATADIR%%/eval.exports
 %%DATADIR%%/extras.exports
+%%DATADIR%%/files.exports
 %%DATADIR%%/library.exports
 %%DATADIR%%/lolevel.exports
 %%DATADIR%%/ports.exports
@@ -62,6 +63,7 @@ lib/libuchicken.so
 %%DATADIR%%/doc/html/unit-data-structures.html
 %%DATADIR%%/doc/html/unit-eval.html
 %%DATADIR%%/doc/html/unit-extras.html
+%%DATADIR%%/doc/html/unit-files.html
 %%DATADIR%%/doc/html/unit-library.html
 %%DATADIR%%/doc/html/unit-lolevel.html
 %%DATADIR%%/doc/html/unit-match.html
