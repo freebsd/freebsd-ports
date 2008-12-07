@@ -7800,19 +7800,6 @@
     { (exit 1); exit 1; }; }
    fi
  fi
-@@ -21369,10 +21612,10 @@ fi
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS=" /space/marcus/ports/libgtop/work/gnome-ltmain.sh"
-+LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) /space/marcus/ports/libgtop/work/gnome-libtool'
-+LIBTOOL='$(SHELL) $(top_builddir)/libtool'
- 
- # Prevent multiple expansion
- 
 @@ -21465,8 +21708,8 @@ fi
  
  
