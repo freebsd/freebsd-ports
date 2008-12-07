@@ -1,0 +1,8 @@
+===============================================================================
+Note that some chicken "eggs" require the environment variable TZ to be set in
+order to function properly.
+
+To set the timezone to Greenwich Mean Time in [t]csh, the command would be:
+
+> setenv TZ GMT
+===============================================================================
