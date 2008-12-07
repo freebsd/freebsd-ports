@@ -463,6 +463,7 @@
     SUBDIR += surf
     SUBDIR += tablix
     SUBDIR += taucs
+    SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += timbl
     SUBDIR += tomsfastmath
