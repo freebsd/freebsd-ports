@@ -4,8 +4,8 @@
     COMMENT = Portuguese language support
 
     SUBDIR += acroread8
-    SUBDIR += aspell
     SUBDIR += aspell-pt_BR
+    SUBDIR += aspell-pt_PT
     SUBDIR += irpf-pt_BR
     SUBDIR += ispell-pt_BR
     SUBDIR += kde3-i18n
