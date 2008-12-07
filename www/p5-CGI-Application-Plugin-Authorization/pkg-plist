@@ -1,0 +1,11 @@
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/DBI.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/Dummy.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/Generic.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/HTGroup.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver/SimpleGroup.pm
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authorization/Driver
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authorization
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application
