@@ -17744,9 +17744,10 @@ psutils-letter                  ports/print/psutils-letter
 psvn                            ports/devel/psvn
 psybnc                          ports/irc/psybnc
 pt-acroread8                    ports/portuguese/acroread8
-pt-aspell                       ports/portuguese/aspell
 pt-aspell-pt_BR                 ports/portuguese/aspell-pt_BR
 pt-aspell-pt_br                 ports/portuguese/aspell-pt_BR
+pt-aspell-pt_PT                 ports/portuguese/aspell-pt_PT
+pt-aspell-pt_pt                 ports/portuguese/aspell-pt_PT
 pt-irpf-pt_BR                   ports/portuguese/irpf-pt_BR
 pt-irpf-pt_br                   ports/portuguese/irpf-pt_BR
 pt-ispell-pt_BR                 ports/portuguese/ispell-pt_BR
