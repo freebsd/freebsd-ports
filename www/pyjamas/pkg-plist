@@ -1,6 +1,94 @@
 @comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/book/BookLoader.py
+%%PORTDOCS%%%%DOCSDIR%%/book/Bookreader.py
+%%PORTDOCS%%%%DOCSDIR%%/book/Chapter.py
+%%PORTDOCS%%%%DOCSDIR%%/book/Sink.py
+%%PORTDOCS%%%%DOCSDIR%%/book/SinkList.py
+%%PORTDOCS%%%%DOCSDIR%%/book/public/Bookreader.css
+%%PORTDOCS%%%%DOCSDIR%%/book/public/Bookreader.html
+%%PORTDOCS%%%%DOCSDIR%%/book/public/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/book/public/contents.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/getting_started.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/information.png
+%%PORTDOCS%%%%DOCSDIR%%/book/public/introduction.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/javascripting.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/rest_of_the_world.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/splitPanelThumb.png
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_contents.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_module.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_absolutepanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_button.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_buttonbase.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_cellformatter.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_cellpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_checkbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_clickdelegatepanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_complexpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_composite.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_deckpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_dialogbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_dockpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_dockpaneltmprow.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_event.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_eventobject.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_fileupload.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_flexcellformatter.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_flextable.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_flowpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_focus.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_focuslistener.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_focuspanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_focuswidget.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_formpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_formsubmitcompleteevent.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_formsubmitevent.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_frame.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_grid.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_hasalignment.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_hashorizontalalignment.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_hasverticalalignment.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_hidden.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_horizontalpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_html.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_htmlpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_htmltable.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_hyperlink.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_image.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_keyboardlistener.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_label.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_layoutdata.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_listbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_menubar.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_menubarpopuppanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_menuitem.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_mouselistener.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_namedframe.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_panel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_passwordtextbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_popuppanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_radiobutton.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_rootpanelcls.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_roottreeitem.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_rowformatter.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_scrollpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_simplepanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_stackpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_tabbar.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_tabpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_textarea.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_textbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_textboxbase.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_tree.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_treecontentpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_treeitem.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_uiobject.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_verticalpanel.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/ui_reference_widget.txt
+%%PORTDOCS%%%%DOCSDIR%%/book/public/writing_widgets.txt
 %%PORTDOCS%%%%DOCSDIR%%/gendocs.py
+%%PORTDOCS%%%%DOCSDIR%%/getting_started.html
 %%PORTDOCS%%%%DOCSDIR%%/img/UIClassHierarchy.png
 %%PORTDOCS%%%%DOCSDIR%%/img/num1.png
 %%PORTDOCS%%%%DOCSDIR%%/img/num2.png
@@ -89,6 +177,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/formpanel/FormPanelExample.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/formpanel/FormPanelExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/formpanel/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getattr/MainTest.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getattr/MainTest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getattr/build.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gridtest/GridTest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gridtest/GridTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gridtest/build.sh
@@ -97,6 +188,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/build.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/TestDict.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/TestRect.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/horribletest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/jsdicttest.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/jsrecttest.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/public/TestDict.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsobject/public/TestRect.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsonrpc/JSONRPCExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsonrpc/build.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsonrpc/public/JSONRPCExample.html
@@ -171,6 +270,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/public/rembrandt/rembrandt.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/ArgsTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/ClassTest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/ExceptionTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/LibTest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/LibTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libtest/ListTest.py
@@ -183,7 +283,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/AboutDialog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/Contacts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/Logger.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/Mail.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/Mail.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/MailDetail.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/MailItem.py
@@ -194,9 +293,106 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/Tasks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/TopPanel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/public/Mail.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/public/Mail.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onclicktest/OnClickTest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onclicktest/OnClickTest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/onclicktest/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/Sink.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/SinkList.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/Slide.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/SlideLoader.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/Slideshow.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/Slideshow.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/Slideshow.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/alternatives.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/compiler_tech.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/cool_stuff.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/demo_sites.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/demonstrations.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/documentation.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/dom_modelling.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/frameworks.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/future.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/hello_world.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/introduction.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/misconceptions.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/pygtk2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/pyjamas.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/pyqt4.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/python_kde.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/reverse_tech.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/slides.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/webkit.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/what_is_it.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/what_is_pyjd.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/what_is_pyjw.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/whats_in_it.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slideshow/public/xulrunner.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/.SplitPanel.py.swp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/SplitPanel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/public/SplitPanel.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/public/SplitPanel.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/public/images/hborder.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/splitpanel/public/splitPanelThumb.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/Tabs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/build.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/Tabs.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/Tabs.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top2_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top2_mid.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top2_middle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top2_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top_middle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/blue_arrow_top_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/bottom_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/bottom_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_bottomleft.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_bottomleft_black.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_bottomright.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_bottomright_black.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_edge.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_edge_black.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_topleft.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_topleft_black.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_topright.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/corner_dialog_topright_black.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/green_arrow_top_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/green_bubble_top_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/green_top_right copy.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/green_top_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_bottom_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_bottom_middle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_bottom_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_middle_left.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_middle_middle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/panel_middle_right.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/user_gray.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/user_green.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/user_orange.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/user_red.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/images/user_suit.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/JohannesElison.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/JohannesElison.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/LaMarcheNocturne.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/LaMarcheNocturne.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/SelfPortrait1628.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/SelfPortrait1628.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/SelfPortrait1640.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/SelfPortrait1640.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/TheArtistInHisStudio.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/TheArtistInHisStudio.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/TheReturnOfTheProdigalSon.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/TheReturnOfTheProdigalSon.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/back.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/forward.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt/rembrandt.css
+%%DATADIR%%/CHANGELOG
 %%DATADIR%%/COPYING
 %%DATADIR%%/CREDITS
 %%DATADIR%%/README
@@ -218,10 +414,18 @@
 %%DATADIR%%/addons/TemplatePanel.pyc
 %%DATADIR%%/addons/Tooltip.py
 %%DATADIR%%/addons/Tooltip.pyc
-%%DATADIR%%/addons/datetime.py
-%%DATADIR%%/addons/datetime.pyc
 %%DATADIR%%/builder/boilerplate/all.cache.html
 %%DATADIR%%/builder/boilerplate/app.html
+%%DATADIR%%/builder/boilerplate/corner_dialog_bottomleft.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_bottomleft_black.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_bottomright.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_bottomright_black.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_edge.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_edge_black.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_topleft.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_topleft_black.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_topright.png
+%%DATADIR%%/builder/boilerplate/corner_dialog_topright_black.png
 %%DATADIR%%/builder/boilerplate/history.html
 %%DATADIR%%/builder/boilerplate/home.nocache.html
 %%DATADIR%%/builder/boilerplate/index.html
@@ -231,6 +435,9 @@
 %%DATADIR%%/builder/boilerplate/tree_white.gif
 %%DATADIR%%/builder/build.py
 %%DATADIR%%/builder/build.pyc
+%%DATADIR%%/contrib/gtk_converter/README.txt
+%%DATADIR%%/contrib/gtk_converter/convert.glade
+%%DATADIR%%/contrib/gtk_converter/converter.py
 %%DATADIR%%/library/Cookies.py
 %%DATADIR%%/library/Cookies.pyc
 %%DATADIR%%/library/DOM.py
@@ -265,7 +472,10 @@
 %%DATADIR%%/library/builtins/math.pyc
 %%DATADIR%%/library/builtins/sets.py
 %%DATADIR%%/library/builtins/sets.pyc
-%%DATADIR%%/library/f
+%%DATADIR%%/library/datetime.py
+%%DATADIR%%/library/datetime.pyc
+%%DATADIR%%/library/decoratorpanel.py
+%%DATADIR%%/library/decoratorpanel.pyc
 %%DATADIR%%/library/gdk.py
 %%DATADIR%%/library/gdk.pyc
 %%DATADIR%%/library/gtk.py
@@ -310,15 +520,20 @@
 %%DATADIR%%/library/pyjamas/__init__.pyc
 %%DATADIR%%/library/pyjslib.py
 %%DATADIR%%/library/pyjslib.pyc
+%%DATADIR%%/library/splitpanel.py
+%%DATADIR%%/library/splitpanel.pyc
 %%DATADIR%%/library/sprintf.js
 %%DATADIR%%/library/tags
 %%DATADIR%%/library/ui.py
-%%DATADIR%%/library/ui.py.orig
 %%DATADIR%%/library/ui.pyc
+%%DATADIR%%/library/vertsplitpanel.py
+%%DATADIR%%/library/vertsplitpanel.pyc
 %%DATADIR%%/pyjs/pyjs.py
 %%DATADIR%%/pyjs/pyjs.pyc
 %%DATADIR%%/pyjs/tests/basics.py
 %%DATADIR%%/pyjs/tests/basics.pyc
+%%DATADIR%%/pyjs/tests/pyjamas.operator_precedence.test.py
+%%DATADIR%%/pyjs/tests/pyjamas.operator_precedence.test.pyc
 %%DATADIR%%/pyjs/tests/test-coverage.py
 %%DATADIR%%/pyjs/tests/test-coverage.pyc
 %%DATADIR%%/pyjs/tests/test-report.py
@@ -467,15 +682,32 @@
 @dirrm %%DATADIR%%/stubs
 @dirrm %%DATADIR%%/pyjs/tests
 @dirrm %%DATADIR%%/pyjs
+@dirrm %%DATADIR%%/pygtkweb/simplejson
+@dirrm %%DATADIR%%/pygtkweb/jsonrpc
+@dirrm %%DATADIR%%/pygtkweb/examples
+@dirrm %%DATADIR%%/pygtkweb/boilerplate
+@dirrm %%DATADIR%%/pygtkweb
 @dirrm %%DATADIR%%/library/pyjamas
 @dirrm %%DATADIR%%/library/platform
 @dirrm %%DATADIR%%/library/builtins
 @dirrm %%DATADIR%%/library
+@dirrm %%DATADIR%%/contrib/gtk_converter
+@dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/builder/boilerplate
 @dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%/addons
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabpanelwidget/public/rembrandt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabpanelwidget/public/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabpanelwidget/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tabpanelwidget
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/splitpanel/public/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/splitpanel/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/splitpanel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slideshow/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slideshow
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/onclicktest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mail/public
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mail
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/libtest
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/public/rembrandt
@@ -490,14 +722,18 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jsonrpc/public/services
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jsonrpc/public
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jsonrpc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jsobject/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jsobject
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/helloworld
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gridtest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/getattr
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/formpanel
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamictable/public/phpolait/jsolait/lib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamictable/public/phpolait/jsolait
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamictable/public/phpolait
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamictable/public
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamictable
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/controls/output
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/controls
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/browserdetect/platform
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/browserdetect
@@ -508,4 +744,16 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/showcase/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/showcase
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/book/public
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/book
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%/pygtkweb/simplejson
+@exec mkdir -p %D/%%DATADIR%%/pygtkweb/jsonrpc
+@exec mkdir -p %D/%%DATADIR%%/pygtkweb/examples
+@exec mkdir -p %D/%%DATADIR%%/pygtkweb/boilerplate
+@exec mkdir -p %D/share/pixmaps
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/controls/output
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/images
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/api
