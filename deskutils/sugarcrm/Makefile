@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	5.0.0g
+PORTVERSION=	5.1.0a
 CATEGORIES=	deskutils www
-MASTER_SITES=	http://dl.sugarforge.org/sugarcrm/SugarCE5.0Latest/SugarCE5.0.0/
+MASTER_SITES=	SF
+MASTER_SITES_SUBDIR=	sugarcrm
 DISTNAME=	SugarCE-${PORTVERSION}
 
 MAINTAINER=	nick@foobar.org
@@ -24,10 +25,10 @@ INSTFILES=	HandleAjaxCall.php SugarSecurity.php TreeData.php \
 		campaign_trackerv2.php cron.php dictionary.php download.php \
 		emailmandelivery.php export.php files.md5 image.php \
 		index.php install.php json.php json_server.php \
-		leadCapture.php log4php.properties log_file_restricted.html \
-		maintenance.php metagen.php pdf.php phprint.php removeme.php \
+		leadCapture.php log_file_restricted.html \
+		maintenance.php metagen.php pdf.php removeme.php \
 		soap.php sugar_version.php vCard.php vcal_server.php \
-		LICENSE.txt .htaccess
+		robots.txt LICENSE.txt .htaccess
 
 INSTDIRS=	ModuleInstall XTemplate cache custom data examples include \
 		install jscalendar jssource log4php metadata modules soap \
