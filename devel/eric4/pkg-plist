@@ -238,6 +238,58 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/Ui_E4ToolBarDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/E4Gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/Config.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/Config.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/DebuggerPropertiesHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/DebuggerPropertiesHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/DebuggerPropertiesWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/DebuggerPropertiesWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/MultiProjectHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/MultiProjectHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/MultiProjectWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/MultiProjectWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/PluginRepositoryHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/PluginRepositoryHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ProjectHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ProjectHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ProjectWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ProjectWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/SessionHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/SessionHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/SessionWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/SessionWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ShortcutsHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ShortcutsHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ShortcutsWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/ShortcutsWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TasksHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TasksHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TasksWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TasksWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TemplatesHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TemplatesHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TemplatesWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/TemplatesWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/Ui_XMLMessageDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/Ui_XMLMessageDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/UserProjectHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/UserProjectHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/UserProjectWriter.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/UserProjectWriter.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLEntityResolver.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLEntityResolver.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLErrorHandler.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLErrorHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLHandlerBase.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLHandlerBase.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLMessageDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLMessageDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLUtilities.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLUtilities.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLWriterBase.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/XMLWriterBase.pyc
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/__init__.py
+%%PYTHON_SITELIBDIR%%/eric4/E4XML/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Globals/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/Globals/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Graphics/ApplicationDiagram.py
@@ -1260,58 +1312,6 @@ bin/eric4-unittest
 %%PYTHON_SITELIBDIR%%/eric4/ViewManager/ViewManager.pyc
 %%PYTHON_SITELIBDIR%%/eric4/ViewManager/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/ViewManager/__init__.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/Config.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/Config.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/DebuggerPropertiesWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/MultiProjectWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/PluginRepositoryHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/PluginRepositoryHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/ProjectHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/ProjectHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/ProjectWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/ProjectWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/SessionHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/SessionHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/SessionWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/SessionWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/ShortcutsHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/ShortcutsHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/ShortcutsWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/ShortcutsWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/TasksHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/TasksHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/TasksWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/TasksWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/TemplatesHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/TemplatesHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/TemplatesWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/TemplatesWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/Ui_XMLMessageDialog.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/Ui_XMLMessageDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/UserProjectHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/UserProjectHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/UserProjectWriter.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/UserProjectWriter.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLEntityResolver.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLEntityResolver.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLErrorHandler.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLErrorHandler.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLHandlerBase.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLHandlerBase.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLMessageDialog.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLMessageDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLUtilities.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLUtilities.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLWriterBase.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/XMLWriterBase.pyc
-%%PYTHON_SITELIBDIR%%/eric4/XML/__init__.py
-%%PYTHON_SITELIBDIR%%/eric4/XML/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/__init__.py
 %%PYTHON_SITELIBDIR%%/eric4/__init__.pyc
 %%PYTHON_SITELIBDIR%%/eric4/default.e4k
@@ -1736,6 +1736,30 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.E4Gui.E4TabWidget.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarDialog.html
 %%DOCSDIR%%/Source/eric4.E4Gui.E4ToolBarManager.html
+%%DOCSDIR%%/Source/eric4.E4XML.Config.html
+%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.DebuggerPropertiesWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.MultiProjectWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.PluginRepositoryHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.ProjectHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.ProjectWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.SessionHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.SessionWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.ShortcutsWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.TasksHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.TasksWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.TemplatesHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.TemplatesWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.UserProjectHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.UserProjectWriter.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLEntityResolver.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLErrorHandler.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLHandlerBase.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLMessageDialog.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLUtilities.html
+%%DOCSDIR%%/Source/eric4.E4XML.XMLWriterBase.html
 %%DOCSDIR%%/Source/eric4.Graphics.ApplicationDiagram.html
 %%DOCSDIR%%/Source/eric4.Graphics.AssociationItem.html
 %%DOCSDIR%%/Source/eric4.Graphics.ClassItem.html
@@ -2050,30 +2074,6 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/eric4.ViewManager.BookmarkedFilesDialog.html
 %%DOCSDIR%%/Source/eric4.ViewManager.ViewManager.html
 %%DOCSDIR%%/Source/eric4.ViewManager.__init__.html
-%%DOCSDIR%%/Source/eric4.XML.Config.html
-%%DOCSDIR%%/Source/eric4.XML.DebuggerPropertiesHandler.html
-%%DOCSDIR%%/Source/eric4.XML.DebuggerPropertiesWriter.html
-%%DOCSDIR%%/Source/eric4.XML.MultiProjectHandler.html
-%%DOCSDIR%%/Source/eric4.XML.MultiProjectWriter.html
-%%DOCSDIR%%/Source/eric4.XML.PluginRepositoryHandler.html
-%%DOCSDIR%%/Source/eric4.XML.ProjectHandler.html
-%%DOCSDIR%%/Source/eric4.XML.ProjectWriter.html
-%%DOCSDIR%%/Source/eric4.XML.SessionHandler.html
-%%DOCSDIR%%/Source/eric4.XML.SessionWriter.html
-%%DOCSDIR%%/Source/eric4.XML.ShortcutsHandler.html
-%%DOCSDIR%%/Source/eric4.XML.ShortcutsWriter.html
-%%DOCSDIR%%/Source/eric4.XML.TasksHandler.html
-%%DOCSDIR%%/Source/eric4.XML.TasksWriter.html
-%%DOCSDIR%%/Source/eric4.XML.TemplatesHandler.html
-%%DOCSDIR%%/Source/eric4.XML.TemplatesWriter.html
-%%DOCSDIR%%/Source/eric4.XML.UserProjectHandler.html
-%%DOCSDIR%%/Source/eric4.XML.UserProjectWriter.html
-%%DOCSDIR%%/Source/eric4.XML.XMLEntityResolver.html
-%%DOCSDIR%%/Source/eric4.XML.XMLErrorHandler.html
-%%DOCSDIR%%/Source/eric4.XML.XMLHandlerBase.html
-%%DOCSDIR%%/Source/eric4.XML.XMLMessageDialog.html
-%%DOCSDIR%%/Source/eric4.XML.XMLUtilities.html
-%%DOCSDIR%%/Source/eric4.XML.XMLWriterBase.html
 %%DOCSDIR%%/Source/eric4.eric4-api.html
 %%DOCSDIR%%/Source/eric4.eric4-compare.html
 %%DOCSDIR%%/Source/eric4.eric4-configure.html
@@ -2106,6 +2106,7 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/index-eric4.DocumentationTools.html
 %%DOCSDIR%%/Source/index-eric4.E4Graphics.html
 %%DOCSDIR%%/Source/index-eric4.E4Gui.html
+%%DOCSDIR%%/Source/index-eric4.E4XML.html
 %%DOCSDIR%%/Source/index-eric4.Globals.html
 %%DOCSDIR%%/Source/index-eric4.Graphics.html
 %%DOCSDIR%%/Source/index-eric4.Helpviewer.html
@@ -2154,7 +2155,6 @@ bin/eric4-unittest
 %%DOCSDIR%%/Source/index-eric4.Utilities.html
 %%DOCSDIR%%/Source/index-eric4.VCS.html
 %%DOCSDIR%%/Source/index-eric4.ViewManager.html
-%%DOCSDIR%%/Source/index-eric4.XML.html
 %%DOCSDIR%%/Source/index-eric4.html
 %%DOCSDIR%%/Source/index.html
 %%DOCSDIR%%/THANKS
@@ -2185,7 +2185,6 @@ share/qt4/qsci/api/ruby/eric4.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons/default
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/icons
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/eric4/XML
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/ViewManager
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/VCS
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Utilities/ClassBrowsers
@@ -2237,6 +2236,7 @@ share/qt4/qsci/api/ruby/eric4.api
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Helpviewer
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Graphics
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/Globals
+@dirrm %%PYTHON_SITELIBDIR%%/eric4/E4XML
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/E4Gui
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/E4Graphics
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/DocumentationTools
