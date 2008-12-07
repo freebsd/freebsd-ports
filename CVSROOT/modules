@@ -5080,6 +5080,7 @@ hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
+hs-utf8-string                  ports/textproc/hs-utf8-string
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
 hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
@@ -6735,6 +6736,7 @@ ktextdecode                     ports/converters/ktextdecode
 ktoblzcheck                     ports/finance/ktoblzcheck
 ktorrent                        ports/net-p2p/ktorrent
 ktorrent-devel                  ports/net-p2p/ktorrent-devel
+ktorrent2                       ports/net-p2p/ktorrent2
 ktrack                          ports/comms/ktrack
 ktritoc                         ports/games/ktritoc
 ku-aspell                       ports/textproc/ku-aspell
@@ -7497,6 +7499,7 @@ libwps                          ports/textproc/libwps
 libwww                          ports/www/libwww
 libx11                          ports/x11/libX11
 libx3dtk                        ports/graphics/libx3dtk
+libx86                          ports/devel/libx86
 libxalloc                       ports/devel/libxalloc
 libxau                          ports/x11/libXau
 libxaw                          ports/x11-toolkits/libXaw
@@ -9574,6 +9577,7 @@ oracle7-client                  ports/databases/oracle7-client
 oracle8-client                  ports/databases/oracle8-client
 oracle_odbc_driver              ports/databases/oracle_odbc_driver
 orage                           ports/deskutils/orage
+orangehrm                       ports/www/orangehrm
 orbit                           ports/devel/ORBit
 orbit2                          ports/devel/ORBit2
 orbit2-reference                ports/devel/ORBit2-reference
@@ -18131,6 +18135,7 @@ py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
 py-numeric17                    ports/math/py-numeric17
 py-numpy                        ports/math/py-numpy
+py-oauth                        ports/net/py-oauth
 py-ocempgui                     ports/devel/py-ocempgui
 py-ode                          ports/devel/py-ode
 py-odfpy                        ports/devel/py-odfpy
@@ -18450,6 +18455,7 @@ py-yapsnmp                      ports/net-mgmt/py-yapsnmp
 py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
 py-zconfig                      ports/devel/py-zconfig
+py-zdaemon                      ports/sysutils/py-zdaemon
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeinterface                ports/devel/py-zopeInterface
 py-zopeproxy                    ports/net/py-zopeproxy
@@ -21540,6 +21546,7 @@ vavoom                          ports/games/vavoom
 vavoom-extras                   ports/games/vavoom-extras
 vb2c                            ports/devel/vb2c
 vba                             ports/emulators/vba
+vbetool                         ports/sysutils/vbetool
 vbidecode                       ports/misc/vbidecode
 vbindiff                        ports/textproc/vbindiff
 vbsfilter                       ports/mail/vbsfilter
@@ -23023,6 +23030,7 @@ xvile                           ports/editors/xvile
 xvinfo                          ports/x11/xvinfo
 xvkbd                           ports/x11/xvkbd
 xvmahjongg                      ports/games/xvmahjongg
+xvmcinfo                        ports/x11/xvmcinfo
 xvmines                         ports/games/xvmines
 xvmixer                         ports/audio/xvmixer
 xwatchwin                       ports/x11/xwatchwin
