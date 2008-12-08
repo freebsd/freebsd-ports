@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blinkensisters
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -43,16 +43,18 @@ PLIST_SUB+=	ADDONS="@comment "
 
 .if defined(WITHOUT_SDL_MIXER)
 CMAKE_ARGS+=	-DUSE_SDL_MIXER:BOOL=OFF
-PLIST_SUB+=	BLINKENPLAYER="@comment "
+PLIST_SUB+=	SDL_MIXER="@comment "
 .else
 USE_SDL+=	mixer
-PLIST_SUB+=	BLINKENPLAYER=""
+PLIST_SUB+=	SDL_MIXER=""
 .endif
 
 .if defined(WITHOUT_SDL_NET)
 CMAKE_ARGS+=	-DUSE_SDL_NET:BOOL=OFF
+PLIST_SUB+=	SDL_NET="@comment "
 .else
 USE_SDL+=	net
+PLIST_SUB+=	SDL_NET=""
 .endif
 
 .if defined(WITH_THEORA)
