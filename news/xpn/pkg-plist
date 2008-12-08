@@ -7,6 +7,7 @@ bin/xpn
 %%DATADIR%%/lang/xpn.pot
 %%DATADIR%%/pixmaps/about.xpm
 %%DATADIR%%/pixmaps/art_body.xpm
+%%DATADIR%%/pixmaps/art_delete.xpm
 %%DATADIR%%/pixmaps/art_fup.xpm
 %%DATADIR%%/pixmaps/art_ignore.xpm
 %%DATADIR%%/pixmaps/art_keep.xpm
@@ -101,10 +102,12 @@ bin/xpn
 %%DATADIR%%/xpn.py
 %%DATADIR%%/xpn_src/Article.py
 %%DATADIR%%/xpn_src/Article_Pane.py
+%%DATADIR%%/xpn_src/Articles_DB.py
 %%DATADIR%%/xpn_src/Charset_List.py
 %%DATADIR%%/xpn_src/Config_File.py
 %%DATADIR%%/xpn_src/Config_Win.py
 %%DATADIR%%/xpn_src/Connections_Handler.py
+%%DATADIR%%/xpn_src/Custom_Search_Entry.py
 %%DATADIR%%/xpn_src/Dialogs.py
 %%DATADIR%%/xpn_src/Edit_Mail_Win.py
 %%DATADIR%%/xpn_src/Edit_Win.py
@@ -128,13 +131,13 @@ bin/xpn
 %%DATADIR%%/xpn_src/add_tag.py
 %%DATADIR%%/xpn_src/nntplib_ssl.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/de
-@dirrm %%DATADIR%%/lang/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/fr
+@dirrm %%DATADIR%%/xpn_src
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/lang/it/LC_MESSAGES
 @dirrm %%DATADIR%%/lang/it
+@dirrm %%DATADIR%%/lang/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/fr
+@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/de
 @dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/xpn_src
 @dirrm %%DATADIR%%
