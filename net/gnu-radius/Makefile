@@ -117,6 +117,7 @@ CONFIGURE_ARGS+=--enable-pam
 post-patch:
 	${REINPLACE_CMD} -e 's|extern unsigned scheme_gc_interval;||g' \
 		${WRKSRC}/include/radiusd.h
+	${REINPLACE_CMD} -e '50s|^int|ssize_t|' ${WRKSRC}/radtest/input.l
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
