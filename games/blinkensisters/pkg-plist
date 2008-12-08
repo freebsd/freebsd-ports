@@ -1,7 +1,11 @@
-%%BLINKENPLAYER%%bin/BlinkenPlayer
+%%SDL_MIXER%%bin/BlinkenPlayer
 bin/LostPixels
+%%SDL_NET%%bin/blpmatrix
+%%SDL_NET%%bin/blpviewer
 bin/bmfcompress
 bin/bmfdecompress
+%%SDL_NET%%bin/bxxviewer
+%%SDL_NET%%bin/mcufviewer
 %%DATADIR%%/Gaposis Outline (BRK).ttf
 %%DATADIR%%/Gas Huffer Phat.ttf
 %%DATADIR%%/Georgia.ttf
@@ -9,6 +13,7 @@ bin/bmfdecompress
 %%DATADIR%%/basedata.bmf
 %%DATADIR%%/splash.jpg
 %%ADDONS%%%%DATADIR%%/24c3.bmf
+%%ADDONS%%%%DATADIR%%/icy.bmf
 %%ADDONS%%%%DATADIR%%/mz_escape.bmf
 %%ADDONS%%%%DATADIR%%/mz_moviepack.bmf
 %%ADDONS%%%%DATADIR%%/mz_pnog.bmf
