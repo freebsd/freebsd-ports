@@ -13,4 +13,5 @@ share/locale/uk/LC_MESSAGES/wxMaxima.mo
 %%DATADIR%%/README
 %%DATADIR%%/tips.txt
 %%DATADIR%%/wxmathml.lisp
+%%DATADIR%%/wxmaxima.png
 @dirrm %%DATADIR%%
