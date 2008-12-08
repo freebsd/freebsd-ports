@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/server/binaries
 DISTNAME=	${PORTNAME}-binary-${PORTVERSION}
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
 USE_JAVA=	yes

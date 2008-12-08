@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}0_4preview1
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A spline based 3D modeling tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_TOMCAT}
 MASTER_SITE_SUBDIR=	tomcat-4/v${PORTVERSION}/bin
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
 USE_JAVA=	yes

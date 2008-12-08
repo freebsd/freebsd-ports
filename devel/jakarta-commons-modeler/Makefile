@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mechanisms to create Model MBeans compatible with JMX specification
 
 USE_JAVA=	yes

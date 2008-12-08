@@ -14,7 +14,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servle
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Servlet API
 
 USE_JAVA=	yes

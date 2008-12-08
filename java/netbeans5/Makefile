@@ -13,7 +13,7 @@ MASTER_SITES=	http://dlc.sun.com/netbeans/download/5_0/fcs/200601251500/ \
 		http://us1.mirror.netbeans.org/download/5_0/fcs/200601251500/
 DISTNAME=	netbeans-5_0
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open-source IDE for Java
 
 USE_BZIP2=	yes

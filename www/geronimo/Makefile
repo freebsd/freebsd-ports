@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee5-${PORTVERSION}-bin
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
 
 USE_JAVA=	yes
