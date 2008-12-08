@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	2.5.5
-PORTREVISION=	2
+PORTVERSION=	2.5.7
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -20,8 +19,8 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 
 USE_APACHE=	2.0+
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 AP_GENPLIST=	yes
-AP_EXTRAS+=	-DWITH_LIBXML2
 AP_INC=	${LOCALBASE}/include/libxml2
 AP_LIB=	${LOCALBASE}/lib
 USE_GNOME=	libxml2
@@ -35,11 +34,16 @@ DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 SUB_FILES+=	mod_security2.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
 PLIST_FILES+=	${APACHEMODDIR}/mod_security2.so
-OPTIONS=	LUA "Embedded Lua language support (EXPERIMENTAL)" off
+OPTIONS=	LUA "Embedded Lua language support" off \
+		MLOGC "Build ModSecurity Log Collector" off
+
+.include <bsd.port.pre.mk>
 
 .if !defined(SKIP_RULES)
 SUB_FILES+=	pkg-message.rules
-
+.if defined(WITH_MLOGC)
+PLIST_FILES+=	${PREFIX}/bin/mlogc
+.endif
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
 
@@ -72,8 +76,14 @@ LIB_DEPENDS+=	lua.1:${PORTSDIR}/lang/lua
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
-
+.if defined(WITH_MLOGC)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-curl
+.endif
 REINPLACE_ARGS=	-i ""
+AP_EXTRAS+=	-DWITH_LIBXML2
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -86,10 +96,19 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LUA_VER%%|${LUA_VER}|' ${WRKSRC}/configure
 .endif
 
+post-build:
+.if defined(WITH_MLOGC)
+	# XXX there is "mlogc-static" target in the Makefile, too
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} mlogc
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRCTOP} && ${COPYTREE_SHARE} "doc rules" ${DOCSDIR}/)
+.endif
+.if defined(WITH_MLOGC)
+	${INSTALL_PROGRAM} ${WRKSRC}/mlogc-src/mlogc ${PREFIX}/bin/
 .endif
 .if !defined(SKIP_RULES)
 	@${INSTALL_DATA} ${WRKDIR}/mod_security2.conf ${PREFIX}/${APACHEETCDIR}/Includes/
@@ -97,4 +116,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
