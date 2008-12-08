@@ -13,7 +13,7 @@ MASTER_SITES=	# disappeared
 DISTNAME=	non-cjk
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 supplemental fonts
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
