@@ -2076,7 +2076,6 @@
     SUBDIR += php5-ice
     SUBDIR += php5-ncurses
     SUBDIR += php5-pcntl
-    SUBDIR += php5-pcre
     SUBDIR += php5-phing
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
