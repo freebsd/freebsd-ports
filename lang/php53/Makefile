@@ -16,6 +16,8 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PHP Scripting Language
 
+IGNORE=		should not be used, PHP 5.2.8 will be released soon
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
