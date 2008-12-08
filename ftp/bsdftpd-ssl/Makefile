@@ -9,7 +9,7 @@ PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.1/src/
+MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/
 DISTNAME=	bsdftpd-ssl-${PORTVERSION}
 
 MAINTAINER=	skynick@mail.sc.ru
