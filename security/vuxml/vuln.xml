@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f9e2376-c52f-11dd-8cbc-00163e000016">
+    <topic>php5 -- potential magic_quotes_gpc vulnerability</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP Developers reports:</p>
+	<blockquote cite="http://www.php.net/archive/2008.php#id2008-12-07-1">
+	  <p>Due to a security bug found in the PHP 5.2.7 release, it has been
+	    removed from distribution. The bug affects configurations where
+	    magic_quotes_gpc is enabled, because it remains off even when set to
+	    on.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/archive/2008.php#id2008-12-07-1</url>
+    </references>
+    <dates>
+      <discovery>2008-12-07</discovery>
+      <entry>2008-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="baece347-c489-11dd-a721-0030843d3802">
     <topic>wireshark -- SMTP Processing Denial of Service Vulnerability</topic>
     <affects>
