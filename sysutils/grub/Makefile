@@ -14,11 +14,10 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
-BROKEN=		does not package
-
 USE_AUTOTOOLS=	automake:19 autoconf:262
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-freebsd-freebsd${OSREL}
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/share
 ONLY_FOR_ARCHS=		i386
 
