@@ -6,7 +6,10 @@
 %%RUBY_SITELIBDIR%%/libxml/error.rb
 %%RUBY_SITELIBDIR%%/libxml/hpricot.rb
 %%RUBY_SITELIBDIR%%/libxml/html_parser.rb
+%%RUBY_SITELIBDIR%%/libxml/namespace.rb
+%%RUBY_SITELIBDIR%%/libxml/namespaces.rb
 %%RUBY_SITELIBDIR%%/libxml/node.rb
+%%RUBY_SITELIBDIR%%/libxml/ns.rb
 %%RUBY_SITELIBDIR%%/libxml/parser.rb
 %%RUBY_SITELIBDIR%%/libxml/parser_context.rb
 %%RUBY_SITELIBDIR%%/libxml/parser_options.rb
