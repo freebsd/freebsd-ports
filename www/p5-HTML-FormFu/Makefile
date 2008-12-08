@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.03005
-PORTREVISION=	1
+PORTVERSION=	0.03006
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -152,6 +151,12 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Element::_MultiElement.3 \
 	HTML::FormFu::Element::_MultiText.3 \
 	HTML::FormFu::Element::_MultiSelect.3 \
-	HTML::FormFu::Element::ComboBox.3
+	HTML::FormFu::Element::ComboBox.3 \
+	HTML::FormFu::Constraint::MinRange.3 \
+	HTML::FormFu::MultiForm.3 \
+	HTML::FormFu::Element::DateTime.3 \
+	HTML::FormFu::Constraint::MaxRange.3 \
+	HTML::FormFu::Constraint::File::MinSize.3 \
+	HTML::FormFu::Constraint::File::MaxSize.3
 
 .include <bsd.port.mk>

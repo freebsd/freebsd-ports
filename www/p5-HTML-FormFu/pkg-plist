@@ -29,8 +29,12 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/_others.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Set.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/MinRange.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/MaxRange.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/Size.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/MIME.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/File/MaxSize.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/File/MinSize.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/Strftime.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/CompoundDateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/CompoundDateTime.pm
@@ -49,6 +53,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Submit.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Hidden.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Date.pm
+%%SITE_PERL%%/HTML/FormFu/Element/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Image.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Radiogroup.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Select.pm
@@ -97,6 +102,9 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/I18N/da.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/fr.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/it.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/ru.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/ua.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/ro.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Manual/Cookbook.pod
 %%SITE_PERL%%/HTML/FormFu/Manual/Unicode.pod
@@ -126,6 +134,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Upload.pm
 %%SITE_PERL%%/HTML/FormFu/UploadParam.pm
 %%SITE_PERL%%/HTML/FormFu/Model.pm
+%%SITE_PERL%%/HTML/FormFu/MultiForm.pm
 %%SITE_PERL%%/HTML/FormFu/Localize.pm
 %%SITE_PERL%%/HTML/FormFu/FakeQuery.pm
 %%SITE_PERL%%/HTML/FormFu/Util.pm
