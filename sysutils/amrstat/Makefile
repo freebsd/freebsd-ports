@@ -8,7 +8,7 @@
 PORTNAME=	amrstat
 PORTVERSION=	20070216
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~jkim/
+MASTER_SITES=	http://people.freebsd.org/~jkim/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org

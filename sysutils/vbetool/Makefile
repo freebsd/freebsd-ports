@@ -8,7 +8,8 @@
 PORTNAME=	vbetool
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/
+MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
+		http://people.freebsd.org/~jkim/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
