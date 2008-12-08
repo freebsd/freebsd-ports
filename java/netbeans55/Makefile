@@ -12,7 +12,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/download/5_5_1/fcs/200704122300/
 DISTNAME=	netbeans-5_5_1
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open-source IDE for Java
 
 USE_BZIP2=	yes

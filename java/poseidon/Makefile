@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://88.198.45.102/ \
 		http://88.198.45.102:81/
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes

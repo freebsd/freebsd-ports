@@ -12,7 +12,7 @@ CATEGORIES=	graphics java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	nemoliu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Java written 3D modelling and rendering studio
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
