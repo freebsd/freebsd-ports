@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.7
+PORTVERSION=	5.2.8
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -16,15 +16,14 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PHP Scripting Language
 
-IGNORE=		should not be used, PHP 5.2.8 will be released soon
-
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf:262
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+# use bundled pcre while apache2 does the same
+#LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	\
 		--disable-all \
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
-		--with-pcre-regex=${LOCALBASE} \
+		--with-pcre-regex=yes \
 		--enable-reflection \
 		--program-prefix=""
 
@@ -60,7 +59,8 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.3.patch.gz:suhosin
+#PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.3.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-5.2.7-0.9.6.3.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
