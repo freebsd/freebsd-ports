@@ -65,13 +65,14 @@ lib/libgnuradius.a
 lib/libgnuradius.so
 lib/libgnuradius.la
 lib/libgnuradius.so.0
-%%GUILE%%bin/radsession
-%%GUILE%%lib/libguile-gnuradius-v-1.5.so
-%%GUILE%%lib/libradscm.a
-%%GUILE%%lib/libradscm.la
-%%GUILE%%lib/libradscm.so
-%%GUILE%%lib/libradscm.so.1
-%%GUILE%%lib/libservscm.a
+share/aclocal/radius.m4
+%%CLIENT%%bin/radsession
+%%CLIENT%%lib/libguile-gnuradius-v-%%PORTVERSION%%.so
+%%CLIENT%%lib/libradscm.a
+%%CLIENT%%lib/libradscm.la
+%%CLIENT%%lib/libradscm.so
+%%CLIENT%%lib/libradscm.so.1
+%%CLIENT%%lib/libservscm.a
 %%CLIENT%%lib/security/pam_radius.a
 %%CLIENT%%lib/security/pam_radius.la
 %%CLIENT%%lib/security/pam_radius.so
@@ -81,48 +82,50 @@ lib/libgnuradius.so.0
 %%NLS%%share/locale/fr/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/radius.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/radius.mo
+@comment %%NLS%%share/locale/rw/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/radius.mo
-%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/gnuradius.scm
-%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/ipalloc.scm
-%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/radiusd.scm
-%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/ttl.scm
-%%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/guile-procedures.txt
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/gnuradius.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/ipalloc.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/radiusd.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/ttl.scm
+%%CLIENT%%%%DATADIR%%/%%PORTVERSION%%/scheme/guile-procedures.txt
 %%DATADIR%%/%%PORTVERSION%%/rewrite/checknas.rw
 %%DATADIR%%/%%PORTVERSION%%/rewrite/log-hook.rw
 %%DATADIR%%/%%PORTVERSION%%/rewrite/nas-ip.rw
-%%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.a
-%%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.la
-%%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.so
-%%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.a
-%%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.la
-%%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.so
+%%MYSQL%%lib/radius/%%PORTVERSION%%/modules/mysql.a
+%%MYSQL%%lib/radius/%%PORTVERSION%%/modules/mysql.la
+%%MYSQL%%lib/radius/%%PORTVERSION%%/modules/mysql.so
+%%PGSQL%%lib/radius/%%PORTVERSION%%/modules/postgres.a
+%%PGSQL%%lib/radius/%%PORTVERSION%%/modules/postgres.la
+%%PGSQL%%lib/radius/%%PORTVERSION%%/modules/postgres.so
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/radconf-mode.el
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/radius-mode.el
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/rewrite-mode.el
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ascend.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/c3620.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/cisco.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/comos.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.syntax
-%%PORTDOCS%%%%EXAMPLESDIR%%/filter.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/hints-0.96
-%%PORTDOCS%%%%EXAMPLESDIR%%/jetstream.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/nt.rw
-%%PORTDOCS%%%%EXAMPLESDIR%%/pam.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/radius.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascend.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c3620.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cisco.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comos.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.syntax
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hints-0.96
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jetstream.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nt.rw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pam.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius.php
 @dirrm etc/raddb/dict
 @dirrmtry etc/raddb
 @dirrm include/radius
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scheme
 @dirrm %%DATADIR%%/%%PORTVERSION%%/rewrite
-@dirrm %%DATADIR%%/%%PORTVERSION%%/modules
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@dirrmtry lib/security
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%MODULES%%@dirrm lib/radius/%%PORTVERSION%%/modules
+%%MODULES%%@dirrm lib/radius/%%PORTVERSION%%
+%%MODULES%%@dirrm lib/radius
+@dirrm lib/security
 @unexec rm -f %B/run/radiusd.pid
 @unexec rm -rf %B/log/radius 2>&1 >/dev/null || true
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."

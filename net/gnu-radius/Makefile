@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
@@ -43,9 +42,8 @@ OPTIONS=	CLIENT "Enable build client" off \
 		MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		SNMP "Enable SNMP support" off \
-		NOTIFY "Enable TTL notification" off \
 		EMACS "Enable emacs dotfiles install" off \
-		NLS	"Enable gettext support" on
+		PAM "Enable PAM support" off
 
 CONFIG_FILES=	access.deny client.conf clients config dictionary \
 		hints huntgroups naslist nastypes realms \
@@ -56,24 +54,21 @@ EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-CONFIGURE_ARGS+=	--enable-snmp
+CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 .if defined(WITH_CLIENT)
-CONFIGURE_ARGS+=	--enable-client
-WITH_GUILE=	yes
-BUILD_DEPENDS+=	guile:${PORTSDIR}/lang/guile
-PLIST_SUB+=	GUILE=""
+LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
+CONFIGURE_ARGS+=--enable-client
 PLIST_SUB+=	CLIENT=""
 .else
-CONFIGURE_ARGS+=	--without-guile
-PLIST_SUB+=	GUILE="@comment "
+CONFIGURE_ARGS+=--without-guile
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=--with-mysql
 PLIST_SUB+=	MYSQL=""
 .else
 PLIST_SUB+=	MYSQL="@comment "
@@ -81,43 +76,42 @@ PLIST_SUB+=	MYSQL="@comment "
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-postgres
-INCLUDE_PATH+=	${LOCALBASE}/include/pgsql/
+CONFIGURE_ARGS+=--with-postgres
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_DBM)
-CONFIGURE_ARGS+=	--enable-dbm=ndbm
-PLIST_SUB+=	DBM=""
+.if defined(WITH_MYSQL) || defined(WITH_POSTGRESQL)
+PLIST_SUB+=	MODULES=""
 .else
-PLIST_SUB+=	DBM="@comment "
+PLIST_SUB+=	MODULES="@comment "
 .endif
 
-.if defined(WITH_NOTIFY)
-CONFIGURE_ARGS+=	--enable-notify
+.if defined(WITH_DBM)
+CONFIGURE_ARGS+=--enable-dbm=ndbm
 .endif
 
 .if defined(WITH_EMACS)
-USE_EMACS=	yes
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
-CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
+USE_EMACS=	yes
+CONFIGURE_ARGS+=--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	EMACS=""
 .else
-CONFIGURE_ARGS+=	--without-lispdir
+CONFIGURE_ARGS+=--without-lispdir
 PLIST_SUB+=	EMACS="@comment "
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nl
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=--enable-pam
 .endif
 
 post-patch:
@@ -126,7 +120,7 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 . for ex_file in ${EXAMPLE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex_file} ${EXAMPLESDIR}
