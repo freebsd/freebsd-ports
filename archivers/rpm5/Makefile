@@ -21,8 +21,7 @@ LIB_DEPENDS=	db-4.5:${PORTSDIR}/databases/db45 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
 		pcre.0:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed \
-		perl:${PORTSDIR}/lang/perl5.8
+BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
@@ -36,6 +35,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_PERL5_BUILD=5.8.0+
 LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
 
