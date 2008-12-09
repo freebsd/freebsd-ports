@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	apache-tomcat
-PORTVERSION=	6.0.16
+PORTVERSION=	6.0.18
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 6.x branch
 
 USE_JAVA=	yes
