@@ -59,11 +59,9 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
-.else
-WITHOUT_ZAPTEL=	yes
 .endif
 
-.if defined(WITHOUT_H323)
+.if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
 CONFIGURE_ARGS+= --without-h323
 .else
@@ -73,7 +71,7 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
-.if defined(WITHOUT_ZAPTEL)
+.if !defined(WITH_ZAPTEL)
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 CONFIGURE_ARGS+= --without-zaptel
 .else
@@ -88,7 +86,7 @@ RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 #
 # WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
 # similarly
-.if defined(WITHOUT_ODBC)
+.if !defined(WITH_ODBC)
 PLIST_SUB+=	WITH_ODBC="@comment "
 CONFIGURE_ARGS+= --without-odbc
 .else
@@ -98,7 +96,7 @@ LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC \
 		ltdl.4:${PORTSDIR}/devel/libltdl15
 .endif
 
-.if defined(WITHOUT_FREETDS)
+.if !defined(WITH_FREETDS)
 PLIST_SUB+=	WITH_FREETDS="@comment "
 CONFIGURE_ARGS+= --without-tds
 .else
@@ -107,7 +105,7 @@ CONFIGURE_ARGS+= --with-tds=${LOCALBASE}
 LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
 .endif
 
-.if defined(WITHOUT_POSTGRES)
+.if !defined(WITH_POSTGRES)
 PLIST_SUB+=	WITH_POSTGRES="@comment "
 CONFIGURE_ARGS+= --without-postgres
 .else
@@ -116,7 +114,7 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+= --with-postgres
 .endif
 
-.if defined(WITHOUT_OGGVORBIS)
+.if !defined(WITH_OGGVORBIS)
 PLIST_SUB+=	WITH_OGGVORBIS="@comment "
 CONFIGURE_ARGS+= --without-ogg
 .else
@@ -125,7 +123,7 @@ CONFIGURE_ARGS+= --with-ogg
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITHOUT_RADIUS)
+.if !defined(WITH_RADIUS)
 PLIST_SUB+=	WITH_RADIUS="@comment "
 CONFIGURE_ARGS+= --without-radius
 .else
@@ -134,7 +132,7 @@ CONFIGURE_ARGS+= --with-radius
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 .endif
 
-.if defined(WITHOUT_SNMP)
+.if !defined(WITH_SNMP)
 PLIST_SUB+=	WITH_SNMP="@comment "
 CONFIGURE_ARGS+= --without-netsnmp
 .else
@@ -143,7 +141,7 @@ CONFIGURE_ARGS+= --with-netsnmp
 LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-.if defined(WITHOUT_JABBER)
+.if !defined(WITH_JABBER)
 PLIST_SUB+=	WITH_JABBER="@comment "
 CONFIGURE_ARGS+= --without-iksemel
 .else
@@ -152,7 +150,7 @@ CONFIGURE_ARGS+= --with-iksemel
 LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
 .endif
 
-.if defined(WITHOUT_SQLITE)
+.if !defined(WITH_SQLITE)
 PLIST_SUB+=	WITH_SQLITE="@comment "
 CONFIGURE_ARGS+=	--without-sqlite
 .else
@@ -161,7 +159,7 @@ CONFIGURE_ARGS+= --with-sqlite
 LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
-.if defined(WITHOUT_ILBC)
+.if !defined(WITH_ILBC)
 PLIST_SUB+=	WITH_ILBC="@comment "
 .else
 PLIST_SUB+=	WITH_ILBC=""
