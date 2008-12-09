@@ -1411,6 +1411,7 @@
     SUBDIR += trac-tags
     SUBDIR += trac-ticketdelete
     SUBDIR += trac-tocmacro
+    SUBDIR += trac-tweakui
     SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinegotiator

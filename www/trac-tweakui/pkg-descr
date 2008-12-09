@@ -1,0 +1,9 @@
+This plugin implements a Javascript deployment platform, enabling
+Trac administrators to easily tweak Trac pages with Javascript
+expressions.
+
+The plugin supports the Trac web admin system, and it can apply
+Javascript tweaks to multiple pages by matching their names with
+regular expressions.
+
+WWW:    http://trac-hacks.org/wiki/TracTweakUiPlugin
