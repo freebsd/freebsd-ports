@@ -1621,6 +1621,7 @@
     SUBDIR += yanopaste
     SUBDIR += yaws
     SUBDIR += youtube_dl
+    SUBDIR += yui
     SUBDIR += yuicompressor
     SUBDIR += zend-framework
     SUBDIR += zenphoto
