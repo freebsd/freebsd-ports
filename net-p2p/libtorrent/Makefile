@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libtorrent
-PORTVERSION?=	0.11.9
+PORTVERSION?=	0.12.2
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
@@ -27,10 +27,6 @@ USE_GNOME=	pkgconfig gnomehack
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-
-.if exists(${.CURDIR}/files/stable-*)
-EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
-.endif
 
 OPTIONS=	KQUEUE "Use kqueue(2) support" on
 
