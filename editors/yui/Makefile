@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/software/ \
 		http://citycat4.land.ru/ \
-                http://myooo.ru/FreeBSD/
+		http://myooo.ru/FreeBSD/
 
 MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Rich-featured multi-windows console text editor
@@ -22,6 +22,10 @@ USE_AUTOTOOLS=	autoconf:262
 MAN1=		y.1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/yui/help_eng.html ${PREFIX}/lib/yui/yhelp.html
