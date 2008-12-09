@@ -24,6 +24,8 @@ BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
 .endif
 
 USE_RC_SUBR=	fusefs
+KMODDIR?=	${PREFIX}/modules
+PLIST_SUB=	KMODDIR=${KMODDIR}
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" \
 		MOUNT="${SRC_BASE}/sbin/mount"
@@ -31,7 +33,6 @@ WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
 DISABLE_SIZE=	yes
 
 SRC_BASE?=	/usr/src
-KMODDIR=	${PREFIX}/modules
 SETUP=		setup.sh
 HG_SHORTREV=	498acaef33b0
 
