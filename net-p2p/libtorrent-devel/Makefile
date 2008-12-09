@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-devel
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.4
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
@@ -14,16 +14,14 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++ (development version)
 
 MASTERDIR=	${.CURDIR}/../libtorrent
+PATCHDIR=	${.CURDIR}/files/
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 
+
 CONFLICTS=	libtorrent-[0-9]* \
 		rblibtorrent-[0-9]* \
 		rblibtorrent-devel-[0-9]*
-
-.if exists(${.CURDIR}/files/devel-*)
-EXTRA_PATCHES=	${.CURDIR}/files/devel-*
-.endif
 
 .include "${MASTERDIR}/Makefile"
