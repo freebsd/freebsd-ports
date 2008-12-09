@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	jrobin
-PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTVERSION=	1.5.9
 CATEGORIES=	databases java
 MASTER_SITES=	http://repo.opennms.org/maven2/org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A pure Java alternative to RRDTool
 
 USE_JAVA=	yes
