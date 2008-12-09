@@ -1,5 +1,5 @@
---- doc/emacs/Makefile.in.orig	2008-05-16 09:02:53.000000000 +0300
-+++ doc/emacs/Makefile.in	2008-06-06 19:05:25.000000000 +0300
+--- doc/emacs/Makefile.in.orig	2008-12-09 19:27:59.000000000 +0200
++++ doc/emacs/Makefile.in	2008-12-09 19:25:19.000000000 +0200
 @@ -34,7 +34,7 @@
  
  # The makeinfo program is part of the Texinfo distribution.
@@ -9,7 +9,7 @@
  
  INFO_TARGETS = $(infodir)/emacs
  DVI_TARGETS  = emacs.dvi
-@@ -145,7 +145,7 @@
+@@ -144,7 +144,7 @@
  #	rm -f Makefile
  
  maintainer-clean: distclean
