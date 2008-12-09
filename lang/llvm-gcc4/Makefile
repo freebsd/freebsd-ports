@@ -58,6 +58,10 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
+.if ${ARCH} == "sparc64"
+IGNORE=		Does not install: not yet supported on sparc64
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
