@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.21.2
-PORTREVISION=	5
+PORTVERSION=	1.4.22
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -167,7 +166,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.21.1-codec-negotiation-20080715.diff.gz
+PATCHFILES=	asterisk-1.4.22-codec-negotiation-20081110.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
