@@ -58,6 +58,7 @@
     SUBDIR += asis-gpl
     SUBDIR += asl
     SUBDIR += asmutils
+    SUBDIR += asmx
     SUBDIR += astyle
     SUBDIR += atlas
     SUBDIR += atlas-devel
@@ -150,6 +151,7 @@
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
     SUBDIR += cgilib
+    SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
     SUBDIR += cil
@@ -167,6 +169,7 @@
     SUBDIR += cl-uffi
     SUBDIR += cl-uffi-sbcl
     SUBDIR += clanlib
+    SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
@@ -316,7 +319,9 @@
     SUBDIR += esvn
     SUBDIR += etl
     SUBDIR += etoile-collectionkit
+    SUBDIR += etoile-coreobject
     SUBDIR += etoile-foundation
+    SUBDIR += etoile-serialize
     SUBDIR += etoile-unitkit
     SUBDIR += eventxx
     SUBDIR += evfs
@@ -407,6 +412,7 @@
     SUBDIR += gettext-msghack
     SUBDIR += getxml
     SUBDIR += gflags
+    SUBDIR += giggle
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
     SUBDIR += git
@@ -421,6 +427,7 @@
     SUBDIR += glibmm
     SUBDIR += glibmm-reference
     SUBDIR += global
+    SUBDIR += glog
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
@@ -444,6 +451,7 @@
     SUBDIR += gonzui
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
+    SUBDIR += googletest
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gpsim
@@ -472,16 +480,19 @@
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hgsvn
+    SUBDIR += hgview
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
     SUBDIR += horde-whups
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
+    SUBDIR += hs-Stream
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
+    SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-fps
     SUBDIR += hs-haddock
@@ -493,6 +504,7 @@
     SUBDIR += hs-hpl
     SUBDIR += hs-idoc
     SUBDIR += hs-tclhaskell-ghc
+    SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
     SUBDIR += hypersrc
@@ -581,6 +593,7 @@
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
     SUBDIR += libbonobomm
+    SUBDIR += libburn
     SUBDIR += libcapsinetwork
     SUBDIR += libccid
     SUBDIR += libcfg
@@ -613,6 +626,7 @@
     SUBDIR += libevocosm
     SUBDIR += libexecinfo
     SUBDIR += libffi
+    SUBDIR += libfirm
     SUBDIR += libfs++
     SUBDIR += libftdi
     SUBDIR += libg++
@@ -641,6 +655,7 @@
     SUBDIR += libical
     SUBDIR += libiqxmlrpc
     SUBDIR += libisc
+    SUBDIR += libisofs
     SUBDIR += libixp
     SUBDIR += liblas
     SUBDIR += libleaftag
@@ -654,6 +669,7 @@
     SUBDIR += libmimedir
     SUBDIR += libmowgli
     SUBDIR += libmpcbdm
+    SUBDIR += libmsocket
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnotify
@@ -720,6 +736,7 @@
     SUBDIR += libvc
     SUBDIR += libvolume_id
     SUBDIR += libwfut
+    SUBDIR += libx86
     SUBDIR += libxalloc
     SUBDIR += libytnef
     SUBDIR += libzrtpcpp
@@ -880,7 +897,9 @@
     SUBDIR += omniORB
     SUBDIR += oniguruma
     SUBDIR += oniguruma4
+    SUBDIR += oniguruma5
     SUBDIR += open-beagle
+    SUBDIR += opencvs
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp
@@ -932,6 +951,7 @@
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-Cache
+    SUBDIR += p5-App-Cmd
     SUBDIR += p5-App-Control
     SUBDIR += p5-App-Info
     SUBDIR += p5-App-Options
@@ -946,9 +966,12 @@
     SUBDIR += p5-Attribute-Handlers-Prospective
     SUBDIR += p5-Attribute-Persistent
     SUBDIR += p5-AutoLoader
+    SUBDIR += p5-AutoXS-Header
     SUBDIR += p5-B-Deobfuscate
     SUBDIR += p5-B-Generate
     SUBDIR += p5-B-Graph
+    SUBDIR += p5-B-Hooks-EndOfScope
+    SUBDIR += p5-B-Hooks-OP-Check
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-Size
     SUBDIR += p5-B-Utils
@@ -981,6 +1004,7 @@
     SUBDIR += p5-Chooser
     SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-Accessor-Chained
+    SUBDIR += p5-Class-Accessor-Fast-XS
     SUBDIR += p5-Class-Accessor-Grouped
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-Accessor-Named
@@ -1053,6 +1077,7 @@
     SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Class-Workflow
     SUBDIR += p5-Class-XPath
+    SUBDIR += p5-Class-XSAccessor
     SUBDIR += p5-Clone
     SUBDIR += p5-Clone-Fast
     SUBDIR += p5-Clone-More
@@ -1071,6 +1096,7 @@
     SUBDIR += p5-Config-JSON
     SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-Objective
+    SUBDIR += p5-Config-Options
     SUBDIR += p5-Config-Properties
     SUBDIR += p5-Config-Record
     SUBDIR += p5-Config-Setting
@@ -1087,6 +1113,7 @@
     SUBDIR += p5-Curses-UI
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Cvs
+    SUBDIR += p5-Cwd
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Danga-Socket
     SUBDIR += p5-Danga-Socket-Callback
@@ -1115,6 +1142,7 @@
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-Stag
+    SUBDIR += p5-Data-Stream-Bulk
     SUBDIR += p5-Data-Structure-Util
     SUBDIR += p5-Data-Swap
     SUBDIR += p5-Data-Table
@@ -1126,6 +1154,7 @@
     SUBDIR += p5-Data-TreeDumper-Renderer-GTK
     SUBDIR += p5-Data-Types
     SUBDIR += p5-Data-UUID
+    SUBDIR += p5-Data-Uniqid
     SUBDIR += p5-Data-Validate
     SUBDIR += p5-Data-Visitor
     SUBDIR += p5-Date-Calc
@@ -1208,13 +1237,18 @@
     SUBDIR += p5-Devel-Declare
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-EvalContext
+    SUBDIR += p5-Devel-Events
+    SUBDIR += p5-Devel-Events-Objects
+    SUBDIR += p5-Devel-Gladiator
     SUBDIR += p5-Devel-GlobalDestruction
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Leak-Object
     SUBDIR += p5-Devel-LeakTrace
+    SUBDIR += p5-Devel-LeakTrace-Fast
     SUBDIR += p5-Devel-LexAlias
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
+    SUBDIR += p5-Devel-NYTProf
     SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-PPPort
     SUBDIR += p5-Devel-Pointer
@@ -1280,12 +1314,15 @@
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CreationTime
     SUBDIR += p5-File-DesktopEntry
+    SUBDIR += p5-File-Dir-Dumper
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-ExtAttr
     SUBDIR += p5-File-FTS
+    SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
+    SUBDIR += p5-File-Find-Rule-Perl
     SUBDIR += p5-File-Finder
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
@@ -1337,10 +1374,12 @@
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
+    SUBDIR += p5-Getopt-Euclid
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive
     SUBDIR += p5-Getopt-Mixed
     SUBDIR += p5-Getopt-Popt
+    SUBDIR += p5-Git-PurePerl
     SUBDIR += p5-Glib2
     SUBDIR += p5-Gnome2-GConf
     SUBDIR += p5-Google-Checkout
@@ -1359,10 +1398,12 @@
     SUBDIR += p5-IO-AIO
     SUBDIR += p5-IO-All
     SUBDIR += p5-IO-Async
+    SUBDIR += p5-IO-BufferedSelect
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
     SUBDIR += p5-IO-KQueue
+    SUBDIR += p5-IO-Lambda
     SUBDIR += p5-IO-LockedFile
     SUBDIR += p5-IO-Multiplex
     SUBDIR += p5-IO-NestedCapture
@@ -1371,6 +1412,7 @@
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Tee
+    SUBDIR += p5-IO-TieCombine
     SUBDIR += p5-IO-Toolkit
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-Util
@@ -1463,6 +1505,7 @@
     SUBDIR += p5-Module-Compile
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Dependency
+    SUBDIR += p5-Module-Depends
     SUBDIR += p5-Module-ExtractUse
     SUBDIR += p5-Module-Find
     SUBDIR += p5-Module-Info
@@ -1484,6 +1527,8 @@
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Starter
     SUBDIR += p5-Module-Starter-PBP
+    SUBDIR += p5-Module-Starter-Plugin-SimpleStore
+    SUBDIR += p5-Module-Starter-Plugin-TT2
     SUBDIR += p5-Module-Util
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moose
@@ -1499,6 +1544,7 @@
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-Singleton
     SUBDIR += p5-MooseX-Storage
+    SUBDIR += p5-MooseX-StrictConstructor
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Path-Class
     SUBDIR += p5-Mouse
@@ -1676,6 +1722,7 @@
     SUBDIR += p5-String-RexxParse
     SUBDIR += p5-String-Similarity
     SUBDIR += p5-Sub-Current
+    SUBDIR += p5-Sub-Delete
     SUBDIR += p5-Sub-Exporter
     SUBDIR += p5-Sub-Identify
     SUBDIR += p5-Sub-Install
@@ -1688,6 +1735,8 @@
     SUBDIR += p5-Sys-Cpu
     SUBDIR += p5-Sys-MemInfo
     SUBDIR += p5-Sys-Mmap
+    SUBDIR += p5-Sys-RunAlone
+    SUBDIR += p5-Sys-RunAlways
     SUBDIR += p5-Sys-Sig
     SUBDIR += p5-Sys-SigAction
     SUBDIR += p5-Sys-Syscall
@@ -1729,6 +1778,7 @@
     SUBDIR += p5-Test-Expect
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
+    SUBDIR += p5-Test-Fixture-DBIC-Schema
     SUBDIR += p5-Test-Group
     SUBDIR += p5-Test-HTML-Tidy
     SUBDIR += p5-Test-Harness
@@ -1768,6 +1818,8 @@
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-UseAllModules
     SUBDIR += p5-Test-WWW-Mechanize
+    SUBDIR += p5-Test-WWW-Mechanize-CGI
+    SUBDIR += p5-Test-WWW-Mechanize-CGIApp
     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
@@ -1853,8 +1905,11 @@
     SUBDIR += p5-aliased
     SUBDIR += p5-base
     SUBDIR += p5-capitalization
+    SUBDIR += p5-constant-lexical
+    SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
     SUBDIR += p5-forks
+    SUBDIR += p5-github_creator
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
@@ -1877,6 +1932,7 @@
     SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
+    SUBDIR += pcl
     SUBDIR += pcre
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
@@ -1939,6 +1995,7 @@
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHPUnit3
+    SUBDIR += pear-PHP_ArrayOf
     SUBDIR += pear-PHP_Beautifier
     SUBDIR += pear-PHP_CodeSniffer
     SUBDIR += pear-PHP_Compat
@@ -1949,6 +2006,10 @@
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Structures_DataGrid
+    SUBDIR += pear-Structures_DataGrid_Renderer_Console
+    SUBDIR += pear-Structures_DataGrid_Renderer_HTMLSortForm
+    SUBDIR += pear-Structures_DataGrid_Renderer_HTMLTable
+    SUBDIR += pear-Structures_DataGrid_Renderer_XUL
     SUBDIR += pear-System_Command
     SUBDIR += pear-Testing_Selenium
     SUBDIR += pear-Text_Diff
@@ -2095,6 +2156,7 @@
     SUBDIR += py-coro
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
+    SUBDIR += py-dal
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
     SUBDIR += py-decorator
@@ -2126,7 +2188,9 @@
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
     SUBDIR += py-ice
+    SUBDIR += py-icu
     SUBDIR += py-instant
+    SUBDIR += py-ipaddr
     SUBDIR += py-istring
     SUBDIR += py-jcc
     SUBDIR += py-json-py
@@ -2175,6 +2239,7 @@
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
     SUBDIR += py-pygpx
+    SUBDIR += py-pylib
     SUBDIR += py-pymarc
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytz
@@ -2229,12 +2294,15 @@
     SUBDIR += py-uuid
     SUBDIR += py-virtualenv
     SUBDIR += py-vmaps
+    SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgiutils
+    SUBDIR += py-xattr
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
     SUBDIR += py-zconfig
     SUBDIR += py-zopeInterface
+    SUBDIR += py-zopetesting
     SUBDIR += py_otp_interface
     SUBDIR += pybaz
     SUBDIR += pychecker
@@ -2299,6 +2367,7 @@
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
+    SUBDIR += rsvndump
     SUBDIR += rth
     SUBDIR += ruby-amstd
     SUBDIR += ruby-aspectr
@@ -2362,20 +2431,31 @@
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
     SUBDIR += ruby-zoom
+    SUBDIR += rubygem-abstract
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-analogger
+    SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-columnize
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-eventmachine
+    SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
+    SUBDIR += rubygem-fattr
     SUBDIR += rubygem-gem_plugin
+    SUBDIR += rubygem-git
+    SUBDIR += rubygem-grit
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-json
+    SUBDIR += rubygem-json_pure
+    SUBDIR += rubygem-linecache
+    SUBDIR += rubygem-main
     SUBDIR += rubygem-mocha
+    SUBDIR += rubygem-mojombo-grit
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
@@ -2386,11 +2466,14 @@
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rgl
+    SUBDIR += rubygem-rparsec
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rtags
+    SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
+    SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-rubyforge
@@ -2398,6 +2481,7 @@
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-uuid
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-zentest
     SUBDIR += rudeconfig
@@ -2433,6 +2517,7 @@
     SUBDIR += sid
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
+    SUBDIR += silentbob
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simpletest
@@ -2505,6 +2590,7 @@
     SUBDIR += terminality
     SUBDIR += thistest
     SUBDIR += thrift
+    SUBDIR += thunar-svn-plugin
     SUBDIR += tide
     SUBDIR += tig
     SUBDIR += tigcc
@@ -2536,6 +2622,7 @@
     SUBDIR += upnp
     SUBDIR += upp
     SUBDIR += uppaal
+    SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
     SUBDIR += valide
@@ -2558,6 +2645,7 @@
     SUBDIR += xfce4-dev-tools
     SUBDIR += xlslib
     SUBDIR += xmake
+    SUBDIR += xmltooling
     SUBDIR += xorg-macros
     SUBDIR += xparam
     SUBDIR += xtl
