@@ -18,29 +18,3 @@
      if test -d /usr/lib/libmilter ; then
  	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -L/usr/lib/libmilter"
      fi
-@@ -18806,19 +18806,25 @@
-     sendmailver_c=`echo $sendmailver | awk -F. '{printf $3}'`
- 
- 
-+if echo "$sendmailver_a" | egrep -q '^[0-9]+$'; then
- cat >>confdefs.h <<_ACEOF
- #define SENDMAIL_VERSION_A $sendmailver_a
- _ACEOF
-+fi
- 
- 
-+if echo "$sendmailver_b" | egrep -q '^[0-9]+$'; then
- cat >>confdefs.h <<_ACEOF
- #define SENDMAIL_VERSION_B $sendmailver_b
- _ACEOF
-+fi
- 
- 
-+if echo "$sendmailver_c" | egrep -q '^[0-9]+$'; then
- cat >>confdefs.h <<_ACEOF
- #define SENDMAIL_VERSION_C $sendmailver_c
- _ACEOF
-+fi
- 
-   fi
-   if test "x$ac_cv_have_lresolv_r" != "xyes"; then
