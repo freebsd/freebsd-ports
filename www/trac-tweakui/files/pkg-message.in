@@ -1,0 +1,24 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+tractweakui.* = enabled
+
+to your trac.ini to enable the plugin.
+
+Next, visit:
+http://trac-hacks.org/wiki/TracTweakUiPlugin#Example
+for usage examples.
+
+If you have installed the examples into
+%%EXAMPLESDIR%%,
+you can incorporate them into your Trac project
+with the following command:
+
+cp -Rp %%EXAMPLESDIR%%/* \
+    $TRAC_ENV/htdocs
+
+$TRAC_ENV is the root directory of your Trac
+project. You can copy the TweakUi examples into
+as many Trac projects as you like.
+**************************************************
