@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	20081030
-PORTREVISION=	2
+PORTVERSION=	20081208
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 
 CONFLICTS=	gnash-[0-9]*
 
-REVISION=	10051
+REVISION=	10395
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -64,7 +63,8 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
-		GSTREAMER	"Media handler: GStreamer" off
+		GSTREAMER	"Media handler: GStreamer" off \
+		SPEEX		"Speex codec support" on
 
 .include <bsd.port.pre.mk>
 
@@ -160,7 +160,8 @@ IGNORE=			can't be built with multiple or without renderers enabled. Please reru
 #
 .if defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
 LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-media=ffmpeg
+CONFIGURE_ARGS+=	--enable-media=ffmpeg \
+			--with-ffmpeg-incl=${LOCALBASE}/include/ffmpeg
 USE_SDL+=		sdl
 .elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER)
 USE_GSTREAMER=		yes
@@ -170,6 +171,16 @@ USE_SDL+=		sdl
 CONFIGURE_ARGS+=	--enable-media=none
 .else
 IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
+.endif
+
+#
+# Other options
+#
+.if !defined(WITHOUT_SPEEX)
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+CONFIGURE_ARGS+=	--enable-speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 pre-everything::
@@ -182,13 +193,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|/lib64|/lib|g; \
-		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
-		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
+		s|/lib64|/lib|g; s|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/configure ${WRKSRC}/macros/libslist \
+		${WRKSRC}/macros/incllist
 	@${REINPLACE_CMD} -e '/sysconfDATA_INSTALL/ s|/$$$$f|&.dist|' \
 		${WRKSRC}/libbase/Makefile.in
-	@${REINPLACE_CMD} -e '/^gprocessor_LDFLAGS =/ s|$$| $$(AM_LDFLAGS)|' \
-		${WRKSRC}/utilities/Makefile.in
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/gnashrc ]; then \
