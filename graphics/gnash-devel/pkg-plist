@@ -33,6 +33,9 @@ lib/gnash/libgnashmedia.so
 lib/gnash/libgnashnet.la
 lib/gnash/libgnashnet.so
 lib/gnash/libgnashnet.so.0
+lib/gnash/libgnashsound-%%GNASHVER%%.so
+lib/gnash/libgnashsound.la
+lib/gnash/libgnashsound.so
 %%GTK%%lib/gnash/libmozsdk.la
 %%GTK%%lib/gnash/libmozsdk.so
 %%GTK%%lib/gnash/libmozsdk.so.0
