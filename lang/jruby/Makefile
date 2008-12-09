@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/ \
 		http://repo2.maven.org/maven/jruby/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://dist.codehaus.org/jruby/ \
 		http://dist.codehaus.org/jruby/previous/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
