@@ -1,0 +1,8 @@
+The YUI Library is a set of utilities and controls, written in JavaScript, for
+building richly interactive web applications using techniques such as DOM
+scripting, DHTML and AJAX. YUI is available under a BSD license and is free for
+all uses. The YUI project includes the YUI Library and two build-time tools: YUI
+Compressor (minification) and YUI Doc (documentation engine for JavaScript
+code).
+
+WWW:    http://developer.yahoo.com/yui/
