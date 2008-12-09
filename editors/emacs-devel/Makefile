@@ -7,11 +7,11 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-2008.06.06.08.01.29
+DISTNAME=	${PORTNAME}-cvs-2008.12.07.18.51.01
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -37,10 +37,10 @@ USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	23.0.60
-SNAPSHOT=	20080308
+SNAPSHOT=	20081207
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	bootfast
+ALL_TARGET=	bootstrap
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -49,9 +49,11 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 CONFIGURE_ARGS=		--with-x=no
 .else
 .if !defined(WITHOUT_GTK)
-CONFIGURE_ARGS=		--with-gtk
+CONFIGURE_ARGS=		--with-x-toolkit=gtk
+.else
+CONFIGURE_ARGS=		--with-x-toolkit=athena
 .endif
-CONFIGURE_ARGS=		--enable-font-backend
+CONFIGURE_ARGS+=	--enable-font-backend
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
 			m17n.3:${PORTSDIR}/devel/m17n-lib
 # also libotf, which is pulled in by m17n
@@ -66,11 +68,12 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
 
-INFO=		ada-mode autotype calc ccmode cl dbus dired-x ebrowse ediff \
-		efaq eintr elisp emacs-mime emacs epa erc eshell eudc \
-		flymake forms gnus idlwave info message mh-e newsticker \
-		nxml-mode org pcl-cvs pgg rcirc reftex remember sc ses sieve smtpmail speedbar \
-		tramp url vip viper widget woman
+INFO=		ada-mode autotype calc ccmode cl dbus dired-x \
+		ebrowse ediff efaq eintr elisp emacs-mime emacs epa \
+		erc eshell eudc flymake forms gnus idlwave info \
+		mairix-el message mh-e newsticker nxml-mode \
+		org pcl-cvs pgg rcirc reftex remember sasl sc ses sieve \
+		smtpmail speedbar tramp url vip viper widget woman
 
 LATEST_LINK=	emacs23
 
