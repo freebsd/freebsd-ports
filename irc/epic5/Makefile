@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.3.9
+PORTVERSION=	0.9.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
@@ -88,6 +88,7 @@ CONFIGURE_ARGS+=	--with-iconv
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
+
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
