@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
 
+IGNORE=		Please use ftp/proftpd
+
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
