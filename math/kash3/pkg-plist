@@ -3609,6 +3609,7 @@ bin/kash3
 %%PORTDOCS%%%%DOCSDIR%%/html/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gap3proglang.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/kash3intro.pdf
+%%DATADIR%%/README
 %%DATADIR%%/data/Galois/conj1.dat
 %%DATADIR%%/data/Galois/conj1.ind
 %%DATADIR%%/data/Galois/conj10.dat
@@ -5043,6 +5044,8 @@ bin/kash3
 %%DATADIR%%/gap/two/twogpd7.grp
 %%DATADIR%%/gap/two/twogpd8.grp
 %%DATADIR%%/kash3
+%%OPTLIB%%%%DATADIR%%/lib/ModPoly.k
+%%OPTLIB%%%%DATADIR%%/lib/MultPol.k
 %%DATADIR%%/lib/XML.g
 %%DATADIR%%/lib/__DOC.g
 %%DATADIR%%/lib/alff.g
@@ -5052,8 +5055,11 @@ bin/kash3
 %%DATADIR%%/lib/docui.g
 %%DATADIR%%/lib/elldoc.g
 %%DATADIR%%/lib/elliptic.g
+%%OPTLIB%%%%DATADIR%%/lib/ideals.k
 %%DATADIR%%/lib/init-methods.g
 %%DATADIR%%/lib/init.g
+%%OPTLIB%%%%DATADIR%%/lib/iso.k
+%%OPTLIB%%%%DATADIR%%/lib/isoinit.k
 %%DATADIR%%/lib/kash.g
 %%DATADIR%%/lib/list.g
 %%DATADIR%%/lib/locFact.g
@@ -5063,29 +5069,30 @@ bin/kash3
 %%DATADIR%%/lib/method.g
 %%DATADIR%%/lib/qaos.k
 %%DATADIR%%/lib/term.g
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cgi-bin
+%%OPTLIB%%%%DATADIR%%/lib/unit_group_res.g
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/diamond
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/Zcrown
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/CeBIT/2004
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/CeBIT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/Zcrown
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo/diamond
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/kantlogo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cgi-bin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/data/Galois
-@dirrm %%DATADIR%%/data/TrnGps
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/gap/two
+@dirrm %%DATADIR%%/gap/tom
+@dirrm %%DATADIR%%/gap/thr
+@dirrm %%DATADIR%%/gap/tbl
+@dirrm %%DATADIR%%/gap/sml/idlib
+@dirrm %%DATADIR%%/gap/sml
+@dirrm %%DATADIR%%/gap/lib
+@dirrm %%DATADIR%%/gap/grp
+@dirrm %%DATADIR%%/gap
 @dirrm %%DATADIR%%/data/ecpp/Data/Weber
 @dirrm %%DATADIR%%/data/ecpp/Data
 @dirrm %%DATADIR%%/data/ecpp
+@dirrm %%DATADIR%%/data/TrnGps
+@dirrm %%DATADIR%%/data/Galois
 @dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/gap/grp
-@dirrm %%DATADIR%%/gap/lib
-@dirrm %%DATADIR%%/gap/sml/idlib
-@dirrm %%DATADIR%%/gap/sml
-@dirrm %%DATADIR%%/gap/tbl
-@dirrm %%DATADIR%%/gap/thr
-@dirrm %%DATADIR%%/gap/tom
-@dirrm %%DATADIR%%/gap/two
-@dirrm %%DATADIR%%/gap
-@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
