@@ -9,15 +9,16 @@ PORTNAME=	socks5
 PORTVERSION=	1.0.11
 PORTREVISION=	5
 CATEGORIES=	net security
-MASTER_SITES=	http://freeware.sgi.com/source/socks5/
+MASTER_SITES=	http://reality.sgiweb.org/freeware/source/socks5/ \
+		http://freeware.sgi.com/source/socks5/
 DISTNAME=	socks5-v1.0r11
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	SOCKS v5 application layer gateway and clients
 
 USE_RC_SUBR=	${PORTNAME}.sh
-NO_CDROM=	"NEC has a funky license for this software"
-RESTRICTED=	"no commercial use"
+NO_CDROM=	NEC has a funky license for this software
+RESTRICTED=	no commercial use
 
 CONFLICTS=	dante-[0-9]*
 
