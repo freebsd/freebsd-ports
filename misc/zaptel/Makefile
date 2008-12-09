@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	1.4.6
-PORTREVISION=	7
+PORTVERSION=	1.4.11
 CATEGORIES=	misc kld
-MASTER_SITES=	http://www.pbxpress.com/~gonzo/
+MASTER_SITES=	http://people.freebsd.org/~gonzo/zaptel/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -25,14 +24,9 @@ MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	zaptel
 
-.include <bsd.port.pre.mk>
+WRKSRC=         ${WRKDIR}/${PORTNAME}-bsd
 
-.if ${ARCH} == "amd64"
-PLIST_SUB+=	WITH_TAU32="@comment "
-.else
-PLIST_SUB+=	WITH_TAU32=""
-MAKE_ARGS+=	WITH_TAU32="yes"
-.endif
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
@@ -43,8 +37,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|<getopt.h>|<unistd.h>|g" \
-		${WRKSRC}/test/ztmonitor.c ${WRKSRC}/test/zttool.c \
-		${WRKSRC}/ztcfg/ztcfg.c
+		${WRKSRC}/tools/ztmonitor.c ${WRKSRC}/tools/zttool.c \
+		${WRKSRC}/tools/ztcfg.c  ${WRKSRC}/tools/zttest.c
 
 pre-su-install:
 	@${MKDIR} ${PREFIX}/lib/zaptel
