@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	2008-10-16 17:36:35.000000000 +0300
++++ Makefile	2008-10-16 17:36:36.000000000 +0300
 @@ -129,7 +129,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
@@ -15,16 +12,16 @@ $FreeBSD$
 @@ -214,9 +214,11 @@
    ASTLDFLAGS+=-L/usr/local/lib
  endif
-
+ 
 +ifneq ($(OSARCH),FreeBSD)
  ifneq ($(PROC),ultrasparc)
    ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
  endif
 +endif
-
+ 
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -224,7 +224,7 @@
+@@ -224,7 +226,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -33,7 +30,7 @@ $FreeBSD$
    ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -404,15 +404,15 @@
+@@ -401,15 +403,15 @@
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -54,7 +51,7 @@ $FreeBSD$
  	$(MAKE) -C sounds install
  
  update: 
-@@ -433,47 +433,47 @@
+@@ -430,47 +432,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  installdirs:
@@ -134,7 +131,7 @@ $FreeBSD$
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -507,7 +507,7 @@
+@@ -506,7 +508,7 @@
  	@exit 1
  endif
  
@@ -143,7 +140,7 @@ $FreeBSD$
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -545,31 +545,23 @@
+@@ -544,31 +546,23 @@
  upgrade: bininstall
  
  adsi:
@@ -183,7 +180,7 @@ $FreeBSD$
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -655,20 +647,23 @@
+@@ -655,20 +649,23 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \
@@ -211,16 +208,3 @@ $FreeBSD$
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -695,10 +690,10 @@
- 
- __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
- 	rm -rf /tmp/asterisk ; \
--	mkdir -p /tmp/asterisk/redhat/RPMS/i386 ; \
-+	$(MKDIR) /tmp/asterisk/redhat/RPMS/i386 ; \
- 	$(MAKE) DESTDIR=/tmp/asterisk install ; \
- 	$(MAKE) DESTDIR=/tmp/asterisk samples ; \
--	mkdir -p /tmp/asterisk/etc/rc.d/init.d ; \
-+	$(MKDIR) /tmp/asterisk/etc/rc.d/init.d ; \
- 	cp -f contrib/init.d/rc.redhat.asterisk /tmp/asterisk/etc/rc.d/init.d/asterisk ; \
- 	rpmbuild --rcfile /usr/lib/rpm/rpmrc:redhat/rpmrc -bb asterisk.spec
- 

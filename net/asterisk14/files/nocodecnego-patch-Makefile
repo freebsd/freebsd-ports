@@ -208,16 +208,3 @@
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -654,10 +649,10 @@
- 
- __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
- 	rm -rf /tmp/asterisk ; \
--	mkdir -p /tmp/asterisk/redhat/RPMS/i386 ; \
-+	$(MKDIR) /tmp/asterisk/redhat/RPMS/i386 ; \
- 	$(MAKE) DESTDIR=/tmp/asterisk install ; \
- 	$(MAKE) DESTDIR=/tmp/asterisk samples ; \
--	mkdir -p /tmp/asterisk/etc/rc.d/init.d ; \
-+	$(MKDIR) /tmp/asterisk/etc/rc.d/init.d ; \
- 	cp -f contrib/init.d/rc.redhat.asterisk /tmp/asterisk/etc/rc.d/init.d/asterisk ; \
- 	rpmbuild --rcfile /usr/lib/rpm/rpmrc:redhat/rpmrc -bb asterisk.spec
- 

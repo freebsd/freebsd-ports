@@ -92,8 +92,8 @@ etc/asterisk/telcordia-1.adsi-dist
 etc/asterisk/voicemail.conf-dist
 @unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
 etc/asterisk/vpb.conf-dist
-@unexec if cmp -s %D/etc/asterisk/zapata.conf %D/etc/asterisk/zapata.conf-dist; then rm -f %D/etc/asterisk/zapata.conf; fi
-etc/asterisk/zapata.conf-dist
+@unexec if cmp -s %D/etc/asterisk/chan_dahdi.conf %D/etc/asterisk/chan_dahdi.conf-dist; then rm -f %D/etc/asterisk/chan_dahdi.conf; fi
+etc/asterisk/chan_dahdi.conf-dist
 @unexec if cmp -s %D/etc/asterisk/udptl.conf %D/etc/asterisk/udptl.conf-dist; then rm -f %D/etc/asterisk/udptl.conf; fi
 etc/asterisk/udptl.conf-dist
 @unexec if cmp -s %D/etc/asterisk/users.conf %D/etc/asterisk/users.conf-dist; then rm -f %D/etc/asterisk/users.conf; fi
@@ -151,9 +151,9 @@ include/asterisk/compat.h
 include/asterisk/compiler.h
 include/asterisk/config.h
 include/asterisk/crypto.h
+include/asterisk/dahdi_compat.h
 include/asterisk/devicestate.h
 include/asterisk/dial.h
-include/asterisk/dlfcn-compat.h
 include/asterisk/dns.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxyref.h
@@ -204,6 +204,7 @@ include/asterisk/tdd.h
 include/asterisk/term.h
 include/asterisk/threadstorage.h
 include/asterisk/time.h
+include/asterisk/tonezone_compat.h
 include/asterisk/transcap.h
 include/asterisk/translate.h
 include/asterisk/udptl.h
@@ -807,14 +808,13 @@ share/asterisk/static-http/prototype.js
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_flash.so
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_meetme.so
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_page.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapbarge.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapras.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_zapscan.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdibarge.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdiras.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdiscan.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
 %%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
 %%WITH_H323%%lib/asterisk/modules/chan_h323.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/chan_zap.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/codec_zap.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/chan_dahdi.so
 %%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
 %%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
 @dirrm share/asterisk/static-http
