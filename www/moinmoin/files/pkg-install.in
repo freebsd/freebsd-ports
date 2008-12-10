@@ -17,7 +17,7 @@ case "x$2" in
 		echo "add something like that to your Apache configuration."
 		echo ""
 		echo ",-----"
-		echo " Alias /moin_static171/ \"$sharedir/htdocs/\""
+		echo " Alias /moin_static180/ \"$sharedir/htdocs/\""
 		echo " <Directory \"$sharedir/htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
@@ -42,7 +42,7 @@ case "x$2" in
 		echo ""
 
 		echo ",-----"
-		echo " Alias /moin_static170/ \"$sharedir/htdocs/\""
+		echo " Alias /moin_static180/ \"$sharedir/htdocs/\""
 		echo " <Directory \"$sharedir/htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
