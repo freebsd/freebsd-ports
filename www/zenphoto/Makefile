@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
