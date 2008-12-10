@@ -30,11 +30,11 @@ include/google/protobuf/wire_format_inl.h
 lib/libprotobuf.a
 lib/libprotobuf.la
 lib/libprotobuf.so
-lib/libprotobuf.so.2
+lib/libprotobuf.so.3
 lib/libprotoc.a
 lib/libprotoc.la
 lib/libprotoc.so
-lib/libprotoc.so.0
+lib/libprotoc.so.3
 @dirrm include/google/protobuf/stubs
 @dirrm include/google/protobuf/io
 @dirrm include/google/protobuf/compiler/python
