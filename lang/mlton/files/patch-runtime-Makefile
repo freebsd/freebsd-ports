@@ -1,0 +1,84 @@
+--- runtime/Makefile.orig	2007-08-27 07:03:54.000000000 +1000
++++ runtime/Makefile		2008-04-28 10:19:06.000000000 +1000
+@@ -11,11 +11,24 @@
+ TARGET := self
+ TARGET_ARCH := $(shell ../bin/host-arch)
+ TARGET_OS := $(shell ../bin/host-os)
++
++ifeq ($(TARGET), self)
++GCC := gcc
++else
++GCC := $(TARGET)-gcc
++endif
++
++ifeq ($(TARGET_OS), mingw)
++RUN := wine
++else
++RUN :=
++endif
++
+ GCC_MAJOR_VERSION :=						\
+-	$(shell gcc -v 2>&1 | grep 'gcc version' | 		\
++	$(shell $(GCC) -v 2>&1 | grep 'gcc version' | 		\
+ 		sed 's/.*gcc version \([0-9][0-9]*\)\.\([0-9][0-9]*\).*/\1/')
+ GCC_MINOR_VERSION :=						\
+-	$(shell gcc -v 2>&1 | grep 'gcc version' | 		\
++	$(shell $(GCC) -v 2>&1 | grep 'gcc version' | 		\
+ 		sed 's/.*gcc version \([0-9][0-9]*\)\.\([0-9][0-9]*\).*/\2/')
+ GCC_VERSION := $(GCC_MAJOR_VERSION).$(GCC_MINOR_VERSION)
+ 
+@@ -96,10 +109,9 @@
+ else
+ AR := $(TARGET)-ar rc
+ RANLIB := $(TARGET)-ranlib
+-FLAGS += -b $(TARGET)
+ endif
+ 
+-CC := gcc -std=gnu99
++CC := $(GCC) -std=gnu99
+ CPPFLAGS :=
+ CFLAGS := -I. -Iplatform $(FLAGS)
+ OPTCFLAGS := $(CFLAGS) $(CPPFLAGS) $(OPTFLAGS)
+@@ -247,7 +259,7 @@
+ 	cd gdtoa && $(CC) -o arithchk.out arithchk.c
+ 
+ gdtoa/arith.h: gdtoa/arithchk.out
+-	cd gdtoa && ./arithchk.out >arith.h
++	cd gdtoa && $(RUN) ./arithchk.out >arith.h
+ 
+ libmlton.a: $(OBJS)
+ 	$(AR) libmlton.a $(OBJS)
+@@ -265,7 +277,7 @@
+ gen/c-types.h gen/c-types.sml gen/ml-types.h: gen/gen-types.c util.h util.o
+ 	$(CC) $(OPTCFLAGS) $(WARNCFLAGS) -o gen/gen-types gen/gen-types.c util.o
+ 	rm -f gen/c-types.h gen/c-types.sml gen/ml-types.h
+-	cd gen && ./gen-types
++	cd gen && $(RUN) ./gen-types
+ 	rm -f gen/gen-types$(EXE)
+ 
+ c-types.h ml-types.h: gen/c-types.h gen/ml-types.h
+@@ -276,7 +288,7 @@
+ gen/basis-ffi.h gen/basis-ffi.sml: gen/gen-basis-ffi.sml gen/basis-ffi.def
+ 	mlton -output gen/gen-basis-ffi gen/gen-basis-ffi.sml
+ 	rm -f gen/basis-ffi.h gen/basis-ffi.sml
+-	cd gen && ./gen-basis-ffi
++	cd gen && $(RUN) ./gen-basis-ffi
+ 	rm -f gen/gen-basis-ffi
+ 
+ basis-ffi.h: gen/basis-ffi.h
+@@ -286,13 +298,13 @@
+ gen/sizes: gen/gen-sizes.c libmlton.a
+ 	$(CC) $(OPTCFLAGS) $(WARNCFLAGS) -o gen/gen-sizes -I. -L. -lmlton gen/gen-sizes.c util.o
+ 	rm -f gen/sizes
+-	cd gen && ./gen-sizes
++	cd gen && $(RUN) ./gen-sizes
+ 	rm -f gen/gen-sizes$(EXE)
+ 
+ bytecode/opcodes: bytecode/print-opcodes.c bytecode/opcode.h
+ 	$(CC) $(OPTCFLAGS) $(WARNCFLAGS) -o bytecode/print-opcodes bytecode/print-opcodes.c
+ 	rm -f bytecode/opcodes
+-	cd bytecode && ./print-opcodes > opcodes
++	cd bytecode && $(RUN) ./print-opcodes > opcodes
+ 	rm -f bytecode/print-opcodes$(EXE)
+ 
+ 

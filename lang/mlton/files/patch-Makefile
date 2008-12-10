@@ -1,0 +1,22 @@
+--- Makefile.orig	2007-08-27 07:04:14.000000000 +1000
++++ Makefile	2008-04-28 10:23:28.000000000 +1000
+@@ -34,7 +34,11 @@
+ PATH := $(BIN):$(SRC)/bin:$(shell echo $$PATH)
+ CP := /bin/cp -fpR
+ GZIP := gzip --force --best
++ifeq ($(TARGET), mingw32)
++RANLIB := $(TARGET)-ranlib
++else
+ RANLIB := ranlib
++endif
+ 
+ # If we're compiling with another version of MLton, then we want to do
+ # another round of compilation so that we get a MLton built without
+@@ -410,6 +414,7 @@
+ install-no-docs:
+ 	mkdir -p "$(TLIB)" "$(TBIN)" "$(TMAN)"
+ 	$(CP) "$(LIB)/." "$(TLIB)/"
++	-rm "$(TLIB)/mlton.x86-bsd"
+ 	sed "/^lib=/s;.*;lib='$(prefix)/$(ULIB)';" 			\
+ 		<"$(BIN)/mlton" >"$(TBIN)/mlton"
+ 	chmod a+x "$(TBIN)/mlton"

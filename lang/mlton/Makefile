@@ -12,10 +12,11 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20070826
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
-		http://mlton.org/pages/Experimental/attachments/
+		http://mlton.org/pages/Experimental/attachments/ \
+		http://www.cse.unsw.edu.au/~tbourke/distfiles/
 DISTFILES=	${BOOT_DIST} ${SRC_DIST}
 EXTRACT_ONLY=	${SRC_DIST}
 
@@ -23,17 +24,43 @@ EXTRACT_ONLY=	${SRC_DIST}
 MAINTAINER=	jesper.louis.andersen@gmail.com
 COMMENT=	An optimizing Standard ML compiler
 
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
+		MINGW32	"Add the mingw32 target (requires wine)"	off
+
+.include <bsd.port.pre.mk>
+
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 		htmldoc:${PORTSDIR}/textproc/htmldoc \
 		latex:${PORTSDIR}/print/teTeX
 .endif
-LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 SRC_DIST=	${DISTNAME}-1.src.tgz
-BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1-0.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
+
+.if defined(WITH_SMLNJ)
+BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
+BOOT_DIST=
+MAKE_ENV+=	SMLNJ_DEVEL=yes
+ALL_TARGET=	bootstrap-nj
+.else
+BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1.${MACHINE_ARCH}-freebsd${OSRELMAJ}.${BOOT_SUF}
+.endif
+
+.if defined(WITH_MINGW32)
+BUILD_DEPENDS+=	wine:${PORTSDIR}/emulators/wine \
+		mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/devel/mingw32-libgmp4
+RUN_DEPENDS+=	mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/devel/mingw32-libgmp4
+
+PLIST_SUB+=	MINGW32CROSS=""
+.else
+PLIST_SUB+=	MINGW32CROSS="@comment "
+.endif
 
 ONLY_FOR_ARCHS=	i386
 
@@ -42,7 +69,6 @@ MANCOMPRESSED=	yes
 
 BOOT_WRKSRC=	${WRKDIR}/mlton-bootstrap
 
-ALL_TARGET=	all
 USE_GMAKE=	yes
 MAKE_ARGS=	DESTDIR='' \
 		PATH=${WRKSRC}/build/bin:${BOOT_WRKSRC}/bin:${PATH} \
@@ -52,14 +78,17 @@ MAKE_ARGS=	DESTDIR='' \
 INSTALL_TARGET=	install-no-docs
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "i386"
 MLTON_ARCH=	"x86"
 .endif
 
-.if ${OSVERSION} < 700000
-IGNORE=		cannot bootstrap on FreeBSD < 7.0
+.if ${OSVERSION} >= 700000
+OSRELMAJ=
+.else
+OSRELMAJ=	-6
+.if ${OSVERSION} <  600000
+IGNORE=		cannot bootstrap on FreeBSD < 6.0
+.endif
 .endif
 
 BOOT_EXTRACT=	--bzip2
@@ -67,11 +96,22 @@ BOOT_SUF=	tbz
 BOOT_VER=	20070826
 
 post-extract:
+	@${CP} ${FILESDIR}/add-local-cross ${WRKSRC}/bin/
+.if defined(WITH_SMLNJ)
+	@${CP} ${FILESDIR}/upgrade-basis.sml ${WRKSRC}/mlton/
+	@for f in `ls ${FILESDIR}/ml.* ${FILESDIR}/mlb.*`; do \
+		${CP} $$f ${WRKSRC}/mlton/front-end/; \
+	done
+	@for f in `ls ${FILESDIR}/yacc.*`; do \
+		${CP} $$f ${WRKSRC}/mlyacc/src/; \
+	done
+.else
 	@${MKDIR} ${BOOT_WRKSRC}
 	@${TAR} xf ${DISTDIR}/${BOOT_DIST} ${BOOT_EXTRACT} -C ${BOOT_WRKSRC}
 	@${REINPLACE_CMD} -e \
 		"s|lib=\'${LOCALBASE}/|lib=\'${BOOT_WRKSRC}/|" \
 		${BOOT_WRKSRC}/bin/mlton
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -80,6 +120,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|CFLAGS += -I/usr/local/include|CFLAGS += -I${LOCALBASE}/include|" \
 		${WRKSRC}/runtime/bytecode/Makefile
+
+post-build:
+.if defined(WITH_MINGW32)
+	@${ECHO} Adding mingw32 target...
+	${WRKSRC}/bin/add-local-cross mingw32 x86 mingw
+.endif
 
 post-install:
 .for bin in mllex mlnlffigen mlprof mlton mlyacc

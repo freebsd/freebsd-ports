@@ -1,0 +1,197 @@
+#!/usr/bin/env bash
+
+set -e
+
+# This script adds a new crosscompiler target for MLton.
+#
+# It takes three arguments.
+#
+# 1. <crossTarget>, which is what MLton would pass via the -b flag to the GCC
+#    cross-compiler tools.  You don't need to have installed these tools in order
+#    to run this script, since it uses ssh and the native gcc on the target.
+#    Examples of $crossTarget are i386-pc-cygwin and sparc-sun-solaris.
+#
+# 2. <crossArch> specifies the target architecture.  
+#    The posibilities are: amd64, hppa, sparc, x86.
+#
+# 3. <crossOS> specifies the target OS.
+#    The possibilities are: aix, cygwin, darwin, freebsd, hpux, linux, mingw, 
+#    netbsd, openbsd, solaris.
+#
+# Here are some example uses of this script.
+#
+#   add-cross mingw32 x86 mingw
+#
+# You also may need to set $libDir, which determines where the$exe.c
+# cross-compiler target will be installed.
+#
+# This script is a modification of add-cross. Rather than ssh into a box
+# running the target platform it uses cross-compiler tools to produce
+# executables and an environment to execute them.
+#
+# It only works with the mingw32 cross-compiler and the wine environment.
+#
+
+MAKE=gmake
+GCC=mingw32-gcc
+RUN=wine
+
+die () {
+        echo >&2 "$1"
+        exit 1
+}
+
+usage () {
+        die "usage: $name <crossTarget> <crossArch> <crossOS>"
+}
+
+case "$#" in
+3)
+        crossTarget="$1"
+        crossArch="$2"
+        crossOS="$3"
+        ;;
+*)
+        usage
+        ;;
+esac
+
+name=`basename "$0"`
+original=`pwd`
+dir=`dirname "$0"`
+src=`cd "$dir/.." && pwd`
+
+PATH="$dir":$PATH
+
+# libDir is the mlton lib directory where you would like the
+# cross-compiler information to be installed.  If you have installed
+# from the rpms, this will usually be /usr/lib/mlton.  You must have
+# write permission there.
+
+lib="$src/build/lib"
+
+# You shouldn't need to change anything below this line.
+
+rm -rf "$lib/$crossTarget"
+mkdir -p "$lib/$crossTarget" || die "Cannot write to $lib."
+
+tmp="$src/cross-$crossTarget"
+#ssh $machine "rm -rf $tmp && mkdir $tmp"
+rm -rf $tmp && mkdir $tmp
+
+$MAKE -C "$src" dirs
+
+echo '* Making runtime.' 
+#( cd "$src" && tar cf - Makefile basis-library bin include runtime ) | 
+#        ssh $machine "cd $tmp && tar xf - && cd runtime &&
+#                ../bin/mmake COMPILE_FAST=yes OMIT_BYTECODE=yes TARGET_ARCH=$crossArch TARGET_OS=$crossOS clean all &&
+#		cd .. && make dirs runtime"
+cd "$src"
+for f in Makefile basis-library bin include runtime; do
+    cp -pfR $f "$tmp"
+done
+
+echo "* Running make clean all in $tmp/runtime."
+cd "$tmp"
+$MAKE -C runtime COMPILE_FAST=yes OMIT_BYTECODE=yes TARGET=$crossTarget    \
+						    TARGET_ARCH=$crossArch \
+						    TARGET_OS=$crossOS     \
+						    clean all
+
+echo "* Running make dirs runtime in $tmp."
+$MAKE TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS dirs runtime
+
+echo "* Copy from tmp to build (build/lib/$crossTarget)."
+# ssh $machine "cd $tmp/build/lib/self && tar cf - ." | 
+#         ( cd "$lib/$crossTarget" && tar xf - )
+cp -pfR "$tmp/build/lib/$crossTarget" "$lib/"
+
+echo "* Copy from $crossArch-$crossOS (basis-library/config/c/$crossArch-crossOS)."
+#ssh $machine "cd $tmp/basis-library/config/c && tar cf - $crossArch-$crossOS" | 
+#        ( cd "$lib/sml/basis/config/c" && tar xf - )
+cp -pfR "$tmp/basis-library/config/c/$crossArch-$crossOS" \
+	"$lib/sml/basis/config/c/"
+
+echo "* Running make mlbpathmap targetmap in $src."
+#( cd "$src" &&
+#        mmake TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS \
+#                mlbpathmap targetmap )
+cd "$src"
+$MAKE TARGET=$crossTarget TARGET_ARCH=$crossArch TARGET_OS=$crossOS  \
+      mlbpathmap targetmap
+
+case "$crossOS" in
+mingw)
+	#suf='.exe'
+	suf=''
+;;
+*)
+	suf=''
+;;
+esac
+
+# Copied from mlton-script
+case "$crossArch" in
+amd64)
+        archOpts='-m64'
+;;
+hppa)
+        archOpts=''
+;;
+sparc)
+        archOpts='-m32'
+;;
+x86)
+        archOpts=''
+;;
+esac
+
+case "$crossOS" in
+aix)
+        osOpts=''
+;;
+cygwin)
+        osOpts=''
+;;
+darwin)
+        osOpts='-I/opt/local/include -I/sw/include -L/opt/local/lib -L/sw/lib -lgmp'
+;;
+freebsd)
+        osOpts='-I/usr/local/include -L/usr/local/lib/ -lgmp'
+;;
+hpux)
+        osOpts=''
+;;
+linux)
+        osOpts=''
+;;
+mingw)
+	libs='-lws2_32 -lkernel32 -lpsapi -lnetapi32'
+;;
+netbsd)
+        osOpts='-I/usr/pkg/include -Wl,-R/usr/pkg/lib -L/usr/pkg/lib/ -lgmp'
+;;
+openbsd)
+        osOpts='-I/usr/local/include -L/usr/local/lib/ -lgmp'
+;;
+solaris)
+        osOpts='-lnsl -lsocket -lrt'
+;;
+esac
+
+exe='print-constants'
+echo "* Compiling and running print-constants."
+#"$src/build/bin/mlton" -target $crossTarget -build-constants true | 
+#        ssh $machine "cd $tmp/runtime &&
+#                        cat >$exe.c && 
+#                        gcc $archOpts $osOpts -I. -o $exe $exe.c libmlton.a libgdtoa.a -lgmp -lm"
+"$src/build/bin/mlton" -target $crossTarget -build-constants true \
+    > "$tmp/runtime/$exe.c"
+cd "$tmp/runtime/"
+$GCC $archOpts $osOpts -I. -o $exe $exe.c libmlton.a libgdtoa.a -lgmp -lm $libs
+
+#ssh $machine "$tmp/runtime/$exe$suf" >"$lib/$crossTarget/constants"
+$RUN "$tmp/runtime/$exe$suf" > "$lib/$crossTarget/constants"
+#ssh $machine "rm -rf $tmp"
+# rm -rf "$tmp"
+

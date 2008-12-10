@@ -116,6 +116,12 @@ lib/mlton/self/libgdtoa.a
 lib/mlton/self/libmlton-gdb.a
 lib/mlton/self/libmlton.a
 lib/mlton/self/sizes
+%%MINGW32CROSS%%lib/mlton/mingw32/constants
+%%MINGW32CROSS%%lib/mlton/mingw32/include/c-types.h
+%%MINGW32CROSS%%lib/mlton/mingw32/libgdtoa.a
+%%MINGW32CROSS%%lib/mlton/mingw32/libmlton-gdb.a
+%%MINGW32CROSS%%lib/mlton/mingw32/libmlton.a
+%%MINGW32CROSS%%lib/mlton/mingw32/sizes
 lib/mlton/sml/basis/Makefile
 lib/mlton/sml/basis/README
 lib/mlton/sml/basis/arrays-and-vectors/array-slice.sig
@@ -162,6 +168,7 @@ lib/mlton/sml/basis/config/c/sys-types.sml
 lib/mlton/sml/basis/config/c/sys-word.sml
 lib/mlton/sml/basis/config/c/word-to-bool.sml
 lib/mlton/sml/basis/config/c/x86-freebsd/c-types.sml
+%%MINGW32CROSS%%lib/mlton/sml/basis/config/c/x86-mingw/c-types.sml
 lib/mlton/sml/basis/config/choose-char.sml
 lib/mlton/sml/basis/config/choose-int.sml
 lib/mlton/sml/basis/config/choose-real.sml
@@ -3102,6 +3109,7 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml/basis/config/header
 @dirrm lib/mlton/sml/basis/config/default
 @dirrm lib/mlton/sml/basis/config/c/x86-freebsd
+%%MINGW32CROSS%%@dirrm lib/mlton/sml/basis/config/c/x86-mingw
 @dirrm lib/mlton/sml/basis/config/c
 @dirrm lib/mlton/sml/basis/config/bind
 @dirrm lib/mlton/sml/basis/config
@@ -3111,6 +3119,8 @@ lib/mlton/world.mlton
 @dirrm lib/mlton/sml
 @dirrm lib/mlton/self/include
 @dirrm lib/mlton/self
+%%MINGW32CROSS%%@dirrm lib/mlton/mingw32/include
+%%MINGW32CROSS%%@dirrm lib/mlton/mingw32
 @dirrm lib/mlton/include/util
 @dirrm lib/mlton/include/platform
 @dirrm lib/mlton/include/gc
