@@ -58,6 +58,9 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 OPTIONS+=	ZAPTEL		"Enable Zaptel support" off
+
+# Include this since we have altered OPTIONS.
+.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
 .endif
 
 .if !defined(WITH_H323)
