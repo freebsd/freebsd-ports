@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Hooks-OP-Check
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		B::Hooks::OP::Check.3
 
