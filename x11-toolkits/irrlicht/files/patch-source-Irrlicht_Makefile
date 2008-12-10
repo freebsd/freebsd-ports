@@ -1,22 +1,14 @@
---- source/Irrlicht/Makefile	2007-12-24 20:52:26.000000000 -0500
-+++ source/Irrlicht/Makefile	2007-12-24 21:00:21.000000000 -0500
-@@ -1,13 +1,13 @@
- VERSION = 1.4
- # Irrlicht Engine 1.4
+--- source/Irrlicht/Makefile	2008-12-06 13:51:48.000000000 -0500
++++ source/Irrlicht/Makefile	2008-12-06 14:00:34.000000000 -0500
+@@ -1,6 +1,6 @@
+ VERSION = 1.4.2
+ # Irrlicht Engine 1.4.2
 -# Makefile for Linux
 +# Makefile for FreeBSD
  #
  # To use, just run:
  #
- # make
- #
- # This will compile Irrlicht, create a static lib (libIrrlicht.a), and copy it
--# into the subdirectory lib/Linux. That's all.
-+# into the subdirectory lib/FreeBSD. That's all.
- #
- # If you want Irrlicht to be compiled as shared lib (libIrrlicht.so.versionnumber), then run:
- #
-@@ -36,24 +36,21 @@
+@@ -36,29 +36,26 @@
  IRRIOOBJ = CFileList.o CFileSystem.o CLimitReadFile.o CMemoryReadFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o CPakReader.o irrXML.o CAttributes.o
  IRROTHEROBJ = CIrrDeviceSDL.o CIrrDeviceLinux.o CIrrDeviceStub.o CIrrDeviceWin32.o CLogger.o COSOperator.o Irrlicht.o os.o
  IRRGUIOBJ = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISpinBox.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUIToolBar.o CGUIWindow.o CGUIColorSelectDialog.o CDefaultGUIElementFactory.o CGUISpriteBank.o
@@ -46,7 +38,13 @@
  endif
  ifdef PROFILE
  CXXFLAGS += -pg
-@@ -65,11 +62,11 @@
+ endif
+-CFLAGS := -fexpensive-optimizations -O3 -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
++#CFLAGS := -fexpensive-optimizations -O3 -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
+ 
+ sharedlib : CXXFLAGS += -fpic
+ sharedlib : CFLAGS += -fpic
+@@ -73,11 +70,11 @@
  SHARED_LIB = libIrrlicht.so
  IRRLICHT_DLL := ../../bin/Win32-gcc/Irrlicht.dll
  LIB_PATH = ../../lib/$(SYSTEM)
@@ -55,21 +53,21 @@
 +INSTALL_DIR = $(PREFIX)/lib
 +staticlib sharedlib install: SYSTEM = FreeBSD
  staticlib sharedlib : LDFLAGS = --no-export-all-symbols --add-stdcall-alias
--sharedlib : LDFLAGS += -L/usr/X11R6/lib -lGL -lXxf86vm
+-sharedlib : LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib : CXXINCS += -I/usr/X11R6/include
-+sharedlib : LDFLAGS += -L/usr/lib -L$(LOCALBASE)/lib -lGL -lXxf86vm
++sharedlib : LDFLAGS +=  -L/usr/lib -L$(LOCALBASE)/lib -lGL -lXxf86vm
 +staticlib sharedlib : CXXINCS += -I$(LOCALBASE)/include
  
  #Windows specific options
  sharedlib_win32 staticlib_win32: SYSTEM = Win32-gcc
-@@ -78,20 +75,22 @@
+@@ -86,20 +83,22 @@
  staticlib_win32: CPPFLAGS += -D_IRR_STATIC_LIB_
  
  ####################
 -# All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into /lib/Linux
 -all linux: staticlib
 +# All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into /lib/FreeBSD
-+all freebsd: staticlib sharedlib
++all linux: staticlib sharedlib
  
 -# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into /lib/Linux
 +# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into /lib/FreeBSD
@@ -90,7 +88,7 @@
  	cp $^ $(LIB_PATH)
  
  # Builds Irrlicht as dll (Irrlicht.dll) into ../../bin/Win32-gcc
-@@ -117,9 +116,9 @@
+@@ -125,9 +124,9 @@
  
  help:
  	@echo "Available targets for Irrlicht"

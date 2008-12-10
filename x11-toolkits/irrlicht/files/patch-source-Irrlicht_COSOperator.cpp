@@ -1,11 +1,10 @@
---- source/Irrlicht/COSOperator.cpp	2007-12-24 20:31:04.000000000 -0500
-+++ source/Irrlicht/COSOperator.cpp	2007-12-24 20:37:13.000000000 -0500
-@@ -10,12 +10,9 @@
- #else
- #include <string.h>
- #include <unistd.h>
--#ifdef MACOSX
--#include "OSXClipboard.h"
+---  source/Irrlicht/COSOperator.cpp	2008-12-06 13:48:20.000000000 -0500
++++  source/Irrlicht/COSOperator.cpp	2008-12-06 13:49:26.000000000 -0500
+@@ -13,11 +13,9 @@
+ #ifdef _IRR_USE_OSX_DEVICE_
+ #include "OSXClipboard.h"
+ #endif
+-#ifdef _IRR_OSX_PLATFORM_
  #include <sys/types.h>
  #include <sys/sysctl.h>
  #endif
@@ -13,7 +12,7 @@
  
  namespace irr
  {
-@@ -154,7 +151,7 @@
+@@ -157,7 +155,7 @@
  	_IRR_IMPLEMENT_MANAGED_MARSHALLING_BUGFIX;
  	return true;
  
