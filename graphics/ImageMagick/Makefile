@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.5-5
+DISTVERSION=	6.4.7-5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	imagemagick
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -48,7 +48,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=	X11				"X11 support" on \
-		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
+		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" off \
 		IMAGEMAGICK_OPENMP	"OpenMP for SMP (needs threads)" off \
 		IMAGEMAGICK_PERL		"Perl support" on \
 		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
@@ -311,9 +311,9 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install install-data-html
 .endif
 
-.if ${OSVERSION} >= 800000
-WITHOUT_IMAGEMAGICK_TESTS=yes
-.endif
+#.if ${OSVERSION} >= 800000
+#WITHOUT_IMAGEMAGICK_TESTS=yes
+#.endif
 
 post-patch:
 # prevent perllocal.pod from being written
@@ -354,9 +354,9 @@ pre-configure:
 .if defined(WITH_IMAGEMAGICK_DJVU) && !defined(WITH_IMAGEMAGICK_THREADS)
 	@${ECHO_CMD} "WARNING: DjVu requires threads and will not be supported."
 .endif
-.if ${OSVERSION} >= 800000
-	@${ECHO_CMD} "WARNING: constitute (cmy) tests fail on 8.x. Disabling tests."
-.endif
+#.if ${OSVERSION} >= 800000
+#	@${ECHO_CMD} "WARNING: constitute (cmy) tests fail on 8.x. Disabling tests."
+#.endif
 
 post-install:
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
@@ -385,7 +385,7 @@ WITHOUT_IMAGEMAGICK_TESTS=yes
 .	endfor
 .endif
 
-.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
+.if defined(WITH_IMAGEMAGICK_TESTS) && !defined(WITHOUT_IMAGEMAGICK_TESTS)
 post-build:	test
 .endif
 
