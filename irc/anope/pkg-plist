@@ -129,6 +129,7 @@ libexec/anope/tools/epona2anope
 %%DATADIR%%/modules/os_global.so
 %%DATADIR%%/modules/os_help.so
 %%DATADIR%%/modules/os_ignore.so
+%%DATADIR%%/modules/os_ignore_db.so
 %%DATADIR%%/modules/os_info.so
 %%DATADIR%%/modules/os_jupe.so
 %%DATADIR%%/modules/os_kick.so
