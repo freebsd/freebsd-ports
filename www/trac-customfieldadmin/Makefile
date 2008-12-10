@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	customfieldadmin
-PORTVERSION=	0.2.4016
-PORTREVISION=	1
+PORTVERSION=	0.2.4964
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
