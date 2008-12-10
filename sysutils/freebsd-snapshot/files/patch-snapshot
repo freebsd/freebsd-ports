@@ -1,5 +1,5 @@
---- snapshot.orig       Thu Sep 15 17:44:46 2005
-+++ snapshot    Thu Sep 15 17:47:59 2005
+--- snapshot~    2008-12-06 19:37:53.598862157 -0600
++++ snapshot    2008-12-06 19:37:53.599877379 -0600
 @@ -29,7 +29,7 @@
  ##
 
@@ -9,17 +9,28 @@
 
  #   option defaults
  fs_subdir=".snap"
+@@ -271,7 +271,7 @@
+         i=19
+         k=`expr $maxgen - 1`
+         while [ $i -gt $k ]; do
+-            if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
++            if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
+                 system zfs destroy "$fs_name@$fs_tag.$i"
+             fi
+             i=`expr $i - 1`
+@@ -280,12 +280,12 @@
+         if [ $maxgen -gt 0 ]; then
+             #   rotate remaining snapshots
+             i=$k
+-            if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
++            if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
+                 system zfs destroy "$fs_name@$fs_tag.$i"
+             fi
+             i=`expr $i - 1`
+             while [ $i -ge $fs_gen ]; do
+-                if zfs list "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
++                if zfs list -t snapshot "$fs_name@$fs_tag.$i" >/dev/null 2>&1; then
+                     j=`expr $i + 1`
+                     system zfs rename "$fs_name@$fs_tag.$i" "$fs_name@$fs_tag.$j"
+                 fi 
 
-
-cat files/patch-periodic-snapshot
---- periodic-snapshot.orig      Thu Sep 15 17:44:57 2005
-+++ periodic-snapshot   Thu Sep 15 17:46:31 2005
-@@ -29,7 +29,7 @@
- ##
-
- #   make sure system tools are used first
--PATH="/bin:/usr/bin:/sbin:/usr/sbin:$PATH"
-+PATH="/bin:/usr/bin:/sbin:/usr/sbin:%%PREFIX%%/sbin:$PATH"
-
- #   configuration defaults
- snapshot_enable="NO"
