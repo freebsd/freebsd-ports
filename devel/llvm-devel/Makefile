@@ -52,6 +52,8 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
 BROKEN=		does not compile
+.elif ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 .if defined(BOOTSTRAP)

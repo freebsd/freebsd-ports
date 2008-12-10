@@ -95,6 +95,10 @@ CONFIGURE_ARGS+=	--enable-debug-msgs --enable-debug-fnames
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

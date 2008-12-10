@@ -69,6 +69,10 @@ ARGS+=		--trace
 .endif
 ARGS+=		--enable QtGui
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} >= 700000
+BROKEN=		Does not compile on sparc64
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
 		${PYTHON_CMD} configure.py ${ARGS}

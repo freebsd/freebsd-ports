@@ -25,4 +25,10 @@ USE_GETTEXT=	yes
 
 MAN1=		piklab-hex.1 piklab-prog.1 piklab.1x
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

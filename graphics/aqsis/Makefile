@@ -50,4 +50,10 @@ post-configure:
 	${REINPLACE_CMD} -e 's|-O2|-O2 ${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/shadercompiler/aqsltell/CMakeFiles/aqsltell.dir/link.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

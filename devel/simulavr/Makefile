@@ -33,8 +33,10 @@ INFO=		simulavr
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${OSVERSION} >= 700042
 BROKEN=		Does not compile
+.endif
 .endif
 
 do-install:

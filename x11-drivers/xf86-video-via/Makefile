@@ -19,4 +19,10 @@ XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
 MAN4=		via.4x
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
