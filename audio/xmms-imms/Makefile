@@ -23,7 +23,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		fftw3f.4:${PORTSDIR}/math/fftw3-float \
 		tag.6:${PORTSDIR}/audio/taglib
 
-BROKEN=		does not configure
+DEPRECATED=	does not configure or build
+EXPIRATION_DATE=	2009-02-09
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
