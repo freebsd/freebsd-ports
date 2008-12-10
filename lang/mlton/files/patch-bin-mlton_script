@@ -1,0 +1,18 @@
+--- bin/mlton-script.orig	2008-04-22 21:15:23.000000000 +1000
++++ bin/mlton-script	2008-04-22 21:18:33.000000000 +1000
+@@ -19,14 +19,7 @@
+ mlton="$lib/mlton-compile$exe"
+ world="$lib/world.mlton"
+ nj='sml'
+-# Try to use the SML/NJ .arch-n-opsys
+-if .arch-n-opsys >/dev/null 2>&1; then
+-        eval `.arch-n-opsys`
+-        njHeap="$lib/mlton.$HEAP_SUFFIX"
+-        unset `.arch-n-opsys | sed 's#=[^ ]*##g'`
+-else
+-        njHeap="$lib/mlton.$HOST_ARCH-$HOST_OS"
+-fi
++njHeap="$lib/mlton.x86-bsd"
+ 
+ declare -a rargs
+ case "$1" in
