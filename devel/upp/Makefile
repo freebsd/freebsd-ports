@@ -47,6 +47,10 @@ USE_MYSQL=	yes
 USE_PGSQL=	yes
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/uppsrc/ide/Makefile
 	@${REINPLACE_CMD} -e 's|CINC =(.*)|$1 ${PTHREAD_CFLAGS}|' ${WRKSRC}/uppsrc/ide/Makefile

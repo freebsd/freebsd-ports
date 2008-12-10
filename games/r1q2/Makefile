@@ -73,6 +73,10 @@ PLIST_SUB+=	REF_GL=""
 PLIST_SUB+=	REF_GL="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|game$$(ARCH)|game|g' \
 		${BUILD_WRKSRC}/game/Makefile

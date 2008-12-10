@@ -40,4 +40,10 @@ MAN3=	Math::GSL.3 Math::GSL::Heapsort.3 Math::GSL::Permutation.3 \
 	Math::GSL::Fit.3 Math::GSL::ODEIV.3 Math::GSL::Wavelet.3 \
 	Math::GSL::Sys.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

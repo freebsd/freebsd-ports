@@ -43,6 +43,10 @@ OPTIONS=	DEBUG	"Compile with debugging simbols" off \
 CFLAGS+=	-fPIC
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if !defined(WITHOUT_EXAMPLES)
 PLIST_SUB+=	EXAMPLES=""
 .else

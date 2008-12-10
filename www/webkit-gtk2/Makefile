@@ -43,6 +43,10 @@ MAKEFILE=	GNUmakefile
 IGNORE=	Does not build
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|autoconf|${AUTOCONF}|g ; \
 		s|automake|${AUTOMAKE}|g ; s|aclocal|${ACLOCAL}|g ; \

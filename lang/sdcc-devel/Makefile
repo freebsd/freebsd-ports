@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-O0
 CXXFLAGS+=	-O0
+BROKEN=		Does not compile on sparc64
 .endif
 
 .if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019

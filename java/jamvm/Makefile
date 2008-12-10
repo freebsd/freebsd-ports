@@ -38,6 +38,10 @@ CONFIGURE_ARGS+=	--disable-zip
 PLIST_SUB+=		WITH_ZIP="@comment " WITHOUT_ZIP=""
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 post-extract:
 	@${MV} ${WRKSRC}/src/arch/x86_64.h ${WRKSRC}/src/arch/amd64.h
 

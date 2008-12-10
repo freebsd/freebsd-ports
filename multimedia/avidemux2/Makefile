@@ -195,6 +195,10 @@ PLIST_SUB+=	QT_NLS=""
 .	endif
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/avidemux/ADM_libraries/ADM_mplex/ADM_mplexout.cpp

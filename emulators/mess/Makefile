@@ -32,6 +32,10 @@ SUB_FILES=	${PORTNAME} pkg-message
 USE_GCC=	4.2+
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/sdlmess
