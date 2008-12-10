@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
-		http://www.alaskaparadise.com/freebsd/:sql_tds \
+		http://labratsoftware.com/mod_sql_tds/:sql_tds \
 		http://www.alaskaparadise.com/freebsd/:clam \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		LOCAL/beech:clam \
@@ -237,8 +237,8 @@ MODULES:=${MODULES}:mod_digest
 .endif
 
 .if defined(WITH_TDS)
-DISTFILES+=	mod_sql_tds-4.6.tar.bz2:sql_tds
-EXTRACT_ONLY+=	mod_sql_tds-4.6.tar.bz2
+DISTFILES+=	mod_sql_tds-4.7.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.7.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
 MODULES:=mod_sql${MODULES}
 PLIST_FILES+=	include/proftpd/mod_sql.h
@@ -277,7 +277,7 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
 .endif
 .if defined(WITH_TDS)
-	 @${MV} ${WRKDIR}/mod_sql_tds-4.6/mod_sql_tds.c ${WRKSRC}/contrib/
+	 @${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib/
 .endif
 
 post-patch:
