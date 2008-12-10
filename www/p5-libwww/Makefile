@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwww
-PORTVERSION=	5.821
+PORTVERSION=	5.822
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	LWP
@@ -31,7 +31,7 @@ MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Config.3 \
 	HTTP::Headers::Util.3 HTTP::Message.3 HTTP::Negotiate.3 \
 	HTTP::Request.3 HTTP::Request::Common.3 HTTP::Response.3 \
 	HTTP::Status.3 LWP.3 LWP::Authen::Ntlm.3 LWP::ConnCache.3 \
-	LWP::Debug.3 LWP::DebugFile.3 LWP::MediaTypes.3 \
+	LWP::Debug.3 LWP::MediaTypes.3 \
 	LWP::MemberMixin.3 LWP::Protocol.3 LWP::RobotUA.3 LWP::Simple.3 \
 	LWP::UserAgent.3 Net::HTTP.3 Net::HTTP::NB.3 WWW::RobotRules.3 \
 	WWW::RobotRules::AnyDBM_File.3 lwpcook.3 lwptut.3
