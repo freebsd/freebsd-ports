@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ventrilo
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	audio net
 MASTER_SITES=	# http://www.ventrilo.com/download.php
 PKGNAMESUFFIX=	-server
