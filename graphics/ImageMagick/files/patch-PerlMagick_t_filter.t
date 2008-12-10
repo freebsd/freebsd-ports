@@ -1,11 +1,11 @@
---- PerlMagick/t/filter.t.orig	2008-10-24 20:01:34.000000000 +0200
-+++ PerlMagick/t/filter.t	2008-10-27 12:42:58.000000000 +0100
+--- PerlMagick/t/filter.t.orig	2008-11-15 23:55:34.000000000 +0100
++++ PerlMagick/t/filter.t	2008-11-16 02:47:26.000000000 +0100
 @@ -123,7 +123,7 @@
  testFilterCompare('input.miff',  q//, 'reference/filter/Modulate.miff', 'Modulate', q/brightness=>110,saturation=>110,hue=>110/, 0.005, 0.5);
  ++$test;
  
--testFilterCompare('input.miff',  q//, 'reference/filter/QuantizeMono.miff', 'Quantize', q/colorspace=>'gray',colors=>2,dither=>'false'/, 0.02, 1.02);
-+testFilterCompare('input.miff',  q//, 'reference/filter/QuantizeMono.miff', 'Quantize', q/colorspace=>'gray',colors=>2,dither=>'false'/, 0.06, 1.02);
+-testFilterCompare('input.miff',  q//, 'reference/filter/QuantizeMono.miff', 'Quantize', q/colorspace=>'gray',colors=>2,dither=>'false'/, 0.3, 1.03);
++testFilterCompare('input.miff',  q//, 'reference/filter/QuantizeMono.miff', 'Quantize', q/colorspace=>'gray',colors=>2,dither=>'false'/, 0.6, 1.03);
  ++$test;
  
  testFilterCompare('input.miff',  q//, 'reference/filter/MotionBlur.miff', 'MotionBlur', q/'0x13+10-10'/, 0.003, 0.03);
