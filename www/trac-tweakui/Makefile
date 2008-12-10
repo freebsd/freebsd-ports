@@ -7,6 +7,7 @@
 
 PORTNAME=	tweakui
 PORTVERSION=	0.1.4465
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -20,6 +21,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(css|html|js|py|txt)$
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
