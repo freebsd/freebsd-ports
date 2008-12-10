@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	anope
-PORTVERSION=	1.7.22
+PORTVERSION=	1.7.24
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A set of IRC services for IRC networks
 
 USE_GMAKE=	yes
