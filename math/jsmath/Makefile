@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jsMath
-PORTVERSION=	3.5
+DISTVERSION=	3.6a
 CATEGORIES=	math www
 MASTER_SITES=	SFE
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Javascript tool for including mathematics in web pages
@@ -32,6 +31,7 @@ RUN_DEPENDS+=	${WWWDIR}/fonts-sprite/cm-fonts/font.js:${PORTSDIR}/math/jsmath-fo
 
 post-extract:
 	@${RM} ${WRKSRC}/COPYING.txt
+	@${FIND} -d ${WRKSRC} -type d -name "CVS" -exec ${RM} -R {} ";"
 
 do-install:
 	@${INSTALL} -d ${WWWDIR}

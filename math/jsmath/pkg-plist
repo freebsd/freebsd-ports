@@ -8,6 +8,7 @@
 %%WWWDIR%%/extensions/bbox.js
 %%WWWDIR%%/extensions/boldsymbol.js
 %%WWWDIR%%/extensions/double-click.js
+%%WWWDIR%%/extensions/eqn-number.js
 %%WWWDIR%%/extensions/fbox.js
 %%WWWDIR%%/extensions/font.js
 %%WWWDIR%%/extensions/leaders.js
@@ -35,6 +36,7 @@
 %%WWWDIR%%/jsMath-msie-mac.js
 %%WWWDIR%%/jsMath-old-browsers.js
 %%WWWDIR%%/jsMath.js
+%%WWWDIR%%/local/macros.js
 %%WWWDIR%%/plugins/CHMmode.js
 %%WWWDIR%%/plugins/autoload.js
 %%WWWDIR%%/plugins/global.js
@@ -59,6 +61,7 @@
 @dirrm %%WWWDIR%%/uncompressed
 @dirrm %%WWWDIR%%/test
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/local
 @dirrm %%WWWDIR%%/extensions
 @dirrm %%WWWDIR%%/easy
 @dirrm %%WWWDIR%%
