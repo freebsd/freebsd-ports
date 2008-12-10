@@ -14,14 +14,17 @@ DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 MAINTAINER=	kazakov@gmail.com
 COMMENT=	RFC 2307 NSS module
 
-NSS_LDAP_VERSION=257
+NSS_LDAP_VERSION=264
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262 autoheader:262
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
-PLIST_FILES=	etc/nss_ldap.conf.sample lib/nss_ldap.so.1
+
+PLIST_FILES=	etc/nss_ldap.conf.sample \
+		lib/nss_ldap.so.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
@@ -29,7 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret \
 		--enable-rfc2307bis \
-		--enable-schema-mapping \
 		--enable-paged-results \
 		--enable-configurable-krb5-ccname-env
 

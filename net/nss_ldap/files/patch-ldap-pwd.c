@@ -1,8 +1,8 @@
---- ldap-pwd.c.orig	Fri Feb 24 11:02:50 2006
-+++ ldap-pwd.c	Thu May 11 14:52:42 2006
+--- ldap-pwd.c.orig	2008-10-30 21:50:15.000000000 +0100
++++ ldap-pwd.c	2008-12-06 00:37:30.216966282 +0100
 @@ -21,7 +21,10 @@
  static char rcsId[] =
-   "$Id: ldap-pwd.c,v 2.46 2006/01/11 18:03:49 lukeh Exp $";
+   "$Id: ldap-pwd.c,v 2.48 2008/10/30 20:49:47 lukeh Exp $";
  
 +#include <sys/types.h>
 +#include <unistd.h>
