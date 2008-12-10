@@ -31,6 +31,7 @@
 %%HORDIR%%/config/registry.php.dist
 %%HORDIR%%/index.php
 %%HORDIR%%/js/QuickFinder.js
+%%HORDIR%%/js/accesskeys.js
 %%HORDIR%%/js/addEvent.php
 %%HORDIR%%/js/colorpicker.js
 %%HORDIR%%/js/controls.js
@@ -59,6 +60,7 @@
 %%HORDIR%%/js/slider.js
 %%HORDIR%%/js/sorter.js
 %%HORDIR%%/js/src/QuickFinder.js
+%%HORDIR%%/js/src/accesskeys.js
 %%HORDIR%%/js/src/colorpicker.js
 %%HORDIR%%/js/src/controls.js
 %%HORDIR%%/js/src/dhtmlHistory.js
@@ -304,10 +306,16 @@
 %%HORDIR%%/lib/Horde/Kolab/Format/XML/hprefs.php
 %%HORDIR%%/lib/Horde/Kolab/Format/XML/note.php
 %%HORDIR%%/lib/Horde/Kolab/Format/XML/task.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP/cclient.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP/pear.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP/test.php
 %%HORDIR%%/lib/Horde/Kolab/Server.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/address.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/administrator.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/adminrole.php
+%%HORDIR%%/lib/Horde/Kolab/Server/Object/distlist.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/domainmaintainer.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/group.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/maintainer.php
@@ -316,17 +324,16 @@
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/user.php
 %%HORDIR%%/lib/Horde/Kolab/Server/ldap.php
 %%HORDIR%%/lib/Horde/Kolab/Server/test.php
+%%HORDIR%%/lib/Horde/Kolab/Session.php
 %%HORDIR%%/lib/Horde/Kolab/Storage.php
 %%HORDIR%%/lib/Horde/Kolab/Storage/Cache.php
 %%HORDIR%%/lib/Horde/Kolab/Storage/Data.php
 %%HORDIR%%/lib/Horde/Kolab/Storage/Folder.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/cclient.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/pear.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/IMAP/test.php
 %%HORDIR%%/lib/Horde/Kolab/Storage/List.php
 %%HORDIR%%/lib/Horde/Kolab/Storage/Perms.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Session.php
+%%HORDIR%%/lib/Horde/Kolab/Test.php
+%%HORDIR%%/lib/Horde/Kolab/Test/Server.php
+%%HORDIR%%/lib/Horde/Kolab/Test/Storage.php
 %%HORDIR%%/lib/Horde/LDAP.php
 %%HORDIR%%/lib/Horde/Lens.php
 %%HORDIR%%/lib/Horde/Lens/Interface.php
@@ -791,7 +798,9 @@
 %%HORDIR%%/scripts/get_login.php
 %%HORDIR%%/scripts/horde.logrotate
 %%HORDIR%%/scripts/http_login_refer.php
+%%HORDIR%%/scripts/import_squirrelmail_file_prefs.php
 %%HORDIR%%/scripts/import_squirrelmail_prefs.php
+%%HORDIR%%/scripts/import_squirrelmail_sql_prefs.php
 %%HORDIR%%/scripts/ldap/horde.prefs.acl
 %%HORDIR%%/scripts/ldap/horde.schema
 %%HORDIR%%/scripts/set_perms.sh
@@ -1579,6 +1588,7 @@
 %%HORDIR%%/templates/javascript/open_html_helper.js
 %%HORDIR%%/templates/javascript/print.js
 %%HORDIR%%/templates/javascript/tree.js
+%%HORDIR%%/templates/login/header.inc
 %%HORDIR%%/templates/login/login.inc
 %%HORDIR%%/templates/login/mobile.inc
 %%HORDIR%%/templates/maintenance/maintenance.html
@@ -4096,10 +4106,11 @@
 @dirrm %%HORDIR%%/lib/Horde/Log
 @dirrm %%HORDIR%%/lib/Horde/Lock
 @dirrm %%HORDIR%%/lib/Horde/Lens
-@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Test
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Storage
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server/Object
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server
+@dirrm %%HORDIR%%/lib/Horde/Kolab/IMAP
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Format/XML
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Format
 @dirrm %%HORDIR%%/lib/Horde/Kolab
@@ -4143,7 +4154,7 @@
 @dirrm %%HORDIR%%/js/src
 @dirrm %%HORDIR%%/js
 @dirrm %%HORDIR%%/config/registry.d
-@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/config
 @dirrm %%HORDIR%%/admin/setup
 @dirrm %%HORDIR%%/admin/perms
 @dirrm %%HORDIR%%/admin/locale/hu_HU
