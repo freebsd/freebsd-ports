@@ -8,6 +8,7 @@ etc/asciidoc/docbook-xsl/common.xsl
 etc/asciidoc/docbook-xsl/fo.xsl
 etc/asciidoc/docbook-xsl/htmlhelp.xsl
 etc/asciidoc/docbook-xsl/manpage.xsl
+etc/asciidoc/docbook-xsl/text.xsl
 etc/asciidoc/docbook-xsl/xhtml.xsl
 etc/asciidoc/docbook.conf
 etc/asciidoc/filters/code-filter.conf
@@ -44,18 +45,12 @@ etc/asciidoc/javascripts/LaTeXMathML.js
 etc/asciidoc/javascripts/toc.js
 etc/asciidoc/lang-es.conf
 etc/asciidoc/latex.conf
-etc/asciidoc/linuxdoc.conf
-etc/asciidoc/math.conf
 etc/asciidoc/stylesheets/docbook-xsl.css
-etc/asciidoc/stylesheets/xhtml-deprecated-manpage.css
-etc/asciidoc/stylesheets/xhtml-deprecated.css
 etc/asciidoc/stylesheets/xhtml11-manpage.css
 etc/asciidoc/stylesheets/xhtml11-quirks.css
 etc/asciidoc/stylesheets/xhtml11.css
-etc/asciidoc/t.conf
 etc/asciidoc/text.conf
-etc/asciidoc/xhtml-deprecated-css.conf
-etc/asciidoc/xhtml-deprecated.conf
+etc/asciidoc/wordpress.conf
 etc/asciidoc/xhtml11-quirks.conf
 etc/asciidoc/xhtml11.conf
 @dirrm etc/asciidoc/dblatex
