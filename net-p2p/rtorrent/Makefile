@@ -24,6 +24,8 @@ CONFLICTS?=	rtorrent-devel-[0-9]*
 
 MAN1=		rtorrent.1
 
+USE_GCC=	4.2+
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 
