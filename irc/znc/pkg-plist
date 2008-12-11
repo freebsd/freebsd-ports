@@ -14,29 +14,30 @@ include/znc/MD5.h
 include/znc/Modules.h
 include/znc/Nick.h
 include/znc/Server.h
-include/znc/String.h
 include/znc/Template.h
 include/znc/Timers.h
 include/znc/User.h
 include/znc/Utils.h
+include/znc/ZNCString.h
 include/znc/main.h
 include/znc/znc.h
 lib/znc/autoattach.so
-lib/znc/autoop.so
 lib/znc/autocycle.so
-lib/znc/keepnick.so
+lib/znc/autoop.so
 lib/znc/away.so
 lib/znc/awaynick.so
 lib/znc/chansaver.so
 lib/znc/crypt.so
 lib/znc/email.so
 lib/znc/imapauth.so
+lib/znc/keepnick.so
 lib/znc/kickrejoin.so
 lib/znc/modperl.pm
 lib/znc/modperl.so
 lib/znc/nickserv.so
 lib/znc/partyline.so
 lib/znc/perform.so
+lib/znc/q.so
 lib/znc/raw.so
 lib/znc/sample.so
 %%SASL%%lib/znc/saslauth.so
@@ -47,49 +48,63 @@ lib/znc/simple_away.so
 lib/znc/stickychan.so
 lib/znc/watch.so
 lib/znc/webadmin.so
-%%DATADIR%%/webadmin/skins/default/css/main.css
-%%DATADIR%%/webadmin/skins/default/img/favicon.ico
-%%DATADIR%%/webadmin/skins/default/Footer.tmpl
-%%DATADIR%%/webadmin/skins/default/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/default/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/default/Error.tmpl
-%%DATADIR%%/webadmin/skins/default/Header.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Channel.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Error.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Footer.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Header.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/ListUsers.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Main.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/Settings.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/UserPage.tmpl
+%%DATADIR%%/webadmin/skins/dark-clouds/css/main.css
+%%DATADIR%%/webadmin/skins/dark-clouds/img/clouds-header.jpg
+%%DATADIR%%/webadmin/skins/dark-clouds/img/favicon.ico
 %%DATADIR%%/webadmin/skins/default/Channel.tmpl
+%%DATADIR%%/webadmin/skins/default/Error.tmpl
+%%DATADIR%%/webadmin/skins/default/Footer.tmpl
+%%DATADIR%%/webadmin/skins/default/Header.tmpl
+%%DATADIR%%/webadmin/skins/default/ListUsers.tmpl
 %%DATADIR%%/webadmin/skins/default/Main.tmpl
 %%DATADIR%%/webadmin/skins/default/Settings.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/css/main.css
-%%DATADIR%%/webadmin/skins/graphiX/img/favicon.ico
-%%DATADIR%%/webadmin/skins/graphiX/img/graphix_header.jpg
-%%DATADIR%%/webadmin/skins/graphiX/img/graphix_bg.jpg
-%%DATADIR%%/webadmin/skins/graphiX/Footer.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Error.tmpl
-%%DATADIR%%/webadmin/skins/graphiX/Header.tmpl
+%%DATADIR%%/webadmin/skins/default/UserPage.tmpl
+%%DATADIR%%/webadmin/skins/default/css/main.css
+%%DATADIR%%/webadmin/skins/default/img/favicon.ico
 %%DATADIR%%/webadmin/skins/graphiX/Channel.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/Error.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/Footer.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/Header.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/ListUsers.tmpl
 %%DATADIR%%/webadmin/skins/graphiX/Main.tmpl
 %%DATADIR%%/webadmin/skins/graphiX/Settings.tmpl
-%%DATADIR%%/webadmin/skins/ice/css/main.css
-%%DATADIR%%/webadmin/skins/ice/img/favicon.ico
-%%DATADIR%%/webadmin/skins/ice/img/pagebg.gif
-%%DATADIR%%/webadmin/skins/ice/img/linkbg.jpg
-%%DATADIR%%/webadmin/skins/ice/Footer.tmpl
-%%DATADIR%%/webadmin/skins/ice/ListUsers.tmpl
-%%DATADIR%%/webadmin/skins/ice/UserPage.tmpl
-%%DATADIR%%/webadmin/skins/ice/Error.tmpl
-%%DATADIR%%/webadmin/skins/ice/Header.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/UserPage.tmpl
+%%DATADIR%%/webadmin/skins/graphiX/css/main.css
+%%DATADIR%%/webadmin/skins/graphiX/img/favicon.ico
+%%DATADIR%%/webadmin/skins/graphiX/img/graphix_bg.jpg
+%%DATADIR%%/webadmin/skins/graphiX/img/graphix_header.jpg
 %%DATADIR%%/webadmin/skins/ice/Channel.tmpl
+%%DATADIR%%/webadmin/skins/ice/Error.tmpl
+%%DATADIR%%/webadmin/skins/ice/Footer.tmpl
+%%DATADIR%%/webadmin/skins/ice/Header.tmpl
+%%DATADIR%%/webadmin/skins/ice/ListUsers.tmpl
 %%DATADIR%%/webadmin/skins/ice/Main.tmpl
 %%DATADIR%%/webadmin/skins/ice/Settings.tmpl
-@dirrm %%DATADIR%%/webadmin/skins/default/css
-@dirrm %%DATADIR%%/webadmin/skins/default/img
-@dirrm %%DATADIR%%/webadmin/skins/default
-@dirrm %%DATADIR%%/webadmin/skins/graphiX/css
-@dirrm %%DATADIR%%/webadmin/skins/graphiX/img
-@dirrm %%DATADIR%%/webadmin/skins/graphiX
-@dirrm %%DATADIR%%/webadmin/skins/ice/css
+%%DATADIR%%/webadmin/skins/ice/UserPage.tmpl
+%%DATADIR%%/webadmin/skins/ice/css/main.css
+%%DATADIR%%/webadmin/skins/ice/img/favicon.ico
+%%DATADIR%%/webadmin/skins/ice/img/linkbg.jpg
+%%DATADIR%%/webadmin/skins/ice/img/pagebg.gif
 @dirrm %%DATADIR%%/webadmin/skins/ice/img
+@dirrm %%DATADIR%%/webadmin/skins/ice/css
 @dirrm %%DATADIR%%/webadmin/skins/ice
+@dirrm %%DATADIR%%/webadmin/skins/graphiX/img
+@dirrm %%DATADIR%%/webadmin/skins/graphiX/css
+@dirrm %%DATADIR%%/webadmin/skins/graphiX
+@dirrm %%DATADIR%%/webadmin/skins/default/img
+@dirrm %%DATADIR%%/webadmin/skins/default/css
+@dirrm %%DATADIR%%/webadmin/skins/default
+@dirrm %%DATADIR%%/webadmin/skins/dark-clouds/img
+@dirrm %%DATADIR%%/webadmin/skins/dark-clouds/css
+@dirrm %%DATADIR%%/webadmin/skins/dark-clouds
 @dirrm %%DATADIR%%/webadmin/skins
 @dirrm %%DATADIR%%/webadmin
 @dirrm %%DATADIR%%
