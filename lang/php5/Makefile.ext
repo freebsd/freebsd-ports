@@ -515,9 +515,8 @@ CONFIGURE_ARGS+=--without-cdb
 .	if defined(WITH_DB4)
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 
-USE_BDB=		yes
+USE_BDB=		40+
 WITH_BDB_HIGHEST=	yes
-INVALID_BDB_VER=	2 3
 .	endif
 .	if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
