@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/mdp/contrib/jade.py
 %%PYTHON_SITELIBDIR%%/mdp/contrib/jade.pyc
 %%PYTHON_SITELIBDIR%%/mdp/contrib/jade.pyo
+%%PYTHON_SITELIBDIR%%/mdp/contrib/lle_nodes.py
+%%PYTHON_SITELIBDIR%%/mdp/contrib/lle_nodes.pyc
+%%PYTHON_SITELIBDIR%%/mdp/contrib/lle_nodes.pyo
 %%PYTHON_SITELIBDIR%%/mdp/contrib/nipals.py
 %%PYTHON_SITELIBDIR%%/mdp/contrib/nipals.pyc
 %%PYTHON_SITELIBDIR%%/mdp/contrib/nipals.pyo
@@ -28,12 +31,18 @@
 %%PYTHON_SITELIBDIR%%/mdp/hinet/__init__.py
 %%PYTHON_SITELIBDIR%%/mdp/hinet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mdp/hinet/__init__.pyo
-%%PYTHON_SITELIBDIR%%/mdp/hinet/hinet.py
-%%PYTHON_SITELIBDIR%%/mdp/hinet/hinet.pyc
-%%PYTHON_SITELIBDIR%%/mdp/hinet/hinet.pyo
+%%PYTHON_SITELIBDIR%%/mdp/hinet/flownode.py
+%%PYTHON_SITELIBDIR%%/mdp/hinet/flownode.pyc
+%%PYTHON_SITELIBDIR%%/mdp/hinet/flownode.pyo
 %%PYTHON_SITELIBDIR%%/mdp/hinet/hinet_html.py
 %%PYTHON_SITELIBDIR%%/mdp/hinet/hinet_html.pyc
 %%PYTHON_SITELIBDIR%%/mdp/hinet/hinet_html.pyo
+%%PYTHON_SITELIBDIR%%/mdp/hinet/layer.py
+%%PYTHON_SITELIBDIR%%/mdp/hinet/layer.pyc
+%%PYTHON_SITELIBDIR%%/mdp/hinet/layer.pyo
+%%PYTHON_SITELIBDIR%%/mdp/hinet/switchboard.py
+%%PYTHON_SITELIBDIR%%/mdp/hinet/switchboard.pyc
+%%PYTHON_SITELIBDIR%%/mdp/hinet/switchboard.pyo
 %%PYTHON_SITELIBDIR%%/mdp/linear_flows.py
 %%PYTHON_SITELIBDIR%%/mdp/linear_flows.pyc
 %%PYTHON_SITELIBDIR%%/mdp/linear_flows.pyo
@@ -70,6 +79,39 @@
 %%PYTHON_SITELIBDIR%%/mdp/nodes/sfa_nodes.py
 %%PYTHON_SITELIBDIR%%/mdp/nodes/sfa_nodes.pyc
 %%PYTHON_SITELIBDIR%%/mdp/nodes/sfa_nodes.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/__init__.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/makeparallel.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/makeparallel.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/makeparallel.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelflows.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelflows.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelflows.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelhinet.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelhinet.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelhinet.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelmonkey.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelmonkey.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelmonkey.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelnodes.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelnodes.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/parallelnodes.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_script.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_script.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_script.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_wrapper.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_wrapper.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_slave_wrapper.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_support.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_support.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/pp_support.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/process_schedule.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/process_schedule.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/process_schedule.pyo
+%%PYTHON_SITELIBDIR%%/mdp/parallel/scheduling.py
+%%PYTHON_SITELIBDIR%%/mdp/parallel/scheduling.pyc
+%%PYTHON_SITELIBDIR%%/mdp/parallel/scheduling.pyo
 %%PYTHON_SITELIBDIR%%/mdp/signal_node.py
 %%PYTHON_SITELIBDIR%%/mdp/signal_node.pyc
 %%PYTHON_SITELIBDIR%%/mdp/signal_node.pyo
@@ -94,6 +136,21 @@
 %%PYTHON_SITELIBDIR%%/mdp/test/test_nodes.py
 %%PYTHON_SITELIBDIR%%/mdp/test/test_nodes.pyc
 %%PYTHON_SITELIBDIR%%/mdp/test/test_nodes.pyo
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelflows.py
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelflows.pyc
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelflows.pyo
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelhinet.py
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelhinet.pyc
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelhinet.pyo
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelnodes.py
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelnodes.pyc
+%%PYTHON_SITELIBDIR%%/mdp/test/test_parallelnodes.pyo
+%%PYTHON_SITELIBDIR%%/mdp/test/test_process_schedule.py
+%%PYTHON_SITELIBDIR%%/mdp/test/test_process_schedule.pyc
+%%PYTHON_SITELIBDIR%%/mdp/test/test_process_schedule.pyo
+%%PYTHON_SITELIBDIR%%/mdp/test/test_schedule.py
+%%PYTHON_SITELIBDIR%%/mdp/test/test_schedule.pyc
+%%PYTHON_SITELIBDIR%%/mdp/test/test_schedule.pyo
 %%PYTHON_SITELIBDIR%%/mdp/test/test_utils.py
 %%PYTHON_SITELIBDIR%%/mdp/test/test_utils.pyc
 %%PYTHON_SITELIBDIR%%/mdp/test/test_utils.pyo
@@ -120,6 +177,7 @@
 %%PYTHON_SITELIBDIR%%/mdp/utils/routines.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/mdp/utils
 @dirrm %%PYTHON_SITELIBDIR%%/mdp/test
+@dirrm %%PYTHON_SITELIBDIR%%/mdp/parallel
 @dirrm %%PYTHON_SITELIBDIR%%/mdp/nodes
 @dirrm %%PYTHON_SITELIBDIR%%/mdp/hinet
 @dirrm %%PYTHON_SITELIBDIR%%/mdp/graph
