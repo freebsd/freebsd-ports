@@ -1109,6 +1109,7 @@
     SUBDIR += pear-Services_Google
     SUBDIR += pear-Services_SharedBook
     SUBDIR += pear-Services_TinyURL
+    SUBDIR += pear-Services_TwitPic
     SUBDIR += pear-Services_W3C_CSSValidator
     SUBDIR += pear-Services_W3C_HTMLValidator
     SUBDIR += pear-Services_Yadis
