@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54f72962-c7ba-11dd-a721-0030843d3802">
+    <topic>phpmyadmin -- cross-site request forgery vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin211</name>
+	<range><lt>2.11.9.4</lt></range>
+      </package>
+      <package>
+        <name>phpMyAdmin</name>
+	<range><lt>3.1.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin Team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2008-10.php">
+	  <p>A logged-in user can be subject of SQL injection through cross site
+	    request forgery. Several scripts in phpMyAdmin are vulnerable and the
+	    attack can be made through table parameter. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2008-10.php</url>
+      <url>http://www.milw0rm.com/exploits/7382</url>
+      <url>http://secunia.com/advisories/33076/</url>
+    </references>
+    <dates>
+      <discovery>2008-12-09</discovery>
+      <entry>2008-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f9e2376-c52f-11dd-8cbc-00163e000016">
     <topic>php5 -- potential magic_quotes_gpc vulnerability</topic>
     <affects>
