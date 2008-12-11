@@ -11,9 +11,10 @@ PORTNAME=	lilypond
 PORTVERSION=	2.11.65
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
-    		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
+    		${MASTER_SITE_LOCAL}/gahr/:fonts \
+		http://people.freebsd.org/~gahr/distfiles/:fonts
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
-    		${PORTNAME}-${PORTVERSION}-1.freebsd-x86.sh:bin
+    		${PORTNAME}-fonts-${PORTVERSION}${EXTRACT_SUFX}:fonts
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -61,13 +62,7 @@ PLIST_SUB+=	DOCS="@comment "
 .endif
 
 post-extract:
-	( \
-		${TAIL} -c+000000004597 ${DISTDIR}/${PORTNAME}-${PORTVERSION}-1.freebsd-x86.sh > \
-		${WRKDIR}/${PORTNAME}.tmp.tar.bz2 && \
-		${TAR} -xjf ${WRKDIR}/${PORTNAME}.tmp.tar.bz2 -C ${WRKDIR} && \
-		${MKDIR} ${WRKSRC}/mf/out && \
-		${CP} ${WRKDIR}/usr/share/lilypond/current/fonts/otf/*.otf ${WRKSRC}/mf/out \
-	)
+	${TAR} -C ${WRKDIR} -xf ${DISTDIR}/${PORTNAME}-fonts-${PORTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|makeinfo|${LOCALBASE}/bin/makeinfo|' \
