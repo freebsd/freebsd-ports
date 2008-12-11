@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin211
-DISTVERSION=	2.11.9.3
+DISTVERSION=	2.11.9.4
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
 DISTNAME=	${PORTNAME:S/211//}-${DISTVERSION}-all-languages
@@ -17,7 +17,7 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql pcre session
+USE_PHP=	ctype mysql session
 .endif
 
 # Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
@@ -103,6 +103,10 @@ USE_PHP+=	${opt:L}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PHP_DEPENDS) && ${PHP_VER} == 4
+USE_PHP+=	pcre
+.endif
 
 _PMA_GID!=	${PW} group show -n ${PMA_GRP} | ${CUT} -d : -f 3
 .if empty(_PMA_GID)
