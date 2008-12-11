@@ -267,17 +267,15 @@ domxml_DEPENDS=	textproc/php${PHP_VER}-domxml
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
 fileinfo_DEPENDS=	sysutils/pecl-fileinfo
 filepro_DEPENDS=databases/php${PHP_VER}-filepro
-filter_DEPENDS=	security/pecl-filter
+filter_DEPENDS=	security/php${PHP_VER}-filter
 fribidi_DEPENDS=converters/pecl-fribidi
 ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
-hash_DEPENDS=	security/pecl-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-json_DEPENDS=	devel/pecl-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcal_DEPENDS=	misc/php${PHP_VER}-mcal
@@ -332,8 +330,16 @@ xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
 xslt_DEPENDS=	textproc/php${PHP_VER}-xslt
 yaz_DEPENDS=	net/pecl-yaz
 yp_DEPENDS=	net/php${PHP_VER}-yp
-zip_DEPENDS=	archivers/pecl-zip
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
+.if ${PHP_VER} == 4
+hash_DEPENDS=	security/pecl-hash
+json_DEPENDS=	devel/pecl-json
+zip_DEPENDS=	archivers/pecl-zip
+.else
+hash_DEPENDS=	security/php${PHP_VER}-hash
+json_DEPENDS=	devel/php${PHP_VER}-json
+zip_DEPENDS=	archivers/php${PHP_VER}-zip
+.endif
 
 .	for extension in ${USE_PHP}
 .		if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
