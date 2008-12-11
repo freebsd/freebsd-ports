@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipguard
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipguard/
 
@@ -18,14 +17,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
 USE_RC_SUBR=	${PORTNAME}
 MAN8=		${PORTNAME}.8
-DOCS=		COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
+PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
+PLIST_FILES=	sbin/ipguard
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
