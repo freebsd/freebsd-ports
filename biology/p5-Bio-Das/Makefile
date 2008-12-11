@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	Bio-Das
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	biology perl5
-MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
-		CPAN
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client-side library for Distributed Genome Annotation System
 
-BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/Bio/Root/Root.pm:${PORTSDIR}/biology/p5-bioperl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-bioperl>=0:${PORTSDIR}/biology/p5-bioperl \
+		p5-libwww>=5:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -36,4 +33,14 @@ MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 	Bio::Das::Request::Types.3 Bio::Das::Segment.3 Bio::Das::Stylesheet.3 \
 	Bio::Das::Type.3 Bio::Das::TypeHandler.3 Bio::Das::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-Compress-Zlib>=1:${PORTSDIR}/archivers/p5-Compress-Zlib
+.endif
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-MIME-Base64>=2.12:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>

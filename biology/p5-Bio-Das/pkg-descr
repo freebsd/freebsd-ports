@@ -5,6 +5,6 @@ unencrypted (http:) and SSL-encrypted (https:) DAS servers are sup-
 ported.  (To run SSL, you will need IO::Socket::SSL and Net::SSLeay
 installed).
 
-WWW: http://www.biodas.org
+WWW: http://search.cpan.org/dist/Bio-Das/
 
 -- Razi Khaja <razi@genet.sickkids.on.ca>
