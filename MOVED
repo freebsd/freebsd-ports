@@ -3695,3 +3695,4 @@ textproc/Ebnf2ps||2008-12-07|Has expired: Has been broken for more than 6 months
 www/roxen||2008-12-07|Has expired: Has been broken for more than 6 months
 x11-fm/evidence||2008-12-07|Has expired: Has been broken for more than 6 months
 www/yui||2008-12-09|Already exists as www/yahoo-ui
+security/pecl-filter|security/php5-filter|2008-12-11|Now bundled in php5
