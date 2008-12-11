@@ -1107,6 +1107,7 @@
     SUBDIR += pear-Services_Digg
     SUBDIR += pear-Services_Facebook
     SUBDIR += pear-Services_Google
+    SUBDIR += pear-Services_OpenSearch
     SUBDIR += pear-Services_SharedBook
     SUBDIR += pear-Services_TinyURL
     SUBDIR += pear-Services_TwitPic
