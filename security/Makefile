@@ -593,6 +593,7 @@
     SUBDIR += php4-mcrypt
     SUBDIR += php4-mhash
     SUBDIR += php4-openssl
+    SUBDIR += php5-filter
     SUBDIR += php5-hash
     SUBDIR += php5-mcrypt
     SUBDIR += php5-mhash
