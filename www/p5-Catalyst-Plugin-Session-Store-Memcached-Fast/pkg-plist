@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session/Store/Memcached/Fast.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store/Memcached
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
