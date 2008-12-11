@@ -1113,6 +1113,7 @@
     SUBDIR += pear-Services_W3C_CSSValidator
     SUBDIR += pear-Services_W3C_HTMLValidator
     SUBDIR += pear-Services_Yadis
+    SUBDIR += pear-Services_Yahoo
     SUBDIR += pear-Services_urlTea
     SUBDIR += pear-Structures_DataGrid_Renderer_Flexy
     SUBDIR += pear-Structures_DataGrid_Renderer_Pager
