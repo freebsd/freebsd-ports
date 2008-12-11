@@ -1,0 +1,9 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+cc_selector.* = enabled
+
+to your trac.ini to enable the visual CC field
+editor.
+**************************************************
