@@ -13,6 +13,7 @@ DISTFILES=	cfortran.h \
 		cfortran.html \
 		cfortran.doc \
 		cfortran.examples.tar.gz
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -23,19 +24,20 @@ WRKSRC=		${WRKDIR}
 
 post-extract:
 .for dfile in ${DISTFILES}
-	${CP} ${DISTDIR}/${dfile} ${WRKDIR}
+	${CP} ${_DISTDIR}/${dfile} ${WRKSRC}
 .endfor
+	(cd ${WRKSRC} && ${TAR} -xf cfortran.examples.tar.gz)
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/cfortran.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/cfortran.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/cfortran.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/cfortran.doc ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cfortran.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cfortran.doc ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${INSTALL} -d ${EXAMPLESDIR}
-	${TAR} --strip-components 1 -xf ${WRKDIR}/cfortran.examples.tar.gz -C ${EXAMPLESDIR}
+	(cd ${WRKSRC}/eg && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
