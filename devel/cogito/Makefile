@@ -23,6 +23,9 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 		bash:${PORTSDIR}/shells/bash \
 		rsync:${PORTSDIR}/net/rsync
 
+BROKEN=		this port does not work with new asciidoc and is deprecated by upstream
+EXPIRATION_DATE=	2009-01-11
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 .if !defined(NOPORTDOCS)
