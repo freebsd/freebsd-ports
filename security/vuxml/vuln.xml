@@ -43,7 +43,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>phpMyAdmin</name>
-	<range><lt>3.1.1.0</lt></range>
+	<range><lt>3.1.1</lt></range>
       </package>
     </affects>
     <description>
