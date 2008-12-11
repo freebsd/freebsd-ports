@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
-COMMENT=	Web interface to administer Trac ticket custom fields
+COMMENT=	Visually edit the Trac ticket CC field
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
