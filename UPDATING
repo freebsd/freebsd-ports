@@ -6,9 +6,9 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20081207:
+20081211:
   AFFECTS: users of lang/php5
-  AUTHOR: pav@FreeBSD.org, itetcu@FreeBSD.org
+  AUTHOR: pav@FreeBSD.org, itetcu@FreeBSD.org, ale@FreeBSD.org
 
   As of php 5.2.7, pcre extension is distributed with the core php5 package,
   and not as a standalone module anymore.  Follow these steps to update your
@@ -27,6 +27,12 @@ upgrades.
    portupgrade -f pecl\*
   or
    portmaster pecl\*
+
+  If you have the pecl hash, json and/or zip extensions you need to replace
+  them with the php5 bundled ones, ie.:
+   portmaster/portupgrade -o archivers/php5-zip archivers/pecl-zip
+   portmaster/portupgrade -o devel/php5-json devel/pecl-json
+   portmaster/portupgrade -o security/php5-hash security/pecl-hash
 
   If you build your INDEX locally and you tried to build it after the php
   update commit, you need to rebuild it _after_ you updated lang/php5:
