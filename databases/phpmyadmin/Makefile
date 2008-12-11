@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -20,7 +20,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql pcre session spl
+USE_PHP=	ctype mysql session spl
 .endif
 
 # Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
