@@ -17,9 +17,8 @@ MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	HASH Message Digest Framework for PHP
 
 USE_PHP=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=5
-PHP_MODNAME=	hash
+DEFAULT_PHP_VER=4
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
