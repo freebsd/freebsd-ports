@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.0.4
+PORTVERSION=	1.6.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -193,6 +193,7 @@ OPTIONS=	GUI "Enable building of GUI tools" on \
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_HTMLDOCS)
+BROKEN=		this port does not work with the new asciidoc
 RUN_DEPENDS+=	${LOCALBASE}/bin/asciidoc:${PORTSDIR}/textproc/asciidoc \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 PLIST_SUB+=	HTMLDOCS=""
