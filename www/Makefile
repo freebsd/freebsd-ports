@@ -1385,6 +1385,7 @@
     SUBDIR += trac-blog
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
+    SUBDIR += trac-ccselector
     SUBDIR += trac-codetags
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-customfieldadmin
