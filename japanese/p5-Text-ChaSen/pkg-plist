@@ -6,4 +6,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ChaSen
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-%%PORTDOCS%%share/chasen/doc/README.perl
+%%PORTDOCS%%%%DOCSDIR%%/README.perl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
