@@ -74,6 +74,10 @@ USE_PHP_BUILD=	yes
 CONFIGURE_ARGS+=--enable-exif
 .endif
 
+.if ${PHP_MODNAME} == "filter"
+CONFIGURE_ARGS+=--enable-filter
+.endif
+
 .if ${PHP_MODNAME} == "ftp"
 CONFIGURE_ARGS+=--enable-ftp \
 		--with-openssl-dir=${OPENSSLBASE}
@@ -118,6 +122,10 @@ LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 
+.if ${PHP_MODNAME} == "hash"
+CONFIGURE_ARGS+=--enable-hash
+.endif
+
 .if ${PHP_MODNAME} == "iconv"
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
@@ -141,6 +149,10 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 
 USE_FIREBIRD=	yes
+.endif
+
+.if ${PHP_MODNAME} == "json"
+CONFIGURE_ARGS+=--enable-json
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
@@ -483,6 +495,11 @@ CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 USE_GNOME=	libxslt
 USE_PHP=	dom xml
 USE_PHP_BUILD=	yes
+.endif
+
+.if ${PHP_MODNAME} == "zip"
+CONFIGURE_ARGS+=--enable-zip \
+		--with-zlib-dir=/usr
 .endif
 
 .if ${PHP_MODNAME} == "zlib"
