@@ -17,8 +17,6 @@ COMMENT=	ChaSen library module for Perl5
 
 LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
-BROKEN=		does not install
-
 MD5_FILE=	${.CURDIR}/../chasen-base/distinfo
 
 CHASEN_VERSION=	2.3.3
@@ -27,6 +25,7 @@ WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 MAN3=		Text::ChaSen.3
+DOCSDIR=	${PREFIX}/share/doc/chasen
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +33,8 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/chasen/doc/README.perl
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.perl
 .endif
 
 .include <bsd.port.post.mk>
