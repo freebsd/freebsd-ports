@@ -24,6 +24,7 @@ BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
+LDFLAGS=	${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20
 USE_OPENSSL=	yes
@@ -34,7 +35,7 @@ MAN8=		telepathy-gabble.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_BASE)
-CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
+CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
 .endif
 
 .include <bsd.port.post.mk>
