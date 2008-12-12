@@ -1,0 +1,25 @@
+bin/gmock-config
+bin/gmock_doctor.py
+include/gmock/gmock.h
+include/gmock/gmock-actions.h
+include/gmock/gmock-cardinalities.h
+include/gmock/gmock-generated-actions.h
+include/gmock/gmock-generated-function-mockers.h
+include/gmock/gmock-generated-matchers.h
+include/gmock/gmock-generated-nice-strict.h
+include/gmock/gmock-matchers.h
+include/gmock/gmock-printers.h
+include/gmock/gmock-spec-builders.h
+include/gmock/internal/gmock-generated-internal-utils.h
+include/gmock/internal/gmock-internal-utils.h
+include/gmock/internal/gmock-port.h
+lib/libgmock.so.0
+lib/libgmock.so
+lib/libgmock.la
+lib/libgmock.a
+lib/libgmock_main.so.0
+lib/libgmock_main.so
+lib/libgmock_main.la
+lib/libgmock_main.a
+@dirrmtry include/gmock/internal
+@dirrmtry include/gmock
