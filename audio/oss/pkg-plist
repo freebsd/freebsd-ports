@@ -62,6 +62,7 @@ lib/oss/modules/oss_via97.ko
 lib/oss/modules/oss_ymf7xx.ko
 lib/oss/modules/osscore.ko
 @dirrm lib/oss/modules
+lib/oss/soundon.user.sample
 lib/oss/sysfiles.list
 lib/oss/version.dat
 @dirrmtry lib/oss
