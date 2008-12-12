@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	launchy
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
@@ -15,11 +15,9 @@ COMMENT=	Access applications, files, and bookmarks with just a few keystrokes
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost
 
-BROKEN=		does not build
-
 USE_DOS2UNIX=	readme.lyx readme.txt
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake gui network
+QT_COMPONENTS=	qmake_build moc_build uic_build gui network
 MAKEFILE=	makefile
 ALL_TARGET=	release
 
