@@ -60,13 +60,6 @@ PLIST_SUB+=	EASY=${EASY} NOTEASY=${NOTEASY} \
 		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO} \
 		NOEGGINFO=${NOEGGINFO}
 
-pre-fetch:
-.if ${PYTHON_REL} < 200
-	@${ECHO} "Py-numeric doesn't work with Python versions < 2.0."
-	@${ECHO} "Please use the py-numeric17 port for these."
-	@${FALSE}
-.endif
-
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 #
