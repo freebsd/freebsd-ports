@@ -102,9 +102,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYDISTUTILS		- Dependency line for the distutils extension. As of
 #					  Python-2.0, the distutils are in the base distribution.
 #
-# PYNUMERIC			- Dependency line for the numeric extension. Py-Numeric-17
-#					  is the last release that works with Python versions older
-#					  than 1.6.
+# PYNUMERIC			- Dependency line for the numeric extension.
+#
 # PYNUMPY			- Dependency line for the new numeric extension.
 #                     py-numpy, Py-Numeric is deprecated.
 #
