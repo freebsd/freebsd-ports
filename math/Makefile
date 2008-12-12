@@ -400,7 +400,6 @@
     SUBDIR += py-networkx
     SUBDIR += py-numarray
     SUBDIR += py-numeric
-    SUBDIR += py-numeric17
     SUBDIR += py-numpy
     SUBDIR += py-plastex
     SUBDIR += py-probstat
