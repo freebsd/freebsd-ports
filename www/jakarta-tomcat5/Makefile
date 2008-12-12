@@ -19,6 +19,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	YES
 
+DEPRECATED=	Old version, consider using www/tomcat55 or www/tomcat6 instead
+EXPIRATION_DATE=2009-01-12
+
 USE_RC_SUBR=	tomcat50.sh
 SUB_FILES=	pkg-install pkg-deinstall
 
