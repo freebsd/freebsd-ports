@@ -81,6 +81,8 @@ do-install:
 # @${ECHO_CMD} "OSSLIBDIR=${PREFIX}/lib/oss" > ${PROTO_ETCDIR}/oss.conf
 	${INSTALL_DATA} ${PROTO_ETCDIR}/oss.conf ${PREFIX}/etc/
 	-@${MKDIR} ${PREFIX}/lib/oss 2>/dev/null
+	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/soundon.user \
+	    ${PREFIX}/lib/oss/soundon.user.sample
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/sysfiles.list ${PREFIX}/lib/oss/
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/version.dat ${PREFIX}/lib/oss/
 	-@${MKDIR} ${PREFIX}/lib/oss/conf 2>/dev/null
@@ -91,7 +93,6 @@ do-install:
 	-@${MKDIR} ${PREFIX}/lib/oss/etc 2>/dev/null
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/etc/devices.list \
 	    ${PREFIX}/lib/oss/etc/
-	-@${MKDIR} ${PREFIX}/lib/oss/include 2>/dev/null
 	-@${MKDIR} ${PREFIX}/lib/oss/include/sys 2>/dev/null
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/include/sys/soundcard.h \
 	    ${PREFIX}/lib/oss/include/sys/
