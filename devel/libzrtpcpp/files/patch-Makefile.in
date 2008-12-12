@@ -1,9 +1,9 @@
---- Makefile.in	Wed Oct  4 22:52:54 2006
-+++ Makefile.in	Wed Oct  4 22:54:10 2006
-@@ -219,7 +219,7 @@
- AUTOMAKE_OPTIONS = foreign
- SUBDIRS = src
- EXTRA_DIST = README AUTHORS COPYING *.pc* *.spec* autoconf/* reconfig
+--- Makefile.in	2008-12-10 14:22:50.000000000 -0500
++++ Makefile.in	2008-12-10 14:24:40.000000000 -0500
+@@ -240,7 +240,7 @@
+ 	libzrtpcpp.pc.in libzrtpcpp.spec.in autogen.sh autoconf/*
+ 
+ ACLOCAL_AMFLAGS = -I m4
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(libdir)data/pkgconfig
  pkgconfig_DATA = libzrtpcpp.pc

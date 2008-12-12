@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzrtpcpp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=ccrtp
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=ccrtp
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	ZRTP extension for GNU ccRTP
 
-LIB_DEPENDS=	ccrtp1-1.6.0:${PORTSDIR}/devel/ccrtp
+LIB_DEPENDS=	ccrtp1-1.6.1:${PORTSDIR}/devel/ccrtp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

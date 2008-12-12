@@ -1,9 +1,9 @@
---- src/libzrtpcpp/ZrtpPacketBase.h	Fri Oct  6 13:49:31 2006
-+++ src/libzrtpcpp/ZrtpPacketBase.h	Fri Oct  6 13:49:55 2006
-@@ -27,6 +27,7 @@
+--- src/libzrtpcpp/ZrtpPacketBase.h	2008-12-10 14:30:18.000000000 -0500
++++ src/libzrtpcpp/ZrtpPacketBase.h	2008-12-10 14:30:38.000000000 -0500
+@@ -26,6 +26,7 @@
  #include <stdint.h>
  #include <string.h>
- #include <malloc.h>
+ #include <stdlib.h>
 +#include <sys/types.h>
  #include <netinet/in.h>
  
