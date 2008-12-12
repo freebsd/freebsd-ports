@@ -451,6 +451,7 @@
     SUBDIR += gonzui
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
+    SUBDIR += googlemock
     SUBDIR += googletest
     SUBDIR += gorm
     SUBDIR += gperf
