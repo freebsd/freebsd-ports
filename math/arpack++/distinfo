@@ -1,3 +1,6 @@
 MD5 (arpack++-1.2/arpack++.tar.gz) = ba746bd46ea53ed2f141c806e36c60b2
 SHA256 (arpack++-1.2/arpack++.tar.gz) = 61e85474b70ee5b0a2b0cc5a7db7acc26131a48269f546e2b8dc3e92264523b3
 SIZE (arpack++-1.2/arpack++.tar.gz) = 3485328
+MD5 (arpack++-1.2/arpack++1.2.patch.diff) = d76be44d4962f362675de541899f1787
+SHA256 (arpack++-1.2/arpack++1.2.patch.diff) = 43e2b88aa6c76a3ddc49fd0ec8fd589914bda5a1593042572f99d76ad260c93a
+SIZE (arpack++-1.2/arpack++1.2.patch.diff) = 309992
