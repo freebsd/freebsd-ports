@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clay
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	java devel
 MASTER_SITES=
 PKGNAMEPREFIX=	eclipse-
@@ -22,15 +21,13 @@ RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feat
 
 RESTRICTED=	License agreement is required to download.
 
-BROKEN=		does not package
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 DISABLE_SIZE?=	yes
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
-DISTVERSION=	20070918
+DISTVERSION=	20080709
 
 .include <bsd.port.pre.mk>
 
