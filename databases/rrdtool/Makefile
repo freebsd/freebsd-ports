@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -18,6 +19,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
 CONFLICTS=	rrdtool-1.0*
 
