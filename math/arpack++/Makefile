@@ -7,11 +7,16 @@
 
 PORTNAME=	arpack++
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.ime.unicamp.br/%7echico/arpack++/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+
+PATCH_SITES=	http://reuter.mit.edu/blue/software/ \
+		http://www.gdv.uni-hannover.de/~reuter/software/
+PATCHFILES=	arpack++1.2.patch.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
@@ -44,7 +49,8 @@ USE_GMAKE=	yes
 DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
 
 post-patch:
-	@${RM} ${WRKSRC}/include/arlutil.h.orig
+	@${FIND} ${WRKSRC}/include -name "*.orig" -delete
+	@${FIND} ${WRKSRC}/examples -name "*.orig" -delete
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"	\
 		-e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile.inc
