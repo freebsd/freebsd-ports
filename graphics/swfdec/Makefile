@@ -11,7 +11,7 @@ PORTVERSION=	0.6.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.6/
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
