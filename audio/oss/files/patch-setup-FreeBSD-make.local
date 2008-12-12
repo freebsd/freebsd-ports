@@ -11,4 +11,4 @@
  
  install:	copy
 -		cd /usr/lib/oss/build && sh install.sh
-+		cd prototype/usr/lib/oss/build && sh install.sh
++		cd prototype%%PREFIX%%/lib/oss/build && sh install.sh
