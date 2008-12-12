@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notecase
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -15,7 +15,7 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A hierarchical text notes manager
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomevfs2 desktopfileutils pkgconfig
+USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils pkgconfig
 USE_GETTEXT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -26,9 +26,9 @@ INSTALL_TARGET=	install docinstall
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|^prefix=.*|prefix=${PREFIX}|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|docsdir=|docsdir=${DOCSDIR}|' \
+	@${REINPLACE_CMD} -e 's|^docsdir=.*|docsdir=${DOCSDIR}|' \
 		${WRKSRC}/Makefile
 
 post-install:
