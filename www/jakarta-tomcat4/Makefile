@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, stable 4.0.x branch
 
 DEPRECATED=	www/jakarta-tomcat5 is recommended instead for new installations
+EXPIRATION_DATE=2009-01-12
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
