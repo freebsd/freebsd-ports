@@ -6,7 +6,6 @@
     SUBDIR += 3ddesktop
     SUBDIR += 9box
     SUBDIR += 9menu
-    SUBDIR += 9term
     SUBDIR += Terminal
     SUBDIR += accessx
     SUBDIR += alltray
