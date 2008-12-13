@@ -4438,6 +4438,7 @@ google-gadgets                  ports/deskutils/google-gadgets
 google-perftools                ports/devel/google-perftools
 google-sitemapgen               ports/www/google-sitemapgen
 google-sparsehash               ports/devel/google-sparsehash
+googlemock                      ports/devel/googlemock
 googletest                      ports/devel/googletest
 googlog                         ports/sysutils/googlog
 googolplex                      ports/net/googolplex
@@ -5328,6 +5329,7 @@ impresscms                      ports/www/impresscms
 imspector                       ports/net-im/imspector
 imwheel                         ports/x11/imwheel
 inadyn                          ports/dns/inadyn
+inconsolata-ttf                 ports/x11-fonts/inconsolata-ttf
 indexme                         ports/www/indexme
 indic-ttf                       ports/x11-fonts/indic-ttf
 ines                            ports/emulators/ines
@@ -18131,7 +18133,6 @@ py-notifier                     ports/devel/py-notifier
 py-notify                       ports/devel/py-notify
 py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
-py-numeric17                    ports/math/py-numeric17
 py-numpy                        ports/math/py-numpy
 py-oauth                        ports/net/py-oauth
 py-ocempgui                     ports/devel/py-ocempgui
