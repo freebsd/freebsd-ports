@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
 		curl.4:${PORTSDIR}/ftp/curl
 
@@ -21,6 +20,7 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
 USE_RUBY=	yes
+USE_GCC=	4.1+
 
 MAN1=	newsbeuter.1 podbeuter.1
 
