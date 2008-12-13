@@ -7,6 +7,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
