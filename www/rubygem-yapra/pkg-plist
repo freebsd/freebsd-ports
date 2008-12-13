@@ -24,12 +24,16 @@ bin/yapra
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/feed/custom_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/feed/load_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter/apply_template_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter/deduped_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/filter/entry_full_text_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/file_download_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/gmail_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/imap_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/publish/on_memory_download_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test/append_entry_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test/raise_error_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test/test_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib-plugins/yapra/plugin/test/test2_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/History_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/License_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
@@ -68,32 +72,43 @@ bin/yapra
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config/WebPost.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.src/M000022.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ErbApplier.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/Deduped.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/Deduped.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/Deduped.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test2.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test2.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/RaiseError.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test2.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/RaiseError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.src/M000045.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/FileDownload.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Imap.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Feed.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.html
@@ -104,21 +119,24 @@ bin/yapra
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ContextAware.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Base.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/MechanizeBase.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Runtime.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Pipeline.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Yapra/Config.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/LegacyPlugin.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Inflector.html
 %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin.html
@@ -197,12 +215,16 @@ bin/yapra
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/feed/custom.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/feed/load.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter/apply_template.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter/deduped.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/filter/entry_full_text.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/file_download.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/gmail.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/imap.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/publish/on_memory_download.rb
 %%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test/append_entry.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test/raise_error.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test/test.rb
+%%GEM_LIB_DIR%%/lib-plugins/yapra/plugin/test/test2.rb
 %%GEM_LIB_DIR%%/lib/yapra.rb
 %%GEM_LIB_DIR%%/lib/yapra/config.rb
 %%GEM_LIB_DIR%%/lib/yapra/inflector.rb
@@ -234,6 +256,7 @@ bin/yapra
 %%GEM_LIB_DIR%%/spec/yapra/config_spec.rb
 %%GEM_LIB_DIR%%/spec/yapra/legacy_plugin/base_spec.rb
 %%GEM_LIB_DIR%%/spec/yapra/legacy_plugin/registry_factory_spec.rb
+%%GEM_LIB_DIR%%/spec/yapra/pipeline_spec.rb
 %%GEM_LIB_DIR%%/spec/yapra_spec.rb
 %%GEM_LIB_DIR%%/tasks/deployment.rake
 %%GEM_LIB_DIR%%/tasks/environment.rake
@@ -310,10 +333,14 @@ bin/yapra
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Config
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/FeedItemOperator.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/ErbApplier.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/Deduped.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/EntryFullText.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter/ApplyTemplate.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Filter
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test2.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/AppendEntry.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/Test.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test/RaiseError.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Test
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/OnMemoryDownload.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Yapra/Plugin/Publish/Gmail.src
