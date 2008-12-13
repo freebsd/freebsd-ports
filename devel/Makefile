@@ -490,7 +490,6 @@
     SUBDIR += hptools
     SUBDIR += hs-Stream
     SUBDIR += hs-alex
-    SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
     SUBDIR += hs-dlist
@@ -504,7 +503,6 @@
     SUBDIR += hs-hmake
     SUBDIR += hs-hpl
     SUBDIR += hs-idoc
-    SUBDIR += hs-tclhaskell-ghc
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
@@ -2030,7 +2028,6 @@
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
-    SUBDIR += pear-apd
     SUBDIR += pear-codegen
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
