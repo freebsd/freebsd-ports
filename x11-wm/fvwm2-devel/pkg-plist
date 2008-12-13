@@ -55,9 +55,6 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmTile
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
-@comment The following are here because they are symlinks
-man/man1/xpmroot.1.gz
-@comment End of symlink list
 %%ICONS%%%%DATADIR%%/pixmaps/Jlock.xpm
 %%ICONS%%%%DATADIR%%/pixmaps/Jnews.xpm
 %%ICONS%%%%DATADIR%%/pixmaps/Jrecycle.xpm
