@@ -55,11 +55,11 @@ do-install:
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${TWDIR}/
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-make-twdep:
-	@echo "TWDEP=`cat ${WRKSRC}/lib/TWiki/*/${PORTNAME}/DEPENDENCIES |\
+make-twdep: extract
+	@echo "TWDEP=`grep -v ^# ${WRKSRC}/lib/TWiki/*/${PORTNAME}/DEPENDENCIES |\
 		grep -v ',cpan,'|cut -f1-2 -d, | ${SED} -e 's|.*::||;s|,||g' |\
 		tr '\n' ' ' | sed 's| $$||'`"
-	@echo "RUN_DEPENDS=`cat ${WRKSRC}/lib/TWiki/*/${PORTNAME}/DEPENDENCIES |\
+	@echo "RUN_DEPENDS=`grep -v ^# ${WRKSRC}/lib/TWiki/*/${PORTNAME}/DEPENDENCIES |\
 		grep ',cpan,' | cut -f1-2 -d, | ${SED} -e 's|::|-|' | while read a; do\
 			n=p5-$${a%%,*}; v=$${a##*,}; \
 			o=\`echo ${PORTSDIR}/*/$$n\`; : $${o:=${PORTSDIR}/X/$$n}; \
