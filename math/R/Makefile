@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -136,12 +136,12 @@ PLIST_SUB+=	DVI_MANUAL="@comment "
 .endif
 
 .if defined(WITHOUT_PDF_MANUALS) && !defined(NOPORTDOCS)
-PLIST_SUB+=     PDF_MANUAL="@comment "
+PLIST_SUB+=	PDF_MANUAL="@comment "
 .else
-PLIST_SUB+=     PDF_MANUAL=""
-BUILD_DEPENDS+= pdflatex:${PORTSDIR}/print/teTeX-base
-ALL_TARGET+=    pdf
-INSTALL_TARGET+=install-pdf
+PLIST_SUB+=	PDF_MANUAL=""
+BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
+ALL_TARGET+=	pdf
+INSTALL_TARGET+=	install-pdf
 .endif
 
 .if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
