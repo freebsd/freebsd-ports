@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	2.0.4.0
+PORTVERSION=	2.0.4.1
 CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/distributions/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}
