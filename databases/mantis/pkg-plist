@@ -287,6 +287,7 @@
 %%WWWDIR_REL%%/core/bugnote_api.php
 %%WWWDIR_REL%%/core/category_api.php
 %%WWWDIR_REL%%/core/checkin.php
+%%WWWDIR_REL%%/core/checkincurl.php
 %%WWWDIR_REL%%/core/class.RSSBuilder.inc.php
 %%WWWDIR_REL%%/core/class.period.php
 %%WWWDIR_REL%%/core/class.urlmatch.php
