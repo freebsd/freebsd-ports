@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmw
-PORTVERSION=	0.0.26
+PORTVERSION=	0.0.27
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	themanaworld
@@ -34,7 +34,7 @@ OPTIONS=	MUSIC	"Install additional music" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MUSIC)
-MUSICNAME=	tmwmusic-0.0.20
+MUSICNAME=	tmwmusic-0.2
 MUSICSUBDIR=	data/music
 DISTFILES+=	${MUSICNAME}.tar.gz
 MUSICDIR=	${WRKDIR}/${MUSICNAME}/${MUSICSUBDIR}
