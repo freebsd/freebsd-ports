@@ -620,7 +620,6 @@
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
     SUBDIR += sfront
-    SUBDIR += shellac
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
@@ -642,7 +641,6 @@
     SUBDIR += slv2
     SUBDIR += snack
     SUBDIR += snd
-    SUBDIR += snett
     SUBDIR += snowstar
     SUBDIR += solfege
     SUBDIR += sonata

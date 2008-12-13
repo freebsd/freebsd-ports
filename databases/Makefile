@@ -521,11 +521,9 @@
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlrelay
     SUBDIR += py-sybase
-    SUBDIR += py-tada
     SUBDIR += pydbdesigner
     SUBDIR += pydbx
     SUBDIR += qdbm
-    SUBDIR += qdbm-java
     SUBDIR += qdbm-plus
     SUBDIR += qt-ibase-plugin
     SUBDIR += qt-mysql-plugin
