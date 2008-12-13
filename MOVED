@@ -3697,3 +3697,6 @@ x11-fm/evidence||2008-12-07|Has expired: Has been broken for more than 6 months
 www/yui||2008-12-09|Already exists as www/yahoo-ui
 security/pecl-filter|security/php5-filter|2008-12-11|Now bundled in php5
 math/py-numeric17||2008-12-12|Old obsolete version
+devel/hs-buddha||2008-12-13|Has expired: Has been broken for more than 6 months
+devel/hs-tclhaskell-ghc||2008-12-13|Has expired: Has been broken for more than 6 months
+devel/pear-apd||2008-12-13|Has expired: Has been broken for more than 6 months
