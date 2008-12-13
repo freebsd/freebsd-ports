@@ -63,10 +63,10 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/help/team.txt
 %%DATADIR%%/data/icons/tmw.png
 %%MUSICADDON%%%%DATADIR%%/data/music/Faith.ogg
-%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Casino.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Clouds Calling.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Magick - Real.ogg
-%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Small grass.ogg
-%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Snow.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/The Mana World - The Forest.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/The Mana World - Snow Village.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/finalman_and_yakslem-cavesong.ogg
 %%MUSICADDON%%@dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data/icons
