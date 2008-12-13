@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Git/PurePerl/Object.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Blob.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Commit.pm
+%%SITE_PERL%%/Git/PurePerl/Object/Tag.pm
 %%SITE_PERL%%/Git/PurePerl/Object/Tree.pm
 %%SITE_PERL%%/Git/PurePerl/Pack.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/PurePerl
