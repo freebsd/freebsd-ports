@@ -855,6 +855,7 @@
 %%CGIDIR%%/php/lib/function.mtatomscript.php
 %%CGIDIR%%/php/lib/function.mtauthorauthiconurl.php
 %%CGIDIR%%/php/lib/function.mtauthorauthtype.php
+%%CGIDIR%%/php/lib/function.mtauthorbasename.php
 %%CGIDIR%%/php/lib/function.mtauthordisplayname.php
 %%CGIDIR%%/php/lib/function.mtauthoremail.php
 %%CGIDIR%%/php/lib/function.mtauthorid.php
