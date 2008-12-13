@@ -71,6 +71,9 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	fvwm2.1 fvwm24_convert.1 fvwmbug.1 fvwmrc_convert.1 xpmroot.1 \
 	fvwm-config.1
 
+MLINKS=	fvwm2.1 fvwm.1 \
+	xpmroot.1 fvwm-root.1
+
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
