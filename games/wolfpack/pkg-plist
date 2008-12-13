@@ -84,6 +84,7 @@ etc/wolfpack/schedule
 %%DATADIR%%/info.nr/Producing
 %%DATADIR%%/info.nr/Products
 %%DATADIR%%/info.nr/Quick-ref
+%%DATADIR%%/info.nr/Railroad
 %%DATADIR%%/info.nr/Research
 %%DATADIR%%/info.nr/Sector-ownership
 %%DATADIR%%/info.nr/Sector-types
