@@ -20,7 +20,7 @@ bin/atunes
 %%DATADIR%%/lib/last.fm-bindings.jar
 %%DATADIR%%/lib/libxinejna.jar
 %%DATADIR%%/lib/log4j-1.2.13.jar
-%%DATADIR%%/lib/lucene-core-2.3.1.jar
+%%DATADIR%%/lib/lucene-core-2.4.0.jar
 %%DATADIR%%/lib/substance-swingx.jar
 %%DATADIR%%/lib/substance.jar
 %%DATADIR%%/lib/swingx.jar
@@ -31,8 +31,6 @@ bin/atunes
 %%DATADIR%%/presets.properties
 %%DATADIR%%/settings/extendedLog.properties
 %%DATADIR%%/settings/log4j.properties
-%%DATADIR%%/settings/lyricsEngines.properties
-%%DATADIR%%/settings/playerEngines.properties
 %%DATADIR%%/settings/preset_radios.xml
 %%DATADIR%%/settings/presets.properties
 %%DATADIR%%/shortcutSpec.xml
