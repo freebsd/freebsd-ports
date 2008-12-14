@@ -1,0 +1,47 @@
+%%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/User/Elements/Tabs/Default
+%%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/Admin/Elements/ToolTabs/Default
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/index.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/autohandler
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/WhereRightComesFrom.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User/index.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User/TypeRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User/QueueRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User/QueueCFRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User/AssetCFRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/TypeRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/QueueRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/QueueCFRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/GroupRightsMatrix.html
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/UserRightsTabs
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/SelectPrincipalForRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/RightsMatrixTabs
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/QueueRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/QueueCFRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/ObjectRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/IllustrateACE
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/GroupRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/CustomFieldRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/AssetRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements/AssetCFRightsMatrix
+%%RTHOME%%/share/html/Admin/Tools/RightsMatrix/AssetCFRightsMatrix.html
+%%RTHOME%%/local/lib/RTx/RightsMatrix/Util.pm
+%%RTHOME%%/local/lib/RTx/RightsMatrix/RolePrincipal.pm
+%%RTHOME%%/local/lib/RTx/RightsMatrix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx/RightsMatrix/.packlist
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/User/Elements/Tabs
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/User/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/User
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/Admin/Elements/ToolTabs
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/Admin/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix/Admin
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-RightsMatrix
+@dirrmtry %%RTHOME%%/share/html/Callbacks
+@dirrm %%RTHOME%%/share/html/Admin/Tools/RightsMatrix/User
+@dirrm %%RTHOME%%/share/html/Admin/Tools/RightsMatrix/Elements
+@dirrm %%RTHOME%%/share/html/Admin/Tools/RightsMatrix
+@dirrm %%RTHOME%%/local/lib/RTx/RightsMatrix
+@dirrmtry %%RTHOME%%/local/lib/RTx
+@dirrmtry %%RTHOME%%/local/lib
+@dirrmtry %%RTHOME%%/local
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx/RightsMatrix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx
