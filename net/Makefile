@@ -825,6 +825,7 @@
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-oauth
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-righthttpconnection
