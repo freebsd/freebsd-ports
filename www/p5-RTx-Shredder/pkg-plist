@@ -1,0 +1,70 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx/Shredder/.packlist
+%%RTHOME%%/share/html/Callbacks/RTx-Shredder/Search/Results.html/SearchActions
+%%RTHOME%%/share/html/Callbacks/RTx-Shredder/Elements/Header/Head
+%%RTHOME%%/share/html/Callbacks/RTx-Shredder/Admin/Elements/ToolTabs/Default
+%%RTHOME%%/share/html/Admin/Tools/Shredder/index.html
+%%RTHOME%%/share/html/Admin/Tools/Shredder/autohandler
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/SelectPlugin
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/SelectObjects
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/PluginHelp
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/PluginArguments
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/ObjectCheckBox
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Object/RT--User
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Object/RT--Ticket
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Object/RT--Attachment
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Error/NoStorage
+%%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Error/NoRights
+%%RTHOME%%/local/sbin/rtx-validator
+%%RTHOME%%/local/sbin/rtx-shredder
+%%RTHOME%%/local/lib/RTx/Shredder/User.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Transaction.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Ticket.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Template.pm
+%%RTHOME%%/local/lib/RTx/Shredder/ScripCondition.pm
+%%RTHOME%%/local/lib/RTx/Shredder/ScripAction.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Scrip.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Record.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Queue.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Principal.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin/Users.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin/Tickets.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin/Objects.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin/Base.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin/Attachments.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Plugin.pm
+%%RTHOME%%/local/lib/RTx/Shredder/POD.pm
+%%RTHOME%%/local/lib/RTx/Shredder/ObjectCustomFieldValue.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Link.pm
+%%RTHOME%%/local/lib/RTx/Shredder/GroupMember.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Group.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Exceptions.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Dependency.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Dependencies.pm
+%%RTHOME%%/local/lib/RTx/Shredder/CustomFieldValue.pm
+%%RTHOME%%/local/lib/RTx/Shredder/CustomField.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Constants.pm
+%%RTHOME%%/local/lib/RTx/Shredder/CachedGroupMember.pm
+%%RTHOME%%/local/lib/RTx/Shredder/Attachment.pm
+%%RTHOME%%/local/lib/RTx/Shredder/ACE.pm
+%%RTHOME%%/local/lib/RTx/Shredder.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx/Shredder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTx
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Search/Results.html
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Search
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Elements/Header
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Admin/Elements/ToolTabs
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Admin/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder/Admin
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Shredder
+@dirrmtry %%RTHOME%%/share/html/Callbacks
+@dirrm %%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Object
+@dirrm %%RTHOME%%/share/html/Admin/Tools/Shredder/Elements/Error
+@dirrm %%RTHOME%%/share/html/Admin/Tools/Shredder/Elements
+@dirrm %%RTHOME%%/share/html/Admin/Tools/Shredder
+@dirrmtry %%RTHOME%%/local/sbin
+@dirrm %%RTHOME%%/local/lib/RTx/Shredder/Plugin
+@dirrm %%RTHOME%%/local/lib/RTx/Shredder
+@dirrmtry %%RTHOME%%/local/lib/RTx
+@dirrmtry %%RTHOME%%/local/lib
+@dirrmtry %%RTHOME%%/local

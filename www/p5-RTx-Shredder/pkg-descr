@@ -1,0 +1,5 @@
+RTx::Shredder is extention to RT API which allow you to delete data
+from RT database. Now Shredder support wipe out of almost all RT
+objects (Tickets, Transactions, Attachments, Users...)
+
+WWW: http://search.cpan.org/perldoc?RTx::Shredder
