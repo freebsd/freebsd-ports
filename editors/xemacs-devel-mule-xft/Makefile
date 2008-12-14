@@ -6,7 +6,6 @@
 #
 
 PORTREVISION=	1
-CATEGORIES=	editors
 PKGNAMESUFFIX+=	-xft
 
 COMMENT=	XEmacs(beta version) text editor with xft support
