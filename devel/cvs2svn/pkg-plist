@@ -8,9 +8,6 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/artifact_manager.pyo
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/boolean.py
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/boolean.pyc
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/boolean.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/changeset.pyo
@@ -131,6 +128,9 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_delegate.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_delegate.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_delegate.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_mirror.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_mirror.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/repository_mirror.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/revision_manager.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/revision_manager.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/revision_manager.pyo
@@ -140,9 +140,6 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/serializer.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/serializer.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/serializer.pyo
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/set_support.py
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/set_support.pyc
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/set_support.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/stats_keeper.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/stats_keeper.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/stats_keeper.pyo
@@ -161,12 +158,12 @@ bin/cvs2svn
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_output_option.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_output_option.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_output_option.pyo
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_mirror.py
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_mirror.pyc
-%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_mirror.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_revision_range.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_revision_range.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_revision_range.pyo
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.py
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.pyc
+%%PYTHON_SITELIBDIR%%/cvs2svn_lib/svn_repository_delegate.pyo
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.py
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.pyc
 %%PYTHON_SITELIBDIR%%/cvs2svn_lib/symbol.pyo
