@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.litech.org/radvd/dist/ CENKES
+MASTER_SITES=	http://www.litech.org/radvd/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes
