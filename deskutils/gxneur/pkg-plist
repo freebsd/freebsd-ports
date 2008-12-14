@@ -1,0 +1,19 @@
+bin/gxneur
+%%DATADIR%%/pixmaps/Russian.png
+%%DATADIR%%/pixmaps/Ukrainian.png
+%%DATADIR%%/pixmaps/English.png
+%%DATADIR%%/pixmaps/Belarusian.png
+%%DATADIR%%/pixmaps/French.png
+%%DATADIR%%/pixmaps/Romanian.png
+%%DATADIR%%/pixmaps/Kazakh.png
+%%DATADIR%%/pixmaps/German.png
+%%DATADIR%%/pixmaps/gxneur.png
+%%DATADIR%%/glade/config.glade
+%%DATADIR%%/glade/about.glade
+%%DATADIR%%/glade/list.glade
+%%DATADIR%%/glade/abbr_add.glade
+%%DATADIR%%/glade/choose_file.glade
+%%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/glade
+@dirrmtry %%DATADIR%%

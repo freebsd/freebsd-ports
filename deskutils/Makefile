@@ -98,6 +98,7 @@
     SUBDIR += gworkspace-clipbook
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
+    SUBDIR += gxneur
     SUBDIR += helpviewer
     SUBDIR += horde-hermes
     SUBDIR += horde-kronolith
