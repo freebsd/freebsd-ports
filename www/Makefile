@@ -955,6 +955,7 @@
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RT-Extension-LDAPImport
+    SUBDIR += p5-RT-Extension-SLA
     SUBDIR += p5-RTx-Statistics
     SUBDIR += p5-Reaction
     SUBDIR += p5-SCGI
