@@ -6,8 +6,11 @@
 
 PORTNAME=	eGroupware
 PORTVERSION=	1.6.001
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
+		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A web based GroupWare system
@@ -42,6 +45,8 @@ USE_PHP+=	pdo_mysql
 .endif
 .if defined(WITH_POSTGRE)
 USE_PHP+=	pgsql
+#USE_PHP+=	pdo_pgsql
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 .endif
 .if defined(WITH_MBSTRING)
 USE_PHP+=	mbstring
