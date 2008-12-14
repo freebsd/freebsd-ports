@@ -2279,6 +2279,7 @@
     SUBDIR += py-testoob
     SUBDIR += py-thrift
     SUBDIR += py-trace2html
+    SUBDIR += py-traits
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
     SUBDIR += py-turbokid
