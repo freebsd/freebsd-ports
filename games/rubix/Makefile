@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	rubix
-PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTVERSION=	1.0.6
 CATEGORIES=	games
-MASTER_SITES=	http://sed.free.fr/rubix/
+MASTER_SITES=	http://sed.free.fr/rubix/ \
+		http://mirror.mcx2.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
 USE_BZIP2=	yes
