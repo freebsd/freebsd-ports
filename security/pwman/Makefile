@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pwman
-PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTVERSION=	0.3.9
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Console password management application based on gpg(me)
@@ -20,9 +18,11 @@ RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
 GNU_CONFIGURE=	yes
 
-MAN1=	pwman.1
+MAN1=		pwman.1
 
-DOCS=	AUTHORS COPYING ChangeLog README TODO
+PLIST_FILES=	bin/convert_pwdb bin/pwdb2csv bin/pwman
+
+PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/gpg|${LOCALBASE}/bin/gpg|g' ${WRKSRC}/src/options.c
@@ -30,9 +30,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
