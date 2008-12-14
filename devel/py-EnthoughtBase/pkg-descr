@@ -1,0 +1,14 @@
+The EnthoughtBase project includes a few core packages that are used by
+many other projects in the Enthought Tool Suite:
+
+*enthought.etsconfig: Supports configuring settings that need to be
+shared across multiple projects or programs on the same system. Most
+significant of these is the GUI toolkit to be used. You can also
+configure locations for writing application data and user data, and the
+name of the company responsible for the software (which is used in the
+application and user data paths on some systems).
+*enthought.logger: Provides convenience functions for creating
+logging handlers.
+*enthought.util: Provides miscellaneous utility functions.
+
+WWW:	http://code.enthought.com/projects/enthought_base.php

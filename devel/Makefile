@@ -2134,6 +2134,7 @@
     SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-Breve
+    SUBDIR += py-EnthoughtBase
     SUBDIR += py-Jinja
     SUBDIR += py-TurboJinja
     SUBDIR += py-anonfunc
