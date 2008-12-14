@@ -403,6 +403,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-plastex
     SUBDIR += py-probstat
+    SUBDIR += py-pymc
     SUBDIR += py-scientific
     SUBDIR += py-symeig
     SUBDIR += py-sympy
