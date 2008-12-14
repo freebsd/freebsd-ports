@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	graphics
 MASTER_SITES=	SF/jocr
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	An OCR (Optical Character Recognition) program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
@@ -23,7 +23,7 @@ MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
 
 MAN1=		gocr.1
 PORTDOCS=	examples.txt gocr.html unicode.txt
-PLIST_FILES=	bin/gocr include/gocr.h lib/libPgm2asc.a
+PLIST_FILES=	bin/gocr
 
 .if !defined(WITHOUT_X11)
 USE_TK_WRAPPER=	yes
