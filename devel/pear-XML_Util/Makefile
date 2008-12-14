@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Util
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
