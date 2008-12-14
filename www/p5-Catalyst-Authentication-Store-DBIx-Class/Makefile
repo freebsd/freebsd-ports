@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Authentication-Store-DBIx-Class
-PORTVERSION=	0.106
+PORTVERSION=	0.1082
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,12 +16,14 @@ COMMENT=	A storage class for Catalyst Authentication using DBIx::Class
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class		\
 		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime	\
-		p5-Catalyst-Plugin-Authentication>=0.10005:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication
+		p5-Catalyst-Plugin-Authentication>=0.10008:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
+		p5-Catalyst-Model-DBIC-Schema>=0.18:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Catalyst::Authentication::Store::DBIx::Class.3			\
-		Catalyst::Authentication::Store::DBIx::Class::User.3
+MAN3=		Catalyst::Authentication::Store::DBIx::Class.3	\
+		Catalyst::Authentication::Store::DBIx::Class::User.3 \
+		Catalyst::Authentication::Realm::SimpleDB.3
 
 .include <bsd.port.mk>
