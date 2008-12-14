@@ -1,0 +1,26 @@
+# New ports collection makefile for:	py-traits
+# Date created:		2008-12-12
+# Whom:			Wen Heping <wenheping@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	traits
+PORTVERSION=	3.0.3
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Traits-${PORTVERSION}
+
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	Explicitly Typed Attributes for Python
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}EnthoughtBase>=3.0.1:${PORTSDIR}/devel/py-EnthoughtBase
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	Traits
+PYEASYINSTALL_ARCHDEP=	yes
+
+.include <bsd.port.mk>

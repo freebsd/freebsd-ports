@@ -1,0 +1,17 @@
+The Traits project is at the center of all Enthought Tool Suite
+development and has changed the mental model used at Enthought for
+programming in the already extremely efficient Python programming
+language.
+
+The Traits project allows Python programmers to use a special kind
+of type definition called a trait, which gives object attributes
+some additional characteristics, such as Initialization, Validation,
+Delegation, Notification and Visualization.
+
+A class can freely mix trait-based attributes with normal Python
+attributes, or can opt to allow the use of only a fixed or open set
+of trait attributes within the class. Trait attributes defined by
+a classs are automatically inherited by any subclass derived from
+the class.
+
+WWW:	http://pypi.python.org/pypi/Traits/
