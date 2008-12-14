@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	cvs2svn
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/42521/
+MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/44372/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
@@ -16,7 +15,7 @@ COMMENT=	CVS to Subversion Repository Converter
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
 OPTIONS=	SUBVERSION "Build with subversion support" on \
