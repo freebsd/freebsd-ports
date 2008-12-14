@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese editors
+CATEGORIES=	chinese
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	chinsan
