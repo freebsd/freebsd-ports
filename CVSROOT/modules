@@ -158,7 +158,6 @@ ports_x11_wm                    ports/x11-wm
 9e                              ports/archivers/9e
 9libs                           ports/x11-toolkits/9libs
 9menu                           ports/x11/9menu
-9term                           ports/x11/9term
 ADMsmb                          ports/security/ADMsmb
 ADMsnmp                         ports/security/ADMsnmp
 AquaGatekeeper                  ports/net/AquaGatekeeper
@@ -410,7 +409,6 @@ allegro                         ports/devel/allegro
 allegro-devel                   ports/devel/allegro-devel
 allegrogl                       ports/graphics/allegrogl
 alliance                        ports/cad/alliance
-alloywm                         ports/x11-wm/alloywm
 alltraxclock                    ports/x11-clocks/alltraxclock
 alltray                         ports/x11/alltray
 alpine                          ports/mail/alpine
@@ -5047,7 +5045,6 @@ hrktorrent                      ports/net-p2p/hrktorrent
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
 hs-Stream                       ports/devel/hs-Stream
 hs-alex                         ports/devel/hs-alex
-hs-buddha                       ports/devel/hs-buddha
 hs-bytestring-csv               ports/textproc/hs-bytestring-csv
 hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
@@ -5073,7 +5070,6 @@ hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
-hs-tclhaskell-ghc               ports/devel/hs-tclhaskell-ghc
 hs-utf8-string                  ports/textproc/hs-utf8-string
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
 hs-uuagc                        ports/devel/hs-uuagc
@@ -16523,7 +16519,6 @@ pear-XML_Tree                   ports/devel/pear-XML_Tree
 pear-XML_Util                   ports/devel/pear-XML_Util
 pear-XML_Wddx                   ports/textproc/pear-XML_Wddx
 pear-XML_XPath                  ports/devel/pear-XML_XPath
-pear-apd                        ports/devel/pear-apd
 pear-auth                       ports/security/pear-Auth
 pear-auth_http                  ports/security/pear-Auth_HTTP
 pear-auth_openid                ports/security/pear-Auth_OpenID
@@ -18332,7 +18327,6 @@ py-sympy                        ports/math/py-sympy
 py-synce-librapi2               ports/palm/py-synce-librapi2
 py-synce-librra                 ports/palm/py-synce-librra
 py-tables                       ports/devel/py-tables
-py-tada                         ports/databases/py-tada
 py-tagfu                        ports/deskutils/py-tagfu
 py-taglib                       ports/audio/py-taglib
 py-tagpy                        ports/audio/py-tagpy
@@ -18559,7 +18553,6 @@ qcread                          ports/graphics/qcread
 qct                             ports/devel/qct
 qd                              ports/math/qd
 qdbm                            ports/databases/qdbm
-qdbm-java                       ports/databases/qdbm-java
 qdbm-plus                       ports/databases/qdbm-plus
 qdecoder                        ports/www/qdecoder
 qdevelop                        ports/devel/qdevelop
@@ -19886,7 +19879,6 @@ shc                             ports/misc/shc
 sheerdns                        ports/dns/sheerdns
 shell-fm                        ports/multimedia/shell-fm
 shell-include                   ports/shells/shell-include
-shellac                         ports/audio/shellac
 shelldap                        ports/net/shelldap
 shftool                         ports/converters/shftool
 shibboleth-sp                   ports/security/shibboleth-sp
@@ -20125,7 +20117,6 @@ snd                             ports/audio/snd
 snes9express                    ports/emulators/snes9express
 snes9x                          ports/emulators/snes9x
 snespp                          ports/emulators/snespp
-snett                           ports/audio/snett
 sng                             ports/graphics/sng
 sniff                           ports/security/sniff
 sniffit                         ports/net/sniffit
