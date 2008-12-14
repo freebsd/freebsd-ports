@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	Net-Libdnet
-PORTVERSION=	0.01
+PORTVERSION=	0.91
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Libdnet interface
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include'
-MAN3=		${PORTNAME:S/-/::/g}.3
+MAN3=	Net::Libdnet.3 Net::Libdnet::Entry::Intf.3 Net::Libdnet::Intf.3 \
+		Net::Libdnet::Ip.3 Net::Libdnet::Eth.3 Net::Libdnet::Tun.3 \
+		Net::Libdnet::Route.3 Net::Libdnet::Fw.3 Net::Libdnet::Arp.3
 
 .include <bsd.port.mk>
