@@ -125,6 +125,7 @@
     SUBDIR += wmanager-addons
     SUBDIR += wmconfig
     SUBDIR += wmcp
+    SUBDIR += wmfs
     SUBDIR += wmg
     SUBDIR += wmii
     SUBDIR += wmthemeinstall
