@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xps
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.crucible.gr:5555/
 
