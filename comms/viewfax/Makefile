@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	viewfax
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ping.de/pub/unix/ \
 		ftp://ftp.leo.org/historic/comp/os/unix/networking/mgetty/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Display files containing g3 and/or g4 coded fax pages
 
 USE_IMAKE=	yes
+
+PLIST_FILES=	bin/viewfax lib/viewfax.tif
 
 MAN1=		viewfax.1
 
