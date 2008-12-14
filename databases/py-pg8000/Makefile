@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pg8000
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	databases python
 MASTER_SITES=	http://pybrary.net/pg8000/:source1 \
 		http://peak.telecommunity.com/dist/:source2
