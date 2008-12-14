@@ -1,0 +1,14 @@
+This RT extension provides a calendar view for your tickets and your
+reminders so you see when is your next due ticket. You can find it in
+the menu Search->Calendar.
+
+There's a portlet to put on your home page (see Prefs/MyRT.html)
+
+You can also enable ics (ICal) feeds for your default calendar and all
+your private searches in Prefs/Calendar.html. Authentication is magic
+number based so that you can give those feeds to other people.
+
+You can find screenshots on
+http://gaspard.mine.nu/dotclear/index.php?tag/rtx-calendar
+
+WWW: http://search.cpan.org/dist/RTx-Calendar/

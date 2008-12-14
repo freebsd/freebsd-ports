@@ -1,0 +1,40 @@
+%%RTHOME%%/share/html/Search/Calendar.html
+%%RTHOME%%/share/html/Prefs/Elements/CalendarFeed
+%%RTHOME%%/share/html/Prefs/Calendar.html
+%%RTHOME%%/share/html/NoAuth/images/updated.png
+%%RTHOME%%/share/html/NoAuth/images/starts_due.png
+%%RTHOME%%/share/html/NoAuth/images/starts.png
+%%RTHOME%%/share/html/NoAuth/images/started.png
+%%RTHOME%%/share/html/NoAuth/images/resolved.png
+%%RTHOME%%/share/html/NoAuth/images/reminder.png
+%%RTHOME%%/share/html/NoAuth/images/due.png
+%%RTHOME%%/share/html/NoAuth/images/created_due.png
+%%RTHOME%%/share/html/NoAuth/images/created.png
+%%RTHOME%%/share/html/NoAuth/css/calendar.css
+%%RTHOME%%/share/html/NoAuth/Calendar/dhandler
+%%RTHOME%%/share/html/Elements/MyCalendar
+%%RTHOME%%/share/html/Elements/CalendarEvent
+%%RTHOME%%/share/html/Callbacks/RTx-Calendar/User/Elements/Tabs/Default
+%%RTHOME%%/share/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs/Default
+%%RTHOME%%/share/html/Callbacks/RTx-Calendar/Elements/Header/Head
+%%RTHOME%%/local/man/auto/RTx/Calendar/.packlist
+%%RTHOME%%/local/lib/RTx/Calendar.pm
+@dirrm %%RTHOME%%/share/html/NoAuth/Calendar
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/User/Elements/Tabs
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/User/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/User
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/Ticket/Elements/Tabs
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/Ticket/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/Ticket
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/Elements/Header
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar/Elements
+@dirrm %%RTHOME%%/share/html/Callbacks/RTx-Calendar
+@dirrmtry %%RTHOME%%/share/html/Callbacks
+@dirrm %%RTHOME%%/local/man/auto/RTx/Calendar
+@dirrmtry %%RTHOME%%/local/man/auto/RTx
+@dirrmtry %%RTHOME%%/local/man/auto
+@dirrmtry %%RTHOME%%/local/man/man3
+@dirrmtry %%RTHOME%%/local/man
+@dirrmtry %%RTHOME%%/local/lib/RTx
+@dirrmtry %%RTHOME%%/local/lib
+@dirrmtry %%RTHOME%%/local
