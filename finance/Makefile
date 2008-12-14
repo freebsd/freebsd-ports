@@ -70,6 +70,7 @@
     SUBDIR += p5-Math-Financial
     SUBDIR += p5-PFProAPI
     SUBDIR += p5-PayflowPro
+    SUBDIR += pear_Payment_DTA
     SUBDIR += pfpro
     SUBDIR += php-tclink
     SUBDIR += php4-pfpro
