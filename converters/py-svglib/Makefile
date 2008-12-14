@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svglib
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP \
 		http://www.dinu-gherman.net/tmp/
