@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES?=	chinese net games
+CATEGORIES?=	chinese
 
 MAINTAINER=	sunpoet@sunpoet.net
 
