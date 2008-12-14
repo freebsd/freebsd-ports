@@ -180,7 +180,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_90.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_91.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_92.html
-%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_93.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_ovr.html
@@ -213,6 +212,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/emacs/imaxima.lisp
 %%DATADIR%%/%%PORTVERSION%%/emacs/maxima-font-lock.el
 %%DATADIR%%/%%PORTVERSION%%/emacs/maxima.el
+%%DATADIR%%/%%PORTVERSION%%/emacs/setup-imaxima-imath.el
 %%DATADIR%%/%%PORTVERSION%%/emacs/smart-complete.el
 %%DATADIR%%/%%PORTVERSION%%/emacs/sshell.el
 %%DATADIR%%/%%PORTVERSION%%/share/affine/README
@@ -1027,6 +1027,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/format.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/format.usg
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/interpol.mac
+%%DATADIR%%/%%PORTVERSION%%/share/numeric/jtroot3.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/newton.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/newton1.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/riemsum.mac
@@ -1077,6 +1078,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/rducon.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/rncomb.dem
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/rncomb.mac
+%%DATADIR%%/%%PORTVERSION%%/share/simplification/rtest_rncomb.mac
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/scifac.dem
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/scifac.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/simplification/sqdnst.mac
@@ -1185,6 +1187,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.dem
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.mac
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.usg
+%%DATADIR%%/%%PORTVERSION%%/share/vector/vector_rebuild.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/vector/vector_rebuild.mac
+%%DATADIR%%/%%PORTVERSION%%/share/vector/vector_rebuild.usg
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect_transform.mac
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vector.dem
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vector.mac
@@ -1231,6 +1236,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/fcall.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/float.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/fortra.lisp
+%%DATADIR%%/%%PORTVERSION%%/src/gamma.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/generate-sys-proclaim.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/generr.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/gnuplot.lisp
@@ -1522,12 +1528,15 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_dot.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_equal.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_everysome.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_expintegral.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_gamma.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_hypgeo.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_signum.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_taylor.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_trig.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_zeta.mac
