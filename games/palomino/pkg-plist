@@ -24,6 +24,7 @@ bin/palomino
 %%DOCSDIR%%/module_control.html
 %%DOCSDIR%%/module_fx.html
 %%DOCSDIR%%/module_game.html
+%%DOCSDIR%%/module_gfx.html
 %%DOCSDIR%%/module_graph.html
 %%DOCSDIR%%/module_gui.html
 %%DOCSDIR%%/module_hud.html
@@ -438,6 +439,7 @@ bin/palomino
 %%DATADIR%%/scripts/game.lua
 %%DATADIR%%/scripts/gfx.lua
 %%DATADIR%%/scripts/hud.lua
+%%DATADIR%%/scripts/joystick.lua
 %%DATADIR%%/scripts/keyboard.lua
 %%DATADIR%%/scripts/lib.lua
 %%DATADIR%%/scripts/mission.lua
