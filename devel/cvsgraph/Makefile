@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
@@ -22,15 +21,16 @@ MAN1=		cvsgraph.1
 MAN5=		cvsgraph.conf.5
 
 DOCDIR=		share/doc/${PORTNAME}
-DOCS=		ChangeLog LICENSE README
-EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
+DOCS=		ChangeLog README
+EXAMPLES=	cvsgraphwrapper.php mkimage.php
 MORE_EXAMPLES=	README.Automatic_documentation checkoutlist commit_action.sh \
 		commitinfo cvswrappers tag_action.sh taginfo
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
-		--with-gd-lib=${LOCALBASE}/lib
+		--with-gd-lib=${LOCALBASE}/lib CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
 REINPLACE_ARGS=	-i ""
 
 pre-patch:
