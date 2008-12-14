@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.16.3
-PORTREVISION=	4
+PORTVERSION=	5.17.0
+PORTREVISION=	0
 CATEGORIES=	math tk
 MASTER_SITES=	SF
 
@@ -20,9 +20,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USE_TK=		84+
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoconf:262
+USE_TK =		84+
+USE_GMAKE=		yes
+USE_PERL5_BUILD=	yes
+USE_AUTOTOOLS=		aclocal:110 autoconf:262
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${WISH} \
@@ -83,6 +84,6 @@ post-patch:
 	${LOCALBASE}/bin/bash ./fix_tab )
 
 regression-test: build
-	${LOCALBASE}/bin/bash ${WRKSRC}/src/maxima --batch-string='run_testsuite();'
+	${LOCALBASE}/bin/bash ${WRKSRC}/maxima-local --batch-string='run_testsuite();'
 
 .include <bsd.port.post.mk>
