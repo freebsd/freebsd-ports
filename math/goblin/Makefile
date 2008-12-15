@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	goblin
-DISTVERSION=	2.8b23
+DISTVERSION=	2.8b24
 CATEGORIES=	math
 MASTER_SITES=	SF/goblin2
 DISTNAME=	${PORTNAME}.${DISTVERSION}
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Graph Object Library for Network Programming Problems
 
-USE_TK=	84
+USE_TK=		84
 USE_TCL=	84
 USE_XORG=	x11
 USE_GMAKE=	yes
@@ -33,12 +33,6 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/ \
 LDFLAGS=	-L${LOCALBASE}/lib -ltcl84 -ltk84 ${PTHREAD_LIBS}
 
 WISH=		${LOCALBASE}/bin/wish8.4
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CXXFLAGS+=	-fhuge-objects
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
@@ -72,4 +66,4 @@ do-install:
 	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
