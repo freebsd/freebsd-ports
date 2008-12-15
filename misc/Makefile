@@ -165,6 +165,7 @@
     SUBDIR += imerge
     SUBDIR += inplace
     SUBDIR += instant-server
+    SUBDIR += ipbt
     SUBDIR += iselect
     SUBDIR += iso-codes
     SUBDIR += jargon
