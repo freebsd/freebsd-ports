@@ -7,6 +7,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	6.5
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/6.5/final/zip/
@@ -17,14 +18,19 @@ COMMENT=	A full-featured integrated environment for Java
 
 USE_ZIP=	yes
 USE_JAVA=	yes
+USE_GNOME=	gconf2
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
+	@${REINPLACE_CMD} -i "" -e 's|%%GCONFTOOL2%%|${LOCALBASE}/bin/gconftool-2|g; \
+	    s|%%GREP%%|${GREP}|g;s|%%SED%%|${SED}|g;s|%%AWK%%|${AWK}|g' \
+	    ${WRKSRC}/platform9/lib/nbexec && \
+	    ${RM} ${WRKSRC}/platform9/lib/nbexec.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/netbeans65
