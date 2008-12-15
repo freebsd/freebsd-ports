@@ -962,7 +962,7 @@
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-rak
     SUBDIR += rubygem-rdiscount
-    SUBDIR += rubygem-spreadsheet-excel
+    SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-tidy
     SUBDIR += rw-aspell
