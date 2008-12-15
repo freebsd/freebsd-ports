@@ -39,6 +39,7 @@ OPTIONS=	AO "Enable libao output" on \
 		LADSPA "Audio plugin support" off \
 		LAME "Enable mp3 encoding with LAME" ${_LAME} \
 		MAD "Enable mp3 decoding with MAD" on \
+		PNG "Enable PNG spectrogram creation" on \
 		SAMPLERATE "Enable libsamplerate" on \
 		SNDFILE "Enable libsndfile" on \
 		VORBIS "Enable Ogg Vorbis support" on \
@@ -50,7 +51,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
 .if !defined(WITH_LAME) && !defined(WITH_MAD)
 PLIST_SUB+=	PLIST_MP3="@comment "
@@ -141,6 +141,13 @@ CONFIGURE_ARGS+=	--with-mad
 LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=	--without-mad
+.endif
+
+.if defined(WITH_PNG)
+CONFIGURE_ARGS+=	--with-png
+LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--without-png
 .endif
 
 .if defined(WITH_GSM)
