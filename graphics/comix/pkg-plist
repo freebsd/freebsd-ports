@@ -68,6 +68,8 @@ share/applications/comix.desktop
 %%DATADIR%%/src/librarybackend.pyc
 %%DATADIR%%/src/main.py
 %%DATADIR%%/src/main.pyc
+%%DATADIR%%/src/portability.py
+%%DATADIR%%/src/portability.pyc
 %%DATADIR%%/src/preferences.py
 %%DATADIR%%/src/preferences.pyc
 %%DATADIR%%/src/process.py
@@ -114,10 +116,14 @@ share/icons/hicolor/48x48/apps/comix.png
 share/icons/hicolor/scalable/apps/comix.svg
 share/locale/cs/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
+share/locale/hr/LC_MESSAGES/comix.mo
 share/locale/id/LC_MESSAGES/comix.mo
 share/locale/ja/LC_MESSAGES/comix.mo
 share/locale/ko/LC_MESSAGES/comix.mo
+share/locale/pl/LC_MESSAGES/comix.mo
+share/locale/ru/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
+share/locale/zh_CN/LC_MESSAGES/comix.mo
 %%THUMBNAILS:%%share/mime/packages/comix.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/src
