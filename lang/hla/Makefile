@@ -39,7 +39,7 @@ post-extract:
 	${CP} ${_DISTDIR}/hello.hla ${WRKSRC}
 .if !defined(NOPORTDOCS)
 	(${MKDIR} ${WRKDIR}/HLAstdlib && \
-	    ${UNZIP_CMD} -q ${DISTDIR}/HLAstdlib_html${EXTRACT_SUFX} -d ${WRKDIR}/HLAstdlib \
+	    ${UNZIP_CMD} -q ${_DISTDIR}/HLAstdlib_html${EXTRACT_SUFX} -d ${WRKDIR}/HLAstdlib \
 	)
 	(${MKDIR} ${WRKDIR}/HLAReference && \
 	    ${UNZIP_CMD} -q ${_DISTDIR}/HLARef_html${EXTRACT_SUFX} -d ${WRKDIR}/HLAReference \
