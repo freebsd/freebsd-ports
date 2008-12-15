@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.2.9
-PORTREVISION=	5
+PORTVERSION=	2.2.11
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -19,7 +18,8 @@ DIST_SUBDIR=	apache22
 MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 LATEST_LINK=	apache22
 
@@ -62,7 +62,6 @@ OPTIONS= \
 	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
 	SQLITE "Enable SQLite support for apr-dbd" Off \
 	IPV6 "Enable IPv6 support" On \
-	PCRE_FROM_PORTS "Use devel/pcre instead of bundled one" Off \
 	BDB "Enable BerkeleyDB dbm" Off \
         SVN "Enable Subversion support" Off
 .include "${APACHEDIR}/Makefile.options"
@@ -74,7 +73,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
-		--enable-http
+		--enable-http \
+		--with-pcre=${LOCALBASE}
 
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS}" \
@@ -142,14 +142,9 @@ CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .endif
 
 # When using apr_mysql_db we _must_ rebuild makefiles
-.if defined(WITH_FULLBUILD) || defined(WITH_MYSQL)
+.if defined(WITH_FULLBUILD)
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 SCRIPTS_ENV+=	FULLBUILD=on
-.endif
-
-.if defined(WITH_PCRE_FROM_PORTS)
-CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)

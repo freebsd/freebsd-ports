@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.7 2008-09-02 07:34:21 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.8 2008-12-15 22:05:56 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -189,8 +189,8 @@ apache22_checkfib () {
 }
 
 apache22_prestart() {
-	apache22_precmd
 	apache22_checkfib
+	apache22_precmd
 }
 
 extra_commands="reload graceful gracefulstop configtest"
