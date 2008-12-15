@@ -84,6 +84,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/Ericsson.xml
 %%DATADIR%%/diameter/TGPPGmb.xml
+%%DATADIR%%/diameter/TGPPRx.xml
 %%DATADIR%%/diameter/TGPPSh.xml
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
@@ -134,6 +135,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/radius/dictionary.alteon
 %%DATADIR%%/radius/dictionary.altiga
 %%DATADIR%%/radius/dictionary.aptis
+%%DATADIR%%/radius/dictionary.aruba
 %%DATADIR%%/radius/dictionary.ascend
 %%DATADIR%%/radius/dictionary.bay
 %%DATADIR%%/radius/dictionary.bintec
