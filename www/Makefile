@@ -27,6 +27,7 @@
     SUBDIR += apache13-ssl
     SUBDIR += apache20
     SUBDIR += apache22
+    SUBDIR += apache22-peruser-mpm
     SUBDIR += apercu
     SUBDIR += aria
     SUBDIR += aria2
