@@ -4,3 +4,6 @@ SIZE (bdb/db-4.7.25.tar.gz) = 13124129
 MD5 (bdb/patch.4.7.25.1) = 5fdf101259e5164dea1c8c86214fde38
 SHA256 (bdb/patch.4.7.25.1) = e91590af872705efc34414afb702abc630a75c55ba61570dca2216c783e0a83a
 SIZE (bdb/patch.4.7.25.1) = 2072
+MD5 (bdb/patch.4.7.25.2) = bd410a11c71fee52fddb6aa2d8d4f80c
+SHA256 (bdb/patch.4.7.25.2) = 05d6cde0ab1bfdb80394a7a88ff7233d0407f0b09103b0dd3791ebfccbbcca31
+SIZE (bdb/patch.4.7.25.2) = 2210
