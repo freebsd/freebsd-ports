@@ -54,17 +54,51 @@ $FreeBSD$
  
  echo
  
-@@ -749,6 +737,9 @@
+@@ -749,6 +737,12 @@
           instmpi=true
           instcommon=true
           ;;
++      nodrmaa)
++         instdrmaa=false
++         ;;
 +      noqmon)
 +         instqmon=false
 +         ;;
        qmontree)
           instqmon=true
           instcommon=true
-@@ -1002,19 +993,6 @@
+@@ -942,18 +936,18 @@
+          Execute cp $f $DEST_SGE_ROOT/include
+       done
+ 
+-      for filename in $DRMAAJ_FILES $JUTIJ_FILES $JGDIJ_FILES; do
+-         filename="${filename}.jar"
+-         if [ -f $filename ]; then
+-            echo Installing `basename $filename`
+-            Execute rm -f $DEST_SGE_ROOT/lib/`basename $filename`
+-            MakeDir lib
+-            Install 0.0 644 $filename $DEST_SGE_ROOT/lib/`basename $filename`
+-         elif [ $exit_on_error = true ]; then
+-            echo "\"$filename\" not found. Installation failed."
+-            exit 1
+-         fi
+-      done
++#      for filename in $DRMAAJ_FILES $JUTIJ_FILES $JGDIJ_FILES; do
++#         filename="${filename}.jar"
++#         if [ -f $filename ]; then
++#            echo Installing `basename $filename`
++#            Execute rm -f $DEST_SGE_ROOT/lib/`basename $filename`
++#            MakeDir lib
++#            Install 0.0 644 $filename $DEST_SGE_ROOT/lib/`basename $filename`
++#         elif [ $exit_on_error = true ]; then
++#            echo "\"$filename\" not found. Installation failed."
++#            exit 1
++#         fi
++#      done
+ 
+       Cleanup include
+    fi
+@@ -1003,19 +997,6 @@
           Execute chmod 755 $DEST_SGE_ROOT/$MYRINETBASE/$f
        done
  
@@ -84,16 +118,16 @@ $FreeBSD$
        Cleanup mpi
     fi
  
-@@ -1162,7 +1140,7 @@
+@@ -1163,7 +1144,7 @@
  
        for prog in $PROG; do
           case $prog in
 -            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|pvm|qmontree|common|distcommon|utilbin|arco)
-+            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|noqmon|pvm|qmontree|common|distcommon|utilbin|arco)
++            jobs|ckpt|doc|inst_sge|utiltree|examples|man|mpi|nodrmaa|noqmon|pvm|qmontree|common|distcommon|utilbin|arco)
                 : 
                 ;;
              qmake)
-@@ -1277,6 +1255,8 @@
+@@ -1278,6 +1259,8 @@
                       InstallProg $BERKELEYDBBASE/$DSTARCH/bin/$prog
                    elif [ -f $BERKELEYDBBASE/bin/$prog ]; then
                       InstallProg $BERKELEYDBBASE/bin/$prog
@@ -102,7 +136,7 @@ $FreeBSD$
                    fi
                 fi
              elif [ $prog = spoolinit -o $prog = spooldefaults ]; then
-@@ -1407,6 +1387,8 @@
+@@ -1408,6 +1391,8 @@
                    libname="$lib.$shlibext"
                 elif [ $DSTARCH = darwin-ppc -o $DSTARCH = darwin-x86 ];  then
                    libname="$lib.$OPENSSLSOVERSION.$shlibext"
@@ -111,7 +145,7 @@ $FreeBSD$
                 else
                    libname="$lib.$shlibext.$OPENSSLSOVERSION"
                 fi
-@@ -1421,7 +1403,7 @@
+@@ -1422,7 +1407,7 @@
                    InstallProg $libname
                    if [ $DSTARCH = tru64 ]; then
                       :

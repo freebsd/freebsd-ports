@@ -8,13 +8,11 @@
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/174/:src \
-		http://gridengine.sunsource.net/download/SGE62/:bin \
-		${MASTER_SITE_LOCAL}:src,bin
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/181/:src \
+		${MASTER_SITE_LOCAL}:src
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
-DISTFILES=	${DISTNAME}.tar.gz:src \
-		ge-${SGE_RELEASE}-common.tar.gz:bin
+DISTFILES=	${DISTNAME}.tar.gz:src
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -29,11 +27,10 @@ DISABLE_SIZE=	yes
 FETCH_CMD=	wget -c
 
 OPTIONS=	BDB "Use DB based spooler" on \
-		JAVA "Support Java DRMAA API" on \
 		X11 "Qmon X11 GUI" on \
 		QSH "Enable qsh (requires xterm on exec hosts)" on
 
-LATEST_LINK=	sge61
+LATEST_LINK=	sge62
 CONFLICTS=	sge-6.[013-9]* sge-5* sgeee-[0-9]* sge-0.*
 
 NOT_FOR_ARCHS=	alpha
@@ -47,7 +44,7 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_RELEASE=	6.2beta
+SGE_RELEASE=	6.2
 SGE_VERSION=	${SGE_RELEASE:S/u/./:S/beta/.b/}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
@@ -104,14 +101,6 @@ AIMK_ARGS+=	-spool-classic
 PLIST_SUB+=	BDB_SPOOL="@comment "
 .endif
 
-.if defined(WITH_JAVA)
-USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-PLIST_SUB+=	DRMAA=
-CATEGORIES+=	java
-.else
-PLIST_SUB+=	DRMAA="@comment "
-.endif
 AIMK_ARGS+=	-no-java -no-jni
 
 .if defined(WITH_X11)
@@ -123,14 +112,6 @@ AIMK_ARGS+=	-no-qmon
 PLIST_SUB+=	QMON="@comment "
 QMON=		noqmon
 .endif
-
-post-extract:
-	@cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/ge-${SGE_RELEASE}-common.tar.gz \*.jar
-	@${MKDIR} ${WRKSRC}/classes/juti
-	@${CP} ${WRKDIR}/lib/drmaa.jar ${WRKSRC}/classes/
-	@${CP} ${WRKDIR}/lib/juti.jar ${WRKSRC}/classes/juti/
-	@${MKDIR} ${WRKSRC}/libs/jgdi/build
-	@${CP} ${WRKDIR}/lib/jgdi.jar ${WRKSRC}/libs/jgdi/build/
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -225,7 +206,7 @@ release-tar: build
 
 # Build a pkg-plist and Makefile.man
 build-plist: build
-.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_X11)
+.if defined(WITHOUT_BDB) || defined(WITHOUT_X11)
 	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
 .endif
 	@${FIND} ${TMP_SGE_ROOT}/* -name man -prune -o \
