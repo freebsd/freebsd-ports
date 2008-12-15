@@ -74,12 +74,13 @@
 %%HORDIR%%/lib/tests/BrowsePageTest.php
 %%HORDIR%%/lib/tests/DriverTest.php
 %%HORDIR%%/lib/tests/GroupTest.php
+%%HORDIR%%/lib/tests/KolabTest.php
+%%HORDIR%%/lib/tests/KolabTestBase.php
 %%HORDIR%%/lib/tests/ListTest.php
 %%HORDIR%%/lib/tests/ListViewTest.php
 %%HORDIR%%/lib/tests/TestBase.php
 %%HORDIR%%/lib/tests/ViewBrowseTest.php
 %%HORDIR%%/lib/tests/az.png
-%%HORDIR%%/lib/tests/bug5476.phpt
 %%HORDIR%%/lib/tests/bug_6518.phpt
 %%HORDIR%%/lib/tests/import.ldif
 %%HORDIR%%/lib/tests/importCRLF.ldif
@@ -182,7 +183,8 @@
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/Turba.reg
-%%HORDIR%%/scripts/import_squirrelmail_abook.php
+%%HORDIR%%/scripts/import_squirrelmail_file_abook.php
+%%HORDIR%%/scripts/import_squirrelmail_sql_abook.php
 %%HORDIR%%/scripts/import_vcards.php
 %%HORDIR%%/scripts/ldap/addou
 %%HORDIR%%/scripts/ldap/addou.pl
@@ -202,6 +204,7 @@
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_sql_schema.php
+%%HORDIR%%/scripts/upgrades/2.2.1_to_2.3.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.2.1_to_2.3.sql
 %%HORDIR%%/scripts/upgrades/2007-06-17_flatten_shares.php
 %%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
