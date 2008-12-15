@@ -11,6 +11,7 @@
 %%PYTHON_SITELIBDIR%%/jcc/cpp.py
 %%PYTHON_SITELIBDIR%%/jcc/cpp.pyc
 %%PYTHON_SITELIBDIR%%/jcc/cpp.pyo
+%%PYTHON_SITELIBDIR%%/jcc/patches/patch.4195
 %%PYTHON_SITELIBDIR%%/jcc/patches/patch.43
 %%PYTHON_SITELIBDIR%%/jcc/python.py
 %%PYTHON_SITELIBDIR%%/jcc/python.pyc
