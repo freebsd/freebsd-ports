@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdpa
-PORTVERSION=	7.1.1
+PORTVERSION=	7.2.0
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -18,15 +18,16 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20080618
+SRCDATE=	20081123
 MANDATE=	20080618
+MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
-MANUALFILE=	${PORTNAME}.${PORTVERSION}.manual.${MANDATE}.pdf
+MANUALFILE=	${PORTNAME}.${MANUALVER}.manual.${MANDATE}.pdf
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	F77="${F77}"
 GNU_CONFIGURE=	yes
-LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles
-
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_BLAS?=	reference
 
 .if exists(${LOCALBASE}/lib/libgoto.so)
@@ -51,8 +52,7 @@ BLAS=		-lptf77blas -lptcblas -latlas_r
 LAPACK=		-lalapack_r
 .endif
 
-CONFIGURE_ARGS+=--with-blas="-L${LOCALBASE}/lib ${BLAS}" --with-lapack="-L${LOCALBASE}/lib ${LAPACK}" --with-system-spooles
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--with-blas="-L${LOCALBASE}/lib ${BLAS}" --with-lapack="-L${LOCALBASE}/lib ${LAPACK}"
 
 PLIST_SUB+=	MANUALFILE=${MANUALFILE}
 
