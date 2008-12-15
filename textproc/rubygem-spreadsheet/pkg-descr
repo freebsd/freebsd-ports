@@ -1,7 +1,7 @@
-This is Spreadsheet/Excel for Ruby, a module that allows you to
-generate Microsoft Excel compatible files on any platform (also
-readable by Gnumeric).  It's a port of John McNamara's
-Spreadsheet::WriteExcel Perl module.
+The Spreadsheet Library is designed to read and write Spreadsheet Documents.
+As of version 0.6.0, only Microsoft Excel compatible spreadsheets are
+supported. Spreadsheet is a combination/complete rewrite of the
+Spreadsheet::Excel Library by Daniel J. Berger and the ParseExcel Library by
+Hannes Wyss. Spreadsheet can read, write and modify Spreadsheet Documents.
 
-Author:	Daniel J. Berger <djberg96@yahoo.com>
-WWW:	http://rubyforge.org/projects/spreadsheet
+WWW: http://rubyforge.org/projects/spreadsheet
