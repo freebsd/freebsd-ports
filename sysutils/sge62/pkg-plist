@@ -130,7 +130,6 @@
 %%SGE_BASE%%/catman/cat/cat8/sge_ca.8
 %%SGE_BASE%%/catman/cat/cat8/sge_execd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_qmaster.8
-%%SGE_BASE%%/catman/cat/cat8/sge_schedd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_shadowd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_shepherd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_st.8
@@ -180,7 +179,6 @@
 %%SGE_BASE%%/inst_sge
 %%SGE_BASE%%/install_execd
 %%SGE_BASE%%/install_qmaster
-%%SGE_BASE%%/lib/drmaa.jar
 %%QMON%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libXltree.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libcrypto.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so
@@ -189,8 +187,6 @@
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolb.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolc.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libssl.so
-%%SGE_BASE%%/lib/jgdi.jar
-%%SGE_BASE%%/lib/juti.jar
 %%SGE_BASE%%/mpi/README
 %%SGE_BASE%%/mpi/README.atm
 %%SGE_BASE%%/mpi/hostname
@@ -229,6 +225,7 @@
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/21cal.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/21cal_ins.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/aclask.xpm
+%%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/ar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_ar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_browser.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_calendar.xpm
@@ -368,7 +365,6 @@
 %%SGE_BASE%%/util/install_modules/inst_schedd_normal.conf
 %%SGE_BASE%%/util/install_modules/inst_st.sh
 %%SGE_BASE%%/util/install_modules/inst_template.conf
-%%SGE_BASE%%/util/install_modules/inst_update.sh
 %%SGE_BASE%%/util/jaas.config.template
 %%SGE_BASE%%/util/java.policy.template
 %%SGE_BASE%%/util/jmxremote.access
@@ -466,11 +462,13 @@
 %%SGE_BASE%%/util/sgeSMF/sge_smf_support.sh
 %%SGE_BASE%%/util/sgeSMF/shadowd_template.xml
 %%SGE_BASE%%/util/sgeST/sge_st
-%%SGE_BASE%%/util/sgeST/sge_st_settings.sh
 %%SGE_BASE%%/util/sgeST/st_settings.sh
 %%SGE_BASE%%/util/sge_aliases
 %%SGE_BASE%%/util/sge_request
 %%SGE_BASE%%/util/sgeremoterun
+%%SGE_BASE%%/util/upgrade_modules/inst_upgrade.sh
+%%SGE_BASE%%/util/upgrade_modules/load_sge_config.sh
+%%SGE_BASE%%/util/upgrade_modules/save_sge_config.sh
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/adminrun
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/authuser
 %%BDB_SPOOL%%%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/berkeley_db_svc
@@ -506,11 +504,8 @@
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/spoolinit
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/testsuidroot
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/uidgid
-%%PORTDOCS%%%%DOCSDIR%%/README-Autoinstall.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA-Java.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA.txt
-%%PORTDOCS%%%%DOCSDIR%%/README-Update-60u2.txt
-%%PORTDOCS%%%%DOCSDIR%%/README-Upgrade.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility_test.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/adoc.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/c-header
@@ -530,6 +525,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/EvaluationExpressionSupport.wiki
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/ResourceLimitationRulesSpecification.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/ResourceQuotaSpecification.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/SMFSupportSpecification.htm
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/auto_user.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/bapl.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/cluster_queue.txt
@@ -834,6 +830,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/logfile-trimming.asc
 @dirrm %%SGE_BASE%%/utilbin/%%SGE_ARCH%%
 @dirrm %%SGE_BASE%%/utilbin
+@dirrm %%SGE_BASE%%/util/upgrade_modules
 @dirrm %%SGE_BASE%%/util/sgeST
 @dirrm %%SGE_BASE%%/util/sgeSMF
 @dirrm %%SGE_BASE%%/util/sgeCA
