@@ -283,6 +283,7 @@ lib/libgoblin.a
 %%PORTDOCS%%%%DOCSDIR%%/gif/euclidianOneCycle.gif
 %%PORTDOCS%%%%DOCSDIR%%/gif/eulerSierpinski.gif
 %%PORTDOCS%%%%DOCSDIR%%/gif/intransitiveReduction.gif
+%%PORTDOCS%%%%DOCSDIR%%/gif/k7.gif
 %%PORTDOCS%%%%DOCSDIR%%/gif/maxCutDirected.gif
 %%PORTDOCS%%%%DOCSDIR%%/gif/maxFlow.gif
 %%PORTDOCS%%%%DOCSDIR%%/gif/optMatch.gif
