@@ -144,6 +144,7 @@ include/apache22/mod_dbd.h
 include/apache22/mod_include.h
 include/apache22/mod_log_config.h
 include/apache22/mod_proxy.h
+include/apache22/mod_rewrite.h
 include/apache22/mod_ssl.h
 include/apache22/mod_status.h
 include/apache22/mpm.h
@@ -186,6 +187,10 @@ include/apache22/util_xml.h
 %%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.so
 %%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.la
 %%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.a
+%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap-1.so
+%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.so
+%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.la
+%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.a
 libexec/apache22/httpd.exp
 %%MOD_ACTIONS%%libexec/apache22/mod_actions.so
 %%MOD_ALIAS%%libexec/apache22/mod_alias.so
@@ -550,7 +555,7 @@ www/apache22/icons/world2.png
 @dirrm share/apache22/build
 @dirrm share/apache22
 %%APR_PORTS%%@dirrm include/apr-1
-%%APR_PORTS%%@dirrm lib/apr-util-1
+%%APR_PORTS%%@dirrmtry lib/apr-util-1
 %%APR_PORTS%%@dirrm build-1
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
