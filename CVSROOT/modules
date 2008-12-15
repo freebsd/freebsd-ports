@@ -4866,6 +4866,7 @@ gxmessage                       ports/deskutils/gxmessage
 gxmlviewer                      ports/textproc/gxmlviewer
 gxmms                           ports/multimedia/gxmms
 gxmms2                          ports/audio/gxmms2
+gxneur                          ports/deskutils/gxneur
 gxset                           ports/x11/gxset
 gyach                           ports/net-im/gyach
 gzrecover                       ports/archivers/gzrecover
@@ -16790,6 +16791,8 @@ pear-xml_tree                   ports/devel/pear-XML_Tree
 pear-xml_util                   ports/devel/pear-XML_Util
 pear-xml_wddx                   ports/textproc/pear-XML_Wddx
 pear-xml_xpath                  ports/devel/pear-XML_XPath
+pear_Payment_DTA                ports/finance/pear_Payment_DTA
+pear_payment_dta                ports/finance/pear_Payment_DTA
 pearpc                          ports/emulators/pearpc
 pebrot                          ports/net-im/pebrot
 pecl-APC                        ports/www/pecl-APC
@@ -17827,6 +17830,7 @@ py-4suite                       ports/textproc/py-4suite
 py-4suite-xml                   ports/textproc/py-4suite-xml
 py-Breve                        ports/devel/py-Breve
 py-Elixir                       ports/databases/py-Elixir
+py-EnthoughtBase                ports/devel/py-EnthoughtBase
 py-GeoIP                        ports/net/py-GeoIP
 py-GinGin                       ports/www/py-GinGin
 py-HTMLgen                      ports/www/py-HTMLgen
@@ -17939,6 +17943,7 @@ py-elixir                       ports/databases/py-Elixir
 py-email                        ports/mail/py-email
 py-empy                         ports/textproc/py-empy
 py-enchant                      ports/textproc/py-enchant
+py-enthoughtbase                ports/devel/py-EnthoughtBase
 py-epsilon                      ports/devel/py-epsilon
 py-event                        ports/devel/py-event
 py-excelerator                  ports/textproc/py-excelerator
@@ -18207,6 +18212,7 @@ py-pygresql                     ports/databases/py-PyGreSQL
 py-pylib                        ports/devel/py-pylib
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
+py-pymc                         ports/math/py-pymc
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
@@ -18344,6 +18350,7 @@ py-tktreectrl                   ports/x11-toolkits/py-tktreectrl
 py-tlslite                      ports/security/py-tlslite
 py-tofu                         ports/net/py-tofu
 py-trace2html                   ports/devel/py-trace2html
+py-traits                       ports/devel/py-traits
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
 py-turbodjango                  ports/www/py-turbodjango
@@ -19488,6 +19495,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
@@ -21926,6 +21934,7 @@ wmfishtime                      ports/x11-clocks/wmfishtime
 wmflame                         ports/sysutils/wmflame
 wmfmixer                        ports/audio/wmfmixer
 wmfortune                       ports/games/wmfortune
+wmfs                            ports/x11-wm/wmfs
 wmfsm                           ports/sysutils/wmfsm
 wmfstatus                       ports/x11/wmfstatus
 wmfuzzy                         ports/x11-clocks/wmfuzzy
