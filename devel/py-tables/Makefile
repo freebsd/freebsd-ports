@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pytables
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pytables-${PORTVERSION}
 
-MAINTAINER=	quakelee@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hierarchical database for Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.llnl.gov/icc/lc/siop/downloads/
 
-MAINTAINER=	quakelee@cn.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A filesystem metadata benchmark utility
 
 PLIST_FILES=	bin/mdtest

@@ -10,7 +10,7 @@ CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	quakelee@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to parse the BBcode written in Python
 
 USE_PYTHON=	yes

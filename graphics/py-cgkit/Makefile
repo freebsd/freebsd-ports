@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/a/alpha/}
 
-MAINTAINER=	quakelee@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Computer Graphics Kit
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-python scons:${PORTSDIR}/devel/scons

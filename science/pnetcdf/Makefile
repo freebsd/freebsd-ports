@@ -12,7 +12,7 @@ CATEGORIES=	science parallel
 MASTER_SITES=	http://www-unix.mcs.anl.gov/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
 
-MAINTAINER=	quakelee@cn.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library providing high-performance I/O
 
 CONFLICTS=	hdf-4.*
