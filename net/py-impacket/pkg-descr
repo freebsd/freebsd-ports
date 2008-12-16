@@ -11,7 +11,4 @@ from scratch, as well as parsed from raw data. Furthermore,
 the object oriented API makes it simple to work with deep
 protocol hierarchies.
 
-- Marcin Jessa
-yazzy@yazzy.org
-
 WWW: http://oss.coresecurity.com/projects/impacket.html

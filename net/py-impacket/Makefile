@@ -10,7 +10,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://oss.coresecurity.com/repo/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yazzy@yazzy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Python classes providing access to network packets
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pcapy.so:${PORTSDIR}/net/py-pcapy
