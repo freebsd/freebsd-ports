@@ -10,7 +10,7 @@ MASTER_SITES=	http://oss.coresecurity.com/repo/ \
 		http://www.yazzy.org/ports/pcapy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yazzy@yazzy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension module to capture packets on the network
 
 USE_PYTHON=	yes
@@ -19,15 +19,4 @@ USE_PYDISTUTILS=	yes
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
 PORTDOCS=	README LICENSE pcapy.html
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not compile on 5.x
-.endif
-
-.if ${OSVERSION} < 503000
-LIB_DEPENDS+=	pcap.2:${PORTSDIR}/net/libpcap
-PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
