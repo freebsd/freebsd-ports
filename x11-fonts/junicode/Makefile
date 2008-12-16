@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode font for medievalists (Latin, IPA and Runic)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

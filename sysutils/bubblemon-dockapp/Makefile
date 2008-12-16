@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X eye candy for displaying CPU and memory load in a dock
 
 USE_GMAKE=	yes
