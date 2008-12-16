@@ -7,10 +7,13 @@
 
 PORTNAME=	cm-super
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	fonts/ps-type1
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	LOCAL
+MASTER_SITE_SUBDIR=	hrs
+#MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+#MASTER_SITE_SUBDIR=	fonts/ps-type1
+#DISTNAME=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Computer Modern Font Families in Type 1 Fonts
@@ -21,6 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITHOUT_X11)
 PLIST_X11=	""
@@ -93,6 +97,6 @@ do-install:
 	@${UPDMAP_SYS} --nohash --nomkmap --enable Map=${F}
 .endfor
 	@${ECHO_CMD} "Regenerating mapfiles..."
-	@${UPDMAP_SYS}
+	-@${UPDMAP_SYS}
 
 .include <bsd.port.mk>
