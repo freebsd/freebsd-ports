@@ -156,6 +156,7 @@
     SUBDIR += shujit
     SUBDIR += simplicity
     SUBDIR += springframework
+    SUBDIR += sqlitejdbc
     SUBDIR += subversion-java
     SUBDIR += sun-wtk
     SUBDIR += trove4j
