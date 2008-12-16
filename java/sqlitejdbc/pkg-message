@@ -1,0 +1,6 @@
+Warning: you need a sqlite3 port compiled with SQLITE_ENABLE_COLUMN_METADATA
+in order to use the following methods:
+  String ResultSetMetaData.getCatalogName(int column)
+  String ResultSetMetaData.getTableName(int column)
+any attemp to use them will close the JVM with an error of:
+  Undefined symbol "sqlite3_column_table_name16"

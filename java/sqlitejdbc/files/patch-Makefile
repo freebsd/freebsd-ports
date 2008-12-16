@@ -1,0 +1,28 @@
+--- Makefile.orig	2008-06-18 01:39:02.000000000 +0200
++++ Makefile	2008-06-23 16:12:40.000000000 +0200
+@@ -16,6 +16,7 @@
+ #
+ 
+ include Makefile.common
++target := FreeBSD
+ 
+ default: test
+ 
+@@ -29,13 +30,15 @@
+ build/$(sqlitejdbc)-native.jar: $(native_classes)
+ 	cd build && jar cf $(sqlitejdbc)-native.jar $(java_classlist)
+ 
+-build/$(target)/$(LIBNAME): build/$(sqlite)-$(target)/sqlite3.o build/org/sqlite/NativeDB.class
++build/$(target)/$(LIBNAME): build/org/sqlite/NativeDB.class
+ 	@mkdir -p build/$(target)
+ 	$(JAVAH) -classpath build -jni -o build/NativeDB.h org.sqlite.NativeDB
+ 	$(CC) $(CFLAGS) -c -o build/$(target)/NativeDB.o \
++		-I%%LOCALBASE%%/include \
+ 		src/org/sqlite/NativeDB.c
+ 	$(CC) $(CFLAGS) $(LINKFLAGS) -o build/$(target)/$(LIBNAME) \
+-		build/$(target)/NativeDB.o build/$(sqlite)-$(target)/*.o
++		build/$(target)/NativeDB.o \
++		-L%%LOCALBASE%%/lib -lsqlite3
+ 	$(STRIP) build/$(target)/$(LIBNAME)
+ 
+ build/$(sqlite)-%/sqlite3.o: dl/$(sqlite)-amal.zip
