@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.23
+PORTVERSION=	0.6.24
 PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
@@ -114,7 +114,7 @@ avahi-post-patch:
 	    	${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
 	@${REINPLACE_CMD} -e 's|^_||g' \
-		${WRKSRC}/avahi-ui/*.desktop.in
+		${WRKSRC}/avahi-ui/*.desktop.in.in
 
 post-build: avahi-post-build
 
