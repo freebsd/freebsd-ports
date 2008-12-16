@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/Linux/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phantomblock generator (converts existing files to sparse files)
 
 ALL_TARGET=	all

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.vsm.com.au/ftp/KITS/ \
 DISTNAME=	ODS-2-READER
 EXTRACT_SUFX=	.ZIP
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Copies files from VMS Files-11 (ODS2) file systems
 
 USE_ZIP=	yes

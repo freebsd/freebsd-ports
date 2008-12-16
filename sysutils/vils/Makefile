@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.secnetix.de/~olli/scripts/
 DISTFILES=	vils
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
 BUILD_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
