@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-bioperl=1.5.1_1:${PORTSDIR}/biology/p5-bioperl-devel \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		this port needs dependency update to p5-bioperl=1.5.2 and Build.PL mechanism
+
 CONFLICTS=	p5-bioperl-run-1.[02468]*
 
 LATEST_LINK=	p5-bioperl-run-devel
