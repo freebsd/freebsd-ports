@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/I/IPy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
-MAINTAINER=	quakelee@cn.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes

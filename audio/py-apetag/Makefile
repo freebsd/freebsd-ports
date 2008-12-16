@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	pylibape
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-ApeTag-${PORTVERSION}
 
-MAINTAINER=	quakelee@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for APE Tag written in Python
 
 USE_PYTHON=	yes

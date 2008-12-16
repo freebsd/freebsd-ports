@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.livinglogic.de/core/ \
 		http://cheeseshop.python.org/packages/source/l/ll-core/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	quakelee@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility functions and classes used by the other LivingLogic packages
 
 USE_PYTHON=	2.4+
