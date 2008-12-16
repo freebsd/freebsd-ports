@@ -17,7 +17,7 @@ COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	libdisasm.txt
