@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to distribute config files
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
