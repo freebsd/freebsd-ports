@@ -5387,6 +5387,7 @@ ipacco                          ports/net-mgmt/ipacco
 ipacctd                         ports/net-mgmt/ipacctd
 ipager                          ports/x11/ipager
 ipaudit                         ports/net-mgmt/ipaudit
+ipbt                            ports/misc/ipbt
 ipcad                           ports/net-mgmt/ipcad
 ipcalc                          ports/net-mgmt/ipcalc
 ipcheck                         ports/dns/ipcheck
@@ -11991,9 +11992,14 @@ p5-RPC-XML                      ports/net/p5-RPC-XML
 p5-RRD-Simple                   ports/databases/p5-RRD-Simple
 p5-RRDTool-OO                   ports/devel/p5-RRDTool-OO
 p5-RT-Client-REST               ports/www/p5-RT-Client-REST
+p5-RT-Extension-LDAPImport      ports/www/p5-RT-Extension-LDAPImport
+p5-RT-Extension-SLA             ports/www/p5-RT-Extension-SLA
 p5-RTF-Parser                   ports/textproc/p5-RTF-Parser
 p5-RTF-Tokenizer                ports/textproc/p5-RTF-Tokenizer
 p5-RTF-Writer                   ports/textproc/p5-RTF-Writer
+p5-RTx-Calendar                 ports/www/p5-RTx-Calendar
+p5-RTx-RightsMatrix             ports/www/p5-RTx-RightsMatrix
+p5-RTx-Shredder                 ports/www/p5-RTx-Shredder
 p5-RTx-Statistics               ports/www/p5-RTx-Statistics
 p5-Rcs                          ports/devel/p5-Rcs
 p5-Rcs-Agent                    ports/devel/p5-Rcs-Agent
@@ -15277,9 +15283,14 @@ p5-rpm-build-perl               ports/devel/p5-rpm-build-perl
 p5-rrd-simple                   ports/databases/p5-RRD-Simple
 p5-rrdtool-oo                   ports/devel/p5-RRDTool-OO
 p5-rt-client-rest               ports/www/p5-RT-Client-REST
+p5-rt-extension-ldapimport      ports/www/p5-RT-Extension-LDAPImport
+p5-rt-extension-sla             ports/www/p5-RT-Extension-SLA
 p5-rtf-parser                   ports/textproc/p5-RTF-Parser
 p5-rtf-tokenizer                ports/textproc/p5-RTF-Tokenizer
 p5-rtf-writer                   ports/textproc/p5-RTF-Writer
+p5-rtx-calendar                 ports/www/p5-RTx-Calendar
+p5-rtx-rightsmatrix             ports/www/p5-RTx-RightsMatrix
+p5-rtx-shredder                 ports/www/p5-RTx-Shredder
 p5-rtx-statistics               ports/www/p5-RTx-Statistics
 p5-runapp                       ports/devel/p5-RunApp
 p5-s3                           ports/net/p5-S3
@@ -19541,7 +19552,7 @@ rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
-rubygem-spreadsheet-excel       ports/textproc/rubygem-spreadsheet-excel
+rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stream                  ports/devel/rubygem-stream
