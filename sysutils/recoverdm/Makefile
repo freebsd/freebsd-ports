@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/recoverdm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover files and discs with damaged sectors
 
 MAN1=		recoverdm.1

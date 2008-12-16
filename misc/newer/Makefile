@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cwru.edu/pub/chet/
 DISTFILES=	newer.c
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of AT&T Research UNIX V8 newer(1)
 
 CONFLICTS=	teTeX-base-[0-9]* tex-[0-9]* ja-ptex-base-*

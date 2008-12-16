@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/slst/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates syslog statistics to detect tendencies and unexpected change
 
 ALL_TARGET=	all

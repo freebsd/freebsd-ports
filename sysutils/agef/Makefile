@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.unicamp.br/pub/unix-c/file-mgmt/ \
 DISTNAME=	agef
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	CPE1704TKS@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show disk usage of file sizes and counts sorted by file age
 
 ALL_TARGET=	${PORTNAME}
