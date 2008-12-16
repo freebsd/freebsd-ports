@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTVERSION=	0.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -15,48 +14,64 @@ DISTNAME=	LibRaw-${PORTVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Library for manipulating raw images
 
+OPTIONS=	OPTIMIZED_CFLAGS "Enable optimization" off \
+		SHARED_LIBS "Install shared libraries" off
+
+.include <bsd.port.pre.mk>
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${ARCH} == "i386"
+CFLAGS+=	-O3
+.endif
+.endif
+
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
+.if defined(WITH_SHARED_LIBS)
 USE_LDCONFIG=	yes
+PLIST_SUB+=	SHAREDLIBS=""
+.else
+PLIST_SUB+=	SHAREDLIBS="@comment "
+.endif
 
 PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 		API-datastruct-eng.html API-datastruct-rus.html API-notes-eng.html \
 		API-notes-rus.html API-overview-eng.html API-overview-rus.html \
-		Install-LibRaw-eng.html Install-LibRaw-rus.html Samples-LibRaw-eng.html \
-		Samples-LibRaw-rus.html Why-LibRaw-eng.html Why-LibRaw-rus.html \
-		index-eng.html index-rus.html index.html
+		Install-LibRaw-eng.html Install-LibRaw-rus.html \
+		Samples-LibRaw-eng.html Samples-LibRaw-rus.html \
+		Why-LibRaw-eng.html Why-LibRaw-rus.html index-eng.html \
+		index-rus.html index.html
 
-PORTEXAMPLES=	dcraw_emu.cpp dcraw_half.c half_mt.c identify.cpp simple_dcraw.cpp
+PORTEXAMPLES=	dcraw_emu.cpp dcraw_half.c half_mt.c identify.cpp mem_image.cpp \
+		simple_dcraw.cpp
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O4
-.else
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The following options are available:"
-	@${ECHO_CMD} "	WITH_OPTIMIZED_CFLAGS	- build port with optimization support"
-	@${ECHO_CMD} ""
-.endif
-.endif
+post-patch:
+	@${REINPLACE_CMD} -i.bak -e 's|-pthread|${PTHREAD_LIBS}|' \
+		-e 's|gcc|${CC}|' \
+		-e 's|g++|${CXX}|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/libraw
 
-.for f in libraw.h libraw_alloc.h libraw_const.h libraw_internal.h libraw_io.h libraw_types.h
+.for f in libraw.h libraw_alloc.h libraw_const.h libraw_internal.h libraw_types.h libraw_version.h
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
 .endfor
-.for f in libraw.a libraw.so.0 libraw_r.a libraw_r.so.0
+.for f in libraw.a libraw_r.a
+	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
+.endfor
+
+.if defined(WITH_SHARED_LIBS)
+.for f in libraw.so.0 libraw_r.so.0
 	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
 	@ cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.0 ${f}.so
 .endfor
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
