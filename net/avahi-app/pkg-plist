@@ -78,7 +78,7 @@ lib/libavahi-common.so.3
 lib/libavahi-core.a
 lib/libavahi-core.la
 lib/libavahi-core.so
-lib/libavahi-core.so.5
+lib/libavahi-core.so.6
 lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
@@ -109,17 +109,24 @@ sbin/avahi-dnsconfd
 %%DATADIR%%/introspection/ServiceResolver.introspect
 %%DATADIR%%/introspection/ServiceTypeBrowser.introspect
 %%DATADIR%%/service-types
+share/locale/ca/LC_MESSAGES/avahi.mo
 share/locale/de/LC_MESSAGES/avahi.mo
+share/locale/el/LC_MESSAGES/avahi.mo
 share/locale/en_AU/LC_MESSAGES/avahi.mo
 share/locale/en_CA/LC_MESSAGES/avahi.mo
 share/locale/en_GB/LC_MESSAGES/avahi.mo
 share/locale/en_NZ/LC_MESSAGES/avahi.mo
+share/locale/es/LC_MESSAGES/avahi.mo
+share/locale/fi/LC_MESSAGES/avahi.mo
 share/locale/fr/LC_MESSAGES/avahi.mo
+share/locale/hu/LC_MESSAGES/avahi.mo
 share/locale/it/LC_MESSAGES/avahi.mo
+share/locale/ms/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
 share/locale/ru/LC_MESSAGES/avahi.mo
 share/locale/sr/LC_MESSAGES/avahi.mo
+share/locale/sv/LC_MESSAGES/avahi.mo
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
