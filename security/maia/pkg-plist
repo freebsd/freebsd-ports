@@ -1,10 +1,16 @@
-@unexec if cmp -s %D/etc/amavisd.conf-dist %D/etc/amavisd.conf; then rm -f %D/etc/amavisd.conf; fi
-etc/amavisd.conf-dist
+@unexec if cmp -s %D/etc/amavisd.conf.dist %D/etc/amavisd.conf; then rm -f %D/etc/amavisd.conf; fi
+etc/amavisd.conf.dist
 @exec if [ ! -f %D/etc/amavisd.conf ] ; then cp -p %D/%F %B/amavisd.conf; fi
-@unexec if cmp -s %D/etc/maia.conf-dist %D/etc/maia.conf; then rm -f %D/etc/maia.conf; fi
-etc/maia.conf-dist
+@unexec if cmp -s %D/etc/maia.conf.dist %D/etc/maia.conf; then rm -f %D/etc/maia.conf; fi
+etc/maia.conf.dist
 @exec if [ ! -f %D/etc/maia.conf ] ; then cp -p %D/%F %B/maia.conf; fi
 sbin/amavisd-maia
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/amavisd.conf.dist
+%%PORTDOCS%%%%DOCSDIR%%/maia-mysql.sql
+%%PORTDOCS%%%%DOCSDIR%%/maia-pgsql.sql
+%%PORTDOCS%%%%DOCSDIR%%/maia.conf.dist
 %%WWWDIR%%/admin/configtest.php
 %%WWWDIR%%/admin/dblib.php
 %%WWWDIR%%/admin/schema.php
@@ -34,8 +40,9 @@ sbin/amavisd-maia
 %%WWWDIR%%/chart_rules.php
 %%WWWDIR%%/chart_stats.php
 %%WWWDIR%%/chart_virus.php
-%%WWWDIR%%/config.php
+@unexec if cmp -s %D/www/maia/config.php.dist %D/www/maia/config.php; then rm -f %D/www/maia/config.php; fi
 %%WWWDIR%%/config.php.dist
+@exec if [ ! -f %D/www/maia/config.php ] ; then cp -p %D/%F %B/config.php; fi
 %%WWWDIR%%/confirm.php
 %%WWWDIR%%/constants.php
 %%WWWDIR%%/core.php
@@ -130,7 +137,6 @@ sbin/amavisd-maia
 %%WWWDIR%%/smtp.php
 %%WWWDIR%%/stats.php
 %%WWWDIR%%/themes/desert_sand/code/smarty.php
-%%WWWDIR%%/themes/desert_sand/compiled/.placeholder
 %%WWWDIR%%/themes/desert_sand/css/style.css
 %%WWWDIR%%/themes/desert_sand/images/admin-int.png
 %%WWWDIR%%/themes/desert_sand/images/bad-header.png
@@ -199,7 +205,6 @@ sbin/amavisd-maia
 %%WWWDIR%%/themes/dgm/code/function.text_config_row.php
 %%WWWDIR%%/themes/dgm/code/list-cache.js
 %%WWWDIR%%/themes/dgm/code/smarty.php
-%%WWWDIR%%/themes/dgm/compiled/.placeholder
 %%WWWDIR%%/themes/dgm/css/cache_buttons.css
 %%WWWDIR%%/themes/dgm/css/color.css
 %%WWWDIR%%/themes/dgm/css/config.css
@@ -289,7 +294,6 @@ sbin/amavisd-maia
 %%WWWDIR%%/themes/dgm/templates/xdomainsettings.tpl
 %%WWWDIR%%/themes/dgm/templates/xlogin.tpl
 %%WWWDIR%%/themes/ocean_surf/css/style.css
-%%WWWDIR%%/themes/ocean_surf/compiled/.placeholder
 %%WWWDIR%%/themes/ocean_surf/images/admin-int.png
 %%WWWDIR%%/themes/ocean_surf/images/bad-header.png
 %%WWWDIR%%/themes/ocean_surf/images/banned-file.png
@@ -394,4 +398,5 @@ sbin/amavisd-maia
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/admin/scripts
 @dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
+@dirrm %%PORTDOCS%%%%DOCSDIR%%

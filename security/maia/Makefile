@@ -8,7 +8,7 @@
 
 PORTNAME=	maia
 PORTVERSION=	1.0.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -33,6 +33,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 USE_PERL5_RUN=	5.8.2+
 
 NO_BUILD=	yes
+
+DOCS=	LICENSE README amavisd.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
 
 MAIAUSER?=	vscan
 MAIAGROUP?=	vscan
@@ -208,6 +210,7 @@ post-patch:
 .endfor
 
 pre-install:
+	${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
@@ -219,8 +222,8 @@ do-install:
 .for i in amavisd-maia
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/amavisd.conf.dist ${PREFIX}/etc/amavisd.conf-dist
-	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maia.conf.dist ${PREFIX}/etc/maia.conf-dist
+	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/amavisd.conf.dist ${PREFIX}/etc/amavisd.conf.dist
+	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maia.conf.dist ${PREFIX}/etc/maia.conf.dist
 #
 #  This can contain sensitive information, e.g. SQL passwords, so it should be handled
 #  with care.
@@ -229,15 +232,17 @@ do-install:
 	${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 640 ${WRKSRC}/php/config.php.dist \
 		${PREFIX}/www/${PORTNAME}/config.php
 .endif
-
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 post-install:
-	@cd ${FILESDIR} && ${CP} .placeholder ${WWWDIR}/themes/ocean_surf/compiled/ \
-	&& ${CP} .placeholder ${WWWDIR}/themes/dgm/compiled/ \
-	&& ${CP} .placeholder ${WWWDIR}/themes/desert_sand/compiled/
 	@if [ ! -f ${PREFIX}/etc/amavisd.conf ]; then \
-        ${CP} -p ${PREFIX}/etc/amavisd.conf-dist ${PREFIX}/etc/amavisd.conf ; fi
+	${CP} -p ${PREFIX}/etc/amavisd.conf.dist ${PREFIX}/etc/amavisd.conf ; fi
 	@if [ ! -f ${PREFIX}/etc/maia.conf ]; then \
-        ${CP} -p ${PREFIX}/etc/maia.conf-dist ${PREFIX}/etc/maia.conf ; fi
+	${CP} -p ${PREFIX}/etc/maia.conf.dist ${PREFIX}/etc/maia.conf ; fi
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CHOWN} -R ${MAIAUSER}:${MAIAGROUP} ${MAIADIR}/
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
