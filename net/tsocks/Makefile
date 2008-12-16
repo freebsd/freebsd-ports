@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	tsocks
 DISTNAME=${PORTNAME}-${PORTVERSION:C/.b/beta/}
 
-MAINTAINER=	yazzy@yazzy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yazzy.org/ports/ezxml/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yazzy@yazzy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use C library for parsing XML documents
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

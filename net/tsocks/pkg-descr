@@ -17,5 +17,3 @@ calls that applications make to establish network connections
 and negotating them through a SOCKS server as necessary.
 
 WWW: http://tsocks.sourceforge.net
-
-Thanks opet for his help on that port.

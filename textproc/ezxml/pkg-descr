@@ -3,7 +3,4 @@ As the name implies, it's easy to use. It's ideal for
 parsing XML configuration files or REST web service responses. 
 It's also fast and lightweight (less than 20k compiled).
 
-- Marcin Jessa
-yazzy@yazzy.org
-
 WWW: http://ezxml.sourceforge.net/

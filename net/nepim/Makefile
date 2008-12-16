@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.yazzy.org/ports/
 MASTER_SITE_SUBDIR=	nepim
 
-MAINTAINER=	yazzy@yazzy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring available bandwidth between hosts
 
 LIB_DEPENDS=	oop.4:${PORTSDIR}/devel/liboop
