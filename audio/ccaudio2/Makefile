@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccaudio2
-PORTVERSION=	0.9.14
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 
@@ -18,14 +18,12 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 CONFLICTS=	ccaudio-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=	audiotool.1 tonetool.1
 
-post-patch:
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-	    ${WRKSRC}/Makefile.in
+PLIST_SUB+=	CCVERSION=1.0
 
 .include <bsd.port.mk>
