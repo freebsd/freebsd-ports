@@ -68,6 +68,7 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/suppressmotd
 %%DATADIR%%/script/tabkey.ce
 %%DATADIR%%/script/tabkey.jm
+%%DATADIR%%/script/topicbar
 %%DATADIR%%/script/url.irc
 %%DATADIR%%/script/utime
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
