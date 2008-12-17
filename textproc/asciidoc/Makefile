@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.3.0
+PORTVERSION=	8.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 
 NO_BUILD=	yes
 
@@ -31,6 +31,9 @@ pre-patch:
 
 # a future improvement to this port is to also install the vim syntax
 # highlighing mode in its proper location.
+#
+# also, starting with 8.3.1 the upstream has a configure script. this port
+# should be converted to use it.
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc
 	${INSTALL_SCRIPT} ${WRKSRC}/a2x ${PREFIX}/bin
