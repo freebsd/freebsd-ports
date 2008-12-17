@@ -1,15 +1,10 @@
---- bgpctl/Makefile	17 Aug 2006 16:46:38 -0000	1.7
-+++ bgpctl/Makefile	8 Feb 2007 10:32:19 -0000
-@@ -4,6 +4,7 @@
- 
- PROG=	bgpctl
+--- bgpctl/Makefile	2007-03-03 12:45:30.000000000 +0100
++++ bgpctl/Makefile	2008-03-18 13:27:29.000000000 +0100
+@@ -6,6 +6,7 @@
  SRCS=	bgpctl.c parser.c buffer.c imsg.c util.c
+ SRCS+=	irrfilter.c whois.c irr_asset.c irr_prefix.c irr_output.c
+ SRCS+=	irr_parser.c
 +SRCS+=	fmt_scaled.c
  CFLAGS+= -Wall
  CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+= -Wmissing-declarations
-Index: bgpctl.c
-===================================================================
-RCS file: /cvs/src/usr.sbin/bgpctl/bgpctl.c,v
-retrieving revision 1.110
-diff -u -p -r1.110 bgpctl.c
