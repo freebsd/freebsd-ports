@@ -503,6 +503,7 @@ apache13-modssl+ipv6            ports/www/apache13-modssl+ipv6
 apache13-ssl                    ports/www/apache13-ssl
 apache20                        ports/www/apache20
 apache22                        ports/www/apache22
+apache22-peruser-mpm            ports/www/apache22-peruser-mpm
 apachetop                       ports/sysutils/apachetop
 apc                             ports/math/apc
 apcpwr                          ports/sysutils/apcpwr
@@ -20303,6 +20304,7 @@ sqlgrey                         ports/mail/sqlgrey
 sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
 sqlite34                        ports/databases/sqlite34
+sqlitejdbc                      ports/java/sqlitejdbc
 sqlitemanager                   ports/databases/sqlitemanager
 sqlmap                          ports/security/sqlmap
 sqlninja                        ports/security/sqlninja
