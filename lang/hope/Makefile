@@ -14,10 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
 
-BROKEN=		Patch fails
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
-
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
 		latex2html:${PORTSDIR}/textproc/latex2html
