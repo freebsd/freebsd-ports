@@ -7,7 +7,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -100,7 +100,7 @@ PLIST_SUB+=	ZEROCONF="@comment "
 
 .if defined(WITH_AVAHI) && !defined(WITH_HOWL)
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		avahi-core.5:${PORTSDIR}/net/avahi-app
+		avahi-core.6:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
 .endif
 
