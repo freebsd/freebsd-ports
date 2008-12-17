@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	nx
-PORTVERSION=	0.33
-PORTREVISION=	4
+PORTVERSION=	0.37
 CATEGORIES=	devel
-MASTER_SITES=	https://networkx.lanl.gov/download/
+MASTER_SITES=	https://networkx.lanl.gov/download/networkx/
 DISTNAME=	networkx-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -24,25 +23,15 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		leaves files behind on deinstall
-
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	networkx
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
 post-install:
-.for d in ${PYTHON_SITELIBDIR}/networkx
-	@${FIND} ${d} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${d} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
