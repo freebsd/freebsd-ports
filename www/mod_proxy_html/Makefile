@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	mod_proxy_html
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dsl@bitwizards.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
@@ -21,13 +19,22 @@ USE_APACHE=	2.0+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 SHORTMODNAME=	proxy_html
+USE_BZIP2=	YES
 USE_GNOME=	libxml2
 
 AP_INC+=	${LOCALBASE}/include/libxml2
 AP_LIB+=	${LOCALBASE}/lib
 AP_EXTRAS+=	-lxml2
 
+PLIST_FILES=	%%DOCSDIR%%/COPYING %%DOCSDIR%%/README \
+		%%DOCSDIR%%/proxy_html.conf
+PLIST_DIRS=	%%DOCSDIR%%
+
 post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/proxy_html.conf ${DOCSDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
