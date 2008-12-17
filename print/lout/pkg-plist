@@ -181,6 +181,8 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_tequ
 %%PORTDOCS%%%%DOCSDIR%%/user/equ_vert
 %%PORTDOCS%%%%DOCSDIR%%/user/fmt
+%%PORTDOCS%%%%DOCSDIR%%/user/fmt1.awk
+%%PORTDOCS%%%%DOCSDIR%%/user/fmt2.awk
 %%PORTDOCS%%%%DOCSDIR%%/user/fmt_head
 %%PORTDOCS%%%%DOCSDIR%%/user/fmt_marg
 %%PORTDOCS%%%%DOCSDIR%%/user/fmt_setu
@@ -199,6 +201,14 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/johnson
 %%PORTDOCS%%%%DOCSDIR%%/user/johnson.out
 %%PORTDOCS%%%%DOCSDIR%%/user/letterbook
+%%PORTDOCS%%%%DOCSDIR%%/user/mat
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_comm
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_defs
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_disp
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_intr
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_matr
+%%PORTDOCS%%%%DOCSDIR%%/user/mat_summ
+%%PORTDOCS%%%%DOCSDIR%%/user/mybook
 %%PORTDOCS%%%%DOCSDIR%%/user/mydefs
 %%PORTDOCS%%%%DOCSDIR%%/user/pascal
 %%PORTDOCS%%%%DOCSDIR%%/user/pie
@@ -274,6 +284,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/vequ
 %%PORTDOCS%%%%DOCSDIR%%/user/vfmt
 %%PORTDOCS%%%%DOCSDIR%%/user/vgra
+%%PORTDOCS%%%%DOCSDIR%%/user/vmat
 %%PORTDOCS%%%%DOCSDIR%%/user/vpie
 %%PORTDOCS%%%%DOCSDIR%%/user/vprg
 %%PORTDOCS%%%%DOCSDIR%%/user/vref
@@ -487,6 +498,8 @@ bin/prg2lout
 %%DATADIR%%/hyph/polish.lp
 %%DATADIR%%/hyph/portugal.lh
 %%DATADIR%%/hyph/portugal.lp
+%%DATADIR%%/hyph/programming.lh
+%%DATADIR%%/hyph/programming.lp
 %%DATADIR%%/hyph/russian.lh
 %%DATADIR%%/hyph/russian.lp
 %%DATADIR%%/hyph/slovak.lh
@@ -563,7 +576,6 @@ bin/prg2lout
 %%DATADIR%%/include/rubyf
 %%DATADIR%%/include/russian
 %%DATADIR%%/include/russian.fd
-%%DATADIR%%/include/save_bsf
 %%DATADIR%%/include/slides
 %%DATADIR%%/include/slidesf
 %%DATADIR%%/include/tab
