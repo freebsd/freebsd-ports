@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wput
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -15,40 +14,48 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
-
 PORTDOCS=	ABOUT-NLS COPYING ChangeLog INSTALL TODO
 PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \
 		passwordfile wputrc
 
-USE_GETTEXT=	yes
-USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${LDFLAGS}"
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS}" \
+		LIBS="${LDFLAGS}"
 
-OPTIONS=	TLS "Enable TLS support" on \
-		MEM_DEBUG "Enable memory debugging" off \
-		DEBUG "Enable debug support" on
+OPTIONS=	TLS "Enable TLS support" On \
+		NLS "Native Language Support with gettext" On
 
-MAN1=		wput.1
+MAN1=		wdel.1 wput.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_TLS)
+.if !defined(WITHOUT_TLS)
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-ssl
+.else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
-.if defined(WITH_MEM_DEBUG)
-CONFIGURE_ARGS+=	--enable-memdbg
-.endif
-.if defined(WITHOUT_DEBUG)
-CONFIGURE_ARGS+=	--disable-g-switch
+
+.if !defined(WITHOUT_NLS)
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls \
+			--with-libintl-prefix=${LOCALBASE} \
+			--with-libiconv-prefix=${LOCALBASE}
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
+PLIST_SUB=	NLS="@comment "
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/socketlib.c
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/src/memdbg.c \
+		${WRKSRC}/src/socketlib.c
 
 post-install:
-	@${INSTALL_MAN}	${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN}	${MAN1:S,^,${WRKSRC}/doc/,} ${MANPREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
