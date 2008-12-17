@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.09.001
+PORTVERSION=	0.09.002
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -71,6 +71,7 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Parser::YAML.3 \
 		SQL::Translator::Parser::xSV.3 \
 		SQL::Translator::Producer.3 \
+		SQL::Translator::Producer::ClassDBI.3 \
 		SQL::Translator::Producer::DB2.3 \
 		SQL::Translator::Producer::DiaUml.3 \
 		SQL::Translator::Producer::Diagram.3 \

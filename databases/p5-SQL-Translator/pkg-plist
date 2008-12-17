@@ -35,8 +35,17 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Parser/YAML.pm
 %%SITE_PERL%%/SQL/Translator/Parser/xSV.pm
 %%SITE_PERL%%/SQL/Translator/Producer.pm
+%%SITE_PERL%%/SQL/Translator/Producer/ClassDBI.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DB2.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DiaUml.pm
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/diagram.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/layer.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/schema.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/uml-attribute.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/uml-class-all.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/uml-class-end.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/uml-class-start.tt2
+%%SITE_PERL%%/SQL/Translator/Producer/DiaUml/uml-class.tt2
 %%SITE_PERL%%/SQL/Translator/Producer/Diagram.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Dumper.pm
 %%SITE_PERL%%/SQL/Translator/Producer/GraphViz.pm
@@ -80,6 +89,7 @@ bin/sqlt-graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema/Graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
+@dirrm %%SITE_PERL%%/SQL/Translator/Producer/DiaUml
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/TT
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/XML
