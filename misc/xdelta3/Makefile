@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdelta
-PORTVERSION=	3.0t
+PORTVERSION=	3.0u
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -17,6 +17,9 @@ COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 ALL_TARGET=	xdelta3
 USE_GMAKE=	yes
 PLIST_FILES=	bin/xdelta3
+
+post-patch:
+	${REINPLACE_CMD} -E -e 's/^(CFLAGS)=/\1+=/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdelta3 ${PREFIX}/bin/
