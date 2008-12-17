@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latex2rtf
-PORTVERSION=	1.9.15
+PORTVERSION=	1.9.19
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_TEX_CTAN}
@@ -21,5 +21,9 @@ INFO=		latex2rtf
 USE_PERL5_BUILD=yes
 
 INSTALL_TARGET=	install install-info
+
+pre-patch:
+	@${CP} ${WRKSRC}/doc/latex2rtf.info ${WRKSRC}/doc/latex2rtf.info.bak
+	@${TR} -d '\r\b\0' < ${WRKSRC}/doc/latex2rtf.info.bak > ${WRKSRC}/doc/latex2rtf.info
 
 .include <bsd.port.mk>
