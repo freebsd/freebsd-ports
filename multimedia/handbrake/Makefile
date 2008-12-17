@@ -1,69 +1,55 @@
 # New ports collection makefile for: handbrake
-# Date created:        19 November 2004
-# Whom:                Andrew Thompson <andy@fud.org.nz>
+# Date created:		19 November 2004
+# Whom:				Andrew Thompson <andy@fud.org.nz>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	handbrake
-PORTVERSION=	0.9.2
-CATEGORIES=	multimedia
-MASTER_SITES=	http://download.handbrake.fr/handbrake/releases/:main \
-		http://download.m0k.org/handbrake/releases/:main \
-		http://download.handbrake.fr/handbrake/contrib/:contrib \
-		http://download.m0k.org/handbrake/contrib/:contrib
-DISTFILES=	HandBrake-${PORTVERSION}.tar.gz:main \
-		faac-1.24.tar.gz:contrib \
-		lame-3.96.1.tar.gz:contrib \
-		libdca-r81-strapped.tar.gz:contrib \
-		libdvdcss-1.2.9.tar.gz:contrib \
-		libdvdread-0.9.7.tar.gz:contrib \
-		libmkv-0.6.1.3.tar.gz:contrib \
-		libogg-1.1.2.tar.gz:contrib \
-		libvorbis-aotuv_b5.tar.gz:contrib \
-		mpeg2dec-0.4.1.tar.gz:contrib \
-		mpeg4ip-1.3.tar.gz:contrib \
-		xvidcore-1.1.2.tar.gz:contrib \
-		ffmpeg-9816.tar.gz:contrib \
-		x264-r736.tar.gz:contrib \
-		a52dec-0.7.4.tar.gz:contrib \
-		libsamplerate-0.1.2.tar.gz:contrib
+PORTNAME=		handbrake
+PORTVERSION=	0.9.3
+CATEGORIES=		multimedia
+MASTER_SITES=	http://download.m0k.org/handbrake/releases/:main \
+				http://download.m0k.org/handbrake/contrib/:contrib
+DISTFILES=		HandBrake-${PORTVERSION}.tar.gz:main \
+				a52dec-0.7.4.tar.gz:contrib \
+				faad2-2.6.1.tar.gz:contrib \
+				ffmpeg-r15462.tar.gz:contrib \
+				libdca-r81-strapped.tar.gz:contrib \
+				libdvdread-0.9.7.tar.gz:contrib \
+				faac-1.26.tar.gz:contrib \
+				lame-3.98.tar.gz:contrib \
+				libmp4v2-r45.tar.gz:contrib \
+				libmkv-0.6.3.tar.gz:contrib \
+				mpeg2dec-0.5.1.tar.gz:contrib \
+				libogg-1.1.3.tar.gz:contrib \
+				libsamplerate-0.1.4.tar.gz:contrib \
+				libvorbis-aotuv_b5.tar.gz:contrib \
+				libtheora-1.0.tar.gz:contrib \
+				x264-r1028-83baa7f.tar.gz:contrib \
+				xvidcore-1.1.3.tar.gz:contrib
 DIST_SUBDIR=	handbrake
 
-MAINTAINER=	jonathan@kc8onw.net
+MAINTAINER=		jonathan@kc8onw.net
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+		pkg-config:${PORTSDIR}/devel/pkg-config \
+		${ACLOCAL}:${PORTSDIR}/devel/automake19
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-NO_CDROM=	CSS code may violate the DMCA
-
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
-LIBTOOLFILES=	${WRKSRC}/contrib/a52dec/configure \
-		${WRKSRC}/contrib/libdvdcss/configure \
-		${WRKSRC}/contrib/libdvdread/configure \
-		${WRKSRC}/contrib/faac/configure \
-		${WRKSRC}/contrib/lame/configure \
-		${WRKSRC}/contrib/mpeg4ip/configure \
-		${WRKSRC}/contrib/mpeg2dec/configure \
-		${WRKSRC}/contrib/libogg/configure \
-		${WRKSRC}/contrib/libsamplerate/configure \
-		${WRKSRC}/contrib/libvorbis/configure
 
-WRKSRC=		${WRKDIR}/HandBrake
+USE_AUTOTOOLS=	libtool:15
+
+LIBTOOLFILES=	${WRKSRC}/configure
+
+WRKSRC=		${WRKDIR}/HandBrake-0.9.3
 PLIST_FILES=	bin/handbrake
 
 JAM?=		${LOCALBASE}/bin/jam
 APPLY?=		/usr/bin/apply
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Needs testing
-.endif
 
 # nasm/yasm needed by x264
 .if ${ARCH}=="i386"
@@ -78,46 +64,55 @@ MAKE_ENV+=	ARCH=${ARCH} MAKE=${GMAKE}
 post-extract:
 	@${APPLY} "${MV} %1 ${WRKSRC}/contrib/" \
 		${WRKDIR}/a52dec \
-		${WRKDIR}/faac \
+		${WRKDIR}/faad2 \
 		${WRKDIR}/ffmpeg \
-		${WRKDIR}/lame \
 		${WRKDIR}/libdca \
-		${WRKDIR}/libdvdcss \
 		${WRKDIR}/libdvdread \
+		${WRKDIR}/faac \
+		${WRKDIR}/lame \
+		${WRKDIR}/libmp4v2 \
 		${WRKDIR}/libmkv \
+		${WRKDIR}/mpeg2dec \
 		${WRKDIR}/libogg \
 		${WRKDIR}/libsamplerate \
 		${WRKDIR}/libvorbis \
-		${WRKDIR}/mpeg2dec \
-		${WRKDIR}/mpeg4ip \
+		${WRKDIR}/libtheora \
 		${WRKDIR}/x264 \
 		${WRKDIR}/xvidcore
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|g' \
+		${WRKSRC}/contrib/a52dec/libao/audio_out_oss.c
+# Remove the ports extraction code as it has already been done in post-extract:
+# Fix a hardcoded "make" so gmake is used properly
+# Remove a hardcoded "bash"
+	@${REINPLACE_CMD} -E \
+		-e 's|rm -rf [a-z0-9.-]* &&||g' \
+		-e 's|\(gzip.*-) &&||g' \
+		-e 's|\(gzip.*- ) &&||g' \
+		-e 's| make | $$(MAKE) |g' \
+		-e 's|bash ||g' \
+		${WRKSRC}/contrib/Jamfile
+# Following multimedia/x264 replace X86 with i386 and X86_64 with amd64
+# This appears to be an issue only when building within the ports system
+	@${REINPLACE_CMD} -E \
+		-e 's|,X86)|,i386)|g'  \
+		-e 's|,X86_64)|,amd64)|g' \
+		${WRKSRC}/contrib/x264/Makefile
+# The following patch fixes CPU count detection
+	@${REINPLACE_CMD} -E \
+		-e 's|/usr/sbin/sysctl|/sbin/sysctl|g'	\
+		${WRKSRC}/libhb/ports.c
+# Set release version so we don't depend on subversion
+	@${REINPLACE_CMD} -E \
+		-e 's|`svnversion`|0.9.3_freebsd-ports|g'  \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
-		s|%%CONTRIB%%|${WRKSRC}/contrib|g ; \
-		s|./bootstrap|${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} ./bootstrap|g ; \
-		s|./configure|${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} ./configure|g' \
-			${WRKSRC}/contrib/Jamfile
-	@${REINPLACE_CMD} -e 's|-O3||g ; s|-O20||g ; s|-O4 -ffast-math||g ; \
-		s| -mtune=.*"|"|g ; s| -mcpu=.*"|"|g ; \
-		s|-fomit-frame-pointer||g ; s|-pthread|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|=`echo \".*$$CFLAGS\".*sed.*`|=`echo \"$$OPT_CFLAGS $$CFLAGS\"`|g' \
-			${WRKSRC}/contrib/*/configure
-	@${REINPLACE_CMD} -e 's|>&/|>/|g' \
-		${WRKSRC}/contrib/mpeg4ip/configure
-	@${REINPLACE_CMD} -e 's|\\$$(PREFIX)|${WRKSRC}/contrib|g ; \
-		s|$$(PREFIX)|${WRKSRC}/contrib|g ; \
-		s|$$PREFIX|${WRKSRC}/contrib|g' \
-			${WRKSRC}/contrib/ffmpeg/configure
+	@${REINPLACE_CMD} -E \
+		-e 's|\$$\(HB_VERSION\)|0.9.3_freebsd-ports|g'	\
+		${WRKSRC}/Makefile
 
-# jam -dx, it will giving a verbose of build.
 do-build:
-	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${JAM} -dx)
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${JAM} -q)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/HandBrakeCLI ${PREFIX}/bin/handbrake
