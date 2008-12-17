@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if !defined(WITHOUT_AVAHI)
-LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	AVAHI=""
 .else
 CONFIGURE_ARGS+=--disable-avahi
