@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	SFE
 
@@ -17,7 +17,7 @@ COMMENT=	An advanced digital photo management application for KDE
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		kipi.2:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		kexiv2.4:${PORTSDIR}/graphics/libkexiv2 \
+		kexiv2.5:${PORTSDIR}/graphics/libkexiv2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		kdcraw.4:${PORTSDIR}/graphics/libkdcraw \
 		png.5:${PORTSDIR}/graphics/png \
