@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.6.10
+PORTVERSION=	2.6.12
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -26,7 +26,9 @@ MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	*
+PORTDOCS=	ChangeLog INSTALL README README_DE README_INDENT \
+		README_LANGLIST README_REGEX TODO
+
 .endif
 
 .include <bsd.port.pre.mk>
@@ -52,14 +54,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS ChangeLog INSTALL README README_DE README_LANGLIST \
-	README_INDENT README_REGEX TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples -cf - . | \
-		${TAR} -C  ${EXAMPLESDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 post-install:
