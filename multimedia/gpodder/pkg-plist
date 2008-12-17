@@ -32,8 +32,12 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/libpodcasts.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/libtagupdate.py
 %%PYTHON_SITELIBDIR%%/gpodder/libtagupdate.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/my.py
+%%PYTHON_SITELIBDIR%%/gpodder/my.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/resolver.py
+%%PYTHON_SITELIBDIR%%/gpodder/resolver.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/services.py
 %%PYTHON_SITELIBDIR%%/gpodder/services.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/sync.py
