@@ -1,3 +1,4 @@
+%%YAML%%%%PYTHON_SITELIBDIR%%/_yaml.so
 %%PYTHON_SITELIBDIR%%/yaml/__init__.py
 %%PYTHON_SITELIBDIR%%/yaml/__init__.pyc
 %%PYTHON_SITELIBDIR%%/yaml/__init__.pyo
@@ -50,3 +51,10 @@
 %%PYTHON_SITELIBDIR%%/yaml/tokens.pyc
 %%PYTHON_SITELIBDIR%%/yaml/tokens.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygments-lexer/yaml.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygments-lexer/example.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-highlight/yaml_hl.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-highlight/yaml_hl.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/yaml-highlight
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pygments-lexer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
