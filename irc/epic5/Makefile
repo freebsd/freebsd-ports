@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--without-tcl
 #
 .if defined(WITH_PERL)
 USE_PERL5=	yes
-CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
+CONFIGURE_ARGS+=	--with-perl
 .else
 CONFIGURE_ARGS+=	--without-perl
 .endif
