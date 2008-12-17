@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.6.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -271,8 +272,9 @@ post-patch:
 
 post-build:
 .ifdef (WITH_P4)
-	@${REINPLACE_CMD} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
-		${WRKSRC}/contrib/p4import/git-p4import.py > \
+	@${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+		${WRKSRC}/contrib/p4import/git-p4import.py
+	@${CP} ${WRKSRC}/contrib/p4import/git-p4import.py \
 		${WRKSRC}/contrib/p4import/git-p4import
 .endif
 
