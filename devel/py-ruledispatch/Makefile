@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	RuleDispatch
-PORTVERSION=	0.5.a0.r2306
+PORTVERSION=	0.5.a0.r2427
 CATEGORIES=	devel python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+		http://dryice.name/computer/FreeBSD/distfiles/ \
+		http://peak.telecommunity.com/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-0.5a0.dev-r2306
+DISTNAME=	${PORTNAME}-0.5a0.dev-r2427
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Rule-based Dispatching and Generic Functions
@@ -19,8 +20,6 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYPROTOCOLS_EGG}:${PORTSDIR}/devel/py-protocols-devel
-
-NO_PACKAGE=	not yet
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
