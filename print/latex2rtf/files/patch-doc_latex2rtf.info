@@ -1,0 +1,14 @@
+--- doc/latex2rtf.info.orig	2008-11-18 21:11:08.000000000 +0800
++++ doc/latex2rtf.info	2008-11-18 21:11:38.000000000 +0800
+@@ -1,7 +1,10 @@
+ This is latex2rtf.info, produced by makeinfo version 4.8 from
+ latex2rtf.texi.
+ 
+-         
++INFO-DIR-SECTION TeX
++START-INFO-DIR-ENTRY
++* latex2rtf: (latex2rtf).      Translate LaTeX documents to RTF.
++END-INFO-DIR-ENTRY
+ 
+ 
+ File: latex2rtf.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
