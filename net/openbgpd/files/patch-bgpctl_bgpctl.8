@@ -1,15 +1,10 @@
-
-$FreeBSD$
-
---- bgpctl/bgpctl.8.orig
-+++ bgpctl/bgpctl.8
-@@ -138,8 +138,8 @@
- and message counters.
+--- bgpctl/bgpctl.8	2007-05-31 21:20:22.000000000 +0200
++++ bgpctl/bgpctl.8	2008-03-18 14:51:41.000000000 +0100
+@@ -240,7 +240,7 @@
  .El
  .Sh FILES
--.Bl -tag -width "/etc/bgpd.conf" -compact
+ .Bl -tag -width "/var/run/bgpd.sockXXX" -compact
 -.It Pa /etc/bgpd.conf
-+.Bl -tag -width "%%PREFIX%%/etc/bgpd.conf" -compact
 +.It Pa %%PREFIX%%/etc/bgpd.conf
  default
  .Xr bgpd 8

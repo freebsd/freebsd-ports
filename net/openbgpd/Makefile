@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openbgpd
-PORTVERSION?=	4.0
+PORTVERSION?=	4.2
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenBGPD/:openbsd \
@@ -68,7 +68,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|__dead||"		\
 		${WRKSRC}/bgpd/bgpd.c 		\
 		${WRKSRC}/bgpd/bgpd.h 		\
-		${WRKSRC}/bgpctl/bgpctl.c
+		${WRKSRC}/bgpctl/bgpctl.c	\
+		${WRKSRC}/bgpctl/irrfilter.h	\
+		${WRKSRC}/bgpctl/irrfilter.c
 	@${REINPLACE_CMD} -e "s|SIMPLEQ|STAILQ|" ${WRKSRC}/bgpd/*.[chy]
 	@${REINPLACE_CMD} -e "s|<net/if_media.h>|\"if_media.h\"|" ${WRKSRC}/bgpctl/bgpctl.c
 	@${REINPLACE_CMD} -e "s|pfkey.c|pfkey_compat.c|" ${WRKSRC}/bgpd/Makefile
@@ -78,6 +80,7 @@ post-patch:
 		${WRKSRC}/bgpd/rde_update.c
 	@${REINPLACE_CMD} -e "s|rtm_fmask|rtm_use|" ${WRKSRC}/bgpd/kroute.c
 	@${REINPLACE_CMD} -e "s|RTLABEL_LEN|PFTABLE_LEN|" ${WRKSRC}/bgpd/bgpd.h
+	@${REINPLACE_CMD} -e "s|ulong|unsigned\ long|" ${WRKSRC}/bgpctl/irr_parser.c
 
 do-build:
 .for i in ${SUBDIRS}

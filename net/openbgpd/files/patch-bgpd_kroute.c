@@ -1,50 +1,136 @@
---- bgpd/kroute.c	3 Aug 2006 22:40:25 -0000	1.147
-+++ bgpd/kroute.c	8 Feb 2007 10:31:16 -0000
-@@ -1732,7 +1732,9 @@ send_rtmsg(int fd, int action, struct kr
- 		struct sockaddr_in	prefix;
- 		struct sockaddr_in	nexthop;
- 		struct sockaddr_in	mask;
-+#if 0
- 		struct sockaddr_rtlabel	label;
-+#endif
- 	} r;
+--- bgpd/kroute.c	2007-05-11 13:27:59.000000000 +0200
++++ bgpd/kroute.c	2008-05-28 11:04:19.000000000 +0200
+@@ -1738,7 +1738,9 @@
+ 	struct sockaddr_in	prefix;
+ 	struct sockaddr_in	nexthop;
+ 	struct sockaddr_in	mask;
++#if !defined(__FreeBSD__) /* FreeBSD has no route labeling. */
+ 	struct sockaddr_rtlabel	label;
++#endif /* !defined(__FreeBSD__) */
+ 	int			iovcnt = 0;
  
  	if (kr_state.fib_sync == 0)
-@@ -1765,9 +1767,11 @@ send_rtmsg(int fd, int action, struct kr
- 	r.mask.sin_family = AF_INET;
- 	r.mask.sin_addr.s_addr = htonl(prefixlen2mask(kroute->prefixlen));
- 
-+#if 0
- 	r.label.sr_len = sizeof(r.label);
- 	strlcpy(r.label.sr_label, rtlabel_id2name(kroute->labelid),
- 	    sizeof(r.label.sr_label));
+@@ -1748,14 +1750,16 @@
+ 	bzero(&hdr, sizeof(hdr));
+ 	hdr.rtm_version = RTM_VERSION;
+ 	hdr.rtm_type = action;
++#if !defined(__FreeBSD__) /* XXX: FreeBSD has no multiple routing tables */ 
+ 	hdr.rtm_tableid = kr_state.rtableid;
 +#endif
+ 	hdr.rtm_flags = RTF_PROTO1;
+ 	if (kroute->flags & F_BLACKHOLE)
+ 		hdr.rtm_flags |= RTF_BLACKHOLE;
+ 	if (kroute->flags & F_REJECT)
+ 		hdr.rtm_flags |= RTF_REJECT;
+ 	if (action == RTM_CHANGE)	/* reset these flags on change */
+-		hdr.rtm_fmask = RTF_REJECT|RTF_BLACKHOLE;
++		hdr.rtm_use = RTF_REJECT|RTF_BLACKHOLE;
+ 	hdr.rtm_seq = kr_state.rtseq++;	/* overflow doesn't matter */
+ 	hdr.rtm_msglen = sizeof(hdr);
+ 	/* adjust iovec */
+@@ -1799,6 +1803,7 @@
+ 	iov[iovcnt++].iov_len = sizeof(mask);
+ 
+ 	if (kroute->labelid) {
++#if !defined(__FreeBSD__) /* FreeBSD has no route labeling. */
+ 		bzero(&label, sizeof(label));
+ 		label.sr_len = sizeof(label);
+ 		strlcpy(label.sr_label, rtlabel_id2name(kroute->labelid),
+@@ -1809,6 +1814,7 @@
+ 		/* adjust iovec */
+ 		iov[iovcnt].iov_base = &label;
+ 		iov[iovcnt++].iov_len = sizeof(label);
++#endif /* !defined(__FreeBSD__) */
+ 	}
  
  retry:
- 	if (write(fd, &r, sizeof(r)) == -1) {
-@@ -1808,7 +1812,9 @@ send_rt6msg(int fd, int action, struct k
- 		struct sockaddr_in6	prefix;
- 		struct sockaddr_in6	nexthop;
- 		struct sockaddr_in6	mask;
-+#if 0
- 		struct sockaddr_rtlabel	label;
-+#endif
- 	} r;
+@@ -1850,7 +1856,9 @@
+ 	struct sockaddr_in6	prefix;
+ 	struct sockaddr_in6	nexthop;
+ 	struct sockaddr_in6	mask;
++#if !defined(__FreeBSD__) /* FreeBSD has no route labeling. */
+ 	struct sockaddr_rtlabel	label;
++#endif /* !defined(__FreeBSD__) */
+ 	int			iovcnt = 0;
  
  	if (kr_state.fib_sync == 0)
-@@ -1841,9 +1847,11 @@ send_rt6msg(int fd, int action, struct k
- 	memcpy(&r.mask.sin6_addr, prefixlen2mask6(kroute->prefixlen),
- 	    sizeof(struct in6_addr));
- 
-+#if 0
- 	r.label.sr_len = sizeof(r.label);
- 	strlcpy(r.label.sr_label, rtlabel_id2name(kroute->labelid),
- 	    sizeof(r.label.sr_label));
+@@ -1860,14 +1868,16 @@
+ 	bzero(&hdr, sizeof(hdr));
+ 	hdr.rtm_version = RTM_VERSION;
+ 	hdr.rtm_type = action;
++#if !defined(__FreeBSD__) /* XXX: FreeBSD has no multiple routing tables */ 
+ 	hdr.rtm_tableid = kr_state.rtableid;
 +#endif
+ 	hdr.rtm_flags = RTF_PROTO1;
+ 	if (kroute->flags & F_BLACKHOLE)
+ 		hdr.rtm_flags |= RTF_BLACKHOLE;
+ 	if (kroute->flags & F_REJECT)
+ 		hdr.rtm_flags |= RTF_REJECT;
+ 	if (action == RTM_CHANGE)	/* reset these flags on change */
+-		hdr.rtm_fmask = RTF_REJECT|RTF_BLACKHOLE;
++		hdr.rtm_use = RTF_REJECT|RTF_BLACKHOLE;
+ 	hdr.rtm_seq = kr_state.rtseq++;	/* overflow doesn't matter */
+ 	hdr.rtm_msglen = sizeof(hdr);
+ 	/* adjust iovec */
+@@ -1914,6 +1924,7 @@
+ 	iov[iovcnt++].iov_len = sizeof(mask);
+ 
+ 	if (kroute->labelid) {
++#if !defined(__FreeBSD__) /* FreeBSD has no route labeling. */
+ 		bzero(&label, sizeof(label));
+ 		label.sr_len = sizeof(label);
+ 		strlcpy(label.sr_label, rtlabel_id2name(kroute->labelid),
+@@ -1924,6 +1935,7 @@
+ 		/* adjust iovec */
+ 		iov[iovcnt].iov_base = &label;
+ 		iov[iovcnt++].iov_len = sizeof(label);
++#endif /* !defined(__FreeBSD__) */
+ 	}
  
  retry:
- 	if (write(fd, &r, sizeof(r)) == -1) {
-Index: pfkey_compat.c
-===================================================================
-RCS file: pfkey_compat.c
-diff -N pfkey_compat.c
+@@ -1960,8 +1972,8 @@
+ int
+ fetchtable(u_int rtableid, int connected_only)
+ {
+-	size_t			 len;
+-	int			 mib[7];
++	size_t		 	len;
++	int		 		mib[6];
+ 	char			*buf, *next, *lim;
+ 	struct rt_msghdr	*rtm;
+ 	struct sockaddr		*sa, *gw, *rti_info[RTAX_MAX];
+@@ -1976,9 +1988,8 @@
+ 	mib[3] = 0;
+ 	mib[4] = NET_RT_DUMP;
+ 	mib[5] = 0;
+-	mib[6] = rtableid;
+ 
+-	if (sysctl(mib, 7, NULL, &len, NULL, 0) == -1) {
++	if (sysctl(mib, 6, NULL, &len, NULL, 0) == -1) {
+ 		if (rtableid != 0 && errno == EINVAL)	/* table nonexistant */
+ 			return (0);
+ 		log_warn("sysctl");
+@@ -1988,7 +1999,7 @@
+ 		log_warn("fetchtable");
+ 		return (-1);
+ 	}
+-	if (sysctl(mib, 7, buf, &len, NULL, 0) == -1) {
++	if (sysctl(mib, 6, buf, &len, NULL, 0) == -1) {
+ 		log_warn("sysctl");
+ 		free(buf);
+ 		return (-1);
+@@ -2240,12 +2251,14 @@
+ 				continue;
+ 
+ 			connected_only = 0;
++#if !defined(__FreeBSD__) /* XXX: FreeBSD has no multiple routing tables */ 
+ 			if (rtm->rtm_tableid != kr_state.rtableid) {
+ 				if (rtm->rtm_tableid == 0)
+ 					connected_only = 1;
+ 				else
+ 					continue;
+ 			}
++#endif
+ 
+ 			if (dispatch_rtmsg_addr(rtm, rti_info,
+ 			    connected_only) == -1)
