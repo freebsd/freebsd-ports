@@ -7,7 +7,4 @@ a packet-handling package such as Impacket, which is a
 collection of Python classes for constructing and dissecting
 network packets.
 
-- Marcin Jessa
-yazzy@yazzy.org
-
 WWW: http://oss.coresecurity.com/projects/pcapy.html
