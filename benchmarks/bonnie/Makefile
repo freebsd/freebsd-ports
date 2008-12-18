@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.acnc.com/benchmarks/ \
 		http://www.textuality.com/bonnie/
 DISTNAME=	bonnie
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
 NO_WRKSUBDIR=	yes

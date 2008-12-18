@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/ids/AAFID/
 EXTRACT_ONLY=
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed monitoring and intrusion detection system
 
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk

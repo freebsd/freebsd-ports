@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic IP network transaction auditing tool
 
 #RUN_DEPENDS=	${LOCALBASE}/bin/ragrep:${PORTSDIR}/net-mgmt/argus3-clients

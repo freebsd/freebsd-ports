@@ -22,7 +22,7 @@ DISTFILES+=	sounds.tar.gz
 .endif
 DIST_SUBDIR=	xblast
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player real-time strategy game for X11
 
 CFLAGS+=	-DGAME_DATADIR='\"${DATADIR}\"'

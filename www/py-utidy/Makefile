@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= utidylib
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	uTidylib-${PORTVERSION}
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
 
 # XXX Better depend on tidy or tidy-devel???

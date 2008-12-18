@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Movie player based on mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer

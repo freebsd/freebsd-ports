@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gaia-clean
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display geographic maps with optional GPS tracking support
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
