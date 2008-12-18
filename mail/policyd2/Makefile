@@ -24,7 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 USE_PERL5=	yes
 USE_PHP=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	policyd.sh
+USE_RC_SUBR=	policyd2.sh
 SUB_FILES=	pkg-message
 
 WEBUIDIR=	${PREFIX}/www/policyd
