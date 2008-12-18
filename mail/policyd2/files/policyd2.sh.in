@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# Start or stop policyd
+# Start or stop policyd2
 # $FreeBSD$
 
-# PROVIDE: policyd
+# PROVIDE: policyd2
 # KEYWORD: shutdown
 #
-# Define these policyd_* variables in one of these files:
+# Define these policyd2_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
@@ -15,7 +15,7 @@
 
 . %%RC_SUBR%%
 
-name="policyd"
+name="policyd2"
 rcvar=`set_rcvar`
 
 command="%%LOCALBASE%%/bin/cbpolicyd"
@@ -23,6 +23,6 @@ procname="/usr/bin/perl"
 
 load_rc_config $name
 
-: ${policyd_enable="NO"}
+: ${policyd2_enable="NO"}
 
 run_rc_command "$1"
