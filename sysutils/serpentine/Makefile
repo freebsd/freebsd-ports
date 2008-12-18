@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Gnome Audio Cd Buner
+COMMENT=	Gnome Audio Cd Burner
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 RUN_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
