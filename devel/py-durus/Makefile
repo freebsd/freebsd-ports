@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	durus
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/durus/ \
 		${MASTER_SITE_LOCAL} \
@@ -19,18 +19,16 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	A persistent object storage system for Python
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	Durus
-MAN1=	durus.1
 
 .include <bsd.port.pre.mk>
 
 post-install:
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/durus.1 ${MANPREFIX}/man/man1
-
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ACKS.txt CHANGES.txt history.py INSTALL.txt LICENSE.txt README.txt doc/FAQ.txt
+.for docfile in ACKS.txt CHANGES.txt INSTALL.txt LICENSE.txt README.txt doc/FAQ.txt
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
