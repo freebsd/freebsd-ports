@@ -20,8 +20,6 @@ RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
