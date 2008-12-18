@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grsync
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \
@@ -22,17 +21,23 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		grsync.1 grsync-batch.1
+
+post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>
