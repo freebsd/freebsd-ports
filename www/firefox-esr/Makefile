@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	2.0.0.18
+DISTVERSION=	2.0.0.19
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -51,6 +51,13 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 .include <bsd.port.pre.mk>
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+MOZ_OPTIONS+=	--enable-gnomeui
+.else
+MOZ_OPTIONS+=	--disable-gnomeui
+.endif
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
 IGNORE=	does not run, update to 6.2-RELEASE or newer
