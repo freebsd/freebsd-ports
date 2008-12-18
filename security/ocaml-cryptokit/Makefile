@@ -7,15 +7,16 @@
 
 PORTNAME=	cryptokit
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Jaap.Boender@pps.jussieu.fr
 COMMENT=	A variety of cryptographic primitives for Objective Caml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+USE_OCAML=	yes
+USE_OCAML_LDCONFIG=	yes
 
 ALL_TARGET=	all allopt
 
@@ -30,7 +31,7 @@ DOC_FILES=	Changes LICENSE README
 post-configure:
 # CFLAGS,PREFIX safeness
 	@${REINPLACE_CMD} -E -e \
-		's|^(INSTALLDIR).*$$|\1=${PREFIX}/lib/ocaml|; \
+		's|^(INSTALLDIR).*$$|\1=${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}|; \
 		s|^CFLAGS=|CFLAGS\+=|; \
 		s|(^CFLAGS.*)-O|\1|' \
 		${WRKSRC}/Makefile
@@ -42,7 +43,7 @@ pre-install:
 		's|cp |${INSTALL_DATA} |' \
 		${WRKSRC}/Makefile
 # create installation dir
-	@${MKDIR} ${PREFIX}/lib/ocaml/stublibs
+	@${MKDIR} ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/stublibs
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -52,6 +53,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+	@${INSTALL_DATA} ${FILESDIR}/META ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
