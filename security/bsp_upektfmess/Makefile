@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bsp_upektfmess
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.upek.com/support/download/ \
-		http://shapeshifter.se/pub/bsp_upektfmess/
-DISTNAME=	TFMESS_BSP_FreeBSD_1.0
+		http://www.shapeshifter.se/pub/bsp_upektfmess/
+DISTNAME=	TFMESS_BSP_FreeBSD_1.1
 
-MAINTAINER=	fli@shapeshifter.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UPEK TouchChip TFM/ESS Fingerprint BSP
 
 LIB_DEPENDS=	bioapi100.0:${PORTSDIR}/security/bioapi \
 		usb-0.1.8:${PORTSDIR}/devel/libusb
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
 
 PLIST_FILES=	lib/libtfmessbsp.so
 
@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 # Maintainer note
 # Both the gui and the non-gui object are linked to libX11
-USE_XORG=	x11
+USE_XORG=	x11 xext
 
 RESTRICTED=	license prohibits redistribution
 NO_BUILD=	yes
@@ -37,14 +37,14 @@ ONLY_FOR_ARCHS=	i386
 OPTIONS=	GUI "Install GUI" off
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 600000
-IGNORE=		needs at least FreeBSD 6.0-RELEASE
+.if ${OSVERSION} < 700000
+IGNORE=		needs at least FreeBSD 7.0-RELEASE
 .endif
 
 .if defined(WITH_GUI)
-TFMESSPATH=${WRKSRC}
+TFMESSPATH=${WRKDIR}/${DISTNAME}
 .else
-TFMESSPATH=${WRKSRC}/console_only
+TFMESSPATH=${WRKDIR}/${DISTNAME}/console_only
 .endif
 
 do-install:
@@ -65,7 +65,7 @@ post-install:
 	@${ECHO_CMD} ""
 .endif
 	@${ECHO_CMD} "Configuration instructions are available at"
-	@${ECHO_CMD} "http://shapeshifter.se/articles/upek_touchchip_freebsd/"
+	@${ECHO_CMD} "http://www.shapeshifter.se/articles/upek_touchchip_freebsd/"
 	@${ECHO_CMD} ""
 .endif
 
