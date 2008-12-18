@@ -37,6 +37,7 @@
     SUBDIR += doodle
     SUBDIR += dragstack
     SUBDIR += drivel
+    SUBDIR += ecru
     SUBDIR += egroupware
     SUBDIR += estickies
     SUBDIR += etask
