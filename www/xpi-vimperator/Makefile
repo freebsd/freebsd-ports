@@ -20,6 +20,5 @@ XPI_FILES=	AUTHORS Donators License.txt Makefile Makefile.common \
 		NEWS TODO chrome/vimperator.jar chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
-#.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
-.include "/usr/ports/www/xpi-adblock/Makefile.xpi"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
