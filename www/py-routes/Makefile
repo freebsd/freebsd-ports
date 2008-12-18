@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/R/Routes
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Routes-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Routing package for Python that matches URLs to dicts and vice versa
 
 USE_PYTHON=	yes

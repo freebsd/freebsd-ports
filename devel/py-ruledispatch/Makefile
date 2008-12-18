@@ -14,7 +14,7 @@ MASTER_SITES=	http://files.turbogears.org/eggs/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-0.5a0.dev-r2427
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rule-based Dispatching and Generic Functions
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-1.0pre4
 
-MAINTAINER?=	dryice@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Collection of Emacs Development Environment Tools
 
 PORTCLASS=	master

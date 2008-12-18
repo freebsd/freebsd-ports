@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python object for manipulation with SQL table row
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools

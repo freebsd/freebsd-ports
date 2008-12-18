@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.fcitx.org/download/ \
 MASTER_SITE_SUBDIR=	dryice
 DISTNAME= fcitx-3.5-BlackFri
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

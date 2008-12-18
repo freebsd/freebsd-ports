@@ -12,7 +12,7 @@ CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gnu.org/software/emms/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EMMS is the Emacs Multi-Media System
 
 USE_EMACS=	yes
