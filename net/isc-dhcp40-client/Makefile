@@ -16,6 +16,6 @@ SUBSYS=		client
 # Local overrides
 #
 
-MASTERDIR=	${.CURDIR}/../isc-dhcp3-server
+MASTERDIR=	${.CURDIR}/../isc-dhcp40-server
 
 .include "${MASTERDIR}/Makefile"
