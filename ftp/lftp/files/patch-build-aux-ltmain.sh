@@ -1,14 +1,14 @@
---- build-aux/ltmain.sh.orig	2007-12-29 12:41:13.000000000 +0100
-+++ build-aux/ltmain.sh	2008-05-28 16:41:23.818197162 +0200
-@@ -6058,10 +6058,12 @@
+--- build-aux/ltmain.sh.orig	2008-12-15 18:04:37.000000000 +0100
++++ build-aux/ltmain.sh	2008-12-15 18:07:52.000000000 +0100
+@@ -2077,10 +2077,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
 +	if false; then
- 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	func_basename "$file"
+ 	name="$func_basename_result"
  	instname="$dir/$name"i
- 	$show "$install_prog $instname $destdir/$name"
- 	$run eval "$install_prog $instname $destdir/$name" || exit $?
+ 	func_show_eval "$install_prog $instname $destdir/$name" 'exit $?'
 +	fi
  
  	# Maybe install the static library, too.
