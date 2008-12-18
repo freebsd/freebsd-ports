@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081217:
+  AFFECTS: users of mail/policyd2
+  AUTHOR: wxs@FreeBSD.org
+
+  The RC script for mail/policyd2 has been renamed to avoid a conflict.  If
+  you use this port please change the setting in rc.conf to be
+  policyd2_enable.
+
 20081211:
   AFFECTS: users of lang/php5
   AUTHOR: pav@FreeBSD.org, itetcu@FreeBSD.org, ale@FreeBSD.org
