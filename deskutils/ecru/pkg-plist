@@ -1,0 +1,8 @@
+bin/ecru-config
+bin/ecru-delete
+bin/ecru-post
+bin/ecru-list
+bin/ecru-info
+bin/ecru-edit
+lib/libecru.so
+lib/liblivejournalxx.so
