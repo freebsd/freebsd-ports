@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	System for detecting Network Intruders in real-time
 
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/bro-${PORTVERSION}
 
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
