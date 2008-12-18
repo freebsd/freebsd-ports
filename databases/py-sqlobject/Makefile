@@ -6,36 +6,19 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://pypi.python.org/packages/source/S/SQLObject/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A python object for manipulation with SQL table row
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLObject
-SQLOBJECTVER?=	${PORTVERSION}
-PYTHONVER?=	${PYTHON_VERSION:S/^python//}
-PLIST_SUB=	PYSQLOBJECT_EGG=${PYSQLOBJECT_EGG}
 PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	EGG="SQLObject==${SQLOBJECTVER}" \
-		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
-
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTDOCS=	*
 
