@@ -12,7 +12,7 @@ MASTER_SITES=	http://quixote.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	Quixote-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.ORg
+MAINTAINER=	ports@FreeBSD.ORg
 COMMENT=	A framework for developing web applications in Python
 
 RUN_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy

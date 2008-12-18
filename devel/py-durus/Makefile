@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Durus-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent object storage system for Python
 
 USE_PYTHON=	2.4+

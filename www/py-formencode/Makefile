@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormEncode-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML form validation, generation, and conversion package
 
 USE_PYTHON=	yes

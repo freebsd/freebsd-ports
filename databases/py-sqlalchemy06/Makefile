@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sqlalchemy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
 USE_PYTHON=	2.3+

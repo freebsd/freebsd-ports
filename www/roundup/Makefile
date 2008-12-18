@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	source/r/${PORTNAME}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes

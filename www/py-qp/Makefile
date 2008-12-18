@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python web framework to use qpy and durus together
 
 BUILD_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy

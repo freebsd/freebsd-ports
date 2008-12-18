@@ -15,7 +15,7 @@ MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteScript/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pluggable command-line frontend
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools

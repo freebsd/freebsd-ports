@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/M/MyghtyUtils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MyghtyUtils-${PORTVERSION}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Container and Utility Functions from the Myghty Template Framework
 
 USE_PYTHON=	yes

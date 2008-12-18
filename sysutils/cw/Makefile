@@ -12,7 +12,7 @@ MASTER_SITES=	http://cwrapper.sourceforge.net/ \
 		http://www.fakehalo.us/cw/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non-intrusive color wrapper for common commands
 
 GNU_CONFIGURE=	yes

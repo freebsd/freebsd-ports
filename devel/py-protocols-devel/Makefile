@@ -13,7 +13,7 @@ MASTER_SITES=	http://peak.telecommunity.com/snapshots/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-1.0a0dev_r2082
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Protocol Definition, Declaration, and Adaptation for Python
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools

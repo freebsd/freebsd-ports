@@ -14,7 +14,7 @@ MASTER_SITES=	http://ipython.scipy.org/dist/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \

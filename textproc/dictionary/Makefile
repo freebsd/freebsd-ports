@@ -13,7 +13,7 @@ MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/ \
 		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dictionary client for Emacs
 
 USE_EMACS=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
 USE_PYTHON=	2.4+
