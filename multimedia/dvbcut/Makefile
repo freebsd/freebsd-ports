@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=dvbcut
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \

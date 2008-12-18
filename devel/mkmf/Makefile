@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uni-koeln.de/util/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates program and library makefiles for the make(1) command
 
 MAN1=		mkmf.1

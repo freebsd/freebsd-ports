@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A generic IP network transaction auditing tool
 
 .if defined(WITH_SASL)

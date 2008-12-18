@@ -11,7 +11,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 
 .ifndef NO_SSL

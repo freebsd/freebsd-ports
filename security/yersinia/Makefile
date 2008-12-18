@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.yersinia.net/download/
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet

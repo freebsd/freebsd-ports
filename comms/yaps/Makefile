@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/serialcomm/machines
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Pager Software: send messages to pager (SMS, TAP, ...)
 
 USE_GMAKE=	true

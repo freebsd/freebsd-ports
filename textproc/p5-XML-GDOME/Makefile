@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides the DOM Level 2 Core API for XML documents
 
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
