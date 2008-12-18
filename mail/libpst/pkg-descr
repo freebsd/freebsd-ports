@@ -9,6 +9,3 @@ Contacts can be converted to a simple list, to vcard format, or to
 .ldif format for import to an LDAP server.
 
 WWW: http://www.five-ten-sg.com/libpst/
-
-- Natey
-natey@natey.com
