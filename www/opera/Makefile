@@ -29,11 +29,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.62
+OPERA_VER=	9.63
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20081029
-OPERA_BUILD=	2466
+OPERA_DATE=	20081215
+OPERA_BUILD=	2474
 OPERA_LIB=	shared
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
