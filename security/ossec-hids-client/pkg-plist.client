@@ -12,6 +12,9 @@
 %%PORTNAME%%/bin/ossec-logcollector
 %%PORTNAME%%/bin/ossec-syscheckd
 %%PORTNAME%%/etc/internal_options.conf
+%%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
+%%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
+%%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
 %%PORTNAME%%/etc/shared/rootkit_trojans.txt
 %%PORTNAME%%/etc/shared/rootkit_files.txt
 %%PORTNAME%%/etc/shared/system_audit_rcl.txt
