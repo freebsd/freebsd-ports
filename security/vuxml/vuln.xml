@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="609c790e-ce0a-11dd-a721-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.14</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.8</lt></range>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/345441">
+	  <p>The update system is vulnerable to Cross site request forgeries.
+	    Malicious users may cause the superuser (user 1) to execute old
+	    updates that may damage the database.</p>
+	  <p>When an input format is deleted, not all existing content on a site
+	    is updated to reflect this deletion. Such content is then displayed
+	    unfiltered. This may lead to cross site scripting attacks when harmful
+	    tags are no longer stripped from 'malicious' content that was posted
+	    earlier.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/345441</url>
+      <url>http://secunia.com/advisories/33112/</url>
+    </references>
+    <dates>
+      <discovery>2008-12-11</discovery>
+      <entry>2008-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29f5bfc5-ce04-11dd-a721-0030843d3802">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
