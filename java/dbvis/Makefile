@@ -16,6 +16,8 @@ MAINTAINER=	contact@toha.org.ua
 COMMENT=	DbVisualizer database tool
 
 BROKEN=		Unfetchable
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

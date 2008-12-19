@@ -31,5 +31,7 @@ PLIST_FILES=	lib/claws-mail/plugins/clamav.a \
 		lib/claws-mail/plugins/clamav.so
 
 BROKEN=	Doesn't build with clamav-0.93 or higher
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 .include <bsd.port.mk>

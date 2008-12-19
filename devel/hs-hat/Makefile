@@ -15,6 +15,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A source-level tracer for Haskell 98
 
 BROKEN=		Does not build with recent ghc
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

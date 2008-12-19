@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
 BROKEN=		Size mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_AUTOTOOLS=	automake:15:env libtool:15
 USE_BZIP2=	yes

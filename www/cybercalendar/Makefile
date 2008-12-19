@@ -15,6 +15,8 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	CyberCalendar is a web based calendar program written in perl
 
 BROKEN=	does not fetch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \

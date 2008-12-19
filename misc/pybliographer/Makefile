@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 		recode:${PORTSDIR}/converters/recode
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes

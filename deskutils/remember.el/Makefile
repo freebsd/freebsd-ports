@@ -18,6 +18,8 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
 BROKEN=		Conflicting dependencies
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_EMACS=	yes
 USE_GMAKE=	yes

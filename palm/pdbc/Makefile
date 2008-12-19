@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Palm DataBase Compiler/Decompiler
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_ZIP=	YES
 EXTRACT_BEFORE_ARGS=	-q -a

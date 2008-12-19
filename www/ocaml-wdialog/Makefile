@@ -25,6 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.a:${PORTSDIR}
 		${LOCALBASE}/lib/ocaml/site-lib/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 
 BROKEN=		does not build with new ocaml
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_GMAKE=	yes
 

@@ -32,6 +32,8 @@ OPTIONS=	CLAMAV "Build with srv_clamav service" on \
 #		PERL "With Perl support" off
 
 BROKEN=	Doesn't build with clamav-0.93 or higher
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 .include <bsd.port.pre.mk>
 

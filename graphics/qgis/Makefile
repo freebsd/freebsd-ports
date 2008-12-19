@@ -21,6 +21,8 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 BROKEN=		Does not build with geos 3.x
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

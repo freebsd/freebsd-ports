@@ -15,6 +15,8 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Simple N-Gram (bi-gram) FULLTEXT parser plugin for MySQL 5.1+
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 CFLAGS+=	-I"${LOCALBASE}/include" -I"${LOCALBASE}/include/mysql"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

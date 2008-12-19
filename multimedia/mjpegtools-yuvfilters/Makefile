@@ -18,6 +18,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Mjpeg-tools YUV video stream processing tools
 
 BROKEN=		Does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 LIB_DEPENDS=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 

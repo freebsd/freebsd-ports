@@ -22,6 +22,8 @@ LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora		\
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 BROKEN=		Does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

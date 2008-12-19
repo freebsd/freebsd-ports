@@ -19,6 +19,8 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=    gmp.7:${PORTSDIR}/math/libgmp4
 
 BROKEN=		Does not build with current ghc
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 .include <bsd.port.pre.mk>
 

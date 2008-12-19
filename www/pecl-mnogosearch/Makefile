@@ -19,6 +19,8 @@ COMMENT=	The mnoGoSearch Bindings for php51+
 BUILD_DEPENDS=	indexer:${PORTSDIR}/www/mnogosearch
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

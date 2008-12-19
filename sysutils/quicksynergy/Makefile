@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 PLIST_FILES=	bin/quicksynergy
 

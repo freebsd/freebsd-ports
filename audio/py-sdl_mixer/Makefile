@@ -20,6 +20,8 @@ BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 DIST_SUBDIR=	python
 USE_SDL=	sdl mixer

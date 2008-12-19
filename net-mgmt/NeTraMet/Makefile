@@ -20,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Internet Accounting Architecture
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 NETRAMET_DOCS=	usguide.pdf srlguide.pdf ntmref.pdf nm_rc.pdf \
 		nifty.pdf fdutil.pdf
