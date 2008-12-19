@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdlabelgen
-PORTVERSION=	3.6.0
+PORTVERSION=	4.1.0
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 EXTRACT_SUFX=	.tgz
@@ -23,7 +23,8 @@ MAKE_ARGS=	BASE_DIR="${PREFIX}" \
 		INSTALL="${INSTALL_SCRIPT}" \
 		INSTALL_DIR="${MKDIR}" \
 		INSTALL_FILE="${INSTALL_DATA}" \
-		INSTALL_MAN="${INSTALL_MAN}"
+		INSTALL_MAN="${INSTALL_MAN}" \
+		MAN_DIR="${PREFIX}/man"
 
 do-build:
 	${PERL5} -i.bak -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${WRKSRC}/cdlabelgen
