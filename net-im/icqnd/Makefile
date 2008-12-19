@@ -17,6 +17,8 @@ COMMENT=	GTK based LICQ GUI program
 BUILD_DEPENDS=	licq:${PORTSDIR}/net-im/licq
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
