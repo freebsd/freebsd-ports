@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-gui \
 		${NONEXISTENT}:${PORTSDIR}/lang/pm3-base:build
 RUN_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-gui
 
+DEPRECATED=	depends on broken, expired port
+EXPIRATION_DATE=2008-01-19
+
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
 MAN1=		formsedit.1
