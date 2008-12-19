@@ -24,6 +24,9 @@ CONFLICTS=	crystalentitylayer-[0-9]*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
+DEPRECATED=	Depends on broken, expired port
+EXPIRATION_DATE=2009-01-19
+
 LDFLAGS=	-L${LOCALBASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-cs-prefix=${LOCALBASE}

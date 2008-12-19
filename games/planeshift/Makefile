@@ -25,6 +25,9 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:262:env
 
+DEPRECATED=	Depends on broken, expired port
+EXPIRATION_DATE=2009-01-19
+
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CRYSTAL=	${LOCALBASE}
