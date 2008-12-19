@@ -30,6 +30,10 @@ OPTIONS+=	Q_DATASTRUCTURE "Datastructure API support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_Q_DEBUG)
 CONFIGURE_ARGS+="--enable-debug"
 .endif
