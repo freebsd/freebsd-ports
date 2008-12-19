@@ -1,19 +1,16 @@
-@comment $FreeBSD$
-%%DATADIR%%/EGG-INFO/PKG-INFO
-%%DATADIR%%/EGG-INFO/SOURCES.txt
-%%DATADIR%%/EGG-INFO/entry_points.txt
-%%DATADIR%%/EGG-INFO/not-zip-safe
-%%DATADIR%%/EGG-INFO/requires.txt
-%%DATADIR%%/EGG-INFO/top_level.txt
-%%DATADIR%%/turbocheetah/__init__.py
-%%DATADIR%%/turbocheetah/__init__.pyc
-%%DATADIR%%/turbocheetah/cheetahsupport.py
-%%DATADIR%%/turbocheetah/cheetahsupport.pyc
-%%DATADIR%%/turbocheetah/tests/__init__.py
-%%DATADIR%%/turbocheetah/tests/__init__.pyc
-%%DATADIR%%/turbocheetah/tests/test_template.py
-%%DATADIR%%/turbocheetah/tests/test_template.pyc
-@dirrm %%DATADIR%%/turbocheetah/tests
-@dirrm %%DATADIR%%/turbocheetah
-@dirrm %%DATADIR%%/EGG-INFO
-@dirrm %%DATADIR%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/cheetahsupport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/cheetahsupport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/cheetahsupport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbocheetah
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
