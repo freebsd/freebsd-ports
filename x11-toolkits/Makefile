@@ -178,7 +178,6 @@
     SUBDIR += p5-Tk-ResizeButton
     SUBDIR += p5-Tk-Splashscreen
     SUBDIR += p5-Tk-TableMatrix
-    SUBDIR += p5-qt
     SUBDIR += pango
     SUBDIR += pango-reference
     SUBDIR += pangoxsl
