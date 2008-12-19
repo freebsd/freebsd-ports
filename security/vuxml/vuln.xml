@@ -34,6 +34,79 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="29f5bfc5-ce04-11dd-a721-0030843d3802">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.20,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.5,1</lt></range>
+      </package>
+      <package>
+        <name>linux-firefox</name>
+	<range><lt>2.0.0.20</lt></range>
+      </package>
+      <package>
+        <name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.14</lt></range>
+      </package>
+      <package>
+        <name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <p>MFSA 2008-69  XSS vulnerabilities in SessionStore</p>
+	  <p>MFSA 2008-68  XSS and JavaScript privilege escalation</p>
+	  <p>MFSA 2008-67  Escaped null characters ignored by CSS parser</p>
+	  <p>MFSA 2008-66  Errors parsing URLs with leading whitespace and
+	    control characters</p>
+	  <p>MFSA 2008-65  Cross-domain data theft via script redirect error
+	    message</p>
+	  <p>MFSA 2008-64  XMLHttpRequest 302 response disclosure</p>
+	  <p>MFSA 2008-62  Additional XSS attack vectors in feed preview</p>
+	  <p>MFSA 2008-61  Information stealing via loadBindingDocument</p>
+	  <p>MFSA 2008-60  Crashes with evidence of memory corruption
+	    (rv:1.9.0.5/1.8.1.19)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5500</cvename>
+      <cvename>CVE-2008-5501</cvename>
+      <cvename>CVE-2008-5502</cvename>
+      <cvename>CVE-2008-5503</cvename>
+      <cvename>CVE-2008-5504</cvename>
+      <cvename>CVE-2008-5505</cvename>
+      <cvename>CVE-2008-5506</cvename>
+      <cvename>CVE-2008-5507</cvename>
+      <cvename>CVE-2008-5508</cvename>
+      <cvename>CVE-2008-5510</cvename>
+      <cvename>CVE-2008-5511</cvename>
+      <cvename>CVE-2008-5512</cvename>
+      <cvename>CVE-2008-5513</cvename>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-60.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-61.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-62.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-63.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-64.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-65.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-66.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-67.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-68.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-69.html</url>
+    </references>
+    <dates>
+      <discovery>2008-12-17</discovery>
+      <entry>2008-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="54f72962-c7ba-11dd-a721-0030843d3802">
     <topic>phpmyadmin -- cross-site request forgery vulnerability</topic>
     <affects>
