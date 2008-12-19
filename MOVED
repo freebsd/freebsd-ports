@@ -3710,3 +3710,4 @@ textproc/rubygem-spreadsheet-excel|textproc/rubygem-spreadsheet|2008-12-14|Proje
 textproc/hs-utf8-string||2008-12-19|Duplicate of devel/hs-utf8-string-ghc
 audio/euphoria||2008-12-19|Has been broken or ignored for past 24 months, depends on broken, expired port
 audio/ruby-xmms2-ecore||2008-12-19|Has expired: Has been broken for more than 6 months
+databases/p5-DBD-PgSPI||2008-12-19|Has expired: Has been broken for more than 6 months
