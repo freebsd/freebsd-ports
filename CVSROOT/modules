@@ -2639,6 +2639,7 @@ ecore-txt                       ports/converters/ecore-txt
 ecore-x11                       ports/x11/ecore-x11
 ecos-tools                      ports/devel/ecos-tools
 ecromedos                       ports/textproc/ecromedos
+ecru                            ports/deskutils/ecru
 ecs                             ports/science/ecs
 ed2k                            ports/net-p2p/ed2k
 edb                             ports/databases/edb
@@ -4893,7 +4894,6 @@ hamfax                          ports/comms/hamfax
 hamlib                          ports/comms/hamlib
 hammerhead                      ports/sysutils/hammerhead
 hamsterdb                       ports/databases/hamsterdb
-handbrake                       ports/multimedia/handbrake
 hangman                         ports/games/hangman
 happydoc                        ports/devel/happydoc
 haproxy                         ports/net/haproxy
