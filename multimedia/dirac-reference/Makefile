@@ -13,6 +13,8 @@ COMMENT=	Programming reference for dirac
 BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz \
 			doxygen:${PORTSDIR}/devel/doxygen
 
+BROKEN=		bad plist
+
 MASTERDIR=	${.CURDIR}/../../multimedia/dirac
 
 BUILD_WRKSRC=	${WRKSRC}/doc
