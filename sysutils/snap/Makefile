@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	snap
-DISTVERSION=	20070507
+DISTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~wchunhao/download/
+MASTER_SITES=	http://www.cs.nctu.edu.tw/~wchunhao/ports/snap/
 
-MAINTAINER=	ta@cs.nctu.edu.tw
+MAINTAINER=	wchunhao@cs.nctu.edu.tw
 COMMENT=	Tools for periodic and manual management of UFS2 snapshots
 
 NO_BUILD=	yes
@@ -18,7 +19,8 @@ USE_PERL5_RUN=	yes
 
 MAN8=		snap.8
 
-PLIST_FILES=	sbin/snap etc/snap.conf
+PLIST_FILES=	sbin/snap \
+		etc/snap.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snap ${PREFIX}/sbin/
