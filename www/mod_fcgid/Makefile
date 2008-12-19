@@ -27,8 +27,6 @@ MAKE_ARGS=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION}"
 MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBASE}/include/apr-1"
 INSTALL_TARGET=	install-modules-yes
 PLIST_SUB=	APACHE_VERSION=${APACHE_VERSION}
-PLIST_FILES+=	libexec/apache%%APACHE_VERSION%%/mod_fcgid.a
-PLIST_FILES+=	libexec/apache%%APACHE_VERSION%%/mod_fcgid.la
 SUB_LIST=	APACHE_VERSION=${APACHE_VERSION}
 .else
 MAKE_ARGS=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION:S/20/2/}"
