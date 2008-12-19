@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zopeInterface
-PORTVERSION=	3.3.0.1
+PORTVERSION=	3.4.1
 CATEGORIES=	devel zope python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/z/zope.interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ DISTNAME=	zope.interface-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	Zope.interface package from Zope 3
+
+FETCH_CMD=	fetch -RP
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
