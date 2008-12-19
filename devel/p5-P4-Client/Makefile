@@ -16,6 +16,8 @@ COMMENT=	P4::Client - Perl extension for the Perforce API
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
 
+BROKEN=		does not compile
+
 PERL_CONFIGURE=	yes
 CC=	${CXX}
 
