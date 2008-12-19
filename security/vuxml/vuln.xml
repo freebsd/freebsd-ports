@@ -44,6 +44,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>drupal6</name>
 	<range><lt>6.8</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
