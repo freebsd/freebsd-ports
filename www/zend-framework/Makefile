@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -14,7 +15,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 NO_BUILD=	yes
-USE_PHP=	pcre spl
+USE_PHP=	spl
 WANT_PHP_WEB=	yes
 USE_GETTEXT=	yes
 
@@ -24,6 +25,7 @@ OPTIONS=	\
 		EDOJO "Install embedded Dojo" On \
 		PDOJO "Install Dojo from ports" Off \
 		MYSQL "Install MySQL PDO support" Off \
+		MYSQLI "Install MySQLi support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
 		PGSQL "Install PostgreSQL PDO support" Off \
 		OCI "Install Oracle OCI 8 PDO support" Off \
@@ -76,6 +78,10 @@ USE_PHP+=	bcmath bitset json posix
 
 .if defined(WITH_MYSQL)
 USE_PHP+=	pdo_mysql
+.endif
+
+.if defined(WITH_MYSQLI)
+USE_PHP+=	mysqli
 .endif
 
 .if defined(WITH_DBLIB)
