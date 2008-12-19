@@ -494,7 +494,6 @@
     SUBDIR += hs-cpphs
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
-    SUBDIR += hs-fps
     SUBDIR += hs-haddock
     SUBDIR += hs-haddock-docs
     SUBDIR += hs-happy
