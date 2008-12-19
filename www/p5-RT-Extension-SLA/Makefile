@@ -31,9 +31,13 @@ MAN3=		RT::Action::SLA_SetDefault.3				 \
 		RT::Condition::SLA_RequireStartsSet.3 RT::Queue_SLA.3	 \
 		RT::Action::SLA_SetStarts.3 RT::Action::SLA.3
 
-# Don't use normal CONFIGURE_ARGS
+# Don't use normal CONFIGURE_ARGS.  Disable doc_?????_indstall targets to
+# suppress installing perllocal.pod.  This duplicates code from bsd.perl.mk
+# rather undesirably.
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} ./${CONFIGURE_SCRIPT}
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} ./${CONFIGURE_SCRIPT} && \
+	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
 
 .include <bsd.port.mk>

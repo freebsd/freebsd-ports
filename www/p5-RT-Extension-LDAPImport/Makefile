@@ -27,9 +27,16 @@ CONFIGURE_ENV+=	RTHOME=${PREFIX}/${RTHOME}
 
 MAN3=		RT::Extension::LDAPImport.3
 
-# Don't use normal CONFIGURE_ARGS
+post-patch:
+	@${REINPLACE_CMD} -e 's,/opt/rt3/lib,${PREFIX}/${RTHOME}/lib,' \
+	    ${WRKSRC}/bin/rtldapimport
+
+# Don't use normal CONFIGURE_ARGS.  Disable doc_?????_indstall targets to
+# suppress installing perllocal.pod.  This duplicates code from bsd.perl.mk
+# rather undesirably.
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} ./${CONFIGURE_SCRIPT}
+	    ${SETENV} ${CONFIGURE_ENV} ${PERL5} ./${CONFIGURE_SCRIPT} && \
+	    ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
 .include <bsd.port.mk>
