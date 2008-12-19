@@ -37,6 +37,7 @@ USE_LDCONFIG=	YES
 MAN1=		nessus-config.1
 
 .if ! defined(NESSUS_CLIENT_ONLY)
+MANUAL_PACKAGE_BUILD=	needs /dev/bpf which is not available in pointyhat jail
 pre-configure:
 	@if [ ! -c /dev/bpf1 ]; then \
 	    ${ECHO} "********************************************************";\
