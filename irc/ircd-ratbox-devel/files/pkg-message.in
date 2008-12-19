@@ -23,9 +23,9 @@ starting the new version.
 
 	%%PREFIX%%/bin/bantool -u
 
-Note that the ssl_only_channel configure option has been removed and is
-now available as a setting in the channel section of the ircd
-configuration file.
+Note that the ssl_only_channel compile option has been removed, and
+should be added as a configuration setting (use_sslonly) in the
+ircd.conf file in order to activate the +S channel mode. 
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------
