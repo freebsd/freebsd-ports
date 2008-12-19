@@ -18,7 +18,8 @@ MAN1=	\
 	reformail.1 \
 	reformime.1 \
 	sendmail.1 \
-	testmxlookup.1
+	testmxlookup.1 \
+	webmlmd.1
 MAN5=	\
 	dot-courier.5 \
 	maildir.5

@@ -247,11 +247,29 @@ courier_start()
 		esac
 	fi
 	echo "."
+
+	LISTS=""
+	if [ -f ${sysconfdir}/webmlmrc ]; then 
+		. ${sysconfdir}/webmlmrc
+		if [ -n "$LISTS" ];then
+			if [ -x ${bindir}/webmlmd \
+			  -a -x ${bindir}/webmlmd.rc ]; then
+				echo -n " webmlmd"
+				${bindir}/webmlmd.rc start ${sysconfdir}/webmlmrc
+			fi
+		fi
+	fi
 }
 
 courier_stop()
 {	# kill courier services in the reverse order of starting them
 	echo -n "Stopping"
+
+	if [ -x ${bindir}/webmlmd \
+	  -a -x ${bindir}/webmlmd.rc ]; then
+		echo -n " webmlmd"
+		${bindir}/webmlmd.rc stop ${sysconfdir}/webmlmrc
+	fi
 
 	if [ -x ${sbindir}/pop3d-ssl ]; then
 		echo -n " pop3d-ssl"

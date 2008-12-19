@@ -36,6 +36,7 @@
 @unexec cmp -s %D/etc/courier/pop3d-ssl %D/etc/courier/pop3d-ssl.dist && rm -f %D/etc/courier/pop3d-ssl 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/pop3d %D/etc/courier/pop3d.dist && rm -f %D/etc/courier/pop3d 2>/dev/null || true
 @unexec cmp -s %D/etc/courier/sqwebmaild %D/etc/courier/sqwebmaild.dist && rm -f %D/etc/courier/sqwebmaild 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/webmlmrc %D/etc/courier/webmlmrc.dist && rm -f %D/etc/courier/webmlmrc 2>/dev/null || true
 bin/addcr
 bin/cancelmsg
 bin/courier-config
@@ -60,6 +61,8 @@ bin/reformime
 bin/rmail
 bin/sendmail
 bin/testmxlookup
+bin/webmlmd
+bin/webmlmd.rc
 etc/courier/aliases/system
 etc/courier/courierd.dist
 etc/courier/crontab
@@ -107,6 +110,7 @@ etc/courier/rfcerrheader.txt
 etc/courier/smtpaccess/default
 etc/courier/sqwebmaild.dist
 etc/courier/webmail.authpam
+etc/courier/webmlmrc.dist
 @exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
 @exec [ -f %D/etc/courier/courierd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
 @exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
@@ -122,6 +126,7 @@ etc/courier/webmail.authpam
 @exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
 @exec [ -f %D/etc/courier/pop3d.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
 @exec [ -f %D/etc/courier/sqwebmaild.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/sqwebmaild.dist
+@exec [ -f %D/etc/courier/webmlmrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/webmlmrc.dist
 @dirrmtry etc/courier/aliasdir
 @dirrmtry etc/courier/aliases
 @dirrmtry etc/courier/esmtpacceptmailfor.dir
@@ -158,6 +163,7 @@ libexec/courier/submit
 libexec/courier/submitmkdir
 libexec/courier/webmail/webadmin
 libexec/courier/webmail/webmail
+libexec/courier/webmail/webmlm
 libexec/filters/dupfilter
 libexec/filters/perlfilter
 %%WITHUUCP%%@dirrm libexec/courier/modules/uucp
@@ -211,16 +217,18 @@ share/courier/couriermlm/idxheaderhtml.tmpl
 share/courier/couriermlm/idxheadertxt.tmpl
 share/courier/couriermlm/idxsubject.tmpl
 share/courier/couriermlm/modrejbody.tmpl
-share/courier/couriermlm/modreject.tmpl
 share/courier/couriermlm/modrejheader.tmpl
 share/courier/couriermlm/modsubject.tmpl
 share/courier/couriermlm/modtext.tmpl
 share/courier/couriermlm/modtext2.tmpl
+share/courier/couriermlm/style.css.tmpl
 share/courier/couriermlm/sub.tmpl
 share/courier/couriermlm/sub2.tmpl
 share/courier/couriermlm/sub3.tmpl
 share/courier/couriermlm/sub4.tmpl
 share/courier/couriermlm/sub5.tmpl
+share/courier/couriermlm/suback.tmpl
+share/courier/couriermlm/subjrequest.tmpl
 share/courier/couriermlm/subreportfooter.tmpl
 share/courier/couriermlm/subreporthdr.tmpl
 share/courier/couriermlm/subreporthdr1.tmpl
@@ -233,6 +241,21 @@ share/courier/couriermlm/warn1headers.tmpl
 share/courier/couriermlm/warn1text.tmpl
 share/courier/couriermlm/warn1text2.tmpl
 share/courier/couriermlm/warn2msg.tmpl
+share/courier/couriermlm/webmlm.tmpl
+share/courier/couriermlm/webmlm.tmpl.html
+share/courier/couriermlm/webmlmconfirm.html
+share/courier/couriermlm/webmlmerror.tmpl.html
+share/courier/couriermlm/webmlmidx.html
+share/courier/couriermlm/webmlmlistadmin.tmpl.html
+share/courier/couriermlm/webmlmlistadminmod.tmpl.html
+share/courier/couriermlm/webmlmlistadminpw.tmpl.html
+share/courier/couriermlm/webmlmlistindex.tmpl.html
+share/courier/couriermlm/webmlmnotprocessed.html
+share/courier/couriermlm/webmlmpleasewait.tmpl.html
+share/courier/couriermlm/webmlmprocessed.html
+share/courier/couriermlm/webmlmrequestreceived.tmpl.html
+share/courier/couriermlm/webmlmsubinfo.tmpl.html
+share/courier/couriermlm/webmlmsublist.tmpl.html
 @dirrm share/courier/couriermlm
 share/courier/courierwebadmin/admin-00machine.html
 share/courier/courierwebadmin/admin-00machine.pl
@@ -309,195 +332,6 @@ share/courier/perlfilter-example.pl
 share/courier/perlfilter-wrapper.pl
 share/courier/pop3d
 share/courier/pop3d-ssl
-share/courier/rootcerts/02b73561.0
-share/courier/rootcerts/0481cb65.0
-share/courier/rootcerts/052e396b.0
-share/courier/rootcerts/0c364b2d.0
-share/courier/rootcerts/0dbd0096.0
-share/courier/rootcerts/0e82f83a.0
-share/courier/rootcerts/11a09b38.0
-share/courier/rootcerts/11f154d6.0
-share/courier/rootcerts/124bbd54.0
-share/courier/rootcerts/128b9c8d.0
-share/courier/rootcerts/19899da5.0
-share/courier/rootcerts/219d9499.0
-share/courier/rootcerts/23f4c490.0
-share/courier/rootcerts/256fd83b.0
-share/courier/rootcerts/2edf7016.0
-share/courier/rootcerts/2fb1850a.0
-share/courier/rootcerts/31044350.0
-share/courier/rootcerts/3ad48a91.0
-share/courier/rootcerts/3c58f906.0
-share/courier/rootcerts/3e7271e8.0
-share/courier/rootcerts/412bea73.0
-share/courier/rootcerts/4166ec0c.0
-share/courier/rootcerts/4184de39.0
-share/courier/rootcerts/4643210f.0
-share/courier/rootcerts/47996b5c.0
-share/courier/rootcerts/4d654d1d.0
-share/courier/rootcerts/4fbd6bfa.0
-share/courier/rootcerts/54edfa5d.0
-share/courier/rootcerts/594f1775.0
-share/courier/rootcerts/5a5372fc.0
-share/courier/rootcerts/5cf9d536.0
-share/courier/rootcerts/5f5e5caa.0
-share/courier/rootcerts/61f6c934.0
-share/courier/rootcerts/635ccfd5.0
-share/courier/rootcerts/6c55cf77.0
-share/courier/rootcerts/6e8bf996.0
-share/courier/rootcerts/6fcc125d.0
-share/courier/rootcerts/709afd2b.0
-share/courier/rootcerts/72bf6a04.0
-share/courier/rootcerts/72fa7371.0
-share/courier/rootcerts/74c26bd0.0
-share/courier/rootcerts/755f7420.0
-share/courier/rootcerts/75680d2e.0
-share/courier/rootcerts/7651b327.0
-share/courier/rootcerts/76579174.0
-share/courier/rootcerts/788c9bfc.0
-share/courier/rootcerts/7999be0d.0
-share/courier/rootcerts/7d3cd826.0
-share/courier/rootcerts/7d453d8f.0
-share/courier/rootcerts/8470719d.0
-share/courier/rootcerts/86f32474.0
-share/courier/rootcerts/8f7b96c4.0
-share/courier/rootcerts/8fe643df.0
-share/courier/rootcerts/95750816.0
-share/courier/rootcerts/97b4211c.0
-share/courier/rootcerts/9ec3a561.0
-share/courier/rootcerts/a0bc6fbb.0
-share/courier/rootcerts/a15b3b6b.0
-share/courier/rootcerts/a2df7ad7.0
-share/courier/rootcerts/a3896b44.0
-share/courier/rootcerts/a6776c69.0
-share/courier/rootcerts/a7605362.0
-share/courier/rootcerts/aaa-certificate-services.pem
-share/courier/rootcerts/aaa45464.0
-share/courier/rootcerts/aba-ecom-root-ca.pem
-share/courier/rootcerts/add67345.0
-share/courier/rootcerts/addtrust-class-1-ca-root.pem
-share/courier/rootcerts/addtrust-external-ca-root.pem
-share/courier/rootcerts/addtrust-public-ca-root.pem
-share/courier/rootcerts/addtrust-qualified-ca-root.pem
-share/courier/rootcerts/america-online-root-certification-00.pem
-share/courier/rootcerts/america-online-root-certification-01.pem
-share/courier/rootcerts/aol-time-warner-root-certification-00.pem
-share/courier/rootcerts/aol-time-warner-root-certification-01.pem
-share/courier/rootcerts/b0f3e76e.0
-share/courier/rootcerts/b5f329fa.0
-share/courier/rootcerts/baltimore-cybertrust-root.pem
-share/courier/rootcerts/bcdd5959.0
-share/courier/rootcerts/bda4cc84.0
-share/courier/rootcerts/betrusted-root-ca-baltimore-implementation.pem
-share/courier/rootcerts/betrusted-root-ca-entrust-implementation.pem
-share/courier/rootcerts/betrusted-root-ca-rsa-implementation.pem
-share/courier/rootcerts/betrusted-root-ca.pem
-share/courier/rootcerts/bf87590f.0
-share/courier/rootcerts/c19d42c7.0
-share/courier/rootcerts/c215bc69.0
-share/courier/rootcerts/c33a80d4.0
-share/courier/rootcerts/c527e4ab.0
-share/courier/rootcerts/c9bc75ba.0
-share/courier/rootcerts/ccb919f9.0
-share/courier/rootcerts/cdaebb72.0
-share/courier/rootcerts/certum-ca.pem
-share/courier/rootcerts/chambers-of-commerce-root.pem
-share/courier/rootcerts/class-1-public-primary-ocsp-responder.pem
-share/courier/rootcerts/class-2-public-primary-ocsp-responder.pem
-share/courier/rootcerts/class-3-public-primary-ocsp-responder.pem
-share/courier/rootcerts/d2adc77d.0
-share/courier/rootcerts/d537fba6.0
-share/courier/rootcerts/d78a75c7.0
-share/courier/rootcerts/d8274e24.0
-share/courier/rootcerts/ddc328ff.0
-share/courier/rootcerts/digital-signature-trust-co-dstca-00.pem
-share/courier/rootcerts/digital-signature-trust-co-dstca-01.pem
-share/courier/rootcerts/dst-rootca-x1.pem
-share/courier/rootcerts/dst-rootca-x2.pem
-share/courier/rootcerts/e268a4c5.0
-share/courier/rootcerts/e28f6bbc.0
-share/courier/rootcerts/e7b8d656.0
-share/courier/rootcerts/ed049835.0
-share/courier/rootcerts/ed524cf5.0
-share/courier/rootcerts/ed62f4e3.0
-share/courier/rootcerts/ee7cd6fb.0
-share/courier/rootcerts/entrust-net-certification-authority.pem
-share/courier/rootcerts/entrust-net-client-certification-00.pem
-share/courier/rootcerts/entrust-net-client-certification-01.pem
-share/courier/rootcerts/entrust-net-secure-server-certification-00.pem
-share/courier/rootcerts/entrust-net-secure-server-certification-01.pem
-share/courier/rootcerts/equifax-equifax-secure-certificate.pem
-share/courier/rootcerts/equifax-secure-ebusiness-ca-1.pem
-share/courier/rootcerts/equifax-secure-equifax-secure-ebusiness.pem
-share/courier/rootcerts/equifax-secure-global-ebusiness.pem
-share/courier/rootcerts/f3cf1e8e.0
-share/courier/rootcerts/f4996e82.0
-share/courier/rootcerts/f64d9715.0
-share/courier/rootcerts/f73e89fd.0
-share/courier/rootcerts/f950ccc2.0
-share/courier/rootcerts/ff783690.0
-share/courier/rootcerts/geotrust-global-ca.pem
-share/courier/rootcerts/global-chambersign-root.pem
-share/courier/rootcerts/globalsign-root-ca.pem
-share/courier/rootcerts/gp-root-2.pem
-share/courier/rootcerts/gte-cybertrust-global-root.pem
-share/courier/rootcerts/gte-cybertrust-root.pem
-share/courier/rootcerts/http-www-valicert-com-00.pem
-share/courier/rootcerts/http-www-valicert-com-01.pem
-share/courier/rootcerts/http-www-valicert-com-02.pem
-share/courier/rootcerts/ips-ca-chained-cas-certification.pem
-share/courier/rootcerts/ips-ca-clase1-certification-authority.pem
-share/courier/rootcerts/ips-ca-clase3-certification-authority.pem
-share/courier/rootcerts/ips-ca-clasea1-certification-authority.pem
-share/courier/rootcerts/ips-ca-clasea3-certification-authority.pem
-share/courier/rootcerts/ips-ca-timestamping-certification.pem
-share/courier/rootcerts/ips-servidores.pem
-share/courier/rootcerts/netlock-expressz-class-c-tanusitvanykiado.pem
-share/courier/rootcerts/netlock-kozjegyzoi-class-a-tanusitvanykiado.pem
-share/courier/rootcerts/netlock-uzleti-class-b-tanusitvanykiado.pem
-share/courier/rootcerts/quovadis-root-certification-authority.pem
-share/courier/rootcerts/rsa-data-security-inc-secure-server.pem
-share/courier/rootcerts/rsa-security-inc-rsa-security-1024.pem
-share/courier/rootcerts/rsa-security-inc-rsa-security-2048.pem
-share/courier/rootcerts/secom-trust-net-security-communication.pem
-share/courier/rootcerts/secure-certificate-services.pem
-share/courier/rootcerts/secure-server-ocsp-responder.pem
-share/courier/rootcerts/sonera-class1-ca.pem
-share/courier/rootcerts/sonera-class2-ca.pem
-share/courier/rootcerts/staat-der-nederlanden-root-ca.pem
-share/courier/rootcerts/starfield-technologies-inc-starfield.pem
-share/courier/rootcerts/tc-trustcenter-for-security-in-00.pem
-share/courier/rootcerts/tc-trustcenter-for-security-in-01.pem
-share/courier/rootcerts/tdc-internet-tdc-internet-root.pem
-share/courier/rootcerts/tdc-oces-ca.pem
-share/courier/rootcerts/thawte-personal-basic-ca.pem
-share/courier/rootcerts/thawte-personal-freemail-ca.pem
-share/courier/rootcerts/thawte-personal-premium-ca.pem
-share/courier/rootcerts/thawte-premium-server-ca.pem
-share/courier/rootcerts/thawte-server-ca.pem
-share/courier/rootcerts/thawte-timestamping-ca.pem
-share/courier/rootcerts/the-go-daddy-group-inc-go-daddy.pem
-share/courier/rootcerts/trusted-certificate-services.pem
-share/courier/rootcerts/utn-datacorp-sgc.pem
-share/courier/rootcerts/utn-userfirst-client-authentication.pem
-share/courier/rootcerts/utn-userfirst-hardware.pem
-share/courier/rootcerts/utn-userfirst-network-applications.pem
-share/courier/rootcerts/utn-userfirst-object.pem
-share/courier/rootcerts/verisign-class-1-public-primary.pem
-share/courier/rootcerts/verisign-class-2-public-primary.pem
-share/courier/rootcerts/verisign-class-3-public-primary.pem
-share/courier/rootcerts/verisign-class-4-public-primary.pem
-share/courier/rootcerts/verisign-inc-class-1-public-primary.pem
-share/courier/rootcerts/verisign-inc-class-2-public-primary.pem
-share/courier/rootcerts/verisign-inc-class-3-public-primary.pem
-share/courier/rootcerts/verisign-inc-verisign-trust-network-00.pem
-share/courier/rootcerts/verisign-inc-verisign-trust-network-01.pem
-share/courier/rootcerts/verisign-inc-verisign-trust-network-02.pem
-share/courier/rootcerts/verisign-inc-verisign-trust-network-03.pem
-share/courier/rootcerts/verisign-time-stamping-authority.pem
-share/courier/rootcerts/visa-ecommerce-root.pem
-share/courier/rootcerts/xramp-global-certification-authority.pem
-@dirrm share/courier/rootcerts
 share/courier/sharedindexupdate
 share/courier/sqwebmail/cleancache.pl
 share/courier/sqwebmail/html/en-us/CHARSET
@@ -642,6 +476,7 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/cancelmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/html/chinese_flag.png
 %%PORTDOCS%%%%DOCSDIR%%/html/courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierdsn.html
@@ -659,7 +494,6 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-forward.html
-%%PORTDOCS%%%%DOCSDIR%%/html/download.php
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-exdata-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-security-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-verp-smtpext.txt
@@ -672,6 +506,7 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/icon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/imapd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/install.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/japanese_flag.png
@@ -721,6 +556,7 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/style.css
 %%PORTDOCS%%%%DOCSDIR%%/html/submit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/testmxlookup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/webmlmd.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
@@ -753,7 +589,6 @@ share/courier/sqwebmail/webgpg
 @exec chmod 0555 %D/share/courier/couriermlm
 @exec chmod 0555 %D/share/courier/courierwebadmin
 %%WITHFAX%%@exec chmod 0555 %D/share/courier/faxmail
-@exec chmod 0555 %D/share/courier/rootcerts
 @exec chmod 0555 %D/share/courier/sqwebmail
 @exec chmod 0555 %D/share/courier/sqwebmail/html
 @exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
