@@ -22,6 +22,8 @@ MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 FORBIDDEN=	contains a vulnerability: http://www.tdiary.org/20071215.html written in Japanese
+DEPRECATED=	has been forbidden for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 NO_BUILD=	yes
 CONFLICTS?=	tdiary-[0-9]* \

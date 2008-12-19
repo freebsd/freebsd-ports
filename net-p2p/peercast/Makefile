@@ -16,6 +16,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
 FORBIDDEN=	arbitrary code execution, http://www.vuxml.org/freebsd/402ae710-26a2-11dd-ae05-825f4c35000a.html
+DEPRECATED=	has been forbidden for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
