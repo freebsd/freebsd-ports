@@ -135,6 +135,7 @@
     SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
     SUBDIR += kuake
+    SUBDIR += labyrinth
     SUBDIR += launchy
     SUBDIR += libopensync-plugin-evolution2
     SUBDIR += libopensync-plugin-evolution2-devel

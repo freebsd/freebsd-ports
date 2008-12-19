@@ -1,0 +1,6 @@
+Labyrinth is a lightweight mind-mapping tool for the GNOME desktop. It is
+written in Python and uses cairo for its rendering. It is intended to be as
+light and intuitive as possible, but still provide a wide range of powerful
+features.
+
+WWW:	http://code.google.com/p/labyrinth/
