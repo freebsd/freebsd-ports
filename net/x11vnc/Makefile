@@ -29,6 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		x11vnc.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
 
+BROKEN=		Does not compile (linker problems)
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
