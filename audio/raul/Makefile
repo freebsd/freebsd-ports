@@ -24,4 +24,10 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		triggers gcc segfault on amd64
+.endif
+
+.include <bsd.port.post.mk>
