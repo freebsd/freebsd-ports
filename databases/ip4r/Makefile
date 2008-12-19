@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1581/
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4 and IPv4 range index type for PostgreSQL
 
 USE_PGSQL=	YES
