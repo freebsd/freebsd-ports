@@ -28,7 +28,6 @@ PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/muse/muse.el:${PORTSDIR}/textproc/muse
 
 OPTIONS=	BBDB "BBDB support" off
-OPTIONS+=	ERC "ERC support" off
 OPTIONS+=	GNATS "GNATS support" off
 OPTIONS+=	PSVN "PSVN support" off
 OPTIONS+=	VM "View Mail support" off
@@ -52,12 +51,7 @@ PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
 .if (${EMACS_PORT_NAME} == "emacs21")
-.if defined(WITH_ERC)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/erc/erc.el:${PORTSDIR}/irc/erc
-PLIST_SUB+=	HAS_ERC=""
-.else
 PLIST_SUB+=	HAS_ERC="@comment "
-.endif
 .else
 # emacs 22 and above has ERC build in
 PLIST_SUB+=	HAS_ERC=""
