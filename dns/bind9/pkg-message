@@ -16,3 +16,10 @@
 *	The /etc/rc.d/named script in the base will do both for you.    *
 *									*
 *************************************************************************
+*									*
+*	Please note: BIND 9.3.6 has been classified as "End of Life"	*
+*	as of 1 December 2008 by the ISC.  The port will be supported	*
+*	through the lifetime of the RELENG_6 branch, currently		*
+*	scheduled to be supported through 30 November 2010.		*
+*									*
+*************************************************************************
