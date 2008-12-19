@@ -274,7 +274,6 @@
     SUBDIR += gstreamer-plugins-libcaca
     SUBDIR += gstreamer-plugins-libpng
     SUBDIR += gstreamer-plugins-libvisual
-    SUBDIR += gstreamer-plugins-swfdec
     SUBDIR += gthumb
     SUBDIR += gtkam
     SUBDIR += gtkdps

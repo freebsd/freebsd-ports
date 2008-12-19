@@ -58,7 +58,7 @@ _USE_GSTREAMER10_ALL=	a52dec aalib annodex bz2 cairo cdaudio cdparanoia dts \
 			gnonlin gsm hal ivorbis jack jpeg ladspa lame \
 			libcaca libmms libpng libvisual mm mp3 mpeg2enc mpeg2dec \
 			musepack nas neon ogg pango pulse python sdl shout2 sidplay \
-			sndfile spc soundtouch soup speex swfdec taglib \
+			sndfile spc soundtouch soup speex taglib \
 			theora vorbis wavpack x264 xvid
 
 # other plugins
@@ -186,8 +186,6 @@ libmng_DEPENDS=	graphics/gstreamer-plugins-libmng
 libpng_DEPENDS=	graphics/gstreamer-plugins-libpng
 
 libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
-
-swfdec_DEPENDS=	graphics/gstreamer-plugins-swfdec
 
 # Multimedia Plugins Section
 bad_DEPENDS=	multimedia/gstreamer-plugins-bad
