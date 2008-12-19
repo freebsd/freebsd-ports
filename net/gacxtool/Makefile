@@ -21,4 +21,7 @@ RUN_DEPENDS=	/boot/kernel/if_acx.ko:${PORTSDIR}/net/acx100
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
+DEPRECATED=	depends on expired, broken port
+EXPIRATION_DATE=2009-01-19
+
 .include <bsd.port.mk>
