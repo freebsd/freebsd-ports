@@ -7,6 +7,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	5.38
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message smart
 USE_RC_SUBR=	smartd
 
 MAN5=		smartd.conf.5
@@ -28,6 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| install-initdDATA | |' ${WRKSRC}/Makefile.in
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/smart ${PREFIX}/etc/periodic/daily/smart
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
