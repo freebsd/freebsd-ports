@@ -4,8 +4,8 @@
  **  to cooked mode before stopping GAP and back to raw mode when continueing.
  */
  
--#if SYS_BSD || SYS_MACH || HAVE_SGTTY_H
-+#if (SYS_BSD || SYS_MACH || HAVE_SGTTY_H) && !HAVE_TERMIOS_H
+-#if !SYS_IS_DARWIN && (SYS_BSD || SYS_MACH || HAVE_SGTTY_H)
++#if !SYS_IS_DARWIN && (SYS_BSD || SYS_MACH || HAVE_SGTTY_H) && !HAVE_TERMIOS_H
  
  #ifndef SYS_SGTTY_H                     /* terminal control functions      */
  # include       <sgtty.h>
@@ -13,8 +13,8 @@
  **
  *f  syStopraw( <fid> )  . . . . . . . . . . . . . . . . . . . . . .  BSD/MACH
  */
--#if SYS_BSD || SYS_MACH || HAVE_SGTTY_H
-+#if (SYS_BSD || SYS_MACH || HAVE_SGTTY_H) && !HAVE_TERMIOS_H
+-#if !SYS_IS_DARWIN && (SYS_BSD || SYS_MACH || HAVE_SGTTY_H)
++#if !SYS_IS_DARWIN && (SYS_BSD || SYS_MACH || HAVE_SGTTY_H) && !HAVE_TERMIOS_H
  
  void syStopraw (
      Int                 fid )
