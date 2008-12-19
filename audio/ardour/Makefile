@@ -49,6 +49,10 @@ OPTIONS=	OPTIMIZED_CFLAGS "Builds with compiler optimizations" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		needs posix_memalign()
+.endif
+
 .if defined(WITH_VST)
 # Yes, 'PlugIns' is not a typo.
 VST_DIST+=	vst_sdk2_3.zip
