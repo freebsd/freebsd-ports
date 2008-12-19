@@ -24,4 +24,7 @@ USE_GNOME=	gnomelibs
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
+DEPRECATED=	depends on a broken, expired port
+EXPIRATION_DATE=2009-01-19
+
 .include <bsd.port.mk>
