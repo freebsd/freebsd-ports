@@ -26,6 +26,8 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
 BROKEN=		Does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_BZIP2=	yes
 USE_BISON=	build

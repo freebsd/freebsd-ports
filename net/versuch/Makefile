@@ -22,6 +22,8 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		pcre\\+\\+.0:${PORTSDIR}/devel/pcre++
 
 BROKEN=		Does not compile
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 WRKSRC=		${WRKDIR}/versuch
 

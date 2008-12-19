@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Flux/Black-box applet displaying system information a la GNU uname
 
 BROKEN=	Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

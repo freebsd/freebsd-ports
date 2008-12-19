@@ -25,6 +25,8 @@ COMMENT=	English-Chinese(T)/Chinese(T)-English dictionaries for StarDict
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

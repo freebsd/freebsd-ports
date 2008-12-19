@@ -17,6 +17,8 @@ COMMENT=	A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_XORG=	x11
 USE_PYTHON=	yes

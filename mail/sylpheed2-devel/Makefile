@@ -18,6 +18,8 @@ COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 BROKEN=		does not link
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 #IGNORE=	"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
 

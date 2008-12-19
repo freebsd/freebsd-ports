@@ -18,6 +18,8 @@ COMMENT=	Python coroutine implementation
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 
 BROKEN=		Does not build
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_PYTHON=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}

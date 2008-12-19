@@ -33,6 +33,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nevow/__init__.py:${PORTSDIR}/www/py-nevow \
 		${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
 
 BROKEN=		Leaves files behind after deinstallation
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

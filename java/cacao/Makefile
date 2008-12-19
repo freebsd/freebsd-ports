@@ -16,6 +16,8 @@ COMMENT=	JIT compiler for JAVA
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
 BROKEN=		does not configure
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl

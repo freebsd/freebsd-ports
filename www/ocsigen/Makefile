@@ -19,6 +19,8 @@ RUN_DEPENDS=	ocaml-net<2:${PORTSDIR}/www/ocaml-net \
 		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
 
 BROKEN=		unsatisfiable dependency line
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes

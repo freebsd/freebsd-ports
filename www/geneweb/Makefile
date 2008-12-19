@@ -18,6 +18,8 @@ COMMENT=	An advanced genealogy software
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 BROKEN=		does not build with new ocaml
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwu.1
 

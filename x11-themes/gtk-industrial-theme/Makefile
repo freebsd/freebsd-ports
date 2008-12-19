@@ -20,6 +20,8 @@ COMMENT=	Slick theme for GTK1 from Ximian
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 BROKEN=	Checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}
 USE_GMAKE=	yes

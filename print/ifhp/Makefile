@@ -21,6 +21,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IFHP - A highly configurable print filter for LPRng
 
 BROKEN=		Size mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

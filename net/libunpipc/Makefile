@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The networking library used in UNIX Network Programming Volume 2 2e
 
 BROKEN=	checksum mismatch
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

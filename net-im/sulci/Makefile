@@ -39,6 +39,8 @@ SUB_FILES=	pkg-message
 OPTIONS=	MUC_LOG "with muc_log plugin" on
 
 BROKEN=		don't work with ocaml 3.10
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin

@@ -32,6 +32,8 @@ PLIST_FILES=	bin/squidclam %%EXAMPLESDIR%%/squidclam.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 BROKEN=	Doesn't build with clamav-0.93 or higher
+DEPRECATED=	has been broken for more than 6 months
+EXPIRATION_DATE=2009-01-19
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
