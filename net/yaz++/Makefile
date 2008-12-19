@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz++/
+MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
