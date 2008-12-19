@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="225bc349-ce10-11dd-a721-0030843d3802">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>linux-opera</name>
+	<range><lt>9.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Opera Team reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/963/">
+	  <p>Manipulating certain text-area contents can cause a buffer
+	    overflow, which may be exploited to execute arbitrary code.</p>
+	  <p>Certain HTML constructs can cause the resulting DOM to change
+	    unexpectedly, which triggers a crash. To inject code, additional
+	    techniques will have to be employed.</p>
+	  <p>Exceptionally long host names in file: URLs can cause a buffer
+	    overflow, which may be exploited to execute arbitrary code. Remote Web
+	    pages cannot refer to file: URLs, so successful exploitation involves
+	    tricking users into manually opening the exploit URL, or a local file
+	    that refers to it.</p>
+	  <p>When Opera is previewing a news feed, some scripted URLs are not
+	    correctly blocked. These can execute scripts which are able to
+	    subscribe the user to any feed URL that the attacker chooses, and can
+	    also view the contents of any feeds that the user is subscribed to.
+	    These may contain sensitive information.</p>
+	  <p>Built-in XSLT templates incorrectly handle escaped content and can
+	    cause it to be treated as markup. If a site accepts content from
+	    untrusted users, which it then displays using XSLT as escaped strings,
+	    this can allow scripted markup to be injected. The scripts will then
+	    be executed in the security context of that site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5178</cvename>
+      <url>http://www.opera.com/support/kb/view/920/</url>
+      <url>http://www.opera.com/support/kb/view/921/</url>
+      <url>http://www.opera.com/support/kb/view/922/</url>
+      <url>http://www.opera.com/support/kb/view/923/</url>
+      <url>http://www.opera.com/support/kb/view/924/</url>
+      <url>http://secunia.com/advisories/32752/</url>
+    </references>
+    <dates>
+      <discovery>2008-11-18</discovery>
+      <entry>2008-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61b07d71-ce0e-11dd-a721-0030843d3802">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
