@@ -3707,3 +3707,4 @@ audio/snett||2008-12-13|Has expired: Has been broken for more than 6 months
 x11-wm/alloywm||2008-12-13|Has expired: Has been broken for more than 6 months
 x11/9term||2008-12-13|Has expired: depends on expired port
 textproc/rubygem-spreadsheet-excel|textproc/rubygem-spreadsheet|2008-12-14|Project renamed
+textproc/hs-utf8-string||2008-12-19|Duplicate of devel/hs-utf8-string-ghc
