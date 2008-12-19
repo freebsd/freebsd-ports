@@ -17,6 +17,8 @@ COMMENT=	Etoile Project LanguageKit framework
 
 BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
