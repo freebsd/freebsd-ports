@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 @unexec /bin/echo "===>" Stopping smartd ...
 @unexec /usr/bin/killall smartd 2>/dev/null || true
+etc/periodic/daily/smart
 etc/smartd.conf.sample
 sbin/smartctl
 sbin/smartd
@@ -20,3 +21,5 @@ sbin/smartd
 %%DOCSDIR%%/smartd.conf
 @dirrm %%DOCSDIR%%/examplescripts
 @dirrm %%DOCSDIR%%
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic
