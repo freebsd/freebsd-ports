@@ -7,7 +7,7 @@
 
 PORTNAME=	languagekit
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -17,6 +17,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project LanguageKit framework
 
 BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
+
+ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
@@ -33,7 +35,5 @@ WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Languages/LanguageKit
 
 FOUNDATION_PORT?=	devel/etoile-foundation
-
-ADDITIONAL_OBJCFLAGS+=	-fPIC
 
 .include <bsd.port.mk>
