@@ -22,9 +22,15 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on FreeBSD 6.x
+.endif
+
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
 	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
 		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
