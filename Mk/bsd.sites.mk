@@ -650,6 +650,11 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_KENAI)
+MASTER_SITE_KENAI+=	\
+	http://projectkenai.com/downloads/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+=	\
 	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
