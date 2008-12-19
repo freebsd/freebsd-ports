@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net \
 		/nonexistent:${PORTSDIR}/lang/pm3-base:configure
 RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
 
+DEPRECATED=	depends on broken, expired port
+EXPIRATION_DATE=2008-01-19
+
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
 PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
