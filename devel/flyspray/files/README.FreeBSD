@@ -41,6 +41,7 @@ Configuration Instructions for Flyspray
 7) Report any bugs you find back to http://bugs.flyspray.org/ or the mailing
    list linked from the Flyspray homepage.
 
+8) Note that this version of Flyspray does not support PostgreSQL.
 
 Upgrading from previous versions of Flyspray
 ============================================
@@ -52,7 +53,11 @@ You can upgrade from a previous version of Flyspray by doing the following:
 1) back up your old flyspray task database using "mysqldump".  No, really,
    you seriously run the risk of losing data if you don't do this.
 
-2) load http://yourserver.example.com/flyspray/setup/upgrade.php in your
+2) save a copy of %%FLYSPRAYDIR%%/flyspray.conf.php before running
+   portupgrade.  This will need to be restored after you've upgraded the
+   package.
+
+3) load http://yourserver.example.com/flyspray/setup/upgrade.php in your
    browser and follow the instructions.  If upgrading from 0.9.9beta2,
    manually change the value of "fs_ver" in the {dbprefix}prefs table of
    your Flyspray DB to "0.9.9 dev".  You can do this using the folowing SQL
@@ -60,7 +65,7 @@ You can upgrade from a previous version of Flyspray by doing the following:
 
 sql> update flyspray_prefs set pref_value = "0.9.9 dev" where pref_name = "fs_ver";
 
-3) That's it! Flyspray has been upgraded to 0.9.9.2.  If you messed up
+4) That's it! Flyspray has been upgraded to the current version.  If you messed up
    somehow, you will probably have lost data in the process, and may need to
    re-install your database from your backup, but that's ok because you took
    a backup, right?

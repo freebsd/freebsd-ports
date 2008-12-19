@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	dovecot-antispam
-PORTVERSION=	20080604
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
+MASTER_SITES=	http://johannes.sipsolutions.net/download/dovecot-antispam/ \
+		http://ports.internal.vlink.ru/distfiles/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Dovecot plugin to train dspam about spam or false positives
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:configure
-RUN_DEPENDS=	dovecot>=1.0.10:${PORTSDIR}/mail/dovecot
+RUN_DEPENDS=	dovecot>=1.1.2:${PORTSDIR}/mail/dovecot
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -24,6 +26,8 @@ MAN7=		dovecot-antispam.7
 
 OPTIONS+=	DSPAM "direct dspam training" on
 OPTIONS+=	MAILTRAIN "send mail to special addresses for training" off
+OPTIONS+=	DEBUG "Turn on debug information (syslog)" off
+OPTIONS+=	DEBUG_VERBOSE "Turn on verbose debug" off
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib90_antispam_plugin.so \
@@ -43,6 +47,12 @@ do-configure:
 .endif
 .if defined(WITH_MAILTRAIN)
 	${ECHO} "BACKEND=mailtrain"  >> ${WRKSRC}/.config
+.endif
+.if defined(WITH_DEBUG)
+	${ECHO} "DEBUG=syslog"  >> ${WRKSRC}/.config
+.endif
+.if defined(WITH_DEBUG_VERBOSE)
+	${ECHO} "DEBUG_VERBOSE=1"  >> ${WRKSRC}/.config
 .endif
 	${ECHO} "PLUGINNAME=antispam" >> ${WRKSRC}/.config
 

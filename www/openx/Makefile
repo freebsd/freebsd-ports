@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openx
-PORTVERSION=	2.4.7
+PORTVERSION=	2.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
 
@@ -21,7 +21,7 @@ SUB_FILES+=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	xml pcre zlib mysql ftp
+USE_PHP=	xml pcre zlib mysql pgsql ftp
 .endif
 
 do-install:

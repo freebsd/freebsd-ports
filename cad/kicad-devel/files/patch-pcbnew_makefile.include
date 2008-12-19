@@ -1,9 +1,0 @@
---- pcbnew/makefile.include.orig	Mon Jul  2 22:44:14 2007
-+++ pcbnew/makefile.include	Mon Jul  2 22:45:08 2007
-@@ -1,5 +1,5 @@
- EXTRALIBS = ../common/common.a
--EXTRACPPFLAGS += -DPCBNEW  -fno-strict-aliasing -I./ -Ibitmaps -I../include -I../share -I../pcbnew -I../3d-viewer
-+EXTRACPPFLAGS += -DPCBNEW  -fno-strict-aliasing -I./ -Ibitmaps -I../include -I../share -I../pcbnew -I../3d-viewer -I${LOCALBASE}/include
- 
- #COMMON = pcbnew.h struct.h class_pad.h class_module.h class_text_mod.h \
- #		class_edge_mod.h class_equipot.h

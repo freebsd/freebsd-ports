@@ -69,15 +69,16 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -372,6 +375,7 @@
+@@ -372,6 +375,8 @@
  
  
  
 +# EXPERIMENTAL_DOMAINKEYS=yes
++# EXPERIMENTAL_DKIM=yes
  ###############################################################################
  #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
  ###############################################################################
-@@ -440,6 +444,7 @@
+@@ -440,6 +445,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -85,7 +86,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -494,7 +499,7 @@
+@@ -494,7 +500,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -94,7 +95,7 @@ $FreeBSD$
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -579,7 +584,7 @@
+@@ -579,7 +585,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -103,7 +104,7 @@ $FreeBSD$
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -630,7 +635,7 @@
+@@ -630,7 +636,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -112,7 +113,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -643,7 +648,7 @@
+@@ -643,7 +649,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -121,7 +122,7 @@ $FreeBSD$
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -719,7 +724,7 @@
+@@ -719,7 +725,7 @@
  # that the local_scan API is made available by the linker. You may also need
  # to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
  
@@ -130,7 +131,7 @@ $FreeBSD$
  
  
  #------------------------------------------------------------------------------
-@@ -811,13 +816,21 @@
+@@ -811,13 +817,21 @@
  # library for TCP wrappers, so you probably need something like this:
  #
  # USE_TCP_WRAPPERS=yes
@@ -138,7 +139,7 @@ $FreeBSD$
 -# EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
 -#
 +CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX XX_SQLITE_FLAGS_XX
-+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_DOMAINKEYS_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX
++EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_DOMAINKEYS_LIBS_XX XX_DKIM_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX
 +
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
@@ -155,7 +156,7 @@ $FreeBSD$
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -1082,7 +1095,7 @@
+@@ -1082,7 +1096,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

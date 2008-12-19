@@ -2,7 +2,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/MIT.txt
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/Tiddlywiki_License.txt
-%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/create_entry.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/dashboard_with_modules.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manage_comments.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/manage_plugins.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/manage_posts.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/manage_tags.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/manage_themes.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/notagsposts.PNG
+%%PORTDOCS%%%%DOCSDIR%%/manual/options.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual/timeline.jpg
 %%WWWDIR%%/3rdparty/blueprint/compressed/print.css
 %%WWWDIR%%/3rdparty/blueprint/compressed/screen.css
 %%WWWDIR%%/3rdparty/blueprint/lib/forms.css
@@ -462,4 +472,5 @@
 @dirrm %%WWWDIR%%/3rdparty/blueprint
 @dirrm %%WWWDIR%%/3rdparty
 @dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

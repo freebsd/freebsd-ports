@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ -z "${PREFIX}" ]     && PREFIX="%%PREFIX%%"
-[ -z "${JAVAJARDIR}" ] && JAVAJARDIR="%%JAVAJARDIR%%/%%PORTNAME%%"
-[ -z "${DATADIR}" ]    && DATADIR="%%DATADIR%%"
-
-VMARGS="-Xmx1024m -Dsun.io.useCanonCaches=false -Xbootclasspath/p:$JAVAJARDIR/xalan.jar"
-
-java $VMARGS -classpath "$JAVAJARDIR/asdoc.jar" flex2.tools.ASDoc +flexlib="$DATADIR/frameworks" $*

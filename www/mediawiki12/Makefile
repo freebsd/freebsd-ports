@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTVERSION=	1.12.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.12/
 

@@ -10,6 +10,7 @@ bin/opera
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/bin/works
 %%DATADIR%%/bin/operapluginwrapper
+%%DATADIR%%/bin/operapluginwrapper.freebsd
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/spellcheck.so
 %%DATADIR%%/bin/operaplugincleaner
@@ -37,6 +38,7 @@ bin/opera
 %%DATADIR%%/styles/user/structureinline.css
 %%DATADIR%%/styles/user/contrastbw.css
 %%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/webfeeds.html
 %%DATADIR%%/styles/wml.css
 %%DATADIR%%/styles/history.css
 %%DATADIR%%/styles/images/red_right.png
@@ -75,11 +77,24 @@ bin/opera
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/standard_mouse.ini
 %%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/speeddial_default.ini
 %%DATADIR%%/ini/standard_menu.ini
 %%DATADIR%%/ini/standard_toolbar.ini
 %%DATADIR%%/ini/standard_keyboard.ini
 %%DATADIR%%/svg-sa.dat
 %%DATADIR%%/search.ini
+%%DATADIR%%/locale/et/eesti.lng
+%%DATADIR%%/locale/et/license.txt
+%%DATADIR%%/locale/et/search.ini
+%%DATADIR%%/locale/et/opera6.adr
+%%DATADIR%%/locale/te/opera6.adr
+%%DATADIR%%/locale/te/license.txt
+%%DATADIR%%/locale/te/search.ini
+%%DATADIR%%/locale/te/telugu.lng
+%%DATADIR%%/locale/ta/tamil.lng
+%%DATADIR%%/locale/ta/opera6.adr
+%%DATADIR%%/locale/ta/search.ini
+%%DATADIR%%/locale/ta/license.txt
 %%DATADIR%%/locale/nl/search.ini
 %%DATADIR%%/locale/nl/nederlands.lng
 %%DATADIR%%/locale/nl/opera6.adr
@@ -120,6 +135,10 @@ bin/opera
 %%DATADIR%%/locale/bg/search.ini
 %%DATADIR%%/locale/bg/license.txt
 %%DATADIR%%/locale/bg/bulgarian.lng
+%%DATADIR%%/locale/id/indonesian.lng
+%%DATADIR%%/locale/id/license.txt
+%%DATADIR%%/locale/id/opera6.adr
+%%DATADIR%%/locale/id/search.ini
 %%DATADIR%%/locale/nb/opera6.adr
 %%DATADIR%%/locale/nb/license.txt
 %%DATADIR%%/locale/nb/norsk.lng
@@ -215,6 +234,10 @@ bin/opera
 %%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/opera6.adr
 %%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/uk/opera6.adr
+%%DATADIR%%/locale/uk/license.txt
+%%DATADIR%%/locale/uk/ukrainian.lng
+%%DATADIR%%/locale/uk/search.ini
 %%DATADIR%%/locale/english.lng
 %%DATADIR%%/svg-mobd.dat
 %%DATADIR%%/svg-sabd.dat
@@ -228,7 +251,10 @@ bin/opera
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/locale/zh-tw
 @dirrm %%DATADIR%%/locale/zh-cn
+@dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/te
+@dirrm %%DATADIR%%/locale/ta
 @dirrm %%DATADIR%%/locale/sv
 @dirrm %%DATADIR%%/locale/ru
 @dirrm %%DATADIR%%/locale/pt-BR
@@ -243,6 +269,7 @@ bin/opera
 @dirrm %%DATADIR%%/locale/ka
 @dirrm %%DATADIR%%/locale/ja
 @dirrm %%DATADIR%%/locale/it
+@dirrm %%DATADIR%%/locale/id
 @dirrm %%DATADIR%%/locale/hu
 @dirrm %%DATADIR%%/locale/hr
 @dirrm %%DATADIR%%/locale/hi
@@ -250,6 +277,7 @@ bin/opera
 @dirrm %%DATADIR%%/locale/fr-CA
 @dirrm %%DATADIR%%/locale/fr
 @dirrm %%DATADIR%%/locale/fi
+@dirrm %%DATADIR%%/locale/et
 @dirrm %%DATADIR%%/locale/es-LA
 @dirrm %%DATADIR%%/locale/es-ES
 @dirrm %%DATADIR%%/locale/en-GB

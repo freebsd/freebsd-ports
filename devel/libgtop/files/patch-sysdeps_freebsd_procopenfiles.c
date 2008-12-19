@@ -1,6 +1,6 @@
---- sysdeps/freebsd/procopenfiles.c.orig	2007-07-01 09:14:23.000000000 -0400
-+++ sysdeps/freebsd/procopenfiles.c	2008-02-10 02:45:20.000000000 -0500
-@@ -28,6 +28,13 @@
+--- sysdeps/freebsd/procopenfiles.c.orig	2008-12-06 20:43:44.256309000 -0500
++++ sysdeps/freebsd/procopenfiles.c	2008-12-06 20:44:45.000000000 -0500
+@@ -28,6 +28,16 @@
  #include <glibtop/error.h>
  #include <glibtop/procopenfiles.h>
  #include <sys/types.h>
@@ -11,10 +11,13 @@
 +#include <sys/user.h>
 +#include <netinet/in.h>
 +#include <arpa/inet.h>
++#ifdef HAVE_KINFO_GETFILE
++#include <libutil.h>
++#endif
  #include <string.h>
  #include <stdlib.h>
  
-@@ -46,6 +53,63 @@ _glibtop_init_proc_open_files_s (glibtop
+@@ -46,6 +56,63 @@ _glibtop_init_proc_open_files_s (glibtop
  	server->sysdeps.proc_open_files = _glibtop_sysdeps_proc_open_files;
  }
  
@@ -78,7 +81,7 @@
  static GArray *
  parse_output(const char *output) {
  	GArray *entries;
-@@ -159,21 +223,105 @@ parse_output(const char *output) {
+@@ -159,21 +226,123 @@ parse_output(const char *output) {
  
  	return entries;
  }
@@ -89,8 +92,12 @@
  {
 +#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +	struct kinfo_file *freep, *kif;
++#ifndef HAVE_KINFO_GETFILE
 +	int name[4];
 +	size_t len;
++#else
++	int cnt;
++#endif
 +	int i;
 +#else
  	char *output;
@@ -100,6 +107,7 @@
  	memset(buf, 0, sizeof (glibtop_proc_open_files));
  
 +#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
++#ifndef HAVE_KINFO_GETFILE
 +	name[0] = CTL_KERN;
 +	name[1] = KERN_PROC;
 +	name[2] = KERN_PROC_FILEDESC;
@@ -113,11 +121,24 @@
 +		g_free(freep);
 +		return NULL;
 +	}
++#else
++	freep = kinfo_getfile(pid, &cnt);
++#endif
 +
 +	entries = g_array_new(FALSE, FALSE, sizeof(glibtop_open_files_entry));
 +
++#ifndef HAVE_KINFO_GETFILE
 +	for (i = 0; i < len / sizeof(*kif); i++, kif++) {
 +		glibtop_open_files_entry entry = {0};
++
++		if (kif->kf_structsize != sizeof(*kif))
++			continue;
++#else
++	for (i = 0; i < cnt; i++) {
++		glibtop_open_files_entry entry = {0};
++
++		kif = &freep[i];
++#endif
 +
 +		if (kif->kf_fd < 0)
 +			continue;

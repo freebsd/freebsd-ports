@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/mail/dovecot/files/pkg-install.in,v 1.1 2008-09-08 06:42:28 beech Exp $
+#	$FreeBSD: /tmp/pcvs/ports/mail/dovecot/files/pkg-install.in,v 1.2 2008-11-28 14:38:26 wxs Exp $
 #
-# ex:ts=4
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 ask() {
 	local question default answer
@@ -86,12 +87,6 @@ case $2 in
 
 PRE-INSTALL)
 	create_account Dovecot dovecot:${DOVECOT_UID:-%%DOVECOT_UID%%} dovecot:${DOVECOT_GID:-%%DOVECOT_GID%%} "Dovecot User" /var/empty /usr/sbin/nologin
-	;;
-
-POST-INSTALL)
-	base=/var/run/dovecot
-	/usr/bin/install -o root -g wheel -m 0755 -d ${base}
-	/usr/bin/install -o root -g dovecot -m 0750 -d ${base}/login
 	;;
 
 esac

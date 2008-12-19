@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.9.5.1
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.flyspray.org/
+MASTER_SITES=	http://twinkie.foobar.org/files/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A simple, easy-to-use web based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
-USE_PHP=	mysql pcre session zlib xml gd
+USE_PHP=	pcre session zlib xml gd
 USE_BZIP2=	yes
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 
-OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off
+OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off \
+		MYSQLI "Use MySQLi Database Interface" on \
+		MYSQL "Use MySQL Database Interface" off
 
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
@@ -52,6 +53,14 @@ SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+
+.if !defined(WITHOUT_MYSQLI)
+USE_PHP+=	mysqli
+.endif
+
 .ifdef WITH_GRAPHVIZ
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
@@ -66,13 +75,14 @@ post-patch:
 do-install:
 	${MKDIR} ${FLYSPRAYDIR}
 	${CHMOD} 755 ${FLYSPRAYDIR}
-	${CP} ${WRKSRC}/setup/upgrade/${PORTVERSION}/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
+	${CP} ${WRKSRC}/setup/upgrade/0.9.9.5/flyspray.conf.php ${WRKSRC}/flyspray.conf.php-dist
+	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
 		${TAR} cf - ${FLYSPRAY_FILES} | \
 		(cd ${FLYSPRAYDIR} && ${TAR} -xf -)
 	${LN} -s ${ATTACHMENTDIR} ${FLYSPRAYDIR}/attachments
 	${LN} -s ${PREFIX}/share/adodb ${FLYSPRAYDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/cache
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/cache ${FLYSPRAYDIR}/flyspray.conf.php
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-install: install-doc

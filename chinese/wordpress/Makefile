@@ -18,6 +18,9 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+
+FORBIDDEN=	http://www.vuxml.org/freebsd/622bc638-be27-11dd-a578-0030843d3802.html
+
 USE_ZIP=	YES
 USE_PHP=	mysql pcre xml
 NO_BUILD=	YES

@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	dovecot
 # Date created:				12/08/2002
 # Whom:			Dominic Marks <dominic.marks@btinternet.com>
@@ -7,12 +6,11 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
-MAINTAINER=	yds@coolrat.org
+MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
@@ -20,7 +18,9 @@ USE_RC_SUBR=	dovecot.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--localstatedir=/var --without-shadow
+CONFIGURE_ARGS=		--localstatedir=/var \
+			--with-statedir=/var/db/dovecot \
+			--without-shadow
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	${PREFIX}/lib/dovecot \

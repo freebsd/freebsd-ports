@@ -507,6 +507,7 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracLinks
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracLogging
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracModPython
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracModWSGI
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracNavigation
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracNotification
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trac/wiki/default-pages/TracPermissions

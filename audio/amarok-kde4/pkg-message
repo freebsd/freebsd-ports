@@ -1,8 +1,0 @@
-
-				ATTENTION:
-
-In order to use certain devices (MTP, iPod, ..) through Amarok you need to be
-able to mount USB devices as the user running Amarok. Read more on how to set
-this up on FreeBSD here:
-
-http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/usb-disks.html

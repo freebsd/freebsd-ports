@@ -139,6 +139,9 @@
 # Enable Yahoo DomainKeys support.
 # DomainKeys support depends on exiscan.
 
+#WITHOUT_DKIM
+# Enable DKIM (DomainKeys Identified Mail) support.
+
 #WITHOUT_TCP_WRAPPERS
 # Link against libwrap to support /etc/hosts.allow access control.
 
@@ -278,6 +281,9 @@ WITHOUT_SRS_ALT?=yes
 .endif
 .ifndef WITH_DOMAINKEYS
 WITHOUT_DOMAINKEYS?=yes
+.endif
+.ifndef WITH_DKIM
+WITHOUT_DKIM?=yes
 .endif
 .ifndef WITH_TCP_WRAPPERS
 WITHOUT_TCP_WRAPPERS?=yes

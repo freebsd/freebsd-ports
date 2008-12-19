@@ -1,4 +1,0 @@
-%%DOCSDIR%%/README-plperl
-lib/postgresql/plperl.so
-@dirrmtry lib/postgresql
-@dirrmtry %%DOCSDIR%%

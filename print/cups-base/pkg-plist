@@ -98,7 +98,6 @@ libexec/cups/monitor/bcp
 libexec/cups/monitor/tbcp
 libexec/cups/notifier/mailto
 libexec/cups/notifier/rss
-libexec/cups/notifier/testnotify
 sbin/accept
 sbin/cupsaddsmb
 sbin/cupsctl
@@ -1124,6 +1123,7 @@ sbin/reject
 %%DOCSDIR%%/fr/images/button-delete-printer.gif
 %%DOCSDIR%%/fr/images/button-edit-configuration-file.gif
 %%DOCSDIR%%/fr/images/button-export-samba.gif
+%%DOCSDIR%%/fr/images/button-find-new-printers.gif
 %%DOCSDIR%%/fr/images/button-help.gif
 %%DOCSDIR%%/fr/images/button-hold-job.gif
 %%DOCSDIR%%/fr/images/button-manage-classes.gif

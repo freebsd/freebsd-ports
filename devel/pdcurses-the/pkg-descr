@@ -1,7 +1,0 @@
-PDCurses is a public domain curses library for Win32, DOS, OS/2 and X11,
-implementing most of the functions available in System V R4 curses. It
-supports most compilers for these platforms. The X11 port allows existing
-text-mode curses programs to be re-compiled and linked with PDCurses to
-produce native X11 applications.
-
-WWW: http://pdcurses.sourceforge.net/

@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -66,7 +66,7 @@ CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
 
 .if defined(WITH_FAM)
-LIB_DEPENDS+=		fam:${PORTSDIR}/devel/fam
+USE_FAM=		yes
 CONFIGURE_ARGS+=	--with-fam
 CONFIGURE_ENV+=		FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
 .endif

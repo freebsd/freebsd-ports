@@ -9,19 +9,15 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.9.0-test1
-PORTREVISION=	2
+DISTVERSION=	0.9.8a
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/
-#MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
-#MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
-#		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
-#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	funman@videolan.org
+MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
@@ -55,7 +51,7 @@ OPTIONS+=	SDL "SDL video output" On
 OPTIONS+=	SVG "SVG graphics support" Off
 OPTIONS+=	SVGALIB "SVGALIB video output" Off
 OPTIONS+=	SHOUT "Shout2 support" Off
-OPTIONS+=	SKINS "Enable winamp skins interface" Off
+OPTIONS+=	SKINS "Enable winamp skins interface (requires QT4)" Off
 OPTIONS+=	SPEEX "Speex voice codec support" On
 OPTIONS+=	THEORA "OGG/Vorbis video codec support" On
 OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" On
@@ -169,7 +165,7 @@ CONFIGURE_ARGS+=--enable-notify
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
+.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS) && !defined(WITHOUT_QT4)
 CONFIGURE_ARGS+=--enable-skins2
 .else
 CONFIGURE_ARGS+=--disable-skins2
@@ -397,7 +393,6 @@ CONFIGURE_ARGS+=--disable-a52
 
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 USE_GECKO=	firefox mozilla seamonkey nvu
-.include <bsd.gecko.mk>
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"
