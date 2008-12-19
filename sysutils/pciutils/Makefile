@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pciutils
-PORTVERSION=	2.2.8
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
@@ -16,17 +16,22 @@ MAINTAINER=	sbahra@gwu.edu
 COMMENT=	PCI configuration utilities
 
 USE_GMAKE=	yes
-MAKE_ENV=	LANG=C
 
 MAN8=		lspci.8 setpci.8 update-pciids.8
 
 do-install:
-	@${INSTALL_MAN} ${WRKSRC}/lspci.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/setpci.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/update-pciids.8 ${PREFIX}/man/man8
-	@${INSTALL_PROGRAM} ${WRKSRC}/lspci ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/setpci ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/update-pciids ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/pci.ids ${PREFIX}/share
+	${INSTALL_MAN} ${WRKSRC}/lspci.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/setpci.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/update-pciids.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/lspci ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/setpci ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/update-pciids ${PREFIX}/sbin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}/pci.ids.sample
+
+post-install:
+	@if [ ! -f ${DATADIR}/pci.ids ]; then \
+		${CP} -p ${DATADIR}/pci.ids.sample ${DATADIR}/pci.ids ; \
+	fi
 
 .include <bsd.port.mk>
