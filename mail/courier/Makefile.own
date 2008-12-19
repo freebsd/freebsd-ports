@@ -16,6 +16,8 @@ OWNER0=	bin/courier-config \
 	bin/reformime \
 	bin/sendmail \
 	bin/testmxlookup \
+	bin/webmlmd \
+	bin/webmlmd.rc \
 	etc/courier/courierd.dist \
 	etc/courier/enablefiltering \
 	etc/courier/esmtp.authpam \
@@ -42,6 +44,7 @@ OWNER0=	bin/courier-config \
 	etc/courier/rfcerrheader.txt \
 	etc/courier/smtpaccess/default \
 	etc/courier/webmail.authpam \
+	etc/courier/webmlmrc.dist \
 	libexec/courier/courierpop3d \
 	libexec/courier/courierpop3login \
 	libexec/courier/imaplogin \
@@ -51,6 +54,7 @@ OWNER0=	bin/courier-config \
 	libexec/courier/sqwebmaild \
 	libexec/courier/webmail/webadmin \
 	libexec/courier/webmail/webmail \
+	libexec/courier/webmail/webmlm \
 	libexec/filters/dupfilter \
 	libexec/filters/perlfilter \
 	sbin/courier \

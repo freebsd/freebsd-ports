@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.54.0
-PORTREVISION=	1
+PORTVERSION=	0.60.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -20,13 +19,16 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
-		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR
+		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+		ca_root_nss>=3.*:${PORTSDIR}/security/ca_root_nss
 
-CONFLICTS=	exim-4.* courier-imap-2.* maildrop-1.* \
+CONFLICTS=	courier-imap-2.* couriermlm-0.* \
+		exim-4.* maildrop-1.* \
 		postfix-1.* postfix-2.* \
-		qmail-1.* qmail-*-1.* \
-		sendmail-8.* sendmail-*-8.* \
-		smail-3.* sqwebmail-3.* zmailer-2.*
+		qmail-*-1.* qmail-1.* \
+		sendmail-*-8.* sendmail-8.* \
+		smail-3.* sqwebmail-3.* \
+		zmailer-2.*
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -73,8 +75,7 @@ USE_RC_SUBR=	courier.sh
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash \
-		CPPFLAGS='${CPPFLAGS}' \
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 MAKE_ENV:=	${CONFIGURE_ENV}
 
@@ -268,15 +269,15 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PROG=\./|PROG=exec ./|g' \
 		${WRKSRC}/courier/module.*/courier.config
-	@${REINPLACE_CMD} -e 's|@datadir@|@sysconfdir@|g' \
+	@${REINPLACE_CMD} -e 's|@mydatadir@|@sysconfdir@|g' \
 		${WRKSRC}/*/mk*cert.* \
 		${WRKSRC}/*/*/mk*cert.*
-	@${REINPLACE_CMD} -e 's|^\(TLS_CERTFILE=\)@datadir@|\1@sysconfdir@|g' \
+	@${REINPLACE_CMD} -e 's|^\(TLS_CERTFILE=\)@mydatadir@|\1@sysconfdir@|g' \
 		${WRKSRC}/*/*.dist.in \
 		${WRKSRC}/*/*/*.dist.in
-	@${REINPLACE_CMD} -e 's|^\(RANDFILE = \)@datadir@[^[:space:]]*|\1@sysconfdir@/random.tmp|g' \
-		${WRKSRC}/*/*.cnf.in \
-		${WRKSRC}/*/*/*.cnf.in
+	@${REINPLACE_CMD} -e 's|^\(RANDFILE[[:space:]]*=[[:space:]]*\)@mydatadir@|\1@sysconfdir@|g' \
+		${WRKSRC}/*/*.cnf.openssl.in \
+		${WRKSRC}/*/*/*.cnf.openssl.in
 	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) \(.$$$$file.\)|${INSTALL_MAN} \1|' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/*/Makefile.in \
