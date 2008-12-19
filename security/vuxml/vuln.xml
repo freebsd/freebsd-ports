@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="61b07d71-ce0e-11dd-a721-0030843d3802">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><gt>1.6.0</gt><lt>1.6.11</lt></range>
+	<range><gt>1.12.0</gt><lt>1.12.3</lt></range>
+	<range><gt>1.13.0</gt><lt>1.13.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MediaWiki development team reports:</p>
+	<blockquote
+	cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2008-December/000080.html">
+	  <p>Certain unspecified input is not properly sanitised before being
+	    returned to the user. This can be exploited to execute arbitrary HTML
+	    and script code in a user's browser session in context of an affected
+	    site.</p>
+	  <p>Certain unspecified input related to uploads is not properly
+	    sanitised before being used. This can be exploited to inject arbitrary
+	    HTML and script code, which will be executed in a user's browser
+	    session in context of an affected site when a malicious data is
+	    opened. Successful exploitation may require that uploads are enabled
+	    and the victim uses an Internet Explorer based browser.</p>
+	  <p>Certain SVG scripts are not properly sanitised before being used.
+	    This can be exploited to inject arbitrary HTML and script code, which
+	    will be executed in a user's browser session in context of an affected
+	    site when a malicious data is opened. Successful exploitation may require
+	    that SVG uploads are enabled and the victim uses a browser supporting SVG
+	    scripting.</p>
+	  <p>The application allows users to perform certain actions via HTTP
+	    requests without performing any validity checks to verify the
+	    requests. This can be exploited to perform certain operations when a
+	    logged in user visits a malicious site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5249</cvename>
+      <cvename>CVE-2008-5250</cvename>
+      <cvename>CVE-2008-5252</cvename>
+      <url>http://secunia.com/advisories/33133/</url>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2008-December/000080.html</url>
+    </references>
+    <dates>
+      <discovery>2008-12-15</discovery>
+      <entry>2008-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="609c790e-ce0a-11dd-a721-0030843d3802">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
