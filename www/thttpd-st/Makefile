@@ -16,6 +16,8 @@ COMMENT=	Tiny/turbo/throttling HTTP server with State Threads
 BUILD_DEPENDS=	${LOCALBASE}/lib/libst.so.1:${PORTSDIR}/devel/st
 LIB_DEPENDS=	st.1:${PORTSDIR}/devel/st
 
+BROKEN=		does not compile with new st
+
 MD5_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../../www/thttpd
