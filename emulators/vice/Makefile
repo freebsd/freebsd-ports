@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
