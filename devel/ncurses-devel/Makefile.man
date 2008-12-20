@@ -300,6 +300,7 @@ MLINKS+=\
 	curs_memleaks.3x _nc_free_and_exit.3x \
 	curs_memleaks.3x _nc_freeall.3x \
 	curs_mouse.3x getmouse.3x \
+	curs_mouse.3x has_mouse.3x \
 	curs_mouse.3x mouse_trafo.3x \
 	curs_mouse.3x mouseinterval.3x \
 	curs_mouse.3x mousemask.3x \
