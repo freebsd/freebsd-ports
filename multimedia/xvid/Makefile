@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
@@ -24,7 +23,7 @@ PLIST_FILES=	include/xvid.h \
 		lib/libxvidcore.so \
 		lib/libxvidcore.so.4
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/build/generic
+WRKSRC=		${WRKDIR}/xvidcore/build/generic
 
 OPTIONS=	OPTIMIZED_CFLAGS "Use XviD's default optimizations" off
 
