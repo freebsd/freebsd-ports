@@ -23,7 +23,7 @@ COMMENT=	Library for terminal-independent, full-screen output (development versi
 
 CONFLICTS=	ncurses-[0-9]*
 
-PATCHES=	20081115
+PATCHES=	20081115 20081122 20081129 20081206 20081213
 
 RELEASE=	5.7
 
