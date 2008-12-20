@@ -7,6 +7,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	1.4
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	ftp://bro-ids.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/bro-${PORTVERSION}
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-perftools
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -31,5 +33,7 @@ post-install:
 		${CP} -p ${PREFIX}/etc/broccoli.conf.sample \
 		${PREFIX}/etc/broccoli.conf ; \
 	fi
+
+	${LN} -sf ${PREFIX}/lib/libbroccoli.so.2.0 ${PREFIX}/lib/libbroccoli.so
 
 .include <bsd.port.mk>
