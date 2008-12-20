@@ -5052,7 +5052,6 @@ hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
 hs-dlist                        ports/devel/hs-dlist
 hs-drift                        ports/devel/hs-drift
-hs-fps                          ports/devel/hs-fps
 hs-frantk                       ports/x11-toolkits/hs-frantk
 hs-glut-ghc                     ports/x11-toolkits/hs-glut-ghc
 hs-gtk2hs                       ports/x11-toolkits/hs-gtk2hs
@@ -5072,7 +5071,6 @@ hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
-hs-utf8-string                  ports/textproc/hs-utf8-string
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
 hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
@@ -6754,6 +6752,7 @@ l5                              ports/security/l5
 la-aspell                       ports/textproc/la-aspell
 labplot                         ports/math/labplot
 labrea                          ports/security/labrea
+labyrinth                       ports/deskutils/labyrinth
 lacheck                         ports/textproc/lacheck
 ladder                          ports/games/ladder
 ladspa                          ports/audio/ladspa
