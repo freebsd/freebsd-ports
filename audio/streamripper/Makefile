@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.64.0
+PORTVERSION=	1.64.1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://gd.tuwien.ac.at/hci/cdk/:cdk
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		cdk-${CDK_VERSION}.tgz:cdk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chess@chessgriffin.com
 COMMENT=	Splits SHOUTcast stream into tracks
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
