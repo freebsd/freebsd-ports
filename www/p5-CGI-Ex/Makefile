@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.24
+PORTVERSION=	2.27
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CGI utility suite - makes powerful application writing fun and easy
 
-RUN_DEPENDS=	${SITE_PERL}/Template/Alloy.pm:${PORTSDIR}/www/p5-Template-Alloy
+RUN_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -23,6 +23,10 @@ MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::Auth.3 CGI::Ex::Conf.3 \
 		CGI::Ex::Die.3 CGI::Ex::Dump.3 CGI::Ex::Fill.3 \
 		CGI::Ex::JSONDump.3 CGI::Ex::Template.3 CGI::Ex::Validate.3
 
+.if !defined(NOPORTEXAMPLES)
+
+PORTEXAMPLES=	*
+
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 .for i in app benchmark devel
@@ -30,13 +34,15 @@ post-install:
 .endfor
 	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}
 
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .include <bsd.port.post.mk>

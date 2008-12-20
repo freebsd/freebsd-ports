@@ -1,42 +1,4 @@
 @comment $FreeBSD$
-%%EXAMPLESDIR%%/app/app1/INSTALL
-%%EXAMPLESDIR%%/app/app1/app1.pl
-%%EXAMPLESDIR%%/app/app1/app1.yaml
-%%EXAMPLESDIR%%/app/app1/js.pl
-%%EXAMPLESDIR%%/app/app1/lib/App1.pm
-%%EXAMPLESDIR%%/app/app1/lib/App1/CustInfo.pm
-%%EXAMPLESDIR%%/app/app1/lib/App1/DoBill.pm
-%%EXAMPLESDIR%%/app/app1/lib/App1/PickDomain.pm
-%%EXAMPLESDIR%%/app/app1/lib/App1/PickDomainAlternate.pm
-%%EXAMPLESDIR%%/app/app1/lib/App1/Thankyou.pm
-%%EXAMPLESDIR%%/app/app1/tt/cust_info.html
-%%EXAMPLESDIR%%/app/app1/tt/footer.tt
-%%EXAMPLESDIR%%/app/app1/tt/header.tt
-%%EXAMPLESDIR%%/app/app1/tt/pick_domain.html
-%%EXAMPLESDIR%%/app/app1/tt/pick_domain_alternate.html
-%%EXAMPLESDIR%%/app/app1/tt/thankyou.html
-%%EXAMPLESDIR%%/app/cgi_ex_1.cgi
-%%EXAMPLESDIR%%/app/cgi_ex_2.cgi
-%%EXAMPLESDIR%%/benchmark/bench_auth.pl
-%%EXAMPLESDIR%%/benchmark/bench_cgix_hfif.pl
-%%EXAMPLESDIR%%/benchmark/bench_conf_readers.pl
-%%EXAMPLESDIR%%/benchmark/bench_conf_writers.pl
-%%EXAMPLESDIR%%/benchmark/bench_jsondump.pl
-%%EXAMPLESDIR%%/benchmark/bench_validation.pl
-%%EXAMPLESDIR%%/devel/dprof_conf.d
-%%EXAMPLESDIR%%/devel/dprof_validation.d
-%%EXAMPLESDIR%%/devel/memory_app.pl
-%%EXAMPLESDIR%%/index.cgi
-%%EXAMPLESDIR%%/validate_js_yaml_1.html
-%%EXAMPLESDIR%%/validate_js_yaml_2.html
-%%EXAMPLESDIR%%/validate_js_yaml_3.html
-%%EXAMPLESDIR%%/validate_js_0_tests.html
-%%EXAMPLESDIR%%/validate_js_1_onsubmit.html
-%%EXAMPLESDIR%%/validate_js_2_onchange.html
-%%EXAMPLESDIR%%/yaml_js_1.html
-%%EXAMPLESDIR%%/yaml_js_2.html
-%%EXAMPLESDIR%%/yaml_js_3.html
-%%EXAMPLESDIR%%/yaml_js_4.html
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex/.packlist
 %%SITE_PERL%%/CGI/Ex.pm
 %%SITE_PERL%%/CGI/Ex/App.pm
@@ -49,18 +11,11 @@
 %%SITE_PERL%%/CGI/Ex/JSONDump.pm
 %%SITE_PERL%%/CGI/Ex/Template.pm
 %%SITE_PERL%%/CGI/Ex/Validate.pm
+%%SITE_PERL%%/CGI/Ex/Validate.pod
 %%SITE_PERL%%/CGI/Ex/md5.js
 %%SITE_PERL%%/CGI/Ex/sha1.js
 %%SITE_PERL%%/CGI/Ex/validate.js
 %%SITE_PERL%%/CGI/Ex/yaml_load.js
-@dirrm %%EXAMPLESDIR%%/app/app1/tt
-@dirrm %%EXAMPLESDIR%%/app/app1/lib/App1
-@dirrm %%EXAMPLESDIR%%/app/app1/lib
-@dirrm %%EXAMPLESDIR%%/app/app1
-@dirrm %%EXAMPLESDIR%%/app
-@dirrm %%EXAMPLESDIR%%/benchmark
-@dirrm %%EXAMPLESDIR%%/devel
-@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI/Ex/Template
