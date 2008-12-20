@@ -6,6 +6,7 @@ etc/broccoli.conf.sample
 include/broccoli.h
 lib/libbroccoli.a
 lib/libbroccoli.la
+lib/libbroccoli.so
 lib/libbroccoli.so.2.0
 share/bro/OS-fingerprint.bro
 share/bro/adu.bro
