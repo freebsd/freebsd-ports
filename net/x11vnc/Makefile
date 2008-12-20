@@ -7,7 +7,7 @@
 
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=libvncserver
@@ -16,14 +16,14 @@ MAINTAINER=	beech@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		dbus:${PORTSDIR}/devel/dbus
-# linking avahi is broken
-#		avahi-common.3:${PORTSDIR}/net/avahi-app
+		dbus:${PORTSDIR}/devel/dbus \
+		avahi-common.3:${PORTSDIR}/net/avahi-app
 
 USE_GNOME=	gnometarget
 USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
 USE_OPENSSL=	yes
 USE_ICONV=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
