@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	htauth
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	copiousfreetime
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	copiousfreetime
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Replacement for the Apache htdigest and htpasswd
 
-BUILD_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
+BUILD_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
