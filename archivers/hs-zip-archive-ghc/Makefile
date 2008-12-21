@@ -19,7 +19,10 @@ BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-zlib>=0.5:${PORTSDIR}/archivers/hs-zlib \
 		hs-binary-ghc>=0.4:${PORTSDIR}/devel/hs-binary-ghc \
 		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+		hs-zlib>=0.5:${PORTSDIR}/archivers/hs-zlib \
+		hs-binary-ghc>=0.4:${PORTSDIR}/devel/hs-binary-ghc \
+		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc
 
 GHC_VERSION=	6.8.3
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
