@@ -1,7 +1,7 @@
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
 lib/libtuner/libtuner.so.1.0
-lib/libtuner/libtuner.so.1.0.1
+lib/libtuner/libtuner.so.1.0.2
 include/libtuner/avb_driver.h
 include/libtuner/cx22702.h
 include/libtuner/dtt75105.h
@@ -19,5 +19,6 @@ include/libtuner/tuner_device.h
 include/libtuner/tuner_devnode_device.h
 include/libtuner/tuner_driver.h
 include/libtuner/tuner_firmware.h
+include/libtuner/xc3028.h
 @dirrm lib/libtuner
 @dirrm include/libtuner
