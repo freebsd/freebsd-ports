@@ -22,11 +22,10 @@ bin/htpasswd-ruby
 %%GEM_DOC_DIR%%/rdoc/classes/HTAuth/PasswordError.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTAuth/Plaintext.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTAuth/Sha1.html
-%%GEM_DOC_DIR%%/rdoc/classes/HTAuth/Specification.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTAuth/TempFileError.html
 %%GEM_DOC_DIR%%/rdoc/classes/HTAuth/Version.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/CHANGES.html
+%%GEM_DOC_DIR%%/rdoc/files/HISTORY.html
 %%GEM_DOC_DIR%%/rdoc/files/LICENSE.html
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/algorithm_rb.html
@@ -36,14 +35,12 @@ bin/htpasswd-ruby
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/digest_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/entry_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/file_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/htauth/gemspec_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/md5_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/passwd_entry_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/passwd_file_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/passwd_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/plaintext_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/sha1_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/htauth/specification_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/htauth_rb.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
@@ -51,11 +48,12 @@ bin/htpasswd-ruby
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/CHANGES
+%%GEM_LIB_DIR%%/HISTORY
 %%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/bin/htdigest-ruby
 %%GEM_LIB_DIR%%/bin/htpasswd-ruby
+%%GEM_LIB_DIR%%/gemspec.rb
 %%GEM_LIB_DIR%%/lib/htauth.rb
 %%GEM_LIB_DIR%%/lib/htauth/algorithm.rb
 %%GEM_LIB_DIR%%/lib/htauth/crypt.rb
@@ -64,14 +62,12 @@ bin/htpasswd-ruby
 %%GEM_LIB_DIR%%/lib/htauth/digest_file.rb
 %%GEM_LIB_DIR%%/lib/htauth/entry.rb
 %%GEM_LIB_DIR%%/lib/htauth/file.rb
-%%GEM_LIB_DIR%%/lib/htauth/gemspec.rb
 %%GEM_LIB_DIR%%/lib/htauth/md5.rb
 %%GEM_LIB_DIR%%/lib/htauth/passwd.rb
 %%GEM_LIB_DIR%%/lib/htauth/passwd_entry.rb
 %%GEM_LIB_DIR%%/lib/htauth/passwd_file.rb
 %%GEM_LIB_DIR%%/lib/htauth/plaintext.rb
 %%GEM_LIB_DIR%%/lib/htauth/sha1.rb
-%%GEM_LIB_DIR%%/lib/htauth/specification.rb
 %%GEM_LIB_DIR%%/lib/htauth/version.rb
 %%GEM_LIB_DIR%%/spec/crypt_spec.rb
 %%GEM_LIB_DIR%%/spec/digest_entry_spec.rb
@@ -84,15 +80,15 @@ bin/htpasswd-ruby
 %%GEM_LIB_DIR%%/spec/plaintext_spec.rb
 %%GEM_LIB_DIR%%/spec/sha1_spec.rb
 %%GEM_LIB_DIR%%/spec/spec_helper.rb
-%%GEM_LIB_DIR%%/spec/test.add.digest
-%%GEM_LIB_DIR%%/spec/test.add.passwd
-%%GEM_LIB_DIR%%/spec/test.delete.digest
-%%GEM_LIB_DIR%%/spec/test.delete.passwd
-%%GEM_LIB_DIR%%/spec/test.original.digest
-%%GEM_LIB_DIR%%/spec/test.original.passwd
-%%GEM_LIB_DIR%%/spec/test.update.digest
-%%GEM_LIB_DIR%%/spec/test.update.passwd
+%%GEM_LIB_DIR%%/tasks/announce.rake
+%%GEM_LIB_DIR%%/tasks/config.rb
+%%GEM_LIB_DIR%%/tasks/distribution.rake
+%%GEM_LIB_DIR%%/tasks/documentation.rake
+%%GEM_LIB_DIR%%/tasks/rspec.rake
+%%GEM_LIB_DIR%%/tasks/rubyforge.rake
+%%GEM_LIB_DIR%%/tasks/utils.rb
 %%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/tasks
 @dirrm %%GEM_LIB_DIR%%/spec
 @dirrm %%GEM_LIB_DIR%%/lib/htauth
 @dirrm %%GEM_LIB_DIR%%/lib
