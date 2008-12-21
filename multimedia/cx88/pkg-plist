@@ -14,6 +14,7 @@ bin/cx88
 %%EXAMPLESDIR%%/hd3k_analog_ubuf.cpp
 %%EXAMPLESDIR%%/hd5k_analog_ubuf.cpp
 include/iicdev/iicdev_ioctl.h
+include/cx88/cx88_common_ioctl.h
 include/cx88/cx88_mpeg_ioctl.h
 include/cx88/cx88_video_ioctl.h
 include/cx88/cx88_audio_ioctl.h

@@ -3,3 +3,5 @@ the Conexant CX23880/1/2/3 series of chips.  This port
 includes the cx88 kernel drivers as well as a simple app
 for HDTV capture.  It requires multimedia/libtuner for 
 channel selection and peripheral configuration.
+
+WWW: http://corona.homeunix.net/cx88wiki
