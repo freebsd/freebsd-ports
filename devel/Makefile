@@ -503,6 +503,7 @@
     SUBDIR += hs-hmake
     SUBDIR += hs-hpl
     SUBDIR += hs-idoc
+    SUBDIR += hs-pcre-light-ghc
     SUBDIR += hs-utf8-string-ghc
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib
