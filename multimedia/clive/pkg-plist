@@ -51,6 +51,9 @@ bin/clive-passwd
 %%PYTHON_SITELIBDIR%%/clive/scan.py
 %%PYTHON_SITELIBDIR%%/clive/scan.pyc
 %%PYTHON_SITELIBDIR%%/clive/scan.pyo
+%%PYTHON_SITELIBDIR%%/clive/singleton.py
+%%PYTHON_SITELIBDIR%%/clive/singleton.pyc
+%%PYTHON_SITELIBDIR%%/clive/singleton.pyo
 %%PYTHON_SITELIBDIR%%/clive/unicode.py
 %%PYTHON_SITELIBDIR%%/clive/unicode.pyc
 %%PYTHON_SITELIBDIR%%/clive/unicode.pyo
