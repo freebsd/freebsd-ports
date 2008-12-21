@@ -7,17 +7,17 @@
 
 PORTNAME=	inadyn
 PORTVERSION=	1.96.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://inadyn.ina-tech.net/ \
 		http://www.mirrorservice.org/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	INADYN - Simple DYNAMIC DNS client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_RC_SUBR=	inadyn
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
@@ -31,6 +31,9 @@ PORTDOCS=	readme.html
 PLIST_FILES=	bin/inadyn
 
 NO_INSTALL_MANPAGES=yes
+
+post-extract:
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
