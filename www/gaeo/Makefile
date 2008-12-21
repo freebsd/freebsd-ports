@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaeo
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 PORTEPOCH=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -35,6 +35,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/gaeo.py ${PREFIX}/bin/gaeo
 
 .include <bsd.port.mk>
