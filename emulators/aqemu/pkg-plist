@@ -1,6 +1,6 @@
 bin/aqemu
 share/applications/aqemu.desktop
-%%NLS%%%%DATADIR%%/aqemu_ru.qm
+%%NLS%%%%DATADIR%%/Russian.qm
 %%DATADIR%%/os_icons/alt.png
 %%DATADIR%%/os_icons/arch.png
 %%DATADIR%%/os_icons/asp.png

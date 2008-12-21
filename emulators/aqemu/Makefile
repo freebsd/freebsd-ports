@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aqemu
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -52,7 +52,7 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} os_icons ${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} os_templates ${DATADIR}
 .if !defined(WITHOUT_NLS)
-	${INSTALL_DATA} ${WRKSRC}/aqemu_*.qm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}
 .endif
 
 .include <bsd.port.mk>
