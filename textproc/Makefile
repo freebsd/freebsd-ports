@@ -206,6 +206,7 @@
     SUBDIR += hr-aspell
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-haxml
+    SUBDIR += hs-highlighting-kate-ghc
     SUBDIR += hs-stringsearch
     SUBDIR += hsb-aspell
     SUBDIR += htdig
