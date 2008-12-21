@@ -1403,6 +1403,7 @@ cgprof                          ports/devel/cgprof
 cgraph                          ports/graphics/Cgraph
 ch                              ports/shells/ch
 chaco                           ports/math/chaco
+chameleon                       ports/x11/chameleon
 chanta                          ports/games/chanta
 chaosreader                     ports/security/chaosreader
 chapping                        ports/games/chapping
@@ -1503,7 +1504,6 @@ clamcour                        ports/security/clamcour
 clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
-clanbomber                      ports/games/clanbomber
 clanlib                         ports/devel/clanlib
 claraocr                        ports/graphics/claraocr
 clarence                        ports/math/clarence
@@ -2830,7 +2830,6 @@ epydoc                          ports/devel/epydoc
 epylog                          ports/sysutils/epylog
 eqe                             ports/textproc/eqe
 eqonomize                       ports/finance/eqonomize
-erc                             ports/irc/erc
 eric                            ports/devel/eric
 eric4                           ports/devel/eric4
 eris                            ports/devel/eris
@@ -2940,7 +2939,6 @@ etunnel                         ports/net/etunnel
 euchre                          ports/games/euchre
 eukleides                       ports/math/eukleides
 euler                           ports/science/euler
-euphoria                        ports/audio/euphoria
 eva                             ports/net-im/eva
 eval                            ports/math/eval
 evangeline                      ports/irc/evangeline
@@ -4662,7 +4660,6 @@ gstreamer-plugins-soundtouch    ports/audio/gstreamer-plugins-soundtouch
 gstreamer-plugins-soup          ports/devel/gstreamer-plugins-soup
 gstreamer-plugins-spc           ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex         ports/audio/gstreamer-plugins-speex
-gstreamer-plugins-swfdec        ports/graphics/gstreamer-plugins-swfdec
 gstreamer-plugins-taglib        ports/audio/gstreamer-plugins-taglib
 gstreamer-plugins-theora        ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-ugly          ports/multimedia/gstreamer-plugins-ugly
@@ -6766,7 +6763,6 @@ lame                            ports/audio/lame
 lamprop                         ports/science/lamprop
 lanbrowsing                     ports/net/lanbrowsing
 landscape                       ports/graphics/landscape
-lang_chameleon                  ports/lang/chameleon
 lang_mpd                        ports/lang/mpd
 langspec                        ports/java/langspec
 lanmap                          ports/net-mgmt/lanmap
@@ -8771,7 +8767,6 @@ mysql-gui-tools                 ports/databases/mysql-gui-tools
 mysql-navigator                 ports/databases/mysql-navigator
 mysql-proxy                     ports/databases/mysql-proxy
 mysql-q4m                       ports/databases/mysql-q4m
-mysql-query-browser             ports/databases/mysql-query-browser
 mysql-udf                       ports/databases/mysql-udf
 mysql2odbc                      ports/databases/mysql2odbc
 mysql2pgsql                     ports/databases/mysql2pgsql
@@ -10378,7 +10373,6 @@ p5-DBD-Oracle                   ports/databases/p5-DBD-Oracle
 p5-DBD-Pg                       ports/databases/p5-DBD-Pg
 p5-DBD-PgLite                   ports/databases/p5-DBD-PgLite
 p5-DBD-PgPP                     ports/databases/p5-DBD-PgPP
-p5-DBD-PgSPI                    ports/databases/p5-DBD-PgSPI
 p5-DBD-SQLite                   ports/databases/p5-DBD-SQLite
 p5-DBD-SQLite2                  ports/databases/p5-DBD-SQLite2
 p5-DBD-Sybase                   ports/databases/p5-DBD-Sybase
@@ -13729,7 +13723,6 @@ p5-dbd-oracle                   ports/databases/p5-DBD-Oracle
 p5-dbd-pg                       ports/databases/p5-DBD-Pg
 p5-dbd-pglite                   ports/databases/p5-DBD-PgLite
 p5-dbd-pgpp                     ports/databases/p5-DBD-PgPP
-p5-dbd-pgspi                    ports/databases/p5-DBD-PgSPI
 p5-dbd-sqlite                   ports/databases/p5-DBD-SQLite
 p5-dbd-sqlite2                  ports/databases/p5-DBD-SQLite2
 p5-dbd-sybase                   ports/databases/p5-DBD-Sybase
@@ -15231,7 +15224,6 @@ p5-pv                           ports/devel/p5-PV
 p5-qdbm                         ports/databases/p5-qdbm
 p5-qmail-envelope               ports/mail/p5-Qmail-Envelope
 p5-qpsmtpd                      ports/mail/p5-qpsmtpd
-p5-qt                           ports/x11-toolkits/p5-qt
 p5-quantum-superpositions       ports/lang/p5-Quantum-Superpositions
 p5-queue-beanstalk              ports/net/p5-Queue-Beanstalk
 p5-quota                        ports/sysutils/p5-Quota
@@ -19428,7 +19420,6 @@ ruby-xmlscan                    ports/textproc/ruby-xmlscan
 ruby-xmlscan-old                ports/textproc/ruby-xmlscan-old
 ruby-xmms                       ports/audio/ruby-xmms
 ruby-xmms2                      ports/audio/ruby-xmms2
-ruby-xmms2-ecore                ports/audio/ruby-xmms2-ecore
 ruby-xmpp4r                     ports/net-im/ruby-xmpp4r
 ruby-xslt                       ports/textproc/ruby-xslt
 ruby-xtemplate                  ports/textproc/ruby-xtemplate
@@ -19840,7 +19831,6 @@ serveez                         ports/net/serveez
 service-config                  ports/sysutils/service-config
 service-discovery-applet        ports/net/service-discovery-applet
 servlet-api                     ports/www/servlet-api
-ses                             ports/math/ses
 session2                        ports/www/session2
 sessreg                         ports/x11/sessreg
 setcdboot                       ports/sysutils/setcdboot
@@ -22116,7 +22106,6 @@ x11-fonts_xg                    ports/x11-fonts/Xg
 x11-toolkits_xg                 ports/x11-toolkits/xg
 x11_bitmap                      ports/x11/bitmap
 x11_blast                       ports/x11/blast
-x11_chameleon                   ports/x11/chameleon
 x11_silo                        ports/x11/silo
 x11amp                          ports/audio/x11amp
 x11iraf                         ports/science/x11iraf
