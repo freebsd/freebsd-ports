@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.4
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ COMMENT=	A GTK/GNOME-based genealogy program
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
-USE_BDB=	42+
+USE_BDB=	43
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
 MAN1=		gramps.1
-MANLANG=	"" fr
+MANLANG=	"" fr nl pl sv
 
 .include <bsd.port.pre.mk>
 
