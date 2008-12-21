@@ -16,7 +16,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient binary serialisation for Haskell
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
 
 GHC_VERSION=	6.8.3
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
