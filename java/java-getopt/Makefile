@@ -7,13 +7,13 @@
 
 PORTNAME=	getopt
 PORTVERSION=	1.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java version of GNU getopt family functions
 
 USE_JAVA=	yes
@@ -26,7 +26,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
 OTHERDOCS=	COPYING.LIB ChangeLog README
 PORTDOCS=	api ${OTHERDOCS}
-ALL_TARGETS+=	javadoc
+ALL_TARGET+=	javadoc
 .endif
 
 post-extract:
