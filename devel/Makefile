@@ -490,6 +490,7 @@
     SUBDIR += hptools
     SUBDIR += hs-Stream
     SUBDIR += hs-alex
+    SUBDIR += hs-binary-ghc
     SUBDIR += hs-c2hs
     SUBDIR += hs-cpphs
     SUBDIR += hs-dlist
