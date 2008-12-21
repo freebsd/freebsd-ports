@@ -16,15 +16,12 @@ COMMENT=	Open source implentation of SAML
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xml-security-c.14:${PORTSDIR}/security/apache-xml-security-c
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-BROKEN=		Does not compile		
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
