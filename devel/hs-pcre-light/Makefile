@@ -17,7 +17,7 @@ COMMENT=	A lightweight Haskell regex library compatible with Perl 5
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc
 
 GHC_VERSION=	6.8.3
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs

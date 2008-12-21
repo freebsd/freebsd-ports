@@ -17,7 +17,8 @@ COMMENT=	A Haskell syntax highlighting library for 50+ languages
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-pcre-light-ghc>=0.3:${PORTSDIR}/devel/hs-pcre-light-ghc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+		hs-pcre-light-ghc>=0.3:${PORTSDIR}/devel/hs-pcre-light-ghc
 
 GHC_VERSION=	6.8.3
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
