@@ -718,6 +718,7 @@
     SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
     SUBDIR += p5-Catalyst-Plugin-AutoRestart
+    SUBDIR += p5-Catalyst-Plugin-Browser
     SUBDIR += p5-Catalyst-Plugin-C3
     SUBDIR += p5-Catalyst-Plugin-Cache
     SUBDIR += p5-Catalyst-Plugin-Cache-FastMmap
