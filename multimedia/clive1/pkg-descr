@@ -1,6 +1,6 @@
 clive is a command line tool for extracting videos from Youtube,
 Google Video, Dailymotion, Guba (free), Stage6, Metacafe, LastFm,
-Sevenload, and MyVideo.(de|ch|at|nl|be) websites.
+Sevenload websites.
 clive is written in Python and is cross-platform.
 
 Main features:
@@ -19,4 +19,4 @@ Main features:
     - Supports UNIX pipes
     - URL batch support
 
-WWW:	http://home.gna.org/clive/
+WWW:	http://clive.sourceforge.net/
