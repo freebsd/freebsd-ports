@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clientform
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.10
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/ \
 		CHEESESHOP
