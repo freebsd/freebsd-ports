@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	pandoc
-PORTVERSION=	0.46
+PORTVERSION=	1.1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	jgm@berkeley.edu
+MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	A general markup converter
 
-BUILD_DEPENDS=	ghc>=6.6:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
+		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc \
+		hs-zip-archive-ghc>=0.1:${PORTSDIR}/archivers/hs-zip-archive-ghc
 
 MANCOMPRESSED=	no
 MAN1=		pandoc.1 markdown2pdf.1 html2markdown.1 hsmarkdown.1
@@ -24,6 +26,15 @@ USE_PERL5=	yes
 PLIST_FILES=	bin/pandoc bin/markdown2pdf bin/html2markdown bin/hsmarkdown
 PORTDOCS=	BUGS README README.html
 SCRIPTS=	hsmarkdown html2markdown markdown2pdf
+
+OPTIONS=	HIGHLIGHTING "Syntax highlighting support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_HIGHLIGHTING)
+BUILD_DEPENDS+=	hs-highlighting-kate>=0.2:${PORTSDIR}/textproc/hs-highlighting-kate
+MAKE_ARGS=	CABALOPTS+="-fhighlighting"
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dist/build/pandoc/pandoc ${PREFIX}/bin
@@ -40,4 +51,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
