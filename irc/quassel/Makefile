@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-DISTVERSION=	0.3.0.3
+DISTVERSION=	0.3.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -35,8 +35,12 @@ CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 IGNORE=		needs at least one Quassel component. Please, rerun 'make config'
 .endif
 
+.if !defined(WITHOUT_NLS)
+QT_COMPONENTS+=	linguist_build
+.endif
+
 .if !defined(WITHOUT_MONO)
-QT_COMPONENTS+=	dbus gui network script sql xml
+QT_COMPONENTS+=	dbus gui network script sql xml webkit
 QUASSEL_MONO=	ON
 PLIST_SUB+=	MONO=""
 .else
@@ -54,12 +58,18 @@ PLIST_SUB+=	CORE="@comment "
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-QT_COMPONENTS+=	dbus gui network xml
+QT_COMPONENTS+=	dbus gui network xml webkit
 QUASSEL_CLIENT=	ON
 PLIST_SUB+=	CLIENT=""
 .else
 QUASSEL_CLIENT=	OFF
 PLIST_SUB+=	CLIENT="@comment "
+.endif
+
+pre-configure:
+.if defined(WITHOUT_NLS)
+	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
+		${WRKSRC}/CMakeLists.txt
 .endif
 
 .include <bsd.port.post.mk>

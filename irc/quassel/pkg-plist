@@ -3,4 +3,9 @@
 %%CORE%%bin/quasselcore
 %%MONO%%share/applications/quassel.desktop
 %%CLIENT%%share/applications/quasselclient.desktop
+share/icons/hicolor/48x48/apps/quassel.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
