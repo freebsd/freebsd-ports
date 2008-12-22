@@ -19,4 +19,11 @@ GNU_CONFIGURE=	yes
 MAN1=		cvswrap.1
 MAN5=		cvswrap.conf.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Redefines strndup(3)
+.if ${OSVERSION} >= 800058
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
