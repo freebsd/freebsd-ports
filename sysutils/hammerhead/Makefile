@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	hammerhead
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A webserver stressing tool
 
 GNU_CONFIGURE=	yes
