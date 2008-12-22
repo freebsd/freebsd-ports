@@ -371,6 +371,47 @@ share/pixmaps/pidgin/emotes/default/worship.png
 share/pixmaps/pidgin/emotes/default/yawn.png
 share/pixmaps/pidgin/emotes/default/yin-yang.png
 share/pixmaps/pidgin/emotes/none/theme
+share/pixmaps/pidgin/emotes/small/angel.png
+share/pixmaps/pidgin/emotes/small/angry.png
+share/pixmaps/pidgin/emotes/small/beer.png
+share/pixmaps/pidgin/emotes/small/camera.png
+share/pixmaps/pidgin/emotes/small/cigarette.png
+share/pixmaps/pidgin/emotes/small/coffee.png
+share/pixmaps/pidgin/emotes/small/confused.png
+share/pixmaps/pidgin/emotes/small/console.png
+share/pixmaps/pidgin/emotes/small/cool.png
+share/pixmaps/pidgin/emotes/small/cross.png
+share/pixmaps/pidgin/emotes/small/crying.png
+share/pixmaps/pidgin/emotes/small/devil.png
+share/pixmaps/pidgin/emotes/small/dont-know.png
+share/pixmaps/pidgin/emotes/small/grin.png
+share/pixmaps/pidgin/emotes/small/hug-left.png
+share/pixmaps/pidgin/emotes/small/hug-right.png
+share/pixmaps/pidgin/emotes/small/kiss.png
+share/pixmaps/pidgin/emotes/small/love.png
+share/pixmaps/pidgin/emotes/small/meeting.png
+share/pixmaps/pidgin/emotes/small/musical-note.png
+share/pixmaps/pidgin/emotes/small/nerdy.png
+share/pixmaps/pidgin/emotes/small/neutral.png
+share/pixmaps/pidgin/emotes/small/party.png
+share/pixmaps/pidgin/emotes/small/phone.png
+share/pixmaps/pidgin/emotes/small/plate.png
+share/pixmaps/pidgin/emotes/small/question.png
+share/pixmaps/pidgin/emotes/small/sad.png
+share/pixmaps/pidgin/emotes/small/shame.png
+share/pixmaps/pidgin/emotes/small/shock.png
+share/pixmaps/pidgin/emotes/small/sick.png
+share/pixmaps/pidgin/emotes/small/silent.png
+share/pixmaps/pidgin/emotes/small/sleepy.png
+share/pixmaps/pidgin/emotes/small/smile-big.png
+share/pixmaps/pidgin/emotes/small/smile.png
+share/pixmaps/pidgin/emotes/small/theme
+share/pixmaps/pidgin/emotes/small/thinking.png
+share/pixmaps/pidgin/emotes/small/tongue.png
+share/pixmaps/pidgin/emotes/small/tv.png
+share/pixmaps/pidgin/emotes/small/uhm-yeah.png
+share/pixmaps/pidgin/emotes/small/wink.png
+share/pixmaps/pidgin/emotes/small/yawn.png
 share/pixmaps/pidgin/logo.png
 share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
@@ -430,6 +471,8 @@ share/pixmaps/pidgin/status/11/log-out.png
 share/pixmaps/pidgin/status/11/offline.png
 share/pixmaps/pidgin/status/11/person.png
 share/pixmaps/pidgin/status/11/rtl/extended-away.png
+share/pixmaps/pidgin/status/11/rtl/log-in.png
+share/pixmaps/pidgin/status/11/rtl/log-out.png
 share/pixmaps/pidgin/status/16/available.png
 share/pixmaps/pidgin/status/16/away.png
 share/pixmaps/pidgin/status/16/busy.png
@@ -479,8 +522,9 @@ share/pixmaps/pidgin/status/48/log-out.png
 share/pixmaps/pidgin/status/48/offline.png
 share/pixmaps/pidgin/status/48/person.png
 share/pixmaps/pidgin/status/48/rtl/extended-away.png
-share/pixmaps/pidgin/status/48/rtl/login.png
-share/pixmaps/pidgin/status/48/rtl/logout.png
+share/pixmaps/pidgin/status/48/invisible.png
+share/pixmaps/pidgin/status/48/rtl/log-in.png
+share/pixmaps/pidgin/status/48/rtl/log-out.png
 share/pixmaps/pidgin/toolbar/16/change-bgcolor.png
 share/pixmaps/pidgin/toolbar/16/change-fgcolor.png
 share/pixmaps/pidgin/toolbar/16/emote-select.png
@@ -566,6 +610,7 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/protocols/22
 @dirrm share/pixmaps/pidgin/protocols/16
 @dirrm share/pixmaps/pidgin/protocols
+@dirrm share/pixmaps/pidgin/emotes/small
 @dirrm share/pixmaps/pidgin/emotes/none
 @dirrm share/pixmaps/pidgin/emotes/default
 @dirrm share/pixmaps/pidgin/emotes
