@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	2.0.4.1
+PORTVERSION=	2.0.4.2
 CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/distributions/
 EXTRACT_SUFX=	.tgz
