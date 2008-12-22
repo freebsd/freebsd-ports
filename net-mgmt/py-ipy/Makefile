@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	ipy
-PORTVERSION=	0.55
+PORTVERSION=	0.62
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/I/IPy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes
