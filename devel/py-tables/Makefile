@@ -7,23 +7,22 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	1.4
+PORTVERSION=	2.0.4
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pytables
+MASTER_SITES=	http://www.pytables.org/download/stable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pytables-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A hierarchical database for Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		lzo.1:${PORTSDIR}/archivers/lzo \
 		ucl.1:${PORTSDIR}/archivers/ucl
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/nctoh5 bin/ptdump bin/ptrepack
