@@ -6,6 +6,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF
 

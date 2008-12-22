@@ -2133,7 +2133,6 @@ share/locale/tr/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
-share/mime/application/x-gedcom.xml
 share/mime/application/x-geneweb.xml
 share/mime/application/x-gramps-package.xml
 share/mime/application/x-gramps-xml.xml
