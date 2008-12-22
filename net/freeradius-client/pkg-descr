@@ -1,0 +1,10 @@
+The FreeRADIUS Client is a framework and library for writing RADIUS
+Clients which additionally includes radlogin, a flexible RADIUS aware
+login replacement, a command line program to send RADIUS
+authentication/authorisation requests and accounting records and a
+utility to query the status of a RADIUS server.  All these programs are
+based on a library which lets you develop a RADIUS-aware application in
+less than 50 lines of C code. It is highly portable and runs on Linux,
+many BSD variants and Solaris.
+
+WWW: http://wiki.freeradius.org/Radiusclient
