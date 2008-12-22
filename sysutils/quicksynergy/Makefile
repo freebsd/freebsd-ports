@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	quicksynergy
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8.1
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	A graphical interface for easily configuring Synergy2
 
 BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libglade
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gnomehack gnomeprefix libglade2
 
-BROKEN=		does not build
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/quicksynergy
-
-pre-configure:
-	@${REINPLACE_CMD} 's|ac_default_prefix=/usr/local|ac_default_prefix=${PREFIX}|' ${WRKSRC}/configure
+PLIST_FILES=	bin/quicksynergy \
+		share/locale/pt_BR/LC_MESSAGES/quicksynergy.mo
 
 .include <bsd.port.mk>
