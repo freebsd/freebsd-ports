@@ -1,26 +1,26 @@
 # New ports collection makefile for:	helma
 # Date created:		2008-06-22
-# Whom:			Bernhard Fr__hlich <decke@bluelife.at>
+# Whom:			Bernhard Froehlich <decke@bluelife.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	helma
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	www java
 MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/
-DISTFILES=	helma-1.6.2.tar.gz helma-1.6.2-src.tar.gz
+DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@bluelife.at
 COMMENT=	A Web application framework for fast and efficient scripting
 
 WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKBASE}/build
+WRKSRC=		${WRKBASE}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_RC_SUBR=	helma
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
 ALL_TARGET=	clean jar
 

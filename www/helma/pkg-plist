@@ -345,6 +345,7 @@ bin/helma
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaSecurityManager.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaShutdownHook.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/HelmaSocketFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/JettyServer.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/Server.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/ServerConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/main/package-frame.html
@@ -423,7 +424,6 @@ bin/helma
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/HopObjectCtor.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/JSAdapter.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/JavaObject.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/ListViewWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/MapWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/PathWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/helma/scripting/rhino/PropertyRecorder.html
@@ -742,6 +742,7 @@ bin/helma
 %%PORTDOCS%%%%DOCSDIR%%/docs/framework/session.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/framework/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/licenses/apache.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/cddl.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/jetty.html
 %%PORTDOCS%%%%DOCSDIR%%/licenses/lgpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/license.txt
