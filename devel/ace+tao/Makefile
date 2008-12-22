@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
 DISTNAME=	ACE-${ACE_VERSION:C/\.0$//}+TAO-${TAO_VERSION:C/\.0$//}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
 CONFLICTS?=	ace-*
