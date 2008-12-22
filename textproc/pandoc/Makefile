@@ -32,7 +32,7 @@ OPTIONS=	HIGHLIGHTING "Syntax highlighting support" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HIGHLIGHTING)
-BUILD_DEPENDS+=	hs-highlighting-kate>=0.2:${PORTSDIR}/textproc/hs-highlighting-kate
+BUILD_DEPENDS+=	hs-highlighting-kate-ghc>=0.2:${PORTSDIR}/textproc/hs-highlighting-kate-ghc
 MAKE_ARGS=	CABALOPTS+="-fhighlighting"
 .endif
 
