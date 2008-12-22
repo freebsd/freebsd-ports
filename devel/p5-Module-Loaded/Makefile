@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Module-Loaded
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Mark modules as loaded or unloaded
 
 MAN3=	Module::Loaded.3
