@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	azureus
-PORTVERSION=	3.1.1.0
+PORTNAME=	vuze
+PORTVERSION=	4.0.0.4
 #PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	azureus
 DISTNAME=	Vuze_${PORTVERSION}_source
 
 MAINTAINER=	rnoland@FreeBSD.org
@@ -29,6 +30,7 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	\
 org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
 org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
+org/gudy/azureus2/platform/PlatformManagerFactory.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
@@ -47,14 +49,13 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 		bin/${PORTNAME} \
 		share/icons/hicolor/16x16/apps/${PORTNAME}.png \
 		share/icons/hicolor/32x32/apps/${PORTNAME}.png \
-		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
-		share/icons/hicolor/128x128/apps/${PORTNAME}.png
+		share/icons/hicolor/64x64/apps/${PORTNAME}.png
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
-DESKTOP_ENTRIES=	"Azureus" \
+DESKTOP_ENTRIES=	"Vuze" \
 			"A full feature BitTorrent client" \
 			"${PORTNAME}.png" \
 			"${PORTNAME}" \
@@ -108,9 +109,6 @@ do-install:
 	${MKDIR} ${PREFIX}/share/icons/hicolor/64x64/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a64.png \
 		${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
-	${MKDIR} ${PREFIX}/share/icons/hicolor/128x128/apps
-	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a128.png \
-		${PREFIX}/share/icons/hicolor/128x128/apps/${PORTNAME}.png
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}

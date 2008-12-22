@@ -39,7 +39,7 @@
        <fileset dir="." includes="**/*.ico **/*.wav" />
      </copy>
      <!-- Put everything in ${build} into the azureus.jar file -->
-     <jar jarfile="${dist}/lib/azureus.jar" basedir="${build}"/>
+     <jar jarfile="${dist}/lib/vuze.jar" basedir="${build}"/>
    </target>
 
    <target name="clean" description="clean up" >
