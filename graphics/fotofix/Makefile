@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fotofix
-PORTVERSION=	0.01.1.37
+PORTVERSION=	0.01.1.53
 CATEGORIES=	graphics
 MASTER_SITES=	CENKES
 #http://prima.eu.org/cgi-bin/cvsweb.cgi/apps/fotofix/fotofix
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Simple image viewer
 
 RUN_DEPENDS=	p5-Prima>=1.21:${PORTSDIR}/x11-toolkits/p5-Prima \
