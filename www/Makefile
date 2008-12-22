@@ -776,6 +776,7 @@
     SUBDIR += p5-Catalyst-View-JSON
     SUBDIR += p5-Catalyst-View-Jemplate
     SUBDIR += p5-Catalyst-View-Mason
+    SUBDIR += p5-Catalyst-View-RRDGraph
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Catalyst-View-TT-ControllerLocal
     SUBDIR += p5-Catalyst-View-Templated
