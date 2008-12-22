@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A library for Support Vector Machines
 
+OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
+
 USE_ZIP=	yes
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
@@ -47,6 +49,11 @@ PORTDOCS=	${TXT_DOCS}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OCFLAGS)
+# same as LIBSVM itself
+CFLAGS=		-Wall -Wconversion -O3
+.endif
 
 post-patch:
 
