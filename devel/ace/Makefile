@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
 DISTNAME=	ACE-${PORTVERSION}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adaptive Communication Environment for C++
 
 CONFLICTS=	ace+tao-5*
