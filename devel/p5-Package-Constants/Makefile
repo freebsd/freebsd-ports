@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Package-Constants
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	List all constants declared in a package
 
 MAN3=	Package::Constants.3
