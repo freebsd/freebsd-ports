@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	2.0.1.07
-PORTREVISION=	4
+PORTVERSION=	3.0.0.b8
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -19,7 +18,6 @@ COMMENT=	An OpenGL (and related library) interface for Python
 
 BUILD_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
-#		swig1.3:${PORTSDIR}/devel/swig13
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
@@ -31,6 +29,7 @@ USE_GL=		yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyOpenGL
+PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.b/b/}
 
 .include <bsd.port.pre.mk>
 
@@ -43,8 +42,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/config/freebsd.cfg ${WRKSRC}/Tkinter.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 post-install:
