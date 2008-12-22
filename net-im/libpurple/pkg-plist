@@ -117,8 +117,8 @@ lib/purple-2/psychic.la
 lib/purple-2/psychic.so
 lib/purple-2/ssl-gnutls.la
 lib/purple-2/ssl-gnutls.so
-lib/purple-2/ssl-nss.la
-lib/purple-2/ssl-nss.so
+%%NSS%%lib/purple-2/ssl-nss.la
+%%NSS%%lib/purple-2/ssl-nss.so
 lib/purple-2/ssl.la
 lib/purple-2/ssl.so
 lib/purple-2/statenotify.la
@@ -215,6 +215,7 @@ share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/purple/ca-certs/Microsoft_Internet_Authority.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem

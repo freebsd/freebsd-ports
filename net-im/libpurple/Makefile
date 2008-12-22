@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -118,8 +118,10 @@ CONFIGURE_ARGS+=	--enable-nss=yes \
 			--with-nspr-libs=${LOCALBASE}/lib \
 			--with-nss-includes=${LOCALBASE}/include/nss/nss \
 			--with-nss-libs=${LOCALBASE}/lib/nss
+PLIST_SUB+=		NSS=""
 .else
 CONFIGURE_ARGS+=	--enable-nss=no
+PLIST_SUB+=		NSS="@comment "
 .endif
 
 .if defined(WITH_SASL)
