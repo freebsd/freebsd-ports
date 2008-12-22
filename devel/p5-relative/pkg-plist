@@ -1,0 +1,3 @@
+%%SITE_PERL%%/relative.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/relative/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/relative

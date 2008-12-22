@@ -1,0 +1,8 @@
+relative - Load modules with relative names
+
+This module allows you to load modules using only parts of their name,
+relatively to the current module or to a given module. Module names are by
+default searched below the current module, but can be searched upper in the
+hierarchy using the ..:: syntax.
+
+WWW: http://search.cpan.org/dist/relative/
