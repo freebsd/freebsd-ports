@@ -5044,6 +5044,7 @@ hrktorrent                      ports/net-p2p/hrktorrent
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
 hs-Stream                       ports/devel/hs-Stream
 hs-alex                         ports/devel/hs-alex
+hs-binary-ghc                   ports/devel/hs-binary-ghc
 hs-bytestring-csv               ports/textproc/hs-bytestring-csv
 hs-c2hs                         ports/devel/hs-c2hs
 hs-cpphs                        ports/devel/hs-cpphs
@@ -5060,12 +5061,14 @@ hs-haxml                        ports/textproc/hs-haxml
 hs-hdoc                         ports/devel/hs-hdoc
 hs-hgl                          ports/graphics/hs-hgl
 hs-hgl-ghc                      ports/graphics/hs-HGL-ghc
+hs-highlighting-kate-ghc        ports/textproc/hs-highlighting-kate-ghc
 hs-hmake                        ports/devel/hs-hmake
 hs-hpl                          ports/devel/hs-hpl
 hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-idoc                         ports/devel/hs-idoc
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
+hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-utf8-string-ghc              ports/devel/hs-utf8-string-ghc
@@ -5073,6 +5076,7 @@ hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
 hs-x11-ghc                      ports/x11/hs-x11-ghc
 hs-x11-xft-ghc                  ports/x11/hs-x11-xft-ghc
+hs-zip-archive-ghc              ports/archivers/hs-zip-archive-ghc
 hs-zlib                         ports/archivers/hs-zlib
 hsb-aspell                      ports/textproc/hsb-aspell
 hsetroot                        ports/graphics/hsetroot
@@ -10034,6 +10038,7 @@ p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-A
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-Catalyst-Plugin-AutoRestart  ports/www/p5-Catalyst-Plugin-AutoRestart
+p5-Catalyst-Plugin-Browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-Catalyst-Plugin-C3           ports/www/p5-Catalyst-Plugin-C3
 p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
@@ -13170,6 +13175,7 @@ p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-A
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-catalyst-plugin-autorestart  ports/www/p5-Catalyst-Plugin-AutoRestart
+p5-catalyst-plugin-browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-catalyst-plugin-c3           ports/www/p5-Catalyst-Plugin-C3
 p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-catalyst-plugin-cache-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
