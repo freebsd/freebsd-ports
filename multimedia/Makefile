@@ -92,6 +92,7 @@
     SUBDIR += gxanim
     SUBDIR += gxine
     SUBDIR += gxmms
+    SUBDIR += handbrake
     SUBDIR += hayes
     SUBDIR += helixplayer
     SUBDIR += iriverter
