@@ -10,11 +10,9 @@ PORTNAME=	libmsn
 PORTVERSION=	3.2
 PORTREVISION=	2
 CATEGORIES=	net-im
-MASTER_SITES=	http://libmsn.bdash.net.nz/files/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	decept0@gmail.com
 COMMENT=	A library for connecting to MSN Messenger service
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
@@ -26,7 +24,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha" 
+BROKEN=		Does not compile on alpha
 .endif
 
 .include <bsd.port.post.mk>
