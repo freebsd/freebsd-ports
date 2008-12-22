@@ -7,9 +7,8 @@
 
 PORTNAME=	Mail_Mime
 PORTVERSION=	1.5.2
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	mail www pear
-DISTNAME=	Mail_Mime-1.5.1
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR classes to create and decode MIME messages
