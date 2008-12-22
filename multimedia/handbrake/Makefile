@@ -8,8 +8,8 @@
 PORTNAME=		handbrake
 PORTVERSION=	0.9.3
 CATEGORIES=		multimedia
-MASTER_SITES=	http://download.m0k.org/handbrake/releases/:main \
-				http://download.m0k.org/handbrake/contrib/:contrib
+MASTER_SITES=			LOCAL/beech/handbrake/:main \
+				LOCAL/beech/handbrake/:contrib
 DISTFILES=		HandBrake-${PORTVERSION}.tar.gz:main \
 				a52dec-0.7.4.tar.gz:contrib \
 				faad2-2.6.1.tar.gz:contrib \
@@ -33,18 +33,19 @@ MAINTAINER=		jonathan@kc8onw.net
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		pkg-config:${PORTSDIR}/devel/pkg-config \
-		${ACLOCAL}:${PORTSDIR}/devel/automake19
+		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15 aclocal:110
 
 LIBTOOLFILES=	${WRKSRC}/configure
 
 WRKSRC=		${WRKDIR}/HandBrake-0.9.3
 PLIST_FILES=	bin/handbrake
+
+ONLY_FOR_ARCHS=	i386
 
 JAM?=		${LOCALBASE}/bin/jam
 APPLY?=		/usr/bin/apply
@@ -60,6 +61,8 @@ BUILD_DEPENDS+=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${WRKSRC}/contrib/lib/pkgconfig
 MAKE_ENV+=	ARCH=${ARCH} MAKE=${GMAKE}
+
+run-autotools-aclocal:
 
 post-extract:
 	@${APPLY} "${MV} %1 ${WRKSRC}/contrib/" \
