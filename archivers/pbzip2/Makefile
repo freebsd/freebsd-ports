@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	archivers
-MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
+MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2
