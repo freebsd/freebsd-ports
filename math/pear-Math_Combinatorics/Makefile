@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Math_Combinatorics
-PORTVERSION=	1.0.0r1
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	math pear
-DISTNAME=	${PORTNAME}-1.0.0RC1
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A package that produces combinations and permutations
