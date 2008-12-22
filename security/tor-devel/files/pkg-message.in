@@ -1,5 +1,5 @@
 ================================================================================
 To enable the tor server, set tor_enable="YES" in your /etc/rc.conf
 and edit %%PREFIX%%/etc/tor/torrc.  Also note that the rc.subr script overrides
-many torrc options and is tunable.  See %%PREFIX%%/etc/rc.d/tor.sh for details
+many torrc options and is tunable.  See %%PREFIX%%/etc/rc.d/tor for details.
 ================================================================================
