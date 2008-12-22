@@ -1383,6 +1383,7 @@
     SUBDIR += tidy-lib
     SUBDIR += tikiwiki
     SUBDIR += tinymce
+    SUBDIR += tinymce3
     SUBDIR += tinyproxy
     SUBDIR += tomcat-native
     SUBDIR += tomcat41
