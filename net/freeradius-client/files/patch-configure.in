@@ -1,0 +1,17 @@
+--- configure.in
++++ configure.in
+@@ -66,14 +66,6 @@
+ dnl We need #stdio.h to define NULL on FreeBSD (at least)
+ gethostbyaddrrstyle=""
+ AC_MSG_CHECKING([gethostbyaddr_r() syntax])
+-case "$host" in
+-*-freebsd*)
+-	AC_DEFINE([GETHOSTBYADDR_R], [], [Define to 1 us gethostbyaddr_r()])
+-        AC_DEFINE([GETHOSTBYADDRRSTYLE_BSD], [], [Define to 1 to use bsd-style gethostbyaddr_r()])
+-        gethostbyaddrrstyle=BSD
+-        AC_MSG_WARN([FreeBSD overridden to BSD-style])
+-        ;;
+-esac
+ if test "x$gethostbyaddrrstyle" = "x"; then
+         AC_TRY_LINK([
+ #include <stdio.h>
