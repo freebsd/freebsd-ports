@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libaiff
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/aifftools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes
