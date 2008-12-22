@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-p2p/vuze/files/Attic/azureus.in,v 1.2 2007-10-03 03:55:33 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-p2p/vuze/files/Attic/azureus.in,v 1.3 2008-12-22 17:43:24 rnoland Exp $
 
 # java
 export JAVA_VERSION="%%JAVA_VERSION%%"
