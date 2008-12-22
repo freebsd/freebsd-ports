@@ -295,6 +295,7 @@ mingw32/include/shlobj.h
 mingw32/include/shlwapi.h
 mingw32/include/signal.h
 mingw32/include/snmp.h
+mingw32/include/specstrings.h
 mingw32/include/sql.h
 mingw32/include/sqlext.h
 mingw32/include/sqltypes.h
@@ -391,6 +392,7 @@ mingw32/lib/libadvapi32.a
 mingw32/lib/libapcups.a
 mingw32/lib/libavicap32.a
 mingw32/lib/libavifil32.a
+mingw32/lib/libbthprops.a
 mingw32/lib/libcap.a
 mingw32/lib/libcfgmgr32.a
 mingw32/lib/libcoldname.a
@@ -453,6 +455,14 @@ mingw32/lib/libmingw32.a
 mingw32/lib/libmingwex.a
 mingw32/lib/libmingwthrd.a
 mingw32/lib/libmoldname.a
+mingw32/lib/libmoldname70.a
+mingw32/lib/libmoldname70d.a
+mingw32/lib/libmoldname71.a
+mingw32/lib/libmoldname71d.a
+mingw32/lib/libmoldname80.a
+mingw32/lib/libmoldname80d.a
+mingw32/lib/libmoldname90.a
+mingw32/lib/libmoldname90d.a
 mingw32/lib/libmoldnamed.a
 mingw32/lib/libmpr.a
 mingw32/lib/libmprapi.a
@@ -550,4 +560,3 @@ mingw32/lib/txtmode.o
 @dirrm mingw32/include
 @dirrmtry mingw32/lib
 @dirrmtry mingw32
-
