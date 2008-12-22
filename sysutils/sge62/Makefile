@@ -8,7 +8,7 @@
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/181/:src \
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/190/:src \
 		${MASTER_SITE_LOCAL}:src
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
@@ -17,14 +17,6 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
-
-# MASTER_SITE requires cookies, which fetch does not support
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-# We have to use wget because the master site required cookies to
-# download the file.
-DISABLE_SIZE=	yes
-FETCH_CMD=	wget -c
 
 OPTIONS=	BDB "Use DB based spooler" on \
 		X11 "Qmon X11 GUI" on \
@@ -44,7 +36,7 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_RELEASE=	6.2
+SGE_RELEASE=	6.2u1
 SGE_VERSION=	${SGE_RELEASE:S/u/./:S/beta/.b/}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
