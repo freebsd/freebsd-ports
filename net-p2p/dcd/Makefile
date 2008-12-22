@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
@@ -30,10 +30,6 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600020
-EXTRA_PATCHES=	${PATCHDIR}/extra-src-net.h
-.endif
 
 post-patch:
 .for f in dcd dcd.console
