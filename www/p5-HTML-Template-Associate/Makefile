@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	HTML-Template-Associate
-PORTVERSION=	1.19
+PORTVERSION=	2.00
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/A/AL/ALEXP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Bridges gap between HTML::Template and other modules
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
