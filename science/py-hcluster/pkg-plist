@@ -1,8 +1,12 @@
-%%PYTHON_SITELIBDIR%%/_cluster_wrap.so
+%%PYTHON_SITELIBDIR%%/_hierarchy_wrap.so
+%%PYTHON_SITELIBDIR%%/_distance_wrap.so
 %%PYTHON_SITELIBDIR%%/hcluster/__init__.py
 %%PYTHON_SITELIBDIR%%/hcluster/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hcluster/__init__.pyo
-%%PYTHON_SITELIBDIR%%/hcluster/cluster.py
-%%PYTHON_SITELIBDIR%%/hcluster/cluster.pyc
-%%PYTHON_SITELIBDIR%%/hcluster/cluster.pyo
+%%PYTHON_SITELIBDIR%%/hcluster/distance.py
+%%PYTHON_SITELIBDIR%%/hcluster/distance.pyc
+%%PYTHON_SITELIBDIR%%/hcluster/distance.pyo
+%%PYTHON_SITELIBDIR%%/hcluster/hierarchy.py
+%%PYTHON_SITELIBDIR%%/hcluster/hierarchy.pyc
+%%PYTHON_SITELIBDIR%%/hcluster/hierarchy.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/hcluster
