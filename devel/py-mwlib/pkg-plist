@@ -13,9 +13,10 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/EasyTimeline.pl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/Makefile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/__init__.py
@@ -70,6 +71,9 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/filequeue.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/fontswitcher.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/htmlcolornames.pyo
@@ -98,9 +102,6 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/log.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/log.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/log.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/magics.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/magics.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/magics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/mathml.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/mathml.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/mathml.pyo
@@ -140,9 +141,12 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/overlay.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/overlay.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/overlay.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser/nodes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/podclient.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/podclient.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/podclient.pyo
@@ -166,6 +170,7 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/scanner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/scanner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/scanner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/scripts.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/serve.pyo
@@ -176,12 +181,55 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/status.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/status.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/status.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/strftime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/strftime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/strftime.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/styleutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/styleutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/styleutils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tagext.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tagext.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/tagext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/evaluate.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/evaluate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/evaluate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/evaluate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/evaluate.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_nodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magic_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/magics.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/marks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/marks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/marks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/misc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/misc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/misc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/nodes.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/nodes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/nodes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/nodes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/nodes.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/pp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/pp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/pp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/scanner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/scanner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ/scanner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/test.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/texmap.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/texmap.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/texmap.pyo
@@ -221,6 +269,14 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xhtmlwriter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/cache.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/xhtml-lat1.ent
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/xhtml-special.ent
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/xhtml-symbol.ent
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat/xhtml1-transitional.dtd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmltreecleaner.pyo
@@ -230,7 +286,10 @@ bin/mw-zip
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/zipwiki.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/parser
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/resources
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/templ
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib/xmlcat
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mwlib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
