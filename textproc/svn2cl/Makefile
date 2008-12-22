@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svn2cl
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/svn2cl/
 
