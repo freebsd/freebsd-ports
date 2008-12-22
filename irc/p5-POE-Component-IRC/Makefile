@@ -8,6 +8,7 @@
 
 PORTNAME=	POE-Component-IRC
 PORTVERSION=	5.88
+PORTREVISION=	1
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +20,8 @@ RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-IRCD>=1.7:${PORTSDIR}/irc/p5-POE-Filter-IRCD \
 		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
 		${SITE_PERL}/POE/Component/Client/Ident.pm:${PORTSDIR}/net/p5-POE-Component-Client-Ident \
-		${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify
+		${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify \
+		${SITE_PERL}/POE/Component/Pluggable.pm:${PORTSDIR}/devel/p5-POE-Component-Pluggable
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
