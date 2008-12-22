@@ -80,6 +80,7 @@ share/aclocal/radius.m4
 %%NLS%%share/locale/ca/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/es/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/id/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/radius.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/radius.mo
 @comment %%NLS%%share/locale/rw/LC_MESSAGES/radius.mo
