@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	xps
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.crucible.gr:5555/
 
 MAINTAINER=	antonakis@gmail.com
-COMMENT=	A tool that searches the ports tree
+COMMENT=	A tool that searches the ports tree by various criteria.
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
