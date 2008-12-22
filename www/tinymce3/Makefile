@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	2.1.3
+PORTVERSION=	3.2.1.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	tinymce_2_1_3
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
 
+NO_BUILD=	yes
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-NO_BUILD=	YES
 
 do-install:
 	${INSTALL} -d -m 0755 ${WWWDIR}
