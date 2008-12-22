@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pyutil
-PORTVERSION=	1.3.25
+PORTVERSION=	1.3.28
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A collection of mature utilities for Python programmers
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:${PORTSDIR}/devel/py-argparse \
@@ -20,6 +20,5 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:${PORTSDIR}/devel/py-argpa
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=easy_install
-#PYEASYINSTALL_ARCHDEP=	yes
 
 .include <bsd.port.mk>
