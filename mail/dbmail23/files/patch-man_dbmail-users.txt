@@ -1,0 +1,13 @@
+--- man/dbmail-users.txt.orig	Mon Feb  4 17:37:40 2008
++++ man/dbmail-users.txt	Mon Dec 22 03:54:51 2008
+@@ -9,8 +9,8 @@
+ SYNOPSIS
+ --------
+ dbmail-users { -a username | -c username } [ -g clientid ] [ -m maxmail]
+-[ -p passwordtype ] [ -P shadowfile ] [ -w password ] [ -W passwordfile]
+-[ -u username ] [ -s aliases ] [ -S aliases ]
+++++[ -p passwordtype ] [ -P shadowfile ] [ -w password ] [ -W passwordfile]+++
+++++[ -u username ] [ -s aliases ] [ -S aliases ]+++
+ 
+ dbmail-users { -d username | -e username }
+ 

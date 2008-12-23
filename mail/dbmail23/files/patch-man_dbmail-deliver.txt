@@ -1,0 +1,11 @@
+--- man/dbmail-deliver.txt.orig	Mon Feb  4 17:37:40 2008
++++ man/dbmail-deliver.txt	Mon Dec 22 03:54:34 2008
+@@ -9,7 +9,7 @@
+ SYNOPSIS
+ --------
+ dbmail-deliver [-t headerfield] [-d addresses] [-u usernames] [-m|-M mailboxname]
+-[-r return path] [-f configFile]
+++++[-r return path] [-f configFile]+++
+ 
+ DESCRIPTION
+ -----------
