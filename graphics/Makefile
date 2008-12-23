@@ -876,7 +876,6 @@
     SUBDIR += xzgv
     SUBDIR += yafray
     SUBDIR += yap
-    SUBDIR += ycomp
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zphoto
