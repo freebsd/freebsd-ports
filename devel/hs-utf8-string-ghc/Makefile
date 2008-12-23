@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utf8-string
-PORTVERSION=	0.3.1.1
+PORTVERSION=	0.3.3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
