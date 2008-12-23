@@ -3,9 +3,9 @@
 %%SUBDIR%%/Data/ByteString/Lazy/UTF8.hi
 %%SUBDIR%%/Data/ByteString/UTF8.hi
 %%SUBDIR%%/Data/String/UTF8.hi
-%%SUBDIR%%/HSutf8-string-0.3.1.1.o
+%%SUBDIR%%/HSutf8-string-0.3.3.o
 %%SUBDIR%%/System/IO/UTF8.hi
-%%SUBDIR%%/libHSutf8-string-0.3.1.1.a
+%%SUBDIR%%/libHSutf8-string-0.3.3.a
 %%SUBDIR%%/utf8-string-register.sh
 %%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/html/Codec-Binary-UTF8-Generic.html
