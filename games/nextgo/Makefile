@@ -9,7 +9,8 @@ PORTNAME=	nextgo
 PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
 DISTNAME=	NeXTGo-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

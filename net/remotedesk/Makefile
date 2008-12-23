@@ -9,7 +9,8 @@ PORTNAME=	remotedesk
 PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	net gnustep
-MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
 DISTNAME=	RemoteDesk-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
