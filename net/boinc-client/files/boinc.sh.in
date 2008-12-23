@@ -13,7 +13,7 @@ rcvar=`set_rcvar`
 
 boinc_user=%%BOINC_USER%%
 boinc_home=%%BOINC_HOME%%
-boinc_flags="-dir ${boinc_home}"
+boinc_flags="--dir ${boinc_home}"
 program_file=boinc_client
 program_path=%%PREFIX%%/bin/${program_file}
 syslog_facility=daemon.err
