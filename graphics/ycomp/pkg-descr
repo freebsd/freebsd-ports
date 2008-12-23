@@ -1,0 +1,17 @@
+Program Highlights
+ * Read, layout and print of graphs in the .VCG, .GML and .YGF format
+ * Layout support for program dependency graphs yielding 
+   high performance graph layout
+ * Easy to use GUI
+ * NEW! PGF / TikZ format export to use in LaTeX documents
+ * For version 1.3.1 we have implemented numerous improvements to the layout,
+   useability and performance
+ * System requirements: Java 1.5 aka J2SE 5.0
+
+Licence:
+This software is based on the yFiles library.
+yWorks GmbH granted an academic license for #yFiles" to IPD Goos: An academic
+license restricts the use of the software (yComp) to non-commercial purposes
+(research, teaching, projects, courses and application development). 
+
+WWW: http://www.info.uni-karlsruhe.de/software.php/id=6&lang=en
