@@ -7,7 +7,7 @@
 
 PORTNAME=	getopt
 PORTVERSION=	1.0.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
 PKGNAMEPREFIX=	java-
@@ -18,7 +18,7 @@ COMMENT=	Java version of GNU getopt family functions
 
 USE_JAVA=	yes
 USE_ANT=	yes
-ALL_TARGETS=	jar
+ALL_TARGET=	jar
 
 NO_WRKSUBDIR=	yes
 
