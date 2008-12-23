@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		shrinksafe
-PORTVERSION=		1.2.2
+PORTVERSION=		1.2.3
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/glarkin
