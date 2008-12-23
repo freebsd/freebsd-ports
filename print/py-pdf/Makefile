@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pdf
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	print python
 MASTER_SITES=	http://pybrary.net/pyPdf/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyPdf-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Pure-Python PDF toolkit
 
 USE_PYTHON=	yes
