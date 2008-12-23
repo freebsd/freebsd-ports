@@ -38,6 +38,8 @@ RUN_DEPENDS=	\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
 
+BROKEN=		Remote server compromise vulnerability in this version
+
 USE_PERL5=	yes
 
 post-extract:
