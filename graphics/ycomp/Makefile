@@ -15,6 +15,8 @@ COMMENT=	Visualization system for Program Dependency Graphs in VCG format
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+RESTRICTED=	acedemic use only
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_BZIP2=	yes
