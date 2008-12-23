@@ -22,7 +22,7 @@ BUILD_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 #		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
-		${PYTHON_SITELIBDIR}/OpenGL/GL/GL__init__.py:${PORTSDIR}/graphics/py-opengl
+		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 #USE_CDRTOOLS=	yes
 
 USE_PYTHON=	yes
