@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	typetools
-PORTVERSION=	2.71
+PORTVERSION=	2.72
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Tools for manipulating fonts
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
