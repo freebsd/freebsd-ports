@@ -1,0 +1,14 @@
+diff --git a/check_geom b/check_geom
+index e7c776c..d8c1402 100755
+--- a/check_geom
++++ b/check_geom
+@@ -127,6 +127,8 @@ if ($state ne "OK") {
+ }
+ 
+ #goats away!
+-$msg = sprintf "%s/%s %s { %s }\n", $class, $volume, $status, $compo;
++my $perfdata = sprintf "%s=%d;;;0;", "geom_" . $class, $found;
++$msg = sprintf "%s/%s %s { %s }|%s\n", $class, $volume, $status, $compo,
++    $perfdata;
+ print $state, " ", $msg;
+ exit ($ERRORS{$state});

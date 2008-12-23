@@ -1,0 +1,13 @@
+diff --git a/check_geom b/check_geom
+index e35be05..e7c776c 100755
+--- a/check_geom
++++ b/check_geom
+@@ -92,7 +92,7 @@ if (($class eq "mirror" || $class eq "raid3") && $status =~ /COMPLETE/ ) {
+ 		$state = "OK";
+ }
+ 
+-if ($class eq "stripe" || $class eq "concat" || $class eq "shsec" && $status =~ /UP/) {
++if (($class eq "stripe" || $class eq "concat" || $class eq "shsec") && $status =~ /UP/) {
+ 		$state = "OK";
+ }
+ 
