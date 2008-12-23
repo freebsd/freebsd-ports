@@ -36,6 +36,7 @@ include/wine/svcctl.idl
 include/wine/unicode.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/crtdbg.h
+include/wine/msvcrt/crtdefs.h
 include/wine/msvcrt/ctype.h
 include/wine/msvcrt/direct.h
 include/wine/msvcrt/dirent.h
@@ -51,6 +52,7 @@ include/wine/msvcrt/malloc.h
 include/wine/msvcrt/math.h
 include/wine/msvcrt/mbctype.h
 include/wine/msvcrt/mbstring.h
+include/wine/msvcrt/memory.h
 include/wine/msvcrt/process.h
 include/wine/msvcrt/search.h
 include/wine/msvcrt/setjmp.h
@@ -332,6 +334,7 @@ include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
 include/wine/windows/mstask.h
 include/wine/windows/mstask.idl
+include/wine/windows/mstcpip.h
 include/wine/windows/mswsock.h
 include/wine/windows/msxml.h
 include/wine/windows/msxml.idl
@@ -526,6 +529,8 @@ include/wine/windows/wsnwlink.h
 include/wine/windows/wtsapi32.h
 include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
+include/wine/windows/wuapi.h
+include/wine/windows/wuapi.idl
 include/wine/windows/xcmc.h
 include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
@@ -911,6 +916,7 @@ lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
+lib/wine/pidgen.dll.so
 lib/wine/powrprof.dll.so
 lib/wine/printui.dll.so
 lib/wine/progman.exe.so
@@ -1054,6 +1060,7 @@ lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
+lib/wine/wuapi.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
