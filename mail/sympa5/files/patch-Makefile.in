@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jun  4 15:11:37 2007
-+++ Makefile.in	Wed Jun 13 11:33:54 2007
-@@ -220,6 +220,8 @@
+--- Makefile.in.orig	2008-10-29 19:13:14.000000000 +0100
++++ Makefile.in	2008-10-29 19:10:51.000000000 +0100
+@@ -219,6 +219,8 @@
  PERL_VERSION = `$(PERL) -e ' print $$]'`
  SYMPA_VERSION = @VERSION@
  DIR = ${prefix}
@@ -9,16 +9,16 @@
  EXPL_DIR = @EXPLDIR@
  MAILERPROGDIR = @BINDIR@
  RPMTOPDIR = `rpm --eval %_topdir`
-@@ -510,7 +512,7 @@
+@@ -508,7 +510,7 @@
  	@CVS2CL@
  #endif
  
--all:	warning checkperl checkcpan sources man locale
-+all:	sources man locale
+-all:	warning checkperl checkcpan sources wrapper soap_wrapper man locale
++all:	sources wrapper soap_wrapper man locale
  
  rpm: build_rh_rpm build_mdk_rpm
  
-@@ -604,7 +606,7 @@
+@@ -612,7 +614,7 @@
  	$(MAKE) PERL='${PERL}' clean) || exit 1; \
  	done;
  
@@ -27,16 +27,16 @@
  
  nextstep: 
  	@echo ""
-@@ -743,7 +745,7 @@
+@@ -751,7 +753,7 @@
  
  installdir:
  	@echo "Creating required directories"
--	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) ; do \
-+	@for dir in $(DIR) $(EXPL_DIR) $(ARC_DIR) $(BOUNCE_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) ; do \
+-	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) $(DIR)/static_content $(DIR)/static_content/icons ; do \
++	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) $(DIR)/static_content $(DIR)/static_content/icons $(ARC_DIR) $(BOUNCE_DIR); do \
  		if [ ! -d $(DESTDIR)$$dir ] ; then \
  			echo "Creating $(DESTDIR)$$dir"; \
  			mkdir -p $(DESTDIR)$$dir; \
-@@ -789,17 +791,6 @@
+@@ -797,17 +799,6 @@
  		fi \
  	done \
  	fi
@@ -54,7 +54,7 @@
  
  installconfig:
  	mkdir -p $(DESTDIR)$(CONFDIR)
-@@ -815,14 +806,7 @@
+@@ -823,14 +814,7 @@
  	INITCONF='1'; \
  	fi \
  	fi \
