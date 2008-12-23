@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.4.4
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -34,6 +33,8 @@ LATEST_LINK=	sympa5
 USE_APACHE=	1.3+
 HAS_CONFIGURE=	yes
 USE_PERL5=	5.8.6+
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-confdir=${PREFIX}/etc/sympa \
 		--with-initdir=${PREFIX}/etc/rc.d \
@@ -50,7 +51,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-localedir=${PREFIX}/share/locale \
 		--with-docdir=${DOCSDIR} \
 		--with-sampledir=${EXAMPLESDIR} \
-		--with-spooldir=${PREFIX}/sympa/spool
+		--with-spooldir=${PREFIX}/sympa/spool \
+		--enable-secure
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 
@@ -123,6 +125,10 @@ pre-install:
 post-install:
 	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
 	 ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL_MAN} ${WRKSRC}/doc/man8/alias_manager.8 ${MAN8PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/doc/man8/archived.8 ${MAN8PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/doc/man8/bounced.8 ${MAN8PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/doc/man8/sympa.8 ${MAN8PREFIX}/man/man8/
 
 post-deinstall:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
