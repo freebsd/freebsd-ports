@@ -8,7 +8,8 @@
 PORTNAME=	batmon
 PORTVERSION=	0.3
 CATEGORIES=	sysutils gnustep
-MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep battery monitor for laptops

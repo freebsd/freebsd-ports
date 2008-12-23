@@ -9,8 +9,9 @@ PORTNAME=	ladder
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITE_SUBDIR=	gap
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ladder-${PORTVERSION}
 
