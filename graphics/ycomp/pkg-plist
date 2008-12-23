@@ -1,8 +1,0 @@
-bin/ycomp
-%%DATADIR%%/antlr.jar
-%%DATADIR%%/batik.jar
-%%DATADIR%%/graphmlObf.jar
-%%DATADIR%%/yComp.jar
-%%DATADIR%%/yObf.jar
-%%DATADIR%%/ysvgObf.jar
-@dirrm %%DATADIR%%

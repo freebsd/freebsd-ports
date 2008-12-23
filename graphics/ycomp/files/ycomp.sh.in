@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-YCOMP_HOME="%%DATADIR%%"
-export YCOMP_HOME
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "$YCOMP_HOME/yComp.jar" "${@}"
-
-# eof
