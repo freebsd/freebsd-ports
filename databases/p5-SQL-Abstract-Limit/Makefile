@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	SQL-Abstract-Limit
-PORTVERSION=	0.120
+PORTVERSION=	0.130
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.12
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	SQL Portability layer for LIMIT emulation
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-SQL-Abstract>=1.24:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
