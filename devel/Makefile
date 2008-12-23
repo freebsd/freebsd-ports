@@ -2190,6 +2190,7 @@
     SUBDIR += py-gitpython
     SUBDIR += py-gobject
     SUBDIR += py-grouch
+    SUBDIR += py-hashring
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu

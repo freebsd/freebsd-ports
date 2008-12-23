@@ -1,0 +1,9 @@
+Implements consistent hashing that can be used when the number of
+server nodes can increase or decrease (like in memcached). The
+hashing ring is built using the same algorithm as libketama.
+
+Consistent hashing is a scheme that provides a hash table functionality
+in a way that the adding or removing of one slot does not significantly
+change the mapping of keys to slots.
+
+WWW:	http://pypi.python.org/pypi/hash_ring
