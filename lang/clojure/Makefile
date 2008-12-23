@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	clojure
-PORTVERSION=	20080916
+PORTVERSION=	20081217
 CATEGORIES=	lang lisp java
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A dynamic programming language for the JVM
 
 USE_ZIP=	yes
@@ -20,12 +20,12 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-SUB_FILES=	clojure
+SUB_FILES=	clojure-bin
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/clojure ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/clojure.jar ${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
+	${INSTALL_DATA} ${WRKSRC}/clojure/clojure.jar ${JAVAJARDIR}
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/src/clj/clojure/boot.clj ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/clojure/src/clj/clojure/main.clj ${DATADIR}
 
 .include <bsd.port.mk>
