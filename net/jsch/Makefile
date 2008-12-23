@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jsch
-PORTVERSION=	0.1.39
+PORTVERSION=	0.1.40
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A pure Java implementation of SSH2
 
 USE_ZIP=	yes
