@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.66
+PORTVERSION=	3.67
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
