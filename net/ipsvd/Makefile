@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ipsvd
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Internet protocol service daemons
 
 WRKSRC=		${WRKDIR}/net/${DISTNAME}
