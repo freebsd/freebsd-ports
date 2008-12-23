@@ -32,5 +32,8 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 .if ${OSVERSION} >= 700000
 EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
 .endif
+.if ${OSVERSION} >= 800056
+EXTRA_PATCHES+=	${FILESDIR}/freebsd8_patch-src-jail.c
+.endif
 
 .include <bsd.port.post.mk>
