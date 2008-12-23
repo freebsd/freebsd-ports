@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	geom
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.geocities.com/ntb4real/proj/
+MASTER_SITES=	http://www.geocities.com/ntb4real/proj/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	wxs
 PKGNAMEPREFIX=	nagios-
-DISTNAME=	check_geom
+DISTNAME=	check_geom-${PORTVERSION}
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios plug-in to get geom(8) components status
@@ -18,6 +20,7 @@ COMMENT=	Nagios plug-in to get geom(8) components status
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PATCH_STRIP=	-p1
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
