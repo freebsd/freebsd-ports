@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081224:
+  AFFECTS: www/phpSysInfo
+  AUTHOR: miwi@FreeBSD.org
+
+  The www/phpSysInfo port has been split into www/phpsysinfo
+  and www/phpsysinfo-dev.
+
 20081217:
   AFFECTS: users of mail/policyd2
   AUTHOR: wxs@FreeBSD.org
