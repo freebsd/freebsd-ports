@@ -96,8 +96,6 @@ System/Library/Makefiles/java-executable.template
 System/Library/Makefiles/java-tool.make
 System/Library/Makefiles/java.make
 System/Library/Makefiles/jni.make
-System/Library/Makefiles/ld_lib_path.csh
-System/Library/Makefiles/ld_lib_path.sh
 System/Library/Makefiles/library-combo.make
 System/Library/Makefiles/library.make
 System/Library/Makefiles/messages.make
