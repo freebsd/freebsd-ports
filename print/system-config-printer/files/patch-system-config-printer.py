@@ -5,7 +5,7 @@
          if host:
              os.environ["HOST"] = host
 -            cmd = '/usr/lib/cups/backend/snmp "${HOST}"'
-+            cmd = '%%LOCALBASE%%/lib/cups/backend/snmp "${HOST}"'
++            cmd = '%%LOCALBASE%%/libexec/cups/backend/snmp "${HOST}"'
              debugprint (host + ": " + cmd)
              stdout = None
              try:
