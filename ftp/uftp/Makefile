@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tcnj.edu/~bush/
 DISTNAME=	uftp
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	gnn@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A multicast capable FTP client and server
 
 WRKSRC=		${WRKDIR}
