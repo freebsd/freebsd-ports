@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		gnomebaker
-PORTVERSION=		0.6.1
-PORTREVISION=	5
+PORTVERSION=		0.6.4
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -16,8 +15,7 @@ DIST_SUBDIR=		gnome2
 MAINTAINER=		dominique.goncalves@gmail.com
 COMMENT=		A CD/DVD recording GUI for Gnome
 
-OPTIONS=		DVD "Enable DVD support" off \
-			CJK "Use cdrtools-cjk instead of cdrtools" off
+OPTIONS=		DVD "Enable DVD support" off
 
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 USE_CDRTOOLS=		yes
@@ -26,6 +24,7 @@ USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GETTEXT=		yes
 USE_GSTREAMER=		vorbis mp3 flac
+INSTALLS_ICONS=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
