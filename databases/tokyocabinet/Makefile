@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.25
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
@@ -27,7 +27,7 @@ MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
 		tcutest.1
 MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
-		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3
+		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3 tctree.3
 
 OPTIONS=	DEBUG "Debugging support" off \
 		DEVEL "Development build" off \
