@@ -64,6 +64,7 @@
     SUBDIR += lzma
     SUBDIR += lzmalib
     SUBDIR += lzmautils
+    SUBDIR += lzmautils-devel
     SUBDIR += lzo
     SUBDIR += lzo2
     SUBDIR += lzop
