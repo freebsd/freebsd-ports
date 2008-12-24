@@ -4,14 +4,17 @@
 #
 # $FreeBSD$
 
-PORTNAME=	phpSysInfo
-DISTVERSION=	3.0-RC6
+PORTNAME=	phpsysinfo
+DISTVERSION=	2.5.4
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	walt@relnor.com
-COMMENT=	A php script that displays info about the host being accessed
+COMMENT=	A PHP script for displaying system information
+
+CONFLICTS=	phpsysinfo-3.[0-9]*
+LATEST_LINK=	phpsysinfo-dev
 
 USE_PHP=	pcre xml simplexml
 WANT_PHP_WEB=	yes
