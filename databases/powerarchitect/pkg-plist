@@ -15,6 +15,7 @@ bin/powerarchitect
 %%DATADIR%%/lib/commons-vfs-1.0.jar
 %%DATADIR%%/lib/darwinsys.jar
 %%DATADIR%%/lib/edtftpj-1.5.4.jar
+%%DATADIR%%/lib/eigenbase-properties.jar
 %%DATADIR%%/lib/forms-1.1.0.jar
 %%DATADIR%%/lib/iText-2.0.8.jar
 %%DATADIR%%/lib/jakarta-regexp-1.2.jar
@@ -24,6 +25,7 @@ bin/powerarchitect
 %%DATADIR%%/lib/kettle-engine-3.0.jar
 %%DATADIR%%/lib/log4j.jar
 %%DATADIR%%/lib/mail.jar
+%%DATADIR%%/lib/mondrian.jar
 %%DATADIR%%/lib/spring-core.jar
 %%DATADIR%%/lib/sqlpower_library.jar
 %%PORTDOCS%%%%DOCSDIR%%/README.generic
