@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	senna
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.4
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	senna/27317
+MASTER_SITE_SUBDIR=	senna/33763
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
@@ -36,7 +36,7 @@ BROKEN=		Does not compile on ${ARCH}
 
 .if defined(WITH_MECAB)
 CONFIGURE_ARGS+=	--with-mecab
-LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
 .else
 CONFIGURE_ARGS+=	--without-mecab
 .endif
