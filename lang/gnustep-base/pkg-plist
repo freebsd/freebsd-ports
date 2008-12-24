@@ -131,6 +131,7 @@ System/Library/Headers/GNUstepBase/GSObjCRuntime.h
 System/Library/Headers/GNUstepBase/GSUnion.h
 System/Library/Headers/GNUstepBase/GSVersionMacros.h
 System/Library/Headers/GNUstepBase/GSXML.h
+System/Library/Headers/GNUstepBase/NSTask+GS.h
 System/Library/Headers/GNUstepBase/Unicode.h
 System/Library/Headers/GNUstepBase/behavior.h
 System/Library/Headers/GNUstepBase/objc-gnu2next.h
@@ -149,6 +150,7 @@ System/Library/Headers/gnustep/base/GSObjCRuntime.h
 System/Library/Headers/gnustep/base/GSUnion.h
 System/Library/Headers/gnustep/base/GSVersionMacros.h
 System/Library/Headers/gnustep/base/GSXML.h
+System/Library/Headers/gnustep/base/NSTask+GS.h
 System/Library/Headers/gnustep/base/Unicode.h
 System/Library/Headers/gnustep/base/behavior.h
 System/Library/Headers/gnustep/base/objc-gnu2next.h
