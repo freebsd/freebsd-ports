@@ -7,6 +7,7 @@
 
 PORTNAME=	szip
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	science archivers
 MASTER_SITES=	ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/:src \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc
@@ -22,6 +23,8 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCFILE=	Release_notes_2_0.pdf
+LDFLAGS+=	-lm
+CONFIGURE_ARGS+=	LDFLAGS="${LDFLAGS}"
 
 post-install:
 .if !defined(NOPORTDOCS)
