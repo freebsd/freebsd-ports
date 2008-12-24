@@ -2,8 +2,10 @@ bin/senna
 bin/senna-cfg
 bin/sennachk
 include/senna/senna.h
+lib/pkgconfig/senna.pc
 lib/libsenna.a
 lib/libsenna.la
 lib/libsenna.so
 lib/libsenna.so.0
 @dirrm include/senna
+@dirrmtry lib/pkgconfig

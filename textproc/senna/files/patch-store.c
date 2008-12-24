@@ -1,15 +1,15 @@
---- lib/store.c.orig	Tue Aug 29 03:00:23 2006
-+++ lib/store.c	Tue Aug 29 16:42:28 2006
-@@ -18,6 +18,7 @@
- #include "str.h"
- #include "inv.h"
+--- ./lib/store.c.orig	2008-06-12 14:18:12.000000000 +0900
++++ ./lib/store.c	2008-11-13 18:21:14.000000000 +0900
+@@ -20,6 +20,7 @@
+ #include "sym.h"
  #include "store.h"
+ #include "ctx.h"
 +#include <stddef.h>
  #include <string.h>
  
- static int len_sum = 0;
-@@ -60,10 +61,12 @@
- sen_store_buf_add(sen_store_buf *b, sen_id tid)
+ /* rectangular arrays */
+@@ -1735,10 +1736,12 @@
+ sen_vgram_buf_add(sen_vgram_buf *b, sen_id tid)
  {
    uint8_t dummybuf[8], *dummyp;
 +  ptrdiff_t pd;
