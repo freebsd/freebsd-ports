@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono-addins
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -25,6 +25,8 @@ USE_GNOME=	gnomehack pkgconfig
 
 OPTIONS=	GTK2 "Enable GTK support" on
 
+MAN1=		mautil.1
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
@@ -36,9 +38,5 @@ PLIST_SUB=	OPT_GTK2=""
 CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB=	OPT_GTK2="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's|Exception ex|System.Exception ex|' \
-		${WRKSRC}/Mono.Addins.Gui/Mono.Addins.Gui/ManageSitesDialog.cs
 
 .include <bsd.port.post.mk>
