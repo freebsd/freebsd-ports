@@ -320,6 +320,7 @@ System/Library/Headers/AppKit/GSDragView.h
 System/Library/Headers/AppKit/GSEPSPrintOperation.h
 System/Library/Headers/AppKit/GSFontInfo.h
 System/Library/Headers/AppKit/GSFusedSilica.h
+System/Library/Headers/AppKit/GSGormLoading.h
 System/Library/Headers/AppKit/GSHbox.h
 System/Library/Headers/AppKit/GSHelpManagerPanel.h
 System/Library/Headers/AppKit/GSHorizontalTypesetter.h
@@ -330,9 +331,8 @@ System/Library/Headers/AppKit/GSLayoutManager_internal.h
 System/Library/Headers/AppKit/GSMemoryPanel.h
 System/Library/Headers/AppKit/GSMethodTable.h
 System/Library/Headers/AppKit/GSModelLoaderFactory.h
-System/Library/Headers/AppKit/GSNibCompatibility.h
 System/Library/Headers/AppKit/GSNibContainer.h
-System/Library/Headers/AppKit/GSNibTemplates.h
+System/Library/Headers/AppKit/GSNibLoading.h
 System/Library/Headers/AppKit/GSPDFPrintOperation.h
 System/Library/Headers/AppKit/GSPasteboardServer.h
 System/Library/Headers/AppKit/GSPrinting.h
@@ -478,6 +478,8 @@ System/Library/Headers/AppKit/NSTextList.h
 System/Library/Headers/AppKit/NSTextStorage.h
 System/Library/Headers/AppKit/NSTextTable.h
 System/Library/Headers/AppKit/NSTextView.h
+System/Library/Headers/AppKit/NSTokenField.h
+System/Library/Headers/AppKit/NSTokenFieldCell.h
 System/Library/Headers/AppKit/NSToolbar.h
 System/Library/Headers/AppKit/NSToolbarItem.h
 System/Library/Headers/AppKit/NSUserDefaultsController.h
@@ -497,6 +499,7 @@ System/Library/Headers/GNUstepGUI/GSDragView.h
 System/Library/Headers/GNUstepGUI/GSEPSPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSFontInfo.h
 System/Library/Headers/GNUstepGUI/GSFusedSilica.h
+System/Library/Headers/GNUstepGUI/GSGormLoading.h
 System/Library/Headers/GNUstepGUI/GSHbox.h
 System/Library/Headers/GNUstepGUI/GSHelpManagerPanel.h
 System/Library/Headers/GNUstepGUI/GSHorizontalTypesetter.h
@@ -507,9 +510,8 @@ System/Library/Headers/GNUstepGUI/GSLayoutManager_internal.h
 System/Library/Headers/GNUstepGUI/GSMemoryPanel.h
 System/Library/Headers/GNUstepGUI/GSMethodTable.h
 System/Library/Headers/GNUstepGUI/GSModelLoaderFactory.h
-System/Library/Headers/GNUstepGUI/GSNibCompatibility.h
 System/Library/Headers/GNUstepGUI/GSNibContainer.h
-System/Library/Headers/GNUstepGUI/GSNibTemplates.h
+System/Library/Headers/GNUstepGUI/GSNibLoading.h
 System/Library/Headers/GNUstepGUI/GSPDFPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSPasteboardServer.h
 System/Library/Headers/GNUstepGUI/GSPrinting.h
@@ -534,6 +536,7 @@ System/Library/Headers/gnustep/gui/GSAnimator.h
 System/Library/Headers/gnustep/gui/GSDisplayServer.h
 System/Library/Headers/gnustep/gui/GSFontInfo.h
 System/Library/Headers/gnustep/gui/GSFusedSilica.h
+System/Library/Headers/gnustep/gui/GSGormLoading.h
 System/Library/Headers/gnustep/gui/GSHbox.h
 System/Library/Headers/gnustep/gui/GSHelpManagerPanel.h
 System/Library/Headers/gnustep/gui/GSHorizontalTypesetter.h
@@ -544,9 +547,8 @@ System/Library/Headers/gnustep/gui/GSLayoutManager_internal.h
 System/Library/Headers/gnustep/gui/GSMemoryPanel.h
 System/Library/Headers/gnustep/gui/GSMethodTable.h
 System/Library/Headers/gnustep/gui/GSModelLoaderFactory.h
-System/Library/Headers/gnustep/gui/GSNibCompatibility.h
 System/Library/Headers/gnustep/gui/GSNibContainer.h
-System/Library/Headers/gnustep/gui/GSNibTemplates.h
+System/Library/Headers/gnustep/gui/GSNibLoading.h
 System/Library/Headers/gnustep/gui/GSPasteboardServer.h
 System/Library/Headers/gnustep/gui/GSServicesManager.h
 System/Library/Headers/gnustep/gui/GSTable.h
@@ -569,7 +571,6 @@ System/Library/Headers/gnustep/gui/GSEPSPrintOperation.h
 System/Library/Headers/gnustep/gui/GSPDFPrintOperation.h
 System/Library/Images/GNUstep.tiff
 System/Library/Images/GNUstepMenuImage.tiff
-System/Library/Images/GNUstep_Images_Copyright
 System/Library/Images/GSSearch.tiff
 System/Library/Images/GSStop.tiff
 System/Library/Images/LogoGNUstep.tiff
@@ -645,6 +646,7 @@ System/Library/Images/common_TabUnSelectedLeft.tiff
 System/Library/Images/common_TabUnSelectedRight.tiff
 System/Library/Images/common_Tile.tiff
 System/Library/Images/common_ToolbarClippedItemsMark.tiff
+System/Library/Images/common_ToolbarCustomizeToolbarItem.tiff
 System/Library/Images/common_ToolbarSeparatorItem.tiff
 System/Library/Images/common_ToolbarShowColorsItem.tiff
 System/Library/Images/common_ToolbarShowFontsItem.tiff
