@@ -6,38 +6,41 @@
 #
 
 PORTNAME=	xmill
-DISTVERSION=	0-7
+DISTVERSION=	0.8
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An efficient compressor for XML
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	${MAKEFILE} XMill/BZlib.cpp
 
-PLIST_FILES=	bin/xmill bin/xdemill bin/xbmill bin/xbdemill
-PORTDOCS=	COPYRIGHT.txt LICENSE.txt MANUAL.txt README.txt xmill.ps.gz
+PLIST_FILES=	bin/xcmill bin/xdemill bin/xmilltest bin/xmillexample \
+		bin/xmillinspect bin/ppmzip
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,friend,& class,' \
-		${WRKSRC}/src/*.?pp
+# Allow to build with modern GCC
+	@${REINPLACE_CMD} -e 's,friend,& class,' ${WRKSRC}/XMill/*.?pp \
+		${WRKSRC}/xmillinspect/xmillinspect.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/xmill ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/xdemill ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/xbmill ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/unix/xbdemill ${PREFIX}/bin
+.for p in ${PLIST_FILES:T}
+	${INSTALL_PROGRAM} ${WRKSRC}/unix/${p} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/paper/xmill.ps.gz ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
