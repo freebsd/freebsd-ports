@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	formencode
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormEncode-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	HTML form validation, generation, and conversion package
 
 USE_PYTHON=	yes
