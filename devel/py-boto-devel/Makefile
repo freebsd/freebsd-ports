@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	boto
-PORTVERSION=	1.4c
+PORTVERSION=	1.5d
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Python interface to Amazon Web Services
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
