@@ -23,7 +23,7 @@
  Example config lines for Apache
  ==================================
  Alias /viewvc "%%PREFIX%%/viewvc/bin/cgi/"
- <Directory "%%PRFIX%%/viewvc/bin/cgi">
+ <Directory "%%PREFIX%%/viewvc/bin/cgi">
     Options NONE +ExecCGI
     DirectoryIndex  /viewvc/viewvc.cgi
     Order allow,deny
