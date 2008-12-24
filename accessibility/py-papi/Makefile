@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	papi
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 CATEGORIES=	accessibility devel python
 MASTER_SITES=	SF/ocemp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +18,8 @@ USE_GNOME=	atk
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-EXAMPLES=	atkaction.py atkapplication.py atkcapi.c msaaapplication.py \
-		msaacapi.cpp
+EXAMPLES=	atkaction.py atkapplication.py atkcapi.c atktext.py atkvalue.py \
+		msaaapplication.py msaacapi.cpp
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py

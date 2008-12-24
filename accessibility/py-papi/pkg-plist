@@ -4,10 +4,18 @@ include/%%PYTHON_VERSION%%/papi/papi_msaa.h
 %%PYTHON_SITELIBDIR%%/papi/__init__.py
 %%PYTHON_SITELIBDIR%%/papi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papi/ATKAccessible.py
+%%PYTHON_SITELIBDIR%%/papi/ATKAccessible.pyc
+%%PYTHON_SITELIBDIR%%/papi/ATKAccessible.pyo
+%%PYTHON_SITELIBDIR%%/papi/MSAAAccessible.py
+%%PYTHON_SITELIBDIR%%/papi/MSAAAccessible.pyc
+%%PYTHON_SITELIBDIR%%/papi/MSAAAccessible.pyo
 %%PYTHON_SITELIBDIR%%/papi/atk.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkaction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkapplication.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkcapi.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atktext.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atkvalue.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msaaapplication.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msaacapi.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
