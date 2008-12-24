@@ -8,10 +8,12 @@
 PORTNAME=	stp
 DISTVERSIONPREFIX=	ver-
 DISTVERSION=	0.1
-DISTVERSIONSUFFIX=	-02-26-2008
+DISTVERSIONSUFFIX=	-11-18-2008
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	stp-fast-prover
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A Decision Procedure for Bitvectors and Arrays
@@ -19,8 +21,6 @@ COMMENT=	A Decision Procedure for Bitvectors and Arrays
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
-
-WRKSRC=	${WRKDIR}/stp
 
 PLIST_FILES=	bin/stp \
 		include/stp/c_interface.h \
