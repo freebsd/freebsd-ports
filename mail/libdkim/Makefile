@@ -22,11 +22,12 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on FreeBSD 6.x
+#Check for OPENSSL 0.9.8 in BASE:  If not present require PORT
+.if !exists(${DESTDIR}/lib/libcrypto.so.5)
+WITH_OPENSSL_PORT=	YES
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
