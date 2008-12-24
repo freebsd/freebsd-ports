@@ -52,6 +52,10 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		XORP 1.5 does not compile due to RTF_LLINFO removal
+.endif
+
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp
 
