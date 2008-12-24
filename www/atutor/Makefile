@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atutor
-PORTVERSION=	1.6.1a
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	ATutor-1.6.1_pl1
+DISTNAME=	ATutor-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)

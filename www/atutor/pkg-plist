@@ -1,5 +1,6 @@
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/404.php
+%%WWWDIR%%/TILE.css
 %%WWWDIR%%/about.php
 %%WWWDIR%%/acl.php
 %%WWWDIR%%/admin/admin_delete.php
@@ -73,7 +74,15 @@
 %%WWWDIR%%/admin/modules/default_side.php
 %%WWWDIR%%/admin/modules/details.php
 %%WWWDIR%%/admin/modules/index.php
+%%WWWDIR%%/admin/modules/install_modules.php
 %%WWWDIR%%/admin/modules/module.template.php
+%%WWWDIR%%/admin/modules/module_install_step_1.php
+%%WWWDIR%%/admin/modules/module_install_step_2.php
+%%WWWDIR%%/admin/modules/module_install_step_3.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_1.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_2.php
+%%WWWDIR%%/admin/modules/module_uninstall_step_3.php
+%%WWWDIR%%/admin/modules/version_history.php
 %%WWWDIR%%/admin/password_user.php
 %%WWWDIR%%/admin/profile_picture.php
 %%WWWDIR%%/admin/rss_feeds/add_feed.php
@@ -84,6 +93,11 @@
 %%WWWDIR%%/admin/themes/delete.php
 %%WWWDIR%%/admin/themes/import.php
 %%WWWDIR%%/admin/themes/index.php
+%%WWWDIR%%/admin/themes/install_themes.php
+%%WWWDIR%%/admin/themes/theme_install_step_1.php
+%%WWWDIR%%/admin/themes/theme_install_step_2.php
+%%WWWDIR%%/admin/themes/theme_install_step_3.php
+%%WWWDIR%%/admin/themes/version_history.php
 %%WWWDIR%%/admin/translate.php
 %%WWWDIR%%/admin/translate_atutor.php
 %%WWWDIR%%/admin/translator.php
@@ -104,7 +118,6 @@
 %%WWWDIR%%/blogs/view.php
 %%WWWDIR%%/bounce.php
 %%WWWDIR%%/browse.php
-%%WWWDIR%%/calendar.js
 %%WWWDIR%%/chat/MachineThatGoesBing.class
 %%WWWDIR%%/chat/admin.settings.default
 %%WWWDIR%%/chat/atrc.gif
@@ -198,6 +211,7 @@
 %%WWWDIR%%/documentation/developer/guidelines.html
 %%WWWDIR%%/documentation/developer/modules.html
 %%WWWDIR%%/documentation/developer/styles.css
+%%WWWDIR%%/documentation/developer/themes.html
 %%WWWDIR%%/documentation/general/browse_courses.php
 %%WWWDIR%%/documentation/general/create_course.php
 %%WWWDIR%%/documentation/general/en/index.php
@@ -232,10 +246,12 @@
 %%WWWDIR%%/documentation/instructor/chat.php
 %%WWWDIR%%/documentation/instructor/content.html
 %%WWWDIR%%/documentation/instructor/content.php
+%%WWWDIR%%/documentation/instructor/content_alternatives.php
 %%WWWDIR%%/documentation/instructor/content_edit.php
 %%WWWDIR%%/documentation/instructor/content_packages.php
 %%WWWDIR%%/documentation/instructor/content_preview.php
 %%WWWDIR%%/documentation/instructor/content_properties.php
+%%WWWDIR%%/documentation/instructor/content_tests.php
 %%WWWDIR%%/documentation/instructor/content_usage.php
 %%WWWDIR%%/documentation/instructor/course_email.php
 %%WWWDIR%%/documentation/instructor/creating_courses.php
@@ -255,7 +271,9 @@
 %%WWWDIR%%/documentation/instructor/extracting_zip_archives.php
 %%WWWDIR%%/documentation/instructor/faq.php
 %%WWWDIR%%/documentation/instructor/feeds.php
+%%WWWDIR%%/documentation/instructor/fha_student_tools.php
 %%WWWDIR%%/documentation/instructor/file_manager.php
+%%WWWDIR%%/documentation/instructor/forum_export.php
 %%WWWDIR%%/documentation/instructor/forums.php
 %%WWWDIR%%/documentation/instructor/fr/index.php
 %%WWWDIR%%/documentation/instructor/glossary.php
@@ -417,6 +435,7 @@
 %%WWWDIR%%/images/courses/toolbox.jpg
 %%WWWDIR%%/images/courses/triangle.jpg
 %%WWWDIR%%/images/courses/two_roads.jpg
+%%WWWDIR%%/images/donate.gif
 %%WWWDIR%%/images/edit.gif
 %%WWWDIR%%/images/feedback.gif
 %%WWWDIR%%/images/file.gif
@@ -518,6 +537,7 @@
 %%WWWDIR%%/images/rtl_tree/tree_vertline.gif
 %%WWWDIR%%/images/search.gif
 %%WWWDIR%%/images/star.gif
+%%WWWDIR%%/images/subscribe-envelope.png
 %%WWWDIR%%/images/toc.gif
 %%WWWDIR%%/images/topic_lock.gif
 %%WWWDIR%%/images/transfer.gif
@@ -531,11 +551,16 @@
 %%WWWDIR%%/images/tree/tree_split.gif
 %%WWWDIR%%/images/tree/tree_vertline.gif
 %%WWWDIR%%/images/unlock.gif
+%%WWWDIR%%/images/unsubscribe-envelope.png
 %%WWWDIR%%/images/x.gif
 %%WWWDIR%%/inbox/export.php
 %%WWWDIR%%/inbox/index.php
 %%WWWDIR%%/inbox/send_message.php
 %%WWWDIR%%/inbox/sent_messages.php
+%%WWWDIR%%/include/classes/A4a/A4a.class.php
+%%WWWDIR%%/include/classes/A4a/A4a.tmpl.php
+%%WWWDIR%%/include/classes/A4a/A4aExport.class.php
+%%WWWDIR%%/include/classes/A4a/A4aImport.class.php
 %%WWWDIR%%/include/classes/Backup/Backup.class.php
 %%WWWDIR%%/include/classes/Backup/TableBackup.class.php
 %%WWWDIR%%/include/classes/CSVExport.class.php
@@ -551,7 +576,10 @@
 %%WWWDIR%%/include/classes/Language/RemoteLanguageManager.class.php
 %%WWWDIR%%/include/classes/Message/Message.class.php
 %%WWWDIR%%/include/classes/Module/Module.class.php
+%%WWWDIR%%/include/classes/Module/ModuleListParser.class.php
 %%WWWDIR%%/include/classes/Module/ModuleParser.class.php
+%%WWWDIR%%/include/classes/QTI/QTIImport.class.php
+%%WWWDIR%%/include/classes/QTI/QTIParser.class.php
 %%WWWDIR%%/include/classes/Savant2/Savant2/Compiler.php
 %%WWWDIR%%/include/classes/Savant2/Savant2/Error.php
 %%WWWDIR%%/include/classes/Savant2/Savant2/Filter.php
@@ -561,6 +589,7 @@
 %%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Error_stack.php
 %%WWWDIR%%/include/classes/Savant2/Savant2/Savant2_Plugin_cycle.php
 %%WWWDIR%%/include/classes/Savant2/Savant2.php
+%%WWWDIR%%/include/classes/Themes/ThemeListParser.class.php
 %%WWWDIR%%/include/classes/Themes/ThemeParser.class.php
 %%WWWDIR%%/include/classes/UrlRewrite/ContentUrl.class.php
 %%WWWDIR%%/include/classes/UrlRewrite/FileStorageUrl.class.php
@@ -611,15 +640,18 @@
 %%WWWDIR%%/include/html/dropdowns/search.inc.php
 %%WWWDIR%%/include/html/dropdowns/users_online.inc.php
 %%WWWDIR%%/include/html/editor_tabs/accessibility.inc.php
+%%WWWDIR%%/include/html/editor_tabs/alternatives.inc.php
 %%WWWDIR%%/include/html/editor_tabs/content_code_picker.inc.php
 %%WWWDIR%%/include/html/editor_tabs/edit.inc.php
 %%WWWDIR%%/include/html/editor_tabs/glossary.inc.php
 %%WWWDIR%%/include/html/editor_tabs/preview.inc.php
 %%WWWDIR%%/include/html/editor_tabs/properties.inc.php
+%%WWWDIR%%/include/html/editor_tabs/tests.inc.php
 %%WWWDIR%%/include/html/enroll_edit.inc.php
 %%WWWDIR%%/include/html/enroll_tab_functions.inc.php
 %%WWWDIR%%/include/html/enrollment.inc.php
 %%WWWDIR%%/include/html/filemanager_display.inc.php
+%%WWWDIR%%/include/html/filemanager_display_alternatives.inc.php
 %%WWWDIR%%/include/html/forum.inc.php
 %%WWWDIR%%/include/html/frameset/footer.inc.php
 %%WWWDIR%%/include/html/frameset/header.inc.php
@@ -628,6 +660,7 @@
 %%WWWDIR%%/include/html/privileges.inc.php
 %%WWWDIR%%/include/html/profile_picture.inc.php
 %%WWWDIR%%/include/html/release_date.inc.php
+%%WWWDIR%%/include/html/resources_parser.inc.php
 %%WWWDIR%%/include/html/search.inc.php
 %%WWWDIR%%/include/html/tests_questions.inc.php
 %%WWWDIR%%/include/ims/adlcp_rootv1p2.xsd
@@ -637,8 +670,10 @@
 %%WWWDIR%%/include/ims/ims_xml.xsd
 %%WWWDIR%%/include/ims/imscp_rootv1p1p2.xsd
 %%WWWDIR%%/include/ims/imsmd_rootv1p2p1.xsd
+%%WWWDIR%%/include/imscc/ims_template.inc.php
 %%WWWDIR%%/include/index.html
 %%WWWDIR%%/include/lib/admin_categories.inc.php
+%%WWWDIR%%/include/lib/alternatives_functions.inc.php
 %%WWWDIR%%/include/lib/chat.inc.php
 %%WWWDIR%%/include/lib/chat_defaults.inc.php
 %%WWWDIR%%/include/lib/constants.inc.php
@@ -656,7 +691,11 @@
 %%WWWDIR%%/include/lib/mime.inc.php
 %%WWWDIR%%/include/lib/mysql_connect.inc.php
 %%WWWDIR%%/include/lib/output.inc.php
+%%WWWDIR%%/include/lib/pref_functions.inc.php
+%%WWWDIR%%/include/lib/pref_tab_functions.inc.php
+%%WWWDIR%%/include/lib/qti.inc.php
 %%WWWDIR%%/include/lib/search.inc.php
+%%WWWDIR%%/include/lib/test_question_queries.inc.php
 %%WWWDIR%%/include/lib/test_result_functions.inc.php
 %%WWWDIR%%/include/lib/theme_template.inc.php
 %%WWWDIR%%/include/lib/themes.inc.php
@@ -665,12 +704,14 @@
 %%WWWDIR%%/include/lib/tracker2.inc.php
 %%WWWDIR%%/include/lib/tracker_stats.inc.php
 %%WWWDIR%%/include/lib/tracker_stats2.inc.php
+%%WWWDIR%%/include/lib/upload.php
 %%WWWDIR%%/include/lib/utf8.php
 %%WWWDIR%%/include/phpCache/ChangeLog
 %%WWWDIR%%/include/phpCache/LICENSE
 %%WWWDIR%%/include/phpCache/README
 %%WWWDIR%%/include/phpCache/gc.php
 %%WWWDIR%%/include/phpCache/phpCache.inc.php
+%%WWWDIR%%/include/player.swf
 %%WWWDIR%%/include/side_menu.inc.php
 %%WWWDIR%%/include/style_popup.css
 %%WWWDIR%%/include/vitals.inc.php
@@ -691,6 +732,7 @@
 %%WWWDIR%%/install/db/atutor_upgrade_1.5.4_to_1.5.5.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.5.5_to_1.6.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.5_to_1.5.1.sql
+%%WWWDIR%%/install/db/atutor_upgrade_1.6.1_to_1.6.2.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.6_to_1.6.1.sql
 %%WWWDIR%%/install/images/bad.gif
 %%WWWDIR%%/install/images/feedback.gif
@@ -724,28 +766,91 @@
 %%WWWDIR%%/install/stylesheet.css
 %%WWWDIR%%/install/update_config.php
 %%WWWDIR%%/install/upgrade.php
-%%WWWDIR%%/jscripts/Fluid-all.js
-%%WWWDIR%%/jscripts/fluid/Fluid.js
-%%WWWDIR%%/jscripts/fluid/LayoutCustomizer.js
-%%WWWDIR%%/jscripts/fluid/Lightbox.js
-%%WWWDIR%%/jscripts/fluid/MultiFileUpload.js
-%%WWWDIR%%/jscripts/fluid/Reorderer.js
+%%WWWDIR%%/jscripts/TILE.js
+%%WWWDIR%%/jscripts/calendar.js
 %%WWWDIR%%/jscripts/fluid-atutor.js
+%%WWWDIR%%/jscripts/fluid-components/css/ImageReorderer.css
+%%WWWDIR%%/jscripts/fluid-components/css/InlineEdit.css
+%%WWWDIR%%/jscripts/fluid-components/css/LayoutReorderer.css
+%%WWWDIR%%/jscripts/fluid-components/css/Reorderer.css
+%%WWWDIR%%/jscripts/fluid-components/css/Uploader.css
+%%WWWDIR%%/jscripts/fluid-components/css/fluid.layout.css
+%%WWWDIR%%/jscripts/fluid-components/css/fluid.presentation.css
+%%WWWDIR%%/jscripts/fluid-components/css/fluid.reset.css
+%%WWWDIR%%/jscripts/fluid-components/css/fluid.states.css
+%%WWWDIR%%/jscripts/fluid-components/css/fluid.themes.css
+%%WWWDIR%%/jscripts/fluid-components/css/infusion-theme.css
+%%WWWDIR%%/jscripts/fluid-components/css/jquery.tooltip.css
+%%WWWDIR%%/jscripts/fluid-components/html/InlineEdit.html
+%%WWWDIR%%/jscripts/fluid-components/html/LayoutReorderer.html
+%%WWWDIR%%/jscripts/fluid-components/html/README.txt
+%%WWWDIR%%/jscripts/fluid-components/html/Reorderer.html
+%%WWWDIR%%/jscripts/fluid-components/html/templates/LightboxRSF.html
+%%WWWDIR%%/jscripts/fluid-components/images/infusion-theme/x-close-lrg.png
+%%WWWDIR%%/jscripts/fluid-components/images/shared/exclamation.png
+%%WWWDIR%%/jscripts/fluid-components/images/shared/gloss_25_repeater.png
+%%WWWDIR%%/jscripts/fluid-components/images/shared/gripper.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/add.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/btn-delete-blu.gif
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/btn-delete-on.gif
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/control_pause_blue.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/delete.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/error.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/pause.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/remove.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/tick.png
+%%WWWDIR%%/jscripts/fluid-components/images/uploader/upload.gif
+%%WWWDIR%%/jscripts/fluid-components/js/Fluid-all.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/Fluid.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/FluidDOMUtilities.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/GeometricManager.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/ImageReorderer.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/InlineEdit.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/LayoutReorderer.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/ModuleLayout.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/Pager.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/Reorderer.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/Undo.js
+%%WWWDIR%%/jscripts/fluid-components/js/fluid/Uploader.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/GPL-LICENSE.txt
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/MIT-LICENSE.txt
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/jARIA.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/jquery-1.2.6.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/jquery.bgiframe.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/jquery.keyboard-a11y.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/jquery.tooltip.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/ui-FLUID-readme.txt
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/ui.core.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/ui.dialog.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/ui.draggable.js
+%%WWWDIR%%/jscripts/fluid-components/js/jquery/ui.droppable.js
+%%WWWDIR%%/jscripts/fluid-components/js/json/json2.js
+%%WWWDIR%%/jscripts/fluid-components/js/swfupload/LICENSE.txt
+%%WWWDIR%%/jscripts/fluid-components/js/swfupload/swfupload.js
+%%WWWDIR%%/jscripts/fluid-components/js/swfupload/swfupload.swfobject.js
+%%WWWDIR%%/jscripts/fluid-components/swfupload/LICENSE.txt
+%%WWWDIR%%/jscripts/fluid-components/swfupload/swfupload_f9.swf
 %%WWWDIR%%/jscripts/help.js
 %%WWWDIR%%/jscripts/interface.js
-%%WWWDIR%%/jscripts/jquery/GPL-LICENSE.txt
-%%WWWDIR%%/jscripts/jquery/MIT-LICENSE.txt
-%%WWWDIR%%/jscripts/jquery/jARIA.js
-%%WWWDIR%%/jscripts/jquery/jquery-1.2.3.js
-%%WWWDIR%%/jscripts/jquery/jquery.dimensions.js
-%%WWWDIR%%/jscripts/jquery/jquery.keyboard-a11y.js
-%%WWWDIR%%/jscripts/jquery/jquery.tabindex.js
-%%WWWDIR%%/jscripts/jquery/ui.base.js
-%%WWWDIR%%/jscripts/jquery/ui.dialog.js
-%%WWWDIR%%/jscripts/jquery/ui.draggable.js
-%%WWWDIR%%/jscripts/jquery/ui.droppable.js
 %%WWWDIR%%/jscripts/jquery.js
-%%WWWDIR%%/jscripts/json/json2.js
+%%WWWDIR%%/jscripts/opensocial/activity.js
+%%WWWDIR%%/jscripts/opensocial/address.js
+%%WWWDIR%%/jscripts/opensocial/all_opensocial.php
+%%WWWDIR%%/jscripts/opensocial/bodyType.js
+%%WWWDIR%%/jscripts/opensocial/collection.js
+%%WWWDIR%%/jscripts/opensocial/datarequest.js
+%%WWWDIR%%/jscripts/opensocial/dataresponse.js
+%%WWWDIR%%/jscripts/opensocial/email.js
+%%WWWDIR%%/jscripts/opensocial/enum.js
+%%WWWDIR%%/jscripts/opensocial/environment.js
+%%WWWDIR%%/jscripts/opensocial/message.js
+%%WWWDIR%%/jscripts/opensocial/name.js
+%%WWWDIR%%/jscripts/opensocial/opensocial.js
+%%WWWDIR%%/jscripts/opensocial/organization.js
+%%WWWDIR%%/jscripts/opensocial/person.js
+%%WWWDIR%%/jscripts/opensocial/phone.js
+%%WWWDIR%%/jscripts/opensocial/responseitem.js
+%%WWWDIR%%/jscripts/opensocial/url.js
 %%WWWDIR%%/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/license.txt
 %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/editor_plugin.js
@@ -1061,12 +1166,21 @@
 %%WWWDIR%%/mods/_standard/chat/module_delete.php
 %%WWWDIR%%/mods/_standard/course_email/module.php
 %%WWWDIR%%/mods/_standard/course_email/module.xml
+%%WWWDIR%%/mods/_standard/course_tools/module.php
+%%WWWDIR%%/mods/_standard/course_tools/module.xml
 %%WWWDIR%%/mods/_standard/directory/module.php
 %%WWWDIR%%/mods/_standard/directory/module.xml
 %%WWWDIR%%/mods/_standard/faq/module.php
 %%WWWDIR%%/mods/_standard/faq/module.xml
 %%WWWDIR%%/mods/_standard/faq/module_backup.php
 %%WWWDIR%%/mods/_standard/faq/module_delete.php
+%%WWWDIR%%/mods/_standard/farchive/forum_post.php
+%%WWWDIR%%/mods/_standard/farchive/index.php
+%%WWWDIR%%/mods/_standard/farchive/index_instructor.php
+%%WWWDIR%%/mods/_standard/farchive/module.php
+%%WWWDIR%%/mods/_standard/farchive/module.xml
+%%WWWDIR%%/mods/_standard/farchive/send_zip_archive.php
+%%WWWDIR%%/mods/_standard/farchive/styles.css
 %%WWWDIR%%/mods/_standard/file_storage/module.php
 %%WWWDIR%%/mods/_standard/file_storage/module.xml
 %%WWWDIR%%/mods/_standard/file_storage/module_delete.php
@@ -1080,12 +1194,31 @@
 %%WWWDIR%%/mods/_standard/google_search/module.php
 %%WWWDIR%%/mods/_standard/google_search/module.xml
 %%WWWDIR%%/mods/_standard/google_search/side_menu.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/README
+%%WWWDIR%%/mods/_standard/gradebook/edit_marks.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_add.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_delete.php
+%%WWWDIR%%/mods/_standard/gradebook/grade_scale_edit.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook.png
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_add_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_delete_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_edit_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/gradebook_tests.php
+%%WWWDIR%%/mods/_standard/gradebook/html/grade_scale_add_edit.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/import_export_external_marks.php
+%%WWWDIR%%/mods/_standard/gradebook/lib/gradebook.inc.php
+%%WWWDIR%%/mods/_standard/gradebook/module.php
+%%WWWDIR%%/mods/_standard/gradebook/module.xml
+%%WWWDIR%%/mods/_standard/gradebook/my_gradebook.php
+%%WWWDIR%%/mods/_standard/gradebook/update_gradebook.php
+%%WWWDIR%%/mods/_standard/gradebook/verify_list.php
+%%WWWDIR%%/mods/_standard/gradebook/verify_tests.php
 %%WWWDIR%%/mods/_standard/links/module.php
 %%WWWDIR%%/mods/_standard/links/module.xml
 %%WWWDIR%%/mods/_standard/links/module_backup.php
 %%WWWDIR%%/mods/_standard/links/module_delete.php
 %%WWWDIR%%/mods/_standard/links/module_groups.php
-%%WWWDIR%%/mods/_standard/patcher/README
 %%WWWDIR%%/mods/_standard/patcher/classes/Patch.class.php
 %%WWWDIR%%/mods/_standard/patcher/classes/PatchCreator.class.php
 %%WWWDIR%%/mods/_standard/patcher/classes/PatchListParser.class.php
@@ -1094,11 +1227,8 @@
 %%WWWDIR%%/mods/_standard/patcher/include/json.inc.php
 %%WWWDIR%%/mods/_standard/patcher/include/patch_xml_template.inc.php
 %%WWWDIR%%/mods/_standard/patcher/index_admin.php
-%%WWWDIR%%/mods/_standard/patcher/module.css
 %%WWWDIR%%/mods/_standard/patcher/module.php
-%%WWWDIR%%/mods/_standard/patcher/module.sql
 %%WWWDIR%%/mods/_standard/patcher/module.xml
-%%WWWDIR%%/mods/_standard/patcher/module_install.php
 %%WWWDIR%%/mods/_standard/patcher/myown_patches.php
 %%WWWDIR%%/mods/_standard/patcher/patch_create.php
 %%WWWDIR%%/mods/_standard/patcher/patch_creator.php
@@ -1127,8 +1257,16 @@
 %%WWWDIR%%/mods/_standard/statistics/module.xml
 %%WWWDIR%%/mods/_standard/statistics/module_backup.php
 %%WWWDIR%%/mods/_standard/statistics/module_delete.php
+%%WWWDIR%%/mods/_standard/student_tools/icon.gif
+%%WWWDIR%%/mods/_standard/student_tools/index.php
+%%WWWDIR%%/mods/_standard/student_tools/instructor_index.php
 %%WWWDIR%%/mods/_standard/student_tools/module.php
 %%WWWDIR%%/mods/_standard/student_tools/module.xml
+%%WWWDIR%%/mods/_standard/student_tools/module_delete.php
+%%WWWDIR%%/mods/_standard/student_tools/module_install.php
+%%WWWDIR%%/mods/_standard/support_tools/module.php
+%%WWWDIR%%/mods/_standard/support_tools/scaffolds.php
+%%WWWDIR%%/mods/_standard/support_tools/side_menu.inc.php
 %%WWWDIR%%/mods/_standard/tests/module.php
 %%WWWDIR%%/mods/_standard/tests/module.xml
 %%WWWDIR%%/mods/_standard/tests/module_backup.php
@@ -1138,27 +1276,7 @@
 %%WWWDIR%%/mods/_standard/tile_search/module.xml
 %%WWWDIR%%/mods/_standard/tracker/module.php
 %%WWWDIR%%/mods/_standard/tracker/module.xml
-%%WWWDIR%%/mods/hello_world/hello_world.jpg
-%%WWWDIR%%/mods/hello_world/index.php
-%%WWWDIR%%/mods/hello_world/index_admin.php
-%%WWWDIR%%/mods/hello_world/index_instructor.php
-%%WWWDIR%%/mods/hello_world/index_mystart.php
-%%WWWDIR%%/mods/hello_world/index_public.php
-%%WWWDIR%%/mods/hello_world/module.css
-%%WWWDIR%%/mods/hello_world/module.php
-%%WWWDIR%%/mods/hello_world/module.sql
-%%WWWDIR%%/mods/hello_world/module.xml
-%%WWWDIR%%/mods/hello_world/module_backup.php
-%%WWWDIR%%/mods/hello_world/module_cron.php
-%%WWWDIR%%/mods/hello_world/module_delete.php
-%%WWWDIR%%/mods/hello_world/module_install.php
-%%WWWDIR%%/mods/hello_world/side_menu.inc.php
 %%WWWDIR%%/mods/index.html
-%%WWWDIR%%/mods/scorm_packages/module.php
-%%WWWDIR%%/mods/scorm_packages/module.sql
-%%WWWDIR%%/mods/scorm_packages/module.xml
-%%WWWDIR%%/mods/scorm_packages/module_install.php
-%%WWWDIR%%/mods/scorm_packages/possible_module_backup.php
 %%WWWDIR%%/my_stats.php
 %%WWWDIR%%/overlib.js
 %%WWWDIR%%/overlib_mini.js
@@ -1225,6 +1343,7 @@
 %%WWWDIR%%/themes/blumin/theme_info.xml
 %%WWWDIR%%/themes/default/confirmmessage.tmpl.php
 %%WWWDIR%%/themes/default/content.tmpl.php
+%%WWWDIR%%/themes/default/directory.tmpl.php
 %%WWWDIR%%/themes/default/errormessage.tmpl.php
 %%WWWDIR%%/themes/default/feedbackmessage.tmpl.php
 %%WWWDIR%%/themes/default/forms.css
@@ -1272,38 +1391,48 @@
 %%WWWDIR%%/themes/default/test_questions/footer.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/header.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/likert.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/likert_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/likert_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/likert_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/likert_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/long.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/long_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/long_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/long_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/long_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/manifest_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/manifest_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matching.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matching_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matching_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matching_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matching_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matchingdd.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/matchingdd_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matchingdd_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matchingdd_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/matchingdd_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multianswer.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multianswer_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multianswer_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multianswer_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multianswer_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multichoice.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/multichoice_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multichoice_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multichoice_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/multichoice_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/ordering.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/ordering_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/ordering_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/ordering_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/ordering_stats.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/truefalse.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/truefalse_qti_1p2.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/truefalse_qti_2p1.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/truefalse_result.tmpl.php
 %%WWWDIR%%/themes/default/test_questions/truefalse_stats.tmpl.php
+%%WWWDIR%%/themes/default/test_questions/wrapper.tmpl.php
 %%WWWDIR%%/themes/default/theme.cfg.php
 %%WWWDIR%%/themes/default/theme_info.xml
 %%WWWDIR%%/themes/default/users/browse.tmpl.php
@@ -1466,6 +1595,8 @@
 %%WWWDIR%%/tools/ims/ims_export.php
 %%WWWDIR%%/tools/ims/ims_import.php
 %%WWWDIR%%/tools/ims/index.php
+%%WWWDIR%%/tools/imscc/ims_export.php
+%%WWWDIR%%/tools/imscc/ims_import.php
 %%WWWDIR%%/tools/index.php
 %%WWWDIR%%/tools/links/add.php
 %%WWWDIR%%/tools/links/categories.php
@@ -1541,7 +1672,9 @@
 %%WWWDIR%%/tools/tests/edit_question_tf.php
 %%WWWDIR%%/tools/tests/edit_question_truefalse.php
 %%WWWDIR%%/tools/tests/edit_test.php
+%%WWWDIR%%/tools/tests/export_test.php
 %%WWWDIR%%/tools/tests/form_editor.php
+%%WWWDIR%%/tools/tests/import_test.php
 %%WWWDIR%%/tools/tests/index.php
 %%WWWDIR%%/tools/tests/preview.php
 %%WWWDIR%%/tools/tests/preview_question.php
@@ -1549,11 +1682,11 @@
 %%WWWDIR%%/tools/tests/question_cats_delete.php
 %%WWWDIR%%/tools/tests/question_cats_manage.php
 %%WWWDIR%%/tools/tests/question_db.php
+%%WWWDIR%%/tools/tests/question_import.php
 %%WWWDIR%%/tools/tests/question_remove.php
 %%WWWDIR%%/tools/tests/questions.php
 %%WWWDIR%%/tools/tests/results.php
 %%WWWDIR%%/tools/tests/results_all.php
-%%WWWDIR%%/tools/tests/results_all_csv.php
 %%WWWDIR%%/tools/tests/results_all_quest.php
 %%WWWDIR%%/tools/tests/results_quest_long.php
 %%WWWDIR%%/tools/tests/view_results.php
@@ -1566,10 +1699,14 @@
 %%WWWDIR%%/tools/tracker/student_usage.php
 %%WWWDIR%%/tools/tracker.php
 %%WWWDIR%%/tools/view_results.php
+%%WWWDIR%%/users/atutor_settings.inc.php
 %%WWWDIR%%/users/browse.php
 %%WWWDIR%%/users/contact_instructor.php
+%%WWWDIR%%/users/content_settings.inc.php
+%%WWWDIR%%/users/control_settings.inc.php
 %%WWWDIR%%/users/course_stats.php
 %%WWWDIR%%/users/create_course.php
+%%WWWDIR%%/users/display_settings.inc.php
 %%WWWDIR%%/users/email_change.php
 %%WWWDIR%%/users/index.php
 %%WWWDIR%%/users/password_change.php
@@ -1581,7 +1718,7 @@
 %%WWWDIR%%/users/remove_course.php
 %%WWWDIR%%/users/request_instructor.php
 %%WWWDIR%%/users/search.php
-@dirrm %%WWWDIR%%/content
+%%WWWDIR%%/users/tool_settings.inc.php
 @dirrm %%WWWDIR%%/admin/admins
 @dirrm %%WWWDIR%%/admin/backup
 @dirrm %%WWWDIR%%/admin/enrollment
@@ -1595,6 +1732,7 @@
 @dirrm %%WWWDIR%%/chat/include/html
 @dirrm %%WWWDIR%%/chat/include
 @dirrm %%WWWDIR%%/chat
+@dirrm %%WWWDIR%%/content
 @dirrm %%WWWDIR%%/documentation/admin/en
 @dirrm %%WWWDIR%%/documentation/admin/fr
 @dirrm %%WWWDIR%%/documentation/admin
@@ -1626,11 +1764,13 @@
 @dirrm %%WWWDIR%%/images/tree
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/inbox
+@dirrm %%WWWDIR%%/include/classes/A4a
 @dirrm %%WWWDIR%%/include/classes/Backup
 @dirrm %%WWWDIR%%/include/classes/ErrorHandler
 @dirrm %%WWWDIR%%/include/classes/Language
 @dirrm %%WWWDIR%%/include/classes/Message
 @dirrm %%WWWDIR%%/include/classes/Module
+@dirrm %%WWWDIR%%/include/classes/QTI
 @dirrm %%WWWDIR%%/include/classes/Savant2/Savant2
 @dirrm %%WWWDIR%%/include/classes/Savant2
 @dirrm %%WWWDIR%%/include/classes/Themes
@@ -1647,6 +1787,7 @@
 @dirrm %%WWWDIR%%/include/html/frameset
 @dirrm %%WWWDIR%%/include/html
 @dirrm %%WWWDIR%%/include/ims
+@dirrm %%WWWDIR%%/include/imscc
 @dirrm %%WWWDIR%%/include/lib
 @dirrm %%WWWDIR%%/include/phpCache
 @dirrm %%WWWDIR%%/include
@@ -1655,9 +1796,21 @@
 @dirrm %%WWWDIR%%/install/include/classes
 @dirrm %%WWWDIR%%/install/include
 @dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/jscripts/fluid
-@dirrm %%WWWDIR%%/jscripts/jquery
-@dirrm %%WWWDIR%%/jscripts/json
+@dirrm %%WWWDIR%%/jscripts/fluid-components/css
+@dirrm %%WWWDIR%%/jscripts/fluid-components/html/templates
+@dirrm %%WWWDIR%%/jscripts/fluid-components/html
+@dirrm %%WWWDIR%%/jscripts/fluid-components/images/infusion-theme
+@dirrm %%WWWDIR%%/jscripts/fluid-components/images/shared
+@dirrm %%WWWDIR%%/jscripts/fluid-components/images/uploader
+@dirrm %%WWWDIR%%/jscripts/fluid-components/images
+@dirrm %%WWWDIR%%/jscripts/fluid-components/js/fluid
+@dirrm %%WWWDIR%%/jscripts/fluid-components/js/jquery
+@dirrm %%WWWDIR%%/jscripts/fluid-components/js/json
+@dirrm %%WWWDIR%%/jscripts/fluid-components/js/swfupload
+@dirrm %%WWWDIR%%/jscripts/fluid-components/js
+@dirrm %%WWWDIR%%/jscripts/fluid-components/swfupload
+@dirrm %%WWWDIR%%/jscripts/fluid-components
+@dirrm %%WWWDIR%%/jscripts/opensocial
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/acheck/js
@@ -1787,11 +1940,16 @@
 @dirrm %%WWWDIR%%/mods/_standard/calendar
 @dirrm %%WWWDIR%%/mods/_standard/chat
 @dirrm %%WWWDIR%%/mods/_standard/course_email
+@dirrm %%WWWDIR%%/mods/_standard/course_tools
 @dirrm %%WWWDIR%%/mods/_standard/directory
 @dirrm %%WWWDIR%%/mods/_standard/faq
+@dirrm %%WWWDIR%%/mods/_standard/farchive
 @dirrm %%WWWDIR%%/mods/_standard/file_storage
 @dirrm %%WWWDIR%%/mods/_standard/forums
 @dirrm %%WWWDIR%%/mods/_standard/google_search
+@dirrm %%WWWDIR%%/mods/_standard/gradebook/html
+@dirrm %%WWWDIR%%/mods/_standard/gradebook/lib
+@dirrm %%WWWDIR%%/mods/_standard/gradebook
 @dirrm %%WWWDIR%%/mods/_standard/links
 @dirrm %%WWWDIR%%/mods/_standard/patcher/classes
 @dirrm %%WWWDIR%%/mods/_standard/patcher/include
@@ -1803,12 +1961,11 @@
 @dirrm %%WWWDIR%%/mods/_standard/sitemap
 @dirrm %%WWWDIR%%/mods/_standard/statistics
 @dirrm %%WWWDIR%%/mods/_standard/student_tools
+@dirrm %%WWWDIR%%/mods/_standard/support_tools
 @dirrm %%WWWDIR%%/mods/_standard/tests
 @dirrm %%WWWDIR%%/mods/_standard/tile_search
 @dirrm %%WWWDIR%%/mods/_standard/tracker
 @dirrm %%WWWDIR%%/mods/_standard
-@dirrm %%WWWDIR%%/mods/hello_world
-@dirrm %%WWWDIR%%/mods/scorm_packages
 @dirrm %%WWWDIR%%/mods
 @dirrm %%WWWDIR%%/packages
 @dirrm %%WWWDIR%%/polls
@@ -1845,6 +2002,7 @@
 @dirrm %%WWWDIR%%/tools/glossary
 @dirrm %%WWWDIR%%/tools/groups
 @dirrm %%WWWDIR%%/tools/ims
+@dirrm %%WWWDIR%%/tools/imscc
 @dirrm %%WWWDIR%%/tools/links
 @dirrm %%WWWDIR%%/tools/news
 @dirrm %%WWWDIR%%/tools/packages/scorm-1.2/images
