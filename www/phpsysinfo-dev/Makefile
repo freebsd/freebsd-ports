@@ -11,13 +11,17 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	walt@relnor.com
-COMMENT=	A php script that displays info about the host being accessed
+COMMENT=	A PHP script for displaying system information
 
 USE_PHP=	pcre xml simplexml
 WANT_PHP_WEB=	yes
 
+CONFLICTS=	phpsysinfo-2.[0-9]*
+
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 NO_BUILD=	yes
+
+LATEST_LINK=	phpsysinfo
 
 .include <bsd.port.pre.mk>
 
