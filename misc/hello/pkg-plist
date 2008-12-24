@@ -3,11 +3,11 @@ bin/hello
 %%NLS%%share/locale/ca/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/da/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/de/LC_MESSAGES/hello.mo
-%%NLS%%share/locale/de_DE/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/el/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/es/LC_MESSAGES/hello.mo
-%%NLS%%share/locale/es_AR/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/et/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/hello.mo
@@ -24,18 +24,21 @@ bin/hello
 %%NLS%%share/locale/ka/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/rm/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/th/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/hello.mo
@@ -45,3 +48,5 @@ bin/hello
 %%NLS%%@dirrmtry share/locale/es_AR
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/rm/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rm
