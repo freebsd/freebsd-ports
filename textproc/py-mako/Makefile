@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	mako
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://www.makotemplates.org/downloads/ \
-		${MASTER_SITE_CHEESESHOP} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	source/M/Mako
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Mako-${PORTVERSION}
 
