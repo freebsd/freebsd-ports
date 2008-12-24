@@ -579,6 +579,7 @@
     SUBDIR += p5-Text-Delimited
     SUBDIR += p5-Text-Diff
     SUBDIR += p5-Text-Diff-HTML
+    SUBDIR += p5-Text-Diff-Parser
     SUBDIR += p5-Text-Diff3
     SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-Emoticon
