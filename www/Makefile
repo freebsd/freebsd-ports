@@ -1147,7 +1147,8 @@
     SUBDIR += php4-session
     SUBDIR += php5-session
     SUBDIR += php5-tidy
-    SUBDIR += phpSysInfo
+    SUBDIR += phpsysinfo
+    SUBDIR += phpsysinfo-dev
     SUBDIR += phpbb
     SUBDIR += phpbb-devel
     SUBDIR += phpbb3
