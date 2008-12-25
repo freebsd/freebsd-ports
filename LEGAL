@@ -570,6 +570,7 @@ so-7-ga-bin-linux-en.*	editors/staroffice70	Must be bought and downloaded
 						directly from Sun via WWW
 						interface
 socks5-*		net/socks5		No commercial use
+sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 SpaceAryarya-KXL-*	games/spacearyarya	Possible copyright infringement
 speedmgmt*		net/pppoa		Not for redistribution -- see
 						http://www.alcatel.com/consumer-
