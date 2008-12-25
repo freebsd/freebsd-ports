@@ -1,0 +1,29 @@
+# New ports collection makefile for:	simpleirc
+# Date created:		24. Dez 2008
+# Whom:			Dennis Herrmann <adox@mcx2.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	simpleirc
+PORTVERSION=	1.0
+CATEGORIES=	irc
+MASTER_SITES=	http://code.suckless.org/dl/tools/
+DISTNAME=	sic-${PORTVERSION}
+
+MAINTAINER=	adox@mcx2.org
+COMMENT=	An extremly simple IRC client
+
+MAN1=		simpleirc.1
+PLIST_FILES=	bin/simpleirc
+PORTDOCS=	README LICENSE
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
