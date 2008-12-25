@@ -1,6 +1,6 @@
---- share/pnp/include/function.inc.php.orig	2008-06-18 12:02:41.000000000 +0400
-+++ share/pnp/include/function.inc.php	2008-08-16 23:35:30.000000000 +0400
-@@ -819,114 +819,15 @@
+--- share/pnp/include/function.inc.php.orig	2008-10-11 18:13:34.000000000 +0400
++++ share/pnp/include/function.inc.php	2008-12-24 01:03:58.000000000 +0300
+@@ -982,123 +982,6 @@
  }
  
  function doPDF($display,$data) {
@@ -54,12 +54,16 @@
 -				$pdf->AddPage();
 -				if($use_bg){$pdf->useTemplate($tplIdx);}	
 -			}
--
--			$pdf->SetFont('Arial', '', 10);
--			$pdf->CELL(120, 5, $d["n_hostname"]." / ".$d["n_servicedesc"] , 0, 1);
--			$pdf->SetFont('Arial', '', 8);
--			$pdf->CELL(120, 5, $d["view_title"]. " (" . $d["f_start"]." - ".$d["f_end"].")", 0, 1);
--
+-                        if($d['source'] == 1){
+-                            $pdf->SetFont('Arial', '', 10);
+-                            $pdf->CELL(120, 5, $d["n_hostname"]." / ".$d["n_servicedesc"] , 0, 1);
+-                            $pdf->SetFont('Arial', '', 8);
+-                            $pdf->CELL(120, 5, $d["view_title"]. " (" . $d["f_start"]." - ".$d["f_end"].")", 0, 1);
+-                            $pdf->CELL(120, 5, _DATASOURCE ." ".$d["ds_name"], 0, 1);
+-                        }else{
+-                            $pdf->SetFont('Arial', '', 8);
+-                            $pdf->CELL(120, 5, _DATASOURCE ." ".$d["ds_name"], 0, 1);
+-                        }
 -			$img = saveImage($d['rrd_opts']);
 -                        $Y = $pdf->GetY();
 -			$cell_height = ($img['height'] * 0.23);
@@ -96,10 +100,16 @@
 -                                $pdf->AddPage();
 -				if($use_bg){$pdf->useTemplate($tplIdx);}
 -                        }
--                        $pdf->SetFont('Arial', '', 10);
--                        $pdf->CELL(120, 7, $d["hostname"]." / ".$d["servicedesc"] , 0, 1);
--                        $pdf->SetFont('Arial', '', 8);
--                        $pdf->CELL(120, 5, $d["f_start"]." - ".$d["f_end"], 0, 1);
+-                        if($d['source'] == 1){
+-                            $pdf->SetFont('Arial', '', 10);
+-                            $pdf->CELL(120, 5, $d["n_hostname"]." / ".$d["n_servicedesc"] , 0, 1);
+-                            $pdf->SetFont('Arial', '', 8);
+-                            $pdf->CELL(120, 5, $d["view_title"]. " (" . $d["f_start"]." - ".$d["f_end"].")", 0, 1);
+-                            $pdf->CELL(120, 5, _DATASOURCE ." ".$d["ds_name"], 0, 1);
+-                        }else{
+-                            $pdf->SetFont('Arial', '', 8);
+-                            $pdf->CELL(120, 5, _DATASOURCE ." ".$d["ds_name"], 0, 1);
+-                        }
 -
 -			$img = saveImage($d['rrd_opts']);
 -                        $Y = $pdf->GetY();
@@ -110,21 +120,11 @@
 -			unlink($img['name']);
 -                }
 -        }
--
--	$pdf->Output();
-+	print "<html>\n";
-+	print "<head>\n";
-+	print "<title>Failed</title>\n";
-+	print "</head>\n";
-+	print "<body>\n";
-+	print "<h1>Failed</h1>\n";
-+	print "</body>\n";
-+	print "<html>\n";
-+	exit(0);
+-	$pdf->Output("pnp4nagios.pdf","I");
+ 	exit;
  }
  
- function doStrip($string) {
-@@ -1173,23 +1074,6 @@
+@@ -1350,23 +1233,6 @@
  }
  
  function doPDFIcon($type){
@@ -139,7 +139,7 @@
 -
 -	switch($type){
 -		case "PAGE":
--			print "<a href=\"index.php?page=$page&display=$display&view=$view&do=pdf\"><img src=\"images/pdf.png\" HEIGHT=\"32px\" WIDTH=\"32px\" title=\"Display PDF\" ></a>\n";
+-			print "<a href=\"index.php?page=$page&display=$display&view=$view&end=$end&start=$start&do=pdf\"><img src=\"images/pdf.png\" HEIGHT=\"32px\" WIDTH=\"32px\" title=\"Display PDF\" ></a>\n";
 -			break;
 -		default:
 -			print "<a href=\"index.php?host=$hostname&srv=$servicedesc&display=$display&view=$view&source=$source&end=$end&start=$start&do=pdf\"><img src=\"images/pdf.png\" HEIGHT=\"32px\" WIDTH=\"32px\" title=\"Display PDF\" ></a>\n";

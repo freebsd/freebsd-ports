@@ -1,4 +1,5 @@
 bin/npcd
+etc/pnp/pnp4nagios_release
 etc/pnp/config.php-sample
 etc/pnp/background.pdf-sample
 etc/pnp/check_commands/check_nwstat.cfg-sample
@@ -7,6 +8,7 @@ etc/pnp/process_perfdata.cfg-sample
 etc/pnp/rra.cfg-sample
 etc/pnp/npcd.cfg-sample
 libexec/process_perfdata.pl
+libexec/check_pnp_rrds.pl
 %%WWWDIR%%/images/ack.png
 %%WWWDIR%%/images/calendar.png
 %%WWWDIR%%/images/critical.png
@@ -27,6 +29,7 @@ libexec/process_perfdata.pl
 %%WWWDIR%%/images/warning.png
 %%WWWDIR%%/images/xml.png
 %%WWWDIR%%/images/zoom.png
+%%WWWDIR%%/include/tpl_function.inc.php
 %%WWWDIR%%/include/font/makefont/cp1250.map
 %%WWWDIR%%/include/font/makefont/cp1251.map
 %%WWWDIR%%/include/font/makefont/cp1252.map
@@ -112,6 +115,13 @@ libexec/process_perfdata.pl
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD15.php
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD5.php
 %%WWWDIR%%/templates.dist/check_nwstat_ofiles.php
+%%WWWDIR%%/templates.dist/check_oracle_connection-time.php
+%%WWWDIR%%/templates.dist/check_oracle_health_connection-time.php
+%%WWWDIR%%/templates.dist/check_oracle_health_pga-in-memory-sort-ratio.php
+%%WWWDIR%%/templates.dist/check_oracle_health_redo-io-traffic.php
+%%WWWDIR%%/templates.dist/check_oracle_health_switch-interval.php
+%%WWWDIR%%/templates.dist/check_oracle_health_tablespace-usage.php
+%%WWWDIR%%/templates.dist/check_pnp_rrds.php
 %%WWWDIR%%/templates.dist/check_smtp.php
 %%WWWDIR%%/templates.dist/check_snmp_int-bits.php
 %%WWWDIR%%/templates.dist/check_snmp_int.php
@@ -123,7 +133,6 @@ libexec/process_perfdata.pl
 %%WWWDIR%%/ajax.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/zoom.php
-
 @dirrmtry %%WWWDIR%%/templates.dist
 @dirrmtry %%WWWDIR%%/templates
 @dirrmtry %%WWWDIR%%/lang

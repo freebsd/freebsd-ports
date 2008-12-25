@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pnp
-PORTVERSION=	0.4.10
-PORTREVISION=	3
+PORTVERSION=	0.4.12
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pnp4nagios
+MASTER_SITES=	SF/pnp4nagios
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios performance data collector and grapher
@@ -43,6 +41,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share::pnp::include::function.inc.php
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
 	--prefix=${LOCALBASE} \
+	--sysconfdir=${PREFIX}/etc/pnp \
+	--datarootdir=${WWWDIR} \
 	--datadir=${WWWDIR} \
 	--localstatedir=/var/log \
 	--with-rrdtool=${LOCALBASE}/bin/rrdtool \
