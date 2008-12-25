@@ -9,6 +9,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ComboBox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Const.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/CurvedText.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DetailedList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DetailedOutline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DockManager.pm
@@ -34,8 +35,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Label.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Lists.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/MDI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Make.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/MsgBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/noARGV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Notebooks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Outlines.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PodView.pm
@@ -60,12 +61,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/sysimage.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2/FileDialog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/AnimateGIF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/GBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/TransparencyControl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/gif.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/jpeg.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/tiff.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/tiff.fm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/png.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/round3d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/tabset.pm
@@ -138,6 +141,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/classes.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples/Sample.fm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples/Widgety.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/animate
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/Hand.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/amba
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/async
