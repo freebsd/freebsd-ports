@@ -7,7 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.40
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/Geo/IP.pm:${PORTSDIR}/net/p5-Geo-IP \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		clamd:${PORTSDIR}/security/clamav
+		${SITE_PERL}/Clamd.pm:${PORTSDIR}/mail/p5-Clamd
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PERL_CONFIGURE=	yes
@@ -43,7 +43,7 @@ MAN3=		Qpsmtpd::Command.3 \
 		Qpsmtpd::Postfix.3 \
 		Apache::Qpsmtpd.3
 
-USE_RC_SUBR=	qpsmtpd.sh
+USE_RC_SUBR=	qpsmtpd
 
 pre-configure:
 	@${RM} ${WRKSRC}/plugins/milter
