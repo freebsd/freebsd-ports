@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strace
-PORTVERSION=	4.5.7
+PORTVERSION=	4.5.18
 CATEGORIES=	devel sysutils
 MASTER_SITES=	SF
 
@@ -23,24 +23,22 @@ PLIST_FILES=	bin/strace bin/strace-graph
 MAN1=		strace.1
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	*
+PORTDOCS=	AUTHORS COPYRIGHT CREDITS ChangeLog NEWS PORTING \
+		README README-freebsd README-svr4 TODO
 .endif
 
 post-patch:
 	${REINPLACE_CMD} 's,/usr/bin/perl,${PERL},' ${WRKSRC}/strace-graph
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/strace-graph ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/strace.1 ${PREFIX}/man/man1
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/strace.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in AUTHORS COPYRIGHT CREDITS ChangeLog NEWS PORTING \
-	README README-freebsd README-svr4 TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
