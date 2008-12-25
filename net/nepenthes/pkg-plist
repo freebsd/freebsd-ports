@@ -15,6 +15,9 @@ etc/nepenthes/nepenthes.conf.dist
 etc/nepenthes/shellcode-generic.conf
 etc/nepenthes/submit-file.conf
 etc/nepenthes/submit-gotek.conf
+etc/nepenthes/submit-http.conf
+etc/nepenthes/submit-mwserv.conf
+etc/nepenthes/submit-postgres.conf
 etc/nepenthes/submit-norman.conf
 etc/nepenthes/vuln-asn1.conf
 etc/nepenthes/vuln-bagle.conf
@@ -33,7 +36,6 @@ etc/nepenthes/vuln-netdde.conf
 etc/nepenthes/vuln-optix.conf
 etc/nepenthes/vuln-pnp.conf
 etc/nepenthes/vuln-sasserftpd.conf
-etc/nepenthes/vuln-ssh.conf
 etc/nepenthes/vuln-sub7.conf
 etc/nepenthes/vuln-upnp.conf
 etc/nepenthes/vuln-veritas.conf
@@ -69,6 +71,9 @@ lib/nepenthes/downloadtftp.so
 lib/nepenthes/logdownload.a
 lib/nepenthes/logdownload.la
 lib/nepenthes/logdownload.so
+lib/nepenthes/loghexdump.a
+lib/nepenthes/loghexdump.la
+lib/nepenthes/loghexdump.so
 lib/nepenthes/logirc.a
 lib/nepenthes/logirc.la
 lib/nepenthes/logirc.so
@@ -108,6 +113,12 @@ lib/nepenthes/submitfile.so
 lib/nepenthes/submitgotek.a
 lib/nepenthes/submitgotek.la
 lib/nepenthes/submitgotek.so
+lib/nepenthes/submithttp.a
+lib/nepenthes/submithttp.la
+lib/nepenthes/submithttp.so
+lib/nepenthes/submitmwserv.a
+lib/nepenthes/submitmwserv.la
+lib/nepenthes/submitmwserv.so
 lib/nepenthes/submitnorman.a
 lib/nepenthes/submitnorman.la
 lib/nepenthes/submitnorman.so
@@ -168,6 +179,9 @@ lib/nepenthes/vulnrealvnc.so
 lib/nepenthes/vulnsasserftpd.a
 lib/nepenthes/vulnsasserftpd.la
 lib/nepenthes/vulnsasserftpd.so
+lib/nepenthes/vulnsav.a
+lib/nepenthes/vulnsav.la
+lib/nepenthes/vulnsav.so
 lib/nepenthes/vulnssh.a
 lib/nepenthes/vulnssh.la
 lib/nepenthes/vulnssh.so
