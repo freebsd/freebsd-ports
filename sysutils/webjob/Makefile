@@ -6,33 +6,39 @@
 #
 
 PORTNAME=		webjob
-PORTVERSION=		1.6.0
+PORTVERSION=		1.8.0
 CATEGORIES=		sysutils security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webjob
+MASTER_SITES=		SF
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		klm@uidzero.org
 COMMENT=		Download and execute a program over HTTP/HTTPS
 
-GNU_CONFIGURE=		YES
+GNU_CONFIGURE=		yes
+USE_PERL5_BUILD=	yes
+MAN1=			webjob.1 xshar.1
 
-.if defined(WITHOUT_PAD)
-PLIST_SUB+=		PAD="@comment "
-.else
-PLIST_SUB+=		PAD=""
+OPTIONS=		PAD_TOOLS "install PaD tools" on \
+			DSV_TOOLS "install DSV tools" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PAD_TOOLS)
+PLIST_SUB+=		PAD_TOOLS=""
 CONFIGURE_ARGS+=	--with-pad-tools
+.else
+PLIST_SUB+=		PAD_TOOLS="@comment "
 .endif
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--without-ssl
 .else
-USE_OPENSSL=		YES
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.if defined(WITHOUT_DSV) # Note: DSV requires SSL
-PLIST_SUB+=		DSV="@comment "
+.if defined(WITHOUT_DSV_TOOLS) # Note: DSV requires SSL
+PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
-PLIST_SUB+=		DSV=""
+PLIST_SUB+=		DSV_TOOLS=""
 CONFIGURE_ARGS+=	--with-dsv-tools
 MAN1+=			webjob-dsvtool.1
 .endif
@@ -42,9 +48,7 @@ MAN1+=			webjob-dsvtool.1
 CFLAGS+=		-static
 .endif
 
-MAN1+=			webjob.1
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/webjob
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
