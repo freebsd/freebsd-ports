@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		macroscope
-PORTVERSION=		1.0.2938
+PORTVERSION=		1.0.3787
 CATEGORIES=		net-mgmt
 MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
 			http://white-raven.pisem.net/
@@ -17,7 +17,8 @@ COMMENT=		User and IP traffic management with Web interface
 
 LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
 			odbc:${PORTSDIR}/databases/unixODBC \
-			pcap:${PORTSDIR}/net/libpcap
+			pcap:${PORTSDIR}/net/libpcap \
+			gd:${PORTSDIR}/graphics/gd
 
 USE_RC_SUBR=		${PORTNAME}
 USE_BZIP2=		yes
