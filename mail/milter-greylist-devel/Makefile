@@ -7,7 +7,7 @@
 
 PORTNAME=	milter-greylist-devel
 DISTVERSION=	2.0b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${DISTVERSION}
