@@ -1491,6 +1491,7 @@
     SUBDIR += w3mir
     SUBDIR += waccess
     SUBDIR += wacko
+    SUBDIR += wadcomblog
     SUBDIR += wb0
     SUBDIR += wcol
     SUBDIR += web-traceroute
