@@ -2485,6 +2485,7 @@
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubyinlineaccel
+    SUBDIR += rubygem-sequel
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
