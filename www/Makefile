@@ -1507,6 +1507,7 @@
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webobjects
+    SUBDIR += webpy
     SUBDIR += webredirect
     SUBDIR += webreport
     SUBDIR += webresolve
