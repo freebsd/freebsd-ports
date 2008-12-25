@@ -36,6 +36,8 @@ PLIST_FILES+=	${GRUB_DIR}/${f}_stage1_5
 .endfor
 PLIST_FILES+=	${GRUB_DIR}/stage2_eltorito
 
+PORTSCOUT=	limit:^0
+
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL}
 
