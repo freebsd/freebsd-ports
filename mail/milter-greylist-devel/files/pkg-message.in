@@ -1,0 +1,14 @@
+
+------------------------------------------------------------------------
+                              IMPORTANT NOTE
+
+ A sample configuration file has been installed in ${PREFIX}/etc/mail
+ directory. Copy and edit it to suit your needs before launching
+ milter-greylist.
+
+ To run milter-greylist from startup, add miltergreylist_enable="YES"
+ in your /etc/rc.conf or your /etc/rc.conf.local
+
+ See ${DOCSDIR}/README for operation details.
+
+------------------------------------------------------------------------
