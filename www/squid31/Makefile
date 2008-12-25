@@ -48,8 +48,6 @@
 #     Do not use "unlinkd"
 #    --with-aufs-threads=N_THREADS
 #     Tune the number of worker threads for the aufs object
-#    --with-coss-membuf-size
-#     COSS membuf size (default: 1048576 bytes)
 #    --with-filedescriptors=N
 #     Force Squid to use N filedescriptors.
 #    --enable-ntlm-fail-open
@@ -94,20 +92,17 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
-PATCHFILES=	b8920.patch
+PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	10
+SQUID_STABLE_VER=	11
 
 CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
-# disable autotools bootstrapping for now, 3.0.STABLE does not currently
-# require it:
-#USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
@@ -231,11 +226,17 @@ libexec+=	sasl_auth
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
-CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
+CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-basic-auth-helpers="${basic_auth}" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB"
+.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+# XXX This currently only works with heimdal from the base system,
+#     see files/patch-squid_kerb_auth:
+CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
+libexec+=	squid_kerb_auth
+.endif
 
 # Storage schemes:
 
@@ -448,7 +449,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} ""
 .if defined(WITH_SQUID_COSS)
-	@${ECHO_CMD} "Note: COSS support is currently disabled in Squid-3 by the Squid developers."
+	@${ECHO_CMD} "Note: COSS support is currently not available in Squid-3."
 	@${ECHO_CMD} "Please check your squid.conf and comment out any 'cache_dir coss' definitions."
 	@${ECHO_CMD} ""
 .endif
