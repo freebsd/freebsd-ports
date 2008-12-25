@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	32295
+PORTVERSION=	34661
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://svn.collab.net/viewvc/*checkout*/svn/trunk/contrib/client-side/emacs/
+#MASTER_SITES=	http://svn.collab.net/viewvc/*checkout*/svn/trunk/contrib/client-side/emacs/
+MASTER_SITES=	http://svn.collab.net/viewvc/svn/trunk/contrib/client-side/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	psvn.el\?revision=${PORTVERSION}
 EXTRACT_SUFX=	# empty
