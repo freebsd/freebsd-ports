@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpdas
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
