@@ -8,6 +8,7 @@
 %%NLS%%share/locale/pt/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/pidgin-libnotify.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/pidgin-libnotify.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pidgin-libnotify.mo
 lib/purple-2/pidgin-libnotify.so
