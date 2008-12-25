@@ -7,12 +7,13 @@
 
 PORTNAME=	milter-greylist-devel
 DISTVERSION=	2.0b1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Easy-to-use greylist milter for sendmail (development)
 
 MAN5=		greylist.conf.5
@@ -27,14 +28,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	milter-greylist
+SUB_FILES+=	pkg-message
 
 CONFLICTS=	milter-greylist-[1-9]*.*
-
-post-extract:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/mail
@@ -43,18 +40,18 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
 			${PREFIX}/etc/mail/greylist.conf.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
 
 post-install:
 	@${MKDIR} /var/milter-greylist
 	@${CHOWN} smmsp /var/milter-greylist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+.if !defined (NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
-
 	@${TEST} -f /var/db/milter-greylist/greylist.db && ( \
 		${ECHO} "***********************************************************"; \
 		${ECHO} "***********************************************************"; \
@@ -68,7 +65,6 @@ post-install:
 		${ECHO} "***********************************************************"; \
 		${ECHO} "***********************************************************"; \
 	) || ${TRUE}
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
