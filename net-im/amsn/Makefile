@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alvano\'s MSN Messenger
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib

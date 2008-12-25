@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Net_TCLink.pm-${PORTVERSION}
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to for connecting to the TrustCommerce payment gateway
 
 PERL_CONFIGURE=	yes

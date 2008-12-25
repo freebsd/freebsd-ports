@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK Widget to Render MathML Documents
 
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \

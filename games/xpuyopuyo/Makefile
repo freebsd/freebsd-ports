@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game, somewhat like Tetris
 
 USE_GMAKE=	yes

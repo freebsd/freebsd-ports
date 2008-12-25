@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 PERL_CONFIGURE=	5.8.0+

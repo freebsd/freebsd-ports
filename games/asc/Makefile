@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
 LIB_DEPENDS=	paragui.4:${PORTSDIR}/x11-toolkits/paragui \

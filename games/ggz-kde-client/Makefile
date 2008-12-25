@@ -10,7 +10,7 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - KDE Client
 
 GNU_CONFIGURE=	yes

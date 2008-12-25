@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.livinglogic.de/xist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
