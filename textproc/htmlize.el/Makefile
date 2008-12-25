@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	htmlize.el
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://fly.srk.fer.hr/~hniksic/emacs/
 DISTNAME=	${PORTNAME}
@@ -15,10 +14,6 @@ EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
-
-BROKEN=		Size mismatch
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
