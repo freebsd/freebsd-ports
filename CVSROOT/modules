@@ -12405,6 +12405,7 @@ p5-Text-Decorator               ports/textproc/p5-Text-Decorator
 p5-Text-Delimited               ports/textproc/p5-Text-Delimited
 p5-Text-Diff                    ports/textproc/p5-Text-Diff
 p5-Text-Diff-HTML               ports/textproc/p5-Text-Diff-HTML
+p5-Text-Diff-Parser             ports/textproc/p5-Text-Diff-Parser
 p5-Text-Diff3                   ports/textproc/p5-Text-Diff3
 p5-Text-DoubleMetaphone         ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-Emoticon                ports/textproc/p5-Text-Emoticon
@@ -15671,6 +15672,7 @@ p5-text-decorator               ports/textproc/p5-Text-Decorator
 p5-text-delimited               ports/textproc/p5-Text-Delimited
 p5-text-diff                    ports/textproc/p5-Text-Diff
 p5-text-diff-html               ports/textproc/p5-Text-Diff-HTML
+p5-text-diff-parser             ports/textproc/p5-Text-Diff-Parser
 p5-text-diff3                   ports/textproc/p5-Text-Diff3
 p5-text-doublemetaphone         ports/textproc/p5-Text-DoubleMetaphone
 p5-text-emoticon                ports/textproc/p5-Text-Emoticon
@@ -18041,6 +18043,7 @@ py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
 py-hashlib                      ports/security/py-hashlib
+py-hashring                     ports/devel/py-hashring
 py-hcluster                     ports/science/py-hcluster
 py-html2text                    ports/textproc/py-html2text
 py-html5lib                     ports/www/py-html5lib
