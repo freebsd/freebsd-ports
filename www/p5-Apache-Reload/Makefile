@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Reload changed modules
 
 PERL_CONFIGURE=	yes
