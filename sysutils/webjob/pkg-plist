@@ -1,6 +1,8 @@
-%%DSV%%bin/webjob-dsvtool
-%%PAD%%bin/pad-join
-%%PAD%%bin/pad-make-script
-%%PAD%%bin/pad-make-binary
+%%DSV_TOOLS%%bin/webjob-dsvtool
+%%PAD_TOOLS%%bin/pad-join
+%%PAD_TOOLS%%bin/pad-make-script
+%%PAD_TOOLS%%bin/pad-make-binary
 bin/webjob
-etc/webjob.cfg.sample
+bin/xshar
+etc/webjob-execute.cfg.sample
+etc/webjob-get-url.cfg.sample
