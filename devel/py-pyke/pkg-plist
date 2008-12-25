@@ -1,0 +1,2 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/pyke-0.5-py2.5.egg
