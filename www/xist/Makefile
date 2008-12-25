@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	2.15.2
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	www python
 MASTER_SITES=	http://ftp.livinglogic.de/xist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,17 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/ll/__init__.py:${PORTSDIR}/devel/py-ll-core \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}ll-core>=1.11.1:${PORTSDIR}/devel/py-ll-core \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
 
-USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
-USE_BZIP2=	yes
+USE_PYTHON=		2.4+
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
+USE_BZIP2=		yes
 PYDISTUTILS_PKGNAME=	ll-xist
-
-post-install:
-.for file in doc2txt dtd2xsc tld2xsc
-	@${MV} ${PREFIX}/bin/${file}.py ${PREFIX}/bin/${file}
-.endfor
 
 .include <bsd.port.mk>
