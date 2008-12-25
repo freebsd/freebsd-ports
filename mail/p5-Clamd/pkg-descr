@@ -1,0 +1,7 @@
+A library for connecting to and sending commands to a local
+clamd service - an anti-virus daemon process.
+
+You can find more information about clam anti-virus at
+http://www.clamav.org/
+
+WWW:    http://search.cpan.org/dist/Clamd/

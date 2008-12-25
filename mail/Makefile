@@ -308,6 +308,7 @@
     SUBDIR += openwebmail
     SUBDIR += ovs
     SUBDIR += p3scan
+    SUBDIR += p5-Clamd
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
     SUBDIR += p5-Email-Date
