@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.22
+PORTVERSION=	1.27
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,8 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 MAN1=	gencls.1.gz VB.1.gz cfgmaint.1.gz
-MAN3=	Prima::Clipboard.3.gz Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3.gz  \
+MAN3=	Prima::Image::AnimateGIF.3.gz Prima::Clipboard.3.gz Prima::CurvedText.3.gz \
+	Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3.gz \
 	Prima::Menu.3.gz Prima::Object.3.gz Prima::Printer.3.gz Prima::Timer.3.gz  \
 	Prima::Widget.3.gz Prima::Widget::pack.3.gz Prima::Widget::place.3.gz  \
 	Prima::Window.3.gz Prima::codecs.3.gz Prima::gp-problems.3.gz Prima::image-load.3.gz  \
@@ -33,7 +34,7 @@ MAN3=	Prima::Clipboard.3.gz Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3
 	Prima::Lists.3.gz Prima::Header.3.gz Prima::DetailedList.3.gz Prima::DetailedOutline.3.gz  \
 	Prima::Edit.3.gz Prima::ImageViewer.3.gz Prima::IniFile.3.gz Prima::ImageDialog.3.gz  \
 	Prima::InputLine.3.gz Prima::IntUtils.3.gz Prima::KeySelector.3.gz Prima::Label.3.gz  \
-	Prima::MDI.3.gz Prima::Make.3.gz Prima::MsgBox.3.gz Prima::Notebooks.3.gz Prima::Outlines.3.gz  \
+	Prima::MDI.3.gz Prima::MsgBox.3.gz Prima::Notebooks.3.gz Prima::noX11.3.gz Prima::Outlines.3.gz  \
 	Prima::PrintDialog.3.gz Prima::ScrollBar.3.gz Prima::ScrollWidget.3.gz  \
 	Prima::StartupWindow.3.gz Prima::StdBitmap.3.gz Prima::StdDlg.3.gz Prima::Stress.3.gz  \
 	Prima::Themes.3.gz Prima::Utils.3.gz Prima::Widgets.3.gz Prima::Classes.3.gz  \
