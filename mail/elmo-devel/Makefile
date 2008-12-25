@@ -9,11 +9,10 @@ PORTNAME=	elmo
 PORTVERSION=	1.3.2
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
 CONFLICTS=	elmo-[0-9]*
