@@ -18,6 +18,6 @@ USE_FPC=	fcl-base fcl-passrc fcl-xml gdbint graph ibase libasync libcurl \
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR} ${FPCSRCDIR}/fcl/inc
+EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 .include "${MASTERDIR}/Makefile"
