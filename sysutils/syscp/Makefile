@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	syscp
-PORTVERSION=	1.2.19
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://nuernburg.files.syscp.org/releases/tgz/ \
 		http://canada.files.syscp.org/releases/tgz/ \
@@ -25,7 +24,7 @@ NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message pkg-deinstall
 
-USE_PHP=	gettext mysql pcre session xml
+USE_PHP=	gettext mysql session xml bcmath posix filter spl
 
 USE_APACHE=	22
 
