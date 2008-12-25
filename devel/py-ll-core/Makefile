@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ll-core
-PORTVERSION=	1.9.1
+PORTVERSION=	1.11.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.livinglogic.de/core/ \
 		http://cheeseshop.python.org/packages/source/l/ll-core/
@@ -15,8 +15,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility functions and classes used by the other LivingLogic packages
 
-USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
-USE_BZIP2=	yes
+USE_PYTHON=		2.4+
+USE_PYDISTUTILS=	easy_install
+USE_ZIP=		yes
+PYEASYINSTALL_ARCHDEP=	yes
 
 .include <bsd.port.mk>
