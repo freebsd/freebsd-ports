@@ -1301,6 +1301,7 @@
     SUBDIR += rubygem-merb
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
+    SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
