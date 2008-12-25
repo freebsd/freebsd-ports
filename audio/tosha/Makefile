@@ -18,4 +18,10 @@ COMMENT=	Read CD digital audio and video data via the SCSI bus
 MAN1=		pcmfade.1 pcmplay.1 tosha.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800058
+BROKEN=	does not build
+.endif
+
+.include <bsd.port.post.mk>
