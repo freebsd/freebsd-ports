@@ -7,6 +7,7 @@
 
 PORTNAME=	ndoutils
 PORTVERSION=	1.4b7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	nagios
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	nagios
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Keep Nagios perfdata in MySQL or Postgresql database
 
-RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios-devel
+RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
 
 GNU_CONFIGURE=	yes
 
