@@ -116,6 +116,7 @@ share/locale/sk/LC_MESSAGES/kdbg.mo
 share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
+share/locale/zh_CN/LC_MESSAGES/kdbg.mo
 share/config/kdbgrc
 @dirrm share/doc/HTML/ru/kdbg
 @dirrmtry share/doc/HTML/ru
