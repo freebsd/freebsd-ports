@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fotofix
-PORTVERSION=	0.01.1.53
+PORTVERSION=	0.01.1.79
 CATEGORIES=	graphics
-MASTER_SITES=	CENKES
-#http://prima.eu.org/cgi-bin/cvsweb.cgi/apps/fotofix/fotofix
+MASTER_SITES=	http://mirror.mcx2.org/ \
+		http://prima.eu.org/cgi-bin/cvsweb.cgi/apps/fotofix/fotofix/
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Simple image viewer
