@@ -12,7 +12,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The successor of the STk Scheme interpreter
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \

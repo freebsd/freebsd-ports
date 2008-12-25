@@ -10,7 +10,7 @@ PORTVERSION=	0.3.16
 CATEGORIES=	chinese
 MASTER_SITES=	http://people.debian.org/~ygh/
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent Chinese encoding converter
 
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"

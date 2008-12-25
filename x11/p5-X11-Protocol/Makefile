@@ -11,7 +11,7 @@ CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides an interface roughly equivalent to Xlib
 
 PERL_CONFIGURE=	yes

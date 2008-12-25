@@ -11,7 +11,7 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	4
 CATEGORIES=	games
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Base Library
 
 LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt

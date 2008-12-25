@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM chewing Chinese input methods
 
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim

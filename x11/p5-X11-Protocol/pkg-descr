@@ -6,5 +6,3 @@ level access to eventually be replaced by an XS interface to Xlib.
 
 Author: Stephen McCamant
 WWW: http://search.cpan.org/dist/X11-Protocol/
-
---will

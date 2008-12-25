@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://pdq.sourceforge.net/ftp/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A straightforward, flexible print subsystem
 
 USE_GNOME=	gtk12

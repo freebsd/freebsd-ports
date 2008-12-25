@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://ipaudit.sourceforge.net/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP traffic summarizer
 
 MAN1=		ipaudit.1 ipstrings.1 total.1
