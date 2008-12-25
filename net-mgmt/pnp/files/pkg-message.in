@@ -48,6 +48,11 @@ configuration for the PNP area:
     Deny from all
 </Directory>
 
+Please, note that user who runs Apache processes should be able to
+read PNP RRD spool files from
+  %%PNP_RRDS%%
+so you should tune path permissions accordingly.  Probably one could
+start from adding Apache user to the group '%%NAGIOSGROUP%%'.
 
 Remember to restart NPCD service after upgrade if you're using
 'bulk' mode with NPCD.
