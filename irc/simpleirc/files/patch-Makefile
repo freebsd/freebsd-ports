@@ -1,0 +1,26 @@
+--- Makefile.orgi	2008-12-25 20:30:03.000000000 +0100
++++ Makefile	2008-12-25 20:31:47.000000000 +0100
+@@ -38,17 +38,18 @@
+ install: all
+ 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+ 	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@cp -f sic ${DESTDIR}${PREFIX}/bin
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/sic
++	@cp -f sic ${DESTDIR}${PREFIX}/bin/simpleirc
++	@chmod 755 ${DESTDIR}${PREFIX}/bin/simpleirc
+ 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+ 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+ 	@sed "s/VERSION/${VERSION}/g" < sic.1 > ${DESTDIR}${MANPREFIX}/man1/sic.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/sic.1
++	@mv ${DESTDIR}${MANPREFIX}/man1/sic.1 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
++	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
+ 
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+-	@rm -f ${DESTDIR}${PREFIX}/bin/sic
++	@rm -f ${DESTDIR}${PREFIX}/bin/simpleirc
+ 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+-	@rm -f ${DESTDIR}${MANPREFIX}/man1/sic.1
++	@rm -f ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
+ 
+ .PHONY: all options clean dist install uninstall

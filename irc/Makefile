@@ -120,6 +120,7 @@
     SUBDIR += ruby-rice
     SUBDIR += scrollz
     SUBDIR += sic
+    SUBDIR += simpleirc
     SUBDIR += sirc
     SUBDIR += slirc
     SUBDIR += solid-ircd

@@ -1,0 +1,6 @@
+SIMPLE IRC CLIENT alias sic
+
+sic is an extremely simple IRC client. It consists of lesser
+than 250 lines of code. It is the little brother of irc/ii
+
+WWW:	http://www.suckless.org/programs/sic.html
