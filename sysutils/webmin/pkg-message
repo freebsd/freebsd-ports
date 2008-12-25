@@ -1,15 +1,13 @@
-===================================
 
-To reconfigure webmin you should
-run the following command as root:
+After installing Webmin for the first time you should perform the following
+steps as root:
 
-  ${LOCALBASE}/lib/webmin/setup.sh
+* Configure Webmin by running ${LOCALBASE}/lib/webmin/setup.sh
 
-You won't have to perform this step
-after every webmin upgrade.
+* Add webmin_enable="YES" to your /etc/rc.conf
 
-Since 1.150_2, to run webmin from
-startup, add webmin_enable="YES"
-in your /etc/rc.conf.
+* Start Webmin for the first time by running ${LOCALBASE}/etc/rc.d/webmin
 
-===================================
+The parameters requested by setup.sh may then be changed from within Webmin
+itself.
+
