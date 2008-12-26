@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cython
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/
 DISTNAME=	Cython-${PORTVERSION}
