@@ -37,4 +37,4 @@ include/glptsp.h
 lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
-lib/libglpk.so.18
+lib/libglpk.so.19
