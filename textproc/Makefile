@@ -147,6 +147,7 @@
     SUBDIR += etoile-lucenekit
     SUBDIR += etoile-ogrekit
     SUBDIR += etoile-opmlkit
+    SUBDIR += europass-xsl
     SUBDIR += exempi
     SUBDIR += exml
     SUBDIR += expat2
