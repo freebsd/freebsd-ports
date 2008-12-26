@@ -446,6 +446,7 @@
     SUBDIR += mp3wrap
     SUBDIR += mpc
     SUBDIR += mpdas
+    SUBDIR += mpdbrowser
     SUBDIR += mpdcon
     SUBDIR += mpdscribble
     SUBDIR += mpegaudio
