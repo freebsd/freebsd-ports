@@ -9,11 +9,9 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/br/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/el/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gajim.mo
@@ -24,20 +22,98 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/no/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sr@Latn/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/applications/gajim.desktop
 share/pixmaps/gajim.png
 share/pixmaps/gajim_about.png
+%%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
+%%DATADIR%%/data/activities/default/doing_chores/category.png
+%%DATADIR%%/data/activities/default/doing_chores/cleaning.png
+%%DATADIR%%/data/activities/default/doing_chores/cooking.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_maintenance.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_the_dishes.png
+%%DATADIR%%/data/activities/default/doing_chores/doing_the_laundry.png
+%%DATADIR%%/data/activities/default/doing_chores/gardening.png
+%%DATADIR%%/data/activities/default/doing_chores/running_an_errand.png
+%%DATADIR%%/data/activities/default/doing_chores/walking_the_dog.png
+%%DATADIR%%/data/activities/default/drinking/category.png
+%%DATADIR%%/data/activities/default/drinking/having_a_beer.png
+%%DATADIR%%/data/activities/default/drinking/having_coffee.png
+%%DATADIR%%/data/activities/default/drinking/having_tea.png
+%%DATADIR%%/data/activities/default/eating/category.png
+%%DATADIR%%/data/activities/default/eating/having_a_snack.png
+%%DATADIR%%/data/activities/default/eating/having_breakfast.png
+%%DATADIR%%/data/activities/default/eating/having_dinner.png
+%%DATADIR%%/data/activities/default/eating/having_lunch.png
+%%DATADIR%%/data/activities/default/exercising/category.png
+%%DATADIR%%/data/activities/default/exercising/cycling.png
+%%DATADIR%%/data/activities/default/exercising/dancing.png
+%%DATADIR%%/data/activities/default/exercising/hiking.png
+%%DATADIR%%/data/activities/default/exercising/jogging.png
+%%DATADIR%%/data/activities/default/exercising/playing_sports.png
+%%DATADIR%%/data/activities/default/exercising/running.png
+%%DATADIR%%/data/activities/default/exercising/skiing.png
+%%DATADIR%%/data/activities/default/exercising/swimming.png
+%%DATADIR%%/data/activities/default/exercising/working_out.png
+%%DATADIR%%/data/activities/default/grooming/at_the_spa.png
+%%DATADIR%%/data/activities/default/grooming/brushing_teeth.png
+%%DATADIR%%/data/activities/default/grooming/category.png
+%%DATADIR%%/data/activities/default/grooming/getting_a_haircut.png
+%%DATADIR%%/data/activities/default/grooming/shaving.png
+%%DATADIR%%/data/activities/default/grooming/taking_a_bath.png
+%%DATADIR%%/data/activities/default/grooming/taking_a_shower.png
+%%DATADIR%%/data/activities/default/having_appointment/category.png
+%%DATADIR%%/data/activities/default/inactive/category.png
+%%DATADIR%%/data/activities/default/inactive/day_off.png
+%%DATADIR%%/data/activities/default/inactive/hanging_out.png
+%%DATADIR%%/data/activities/default/inactive/hiding.png
+%%DATADIR%%/data/activities/default/inactive/on_vacation.png
+%%DATADIR%%/data/activities/default/inactive/praying.png
+%%DATADIR%%/data/activities/default/inactive/scheduled_holiday.png
+%%DATADIR%%/data/activities/default/inactive/sleeping.png
+%%DATADIR%%/data/activities/default/inactive/thinking.png
+%%DATADIR%%/data/activities/default/relaxing/category.png
+%%DATADIR%%/data/activities/default/relaxing/fishing.png
+%%DATADIR%%/data/activities/default/relaxing/gaming.png
+%%DATADIR%%/data/activities/default/relaxing/going_out.png
+%%DATADIR%%/data/activities/default/relaxing/partying.png
+%%DATADIR%%/data/activities/default/relaxing/reading.png
+%%DATADIR%%/data/activities/default/relaxing/rehearsing.png
+%%DATADIR%%/data/activities/default/relaxing/shopping.png
+%%DATADIR%%/data/activities/default/relaxing/smoking.png
+%%DATADIR%%/data/activities/default/relaxing/socializing.png
+%%DATADIR%%/data/activities/default/relaxing/sunbathing.png
+%%DATADIR%%/data/activities/default/relaxing/watching_a_movie.png
+%%DATADIR%%/data/activities/default/relaxing/watching_tv.png
+%%DATADIR%%/data/activities/default/talking/category.png
+%%DATADIR%%/data/activities/default/talking/in_real_life.png
+%%DATADIR%%/data/activities/default/talking/on_the_phone.png
+%%DATADIR%%/data/activities/default/talking/on_video_phone.png
+%%DATADIR%%/data/activities/default/traveling/category.png
+%%DATADIR%%/data/activities/default/traveling/commuting.png
+%%DATADIR%%/data/activities/default/traveling/cycling.png
+%%DATADIR%%/data/activities/default/traveling/driving.png
+%%DATADIR%%/data/activities/default/traveling/in_a_car.png
+%%DATADIR%%/data/activities/default/traveling/on_a_bus.png
+%%DATADIR%%/data/activities/default/traveling/on_a_plane.png
+%%DATADIR%%/data/activities/default/traveling/on_a_train.png
+%%DATADIR%%/data/activities/default/traveling/on_a_trip.png
+%%DATADIR%%/data/activities/default/traveling/walking.png
+%%DATADIR%%/data/activities/default/unknown/category.png
+%%DATADIR%%/data/activities/default/working/category.png
+%%DATADIR%%/data/activities/default/working/coding.png
+%%DATADIR%%/data/activities/default/working/in_a_meeting.png
+%%DATADIR%%/data/activities/default/working/studying.png
+%%DATADIR%%/data/activities/default/working/writing.png
 %%DATADIR%%/data/emoticons/animated/angry.png
 %%DATADIR%%/data/emoticons/animated/bat.gif
 %%DATADIR%%/data/emoticons/animated/beer.png
@@ -73,6 +149,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/emoticons/animated/party.gif
 %%DATADIR%%/data/emoticons/animated/phone.png
 %%DATADIR%%/data/emoticons/animated/photo.png
+%%DATADIR%%/data/emoticons/animated/puke.gif
 %%DATADIR%%/data/emoticons/animated/pussy.png
 %%DATADIR%%/data/emoticons/animated/rainbow.png
 %%DATADIR%%/data/emoticons/animated/sleepy.gif
@@ -108,12 +185,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/emoticons/static-big/hugright.png
 %%DATADIR%%/data/emoticons/static-big/kiss.png
 %%DATADIR%%/data/emoticons/static-big/lamp.png
+%%DATADIR%%/data/emoticons/static-big/lion.png
 %%DATADIR%%/data/emoticons/static-big/mail.png
 %%DATADIR%%/data/emoticons/static-big/moon.png
 %%DATADIR%%/data/emoticons/static-big/music.png
 %%DATADIR%%/data/emoticons/static-big/oh.png
 %%DATADIR%%/data/emoticons/static-big/phone.png
 %%DATADIR%%/data/emoticons/static-big/photo.png
+%%DATADIR%%/data/emoticons/static-big/puke.png
 %%DATADIR%%/data/emoticons/static-big/pussy.png
 %%DATADIR%%/data/emoticons/static-big/rainbow.png
 %%DATADIR%%/data/emoticons/static-big/smile.png
@@ -147,12 +226,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/emoticons/static/hugright.png
 %%DATADIR%%/data/emoticons/static/kiss.png
 %%DATADIR%%/data/emoticons/static/lamp.png
+%%DATADIR%%/data/emoticons/static/lion.png
 %%DATADIR%%/data/emoticons/static/mail.png
 %%DATADIR%%/data/emoticons/static/moon.png
 %%DATADIR%%/data/emoticons/static/music.png
 %%DATADIR%%/data/emoticons/static/oh.png
 %%DATADIR%%/data/emoticons/static/phone.png
 %%DATADIR%%/data/emoticons/static/photo.png
+%%DATADIR%%/data/emoticons/static/puke.png
 %%DATADIR%%/data/emoticons/static/pussy.png
 %%DATADIR%%/data/emoticons/static/rainbow.png
 %%DATADIR%%/data/emoticons/static/smile.png
@@ -173,13 +254,20 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/advanced_menuitem_menu.glade
 %%DATADIR%%/data/glade/advanced_notifications_window.glade
 %%DATADIR%%/data/glade/atom_entry_window.glade
+%%DATADIR%%/data/glade/blocked_contacts_window.glade
+%%DATADIR%%/data/glade/change_activity_dialog.glade
+%%DATADIR%%/data/glade/change_mood_dialog.glade
 %%DATADIR%%/data/glade/change_password_dialog.glade
 %%DATADIR%%/data/glade/change_status_message_dialog.glade
 %%DATADIR%%/data/glade/chat_context_menu.glade
 %%DATADIR%%/data/glade/chat_control_popup_menu.glade
+%%DATADIR%%/data/glade/chat_to_muc_window.glade
 %%DATADIR%%/data/glade/choose_gpg_key_dialog.glade
 %%DATADIR%%/data/glade/data_form_window.glade
+%%DATADIR%%/data/glade/dubbleinput_dialog.glade
 %%DATADIR%%/data/glade/edit_groups_dialog.glade
+%%DATADIR%%/data/glade/esession_info_window.glade
+%%DATADIR%%/data/glade/features_window.glade
 %%DATADIR%%/data/glade/filetransfers.glade
 %%DATADIR%%/data/glade/gajim_themes_window.glade
 %%DATADIR%%/data/glade/gc_control_popup_menu.glade
@@ -188,10 +276,11 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/history_manager.glade
 %%DATADIR%%/data/glade/history_window.glade
 %%DATADIR%%/data/glade/input_dialog.glade
-%%DATADIR%%/data/glade/invitation_received_dialog.glade
+%%DATADIR%%/data/glade/input_text_dialog.glade
 %%DATADIR%%/data/glade/join_groupchat_window.glade
 %%DATADIR%%/data/glade/manage_accounts_window.glade
 %%DATADIR%%/data/glade/manage_bookmarks_window.glade
+%%DATADIR%%/data/glade/manage_pep_services_window.glade
 %%DATADIR%%/data/glade/manage_proxies_window.glade
 %%DATADIR%%/data/glade/message_window.glade
 %%DATADIR%%/data/glade/passphrase_dialog.glade
@@ -204,11 +293,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/remove_account_window.glade
 %%DATADIR%%/data/glade/roster_contact_context_menu.glade
 %%DATADIR%%/data/glade/roster_window.glade
+%%DATADIR%%/data/glade/search_window.glade
 %%DATADIR%%/data/glade/service_discovery_window.glade
 %%DATADIR%%/data/glade/service_registration_window.glade
 %%DATADIR%%/data/glade/single_message_window.glade
 %%DATADIR%%/data/glade/subscription_request_popup_menu.glade
 %%DATADIR%%/data/glade/subscription_request_window.glade
+%%DATADIR%%/data/glade/synchronise_select_account_dialog.glade
+%%DATADIR%%/data/glade/synchronise_select_contacts_dialog.glade
 %%DATADIR%%/data/glade/systray_context_menu.glade
 %%DATADIR%%/data/glade/vcard_information_window.glade
 %%DATADIR%%/data/glade/xml_console_window.glade
@@ -222,8 +314,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/crystal/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/crystal/16x16/dnd.png
 %%DATADIR%%/data/iconsets/crystal/16x16/error.png
+%%DATADIR%%/data/iconsets/crystal/16x16/event.gif
 %%DATADIR%%/data/iconsets/crystal/16x16/invisible.png
-%%DATADIR%%/data/iconsets/crystal/16x16/message.gif
 %%DATADIR%%/data/iconsets/crystal/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/crystal/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/crystal/16x16/not_in_roster.png
@@ -232,6 +324,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/crystal/16x16/opened.png
 %%DATADIR%%/data/iconsets/crystal/16x16/requested.png
 %%DATADIR%%/data/iconsets/crystal/16x16/xa.png
+%%DATADIR%%/data/iconsets/crystal/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/crystal/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/crystal/48x48/offline.png
 %%DATADIR%%/data/iconsets/crystal/48x48/online.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/away.png
@@ -240,8 +334,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/connecting.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/dnd.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/error.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/event.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/invisible.png
-%%DATADIR%%/data/iconsets/dcraven/16x16/message.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/not_in_roster.png
@@ -256,8 +350,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/connecting.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/dnd.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/error.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/event.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/invisible.png
-%%DATADIR%%/data/iconsets/dcraven/32x32/message.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/muc_active.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/dcraven/32x32/not_in_roster.png
@@ -274,8 +368,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gnome/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/gnome/16x16/dnd.png
 %%DATADIR%%/data/iconsets/gnome/16x16/error.png
+%%DATADIR%%/data/iconsets/gnome/16x16/event.gif
 %%DATADIR%%/data/iconsets/gnome/16x16/invisible.png
-%%DATADIR%%/data/iconsets/gnome/16x16/message.gif
 %%DATADIR%%/data/iconsets/gnome/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/gnome/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/gnome/16x16/not_in_roster.png
@@ -302,8 +396,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/goojim/16x16/connecting.png
 %%DATADIR%%/data/iconsets/goojim/16x16/dnd.png
 %%DATADIR%%/data/iconsets/goojim/16x16/error.png
+%%DATADIR%%/data/iconsets/goojim/16x16/event.png
 %%DATADIR%%/data/iconsets/goojim/16x16/invisible.png
-%%DATADIR%%/data/iconsets/goojim/16x16/message.png
 %%DATADIR%%/data/iconsets/goojim/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/goojim/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/goojim/16x16/not_in_the_roster.png
@@ -318,8 +412,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/goojim/32x32/connecting.png
 %%DATADIR%%/data/iconsets/goojim/32x32/dnd.png
 %%DATADIR%%/data/iconsets/goojim/32x32/error.png
+%%DATADIR%%/data/iconsets/goojim/32x32/event.png
 %%DATADIR%%/data/iconsets/goojim/32x32/invisible.png
-%%DATADIR%%/data/iconsets/goojim/32x32/message.png
 %%DATADIR%%/data/iconsets/goojim/32x32/muc_active.png
 %%DATADIR%%/data/iconsets/goojim/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/goojim/32x32/not_in_the_roster.png
@@ -336,8 +430,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gossip/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/gossip/16x16/dnd.png
 %%DATADIR%%/data/iconsets/gossip/16x16/error.png
+%%DATADIR%%/data/iconsets/gossip/16x16/event.png
 %%DATADIR%%/data/iconsets/gossip/16x16/invisible.png
-%%DATADIR%%/data/iconsets/gossip/16x16/message.png
 %%DATADIR%%/data/iconsets/gossip/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/gossip/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/gossip/16x16/not_in_roster.png
@@ -346,6 +440,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gossip/16x16/opened.png
 %%DATADIR%%/data/iconsets/gossip/16x16/requested.png
 %%DATADIR%%/data/iconsets/gossip/16x16/xa.png
+%%DATADIR%%/data/iconsets/gossip/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/gossip/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/gossip/48x48/offline.png
 %%DATADIR%%/data/iconsets/gossip/48x48/online.png
 %%DATADIR%%/data/iconsets/gota/16x16/away.png
@@ -354,8 +450,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gota/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/gota/16x16/dnd.png
 %%DATADIR%%/data/iconsets/gota/16x16/error.png
+%%DATADIR%%/data/iconsets/gota/16x16/event.gif
 %%DATADIR%%/data/iconsets/gota/16x16/invisible.png
-%%DATADIR%%/data/iconsets/gota/16x16/message.gif
 %%DATADIR%%/data/iconsets/gota/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/gota/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/gota/16x16/not_in_roster.png
@@ -370,8 +466,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/gota/32x32/connecting.gif
 %%DATADIR%%/data/iconsets/gota/32x32/dnd.png
 %%DATADIR%%/data/iconsets/gota/32x32/error.png
+%%DATADIR%%/data/iconsets/gota/32x32/event.gif
 %%DATADIR%%/data/iconsets/gota/32x32/invisible.png
-%%DATADIR%%/data/iconsets/gota/32x32/message.gif
 %%DATADIR%%/data/iconsets/gota/32x32/muc_active.png
 %%DATADIR%%/data/iconsets/gota/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/gota/32x32/not_in_roster.png
@@ -388,8 +484,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/connecting.png
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/dnd.png
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/error.png
+%%DATADIR%%/data/iconsets/jabberbulb/16x16/event.gif
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/invisible.png
-%%DATADIR%%/data/iconsets/jabberbulb/16x16/message.gif
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/jabberbulb/16x16/not_in_roster.png
@@ -418,8 +514,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/connecting.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/dnd.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/error.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/event.gif
 %%DATADIR%%/data/iconsets/nuvola/16x16/invisible.png
-%%DATADIR%%/data/iconsets/nuvola/16x16/message.gif
 %%DATADIR%%/data/iconsets/nuvola/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/not_in_roster.png
@@ -428,6 +524,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/opened.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/requested.png
 %%DATADIR%%/data/iconsets/nuvola/16x16/xa.png
+%%DATADIR%%/data/iconsets/nuvola/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/nuvola/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/nuvola/48x48/offline.png
 %%DATADIR%%/data/iconsets/nuvola/48x48/online.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/away.png
@@ -436,8 +534,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/connecting.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/dnd.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/error.png
+%%DATADIR%%/data/iconsets/simplebulb/16x16/event.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/invisible.png
-%%DATADIR%%/data/iconsets/simplebulb/16x16/message.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/not_in_roster.png
@@ -446,6 +544,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/opened.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/requested.png
 %%DATADIR%%/data/iconsets/simplebulb/16x16/xa.png
+%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/simplebulb/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/simplebulb/48x48/offline.png
 %%DATADIR%%/data/iconsets/simplebulb/48x48/online.png
 %%DATADIR%%/data/iconsets/stellar/16x16/away.png
@@ -454,8 +554,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/stellar/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/stellar/16x16/dnd.png
 %%DATADIR%%/data/iconsets/stellar/16x16/error.png
+%%DATADIR%%/data/iconsets/stellar/16x16/event.gif
 %%DATADIR%%/data/iconsets/stellar/16x16/invisible.png
-%%DATADIR%%/data/iconsets/stellar/16x16/message.gif
 %%DATADIR%%/data/iconsets/stellar/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/stellar/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/stellar/16x16/not_in_roster.png
@@ -464,6 +564,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/stellar/16x16/opened.png
 %%DATADIR%%/data/iconsets/stellar/16x16/requested.png
 %%DATADIR%%/data/iconsets/stellar/16x16/xa.png
+%%DATADIR%%/data/iconsets/stellar/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/stellar/32x32/muc_inactive.png
 %%DATADIR%%/data/iconsets/stellar/48x48/offline.png
 %%DATADIR%%/data/iconsets/stellar/48x48/online.png
 %%DATADIR%%/data/iconsets/sun/16x16/away.png
@@ -472,8 +574,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/sun/16x16/connecting.gif
 %%DATADIR%%/data/iconsets/sun/16x16/dnd.png
 %%DATADIR%%/data/iconsets/sun/16x16/error.png
+%%DATADIR%%/data/iconsets/sun/16x16/event.gif
 %%DATADIR%%/data/iconsets/sun/16x16/invisible.png
-%%DATADIR%%/data/iconsets/sun/16x16/message.gif
 %%DATADIR%%/data/iconsets/sun/16x16/muc_active.png
 %%DATADIR%%/data/iconsets/sun/16x16/muc_inactive.png
 %%DATADIR%%/data/iconsets/sun/16x16/not_in_roster.png
@@ -560,6 +662,22 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/xa.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/not_in_roster.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/mrim/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/away.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/chat.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/not_in_roster.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/offline.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/online.png
+%%DATADIR%%/data/iconsets/transports/mrim/32x32/xa.png
+%%DATADIR%%/data/iconsets/transports/mrim/48x48/offline.png
+%%DATADIR%%/data/iconsets/transports/mrim/48x48/online.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/dnd.png
@@ -632,6 +750,92 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/xa.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/offline.png
 %%DATADIR%%/data/iconsets/transports/yahoo/48x48/online.png
+%%DATADIR%%/data/moods/default/afraid.png
+%%DATADIR%%/data/moods/default/amazed.png
+%%DATADIR%%/data/moods/default/amorous.png
+%%DATADIR%%/data/moods/default/angry.png
+%%DATADIR%%/data/moods/default/annoyed.png
+%%DATADIR%%/data/moods/default/anxious.png
+%%DATADIR%%/data/moods/default/aroused.png
+%%DATADIR%%/data/moods/default/ashamed.png
+%%DATADIR%%/data/moods/default/bored.png
+%%DATADIR%%/data/moods/default/brave.png
+%%DATADIR%%/data/moods/default/calm.png
+%%DATADIR%%/data/moods/default/cautious.png
+%%DATADIR%%/data/moods/default/cold.png
+%%DATADIR%%/data/moods/default/confident.png
+%%DATADIR%%/data/moods/default/confused.png
+%%DATADIR%%/data/moods/default/contemplative.png
+%%DATADIR%%/data/moods/default/contented.png
+%%DATADIR%%/data/moods/default/cranky.png
+%%DATADIR%%/data/moods/default/crazy.png
+%%DATADIR%%/data/moods/default/creative.png
+%%DATADIR%%/data/moods/default/curious.png
+%%DATADIR%%/data/moods/default/dejected.png
+%%DATADIR%%/data/moods/default/depressed.png
+%%DATADIR%%/data/moods/default/disappointed.png
+%%DATADIR%%/data/moods/default/disgusted.png
+%%DATADIR%%/data/moods/default/dismayed.png
+%%DATADIR%%/data/moods/default/distracted.png
+%%DATADIR%%/data/moods/default/embarrassed.png
+%%DATADIR%%/data/moods/default/envious.png
+%%DATADIR%%/data/moods/default/excited.png
+%%DATADIR%%/data/moods/default/flirtatious.png
+%%DATADIR%%/data/moods/default/frustrated.png
+%%DATADIR%%/data/moods/default/grateful.png
+%%DATADIR%%/data/moods/default/grieving.png
+%%DATADIR%%/data/moods/default/grumpy.png
+%%DATADIR%%/data/moods/default/guilty.png
+%%DATADIR%%/data/moods/default/happy.png
+%%DATADIR%%/data/moods/default/hopeful.png
+%%DATADIR%%/data/moods/default/hot.png
+%%DATADIR%%/data/moods/default/humbled.png
+%%DATADIR%%/data/moods/default/humiliated.png
+%%DATADIR%%/data/moods/default/hungry.png
+%%DATADIR%%/data/moods/default/hurt.png
+%%DATADIR%%/data/moods/default/impressed.png
+%%DATADIR%%/data/moods/default/in_awe.png
+%%DATADIR%%/data/moods/default/in_love.png
+%%DATADIR%%/data/moods/default/indignant.png
+%%DATADIR%%/data/moods/default/interested.png
+%%DATADIR%%/data/moods/default/intoxicated.png
+%%DATADIR%%/data/moods/default/invincible.png
+%%DATADIR%%/data/moods/default/jealous.png
+%%DATADIR%%/data/moods/default/lonely.png
+%%DATADIR%%/data/moods/default/lost.png
+%%DATADIR%%/data/moods/default/lucky.png
+%%DATADIR%%/data/moods/default/mean.png
+%%DATADIR%%/data/moods/default/moody.png
+%%DATADIR%%/data/moods/default/nervous.png
+%%DATADIR%%/data/moods/default/neutral.png
+%%DATADIR%%/data/moods/default/offended.png
+%%DATADIR%%/data/moods/default/outraged.png
+%%DATADIR%%/data/moods/default/playful.png
+%%DATADIR%%/data/moods/default/proud.png
+%%DATADIR%%/data/moods/default/relaxed.png
+%%DATADIR%%/data/moods/default/relieved.png
+%%DATADIR%%/data/moods/default/remorseful.png
+%%DATADIR%%/data/moods/default/restless.png
+%%DATADIR%%/data/moods/default/sad.png
+%%DATADIR%%/data/moods/default/sarcastic.png
+%%DATADIR%%/data/moods/default/satisfied.png
+%%DATADIR%%/data/moods/default/serious.png
+%%DATADIR%%/data/moods/default/shocked.png
+%%DATADIR%%/data/moods/default/shy.png
+%%DATADIR%%/data/moods/default/sick.png
+%%DATADIR%%/data/moods/default/sleepy.png
+%%DATADIR%%/data/moods/default/spontaneous.png
+%%DATADIR%%/data/moods/default/stressed.png
+%%DATADIR%%/data/moods/default/strong.png
+%%DATADIR%%/data/moods/default/surprised.png
+%%DATADIR%%/data/moods/default/thankful.png
+%%DATADIR%%/data/moods/default/thirsty.png
+%%DATADIR%%/data/moods/default/tired.png
+%%DATADIR%%/data/moods/default/undefined.png
+%%DATADIR%%/data/moods/default/unknown.png
+%%DATADIR%%/data/moods/default/weak.png
+%%DATADIR%%/data/moods/default/worried.png
+%%DATADIR%%/data/other/cacerts.pem
 %%DATADIR%%/data/other/servers.xml
 %%DATADIR%%/data/pixmaps/agents/aim.png
 %%DATADIR%%/data/pixmaps/agents/bytestreams.png
@@ -645,6 +849,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/agents/jabber.png
 %%DATADIR%%/data/pixmaps/agents/jud.png
 %%DATADIR%%/data/pixmaps/agents/mail.png
+%%DATADIR%%/data/pixmaps/agents/mrim.png
 %%DATADIR%%/data/pixmaps/agents/msn.png
 %%DATADIR%%/data/pixmaps/agents/pubsub.png
 %%DATADIR%%/data/pixmaps/agents/rss.png
@@ -669,6 +874,12 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/kbd_input.png
 %%DATADIR%%/data/pixmaps/muc_separator.png
 %%DATADIR%%/data/pixmaps/person.png
+%%DATADIR%%/data/pixmaps/receipt_missing.png
+%%DATADIR%%/data/pixmaps/security-high-big.png
+%%DATADIR%%/data/pixmaps/security-high.png
+%%DATADIR%%/data/pixmaps/security-low-big.png
+%%DATADIR%%/data/pixmaps/security-low.png
+%%DATADIR%%/data/pixmaps/upload.png
 %%DATADIR%%/data/sounds/bounce.wav
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -679,192 +890,323 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/sounds/sent.wav
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
+%%DATADIR%%/src/adhoc_commands.pyo
 %%DATADIR%%/src/advanced.py
 %%DATADIR%%/src/advanced.pyc
+%%DATADIR%%/src/advanced.pyo
 %%DATADIR%%/src/atom_window.py
 %%DATADIR%%/src/atom_window.pyc
+%%DATADIR%%/src/atom_window.pyo
 %%DATADIR%%/src/cell_renderer_image.py
 %%DATADIR%%/src/cell_renderer_image.pyc
+%%DATADIR%%/src/cell_renderer_image.pyo
 %%DATADIR%%/src/chat_control.py
 %%DATADIR%%/src/chat_control.pyc
+%%DATADIR%%/src/chat_control.pyo
 %%DATADIR%%/src/common/GnuPG.py
 %%DATADIR%%/src/common/GnuPG.pyc
+%%DATADIR%%/src/common/GnuPG.pyo
 %%DATADIR%%/src/common/GnuPGInterface.py
 %%DATADIR%%/src/common/GnuPGInterface.pyc
+%%DATADIR%%/src/common/GnuPGInterface.pyo
 %%DATADIR%%/src/common/__init__.py
 %%DATADIR%%/src/common/__init__.pyc
+%%DATADIR%%/src/common/__init__.pyo
 %%DATADIR%%/src/common/atom.py
 %%DATADIR%%/src/common/atom.pyc
+%%DATADIR%%/src/common/atom.pyo
+%%DATADIR%%/src/common/caps.py
+%%DATADIR%%/src/common/caps.pyc
+%%DATADIR%%/src/common/caps.pyo
 %%DATADIR%%/src/common/check_paths.py
 %%DATADIR%%/src/common/check_paths.pyc
+%%DATADIR%%/src/common/check_paths.pyo
 %%DATADIR%%/src/common/commands.py
 %%DATADIR%%/src/common/commands.pyc
+%%DATADIR%%/src/common/commands.pyo
 %%DATADIR%%/src/common/config.py
 %%DATADIR%%/src/common/config.pyc
+%%DATADIR%%/src/common/config.pyo
 %%DATADIR%%/src/common/configpaths.py
 %%DATADIR%%/src/common/configpaths.pyc
+%%DATADIR%%/src/common/configpaths.pyo
 %%DATADIR%%/src/common/connection.py
 %%DATADIR%%/src/common/connection.pyc
+%%DATADIR%%/src/common/connection.pyo
 %%DATADIR%%/src/common/connection_handlers.py
 %%DATADIR%%/src/common/connection_handlers.pyc
+%%DATADIR%%/src/common/connection_handlers.pyo
 %%DATADIR%%/src/common/contacts.py
 %%DATADIR%%/src/common/contacts.pyc
+%%DATADIR%%/src/common/contacts.pyo
+%%DATADIR%%/src/common/crypto.py
+%%DATADIR%%/src/common/crypto.pyc
+%%DATADIR%%/src/common/crypto.pyo
 %%DATADIR%%/src/common/dataforms.py
 %%DATADIR%%/src/common/dataforms.pyc
+%%DATADIR%%/src/common/dataforms.pyo
 %%DATADIR%%/src/common/dbus_support.py
 %%DATADIR%%/src/common/dbus_support.pyc
+%%DATADIR%%/src/common/dbus_support.pyo
 %%DATADIR%%/src/common/defs.py
 %%DATADIR%%/src/common/defs.pyc
+%%DATADIR%%/src/common/defs.pyo
+%%DATADIR%%/src/common/dh.py
+%%DATADIR%%/src/common/dh.pyc
+%%DATADIR%%/src/common/dh.pyo
 %%DATADIR%%/src/common/events.py
 %%DATADIR%%/src/common/events.pyc
+%%DATADIR%%/src/common/events.pyo
 %%DATADIR%%/src/common/exceptions.py
 %%DATADIR%%/src/common/exceptions.pyc
+%%DATADIR%%/src/common/exceptions.pyo
 %%DATADIR%%/src/common/fuzzyclock.py
 %%DATADIR%%/src/common/fuzzyclock.pyc
+%%DATADIR%%/src/common/fuzzyclock.pyo
 %%DATADIR%%/src/common/gajim.py
 %%DATADIR%%/src/common/gajim.pyc
+%%DATADIR%%/src/common/gajim.pyo
 %%DATADIR%%/src/common/helpers.py
 %%DATADIR%%/src/common/helpers.pyc
+%%DATADIR%%/src/common/helpers.pyo
 %%DATADIR%%/src/common/i18n.py
 %%DATADIR%%/src/common/i18n.pyc
+%%DATADIR%%/src/common/i18n.pyo
 %%DATADIR%%/src/common/logger.py
 %%DATADIR%%/src/common/logger.pyc
+%%DATADIR%%/src/common/logger.pyo
 %%DATADIR%%/src/common/nslookup.py
 %%DATADIR%%/src/common/nslookup.pyc
+%%DATADIR%%/src/common/nslookup.pyo
 %%DATADIR%%/src/common/optparser.py
 %%DATADIR%%/src/common/optparser.pyc
+%%DATADIR%%/src/common/optparser.pyo
 %%DATADIR%%/src/common/passwords.py
 %%DATADIR%%/src/common/passwords.pyc
+%%DATADIR%%/src/common/passwords.pyo
+%%DATADIR%%/src/common/pep.py
+%%DATADIR%%/src/common/pep.pyc
+%%DATADIR%%/src/common/pep.pyo
 %%DATADIR%%/src/common/proxy65_manager.py
 %%DATADIR%%/src/common/proxy65_manager.pyc
+%%DATADIR%%/src/common/proxy65_manager.pyo
 %%DATADIR%%/src/common/pubsub.py
 %%DATADIR%%/src/common/pubsub.pyc
+%%DATADIR%%/src/common/pubsub.pyo
 %%DATADIR%%/src/common/rst_xhtml_generator.py
 %%DATADIR%%/src/common/rst_xhtml_generator.pyc
+%%DATADIR%%/src/common/rst_xhtml_generator.pyo
 %%DATADIR%%/src/common/sleepy.py
 %%DATADIR%%/src/common/sleepy.pyc
+%%DATADIR%%/src/common/sleepy.pyo
 %%DATADIR%%/src/common/socks5.py
 %%DATADIR%%/src/common/socks5.pyc
+%%DATADIR%%/src/common/socks5.pyo
+%%DATADIR%%/src/common/stanza_session.py
+%%DATADIR%%/src/common/stanza_session.pyc
+%%DATADIR%%/src/common/stanza_session.pyo
 %%DATADIR%%/src/common/xmpp/__init__.py
 %%DATADIR%%/src/common/xmpp/__init__.pyc
+%%DATADIR%%/src/common/xmpp/__init__.pyo
 %%DATADIR%%/src/common/xmpp/auth.py
 %%DATADIR%%/src/common/xmpp/auth.pyc
+%%DATADIR%%/src/common/xmpp/auth.pyo
 %%DATADIR%%/src/common/xmpp/auth_nb.py
 %%DATADIR%%/src/common/xmpp/auth_nb.pyc
+%%DATADIR%%/src/common/xmpp/auth_nb.pyo
 %%DATADIR%%/src/common/xmpp/browser.py
 %%DATADIR%%/src/common/xmpp/browser.pyc
+%%DATADIR%%/src/common/xmpp/browser.pyo
+%%DATADIR%%/src/common/xmpp/c14n.py
+%%DATADIR%%/src/common/xmpp/c14n.pyc
+%%DATADIR%%/src/common/xmpp/c14n.pyo
 %%DATADIR%%/src/common/xmpp/client.py
 %%DATADIR%%/src/common/xmpp/client.pyc
+%%DATADIR%%/src/common/xmpp/client.pyo
 %%DATADIR%%/src/common/xmpp/client_nb.py
 %%DATADIR%%/src/common/xmpp/client_nb.pyc
+%%DATADIR%%/src/common/xmpp/client_nb.pyo
 %%DATADIR%%/src/common/xmpp/commands.py
 %%DATADIR%%/src/common/xmpp/commands.pyc
+%%DATADIR%%/src/common/xmpp/commands.pyo
 %%DATADIR%%/src/common/xmpp/debug.py
 %%DATADIR%%/src/common/xmpp/debug.pyc
+%%DATADIR%%/src/common/xmpp/debug.pyo
 %%DATADIR%%/src/common/xmpp/dispatcher.py
 %%DATADIR%%/src/common/xmpp/dispatcher.pyc
+%%DATADIR%%/src/common/xmpp/dispatcher.pyo
 %%DATADIR%%/src/common/xmpp/dispatcher_nb.py
 %%DATADIR%%/src/common/xmpp/dispatcher_nb.pyc
+%%DATADIR%%/src/common/xmpp/dispatcher_nb.pyo
 %%DATADIR%%/src/common/xmpp/features.py
 %%DATADIR%%/src/common/xmpp/features.pyc
+%%DATADIR%%/src/common/xmpp/features.pyo
 %%DATADIR%%/src/common/xmpp/features_nb.py
 %%DATADIR%%/src/common/xmpp/features_nb.pyc
+%%DATADIR%%/src/common/xmpp/features_nb.pyo
 %%DATADIR%%/src/common/xmpp/filetransfer.py
 %%DATADIR%%/src/common/xmpp/filetransfer.pyc
+%%DATADIR%%/src/common/xmpp/filetransfer.pyo
 %%DATADIR%%/src/common/xmpp/idlequeue.py
 %%DATADIR%%/src/common/xmpp/idlequeue.pyc
+%%DATADIR%%/src/common/xmpp/idlequeue.pyo
 %%DATADIR%%/src/common/xmpp/protocol.py
 %%DATADIR%%/src/common/xmpp/protocol.pyc
+%%DATADIR%%/src/common/xmpp/protocol.pyo
 %%DATADIR%%/src/common/xmpp/roster.py
 %%DATADIR%%/src/common/xmpp/roster.pyc
+%%DATADIR%%/src/common/xmpp/roster.pyo
 %%DATADIR%%/src/common/xmpp/roster_nb.py
 %%DATADIR%%/src/common/xmpp/roster_nb.pyc
+%%DATADIR%%/src/common/xmpp/roster_nb.pyo
 %%DATADIR%%/src/common/xmpp/session.py
 %%DATADIR%%/src/common/xmpp/session.pyc
+%%DATADIR%%/src/common/xmpp/session.pyo
 %%DATADIR%%/src/common/xmpp/simplexml.py
 %%DATADIR%%/src/common/xmpp/simplexml.pyc
+%%DATADIR%%/src/common/xmpp/simplexml.pyo
 %%DATADIR%%/src/common/xmpp/transports.py
 %%DATADIR%%/src/common/xmpp/transports.pyc
+%%DATADIR%%/src/common/xmpp/transports.pyo
 %%DATADIR%%/src/common/xmpp/transports_nb.py
 %%DATADIR%%/src/common/xmpp/transports_nb.pyc
+%%DATADIR%%/src/common/xmpp/transports_nb.pyo
 %%DATADIR%%/src/common/xmpp_stringprep.py
 %%DATADIR%%/src/common/xmpp_stringprep.pyc
+%%DATADIR%%/src/common/xmpp_stringprep.pyo
 %%DATADIR%%/src/common/zeroconf/__init__.py
 %%DATADIR%%/src/common/zeroconf/__init__.pyc
+%%DATADIR%%/src/common/zeroconf/__init__.pyo
 %%DATADIR%%/src/common/zeroconf/client_zeroconf.py
 %%DATADIR%%/src/common/zeroconf/client_zeroconf.pyc
+%%DATADIR%%/src/common/zeroconf/client_zeroconf.pyo
 %%DATADIR%%/src/common/zeroconf/connection_handlers_zeroconf.py
 %%DATADIR%%/src/common/zeroconf/connection_handlers_zeroconf.pyc
+%%DATADIR%%/src/common/zeroconf/connection_handlers_zeroconf.pyo
 %%DATADIR%%/src/common/zeroconf/connection_zeroconf.py
 %%DATADIR%%/src/common/zeroconf/connection_zeroconf.pyc
+%%DATADIR%%/src/common/zeroconf/connection_zeroconf.pyo
 %%DATADIR%%/src/common/zeroconf/roster_zeroconf.py
 %%DATADIR%%/src/common/zeroconf/roster_zeroconf.pyc
+%%DATADIR%%/src/common/zeroconf/roster_zeroconf.pyo
 %%DATADIR%%/src/common/zeroconf/zeroconf.py
 %%DATADIR%%/src/common/zeroconf/zeroconf.pyc
+%%DATADIR%%/src/common/zeroconf/zeroconf.pyo
+%%DATADIR%%/src/common/zeroconf/zeroconf_avahi.py
+%%DATADIR%%/src/common/zeroconf/zeroconf_avahi.pyc
+%%DATADIR%%/src/common/zeroconf/zeroconf_avahi.pyo
+%%DATADIR%%/src/common/zeroconf/zeroconf_bonjour.py
+%%DATADIR%%/src/common/zeroconf/zeroconf_bonjour.pyc
+%%DATADIR%%/src/common/zeroconf/zeroconf_bonjour.pyo
 %%DATADIR%%/src/config.py
 %%DATADIR%%/src/config.pyc
+%%DATADIR%%/src/config.pyo
 %%DATADIR%%/src/conversation_textview.py
 %%DATADIR%%/src/conversation_textview.pyc
+%%DATADIR%%/src/conversation_textview.pyo
 %%DATADIR%%/src/dataforms_widget.py
 %%DATADIR%%/src/dataforms_widget.pyc
+%%DATADIR%%/src/dataforms_widget.pyo
 %%DATADIR%%/src/dialogs.py
 %%DATADIR%%/src/dialogs.pyc
+%%DATADIR%%/src/dialogs.pyo
 %%DATADIR%%/src/disco.py
 %%DATADIR%%/src/disco.pyc
+%%DATADIR%%/src/disco.pyo
+%%DATADIR%%/src/features_window.py
+%%DATADIR%%/src/features_window.pyc
+%%DATADIR%%/src/features_window.pyo
 %%DATADIR%%/src/filetransfers_window.py
 %%DATADIR%%/src/filetransfers_window.pyc
+%%DATADIR%%/src/filetransfers_window.pyo
 %%DATADIR%%/src/gajim-remote.py
 %%DATADIR%%/src/gajim-remote.pyc
+%%DATADIR%%/src/gajim-remote.pyo
 %%DATADIR%%/src/gajim.py
 %%DATADIR%%/src/gajim.pyc
+%%DATADIR%%/src/gajim.pyo
 %%DATADIR%%/src/gajim_themes_window.py
 %%DATADIR%%/src/gajim_themes_window.pyc
+%%DATADIR%%/src/gajim_themes_window.pyo
 %%DATADIR%%/src/groupchat_control.py
 %%DATADIR%%/src/groupchat_control.pyc
+%%DATADIR%%/src/groupchat_control.pyo
 %%DATADIR%%/src/groups.py
 %%DATADIR%%/src/groups.pyc
+%%DATADIR%%/src/groups.pyo
 %%DATADIR%%/src/gtkexcepthook.py
 %%DATADIR%%/src/gtkexcepthook.pyc
+%%DATADIR%%/src/gtkexcepthook.pyo
 %%DATADIR%%/src/gtkgui_helpers.py
 %%DATADIR%%/src/gtkgui_helpers.pyc
+%%DATADIR%%/src/gtkgui_helpers.pyo
 %%DATADIR%%/src/history_manager.py
 %%DATADIR%%/src/history_manager.pyc
+%%DATADIR%%/src/history_manager.pyo
 %%DATADIR%%/src/history_window.py
 %%DATADIR%%/src/history_window.pyc
+%%DATADIR%%/src/history_window.pyo
 %%DATADIR%%/src/htmltextview.py
 %%DATADIR%%/src/htmltextview.pyc
+%%DATADIR%%/src/htmltextview.pyo
 %%DATADIR%%/src/message_control.py
 %%DATADIR%%/src/message_control.pyc
+%%DATADIR%%/src/message_control.pyo
 %%DATADIR%%/src/message_textview.py
 %%DATADIR%%/src/message_textview.pyc
+%%DATADIR%%/src/message_textview.pyo
 %%DATADIR%%/src/message_window.py
 %%DATADIR%%/src/message_window.pyc
+%%DATADIR%%/src/message_window.pyo
 %%DATADIR%%/src/music_track_listener.py
 %%DATADIR%%/src/music_track_listener.pyc
+%%DATADIR%%/src/music_track_listener.pyo
+%%DATADIR%%/src/negotiation.py
+%%DATADIR%%/src/negotiation.pyc
+%%DATADIR%%/src/negotiation.pyo
 %%DATADIR%%/src/network_manager_listener.py
 %%DATADIR%%/src/network_manager_listener.pyc
+%%DATADIR%%/src/network_manager_listener.pyo
 %%DATADIR%%/src/notify.py
 %%DATADIR%%/src/notify.pyc
+%%DATADIR%%/src/notify.pyo
 %%DATADIR%%/src/profile_window.py
 %%DATADIR%%/src/profile_window.pyc
+%%DATADIR%%/src/profile_window.pyo
 %%DATADIR%%/src/remote_control.py
 %%DATADIR%%/src/remote_control.pyc
+%%DATADIR%%/src/remote_control.pyo
 %%DATADIR%%/src/roster_window.py
 %%DATADIR%%/src/roster_window.pyc
+%%DATADIR%%/src/roster_window.pyo
+%%DATADIR%%/src/search_window.py
+%%DATADIR%%/src/search_window.pyc
+%%DATADIR%%/src/search_window.pyo
+%%DATADIR%%/src/secrets.py
+%%DATADIR%%/src/secrets.pyc
+%%DATADIR%%/src/secrets.pyo
+%%DATADIR%%/src/session.py
+%%DATADIR%%/src/session.pyc
+%%DATADIR%%/src/session.pyo
 %%DATADIR%%/src/statusicon.py
 %%DATADIR%%/src/statusicon.pyc
+%%DATADIR%%/src/statusicon.pyo
 %%DATADIR%%/src/systray.py
 %%DATADIR%%/src/systray.pyc
+%%DATADIR%%/src/systray.pyo
 %%DATADIR%%/src/tooltips.py
 %%DATADIR%%/src/tooltips.pyc
+%%DATADIR%%/src/tooltips.pyo
 %%DATADIR%%/src/vcard.py
 %%DATADIR%%/src/vcard.pyc
+%%DATADIR%%/src/vcard.pyo
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/THANKS
+%%DOCSDIR%%/THANKS.artists
 @dirrm lib/gajim
 @dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
@@ -879,6 +1221,22 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/pixmaps/agents
 @dirrm %%DATADIR%%/data/pixmaps/events
 @dirrm %%DATADIR%%/data/pixmaps
+@dirrm %%DATADIR%%/data/moods/default
+@dirrm %%DATADIR%%/data/moods
+@dirrm %%DATADIR%%/data/activities/default/doing_chores
+@dirrm %%DATADIR%%/data/activities/default/drinking
+@dirrm %%DATADIR%%/data/activities/default/eating
+@dirrm %%DATADIR%%/data/activities/default/exercising
+@dirrm %%DATADIR%%/data/activities/default/grooming
+@dirrm %%DATADIR%%/data/activities/default/having_appointment
+@dirrm %%DATADIR%%/data/activities/default/inactive
+@dirrm %%DATADIR%%/data/activities/default/relaxing
+@dirrm %%DATADIR%%/data/activities/default/talking
+@dirrm %%DATADIR%%/data/activities/default/traveling
+@dirrm %%DATADIR%%/data/activities/default/unknown
+@dirrm %%DATADIR%%/data/activities/default/working
+@dirrm %%DATADIR%%/data/activities/default
+@dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data/emoticons/animated
@@ -886,6 +1244,7 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/emoticons/static-big
 @dirrm %%DATADIR%%/data/emoticons
 @dirrm %%DATADIR%%/data/iconsets/crystal/16x16
+@dirrm %%DATADIR%%/data/iconsets/crystal/32x32
 @dirrm %%DATADIR%%/data/iconsets/crystal/48x48
 @dirrm %%DATADIR%%/data/iconsets/crystal
 @dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
@@ -901,6 +1260,7 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/goojim/48x48
 @dirrm %%DATADIR%%/data/iconsets/goojim
 @dirrm %%DATADIR%%/data/iconsets/gossip/16x16
+@dirrm %%DATADIR%%/data/iconsets/gossip/32x32
 @dirrm %%DATADIR%%/data/iconsets/gossip/48x48
 @dirrm %%DATADIR%%/data/iconsets/gossip
 @dirrm %%DATADIR%%/data/iconsets/gota/16x16
@@ -912,12 +1272,15 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
 @dirrm %%DATADIR%%/data/iconsets/jabberbulb
 @dirrm %%DATADIR%%/data/iconsets/nuvola/16x16
+@dirrm %%DATADIR%%/data/iconsets/nuvola/32x32
 @dirrm %%DATADIR%%/data/iconsets/nuvola/48x48
 @dirrm %%DATADIR%%/data/iconsets/nuvola
 @dirrm %%DATADIR%%/data/iconsets/simplebulb/16x16
+@dirrm %%DATADIR%%/data/iconsets/simplebulb/32x32
 @dirrm %%DATADIR%%/data/iconsets/simplebulb/48x48
 @dirrm %%DATADIR%%/data/iconsets/simplebulb
 @dirrm %%DATADIR%%/data/iconsets/stellar/16x16
+@dirrm %%DATADIR%%/data/iconsets/stellar/32x32
 @dirrm %%DATADIR%%/data/iconsets/stellar/48x48
 @dirrm %%DATADIR%%/data/iconsets/stellar
 @dirrm %%DATADIR%%/data/iconsets/sun/16x16
@@ -939,6 +1302,10 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
 @dirrm %%DATADIR%%/data/iconsets/transports/irc
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim
 @dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
 @dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
