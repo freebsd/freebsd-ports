@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	switzerland
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	security python
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test the integrity of communications over networks and firewalls
 
 USE_PYTHON=	yes
