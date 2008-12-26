@@ -1,0 +1,10 @@
+MPD click & play client
+ 
+mpdBrowser show your collection's covers and let you:
+- play an album with left click
+- Enqueue an album with left click and Control
+- Clear playlist with middle click
+- play a song with right click
+- enqueue a song with right click and Control
+
+WWW: http://www.gnomefiles.org/app.php/mpdBrowser
