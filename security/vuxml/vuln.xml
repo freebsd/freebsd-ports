@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0ac68e68-d32b-11dd-b540-d1288664c17e">
+    <topic>ampache -- insecure temporary file usage</topic>
+    <affects>
+      <package>
+	<name>ampache</name>
+	<range><lt>3.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31657">
+	  <p>A security issue has been reported in Ampache, which can be 
+	    exploited by malicious, local users to perform certain actions 
+	    with escalated privileges.</p>
+	  <p>The security issue is caused due to the "gather-messages.sh"
+	    script handling temporary files in an insecure manner.
+	    This can be exploited via symlink attacks to overwrite arbitrary 
+	    files with the privileges of the user running the script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>30875</bid>
+      <cvename>CVE-2008-3929</cvename>
+      <url>http://secunia.com/advisories/31657</url>
+    </references>
+    <dates>
+      <discovery>2008-12-24</discovery>
+      <entry>2008-12-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="225bc349-ce10-11dd-a721-0030843d3802">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
