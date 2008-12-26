@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/FromDATA/.packlist
+%%SITE_PERL%%/Template/Provider/FromDATA.pm
+@dirrmtry %%SITE_PERL%%/Template/Provider
+@dirrmtry %%SITE_PERL%%/Template
+@dirrm  %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/FromDATA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
