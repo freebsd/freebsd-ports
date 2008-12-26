@@ -80,7 +80,6 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/avatars/default/people/6ad16e2c3e4b8e4e6da47032d4372f4b.png
 %%DATADIR%%/data/gfx/avatars/default/people/6ecea83d9fac6b4cae97e2fccd09a5f6.png
 %%DATADIR%%/data/gfx/avatars/default/people/74672ebfa2ab02968386c4e441a08668.png
-%%DATADIR%%/data/gfx/avatars/default/people/93dec21823a314fb8ef2261b7aa75ae5.png
 %%DATADIR%%/data/gfx/avatars/default/people/95df673e5ee4d02f0f95d5c7ff091cfb.png
 %%DATADIR%%/data/gfx/avatars/default/people/9f49fc3d6062ddc08dc6bbd9ef9b399d.png
 %%DATADIR%%/data/gfx/avatars/default/people/bc28d08c451a775f9e332c14a397096b.png
@@ -91,7 +90,6 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/avatars/default/people/d21268e1d2ec969367ee5b54bd34738b.png
 %%DATADIR%%/data/gfx/avatars/default/people/d66940c138c207c68a338769d683e691.png
 %%DATADIR%%/data/gfx/avatars/default/people/d6f8a45e9243b7e7e4e2c8e41df1c9f5.png
-%%DATADIR%%/data/gfx/avatars/default/people/d90bd3fbbe3671ebac5f9f223d0c6d65.png
 %%DATADIR%%/data/gfx/avatars/default/people/da34195981d255656f39c05481de3b6a.png
 %%DATADIR%%/data/gfx/avatars/default/people/e3e1ae15f7d808fce16c26c049e2cbe9.png
 %%DATADIR%%/data/gfx/avatars/default/people/e54e67ebd5265cf549362a2cda5a999c.png
@@ -161,7 +159,9 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/misc/radiobutton_pressed.png
 %%DATADIR%%/data/gfx/gui/misc/radiobutton_unchecked.png
 %%DATADIR%%/data/gfx/gui/misc/radiobutton_unchecked_hover.png
+%%DATADIR%%/data/gfx/gui/misc/startwindowbg.png
 %%DATADIR%%/data/gfx/gui/misc/toolboxFrameBG.png
+%%DATADIR%%/data/gfx/gui/misc/welcomepokerth.png
 %%DATADIR%%/data/gfx/gui/misc/windowicon.png
 %%DATADIR%%/data/gfx/gui/table/default/action_allin.png
 %%DATADIR%%/data/gfx/gui/table/default/action_bet.png
@@ -212,7 +212,9 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/sounds/default/yourturn.wav
 %%DATADIR%%/data/translations/pokerth_bg.qm
 %%DATADIR%%/data/translations/pokerth_de.qm
+%%DATADIR%%/data/translations/pokerth_dk.qm
 %%DATADIR%%/data/translations/pokerth_es.qm
+%%DATADIR%%/data/translations/pokerth_fi.qm
 %%DATADIR%%/data/translations/pokerth_fr.qm
 %%DATADIR%%/data/translations/pokerth_gr.qm
 %%DATADIR%%/data/translations/pokerth_hu.qm
