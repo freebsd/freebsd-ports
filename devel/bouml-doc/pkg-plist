@@ -3,6 +3,7 @@
 %%DOCSDIR%%/activitycontrolnode.html
 %%DOCSDIR%%/activitydiagram.html
 %%DOCSDIR%%/activityobject.html
+%%DOCSDIR%%/activitypartition.html
 %%DOCSDIR%%/activityregion.html
 %%DOCSDIR%%/artifact.html
 %%DOCSDIR%%/attribute.html
@@ -190,6 +191,8 @@
 %%DOCSDIR%%/empty_html/class149888.html
 %%DOCSDIR%%/empty_html/class150016.html
 %%DOCSDIR%%/empty_html/class150144.html
+%%DOCSDIR%%/empty_html/class150272.html
+%%DOCSDIR%%/empty_html/class150403.html
 %%DOCSDIR%%/empty_html/class1536.html
 %%DOCSDIR%%/empty_html/class1664.html
 %%DOCSDIR%%/empty_html/class1792.html
@@ -385,6 +388,7 @@
 %%DOCSDIR%%/figs/activityobjectmenu.png
 %%DOCSDIR%%/figs/activityobjectpictmenu.png
 %%DOCSDIR%%/figs/activityobjectstereotypes.png
+%%DOCSDIR%%/figs/activitypartition.png
 %%DOCSDIR%%/figs/activitypictmenu.png
 %%DOCSDIR%%/figs/activitystereotypes.png
 %%DOCSDIR%%/figs/actor.png
@@ -478,6 +482,7 @@
 %%DOCSDIR%%/figs/browserobjectdiagram.png
 %%DOCSDIR%%/figs/browseroperation.png
 %%DOCSDIR%%/figs/browserpackage.png
+%%DOCSDIR%%/figs/browserpartition.png
 %%DOCSDIR%%/figs/browserregion.png
 %%DOCSDIR%%/figs/browserrelation1.png
 %%DOCSDIR%%/figs/browserrelation1b.png
@@ -816,6 +821,12 @@
 %%DOCSDIR%%/figs/paramsetedit2.png
 %%DOCSDIR%%/figs/paramsetmenu.png
 %%DOCSDIR%%/figs/paramsetpictmenu.png
+%%DOCSDIR%%/figs/partition1.png
+%%DOCSDIR%%/figs/partitiondrawingsettings.png
+%%DOCSDIR%%/figs/partitionedit1.png
+%%DOCSDIR%%/figs/partitionmenu.png
+%%DOCSDIR%%/figs/partitionpictmenu.png
+%%DOCSDIR%%/figs/partitionstereotypes.png
 %%DOCSDIR%%/figs/phpreverse.png
 %%DOCSDIR%%/figs/pin1.png
 %%DOCSDIR%%/figs/pindrawingsettings.png
@@ -1026,6 +1037,7 @@
 %%DOCSDIR%%/index_activitycontrolnode.html
 %%DOCSDIR%%/index_activitydiagram.html
 %%DOCSDIR%%/index_activityobject.html
+%%DOCSDIR%%/index_activitypartition.html
 %%DOCSDIR%%/index_activityregion.html
 %%DOCSDIR%%/index_artifact.html
 %%DOCSDIR%%/index_attribute.html

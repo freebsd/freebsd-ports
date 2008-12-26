@@ -532,6 +532,7 @@ bin/projectSynchro
 %%DATADIR%%/empty/149632.bodies
 %%DATADIR%%/empty/149888.bodies
 %%DATADIR%%/empty/150016.bodies
+%%DATADIR%%/empty/150272.bodies
 %%DATADIR%%/empty/1536.bodies
 %%DATADIR%%/empty/1664.bodies
 %%DATADIR%%/empty/1792.bodies
@@ -781,6 +782,8 @@ bin/projectSynchro
 %%DATADIR%%/html/149760.bodies
 %%DATADIR%%/html/150016.bodies
 %%DATADIR%%/html/151040.bodies
+%%DATADIR%%/html/151296.bodies
+%%DATADIR%%/html/151427.bodies
 %%DATADIR%%/html/1536.bodies
 %%DATADIR%%/html/1664.bodies
 %%DATADIR%%/html/1792.bodies
@@ -1721,6 +1724,9 @@ bin/projectSynchro
 %%DATADIR%%/xmi2/150272.bodies
 %%DATADIR%%/xmi2/150402.bodies
 %%DATADIR%%/xmi2/150528.bodies
+%%DATADIR%%/xmi2/150656.bodies
+%%DATADIR%%/xmi2/150912.bodies
+%%DATADIR%%/xmi2/151043.bodies
 %%DATADIR%%/xmi2/1536.bodies
 %%DATADIR%%/xmi2/1664.bodies
 %%DATADIR%%/xmi2/1792.bodies
@@ -1933,6 +1939,9 @@ bin/projectSynchro
 %%DATADIR%%/xmi2import/155008.bodies
 %%DATADIR%%/xmi2import/155264.bodies
 %%DATADIR%%/xmi2import/155520.bodies
+%%DATADIR%%/xmi2import/155648.bodies
+%%DATADIR%%/xmi2import/155904.bodies
+%%DATADIR%%/xmi2import/156035.bodies
 %%DATADIR%%/xmi2import/1664.bodies
 %%DATADIR%%/xmi2import/1792.bodies
 %%DATADIR%%/xmi2import/1920.bodies
