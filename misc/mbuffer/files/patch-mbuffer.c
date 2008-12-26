@@ -1,5 +1,5 @@
---- mbuffer.c.orig	2008-12-24 12:17:41.000000000 +0800
-+++ mbuffer.c	2008-12-24 12:36:47.000000000 +0800
+--- mbuffer.c.orig	2008-12-08 09:20:47.000000000 +0800
++++ mbuffer.c	2008-12-27 03:21:03.000000000 +0800
 @@ -32,7 +32,6 @@
  #include <fcntl.h>
  #include <libgen.h>
@@ -8,7 +8,7 @@
  #include <math.h>
  #include <pthread.h>
  #include <semaphore.h>
-@@ -45,6 +44,8 @@
+@@ -45,13 +44,21 @@
  #include <sys/mman.h>
  #include <sys/stat.h>
  #include <sys/time.h>
@@ -16,8 +16,11 @@
 +#include <sys/sysctl.h>
  #include <termios.h>
  #include <unistd.h>
++#if defined(__FreeBSD__)
++#include <sys/param.h>
++#endif
  
-@@ -52,6 +53,9 @@
+ #ifdef HAVE_SENDFILE
  #ifdef HAVE_SENDFILE_H
  #include <sys/sendfile.h>
  #endif
@@ -27,7 +30,7 @@
  /* if this sendfile implementation does not support sending from buffers,
     disable sendfile support */
  	#ifndef SFV_FD_SELF
-@@ -855,7 +859,7 @@
+@@ -855,7 +862,7 @@
  			err = fsync(fd);
  		while ((err != 0) && (errno == EINTR));
  		if (err != 0) {
@@ -36,7 +39,7 @@
  				infomsg("syncing unsupported on %s: omitted.\n",d->arg);
  			} else {
  				warningmsg("unable to sync %s: %s\n",d->arg,strerror(errno));
-@@ -1126,7 +1130,7 @@
+@@ -1126,7 +1133,7 @@
  		err = fsync(d->fd);
  	while ((err != 0) && (errno == EINTR));
  	if (err != 0) {
@@ -45,7 +48,7 @@
  			infomsg("syncing unsupported on %s: omitted.\n",d->arg);
  		} else {
  			warningmsg("unable to sync %s: %s\n",d->arg,strerror(errno));
-@@ -1608,12 +1612,22 @@
+@@ -1608,12 +1615,22 @@
  	const char *outfile = 0;
  	struct sigaction sig;
  	dest_t *dest = 0;
@@ -70,7 +73,7 @@
  	assert(nump > 0);
  	Blocksize = pgsz;
  	Numblocks = nump/50;
-@@ -1664,6 +1678,8 @@
+@@ -1664,6 +1681,8 @@
  			debugmsg("Verbose = %d\n",Verbose);
  #if defined(_SC_AVPHYS_PAGES) && defined(_SC_PAGESIZE) && !defined(__CYGWIN__)
  			debugmsg("total # of phys pages: %li (pagesize %li)\n",nump,pgsz);
@@ -79,7 +82,7 @@
  #endif
  			debugmsg("default buffer set to %d blocks of %lld bytes\n",Numblocks,Blocksize);
  		} else if (!argcheck("-u",argv,&c,argc)) {
-@@ -1760,7 +1776,7 @@
+@@ -1760,7 +1779,7 @@
  			Status = 0;
  		} else if (!strcmp("-c",argv[c])) {
  			debugmsg("enabling full synchronous I/O\n");
@@ -88,7 +91,7 @@
  		} else if (!argcheck("-a",argv,&c,argc)) {
  			Autoloader = 1;
  			Autoload_time = atoi(argv[c]);
-@@ -1864,7 +1880,14 @@
+@@ -1864,7 +1883,14 @@
  	/* SPW END */
  
  	/* check that we stay within system limits */
@@ -104,13 +107,17 @@
  	if (-1 == mxnrsem) {
  		warningmsg("unable to determine maximum value of semaphores\n");
  	} else if (Numblocks > (unsigned long long) mxnrsem) {
-@@ -1874,8 +1897,8 @@
+@@ -1874,8 +1900,12 @@
  	if ((Blocksize * (long long)Numblocks) > (long long)SSIZE_MAX)
  		fatal("Cannot address so much memory (%lld*%d=%lld>%lld).\n",Blocksize,Numblocks,Blocksize*(long long)Numblocks,(long long)SSIZE_MAX);
  	/* create buffer */
 -	Buffer = (char **) memalign(sysconf(_SC_PAGESIZE),Numblocks * sizeof(char *));
 -	if (!Buffer)
++#if defined(__FreeBSD__) && (__FreeBSD_version < 700000)
++	Buffer = (char **) valloc(Numblocks * sizeof(char *));
++#else
 +	err = posix_memalign(&Buffer,sysconf(_SC_PAGESIZE),Numblocks * sizeof(char *));
++#endif
 +	if (err || !Buffer)
  		fatal("Could not allocate enough memory (%d requested): %s\n",Numblocks * sizeof(char *),strerror(errno));
  	if (Memmap) {
