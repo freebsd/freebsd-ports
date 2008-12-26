@@ -63,6 +63,7 @@
     SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += ganttproject
+    SUBDIR += ganyremote
     SUBDIR += gcal
     SUBDIR += gcalcli
     SUBDIR += gdesklets
