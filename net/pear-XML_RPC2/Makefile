@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_RPC2
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	net devel pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	curl
 
-CATEGORY=	XML
 FILES=		XML/RPC2/Backend/Php/Value/Array.php \
 		XML/RPC2/Backend/Php/Value/Base64.php \
 		XML/RPC2/Backend/Php/Value/Boolean.php \
