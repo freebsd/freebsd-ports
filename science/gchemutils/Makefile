@@ -42,6 +42,10 @@ OPTIONS=	MOZILLA "Build mozilla plugin" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800058
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_MOZILLA)
 USE_GECKO=	mozilla
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
