@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	synfig
-DISTVERSION=	0.61.08
-PORTREVISION=	1
+DISTVERSION=	0.61.09
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A vector based 2D animation package
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
