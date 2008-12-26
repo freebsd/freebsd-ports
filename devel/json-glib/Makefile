@@ -7,6 +7,7 @@
 
 PORTNAME=	json-glib
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://folks.o-hand.com/~ebassi/sources/
 
