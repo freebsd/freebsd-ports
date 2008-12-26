@@ -493,6 +493,7 @@
     SUBDIR += mangos
     SUBDIR += marsnomercy
     SUBDIR += masterserver
+    SUBDIR += maxr
     SUBDIR += memonix
     SUBDIR += meqcc
     SUBDIR += meritous
