@@ -7942,6 +7942,7 @@ lyx15                           ports/print/lyx15
 lzma                            ports/archivers/lzma
 lzmalib                         ports/archivers/lzmalib
 lzmautils                       ports/archivers/lzmautils
+lzmautils-devel                 ports/archivers/lzmautils-devel
 lzo                             ports/archivers/lzo
 lzo2                            ports/archivers/lzo2
 lzop                            ports/archivers/lzop
@@ -10117,6 +10118,7 @@ p5-Chooser                      ports/devel/p5-Chooser
 p5-Cisco-Hash                   ports/security/p5-Cisco-Hash
 p5-Cisco-IPPhone                ports/net/p5-Cisco-IPPhone
 p5-Cisco-Reconfig               ports/net-mgmt/p5-Cisco-Reconfig
+p5-Clamd                        ports/mail/p5-Clamd
 p5-Class-Accessor               ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained       ports/devel/p5-Class-Accessor-Chained
 p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
@@ -13318,6 +13320,7 @@ p5-chooser                      ports/devel/p5-Chooser
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
 p5-cisco-ipphone                ports/net/p5-Cisco-IPPhone
 p5-cisco-reconfig               ports/net-mgmt/p5-Cisco-Reconfig
+p5-clamd                        ports/mail/p5-Clamd
 p5-class                        ports/devel/p5-CLASS
 p5-class-accessor               ports/devel/p5-Class-Accessor
 p5-class-accessor-chained       ports/devel/p5-Class-Accessor-Chained
@@ -17140,7 +17143,6 @@ php5-xmlwriter                  ports/textproc/php5-xmlwriter
 php5-xsl                        ports/textproc/php5-xsl
 php5-zip                        ports/archivers/php5-zip
 php5-zlib                       ports/archivers/php5-zlib
-phpSysInfo                      ports/www/phpSysInfo
 php_doc                         ports/lang/php_doc
 phpbb                           ports/www/phpbb
 phpbb-devel                     ports/www/phpbb-devel
@@ -17172,7 +17174,8 @@ phproxy                         ports/www/phproxy
 phpsecinfo                      ports/security/phpsecinfo
 phpsurveyor                     ports/www/phpsurveyor
 phpsview                        ports/graphics/phpsview
-phpsysinfo                      ports/www/phpSysInfo
+phpsysinfo                      ports/www/phpsysinfo
+phpsysinfo-dev                  ports/www/phpsysinfo-dev
 phptags                         ports/devel/phptags
 phpua-bf                        ports/games/phpua-bf
 phpua-cod                       ports/games/phpua-cod
@@ -18136,6 +18139,7 @@ py-musicbrainz                  ports/audio/py-musicbrainz
 py-musicbrainz2                 ports/audio/py-musicbrainz2
 py-mutagen                      ports/audio/py-mutagen
 py-mwlib                        ports/devel/py-mwlib
+py-mwlib.ext                    ports/devel/py-mwlib.ext
 py-mx-base                      ports/lang/py-mx-base
 py-mx-experimental              ports/devel/py-mx-experimental
 py-myghtyutils                  ports/devel/py-myghtyutils
@@ -18229,6 +18233,7 @@ py-pyglet                       ports/graphics/py-pyglet
 py-pygments                     ports/textproc/py-pygments
 py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
+py-pyke                         ports/devel/py-pyke
 py-pylib                        ports/devel/py-pylib
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
@@ -19558,6 +19563,7 @@ rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
+rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
@@ -21841,6 +21847,7 @@ weblint++                       ports/www/weblint++
 webmagick                       ports/www/WebMagick
 webmin                          ports/sysutils/webmin
 webobjects                      ports/www/webobjects
+webpy                           ports/www/webpy
 webredirect                     ports/www/webredirect
 webreport                       ports/www/webreport
 webresolve                      ports/www/webresolve
