@@ -29,6 +29,7 @@ include/fontforge/gimage.h
 include/fontforge/gio.h
 include/fontforge/gkeysym.h
 include/fontforge/gprogress.h
+include/fontforge/gresedit.h
 include/fontforge/gresource.h
 include/fontforge/groups.h
 include/fontforge/gwidget.h
@@ -158,7 +159,20 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/FontForgeSplash.png
 %%PORTDOCS%%%%DOCSDIR%%/FontImage.png
 %%PORTDOCS%%%%DOCSDIR%%/FontSample.png
+%%PORTDOCS%%%%DOCSDIR%%/GButton.png
+%%PORTDOCS%%%%DOCSDIR%%/GCancelButton.png
+%%PORTDOCS%%%%DOCSDIR%%/GComboBox.png
+%%PORTDOCS%%%%DOCSDIR%%/GComboBoxMenu.png
+%%PORTDOCS%%%%DOCSDIR%%/GDefaultButton.png
+%%PORTDOCS%%%%DOCSDIR%%/GDropList.png
+%%PORTDOCS%%%%DOCSDIR%%/GLabel.png
+%%PORTDOCS%%%%DOCSDIR%%/GListMark.png
+%%PORTDOCS%%%%DOCSDIR%%/GMatrixEdit.png
+%%PORTDOCS%%%%DOCSDIR%%/GNumericField.png
+%%PORTDOCS%%%%DOCSDIR%%/GNumericFieldSpinner.png
+%%PORTDOCS%%%%DOCSDIR%%/GRadio.png
 %%PORTDOCS%%%%DOCSDIR%%/GSUB-Order.png
+%%PORTDOCS%%%%DOCSDIR%%/GTextField.png
 %%PORTDOCS%%%%DOCSDIR%%/GenerateFamily.png
 %%PORTDOCS%%%%DOCSDIR%%/GenerateOptions.png
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFS.html
@@ -332,6 +346,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/cidmapformat.html
 %%PORTDOCS%%%%DOCSDIR%%/cidmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/cliargs.html
+%%PORTDOCS%%%%DOCSDIR%%/colorbutton.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-class.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-classlist.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-coverage.png
@@ -389,6 +404,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/eItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/editcvt.png
 %%PORTDOCS%%%%DOCSDIR%%/editexample-fr.html
+%%PORTDOCS%%%%DOCSDIR%%/editexample-full.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample2.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample3.html
@@ -682,6 +698,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/realindex.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-caveats.html
 %%PORTDOCS%%%%DOCSDIR%%/removefeature.png
+%%PORTDOCS%%%%DOCSDIR%%/resedit.html
+%%PORTDOCS%%%%DOCSDIR%%/resedit.png
 %%PORTDOCS%%%%DOCSDIR%%/retagfeature.png
 %%PORTDOCS%%%%DOCSDIR%%/rgetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/rparen-108.png
@@ -944,11 +962,14 @@ share/locale/es/LC_MESSAGES/FontForge.mo
 share/locale/fr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
+share/locale/mal/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
 share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
+@dirrmtry share/locale/mal/LC_MESSAGES
+@dirrmtry share/locale/mal
 @dirrm %%DATADIR%%/python
 %%NO_PLUGINS%%@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/pixmaps

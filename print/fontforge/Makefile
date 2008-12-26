@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080927
+PORTVERSION=	20081224
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -42,9 +42,9 @@ USE_ICONV=	yes
 PATCH_STRIP=	-l
 
 .if !defined(FONTFORGE_NO_MULTILAYER)
-WITH_MULTILAYER=	--enable-multilayer
+WITH_MULTILAYER=	--enable-type3
 .else
-WITH_MULTILAYER=	--disable-multilayer
+WITH_MULTILAYER=	--disable-type3
 .endif
 
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
@@ -78,6 +78,20 @@ ONLY_FOR_ARCHS_REASON=	Python on non-i386 systems doesn't link with Fontforge (i
 CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
+.endif
+
+.if defined(WITH_CAIRO)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+CONFIGURE_ARGS+=	--with-cairo
+.else
+CONFIGURE_ARGS+=	--without-cairo
+.endif
+
+.if defined(WITH_PANGO)
+USE_GNOME+=	pango
+CONFIGURE_ARGS+=	--with-pango
+.else
+CONFIGURE_ARGS+=	--without-pango
 .endif
 
 pre-everything::
