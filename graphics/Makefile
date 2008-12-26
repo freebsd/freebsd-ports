@@ -655,6 +655,7 @@
     SUBDIR += py-cairo
     SUBDIR += py-cgkit
     SUBDIR += py-chart
+    SUBDIR += py-clutter
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exiv2

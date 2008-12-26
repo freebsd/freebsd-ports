@@ -1,0 +1,46 @@
+include/pyclutter-1.0/pyclutter/pyclutter.h
+%%PYTHON_SITELIBDIR%%/clutter/__init__.py
+%%PYTHON_SITELIBDIR%%/clutter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/clutter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/clutter/_clutter.a
+%%PYTHON_SITELIBDIR%%/clutter/_clutter.la
+%%PYTHON_SITELIBDIR%%/clutter/_clutter.so
+%%PYTHON_SITELIBDIR%%/clutter/deprecation.py
+%%PYTHON_SITELIBDIR%%/clutter/deprecation.pyc
+%%PYTHON_SITELIBDIR%%/clutter/deprecation.pyo
+%%PYTHON_SITELIBDIR%%/clutter/keysyms.py
+%%PYTHON_SITELIBDIR%%/clutter/keysyms.pyc
+%%PYTHON_SITELIBDIR%%/clutter/keysyms.pyo
+%%PYTHON_SITELIBDIR%%/cluttercairo/__init__.py
+%%PYTHON_SITELIBDIR%%/cluttercairo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cluttercairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cluttercairo/_cluttercairo.a
+%%PYTHON_SITELIBDIR%%/cluttercairo/_cluttercairo.la
+%%PYTHON_SITELIBDIR%%/cluttercairo/_cluttercairo.so
+%%PYTHON_SITELIBDIR%%/cluttergtk/__init__.py
+%%PYTHON_SITELIBDIR%%/cluttergtk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cluttergtk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.a
+%%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.la
+%%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.so
+libdata/pkgconfig/pyclutter-0.8.pc
+share/pyclutter/1.0/defs/clutter-base-types.defs
+share/pyclutter/1.0/defs/clutter-base.defs
+share/pyclutter/1.0/defs/clutter-types.defs
+share/pyclutter/1.0/defs/clutter.defs
+share/pyclutter/1.0/defs/cogl-base-types.defs
+share/pyclutter/1.0/defs/cogl-base.defs
+share/pyclutter/1.0/defs/cogl-types.defs
+share/pyclutter/1.0/defs/cogl.defs
+share/pyclutter/defs/cluttercairo.defs
+share/pyclutter/defs/cluttergtk.defs
+@dirrm share/pyclutter/defs
+@dirrm share/pyclutter/1.0/defs
+@dirrm share/pyclutter/1.0
+@dirrm share/pyclutter
+@dirrm %%PYTHON_SITELIBDIR%%/cluttergtk
+@dirrm %%PYTHON_SITELIBDIR%%/cluttercairo
+@dirrm %%PYTHON_SITELIBDIR%%/clutter
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrm include/pyclutter-1.0/pyclutter
+@dirrm include/pyclutter-1.0
