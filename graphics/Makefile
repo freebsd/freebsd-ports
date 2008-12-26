@@ -65,6 +65,7 @@
     SUBDIR += cimg
     SUBDIR += cinepaint
     SUBDIR += claraocr
+    SUBDIR += clutter
     SUBDIR += comical
     SUBDIR += comix
     SUBDIR += compupic
