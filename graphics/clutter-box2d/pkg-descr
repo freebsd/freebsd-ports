@@ -1,0 +1,18 @@
+A glue layer between clutter and box2d that provides a special group where the
+actors can be set to be static or dynamic in regard to a physics simulation. The
+source tree currently contains an embedded version of box2d trunk.
+
+Features:
+- Children of the ClutterBox2d group can be simulated as static or dynamic
+  rigid bodies. Collision detection.
+- Specifying the gravity of the world.
+- play/pause control over the box2d physics engine
+- Setting linear and angular velocities of simulated children.
+- automatic position synchronization between clutter and box2d.
+- joints
+- prismatic.
+- revolute.
+- distance (spring)
+- mouse (for dragging objects around and manipulating them).
+
+WWW:	http://clutter-project.org/
