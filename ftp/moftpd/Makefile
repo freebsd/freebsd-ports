@@ -7,7 +7,7 @@
 
 PORTNAME=	moftpd
 PORTVERSION=	1.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
 		${MASTER_SITE_LOCAL}
@@ -18,14 +18,13 @@ COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
 USE_AUTOTOOLS=	autoconf:262
 USE_GMAKE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	moftpd
 USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	LIBS="${LIBS}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 
 MAN8=		moftpd.8 moftpadmin.8
 LIBS+=		-lcrypt
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if defined(WITHOUT_TLS)
 CONFIGURE_ARGS+=	--without-tls
@@ -45,12 +44,5 @@ LIBS+=		-L${LOCALBASE}/lib/mysql
 .else
 CONFIGURE_ARGS+=	--without-sql
 .endif
-
-post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-	${FILESDIR}/moftpd.sh > ${WRKDIR}/moftpd.sh
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/moftpd.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
