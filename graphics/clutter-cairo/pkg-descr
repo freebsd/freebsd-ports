@@ -1,0 +1,6 @@
+An experimental clutter cairo 'drawable' actor. Sucks a bit as renders
+cairo via an image surface and thus no real cairo rendering
+acceleration. Experiments with glitz and sharing GL contexts for such
+acceleration proved problematic. Needs more investigation.
+
+WWW:	http://clutter-project.org/

@@ -1,0 +1,8 @@
+include/clutter-0.8/clutter-cairo/clutter-cairo.h
+lib/libclutter-cairo-0.8.a
+lib/libclutter-cairo-0.8.la
+lib/libclutter-cairo-0.8.so
+lib/libclutter-cairo-0.8.so.0
+libdata/pkgconfig/clutter-cairo-0.8.pc
+@dirrm include/clutter-0.8/clutter-cairo
+@dirrmtry include/clutter-0.8
