@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/ftp/moftpd/files/Attic/moftpd.in,v 1.1 2008-12-26 04:32:41 pgollucci Exp $
 #
 
 # PROVIDE: moftpd
@@ -28,12 +28,13 @@ command="%%PREFIX%%/sbin/moftpd"
 pidfile="/var/run/moftpd.pid"
 required_files=%%PREFIX%%/etc/moftpd.conf
 
+load_rc_config $name
+
 [ -z "$moftpd_enable" ]       && moftpd_enable="NO"
 [ -z "$moftpd_flags" ]        && moftpd_flags=""
 [ -z "$moftpdlimits_enable" ] && moftpdlimits_enable="NO"
 [ -z "$moftpdlimits_args" ]   && moftpdlimits_args="-e -C daemon"
 
-load_rc_config $name
 
 checkyesno moftpdlimits_enable && \
 			start_precmd="eval `/usr/bin/limits ${moftpdlimits_args}` 2>/dev/null"
