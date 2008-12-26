@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	git
-PORTVERSION=	4.3.20
+PORTNAME=	gnuit
+PORTVERSION=	4.9.4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 
 CONFLICTS=	git-1.* cogito-[0-9]*
-LATEST_LINK=	gnu-git
 
 GNU_CONFIGURE=	YES
-MAN1=		git.1 gitaction.1 gitkeys.1 gitmount.1 \
-		gitrgrep.1 gitunpack.1
-INFO=		git
+MAN1=		git.1 gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
+		gitkeys.1 gitmount.1 gitps.1 gitregrep.1 gitrfgrep.1 \
+		gitrgrep.1 gitunpack.1 gitview.1 gitwipe.1
 
-pre-patch:
-	${CP} ${WRKSRC}/term/.gitrc.ansi \
-		${WRKSRC}/term/.gitrc.cons25
+post-install:
+	 ${RM} -f ${PREFIX}/man/man1/gitmkdirs.1
+	 ${RM} -f ${PREFIX}/man/man1/gitwhich.1
+	 ${RM} -f ${PREFIX}/man/man1/gitxgrep.1
 
 .include <bsd.port.mk>
