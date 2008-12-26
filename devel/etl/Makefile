@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	etl
-PORTVERSION=	0.04.11
+PORTVERSION=	0.04.12
 CATEGORIES=	devel lang
 MASTER_SITES=	SF/synfig
-DISTNAME=	ETL-0.4.11
+DISTNAME=	ETL-0.04.12
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Voria Extended Class and Template Library
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
