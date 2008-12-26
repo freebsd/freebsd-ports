@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_auth_remote
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
