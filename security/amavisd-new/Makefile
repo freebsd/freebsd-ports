@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -245,7 +244,8 @@ post-patch:
 			${WRKSRC}/amavisd-release
 	@${REINPLACE_CMD} "s|#define HAVE_MKTEMP|#undef HAVE_MKTEMP|" \
 			${WRKSRC}/helper-progs/config.h.in
-	@${REINPLACE_CMD} "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
+	@${REINPLACE_CMD} -e "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
+				-e "s|/usr/bin/perl|${PERL}|" \
 			${WRKSRC}/amavisd
 
 .if defined(AMAVIS_NOAMAVIS)
