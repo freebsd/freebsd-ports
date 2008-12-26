@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mbuffer
-PORTVERSION=	2006.07.28
+PORTVERSION=	2008.12.07
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -17,6 +17,7 @@ COMMENT=	A tool for buffering data streams
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	SHELL=${SH}
 
 PLIST_FILES=	bin/mbuffer
 
