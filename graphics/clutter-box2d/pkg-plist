@@ -1,0 +1,25 @@
+include/clutter-0.8/clutter-box2d/clutter-box2d-joint.h
+include/clutter-0.8/clutter-box2d/clutter-box2d-util.h
+include/clutter-0.8/clutter-box2d/clutter-box2d.h
+lib/libclutter-box2d-0.8.a
+lib/libclutter-box2d-0.8.la
+lib/libclutter-box2d-0.8.so
+lib/libclutter-box2d-0.8.so.0
+libdata/pkgconfig/clutter-box2d-0.8.pc
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/clutter-box2d-ClutterBox2D-Actor.html
+%%DOCSDIR%%/clutter-box2d-ClutterBox2D-Joint.html
+%%DOCSDIR%%/clutter-box2d.devhelp
+%%DOCSDIR%%/clutter-box2d.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/license.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+@dirrmtry %%DOCSDIR%%
+@dirrm include/clutter-0.8/clutter-box2d
+@dirrmtry include/clutter-0.8

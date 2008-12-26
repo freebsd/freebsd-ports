@@ -66,6 +66,7 @@
     SUBDIR += cinepaint
     SUBDIR += claraocr
     SUBDIR += clutter
+    SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
     SUBDIR += comical
     SUBDIR += comix
