@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.11.4
-PORTREVISION=	4
+PORTVERSION=	0.12.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/ \
 		http://ports.internal.vlink.ru/distfiles/
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
@@ -38,20 +37,22 @@ PLIST_SUB+=	NLS="@comment "
 
 MAN1=		gajim.1
 
+ACTIVITIES=	default
+EMOTICONS=	animated static static-big
+ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
+		simplebulb stellar sun transports
+MOODS=		default
+
 .if !defined(WITHOUT_DBUS)
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 CONFIGURE_ARGS+=	--enable-remote
-MAN1+=	gajim-remote.1
+MAN1+=		gajim-remote.1
 PLIST_SUB+=	DBUS=""
 .else
 CONFIGURE_ARGS+=	--disable-remote
 PLIST_SUB+=	DBUS="@comment "
 .endif
-
-EMOTICONS=	animated static static-big
-ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
-		simplebulb stellar sun transports
 
 post-patch:
 .for i in gajim-remote.py gajim.py history_manager.py
@@ -61,8 +62,13 @@ post-patch:
 
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
+		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 post-install:
+		${MKDIR} ${DATADIR}/data/activities
+		(cd ${WRKSRC}/data/activities && \
+		${COPYTREE_SHARE} "${ACTIVITIES}" ${DATADIR}/data/activities)
+
 		${MKDIR} ${DATADIR}/data/emoticons
 		(cd ${WRKSRC}/data/emoticons && \
 		${COPYTREE_SHARE} "${EMOTICONS}" ${DATADIR}/data/emoticons)
@@ -70,6 +76,10 @@ post-install:
 		${MKDIR} ${DATADIR}/data/iconsets
 		(cd ${WRKSRC}/data/iconsets && \
 		${COPYTREE_SHARE} "${ICONSETS}" ${DATADIR}/data/iconsets)
+
+		${MKDIR} ${DATADIR}/data/moods
+		(cd ${WRKSRC}/data/moods && \
+		${COPYTREE_SHARE} "${MOODS}" ${DATADIR}/data/moods)
 
 .include <bsd.port.pre.mk>
 
