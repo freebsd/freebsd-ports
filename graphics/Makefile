@@ -570,6 +570,7 @@
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
     SUBDIR += p5-chart
+    SUBDIR += p5-clutter
     SUBDIR += p5-ming
     SUBDIR += paintlib
     SUBDIR += panoglview

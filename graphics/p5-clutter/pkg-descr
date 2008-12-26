@@ -1,0 +1,12 @@
+Perl bindings to the Clutter OpenGL canvas. Clutter aims to give a nice
+and easy GObject based API for creating fast, heavily stylised applications,
+such as media box UI, presentations, kiosk style applications, etc.
+
+Clutter uses OpenGL for rendering.
+
+The Clutter Perl bindings allow you to write canvas-based applications in
+a Perlish and object-oriented way, freeing you from having to care about
+casting and memory management of the original Clutter C API, and yet
+remaining close to its spirit.
+
+WWW: http://www.clutter-project.org/
