@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -14,6 +14,7 @@ MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	An SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	YES
+USE_BZIP2=	YES
 USE_GMAKE=	YES
 
 OPTIONS=	STATIC  "Build statically"  off
