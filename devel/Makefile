@@ -548,6 +548,7 @@
     SUBDIR += jsl
     SUBDIR += jsmin
     SUBDIR += json-c
+    SUBDIR += json-glib
     SUBDIR += jtag
     SUBDIR += jude-community
     SUBDIR += judy
