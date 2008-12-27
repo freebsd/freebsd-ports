@@ -7,6 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
@@ -56,6 +57,7 @@ USE_PERL5=	yes
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \
 		${PATCHDIR}/FreeBSD.cf-patch \
+		${PATCHDIR}/extra-patch-xfree86 \
 		${PATCHDIR}/extra-patch-fix_Xvnc_no_valid_address \
 		${PATCHDIR}/extra-patch-xc-config-util-printver.c
 
