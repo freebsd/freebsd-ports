@@ -1563,6 +1563,7 @@ clockspeed                      ports/sysutils/clockspeed
 clockspeed-conf                 ports/sysutils/clockspeed-conf
 clog                            ports/net-mgmt/clog
 clojure                         ports/lang/clojure
+clojure-mode.el                 ports/lang/clojure-mode.el
 clonehdd                        ports/sysutils/clonehdd
 cloop-utils                     ports/sysutils/cloop-utils
 clp                             ports/math/clp
@@ -2939,6 +2940,7 @@ etunnel                         ports/net/etunnel
 euchre                          ports/games/euchre
 eukleides                       ports/math/eukleides
 euler                           ports/science/euler
+europass-xsl                    ports/textproc/europass-xsl
 eva                             ports/net-im/eva
 eval                            ports/math/eval
 evangeline                      ports/irc/evangeline
@@ -6147,6 +6149,7 @@ jsmath-fonts                    ports/math/jsmath-fonts
 jsmath-fonts-sprite             ports/math/jsmath-fonts-sprite
 jsmin                           ports/devel/jsmin
 json-c                          ports/devel/json-c
+json-glib                       ports/devel/json-glib
 jspice3                         ports/cad/jspice3
 jtag                            ports/devel/jtag
 jtans                           ports/games/jtans
@@ -7728,6 +7731,7 @@ linux-seamonkey                 ports/www/linux-seamonkey
 linux-seamonkey-devel           ports/www/linux-seamonkey-devel
 linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
+linux-sof                       ports/games/linux-sof
 linux-spheresofchaos-demo       ports/games/linux-spheresofchaos-demo
 linux-ssamtfe                   ports/games/linux-ssamtfe
 linux-ssamtse                   ports/games/linux-ssamtse
@@ -12291,6 +12295,7 @@ p5-Template-Plugin-Number-Format  ports/www/p5-Template-Plugin-Number-Format
 p5-Template-Plugin-Subst        ports/www/p5-Template-Plugin-Subst
 p5-Template-Plugin-VMethods     ports/www/p5-Template-Plugin-VMethods
 p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
+p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
 p5-Template-Timer               ports/www/p5-Template-Timer
 p5-Template-Toolkit             ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor               ports/devel/p5-Term-ANSIColor
@@ -15557,6 +15562,7 @@ p5-template-plugin-number-format  ports/www/p5-Template-Plugin-Number-Format
 p5-template-plugin-subst        ports/www/p5-Template-Plugin-Subst
 p5-template-plugin-vmethods     ports/www/p5-Template-Plugin-VMethods
 p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
+p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
 p5-template-timer               ports/www/p5-Template-Timer
 p5-template-toolkit             ports/www/p5-Template-Toolkit
 p5-term-animation               ports/devel/p5-Term-Animation
@@ -19524,6 +19530,7 @@ rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-parsetree               ports/devel/rubygem-parsetree
+rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-postgres                ports/databases/rubygem-postgres
@@ -19971,6 +19978,7 @@ simh                            ports/emulators/simh
 simian                          ports/devel/simian
 simlib                          ports/science/simlib
 simple-ccsm                     ports/x11-wm/simple-ccsm
+simpleirc                       ports/irc/simpleirc
 simplemod                       ports/audio/simplemod
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
@@ -21778,6 +21786,7 @@ wa-aspell                       ports/textproc/wa-aspell
 waccess                         ports/www/waccess
 wackamole                       ports/net/wackamole
 wacko                           ports/www/wacko
+wadcomblog                      ports/www/wadcomblog
 wahcade                         ports/emulators/wahcade
 waiho                           ports/ftp/waiho
 waimea                          ports/x11-wm/waimea
