@@ -2,7 +2,7 @@
 
 if [ -n "$5" ]; then
 	ELFTYPE=`brandelf $5`
-if [ -n "$4" ]; then
+elif [ -n "$4" ]; then
 	ELFTYPE=`brandelf $4`
 elif [ -n "$3" ]; then
 	ELFTYPE=`brandelf $3`
