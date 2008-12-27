@@ -35,6 +35,7 @@ tinderbox/scripts/sql/schema.pgsql.post
 tinderbox/scripts/sql/schema.pgsql.pre
 tinderbox/scripts/sql/values.config
 tinderbox/scripts/sql/values.hooks
+tinderbox/scripts/sql/values.lp
 tinderbox/scripts/sql/values.pfp
 tinderbox/scripts/sql/values.pfr
 tinderbox/scripts/tc
@@ -54,7 +55,9 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
 %%WEBUI%%tinderbox/scripts/webui/core/Config.php
 %%WEBUI%%tinderbox/scripts/webui/core/Jail.php
+%%WEBUI%%tinderbox/scripts/webui/core/LogfilePattern.php
 %%WEBUI%%tinderbox/scripts/webui/core/Port.php
+%%WEBUI%%tinderbox/scripts/webui/core/PortFailPattern.php
 %%WEBUI%%tinderbox/scripts/webui/core/PortFailReason.php
 %%WEBUI%%tinderbox/scripts/webui/core/PortsTree.php
 %%WEBUI%%tinderbox/scripts/webui/core/TinderObject.php
@@ -69,6 +72,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/module/moduleBuildPorts.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleBuilds.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleConfig.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleLogs.php
 %%WEBUI%%tinderbox/scripts/webui/module/modulePortFailureReasons.php
 %%WEBUI%%tinderbox/scripts/webui/module/modulePorts.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleRss.php
@@ -79,6 +83,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/default/current_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/describe_port.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/display_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/display_markup_log.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/failed_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/latest_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/list_buildports.tpl
@@ -89,6 +94,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/default/please_login.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/rss.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/tinderstyle.css
+%%WEBUI%%tinderbox/scripts/webui/templates/default/tinderstyle.js
 %%WEBUI%%tinderbox/scripts/webui/templates/default/user_admin.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/user_permissions.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/user_properties.tpl
@@ -96,6 +102,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/current_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/describe_port.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_login.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_markup_log.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/failed_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/footer.inc.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/header.inc.tpl
@@ -109,6 +116,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/please_login.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/rss.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/tinderstyle.css
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/tinderstyle.js
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_admin.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_permissions.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/user_properties.tpl
