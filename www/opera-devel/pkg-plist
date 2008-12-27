@@ -10,6 +10,7 @@ bin/opera-devel
 %%DATADIR%%/java/opera.jar
 %%DATADIR%%/bin/works
 %%DATADIR%%/bin/operapluginwrapper
+%%DATADIR%%/bin/operapluginwrapper.freebsd
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/spellcheck.so
 %%DATADIR%%/bin/operaplugincleaner
@@ -21,6 +22,8 @@ bin/opera-devel
 %%DATADIR%%/styles/error.css
 %%DATADIR%%/styles/cache.css
 %%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/unstyledxml.css
+%%DATADIR%%/styles/webfeeds.html
 %%DATADIR%%/styles/user/toc.css
 %%DATADIR%%/styles/user/disableforms.css
 %%DATADIR%%/styles/user/disablebreaks.css
@@ -75,11 +78,14 @@ bin/opera-devel
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/standard_mouse.ini
 %%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/speeddial_default.ini
 %%DATADIR%%/ini/standard_menu.ini
 %%DATADIR%%/ini/standard_toolbar.ini
 %%DATADIR%%/ini/standard_keyboard.ini
 %%DATADIR%%/svg-sa.dat
 %%DATADIR%%/search.ini
+%%DATADIR%%/locale/en/en_US.dic
+%%DATADIR%%/locale/en/en_US.aff
 %%DATADIR%%/locale/en/license.txt
 %%DATADIR%%/locale/en/opera6.adr
 %%DATADIR%%/locale/en/search.ini
