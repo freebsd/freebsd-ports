@@ -42,6 +42,12 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm
 
+CONFLICTS=	rt-3.0* rt-3.2* rt-3.4* rt-3.6* rt-3.8*
+
+IGNORE=	use www/rt38
+DEPRECATED=	${IGNORE}
+EXPIRE_DATE=	2009-02-01
+
 USE_PERL5=	5.8.0+	# dependencies require it
 ALL_TARGETS=	testdeps fixdeps
 

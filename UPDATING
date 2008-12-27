@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081226:
+  AFFECTS: users of www/rt*
+  AUTHOR: pgollucci@FreeBSD.org
+
+  www/rt2 www/rt3 www/rt32 www/rt34 are now deprecated and will expire
+  2009-02-01.  All ports now depend on www/rt38 If you can not update
+  to www/rt38, www/rt36 is still around.
+
 20081224:
   AFFECTS: www/phpSysInfo
   AUTHOR: miwi@FreeBSD.org
