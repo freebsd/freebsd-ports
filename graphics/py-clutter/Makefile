@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedi
 LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
 		clutter-gst-0.8:${PORTSDIR}/multimedia/clutter-gst \
 		clutter-cairo-0.8:${PORTSDIR}/graphics/clutter-cairo \
-		clutter-gtk-0.8:${PORTSDIR}//graphics/clutter-gtk
+		clutter-gtk-0.8:${PORTSDIR}/graphics/clutter-gtk
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
