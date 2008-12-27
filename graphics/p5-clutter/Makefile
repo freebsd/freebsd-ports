@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-De
 LIB_DEPENDS=	clutter-glx-0.8:${PORTSDIR}/graphics/clutter \
 		clutter-gst-0.8:${PORTSDIR}/multimedia/clutter-gst \
 		clutter-cairo-0.8:${PORTSDIR}/graphics/clutter-cairo \
-		clutter-gtk-0.8:${PORTSDIR}//graphics/clutter-gtk
+		clutter-gtk-0.8:${PORTSDIR}/graphics/clutter-gtk
 
 PERL_CONFIGURE=	yes
 
