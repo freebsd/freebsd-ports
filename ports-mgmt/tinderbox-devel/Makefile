@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/:SOURCES \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:SOURCES,FAVICON
@@ -31,6 +32,8 @@ SUB_FILES=	pkg-message
 
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
+
+PATCH_STRIP=	-p2
 
 .include <bsd.port.pre.mk>
 
@@ -93,6 +96,9 @@ post-extract:
 post-extract:
 	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/webui
 .endif
+
+post-patch:
+	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -exec ${RM} {} \;
 
 do-install:
 	@${MKDIR} ${PREFIX}/tinderbox/scripts
