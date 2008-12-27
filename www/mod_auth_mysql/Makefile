@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-auth-mysql
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}

@@ -10,7 +10,7 @@ PORTVERSION=	2.4.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A fast-cgi module for Apache
 
 CONFLICTS=	apache-contrib-1.*
