@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
-		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
-		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-ALPHA/ \
-		ftp://ftp.parodius.com/pub/epic/EPIC5-ALPHA/ \
-		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-ALPHA/
+MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
+		http://tehran.lain.pl/epic-mirror/EPIC5-PRODUCTION/ \
+		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-PRODUCTION/ \
+		ftp://ftp.parodius.com/pub/epic/EPIC5-PRODUCTION/ \
+		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-PRODUCTION/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
