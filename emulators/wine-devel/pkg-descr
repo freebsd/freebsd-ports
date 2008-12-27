@@ -1,8 +1,11 @@
-Wine is a Microsoft Windows compatibility layer running under Unix-like
-systems on i386 (and compatible) CPUs.
+Wine is a Microsoft Windows compatibility layer (or program loader)
+capable of running Windows applications on i386 and compatible CPUs.
+Windows programs running in Wine act as native programs would, running
+without the performance or memory usage penalties of an emulator, with
+a similar look and feel to other applications on your desktop.
 
-It is still beta quality, but is definitely making progress. Most
-applications already work, more or less, including several games.
+Many applications already work, more or less, including versions of
+Microsoft Office and several games.
 
 WWW: http://www.winehq.com/
 
