@@ -69,6 +69,7 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/tabkey.ce
 %%DATADIR%%/script/tabkey.jm
 %%DATADIR%%/script/topicbar
+%%DATADIR%%/script/topicbar.bj
 %%DATADIR%%/script/url.irc
 %%DATADIR%%/script/utime
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
