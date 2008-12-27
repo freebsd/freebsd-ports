@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.3.25
+PORTVERSION=	1.3.26
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
@@ -75,6 +75,11 @@ CONFIGURE_ARGS+=	--disable-pthread
 .if defined(WITH_SHARED)
 CONFIGURE_ARGS+=	--disable-shared
 .endif
+
+SHLIB_VER=	7.3.0
+SHLIB_VER_MAJ=	7
+
+PLIST_SUB+= SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
 # Because gnomehack will search "(libdir)" and it doesn't work, we need
 # to patch it manually.

@@ -20,7 +20,7 @@ include/tchdb.h
 include/tcutil.h
 lib/libtokyocabinet.a
 lib/libtokyocabinet.so
-lib/libtokyocabinet.so.7
-lib/libtokyocabinet.so.7.2.0
+lib/libtokyocabinet.so.%%SHLIB_VER_MAJ%%
+lib/libtokyocabinet.so.%%SHLIB_VER%%
 libdata/pkgconfig/tokyocabinet.pc
 libexec/tcawmgr.cgi
