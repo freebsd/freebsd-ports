@@ -6,6 +6,7 @@
 
 PORTNAME=	ilias
 PORTVERSION=	3.10.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -28,7 +29,7 @@ USE_MYSQL=		yes
 DEFAULT_MYSQL_VER=	50
 USE_PHP=		mysql session zlib gd pdf dom xsl pcre
 DEFAULT_PHP_VER=	5
-WANT_PHP_MOD=		yes
+#WANT_PHP_MOD=		yes
 WRKSRC=			${WRKDIR}/ilias3
 ILIASDATADIR=		www/iliasdata
 PORTDOCS=*
