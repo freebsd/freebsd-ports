@@ -423,6 +423,7 @@
     SUBDIR += xorg-docs
     SUBDIR += xorg-edit
     SUBDIR += xorg-libraries
+    SUBDIR += xorg-minimal
     SUBDIR += xorg-protos
     SUBDIR += xphelloworld
     SUBDIR += xplsprinters
