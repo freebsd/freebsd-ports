@@ -6,44 +6,29 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
+PORTVERSION=	${OPERA_VER}
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://ftp.ucr.ac.cr/WWW/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://www.microrpm.ca/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://www.opera.mirroarrr.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://opera.eurenet.net/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		ftp://opera.ftp.fu-berlin.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://ftp.ntua.gr/pub/www/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		ftp://ftp.wayne.edu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://mirrors.dedipower.com/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.opera.com/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		http://opera.nedmirror.nl/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/&,} \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH} \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-${OPERA_DATE}.${OPERA_TYPE}-shared-qt.${ARCH}.freebsd
+DISTNAME=	${PORTNAME}-${OPERA_VER}0-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-IGNORE=		- please use www/opera, it's newer for now
-
-OPERA_VER=	9.50
-OPERA_MINVER=	b2
+OPERA_VER=	10.0
+OPERA_MINVER=	Alpha-1
 OPERA_REL=	final
-OPERA_DATE=	20080422
-OPERA_BUILD=	1933
+#OPERA_DATE=	20080422
+OPERA_BUILD=	4102
+MASTER_SITES_VER_PATH=	unix/${OPERA_VER}-${OPERA_MINVER}/${OPERA_ARCH}-freebsd/
+WRKSRC=		${WRKDIR}/${DISTNAME}
+#${OPERA_REL}/en/${OPERA_LIB}/
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-shared-qt.${ARCH}.freebsd-${OPERA_BUILD}
 USE_QT_VER=	3
 
 NO_BUILD=	yes
@@ -52,29 +37,19 @@ OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
+OPERA_ARCH=	${ARCH:S,i386,intel,}
 ONLY_FOR_ARCHS=	i386 amd64
-.else
-ONLY_FOR_ARCHS=	i386
-.endif
-
-.if ${ARCH} == amd64
-OPERA_LIB=	amd64
-.else
-OPERA_LIB=	shared
-.endif
-
 .if ${OSVERSION} >= 700000
 OPERA_TYPE=	7
 .elif ${OSVERSION} >= 600000
-.if ${ARCH} == amd64
-OPERA_TYPE=	1
+OPERA_TYPE=	6
 .else
-OPERA_TYPE=	4
+IGNORE= is only supported on FreeBSD 6.x and higher
 .endif
-.else
-OPERA_TYPE=	3
-.endif
+
+#MASTER_SITES_VER_PATH=  unix/${OPERA_VER}-${OPERA_MINVER}/${OPERA_ARCH}-freebsd/
+#WRKSRC=         ${WRKDIR}/${DISTNAME}
+#DISTNAME=       ${PORTNAME}-${OPERA_VER}0-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
@@ -82,8 +57,23 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)
+	@${CP} ${DATADIR}/bin/operapluginwrapper ${DATADIR}/bin/operapluginwrapper.freebsd
+	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${DATADIR}/bin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+# maintainer
+make-distinfo:
+	@(for _arch in ${ONLY_FOR_ARCHS}; do \
+	  for _osver in 600000 700000; do \
+	    echo "generating distinfo for $${_arch} $${_osver}"; \
+	      cd ${.CURDIR} && \
+	        make ARCH=$${_arch} OSVERSION=$${_osver} makesum && \
+	        mv distinfo distinfo.$${_arch}.$${_osver}; \
+	  done \
+	done && \
+	cat distinfo.* > distinfo && rm distinfo.*)
+
 
 .include <bsd.port.post.mk>
