@@ -6,6 +6,7 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSION}/ \
 		http://www.magnesium.net/~mdf/distfiles/
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		sqlite:${PORTSDIR}/databases/sqlite2 \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
 CONFLICTS=	mt-daapd-0.2.*
@@ -30,7 +31,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${LOCALBASE} --with-id3tag=${PREFIX} --enable-sqlite --enable-oggvorbis --enable-flac
+CONFIGURE_ARGS=		--prefix=${LOCALBASE} --with-id3tag=${PREFIX} --enable-sqlite3 --enable-oggvorbis --enable-flac
 
 #USE_AUTOTOOLS=	autoheader:261 autoconf:261:env
 

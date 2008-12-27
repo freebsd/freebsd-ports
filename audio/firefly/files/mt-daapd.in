@@ -6,8 +6,10 @@
 
 . %%RC_SUBR%%
 
+: ${firefly_enable=NO}
+
 name="firefly"
-rcvar="firefly_enable"
+rcvar="`set_rcvar`"
 
 command="%%PREFIX%%/sbin/mt-daapd"
 command_args="-c %%PREFIX%%/etc/mt-daapd.conf"
