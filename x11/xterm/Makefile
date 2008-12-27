@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	237
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.bawue.com/download/
@@ -16,6 +17,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
 BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
+LIB_DEPENDS=	utempter.0:${PORTSDIR}/sysutils/libutempter
 
 USE_XORG=	xaw xft
 GNU_CONFIGURE=	yes
