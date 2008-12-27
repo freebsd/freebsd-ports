@@ -18,6 +18,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
@@ -26,6 +27,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
+.endif
 
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
 LATEST_LINK=	rt38
@@ -143,6 +148,7 @@ IGNORE=	options WITH_MODPERL and WITH_MODPERL2 are mutually exclusive
 RT_PATH?=	${LOCALBASE}
 RT_ETC_PATH?=	${LOCALBASE}/etc/${PORTNAME}38
 RT_LAYOUT?=	FreeBSD
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}38
 
 DB_DBA_USER?=	root
 DB_DBA_PASSWORD?=
