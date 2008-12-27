@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of SGI\'s Standard Template Library
 
 USE_BZIP2=	yes
