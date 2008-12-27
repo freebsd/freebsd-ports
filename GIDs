@@ -73,6 +73,7 @@ sfs:*:171:
 agk:*:172:
 polipo:*:173:
 flowtools:*:174:
+rt:*:180:
 nagios:*:181:
 moinmoin:*:192:
 cups:*:193:

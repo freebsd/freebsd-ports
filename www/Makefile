@@ -1269,10 +1269,10 @@
     SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rt2
-    SUBDIR += rt3
     SUBDIR += rt32
     SUBDIR += rt34
     SUBDIR += rt36
+    SUBDIR += rt38
     SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-asp

@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2008-08-18 15:13:58.000000000 +0000
++++ ./Makefile.in	2008-08-21 05:15:16.000000000 +0000
+@@ -361,7 +361,7 @@
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
+ # }}}
+ 
+-install: testdeps config-install dirs files-install fixperms instruct
++install: config-install dirs files-install fixperms instruct
+ 
+ files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
+ 

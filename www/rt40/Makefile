@@ -1,0 +1,205 @@
+# New ports collection makefile for:	rt38
+# Date created:							26 December 2008
+# Whom:									Philip M. Gollucci <pgollucci@p6m7g8.com>
+#
+# $FreeBSD$
+
+# TODO:
+# o etc/rt38 files permissions
+# o install etc/rt38/RT_SiteConfig.pm in pkg-plist for packages, fix make install
+# o patch etc/rt38/RT_SiteConfig.pm and -dist perl -c path
+# o GRANTS
+# o Schema
+# o $ sudo perl rt-setup-database --action init --dba dba --dba-password X
+# o $ sudo perl rt-setup-database --action drop --dba dba --dba-password X
+# - Vhost Config
+#   o install a sample into etc/apache22/Includes
+#   o share/rt38/html -> www/rt38 ?
+
+PORTNAME=	rt
+PORTVERSION=	3.8.1
+CATEGORIES=	www
+MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
+		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	pgollucci@FreeBSD.org
+COMMENT=	RT is an industrial-grade ticketing system written in Perl
+
+CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
+LATEST_LINK=	rt38
+
+OPTIONS=	MYSQL 	"Enable MySQL backend" 		on \
+		APACHE2		"Enable Apache2 server"		on \
+		MODPERL2	"Enable mod_perl2 support"	on \
+		POSTGRESQL 	"Enable Postgresql backend"	off \
+		ORACLE		"Enable Oracle backend"		off \
+		SQLITE		"Enable SQLite backend" 	off \
+		DEV 		"Configure for Developers"	off \
+		STANDALONE	"Enable standalone server"	off \
+		APACHE		"Enable Apache1.3.x server"	off \
+		MODPERL		"Enable mod_perl support"	off \
+		FASTCGI		"Enable FastCGI support" 	off
+
+.include "${.CURDIR}/Makefile.cpan"
+
+BUILD_DEPENDS+=	${CORE_DEPS} \
+		${CLI_DEPS} \
+		${DASHBOARD_DEPS} \
+		${GD_DEPS} \
+		${GPG_DEPS} \
+		${GRAPHVIZ_DEPS} \
+		${ICAL_DEPS} \
+		${MAILGATE_DEPS} \
+		${MASON_DEPS} \
+		${SMTP_DEPS}
+
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
+USE_PERL5=	5.8.3+
+USE_AUTOTOOLS=	autoconf:262
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEV)
+BUILD_DEPENDS+=	${DEV_DEPS}
+RUN_DEPENDS+=	${DEV_DEPS}
+.endif
+
+.if defined(WITH_STANDALONE)
+BUILD_DEPENDS+=	${STANDALONE_DEPS}
+RUN_DEPENDS+=	${STANDALONE_DEPS}
+.endif
+
+.if defined(WITH_APACHE2)
+USE_APACHE=	2.0+
+.endif
+
+.if defined(WITH_APACHE)
+USE_APACHE=	1.3+
+.endif
+
+.if defined(WITH_FASTCGI)
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+.endif
+
+.if defined(WITH_MODPERL2)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
+.endif
+
+.if defined(WITH_MODPERL)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
+.endif
+
+.if !defined(WITHOUT_MYSQL)
+DB_TYPE=	mysql
+USE_MYSQL=	yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+.elif defined(WITH_POSTGRESQL)
+DB_TYPE=	Pg
+USE_POSTGRESQL=	yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.elif defined (WITH_SQLITE)
+DB_TYPE=	SQLite
+USE_SQLITE=	yes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+.elif defined (WITH_ORACLE)
+DB_TYPE=	Oracle
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+.else
+IGNORE=	you must choose a database backend
+.endif
+
+### Only 1 Backend
+#.if (defined(WITH_MYSQL) && (defined(WITH_POSTGRESQL) || defined(WITH_SQLITE) || defined(WITH_ORACLE))) ||
+#    (defined(WITH_POSTGRESQL) && (defined(WITH_MYSQL) || defined(WITH_SQLITE) || defined(WITH_ORACLE))) ||
+#    (defined(WITH_SQLITE) && (defined(WITH_MYSQL) || defined(WITH_POSTGRELSQL) || defined(WITH_ORACLE))) ||
+#    (defined(WITH_ORACLE) && (defined(WITH_MYSQL) || defined(WITH_POSTGRELSQL) || defined(WITH_SQLITE)))
+#IGNORE=	Select exactly one of WITH_MYSQL, WITH_POSTGRESQL, WITH_SQLITE, WITH_ORACLE
+#.endif
+
+### APACHE or APACHE2
+.if defined(WITH_APACHE) && defined(WITH_APACHE2)
+IGNORE=	options WITH_APACHE and WITH_APACHE2 are mutually exclusive
+.endif
+
+### MODPERL or MODPERL2
+.if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
+IGNORE=	options WITH_MODPERL and WITH_MODPERL2 are mutually exclusive
+.endif
+
+RT_PATH?=	${LOCALBASE}
+RT_ETC_PATH?=	${LOCALBASE}/etc/${PORTNAME}38
+RT_LAYOUT?=	FreeBSD
+
+DB_DBA_USER?=	root
+DB_DBA_PASSWORD?=
+DB_USER?=	rt_user
+DB_PASSWORD?=	rt_pass
+DB_HOST?=	localhost
+DB_DATABASE?=	rt3
+
+WEB_USER?=	www
+WEB_GROUP?=	www
+LIBS_GROUP?=	wheel
+
+LATEST_LINK=	rt38
+HAS_CONFIGURE=	yes
+NO_BUILD=	yes
+
+CONFIGURE_ARGS=	--enable-layout=${RT_LAYOUT} \
+	--with-web-user=${WEB_USER} \
+	--with-web-group=${WEB_GROUP} \
+	--with-libs-group=${LIBS_GROUP} \
+	--with-db-host=${DB_HOST} \
+	--with-db-port=${DB_PORT} \
+	--with-db-type=${DB_TYPE} \
+	--with-db-rt-user=${DB_USER} \
+	--with-db-rt-pass=${DB_PASSWORD} \
+	--with-db-database=${DB_DATABASE} \
+	--with-db-dba=${DB_DBA_USER}
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	RT_PATH=${RT_PATH}
+
+run-autotools::	run-autotools-autoconf
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "      DB_TYPE=type                    mysql, Oracle, Pg or SQLite (mysql)"
+	@${ECHO} "      DB_HOST=hostname                The database host (localhost)"
+	@${ECHO} "      DB_PORT=port                    The database port"
+	@${ECHO} "      DB_DATABASE=dbname              The database name (rt3)"
+	@${ECHO} ""
+	@${ECHO} "      DB_DBA_USER=username            Name of database administrator (root)"
+	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
+	@${ECHO} "      DB_USER=username                Name of database user for RT (rt_user)"
+	@${ECHO} "      DB_PASSWORD=password            Name of database password for RT (rt_pass)"
+	@sleep 3
+.if defined(WITH_SQLITE)
+	@${ECHO} ""
+	@${ECHO} "SQLITE is not recommended for production use"
+.endif
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	@[ -f ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ] || \
+		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm ${RT_ETC_PATH}/RT_SiteConfig.pm-dist
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
