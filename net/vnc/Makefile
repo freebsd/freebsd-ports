@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	vnc
-PORTVERSION=	4.1.2
-PORTREVISION=	5
+PORTVERSION=	4.1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
-DISTNAME=	vnc-4_1_2-unixsrc
+DISTNAME=	vnc-4_1_3-unixsrc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
 DIST_SUBDIR=	xc
 
@@ -19,8 +18,6 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
 		xauth:${PORTSDIR}/x11/xauth
-
-BROKEN=		checksum mismatch
 
 GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
@@ -73,7 +70,7 @@ PLIST_SUB+=	SERVER="@comment "
 # No direct URL for VNC -- have to pseudo-submit their webform.
 pre-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && cd ${DISTDIR}/${DIST_SUBDIR} && \
-	${FETCH_CMD} -o ${DISTNAME}.tar.gz 'http://www.realvnc.com/cgi-bin/download.cgi?product=free4/src/unix&acceptLicense=1&haveDetails=1&filetype=tar_gz'
+	${FETCH_CMD} -o ${DISTNAME}.tar.gz 'http://www.realvnc.com/cgi-bin/download.cgi?product=free4/src/unix&acceptLicense=1&haveDetails=1&filetype=tar_gz&filever=${PORTVERSION}'
 
 post-extract:
 .if !defined(WITHOUT_SERVER)
