@@ -58,6 +58,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/gammu:${PORTSDIR}/comms/gammu \
 		${TOMCAT_DEPEND}
 
+BROKEN=		does not compile
+
 MAKE_ENV+=	CLASSPATH=${CLASSPATH}
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
