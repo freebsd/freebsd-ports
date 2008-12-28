@@ -38,6 +38,7 @@ share/locale/it/LC_MESSAGES/transmission.mo
 share/locale/ja/LC_MESSAGES/transmission.mo
 share/locale/ka/LC_MESSAGES/transmission.mo
 share/locale/ku/LC_MESSAGES/transmission.mo
+share/locale/li/LC_MESSAGES/transmission.mo
 share/locale/lt/LC_MESSAGES/transmission.mo
 share/locale/lv/LC_MESSAGES/transmission.mo
 share/locale/mk/LC_MESSAGES/transmission.mo
@@ -54,6 +55,7 @@ share/locale/ro/LC_MESSAGES/transmission.mo
 share/locale/ru/LC_MESSAGES/transmission.mo
 share/locale/sk/LC_MESSAGES/transmission.mo
 share/locale/sl/LC_MESSAGES/transmission.mo
+share/locale/sq/LC_MESSAGES/transmission.mo
 share/locale/sr/LC_MESSAGES/transmission.mo
 share/locale/sv/LC_MESSAGES/transmission.mo
 share/locale/te/LC_MESSAGES/transmission.mo
