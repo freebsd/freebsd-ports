@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.0.5
+DISTVERSION=	2.1.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -47,14 +47,9 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		MYSQL		"With MySQL database support" off \
 		PGSQL		"With PostgreSQL database support" off \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
-		SNMP		"With SNMP support" off \
 		EXPERIMENTAL	"Build experimental modules (including DHCP)" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		fails to build python rlm module
-.endif
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
@@ -153,6 +148,7 @@ CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 .endif
+CONFIGURE_ARGS+=--with-rlm_krb5
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=${LOCALBASE}/include
 PLIST_SUB+=	KRB5=""
@@ -163,6 +159,7 @@ PLIST_SUB+=	KRB5="@comment "
 
 .ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
+CONFIGURE_ARGS+=--with-rlm_ldap
 PLIST_SUB+=	LDAP=""
 _REQUIRE+=	slapd
 .else
@@ -204,10 +201,21 @@ PLIST_SUB+=	FIREBIRD="@comment "
 WITH_EXPERIMENTAL=	yes
 .endif
 
-.ifdef(WITH_SNMP)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+# No SMB option yet; rlm_smb is still unbuildable
+.ifdef(WITH_SMB)
+LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+CONFIGURE_ARGS+=--with-rlm_smb
+CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
+PLIST_SUB+=	SMB=""
 .else
-CONFIGURE_ARGS+=--without-snmp
+CONFIGURE_ARGS+=--without-rlm_smb
+PLIST_SUB+=	SMB="@comment "
+.endif
+
+# SMB module is still experimental
+.if defined(WITH_SMB) && !defined(WITH_EXPERIMENTAL)
+WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_EXPERIMENTAL)
@@ -248,7 +256,7 @@ MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
 		rlm_detail.5 rlm_digest.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 \
 		rlm_pap.5 rlm_passwd.5 rlm_policy.5 rlm_realm.5 rlm_sql.5 \
 		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5
-MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 \
+MAN8=		radiusd.8 radmin.8 radrelay.8 radsqlrelay.8 radwatch.8 \
 		rlm_ippool_tool.8
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
@@ -266,6 +274,14 @@ post-patch:
 # Clean up after the last operation (so as not to get unwanted files in raddb)
 	@${FIND} -E ${WRKSRC}/raddb/certs -regex '.*/bootstrap\.(orig|bak)$$' \
 		-delete
+# If EXPERIMENTAL (and therefore DHCP) is enabled, enable the DHCP dictionary
+.ifdef(WITH_EXPERIMENTAL)
+	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
+		${WRKSRC}/share/dictionary
+.endif
+# Patch scripts/Makefile not to install (unnecessary) rc.radiusd
+	@${REINPLACE_CMD} -Ee 's:^(.+rc\.radiusd.+)$$:#\1:g' \
+		${WRKSRC}/scripts/Makefile
 
 pre-configure:
 # Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
