@@ -1,9 +1,0 @@
---- configure	2007-09-01 04:00:21.000000000 -0400
-+++ configure	2008-01-06 11:24:56.000000000 -0500
-@@ -41958,5 +41958,5 @@
- fi
- 
-- if test -n "`echo ${target} | grep 'x86_64'`"; then
-+ if test -n "`echo ${target} | egrep 'x86_64|amd64'`"; then
-   X86_64_TRUE=
-   X86_64_FALSE='#'

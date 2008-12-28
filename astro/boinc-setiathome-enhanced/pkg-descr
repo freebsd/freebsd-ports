@@ -2,18 +2,8 @@ SETI - Search for Extra-Terrestrial Intelligence -- Enhanced version
 
 Use your unused CPU cycles to aid in computations analyzing radio
 telescope information for possible signs of extra-terrestrial intelligence.
-The project exclusively uses the enhanced version since 2006-05-17.
 
 The port automatically optimizes for the host CPU using the CPUTYPE
 variable in /etc/make.conf
-
-Note that there is currently no screensaver support in this version.
-
-The source archive is a repackaged version of
-setiathome_enhanced-client-cvs-2007-08-08.tar.gz at
-http://setiathome.berkeley.edu/seti_source/nightly[/old]/ :
-* The screensaver and server code is removed
-* The configure and Makefile scripts are regenerated to match the
-  net/boinc-client port
 
 WWW: http://setiathome.berkeley.edu/
