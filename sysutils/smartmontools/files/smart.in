@@ -4,6 +4,43 @@
 # $FreeBSD$
 #
 
+#
+# Stolen from comp.unix.shell FAQ Q11
+# (http://cfaj.freeshell.org/shell/cus-faq-2.html#11)
+#
+run_status() {
+		local j com k l a
+		j=1
+		while eval "\${pipestatus_$j+:} false"; do
+			unset pipestatus_$j
+			j=$(($j+1))
+		done
+		j=1 com= k=1 l=
+	    for a; do
+			if [ "x$a" = 'x|' ]; then
+				com="$com { $l "'3>&-
+							echo "pipestatus_'$j'=$?" >&3
+						  } 4>&- |'
+				j=$(($j+1)) l=
+			else
+				l="$l \"\$$k\""
+			fi
+		k=$(($k+1))
+		done
+		com="$com $l"' 3>&- >&4 4>&-
+			echo "pipestatus_'$j'=$?"'
+		exec 4>&1
+		eval "$(exec 3>&1; eval "$com")"
+		exec 4>&-
+		j=1
+		while eval "\${pipestatus_$j+:} false"; do
+			eval "[ \$pipestatus_$j -eq 0 ]" || return 1
+			j=$(($j+1))
+		done
+		return 0
+}
+
+
 if [ -r /etc/defaults/periodic.conf ]; then
     . /etc/defaults/periodic.conf
     source_periodic_confs
@@ -12,41 +49,26 @@ fi
 smartctl=%%PREFIX%%/sbin/smartctl
 : ${daily_status_smartctl_flags="-H"}
 : ${daily_status_smartctl_extra_status_flags="-a"}
-# no default for ${daily_status_smart_devices}
-if [ -z "${daily_status_smart_devices}" ]; then
-	: ${daily_status_smart_enabled="NO"}
-else
-	: ${daily_status_smart_enabled="YES"}
-fi
-trim_junk="tail -n +4"
-
-tmpfile="$(mktemp /var/run/daily.XXXXXXXX)"
-trap "rm -f ${tmpfile}" 0 1 3 15
-
 rc=0
-case "${daily_status_smart_enable}" in
-	[Nn][Oo])
-		;;
-	*)
-		for device in ${daily_status_smart_devices}; do
-			if [ -e ${device} ]; then
-				echo 
-				echo "Checking health of ${device}:"
+
+# no default for ${daily_status_smart_devices}
+if [ -n "${daily_status_smart_devices}" ]; then
+	for device in ${daily_status_smart_devices}; do
+		if [ -e ${device} ]; then
+			echo 
+			echo "Checking health of ${device}:"
+			run_status ${smartctl} ${daily_status_smartctl_flags} ${device} \| \
+			grep 'SMART overall-health self-assessment test result'
+			if [ $((pipestatus_1 & 3)) -ne 0 ]; then
+				rc=2
+				${smartctl} ${daily_status_smartctl_flags} ${device}
+			elif [ $pipestatus_1 -ne 0 ]; then
+				rc=3
 				echo
-				${smartctl} ${daily_status_smartctl_flags} ${device} > "${tmpfile}"
-				status=$?
-				if [ $((status & 3)) -ne 0 ]; then
-					rc=2
-					${trim_junk} "${tmpfile}"
-				elif [ $status -ne 0 ]; then
-					rc=1
-					${smartctl} ${daily_status_smartctl_extra_status_flags} ${device} | ${trim_junk}
-				else
-					${trim_junk} "${tmpfile}"
-				fi
+				${smartctl} ${daily_status_smartctl_extra_status_flags} ${device}
 			fi
-		done
-		;;
-esac
+		fi
+	done
+fi
 
 exit "$rc"
