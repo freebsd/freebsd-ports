@@ -2,10 +2,40 @@ bin/lordsawar
 bin/lordsawar-army-editor
 bin/lordsawar-editor
 bin/lordsawar-tile-editor
+bin/lordsawar-pbm
 share/applications/lordsawar.desktop
+share/gnome/help/lordsawar/C/figures/army_bonus.png
+share/gnome/help/lordsawar/C/figures/army_unit_info.png
+share/gnome/help/lordsawar/C/figures/buy_production.png
+share/gnome/help/lordsawar/C/figures/city_window.png
+share/gnome/help/lordsawar/C/figures/conquer_city.png
+share/gnome/help/lordsawar/C/figures/fight_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fight_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/fight_order.png
+share/gnome/help/lordsawar/C/figures/fighting_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fighting_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/fought_city_one_vs_two.png
+share/gnome/help/lordsawar/C/figures/fought_one_vs_one.png
+share/gnome/help/lordsawar/C/figures/game_lobby.png
+share/gnome/help/lordsawar/C/figures/game_options.png
 share/gnome/help/lordsawar/C/legal.xml
 share/gnome/help/lordsawar/C/lordsawar.xml
+share/gnome/help/lordsawar/C/figures/main_screen.png
+share/gnome/help/lordsawar/C/figures/main_screen_buttons.png
+share/gnome/help/lordsawar/C/figures/main_screen_center_on_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_defend_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_deselect_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_diplomacy_proposed_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_end_turn_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_all_stacks_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_move_stack_dir_buttons.png
+share/gnome/help/lordsawar/C/figures/main_screen_park_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_select_next_stack_button.png
+share/gnome/help/lordsawar/C/figures/main_screen_stack_search_button.png
 %%DATADIR%%/citynames
+%%DATADIR%%/gtkrc
 %%DATADIR%%/heronames
 %%DATADIR%%/ruinnames
 %%DATADIR%%/signposts
@@ -100,6 +130,34 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/tilesets/bigdefault/hills.png
 %%DATADIR%%/tilesets/bigdefault/mountains.png
 %%DATADIR%%/tilesets/bigdefault/swamp.png
+%%DATADIR%%/tilesets/stark/misc/bridges.png
+%%DATADIR%%/tilesets/stark/misc/explosion.png
+%%DATADIR%%/tilesets/stark/misc/flags.png
+%%DATADIR%%/tilesets/stark/misc/fog.png
+%%DATADIR%%/tilesets/stark/misc/roads.png
+%%DATADIR%%/tilesets/stark/misc/selector.png
+%%DATADIR%%/tilesets/stark/misc/small_selector.png
+%%DATADIR%%/tilesets/stark/forest.png
+%%DATADIR%%/tilesets/stark/grass.png
+%%DATADIR%%/tilesets/stark/hills.png
+%%DATADIR%%/tilesets/stark/mountains.png
+%%DATADIR%%/tilesets/stark/stark.xml
+%%DATADIR%%/tilesets/stark/swamp.png
+%%DATADIR%%/tilesets/stark/water.png
+%%DATADIR%%/tilesets/bigstark/misc/bridges.png
+%%DATADIR%%/tilesets/bigstark/misc/explosion.png
+%%DATADIR%%/tilesets/bigstark/misc/flags.png
+%%DATADIR%%/tilesets/bigstark/misc/fog.png
+%%DATADIR%%/tilesets/bigstark/misc/roads.png
+%%DATADIR%%/tilesets/bigstark/misc/selector.png
+%%DATADIR%%/tilesets/bigstark/misc/small_selector.png
+%%DATADIR%%/tilesets/bigstark/bigstark.xml
+%%DATADIR%%/tilesets/bigstark/forest.png
+%%DATADIR%%/tilesets/bigstark/grass.png
+%%DATADIR%%/tilesets/bigstark/hills.png
+%%DATADIR%%/tilesets/bigstark/mountains.png
+%%DATADIR%%/tilesets/bigstark/swamp.png
+%%DATADIR%%/tilesets/bigstark/water.png
 %%DATADIR%%/various/items/items.xml
 %%DATADIR%%/various/editor/button_selector.png
 %%DATADIR%%/various/editor/button_1x1.png
@@ -150,13 +208,23 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/various/parley_offered.png
 %%DATADIR%%/various/parley_refused.png
 %%DATADIR%%/various/tileset_icon.png
+%%DATADIR%%/various/back.bmp
+%%DATADIR%%/various/background.png
+%%DATADIR%%/various/cycle.png
 %%DATADIR%%/map/2ndPunic37.map
+%%DATADIR%%/map/dol.map
 %%DATADIR%%/music/back1.ogg
 %%DATADIR%%/music/defeat.ogg
 %%DATADIR%%/music/victory.ogg
 %%DATADIR%%/music/hero.ogg
 %%DATADIR%%/music/intro.ogg
 %%DATADIR%%/music/music.xml
+%%DATADIR%%/glade/game-lobby-dialog.glade
+%%DATADIR%%/glade/main-preferences-dialog.glade
+%%DATADIR%%/glade/new-campaign-dialog.glade
+%%DATADIR%%/glade/new-network-game-dialog.glade
+%%DATADIR%%/glade/pick-network-game-to-join-dialog.glade
+%%DATADIR%%/glade/player-resign-completed-dialog.glade
 %%DATADIR%%/glade/army-gains-level-dialog.glade
 %%DATADIR%%/glade/army-info-window.glade
 %%DATADIR%%/glade/stack-info-window.glade
@@ -215,6 +283,7 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/glade/treachery-dialog.glade
 %%DATADIR%%/glade/editor/main-window.glade
 %%DATADIR%%/glade/editor/tileset-window.glade
+%%DATADIR%%/glade/editor/tileset-selector-editor-dialog.glade
 %%DATADIR%%/glade/editor/signpost-dialog.glade
 %%DATADIR%%/glade/editor/temple-dialog.glade
 %%DATADIR%%/glade/editor/reward-dialog.glade
@@ -269,6 +338,34 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/shield/plain/medium-neutral-shield.png
 %%DATADIR%%/shield/plain/large-shield.png
 %%DATADIR%%/shield/plain/large-neutral-shield.png
+%%DATADIR%%/shield/dol/dol.xml
+%%DATADIR%%/shield/dol/large-black-shield.png
+%%DATADIR%%/shield/dol/large-darkblue-shield.png
+%%DATADIR%%/shield/dol/large-green-shield.png
+%%DATADIR%%/shield/dol/large-lightblue-shield.png
+%%DATADIR%%/shield/dol/large-neutral-shield.png
+%%DATADIR%%/shield/dol/large-orange-shield.png
+%%DATADIR%%/shield/dol/large-red-shield.png
+%%DATADIR%%/shield/dol/large-white-shield.png
+%%DATADIR%%/shield/dol/large-yellow-shield.png
+%%DATADIR%%/shield/dol/medium-black-shield.png
+%%DATADIR%%/shield/dol/medium-darkblue-shield.png
+%%DATADIR%%/shield/dol/medium-green-shield.png
+%%DATADIR%%/shield/dol/medium-lightblue-shield.png
+%%DATADIR%%/shield/dol/medium-neutral-shield.png
+%%DATADIR%%/shield/dol/medium-orange-shield.png
+%%DATADIR%%/shield/dol/medium-red-shield.png
+%%DATADIR%%/shield/dol/medium-white-shield.png
+%%DATADIR%%/shield/dol/medium-yellow-shield.png
+%%DATADIR%%/shield/dol/small-black-shield.png
+%%DATADIR%%/shield/dol/small-darkblue-shield.png
+%%DATADIR%%/shield/dol/small-green-shield.png
+%%DATADIR%%/shield/dol/small-lightblue-shield.png
+%%DATADIR%%/shield/dol/small-neutral-shield.png
+%%DATADIR%%/shield/dol/small-orange-shield.png
+%%DATADIR%%/shield/dol/small-red-shield.png
+%%DATADIR%%/shield/dol/small-white-shield.png
+%%DATADIR%%/shield/dol/small-yellow-shield.png
 %%DATADIR%%/citysets/default/default.xml
 %%DATADIR%%/citysets/default/castle_razed.png
 %%DATADIR%%/citysets/default/castles.png
@@ -277,6 +374,14 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/citysets/default/signpost.png
 %%DATADIR%%/citysets/default/temples.png
 %%DATADIR%%/citysets/default/towers.png
+%%DATADIR%%/citysets/dol/castle_razed.png
+%%DATADIR%%/citysets/dol/castles.png
+%%DATADIR%%/citysets/dol/dol.xml
+%%DATADIR%%/citysets/dol/port.png
+%%DATADIR%%/citysets/dol/ruin.png
+%%DATADIR%%/citysets/dol/signpost.png
+%%DATADIR%%/citysets/dol/temples.png
+%%DATADIR%%/citysets/dol/towers.png
 %%DATADIR%%/citysets/bigdefault/bigdefault.xml
 %%DATADIR%%/citysets/bigdefault/castle_razed.png
 %%DATADIR%%/citysets/bigdefault/castles.png
@@ -285,7 +390,16 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 %%DATADIR%%/citysets/bigdefault/signpost.png
 %%DATADIR%%/citysets/bigdefault/temples.png
 %%DATADIR%%/citysets/bigdefault/towers.png
+%%DATADIR%%/citysets/bigdol/bigdol.xml
+%%DATADIR%%/citysets/bigdol/castle_razed.png
+%%DATADIR%%/citysets/bigdol/castles.png
+%%DATADIR%%/citysets/bigdol/port.png
+%%DATADIR%%/citysets/bigdol/ruin.png
+%%DATADIR%%/citysets/bigdol/signpost.png
+%%DATADIR%%/citysets/bigdol/temples.png
+%%DATADIR%%/citysets/bigdol/towers.png
 @dirrmtry share/applications
+@dirrm share/gnome/help/lordsawar/C/figures
 @dirrm share/gnome/help/lordsawar/C
 @dirrm share/gnome/help/lordsawar
 @dirrmtry share/gnome/help
@@ -295,18 +409,25 @@ share/gnome/help/lordsawar/C/lordsawar.xml
 @dirrm %%DATADIR%%/army
 @dirrm %%DATADIR%%/citysets/default
 @dirrm %%DATADIR%%/citysets/bigdefault
+@dirrm %%DATADIR%%/citysets/dol
+@dirrm %%DATADIR%%/citysets/bigdol
 @dirrm %%DATADIR%%/citysets
 @dirrm %%DATADIR%%/glade/editor
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/shield/default
+@dirrm %%DATADIR%%/shield/dol
 @dirrm %%DATADIR%%/shield/plain
 @dirrm %%DATADIR%%/shield
 @dirrm %%DATADIR%%/tilesets/default/misc
 @dirrm %%DATADIR%%/tilesets/default
 @dirrm %%DATADIR%%/tilesets/bigdefault/misc
 @dirrm %%DATADIR%%/tilesets/bigdefault
+@dirrm %%DATADIR%%/tilesets/stark/misc
+@dirrm %%DATADIR%%/tilesets/stark
+@dirrm %%DATADIR%%/tilesets/bigstark/misc
+@dirrm %%DATADIR%%/tilesets/bigstark
 @dirrm %%DATADIR%%/tilesets
 @dirrm %%DATADIR%%/various/items
 @dirrm %%DATADIR%%/various/editor
