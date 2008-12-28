@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_encoding
 PORTVERSION=	20021209
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 
@@ -16,24 +16,45 @@ COMMENT=	Apache module for non-ascii filename interoperability
 
 # This port will work with the following version of Apache and anything newer.
 # Mostly because of the dependency of mod_dav.
-APACHE_VERSION=	1.3.6
+#APACHE_VERSION=	1.3.6
 
-PLIST_FILES=	libexec/apache/mod_encoding.so
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--sbindir=${PREFIX}/sbin \
-		--libexecdir=${PREFIX}/libexec/apache \
-		--sysconfdir=${PREFIX}/etc/apache \
-		--datadir=${PREFIX}/share/apache \
-		--includedir=${PREFIX}/include/apache \
+		--libexecdir=${APACHEMODDIR} \
+		--sysconfdir=${APACHEETCDIR} \
+		--includedir=${APACHEINCLUDEDIR} \
 		--with-apxs=${APXS}
 
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/apache -I${LOCALBASE}/include' \
+CONFIGURE_ENV=	CPPFLAGS='-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include' \
 		LIBS='-L${LOCALBASE}/lib' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
 
-.include <bsd.port.mk>
+PLIST_FILES=	${APACHEMODDIR}/mod_encoding.so
+
+.if ${APACHE_VERSION} == 20
+EXTRA_PATCHES=	${PATCHDIR}/apache20_patch
+.elif ${APACHE_VERSION} >= 21
+EXTRA_PATCHES=	${PATCHDIR}/apache22_patch
+.endif
+
+.if !defined(WITHOUT_ICONV_FIX)
+EXTRA_PATCHES+=	${PATCHDIR}/iconv_hook-20040430.patch
+.endif
+
+.if defined(WITH_QUERYSTRING_FIX)
+.if ${APACHE_VERSION} <= 20
+EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch13
+.elif ${APACHE_VERSION} >= 21
+EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch22
+.endif
+.endif
+
+.include <bsd.port.post.mk>
