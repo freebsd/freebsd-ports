@@ -7,7 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
@@ -76,6 +76,12 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/configs/KillConsole
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/configs/Xclients.in
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/configs/Xsession.in
 	@${REINPLACE_CMD} -e \
 		's|$$(DESTDIR)$$(PAMDIR)/wdm||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl||g ; \
