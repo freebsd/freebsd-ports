@@ -650,6 +650,7 @@
     SUBDIR += py-pow
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
+    SUBDIR += py-pyme
     SUBDIR += py-rijndael
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
