@@ -1,4 +1,1 @@
-bin/html2text.py
-%%PYTHON_SITELIBDIR%%/html2text.py
-%%PYTHON_SITELIBDIR%%/html2text.pyc
-%%PYTHON_SITELIBDIR%%/html2text.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
