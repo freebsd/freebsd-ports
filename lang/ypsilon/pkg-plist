@@ -1,25 +1,70 @@
 bin/ypsilon
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gears.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glut-demo.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtk-hello.scm
 %%DATADIR%%/sitelib/apropos.scm
+%%DATADIR%%/sitelib/concurrent.scm
+%%DATADIR%%/sitelib/debug.scm
 %%DATADIR%%/sitelib/ffi.scm
 %%DATADIR%%/sitelib/gl.scm
 %%DATADIR%%/sitelib/glut.scm
 %%DATADIR%%/sitelib/match.scm
 %%DATADIR%%/sitelib/pregexp.scm
+%%DATADIR%%/sitelib/slib/format.scm
+%%DATADIR%%/sitelib/socket.scm
+%%DATADIR%%/sitelib/srfi/%3a1.scm
+%%DATADIR%%/sitelib/srfi/%3a13.scm
+%%DATADIR%%/sitelib/srfi/%3a14.scm
+%%DATADIR%%/sitelib/srfi/%3a19.scm
+%%DATADIR%%/sitelib/srfi/%3a26.scm
+%%DATADIR%%/sitelib/srfi/%3a27.scm
+%%DATADIR%%/sitelib/srfi/%3a28.scm
+%%DATADIR%%/sitelib/srfi/%3a38.scm
+%%DATADIR%%/sitelib/srfi/%3a39.scm
+%%DATADIR%%/sitelib/srfi/%3a41.scm
+%%DATADIR%%/sitelib/srfi/%3a42.scm
+%%DATADIR%%/sitelib/srfi/%3a6.scm
+%%DATADIR%%/sitelib/srfi/%3a8.scm
+%%DATADIR%%/sitelib/srfi/%3a9.scm
+%%DATADIR%%/sitelib/srfi/%3a98.scm
 %%DATADIR%%/sitelib/srfi/srfi-1.scm
+%%DATADIR%%/sitelib/srfi/srfi-13.scm
+%%DATADIR%%/sitelib/srfi/srfi-14.scm
+%%DATADIR%%/sitelib/srfi/srfi-19.scm
 %%DATADIR%%/sitelib/srfi/srfi-26.scm
+%%DATADIR%%/sitelib/srfi/srfi-27.scm
 %%DATADIR%%/sitelib/srfi/srfi-28.scm
+%%DATADIR%%/sitelib/srfi/srfi-38.scm
 %%DATADIR%%/sitelib/srfi/srfi-39.scm
+%%DATADIR%%/sitelib/srfi/srfi-41.scm
 %%DATADIR%%/sitelib/srfi/srfi-42.scm
 %%DATADIR%%/sitelib/srfi/srfi-6.scm
 %%DATADIR%%/sitelib/srfi/srfi-8.scm
+%%DATADIR%%/sitelib/srfi/srfi-9.scm
+%%DATADIR%%/sitelib/srfi/srfi-98.scm
+%%DATADIR%%/sitelib/stdio.scm
 %%DATADIR%%/sitelib/streams.scm
 %%DATADIR%%/sitelib/tidbits/define-inline.scm
 %%DATADIR%%/sitelib/tidbits/dotimes.scm
+%%DATADIR%%/sitelib/tidbits/generator.scm
+%%DATADIR%%/sitelib/tidbits/remote-repl.scm
 %%DATADIR%%/sitelib/tidbits/string-split.scm
 %%DATADIR%%/sitelib/time.scm
 %%DATADIR%%/sitelib/trace.scm
+%%DATADIR%%/sitelib/ypsilon/apropos.scm
+%%DATADIR%%/sitelib/ypsilon/c-types.scm
+%%DATADIR%%/sitelib/ypsilon/concurrent.scm
+%%DATADIR%%/sitelib/ypsilon/debug.scm
+%%DATADIR%%/sitelib/ypsilon/ffi.scm
+%%DATADIR%%/sitelib/ypsilon/gl.scm
+%%DATADIR%%/sitelib/ypsilon/glut.scm
+%%DATADIR%%/sitelib/ypsilon/match.scm
+%%DATADIR%%/sitelib/ypsilon/pregexp.scm
+%%DATADIR%%/sitelib/ypsilon/socket.scm
+%%DATADIR%%/sitelib/ypsilon/stdio.scm
+%%DATADIR%%/sitelib/ypsilon/streams.scm
+%%DATADIR%%/sitelib/ypsilon/time.scm
+%%DATADIR%%/sitelib/ypsilon/trace.scm
 %%DATADIR%%/stdlib/core.scm
 %%DATADIR%%/stdlib/core/arithmetic.scm
 %%DATADIR%%/stdlib/core/bytevector-transcoders.scm
@@ -77,7 +122,9 @@ bin/ypsilon
 @dirrm %%DATADIR%%/stdlib/rnrs
 @dirrm %%DATADIR%%/stdlib/core
 @dirrm %%DATADIR%%/stdlib
+@dirrm %%DATADIR%%/sitelib/slib
 @dirrm %%DATADIR%%/sitelib/srfi
 @dirrm %%DATADIR%%/sitelib/tidbits
+@dirrm %%DATADIR%%/sitelib/ypsilon
 @dirrm %%DATADIR%%/sitelib
 @dirrm %%DATADIR%%
