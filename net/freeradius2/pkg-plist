@@ -1,5 +1,6 @@
 @stopdaemon radiusd
 bin/radclient
+bin/radconf2xml
 bin/radeapclient
 bin/radlast
 bin/radsniff
@@ -41,6 +42,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/checkval
 %%EXAMPLESDIR%%/raddb/modules/counter
 %%EXAMPLESDIR%%/raddb/modules/detail
+%%EXAMPLESDIR%%/raddb/modules/detail.example.com
 %%EXAMPLESDIR%%/raddb/modules/detail.log
 %%EXAMPLESDIR%%/raddb/modules/digest
 %%EXAMPLESDIR%%/raddb/modules/echo
@@ -49,9 +51,11 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/expiration
 %%EXAMPLESDIR%%/raddb/modules/expr
 %%EXAMPLESDIR%%/raddb/modules/files
+%%EXAMPLESDIR%%/raddb/modules/inner-eap
 %%EXAMPLESDIR%%/raddb/modules/ippool
 %%EXAMPLESDIR%%/raddb/modules/krb5
 %%EXAMPLESDIR%%/raddb/modules/ldap
+%%EXAMPLESDIR%%/raddb/modules/linelog
 %%EXAMPLESDIR%%/raddb/modules/logintime
 %%EXAMPLESDIR%%/raddb/modules/mac2ip
 %%EXAMPLESDIR%%/raddb/modules/mac2vlan
@@ -59,14 +63,17 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/pam
 %%EXAMPLESDIR%%/raddb/modules/pap
 %%EXAMPLESDIR%%/raddb/modules/passwd
+%%EXAMPLESDIR%%/raddb/modules/perl
 %%EXAMPLESDIR%%/raddb/modules/policy
 %%EXAMPLESDIR%%/raddb/modules/preprocess
 %%EXAMPLESDIR%%/raddb/modules/radutmp
 %%EXAMPLESDIR%%/raddb/modules/realm
 %%EXAMPLESDIR%%/raddb/modules/smbpasswd
 %%EXAMPLESDIR%%/raddb/modules/sql_log
+%%EXAMPLESDIR%%/raddb/modules/sqlcounter_expire_on_login
 %%EXAMPLESDIR%%/raddb/modules/sradutmp
 %%EXAMPLESDIR%%/raddb/modules/unix
+%%EXAMPLESDIR%%/raddb/modules/wimax
 %%EXAMPLESDIR%%/raddb/otp.conf
 %%EXAMPLESDIR%%/raddb/policy.conf
 %%EXAMPLESDIR%%/raddb/policy.txt
@@ -75,18 +82,21 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/control-socket
 %%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
+%%EXAMPLESDIR%%/raddb/sites-available/decoupled-accounting
 %%EXAMPLESDIR%%/raddb/sites-available/default
 %%EXAMPLESDIR%%/raddb/sites-available/dhcp
+%%EXAMPLESDIR%%/raddb/sites-available/dynamic-clients
 %%EXAMPLESDIR%%/raddb/sites-available/example
 %%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
 %%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
 %%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
+%%EXAMPLESDIR%%/raddb/sites-available/status
 %%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
 %%EXAMPLESDIR%%/raddb/sites-available/vmps
 %%EXAMPLESDIR%%/raddb/sites-enabled/default
 %%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
-%%EXAMPLESDIR%%/raddb/snmp.conf
 %%EXAMPLESDIR%%/raddb/sql.conf
 %%EXAMPLESDIR%%/raddb/sql/mssql/dialup.conf
 %%EXAMPLESDIR%%/raddb/sql/mssql/schema.sql
@@ -97,6 +107,8 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sql/mysql/ippool.sql
 %%EXAMPLESDIR%%/raddb/sql/mysql/nas.sql
 %%EXAMPLESDIR%%/raddb/sql/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/sql/mysql/wimax.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/wimax.sql
 %%EXAMPLESDIR%%/raddb/sql/oracle/dialup.conf
 %%EXAMPLESDIR%%/raddb/sql/oracle/ippool.conf
 %%EXAMPLESDIR%%/raddb/sql/oracle/ippool.sql
@@ -204,6 +216,11 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_digest.a
 %%LIBDIR%%/rlm_digest.la
 %%LIBDIR%%/rlm_digest.so
+%%LIBDIR%%/rlm_dynamic_clients-%%PORTVERSION%%.la
+%%LIBDIR%%/rlm_dynamic_clients-%%PORTVERSION%%.so
+%%LIBDIR%%/rlm_dynamic_clients.a
+%%LIBDIR%%/rlm_dynamic_clients.la
+%%LIBDIR%%/rlm_dynamic_clients.so
 %%LIBDIR%%/rlm_eap-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_eap-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_eap.a
@@ -299,11 +316,11 @@ bin/smbencrypt
 %%LDAP%%%%LIBDIR%%/rlm_ldap.a
 %%LDAP%%%%LIBDIR%%/rlm_ldap.la
 %%LDAP%%%%LIBDIR%%/rlm_ldap.so
-%%EXPM%%%%LIBDIR%%/rlm_linelog-%%PORTVERSION%%.la
-%%EXPM%%%%LIBDIR%%/rlm_linelog-%%PORTVERSION%%.so
-%%EXPM%%%%LIBDIR%%/rlm_linelog.a
-%%EXPM%%%%LIBDIR%%/rlm_linelog.la
-%%EXPM%%%%LIBDIR%%/rlm_linelog.so
+%%LIBDIR%%/rlm_linelog-%%PORTVERSION%%.la
+%%LIBDIR%%/rlm_linelog-%%PORTVERSION%%.so
+%%LIBDIR%%/rlm_linelog.a
+%%LIBDIR%%/rlm_linelog.la
+%%LIBDIR%%/rlm_linelog.so
 %%LIBDIR%%/rlm_logintime-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_logintime-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_logintime.a
@@ -374,21 +391,21 @@ bin/smbencrypt
 %%EXPM%%%%LIBDIR%%/rlm_sim_files.a
 %%EXPM%%%%LIBDIR%%/rlm_sim_files.la
 %%EXPM%%%%LIBDIR%%/rlm_sim_files.so
-%%EXPM%%%%LIBDIR%%/rlm_smb-%%PORTVERSION%%.la
-%%EXPM%%%%LIBDIR%%/rlm_smb-%%PORTVERSION%%.so
-%%EXPM%%%%LIBDIR%%/rlm_smb.a
-%%EXPM%%%%LIBDIR%%/rlm_smb.la
-%%EXPM%%%%LIBDIR%%/rlm_smb.so
+%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb-%%PORTVERSION%%.la
+%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb-%%PORTVERSION%%.so
+%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.a
+%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.la
+%%EXPM%%%%SMB%%%%LIBDIR%%/rlm_smb.so
 %%LIBDIR%%/rlm_sql-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_sql-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_sql.a
 %%LIBDIR%%/rlm_sql.la
 %%LIBDIR%%/rlm_sql.so
-%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird-%%PORTVERSION%%.la
-%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird-%%PORTVERSION%%.so
-%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.a
-%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.la
-%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.so
+%%EXPM%%%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird-%%PORTVERSION%%.la
+%%EXPM%%%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird-%%PORTVERSION%%.so
+%%EXPM%%%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.a
+%%EXPM%%%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.la
+%%EXPM%%%%FIREBIRD%%%%LIBDIR%%/rlm_sql_firebird.so
 %%LIBDIR%%/rlm_sql_log-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_sql_log-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_sql_log.a
@@ -424,11 +441,16 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_unix.a
 %%LIBDIR%%/rlm_unix.la
 %%LIBDIR%%/rlm_unix.so
+%%EXPM%%%%LIBDIR%%/rlm_wimax-%%PORTVERSION%%.la
+%%EXPM%%%%LIBDIR%%/rlm_wimax-%%PORTVERSION%%.so
+%%EXPM%%%%LIBDIR%%/rlm_wimax.a
+%%EXPM%%%%LIBDIR%%/rlm_wimax.la
+%%EXPM%%%%LIBDIR%%/rlm_wimax.so
 @dirrm %%LIBDIR%%
 sbin/checkrad
 sbin/radiusd
+sbin/radmin
 sbin/radwatch
-sbin/rc.radiusd
 include/freeradius/hash.h
 include/freeradius/ident.h
 include/freeradius/libradius.h
@@ -487,6 +509,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1901.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1905.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2243.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2284.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2289.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2433.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2548.txt
@@ -513,12 +536,21 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3748.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4372.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4590.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4668.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4669.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4670.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4671.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4672.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4673.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4675.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4679.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4818.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4849.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5080.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5090.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5176.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5247.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5281.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -537,8 +569,8 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
 %%PORTDOCS%%%%DOCSDIR%%/variables.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/dictionary
 %%DATADIR%%/dictionary.3com
@@ -550,6 +582,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
+%%DATADIR%%/dictionary.apc
 %%DATADIR%%/dictionary.aptis
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
@@ -593,6 +626,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.jradius
 %%DATADIR%%/dictionary.juniper
 %%DATADIR%%/dictionary.karlnet
+%%DATADIR%%/dictionary.lancom
 %%DATADIR%%/dictionary.livingston
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
@@ -603,6 +637,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.motorola
 %%DATADIR%%/dictionary.navini
 %%DATADIR%%/dictionary.netscreen
+%%DATADIR%%/dictionary.networkphysics
 %%DATADIR%%/dictionary.nexans
 %%DATADIR%%/dictionary.nokia
 %%DATADIR%%/dictionary.nokia.conflict
@@ -632,6 +667,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc4679
 %%DATADIR%%/dictionary.rfc4818
 %%DATADIR%%/dictionary.rfc4849
+%%DATADIR%%/dictionary.rfc5090
 %%DATADIR%%/dictionary.rfc5176
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
@@ -649,11 +685,13 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.tropos
 %%DATADIR%%/dictionary.unix
 %%DATADIR%%/dictionary.usr
+%%DATADIR%%/dictionary.utstarcom
 %%DATADIR%%/dictionary.valemount
 %%DATADIR%%/dictionary.versanet
 %%DATADIR%%/dictionary.vqp
 %%DATADIR%%/dictionary.walabi
 %%DATADIR%%/dictionary.waverider
+%%DATADIR%%/dictionary.wimax
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
