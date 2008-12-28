@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	libmsn
-PORTVERSION=	3.2
-PORTREVISION=	2
+DISTVERSION=	4.0-beta2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	decept0@gmail.com
 COMMENT=	A library for connecting to MSN Messenger service
 
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
-
-USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -26,5 +24,9 @@ USE_LDCONFIG=	yes
 .if ${ARCH} == "alpha"
 BROKEN=		Does not compile on alpha
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|g' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>
