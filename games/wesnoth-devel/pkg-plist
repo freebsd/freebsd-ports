@@ -15,6 +15,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/af/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-sof.mo
@@ -36,6 +37,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-sof.mo
@@ -57,6 +59,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-sof.mo
@@ -78,6 +81,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-sof.mo
@@ -99,6 +103,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-sof.mo
@@ -120,6 +125,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-sof.mo
@@ -141,6 +147,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/da/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-sof.mo
@@ -162,6 +169,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-sof.mo
@@ -183,6 +191,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/el/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-sof.mo
@@ -204,6 +213,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-sof.mo
@@ -225,6 +235,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-sof.mo
@@ -246,6 +257,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-sof.mo
@@ -267,6 +279,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/et/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-sof.mo
@@ -288,6 +301,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-sof.mo
@@ -309,6 +323,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-sof.mo
@@ -330,6 +345,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-sof.mo
@@ -351,6 +367,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-sof.mo
@@ -372,6 +389,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-sof.mo
@@ -393,6 +411,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/he/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-sof.mo
@@ -414,6 +433,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-sof.mo
@@ -435,6 +455,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-sof.mo
@@ -456,6 +477,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/id/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-sof.mo
@@ -477,6 +499,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-sof.mo
@@ -498,6 +521,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-sof.mo
@@ -519,6 +543,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-sof.mo
@@ -540,6 +565,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/la/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-sof.mo
@@ -561,6 +587,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-sof.mo
@@ -582,6 +609,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-sof.mo
@@ -603,6 +631,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-sof.mo
@@ -624,6 +653,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-sof.mo
@@ -645,6 +675,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-sof.mo
@@ -666,6 +697,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-sof.mo
@@ -687,6 +719,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-sof.mo
@@ -708,6 +741,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-sof.mo
@@ -721,6 +755,27 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-did.mo
@@ -729,6 +784,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-sof.mo
@@ -750,6 +806,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-sof.mo
@@ -771,6 +828,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-sof.mo
@@ -792,6 +850,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-sof.mo
@@ -813,6 +872,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-sof.mo
@@ -834,6 +894,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-sof.mo
@@ -855,6 +916,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-sof.mo
@@ -876,6 +938,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-sof.mo
@@ -897,6 +960,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-sof.mo
@@ -918,6 +982,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-sof.mo
@@ -939,6 +1004,7 @@ bin/wesnoth_addon_manager
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-httt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-l.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-low.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-multiplayer.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-nr.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-sof.mo
@@ -974,7 +1040,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/ai/python/wail/rwlock.py
 %%DATADIR%%/data/ai/python/wail/rwlocktest.py
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/_main.cfg
-%%DATADIR%%/data/campaigns/An_Orcish_Incursion/images/map.jpg
+%%DATADIR%%/data/campaigns/An_Orcish_Incursion/images/an-orcish-incursion-map.png
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/images/portraits/Erlornas.png
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/maps/1_Defend_the_forest.map
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/maps/2_Assassins.map
@@ -990,9 +1056,11 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios/5_Linaera_the_Quick.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios/6_A_Detour_through_the_Swamp.cfg
 %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios/7_Showdown.cfg
+%%DATADIR%%/data/campaigns/An_Orcish_Incursion/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/_main.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/ais/kamikaze.py
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/book-icon.png
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/descent-into-darkness.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/makeshift-altar.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc/weakened-ice.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits/darken_volk.png
@@ -1000,6 +1068,10 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits/malinlich.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits/malold.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits/malyoung.png
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story/book.jpg
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story/end.jpg
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story/parthyn.jpg
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story/travel.jpg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/units/apprentice-mage-defend.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/units/apprentice-mage-magic-1.png
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/units/apprentice-mage-magic-2.png
@@ -1071,9 +1143,11 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/units/iceball.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/units/lich.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/utils/deaths.cfg
+%%DATADIR%%/data/campaigns/Descent_Into_Darkness/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/utils/macros.cfg
 %%DATADIR%%/data/campaigns/Descent_Into_Darkness/utils/terrain.cfg
 %%DATADIR%%/data/campaigns/Eastern_Invasion/_main.cfg
+%%DATADIR%%/data/campaigns/Eastern_Invasion/images/eastern-invasion-map.png
 %%DATADIR%%/data/campaigns/Eastern_Invasion/images/portraits/dacyn.png
 %%DATADIR%%/data/campaigns/Eastern_Invasion/images/portraits/gweddry.png
 %%DATADIR%%/data/campaigns/Eastern_Invasion/images/portraits/konrad_II.png
@@ -1141,7 +1215,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Eastern_Invasion/units/Mounted_Fighter.cfg
 %%DATADIR%%/data/campaigns/Eastern_Invasion/units/Mounted_Warrior.cfg
 %%DATADIR%%/data/campaigns/Eastern_Invasion/utils/deaths.cfg
-%%DATADIR%%/data/campaigns/Eastern_Invasion/utils/intro.cfg
+%%DATADIR%%/data/campaigns/Eastern_Invasion/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Eastern_Invasion/utils/throneroom.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/_main.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/campaign_image.png
@@ -1152,6 +1226,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/portraits/konrad-angry.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/portraits/konrad.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/portraits/lisar.png
+%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/portraits/uradredia.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/arrival_of_the_heir.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/httt_story1.jpg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/httt_story2.jpg
@@ -1164,13 +1239,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/story6.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/story7.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/story/story9.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-defend.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee1.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee2.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged1.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged2.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged3.png
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/elder-mage.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/gryphon-sleeping.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/human-battleprincess-attack-1.png
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/images/units/human-battleprincess-attack-2.png
@@ -1305,7 +1373,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Battle_Princess.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Commander.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Dark_Queen.cfg
-%%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Elder_Mage.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Fighter.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Injured_Sergeant.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units/Lord.cfg
@@ -1316,6 +1383,95 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/utils/deaths.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/utils/httt_utils.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne/utils/intro.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/HISTORY
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/TODO
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/_main.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/about.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/legend-of-wesmere-map.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/aldar.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/cleodil.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/crelanu.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/galtrid.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/kalenz.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/landar.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/legmir.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/olurf.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/uradredia.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits/velon.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/Thoria.jpeg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/Thoria0.jpeg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/aldar.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/cleodil.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/crelanu.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/galtrid.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/haldric-ii.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/highlord.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/kalenz.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/landar.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/legmir.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/lord.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/olurf.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters/uradredia.png
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/hostmountains.jpeg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/snow.jpeg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/02_Hostile_mountains.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/04_Elvish_Treasury.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/06_Acquaintance_in_Need.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/09_Bounty_Hunters.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/10_Cliffs_of_Thoria.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/11_Battle_of_the_book.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/13_News_from_the_front.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/14_Human_Alliance.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/16_The_Chief_must_die.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/17_Breaking_the_siege.tomerge
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/19_Costly_Revenge.tomerge
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/23_End_of_War.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/Kalian.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/Lintanir.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/North_Elves.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps/Saurgrath.map
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/01_Uprooting.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/03_Kalian.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/05_Saurian_Treasury.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/07_Elves_last_stand.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/17_Breaking_the_siege.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/19_Costly_Revenge.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/21_Elvish_Assassins.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks/22_Northern_Battle.mask
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/01_The_Uprooting.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/02_Hostile_mountains.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/03_Kalian.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/04_Elvish_Treasury.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/05_Saurian_Treasury.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/06_Acquaintance_in_Need.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/07_Elves_last_stand.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/07_Elves_last_stand_utils.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/08_Council_of_hard_choices.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/09_Bounty_hunters.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/10_Cliffs_of_Thoria.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/11_Battle_of_the_book.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/12_Revelations.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/13_News_from_the_front.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/14_Human_Alliance.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/15_The_Treaty.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/16_The_Chief_must_die.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/16_The_Chief_must_die_utils.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/17_Breaking_the_siege.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/18_Hour_of_Glory.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/19_Costly_Revenge.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/20_Council_ruling.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/21_Elvish_Assassins.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/22_Northern_Battle.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/23_End_of_War.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/24_Epilogue.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios/North_elves_utils.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/timeline.txt
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/ai_controller.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/characters.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/deaths.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/debug.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/journey.cfg
+%%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils/low-macros.cfg
 %%DATADIR%%/data/campaigns/Liberty/_main.cfg
 %%DATADIR%%/data/campaigns/Liberty/images/attacks/sword-astral.png
 %%DATADIR%%/data/campaigns/Liberty/images/campaign_image.png
@@ -1329,7 +1485,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Liberty/images/halo/shadow-mage-halo7.png
 %%DATADIR%%/data/campaigns/Liberty/images/halo/shadow-mage-halo8.png
 %%DATADIR%%/data/campaigns/Liberty/images/halo/shadow-mage-halo9.png
-%%DATADIR%%/data/campaigns/Liberty/images/maps/wesnoth-liberty.png
+%%DATADIR%%/data/campaigns/Liberty/images/maps/liberty-map.png
 %%DATADIR%%/data/campaigns/Liberty/images/portraits/p_baldras.png
 %%DATADIR%%/data/campaigns/Liberty/images/portraits/p_gwydion.png
 %%DATADIR%%/data/campaigns/Liberty/images/portraits/p_harper.png
@@ -1412,6 +1568,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Liberty/units/Shadow_Mage.cfg
 %%DATADIR%%/data/campaigns/Liberty/units/Skeleton_Rider.cfg
 %%DATADIR%%/data/campaigns/Liberty/units/Villagers.cfg
+%%DATADIR%%/data/campaigns/Liberty/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Liberty/utils/utils.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/_main.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/images/campaign_image.jpg
@@ -1470,6 +1627,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios/13a_Showdown.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/scenarios/14a_Epilogue.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/utils/herodeaths.cfg
+%%DATADIR%%/data/campaigns/Northern_Rebirth/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Northern_Rebirth/utils/utils.cfg
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/_main.cfg
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/images/items/coal.png
@@ -1552,8 +1710,10 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/units/Dwarvish_Runemaster.cfg
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/units/Dwarvish_Runesmith.cfg
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/units/Haldric_II.cfg
+%%DATADIR%%/data/campaigns/Sceptre_of_Fire/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Sceptre_of_Fire/utils/utils.cfg
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/_main.cfg
+%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/farnorth.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/flags/black-flag-1.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/flags/black-flag-2.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/flags/black-flag-3.png
@@ -1572,10 +1732,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/portraits/orcish_shaman.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/portraits/shan_taum.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/portraits/young_orcish_shaman.png
-%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/sotbe.png
-%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/sotbe1.png
-%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/sotbe2.png
-%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/sotbe3.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/units/orcish-shaman-black-curse-1.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/units/orcish-shaman-black-defend.png
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/images/units/orcish-shaman-black-staff-1.png
@@ -1630,6 +1786,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/units/Watch_Tower.cfg
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/utils/deaths.cfg
+%%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/utils/journey.cfg
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/_main.cfg
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/changelog
@@ -1812,6 +1969,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/units/Dwarvish_Witness.cfg
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/utils/abilities.cfg
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/utils/herodeaths.cfg
+%%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/utils/journey.cfg
 %%DATADIR%%/data/campaigns/The_Hammer_of_Thursagan/utils/macros.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/_main.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/campaign_image.png
@@ -1880,11 +2038,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-defend.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady-range.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/undead-vampirelady.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/warrior-king-attack1.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/warrior-king-attack2.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/warrior-king-defend.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/warrior-king-leading.png
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/warrior-king.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/wesfolk-lady-defend-1-1.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/wesfolk-lady-defend-1-2.png
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/images/units/wesfolk-lady-defend.png
@@ -2002,11 +2155,10 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-abilities.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-bigmap.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-deaths.cfg
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-intro.cfg
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-green-isle-journey.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-macros.cfg
 %%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-nlmsg.cfg
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-nohome.cfg
-%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-noisle.cfg
+%%DATADIR%%/data/campaigns/The_Rise_Of_Wesnoth/utils/trow-story.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/_main.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/images/deoran/dismounted-commander-attack1.png
 %%DATADIR%%/data/campaigns/The_South_Guard/images/deoran/dismounted-commander-attack2.png
@@ -2094,7 +2246,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_deaths.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_help.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_story.cfg
-%%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_unit_utils.cfg
 %%DATADIR%%/data/campaigns/The_South_Guard/utils/sg_utils.cfg
 %%DATADIR%%/data/campaigns/Two_Brothers/_main.cfg
 %%DATADIR%%/data/campaigns/Two_Brothers/images/arne.png
@@ -2113,6 +2264,8 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Two_Brothers/scenarios/3_Guarded_Castle.cfg
 %%DATADIR%%/data/campaigns/Two_Brothers/scenarios/4_Return_to_the_Village.cfg
 %%DATADIR%%/data/campaigns/Two_Brothers/scenarios/5_Epilog.cfg
+%%DATADIR%%/data/campaigns/Two_Brothers/utils/journey.cfg
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/TODO
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/_main.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/attacks/fist-golem.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/attacks/glowing-fist.png
@@ -2173,8 +2326,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/projectiles/sand-storm-6.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/projectiles/sand-storm-7.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/projectiles/sand-storm-8.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain/abyss2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain/abyssbridge2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain/dark-keep-throne.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain/dark_tile1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/terrain/dark_tile2.png
@@ -2224,63 +2375,82 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-ranged2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout-ranged3.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/dwarves/scout.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer+female.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-die4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-female-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-female-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-female-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-female-die4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-idle-6.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/archer.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger+female.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-die4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/avenger.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-bow.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-leading.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain-melee-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/captain.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-attack-6.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-bow.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/champion-defend.png
@@ -2289,40 +2459,54 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/corrupted-elf-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/corrupted-elf.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing5.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing6.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing7.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-healing8.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-ranged.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-defend-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-defend-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-magic-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-magic-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-magic-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid-magic-4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/druid.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/eloh-serene.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-bow.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-10.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-11.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-12.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-6.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-7.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-8.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-idle-9.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter-melee-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/fighter.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-bow.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-melee-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-melee-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero-melee-4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hero.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer-moving.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer-ranged1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer-ranged2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horse-archer.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman-melee.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman-moving.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman-ranged-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman-ranged-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/horseman.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hunter-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hunter-melee.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/hunter-ranged-1.png
@@ -2340,36 +2524,48 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/kaleh-ranged-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/kaleh-ranged.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/kaleh.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-die-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-die-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-die-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman+female.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-die-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marksman.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-bow.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-leading.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal-melee-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/marshal.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/nym-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/nym-melee-1.png
@@ -2378,10 +2574,11 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/nym-ranged-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/nym-ranged-3.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/nym.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-melee-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider-moving.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/outrider.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/prowler-bow-defend.png
@@ -2393,36 +2590,56 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/prowler-ranged3.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/prowler-ranged4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/prowler.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger+female.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-die4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/ranger.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-melee-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-melee-2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider-moving.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/rider.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-10.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-11.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-12.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-13.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-14.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-15.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-16.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-6.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-7.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-8.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-idle-9.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout-moving.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/scout.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sentinel-defend.png
@@ -2443,45 +2660,36 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shaman-heal8.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shaman-heal9.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shaman.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-attack5.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter+female.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-attack.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-attack1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-attack2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-attack1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-attack2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-attack3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-attack4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-attack5.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-bow.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-defend.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-die1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-die2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-die3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-die4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-sword-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-sword-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-sword-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-sword-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter-sword.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/sharpshooter.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-ftouch-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-ftouch-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-ftouch-attack3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing10.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing11.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing12.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing5.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing6.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing7.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing8.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-healing9.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde-ranged.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/elves-desert/shyde.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/humans/human-commander-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/humans/human-commander-attack2.png
@@ -2552,16 +2760,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dread-lich-attack4.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dread-lich-defend.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dread-lich.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-5.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-1.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-2.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-3.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-4.png
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-5.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/skeletonrider-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/skeletonrider-attack2.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/skeletonrider-defend.png
@@ -2584,8 +2782,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/maps/13_Epilogue.map
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/01_The_Morning_After.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/02_Across_the_Harsh_Sands.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/03_Stirring_in_the_Night.cf_
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/03_Stirring_in_the_Night_alt.cfg
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/03_Stirring_in_the_Night.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/04_Descending_into_Darkness.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/05_A_Subterranean_Struggle.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/06a_In_the_Tunnels_of_Trolls.cfg
@@ -2598,24 +2795,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/11_Battle_for_Zocthanol_Isle.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/12_The_Final_Confrontation.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/13_Epilogue.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/map_setup.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/necromancer.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/outer_villages.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/scenario_start.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/sides_setup.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1/survivors.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/challenge.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/creep_death.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/destroy_tent.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/elf_corpse.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/orc_party.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/possesion.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/prestart.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/recruit_tweak.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/scenario_start.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/sides_setup.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/story_chapter_3.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt/war_cry.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Alien_Body.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Alien_Body2.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Alien_Body3.cfg
@@ -2653,7 +2832,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Desert_Star.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Divine_Avatar.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Divine_Incarnation.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dread_Bat.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dust_Devil.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dwarvish_Explorer.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Dwarvish_Pathfinder.cfg
@@ -2675,30 +2853,22 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Naga_Hunter.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Naga_Sentinel.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Naga_Warden.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Nym_Hunter.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Nym_Prowler.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Nym_Sentinel.cfg
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Nym.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Small_Mudcrawler.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Spider_Lich.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units/Undead_Horseman.cfg
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/abilities.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/deaths.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/dialog-macros.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/kaleh-abilities.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/macros.cfg
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/storytxt.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/terrain.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/terrain_graphics.cfg
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/time.cfg
-%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils/utbs-events.cfg
 %%DATADIR%%/data/campaigns/tutorial/images/portraits/delfador.png
 %%DATADIR%%/data/campaigns/tutorial/images/portraits/konrad.png
 %%DATADIR%%/data/campaigns/tutorial/images/portraits/lisar.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-defend.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-melee1.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-melee2.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-ranged1.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-ranged2.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage-ranged3.png
-%%DATADIR%%/data/campaigns/tutorial/images/units/elder-mage.png
 %%DATADIR%%/data/campaigns/tutorial/images/units/human-princess-attack-1.png
 %%DATADIR%%/data/campaigns/tutorial/images/units/human-princess-attack-2.png
 %%DATADIR%%/data/campaigns/tutorial/images/units/human-princess-attack-3.png
@@ -2717,7 +2887,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/campaigns/tutorial/scenarios/2_Speaking.cfg
 %%DATADIR%%/data/campaigns/tutorial/scenarios/2_Tutorial.cfg
 %%DATADIR%%/data/campaigns/tutorial/scenarios/utils.cfg
-%%DATADIR%%/data/campaigns/tutorial/units/Elder_Mage.cfg
 %%DATADIR%%/data/campaigns/tutorial/units/Fighter.cfg
 %%DATADIR%%/data/campaigns/tutorial/units/Fighteress.cfg
 %%DATADIR%%/data/campaigns/tutorial/units/Quintain.cfg
@@ -2815,7 +2984,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/attacks/quarterstaff.png
 %%DATADIR%%/data/core/images/attacks/rectangular-shield.png
 %%DATADIR%%/data/core/images/attacks/rock_thrown.png
-%%DATADIR%%/data/core/images/attacks/sabre-human.png
+%%DATADIR%%/data/core/images/attacks/saber-human.png
 %%DATADIR%%/data/core/images/attacks/scimitar.png
 %%DATADIR%%/data/core/images/attacks/scythe.png
 %%DATADIR%%/data/core/images/attacks/sickle.png
@@ -2915,6 +3084,14 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/halo/elven/shyde-stationary-halo5.png
 %%DATADIR%%/data/core/images/halo/elven/shyde-stationary-halo6.png
 %%DATADIR%%/data/core/images/halo/fire-aura.png
+%%DATADIR%%/data/core/images/halo/flame-burst-1.png
+%%DATADIR%%/data/core/images/halo/flame-burst-2.png
+%%DATADIR%%/data/core/images/halo/flame-burst-3.png
+%%DATADIR%%/data/core/images/halo/flame-burst-4.png
+%%DATADIR%%/data/core/images/halo/flame-burst-5.png
+%%DATADIR%%/data/core/images/halo/flame-burst-6.png
+%%DATADIR%%/data/core/images/halo/flame-burst-7.png
+%%DATADIR%%/data/core/images/halo/flame-burst-8.png
 %%DATADIR%%/data/core/images/halo/holy/halo1.png
 %%DATADIR%%/data/core/images/halo/holy/halo2.png
 %%DATADIR%%/data/core/images/halo/holy/halo3.png
@@ -2981,6 +3158,15 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/halo/saurian-magic-halo-6.png
 %%DATADIR%%/data/core/images/halo/saurian-magic-halo-7.png
 %%DATADIR%%/data/core/images/halo/siren-naia-touch-halo.png
+%%DATADIR%%/data/core/images/halo/teleport-1.png
+%%DATADIR%%/data/core/images/halo/teleport-2.png
+%%DATADIR%%/data/core/images/halo/teleport-3.png
+%%DATADIR%%/data/core/images/halo/teleport-4.png
+%%DATADIR%%/data/core/images/halo/teleport-5.png
+%%DATADIR%%/data/core/images/halo/teleport-6.png
+%%DATADIR%%/data/core/images/halo/teleport-7.png
+%%DATADIR%%/data/core/images/halo/teleport-8.png
+%%DATADIR%%/data/core/images/halo/teleport-9.png
 %%DATADIR%%/data/core/images/halo/undead/black-magic-1.png
 %%DATADIR%%/data/core/images/halo/undead/black-magic-2.png
 %%DATADIR%%/data/core/images/halo/undead/black-magic-3.png
@@ -3084,8 +3270,8 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/items/storm-trident.png
 %%DATADIR%%/data/core/images/items/straw-bale1.png
 %%DATADIR%%/data/core/images/items/straw-bale2.png
+%%DATADIR%%/data/core/images/maps/EDITING-HOWTO
 %%DATADIR%%/data/core/images/maps/mainmenu.jpg
-%%DATADIR%%/data/core/images/maps/wesnoth-httt.jpg
 %%DATADIR%%/data/core/images/maps/wesnoth.png
 %%DATADIR%%/data/core/images/misc/blank-hex.png
 %%DATADIR%%/data/core/images/misc/cross-white.png
@@ -3098,6 +3284,8 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/misc/hero-icon.png
 %%DATADIR%%/data/core/images/misc/icon-amla-tough.png
 %%DATADIR%%/data/core/images/misc/logo.png
+%%DATADIR%%/data/core/images/misc/new-battle.png
+%%DATADIR%%/data/core/images/misc/new-journey.png
 %%DATADIR%%/data/core/images/misc/schedule-afternoon.png
 %%DATADIR%%/data/core/images/misc/schedule-dawn.png
 %%DATADIR%%/data/core/images/misc/schedule-dusk.png
@@ -3186,10 +3374,6 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/portraits/Kitty/transparent/shyde-large200.png
 %%DATADIR%%/data/core/images/portraits/Kitty/transparent/shyde-large400.png
 %%DATADIR%%/data/core/images/portraits/Kitty/undead-lich.png
-%%DATADIR%%/data/core/images/portraits/Neoriceisgood/dwarvish_berzerker.png
-%%DATADIR%%/data/core/images/portraits/Neoriceisgood/orcish_grunt.png
-%%DATADIR%%/data/core/images/portraits/Neoriceisgood/orcish_leader.png
-%%DATADIR%%/data/core/images/portraits/Neoriceisgood/orcish_shaman_old.png
 %%DATADIR%%/data/core/images/portraits/Nicholas_Kerpan/human-poacher.png
 %%DATADIR%%/data/core/images/portraits/Nicholas_Kerpan/human-thief.png
 %%DATADIR%%/data/core/images/portraits/Other/brown-lich.png
@@ -3241,6 +3425,13 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/projectiles/fire-burst-small-6.png
 %%DATADIR%%/data/core/images/projectiles/fire-burst-small-7.png
 %%DATADIR%%/data/core/images/projectiles/fire-burst-small-8.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-1.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-2.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-3.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-4.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-5.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-6.png
+%%DATADIR%%/data/core/images/projectiles/fireball-fail-7.png
 %%DATADIR%%/data/core/images/projectiles/fireball-impact-1.png
 %%DATADIR%%/data/core/images/projectiles/fireball-impact-10.png
 %%DATADIR%%/data/core/images/projectiles/fireball-impact-11.png
@@ -4267,6 +4458,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/flat/stone-path4.png
 %%DATADIR%%/data/core/images/terrain/flat/stone-path5.png
 %%DATADIR%%/data/core/images/terrain/flat/stone-path6.png
+%%DATADIR%%/data/core/images/terrain/fog-editor.png
 %%DATADIR%%/data/core/images/terrain/fog-n-ne-se-s.png
 %%DATADIR%%/data/core/images/terrain/fog-n-ne-se.png
 %%DATADIR%%/data/core/images/terrain/fog-n-ne.png
@@ -4318,6 +4510,10 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/forest/pine-castle-sw.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-small-2.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-small.png
+%%DATADIR%%/data/core/images/terrain/forest/pine-sparse-2.png
+%%DATADIR%%/data/core/images/terrain/forest/pine-sparse-3.png
+%%DATADIR%%/data/core/images/terrain/forest/pine-sparse-4.png
+%%DATADIR%%/data/core/images/terrain/forest/pine-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/pine-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/pine.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-2.png
@@ -4335,6 +4531,10 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-sw-nw.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-castle-sw.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-small.png
+%%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-2.png
+%%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-3.png
+%%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse-4.png
+%%DATADIR%%/data/core/images/terrain/forest/snow-forest-sparse.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/snow-forest.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-2.png
@@ -4346,6 +4546,8 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/forest/tropical-castle-small.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical-tile.png
 %%DATADIR%%/data/core/images/terrain/forest/tropical.png
+%%DATADIR%%/data/core/images/terrain/forested-hills-tile.png
+%%DATADIR%%/data/core/images/terrain/forested-snow-hills-tile.png
 %%DATADIR%%/data/core/images/terrain/grid.png
 %%DATADIR%%/data/core/images/terrain/hills-n-ne.png
 %%DATADIR%%/data/core/images/terrain/hills-n.png
@@ -4569,6 +4771,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/sand_rubble.png
 %%DATADIR%%/data/core/images/terrain/sand_rubble2.png
 %%DATADIR%%/data/core/images/terrain/sand_rubble3.png
+%%DATADIR%%/data/core/images/terrain/shroud-editor.png
 %%DATADIR%%/data/core/images/terrain/snow-hills-n-ne.png
 %%DATADIR%%/data/core/images/terrain/snow-hills-n.png
 %%DATADIR%%/data/core/images/terrain/snow-hills-ne.png
@@ -4737,6 +4940,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/terrain/village/human-mountain-tile.png
 %%DATADIR%%/data/core/images/terrain/village/human-snow-hills-tile.png
 %%DATADIR%%/data/core/images/terrain/village/human-snow-hills.png
+%%DATADIR%%/data/core/images/terrain/village/human-snow-mountain-tile.png
 %%DATADIR%%/data/core/images/terrain/village/human-snow.png
 %%DATADIR%%/data/core/images/terrain/village/human-snow2.png
 %%DATADIR%%/data/core/images/terrain/village/human-snow3.png
@@ -5204,6 +5408,15 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/dwarves/guard.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-attack-mace.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-attack.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-1.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-2.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-3.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-4.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-5.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-6.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-7.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-8.png
+%%DATADIR%%/data/core/images/units/dwarves/lord-axe-9.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-defend-1.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-defend-2.png
 %%DATADIR%%/data/core/images/units/dwarves/lord-ranged.png
@@ -5989,6 +6202,11 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/human-loyalists/pikeman-idle-3.png
 %%DATADIR%%/data/core/images/units/human-loyalists/pikeman-idle-4.png
 %%DATADIR%%/data/core/images/units/human-loyalists/pikeman.png
+%%DATADIR%%/data/core/images/units/human-loyalists/royal-warrior-attack1.png
+%%DATADIR%%/data/core/images/units/human-loyalists/royal-warrior-attack2.png
+%%DATADIR%%/data/core/images/units/human-loyalists/royal-warrior-defend.png
+%%DATADIR%%/data/core/images/units/human-loyalists/royal-warrior-leading.png
+%%DATADIR%%/data/core/images/units/human-loyalists/royal-warrior.png
 %%DATADIR%%/data/core/images/units/human-loyalists/royalguard-attack-sword1.png
 %%DATADIR%%/data/core/images/units/human-loyalists/royalguard-attack-sword2.png
 %%DATADIR%%/data/core/images/units/human-loyalists/royalguard-attack-sword3.png
@@ -6074,7 +6292,19 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/human-magi/arch-mage-attack-staff-1.png
 %%DATADIR%%/data/core/images/units/human-magi/arch-mage-attack-staff-2.png
 %%DATADIR%%/data/core/images/units/human-magi/arch-mage-defend.png
+%%DATADIR%%/data/core/images/units/human-magi/arch-mage-idle-1.png
+%%DATADIR%%/data/core/images/units/human-magi/arch-mage-idle-2.png
+%%DATADIR%%/data/core/images/units/human-magi/arch-mage-idle-3.png
+%%DATADIR%%/data/core/images/units/human-magi/arch-mage-idle-4.png
+%%DATADIR%%/data/core/images/units/human-magi/arch-mage-idle-5.png
 %%DATADIR%%/data/core/images/units/human-magi/arch-mage.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-defend.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-melee1.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-melee2.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-ranged1.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-ranged2.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage-ranged3.png
+%%DATADIR%%/data/core/images/units/human-magi/elder-mage.png
 %%DATADIR%%/data/core/images/units/human-magi/great-mage+female-attack-magic-1.png
 %%DATADIR%%/data/core/images/units/human-magi/great-mage+female-attack-magic-2.png
 %%DATADIR%%/data/core/images/units/human-magi/great-mage+female-attack-staff-1.png
@@ -6132,12 +6362,26 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-attack-staff1.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-attack-staff2.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-defend.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-1.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-2.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-3.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-4.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-5.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-6.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage+female-teleport-7.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage+female.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage-attack-magic1.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage-attack-magic2.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage-attack-staff1.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage-attack-staff2.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage-defend.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-1.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-2.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-3.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-4.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-5.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-6.png
+%%DATADIR%%/data/core/images/units/human-magi/silver-mage-teleport-7.png
 %%DATADIR%%/data/core/images/units/human-magi/silver-mage.png
 %%DATADIR%%/data/core/images/units/human-magi/white-cleric+female-defend.png
 %%DATADIR%%/data/core/images/units/human-magi/white-cleric+female-mace-1.png
@@ -6612,16 +6856,14 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/monsters/yeti-die4.png
 %%DATADIR%%/data/core/images/units/monsters/yeti-die5.png
 %%DATADIR%%/data/core/images/units/monsters/yeti.png
-%%DATADIR%%/data/core/images/units/nagas/fighter+female-attack.png
-%%DATADIR%%/data/core/images/units/nagas/fighter+female-defend.png
-%%DATADIR%%/data/core/images/units/nagas/fighter+female.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-attack.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-defend.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-idle-1.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-idle-2.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-idle-3.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-idle-4.png
-%%DATADIR%%/data/core/images/units/nagas/fighter-idle-5.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-defend-1.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-defend-2.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-1.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-2.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-3.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-4.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-5.png
+%%DATADIR%%/data/core/images/units/nagas/fighter-melee-6.png
 %%DATADIR%%/data/core/images/units/nagas/fighter.png
 %%DATADIR%%/data/core/images/units/nagas/myrmidon+female-attack.png
 %%DATADIR%%/data/core/images/units/nagas/myrmidon+female-defend.png
@@ -6714,6 +6956,15 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/orcs/assassin-die-7.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-die-8.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-die-9.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-1.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-2.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-3.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-4.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-5.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-6.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-7.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-8.png
+%%DATADIR%%/data/core/images/units/orcs/assassin-idle-9.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-ranged1.png
 %%DATADIR%%/data/core/images/units/orcs/assassin-ranged2.png
 %%DATADIR%%/data/core/images/units/orcs/assassin.png
@@ -6884,9 +7135,16 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/trolls/lobber-attack-ranged2.png
 %%DATADIR%%/data/core/images/units/trolls/lobber-defend.png
 %%DATADIR%%/data/core/images/units/trolls/lobber.png
-%%DATADIR%%/data/core/images/units/trolls/shaman-defend.png
-%%DATADIR%%/data/core/images/units/trolls/shaman-melee.png
-%%DATADIR%%/data/core/images/units/trolls/shaman-ranged.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-defend-1.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-defend-2.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-fist-1.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-fist-2.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-fist-3.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-fist-4.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-fist-5.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-ranged-1.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-ranged-2.png
+%%DATADIR%%/data/core/images/units/trolls/shaman-ranged-3.png
 %%DATADIR%%/data/core/images/units/trolls/shaman.png
 %%DATADIR%%/data/core/images/units/trolls/warrior-attack-1.png
 %%DATADIR%%/data/core/images/units/trolls/warrior-attack-2.png
@@ -7059,6 +7317,11 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-5.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-6.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-7.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-idle-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-idle-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-idle-3.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-idle-4.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-idle-5.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-crossbow-attack1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-crossbow-attack2.png
@@ -7126,6 +7389,16 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/images/units/undead/bloodbat-se-3.png
 %%DATADIR%%/data/core/images/units/undead/bloodbat-se-4.png
 %%DATADIR%%/data/core/images/units/undead/bloodbat-se-5.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-ne-1.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-ne-2.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-ne-3.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-ne-4.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-ne-5.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-se-1.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-se-2.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-se-3.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-se-4.png
+%%DATADIR%%/data/core/images/units/undead/dreadbat-se-5.png
 %%DATADIR%%/data/core/images/units/undead/ghost-n-1.png
 %%DATADIR%%/data/core/images/units/undead/ghost-n-2.png
 %%DATADIR%%/data/core/images/units/undead/ghost-n-3.png
@@ -7454,18 +7727,19 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/music/knalgan_theme.ogg
 %%DATADIR%%/data/core/music/knolls.ogg
 %%DATADIR%%/data/core/music/legends_of_the_north.ogg
+%%DATADIR%%/data/core/music/love_theme.ogg
 %%DATADIR%%/data/core/music/loyalists.ogg
 %%DATADIR%%/data/core/music/main_menu.ogg
-%%DATADIR%%/data/core/music/main_menu_new.ogg
 %%DATADIR%%/data/core/music/northerners.ogg
-%%DATADIR%%/data/core/music/nr-sad.ogg
 %%DATADIR%%/data/core/music/nunc_dimittis.ogg
 %%DATADIR%%/data/core/music/revelation.ogg
+%%DATADIR%%/data/core/music/sad.ogg
 %%DATADIR%%/data/core/music/silence.ogg
 %%DATADIR%%/data/core/music/the_city_falls.ogg
 %%DATADIR%%/data/core/music/the_dangerous_symphony.ogg
 %%DATADIR%%/data/core/music/the_deep_path.ogg
 %%DATADIR%%/data/core/music/the_king_is_dead.ogg
+%%DATADIR%%/data/core/music/transience.ogg
 %%DATADIR%%/data/core/music/traveling_minstrels.ogg
 %%DATADIR%%/data/core/music/underground.ogg
 %%DATADIR%%/data/core/music/vengeful.ogg
@@ -7729,6 +8003,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/terrain.cfg
 %%DATADIR%%/data/core/units.cfg
 %%DATADIR%%/data/core/units/bats/Bat_Blood.cfg
+%%DATADIR%%/data/core/units/bats/Bat_Dread.cfg
 %%DATADIR%%/data/core/units/bats/Bat_Vampire.cfg
 %%DATADIR%%/data/core/units/boats/Boat.cfg
 %%DATADIR%%/data/core/units/boats/Galleon.cfg
@@ -7825,6 +8100,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/units/humans/Loyalist_Swordsman.cfg
 %%DATADIR%%/data/core/units/humans/Mage.cfg
 %%DATADIR%%/data/core/units/humans/Mage_Arch.cfg
+%%DATADIR%%/data/core/units/humans/Mage_Elder.cfg
 %%DATADIR%%/data/core/units/humans/Mage_Great.cfg
 %%DATADIR%%/data/core/units/humans/Mage_Red.cfg
 %%DATADIR%%/data/core/units/humans/Mage_Silver.cfg
@@ -7841,6 +8117,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/core/units/humans/Outlaw_Thief.cfg
 %%DATADIR%%/data/core/units/humans/Outlaw_Thug.cfg
 %%DATADIR%%/data/core/units/humans/Peasant.cfg
+%%DATADIR%%/data/core/units/humans/Royal_Warrior.cfg
 %%DATADIR%%/data/core/units/humans/Woodsman.cfg
 %%DATADIR%%/data/core/units/humans/Woodsman_Huntsman.cfg
 %%DATADIR%%/data/core/units/humans/Woodsman_Poacher.cfg
@@ -8002,6 +8279,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/languages/pl_PL.cfg
 %%DATADIR%%/data/languages/pt_BR.cfg
 %%DATADIR%%/data/languages/pt_PT.cfg
+%%DATADIR%%/data/languages/racv.cfg
 %%DATADIR%%/data/languages/ro_RO.cfg
 %%DATADIR%%/data/languages/ru_RU.cfg
 %%DATADIR%%/data/languages/sk_SK.cfg
@@ -8055,6 +8333,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/multiplayer/maps/4p_Paths_of_Daggers.map
 %%DATADIR%%/data/multiplayer/maps/4p_Siege_Castles.map
 %%DATADIR%%/data/multiplayer/maps/4p_The_Wilderlands.map
+%%DATADIR%%/data/multiplayer/maps/4p_Underworld.map
 %%DATADIR%%/data/multiplayer/maps/4p_Xanthe_Chaos.map
 %%DATADIR%%/data/multiplayer/maps/5p_Auction-X.map
 %%DATADIR%%/data/multiplayer/maps/5p_Forest_of_Fear.map
@@ -8100,6 +8379,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/multiplayer/scenarios/4p_Paths_of_Daggers.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Siege_Castles.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_The_Wilderlands.cfg
+%%DATADIR%%/data/multiplayer/scenarios/4p_Underworld.cfg
 %%DATADIR%%/data/multiplayer/scenarios/4p_Xanthe_Chaos.cfg
 %%DATADIR%%/data/multiplayer/scenarios/5p_Auction-X.cfg
 %%DATADIR%%/data/multiplayer/scenarios/5p_Forest_of_Fear.cfg
@@ -8136,8 +8416,13 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/tools/README
 %%DATADIR%%/data/tools/about_cfg_to_wiki
 %%DATADIR%%/data/tools/addon_manager/__init__.py
+%%DATADIR%%/data/tools/addon_manager/asc.gif
+%%DATADIR%%/data/tools/addon_manager/bg.gif
+%%DATADIR%%/data/tools/addon_manager/desc.gif
 %%DATADIR%%/data/tools/addon_manager/html.py
+%%DATADIR%%/data/tools/addon_manager/jquery.js
 %%DATADIR%%/data/tools/addon_manager/style.css
+%%DATADIR%%/data/tools/addon_manager/tablesorter.js
 %%DATADIR%%/data/tools/castle-cutter/castle-walls.tmpl
 %%DATADIR%%/data/tools/castle-cutter/castle.png
 %%DATADIR%%/data/tools/castle-cutter/castles.xcf
@@ -8151,6 +8436,12 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/tools/castle-cutter/mask.png
 %%DATADIR%%/data/tools/castle-cutter/mk-all-castles.sh
 %%DATADIR%%/data/tools/castle-cutter/mk-castle.sh
+%%DATADIR%%/data/tools/emacs_mode/README
+%%DATADIR%%/data/tools/emacs_mode/wesnoth-mode.el
+%%DATADIR%%/data/tools/emacs_mode/wesnoth-mode.texi
+%%DATADIR%%/data/tools/emacs_mode/wesnoth-update.el
+%%DATADIR%%/data/tools/emacs_mode/wesnoth-wml-additions.cfg
+%%DATADIR%%/data/tools/emacs_mode/wesnoth-wml-data.el
 %%DATADIR%%/data/tools/expand-terrain-macros.py
 %%DATADIR%%/data/tools/exploder/castle-concave.cfg
 %%DATADIR%%/data/tools/exploder/castle-convex.cfg
@@ -8174,15 +8465,16 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/data/tools/extractbindings
 %%DATADIR%%/data/tools/helpheader.xhtml
 %%DATADIR%%/data/tools/helptrailer.xhtml
+%%DATADIR%%/data/tools/journeylifter
 %%DATADIR%%/data/tools/scoutDefault.py
 %%DATADIR%%/data/tools/terrain2wiki.rb
+%%DATADIR%%/data/tools/trackplacer
 %%DATADIR%%/data/tools/unit_tree/TeamColorizer
 %%DATADIR%%/data/tools/unit_tree/__init__.py
 %%DATADIR%%/data/tools/unit_tree/animations.py
 %%DATADIR%%/data/tools/unit_tree/helpers.py
 %%DATADIR%%/data/tools/unit_tree/style.css
 %%DATADIR%%/data/tools/vim/formulaai.vim
-%%DATADIR%%/data/tools/wesnoth-mode.el
 %%DATADIR%%/data/tools/wesnoth/README
 %%DATADIR%%/data/tools/wesnoth/__init__.py
 %%DATADIR%%/data/tools/wesnoth/campaignserver_client.py
@@ -8288,6 +8580,13 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/images/buttons/group_water-active.png
 %%DATADIR%%/images/buttons/group_water-pressed.png
 %%DATADIR%%/images/buttons/group_water.png
+%%DATADIR%%/images/buttons/group_x-active-pressed.png
+%%DATADIR%%/images/buttons/group_x-active.png
+%%DATADIR%%/images/buttons/group_x-pressed.png
+%%DATADIR%%/images/buttons/group_x.png
+%%DATADIR%%/images/buttons/large-button-active.png
+%%DATADIR%%/images/buttons/large-button-pressed.png
+%%DATADIR%%/images/buttons/large-button.png
 %%DATADIR%%/images/buttons/lite-active.png
 %%DATADIR%%/images/buttons/lite-pressed.png
 %%DATADIR%%/images/buttons/lite.png
@@ -8447,21 +8746,21 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/images/flags/flag-3.png
 %%DATADIR%%/images/flags/flag-4.png
 %%DATADIR%%/images/flags/flag-icon.png
+%%DATADIR%%/images/flags/knalgan-flag-1.png
+%%DATADIR%%/images/flags/knalgan-flag-2.png
+%%DATADIR%%/images/flags/knalgan-flag-3.png
+%%DATADIR%%/images/flags/knalgan-flag-4.png
 %%DATADIR%%/images/flags/knalgan-flag-icon.png
-%%DATADIR%%/images/flags/knalgan-flag1.png
-%%DATADIR%%/images/flags/knalgan-flag2.png
-%%DATADIR%%/images/flags/knalgan-flag3.png
-%%DATADIR%%/images/flags/knalgan-flag4.png
 %%DATADIR%%/images/flags/loyalist-flag-1.png
 %%DATADIR%%/images/flags/loyalist-flag-2.png
 %%DATADIR%%/images/flags/loyalist-flag-3.png
 %%DATADIR%%/images/flags/loyalist-flag-4.png
 %%DATADIR%%/images/flags/loyalist-flag-icon.png
+%%DATADIR%%/images/flags/undead-flag-1.png
+%%DATADIR%%/images/flags/undead-flag-2.png
+%%DATADIR%%/images/flags/undead-flag-3.png
+%%DATADIR%%/images/flags/undead-flag-4.png
 %%DATADIR%%/images/flags/undead-flag-icon.png
-%%DATADIR%%/images/flags/undead-flag1.png
-%%DATADIR%%/images/flags/undead-flag2.png
-%%DATADIR%%/images/flags/undead-flag3.png
-%%DATADIR%%/images/flags/undead-flag4.png
 %%DATADIR%%/images/footsteps/foot-medium-in-n.png
 %%DATADIR%%/images/footsteps/foot-medium-in-ne.png
 %%DATADIR%%/images/footsteps/foot-medium-in-se.png
@@ -8494,6 +8793,9 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/images/icons/icon-music.png
 %%DATADIR%%/images/icons/icon-server.png
 %%DATADIR%%/images/icons/icon-serverother.png
+%%DATADIR%%/images/icons/icons-abilities.png
+%%DATADIR%%/images/icons/icons-numbers.png
+%%DATADIR%%/images/icons/icons-resistances.png
 %%DATADIR%%/images/misc/attack-indicator-dst-n.png
 %%DATADIR%%/images/misc/attack-indicator-dst-ne.png
 %%DATADIR%%/images/misc/attack-indicator-dst-nw.png
@@ -8627,6 +8929,7 @@ bin/wesnoth_addon_manager
 %%DATADIR%%/locales/pl_PL@wesnoth
 %%DATADIR%%/locales/pt_BR@wesnoth
 %%DATADIR%%/locales/pt_PT@wesnoth
+%%DATADIR%%/locales/racv@wesnoth
 %%DATADIR%%/locales/ro_RO@wesnoth
 %%DATADIR%%/locales/ru_RU@wesnoth
 %%DATADIR%%/locales/sk_SK@wesnoth
@@ -8670,13 +8973,13 @@ bin/wesnoth_addon_manager
 %%DOCSDIR%%/manual/images/fr/recruit.jpg
 %%DOCSDIR%%/manual/images/fr/right_pane.jpg
 %%DOCSDIR%%/manual/images/fr/top_pane.jpg
-%%DOCSDIR%%/manual/images/gl/right_pane.jpg
+%%DOCSDIR%%/manual/images/game-screen.jpg
 %%DOCSDIR%%/manual/images/gl/game-screen.jpg
 %%DOCSDIR%%/manual/images/gl/main-menu.jpg
 %%DOCSDIR%%/manual/images/gl/multiplayer.jpg
-%%DOCSDIR%%/manual/images/gl/top_pane.jpg
 %%DOCSDIR%%/manual/images/gl/recruit.jpg
-%%DOCSDIR%%/manual/images/game-screen.jpg
+%%DOCSDIR%%/manual/images/gl/right_pane.jpg
+%%DOCSDIR%%/manual/images/gl/top_pane.jpg
 %%DOCSDIR%%/manual/images/main-menu.jpg
 %%DOCSDIR%%/manual/images/multiplayer.jpg
 %%DOCSDIR%%/manual/images/orb-blue.jpg
@@ -8706,6 +9009,7 @@ bin/wesnoth_addon_manager
 %%DOCSDIR%%/manual/manual.en.html
 %%DOCSDIR%%/manual/manual.es.html
 %%DOCSDIR%%/manual/manual.et.html
+%%DOCSDIR%%/manual/manual.fi.html
 %%DOCSDIR%%/manual/manual.fr.html
 %%DOCSDIR%%/manual/manual.gl.html
 %%DOCSDIR%%/manual/manual.hu.html
@@ -8726,10 +9030,12 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/images
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/maps
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/scenarios
+@dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion/utils
 @dirrm %%DATADIR%%/data/campaigns/An_Orcish_Incursion
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/ais
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/misc
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/portraits
+@dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/story
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images/units
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/images
 @dirrm %%DATADIR%%/data/campaigns/Descent_Into_Darkness/maps
@@ -8754,6 +9060,15 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/campaigns/Heir_To_The_Throne/units
 @dirrm %%DATADIR%%/data/campaigns/Heir_To_The_Throne/utils
 @dirrm %%DATADIR%%/data/campaigns/Heir_To_The_Throne
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/portraits
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story/characters
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images/story
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/images
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/maps
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/masks
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/scenarios
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere/utils
+@dirrm %%DATADIR%%/data/campaigns/Legend_of_Wesmere
 @dirrm %%DATADIR%%/data/campaigns/Liberty/images/attacks
 @dirrm %%DATADIR%%/data/campaigns/Liberty/images/halo
 @dirrm %%DATADIR%%/data/campaigns/Liberty/images/maps
@@ -8830,6 +9145,7 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/campaigns/Two_Brothers/images
 @dirrm %%DATADIR%%/data/campaigns/Two_Brothers/maps
 @dirrm %%DATADIR%%/data/campaigns/Two_Brothers/scenarios
+@dirrm %%DATADIR%%/data/campaigns/Two_Brothers/utils
 @dirrm %%DATADIR%%/data/campaigns/Two_Brothers
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/attacks
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/items
@@ -8849,8 +9165,6 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/maps
-@dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen1
-@dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios/scen3_alt
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/scenarios
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/units
 @dirrm %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/utils
@@ -8879,7 +9193,6 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/core/images/portraits/Jason_Lutes
 @dirrm %%DATADIR%%/data/core/images/portraits/Kitty/transparent
 @dirrm %%DATADIR%%/data/core/images/portraits/Kitty
-@dirrm %%DATADIR%%/data/core/images/portraits/Neoriceisgood
 @dirrm %%DATADIR%%/data/core/images/portraits/Nicholas_Kerpan
 @dirrm %%DATADIR%%/data/core/images/portraits/Other
 @dirrm %%DATADIR%%/data/core/images/portraits/Pekka_Aikio
@@ -8962,6 +9275,7 @@ bin/wesnoth_addon_manager
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/tools/addon_manager
 @dirrm %%DATADIR%%/data/tools/castle-cutter
+@dirrm %%DATADIR%%/data/tools/emacs_mode
 @dirrm %%DATADIR%%/data/tools/exploder/models
 @dirrm %%DATADIR%%/data/tools/exploder
 @dirrm %%DATADIR%%/data/tools/unit_tree
