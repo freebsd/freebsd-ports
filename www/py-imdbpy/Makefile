@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	imdbpy
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	www python
 MASTER_SITES=	SF CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,11 +26,11 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/bin/ ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/bin/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
