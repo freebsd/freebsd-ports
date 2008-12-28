@@ -7,7 +7,7 @@
 
 PORTNAME=	ao
 PORTVERSION=	0.82
-CATEGORIES=	audio
+CATEGORIES=	audio python
 MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyao-${PORTVERSION}

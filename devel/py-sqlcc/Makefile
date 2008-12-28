@@ -7,7 +7,7 @@
 
 PORTNAME=	sqlcc
 PORTVERSION=	0.2
-CATEGORIES=	devel databases
+CATEGORIES=	devel databases python
 MASTER_SITES=	http://master.branda.to/downloads/sqlcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

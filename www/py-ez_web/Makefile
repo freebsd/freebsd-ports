@@ -7,7 +7,7 @@
 
 PORTNAME=	ez_web
 PORTVERSION=	0.1
-CATEGORIES=	www devel
+CATEGORIES=	www devel python
 MASTER_SITES=	http://master.branda.to/downloads/ez_web/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
