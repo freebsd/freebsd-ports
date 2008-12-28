@@ -236,6 +236,7 @@
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-gnome-vfs
+    SUBDIR += fusefs-gstfs
     SUBDIR += fusefs-gunzip
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-kmod

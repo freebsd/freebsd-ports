@@ -1,0 +1,10 @@
+GSTFS is a filesystem for on-demand transcoding of music files
+between different formats. It utilizes the gstreamer library for
+conversion so any formats supported by gstreamer should also be
+supported by gstfs. The filesystem's only requirement is that the
+gstreamer pipeline begin with a filesrc with the name "_source"
+and end with an fdsink with the name "_dest". The filesystem will
+automatically substitute the filename and fd number in these
+pipelines.
+
+WWW:	http://bobcopeland.com/gstfs/
