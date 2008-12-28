@@ -19,6 +19,8 @@ LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug \
 		ao.3:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:${PORTSDIR}/audio/libaiff
 
+BROKEN=		Does not compile with audio/libaiff
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
