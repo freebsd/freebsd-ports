@@ -1,0 +1,53 @@
+include/%%PYTHON_VERSION%%/dynrules/compat.h
+include/%%PYTHON_VERSION%%/dynrules/dynrules.h
+%%PYTHON_SITELIBDIR%%/dynrules/__init__.py
+%%PYTHON_SITELIBDIR%%/dynrules/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/_dynrules.so
+%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.py
+%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/LearnSystem.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.py
+%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/MMapRuleManagement.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/Rule.py
+%%PYTHON_SITELIBDIR%%/dynrules/Rule.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/Rule.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.py
+%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/RuleManagement.pyo
+%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.py
+%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyc
+%%PYTHON_SITELIBDIR%%/dynrules/RuleSet.pyo
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/navigation.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/rightsidebar.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/sphinxdoc.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/stickysidebar.css
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/traditional.css
+%%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/html/search.html
+%%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/learnsystem.py
+@dirrm %%PYTHON_SITELIBDIR%%/dynrules
+@dirrm include/%%PYTHON_VERSION%%/dynrules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
