@@ -40,6 +40,9 @@ bin/smc
 %%DATADIR%%/levels/allen_1.smclvl
 %%DATADIR%%/levels/bad_evening.smclvl
 %%DATADIR%%/levels/castle_test.smclvl
+%%DATADIR%%/levels/cave_1.smclvl
+%%DATADIR%%/levels/cave_1_2.smclvl
+%%DATADIR%%/levels/cave_1b.smclvl
 %%DATADIR%%/levels/clear_night.smclvl
 %%DATADIR%%/levels/david_1.smclvl
 %%DATADIR%%/levels/desert_ruins.smclvl
@@ -47,6 +50,7 @@ bin/smc
 %%DATADIR%%/levels/dj_kirby_1_sub.smclvl
 %%DATADIR%%/levels/eatomania.smclvl
 %%DATADIR%%/levels/empty.smclvl
+%%DATADIR%%/levels/flan.smclvl
 %%DATADIR%%/levels/flippa_2.smclvl
 %%DATADIR%%/levels/flippa_3.smclvl
 %%DATADIR%%/levels/flippa_3_1.smclvl
@@ -59,6 +63,7 @@ bin/smc
 %%DATADIR%%/levels/flippa_3_mushroom.smclvl
 %%DATADIR%%/levels/flippa_3_sky.smclvl
 %%DATADIR%%/levels/frosty_climber.smclvl
+%%DATADIR%%/levels/furball_hills.smclvl
 %%DATADIR%%/levels/game_tutorial.smclvl
 %%DATADIR%%/levels/green_grounds.smclvl
 %%DATADIR%%/levels/houses.smclvl
@@ -66,6 +71,8 @@ bin/smc
 %%DATADIR%%/levels/ita_1.smclvl
 %%DATADIR%%/levels/jr_cave.smclvl
 %%DATADIR%%/levels/jungle_1.smclvl
+%%DATADIR%%/levels/jungle_2.smclvl
+%%DATADIR%%/levels/jungle_3.smclvl
 %%DATADIR%%/levels/keywest_1.smclvl
 %%DATADIR%%/levels/lvl_1.smclvl
 %%DATADIR%%/levels/lvl_10.smclvl
@@ -83,6 +90,7 @@ bin/smc
 %%DATADIR%%/levels/mountain trials.smclvl
 %%DATADIR%%/levels/mt_bon.smclvl
 %%DATADIR%%/levels/mt_sec.smclvl
+%%DATADIR%%/levels/neverland.smclvl
 %%DATADIR%%/levels/night_sky.smclvl
 %%DATADIR%%/levels/pasol_1.smclvl
 %%DATADIR%%/levels/pasol_2.smclvl
@@ -92,6 +100,10 @@ bin/smc
 %%DATADIR%%/levels/sauer2_1.smclvl
 %%DATADIR%%/levels/sauer2_10.smclvl
 %%DATADIR%%/levels/sauer2_11.smclvl
+%%DATADIR%%/levels/sauer2_12.smclvl
+%%DATADIR%%/levels/sauer2_13.smclvl
+%%DATADIR%%/levels/sauer2_13end.smclvl
+%%DATADIR%%/levels/sauer2_14.smclvl
 %%DATADIR%%/levels/sauer2_2.smclvl
 %%DATADIR%%/levels/sauer2_3.smclvl
 %%DATADIR%%/levels/sauer2_4.smclvl
@@ -103,6 +115,7 @@ bin/smc
 %%DATADIR%%/levels/sauer2_nolin.smclvl
 %%DATADIR%%/levels/sauer2_nolin_sub.smclvl
 %%DATADIR%%/levels/scaley.smclvl
+%%DATADIR%%/levels/space.smclvl
 %%DATADIR%%/levels/speed_test.smclvl
 %%DATADIR%%/levels/stephan_1.smclvl
 %%DATADIR%%/levels/stephan_2.smclvl
@@ -126,6 +139,8 @@ bin/smc
 %%DATADIR%%/levels/test_7.smclvl
 %%DATADIR%%/levels/test_8.smclvl
 %%DATADIR%%/levels/test_9.smclvl
+%%DATADIR%%/levels/test_moving_platform_1.smclvl
+%%DATADIR%%/levels/test_pipes.smclvl
 %%DATADIR%%/levels/tower_1.smclvl
 %%DATADIR%%/levels/tut1_1.smclvl
 %%DATADIR%%/levels/under_construction.smclvl
@@ -153,7 +168,6 @@ bin/smc
 %%DATADIR%%/pixmaps/animation/fireball/1.settings
 %%DATADIR%%/pixmaps/animation/iceball/1.png
 %%DATADIR%%/pixmaps/animation/iceball/1.settings
-%%DATADIR%%/pixmaps/animation/iceball/1.txt
 %%DATADIR%%/pixmaps/animation/light_1/1.png
 %%DATADIR%%/pixmaps/animation/light_1/2.png
 %%DATADIR%%/pixmaps/animation/light_1/3.png
@@ -212,6 +226,8 @@ bin/smc
 %%DATADIR%%/pixmaps/blocks/ice/1.settings
 %%DATADIR%%/pixmaps/blocks/ice/2.png
 %%DATADIR%%/pixmaps/blocks/ice/2.settings
+%%DATADIR%%/pixmaps/blocks/ice/3.png
+%%DATADIR%%/pixmaps/blocks/ice/3.settings
 %%DATADIR%%/pixmaps/blocks/metal/blue.png
 %%DATADIR%%/pixmaps/blocks/metal/blue.settings
 %%DATADIR%%/pixmaps/blocks/metal/green.png
@@ -301,7 +317,7 @@ bin/smc
 %%DATADIR%%/pixmaps/blocks/wood/2.png
 %%DATADIR%%/pixmaps/blocks/wood/2.settings
 %%DATADIR%%/pixmaps/clouds/cloudy_1/middle.png
-%%DATADIR%%/pixmaps/clouds/cloudy_1/middle.txt
+%%DATADIR%%/pixmaps/clouds/cloudy_1/middle.settings
 %%DATADIR%%/pixmaps/clouds/default_1/1_left.png
 %%DATADIR%%/pixmaps/clouds/default_1/1_left.settings
 %%DATADIR%%/pixmaps/clouds/default_1/1_middle.png
@@ -311,7 +327,7 @@ bin/smc
 %%DATADIR%%/pixmaps/clouds/default_1/2_big.settings
 %%DATADIR%%/pixmaps/clouds/default_1/2_small.settings
 %%DATADIR%%/pixmaps/clouds/grey_1/small.png
-%%DATADIR%%/pixmaps/clouds/grey_1/small.txt
+%%DATADIR%%/pixmaps/clouds/grey_1/small.settings
 %%DATADIR%%/pixmaps/clouds/light_yellow_1/1.png
 %%DATADIR%%/pixmaps/clouds/light_yellow_1/1.settings
 %%DATADIR%%/pixmaps/clouds/light_yellow_1/10.png
@@ -406,7 +422,6 @@ bin/smc
 %%DATADIR%%/pixmaps/enemy/furball/brown/walk_7.settings
 %%DATADIR%%/pixmaps/enemy/furball/brown/walk_8.png
 %%DATADIR%%/pixmaps/enemy/furball/brown/walk_8.settings
-%%DATADIR%%/pixmaps/enemy/gee/all.txt
 %%DATADIR%%/pixmaps/enemy/gee/electro/1.png
 %%DATADIR%%/pixmaps/enemy/gee/electro/1.settings
 %%DATADIR%%/pixmaps/enemy/gee/electro/10.png
@@ -467,26 +482,30 @@ bin/smc
 %%DATADIR%%/pixmaps/enemy/gee/venom/8.settings
 %%DATADIR%%/pixmaps/enemy/gee/venom/9.png
 %%DATADIR%%/pixmaps/enemy/gee/venom/9.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/closed_1.png
-%%DATADIR%%/pixmaps/enemy/jpiranha/closed_2.png
-%%DATADIR%%/pixmaps/enemy/jpiranha/down_closed_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/down_closed_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/down_open_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/down_open_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/left_closed_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/left_closed_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/left_open_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/left_open_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/open_1.png
-%%DATADIR%%/pixmaps/enemy/jpiranha/open_2.png
-%%DATADIR%%/pixmaps/enemy/jpiranha/right_closed_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/right_closed_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/right_open_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/right_open_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/up_closed_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/up_closed_2.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/up_open_1.settings
-%%DATADIR%%/pixmaps/enemy/jpiranha/up_open_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/closed_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/closed_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/closed_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/closed_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/open_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/open_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/open_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/blue/open_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/closed_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/closed_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/closed_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/closed_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/open_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/open_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/open_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orange/open_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/closed_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/closed_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/closed_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/closed_2.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/open_1.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/open_1.settings
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/open_2.png
+%%DATADIR%%/pixmaps/enemy/jpiranha/orig/open_2.settings
 %%DATADIR%%/pixmaps/enemy/krush/big_1.png
 %%DATADIR%%/pixmaps/enemy/krush/big_1.settings
 %%DATADIR%%/pixmaps/enemy/krush/big_2.png
@@ -531,7 +550,6 @@ bin/smc
 %%DATADIR%%/pixmaps/enemy/static/saw/face_1.png
 %%DATADIR%%/pixmaps/enemy/static/saw/face_1.settings
 %%DATADIR%%/pixmaps/enemy/thromp/active.png
-%%DATADIR%%/pixmaps/enemy/thromp/all.txt
 %%DATADIR%%/pixmaps/enemy/thromp/default.png
 %%DATADIR%%/pixmaps/enemy/thromp/desert_1/active.png
 %%DATADIR%%/pixmaps/enemy/thromp/desert_1/all.txt
@@ -600,26 +618,26 @@ bin/smc
 %%DATADIR%%/pixmaps/game/background/blue_waterhills_1.png
 %%DATADIR%%/pixmaps/game/background/blue_waterhills_1.settings
 %%DATADIR%%/pixmaps/game/background/desert_dunes_1.png
-%%DATADIR%%/pixmaps/game/background/desert_dunes_1.txt
+%%DATADIR%%/pixmaps/game/background/desert_dunes_1.settings
 %%DATADIR%%/pixmaps/game/background/desert_hills_1.png
 %%DATADIR%%/pixmaps/game/background/desert_hills_1.settings
 %%DATADIR%%/pixmaps/game/background/ghost_hills_1.png
-%%DATADIR%%/pixmaps/game/background/ghost_hills_1.txt
+%%DATADIR%%/pixmaps/game/background/ghost_hills_1.settings
 %%DATADIR%%/pixmaps/game/background/green_grass_1.png
-%%DATADIR%%/pixmaps/game/background/green_grass_1.txt
+%%DATADIR%%/pixmaps/game/background/green_grass_1.settings
 %%DATADIR%%/pixmaps/game/background/green_hills_1.png
 %%DATADIR%%/pixmaps/game/background/green_hills_1.settings
 %%DATADIR%%/pixmaps/game/background/green_hills_2.png
-%%DATADIR%%/pixmaps/game/background/green_hills_2.txt
+%%DATADIR%%/pixmaps/game/background/green_hills_2.settings
 %%DATADIR%%/pixmaps/game/background/green_junglehills.png
 %%DATADIR%%/pixmaps/game/background/green_junglehills.settings
 %%DATADIR%%/pixmaps/game/background/low_sand.png
 %%DATADIR%%/pixmaps/game/background/more_hills.png
-%%DATADIR%%/pixmaps/game/background/more_hills.txt
+%%DATADIR%%/pixmaps/game/background/more_hills.settings
 %%DATADIR%%/pixmaps/game/background/ocean_green.png
 %%DATADIR%%/pixmaps/game/background/puffy_clouds.png
 %%DATADIR%%/pixmaps/game/background/sand_hill_1.png
-%%DATADIR%%/pixmaps/game/background/sand_hill_1.txt
+%%DATADIR%%/pixmaps/game/background/sand_hill_1.settings
 %%DATADIR%%/pixmaps/game/background/small_green_ballhills_1.png
 %%DATADIR%%/pixmaps/game/background/small_green_ballhills_1.settings
 %%DATADIR%%/pixmaps/game/background/stalagtites_background_1.png
@@ -627,6 +645,7 @@ bin/smc
 %%DATADIR%%/pixmaps/game/background/stalagtites_background_2.png
 %%DATADIR%%/pixmaps/game/background/stalagtites_background_2.settings
 %%DATADIR%%/pixmaps/game/background/stars_1.png
+%%DATADIR%%/pixmaps/game/background/stars_1.settings
 %%DATADIR%%/pixmaps/game/box/brown1_1.png
 %%DATADIR%%/pixmaps/game/box/brown1_1.settings
 %%DATADIR%%/pixmaps/game/box/white1_1.png
@@ -698,7 +717,6 @@ bin/smc
 %%DATADIR%%/pixmaps/game/items/fireplant_left.settings
 %%DATADIR%%/pixmaps/game/items/fireplant_right.png
 %%DATADIR%%/pixmaps/game/items/fireplant_right.settings
-%%DATADIR%%/pixmaps/game/items/goldpiece/all.txt
 %%DATADIR%%/pixmaps/game/items/goldpiece/red/1.png
 %%DATADIR%%/pixmaps/game/items/goldpiece/red/1.settings
 %%DATADIR%%/pixmaps/game/items/goldpiece/red/10.png
@@ -773,7 +791,6 @@ bin/smc
 %%DATADIR%%/pixmaps/game/items/mushroom_poison.settings
 %%DATADIR%%/pixmaps/game/items/mushroom_red.png
 %%DATADIR%%/pixmaps/game/items/mushroom_red.settings
-%%DATADIR%%/pixmaps/game/items/mushrooms.txt
 %%DATADIR%%/pixmaps/game/items/power.txt
 %%DATADIR%%/pixmaps/game/items/power_1.png
 %%DATADIR%%/pixmaps/game/items/power_2.png
@@ -785,12 +802,24 @@ bin/smc
 %%DATADIR%%/pixmaps/game/level/door_wood_1.settings
 %%DATADIR%%/pixmaps/game/level/door_yellow_1.png
 %%DATADIR%%/pixmaps/game/level/door_yellow_1.settings
-%%DATADIR%%/pixmaps/game/logo/lmario1.png
-%%DATADIR%%/pixmaps/game/logo/lmario1.settings
+%%DATADIR%%/pixmaps/game/logo/smc_big_1.png
+%%DATADIR%%/pixmaps/game/logo/smc_big_1.settings
 %%DATADIR%%/pixmaps/game/maryo_l.png
 %%DATADIR%%/pixmaps/game/maryo_l.settings
 %%DATADIR%%/pixmaps/game/the_end.png
 %%DATADIR%%/pixmaps/game/the_end.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_middle.png
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_middle_left.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_middle_right.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_top.png
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_top_left.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_2_top_right.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_middle.png
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_middle_left.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_middle_right.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_top.png
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_top_left.settings
+%%DATADIR%%/pixmaps/ground/candy_1/candy_cane_top_right.settings
 %%DATADIR%%/pixmaps/ground/castle_1/ground/bottom/1.png
 %%DATADIR%%/pixmaps/ground/castle_1/ground/bottom/1.settings
 %%DATADIR%%/pixmaps/ground/castle_1/ground/bottom/left.png
@@ -886,15 +915,12 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/green_1/plant_l.settings
 %%DATADIR%%/pixmaps/ground/green_1/plant_m.png
 %%DATADIR%%/pixmaps/ground/green_1/plant_m.settings
-%%DATADIR%%/pixmaps/ground/green_1/plant_m.txt
 %%DATADIR%%/pixmaps/ground/green_1/plant_r.png
 %%DATADIR%%/pixmaps/ground/green_1/plant_r.settings
-%%DATADIR%%/pixmaps/ground/green_1/plant_r.txt
 %%DATADIR%%/pixmaps/ground/green_2/apple_green.png
 %%DATADIR%%/pixmaps/ground/green_2/apple_green.settings
 %%DATADIR%%/pixmaps/ground/green_2/gras_middle.png
 %%DATADIR%%/pixmaps/ground/green_2/gras_middle.settings
-%%DATADIR%%/pixmaps/ground/green_2/gras_middle.txt
 %%DATADIR%%/pixmaps/ground/green_2/hedges/big_1.png
 %%DATADIR%%/pixmaps/ground/green_2/hedges/big_1.settings
 %%DATADIR%%/pixmaps/ground/green_2/hedges/big_2.png
@@ -915,11 +941,8 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/green_2/hedges/small_2.settings
 %%DATADIR%%/pixmaps/ground/green_2/tendril.png
 %%DATADIR%%/pixmaps/ground/green_2/tendril.settings
-%%DATADIR%%/pixmaps/ground/green_2/tendril.txt
 %%DATADIR%%/pixmaps/ground/green_2/tendril_top.png
 %%DATADIR%%/pixmaps/ground/green_2/tendril_top.settings
-%%DATADIR%%/pixmaps/ground/green_2/tendril_top.txt
-%%DATADIR%%/pixmaps/ground/green_2/trees/balloon_tree/all.txt
 %%DATADIR%%/pixmaps/ground/green_2/trees/balloon_tree/bottom.png
 %%DATADIR%%/pixmaps/ground/green_2/trees/balloon_tree/bottom.settings
 %%DATADIR%%/pixmaps/ground/green_2/trees/balloon_tree/middle.png
@@ -957,13 +980,10 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/jungle_1/beanstalk_2.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/berry_1.png
 %%DATADIR%%/pixmaps/ground/jungle_1/berry_1.settings
-%%DATADIR%%/pixmaps/ground/jungle_1/berry_1.txt
 %%DATADIR%%/pixmaps/ground/jungle_1/big_plant_1.png
 %%DATADIR%%/pixmaps/ground/jungle_1/big_plant_1.settings
-%%DATADIR%%/pixmaps/ground/jungle_1/big_plant_1.txt
 %%DATADIR%%/pixmaps/ground/jungle_1/big_plant_2.png
 %%DATADIR%%/pixmaps/ground/jungle_1/big_plant_2.settings
-%%DATADIR%%/pixmaps/ground/jungle_1/big_plant_2.txt
 %%DATADIR%%/pixmaps/ground/jungle_1/bridge_frame_back.png
 %%DATADIR%%/pixmaps/ground/jungle_1/bridge_frame_back.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/bridge_frame_back_2.settings
@@ -984,8 +1004,6 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/jungle_1/grass/3.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/grass/4.png
 %%DATADIR%%/pixmaps/ground/jungle_1/grass/4.settings
-%%DATADIR%%/pixmaps/ground/jungle_1/grass/all.txt
-%%DATADIR%%/pixmaps/ground/jungle_1/ground/all.txt
 %%DATADIR%%/pixmaps/ground/jungle_1/ground/bottom/1.png
 %%DATADIR%%/pixmaps/ground/jungle_1/ground/bottom/1.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/ground/bottom/2.png
@@ -1060,6 +1078,8 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/jungle_1/tree/1_front.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/tree/2.png
 %%DATADIR%%/pixmaps/ground/jungle_1/tree/2.settings
+%%DATADIR%%/pixmaps/ground/jungle_1/tree/2_front.png
+%%DATADIR%%/pixmaps/ground/jungle_1/tree/2_front.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/vine_bottom.png
 %%DATADIR%%/pixmaps/ground/jungle_1/vine_bottom.settings
 %%DATADIR%%/pixmaps/ground/jungle_1/vine_middle.png
@@ -1187,20 +1207,76 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/sand_1/ground/up.settings
 %%DATADIR%%/pixmaps/ground/sand_1/sphinx_medium.png
 %%DATADIR%%/pixmaps/ground/sand_1/sphinx_medium.settings
-%%DATADIR%%/pixmaps/ground/sand_1/sphinx_medium.txt
 %%DATADIR%%/pixmaps/ground/sand_1/tendril.png
 %%DATADIR%%/pixmaps/ground/sand_1/tendril.settings
-%%DATADIR%%/pixmaps/ground/sand_1/tendril.txt
 %%DATADIR%%/pixmaps/ground/sand_1/tendril_top.png
 %%DATADIR%%/pixmaps/ground/sand_1/tendril_top.settings
-%%DATADIR%%/pixmaps/ground/sand_1/tendril_top.txt
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/1.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/1.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/2.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/2.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/left.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/left.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/right.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/bottom/right.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/middle/left.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/middle/left.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/middle/right.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/middle/right.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/1.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/1.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/2.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/2.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/left.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/left.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/right.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top/right.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/1.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/1.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/2.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/2.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/left_top.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/left_top.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/right_top.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/middle/right_top.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left_bottom.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left_bottom.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left_top.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/left_top.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right_bottom.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right_bottom.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right_top.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle/right_top.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/1.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/1.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/2.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/2.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/left.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/left.settings
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/right.png
+%%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top/right.settings
+%%DATADIR%%/pixmaps/ground/snow_1/snowman_1.png
+%%DATADIR%%/pixmaps/ground/snow_1/snowman_1.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/bottom.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/bottom.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/middle.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/middle.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/top.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/balloon/top.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/lights.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/lights.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/normal.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/normal.settings
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/snow.png
+%%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1/snow.settings
 %%DATADIR%%/pixmaps/ground/underground/cain.png
 %%DATADIR%%/pixmaps/ground/underground/cain.settings
-%%DATADIR%%/pixmaps/ground/underground/cain.txt
 %%DATADIR%%/pixmaps/ground/underground/cain_end.png
 %%DATADIR%%/pixmaps/ground/underground/cain_end.settings
-%%DATADIR%%/pixmaps/ground/underground/cain_end.txt
-%%DATADIR%%/pixmaps/ground/underground/ground/all.txt
 %%DATADIR%%/pixmaps/ground/underground/ground/bottom/1.png
 %%DATADIR%%/pixmaps/ground/underground/ground/bottom/1.settings
 %%DATADIR%%/pixmaps/ground/underground/ground/bottom/left.png
@@ -1229,10 +1305,8 @@ bin/smc
 %%DATADIR%%/pixmaps/ground/underground/ground/top/right.settings
 %%DATADIR%%/pixmaps/ground/underground/rope.png
 %%DATADIR%%/pixmaps/ground/underground/rope.settings
-%%DATADIR%%/pixmaps/ground/underground/rope.txt
 %%DATADIR%%/pixmaps/ground/underground/rope_end.png
 %%DATADIR%%/pixmaps/ground/underground/rope_end.settings
-%%DATADIR%%/pixmaps/ground/underground/rope_end.txt
 %%DATADIR%%/pixmaps/ground/yoshi_1/hill_up_1.png
 %%DATADIR%%/pixmaps/ground/yoshi_1/hill_up_1.settings
 %%DATADIR%%/pixmaps/ground/yoshi_1/hill_up_2.png
@@ -1553,8 +1627,6 @@ bin/smc
 %%DATADIR%%/pixmaps/menu/extra_2.settings
 %%DATADIR%%/pixmaps/menu/game.png
 %%DATADIR%%/pixmaps/menu/game.settings
-%%DATADIR%%/pixmaps/menu/ground.png
-%%DATADIR%%/pixmaps/menu/ground.settings
 %%DATADIR%%/pixmaps/menu/items/audio.png
 %%DATADIR%%/pixmaps/menu/items/audio.settings
 %%DATADIR%%/pixmaps/menu/items/audio.txt
@@ -1756,7 +1828,6 @@ bin/smc
 %%DATADIR%%/pixmaps/windows/castle/3.png
 %%DATADIR%%/pixmaps/windows/castle/3.settings
 %%DATADIR%%/pixmaps/windows/castle/3.txt
-%%DATADIR%%/pixmaps/world/maryo/all.txt
 %%DATADIR%%/pixmaps/world/maryo/small/down.png
 %%DATADIR%%/pixmaps/world/maryo/small/down.settings
 %%DATADIR%%/pixmaps/world/maryo/small/down_1.png
@@ -1782,66 +1853,47 @@ bin/smc
 %%DATADIR%%/pixmaps/world/objects/bridge/bridge_1.settings
 %%DATADIR%%/pixmaps/world/objects/cactus/cactus_man.png
 %%DATADIR%%/pixmaps/world/objects/cactus/cactus_man.settings
-%%DATADIR%%/pixmaps/world/objects/cactus/cactus_man.txt
 %%DATADIR%%/pixmaps/world/objects/cactus/desert_cactus.png
 %%DATADIR%%/pixmaps/world/objects/cactus/desert_cactus.settings
-%%DATADIR%%/pixmaps/world/objects/cactus/desert_cactus.txt
 %%DATADIR%%/pixmaps/world/objects/castle/1.png
 %%DATADIR%%/pixmaps/world/objects/castle/1.settings
-%%DATADIR%%/pixmaps/world/objects/castle/1.txt
 %%DATADIR%%/pixmaps/world/objects/castle/2.png
 %%DATADIR%%/pixmaps/world/objects/castle/2.settings
-%%DATADIR%%/pixmaps/world/objects/castle/2.txt
 %%DATADIR%%/pixmaps/world/objects/castle/3.png
 %%DATADIR%%/pixmaps/world/objects/castle/3.settings
-%%DATADIR%%/pixmaps/world/objects/castle/3.txt
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_1.png
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_1.settings
-%%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_1.txt
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_2.png
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_2.settings
-%%DATADIR%%/pixmaps/world/objects/cloud/light_blue/medium_2.txt
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/small_1.png
 %%DATADIR%%/pixmaps/world/objects/cloud/light_blue/small_1.settings
-%%DATADIR%%/pixmaps/world/objects/cloud/light_blue/small_1.txt
 %%DATADIR%%/pixmaps/world/objects/extra/compass_rose.png
 %%DATADIR%%/pixmaps/world/objects/extra/compass_rose.settings
-%%DATADIR%%/pixmaps/world/objects/extra/compass_rose.txt
 %%DATADIR%%/pixmaps/world/objects/extra/compass_rose_de.png
 %%DATADIR%%/pixmaps/world/objects/grass/small_yellow.png
 %%DATADIR%%/pixmaps/world/objects/grass/small_yellow.settings
-%%DATADIR%%/pixmaps/world/objects/grass/small_yellow.txt
 %%DATADIR%%/pixmaps/world/objects/hedge/green_1.png
 %%DATADIR%%/pixmaps/world/objects/hedge/green_1.settings
-%%DATADIR%%/pixmaps/world/objects/hedge/green_1.txt
 %%DATADIR%%/pixmaps/world/objects/hill/blue_1.png
 %%DATADIR%%/pixmaps/world/objects/hill/blue_1.settings
 %%DATADIR%%/pixmaps/world/objects/hill/blue_2.png
 %%DATADIR%%/pixmaps/world/objects/hill/blue_2.settings
 %%DATADIR%%/pixmaps/world/objects/hill/blue_big.png
-%%DATADIR%%/pixmaps/world/objects/hill/blue_big.txt
 %%DATADIR%%/pixmaps/world/objects/hill/blue_big_left.settings
 %%DATADIR%%/pixmaps/world/objects/hill/blue_big_right.settings
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_big.png
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_big.settings
-%%DATADIR%%/pixmaps/world/objects/hill/bluegreen_big.txt
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_small.png
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_small.settings
-%%DATADIR%%/pixmaps/world/objects/hill/bluegreen_small.txt
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_stone_1.png
 %%DATADIR%%/pixmaps/world/objects/hill/bluegreen_stone_1.settings
-%%DATADIR%%/pixmaps/world/objects/hill/bluegreen_stone_1.txt
 %%DATADIR%%/pixmaps/world/objects/lake/lake_1.png
 %%DATADIR%%/pixmaps/world/objects/lake/lake_1.settings
-%%DATADIR%%/pixmaps/world/objects/lake/lake_1.txt
 %%DATADIR%%/pixmaps/world/objects/lake/oasis.png
 %%DATADIR%%/pixmaps/world/objects/lake/oasis.settings
-%%DATADIR%%/pixmaps/world/objects/lake/oasis.txt
 %%DATADIR%%/pixmaps/world/objects/mushroom/mushroom.png
-%%DATADIR%%/pixmaps/world/objects/mushroom/mushroom.txt
 %%DATADIR%%/pixmaps/world/objects/mushroom/mushroom_left.settings
 %%DATADIR%%/pixmaps/world/objects/mushroom/mushroom_right.settings
-%%DATADIR%%/pixmaps/world/objects/pipe/all.txt
 %%DATADIR%%/pixmaps/world/objects/pipe/blue_big.png
 %%DATADIR%%/pixmaps/world/objects/pipe/blue_big.settings
 %%DATADIR%%/pixmaps/world/objects/pipe/blue_small.png
@@ -1860,28 +1912,21 @@ bin/smc
 %%DATADIR%%/pixmaps/world/objects/pipe/yellow_small.settings
 %%DATADIR%%/pixmaps/world/objects/plants/green_1.png
 %%DATADIR%%/pixmaps/world/objects/plants/green_1.settings
-%%DATADIR%%/pixmaps/world/objects/plants/green_1.txt
 %%DATADIR%%/pixmaps/world/objects/plants/medium_plant.png
 %%DATADIR%%/pixmaps/world/objects/plants/medium_plant.settings
-%%DATADIR%%/pixmaps/world/objects/plants/medium_plant.txt
 %%DATADIR%%/pixmaps/world/objects/pyramid/medium_orange.png
 %%DATADIR%%/pixmaps/world/objects/pyramid/medium_orange.settings
-%%DATADIR%%/pixmaps/world/objects/pyramid/medium_orange.txt
 %%DATADIR%%/pixmaps/world/objects/stone/stone.png
 %%DATADIR%%/pixmaps/world/objects/stone/stone.settings
-%%DATADIR%%/pixmaps/world/objects/stone/stone.txt
 %%DATADIR%%/pixmaps/world/objects/stone/stone_2.png
 %%DATADIR%%/pixmaps/world/objects/stone/stone_2.settings
 %%DATADIR%%/pixmaps/world/objects/stone/stone_2_small.png
 %%DATADIR%%/pixmaps/world/objects/stone/stone_2_small.settings
 %%DATADIR%%/pixmaps/world/objects/sun/1.png
 %%DATADIR%%/pixmaps/world/objects/sun/1.settings
-%%DATADIR%%/pixmaps/world/objects/sun/1.txt
 %%DATADIR%%/pixmaps/world/objects/wheels/wind_wheel.png
 %%DATADIR%%/pixmaps/world/objects/wheels/wind_wheel.settings
-%%DATADIR%%/pixmaps/world/objects/wheels/wind_wheel.txt
 %%DATADIR%%/pixmaps/world/tiles/green_1/todo.txt
-%%DATADIR%%/pixmaps/world/way/yellow_1/all.txt
 %%DATADIR%%/pixmaps/world/way/yellow_1/cross.png
 %%DATADIR%%/pixmaps/world/way/yellow_1/cross.settings
 %%DATADIR%%/pixmaps/world/way/yellow_1/leftdown.png
@@ -2042,8 +2087,15 @@ bin/smc
 %%DATADIR%%/sounds/waypoint_reached.txt
 %%DATADIR%%/sounds/wood_1.ogg
 %%DATADIR%%/sounds/wood_1.txt
+%%DATADIR%%/translations/Secret Maryo Chronicles template.po
 %%DATADIR%%/translations/de/LC_MESSAGES/Secret Maryo Chronicles.mo
 %%DATADIR%%/translations/de/LC_MESSAGES/Secret Maryo Chronicles.po
+%%DATADIR%%/translations/fr/LC_MESSAGES/Secret Maryo Chronicles.mo
+%%DATADIR%%/translations/fr/LC_MESSAGES/Secret Maryo Chronicles.po
+%%DATADIR%%/translations/ru/LC_MESSAGES/Secret Maryo Chronicles.mo
+%%DATADIR%%/translations/ru/LC_MESSAGES/Secret Maryo Chronicles.po
+%%DATADIR%%/translations/zh_TW/LC_MESSAGES/Secret Maryo Chronicles.mo
+%%DATADIR%%/translations/zh_TW/LC_MESSAGES/Secret Maryo Chronicles.po
 %%DATADIR%%/world/test_1/description.xml
 %%DATADIR%%/world/test_1/layer.xml
 %%DATADIR%%/world/test_1/world.xml
@@ -2060,13 +2112,18 @@ bin/smc
 %%DATADIR%%/world/world_4/layer.xml
 %%DATADIR%%/world/world_4/world.xml
 %%DATADIR%%/world/worlds.xml
-@exec mkdir -p %D/%%DATADIR%%/music
 @dirrm %%DATADIR%%/world/world_4
 @dirrm %%DATADIR%%/world/world_3
 @dirrm %%DATADIR%%/world/world_2
 @dirrm %%DATADIR%%/world/world_1
 @dirrm %%DATADIR%%/world/test_1
 @dirrm %%DATADIR%%/world
+@dirrm %%DATADIR%%/translations/zh_TW/LC_MESSAGES
+@dirrm %%DATADIR%%/translations/zh_TW
+@dirrm %%DATADIR%%/translations/ru/LC_MESSAGES
+@dirrm %%DATADIR%%/translations/ru
+@dirrm %%DATADIR%%/translations/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/translations/fr
 @dirrm %%DATADIR%%/translations/de/LC_MESSAGES
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
@@ -2161,6 +2218,20 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/ground/underground/ground/bottom
 @dirrm %%DATADIR%%/pixmaps/ground/underground/ground
 @dirrm %%DATADIR%%/pixmaps/ground/underground
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1/green_1
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/trees/fir_1
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/trees/balloon
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/trees
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/plain/top
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/plain/middle
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/plain
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/middle
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/top
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive/middle
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/halfmassive
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground/bottom
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1/ground
+@dirrm %%DATADIR%%/pixmaps/ground/snow_1
 @dirrm %%DATADIR%%/pixmaps/ground/sand_1/ground
 @dirrm %%DATADIR%%/pixmaps/ground/sand_1
 @dirrm %%DATADIR%%/pixmaps/ground/plastic_1/screw_block_red
@@ -2211,6 +2282,7 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/ground/castle_1/ground/bottom
 @dirrm %%DATADIR%%/pixmaps/ground/castle_1/ground
 @dirrm %%DATADIR%%/pixmaps/ground/castle_1
+@dirrm %%DATADIR%%/pixmaps/ground/candy_1
 @dirrm %%DATADIR%%/pixmaps/ground
 @dirrm %%DATADIR%%/pixmaps/game/logo
 @dirrm %%DATADIR%%/pixmaps/game/level
@@ -2245,6 +2317,9 @@ bin/smc
 @dirrm %%DATADIR%%/pixmaps/enemy/spika
 @dirrm %%DATADIR%%/pixmaps/enemy/rokko
 @dirrm %%DATADIR%%/pixmaps/enemy/krush
+@dirrm %%DATADIR%%/pixmaps/enemy/jpiranha/orig
+@dirrm %%DATADIR%%/pixmaps/enemy/jpiranha/orange
+@dirrm %%DATADIR%%/pixmaps/enemy/jpiranha/blue
 @dirrm %%DATADIR%%/pixmaps/enemy/jpiranha
 @dirrm %%DATADIR%%/pixmaps/enemy/gee/venom
 @dirrm %%DATADIR%%/pixmaps/enemy/gee/lava
