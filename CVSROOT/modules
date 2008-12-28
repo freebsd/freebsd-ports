@@ -1572,6 +1572,11 @@ clucene                         ports/textproc/clucene
 clustalw                        ports/biology/clustalw
 clusterit                       ports/net/clusterit
 clusterssh                      ports/security/clusterssh
+clutter                         ports/graphics/clutter
+clutter-box2d                   ports/graphics/clutter-box2d
+clutter-cairo                   ports/graphics/clutter-cairo
+clutter-gst                     ports/multimedia/clutter-gst
+clutter-gtk                     ports/graphics/clutter-gtk
 cm-super                        ports/print/cm-super
 cmail                           ports/mail/cmail
 cmake                           ports/devel/cmake
@@ -3761,6 +3766,7 @@ gammu                           ports/comms/gammu
 ganglia-monitor-core            ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend             ports/sysutils/ganglia-webfrontend
 ganttproject                    ports/deskutils/ganttproject
+ganyremote                      ports/deskutils/ganyremote
 gap                             ports/math/gap
 gapcmon                         ports/sysutils/gapcmon
 gaphor                          ports/devel/gaphor
@@ -8078,6 +8084,7 @@ maven2                          ports/devel/maven2
 maverik                         ports/graphics/maverik
 mawk                            ports/lang/mawk
 maxima                          ports/math/maxima
+maxr                            ports/games/maxr
 mayavi                          ports/science/mayavi
 mb2md                           ports/mail/mb2md
 mbasecalc                       ports/math/mbasecalc
@@ -8588,6 +8595,7 @@ mpd-l2tp-ipv6pd-client          ports/net/mpd-l2tp-ipv6pd-client
 mpd4                            ports/net/mpd4
 mpd5                            ports/net/mpd5
 mpdas                           ports/audio/mpdas
+mpdbrowser                      ports/audio/mpdbrowser
 mpdcon                          ports/audio/mpdcon
 mpdscribble                     ports/audio/mpdscribble
 mpeg                            ports/multimedia/mpeg
@@ -13440,6 +13448,7 @@ p5-clone                        ports/devel/p5-Clone
 p5-clone-fast                   ports/devel/p5-Clone-Fast
 p5-clone-more                   ports/devel/p5-Clone-More
 p5-clone-pp                     ports/devel/p5-Clone-PP
+p5-clutter                      ports/graphics/p5-clutter
 p5-code-perl                    ports/devel/p5-Code-Perl
 p5-color-rgb                    ports/graphics/p5-Color-Rgb
 p5-commands-guarded             ports/devel/p5-Commands-Guarded
@@ -17931,6 +17940,7 @@ py-cjkcodecs                    ports/converters/py-cjkcodecs
 py-cjson                        ports/devel/py-cjson
 py-clamav                       ports/security/py-clamav
 py-clientform                   ports/www/py-clientform
+py-clutter                      ports/graphics/py-clutter
 py-cmdln                        ports/devel/py-cmdln
 py-cog                          ports/devel/py-cog
 py-compiler                     ports/lang/py-compiler
@@ -19122,10 +19132,10 @@ rsyslog3-relp                   ports/sysutils/rsyslog3-relp
 rsyslog3-snmp                   ports/sysutils/rsyslog3-snmp
 rt2                             ports/www/rt2
 rt2-demo                        ports/games/rt2-demo
-rt3                             ports/www/rt3
 rt32                            ports/www/rt32
 rt34                            ports/www/rt34
 rt36                            ports/www/rt36
+rt38                            ports/www/rt38
 rtb                             ports/games/rtb
 rtc                             ports/emulators/rtc
 rtcw                            ports/games/rtcw
@@ -22787,6 +22797,7 @@ xorg-fonts-truetype             ports/x11-fonts/xorg-fonts-truetype
 xorg-fonts-type1                ports/x11-fonts/xorg-fonts-type1
 xorg-libraries                  ports/x11/xorg-libraries
 xorg-macros                     ports/devel/xorg-macros
+xorg-minimal                    ports/x11/xorg-minimal
 xorg-nestserver                 ports/x11-servers/xorg-nestserver
 xorg-protos                     ports/x11/xorg-protos
 xorg-server                     ports/x11-servers/xorg-server
