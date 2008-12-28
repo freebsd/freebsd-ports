@@ -1,8 +1,4 @@
-include/dns.h
 include/dkim.h
-include/dkimbase.h
-include/dkimsign.h
-include/dkimverify.h
 lib/libdkim.a
 lib/libdkim.so
 lib/libdkim.so.%%SHLIB_MAJOR%%

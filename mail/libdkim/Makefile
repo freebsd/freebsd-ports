@@ -7,6 +7,7 @@
 
 PORTNAME=	libdkim
 PORTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exim-experimental/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tk
