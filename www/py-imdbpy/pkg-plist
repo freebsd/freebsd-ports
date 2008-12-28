@@ -115,9 +115,15 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/__init__.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/__init__.pyc
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/alchemyadapter.py
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/alchemyadapter.pyc
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/alchemyadapter.pyo
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/dbschema.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/dbschema.pyc
 %%PYTHON_SITELIBDIR%%/imdb/parser/sql/dbschema.pyo
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/objectadapter.py
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/objectadapter.pyc
+%%PYTHON_SITELIBDIR%%/imdb/parser/sql/objectadapter.pyo
 %%PYTHON_SITELIBDIR%%/imdb/utils.py
 %%PYTHON_SITELIBDIR%%/imdb/utils.pyc
 %%PYTHON_SITELIBDIR%%/imdb/utils.pyo
