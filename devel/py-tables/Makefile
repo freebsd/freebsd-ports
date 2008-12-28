@@ -9,7 +9,8 @@
 PORTNAME=	tables
 PORTVERSION=	2.0.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.pytables.org/download/stable/
+MASTER_SITES=	http://www.pytables.org/download/stable/ \
+		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pytables-${PORTVERSION}
 
