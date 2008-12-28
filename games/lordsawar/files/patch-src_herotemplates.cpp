@@ -1,5 +1,14 @@
 Index: src/herotemplates.cpp
-@@ -64,15 +64,6 @@
+@@ -16,6 +16,8 @@
+ //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 
+ //  02110-1301, USA.
+ 
++#include <sstream>
++
+ #include "herotemplates.h"
+ 
+ #include "File.h"
+@@ -64,15 +66,6 @@
  
  int HeroTemplates::loadHeroTemplates()
  {
@@ -13,17 +22,15 @@ Index: src/herotemplates.cpp
 -  size_t bytesread = 0;
 -  char *tmp;
    const Armysetlist* al = Armysetlist::getInstance();
-   const Army* herotype;
+   const ArmyProto* herotype;
  
-@@ -83,48 +74,37 @@
+@@ -83,48 +76,35 @@
      {
-       const Army *a = al->getArmy (p->getArmyset(), j);
+       const ArmyProto *a = al->getArmy (p->getArmyset(), j);
        if (a->isHero())
 -	heroes.push_back(a);
 +		heroes.push_back(a);
      }
-+ 
-+  std::ifstream file(File::getMiscFile("heronames").c_str());
  
 -  if (fileptr == NULL)
 -    return -1;
@@ -50,6 +57,17 @@ Index: src/herotemplates.cpp
 -	{
 -	  free (line);
 -	  return -4;
+-	}
+-
+-      herotype = heroes[rand() % heroes.size()];
+-      HeroProto *newhero = new HeroProto (*herotype);
+-      if (gender)
+-	newhero->setGender(Hero::MALE);
+-      else
+-	newhero->setGender(Hero::FEMALE);
+-      newhero->setName (&line[bytesread]);
+-      d_herotemplates[side].push_back (newhero);
++  std::ifstream file(File::getMiscFile("heronames").c_str());
 +  if (file.good()) {
 +	std::string buffer, name;
 +	int side, gender;
@@ -63,31 +81,21 @@ Index: src/herotemplates.cpp
 +		return -4;
 +
 +	herotype = heroes[rand() % heroes.size()];
-+	Hero *newhero = new Hero (*herotype, "", NULL);
-+
-+	if (gender)
++	HeroProto *newhero = new HeroProto (*herotype);
++    if (gender)
 +		newhero->setGender(Hero::MALE);
 +	else
 +		newhero->setGender(Hero::FEMALE);
 +
 +	newhero->setName (name);
 +    d_herotemplates[side].push_back (newhero);
- 	}
-+  } else
-+	return -1;
- 
--      herotype = heroes[rand() % heroes.size()];
--      Hero *newhero = new Hero (*herotype, "", NULL, true);
--      if (gender)
--	newhero->setGender(Hero::MALE);
--      else
--	newhero->setGender(Hero::FEMALE);
--      newhero->setName (&line[bytesread]);
--      d_herotemplates[side].push_back (newhero);
--    }
+     }
 -  if (line)
 -    free (line);
 -  fclose (fileptr);
++  } else
++	return -1;
++
 +  file.close();
    return 0;
  }
