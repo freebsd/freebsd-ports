@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20081209
+PORTVERSION=	20081224
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-sim \
 		ftp://ftp.palomino3d.org/sim/
@@ -24,6 +24,8 @@ LIB_DEPENDS=	osg.48:${PORTSDIR}/graphics/osg
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_CMAKE=	yes
+USE_LUA=	5.1
+LUA_COMPS=	lua:build
 
 MISC_VER=	20081206
 MODELS_VER=	20081022
@@ -52,6 +54,8 @@ LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/COMMAND/ s|lua|${LUA_CMD}|' \
+		${WRKSRC}/build/lua_bind/CMakeLists.txt
 .if defined(WITHOUT_JOYSTICK)
 	@${REINPLACE_CMD} -e 's|OS_FREEBSD|0|' ${WRKSRC}/src/input/joystick.* \
 		${WRKSRC}/src/input/joystick_linux.* ${WRKSRC}/src/control/conf.cc
@@ -75,7 +79,7 @@ post-patch:
 post-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "data scripts" ${DATADIR}/
-# docs are used from within the game, thus this is unconditional
+# docs are used from within the game, so this is unconditional
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
 
