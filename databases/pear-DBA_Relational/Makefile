@@ -15,6 +15,8 @@ COMMENT=	Berkely-style database abstraction class
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.19
+
 FILES=		Functions.php Relational.php Table.php TempTable.php Toolbox.php
 TESTS=		empSchema.php hatSchema.php test_relational.php test_table.php
 DOCS=		Examples.txt
