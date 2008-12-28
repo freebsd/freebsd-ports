@@ -85,6 +85,7 @@
     SUBDIR += cgiwrap
     SUBDIR += checkbot
     SUBDIR += cheetah
+    SUBDIR += chems
     SUBDIR += cherokee
     SUBDIR += chimera
     SUBDIR += chpasswd
