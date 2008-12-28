@@ -1,9 +1,0 @@
-You can mount a Japanese FAT file system via "mount_jamsdos" command.
-Be sure that "msdos_ja.ko" is already dynamically linked into the
-kernal before you type "mount_jamsdos" (see kldstat(8)).
-
-The author is Toshihiko Arai <toshi@FreeBSD.org>.
-
-WWW: http://www.linkclub.or.jp/~clover/msdosfs.html
-
-- R. Imura <imura@af.airnet.ne.jp>

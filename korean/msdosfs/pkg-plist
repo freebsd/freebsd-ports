@@ -1,5 +1,0 @@
-etc/rc.d/ko-msdosfs.sh
-@unexec /sbin/kldunload msdos_ko 2>/dev/null || /usr/bin/true
-lib/ko-msdosfs/msdos_ko.ko
-sbin/mount_komsdos
-@dirrm lib/ko-msdosfs

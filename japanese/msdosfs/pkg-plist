@@ -1,5 +1,0 @@
-etc/rc.d/ja-msdosfs.sh
-@unexec /sbin/kldunload msdos_ja 2>/dev/null || /usr/bin/true
-lib/ja-msdosfs/msdos_ja.ko
-sbin/mount_jamsdos
-@dirrm lib/ja-msdosfs
