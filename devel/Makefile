@@ -2169,6 +2169,7 @@
     SUBDIR += py-dialog
     SUBDIR += py-distorm
     SUBDIR += py-durus
+    SUBDIR += py-dynrules
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-event
