@@ -1,13 +1,13 @@
 <app_info>
 <app>
-<name>astronomy</name>
+<name>milkyway</name>
 </app>
 <file_info>
 <name>%%MILKYWAY_BINARY%%</name>
 <executable/>
 </file_info>
 <app_version>
-<app_name>astronomy</app_name>
+<app_name>milkyway</app_name>
 <version_num>%%MILKYWAY_VERSION%%</version_num>
 <file_ref>
 <file_name>%%MILKYWAY_BINARY%%</file_name>
