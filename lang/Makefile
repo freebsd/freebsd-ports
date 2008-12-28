@@ -266,6 +266,8 @@
     SUBDIR += python23
     SUBDIR += python24
     SUBDIR += python25
+    SUBDIR += python26
+    SUBDIR += python30
     SUBDIR += q
     SUBDIR += qscheme
     SUBDIR += quack
