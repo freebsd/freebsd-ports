@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	ypsilon
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	${PORTNAME}-0.9.6.update3
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme implementation for real-time applications
 
 USE_GMAKE=	yes
-MAKE_ARGS=	PROG="${PORTNAME}" \
-		DATADIR="${DATADIR}" \
+MAKE_ARGS=	DATADIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		ypsilon.1
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 post-patch:
-	${RM} ${WRKSRC}/sitelib/*.orig
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
