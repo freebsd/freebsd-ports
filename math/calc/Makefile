@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	calc
-PORTVERSION=	2.12.3.3
+PORTVERSION=	2.12.4.0
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Arbitrary precision calculator
 
 USE_BZIP2=	yes
@@ -23,6 +23,9 @@ CALCPAGER?=	more
 MAKE_ENV+=	CALCPAGER="${CALCPAGER}" CAT="${CAT}" CHMOD="${CHMOD}" CP="${CP}" \
 		GMAKE="${GMAKE}" LN="${LN}" MKDIR="${MKDIR}" MV="${MV}" RM="${RM}" \
 		SED="${SED}" TOUCH="${TOUCH}" TRUE="${TRUE}"
+
+PLIST_SUB+=	VERSION=${PORTVERSION}	VER1=${PORTVERSION:R} \
+		VER2=${PORTVERSION:R:R}	VER3=${PORTVERSION:R:R:R}
 
 regression-test: build
 	( cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check )
