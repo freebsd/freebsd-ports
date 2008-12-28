@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -32,12 +32,14 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG=	"" ca_ES@valencia cs da de es fr hu it ja
-MANLANG+=	lt nl pl sk sr sr@latin sv tr zh_CN zh_TW
+MANLANG=	"" cs da de es fi fr gl hu it ja
+MANLANG+=	lt nl pl racv sk sr sr@latin sv tr zh_CN zh_TW
 
 MAN6_CS=	wesnoth.6
+MAN6_DE=	wesnoth.6
 MAN6_EN=	wesnoth.6
-MAN6_HU=	wesnoth.6
+MAN6_ES=	wesnoth.6
+MAN6_LT=	wesnoth.6
 MAN6_TR=	wesnoth.6
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \
