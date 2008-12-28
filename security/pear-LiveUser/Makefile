@@ -15,6 +15,8 @@ COMMENT=	PEAR user authentication and permission management framework
 BUILD_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispatcher
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.61
+
 LATEST_LINK=	pear-LiveUser
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB "PEAR::MDB support" off \
