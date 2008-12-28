@@ -6,22 +6,16 @@
 #
 
 PORTNAME=	html2text
-PORTVERSION=	2.2.8
+PORTVERSION=	2.35
 CATEGORIES=	textproc python
-MASTER_SITES=	CENKES
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Convert HTML into clean plain ASCII text
 
+USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s|.*|#!${PYTHON_CMD}|' ${WRKSRC}/${PORTNAME}.py
-
-post-install:
-	@${CHMOD} 755 ${PYTHON_SITELIBDIR}/${PORTNAME}.py
-	@${LN} -sf ${PYTHON_SITELIBDIR}/${PORTNAME}.py ${PREFIX}/bin/
+USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.mk>
