@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20081228:
+  AFFECTS: users of astro/boinc-setiathome-enhanced
+  AUTHOR: rene@FreeBSD.org
+
+  The setiathome client has been updated to version 6.03 and version 5.00
+  of the astropulse client has been added.  Before you update, finish and
+  report your current workunits to avoid losing them.  The port now also
+  includes the client screensavers.
+
+20081228:
   AFFECTS: users of japanese/kinput2
   AUTHOR: hrs@FreeBSD.org
 
