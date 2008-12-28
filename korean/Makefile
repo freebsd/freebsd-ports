@@ -44,7 +44,6 @@
     SUBDIR += man-doc
     SUBDIR += mizifont
     SUBDIR += mod_url
-    SUBDIR += msdosfs
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
     SUBDIR += nh2ps

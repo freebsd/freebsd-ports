@@ -173,7 +173,6 @@
     SUBDIR += monafonts-ttf
     SUBDIR += mozilla-jlp
     SUBDIR += mplusfonts
-    SUBDIR += msdosfs
     SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt
