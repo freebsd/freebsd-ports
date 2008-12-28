@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mod_macro
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.2b
 CATEGORIES=	www
 MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 
