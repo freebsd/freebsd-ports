@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_Table
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
