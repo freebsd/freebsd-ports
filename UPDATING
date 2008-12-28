@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081228:
+  AFFECTS: users of japanese/kinput2
+  AUTHOR: hrs@FreeBSD.org
+
+  The Wnn backend of japanese/kinput2 port now uses unix domain socket
+  to communicate the server by default.  If $JSERVER environment
+  variable is defined, the value is used as the server host name.  In
+  In short, the server name is determined in the following way:
+ 
+  $JSERVER --(if null)--> CcWnn.Jserver --(if null)--> "localhost"
+ 
+  If the server host name is null or matches "^unix$", unix domain
+  socket is used.  Note that the default server name in CcWnn.Jserver
+  is "unix" now.
+
 20081226:
   AFFECTS: users of www/rt*
   AUTHOR: pgollucci@FreeBSD.org
