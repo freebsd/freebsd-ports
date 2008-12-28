@@ -7,7 +7,7 @@
 
 PORTNAME=	utils
 PORTVERSION=	0.3.0
-CATEGORIES=	devel
+CATEGORIES=	devel python
 MASTER_SITES=	http://www.voidspace.org.uk/cgi-bin/voidspace/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	downman.py?file=pythonutils-${PORTVERSION}

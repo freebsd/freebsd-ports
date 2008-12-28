@@ -6,7 +6,7 @@
 
 PORTNAME=	py-tconfpy
 PORTVERSION=	2.112
-CATEGORIES=	devel
+CATEGORIES=	devel python
 MASTER_SITES=	http://www.tundraware.com/Software/tconfpy/
 
 MAINTAINER=	tconfpy@tundraware.com

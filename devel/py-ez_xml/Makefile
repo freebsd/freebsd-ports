@@ -7,7 +7,7 @@
 
 PORTNAME=	ez_xml
 PORTVERSION=	0.1.3
-CATEGORIES=	devel textproc
+CATEGORIES=	devel textproc python
 MASTER_SITES=	http://master.branda.to/downloads/ez_xml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

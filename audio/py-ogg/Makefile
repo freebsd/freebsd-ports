@@ -8,7 +8,7 @@
 PORTNAME=	ogg
 PORTVERSION=	1.3
 PORTREVISION=	2
-CATEGORIES=	audio
+CATEGORIES=	audio python
 MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyogg-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	scgi
 PORTVERSION=	1.12
-CATEGORIES=	www
+CATEGORIES=	www python
 MASTER_SITES=	http://quixote.python.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

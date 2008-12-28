@@ -7,7 +7,7 @@
 
 PORTNAME=	phpserialize
 PORTVERSION=	0.4
-CATEGORIES=	devel lang www
+CATEGORIES=	devel lang www python
 MASTER_SITES=	http://www.hurring.com/scott/code/python/serialize/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PHPSerialize_v${PORTVERSION}
