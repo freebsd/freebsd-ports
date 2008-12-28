@@ -17,7 +17,7 @@ COMMENT=	Console, ncurses based monitor and manager for BOINC
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc.a:${PORTSDIR}/net/boinc-client
 
 USE_BZIP2=	yes
-MAKE_ENV=	BOINCLIBDIR=${LOCALBASE}/lib BOINCINCDIR=${LOCALBASE}/include/BOINC
+MAKE_ENV=	BOINCLIBDIR=${LOCALBASE}/lib BOINCINCDIR=${LOCALBASE}/include/boinc
 
 PLIST_FILES=	bin/boinc_curses
 
