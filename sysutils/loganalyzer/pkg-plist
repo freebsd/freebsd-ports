@@ -1,0 +1,323 @@
+%%PORTDOCS%%%%DOCSDIR%%/basics.html
+%%PORTDOCS%%%%DOCSDIR%%/build_from_repo.html
+%%PORTDOCS%%%%DOCSDIR%%/free_support.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/professional_services.html
+%%PORTDOCS%%%%DOCSDIR%%/searching.html
+%%PORTDOCS%%%%DOCSDIR%%/textfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
+%%PORTDOCS%%%%DOCSDIR%%/windowsevent.html
+%%PORTDATA%%%%DATADIR%%/configure.sh
+%%PORTDATA%%%%DATADIR%%/secure.sh
+%%LOGCONDIR%%/.htaccess
+%%LOGCONDIR%%/BitstreamVeraFonts/COPYRIGHT.TXT
+%%LOGCONDIR%%/BitstreamVeraFonts/README.TXT
+%%LOGCONDIR%%/BitstreamVeraFonts/RELEASENOTES.TXT
+%%LOGCONDIR%%/BitstreamVeraFonts/Vera.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraBI.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraBd.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraIt.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraMoBI.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraMoBd.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraMoIt.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraMono.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraSe.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/VeraSeBd.ttf
+%%LOGCONDIR%%/BitstreamVeraFonts/local.conf
+%%LOGCONDIR%%/admin/charts.php
+%%LOGCONDIR%%/admin/fields.php
+%%LOGCONDIR%%/admin/groups.php
+%%LOGCONDIR%%/admin/index.php
+%%LOGCONDIR%%/admin/parsers.php
+%%LOGCONDIR%%/admin/result.php
+%%LOGCONDIR%%/admin/searches.php
+%%LOGCONDIR%%/admin/sources.php
+%%LOGCONDIR%%/admin/upgrade.php
+%%LOGCONDIR%%/admin/users.php
+%%LOGCONDIR%%/admin/views.php
+%%LOGCONDIR%%/asktheoracle.php
+%%LOGCONDIR%%/chartgenerator.php
+%%LOGCONDIR%%/classes/class_template.php
+%%LOGCONDIR%%/classes/enums.class.php
+%%LOGCONDIR%%/classes/jpgraph/gd_image.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpg-config.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_bar.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_errhandler.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_gradient.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_line.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_pie.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_pie3d.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_plotband.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_plotmark.inc.php
+%%LOGCONDIR%%/classes/jpgraph/jpgraph_ttf.inc.php
+%%LOGCONDIR%%/classes/jpgraph/lang/de.inc.php
+%%LOGCONDIR%%/classes/jpgraph/lang/en.inc.php
+%%LOGCONDIR%%/classes/jpgraph/lang/prod.inc.php
+%%LOGCONDIR%%/classes/logstream.class.php
+%%LOGCONDIR%%/classes/logstreamconfig.class.php
+%%LOGCONDIR%%/classes/logstreamconfigdb.class.php
+%%LOGCONDIR%%/classes/logstreamconfigdisk.class.php
+%%LOGCONDIR%%/classes/logstreamconfigpdo.class.php
+%%LOGCONDIR%%/classes/logstreamdb.class.php
+%%LOGCONDIR%%/classes/logstreamdisk.class.php
+%%LOGCONDIR%%/classes/logstreamlineparser.class.php
+%%LOGCONDIR%%/classes/logstreamlineparsermisc.class.php
+%%LOGCONDIR%%/classes/logstreamlineparsersyslog.class.php
+%%LOGCONDIR%%/classes/logstreamlineparserwinsyslog.class.php
+%%LOGCONDIR%%/classes/logstreampdo.class.php
+%%LOGCONDIR%%/classes/msgparser.class.php
+%%LOGCONDIR%%/classes/msgparsers/msgparser.apache2.class.php
+%%LOGCONDIR%%/classes/msgparsers/msgparser.apache2common.class.php
+%%LOGCONDIR%%/classes/msgparsers/msgparser.eventlog.class.php
+%%LOGCONDIR%%/classes/msgparsers/msgparser.iis.class.php
+%%LOGCONDIR%%/convert.php
+%%LOGCONDIR%%/cron/.htaccess
+%%LOGCONDIR%%/cron/maintenance.bat
+%%LOGCONDIR%%/cron/maintenance.php
+%%LOGCONDIR%%/cron/maintenance.sh
+%%LOGCONDIR%%/css/defaults.css
+%%LOGCONDIR%%/css/highlight.css
+%%LOGCONDIR%%/css/menu.css
+%%LOGCONDIR%%/details.php
+%%LOGCONDIR%%/doc/basics.html
+%%LOGCONDIR%%/doc/build_from_repo.html
+%%LOGCONDIR%%/doc/free_support.html
+%%LOGCONDIR%%/doc/manual.html
+%%LOGCONDIR%%/doc/professional_services.html
+%%LOGCONDIR%%/doc/searching.html
+%%LOGCONDIR%%/doc/textfiles.html
+%%LOGCONDIR%%/doc/troubleshoot.html
+%%LOGCONDIR%%/doc/windowsevent.html
+%%LOGCONDIR%%/export.php
+%%LOGCONDIR%%/images/bars/balken_25/balken.ufo
+%%LOGCONDIR%%/images/bars/bar-middle/green_left_17.png
+%%LOGCONDIR%%/images/bars/bar-middle/green_middle_17.png
+%%LOGCONDIR%%/images/bars/bar-middle/green_right_17.png
+%%LOGCONDIR%%/images/bars/bar-small/blue_left_9.png
+%%LOGCONDIR%%/images/bars/bar-small/blue_middle_9.png
+%%LOGCONDIR%%/images/bars/bar-small/blue_right_9.png
+%%LOGCONDIR%%/images/bars/bar-small/green_left_9.png
+%%LOGCONDIR%%/images/bars/bar-small/green_middle_9.png
+%%LOGCONDIR%%/images/bars/bar-small/green_right_9.png
+%%LOGCONDIR%%/images/bars/bar-small/red_left_17.png
+%%LOGCONDIR%%/images/bars/bar-small/red_left_9.png
+%%LOGCONDIR%%/images/bars/bar-small/red_middle_9.png
+%%LOGCONDIR%%/images/bars/bar-small/red_right_9.png
+%%LOGCONDIR%%/images/bars/bar-small/yellow_left_9.png
+%%LOGCONDIR%%/images/bars/bar-small/yellow_middle_9.png
+%%LOGCONDIR%%/images/bars/bar-small/yellow_right_9.png
+%%LOGCONDIR%%/images/bg_bottom.gif
+%%LOGCONDIR%%/images/icons/Thumbs.db
+%%LOGCONDIR%%/images/icons/add.png
+%%LOGCONDIR%%/images/icons/alarmclock.png
+%%LOGCONDIR%%/images/icons/arrow_right_blue.png
+%%LOGCONDIR%%/images/icons/arrow_right_green.png
+%%LOGCONDIR%%/images/icons/books.png
+%%LOGCONDIR%%/images/icons/bullet_ball_glass_blue.png
+%%LOGCONDIR%%/images/icons/bullet_ball_glass_green.png
+%%LOGCONDIR%%/images/icons/bullet_ball_glass_grey.png
+%%LOGCONDIR%%/images/icons/bullet_ball_glass_red.png
+%%LOGCONDIR%%/images/icons/bullet_ball_glass_yellow.png
+%%LOGCONDIR%%/images/icons/businessman.png
+%%LOGCONDIR%%/images/icons/businessman_add.png
+%%LOGCONDIR%%/images/icons/businessman_delete.png
+%%LOGCONDIR%%/images/icons/businessman_preferences.png
+%%LOGCONDIR%%/images/icons/businessmen.png
+%%LOGCONDIR%%/images/icons/check.png
+%%LOGCONDIR%%/images/icons/column-chart-hori.png
+%%LOGCONDIR%%/images/icons/column-chart.png
+%%LOGCONDIR%%/images/icons/data_delete.png
+%%LOGCONDIR%%/images/icons/data_delete_disabled.png
+%%LOGCONDIR%%/images/icons/data_edit.png
+%%LOGCONDIR%%/images/icons/data_gear.png
+%%LOGCONDIR%%/images/icons/data_table.png
+%%LOGCONDIR%%/images/icons/date-time.png
+%%LOGCONDIR%%/images/icons/delete.png
+%%LOGCONDIR%%/images/icons/delete_disabled.png
+%%LOGCONDIR%%/images/icons/document_text.png
+%%LOGCONDIR%%/images/icons/document_view.png
+%%LOGCONDIR%%/images/icons/download.png
+%%LOGCONDIR%%/images/icons/earth.png
+%%LOGCONDIR%%/images/icons/earth_find.png
+%%LOGCONDIR%%/images/icons/earth_network.png
+%%LOGCONDIR%%/images/icons/edit.png
+%%LOGCONDIR%%/images/icons/edit_disabled.png
+%%LOGCONDIR%%/images/icons/exit.png
+%%LOGCONDIR%%/images/icons/export1.png
+%%LOGCONDIR%%/images/icons/find.png
+%%LOGCONDIR%%/images/icons/find_next.png
+%%LOGCONDIR%%/images/icons/folder.png
+%%LOGCONDIR%%/images/icons/folder_closed.png
+%%LOGCONDIR%%/images/icons/garbage_empty.png
+%%LOGCONDIR%%/images/icons/gear.png
+%%LOGCONDIR%%/images/icons/gear_delete.png
+%%LOGCONDIR%%/images/icons/gear_new.png
+%%LOGCONDIR%%/images/icons/gears_run.png
+%%LOGCONDIR%%/images/icons/googleicon.png
+%%LOGCONDIR%%/images/icons/grey/media_beginning.png
+%%LOGCONDIR%%/images/icons/grey/media_end.png
+%%LOGCONDIR%%/images/icons/grey/media_fast_forward.png
+%%LOGCONDIR%%/images/icons/grey/media_rewind.png
+%%LOGCONDIR%%/images/icons/help.png
+%%LOGCONDIR%%/images/icons/help2.png
+%%LOGCONDIR%%/images/icons/help3.png
+%%LOGCONDIR%%/images/icons/home.png
+%%LOGCONDIR%%/images/icons/information2.png
+%%LOGCONDIR%%/images/icons/line-chart.png
+%%LOGCONDIR%%/images/icons/link.png
+%%LOGCONDIR%%/images/icons/link_view.png
+%%LOGCONDIR%%/images/icons/media_beginning.png
+%%LOGCONDIR%%/images/icons/media_end.png
+%%LOGCONDIR%%/images/icons/media_fast_forward.png
+%%LOGCONDIR%%/images/icons/media_rewind.png
+%%LOGCONDIR%%/images/icons/media_step_back.png
+%%LOGCONDIR%%/images/icons/media_step_forward.png
+%%LOGCONDIR%%/images/icons/nav_down_blue.png
+%%LOGCONDIR%%/images/icons/nav_up_blue.png
+%%LOGCONDIR%%/images/icons/navigate_check.png
+%%LOGCONDIR%%/images/icons/navigate_close.png
+%%LOGCONDIR%%/images/icons/navigate_cross.png
+%%LOGCONDIR%%/images/icons/navigate_down.png
+%%LOGCONDIR%%/images/icons/navigate_down2.png
+%%LOGCONDIR%%/images/icons/navigate_left.png
+%%LOGCONDIR%%/images/icons/navigate_minus.png
+%%LOGCONDIR%%/images/icons/navigate_open.png
+%%LOGCONDIR%%/images/icons/navigate_plus.png
+%%LOGCONDIR%%/images/icons/navigate_right.png
+%%LOGCONDIR%%/images/icons/navigate_up.png
+%%LOGCONDIR%%/images/icons/pie-chart.png
+%%LOGCONDIR%%/images/icons/pie-chart_view.png
+%%LOGCONDIR%%/images/icons/preferences.png
+%%LOGCONDIR%%/images/icons/recycle.png
+%%LOGCONDIR%%/images/icons/redo.png
+%%LOGCONDIR%%/images/icons/selection.png
+%%LOGCONDIR%%/images/icons/selection_delete.png
+%%LOGCONDIR%%/images/icons/server.png
+%%LOGCONDIR%%/images/icons/star_blue.png
+%%LOGCONDIR%%/images/icons/star_green.png
+%%LOGCONDIR%%/images/icons/star_grey.png
+%%LOGCONDIR%%/images/icons/star_red.png
+%%LOGCONDIR%%/images/icons/star_yellow.png
+%%LOGCONDIR%%/images/icons/table_selection_all.png
+%%LOGCONDIR%%/images/icons/table_selection_block.png
+%%LOGCONDIR%%/images/icons/tables.png
+%%LOGCONDIR%%/images/icons/text_find.png
+%%LOGCONDIR%%/images/icons/view.png
+%%LOGCONDIR%%/images/main/Header-Logo.png
+%%LOGCONDIR%%/include/config.sample.php
+%%LOGCONDIR%%/include/constants_errors.php
+%%LOGCONDIR%%/include/constants_filters.php
+%%LOGCONDIR%%/include/constants_general.php
+%%LOGCONDIR%%/include/constants_logstream.php
+%%LOGCONDIR%%/include/db_template.txt
+%%LOGCONDIR%%/include/db_update_v0.txt
+%%LOGCONDIR%%/include/db_update_v1.txt
+%%LOGCONDIR%%/include/db_update_v2.txt
+%%LOGCONDIR%%/include/db_update_v3.txt
+%%LOGCONDIR%%/include/db_update_v4.txt
+%%LOGCONDIR%%/include/db_update_v5.txt
+%%LOGCONDIR%%/include/db_update_v6.txt
+%%LOGCONDIR%%/include/db_update_v7.txt
+%%LOGCONDIR%%/include/functions_common.php
+%%LOGCONDIR%%/include/functions_config.php
+%%LOGCONDIR%%/include/functions_db.php
+%%LOGCONDIR%%/include/functions_filters.php
+%%LOGCONDIR%%/include/functions_frontendhelpers.php
+%%LOGCONDIR%%/include/functions_installhelpers.php
+%%LOGCONDIR%%/include/functions_themes.php
+%%LOGCONDIR%%/include/functions_users.php
+%%LOGCONDIR%%/index.php
+%%LOGCONDIR%%/install.php
+%%LOGCONDIR%%/js/common.js
+%%LOGCONDIR%%/js/searchhelpers.js
+%%LOGCONDIR%%/lang/de/admin.php
+%%LOGCONDIR%%/lang/de/info.txt
+%%LOGCONDIR%%/lang/de/main.php
+%%LOGCONDIR%%/lang/en/admin.php
+%%LOGCONDIR%%/lang/en/info.txt
+%%LOGCONDIR%%/lang/en/main.php
+%%LOGCONDIR%%/lang/pt_BR/admin.php
+%%LOGCONDIR%%/lang/pt_BR/info.txt
+%%LOGCONDIR%%/lang/pt_BR/main.php
+%%LOGCONDIR%%/login.php
+%%LOGCONDIR%%/search.php
+%%LOGCONDIR%%/statistics.php
+%%LOGCONDIR%%/templates/admin/admin_charts.html
+%%LOGCONDIR%%/templates/admin/admin_fields.html
+%%LOGCONDIR%%/templates/admin/admin_groups.html
+%%LOGCONDIR%%/templates/admin/admin_index.html
+%%LOGCONDIR%%/templates/admin/admin_menu.html
+%%LOGCONDIR%%/templates/admin/admin_parsers.html
+%%LOGCONDIR%%/templates/admin/admin_searches.html
+%%LOGCONDIR%%/templates/admin/admin_securecheck.html
+%%LOGCONDIR%%/templates/admin/admin_sources.html
+%%LOGCONDIR%%/templates/admin/admin_upgrade.html
+%%LOGCONDIR%%/templates/admin/admin_users.html
+%%LOGCONDIR%%/templates/admin/admin_views.html
+%%LOGCONDIR%%/templates/admin/result.html
+%%LOGCONDIR%%/templates/asktheoracle.html
+%%LOGCONDIR%%/templates/convert.html
+%%LOGCONDIR%%/templates/details.html
+%%LOGCONDIR%%/templates/export.html
+%%LOGCONDIR%%/templates/include_footer.html
+%%LOGCONDIR%%/templates/include_header.html
+%%LOGCONDIR%%/templates/include_index_globals.html
+%%LOGCONDIR%%/templates/include_menu.html
+%%LOGCONDIR%%/templates/index.html
+%%LOGCONDIR%%/templates/install.html
+%%LOGCONDIR%%/templates/login.html
+%%LOGCONDIR%%/templates/search.html
+%%LOGCONDIR%%/templates/statistics.html
+%%LOGCONDIR%%/themes/dark/about.txt
+%%LOGCONDIR%%/themes/dark/images/bg_1.png
+%%LOGCONDIR%%/themes/dark/images/bg_2.png
+%%LOGCONDIR%%/themes/dark/images/bg_3.png
+%%LOGCONDIR%%/themes/dark/images/bg_4.png
+%%LOGCONDIR%%/themes/dark/images/bg_bottom.gif
+%%LOGCONDIR%%/themes/dark/images/bg_bottom.png
+%%LOGCONDIR%%/themes/dark/images/dither.png
+%%LOGCONDIR%%/themes/dark/main.css
+%%LOGCONDIR%%/themes/default/about.txt
+%%LOGCONDIR%%/themes/default/images/bg_1.png
+%%LOGCONDIR%%/themes/default/images/bg_2.png
+%%LOGCONDIR%%/themes/default/images/bg_3.png
+%%LOGCONDIR%%/themes/default/images/bg_4.png
+%%LOGCONDIR%%/themes/default/images/bg_bottom.gif
+%%LOGCONDIR%%/themes/default/images/bg_bottom.png
+%%LOGCONDIR%%/themes/default/images/dither.png
+%%LOGCONDIR%%/themes/default/main.css
+%%LOGCONDIR%%/userchange.php
+@dirrm %%LOGCONDIR%%/themes/default/images
+@dirrm %%LOGCONDIR%%/themes/default
+@dirrm %%LOGCONDIR%%/themes/dark/images
+@dirrm %%LOGCONDIR%%/themes/dark
+@dirrm %%LOGCONDIR%%/themes
+@dirrm %%LOGCONDIR%%/templates/admin
+@dirrm %%LOGCONDIR%%/templates
+@dirrm %%LOGCONDIR%%/lang/pt_BR
+@dirrm %%LOGCONDIR%%/lang/en
+@dirrm %%LOGCONDIR%%/lang/de
+@dirrm %%LOGCONDIR%%/lang
+@dirrm %%LOGCONDIR%%/js
+@dirrm %%LOGCONDIR%%/include
+@dirrm %%LOGCONDIR%%/images/main
+@dirrm %%LOGCONDIR%%/images/icons/grey
+@dirrm %%LOGCONDIR%%/images/icons
+@dirrm %%LOGCONDIR%%/images/bars/bar-small
+@dirrm %%LOGCONDIR%%/images/bars/bar-middle
+@dirrm %%LOGCONDIR%%/images/bars/balken_25
+@dirrm %%LOGCONDIR%%/images/bars
+@dirrm %%LOGCONDIR%%/images
+@dirrm %%LOGCONDIR%%/doc
+@dirrm %%LOGCONDIR%%/css
+@dirrm %%LOGCONDIR%%/cron
+@dirrm %%LOGCONDIR%%/classes/msgparsers
+@dirrm %%LOGCONDIR%%/classes/jpgraph/lang
+@dirrm %%LOGCONDIR%%/classes/jpgraph
+@dirrm %%LOGCONDIR%%/classes
+@dirrm %%LOGCONDIR%%/admin
+@dirrm %%LOGCONDIR%%/BitstreamVeraFonts
+@dirrm %%LOGCONDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDATA%%@dirrm %%DATADIR%%
