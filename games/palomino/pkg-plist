@@ -454,6 +454,8 @@ bin/palomino
 %%DATADIR%%/scripts/tests/DerivedClass.lua
 %%DATADIR%%/scripts/tests/bools.lua
 %%DATADIR%%/scripts/tests/class_Test.lua
+%%DATADIR%%/scripts/tests/iterator.lua
+%%DATADIR%%/scripts/tests/lib.lua
 %%DATADIR%%/scripts/tests/numbers.lua
 %%DATADIR%%/scripts/tests/simple.lua
 %%DATADIR%%/scripts/tests/strings.lua
