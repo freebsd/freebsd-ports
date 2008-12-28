@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	6.2.14
+PORTVERSION=	6.4.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -65,18 +65,23 @@ USE_LINUX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gui_rpc_auth.cfg|${BOINC_HOME}/gui_rpc_auth.cfg|g' \
-		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.C \
+		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.cpp \
 		${WRKSRC}/clientgui/MainDocument.cpp
 	@${REINPLACE_CMD} -e 's|../curl/ca-bundle.crt||' ${WRKSRC}/client/Makefile.in
-	@${REINPLACE_CMD} -e 's|ca-bundle.crt|${LOCALBASE}/share/curl/curl-ca-bundle.crt|' ${WRKSRC}/client/http_curl.C
+	@${REINPLACE_CMD} -e 's|ca-bundle.crt|${LOCALBASE}/share/curl/curl-ca-bundle.crt|' ${WRKSRC}/client/file_names.h
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/clientgui/stdwx.h
+	@${REINPLACE_CMD} -e 's| install-dist_pkgdataDATA||' ${WRKSRC}/clientgui/res/Makefile.in
+	@${REINPLACE_CMD} -e 's|boincmgr.16x16.png boincmgr.32x32.png boincmgr.48x48.png||' ${WRKSRC}/clientgui/res/Makefile.in
+	@${REINPLACE_CMD} -e 's|client/scripts||' ${WRKSRC}/Makefile.in
 
 # kill -O3 from clientgui build, it triggers some optimization bug and segfaults on runtime with -O3
 post-configure:
 	@${REINPLACE_CMD} -e 's|-O3 ||' ${WRKSRC}/clientgui/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/include/BOINC
+.for file in boinc_gl graphics_api graphics_data reduce
+	${INSTALL_DATA} ${WRKSRC}/api/${file}.h ${PREFIX}/include/boinc/
+.endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
