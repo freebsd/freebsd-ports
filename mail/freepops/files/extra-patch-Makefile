@@ -1,0 +1,78 @@
+--- Makefile.orig	2008-06-14 01:21:25.000000000 -0800
++++ Makefile	2008-12-28 11:50:20.000000000 -0900
+@@ -21,8 +21,8 @@
+ 	$(H)echo "  clean        - clean the source tree"
+ 	$(H)echo "  distclean    - remove also the dist-* distributions"
+ 	$(H)echo "  realclean    - clean and be ready for building to another arch"
+-	$(H)echo "  doc          - create developers documentation"
+-	$(H)echo "  manual       - create user/developers manual"
++#	$(H)echo "  doc          - create developers documentation"
++#	$(H)echo "  manual       - create user/developers manual"
+ 	$(H)echo "  install      - install it (linux/unix distribution independent)"
+ 	$(H)echo "  uninstall    - uninstall it (linux/unix distribution independent)"
+ 	$(H)echo "  buildfactory - build all distributions"
+@@ -45,8 +45,8 @@
+ 	$(H)$(MAKE) -C modules clean CONFIG=$(PWD)/config || true
+ 	$(H)$(MAKE) -C buildfactory clean CONFIG=$(PWD)/config || true
+ 	$(H)rm -f core* *-stamp dh_clean
+-	$(H)rm -f doc/manual.ps doc/manual.pdf\
+-		doc/manual-it.ps doc/manual-it.pdf
++#	$(H)rm -f doc/manual.ps doc/manual.pdf\
++#		doc/manual-it.ps doc/manual-it.pdf
+ 	$(H)$(MAKE) -C updater-ui/fltk clean CONFIG=$(PWD)/config || true
+ 
+ distclean: clean
+@@ -56,10 +56,10 @@
+ realclean: distclean
+ 	$(H)rm -f config
+ 	
+-doc: manual
+-	$(H)$(MAKE) -C modules doc CONFIG=$(PWD)/config
++#doc: manual
++#	$(H)$(MAKE) -C modules doc CONFIG=$(PWD)/config
+ 
+-manual: doc/manual.pdf doc/manual-it.pdf
++#manual: doc/manual.pdf doc/manual-it.pdf
+ 	
+ install: all
+ 	$(H)mkdir -p $(PREFIX)
+@@ -67,7 +67,7 @@
+ 	$(H)mkdir -p $(PREFIX)share/freepops/lua/
+ 	$(H)mkdir -p $(DESTDIR)var/lib/freepops/lua_unofficial/
+ 	$(H)mkdir -p $(DESTDIR)var/lib/freepops/lua_updates/
+-	$(H)mkdir -p $(PREFIX)share/doc/freepops/
++#	$(H)mkdir -p $(PREFIX)share/doc/freepops/
+ 	$(H)mkdir -p $(PREFIX)share/man/man1/
+ 	$(H)mkdir -p $(DESTDIR)etc/freepops
+ 	$(H)if [ ! -z "$(FLTKUI)" ]; then \
+@@ -122,8 +122,8 @@
+ 
+ uninstall:
+ 	$(H)rm -f $(DESTDIR)etc/freepops/config.lua
+-	$(H)rm -f $(PREFIX)share/doc/freepops/manual.ps
+-	$(H)rm -f $(PREFIX)share/doc/freepops/manual-it.ps
++#	$(H)rm -f $(PREFIX)share/doc/freepops/manual.ps
++#	$(H)rm -f $(PREFIX)share/doc/freepops/manual-it.ps
+ 	$(H)rm -f $(PREFIX)share/man/man1/freepopsd.1
+ 	$(H)rm -f $(PREFIX)share/freepops/lua/*
+ 	$(H)rm -f $(DESTDIR)var/lib/freepops/lua_unofficial/*
+@@ -197,8 +197,8 @@
+ 	$(H)echo -n
+ endif
+ 
+-doc/manual.pdf doc/manual-it.pdf: doc/manual/manual.tex doc/manual/manual-it.tex
+-	$(H)$(MAKE) -C doc/manual/
++#doc/manual.pdf doc/manual-it.pdf: doc/manual/manual.tex doc/manual/manual-it.tex
++#	$(H)$(MAKE) -C doc/manual/
+ 
+ config:
+ 	$(H)echo
+@@ -209,7 +209,7 @@
+ 
+ 
+ 
+-.PHONY: modules src doc buildfactory updater-ui-fktl
++.PHONY: modules src buildfactory updater-ui-fktl
+ 
+ 
+ 

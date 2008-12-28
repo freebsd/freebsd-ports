@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freepops
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible webmail to pop3 interface
@@ -18,6 +17,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
 
 MAN1=		freepopsd.1 freepops-updater-dialog.1 freepops-updater-zenity.1
+PORTDOCS=	*
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -49,6 +49,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#CURL_LD_FLAGS|CURL_LD_FLAGS|' \
 		${WRKSRC}/src/Makefile
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
+.endif
 
 post-install:
 	@${CHMOD} ${SHAREMODE} ${DATADIR}/lua/*.lua
