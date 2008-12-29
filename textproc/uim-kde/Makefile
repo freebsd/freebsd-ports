@@ -9,13 +9,13 @@ PKGNAMESUFFIX=	-kde
 
 COMMENT=	KDE panel applet of uim input method
 
-USE_GCC=	4.2
+LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
+RUN_DEPENDS=	uim-pref-qt:${PORTSDIR}/textproc/uim-qt
+
+USE_GCC=	4.2+
 USE_KDELIBS_VER=3
 USE_QT_VER=	3
 USE_AUTOTOOLS=	libtool:15
-
-LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
-RUN_DEPENDS=	uim-pref-qt:${PORTSDIR}/textproc/uim-qt
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
