@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -63,7 +63,7 @@ pre-everything::
 
 post-patch:
 # Remove extra (vendor) CFLAGS, we set our own
-	@${REINPLACE_CMD} '877,878d' ${WRKSRC}/config.lib
+	@${REINPLACE_CMD} '965,966d' ${WRKSRC}/config.lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
