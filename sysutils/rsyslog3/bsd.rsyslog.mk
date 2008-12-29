@@ -21,6 +21,8 @@ PLIST=	""
 DESCR?=		${.CURDIR}/../rsyslog3/pkg-descr
 MD5_FILE?=	${.CURDIR}/../rsyslog3/distinfo
 
+PORTSCOUT=	skipv:3.21.9,3.21.7
+
 do-install:
 	@${INSTALL} -d ${PREFIX}/lib/rsyslog/
 .for _T in ${MTYPES}

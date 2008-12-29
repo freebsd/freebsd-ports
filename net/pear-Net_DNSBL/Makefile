@@ -24,6 +24,8 @@ CATEGORY=	Net
 FILES=		Net/DNSBL.php Net/DNSBL/SURBL.php
 TESTS=		AllTests.php testNetDNSBL.php testNetDNSBLSURBL.php
 
+PORTSCOUT=	skipv:1.3.0a1
+
 .include <bsd.port.pre.mk>
 
 PHP_VERS=	${PHP_VERSION:S/.//g}
