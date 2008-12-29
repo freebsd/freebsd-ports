@@ -22,11 +22,17 @@ JAVA_OS=	native
 USE_GMAKE=	yes
 ALL_TARGET=	release
 
-WRKSRC=		${WRKDIR}/native/platforms/linux
-
 PLIST_FILES=	lib/libpkcs11wrapper.so %%JAVAJARDIR%%/iaikPkcs11Wrapper.jar
 
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+WRKSRC=		${WRKDIR}/native/platforms/linux_x64
+.else
+WRKSRC=		${WRKDIR}/native/platforms/linux
+.endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JNI library in ${PREFIX}/lib..."
@@ -45,4 +51,4 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
