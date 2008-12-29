@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.504
+PORTVERSION=	2.507
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,22 +14,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A perl5 module for WWW searches
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline \
-		${SITE_PERL}/User.pm:${PORTSDIR}/sysutils/p5-User \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		p5-IO-Capture>0:${PORTSDIR}/devel/p5-IO-Capture \
-		p5-Test-File>0:${PORTSDIR}/devel/p5-Test-File
+RUN_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-HTML-Parser>=2.23:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-User>=0:${PORTSDIR}/sysutils/p5-User \
+		p5-libwww>=2:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
+		p5-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Pod-Coverage \
+		p5-Test-File>=0:${PORTSDIR}/devel/p5-Test-File \
+		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 MAN1=		AutoSearch.1 \
 		WebSearch.1
@@ -44,8 +45,10 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3
 
-post-patch:
-	${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi.orig -e 's/\r//g'
-	${FIND} ${WRKSRC} -name "*.orig" -delete
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+.endif
+
+.include <bsd.port.post.mk>
