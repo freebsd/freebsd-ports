@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	eboard
-PORTVERSION=	1.0.3
-PORTREVISION=	2
-EXTRAS=		1pl2 2
+PORTVERSION=	1.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
+EXTRAS=		1pl2 2
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
@@ -26,6 +25,7 @@ USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-inc=${LOCALBASE}/include \
 		--extra-ld=${LOCALBASE}/lib \
+		--data-dir=${DATADIR} \
 		--disable-dgt
 
 INSTALL_TARGET=	install install-man

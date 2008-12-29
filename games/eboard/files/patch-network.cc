@@ -1,14 +1,14 @@
---- network.cc.orig	Mon Jan 15 23:59:58 2007
-+++ network.cc	Wed Jan 17 19:38:11 2007
-@@ -560,6 +560,7 @@
+--- network.cc.orig	2008-02-22 16:51:22.000000000 +0100
++++ network.cc	2008-12-29 11:24:10.000000000 +0100
+@@ -566,6 +566,7 @@
    strcpy(HostName,"local pipe");
-   sprintf(HostAddress,"pipe[%d,%d]",pin,pout);
+   snprintf(HostAddress,96,"pipe[%d,%d]",pin,pout);
    Quiet=0;
 +  use_execve=0;
    MaxWaitTime = 60000.0; // 1 minute
  }
  
-@@ -571,6 +572,7 @@
+@@ -577,6 +578,7 @@
    strcpy(HostAddress,"unknown");
    memset(HelperBin,0,512);
    Quiet=0;
@@ -16,9 +16,9 @@
    handshake.erase();
    MaxWaitTime = 60000.0; // 1 minute
  }
-@@ -606,6 +608,25 @@
+@@ -612,6 +614,25 @@
    Port=port;
-   strncpy(HostName,host,128);
+   g_strlcpy(HostName,host,128);
  
 +  // Special handling for timeseal on FreeBSD:
 +  //
@@ -41,8 +41,8 @@
 +
    // build helper path
    if (helpersuffix)
-     sprintf(z,"%s.%s",helperbin,helpersuffix);
-@@ -716,7 +737,10 @@
+     snprintf(z,256,"%s.%s",helperbin,helpersuffix);
+@@ -728,7 +749,10 @@
      dup2(1,2);
  
      setpgid(getpid(),0); // to broadcast SIGKILL later
