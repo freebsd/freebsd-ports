@@ -7,7 +7,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	http://www.itlb.te.noda.tus.ac.jp/~ikarashi/ruby/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChaSen module for Ruby
 
-LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
+LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
