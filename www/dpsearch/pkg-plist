@@ -376,6 +376,10 @@ lib/libdpcharset.so
 lib/libdpsearch-4.so
 lib/libdpsearch.a
 lib/libdpsearch.so
+%%APACHE%%lib/libdpsearch_mod-4.so
+%%APACHE%%lib/libdpsearch_mod.a
+%%APACHE%%lib/libdpsearch_mod.so
+%%APACHE%%%%APACHEMODDIR%%/mod_dpsearch.so
 sbin/cached
 sbin/dpconv
 sbin/dpguesser

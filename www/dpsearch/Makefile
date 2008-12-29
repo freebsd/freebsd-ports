@@ -7,6 +7,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.50
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=--disable-pthreads
 .endif
 
 .if !defined(WITHOUT_DPSEARCH_ASPELL)
-LIB_DEPEND+=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .else
 CONFIGURE_ARGS+=--without-aspell
 .endif
@@ -83,27 +84,26 @@ CONFIGURE_ARGS+=--with-extra-charsets=japanese
 .endif
 
 .if defined(WITH_DPSEARCH_MECAB)
-LIB_DEPEND+=	mecab.0:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
 CONFIGURE_ARGS+=--enable-mecab
 .endif
 
 .if defined(WITH_DPSEARCH_CHASEN)
-LIB_DEPEND+=	chasen.0:${PORTSDIR}/japanese/chasen
+LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen
 CONFIGURE_ARGS+=--enable-chasen
 .endif
 
 .if defined(WITH_DPSEARCH_IDN)
-LIB_DEPEND+=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--enable-idn
 .endif
 
 .if defined(WITH_DPSEARCH_APACHE)
-.if defined (WITH_APACHE2)
-BUILD_DEPEND+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20
-.else
-BUILD_DEPEND+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-.endif
+USE_APACHE=	1.3+
+PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--enable-apache-module
+.else
+PLIST_SUB+=	APACHE="@comment "
 .endif
 
 .if !defined(WITH_DPSEARCH_PGSQL) && !defined(WITH_DPSEARCH_MYSQL) && !defined(WITH_DPSEARCH_SQLITE)
@@ -123,7 +123,7 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .elif defined(WITH_DPSEARCH_SQLITE)
-LIB_DEPEND+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 .endif
