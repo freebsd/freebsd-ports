@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Apache 1.3 module for integrating Python
 
 USE_APACHE=	13
