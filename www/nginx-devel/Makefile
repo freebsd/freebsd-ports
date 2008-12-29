@@ -115,9 +115,9 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_RESPONSE_MODULE)
-NGINX_RESPONSE_MODULE_VERSION=	0.1
+NGINX_RESPONSE_MODULE_VERSION=	0.2
 PATCH_SITES+=	http://catap.ru/patches/nginx/:response
-PATCHFILES+=	ngx_http_response_module-${NGINX_RESPONSE_MODULE_VERSION}.dpatch:response
+PATCHFILES+=	ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}.dpatch:response
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=--with-http_response_module
 .endif
