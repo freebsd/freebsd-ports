@@ -16,7 +16,7 @@ MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.8*
