@@ -7,7 +7,7 @@
 
 PORTNAME=	estraier
 PORTVERSION=	1.2.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://estraier.sourceforge.net/
@@ -36,7 +36,7 @@ OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_CHASEN)
-LIB_DEPENDS+=	chasen.0:${PORTSDIR}/japanese/chasen-base
+LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen-base
 
 CONFIGURE_ARGS+=	--enable-chasen
 .endif

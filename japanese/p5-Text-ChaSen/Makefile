@@ -7,7 +7,7 @@
 
 PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 DISTNAME=	chasen-${CHASEN_VERSION}
@@ -15,11 +15,11 @@ DISTNAME=	chasen-${CHASEN_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
 
-LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
+LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 
 MD5_FILE=	${.CURDIR}/../chasen-base/distinfo
 
-CHASEN_VERSION=	2.3.3
+CHASEN_VERSION=	2.4.4
 
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 PERL_CONFIGURE=	yes
