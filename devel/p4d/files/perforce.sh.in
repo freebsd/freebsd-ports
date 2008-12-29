@@ -12,6 +12,7 @@ start)
     [ -f @PREFIX@/etc/perforce.conf ] && . @PREFIX@/etc/perforce.conf
     if [ -x $p4d -a x$PERFORCE_START = xyes ]; then
 	echo -n ' p4d'
+	umask 027
 	su -fm $PERFORCE_USER -c "$p4d -r $PERFORCE_ROOT $PERFORCE_OPTIONS"
     fi
     if [ -x $p4ftpd -a x$PERFORCE_FTPD_START = xyes ]; then
