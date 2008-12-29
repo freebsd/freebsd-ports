@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Data/ParseBinary.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/ParseBinary/Stream
 @dirrmtry %%SITE_PERL%%/Data/ParseBinary/Graphics
 @dirrmtry %%SITE_PERL%%/Data/ParseBinary/FileSystem
