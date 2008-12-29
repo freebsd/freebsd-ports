@@ -3,5 +3,8 @@ of Mozilla or Firefox, in order to display MathML webpages.
 
 With this port, you should also install the port x11-fonts/texcm-ttf.
 
+Note: the latest version of these fonts is downlable from
+http://support.wolfram.com/technotes/latestfonts.en.html
+but does not replace the previous ones.
+
 WWW: http://www.mozilla.org/projects/mathml/fonts/
-WWW: http://support.wolfram.com/mathematica/systems/windows/general/latestfonts.html

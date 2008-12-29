@@ -25,6 +25,11 @@ RUN_DEPENDS=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 RESTRICTED=	no distribution of the fonts allowed
 NO_CDROM=	${RESTRICTED}
 
+BROKEN=		the required version is unfetchable from Wolfram and we are not allowed to mirror it
+DEPRECATED=	This port was supported by Mozilla 1.8 (including Firefox 2.0) - to be replaced by \
+		STIX fonts for Firefox 3.x
+EXPIRATION_DATE=2009-01-31
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
