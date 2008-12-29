@@ -1,0 +1,29 @@
+--- ./config.layout.orig	2008-08-18 11:13:57.000000000 -0400
++++ ./config.layout	2008-12-28 23:12:31.000000000 -0500
+@@ -91,19 +91,20 @@
+   sbindir:		${exec_prefix}/sbin
+   sysconfdir:		${prefix}/etc+
+   mandir:		${prefix}/man
+-  libdir:		${prefix}/lib+
++  libdir:		/usr/local/lib/perl5/site_perl/5.8.8
+   datadir:		${prefix}/share+
+   htmldir:		${datadir}/html
++  sharedir:         ${prefix}/share+
+   manualdir:		${prefix}/share/doc+
+   logfiledir:		/var/log
+   localstatedir:	/var/run+
+   masonstatedir:	${localstatedir}/mason_data
+   sessionstatedir:	${localstatedir}/session_data
+-  customdir:		${prefix}/share+
+-  custometcdir:		${customdir}/local/etc
+-  customhtmldir:	${customdir}/local/html
+-  customlexdir:		${customdir}/local/po
+-  customlibdir:		${customdir}/local/lib
++  customdir:		${prefix}
++  custometcdir:		${customdir}/etc+
++  customhtmldir:	${customdir}/www+
++  customlexdir:		${sharedir}/po
++  customlibdir:		/usr/local/lib/perl5/site_perl/5.8.8
+ </Layout>
+ 
+ <Layout Win32>
