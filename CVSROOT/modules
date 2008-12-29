@@ -2342,6 +2342,7 @@ doscan                          ports/security/doscan
 doscmd                          ports/emulators/doscmd
 dosdetector                     ports/net/dosdetector
 dosunix                         ports/converters/dosunix
+dotclear                        ports/www/dotclear
 dotconf                         ports/devel/dotconf
 dotconf++                       ports/devel/dotconf++
 dotfile                         ports/misc/dotfile
@@ -8765,6 +8766,7 @@ mxico                           ports/x11/mxico
 mxml                            ports/textproc/mxml
 mxp                             ports/graphics/mxp
 mybashburn                      ports/sysutils/mybashburn
+mybb                            ports/www/mybb
 mybudget                        ports/finance/mybudget
 mydns                           ports/dns/mydns
 myfaces                         ports/www/myfaces
