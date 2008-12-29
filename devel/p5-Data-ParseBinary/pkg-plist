@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Data/ParseBinary/Data/Cap.pm
+%%SITE_PERL%%/Data/ParseBinary/Executable/ELF32.pm
+%%SITE_PERL%%/Data/ParseBinary/Executable/PE32.pm
+%%SITE_PERL%%/Data/ParseBinary/FileSystem/MBR.pm
+%%SITE_PERL%%/Data/ParseBinary/Graphics/PNG.pm
+%%SITE_PERL%%/Data/ParseBinary/Graphics/WMF.pm
+%%SITE_PERL%%/Data/ParseBinary/Graphics/EMF.pm
+%%SITE_PERL%%/Data/ParseBinary/Graphics/BMP.pm
+%%SITE_PERL%%/Data/ParseBinary/Stream/Bit.pm
+%%SITE_PERL%%/Data/ParseBinary/Stream/StringBuffer.pm
+%%SITE_PERL%%/Data/ParseBinary/Stream/String.pm
+%%SITE_PERL%%/Data/ParseBinary/Stream/File.pm
+%%SITE_PERL%%/Data/ParseBinary/Stream/Wrapper.pm
+%%SITE_PERL%%/Data/ParseBinary/Adapters.pm
+%%SITE_PERL%%/Data/ParseBinary/Constructs.pm
+%%SITE_PERL%%/Data/ParseBinary/Streams.pm
+%%SITE_PERL%%/Data/ParseBinary/Core.pm
+%%SITE_PERL%%/Data/ParseBinary.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ParseBinary
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Stream
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Graphics
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary/FileSystem
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Executable
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary/Data
+@dirrmtry %%SITE_PERL%%/Data/ParseBinary
+@dirrmtry %%SITE_PERL%%/Data

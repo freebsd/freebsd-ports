@@ -1,0 +1,6 @@
+This module enables writing declarations for simple and complex binary
+structures, parsing binary to hash/array data structure, and building 
+binary data from hash/array data structure.
+
+
+WWW:	http://search.cpan.org/~semuelf/Data-ParseBinary/
