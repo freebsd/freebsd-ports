@@ -1,15 +1,6 @@
---- lib/dartsdic.cpp.orig	2003-07-30 18:06:57.000000000 +0200
-+++ lib/dartsdic.cpp	2008-06-22 21:44:25.000000000 +0200
-@@ -68,7 +68,7 @@
- 
-     da = (darts_t*)cha_malloc(sizeof(darts_t));
-     da->da_mmap = cha_mmap_file(daname);
--    darts->setArray(cha_mmap_map(da->da_mmap));
-+    darts->set_array(cha_mmap_map(da->da_mmap));
-     da->da = darts;
-     da->lex_mmap = cha_mmap_file(lexname);
-     da->dat_mmap = cha_mmap_file(datname);
-@@ -160,7 +160,7 @@
+--- lib/dartsdic.cpp.orig	2008-12-26 15:45:32.000000000 +0000
++++ lib/dartsdic.cpp	2008-12-26 15:46:13.000000000 +0000
+@@ -168,7 +168,7 @@
  {
      Hash::iterator i, last;
      Hash* entries = builder->entries;
@@ -18,11 +9,11 @@
      size_t* lens = new size_t[entries->size()];
      long* vals = new long[entries->size()];
      int size = 0;
-@@ -177,7 +177,7 @@
+@@ -185,7 +185,7 @@
  	    lex_indices.push_back(i->second);
  	}
  	lens[size] = key.size();
--	(const char*)keys[size] = key.data();
+-	keys[size] = (char*) key.data();
 +	keys[size] = (const char*) key.data();
  	vals[size] = redump_lex(lens[size], lex_indices, tmpfile, lexfile);
  	if (vals[size] < 0) {

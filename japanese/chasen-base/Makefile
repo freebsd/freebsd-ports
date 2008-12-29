@@ -7,15 +7,11 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTVERSION=	2.4.4
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=     chasen-legacy/32224
 PKGNAMESUFFIX=	-base
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	chasen-2.3.3.20030821.patch chasen-2.3.3.20030822.patch chasen-2.3.3.20031024.patch
-PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Analysis System
