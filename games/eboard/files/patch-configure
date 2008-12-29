@@ -1,17 +1,17 @@
---- configure.orig	Thu Nov 27 00:48:49 2003
-+++ configure	Tue Jan 24 01:33:19 2006
-@@ -244,7 +244,7 @@
- 	}
- 	print TESTCC "$program";
- 	close TESTCC;
+--- configure.orig	2008-02-22 16:51:22.000000000 +0100
++++ configure	2008-12-29 11:25:54.000000000 +0100
+@@ -354,7 +354,7 @@
+ 	
+ 	log_file("test.cc");
+ 
 -	if (run_cmd($cxx,@cxxflags,"-c","test.cc","-o","xxtest.o") != 0) {
 +	if (0) {
  	    print ": no\n";
  	    $y = header_def($x);
  	    print CONFIGH "#undef $y\n";
-@@ -372,17 +372,9 @@
+@@ -512,17 +512,9 @@
  #optional headers
- header_check("strings.h","sys/soundcard.h","sys/audioio.h");
+ header_check("strings.h","sys/soundcard.h","sys/audioio.h","linux/joystick.h");
  
 -$t1=macro_check("netinet/in.h","IPPROTO_TCP","HAVE_IPPROTO_TCP_ON_IN_H");
 -$t2=macro_check("netinet/in.h","TCP_NODELAY","HAVE_TCP_NODELAY_ON_IN_H");
@@ -28,7 +28,7 @@
      cppdef("USE_SOCK_OPTS");
      if ($t1!=0 && $t3!=0) {
  	cppundef("NEED_TCP_H");
-@@ -396,10 +388,10 @@
+@@ -536,10 +528,10 @@
  	print "netinet/tcp.h not required, SOL_TCP present.\n";
      }
  } else {
