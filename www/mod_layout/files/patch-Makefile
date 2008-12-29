@@ -1,0 +1,27 @@
+--- ./Makefile.orig	2008-12-28 19:38:42.000000000 -0500
++++ ./Makefile	2008-12-28 19:39:41.000000000 -0500
+@@ -40,19 +40,19 @@
+ 	$(APXS) -c $(LIB) $(OBJ)
+ 
+ mod_layout.o : mod_layout.c
+-	$(CC) $(INC) -c mod_layout.c $(DEF) $(LIB)
++	$(CC) $(CFLAGS) $(INC) -c mod_layout.c $(DEF) $(LIB)
+ 
+ utility.o : utility.c
+-	$(CC) $(INC) -c utility.c $(DEF) $(LIB)
++	$(CC) $(CFLAGS) $(INC) -c utility.c $(DEF) $(LIB)
+ 
+ origin.o : origin.c
+-	$(CC) $(INC) -c origin.c $(DEF) $(LIB)
++	$(CC) $(CFLAGS) $(INC) -c origin.c $(DEF) $(LIB)
+ 
+ layout.o : layout.c
+-	$(CC) $(INC) -c layout.c $(DEF) $(LIB)
++	$(CC) $(CFLAGS) $(INC) -c layout.c $(DEF) $(LIB)
+ 
+ header.o : header.c
+-	$(CC) $(INC) -c header.c $(DEF) $(LIB)
++	$(CC) $(CFLAGS) $(INC) -c header.c $(DEF) $(LIB)
+ #   install the shared object file into Apache 
+ install: all
+ 	strip mod_layout.so
