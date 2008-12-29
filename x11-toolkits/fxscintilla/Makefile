@@ -7,7 +7,7 @@
 
 PORTNAME=	fxscintilla
 PORTVERSION=	1.71
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,22 +20,13 @@ CONFIGURE_ARGS+=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 
 .if !defined(MASTERDIR)
-OPTIONS=	FOX10 "FOX1.0 support (FOX1.6 by default)" off
-OPTIONS+=	FOX12 "FOX1.2 support (FOX1.6 by default)" off
+OPTIONS=	FOX12 "FOX1.2 support (FOX1.6 by default)" off
 OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FOX10)
-BROKEN=		does not compile
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
-
-FOX_LIB_VER=	1.0.0
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox10
-CONFIGURE_ARGS+=	--with-fox-1-0
-.elif defined(WITH_FOX12)
+.if defined(WITH_FOX12)
 FOX_LIB_VER=	1.2
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox12
 CONFIGURE_ARGS+=	--with-fox-1-2
