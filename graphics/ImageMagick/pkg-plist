@@ -482,6 +482,7 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%-%%PORTVERSION%%/LICENSE
 %%DATADIR%%-%%PORTVERSION%%/ChangeLog
 %%DATADIR%%-%%PORTVERSION%%/NEWS.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/affine.png
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/black.png
