@@ -17,8 +17,6 @@ SUB_FILES=	pkg-message
 MAN8=	rsyslogd.8
 MAN5=	rsyslog.conf.5
 
-PORTSCOUT=	skipv:3.21.9
-
 CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
 		--enable-imfile --enable-imtemplate --enable-gnutls
 .ifdef WITH_DEBUG
