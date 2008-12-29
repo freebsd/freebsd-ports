@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	perforce
-PORTVERSION=	${VERSION}
-PORTREVISION=	${REVISION}
+PORTVERSION=	08.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ \
@@ -19,36 +18,15 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
-DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
+DIST_SUBDIR=	perforce/${PORTVERSION}_${PORTREVISION}/${ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 
-#
-# This is a kludge.  I don't know a better way to set PORTVERSION and
-# PORTREVISION such that pkg_version figures out an update is needed
-#
-ARCH!=	/usr/bin/uname -p
-ARCH?=	i386
-
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
-VERSION=	07.3
-REVISION=	2
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
-REL_NOTES=	http://www.perforce.com/perforce/doc.073/user/relnotes.txt
-.elif ${ARCH} == alpha
-VERSION=	99.1
-REVISION=	1
-BIN_FILES=	p4
-SBIN_FILES=	p4d
-REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
-.else
-VERSION=	0
-IGNORE=		unsupported platform, sorry
-.endif
 
-# End of kludge
+REL_NOTES=	http://www.perforce.com/perforce/doc.082/user/relnotes.txt
 
 RESTRICTED=	Restricted distribution
 
@@ -60,20 +38,14 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 .include <bsd.port.pre.mk>
 
 # Figure out what to install
-.if ${ARCH} == alpha
-PLATFORM=	freebsdaxp
-.elif ${ARCH} == amd64
-.if ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
+.if ${ARCH} == amd64 && ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
 PLATFORM=	freebsd54x86_64
-.elif ${OSVERSION} >= 600000
+.elif ${ARCH} == amd64 && ${OSVERSION} >= 600000
 PLATFORM=	freebsd60x86_64
-.endif
-.elif ${ARCH} == i386
-.if ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
+.elif ${ARCH} == i386 && ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
 PLATFORM=	freebsd54x86
-.elif ${OSVERSION} >= 600000
+.elif ${ARCH} == i386 && ${OSVERSION} >= 600000
 PLATFORM=	freebsd60x86
-.endif
 .elif ${ARCH} == sparc64 && ${OSVERSION} >= 601000
 PLATFORM=	freebsd61sparc64
 .else
