@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pastebinit
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.stgraber.org/download/projects/pastebin/
 
-MAINTAINER=	comperr.extra@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line utility for pastebing
 
 USE_PYTHON=	yes
