@@ -18,6 +18,7 @@ include/dns/dbiterator.h
 include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
+include/dns/dlz.h
 include/dns/dnssec.h
 include/dns/ds.h
 include/dns/enumclass.h
@@ -49,6 +50,7 @@ include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatastruct.h
 include/dns/rdatatype.h
+include/dns/sdlz.h
 include/dns/request.h
 include/dns/resolver.h
 include/dns/result.h
@@ -124,6 +126,7 @@ include/isc/parseint.h
 include/isc/platform.h
 include/isc/print.h
 include/isc/quota.h
+include/isc/radix.h
 include/isc/random.h
 include/isc/ratelimiter.h
 include/isc/refcount.h
@@ -203,7 +206,6 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/KNOWN-DEFECTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.idnkit
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
