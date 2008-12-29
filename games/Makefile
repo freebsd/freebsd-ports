@@ -575,6 +575,7 @@
     SUBDIR += openyahtzee
     SUBDIR += optimax
     SUBDIR += orbital_eunuchs_sniper
+    SUBDIR += osgg
     SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
     SUBDIR += p5-Algorithm-Pair-Best
