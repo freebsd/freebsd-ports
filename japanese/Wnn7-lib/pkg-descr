@@ -1,26 +1,4 @@
-This port has include files (e.g. wnn/commonhd.h) and a library file
-(e.g. libwnn.a) to build Wnn7 clients. The files are compiled from
-sources Wnn7SDK.tgz which you can get in
+This port is Wnn7 client library including header and library files
+for Wnn7 client development.
 
 WWW: http://www.omronsoft.co.jp/
-
-The license of the sources is in
-
-/usr/local/share/doc/ja-Wnn7-lib/README
-
-By the way, you must buy the server of Wnn7, whose name is jserver,
-from Omron Software Co., Ltd.
-
-+------------------------------------------+
-| URL:	   http://www.omronsoft.co.jp      |
-| E-mail:  wnn-info@omronsoft.co.jp        |
-| TEL:     +81-44-246-6006                 |
-| FAX:     +81-44-246-6011                 |
-+------------------------------------------+
-
-Wnn7 is one of Japanese input methods. 'Wnn7 Personal' 
-supports Japanese method only. However, FreeWnn (which is free)
-supports Chinese and Korean ones, too.
-
-- S. Taoka
-taoka@FreeBSD.org

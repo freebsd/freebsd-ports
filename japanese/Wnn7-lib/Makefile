@@ -7,20 +7,19 @@
 
 PORTNAME=	Wnn7-lib
 PORTVERSION=	2001.10.17
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/sdk_source/
 DISTNAME=	Wnn7SDK
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Include files and a library of Wnn7
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Wnn7 client library
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
-WRKSRC=		${WRKDIR}/src
-DOCDIR=		${PREFIX}/share/doc/ja-Wnn7-lib
-
+USE_IMAKE=	yes
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/src
+PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
@@ -32,12 +31,14 @@ post-patch:
 
 # Warning: we cannot use USE_IMAKE.
 do-build:
-	( cd ${WRKSRC} ; make World -f Makefile.ini )
+	cd ${WRKSRC} && make World -f Makefile.ini
 
 post-install:
-	@${MKDIR} ${PREFIX}/include/wnn7/wnn
-	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
+	${MKDIR} ${PREFIX}/include/wnn7/wnn
+	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn7/wnn
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/wnn7/wnn/commonhd.h
 include/wnn7/wnn/config.h
 include/wnn7/wnn/copyright.h
@@ -22,5 +23,3 @@ include/wnn7/wnn/wnnerror.h
 lib/libwnn7.a
 lib/libwnn7.so
 lib/libwnn7.so.1
-share/doc/ja-Wnn7-lib/README
-@dirrm share/doc/ja-Wnn7-lib
