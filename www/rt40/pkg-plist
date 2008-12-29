@@ -22,234 +22,233 @@ etc/rt38/schema.SQLite
 etc/rt38/schema.Sybase
 etc/rt38/schema.mysql
 etc/rt38/schema.mysql-4.1
-lib/rt38/RT.pm
-lib/rt38/RT.pm.in
-lib/rt38/RT/ACE.pm
-lib/rt38/RT/ACE_Overlay.pm
-lib/rt38/RT/ACL.pm
-lib/rt38/RT/ACL_Overlay.pm
-lib/rt38/RT/Action.pm
-lib/rt38/RT/Action/AutoOpen.pm
-lib/rt38/RT/Action/Autoreply.pm
-lib/rt38/RT/Action/CreateTickets.pm
-lib/rt38/RT/Action/EscalatePriority.pm
-lib/rt38/RT/Action/ExtractSubjectTag.pm
-lib/rt38/RT/Action/Generic.pm
-lib/rt38/RT/Action/LinearEscalate.pm
-lib/rt38/RT/Action/Notify.pm
-lib/rt38/RT/Action/NotifyAsComment.pm
-lib/rt38/RT/Action/NotifyGroup.pm
-lib/rt38/RT/Action/NotifyGroupAsComment.pm
-lib/rt38/RT/Action/RecordComment.pm
-lib/rt38/RT/Action/RecordCorrespondence.pm
-lib/rt38/RT/Action/ResolveMembers.pm
-lib/rt38/RT/Action/SendEmail.pm
-lib/rt38/RT/Action/SetPriority.pm
-lib/rt38/RT/Action/UserDefined.pm
-lib/rt38/RT/Attachment.pm
-lib/rt38/RT/Attachment_Overlay.pm
-lib/rt38/RT/Attachments.pm
-lib/rt38/RT/Attachments_Overlay.pm
-lib/rt38/RT/Attribute.pm
-lib/rt38/RT/Attribute_Overlay.pm
-lib/rt38/RT/Attributes.pm
-lib/rt38/RT/Attributes_Overlay.pm
-lib/rt38/RT/Base.pm
-lib/rt38/RT/CachedGroupMember.pm
-lib/rt38/RT/CachedGroupMember_Overlay.pm
-lib/rt38/RT/CachedGroupMembers.pm
-lib/rt38/RT/CachedGroupMembers_Overlay.pm
-lib/rt38/RT/Condition.pm
-lib/rt38/RT/Condition/AnyTransaction.pm
-lib/rt38/RT/Condition/BeforeDue.pm
-lib/rt38/RT/Condition/CloseTicket.pm
-lib/rt38/RT/Condition/Generic.pm
-lib/rt38/RT/Condition/Overdue.pm
-lib/rt38/RT/Condition/OwnerChange.pm
-lib/rt38/RT/Condition/PriorityChange.pm
-lib/rt38/RT/Condition/PriorityExceeds.pm
-lib/rt38/RT/Condition/QueueChange.pm
-lib/rt38/RT/Condition/ReopenTicket.pm
-lib/rt38/RT/Condition/StatusChange.pm
-lib/rt38/RT/Condition/UserDefined.pm
-lib/rt38/RT/Config.pm
-lib/rt38/RT/Crypt/GnuPG.pm
-lib/rt38/RT/CurrentUser.pm
-lib/rt38/RT/CustomField.pm
-lib/rt38/RT/CustomFieldValue.pm
-lib/rt38/RT/CustomFieldValue_Overlay.pm
-lib/rt38/RT/CustomFieldValues.pm
-lib/rt38/RT/CustomFieldValues/External.pm
-lib/rt38/RT/CustomFieldValues/Groups.pm
-lib/rt38/RT/CustomFieldValues_Overlay.pm
-lib/rt38/RT/CustomField_Overlay.pm
-lib/rt38/RT/CustomFields.pm
-lib/rt38/RT/CustomFields_Overlay.pm
-lib/rt38/RT/Dashboard.pm
-lib/rt38/RT/Date.pm
-lib/rt38/RT/EmailParser.pm
-lib/rt38/RT/Graph/Tickets.pm
-lib/rt38/RT/Group.pm
-lib/rt38/RT/GroupMember.pm
-lib/rt38/RT/GroupMember_Overlay.pm
-lib/rt38/RT/GroupMembers.pm
-lib/rt38/RT/GroupMembers_Overlay.pm
-lib/rt38/RT/Group_Overlay.pm
-lib/rt38/RT/Groups.pm
-lib/rt38/RT/Groups_Overlay.pm
-lib/rt38/RT/Handle.pm
-lib/rt38/RT/I18N.pm
-lib/rt38/RT/I18N/cs.pm
-lib/rt38/RT/I18N/cs.po
-lib/rt38/RT/I18N/da.po
-lib/rt38/RT/I18N/de.po
-lib/rt38/RT/I18N/en.po
-lib/rt38/RT/I18N/es.po
-lib/rt38/RT/I18N/fi.po
-lib/rt38/RT/I18N/fr.po
-lib/rt38/RT/I18N/he.po
-lib/rt38/RT/I18N/hr.po
-lib/rt38/RT/I18N/hu.po
-lib/rt38/RT/I18N/i_default.pm
-lib/rt38/RT/I18N/id.po
-lib/rt38/RT/I18N/it.po
-lib/rt38/RT/I18N/ja.po
-lib/rt38/RT/I18N/nl.po
-lib/rt38/RT/I18N/no.po
-lib/rt38/RT/I18N/pl.po
-lib/rt38/RT/I18N/pt_br.po
-lib/rt38/RT/I18N/pt_pt.po
-lib/rt38/RT/I18N/rt.pot
-lib/rt38/RT/I18N/ru.po
-lib/rt38/RT/I18N/sv.po
-lib/rt38/RT/I18N/tr.po
-lib/rt38/RT/I18N/zh_cn.po
-lib/rt38/RT/I18N/zh_tw.po
-lib/rt38/RT/Installer.pm
-lib/rt38/RT/Interface/CLI.pm
-lib/rt38/RT/Interface/Email.pm
-lib/rt38/RT/Interface/Email/Auth/GnuPG.pm
-lib/rt38/RT/Interface/Email/Auth/MailFrom.pm
-lib/rt38/RT/Interface/Email/Filter/SpamAssassin.pm
-lib/rt38/RT/Interface/REST.pm
-lib/rt38/RT/Interface/Web.pm
-lib/rt38/RT/Interface/Web/Handler.pm
-lib/rt38/RT/Interface/Web/Menu.pm
-lib/rt38/RT/Interface/Web/Menu/Item.pm
-lib/rt38/RT/Interface/Web/QueryBuilder.pm
-lib/rt38/RT/Interface/Web/QueryBuilder/Tree.pm
-lib/rt38/RT/Interface/Web/Request.pm
-lib/rt38/RT/Interface/Web/Session.pm
-lib/rt38/RT/Interface/Web/Standalone.pm
-lib/rt38/RT/Interface/Web/Standalone/PreFork.pm
-lib/rt38/RT/Link.pm
-lib/rt38/RT/Link_Overlay.pm
-lib/rt38/RT/Links.pm
-lib/rt38/RT/Links_Overlay.pm
-lib/rt38/RT/ObjectCustomField.pm
-lib/rt38/RT/ObjectCustomFieldValue.pm
-lib/rt38/RT/ObjectCustomFieldValue_Overlay.pm
-lib/rt38/RT/ObjectCustomFieldValues.pm
-lib/rt38/RT/ObjectCustomFieldValues_Overlay.pm
-lib/rt38/RT/ObjectCustomField_Overlay.pm
-lib/rt38/RT/ObjectCustomFields.pm
-lib/rt38/RT/ObjectCustomFields_Overlay.pm
-lib/rt38/RT/Plugin.pm
-lib/rt38/RT/Principal.pm
-lib/rt38/RT/Principal_Overlay.pm
-lib/rt38/RT/Principals.pm
-lib/rt38/RT/Principals_Overlay.pm
-lib/rt38/RT/Queue.pm
-lib/rt38/RT/Queue_Overlay.pm
-lib/rt38/RT/Queues.pm
-lib/rt38/RT/Queues_Overlay.pm
-lib/rt38/RT/Record.pm
-lib/rt38/RT/Reminders.pm
-lib/rt38/RT/Report/Tickets.pm
-lib/rt38/RT/Report/Tickets/Entry.pm
-lib/rt38/RT/SQL.pm
-lib/rt38/RT/SavedSearch.pm
-lib/rt38/RT/SavedSearches.pm
-lib/rt38/RT/Scrip.pm
-lib/rt38/RT/ScripAction.pm
-lib/rt38/RT/ScripAction_Overlay.pm
-lib/rt38/RT/ScripActions.pm
-lib/rt38/RT/ScripActions_Overlay.pm
-lib/rt38/RT/ScripCondition.pm
-lib/rt38/RT/ScripCondition_Overlay.pm
-lib/rt38/RT/ScripConditions.pm
-lib/rt38/RT/ScripConditions_Overlay.pm
-lib/rt38/RT/Scrip_Overlay.pm
-lib/rt38/RT/Scrips.pm
-lib/rt38/RT/Scrips_Overlay.pm
-lib/rt38/RT/Search.pm
-lib/rt38/RT/Search/ActiveTicketsInQueue.pm
-lib/rt38/RT/Search/FromSQL.pm
-lib/rt38/RT/Search/Generic.pm
-lib/rt38/RT/Search/Googleish.pm
-lib/rt38/RT/SearchBuilder.pm
-lib/rt38/RT/SharedSetting.pm
-lib/rt38/RT/Shredder.pm
-lib/rt38/RT/Shredder/ACE.pm
-lib/rt38/RT/Shredder/Attachment.pm
-lib/rt38/RT/Shredder/CachedGroupMember.pm
-lib/rt38/RT/Shredder/Constants.pm
-lib/rt38/RT/Shredder/CustomField.pm
-lib/rt38/RT/Shredder/CustomFieldValue.pm
-lib/rt38/RT/Shredder/Dependencies.pm
-lib/rt38/RT/Shredder/Dependency.pm
-lib/rt38/RT/Shredder/Exceptions.pm
-lib/rt38/RT/Shredder/Group.pm
-lib/rt38/RT/Shredder/GroupMember.pm
-lib/rt38/RT/Shredder/Link.pm
-lib/rt38/RT/Shredder/ObjectCustomFieldValue.pm
-lib/rt38/RT/Shredder/POD.pm
-lib/rt38/RT/Shredder/Plugin.pm
-lib/rt38/RT/Shredder/Plugin/Attachments.pm
-lib/rt38/RT/Shredder/Plugin/Base.pm
-lib/rt38/RT/Shredder/Plugin/Base/Dump.pm
-lib/rt38/RT/Shredder/Plugin/Base/Search.pm
-lib/rt38/RT/Shredder/Plugin/Objects.pm
-lib/rt38/RT/Shredder/Plugin/SQLDump.pm
-lib/rt38/RT/Shredder/Plugin/Summary.pm
-lib/rt38/RT/Shredder/Plugin/Tickets.pm
-lib/rt38/RT/Shredder/Plugin/Users.pm
-lib/rt38/RT/Shredder/Principal.pm
-lib/rt38/RT/Shredder/Queue.pm
-lib/rt38/RT/Shredder/Record.pm
-lib/rt38/RT/Shredder/Scrip.pm
-lib/rt38/RT/Shredder/ScripAction.pm
-lib/rt38/RT/Shredder/ScripCondition.pm
-lib/rt38/RT/Shredder/Template.pm
-lib/rt38/RT/Shredder/Ticket.pm
-lib/rt38/RT/Shredder/Transaction.pm
-lib/rt38/RT/Shredder/User.pm
-lib/rt38/RT/StyleGuide.pod
-lib/rt38/RT/System.pm
-lib/rt38/RT/Template.pm
-lib/rt38/RT/Template_Overlay.pm
-lib/rt38/RT/Templates.pm
-lib/rt38/RT/Templates_Overlay.pm
-lib/rt38/RT/Test.pm
-lib/rt38/RT/Test/Web.pm
-lib/rt38/RT/Ticket.pm
-lib/rt38/RT/Ticket_Overlay.pm
-lib/rt38/RT/Tickets.pm
-lib/rt38/RT/Tickets_Overlay.pm
-lib/rt38/RT/Tickets_Overlay_SQL.pm
-lib/rt38/RT/Transaction.pm
-lib/rt38/RT/Transaction_Overlay.pm
-lib/rt38/RT/Transactions.pm
-lib/rt38/RT/Transactions_Overlay.pm
-lib/rt38/RT/URI.pm
-lib/rt38/RT/URI/base.pm
-lib/rt38/RT/URI/fsck_com_rt.pm
-lib/rt38/RT/URI/t.pm
-lib/rt38/RT/User.pm
-lib/rt38/RT/User_Overlay.pm
-lib/rt38/RT/Users.pm
-lib/rt38/RT/Users_Overlay.pm
-lib/rt38/RT/Util.pm
+%%SITE_PERL%%/RT.pm
+%%SITE_PERL%%/RT/ACE.pm
+%%SITE_PERL%%/RT/ACE_Overlay.pm
+%%SITE_PERL%%/RT/ACL.pm
+%%SITE_PERL%%/RT/ACL_Overlay.pm
+%%SITE_PERL%%/RT/Action.pm
+%%SITE_PERL%%/RT/Action/AutoOpen.pm
+%%SITE_PERL%%/RT/Action/Autoreply.pm
+%%SITE_PERL%%/RT/Action/CreateTickets.pm
+%%SITE_PERL%%/RT/Action/EscalatePriority.pm
+%%SITE_PERL%%/RT/Action/ExtractSubjectTag.pm
+%%SITE_PERL%%/RT/Action/Generic.pm
+%%SITE_PERL%%/RT/Action/LinearEscalate.pm
+%%SITE_PERL%%/RT/Action/Notify.pm
+%%SITE_PERL%%/RT/Action/NotifyAsComment.pm
+%%SITE_PERL%%/RT/Action/NotifyGroup.pm
+%%SITE_PERL%%/RT/Action/NotifyGroupAsComment.pm
+%%SITE_PERL%%/RT/Action/RecordComment.pm
+%%SITE_PERL%%/RT/Action/RecordCorrespondence.pm
+%%SITE_PERL%%/RT/Action/ResolveMembers.pm
+%%SITE_PERL%%/RT/Action/SendEmail.pm
+%%SITE_PERL%%/RT/Action/SetPriority.pm
+%%SITE_PERL%%/RT/Action/UserDefined.pm
+%%SITE_PERL%%/RT/Attachment.pm
+%%SITE_PERL%%/RT/Attachment_Overlay.pm
+%%SITE_PERL%%/RT/Attachments.pm
+%%SITE_PERL%%/RT/Attachments_Overlay.pm
+%%SITE_PERL%%/RT/Attribute.pm
+%%SITE_PERL%%/RT/Attribute_Overlay.pm
+%%SITE_PERL%%/RT/Attributes.pm
+%%SITE_PERL%%/RT/Attributes_Overlay.pm
+%%SITE_PERL%%/RT/Base.pm
+%%SITE_PERL%%/RT/CachedGroupMember.pm
+%%SITE_PERL%%/RT/CachedGroupMember_Overlay.pm
+%%SITE_PERL%%/RT/CachedGroupMembers.pm
+%%SITE_PERL%%/RT/CachedGroupMembers_Overlay.pm
+%%SITE_PERL%%/RT/Condition.pm
+%%SITE_PERL%%/RT/Condition/AnyTransaction.pm
+%%SITE_PERL%%/RT/Condition/BeforeDue.pm
+%%SITE_PERL%%/RT/Condition/CloseTicket.pm
+%%SITE_PERL%%/RT/Condition/Generic.pm
+%%SITE_PERL%%/RT/Condition/Overdue.pm
+%%SITE_PERL%%/RT/Condition/OwnerChange.pm
+%%SITE_PERL%%/RT/Condition/PriorityChange.pm
+%%SITE_PERL%%/RT/Condition/PriorityExceeds.pm
+%%SITE_PERL%%/RT/Condition/QueueChange.pm
+%%SITE_PERL%%/RT/Condition/ReopenTicket.pm
+%%SITE_PERL%%/RT/Condition/StatusChange.pm
+%%SITE_PERL%%/RT/Condition/UserDefined.pm
+%%SITE_PERL%%/RT/Config.pm
+%%SITE_PERL%%/RT/Crypt/GnuPG.pm
+%%SITE_PERL%%/RT/CurrentUser.pm
+%%SITE_PERL%%/RT/CustomField.pm
+%%SITE_PERL%%/RT/CustomFieldValue.pm
+%%SITE_PERL%%/RT/CustomFieldValue_Overlay.pm
+%%SITE_PERL%%/RT/CustomFieldValues.pm
+%%SITE_PERL%%/RT/CustomFieldValues/External.pm
+%%SITE_PERL%%/RT/CustomFieldValues/Groups.pm
+%%SITE_PERL%%/RT/CustomFieldValues_Overlay.pm
+%%SITE_PERL%%/RT/CustomField_Overlay.pm
+%%SITE_PERL%%/RT/CustomFields.pm
+%%SITE_PERL%%/RT/CustomFields_Overlay.pm
+%%SITE_PERL%%/RT/Dashboard.pm
+%%SITE_PERL%%/RT/Date.pm
+%%SITE_PERL%%/RT/EmailParser.pm
+%%SITE_PERL%%/RT/Graph/Tickets.pm
+%%SITE_PERL%%/RT/Group.pm
+%%SITE_PERL%%/RT/GroupMember.pm
+%%SITE_PERL%%/RT/GroupMember_Overlay.pm
+%%SITE_PERL%%/RT/GroupMembers.pm
+%%SITE_PERL%%/RT/GroupMembers_Overlay.pm
+%%SITE_PERL%%/RT/Group_Overlay.pm
+%%SITE_PERL%%/RT/Groups.pm
+%%SITE_PERL%%/RT/Groups_Overlay.pm
+%%SITE_PERL%%/RT/Handle.pm
+%%SITE_PERL%%/RT/I18N.pm
+%%SITE_PERL%%/RT/I18N/cs.pm
+%%SITE_PERL%%/RT/I18N/cs.po
+%%SITE_PERL%%/RT/I18N/da.po
+%%SITE_PERL%%/RT/I18N/de.po
+%%SITE_PERL%%/RT/I18N/en.po
+%%SITE_PERL%%/RT/I18N/es.po
+%%SITE_PERL%%/RT/I18N/fi.po
+%%SITE_PERL%%/RT/I18N/fr.po
+%%SITE_PERL%%/RT/I18N/he.po
+%%SITE_PERL%%/RT/I18N/hr.po
+%%SITE_PERL%%/RT/I18N/hu.po
+%%SITE_PERL%%/RT/I18N/i_default.pm
+%%SITE_PERL%%/RT/I18N/id.po
+%%SITE_PERL%%/RT/I18N/it.po
+%%SITE_PERL%%/RT/I18N/ja.po
+%%SITE_PERL%%/RT/I18N/nl.po
+%%SITE_PERL%%/RT/I18N/no.po
+%%SITE_PERL%%/RT/I18N/pl.po
+%%SITE_PERL%%/RT/I18N/pt_br.po
+%%SITE_PERL%%/RT/I18N/pt_pt.po
+%%SITE_PERL%%/RT/I18N/rt.pot
+%%SITE_PERL%%/RT/I18N/ru.po
+%%SITE_PERL%%/RT/I18N/sv.po
+%%SITE_PERL%%/RT/I18N/tr.po
+%%SITE_PERL%%/RT/I18N/zh_cn.po
+%%SITE_PERL%%/RT/I18N/zh_tw.po
+%%SITE_PERL%%/RT/Installer.pm
+%%SITE_PERL%%/RT/Interface/CLI.pm
+%%SITE_PERL%%/RT/Interface/Email.pm
+%%SITE_PERL%%/RT/Interface/Email/Auth/GnuPG.pm
+%%SITE_PERL%%/RT/Interface/Email/Auth/MailFrom.pm
+%%SITE_PERL%%/RT/Interface/Email/Filter/SpamAssassin.pm
+%%SITE_PERL%%/RT/Interface/REST.pm
+%%SITE_PERL%%/RT/Interface/Web.pm
+%%SITE_PERL%%/RT/Interface/Web/Handler.pm
+%%SITE_PERL%%/RT/Interface/Web/Menu.pm
+%%SITE_PERL%%/RT/Interface/Web/Menu/Item.pm
+%%SITE_PERL%%/RT/Interface/Web/QueryBuilder.pm
+%%SITE_PERL%%/RT/Interface/Web/QueryBuilder/Tree.pm
+%%SITE_PERL%%/RT/Interface/Web/Request.pm
+%%SITE_PERL%%/RT/Interface/Web/Session.pm
+%%SITE_PERL%%/RT/Interface/Web/Standalone.pm
+%%SITE_PERL%%/RT/Interface/Web/Standalone/PreFork.pm
+%%SITE_PERL%%/RT/Link.pm
+%%SITE_PERL%%/RT/Link_Overlay.pm
+%%SITE_PERL%%/RT/Links.pm
+%%SITE_PERL%%/RT/Links_Overlay.pm
+%%SITE_PERL%%/RT/ObjectCustomField.pm
+%%SITE_PERL%%/RT/ObjectCustomFieldValue.pm
+%%SITE_PERL%%/RT/ObjectCustomFieldValue_Overlay.pm
+%%SITE_PERL%%/RT/ObjectCustomFieldValues.pm
+%%SITE_PERL%%/RT/ObjectCustomFieldValues_Overlay.pm
+%%SITE_PERL%%/RT/ObjectCustomField_Overlay.pm
+%%SITE_PERL%%/RT/ObjectCustomFields.pm
+%%SITE_PERL%%/RT/ObjectCustomFields_Overlay.pm
+%%SITE_PERL%%/RT/Plugin.pm
+%%SITE_PERL%%/RT/Principal.pm
+%%SITE_PERL%%/RT/Principal_Overlay.pm
+%%SITE_PERL%%/RT/Principals.pm
+%%SITE_PERL%%/RT/Principals_Overlay.pm
+%%SITE_PERL%%/RT/Queue.pm
+%%SITE_PERL%%/RT/Queue_Overlay.pm
+%%SITE_PERL%%/RT/Queues.pm
+%%SITE_PERL%%/RT/Queues_Overlay.pm
+%%SITE_PERL%%/RT/Record.pm
+%%SITE_PERL%%/RT/Reminders.pm
+%%SITE_PERL%%/RT/Report/Tickets.pm
+%%SITE_PERL%%/RT/Report/Tickets/Entry.pm
+%%SITE_PERL%%/RT/SQL.pm
+%%SITE_PERL%%/RT/SavedSearch.pm
+%%SITE_PERL%%/RT/SavedSearches.pm
+%%SITE_PERL%%/RT/Scrip.pm
+%%SITE_PERL%%/RT/ScripAction.pm
+%%SITE_PERL%%/RT/ScripAction_Overlay.pm
+%%SITE_PERL%%/RT/ScripActions.pm
+%%SITE_PERL%%/RT/ScripActions_Overlay.pm
+%%SITE_PERL%%/RT/ScripCondition.pm
+%%SITE_PERL%%/RT/ScripCondition_Overlay.pm
+%%SITE_PERL%%/RT/ScripConditions.pm
+%%SITE_PERL%%/RT/ScripConditions_Overlay.pm
+%%SITE_PERL%%/RT/Scrip_Overlay.pm
+%%SITE_PERL%%/RT/Scrips.pm
+%%SITE_PERL%%/RT/Scrips_Overlay.pm
+%%SITE_PERL%%/RT/Search.pm
+%%SITE_PERL%%/RT/Search/ActiveTicketsInQueue.pm
+%%SITE_PERL%%/RT/Search/FromSQL.pm
+%%SITE_PERL%%/RT/Search/Generic.pm
+%%SITE_PERL%%/RT/Search/Googleish.pm
+%%SITE_PERL%%/RT/SearchBuilder.pm
+%%SITE_PERL%%/RT/SharedSetting.pm
+%%SITE_PERL%%/RT/Shredder.pm
+%%SITE_PERL%%/RT/Shredder/ACE.pm
+%%SITE_PERL%%/RT/Shredder/Attachment.pm
+%%SITE_PERL%%/RT/Shredder/CachedGroupMember.pm
+%%SITE_PERL%%/RT/Shredder/Constants.pm
+%%SITE_PERL%%/RT/Shredder/CustomField.pm
+%%SITE_PERL%%/RT/Shredder/CustomFieldValue.pm
+%%SITE_PERL%%/RT/Shredder/Dependencies.pm
+%%SITE_PERL%%/RT/Shredder/Dependency.pm
+%%SITE_PERL%%/RT/Shredder/Exceptions.pm
+%%SITE_PERL%%/RT/Shredder/Group.pm
+%%SITE_PERL%%/RT/Shredder/GroupMember.pm
+%%SITE_PERL%%/RT/Shredder/Link.pm
+%%SITE_PERL%%/RT/Shredder/ObjectCustomFieldValue.pm
+%%SITE_PERL%%/RT/Shredder/POD.pm
+%%SITE_PERL%%/RT/Shredder/Plugin.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Attachments.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Base.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Base/Dump.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Base/Search.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Objects.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/SQLDump.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Summary.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Tickets.pm
+%%SITE_PERL%%/RT/Shredder/Plugin/Users.pm
+%%SITE_PERL%%/RT/Shredder/Principal.pm
+%%SITE_PERL%%/RT/Shredder/Queue.pm
+%%SITE_PERL%%/RT/Shredder/Record.pm
+%%SITE_PERL%%/RT/Shredder/Scrip.pm
+%%SITE_PERL%%/RT/Shredder/ScripAction.pm
+%%SITE_PERL%%/RT/Shredder/ScripCondition.pm
+%%SITE_PERL%%/RT/Shredder/Template.pm
+%%SITE_PERL%%/RT/Shredder/Ticket.pm
+%%SITE_PERL%%/RT/Shredder/Transaction.pm
+%%SITE_PERL%%/RT/Shredder/User.pm
+%%SITE_PERL%%/RT/StyleGuide.pod
+%%SITE_PERL%%/RT/System.pm
+%%SITE_PERL%%/RT/Template.pm
+%%SITE_PERL%%/RT/Template_Overlay.pm
+%%SITE_PERL%%/RT/Templates.pm
+%%SITE_PERL%%/RT/Templates_Overlay.pm
+%%SITE_PERL%%/RT/Test.pm
+%%SITE_PERL%%/RT/Test/Web.pm
+%%SITE_PERL%%/RT/Ticket.pm
+%%SITE_PERL%%/RT/Ticket_Overlay.pm
+%%SITE_PERL%%/RT/Tickets.pm
+%%SITE_PERL%%/RT/Tickets_Overlay.pm
+%%SITE_PERL%%/RT/Tickets_Overlay_SQL.pm
+%%SITE_PERL%%/RT/Transaction.pm
+%%SITE_PERL%%/RT/Transaction_Overlay.pm
+%%SITE_PERL%%/RT/Transactions.pm
+%%SITE_PERL%%/RT/Transactions_Overlay.pm
+%%SITE_PERL%%/RT/URI.pm
+%%SITE_PERL%%/RT/URI/base.pm
+%%SITE_PERL%%/RT/URI/fsck_com_rt.pm
+%%SITE_PERL%%/RT/URI/t.pm
+%%SITE_PERL%%/RT/User.pm
+%%SITE_PERL%%/RT/User_Overlay.pm
+%%SITE_PERL%%/RT/Users.pm
+%%SITE_PERL%%/RT/Users_Overlay.pm
+%%SITE_PERL%%/RT/Util.pm
 sbin/rt-clean-sessions
 sbin/rt-dump-database
 sbin/rt-email-dashboards
@@ -1053,11 +1052,7 @@ share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
 @dirrm share/rt38/plugins
-@dirrm share/rt38/local/po
-@dirrm share/rt38/local/lib
-@dirrm share/rt38/local/html
-@dirrm share/rt38/local/etc
-@dirrm share/rt38/local
+@dirrm share/rt38/po
 @dirrm share/rt38/html/Widgets/Form
 @dirrm share/rt38/html/Widgets
 @dirrm share/rt38/html/User/Groups
@@ -1190,28 +1185,27 @@ share/rt38/html/l
 @dirrm share/rt38/html
 @dirrm share/rt38
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/rt38/RT/URI
-@dirrm lib/rt38/RT/Test
-@dirrm lib/rt38/RT/Shredder/Plugin/Base
-@dirrm lib/rt38/RT/Shredder/Plugin
-@dirrm lib/rt38/RT/Shredder
-@dirrm lib/rt38/RT/Search
-@dirrm lib/rt38/RT/Report/Tickets
-@dirrm lib/rt38/RT/Report
-@dirrm lib/rt38/RT/Interface/Web/Standalone
-@dirrm lib/rt38/RT/Interface/Web/QueryBuilder
-@dirrm lib/rt38/RT/Interface/Web/Menu
-@dirrm lib/rt38/RT/Interface/Web
-@dirrm lib/rt38/RT/Interface/Email/Filter
-@dirrm lib/rt38/RT/Interface/Email/Auth
-@dirrm lib/rt38/RT/Interface/Email
-@dirrm lib/rt38/RT/Interface
-@dirrm lib/rt38/RT/I18N
-@dirrm lib/rt38/RT/Graph
-@dirrm lib/rt38/RT/CustomFieldValues
-@dirrm lib/rt38/RT/Crypt
-@dirrm lib/rt38/RT/Condition
-@dirrm lib/rt38/RT/Action
-@dirrm lib/rt38/RT
-@dirrm lib/rt38
+@dirrm %%SITE_PERL%%/RT/URI
+@dirrm %%SITE_PERL%%/RT/Test
+@dirrm %%SITE_PERL%%/RT/Shredder/Plugin/Base
+@dirrm %%SITE_PERL%%/RT/Shredder/Plugin
+@dirrm %%SITE_PERL%%/RT/Shredder
+@dirrm %%SITE_PERL%%/RT/Search
+@dirrm %%SITE_PERL%%/RT/Report/Tickets
+@dirrm %%SITE_PERL%%/RT/Report
+@dirrm %%SITE_PERL%%/RT/Interface/Web/Standalone
+@dirrm %%SITE_PERL%%/RT/Interface/Web/QueryBuilder
+@dirrm %%SITE_PERL%%/RT/Interface/Web/Menu
+@dirrm %%SITE_PERL%%/RT/Interface/Web
+@dirrm %%SITE_PERL%%/RT/Interface/Email/Filter
+@dirrm %%SITE_PERL%%/RT/Interface/Email/Auth
+@dirrm %%SITE_PERL%%/RT/Interface/Email
+@dirrm %%SITE_PERL%%/RT/Interface
+@dirrm %%SITE_PERL%%/RT/I18N
+@dirrm %%SITE_PERL%%/RT/Graph
+@dirrm %%SITE_PERL%%/RT/CustomFieldValues
+@dirrm %%SITE_PERL%%/RT/Crypt
+@dirrm %%SITE_PERL%%/RT/Condition
+@dirrm %%SITE_PERL%%/RT/Action
+@dirrm %%SITE_PERL%%/RT
 @dirrm etc/rt38

@@ -55,12 +55,11 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-DEPRECATED=	Please install www/rt36 which is the lastest recommended release
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.8*
 
 IGNORE=	see www/rt38
 DEPRECATED=	${IGNORE}
-EXPIRE_DATE=	2008-02-01
+EXPIRE_DATE=	2009-02-01
 
 LATEST_LINK=	rt34
 HAS_CONFIGURE=	yes

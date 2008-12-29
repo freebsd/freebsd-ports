@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081226:
+  AFFECTS: users of www/rt38
+  AUTHOR: pgollucci@FreeBSD.org
+
+  www/rt38 now respects the FreeBSD directory layout, see heir(7).
+  With this change, p5-RT-* and p5-RTx-* should be much simpler
+  to use in the ports collection.
+
+  Please note that www/p5-RTx-Shredder is included in www/rt38
+  This port will be deprecated and removed.
+
 20081228:
   AFFECTS: users of astro/boinc-setiathome-enhanced
   AUTHOR: rene@FreeBSD.org

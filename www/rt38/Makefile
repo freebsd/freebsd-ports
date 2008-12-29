@@ -10,15 +10,12 @@
 # o patch etc/rt38/RT_SiteConfig.pm and -dist perl -c path
 # o GRANTS
 # o Schema
-# o $ sudo perl rt-setup-database --action init --dba dba --dba-password X
-# o $ sudo perl rt-setup-database --action drop --dba dba --dba-password X
 # - Vhost Config
 #   o install a sample into etc/apache22/Includes
-#   o share/rt38/html -> www/rt38 ?
 
 PORTNAME=	rt
 PORTVERSION=	3.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
@@ -145,9 +142,8 @@ IGNORE=	options WITH_APACHE and WITH_APACHE2 are mutually exclusive
 IGNORE=	options WITH_MODPERL and WITH_MODPERL2 are mutually exclusive
 .endif
 
-RT_PATH?=	${LOCALBASE}
 RT_ETC_PATH?=	${LOCALBASE}/etc/${PORTNAME}38
-RT_LAYOUT?=	FreeBSD
+RT_LAYOUT=	FreeBSD
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}38
 
 DB_DBA_USER?=	root
@@ -179,7 +175,6 @@ CONFIGURE_ARGS=	--enable-layout=${RT_LAYOUT} \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-SUB_LIST=	RT_PATH=${RT_PATH}
 
 run-autotools::	run-autotools-autoconf
 
@@ -194,13 +189,17 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      DB_USER=username                Name of database user for RT (rt_user)"
 	@${ECHO} "      DB_PASSWORD=password            Name of database password for RT (rt_pass)"
-	@sleep 3
 .if defined(WITH_SQLITE)
 	@${ECHO} ""
 	@${ECHO} "SQLITE is not recommended for production use"
 .endif
 
+post-patch:
+	@${RM} -f ${WRKSRC}/lib/RT.pm.in.orig
+	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${SITE_PERL}!g' ${WRKSRC}/config.layout
+
 pre-install:
+	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
