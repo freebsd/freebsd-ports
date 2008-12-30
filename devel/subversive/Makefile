@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	subversive
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.6
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,%SUBDIR%,technology/subversive/0.7/builds,:S,$,:core,} \
-		http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/plugins/:connectors
-DISTNAME=	Subversive-incubation-${PORTVERSION}.I20080814-1500
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${SVNKITJAR}:connectors
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+		http://www.polarion.org/projects/subversive/download/eclipse/2.0/builds/:connectors
+DISTNAME=	Subversive-incubation-${PORTVERSION}.I20081229-1900
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${CONNECTORS}:connectors
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An Eclipse plug-in that provides Subversion support
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-SVNKITJAR=	org.polarion.eclipse.team.svn.connector.svnkit15_2.0.3.I20080814-1500.jar
+CONNECTORS=	Subversive-connectors-2.0.7.I20081222-1900.zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
-
-post-extract:
-	@${CP} ${_DISTDIR}/${SVNKITJAR} ${WRKSRC}/plugins
 
 do-install:
 	@${MKDIR} ${PREFIX}/eclipse
