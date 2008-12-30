@@ -2,6 +2,7 @@ include/libparsifal/bistream.h
 include/libparsifal/dtdvalid.h
 include/libparsifal/isrcmem.h
 include/libparsifal/parsifal.h
+include/libparsifal/pns.h
 include/libparsifal/xmlcfg.h
 include/libparsifal/xmldtd.h
 include/libparsifal/xmlhash.h
@@ -20,6 +21,7 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/highlight.css
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/nsvalid_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/parsifal_h.html
+%%PORTDOCS%%%%DOCSDIR%%/csrchtml/pull1_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/test_iconv_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/test_pool_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/winurl_c.html
@@ -36,6 +38,8 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/news.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html.bak
+%%PORTDOCS%%%%DOCSDIR%%/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/parsifal_results.html
 %%PORTDOCS%%%%DOCSDIR%%/parsifal_results_valid.html
 %%PORTDOCS%%%%DOCSDIR%%/pics/backg.gif
