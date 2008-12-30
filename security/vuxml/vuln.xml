@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="738f8f9e-d661-11dd-a765-0030843d3802">
+    <topic>mysql -- MyISAM table privileges security bypass vulnerability for symlinked paths</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>4.1</ge><lt>4.1.25</lt></range>
+	<range><ge>5.0</ge><lt>5.0.75</lt></range>
+	<range><ge>5.1</ge><lt>5.1.28</lt></range>
+	<range><ge>6.0</ge><lt>6.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL Team reports:</p>
+	<blockquote cite="http://bugs.mysql.com/bug.php?id=32167">
+	  <p>Additional corrections were made for the symlink-related privilege
+	    problem originally addressed.  The original fix did not correctly
+	    handle the data directory pathname if it contained symlinked
+	    directories in its path, and the check was made only at
+	    table-creation time, not at table-opening time later.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2079</cvename>
+      <cvename>CVE-2008-4097</cvename>
+      <cvename>CVE-2008-4098</cvename>
+      <url>http://bugs.mysql.com/bug.php?id=32167</url>
+      <url>http://dev.mysql.com/doc/refman/4.1/en/news-4-1-25.html</url>
+      <url>http://dev.mysql.com/doc/refman/5.0/en/releasenotes-cs-5-0-75.html</url>
+      <url>http://dev.mysql.com/doc/refman/5.1/en/news-5-1-28.html</url>
+      <url>http://dev.mysql.com/doc/refman/6.0/en/news-6-0-6.html</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=480292#25</url>
+    </references>
+    <dates>
+      <discovery>2008-07-03</discovery>
+      <entry>2008-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c5bd5b8-d652-11dd-a765-0030843d3802">
     <topic>mplayer -- twinvq processing buffer overflow vulnerability</topic>
     <affects>
