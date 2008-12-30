@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ludia
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ludia/28482
+MASTER_SITE_SUBDIR=	ludia/32461
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	PostgreSQL extension for full-text search indexing
@@ -23,6 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT} \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_PGSQL=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -34,18 +34,5 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
   --with-pglibdir=${LOCALBASE}/lib \
   --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
   --with-pgsharedir=${LOCALBASE}/share/postgresql
-
-DEFAULT_PGSQL_VER?=82
-
-# Setting/finding PostgreSQL version we want.
-.if exists(${LOCALBASE}/bin/postmaster)
-PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
-		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
-.elif exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
-		${SED} -En 's/PostgreSQL[^0-9]*([0-9]*)\.([0-9]+)\..*/\1\2/p'
-.else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
 
 .include <bsd.port.post.mk>
