@@ -32,6 +32,8 @@ MAN1=		motor.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|zxvf|&o|' ${WRKSRC}/share/Makefile.in
+	@${REINPLACE_CMD} -e 's|strndup|my_strndup|' ${WRKSRC}/parser/src/parser.c \
+		${WRKSRC}/parser/src/strfn.c ${WRKSRC}/parser/include/strfn.h
 
 .if !defined(NOPORTDOCS)
 post-install:
