@@ -81,3 +81,4 @@ etc/zoidberg/plugins/ReadLine.pl
 @dirrm etc/zoidberg/plugins
 @dirrm etc/zoidberg/pixmaps
 @dirrm etc/zoidberg
+@dirrmtry %%DOCSDIR%%
