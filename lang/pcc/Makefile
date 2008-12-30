@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pcc
-DATESPEC=	080613
+DATESPEC=	081227
 PORTVERSION=	0.9.9.${DATESPEC}
 PORTREVISION?=	0
 CATEGORIES=	lang
@@ -25,13 +25,18 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DATESPEC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	YACC=${YACC}
+CONFIGURE_TARGET= --build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp \
-		man/man1/pcc.1 man/man1/cpp.1 man/man1/ccom.1
+MAN1=		pcc.1 cpp.1 ccom.1
+PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
+
+OSVERMAJOR=${OSREL:C/\.[0-9.]*//}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/os/freebsd
-	${LN} -sf ${FILESDIR}/*.h ${WRKSRC}/os/freebsd
+	${CP} ${FILESDIR}/*.h ${WRKSRC}/os/freebsd
+	${REINPLACE_CMD} -e "s,%%OSVERMAJOR%%,${OSVERMAJOR}," \
+		${WRKSRC}/os/freebsd/ccconfig.h
 
 .include <bsd.port.mk>
