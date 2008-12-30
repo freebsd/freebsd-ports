@@ -940,6 +940,7 @@
     SUBDIR += p5-Maypole-Component
     SUBDIR += p5-MediaWiki
     SUBDIR += p5-MediaWiki-API
+    SUBDIR += p5-Mojo
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Amazon-AWIS
     SUBDIR += p5-Net-FireEagle
