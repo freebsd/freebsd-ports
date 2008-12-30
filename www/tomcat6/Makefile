@@ -124,7 +124,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
+	@@${FIND} ${APP_HOME} -type d -print0 | xargs -0 ${CHMOD} 755
 	@${ECHO_MSG} " [ DONE ]"
 
 post-install:
