@@ -1,9 +1,11 @@
 --- MANIFEST.orig	2006-02-11 05:32:34.000000000 -0900
-+++ MANIFEST	2008-12-29 17:04:35.000000000 -0900
-@@ -11,10 +11,6 @@
++++ MANIFEST	2008-12-29 17:31:03.000000000 -0900
+@@ -9,12 +9,6 @@
+ bin/AppRun
+ bin/fluff
  Build.PL
- Changes
- configure
+-Changes
+-configure
 -doc/examples/cpan.pl
 -doc/examples/Menu.pl
 -doc/examples/word_expansion.pl
@@ -11,3 +13,11 @@
  etc/zoidrc
  lib/Bundle/Zoidberg.pm
  lib/Zoidberg.pm
+@@ -41,7 +35,6 @@
+ man1/zoiduser.pod
+ MANIFEST
+ META.yml
+-README
+ share/AppInfo.xml
+ share/pixmaps/zoid16.png
+ share/pixmaps/zoid32.png
