@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
