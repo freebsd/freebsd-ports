@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	katapult
-PORTVERSION=	0.3.1.3
-PORTREVISION=	2
+PORTVERSION=	0.3.2.2
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://superb-east.dl.sourceforge.net/sourceforge/katapult/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	SF
 
 MAINTAINER=	yuxi@gmx.net
 COMMENT=	Fast, extensible launcher for KDE similar to Quicksilver on OSX
