@@ -8,9 +8,10 @@
 
 PORTNAME=	zoidberg
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	shells perl5
-MASTER_SITES=	CPAN \
-		http://zoidberg.student.utwente.nl/downloads/Zoidberg/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARDUS
 DISTNAME=	Zoidberg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,11 +24,10 @@ RUN_DEPENDS=	${SITE_PERL}/Exporter/Tidy.pm:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		${SITE_PERL}/Term/ReadLine/Zoid.pm:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
 		${SITE_PERL}/Env/PS1.pm:${PORTSDIR}/devel/p5-Env-PS1
 
-BROKEN=		does not package
-
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	install_path=doc="${DOCSDIR}" \
-		install_path=share="${DATADIR}"
+		install_path=share="${DATADIR}" \
+		install_path=share="${ETCDIR}"
 
 PORTDOCS=	*
 
