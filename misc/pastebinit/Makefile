@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.stgraber.org/download/projects/pastebin/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	EitanAdlerList@gmail.com
 COMMENT=	A command line utility for pastebing
 
 USE_PYTHON=	yes
