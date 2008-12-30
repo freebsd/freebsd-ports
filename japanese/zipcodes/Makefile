@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20081128
+PORTVERSION=	20081226
 CATEGORIES=	japanese
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
@@ -34,12 +34,12 @@ post-extract:
 fetch1:
 	fetch http://www.post.japanpost.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
 	fetch http://www.post.japanpost.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
-	chmod og+r *.lzh
+	${CHMOD} og+r *.lzh
 
 fetch2:
 	m=`stat -f %m ken_all.lzh`; \
-	mv ken_all.lzh `date -r $${m} +ken_all-%Y%m%d.lzh`
+	${MV} ken_all.lzh `date -r $${m} +ken_all-%Y%m%d.lzh`
 	m=`stat -f %m jigyosyo.lzh`; \
-	mv jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
+	${MV} jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
 
 .include <bsd.port.mk>
