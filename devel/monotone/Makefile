@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -49,11 +49,11 @@ CONFIGURE_ARGS+=	--disable-nls
 USE_GETTEXT=	yes
 PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
 		share/locale/es/LC_MESSAGES/monotone.mo \
-		share/locale/fr/LC_MESSAGES/monotone.mo \
 		share/locale/it/LC_MESSAGES/monotone.mo \
-		share/locale/ja/LC_MESSAGES/monotone.mo \
-		share/locale/pt_BR/LC_MESSAGES/monotone.mo \
 		share/locale/sv/LC_MESSAGES/monotone.mo
+#		share/locale/fr/LC_MESSAGES/monotone.mo \
+#		share/locale/ja/LC_MESSAGES/monotone.mo \
+#		share/locale/pt_BR/LC_MESSAGES/monotone.mo \
 .endif
 
 post-extract:
