@@ -391,8 +391,6 @@ System/Tools/Gorm
 @dirrm System/Library/Headers/GormPrefs
 @dirrm System/Library/Headers/GormObjCHeaderParser
 @dirrm System/Library/Headers/GormCore
-@dirrm System/Library/Headers
-@dirrm System/Library
 @dirrm System/Applications/Gorm.app/Resources/Nib.plugin/Resources
 @dirrm System/Applications/Gorm.app/Resources/Nib.plugin
 @dirrm System/Applications/Gorm.app/Resources/Gorm.plugin/Resources
