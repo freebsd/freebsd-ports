@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		Date-Simple
-PORTVERSION=		3.02
+PORTVERSION=		3.03
 CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		araujo@FreeBSD.org
 COMMENT=		A simple date object
 
 PERL_CONFIGURE=		yes
