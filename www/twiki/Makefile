@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.2.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -37,8 +36,6 @@ RUN_DEPENDS=	\
 		p5-Time-Local>=0:${PORTSDIR}/devel/p5-Time-Local \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
-
-FORBIDDEN=	Remote server compromise vulnerability in this version
 
 USE_PERL5=	yes
 
