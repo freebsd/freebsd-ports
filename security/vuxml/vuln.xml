@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8f483746-d45d-11dd-84ec-001fc66e7203">
+    <topic>roundcube -- remote execution of arbitrary code</topic>
+    <affects>
+      <package>
+        <name>roundcube</name>
+        <range><lt>0.2.b2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Entry for CVE-2008-5619 says:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5619">
+	  <p>html2text.php in RoundCube Webmail (roundcubemail)
+	    0.2-1.alpha and 0.2-3.beta allows remote attackers to execute
+	    arbitrary code via crafted input that is processed by the
+	    preg_replace function with the eval switch.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5619</cvename>
+      <url>http://trac.roundcube.net/ticket/1485618</url>
+    </references>
+    <dates>
+      <discovery>2008-12-12</discovery>
+      <entry>2008-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="738f8f9e-d661-11dd-a765-0030843d3802">
     <topic>mysql -- MyISAM table privileges security bypass vulnerability for symlinked paths</topic>
     <affects>
