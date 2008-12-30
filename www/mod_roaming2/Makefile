@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	mod_roaming2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0b1
 CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_roaming/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	20
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
 PORTDOCS=	CHANGES	INSTALL	LICENSE	README
