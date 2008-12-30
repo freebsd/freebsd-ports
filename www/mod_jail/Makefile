@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_jail
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://igorpopov.newmail.ru/
 
