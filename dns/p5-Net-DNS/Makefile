@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	ipcount:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--no-online-tests
+CONFIGURE_ARGS+=	--no-online-tests --no-IPv6-tests
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
@@ -40,6 +40,7 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Resolver::Win32.3 Net::DNS::RR::SSHFP.3 \
 		Net::DNS::Resolver::Base.3 Net::DNS::Resolver::UNIX.3 \
 		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
+		Net::DNS::RR::APL.3 Net::DNS::RR::APL::ApItem.3 \
 		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
 
 OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on

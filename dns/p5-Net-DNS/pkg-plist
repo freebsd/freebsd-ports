@@ -5,9 +5,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Packet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Question.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/APL/ApItem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/A.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/AAAA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/AFSDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/APL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/CERT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/CNAME.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/DNAME.pm
@@ -54,6 +56,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/APL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
