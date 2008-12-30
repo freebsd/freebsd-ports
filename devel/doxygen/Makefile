@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.7.1
+PORTVERSION=	1.5.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -21,13 +21,29 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 USE_BISON=	build
 USE_ICONV=	yes
 ALL_TARGET=	all
+USE_PERL5=	yes
+HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+QT_NONSTANDARD=	yes	# non-standard configure arguments
+CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
+		--install "${INSTALL}"
+CONFIGURE_ENV=	CXX="${CXX}"
 
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
 		--exclude '*/libmd5'	\
 		--exclude '*/libpng'	\
 		--exclude '*/tmake'
 
-CONFIGURE_ENV+=	CXX="${CXX}"
+PLIST=		${WRKDIR}/plist
+TMPDOCDEST=	${WRKDIR}/tmpdocdest
+
+PLIST_FILES=	bin/doxygen \
+		bin/doxytag
+
+OPTIONS=	DOXYWIZARD "Enable doxywizard" on \
+		LATEX "Enable LaTeX support" on
+
+.include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	docs
@@ -44,12 +60,8 @@ MAKE_ARGS+=	HAVE_LATEX=yes
 .endif # !defined(NOPORTDOCS)
 
 .if !defined(WITHOUT_DOXYWIZARD)
-USE_QT_VER=	3
-QT_INC=		${LOCALBASE}/include
-QTNAME=		qt-mt
-QT_OPENGL=
-THREADLIBS=	${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui xml qmake_build moc_build rcc_build
 
 # Need this in env for build
 QTDIR?=		${QT_PREFIX}
@@ -57,26 +69,15 @@ CONFIGURE_ENV+=	QTDIR="${QTDIR}"
 CONFIGURE_ARGS+=--with-doxywizard
 .endif # !WITHOUT_DOXYWIZARD
 
-USE_PERL5=	yes
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-QT_NONSTANDARD=	yes	# non-standard configure arguments
-CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
-		--install "${INSTALL}"
-
 .if ${MACHINE_ARCH:L} == alpha
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
-PLIST=		${WRKDIR}/plist
-TMPDOCDEST=	${WRKDIR}/tmpdocdest
-
-PLIST_FILES=	bin/doxygen \
-		bin/doxytag
-
 .ifndef WITHOUT_DOXYWIZARD
 PLIST_FILES+=	bin/doxywizard
 .endif
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
@@ -132,4 +133,4 @@ do-install:
 		| ${TAR} -C ${PREFIX}/share/doc --unlink -xf -
 .endif # ! NOPORTDOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

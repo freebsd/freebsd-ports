@@ -1,0 +1,22 @@
+--- addon/doxywizard/Makefile.in.orig	2008-12-06 08:14:58.000000000 -0500
++++ addon/doxywizard/Makefile.in	2008-12-28 15:32:07.000000000 -0500
+@@ -10,16 +10,16 @@
+ # See the GNU General Public License for more details.
+ # 
+ 
+-QMAKE = qmake
++QMAKE = qmake-qt4
+ 
+ all: Makefile.doxywizard  
+ 	$(MAKE) -f Makefile.doxywizard 
+ 
+ Makefile.doxywizard: doxywizard.pro
+-	$(QTDIR)/bin/qmake doxywizard.pro -o Makefile.doxywizard
++	$(QTDIR)/bin/qmake-qt4 doxywizard.pro -o Makefile.doxywizard
+ 
+ qmake: 
+-	$(QTDIR)/bin/qmake doxywizard.pro -o Makefile.doxywizard
++	$(QTDIR)/bin/qmake-qt4 doxywizard.pro -o Makefile.doxywizard
+ 
+ clean: Makefile.doxywizard 
+ 	$(MAKE) -f Makefile.doxywizard clean 
