@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20081230:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: pneumann@gmail.com
+
+  The database schema has changed between RabbitMQ-1.4.0 and this
+  release. When the RabbitMQ server detects the presence of an old
+  database, it moves it to a backup location, creates a fresh, empty
+  database, and logs a warning.
+
 20081226:
   AFFECTS: users of www/rt38
   AUTHOR: pgollucci@FreeBSD.org
