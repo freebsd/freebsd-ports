@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		zkt
-PORTVERSION=		0.97
-PORTREVISION=		1
+PORTVERSION=		0.98
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.hznet.de/dns/zkt/
@@ -28,13 +27,13 @@ CONFIGURE_ARGS+=	--enable-configpath=${DIR_NAMED_CONF}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/named/|${DIR_NAMED_CONF}/|g' ${WRKSRC}/*.8
+	@${REINPLACE_CMD} -e 's|/var/named/|${DIR_NAMED_CONF}/|g' ${WRKSRC}/man/*.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnssec-zkt ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/dnssec-signer ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/zkt-soaserial ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/dnssec-zkt.8 ${PREFIX}/man/man8/
-	${INSTALL_MAN} ${WRKSRC}/dnssec-signer.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/dnssec-zkt.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/dnssec-signer.8 ${PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>
