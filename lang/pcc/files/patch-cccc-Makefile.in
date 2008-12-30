@@ -1,14 +1,13 @@
---- cc/cc/Makefile.in.orig	2008-05-19 22:38:04.000000000 -0700
-+++ cc/cc/Makefile.in	2008-06-16 07:49:59.000000000 -0700
-@@ -53,8 +53,9 @@ install:
+Index: cc/cc/Makefile.in
+@@ -59,8 +59,9 @@
  	fi
  	test -z "${DESTDIR}$(mandir)/man1" || mkdir -p "${DESTDIR}$(mandir)/man1"
- 	${INSTALL} cc.1 ${DESTDIR}${mandir}/man1/${DEST}.1
--	test -z "$(PCCINCDIR)" || mkdir -p "$(PCCINCDIR)"
--	test -z "$(PCCLIBDIR)" || mkdir -p "$(PCCLIBDIR)"
+ 	${INSTALL} $(srcdir)/cc.1 ${DESTDIR}${mandir}/man1/${DEST}.1
+-	test -z "${DESTDIR}$(PCCINCDIR)" || mkdir -p "${DESTDIR}$(PCCINCDIR)"
+-	test -z "${DESTDIR}$(PCCLIBDIR)" || mkdir -p "${DESTDIR}$(PCCLIBDIR)"
 +	# Don't make unused empty directories for no reason.
-+	#test -z "$(PCCINCDIR)" || mkdir -p "$(PCCINCDIR)"
-+	#test -z "$(PCCLIBDIR)" || mkdir -p "$(PCCLIBDIR)"
++	#test -z "${DESTDIR}$(PCCINCDIR)" || mkdir -p "${DESTDIR}$(PCCINCDIR)"
++	#test -z "${DESTDIR}$(PCCLIBDIR)" || mkdir -p "${DESTDIR}$(PCCLIBDIR)"
  
  clean:
  	/bin/rm -f  $(OBJS) ${DEST}
