@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyawale
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pyawale/ CENKES
 
@@ -27,7 +27,7 @@ do-build:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "data doc src" ${DATADIR}/
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "data docs src" ${DATADIR}/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
