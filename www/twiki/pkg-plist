@@ -312,6 +312,8 @@
 %%TWDIR%%/data/TWiki/TWikiI18NExtractDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiIfNodeDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiIfNodeDotPm.txt,v
+%%TWDIR%%/data/TWiki/TWikiIfOP_iswebDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiIfOP_iswebDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiIfParserDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiIfParserDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiInfixErrorDotPm.txt
@@ -458,8 +460,8 @@
 %%TWDIR%%/data/TWiki/TWikiUserMappingDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersApacheHtpasswdUserDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersApacheHtpasswdUserDotPm.txt,v
-%%TWDIR%%/data/TWiki/TWikiUsersBaseUserMappingDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersBaseUserMappingDotPm.txt
+%%TWDIR%%/data/TWiki/TWikiUsersBaseUserMappingDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersDotPm.txt
 %%TWDIR%%/data/TWiki/TWikiUsersDotPm.txt,v
 %%TWDIR%%/data/TWiki/TWikiUsersGuide.txt
@@ -878,6 +880,8 @@
 %%TWDIR%%/lib/DEPENDENCIES
 %%TWDIR%%/lib/MANIFEST
 %%TWDIR%%/lib/Monitor.pm
+%%TWDIR%%/lib/TWiki.pm
+%%TWDIR%%/lib/TWiki.spec
 %%TWDIR%%/lib/TWiki/Access.pm
 %%TWDIR%%/lib/TWiki/AccessControlException.pm
 %%TWDIR%%/lib/TWiki/AggregateIterator.pm
@@ -988,6 +992,7 @@
 %%TWDIR%%/lib/TWiki/Configure/UIs/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Valuer.pm
+%%TWDIR%%/lib/TWiki/Form.pm
 %%TWDIR%%/lib/TWiki/Form/Checkbox.pm
 %%TWDIR%%/lib/TWiki/Form/FieldDefinition.pm
 %%TWDIR%%/lib/TWiki/Form/Label.pm
@@ -996,48 +1001,75 @@
 %%TWDIR%%/lib/TWiki/Form/Select.pm
 %%TWDIR%%/lib/TWiki/Form/Text.pm
 %%TWDIR%%/lib/TWiki/Form/Textarea.pm
-%%TWDIR%%/lib/TWiki/Form.pm
 %%TWDIR%%/lib/TWiki/Func.pm
+%%TWDIR%%/lib/TWiki/I18N.pm
 %%TWDIR%%/lib/TWiki/I18N/Extract.pm
 %%TWDIR%%/lib/TWiki/I18N/Fallback.pm
-%%TWDIR%%/lib/TWiki/I18N.pm
 %%TWDIR%%/lib/TWiki/If/Node.pm
+%%TWDIR%%/lib/TWiki/If/OP_allows.pm
+%%TWDIR%%/lib/TWiki/If/OP_context.pm
+%%TWDIR%%/lib/TWiki/If/OP_defined.pm
+%%TWDIR%%/lib/TWiki/If/OP_dollar.pm
+%%TWDIR%%/lib/TWiki/If/OP_ingroup.pm
+%%TWDIR%%/lib/TWiki/If/OP_istopic.pm
+%%TWDIR%%/lib/TWiki/If/OP_isweb.pm
 %%TWDIR%%/lib/TWiki/If/Parser.pm
 %%TWDIR%%/lib/TWiki/Infix/Error.pm
 %%TWDIR%%/lib/TWiki/Infix/Node.pm
 %%TWDIR%%/lib/TWiki/Infix/Parser.pm
 %%TWDIR%%/lib/TWiki/LineIterator.pm
 %%TWDIR%%/lib/TWiki/ListIterator.pm
+%%TWDIR%%/lib/TWiki/LoginManager.pm
 %%TWDIR%%/lib/TWiki/LoginManager/ApacheLogin.pm
 %%TWDIR%%/lib/TWiki/LoginManager/TemplateLogin.pm
-%%TWDIR%%/lib/TWiki/LoginManager.pm
 %%TWDIR%%/lib/TWiki/Merge.pm
 %%TWDIR%%/lib/TWiki/Meta.pm
+%%TWDIR%%/lib/TWiki/Net.pm
 %%TWDIR%%/lib/TWiki/Net/HTTPResponse.pm
 %%TWDIR%%/lib/TWiki/Net/UserCredAgent.pm
-%%TWDIR%%/lib/TWiki/Net.pm
 %%TWDIR%%/lib/TWiki/OopsException.pm
 %%TWDIR%%/lib/TWiki/Plugin.pm
 %%TWDIR%%/lib/TWiki/Plugins.pm
 %%TWDIR%%/lib/TWiki/Plurals.pm
+%%TWDIR%%/lib/TWiki/Prefs.pm
 %%TWDIR%%/lib/TWiki/Prefs/Parser.pm
 %%TWDIR%%/lib/TWiki/Prefs/PrefsCache.pm
-%%TWDIR%%/lib/TWiki/Prefs.pm
+%%TWDIR%%/lib/TWiki/Query/BinaryOP.pm
 %%TWDIR%%/lib/TWiki/Query/HoistREs.pm
 %%TWDIR%%/lib/TWiki/Query/Node.pm
+%%TWDIR%%/lib/TWiki/Query/OP_and.pm
+%%TWDIR%%/lib/TWiki/Query/OP_d2n.pm
+%%TWDIR%%/lib/TWiki/Query/OP_dot.pm
+%%TWDIR%%/lib/TWiki/Query/OP_eq.pm
+%%TWDIR%%/lib/TWiki/Query/OP_gt.pm
+%%TWDIR%%/lib/TWiki/Query/OP_gte.pm
+%%TWDIR%%/lib/TWiki/Query/OP_lc.pm
+%%TWDIR%%/lib/TWiki/Query/OP_length.pm
+%%TWDIR%%/lib/TWiki/Query/OP_like.pm
+%%TWDIR%%/lib/TWiki/Query/OP_lt.pm
+%%TWDIR%%/lib/TWiki/Query/OP_lte.pm
+%%TWDIR%%/lib/TWiki/Query/OP_ne.pm
+%%TWDIR%%/lib/TWiki/Query/OP_not.pm
+%%TWDIR%%/lib/TWiki/Query/OP_ob.pm
+%%TWDIR%%/lib/TWiki/Query/OP_or.pm
+%%TWDIR%%/lib/TWiki/Query/OP_ref.pm
+%%TWDIR%%/lib/TWiki/Query/OP_uc.pm
+%%TWDIR%%/lib/TWiki/Query/OP_where.pm
 %%TWDIR%%/lib/TWiki/Query/Parser.pm
+%%TWDIR%%/lib/TWiki/Query/UnaryOP.pm
 %%TWDIR%%/lib/TWiki/Render.pm
 %%TWDIR%%/lib/TWiki/Sandbox.pm
 %%TWDIR%%/lib/TWiki/Search.pm
+%%TWDIR%%/lib/TWiki/Store.pm
 %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms/BruteForce.pm
 %%TWDIR%%/lib/TWiki/Store/RcsFile.pm
 %%TWDIR%%/lib/TWiki/Store/RcsLite.pm
 %%TWDIR%%/lib/TWiki/Store/RcsWrap.pm
 %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms/Forking.pm
 %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms/PurePerl.pm
-%%TWDIR%%/lib/TWiki/Store.pm
 %%TWDIR%%/lib/TWiki/Templates.pm
 %%TWDIR%%/lib/TWiki/Time.pm
+%%TWDIR%%/lib/TWiki/UI.pm
 %%TWDIR%%/lib/TWiki/UI/ChangeForm.pm
 %%TWDIR%%/lib/TWiki/UI/Changes.pm
 %%TWDIR%%/lib/TWiki/UI/Edit.pm
@@ -1051,15 +1083,12 @@
 %%TWDIR%%/lib/TWiki/UI/Statistics.pm
 %%TWDIR%%/lib/TWiki/UI/Upload.pm
 %%TWDIR%%/lib/TWiki/UI/View.pm
-%%TWDIR%%/lib/TWiki/UI.pm
 %%TWDIR%%/lib/TWiki/UserMapping.pm
+%%TWDIR%%/lib/TWiki/Users.pm
 %%TWDIR%%/lib/TWiki/Users/ApacheHtpasswdUser.pm
 %%TWDIR%%/lib/TWiki/Users/BaseUserMapping.pm
 %%TWDIR%%/lib/TWiki/Users/HtPasswdUser.pm
 %%TWDIR%%/lib/TWiki/Users/Password.pm
-%%TWDIR%%/lib/TWiki/Users.pm
-%%TWDIR%%/lib/TWiki.pm
-%%TWDIR%%/lib/TWiki.spec
 %%TWDIR%%/locale/TWiki.pot
 %%TWDIR%%/locale/bg.po
 %%TWDIR%%/locale/cs.po
@@ -1078,6 +1107,7 @@
 %%TWDIR%%/locale/uk.po
 %%TWDIR%%/locale/zh-cn.po
 %%TWDIR%%/locale/zh-tw.po
+%%TWDIR%%/pub-htaccess.txt
 %%TWDIR%%/pub/Main/WebPreferences/favicon.ico
 %%TWDIR%%/pub/Main/WebPreferences/logo.gif
 %%TWDIR%%/pub/Sandbox/WebPreferences/favicon.ico
@@ -1327,6 +1357,11 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tag-red.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tag-yellow.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tag.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-blue.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-gray.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-green.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-orange.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/target-red.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/target.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/tip.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/todo.gif
@@ -1445,7 +1480,6 @@
 %%TWDIR%%/pub/Trash/WebPreferences/logo.gif
 %%TWDIR%%/pub/_default/WebPreferences/favicon.ico
 %%TWDIR%%/pub/_default/WebPreferences/logo.gif
-%%TWDIR%%/pub-htaccess.txt
 %%TWDIR%%/readme.txt
 %%TWDIR%%/robots.txt
 %%TWDIR%%/root-htaccess.txt
@@ -1488,6 +1522,8 @@
 %%TWDIR%%/templates/registerconfirm.tmpl
 %%TWDIR%%/templates/registernotify.tmpl
 %%TWDIR%%/templates/registernotifyadmin.tmpl
+%%TWDIR%%/templates/registernotifyadminfail.tmpl
+%%TWDIR%%/templates/registernotifyadminfailrem.tmpl
 %%TWDIR%%/templates/rename.tmpl
 %%TWDIR%%/templates/renamebase.tmpl
 %%TWDIR%%/templates/renameconfirm.tmpl
@@ -1523,69 +1559,69 @@
 %%TWDIR%%/working/registration_approvals/README
 %%TWDIR%%/working/tmp/README
 %%TWDIR%%/working/work_areas/README
-@dirrm %%TWDIR%%/bin/logos
-@dirrm %%TWDIR%%/bin
-@dirrm %%TWDIR%%/data/Main
-@dirrm %%TWDIR%%/data/Sandbox
-@dirrm %%TWDIR%%/data/TWiki
-@dirrm %%TWDIR%%/data/Trash
-@dirrm %%TWDIR%%/data/_default
-@dirrm %%TWDIR%%/data/_empty
-@dirrm %%TWDIR%%/data
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Htpasswd
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/RCS
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Register
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Sessions
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Site
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers
-@dirrm %%TWDIR%%/lib/TWiki/Configure/Types
-@dirrm %%TWDIR%%/lib/TWiki/Configure/UIs
-@dirrm %%TWDIR%%/lib/TWiki/Configure
-@dirrm %%TWDIR%%/lib/TWiki/Form
-@dirrm %%TWDIR%%/lib/TWiki/I18N
-@dirrm %%TWDIR%%/lib/TWiki/If
-@dirrm %%TWDIR%%/lib/TWiki/Infix
-@dirrm %%TWDIR%%/lib/TWiki/LoginManager
-@dirrm %%TWDIR%%/lib/TWiki/Net
-@dirrm %%TWDIR%%/lib/TWiki/Prefs
-@dirrm %%TWDIR%%/lib/TWiki/Query
-@dirrm %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms
-@dirrm %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms
-@dirrm %%TWDIR%%/lib/TWiki/Store
-@dirrm %%TWDIR%%/lib/TWiki/UI
-@dirrm %%TWDIR%%/lib/TWiki/Users
-@dirrm %%TWDIR%%/lib/TWiki
-@dirrm %%TWDIR%%/lib
-@dirrm %%TWDIR%%/locale
-@dirrm %%TWDIR%%/pub/Main/WebPreferences
-@dirrm %%TWDIR%%/pub/Main
-@dirrm %%TWDIR%%/pub/Sandbox/WebPreferences
-@dirrm %%TWDIR%%/pub/Sandbox
-@dirrm %%TWDIR%%/pub/TWiki/ATasteOfTWiki
-@dirrm %%TWDIR%%/pub/TWiki/FileAttachment
-@dirrm %%TWDIR%%/pub/TWiki/PlainSkin
-@dirrm %%TWDIR%%/pub/TWiki/PreviewBackground
-@dirrm %%TWDIR%%/pub/TWiki/PrintSkin
-@dirrm %%TWDIR%%/pub/TWiki/TWiki
-@dirrm %%TWDIR%%/pub/TWiki/TWikiContributor
-@dirrm %%TWDIR%%/pub/TWiki/TWikiDocGraphics
-@dirrm %%TWDIR%%/pub/TWiki/TWikiJavascripts
-@dirrm %%TWDIR%%/pub/TWiki/TWikiLogos
-@dirrm %%TWDIR%%/pub/TWiki/TWikiTemplates
-@dirrm %%TWDIR%%/pub/TWiki/WabiSabi
-@dirrm %%TWDIR%%/pub/TWiki/WebPreferences
-@dirrm %%TWDIR%%/pub/TWiki/WindowsInstallCookbook
-@dirrm %%TWDIR%%/pub/TWiki
-@dirrm %%TWDIR%%/pub/Trash/WebPreferences
-@dirrm %%TWDIR%%/pub/Trash
+@dirrm %%TWDIR%%/working/work_areas
+@dirrm %%TWDIR%%/working/tmp
+@dirrm %%TWDIR%%/working/registration_approvals
+@dirrm %%TWDIR%%/working
+@dirrm %%TWDIR%%/tools
+@dirrm %%TWDIR%%/templates
 @dirrm %%TWDIR%%/pub/_default/WebPreferences
 @dirrm %%TWDIR%%/pub/_default
+@dirrm %%TWDIR%%/pub/Trash/WebPreferences
+@dirrm %%TWDIR%%/pub/Trash
+@dirrm %%TWDIR%%/pub/TWiki/WindowsInstallCookbook
+@dirrm %%TWDIR%%/pub/TWiki/WebPreferences
+@dirrm %%TWDIR%%/pub/TWiki/WabiSabi
+@dirrm %%TWDIR%%/pub/TWiki/TWikiTemplates
+@dirrm %%TWDIR%%/pub/TWiki/TWikiLogos
+@dirrm %%TWDIR%%/pub/TWiki/TWikiJavascripts
+@dirrm %%TWDIR%%/pub/TWiki/TWikiDocGraphics
+@dirrm %%TWDIR%%/pub/TWiki/TWikiContributor
+@dirrm %%TWDIR%%/pub/TWiki/TWiki
+@dirrm %%TWDIR%%/pub/TWiki/PrintSkin
+@dirrm %%TWDIR%%/pub/TWiki/PreviewBackground
+@dirrm %%TWDIR%%/pub/TWiki/PlainSkin
+@dirrm %%TWDIR%%/pub/TWiki/FileAttachment
+@dirrm %%TWDIR%%/pub/TWiki/ATasteOfTWiki
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub/Sandbox/WebPreferences
+@dirrm %%TWDIR%%/pub/Sandbox
+@dirrm %%TWDIR%%/pub/Main/WebPreferences
+@dirrm %%TWDIR%%/pub/Main
 @dirrm %%TWDIR%%/pub
-@dirrm %%TWDIR%%/templates
-@dirrm %%TWDIR%%/tools
-@dirrm %%TWDIR%%/working/registration_approvals
-@dirrm %%TWDIR%%/working/tmp
-@dirrm %%TWDIR%%/working/work_areas
-@dirrm %%TWDIR%%/working
+@dirrm %%TWDIR%%/locale
+@dirrm %%TWDIR%%/lib/TWiki/Users
+@dirrm %%TWDIR%%/lib/TWiki/UI
+@dirrm %%TWDIR%%/lib/TWiki/Store/SearchAlgorithms
+@dirrm %%TWDIR%%/lib/TWiki/Store/QueryAlgorithms
+@dirrm %%TWDIR%%/lib/TWiki/Store
+@dirrm %%TWDIR%%/lib/TWiki/Query
+@dirrm %%TWDIR%%/lib/TWiki/Prefs
+@dirrm %%TWDIR%%/lib/TWiki/Net
+@dirrm %%TWDIR%%/lib/TWiki/LoginManager
+@dirrm %%TWDIR%%/lib/TWiki/Infix
+@dirrm %%TWDIR%%/lib/TWiki/If
+@dirrm %%TWDIR%%/lib/TWiki/I18N
+@dirrm %%TWDIR%%/lib/TWiki/Form
+@dirrm %%TWDIR%%/lib/TWiki/Configure/UIs
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Types
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Site
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Sessions
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Register
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/RCS
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers/Htpasswd
+@dirrm %%TWDIR%%/lib/TWiki/Configure/Checkers
+@dirrm %%TWDIR%%/lib/TWiki/Configure
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/data/_empty
+@dirrm %%TWDIR%%/data/_default
+@dirrm %%TWDIR%%/data/Trash
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data/Sandbox
+@dirrm %%TWDIR%%/data/Main
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/bin/logos
+@dirrm %%TWDIR%%/bin
 @dirrm %%TWDIR%%
 @dirrmtry share/twiki
