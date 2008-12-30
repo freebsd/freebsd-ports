@@ -8,7 +8,7 @@
 
 PORTNAME=	zoidberg
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARDUS
@@ -49,6 +49,11 @@ MAN3=	Bundle::Zoidberg.3 \
 	Zoidberg::Utils::FileSystem.3 \
 	Zoidberg::Utils::GetOpt.3 \
 	Zoidberg::Utils::Output.3
+
+post-extract:
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-MANIFEST
+.endif
 
 post-install:
 	@${ECHO_CMD} ${PREFIX}/bin/zoid >> /etc/shells
