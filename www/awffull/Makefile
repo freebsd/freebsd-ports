@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	awffull
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	3.10.2
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
@@ -18,19 +18,35 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png \
 		pcre.0:${PORTSDIR}/devel/pcre
 
+RUN_DEPENDS?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+BUILD_DEPENS=	${RUN_DEPENDS}
+
+FONTDEFAULT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraBd.ttf
+FONTLABEL?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+
 OPTIONS=	GEOIP "Enable support for GeoIP (Country Detection)" Off
 
+USE_ICONV=	yes
 USE_GETTEXT=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-pnglib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-font-default=${FONTDEFAULT} \
+		--with-font-label=${FONTLABEL}
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		awffull.1
+MAN5=		awffull.conf.5
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GEOIP)
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+CONFIGURE_ARGS+=--enable-geoip
+.else
+CONFIGURE_ARGS+=--disable-geoip
 .endif
 
 .include <bsd.port.post.mk>
