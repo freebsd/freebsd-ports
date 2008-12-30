@@ -1425,6 +1425,7 @@ cheetah                         ports/www/cheetah
 chef                            ports/misc/chef
 chemeq                          ports/biology/chemeq
 chemical-mime-data              ports/science/chemical-mime-data
+chems                           ports/www/chems
 chemtool                        ports/science/chemtool
 chemtool-devel                  ports/science/chemtool-devel
 cherokee                        ports/www/cherokee
@@ -3679,6 +3680,7 @@ fusefs-encfs                    ports/sysutils/fusefs-encfs
 fusefs-funionfs                 ports/sysutils/fusefs-funionfs
 fusefs-gnome-vfs                ports/sysutils/fusefs-gnome-vfs
 fusefs-gphotofs                 ports/graphics/fusefs-gphotofs
+fusefs-gstfs                    ports/sysutils/fusefs-gstfs
 fusefs-gunzip                   ports/sysutils/fusefs-gunzip
 fusefs-httpfs                   ports/sysutils/fusefs-httpfs
 fusefs-kmod                     ports/sysutils/fusefs-kmod
@@ -5706,7 +5708,6 @@ ja-monafonts                    ports/japanese/monafonts
 ja-monafonts-ttf                ports/japanese/monafonts-ttf
 ja-mozilla-jlp                  ports/japanese/mozilla-jlp
 ja-mplusfonts                   ports/japanese/mplusfonts
-ja-msdosfs                      ports/japanese/msdosfs
 ja-mtools                       ports/japanese/mtools
 ja-multiskkserv                 ports/japanese/multiskkserv
 ja-mutt                         ports/japanese/mutt
@@ -6595,7 +6596,6 @@ ko-linuxdoc-sgml                ports/korean/linuxdoc-sgml
 ko-man-doc                      ports/korean/man-doc
 ko-mizifont                     ports/korean/mizifont
 ko-mod_url                      ports/korean/mod_url
-ko-msdosfs                      ports/korean/msdosfs
 ko-munhwafonts-cid              ports/korean/munhwafonts-cid
 ko-nabi                         ports/korean/nabi
 ko-nh2ps                        ports/korean/nh2ps
@@ -10491,6 +10491,7 @@ p5-Data-ObjectDriver            ports/devel/p5-Data-ObjectDriver
 p5-Data-OptList                 ports/devel/p5-Data-OptList
 p5-Data-Page                    ports/databases/p5-Data-Page
 p5-Data-Pageset                 ports/databases/p5-Data-Pageset
+p5-Data-ParseBinary             ports/devel/p5-Data-ParseBinary
 p5-Data-Password                ports/security/p5-Data-Password
 p5-Data-Postponed               ports/devel/p5-Data-Postponed
 p5-Data-Properties              ports/devel/p5-Data-Properties
@@ -13635,6 +13636,7 @@ p5-data-objectdriver            ports/devel/p5-Data-ObjectDriver
 p5-data-optlist                 ports/devel/p5-Data-OptList
 p5-data-page                    ports/databases/p5-Data-Page
 p5-data-pageset                 ports/databases/p5-Data-Pageset
+p5-data-parsebinary             ports/devel/p5-Data-ParseBinary
 p5-data-password                ports/security/p5-Data-Password
 p5-data-postponed               ports/devel/p5-Data-Postponed
 p5-data-properties              ports/devel/p5-Data-Properties
@@ -17174,6 +17176,7 @@ phpip                           ports/net-mgmt/phpip
 phpldapadmin                    ports/net/phpldapadmin
 phpldapadmin098                 ports/net/phpldapadmin098
 phplist                         ports/mail/phplist
+phplogcon                       ports/sysutils/phplogcon
 phplot                          ports/graphics/phplot
 phpmailer                       ports/mail/phpmailer
 phpminadmin                     ports/databases/phpminadmin
@@ -17977,6 +17980,7 @@ py-dpkt                         ports/net/py-dpkt
 py-dsv                          ports/textproc/py-dsv
 py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
+py-dynrules                     ports/devel/py-dynrules
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
 py-elixir                       ports/databases/py-Elixir
@@ -18256,6 +18260,7 @@ py-pylib                        ports/devel/py-pylib
 py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pymc                         ports/math/py-pymc
+py-pyme                         ports/security/py-pyme
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
@@ -18567,6 +18572,8 @@ python-mode.el                  ports/lang/python-mode.el
 python23                        ports/lang/python23
 python24                        ports/lang/python24
 python25                        ports/lang/python25
+python26                        ports/lang/python26
+python30                        ports/lang/python30
 pythoncad                       ports/cad/pythoncad
 pythonchess                     ports/games/pythonchess
 pythondirector                  ports/net/pythondirector
@@ -19487,6 +19494,7 @@ rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-daemons                 ports/devel/rubygem-daemons
+rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
@@ -19521,10 +19529,12 @@ rubygem-linecache               ports/devel/rubygem-linecache
 rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
+rubygem-markaby                 ports/textproc/rubygem-markaby
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-merb                    ports/www/rubygem-merb
+rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-mojombo-grit            ports/devel/rubygem-mojombo-grit
@@ -19600,6 +19610,7 @@ rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uuid                    ports/devel/rubygem-uuid
+rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yapra                   ports/www/rubygem-yapra
@@ -21728,6 +21739,7 @@ vnc2swf                         ports/net/vnc2swf
 vnccrack                        ports/security/vnccrack
 vncreflector                    ports/net/vncreflector
 vnstat                          ports/net/vnstat
+vnstati                         ports/net/vnstati
 vobcopy                         ports/sysutils/vobcopy
 vodcatcher                      ports/multimedia/vodcatcher
 vodmr                           ports/mail/vodmr
@@ -21887,6 +21899,7 @@ weex                            ports/ftp/weex
 weka                            ports/textproc/weka
 weplab                          ports/net-mgmt/weplab
 wesnoth                         ports/games/wesnoth
+wesnoth-devel                   ports/games/wesnoth-devel
 westhawksnmp                    ports/java/westhawksnmp
 wfb2sql                         ports/databases/wfb2sql
 wfmath                          ports/math/wfmath
