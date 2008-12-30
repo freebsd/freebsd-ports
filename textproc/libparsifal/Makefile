@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yzlin@cs.nctu.edu.tw
 COMMENT=	Lightweight XML Parser
 
 USE_AUTOTOOLS=	libtool:15
@@ -30,10 +29,7 @@ post-patch:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-.for D in "" csrchtml pics
-	@${MKDIR} ${DOCSDIR}/${D}
-	${INSTALL_DATA} ${WRKSRC}/doc/${D}/*.* ${DOCSDIR}/${D}
-.endfor
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
