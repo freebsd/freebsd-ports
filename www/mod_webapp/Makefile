@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_webapp
 PORTVERSION=	4.1.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
@@ -16,8 +16,6 @@ DIST_SUBDIR=	mod_webapp
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
-
-BROKEN=		does not build
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
 
@@ -32,18 +30,14 @@ USE_LDCONFIG=	yes
 TOMCAT_RELEASE=		${PORTVERSION}
 CONNECTORS_RELEASE=	${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on amd64 or ia64"
-.endif
+ONLY_FOR_ARCHS=	i386 sparc64
 
 # Apache locations.
 APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
 APR_INCLUDE?=	${LOCALBASE}/include/apr-${APR_MAJORVER}/
 APACHE_MODULES?=libexec/apache
-APR_VER!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V PORTVERSION
+APR_VER!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V APR_VERSION
 APR_WRKSRC!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V WRKSRC
 APR_MAJORVER=	${APR_VER:C/\..*//g}
 APR_SRC=	${APR_WRKSRC}/apr-${APR_VER}
@@ -84,4 +78,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/INSTALL.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
