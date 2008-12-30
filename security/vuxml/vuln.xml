@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c5bd5b8-d652-11dd-a765-0030843d3802">
+    <topic>mplayer -- twinvq processing buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.11_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A trapkit reports:</p>
+	<blockquote cite="http://trapkit.de/advisories/TKADV2008-014.txt">
+	  <p>MPlayer contains a stack buffer overflow vulnerability while
+	    parsing malformed TwinVQ media files. The vulnerability may be
+	    exploited by a (remote) attacker to execute arbitrary code in
+	    the context of MPlayer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5616</cvename>
+      <url>http://secunia.com/advisories/33136/</url>
+      <url>http://trapkit.de/advisories/TKADV2008-014.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-12-14</discovery>
+      <entry>2008-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ac68e68-d32b-11dd-b540-d1288664c17e">
     <topic>ampache -- insecure temporary file usage</topic>
     <affects>
