@@ -1,3 +1,4 @@
+@unexec /bin/rm -f %D/www/data/free-sa/themes/default
 bin/free-sa
 etc/free-sa/downloads-archives.sample
 etc/free-sa/downloads-cddvd.sample
@@ -7,16 +8,16 @@ etc/free-sa/downloads-code.sample
 etc/free-sa/downloads-video.sample
 etc/free-sa/downloads.sample
 etc/free-sa/free-sa.conf.sample
-share/free-sa/be.cp1251
-share/free-sa/cs.iso88592
-share/free-sa/de.iso88591
-share/free-sa/en.iso88591
-share/free-sa/et.iso88591
-share/free-sa/fr.iso88591
-share/free-sa/it.iso88591
-share/free-sa/ru.koi8r
-share/free-sa/sk.iso88592
-share/free-sa/es.iso88591
+%%DATADIR%%/be.cp1251
+%%DATADIR%%/cs.iso88592
+%%DATADIR%%/de.iso88591
+%%DATADIR%%/en.iso88591
+%%DATADIR%%/et.iso88591
+%%DATADIR%%/fr.iso88591
+%%DATADIR%%/it.iso88591
+%%DATADIR%%/ru.koi8r
+%%DATADIR%%/sk.iso88592
+%%DATADIR%%/es.iso88591
 www/data/free-sa/sa.js
 www/data/free-sa/c.png
 www/data/free-sa/d.png
@@ -26,7 +27,6 @@ www/data/free-sa/gsa.css
 www/data/free-sa/lsa.css
 www/data/free-sa/rsa.css
 www/data/free-sa/cgi-bin/free-sa.cgi
-www/data/free-sa/themes/default
 www/data/free-sa/themes/rbsec/c.png
 www/data/free-sa/themes/rbsec/d.png
 www/data/free-sa/themes/rbsec/g.png
@@ -63,8 +63,7 @@ www/data/free-sa/themes/blues/gsa.css
 www/data/free-sa/themes/blues/lsa.css
 www/data/free-sa/themes/blues/rsa.css
 www/data/free-sa/themes/sa.js
-@dirrm etc/free-sa
-@dirrm share/free-sa
+@dirrm %%DATADIR%%
 @dirrm www/data/free-sa/themes/rbsec
 @dirrm www/data/free-sa/themes/sarg
 @dirrm www/data/free-sa/themes/silver
@@ -73,4 +72,5 @@ www/data/free-sa/themes/sa.js
 @dirrm www/data/free-sa/themes
 @dirrm www/data/free-sa/cgi-bin
 @dirrm www/data/free-sa
+@dirrm etc/free-sa
 @dirrmtry www/data
