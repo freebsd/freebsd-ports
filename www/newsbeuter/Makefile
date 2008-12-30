@@ -20,7 +20,7 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
 USE_RUBY=	yes
-USE_GCC=	4.1+
+USE_GCC=	4.2+
 
 MAN1=	newsbeuter.1 podbeuter.1
 
