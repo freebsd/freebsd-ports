@@ -616,6 +616,7 @@
     SUBDIR += planeshift
     SUBDIR += plee-the-bear
     SUBDIR += plonx
+    SUBDIR += plutocracy
     SUBDIR += pmars
     SUBDIR += pmars-sdl
     SUBDIR += poker-engine
