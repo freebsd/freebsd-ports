@@ -11,7 +11,7 @@ CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		araujo@FreeBSD.org
+MAINTAINER=		adox@mcx2.org
 COMMENT=		A simple date object
 
 PERL_CONFIGURE=		yes
