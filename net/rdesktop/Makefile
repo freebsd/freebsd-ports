@@ -26,6 +26,11 @@ MAN1=		rdesktop.1
 CONFIGURE_ARGS+=	--with-ipv6
 .endif
 
+.if defined(WITH_ICONV)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+.endif
+
 .if defined(WITH_RDESKTOP_DEBUG)
 CONFIGURE_ARGS+=	--with-debug\
 			--with-debug-kbd\
