@@ -43,9 +43,9 @@ upgrades.
   to communicate the server by default.  If $JSERVER environment
   variable is defined, the value is used as the server host name.  In
   In short, the server name is determined in the following way:
- 
+
   $JSERVER --(if null)--> CcWnn.Jserver --(if null)--> "localhost"
- 
+
   If the server host name is null or matches "^unix$", unix domain
   socket is used.  Note that the default server name in CcWnn.Jserver
   is "unix" now.
@@ -130,11 +130,11 @@ upgrades.
   AFFECTS: users of comms/smstools3
   AUTHOR: mm@FreeBSD.org
 
-  The startup script of comms/smstools3 has changed. For increased security 
-  smstools now runs as user uucp / group dialer by default. The script 
+  The startup script of comms/smstools3 has changed. For increased security
+  smstools now runs as user uucp / group dialer by default. The script
   commands like sendsms etc. should be executed as user uucp.
   To restore the old behaviour, set smsd_user="root" and smsd_group="wheel"
-  in your /etc/rc.conf. 
+  in your /etc/rc.conf.
   Hint: use security/sudo for running smsd scripts as user uucp
 
 20081108:
@@ -146,9 +146,9 @@ upgrades.
   variable is defined, the value is used as the server host name.  In
   JSERVER case, for example, the server name is determined in the
   following way:
- 
-  $JSERVER --(if null)--> wnn-jserver --(if null)--> "unix"
- 
+
+ $JSERVER --(if null)--> wnn-jserver --(if null)--> "unix"
+
   If the server host name is null or matches "^unix$", unix domain
   socket is used.  The path name of the socket can be specified in
   wnn-[cjkt]udpath custom variable.
