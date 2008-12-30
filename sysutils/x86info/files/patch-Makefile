@@ -1,11 +1,11 @@
---- Makefile.orig	Sun Aug 24 16:14:00 2003
-+++ Makefile	Sun Aug 24 16:15:05 2003
-@@ -4,7 +4,7 @@
- #CFLAGS += -mwin32 -DWIN32_LEAN_AND_MEAN
- SHELL = /bin/sh
+--- Makefile.orig	2008-12-30 22:24:01.000000000 +0300
++++ Makefile	2008-12-30 22:24:09.000000000 +0300
+@@ -15,7 +15,7 @@
+ 	$(CC) $(CFLAGS) -o $@ -c $<
  
--all: x86info test
-+all: x86info
  
- OBJS =\
- 	AMD/identify.o\
+-all: x86info test lsmsr
++all: x86info lsmsr
+ 
+ 
+ LSMSR_TMP_HEADERS=AMD/k8.h AMD/fam10h.h generic_msr.h

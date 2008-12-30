@@ -1,13 +1,12 @@
---- rdmsr.c.orig	2007-11-27 03:37:20.000000000 +0300
-+++ rdmsr.c	2008-08-09 23:03:05.000000000 +0400
+--- rdmsr.c.orig	2008-12-16 22:09:47.000000000 +0300
++++ rdmsr.c	2008-12-30 22:11:46.000000000 +0300
 @@ -17,8 +17,15 @@
  #include "x86info.h"
  
  #if defined(__FreeBSD__)
--# include <sys/ioctl.h>                                                         
--# include <cpu.h>
 +# include <sys/param.h>
-+# include <sys/ioctl.h>
+ # include <sys/ioctl.h>
+-# include <cpu.h>
 +# if __FreeBSD_version < 800042
 +#  define CPUDEV "/dev/cpu%d"
 +#  include <cpu.h>
@@ -39,12 +38,13 @@
 @@ -46,7 +57,11 @@
  	}
  
- 	args.msr = idx;                                                         
+ 	args.msr = idx;
+-	if (ioctl(fh, CPU_RDMSR, &args) != 0) {
 +#if __FreeBSD_version < 800042
- 	if (ioctl(fh, CPU_RDMSR, &args) != 0) {                                 
++	if (ioctl(fh, CPU_RDMSR, &args) != 0) {                                 
 +#else
 +	if (ioctl(fh, CPUCTL_RDMSR, &args) != 0) {                                 
 +#endif
- 		if (close(fh) == -1) {                                          
- 			perror("close");                                        
+ 		if (close(fh) == -1) {
+ 			perror("close");
  			exit(EXIT_FAILURE);
