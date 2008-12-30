@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
-
-USE_GMAKE=	yes
 
 PORTDOCS=	COPYING INSTALL README README.DEV ChangeLog FAQ THANKS
 DOCSDIR=	share/doc/free-sa-${DISTVERSION}
