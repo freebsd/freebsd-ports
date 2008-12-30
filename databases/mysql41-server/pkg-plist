@@ -68,7 +68,7 @@ lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.a
 %%NDB%%lib/mysql/libndbclient.la
 %%NDB%%lib/mysql/libndbclient.so
-%%NDB%%lib/mysql/libndbclient.so.0
+%%NDB%%lib/mysql/libndbclient.so.1
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
