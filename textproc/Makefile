@@ -90,6 +90,7 @@
     SUBDIR += diffsplit
     SUBDIR += diffstat
     SUBDIR += diffutils
+    SUBDIR += dikt
     SUBDIR += dixit
     SUBDIR += doc-mode.el
     SUBDIR += docbook
