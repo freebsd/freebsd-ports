@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/archivers/gtar/files/Attic/patch-tests_gzip.at,v 1.1 2008-12-30 17:41:11 naddy Exp $
 
 --- tests/gzip.at.orig
 +++ tests/gzip.at
