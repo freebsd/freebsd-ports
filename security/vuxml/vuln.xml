@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f98dea27-d687-11dd-abd1-0050568452ac">
+    <topic>twiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>twiki</name>
+        <range><lt>4.2.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Marc Schoenefeld and Steve Milner of RedHat SRT and Peter Allor of IBM ISS report:</p>
+        <blockquote cite="http://twiki.org/cgi-bin/view/Codev/TWikiSecurityAlerts#Security_Alerts_of_TWiki_4_2_x_P">
+          <p>XSS vulnerability with URLPARAM variable</p>
+          <p>SEARCH variable allows arbitrary shell command execution</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>32668</bid>
+      <bid>32669</bid>
+      <cvename>CVE-2008-5304</cvename>
+      <cvename>CVE-2008-5305</cvename>
+      <url>http://secunia.com/advisories/33040</url>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2008-5304</url>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2008-5305</url>
+      <url>http://www.securitytracker.com/alerts/2008/Dec/1021351.html</url>
+      <url>http://www.securitytracker.com/alerts/2008/Dec/1021352.html</url>
+      <url>https://www.it-isac.org/postings/cyber/alertdetail.php?id=4513</url>
+      <url>http://xforce.iss.net/xforce/xfdb/45293</url>
+    </references>
+    <dates>
+      <discovery>2008-12-05</discovery>
+      <entry>2008-12-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f483746-d45d-11dd-84ec-001fc66e7203">
     <topic>roundcube -- remote execution of arbitrary code</topic>
     <affects>
