@@ -1,6 +1,33 @@
---- configure.orig	Sat Oct 28 18:20:11 2006
-+++ configure	Sun Feb 25 15:23:52 2007
-@@ -525,7 +525,7 @@
+--- configure.orig	2008-12-26 14:22:39.000000000 -0500
++++ configure	2008-12-28 16:27:43.000000000 -0500
+@@ -269,7 +269,7 @@
+     echo "  QTDIR environment variable not set!"
+     echo -n "  Checking for Qt..."
+     for d in /usr/{lib,share,qt}/{qt-4,qt4,qt,qt*,4}; do
+-      if test -x "$d/bin/qmake"; then
++      if test -x "$d/bin/qmake-qt4"; then
+         QTDIR=$d
+       fi
+     done
+@@ -280,7 +280,7 @@
+   if test -z "$QTDIR"; then
+     echo "QTDIR not set and Qt not found at standard locations!"
+     echo
+-    echo "Set the QTDIR environment variable such that \$QTDIR/bin/qmake exists."
++    echo "Set the QTDIR environment variable such that \$QTDIR/bin/qmake-qt4 exists."
+     echo "check the Qt installation instructions!"
+     exit 2
+   fi
+@@ -565,7 +565,7 @@
+ fi
+ if test "$f_wizard" = YES; then
+   cat >> .tmakeconfig <<EOF
+-TMAKE_MOC = $QTDIR/bin/moc
++TMAKE_MOC = $QTDIR/bin/moc-qt4
+ EOF
+ fi
+ 
+@@ -575,7 +575,7 @@
  EOF
  fi
  
@@ -9,7 +36,7 @@
  
  for i in $f_inmakefiles ; do
       SRC=$i
-@@ -541,10 +541,8 @@
+@@ -591,10 +591,8 @@
       if test $i = Makefile.in; then
         echo "" >> $DST
         echo "all: src/version.cpp " >> $DST
@@ -22,7 +49,7 @@
         if test $f_wizard = YES; then
           echo "	\$(MAKE) -C addon/doxywizard" >> $DST
         fi
-@@ -562,7 +560,7 @@
+@@ -616,7 +614,7 @@
       echo "  Created $DST from $SRC..."
  done
  
