@@ -11,6 +11,7 @@ bin/mysqlmanager-pwgen
 bin/mysqlmanagerc
 bin/mysqlshow
 bin/mysqltest
+include/mysql/abi_check
 include/mysql/errmsg.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h
@@ -25,7 +26,6 @@ include/mysql/my_list.h
 include/mysql/my_net.h
 include/mysql/my_no_pthread.h
 include/mysql/my_pthread.h
-include/mysql/my_semaphore.h
 include/mysql/my_sys.h
 include/mysql/my_xml.h
 include/mysql/mysql.h
