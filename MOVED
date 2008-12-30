@@ -3721,3 +3721,4 @@ x11-toolkits/p5-qt||2008-12-19|Has expired: Has been broken for more than 6 mont
 www/phpSysInfo||2008-12-24|split into www/phpsysinfo and www/phpsysinfo-dev
 japanese/msdosfs||2008-12-28|Removed: only for 5.x
 korean/msdosfs||2008-12-28|Removed: only for 5.x
+security/openssl-stable|security/openssl|2008-12-30|Removed: only for 6.0
