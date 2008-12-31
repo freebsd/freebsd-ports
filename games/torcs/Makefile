@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	torcs
-DISTVERSION=	1.3.0
-PORTREVISION=	4
+DISTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -55,11 +54,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DE
 		LIBS="${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}"
 .endif
 
-.if !defined(WITHOUT_FREEGLUT)
+.if defined(WITH_FREEGLUT)
 LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		yes
 .endif
+
+EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
 
 post-patch:
 .for FILE in ${BASH2FIX}
@@ -75,5 +76,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${DOCSDIR}
 .endif
+.for ed in ${EMPTYDIR}
+	${TOUCH} ${INSTDIR}/results/${ed}/.keep_me
+.endfor
 
 .include <bsd.port.post.mk>
