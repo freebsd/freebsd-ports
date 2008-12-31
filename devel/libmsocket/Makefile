@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel net
 MASTER_SITES=	SF/kageki
 
-MAINTAINER=	mattdharris@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A socket abstraction library for C programmers
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
