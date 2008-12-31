@@ -328,6 +328,17 @@ share/WindowMaker/xtree.dat
 %%WM_LINGUAS%%share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 %%WM_LINGUAS%%share/locale/zh_TW/LC_MESSAGES/WPrefs.mo
 %%WM_LINGUAS%%share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGFORM
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.definable-cursor
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/GNUstep/Applications/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm GNUstep/Applications/WPrefs.app/tiff

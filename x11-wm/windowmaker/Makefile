@@ -89,6 +89,13 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${CP} ${WRKSRC}/AUTHORS ${WRKSRC}/BUGFORM ${WRKSRC}/BUGS \
+	${WRKSRC}/ChangeLog ${WRKSRC}/FAQ ${WRKSRC}/INSTALL \
+	${WRKSRC}/NEWS ${WRKSRC}/README \
+	${WRKSRC}/README.definable-cursor ${WRKSRC}/TODO ${DOCSDIR}/
+.endif
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
