@@ -138,6 +138,7 @@
     SUBDIR += verlihub-plugins-luascript
     SUBDIR += verlihub-plugins-messanger
     SUBDIR += verlihub-plugins-stats
+    SUBDIR += vuze
     SUBDIR += xnap
 
 .include <bsd.port.subdir.mk>
