@@ -8,10 +8,10 @@
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
 PORTREVISION=	0
-CATEGORIES=	www
+CATEGORIES?=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
-MAINTAINER=	chad@wickdev.com
+MAINTAINER?=	chad@wickdev.com
 COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
