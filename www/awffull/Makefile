@@ -21,6 +21,8 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 RUN_DEPENDS?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 BUILD_DEPENS=	${RUN_DEPENDS}
 
+CONFLICTS?=	ja-awffull-[0-9]*
+
 FONTDEFAULT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraBd.ttf
 FONTLABEL?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 

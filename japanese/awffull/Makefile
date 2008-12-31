@@ -9,6 +9,7 @@ CATEGORIES=	japanese www
 
 MAINTAINER=	nork@FreeBSD.org
 
+CONFLICTS=	awffull-[0-9]*
 MASTERDIR=	${.CURDIR}/../../www/awffull
 
 EXTRA_PATCHES=	${.CURDIR}/files/awffull-ja.diff
