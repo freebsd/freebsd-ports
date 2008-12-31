@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.8-2
+DISTVERSION=	6.4.8-3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -51,7 +51,7 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
 		IMAGEMAGICK_OPENMP	"OpenMP for SMP (needs threads)" off \
 		IMAGEMAGICK_PERL		"Perl support" on \
-		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
+		IMAGEMAGICK_MODULES		"Modules support" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
 		IMAGEMAGICK_16BIT_PIXEL		"16bit pixel support" on \
 		IMAGEMAGICK_DJVU	"DJVU format support (needs threads)" off \
@@ -262,8 +262,10 @@ CONFIGURE_ARGS+=	--without-fontconfig
 .if defined(WITH_IMAGEMAGICK_WMF)
 LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf
 CONFIGURE_ARGS+=	--with-wmf=yes
+PLIST_SUB+=		WMF=""
 .else
 CONFIGURE_ARGS+=	--without-wmf
+PLIST_SUB+=		WMF="@comment "
 .endif
 
 # SVG (Scalable Vector Graphics) images and MSL (Magick Scripting Language)
