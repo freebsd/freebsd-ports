@@ -66,6 +66,11 @@ LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 
 #BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl15
 
+# gtk libraries are used by the frontend, which we do not build, however
+# the configure script relies on that and fails if not present, so as
+# a quick fix we set USE_GNOME
+USE_GNOME=	gtk20
+
 # The original uses gmake and ./configure
 # Also pass appropriate flags to configure to use FreeBSD locations.
 USE_GMAKE=	yes
