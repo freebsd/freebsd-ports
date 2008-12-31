@@ -19,6 +19,8 @@ RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+SLAVEDIRS=	cad/gmsh-occ
+
 .if !defined(WITHOUT_TETGEN)
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${TETGEN_PORTDIR}:patch
 TETGEN_PORTDIR=		${PORTSDIR}/math/tetgen
@@ -73,8 +75,10 @@ CONFIGURE_ARGS+=	--disable-fftw3
 LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
 CONFIGURE_ARGS+=	--enable-occ --with-occ-prefix=${LOCALBASE}/OpenCAS/ros
 CONFIGURE_ENV+=		ARCH="${ARCH}"
+CONFLICTS=		gmsh-2.*
 .else
 CONFIGURE_ARGS+=	--disable-occ
+CONFLICTS=		gmsh-occ-2.*
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
