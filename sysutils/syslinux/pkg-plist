@@ -1,0 +1,24 @@
+bin/syslinux
+share/syslinux/mbr.bin
+share/syslinux/gptmbr.bin
+share/syslinux/pxelinux.0
+share/syslinux/isolinux.bin
+share/syslinux/gpxelinux.0
+share/syslinux/memdisk
+share/syslinux/menu.c32
+share/syslinux/vesamenu.c32
+share/syslinux/chain.c32
+share/syslinux/cpuidtest.c32
+share/syslinux/dmitest.c32
+share/syslinux/elf.c32
+share/syslinux/ethersel.c32
+share/syslinux/ifcpu64.c32
+share/syslinux/linux.c32
+share/syslinux/mboot.c32
+share/syslinux/meminfo.c32
+share/syslinux/pcitest.c32
+share/syslinux/pmload.c32
+share/syslinux/reboot.c32
+share/syslinux/sanboot.c32
+share/syslinux/sdi.c32
+@dirrm share/syslinux
