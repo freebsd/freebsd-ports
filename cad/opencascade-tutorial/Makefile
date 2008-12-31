@@ -6,17 +6,19 @@
 #
 
 PORTNAME=		opencascade-tutorial
-PORTVERSION=		6.2
-PORTREVISION=	2
+PORTVERSION=		6.3
 CATEGORIES=		cad
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
+DISTNAME=		opencascade-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OpenCascade sample tutorial
 
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU	\
 		TKernel.0:${PORTSDIR}/cad/opencascade
+
+IGNORE=		no instructions to build the tutorial
 
 USE_BZIP2=	yes
 USE_GL=		yes
