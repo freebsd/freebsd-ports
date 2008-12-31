@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		opencascade
-PORTVERSION=		6.2
-PORTREVISION=	4
+PORTVERSION=		6.3
 CATEGORIES=		cad science
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -24,10 +23,6 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		tix${TIX_VER}:${PORTSDIR}/x11-toolkits/tix	\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk		\
 		dps.0:${PORTSDIR}/x11/dgs
-
-BROKEN=		Does not compile
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
 
 USE_BZIP2=	yes
 USE_BISON=	build
@@ -50,10 +45,11 @@ TIX_VER=	8184.1
 TIX_MM=		8.1
 LIB_TCLX=	${LOCALBASE}/lib/tclx${TCL_VER}/libtclx${TCL_VER}.so
 
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME}/ros
+PATCH_WRKSRC=	${WRKDIR}/OpenCASCADE${PORTVERSION}.0
+WRKSRC=		${PATCH_WRKSRC}/ros
 REINPLACE_ARGS=	-i ""
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	ros/configure
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-tk=${TK_LIBDIR}					\
 		--with-java-include=${JAVA_HOME}/include		\
@@ -91,7 +87,8 @@ SUB_FILES=	pkg-message LICENSE.${OPSYS}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FBSDBIN=	DRAWEXE wokprocess woksh
-DIR2INST=	data tools wok
+DIR2INST=	data
+#DIR2INST+=	tools wok
 SRC2INST=	adm drv inc make src
 .if !defined(NOPORTDOCS)
 DIR2INST+=	doc
@@ -104,58 +101,6 @@ DIR2INST+=	doc
 GCC4WA=		-ffriend-injection -fpermissive
 .endif
 
-.if defined(MAINTAINER_MODE)	# Get the sources & roll the tarballs
-
-PRIM_MASTER_SITES=	http://files.opencascade.com/OCC_${PORTVERSION}_release/
-PRIM_DISTFILES=		OpenCASCADE_Linux.tgz
-DISABLE_SIZE=		yes
-WRKPREP=		${WRKDIR}/prepare
-#USE_LINUX=		yes
-
-LINBIN=	uninstall
-
-get-sources:
-	# The tarball provided by Open CASCADE requires Java (+ Linux emulation)
-	# to be extracted, and it is interactive!
-. if !exists(${_DISTDIR}/${PRIM_DISTFILES})
-	${MKDIR} ${_DISTDIR}
-	cd ${_DISTDIR} &&	\
-	${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		${PRIM_MASTER_SITES}${PRIM_DISTFILES} ${FETCH_AFTER_ARGS}
-. endif
-. if !exists(${WRKPREP}/install.csh)
-	${MKDIR} ${PATCH_WRKSRC} ${WRKPREP} ${WRKDIR}/tmp
-	cd ${WRKPREP} && ${TAR} xf ${_DISTDIR}${PRIM_DISTFILES}
-	${RM} -f ${HOME}/vpd.properties
-	#${BRANDELF} -t Linux ${WRKPREP}/Linux/setupLinux.bin
-	@${ECHO_MSG} "========================================================================"
-	@${ECHO_MSG} "Accept license, change destination directory to ${PATCH_WRKSRC}"
-	@${ECHO_MSG} "select \"Complete installation\" and \"Install\"."
-	@${ECHO_MSG} "========================================================================"
-	#cd ${WRKPREP} && LANG=C JAVAHOME=. OS_NAME=${OPSYS} ./Linux/setupLinux.bin
-	cd ${WRKPREP} &&	\
-		${JAVA} -cp ./Linux/setup.jar -DOS_NAME=Linux -Dtemp.dir=${WRKDIR}/tmp run
-. endif
-
-tarballs:	get-sources
-	# Remove Linux binaries
-	${RM} -rf ${LINBIN:S|^|${PATCH_WRKSRC}/|}
-	# Make separate tarballs / ports for samples
-	${MV} ${PATCH_WRKSRC}/samples ${WRKDIR}
-	cd ${WRKDIR} && ${TAR} cfj ${_DISTDIR}${DISTFILES} ${DISTNAME}
-	${MV} ${WRKDIR}/samples ${PATCH_WRKSRC}
-	cd ${WRKDIR} &&	\
-	${TAR} cfj ${_DISTDIR}${PORTNAME}-tutorial-${PORTVERSION}${EXTRACT_SUFX}	\
-			${DISTNAME}/samples/tutorial
-	cd ${WRKDIR} &&	\
-	${TAR} cfj ${_DISTDIR}${PORTNAME}-samples-java-${PORTVERSION}${EXTRACT_SUFX}	\
-			${DISTNAME}/samples/standard/java
-	cd ${WRKDIR} &&	\
-	${TAR} cfj ${_DISTDIR}${PORTNAME}-samples-qt-${PORTVERSION}${EXTRACT_SUFX}	\
-			${DISTNAME}/samples/standard/qt
-
-.endif	# The sources tarballs are now available
-
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning: to build OpenCascade, you should have at least"
@@ -163,7 +108,6 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-configure:
-	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|%%CASROOT%%|${CASROOT}|'	\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|'	\
@@ -185,11 +129,9 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'\
 		-e 's|/usr/X11R6|${LOCALBASE}|'		\
 		-e 's|/usr/local/bin/tclsh8.4|${TCLSH}|'\
-		${PATCH_WRKSRC}/wok/site/wokinit.csh	\
 		${WRKSRC}/src/WOKsite/wokinit.csh	\
 		${WRKSRC}/src/OS/WOK.tcl
 	${REINPLACE_CMD} -e 's|$${TCLBIN}/tclsh|${TCLSH}|'	\
-		${PATCH_WRKSRC}/wok/site/wok.csh		\
 		${WRKSRC}/src/WOKsite/wok.csh
 	${REINPLACE_CMD} -e 's|/usr/bin/g++|${CXX}|'	\
 		-e 's|/usr/bin/gcc|${CC}|'		\
@@ -204,15 +146,15 @@ pre-configure:
 		-e 's|%%TCL_INCDIR%%|${TCL_INCLUDEDIR}|'\
 		-e 's|%%JAVA_HOME%%|${JAVA_HOME}|'	\
 		${WRKSRC}/src/WOKBuilderDef/CSF.edl	\
-		${PATCH_WRKSRC}/wok/lib/CSF.edl		\
 		${WRKSRC}/src/WOKBuilderDef/CMPLRS.edl	\
-		${PATCH_WRKSRC}/wok/lib/CMPLRS.edl	\
 		${WRKSRC}/src/WOKBuilderDef/LDEXE.edl	\
-		${PATCH_WRKSRC}/wok/lib/LDEXE.edl	\
-		${WRKSRC}/src/WOKBuilderDef/LDSHR.edl	\
-		${PATCH_WRKSRC}/wok/lib/LDSHR.edl
-	cd ${WRKSRC} &&	\
-		${TAR} cfz ${WRKDIR}/ros_src_to_avoid_make_clean.tbz ${SRC2INST}
+		${WRKSRC}/src/WOKBuilderDef/LDSHR.edl
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}		\
+		${WRKSRC}/src/WOKBuilderDef/CSF.edl
+
+pre-install:
+	${MKDIR} ${CASROOT}
 
 post-install:
 	${MKDIR} ${CASROOT}/bsd/bin ${OCCROOT}/samples
@@ -232,17 +174,14 @@ post-install:
 	cd ${PATCH_WRKSRC} &&	\
 		${FIND} ${di} -type f -exec ${INSTALL_DATA} {} ${OCCROOT}/{} \;
 .endfor
-	${LN} -sf ${PREFIX}/lib ${OCCROOT}/wok/lib/bsd
+#	${LN} -sf ${PREFIX}/lib ${OCCROOT}/wok/lib/bsd
 	cd ${OCCROOT} &&	\
 		${FIND} ${DIR2INST} -name "*sh" -exec ${CHMOD} ${BINMODE} {} \;
 .for es in env.csh env.ksh
 	${INSTALL_SCRIPT} ${WRKSRC}/${es} ${CASROOT}
 .endfor
-	cd ${CASROOT} &&	\
-		${TAR} xfz ${WRKDIR}/ros_src_to_avoid_make_clean.tbz
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${CASROOT}/src
 	${FIND} ${OCCROOT} -name "*.orig" -exec ${RM} {} \;
-	${FIND} ${CASROOT}/drv -type d -empty -exec ${TOUCH} {}/.keep-me \;
+	${FIND} ${CASROOT} -type d -empty -exec ${TOUCH} {}/.keep-me \;
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
