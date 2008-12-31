@@ -16,6 +16,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
 USE_GMAKE=	yes
+USE_PYTHON_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/x86info bin/lsmsr
 MAN1=	x86info.1
