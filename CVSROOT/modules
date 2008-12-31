@@ -9536,7 +9536,6 @@ openspc                         ports/audio/openspc
 openssh-askpass                 ports/security/openssh-askpass
 openssh-portable                ports/security/openssh-portable
 openssl-beta                    ports/security/openssl-beta
-openssl-stable                  ports/security/openssl-stable
 opentaxsolver                   ports/finance/opentaxsolver
 openttd                         ports/games/openttd
 openuniverse                    ports/astro/openuniverse
@@ -9605,6 +9604,7 @@ oscommerce                      ports/www/oscommerce
 osdclock                        ports/x11-clocks/osdclock
 osdmixer                        ports/audio/osdmixer
 osg                             ports/graphics/osg
+osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
 oskit                           ports/devel/oskit
@@ -11530,6 +11530,7 @@ p5-Module-Util                  ports/devel/p5-Module-Util
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
+p5-Mojo                         ports/www/p5-Mojo
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
@@ -14766,6 +14767,7 @@ p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
+p5-mojo                         ports/www/p5-Mojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-moose                        ports/devel/p5-Moose
 p5-moose-policy                 ports/devel/p5-Moose-Policy
