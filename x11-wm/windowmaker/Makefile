@@ -7,7 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.92.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://dougbarton.us/Downloads/
@@ -86,6 +86,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|Trebuchet MS,Luxi Sans|sans|g" ${WRKSRC}/WindowMaker/Defaults/WMGLOBAL
 	@${REINPLACE_CMD} -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
 		${WRKSRC}/WindowMaker/*menu*
+	@(for file in `grep -rl windowmaker\.org ${WRKSRC}`; do \
+	${REINPLACE_CMD} -e "s|windowmaker\.org|windowmaker\.info|g" $$file; \
+	done)
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
