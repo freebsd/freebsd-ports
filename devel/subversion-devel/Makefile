@@ -15,6 +15,9 @@ DIST_SUBDIR=	subversion
 MAINTAINER=	lev@freebsd.org
 COMMENT?=	Prerelease version of the Subversion version control system
 
+DEPRECATED=	Use devel/subversion or devel/subversion-freebsd instead of this port
+EXPIRATION_DATE=2009-02-01
+
 NO_PACKAGE=	No binary packages of release candidates
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
