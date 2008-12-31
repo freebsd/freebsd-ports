@@ -692,6 +692,7 @@
     SUBDIR += su2
     SUBDIR += swapd
     SUBDIR += symlinks
+    SUBDIR += symlinux
     SUBDIR += symon
     SUBDIR += synergy
     SUBDIR += syscp
