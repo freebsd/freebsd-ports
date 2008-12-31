@@ -10,7 +10,7 @@ PORTVERSION=	0.8.6
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
@@ -20,6 +20,7 @@ COMMENT=	A game similar to GNU Arcade Volleyball
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
 
@@ -35,7 +36,7 @@ post-configure:
 post-install:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-	
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
