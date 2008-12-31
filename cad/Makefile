@@ -38,6 +38,7 @@
     SUBDIR += geda-utils
     SUBDIR += gerbv
     SUBDIR += gmsh
+    SUBDIR += gmsh-occ
     SUBDIR += gnucap
     SUBDIR += gplcver
     SUBDIR += gspiceui
