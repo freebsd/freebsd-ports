@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2.1
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -66,15 +66,15 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SILVERCITY)
-RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
+RUN_DEPENDS+=	${LOCALBASE}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 .endif
 
 .if defined(WITH_DOCUTILS)
-RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
 .endif
 
 .if defined(WITH_PYGMENTS)
-RUN_DEPENDS+=	${PREFIX}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
+RUN_DEPENDS+=	${LOCALBASE}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
 .endif
 
 .if defined(WITH_TZ)
