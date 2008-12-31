@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="214e8e07-d369-11dd-b800-001b77d09812">
+    <topic>vinagre -- format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>vinagre</name>
+        <range><lt>0.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>CORE Security Technologies reports:</p>
+        <blockquote
+          cite="http://www.coresecurity.com/content/vinagre-format-string">
+          <p>A format string error has been found on the
+          vinagre_utils_show_error() function that can be exploited via
+          commands issued from a malicious server containing format
+          string specifiers on the VNC name.</p>
+          <p>In a web based attack scenario, the user would be required
+          to connect to a malicious server. Successful exploitation
+          would then allow the attacker to execute arbitrary code with
+          the privileges of the Vinagre user.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>32682</bid>
+      <url>http://www.coresecurity.com/content/vinagre-format-string</url>
+      <url>http://ftp.gnome.org/pub/GNOME/sources/vinagre/0.5/vinagre-0.5.2.news</url>
+    </references>
+    <dates>
+      <discovery>2008-12-09</discovery>
+      <entry>2008-12-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f98dea27-d687-11dd-abd1-0050568452ac">
     <topic>twiki -- multiple vulnerabilities</topic>
     <affects>
