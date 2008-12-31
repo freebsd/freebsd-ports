@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1521/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1843/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -31,12 +30,19 @@ MAN8=		pgpool.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| pg_config| ${LOCALBASE}/bin/pg_config|g' \
+	${WRKSRC}/sql/pgpool-recovery/Makefile
+
+post-build:
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE}
 
 pre-install:
 	${MKDIR} ${DATADIR} ${EXAMPLESDIR}
 
 post-install:
+	@cd ${WRKSRC}/sql/pgpool-recovery && ${GMAKE} install
 	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/replicate_def_pgbench.sql ${DATADIR}
 .for f in pgpool_recovery pgpool_recovery_pitr pgpool_remote_start
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/${f} ${EXAMPLESDIR}
 .endfor
