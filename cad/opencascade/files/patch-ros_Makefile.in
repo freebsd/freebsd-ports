@@ -1,0 +1,184 @@
+--- ros/Makefile.in.orig	2008-09-09 17:52:16.000000000 +0200
++++ ros/Makefile.in	2008-12-22 19:22:52.000000000 +0100
+@@ -45,9 +45,6 @@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+ AMTAR = @AMTAR@
+-AUTOCONF = @AUTOCONF@
+-AUTOHEADER = @AUTOHEADER@
+-AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+@@ -236,19 +233,6 @@
+ 
+ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
+  configure.lineno
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign  Makefile
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
+-
+-$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
+-
+-$(ACLOCAL_M4):  configure.in acinclude.m4
+-	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ 
+ config.h: stamp-h1
+ 	@if test ! -f $@; then \
+@@ -660,112 +644,112 @@
+ 	if [ -e $(prefix)/lib -a ! -e $(prefix)/$(dir_$(platform))/lib ]; then \
+ 		cd $(prefix)/$(dir_$(platform)) && ln -s ../lib lib; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+-		$(INSTALL) -d $(prefix)/inc; \
+-		cp -fr$(CP_$(platform)) $(top_srcdir)/inc $(prefix); \
++		$(INSTALL) -d $(prefix)/OpenCAS/ros/inc; \
++		cp -fr$(CP_$(platform)) $(top_srcdir)/inc $(prefix)/OpenCAS/ros; \
+ 	fi; \
+ 	if [ "$$pd" != "$$bd" ]; then \
+-		cp -fr$(CP_$(platform)) $$bd/config.h $(prefix); \
++		cp -fr$(CP_$(platform)) $$bd/config.h $(prefix)/OpenCAS/ros; \
+ 	fi
+-	if [ -e $(prefix)/inc/config.h ]; then \
+-		unlink $(prefix)/inc/config.h; \
++	if [ -e $(prefix)/OpenCAS/ros/inc/config.h ]; then \
++		unlink $(prefix)/OpenCAS/ros/inc/config.h; \
+ 	fi
+-	cd $(prefix)/inc && ln -s ../config.h config.h 
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	cd $(prefix)/OpenCAS/ros/inc && ln -s ../config.h config.h 
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" -a -d $(top_srcdir)/src/UnitsAPI ]; then \
+-		$(INSTALL) -d $(prefix)/src; \
+-		$(INSTALL) -d $(prefix)/src/UnitsAPI; \
+-		cp -fr$(CP_$(platform)) $(top_srcdir)/src/UnitsAPI $(prefix)/src; \
+-		cp -f$(CP_$(platform)) $(top_srcdir)/env_DRAW.sh $(prefix); \
++		$(INSTALL) -d $(prefix)/OpenCAS/ros/src; \
++		$(INSTALL) -d $(prefix)/OpenCAS/ros/src/UnitsAPI; \
++		cp -fr$(CP_$(platform)) $(top_srcdir)/src/UnitsAPI $(prefix)/OpenCAS/ros/src; \
++		cp -f$(CP_$(platform)) $(top_srcdir)/env_DRAW.sh $(prefix)/OpenCAS/ros; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(FoundationClasses_DIRS)"; \
+ 		if test "x$(FoundationClasses_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(ModelingData_DIRS)"; \
+ 		if test "x$(ModelingData_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(ModelingAlgorithms_DIRS)"; \
+ 		if test "x$(ModelingAlgorithms_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(Visualization_DIRS)"; \
+ 		if test "x$(Visualization_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(ApplicationFramework_DIRS)"; \
+ 		if test "x$(ApplicationFramework_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(DataExchange_DIRS)"; \
+ 		if test "x$(DataExchange_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(Draw_DIRS)"; \
+ 		if test "x$(Draw_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(WOK_DIRS)"; \
+ 		if test "x$(WOK_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi
+-	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix); pd=`pwd`; cd $$bd; \
++	bd=`pwd`; cd $(top_srcdir); sd=`pwd`; cd $(prefix)/OpenCAS/ros; pd=`pwd`; cd $$bd; \
+ 	if [ "$$pd" != "$$sd" ]; then \
+ 		inst_dirs="$(Wrappers_DIRS)"; \
+ 		if test "x$(Wrappers_DIRS)" != "x"; then \
+ 			for d in $$inst_dirs; do \
+-				$(INSTALL) -d $(prefix)/src/$$d; \
+-				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/src; \
++				$(INSTALL) -d $(prefix)/OpenCAS/ros/src/$$d; \
++				cp -fr$(CP_$(platform)) $(top_srcdir)/src/$$d $(prefix)/OpenCAS/ros/src; \
+ 			done; \
+ 		fi; \
+ 	fi

@@ -1,10 +1,10 @@
---- ./ros/env.csh.orig	Wed Mar 21 22:14:25 2007
-+++ ./ros/env.csh	Wed Mar 21 23:30:08 2007
+--- ./ros/env.csh.orig	2008-09-03 07:44:21.000000000 +0200
++++ ./ros/env.csh	2008-10-01 00:02:45.000000000 +0200
 @@ -1,16 +1,18 @@
  #!/bin/csh -f
  
--setenv CASROOT /usr/ports/cad/opencascade/work/opencascade-6.2/ros
-+setenv %%CASROOT%%
+-setenv CASROOT "Open CASCADE location/ros"
++setenv CASROOT %%CASROOT%%
  set OS_NAME=`uname`
  if ( $?PATH ) then
 -      setenv PATH $CASROOT/../3rdparty/$OS_NAME/tcltk/bin:$CASROOT/$OS_NAME/bin:$PATH

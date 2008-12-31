@@ -16,6 +16,6 @@ You should then install the following ports:
 - cad/%%PORTNAME%%-samples-java
 
 To get started, please read the documentation:
-file://%%OCCROOT%%/doc/index.htm
+file://%%OCCROOT%%/doc/Overview/index.htm
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

@@ -1,10 +1,11 @@
---- ./ros/env.ksh.orig	Wed Mar 21 22:14:25 2007
-+++ ./ros/env.ksh	Wed Mar 21 23:37:24 2007
+--- ./ros/env.ksh.orig	2008-09-03 07:44:51.000000000 +0200
++++ ./ros/env.ksh	2008-10-01 00:01:34.000000000 +0200
 @@ -1,17 +1,19 @@
- #!/bin/ksh -f
+-#!/bin/ksh -f
++#! %%LOCALBASE%%/bin/ksh -f
  
--export CASROOT=/usr/ports/cad/opencascade/work/opencascade-6.2/ros
-+export CASROOT=%%CASROOT%%
+-export CASROOT="Open CASCADE location/ros"
++export CASROOT="%%CASROOT%%"
  OS_NAME=`uname`
  if [ -z "PATH" ];
 -then PATH=$CASROOT/../3rdparty/$OS_NAME/tcltk/bin:$CASROOT/$OS_NAME/bin;
@@ -18,8 +19,8 @@
 -else LD_LIBRARY_PATH=$CASROOT/../3rdparty/$OS_NAME/tcltk/lib:$CASROOT/$OS_NAME/lib:$LD_LIBRARY_PATH;
 +if [ $OS_NAME != "FreeBSD" ]; then
 +  if [ -z "LD_LIBRARY_PATH" ];
-+  then LD_LIBRARY_PATH $CASROOT/../3rdparty/$OS_NAME/tcltk/lib:$CASROOT/$OS_NAME/lib;
-+  else LD_LIBRARY_PATH $CASROOT/../3rdparty/$OS_NAME/tcltk/lib:$CASROOT/$OS_NAME/lib:$LD_LIBRARY_PATH;
++  then LD_LIBRARY_PATH=$CASROOT/../3rdparty/$OS_NAME/tcltk/lib:$CASROOT/$OS_NAME/lib;
++  else LD_LIBRARY_PATH=$CASROOT/../3rdparty/$OS_NAME/tcltk/lib:$CASROOT/$OS_NAME/lib:$LD_LIBRARY_PATH;
 +  fi
 +  export LD_LIBRARY_PATH
  fi
