@@ -10,7 +10,7 @@ PORTVERSION=    0.1
 CATEGORIES=     security devel
 MASTER_SITES=   SF/kageki
 
-MAINTAINER=     mattdharris@users.sourceforge.net
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=        A password storage library for C programmers
 
 USE_BZIP2=      yes

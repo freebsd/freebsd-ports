@@ -13,7 +13,7 @@ MASTER_SITES=	http://xyssl.org/code/download/ \
 DISTNAME=	xyssl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mattdharris@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
 
 DEPRECATED=	Download sites are down, cannot update due to software website being down.
