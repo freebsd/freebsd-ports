@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ederbs.org/pub/ \
 		ftp://ederbs.org/pub/
 
-MAINTAINER=	ederbs@ederbs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple APC UPS Daemon
 
 MAN8=		upsdaemon.8
