@@ -3722,3 +3722,4 @@ www/phpSysInfo||2008-12-24|split into www/phpsysinfo and www/phpsysinfo-dev
 japanese/msdosfs||2008-12-28|Removed: only for 5.x
 korean/msdosfs||2008-12-28|Removed: only for 5.x
 security/openssl-stable|security/openssl|2008-12-30|Removed: only for 6.0
+dns/bind9-dlz|dns/bind94|2008-12-31|DLZ patches are now in bind 9.4 distribution
