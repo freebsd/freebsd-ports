@@ -1,16 +1,16 @@
 *******************************************************************************
 
-The Trac database schema was changed between versions 0.8 and 0.9.  This
-port also started to depend on PySQLite 2 (SQLite 3).
+From 0.10.x to 0.11.x
+---------------------
+You should be careful to check that the plugins you depend on have
+been ported to 0.11, as they most probably won't work without adaptation
+due to the numerous internal changes that occurred during 0.11 development.
+Note however that Clearsilver based plugin are still supported.
 
-Existing environments must be upgraded before they can be used with Trac 0.9.
+See:	http://trac.edgewall.org/wiki/TracDev/ApiChanges/0.11
 
 Consult the upgrade instructions at:
 
-	http://projects.edgewall.com/trac/wiki/TracUpgrade
-
-You can also find the canonical upgrade instructions at:
-
-	/usr/ports/UPDATING
+	http://trac.edgewall.org/wiki/TracUpgrade
 
 *******************************************************************************
