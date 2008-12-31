@@ -94,9 +94,9 @@ do-install:
 	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 .for F in ${MAPFILES}
 	@${ECHO_CMD} "Adding $F..."
-	@${UPDMAP_SYS} --nohash --nomkmap --enable Map=${F}
+	@${UPDMAP_SYS} --nohash --nomkmap --enable Map=${F} || true
 .endfor
 	@${ECHO_CMD} "Regenerating mapfiles..."
-	-@${UPDMAP_SYS}
+	@${UPDMAP_SYS}
 
 .include <bsd.port.mk>
