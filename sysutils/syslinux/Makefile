@@ -21,6 +21,8 @@ MAN1=		syslinux.1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+# perl is used in post-extract to convert elf names.
+USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
