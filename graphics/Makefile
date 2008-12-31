@@ -744,6 +744,7 @@
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sane-backends
+    SUBDIR += sane-epkowa
     SUBDIR += sane-frontends
     SUBDIR += scale2x
     SUBDIR += sced
