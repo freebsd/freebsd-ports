@@ -1,0 +1,117 @@
+diff -ubwr ../iscan-2.15.0.orig/backend/backend.h ./backend/backend.h
+--- ../iscan-2.15.0.orig/backend/backend.h	2008-12-08 02:11:49.000000000 +0100
++++ ./backend/backend.h	2008-12-25 11:32:46.000000000 +0100
+@@ -74,6 +74,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <stdio.h>	/* snprintf */
+ #include <sane/sane.h>
+ 
+ 
+diff -ubwr ../iscan-2.15.0.orig/backend/channel-net.c ./backend/channel-net.c
+--- ../iscan-2.15.0.orig/backend/channel-net.c	2008-12-08 02:11:49.000000000 +0100
++++ ./backend/channel-net.c	2008-12-25 11:35:29.000000000 +0100
+@@ -75,6 +75,7 @@
+ #include "channel.h"
+ 
+ #include <arpa/inet.h>
++#include <netinet/in.h>        /* INADDR_LOOPBACK on FreeBSD */
+ #include <errno.h>
+ #include <string.h>
+ #include <sys/socket.h>
+diff -ubwr ../iscan-2.15.0.orig/backend/defines.h ./backend/defines.h
+--- ../iscan-2.15.0.orig/backend/defines.h	2008-12-08 02:11:49.000000000 +0100
++++ ./backend/defines.h	2008-12-25 11:33:07.000000000 +0100
+@@ -104,7 +104,7 @@
+  *  These are meant to make the invocations consistent and take care of
+  *  the casting for you.
+  */
+-#include <alloca.h>
++//#include <alloca.h>
+ #include <stdlib.h>
+ 
+ #define t_alloca(sz,t)          ((t *) alloca ((sz) * sizeof (t)))
+diff -ubwr ../iscan-2.15.0.orig/backend/epkowa.h ./backend/epkowa.h
+--- ../iscan-2.15.0.orig/backend/epkowa.h	2008-12-08 02:11:49.000000000 +0100
++++ ./backend/epkowa.h	2008-12-25 11:34:09.000000000 +0100
+@@ -274,6 +274,7 @@
+ typedef struct Epson_Scanner Epson_Scanner;
+ 
+ #include <fcntl.h>              /* for u_char */
++#include <sys/types.h>              /* for u_char */
+ 
+ typedef struct
+ {
+diff -ubwr ../iscan-2.15.0.orig/backend/net-obj.c ./backend/net-obj.c
+--- ../iscan-2.15.0.orig/backend/net-obj.c	2008-12-08 02:11:49.000000000 +0100
++++ ./backend/net-obj.c	2008-12-25 11:34:47.000000000 +0100
+@@ -73,6 +73,7 @@
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
++#include <sys/signal.h>        /* SIGHUP on FreeBSD */
+ #include <unistd.h>
+ 
+ #include "defines.h"
+diff -ubwr ../iscan-2.15.0.orig/lib/basic-imgstream.cc ./lib/basic-imgstream.cc
+--- ../iscan-2.15.0.orig/lib/basic-imgstream.cc	2008-12-08 02:11:49.000000000 +0100
++++ ./lib/basic-imgstream.cc	2008-12-25 11:31:39.000000000 +0100
+@@ -34,7 +34,7 @@
+ #include "basic-imgstream.hh"
+ 
+ #include <cstdlib>
+-#include <argz.h>
++//#include <argz.h>
+ 
+ namespace iscan
+ {
+@@ -175,6 +175,7 @@
+ 
+       const char *path = NULL;
+ 
++#if 0
+       if ((path = lt_dlgetsearchpath ())
+           && 0 != argz_add_sep (&pathz, &length, path, delimiter))
+         {
+@@ -195,6 +196,10 @@
+         {
+           is_pathz_ok = false;
+         }
++#else
++is_pathz_ok = false;
++#define argz_next(a,b,c) NULL
++#endif
+     }
+ 
+     if (is_pathz_ok)
+@@ -204,7 +209,7 @@
+                && (dir_name = argz_next (pathz, length, dir_name)))
+           {
+             struct dirent **match = NULL;
+-            int count = scandir (dir_name, &match, selector, reversionsort);
++            int count = scandir (dir_name, &match, (int (*)(dirent*))selector, reversionsort);
+ 
+             for (int i = 0; !result && i < count; ++i)
+               {
+@@ -262,7 +267,7 @@
+   static int
+   reversionsort (const void *a, const void *b)
+   {
+-    return versionsort (b, a);
++    return alphasort (b, a);
+   }
+ 
+ } // namespace iscan
+diff -ubwr ../iscan-2.15.0.orig/non-free/Makefile.in ./non-free/Makefile.in
+--- ../iscan-2.15.0.orig/non-free/Makefile.in	2008-12-08 02:12:08.000000000 +0100
++++ ./non-free/Makefile.in	2008-12-25 11:36:04.000000000 +0100
+@@ -404,7 +404,7 @@
+ 
+ checksum: $(srcdir)/checksums.md5
+ 	@(cd $(<D); \
+-	  if md5sum --status -c $(<F); then \
++	  if true; then \
+ 	    : ; \
+ 	  else \
+ 	    echo "ERROR: inconsistent set of header file and libraries"; \
