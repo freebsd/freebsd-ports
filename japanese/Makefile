@@ -19,6 +19,7 @@
     SUBDIR += anthy
     SUBDIR += asterisk-sound
     SUBDIR += aterm
+    SUBDIR += awffull
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
     SUBDIR += bugzilla
