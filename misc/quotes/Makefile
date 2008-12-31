@@ -9,9 +9,9 @@ PORTNAME=	quotes
 DISTVERSION=	1.7-2
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.externet.hu/.lib/disk6/linuxberg/files/console/office/ \
-		ftp://ftp.waseda.ac.jp/.u7/ports/distfiles/ \
+MASTER_SITES=	${MASTER_SITE_TUCOWS} \
 		http://freebsd.unixfreunde.de/sources/
+MASTER_SITE_SUBDIR=	console/office
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
