@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.0.3
+PORTVERSION=	0.3.0
 CATEGORIES=	japanese
-MASTER_SITES=	http://page2.xrea.jp/pub/ \
+MASTER_SITES=	http://www.opendogs.org/pub/ \
 		http://dist.bsdlab.org/
 DISTNAME=	php_mecab-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
