@@ -18,9 +18,14 @@ COMMENT?=	List, test and extract compressed files in a ZIP archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
-PLIST_FILES=	bin/unzip bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
+.if defined(INSTALL_AS_INFOUNZIP)
+UNZIP_NAME=	info-unzip
+.else
+UNZIP_NAME=	unzip
+.endif
+PLIST_FILES=	bin/${UNZIP_NAME} bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
-MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+MAN1=		${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 CFLAGS+=	-D_FILE_OFFSET_BITS=64
 LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR
@@ -45,6 +50,13 @@ ALL_TARGET=	freebsd
 ALL_TARGET=	bsd
 .endif
 
+.if !defined(INSTALL_AS_INFOUNZIP)
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "Use INSTALL_AS_INFOUNZIP=yes to install Info Unzip as ${PREFIX}/bin/info-unzip"
+	@${ECHO} "
+.endif
+
 .if defined(WITH_UNZIP_UNREDUCE)
 pre-build:
 	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} unzip)
@@ -55,12 +67,14 @@ pre-build:
 .endif
 
 do-install:
-.for file in funzip unzip unzipsfx
+	${INSTALL_PROGRAM} ${WRKSRC}/unzip ${PREFIX}/bin/${UNZIP_NAME}
+.for file in funzip unzipsfx
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-	${LN} -sf unzip ${PREFIX}/bin/zipinfo
+	${LN} -sf ${UNZIP_NAME} ${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
-.for f in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 ${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
+.for f in ${MAN1:Nunzip.1:Ninfo-unzip.1}
 	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
