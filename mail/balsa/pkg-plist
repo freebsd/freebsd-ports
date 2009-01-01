@@ -52,7 +52,6 @@ share/balsa/pixmaps/balsa-watermark.png
 share/balsa/pixmaps/balsa_icon.png
 share/balsa/pixmaps/balsa_logo.png
 share/gnome/help/balsa/C/balsa.xml
-share/gnome/help/balsa/C/fdl-appendix.xml
 share/gnome/help/balsa/C/figures/address-book-ldap.png
 share/gnome/help/balsa/C/figures/address-book-modify.png
 share/gnome/help/balsa/C/figures/address-book-start.png
@@ -71,8 +70,48 @@ share/gnome/help/balsa/C/figures/newmsg-window-toolbar.png
 share/gnome/help/balsa/C/figures/newmsg-window.png
 share/gnome/help/balsa/C/figures/preferences-window.png
 share/gnome/help/balsa/C/figures/spell-check.png
+share/gnome/help/balsa/de/balsa.xml
+share/gnome/help/balsa/de/figures/address-book-ldap.png
+share/gnome/help/balsa/de/figures/address-book-modify.png
+share/gnome/help/balsa/de/figures/address-book-start.png
+share/gnome/help/balsa/de/figures/address-book-vcard.png
+share/gnome/help/balsa/de/figures/address-book.png
+share/gnome/help/balsa/de/figures/balsa_logo.png
+share/gnome/help/balsa/de/figures/druid-start.png
+share/gnome/help/balsa/de/figures/example-alias.png
+share/gnome/help/balsa/de/figures/figuresdobaaddress-book-modify.png
+share/gnome/help/balsa/de/figures/main-window-toolbar.png
+share/gnome/help/balsa/de/figures/main-window.png
+share/gnome/help/balsa/de/figures/message-window.png
+share/gnome/help/balsa/de/figures/msg-part-select.png
+share/gnome/help/balsa/de/figures/newmsg-window-attachments.png
+share/gnome/help/balsa/de/figures/newmsg-window-toolbar.png
+share/gnome/help/balsa/de/figures/newmsg-window.png
+share/gnome/help/balsa/de/figures/preferences-window.png
+share/gnome/help/balsa/de/figures/spell-check.png
+share/gnome/help/balsa/es/balsa.xml
+share/gnome/help/balsa/es/figures/address-book-ldap.png
+share/gnome/help/balsa/es/figures/address-book-modify.png
+share/gnome/help/balsa/es/figures/address-book-start.png
+share/gnome/help/balsa/es/figures/address-book-vcard.png
+share/gnome/help/balsa/es/figures/address-book.png
+share/gnome/help/balsa/es/figures/balsa_logo.png
+share/gnome/help/balsa/es/figures/druid-start.png
+share/gnome/help/balsa/es/figures/example-alias.png
+share/gnome/help/balsa/es/figures/figuresdobaaddress-book-modify.png
+share/gnome/help/balsa/es/figures/main-window-toolbar.png
+share/gnome/help/balsa/es/figures/main-window.png
+share/gnome/help/balsa/es/figures/message-window.png
+share/gnome/help/balsa/es/figures/msg-part-select.png
+share/gnome/help/balsa/es/figures/newmsg-window-attachments.png
+share/gnome/help/balsa/es/figures/newmsg-window-toolbar.png
+share/gnome/help/balsa/es/figures/newmsg-window.png
+share/gnome/help/balsa/es/figures/preferences-window.png
+share/gnome/help/balsa/es/figures/spell-check.png
 share/idl/Balsa.idl
 share/omf/balsa/balsa-C.omf
+share/omf/balsa/balsa-de.omf
+share/omf/balsa/balsa-es.omf
 share/pixmaps/gnome-balsa2.png
 share/sounds/balsa/newmail.wav
 share/sounds/balsa/startup.wav
@@ -90,6 +129,7 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-multipart.png
 share/locale/am/LC_MESSAGES/balsa.mo
 share/locale/ar/LC_MESSAGES/balsa.mo
 share/locale/az/LC_MESSAGES/balsa.mo
+share/locale/be/LC_MESSAGES/balsa.mo
 share/locale/bg/LC_MESSAGES/balsa.mo
 share/locale/ca/LC_MESSAGES/balsa.mo
 share/locale/cs/LC_MESSAGES/balsa.mo
@@ -114,6 +154,7 @@ share/locale/ja/LC_MESSAGES/balsa.mo
 share/locale/ko/LC_MESSAGES/balsa.mo
 share/locale/lt/LC_MESSAGES/balsa.mo
 share/locale/lv/LC_MESSAGES/balsa.mo
+share/locale/mk/LC_MESSAGES/balsa.mo
 share/locale/ml/LC_MESSAGES/balsa.mo
 share/locale/ms/LC_MESSAGES/balsa.mo
 share/locale/nb/LC_MESSAGES/balsa.mo
@@ -144,6 +185,10 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/sounds/balsa
 @dirrm share/omf/balsa
 %%GTKICON%%@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrm share/gnome/help/balsa/es/figures
+@dirrm share/gnome/help/balsa/es
+@dirrm share/gnome/help/balsa/de/figures
+@dirrm share/gnome/help/balsa/de
 @dirrm share/gnome/help/balsa/C/figures
 @dirrm share/gnome/help/balsa/C
 @dirrm share/gnome/help/balsa
