@@ -959,7 +959,6 @@ biloba                          ports/games/biloba
 bin86                           ports/devel/bin86
 bincimap                        ports/mail/bincimap
 bind9                           ports/dns/bind9
-bind9-dlz                       ports/dns/bind9-dlz
 bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind94                          ports/dns/bind94
@@ -2185,6 +2184,7 @@ digger-vgl                      ports/games/digger-vgl
 digikam                         ports/graphics/digikam
 digikam-doc                     ports/graphics/digikam-doc
 digitizer                       ports/math/digitizer
+dikt                            ports/textproc/dikt
 dillo                           ports/www/dillo
 dillo-i18n                      ports/www/dillo-i18n
 dillo2                          ports/www/dillo2
@@ -4191,6 +4191,7 @@ gmpc-wikipedia                  ports/audio/gmpc-wikipedia
 gmpccaa                         ports/audio/gmpccaa
 gmrun                           ports/x11/gmrun
 gmsh                            ports/cad/gmsh
+gmsh-occ                        ports/cad/gmsh-occ
 gmt                             ports/graphics/gmt
 gmysql                          ports/databases/gmysql
 gnapster                        ports/audio/gnapster
@@ -5549,6 +5550,7 @@ ja-anthy                        ports/japanese/anthy
 ja-asciidates98-fpw             ports/japanese/ASCIIdates98-fpw
 ja-asterisk-sound               ports/japanese/asterisk-sound
 ja-aterm                        ports/japanese/aterm
+ja-awffull                      ports/japanese/awffull
 ja-bible_names-fpw              ports/japanese/bible_names-fpw
 ja-bookview                     ports/japanese/bookview
 ja-bugzilla                     ports/japanese/bugzilla
@@ -17413,6 +17415,7 @@ plucker                         ports/palm/plucker
 plugdaemon                      ports/net/plugdaemon
 plugger                         ports/www/plugger
 plugger-plugins-hubbe           ports/www/plugger-plugins-hubbe
+plutocracy                      ports/games/plutocracy
 plwm                            ports/x11-wm/plwm
 pm-lib                          ports/mail/pm-lib
 pm3-base                        ports/lang/pm3-base
@@ -19677,6 +19680,7 @@ sams                            ports/www/sams
 sancp                           ports/security/sancp
 sanduhr                         ports/x11-clocks/sanduhr
 sane-backends                   ports/graphics/sane-backends
+sane-epkowa                     ports/graphics/sane-epkowa
 sane-frontends                  ports/graphics/sane-frontends
 saoimage                        ports/astro/saoimage
 sapphire                        ports/x11-wm/sapphire
