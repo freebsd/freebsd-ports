@@ -370,6 +370,7 @@
     SUBDIR += libofa
     SUBDIR += libogg
     SUBDIR += liboggz
+    SUBDIR += libopenspc
     SUBDIR += libsamplerate
     SUBDIR += libshout
     SUBDIR += libshout2
