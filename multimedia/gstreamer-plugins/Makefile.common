@@ -369,7 +369,7 @@ gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.a \
 			${GST_LIB_DIR}/libgstsouphttpsrc.so
 
 # spc
-gst_spc_LIB_DEPENDS+=	OpenSPC.3:${PORTSDIR}/audio/openspc
+gst_spc_LIB_DEPENDS+=	openspc.0:${PORTSDIR}/audio/libopenspc
 gst_spc_DIST=		bad
 
 # speex
