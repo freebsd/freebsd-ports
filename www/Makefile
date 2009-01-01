@@ -12,6 +12,7 @@
     SUBDIR += amaya
     SUBDIR += amphetadesk
     SUBDIR += analog
+    SUBDIR += anyremote2html
     SUBDIR += aolserver
     SUBDIR += aolserver-nscache
     SUBDIR += aolserver-xotcl
