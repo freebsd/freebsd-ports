@@ -58,6 +58,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DE
 LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		yes
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
 .endif
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
