@@ -14,8 +14,4 @@ GST_PLUGIN=	spc
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-BROKEN=		does not compile
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
-
 .include "${MASTERDIR}/Makefile"
