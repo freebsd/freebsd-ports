@@ -194,22 +194,24 @@ DESKTOP_FILES=	../../deploy/src/desktop/freedesktop/applications/sun-java.deskto
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || !exists(${DISTDIR}/${JRL_MOZFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://download.java.net/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/index.html\n\
-in a web browser.  Download the\n
+DISTFILE_INSTRUCTIONS += Please download the
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-DISTFILE_INSTRUCTIONS += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
+DISTFILE_INSTRUCTIONS += Update ${JDK_UPDATE_VERSION} Source from\n\
+    http://www.java.net/download/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/${JRL_SRCFILE}\n
 .endif#}
 .if !exists(${DISTDIR}/${JRL_BINFILE})#{
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
-DISTFILE_INSTRUCTIONS += and the\n
+DISTFILE_INSTRUCTIONS += and the
 .endif#}
-DISTFILE_INSTRUCTIONS += Source Binaries, ${JRL_BINFILE}
+DISTFILE_INSTRUCTIONS += Source Binaries from\n\
+    http://www.java.net/download/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/${JRL_BINFILE}\n
 .endif#}
 .if !exists(${DISTDIR}/${JRL_MOZFILE})#{
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-DISTFILE_INSTRUCTIONS += and the\n
+DISTFILE_INSTRUCTIONS += and the
 .endif#}
-DISTFILE_INSTRUCTIONS += Mozilla Headers, ${JRL_MOZFILE}
+DISTFILE_INSTRUCTIONS += Mozilla Headers from\n\
+    http://www.java.net/download/jdk6/6u${JDK_UPDATE_VERSION}/promoted/b${JDK_BUILD_NUMBER}/${JRL_MOZFILE}\n
 .endif#}
 DISTFILE_INSTRUCTIONS += .\n\n
 .endif#}
