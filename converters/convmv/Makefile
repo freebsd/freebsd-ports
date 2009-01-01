@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	convmv
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://www.j3e.de/linux/convmv/
 
