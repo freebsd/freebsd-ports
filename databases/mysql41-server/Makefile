@@ -94,6 +94,8 @@ CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.* mysql-serve
 
 USE_RC_SUBR=	mysql-server.sh
 
+USE_BISON=	build
+
 .if defined(WITH_NDB)
 PLIST_SUB+=	NDB=""
 .else
