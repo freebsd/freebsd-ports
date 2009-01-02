@@ -14,6 +14,7 @@ include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
 include/plplot/pldebug.h
+include/plplot/pldll.h
 include/plplot/plevent.h
 include/plplot/plplot.h
 include/plplot/plplotP.h
@@ -165,6 +166,7 @@ libdata/pkgconfig/plplotd-f95.pc
 %%DATADIR%%%%VERSION%%/examples/c/x23c.c
 %%DATADIR%%%%VERSION%%/examples/c/x24c.c
 %%DATADIR%%%%VERSION%%/examples/c/x25c.c
+%%DATADIR%%%%VERSION%%/examples/c/x26c.c
 %%DATADIR%%%%VERSION%%/examples/c++/Makefile
 %%DATADIR%%%%VERSION%%/examples/c++/lena.pgm
 %%DATADIR%%%%VERSION%%/examples/c++/plc++demos.h
@@ -193,6 +195,7 @@ libdata/pkgconfig/plplotd-f95.pc
 %%DATADIR%%%%VERSION%%/examples/c++/x22.cc
 %%DATADIR%%%%VERSION%%/examples/c++/x23.cc
 %%DATADIR%%%%VERSION%%/examples/c++/x24.cc
+%%DATADIR%%%%VERSION%%/examples/c++/x26.cc
 %%DATADIR%%%%VERSION%%/examples/f77/Makefile
 %%DATADIR%%%%VERSION%%/examples/f77/x01f.f
 %%DATADIR%%%%VERSION%%/examples/f77/x02f.f
