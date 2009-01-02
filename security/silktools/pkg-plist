@@ -95,9 +95,6 @@ lib/silk/packlogic-twoway.a
 lib/silk/pmapfilter.a
 lib/silk/pmapfilter.la
 lib/silk/pmapfilter.so
-lib/silk/rwp2f_minbytes.a
-lib/silk/rwp2f_minbytes.la
-lib/silk/rwp2f_minbytes.so
 %%IPFIX%%lib/libskipfix.so.1
 %%IPFIX%%lib/libskipfix.so
 %%IPFIX%%lib/libskipfix.la

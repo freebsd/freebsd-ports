@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -38,7 +38,7 @@ MAN1=	rwip2cc.1 rwpmapbuild.1 mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwscanquery.1 rwsetmember.1 rwsettool.1 rwsplit.1 rwdedupe.1 \
 	rwidsquery.1
 
-MAN3=	addrtype.3 ccfilter.3 pmapfilter.3
+MAN3=	addrtype.3 ccfilter.3 flowrate.3 pmapfilter.3
 
 MAN5=	sensor.conf.5 silk.conf.5
 
