@@ -1,5 +1,11 @@
---- cWnn/td/tserverrc.orig	2001-06-15 02:56:03.000000000 +0900
-+++ cWnn/td/tserverrc	2008-11-01 23:35:24.000000000 +0900
+Index: cWnn/td/tserverrc
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/td/tserverrc,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -d -u -I\$FreeBSD$ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+--- cWnn/td/tserverrc	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/td/tserverrc	20 Dec 2008 07:23:12 -0000	1.2
 @@ -35,6 +35,8 @@
  
  readfile	sys/full.con

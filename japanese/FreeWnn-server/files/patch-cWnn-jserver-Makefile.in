@@ -1,0 +1,41 @@
+Index: cWnn/jserver/Makefile.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/cWnn/jserver/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-cWnn-jserver-Makefile.in,v 1.1 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+--- cWnn/jserver/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ cWnn/jserver/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
+@@ -82,6 +82,8 @@
+ OBJ20= getopt.o
+ SRC21= $(CWNNETCSRC)/getopt1.c
+ OBJ21= getopt1.o
++SRC22= $(CWNNETCSRC)/fake-rfc2553.c
++OBJ22= fake-rfc2553.o
+ TSRC0= de_t.c
+ TOBJ0= de_t.o
+ TSRCGETHINSI= gethinsi_t.c
+@@ -90,11 +92,11 @@
+ TSRCS= $(TSRC0) $(TSRCGETHINSI)
+ SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
+     $(SRCGETHINSI) $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14) \
+-    $(SRC20) $(SRC21) $(TSRCS)
++    $(SRC20) $(SRC21) $(SRC22) $(TSRCS)
+ 
+ OBJS= $(OBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+     $(OBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) \
+-    $(OBJ20) $(OBJ21) $(OBJSUPPORT)
++    $(OBJ20) $(OBJ21) $(OBJ22) $(OBJSUPPORT)
+ 
+ TOBJS= $(TOBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
+     $(TOBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) \
+@@ -609,6 +611,9 @@
+ $(OBJ21) : $(SRC21) $(CWNNINCLUDESRC)/getopt.h
+ 	$(CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
+ 
++$(OBJ22) : $(SRC22)
++	$(CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
++
+ vasprintf.o : $(WNNETCSRC)/vasprintf.c
+ 	$(CC) -c $(CFLAGS)  $?
+ 

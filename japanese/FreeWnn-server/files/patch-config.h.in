@@ -1,0 +1,52 @@
+Index: config.h.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/config.h.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-config.h.in,v 1.1 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+--- config.h.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ config.h.in	2 Jan 2009 21:09:32 -0000	1.2
+@@ -33,12 +33,24 @@
+ /* Define to 1 if you have the `FD_SET' function. */
+ #undef HAVE_FD_SET
+ 
++/* Define to 1 if you have the `freeaddrinfo' function. */
++#undef HAVE_FREEADDRINFO
++
++/* Define to 1 if you have the `gai_strerror' function. */
++#undef HAVE_GAI_STRERROR
++
++/* Define to 1 if you have the `getaddrinfo' function. */
++#undef HAVE_GETADDRINFO
++
+ /* Define to 1 if you have the `getdtablesize' function. */
+ #undef HAVE_GETDTABLESIZE
+ 
+ /* Define to 1 if you have the `gethostname' function. */
+ #undef HAVE_GETHOSTNAME
+ 
++/* Define to 1 if you have the `getnameinfo' function. */
++#undef HAVE_GETNAMEINFO
++
+ /* Define to 1 if you have the `getopt' function. */
+ #undef HAVE_GETOPT
+ 
+@@ -147,6 +159,18 @@
+ /* Define to 1 if you have the `strrchr' function. */
+ #undef HAVE_STRRCHR
+ 
++/* Define to 1 if the system has the type `struct addrinfo'. */
++#undef HAVE_STRUCT_ADDRINFO
++
++/* Define to 1 if the system has the type `struct in6_addr'. */
++#undef HAVE_STRUCT_IN6_ADDR
++
++/* Define to 1 if the system has the type `struct sockaddr_in6'. */
++#undef HAVE_STRUCT_SOCKADDR_IN6
++
++/* Define to 1 if the system has the type `struct sockaddr_storage'. */
++#undef HAVE_STRUCT_SOCKADDR_STORAGE
++
+ /* Define to 1 if you have the `syslog' function. */
+ #undef HAVE_SYSLOG
+ 

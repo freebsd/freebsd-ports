@@ -1,10 +1,10 @@
 Index: Wnn/jserver/de.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/freewnn/Wnn/jserver/de.c,v
-retrieving revision 1.1
-diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-de.c,v 1.2 2009-01-02 11:49:47 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1 de.c
---- Wnn/jserver/de.c	20 Dec 2008 07:13:30 -0000	1.1
-+++ Wnn/jserver/de.c	2 Jan 2009 11:27:59 -0000
+retrieving revision 1.1.1.1
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-de.c,v 1.3 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 de.c
+--- Wnn/jserver/de.c	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jserver/de.c	2 Jan 2009 22:27:53 -0000
 @@ -102,29 +102,18 @@
  #endif
  
@@ -442,7 +442,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
    for (cc = 0; cc < n;)
      {
        errno = 0;
-@@ -967,112 +926,108 @@
+@@ -967,112 +926,111 @@
  
  /**     ソケットのイニシャライズ        **/
  #ifdef  AF_UNIX
@@ -460,10 +460,14 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
 -    {
 +
        saddr_un.sun_family = AF_UNIX;
-       unlink (sockname);
-       strcpy (saddr_un.sun_path, sockname);
+-      unlink (sockname);
+-      strcpy (saddr_un.sun_path, sockname);
 -      if ((sock_d_un = socket (AF_UNIX, SOCK_STREAM, 0)) == ERROR)
 -        {
++	strncpy(saddr_un.sun_path, sockname, sizeof(saddr_un.sun_path) - 1);
++	saddr_un.sun_path[sizeof(saddr_un.sun_path) - 1] = '\0';
++
++	unlink(saddr_un.sun_path);
 +
 +	if ((sock_d_un = socket(saddr_un.sun_family, SOCK_STREAM, 0)) == ERROR)
            xerror ("could not create unix domain socket");
@@ -538,7 +542,8 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
 -        }
 +	memset(&sa, 0, sizeof(struct sockaddr));
 +	if (port < 0) {
-+		strcpy(sbuf, SERVERNAME);
++		strncpy(sbuf, SERVERNAME, sizeof(sbuf) - 1);
++		sbuf[sizeof(sbuf) - 1] = '\0';
 +		error = getnameinfo(&sa, sa.sa_len, NULL, 0, sbuf, sizeof(sbuf), NI_NUMERICSERV);
 +		if (error)
 +			sprintf(sbuf, "%d", WNN_PORT_IN);
@@ -610,7 +615,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
      }
    setsockopt (sock_d_in, SOL_SOCKET, SO_REUSEADDR, (char *) &on, sizeof (int));
  #ifdef SO_DONTLINGER
-@@ -1085,69 +1040,31 @@
+@@ -1085,69 +1043,31 @@
  # endif /* SO_LINGER */
  #endif /* SO_DONTLINGER */
  
@@ -691,7 +696,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
  }
  
  static void
-@@ -1157,7 +1074,6 @@
+@@ -1157,7 +1077,6 @@
    exit (1);
  }
  
@@ -699,7 +704,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
  static void
  dmp (char *p, int n)
  {
-@@ -1172,13 +1088,13 @@
+@@ -1172,13 +1091,13 @@
        fprintf (stderr, "n=%d\n", n);
      }
  }
@@ -714,7 +719,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
  
    strcpy (jserverrcfile, LIBDIR);       /* usr/local/lib/wnn */
    strcat (jserverrcfile, SERVER_INIT_FILE);     /* ja_JP/jserverrc */
-@@ -1193,6 +1109,8 @@
+@@ -1193,6 +1112,8 @@
  	{"inet",	0, NULL, '4'},
  	{"inet6",	0, NULL, '6'},
  	{"jserverrc",	1, NULL, 'f'},
@@ -723,7 +728,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
  	{"version",	0, NULL, 'v'},
  	{0, 0, 0, 0}
        };
-@@ -1209,7 +1127,14 @@
+@@ -1209,7 +1130,14 @@
  	  break;
  
          case 'f': /* --jserverrc FILENAME */
@@ -739,7 +744,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-
            break;
  
          case 's':
-@@ -1318,9 +1243,9 @@
+@@ -1318,9 +1246,9 @@
  {
    fprintf(stderr, 
  #ifdef INET6
