@@ -6,26 +6,15 @@ bin/paexec
 %%EXAMPLESDIR%%/1_div_X/1_div_X_run
 %%EXAMPLESDIR%%/all_substr/all_substr_cmd
 %%EXAMPLESDIR%%/all_substr/all_substr_run
+%%EXAMPLESDIR%%/broken_echo/transport_broken_echo
+%%EXAMPLESDIR%%/broken_echo/transport_closed_stdin.c
 %%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
 %%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
 %%EXAMPLESDIR%%/cc_wrapper/func1.c
 %%EXAMPLESDIR%%/cc_wrapper/func2.c
 %%EXAMPLESDIR%%/cc_wrapper/func3.c
 %%EXAMPLESDIR%%/make_package/make_package_cmd
-%%EXAMPLESDIR%%/make_package/make_package_cmd__all_failed
-%%EXAMPLESDIR%%/make_package/make_package_cmd__autoconf
-%%EXAMPLESDIR%%/make_package/make_package_cmd__byacc
-%%EXAMPLESDIR%%/make_package/make_package_cmd__dict-client
-%%EXAMPLESDIR%%/make_package/make_package_cmd__dict-server
-%%EXAMPLESDIR%%/make_package/make_package_cmd__dictem
-%%EXAMPLESDIR%%/make_package/make_package_cmd__flex
-%%EXAMPLESDIR%%/make_package/make_package_cmd__flex_byacc
-%%EXAMPLESDIR%%/make_package/make_package_cmd__glib2
-%%EXAMPLESDIR%%/make_package/make_package_cmd__gmake
-%%EXAMPLESDIR%%/make_package/make_package_cmd__gmake_autoconf
-%%EXAMPLESDIR%%/make_package/make_package_cmd__libjudy
-%%EXAMPLESDIR%%/make_package/make_package_cmd__libmaa
-%%EXAMPLESDIR%%/make_package/make_package_cmd__m4
+%%EXAMPLESDIR%%/make_package/make_package_cmd__xxx_failed
 %%EXAMPLESDIR%%/make_package/make_package_tasks
 %%EXAMPLESDIR%%/make_package/make_package_tasks2
 %%EXAMPLESDIR%%/make_package/make_package_tasks_cycle
@@ -33,6 +22,7 @@ bin/paexec
 %%EXAMPLESDIR%%/toupper/toupper_run
 @dirrm %%EXAMPLESDIR%%/1_div_X
 @dirrm %%EXAMPLESDIR%%/all_substr
+@dirrm %%EXAMPLESDIR%%/broken_echo
 @dirrm %%EXAMPLESDIR%%/cc_wrapper
 @dirrm %%EXAMPLESDIR%%/make_package
 @dirrm %%EXAMPLESDIR%%/toupper
