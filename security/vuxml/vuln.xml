@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="0e1e3789-d87f-11dd-8ecd-00163e000016">
+    <topic>vim -- multiple vulnerabilities in the netrw module</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-lite</name>
+	<name>vim-gtk2</name>
+	<name>vim-gnome</name>
+	<range><ge>7.0</ge><lt>7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Minar reports:</p>
+	<blockquote cite="http://www.rdancer.org/vulnerablevim-netrw.v2.html">
+	  <p>Applying the ``D'' to a file with a crafted file name,
+	   or inside a directory with a crafted directory name, can
+	   lead to arbitrary code execution.</p>
+	</blockquote>
+	<blockquote cite="http://www.rdancer.org/vulnerablevim-netrw.v5.html">
+	  <p>Lack of sanitization throughout Netrw can lead to arbitrary
+	    code execution upon opening a directory with a crafted
+	    name.</p>
+	</blockquote>
+	<blockquote cite="http://www.rdancer.org/vulnerablevim-netrw-credentials-dis.html">
+	  <p>The Vim Netrw Plugin shares the FTP user name and password
+	    across all FTP sessions.  Every time Vim makes a new FTP
+	    connection, it sends the user name and password of the
+	    previous FTP session to the FTP server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3076</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2008/10/16/2</mlist>
+      <url>http://www.rdancer.org/vulnerablevim-netrw.html</url>
+      <url>http://www.rdancer.org/vulnerablevim-netrw.v2.html</url>
+      <url>http://www.rdancer.org/vulnerablevim-netrw.v5.html</url>
+      <url>http://www.rdancer.org/vulnerablevim-netrw-credentials-dis.html</url>
+    </references>
+    <dates>
+      <discovery>2008-10-16</discovery>
+      <entry>2009-01-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="214e8e07-d369-11dd-b800-001b77d09812">
     <topic>vinagre -- format string vulnerability</topic>
     <affects>
