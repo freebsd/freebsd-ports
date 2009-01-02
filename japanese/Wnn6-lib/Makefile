@@ -7,19 +7,18 @@
 
 PORTNAME=	Wnn6-lib
 PORTVERSION=	2000.9.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 DISTNAME=	Wnn6-SDK
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Include files and a library of Wnn6
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Wnn6 client library
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
-WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
-DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
-
+USE_IMAKE=	yes
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
+PORTDOCS=	README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
@@ -27,15 +26,16 @@ post-patch:
 		${WRKSRC}/config/X11.tmpl \
 		${WRKSRC}/Makefile.ini
 
-# Warning: we cannot use USE_IMAKE.
 do-build:
-	( cd ${WRKSRC} ; make World -f Makefile.ini )
+	cd ${WRKSRC} && make World -f Makefile.ini
 
 post-install:
 	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn6.a
-	@${MKDIR} ${PREFIX}/include/wnn6/wnn
-	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn6/wnn
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
+	${MKDIR} ${PREFIX}/include/wnn6/wnn
+	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn6/wnn
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

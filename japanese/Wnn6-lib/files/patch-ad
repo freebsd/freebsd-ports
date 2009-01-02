@@ -1,6 +1,6 @@
---- ../Xsi.org/Wnn/Imakefile	Wed Oct 28 13:36:14 1998
-+++ ./Wnn/Imakefile	Sun Nov 22 01:28:58 1998
-@@ -14,7 +14,11 @@
+--- Wnn/Imakefile.orig	2000-09-01 18:58:55.000000000 +0900
++++ Wnn/Imakefile	2009-01-03 08:02:08.000000000 +0900
+@@ -14,10 +14,14 @@
  MakeSubdirs($(SUBDIRS))
  DependSubdirs($(SUBDIRS))
  
@@ -10,5 +10,10 @@
  install:: mkwnndir
 +#endif
  
- MakeDirectory(mkwnndir, $(DESTDIR)$(WNNWNNDIR))
- MakeDirectory(mkwnndir, $(DESTDIR)$(JWNNWNNDIR))
+-MakeDirectory(mkwnndir, $(DESTDIR)$(WNNWNNDIR))
+-MakeDirectory(mkwnndir, $(DESTDIR)$(JWNNWNNDIR))
++MakeDirectories(mkwnndir, $(DESTDIR)$(WNNWNNDIR))
++MakeDirectories(mkwnndir, $(DESTDIR)$(JWNNWNNDIR))
+ 
+ checkwnnid::
+ 	@A=`egrep "^$(WNNOWNER):" /etc/passwd | cat` ;\
