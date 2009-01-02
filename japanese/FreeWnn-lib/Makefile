@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -28,7 +28,9 @@ ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
 
 WNNTYPE?=	WNN
-CONFIGURE_ARGS=	--enable-server=no ${CONFIGURE_ARGS.${WNNTYPE}}
+CONFIGURE_ARGS=	--enable-server=no \
+		--enable-ipv6 \
+		${CONFIGURE_ARGS.${WNNTYPE}}
 
 CONFIGURE_ARGS.CWNN+=	--enable-Wnn=no --enable-kWnn=no
 CONFIGURE_ARGS.KWNN+=	--enable-Wnn=no --enable-cWnn=no

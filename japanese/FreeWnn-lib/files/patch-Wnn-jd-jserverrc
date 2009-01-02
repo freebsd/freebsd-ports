@@ -1,10 +1,11 @@
 --- Wnn/jd/jserverrc.orig	2008-10-30 15:41:31.000000000 +0900
 +++ Wnn/jd/jserverrc	2008-10-30 15:41:47.000000000 +0900
-@@ -29,6 +29,8 @@
+@@ -29,6 +29,9 @@
  ; Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  ;
  
 +listenaddr 127.0.0.1
++listenaddr ::1
 +
  max_client 64
  jserver_dir @LIBDIR/@LANG/dic
