@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.3.pre9
+PORTVERSION=	1.4.3.pre12
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
   		http://cle.linux.org.tw/gcin/download/:main \
@@ -21,6 +21,7 @@ COMMENT=	A traditional chinese input utility in X
 CONFLICTS=	zh-gcin-[0-9]*
 NO_LATEST_LINK=	yes
 
+BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
 USE_GNOME=	gtk20
@@ -65,7 +66,7 @@ QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
@@ -98,14 +99,12 @@ pre-patch:
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 
 .if defined(WITH_BOSHIAMY)
-post-patch:
 PLIST_SUB+=	BOSHIAMY=""
 .else
 PLIST_SUB+=	BOSHIAMY="@comment "
 .endif
 
 .if defined(WITH_QT_IM_MODULE)
-post-patch:
 PLIST_SUB+=	QT_IM_MODULE=""
 .else
 PLIST_SUB+=	QT_IM_MODULE="@comment "
