@@ -114,6 +114,7 @@ share/icons/hicolor/48x48/apps/comix.png
 %%THUMBNAILS:%%share/icons/hicolor/48x48/mimetypes/application-x-cbt.png
 %%THUMBNAILS:%%share/icons/hicolor/48x48/mimetypes/application-x-cbz.png
 share/icons/hicolor/scalable/apps/comix.svg
+share/locale/ca/LC_MESSAGES/comix.mo
 share/locale/cs/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
 share/locale/hr/LC_MESSAGES/comix.mo
@@ -121,9 +122,11 @@ share/locale/id/LC_MESSAGES/comix.mo
 share/locale/ja/LC_MESSAGES/comix.mo
 share/locale/ko/LC_MESSAGES/comix.mo
 share/locale/pl/LC_MESSAGES/comix.mo
+share/locale/pt_BR/LC_MESSAGES/comix.mo
 share/locale/ru/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
+share/locale/zh_TW/LC_MESSAGES/comix.mo
 %%THUMBNAILS:%%share/mime/packages/comix.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/src
