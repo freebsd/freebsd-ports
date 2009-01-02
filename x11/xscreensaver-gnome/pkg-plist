@@ -29,7 +29,6 @@ bin/xscreensaver-hacks/boxfit
 bin/xscreensaver-hacks/braid
 bin/xscreensaver-hacks/bsod
 bin/xscreensaver-hacks/bubble3d
-bin/xscreensaver-hacks/bubbles
 bin/xscreensaver-hacks/bumps
 bin/xscreensaver-hacks/cage
 bin/xscreensaver-hacks/carousel
@@ -40,7 +39,6 @@ bin/xscreensaver-hacks/cloudlife
 bin/xscreensaver-hacks/compass
 bin/xscreensaver-hacks/coral
 bin/xscreensaver-hacks/crackberg
-bin/xscreensaver-hacks/critical
 bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
@@ -65,7 +63,6 @@ bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
 bin/xscreensaver-hacks/fiberlamp
 bin/xscreensaver-hacks/fireworkx
-bin/xscreensaver-hacks/flag
 bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipflop
 bin/xscreensaver-hacks/flipscreen3d
@@ -75,7 +72,6 @@ bin/xscreensaver-hacks/fluidballs
 bin/xscreensaver-hacks/flurry
 bin/xscreensaver-hacks/flyingtoasters
 bin/xscreensaver-hacks/fontglide
-bin/xscreensaver-hacks/forest
 bin/xscreensaver-hacks/fuzzyflakes
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
@@ -83,7 +79,6 @@ bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glcells
 bin/xscreensaver-hacks/gleidescope
-bin/xscreensaver-hacks/glforestfire
 bin/xscreensaver-hacks/glhanoi
 bin/xscreensaver-hacks/glknots
 bin/xscreensaver-hacks/glmatrix
@@ -117,14 +112,9 @@ bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/klein
 bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
-bin/xscreensaver-hacks/laser
 bin/xscreensaver-hacks/lavalite
 bin/xscreensaver-hacks/lcdscrub
-bin/xscreensaver-hacks/lightning
-bin/xscreensaver-hacks/lisa
-bin/xscreensaver-hacks/lissie
 bin/xscreensaver-hacks/ljlatest
-bin/xscreensaver-hacks/lmorph
 bin/xscreensaver-hacks/lockward
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/m6502
@@ -133,7 +123,6 @@ bin/xscreensaver-hacks/memscroller
 bin/xscreensaver-hacks/menger
 bin/xscreensaver-hacks/metaballs
 bin/xscreensaver-hacks/mirrorblob
-bin/xscreensaver-hacks/mismunch
 bin/xscreensaver-hacks/moebius
 bin/xscreensaver-hacks/moebiusgears
 bin/xscreensaver-hacks/moire
@@ -151,6 +140,7 @@ bin/xscreensaver-hacks/penetrate
 bin/xscreensaver-hacks/penrose
 bin/xscreensaver-hacks/petri
 bin/xscreensaver-hacks/phosphor
+bin/xscreensaver-hacks/photopile
 bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pinion
 bin/xscreensaver-hacks/pipes
@@ -168,7 +158,6 @@ bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
 bin/xscreensaver-hacks/rocks
 bin/xscreensaver-hacks/rorschach
-bin/xscreensaver-hacks/rotor
 bin/xscreensaver-hacks/rotzoomer
 bin/xscreensaver-hacks/rubik
 bin/xscreensaver-hacks/sballs
@@ -180,9 +169,7 @@ bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
 bin/xscreensaver-hacks/sonar
 bin/xscreensaver-hacks/speedmine
-bin/xscreensaver-hacks/sphere
 bin/xscreensaver-hacks/spheremonics
-bin/xscreensaver-hacks/spiral
 bin/xscreensaver-hacks/spotlight
 bin/xscreensaver-hacks/sproingies
 bin/xscreensaver-hacks/squiral
@@ -194,7 +181,6 @@ bin/xscreensaver-hacks/strange
 bin/xscreensaver-hacks/substrate
 bin/xscreensaver-hacks/superquadrics
 bin/xscreensaver-hacks/swirl
-bin/xscreensaver-hacks/t3d
 bin/xscreensaver-hacks/tangram
 bin/xscreensaver-hacks/thornbird
 bin/xscreensaver-hacks/timetunnel
@@ -204,13 +190,10 @@ bin/xscreensaver-hacks/truchet
 bin/xscreensaver-hacks/twang
 bin/xscreensaver-hacks/vermiculate
 bin/xscreensaver-hacks/vidwhacker
-bin/xscreensaver-hacks/vines
 bin/xscreensaver-hacks/voronoi
 bin/xscreensaver-hacks/wander
 bin/xscreensaver-hacks/webcollage
 bin/xscreensaver-hacks/whirlwindwarp
-bin/xscreensaver-hacks/whirlygig
-bin/xscreensaver-hacks/worm
 bin/xscreensaver-hacks/wormhole
 bin/xscreensaver-hacks/xanalogtv
 bin/xscreensaver-hacks/xflame
@@ -244,7 +227,6 @@ share/locale/ja/LC_MESSAGES/xscreensaver.mo
 share/locale/ko/LC_MESSAGES/xscreensaver.mo
 share/locale/nb/LC_MESSAGES/xscreensaver.mo
 share/locale/nl/LC_MESSAGES/xscreensaver.mo
-share/locale/no/LC_MESSAGES/xscreensaver.mo
 share/locale/pl/LC_MESSAGES/xscreensaver.mo
 share/locale/pt/LC_MESSAGES/xscreensaver.mo
 share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
@@ -280,7 +262,6 @@ share/xscreensaver/config/boxfit.xml
 share/xscreensaver/config/braid.xml
 share/xscreensaver/config/bsod.xml
 share/xscreensaver/config/bubble3d.xml
-share/xscreensaver/config/bubbles.xml
 share/xscreensaver/config/bumps.xml
 share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
@@ -291,7 +272,6 @@ share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
 share/xscreensaver/config/crackberg.xml
-share/xscreensaver/config/critical.xml
 share/xscreensaver/config/crystal.xml
 share/xscreensaver/config/cube21.xml
 share/xscreensaver/config/cubenetic.xml
@@ -316,7 +296,6 @@ share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
 share/xscreensaver/config/fireworkx.xml
-share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
 share/xscreensaver/config/flipflop.xml
 share/xscreensaver/config/flipscreen3d.xml
@@ -326,7 +305,6 @@ share/xscreensaver/config/fluidballs.xml
 share/xscreensaver/config/flurry.xml
 share/xscreensaver/config/flyingtoasters.xml
 share/xscreensaver/config/fontglide.xml
-share/xscreensaver/config/forest.xml
 share/xscreensaver/config/fuzzyflakes.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
@@ -334,7 +312,6 @@ share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glcells.xml
 share/xscreensaver/config/gleidescope.xml
-share/xscreensaver/config/glforestfire.xml
 share/xscreensaver/config/glhanoi.xml
 share/xscreensaver/config/glknots.xml
 share/xscreensaver/config/glmatrix.xml
@@ -368,13 +345,8 @@ share/xscreensaver/config/kaleidescope.xml
 share/xscreensaver/config/klein.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml
-share/xscreensaver/config/laser.xml
 share/xscreensaver/config/lavalite.xml
 share/xscreensaver/config/lcdscrub.xml
-share/xscreensaver/config/lightning.xml
-share/xscreensaver/config/lisa.xml
-share/xscreensaver/config/lissie.xml
-share/xscreensaver/config/lmorph.xml
 share/xscreensaver/config/lockward.xml
 share/xscreensaver/config/loop.xml
 share/xscreensaver/config/m6502.xml
@@ -383,7 +355,6 @@ share/xscreensaver/config/memscroller.xml
 share/xscreensaver/config/menger.xml
 share/xscreensaver/config/metaballs.xml
 share/xscreensaver/config/mirrorblob.xml
-share/xscreensaver/config/mismunch.xml
 share/xscreensaver/config/moebius.xml
 share/xscreensaver/config/moebiusgears.xml
 share/xscreensaver/config/moire.xml
@@ -401,6 +372,7 @@ share/xscreensaver/config/penetrate.xml
 share/xscreensaver/config/penrose.xml
 share/xscreensaver/config/petri.xml
 share/xscreensaver/config/phosphor.xml
+share/xscreensaver/config/photopile.xml
 share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pinion.xml
 share/xscreensaver/config/pipes.xml
@@ -418,7 +390,6 @@ share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
 share/xscreensaver/config/rorschach.xml
-share/xscreensaver/config/rotor.xml
 share/xscreensaver/config/rotzoomer.xml
 share/xscreensaver/config/rubik.xml
 share/xscreensaver/config/sballs.xml
@@ -430,9 +401,7 @@ share/xscreensaver/config/slidescreen.xml
 share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
-share/xscreensaver/config/sphere.xml
 share/xscreensaver/config/spheremonics.xml
-share/xscreensaver/config/spiral.xml
 share/xscreensaver/config/spotlight.xml
 share/xscreensaver/config/sproingies.xml
 share/xscreensaver/config/squiral.xml
@@ -444,7 +413,6 @@ share/xscreensaver/config/strange.xml
 share/xscreensaver/config/substrate.xml
 share/xscreensaver/config/superquadrics.xml
 share/xscreensaver/config/swirl.xml
-share/xscreensaver/config/t3d.xml
 share/xscreensaver/config/tangram.xml
 share/xscreensaver/config/thornbird.xml
 share/xscreensaver/config/timetunnel.xml
@@ -454,13 +422,10 @@ share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/twang.xml
 share/xscreensaver/config/vermiculate.xml
 share/xscreensaver/config/vidwhacker.xml
-share/xscreensaver/config/vines.xml
 share/xscreensaver/config/voronoi.xml
 share/xscreensaver/config/wander.xml
 share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml
-share/xscreensaver/config/whirlygig.xml
-share/xscreensaver/config/worm.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
 share/xscreensaver/config/xflame.xml
