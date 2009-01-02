@@ -11,6 +11,7 @@ www/nocc/config/conf.php.dist
 @exec [ -f %B/config/conf.php ] || cp %B/%f %B/config/conf.php
 www/nocc/config/conf_charset.php
 www/nocc/config/conf_lang.php
+www/nocc/config/fckconfig.js
 www/nocc/config/login_alias.sample
 www/nocc/config/login_allowed.sample
 www/nocc/contacts.php
@@ -25,37 +26,44 @@ www/nocc/index.php
 www/nocc/logout.php
 www/nocc/send.php
 www/nocc/fckeditor/editor/css/behaviors/disablehandles.htc
-www/nocc/fckeditor/editor/css/behaviors/hiddenfield.gif
-www/nocc/fckeditor/editor/css/behaviors/hiddenfield.htc
 www/nocc/fckeditor/editor/css/behaviors/showtableborders.htc
 www/nocc/fckeditor/editor/css/fck_editorarea.css
 www/nocc/fckeditor/editor/css/fck_internal.css
 www/nocc/fckeditor/editor/css/fck_showtableborders_gecko.css
+www/nocc/fckeditor/editor/css/images/block_address.png
+www/nocc/fckeditor/editor/css/images/block_blockquote.png
+www/nocc/fckeditor/editor/css/images/block_div.png
+www/nocc/fckeditor/editor/css/images/block_h1.png
+www/nocc/fckeditor/editor/css/images/block_h2.png
+www/nocc/fckeditor/editor/css/images/block_h3.png
+www/nocc/fckeditor/editor/css/images/block_h4.png
+www/nocc/fckeditor/editor/css/images/block_h5.png
+www/nocc/fckeditor/editor/css/images/block_h6.png
+www/nocc/fckeditor/editor/css/images/block_p.png
+www/nocc/fckeditor/editor/css/images/block_pre.png
 www/nocc/fckeditor/editor/css/images/fck_anchor.gif
 www/nocc/fckeditor/editor/css/images/fck_flashlogo.gif
+www/nocc/fckeditor/editor/css/images/fck_hiddenfield.gif
 www/nocc/fckeditor/editor/css/images/fck_pagebreak.gif
+www/nocc/fckeditor/editor/css/images/fck_plugin.gif
 www/nocc/fckeditor/editor/dialog/common/fck_dialog_common.css
 www/nocc/fckeditor/editor/dialog/common/fck_dialog_common.js
-www/nocc/fckeditor/editor/dialog/common/fcknumericfield.htc
 www/nocc/fckeditor/editor/dialog/common/images/locked.gif
 www/nocc/fckeditor/editor/dialog/common/images/reset.gif
 www/nocc/fckeditor/editor/dialog/common/images/unlocked.gif
-www/nocc/fckeditor/editor/dialog/common/moz-bindings.xml
-www/nocc/fckeditor/editor/dialog/fck_about/lgpl.html
 www/nocc/fckeditor/editor/dialog/fck_about/logo_fckeditor.gif
 www/nocc/fckeditor/editor/dialog/fck_about/logo_fredck.gif
+www/nocc/fckeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
 www/nocc/fckeditor/editor/dialog/fck_about.html
 www/nocc/fckeditor/editor/dialog/fck_anchor.html
 www/nocc/fckeditor/editor/dialog/fck_button.html
 www/nocc/fckeditor/editor/dialog/fck_checkbox.html
 www/nocc/fckeditor/editor/dialog/fck_colorselector.html
+www/nocc/fckeditor/editor/dialog/fck_div.html
 www/nocc/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
 www/nocc/fckeditor/editor/dialog/fck_docprops.html
-www/nocc/fckeditor/editor/dialog/fck_find.html
-www/nocc/fckeditor/editor/dialog/fck_flash.html
 www/nocc/fckeditor/editor/dialog/fck_form.html
 www/nocc/fckeditor/editor/dialog/fck_hiddenfield.html
-www/nocc/fckeditor/editor/dialog/fck_image.html
 www/nocc/fckeditor/editor/dialog/fck_link/fck_link.js
 www/nocc/fckeditor/editor/dialog/fck_link.html
 www/nocc/fckeditor/editor/dialog/fck_listprop.html
@@ -64,10 +72,8 @@ www/nocc/fckeditor/editor/dialog/fck_radiobutton.html
 www/nocc/fckeditor/editor/dialog/fck_replace.html
 www/nocc/fckeditor/editor/dialog/fck_select/fck_select.js
 www/nocc/fckeditor/editor/dialog/fck_select.html
-www/nocc/fckeditor/editor/dialog/fck_smiley.html
 www/nocc/fckeditor/editor/dialog/fck_source.html
 www/nocc/fckeditor/editor/dialog/fck_specialchar.html
-www/nocc/fckeditor/editor/dialog/fck_spellerpages.html
 www/nocc/fckeditor/editor/dialog/fck_table.html
 www/nocc/fckeditor/editor/dialog/fck_tablecell.html
 www/nocc/fckeditor/editor/dialog/fck_template/images/template1.gif
@@ -76,15 +82,9 @@ www/nocc/fckeditor/editor/dialog/fck_template/images/template3.gif
 www/nocc/fckeditor/editor/dialog/fck_template.html
 www/nocc/fckeditor/editor/dialog/fck_textarea.html
 www/nocc/fckeditor/editor/dialog/fck_textfield.html
-www/nocc/fckeditor/editor/dialog/fck_universalkey/00.gif
-www/nocc/fckeditor/editor/dialog/fck_universalkey/data.js
-www/nocc/fckeditor/editor/dialog/fck_universalkey/diacritic.js
-www/nocc/fckeditor/editor/dialog/fck_universalkey/dialogue.js
-www/nocc/fckeditor/editor/dialog/fck_universalkey/fck_universalkey.css
-www/nocc/fckeditor/editor/dialog/fck_universalkey/keyboard_layout.gif
-www/nocc/fckeditor/editor/dialog/fck_universalkey/multihexa.js
-www/nocc/fckeditor/editor/dialog/fck_universalkey.html
-www/nocc/fckeditor/editor/fckblank.html
+www/nocc/fckeditor/editor/dtd/fck_dtd_test.html
+www/nocc/fckeditor/editor/dtd/fck_xhtml10strict.js
+www/nocc/fckeditor/editor/dtd/fck_xhtml10transitional.js
 www/nocc/fckeditor/editor/fckdebug.html
 www/nocc/fckeditor/editor/fckdialog.html
 www/nocc/fckeditor/editor/fckeditor.html
@@ -93,8 +93,10 @@ www/nocc/fckeditor/editor/images/anchor.gif
 www/nocc/fckeditor/editor/images/arrow_ltr.gif
 www/nocc/fckeditor/editor/images/arrow_rtl.gif
 www/nocc/fckeditor/editor/images/spacer.gif
+www/nocc/fckeditor/editor/js/fckadobeair.js
 www/nocc/fckeditor/editor/js/fckeditorcode_gecko.js
 www/nocc/fckeditor/editor/js/fckeditorcode_ie.js
+www/nocc/fckeditor/editor/lang/af.js
 www/nocc/fckeditor/editor/lang/ar.js
 www/nocc/fckeditor/editor/lang/bg.js
 www/nocc/fckeditor/editor/lang/bn.js
@@ -115,8 +117,10 @@ www/nocc/fckeditor/editor/lang/eu.js
 www/nocc/fckeditor/editor/lang/fa.js
 www/nocc/fckeditor/editor/lang/fi.js
 www/nocc/fckeditor/editor/lang/fo.js
+www/nocc/fckeditor/editor/lang/fr-ca.js
 www/nocc/fckeditor/editor/lang/fr.js
 www/nocc/fckeditor/editor/lang/gl.js
+www/nocc/fckeditor/editor/lang/gu.js
 www/nocc/fckeditor/editor/lang/he.js
 www/nocc/fckeditor/editor/lang/hi.js
 www/nocc/fckeditor/editor/lang/hr.js
@@ -149,8 +153,14 @@ www/nocc/fckeditor/editor/lang/vi.js
 www/nocc/fckeditor/editor/lang/zh-cn.js
 www/nocc/fckeditor/editor/lang/zh.js
 www/nocc/fckeditor/editor/skins/default/fck_dialog.css
+www/nocc/fckeditor/editor/skins/default/fck_dialog_ie6.js
 www/nocc/fckeditor/editor/skins/default/fck_editor.css
 www/nocc/fckeditor/editor/skins/default/fck_strip.gif
+www/nocc/fckeditor/editor/skins/default/images/dialog.sides.gif
+www/nocc/fckeditor/editor/skins/default/images/dialog.sides.png
+www/nocc/fckeditor/editor/skins/default/images/dialog.sides.rtl.png
+www/nocc/fckeditor/editor/skins/default/images/sprites.gif
+www/nocc/fckeditor/editor/skins/default/images/sprites.png
 www/nocc/fckeditor/editor/skins/default/images/toolbar.arrowright.gif
 www/nocc/fckeditor/editor/skins/default/images/toolbar.buttonarrow.gif
 www/nocc/fckeditor/editor/skins/default/images/toolbar.collapse.gif
@@ -160,8 +170,12 @@ www/nocc/fckeditor/editor/skins/default/images/toolbar.separator.gif
 www/nocc/fckeditor/editor/skins/default/images/toolbar.start.gif
 www/nocc/fckeditor/fckconfig.js
 www/nocc/fckeditor/fckeditor.php
+www/nocc/fckeditor/fckeditor_php4.php
+www/nocc/fckeditor/fckeditor_php5.php
+www/nocc/fckeditor/fckpackager.xml
 www/nocc/fckeditor/fckstyles.xml
 www/nocc/fckeditor/fcktemplates.xml
+www/nocc/fckeditor/license.txt
 www/nocc/html/error.php
 www/nocc/html/filter_prefs.php
 www/nocc/html/folders.php
@@ -228,6 +242,7 @@ www/nocc/themes/blue/img/button.png
 www/nocc/themes/blue/img/down.png
 www/nocc/themes/blue/img/error.png
 www/nocc/themes/blue/img/left_arrow.png
+www/nocc/themes/blue/img/img-loader.gif
 www/nocc/themes/blue/img/logo.png
 www/nocc/themes/blue/img/new.png
 www/nocc/themes/blue/img/right_arrow.png
@@ -251,6 +266,7 @@ www/nocc/themes/newlook/img/attach.png
 www/nocc/themes/newlook/img/button.png
 www/nocc/themes/newlook/img/down.png
 www/nocc/themes/newlook/img/error.png
+www/nocc/themes/newlook/img/img-loader.gif
 www/nocc/themes/newlook/img/left_arrow.png
 www/nocc/themes/newlook/img/logo.png
 www/nocc/themes/newlook/img/new.png
@@ -276,6 +292,7 @@ www/nocc/themes/standard/img/attach.png
 www/nocc/themes/standard/img/button.png
 www/nocc/themes/standard/img/down.png
 www/nocc/themes/standard/img/error.png
+www/nocc/themes/standard/img/img-loader.gif
 www/nocc/themes/standard/img/left_arrow.png
 www/nocc/themes/standard/img/logo.png
 www/nocc/themes/standard/img/new.png
@@ -324,12 +341,13 @@ www/nocc/utils/proxy.php
 @dirrm www/nocc/fckeditor/editor/lang
 @dirrm www/nocc/fckeditor/editor/js
 @dirrm www/nocc/fckeditor/editor/images
-@dirrm www/nocc/fckeditor/editor/dialog/fck_universalkey
+@dirrm www/nocc/fckeditor/editor/dtd
 @dirrm www/nocc/fckeditor/editor/dialog/fck_template/images
 @dirrm www/nocc/fckeditor/editor/dialog/fck_template
 @dirrm www/nocc/fckeditor/editor/dialog/fck_select
 @dirrm www/nocc/fckeditor/editor/dialog/fck_docprops
 @dirrm www/nocc/fckeditor/editor/dialog/fck_link
+@dirrm www/nocc/fckeditor/editor/dialog/fck_about/sponsors
 @dirrm www/nocc/fckeditor/editor/dialog/fck_about
 @dirrm www/nocc/fckeditor/editor/dialog/common/images
 @dirrm www/nocc/fckeditor/editor/dialog/common
