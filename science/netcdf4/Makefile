@@ -64,9 +64,6 @@ post-configure:
 	@cd ${WRKSRC}/man4 && makeinfo --no-split ${i}.texi
 .endfor
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
