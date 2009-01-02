@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	www net-p2p
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ LOCAL/chinsan/xpi
 
