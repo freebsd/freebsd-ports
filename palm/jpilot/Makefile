@@ -7,7 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -36,12 +36,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.if defined(WITH_GTK1)
-USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=	--disable-gtk2=yes
-.else
 USE_GNOME+=	gtk20
-.endif
 
 MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
 
