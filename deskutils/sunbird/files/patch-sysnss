@@ -22,9 +22,9 @@
  		$(NULL)
  
  include $(topsrcdir)/config/rules.mk
---- security/manager/Makefile.in.orig	Mon Jun 26 18:14:34 2006
-+++ security/manager/Makefile.in	Mon Jul  2 06:13:12 2007
-@@ -54,22 +54,13 @@
+--- security/manager/Makefile.in.orig	2008-11-23 09:08:49.000000000 +1000
++++ security/manager/Makefile.in	2008-11-23 09:11:24.000000000 +1000
+@@ -54,22 +54,14 @@
  	SSL3_LIB \
  	SOFTOKEN3_LIB \
  	SOFTOKEN3_CHK \
@@ -34,7 +34,7 @@
  	HAVE_FREEBL_LIBS_32INT64 \
  	HAVE_FREEBL_LIBS_64 \
  	$(NULL)
--
+ 
 -LOADABLE_ROOT_MODULE = $(DLL_PREFIX)nssckbi$(DLL_SUFFIX)
  endif
  
@@ -47,7 +47,7 @@
  # Default
  HAVE_FREEBL_LIBS = 1
  
-@@ -217,13 +208,6 @@
+@@ -217,13 +209,6 @@
  
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
@@ -61,7 +61,7 @@
  endif
  
  .nss.checkout:
-@@ -240,105 +224,12 @@
+@@ -240,113 +225,14 @@
  endif
  
  libs::
@@ -74,7 +74,15 @@
 -	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
 -endif
 -ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/freebl $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/softoken $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	# In NSS 3.11.8-3.11.9, lib/ssl/derive.c includes cmd/lib/secutil.h.
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) DIRS="util base dev pki pki1 certdb certhigh pk11wrap cryptohi nss ssl pkcs12 pkcs7 smime crmf jar ckfw ckfw/builtins"
 -ifndef SKIP_CHK
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
@@ -117,7 +125,7 @@
 -endif
 -endif
 -	$(MAKE) -C boot $@
--	$(MAKE) -C ssl $@
+	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
  	$(MAKE) -C pki $@
@@ -163,11 +171,11 @@
 -endif
 -endif
 -	$(MAKE) -C boot $@
--	$(MAKE) -C ssl $@
+	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
  	$(MAKE) -C pki $@
-@@ -352,12 +243,6 @@
+@@ -360,12 +244,6 @@
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS

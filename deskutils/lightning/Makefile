@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sunbird
-PORTVERSION=	0.7
-PORTREVISION=	2
+PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -27,7 +26,7 @@ USE_BZIP2=	yes
 WANT_GNOME=	yes
 WANT_PERL=	yes
 SUNBIRD=	${PORTNAME}
-SUNBIRD_ICON_SRC=	${PREFIX}/lib/sunbird/icons/default.xpm
+SUNBIRD_ICON_SRC=	${PREFIX}/lib/sunbird/chrome/icons/default/default.xpm
 SUNBIRD_ICON=		${PORTNAME}.xpm
 LIBS=		-Wl,-Bsymbolic -lc
 MOZ_PKGCONFIG_FILES=	${PORTNAME}-js ${PORTNAME}-xpcom ${PORTNAME}-plugin
@@ -37,6 +36,9 @@ MOZ_OPTIONS=	--enable-application=calendar \
 		--with-system-nss \
 		--enable-canvas
 MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
+
+GECKO_PLIST_PRE_FILES=	lib/sunbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest \
+			lib/sunbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome.manifest
 
 .include <bsd.init.mk>
 .include <bsd.libnames.mk>
@@ -69,5 +71,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/sunbird.desktop ${PREFIX}/share/applications
 	${LN} -sf ${SUNBIRD_ICON_SRC} ${PREFIX}/share/pixmaps/${SUNBIRD_ICON}
+	${TOUCH} ${PREFIX}/lib/sunbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest
+	${TOUCH} ${PREFIX}/lib/sunbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome.manifest
 
 .include <bsd.port.post.mk>
