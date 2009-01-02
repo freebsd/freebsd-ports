@@ -19,7 +19,6 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/jftpgw
 jftpgw_config=${jftpgw_config:-"%%PREFIX%%/etc/jftpgw.conf"}
 required_files=${jftpgw_config}
-pidfile=/var/run/jftpgw.pid
 
 jftpgw_enable=${jftpgw_enable:-"NO"}
 command_args="-f ${jftpgw_config}"
