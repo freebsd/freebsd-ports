@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE_JP}
@@ -32,7 +32,9 @@ SUB_LIST=	RC_SUBR=${RC_SUBR}
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 WNNTYPE?=	WNN
-CONFIGURE_ARGS=	--enable-libraries=no ${CONFIGURE_ARGS.${WNNTYPE}}
+CONFIGURE_ARGS=	--enable-libraries=no \
+		--enable-ipv6 \
+		${CONFIGURE_ARGS.${WNNTYPE}}
 
 # Wnn
 LIB_DEPENDS.WNN=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
