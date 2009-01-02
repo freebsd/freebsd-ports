@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.26
-PORTREVISION=	1
+PORTVERSION=	0.9.27
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -33,7 +32,7 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 USE_GMAKE=	yes
 USE_GNOME=	librsvg2
 PERL_CONFIGURE=	yes
-MAN1=		${PORTNAME}.1
+MAN1=		${PORTNAME}.1 scanadf.pl.1 scanimage.pl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 .if !defined(WITHOUT_NLS)
