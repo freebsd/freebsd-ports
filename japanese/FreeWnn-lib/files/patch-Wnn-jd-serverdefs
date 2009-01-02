@@ -1,5 +1,11 @@
---- Wnn/jd/serverdefs.orig	2008-10-30 15:08:34.000000000 +0900
-+++ Wnn/jd/serverdefs	2008-10-30 15:09:22.000000000 +0900
+Index: Wnn/jd/serverdefs
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/Wnn/jd/serverdefs,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -d -u -I\$FreeBSD$ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.2
+--- Wnn/jd/serverdefs	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jd/serverdefs	20 Dec 2008 07:23:09 -0000	1.2
 @@ -30,12 +30,12 @@
  ;
  

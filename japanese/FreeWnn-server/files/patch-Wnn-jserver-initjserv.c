@@ -1,10 +1,11 @@
 Index: Wnn/jserver/initjserv.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/freewnn/Wnn/jserver/initjserv.c,v
-retrieving revision 1.1
-diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-initjserv.c,v 1.3 2009-01-02 11:49:48 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1 initjserv.c
---- Wnn/jserver/initjserv.c	20 Dec 2008 07:13:30 -0000	1.1
-+++ Wnn/jserver/initjserv.c	2 Jan 2009 11:14:37 -0000
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-initjserv.c,v 1.4 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.3
+--- Wnn/jserver/initjserv.c	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jserver/initjserv.c	2 Jan 2009 11:46:51 -0000	1.3
 @@ -154,6 +154,7 @@
    char param[EXPAND_PATH_LENGTH +1];
    char *word;

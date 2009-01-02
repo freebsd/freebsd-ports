@@ -1,10 +1,11 @@
 Index: Wnn/jserver/de_header.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/freewnn/Wnn/jserver/de_header.h,v
-retrieving revision 1.1
-diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-de_header.h,v 1.2 2009-01-02 11:49:47 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1 de_header.h
---- Wnn/jserver/de_header.h	20 Dec 2008 07:13:30 -0000	1.1
-+++ Wnn/jserver/de_header.h	2 Jan 2009 10:20:44 -0000
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/FreeWnn-server/files/patch-Wnn-jserver-de_header.h,v 1.3 2009-01-02 23:08:15 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$Translation:.*\$ -I\$hrs:.*\$ -w -r1.1.1.1 -r1.3
+--- Wnn/jserver/de_header.h	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ Wnn/jserver/de_header.h	2 Jan 2009 11:46:51 -0000	1.3
 @@ -52,6 +52,8 @@
  #  endif        /* KOREAN */
  #endif        /* CHINESE */
