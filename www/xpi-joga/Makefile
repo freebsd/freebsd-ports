@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	joga
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
