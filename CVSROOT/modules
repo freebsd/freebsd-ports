@@ -474,6 +474,7 @@ antlrworks                      ports/devel/antlrworks
 antrix                          ports/games/antrix
 anubis                          ports/mail/anubis
 anyremote                       ports/comms/anyremote
+anyremote2html                  ports/www/anyremote2html
 aoi                             ports/graphics/aoi
 aolserver                       ports/www/aolserver
 aolserver-nscache               ports/www/aolserver-nscache
@@ -7302,6 +7303,7 @@ liboop                          ports/devel/liboop
 libopendaap                     ports/devel/libopendaap
 libopennet                      ports/net/libopennet
 libopenraw                      ports/graphics/libopenraw
+libopenspc                      ports/audio/libopenspc
 libopensync                     ports/devel/libopensync
 libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
 libopensync-plugin-evolution2-devel  ports/deskutils/libopensync-plugin-evolution2-devel
@@ -7794,6 +7796,7 @@ linuxigd                        ports/net/linuxigd
 linuxlibertine                  ports/x11-fonts/linuxlibertine
 linuxpluginwrapper              ports/www/linuxpluginwrapper
 linuxthreads                    ports/devel/linuxthreads
+linwarrior                      ports/games/linwarrior
 linxt                           ports/devel/linxt
 lion                            ports/devel/lion
 liquidwar                       ports/games/liquidwar
@@ -8965,6 +8968,7 @@ netbeans55                      ports/java/netbeans55
 netboot                         ports/net/netboot
 netcat                          ports/net/netcat
 netcdf                          ports/science/netcdf
+netcdf4                         ports/science/netcdf4
 netclasses                      ports/net/netclasses
 netcomponents                   ports/java/netcomponents
 netdisco                        ports/net-mgmt/netdisco
@@ -21799,6 +21803,7 @@ vulnerability-test-port         ports/ports-mgmt/vulnerability-test-port
 vultures-claw                   ports/games/vultures-claw
 vultures-eye                    ports/games/vultures-eye
 vuxml                           ports/security/vuxml
+vuze                            ports/net-p2p/vuze
 vvv                             ports/graphics/vvv
 vxquery                         ports/security/vxquery
 vxtools                         ports/emulators/vxtools
