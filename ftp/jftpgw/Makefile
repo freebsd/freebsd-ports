@@ -7,7 +7,7 @@
 
 PORTNAME=	jftpgw
 PORTVERSION=	0.13.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
