@@ -17,7 +17,7 @@ DISTNAME=	php-${PORTVERSION:S/.r/RC/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER?=	ale@FreeBSD.org
-COMMENT?=	PHP Scripting Language (Apache Module and CLI)
+COMMENT?=	PHP Scripting Language
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
