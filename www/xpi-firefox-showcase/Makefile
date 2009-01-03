@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Easily locate and select any open browser window
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	firefox_showcase
 XPI_NUM=	1810
 XPI_ID=		{89506680-e3f4-484c-a2c0-ed711d481eda}

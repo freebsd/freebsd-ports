@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Jabber client
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 RUN_DEPENDS=	xpi-xmpp4moz>=0.5.2:${PORTSDIR}/www/xpi-xmpp4moz
 
 XPI_NUM=	3633

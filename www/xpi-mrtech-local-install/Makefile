@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Manage extensions and themes locally
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	mr_tech_local_install
 XPI_NUM=	421
 XPI_ID=		{9669CC8F-B388-42FE-86F4-CB5E7F5A8BDC}

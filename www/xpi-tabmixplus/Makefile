@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Enhances tab browsing capabilities
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	tab_mix_plus
 XPI_NUM=	1122
 XPI_ID=		{dc572301-7619-498c-a57d-39143191b318}

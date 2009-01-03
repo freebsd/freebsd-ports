@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Toggles word wrapping
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	toggle_word_wrap
 XPI_NUM=	2351
 XPI_ID=		{cafe3945-058e-47e3-87f8-75bc120b9638}

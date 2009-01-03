@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Resurrects pages from big page caches/mirrors
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	resurrect_pages
 XPI_ID=		{0c8fbd76-bdeb-4c52-9b24-d587ce7b9dc3}
 XPI_NUM=	2570

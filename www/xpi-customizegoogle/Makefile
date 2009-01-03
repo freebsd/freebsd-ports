@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.updatecg.com/ LOCAL/chinsan/xpi
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Enhance and tweak Google services
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_NUM=	743
 XPI_ID=		{fce36c1e-58d8-498a-b2a5-66ad1cedebbb}
 XPI_FILES=	Changes GPL Ideas README chrome/customizegoogle.jar \

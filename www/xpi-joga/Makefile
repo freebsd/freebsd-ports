@@ -15,6 +15,9 @@ MASTER_SITES=	CENKES
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Joga.com Companion
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		{06108483-1773-402e-a112-bfec19a73942}
 XPI_FILES=	META-INF/manifest.mf META-INF/zigbert.rsa META-INF/zigbert.sf chrome/joga.jar \
 		chrome.manifest defaults/preferences/joga.js install.rdf

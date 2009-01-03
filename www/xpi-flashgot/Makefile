@@ -14,6 +14,9 @@ MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Download links using popular download managers
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}
 XPI_NUM=	220
 XPI_FILES=	FlashGot_License.txt GPL.txt chrome/flashgot.jar chrome.manifest components/.autoreg \

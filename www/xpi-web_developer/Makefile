@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to add various web developer tools
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_NUM=	60
 XPI_ID=		{c45c406e-ab73-11d8-be73-000a95be3b12}
 XPI_FILES=	chrome/webdeveloper.jar chrome.manifest install.js \

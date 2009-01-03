@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	downthemall!
 WRKSRC=		${WRKDIR}/${DISTNAME:S/!/_/}
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}

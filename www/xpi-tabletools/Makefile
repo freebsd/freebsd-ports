@@ -14,6 +14,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Sort any HTML data table
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_NUM=	2637
 XPI_ID=		{7C7F5C11-4ACD-4CDB-9293-2E3F46654E2A}
 
