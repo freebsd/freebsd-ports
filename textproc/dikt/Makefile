@@ -7,7 +7,8 @@
 PORTNAME=	dikt
 PORTVERSION=	1
 CATEGORIES=	textproc net kde
-MASTER_SITES=	http://diktv1.googlepages.com/
+MASTER_SITES=	http://diktv1.googlepages.com/	\
+		LOCAL/beech
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	goran.tal@gmail.com
