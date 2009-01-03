@@ -3,11 +3,11 @@ CJK is now installed. You may use bg5latex or gbklatex to write in
 BIG5 or GB encoding.
 
 If you want to install other TTF fonts, you have to manually modify:
- %%TEXMFMAIN%%/ttf2pk/ttfonts.map, for PK/Type 3 fonts;
- %%TEXMFMAIN%%/tex/latex/CJK/Bg5/c00kai.fd and
-  %%TEXMFMAIN%%/tex/latex/CJK/GB/c10kai.fd for Kai family fonts;
- %%TEXMFMAIN%%/tex/latex/CJK/Bg5/c00song.fd and
-  %%TEXMFMAIN%%/tex/latex/CJK/GB/c10song.fd for Sung family fonts.
+ %%TEXMFDIR%%/ttf2pk/ttfonts.map, for PK/Type 3 fonts;
+ %%TEXMFDIR%%/tex/latex/CJK/Bg5/c00kai.fd and
+  %%TEXMFDIR%%/tex/latex/CJK/GB/c10kai.fd for Kai family fonts;
+ %%TEXMFDIR%%/tex/latex/CJK/Bg5/c00song.fd and
+  %%TEXMFDIR%%/tex/latex/CJK/GB/c10song.fd for Sung family fonts.
 Then use ttf2tfm to generate corresponding tfm files.
 
 

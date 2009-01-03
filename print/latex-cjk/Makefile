@@ -30,12 +30,11 @@ MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1
 
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
-SUB_LIST=	TEXMFMAIN=${LOCALBASE}/share/texmf
+SUB_LIST=	TEXMFDIR=${TEXMFDIR_REL}
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR_REL}
 
 INSTALL_DIR=	${INSTALL} -d -m 0755 -o root -g wheel
 
-CJKDIR=		${PREFIX}/share/texmf/tex/latex/CJK
-CJKMAPDIR=	${PREFIX}/share/texmf/fonts/map/dvips/CJK
 WRKFONTDIR=	${WRKDIR}/fonts
 
 # Options: WITH_*/WITHOUT_*
@@ -117,7 +116,7 @@ post-install:
 # Install package ccmap
 .if !defined(WITHOUT_CCMAP)
 	@${ECHO_CMD} "Installing ccmap..."
-	${LOCALBASE}/bin/mktexlsr
+	${MKTEXLSR}
 	cd ${WRKDIR}/ccmap && ${SH} make.sh && ${COPYTREE_SHARE} \* ${CJKDIR}/ccmap
 .endif
 
@@ -144,4 +143,5 @@ post-install:
 
 	${CAT} ${PKGMESSAGE}
 
+.include "../../print/latex-cjk/Makefile.common"
 .include <bsd.port.post.mk>
