@@ -29,6 +29,7 @@ libexec/TeXmacs/bin/tm_python
 libexec/TeXmacs/bin/tm_r
 libexec/TeXmacs/bin/tm_reduce
 libexec/TeXmacs/bin/tm_sage
+libexec/TeXmacs/bin/tm_texgraph
 libexec/TeXmacs/bin/tm_xypic
 share/TeXmacs/LICENSE
 share/TeXmacs/doc/about/about-summary.de.tm
@@ -2051,6 +2052,12 @@ share/TeXmacs/plugins/reduce/progs/reduce-menus.scm
 share/TeXmacs/plugins/sage/progs/init-sage.scm
 share/TeXmacs/plugins/scilab/progs/init-scilab.scm
 share/TeXmacs/plugins/shell/progs/init-shell.scm
+share/TeXmacs/plugins/texgraph/LisezMoi.txt
+share/TeXmacs/plugins/texgraph/ReadMe.txt
+share/TeXmacs/plugins/texgraph/progs/2d-menu.scm
+share/TeXmacs/plugins/texgraph/progs/3d-menu.scm
+share/TeXmacs/plugins/texgraph/progs/init-texgraph.scm
+share/TeXmacs/plugins/texgraph/progs/texgraph-menus.scm
 share/TeXmacs/plugins/xypic/progs/init-xypic.scm
 share/TeXmacs/plugins/yacas/progs/init-yacas.scm
 share/TeXmacs/progs/convert/html/htmlout.scm
@@ -2340,6 +2347,8 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/yacas
 @dirrm share/TeXmacs/plugins/xypic/progs
 @dirrm share/TeXmacs/plugins/xypic
+@dirrm share/TeXmacs/plugins/texgraph/progs
+@dirrm share/TeXmacs/plugins/texgraph
 @dirrm share/TeXmacs/plugins/shell/progs
 @dirrm share/TeXmacs/plugins/shell
 @dirrm share/TeXmacs/plugins/scilab/progs
