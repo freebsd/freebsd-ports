@@ -10,11 +10,8 @@ DISTVERSION=	5.3.2.3
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+nv+zm+sb+tb
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Manage extensions and themes locally
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	mr_tech_local_install
 XPI_NUM=	421

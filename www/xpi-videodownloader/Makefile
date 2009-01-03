@@ -11,11 +11,8 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Download embedded video files
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		videodowloader@videodownloader.net
 XPI_FILES=	chrome/videodownloader.jar chrome.manifest defaults/preferences/videodownloader.js \

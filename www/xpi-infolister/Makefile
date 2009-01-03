@@ -10,11 +10,8 @@ DISTVERSION=	0.9f.2
 DISTVERSIONSUFFIX=	-fx+tb+sb
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lists installed extensions and themes
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}
 XPI_NUM=	447

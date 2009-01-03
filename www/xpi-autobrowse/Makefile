@@ -11,11 +11,8 @@ DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 MASTER_SITES=	BERLIOS CENKES
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Surfs the net for you
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{3867e8ff-5171-4346-a578-b118c968c65c}
 XPI_FILES=	chrome/autobrowse.jar chrome.manifest defaults/preferences/settings.js install.rdf

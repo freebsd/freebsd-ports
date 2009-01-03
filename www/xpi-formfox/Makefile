@@ -10,11 +10,8 @@ PORTVERSION=	1.6.2
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An extension to display form's action
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	1579
 XPI_ID=		formfox@daniel.steinbrook

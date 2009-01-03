@@ -11,11 +11,8 @@ CATEGORIES=	www
 MASTER_SITES=	LOCAL/chinsan/xpi
 # The unversioned dist is at http://dl.google.com/firefox/google-notebook.xpi
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An extension to allow notetaking while browsing
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		notebook@google.com
 

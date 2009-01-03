@@ -11,11 +11,8 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	IMDb_Preview_${DISTVERSION}
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Preview movie & actor posters when hovering over their IMDb links
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{10187899-7ffe-4f9a-b9d2-35fdb3b49690}
 XPI_FILES=	chrome/imdb_preview.jar chrome.manifest \

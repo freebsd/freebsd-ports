@@ -10,11 +10,8 @@ PORTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple CSS property viewer
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	2104
 XPI_ID=		{8be51513-0433-45c1-9203-7b45019df871}

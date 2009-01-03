@@ -10,7 +10,7 @@ PORTVERSION=	0.7.20
 CATEGORIES=	www
 MASTER_SITES=	MOZDEV
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	WML implementation
 
 DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
