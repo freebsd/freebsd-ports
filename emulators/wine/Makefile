@@ -43,7 +43,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
-		HAL	"Use HAL (Hardware Abstraction Layer)"		Off
+		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
+		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +60,13 @@ CONFIGURE_ARGS+=	--with-hal
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
+.endif
+
+.ifdef WITH_LIBXSLT
+CONFIGURE_ARGS+=	--with-xslt
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
+.else
+CONFIGURE_ARGS+=	--without-xslt
 .endif
 
 .if ${OSVERSION} < 602000
