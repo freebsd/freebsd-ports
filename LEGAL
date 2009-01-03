@@ -743,3 +743,5 @@ rapid-*			math/rapid		No commercial use
 dtiquery-*		science/dtiquery	License agreement is required
 clustalw-*		biology/clustalw	No commercial use
 nttcp-*			benchmark/nttcp		No commercial use
+TW-*.ttf		chinese/CNS11643-font	No redistribution or
+						commercial use is allowed
