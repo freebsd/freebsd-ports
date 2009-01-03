@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Toolbar buttons that clear input fields
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	clear_fields
 XPI_ID=		clearfields@alex.alexander.googlepages.com
 XPI_NUM=	2408

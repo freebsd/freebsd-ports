@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A content filtering extension
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_NUM=	10
 XPI_ID=		{34274bf4-1d97-a289-e984-17e546307e4f}
 XPI_FILES=	chrome/adblock.jar chrome.manifest components/.autoreg components/nsAdblock.js \

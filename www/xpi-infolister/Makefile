@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Lists installed extensions and themes
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}
 XPI_NUM=	447
 XPI_FILES=	chrome/infolister.jar chrome.manifest \

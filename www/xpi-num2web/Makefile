@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.e164.org/${PORTNAME}/ CENKES
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Enum lookups support
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		support@e164.org
 XPI_FILES=	components/num2web.js contents.rdf install.rdf chrome.manifest
 XPI_DIRS=	components

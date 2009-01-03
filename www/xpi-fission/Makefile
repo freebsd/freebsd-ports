@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Combines address bar and progress bar
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		{1280606b-2510-4fe0-97ef-9b5a22eafe41}
 XPI_NUM=	1951
 XPI_FILES=	chrome/fission.jar chrome.manifest defaults/preferences/fission.js install.rdf \

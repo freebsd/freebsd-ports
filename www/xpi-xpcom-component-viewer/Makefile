@@ -14,6 +14,9 @@ MASTER_SITES=	CENKES
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	XPCOM Component Viewer
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	xpcom_component_viewer
 XPI_ID=		{61a6c679-bb38-46b9-9b78-4666b81699ff}
 XPI_FILES=	LICENSE.TXT chrome/cview.jar chrome/locale/cview/en-US/contents.rdf \

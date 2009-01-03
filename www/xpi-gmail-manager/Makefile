@@ -13,6 +13,9 @@ CATEGORIES=	www mail
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	gmail_manager
 XPI_NUM=	1320
 XPI_ID=		{582195F5-92E7-40a0-A127-DB71295901D7}

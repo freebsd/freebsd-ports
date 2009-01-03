@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Select a non-URL and open it in a browser window
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_DISTNAME=	url_link
 XPI_ID=		{139a120b-c2ea-41d2-bf70-542d9f063dfd}
 XPI_NUM=	403

@@ -13,6 +13,9 @@ MASTER_SITES=	CENKES
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Converts text links into genuine, clickable links
 
+DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
+EXPIRATION_DATE=2009-01-31
+
 XPI_ID=		{35106bca-6c78-48c7-ac28-56df30b51d2a}
 XPI_FILES=	chrome/linkification.jar chrome.manifest defaults/preferences/linkification.js \
 		install.js install.rdf
