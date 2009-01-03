@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Color
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ MAN3=		Graphics::Color.3 \
 		Graphics::Color::CMYK.3 \
 		Graphics::Color::Equal.3 \
 		Graphics::Color::HSL.3 \
+		Graphics::Color::HSV.3 \
 		Graphics::Color::RGB.3 \
 		Graphics::Color::YIQ.3 \
 		Graphics::Color::YUV.3
