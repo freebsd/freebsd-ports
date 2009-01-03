@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -39,6 +39,8 @@ MAN6_CS=	wesnoth.6
 MAN6_DE=	wesnoth.6
 MAN6_EN=	wesnoth.6
 MAN6_ES=	wesnoth.6
+MAN6_GL=	wesnoth.6
+MAN6_IT=	wesnoth.6
 MAN6_LT=	wesnoth.6
 MAN6_TR=	wesnoth.6
 
