@@ -87,10 +87,11 @@ XPI_DISTNAME?=	${PORTNAME}
 XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird* \
 					*netscape-navigator* *netscape-messenger*
 # *nvu*
-XPI_APPS_ALL=	firefox firefox-devel linux-firefox linux-firefox-devel \
-				thunderbird linux-thunderbird flock linux-flock \
-				linux-netscape-navigator linux-netscape-messenger \
-				sunbird linux-sunbird
+XPI_APPS_ALL=	firefox firefox-devel firefox3 \
+		linux-firefox linux-firefox-devel flock linux-flock \
+		thunderbird linux-thunderbird \
+		linux-netscape-navigator linux-netscape-messenger \
+		sunbird linux-sunbird
 # nvu linux-nvu kompozer linux-kompozer
 # Other apps: mango
 
