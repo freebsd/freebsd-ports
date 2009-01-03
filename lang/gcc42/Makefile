@@ -28,9 +28,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 SUFFIX=		42
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	ia64
-# Building libgcj with lang/gcc295 installed is causing a failure about
-# "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
-CONFLICTS=	gcc-2.95.*
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -126,6 +123,14 @@ PLIST_SUB+=	JAVA="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+
+pre-extract:
+	@# Building libgcj with lang/gcc295 installed is causing a failure
+	@# about "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
+	@if type gcc295 >/dev/null ; then \
+	  echo "This port will not build in the presence of lang/gcc295."; \
+	  exit 1; \
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
