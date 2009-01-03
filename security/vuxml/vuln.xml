@@ -46,13 +46,12 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Jan Lieskovsky reports:</p>
-        <blockquote
-          cite="http://www.openwall.com/lists/oss-security/2008/11/28/1">
-          <p>perl-File-Path rmtree race condition (CVE-2005-0448 was
-          assigned to address this)</p>
-          <p>This vulnerability was fixed in 5.8.4-7 but re-introduced
-          in 5.8.8-1.  It's also present in File::Path 2.xx, up to and
-          including 2.07 which has only a partial fix.</p>
+        <blockquote cite="http://www.openwall.com/lists/oss-security/2008/11/28/1">
+	  <p>perl-File-Path rmtree race condition (CVE-2005-0448 was assigned to
+	    address this)</p>
+	  <p>This vulnerability was fixed in 5.8.4-7 but re-introduced
+	    in 5.8.8-1.  It's also present in File::Path 2.xx, up to and
+	    including 2.07 which has only a partial fix.</p>
         </blockquote>
       </body>
     </description>
@@ -128,13 +127,13 @@ Note:  Please add new entries to the beginning of this file.
         <blockquote
           cite="http://www.coresecurity.com/content/vinagre-format-string">
           <p>A format string error has been found on the
-          vinagre_utils_show_error() function that can be exploited via
-          commands issued from a malicious server containing format
-          string specifiers on the VNC name.</p>
+	    vinagre_utils_show_error() function that can be exploited via
+	    commands issued from a malicious server containing format
+	    string specifiers on the VNC name.</p>
           <p>In a web based attack scenario, the user would be required
-          to connect to a malicious server. Successful exploitation
-          would then allow the attacker to execute arbitrary code with
-          the privileges of the Vinagre user.</p>
+	    to connect to a malicious server. Successful exploitation
+	    would then allow the attacker to execute arbitrary code with
+	    the privileges of the Vinagre user.</p>
         </blockquote>
       </body>
     </description>
