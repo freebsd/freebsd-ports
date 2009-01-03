@@ -1,11 +1,11 @@
 bin/ctrlproxy
 bin/ctrlproxy-admin
 bin/linestack-cmd
+sbin/ctrlproxyd
 libdata/pkgconfig/ctrlproxy.pc
-%%DATADIR%%/default/config
-%%DATADIR%%/default/networks/admin
-%%DATADIR%%/help
-%%DATADIR%%/motd
+etc/ctrlproxy/motd
+etc/ctrlproxy/config
+%%DATADIR%%/help.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -15,4 +15,5 @@ libdata/pkgconfig/ctrlproxy.pc
 @dirrm %%DATADIR%%/default/networks
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
+@dirrm etc/ctrlproxy
 @dirrm lib/ctrlproxy
