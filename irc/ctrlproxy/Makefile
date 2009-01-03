@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ctrlproxy
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 		LOCAL/chinsan/ctrlproxy/
@@ -33,7 +32,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${MANPREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${DATADIR}/help
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${DATADIR}/help.txt
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS HACKING NEWS README
