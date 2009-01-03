@@ -4,6 +4,7 @@
     COMMENT = Chinese support
 
     SUBDIR += CJKUnifonts
+    SUBDIR += CNS11643-font
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += acroread8-zh_CN
