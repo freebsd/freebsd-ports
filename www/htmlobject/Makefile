@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	htmlobject
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 CATEGORIES=	www perl5
 MASTER_SITES=	SF
 DISTNAME=	lib${PORTNAME}-perl-${PORTVERSION}
@@ -28,4 +28,9 @@ MAN3=		HTMLObject::Base.3 HTMLObject::Form.3 \
 		HTMLObject::WMLDeck.3 HTMLObject::Widgets.3 \
 		HTMLObject::ErrorBase.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-extract:
+		@${RM} -f ${WRKSRC}/._Makefile.PL
+
+.include <bsd.port.post.mk>
