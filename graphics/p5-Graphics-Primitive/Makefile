@@ -7,6 +7,7 @@
 
 PORTNAME=	Graphics-Primitive
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -46,6 +47,8 @@ MAN3=		Graphics::Primitive.3 \
 		Graphics::Primitive::Oriented.3 \
 		Graphics::Primitive::Paint.3 \
 		Graphics::Primitive::Paint::Gradient.3 \
+		Graphics::Primitive::Paint::Gradient::Linear.3 \
+		Graphics::Primitive::Paint::Gradient::Radial.3 \
 		Graphics::Primitive::Paint::Solid.3 \
 		Graphics::Primitive::Path.3 \
 		Graphics::Primitive::TextBox.3
