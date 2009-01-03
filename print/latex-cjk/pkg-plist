@@ -22,6 +22,7 @@ bin/sjislatex
 bin/sjispdflatex
 %%PORTDOCS%%%%DOCSDIR%%/CEF.txt
 %%PORTDOCS%%%%DOCSDIR%%/CJK.txt
+%%PORTDOCS%%%%DOCSDIR%%/CJKspace.txt
 %%PORTDOCS%%%%DOCSDIR%%/CJKutf8.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -80,6 +81,7 @@ share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKbabel.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKfntef.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKmixed.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKspace.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKutf8.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GB.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/JIS.tex
@@ -1635,6 +1637,7 @@ share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
 %%CJKDIR%%/CJK.sty
 %%CJKDIR%%/CJKfntef.sty
 %%CJKDIR%%/CJKnumb.sty
+%%CJKDIR%%/CJKspace.sty
 %%CJKDIR%%/CJKulem.sty
 %%CJKDIR%%/CJKutf8.sty
 %%CJKDIR%%/CJKvert.sty
@@ -1653,6 +1656,8 @@ share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
 %%CJKDIR%%/GB/c10fs.fd
 %%CJKDIR%%/GB/c10gbsn.fd
 %%CJKDIR%%/GB/c10gbsn.fdx
+%%CJKDIR%%/GB/c10gkai.fd
+%%CJKDIR%%/GB/c10gkai.fdx
 %%CJKDIR%%/GB/c10kai.fd
 %%CJKDIR%%/GB/c10song.fd
 %%CJKDIR%%/GB/c10t1kai.fd

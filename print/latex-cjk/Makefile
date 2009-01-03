@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latex-cjk
-PORTVERSION=	4.8.0
+PORTVERSION=	4.8.1
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
