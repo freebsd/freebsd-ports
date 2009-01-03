@@ -17,12 +17,15 @@
 %%SITE_PERL%%/Graphics/Primitive/Operation/Stroke.pm
 %%SITE_PERL%%/Graphics/Primitive/Oriented.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint/Gradient/Linear.pm
+%%SITE_PERL%%/Graphics/Primitive/Paint/Gradient/Radial.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint/Gradient.pm
 %%SITE_PERL%%/Graphics/Primitive/Paint/Solid.pm
 %%SITE_PERL%%/Graphics/Primitive/Path.pm
 %%SITE_PERL%%/Graphics/Primitive/TextBox.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Primitive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
+@dirrmtry %%SITE_PERL%%/Graphics/Primitive/Paint/Gradient
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Paint
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Operation
 @dirrmtry %%SITE_PERL%%/Graphics/Primitive/Driver
