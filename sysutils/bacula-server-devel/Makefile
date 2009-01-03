@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	2.4.4-b1
+DISTVERSION=	2.4.4-b2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -246,7 +246,7 @@ post-install:
 .if defined(WITH_WXCONSOLE)
 	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
 		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then \
+	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then.include <bsd.port.post.mk> \
 		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample; \
 		${ECHO_CMD} "etc/wx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
@@ -261,7 +261,7 @@ post-install:
 .endif
 
 #	ensure that users in the bacula group can run bconsole
-	${CHGRP} bacula ${PREFIX}/sbin/bconsole
+	${CHGRP} bacula ${PREFIX}/sbin/bconsole.include <bsd.port.post.mk>
 .else
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
