@@ -5,16 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=		fonteditfs
-PORTVERSION=		1.0
-CATEGORIES=		sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=   	${PORTNAME}
-DISTNAME=		fnteditfs-${PORTVERSION}
+PORTNAME=	fonteditfs
+PORTVERSION=	1.1
+CATEGORIES=	sysutils
+MASTER_SITES=	SF
+DISTNAME=	fnteditfs-${PORTVERSION}
 EXTRACT_SUFX=.tgz
 
-MAINTAINER=		uri@keves.org
-COMMENT=		A Full Screen Syscons Font Editor
+MAINTAINER=	uri@keves.org
+COMMENT=	A Full Screen Syscons Font Editor
 
 MAN1=		fnteditfs.1
 PLIST_FILES=	bin/fnteditfs
