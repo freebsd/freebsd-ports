@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.11/${PORTVERSION}/ \
 		LOCAL/beech
@@ -25,7 +25,7 @@ USE_RC_SUBR=	cherokee.sh
 USE_BISON=	build
 USE_PYTHON=	2.4+
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}Marek Kubica <marek@xivilization.net>
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
@@ -62,15 +62,19 @@ CONFIGURE_ARGS+=--disable-ipv6
 .ifdef WITH_MYSQL
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=yes
+PLIST_SUB+=     MYSQL=""
 .else
 CONFIGURE_ARGS+=--with-mysql=no
+PLIST_SUB+=     MYSQL="@comment "
 .endif
 
 .ifdef WITH_LDAP
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=yes
+PLIST_SUB+=     LDAP=""
 .else
 CONFIGURE_ARGS+=--with-ldap=no
+PLIST_SUB+=     LDAP="@comment "
 .endif
 
 post-patch:
@@ -86,7 +90,7 @@ post-patch:
 		s:%wwwroot%:${PREFIX}/www/cherokee:g; \
 		s:%prefix%:${PREFIX}:g; \
 		s:%localstatedir%:/var:g; \
-		s:#.*User.*nobody:User www:g; \
+		s:#.*User.*nobody:User www:g; \1
 		s:#.*Group.*nogroup:Group www:g; \
 		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
 		$$i > $${i%.pre};done
