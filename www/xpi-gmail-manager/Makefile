@@ -10,11 +10,8 @@ DISTVERSION=	0.5.3
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www mail
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	gmail_manager
 XPI_NUM=	1320

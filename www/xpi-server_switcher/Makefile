@@ -10,11 +10,8 @@ DISTVERSION=	0.4
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A navigational help tool for web developers
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	2409
 XPI_ID=		{F7D360DC-B8F8-11DA-86BD-3EC8728786A0}
