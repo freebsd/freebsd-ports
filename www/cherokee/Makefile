@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.11.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.11/${PORTVERSION}/ \
 		LOCAL/beech
@@ -22,11 +23,9 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_BISON=	build
-USE_MYSQL=	yes
 USE_PYTHON=	2.4+
-USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}Marek Kubica <marek@xivilization.net>
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
@@ -41,7 +40,9 @@ PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
 		GNUTLS	"TLS/SSL support via gnutls"	off \
-		IPV6	"IPv6 support"			on
+		IPV6	"IPv6 support"	on	\
+		MYSQL	"MySQL Database"	off	\
+		LDAP	"LDAP Support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +57,20 @@ CONFIGURE_ARGS+=--disable-tls
 
 .ifdef WITHOUT_IPV6
 CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+.ifdef WITH_MYSQL
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql=yes
+.else
+CONFIGURE_ARGS+=--with-mysql=no
+.endif
+
+.ifdef WITH_LDAP
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-ldap=yes
+.else
+CONFIGURE_ARGS+=--with-ldap=no
 .endif
 
 post-patch:
