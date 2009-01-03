@@ -10,11 +10,8 @@ PORTVERSION=	0.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Shows Google Definitions for the selected word
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	inline_google_definitions
 XPI_NUM=	2083

@@ -10,11 +10,8 @@ PORTVERSION=	0.5.5.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Helps fill forms out
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{5546F97E-11A5-46b0-9082-32AD74AAA920}
 XPI_NUM=	673

@@ -10,11 +10,8 @@ PORTVERSION=	0.9.9.10
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	downthemall!
 WRKSRC=		${WRKDIR}/${DISTNAME:S/!/_/}

@@ -10,11 +10,8 @@ PORTVERSION=	3.0.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Toolbar buttons that clear input fields
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	clear_fields
 XPI_ID=		clearfields@alex.alexander.googlepages.com

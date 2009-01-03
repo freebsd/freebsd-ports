@@ -11,11 +11,8 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Save Javascript Generated/Rendered HTML Pages
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{d70d11c0-ff1e-11d9-8cd6-0800200c9a66}
 XPI_FILES=	chrome/Io.js chrome/contents.rdf chrome/overlay.xul chrome.manifest \

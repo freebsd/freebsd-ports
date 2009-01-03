@@ -12,11 +12,8 @@ MASTER_SITES=	CENKES
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
 # The update RDF is at http://tools.google.com/firefox/joga/update.rdf
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Joga.com Companion
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{06108483-1773-402e-a112-bfec19a73942}
 XPI_FILES=	META-INF/manifest.mf META-INF/zigbert.rsa META-INF/zigbert.sf chrome/joga.jar \

@@ -10,11 +10,8 @@ PORTVERSION=	0.5.3.043
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A content filtering extension
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	10
 XPI_ID=		{34274bf4-1d97-a289-e984-17e546307e4f}

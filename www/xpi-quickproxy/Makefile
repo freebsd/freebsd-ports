@@ -10,11 +10,8 @@ PORTVERSION=	2008.08.24
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A statusbar button to quickly turn the proxy on and off
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{d5ea4520-61a1-11da-8cd6-0800200c9a66}
 XPI_NUM=	1557

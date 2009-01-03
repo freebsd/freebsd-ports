@@ -10,11 +10,8 @@ PORTVERSION=	0.5.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Keeps your browser history at Google bookmarks
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	2515
 XPI_ID=		gbrain@andreas.gohr

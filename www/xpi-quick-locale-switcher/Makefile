@@ -11,11 +11,8 @@ PORTVERSION=	1.6.5.1
 DISTVERSIONSUFFIX=	-
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quickly change and apply a different locale from the tools menu
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	quick_locale_switcher
 XPI_ID=		{25A1388B-6B18-46c3-BEBA-A81915D0DE8F}

@@ -10,11 +10,8 @@ PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Performance and network tweaks for Firefox
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	1269
 XPI_ID=		{c36177c0-224a-11da-8cd6-0800200c9a66}

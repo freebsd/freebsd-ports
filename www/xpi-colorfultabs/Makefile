@@ -11,11 +11,8 @@ DISTVERSIONSUFFIX=	-fx
 PORTEPOCH=	1
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Colors every tab in a different color
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_ID=		{0545b830-f0aa-4d7e-8820-50a4629a56fe}
 XPI_NUM=	1368

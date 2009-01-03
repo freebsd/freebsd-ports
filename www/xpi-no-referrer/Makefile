@@ -10,11 +10,8 @@ PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An extension to Open URL without sending referrers information
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_NUM=	1999
 XPI_ID=		{e806da17-8400-4b6b-9c34-1bb4fe84aedc}
