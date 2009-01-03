@@ -13,9 +13,6 @@ MASTER_SITES=	MOZDEV
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	WML implementation
 
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
-
 XPI_ID=		{c4dc572a-3295-40eb-b30f-b54aa4cdc4b7}
 XPI_FILES=	chrome/wmlbrowser.jar components/wml-service.js defaults/preferences/prefs.js \
 		install.js install.rdf chrome.manifest
