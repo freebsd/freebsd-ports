@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wyrd
-DISTVERSION=	1.4.3b
+PORTVERSION=	1.4.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/wyrd/
+MASTER_SITES=	http://pessimization.com/software/wyrd/
 
 MAINTAINER=	raj@csub.edu
 COMMENT=	A curses front end to remind
