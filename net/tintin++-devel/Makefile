@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.6
+PORTVERSION=	1.98.7
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -27,6 +27,9 @@ PLIST_FILES=	bin/tt++
 DOCS=		CREDITS FAQ README SCRIPTS TODO \
 		docs/chat_protocol.txt docs/tintin19.txt
 PORTDOCS=	${DOCS:T}
+
+pre-configure:
+	@${CHMOD} +x ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
