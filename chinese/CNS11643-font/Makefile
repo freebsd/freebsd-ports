@@ -19,13 +19,17 @@ COMMENT=	A combine of Kai and Sung with CNS11643 TrueType Fonts
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+RESTRICTED=	"No redistribution or commercial use is allowed."
 
 TTF=		TW-Kai-95_1_3.ttf TW-Sung-95_1_3.ttf
 
+do-extract:
+	@${MKDIR} ${WRKDIR}
+
 do-install:
 	@${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/TW-Kai-95_1_3.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/TW-Sung-95_1_3.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/TW-Kai-95_1_3.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/TW-Sung-95_1_3.ttf ${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
