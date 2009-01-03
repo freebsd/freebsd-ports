@@ -10,11 +10,8 @@ PORTVERSION=	2.6.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Bookmark synchronizer
-
-DEPRECATED=	Ports could installed and updated more easily by user's browser(firefox)
-EXPIRATION_DATE=2009-01-31
 
 XPI_DISTNAME=	foxmarks_bookmark_synchronizer
 XPI_ID=		foxmarks@kei.com
