@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Layout-Manager
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
@@ -18,8 +18,8 @@ COMMENT=	2D Layout Management
 BUILD_DEPENDS=	p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.12:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-Module-Install>=0.64:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Geometry-Primitive>=0.10:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Primitive>=0.32:${PORTSDIR}/graphics/p5-Graphics-Primitive
+		p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+		p5-Graphics-Primitive>=0.34:${PORTSDIR}/graphics/p5-Graphics-Primitive
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
