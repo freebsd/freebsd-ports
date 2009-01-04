@@ -4,9 +4,9 @@
 
 if [ -z "$1" ]
 then
-    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Repl
+    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar:$CLASSPATH" clojure.lang.Repl
 else
     SCRIPT="$1"
     shift 1
-    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Script "$SCRIPT" -- "$@"
+    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar:$CLASSPATH" clojure.lang.Script "$SCRIPT" -- "$@"
 fi
