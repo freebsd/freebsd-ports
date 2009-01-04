@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	fillets-ng
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fillets
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	fillets-ng
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A wonderful puzzle game
@@ -29,7 +27,7 @@ CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 
 OPTIONS=	FRIBIDI	"Enable fribidi support" on
 
-DATAVERSION=	0.8.0
+DATAVERSION=	${PORTVERSION}
 
 PORTDOCS=	*
 
@@ -54,29 +52,14 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 
-post-extract:
-	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR} \
-		${PORTNAME}-data-${DATAVERSION}/font \
-		${PORTNAME}-data-${DATAVERSION}/images \
-		${PORTNAME}-data-${DATAVERSION}/music \
-		${PORTNAME}-data-${DATAVERSION}/script \
-		${PORTNAME}-data-${DATAVERSION}/sound
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${WRKDIR}/doc
-	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/doc \
-		${PORTNAME}-data-${DATAVERSION}/doc
-.endif
-
 post-install:
-	@cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}; \
-		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; ;\
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-
+	${MKDIR} ${DATADIR}
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
+		${COPYTREE_SHARE} "font	images music script sound" ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@cd ${WRKDIR}/doc/${PORTNAME}-data-${DATAVERSION}/doc; \
-		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; ;\
-		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	${MKDIR} ${DOCSDIR}
+	@cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}/doc; \
+		${COPYTREE_SHARE} "*" ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
