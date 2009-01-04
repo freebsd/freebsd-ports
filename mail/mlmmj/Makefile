@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.16
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/ \
 		${MASTER_SITE_LOCAL}
@@ -23,7 +23,6 @@ WANT_PHP_WEB=	yes
 .if defined(WITH_PERL_WEBINTERFACE)
 RUN_DEPENDS+=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif
@@ -49,7 +48,7 @@ PLIST_SUB+=	WEB=""
 USE_BZIP2=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.sh.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
 
