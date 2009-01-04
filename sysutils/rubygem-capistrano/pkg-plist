@@ -12,6 +12,10 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CaptureError.html
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.html
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CommandError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree/Branch.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree/ConditionBranch.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree/ConditionBranch/Evaluator.html
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration.html
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions.html
 %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.html
@@ -229,6 +233,7 @@
 %%GEM_LIB_DIR%%/test/deploy/scm/accurev_test.rb
 %%GEM_LIB_DIR%%/test/deploy/scm/base_test.rb
 %%GEM_LIB_DIR%%/test/deploy/scm/git_test.rb
+%%GEM_LIB_DIR%%/test/deploy/scm/none_test.rb
 %%GEM_LIB_DIR%%/test/deploy/scm/mercurial_test.rb
 %%GEM_LIB_DIR%%/test/deploy/strategy/copy_test.rb
 %%GEM_LIB_DIR%%/test/extensions_test.rb
@@ -293,6 +298,8 @@ bin/capify
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree/ConditionBranch
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute
