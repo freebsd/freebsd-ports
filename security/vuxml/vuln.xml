@@ -42,6 +42,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>awstats</name>
 	<range><lt>6.9,1</lt></range>
       </package>
+      <package>
+	<name>awstats-devel</name>
+	<range><gt>0</gt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
