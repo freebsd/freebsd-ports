@@ -15,7 +15,7 @@ COMMENT=	PEAR class to find out the minimum version and extensions required
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PORTSCOUT=	skipv:1.6.0a2
+PORTSCOUT=	skipv:1.9.0b1
 USE_PHP=	tokenizer
 USE_DOS2UNIX=	yes
 

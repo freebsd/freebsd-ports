@@ -15,7 +15,7 @@ COMMENT=	Provides missing functionality for older versions of PHP
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PORTSCOUT=	skipv:1.6.0.a2
+PORTSCOUT=	skipv:1.6.0a2
 
 CATEGORY=	PHP
 FILES=		Compat.php Compat/Components.php \
