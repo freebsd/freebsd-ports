@@ -35,6 +35,42 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="27d78386-d35f-11dd-b800-001b77d09812">
+    <topic>awstats -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>6.8_3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/31519">
+	  <p>Morgan Todd has discovered a vulnerability in AWStats,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks.</p>
+	  <p>Input passed in the URL to awstats.pl is not properly
+	    sanitised before being returned to the user. This can be
+	    exploited to execute arbitrary HTML and script code in a
+	    user's browser session in context of an affected site.</p>
+	  <p>Successful exploitation requires that the application is
+	    running as a CGI script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3714</cvename>
+      <cvename>CVE-2008-5080</cvename>
+      <url>http://secunia.com/advisories/31519</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=495432</url>
+    </references>
+    <dates>
+      <discovery>2008-03-12</discovery>
+      <entry>2009-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13b0c8c8-bee0-11dd-a708-001fc66e7203">
     <topic>p5-File-Path -- rmtree allows creation of setuid files</topic>
     <affects>
