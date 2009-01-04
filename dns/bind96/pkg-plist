@@ -193,6 +193,8 @@ lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
+sbin/dnssec-dsfromkey
+sbin/dnssec-keyfromlabel
 sbin/dnssec-keygen
 sbin/dnssec-signzone
 sbin/lwresd
@@ -206,8 +208,10 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NSEC3-NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.idnkit
+%%PORTDOCS%%%%DOCSDIR%%/README.pkcs11
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch03.html
@@ -220,12 +224,15 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch10.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.dig.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-dsfromkey.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-keyfromlabel.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-keygen.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-signzone.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.host.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkconf.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkzone.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.named.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/man.nsupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc-confgen.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.conf.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.html

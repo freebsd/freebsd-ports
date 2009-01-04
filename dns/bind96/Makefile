@@ -1,5 +1,5 @@
-# New ports collection makefile for:	BIND 9.5.x
-# Date created:				2 July 2008
+# New ports collection makefile for:	BIND 9.6.x
+# Date created:				3 January 2009
 # Whom:					dougb
 #
 # $FreeBSD$
@@ -11,8 +11,8 @@
 # version. If you are concerned about using the most recent ISC
 # release you can generally build it cleanly from the source - Doug
 
-PORTNAME=	bind95
-PORTVERSION=	9.5.1
+PORTNAME=	bind96
+PORTVERSION=	9.6.0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.5.1
+ISCVERSION=	9.6.0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind9-9.[34].* bind9-dlz-* bind9-sdb-ldap-* host-*
+CONFLICTS=	bind9-9.[345].* bind9-dlz-* bind9-sdb-ldap-* host-*
 
 OPTIONS=	XML "Support for xml statistics output" on \
 		IDN "Add IDN support to dig, host, etc." off \
@@ -140,8 +140,9 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_packet.3 lwres_resutil.3 lwres_sethostent.3 \
 	lwres_sethostent_r.3 lwres_string_parse.3
 MAN5=	named.conf.5 rndc.conf.5
-MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
-	named-checkzone.8 named.8 rndc-confgen.8 rndc.8
+MAN8=	dnssec-dsfromkey.8 dnssec-keyfromlabel.8 dnssec-keygen.8 \
+	dnssec-signzone.8 lwresd.8 named-checkconf.8 named-checkzone.8 \
+	named.8 rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
 
 verify:	checksum
@@ -165,7 +166,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-	${WRKSRC}/README ${WRKSRC}/README.idnkit \
+	    ${WRKSRC}/NSEC3-NOTES ${WRKSRC}/README ${WRKSRC}/README.idnkit \
+	    ${WRKSRC}/README.pkcs11 \
 	    ${DOCSDIR}/
 .endif
 
