@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smile
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/smiletool/
 
@@ -36,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|bash|sh|g' ${WRKSRC}/mainfrm.cpp \
 		${WRKSRC}/render.cpp
 	@${RM} -f ${WRKSRC}/ui_*.h ${WRKSRC}/moc_*.cpp ${WRKSRC}/qrc_*.cpp \
-		${WRKSRC}/BIB_ManSlide/Help/doc_fr
+		${WRKSRC}/BIB_ManSlide/Help/doc_fr ${WRKSRC}/BIB_ManSlide/*/*~
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC} smile.pro
