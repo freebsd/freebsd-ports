@@ -156,6 +156,7 @@ www/awstats/cgi-bin/lib/worms.pm
 www/awstats/cgi-bin/plugins/clusterinfo.pm
 www/awstats/cgi-bin/plugins/decodeutfkeys.pm
 www/awstats/cgi-bin/plugins/example/example.pm
+www/awstats/cgi-bin/plugins/export_to_csv.pm
 www/awstats/cgi-bin/plugins/geoip.pm
 www/awstats/cgi-bin/plugins/geoip_city_maxmind.pm
 www/awstats/cgi-bin/plugins/geoip_isp_maxmind.pm
@@ -185,6 +186,7 @@ www/awstats/icons/browser/aweb.png
 www/awstats/icons/browser/bpftp.png
 www/awstats/icons/browser/bytel.png
 www/awstats/icons/browser/chimera.png
+www/awstats/icons/browser/chrome.png
 www/awstats/icons/browser/cyberdog.png
 www/awstats/icons/browser/da.png
 www/awstats/icons/browser/dillo.png
@@ -501,6 +503,7 @@ www/awstats/icons/flags/ps.png
 www/awstats/icons/flags/pt.png
 www/awstats/icons/flags/py.png
 www/awstats/icons/flags/qa.png
+www/awstats/icons/flags/re.png
 www/awstats/icons/flags/ro.png
 www/awstats/icons/flags/ru.png
 www/awstats/icons/flags/rw.png
@@ -562,6 +565,7 @@ www/awstats/icons/flags/zw.png
 www/awstats/icons/mime/ai.png
 www/awstats/icons/mime/archive.png
 www/awstats/icons/mime/audio.png
+www/awstats/icons/mime/css.png
 www/awstats/icons/mime/doc.png
 www/awstats/icons/mime/flash.png
 www/awstats/icons/mime/html.png
@@ -614,6 +618,7 @@ www/awstats/icons/os/linux.png
 www/awstats/icons/os/linuxcentos.png
 www/awstats/icons/os/linuxdebian.png
 www/awstats/icons/os/linuxfedora.png
+www/awstats/icons/os/linuxgentoo.png
 www/awstats/icons/os/linuxmandr.png
 www/awstats/icons/os/linuxredhat.png
 www/awstats/icons/os/linuxsuse.png
@@ -646,6 +651,7 @@ www/awstats/icons/os/wince.png
 www/awstats/icons/os/winlong.png
 www/awstats/icons/os/winme.png
 www/awstats/icons/os/winnt.png
+www/awstats/icons/os/winunknown.png
 www/awstats/icons/os/winxp.png
 www/awstats/icons/os/commodore.png
 www/awstats/icons/os/psp.png
@@ -684,6 +690,13 @@ www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
 www/awstats/tools/webmin/awstats-1.8.wbm
+www/awstats/tools/xslt/README.txt
+www/awstats/tools/xslt/awstats.datademo1.xml
+www/awstats/tools/xslt/awstats.datademo1.xslt
+www/awstats/tools/xslt/awstats.datademo2.xml
+www/awstats/tools/xslt/awstats.datademo2.xslt
+www/awstats/tools/xslt/awstats.xsd
+@dirrm www/awstats/tools/xslt
 @dirrm www/awstats/tools/webmin
 @dirrm www/awstats/tools
 @dirrm www/awstats/js

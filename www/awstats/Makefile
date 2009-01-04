@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.8
-PORTREVISION=	1
+PORTVERSION=	6.9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
@@ -75,6 +74,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/www/awstats/js
 	@${MKDIR} ${PREFIX}/www/awstats/tools
 	@${MKDIR} ${PREFIX}/www/awstats/tools/webmin
+	@${MKDIR} ${PREFIX}/www/awstats/tools/xslt
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_exportlib.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${PREFIX}/www/awstats/tools
@@ -82,7 +82,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.8.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_DATA} ${WRKSRC}/tools/webmin/awstats-1.8.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* ${PREFIX}/www/awstats/tools/xslt
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
@@ -103,16 +104,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/os/* ${PREFIX}/www/awstats/icons/os
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/other/* ${PREFIX}/www/awstats/icons/other
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/js/* ${PREFIX}/www/awstats/js
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "* Rename ${PREFIX}/www/awstats/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
-	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
-	@${ECHO_CMD} ""
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
 .endif
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "* Rename ${PREFIX}/www/awstats/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
+.endif
+	@${ECHO_CMD} ""
 
 .if !defined(BATCH)
 post-install:
