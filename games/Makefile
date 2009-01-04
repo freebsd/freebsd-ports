@@ -556,6 +556,7 @@
     SUBDIR += nonsense
     SUBDIR += npush
     SUBDIR += nuclearchess
+    SUBDIR += numptyphysics
     SUBDIR += nwndata
     SUBDIR += odamex
     SUBDIR += oilwar
