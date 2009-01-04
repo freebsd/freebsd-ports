@@ -24,6 +24,8 @@ USE_DOS2UNIX=	tools/logresolvemerge.pl
 
 SUB_FILES=	pkg-message
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/27d78386-d35f-11dd-b800-001b77d09812.html
+
 CONFLICTS=	awstats-6.*
 LATEST_LINK=	awstats-devel
 
