@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -30,7 +30,7 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		db4-4.6.21-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-libs-1.40.4-2.fc8.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.135-1.fc8.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.137-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-8-6.transition.noarch.rpm \
 		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.5-4.fc8.${LINUX_RPM_ARCH}.rpm \
@@ -74,7 +74,7 @@ SRC_DISTFILES+=	acl-2.2.39-14.fc8.src.rpm \
 		coreutils-6.9-19.fc8.src.rpm \
 		db4-4.6.21-2.fc8.src.rpm \
 		e2fsprogs-1.40.4-2.fc8.src.rpm \
-		elfutils-0.135-1.fc8.src.rpm \
+		elfutils-0.137-3.fc8.src.rpm \
 		fedora-release-8-6.transition.src.rpm \
 		filesystem-2.4.11-1.fc8.src.rpm \
 		freetype-2.3.5-4.fc8.src.rpm \
