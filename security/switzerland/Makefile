@@ -11,11 +11,11 @@ CATEGORIES=	security python
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Test the integrity of communications over networks and firewalls
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS= yes
+USE_PYDISTUTILS=	yes
 PORTDOCS=	*
 
 post-patch:
