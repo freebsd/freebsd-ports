@@ -5,23 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	Text-FIGlet
-PORTVERSION=	1.06
+PORTVERSION=	2.01
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Perl module to provide FIGlet abilities, akin to banner
 
 RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet
 
 PERL_CONFIGURE=	yes
 
-
-MAN3=		Text::FIGlet.3 \
-		Text::charmap.3 \
-		Text::figlet.3 \
-		Text::minifig.3 \
-		Text::showfigfonts.3
+MAN1=		charmap.pl.1 figlet.pl.1 minifig.pl.1 showfigfonts.pl.1
+MAN3=		Text::FIGlet.3 Text::FIGlet::Control.3 Text::FIGlet::Font.3 \
+		Text::LICENSE.3
 
 .include <bsd.port.mk>
