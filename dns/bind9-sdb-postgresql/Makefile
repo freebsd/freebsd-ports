@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Bind9, patched for use with a PostgreSQL-based backend
 
-CONFLICTS=	bind9-9.[35].* bind9-dlz-* bind9-sdb-ldap-* host-*
+CONFLICTS=	bind9-9.* bind9-sdb-ldap-* host-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
 ISCVERSION=	9.4.2-P2

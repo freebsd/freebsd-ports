@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind9-9.[34].* bind9-dlz-* bind9-sdb-ldap-* host-*
+CONFLICTS=	bind9-9.[346].* bind9-sdb-* host-*
 
 OPTIONS=	XML "Support for xml statistics output" on \
 		IDN "Add IDN support to dig, host, etc." off \
