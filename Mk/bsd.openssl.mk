@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.40 2008-08-27 06:19:39 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.41 2009-01-04 09:42:19 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -11,7 +11,6 @@
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
 # WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
-# WITH_OPENSSL_STABLE=yes	- Use an older openssl version
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
@@ -42,16 +41,12 @@ WITH_OPENSSL_BASE=yes
 .if defined(USE_OPENSSL_PORT) && !defined(WITH_OPENSSL_PORT)
 WITH_OPENSSL_PORT=yes
 .endif
-.if defined(WITH_OPENSSL_097) && !defined(WITH_OPENSSL_STABLE)
-WITH_OPENSSL_STABLE=yes
-.endif
 
 #	if no preference was set, check for an installed base version
 #	but give an installed port preference over it.
 .if	!defined(WITH_OPENSSL_BASE) && \
 	!defined(WITH_OPENSSL_BETA) && \
 	!defined(WITH_OPENSSL_PORT) && \
-	!defined(WITH_OPENSSL_STABLE) && \
 	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
 	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
 WITH_OPENSSL_BASE=yes
@@ -108,13 +103,6 @@ OPENSSL_PORT?=		security/openssl-beta
 OPENSSL_SHLIBVER?=	5
 .else
 OPENSSL_SHLIBVER?=	4
-.endif
-.elif defined(WITH_OPENSSL_STABLE)
-OPENSSL_PORT?=		security/openssl-stable
-.if ( ${OSVERSION} >= 600100 )
-OPENSSL_SHLIBVER?=	4
-.else
-OPENSSL_SHLIBVER?=	3
 .endif
 .else
 .if	!defined(OPENSSL_PORT) && \
