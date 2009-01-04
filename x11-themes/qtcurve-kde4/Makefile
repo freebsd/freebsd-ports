@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	0.59.6
+PORTVERSION=	0.60.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.freeuk.com/cpdrummond/
 PKGNAMEPREFIX=	kde4-style-
@@ -18,7 +18,7 @@ COMMENT=	QtCurve KDE4 widget style
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build uic_build moc_build
+QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build
 USE_KDE4=	kdelibs workspace kdehier kdeprefix automoc4
 
 .include <bsd.port.mk>
