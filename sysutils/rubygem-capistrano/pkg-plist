@@ -300,6 +300,7 @@ bin/capify
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree/ConditionBranch
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command/Tree
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute
