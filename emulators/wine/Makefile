@@ -44,6 +44,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
+		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
 
 .include <bsd.port.pre.mk>
@@ -60,6 +61,13 @@ CONFIGURE_ARGS+=	--with-hal
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
+.endif
+
+.ifdef WITH_LDAP
+CONFIGURE_ARGS+=	--with-ldap
+USE_OPENLDAP=	yes
+.else
+CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .ifdef WITH_LIBXSLT
