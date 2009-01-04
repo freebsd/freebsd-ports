@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libmaa
-PORTVERSION=	1.10.11
+PORTVERSION=	1.1.0
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	dict
-DISTNAME=	dictd-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/dictd-${PORTVERSION}/libmaa
 ALL_TARGET=	lib
 
 post-install:
