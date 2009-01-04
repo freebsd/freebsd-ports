@@ -9,11 +9,10 @@ PORTNAME=	catdoc
 PORTVERSION=	0.94.2
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|} \
 		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
-		ftp://ftp.demos.ru/pub/sunfreeware/SOURCES/ \
-		ftp://ftp.45.free.net/pub/catdoc/
-#		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
+		ftp://ftp.demos.ru/pub/sunfreeware/SOURCES/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
