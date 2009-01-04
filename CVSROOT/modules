@@ -23231,6 +23231,7 @@ zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zgv                             ports/graphics/zgv
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
+zh-CNS11643-font                ports/chinese/CNS11643-font
 zh-FreeWnn-lib                  ports/chinese/FreeWnn-lib
 zh-FreeWnn-server               ports/chinese/FreeWnn-server
 zh-acroread8-zh_CN              ports/chinese/acroread8-zh_CN
@@ -23256,6 +23257,7 @@ zh-cjkunifonts                  ports/chinese/CJKUnifonts
 zh-cless                        ports/chinese/cless
 zh-cmexfonts                    ports/chinese/cmexfonts
 zh-cnprint                      ports/chinese/cnprint
+zh-cns11643-font                ports/chinese/CNS11643-font
 zh-cwtex                        ports/chinese/cwtex
 zh-cwtexttf                     ports/chinese/cwtexttf
 zh-cxterm                       ports/chinese/cxterm
