@@ -13,6 +13,7 @@
     SUBDIR += eric4
     SUBDIR += fortune-bashorgru
     SUBDIR += fortuneru
+    SUBDIR += gd
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
