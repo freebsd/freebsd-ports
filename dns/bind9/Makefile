@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind9-9.[45].* bind9-dlz-* bind9-sdb-ldap-* host-*
+CONFLICTS=	bind9-9.[456].* bind9-sdb-* host-*
 
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
 		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
