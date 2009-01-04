@@ -52,7 +52,7 @@ OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libical.so) || defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.27:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.42:${PORTSDIR}/devel/libical
 .endif
 
 .if exists(${LOCALBASE}/lib/libusb.so) || defined(WITH_USB)
