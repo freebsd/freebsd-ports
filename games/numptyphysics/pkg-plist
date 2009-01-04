@@ -1,0 +1,35 @@
+bin/numptyphysics
+share/applications/numptyphysics.desktop
+share/icons/hicolor/26x26/apps/numptyphysics.png
+share/icons/hicolor/64x64/apps/numptyphysics.png
+share/icons/hicolor/scalable/apps/numptyphysics.png
+%%DATADIR%%/L00_title.nph
+%%DATADIR%%/L01_tutorial.nph
+%%DATADIR%%/L05_plane_sailing.nph
+%%DATADIR%%/L10_the_leap.nph
+%%DATADIR%%/L15_trampoline.nph
+%%DATADIR%%/L30_see_saw.nph
+%%DATADIR%%/L35_pendulum.nph
+%%DATADIR%%/L35_pusher.nph
+%%DATADIR%%/L38_box.nph
+%%DATADIR%%/L40_tree_of_life.nph
+%%DATADIR%%/L50_nautilus.nph
+%%DATADIR%%/edit.png
+%%DATADIR%%/next.png
+%%DATADIR%%/next_win32.png
+%%DATADIR%%/numptyphysics.service
+%%DATADIR%%/paper.jpg
+%%DATADIR%%/pause.png
+%%DATADIR%%/play.png
+%%DATADIR%%/record.png
+%%DATADIR%%/theend.png
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/26x26/apps
+@dirrmtry share/icons/hicolor/26x26
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
