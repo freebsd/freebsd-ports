@@ -40,7 +40,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>awstats</name>
-	<range><lt>6.8_3,1</lt></range>
+	<range><lt>6.9,1</lt></range>
       </package>
     </affects>
     <description>
