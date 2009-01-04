@@ -10,6 +10,7 @@
     SUBDIR += bind9-sdb-postgresql
     SUBDIR += bind94
     SUBDIR += bind95
+    SUBDIR += bind96
     SUBDIR += bindgraph
     SUBDIR += c-ares
     SUBDIR += checkdns
