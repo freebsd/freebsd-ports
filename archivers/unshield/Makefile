@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=synce
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Extract data from InstallShield CAB files
 
 USE_AUTOTOOLS=	libtool:15
