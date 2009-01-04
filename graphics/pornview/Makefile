@@ -7,7 +7,7 @@
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	xcb-render-util:${PORTSDIR}/x11/xcb-util
 
 USE_XORG=	x11 xi xext xinerama
 USE_GNOME=	gtk20
