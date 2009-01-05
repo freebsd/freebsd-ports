@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms \
 RUN_DEPENDS=	${L1}libm3formsvbt${L2}:${PORTSDIR}/lang/pm3-forms
 
 DEPRECATED=	depends on broken, expired port
-EXPIRATION_DATE=2008-01-19
+EXPIRATION_DATE=2009-01-19
 
 NOFETCHFILES=	yes
 ONLY_FOR_ARCHS=	i386 alpha
