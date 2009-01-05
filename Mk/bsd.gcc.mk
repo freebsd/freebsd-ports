@@ -94,7 +94,8 @@ FC:=	f77
 .  endif
 . endif
 
-MAKE_ENV+=	 F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 .endif
 
 
