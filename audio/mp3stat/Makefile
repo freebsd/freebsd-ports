@@ -36,10 +36,6 @@ OPTIONS=	VORBIS "Ogg/Vorbis support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 504000
-BUILD_DEPENDS+=	${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
-.endif
-
 .if defined(WITHOUT_VORBIS)
 MAKE_ARGS+=	VORBIS=""
 .else

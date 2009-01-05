@@ -28,6 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 ONLY_FOR_ARCHS=	i386
 
+CHECK_PORT=	/usr/bin/nc -z localhost $$\1
+
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
 		OPENLDAP "OpenLDAP support" off
@@ -55,13 +57,6 @@ post-install:
 	${CHMOD} +w ${PREFIX}/virtuoso/demo/demo.db
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504000
-CHECK_PORT=	${LOCALBASE}/bin/nc -vz localhost $$\1 2>\&1 | ${GREP} open
-BUILD_DEPENDS+=	${NETCAT}:${PORTSDIR}/net/netcat
-.else
-CHECK_PORT=	/usr/bin/nc -z localhost $$\1
-.endif
 
 .if defined(WITH_IMAGEMAGICK)
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}

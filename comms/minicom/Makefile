@@ -35,13 +35,7 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
 MINICOM_DEFAULT_PORT?=	/dev/cuad0
-.else
-MINICOM_DEFAULT_PORT?=	/dev/cuaa0
-.endif
 CONFIGURE_ARGS+=	--enable-dfl-port=${MINICOM_DEFAULT_PORT}
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
@@ -71,4 +65,4 @@ post-install:
 		${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

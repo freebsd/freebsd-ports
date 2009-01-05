@@ -36,12 +36,6 @@ CONFIGURE_ENV=	QMAKESPEC="freebsd-g++"
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503001
-IGNORE= does not compile on FreeBSD < 5.3, due to lack of round() in libm
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}&| ; \
@@ -60,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Mixxx-Manual.pdf ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

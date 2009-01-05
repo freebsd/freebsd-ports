@@ -20,12 +20,6 @@ MAN1=		xmoontool.1
 PORTDOCS=	NOTES
 PLIST_FILES=	bin/xmoontool
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000	# libnova currently not available here!
-WITHOUT_LIBNOVA=	yes
-.endif
-
 .if defined(WITHOUT_LIBNOVA)
 MAKE_ENV+=	WITHOUT_LIBNOVA=yes
 .else
@@ -59,4 +53,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

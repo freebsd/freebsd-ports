@@ -108,12 +108,8 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/atoll/d' ${WRKSRC}/config/platform/bsd.h
-.if ${OSVERSION} > 502112
 	${REINPLACE_CMD} -e '/round/d' ${WRKSRC}/config/platform/bsd.h
-.endif
-.if ${OSVERSION} > 502120
 	${REINPLACE_CMD} -e '/nearbyint/d' ${WRKSRC}/config/platform/bsd.h
-.endif
 	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...),' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,$$(prefix)/doc,$$(datadir)/doc,' \
 		${WRKSRC}/config/am_include.mk ${WRKSRC}/Makefile.in \

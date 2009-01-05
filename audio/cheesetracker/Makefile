@@ -40,10 +40,6 @@ BROKEN=		Does not compile on alpha
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 .endif
 
-.if ${OSVERSION} < 600020
-BROKEN=		Requires MSG_NOSIGNAL
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CXXFLAGS%%|${CXXFLAGS}| ; \
 		 s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \

@@ -27,14 +27,4 @@ CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
 		--enable-shared \
 		--with-postgres-include=${LOCALBASE}/include/postgresql
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport
-LDFLAGS+=	-L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

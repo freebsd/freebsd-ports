@@ -31,12 +31,6 @@ NOT_FOR_ARCHS_REASON_sparc64=	Fails to compile
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500039
-USE_GCC=	3.4
-.endif
-
 post-install:
 	@${RM} -f ${PREFIX}/lib/libmysqlpp.so.3
 	@${LN} -s ${PREFIX}/lib/libmysqlpp.so ${PREFIX}/lib/libmysqlpp.so.3
@@ -58,4 +52,4 @@ post-install:
 	@${RM} -f ${EXAMPLESDIR}/Makefile.temp
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

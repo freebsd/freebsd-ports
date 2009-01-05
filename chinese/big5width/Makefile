@@ -24,10 +24,6 @@ PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502110
-IGNORE=		requires UTF-8 locales in base system
-.endif
-
 SRCBASE?=	${PORTSDIR}/../src
 SRCDIR=		${SRCBASE}/share/mklocale
 

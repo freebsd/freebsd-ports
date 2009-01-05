@@ -27,9 +27,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-GPSMAN_DEFAULT_PORT?=	/dev/cuaa0
-.elif ${OSVERSION} < 800045
+.if ${OSVERSION} < 800045
 GPSMAN_DEFAULT_PORT?=	/dev/cuad0
 .else
 GPSMAN_DEFAULT_PORT?=	/dev/cuau0

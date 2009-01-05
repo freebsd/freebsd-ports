@@ -15,15 +15,10 @@ DISTNAME=	einstein_S5R3_${PORTVERSION}_i386-unknown-freebsd
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Search for gravitational waves, a distributed computing project
 
-.include <bsd.port.pre.mk>
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
-RUN_DEPENDS+=	boinc_client:${PORTSDIR}/net/boinc-client
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -37,7 +32,9 @@ BOINC_HOME?=	/var/db/boinc
 EINSTEIN_SITE=	einstein.phys.uwm.edu
 EINSTEIN_BINARY=${DISTNAME}
 
-.if ${ARCH} == amd64 && ${OSVERSION} >= 600000
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
 AMD64=		""
 .else
 AMD64=		"@comment "

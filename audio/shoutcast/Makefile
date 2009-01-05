@@ -13,6 +13,8 @@ DISTNAME=	sc_serv_${PORTVERSION}_FreeBSD5
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (binary port)
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 IA32_BINARY_PORT=	YES
 NO_BUILD=	YES
 RESTRICTED=	Redistribution of the software is not allowed
@@ -22,12 +24,6 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 USE_RC_SUBR=	shoutcast.sh
 PORTDOCS=	README.TXT
 WRKSRC=		${WRKDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
@@ -53,4 +49,4 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

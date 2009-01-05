@@ -32,10 +32,6 @@ IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
 WITH_IODBC?=	yes
 .endif
 
-.if defined(WITH_UNIXODBC) && ${OSVERSION} < 500016
-IGNORE=	Due to some obscure -pthread things, you can not have this work
-.endif
-
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 MYODBC=	iodbc

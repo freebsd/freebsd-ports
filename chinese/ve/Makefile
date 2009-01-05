@@ -15,10 +15,4 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-screen.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

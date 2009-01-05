@@ -57,10 +57,6 @@ AMD64=		"@comment "
 SUB_FILES=	app_info.xml pkg-message
 SUB_LIST=	SIMAP_BINARY=${SIMAP_BINARY} HMMER_BINARY=${HMMER_BINARY} SIMAP_APPVERSION=${SIMAP_VERSION:S/.//} HMMER_APPVERSION=${HMMER_VERSION:S/.//} AMD64=${AMD64}
 
-.if ${OSVERSION} < 600000
-IGNORE=		only supports FreeBSD 6.X and newer
-.endif
-
 .if ${OSVERSION} >= 700043
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif

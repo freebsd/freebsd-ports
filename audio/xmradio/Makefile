@@ -25,15 +25,11 @@ ONLY_FOR_ARCHS=	i386 ia64
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502100
 post-patch:
 	${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h," \
 		${WRKSRC}/radio.c
-.endif
 #
 #post-install:
 #              ${STRIP_CMD} ${PREFIX}/bin/xmradio
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

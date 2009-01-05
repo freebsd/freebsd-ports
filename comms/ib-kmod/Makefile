@@ -26,10 +26,6 @@ PLIST_FILES=	"@cwd ${KMODDIR}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600031
-IGNORE=		required FreeBSD 6.0-STABLE at least (if_alloc(), etc.)
-.endif
-
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
