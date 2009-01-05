@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
 
 BUILD_DEPENDS=	${LOCALBASE}/include/biosfont.h:${PORTSDIR}/sysutils/biosfont

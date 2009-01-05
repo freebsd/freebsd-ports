@@ -12,7 +12,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	XFce 4 clipboard module for xfce4-panel
 
 GNU_CONFIGURE=	yes
