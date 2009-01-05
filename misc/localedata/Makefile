@@ -21,12 +21,6 @@ ONLY_FOR_ARCHS=	amd64 alpha ia64 i386 pc98 sparc64
 
 TARGET_DIR=	${PREFIX}/share/compat
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600016
-IGNORE=		is not required for your OS
-.endif
-
 WRKSRC=		${WRKDIR}/${ARCH}
 
 post-extract:
@@ -36,4 +30,4 @@ do-install:
 	${MKDIR} ${TARGET_DIR}
 	${PAX} -rw -s${WRKSRC} ${WRKSRC}/locale ${TARGET_DIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -66,14 +66,8 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' \
+	@${REINPLACE_CMD} -e 's|<regex.h>|<gnu/regex.h>|g' \
 		${WRKSRC}/gui2/gtksourceview/gtksourceregex.c
 
 pre-configure:

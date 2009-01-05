@@ -31,7 +31,6 @@ libexec/amanda/chg-multi
 libexec/amanda/chg-null
 libexec/amanda/chg-rait
 libexec/amanda/chg-rth
-%%SCSICHG%%libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
 libexec/amanda/chunker
 libexec/amanda/amidxtaped

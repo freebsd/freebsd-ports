@@ -23,12 +23,8 @@ CONFIGURE_ARGS=	--redo
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500024
-UUPREFIX=	/usr
-.else
 RUN_DEPENDS=	${LOCALBASE}/bin/uux:${PORTSDIR}/net/freebsd-uucp
 UUPREFIX=	${LOCALBASE}
-.endif
 
 post-patch:
 	@${CP} ${WRKSRC}/bsmtp.m4.8.9.in ${WRKSRC}/bsmtp.m4.8.10.in

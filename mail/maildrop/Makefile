@@ -46,10 +46,6 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 502010
-USE_GMAKE	=yes
-.endif
-
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm

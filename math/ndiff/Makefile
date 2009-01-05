@@ -18,11 +18,9 @@ COMMENT=	Compare putatively similar files, ignoring small numeric differences
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GMP)
-.if ${OSVERSION} > 500023
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
 CONFIGURE_ARGS=	--with-gmp
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 .else

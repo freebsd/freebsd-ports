@@ -121,7 +121,7 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .if exists(${LOCALBASE}/bin/gss-client)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
-.elif (defined(MAKE_KERBEROS5) && (${OSVERSION} > 500105)) || exists(/usr/lib/libkrb5.a)
+.elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
 USE_KRB5_SYS=YES
 .endif

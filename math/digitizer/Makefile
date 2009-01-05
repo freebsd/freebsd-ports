@@ -37,12 +37,6 @@ DESKTOP_ENTRIES=	"Engauge Digitizer" \
 DOCS=		README
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BROKEN=		Does not compile with gcc-2.95
-.endif
-
 pre-configure:
 .if !defined(WITH_DEBUG)
 	${REINPLACE_CMD} -e '/^CONFIG/s/debug/release/' ${WRKSRC}/digitizer.pro
@@ -70,4 +64,4 @@ do-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

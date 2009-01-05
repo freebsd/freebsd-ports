@@ -30,12 +30,6 @@ MAKE_ENV+=	DATADIR="${DATADIR}"
 FIND_DIRS=	-type d
 FIND_DATA=	-type f
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-IGNORE=		requires trunc(3) and round(3)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/main.cpp
 
@@ -45,4 +39,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ump.conf ${PREFIX}/etc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
