@@ -7,29 +7,31 @@
 
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc tk
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc client for the X Window System that uses TCL/TK
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
+USE_TK=		84+
 USE_XORG=	xt
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.4 \
-		--with-tcl-include-dir=${LOCALBASE}/include/tcl8.4 \
-		--with-tk-include-dir=${LOCALBASE}/include/tk8.4 \
-		--with-tcl-lib-dir=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk-lib-dir=${LOCALBASE}/lib/tk8.4 \
-		--with-tcl-lib=tcl84 \
-		--with-tk-lib=tk84 \
-		--with-tcl-version=8.4
 
 MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
 		doc/dccresum.txt doc/links.txt doc/nickcomp.txt \
 		doc/quedit.txt doc/rfc1459.txt doc/tdcc.txt
+
+.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-wish=${WISH} \
+		--with-tcl-include-dir=${TCL_INCLUDEDIR} \
+		--with-tk-include-dir=${TK_INCLUDEDIR} \
+		--with-tcl-lib-dir=${TCL_LIBDIR} \
+		--with-tk-lib-dir=${TK_LIBDIR} \
+		--with-tcl-lib=tcl${TCL_VER:S/.//} \
+		--with-tk-lib=tk${TCL_VER:S/.//} \
+		--with-tcl-version=${TCL_VER}
 
 post-install:
 	@${MKDIR} ${DATADIR}/common
@@ -43,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
