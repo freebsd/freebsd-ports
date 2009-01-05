@@ -35,12 +35,6 @@ PLIST_FILES=	bin/xvnkb lib/libxvnkb.so lib/libxvnkb.so.0 lib/xvnkb.so.0.2.9
 
 MAN1=		xvnkb.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502110
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/la_LN.UTF-8/LC_CTYPE:${PORTSDIR}/misc/utf8locale
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/tools/Makefile.dep
 
@@ -49,4 +43,4 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/xvnkb.1 ${MANPREFIX}/man/man1
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
