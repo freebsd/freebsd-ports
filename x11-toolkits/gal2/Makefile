@@ -44,12 +44,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
-.if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
-	( ${OSVERSION} < 503101 )
-.for po in da.po it.po zh_CN.po
-	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
-.endfor
-.endif
 
 .include <bsd.port.post.mk>
 

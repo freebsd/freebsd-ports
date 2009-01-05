@@ -41,9 +41,5 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=        -fPIC
 .endif
 
-.if ${OSVERSION} < 503000
-IGNORE= does not build and is useless without working Mono
-.endif
-
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>

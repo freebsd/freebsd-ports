@@ -29,12 +29,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g' ${WRKSRC}/configure
@@ -42,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${LDFLAGS}|g' ${WRKSRC}/${file}
 .endfor
 .for file in vdk/FileDialog.h vdk/gtksourcebuffer.h vdk/gtksourcetag.h
-	@${REINPLACE_CMD} -e 's|<regex\.h>|<${GNU_REGEX_H}>|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e \
 		's|VDKComboEntry::||g' ${WRKSRC}/vdk/vdkcomboentry.h
