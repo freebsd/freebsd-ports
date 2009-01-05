@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58a3c266-db01-11dd-ae30-001cc0377035">
+    <topic>php5-gd -- uninitialized memory information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>php5-gd</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to CVE-2008-5498 entry:</p>
+	<blockquote cite="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5498">
+	  <p>Array index error in the "imageRotate" function in PHP 5.2.8 and
+	    earlier allows context-dependent attackers to read the contents
+	    of arbitrary memory locations via a crafted value of the third
+	    argument (aka the "bgd_color" or "clrBack" argument) for an indexed
+	    image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>33002</bid>
+      <cvename>CVE-2008-5498</cvename>
+      <url>http://www.securiteam.com/unixfocus/6G00Y0ANFU.html</url>
+    </references>
+    <dates>
+      <discovery>2008-12-24</discovery>
+      <entry>2009-01-05</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="27d78386-d35f-11dd-b800-001b77d09812">
     <topic>awstats -- multiple XSS vulnerabilities</topic>
