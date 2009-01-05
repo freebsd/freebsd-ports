@@ -399,10 +399,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OPENSSL	- If set, this port relies on the OpenSSL package.
 ##
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
-#				  Implies: WANT_OPENLDAP_VER?=23
+#				  Implies: WANT_OPENLDAP_VER?=24
 # WANT_OPENLDAP_VER
 #				- Legal values are: 23, 24
-#				  If set to an unkown value, the port is marked BROKEN.
+#				  If set to an unknown value, the port is marked BROKEN.
 # WANT_OPENLDAP_SASL
 #				- If set, the system should use OpenLDAP libraries
 #				  with SASL support.
