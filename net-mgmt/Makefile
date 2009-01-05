@@ -232,6 +232,7 @@
     SUBDIR += rrdbot
     SUBDIR += rubygem-snmp
     SUBDIR += satellite
+    SUBDIR += sblim-wbemcli
     SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += scotty3
