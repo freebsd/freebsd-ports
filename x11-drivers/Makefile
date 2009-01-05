@@ -41,7 +41,6 @@
     SUBDIR += xf86-video-glint
     SUBDIR += xf86-video-i128
     SUBDIR += xf86-video-i740
-    SUBDIR += xf86-video-i810
     SUBDIR += xf86-video-imstt
     SUBDIR += xf86-video-intel
     SUBDIR += xf86-video-mach64
