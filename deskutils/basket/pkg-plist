@@ -14,7 +14,7 @@ lib/kde3/libbasketpart.so
 lib/libbasketcommon.a
 lib/libbasketcommon.la
 lib/libbasketcommon.so
-share/applnk/Utilities/basket.desktop
+share/applications/kde/basket.desktop
 share/apps/basket/backgrounds/abstract.png
 share/apps/basket/backgrounds/alien-artifact.png
 share/apps/basket/backgrounds/alien-artifact.png.config
@@ -116,6 +116,7 @@ share/icons/crystalsvg/64x64/mimetypes/baskets.png
 share/icons/crystalsvg/64x64/mimetypes/baskett.png
 share/icons/crystalsvg/scalable/apps/basket.svg
 share/locale/cs/LC_MESSAGES/basket.mo
+share/locale/da/LC_MESSAGES/basket.mo
 share/locale/de/LC_MESSAGES/basket.mo
 share/locale/es/LC_MESSAGES/basket.mo
 share/locale/fr/LC_MESSAGES/basket.mo
