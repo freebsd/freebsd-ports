@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		1.0.3
+PORTVERSION=		1.0.3.1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://basket.kde.org/downloads/
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Desktop organization tool
 
 USE_KDELIBS_VER=	3
