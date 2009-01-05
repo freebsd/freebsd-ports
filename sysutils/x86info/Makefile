@@ -9,7 +9,8 @@ PORTNAME=	x86info
 PORTVERSION=	1.23
 PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/
+MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
+		http://www.codemonkey.org.uk/projects/x86info/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stas@FreeBSD.org
