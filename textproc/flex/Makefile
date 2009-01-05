@@ -7,6 +7,7 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.5.35
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -19,10 +20,12 @@ BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 USE_BISON=	build
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls
+# install flex header to its own dir to avoid conflict with system flex.
+CONFIGURE_ARGS=	--disable-nls --includedir=${PREFIX}/include/flex
 USE_GMAKE=	yes
 MAN1=		flex.1
-PLIST_FILES=	bin/flex include/FlexLexer.h lib/libfl.a lib/libfl_pic.a
+PLIST_FILES=	bin/flex include/flex/FlexLexer.h lib/libfl.a lib/libfl_pic.a
+PLIST_DIRS=	include/flex
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/install-info-recursive//g;s/info-recursive//g' \
