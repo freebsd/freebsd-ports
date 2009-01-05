@@ -8,6 +8,7 @@ MAN1+=	ldapcompare.1 \
 	ldapmodrdn.1 \
 	ldappasswd.1 \
 	ldapsearch.1 \
+	ldapurl.1 \
 	ldapwhoami.1
 MLINKS+= \
 	ldapmodify.1 ldapadd.1
@@ -201,6 +202,7 @@ MAN5+=	ldap.conf.5 \
 	slapd-ldif.5 \
 	slapd-meta.5 \
 	slapd-monitor.5 \
+	slapd-ndb.5 \
 	slapd-null.5 \
 	slapd-passwd.5 \
 	slapd-perl.5 \
@@ -216,6 +218,7 @@ MAN5+=	ldap.conf.5 \
 	slapo-accesslog.5 \
 	slapo-auditlog.5 \
 	slapo-chain.5 \
+	slapo-collect.5 \
 	slapo-constraint.5 \
 	slapo-dds.5 \
 	slapo-dyngroup.5 \
