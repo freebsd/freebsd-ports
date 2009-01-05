@@ -7,6 +7,7 @@
 
 PORTNAME=	game
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +29,10 @@ SDLNOX11=	sdl-nox11-[0-9]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type d | xargs ${CHMOD} a+rx
+	@${FIND} ${WRKSRC} -type f | xargs ${CHMOD} a+r
 
 pre-configure:
 	@invalid=`${PKG_INFO} -I ${SDLNOX11:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}`
