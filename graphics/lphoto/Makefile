@@ -7,7 +7,7 @@
 
 PORTNAME=	lphoto
 PORTVERSION=	2.0.42
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://software.linspire.com/emptypool/lindowsos/pool/main/l/lphoto/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1

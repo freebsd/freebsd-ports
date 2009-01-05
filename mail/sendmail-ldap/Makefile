@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 
 MAINTAINER=	dinoex@FreeBSD.org

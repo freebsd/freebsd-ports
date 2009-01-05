@@ -6,7 +6,7 @@
 
 PORTNAME=	lookupd_ldap
 PORTVERSION=	0.1.a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/ldap/downloads/
 

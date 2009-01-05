@@ -7,7 +7,7 @@
 
 PORTNAME=	gosa
 PORTVERSION=	2.5.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 		http://oss.gonicus.de/pub/gosa/archive/

@@ -7,7 +7,7 @@
 
 PORTNAME=	ldapvi
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.lichteblau.com/download/
 

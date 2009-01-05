@@ -7,6 +7,7 @@
 
 PORTNAME=	efront
 DISTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.efrontlearning.net/versions/
 DISTNAME=	${PORTNAME}_3.5.1_build2760

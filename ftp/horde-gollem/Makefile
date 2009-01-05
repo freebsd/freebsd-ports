@@ -7,6 +7,7 @@
 
 PORTNAME=	gollem
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	ftp www
 
 MAINTAINER=	beech@FreeBSD.org

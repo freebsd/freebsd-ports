@@ -6,6 +6,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://dpw.threerings.net/projects/openvpn-auth-ldap/
 DISTNAME=	auth-ldap-${PORTVERSION}
