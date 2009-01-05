@@ -21,6 +21,8 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A convenience package to install the compat5x libraries
 
+RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
@@ -35,14 +37,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 EXTRACT_PRESERVE_OWNERSHIP=	yes	# Files in archive have scfg-flag set
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		is for FreeBSD 6.x and newer
-.endif
-
-.if ${OSVERSION} >= 600016
-RUN_DEPENDS+=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
-.endif
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA=""

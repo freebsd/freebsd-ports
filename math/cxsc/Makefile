@@ -18,11 +18,6 @@ COMMENT=	C++ class library for eXtended Scientific Computing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
 USE_GCC=	3.3
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

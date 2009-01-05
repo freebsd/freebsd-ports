@@ -41,10 +41,6 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502010
-IGNORE=		not supported on FreeBSD versions before 5.2.1-RELEASE
-.endif
-
 .if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 .elif exists(${LOCALBASE}/include/ncurses/ncurses.h) || defined(WITH_NCURSESW)

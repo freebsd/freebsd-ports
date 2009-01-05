@@ -18,6 +18,8 @@ DIST_SUBDIR=	${COMPAT4X_ARCH}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A convenience package to install the compat4x libraries
 
+RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
+
 WRKSRC=		${WRKDIR}/usr/lib/compat
 
 NO_BUILD=	yes
@@ -31,11 +33,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 .include <bsd.port.pre.mk>
 
 COMPAT4X_ARCH=	${ARCH}
-
-.if ${OSVERSION} >= 600016
-RUN_DEPENDS+=		${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
-.endif
-
 COMPAT4X_OSVERSION=	5.3
 PLIST=			${.CURDIR}/pkg-plist.freebsd5
 .if ${ARCH} == i386

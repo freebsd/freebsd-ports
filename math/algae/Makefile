@@ -42,8 +42,8 @@ pre-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ( ${ARCH} == "alpha" && ${OSVERSION} > 502102 ) || ${ARCH} == "sparc64"
-BROKEN=		Configure fails on alpha 5.x and sparc64
+.if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
+BROKEN=		Configure fails on alpha and sparc64
 .endif
 
 .include <bsd.port.post.mk>

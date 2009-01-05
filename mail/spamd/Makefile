@@ -17,11 +17,7 @@ COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502117
-BROKEN=		OpenBSD 3.5 pf/pfctl is necessary for this port to function properly.
-.else
 LOCAL_PFCTL=	/sbin/pfctl
-.endif
 
 USE_RC_SUBR?=	obspamd obspamlogd
 

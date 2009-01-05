@@ -39,11 +39,6 @@ MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	info:${PORTSDIR}/print/texinfo
-BROKEN=		Fails to install
-.endif
-
 USE_BLAS?=	reference
 
 .if exists(${LOCALBASE}/lib/libgoto.so)

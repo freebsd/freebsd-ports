@@ -17,7 +17,8 @@ COMMENT=	Utilities for the KDE integrated X11 desktop
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
+		gtar:${PORTSDIR}/archivers/gtar
 
 CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
 
@@ -37,14 +38,8 @@ USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 501102
-.	if ${OSVERSION} > 600021
-RUN_DEPENDS+=   gtar:${PORTSDIR}/archivers/gtar
-.	endif
 post-patch:
 	${REINPLACE_CMD} -e 's|>tar<|>gtar<|g' ${WRKSRC}/ark/ark.kcfg
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

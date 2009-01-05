@@ -50,27 +50,16 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 
 .if ${ARCH} == i386
 REVISION=	0
-.if ${OSVERSION} >= 600034
 VERSION=	2.9015.503
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-.elif ${OSVERSION} >= 503001
-VERSION=	2.9013.498
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
-.endif
 .endif
 
 .if ${ARCH} == amd64
 REVISION=	3
-.if ${OSVERSION} >= 600034
 VERSION=	2.9012.497
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-.elif ${OSVERSION} >= 503001
-VERSION=	2.9011.496
-#DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
-.endif
 .endif
 
 .if ${ARCH} == sparc64 || ${ARCH} == alpha

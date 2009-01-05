@@ -30,16 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} > 502014
 	@${REINPLACE_CMD} -e "s|expr $1|expr -- $1|g" ${WRKSRC}/plugins/linkshared.in
 	@${REINPLACE_CMD} -e "s|expr $1|expr -- $1|g" ${WRKSRC}/src/linktool
-.endif
 
 post-install:
 		chown ${BINOWN}:mail ${PREFIX}/bin/xc-mail
 		chmod g+s ${PREFIX}/bin/xc-mail
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
