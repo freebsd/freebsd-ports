@@ -47,13 +47,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-# In FreeBSD 5.x fails to build due to an internal compiler error. Using the
-# version 3.4 from ports which probably fixes this error requires a hack to
-# get around bsd.gcc.mk handling, so use a higher version than in base system.
-.if ${OSVERSION} < 600000
-USE_GCC=	4.2+
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif

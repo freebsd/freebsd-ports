@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 RUN_DEPENDS=	xwininfo:${PORTSDIR}/x11/xwininfo
 
 CONFLICTS=	Win4BSD-[0-9]*
@@ -34,10 +35,6 @@ PKGDEINSTALL=	${WRKSRC}/+POST-DEINSTALL
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 
 .if !exists(/usr/src/sys/kern)
 IGNORE=		requires system source for installing kqemu, the accelerator that provides native CPU speed in Win4BSD.  Please install the system sources in /usr/src (e.g. using sysinstall), and run make again

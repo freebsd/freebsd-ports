@@ -51,12 +51,6 @@ USE_GCC=	3.4
 PLIST_SUB+=    DYNGEN=""
 .endif
 
-.if ${OSVERSION} < 600000
-# 5.x base gcc segfaults in target-mips/op_mem.c
-BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-CC=	gcc34
-.endif
-
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}

@@ -113,9 +113,7 @@ do-build:
 
 test:
 .if defined(WITH_TESTS)
-.if ${OSVERSION} >= 500036
 	/sbin/kldload aio || ${TRUE}
-.endif
 	@if [ -f ${ACE_TESTS_COOKIE} ]; then \
 		${ECHO_MSG} "===> Running tests."; \
 		${ECHO_MSG} "===> ACE tests:"; \

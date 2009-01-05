@@ -220,9 +220,7 @@ CONFIGURE_ARGS+=	--disable-srp
 
 ### Rules and version dependend variables
 
-.if ${OSVERSION} < 500016
-BROKEN=			"Does not compile / Needs thread support"
-.elif ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 700000
 BROKEN=			Does not compile
 .endif
 

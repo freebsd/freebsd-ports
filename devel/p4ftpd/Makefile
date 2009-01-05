@@ -39,15 +39,11 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 .include <bsd.port.pre.mk>
 
 # Figure out what to install
-.if ${ARCH} == amd64 && ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
-PLATFORM=	freebsd54x86_64
-.elif ${ARCH} == amd64 && ${OSVERSION} >= 600000
+.if ${ARCH} == amd64
 PLATFORM=	freebsd60x86_64
-.elif ${ARCH} == i386 && ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
-PLATFORM=	freebsd54x86
-.elif ${ARCH} == i386 && ${OSVERSION} >= 600000
+.elif ${ARCH} == i386
 PLATFORM=	freebsd60x86
-.elif ${ARCH} == sparc64 && ${OSVERSION} >= 601000
+.elif ${ARCH} == sparc64
 PLATFORM=	freebsd61sparc64
 .else
 IGNORE=		unsupported OS release, sorry

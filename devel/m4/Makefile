@@ -18,6 +18,7 @@ COMMENT=	GNU m4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
 .if defined(WITH_CHANGEWORD)
 CONFIGURE_ARGS+=	--enable-changeword
@@ -28,17 +29,8 @@ MAN1=	gm4.1
 
 EXAMPLESDIR=	share/examples/gm4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo --no-split"
-.else
-CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
-.endif
-
 post-install:
 	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

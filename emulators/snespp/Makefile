@@ -23,14 +23,8 @@ PLIST_SUB=	KMODDIR="${KMODDIR}"
 MAN4=		snespp.4
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		versions of FreeBSD before 6.0 are not supported
-.endif
-
 do-install:
 	@${INSTALL_MAN} ${WRKSRC}/snespp.4 ${PREFIX}/man/man4
 	@${INSTALL_KLD} ${WRKSRC}/snespp.ko ${KMODDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

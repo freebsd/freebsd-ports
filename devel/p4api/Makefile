@@ -22,6 +22,7 @@ COMMENT=	Perforce API (static libraries and header files)
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/p4api-2008.1.158777
 
+PLATFORM=	freebsd60
 VERSION=	08.1
 
 .include <bsd.port.pre.mk>
@@ -35,12 +36,6 @@ IGNORE=		"Unsupported platform, sorry."
 .endif
 
 TAR_FILES=	p4api.tgz
-
-.if ${OSVERSION} >= 600034
-PLATFORM=	freebsd60
-.else
-PLATFORM=	freebsd54
-.endif
 
 DOCVER=		${VERSION:S/.//}
 

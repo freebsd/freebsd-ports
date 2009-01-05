@@ -30,10 +30,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 IGNORE=		is a part of base for 7.0 and above
 .endif
 
-.if ${OSVERSION} < 502106
-IGNORE=		only for 5.3 and above
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ftp-proxy ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ftp-proxy.8.gz ${PREFIX}/man/man8

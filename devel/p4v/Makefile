@@ -30,10 +30,6 @@ MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		please upgrade to FreeBSD 6.x or newer
-.endif
-
 P4V_BIN= \
 	bin/assistant bin/p4v bin/p4v.bin
 

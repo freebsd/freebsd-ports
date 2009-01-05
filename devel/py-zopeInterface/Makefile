@@ -23,10 +23,4 @@ PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_PKGNAME=	zope.interface
 PYEASYINSTALL_ARCHDEP=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-MANUAL_PACKAGE_BUILD=	does not build in tinderbox environment
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

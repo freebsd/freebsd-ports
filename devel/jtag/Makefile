@@ -33,13 +33,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-#
-# We haven't this on FreeBSD version prior to 5.1
-#
-.if ${OSVERSION} < 501000
-CFLAGS+=	-Duseconds_t=long
-.endif
-
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif

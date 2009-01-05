@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 IA32_BINARY_PORT=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
@@ -33,14 +35,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/VGB.html ${PREFIX}/share/doc/vgb
 .endif # !defined(NOPORTDOCS)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502100
-IGNORE=		does not work for FreeBSD versions prior to 5.2.1R
-.endif
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

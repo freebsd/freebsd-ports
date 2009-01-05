@@ -26,7 +26,8 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}"			\
+		ac_cv_header_libusbhid_h=no
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -62,10 +63,6 @@ OPTIONS+=	XLIB		"XLib (xorg) graphics support"		On
 .include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3
-
-.if ${OSVERSION} >= 500111
-CONFIGURE_ENV+=	ac_cv_header_libusbhid_h=no
-.endif
 
 .if defined(WITHOUT_AALIB)
 CONFIGURE_ARGS+=--disable-video-aalib

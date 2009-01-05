@@ -26,26 +26,17 @@ USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint gnomevfs \
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-regex
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/gnu" \
+		LIBS="-L${LOCALBASE}/lib -lgnuregex"
+
 .if exists(/usr/lib/libcrypto.a)
 PYTHON_LIBS=	-lssl -lcrypto
 .endif
 PYTHON_LIBS+=	-lutil -lreadline -lcrypt -lpython
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502104
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/gnu" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex"
-.else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D_REGEX_H_ -D_REGEX_H" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpython|${PYTHON_LIBS}|g' ${WRKSRC}/configure
-.if ${OSVERSION} >= 502104
 	@${REINPLACE_CMD} -e 's|gnuregex\.h|regex.h|' \
 		${WRKSRC}/src/gtkextext/gtkextext.h
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -48,13 +48,8 @@ post-patch:
 .   endif
 .endif
 
-# Generator does not automatically determine the GCC version.
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-.   if ${OSVERSION} < 500035
-CONFIGURE_ARGS+=--with-gcc=2
-.   elif ${OSVERSION} >= 500035
 CONFIGURE_ARGS+=--with-gcc=3
-.   endif
 .else
 CONFIGURE_ARGS+=--without-gcc
 .endif

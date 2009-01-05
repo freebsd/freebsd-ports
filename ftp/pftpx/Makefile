@@ -21,23 +21,11 @@ MAN8=		pftpx.8
 PLIST_FILES=	sbin/pftpx
 USE_RC_SUBR=	pftpx
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502116
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=34
-.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
-CFLAGS+=	-DHAVE_ALTQ=1
-.endif
-.elif ${OSVERSION} < 600025
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=35
-CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_RULE_ANCHOR=1
-.else
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=37
 CFLAGS+=	-DHAVE_ALTQ=1
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftpx ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pftpx.8 ${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

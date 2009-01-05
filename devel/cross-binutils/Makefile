@@ -88,12 +88,6 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 
 .include <bsd.port.pre.mk>
 
-.if defined(TGTARCH)
-. if ${OSVERSION} < 600000
-BROKEN=		Does not compile
-. endif
-.endif
-
 post-patch:
 #
 # Patch and rename info files

@@ -25,10 +25,4 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502126
-IGNORE=		freebsd 3.*, 4.*, 5.0, 5.1 are not supported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

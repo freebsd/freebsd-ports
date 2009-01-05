@@ -14,14 +14,11 @@ MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500023
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-.endif
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
@@ -77,4 +74,4 @@ post-install:
 .endif
 	@${ECHO} "--------------------------------------------------------------------------"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

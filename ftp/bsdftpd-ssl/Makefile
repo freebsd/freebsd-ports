@@ -35,12 +35,7 @@ MAN8=	ftpd.8
 MLINKS=	ftpd.8 ftpd-ssl.8 ftpchroot.5 ftpchroot-ssl.5
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SED_ARG=	's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g; s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g; s|%%RC_SUBR%%|${RC_SUBR}|g'
-. if ${OSVERSION} >= 503001
-#    FreeBSD >= 5.3
 USE_RC_SUBR=	yes
-. else
-PLIST=		${FILESDIR}/pkg-plist.server.compat
-. endif
 .endif
 
 MANCOMPRESSED=	yes
@@ -67,16 +62,10 @@ do-build:
 # Server part
 .if !defined(CLIENT_ONLY)
 	(cd ${WRKSRC}/ftpd && make) || exit
-. if ${OSVERSION} >= 503001
-#    FreeBSD >= 5.3
 	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server > \
 	${WRKDIR}/pkg-message
 	@${SED} ${SED_ARG} ${FILESDIR}/bsdftpd_ssl.sh > \
 	${WRKDIR}/bsdftpd_ssl.sh
-. else
-	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server.compat > \
-	${WRKDIR}/pkg-message
-. endif
 .endif
 
 do-install:
@@ -116,8 +105,6 @@ post-install:
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/xCA.sh ${DOCDIR}/cert/xCA.sh
 .endif
 .if !defined(CLIENT_ONLY)
-. if ${OSVERSION} >= 503001
-#    FreeBSD >= 5.3
 	${MKDIR} ${EXAMPLESDIR}
 	${MKDIR} ${EXAMPLESDIR}/rc.conf.d
 	${INSTALL_DATA} -p ${FILESDIR}/README.examples ${EXAMPLESDIR}/README
@@ -125,9 +112,6 @@ post-install:
 	${INSTALL_DATA} -p ${FILESDIR}/ftpusers ${EXAMPLESDIR}/ftpusers
 	${INSTALL_DATA} -p ${FILESDIR}/rc_conf_d.bsdftpd_ssl ${EXAMPLESDIR}/rc.conf.d/bsdftpd_ssl
 	${INSTALL_SCRIPT} ${WRKDIR}/bsdftpd_ssl.sh ${PREFIX}/etc/rc.d/bsdftpd_ssl.sh
-. else
-	${INSTALL_SCRIPT} ${FILESDIR}/bsdftpd_ssl.sh.compat ${PREFIX}/etc/rc.d/bsdftpd_ssl.sh.sample
-. endif
 	@${ECHO_CMD} "*******************************************************************************"
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "*******************************************************************************"

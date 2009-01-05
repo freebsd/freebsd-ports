@@ -23,16 +23,16 @@ vmware_guest_vmxnet_start()
 	echo 'Loading vmxnet kernel module.'
 	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
 }
-%%NOTON5%%vmware_guest_vmblock_start()
-%%NOTON5%%{
-%%NOTON5%%	echo 'Loading vmblock kernel module.'
-%%NOTON5%%	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
-%%NOTON5%%}
-%%NOTON5%%vmware_guest_vmhgfs_start()
-%%NOTON5%%{
-%%NOTON5%%	echo 'Loading vmhgfs kernel module.'
-%%NOTON5%%	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
-%%NOTON5%%}
+vmware_guest_vmblock_start()
+{
+	echo 'Loading vmblock kernel module.'
+	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
+}
+vmware_guest_vmhgfs_start()
+{
+	echo 'Loading vmhgfs kernel module.'
+	kldload %%PREFIX%%/%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
+}
 
 # VMware kernel module: vmmemctl
 name="vmware_guest_vmmemctl"
@@ -58,27 +58,27 @@ stop_cmd=":"
 load_rc_config $name
 [ -z "$vmware_guest_vmxnet_enable" ] && vmware_guest_vmxnet_enable="NO"
 run_rc_command "$1"
-%%NOTON5%%
-%%NOTON5%%# VMware kernel module: vmblock
-%%NOTON5%%name="vmware_guest_vmblock"
-%%NOTON5%%rcvar=`set_rcvar`
-%%NOTON5%%start_precmd="${checkvm_cmd}"
-%%NOTON5%%start_cmd="vmware_guest_vmblock_start"
-%%NOTON5%%stop_precmd="${checkvm_cmd}"
-%%NOTON5%%stop_cmd=":"
-%%NOTON5%%
-%%NOTON5%%load_rc_config $name
-%%NOTON5%%[ -z "$vmware_guest_vmblock_enable" ] && vmware_guest_vmblock_enable="NO"
-%%NOTON5%%run_rc_command "$1"
-%%NOTON5%%
-%%NOTON5%%# VMware kernel module: vmhgfs
-%%NOTON5%%name="vmware_guest_vmhgfs"
-%%NOTON5%%rcvar=`set_rcvar`
-%%NOTON5%%start_precmd="${checkvm_cmd}"
-%%NOTON5%%start_cmd="vmware_guest_vmhgfs_start"
-%%NOTON5%%stop_precmd="${checkvm_cmd}"
-%%NOTON5%%stop_cmd=":"
-%%NOTON5%%
-%%NOTON5%%load_rc_config $name
-%%NOTON5%%[ -z "$vmware_guest_vmhgfs_enable" ] && vmware_guest_vmhgfs_enable="NO"
-%%NOTON5%%run_rc_command "$1"
+
+# VMware kernel module: vmblock
+name="vmware_guest_vmblock"
+rcvar=`set_rcvar`
+start_precmd="${checkvm_cmd}"
+start_cmd="vmware_guest_vmblock_start"
+stop_precmd="${checkvm_cmd}"
+stop_cmd=":"
+
+load_rc_config $name
+[ -z "$vmware_guest_vmblock_enable" ] && vmware_guest_vmblock_enable="NO"
+run_rc_command "$1"
+
+# VMware kernel module: vmhgfs
+name="vmware_guest_vmhgfs"
+rcvar=`set_rcvar`
+start_precmd="${checkvm_cmd}"
+start_cmd="vmware_guest_vmhgfs_start"
+stop_precmd="${checkvm_cmd}"
+stop_cmd=":"
+
+load_rc_config $name
+[ -z "$vmware_guest_vmhgfs_enable" ] && vmware_guest_vmhgfs_enable="NO"
+run_rc_command "$1"

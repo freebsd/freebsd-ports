@@ -32,10 +32,8 @@ PORTDOCS=	install.html README README.freebsd LICENSE
 
 .if ${OSVERSION} >= 700000
 BINVER=		7.0
-.elif ${OSVERSION} >= 600000
-BINVER=		6.0
 .else
-BROKEN=		FreeBSD version too old
+BINVER=		6.0
 .endif
 
 .if ${ARCH} == amd64

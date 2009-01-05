@@ -21,10 +21,4 @@ USE_RC_SUBR=	ftpsesame.sh
 
 MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600034
-IGNORE=		need BIOCLOCK and BIOCSETWF ioctls (FreeBSD 6.0+)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

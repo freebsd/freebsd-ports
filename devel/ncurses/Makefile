@@ -81,10 +81,6 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 
 .include "${.CURDIR}/Makefile.man"
 
-.if ${OSVERSION} < 503000
-WITHOUT_WIDEC=	yes
-.endif
-
 CONFIGURE_ARGS_WIDEC=--enable-widec
 .if defined(WITH_EXTCOLORS)
 CONFIGURE_ARGS_WIDEC+=--enable-ext-colors

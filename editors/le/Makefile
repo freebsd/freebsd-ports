@@ -27,19 +27,11 @@ MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
 		colors-white keymap-emacs mainmenu mainmenu-ru syntax
 SRC_DATA=	le.hlp
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBOBJS@||g ; \
 		 s|@ALLOCA@||g' ${WRKSRC}/lib/Makefile.in
 .for file in configure src/search.cc src/highli.h
-	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|<regex.h>|<gnu/regex.h>|g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
@@ -61,4 +53,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

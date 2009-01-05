@@ -58,10 +58,6 @@ CONFIGURE_ARGS+=	--without-debug
 CONFIGURE_ARGS+=	--with-debug
 .endif
 
-.if ${OSVERSION} < 600000
-IGNORE=	requires FreeBSD 6 or later
-.endif
-
 MAN1=	papi_avail.1 \
 	papi_clockres.1 \
 	papi_command_line.1 \

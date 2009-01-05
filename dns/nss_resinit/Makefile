@@ -21,10 +21,6 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500112
-IGNORE=		name-service switch support in libc is required
-.endif
-
 .if defined(WITH_COMPAT5X)
 .if ${OSVERSION} > 700017
 BROKEN=		7.X and later do not have compat syms for the old resolver

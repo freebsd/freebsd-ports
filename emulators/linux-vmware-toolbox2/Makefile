@@ -34,15 +34,9 @@ NO_LATEST_LINK=	yes
 LINUX_FLP?=	${DISTDIR}/linux.flp
 MOUNT_PT?=	${WRKDIR}/mnt
 .if exists(${LINUX_FLP})
-.if ${OSVERSION} >= 500018
 DEV_ATTACH=	/usr/sbin/mdconfig -a -t vnode -f ${LINUX_FLP} -u ${MOUNT_DEV}
 DEV_DETACH=	/usr/sbin/mdconfig -d -u ${MOUNT_DEV}
 MOUNT_DEV?=	md0
-.else
-DEV_ATTACH=	/usr/sbin/vnconfig -c ${MOUNT_DEV} ${LINUX_FLP}
-DEV_DETACH=	/usr/sbin/vnconfig -u ${MOUNT_DEV}
-MOUNT_DEV?=	vn0
-.endif
 .else
 MOUNT_DEV?=	fd0
 .endif

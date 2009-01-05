@@ -32,9 +32,7 @@ post-extract: .SILENT
 post-patch:
 	@${REINPLACE_CMD} -e 's+rom.dump+${DATADIR}/gxrom-r+' \
 		${WRKSRC}/src/X48.ad
-.if ${OSVERSION} > 600004
 	@${REINPLACE_CMD} -e 's+cuaa+cuad+' ${WRKSRC}/src/X48.ad
-.endif
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard

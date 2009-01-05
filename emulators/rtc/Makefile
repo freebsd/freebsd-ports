@@ -34,12 +34,6 @@ SRC_BASE?=	/usr/src
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500104
-PLIST_SUB+=	MAKEDEV=""
-.else
-PLIST_SUB+=	MAKEDEV="@comment "
-.endif
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		needs kernel source files
 .endif
@@ -54,9 +48,6 @@ pre-install:
 	${MKDIR} ${KMODDIR}
 
 post-install:
-.if ${OSVERSION} < 500104
-	-mknod /dev/rtc c ${CDEV_MAJOR} 0
-.endif
 	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
 	${MKDIR} ${PREFIX}/share/examples/rtc
 	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/

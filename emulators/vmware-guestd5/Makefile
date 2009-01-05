@@ -37,11 +37,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_XORG=	x11 xsxt
 USE_GNOME=	glib12 gtk12
-.if (${OSVERSION} >= 600000)
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
-.else
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 .else
 PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
 .endif
@@ -63,17 +59,9 @@ MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
 .if ${ARCH} == i386
-.if (${OSVERSION} >= 600000)
 BITS?=		32-6
-.else
-BITS?=		32
-.endif
 .else # ${ARCH} == amd64
-.if (${OSVERSION} >= 600000)
 BITS?=		64-6
-.else
-BITS?=		64
-.endif
 .endif
 
 .if defined(VMWARE_X_PORTS)
@@ -98,20 +86,11 @@ PLIST_SUB+=	VMWARE_VMMEMCTL:="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} < 600000)
-PLIST_SUB+=	VMWARE_VMXNET:=""
-.if ${BITS} == 32
-VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
-.else
-VMWARE_VMXNET_PATH=	5.3-amd64/vmxnet.ko
-.endif
-.else
 PLIST_SUB+=	VMWARE_VMXNET:=""
 .if ${BITS} == 32-6
 VMWARE_VMXNET_PATH=	6.0-i386/vmxnet.ko
 .else
 VMWARE_VMXNET_PATH=	6.0-amd64/vmxnet.ko
-.endif
 .endif
 .else
 PLIST_SUB+=	VMWARE_VMXNET:="@comment "

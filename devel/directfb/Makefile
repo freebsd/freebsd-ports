@@ -75,10 +75,6 @@ MAN5=		directfbrc.5
 BROKEN=		Does not compile on alpha
 .endif
 
-.if ${OSVERSION} < 600000
-BROKEN=		5.x not supported
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure.in

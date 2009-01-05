@@ -27,10 +27,4 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Fails to compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

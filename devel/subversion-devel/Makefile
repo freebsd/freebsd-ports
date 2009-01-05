@@ -149,10 +149,6 @@ PLIST_SUB+=		WITH_JAVA=""
 PLIST_SUB+=		WITH_JAVA="@comment "
 .endif
 
-.if defined(WITH_JAVA) && ${OSVERSION} < 503000
-BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
-.endif
-
 .if !defined(SWIG_BINDINGS)
 CONFIGURE_ARGS+=	--without-swig
 .endif

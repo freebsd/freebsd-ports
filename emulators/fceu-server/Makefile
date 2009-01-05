@@ -19,12 +19,6 @@ CFLAGS+=	-DSOL_TCP=6
 USE_GMAKE=	yes
 USE_SDL=	sdl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=	does not build on FreeBSD 5.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/fceu-standard.conf|${ETCDIR}/fceu-standard.conf|g' \
 		${WRKSRC}/server.cpp
@@ -37,4 +31,4 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/fceu-server.conf \
 			${ETCDIR}/fceu-standard.conf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

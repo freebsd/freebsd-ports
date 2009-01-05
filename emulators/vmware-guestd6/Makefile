@@ -73,13 +73,7 @@ BITS?=		32
 .else # ${ARCH} == amd64
 BITS?=		64
 .endif
-.if (${OSVERSION} < 530000) && (${ARCH} == i386)
-OSSFX?=		-50
-.elif ${OSVERSION} < 600000
-OSSFX?=
-.else # ${OSVERSION} >= 600000
 OSSFX?=		-6
-.endif
 
 .if defined(VMWARE_X_PORTS)
 
@@ -104,20 +98,7 @@ PLIST_SUB+=	VMWARE_VMMEMCTL="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} < 600000)
-PLIST_SUB+=	VMWARE_VMXNET=""
-.if ${BITS} == 32
-.if ${OSVERSION} < 530000
-VMWARE_VMXNET_PATH=	5.0-i386/vmxnet.ko
-.else
-VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
-.endif
-.else
-# VMware doesn't provide 5.3-amd64/vmxnet.ko
-.undef WITH_VMWARE_VMXNET
-PLIST_SUB+=	VMWARE_VMXNET="@comment "
-.endif
-.elif (${OSVERSION} >= 600000) && (${OSVERSION} < 700000)
+.if ${OSVERSION} < 700000
 PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
 VMWARE_VMXNET_PATH=	6.0-i386/vmxnet.ko
