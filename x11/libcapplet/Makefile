@@ -23,10 +23,8 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500041
 post-build:
 	@${REINPLACE_CMD} -e 's/-lgnugetopt //' ${WRKSRC}/cappletConf.sh
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libcapplet.so.5 ${PREFIX}/lib

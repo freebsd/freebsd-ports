@@ -29,13 +29,11 @@ BROKEN=		Does not compile on !i386
 post-patch:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
-.if ${OSVERSION} > 500035
 # Hack for contemporary GCC
 	@${REINPLACE_CMD} -e 's/CppString \&str/const &/' \
 		${WRKSRC}/src/cppstring.cc ${WRKSRC}/src/cppstring.hh
 	@${REINPLACE_CMD} -E 's/^\/\/ friend//; s/([^:])ostream/\1std::ostream/g' \
 		${WRKSRC}/src/cppstring.hh
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${PREFIX}/bin/decurs.bin

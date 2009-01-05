@@ -67,12 +67,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|"applications.menu"|"gnome-applications.menu"|'
-.if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
-	( ${OSVERSION} < 503101 )
-.for po in da.po it.po zh_CN.po zh_TW.po
-	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
-.endfor
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome-panel

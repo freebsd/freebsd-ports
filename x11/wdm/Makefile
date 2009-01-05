@@ -55,7 +55,7 @@ WDMDIR=		${PREFIX}/lib/X11/wdm
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} >= 500028 ) && !defined(WITHOUT_PAM)
+.if !defined(WITHOUT_PAM)
 WITH_PAM=	yes
 CONFIGURE_ARGS+=	--with-pamdir=${LOCALBASE}/etc/pam.d/
 PLIST_SUB+=	PAM=""
@@ -114,12 +114,7 @@ post-install:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${WDMDIR}/pixmaps
 .endfor
 .if defined(WITH_PAM)
-.if ( ${OSVERSION} >= 500028 )
 	${INSTALL_DATA} ${FILESDIR}/wdm.pam ${LOCALBASE}/etc/pam.d/wdm
-.else
-	@${ECHO_MSG} "To finish installing this port, append the contents of"
-	@${ECHO_MSG} "${FILESDIR}/wdm.pam to your /etc/pam.conf file"
-.endif
 .endif
 
 .include <bsd.port.post.mk>

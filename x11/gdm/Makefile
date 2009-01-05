@@ -71,12 +71,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
 .endif
 
 post-patch:
-.if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
-	( ${OSVERSION} < 503101 )
-.for po in zh_CN.po
-	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
-.endfor
-.endif
 	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \

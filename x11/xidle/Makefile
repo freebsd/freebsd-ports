@@ -26,11 +26,6 @@ MAN1=		xidle.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502104
-post-extract:
-	@${REINPLACE_CMD} -e 's|getopt_long_only|getopt_long|' ${WRKSRC}/xidle.c
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xidle ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xidle.1 ${PREFIX}/man/man1
