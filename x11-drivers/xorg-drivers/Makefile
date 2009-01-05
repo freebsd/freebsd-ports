@@ -44,7 +44,7 @@ VIDEO_OFF=	apm ark \
 		dummy \
 		fbdev \
 		glint \
-		i128 i740 i810 imstt \
+		i128 i740 imstt \
 		mga \
 		neomagic newport nsc \
 		openchrome \
@@ -53,7 +53,7 @@ VIDEO_OFF=	apm ark \
 		tdfx tga trident tseng \
 		vmware voodoo
 
-VIDEO_EXCL=	intel:i810 via:openchrome
+VIDEO_EXCL=	via:openchrome
 
 INPUT_ON=	mouse \
 		keyboard
