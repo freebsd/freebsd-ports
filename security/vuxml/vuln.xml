@@ -34,6 +34,202 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c702944a-db0f-11dd-aa56-000bcdf0a03b">
+    <topic>FreeBSD -- netgraph / bluetooth privilege escalation</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_7</lt></range>
+	<range><gt>6.4</gt><lt>6.4_1</lt></range>
+	<range><gt>7.0</gt><lt>7.0_7</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Some function pointers for netgraph and bluetooth sockets are
+	  not properly initialized.</p>
+	<h1>Impact:</h1>
+	<p>A local user can cause the FreeBSD kernel to execute
+	  arbitrary code.  This could be used by an attacker directly;
+	  or it could be used to gain root privilege or to escape from
+	  a jail.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available, but systems without local
+	  untrusted users are not vulnerable.  Furthermore, systems are
+	  not vulnerable if they have neither the ng_socket nor
+	  ng_bluetooth kernel modules loaded or compiled into the
+	  kernel.</p>
+	<p>Systems with the security.jail.socket_unixiproute_only
+	  sysctl set to 1 (the default) are only vulnerable if they have
+	  local untrusted users outside of jails.</p>
+	<p>If the command</p>
+	<p><code># kldstat -v | grep ng_</code></p>
+	<p>produces no output, the system is not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-08:13.protosw</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-12-23</discovery>
+      <entry>2009-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e9ecaceb-db0d-11dd-aa56-000bcdf0a03b">
+    <topic>FreeBSD -- Cross-site request forgery in ftpd(8)</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_7</lt></range>
+	<range><gt>6.4</gt><lt>6.4_1</lt></range>
+	<range><gt>7.0</gt><lt>7.0_7</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The ftpd(8) server splits long commands into several
+	  requests.  This may result in the server executing a command
+	  which is hidden inside another very long command.</p>
+	<h1>Impact:</h1>
+	<p>This could, with a specifically crafted command, be used in a
+	  cross-site request forgery attack.</p>
+	<p>FreeBSD systems running ftpd(8) server could act as a point
+	  of privilege escalation in an attack against users using web
+	  browser to access trusted FTP sites.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available, but systems not running FTP
+	  servers are not vulnerable.  Systems not running the FreeBSD
+	  ftp(8) server are not affected, but users of other ftp
+	  daemons are advised to take care since several other ftp
+	  daemons are known to have related bugs.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4247</cvename>
+      <freebsdsa>SA-08:12.ftpd</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-12-23</discovery>
+      <entry>2009-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6b8cadce-db0b-11dd-aa56-000bcdf0a03b">
+    <topic>FreeBSD -- IPv6 Neighbor Discovery Protocol routing vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_5</lt></range>
+	<range><gt>7.0</gt><lt>7.0_5</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>IPv6 routers may allow "on-link" IPv6 nodes to create and
+	  update the router's neighbor cache and forwarding
+	  information.  A malicious IPv6 node sharing a common router
+	  but on a different physical segment from another node may be
+	  able to spoof Neighbor Discovery messages, allowing it to
+	  update router information for the victim node.</p>
+	<h1>Impact:</h1>
+	<p>An attacker on a different physical network connected to the
+	  same IPv6 router as another node could redirect IPv6 traffic
+	  intended for that node.  This could lead to denial of service
+	  or improper access to private network traffic.</p>
+	<h1>Workaround:</h1>
+	<p>Firewall packet filters can be used to filter incoming
+	  Neighbor Solicitation messages but may interfere with normal
+	  IPv6 operation if not configured carefully.</p>
+	<p>Reverse path forwarding checks could be used to make
+	  gateways, such as routers or firewalls, drop Neighbor
+	  Solicitation messages from nodes with unexpected source
+	  addresses on a particular interface.</p>
+	<p>IPv6 router administrators are encouraged to read RFC 3756
+	  for further discussion of Neighbor Discovery security
+	  implications.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2476</cvename>
+      <freebsdsa>SA-08:10.nd6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-10-01</discovery>
+      <entry>2009-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5796858d-db0b-11dd-aa56-000bcdf0a03b">
+    <topic>FreeBSD -- arc4random(9) predictable sequence vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_6</lt></range>
+	<range><gt>7.0</gt><lt>7.0_6</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When the arc4random(9) random number generator is
+	  initialized, there may be inadequate entropy to meet the
+	  needs of kernel systems which rely on arc4random(9); and it
+	  may take up to 5 minutes before arc4random(9) is reseeded
+	  with secure entropy from the Yarrow random number generator.</p>
+	<h1>Impact:</h1>
+	<p>All security-related kernel subsystems that rely on a
+	  quality random number generator are subject to a wide range of
+	  possible attacks for the 300 seconds after boot or until 64k
+	  of random data is consumed.  The list includes:</p>
+	<p>* GEOM ELI providers with onetime keys.  When a provider is
+	  configured in a way so that it gets attached at the same time
+	  during boot (e.g. it uses the rc subsystem to initialize) it
+	  might be possible for an attacker to recover the encrypted
+	  data.</p>
+	<p>* GEOM shsec providers.  The GEOM shsec subsytem is used to
+	  split a shared secret between two providers so that it can be
+	  recovered when both of them are present.  This is done by
+	  writing the random sequence to one of providers while
+	  appending the result of the random sequence on the other host
+	  to the original data.  If the provider was created within the
+	  first 300 seconds after booting, it might be possible for an
+	  attacker to extract the original data with access to only one
+	  of the two providers between which the secret data is split.</p>
+	<p>* System processes started early after boot may receive
+	  predictable IDs.</p>
+	<p>* The 802.11 network stack uses arc4random(9) to generate
+	  initial vectors (IV) for WEP encryption when operating in
+	  client mode and WEP authentication challenges when operating
+	  in hostap mode, which may be insecure.</p>
+	<p>* The IPv4, IPv6 and TCP/UDP protocol implementations rely
+	  on a quality random number generator to produce unpredictable
+	  IP packet identifiers, initial TCP sequence numbers and
+	  outgoing port numbers.  During the first 300 seconds after
+	  booting, it may be easier for an attacker to execute IP
+	  session hijacking, OS fingerprinting, idle scanning, or in
+	  some cases DNS cache poisoning and blind TCP data injection
+	  attacks.</p>
+	<p>* The kernel RPC code uses arc4random(9) to retrieve
+	  transaction identifiers, which might make RPC clients
+	  vulnerable to hijacking attacks.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available for affected systems.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5162</cvename>
+      <freebsdsa>SA-08.11.arc4random</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2008-11-24</discovery>
+      <entry>2009-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d5e1aac8-db0b-11dd-ae30-001cc0377035">
     <topic>xterm -- DECRQSS remote command execution vulnerability</topic>
     <affects>
