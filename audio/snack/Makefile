@@ -8,7 +8,7 @@
 
 PORTNAME=	snack
 PORTVERSION=	2.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio tcl tk
 MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,19 +16,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	simon@olofsson.de
 COMMENT=	A sound toolkit for scripting languages
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+
+USE_TK=		84+
 
 OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4
-MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
-
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
-		-I${LOCALBASE}/include
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -37,6 +31,12 @@ PORTDOCS=	*
 PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR}
+MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
+
+CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
+		-I${LOCALBASE}/include
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
