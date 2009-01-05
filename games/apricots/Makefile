@@ -10,7 +10,7 @@ PORTVERSION=	0.2.6
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.fishies.org.uk/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs

@@ -9,7 +9,7 @@ PORTNAME=	nathive
 PORTVERSION=	0.811
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nathive.org/packages/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	amdmi3@FreeBSD.org

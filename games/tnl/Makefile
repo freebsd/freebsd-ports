@@ -10,7 +10,7 @@ PORTVERSION=	071111
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://tnlgame.net/downloads/tnl/${PORTVERSION}/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	TnL-source-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/source/data/}${EXTRACT_SUFX}

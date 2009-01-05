@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die

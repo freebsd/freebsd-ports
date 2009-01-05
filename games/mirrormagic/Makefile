@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade style game with stereo sound for X Window System

@@ -10,7 +10,7 @@ PORTVERSION=	0.90
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org

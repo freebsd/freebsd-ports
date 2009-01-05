@@ -10,7 +10,7 @@ PORTVERSION=	1.45
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	glpng
 
 MAINTAINER=	amdmi3@FreeBSD.org

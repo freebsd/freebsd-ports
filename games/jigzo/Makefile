@@ -9,7 +9,7 @@ PORTNAME=	jigzo
 PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org

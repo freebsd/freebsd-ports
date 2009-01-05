@@ -10,7 +10,7 @@ PORTVERSION=	1.5.3
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/bumprace/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple arcade racing game

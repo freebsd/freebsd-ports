@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/lsoft/formido/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D kill-em all with 3D rendered graphics

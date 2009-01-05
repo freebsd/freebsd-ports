@@ -9,7 +9,7 @@ PORTNAME=	tkdvd
 PORTVERSION=	4.0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://regis.damongeot.free.fr/tkdvd/dl/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI to dvd+rw-tools and cdrecord

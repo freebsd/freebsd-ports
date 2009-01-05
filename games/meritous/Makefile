@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.asceai.net/files/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:C/\.//}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org

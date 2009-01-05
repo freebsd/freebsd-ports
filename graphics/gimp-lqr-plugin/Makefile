@@ -9,7 +9,7 @@ PORTNAME=	gimp-lqr-plugin
 DISTVERSION=	0.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in

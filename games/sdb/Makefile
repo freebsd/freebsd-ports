@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://stage.gamecreation.org/shotgund/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

@@ -9,7 +9,7 @@ PORTNAME=	chapping
 PORTVERSION=	0.43
 CATEGORIES=	games
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/760/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

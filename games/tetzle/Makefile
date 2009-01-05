@@ -9,7 +9,7 @@ PORTNAME=	tetzle
 PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

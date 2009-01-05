@@ -10,7 +10,7 @@ PORTVERSION=	0.0.5
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
