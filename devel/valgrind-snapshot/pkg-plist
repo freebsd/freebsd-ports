@@ -13,10 +13,6 @@ lib/valgrind/glibc-2.1.supp
 lib/valgrind/glibc-2.2.supp
 lib/valgrind/glibc-2.3.supp
 lib/valgrind/hp2ps
-%%RELENG_5%%lib/valgrind/libc_r.so.5
-%%RELENG_5%%lib/valgrind/libkse.so.1
-%%RELENG_5%%lib/valgrind/libpthread.so.1
-%%RELENG_5%%lib/valgrind/libthr.so.1
 %%RELENG_6%%lib/valgrind/libc_r.so.6
 %%RELENG_6%%lib/valgrind/libpthread.so.2
 %%RELENG_6%%lib/valgrind/libthr.so.2

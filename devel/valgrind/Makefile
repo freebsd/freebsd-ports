@@ -31,16 +31,10 @@ USE_GCC=	3.4
 .if ${OSVERSION} >= 800000
 IGNORE=	FreeBSD 8.x is unsupported
 .elif ${OSVERSION} >= 700000
-PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7=""
-.elif ${OSVERSION} >= 600000
-PLIST_SUB+=	RELENG_5="@comment "
-PLIST_SUB+=	RELENG_6=""
-PLIST_SUB+=	RELENG_7="@comment "
 .else
-PLIST_SUB+=	RELENG_5=""
-PLIST_SUB+=	RELENG_6="@comment "
+PLIST_SUB+=	RELENG_6=""
 PLIST_SUB+=	RELENG_7="@comment "
 .endif
 

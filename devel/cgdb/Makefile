@@ -30,10 +30,6 @@ CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x with old texinfo in base
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|dev_ptmx=yes|dev_ptmx=no|' ${WRKSRC}/configure
 

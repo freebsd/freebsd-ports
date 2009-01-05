@@ -27,10 +27,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		lack of ELF definitions (STV_DEFAULT) on FreeBSD < 6.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

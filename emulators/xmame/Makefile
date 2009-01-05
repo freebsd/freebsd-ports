@@ -111,10 +111,6 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
-BROKEN=		internal gcc error on FreeBSD < 6.x
-.endif
-
 .if defined(WITH_ASM68K)
 ASM_COMMENT=
 .else

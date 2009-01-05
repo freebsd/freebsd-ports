@@ -17,17 +17,10 @@ COMMENT=	FXP (server-to-server FTP) client
 
 USE_PERL5=	yes
 
-.include <bsd.port.pre.mk>
-
 RUN_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${PERL_SITELIBDIR}/Net/SOCKS.pm:${PORTSDIR}/net/p5-Socks \
 		${PERL_SITELIBDIR}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${PERL_SITELIBDIR}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
-
-# perl 5.6.0
-.if ${OSVERSION} < 500007
-RUN_DEPENDS+=	${PERL_SITELIBDIR}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
-.endif
 
 PERL_SITELIBDIR=	${SITE_PERL}
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -40,4 +33,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/profxpv3.pl ${PREFIX}/bin/profxp
 	${CP} -R ${WRKSRC}/profxp ${SITE_PERL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

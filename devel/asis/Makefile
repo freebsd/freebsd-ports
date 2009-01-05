@@ -23,9 +23,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500039
 WITHOUT_CPU_CFLAGS=	yes
-.endif
 CFLAGS=		-O2 -pipe
 USE_GMAKE=	yes
 MAKEFILE=	"${FILESDIR}/Makefile.bsd"

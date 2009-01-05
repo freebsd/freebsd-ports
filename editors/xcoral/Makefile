@@ -20,19 +20,11 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| regex\.c | |g ; \
 		 s| -g | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|"regex\.h"|<${GNU_REGEX_H}>|g' ${WRKSRC}/bm_search.c
+		's|"regex\.h"|<gnu/regex.h>|g' ${WRKSRC}/bm_search.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xcoral ${PREFIX}/bin
@@ -43,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -47,10 +47,6 @@ FLAG_NLS=	true
 BROKEN=		does not compile on ${ARCH} due to internal compiler error
 .endif
 
-.if ${OSVERSION} < 503000
-IGNORE=		needs round(3), which appears in 5.3 or later
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' -e \
 		's|/usr/local|${LOCALBASE}|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \

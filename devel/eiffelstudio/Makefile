@@ -24,6 +24,8 @@ DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Complete Integrated Development Environment for Eiffel
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Eiffel${PORTVERSION:S/.//}
@@ -37,12 +39,6 @@ PLIST_SUB+=	EIFFEL_HOST="${EIFFEL_HOST}"
 SUB_LIST+=	EIFFEL_HOST="${EIFFEL_HOST}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 530000
-IGNORE=		needs FreeBSD 5.3 or higher
-.elif ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 
 # Try native version first, then try i386 compatibility framework.
 .for arch in ${ARCH}

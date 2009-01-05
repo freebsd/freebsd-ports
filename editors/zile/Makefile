@@ -24,21 +24,13 @@ PLIST_FILES=	bin/zile %%DATADIR%%/AUTODOC %%DATADIR%%/FAQ %%DATADIR%%/HELP \
 		%%DATADIR%%/TUTORIAL %%DATADIR%%/dotzile.sample
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<regex\.h>|<${GNU_REGEX_H}>|g ; \
 		 s|-pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|"regex\.h"|<${GNU_REGEX_H}>|g' ${WRKSRC}/src/search.c
+		's|"regex\.h"|<gnu/regex.h>|g' ${WRKSRC}/src/search.c
 	@${REINPLACE_CMD} -e \
 		's|: install-exec-local|:|g' ${WRKSRC}/lib/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

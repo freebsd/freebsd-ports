@@ -45,36 +45,10 @@ USE_RUBY=	yes
 USE_PGSQL=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 		--with-pgsqllibdir=${LOCALBASE}/lib \
 		--with-pqxx-includes=${LOCALBASE}/include \
 		--with-pqxx-libraries=${LOCALBASE}/lib
 
-.if ${OSVERSION} < 500035
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
-CONFIGURE_ARGS+=--disable-final
-.endif
-
-post-configure:
-.if ${OSVERSION} < 500035
-	${REINPLACE_CMD} -e 's|\(^CPPFLAGS =.*\)|\1 -I${LOCALBASE}/include/stlport|g' \
-	-e 's|\(^LDFLAGS =.*\)|\1 -L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/filters/krita/tiff/Makefile \
-		${WRKSRC}/filters/kspread/excel/sidewinder/Makefile \
-		${WRKSRC}/kchart/Makefile \
-		${WRKSRC}/kchart/kdchart/Makefile \
-		${WRKSRC}/kexi/kexidb/drivers/pqxx/Makefile \
-		${WRKSRC}/kexi/migration/pqxx/Makefile
-	${REINPLACE_CMD} -e 's|round(|rint(|g' \
-		${WRKSRC}/krita/plugins/filters/levelfilter/kgradientslider.cc
-	${REINPLACE_CMD} -e 's|-O[s23]||g' -e 's|-O|-O0|g' \
-		${WRKSRC}/krita/plugins/filters/cimg/Makefile
-	${REINPLACE_CMD} -e 's|xor|^|g' \
-		${WRKSRC}/kspread/kspread_style.cc
-	${REINPLACE_CMD} -e 's|trunc(|rint(|g' \
-		${WRKSRC}/kchart/kdchart/KDChartAxesPainter.cpp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

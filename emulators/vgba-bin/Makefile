@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Virtual GameBoy Advance is an emulator of Nintendo GameBoy Advance(TM)
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
@@ -30,14 +32,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/VGBA.html ${DOCSDIR}
 .endif # !defined(NOPORTDOCS)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502100
-IGNORE=		Does not work for FreeBSD versions prior to 5.2.1R
-.endif
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,10 +18,4 @@ PERL_CONFIGURE=		5.8.0+
 
 MAN3=			File::ExtAttr.3 File::ExtAttr::Tie.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500018
-IGNORE=			extended attributes require FreeBSD 5.x at least after 20010326
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

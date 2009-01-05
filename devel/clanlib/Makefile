@@ -47,14 +47,6 @@ USE_GL=		yes
 #BROKEN=		"Does not compile on !i386 and !amd64"
 #.endif
 
-.if ${OSVERSION} < 500032
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport
-LDFLAGS+=	-lstlport_gcc
-CFLAGS+=	-O0
-.endif
-
 post-patch:
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'

@@ -7,11 +7,11 @@ etc/vmware-tools/tools.conf
 %%LIB32DIR%%/libguestlib.so
 %%LIB32DIR%%/libguestlib.so.0
 %%LIB32DIR%%/vmware-tools/modules/drivers/linker.hints
-%%NOTON5%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko
-%%NOTON5%%%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko
+%%LIB32DIR%%/vmware-tools/modules/drivers/vmblock.ko
+%%LIB32DIR%%/vmware-tools/modules/drivers/vmhgfs.ko
 %%LIB32DIR%%/vmware-tools/modules/drivers/vmmemctl.ko
 %%LIB32DIR%%/vmware-tools/modules/drivers/vmxnet.ko
-%%NOTON5%%sbin/mount_vmhgfs
+sbin/mount_vmhgfs
 sbin/vmware-guestd
 %%X11%%bin/vmware-toolbox
 %%X11%%bin/vmware-user

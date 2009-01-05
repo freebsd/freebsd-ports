@@ -101,10 +101,8 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
-.if ${OSVERSION} > 600000
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-1.patch
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-2.patch
-.endif
 .if ${OSVERSION} > 700000
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd7-1.patch
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd7-2.patch

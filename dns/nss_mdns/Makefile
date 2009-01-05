@@ -60,10 +60,6 @@ PORTDOCS=	README README.html
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		name-service switch support in libc.so.6 or later is required
-.endif
-
 .if defined(WITH_SEARCH_DOMAINS)
 CONFIGURE_ARGS+=	--enable-search-domains
 .endif

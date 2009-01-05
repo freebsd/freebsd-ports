@@ -23,11 +23,4 @@ post-patch:
 
 MAN3=		umem_alloc.3 umem_cache_create.3 umem_debug.3
 
-.include <bsd.port.pre.mk>
-
-# pthread
-.if ${OSVERSION} < 502102
-IGNORE=		requires FreeBSD 5.2.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

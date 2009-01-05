@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System emlator for X
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	is an i386 binary
 
@@ -24,12 +26,6 @@ USE_XORG=	x11 xext
 NO_BUILD=	yes
 STRIP=
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
@@ -37,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CART.NES ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pal ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

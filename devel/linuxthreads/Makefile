@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS=	i386
 .if ${OSVERSION} >= 700042
 USING_GCC4=	true
 MAKE_ENV+=	USING_GCC4=true
-.elif ${OSVERSION} >= 500035
+.else
 USING_GCC3=	true
 MAKE_ENV+=	USING_GCC3=true
 .endif
@@ -230,12 +230,12 @@ post-install:
 
 #	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.if (defined(NOPROFILE) && ${OSVERSION} < 600007 ) || (defined(NO_PROFILE) && ${OSVERSION} >= 600007 )
+.if defined(NO_PROFILE)
 PLIST_SUB=	PROFILE:="@comment "
 .else
 PLIST_SUB=	PROFILE:=""
 .endif
-.if (defined(NOPIC) && ${OSVERSION} < 600007 ) || (defined(NO_PIC) && ${OSVERSION} >= 600007 )
+.if defined(NO_PIC)
 PLIST_SUB+=	PIC:="@comment "
 .else
 PLIST_SUB+=	PIC:=""
@@ -245,7 +245,7 @@ PLIST_SUB+=	PICARCHIVE:=""
 .else
 PLIST_SUB+=	PICARCHIVE:="@comment "
 .endif
-.if defined(INSTALL_PIC_ARCHIVE) || ${OSVERSION} >= 501101
+.if defined(INSTALL_PIC_ARCHIVE)
 PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:=""
 .else
 PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:="@comment "
@@ -282,10 +282,8 @@ PLIST_SUB+=	LTHREADSHMAJOR:="2"
 .endif
 .if ${OSVERSION} >= 700042
 PLIST_SUB+=	LIBSTDCPPMAJOR:="6"
-.elif ${OSVERSION} >= 600033
-PLIST_SUB+=	LIBSTDCPPMAJOR:="5"
 .else
-PLIST_SUB+=	LIBSTDCPPMAJOR:="4"
+PLIST_SUB+=	LIBSTDCPPMAJOR:="5"
 .endif
 
 .include <bsd.port.post.mk>

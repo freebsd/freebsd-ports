@@ -35,16 +35,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .if ${OSVERSION} >= 800000
 IGNORE=	FreeBSD 8.0 is supported yet
 .elif ${OSVERSION} >= 700000
-PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7=""
-.elif ${OSVERSION} >= 600000
-PLIST_SUB+=	RELENG_5="@comment "
-PLIST_SUB+=	RELENG_6=""
-PLIST_SUB+=	RELENG_7="@comment "
 .else
-PLIST_SUB+=	RELENG_5=""
-PLIST_SUB+=	RELENG_6="@comment "
+PLIST_SUB+=	RELENG_6=""
 PLIST_SUB+=	RELENG_7="@comment "
 .endif
 

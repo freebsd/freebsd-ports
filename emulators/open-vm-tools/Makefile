@@ -55,15 +55,9 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-NOTON5=		""
-.else
-NOTON5=		"@comment "
-.endif
+PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
-PLIST_SUB+=	NOTON5=${NOTON5} LIB32DIR=${LIB32DIR}
-
-SUB_LIST+=	NOTON5=${NOTON5} LIB32DIR=${LIB32DIR}
+SUB_LIST+=	LIB32DIR=${LIB32DIR}
 
 post-patch:
 .if defined(WITHOUT_X11)
@@ -78,10 +72,8 @@ post-install:
 	${MKDIR} ${PREFIX}/${LIB32DIR}/vmware-tools/modules/input
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmmemctl.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmxnet.ko
-.if ${OSVERSION} >= 600000
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmhgfs.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers/vmblock.ko
-.endif
 	@-kldxref ${PREFIX}/${LIB32DIR}/vmware-tools/modules/drivers 2>/dev/null
 	@${CAT} ${PKGMESSAGE}
 

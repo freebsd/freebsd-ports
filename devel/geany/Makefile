@@ -28,12 +28,6 @@ MAN1=		geany.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502010
-GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -52,7 +46,7 @@ CONFIGURE_ARGS+=--disable-vte
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' ${WRKSRC}/scintilla/Makefile.in
 .for file in tagmanager/lregex.c src/encodings.c
-	@${REINPLACE_CMD} -e 's|<regex\.h>|<${GNU_REGEX_H}>|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/${file}
 .endfor
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.in

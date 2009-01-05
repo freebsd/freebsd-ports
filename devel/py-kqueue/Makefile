@@ -25,10 +25,6 @@ MAKE_ENV=		MAINCC=${CC}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500010
-IGNORE="requires new kqueue API"
-.endif
-
 post-patch:
 .if ${PYTHON_REL} >= 230
 	@${REINPLACE_CMD} -e 's,@DEFS@,,' ${WRKSRC}/Makefile.pre.in

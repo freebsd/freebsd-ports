@@ -28,13 +28,7 @@ CFLAGS+=	-Dstricmp=strcasecmp
 
 PLIST_FILES=	bin/codeworker
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CFLAGS+=	-fpermissive
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

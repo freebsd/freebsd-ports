@@ -26,11 +26,4 @@ MAKE_ARGS=	CXX="${CXX}"
 
 INFO=		sdts++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CFLAGS+=	-ftemplate-depth-25
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

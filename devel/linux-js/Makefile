@@ -29,10 +29,6 @@ MAKE_ENV=	WITHOUT_DEBUG=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503001
-IGNORE=		requires FreeBSD 5.3 or superior
-.endif
-
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif

@@ -24,10 +24,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=	does not compile: needs gethostbyname_r()
-.endif
-
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif

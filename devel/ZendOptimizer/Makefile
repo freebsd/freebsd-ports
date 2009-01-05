@@ -24,16 +24,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include <bsd.port.pre.mk>
 
 # Check for FreeBSD version
-.if ${OSVERSION} < 600000
-.if ${ARCH} != "i386"
-IGNORE=		this port is for FreeBSD 6 or above
-.endif
-VER=		5.4
-.else
 VER=		6.0
 .if ${OSVERSION} >= 700043
 LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
-.endif
 .endif
 
 .if ${PHP_VER} == 4

@@ -26,9 +26,7 @@ MAN1=	cscout.1 cswc.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE =	fails to work on versions of FreeBSD before 6.0 (it installs FreeBSD 6.x binaries)
-.elif ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 700000
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 

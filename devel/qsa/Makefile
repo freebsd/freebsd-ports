@@ -42,10 +42,6 @@ OPTIONS=	IDE "Enable the QSA Workbench (embedded scripting IDE)" on
 CONFIGURE_ARGS+=-no-ide
 .endif
 
-.if ${OSVERSION} < 502124
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-src_engine_qsoperations.cpp
-.endif
-
 pre-configure:
 # Adjust installation directories for the documentation and the qmake feature extension
 	@${REINPLACE_CMD} -e 's|$$$$QSA_INSTALL_PREFIX/doc/html|$$$$QSA_INSTALL_PREFIX/share/doc/qsa/html|g' \

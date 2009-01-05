@@ -24,9 +24,6 @@ PORTDOCS=	fourcdns.pdf
 # distfile contains i386 binary
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}>=600000
 EXEFILE=	fourcdns6
 MGRGUI=	fourcdnsmgr6
 LIBWXBASE=	wxversion6/libwx_base-2.6.so.0
@@ -38,19 +35,6 @@ LIBWXX11UNIVHTML=	wxversion6/libwx_x11univ_html-2.6.so.0
 LIBWXX11UNIVQA=		wxversion6/libwx_x11univ_qa-2.6.so.0
 LIBWXX11UNIVXRC=	wxversion6/libwx_x11univ_xrc-2.6.so.0
 LIBWXX11UNIVMED=	wxversion6/libwx_x11univ_media-2.6.so.0
-.else
-EXEFILE=	fourcdns6
-MGRGUI=	fourcdnsmgr5
-LIBWXBASE=	wxversion5/libwx_base-2.6.so.5
-LIBWXBASENET=	wxversion5/libwx_base_net-2.6.so.5
-LIBWXBASEXML=	wxversion5/libwx_base_xml-2.6.so.5
-LIBWXX11UNIVADV=	wxversion5/libwx_x11univ_adv-2.6.so.5
-LIBWXX11UNIVCORE=	wxversion5/libwx_x11univ_core-2.6.so.5
-LIBWXX11UNIVHTML=	wxversion5/libwx_x11univ_html-2.6.so.5
-LIBWXX11UNIVQA=		wxversion5/libwx_x11univ_qa-2.6.so.5
-LIBWXX11UNIVXRC=	wxversion5/libwx_x11univ_xrc-2.6.so.5
-LIBWXX11UNIVMED=	wxversion5/libwx_x11univ_media-2.6.so.5
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${EXEFILE} ${PREFIX}/bin/fourcdns
@@ -75,4 +59,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/zerocaloriedns/license.txt
 	${INSTALL_DATA} ${WRKSRC}/wxWidgetsNotes.txt ${PREFIX}/zerocaloriedns/wxWidgetsNotes.txt
 	${INSTALL_DATA} ${WRKSRC}/wxWidgetsLicense.txt ${PREFIX}/zerocaloriedns/wxWidgetsLicense.txt
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
