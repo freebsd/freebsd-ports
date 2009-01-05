@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		visualworks
-PORTVERSION=		7.3.1
+PORTVERSION=		7.6
 CATEGORIES=		lang linux
 SUBDIR=			vwnc${PORTVERSION}
 MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}/
@@ -19,12 +19,13 @@ MAINTAINER=		chris@chrisburkert.de
 COMMENT=		A high performance Smalltalk environment
 
 USE_LINUX=		yes
+USE_XLIB=		yes
 ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
 PLIST_FILES=		bin/visual
 MY_STARTUP_SCRIPT=	visual.sh
 
-RESTRICTED=		"Redistribution is probably not permitted"
+RESTRICTED=		Redistribution is probably not permitted
 
 OPTIONS=	ATOOLS		"Advanced Tools"				off \
 		COM		"COM"						off \
@@ -32,19 +33,14 @@ OPTIONS=	ATOOLS		"Advanced Tools"				off \
 		DST		"Distributed Smalltalk"				off \
 		DATABASE	"Database Support"				on \
 		DOTNET		"DotNet Connect"				off \
-		GOODIES		"Goodies"					off \
-		ARAGON		"Goodies - Aragon"				off \
-		COAST		"Goodies - COAST"				off \
-		DOME		"Goodies - DOME"				off \
-		CMEM		"Goodies - Crafted Memory Policy"		off \
-		JUN		"Goodies - Jun 3D Framework"			off \
-		MOOSE		"Goodies - Moose"				off \
-		OBJECTIVITY	"Goodies - Objectivity"				off \
-		OMNIBASE	"Goodies - Omni Base"				off \
-		SEASIDE 	"Goodies - Seaside"				on \
-		SILVERMARK	"Goodies - Silvermark"				off \
-		SYBASE		"Goodies - STORE for Sybase"			off \
-		GEMSTONE	"Goodies - GemStone Server and Client"		off \
+		CONTRIBUTED	"Contributed"					off \
+		ARAGON		"Contributed - Aragon"				off \
+		COAST		"Contributed - COAST"				off \
+		DOME		"Contributed - DOME"				off \
+		JUN		"Contributed - Jun 3D Framework"		off \
+		SEASIDE 	"Contributed - Seaside"				on \
+		SILVERMARK	"Contributed - Silvermark"			off \
+		GEMSTONE	"Contributed - GemStone Server and Client"	off \
 		I18N		"Internationalization"				off \
 		OBSOLETE	"Obsolete stuff"				off \
 		OPENTALK	"Opentalk"					off \
@@ -59,7 +55,7 @@ OPTIONS=	ATOOLS		"Advanced Tools"				off \
 		VMSOLARIS	"Virtual Machine for Solaris"			off \
 		VMAIX		"Virtual Machine for AIX"			off \
 		VMHPUX		"Virtual Machine for HPUX"			off \
-		VMSGI		"Virtual Machine for SGI"			off \
+		VMSGI		"Virtual Machine for SGI"			off
 
 .include <bsd.port.pre.mk>
 
@@ -78,45 +74,30 @@ DISTFILES+=	DST.tar.gz
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_DATABASE) || defined(WITH_DOTNET)
 DISTFILES+=	Database.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_GOODIES)
-DISTFILES+=	Goodies.tar.gz
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_CONTRIBUTED)
+DISTFILES+=	Contributed.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_ARAGON)
-DISTFILES+=	GoodiesAragon.tar.gz
+DISTFILES+=	CntrbAragon.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_COAST)
-DISTFILES+=	GoodiesCOAST.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_CMEM)
-DISTFILES+=	GoodiesCraftedMemPolicy.tar.gz
+DISTFILES+=	CntrbCOAST.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_DOME)
-DISTFILES+=	GoodiesDOME.tar.gz
+DISTFILES+=	CntrbDome.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_JUN)
-DISTFILES+=	GoodiesJun.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_MOOSE)
-DISTFILES+=	GoodiesMoose.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OBJECTIVITY)
-DISTFILES+=	GoodiesObjectivity.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OMNIBASE)
-DISTFILES+=	GoodiesOmniBase.tar.gz
+DISTFILES+=	CntrbJun.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_SEASIDE)
-DISTFILES+=	GoodiesSeaside.tar.gz
+DISTFILES+=	CntrbSeaside.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_SILVERMARK)
-DISTFILES+=	GoodiesSilverMark.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SYBASE)
-DISTFILES+=	GoodiesStoreSybase.tar.gz
+DISTFILES+=	CntrbSilverMark.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_GEMSTONE)
-DISTFILES+=	GoodyGemStoneClient.tar.gz \
-		GoodyGemStoneSvrLinux.tar.gz
+DISTFILES+=	CntrbGemStoneClient.tar.gz \
+		CntrbGemStoneSvrLinux.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_I18N)
 DISTFILES+=	I18NCatalogs.tar.gz
