@@ -1,19 +1,19 @@
---- ../unix/Makefile.in.orig	Sun Feb 23 12:24:55 2003
-+++ ../unix/Makefile.in	Sun Feb 23 12:26:32 2003
-@@ -58,6 +58,7 @@
+--- ../unix/Makefile.in.orig	2009-01-05 13:53:33.418671360 +0100
++++ ../unix/Makefile.in	2009-01-05 13:54:09.085615012 +0100
+@@ -51,6 +51,7 @@
  INSTALL = @INSTALL@
- INSTALL_DATA = $L --mode=install @INSTALL_DATA@
- INSTALL_PROGRAM = $L --mode=install @INSTALL_PROGRAM@
-+INSTALL_SCRIPT = $L --mode=install @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ LIB_SUFFIX = @LIB_SUFFIX@
+ SHLIB_SUFFIX = @SHLIB_SUFFIX@
+ SHLIB_LD = @SHLIB_LD@
+@@ -108,7 +109,7 @@
  
- LIBTOOL_SHLIB_FLAGS = $(LDFLAGS) @LIBTOOL_SHLIB_FLAGS@
- LIBTOOL_MODULE_FLAGS = $(LDFLAGS) @LIBTOOL_MODULE_FLAGS@
-@@ -124,7 +125,7 @@
- 
- install-python: Mk4py@MODULE_SUFFIX@
- 	$(INSTALL_PROGRAM) Mk4py@MODULE_SUFFIX@ $(DESTDIR)$(pylibdir)
+ install-python: Mk4py$(LIBEXT)
+ 	$(INSTALL_PROGRAM) Mk4py$(LIBEXT) $(DESTDIR)$(pylibdir)
 -	$(INSTALL_PROGRAM) $(srcdir)/../python/metakit.py $(DESTDIR)$(pylibdir)
 +	$(INSTALL_SCRIPT) $(srcdir)/../python/metakit.* $(DESTDIR)$(pylibdir)
  
  clean:
- 	$L rm -f *.la *.o *.lo
+ 	rm -f *$(LIBEXT) *.o

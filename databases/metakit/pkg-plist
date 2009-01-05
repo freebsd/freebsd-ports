@@ -2,19 +2,13 @@ include/mk4.h
 include/mk4.inl
 include/mk4str.h
 include/mk4str.inl
-lib/libmk4.a
-lib/libmk4.la
 lib/libmk4.so.0
 @exec ln -s libmk4.so.0 %D/lib/libmk4.so
 @rmtry lib/libmk4.so
-%%WITH_PYTHON%%lib/libmk4py.a
-%%WITH_PYTHON%%lib/libmk4py.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/Mk4py.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.pyc
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.pyo
-%%WITH_TCL%%lib/libmk4tcl.a
-%%WITH_TCL%%lib/libmk4tcl.so
 %%WITH_TCL%%lib/tcl%%TCL_V%%/Mk4tcl/Mk4tcl.so
 %%WITH_TCL%%lib/tcl%%TCL_V%%/Mk4tcl/pkgIndex.tcl
 %%WITH_TCL%%@dirrm lib/tcl%%TCL_V%%/Mk4tcl
@@ -127,6 +121,5 @@ lib/libmk4.so.0
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Metakit.html
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
