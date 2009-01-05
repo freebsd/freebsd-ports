@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	libdsp
 # Date created:		Jan 16, 2001
 # Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
@@ -7,12 +6,13 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	devel audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://mirror.mcx2.org/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	C++ class library of common digital signal processing functions
 
 WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
