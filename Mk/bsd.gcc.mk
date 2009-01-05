@@ -67,11 +67,11 @@ GCCVERSION_040300=	999999 999999 4.3
 #
 
 .if defined (USE_FORTRAN)
-# gfortran42 from lang/gcc42 is the default for now.
-. if ${USE_FORTRAN} == yes || ${USE_FORTRAN} == gfortran42
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC:=	gfortran42
-F77:=	gfortran42
+# gfortran43 from lang/gcc43 is the default for now.
+. if ${USE_FORTRAN} == yes
+BUILD_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
+FC:=	gfortran43
+F77:=	gfortran43
 . endif
 
 # Intel Fortran compiler from lang/ifc.
