@@ -25,10 +25,4 @@ USE_LDCONFIG=	yes
 
 MAN1=	unidecode.1 uniencode.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501114
-IGNORE=		"ngATM not implemented on FreeBSD 4.x, 5.1 and earlier"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

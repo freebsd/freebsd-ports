@@ -27,10 +27,6 @@ NXPREFIX?=	${PREFIX}/NX
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503102
-RUN_DEPENDS+=	nc:${PORTSDIR}/net/netcat
-.endif
-
 .if ${OSVERSION} < 601101
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-freenx-nxserver \
 	${PATCHDIR}/extra-patch-freenx-nxsetup

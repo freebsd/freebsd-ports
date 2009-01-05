@@ -28,11 +28,6 @@ MAN1=		toxine.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502000
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-CONFIGURE_ARGS+=--with-readline=${LOCALBASE}
-.endif
-
 .if !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	AALIB=""

@@ -78,13 +78,8 @@ MAN8=	venus-setup.8 \
 .include <bsd.port.pre.mk>
 
 .if ${CODA_SUITE} == client
-.if ${OSVERSION} < 501106
-IGNORE=	lacks kernel support on this version of FreeBSD
-.endif
 # this needs testing with the new version (6.1.1)
-#.if ${OSVERSION} >= 600000
 #IGNORE=	makes a kernel panic on this version of FreeBSD
-#.endif
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "WARNING:"

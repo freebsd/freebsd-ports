@@ -28,10 +28,4 @@ DESKTOP_ENTRIES="Capture Video" \
 
 CONFLICTS=	dvts-[0-9]*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502000
-IGNORE=		does not work on FreeBSD older than 5.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

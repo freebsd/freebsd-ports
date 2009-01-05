@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1-freebsd-5.4-i386
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	DHCPerf delivers accurate performance metrics of Dynamic Host Configuration Protocol service
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Rebuild of i386 package provided by Nominum.
 NO_BUILD=	yes
@@ -25,16 +27,6 @@ PLIST_FILES=	bin/dhcperf \
 PLIST_DIRS=	share/doc/dhcperf
 MAN1=		dhcperf.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}<504000
-IGNORE=		requires FreeBSD 5.4 or higher
-.endif
-
-.if ${OSVERSION}>600000
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-
 post-extract:
 	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz
 
@@ -45,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dcsevaltutorial.pdf ${PREFIX}/share/doc/dhcperf/dcsevaltutorial.pdf
 	${INSTALL_DATA} ${WRKSRC}/usr/local/nom/doc/dhcperf/dhcperf.pdf ${PREFIX}/share/doc/dhcperf/dhcperf.pdf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

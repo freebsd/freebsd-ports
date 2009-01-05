@@ -86,10 +86,4 @@ PLIST_SUB+=		MPEG4IP=""
 PLIST_SUB+=		MPEG4IP="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

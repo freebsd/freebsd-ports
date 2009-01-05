@@ -24,15 +24,10 @@ MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC}
 MAN1=		nxtvepg.1
 MYPORTDOCS=	README TODO CHANGES manual.html
 
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502100
 post-patch:
 	${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h,; \
 		s,machine/ioctl_meteor.h,dev/bktr/ioctl_meteor.h," \
 		${WRKSRC}/epgvbi/btdrv4linux.c ${WRKSRC}/tvsim/tvsim_main.c
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${LOCALBASE}/bin
@@ -46,4 +41,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

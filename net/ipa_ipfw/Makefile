@@ -29,12 +29,6 @@ MAKE_ENV+=	WITH_PTHREAD=yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
-.if ${OSVERSION} < 500038
-. if (defined(IPFW2) && !defined(WITH_IPFW2)) || defined(WITH_IPFW2)
-MAKE_ENV+=	IPFW2=yes
-. endif
-.endif
-
 .if !defined(WITH_DEBUG_INFO)
 MAKE_ENV+=	DEBUG_FLAGS=""
 .endif
