@@ -139,10 +139,6 @@ CONFIGURE_ENV+=		LIBS="-lutil"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502110
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/fr_FR.UTF-8/LC_TIME:${PORTSDIR}/misc/utf8locale
-.endif
-
 # compile in support for additional codeset groups
 .if defined(WITH_ENCODING)
 AVAIL_ENC=	jp jp_ext kr zh zh_ext all

@@ -64,10 +64,6 @@ PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
 .if defined(WITH_IIIMF)
-.if ${OSVERSION} < 500043
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-inputmethod:iiimf:im_iiimf.c
-.endif
-
 CONFIGURE_ARGS+=	--enable-iiimf
 LIB_DEPENDS+=	iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
 PLIST_SUB+=	IIIMF=""

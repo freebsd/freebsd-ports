@@ -67,7 +67,7 @@ RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
-.if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
+.if !defined(WITHOUT_HAL)
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
 		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \

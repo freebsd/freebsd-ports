@@ -72,12 +72,7 @@ PLIST_SUB+=	LINUX="@comment "
 MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
-.if ${OSVERSION} < 503000
-IGNORE=		supports FreeBSD-STABLE (5.3 or later), or FreeBSD-CURRENT
-.endif
-.if ${OSVERSION} >= 600033
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
-.endif
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
