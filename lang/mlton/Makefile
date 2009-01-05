@@ -86,9 +86,6 @@ MLTON_ARCH=	"x86"
 OSRELMAJ=
 .else
 OSRELMAJ=	-6
-.if ${OSVERSION} <  600000
-IGNORE=		cannot bootstrap on FreeBSD < 6.0
-.endif
 .endif
 
 BOOT_EXTRACT=	--bzip2

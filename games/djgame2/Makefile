@@ -29,12 +29,6 @@ DATADIR=	${PREFIX}/share/djgame2
 
 SUB_FILES=	djgame2.desktop startdjg
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
-BROKEN=		libLandLord does not compile
-.endif
-
 post-patch:
 	${RM} -f ${WRKSRC}/Hall/HallRes/platform/x11/install
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|g' \
@@ -60,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/djgame2.desktop ${PREFIX}/share/applications
 	${INSTALL_SCRIPT} ${WRKDIR}/startdjg ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

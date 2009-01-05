@@ -26,10 +26,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gphotofs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

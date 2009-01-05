@@ -32,12 +32,6 @@ MLINKS=		cqcam.1 webcam.1 \
 MYPORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
 		docs/refresh.html docs/webcam.html docs/README.movies
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502108
-BROKEN=		"Does not compile: ffs()-clash"
-.endif
-
 post-install:
 .for file in cqcam gtkcam webcam xcqcam
 	@${STRIP_CMD} ${PREFIX}/bin/${file}
@@ -54,4 +48,4 @@ post-install:
 .endif
 	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

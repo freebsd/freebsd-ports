@@ -1124,9 +1124,6 @@ intel/%%COMPILERDIR%%/ia32/include/pgouser.h
 intel/%%COMPILERDIR%%/ia32/include/pmmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/proto.h
 intel/%%COMPILERDIR%%/ia32/include/sse2mmx.h
-%%STDARG_H%%intel/%%COMPILERDIR%%/ia32/include/stdarg.h
-%%SYS_CDEFS_H%%intel/%%COMPILERDIR%%/ia32/include/sys/cdefs.h
-%%SYS_CDEFS_H%%@dirrm intel/%%COMPILERDIR%%/ia32/include/sys
 intel/%%COMPILERDIR%%/ia32/include/typeinfo
 intel/%%COMPILERDIR%%/ia32/include/xmmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/xmtx.h

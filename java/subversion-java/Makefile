@@ -26,10 +26,6 @@ SVN_BUILD_BINDINGS=yes
 
 CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME}
 
-.if ${OSVERSION} < 503000
-BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
-.endif
-
 do-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
 	cd ${WRKSRC} ; \

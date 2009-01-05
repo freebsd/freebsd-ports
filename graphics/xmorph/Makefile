@@ -35,10 +35,6 @@ INFO=		xmorph
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502114
-CFLAGS+=	-Dround=rint
-.endif
-
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=		gtk20
 CONFIGURE_ARGS+=	--with-gtk=2

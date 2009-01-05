@@ -31,14 +31,6 @@ PLIST_FILES=	bin/ale
 BROKEN=		Does not build on alpha
 .endif
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not build on 5.x due to internal gcc error
-.endif
-
-.if ${OSVERSION} < 502114
-CFLAGS+=	-Dround=rint
-.endif
-
 .if defined(WITH_DOUBLE)
 MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
 .endif

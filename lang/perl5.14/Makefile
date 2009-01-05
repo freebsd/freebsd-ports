@@ -124,12 +124,7 @@ CONFIGURE_ARGS+=	-Duse64bitint
 
 LATEST_LINK=	perl
 
-.if ${OSVERSION} < 500036
-PLIST_SUB+=		NEED_USE_PERL=""
-.else
-PKGMESSAGE=	${PKGDIR}/.not-here
 PLIST_SUB+=		NEED_USE_PERL="@comment "
-.endif
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
@@ -190,10 +185,6 @@ post-install:
 .endfor
 .if defined(WITH_USE_PERL)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${OSVERSION} < 500036
-	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
-	@fmt ${PKGMESSAGE}
-.endif
 .endif
 
 rebuild-xs:

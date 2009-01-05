@@ -95,11 +95,7 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 
 NO_LATEST_LINK=	yes
 
-.if ${OSVERSION} < 500036
-PKGMESSAGE=	${PKGDIR}/pkg-message-sysperl
-.else
 PKGMESSAGE=	${PKGDIR}/pkg-message-prefer58
-.endif
 
 PLIST_SUB+=		NEED_USE_PERL=""
 

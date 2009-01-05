@@ -47,12 +47,6 @@ PLIST_SUB+=	GIMP="@comment "
 
 MAN1=	ufraw.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504105
-BROKEN=	Needs memmem(3)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '18s|^$$|#include <sys/types.h>|' ${WRKSRC}/dcraw.h
 	@${REINPLACE_CMD} -e '/@schemasdir/s|datadir|sysconfdir|' ${WRKSRC}/Makefile.in
@@ -60,4 +54,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/PKG_CONFIG.*$i/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

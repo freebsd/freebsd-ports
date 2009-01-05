@@ -8,9 +8,6 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_IOCTL_H=1 -DHAVE_SYS_FILIO_H=1  -DKANJI \
 		-DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
 		-DTCL_PACKAGE_PATH="\"/usr/local/lib\""
-.if ${OSVERSION} < 600011
-CFLAGS+=	-DNEED_MATHERR=1
-.endif
 GENERIC_DIR=	../generic
 UNIX_DIR=	.
 

@@ -39,12 +39,6 @@ USE_GNOME=	gnomehack
 USE_BZIP2=	YES
 CPPFLAGS=	-DBR_NO_MACROS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		does not compile because of inlining error
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|sdl-config|${SDL_CONFIG}|g; \
@@ -79,4 +73,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,9 +35,7 @@ BROKEN=			Does not compile on alpha
 WITHOUT_CPU_CFLAGS=	yes
 .endif
 
-.if ${OSVERSION} >= 500039
 WITHOUT_CPU_CFLAGS=	yes
-.endif
 
 GCC_REV=	${DISTNAME:S/gcc-//g:S/.test3//g}
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}

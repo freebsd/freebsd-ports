@@ -27,10 +27,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(prefix)/doc/$$(PACKAGE)|$$(docdir)|' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/tuxtype/docs/en/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not build due to undefined reference to 'playsound' in 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

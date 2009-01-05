@@ -121,11 +121,9 @@ post-patch:
 .endfor
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s ifort.cfg ifortbin.cfg
 
-.if ( ${OSVERSION} >= 500042 )
 OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp
-.endif
 
 do-build:
 # Use the Linux ABI for the binaries
@@ -138,14 +136,6 @@ do-build:
 		${FILESDIR}/sysconf.c    \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S \
 		${FILESDIR}/memalign.c
-.if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
-.endif
-.if ( ${OSVERSION} < 500042 )
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
-.endif
 .for i in libcprts.a libcxa.a libifcore.a libifcore_pic.a libifcoremt.a libifport.a libimf.a libirc.a libirc_s.a libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
 	        --redefine-sym __xpg_basename=basename \

@@ -38,12 +38,6 @@ PLIST_FILES=	${BINS:S|^|bin/|} %%SITE_PERL%%/ExactImage.so \
 		%%SITE_PERL%%/ExactImage.pm
 PORT_VERBS=	ExactImage ${BINS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile, missing endian.h header
-.endif
-
 post-extract:
 	@${RM} -rf ${WRKSRC}/agg-2.4/
 
@@ -73,4 +67,4 @@ do-install:
 		${INSTALL_PROGRAM} ExactImage.so ${SITE_PERL}/;\
 		${INSTALL_DATA} ExactImage.pm ${SITE_PERL}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

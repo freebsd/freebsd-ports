@@ -65,10 +65,6 @@ LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp-app
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
 
-.if ${OSVERSION} < 500035
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS:C/-O[0-9]*//g}"
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
 		-i "" -e 's|\$$(DESTDIR)\$$(sbindir)||g'

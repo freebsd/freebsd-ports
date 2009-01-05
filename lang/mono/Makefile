@@ -63,15 +63,6 @@ USE_FAM=	yes
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 503000
-IGNORE=	does not work on 4.X and 5.X before 503000
-.endif
-
-# ttyname_r(3) patch
-.if ${OSVERSION} < 600028
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-support_mph.h
-.endif
-
 .if exists(${LOCALBASE}/lib/libfam.so)
 USE_FAM=	yes
 .endif

@@ -25,6 +25,8 @@ DIST_SUBDIR=	freepascal
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -75,11 +77,6 @@ MAN1=	bin2obj.1 \
 	rstconv.1 \
 	unitdiff.1
 MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
-
-# only need misc/compat4x if using the pre-built ppc386
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 
 do-extract:
 # unpack binary distribution

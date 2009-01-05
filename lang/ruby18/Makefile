@@ -88,10 +88,6 @@ CONFIGURE_ARGS+=	--enable-install-doc
 CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
-.if ${OSVERSION} < 502102
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
-.endif
-
 # This patch can be used for GC performance analysis and tweaking
 # svn://rubyforge.org/var/svn/railsbench/trunk/railsbench/ruby185gc.patch
 .if defined(WITH_GCPATCH)
@@ -142,7 +138,7 @@ post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 
 post-patch:
-.if ${OSVERSION} < 502102 || ${ARCH} == "sparc64" || ${ARCH} == "alpha"
+.if ${ARCH} == "sparc64" || ${ARCH} == "alpha"
 	${REINPLACE_CMD} -e 's|-lc"|"|g' ${WRKSRC}/configure
 .endif
 	${REINPLACE_CMD} -e 's|-l$$pthread_lib|${PTHREAD_LIBS}|g' \

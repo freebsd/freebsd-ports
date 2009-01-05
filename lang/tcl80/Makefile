@@ -43,8 +43,7 @@ post-configure:
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-	   OSVERSION=${OSVERSION}
+	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
 post-install:
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL80_MAN)

@@ -32,12 +32,6 @@ MAN6=		frozen-bubble-editor.6 frozen-bubble.6
 
 LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600020
-IGNORE=		doesn't work unless MSG_NOSIGNAL is defined (FreeBSD version 600020 and higher)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' \
 		${WRKSRC}/c_stuff/Makefile.PL
@@ -66,4 +60,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

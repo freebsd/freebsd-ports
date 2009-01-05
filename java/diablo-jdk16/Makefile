@@ -53,11 +53,9 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 .if ${OSVERSION} >= 700000
 JDK_OSREL=	freebsd7
 PLIST_SUB+=	RELEASENOTE="@comment "
-.elif ${OSVERSION} >= 600000
+.else
 JDK_OSREL=	freebsd6
 PLIST_SUB+=	RELEASENOTE=""
-.else
-IGNORE=		only available for FreeBSD 6.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
 .if ${ARCH} == "i386"
