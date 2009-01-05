@@ -25,6 +25,7 @@ lib/vile/vile-ecl-filt
 lib/vile/vile-esql-filt
 lib/vile/vile-est-filt
 lib/vile/vile-fdl-filt
+lib/vile/vile-hs-filt
 lib/vile/vile-html-filt
 lib/vile/vile-imake-filt
 lib/vile/vile-info-filt
@@ -37,6 +38,7 @@ lib/vile/vile-lisp-filt
 lib/vile/vile-lua-filt
 lib/vile/vile-m4-filt
 lib/vile/vile-mail-filt
+lib/vile/vile-mailcap-filt
 lib/vile/vile-make-filt
 lib/vile/vile-manfilt
 lib/vile/vile-mcrl-filt
@@ -113,6 +115,7 @@ share/vile/est.keywords
 share/vile/fdl.keywords
 share/vile/filters.rc
 share/vile/gnugpg.rc
+share/vile/hs.keywords
 share/vile/html.keywords
 share/vile/imake.keywords
 share/vile/ini.keywords
@@ -143,6 +146,7 @@ share/vile/macros/vilemenu.rc
 share/vile/macros/vileperl.rc
 share/vile/macros/which.rc
 share/vile/mail.keywords
+share/vile/mailcap.keywords
 share/vile/make.keywords
 share/vile/manpage.rc
 share/vile/mcrl.keywords
@@ -150,6 +154,7 @@ share/vile/midl.keywords
 share/vile/modes.rc
 share/vile/nr.keywords
 share/vile/nsis.keywords
+share/vile/objc.keywords
 share/vile/palettes.rc
 share/vile/pas.keywords
 share/vile/pc.keywords
@@ -206,6 +211,8 @@ share/vile/tex.keywords
 share/vile/texi.keywords
 share/vile/ti.keywords
 share/vile/vb.keywords
+share/vile/vb6.keywords
+share/vile/vbs.keywords
 share/vile/vile.hlp
 share/vile/vile.keywords
 share/vile/vileinit.rc
