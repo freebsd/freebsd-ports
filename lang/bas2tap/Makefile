@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.worldofspectrum.org/pub/sinclair/tools/generic/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-generic
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Convert 48k/128k ZX Spectrum BASIC text files to TAP files
 
 USE_ZIP=	yes

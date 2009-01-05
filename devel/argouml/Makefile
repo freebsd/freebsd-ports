@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	A UML design tool with cognitive support
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

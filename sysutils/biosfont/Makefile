@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
 # only platforms guraranteed to be ok, feedback/patches are welcome
