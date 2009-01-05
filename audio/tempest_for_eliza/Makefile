@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.erikyyy.de/tempest/
 
-MAINTAINER=	r.c.ladan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to send AM radio signals using a PC monitor
 
 USE_GMAKE=	yes
