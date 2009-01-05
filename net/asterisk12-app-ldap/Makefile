@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk12-app-ldap
 DISTVERSION=	1.0rc6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.mezzo.net/asterisk/
 DISTNAME=	app_ldap-${DISTVERSION}

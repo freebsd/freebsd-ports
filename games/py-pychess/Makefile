@@ -9,6 +9,7 @@ PORTNAME=	pychess
 PORTVERSION=	0.8.2
 #PORTREVISION=	0
 #PORTEPOCH=	0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

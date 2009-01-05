@@ -7,6 +7,7 @@
 
 PORTNAME=	opal
 PORTVERSION=	2.2.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/ \
 		${MASTER_SITE_LOCAL}

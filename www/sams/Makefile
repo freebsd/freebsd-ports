@@ -7,6 +7,7 @@
 
 PORTNAME=	sams
 DISTVERSION=	1.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \

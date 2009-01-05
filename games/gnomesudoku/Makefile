@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomesudoku
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gnome-sudoku
 DISTNAME=	gnome-sudoku-${PORTVERSION}
