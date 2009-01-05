@@ -84,12 +84,6 @@ pre-patch:
 .endfor
 .endif
 
-post-patch:
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 502107
-	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int64_t;|\1int32_t;|' \
-		${WRKSRC}/libs/m3core/src/unix/freebsd-4.sparc64/Utypes.i3
-.endif
-
 do-build:
 	@${ECHO_MSG} "This port does everything in the install step."
 	@${ECHO_MSG} "The build step is a no-op."

@@ -31,12 +31,6 @@ USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:15:env
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/leif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-IGNORE=	is supported on FreeBSD 5.3 and later only
-.endif
-
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/wnn \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}
@@ -55,4 +49,4 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

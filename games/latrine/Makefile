@@ -23,10 +23,6 @@ MAN1=		latrine.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-IGNORE=		needs libcursesw which doesnt work on this OSVERSION
-.endif
-
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif

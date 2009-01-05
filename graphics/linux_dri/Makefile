@@ -45,11 +45,6 @@ LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502111
-EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
-TAR=		bsdtar
-.endif
-
 do-install:
 	${MKDIR} ${PREFIX}/usr/X11R6/lib/modules/dri
 	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libGL.so.1.2 \

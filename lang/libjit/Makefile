@@ -36,13 +36,11 @@ BROKEN=		Fails to compile: internal gcc error
 post-patch:
 # fix for amd64, Upstream forgot a header file
 	${CP} ${FILESDIR}/extra-jit-rules-interp.h ${WRKSRC}/jit/jit-rules-interp.h
-.if ${OSVERSION} >=	502128
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
 		${WRKSRC}/config.h.in
-.endif
 
 post-configure:
-.if ${OSVERSION} >=     502123 && ${ARCH} != "amd64"
+.if ${ARCH} != "amd64"
 	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
 		${WRKSRC}/libtool
 .endif

@@ -33,12 +33,6 @@ DEFAULT_ADDONS=	AsyncRequest Blowfish Box CGI ContinuedFraction Curses \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-LIB_DEPENDS+=  edit.6:${PORTSDIR}/devel/libedit
-.endif
-
 post-patch:
 	@cd ${WRKSRC}/addons && for addon in *; do \
 		if ! ${ECHO_CMD} ${DEFAULT_ADDONS} | ${GREP} $$addon > /dev/null; then \
@@ -65,4 +59,4 @@ post-install:
 	@cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

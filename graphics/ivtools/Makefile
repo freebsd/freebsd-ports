@@ -34,8 +34,4 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 BROKEN=		Incomplete pkg-plist
 .endif
 
-.if ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
-PLIST_SUB+=	IVDL="@comment"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

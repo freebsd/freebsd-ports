@@ -45,15 +45,10 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 
 .include <bsd.port.pre.mk>
 
+JRE_OSREL=	freebsd6
+
 .if ${OSVERSION} >= 700000
 LIB_DEPENDS=	z.3:${PORTSDIR}/misc/compat6x
-JRE_OSREL=	freebsd6
-.elif ${OSVERSION} >= 600000
-JRE_OSREL=	freebsd6
-.elif ${ARCH} == "i386"
-JRE_OSREL=	freebsd5
-.else
-IGNORE=		only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
 .if defined(WITH_TZUPDATE)

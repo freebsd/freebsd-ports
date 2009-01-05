@@ -42,10 +42,6 @@ UNPACK_CMD=	${APP_HOME}/bin/unpack200
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 504000
-IGNORE=		does not run (core dumps: Bad System Call)
-.endif
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE SDK self-extracting file for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif

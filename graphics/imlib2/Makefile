@@ -91,10 +91,4 @@ CONFIGURE_ARGS+=	--without-id3
 PLIST_SUB+=	ID3="@comment "
 .endif
 
-post-patch:
-.if ${OSVERSION} < 503000
-	@${REINPLACE_CMD} -e \
-		's|round|rint|g' ${WRKSRC}/src/lib/color_helpers.c
-.endif
-
 .include <bsd.port.post.mk>

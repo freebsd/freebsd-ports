@@ -29,10 +29,6 @@ PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500100
-IGNORE=		doesn't support FreeBSD < 5.0. Require some C99 functions
-.endif
-
 .if (${ARCH} == "i386")
 PLIST_SUB+=	BITS=32
 .else

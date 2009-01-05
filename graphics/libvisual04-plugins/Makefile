@@ -39,12 +39,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${MAJORMINOR}
 PLIST_SUB=	PLUGINS_BASE_DIR=${LOCALBASE}/lib/${PORTNAME}-${MAJORMINOR} \
 		DATADIR_REL=${DATADIR_REL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
-.endif
-
 pre-configure:
 # /usr/bin/objformat is obsolete, hardcode the object format
 	@${REINPLACE_CMD} -e 's,objformat=.*,objformat=elf,' \
@@ -58,4 +52,4 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's,^\(SUBDIRS = plugins\) po,\1,' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

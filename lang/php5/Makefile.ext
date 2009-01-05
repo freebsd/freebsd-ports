@@ -551,10 +551,6 @@ CONFIGURE_ARGS+=--enable-gd-jis-conv
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
-.	if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
-BROKEN=	Doesn't build on AMD64 with FreeBSD 5.x (varargs issue)
-.	endif
-
 .	if defined(WITHOUT_REGEX)
 CONFIGURE_ARGS+=--disable-mbregex
 .	endif

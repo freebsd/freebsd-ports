@@ -24,17 +24,8 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc"
-.else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
@@ -42,4 +33,4 @@ post-install:
 	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

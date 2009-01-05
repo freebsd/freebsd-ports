@@ -45,12 +45,6 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-.if ( ${OSVERSION} < 502108 )
-PLIST_SUB+=	STDARG_H="" SYS_CDEFS_H=""
-.else
-PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
-.endif
-
 .for file in ${DISTNAME}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file}${EXTRACT_SUFX})
 IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${ICC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
@@ -107,42 +101,23 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.if ( ${OSVERSION} >= 500039 )
 	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.endif
-.if ( ${OSVERSION} >= 502108 )
 	@${ECHO_CMD} -e "-restrict\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
 # C++ hack for icpc
 	@${ECHO_CMD} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/icpc.cfg
 	@cd ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
-# Hack while there's no support for icc in the stdarg.h of FreeBSD.
-.if ( ${OSVERSION} < 502108 )
-	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include
-.else
 	@${RM} -rf ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include/sys
-.endif
 
-.if ( ${OSVERSION} >= 500042 )
 OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp
-.endif
 
 do-build:
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
-.if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
-.endif
-.if ( ${OSVERSION} < 500042 )
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
-.endif
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
 		${OBJCOPY_OPS} \

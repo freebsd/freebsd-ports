@@ -28,10 +28,6 @@ CFLAGS+=	-Dsqrtl=sqrt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502114
-CFLAGS+=	-Dround=rint
-.endif
-
 .if ${OSVERSION} >= 800024
 BROKEN=		does not compile
 .endif

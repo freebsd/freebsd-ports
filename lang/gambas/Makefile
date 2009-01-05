@@ -85,10 +85,6 @@ PLIST_SUB+=		XML="@comment "
 BROKEN=			Segfault during build on ${ARCH}
 .endif
 
-.if ${OSVERSION} < 502110
-RUN_DEPENDS+=		pgrep:${PORTSDIR}/sysutils/pkill
-.endif
-
 .for lib in ${LIBS2FIX}
 NEW${lib:U}!=	${LDCONFIG} -r | ${GREP} ${lib} | ${GREP} -v 'compat/pkg'	\
 		| ${AWK} -F 'lib\/' '{print $$2}'

@@ -21,11 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" CXXFLAGS="${CFLAGS}"
 
 MAN6=		crack-attack.6
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} >= 502126
 	@${REINPLACE_CMD} -e 's|#ifndef max|#if 0|' ${WRKSRC}/src/Game.h
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -46,10 +46,6 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if !defined(WITHOUT_MCS51) && !defined(WITHOUT_UCSIM) && ${OSVERSION} < 500019
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-.endif
-
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "

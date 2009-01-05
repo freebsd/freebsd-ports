@@ -16,12 +16,6 @@ COMMENT=	The GNU version of Awk
 
 INFO=		gawk gawkinet
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500039
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nowchar
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
@@ -38,4 +32,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

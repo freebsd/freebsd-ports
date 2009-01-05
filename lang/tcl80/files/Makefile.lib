@@ -14,11 +14,6 @@ CFLAGS+=	-I. -I./../generic \
 		-DTCL_PACKAGE_PATH="\"${PREFIX}/lib\"" \
 		-DNO_UNION_WAIT
 
-.if ${OSVERSION} < 600011
-CFLAGS+=	-DNEED_MATHERR=1
-.endif
-
-
 GENERIC_DIR=	../generic
 UNIX_DIR=	.
 

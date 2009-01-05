@@ -45,10 +45,6 @@ UNPACK_CMD=	${APP_HOME}/lib/unpack
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 504000
-IGNORE=		does not run (core dumps: Bad System Call)
-.endif
-
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
 

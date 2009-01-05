@@ -46,10 +46,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		requires C99 math functions for long doubles
-.endif
-
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=	TCLTK="@comment "

@@ -131,9 +131,6 @@ post-install:
 	    ${FIND} ${CCC_DIR}/alpha-linux -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alphalinux
 	${ECHO_CMD} "lib/ld-linux.so.2"		>>${WRKDIR}/PLIST.alphalinux
-.if ${OSVERSION} < 501114
-	${ECHO_CMD} "@dirrm lib"		>>${WRKDIR}/PLIST.alphalinux
-.endif
 	cd ${PREFIX} ;\
 	    ${FIND} ${CCC_DIR}/alpha-linux -type d \
 	    | ${SED} -e 's/^/@dirrm /g' \

@@ -75,7 +75,6 @@ PORTDOCS=	${PORTVERSION}
 .endif
 
 # nl_langinfo(CODESET) drops the support of ja_JP.EUC after 5.1-RELEASE
-.if ${OSVERSION} > 501100
 LOCALE_CMD?=	/usr/bin/locale
 .if exists(${LOCALE_CMD})
 CHARMAP!=	${LOCALE_CMD} charmap
@@ -83,7 +82,6 @@ CHARMAP!=	${LOCALE_CMD} charmap
 MAKE_ENV=	LC_ALL=C
 pre-build:
 	@${ECHO_CMD} "Warning: Your current locale setting is not supported by the system."
-.endif
 .endif
 .endif
 

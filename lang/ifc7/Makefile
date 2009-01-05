@@ -98,18 +98,13 @@ post-patch:
 		-e 's@\<INSTALLDIR\>@${PREFIX}/intel@g;' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${IFCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.if ${OSVERSION} < 500016
-	@${ECHO_CMD} -e "-Qoption,ld,-MT\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
 	@cd ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ && ${LN} -s ifc.cfg ifcbin.cfg
 
-.if ( ${OSVERSION} >= 500042 )
 OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp
-.endif
 
 do-build:
 # Fix unresolved references
@@ -118,14 +113,6 @@ do-build:
 		${FILESDIR}/mmap.c       ${FILESDIR}/pthread.c \
 		${FILESDIR}/sysconf.c    \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
-.if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
-.endif
-.if ( ${OSVERSION} < 500042 )
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
-	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
-.endif
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a \
 	libBINDF90.a libCEPCF90.a libF90.a libIEPCF90.a libPEPCF90.a \
 	libcprts.a libintrins.a libompstub.a

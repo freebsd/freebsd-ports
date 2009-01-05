@@ -29,15 +29,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-IGNORE=		does not build in FreeBSD < 5.x
-.else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,9 +31,6 @@ BROKEN=		Does not compile on alpha
 
 CONFIGURE_ENV+=		OSVERSION=${OSVERSION}
 PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
-.if ${OSVERSION} < 600011
-PLIST_FILES+=	lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/math.h
-.endif
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++ \
 		--program-suffix=28
 GNU_CONFIGURE=	yes

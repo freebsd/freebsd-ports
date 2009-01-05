@@ -26,6 +26,9 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
+		LIBS="${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}"
+
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
 
@@ -46,13 +49,6 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 		data/tracks/road/ole-road-1/generate.sh
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-CPPFLAGS+=	-I${LOCALBASE}/include
-.else
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
-		LIBS="${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}"
-.endif
 
 .if defined(WITH_FREEGLUT)
 LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut

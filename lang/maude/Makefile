@@ -29,10 +29,4 @@ post-patch:
 		${WRKSRC}/src/Mixfix/global.hh
 
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not compile on 4.X or 5.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

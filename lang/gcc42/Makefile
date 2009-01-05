@@ -51,10 +51,6 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if ${OSVERSION} < 502102
-CONFIGURE_ARGS+=	--disable-libgomp
-.endif
-
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-${PORTVERSION}
@@ -81,10 +77,8 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
-		gcc${SUFFIX}/gfortran
-.if ${OSVERSION} >= 502102
-INFO+=		gcc${SUFFIX}/libgomp
-.endif
+		gcc${SUFFIX}/gfortran \
+		gcc${SUFFIX}/libgomp
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}

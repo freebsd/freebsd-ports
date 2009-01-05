@@ -29,18 +29,10 @@ CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504000
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-src-gui-Gradient.cpp
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-src-gui-PainterSDL-PainterSDL.cpp
-.endif
-
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${INSTALL_TARGET})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

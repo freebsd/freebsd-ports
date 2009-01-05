@@ -27,11 +27,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	monster-masher.schemas
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500010
-IGNORE=		Freezes when starting a new game
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-vector.hpp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

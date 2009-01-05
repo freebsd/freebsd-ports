@@ -60,14 +60,6 @@ REINPLACE_ARGS=	-i
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_JAVA) && ${ARCH} == "amd64" && ${OSVERSION} < 600000
-BROKEN=		does not compile
-.endif
-
-.if ${OSVERSION} < 502102
-WITHOUT_ODBC=	yes
-.endif
-
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=	iodbc
 .if ${DRIVER_MANAGER} == "unixodbc"

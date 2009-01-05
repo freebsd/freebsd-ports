@@ -52,10 +52,8 @@ LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .if ${ARCH} == "i386"
 .if ${OSVERSION} >= 700000
 DISTFILES+=	ghc-${PORTVERSION}-i386-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 600000
-DISTFILES+=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 .else
-IGNORE=		unsupported at the moment
+DISTFILES+=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 .endif
 .endif
 
