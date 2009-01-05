@@ -1,0 +1,42 @@
+--- common-src/Makefile.in.orig	2008-08-23 03:20:00.000000000 +0900
++++ common-src/Makefile.in	2008-09-01 07:42:20.000000000 +0900
+@@ -926,12 +926,14 @@
+ sbin_SCRIPTS_PERL = \
+ 	    amgpgcrypt \
+ 	    amcryptsimple
++@WANT_SERVER_TRUE@sbin_SCRIPTS_PERL =
+ 
+ sbin_SCRIPTS_SHELL = \
+ 	    amcrypt \
+ 	    amaespipe \
+ 	    amcrypt-ossl \
+ 	    amcrypt-ossl-asym
++@WANT_SERVER_TRUE@sbin_SCRIPTS_SHELL =
+ 
+ amlibexec_SCRIPTS_PERL = 
+ SCRIPTS_INCLUDE = \
+@@ -985,15 +987,15 @@
+ versuff.c: $(top_builddir)/config.status $(srcdir)/versuff.c.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ install-amlibLTLIBRARIES: $(amlib_LTLIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(amlibdir)" || $(MKDIR_P) "$(DESTDIR)$(amlibdir)"
+-	@list='$(amlib_LTLIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    f=$(am__strip_dir) \
+-	    echo " $(LIBTOOL) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(amlibdir)/$$f'"; \
+-	    $(LIBTOOL) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(amlibdir)/$$f"; \
+-	  else :; fi; \
+-	done
++@WANT_CLIENT_TRUE@	@$(NORMAL_INSTALL)
++@WANT_CLIENT_TRUE@	test -z "$(amlibdir)" || $(MKDIR_P) "$(DESTDIR)$(amlibdir)"
++@WANT_CLIENT_TRUE@	@list='$(amlib_LTLIBRARIES)'; for p in $$list; do \
++@WANT_CLIENT_TRUE@	  if test -f $$p; then \
++@WANT_CLIENT_TRUE@	    f=$(am__strip_dir) \
++@WANT_CLIENT_TRUE@	    echo " $(LIBTOOL) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(amlibdir)/$$f'"; \
++@WANT_CLIENT_TRUE@	    $(LIBTOOL) --mode=install $(amlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(amlibdir)/$$f"; \
++@WANT_CLIENT_TRUE@	  else :; fi; \
++@WANT_CLIENT_TRUE@	done
+ 
+ uninstall-amlibLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)

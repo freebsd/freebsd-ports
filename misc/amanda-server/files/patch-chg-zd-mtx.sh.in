@@ -1,6 +1,6 @@
---- changer-src/chg-zd-mtx.sh.in.orig	Wed Feb  9 21:58:30 2005
-+++ changer-src/chg-zd-mtx.sh.in	Wed Feb  9 21:58:49 2005
-@@ -413,7 +413,7 @@
+--- changer-src/chg-zd-mtx.sh.orig	2008-05-27 02:25:32.000000000 +0900
++++ changer-src/chg-zd-mtx.sh	2009-01-05 07:34:15.000000000 +0900
+@@ -411,7 +411,7 @@
  
  IsNumeric() {
  	test -z "$1" && return 1
@@ -9,3 +9,12 @@
  	return `expr X"$1" != X"$x"`
  }
  
+@@ -797,7 +797,7 @@
+ max_drive_wait=${max_drive_wait:-'120'}			# default: two minutes
+ 
+ # check MT and MTX for sanity
+-if test "${MTX:0:1}" = "/"; then
++if test "${MTX%${MTX#?}}" = "/"; then
+     if ! test -f "${MTX}"; then
+ 	Exit 2 \
+ 	    `_ '<none>'` \

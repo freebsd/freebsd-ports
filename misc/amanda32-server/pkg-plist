@@ -1,15 +1,36 @@
-lib/libamserver-%%SHLIBVER%%.so
-lib/libamserver.so
-lib/libamserver.la
-lib/libamserver.a
-lib/libamtape-%%SHLIBVER%%.so
-lib/libamtape.so
-lib/libamtape.la
-lib/libamtape.a
-lib/librestore-%%SHLIBVER%%.so
-lib/librestore.a
-lib/librestore.la
-lib/librestore.so
+lib/amanda/libamdevice-%%SHLIBVER%%.so
+lib/amanda/libamdevice.a
+lib/amanda/libamdevice.la
+lib/amanda/libamdevice.so
+lib/amanda/libamserver-%%SHLIBVER%%.so
+lib/amanda/libamserver.a
+lib/amanda/libamserver.la
+lib/amanda/libamserver.so
+lib/amanda/libamtape-%%SHLIBVER%%.so
+lib/amanda/libamtape.a
+lib/amanda/libamtape.la
+lib/amanda/libamtape.so
+lib/amanda/librestore-%%SHLIBVER%%.so
+lib/amanda/librestore.a
+lib/amanda/librestore.la
+lib/amanda/librestore.so
+%%SITE_PERL%%/Amanda/Changer.pm
+%%SITE_PERL%%/Amanda/Cmdline.pm
+%%SITE_PERL%%/Amanda/Device.pm
+%%SITE_PERL%%/Amanda/Logfile.pm
+%%SITE_PERL%%/Amanda/Tapefile.pm
+%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.a
+%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.la
+%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.so
+%%SITE_PERL%%/auto/Amanda/Device/libDevice.a
+%%SITE_PERL%%/auto/Amanda/Device/libDevice.la
+%%SITE_PERL%%/auto/Amanda/Device/libDevice.so
+%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.a
+%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.la
+%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.so
+%%SITE_PERL%%/auto/Amanda/Tapefile/libTapefile.a
+%%SITE_PERL%%/auto/Amanda/Tapefile/libTapefile.la
+%%SITE_PERL%%/auto/Amanda/Tapefile/libTapefile.so
 %%PLOT%%libexec/amanda/amcat.awk
 libexec/amanda/amcleanupdisk
 libexec/amanda/amindexd
@@ -24,6 +45,7 @@ libexec/amanda/chg-chs
 libexec/amanda/chg-disk
 libexec/amanda/chg-iomega
 libexec/amanda/chg-juke
+libexec/amanda/chg-lib.sh
 libexec/amanda/chg-manual
 libexec/amanda/chg-mcutil
 libexec/amanda/chg-mtx
@@ -39,15 +61,14 @@ libexec/amanda/driver
 libexec/amanda/dumper
 libexec/amanda/planner
 libexec/amanda/taper
+sbin/amaddclient
 sbin/amadmin
-sbin/amaespipe
 sbin/amcheck
 sbin/amcheckdb
+sbin/amcheckdump
 sbin/amcleanup
-sbin/amcrypt
-sbin/amcrypt-ossl
-sbin/amcrypt-ossl-asym
 sbin/amdd
+sbin/amdevcheck
 sbin/amdump
 sbin/amfetchdump
 sbin/amflush
@@ -59,9 +80,15 @@ sbin/amoverview
 sbin/amreport
 sbin/amrestore
 sbin/amrmtape
+sbin/amserverconfig
 sbin/amstatus
 sbin/amtape
 sbin/amtapetype
 sbin/amtoc
 sbin/amverify
 sbin/amverifyrun
+@dirrm %%SITE_PERL%%/auto/Amanda/Cmdline
+@dirrm %%SITE_PERL%%/auto/Amanda/Device
+@dirrm %%SITE_PERL%%/auto/Amanda/Logfile
+@dirrm %%SITE_PERL%%/auto/Amanda/Tapefile
+@dirrm include/amanda
