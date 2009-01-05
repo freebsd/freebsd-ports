@@ -1,6 +1,0 @@
-share/locale/la_LN.UTF-8/LC_COLLATE
-share/locale/la_LN.UTF-8/LC_CTYPE
-@dirrm share/locale/la_LN.UTF-8
-@dirrmtry share/locale
-@exec for lang in %%LANGS%%; do ln -sf %D/share/locale/$lang.UTF-8 %%BASELOCALEDIR%%/; done
-@unexec for lang in %%LANGS%%; do rm -f %%BASELOCALEDIR%%/$lang.UTF-8; done
