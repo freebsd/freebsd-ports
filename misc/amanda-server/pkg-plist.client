@@ -1,19 +1,23 @@
 @unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
-dumper/generic-dumper
-dumper/gnutar
-lib/libamandad-%%SHLIBVER%%.so
-lib/libamandad.so
-lib/libamandad.la
-lib/libamandad.a
-lib/libamanda-%%SHLIBVER%%.so
-lib/libamanda.so
-lib/libamanda.la
-lib/libamanda.a
-lib/libamclient-%%SHLIBVER%%.so
-lib/libamclient.so
-lib/libamclient.la
-lib/libamclient.a
+lib/amanda/libamanda-%%SHLIBVER%%.so
+lib/amanda/libamanda.a
+lib/amanda/libamanda.la
+lib/amanda/libamanda.so
+lib/amanda/libamandad-%%SHLIBVER%%.so
+lib/amanda/libamandad.a
+lib/amanda/libamandad.la
+lib/amanda/libamandad.so
+lib/amanda/libamclient-%%SHLIBVER%%.so
+lib/amanda/libamclient.a
+lib/amanda/libamclient.la
+lib/amanda/libamclient.so
+lib/amanda/libamglue.a
+lib/amanda/libamglue.la
+lib/amanda/libamglue.so
+libexec/amanda/amanda-sh-lib.sh
 libexec/amanda/amandad
+libexec/amanda/application/amgtar
+libexec/amanda/application/generic-dumper
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
 libexec/amanda/noop
@@ -24,102 +28,77 @@ libexec/amanda/selfcheck
 libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/versionsuffix
-sbin/amrecover
+%%SITE_PERL%%/Amanda/Config.pm
+%%SITE_PERL%%/Amanda/Debug.pm
+%%SITE_PERL%%/Amanda/Paths.pm
+%%SITE_PERL%%/Amanda/Types.pm
+%%SITE_PERL%%/Amanda/Util.pm
+%%SITE_PERL%%/auto/Amanda/Config/libConfig.a
+%%SITE_PERL%%/auto/Amanda/Config/libConfig.la
+%%SITE_PERL%%/auto/Amanda/Config/libConfig.so
+%%SITE_PERL%%/auto/Amanda/Debug/libDebug.a
+%%SITE_PERL%%/auto/Amanda/Debug/libDebug.la
+%%SITE_PERL%%/auto/Amanda/Debug/libDebug.so
+%%SITE_PERL%%/auto/Amanda/Types/libTypes.a
+%%SITE_PERL%%/auto/Amanda/Types/libTypes.la
+%%SITE_PERL%%/auto/Amanda/Types/libTypes.so
+%%SITE_PERL%%/auto/Amanda/Util/libUtil.a
+%%SITE_PERL%%/auto/Amanda/Util/libUtil.la
+%%SITE_PERL%%/auto/Amanda/Util/libUtil.so
+sbin/amaespipe
+sbin/amcrypt
+sbin/amcrypt-ossl
+sbin/amcrypt-ossl-asym
+sbin/amcryptsimple
+sbin/amgpgcrypt
 sbin/amoldrecover
-share/amanda/Appendix.txt
+sbin/amrecover
 share/amanda/COPYRIGHT
-share/amanda/COPYRIGHT-APACHE
-share/amanda/COPYRIGHT-REGEX
+share/amanda/ChangeLog
+share/amanda/NEWS
 share/amanda/ReleaseNotes
-share/amanda/amadmin.8.txt
-share/amanda/amaespipe.8.txt
-share/amanda/amanda-client.conf.5.txt
-share/amanda/amanda.8.txt
-share/amanda/amanda.conf.5.txt
-share/amanda/amcheck.8.txt
-share/amanda/amcheckdb.8.txt
-share/amanda/amcleanup.8.txt
-share/amanda/amcrypt-asym-ossl.8.txt
-share/amanda/amcrypt-ossl.8.txt
-share/amanda/amcrypt.8.txt
-share/amanda/amdd.8.txt
-share/amanda/amdump.8.txt
-share/amanda/amfetchdump.8.txt
-share/amanda/amflush.8.txt
-share/amanda/amgetconf.8.txt
-share/amanda/amlabel.8.txt
-share/amanda/ammt.8.txt
-share/amanda/amoverview.8.txt
-share/amanda/amplot.8.txt
-share/amanda/amrecover.8.txt
-share/amanda/amreport.8.txt
-share/amanda/amrestore.8.txt
-share/amanda/amrmtape.8.txt
-share/amanda/amstatus.8.txt
-share/amanda/amtape.8.txt
-share/amanda/amtapetype.8.txt
-share/amanda/amtoc.8.txt
-share/amanda/amverify.8.txt
-share/amanda/amverifyrun.8.txt
-share/amanda/chgscsi.txt
-share/amanda/dumperapi.txt
-share/amanda/eventapi.txt
-share/amanda/exclude.txt
-share/amanda/faq.txt
-share/amanda/historical.txt
-share/amanda/howto-afs.txt
-share/amanda/howto-auth.txt
-share/amanda/howto-cygwin.txt
-share/amanda/howto-filedriver.txt
-share/amanda/howto-gpg.txt
-share/amanda/howto-wrapper.txt
-share/amanda/howtos.txt
-share/amanda/index.txt
-share/amanda/indexing.txt
-share/amanda/install.txt
-share/amanda/internals.txt
-share/amanda/introduction.txt
-share/amanda/ix01.txt
-share/amanda/kerberos.txt
-share/amanda/labelprinting.txt
-share/amanda/links.txt
-share/amanda/manpages.txt
-share/amanda/multitape.txt
-share/amanda/portusage.txt
-share/amanda/pr01.txt
-share/amanda/pr02.txt
-share/amanda/pr03.txt
-share/amanda/pr04.txt
-share/amanda/rait.txt
-share/amanda/references.txt
-share/amanda/restore.txt
-share/amanda/samba.txt
-share/amanda/security-api.txt
-share/amanda/security.txt
-share/amanda/strategy-api.txt
-share/amanda/survey.txt
-share/amanda/systemnotes.txt
-share/amanda/tapechangers.txt
-share/amanda/tapesnchangers.txt
-share/amanda/tapetypes.txt
-share/amanda/technical.txt
-share/amanda/topten.txt
-share/amanda/upgrade.txt
-share/amanda/using.txt
-share/amanda/various.txt
-share/amanda/vtape-api.txt
-share/amanda/whatwasnew.txt
-share/amanda/wishlist.txt
-share/amanda/y2k.txt
-share/amanda/zftape.txt
 share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/disklist
+var/lib/amanda/example/amanda-client.conf
+var/lib/amanda/example/amanda.conf
+var/lib/amanda/example/inetd.conf.amandaclient
+var/lib/amanda/example/label-templates/3hole.ps
+var/lib/amanda/example/label-templates/8.5x11.ps
+var/lib/amanda/example/label-templates/DIN-A4.ps
+var/lib/amanda/example/label-templates/DLT-A4.ps
+var/lib/amanda/example/label-templates/DLT.ps
+var/lib/amanda/example/label-templates/EXB-8500.ps
+var/lib/amanda/example/label-templates/HP-DAT.ps
+var/lib/amanda/example/xinetd.amandaclient
+var/lib/amanda/example/xinetd.amandaserver
+var/lib/amanda/template.d/README
+var/lib/amanda/template.d/advanced.conf
+var/lib/amanda/template.d/amanda-S3.conf
+var/lib/amanda/template.d/amanda-harddisk.conf
+var/lib/amanda/template.d/amanda-single-tape.conf
+var/lib/amanda/template.d/amanda-tape-changer.conf
+var/lib/amanda/template.d/chg-manual.conf
+var/lib/amanda/template.d/dumptypes
+var/lib/amanda/template.d/tapetypes
+var/amanda/amandates
+@dirrm %%SITE_PERL%%/auto/Amanda/Util
+@dirrm %%SITE_PERL%%/auto/Amanda/Types
+@dirrm %%SITE_PERL%%/auto/Amanda/Debug
+@dirrm %%SITE_PERL%%/auto/Amanda/Config
+@dirrm %%SITE_PERL%%/auto/Amanda
+@dirrm %%SITE_PERL%%/Amanda
+@dirrm var/lib/amanda/template.d
+@dirrm var/lib/amanda/example/label-templates
+@dirrm var/lib/amanda/example
+@dirrm var/lib/amanda
+@dirrmtry var/lib
 @dirrmtry var/amanda/gnutar-lists
 @dirrmtry var/amanda
 @dirrmtry var
 @dirrm share/examples/amanda
 @dirrm share/amanda
+@dirrm libexec/amanda/application
 @dirrm libexec/amanda
-@dirrm dumper
+@dirrm lib/amanda

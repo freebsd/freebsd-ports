@@ -1,0 +1,10 @@
+--- man/Makefile.in.orig	2008-08-31 22:27:26.000000000 +0900
++++ man/Makefile.in	2008-08-31 22:27:46.000000000 +0900
+@@ -565,6 +565,7 @@
+ COMMON_MAN_PAGES = amanda.8 \
+ 		    amanda.conf.5 \
+ 		    amanda-client.conf.5
++@WANT_SERVER_TRUE@COMMON_MAN_PAGES =
+ 
+ SERVER_MAN_PAGES = amadmin.8 \
+ 		    amcheck.8 \

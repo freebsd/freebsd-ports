@@ -1,14 +1,14 @@
---- client-src/calcsize.c.orig	Mon Nov  4 20:37:53 2002
-+++ client-src/calcsize.c	Thu Oct 23 19:25:07 2003
-@@ -130,7 +130,11 @@
- 	dump_total += (ST_BLOCKS(finfo) + 1)/2 + 1;
- 	gtar_total += ROUND(4,(ST_BLOCKS(finfo) + 1));
+--- client-src/calcsize.c.orig	2008-01-18 09:31:16.000000000 +0900
++++ client-src/calcsize.c	2008-08-30 20:11:59.000000000 +0900
+@@ -160,7 +160,11 @@
+ 	dump_total += (ST_BLOCKS(finfo) + (off_t)1) / (off_t)2 + (off_t)1;
+ 	gtar_total += ROUND(4,(ST_BLOCKS(finfo) + (off_t)1));
      }
 +#ifdef GNUTAR
-+    printf("           GNUTAR           dump\n");
++    g_printf("           GNUTAR           dump\n");
 +#else
-     printf("           gtar           dump\n");
+     g_printf("           gtar           dump\n");
 +#endif
-     printf("total      %-9lu         %-9lu\n",gtar_total,dump_total);
+     g_printf("total      %-9lu         %-9lu\n",gtar_total,dump_total);
      return 0;
  #else
