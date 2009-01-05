@@ -33,10 +33,6 @@ OPTIONS=	NLS "Native Language Support (devel/gettext)" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		FreeBSD < 6 does not have blkcnt_t in stat.h
-.endif
-
 #.if !defined(WITHOUT_HAL)
 #LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
 #		dbus-1.3:${PORTSDIR}/devel/dbus

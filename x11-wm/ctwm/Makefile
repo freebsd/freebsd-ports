@@ -23,13 +23,6 @@ MAN1=		ctwm.1
 
 .include <bsd.port.pre.mk>
 
-# Very old versions need GNU m4
-.if ( ${OSVERSION} < 500034 )
-EXTRA_PATCHES+=	${FILESDIR}/gm4-patch
-BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
-RUN_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
-.endif
-
 pre-configure:
 	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
 	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local

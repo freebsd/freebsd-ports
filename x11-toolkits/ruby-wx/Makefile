@@ -26,10 +26,6 @@ WX_COMPS=	contrib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BROKEN=		"Cannot link: undefined versioned symbol name"
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCS=		README README.linux ChangeLog
 

@@ -24,14 +24,8 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION}>=600000
-EXEFILE=	xscoop6
-.else
-EXEFILE=	xscoop5
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${EXEFILE} ${PREFIX}/bin/xscoop
+	${INSTALL_PROGRAM} ${WRKSRC}/xscoop6 ${PREFIX}/bin/xscoop
 	${INSTALL_MAN} ${WRKSRC}/xscoop.7 ${MAN7PREFIX}/man/man7/xscoop.7
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/xscoop.pdf ${DOCSDIR}/xscoop.pdf

@@ -86,12 +86,6 @@ MAKE_ENV+=	WITH_HAL=1
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
-.if ${OSVERSION} < 600000
-post-patch:
-	@${REINPLACE_CMD} -e 's|blksize_t buf_size =|__int32_t buf_size =|g' \
- 		${WRKSRC}/src/filesystem/e2_fs.c
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}

@@ -32,10 +32,4 @@ USE_LDCONFIG=	yes
 
 MAN1=	mathmlviewer.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=	is unsupported on versions prior to FreeBSD 6.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
