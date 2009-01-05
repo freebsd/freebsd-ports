@@ -10,7 +10,7 @@ PORTREVISION=	3
 
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
 
-MASTERDIR=	${.CURDIR}/../amanda-server
+MASTERDIR=	${.CURDIR}/../amanda25-server
 PKGINSTALL=	mustnotexist
 
 PLIST=		${PKGDIR}/pkg-plist.client

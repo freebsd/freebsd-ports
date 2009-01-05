@@ -18,7 +18,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-SLAVEDIRS=	misc/amanda-client
+SLAVEDIRS=	misc/amanda25-client
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 USE_AUTOTOOLS=	autoconf:262
@@ -111,9 +111,11 @@ post-patch:
 
 USE_PERL5=	yes
 
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
-RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda25-client
+RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda25-client
 
+NO_LATEST_LINK=	yes
+CONFLICTS=	amanda-server-2.6.*
 CONFIGURE_ARGS+=--without-client
 
 MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
@@ -194,6 +196,8 @@ pre-fetch:
 	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
+NO_LATEST_LINK=	yes
+CONFLICTS=	amanda-client-2.6.*
 CONFIGURE_ARGS+=--without-server
 
 MAN5=		amanda.conf.5 amanda-client.conf.5

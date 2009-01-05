@@ -10,6 +10,8 @@
     SUBDIR += alevt
     SUBDIR += amanda-client
     SUBDIR += amanda-server
+    SUBDIR += amanda25-client
+    SUBDIR += amanda25-server
     SUBDIR += apparix
     SUBDIR += asbutton
     SUBDIR += asr-manpages
