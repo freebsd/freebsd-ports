@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Data-FormValidator
-PORTVERSION=	4.61
-PORTREVISION=	1
+PORTVERSION=	4.63
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +21,7 @@ RUN_DEPENDS=	p5-Date-Calc>=5.0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-MIME-Types>=1.005:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Perl6-Junction>=1.10:${PORTSDIR}/devel/p5-Perl6-Junction \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	5.8.0+
 
