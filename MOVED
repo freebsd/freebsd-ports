@@ -3724,3 +3724,4 @@ korean/msdosfs||2008-12-28|Removed: only for 5.x
 security/openssl-stable|security/openssl|2008-12-30|Removed: only for 6.0
 dns/bind9-dlz|dns/bind94|2008-12-31|DLZ patches are now in bind 9.4 distribution
 x11-drivers/xf86-video-i810|x11-drivers/xf86-video-intel|2009-01-05|Replaced by the xf86-video-intel driver
+misc/utf8locale||2009-01-05|Part of the base system since FreeBSD 5.3

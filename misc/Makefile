@@ -536,7 +536,6 @@
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbrh
-    SUBDIR += utf8locale
     SUBDIR += utftools
     SUBDIR += vbidecode
     SUBDIR += vera
