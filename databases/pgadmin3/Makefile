@@ -31,10 +31,4 @@ WX_UNICODE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600014)
-IGNORE=		can not be built. Your system has broken vswprintf(3) function
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

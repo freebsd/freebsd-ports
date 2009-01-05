@@ -31,7 +31,7 @@ MAN1=		ecawave.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+.if ${ARCH} == "alpha"
 BROKEN=		Configure fails on alpha 5.x
 .endif
 

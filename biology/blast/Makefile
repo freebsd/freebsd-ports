@@ -40,17 +40,9 @@ XDFORMAT_LINKS=	setdb pressdb
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-.if ${OSVERSION} >= 600000
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-x64
 .else
-DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-x64
-.endif
-.else
-.if ${OSVERSION} < 600000
-DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-i686
-.else
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-i686
-.endif
 .endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

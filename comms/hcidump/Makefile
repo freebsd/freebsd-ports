@@ -19,15 +19,4 @@ MAN1=		hcidump.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/hcidump
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502000
-IGNORE=		it needs Bluetooth stack (FreeBSD 5.2 or newer)
-.endif
-
-.if ${OSVERSION} < 502121
-# libbluetooth is only installed on i386 before this version
-ONLY_FOR_ARCHS=	i386
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

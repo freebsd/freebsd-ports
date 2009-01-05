@@ -45,10 +45,6 @@ OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 
 .include <bsd.port.pre.mk>
 
-.if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedataserver_e-msgport.c
-.endif
-
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL)
 HEIMDAL_HOME?=	${LOCALBASE}
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal

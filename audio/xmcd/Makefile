@@ -26,12 +26,6 @@ PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 600000 && ${ARCH} == "sparc64")
-BROKEN=		Does not compile on FreeBSD 5.x sparc64
-.endif
-
 LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R:R}-${ARCH}
 
 post-extract:
@@ -56,4 +50,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

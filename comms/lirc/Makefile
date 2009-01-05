@@ -23,6 +23,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	IRMAN "Build with libirman support" On
 
@@ -42,13 +45,6 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=irman --with-driver=dvico
 .else
 CONFIGURE_ARGS+=	--with-driver=any --with-driver=dvico
-.endif
-
-.if ${OSVERSION} >= 500041
-# These are already included in the getopt_long case on < 50041
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \

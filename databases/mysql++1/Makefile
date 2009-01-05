@@ -25,12 +25,6 @@ USE_LDCONFIG=	yes
 CONFLICTS=	${PORTNAME}*-2.*
 NO_LATEST_LINK=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500039
-USE_GCC=	3.4
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/userman/html ${DOCSDIR}/refman/html
@@ -49,4 +43,4 @@ post-install:
 	@${RM} -f ${EXAMPLESDIR}/Makefile.temp
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

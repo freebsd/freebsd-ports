@@ -19,8 +19,6 @@ COMMENT=	Frontbase SQL Database Server
 IS_INTERACTIVE=	yes
 RESTRICTED=	License doesn't allow redistribution
 
-.include <bsd.port.pre.mk>
-
 USE_RC_SUBR=	frontbase.sh
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -30,12 +28,7 @@ SUB_FILES+=	pkg-message
 ONLY_FOR_ARCHS=	i386
 
 # Binary is built for 5.X :
-.if ${OSVERSION} < 500000
-IGNORE=		only supports FreeBSD 5.X and newer
-.endif
-.if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
 
 FB_USER=	frontbase
 FB_GROUP=	frontbase
@@ -74,4 +67,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

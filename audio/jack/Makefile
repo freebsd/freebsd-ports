@@ -47,10 +47,6 @@ CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
 PLIST_SUB+=	DOCS="@comment "
 .endif
 
-.if (${OSVERSION} < 502102 )
-BROKEN=		Does not compile
-.endif
-
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif

@@ -26,12 +26,6 @@ USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on FreeBSD 5.x
-.endif
-
 post-extract:
 	@${UNZIP_CMD} -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces
 
@@ -51,4 +45,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/pieces/* ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

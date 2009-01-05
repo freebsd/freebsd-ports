@@ -20,17 +20,8 @@ USE_MYSQL=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}"
-.else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 USE_LDCONFIG=	yes
 
@@ -38,7 +29,7 @@ post-patch:
 	${REINPLACE_CMD} s/libmysqlcppapi-1.9/libmysqlcppapi/g \
 		${WRKSRC}/mysqlcppapi/Makefile.in ${WRKSRC}/examples/Makefile.in
 	${FIND} ${WRKSRC}/mysqlcppapi -name Makefile.in \
-       		-exec ${REINPLACE_CMD} -e \
+		-exec ${REINPLACE_CMD} -e \
 		'/^library_includedir =/s,\$$(GENERIC_LIBRARY_NAME)-2.0/,,g' '{}' \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

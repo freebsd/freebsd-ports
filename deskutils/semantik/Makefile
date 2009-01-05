@@ -23,12 +23,6 @@ USE_KDELIBS_VER=	3
 USE_PYTHON_BUILD=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CXXFLAGS+=	-fpermissive
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%LINKFLAGS%%|${PTHREAD_LIBS}|g ; \
@@ -45,4 +39,4 @@ do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install
 	@${STRIP_CMD} ${PREFIX}/bin/kdissert
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,16 +21,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503000
-IGNORE=		requires FreeBSD 5.3 or higher
-.endif
-
 #post-extract:
 #	@${TAR} xf ${WRKDIR}/${PORTNAME}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

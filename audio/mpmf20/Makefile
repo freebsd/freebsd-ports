@@ -20,13 +20,7 @@ NOT_FOR_ARCHS=	ia64 sparc64
 MAKEFILE=	makefile
 PLIST_FILES=	bin/mpmf20
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386 && ${OSVERSION} < 502108
-BROKEN=		ffs() clash, see i386/41930
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpmf20 ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

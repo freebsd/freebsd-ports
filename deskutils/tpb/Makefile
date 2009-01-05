@@ -48,10 +48,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/callback_example.sh ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600030
-IGNORE=is not supported on FreeBSD < 6.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

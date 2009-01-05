@@ -28,12 +28,7 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name *.c | ${XARGS} ${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|'
-.if ${OSVERSION} < 503000
-	${ECHO} '#define lrintf(x) ((int16_t)rintf(x))' > ${WRKSRC}/src/tgmath.h
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,10 +21,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		mixmos.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501105
-IGNORE=		require SOUND_MIXER_INFO ioctl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

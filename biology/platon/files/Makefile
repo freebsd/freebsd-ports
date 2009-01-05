@@ -4,11 +4,7 @@
 
 TARGET=	platon
 OBJS=	platon.o xdrvr.o
-.if ${OSVERSION} >= 400018
 FOPT=	${FFLAGS}
-.else
-FOPT=	${FFLAGS} -Nx800 -NL400 -Nn802
-.endif
 COPT=	${CFLAGS} -I%%LOCALBASE%%/include
 LOPT=	-L%%LOCALBASE%%/lib -lX11
 

@@ -56,13 +56,6 @@ INFO=		tora
 
 PREFIX2FIX=	doc/help/preferences.texi src/toconfiguration.h
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600029
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
-.endif
-
 run-autotools:
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh)
 
@@ -81,4 +74,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

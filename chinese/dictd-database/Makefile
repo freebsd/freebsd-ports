@@ -38,10 +38,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502110
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/zh_TW.UTF-8/LC_CTYPE:${PORTSDIR}/misc/utf8locale
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

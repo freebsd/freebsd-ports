@@ -70,10 +70,6 @@ DESKBAR_MOD=	${PREFIX}/${LDESKBAR_MOD}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		does not build on ${OPSYS}-${OSREL}
-.endif
-
 .if ${OSVERSION} < 700041
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

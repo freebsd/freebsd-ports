@@ -35,11 +35,6 @@ USE_AUTOTOOLS=	autoconf:262
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
-.endif
-
 pre-extract:
 .if !defined(WITH_XCWCP)
 	@${ECHO_CMD}
@@ -53,4 +48,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%LIBDATA%%|${PREFIX}/libdata|" \
 	${WRKSRC}/src/cwlib/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

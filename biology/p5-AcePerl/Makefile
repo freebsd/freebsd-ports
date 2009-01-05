@@ -49,10 +49,6 @@ MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 CFLAGS+=	-fPIC
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} < 600000
-BROKEN=		does not compile, GCC bug
-.endif
-
 post-patch:
 	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
