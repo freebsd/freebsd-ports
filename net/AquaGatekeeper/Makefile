@@ -52,7 +52,7 @@ post-install:
 
 .if ${ARCH} == "i386"
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-.elif ${OSVERSION} >= 600000 && ${ARCH} == "amd64"
+.elif ${ARCH} == "amd64"
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 

@@ -29,10 +29,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502113
-IGNORE=		need link state change notification changes from May 2004
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

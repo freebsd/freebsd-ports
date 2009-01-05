@@ -38,10 +38,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		does not compile with old version of pf
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,10 +20,4 @@ MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		bittwist.1 bittwistb.1 bittwiste.1
 PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600032
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

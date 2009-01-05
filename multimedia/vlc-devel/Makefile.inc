@@ -221,11 +221,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${FAKEDIR}/mozilla|; \
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
 			${WRKSRC}/projects/mozilla/Makefile.in
-# skins2 interface, no lrint on < 504000
-.if ${OSVERSION} < 504000
-	@${REINPLACE_CMD} -e 's|lrint|rint|' \
-		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
-.endif
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \

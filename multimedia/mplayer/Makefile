@@ -27,7 +27,6 @@ OPTIONS+=	X11VM "X11 VidMode support" on
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
 OPTIONS+=	SDL "Enable SDL video output" off
 OPTIONS+=	VIDIX "Enable VIDIX video output on supported archs" on
-OPTIONS+=	NVIDIA "Enable experimental nvidia xvmc driver" off
 OPTIONS+=	SKINS "Force dependency on mplayer-skins" on
 OPTIONS+=	FREETYPE "Use freetype for OSD fonts (TrueType!)" on
 OPTIONS+=	RTC "Add support for kernel real time clock timing" off
@@ -162,12 +161,6 @@ CONFIGURE_ARGS+=	--enable-rtc
 CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=	--disable-rtc
-.endif
-
-.if defined(WITH_NVIDIA) && ${OSVERSION} < 600033
-LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
-CONFIGURE_ARGS+=	--enable-xvmc \
-			--enable-xvmclib=XvMCNVIDIA
 .endif
 
 .if defined(WITH_ARTS)

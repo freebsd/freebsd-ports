@@ -19,10 +19,6 @@ PLIST_FILES=	sbin/bpfstat
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600033
-IGNORE=		will only work on systems >= 600033
-.endif
-
 .if ${OSVERSION} >= 700000
 IGNORE=		this has been merged into netstat
 .endif

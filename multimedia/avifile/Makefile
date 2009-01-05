@@ -62,9 +62,7 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
 WITH_OPTIMIZED_CFLAGS=	yes
-.endif
 
 .if ${OSVERSION} >= 700000
 USE_GCC=	3.4

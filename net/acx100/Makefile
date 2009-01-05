@@ -54,10 +54,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501107
-IGNORE=		This port requires newer kernel sources that include /sys/dev/owi/if_ieee80211.h
-.endif
-
 .if ${OSVERSION} >= 601104
 BROKEN=		Does not compile on FreeBSD >= 6.x
 DEPRECATED=	Has been broken for more than 6 months

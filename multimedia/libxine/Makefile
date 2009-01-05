@@ -217,12 +217,10 @@ pre-configure:
 		 s|-funroll-loops||g ; \
 		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g ; \
 		 s|echo aout|echo elf|g' ${WRKSRC}/configure
-.if ${OSVERSION} >= 500035
 	@${REINPLACE_CMD} -e \
 		 's|-malign-loops|-falign-loops|g ; \
 		  s|-malign-jumps|-falign-jumps|g ; \
 		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
-.endif
 
 pre-build:
 	@${CP} -p ${LOCALBASE}/include/dts.h ${WRKSRC}/src/libdts/

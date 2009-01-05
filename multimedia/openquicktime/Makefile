@@ -47,11 +47,9 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|"m"|"g"|' \
 		${WRKSRC}/audioplugin/MP3/audioencoder/lame3.70/quantize-pvt.c
-.if ${OSVERSION} >= 502126
 	@${REINPLACE_CMD} \
 		-e 's|-fpic||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
