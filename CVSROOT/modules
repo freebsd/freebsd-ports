@@ -84,6 +84,7 @@ ports_dns                       ports/dns
 ports_editors                   ports/editors
 ports_emulators                 ports/emulators
 ports_finance                   ports/finance
+ports_fpc_fcl_async             ports/fpc-fcl-async
 ports_french                    ports/french
 ports_ftp                       ports/ftp
 ports_games                     ports/games
@@ -964,6 +965,7 @@ bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind94                          ports/dns/bind94
 bind95                          ports/dns/bind95
+bind96                          ports/dns/bind96
 bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
 bing                            ports/net/bing
@@ -19182,6 +19184,7 @@ ru-d1489                        ports/russian/d1489
 ru-eric4                        ports/russian/eric4
 ru-fortune-bashorgru            ports/russian/fortune-bashorgru
 ru-fortuneru                    ports/russian/fortuneru
+ru-gd                           ports/russian/gd
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
 ru-koffice-i18n                 ports/russian/koffice-i18n
