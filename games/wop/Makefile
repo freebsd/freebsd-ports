@@ -10,7 +10,7 @@ PORTVERSION=	0.4.3
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://wormsofprey.org/download/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}data-${DATAVERSION}${EXTRACT_SUFX}
 

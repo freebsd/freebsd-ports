@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple application for finding paths in different subways maps

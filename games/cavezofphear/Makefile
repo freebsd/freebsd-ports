@@ -9,7 +9,7 @@ PORTNAME=	cavezofphear
 PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.x86.no/cavezofphear/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	phear-${PORTVERSION}
 
 MAINTAINER=	tlp@liquidx.org

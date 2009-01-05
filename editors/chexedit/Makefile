@@ -9,7 +9,7 @@ PORTNAME=	chexedit
 PORTVERSION=	0.9.7
 CATEGORIES=	editors
 MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	hexedit-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

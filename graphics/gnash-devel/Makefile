@@ -9,7 +9,7 @@ PORTNAME=	gnash
 PORTVERSION=	20081208
 CATEGORIES=	graphics
 # gnashdev.org is slower
-MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/ \
 		http://www.gnashdev.org/dev_snapshots/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-trunk-${REVISION}

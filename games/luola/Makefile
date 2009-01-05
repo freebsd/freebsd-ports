@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.luolamies.org/software/luola/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		stdlevels-5.2${EXTRACT_SUFX} \
 		nostalgia-1.1${EXTRACT_SUFX}

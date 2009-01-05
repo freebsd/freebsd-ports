@@ -9,7 +9,7 @@ PORTNAME=	gkrellflynn
 PORTVERSION=	0.8
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/ \
 		http://horus.comlab.uni-rostock.de/flynn/
 
 MAINTAINER=	amdmi3@FreeBSD.org

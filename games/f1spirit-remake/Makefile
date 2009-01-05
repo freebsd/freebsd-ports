@@ -9,7 +9,7 @@ PORTNAME=	f1spirit-remake
 PORTVERSION=	1.0
 CATEGORIES=	games
 # Original braingames site is really slow
-MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+MASTER_SITES=	http://mirror.amdmi3.ru/ \
 		http://www.braingames.getput.com/f1spirit/downloads/
 DISTNAME=	f1spirit-linux
 

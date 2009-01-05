@@ -9,7 +9,7 @@ PORTNAME=	biniax2
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://mordred.dir.bg/biniax/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}-fullsrc
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -11,7 +11,7 @@ PORTVERSION=	2.1
 PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill

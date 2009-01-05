@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://games.sajthelper.com/ \
 		${MASTER_SITE_LOCAL} \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SolarConquest
 

@@ -9,7 +9,7 @@ PORTNAME=	spring
 PORTVERSION=	0.77b5
 CATEGORIES=	games
 MASTER_SITES=	http://spring.clan-sy.com/dl/ \
-		http://www.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
