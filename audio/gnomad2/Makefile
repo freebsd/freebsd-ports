@@ -19,6 +19,8 @@ LIB_DEPENDS=	mtp:${PORTSDIR}/audio/libmtp \
 		njb.6:${PORTSDIR}/audio/libnjb \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
+BROKEN=		does not compile with current version of libmtp
+
 MAN1=		gnomad2.1
 
 GNU_CONFIGURE=	yes
