@@ -23,10 +23,11 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix=${PREFIX}/mpich
 USE_FORTRAN=	yes
+USE_GCC=	4.3
 F90FLAGS+=	${FFLAGS}
-FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
-FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
-CONFIGURE_ENV+=	F90=${FC} F90FLAGS=${F90FLAGS} F77=${FC}	\
+FORTRANLIBDIR=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``
+FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
+CONFIGURE_ENV+=	F90=${FC} F90FLAGS=${F90FLAGS}	\
 		LIBS="-L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin  -lgfortran -L${LOCALBASE}/lib -lf2c"
 
 OPTIONS=	X11	"Enable MPE graphics" on \
