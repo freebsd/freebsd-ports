@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--enable-shared
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 USE_LDCONFIG=	yes
+USE_GCC=	3.3
 
 INFO=		latte liblatte
 
@@ -29,10 +30,6 @@ CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 post-extract:
 	-@${RM} ${WRKSRC}/getopt*

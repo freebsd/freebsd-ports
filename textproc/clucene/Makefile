@@ -26,8 +26,4 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--enable-ascii
 .endif
 
-.if ${OSVERSION} < 500016
-CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
-.endif
-
 .include <bsd.port.post.mk>

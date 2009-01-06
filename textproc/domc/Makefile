@@ -33,10 +33,4 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500039
-IGNORE=		requires wchar functions to use the produced library
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

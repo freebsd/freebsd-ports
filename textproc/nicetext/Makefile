@@ -19,6 +19,7 @@ MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/nicetext/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
+USE_GCC=	3.3
 USE_GMAKE=	yes
 CFLAGS+=	-fpermissive
 
@@ -30,10 +31,6 @@ PROGRAMS=	bitcp dct2mstr expgram genmodel gramtest impkimmo impmsc \
 		sortdct txt2dct
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
