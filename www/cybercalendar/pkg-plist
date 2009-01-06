@@ -81,4 +81,4 @@ cybercalendar/setup/httpd.conf.changes
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.NOSITEPERL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm share/doc/cybercalendar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

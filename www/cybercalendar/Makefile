@@ -7,16 +7,11 @@
 PORTNAME=	cybercalendar
 PORTVERSION=	1.8.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.cyberweavers.com/download/ \
-		http://6net.iif.hu/~mohacsi/downloads/
+MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 DISTNAME=	CyberCalendar_${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	CyberCalendar is a web based calendar program written in perl
-
-BROKEN=	does not fetch
-DEPRECATED=	has been broken for more than 6 months
-EXPIRATION_DATE=2009-01-19
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -27,7 +22,7 @@ WRKSRC=		${WRKDIR}/CyberCalendar
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	"needs customization and postconfiguration"
+NO_PACKAGE=	needs customization and postconfiguration
 
 DOC_FILES=	README INSTALL INSTALL.NOSITEPERL TODO CHANGES COPYING
 SCRIPT_FILES=	calendar/index.pl calendar/optionform.pl calendar/pda.pl \
