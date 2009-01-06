@@ -60,10 +60,6 @@ MOZ_OPTIONS+=	--enable-glitz
 LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=		core dumps on ${ARCH} during post-build
-.endif
-
 .if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
 IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif

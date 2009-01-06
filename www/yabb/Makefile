@@ -39,10 +39,6 @@ ISOFILES=	Setup.pl Admin/ManageTemplates.pl Languages/English/Admin.lng \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600021 && ( ${OSVERSION} < 504102 || ${OSVERSION} > 599999 )
-RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
-.endif
-
 post-extract:
 	@${RM} -rf ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
 	@${CHMOD} -R a=,u+rwX ${WCGI}/*

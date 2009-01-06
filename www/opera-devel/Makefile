@@ -42,10 +42,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${OSVERSION} >= 700000
 OPERA_TYPE=	7
-.elif ${OSVERSION} >= 600000
+.else 
 OPERA_TYPE=	6
-.else
-IGNORE=		is only supported on FreeBSD 6.x and higher
 .endif
 
 .if !defined(WITHOUT_ASPELL)

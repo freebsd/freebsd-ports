@@ -245,7 +245,7 @@ storage_schemes=	ufs diskd null
 storage_schemes+=	aufs
 # Only document switching from libpthread to libthr using libmap.conf
 # where lipthread is the default threading library:
-.if (${OSVERSION} >= 501000) && (${OSVERSION} < 700041)
+.if ${OSVERSION} < 700041
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
@@ -324,22 +324,9 @@ CONFIGURE_ARGS+=	--enable-ipfw-transparent
 .endif
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
-.if ${OSVERSION} < 502106
-IGNORE=		pf available only in FreeBSD 5.3 and newer
 .endif
-.endif
-# IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
-# they were not installed on FreeBSD 5 from 2002-03-26 (OSVERSION > 500032) to
-# 2003-06-27 (OSVERSION < 501101).
-#
-# Please see PR misc/44148 and the CVS log of src/include/Makefile for further
-# information.
 .if defined(WITH_SQUID_IPFILTER)
-.if (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
-IGNORE=		the IPFilter headers are not part of the base system
-.else
 CONFIGURE_ARGS+=	--enable-ipf-transparent
-.endif
 .endif
 .if defined(WITH_SQUID_ICAP)
 CONFIGURE_ARGS+=	--enable-icap-client

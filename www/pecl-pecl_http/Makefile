@@ -40,13 +40,7 @@ CONFIGURE_ARGS+=--without-http-curl-requests
 .endif
 
 .if defined(WITH_MAGIC_MIME)
-.	if ${OSVERSION} < 502128
-LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
-MAGICBASE=	${LOCALBASE}
-.	else
-MAGICBASE=	/usr
-.	endif
-CONFIGURE_ARGS+=--with-http-magic-mime=${MAGICBASE}
+CONFIGURE_ARGS+=--with-http-magic-mime=/usr
 .else
 CONFIGURE_ARGS+=--without-http-magic-mime
 .endif

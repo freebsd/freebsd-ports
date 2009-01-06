@@ -39,10 +39,6 @@ MAKEFILE=	GNUmakefile
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=	Does not build
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
