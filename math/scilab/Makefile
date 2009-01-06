@@ -12,7 +12,7 @@ CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	js@jeannot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Matlab clone by INRIA & ENPC
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
