@@ -186,7 +186,7 @@ CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if defined(WITH_REMOTE_OSD)
-LIB_DEPENDS+=	gcrypt.15:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-remoteosd
 .else
 CONFIGURE_ARGS+=--disable-remoteosd

@@ -16,7 +16,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
-LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth:${PORTSDIR}/devel/pth

@@ -152,7 +152,7 @@ CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
 .if exists(${LOCALBASE}/lib/libgcrypt.so) || defined(WITH_LIBGCRYPT)
-LIB_DEPENDS+=	gcrypt.15:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 .endif
 

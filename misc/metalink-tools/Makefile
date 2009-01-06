@@ -7,6 +7,7 @@
 
 PORTNAME=	metalink
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	metalinks
@@ -15,7 +16,7 @@ PKGNAMESUFFIX?=	-tools
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Metalink generation tool
 
-LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		boost_filesystem.4:${PORTSDIR}/devel/boost \
 		boost_program_options.4:${PORTSDIR}/devel/boost \
 		boost_regex.4:${PORTSDIR}/devel/boost

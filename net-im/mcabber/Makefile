@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-aspell
 
 .if defined(WITH_OTR)
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr \
-		gcrypt.15:${PORTSDIR}/security/libgcrypt
+		gcrypt.16:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
 .else
 CONFIGURE_ARGS+=--disable-otr

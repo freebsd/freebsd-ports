@@ -8,6 +8,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	0.2.28
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/${PORTNAME}/releases/
@@ -17,7 +18,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
-		gcrypt.15:${PORTSDIR}/security/libgcrypt \
+		gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
