@@ -20,6 +20,8 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 
+ALL_TARGET=	astmanproxy
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^CONFDIR:.*|CONFDIR := ${PREFIX}/etc/asterisk|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|^CONFDIR_REAL.*|CONFDIR_REAL := ${PREFIX}/etc/asterisk|' ${WRKSRC}/Makefile
