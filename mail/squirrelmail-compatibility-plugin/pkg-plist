@@ -21,6 +21,8 @@
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.14/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.15/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.16/index.php
+%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.17/index.php
+%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.18/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.2/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.3/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.4/index.php
@@ -72,6 +74,8 @@
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.4
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.3
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.2
+@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.18
+@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.17
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.16
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.15
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.14
