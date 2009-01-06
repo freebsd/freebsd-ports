@@ -420,6 +420,8 @@ am-aspell                       ports/textproc/am-aspell
 am-utils                        ports/sysutils/am-utils
 amanda-client                   ports/misc/amanda-client
 amanda-server                   ports/misc/amanda-server
+amanda25-client                 ports/misc/amanda25-client
+amanda25-server                 ports/misc/amanda25-server
 amanith                         ports/graphics/amanith
 amap                            ports/security/amap
 amarok                          ports/audio/amarok
@@ -9206,6 +9208,7 @@ nullpop                         ports/mail/nullpop
 numchar                         ports/misc/numchar
 numdiff                         ports/math/numdiff
 numlockx                        ports/x11/numlockx
+numptyphysics                   ports/games/numptyphysics
 nunnimcax                       ports/textproc/nunnimcax
 nurbs++                         ports/graphics/nurbs++
 nusoap                          ports/net/nusoap
