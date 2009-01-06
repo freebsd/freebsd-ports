@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.6.3
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -33,20 +32,22 @@ USE_AUTOTOOLS=	libtool:15
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-included-lzo --disable-guile
+CONFIGURE_ARGS+=	--disable-guile
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
-.if (defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.10)) && !defined(WITHOUT_OPENCDK)
-LIB_DEPENDS+=	opencdk.10:${PORTSDIR}/security/opencdk
-.else
-CONFIGURE_ARGS+=	--with-included-opencdk
-.endif
 
 .if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)) && !defined(WITHOUT_LIBTASN1)
 LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 .else
 CONFIGURE_ARGS+=	--with-included-libtasn1
+.endif
+
+.if (defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo2.so)) && !defined(WITHOUT_LZO)
+LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
+CONFIGURE_ARGS+=	--with-lzo
+.else
+CONFIGURE_ARGS+=	--with-lzo=no
 .endif
 
 .if ${OSVERSION} < 600000
