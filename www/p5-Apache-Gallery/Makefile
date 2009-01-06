@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	http://apachegallery.dk/download/ \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PORTSUBVER}
 
-MAINTAINER=	kvs@pil.dk
+MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
@@ -27,7 +28,7 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
 .else
