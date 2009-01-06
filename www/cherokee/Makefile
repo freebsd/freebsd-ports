@@ -7,7 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.11.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.11/${PORTVERSION}/ \
 		LOCAL/beech
