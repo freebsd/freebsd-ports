@@ -8,8 +8,7 @@
 PORTNAME=	flash
 PORTVERSION=	0.9.5
 CATEGORIES=	shells
-MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
-		ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
+MASTER_SITES=	http://www.sourcefiles.org/Shells/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ncurses-based restriction shell
