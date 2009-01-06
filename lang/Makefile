@@ -88,7 +88,6 @@
     SUBDIR += gcc34
     SUBDIR += gcc41
     SUBDIR += gcc42
-    SUBDIR += gcc42-withgcjawt
     SUBDIR += gcc43
     SUBDIR += gcc44
     SUBDIR += gcl
