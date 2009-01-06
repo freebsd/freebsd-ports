@@ -1,8 +1,7 @@
---- pre.mk	2008-03-29 14:41:03.000000000 -0500
-+++ pre.mk	2008-05-20 10:56:16.000000000 -0500
-@@ -1,53 +1,28 @@
--# detect system architecture: i386, x86_64, or PPC/PPC64
-+# detect system architecture: i386, amd64, or PPC/PPC64
+--- pre.mk.orig	2008-12-14 22:42:29.000000000 -0500
++++ pre.mk	2008-12-14 23:37:19.000000000 -0500
+@@ -1,45 +1,28 @@
+ # detect system architecture: i386, x86_64, or PPC/PPC64
  UNAME = $(shell uname -m)
 -ifeq ("$(UNAME)","x86_64")
 +ifeq ("$(UNAME)","amd64")
@@ -24,47 +23,37 @@
    CPU = PPC
 -  ARCH = 32BITS
 +  ARCH_DETECTED = 32BITS
+   NO_ASM = 1
  endif
  ifeq ("$(UNAME)","ppc64")
    CPU = PPC
 -  ARCH = 64BITS
 +  ARCH_DETECTED = 64BITS
+   NO_ASM = 1
  endif
  
--# find installed assembler: yasm or nasm
--ifneq ("$(shell which yasm 2>&1 | head -c 9)", "which: no")
--  ASM=yasm
--else
--  ifneq ("$(shell which nasm 2>&1 | head -c 9)", "which: no")
--    ASM=nasm
--  else
--    # throw error
--    $(error No yasm or nasm found!)
--  endif
--endif
 -
 -# test for presence of SDL
--ifeq ("$(shell which sdl-config 2>&1 | head -c 9)", "which: no")
+-ifeq ($(shell which sdl-config 2>/dev/null),)
 -  # throw error
 -  $(error No SDL development libraries found!)
 -endif
 -
 -# test for presence of GTK 2.0
--ifeq ("$(shell which pkg-config 2>&1 | head -c 9)", "which: no")
+-ifeq ($(shell which pkg-config 2>/dev/null),)
 -  # throw error
--  $(error No GTK 2.x development libraries found!)
+-  $(error pkg-config not installed!)
 -endif
 -ifneq ("$(shell pkg-config gtk+-2.0 --modversion | head -c 2)", "2.")
 -  # throw error
 -  $(error No GTK 2.x development libraries found!)
 -endif
-+# set assembler program
-+ASM	?=	$(LOCALBASE)/bin/nasm
- 
+-
  # set GTK flags and libraries
- GTK_FLAGS	= `pkg-config gtk+-2.0 --cflags` -D_GTK2
-@@ -55,36 +30,36 @@
- GTHREAD_LIBS	= `pkg-config gthread-2.0 --libs`
+ GTK_FLAGS	= $(shell pkg-config gtk+-2.0 --cflags) -D_GTK2
+ GTK_LIBS	= $(shell pkg-config gtk+-2.0 --libs)
+@@ -74,36 +57,36 @@
+ 
  
  # set base program pointers and flags
 -CC      = gcc
@@ -80,7 +69,7 @@
 -INSTALL = ginstall
 +CC      ?= gcc
 +CXX     ?= g++
-+LD      ?= $(CXX)
++LD      ?= g++
 +STRIP   ?= strip --strip-all
 +RM      ?= rm
 +MV      ?= mv
@@ -92,9 +81,8 @@
  
  # set base CFLAGS and LDFLAGS for all systems
 -CFLAGS = -pipe -O3 -ffast-math -funroll-loops -fexpensive-optimizations -fno-strict-aliasing
--LDFLAGS =
 +CFLAGS += -ffast-math -funroll-loops -fexpensive-optimizations -fno-strict-aliasing
-+LDFLAGS +=
+ LDFLAGS =
  
  # set special flags per-system
  ifeq ($(CPU), X86)
@@ -119,21 +107,21 @@
    endif
  endif
  ifeq ($(CPU), PPC)
-@@ -105,8 +80,8 @@
+@@ -129,8 +112,8 @@
  
  # set CFLAGS, LIBS, and LDFLAGS for external dependencies
  
--SDL_FLAGS	= `sdl-config --cflags`
--SDL_LIBS	= `sdl-config --libs`
+-SDL_FLAGS	= $(shell sdl-config --cflags)
+-SDL_LIBS	= $(shell sdl-config --libs)
 +SDL_FLAGS	= `${SDL_CONFIG} --cflags`
 +SDL_LIBS	= `${SDL_CONFIG} --libs`
  
- AVIFILE_FLAGS	= `avifile-config --cflags`
- AVIFILE_LIBS	= `avifile-config --libs`
-@@ -116,5 +91,5 @@
+ ifeq ($(VCR), 1)
+   # test for presence of avifile
+@@ -148,5 +131,5 @@
  
  PLUGIN_LDFLAGS	= -Wl,-Bsymbolic -shared
  
--LIBGL_LIBS	= -L/usr/X11R6/lib -lGL
-+LIBGL_LIBS	= -L${LOCALBASE}/lib -lGL
+-LIBGL_LIBS	= -L/usr/X11R6/lib -lGL -lGLU
++LIBGL_LIBS	= -L${LOCALBASE}/lib -lGL -lGLU
  

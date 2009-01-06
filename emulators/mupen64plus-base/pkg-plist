@@ -9,6 +9,7 @@ bin/mupen64plus
 %%DATADIR%%/lang/italian.lng
 %%DATADIR%%/lang/pt_BR.lng
 %%DATADIR%%/lang/spanish.lng
+%%DATADIR%%/lang/swedish.lng
 %%DATADIR%%/icons/australia.png
 %%DATADIR%%/icons/configure-small.png
 %%DATADIR%%/icons/configure.png
@@ -21,6 +22,7 @@ bin/mupen64plus
 %%DATADIR%%/icons/input.png
 %%DATADIR%%/icons/italy.png
 %%DATADIR%%/icons/japan.png
+%%DATADIR%%/icons/japanusa.png
 %%DATADIR%%/icons/logo.png
 %%DATADIR%%/icons/logo.xpm
 %%DATADIR%%/icons/messagebox-error.png
@@ -42,7 +44,6 @@ bin/mupen64plus
 %%DATADIR%%/icons/usa.png
 %%PORTDOCS%%%%DOCSDIR%%/README.vcr
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
-%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%/config
