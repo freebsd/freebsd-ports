@@ -20,7 +20,6 @@
     SUBDIR += diablo-jre15
     SUBDIR += diablo-jre16
     SUBDIR += drexelsnmp
-    SUBDIR += ecj-bootstrap
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-RDT
@@ -57,7 +56,6 @@
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
     SUBDIR += gj
-    SUBDIR += gjdoc
     SUBDIR += gnu-regexp
     SUBDIR += guavac
     SUBDIR += infobus
