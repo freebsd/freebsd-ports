@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -19,7 +19,7 @@ COMMENT=	The GNU Privacy Guard
 
 BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan \
 		libksba>=1.0.2:${PORTSDIR}/security/libksba
-LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth

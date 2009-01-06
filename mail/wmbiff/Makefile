@@ -33,7 +33,7 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}

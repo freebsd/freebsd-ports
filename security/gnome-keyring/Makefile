@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.22.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ COMMENT=	A program that keeps passwords and other secrets
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 		tasn1.3:${PORTSDIR}/security/libtasn1 \
-    		gcrypt.15:${PORTSDIR}/security/libgcrypt
+    		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack intlhack gconf2
