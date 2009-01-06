@@ -8,12 +8,13 @@
 PORTNAME=	md5coll
 DISTVERSION=	0.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.stachliu.com/
+MASTER_SITES=	http://www.stachliu.com/ \
+		http://mirror.roe.ch/dist/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel@roe.ch
 COMMENT=	Fast MD5 collision generator
 
 ONLY_FOR_ARCHS=	i386
