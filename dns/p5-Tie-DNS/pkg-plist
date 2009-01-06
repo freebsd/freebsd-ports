@@ -1,13 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS/.packlist
 %%SITE_PERL%%/Tie/DNS.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example3.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example4.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example5.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example6.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/example7.pl
 @dirrmtry %%SITE_PERL%%/Tie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
