@@ -235,7 +235,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>xterm</name>
-	<range><gt>0</gt></range>
+	<range><lt>238</lt></range>
       </package>
     </affects>
     <description>
@@ -259,6 +259,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-12-28</discovery>
       <entry>2009-01-05</entry>
+      <modified>2009-01-06</modified>
     </dates>
   </vuln>
 
