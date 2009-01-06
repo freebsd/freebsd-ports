@@ -1,5 +1,5 @@
---- glide64/Makefile	2008-03-29 14:41:03.000000000 -0500
-+++ glide64/Makefile	2008-05-20 11:01:10.000000000 -0500
+--- glide64/Makefile	2008-10-13 21:31:47.000000000 -0500
++++ glide64/Makefile	2008-12-15 01:10:56.000000000 -0500
 @@ -4,7 +4,7 @@
  include ../pre.mk
  
@@ -9,15 +9,14 @@
    BITS=64
    MOPT=-m amd64
  else
-@@ -13,15 +13,16 @@
+@@ -13,15 +13,15 @@
  endif
  
  # local CFLAGS, LIBS, and LDFLAGS
--CFLAGS = -O2 -Wall -g -DGCC -DUSE_GTK $(SDL_CFLAGS) $(GTK_FLAGS) -Iwrapper/ -ffast-math -funroll-loops
+-CFLAGS = -O3 -Wall -g -DGCC -DUSE_GTK $(SDL_CFLAGS) $(GTK_FLAGS) -Iwrapper/ -ffast-math -funroll-loops
 -LDFLAGS	= -shared -Wl,-Bsymbolic -lGL -lGLU -L/usr/X11R6/lib $(SDL_LIBS)
 +CFLAGS += -DGCC -DUSE_GTK $(SDL_CFLAGS) $(GTK_FLAGS) -Iwrapper/ -ffast-math -funroll-loops
 +LDFLAGS	+= -shared -Wl,-Bsymbolic -lGL -lGLU -L${LOCALBASE}/lib $(SDL_LIBS)
-+LD = $(CXX)
  
  # set special flags per-system
  ifeq ($(CPU), X86)
@@ -27,11 +26,11 @@
 +    CFLAGS += -fPIC
    else
 -    CFLAGS += -march=i686 -mtune=pentium-m -mmmx -msse
-+    CFLAGS += 
++    CFLAGS += -mmmx -msse
      ifneq ($(PROFILE), 1)
      ifneq ($(VPDEBUG), 1)
        CFLAGS += -fomit-frame-pointer
-@@ -29,9 +30,9 @@
+@@ -29,9 +29,9 @@
      endif
    endif
    # tweak flags for 32-bit build on 64-bit system
@@ -44,14 +43,21 @@
    endif
  endif
  ifeq ($(CPU), PPC)
-@@ -129,9 +130,7 @@
- cursor.h: compiletex
- 	./compiletex cursor.tex cursor.h cursor
+@@ -122,7 +122,7 @@
+ all: $(TARGET)
  
--compiletex: compiletex.c
--	@rm -f compiletex compiletex.o
--	$(CC) -o compiletex.o -c $<
-+compiletex: compiletex.o
- 	$(LD) -o $@ compiletex.o
+ $(TARGET): $(OBJECTS)
+-	$(LD) $(OBJECTS) $(GTK_LIBS) $(LDFLAGS) -o $@
++	$(CC) $(OBJECTS) $(LDFLAGS) $(GTK_LIBS) -o $@
+ 	$(STRIP) --strip-all $@
  
- Tmem_nasm.o: Tmem_nasm.asm
+ Main.o: font.h cursor.h
+@@ -135,7 +135,7 @@
+ compiletex: compiletex.c
+ 	@rm -f compiletex compiletex.o
+ 	$(CC) -o compiletex.o -c $<
+-	$(LD) -o $@ compiletex.o
++	$(CC) -o $@ compiletex.o
+ 
+ rdp.o: ucode06.h
+ 

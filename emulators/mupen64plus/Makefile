@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mupen64plus
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -21,7 +20,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mupen64plus:${PORTSDIR}/emulators/mupen64plus-bas
 
 # Audio plugins
 RUN_DEPENDS+=	${PLUGINDIR}/dummyaudio.so:${PORTSDIR}/emulators/mupen64plus-dummyaudio
-RUN_DEPENDS+=	${PLUGINDIR}/mupen64_audio.so:${PORTSDIR}/emulators/mupen64plus-sound
 RUN_DEPENDS+=	${PLUGINDIR}/jttl_audio.so:${PORTSDIR}/emulators/mupen64plus-sdlaudio
 
 # Input plugins

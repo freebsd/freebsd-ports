@@ -1,17 +1,20 @@
 USE_DOS2UNIX=		*.c *.cpp *.h *.H *.ini *.conf
 
-DISTNAME=		${PORTNAME:S/m/M/:S/pl/Pl/}-${PORTVERSION:S/./-/}-src
+DISTNAME=		${PORTNAME:S/m/M/:S/pl/Pl/}-${PORTVERSION:S/./-/g}-src
 PATCHDIR=		${.CURDIR}/files
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 
 EXTRACT_AFTER_ARGS=	"${DISTNAME}/Makefile" ${DISTNAME}/pre.mk ${DISTNAME}/release.mk \
-				"${DISTNAME}/config/*" "${DISTNAME}/main/*" "${DISTNAME}/plugins/*"
+				"${DISTNAME}/config/*" "${DISTNAME}/main/*" "${DISTNAME}/plugins/*" \
+					"${DISTNAME}/opengl/*"
 
 .if ${PKGNAMESUFFIX} == "-base"
 USE_GL=		yes
 USE_SDL=	sdl
+
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .	if defined(HAVE_VCR)
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
+LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 MAKE_ENV+=	VCR=1
 .	endif
 .	if defined(HAVE_NOGUI)
@@ -21,6 +24,7 @@ MAKE_ENV+=	NOGUI_ONLY=1
 ALL_TARGET=		mupen64plus
 EXTRACT_AFTER_ARGS+=	"${DISTNAME}/RELEASE" "${DISTNAME}/README.vcr" "${DISTNAME}/doc/*" "${DISTNAME}/lang/*" \
 				"${DISTNAME}/icons/*" "${DISTNAME}/memory/*" "${DISTNAME}/r4300/*" "${DISTNAME}/debugger/*"
+MAN1=			mupen64plus.1
 .else
 EXTRA_PATCHES?=		${.CURDIR}/../mupen64plus-base/files/patch-Makefile \
 			${.CURDIR}/../mupen64plus-base/files/patch-pre.mk
@@ -86,6 +90,11 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/${f}
 .endfor
 
+post-extract:
+.if ${PKGNAMESUFFIX} == "-base"
+	${GUNZIP_CMD} ${WRKSRC}/doc/${MAN1}.gz
+.endif
+
 .if ${PKGNAMESUFFIX} != "-base"
 pre-install:
 	@${RM} -f ${PLIST}
@@ -135,11 +144,13 @@ do-install:
 	@${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
 
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${PREFIX}/man/man1/
+
+
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/RELEASE ${DOCSDIR}/RELEASE
 		${INSTALL_DATA} ${WRKSRC}/README.vcr ${DOCSDIR}/README.vcr
-		${INSTALL_DATA} ${WRKSRC}/doc/readme.pdf ${DOCSDIR}/readme.pdf
 .	endif
 .else
 	@${MKDIR} ${DATADIR}/plugins
