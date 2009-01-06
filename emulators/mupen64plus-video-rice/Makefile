@@ -12,8 +12,6 @@ COMMENT=	The rice graphics plugin for Mupen64plus
 USE_GL=		yes
 USE_SDL=	sdl
 
-#USE_GCC=	4.1+
-
 FIXFILES=	rice_video/liblinux/BMGImage.c rice_video/liblinux/BMGUtils.c
 
 PLUGIN_NAME=	ricevideo
