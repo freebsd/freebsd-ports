@@ -88,10 +88,15 @@ MAN3=	\
 	gnutls_compression_set_priority.3 \
 	gnutls_credentials_clear.3 \
 	gnutls_credentials_set.3 \
-	gnutls_crypto_cipher_register.3 \
-	gnutls_crypto_digest_register.3 \
-	gnutls_crypto_mac_register.3 \
-	gnutls_crypto_rnd_register.3 \
+	gnutls_crypto_bigint_register2.3 \
+	gnutls_crypto_cipher_register2.3 \
+	gnutls_crypto_digest_register2.3 \
+	gnutls_crypto_mac_register2.3 \
+	gnutls_crypto_pk_register2.3 \
+	gnutls_crypto_rnd_register2.3 \
+	gnutls_crypto_single_cipher_register2.3 \
+	gnutls_crypto_single_digest_register2.3 \
+	gnutls_crypto_single_mac_register2.3 \
 	gnutls_db_check_entry.3 \
 	gnutls_db_get_ptr.3 \
 	gnutls_db_remove_session.3 \
@@ -117,6 +122,7 @@ MAN3=	\
 	gnutls_dh_set_prime_bits.3 \
 	gnutls_error_is_fatal.3 \
 	gnutls_error_to_alert.3 \
+	gnutls_ext_register.3 \
 	gnutls_extra_check_version.3 \
 	gnutls_fingerprint.3 \
 	gnutls_free.3 \
@@ -240,6 +246,9 @@ MAN3=	\
 	gnutls_pem_base64_encode_alloc.3 \
 	gnutls_perror.3 \
 	gnutls_pk_algorithm_get_name.3 \
+	gnutls_pk_get_id.3 \
+	gnutls_pk_get_name.3 \
+	gnutls_pk_list.3 \
 	gnutls_pkcs12_bag_decrypt.3 \
 	gnutls_pkcs12_bag_deinit.3 \
 	gnutls_pkcs12_bag_encrypt.3 \
@@ -309,6 +318,7 @@ MAN3=	\
 	gnutls_record_recv.3 \
 	gnutls_record_send.3 \
 	gnutls_record_set_max_size.3 \
+	gnutls_register_md5_handler.3 \
 	gnutls_rehandshake.3 \
 	gnutls_rsa_export_get_modulus_bits.3 \
 	gnutls_rsa_export_get_pubkey.3 \
@@ -332,12 +342,16 @@ MAN3=	\
 	gnutls_session_get_server_random.3 \
 	gnutls_session_is_resumed.3 \
 	gnutls_session_set_data.3 \
+	gnutls_session_set_finished_function.3 \
 	gnutls_session_set_ptr.3 \
 	gnutls_set_default_export_priority.3 \
 	gnutls_set_default_priority.3 \
 	gnutls_sign_algorithm_get_name.3 \
 	gnutls_sign_callback_set.3 \
 	gnutls_sign_callback_get.3 \
+	gnutls_sign_get_id.3 \
+	gnutls_sign_get_name.3 \
+	gnutls_sign_list.3 \
 	gnutls_srp_allocate_client_credentials.3 \
 	gnutls_srp_allocate_server_credentials.3 \
 	gnutls_srp_base64_decode.3 \
@@ -349,10 +363,12 @@ MAN3=	\
 	gnutls_srp_server_get_username.3 \
 	gnutls_srp_set_client_credentials.3 \
 	gnutls_srp_set_client_credentials_function.3 \
+	gnutls_srp_set_prime_bits.3 \
 	gnutls_srp_set_server_credentials_file.3 \
 	gnutls_srp_set_server_credentials_function.3 \
 	gnutls_srp_verifier.3 \
 	gnutls_strerror.3 \
+	gnutls_strerror_name.3 \
 	gnutls_transport_get_ptr.3 \
 	gnutls_transport_get_ptr2.3 \
 	gnutls_transport_set_errno.3 \
@@ -411,6 +427,7 @@ MAN3=	\
 	gnutls_x509_crq_set_challenge_password.3 \
 	gnutls_x509_crq_set_dn_by_oid.3 \
 	gnutls_x509_crq_set_key.3 \
+	gnutls_x509_crq_set_key_rsa_raw.3 \
 	gnutls_x509_crq_set_version.3 \
 	gnutls_x509_crq_sign.3 \
 	gnutls_x509_crq_sign2.3 \
@@ -454,6 +471,7 @@ MAN3=	\
 	gnutls_x509_crt_set_basic_constraints.3 \
 	gnutls_x509_crt_set_ca_status.3 \
 	gnutls_x509_crt_set_crl_dist_points.3 \
+	gnutls_x509_crt_set_crl_dist_points2.3 \
 	gnutls_x509_crt_set_dn_by_oid.3 \
 	gnutls_x509_crt_set_expiration_time.3 \
 	gnutls_x509_crt_set_extension_by_oid.3 \
@@ -464,6 +482,7 @@ MAN3=	\
 	gnutls_x509_crt_set_proxy.3 \
 	gnutls_x509_crt_set_proxy_dn.3 \
 	gnutls_x509_crt_set_serial.3 \
+	gnutls_x509_crt_set_subject_alt_name.3 \
 	gnutls_x509_crt_set_subject_alternative_name.3 \
 	gnutls_x509_crt_set_subject_key_id.3 \
 	gnutls_x509_crt_sign2.3 \
@@ -490,16 +509,16 @@ MAN3=	\
 	gnutls_x509_rdn_get.3 \
 	gnutls_x509_rdn_get_by_oid.3 \
 	gnutls_x509_rdn_get_oid.3 \
-        gnutls_alert_get.3 \
-        gnutls_certificate_get_peers.3 \
-        gnutls_x509_crt_check_revocation.3 \
-        gnutls_x509_crt_get_ca_status.3 \
-        gnutls_x509_crt_get_extension_by_oid.3 \
-        gnutls_x509_crt_get_subject.3 \
+	gnutls_alert_get.3 \
+	gnutls_certificate_get_peers.3 \
+	gnutls_x509_crt_check_revocation.3 \
+	gnutls_x509_crt_get_ca_status.3 \
+	gnutls_x509_crt_get_extension_by_oid.3 \
+	gnutls_x509_crt_get_subject.3 \
 	gnutls_x509_crt_get_issuer.3 \
 	gnutls_x509_crt_init.3 \
-        gnutls_x509_crt_set_crq.3 \
-        gnutls_x509_crt_set_version.3 \
-        gnutls_x509_crt_sign.3 \
-        gnutls_x509_crt_verify_data.3 \
+	gnutls_x509_crt_set_crq.3 \
+	gnutls_x509_crt_set_version.3 \
+	gnutls_x509_crt_sign.3 \
+	gnutls_x509_crt_verify_data.3 \
 	gnutls_x509_dn_get_rdn_ava.3
