@@ -14,6 +14,8 @@ DISTNAME=	rain-${PORTVERSION}
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	The original BSD rain program, ported from NetBSD
 
+BROKEN=		unfetchable
+
 MAN6=		rain.6
 MANCOMPRESSED=	yes
 
