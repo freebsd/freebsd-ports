@@ -38,10 +38,4 @@ post-install:
 	@for i in ${PREFIX}/etc/xneur/*.dist ;\
 		do ${CP} -np $$i $${i%.dist}; done
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not compile on FreeBSD 5.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

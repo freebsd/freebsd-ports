@@ -26,13 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

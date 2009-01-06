@@ -21,15 +21,9 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504000
-IGNORE=		earlier FreeBSD versions then 5.4-RELEASE are not supported
-.endif
-
 do-install:
 	@ ${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} . -type f -print | tar -cf - -T - | \
 	tar -xf - -C ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

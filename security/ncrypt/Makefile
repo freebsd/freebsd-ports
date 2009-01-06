@@ -21,14 +21,8 @@ USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
 
 PLIST_FILES=	bin/ncrypt bin/nrm
 
-.include <bsd.port.pre.mk>
-
 post-configure:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS) =,\1 \?=,g' \
 		${WRKSRC}/Makefile
-.if (${OSVERSION} < 501000)
-	@${REINPLACE_CMD} -e 's,ifndef WIN32,if (!defined(__FreeBSD__)),g' \
-		${WRKSRC}/ncrypt.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

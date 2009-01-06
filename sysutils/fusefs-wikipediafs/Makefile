@@ -23,12 +23,6 @@ USE_PYDISTUTILS=yes
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mount.${PORTNAME}.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/doc/*gz
 
@@ -43,4 +37,4 @@ post-install:
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,10 +23,6 @@ PLIST_FILES=	bin/fuser
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		src/sys/fs/devfs/devfs_int.h does not exist before OSVERSION 600000
-.endif
-
 .if ${OSVERSION} >= 800000
 BROKEN=		does not compile
 .endif

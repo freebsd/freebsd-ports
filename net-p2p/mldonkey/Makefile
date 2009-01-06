@@ -37,6 +37,8 @@ CONFIGURE_ENV+=	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+# FreeBSD has reentrant dns code
+PTHREAD_CFLAGS+=	-D_REENTRANT
 
 ###
 ## Library dependency handling
@@ -108,11 +110,6 @@ ALL_TARGET+=	\
 		mld_hash
 
 .include <bsd.port.pre.mk>
-
-# FreeBSD has reentrant dns code
-.if ( ((${OSVERSION} >= 504102) && (${OSVERSION} < 600000)) || (${OSVERSION} >= 600029) )
-PTHREAD_CFLAGS+=	-D_REENTRANT
-.endif
 
 ### Development version
 ## Thus, we will use non standard threading library

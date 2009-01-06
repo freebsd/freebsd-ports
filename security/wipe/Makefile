@@ -20,11 +20,7 @@ GNU_CONFIGURE=	yes
 MAN1=		wipe.1
 PORTDOCS=	CHANGES INSTALL LICENSE README TESTING TODO copyright
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500039
 EXTRA_PATCHES=	${PATCHDIR}/500040-patch-blkdev.c
-.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/wipe.1 ${PREFIX}/man/man1
@@ -35,4 +31,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

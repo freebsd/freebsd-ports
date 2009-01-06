@@ -26,13 +26,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.i386
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-IGNORE_POST_INSTALL=	I
-.endif
-
 do-install:
-	${PKG_ADD} -R${IGNORE_POST_INSTALL} ${WRKSRC}/${PKGNAME}_${PORTREVISION}.tgz
+	${PKG_ADD} -RI ${WRKSRC}/${PKGNAME}_${PORTREVISION}.tgz
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

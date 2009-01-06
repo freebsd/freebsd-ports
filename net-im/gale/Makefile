@@ -32,12 +32,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500039
-CFLAGS+=	-DNEED_WCWIDTH
-.endif
-
 # cheesy hack - test-oop doesn't build, but we don't care.
 pre-configure:
 	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
@@ -46,4 +40,4 @@ pre-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

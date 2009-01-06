@@ -29,10 +29,6 @@ USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile
-.endif
-
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
 BROKEN=		Does not compile
 .endif

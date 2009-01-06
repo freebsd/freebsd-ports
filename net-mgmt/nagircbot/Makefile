@@ -19,10 +19,4 @@ USE_RC_SUBR=	nagircbot
 
 PLIST_FILES=	bin/nagircbot
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=	need at least FreeBSD-6
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

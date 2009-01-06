@@ -15,6 +15,11 @@ MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 MAINTAINER=	mva@sysfault.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar/star
 
+# FreeBSD 6.0 removed gtar
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+
+TAR_CMD=	${PREFIX}/bin/gtar
+
 MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
 
 USE_PERL5=	yes
@@ -28,17 +33,6 @@ OPTIONS=	AFIO	"Enable afio support" Off \
 		ZIP	"Enable zip support" Off
 
 .include <bsd.port.pre.mk>
-
-# Releases previous to 5.3 do not need a special gtar handling as GNU tar
-# is the default here. >= 503001 to < 60022 have GNU tar renamed to gtar
-# under circumstances, thus rely on gtar here. 600022 removed gtar.
-TAR_CMD=	/usr/bin/tar
-.if ${OSVERSION} >= 600022
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-TAR_CMD=	${PREFIX}/bin/gtar
-.elif ${OSVERSION} >= 503001 && ${OSVERSION} < 600022
-TAR_CMD=	/usr/bin/gtar
-.endif
 
 .if defined(WITH_AFIO)
 RUN_DEPENDS+=	afio:${PORTSDIR}/sysutils/afio

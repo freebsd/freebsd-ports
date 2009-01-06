@@ -4,6 +4,3 @@ SIZE (cli_freebsd6_x64_v5_30_17509.tar.gz) = 726757
 MD5 (cli_freebsd6_x86_v5_30_17509.tar.gz) = dcf16294f5c96c5769df5629d4bee5a0
 SHA256 (cli_freebsd6_x86_v5_30_17509.tar.gz) = f82d1f180e82b72c3c38857be393580d71257a3189fecc28bdffb7f12194b612
 SIZE (cli_freebsd6_x86_v5_30_17509.tar.gz) = 682641
-MD5 (cli_freebsd5_x86_v5_30_17509.tar.gz) = 5be1c4ab1742459637d9bfa3f5d7ac61
-SHA256 (cli_freebsd5_x86_v5_30_17509.tar.gz) = 19320b1b4a22c52a5f8ef2f3ced367bc80e11978f8ae457b69b89ce4a7c4be5f
-SIZE (cli_freebsd5_x86_v5_30_17509.tar.gz) = 682674

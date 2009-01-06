@@ -14,12 +14,6 @@ DISTFILES=
 MAINTAINER=	scrappy@freebsd.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503102 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600010)
-RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
-.endif
-
 NO_BUILD=	yes
 
 do-install:
@@ -39,4 +33,4 @@ post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

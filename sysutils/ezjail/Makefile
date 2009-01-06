@@ -18,10 +18,4 @@ USE_BZIP2=	yes
 MAN1=		ezjail-admin.1
 MAN5=		ezjail.5 ezjail.conf.5
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 600000 )
-IGNORE=	nullfs in FreeBSD releases before 6.0 is considered unstable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

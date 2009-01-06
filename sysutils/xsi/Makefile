@@ -35,10 +35,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 600007)
-IGNORE=		is not supported on FreeBSD < 6.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

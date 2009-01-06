@@ -19,6 +19,7 @@ COMMENT?=	Peer-to-peer client with privacy protection and easy search/download
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+USE_GCC=	3.3
 
 USE_PERL5_BUILD=yes
 
@@ -135,10 +136,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 # we cannot install if either a slave or master port is already
 # installed

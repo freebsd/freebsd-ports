@@ -36,10 +36,6 @@ MLINKS=		ntfs-3g.8 mount_ntfs-3g.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 .if defined(WITH_LOCK)
 CFLAGS+=	-DUSE_LOCK
 .endif

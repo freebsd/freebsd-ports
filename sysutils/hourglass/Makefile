@@ -25,15 +25,9 @@ PORTDOCS=	CALIBRATION
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LINUXTHREADS)
-
-.if ${OSVERSION} >= 500035
 PTHREAD_LIBS=	-L${LOCALBASE}/lib -llthread -llgcc_r
 PTHREAD_CFLAGS=	-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
-.else
-LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
-.endif
-
 .endif
 
 post-patch:

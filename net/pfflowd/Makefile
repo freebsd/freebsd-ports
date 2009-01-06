@@ -21,10 +21,6 @@ PLIST_FILES=	sbin/pfflowd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502119
-IGNORE=		only for 5.3 and above
-.endif
-
 .if ${OSVERSION} < 700049
 MAKE_ENV+=	OLD_PFSYNC=1
 EXTRA_PATCHES+=	${FILESDIR}/pf37-pfflowd.c

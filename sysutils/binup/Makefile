@@ -24,7 +24,7 @@ PLIST_DIRS=	libexec/binup
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502010 || ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 700000
 IGNORE=		does not support ${OPSYS}-${OSREL} at this time
 .endif
 

@@ -36,10 +36,6 @@ DIST=		${WRKSRC:H:H}/dist
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	core dumps on alpha during build
-.endif
-
 EXTERNALS=	CVS dbm security/nss/cmd/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
 	${EXTERNALS:C,^,--exclude ${DISTNAME}/mozilla/,}

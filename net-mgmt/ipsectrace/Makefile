@@ -26,10 +26,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipsectrace ${PREFIX}/bin/ipsectrace
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600032
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

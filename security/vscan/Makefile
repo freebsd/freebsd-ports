@@ -33,9 +33,6 @@ USE_LDCONFIG=	YES
 .endif
 
 .if defined(WITHOUT_COMPAT3)
-.if ${OSVERSION} < 501000
-IGNORE=		requires FreeBSD 5.1 or later
-.endif
 .else
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 .endif
@@ -86,7 +83,7 @@ do-install:
 
 post-install:
 	${LN} -sf ${PREFIX}/lib${UVSCAN_LIB32}/libbsdfv.so.4 ${PREFIX}/lib${UVSCAN_LIB32}/libbsdfv.so
-.if defined(WITHOUT_COMPAT3) && ${OSVERSION} >= 501000
+.if defined(WITHOUT_COMPAT3)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "This may affect the system security. Use at your own risk."
 	@${ECHO_CMD} "You need to add the following two lines to your libmap${UVSCAN_LIB32}.conf(5):"

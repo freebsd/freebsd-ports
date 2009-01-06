@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 USE_GMAKE=	yes
 MAKE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
+CFLAGS+=	-DWITH_LONGOPTS
 
 MAN1=		unicornscan.1
 
@@ -26,20 +27,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.pre.mk>
-
-# Check if where building on a 5.3 or older system. Older
-# system require libpcap 0.8.x to be installed.
-
-.if ${OSVERSION} < 503000
-BUILD_DEPENDS+=	${PREFIX}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-.endif
-
-# Systems newer then 502103 include the getopt_long
-# function
-
-.if ${OSVERSION} > 502103
-CFLAGS+=	-DWITH_LONGOPTS
-.endif
 
 post-patch:
 .for text in pkg-message

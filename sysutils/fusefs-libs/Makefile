@@ -26,12 +26,6 @@ CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 TXT_DOCS=	how-fuse-works \
 		kernel.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
 		-e 's,-D_FILE_OFFSET_BITS=64,-D_FILE_OFFSET_BITS=64 ${PTHREAD_CFLAGS},' \
@@ -50,4 +44,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,12 +19,6 @@ PLIST_FILES=	bin/fdupes
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500041)
-CFLAGS+=	-DOMIT_GETOPT_LONG=yes
-.endif
-
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c \
 		-o ${WRKSRC}/${PORTNAME}
@@ -33,4 +27,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

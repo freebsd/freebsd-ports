@@ -169,12 +169,8 @@ CONFIGURE_ARGS+=	--without-utmp
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
 SUB_LIST+=		WINBIND=""
-.	if ${OSVERSION} >= 500112
 WITH_WINBIND_NSS=	yes
 PLIST_SUB+=		WINBIND_NSS=""
-.	else
-PLIST_SUB+=		WINBIND_NSS="@comment "
-.	endif
 .else
 CONFIGURE_ARGS+=	--without-winbind
 PLIST_SUB+=		WINBIND="@comment " WINBIND_NSS="@comment "
@@ -213,9 +209,6 @@ CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 .if defined(WITH_ACL_SUPPORT)
-.if ${OSVERSION} < 500018
-IGNORE=			an ACL support requires 5.1-RELEASE or later. Disable ACL support
-.endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
 CONFIGURE_ARGS+=	--without-acl-support
@@ -405,8 +398,8 @@ pre-configure:
 	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
-# This would speedup compilation for gcc 3.4(available in FreeBSD 5.2) and higher
-.if !defined(WITHOUT_PCH) && ${OSVERSION} >= 502126
+# This would speedup compilation
+.if !defined(WITHOUT_PCH)
 pre-build:
 	cd ${WRKSRC} && ${MAKE} pch
 .endif

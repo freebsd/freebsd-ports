@@ -53,9 +53,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502106
-IGNORE=	is of no use for you because your system is too old and doesn't have pf
-.endif
 .if (${OSVERSION} < 700049) && !defined(I_KNOW_WHAT_I_AM_DOING)
 IGNORE=	needs a patched kernel to work correctly (http://www.openbsd.org/cgi-bin/cvsweb/src/sys/net/pf_table.c.diff?r1=1.67&r2=1.68)
 .endif

@@ -18,10 +18,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 4.x and 5.x
-.endif
-
 .if ${OSVERSION} < 700017
 EXTRA_PATCHES=	${PATCHDIR}/gethostbyaddr-proto-int
 .endif

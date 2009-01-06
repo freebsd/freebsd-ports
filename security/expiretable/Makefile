@@ -16,10 +16,4 @@ COMMENT=	Utility to remove entries from the pf(4) table based on their age
 USE_RC_SUBR=	expiretable
 MAN1=		expiretable.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502106
-IGNORE=		is only for 5.3 and above (requires pf library)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

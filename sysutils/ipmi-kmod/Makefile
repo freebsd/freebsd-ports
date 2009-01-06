@@ -35,13 +35,6 @@ IGNORE=		requires kernel source to be installed
 
 .if exists(${SRC_BASE}/sys/dev/ipmi)
 IGNORE=		is already included in the base system
-.elif ${OSVERSION} < 503000
-IGNORE=		does not support FreeBSD before 5.3
-.endif
-
-# Need to include this extra path on 5.x.
-.if ${OSVERSION} < 600000
-CFLAGS+=	-I@/contrib/dev/acpica
 .endif
 
 do-install:

@@ -42,16 +42,8 @@ MAN5=		audit.log.5		\
 		audit_event.5		\
 		audit_user.5		\
 		audit_warn.5
-MAN8=		auditfilterd.8
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-MAN8+=		audit.8			\
+MAN8=		auditfilterd.8		\
+		audit.8			\
 		auditd.8
 
-PLIST_FILES+=	sbin/audit		\
-		sbin/auditd
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

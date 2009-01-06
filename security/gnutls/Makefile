@@ -50,11 +50,6 @@ CONFIGURE_ARGS+=	--with-lzo
 CONFIGURE_ARGS+=	--with-lzo=no
 .endif
 
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
-.endif
-
 .if defined(WITHOUT_CXX)
 CONFIGURE_ARGS+=	--disable-cxx
 PLIST_SUB+=		CXX="@comment "

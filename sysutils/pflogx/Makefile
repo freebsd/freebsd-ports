@@ -21,10 +21,6 @@ OPTIONS=	EXPAT	"Ability to merge new events (require expat) " Off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		only for 6.0 and above
-.endif
-
 .if defined(WITH_EXPAT)
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 MAKE_ARGS+=	-DWITH_EXPAT \

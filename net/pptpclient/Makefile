@@ -18,13 +18,7 @@ USE_PERL5=	yes
 
 MAN8=		pptp.8
 
-.include <bsd.port.pre.mk>
-
 MAKE_ARGS=	DEBUG=""
-.if ${OSVERSION} < 500041
-MAKE_ARGS+=	INCLUDE="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${PREFIX}/sbin
@@ -33,4 +27,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${PREFIX}/share/examples/pptpclient
 	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

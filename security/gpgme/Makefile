@@ -49,7 +49,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 					${WRKSRC}/lang/cl/Makefile.in
 .if defined(WITH_PTH)
-.if ${OSVERSION} < 503100 || defined(PTHREAD_LIBS) && ${PTHREAD_LIBS} != "-pthread"
+.if defined(PTHREAD_LIBS) && ${PTHREAD_LIBS} != "-pthread"
 	@${REINPLACE_CMD} -e 's|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la -lpthread|g' \
 					${WRKSRC}/tests/gpg/Makefile.in
 .endif

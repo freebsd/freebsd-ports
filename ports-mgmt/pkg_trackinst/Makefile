@@ -16,14 +16,8 @@ USE_PYTHON=	2.3+
 INSTALLS_EGGINFO=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501105
-IGNORE=		requires dynamically-linked base programs
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/PkgTrackInst/cmd_support.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

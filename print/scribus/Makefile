@@ -42,10 +42,6 @@ MANLANG=	"" pl pl_PL.UTF-8 pl_PL.ISO8859-2 de de_DE.UTF-8 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-CXXFLAGS+=	-fpermissive
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
 		s|-O2 ||g ; \

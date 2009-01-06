@@ -21,10 +21,4 @@ PERL_CONFIGURE=	5.8.6+
 
 MAN3=		BSD::Jail::Object.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503100 # ref: jail.h v1.17
-IGNORE=		require xprison structure defined
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

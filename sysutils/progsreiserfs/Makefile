@@ -18,6 +18,9 @@ COMMENT=	Utilities and library to manipulate ReiserFS partitions
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-Werror
+CFLAGS+=	-Dgetopt_long_only=getopt_long
+
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -29,17 +32,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
 		resizefs.reiserfs.8 tunefs.reiserfs.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500041
-CFLAGS+=	-Dgetopt_long_only=getopt_long
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^LIBTOOL=.*|LIBTOOL=${LIBTOOL}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|sys/int_types.h|inttypes.h|' \
 		${WRKSRC}/libreiserfs/tools.c ${WRKSRC}/include/reiserfs/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -47,11 +47,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 			LIBS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-plugins
 
-.if ${OSVERSION} < 502111
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
-.endif
-
 .if !defined(WITHOUT_GTK)
 USE_GNOME=		glib20 atk pango gtk20
 PKGNAMESUFFIX+=		-gtk2

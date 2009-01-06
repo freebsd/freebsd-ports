@@ -27,12 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502106
-IGNORE=		requires at least FreeBSD 5.2
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
@@ -51,4 +45,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

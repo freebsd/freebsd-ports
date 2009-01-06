@@ -24,10 +24,4 @@ GNU_CONFIGURE=	yes
 MAN1=		funionfs.1
 PLIST_FILES=	bin/funionfs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000	# Inherited from fusefs-kmod
-IGNORE=		requires FreeBSD 6.x or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

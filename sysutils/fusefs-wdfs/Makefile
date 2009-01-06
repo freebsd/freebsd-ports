@@ -24,10 +24,4 @@ USE_GNOME=	glib20
 
 PLIST_FILES=	bin/wdfs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=	depends on kernel module that requires FreeBSD 6 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

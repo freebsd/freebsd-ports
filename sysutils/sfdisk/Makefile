@@ -26,8 +26,4 @@ NOT_FOR_ARCHS=	ia64
 CFLAGS+=	-DPC98
 .endif
 
-.if ${OSVERSION} < 502000
-IGNORE=		is only for FreeBSD 5.X and later
-.endif
-
 .include <bsd.port.post.mk>

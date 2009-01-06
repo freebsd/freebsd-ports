@@ -55,8 +55,4 @@ CONFIGURE_ARGS+=	--disable-fuse
 PLIST_SUB+=	FUSE="@comment "
 .endif
 
-.if ${OSVERSION} < 600000 # Inherited from fusefs-kmod
-IGNORE=	requires FreeBSD 6.x or above
-.endif
-
 .include <bsd.port.post.mk>

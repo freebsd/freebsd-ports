@@ -133,10 +133,6 @@ PLIST_SUB+=	MPI="openmpi" MPI_VER=${OMPI_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Fails to compile (abort trap)
-.endif
-
 .if exists(${LOCALBASE}/bin/mico-config)
 MICO_VER=	`${LOCALBASE}/bin/mico-config --version`
 .else

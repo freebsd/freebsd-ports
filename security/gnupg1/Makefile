@@ -95,11 +95,6 @@ post-install:
 .if defined(WITH_SUID_GPG)
 	${CHMOD} u+s ${PREFIX}/bin/gpg
 .endif
-.if ${OSVERSION} < 500019
-	@${CAT} ${PKGMESSAGE}
-.else
-PKGMESSAGE=	/nonexistent
-.endif
 
 check:
 	(cd ${WRKSRC}; ${MAKE} check)

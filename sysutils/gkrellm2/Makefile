@@ -88,9 +88,6 @@ PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 .endif
 
 ALL_TARGET=	freebsd
-.if ${OSVERSION} < 500000
-INSTALL_TARGET=	install_freebsd
-.endif
 
 MAKE_ENV+=	INSTALLROOT=${LOCALBASE} INSTALLDIR=${LOCALBASE}/bin \
 		PKGCONFIGDIR=${LOCALBASE}/libdata/pkgconfig \
@@ -115,12 +112,6 @@ post-install:
 	@${MKDIR} ${LOCALBASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${LOCALBASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
-.if ${OSVERSION} < 500000
-	@${CHMOD} 2511 ${LOCALBASE}/bin/gkrellm
-.endif
-.endif
-.if ${OSVERSION} < 500000
-	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
 .endif
 	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 	@${MKDIR} ${EXAMPLESDIR}

@@ -28,12 +28,6 @@ CONFLICTS=	polygraph-2*
 
 MAN1=		ltrace.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502000
-IGNORE=		depends on PT_SYSCALL ptrace option
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|^\(CC\)|#\1|' ${WRKSRC}/Makefile.in
 
@@ -42,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/ltrace.conf ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/ltrace.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

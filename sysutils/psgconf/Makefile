@@ -194,13 +194,6 @@ PKGDEINSTALL=	${WRKSRC}/postinstall
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-#.if ${OSVERSION} > 599999
-# Does not work because Proc::ProcessTable is broken in 5.x
-#${BUILD_DEPENDS}+=	${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy
-#post-build:
-#	cd ${WRKSRC} && ${MAKE} test
-#.endif
-
 post-install:
 	-@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/etc/psg.conf ${PREFIX}/etc/psg.conf.sample

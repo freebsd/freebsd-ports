@@ -66,10 +66,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
 IGNORE=		requires PF
 .endif
 
-.if (${OSVERSION} < 502106)
-IGNORE=		requires PF which is not available on FreeBSD versions below 5.3
-.endif
-
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 do-install:

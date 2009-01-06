@@ -18,13 +18,4 @@ MAN8=		watchdogd.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/watchdogd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500043
-# We need revision 1.12 of /sys/i386/i386/elan-mmrc.c and
-# 1.1 of /sys/sys/watchdog.h.  The first tag is RELENG_5_1.
-#
-IGNORE=		cannot install: this port only works on FreeBSD 5.1 and above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

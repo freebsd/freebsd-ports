@@ -26,20 +26,10 @@ PLIST_FILES=	sbin/arcconf
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 
-.if ${OSVERSION} >= 600000
 .if ${ARCH} == amd64
 DIST_EXT=	6_x64
 .else
 DIST_EXT=	6_x86
-.endif
-.endif
-
-.if ${OSVERSION} < 600000
-.if ${ARCH} == "i386"
-DIST_EXT=	5_x86
-.else
-IGNORE=		combination OS/ARCH not supported
-.endif
 .endif
 
 NO_BUILD=	yes

@@ -42,11 +42,9 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # -CURRENT after 500041 has getopt_long
 # do not use libgnugetopt
-.if ${OSVERSION} >= 500041
 	@${REINPLACE_CMD} -E \
 		-e 's|-lgnugetopt||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 # fix typo
 	@${REINPLACE_CMD} -E \
 		-e 's|FreeBSD_Version|FreeBSD_version|' \

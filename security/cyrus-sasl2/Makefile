@@ -170,7 +170,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
-.elif !defined(WITHOUT_GSSAPI) && ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(/usr/lib/libkrb5.a)
+.elif !defined(WITHOUT_GSSAPI) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
@@ -178,17 +178,7 @@ GSSAPI=	"@comment "
 .endif
 
 # KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
-.if ${OSVERSION} > 500105
 .if defined(WITH_KERBEROS4)
-LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
-CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
-.else
-CONFIGURE_ARGS+=--disable-krb4
-EBONES=	"@comment "
-.endif
-.elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
-CONFIGURE_ARGS+=--enable-krb4
-.elif !exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
 LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
 CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
