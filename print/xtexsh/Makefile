@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mat.univie.ac.at/pub/teschl/xtexsh/
 DISTNAME=	${PORTNAME}-1.4-2
 
-MAINTAINER=	js@jeannot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
