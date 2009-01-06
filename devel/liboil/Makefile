@@ -24,7 +24,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O2
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_3DNOW_GCC40) && ${OSVERSION} < 700042
-USE_GCC=	4.1+
+USE_GCC=	4.2+
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
