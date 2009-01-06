@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squeezecenter
-PORTVERSION=	7.2.1
+PORTVERSION=	7.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
@@ -17,8 +17,7 @@ COMMENT=	Slim Devices audio streaming server
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
-OPTIONS=	CLASSIC "Default to the Classic skin" off \
-		APE "Support Monkey's Audio Codec input" on \
+OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 		FAAD "Support AAC input via FAAD" on \
 		FLAC "Support FLAC output (and input on SliMP3 and SB1)" on \
 		LAME "Support MP3 output via LAME" off \
@@ -78,12 +77,6 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_CLASSIC)
-DEFAULT_SKIN=	Classic
-.else
-DEFAULT_SKIN?=	Default
-.endif
-
 USE_RC_SUBR=	squeezecenter.sh
 TMP_SLIMDIR=	${WRKDIR}/_squeezecenter
 TMP_DOCSDIR=	${WRKDIR}/doc
@@ -135,17 +128,14 @@ SLIMGROUP?=	${SLIMUSER}
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e 's|/usr/bin/perl|${PERL}|' \
-	    -e 's|%%DISTDIR%%|${_DISTDIR}|' \
-	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    -e 's|%%PREFIX%%|${PREFIX}|' \
-	    -e 's|%%SITE_PERL%%|${SITE_PERL}|' \
-	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|' \
-	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
-	    -e 's|%%DEFAULT_SKIN%%|${DEFAULT_SKIN}|' \
-		${WRKSRC}/Slim/Utils/OSDetect.pm \
-		${WRKSRC}/Slim/Utils/Prefs.pm \
-		${WRKSRC}/Slim/Web/HTTP.pm \
+	    -e 's|/usr/bin/perl|${PERL}|g' \
+	    -e 's|%%DISTDIR%%|${_DISTDIR}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    -e 's|%%PREFIX%%|${PREFIX}|g' \
+	    -e 's|%%SITE_PERL%%|${SITE_PERL}|g' \
+	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|g' \
+	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|g' \
+		${WRKSRC}/Slim/Utils/OS/FreeBSD.pm \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
 
@@ -170,13 +160,14 @@ pre-install:
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
+	@${RM} -f ${PREFIX}/${SLIMDIR}/Cache
 	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
 	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${PREFIX}/${SLIMDIR}
-	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl 
-	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl 
-	@${LN} -s ${LOCALBASE}/share/mysql/errmsg.txt \
+	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl
+	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl
+	@${LN} -sf ${LOCALBASE}/share/mysql/errmsg.txt \
 	    ${PREFIX}/${SLIMDIR}/MySQL/
-	@${LN} -s ${LOCALBASE}/share/mysql/english/errmsg.sys \
+	@${LN} -sf ${LOCALBASE}/share/mysql/english/errmsg.sys \
 	    ${PREFIX}/${SLIMDIR}/MySQL/
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)

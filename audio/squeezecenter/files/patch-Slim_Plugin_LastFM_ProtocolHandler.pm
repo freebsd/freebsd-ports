@@ -1,23 +1,11 @@
-
-$FreeBSD$
-
---- Slim/Plugin/LastFM/ProtocolHandler.pm.orig
-+++ Slim/Plugin/LastFM/ProtocolHandler.pm
+--- Slim/Plugin/LastFM/ProtocolHandler.pm.orig	2008-12-22 14:26:28.000000000 -0800
++++ Slim/Plugin/LastFM/ProtocolHandler.pm	2008-12-22 14:32:41.000000000 -0800
 @@ -7,7 +7,7 @@
  use strict;
  use base qw(Slim::Player::Protocols::HTTP);
  
 -use JSON::XS qw(from_json);
-+use JSON::XS qw(decode_json);
++use JSON::XS::VersionOneAndTwo;
  use URI::Escape qw(uri_escape_utf8);
  
  use Slim::Player::Playlist;
-@@ -155,7 +155,7 @@
- 	my $client = $http->params->{client};
- 	my $params = $http->params->{params};
- 	
--	my $track = eval { from_json( $http->content ) };
-+	my $track = eval { decode_json( $http->content ) };
- 	
- 	if ( $@ || $track->{error} ) {
- 		# We didn't get the next track to play
