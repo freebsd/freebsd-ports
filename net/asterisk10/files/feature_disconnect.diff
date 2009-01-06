@@ -1,23 +1,15 @@
---- apps/app_dial.c.orig	Wed Feb  6 18:45:30 2008
-+++ apps/app_dial.c	Wed Feb  6 18:51:59 2008
-@@ -297,6 +297,8 @@ AST_APP_OPTIONS(dial_exec_options, {
- 	OPT_CALLER_HANGUP | OPT_CALLEE_TRANSFER | OPT_CALLER_TRANSFER | \
- 	OPT_CALLEE_MONITOR | OPT_CALLER_MONITOR | OPT_CALLEE_PARK | OPT_CALLER_PARK))
+--- apps/app_dial.c.orig	2008-08-06 02:13:20.000000000 +0300
++++ apps/app_dial.c	2009-01-06 16:54:27.000000000 +0200
+@@ -303,6 +303,8 @@
+ 	OPT_CALLEE_MONITOR | OPT_CALLER_MONITOR | OPT_CALLEE_PARK | OPT_CALLER_PARK) && \
+ 	!chan->audiohooks && !peer->audiohooks)
  
 +static int detect_disconnect(struct ast_channel *chan, char code);
 +
  /* We define a custom "local user" structure because we
     use it not only for keeping track of what is in use but
     also for keeping track of who we're dialing. */
-@@ -402,6 +404,7 @@ static struct ast_channel *wait_for_answ
- 	struct ast_channel *peer = NULL;
- 	/* single is set if only one destination is enabled */
- 	int single = outgoing && !outgoing->next && !ast_test_flag(outgoing, OPT_MUSICBACK | OPT_RINGBACK);
-+
- 	
- 	if (single) {
- 		/* Turn off hold music, etc */
-@@ -716,9 +719,9 @@ static struct ast_channel *wait_for_answ
+@@ -732,9 +734,9 @@
  				}
  
  				if (ast_test_flag(peerflags, OPT_CALLER_HANGUP) && 
@@ -29,11 +21,10 @@
  					*to=0;
  					ast_cdr_noanswer(in->cdr);
  					strcpy(status, "CANCEL");
-@@ -776,6 +779,56 @@ static struct ast_channel *wait_for_answ
- 	
+@@ -775,6 +777,56 @@
  	return peer;
  }
-+
+ 
 +static char featurecode[FEATURE_MAX_LEN + 1] = "";
 +
 +static int detect_disconnect(struct ast_channel *chan, char code)
@@ -83,11 +74,12 @@
 +}
 +
 +
- 
++
  static void replace_macro_delimiter(char *s)
  {
---- include/asterisk/features.h.orig	Thu Aug 23 23:16:41 2007
-+++ include/asterisk/features.h	Tue Dec 11 17:13:52 2007
+ 	for (; *s; s++)
+--- include/asterisk/features.h.orig	2007-08-23 23:16:41.000000000 +0300
++++ include/asterisk/features.h	2009-01-06 16:54:27.000000000 +0200
 @@ -31,6 +31,20 @@
  #define FEATURE_EXTEN_LEN	32
  #define FEATURE_MOH_LEN		80  /* same as MAX_MUSICCLASS from channel.h */
@@ -131,20 +123,19 @@
  
  /*! \brief Park a call and read back parked location 
   *  \param chan the channel to actually be parked
-@@ -93,5 +113,11 @@
- /*! \brief unregister feature from feature_set
+@@ -94,4 +114,10 @@
      \param feature the ast_call_feature object which was registered before*/
  void ast_unregister_feature(struct ast_call_feature *feature);
-+
+ 
 +int ast_feature_detect(struct ast_channel *chan, const struct ast_flags *features, char *code, struct feature_interpret_result *result);
 +
 +void ast_features_lock(void);
 +void ast_features_unlock(void);
 +
- 
++
  #endif /* _AST_FEATURES_H */
---- res/res_features.c.orig	2008-10-16 18:17:33.000000000 +0300
-+++ res/res_features.c	2008-10-16 18:49:20.000000000 +0300
+--- res/res_features.c.orig	2008-09-09 18:40:24.000000000 +0300
++++ res/res_features.c	2009-01-06 16:58:57.000000000 +0200
 @@ -517,18 +517,6 @@
  }
  
@@ -164,12 +155,7 @@
  /*! \brief
   * set caller and callee according to the direction
   */
-@@ -1121,38 +1109,40 @@
- 		res = 0;
- 		break;
- 	}
--	ast_rwlock_unlock(&features_lock);
- 
+@@ -1126,33 +1114,36 @@
  	return res;
  }
  
@@ -221,7 +207,7 @@
  				feature_detected = 1;
  				break;
  			} else if (!strncmp(builtin_features[x].exten, code, strlen(code))) {
-@@ -1169,9 +1159,7 @@
+@@ -1169,9 +1160,7 @@
  	tmp = ast_strdupa(dynamic_features);
  
  	while ((tok = strsep(&tmp, "#"))) {
@@ -231,7 +217,7 @@
  			continue;
  		}
  			
-@@ -1179,21 +1167,52 @@
+@@ -1179,21 +1168,52 @@
  		if (!strcmp(feature->exten, code)) {
  			if (option_verbose > 2)
  				ast_verbose(VERBOSE_PREFIX_3 " Feature Found: %s exten: %s\n",feature->sname, tok);
