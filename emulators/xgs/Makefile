@@ -11,19 +11,17 @@ PORTNAME=	xgs
 PORTVERSION=	0.50
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.inwards.com/xgs/ \
-		http://www.inwards.com/xgs/2mg/
+MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/xgs/
 DISTFILES=	xgs050.tgz ROM01.ZIP
 EXTRACT_ONLY=	xgs050.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple IIGS emulator stable release
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	xgs
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
-BROKEN=		Does not fetch
 
 # Source building
 #
