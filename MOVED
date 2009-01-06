@@ -3729,3 +3729,5 @@ lang/gcc41-withgcjawt||2009-01-06|Removed
 java/gjdoc||2009-01-06|Removed
 java/ecj-bootstrap||2009-01-06|Removed
 audio/dream||2009-01-06|Has expired: Needs DRM enabled in FAAD
+emulators/mupen64plus-sound||2009-01-06|No supported anymore by mupen64plus team
+
