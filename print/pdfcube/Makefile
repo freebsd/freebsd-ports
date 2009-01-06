@@ -9,7 +9,7 @@ PORTNAME=	pdfcube
 PORTVERSION=	0.0.2
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=	# http://code.100allora.it/pdfcube/attachment/wiki/WikiStart/${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An OpenGL presentation viewer on a spinning cube
@@ -22,11 +22,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pdfcube
 
-.include <bsd.port.pre.mk>
-
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} -o "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" "http://code.100allora.it/pdfcube/attachment/wiki/WikiStart/${DISTNAME}${EXTRACT_SUFX}?format=raw"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
