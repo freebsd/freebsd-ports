@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -78,6 +78,7 @@ CONFIGURE_ARGS+=	--disable-vidix-internal \
 			--disable-svga \
 			--disable-aa \
 			--disable-joystick \
+			--disable-directfb \
 			--disable-ssse3
 
 .include "${.CURDIR}/../mplayer/Makefile.options"

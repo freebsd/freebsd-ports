@@ -76,6 +76,7 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-ssse3 \
+			--disable-directfb \
 			--disable-faac \
 			--disable-twolame \
 			--disable-mencoder
