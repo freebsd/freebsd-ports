@@ -34,10 +34,6 @@ BUILDDIR=	${WRKSRC}/leif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-IGNORE=	is supported on FreeBSD 5.3 and later only
-.endif
-
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

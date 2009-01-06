@@ -37,11 +37,4 @@ MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 
 PBASE=		${SITE_PERL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500007
-post-patch:
-	@${PERL} -i -pe 's/^ *use bytes;.*//;' ${WRKSRC}/lib/XML/DOM.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,10 +34,6 @@ BUILDDIR=	${WRKSRC}/iiimxcf/xiiimp.so
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-IGNORE=	is supported on FreeBSD 5.3 and later only
-.endif
-
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -69,11 +69,6 @@ PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 
 .include <bsd.port.pre.mk>
 
-# For 4.x systems.
-.if ${OSVERSION} <= 503000
-BUILD_DEPENDS+=		${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
-.endif
-
 DEFAULT_ENCODING?=	euc_jp
 
 .include <bsd.port.post.mk>

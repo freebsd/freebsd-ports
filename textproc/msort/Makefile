@@ -29,10 +29,4 @@ PLIST_FILES=	bin/msg bin/msort
 
 MAN1=		msort.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BROKEN=		Does not build with older versions of FreeBSD
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

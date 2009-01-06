@@ -27,19 +27,12 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PREFIX="${PREFIX}"
+		PREFIX="${PREFIX}" \
+		CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__ ${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
-.else
-CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__ ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} s,bash,sh,g ${WRKSRC}/src/scim-panel-kde.in

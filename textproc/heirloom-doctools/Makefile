@@ -54,10 +54,6 @@ PORTDOCS=	CHANGES README LICENSE
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		fails to install on FreeBSD 5.x
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
