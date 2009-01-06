@@ -119,7 +119,6 @@
     SUBDIR += dino
     SUBDIR += dir2ogg
     SUBDIR += discid
-    SUBDIR += dream
     SUBDIR += drumpiler
     SUBDIR += dssi
     SUBDIR += dtmfdial
