@@ -167,10 +167,8 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-.   if ${OSVERSION} > 500023
-.     if ${ARCH} == i386
+.   if ${ARCH} == i386
 CONFIGURE_ARGS+=	--enable-nonportable-atomics
-.     endif
 .   endif
 .endif
 

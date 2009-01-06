@@ -266,10 +266,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/fix-kerberos.patch
 storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
-.if ${OSVERSION}>=501000
 # Only document libmap.conf where it is available:
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
-.endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
 CONFIGURE_ARGS+=	--with-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -349,22 +347,9 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 .endif
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
-.if ${OSVERSION} < 502106
-IGNORE=		pf available only in FreeBSD 5.3 and newer
 .endif
-.endif
-# IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
-# they were not installed on FreeBSD 5 from 2002-03-26 (OSVERSION > 500032) to
-# 2003-06-27 (OSVERSION < 501101).
-#
-# Please see PR misc/44148 and the CVS log of src/include/Makefile for further
-# information.
 .if defined(WITH_SQUID_IPFILTER)
-.if (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
-IGNORE=		the IPFilter headers are not part of the base system
-.else
 CONFIGURE_ARGS+=	--enable-ipf-transparent
-.endif
 .endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for

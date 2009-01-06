@@ -25,10 +25,6 @@ USE_RC_SUBR=	abyssws.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		is for FreeBSD 6.x and newer
-.endif
-
 .if ${OSVERSION} >= 700043
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif

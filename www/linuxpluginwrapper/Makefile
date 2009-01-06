@@ -44,42 +44,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 
-.if		${OSVERSION} >= 700001
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
-.elif		${OSVERSION} >= 600033 && ${OSVERSION} < 700000
-LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
-.elif		${OSVERSION} >= 503001
-LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-stable
-.else
-LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-current
-.endif
-
-.if		${OSVERSION} < 501105
-RTLD=		/usr/libexec/ld-elf.so.1
-.else
-RTLD=		/libexec/ld-elf.so.1
-.endif
 
 .if		defined(WITH_DEBUG)
 CFLAGS+=	-DDEBUG=1
-.endif
-
-.if		!defined(PACKAGE_BUILDING)
-.if		${OSVERSION} < 501107
-pre-everything::
-	@if ! strings ${RTLD} | ${GREP} libmap.conf > /dev/null 2>&1; then \
-		${ECHO_MSG} 'Please enable libmap.conf(5) feature for rtld(1).'; \
-		${ECHO_MSG} '4-stable user:'; \
-		${ECHO_MSG} '	You can get a following patch.'; \
-		${ECHO_MSG} '	http://people.FreeBSD.org/~nork/libmap_4stable.diff'; \
-		${ECHO_MSG} '   Please apply on /usr/src and make install on /usr/src/libexec/rtld-elf:'; \
-		${ECHO_MSG} '   # cd /usr/src ; patch -p0 < /tmp/libmap_4stable.diff'; \
-		${ECHO_MSG} '   # cd libexec/rtld-elf ; make clean all install'; \
-		${ECHO_MSG} '5.1-RELEASE user:'; \
-		${ECHO_MSG} '	Please see /usr/src/libexec/rtld-elf/Makefile.'; \
-		${FALSE}; \
-	fi
-.endif
 .endif
 
 post-build:

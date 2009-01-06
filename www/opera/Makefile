@@ -51,11 +51,7 @@ OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
 ONLY_FOR_ARCHS=	i386 amd64
-.else
-ONLY_FOR_ARCHS=	i386
-.endif
 
 .if ${ARCH} == amd64
 OPERA_ARCH=	amd64
@@ -65,12 +61,8 @@ OPERA_ARCH=	intel
 
 .if ${OSVERSION} >= 700000
 OPERA_TYPE=	7
-.elif ${OSVERSION} >= 600000
-OPERA_TYPE=	6
-.elif ${OSVERSION} >= 500000
-OPERA_TYPE=	5
 .else
-IGNORE=	is only supported on FreeBSD 5.x and higher
+OPERA_TYPE=	6
 .endif
 
 .if !defined(WITHOUT_ASPELL)

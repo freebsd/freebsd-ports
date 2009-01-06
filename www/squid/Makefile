@@ -253,7 +253,7 @@ libexec+=	squid_kerb_auth
 storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
-.if ${OSVERSION}>=501000 && ${OSVERSION}<700055
+.if ${OSVERSION}<700055
 # Only document libmap.conf for releases where it may be needed to
 # switch from libpthread (aka libkse) to libthr:
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs

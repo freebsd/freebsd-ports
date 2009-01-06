@@ -63,9 +63,7 @@ BROKEN=	does not compile
 IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif
 
-.if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
-.endif
 
 post-extract::
 	@${SED} -e 's|@FLOCK_ICON@|${FLOCK_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \

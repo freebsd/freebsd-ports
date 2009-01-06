@@ -40,10 +40,8 @@ post-patch:
 	${MV} ${WRKSRC}/extras/htpasswd.1 ${WRKSRC}/extras/thttpdpasswd.1
 	${MV} ${WRKSRC}/extras/htpasswd.c ${WRKSRC}/extras/thttpdpasswd.c
 
-.if ${OSVERSION} > 502101
 post-configure:
 	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-config.h
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin
