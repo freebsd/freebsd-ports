@@ -19,12 +19,6 @@ COMMENT=	Open 802.11 Splash Screen
 
 USE_GNOME=	glib12
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502105
-IGNORE=		Requires 5.x or later for pf(4) firewall support
-.endif
-
 CONFLICTS=	nocatauth-server-*
 
 GNU_CONFIGURE=	yes
@@ -41,4 +35,4 @@ CONFIGURE_ARGS+=	--with-mode=${AUTHMODE}
 CONFIGURE_ARGS+=	--with-docroot=${DOCROOT}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

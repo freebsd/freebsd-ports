@@ -26,10 +26,6 @@ PORTDOCS=	UserGuide.pdf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		doesn't compile in FreeBSD < 6.0
-.endif
-
 .if ${OSVERSION} > 700000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_pkixip__ext__asn.h
 .endif

@@ -51,10 +51,6 @@ CCOM!=		${BASENAME} ${CC}
 MAKE_ENV=	CCOM=${CCOM} LANG=C
 CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
 
-.if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
-IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
-.endif
-
 pre-everything::
 .if !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""

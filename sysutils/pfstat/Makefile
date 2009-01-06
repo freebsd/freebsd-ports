@@ -30,10 +30,6 @@ PLIST_FILES=	bin/pfstat \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502106
-IGNORE=		is only for 5.3 and above
-.endif
-
 .if ${OSVERSION} < 700048
 EXTRA_PATCHES=	${PATCHDIR}/pre41-patch-pf.c
 .endif

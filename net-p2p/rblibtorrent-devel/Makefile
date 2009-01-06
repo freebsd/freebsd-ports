@@ -27,14 +27,8 @@ CONFLICTS=	libtorrent-[0-9]* \
 		libtorrent-devel-[0-9]* \
 		rblibtorrent-[0-9]*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not build on FreeBSD 5.x
-.endif
-
 post-install:
 	@cd ${PREFIX}/lib && ${LN} -sf libtorrent-0.13.so libtorrent.so.2 && \
 		${LN} -sf libtorrent.so.2 libtorrent.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

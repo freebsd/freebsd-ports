@@ -34,16 +34,8 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600007
-IGNORE=		requires FreeBSD 6 or newer
-.endif
-
 .if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
 RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
-.endif
-
-.if ${OSVERSION} >= 600000 && ${OSVERSION} < 600033
-RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
 
 post-patch:

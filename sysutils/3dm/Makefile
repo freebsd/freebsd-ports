@@ -21,10 +21,6 @@ USE_RC_SUBR=	3dm2.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 504000
-IGNORE=		is not supported in versions earlier than 5.4-RELEASE
-.endif
-
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}

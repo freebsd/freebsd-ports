@@ -129,17 +129,7 @@ SUB_LIST=	RCLDCONFIG=ldconfig
 SUB_LIST=	RCLDCONFIG=
 .endif
 
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=MAKEINFO=${LOCALBASE}/bin/makeinfo
-.endif
-
-USE_RC_SUBR=	watchquagga.sh
-.if ${OSVERSION} >= 600101
-USE_RC_SUBR+=	quagga.sh
-.else
-USE_RCORDER=	quagga.sh
-.endif
+USE_RC_SUBR=	quagga.sh watchquagga.sh
 
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		SYSCONF_DIR=${SYSCONF_DIR}

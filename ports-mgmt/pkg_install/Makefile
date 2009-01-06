@@ -16,20 +16,14 @@ MAINTAINER=		portmgr@FreeBSD.org
 COMMENT=		FreeBSD -STABLE version of the package tools
 
 MANCOMPRESSED=		yes
-
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_updating.1 pkg_version.1
+
+MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL
 
 OPTIONS=		WRAPPER "Use ports version instead of base if more recent" on
 
 .include <bsd.port.pre.mk>
-
-# Arbitrary OSVERSION but support for 5.x will go away soon anyway...
-.if ${OSVERSION} < 600000
-MAKE_ARGS=		-DNOOBJ -DNOCRYPT -DNO_OPENSSL
-.else
-MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL
-.endif
 
 pre-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \

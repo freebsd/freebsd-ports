@@ -22,9 +22,7 @@ PLIST_FILES=	bin/wmwlmon
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600100
-IGNORE=		needs WLAN infrastructure from 6.0-RELEASE or newer
-.elif ${OSVERSION} >= 700052
+.if ${OSVERSION} >= 700052
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-wl.c ${PATCHDIR}/extra-patch-wmwlmon.1
 pre-everything::
 	@${ECHO_CMD} "==========================================================="

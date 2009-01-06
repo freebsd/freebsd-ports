@@ -27,9 +27,7 @@ PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} >= 500041
 	@${REINPLACE_CMD} -e 's,-lgnugetopt,,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 	${WRKSRC}/doc/siproxd.conf.example

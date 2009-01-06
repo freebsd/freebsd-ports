@@ -26,10 +26,4 @@ USE_GCC=	4.2+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/archivemount ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000 # Inherited from fusefs-kmod
-IGNORE=		requires FreeBSD 6.x or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

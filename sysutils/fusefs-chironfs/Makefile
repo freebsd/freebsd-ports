@@ -30,10 +30,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000	# Inherited from sysutils/fusefs-kmod
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

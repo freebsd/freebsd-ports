@@ -24,10 +24,4 @@ USE_LDCONFIG=	yes
 post-extract:
 	${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		does not work on FreeBSD < 6 because of absence of gethostbyname_r
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,9 +21,4 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500112
-IGNORE=		NSS modules only supported on FreeBSD 5.1 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

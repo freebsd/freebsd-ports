@@ -120,12 +120,6 @@ PLIST_SUB+=	WITH_FAX=""
 PLIST_SUB+=	WITH_FAX="@comment "
 .endif
 
-.if ${OSVERSION} >= 500036
-PLIST_SUB+=	NEWGCC=""
-.else
-PLIST_SUB+=	NEWGCC="@comment "
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/modules/Makefile.in

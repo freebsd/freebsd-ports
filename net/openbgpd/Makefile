@@ -41,16 +41,6 @@ MAN8=		bgpctl.8	\
 SUBDIRS=	bgpd \
 		bgpctl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		requires strtonum in libc
-.endif
-
-.if ${OSVERSION} < 500037
-IGNORE=		requires macros present in <sys/tree.h>
-.endif
-
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/bgpctl/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/bgpd/
@@ -96,4 +86,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,15 +13,11 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple 'w'-like program; displays connection type and login shell PID
 
-PLIST_FILES=	bin/yawho
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500014
-pre-patch:
-	@${REINPLACE_CMD} -E -e 's/kp_.?proc\.._/ki_/' ${WRKSRC}/process.c
-.endif
-
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.post.mk>
+PLIST_FILES=	bin/yawho
+
+pre-patch:
+	@${REINPLACE_CMD} -E -e 's/kp_.?proc\.._/ki_/' ${WRKSRC}/process.c
+
+.include <bsd.port.mk>

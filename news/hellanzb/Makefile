@@ -28,8 +28,8 @@ USE_PYDISTUTILS=yes
 
 .include <bsd.port.pre.mk>
 
-# more fully-featured rar needs at least 5.3
-.if ${ARCH} == "i386" && ${OSVERSION} >= 503000
+# more fully-featured rar needs i386
+.if ${ARCH} == "i386"
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 .else
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar

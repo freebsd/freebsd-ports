@@ -28,12 +28,6 @@ BIN_FILES=	bsnmpget bsnmpset bsnmpwalk
 MAN1=	${BIN_FILES:S/$/.1/}
 MAN3=	${PORTNAME}.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600029
-IGNORE=	does not compile on FreeBSD before 6.x
-.endif
-
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 	@${MV} ${WRKSRC}/lib/libbsnmptools/libbsnmptools ${WRKSRC}/tlib
@@ -44,4 +38,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's/usr.sbin/tools/' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

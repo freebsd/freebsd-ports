@@ -25,10 +25,4 @@ PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		REPORTDIR="${REPORTDIR:S,^${PREFIX}/,,}" \
 		TMPDIR="${TMPDIR:S,^${PREFIX}/,,}"
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 501000 )
-IGNORE=		needs the jls utility which was added in FreeBSD 5.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

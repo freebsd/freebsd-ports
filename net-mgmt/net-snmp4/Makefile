@@ -17,7 +17,7 @@ COMMENT=	An extendable SNMP implementation
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -Dfreebsd5
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--with-mib-modules="host ucd-snmp/diskio" \
@@ -99,10 +99,6 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 OPTIONS=	IPV6	"Enable IPv6 support"	On
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-CFLAGS+=	-Dfreebsd5
-.endif
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6

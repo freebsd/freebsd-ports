@@ -22,11 +22,7 @@ MANCOMPRESSED=	yes
 MAN1=		pstack.1
 PLIST_FILES=	bin/pstack
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
 post-patch:
 	${REINPLACE_CMD} -e 's/DT_COUNT/DT_BIND_NOW/' ${WRKSRC}/elf.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,10 +24,4 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		needs at least FreeBSD 6.0-RELEASE
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

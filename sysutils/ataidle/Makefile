@@ -29,10 +29,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600034
-IGNORE=		requires FreeBSD 6.1 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

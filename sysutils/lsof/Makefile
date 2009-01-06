@@ -79,32 +79,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500019
-.if !exists(${FREEBSD_SYS}/miscfs/fdesc/fdesc.h)
-.if defined(PACKAGE_BUILDING)
-BROKEN=	'please install kernel source for official package builds'
-.endif
-
-pre-configure:
-	@${ECHO} ""
-	@${ECHO} "************************************************************"
-	@${ECHO} "*                      W a r n i n g                       *"
-	@${ECHO} "* A more capable version of LSOF is built if you have      *"
-	@${ECHO} "* the complete kernel source installed.                    *"
-	@${ECHO} "* If your kernel sources are somewhere other than          *"
-	@${ECHO} "* /usr/src/sys, you may set the FREEBSD_SYS variable       *"
-	@${ECHO} "* to the correct path.                                     *"
-	@${ECHO} "************************************************************"
-	@${ECHO} ""
-.endif
-.endif 
-
 post-install:
 	cd ${PREFIX} && \
 	    ${FIND} -s share/lsof -type f -o -type l >>${TMPPLIST} ;\
 	    ${FIND} -d share/lsof -type d \
 	        | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -39,8 +39,6 @@ MAN5=		hdup.conf.5
 BUILD_DEPENDS+=	${LOCALBASE}/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS+=	${LOCALBASE}/gtar:${PORTSDIR}/archivers/gtar
 GNUTAR=		${LOCALBASE}/bin/gtar
-.elif ${OSVERSION} < 502110
-GNUTAR=		/usr/bin/tar
 .else
 # bsdtar appeared
 GNUTAR=		/usr/bin/gtar

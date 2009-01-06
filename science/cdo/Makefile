@@ -29,7 +29,7 @@ OPTIONS=	NETCDF	"NETCDF support"	off
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} > 700000) || (${ARCH} != "sparc64" && ${OSVERSION} > 600000)
+.if (${OSVERSION} > 700000) || (${ARCH} != "sparc64")
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
 .endif
 

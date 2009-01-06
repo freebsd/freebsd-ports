@@ -31,10 +31,6 @@ PLIST_FILES=	bin/sqlfs
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 do-build:
 	(cd ${WRKSRC} && ${CC} -DFUSE -DFUSE_USE_VERSION=25		\
 		-D_FILE_OFFSET_BITS=64 -D_REENTRANT ${CFLAGS}		\

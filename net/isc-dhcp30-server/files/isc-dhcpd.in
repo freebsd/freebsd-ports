@@ -274,7 +274,7 @@ safe_useradd ()
 	local _user _group _home _shell _gecos
 
 	_user=$1 _group=$2 _gecos=${3:-"& daemon"}
-	_home=${4:-/nonexistent} _shell=${5:-%%NOLOGIN%%}
+	_home=${4:-/nonexistent} _shell=${5:-/usr/sbin/nologin}
 
 	if [ -n "${_group}" ]; then
 		if pw group show ${_group} 2>/dev/null; then

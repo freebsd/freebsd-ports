@@ -45,10 +45,6 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500036
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-sf_snort_plugin_api.h
-.endif
-
 .if defined(WITH_FLEXRESP)
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet10-config
 .elif defined(WITH_FLEXRESP2)

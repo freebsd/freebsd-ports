@@ -27,16 +27,10 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

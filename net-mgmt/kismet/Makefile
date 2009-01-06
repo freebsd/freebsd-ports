@@ -74,10 +74,6 @@ MAN5=		kismet.conf.5 kismet_drone.conf.5 kismet_ui.conf.5
 
 PORTDOCS+=	README
 
-.if ${OSVERSION} < 502000
-CONFIGURE_ARGS+=	--disable-pcap
-.endif
-
 post-extract:
 .ifdef(WITH_GMAP) && defined(WITH_GPSMAP)
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}

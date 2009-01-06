@@ -54,11 +54,6 @@ ALL_TARGET+=	ldap
 PLIST_FILES+=	lib/${PORTNAME}/auth_ldap.so
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500029
-BROKEN=		"${PORTNAME} requires atoll(3)"
-.endif
-
 do-configure:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/nntpswitch.conf.in
 
@@ -70,4 +65,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/nntpswitch.conf-dist ${ETC_DIR}/
 	${INSTALL_SCRIPT} ${FILESDIR}/nntpswitch.sh ${PREFIX}/etc/rc.d/nntpswitch.sh-dist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

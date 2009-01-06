@@ -16,14 +16,7 @@ COMMENT=	VuXML Query Tool
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 
-# FreeBSD 5.x systems have expat in the base system.
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 501111
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/object/vxquery ${PREFIX}/bin/vxquery
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

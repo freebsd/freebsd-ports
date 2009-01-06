@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
@@ -23,16 +25,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	License prohibits redistribution
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-.if ${OSVERSION} < 502001
-IGNORE=		requires FreeBSD 5.2.1 or later
-.else
 BDREL=		5
-.endif
+
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	/usr/bin/printf

@@ -35,10 +35,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600007
-IGNORE=		needs API available in FreeBSD 6.X and later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

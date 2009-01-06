@@ -18,6 +18,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger (IM)
 
 RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
+LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
+		ilbc:${PORTSDIR}/net/ilbc \
+		ortp:${PORTSDIR}/net/ortp
 
 CONFLICTS=	kdenetwork-[0-2]* kdenetwork-3.[0-4]* kdenetwork-3.5.[0-2]* kvirc-[0-9]*
 
@@ -34,7 +37,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ilbc=${LOCALBASE} \
 		--with-speex=${LOCALBASE} \
 		--with-ssl-dir=${OPENSSLBASE} \
-		--without-external-libgadu
+		--without-external-libgadu \
+		--enable-jingle
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
+		EXPAT_CFLAGS="-I${LOCALBASE}/include" \
+		EXPAT_LIBS="-L${LOCALBASE}/lib -lexpat" \
+		ILBC_CFLAGS="-I${LOCALBASE}/include/ilbc" \
+		ILBC_LIBS="-L${LOCALBASE}/lib -lilbc" \
+		SPEEX_CFLAGS="$$(${PKG_CONFIG} --cflags speex)" \
+		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
+
 USE_LDCONFIG=	yes
 _NO_KDE_FINAL=	yes
 
@@ -47,20 +59,6 @@ PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500028
-CONFIGURE_ARGS+=--enable-jingle
-LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex \
-		ilbc:${PORTSDIR}/net/ilbc \
-		ortp:${PORTSDIR}/net/ortp
-CONFIGURE_ENV+=	PKG_CONFIG="${PKG_CONFIG}" \
-		EXPAT_CFLAGS="-I${LOCALBASE}/include" \
-		EXPAT_LIBS="-L${LOCALBASE}/lib -lexpat" \
-		ILBC_CFLAGS="-I${LOCALBASE}/include/ilbc" \
-		ILBC_LIBS="-L${LOCALBASE}/lib -lilbc" \
-		SPEEX_CFLAGS="$$(${PKG_CONFIG} --cflags speex)" \
-		SPEEX_LIBS="$$(${PKG_CONFIG} --libs speex)"
-.endif
-
 post-patch:
 # force usage of gthread for libjingle's benefit
 	@${REINPLACE_CMD} -E \
@@ -68,10 +66,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-.if ${OSVERSION} < 500028
-	@${REINPLACE_CMD} -e 's|$$(depcomp)||g' \
-		${WRKSRC}/kopete/protocols/jabber/libiris/iris/xmpp-core/Makefile
-.endif
 # configure does not handle OSS support
 .for feature in \
 	FEATURE_ENABLE_CHAT_ARCHIVING \

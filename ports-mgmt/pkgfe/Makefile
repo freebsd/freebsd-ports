@@ -21,12 +21,6 @@ RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 
 MAN8=		pkgfe.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600033 && ( ${OSVERSION} < 504103 || ${OSVERSION} > 600000 )
-RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
-.endif
-
 NO_BUILD=	yes
 
 do-install:
@@ -40,4 +34,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/pkgfe.conf.sample ${PREFIX}/etc/pkgfe.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

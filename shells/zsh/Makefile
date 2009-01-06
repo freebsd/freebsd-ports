@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
+
 OPTIONS=	ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
 		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
 		ZSH_MULTIBYTE	"Enable multibyte character support" on \
@@ -82,9 +84,6 @@ CONFIGURE_ARGS+=	--enable-multibyte
 CONFIGURE_ARGS+=	--disable-multibyte
 .endif
 
-.if ${OSVERSION} >= 503000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-.endif
 
 post-patch:
 	@${SED} -i "" -e "s,link=dynamic,link=either," \

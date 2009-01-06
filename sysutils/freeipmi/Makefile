@@ -69,10 +69,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500112
-BROKEN=	missing getpw*_r functions in this FreeBSD release
-.endif
-
 .if defined(WITH_IOPERM)
 .if ${ARCH} == "i386"
 CPPFLAGS+=	-DUSE_IOPERM

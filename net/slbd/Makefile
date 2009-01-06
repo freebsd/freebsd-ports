@@ -27,10 +27,4 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502106
-IGNORE=	is of no use for you because your system is too old and doesn't have pf
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -33,10 +33,6 @@ MANCOMPRESSED=	maybe
 BROKEN=		Currently does not support -CURRENT
 .endif
 
-.if ${OSVERSION} <  600000
-IGNORE=		not supported on systems prior to 6.0
-.endif
-
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources

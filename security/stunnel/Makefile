@@ -46,9 +46,6 @@ BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually excl
 .endif
 
 .if defined(WITH_UCONTEXT)
-.if ${OSVERSION} < 500112
-BROKEN=	'The ucontext model is only supported on FreeBSD 5.x and 6.x'
-.endif
 CONFIGURE_ARGS+=--with-threads=ucontext
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .elif defined(WITH_FORK)

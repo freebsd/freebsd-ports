@@ -25,10 +25,4 @@ USE_GNOME=	glib20
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/curlftpfs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		depends on kernel module that requires FreeBSD 6 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

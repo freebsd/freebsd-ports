@@ -31,10 +31,6 @@ PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600009
-IGNORE=		requires FreeBSD 6.0 or higher
-.endif
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif

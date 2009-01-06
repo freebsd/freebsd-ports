@@ -879,17 +879,9 @@ OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 .if ( ${OSVERSION} >= 700019 )
 IGNORE=		Conflicts with version in the base
 .endif
-.if ( ${OSVERSION} >= 600100 )
 OPENSSL_SHLIBVER?=	4
 .else
-OPENSSL_SHLIBVER?=	3
-.endif
-.else
-.if ( ${OSVERSION} >= 600100 )
 OPENSSL_SHLIBVER?=	5
-.else
-OPENSSL_SHLIBVER?=	4
-.endif
 .endif
 
 # disable runtime SSE2 detection

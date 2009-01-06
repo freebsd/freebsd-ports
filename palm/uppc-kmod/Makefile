@@ -27,9 +27,6 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
-.if ${OSVERSION} < 600000
-	@${REINPLACE_CMD} -e 's|cuaU|ucom|' ${WRKSRC}/uppcsetup
-.endif
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/uppc.ko ${PREFIX}/lib

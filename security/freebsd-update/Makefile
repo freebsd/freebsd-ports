@@ -16,10 +16,6 @@ COMMENT=	Fetches and installs binary updates to FreeBSD
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600034 && ( ${OSVERSION} < 504104 || ${OSVERSION} > 599999 )
-RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
-.endif
-
 .if ${OSVERSION} > 700019 || ( ${OSVERSION} > 601104 && ${OSVERSION} < 700000 )
 IGNORE=         is now contained in the base system
 .endif

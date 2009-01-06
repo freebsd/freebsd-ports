@@ -37,10 +37,6 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-LIB_DEPENDS+=	readline.[5-9]:${PORTSDIR}/devel/readline
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
