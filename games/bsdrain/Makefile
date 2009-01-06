@@ -8,13 +8,12 @@
 PORTNAME=	bsdrain
 PORTVERSION=	5.0
 CATEGORIES=	games
-MASTER_SITES=	http://whotookspaz.org/misc/freebsd/rain/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://whotookspaz.org/misc/freebsd/rain/
 DISTNAME=	rain-${PORTVERSION}
 
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	The original BSD rain program, ported from NetBSD
-
-BROKEN=		unfetchable
 
 MAN6=		rain.6
 MANCOMPRESSED=	yes
