@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--gccver=3
 
 MAN8=		dansguardian.8
-NOMANCOMPRESSED=	yes
 
 OPTIONS=	DG_APACHE "Enable Apache support for access denied page" on \
 		DG_PHRASELISTS "Install new phraselists over the old ones." off
