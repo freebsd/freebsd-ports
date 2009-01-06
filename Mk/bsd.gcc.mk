@@ -69,7 +69,7 @@ GCCVERSION_040300=	999999 999999 4.3
 # gfortran43 from lang/gcc43 is the default for now.
 . if ${USE_FORTRAN} == yes
 BUILD_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
-RUN_DEPENDS+=	gortran43:${PORTSDIR}/lang/gcc43
+RUN_DEPENDS+=	gfortran43:${PORTSDIR}/lang/gcc43
 FC:=	gfortran43
 F77:=	gfortran43
 . endif
