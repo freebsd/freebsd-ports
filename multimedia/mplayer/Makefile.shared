@@ -35,8 +35,7 @@ CONFIGURE_ARGS= --enable-png \
 		--disable-vidix-external \
 		--disable-tv-v4l1 \
 		--disable-tv-v4l2 \
-		--disable-dvdnav \
-		--disable-dvdread
+		--disable-dvdnav
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
