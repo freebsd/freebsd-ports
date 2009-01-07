@@ -591,7 +591,6 @@
 %%WWWDIR%%/inc/News.php
 %%WWWDIR%%/inc/PMF_DB/Ibase.php
 %%WWWDIR%%/inc/PMF_DB/Ibm_db2.php
-%%WWWDIR%%/inc/PMF_DB/Maxdb.php
 %%WWWDIR%%/inc/PMF_DB/Mssql.php
 %%WWWDIR%%/inc/PMF_DB/Mysql.php
 %%WWWDIR%%/inc/PMF_DB/Mysqli.php
@@ -648,8 +647,6 @@
 %%WWWDIR%%/install/ibm_db2.update.sql.php
 %%WWWDIR%%/install/index.html
 %%WWWDIR%%/install/installer.php
-%%WWWDIR%%/install/maxdb.sql.php
-%%WWWDIR%%/install/maxdb.update.sql.php
 %%WWWDIR%%/install/mssql.sql.php
 %%WWWDIR%%/install/mssql.update.sql.php
 %%WWWDIR%%/install/mysql.sql.php
@@ -715,6 +712,7 @@
 %%WWWDIR%%/savequestion.php
 %%WWWDIR%%/savevoting.php
 %%WWWDIR%%/scripts/cvs2package.sh
+%%WWWDIR%%/scripts/svn2package.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/send2friend.php
 %%WWWDIR%%/sendmail.php
@@ -760,7 +758,6 @@
 %%WWWDIR%%/template/writecomment.tpl
 %%WWWDIR%%/translate.php
 %%WWWDIR%%/writecomment.php
-%%WWWDIR%%/xmlrpc.php
 @dirrm %%WWWDIR%%/xml
 @dirrm %%WWWDIR%%/template
 @dirrm %%WWWDIR%%/scripts
