@@ -2595,7 +2595,6 @@ echinus                         ports/x11-wm/echinus
 echolinux                       ports/comms/echolinux
 echolot                         ports/net-mgmt/echolot
 echoping                        ports/net/echoping
-ecj-bootstrap                   ports/java/ecj-bootstrap
 ecl                             ports/lang/ecl
 eclair                          ports/multimedia/eclair
 eclipse                         ports/java/eclipse
@@ -3818,7 +3817,6 @@ gcc295                          ports/lang/gcc295
 gcc33                           ports/lang/gcc33
 gcc34                           ports/lang/gcc34
 gcc41                           ports/lang/gcc41
-gcc41-withgcjawt                ports/lang/gcc41-withgcjawt
 gcc42                           ports/lang/gcc42
 gcc42-withgcjawt                ports/lang/gcc42-withgcjawt
 gcc43                           ports/lang/gcc43
@@ -4037,7 +4035,6 @@ giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
-gjdoc                           ports/java/gjdoc
 gkermit                         ports/comms/gkermit
 gkfreq                          ports/sysutils/gkfreq
 gkleds2                         ports/sysutils/gkleds2
@@ -19717,6 +19714,7 @@ sb16config                      ports/sysutils/sb16config
 sbagen                          ports/audio/sbagen
 sbcl                            ports/lang/sbcl
 sbd                             ports/net/sbd
+sblim-wbemcli                   ports/net-mgmt/sblim-wbemcli
 sbniconfig                      ports/sysutils/sbniconfig
 sbox-dtc                        ports/www/sbox-dtc
 sc-aspell                       ports/textproc/sc-aspell
@@ -21580,7 +21578,6 @@ usrinfo                         ports/sysutils/usrinfo
 ustl                            ports/devel/ustl
 utcount                         ports/sysutils/utcount
 utf8conv                        ports/converters/utf8conv
-utf8locale                      ports/misc/utf8locale
 utf8proc                        ports/textproc/utf8proc
 utftools                        ports/misc/utftools
 utftpd                          ports/net/utftpd
@@ -22412,7 +22409,6 @@ xf86-video-fbdev                ports/x11-drivers/xf86-video-fbdev
 xf86-video-glint                ports/x11-drivers/xf86-video-glint
 xf86-video-i128                 ports/x11-drivers/xf86-video-i128
 xf86-video-i740                 ports/x11-drivers/xf86-video-i740
-xf86-video-i810                 ports/x11-drivers/xf86-video-i810
 xf86-video-imstt                ports/x11-drivers/xf86-video-imstt
 xf86-video-intel                ports/x11-drivers/xf86-video-intel
 xf86-video-mach64               ports/x11-drivers/xf86-video-mach64
