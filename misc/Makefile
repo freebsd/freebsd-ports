@@ -158,7 +158,6 @@
     SUBDIR += hb
     SUBDIR += hello
     SUBDIR += help2man
-    SUBDIR += heyu
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring

@@ -1,7 +1,0 @@
-bin/dawndusk
-bin/heyu
-bin/heyuhelper
-bin/makesched
-%%EXAMPLESDIR%%/x10config.sample
-%%EXAMPLESDIR%%/x10sched.conf.sample
-@dirrm %%EXAMPLESDIR%%
