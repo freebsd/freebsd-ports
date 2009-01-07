@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isomaster
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/${i} ${DATADIR}/icons
 .endfor
 .if !defined(WITHOUT_NLS)
-.for i in bg ca cs de el es fi fo fr he hr hu id it nb nl nn pl pt ro ru sk sq sr sl sr@latin sr@Latn sv tr uk zh_CN zh_TW
+.for i in ar be@latin bg ca cs da de el es et fi fo fr he hr hu id it nb nl nn pl pt pt_BR ro ru sk sl sq sr sr@Latn sr@latin sv tr uk zh_CN zh_TW
 	test -d ${PREFIX}/share/locale/${i} || ${MKDIR} ${PREFIX}/share/locale/${i}
 	test -d ${PREFIX}/share/locale/${i}/LC_MESSAGES ||  ${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${i}.mo ${PREFIX}/share/locale/${i}/LC_MESSAGES/isomaster.mo
