@@ -3731,3 +3731,4 @@ java/ecj-bootstrap||2009-01-06|Removed
 audio/dream||2009-01-06|Has expired: Needs DRM enabled in FAAD
 emulators/mupen64plus-sound||2009-01-06|No supported anymore by mupen64plus team
 
+misc/heyu||2009-01-07|Has expired: no longer under development, use misc/heyu2
