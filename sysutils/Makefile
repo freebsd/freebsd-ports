@@ -692,11 +692,11 @@
     SUBDIR += su2
     SUBDIR += swapd
     SUBDIR += symlinks
-    SUBDIR += symlinux
     SUBDIR += symon
     SUBDIR += synergy
     SUBDIR += syscp
     SUBDIR += sysgather
+    SUBDIR += syslinux
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng2
     SUBDIR += syslogger
