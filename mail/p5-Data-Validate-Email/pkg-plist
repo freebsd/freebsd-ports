@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/Email/.packlist
+%%SITE_PERL%%/Data/Validate/Email.pm
+%%SITE_PERL%%/auto/Data/Validate/Email/new.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_email.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_email_rfc822.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_domain.al
+%%SITE_PERL%%/auto/Data/Validate/Email/is_username.al
+%%SITE_PERL%%/auto/Data/Validate/Email/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/Email
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/auto/Data/Validate/Email
+@dirrmtry %%SITE_PERL%%/auto/Data/Validate
+@dirrmtry %%SITE_PERL%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Validate
+@dirrmtry %%SITE_PERL%%/Data
