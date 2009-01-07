@@ -19,7 +19,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
 CONFLICTS=	rrdtool-1.0*
 
@@ -37,9 +36,11 @@ PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl piped-demo.pl \
 
 OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
 		RUBY_MODULE	"Build RUBY bindings" off \
-		PERL_MODULE	"Build PERL module" on
+		PERL_MODULE	"Build PERL module" on \
+		DEJAVU		"Use DejaVu fonts (requires X11)" off
 
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_PYTHON_MODULE)
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
@@ -67,6 +68,10 @@ PLIST_SUB+=	WITH_PERL=""
 .else
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	WITH_PERL="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || defined(WITH_DEJAVU)
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
