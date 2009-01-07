@@ -3,7 +3,6 @@ share/angband/apex/delete.me
 share/angband/apex/scores.raw
 share/angband/bone/delete.me
 share/angband/data/artifact.raw
-share/angband/data/cost_adj.raw
 share/angband/data/delete.me
 share/angband/data/ego_item.raw
 share/angband/data/flavor.raw
@@ -15,10 +14,10 @@ share/angband/data/p_hist.raw
 share/angband/data/p_race.raw
 share/angband/data/prices.raw
 share/angband/data/shop_own.raw
+share/angband/data/spells.raw
 share/angband/data/terrain.raw
 share/angband/data/vault.raw
 share/angband/edit/artifact.txt
-share/angband/edit/cost_adj.txt
 share/angband/edit/ego_item.txt
 share/angband/edit/flavor.txt
 share/angband/edit/limits.txt
@@ -29,8 +28,10 @@ share/angband/edit/p_hist.txt
 share/angband/edit/p_race.txt
 share/angband/edit/shop_own.txt
 share/angband/edit/spell.txt
+share/angband/edit/store.txt
 share/angband/edit/terrain.txt
 share/angband/edit/vault.txt
+share/angband/file/crown.txt
 share/angband/file/dead.txt
 share/angband/file/news.txt
 share/angband/help/308.txt
@@ -73,6 +74,7 @@ share/angband/pref/xtra-new.prf
 share/angband/pref/xtra-xxx.prf
 share/angband/save/delete.me
 share/angband/user/delete.me
+share/angband/xtra/angband.glade
 share/angband/xtra/font/copying.txt
 share/angband/xtra/font/10x17b.fon
 share/angband/xtra/font/10x17.fon
@@ -104,6 +106,11 @@ share/angband/xtra/graf/32x32.png
 share/angband/xtra/graf/8x13.bmp
 share/angband/xtra/graf/8x8.bmp
 share/angband/xtra/graf/8x8.png
+share/angband/xtra/icon/att-16.png
+share/angband/xtra/icon/att-32.png
+share/angband/xtra/icon/att-128.png
+share/angband/xtra/icon/att-256.png
+share/angband/xtra/icon/att-512.png
 share/angband/xtra/sound/breath.wav
 share/angband/xtra/sound/clunk.wav
 share/angband/xtra/sound/death.wav
@@ -138,6 +145,7 @@ share/angband/xtra/sound/vomit.wav
 @dirrm share/angband/save
 @dirrm share/angband/user
 @dirrm share/angband/xtra/sound
+@dirrm share/angband/xtra/icon
 @dirrm share/angband/xtra/graf
 @dirrm share/angband/xtra/font
 @dirrm share/angband/xtra
