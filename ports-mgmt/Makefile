@@ -50,7 +50,6 @@
    SUBDIR += portscout
    SUBDIR += portsearch
    SUBDIR += portsman
-   SUBDIR += portsnap
    SUBDIR += portsopt
    SUBDIR += porttools
    SUBDIR += portupdate-scan
