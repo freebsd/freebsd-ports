@@ -38,10 +38,10 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}"
 
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
-IGNORE=	"You need to extract kernel source tree before building this package"
+IGNORE=	you need to extract kernel source tree before building this package
 .endif
 
-pre-fetch:
+pre-everything::
 .for STRAY in ${STRAYFILES}
 .if exists(${SRCPREFIX}/sys/dev/sound/pci/${STRAY})
 	@${ECHO}
