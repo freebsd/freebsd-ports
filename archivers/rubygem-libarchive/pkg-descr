@@ -1,0 +1,8 @@
+Ruby bindings for Libarchive.
+
+Libarchive is a programming library that can create and read several
+different streaming archive formats, including most popular tar
+variants, several cpio formats, and both BSD and GNU ar variants.
+
+Author:	SUGAWARA Genki <sgwr_dts@yahoo.co.jp>
+WWW:	http://rubyforge.org/projects/libarchive/

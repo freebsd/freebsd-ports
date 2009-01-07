@@ -136,6 +136,7 @@
     SUBDIR += ruby-lha
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
+    SUBDIR += rubygem-libarchive
     SUBDIR += rvm
     SUBDIR += rzip
     SUBDIR += sectar
