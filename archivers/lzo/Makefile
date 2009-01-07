@@ -17,9 +17,14 @@ MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
+
+post-build:
+	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes)"
+	@# override MALLOC_OPTIONS, else tests take excessively long
+	cd ${WRKSRC} && ${SETENV} MALLOC_OPTIONS=jz ${MAKE} check test
 
 post-install:
 .if !defined(NOPORTDOCS)
