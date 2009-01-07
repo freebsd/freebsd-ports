@@ -1,6 +1,6 @@
---- AstroMenaceSource/Main.cpp.orig	2007-09-23 00:51:32.000000000 +0400
-+++ AstroMenaceSource/Main.cpp	2008-05-19 04:59:05.387115362 +0400
-@@ -312,35 +312,7 @@
+--- AstroMenaceSource/Main.cpp.orig	2008-12-27 18:25:49.000000000 +0100
++++ AstroMenaceSource/Main.cpp	2008-12-27 18:35:49.000000000 +0100
+@@ -312,38 +312,7 @@
  	const char* key = "HOME";
  	const char* homeval = getenv(key);
  
@@ -26,14 +26,17 @@
 -	}
 -	if (!dirpresent)
 -	{
--		strcpy(ProgrammDir, argv[0]);
--		char* s = strrchr(ProgrammDir,'/');
--		if (s) s[0]=0x0;
--		const char *Fi = "/";
--		strcat( ProgrammDir, Fi );
+-#ifdef DATADIR
+-		strcpy(ProgrammDir, DATADIR "/");
+-#else
+- 		strcpy(ProgrammDir, argv[0]);
+- 		char* s = strrchr(ProgrammDir,'/');
+- 		if (s) s[0]=0x0;
+- 		const char *Fi = "/";
+- 		strcat( ProgrammDir, Fi );
+-#endif
 -	}
--
-+	strcpy(ProgrammDir, "/usr/local/share/openastromenace/");
++        strcpy(ProgrammDir, "/usr/local/share/openastromenace/");
+ 
  
  	strcpy(ScreenshotDir, homeval);
- 	strcat(ScreenshotDir, "/Desktop/AstroMenaceScreenshot");

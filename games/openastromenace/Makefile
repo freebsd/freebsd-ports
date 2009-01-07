@@ -7,10 +7,10 @@
 
 PORTNAME=	openastromenace
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTFILES=	oamenace-src-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	openamenace-src-${PORTVERSION}${EXTRACT_SUFX} \
 		oamenace-data-${PORTVERSION}${EXTRACT_SUFX} \
 		oamenace-lang-${LANGPACK}-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -27,6 +27,7 @@ USE_GL=		gl glu
 WANT_SDL=	yes
 USE_SDL=	sdl
 USE_CMAKE=	yes
+WRKSRC=		${WRKDIR}/OpenAstroMenaceSVN
 
 OPTIONS=	EN	"English language pack"	on \
 		DE	"German language pack"	off \

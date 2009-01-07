@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2007-09-23 00:51:32.000000000 +0400
-+++ CMakeLists.txt	2008-05-19 04:24:59.253802609 +0400
-@@ -12,6 +12,8 @@
- # into current directory and run ./AstroMenace
+--- CMakeLists.txt.orig	2008-12-27 18:32:26.000000000 +0100
++++ CMakeLists.txt	2008-12-27 18:33:33.000000000 +0100
+@@ -13,6 +13,8 @@
+ # ./AstroMenace
  #
  
 +CMAKE_MINIMUM_REQUIRED(VERSION 2.4)
@@ -9,18 +9,18 @@
  # project name
  PROJECT(AstroMenace)
  
-@@ -34,9 +36,12 @@
- FILE(GLOB_RECURSE astromenace_SRCS AstroMenaceSource/*.cpp)
- 
- # targets
--ADD_DEFINITIONS(`${SDL_CONFIG} --cflags` -g -Wall)
-+EXEC_PROGRAM(${SDL_CONFIG} ARGS "--cflags" OUTPUT_VARIABLE SDL_CFLAGS)
-+EXEC_PROGRAM(${SDL_CONFIG} ARGS "--libs" OUTPUT_VARIABLE SDL_LIBS)
+@@ -43,9 +45,12 @@
+  IF(DEFINED DATADIR)
+ 	ADD_DEFINITIONS(-DDATADIR=\\"${DATADIR}\\")
+  ENDIF(DEFINED DATADIR)
+- ADD_DEFINITIONS(`${SDL_CONFIG} --cflags` -Wall)
++ EXEC_PROGRAM(${SDL_CONFIG} ARGS "--cflags" OUTPUT_VARIABLE SDL_CFLAGS)
++ EXEC_PROGRAM(${SDL_CONFIG} ARGS "--libs" OUTPUT_VARIABLE SDL_LIBS)
 +
-+ADD_DEFINITIONS(${SDL_CFLAGS})
- ADD_EXECUTABLE(AstroMenace ${astromenace_SRCS})
--TARGET_LINK_LIBRARIES(AstroMenace `${SDL_CONFIG} --libs` ${OPENGL_gl_LIBRARY} ${OPENAL_LIBRARY} ${JPEG_LIBRARY} ${GLU_LIBRARY} -lalut -lvorbis -lvorbisfile)
-+TARGET_LINK_LIBRARIES(AstroMenace ${SDL_LIBS} ${OPENGL_gl_LIBRARY} ${OPENAL_LIBRARY} ${JPEG_LIBRARY} ${GLU_LIBRARY} -lalut -lvorbis -lvorbisfile)
- IF(CYGWIN)
++ ADD_DEFINITIONS(${SDL_CFLAGS})
+  ADD_EXECUTABLE(AstroMenace ${astromenace_SRCS})
+- TARGET_LINK_LIBRARIES(AstroMenace `${SDL_CONFIG} --libs` ${OPENGL_gl_LIBRARY} ${OPENAL_LIBRARY} ${JPEG_LIBRARY} ${GLU_LIBRARY} -lalut -lvorbis -lvorbisfile)
++ TARGET_LINK_LIBRARIES(AstroMenace ${SDL_LIBS} ${OPENGL_gl_LIBRARY} ${OPENAL_LIBRARY} ${JPEG_LIBRARY} ${GLU_LIBRARY} -lalut -lvorbis -lvorbisfile)
+  IF(CYGWIN)
  	TARGET_LINK_LIBRARIES(AstroMenace -lGL.dll  -lGLU.dll -lglfw -lX11.dll)
  #	ADD_DEFINITIONS(-mno-cygwin)
