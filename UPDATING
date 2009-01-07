@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090107:
+  AFFECTS: users of security/libgcrypt
+  AUTHOR: rafan@FreeBSD.org
+
+  libgcrypt has been upgraded to 1.4.3 which has a shared library
+  version bump. You need to reinstall all ports depending on it.
+  Use something like this:
+
+  portupgrade -rf libgcrypt
+  portmaster -r libgcrypt
+
 20090104:
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
