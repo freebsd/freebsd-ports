@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	lazysearch
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	audio
-# Distfile mirrored due to being unversioned on author's site
-MASTER_SITES=	ftp://ftp.i-scream.org/pub/slimserver/${PORTNAME}/ \
-		http://ftp.i-scream.org/pub/slimserver/${PORTNAME}/
+MASTER_SITES=	http://www.hickinbottom.com/sc-plugins/
 PKGNAMEPREFIX=	squeezecenter-
+DISTNAME=	LazySearch2-7-${PORTVERSION}
 DIST_SUBDIR=	squeezecenter
 
 MAINTAINER=	tdb@FreeBSD.org
