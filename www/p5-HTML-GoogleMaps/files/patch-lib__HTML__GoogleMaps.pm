@@ -9,15 +9,6 @@
  =back
  
  =back
-@@ -83,7 +85,7 @@
- =item $map->add_icon(name => $icon_name,
-                      image => $image_url,
-                      shadow => $shadow_url,
--                     image_size => [ $width, $height ],
-+                     icon_size => [ $width, $height ],
-                      shadow_size => [ $width, $height ],
-                      icon_anchor => [ $x, $y ],
-                      info_window_anchor => [ $x, $y ]);
 @@ -155,7 +157,7 @@
      %opts,
      points => [],
@@ -27,12 +18,3 @@
    }, $class;
  }
  
-@@ -347,7 +349,7 @@
-   );
- 
-   my $text = <<SCRIPT;
--    <script type=\"text/javascript\" />
-+    <script type=\"text/javascript\">
-     //<![CDATA[
- 
-     if (GBrowserIsCompatible()) {
