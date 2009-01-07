@@ -1,5 +1,5 @@
---- ./nsswitch/pam_winbind.c.orig	2008-09-18 06:49:02.000000000 +0000
-+++ ./nsswitch/pam_winbind.c	2008-10-10 00:42:10.000000000 +0000
+--- ./nsswitch/pam_winbind.c.orig	2008-12-19 13:57:33.000000000 +0000
++++ ./nsswitch/pam_winbind.c	2009-01-06 17:10:53.000000000 +0000
 @@ -39,14 +39,14 @@
  			 const void *_item)
  {

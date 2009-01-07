@@ -6,16 +6,11 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.2.4
-PORTREVISION=	2
+PORTVERSION?=		3.2.7
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
-
-PATCH_SITES=		http://us1.samba.org/samba/ftp/patches/security/
-PATCHFILES=		samba-3.2.4-CVE-2008-4314.patch
-PATCH_DIST_STRIP=	-p2
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
@@ -157,12 +152,10 @@ CONFIGURE_ARGS+=	--without-utmp
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
 SUB_LIST+=		WINBIND=""
-WITH_WINBIND_NSS=	yes
-PLIST_SUB+=		WINBIND_NSS=""
 .else
 CONFIGURE_ARGS+=	--without-winbind
-PLIST_SUB+=		WINBIND="@comment " WINBIND_NSS="@comment "
-SUB_LIST+=		WINBIND="@comment " WINBIND_NSS="@comment "
+PLIST_SUB+=		WINBIND="@comment "
+SUB_LIST+=		WINBIND="@comment "
 .endif
 
 .if !defined(WITHOUT_SWAT)
@@ -421,12 +414,10 @@ post-install:
 	${INSTALL_SCRIPT} "${WRKSRC}/script/mksmbpasswd.sh" "${PREFIX}/bin/make_smbpasswd"
 # Winbind
 .if !defined(WITHOUT_WINBIND)
-.	if defined(WITH_WINBIND_NSS)
-	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
-	    ${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
-	    @${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
-	    @${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
-.	endif
+	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_winbind.so" "${SAMBA_LIBDIR}/nss_winbind.so.1"
+	${INSTALL_PROGRAM} "${WRKSRC}/nsswitch/nss_wins.so" "${SAMBA_LIBDIR}/nss_wins.so.1"
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_winbind.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif

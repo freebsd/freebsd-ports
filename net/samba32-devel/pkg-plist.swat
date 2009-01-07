@@ -268,6 +268,7 @@ share/swat/help/manpages/vfs_readahead.8.html
 share/swat/help/manpages/vfs_readonly.8.html
 share/swat/help/manpages/vfs_recycle.8.html
 share/swat/help/manpages/vfs_shadow_copy.8.html
+share/swat/help/manpages/vfs_smb_traffic_analyzer.8.html
 share/swat/help/manpages/vfs_streams_depot.8.html
 share/swat/help/manpages/vfs_streams_xattr.8.html
 share/swat/help/manpages/vfs_xattr_tdb.8.html

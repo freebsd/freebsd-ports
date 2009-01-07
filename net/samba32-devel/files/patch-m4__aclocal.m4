@@ -1,5 +1,5 @@
---- ./m4/aclocal.m4.orig	2008-09-18 06:49:02.000000000 +0000
-+++ ./m4/aclocal.m4	2008-10-10 00:42:10.000000000 +0000
+--- ./m4/aclocal.m4.orig	2008-12-19 13:57:33.000000000 +0000
++++ ./m4/aclocal.m4	2009-01-06 17:10:53.000000000 +0000
 @@ -416,101 +416,79 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)
