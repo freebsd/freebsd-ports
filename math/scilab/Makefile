@@ -22,6 +22,8 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
     		pvm:${PORTSDIR}/net/pvm
 
+USE_FORTRAN=yes
+CONFIGURE_ARGS+=	--with-gfortran
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
@@ -44,8 +46,7 @@ CONFIGURE_ARGS=	--with-tk \
 		--with-gtk2
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CONFIGURE_ENV+=	F77=${F77} CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" \
-		PVM_ROOT=${LOCALBASE}/lib/pvm
+CONFIGURE_ENV+=	PVM_ROOT=${LOCALBASE}/lib/pvm
 
 .include <bsd.port.pre.mk>
 
@@ -66,13 +67,6 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS?=	-llapack -lblas
 .endif
 MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
-
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-F77=		gfortran42
-FC=		gfortran42
-CONFIGURE_ARGS+=	--with-gfortran
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		does not compile on alpha 5.x, ia64, sparc64
