@@ -1,0 +1,7 @@
+This module can be used almost as a drop-in replacement for CGI.pm
+for those of you who do not use the HTML generating features of CGI.pm
+This module provides an object-oriented interface for retrieving information
+provided by the Common Gateway Interface, as well as url-encoding and
+decoding values, and parsing CGI parameters.
+
+WWW:	http://search.cpan.org/dist/CGI-Utils/
