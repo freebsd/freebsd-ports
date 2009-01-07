@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_RSA
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -38,7 +38,7 @@ FILES=		RSA.php RSA/ErrorHandler.php RSA/Key.php RSA/KeyPair.php \
 		RSA/Math/GMP.php
 DOCS=		CREDITS LICENSE Crypt_RSA.txt math_wrappers.txt
 EXAMPLES=	web_interface.php
-TESTS=		test1.php test2.php
+TESTS=		test1.php test2.php bench.php
 
 post-extract:
 	@${MV} ${WRKSRC}/CREDITS ${WRKSRC}/docs
