@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-2.0-beta3
 
-MAINTAINER=	pjd@satori.za.net
+MAINTAINER=	pjdelport@gmail.com
 COMMENT=	A secure remote execution framework using a compact Scheme-influenced VM
 
 USE_GMAKE=	yes
