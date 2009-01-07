@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/HostIP/.packlist
+%%SITE_PERL%%/Sys/HostIP.pm
+@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/HostIP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/Sys
