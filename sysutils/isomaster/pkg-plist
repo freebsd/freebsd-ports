@@ -6,12 +6,16 @@ bin/isomaster
 %%DATADIR%%/icons/folder-new-kearone.png
 %%DATADIR%%/icons/go-back-kearone.png
 %%DATADIR%%/icons/isomaster.png
+%%NLS%%share/locale/ar/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/be@latin/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/da/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/de/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/el/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/es/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/et/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/fo/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/isomaster.mo
@@ -25,6 +29,7 @@ bin/isomaster
 %%NLS%%share/locale/nn/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/isomaster.mo
@@ -41,6 +46,8 @@ bin/isomaster
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry %%DESKTOPDIR%%
+@dirrmtry %%NLS%%share/locale/be@latin/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/be@latin
 @dirrmtry %%NLS%%share/locale/fo/LC_MESSAGES
 @dirrmtry %%NLS%%share/locale/fo
 @dirrmtry %%NLS%%share/locale/sr@latin/LC_MESSAGES
