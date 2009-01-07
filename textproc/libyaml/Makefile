@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	A YAML 1.1 parser and emitter written in C
 
 GNU_CONFIGURE=	yes
