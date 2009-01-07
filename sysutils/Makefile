@@ -565,7 +565,6 @@
     SUBDIR += phplogcon
     SUBDIR += pidof
     SUBDIR += pipemeter
-    SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += plod
     SUBDIR += pmap
