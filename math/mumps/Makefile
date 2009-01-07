@@ -7,6 +7,7 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.8.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\

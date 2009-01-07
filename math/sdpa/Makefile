@@ -7,6 +7,7 @@
 
 PORTNAME=	sdpa
 PORTVERSION=	7.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}

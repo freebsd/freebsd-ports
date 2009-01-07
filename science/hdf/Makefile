@@ -7,7 +7,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.2r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \

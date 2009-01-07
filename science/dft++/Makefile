@@ -7,7 +7,7 @@
 
 PORTNAME=	dft++
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://dft.physics.cornell.edu/src/ \
 		http://dft.physics.cornell.edu/example/:example
