@@ -18,12 +18,12 @@ group=%%EXIM_GROUP%%
 logdir=%%LOGDIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
-	if ! /usr/bin/id ${user} > /dev/null; then
-		/usr/sbin/pw useradd ${EXIM_USER} -g ${EXIM_GROUP} -u 125 \
-		-h - -d /var/spool/exim -s /nonexistent -c "Exim User"
+	if ! /usr/sbin/pw groupshow ${group} >/dev/null; then
+		/usr/sbin/pw groupadd ${group} -g 125
 	fi
-	if ! /usr/bin/grep -q "^${group}:" /etc/group; then
-		/usr/sbin/pw groupadd ${EXIM_GROUP} -g 125
+	if ! /usr/sbin/pw usershow ${user} >/dev/null; then
+		/usr/sbin/pw useradd ${user} -g ${group} -u 125 \
+		-h - -d /var/spool/exim -s /nonexistent -c "Exim User"
 	fi
 	/bin/mkdir -p ${logdir}
 	/usr/sbin/chown ${user}:${group} ${logdir}
