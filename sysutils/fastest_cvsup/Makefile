@@ -7,7 +7,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
