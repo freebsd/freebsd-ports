@@ -7,7 +7,7 @@
 
 PORTNAME=	linpack
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/linpack/ \
 		http://netlib.amss.ac.cn/linpack/

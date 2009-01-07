@@ -7,7 +7,7 @@
 
 PORTNAME=	oof
 PORTVERSION=	1.037
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.ctcms.nist.gov/~langer/OOFdownload/SRC/
 DISTNAME=	${PORTNAME}-dist${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/abinit|} \
 		ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/

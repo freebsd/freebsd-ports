@@ -7,7 +7,7 @@
 
 PORTNAME=	f90gl
 PORTVERSION=	1.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.nist.gov/f90gl/ \
 		http://math.nist.gov/~WMitchell/papers/:doc

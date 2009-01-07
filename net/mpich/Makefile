@@ -7,7 +7,7 @@
 
 PORTNAME=	mpich
 DISTVERSION=	1.2.7p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich

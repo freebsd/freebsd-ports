@@ -7,6 +7,7 @@
 
 PORTNAME=	psi3
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.psicode.org/doc/:doc
