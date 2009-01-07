@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Passwd
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	security pear
 
 MAINTAINER=	ports@FreeBSD.org
