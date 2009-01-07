@@ -64,6 +64,7 @@
     SUBDIR += gaddr
     SUBDIR += ganttproject
     SUBDIR += ganyremote
+    SUBDIR += gbirthday
     SUBDIR += gcal
     SUBDIR += gcalcli
     SUBDIR += gdesklets
