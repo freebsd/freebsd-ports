@@ -1,6 +1,9 @@
+%%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic/html/images/sqlplaylist_mix.gif
+%%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/html/images/sqlplaylist_mix.gif
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/plugins/SQLPlayList/dynamicplaylistlink.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/catchtab.js
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/dynamicplaylistlink.html
+%%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/mixerlink.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/settings/basic.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/settings/subpage_chooser.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/sqlplaylist_list.html
@@ -16,11 +19,14 @@
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/webadminmethods_publishitemparameters.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/webadminmethods_register.html
 %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/webadminmethods_savedownloadeditem.html
+%%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone/html/images/sqlplaylist_mix.gif
 %%SLIMDIR%%/Plugins/SQLPlayList/LICENSE.txt
+%%SLIMDIR%%/Plugins/SQLPlayList/Mixes/sqlplaylist.cb.mix.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomalbums.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomartists.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforalbum.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforartist.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomfordecade.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforgenre.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforplaylist.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforyear.sql.values.xml
@@ -43,6 +49,10 @@
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomforratingandgenre.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomforratingandyear.sql.template
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomforratingandyear.sql.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomfrommixer.sql.template
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomfrommixer.sql.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomplaylisttracks.sql.template
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomplaylisttracks.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomtracks.sql.template
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomtracks.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/randomweightedtracks.sql.template
@@ -55,6 +65,8 @@
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforalbum.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforartist.sql.template
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforartist.sql.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedfordecade.sql.template
+%%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedfordecade.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforgenre.sql.template
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforgenre.sql.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Templates/topratedforplaylist.sql.template
@@ -67,13 +79,22 @@
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/lib
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Templates
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Playlists
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/Mixes
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone/html/images
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone/html
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Fishbone
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList/settings
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins/SQLPlayList
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN/plugins
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/EN
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/plugins/SQLPlayList
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/plugins
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default/html
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Default
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic/html/images
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic/html
+@dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML/Classic
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList/HTML
 @dirrm %%SLIMDIR%%/Plugins/SQLPlayList
 @dirrmtry %%SLIMDIR%%/Plugins
