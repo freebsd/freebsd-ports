@@ -1,0 +1,12 @@
+PQueue is a package providing low-level PQ protocol classes for
+interacting with a PostgreSQL database. It supports version 3.0
+of the protocol--the current primary version of protocol. The
+package also provides a basic protocol transaction class. This
+class keeps the state of the protocol in an interrupt safe manner,
+and validates the integrity of the communication as messages are
+received.
+
+In general, you probably will never use this package directly,
+unless you are writing a driver.
+
+WWW:	http://python.projects.postgresql.org/
