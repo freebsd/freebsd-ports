@@ -20,12 +20,14 @@
 %%SLIMDIR%%/Plugins/DynamicPlayList/LICENSE.txt
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistalbum.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistartist.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistdecade.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistgenre.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistplaylist.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylisttrack.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistyear.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/README.txt
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbcreate.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_client_type.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_skipped.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/custom-types.conf
 %%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration/mix.ipeng.xml
