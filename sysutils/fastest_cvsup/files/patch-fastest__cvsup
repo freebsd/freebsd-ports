@@ -1,5 +1,5 @@
---- fastest_cvsup.orig	Mon Jan 15 17:50:24 2007
-+++ fastest_cvsup	Mon Jan 15 15:17:51 2007
+--- fastest_cvsup.orig	2002-09-19 14:12:17.000000000 +0200
++++ fastest_cvsup	2009-01-04 15:25:33.000000000 +0100
 @@ -1,13 +1,15 @@
  #!/usr/bin/perl
  #-----------------------------------------------------------------------------#
@@ -17,23 +17,24 @@
  # 0.2.8  - fixed the progress meter, timestamped %FREEBSD_SERVERS
  # 0.2.7  - updated documentation, usage message and progress meter.
  # 0.2.6  - changed from freebsdmirrors.org to the online handbook.
-@@ -74,17 +76,19 @@
+@@ -74,44 +76,50 @@
  # How many FreeBSD CVSup servers has each country got? (well, not strictly
  # true... what's the highest cvsup number in use?
  
 -my %FREEBSD_SERVERS = (     # last updated: Thu Sep 19 12:56:23 2002
-+my %FREEBSD_SERVERS = (     # last updated: May 29 21:30:20 GMT 2006
++my %FREEBSD_SERVERS = (     # last updated: Jan 04 15:02:20 GMT 2009
    'ar' => 1,    # Argentina
 -  'at' => 1,    # Austria
 -  'au' => 5,    # Australia
+-  'br' => 4,    # Brazil
++  'am' => 1,    # Armenia
 +  'at' => 2,    # Austria
-+  'au' => 7,    # Australia
-   'br' => 4,    # Brazil
++  'au' => 1,    # Australia
++  'br' => 3,    # Brazil
    'ca' => 2,    # Canada
 -  'cn' => 1,    # China
 +  'ch' => 2,    # Switzerland
-+  'cn' => 7,    # China
-+  'cr' => 1,    # Costa Rica
++  'cn' => 5,    # China
    'cz' => 1,    # Czech Republic
 -  'de' => 7,    # Germany
 -  'dk' => 1,    # Denmark
@@ -44,8 +45,11 @@
    'es' => 3,    # Spain
    'fi' => 2,    # Finland
    'fr' => 8,    # France
-@@ -93,25 +97,32 @@
-   'ie' => 1,    # Ireland
+-  'gr' => 2,    # Greece
++  'gr' => 1,    # Greece
+   'hu' => 1,    # Hungary
+-  'ie' => 1,    # Ireland
++  'ie' => 2,    # Ireland
    'is' => 1,    # Iceland
    'jp' => 6,    # Japan
 -  'kr' => 2,    # Korea
@@ -60,29 +64,24 @@
 +  'nl' => 6,    # Netherlands
    'no' => 1,    # Norway
    'nz' => 1,    # New Zealand
--  'pl' => 1,    # Poland
+   'pl' => 1,    # Poland
 -  'pt' => 1,    # Portugal
 -  'ro' => 1,    # Romania
 -  'ru' => 6,    # Russia
--  'se' => 2,    # Sweden
--  'si' => 1,    # Slovenia
--  'sk' => 2,    # Slovak Republic
-+  'ph' => 1,    # Philippines
-+  'pl' => 3,    # Poland
 +  'pt' => 3,    # Portugal
 +  'ro' => 3,    # Romania
 +  'ru' => 7,    # Russia
-+  'se' => 4,    # Sweden
-+  'sg' => 1,    # Singapore
-+  'si' => 3,    # Slovenia
-+  'sk' => 1,    # Slovak Republic
-   'sm' => 1,    # San Marino
+   'se' => 2,    # Sweden
+-  'si' => 1,    # Slovenia
++  'si' => 2,    # Slovenia
+   'sk' => 2,    # Slovak Republic
+-  'sm' => 1,    # San Marino
 -  'tw' => 3,    # Taiwan
 -  'ua' => 5,    # Ukraine
 -  'uk' => 5,    # United Kingdom
 -  'us' => 17,   # USA
 +  'th' => 1,    # Thailand
-+  'tr' => 1,    # Turkey
++  'tr' => 2,    # Turkey
 +  'tw' => 14,   # Taiwan
 +  'ua' => 11,   # Ukraine
 +  'uk' => 4,    # United Kingdom
@@ -92,7 +91,7 @@
  );
  
  my %OTHER_SERVERS = (
-@@ -141,6 +152,8 @@
+@@ -141,6 +149,8 @@
                   'rt.fm',
                   'skeleton.phys.spbu.ru',
                   'cvsup.jp.openbsd.org',
@@ -101,7 +100,7 @@
                   'wiretapped.net',
                 ],
  );
-@@ -177,6 +190,7 @@
+@@ -177,6 +187,7 @@
          "         -Q           very quiet mode, no progress meter\n",
          "         -r           uses remote server list from FreeBSD Handbook\n",
          "         -c aa,bb,cc  queries servers in countries aa,bb,cc\n",
@@ -109,7 +108,7 @@
          "            local     queries servers set as local in the script\n",
          "            all       queries all FreeBSD servers\n\n",
          "  See the man page, fastest_cvsup(7), for more details.\n\n";
-@@ -281,6 +295,7 @@
+@@ -281,6 +292,7 @@
  
        # extract the country name and the rest (what a mess!)
  
@@ -117,7 +116,7 @@
        if ( m/^(\w+)(\s{1}\w+)?\s*(.*)/s ) {
          my $country = $1.$2; # for two word names
          my $mess = $3;       # the rest
-@@ -307,12 +322,12 @@
+@@ -307,12 +319,12 @@
              unless ( $cc_name{$cc} ) { $cc_name{$cc} = $country }
            }
  
@@ -133,7 +132,7 @@
            }
          }
        }
-@@ -419,7 +434,7 @@
+@@ -419,7 +431,7 @@
  
    for ( my $i=1; $i<=$FREEBSD_SERVERS{$cc}; $i++ ) {
  
@@ -142,7 +141,7 @@
        if ( $i == 1 ) { push(@first,"cvsup$i.freebsd.org"); }
        else           { push(@others,"cvsup$i.freebsd.org"); }
      }
-@@ -575,7 +590,7 @@
+@@ -575,7 +587,7 @@
  
  =head1 SYNOPSIS
  
@@ -151,15 +150,15 @@
  
  =head1 DESCRIPTION
  
-@@ -619,6 +634,11 @@
- 
+@@ -620,6 +632,11 @@
  NetBSD and OpenBSD servers are lumped together under the 'netbsd' and
  'openbsd' codes respectively.
-+
+ 
 +=item B<-c tld>
 +
 +checks the servers in the Top Level Domain.  These can be anywhere in the
 +world.
- 
++
  =item B<-c local>
  
+ uses the countries specifed in the C<@LOCAL_CC> array. Edit the script to
