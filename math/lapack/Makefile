@@ -9,7 +9,10 @@ PORTNAME=	lapack
 PORTVERSION=	3.1.1
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/
+MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
+		http://netlib.org/lapack/ \
+		http://scicomp.ewha.ac.kr/netlib/lapack/ \
+		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
 DISTFILES=	lapack-${PORTVERSION}.tgz manpages-${PORTVERSION}.tgz
 
 MAINTAINER=	maho@FreeBSD.org
