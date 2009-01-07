@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	wenheping@gmail.com
@@ -15,9 +15,32 @@ COMMENT=	A PEAR Class to Create UML Representation of PHP Code
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+DEFAULT_PHP_VER=	5
+USE_PHP=		spl
+
+OPTIONS=	PEAR_CONSOLE_COMMANDLINE "PEAR::Console_CommandLine support" off
+
 CATEGORY=	PHP
-FILES=		UML.php UML/Metamodel/EMOF.php \
-		UML/Metamodel/PHP.php UML/PHP/Parser.php \
+FILES=		UML.php \
+		UML/Exception.php UML/FilePatternFilterIterator.php \
+		UML/SimpleUID.php UML/Warning.php \
+		UML/Metamodel/Class.php UML/Metamodel/Enumeration.php \
+		UML/Metamodel/File.php UML/Metamodel/Interface.php \
+		UML/Metamodel/NamedElement.php UML/Metamodel/Operation.php \
+		UML/Metamodel/Package.php UML/Metamodel/Parameter.php \
+		UML/Metamodel/Property.php UML/Metamodel/Stereotype.php \
+		UML/Metamodel/Superstructure.php UML/Metamodel/Tag.php \
+		UML/Metamodel/Type.php UML/Metamodel/TypedElement.php \
+		UML/Output/common.xsl UML/Output/Exporter.php \
+		UML/Output/html/allclasses-frame.xsl UML/Output/html/classifier.xsl \
+		UML/Output/html/documentation-common.xsl UML/Output/html/documentation-generator.xsl \
+		UML/Output/html/index-all.xsl UML/Output/html/index.xsl \
+		UML/Output/html/main.xsl UML/Output/html/overview-frame.xsl \
+		UML/Output/html/overview-summary.xsl UML/Output/html/package-frame.xsl \
+		UML/Output/html/package-summary.xsl UML/Output/html/resources/inherit.gif \
+		UML/Output/html/resources/style.css UML/Output/php/classifier.xsl \
+		UML/Output/php/code-common.xsl UML/Output/php/code-generator.xsl \
+		UML/Output/php/main.xsl UML/PHP/Parser.php \
 		UML/XMI/AbstractBuilder.php UML/XMI/Builder.php \
 		UML/XMI/BuilderImpl1.php UML/XMI/BuilderImpl2.php
 DOCS=		LOGICIELS_A_UTILISER_AVEC_PHP_UML \
@@ -25,9 +48,11 @@ DOCS=		LOGICIELS_A_UTILISER_AVEC_PHP_UML \
 		PHP_UML_metamodel_class_diagram.png \
 		PHP_UML_superstructure_class_diagram.png \
 		README SOFTWARES_TO_USE_WITH_PHP_UML \
-		TODO argouml.png bouml.png rational_rose.png
-EXAMPLES=	example1_rational_rose.png example2_bouml.png \
-		example3_argouml.png test1.php.txt test2.php.txt \
+		TODO argouml.png bouml.png rational_rose.png readme.html
+EXAMPLES=	PHP_UML_by_PHP_UML_v1.xmi PHP_UML_by_PHP_UML_v2.xmi \
+		example1_rational_rose.png example2_bouml.png \
+		example3_argouml.png example4_in_Bouml.png \
+		test1.php.txt test2.php.txt \
 		test3.php.txt test4.php.txt test5_cs.php.txt \
 		test_to_run.php test_with_api.php
 TESTS=		UmlParserTest.php UmlXmiTest.php \
@@ -51,6 +76,8 @@ TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/test2.php suite/test3.php \
 		suite/test4.php suite/test5_cs.php \
 		suite/test_namespace1.php \
+		suite/test_namespace2.php \
+		suite/test_namespace3.php \
 		suite/data-providers/EMOF_test_sample.php.obj \
 		suite/data-providers/PHP_UML_test_sample.php.obj \
 		suite/data-providers/PHP_test_sample.php.obj \
@@ -90,8 +117,21 @@ TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/data-providers/test3.php.obj \
 		suite/data-providers/test4.php.obj \
 		suite/data-providers/test5_cs.php.obj \
-		suite/data-providers/test_namespace1.php.obj
+		suite/data-providers/test_namespace1.php.obj \
+		suite/data-providers/test_namespace2.php.obj \
+		suite/data-providers/test_namespace3.php.obj
+
+DATA=		phpuml.xml
+
+SCRIPTFILES=	phpuml
+
+post-extract:
+		@${MV} ${WRKSRC}/scripts/phpuml ${WRKSRC}/pear-phpuml
 
 .include <bsd.port.pre.mk>
+.if defined(WITH_PEAR_CONSOLE_COMMANDLINE)
+RUN_DEPENDS+=	${PEARDIR}/Console/CommandLine.php:${PORTSDIR}/devel/pear-Console_CommandLine
+.endif
+
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
