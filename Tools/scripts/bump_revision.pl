@@ -28,6 +28,52 @@ EOF
 	exit 1;
 }
 
+sub bumpMakefile {
+
+    my ($p) = @_; 
+
+    my $makefile = "$p/Makefile";
+    my $fin;
+	unless(open($fin, $makefile)) {
+	    print "-- Cannot open Makefile of $p, ignored.\n";
+	    next;
+	}
+	my @lines = <$fin>;
+	close($fin) or die "Can't close $makefile b/c $!";
+	chomp(@lines);
+
+	my $revision = 1;
+
+	foreach my $line (@lines) {
+	    last if ($line =~ /^MAINTAINER/);
+	    $revision += $1 if ($line =~ /PORTREVISION??=[ \t]*(\d+)$/);
+	}
+
+	my $printedrev = 0;
+	open(my $fout, '>', "$makefile");
+	foreach my $line (@lines) {
+	    if (!$printedrev) {
+		if ($line =~ /^CATEGORIES??=/ || $line =~ /^PORTEPOCH??=/) {
+		    print $fout "PORTREVISION=	$revision\n";
+		    $printedrev = 1;
+		    # Fall through!
+		}
+		if ($line =~ /^PORTREVISION\?=/) {
+		    print $fout "PORTREVISION?=	$revision\n";
+		    $printedrev = 1;
+		    next;
+		}
+		if ($line =~ /^PORTREVISION=/) {
+		    print $fout "PORTREVISION=	$revision\n";
+		    $printedrev = 1;
+		    next;
+		}
+	    }
+	    print $fout "$line\n";
+	}
+	close($fout) or die "Can't close $makefile b/c $!";
+}
+
 my $INDEX = "/usr/ports/INDEX";
 my $USER = $ENV{USER};
 {
@@ -143,50 +189,9 @@ unless ($opt_n) {
 {
     print "Updating Makefiles\n";
     foreach my $p (keys(%DEPPORTS)) {
-	my $makefile = "ports/$p/Makefile";
-
 	print "- Updating Makefile of $p\n";
     next if $opt_c;
-
-    my $fin;
-	unless(open($fin, $makefile)) {
-	    print "-- Cannot open Makefile of $p, ignored.\n";
-	    next;
-	}
-	my @lines = <$fin>;
-	close($fin) or die "Can't close $makefile b/c $!";
-	chomp(@lines);
-
-	my $revision = 1;
-
-	foreach my $line (@lines) {
-	    last if ($line =~ /^MAINTAINER/);
-	    $revision += $1 if ($line =~ /PORTREVISION??=[ \t]*(\d+)$/);
-	}
-
-	my $printedrev = 0;
-	open(my $fout, '>', "$makefile");
-	foreach my $line (@lines) {
-	    if (!$printedrev) {
-		if ($line =~ /^CATEGORIES??=/ || $line =~ /^PORTEPOCH??=/) {
-		    print $fout "PORTREVISION=	$revision\n";
-		    $printedrev = 1;
-		    # Fall through!
-		}
-		if ($line =~ /^PORTREVISION\?=/) {
-		    print $fout "PORTREVISION?=	$revision\n";
-		    $printedrev = 1;
-		    next;
-		}
-		if ($line =~ /^PORTREVISION=/) {
-		    print $fout "PORTREVISION=	$revision\n";
-		    $printedrev = 1;
-		    next;
-		}
-	    }
-	    print $fout "$line\n";
-	}
-	close($fout) or die "Can't close $makefile b/c $!";
+	bumpMakefile "ports/$p";
     }
 }
 
