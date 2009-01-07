@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-Cephes
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Perl interface to the cephes math library
 
 MAN1=	pmath.1
