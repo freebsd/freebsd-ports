@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.9b
+PORTVERSION=	3.1.0
 CATEGORIES=	games
-MASTER_SITES=	http://rephial.org/downloads/3.0/ \
+MASTER_SITES=	http://rephial.org/downloads/3.1/ \
 		http://angband.oook.cz/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--with-x=no
 .endif
 
 SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 pre-fetch:
 .if !defined(WITHOUT_X11)
