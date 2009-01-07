@@ -677,6 +677,7 @@
     SUBDIR += p5-CGI-Untaint-date
     SUBDIR += p5-CGI-Untaint-email
     SUBDIR += p5-CGI-Upload
+    SUBDIR += p5-CGI-Utils
     SUBDIR += p5-CGI-XMLApplication
     SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
