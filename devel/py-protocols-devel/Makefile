@@ -6,39 +6,21 @@
 #
 
 PORTNAME=	PyProtocols
-PORTVERSION=	1.0.a0.r2082
+PORTVERSION=	1.0.a0.r2302
 CATEGORIES=	devel python
-MASTER_SITES=	http://peak.telecommunity.com/snapshots/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	http://files.turbogears.org/eggs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-1.0a0dev_r2082
+DISTNAME=	${PORTNAME}-1.0a0dev-r2302
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Protocol Definition, Declaration, and Adaptation for Python
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools
 
-NO_PACKAGE=	not yet
-
-PLIST_FILES=	${PYTHON_SITELIBDIR:S,${PREFIX}/,,}/${PYPROTOCOLS_EGG}
-PLIST_SUB=	PYPROTOCOLS_EGG="${PYPROTOCOLS_EGG}"
-
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	EGG="PyProtocols==${PYPROTOCOLS_VER}" \
-		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	1.0a0
 USE_ZIP=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
+PYDISTUTILS_PKGVERSION=	1.0a0dev-r2302
 
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-PYPROTOCOLS_EGG=	PyProtocols-${PYPROTOCOLS_VER}-py${PYTHON_VERSION:S/^python//}-${OPSYS:L}-${OSRELEASE}-${ARCH}.egg
-PYPROTOCOLS_VER?=	1.0a0
-
-.include <bsd.port.pre.mk>
-
-OSRELEASE!=	/usr/bin/uname -r
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
