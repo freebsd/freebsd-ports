@@ -504,6 +504,7 @@
     SUBDIR += py-mssql
     SUBDIR += py-oops
     SUBDIR += py-pg8000
+    SUBDIR += py-pg_pqueue
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
     SUBDIR += py-pyPgSQL
