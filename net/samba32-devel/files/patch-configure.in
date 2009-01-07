@@ -1,5 +1,5 @@
---- ./configure.in.orig	2008-09-18 06:49:02.000000000 +0000
-+++ ./configure.in	2008-10-10 00:42:10.000000000 +0000
+--- ./configure.in.orig	2008-12-19 13:57:33.000000000 +0000
++++ ./configure.in	2009-01-06 17:10:53.000000000 +0000
 @@ -184,16 +184,6 @@
         fi
  fi
@@ -17,7 +17,7 @@
  #################################################
  # check for a shared memory profiling support
  AC_MSG_CHECKING(whether to use profiling)
-@@ -873,6 +863,21 @@
+@@ -888,6 +878,21 @@
  	[#include <signal.h>])
  fi
  
@@ -39,15 +39,7 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -1038,6 +1043,7 @@
- 
- # Find a method of generating a stack trace
- AC_CHECK_HEADERS(execinfo.h libexc.h libunwind.h)
-+AC_SEARCH_LIBS(backtrace_symbols, [execinfo])
- AC_CHECK_FUNCS(backtrace_symbols)
- AC_CHECK_LIB(exc, trace_back_stack)
- 
-@@ -1841,9 +1847,6 @@
+@@ -1858,9 +1863,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -57,7 +49,7 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -2282,31 +2285,15 @@
+@@ -2299,31 +2301,15 @@
  
      #  This is here to handle -withval stuff for --with-libiconv
      #  Perhaps we should always add a -L
@@ -95,7 +87,7 @@
  	iconv_current_CPPFLAGS="-I$i/include"
  
          if test x"$jm_cv_lib_iconv" != x; then
-@@ -2315,7 +2302,6 @@
+@@ -2332,7 +2318,6 @@
  	    # We found iconv in libc.
  	    iconv_current_LIBS=""
          fi
@@ -103,7 +95,7 @@
      fi
  
      if test x"$ICONV_FOUND" = "xyes" ; then
-@@ -4013,10 +3999,10 @@
+@@ -4030,10 +4015,10 @@
  
    ################################################################
    # first test for Active Directory support being enabled
@@ -118,7 +110,7 @@
    ##################################################################
    # then test for uuid.h (necessary to generate unique DNS keynames
    # (uuid.h is required for this test)
-@@ -5640,6 +5626,7 @@
+@@ -5673,6 +5658,7 @@
  		NSSSONAMEVERSIONSUFFIX=".1"
  		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
  		    nsswitch/winbind_nss_linux.o"
@@ -126,7 +118,7 @@
  		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -5718,23 +5705,15 @@
+@@ -5751,23 +5737,15 @@
  fi
  
  # Display test results
@@ -150,7 +142,7 @@
  	## Only worry about libwbclient if we have shared library support
  	## and winbindd
          LIBWBCLIENT_SHARED=$LIBWBCLIENT_SHARED_TARGET
-@@ -5752,26 +5731,34 @@
+@@ -5785,26 +5763,34 @@
  
  	EXTRA_BIN_PROGS="$EXTRA_BIN_PROGS bin/wbinfo\$(EXEEXT)"
  	EXTRA_SBIN_PROGS="$EXTRA_SBIN_PROGS bin/winbindd\$(EXEEXT)"
@@ -189,7 +181,7 @@
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
  
-@@ -5866,7 +5853,7 @@
+@@ -5899,7 +5885,7 @@
      AC_CHECK_FUNCS(DNSServiceRegister)
      AC_CHECK_LIB_EXT(dns_sd, DNSSD_LIBS, DNSServiceRegister)
      if test x"$ac_cv_func_DNSServiceRegister" != x"yes" -a \
@@ -198,7 +190,7 @@
  	have_dnssd_support=no
      fi
  
-@@ -5922,13 +5909,21 @@
+@@ -5955,13 +5941,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -221,7 +213,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6173,6 +6168,16 @@
+@@ -6207,6 +6201,16 @@
  
  fi
  
