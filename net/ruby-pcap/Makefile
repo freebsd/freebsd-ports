@@ -7,7 +7,7 @@
 
 PORTNAME=	pcap
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
