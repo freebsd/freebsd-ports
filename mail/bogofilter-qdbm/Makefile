@@ -14,7 +14,7 @@ MAINTAINER=	matthias.andree@gmx.de
 
 LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
 
-CONFLICTS=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
+CONFLICTS=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]* bogofilter-tc-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=qdbm
 BF_CPPFLAGS=	-I${LOCALBASE}/include
