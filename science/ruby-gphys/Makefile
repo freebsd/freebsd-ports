@@ -7,13 +7,15 @@
 
 PORTNAME=	gphys
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science ruby
-MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/gphys/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/gphys/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
+MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A multi-purpose class to handle gridded physical quantities
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
@@ -35,7 +37,7 @@ do-install:
 	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/test
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/testdata
@@ -45,6 +47,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/testdata/* ${RUBY_MODEXAMPLESDIR}/testdata
 	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/sample
 	${INSTALL_DATA} ${WRKSRC}/sample/ep_flux/* ${RUBY_MODEXAMPLESDIR}/sample/ep_flux
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${MKDIR} ${RUBY_MODDOCDIR}/derivative
 	${MKDIR} ${RUBY_MODDOCDIR}/ep_flux
