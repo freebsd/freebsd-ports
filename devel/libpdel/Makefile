@@ -18,4 +18,10 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
