@@ -573,6 +573,7 @@
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-jdbc-mysql
+    SUBDIR += rubygem-kirbybase
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rbase
