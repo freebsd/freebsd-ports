@@ -51,30 +51,30 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynusdas.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
 @dirrmtry %%RUBY_SITELIBDIR%%/numru
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_mapfit-axes_dr002687.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_latlon_labelling_dr002690.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/map_projection.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_3.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_ep_flux.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/UV.jan.nc
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testdata
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli1.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv1.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv2.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_mapfit-axes_dr002687.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_latlon_labelling_dr002690.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/map_projection.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_1.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_2.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_3.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test/test_ep_flux.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/UV.jan.nc
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testdata
+%%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO_ep_flux
