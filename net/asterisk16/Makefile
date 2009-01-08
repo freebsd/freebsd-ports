@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.22
-PORTREVISION=	1
+PORTVERSION=	1.4.22.1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
+MASTER_SITES=	http://downloads.digium.com/pub/asterisk/ \
+		http://downloads.digium.com/pub/asterisk/old-releases/ \
+		http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
