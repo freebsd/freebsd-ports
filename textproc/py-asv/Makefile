@@ -27,9 +27,6 @@ do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
-pre-install:
-	@ ${SH} ${PKGREQ} INSTALL
-
 do-install:
 	@printf '#!/bin/sh\n${PYTHON_CMD} ${PYTHONPREFIX_SITELIBDIR}/ASV.py "$$@"\n' \
 		> ${WRKDIR}/asv.sh

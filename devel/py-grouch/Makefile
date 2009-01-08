@@ -26,9 +26,6 @@ PYDISTUTILS_PKGNAME=	Grouch
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 .endif
 
-pre-install:
-	@ ${SH} ${PKGREQ} INSTALL
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
