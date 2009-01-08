@@ -413,7 +413,6 @@
     SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
-    SUBDIR += nvnet
     SUBDIR += nxserver
     SUBDIR += nylon
     SUBDIR += ohphone

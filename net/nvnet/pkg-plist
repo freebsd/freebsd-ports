@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-@comment We just copy the file in the kernel module dir.
-@cwd /
-%%KMODDIR%%/if_nv.ko
