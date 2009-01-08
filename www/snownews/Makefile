@@ -21,14 +21,6 @@ HAS_CONFIGURE=	yes
 
 OPTIONS=	OPML		"Outline Processor Markup Support" on
 
-.if defined(CHARSET)
-CONFIGURE_ARGS=	--charset=${CHARSET}
-.if ${CHARSET} == "UTF-8"
-post-configure:
-	@${REINPLACE_CMD} -e 's|ncursesw|ncurses|g' ${WRKSRC}/platform_settings
-.endif
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -48,13 +40,6 @@ _MANPAGES+=	${PREFIX}/man/man1/opml2snow.1
 
 MAN1=		snownews.1
 MANLANG=	"" de nl fr it ru_RU.KOI8-R
-
-pre-everything::
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " You can set up CHARSET variable for your localization."
-	@${ECHO_MSG} " Example: make CHARSET=ISO-8859-2"
-	@${ECHO_MSG} " Default is ISO-8859-1."
-	@${ECHO_MSG} " "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/local/bin/perl|#!${PERL}|g' ${WRKSRC}/configure
