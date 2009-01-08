@@ -7,6 +7,7 @@
 
 PORTNAME=	ptmalloc2
 PORTVERSION=	20060605
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	${PORTNAME}-current
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-current
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative threads-aware malloc
 
-USE_LD_CONFIG=	yes
+USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 ALL_TARGET=	posix
