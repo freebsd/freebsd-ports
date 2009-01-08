@@ -13,7 +13,7 @@ MAINTAINER=	matthias.andree@gmx.de
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-CONFLICTS=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
+CONFLICTS=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=sqlite
 BF_CPPFLAGS=	-I${LOCALBASE}/include
