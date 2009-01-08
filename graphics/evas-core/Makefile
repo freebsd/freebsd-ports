@@ -18,7 +18,7 @@ COMMENT=	A hardware accelerated canvas API (core library)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FREETYPE2=	yes
+USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 
