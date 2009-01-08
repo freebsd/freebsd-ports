@@ -18,7 +18,6 @@ COMMENT=	Gnome Audio Cd Burner
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 RUN_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
-USE_ZLIB=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop intlhack
