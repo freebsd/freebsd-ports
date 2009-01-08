@@ -2252,6 +2252,7 @@
     SUBDIR += py-pyke
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
+    SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
