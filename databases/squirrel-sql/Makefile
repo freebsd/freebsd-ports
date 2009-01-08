@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/SQuirreL SQL Client
 DSTDIR=		${JAVASHAREDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	squirrel-sql
+PKGMESSAGE=	pkg-messages
 
 DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \
@@ -41,5 +42,6 @@ do-install:
 	cd "${WRKSRC}" && ${FIND} . -type d -exec ${MKDIR} ${DSTDIR}/{} \;
 	cd "${WRKSRC}" && ${FIND} . -type f -not -path "\./bin/" -exec ${INSTALL_DATA} {} ${DSTDIR}/{} \;
 	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${PREFIX}/bin
+	@${CAT} ${PKGMESSAGE} 
 
 .include <bsd.port.mk>
