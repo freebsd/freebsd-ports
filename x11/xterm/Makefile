@@ -24,8 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_WIDE_CHARS)
 CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
 .endif
@@ -39,4 +37,4 @@ MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/xterm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
