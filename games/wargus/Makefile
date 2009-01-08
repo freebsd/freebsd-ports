@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	wargus
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	games
 MASTER_SITES=	SF
-EXTRACT_SUFX=	-src.tar.gz
+EXTRACT_SUFX=	-src.zip
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
@@ -18,6 +17,8 @@ COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
+USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-a
 NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
