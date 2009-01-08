@@ -1746,6 +1746,7 @@
     SUBDIR += p5-System2
     SUBDIR += p5-Taint-Runtime
     SUBDIR += p5-Task-Weaken
+    SUBDIR += p5-Template-Provider-Encode
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-ANSIScreen
     SUBDIR += p5-Term-Animation
