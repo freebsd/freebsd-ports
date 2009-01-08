@@ -3733,3 +3733,4 @@ emulators/mupen64plus-sound||2009-01-06|No supported anymore by mupen64plus team
 misc/heyu||2009-01-07|Has expired: no longer under development, use misc/heyu2
 sysutils/pkill||2009-01-07|Part of the base system since FreeBSD 5.3
 ports-mgmt/portsnap||2009-01-07|Part of the base system since FreeBSD 5.5
+lang/py-compiler||2009-01-08|Included in python since 2.2
