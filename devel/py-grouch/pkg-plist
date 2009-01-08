@@ -40,5 +40,3 @@ bin/gen_schema
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/grouch
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%PYTHON_LIBDIR%%
