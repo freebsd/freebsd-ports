@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTVERSION=	2.2.14
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cowbert@gmail.com
 COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	libiodbc-[0-9]*
@@ -23,7 +22,7 @@ CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
 
-SUB_FILES=	pkg-message
+PORTDOCS=	*
 
 .if defined(WITH_GUI)
 USE_QT_VER=	3
@@ -67,9 +66,5 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${conffile}.sample ${PREFIX}/etc/${conffile} ; \
 	fi
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}/MySQL
-	cd ${WRKSRC}/Drivers/MySQL && ${INSTALL_DATA} iodbc.ini odbc.ini \
-		${EXAMPLESDIR}/MySQL
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
