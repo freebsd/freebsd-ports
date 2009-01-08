@@ -20,9 +20,6 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP}
 
-# Please, please keep this!
-USE_REINPLACE=	yes
-
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/alisp.h
 

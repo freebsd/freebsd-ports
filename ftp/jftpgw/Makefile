@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--with-logpath=/var/log \
 		--enable-crypt \
 		--enable-sftp
 #USE_RC_SUBR=	yes
-#USE_REINPLACE=	yes
 MAN1=		jftpgw.1
 
 USE_RC_SUBR=	jftpgw.sh

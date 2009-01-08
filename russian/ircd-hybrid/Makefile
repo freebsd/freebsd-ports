@@ -22,7 +22,6 @@ CONFLICTS=	ircd-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 USE_OPENSSL=	yes
 USE_BISON=	build
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
 
