@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind94
-PORTVERSION=	9.4.3
+PORTVERSION=	9.4.3.1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,20 +25,22 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.4.3
+ISCVERSION=	9.4.3-P1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-USE_OPENSSL=	yes
-
 CONFLICTS=	bind9-9.[356].* bind9-sdb-* host-*
 
-OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
+OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+		REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
 		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
 		IPV6 "IPv6 Support (autodetected by default)" off
+
+# Just in case
+USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -49,10 +51,11 @@ OPTIONS+=	THREADS "Compile with thread support" on
 OPTIONS+=	THREADS "Compile w/threads (Not Recommended <FreeBSD-7)" off
 .endif
 
-.if defined(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
-CONFIGURE_ARGS+=	--with-openssl
+CONFIGURE_ARGS+=	--disable-openssl-version-check
+CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 .if defined(WITH_LARGE_FILE)
