@@ -45,6 +45,10 @@ INFO=		zebra
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if defined (WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 WITHOUT_OSPF6D=	yes
