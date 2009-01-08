@@ -22,7 +22,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 RUN_DEPENDS=	${LOCALBASE}/lib/libarena.a:${PORTSDIR}/devel/libarena
 
 USE_OPENSSL=	yes
-USE_PTHREAD=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
