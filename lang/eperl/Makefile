@@ -36,6 +36,10 @@ MAN1=	eperl.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800058
+BROKEN=		does not build
+.endif
+
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 

@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800058
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
