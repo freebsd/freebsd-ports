@@ -40,11 +40,6 @@ BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
 
 CONFIGURE_ARGS+=--without-gtk
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
-CONFIGURE_ARGS+=--enable-sound
-.endif
-
 post-patch:
 	${TOUCH} ${WRKSRC}/configure
 
