@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-SSL
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IO::Socket::SSL.3
 
+OPTIONS=	IDN "International Domain Names (IDN) support" off
+
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 post-install:
@@ -32,6 +34,10 @@ post-install:
 
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.if defined(WITH_IDN)
+RUN_DEPENDS+=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
 .include <bsd.port.post.mk>
