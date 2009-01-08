@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090107:
+  AFFECTS: users of databases/unixODBC
+  AUTHOR: beech@freebsd.org
+
+  The databases/unixODBC port has been updated to 2.2.14. While
+  containing many bug fixes and minor feature adjustments, this version
+  no longer ships with the (obsolete) MySQL ODBC driver. MySQL ODBC
+  driver users will probably want to use databases/mysql-connector-odbc
+  instead. The text-backed/flatfile driver (libtxtodbc) has also been
+  removed by the developers but due to some demand may make a return in
+  a future version or as a separate port.
+
+20090107:
   AFFECTS: users of security/libgcrypt
   AUTHOR: rafan@FreeBSD.org
 
