@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	19c
+PORTVERSION=	19e
 PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}
 		ftp://ftp.averillpark.net/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd6.3
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
