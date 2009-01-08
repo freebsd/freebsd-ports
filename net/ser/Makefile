@@ -52,7 +52,6 @@ MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
 .if !defined(WITHOUT_PRESENCE)
-USE_PA=		yes
 PLIST_SUB+=	PA=""
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .else
@@ -61,7 +60,6 @@ MAKE_ENV+=	PA=pa
 .endif
 
 .if !defined(WITHOUT_RADIUS)
-USE_RADIUS=	yes
 PLIST_SUB+=	RADIUS=""
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 .else
