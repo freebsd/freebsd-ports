@@ -23,7 +23,6 @@ RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
     		pvm:${PORTSDIR}/net/pvm
 
 USE_FORTRAN=yes
-CONFIGURE_ARGS+=	--with-gfortran
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
@@ -43,7 +42,7 @@ CONFIGURE_ARGS=	--with-tk \
 		--without-ocaml \
 		--with-pvm-library=${LOCALBASE}/lib \
 		--with-pvm-include=${LOCALBASE}/include \
-		--with-gtk2
+		--with-gtk2 --with-gfortran
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PVM_ROOT=${LOCALBASE}/lib/pvm
