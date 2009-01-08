@@ -1,4 +1,4 @@
-lib/libxcb-atom.so.0
+lib/libxcb-atom.so.1
 lib/libxcb-atom.so
 lib/libxcb-atom.la
 lib/libxcb-atom.a
@@ -16,15 +16,15 @@ lib/libxcb-aux.so.0
 lib/libxcb-aux.so
 lib/libxcb-aux.la
 lib/libxcb-aux.a
-lib/libxcb-event.so.0
+lib/libxcb-event.so.1
 lib/libxcb-event.so
 lib/libxcb-event.la
 lib/libxcb-event.a
-lib/libxcb-property.so.0
+lib/libxcb-property.so.1
 lib/libxcb-property.so
 lib/libxcb-property.la
 lib/libxcb-property.a
-lib/libxcb-icccm.so.0
+lib/libxcb-icccm.so.1
 lib/libxcb-icccm.so
 lib/libxcb-icccm.la
 lib/libxcb-icccm.a
@@ -36,7 +36,7 @@ lib/libxcb-keysyms.so.0
 lib/libxcb-keysyms.so
 lib/libxcb-keysyms.la
 lib/libxcb-keysyms.a
-lib/libxcb-reply.so.0
+lib/libxcb-reply.so.1
 lib/libxcb-reply.so
 lib/libxcb-reply.la
 lib/libxcb-reply.a
