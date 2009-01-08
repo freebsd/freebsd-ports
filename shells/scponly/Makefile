@@ -82,8 +82,6 @@ COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8
 
-USE_RC_SUR=	scponlyc
-
 GNU_CONFIGURE=	yes
 
 OPTIONS=	SCPONLY_WILDCARDS "wildcards processing" on \
@@ -114,7 +112,7 @@ CONFIGURE_ARGS+=--disable-gftp-compat
 .if defined(WITH_SCPONLY_CHROOT)
 PLIST_SUB+=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
-USE_RC_SUBR=	scponlyc
+USE_RC_SUBR+=	scponlyc
 .else
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 .endif
