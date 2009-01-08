@@ -20,7 +20,6 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A stub code generator for using C/C++ libraries from ocaml
 
 USE_OCAML=	yes
-USE_OCAMLWASH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
