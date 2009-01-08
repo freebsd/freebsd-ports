@@ -27,7 +27,7 @@ do-build:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "data docs src" ${DATADIR}/
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "docs src" ${DATADIR}/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
