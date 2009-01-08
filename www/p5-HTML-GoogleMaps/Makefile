@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	HTML-GoogleMaps
-PORTVERSION=	9
+PORTVERSION=	10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::GoogleMaps.3
+
+post-extract:
+	@${FIND} ${WRKSRC} -name ".*.pm" -delete
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
