@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
@@ -57,6 +57,11 @@ CONFIGURE_ARGS+=	--enable-font-backend
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
 			m17n.3:${PORTSDIR}/devel/m17n-lib
 # also libotf, which is pulled in by m17n
+
+# m17n depends on libintl.so too
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+USE_GETTEXT=	yes
 .endif
 
 .if defined(WITHOUT_XIM)
