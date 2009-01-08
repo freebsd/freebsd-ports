@@ -6,6 +6,10 @@ lib/cmucl/lib/config.lisp
 lib/cmucl/lib/generic-site.lisp
 lib/cmucl/lib/lisp.core
 lib/cmucl/lib/load-foreign.csh
+lib/cmucl/lib/ext-formats/iso8859-1.lisp
+lib/cmucl/lib/ext-formats/utf-8.lisp
+lib/cmucl/lib/ext-formats/void.lisp
+lib/cmucl/lib/subsystems/external-formats-library.x86f
 lib/cmucl/lib/subsystems/gray-compat-library.x86f
 lib/cmucl/lib/subsystems/gray-streams-library.x86f
 lib/cmucl/lib/subsystems/iodefs-library.x86f
@@ -14,8 +18,9 @@ lib/cmucl/lisp.map
 lib/cmucl/lisp.nm
 lib/cmucl/sample-wrapper
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/release-19c.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-19e.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/cmucl/lib/ext-formats
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
