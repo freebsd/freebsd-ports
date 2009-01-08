@@ -7,6 +7,7 @@
 
 PORTNAME=	cmsmadesimple
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/2536/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
@@ -49,7 +50,7 @@ do-install:
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
 .for i in ${WRITABLE_DIRS}
