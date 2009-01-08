@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.3.6
+PORTVERSION=	9.3.6.1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,25 +25,28 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.3.6
+ISCVERSION=	9.3.6-P1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-USE_OPENSSL=	yes
-
 CONFLICTS=	bind9-9.[456].* bind9-sdb-* host-*
 
-OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
+OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+		REPLACE_BASE "Replace base BIND with this version" off \
 		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
+
+# Just in case
+USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
-CONFIGURE_ARGS+=	--with-openssl
+CONFIGURE_ARGS+=	--disable-openssl-version-check
+CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 # ISC staff has informed me that for 9.3.x, threads are always a bad idea.
