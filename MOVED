@@ -3734,3 +3734,4 @@ misc/heyu||2009-01-07|Has expired: no longer under development, use misc/heyu2
 sysutils/pkill||2009-01-07|Part of the base system since FreeBSD 5.3
 ports-mgmt/portsnap||2009-01-07|Part of the base system since FreeBSD 5.5
 lang/py-compiler||2009-01-08|Included in python since 2.2
+net/nvnet||2009-01-08|Part of the base system since FreeBSD 6.0
