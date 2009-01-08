@@ -37,6 +37,10 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 
 .include <bsd.port.pre.mk>
 
+if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=yes
 .endif

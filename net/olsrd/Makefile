@@ -41,6 +41,10 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
