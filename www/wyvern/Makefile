@@ -37,7 +37,7 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 
 .include <bsd.port.pre.mk>
 
-if ${OSVERSION} >= 800059
+.if ${OSVERSION} >= 800059
 BROKEN=		does not build
 .endif
 
