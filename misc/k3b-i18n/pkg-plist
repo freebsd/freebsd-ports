@@ -257,6 +257,10 @@ share/locale/ja/LC_MESSAGES/k3b.mo
 share/locale/ja/LC_MESSAGES/k3bsetup.mo
 share/locale/ja/LC_MESSAGES/libk3b.mo
 share/locale/ja/LC_MESSAGES/libk3bdevice.mo
+share/locale/ka/LC_MESSAGES/k3b.mo
+share/locale/ka/LC_MESSAGES/k3bsetup.mo
+share/locale/ka/LC_MESSAGES/libk3b.mo
+share/locale/ka/LC_MESSAGES/libk3bdevice.mo
 share/locale/km/LC_MESSAGES/k3b.mo
 share/locale/km/LC_MESSAGES/k3bsetup.mo
 share/locale/km/LC_MESSAGES/libk3b.mo
@@ -353,6 +357,10 @@ share/locale/uz/LC_MESSAGES/k3b.mo
 share/locale/uz/LC_MESSAGES/k3bsetup.mo
 share/locale/uz/LC_MESSAGES/libk3b.mo
 share/locale/uz/LC_MESSAGES/libk3bdevice.mo
+share/locale/uz@cyrillic/LC_MESSAGES/k3b.mo
+share/locale/uz@cyrillic/LC_MESSAGES/k3bsetup.mo
+share/locale/uz@cyrillic/LC_MESSAGES/libk3b.mo
+share/locale/uz@cyrillic/LC_MESSAGES/libk3bdevice.mo
 share/locale/zh_CN/LC_MESSAGES/k3b.mo
 share/locale/zh_CN/LC_MESSAGES/k3bsetup.mo
 share/locale/zh_CN/LC_MESSAGES/libk3b.mo
@@ -361,6 +369,8 @@ share/locale/zh_TW/LC_MESSAGES/k3b.mo
 share/locale/zh_TW/LC_MESSAGES/k3bsetup.mo
 share/locale/zh_TW/LC_MESSAGES/libk3b.mo
 share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/rw/LC_MESSAGES
