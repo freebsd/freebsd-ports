@@ -24,7 +24,6 @@ OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
 USE_GL=		gl glut
-USE_GLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libglade2 gtkhtml3 libgnomeprint intlhack
 
