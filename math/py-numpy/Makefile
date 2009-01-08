@@ -21,8 +21,7 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
 
-RUN_DEPENDS=	gcc42:${PORTSDIR}/lang/gcc42 \
-		nosetests:${PORTSDIR}/devel/py-nose
+RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
@@ -49,16 +48,18 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
-GCCLIBDIR=	`${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//`
 post-patch:
-.ifdef WITH_ATLAS
+	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
+
+GCCLIBDIR=	`${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//`
+pre-configure:
+.ifdef WITH_ATLAS
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
 	    -e "s+%%ATLASLIBS%%+alapack_r, f77blas_r, cblas_r, atlas_r+" \
 		${WRKSRC}/site.cfg
 .else
-	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
 	    -e "s+%%ATLASLIBS%%+lapack, blas+" \

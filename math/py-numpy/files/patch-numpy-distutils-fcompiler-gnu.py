@@ -5,7 +5,7 @@
      # GNU Fortran (GCC) 3.4.2 (mingw-special)
  
 -    possible_executables = ['g77', 'f77']
-+    possible_executables = ['gfortran', 'gfortran42', 'g77', 'f77']
++    possible_executables = ['%%FC%%', 'g77', 'f77']
      executables = {
          'version_cmd'  : [None, "--version"],
          'compiler_f77' : [None, "-g", "-Wall", "-fno-second-underscore"],
@@ -14,7 +14,7 @@
              executables[key].append('-mno-cygwin')
  
 -    g2c = 'g2c'
-+    g2c = 'gfortran'
++    g2c = '%%FC%%'
  
      suggested_f90_compiler = 'gnu95'
  
@@ -23,7 +23,7 @@
      #       GNU Fortran (GCC) 4.3.0 20070316 (experimental)
  
 -    possible_executables = ['gfortran', 'f95']
-+    possible_executables = ['gfortran', 'gfortran42', 'f95']
++    possible_executables = ['%%FC%%', 'gfortran', 'f95']
      executables = {
          'version_cmd'  : ["<F90>", "--version"],
          'compiler_f77' : [None, "-Wall", "-ffixed-form",
