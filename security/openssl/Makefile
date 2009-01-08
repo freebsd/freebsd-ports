@@ -25,6 +25,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
+FORBIDDEN=	incorrect checks for malformed signatures
 BROKEN=		builds but fail to run
 
 .ifdef USE_OPENSSL
