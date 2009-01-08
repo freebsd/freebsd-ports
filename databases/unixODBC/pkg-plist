@@ -20,6 +20,7 @@ include/sql.h
 include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
+include/unixodbc_conf.h
 include/uodbc_extras.h
 include/uodbc_stats.h
 lib/libboundparam.a
@@ -87,10 +88,6 @@ lib/libodbcpsqlS.a
 lib/libodbcpsqlS.la
 lib/libodbcpsqlS.so
 lib/libodbcpsqlS.so.1
-lib/libodbctxt.a
-lib/libodbctxt.la
-lib/libodbctxt.so
-lib/libodbctxt.so.1
 lib/libodbctxtS.a
 lib/libodbctxtS.la
 lib/libodbctxtS.so
@@ -115,65 +112,5 @@ lib/libtemplate.a
 lib/libtemplate.la
 lib/libtemplate.so
 lib/libtemplate.so.1
-%%EXAMPLESDIR%%/MySQL/iodbc.ini
-%%EXAMPLESDIR%%/MySQL/odbc.ini
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/index.html
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/odbcinst.html
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/php3.html
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/unixODBC.gif
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorManual/unixODBCsetup.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/close.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/conne.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/dsn.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/gloss.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/navi.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/odbc.css
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/query.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/Tutorial/resul.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgrammerManual/unixODBC.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure1.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure2.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure3.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure4.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/Figure6.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/My.sql
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/StarOfficeDataGrid.gif
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/index.html
-%%PORTDOCS%%%%DOCSDIR%%/UserManual/unixODBC.gif
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure.vsd
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure2.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure2.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure3.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure3.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure4.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure4.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure5.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure5.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure6.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure6.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure7.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure7.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure8.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure8.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure9.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/InternalStructure9.html
-%%PORTDOCS%%%%DOCSDIR%%/lst/back.gif
-%%PORTDOCS%%%%DOCSDIR%%/lst/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/smallbook.gif
-%%PORTDOCS%%%%DOCSDIR%%/unixODBC.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/lst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/UserManual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual/Tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/AdministratorManual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/MySQL
-@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/etc/ODBCDataSources 2>/dev/null || true
 @dirrmtry etc/ODBCDataSources
