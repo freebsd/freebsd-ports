@@ -19,7 +19,6 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xf86driproto videoproto xextproto glproto
 MAN4=		mga.4x
-USE_REINPLACE=	yes
 
 pre-patch:
 	${REINPLACE_CMD} \
