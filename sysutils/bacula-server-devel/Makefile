@@ -239,7 +239,7 @@ post-install:
 .if defined(WITH_WXCONSOLE)
 	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
 		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then.include <bsd.port.post.mk> \
+	elif [ -f ${PREFIX}/etc/wx-console.conf ];
 		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample; \
 		${ECHO_CMD} "etc/wx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
@@ -254,7 +254,7 @@ post-install:
 .endif
 
 #	ensure that users in the bacula group can run bconsole
-	${CHGRP} bacula ${PREFIX}/sbin/bconsole.include <bsd.port.post.mk>
+	${CHGRP} bacula ${PREFIX}/sbin/bconsole
 .else
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
