@@ -126,7 +126,6 @@ MAKE_ENV+=	SNMPSTATS=snmpstats
 .endif
 
 .if defined(WITH_AUTHRADIUS)
-USE_AUTHRADIUS=	yes
 MODULES+=	auth_radius
 PLIST_FILES+=	lib/openser/modules/auth_radius.so
 .else
