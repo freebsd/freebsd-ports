@@ -76,7 +76,7 @@ replace:
 	@${ECHO_CMD} "hoststat	${TRUE}" >> ${MAILERCONF}
 	@${ECHO_CMD} "purgestat	${TRUE}" >> ${MAILERCONF}
 
-pre-install:
+pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
