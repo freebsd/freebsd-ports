@@ -9,28 +9,3 @@
  INSTALL_HEADER = $(INSTALL_DATA)
  transform = $(program_transform_name)
  NORMAL_INSTALL = :
-@@ -864,24 +864,6 @@
- 	rm -f y.tab.c
- uninstall-info-am:
- install-pythonPYTHON: $(python_PYTHON)
--	@$(NORMAL_INSTALL)
--	test -z "$(pythondir)" || $(mkdir_p) "$(DESTDIR)$(pythondir)"
--	@list='$(python_PYTHON)'; dlist=''; for p in $$list; do\
--	  if test -f "$$p"; then b=; else b="$(srcdir)/"; fi; \
--	  if test -f $$b$$p; then \
--	    f=$(am__strip_dir) \
--	    dlist="$$dlist $$f"; \
--	    echo " $(pythonPYTHON_INSTALL) '$$b$$p' '$(DESTDIR)$(pythondir)/$$f'"; \
--	    $(pythonPYTHON_INSTALL) "$$b$$p" "$(DESTDIR)$(pythondir)/$$f"; \
--	  else :; fi; \
--	done; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(pythondir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(pythondir)" $$dlist; \
--	  fi; \
--	else :; fi
- 
- uninstall-pythonPYTHON:
- 	@$(NORMAL_UNINSTALL)

@@ -10,8 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.8
-PORTREVISION=	7
+PORTVERSION=	6.3.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}\
@@ -35,7 +34,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
-		--with-hesiod=no --enable-fallback=no
+		--with-hesiod=no --enable-fallback=no PYTHON=:
 # bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
