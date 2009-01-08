@@ -20,7 +20,7 @@ COMMENT?=	Mupen64 is a Nintendo 64 emulator
 
 USE_GNOME?=	#
 USE_GL?=	#
-USE_GDL?=	#
+USE_SDL?=	#
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
