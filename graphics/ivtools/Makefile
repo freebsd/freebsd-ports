@@ -34,4 +34,4 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 BROKEN=		Incomplete pkg-plist
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
