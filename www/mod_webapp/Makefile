@@ -32,6 +32,8 @@ CONNECTORS_RELEASE=	${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 sparc64
 
+.include <bsd.port.pre.mk>
+
 # Apache locations.
 APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
@@ -78,4 +80,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/INSTALL.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
