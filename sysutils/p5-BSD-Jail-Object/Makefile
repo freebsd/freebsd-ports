@@ -21,4 +21,10 @@ PERL_CONFIGURE=	5.8.6+
 
 MAN3=		BSD::Jail::Object.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800056
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
