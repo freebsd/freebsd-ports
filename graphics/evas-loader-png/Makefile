@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FREETYPE2=	yes
+USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas
