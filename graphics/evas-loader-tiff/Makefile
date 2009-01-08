@@ -16,11 +16,11 @@ DISTNAME=	evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (TIFF engine)
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas

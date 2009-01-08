@@ -16,11 +16,11 @@ DISTNAME=	evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (PNG engine)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas

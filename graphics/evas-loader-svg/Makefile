@@ -17,11 +17,11 @@ DISTNAME=	evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (SVG engine)
 
-LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget librsvg2
 USE_EFL=	evas
