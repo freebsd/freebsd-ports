@@ -27,6 +27,10 @@ OPTIONS=	PULSE "Enable Pulse Audio support" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_PULSE)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE="" OSS="@comment "
