@@ -11,6 +11,7 @@ share/apps/kconf_update/kile2.0-3_upd.pl
 share/apps/kconf_update/kile2.0-4_upd.pl
 share/apps/kconf_update/kile2.0-5_upd.pl
 share/apps/kile/complete/abbreviation/example.cwl
+share/apps/kile/complete/abbreviation/fastex.cwl
 share/apps/kile/complete/dictionary/example.cwl
 share/apps/kile/complete/dictionary/metapost.cwl
 share/apps/kile/complete/tex/acronym.cwl
@@ -24,10 +25,12 @@ share/apps/kile/complete/tex/amssymb.cwl
 share/apps/kile/complete/tex/amsthm.cwl
 share/apps/kile/complete/tex/array.cwl
 share/apps/kile/complete/tex/attachfile.cwl
+share/apps/kile/complete/tex/babel.cwl
 share/apps/kile/complete/tex/beamerfoils.cwl
 share/apps/kile/complete/tex/beamerprosper.cwl
 share/apps/kile/complete/tex/beamerseminar.cwl
 share/apps/kile/complete/tex/beamertexpower.cwl
+share/apps/kile/complete/tex/bm.cwl
 share/apps/kile/complete/tex/booktabs.cwl
 share/apps/kile/complete/tex/braket.cwl
 share/apps/kile/complete/tex/calc.cwl
@@ -52,7 +55,9 @@ share/apps/kile/complete/tex/fancyunits_big-fractions.cwl
 share/apps/kile/complete/tex/fancyunits_medium-fractions.cwl
 share/apps/kile/complete/tex/fancyunits_small-fractions.cwl
 share/apps/kile/complete/tex/fancyvrb.cwl
+share/apps/kile/complete/tex/float.cwl
 share/apps/kile/complete/tex/fontspec.cwl
+share/apps/kile/complete/tex/glosstex.cwl
 share/apps/kile/complete/tex/graphicx.cwl
 share/apps/kile/complete/tex/hyperref.cwl
 share/apps/kile/complete/tex/ifthen.cwl
@@ -68,6 +73,7 @@ share/apps/kile/complete/tex/listings.cwl
 share/apps/kile/complete/tex/logsys.cwl
 share/apps/kile/complete/tex/longtable.cwl
 share/apps/kile/complete/tex/lscape.cwl
+share/apps/kile/complete/tex/nicefrac.cwl
 share/apps/kile/complete/tex/manyfoot.cwl
 share/apps/kile/complete/tex/mdwlist.cwl
 share/apps/kile/complete/tex/multicol.cwl
@@ -101,6 +107,7 @@ share/apps/kile/complete/tex/svninfo.cwl
 share/apps/kile/complete/tex/tabularx.cwl
 share/apps/kile/complete/tex/tex.cwl
 share/apps/kile/complete/tex/textcomp.cwl
+share/apps/kile/complete/tex/todonotes.cwl
 share/apps/kile/complete/tex/url.cwl
 share/apps/kile/complete/tex/varioref.cwl
 share/apps/kile/complete/tex/verse.cwl
@@ -1301,6 +1308,7 @@ share/apps/kile/mathsymbols/special/img174special.png
 share/apps/kile/mathsymbols/special/img175special.png
 share/apps/kile/mathsymbols/special/img176special.png
 share/apps/kile/mathsymbols/special/img177special.png
+share/apps/kile/mathsymbols/special/img178special.png
 share/apps/kile/pics/kile_splash.png
 share/apps/kile/pics/type_Article.tex.kileicon
 share/apps/kile/pics/type_Beamer.tex.kileicon
