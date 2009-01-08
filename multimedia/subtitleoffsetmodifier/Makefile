@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitleoffsetmodificator
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia textproc converters
 MASTER_SITES=	http://thomas.enix.org/pub/code/perl/
 DISTFILES=	subtitle-offset-modificator.pl
@@ -14,7 +15,7 @@ DISTFILES=	subtitle-offset-modificator.pl
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Subtitle offset modificator
 
-USE_PERL5-RUN=	yes
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/subtitle-offset-modificator
 
