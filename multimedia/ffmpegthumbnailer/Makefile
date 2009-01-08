@@ -21,7 +21,6 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
 GNU_CONFIGURE=	yes
-USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 

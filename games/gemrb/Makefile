@@ -23,7 +23,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--libdir=${LOCALBASE}/lib \
 					--includedir=${LOCALBASE}/include
 
-USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes

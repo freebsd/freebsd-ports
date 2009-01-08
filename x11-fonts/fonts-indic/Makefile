@@ -16,7 +16,6 @@ COMMENT=	The Lohit family of Indic fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_GZIP=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes

@@ -19,7 +19,6 @@ LIB_DEPENDS=	glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
-USE_GZIP=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool

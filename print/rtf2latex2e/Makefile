@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}Unix1
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	A newer filter that converts RTF (MS Rich Text Format) into LaTeX
 
-USE_GZIP=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
