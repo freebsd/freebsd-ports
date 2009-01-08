@@ -25,6 +25,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
+BROKEN=		builds but fail to run
+
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
