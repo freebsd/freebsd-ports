@@ -2372,7 +2372,6 @@ dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
 dragstack                       ports/deskutils/dragstack
 drbl                            ports/mail/drbl
-dream                           ports/audio/dream
 drexelsnmp                      ports/java/drexelsnmp
 drgeo                           ports/math/drgeo
 dri                             ports/graphics/dri
@@ -4965,7 +4964,6 @@ hexedit                         ports/editors/hexedit
 hexpert                         ports/editors/hexpert
 hexter                          ports/audio/hexter
 hexxagon                        ports/games/hexxagon
-heyu                            ports/misc/heyu
 heyu2                           ports/misc/heyu2
 hf                              ports/comms/hf
 hf6to4                          ports/net/hf6to4
@@ -8743,7 +8741,6 @@ mupen64plus-rice                ports/emulators/mupen64plus-rice
 mupen64plus-rsp                 ports/emulators/mupen64plus-rsp
 mupen64plus-sdlaudio            ports/emulators/mupen64plus-sdlaudio
 mupen64plus-sdlinput            ports/emulators/mupen64plus-sdlinput
-mupen64plus-sound               ports/emulators/mupen64plus-sound
 murrine-configurator            ports/x11-themes/murrine-configurator
 muscle                          ports/biology/muscle
 museekplus                      ports/net-p2p/museekplus
@@ -9987,6 +9984,7 @@ p5-CGI-Untaint                  ports/www/p5-CGI-Untaint
 p5-CGI-Untaint-date             ports/www/p5-CGI-Untaint-date
 p5-CGI-Untaint-email            ports/www/p5-CGI-Untaint-email
 p5-CGI-Upload                   ports/www/p5-CGI-Upload
+p5-CGI-Utils                    ports/www/p5-CGI-Utils
 p5-CGI-XMLApplication           ports/www/p5-CGI-XMLApplication
 p5-CGI-modules                  ports/www/p5-CGI-modules
 p5-CGI.pm                       ports/www/p5-CGI.pm
@@ -10526,6 +10524,7 @@ p5-Data-UUID                    ports/devel/p5-Data-UUID
 p5-Data-Uniqid                  ports/devel/p5-Data-Uniqid
 p5-Data-Validate                ports/devel/p5-Data-Validate
 p5-Data-Validate-Domain         ports/dns/p5-Data-Validate-Domain
+p5-Data-Validate-Email          ports/mail/p5-Data-Validate-Email
 p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
 p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
@@ -12266,6 +12265,7 @@ p5-Sys-Cpu                      ports/devel/p5-Sys-Cpu
 p5-Sys-CpuLoad                  ports/sysutils/p5-Sys-CpuLoad
 p5-Sys-Filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-Sys-Gamin                    ports/sysutils/p5-Sys-Gamin
+p5-Sys-HostIP                   ports/sysutils/p5-Sys-HostIP
 p5-Sys-Hostname-FQDN            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long            ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-MemInfo                  ports/devel/p5-Sys-MemInfo
@@ -13328,6 +13328,7 @@ p5-cgi-untaint                  ports/www/p5-CGI-Untaint
 p5-cgi-untaint-date             ports/www/p5-CGI-Untaint-date
 p5-cgi-untaint-email            ports/www/p5-CGI-Untaint-email
 p5-cgi-upload                   ports/www/p5-CGI-Upload
+p5-cgi-utils                    ports/www/p5-CGI-Utils
 p5-cgi-xmlapplication           ports/www/p5-CGI-XMLApplication
 p5-cgi.pm                       ports/www/p5-CGI.pm
 p5-cgi_lite                     ports/www/p5-CGI_Lite
@@ -13672,6 +13673,7 @@ p5-data-uniqid                  ports/devel/p5-Data-Uniqid
 p5-data-uuid                    ports/devel/p5-Data-UUID
 p5-data-validate                ports/devel/p5-Data-Validate
 p5-data-validate-domain         ports/dns/p5-Data-Validate-Domain
+p5-data-validate-email          ports/mail/p5-Data-Validate-Email
 p5-data-validate-ip             ports/net-mgmt/p5-Data-Validate-IP
 p5-data-validate-uri            ports/www/p5-Data-Validate-URI
 p5-data-visitor                 ports/devel/p5-Data-Visitor
@@ -15537,6 +15539,7 @@ p5-sys-cpu                      ports/devel/p5-Sys-Cpu
 p5-sys-cpuload                  ports/sysutils/p5-Sys-CpuLoad
 p5-sys-filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-sys-gamin                    ports/sysutils/p5-Sys-Gamin
+p5-sys-hostip                   ports/sysutils/p5-Sys-HostIP
 p5-sys-hostname-fqdn            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-sys-hostname-long            ports/sysutils/p5-Sys-Hostname-Long
 p5-sys-meminfo                  ports/devel/p5-Sys-MemInfo
@@ -17572,7 +17575,6 @@ ports_openssl                   ports/security/openssl
 ports_pam_krb5                  ports/security/pam_krb5
 ports_patch                     ports/devel/patch
 ports_pkg_install               ports/ports-mgmt/pkg_install
-ports_pkill                     ports/sysutils/pkill
 ports_pr                        ports/comms/pr
 ports_sendmail                  ports/mail/sendmail
 ports_tcpdump                   ports/net/tcpdump
@@ -17589,7 +17591,6 @@ portscout                       ports/ports-mgmt/portscout
 portsearch                      ports/ports-mgmt/portsearch
 portsentry                      ports/security/portsentry
 portsman                        ports/ports-mgmt/portsman
-portsnap                        ports/ports-mgmt/portsnap
 portsopt                        ports/ports-mgmt/portsopt
 porttools                       ports/ports-mgmt/porttools
 portupdate-scan                 ports/ports-mgmt/portupdate-scan
@@ -19351,6 +19352,7 @@ ruby-js                         ports/lang/ruby-js
 ruby-jttui                      ports/devel/ruby-jttui
 ruby-ldap                       ports/net/ruby-ldap
 ruby-lha                        ports/archivers/ruby-lha
+ruby-libarchive                 ports/archivers/ruby-libarchive
 ruby-libart2                    ports/graphics/ruby-libart2
 ruby-libglade2                  ports/devel/ruby-libglade2
 ruby-libpng                     ports/graphics/ruby-libpng
@@ -20686,6 +20688,7 @@ sysconftool                     ports/devel/sysconftool
 syscp                           ports/sysutils/syscp
 sysfsutils                      ports/devel/sysfsutils
 sysgather                       ports/sysutils/sysgather
+syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng2                      ports/sysutils/syslog-ng2
 syslogger                       ports/sysutils/syslogger
