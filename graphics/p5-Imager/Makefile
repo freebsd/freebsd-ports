@@ -8,6 +8,7 @@
 
 PORTNAME=	Imager
 PORTVERSION=	0.67
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,14 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
-LIB_DEPENDS=	\
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		t1:${PORTSDIR}/devel/t1lib \
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
-USE_FREETYPE2=	yes
 PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
