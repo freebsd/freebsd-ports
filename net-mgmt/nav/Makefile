@@ -74,7 +74,6 @@ USE_PHP=	ctype gettext pcre pgsql posix \
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 WANT_PHP_MOD=	yes
-USE_REINPLACE_CMD=	yes
 
 CONFIGURE_ENV=	INSTALL="${LOCALBASE}/bin/ginstall"
 CONFIGURE_ARGS=	--prefix=${PREFIX}/nav ${CONFIGURE_TARGET}
