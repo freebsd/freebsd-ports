@@ -100,6 +100,10 @@ OPTIONS=	IPV6	"Enable IPv6 support"	On
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800059
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
