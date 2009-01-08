@@ -221,7 +221,6 @@ CONFIGURE_ARGS+=	--with-sqlite=no
 .endif
 
 .if !defined(WITHOUT_THREAD)
-USE_THREAD=		yes
 CONFIGURE_ARGS+=	--with-threads=${PTHREAD_LIBS}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 .endif
