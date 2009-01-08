@@ -24,13 +24,11 @@ share/applnk/System/ScreenSavers/boxfit.desktop
 share/applnk/System/ScreenSavers/braid.desktop
 share/applnk/System/ScreenSavers/bsod.desktop
 share/applnk/System/ScreenSavers/bubble3d.desktop
-share/applnk/System/ScreenSavers/bubbles.desktop
 share/applnk/System/ScreenSavers/bumps.desktop
 share/applnk/System/ScreenSavers/cage.desktop
 share/applnk/System/ScreenSavers/carousel.desktop
 share/applnk/System/ScreenSavers/ccurve.desktop
 share/applnk/System/ScreenSavers/celtic.desktop
-share/applnk/System/ScreenSavers/circuit.desktop
 share/applnk/System/ScreenSavers/cloudlife.desktop
 share/applnk/System/ScreenSavers/compass.desktop
 share/applnk/System/ScreenSavers/coral.desktop
@@ -59,7 +57,6 @@ share/applnk/System/ScreenSavers/extrusion.desktop
 share/applnk/System/ScreenSavers/fadeplot.desktop
 share/applnk/System/ScreenSavers/fiberlamp.desktop
 share/applnk/System/ScreenSavers/fireworkx.desktop
-share/applnk/System/ScreenSavers/flag.desktop
 share/applnk/System/ScreenSavers/flame.desktop
 share/applnk/System/ScreenSavers/flipflop.desktop
 share/applnk/System/ScreenSavers/flipscreen3d.desktop
@@ -69,7 +66,6 @@ share/applnk/System/ScreenSavers/fluidballs.desktop
 share/applnk/System/ScreenSavers/flurry.desktop
 share/applnk/System/ScreenSavers/flyingtoasters.desktop
 share/applnk/System/ScreenSavers/fontglide.desktop
-share/applnk/System/ScreenSavers/forest.desktop
 share/applnk/System/ScreenSavers/fuzzyflakes.desktop
 share/applnk/System/ScreenSavers/galaxy.desktop
 share/applnk/System/ScreenSavers/gears.desktop
@@ -77,7 +73,6 @@ share/applnk/System/ScreenSavers/gflux.desktop
 share/applnk/System/ScreenSavers/glblur.desktop
 share/applnk/System/ScreenSavers/glcells.desktop
 share/applnk/System/ScreenSavers/gleidescope.desktop
-share/applnk/System/ScreenSavers/glforestfire.desktop
 share/applnk/System/ScreenSavers/glhanoi.desktop
 share/applnk/System/ScreenSavers/glknots.desktop
 share/applnk/System/ScreenSavers/glmatrix.desktop
@@ -110,12 +105,7 @@ share/applnk/System/ScreenSavers/kaleidescope.desktop
 share/applnk/System/ScreenSavers/klein.desktop
 share/applnk/System/ScreenSavers/kumppa.desktop
 share/applnk/System/ScreenSavers/lament.desktop
-share/applnk/System/ScreenSavers/laser.desktop
 share/applnk/System/ScreenSavers/lavalite.desktop
-share/applnk/System/ScreenSavers/lightning.desktop
-share/applnk/System/ScreenSavers/lisa.desktop
-share/applnk/System/ScreenSavers/lissie.desktop
-share/applnk/System/ScreenSavers/lmorph.desktop
 share/applnk/System/ScreenSavers/lockward.desktop
 share/applnk/System/ScreenSavers/loop.desktop
 share/applnk/System/ScreenSavers/m6502.desktop
@@ -124,7 +114,6 @@ share/applnk/System/ScreenSavers/memscroller.desktop
 share/applnk/System/ScreenSavers/menger.desktop
 share/applnk/System/ScreenSavers/metaballs.desktop
 share/applnk/System/ScreenSavers/mirrorblob.desktop
-share/applnk/System/ScreenSavers/mismunch.desktop
 share/applnk/System/ScreenSavers/moebius.desktop
 share/applnk/System/ScreenSavers/moebiusgears.desktop
 share/applnk/System/ScreenSavers/moire.desktop
@@ -159,7 +148,6 @@ share/applnk/System/ScreenSavers/rd-bomb.desktop
 share/applnk/System/ScreenSavers/ripples.desktop
 share/applnk/System/ScreenSavers/rocks.desktop
 share/applnk/System/ScreenSavers/rorschach.desktop
-share/applnk/System/ScreenSavers/rotor.desktop
 share/applnk/System/ScreenSavers/rotzoomer.desktop
 share/applnk/System/ScreenSavers/rubik.desktop
 share/applnk/System/ScreenSavers/sballs.desktop
@@ -170,7 +158,6 @@ share/applnk/System/ScreenSavers/slidescreen.desktop
 share/applnk/System/ScreenSavers/slip.desktop
 share/applnk/System/ScreenSavers/sonar.desktop
 share/applnk/System/ScreenSavers/speedmine.desktop
-share/applnk/System/ScreenSavers/sphere.desktop
 share/applnk/System/ScreenSavers/spheremonics.desktop
 share/applnk/System/ScreenSavers/spiral.desktop
 share/applnk/System/ScreenSavers/spotlight.desktop
@@ -184,7 +171,6 @@ share/applnk/System/ScreenSavers/strange.desktop
 share/applnk/System/ScreenSavers/substrate.desktop
 share/applnk/System/ScreenSavers/superquadrics.desktop
 share/applnk/System/ScreenSavers/swirl.desktop
-share/applnk/System/ScreenSavers/t3d.desktop
 share/applnk/System/ScreenSavers/tangram.desktop
 share/applnk/System/ScreenSavers/thornbird.desktop
 share/applnk/System/ScreenSavers/timetunnel.desktop
@@ -194,13 +180,10 @@ share/applnk/System/ScreenSavers/truchet.desktop
 share/applnk/System/ScreenSavers/twang.desktop
 share/applnk/System/ScreenSavers/vermiculate.desktop
 share/applnk/System/ScreenSavers/vidwhacker.desktop
-share/applnk/System/ScreenSavers/vines.desktop
 share/applnk/System/ScreenSavers/voronoi.desktop
 share/applnk/System/ScreenSavers/wander.desktop
 share/applnk/System/ScreenSavers/webcollage.desktop
 share/applnk/System/ScreenSavers/whirlwindwarp.desktop
-share/applnk/System/ScreenSavers/whirlygig.desktop
-share/applnk/System/ScreenSavers/worm.desktop
 share/applnk/System/ScreenSavers/wormhole.desktop
 share/applnk/System/ScreenSavers/xanalogtv.desktop
 share/applnk/System/ScreenSavers/xflame.desktop
