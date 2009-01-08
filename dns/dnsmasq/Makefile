@@ -43,6 +43,11 @@ CFLAGS+=	-DHAVE_DBUS
 
 USE_RC_SUBR=	dnsmasq.sh
 
+post-patch:
+.if ${OSVERSION} < 700000
+	@${REINPLACE_CMD} -e 's|DBUS_LIBS="|DBUS_LIBS="${PTHREAD_LIBS} |' ${WRKSRC}/Makefile
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc
