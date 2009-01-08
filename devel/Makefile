@@ -2495,6 +2495,7 @@
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
+    SUBDIR += rubygem-trollop
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-validatable
