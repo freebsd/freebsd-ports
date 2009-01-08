@@ -22,7 +22,6 @@ MAN1=	checkvpw.1 vauthenticate.1 dumpvuser.1 \
 MAN7=	vmailmgr.7
 MAN8=	vmailmgrd.8
 
-USE_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 AUTOMAKE_ARGS+=	--add-missing -Wno-portability

@@ -27,7 +27,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
