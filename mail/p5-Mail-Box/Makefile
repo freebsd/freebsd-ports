@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.084
+PORTVERSION=	2.086
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
 	p5-File-Remove>=0.20:${PORTSDIR}/devel/p5-File-Remove \
 	p5-HTML-Format>=2.01:${PORTSDIR}/textproc/p5-HTML-Format \
 	p5-HTML-Tree>=3.13:${PORTSDIR}/www/p5-HTML-Tree \
