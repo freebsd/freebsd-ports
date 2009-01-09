@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	cdf${VER}-dist-cdf
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
