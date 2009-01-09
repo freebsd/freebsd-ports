@@ -42,7 +42,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/simple_pack.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/slowadd128.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/sub128.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/threads.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_compV6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_compact_v6.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/_splitplan.al
