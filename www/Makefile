@@ -1455,6 +1455,7 @@
     SUBDIR += twiki-CommentPlugin
     SUBDIR += twiki-EditTablePlugin
     SUBDIR += twiki-EmptyPlugin
+    SUBDIR += twiki-GluePlugin
     SUBDIR += twiki-InterwikiPlugin
     SUBDIR += twiki-JSCalendarContrib
     SUBDIR += twiki-LdapContrib

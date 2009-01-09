@@ -1,0 +1,8 @@
+This plugin will help you to write readable markup (TWikiMarkup, HMTL,
+...) within TWiki by allowing tags and arguments to be formatted on
+multiple lines.  This is done by removing whitespaces surrounding tilde
+characters at the beginning of a line and recombine consecutive lines
+again.
+
+Author: Michael Daum
+WWW: http://twiki.org/cgi-bin/view/Plugins/GluePlugin

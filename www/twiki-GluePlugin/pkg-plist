@@ -1,0 +1,17 @@
+%%TWDIR%%/data/TWiki/GluePlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/GluePlugin.pm
+%%TWDIR%%/pub/TWiki/GluePlugin/wikiringlogo40x40.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/GluePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/GluePlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
