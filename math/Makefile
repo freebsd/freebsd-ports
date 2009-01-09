@@ -435,6 +435,7 @@
     SUBDIR += ruby-netcdf
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += sc
     SUBDIR += scalapack
     SUBDIR += scigraphica
     SUBDIR += scilab

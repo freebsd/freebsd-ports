@@ -1,0 +1,5 @@
+bin/sc
+bin/scqref
+bin/psc
+%%DATADIR%%/tutorial.sc
+@dirrm %%DATADIR%%
