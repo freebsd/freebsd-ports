@@ -1,0 +1,151 @@
+diff -ur openssl-0.9.8i-ORIG/apps/speed.c apps/speed.c
+--- apps/speed.c	2007-11-15 13:33:47.000000000 +0000
++++ apps/speed-new.c	2008-12-04 00:00:00.000000000 +0000
+@@ -2132,7 +2132,7 @@
+ 				{
+ 				ret=RSA_verify(NID_md5_sha1, buf,36, buf2,
+ 					rsa_num, rsa_key[j]);
+-				if (ret == 0)
++				if (ret <= 0)
+ 					{
+ 					BIO_printf(bio_err,
+ 						"RSA verify failure\n");
+diff -ur openssl-0.9.8i-ORIG/apps/spkac.c apps/spkac.c
+--- openssl-0.9.8i-ORIG/apps/spkac.c	2005-04-05 19:11:18.000000000 +0000
++++ apps/spkac.c	2008-12-04 00:00:00.000000000 +0000
+@@ -285,7 +285,7 @@
+ 	pkey = NETSCAPE_SPKI_get_pubkey(spki);
+ 	if(verify) {
+ 		i = NETSCAPE_SPKI_verify(spki, pkey);
+-		if(i) BIO_printf(bio_err, "Signature OK\n");
++		if (i > 0) BIO_printf(bio_err, "Signature OK\n");
+ 		else {
+ 			BIO_printf(bio_err, "Signature Failure\n");
+ 			ERR_print_errors(bio_err);
+diff -ur openssl-0.9.8i-ORIG/apps/verify.c apps/verify.c
+--- openssl-0.9.8i-ORIG/apps/verify.c	2004-11-29 11:28:07.000000000 +0000
++++ apps/verify.c	2008-12-04 00:00:00.600000000 +0000
+@@ -266,7 +266,7 @@
+ 
+ 	ret=0;
+ end:
+-	if (i)
++	if (i > 0)
+ 		{
+ 		fprintf(stdout,"OK\n");
+ 		ret=1;
+@@ -367,4 +367,3 @@
+ 		ERR_clear_error();
+ 	return(ok);
+ 	}
+-
+diff -ur openssl-0.9.8i-ORIG/apps/x509.c apps/x509.c
+--- openssl-0.9.8i-ORIG/apps/x509.c	2007-10-12 00:00:10.000000000 +0000
++++ apps/x509.c	2008-12-04 00:00:00.400000000 +0000
+@@ -1151,7 +1151,7 @@
+ 	/* NOTE: this certificate can/should be self signed, unless it was
+ 	 * a certificate request in which case it is not. */
+ 	X509_STORE_CTX_set_cert(&xsc,x);
+-	if (!reqfile && !X509_verify_cert(&xsc))
++	if (!reqfile && X509_verify_cert(&xsc) <= 0)
+ 		goto end;
+ 
+ 	if (!X509_check_private_key(xca,pkey))
+diff -ur openssl-0.9.8i-ORIG/crypto/cms/cms_sd.c crypto/cms/cms_sd.c
+--- openssl-0.9.8i-ORIG/crypto/cms/cms_sd.c	2008-04-06 16:30:38.000000000 +0000
++++ crypto/cms/cms_sd.c	2008-12-04 00:00:00.400000000 +0000
+@@ -830,7 +830,7 @@
+ 	cms_fixup_mctx(&mctx, si->pkey);
+ 	r = EVP_VerifyFinal(&mctx,
+ 			si->signature->data, si->signature->length, si->pkey);
+-	if (!r)
++	if (r <= 0)
+ 		CMSerr(CMS_F_CMS_SIGNERINFO_VERIFY, CMS_R_VERIFICATION_FAILURE);
+ 	err:
+ 	EVP_MD_CTX_cleanup(&mctx);
+diff -ur openssl-0.9.8i-ORIG/ssl/s2_clnt.c ssl/s2_clnt.c
+--- openssl-0.9.8i-ORIG/ssl/s2_clnt.c	2007-09-06 12:43:53.000000000 +0000
++++ ssl/s2_clnt.c	2008-12-04 00:00:00.100000000 +0000
+@@ -1044,7 +1044,7 @@
+ 
+ 	i=ssl_verify_cert_chain(s,sk);
+ 		
+-	if ((s->verify_mode != SSL_VERIFY_NONE) && (!i))
++	if ((s->verify_mode != SSL_VERIFY_NONE) && (i <= 0))
+ 		{
+ 		SSLerr(SSL_F_SSL2_SET_CERTIFICATE,SSL_R_CERTIFICATE_VERIFY_FAILED);
+ 		goto err;
+diff -ur openssl-0.9.8i-ORIG/ssl/s2_srvr.c ssl/s2_srvr.c
+--- openssl-0.9.8i-ORIG/ssl/s2_srvr.c	2007-09-06 12:43:53.000000000 +0000
++++ ssl/s2_srvr.c	2008-12-04 00:00:00.900000000 +0000
+@@ -1054,7 +1054,7 @@
+ 
+ 	i=ssl_verify_cert_chain(s,sk);
+ 
+-	if (i)	/* we like the packet, now check the chksum */
++	if (i > 0)	/* we like the packet, now check the chksum */
+ 		{
+ 		EVP_MD_CTX ctx;
+ 		EVP_PKEY *pkey=NULL;
+@@ -1083,7 +1083,7 @@
+ 		EVP_PKEY_free(pkey);
+ 		EVP_MD_CTX_cleanup(&ctx);
+ 
+-		if (i) 
++		if (i > 0)
+ 			{
+ 			if (s->session->peer != NULL)
+ 				X509_free(s->session->peer);
+diff -ur openssl-0.9.8i-ORIG/ssl/s3_clnt.c ssl/s3_clnt.c
+--- openssl-0.9.8i-ORIG/ssl/s3_clnt.c	2008-06-16 16:56:41.000000000 +0000
++++ ssl/s3_clnt.c	2008-12-04 00:00:00.100000000 +0000
+@@ -972,7 +972,7 @@
+ 		}
+ 
+ 	i=ssl_verify_cert_chain(s,sk);
+-	if ((s->verify_mode != SSL_VERIFY_NONE) && (!i)
++	if ((s->verify_mode != SSL_VERIFY_NONE) && (i <= 0)
+ #ifndef OPENSSL_NO_KRB5
+ 	        && (s->s3->tmp.new_cipher->algorithms & (SSL_MKEY_MASK|SSL_AUTH_MASK))
+ 	        != (SSL_aKRB5|SSL_kKRB5)
+@@ -1459,7 +1459,7 @@
+ 			EVP_VerifyUpdate(&md_ctx,&(s->s3->client_random[0]),SSL3_RANDOM_SIZE);
+ 			EVP_VerifyUpdate(&md_ctx,&(s->s3->server_random[0]),SSL3_RANDOM_SIZE);
+ 			EVP_VerifyUpdate(&md_ctx,param,param_len);
+-			if (!EVP_VerifyFinal(&md_ctx,p,(int)n,pkey))
++			if (EVP_VerifyFinal(&md_ctx,p,(int)n,pkey) <= 0)
+ 				{
+ 				/* bad signature */
+ 				al=SSL_AD_DECRYPT_ERROR;
+@@ -1477,7 +1477,7 @@
+ 			EVP_VerifyUpdate(&md_ctx,&(s->s3->client_random[0]),SSL3_RANDOM_SIZE);
+ 			EVP_VerifyUpdate(&md_ctx,&(s->s3->server_random[0]),SSL3_RANDOM_SIZE);
+ 			EVP_VerifyUpdate(&md_ctx,param,param_len);
+-			if (!EVP_VerifyFinal(&md_ctx,p,(int)n,pkey))
++			if (EVP_VerifyFinal(&md_ctx,p,(int)n,pkey) <= 0)
+ 				{
+ 				/* bad signature */
+ 				al=SSL_AD_DECRYPT_ERROR;
+diff -ur openssl-0.9.8i-ORIG/ssl/s3_srvr.c ssl/s3_srvr.c
+--- openssl-0.9.8i-ORIG/ssl/s3_srvr.c	2008-09-14 18:16:09.000000000 +0000
++++ ssl/s3_srvr.c	2008-12-04 00:00:00.100000000 +0000
+@@ -2560,7 +2560,7 @@
+ 	else
+ 		{
+ 		i=ssl_verify_cert_chain(s,sk);
+-		if (!i)
++		if (i <= 0)
+ 			{
+ 			al=ssl_verify_alarm_type(s->verify_result);
+ 			SSLerr(SSL_F_SSL3_GET_CLIENT_CERTIFICATE,SSL_R_NO_CERTIFICATE_RETURNED);
+diff -ur openssl-0.9.8i-ORIG/ssl/ssltest.c ssl/ssltest.c
+--- openssl-0.9.8i-ORIG/ssl/ssltest.c	2008-06-16 16:56:42.000000000 +0000
++++ ssl/ssltest.c	2008-12-04 00:00:00.900000000 +0000
+@@ -2093,7 +2093,7 @@
+ 
+ 	if (cb_arg->proxy_auth)
+ 		{
+-		if (ok)
++		if (ok > 0)
+ 			{
+ 			const char *cond_end = NULL;
