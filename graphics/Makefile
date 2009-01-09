@@ -661,6 +661,7 @@
     SUBDIR += py-exif
     SUBDIR += py-exiv2
     SUBDIR += py-freeimagepy
+    SUBDIR += py-gchartwrapper
     SUBDIR += py-gd
     SUBDIR += py-gdchart
     SUBDIR += py-gdchart2
