@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	phpwebgallery
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.gna.org/phpwebgallery/release/1.7/1.7.2/
+MASTER_SITES=	http://download.gna.org/phpwebgallery/release/1.7/${PORTVERSION}/
 
 MAINTAINER=	glz@hidden-powers.com
 COMMENT=	A PHP based Web Gallery
