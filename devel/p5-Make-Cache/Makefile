@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Make-Cache
-PORTVERSION=	1.044
+PORTVERSION=	1.050
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Caching of object and test run information
+
+BUILD_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource
 
 PERL_CONFIGURE=	yes
 
