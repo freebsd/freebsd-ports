@@ -1426,6 +1426,7 @@
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-pendingticket
     SUBDIR += trac-privatetickets
+    SUBDIR += trac-pydotorgtheme
     SUBDIR += trac-remind
     SUBDIR += trac-restrictedarea
     SUBDIR += trac-revtree
