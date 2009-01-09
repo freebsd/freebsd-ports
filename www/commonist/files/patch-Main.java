@@ -17,22 +17,3 @@
  		
  		loader	= new Loader(settingsDir, projectDir, "/etc/");
  
-@@ -77,8 +77,7 @@
- 		try { licenses	= initLicenses(); }
- 		catch (IOException e) { throw new Error("cannot load licenses.txt"); }
- 
--		try { mw = new MediaWiki(); }
--		catch (ConfigException e) { throw new Error("cannot instantiate MediaWiki"); }
-+		mw = new MediaWiki(); 
- 		mw.setLog(System.err);
- 		mw.setupProxy();
- 		
-@@ -226,7 +225,7 @@
- 			if (!file.getName().endsWith(".family"))	continue;
- 			log.info("loading family: " + file);
- 			try {
--				mw.loadFamily(file.toURL());
-+				mw.loadFamily(file.toURI().toURL());
- 			}
- 			catch (ConfigException e) {
- 				log.error("could not load family from: " + file, e);

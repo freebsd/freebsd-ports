@@ -1,6 +1,17 @@
---- build.xml.orig	2008-01-17 21:47:36.000000000 +0100
-+++ build.xml	2008-06-20 01:11:45.983423901 +0200
-@@ -52,10 +52,9 @@
+--- build.xml.orig	2008-06-25 12:52:30.000000000 +0200
++++ build.xml	2008-12-23 06:09:36.963725735 +0100
+@@ -21,6 +21,10 @@
+ 
+ 	<target name="compile" description="compile java classes">
+ 		<mkdir dir="build/classes"/>
++		<javacc
++			target="src/net/psammead/minibpp/Parser.jj"
++			javacchome="${javacc.home}"
++		/>
+ 		<javac
+ 			srcdir="src" 
+ 			destdir="build/classes"
+@@ -52,10 +56,9 @@
  				<attribute name="Creator"		value="${author}"/>
  				<attribute name="License"		value="${license}"/>
  				
@@ -8,7 +19,7 @@
 -				TODO: use a property, add binary.jars to classpath (manifestclasspath from ant 1.7.0)
  				<attribute name="Main-Class"	value="net.psammead.commonist.Main"/>
 -				-->
-+				<attribute name="Class-Path"	value="commons-httpclient.jar commons-codec.jar commons-logging.jar bsh.jar"/>
++				<attribute name="Class-Path"	value="jericho-html.jar commons-httpclient.jar commons-codec.jar commons-logging.jar bsh.jar"/>
 +			
  			</manifest>
  		</jar>

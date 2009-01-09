@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	commonist
-PORTVERSION=	0.3.28
-PORTREVISION=	1
+PORTVERSION=	0.3.32
 CATEGORIES=	www java
 MASTER_SITES=	http://djini.de/software/commonist/
 
@@ -20,13 +19,16 @@ USE_JAVA=	1.5+
 JAVA_EXTRACT=	yes
 USE_ANT=	yes
 ALL_TARGET=	jar
-MAKE_ARGS+=	-Djar.lib.dir=${WRKSRC}/build/jar -Dtarget.name=${WRKSRC}/build/jar/${PORTNAME}.jar
+MAKE_FLAGS+=	-verbose
+MAKE_ARGS+=	-Djar.lib.dir=${WRKSRC}/build/jar -Dtarget.name=${WRKSRC}/build/jar/${PORTNAME}.jar \
+		-Djavacc.home=${JAVAJARDIR}
 
 SUB_FILES+=	commonist
 SUB_LIST+=	TARGET_JAR=${TARGET_JAR}
 
 BUILD_DEPENDS+=	${JAVAJARDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVAJARDIR}/bsh.jar:${PORTSDIR}/lang/bsh
+		${JAVAJARDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${JAVAJARDIR}/javacc.jar:${PORTSDIR}/textproc/javacc
 
 RUN_DEPENDS+=	${JAVAJARDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVAJARDIR}/bsh.jar:${PORTSDIR}/lang/bsh
