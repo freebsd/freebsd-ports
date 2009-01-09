@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	libosip
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	net
 MASTER_SITES=	GNU/osip
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	A low layer of SIP implementation
 
 CONFLICTS=	libosip2-2*
