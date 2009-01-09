@@ -1414,6 +1414,7 @@
     SUBDIR += trac-customroadmap
     SUBDIR += trac-down
     SUBDIR += trac-email2trac
+    SUBDIR += trac-fullblog
     SUBDIR += trac-gantt
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin

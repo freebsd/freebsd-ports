@@ -1,0 +1,57 @@
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/__init__.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/__init__.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/__init__.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/admin.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/admin.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/admin.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/api.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/api.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/api.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/core.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/core.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/core.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/db.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/db.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/db.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/htdocs/blog.png
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/htdocs/css/fullblog.css
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/macros.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/macros.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/macros.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/model.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/model.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/model.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/spamfilter.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/spamfilter.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/spamfilter.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/tags.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/tags.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/tags.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog.rss
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_admin.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_archive.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_delete.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_edit.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_macro_monthlist.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_macro_post.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_sidebar.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates/fullblog_view.html
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/util.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/util.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/util.pyo
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/web_ui.py
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/web_ui.pyc
+%%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/web_ui.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/templates
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/htdocs/css
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog/htdocs
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/tracfullblog
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/TracFullBlogPlugin-%%PORTVERSION%%-py%%PYTHON_VER%%.egg
