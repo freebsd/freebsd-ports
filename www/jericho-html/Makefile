@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jericho-html
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	www java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,,}
@@ -17,9 +17,9 @@ COMMENT=	A java library to analyse and manipulate HTML
 USE_ZIP=	yes
 USE_JAVA=	1.3+
 
-INTERFACES:=	"compile-time-dependencies/slf4j-api-1.4.3.jar:\
-		compile-time-dependencies/commons-logging-api-1.1.jar:\
-		compile-time-dependencies/log4j-api-1.2.14.jar"
+INTERFACES:=	"compile-time-dependencies/slf4j-api-1.5.2.jar:\
+		compile-time-dependencies/commons-logging-api-1.1.1.jar:\
+		compile-time-dependencies/log4j-api-1.2.15.jar"
 
 PORTDOCS=	api
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
