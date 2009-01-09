@@ -6,13 +6,8 @@
 #
 
 PORTNAME=	openssl
-.if !defined(WITH_OPENSSL_BETA) && ( defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE) )
-PORTVERSION=	0.9.7m
-PORTREVISION?=	1
-.else
 PORTVERSION=	0.9.8i
 PORTREVISION?=	0
-.endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -26,7 +21,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
 FORBIDDEN=	incorrect checks for malformed signatures
-BROKEN=		builds but fail to run
 
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -37,18 +31,11 @@ BETA_SUFFIX=		-beta
 CONFLICTS?=		openssl-0.* openssl-stable-0.*
 NO_LATEST_LINK=		yes
 .endif
-.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
-BETA_SUFFIX=		-stable
-PLIST_SUB+=		OPENSSL_BETA="@comment "
-PLIST_SUB+=		OPENSSL_STABLE=""
-CONFLICTS?=		openssl-0.* openssl-beta-0.*
-.else
 PATCHDIR=		${MASTERDIR}/files-beta
 PLIST_SUB+=		OPENSSL_BETA=""
 PLIST_SUB+=		OPENSSL_STABLE="@comment "
 CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 EXTRACONFIGURE+=	enable-camellia
-.endif
 
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -57,38 +44,39 @@ USE_PERL5_BUILD=	yes
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
-	dsa.1 dsaparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 \
-	openssl.1 passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 req.1 rsa.1 rsautl.1 \
-	s_client.1 s_server.1 s_time.1 sess_id.1 smime.1 speed.1 spkac.1 verify.1 \
-	version.1 x509.1
+	dsa.1 dsaparam.1 ec.1 ecparam.1 enc.1 errstr.1 gendsa.1 genrsa.1 \
+	nseq.1 ocsp.1 openssl.1 passwd.1 pkcs12.1 pkcs7.1 pkcs8.1 rand.1 \
+	req.1 rsa.1 rsautl.1 s_client.1 s_server.1 s_time.1 sess_id.1 smime.1 \
+	speed.1 spkac.1 verify.1 version.1 x509.1
 
-MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
-	ASN1_STRING_print_ex.3 BIO_ctrl.3 BIO_f_base64.3 BIO_f_buffer.3 \
-	BIO_f_cipher.3 BIO_f_md.3 BIO_f_null.3 BIO_f_ssl.3 BIO_find_type.3 \
-	BIO_new.3 BIO_new_bio_pair.3 BIO_push.3 BIO_read.3 BIO_s_accept.3 \
-	BIO_s_bio.3 BIO_s_connect.3 BIO_s_fd.3 BIO_s_file.3 BIO_s_mem.3 \
-	BIO_s_null.3 BIO_s_socket.3 BIO_set_callback.3 BIO_should_retry.3 \
-	BN_CTX_new.3 BN_CTX_start.3 BN_add.3 BN_add_word.3 BN_bn2bin.3 \
-	BN_cmp.3 BN_copy.3 BN_generate_prime.3 BN_mod_inverse.3 \
-	BN_mod_mul_montgomery.3 BN_mod_mul_reciprocal.3 BN_new.3 \
-	BN_num_bytes.3 BN_rand.3 BN_set_bit.3 BN_swap.3 BN_zero.3 \
-	CONF_modules_free.3 CONF_modules_load_file.3 \
-	CRYPTO_set_ex_data.3 DH_generate_key.3 DH_generate_parameters.3 \
-	DH_get_ex_new_index.3 DH_new.3 DH_set_method.3 DH_size.3 \
-	DSA_SIG_new.3 DSA_do_sign.3 DSA_dup_DH.3 DSA_generate_key.3 \
-	DSA_generate_parameters.3 DSA_get_ex_new_index.3 DSA_new.3 \
-	DSA_set_method.3 DSA_sign.3 DSA_size.3 ERR_GET_LIB.3 \
+MAN3=	ASN1_generate_nconf.3 ASN1_OBJECT_new.3 ASN1_STRING_length.3 \
+	ASN1_STRING_new.3 ASN1_STRING_print_ex.3 BIO_ctrl.3 BIO_f_base64.3 \
+	BIO_f_buffer.3 BIO_f_cipher.3 BIO_f_md.3 BIO_f_null.3 BIO_f_ssl.3 \
+	BIO_find_type.3 BIO_new.3 BIO_new_bio_pair.3 BIO_push.3 BIO_read.3 \
+	BIO_s_accept.3 BIO_s_bio.3 BIO_s_connect.3 BIO_s_fd.3 BIO_s_file.3 \
+	BIO_s_mem.3 BIO_s_null.3 BIO_s_socket.3 BIO_set_callback.3 \
+	BIO_should_retry.3 BN_BLINDING_new.3 BN_CTX_new.3 BN_CTX_start.3 \
+	BN_add.3 BN_add_word.3 BN_bn2bin.3 BN_cmp.3 BN_copy.3 \
+	BN_generate_prime.3 BN_mod_inverse.3 BN_mod_mul_montgomery.3 \
+	BN_mod_mul_reciprocal.3 BN_new.3 BN_num_bytes.3 BN_rand.3 \
+	BN_set_bit.3 BN_swap.3 BN_zero.3 CONF_modules_free.3 \
+	CONF_modules_load_file.3 CRYPTO_set_ex_data.3 DH_generate_key.3 \
+	DH_generate_parameters.3 DH_get_ex_new_index.3 DH_new.3 \
+	DH_set_method.3 DH_size.3 DSA_SIG_new.3 DSA_do_sign.3 DSA_dup_DH.3 \
+	DSA_generate_key.3 DSA_generate_parameters.3 DSA_get_ex_new_index.3 \
+	DSA_new.3 DSA_set_method.3 DSA_sign.3 DSA_size.3 ERR_GET_LIB.3 \
 	ERR_clear_error.3 ERR_error_string.3 ERR_get_error.3 \
 	ERR_load_crypto_strings.3 ERR_load_strings.3 ERR_print_errors.3 \
-	ERR_put_error.3 ERR_remove_state.3 EVP_BytesToKey.3 EVP_DigestInit.3 \
-	EVP_EncryptInit.3 EVP_OpenInit.3 EVP_PKEY_new.3 EVP_PKEY_set1_RSA.3 \
-	EVP_SealInit.3 EVP_SignInit.3 EVP_VerifyInit.3 OBJ_nid2obj.3 \
-	OPENSSL_VERSION_NUMBER.3 OpenSSL_add_all_algorithms.3 \
-	OPENSSL_config.3 OPENSSL_load_builtin_modules.3 PKCS12_create.3 \
-	PKCS12_parse.3 PKCS7_sign.3 PKCS7_verify.3 PKCS7_encrypt.3 \
-	PKCS7_decrypt.3 RAND_add.3 RAND_bytes.3 RAND_cleanup.3 RAND_egd.3 \
-	RAND_load_file.3 RAND_set_rand_method.3 RSA_blinding_on.3 \
-	RSA_check_key.3 RSA_generate_key.3 RSA_get_ex_new_index.3 RSA_new.3 \
+	ERR_put_error.3 ERR_remove_state.3 ERR_set_mark.3 EVP_BytesToKey.3 \
+	EVP_DigestInit.3 EVP_EncryptInit.3 EVP_OpenInit.3 EVP_PKEY_new.3 \
+	EVP_PKEY_set1_RSA.3 EVP_SealInit.3 EVP_SignInit.3 EVP_VerifyInit.3 \
+	OBJ_nid2obj.3 OPENSSL_VERSION_NUMBER.3 OPENSSL_Applink.3 \
+	OpenSSL_add_all_algorithms.3 OPENSSL_config.3 OPENSSL_ia32cap.3 \
+	OPENSSL_load_builtin_modules.3 PKCS12_create.3 PKCS12_parse.3 \
+	PKCS7_sign.3 PKCS7_verify.3 PKCS7_encrypt.3 PKCS7_decrypt.3 \
+	RAND_add.3 RAND_bytes.3 RAND_cleanup.3 RAND_egd.3 RAND_load_file.3 \
+	RAND_set_rand_method.3 RSA_blinding_on.3 RSA_check_key.3 \
+	RSA_generate_key.3 RSA_get_ex_new_index.3 RSA_new.3 \
 	RSA_padding_add_PKCS1_type_1.3 RSA_print.3 RSA_private_encrypt.3 \
 	RSA_public_encrypt.3 RSA_set_method.3 RSA_sign.3 \
 	RSA_sign_ASN1_OCTET_STRING.3 RSA_size.3 SSL_CIPHER_get_name.3 \
@@ -127,11 +115,11 @@ MAN3=	ASN1_OBJECT_new.3 ASN1_STRING_length.3 ASN1_STRING_new.3 \
 	d2i_ASN1_OBJECT.3 d2i_DHparams.3 d2i_DSAPublicKey.3 \
 	d2i_PKCS8PrivateKey.3 d2i_RSAPublicKey.3 d2i_X509_ALGOR.3 \
 	d2i_X509_CRL.3 d2i_X509.3 d2i_X509_NAME.3 d2i_X509_REQ.3 \
-	d2i_X509_SIG.3 d2i_SSL_SESSION.3 des.3 dh.3 dsa.3 engine.3 err.3 \
-	evp.3 hmac.3 lh_stats.3 lhash.3 md5.3 mdc2.3 pem.3 rand.3 rc4.3 \
-	ripemd.3 rsa.3 sha.3 ssl.3 threads.3 ui.3 ui_compat.3
+	d2i_X509_SIG.3 d2i_SSL_SESSION.3 des.3 dh.3 dsa.3 ecdsa.3 engine.3 \
+	err.3 evp.3 hmac.3 lh_stats.3 lhash.3 md5.3 mdc2.3 pem.3 rand.3 \
+	rc4.3 ripemd.3 rsa.3 sha.3 ssl.3 threads.3 ui.3 ui_compat.3 x509.3
 
-MAN5=	config.5
+MAN5=	config.5 x509v3_config.5
 
 MAN7=	des_modes.7
 
@@ -152,6 +140,7 @@ MLINKS=	dgst.1 md4.1 \
 	ASN1_STRING_new.3 ASN1_STRING_free.3 \
 	ASN1_STRING_new.3 ASN1_STRING_type_new.3 \
 	ASN1_STRING_print_ex.3 ASN1_STRING_print_ex_fp.3 \
+	ASN1_generate_nconf.3 ASN1_generate_v3.3 \
 	BIO_ctrl.3 BIO_callback_ctrl.3 \
 	BIO_ctrl.3 BIO_ctrl_pending.3 \
 	BIO_ctrl.3 BIO_ctrl_wpending.3 \
@@ -248,6 +237,17 @@ MLINKS=	dgst.1 md4.1 \
 	BIO_should_retry.3 BIO_should_io_special.3 \
 	BIO_should_retry.3 BIO_should_read.3 \
 	BIO_should_retry.3 BIO_should_write.3 \
+	BN_BLINDING_new.3 BN_BLINDING_convert.3 \
+	BN_BLINDING_new.3 BN_BLINDING_free.3 \
+	BN_BLINDING_new.3 BN_BLINDING_update.3 \
+	BN_BLINDING_new.3 BN_BLINDING_invert.3 \
+	BN_BLINDING_new.3 BN_BLINDING_convert_ex.3 \
+	BN_BLINDING_new.3 BN_BLINDING_invert_ex.3 \
+	BN_BLINDING_new.3 BN_BLINDING_get_thread_id.3 \
+	BN_BLINDING_new.3 BN_BLINDING_set_thread_id.3 \
+	BN_BLINDING_new.3 BN_BLINDING_get_flags.3 \
+	BN_BLINDING_new.3 BN_BLINDING_set_flags.3 \
+	BN_BLINDING_new.3 BN_BLINDING_create_param.3 \
 	BN_CTX_new.3 BN_CTX_free.3 \
 	BN_CTX_new.3 BN_CTX_init.3 \
 	BN_CTX_start.3 BN_CTX_end.3 \
@@ -316,6 +316,7 @@ MLINKS=	dgst.1 md4.1 \
 	BN_zero.3 BN_one.3 \
 	BN_zero.3 BN_set_word.3 \
 	BN_zero.3 BN_value_one.3 \
+	CONF_modules_free.3 CONF_modules_finish.3 \
 	CONF_modules_free.3 CONF_modules_unload.3 \
 	CONF_modules_load_file.3 CONF_modules_load.3 \
 	CRYPTO_set_ex_data.3 CRYPTO_get_ex_data.3 \
@@ -359,6 +360,7 @@ MLINKS=	dgst.1 md4.1 \
 	ERR_load_strings.3 ERR_get_next_error_library.3 \
 	ERR_print_errors.3 ERR_print_errors_fp.3 \
 	ERR_put_error.3 ERR_add_error_data.3 \
+	ERR_set_mark.3 ERR_pop_to_mark.3 \
 	EVP_DigestInit.3 EVP_DigestFinal_ex.3 \
 	EVP_DigestInit.3 EVP_DigestInit_ex.3 \
 	EVP_DigestInit.3 EVP_DigestUpdate.3 \
@@ -609,6 +611,7 @@ MLINKS=	dgst.1 md4.1 \
 	SSL_SESSION_get_ex_new_index.3 SSL_SESSION_set_ex_data.3 \
 	SSL_SESSION_get_time.3 SSL_SESSION_get_timeout.3 \
 	SSL_SESSION_get_time.3 SSL_SESSION_set_time.3 \
+	SSL_SESSION_get_time.3 SSL_SESSION_set_timeout.3 \
 	SSL_alert_type_string.3 SSL_alert_desc_string.3 \
 	SSL_alert_type_string.3 SSL_alert_desc_string_long.3 \
 	SSL_alert_type_string.3 SSL_alert_type_string_long.3 \
@@ -849,43 +852,12 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_pw_string.3 \
 	des_modes.7 Modes_of_DES.7
 
-.if !defined(WITH_OPENSSL_097) && !defined(WITH_OPENSSL_STABLE)
-MAN1+=	ec.1 ecparam.1
-MAN3+=	ASN1_generate_nconf.3 BN_BLINDING_new.3 ERR_set_mark.3 \
-	ecdsa.3 OPENSSL_Applink.3 OPENSSL_ia32cap.3 x509.3
-MAN5+=	x509v3_config.5
-MLINKS+=	\
-	ASN1_generate_nconf.3 ASN1_generate_v3.3 \
-	BN_BLINDING_new.3 BN_BLINDING_convert.3 \
-	BN_BLINDING_new.3 BN_BLINDING_free.3 \
-	BN_BLINDING_new.3 BN_BLINDING_update.3 \
-	BN_BLINDING_new.3 BN_BLINDING_invert.3 \
-	BN_BLINDING_new.3 BN_BLINDING_convert_ex.3 \
-	BN_BLINDING_new.3 BN_BLINDING_invert_ex.3 \
-	BN_BLINDING_new.3 BN_BLINDING_get_thread_id.3 \
-	BN_BLINDING_new.3 BN_BLINDING_set_thread_id.3 \
-	BN_BLINDING_new.3 BN_BLINDING_get_flags.3 \
-	BN_BLINDING_new.3 BN_BLINDING_set_flags.3 \
-	BN_BLINDING_new.3 BN_BLINDING_create_param.3 \
-	CONF_modules_free.3 CONF_modules_finish.3 \
-	ERR_set_mark.3 ERR_pop_to_mark.3 \
-	SSL_SESSION_get_time.3 SSL_SESSION_set_timeout.3
-.endif
-
 .include <bsd.port.pre.mk>
 
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-
-.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
-.if ( ${OSVERSION} >= 700019 )
-IGNORE=		Conflicts with version in the base
-.endif
-OPENSSL_SHLIBVER?=	4
-.else
 OPENSSL_SHLIBVER?=	5
-.endif
 
 # disable runtime SSE2 detection
 .if defined(WITHOUT_OPENSSL_SSE2)
@@ -931,21 +903,11 @@ do-configure:
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
-.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
-	@${REINPLACE_CMD} \
-		-e 's|^FIPS_DES_ENC=|#FIPS_DES_ENC=|' \
-		-e 's|^FIPS_SHA1_ASM_OBJ=|#FIPS_SHA1_ASM_OBJ=|' \
-		-e 's|^SHLIB_EXT=.*$$|SHLIB_EXT=.so.$(SHLIBVER)|' \
-		-e 's|^SHARED_LIBS_LINK_EXTS=.*$$|SHARED_LIBS_LINK_EXTS=.so|' \
-		-e 's|^SHLIBDIRS= fips|SHLIBDIRS=|' \
-		${WRKSRC}/Makefile
-.else
 	@${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
 		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
 		${WRKSRC}/Makefile
-.endif
 
 post-install:
 .if !defined(NOSHARED)
