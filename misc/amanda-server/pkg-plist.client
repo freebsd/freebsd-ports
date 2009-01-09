@@ -1,4 +1,4 @@
-@unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
+@unexec if cmp -s %%AMANDA_DATES%% /dev/null; then rm -f %%AMANDA_DATES; fi
 lib/amanda/libamanda-%%SHLIBVER%%.so
 lib/amanda/libamanda.a
 lib/amanda/libamanda.la
@@ -82,7 +82,6 @@ var/lib/amanda/template.d/amanda-tape-changer.conf
 var/lib/amanda/template.d/chg-manual.conf
 var/lib/amanda/template.d/dumptypes
 var/lib/amanda/template.d/tapetypes
-var/amanda/amandates
 @dirrm %%SITE_PERL%%/auto/Amanda/Util
 @dirrm %%SITE_PERL%%/auto/Amanda/Types
 @dirrm %%SITE_PERL%%/auto/Amanda/Debug
