@@ -678,6 +678,7 @@
     SUBDIR += py-poppler
     SUBDIR += py-pydot
     SUBDIR += py-pyglet
+    SUBDIR += py-pygooglechart
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
     SUBDIR += py-soya3d
