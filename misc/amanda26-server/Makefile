@@ -45,7 +45,8 @@ OPTIONS=	GNUTAR "use GNU tar" on \
 AMANDA_USER?=		operator
 AMANDA_GROUP?=		operator
 AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists
-PLIST_SUB=		SHLIBVER=${PORTVERSION}
+AMANDA_DATES?=		${PREFIX}/var/amanda/amandadates
+PLIST_SUB=		SHLIBVER=${PORTVERSION} AMANDA_DATES=${PREFIX}/var/amanda/amandadates
 
 # amanda-server/amanda-client common part
 .if defined (AMANDA_SERVER)
@@ -180,10 +181,11 @@ pre-fetch:
 	@${ECHO} "        between low and high when connecting from the client"
 	@${ECHO} "        to the server. Use ports below 1024."
 	@${ECHO} "        The default is no restriction on UDP ports."
+	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
 CONFLICTS=	amanda-client-2.5.*
-CONFIGURE_ARGS+=--without-server
+CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 
 MAN5=		amanda.conf.5 amanda-client.conf.5
 MAN8=		amanda.8 amrecover.8
@@ -199,8 +201,8 @@ post-install:
 		${PREFIX}/share/examples/amanda
 	${MKDIR} ${AMANDA_GNUTAR_LISTDIR}
 	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${AMANDA_GNUTAR_LISTDIR}
-	${TOUCH} ${PREFIX}/var/amanda/amandates
-	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${PREFIX}/var/amanda/amandates
+	${TOUCH} ${AMANDA_DATES}
+	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${AMANDA_DATES}
 
 .if defined (WITH_DUMP_SNAPSHOT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
