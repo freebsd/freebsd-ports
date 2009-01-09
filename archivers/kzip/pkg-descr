@@ -1,0 +1,7 @@
+Linux ports of KZIP and ZIPMIX by Ken Silverman.
+
+A PKZIP-compatible compressor focusing on space over speed. KZIP
+creates smaller .ZIP files than PKZIP with maximum compression
+enabled and even beats 7-Zip most of the time.
+
+WWW: http://www.advsys.net/ken/

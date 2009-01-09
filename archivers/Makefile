@@ -42,6 +42,7 @@
     SUBDIR += jzlib
     SUBDIR += kbackup
     SUBDIR += kio_p7zip
+    SUBDIR += kzip
     SUBDIR += lbrate
     SUBDIR += lcab
     SUBDIR += lha
