@@ -176,6 +176,7 @@
     SUBDIR += xpk
     SUBDIR += zip
     SUBDIR += zipios++
+    SUBDIR += zipmix
     SUBDIR += zipper
     SUBDIR += zoo
 

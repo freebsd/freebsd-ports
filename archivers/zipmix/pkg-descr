@@ -1,0 +1,15 @@
+[ excerpt from developer's web site with modifications ]
+
+Sometimes, when you run 2 different .ZIP programs on the same data
+(PKZIP & KZIP for example), some files get compressed better in one
+program, while other files get compressed better in the other.
+
+ZIPMIX will take the best files from each one and create a new
+output file, which is guaranteed to be equal to or smaller in size
+to both of the input files.
+
+ZIPMIX can also be used to perform boolean operations on ZIP files,
+such as merging 2 ZIP files together, or updating a new file (with
+some tricks).
+
+WWW: http://www.advsys.net/ken/utils.htm
