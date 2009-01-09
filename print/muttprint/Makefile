@@ -36,8 +36,6 @@ RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-MAKE_ENV+=	CCFLAGS="-I${PREFIX}/include"
 PLIST_SUB+=	LANGINFO=""
 .else
 NO_BUILD=	yes
