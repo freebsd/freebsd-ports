@@ -314,7 +314,6 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
-    SUBDIR += openssl-beta
     SUBDIR += openvas-client
     SUBDIR += openvas-libnasl
     SUBDIR += openvas-libraries
