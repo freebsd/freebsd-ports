@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
 		CHEESESHOP \
