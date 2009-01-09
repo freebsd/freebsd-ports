@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	curlftpfs
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Mount remote ftp directories
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
@@ -20,7 +19,6 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_GNOME=	glib20
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/curlftpfs
