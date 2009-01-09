@@ -1,6 +1,7 @@
 include/goocanvas-1.0/goocanvas.h
 include/goocanvas-1.0/goocanvasellipse.h
 include/goocanvas-1.0/goocanvasenumtypes.h
+include/goocanvas-1.0/goocanvasgrid.h
 include/goocanvas-1.0/goocanvasgroup.h
 include/goocanvas-1.0/goocanvasimage.h
 include/goocanvas-1.0/goocanvasitem.h
@@ -23,6 +24,8 @@ libdata/pkgconfig/goocanvas.pc
 %%DOCSDIR%%/goocanvas/GooCanvas.html
 %%DOCSDIR%%/goocanvas/GooCanvasEllipse.html
 %%DOCSDIR%%/goocanvas/GooCanvasEllipseModel.html
+%%DOCSDIR%%/goocanvas/GooCanvasGrid.html
+%%DOCSDIR%%/goocanvas/GooCanvasGridModel.html
 %%DOCSDIR%%/goocanvas/GooCanvasGroup.html
 %%DOCSDIR%%/goocanvas/GooCanvasGroupModel.html
 %%DOCSDIR%%/goocanvas/GooCanvasImage.html
