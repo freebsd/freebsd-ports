@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pg8000
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	databases python
-MASTER_SITES=	http://pybrary.net/pg8000/:source1 \
+MASTER_SITES=	http://pybrary.net/pg8000/dist/:source1 \
 		http://peak.telecommunity.com/dist/:source2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
