@@ -16,7 +16,7 @@ DISTNAME=	apache_${PORTVERSION}
 #PATCHFILES=
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	The extremely popular Apache http server. Very fast, very clean
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
