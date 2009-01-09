@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP \
-		http://www.liris.org/tech/program/hyperestraier-purepython/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-python
 EXTRACT_SUFX=	.tgz
