@@ -19,7 +19,7 @@ USE_ZIP=	YES
 USE_PHP=	mbstring zip iconv zlib spl ldap
 EFRONT_FILES=	CHANGELOG.txt index.php INSTALL.txt \
 		LICENSE.txt  README.txt
-EFRONT_DIRS=	libraries modules PEAR \
+EFRONT_DIRS=	libraries PEAR \
 		upload www backups
 
 NO_BUILD=	yes
