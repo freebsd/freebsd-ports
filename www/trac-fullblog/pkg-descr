@@ -1,0 +1,5 @@
+This plugin provides a project Blog, but unlike TracBlogPlugin and
+SimpleBlogPlugin it does not use Wiki pages to store the content.
+It has no dependencies on other plugins.
+
+WWW: http://trac-hacks.org/wiki/FullBlogPlugin
