@@ -1444,6 +1444,7 @@
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikirename
     SUBDIR += trac-wikitemplates
+    SUBDIR += trac-wikitopdf
     SUBDIR += trac-wysiwyg
     SUBDIR += trac-xmlrpc
     SUBDIR += transmission-web
