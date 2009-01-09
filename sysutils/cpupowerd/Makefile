@@ -1,12 +1,12 @@
 # New ports collection makefile for:   cpupowerd
 # Date created:        2008-06-01
-# Whom:                Bernhard Fr__hlich <decke@bluelife.at>
+# Whom:                Bernhard Froehlich <decke@bluelife.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cpupowerd
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
