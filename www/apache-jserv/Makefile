@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	http://archive.apache.org/dist/java/jserv/
 DISTNAME=	ApacheJServ-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Loadable servlet module for apache
 
 USE_JAVA=	yes

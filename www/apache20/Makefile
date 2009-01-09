@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}.tar.bz2 powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache2
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
-MAINTAINER?=	clement@FreeBSD.org
+MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

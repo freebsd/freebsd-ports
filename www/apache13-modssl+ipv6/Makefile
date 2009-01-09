@@ -6,7 +6,7 @@
 
 CATEGORIES=	www security ipv6
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with SSL/TLS and IPv6 functionality
 
 WITH_APACHE_IPV6=yes
