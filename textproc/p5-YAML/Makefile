@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML
-PORTVERSION=	0.66
+PORTVERSION=	0.68
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	YAML implementation in Perl
 
-BUILD_DEPENDS=	\
-	p5-Test-Base>=0.47:${PORTSDIR}/devel/p5-Test-Base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+PERL_CONFIGURE=	5.8.3+
 
-PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	</dev/null
-
-MAN1=	ysh.1
 MAN3=	\
 	Test::YAML.3 \
 	YAML.3 \
+	YAML::Any.3 \
 	YAML::Base.3 \
 	YAML::Dumper.3 \
 	YAML::Dumper::Base.3 \
@@ -36,19 +31,4 @@ MAN3=	\
 	YAML::Tag.3 \
 	YAML::Types.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "===> You are using an old version of Perl."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "===> YAML.pm module is known to be buggy with your"
-	@${ECHO_MSG} "===> version of Perl.  It should mostly work, but"
-	@${ECHO_MSG} "===> it will not be able to dump Perl code correctly."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "===> Perhaps you should consider an upgrade."
-	@${ECHO_MSG} ""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
