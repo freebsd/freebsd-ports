@@ -12,7 +12,6 @@ PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	oivulf@gmail.com
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
