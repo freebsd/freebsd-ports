@@ -7,10 +7,6 @@
 # $FreeBSD$
 #
 
-.if defined(WITH_ANTICIPATE_SENDMAIL_MUNGE) && !defined(WITHOUT_ANTICIPATE_SENDMAIL_MUNGE)
-SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'
-.endif
-
 .if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
 SITE_SUB+=	-e '/-D_FFR_BODYLENGTH_DB/s|^dnl ||'
 .endif
@@ -19,12 +15,24 @@ SITE_SUB+=	-e '/-D_FFR_BODYLENGTH_DB/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_CAPTURE_UNKNOWN_ERRORS/s|^dnl ||'
 .endif
 
+.if defined(WITH_COMMAIZE) && !defined(WITHOUT_COMMAIZE)
+SITE_SUB+=	-e '/-D_FFR_COMMAIZE/s|^dnl ||'
+.endif
+
 .if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
 SITE_SUB+=	-e '/-D_FFR_DIFFHEADERS/s|^dnl ||'
 .endif
 
+.if defined(WITH_DKIM_REPUTATION) && !defined(WITHOUT_DKIM_REPUTATION)
+SITE_SUB+=	-e '/-D_FFR_DKIM_REPUTATION/s|^dnl ||'
+.endif
+
 .if defined(WITH_DNS_UPGRADE) && !defined(WITHOUT_DNS_UPGRADE)
 SITE_SUB+=	-e '/-D_FFR_DNS_UPGRADE/s|^dnl ||'
+.endif
+
+.if defined(WITH_MULTIPLE_SIGNATURES) && !defined(WITHOUT_MULTIPLE_SIGNATURES)
+SITE_SUB+=	-e '/-D_FFR_MULTIPLE_SIGNATURES/s|^dnl ||'
 .endif
 
 .if defined(WITH_PARSE_TIME) && !defined(WITHOUT_PARSE_TIME)
@@ -36,8 +44,8 @@ SITE_SUB+=	-e '/-D_FFR_PARSE_TIME/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_REPLACE_RULES/s|^dnl ||'
 .endif
 
-.if defined(WITH_REQUIRED_HEADERS) && !defined(WITHOUT_REQUIRED_HEADERS)
-SITE_SUB+=	-e '/-D_FFR_REQUIRED_HEADERS/s|^dnl ||'
+.if defined(WITH_REPORT_INTERVALS) && !defined(WITHOUT_REPORT_INTERVALS)
+SITE_SUB+=	-e '/-D_FFR_REPORT_INTERVALS/s|^dnl ||'
 .endif
 
 .if defined(WITH_SELECT_CANONICALIZATION) && !defined(WITHOUT_SELECT_CANONICALIZATION)
