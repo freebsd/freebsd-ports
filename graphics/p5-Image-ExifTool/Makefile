@@ -12,7 +12,7 @@
 # release before updating the version of this port.
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	7.50
+PORTVERSION=	7.60
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
