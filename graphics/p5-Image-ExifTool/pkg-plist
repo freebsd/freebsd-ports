@@ -109,6 +109,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/idiosyncracies.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/metafiles.html
 %%PORTDOCS%%%%DOCSDIR%%/models.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
