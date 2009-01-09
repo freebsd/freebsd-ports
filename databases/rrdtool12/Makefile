@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.2.28
+PORTVERSION=	1.2.29
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Round Robin Database Tools v1.2
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
