@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.41 2009-01-04 09:42:19 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.42 2009-01-09 17:04:48 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -10,7 +10,6 @@
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
-# WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
@@ -45,7 +44,6 @@ WITH_OPENSSL_PORT=yes
 #	if no preference was set, check for an installed base version
 #	but give an installed port preference over it.
 .if	!defined(WITH_OPENSSL_BASE) && \
-	!defined(WITH_OPENSSL_BETA) && \
 	!defined(WITH_OPENSSL_PORT) && \
 	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
 	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
@@ -97,14 +95,6 @@ OPENSSLRPATH=		/usr/lib:${LOCALBASE}/lib
 .else
 
 OPENSSLBASE=		${LOCALBASE}
-.if defined(WITH_OPENSSL_BETA)
-OPENSSL_PORT?=		security/openssl-beta
-.if ( ${OSVERSION} >= 600100 )
-OPENSSL_SHLIBVER?=	5
-.else
-OPENSSL_SHLIBVER?=	4
-.endif
-.else
 .if	!defined(OPENSSL_PORT) && \
 	exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
 # find installed port and use it for dependency
@@ -122,13 +112,7 @@ OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .endif
 OPENSSL_PORT?=		security/openssl
-.if ( ${OSVERSION} >= 600100 )
 OPENSSL_SHLIBVER?=	5
-.else
-OPENSSL_SHLIBVER?=	4
-.endif
-.endif
-
 
 OPENSSLDIR=		${OPENSSLBASE}/openssl
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
