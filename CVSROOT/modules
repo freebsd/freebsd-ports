@@ -1086,6 +1086,7 @@ bogged                          ports/games/bogged
 bogofilter                      ports/mail/bogofilter
 bogofilter-qdbm                 ports/mail/bogofilter-qdbm
 bogofilter-sqlite               ports/mail/bogofilter-sqlite
+bogofilter-tc                   ports/mail/bogofilter-tc
 bogosort                        ports/misc/bogosort
 boiling-egg                     ports/editors/boiling-egg
 boinc-client                    ports/net/boinc-client
@@ -3803,6 +3804,7 @@ gbase                           ports/converters/gbase
 gbe                             ports/emulators/gbe
 gbemol                          ports/audio/gbemol
 gbib                            ports/databases/gbib
+gbirthday                       ports/deskutils/gbirthday
 gbottler                        ports/games/gbottler
 gbsplay                         ports/audio/gbsplay
 gbuffy                          ports/mail/gbuffy
@@ -9217,7 +9219,6 @@ nvidia-driver-71xx              ports/x11/nvidia-driver-71xx
 nvidia-driver-96xx              ports/x11/nvidia-driver-96xx
 nvidia-settings                 ports/x11/nvidia-settings
 nvidia-xconfig                  ports/x11/nvidia-xconfig
-nvnet                           ports/net/nvnet
 nvtv                            ports/sysutils/nvtv
 nvu                             ports/www/nvu
 nwcc                            ports/lang/nwcc
@@ -12314,6 +12315,7 @@ p5-Template-Plugin-Monta        ports/www/p5-Template-Plugin-Monta
 p5-Template-Plugin-Number-Format  ports/www/p5-Template-Plugin-Number-Format
 p5-Template-Plugin-Subst        ports/www/p5-Template-Plugin-Subst
 p5-Template-Plugin-VMethods     ports/www/p5-Template-Plugin-VMethods
+p5-Template-Provider-Encode     ports/devel/p5-Template-Provider-Encode
 p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
 p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
 p5-Template-Timer               ports/www/p5-Template-Timer
@@ -15587,6 +15589,7 @@ p5-template-plugin-mp3          ports/www/p5-Template-Plugin-MP3
 p5-template-plugin-number-format  ports/www/p5-Template-Plugin-Number-Format
 p5-template-plugin-subst        ports/www/p5-Template-Plugin-Subst
 p5-template-plugin-vmethods     ports/www/p5-Template-Plugin-VMethods
+p5-template-provider-encode     ports/devel/p5-Template-Provider-Encode
 p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
 p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
 p5-template-timer               ports/www/p5-Template-Timer
@@ -17960,7 +17963,6 @@ py-clientform                   ports/www/py-clientform
 py-clutter                      ports/graphics/py-clutter
 py-cmdln                        ports/devel/py-cmdln
 py-cog                          ports/devel/py-cog
-py-compiler                     ports/lang/py-compiler
 py-configobj                    ports/devel/py-configobj
 py-coro                         ports/devel/py-coro
 py-crack                        ports/security/py-crack
@@ -18225,6 +18227,7 @@ py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
 py-pg8000                       ports/databases/py-pg8000
+py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
 py-plastex                      ports/math/py-plastex
 py-plex                         ports/devel/py-plex
@@ -18276,6 +18279,7 @@ py-pyme                         ports/security/py-pyme
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
+py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
 py-pyshapelib                   ports/devel/py-pyshapelib
@@ -19538,6 +19542,7 @@ rubygem-inline                  ports/devel/rubygem-inline
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
+rubygem-kirbybase               ports/databases/rubygem-kirbybase
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-linecache               ports/devel/rubygem-linecache
 rubygem-macaddr                 ports/net/rubygem-macaddr
@@ -19619,6 +19624,7 @@ rubygem-thin                    ports/www/rubygem-thin
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
+rubygem-trollop                 ports/devel/rubygem-trollop
 rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
