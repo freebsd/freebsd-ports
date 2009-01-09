@@ -27,7 +27,7 @@ PATCH_SITE_SUBDIR=	dinoex
 PATCHFILES+=	apache-1.3.34modssl-v6-20051019.diff.gz
 .endif
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm

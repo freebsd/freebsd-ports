@@ -15,7 +15,7 @@ DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2
 DIST_SUBDIR=	apache22
 
-MAINTAINER?=	clement@FreeBSD.org
+MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
