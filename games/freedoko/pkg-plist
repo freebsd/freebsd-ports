@@ -61,18 +61,11 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/cards/spade/queen.png
 %%DATADIR%%/cardsets/xskat/french/cards/spade/ten.png
 %%DATADIR%%/cardsets/xskat/french/icons/contra.png
-%%DATADIR%%/cardsets/xskat/french/icons/dollen.png
-%%DATADIR%%/cardsets/xskat/french/icons/doppelkopf.png
-%%DATADIR%%/cardsets/xskat/french/icons/five_nines.png
 %%DATADIR%%/cardsets/xskat/french/icons/fox_highest_trump.png
 %%DATADIR%%/cardsets/xskat/french/icons/genscher.png
 %%DATADIR%%/cardsets/xskat/french/icons/hyperswines.club.png
 %%DATADIR%%/cardsets/xskat/french/icons/hyperswines.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/hyperswines.heart.png
-%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.club.png
-%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.heart.png
-%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.spade.png
 %%DATADIR%%/cardsets/xskat/french/icons/hyperswines.spade.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.club.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.color.png
@@ -97,7 +90,6 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.3.png
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.png
 %%DATADIR%%/cardsets/xskat/french/icons/re.png
-%%DATADIR%%/cardsets/xskat/french/icons/six_kings.png
 %%DATADIR%%/cardsets/xskat/french/icons/solo.club.png
 %%DATADIR%%/cardsets/xskat/french/icons/solo.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/solo.heart.png
@@ -113,18 +105,11 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.club.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.heart.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.club.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.heart.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.spade.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.spade.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines.club.png
-%%DATADIR%%/cardsets/xskat/french/icons/swines.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.heart.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.spade.png
-%%DATADIR%%/cardsets/xskat/french/icons/thrown_kings.png
-%%DATADIR%%/cardsets/xskat/french/icons/thrown_nines.png
-%%DATADIR%%/cardsets/xskat/french/icons/thrown_nines_and_kings.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.diamond.png
 %%DATADIR%%/cardsets/xskat/german/COPYRIGHT
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/candle.png
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/christmasdog.png
@@ -159,18 +144,11 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/german/cards/spade/queen.png
 %%DATADIR%%/cardsets/xskat/german/cards/spade/ten.png
 %%DATADIR%%/cardsets/xskat/german/icons/contra.png
-%%DATADIR%%/cardsets/xskat/german/icons/dollen.png
-%%DATADIR%%/cardsets/xskat/german/icons/doppelkopf.png
-%%DATADIR%%/cardsets/xskat/german/icons/five_nines.png
 %%DATADIR%%/cardsets/xskat/german/icons/fox_highest_trump.png
 %%DATADIR%%/cardsets/xskat/german/icons/genscher.png
 %%DATADIR%%/cardsets/xskat/german/icons/hyperswines.club.png
 %%DATADIR%%/cardsets/xskat/german/icons/hyperswines.diamond.png
 %%DATADIR%%/cardsets/xskat/german/icons/hyperswines.heart.png
-%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.club.png
-%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.heart.png
-%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.spade.png
 %%DATADIR%%/cardsets/xskat/german/icons/hyperswines.spade.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.club.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.color.png
@@ -195,7 +173,6 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.3.png
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.png
 %%DATADIR%%/cardsets/xskat/german/icons/re.png
-%%DATADIR%%/cardsets/xskat/german/icons/six_kings.png
 %%DATADIR%%/cardsets/xskat/german/icons/solo.club.png
 %%DATADIR%%/cardsets/xskat/german/icons/solo.diamond.png
 %%DATADIR%%/cardsets/xskat/german/icons/solo.heart.png
@@ -211,18 +188,11 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.club.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.diamond.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.heart.png
-%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.club.png
-%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.heart.png
-%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.spade.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.spade.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines.club.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines.diamond.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines.heart.png
 %%DATADIR%%/cardsets/xskat/german/icons/swines.spade.png
-%%DATADIR%%/cardsets/xskat/german/icons/thrown_kings.png
-%%DATADIR%%/cardsets/xskat/german/icons/thrown_nines.png
-%%DATADIR%%/cardsets/xskat/german/icons/thrown_nines_and_kings.png
 %%DATADIR%%/icon.png
 %%DATADIR%%/logo.png
 %%DATADIR%%/rules/beginner
@@ -274,6 +244,37 @@ bin/freedoko
 %%DATADIR%%/translations/fr/settings
 %%DATADIR%%/translations/fr/text
 %%DATADIR%%/translations/fr/versions
+%%DATADIR%%/translations/t/fr/rules
+%%DATADIR%%/translations/t/fr/cards
+%%DATADIR%%/translations/t/fr/basistypes
+%%DATADIR%%/translations/t/fr/messages
+%%DATADIR%%/translations/t/fr/menu
+%%DATADIR%%/translations/t/fr/gui
+%%DATADIR%%/translations/t/fr/chat
+%%DATADIR%%/translations/t/fr/versions
+%%DATADIR%%/translations/t/fr/settings
+%%DATADIR%%/translations/t/fr/network
+%%DATADIR%%/translations/t/fr/bug_report
+%%DATADIR%%/translations/t/fr/text
+%%DATADIR%%/translations/t/fr/help
+%%DATADIR%%/translations/t/fr/aiconfig
+%%DATADIR%%/translations/t/fr2/rules
+%%DATADIR%%/translations/t/fr2/cards
+%%DATADIR%%/translations/t/fr2/basistypes
+%%DATADIR%%/translations/t/fr2/messages
+%%DATADIR%%/translations/t/fr2/menu
+%%DATADIR%%/translations/t/fr2/gui
+%%DATADIR%%/translations/t/fr2/chat
+%%DATADIR%%/translations/t/fr2/versions
+%%DATADIR%%/translations/t/fr2/settings
+%%DATADIR%%/translations/t/fr2/network
+%%DATADIR%%/translations/t/fr2/bug_report
+%%DATADIR%%/translations/t/fr2/text
+%%DATADIR%%/translations/t/fr2/help
+%%DATADIR%%/translations/t/fr2/aiconfig
+@dirrm %%DATADIR%%/translations/t/fr2
+@dirrm %%DATADIR%%/translations/t/fr
+@dirrm %%DATADIR%%/translations/t
 @dirrm %%DATADIR%%/translations/fr
 @dirrm %%DATADIR%%/translations/en
 @dirrm %%DATADIR%%/translations/de-alt
