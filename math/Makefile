@@ -307,6 +307,7 @@
     SUBDIR += p5-Math-Matrix
     SUBDIR += p5-Math-NumberCruncher
     SUBDIR += p5-Math-Pari
+    SUBDIR += p5-Math-Polygon
     SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-MT
