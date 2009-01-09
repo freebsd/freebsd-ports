@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -51,10 +51,10 @@ PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-03.txt draft-ietf-dkim-deployment-01.txt \
-		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-04.txt \
-		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-15.txt \
-		draft-shafranovich-feedback-report-05.txt rfc4686.txt rfc4871.txt rfc5016.txt
+		draft-hoffman-dac-vbr-05.txt draft-ietf-dkim-deployment-02.txt \
+		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-08.txt \
+		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-19.txt \
+		draft-shafranovich-feedback-report-06.txt rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -65,6 +65,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_cbstat.html \
 		${DOCSDIR_REL}/libdkim/dkim_chunk.html \
 		${DOCSDIR_REL}/libdkim/dkim_close.html \
+		${DOCSDIR_REL}/libdkim/dkim_dnssec.html \
 		${DOCSDIR_REL}/libdkim/dkim_eoh.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
 		${DOCSDIR_REL}/libdkim/dkim_flush_cache.html \
@@ -90,6 +91,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_options.html \
 		${DOCSDIR_REL}/libdkim/dkim_param_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy.html \
+		${DOCSDIR_REL}/libdkim/dkim_policy_getdnssec.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_getreportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_syntax.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_t.html \
@@ -110,6 +112,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getbh.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getcanonlen.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getcontext.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getdnssec.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getdomain.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_geterror.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_geterrorstr.html \
