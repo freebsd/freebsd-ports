@@ -1,0 +1,8 @@
+This plugin is of use in those cases where TWiki users are registered
+and authenticated externally, for example using LDAP.  So users are not
+registered to TWiki using its own registration workflow and therefore
+don't have a user topic in the Main web.  This plugin fills that gap and
+creates a user's topic if it does not yet exist.
+
+Author: Michael Daum
+WWW: http://twiki.org/cgi-bin/view/Plugins/NewUserPlugin

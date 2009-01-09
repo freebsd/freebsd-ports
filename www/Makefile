@@ -1461,6 +1461,7 @@
     SUBDIR += twiki-LdapNgPlugin
     SUBDIR += twiki-MailerContrib
     SUBDIR += twiki-MathModePlugin
+    SUBDIR += twiki-NewUserPlugin
     SUBDIR += twiki-PatternSkin
     SUBDIR += twiki-PreferencesPlugin
     SUBDIR += twiki-RenderListPlugin
