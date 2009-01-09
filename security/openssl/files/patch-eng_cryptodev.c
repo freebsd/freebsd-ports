@@ -1,11 +1,15 @@
-===================================================================
-RCS file: crypto/engine/hw_cryptodev.c,v
-retrieving revision 1.17
-retrieving revision 1.18
-diff -u -p -r1.17 -r1.18
---- crypto/engine/hw_cryptodev.c	2003/06/03 15:57:44	1.17
-+++ crypto/engine/hw_cryptodev.c	2003/08/07 16:27:47	1.18
-@@ -68,14 +68,19 @@ struct dev_crypto_state {
+--- crypto/engine/eng_cryptodev.c.orig	2004-06-15 13:45:42.000000000 +0200
++++ crypto/engine/eng_cryptodev.c	2009-01-09 19:14:28.000000000 +0100
+@@ -32,7 +32,7 @@
+ #include <openssl/bn.h>
+ 
+ #if (defined(__unix__) || defined(unix)) && !defined(USG) && \
+-	(defined(OpenBSD) || defined(__FreeBSD_version))
++	(defined(OpenBSD) || defined(__FreeBSD__))
+ #include <sys/param.h>
+ # if (OpenBSD >= 200112) || ((__FreeBSD_version >= 470101 && __FreeBSD_version < 500000) || __FreeBSD_version >= 500041)
+ #  define HAVE_CRYPTODEV
+@@ -70,14 +70,19 @@
  	int d_fd;
  };
  
@@ -28,7 +32,7 @@ diff -u -p -r1.17 -r1.18
  static int get_cryptodev_ciphers(const int **cnids);
  static int get_cryptodev_digests(const int **cnids);
  static int cryptodev_usable_ciphers(const int **nids);
-@@ -122,15 +127,12 @@ static const ENGINE_CMD_DEFN cryptodev_d
+@@ -124,15 +129,12 @@
  	{ 0, NULL, NULL, 0 }
  };
  
@@ -47,7 +51,18 @@ diff -u -p -r1.17 -r1.18
  	{ CRYPTO_BLF_CBC,		NID_bf_cbc,		8,	16, },
  	{ CRYPTO_CAST_CBC,		NID_cast5_cbc,		8,	16, },
  	{ CRYPTO_SKIPJACK_CBC,		NID_undef,		0,	 0, },
-@@ -200,48 +202,16 @@ get_asym_dev_crypto(void)
+@@ -182,6 +184,10 @@
+ 		return (-1);
+ 	if (ioctl(fd, CRIOGET, &retfd) == -1)
+ 		return (-1);
++	if (retfd == -1)
++		retfd = fd;
++	else
++		close(fd);
+ 
+ 	/* close on exec */
+ 	if (fcntl(retfd, F_SETFD, 1) == -1) {
+@@ -202,48 +208,16 @@
  	return fd;
  }
  
@@ -101,7 +116,7 @@ diff -u -p -r1.17 -r1.18
  }
  
  /*
-@@ -264,15 +234,15 @@ get_cryptodev_ciphers(const int **cnids)
+@@ -266,15 +240,15 @@
  	memset(&sess, 0, sizeof(sess));
  	sess.key = (caddr_t)"123456781234567812345678";
  
@@ -122,7 +137,7 @@ diff -u -p -r1.17 -r1.18
  	}
  	close(fd);
  
-@@ -425,15 +395,15 @@ cryptodev_init_key(EVP_CIPHER_CTX *ctx, 
+@@ -427,15 +401,15 @@
  {
  	struct dev_crypto_state *state = ctx->cipher_data;
  	struct session_op *sess = &state->d_sess;
@@ -142,7 +157,7 @@ diff -u -p -r1.17 -r1.18
  		return (0);
  
  	memset(sess, 0, sizeof(struct session_op));
-@@ -443,7 +413,7 @@ cryptodev_init_key(EVP_CIPHER_CTX *ctx, 
+@@ -445,7 +419,7 @@
  
  	sess->key = (unsigned char *)key;
  	sess->keylen = ctx->key_len;
@@ -151,7 +166,7 @@ diff -u -p -r1.17 -r1.18
  
  	if (ioctl(state->d_fd, CIOCGSESSION, sess) == -1) {
  		close(state->d_fd);
-@@ -548,7 +518,7 @@ const EVP_CIPHER cryptodev_cast_cbc = {
+@@ -550,7 +524,7 @@
  	NULL
  };
  
@@ -160,7 +175,7 @@ diff -u -p -r1.17 -r1.18
  	NID_aes_128_cbc,
  	16, 16, 16,
  	EVP_CIPH_CBC_MODE,
-@@ -561,6 +531,32 @@ const EVP_CIPHER cryptodev_aes_cbc = {
+@@ -563,6 +537,32 @@
  	NULL
  };
  
@@ -193,7 +208,7 @@ diff -u -p -r1.17 -r1.18
  /*
   * Registered by the ENGINE when used to find out how to deal with
   * a particular NID in the ENGINE. this says what we'll do at the
-@@ -587,7 +583,13 @@ cryptodev_engine_ciphers(ENGINE *e, cons
+@@ -589,7 +589,13 @@
  		*cipher = &cryptodev_cast_cbc;
  		break;
  	case NID_aes_128_cbc:

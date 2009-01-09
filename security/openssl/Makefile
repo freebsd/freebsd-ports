@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.8i
-PORTREVISION?=	1
+PORTVERSION=	0.9.8j
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -20,6 +19,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
 
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
@@ -29,7 +30,6 @@ BETA_SUFFIX=		-beta
 CONFLICTS?=		openssl-0.* openssl-stable-0.*
 NO_LATEST_LINK=		yes
 .endif
-PATCHDIR=		${MASTERDIR}/files-beta
 PLIST_SUB+=		OPENSSL_BETA=""
 PLIST_SUB+=		OPENSSL_STABLE="@comment "
 CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
@@ -896,6 +896,9 @@ EXTRACONFIGURE+=	386
 .endif
 
 do-configure:
+	${RM} -rf ${WRKSRC}/fips
+	${RM} -f ${WRKSRC}/include/openssl/fips.h
+	${RM} -f ${WRKSRC}/include/openssl/fips_rand.h
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
@@ -905,7 +908,27 @@ do-configure:
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
 		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		-e 's| build_fips | |' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's| fips_err.c||' \
+		-e 's| fips_err.o | |' \
+		${WRKSRC}/crypto/Makefile
+	 @${REINPLACE_CMD} \
+		-e 's|$$(FIPS_SHATEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_DESTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_RANDTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_AESTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_HMACTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_RSAVTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_RSASTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_RSAGTEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_DSSVS)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_DSATEST)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_RNGVS)$$(EXE_EXT)||' \
+		-e 's|$$(FIPS_TEST_SUITE)$$(EXE_EXT)||' \
+		${WRKSRC}/test/Makefile
+	@(cd ${BUILD_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} depend)
 
 post-install:
 .if !defined(NOSHARED)
