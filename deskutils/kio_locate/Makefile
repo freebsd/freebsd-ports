@@ -20,6 +20,8 @@ WRKSRC=	    ${WRKDIR}/kio-locate-${PORTVERSION}
 USE_SCONS=	yes
 USE_KDELIBS_VER=	3
 
+BROKEN=		does not compile
+
 .if !defined(WITHOUT_NLS)
     USE_GETTEXT=	yes
     PLIST_SUB+=		NLS=""
