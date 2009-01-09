@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.11.1
-PORTREVISION=	3
+PORTVERSION=	0.12
 CATEGORIES=	audio
-MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
-		http://mercury.chem.pitt.edu/~shank/
+MASTER_SITES=	SF/musicpd
 
-MAINTAINER=	ports@mark.reidel.info
+MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Ncurses client for the musicpd
 
 GNU_CONFIGURE=	yes
@@ -20,9 +18,7 @@ USE_GNOME=	glib20
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	NLS "Native language support" on \
-		CLOCK_SCREEN "Enable clock screen" on \
-		SEARCH_SCREEN "Enable search screen" on
+OPTIONS=	NLS "Native language support" on
 
 .include <bsd.port.pre.mk>
 
@@ -37,19 +33,11 @@ PLIST_DIRS=%%EXAMPLESDIR%%
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=de sv es ru fr
+LANGUAGES=da de es fr gl hu no ru sk sv
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
 
-.endif
-
-.if !defined(WITHOUT_CLOCK_SCREEN)
-CONFIGURE_ARGS+=--enable-clock-screen
-.endif
-
-.if !defined(WITHOUT_SEARCH_SCREEN)
-CONFIGURE_ARGS+=--enable-search-screen
 .endif
 
 MAN1=		ncmpc.1
