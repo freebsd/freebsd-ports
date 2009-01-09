@@ -1433,6 +1433,7 @@
     SUBDIR += trac-simpleticket
     SUBDIR += trac-spam-filter
     SUBDIR += trac-tags
+    SUBDIR += trac-themeengine
     SUBDIR += trac-ticketdelete
     SUBDIR += trac-tocmacro
     SUBDIR += trac-tweakui
