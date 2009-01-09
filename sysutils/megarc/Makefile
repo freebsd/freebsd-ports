@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Must be downloaded directly from the manufacturer
+BROKEN=		Running megarc seems to cause memory corruption
 
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
