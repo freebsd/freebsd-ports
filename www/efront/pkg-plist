@@ -2378,7 +2378,6 @@
 @dirrm %%WWWDIR%%/libraries/smarty/templates
 @dirrm %%WWWDIR%%/libraries/smarty
 @dirrm %%WWWDIR%%/libraries
-@dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/PEAR/Archive
 @dirrm %%WWWDIR%%/PEAR/HTML/QuickForm/Renderer
 @dirrm %%WWWDIR%%/PEAR/HTML/QuickForm/Rule
