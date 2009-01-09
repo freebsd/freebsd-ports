@@ -23,9 +23,11 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+.include <bsd.port.options.mk>
+
 #Check for OPENSSL 0.9.8 in BASE:  If not present require PORT
-.if !exists(${DESTDIR}/lib/libcrypto.so.5)
-WITH_OPENSSL_PORT=	YES
+.if ${OSVERSION} < 700019
+WITH_OPENSSL_PORT=	yes
 .endif
 
 .include <bsd.port.pre.mk>
