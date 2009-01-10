@@ -119,7 +119,7 @@ PLIST_SUB+=	DESKTOP=""
 PLIST_SUB+=	DESKTOP="@comment "
 .endif
 
-post-extract::
+post-extract:
 	@${SED} -e 's|@XEMACS_ICON@|${LOCALBASE}/lib/xemacs-${XEMACS_VER}/etc/xemacs-icon.xpm|' \
 		<${FILESDIR}/xemacs.desktop.in >${WRKDIR}/xemacs.desktop
 
@@ -138,7 +138,7 @@ pre-patch:
 	@${ECHO_MSG} "want to use X11."
 .endif
 
-post-patch::
+post-patch:
 	@${REINPLACE_CMD} -e 's,@mandir@,@mandir@/man1,' \
 		${WRKSRC}/Makefile.in.in
 
@@ -150,13 +150,13 @@ WITH_OFFIX?=	--with-offix=no
 .endif
 
 # fix .so references in a few man pages
-pre-configure::
+pre-configure:
 .for f in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
 	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${f} > ${WRKDIR}/tmp_zot
 	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${f}
 .endfor
 
-post-install::
+post-install:
 .for f in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
 	${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
