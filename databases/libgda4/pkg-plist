@@ -193,6 +193,8 @@ share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
 @dirrm include/libgda-%%VERSION%%/libgda/handlers
 @dirrm include/libgda-%%VERSION%%/libgda-xslt/
 @dirrm include/libgda-%%VERSION%%/libgda-report
+@dirrm include/libgda-%%VERSION%%/libgda
+@dirrm include/libgda-%%VERSION%%
 @dirrmtry etc/libgda-%%VERSION%%
 @dirrm bin/gda_trml2pdf
 @dirrm bin/gda_trml2html
