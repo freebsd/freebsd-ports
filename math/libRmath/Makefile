@@ -1,5 +1,5 @@
 # vim: tabstop=8 softtabstop=0 noexpandtab
-# Ports Makefile for:	libRmath
+# Ports collection makefile for:	libRmath
 # Date created:		14 May 2004
 # Whom:			Eric van Gyzen <vangyzen@stat.duke.edu>
 #
@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libRmath
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -30,14 +29,15 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://www.bioconductor.org/CRAN/src/base/R-2/
 DISTNAME=	R-${PORTVERSION}
 
-MAINTAINER=	eric+fbports@vangyzen.net
+MAINTAINER=	btf2006a@yahoo.com
 COMMENT=	The standalone math library from R
 
+USE_PERL5=	yes
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--without-x
-CONFIGURE_ENV+= F77="${F77}"
+CONFIGURE_ARGS+=--with-readline=no --with-x=no
+CONFIGURE_ENV+=	F77="${F77}"
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
