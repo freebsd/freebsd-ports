@@ -21,6 +21,9 @@ MASTER_SITE_SUBDIR=	lioux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU getopt library
 
+DEPRECATED=	was only relevant on FreeBSD 4.x
+EXPIRATION_DATE=2009-02-10
+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
