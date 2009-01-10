@@ -1,11 +1,29 @@
 #!/bin/sh 
 
+# Default options if needed.
+JAVA_DEF=""
+
+# Force language if LANG is defined.
+if [ ! -z "$LANG" ]; then
+  LANGLANG=${LANG##*_}
+  JAVA_DEF="$JAVA_DEF -Duser.language=${LANGLANG%%.*}"
+fi
+
+# Fix splash option if no splash is asked (Java 6).
+for opt in $* ; do
+  if [ "$opt" = "--no-splash" ]; then
+    JAVA_DEF="$JAVA_DEF -splash:/dev/null"
+    break
+  fi
+done
+
 JAR=%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal.jar
 ENGINE=%%JAVASHAREDIR%%/%%PORTNAME%%
 
+# No antialias if remote execution (better performance).
 if [ "$DISPLAY" = ":0.0" -o "$DISPLAY" = ":0" ]; then 
-  java -jar $JAR -enginePath $ENGINE $* 
+  java $JAVA_DEF -jar "$JAR" -enginePath "$ENGINE" $* 
 else
-  java -jar $JAR -enginePath $ENGINE -antialias off $* 
+  java $JAVA_DEF -splash:/dev/null -jar "$JAR" --enginePath "$ENGINE" --antialias off $* 
 fi
 
