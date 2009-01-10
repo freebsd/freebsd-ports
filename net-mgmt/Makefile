@@ -31,7 +31,6 @@
     SUBDIR += bsd-airtools
     SUBDIR += bsnmp-regex
     SUBDIR += bsnmp-ucd
-    SUBDIR += bsnmpd
     SUBDIR += bsnmptools
     SUBDIR += bwm-ng
     SUBDIR += cacti
