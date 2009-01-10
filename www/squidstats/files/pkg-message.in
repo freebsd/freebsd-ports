@@ -1,0 +1,35 @@
+
+To setup the database, run the following command as the statistics
+user (generally "squid") :
+
+# su -m squid -c "%%PREFIX%%/bin/squidstats.pl createdb"
+
+Then, add a configuration section to squid.conf to allow SNMP from
+localhost:
+
+# snmp config
+acl snmp_host src 127.0.0.1
+acl all src 0.0.0.0/0
+snmp_port 3401
+acl snmppublic snmp_community public
+snmp_access allow snmppublic snmp_host
+snmp_access deny all
+
+Then make sure the following line is added to the squid crontab:
+*/5 * * * * 	%%PREFIX%%/bin/squidstats.pl gather 2>/dev/null
+
+Next, the supplied graph.css file will need to be copied or
+symlinked from %%PREFIX%%/share/squidstats/htdocs/graph.css
+to wherever your webserver root is.
+
+Finally, you will need to ensure that the graph directory and
+cgi-bin script are in the right place. By default, the cgi script
+is installed in %%PREFIX%%/www/cgi-bin/ and the graph directory
+is in /var/db/squidstats/graphs; you will need to copy the graph
+script into the correct place and symlink the graph directory
+into your webserver root directory.
+
+For example, this will symlink the graph directory into the
+apache 1.x web root:
+
+# ln -s /var/db/squidstats/graphs /usr/local/www/data/

@@ -1363,6 +1363,7 @@
     SUBDIR += squidclients
     SUBDIR += squidguard
     SUBDIR += squidpurge
+    SUBDIR += squidstats
     SUBDIR += squidtimes
     SUBDIR += squidview
     SUBDIR += squirm

@@ -1,0 +1,26 @@
+etc/squidstats/config.ini
+etc/squidstats/snmp_monitor.cfg
+etc/squidstats/templates.conf
+share/squidstats/templates/clients
+share/squidstats/templates/dnsreq
+share/squidstats/templates/fds
+share/squidstats/templates/hitratio
+share/squidstats/templates/icp
+share/squidstats/templates/ipcachereq
+share/squidstats/templates/outgoing
+share/squidstats/templates/cache
+share/squidstats/templates/cpu
+share/squidstats/templates/dnssvc
+share/squidstats/templates/fqdncachereq
+share/squidstats/templates/httpsvc
+share/squidstats/templates/incoming
+share/squidstats/templates/objects
+share/squidstats/templates/requests
+share/squidstats/htdocs/graph.css
+bin/squidstats.pl
+www/cgi-bin/graph-summary.cgi
+@dirrmtry www/cgi-bin
+@dirrm etc/squidstats
+@dirrm share/squidstats/htdocs
+@dirrm share/squidstats/templates
+@dirrm share/squidstats
