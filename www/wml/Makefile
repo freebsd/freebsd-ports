@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	wml
-DISTVERSION=	2.1a2
-PORTREVISION=	1
+PORTVERSION=	2.0.12
+PORTEPOCH=	1
 CATEGORIES=	www lang
-MASTER_SITES=	http://thewml.org/distrib/ \
-		ftp://thewml.org/distrib/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=thewml
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
+BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
+PLIST_SUB=	WML_ARCH=${ARCH}-freebsd
 USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
-		PERL_ARCH="${PERL_ARCH}"
-GNU_CONFIGURE=	yes
-LIBTOOLFILES=	wml_backend/p2_mp4h/configure
-PLIST_SUB+=	ARCH=${PERL_ARCH}
 
 MAN1=	wmd.1 wmd_missing.1 wmk.1 wml.1 wmb.1 wmu.1 \
 	wml_aux_freetable.1 wml_aux_htmlclean.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
@@ -57,10 +56,13 @@ MAN7=	wml_barebone.7 \
 	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7 \
 	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
+do-configure:
+	@[ -f ${CONFIGURE_COOKIE}] || (cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
+
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
-	@cd ${WRKSRC} && ${MAKE} test
+	@cd ${WRKSRC} && ${GMAKE} test
 
 .include <bsd.port.mk>
