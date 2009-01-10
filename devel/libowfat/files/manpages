@@ -315,6 +315,12 @@ uint32_read.3 \
 uint32_read_big.3 \
 uint32_unpack.3 \
 uint32_unpack_big.3 \
+uint64_pack.3 \
+uint64_pack_big.3 \
+uint64_read.3 \
+uint64_read_big.3 \
+uint64_unpack.3 \
+uint64_unpack_big.3 \
 umult16.3 \
 umult32.3 \
 umult64.3
