@@ -1,186 +1,204 @@
-lib/wml/perl/lib/mach/auto/WML/GD/autosplit.ix
-lib/wml/perl/lib/mach/auto/WML/GD/GD.so
-lib/wml/perl/lib/mach/auto/WML/GD/GD.bs
-lib/wml/perl/lib/mach/auto/WML/GD/.packlist
-lib/wml/perl/lib/mach/auto/Term/ReadKey/autosplit.ix
-lib/wml/perl/lib/mach/auto/Term/ReadKey/ReadKey.so
-lib/wml/perl/lib/mach/auto/Term/ReadKey/ReadKey.bs
-lib/wml/perl/lib/mach/auto/Term/ReadKey/.packlist
-lib/wml/perl/lib/mach/auto/Image/Size/.packlist
-lib/wml/perl/lib/mach/auto/IO/IO.so
-lib/wml/perl/lib/mach/auto/IO/IO.bs
-lib/wml/perl/lib/mach/auto/IO/.packlist
-lib/wml/perl/lib/mach/auto/HTML/Clean/.packlist
-lib/wml/perl/lib/mach/auto/Getopt/Long/.packlist
-lib/wml/perl/lib/mach/auto/File/PathConvert/.packlist
-lib/wml/perl/lib/mach/auto/Bit/Vector/Vector.so
-lib/wml/perl/lib/mach/auto/Bit/Vector/Vector.bs
-lib/wml/perl/lib/mach/auto/Bit/Vector/.packlist
-lib/wml/perl/lib/mach/WML/GD.pm
-lib/wml/perl/lib/mach/Term/ReadKey.pm
-lib/wml/perl/lib/mach/IO/Socket/UNIX.pm
-lib/wml/perl/lib/mach/IO/Socket/INET.pm
-lib/wml/perl/lib/mach/IO/Socket.pm
-lib/wml/perl/lib/mach/IO/Select.pm
-lib/wml/perl/lib/mach/IO/Seekable.pm
-lib/wml/perl/lib/mach/IO/Poll.pm
-lib/wml/perl/lib/mach/IO/Pipe.pm
-lib/wml/perl/lib/mach/IO/Handle.pm
-lib/wml/perl/lib/mach/IO/File.pm
-lib/wml/perl/lib/mach/IO/Dir.pm
-lib/wml/perl/lib/mach/IO.pm
-lib/wml/perl/lib/mach/Bit/Vector.pm
-lib/wml/perl/lib/auto/Image/Size/xpmsize.al
-lib/wml/perl/lib/auto/Image/Size/xbmsize.al
-lib/wml/perl/lib/auto/Image/Size/tiffsize.al
-lib/wml/perl/lib/auto/Image/Size/swfsize.al
-lib/wml/perl/lib/auto/Image/Size/psdsize.al
-lib/wml/perl/lib/auto/Image/Size/ppmsize.al
-lib/wml/perl/lib/auto/Image/Size/pngsize.al
-lib/wml/perl/lib/auto/Image/Size/jpegsize.al
-lib/wml/perl/lib/auto/Image/Size/gifsize.al
-lib/wml/perl/lib/auto/Image/Size/bmpsize.al
-lib/wml/perl/lib/auto/Image/Size/autosplit.ix
-lib/wml/perl/lib/auto/HTML/Clean/autosplit.ix
-lib/wml/perl/lib/auto/Getopt/Long/config.al
-lib/wml/perl/lib/auto/Getopt/Long/autosplit.ix
-lib/wml/perl/lib/auto/Getopt/Long/GetOptions.al
-lib/wml/perl/lib/auto/Getopt/Long/FindOption.al
-lib/wml/perl/lib/auto/Getopt/Long/Croak.al
-lib/wml/perl/lib/auto/Getopt/Long/Configure.al
-lib/wml/perl/lib/Image/Size.pm
-lib/wml/perl/lib/HTML/Clean.pm
-lib/wml/perl/lib/Getopt/Long.pm
-lib/wml/perl/lib/File/PathConvert.pm
-lib/wml/include/sys/compat1.wml
-lib/wml/include/sys/bootp4.wml
-lib/wml/include/sys/bootp3.wml
-lib/wml/include/sys/all.wml
-lib/wml/include/sup/path.wml
-lib/wml/include/sup/hextriple.wml
-lib/wml/include/sup/all.wml
-lib/wml/include/std/toc.wml
-lib/wml/include/std/tags.wml
-lib/wml/include/std/page.wml
-lib/wml/include/std/logo.wml
-lib/wml/include/std/lang.wml
-lib/wml/include/std/label.wml
-lib/wml/include/std/info.wml
-lib/wml/include/std/href.wml
-lib/wml/include/std/grid.wml
-lib/wml/include/std/case.wml
-lib/wml/include/std/box.wml
-lib/wml/include/std/all.wml
-lib/wml/include/mod/version.wml
-lib/wml/include/mod/all.wml
-lib/wml/include/mod/MakeMaker.wml
-lib/wml/include/imp/generic.wml
-lib/wml/include/imp/fsview.wml
-lib/wml/include/imp/csmap.wml
-lib/wml/include/imp/all.wml
-lib/wml/include/fmt/xtable.wml
-lib/wml/include/fmt/verbatim.wml
-lib/wml/include/fmt/url.wml
-lib/wml/include/fmt/text.wml
-lib/wml/include/fmt/sdf.wml
-lib/wml/include/fmt/pod.wml
-lib/wml/include/fmt/isolatin.wml
-lib/wml/include/fmt/all.wml
-lib/wml/include/des/typography.wml
-lib/wml/include/des/space.wml
-lib/wml/include/des/rollover.wml
-lib/wml/include/des/preload.wml
-lib/wml/include/des/navbar.wml
-lib/wml/include/des/lowsrc.wml
-lib/wml/include/des/imgdot.wml
-lib/wml/include/des/imgbg.wml
-lib/wml/include/des/gfont.wml
-lib/wml/include/des/all.wml
-lib/wml/include/all.wml
-lib/wml/exec/wml_p9_slice
-lib/wml/exec/wml_p8_htmlstrip
-lib/wml/exec/wml_p7_htmlfix
-lib/wml/exec/wml_p6_asubst
-lib/wml/exec/wml_p5_divert
-lib/wml/exec/wml_p4_gm4
-lib/wml/exec/wml_p3_eperl
-lib/wml/exec/wml_p2_mp4h
-lib/wml/exec/wml_p1_ipp
-lib/wml/exec/wml_aux_weblint
-lib/wml/exec/wml_aux_txt2html
-lib/wml/exec/wml_aux_tidy
-lib/wml/exec/wml_aux_map2html
-lib/wml/exec/wml_aux_linklint
-lib/wml/exec/wml_aux_iselect
-lib/wml/exec/wml_aux_htmlinfo
-lib/wml/exec/wml_aux_htmlclean
-lib/wml/exec/wml_aux_freetable
-lib/wml/aux/wmd.txt
-lib/wml/aux/weblintrc
-lib/wml/aux/txt2html.dict
-lib/wml/aux/logos/logo-xemacs.png
-lib/wml/aux/logos/logo-xemacs.info
-lib/wml/aux/logos/logo-xemacs.gif
-lib/wml/aux/logos/logo-wml.png
-lib/wml/aux/logos/logo-wml.info
-lib/wml/aux/logos/logo-wml.gif
-lib/wml/aux/logos/logo-vim.png
-lib/wml/aux/logos/logo-vim.info
-lib/wml/aux/logos/logo-vim.gif
-lib/wml/aux/logos/logo-php3.png
-lib/wml/aux/logos/logo-php3.info
-lib/wml/aux/logos/logo-php3.gif
-lib/wml/aux/logos/logo-php.png
-lib/wml/aux/logos/logo-php.info
-lib/wml/aux/logos/logo-php.gif
-lib/wml/aux/logos/logo-openbsd.png
-lib/wml/aux/logos/logo-openbsd.info
-lib/wml/aux/logos/logo-openbsd.gif
-lib/wml/aux/logos/logo-netbsd.png
-lib/wml/aux/logos/logo-netbsd.info
-lib/wml/aux/logos/logo-netbsd.gif
-lib/wml/aux/logos/logo-linux.png
-lib/wml/aux/logos/logo-linux.info
-lib/wml/aux/logos/logo-linux.gif
-lib/wml/aux/logos/logo-htdig.png
-lib/wml/aux/logos/logo-htdig.info
-lib/wml/aux/logos/logo-htdig.gif
-lib/wml/aux/logos/logo-gimp.png
-lib/wml/aux/logos/logo-gimp.info
-lib/wml/aux/logos/logo-gimp.gif
-lib/wml/aux/logos/logo-freebsd.png
-lib/wml/aux/logos/logo-freebsd.info
-lib/wml/aux/logos/logo-freebsd.gif
-lib/wml/aux/logos/logo-apache.png
-lib/wml/aux/logos/logo-apache.info
-lib/wml/aux/logos/logo-apache.gif
-bin/wmu
-bin/wml
 bin/wmk
+bin/wml
 bin/wmd
 bin/wmb
-@dirrm lib/wml/perl/lib/mach/auto/WML/GD
-@dirrm lib/wml/perl/lib/mach/auto/WML
-@dirrm lib/wml/perl/lib/mach/auto/Term/ReadKey
-@dirrm lib/wml/perl/lib/mach/auto/Term
-@dirrm lib/wml/perl/lib/mach/auto/Image/Size
-@dirrm lib/wml/perl/lib/mach/auto/Image
-@dirrm lib/wml/perl/lib/mach/auto/IO
-@dirrm lib/wml/perl/lib/mach/auto/HTML/Clean
-@dirrm lib/wml/perl/lib/mach/auto/HTML
-@dirrm lib/wml/perl/lib/mach/auto/Getopt/Long
-@dirrm lib/wml/perl/lib/mach/auto/Getopt
-@dirrm lib/wml/perl/lib/mach/auto/File/PathConvert
-@dirrm lib/wml/perl/lib/mach/auto/File
-@dirrm lib/wml/perl/lib/mach/auto/Bit/Vector
-@dirrm lib/wml/perl/lib/mach/auto/Bit
-@dirrm lib/wml/perl/lib/mach/auto
-@dirrm lib/wml/perl/lib/mach/WML
-@dirrm lib/wml/perl/lib/mach/Term
-@dirrm lib/wml/perl/lib/mach/IO/Socket
-@dirrm lib/wml/perl/lib/mach/IO
-@dirrm lib/wml/perl/lib/mach/Bit
-@dirrm lib/wml/perl/lib/mach
+bin/wmu
+lib/wml/data/logos/logo-apache.gif
+lib/wml/data/logos/logo-apache.info
+lib/wml/data/logos/logo-apache.png
+lib/wml/data/logos/logo-freebsd.gif
+lib/wml/data/logos/logo-freebsd.info
+lib/wml/data/logos/logo-freebsd.png
+lib/wml/data/logos/logo-gimp.gif
+lib/wml/data/logos/logo-gimp.info
+lib/wml/data/logos/logo-gimp.png
+lib/wml/data/logos/logo-htdig.gif
+lib/wml/data/logos/logo-htdig.info
+lib/wml/data/logos/logo-htdig.png
+lib/wml/data/logos/logo-linux.gif
+lib/wml/data/logos/logo-linux.info
+lib/wml/data/logos/logo-linux.png
+lib/wml/data/logos/logo-netbsd.gif
+lib/wml/data/logos/logo-netbsd.info
+lib/wml/data/logos/logo-netbsd.png
+lib/wml/data/logos/logo-openbsd.gif
+lib/wml/data/logos/logo-openbsd.info
+lib/wml/data/logos/logo-openbsd.png
+lib/wml/data/logos/logo-php.gif
+lib/wml/data/logos/logo-php.info
+lib/wml/data/logos/logo-php.png
+lib/wml/data/logos/logo-php3.gif
+lib/wml/data/logos/logo-php3.info
+lib/wml/data/logos/logo-php3.png
+lib/wml/data/logos/logo-vim.gif
+lib/wml/data/logos/logo-vim.info
+lib/wml/data/logos/logo-vim.png
+lib/wml/data/logos/logo-wml.gif
+lib/wml/data/logos/logo-wml.info
+lib/wml/data/logos/logo-wml.png
+lib/wml/data/logos/logo-xemacs.gif
+lib/wml/data/logos/logo-xemacs.info
+lib/wml/data/logos/logo-xemacs.png
+lib/wml/data/wmd.txt
+lib/wml/data/txt2html.dict
+lib/wml/data/weblintrc
+lib/wml/exec/wml_p1_ipp
+lib/wml/exec/wml_p2_mp4h
+lib/wml/exec/wml_p3_eperl
+lib/wml/exec/wml_p4_gm4
+lib/wml/exec/wml_p5_divert
+lib/wml/exec/wml_p6_asubst
+lib/wml/exec/wml_p7_htmlfix
+lib/wml/exec/wml_p8_htmlstrip
+lib/wml/exec/wml_p9_slice
+lib/wml/exec/wml_aux_htmlclean
+lib/wml/exec/wml_aux_iselect
+lib/wml/exec/wml_aux_map2html
+lib/wml/exec/wml_aux_txt2html
+lib/wml/exec/wml_aux_tidy
+lib/wml/exec/wml_aux_htmlinfo
+lib/wml/exec/wml_aux_linklint
+lib/wml/exec/wml_aux_weblint
+lib/wml/exec/wml_aux_freetable
+lib/wml/include/des/all.wml
+lib/wml/include/des/gfont.wml
+lib/wml/include/des/imgbg.wml
+lib/wml/include/des/imgdot.wml
+lib/wml/include/des/lowsrc.wml
+lib/wml/include/des/navbar.wml
+lib/wml/include/des/preload.wml
+lib/wml/include/des/rollover.wml
+lib/wml/include/des/space.wml
+lib/wml/include/des/typography.wml
+lib/wml/include/fmt/all.wml
+lib/wml/include/fmt/isolatin.wml
+lib/wml/include/fmt/pod.wml
+lib/wml/include/fmt/sdf.wml
+lib/wml/include/fmt/text.wml
+lib/wml/include/fmt/url.wml
+lib/wml/include/fmt/verbatim.wml
+lib/wml/include/fmt/xtable.wml
+lib/wml/include/all.wml
+lib/wml/include/imp/all.wml
+lib/wml/include/imp/csmap.wml
+lib/wml/include/imp/fsview.wml
+lib/wml/include/imp/generic.wml
+lib/wml/include/mod/MakeMaker.wml
+lib/wml/include/mod/all.wml
+lib/wml/include/mod/version.wml
+lib/wml/include/std/all.wml
+lib/wml/include/std/box.wml
+lib/wml/include/std/case.wml
+lib/wml/include/std/grid.wml
+lib/wml/include/std/href.wml
+lib/wml/include/std/info.wml
+lib/wml/include/std/label.wml
+lib/wml/include/std/lang.wml
+lib/wml/include/std/logo.wml
+lib/wml/include/std/page.wml
+lib/wml/include/std/tags.wml
+lib/wml/include/std/toc.wml
+lib/wml/include/sup/all.wml
+lib/wml/include/sup/hextriple.wml
+lib/wml/include/sup/path.wml
+lib/wml/include/sys/all.wml
+lib/wml/include/sys/bootp3.wml
+lib/wml/include/sys/bootp4.wml
+lib/wml/include/sys/compat1.wml
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/Vector.so
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/Vector.bs
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/File/PathConvert/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/GD.so
+lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/GD.bs
+lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/autosplit.ix
+lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt/Long/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML/Clean/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Image/Size/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/IO.so
+lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/IO.bs
+lib/wml/perl/lib/%%WML_ARCH%%/auto/IO/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/ReadKey.so
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/ReadKey.bs
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/autosplit.ix
+lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey/.packlist
+lib/wml/perl/lib/%%WML_ARCH%%/Bit/Vector.pm
+lib/wml/perl/lib/%%WML_ARCH%%/WML/GD.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Handle.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Poll.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Seekable.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Dir.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Pipe.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Select.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/File.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/UNIX.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/INET.pm
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/entries
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/format
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base/INET.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base/UNIX.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/format
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/entries
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Pipe.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Socket.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Seekable.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/File.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Poll.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Dir.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Handle.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base/Select.pm.svn-base
+lib/wml/perl/lib/%%WML_ARCH%%/Term/ReadKey.pm
+lib/wml/perl/lib/File/PathConvert.pm
+lib/wml/perl/lib/Getopt/Long.pm
+lib/wml/perl/lib/auto/Getopt/Long/GetOptions.al
+lib/wml/perl/lib/auto/Getopt/Long/FindOption.al
+lib/wml/perl/lib/auto/Getopt/Long/Configure.al
+lib/wml/perl/lib/auto/Getopt/Long/config.al
+lib/wml/perl/lib/auto/Getopt/Long/Croak.al
+lib/wml/perl/lib/auto/Getopt/Long/autosplit.ix
+lib/wml/perl/lib/auto/HTML/Clean/autosplit.ix
+lib/wml/perl/lib/auto/Image/Size/gifsize.al
+lib/wml/perl/lib/auto/Image/Size/xbmsize.al
+lib/wml/perl/lib/auto/Image/Size/xpmsize.al
+lib/wml/perl/lib/auto/Image/Size/pngsize.al
+lib/wml/perl/lib/auto/Image/Size/jpegsize.al
+lib/wml/perl/lib/auto/Image/Size/ppmsize.al
+lib/wml/perl/lib/auto/Image/Size/tiffsize.al
+lib/wml/perl/lib/auto/Image/Size/bmpsize.al
+lib/wml/perl/lib/auto/Image/Size/psdsize.al
+lib/wml/perl/lib/auto/Image/Size/swfsize.al
+lib/wml/perl/lib/auto/Image/Size/autosplit.ix
+lib/wml/perl/lib/HTML/Clean.pm
+lib/wml/perl/lib/Image/Size.pm
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/WML/GD
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/WML
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Term/ReadKey
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Term
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Image/Size
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Image
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/IO
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML/Clean
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/HTML
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt/Long
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Getopt
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/File/PathConvert
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/File
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit/Vector
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto/Bit
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/auto
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/WML
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/Term
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn/text-base
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket/.svn
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/Socket
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn/text-base
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO/.svn
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/IO
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%/Bit
+@dirrm lib/wml/perl/lib/%%WML_ARCH%%
 @dirrm lib/wml/perl/lib/auto/Image/Size
 @dirrm lib/wml/perl/lib/auto/Image
 @dirrm lib/wml/perl/lib/auto/HTML/Clean
@@ -203,6 +221,6 @@ bin/wmb
 @dirrm lib/wml/include/des
 @dirrm lib/wml/include
 @dirrm lib/wml/exec
-@dirrm lib/wml/aux/logos
-@dirrm lib/wml/aux
+@dirrm lib/wml/data/logos
+@dirrm lib/wml/data
 @dirrm lib/wml
