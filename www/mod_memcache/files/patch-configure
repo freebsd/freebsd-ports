@@ -1,0 +1,11 @@
+--- configure.orig	2009-01-06 11:53:39.000000000 +0800
++++ configure	2009-01-06 11:54:03.000000000 +0800
+@@ -20143,7 +20143,7 @@
+ for x in $test_paths ; do
+     echo "$as_me:$LINENO: checking for apr_memcache library in ${x}" >&5
+ echo $ECHO_N "checking for apr_memcache library in ${x}... $ECHO_C" >&6
+-    if test -f ${x}/include/apr_memcache-0/apr_memcache.h; then
++    if test -f ${x}/include/apr-1/apr_memcache.h; then
+         echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+         APR_MEMCACHE_LIBS="-R${x}/lib -L${x}/lib -lapr_memcache"
