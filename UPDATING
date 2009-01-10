@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090110:
+  AFFECTS: users of GNOME and GTK+
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.24.x.  You have to deinstall a few ports first
+  before using portupgrade or portmaster in order to successfully upgrade
+  your GNOME installation.  After successfully upgrade, you have to reinstall
+  gnome-session so the gnome.desktop session file is properly installed.
+
+  Portupgrade users:
+    # pkgdb -Ff
+    # pkg_deinstall -fO gtkmm-2.12\*
+    # portupgrade -aOW
+    # portupgrade gnome-session
+
+  Portmaster users:
+    # pkg_delete -f gtkmm-2.12\*
+    # portmaster -a
+    # portmaster gnome-session
+
 20090109:
   AFFECTS: users of any Mozilla and Opera products
   AUTHOR: mezz@freebsd.org
