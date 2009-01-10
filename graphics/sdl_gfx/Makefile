@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -36,5 +36,8 @@ CFLAGS+=	-DUSE_MMX
 .else
 CONFIGURE_ARGS=--disable-mmx
 .endif
+
+post-patch:
+	@${CHMOD} a+x ${WRKSRC}/install-sh
 
 .include <bsd.port.post.mk>
