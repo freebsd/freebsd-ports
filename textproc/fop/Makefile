@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:fop/} \
-	${MASTER_SITE_SOURCEFORGE:S/$/:hyph/}
-MASTER_SITE_SUBDIR=	xmlgraphics/fop/:fop offo/:hyph
+		${MASTER_SITE_SOURCEFORGE:S/$/:hyph/}
+MASTER_SITE_SUBDIR=	xmlgraphics/fop/source/:fop offo/:hyph
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-#DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
@@ -23,24 +21,32 @@ COMMENT=	Print formatter driven by XSL formatting
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
 
 post-extract:
-	cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/offo-hyphenation.zip
-	${CP} ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
+	@cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/offo-hyphenation.zip
+	@${CP} ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}; \
-	  ${INSTALL_DATA} LICENSE README known-issues.xml status.xml build.xml ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/fop ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/fop ${DATADIR}/fop
-	${LN} -s ${DATADIR}/fop ${PREFIX}/bin/fop
-	cd ${WRKSRC} \
-	  && ${FIND} conf lib hyph build -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} conf lib hyph build -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+.for d in build conf lib
+	@${MKDIR} ${DATADIR}/${d}
+.endfor
+	@cd ${WRKSRC} && \
+	    ${INSTALL_DATA} status.xml ${DATADIR}/ && \
+	    ${INSTALL_DATA} build/*.[jw]ar ${DATADIR}/build/ && \
+	    ${INSTALL_DATA} lib/*.jar lib/README.txt ${DATADIR}/lib/ && \
+	    ${INSTALL_DATA} conf/fop.xconf ${DATADIR}/conf/ && \
+	    ${COPYTREE_SHARE} hyph ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${DATADIR}/
+	@${LN} -s ${DATADIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_MAN} LICENSE README NOTICE KEYS ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
