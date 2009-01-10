@@ -17,7 +17,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	CFD General Notation System library code
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	F77=${F77}
 CONFIGURE_ARGS=	--enable-shared=all
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
@@ -32,10 +31,7 @@ PLIST_SUB=	HDF5="@comment "
 .endif
 
 .if !defined(WITHOUT_TESTS)
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 TESTSBIN=	rundbtest cgwrite cgread
 .endif
 
