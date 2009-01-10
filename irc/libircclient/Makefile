@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libircclient
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
@@ -23,6 +23,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/libirc_errors.h ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/libirc_events.h ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/include/libirc_options.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/include/libirc_rfcnumeric.h ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/libircclient.a ${PREFIX}/lib
 
 post-install:
