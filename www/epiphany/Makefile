@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.168 2008/03/17 05:00:09 marcus Exp $
+#   $MCom: ports-stable/www/epiphany/Makefile,v 1.11 2008/08/06 04:20:12 mezz Exp $
 #
 
 PORTNAME=	epiphany
 PORTVERSION=	2.22.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -96,7 +96,7 @@ post-patch:
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins" ":" MOZILLA_PREFIX "/lib/browser_linux_plugins"|' \
+	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko18"|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
 
 post-install:

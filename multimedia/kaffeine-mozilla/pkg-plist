@@ -1,4 +1,4 @@
-lib/browser_plugins/kaffeineplugin.so
-lib/browser_plugins/kaffeineplugin.la
-lib/browser_plugins/kaffeineplugin.a
-@dirrmtry lib/browser_plugins
+%%WEBPLUGINS_DIR%%/kaffeineplugin.so
+%%WEBPLUGINS_DIR%%/kaffeineplugin.la
+%%WEBPLUGINS_DIR%%/kaffeineplugin.a
+@dirrmtry %%WEBPLUGINS_DIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
 		ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/en/${OPERA_ARCH}/${OPERA_LIB}/ \
@@ -68,6 +69,10 @@ OPERA_TYPE=	6
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
+		${WRKSRC}/usr/local/share/opera/ini/pluginpath.ini
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)

@@ -1,2 +1,2 @@
-lib/browser_plugins/ump.so
-@dirrmtry lib/browser_plugins
+%%WEBPLUGINS_DIR%%/ump.so
+@dirrmtry %%WEBPLUGINS_DIR%%

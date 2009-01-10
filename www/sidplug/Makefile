@@ -7,7 +7,7 @@
 
 PORTNAME=	sidplug
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
@@ -20,15 +20,19 @@ RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${LOCALBASE}/include"
 USE_XORG=	x11
 
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=npsidplug.so
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/browser_plugins
+	@${MKDIR} ${WEBPLUGINS_DIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${WEBPLUGINS_DIR}
 	@${LN} -sf ${LOCALBASE}/bin/xsidplay ${PREFIX}/bin/sidplug
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}

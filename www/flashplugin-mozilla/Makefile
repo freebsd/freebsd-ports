@@ -7,7 +7,7 @@
 
 PORTNAME?=	flashplugin-mozilla
 PORTVERSION=	0.4.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/gplflash
 DISTNAME=	gplflash-${PORTVERSION}
@@ -21,13 +21,17 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
 USE_XORG=	xt x11 xext
 USE_BZIP2=	yes
-PLUGIN_DIR=	lib/browser_plugins
-PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
+CONFIGURE_ARGS+=	--with-plugin-dir="${WEBPLUGINS_DIR}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib -lXt"
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
+
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=libnpflash.so
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-L../lib/.libs,-L${LOCALBASE}/lib,"	\
@@ -36,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/npapi.h
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${CONFIGURE_WRKSRC}/configure ${CONFIGURE_WRKSRC}/ltconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

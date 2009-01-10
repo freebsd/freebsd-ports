@@ -20,7 +20,7 @@ SRCS		 =	hxbackend.cpp	\
 
 XPIDL		?=	${LOCALBASE}/lib/${GECKO}/xpidl
 XPTLINK		?=	${XPIDL:H}/xpt_link
-SHARE_IDL	!=	echo ${LOCALBASE}/share/idl/${GECKO:S/-devel/-2/}*
+SHARE_IDL	!=	echo ${LOCALBASE}/share/idl/${GECKO:S,firefox$,firefox-2,}*
 
 .PATH:	${TOP}/player/app/plugin ${TOP}/player/app/plugin/common
 

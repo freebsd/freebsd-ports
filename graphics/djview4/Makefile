@@ -7,7 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu
 DISTNAME=	${PORTNAME}4-${PORTVERSION}
@@ -39,18 +39,20 @@ QMAKESPEC?=	freebsd-g++
 MAN1=	djview4.1 nsdejavu.1
 MLINKS=	djview4.1 djview.1
 
+USE_WEBPLUGINS=		gecko*
+WEBPLUGINS_DIR=		${PREFIX}/lib/djview4/plugins
+WEBPLUGINS_FILES=	nsdejavu.so
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/netscape/,/djview4/,' \
 		${WRKSRC}/nsdejavu/Makefile.in ${WRKSRC}/nsdejavu/nsdejavu.1.in
 	@${REINPLACE_CMD} -e 's,@NSDEJAVU_LIBS@,@NSDEJAVU_LIBS@ -lXt -lXext,g' \
-		${WRKSRC}/nsdejavu/Makefile.in ${WRKSRC}/nsdejavu/nsdejavu.1.in
-
+		${WRKSRC}/nsdejavu/Makefile.in
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
-	${LN} -sf ${PREFIX}/lib/djview4/plugins/nsdejavu.so \
-		${LOCALBASE}/lib/browser_plugins/nsdejavu.so
-
 	@${FIND} -ds ${PREFIX}/share/djvu/djview4/ ! -type d | \
 		${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
 
@@ -59,4 +61,4 @@ post-install:
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/djvu 2>/dev/null || true" \
 		>> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

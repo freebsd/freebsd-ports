@@ -29,7 +29,7 @@ include/opensc/ui.h
 libdata/pkgconfig/libopensc.pc
 libdata/pkgconfig/libpkcs15init.pc
 libdata/pkgconfig/libscconf.pc
-%%SIGNER%%lib/browser_plugins/opensc-signer.so
+%%SIGNER%%%%WEBPLUGINS_DIR%%/opensc-signer.so
 %%SIGNER%%lib/opensc-signer.a
 %%SIGNER%%lib/opensc-signer.la
 %%SIGNER%%lib/opensc-signer.so
@@ -72,6 +72,7 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/rutoken.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
+%%SIGNER%%@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrm include/opensc
 @dirrm lib/pkcs11
 @dirrm %%DATADIR%%

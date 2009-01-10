@@ -43,8 +43,8 @@ lib/libopenvrml-gl.so.7
 lib/libopenvrml.a
 lib/libopenvrml.so
 lib/libopenvrml.so.8
-%%PLUGINS_DIR%%/openvrml.la
-%%PLUGINS_DIR%%/openvrml.so
+%%WEBPLUGINS_DIR%%/openvrml.la
+%%WEBPLUGINS_DIR%%/openvrml.so
 libdata/pkgconfig/openvrml-gl.pc
 libdata/pkgconfig/openvrml.pc
 libexec/openvrml-xembed
@@ -69,6 +69,7 @@ libexec/openvrml-xembed
 share/openvrml-player/glade/openvrml-player.glade
 @dirrm share/openvrml-player/glade
 @dirrm share/openvrml-player
+@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrm include/openvrml/openvrml/gl
 @dirrm include/openvrml/openvrml
 @dirrm include/openvrml

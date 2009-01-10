@@ -3,12 +3,12 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#   $MCom: ports/www/seamonkey/Makefile,v 1.48 2007/12/28 17:39:30 mezz Exp $
+#   $MCom: ports-stable/www/seamonkey/Makefile,v 1.9 2009/01/09 23:41:22 mezz Exp $
 #
 
 PORTNAME=	seamonkey
 DISTVERSION=	1.1.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
@@ -105,29 +105,12 @@ post-patch:
 		${WRKDIR}/seamonkey.desktop
 
 pre-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
-				break; \
-			fi; \
-		done; \
-	fi
 	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${CP} ${WRKSRC}/suite/branding/icons/gtk/default.xpm \
 		${FAKEDIR}/lib/${MOZILLA}/chrome/icons/default/
 
 do-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-		    		${LN} -sf $${jpi} \
-			    		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/seamonkey.desktop ${PREFIX}/share/applications
 

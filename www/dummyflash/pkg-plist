@@ -1,2 +1,2 @@
-lib/browser_plugins/dummyflash.so
-@dirrmtry lib/browser_plugins
+%%WEBPLUGINS_DIR%%/dummyflash.so
+@dirrmtry %%WEBPLUGINS_DIR%%

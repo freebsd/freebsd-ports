@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
@@ -51,10 +51,14 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude '*/libarc/*'	\
 	--exclude '*/utils/mblock.h' --exclude '*/utils/memb.h'
 ALL_TARGET=	ump
 
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=ump.so
+
 # USE_MOTIF=	yes
 # CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME=	esound
@@ -82,7 +86,7 @@ post-configure:
 	@cd ${WRKSRC}; ${SETENV} CONFIG_HEADERS='' CONFIG_FILES=ump/Makefile ${SH} ./config.status
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-	${INSTALL_PROGRAM} ${WRKSRC}/ump/ump.so ${PREFIX}/lib/browser_plugins
+	${MKDIR} ${WEBPLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/ump/ump.so ${WEBPLUGINS_DIR}
 
 .include <bsd.port.post.mk>

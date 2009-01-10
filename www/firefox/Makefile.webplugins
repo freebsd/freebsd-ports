@@ -1,0 +1,226 @@
+#-*- mode: makefile; tab-width: 4; -*
+# ex:ts=4
+#
+# New ports collection makefile for:	npapi infrastructure
+# Date created:		27 June 2006
+# Whom:				Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports-stable/www/firefox/Makefile.webplugins,v 1.14 2008/11/12 17:55:09 mezz Exp $
+#
+
+# MAINTAINER=	gnome@FreeBSD.org
+#
+# Documentation and examples:
+#
+# Makefile.webplugins will create symlinks automatically for each supported
+# applications that supports the webplugins framework.  Also, it will remove
+# these symlinks when the plug-in port is uninstalled.
+#
+# USE_WEBPLUGINS	- Specify a list of application(s) that this plug-in
+# 			  port supports.  For each of these applications, a
+# 			  symlink will be created in
+# 			  lib/browser_plugins/symlinks.  See
+# 			  WEBPLUGINS_APPS_ALL_* below for the list of
+# 			  supported applications.
+#			  Default: USE_WEBPLUGINS=${WEBPLUGINS_APPS_ALL} (all
+#			  applications)
+#
+# WEBPLUGINS_NAME	- If your port installs file(s) in ${WEBPLUGINS_DIR},
+# 			  then you can tweak WEBPLUGINS_NAME to change the
+# 			  name of the directory
+# 			  (lib/browser_plugins/symlinks/WEBPLUGINS_NAME).
+#			  Default: WEBPLUGINS_NAME=${PKGBASE}
+#
+# WEBPLUGINS_FILES	- The plug-in file(s) that are going to be linked
+#			  in lib/browser_plugins/symlinks/*/. It cannot
+#			  be empty or the port will set IGNORE.
+#
+# WEBPLUGINS_DIR	- The directory where the plug-in file(s) can be
+# 			  found.  Each plug-in file in WEBPLUGINS_FILES
+# 			  must be found in WEBPLUGINS_DIR.  If your port
+# 			  does not install in WEBPLUGINS_DIR, but in its own
+# 			  path. You will need to specify that here or
+# 			  symlinks will be created to non-existent files.
+#			  Default: WEBPLUGINS_DIR?=${WEBPLUGINS_LIBDIR}/${WEBPLUGINS_NAME}
+#
+#
+# The USE_WEBPLUGINS supports wildcards, native, and linux; so you can do any
+# of the following:
+#
+#	USE_WEBPLUGINS=gecko* (Supports gecko18 and gecko19.)
+#	USE_WEBPLUGINS=native (Supports gecko*, opera*, and webkit-gtk2)
+#	USE_WEBPLUGINS=linux (Supports linux-*)
+#	USE_WEBPLUGINS=opera webkit-gtk2
+#
+# Example to add in Makefile and pkg-plist if the plug-in file(s) install in
+# WEBPLUGINS_DIR, and if your port does this manually:
+#
+#	Makefile:
+#	------------------------------------------------------
+#	[...]
+# 	USE_WEBPLUGINS=gecko*
+#	WEBPLUGINS_FILES=fooplugin.so fooplugin.xpi
+#
+#	.include <bsd.port.pre.mk>
+#	.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+#
+#	post-install:
+#		${MKDIR} ${WEBPLUGINS_DIR}
+#		${INSTALL_DATA} ${WEBPLUGINS_FILES:S,^,${WRKSRC}/plugins/,} \
+#			${WEBPLUGINS_DIR}
+#
+#	.include <bsd.port.post.mk>
+#	------------------------------------------------------
+#
+# You do not need to add lib/browser_plugins and lib/browser_plugins/symlinks
+# in pkg-plist, because they will be removed automatically.
+#
+#	pkg-plist:
+#	------------------------------------------------------
+#	[...]
+#	%%WEBPLUGINS_DIR%%/fooplugin.so
+#	%%WEBPLUGINS_DIR%%/fooplugin.xpi
+#	@dirrmtry %%WEBPLUGINS_DIR%%
+#	------------------------------------------------------
+#
+# Here is what it will look like when it creates the symlinks:
+#
+#	------------------------------------------------------
+#	/usr/local/lib/browser_plugins/symlinks/gecko18/fooplugin.so -> /usr/local/lib/browser_plugins/application/fooplugin.so
+#	/usr/local/lib/browser_plugins/symlinks/gecko18/fooplugin.xpi -> /usr/local/lib/browser_plugins/application/fooplugin.xpi
+#	/usr/local/lib/browser_plugins/symlinks/gecko19/fooplugin.so -> /usr/local/lib/browser_plugins/application/fooplugin.so
+#	/usr/local/lib/browser_plugins/symlinks/gecko19/fooplugin.xpi -> /usr/local/lib/browser_plugins/application/fooplugin.xpi
+#	------------------------------------------------------
+#
+# If your port uses libtool, and installs any *.a and *.la files, do not add
+# these files to WEBPLUGINS_FILES.  WEBPLUGINS_FILES should be *.so or/and
+# *.xpi ONLY.
+#
+# Example to add in Makefile and pkg-plist if your port installs plug-ins in
+# its own directory, and you need to set WEBPLUGINS_DIR.
+#
+#	Makefile:
+#	------------------------------------------------------
+#	[...]
+# 	USE_WEBPLUGINS=gecko*
+#	WEBPLUGINS_DIR=#{PREFIX}/lib/application
+#	WEBPLUGINS_FILES=fooplugin.so fooplugin.xpi
+#
+#	.include <bsd.port.pre.mk>
+#	.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+#
+#	[...]
+#
+#	.include <bsd.port.post.mk>
+#	------------------------------------------------------
+#
+# As for the pkg-plist, it should only include the actual files your
+# port installs:
+#
+#	pkg-plist:
+#	------------------------------------------------------
+#	[...]
+#	lib/application/fooplugin.a
+#	lib/application/fooplugin.la
+#	lib/application/fooplugin.so
+#	lib/application/fooplugin.xpi
+#	@dirrm lib/application
+#	------------------------------------------------------
+#
+# Here is what it will look like when it creates symlinks:
+#
+#	------------------------------------------------------
+#	/usr/local/lib/browser_plugins/symlinks/gecko18/fooplugin.so -> /usr/local/lib/application/fooplugin.so
+#	/usr/local/lib/browser_plugins/symlinks/gecko18/fooplugin.xpi -> /usr/local/lib/application/fooplugin.xpi
+#	/usr/local/lib/browser_plugins/symlinks/gecko19/fooplugin.so -> /usr/local/lib/application/fooplugin.so
+#	/usr/local/lib/browser_plugins/symlinks/gecko19/fooplugin.xpi -> /usr/local/lib/application/fooplugin.xpi
+#	------------------------------------------------------
+
+WEBPLUGINS_NAME?=			${PKGBASE}
+WEBPLUGINS_FILES?=			empty
+WEBPLUGINS_APPS_ALL_LINUX=	linux-firefox linux-firefox-devel linux-flock \
+							linux-flock-devel linux-mozilla \
+							linux-nvu linux-opera linux-opera-devel \
+							linux-seamonkey linux-seamonkey-devel \
+							linux-sunbird linux-sunbird-devel
+WEBPLUGINS_APPS_ALL_NATIVE=	gecko18 gecko19 opera opera-devel webkit-gtk2
+WEBPLUGINS_APPS_ALL=		${WEBPLUGINS_APPS_ALL_LINUX} \
+							${WEBPLUGINS_APPS_ALL_NATIVE}
+
+.if !defined(USE_WEBPLUGINS) || ${USE_WEBPLUGINS} == "yes" || \
+	${USE_WEBPLUGINS} == "*"
+USE_WEBPLUGINS=	${WEBPLUGINS_APPS_ALL}
+.endif
+
+.if !defined(WEBPLUGINS_FILES) || ${WEBPLUGINS_FILES} == "empty" || \
+	${WEBPLUGINS_FILES} == ""
+IGNORE=	cannot install: the WEBPLUGINS_FILES is empty, please add plugins file in it and see in www/firefox/Makefile.webplugins for document
+.endif
+
+.for _TEMP_APP__ in ${WEBPLUGINS_APPS_ALL}
+_TEMP_APP_=${_TEMP_APP__}
+_TEMP_FLAG_=0
+.	for _TEMP_USE__ in ${USE_WEBPLUGINS}
+_TEMP_USE_=${_TEMP_USE__}
+.		if !${_TEMP_APP_:C!${_TEMP_USE_:S/*/.*/:S/?/./}!!} || \
+		( ${_TEMP_APP_:Mlinux-*} && ${_TEMP_USE_:Mlinux} ) || \
+		( ${_TEMP_APP_:Nlinux-*} && ${_TEMP_USE_:Mnative} )
+_TEMP_FLAG_=1
+.		endif
+.	endfor
+.	if	${_TEMP_FLAG_}
+USE_WEBPLUGINS_EXP+=	${_TEMP_APP__}
+.	endif
+.endfor
+
+WEBPLUGINS_APPS=		${USE_WEBPLUGINS_EXP:S.^.${LOCALBASE}/lib/.:S.$./plugins.:N*opera*:N*gecko*:N*webkit*}
+WEBPLUGINS_SLDIRS=		${USE_WEBPLUGINS_EXP:S.^.${WEBPLUGINS_SLDIR}/.}
+WEBPLUGINS_LINKFARMS=	${WEBPLUGINS_APPS} ${WEBPLUGINS_SLDIRS}
+
+WEBPLUGINS_LIBDIR=		${PREFIX}/lib/browser_plugins
+WEBPLUGINS_SLDIR=		${WEBPLUGINS_LIBDIR}/symlinks
+WEBPLUGINS_DIR?=		${WEBPLUGINS_LIBDIR}/${WEBPLUGINS_NAME}
+
+PLIST_SUB+=		WEBPLUGINS_DIR="${WEBPLUGINS_DIR:S,^${PREFIX}/,,}"
+
+_LNWF=		${WEBPLUGINS_FILES:S,^,${WEBPLUGINS_DIR}/,}
+_Q=	2>/dev/null || true
+_WLD=		${WEBPLUGINS_LIBDIR:S,^${PREFIX},%D,}
+_WLF=		${WEBPLUGINS_LINKFARMS:S,${PREFIX},%D,}
+_WSD=		${WEBPLUGINS_SLDIR:S,^${PREFIX},%D,}
+
+webplugins-post-install:
+	@if [ ! -d ${WEBPLUGINS_DIR} ]; then \
+		${ECHO_CMD}; \
+		${ECHO_CMD} "ERROR: The \"${WEBPLUGINS_DIR}\" in WEBPLUGINS_DIR is either a typo or no longer exists. Please make a bug report to ${MAINTAINER} (maintainer)."; \
+		${ECHO_CMD}; \
+	else \
+		for _f in ${WEBPLUGINS_FILES}; do \
+			if [ ! -f ${WEBPLUGINS_DIR}/$${_f} ]; then \
+				${ECHO_CMD}; \
+				${ECHO_CMD} "ERROR: The \"$${_f}\" in WEBPLUGINS_FILES is either a typo or no longer exists. Please make a bug report to ${MAINTAINER} (maintainer)."; \
+				${ECHO_CMD}; \
+			fi; \
+		done; \
+	fi; \
+	for _d in ${WEBPLUGINS_LINKFARMS}; do \
+		${INSTALL} -d $${_d}; \
+		for _l in ${_LNWF}; do \
+			${LN} -sf $${_l} $${_d}/ ${_Q}; \
+		done; \
+	done; \
+	for _d in ${_WLF}; do \
+		${ECHO_CMD} "@exec ${INSTALL} -d $$_d" >> ${TMPPLIST}; \
+		for _l in ${_LNWF}; do \
+			${ECHO_CMD} "@exec ${LN} -sf $$_l $$_d/ ${_Q}" >> ${TMPPLIST}; \
+		done; \
+		for _f in ${WEBPLUGINS_FILES:S,^,\${_d}/,}; do \
+			${ECHO_CMD} "@unexec ${RM} -f $$_f" >> ${TMPPLIST}; \
+		done; \
+		${ECHO_CMD} "@unexec rmdir $$_d ${_Q}" >> ${TMPPLIST}; \
+	done
+	@${ECHO_CMD} "@unexec rmdir ${_WSD} ${_Q}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${_WLD} ${_Q}" >> ${TMPPLIST}
+
+post-install: webplugins-post-install

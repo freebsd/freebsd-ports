@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
@@ -20,7 +20,11 @@ GNU_CONFIGURE=	yes
 MAN7=		plugger.7
 PKGDEINSTALL=	${PKGINSTALL}
 
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=npplugger.so
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -39,9 +43,9 @@ do-install:
 		${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
 		${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	@${MKDIR} ${WEBPLUGINS_DIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
-		${PREFIX}/lib/browser_plugins/npplugger.so
+		${WEBPLUGINS_DIR}/npplugger.so
 	@if [ -f ${PREFIX}/etc/pluggerrc-${PORTVERSION} ]; then \
 		${MV} ${PREFIX}/etc/pluggerrc-${PORTVERSION} \
 			${PREFIX}/etc/pluggerrc-${PORTVERSION}.old; \

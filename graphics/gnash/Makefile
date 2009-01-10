@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://getgnash.org/packages/releases/ \
 		${MASTER_SITE_GNU}
@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
+		--with-npapi-plugindir="${WEBPLUGINS_DIR}" \
 		--with-kde-pluginprefix="${PREFIX}"
 
 GNASHVER=	${PORTVERSION}
@@ -66,6 +66,9 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 
 # Plugin option processing
 .if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
+USE_WEBPLUGINS=		native
+WEBPLUGINS_FILES=	libgnashplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 PLIST_SUB+=	FFPLUGIN=""
 .else
 PLIST_SUB+=	FFPLUGIN="@comment "

@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/mplayerplug-in
 
@@ -18,7 +19,8 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GECKO=	firefox mozilla seamonkey
-PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
+USE_WEBPLUGINS=	gecko*
+WEBPLUGINS_FILES=mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
 		mplayerplug-in-gmp.so mplayerplug-in-wmp.xpt \
 		mplayerplug-in-qt.xpt mplayerplug-in-rm.xpt \
@@ -32,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBSD" \
 USE_XORG=	x11 xpm xt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
@@ -43,9 +45,9 @@ post-patch:
 		${WRKSRC}/Source/plugin-setup.cpp
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-.for moo in ${PLUGINSFILES}
-	${INSTALL_DATA} ${WRKSRC}/${moo} ${PREFIX}/lib/browser_plugins
+	${MKDIR} ${WEBPLUGINS_DIR}
+.for moo in ${WEBPLUGINS_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${moo} ${WEBPLUGINS_DIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
 		${PREFIX}/etc/mplayerplug-in.conf.dist

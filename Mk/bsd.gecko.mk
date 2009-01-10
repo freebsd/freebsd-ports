@@ -5,7 +5,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/Mk/bsd.gecko.mk,v 1.8 2008/06/20 22:17:41 mezz Exp $
+#   $MCom: ports-stable/Mk/bsd.gecko.mk,v 1.12 2008/08/07 04:42:34 mezz Exp $
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
@@ -130,9 +130,6 @@ GECKO_FALLTRHOUGH=	${TRUE}
 .endif
 
 # Generic defines
-BROWSER_LINUX_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_linux_plugins
-BROWSER_PLUGINS_DIR?=		${LOCALBASE}/lib/browser_plugins
-
 GECKO_CONFIG?=			${LOCALBASE}/bin/${GECKO}-config
 XPIDL?=				${LOCALBASE}/lib/${GECKO}/xpidl
 XPIDL_INCL?=			`${GECKO_CONFIG} --idlflags`
@@ -266,7 +263,6 @@ PLISTF?=	${WRKDIR}/plist_files
 MASTER_DIR?=	${.CURDIR}/../../www/mozilla
 
 KRB5_HOME?=	/usr
-BROWSER_PLUGINS_DIR?=	lib/browser_plugins
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
 ESD_LIB?=	libesd.so.2
@@ -287,10 +283,6 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude */macbuild/*			\
 			--exclude */package/*			\
 			--exclude mozilla/gc/boehm
-
-JPI_LIST?=\
-	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
-	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
 
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
@@ -521,8 +513,9 @@ gecko-post-patch:
 		s|echo aout|echo elf|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/build/unix/run-mozilla.sh
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
@@ -592,8 +585,6 @@ gecko-create-plist:
 .for f in ${GECKO_PLIST_PRE_DIRS}
 	${ECHO_CMD} "@dirrm ${f}" >> ${PLISTD}
 .endfor
-	${ECHO_CMD} "${BROWSER_PLUGINS_DIR}/.${MOZILLA}.keep" >> ${PLISTF}
-	${ECHO_CMD} "@dirrmtry ${BROWSER_PLUGINS_DIR}" >> ${PLISTD}
 	${MKDIR} ${FAKEDIR}/libdata
 	${MV} -f ${FAKEDIR}/lib/pkgconfig ${FAKEDIR}/libdata/ || ${TRUE}
 	${RM} -f ${FAKEDIR}/lib/pkgconfig
@@ -632,8 +623,6 @@ gecko-do-install:
 	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
 		${PREFIX}/libdata/pkgconfig/${pcfile}.pc
 .endfor
-	${MKDIR} ${PREFIX}/${BROWSER_PLUGINS_DIR}
-	${TOUCH} -f ${PREFIX}/${BROWSER_PLUGINS_DIR}/.${MOZILLA}.keep
 .endif # !defined(NOGECKO_INSTALL)
 
 gecko-moz-pis-pre-install:

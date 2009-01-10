@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#    $MCom: ports-stable/www/mozilla/pkg-install.in,v 1.11 2008/06/16 21:36:02 mezz Exp $
+#    $MCom: ports-stable/www/mozilla/pkg-install.in,v 1.15 2008/08/04 05:01:00 mezz Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)
@@ -33,10 +33,6 @@ fi
 if [ -f ${MOZBIN} -a "${1%-*}" = "nvu" ]; then
 	./run-mozilla.sh ${MOZBIN} -register > /dev/null 2>&1
 fi
-if [ ! -d %%PREFIX%%/lib/browser_plugins ]; then
-    mkdir -p %%PREFIX%%/lib/browser_plugins
-fi
-cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%MOZILLA%%/ %%MOZDIR%%/plugins/ > /dev/null 2>&1
 cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%MOZILLA%%/ %%MOZDIR%%/extensions/ > /dev/null 2>&1
 
 exit 0

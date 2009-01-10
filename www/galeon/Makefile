@@ -3,11 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/galeon/Makefile,v 1.14 2007/10/08 19:42:51 mezz Exp $
+#    $MCom: ports-stable/www/galeon/Makefile,v 1.6 2008/11/16 20:00:21 marcus Exp $
 #
 
 PORTNAME=	galeon
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	www gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
@@ -51,7 +51,7 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|@datadir@|g' \
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
-	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${LOCALBASE}/lib/browser_plugins:${LOCALBASE}/lib/browser_linux_plugins|' \
+	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${LOCALBASE}/lib/browser_plugins/symlinks/gecko18|' \
 		${WRKSRC}/mozilla/mozilla-embed-shell.cpp
 
 .include <bsd.port.post.mk>
