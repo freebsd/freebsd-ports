@@ -7,6 +7,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	0.12.8
+PORTREVISION=	1
 CATEGORIES?=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/3.5.10/src
@@ -22,7 +23,7 @@ LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
 		ilbc:${PORTSDIR}/net/ilbc \
 		ortp:${PORTSDIR}/net/ortp
 
-CONFLICTS=	kdenetwork-[0-2]* kdenetwork-3.[0-4]* kdenetwork-3.5.[0-2]* kvirc-[0-9]*
+CONFLICTS=	kvirc-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -56,8 +57,17 @@ INSTALL_WRKSRC=	${WRKSRC}/kopete
 
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
+OPTIONS=	WEBCAM "Enable webcamera support" off
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_WEBCAM)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-kopete_libkopete_avdevice-videodevice.cpp \
+		${FILESDIR}/extrapatch-kopete_libkopete_avdevice-videodevice.h \
+		${FILESDIR}/extrapatch-kopete_libkopete_avdevice-videodevicepool.cpp
+.endif
 
 post-patch:
 # force usage of gthread for libjingle's benefit
