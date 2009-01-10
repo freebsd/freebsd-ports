@@ -12,6 +12,6 @@ group|penaltybox|!badcommitters,!badcommitters.global
 
 unavail
 avail||CVSROOT
-avail|marcus,mezz,kwm|ports
+avail||ports
 avail|:meisters
 unavail|:penaltybox
