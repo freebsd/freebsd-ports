@@ -25,7 +25,7 @@ MAN1=	algae.1
 INFO=	algae
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS} -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -L`${CAT} ${WRKSRC}/LIBDIR` -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L`${CAT} ${WRKSRC}/LIBDIR`/../../.. -L`${CAT} ${WRKSRC}/LIBDIR` -L${LOCALBASE}/lib"
 FORTRANLIBS=	gfortranbegin gfortran
 
 post-patch:
