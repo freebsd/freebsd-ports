@@ -2114,7 +2114,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Utils/Network.pm
 %%SLIMDIR%%/Slim/Utils/OS.pm
 %%SLIMDIR%%/Slim/Utils/OS/Debian.pm
-%%SLIMDIR%%/Slim/Utils/OS/FreeBSD.pm
 %%SLIMDIR%%/Slim/Utils/OS/Linux.pm
 %%SLIMDIR%%/Slim/Utils/OS/OSX.pm
 %%SLIMDIR%%/Slim/Utils/OS/ReadyNAS.pm
@@ -2221,9 +2220,10 @@ bin/softsqueeze
 %%SLIMDIR%%/slimservice.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/types.conf.sample
-squeezecenter/Cache
-squeezecenter/MySQL/errmsg.txt
-squeezecenter/MySQL/errmsg.sys
+%%SLIMDIR%%/Cache
+%%SLIMDIR%%/MySQL/errmsg.txt
+%%SLIMDIR%%/MySQL/errmsg.sys
+%%SLIMDIR%%/Slim/Utils/OS/Custom.pm
 @dirrm %%SLIMDIR%%/lib/Template
 @dirrm %%SLIMDIR%%/lib/Ogg/Vorbis/Header
 @dirrm %%SLIMDIR%%/lib/Ogg/Vorbis

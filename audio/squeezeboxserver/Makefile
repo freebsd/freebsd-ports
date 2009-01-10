@@ -7,6 +7,7 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0//}-noCPAN
@@ -105,9 +106,12 @@ EXCEPTDIRS=	Bin \
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
-SUB_FILES=	softsqueeze.sh pkg-install
+SUB_FILES=	Custom.pm \
+		pkg-install \
+		softsqueeze.sh
 SUB_LIST=	PERL=${PERL} \
 		PORTNAME=${PORTNAME} \
+		SITE_PERL=${SITE_PERL} \
 		SLIMDIR=${SLIMDIR} \
 		SLIMDBDIR=${SLIMDBDIR} \
 		SLIMUSER=${SLIMUSER} \
@@ -135,7 +139,6 @@ post-patch:
 	    -e 's|%%SITE_PERL%%|${SITE_PERL}|g' \
 	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|g' \
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|g' \
-		${WRKSRC}/Slim/Utils/OS/FreeBSD.pm \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
 
@@ -163,11 +166,12 @@ do-install:
 	@${RM} -f ${PREFIX}/${SLIMDIR}/Cache
 	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
 	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${PREFIX}/${SLIMDIR}
+	@${INSTALL_DATA} ${WRKDIR}/Custom.pm \
+	    ${PREFIX}/${SLIMDIR}/Slim/Utils/OS/Custom.pm
 	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl
 	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl
 	@${LN} -sf ${LOCALBASE}/share/mysql/errmsg.txt \
-	    ${PREFIX}/${SLIMDIR}/MySQL/
-	@${LN} -sf ${LOCALBASE}/share/mysql/english/errmsg.sys \
+	    ${LOCALBASE}/share/mysql/english/errmsg.sys \
 	    ${PREFIX}/${SLIMDIR}/MySQL/
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)
@@ -192,15 +196,16 @@ build-plist:
 	@${FIND} ${TMP_SLIMDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	@${ECHO} "${SLIMDIR}/Cache" >> ${PLIST}
-	@${ECHO} "${SLIMDIR}/MySQL/errmsg.txt" >> ${PLIST}
-	@${ECHO} "${SLIMDIR}/MySQL/errmsg.sys" >> ${PLIST}
-	${FIND} ${TMP_SLIMDIR} -type d | \
+	@${ECHO} "%%SLIMDIR%%/Cache" >> ${PLIST}
+	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.txt" >> ${PLIST}
+	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.sys" >> ${PLIST}
+	@${ECHO} "%%SLIMDIR%%/Slim/Utils/OS/Custom.pm" >> ${PLIST}
+	@${FIND} ${TMP_SLIMDIR} -type d | \
 	    ${EGREP} -v "${TMP_SLIMDIR}(|/Plugins)$$" | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
-	echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
-	echo "@dirrmtry %%SLIMDIR%%" >> ${PLIST}
+	@echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
+	@echo "@dirrmtry %%SLIMDIR%%" >> ${PLIST}
 	@${FIND} ${TMP_DOCSDIR} -type d | \
 	    ${SED} -e 's|${TMP_DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
