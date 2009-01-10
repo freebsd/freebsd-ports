@@ -1,4 +1,5 @@
 bin/dbus-binding-tool
+etc/profile.d/dbus-bash-completion.sh
 include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
@@ -9,6 +10,7 @@ lib/libdbus-glib-1.la
 lib/libdbus-glib-1.so
 lib/libdbus-glib-1.so.2
 libdata/pkgconfig/dbus-glib-1.pc
+libexec/dbus-bash-completion-helper
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
@@ -30,3 +32,4 @@ libdata/pkgconfig/dbus-glib-1.pc
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 @dirrm %%DOCSDIR%%
+@dirrmtry etc/profile.d

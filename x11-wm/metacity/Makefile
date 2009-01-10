@@ -3,15 +3,14 @@
 # Whom:                Garrett Rooney <rooneg@electricjellyfish.net>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-wm/metacity/Makefile,v 1.124 2008/03/09 23:56:13 marcus Exp $
+#   $MCom: ports/x11-wm/metacity/Makefile,v 1.140 2008/10/08 04:21:46 marcus Exp $
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.22.0
-PORTREVISION=	2
+PORTVERSION=	2.24.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,13 +20,12 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 CONFLICTS=	expocity-[0-9]*
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_XORG=	x11 xcomposite xdamage
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2 ltverhack gtk20
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-render
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"

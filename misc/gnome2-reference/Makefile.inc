@@ -1,7 +1,6 @@
 _PORT_REF_LIST= \
 accessibility/at-spi-reference:at-spi-reference \
 accessibility/atk-reference:atk-reference \
-accessibility/gail-reference:gail-reference \
 databases/libgda2-reference:libgda2-reference \
 databases/libgda3-reference:libgda3-reference \
 databases/libgnomedb-reference:libgnomedb-reference \

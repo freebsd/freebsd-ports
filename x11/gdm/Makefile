@@ -3,11 +3,12 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gdm/Makefile,v 1.117 2008/03/22 04:21:52 mezz Exp $
+#   $MCom: ports/x11/gdm/Makefile,v 1.142 2009/01/10 01:59:22 mezz Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.20.8
+PORTVERSION=	2.24.1
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,27 +17,27 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ck-connector.0:${PORTSDIR}/sysutils/consolekit
+LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
+    		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
-		xrdb:${PORTSDIR}/x11/xrdb
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	dmx dmxproto
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier librsvg2 gnomedocutils \
-		gnomeprefix
+USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
+		gnomeprefix gnomepanel
+GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-working-directory=${PREFIX}/etc/gdm/home
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
-CONFIGURE_ARGS=--with-console-kit=yes
 
 SUB_FILES+=	gdm.pam
 
@@ -45,11 +46,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNOME_LOCALSTATEDIR=	/var
 
-MAN1=		gdm.1
-
-OPTIONS=	IPV6 "Enable IPv6 support" off \
-		KEYRING "Enable GnomeKeyring/PAM integration" on \
-		LOG_LIMIT "Limit ~/.xsession-errors size" on
+OPTIONS=	IPV6 "Enable IPv6 support" on \
+		KEYRING "Enable GnomeKeyring/PAM integration" on
 
 .include <bsd.port.pre.mk>
 
@@ -66,25 +64,28 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_LOG_LIMIT)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
-		${WRKSRC}/config/Makefile.in
+		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    	${WRKSRC}/daemon/gdm-session-worker.c \
+		${WRKSRC}/data/gconf.path
+	@${REINPLACE_CMD} -e 's|/bin/true|/usr/bin/true|g' \
+	    	${WRKSRC}/data/session-setup.entries
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/configure ${WRKSRC}/po/*.po ${WRKSRC}/gui/*.glade \
-		${WRKSRC}/daemon/*.c ${WRKSRC}/docs/*/*.*
-	@${REINPLACE_CMD} -e 's|/etc/gdm/gdm.conf|${PREFIX}/etc/gdm/gdm.conf|' \
-		${WRKSRC}/docs/gdm.1
+		${WRKSRC}/configure ${WRKSRC}/daemon/*.c ${WRKSRC}/po/*.po
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/data/gconf.path \
+	    	${PREFIX}/share/gdm/gconf.path
+	${INSTALL_DATA} ${WRKSRC}/data/session-setup.entries \
+	    	${PREFIX}/share/gdm/session-setup.entries
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	${INSTALL_DATA} ${WRKSRC}/config/gdm.conf-custom \
+	${INSTALL_DATA} ${WRKSRC}/data/gdm.conf-custom \
 		${PREFIX}/etc/gdm/custom.conf.default
+	${MKDIR} ${PREFIX}/share/xsessions
 	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm
 	@${MKDIR} ${PREFIX}/etc/gdm/Sessions
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \

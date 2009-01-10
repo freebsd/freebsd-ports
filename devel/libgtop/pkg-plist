@@ -16,6 +16,7 @@ include/libgtop-2.0/glibtop/netload.h
 include/libgtop-2.0/glibtop/open.h
 include/libgtop-2.0/glibtop/parameter.h
 include/libgtop-2.0/glibtop/ppp.h
+include/libgtop-2.0/glibtop/procaffinity.h
 include/libgtop-2.0/glibtop/procargs.h
 include/libgtop-2.0/glibtop/prockernel.h
 include/libgtop-2.0/glibtop/proclist.h
@@ -158,7 +159,7 @@ share/locale/sk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sq/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr/LC_MESSAGES/libgtop-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/libgtop-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
 share/locale/te/LC_MESSAGES/libgtop-2.0.mo
@@ -179,6 +180,8 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES

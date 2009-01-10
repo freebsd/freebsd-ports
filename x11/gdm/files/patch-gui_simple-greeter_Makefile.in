@@ -1,0 +1,11 @@
+--- gui/simple-greeter/Makefile.in.orig	2008-02-13 01:57:37.000000000 -0500
++++ gui/simple-greeter/Makefile.in	2008-02-13 01:57:44.000000000 -0500
+@@ -445,7 +445,7 @@ INCLUDES = \
+ 	-DGDMCONFDIR=\"$(gdmconfdir)\"                  \
+ 	-DDATADIR=\""$(datadir)"\"		 	\
+ 	-DSYSCONFDIR=\""$(sysconfdir)"\"		\
+-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"	\
++	-DLIBLOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
+ 	-DGLADEDIR=\""$(pkgdatadir)"\" 	\
+ 	-DLIBEXECDIR=\""$(libexecdir)"\" 		\

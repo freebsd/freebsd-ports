@@ -49,12 +49,6 @@ include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
 include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.a
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.la
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.so
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.a
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.la
-lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.so
 lib/libglade/2.0/libgnome.a
 lib/libglade/2.0/libgnome.la
 lib/libglade/2.0/libgnome.so
@@ -76,6 +70,7 @@ share/locale/bn_IN/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/br/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/crh/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/da/LC_MESSAGES/libgnomeui-2.0.mo
@@ -111,6 +106,7 @@ share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/li/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/mai/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/mg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/mi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/mk/LC_MESSAGES/libgnomeui-2.0.mo
@@ -138,7 +134,7 @@ share/locale/sk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sq/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr@ije/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ta/LC_MESSAGES/libgnomeui-2.0.mo
@@ -157,7 +153,6 @@ share/locale/zh_HK/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zu/LC_MESSAGES/libgnomeui-2.0.mo
 share/pixmaps/gnome-about-logo.png
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/filesystems
 @dirrm include/libgnomeui-2.0/libgnomeui
 @dirrm include/libgnomeui-2.0
 @dirrmtry share/locale/zu/LC_MESSAGES
@@ -172,6 +167,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -190,6 +187,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -198,6 +197,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

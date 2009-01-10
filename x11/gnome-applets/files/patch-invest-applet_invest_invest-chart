@@ -1,5 +1,5 @@
---- invest-applet/invest/invest-chart.orig	Wed Sep 13 20:41:18 2006
-+++ invest-applet/invest/invest-chart	Wed Sep 13 20:41:33 2006
+--- invest-applet/invest/invest-chart.orig	2008-03-15 16:34:50.000000000 -0400
++++ invest-applet/invest/invest-chart	2008-04-28 13:29:13.000000000 -0400
 @@ -6,8 +6,8 @@ import sys, invest.chart, gtk
  import gettext, locale
  gettext.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
@@ -8,6 +8,6 @@
 -locale.textdomain(invest.defs.GETTEXT_PACKAGE)
 +#locale.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
 +#locale.textdomain(invest.defs.GETTEXT_PACKAGE)
- gtk.glade.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
- gtk.glade.textdomain(invest.defs.GETTEXT_PACKAGE)
  
+ if __name__ == "__main__":
+ 	win = invest.chart.show_chart(sys.argv[1:])

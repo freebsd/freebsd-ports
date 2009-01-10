@@ -3,12 +3,12 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/multimedia/totem/Makefile,v 1.9 2008/08/02 21:17:25 mezz Exp $
+#   $MCom: ports/multimedia/totem/Makefile,v 1.118 2008/11/09 11:58:37 kwm Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.22.2
-PORTREVISION?=	4
+PORTVERSION=	2.24.3
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
-		totem-plparser.10:${PORTSDIR}/multimedia/totem-pl-parser
+		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
+USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils \
 		nautiluscdburner ltverhack pygtk2
 GNOME_DESKTOP_VERSION=2
 WANT_GSTREAMER=	yes
@@ -37,17 +37,18 @@ USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-	       	LIBS="-L${LOCALBASE}/lib -lXrandr"
+	       	LIBS="-L${LOCALBASE}/lib -lXrandr" \
+		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 
 MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS?=	totem-gstreamer-[0-9]* totem-xine-[0-9]*
+CONFLICTS?=	totem-xine-[0-9]*
 
 OPTIONS=	LIRC "Enable lirc support" off \
 		GALAGO "Enable Galago support" off \
-		GECKO_PLUGINS "Enable install plugins for gecko browser" on \
+		BROWSER_PLUGINS "Enable install plugins for gecko browser" on \
 		PUBLISH "Enable Publish (network playlist) plugin" off \
 		TRACKER "Enable tracker local search plugin" off
 
@@ -91,34 +92,26 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
 PLIST_SUB+=	GALAGO="@comment "
 .endif
 
-.if !defined(WITHOUT_GECKO_PLUGINS)
-USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
-		--enable-browser-plugins \
+.if !defined(WITHOUT_BROWSER_PLUGINS)
+CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-gmp-plugin \
 		--enable-complex-plugin \
 		--enable-narrowspace-plugin
-PLIST_SUB+=	GECKO_PLUGINS=""
+PLIST_SUB+=	BROWSER_PLUGINS=""
 
-USE_WEBPLUGINS=		gecko*
-WEBPLUGINS_FILES=	libtotem-basic-plugin.so libtotem-basic-plugin.xpt \
-			libtotem-complex-plugin.so libtotem-complex-plugin.xpt \
-			libtotem-cone-plugin.so libtotem-cone-plugin.xpt \
-			libtotem-gmp-plugin.so libtotem-gmp-plugin.xpt \
-			libtotem-mully-plugin.so libtotem-mully-plugin.xpt \
-			libtotem-narrowspace-plugin.so \
-			libtotem-narrowspace-plugin.xpt
+USE_WEBPLUGINS=		gecko19 webkit-gtk2
+WEBPLUGINS_FILES=	libtotem-basic-plugin.so libtotem-complex-plugin.so \
+			libtotem-cone-plugin.so libtotem-gmp-plugin.so \
+			libtotem-mully-plugin.so \
+			libtotem-narrowspace-plugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
-CONFIGURE_ARGS+=--without-mozilla \
-		--disable-browser-plugins \
-		--disable-mozilla \
+CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-basic-plugin \
 		--disable-gmp-plugin \
 		--disable-complex-plugin \
 		--disable-narrowspace-plugin
-PLIST_SUB+=	GECKO_PLUGINS="@comment "
+PLIST_SUB+=	BROWSER_PLUGINS="@comment "
 .endif
 
 .if !defined(WITH_TOTEM_XINE) || ${SLAVE_PORT}=="no"
@@ -149,9 +142,8 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g ; \
-		s|_PLUGINDIR=".*"|_PLUGINDIR="${WEBPLUGINS_DIR}"|g' \
-	    		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g' \
+	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 
@@ -160,5 +152,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

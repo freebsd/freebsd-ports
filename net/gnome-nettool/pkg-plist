@@ -12,6 +12,8 @@ share/applications/gnome-nettool.desktop
 share/gnome/help/gnome-nettool/C/gnome-nettool.xml
 share/gnome/help/gnome-nettool/C/legal.xml
 share/gnome/help/gnome-nettool/ca/gnome-nettool.xml
+share/gnome/help/gnome-nettool/cs/gnome-nettool.xml
+share/gnome/help/gnome-nettool/da/gnome-nettool.xml
 share/gnome/help/gnome-nettool/es/gnome-nettool.xml
 share/gnome/help/gnome-nettool/fr/gnome-nettool.xml
 share/gnome/help/gnome-nettool/oc/gnome-nettool.xml
@@ -86,7 +88,7 @@ share/locale/sk/LC_MESSAGES/gnome-nettool.mo
 share/locale/sl/LC_MESSAGES/gnome-nettool.mo
 share/locale/sq/LC_MESSAGES/gnome-nettool.mo
 share/locale/sr/LC_MESSAGES/gnome-nettool.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-nettool.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-nettool.mo
 share/locale/sv/LC_MESSAGES/gnome-nettool.mo
 share/locale/ta/LC_MESSAGES/gnome-nettool.mo
 share/locale/te/LC_MESSAGES/gnome-nettool.mo
@@ -103,6 +105,8 @@ share/locale/zh_HK/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
 share/omf/gnome-nettool/gnome-nettool-C.omf
 share/omf/gnome-nettool/gnome-nettool-ca.omf
+share/omf/gnome-nettool/gnome-nettool-cs.omf
+share/omf/gnome-nettool/gnome-nettool-da.omf
 share/omf/gnome-nettool/gnome-nettool-es.omf
 share/omf/gnome-nettool/gnome-nettool-fr.omf
 share/omf/gnome-nettool/gnome-nettool-oc.omf
@@ -119,6 +123,8 @@ share/pixmaps/gnome-nettool.png
 @dirrm share/gnome/help/gnome-nettool/oc
 @dirrm share/gnome/help/gnome-nettool/fr
 @dirrm share/gnome/help/gnome-nettool/es
+@dirrm share/gnome/help/gnome-nettool/da
+@dirrm share/gnome/help/gnome-nettool/cs
 @dirrm share/gnome/help/gnome-nettool/ca
 @dirrm share/gnome/help/gnome-nettool/C
 @dirrm share/gnome/help/gnome-nettool
@@ -134,6 +140,8 @@ share/pixmaps/gnome-nettool.png
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

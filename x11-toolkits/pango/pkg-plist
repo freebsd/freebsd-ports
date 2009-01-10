@@ -3,6 +3,7 @@ bin/pango-querymodules
 etc/pango/pango.modules
 %%X11%%etc/pango/pangox.aliases
 include/pango-1.0/pango/pango-attributes.h
+include/pango-1.0/pango/pango-bidi-type.h
 include/pango-1.0/pango/pango-break.h
 include/pango-1.0/pango/pango-context.h
 include/pango-1.0/pango/pango-coverage.h

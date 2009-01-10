@@ -3,10 +3,11 @@
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/audio/esound/Makefile,v 1.1 2008/11/20 19:38:24 marcus Exp $
 #
 
 PORTNAME=	esound
-PORTVERSION=	0.2.40
+PORTVERSION=	0.2.41
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2

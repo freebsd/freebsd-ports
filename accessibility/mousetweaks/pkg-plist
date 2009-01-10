@@ -3,7 +3,6 @@ bin/mousetweaks
 bin/pointer-capture-applet
 libdata/bonobo/servers/DwellClick_Factory.server
 libdata/bonobo/servers/PointerCapture_Factory.server
-share/gnome/help/mousetweaks/C/figures/mouse-a11y-add-applet-to-panel-window.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-dwell-click-type-window.png
@@ -20,7 +19,6 @@ share/gnome/help/mousetweaks/C/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/C/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/C/legal.xml
 share/gnome/help/mousetweaks/C/mousetweaks.xml
-share/gnome/help/mousetweaks/el/figures/mouse-a11y-add-applet-to-panel-window.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-dwell-click-type-window.png
@@ -35,9 +33,7 @@ share/gnome/help/mousetweaks/el/figures/mouse-a11y-pointer-capture-preferences.p
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/el/figures/mouse-a11y-tab.png
-share/gnome/help/mousetweaks/el/legal.xml
 share/gnome/help/mousetweaks/el/mousetweaks.xml
-share/gnome/help/mousetweaks/es/figures/mouse-a11y-add-applet-to-panel-window.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-dwell-click-type-window.png
@@ -52,9 +48,7 @@ share/gnome/help/mousetweaks/es/figures/mouse-a11y-pointer-capture-preferences.p
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/es/figures/mouse-a11y-tab.png
-share/gnome/help/mousetweaks/es/legal.xml
 share/gnome/help/mousetweaks/es/mousetweaks.xml
-share/gnome/help/mousetweaks/oc/figures/mouse-a11y-add-applet-to-panel-window.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-dwell-click-type-window.png
@@ -69,9 +63,7 @@ share/gnome/help/mousetweaks/oc/figures/mouse-a11y-pointer-capture-preferences.p
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-tab.png
-share/gnome/help/mousetweaks/oc/legal.xml
 share/gnome/help/mousetweaks/oc/mousetweaks.xml
-share/gnome/help/mousetweaks/sv/figures/mouse-a11y-add-applet-to-panel-window.png
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-dwell-checkbox.png
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-dwell-click-type-applet.png
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-dwell-click-type-window.png
@@ -86,10 +78,10 @@ share/gnome/help/mousetweaks/sv/figures/mouse-a11y-pointer-capture-preferences.p
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-tab.png
-share/gnome/help/mousetweaks/sv/legal.xml
 share/gnome/help/mousetweaks/sv/mousetweaks.xml
 share/locale/ar/LC_MESSAGES/mousetweaks.mo
 share/locale/bg/LC_MESSAGES/mousetweaks.mo
+share/locale/bn_IN/LC_MESSAGES/mousetweaks.mo
 share/locale/ca/LC_MESSAGES/mousetweaks.mo
 share/locale/cs/LC_MESSAGES/mousetweaks.mo
 share/locale/da/LC_MESSAGES/mousetweaks.mo
@@ -97,10 +89,13 @@ share/locale/de/LC_MESSAGES/mousetweaks.mo
 share/locale/el/LC_MESSAGES/mousetweaks.mo
 share/locale/en_GB/LC_MESSAGES/mousetweaks.mo
 share/locale/es/LC_MESSAGES/mousetweaks.mo
+share/locale/et/LC_MESSAGES/mousetweaks.mo
 share/locale/eu/LC_MESSAGES/mousetweaks.mo
 share/locale/fi/LC_MESSAGES/mousetweaks.mo
 share/locale/fr/LC_MESSAGES/mousetweaks.mo
 share/locale/gl/LC_MESSAGES/mousetweaks.mo
+share/locale/gu/LC_MESSAGES/mousetweaks.mo
+share/locale/he/LC_MESSAGES/mousetweaks.mo
 share/locale/hi/LC_MESSAGES/mousetweaks.mo
 share/locale/hu/LC_MESSAGES/mousetweaks.mo
 share/locale/it/LC_MESSAGES/mousetweaks.mo
@@ -114,12 +109,14 @@ share/locale/nb/LC_MESSAGES/mousetweaks.mo
 share/locale/nl/LC_MESSAGES/mousetweaks.mo
 share/locale/nn/LC_MESSAGES/mousetweaks.mo
 share/locale/oc/LC_MESSAGES/mousetweaks.mo
+share/locale/or/LC_MESSAGES/mousetweaks.mo
 share/locale/pa/LC_MESSAGES/mousetweaks.mo
 share/locale/pl/LC_MESSAGES/mousetweaks.mo
 share/locale/pt/LC_MESSAGES/mousetweaks.mo
 share/locale/pt_BR/LC_MESSAGES/mousetweaks.mo
 share/locale/ru/LC_MESSAGES/mousetweaks.mo
 share/locale/sl/LC_MESSAGES/mousetweaks.mo
+share/locale/sq/LC_MESSAGES/mousetweaks.mo
 share/locale/sv/LC_MESSAGES/mousetweaks.mo
 share/locale/ta/LC_MESSAGES/mousetweaks.mo
 share/locale/th/LC_MESSAGES/mousetweaks.mo
@@ -132,12 +129,18 @@ share/locale/zh_TW/LC_MESSAGES/mousetweaks.mo
 %%DATADIR%%/DwellClick.xml
 %%DATADIR%%/PointerCapture.xml
 %%DATADIR%%/ctw.glade
+%%DATADIR%%/double-click.png
+%%DATADIR%%/drag-click.png
 %%DATADIR%%/dwell-click-applet.glade
-%%DATADIR%%/human-double.png
-%%DATADIR%%/human-drag.png
-%%DATADIR%%/human-right.png
-%%DATADIR%%/human-single.png
 %%DATADIR%%/pointer-capture-applet.glade
+%%DATADIR%%/right-click.png
+%%DATADIR%%/single-click.png
+share/omf/mousetweaks/mousetweaks-C.omf
+share/omf/mousetweaks/mousetweaks-el.omf
+share/omf/mousetweaks/mousetweaks-es.omf
+share/omf/mousetweaks/mousetweaks-oc.omf
+share/omf/mousetweaks/mousetweaks-sv.omf
+@dirrm share/omf/mousetweaks
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/mousetweaks/sv/figures
 @dirrm share/gnome/help/mousetweaks/sv
@@ -156,3 +159,5 @@ share/locale/zh_TW/LC_MESSAGES/mousetweaks.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

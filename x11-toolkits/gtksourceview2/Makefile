@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtksourceview2/Makefile,v 1.60 2008/03/10 13:49:44 ahze Exp $
+#   $MCom: ports/x11-toolkits/gtksourceview2/Makefile,v 1.67 2008/11/02 18:21:19 marcus Exp $
 #
 
 PORTNAME=	gtksourceview2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,7 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 

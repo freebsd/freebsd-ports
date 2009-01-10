@@ -55,6 +55,7 @@
 %%EXAMPLESDIR%%/walker.py
 %%EXAMPLESDIR%%/xpath.py
 %%EXAMPLESDIR%%/xpathext.py
+%%EXAMPLESDIR%%/xpathleak.py
 %%EXAMPLESDIR%%/xpathns.py
 %%EXAMPLESDIR%%/xpathret.py
 @dirrm %%EXAMPLESDIR%%

@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/libgtksourceviewmm/Makefile,v 1.2 2006/12/06 00:54:45 ahze Exp $
+#    $MCom: ports/x11-toolkits/libgtksourceviewmm/Makefile,v 1.4 2008/08/08 21:59:44 kwm Exp $
 
 PORTNAME=	libgtksourceviewmm
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	1.9.5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
@@ -19,11 +18,10 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtksourceview gnomeprefix gnomehack
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${WRKSRC}/gtksourceview/ \
-			`pkg-config --cflags gtkmm-2.4 gtksourceview-1.0`" \
-		LDFLAGS="-L${LOCALBAS}/lib \
-			`pkg-config --libs gtkmm-2.4 gtksourceview-1.0`"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBAS}/lib"
+CONFIGURE_ARGS=	--disable-docs
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

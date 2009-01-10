@@ -3,17 +3,19 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/midori/Makefile,v 1.3 2008/03/21 18:31:39 ahze Exp $
+#   $MCom: ports/www/midori/Makefile,v 1.10 2008/12/31 03:30:21 mezz Exp $
+#
 
 PORTNAME=	midori
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
-LIB_DEPENDS=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		rsvg-convert:${PORTSDIR}/graphics/librsvg2
 

@@ -8,7 +8,7 @@
 PORTNAME=	libtomoe-gtk
 PORTVERSION=	0.6.0
 #PORTREVISION=	0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tomoe
@@ -24,17 +24,17 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
+#OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_GUCHARMAP)
+#.if defined(WITHOUT_GUCHARMAP)
 CONFIGURE_ARGS+=--with-gucharmap=no
 PLIST_SUB+=	GUCHARMAP="@comment "
-.else
-LIB_DEPENDS+=	gucharmap.6:${PORTSDIR}/deskutils/gucharmap
-PLIST_SUB+=	GUCHARMAP=""
-.endif
+#.else
+#LIB_DEPENDS+=	gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+#PLIST_SUB+=	GUCHARMAP=""
+#.endif
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/pytomoe.pc)
 USE_PYTHON=	yes

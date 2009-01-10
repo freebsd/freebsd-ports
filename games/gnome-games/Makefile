@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/games/gnome-games/Makefile,v 1.171 2008/03/11 03:23:56 mezz Exp $
+#   $MCom: ports/games/gnome-games/Makefile,v 1.187 2008/11/25 17:39:15 mezz Exp $
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.22.3
-PORTREVISION=	3
+PORTVERSION=	2.24.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -47,7 +46,7 @@ DSC_FILES=	iagno/iagno-client.dsc gnect/data/gnect-client.dsc \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .endif
 
 post-patch:

@@ -3,10 +3,10 @@
 # Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/sysutils/consolekit/Makefile,v 1.12 2008/02/27 15:13:25 ahze Exp $
+#    $MCom: ports/sysutils/consolekit/Makefile,v 1.19 2008/12/24 16:12:03 marcus Exp $
 
 PORTNAME=	consolekit
-PORTVERSION=	0.2.10
+PORTVERSION=	0.3.0
 PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://people.freedesktop.org/~mccann/dist/
@@ -19,8 +19,9 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		polkit.2:${PORTSDIR}/sysutils/policykit
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
+USE_BZIP2=	yes
 USE_XORG=	x11
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

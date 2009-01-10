@@ -1,7 +1,12 @@
+bin/gnome-keyring
 bin/gnome-keyring-daemon
 include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
+include/gp11/gp11.h
+include/gp11/pkcs11.h
+include/gp11/pkcs11g.h
+include/gp11/pkcs11n.h
 lib/gnome-keyring/gnome-keyring-pkcs11.a
 lib/gnome-keyring/gnome-keyring-pkcs11.la
 lib/gnome-keyring/gnome-keyring-pkcs11.so
@@ -9,10 +14,15 @@ lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
+lib/libgp11.a
+lib/libgp11.la
+lib/libgp11.so
+lib/libgp11.so.0
 lib/pam_gnome_keyring.a
 lib/pam_gnome_keyring.la
 lib/pam_gnome_keyring.so
 libdata/pkgconfig/gnome-keyring-1.pc
+libdata/pkgconfig/gp11-0.pc
 libexec/gnome-keyring-ask
 share/dbus-1/services/org.gnome.keyring.service
 %%DOCSDIR%%/ch01.html
@@ -39,6 +49,20 @@ share/dbus-1/services/org.gnome.keyring.service
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+share/doc/gp11/GP11Object.html
+share/doc/gp11/ch01.html
+share/doc/gp11/gp11-GP11Call.html
+share/doc/gp11/gp11-gp11-test.html
+share/doc/gp11/gp11-pkcs11.html
+share/doc/gp11/gp11.devhelp
+share/doc/gp11/gp11.devhelp2
+share/doc/gp11/home.png
+share/doc/gp11/index.html
+share/doc/gp11/index.sgml
+share/doc/gp11/left.png
+share/doc/gp11/right.png
+share/doc/gp11/style.css
+share/doc/gp11/up.png
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
 share/locale/az/LC_MESSAGES/gnome-keyring.mo
 share/locale/be/LC_MESSAGES/gnome-keyring.mo
@@ -73,6 +97,7 @@ share/locale/is/LC_MESSAGES/gnome-keyring.mo
 share/locale/it/LC_MESSAGES/gnome-keyring.mo
 share/locale/ja/LC_MESSAGES/gnome-keyring.mo
 share/locale/ka/LC_MESSAGES/gnome-keyring.mo
+share/locale/kn/LC_MESSAGES/gnome-keyring.mo
 share/locale/ko/LC_MESSAGES/gnome-keyring.mo
 share/locale/lt/LC_MESSAGES/gnome-keyring.mo
 share/locale/lv/LC_MESSAGES/gnome-keyring.mo
@@ -100,7 +125,7 @@ share/locale/sk/LC_MESSAGES/gnome-keyring.mo
 share/locale/sl/LC_MESSAGES/gnome-keyring.mo
 share/locale/sq/LC_MESSAGES/gnome-keyring.mo
 share/locale/sr/LC_MESSAGES/gnome-keyring.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-keyring.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-keyring.mo
 share/locale/sv/LC_MESSAGES/gnome-keyring.mo
 share/locale/ta/LC_MESSAGES/gnome-keyring.mo
 share/locale/te/LC_MESSAGES/gnome-keyring.mo
@@ -112,8 +137,10 @@ share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
+@dirrm share/doc/gp11
 @dirrm %%DOCSDIR%%
 @dirrm lib/gnome-keyring
+@dirrm include/gp11
 @dirrm include/gnome-keyring-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -121,6 +148,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

@@ -1,6 +1,5 @@
 include/eel-2/eel/eel-accessibility.h
 include/eel-2/eel/eel-alert-dialog.h
-include/eel-2/eel/eel-app-launch-context.h
 include/eel-2/eel/eel-art-extensions.h
 include/eel-2/eel/eel-art-gtk-extensions.h
 include/eel-2/eel/eel-background-box.h
@@ -102,6 +101,7 @@ share/locale/oc/LC_MESSAGES/eel-2.0.mo
 share/locale/or/LC_MESSAGES/eel-2.0.mo
 share/locale/pa/LC_MESSAGES/eel-2.0.mo
 share/locale/pl/LC_MESSAGES/eel-2.0.mo
+share/locale/ps/LC_MESSAGES/eel-2.0.mo
 share/locale/pt/LC_MESSAGES/eel-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/eel-2.0.mo
 share/locale/ro/LC_MESSAGES/eel-2.0.mo
@@ -112,7 +112,7 @@ share/locale/sk/LC_MESSAGES/eel-2.0.mo
 share/locale/sl/LC_MESSAGES/eel-2.0.mo
 share/locale/sq/LC_MESSAGES/eel-2.0.mo
 share/locale/sr/LC_MESSAGES/eel-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/eel-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/eel-2.0.mo
 share/locale/sv/LC_MESSAGES/eel-2.0.mo
 share/locale/ta/LC_MESSAGES/eel-2.0.mo
 share/locale/th/LC_MESSAGES/eel-2.0.mo
@@ -133,10 +133,14 @@ share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES

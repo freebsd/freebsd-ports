@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/hal/Makefile,v 1.43 2008/03/22 19:31:15 marcus Exp $
+#   $MCom: ports/sysutils/hal/Makefile,v 1.54 2008/12/21 06:20:19 marcus Exp $
 #
 
 PORTNAME=	hal
 DISTVERSION=	0.5.11
-PORTREVISION=	1
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget intlhack ltverhack
+USE_GNOME=	gnomehack intlhack ltverhack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-pid-file=/var/run/hald/hald.pid \
 		--with-deprecated-keys \
 		--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_CK_0_3" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
 
@@ -94,6 +94,8 @@ post-patch:
 		${WRKSRC}/hald/Makefile.in
 	@${REINPLACE_CMD} -e 's|user="0"|group="operator"|g' \
 		${WRKSRC}/hal.conf.in
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    	< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
 
 post-install:
 	${MKDIR} ${DATADIR}/dist
@@ -101,6 +103,8 @@ post-install:
 	${MKDIR} ${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
 	    	${PREFIX}/share/hal/fdi/policy/10osvendor
+	${INSTALL_SCRIPT} ${FILESDIR}/mount-fuse \
+	    	${PREFIX}/share/hal/mount-fuse
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
@@ -112,6 +116,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
 		${DOCSDIR}/README.freebsd
+	${INSTALL_DATA} ${WRKDIR}/README.fuse \
+	    	${DOCSDIR}/README.fuse
 .endif
 
 .include <bsd.port.post.mk>

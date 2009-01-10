@@ -1,6 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
-#    $MCom: ports/x11/gdm/files/gdm.in,v 1.28 2008/03/11 04:21:47 mezz Exp $
+#    $MCom: ports/x11/gdm/files/gdm.in,v 1.32 2008/08/17 17:31:43 marcus Exp $
 
 # PROVIDE: gdm
 # REQUIRE: LOGIN cleanvar moused syscons dbus
@@ -18,7 +18,7 @@ gdm_preserve_base_pam_conf=${gdm_preserve_base_pam_conf-NO}
 
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 
-name=gdm
+name="gdm"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"

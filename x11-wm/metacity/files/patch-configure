@@ -1,17 +1,9 @@
---- configure.orig	2008-03-09 19:48:04.000000000 -0400
-+++ configure	2008-03-09 19:48:24.000000000 -0400
-@@ -26539,7 +26539,6 @@ echo "${ECHO_T}$have_xrender" >&6; }
- 
-   if test x$have_xrender = xyes; then
-      echo "Building with Render"
--     METACITY_PC_MODULES="$METACITY_PC_MODULES xrender >= $XRENDER_VERSION"
-   fi
- fi ## have_composite
- 
-@@ -31011,7 +31010,7 @@ metacity-$VERSION:
+--- configure.orig	2008-09-23 00:55:36.000000000 -0400
++++ configure	2008-09-23 00:55:52.000000000 -0400
+@@ -31530,7 +31530,7 @@ metacity-$VERSION:
  "
  
- METACITY_MINOR_VERSION=22
+ METACITY_MINOR_VERSION=24
 -if test $(( $(echo $METACITY_MINOR_VERSION) %2)) == "1"; then
 +if test $(( $(echo $METACITY_MINOR_VERSION) %2)) = "1"; then
     stable_version=$(( ($METACITY_MINOR_VERSION / 2) * 2))

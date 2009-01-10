@@ -1,6 +1,11 @@
+include/libgweather/gweather-enum-types.h
 include/libgweather/gweather-gconf.h
+include/libgweather/gweather-location.h
 include/libgweather/gweather-prefs.h
+include/libgweather/gweather-timezone.h
 include/libgweather/gweather-xml.h
+include/libgweather/location-entry.h
+include/libgweather/timezone-menu.h
 include/libgweather/weather.h
 lib/libgweather.a
 lib/libgweather.la
@@ -74,7 +79,7 @@ libdata/pkgconfig/gweather.pc
 %%DATADIR%%/Locations.sl.xml
 %%DATADIR%%/Locations.sq.xml
 %%DATADIR%%/Locations.sr.xml
-%%DATADIR%%/Locations.sr@Latn.xml
+%%DATADIR%%/Locations.sr@latin.xml
 %%DATADIR%%/Locations.sv.xml
 %%DATADIR%%/Locations.ta.xml
 %%DATADIR%%/Locations.te.xml
@@ -172,7 +177,7 @@ share/locale/sk/LC_MESSAGES/libgweather.mo
 share/locale/sl/LC_MESSAGES/libgweather.mo
 share/locale/sq/LC_MESSAGES/libgweather.mo
 share/locale/sr/LC_MESSAGES/libgweather.mo
-share/locale/sr@Latn/LC_MESSAGES/libgweather.mo
+share/locale/sr@latin/LC_MESSAGES/libgweather.mo
 share/locale/sv/LC_MESSAGES/libgweather.mo
 share/locale/ta/LC_MESSAGES/libgweather.mo
 share/locale/te/LC_MESSAGES/libgweather.mo
@@ -193,6 +198,8 @@ share/locale/zh_TW/LC_MESSAGES/libgweather.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

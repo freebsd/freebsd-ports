@@ -181,12 +181,6 @@ share/gnome/help/accerciser/fr/figures/api_browser.png
 share/gnome/help/accerciser/fr/figures/event_monitor.png
 share/gnome/help/accerciser/fr/figures/interface_viewer.png
 share/gnome/help/accerciser/fr/figures/script_recorder.png
-share/gnome/help/accerciser/it/accerciser.xml
-share/gnome/help/accerciser/it/figures/accerciser.png
-share/gnome/help/accerciser/it/figures/api_browser.png
-share/gnome/help/accerciser/it/figures/event_monitor.png
-share/gnome/help/accerciser/it/figures/interface_viewer.png
-share/gnome/help/accerciser/it/figures/script_recorder.png
 share/gnome/help/accerciser/oc/accerciser.xml
 share/gnome/help/accerciser/oc/figures/accerciser.png
 share/gnome/help/accerciser/oc/figures/api_browser.png
@@ -226,10 +220,12 @@ share/locale/hi/LC_MESSAGES/accerciser.mo
 share/locale/hu/LC_MESSAGES/accerciser.mo
 share/locale/it/LC_MESSAGES/accerciser.mo
 share/locale/ja/LC_MESSAGES/accerciser.mo
+share/locale/kn/LC_MESSAGES/accerciser.mo
 share/locale/lt/LC_MESSAGES/accerciser.mo
 share/locale/lv/LC_MESSAGES/accerciser.mo
 share/locale/mk/LC_MESSAGES/accerciser.mo
 share/locale/ml/LC_MESSAGES/accerciser.mo
+share/locale/mr/LC_MESSAGES/accerciser.mo
 share/locale/nb/LC_MESSAGES/accerciser.mo
 share/locale/nl/LC_MESSAGES/accerciser.mo
 share/locale/oc/LC_MESSAGES/accerciser.mo
@@ -249,12 +245,13 @@ share/locale/tr/LC_MESSAGES/accerciser.mo
 share/locale/uk/LC_MESSAGES/accerciser.mo
 share/locale/vi/LC_MESSAGES/accerciser.mo
 share/locale/zh_CN/LC_MESSAGES/accerciser.mo
+share/locale/zh_HK/LC_MESSAGES/accerciser.mo
+share/locale/zh_TW/LC_MESSAGES/accerciser.mo
 share/omf/accerciser/accerciser-C.omf
 share/omf/accerciser/accerciser-ca.omf
 share/omf/accerciser/accerciser-en_GB.omf
 share/omf/accerciser/accerciser-es.omf
 share/omf/accerciser/accerciser-fr.omf
-share/omf/accerciser/accerciser-it.omf
 share/omf/accerciser/accerciser-oc.omf
 share/omf/accerciser/accerciser-sv.omf
 @dirrm share/omf/accerciser
@@ -262,8 +259,6 @@ share/omf/accerciser/accerciser-sv.omf
 @dirrm share/gnome/help/accerciser/sv
 @dirrm share/gnome/help/accerciser/oc/figures
 @dirrm share/gnome/help/accerciser/oc
-@dirrm share/gnome/help/accerciser/it/figures
-@dirrm share/gnome/help/accerciser/it
 @dirrm share/gnome/help/accerciser/fr/figures
 @dirrm share/gnome/help/accerciser/fr
 @dirrm share/gnome/help/accerciser/es/figures
@@ -285,12 +280,16 @@ share/omf/accerciser/accerciser-sv.omf
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/accerciser/plugin
 @dirrm %%PYTHON_SITELIBDIR%%/accerciser
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

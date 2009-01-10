@@ -1,5 +1,5 @@
---- src/orca/orca.in.orig	2008-05-26 16:22:08.000000000 -0500
-+++ src/orca/orca.in	2008-05-26 16:25:53.000000000 -0500
+--- src/orca/orca.in.orig	2008-10-16 14:56:18.000000000 -0500
++++ src/orca/orca.in	2008-10-16 15:04:04.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -13,44 +13,32 @@
 -export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
 +export PATH="${PATH}:/usr/bin:/usr/sbin:/bin:/usr/local/bin"
  
- # If you set RUNONCE to "true", then this will just run Orca once and quit.
+ # Save the arguments away.
  #
-@@ -74,7 +74,7 @@
+@@ -83,7 +83,7 @@
  cleanup()
  {
      USERID=`id | cut -f2 -d= | cut -f1 -d\(`
--    PIDS=`ps -eo pid,ruid,args | grep $USERID | egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | grep -v grep | awk '{ print $1 }'`
-+    PIDS=`ps -exo pid,ruid,args | grep $USERID | egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | grep -v grep | awk '{ print $1 }'`
- 
+-    PIDS=`ps -eo pid,ruid,args | grep $USERID | \
++    PIDS=`ps -exo pid,ruid,args | grep $USERID | \
+ 	egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | \
+ 	grep -v grep | awk '{ print $1 }'`
      IFS='
-     '
-@@ -145,7 +145,7 @@
-         do
-             sleep 5
-             USERID=`id | cut -f2 -d= | cut -f1 -d\(`
--            PID=`ps -eo pid,ruid,args | grep $USERID | egrep "orca[.]orca" | grep -v grep | awk '{ print $1 }'`
-+            PID=`ps -exo pid,ruid,args | grep $USERID | egrep "orca[.]orca" | grep -v grep | awk '{ print $1 }'`
+@@ -137,7 +137,7 @@
+     fi
+ fi
  
-             if [ "x$PID" = "x" ]
-             then
-@@ -258,7 +258,7 @@
- then
-     main
- else
--    if [ `grep -c "\-q" <<< $ARGS` -gt 0 ]
-+    if [ `echo $ARGS | grep -c "\-q"` -gt 0 ]
-     then
-         cleanup
+-if [ `grep -c "\-q" <<< $ARGS` -gt 0 ] ; then
++if [ `echo $ARGS | grep -c "\-q"` -gt 0 ] ; then
+     # If the user has done -q or --quit, that means to tell any
+     # existing orca process to quit.  So, we just do a cleanup.
+     #
+@@ -154,7 +154,7 @@
+     if [ "x$ARGS" = "x" ] ; then
+         CLEANUP=1
      else
-@@ -270,9 +270,9 @@
-         # erroneously types an illegal command line argument, the
-         # help text is emitted and the other orca is not killed.
-         #
--        if [ `egrep -c "\-s|\-g|\-n|\-u|\-e|\-d" <<< $ARGS` -eq 0 ]
-+        if [ `echo $ARGS | egrep -c "\-s|\-g|\-n|\-u|\-e|\-d"` -eq 0 ]
-         then
--            if [ `egrep -c "\-t" <<< $ARGS` -eq 0 ]
-+            if [ `echo $ARGS | egrep -c "\-t"` -eq 0 ]
-             then
-                 runOrca "NO_CLEANUP"
-             else
+-        CLEANUP=`egrep -c "\-s|\-t|\-n|\-u|\-e|\-d" <<< $ARGS`
++        CLEANUP=`echo $ARGS | egrep -c "\-s|\-t|\-n|\-u|\-e|\-d"`
+     fi
+ 
+     # Clean up before running orca to get anything that might

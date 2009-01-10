@@ -3,15 +3,14 @@
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/ORBit2/Makefile,v 1.50 2006/04/13 07:52:31 bland Exp $
+#   $MCom: ports/devel/ORBit2/Makefile,v 1.53 2008/09/21 06:32:52 kwm Exp $
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.14.14
+PORTVERSION=	2.14.16
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -25,8 +24,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack libidl ltverhack referencehack
-CONFIGURE_ARGS=	--disable-indent \
-		--with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

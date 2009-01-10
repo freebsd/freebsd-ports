@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.78 2008/03/09 18:58:47 mezz Exp $
+#   $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.81 2008/09/27 01:53:00 mezz Exp $
 #
 
 PORTNAME=	gnome-system-tools
-PORTVERSION=	2.22.0
-PORTREVISION=	2
+PORTVERSION=	2.22.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +23,7 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack nautilus2
+USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-services

@@ -3,10 +3,10 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.10 2006/03/05 21:26:56 marcus Exp $
+#   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.12 2008/09/09 00:08:35 kwm Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-gnome
 
@@ -21,7 +21,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gnomehack libgsf gnomevfs2 libbonobo ltverhack intlhack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
-		--with-bz2 --with-gnome --without-gvfs
+		--with-bz2 --with-gnome-vfs --with-gio
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgsf-1"
 

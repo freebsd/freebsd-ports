@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icon-naming-utils
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango.freedesktop.org/releases/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 
 pre-configure:
 	@ ${REINPLACE_CMD} -e "s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g" ${WRKSRC}/Makefile.in

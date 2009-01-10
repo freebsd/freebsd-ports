@@ -1,0 +1,133 @@
+lib/hamster-applet/hamster-applet
+%%PYTHON_SITELIBDIR%%/hamster/Configuration.py
+%%PYTHON_SITELIBDIR%%/hamster/Configuration.pyc
+%%PYTHON_SITELIBDIR%%/hamster/Configuration.pyo
+%%PYTHON_SITELIBDIR%%/hamster/KeyBinder.py
+%%PYTHON_SITELIBDIR%%/hamster/KeyBinder.pyc
+%%PYTHON_SITELIBDIR%%/hamster/KeyBinder.pyo
+%%PYTHON_SITELIBDIR%%/hamster/__init__.py
+%%PYTHON_SITELIBDIR%%/hamster/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hamster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hamster/about.py
+%%PYTHON_SITELIBDIR%%/hamster/about.pyc
+%%PYTHON_SITELIBDIR%%/hamster/about.pyo
+%%PYTHON_SITELIBDIR%%/hamster/add_custom_fact.py
+%%PYTHON_SITELIBDIR%%/hamster/add_custom_fact.pyc
+%%PYTHON_SITELIBDIR%%/hamster/add_custom_fact.pyo
+%%PYTHON_SITELIBDIR%%/hamster/applet.py
+%%PYTHON_SITELIBDIR%%/hamster/applet.pyc
+%%PYTHON_SITELIBDIR%%/hamster/applet.pyo
+%%PYTHON_SITELIBDIR%%/hamster/charting.py
+%%PYTHON_SITELIBDIR%%/hamster/charting.pyc
+%%PYTHON_SITELIBDIR%%/hamster/charting.pyo
+%%PYTHON_SITELIBDIR%%/hamster/db.py
+%%PYTHON_SITELIBDIR%%/hamster/db.pyc
+%%PYTHON_SITELIBDIR%%/hamster/db.pyo
+%%PYTHON_SITELIBDIR%%/hamster/defs.py
+%%PYTHON_SITELIBDIR%%/hamster/defs.pyc
+%%PYTHON_SITELIBDIR%%/hamster/defs.pyo
+%%PYTHON_SITELIBDIR%%/hamster/dispatcher.py
+%%PYTHON_SITELIBDIR%%/hamster/dispatcher.pyc
+%%PYTHON_SITELIBDIR%%/hamster/dispatcher.pyo
+%%PYTHON_SITELIBDIR%%/hamster/eds.py
+%%PYTHON_SITELIBDIR%%/hamster/eds.pyc
+%%PYTHON_SITELIBDIR%%/hamster/eds.pyo
+%%PYTHON_SITELIBDIR%%/hamster/idle.py
+%%PYTHON_SITELIBDIR%%/hamster/idle.pyc
+%%PYTHON_SITELIBDIR%%/hamster/idle.pyo
+%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.py
+%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hamster/keybinder/_keybinder.la
+%%PYTHON_SITELIBDIR%%/hamster/keybinder/_keybinder.so
+%%PYTHON_SITELIBDIR%%/hamster/preferences.py
+%%PYTHON_SITELIBDIR%%/hamster/preferences.pyc
+%%PYTHON_SITELIBDIR%%/hamster/preferences.pyo
+%%PYTHON_SITELIBDIR%%/hamster/reports.py
+%%PYTHON_SITELIBDIR%%/hamster/reports.pyc
+%%PYTHON_SITELIBDIR%%/hamster/reports.pyo
+%%PYTHON_SITELIBDIR%%/hamster/stats.py
+%%PYTHON_SITELIBDIR%%/hamster/stats.pyc
+%%PYTHON_SITELIBDIR%%/hamster/stats.pyo
+%%PYTHON_SITELIBDIR%%/hamster/storage.py
+%%PYTHON_SITELIBDIR%%/hamster/storage.pyc
+%%PYTHON_SITELIBDIR%%/hamster/storage.pyo
+%%PYTHON_SITELIBDIR%%/hamster/stuff.py
+%%PYTHON_SITELIBDIR%%/hamster/stuff.pyc
+%%PYTHON_SITELIBDIR%%/hamster/stuff.pyo
+libdata/bonobo/servers/Hamster_Applet.server
+share/gnome-control-center/keybindings/99-hamster-applet.xml
+%%DATADIR%%/Hamster_Applet.xml
+%%DATADIR%%/add_custom_fact.glade
+%%DATADIR%%/art/hamster-applet.png
+%%DATADIR%%/art/stock_calendar-view-day.png
+%%DATADIR%%/art/stock_calendar-view-month.png
+%%DATADIR%%/art/stock_calendar-view-week.png
+%%DATADIR%%/hamster.db
+%%DATADIR%%/menu.glade
+%%DATADIR%%/preferences.glade
+%%DATADIR%%/stats.glade
+share/icons/hicolor/16x16/apps/hamster-applet.png
+share/icons/hicolor/22x22/apps/hamster-applet.png
+share/icons/hicolor/32x32/apps/hamster-applet.png
+share/icons/hicolor/48x48/apps/hamster-applet.png
+share/icons/hicolor/scalable/apps/hamster-applet.svg
+share/locale/ar/LC_MESSAGES/hamster-applet.mo
+share/locale/bg/LC_MESSAGES/hamster-applet.mo
+share/locale/bn_IN/LC_MESSAGES/hamster-applet.mo
+share/locale/ca/LC_MESSAGES/hamster-applet.mo
+share/locale/cs/LC_MESSAGES/hamster-applet.mo
+share/locale/da/LC_MESSAGES/hamster-applet.mo
+share/locale/de/LC_MESSAGES/hamster-applet.mo
+share/locale/el/LC_MESSAGES/hamster-applet.mo
+share/locale/en_GB/LC_MESSAGES/hamster-applet.mo
+share/locale/es/LC_MESSAGES/hamster-applet.mo
+share/locale/et/LC_MESSAGES/hamster-applet.mo
+share/locale/eu/LC_MESSAGES/hamster-applet.mo
+share/locale/fi/LC_MESSAGES/hamster-applet.mo
+share/locale/fr/LC_MESSAGES/hamster-applet.mo
+share/locale/gl/LC_MESSAGES/hamster-applet.mo
+share/locale/gu/LC_MESSAGES/hamster-applet.mo
+share/locale/he/LC_MESSAGES/hamster-applet.mo
+share/locale/hi/LC_MESSAGES/hamster-applet.mo
+share/locale/hu/LC_MESSAGES/hamster-applet.mo
+share/locale/it/LC_MESSAGES/hamster-applet.mo
+share/locale/ja/LC_MESSAGES/hamster-applet.mo
+share/locale/kn/LC_MESSAGES/hamster-applet.mo
+share/locale/ko/LC_MESSAGES/hamster-applet.mo
+share/locale/lt/LC_MESSAGES/hamster-applet.mo
+share/locale/lv/LC_MESSAGES/hamster-applet.mo
+share/locale/mk/LC_MESSAGES/hamster-applet.mo
+share/locale/ml/LC_MESSAGES/hamster-applet.mo
+share/locale/mr/LC_MESSAGES/hamster-applet.mo
+share/locale/nb/LC_MESSAGES/hamster-applet.mo
+share/locale/nl/LC_MESSAGES/hamster-applet.mo
+share/locale/pa/LC_MESSAGES/hamster-applet.mo
+share/locale/pl/LC_MESSAGES/hamster-applet.mo
+share/locale/pt/LC_MESSAGES/hamster-applet.mo
+share/locale/pt_BR/LC_MESSAGES/hamster-applet.mo
+share/locale/ru/LC_MESSAGES/hamster-applet.mo
+share/locale/sl/LC_MESSAGES/hamster-applet.mo
+share/locale/sq/LC_MESSAGES/hamster-applet.mo
+share/locale/sr/LC_MESSAGES/hamster-applet.mo
+share/locale/sr@latin/LC_MESSAGES/hamster-applet.mo
+share/locale/sv/LC_MESSAGES/hamster-applet.mo
+share/locale/ta/LC_MESSAGES/hamster-applet.mo
+share/locale/th/LC_MESSAGES/hamster-applet.mo
+share/locale/tr/LC_MESSAGES/hamster-applet.mo
+share/locale/zh_CN/LC_MESSAGES/hamster-applet.mo
+share/locale/zh_HK/LC_MESSAGES/hamster-applet.mo
+share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
+@dirrm %%DATADIR%%/art
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/hamster/keybinder
+@dirrm %%PYTHON_SITELIBDIR%%/hamster
+@dirrm lib/hamster-applet
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

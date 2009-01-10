@@ -8,13 +8,3 @@
  #include <arpa/inet.h>
  
  
-@@ -1316,8 +1317,8 @@ build_siglist(void)
- 
- 	for(i = 0; i < len; ++i)
- 	{
--		p = &glibtop_sys_siglist[i];
- 		PyObject* d;
-+		p = &glibtop_sys_siglist[i];
- 
- 		d = PyDict_New();
- 		my_dict_add_and_decref(d, "number", PyI_L(p->number));

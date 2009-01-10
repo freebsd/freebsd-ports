@@ -16,6 +16,7 @@ share/applications/polkit-gnome-authorization.desktop
 share/dbus-1/services/gnome-org.freedesktop.PolicyKit.AuthenticationAgent.service
 share/dbus-1/services/org.gnome.PolicyKit.AuthorizationManager.service
 share/dbus-1/services/org.gnome.PolicyKit.service
+share/locale/ar/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/ca/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/cs/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/da/LC_MESSAGES/PolicyKit-gnome.mo

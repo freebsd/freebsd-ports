@@ -54,52 +54,6 @@
 +G_END_DECLS
 +
 +#endif /* __CPUFREQ_SELECTOR_SYSCTL_H__ */
---- cpufreq/src/cpufreq-selector/main.c.orig	Sat Jun 17 22:13:41 2006
-+++ cpufreq/src/cpufreq-selector/main.c	Sat Jun 24 02:15:02 2006
-@@ -17,6 +17,7 @@
-  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-  *
-  * Authors : Carlos García Campos <carlosgc@gnome.org>
-+ *           Joe Marcus Clarke <marcus@FreeBSD.org>
-  */
- 
- #ifdef HAVE_CONFIG_H
-@@ -33,6 +34,9 @@
- #ifdef HAVE_LIBCPUFREQ
- #include "cpufreq-selector-libcpufreq.h"
- #endif
-+#ifdef __FreeBSD__
-+#include "cpufreq-selector-sysctl.h"
-+#endif /* __FreeBSD__ */
- 
- static gint    cpu = 0;
- static gchar  *governor = NULL;
-@@ -51,6 +55,9 @@ main (gint argc, gchar **argv)
- 	CPUFreqSelector *selector;
-         GOptionContext  *context;
- 	GError          *error = NULL;
-+#ifdef __FreeBSD__
-+	size_t           len;
-+#endif
- 
-         if (geteuid () != 0) {
-                 g_printerr ("You must be root\n");
-@@ -83,10 +90,15 @@ main (gint argc, gchar **argv)
- #ifdef HAVE_LIBCPUFREQ
- 	selector = cpufreq_selector_libcpufreq_new (cpu);
- #else
-+#ifndef __FreeBSD__
- 	if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
- 		selector = cpufreq_selector_sysfs_new (cpu);
- 	} else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
- 		selector = cpufreq_selector_procfs_new (cpu);
-+#else
-+	if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
-+		selector = cpufreq_selector_sysctl_new (cpu);
-+#endif /* __FreeBSD__ */
- 	} else {
- 		g_printerr ("No cpufreq support\n");
- 		return 1;
 --- cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.c.orig	Wed Jul 26 01:34:18 2006
 +++ cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.c	Wed Jul 26 01:42:00 2006
 @@ -0,0 +1,87 @@
@@ -190,39 +144,75 @@
 +
 +	   return TRUE;
 +}
---- cpufreq/src/cpufreq-selector/Makefile.in.orig	2007-07-30 21:08:35.000000000 -0400
-+++ cpufreq/src/cpufreq-selector/Makefile.in	2007-07-30 21:08:36.000000000 -0400
-@@ -57,13 +57,15 @@ am__cpufreq_selector_SOURCES_DIST = cpuf
- 	cpufreq-selector.h cpufreq-selector-sysfs.c \
- 	cpufreq-selector-sysfs.h cpufreq-selector-procfs.c \
- 	cpufreq-selector-procfs.h cpufreq-selector-libcpufreq.c \
--	cpufreq-selector-libcpufreq.h main.c
-+	cpufreq-selector-libcpufreq.h main.c \
-+	cpufreq-selector-sysctl.c cpufreq-selector-sysctl.h
+--- cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c.orig	2008-06-16 14:33:25.000000000 -0400
++++ cpufreq/src/cpufreq-selector/cpufreq-selector-factory.c	2008-06-16 14:35:28.000000000 -0400
+@@ -27,20 +27,32 @@
+ #ifdef HAVE_LIBCPUFREQ
+ #include "cpufreq-selector-libcpufreq.h"
+ #endif
++#ifdef __FreeBSD__
++#include "cpufreq-selector-sysctl.h"
++#endif /* __FreeBSD__ */
+ 
+ CPUFreqSelector *
+ cpufreq_selector_factory_create_selector (guint cpu)
+ {
+ 	CPUFreqSelector *selector = NULL;
++#ifdef __FreeBSD__
++	size_t len;
++#endif
+ 	
+ #ifdef HAVE_LIBCPUFREQ
+ 	selector = cpufreq_selector_libcpufreq_new (cpu);
+ #else
++#ifndef __FreeBSD__
+ 	if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+ 		selector = cpufreq_selector_sysfs_new (cpu);
+ 	} else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
+ 		selector = cpufreq_selector_procfs_new (cpu);
+ 	}
++#else
++	if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
++		selector = cpufreq_selector_sysctl_new (cpu);
++	}
++#endif /* __FreeBSD__ */
+ #endif /* HAVE_LIBCPUFREQ */
+ 
+ 	return selector;
+--- cpufreq/src/cpufreq-selector/Makefile.in.orig	2008-06-16 14:26:07.000000000 -0400
++++ cpufreq/src/cpufreq-selector/Makefile.in	2008-06-16 14:38:15.000000000 -0400
+@@ -65,7 +65,7 @@ am__cpufreq_selector_SOURCES_DIST = cpuf
+ 	cpufreq-selector-libcpufreq.h cpufreq-selector-service.c \
+ 	cpufreq-selector-service.h cpufreq-selector-factory.c \
+ 	cpufreq-selector-factory.h cpufreq-selector-service-glue.h \
+-	main.c
++	main.c cpufreq-selector-sysctl.c cpufreq-selector-sysctl.h
  @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
  @HAVE_LIBCPUFREQ_TRUE@	cpufreq-selector-libcpufreq.$(OBJEXT)
- am_cpufreq_selector_OBJECTS = cpufreq-selector.$(OBJEXT) \
+ @HAVE_POLKIT_TRUE@am__objects_2 = cpufreq-selector-service.$(OBJEXT)
+@@ -74,7 +74,8 @@ am_cpufreq_selector_OBJECTS = cpufreq-se
  	cpufreq-selector-sysfs.$(OBJEXT) \
  	cpufreq-selector-procfs.$(OBJEXT) $(am__objects_1) \
--	main.$(OBJEXT)
-+	main.$(OBJEXT) \
+ 	$(am__objects_2) cpufreq-selector-factory.$(OBJEXT) \
+-	$(am__objects_3) main.$(OBJEXT)
++	$(am__objects_3) main.$(OBJEXT) \
 +	cpufreq-selector-sysctl.$(OBJEXT)
  cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
  am__DEPENDENCIES_1 =
- cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-@@ -381,6 +383,7 @@ cpufreq_selector_SOURCES = \
- 	cpufreq-selector.c               cpufreq-selector.h        \
- 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  \
- 	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h \
-+	cpufreq-selector-sysctl.c        cpufreq-selector-sysctl.h \
- 	$(cpufreq_files)					   \
- 	main.c
- 
-@@ -462,6 +465,7 @@ distclean-compile:
- 
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-libcpufreq.Po@am__quote@
+ @HAVE_POLKIT_TRUE@am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) \
+@@ -371,6 +372,7 @@ cpufreq_selector_SOURCES = \
+ 	cpufreq-selector.c               cpufreq-selector.h        	\
+ 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  	\
+ 	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h 	\
++	cpufreq-selector-sysctl.c	 cpufreq-selector-sysctl.h 	\
+ 	$(cpufreq_files)					   	\
+ 	$(service_files)						\
+ 	cpufreq-selector-factory.c	 cpufreq-selector-factory.h	\
+@@ -480,6 +482,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-procfs.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysctl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-service.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysfs.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysctl.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+ 

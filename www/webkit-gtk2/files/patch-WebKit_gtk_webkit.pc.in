@@ -1,0 +1,8 @@
+--- WebKit/gtk/webkit.pc.in.orig	2008-04-01 14:46:09.251210738 -0400
++++ WebKit/gtk/webkit.pc.in	2008-04-01 14:46:21.218068816 -0400
+@@ -8,4 +8,4 @@
+ Version: @VERSION@
+ Requires: gtk+-2.0
+ Libs: -L${libdir} -lwebkit-1.0
+-Cflags: -I${includedir}/webkit-1.0
++Cflags: -I${includedir}/webkit-1.0 -I${includedir}/webkit-1.0/webkit

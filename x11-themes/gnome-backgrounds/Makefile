@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-themes/gnome-backgrounds/Makefile,v 1.33 2008/03/10 01:12:43 mezz Exp $
+#   $MCom: ports/x11-themes/gnome-backgrounds/Makefile,v 1.41 2008/09/23 15:03:03 kwm Exp $
 #
 
 PORTNAME=	gnome-backgrounds
-PORTVERSION=	2.22.0
-PORTREVISION=	1
+PORTVERSION=	2.24.0
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +19,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnometarget gnomehack intlhack
+USE_GNOME=	gnomeprefix gnomehack intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 

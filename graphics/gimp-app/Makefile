@@ -3,12 +3,12 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/gimp-app/Makefile,v 1.4 2008/06/17 03:24:09 mezz Exp $
+#   $MCom: ports/graphics/gimp-app/Makefile,v 1.30 2009/01/04 22:16:26 marcus Exp $
 #
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -45,7 +45,7 @@ USE_XORG=	xpm xmu xext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack \
-		desktopfileutils
+		desktopfileutils librsvg2
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -56,7 +56,7 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary \
-		--without-gvfs
+		--without-gnomevfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
@@ -66,10 +66,9 @@ WANT_GNOME=	yes
 
 OPTIONS?=	DEBUG "debugging" off \
 		DBUS "D-BUS support" on \
-		GNOMEVFS "Use GNOME VFS for the URI plug-in" on \
+		GVFS "Use GVFS for the URI plug-in" on \
 		HELPBROWSER "internal help browser" on \
-		MP "multiple processor support" off \
-		RSVG "SVG format support" on
+		MP "multiple processor support" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -91,14 +90,6 @@ MLINKS=	gimp-2.6.1 gimp.1 \
 	gimp-console-2.6.1 gimp-console.1 \
 	gimprc-2.6.5 gimprc.5
 
-.if defined(WITHOUT_RSVG)
-CONFIGURE_ARGS+=	--without-librsvg
-PLIST_SUB+=		SVG="@comment "
-.else
-USE_GNOME+=		librsvg2
-PLIST_SUB+=		SVG=""
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -117,7 +108,7 @@ PLIST_SUB+=		GNOME="@comment "
 .endif
 
 .if defined(WITH_HELPBROWSER)
-LIB_DEPENDS+=		WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=		webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=	--with-webkit
 PLIST_SUB+=		HELPBROWSER=""
 .else
@@ -132,9 +123,9 @@ CONFIGURE_ARGS+=	--with-dbus
 CONFIGURE_ARGS+=	--without-dbus
 .endif
 
-.if defined(WITH_GNOMEVFS) || ${HAVE_GNOME:Mgnomevfs2}!=""
+.if defined(WITH_GVFS) || ${HAVE_GNOME:Mgvfs}!=""
 LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-USE_GNOME+=	gnomevfs2
+USE_GNOME+=	gvfs
 .  if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
 .  endif

@@ -1,0 +1,19 @@
+GNU Data Access (GDA) is an attempt to provide uniform access to 
+different kinds of data sources (databases, information servers,
+mail spools, etc).
+
+It is a complete architecture that provides all you need to access
+your data, defined by a set of CORBA interfaces as generic as possible
+(but very powerful at the same time) so that any kind of data source
+can be accessed through them.
+
+libgda is an interface to the GDA architecture, providing a nice
+wrapper around the CORBA interfaces, for both the client and the server
+parts. It also provides a bunch of tools to help you both in the
+development and management of your data sources, all done through
+the GDA model's set of CORBA interfaces.
+
+libgda was part of the GNOME-DB project, but has been separated from it
+to allow non-GNOME applications to be developed based on it.
+
+WWW: http://www.gnome-db.org/

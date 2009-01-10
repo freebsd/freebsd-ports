@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gnome-media/Makefile,v 1.114 2008/03/11 02:39:19 mezz Exp $
+#   $MCom: ports/audio/gnome-media/Makefile,v 1.123 2008/09/24 03:17:39 mezz Exp $
 #
 
 PORTNAME=	gnome-media
-PORTVERSION=	2.22.0
-PORTREVISION=	1
+PORTVERSION=	2.24.0.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,15 +23,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
-		gail nautiluscdburner
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop nautiluscdburner
 USE_GSTREAMER=	cdparanoia esound gconf good
 CONFIGURE_ARGS=	--enable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	CDDB-Slave2.schemas gnome-audio-profiles.schemas \
-		gnome-cd.schemas gnome-sound-recorder.schemas \
+GCONF_SCHEMAS=	gnome-audio-profiles.schemas \
+		gnome-sound-recorder.schemas \
 		gnome-volume-control.schemas
 
 post-patch:

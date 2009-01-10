@@ -1,0 +1,87 @@
+diff -p -up hal-0.5.11/configure.in.ck03 hal-0.5.11/configure.in
+--- hal-0.5.11/configure.in.ck03	2008-05-07 19:24:31.000000000 -0400
++++ configure.in	2008-08-11 06:18:07.000000000 -0400
+@@ -485,6 +485,20 @@ if test "x$enable_console_kit" != "xno";
+    AM_CONDITIONAL(HAVE_CONKIT, true)
+    AC_DEFINE(HAVE_CONKIT, [], [Set if we use ConsoleKit])
+    msg_conkit=yes
++   # yes this is ugly, but there is no other way to get the version of CK 
++   AC_MSG_CHECKING([if ConsoleKit version 0.3.0 or newer])
++   if $PKG_CONFIG --atleast-version=0.3.0 ck-connector; then
++     AC_MSG_RESULT([yes])
++     AC_DEFINE(HAVE_CK_0_3, 1, [Define to 1 if ConsoleKit is v0.3.0 or newer])
++   else 
++     if $PKG_CONFIG --max-version=0.2.10 ck-connector; then
++       AC_MSG_RESULT([no])
++     else
++       #assume we have the latest version
++       AC_MSG_WARN([Couldn't detect ConsoleKit version, install the devel package, assume for now you use >= 0.3.0])
++       AC_DEFINE(HAVE_CK_0_3, 1, [Define to 1 if ConsoleKit is v0.3.0 or newer])
++     fi
++   fi
+ fi
+ 
+ AC_PATH_PROG(GPERF, [gperf], [no])
+diff -p -up hal-0.5.11/hald/ck-tracker.c.ck03 hal-0.5.11/hald/ck-tracker.c
+--- hal-0.5.11/hald/ck-tracker.c.ck03	2008-05-07 19:23:48.000000000 -0400
++++ hald/ck-tracker.c	2008-08-12 12:34:47.000000000 -0400
+@@ -256,7 +256,11 @@ ck_session_get_info (CKTracker *tracker,
+ 		goto error;
+ 	}
+ 	if (!dbus_message_get_args (reply, NULL,
++#ifdef HAVE_CK_0_3
++				    DBUS_TYPE_UINT32, &(session->user),
++#else
+ 				    DBUS_TYPE_INT32, &(session->user),
++#endif
+ 				    DBUS_TYPE_INVALID)) {
+ 		HAL_ERROR (("Invalid GetUnixUser reply from CK"));
+ 		goto error;
+@@ -531,7 +535,11 @@ ck_tracker_process_system_bus_message (C
+ 		seat_objpath = dbus_message_get_path (message);
+ 
+ 		if (!dbus_message_get_args (message, NULL,
++#ifdef HAVE_CK_0_3
++					    DBUS_TYPE_OBJECT_PATH, &seat_objpath,
++#else
+ 					    DBUS_TYPE_STRING, &seat_objpath,
++#endif
+ 					    DBUS_TYPE_INVALID)) {
+ 			HAL_ERROR (("Invalid SeatAdded signal from CK"));
+ 			goto out;
+@@ -558,7 +566,11 @@ ck_tracker_process_system_bus_message (C
+ 		seat_objpath = dbus_message_get_path (message);
+ 
+ 		if (!dbus_message_get_args (message, NULL,
++#ifdef HAVE_CK_0_3
++					    DBUS_TYPE_OBJECT_PATH, &seat_objpath,
++#else
+ 					    DBUS_TYPE_STRING, &seat_objpath,
++#endif
+ 					    DBUS_TYPE_INVALID)) {
+ 			HAL_ERROR (("Invalid SeatRemoved signal from CK"));
+ 			goto out;
+@@ -588,7 +600,11 @@ ck_tracker_process_system_bus_message (C
+ 		seat_objpath = dbus_message_get_path (message);
+ 
+ 		if (!dbus_message_get_args (message, NULL,
++#ifdef HAVE_CK_0_3
++					    DBUS_TYPE_OBJECT_PATH, &session_objpath,
++#else
+ 					    DBUS_TYPE_STRING, &session_objpath,
++#endif
+ 					    DBUS_TYPE_INVALID)) {
+ 			HAL_ERROR (("Invalid SessionAdded signal from CK"));
+ 			goto out;
+@@ -624,7 +640,11 @@ ck_tracker_process_system_bus_message (C
+ 		seat_objpath = dbus_message_get_path (message);
+ 
+ 		if (!dbus_message_get_args (message, NULL,
++#ifdef HAVE_CK_0_3
++					    DBUS_TYPE_OBJECT_PATH, &session_objpath,
++#else
+ 					    DBUS_TYPE_STRING, &session_objpath,
++#endif
+ 					    DBUS_TYPE_INVALID)) {
+ 			HAL_ERROR (("Invalid SessionRemoved signal from CK"));
+ 			goto out;

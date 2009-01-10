@@ -1,0 +1,206 @@
+bin/gda-list-config-%%VERSION%%
+bin/gda-list-server-op-%%VERSION%%
+bin/gda-sql-%%VERSION%%
+bin/gda-test-connection-%%VERSION%%
+bin/gda_trml2html/__init__.py
+bin/gda_trml2html/trml2html.py
+bin/gda_trml2html/utils.py
+bin/gda_trml2pdf/__init__.py
+bin/gda_trml2pdf/color.py
+bin/gda_trml2pdf/trml2pdf.py
+bin/gda_trml2pdf/utils.py
+@unexec if cmp -s %D/etc/libgda-%%VERSION%%/config %D/etc/libgda-%%VERSION%%/config.default; then rm -f %D/etc/libgda-%%VERSION%%/config; fi
+etc/libgda-%%VERSION%%/config.default
+@exec [ -f %B/config ] || cp %B/%f %B/config
+etc/libgda-%%VERSION%%/sales_test.db
+include/libgda-%%VERSION%%/libgda-report/gda-report-docbook-document.h
+include/libgda-%%VERSION%%/libgda-report/gda-report-document.h
+include/libgda-%%VERSION%%/libgda-report/gda-report-engine.h
+include/libgda-%%VERSION%%/libgda-report/gda-report-rml-document.h
+include/libgda-%%VERSION%%/libgda-report/libgda-report.h
+include/libgda-%%VERSION%%/libgda-xslt/libgda-xslt.h
+include/libgda-%%VERSION%%/libgda/gda-attributes-manager.h
+include/libgda-%%VERSION%%/libgda/gda-batch.h
+include/libgda-%%VERSION%%/libgda/gda-binreloc.h
+include/libgda-%%VERSION%%/libgda/gda-blob-op.h
+include/libgda-%%VERSION%%/libgda/gda-column.h
+include/libgda-%%VERSION%%/libgda/gda-config.h
+include/libgda-%%VERSION%%/libgda/gda-connection-event.h
+include/libgda-%%VERSION%%/libgda/gda-connection-private.h
+include/libgda-%%VERSION%%/libgda/gda-connection.h
+include/libgda-%%VERSION%%/libgda/gda-data-access-wrapper.h
+include/libgda-%%VERSION%%/libgda/gda-data-comparator.h
+include/libgda-%%VERSION%%/libgda/gda-data-handler.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-array.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-dir.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-extra.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-import.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-iter.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-iter-extra.h
+include/libgda-%%VERSION%%/libgda/gda-data-model-private.h
+include/libgda-%%VERSION%%/libgda/gda-data-model.h
+include/libgda-%%VERSION%%/libgda/gda-data-proxy.h
+include/libgda-%%VERSION%%/libgda/gda-data-select.h
+include/libgda-%%VERSION%%/libgda/gda-debug-macros.h
+include/libgda-%%VERSION%%/libgda/gda-decl.h
+include/libgda-%%VERSION%%/libgda/gda-easy.h
+include/libgda-%%VERSION%%/libgda/gda-enum-types.h
+include/libgda-%%VERSION%%/libgda/gda-enums.h
+include/libgda-%%VERSION%%/libgda/gda-holder.h
+include/libgda-%%VERSION%%/libgda/gda-lockable.h
+include/libgda-%%VERSION%%/libgda/gda-log.h
+include/libgda-%%VERSION%%/libgda/gda-marshal.h
+include/libgda-%%VERSION%%/libgda/gda-meta-store.h
+include/libgda-%%VERSION%%/libgda/gda-meta-struct.h
+include/libgda-%%VERSION%%/libgda/gda-mutex.h
+include/libgda-%%VERSION%%/libgda/gda-quark-list.h
+include/libgda-%%VERSION%%/libgda/gda-row.h
+include/libgda-%%VERSION%%/libgda/gda-server-operation.h
+include/libgda-%%VERSION%%/libgda/gda-server-provider-extra.h
+include/libgda-%%VERSION%%/libgda/gda-server-provider-private.h
+include/libgda-%%VERSION%%/libgda/gda-server-provider.h
+include/libgda-%%VERSION%%/libgda/gda-set.h
+include/libgda-%%VERSION%%/libgda/gda-statement-extra.h
+include/libgda-%%VERSION%%/libgda/gda-statement.h
+include/libgda-%%VERSION%%/libgda/gda-threader.h
+include/libgda-%%VERSION%%/libgda/gda-transaction-status-private.h
+include/libgda-%%VERSION%%/libgda/gda-transaction-status.h
+include/libgda-%%VERSION%%/libgda/gda-util.h
+include/libgda-%%VERSION%%/libgda/gda-value.h
+include/libgda-%%VERSION%%/libgda/gda-xa-transaction.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-bin.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-boolean.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-numerical.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-string.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-time.h
+include/libgda-%%VERSION%%/libgda/handlers/gda-handler-type.h
+include/libgda-%%VERSION%%/libgda/libgda.h
+include/libgda-%%VERSION%%/libgda/sqlite/gda-sqlite-provider.h
+include/libgda-%%VERSION%%/providers-support/gda-data-select-priv.h
+include/libgda-%%VERSION%%/providers-support/gda-pstmt.h
+include/libgda-%%VERSION%%/sql-parser/gda-sql-parser.h
+include/libgda-%%VERSION%%/sql-parser/gda-sql-parser-enum-types.h
+include/libgda-%%VERSION%%/sql-parser/gda-sql-statement.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-compound.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-decl.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-delete.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-insert.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-parts.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-pspec.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-select.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-trans.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-unknown.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-update.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct-util.h
+include/libgda-%%VERSION%%/sql-parser/gda-statement-struct.h
+include/libgda-%%VERSION%%/virtual/gda-vconnection-data-model.h
+include/libgda-%%VERSION%%/virtual/gda-vconnection-hub.h
+include/libgda-%%VERSION%%/virtual/gda-virtual-connection.h
+include/libgda-%%VERSION%%/virtual/gda-virtual-provider.h
+include/libgda-%%VERSION%%/virtual/gda-vprovider-data-model.h
+include/libgda-%%VERSION%%/virtual/gda-vprovider-hub.h
+include/libgda-%%VERSION%%/virtual/libgda-virtual.h
+lib/libgda-%%VERSION%%.a
+lib/libgda-%%VERSION%%.la
+lib/libgda-%%VERSION%%.so
+lib/libgda-%%VERSION%%.so.4
+lib/libgda-%%VERSION%%/providers/libgda-sqlite.a
+lib/libgda-%%VERSION%%/providers/libgda-sqlite.la
+lib/libgda-%%VERSION%%/providers/libgda-sqlite.so
+lib/libgda-report-%%VERSION%%.a
+lib/libgda-report-%%VERSION%%.la
+lib/libgda-report-%%VERSION%%.so
+lib/libgda-report-%%VERSION%%.so.4
+lib/libgda-xslt-%%VERSION%%.a
+lib/libgda-xslt-%%VERSION%%.la
+lib/libgda-xslt-%%VERSION%%.so
+lib/libgda-xslt-%%VERSION%%.so.4
+libdata/pkgconfig/libgda-%%VERSION%%.pc
+libdata/pkgconfig/libgda-report-%%VERSION%%.pc
+libdata/pkgconfig/libgda-sqlite-%%VERSION%%.pc
+libdata/pkgconfig/libgda-xslt-%%VERSION%%.pc
+share/libgda-%%VERSION%%/dtd/libgda-array.dtd
+share/libgda-%%VERSION%%/dtd/libgda-paramlist.dtd
+share/libgda-%%VERSION%%/dtd/libgda-server-operation.dtd
+share/libgda-%%VERSION%%/information_schema.xml
+share/libgda-%%VERSION%%/sqlite_specs_add_column.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_db.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_index.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_table.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_view.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_db.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_index.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_table.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_view.xml
+share/libgda-%%VERSION%%/sqlite_specs_dsn.xml
+share/libgda-%%VERSION%%/sqlite_specs_rename_table.xml
+share/locale/ar/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ca/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/el/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/en_CA/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/eu/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fa/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ga/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/gl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/hr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ko/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/mk/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ml/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ms/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ne/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/oc/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pa/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pt/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sr@Latn/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/tr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
+@dirrm share/libgda-%%VERSION%%/dtd
+@dirrm share/libgda-%%VERSION%%/
+@dirrm lib/libgda-%%VERSION%%/providers
+@dirrm lib/libgda-%%VERSION%%
+@dirrm include/libgda-%%VERSION%%/virtual
+@dirrm include/libgda-%%VERSION%%/sql-parser/
+@dirrm include/libgda-%%VERSION%%/providers-support
+@dirrm include/libgda-%%VERSION%%/libgda/sqlite/
+@dirrm include/libgda-%%VERSION%%/libgda/handlers
+@dirrm include/libgda-%%VERSION%%/libgda-xslt/
+@dirrm include/libgda-%%VERSION%%/libgda-report
+@dirrmtry etc/libgda-%%VERSION%%
+@dirrm bin/gda_trml2pdf
+@dirrm bin/gda_trml2html
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

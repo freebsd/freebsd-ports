@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/cairo/Makefile,v 1.3 2008/06/16 21:35:57 mezz Exp $
+#   $MCom: ports/graphics/cairo/Makefile,v 1.89 2008/12/16 03:06:44 marcus Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.6.4
-PORTREVISION?=	4
+PORTVERSION=	1.8.6
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--enable-pdf \
 		--enable-ps
-USE_GNOME=	gnometarget gnomehack ltverhack referencehack
+USE_GNOME=	gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 

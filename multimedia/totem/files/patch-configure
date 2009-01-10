@@ -1,12 +1,12 @@
---- configure.orig	2008-08-02 00:06:51.000000000 -0500
-+++ configure	2008-08-02 00:09:01.000000000 -0500
-@@ -25298,8 +25298,7 @@
- 	if test "$have_libxpcomglue_s" = "yes"; then
- 		LIBXPCOMGLUE_S="-L$MOZILLA_LIBDIR -lxpcomglue_s"
- 	else
--		{ echo "$as_me:$LINENO: WARNING: libxpcomglue_s not available; plugins may not be portable" >&5
--echo "$as_me: WARNING: libxpcomglue_s not available; plugins may not be portable" >&2;}
-+		LIBXPCOMGLUE_S=`$PKG_CONFIG --libs $MOZILLA-xpcom`
- 	fi
- fi
+--- configure.orig	2008-08-30 08:23:22.000000000 +0200
++++ configure	2008-08-30 08:24:20.000000000 +0200
+@@ -25171,7 +25171,9 @@
+ _ACEOF
+ 
+ 
++if [ -z "${BROWSER_PLUGIN_DIR}" ]; then
+ 	BROWSER_PLUGIN_DIR="${BROWSER_PLUGIN_DIR:-"\${libdir}/mozilla/plugins"}"
++fi
+ 
+ 
  

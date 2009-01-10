@@ -1,5 +1,5 @@
---- esdlib.c.orig	2008-07-30 17:08:59.000000000 -0400
-+++ esdlib.c	2008-09-07 22:19:48.000000000 -0400
+--- esdlib.c.orig	2008-11-18 15:35:19.000000000 -0500
++++ esdlib.c	2008-11-20 14:32:59.000000000 -0500
 @@ -21,6 +21,8 @@
  #include <errno.h>
  #include <sys/wait.h>
@@ -9,17 +9,16 @@
  
  #include <sys/un.h>
  
-@@ -895,8 +897,7 @@ int esd_open_sound( const char *host )
- 		setsid();
- 		cmd = malloc(strlen(SERVERDIR"/esd  -spawnfd 999999") + (esd_spawn_options?strlen(esd_spawn_options):0));
+@@ -928,7 +930,7 @@ int esd_open_sound( const char *rhost )
+ 		    putenv(preload2);
+ 		}
+ 	    cmd = malloc(strlen(SERVERDIR"/esd  -spawnfd 9999999999") + strlen(esd_spawn_options));
+-	    sprintf(cmd, "%s/esd %s -spawnfd %d", SERVERDIR, esd_spawn_options, esd_pipe[1]);
++	    sprintf(cmd, "exec esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
  
--		sprintf(cmd, "%s/esd %s -spawnfd %d", SERVERDIR, esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
--
-+		sprintf(cmd, "exec esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
- 		execl("/bin/sh", "/bin/sh", "-c", cmd, NULL);
- 		perror("execl");
- 		_exit(1);
-@@ -1709,3 +1710,34 @@ int esd_close( int esd )
+ 	    if(!fork()) {
+ 		/* child of child process.  Minimal so startup overhead is
+@@ -1747,3 +1749,34 @@ int esd_close( int esd )
      return close( esd );
  }
  

@@ -3,7 +3,7 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/libgtkhtml/Makefile,v 1.39 2006/09/10 00:51:14 mezz Exp $
+#   $MCom: ports/www/libgtkhtml/Makefile,v 1.41 2008/08/23 18:23:00 mezz Exp $
 #
 
 PORTNAME=	libgtkhtml
@@ -19,7 +19,7 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 gail ltverhack
+USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

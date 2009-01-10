@@ -3,11 +3,11 @@
 # Whom:					Andreas Kohn <andreas@syndrom23.de>
 #
 # $FreeBSD$
+#   $MCom: ports/deskutils/notification-daemon/Makefile,v 1.4 2008/11/30 19:43:36 marcus Exp $
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.3.7
-PORTREVISION=	3
+PORTVERSION=	0.4.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
@@ -17,10 +17,13 @@ COMMENT=	Send small notifications to your desktop
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gconf2 libwnck
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gconf2 libwnck \
+		libglade2
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_XORG=	x11 xt sm ice xext
+USE_GSTREAMER=	good
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,6 +19,7 @@ share/desktop-directories/gnome-screensaver.directory
 %%DATADIR%%/lock-dialog-default.glade
 share/locale/ar/LC_MESSAGES/gnome-screensaver.mo
 share/locale/as/LC_MESSAGES/gnome-screensaver.mo
+share/locale/ast/LC_MESSAGES/gnome-screensaver.mo
 share/locale/be/LC_MESSAGES/gnome-screensaver.mo
 share/locale/be@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
@@ -44,11 +45,14 @@ share/locale/gl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/gu/LC_MESSAGES/gnome-screensaver.mo
 share/locale/he/LC_MESSAGES/gnome-screensaver.mo
 share/locale/hi/LC_MESSAGES/gnome-screensaver.mo
+share/locale/hr/LC_MESSAGES/gnome-screensaver.mo
 share/locale/hu/LC_MESSAGES/gnome-screensaver.mo
 share/locale/id/LC_MESSAGES/gnome-screensaver.mo
+share/locale/is/LC_MESSAGES/gnome-screensaver.mo
 share/locale/it/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ja/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ka/LC_MESSAGES/gnome-screensaver.mo
+share/locale/kn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ko/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ku/LC_MESSAGES/gnome-screensaver.mo
 share/locale/lt/LC_MESSAGES/gnome-screensaver.mo
@@ -76,7 +80,7 @@ share/locale/sk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sq/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr/LC_MESSAGES/gnome-screensaver.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-screensaver.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sv/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ta/LC_MESSAGES/gnome-screensaver.mo
 share/locale/te/LC_MESSAGES/gnome-screensaver.mo
@@ -106,6 +110,8 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/ps/LC_MESSAGES
@@ -124,5 +130,7 @@ share/pixmaps/gnome-logo-white.svg
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

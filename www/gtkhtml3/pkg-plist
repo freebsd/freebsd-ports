@@ -1,3 +1,10 @@
+bin/gtkhtml-editor-test
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-actions.h
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-common.h
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-widgets.h
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor.h
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-spell-checker.h
+include/libgtkhtml-%%VERSION%%/editor/gtkhtml-spell-language.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/gtkhtml-embedded.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/gtkhtml-enums.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/gtkhtml-properties.h
@@ -8,19 +15,18 @@ include/libgtkhtml-%%VERSION%%/gtkhtml/gtkhtml.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmlenums.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmltokenizer.h
 include/libgtkhtml-%%VERSION%%/gtkhtml/htmltypes.h
-lib/gtkhtml/libgnome-gtkhtml-editor-%%VERSION%%.a
-lib/gtkhtml/libgnome-gtkhtml-editor-%%VERSION%%.la
-lib/gtkhtml/libgnome-gtkhtml-editor-%%VERSION%%.so
 lib/libgtkhtml-%%VERSION%%.a
 lib/libgtkhtml-%%VERSION%%.la
 lib/libgtkhtml-%%VERSION%%.so
 lib/libgtkhtml-%%VERSION%%.so.19
-libdata/bonobo/servers/GNOME_GtkHTML_Editor-%%VERSION%%.server
+lib/libgtkhtml-editor.a
+lib/libgtkhtml-editor.la
+lib/libgtkhtml-editor.so
+lib/libgtkhtml-editor.so.0
+libdata/pkgconfig/gtkhtml-editor.pc
 libdata/pkgconfig/libgtkhtml-%%VERSION%%.pc
-share/gtkhtml-%%VERSION%%/Editor.idl
-share/gtkhtml-%%VERSION%%/GNOME_GtkHTML_Editor-emacs.xml
-share/gtkhtml-%%VERSION%%/GNOME_GtkHTML_Editor.xml
-share/gtkhtml-%%VERSION%%/gtkhtml-editor-properties.glade
+share/gtkhtml-%%VERSION%%/gtkhtml-editor.glade
+share/gtkhtml-%%VERSION%%/gtkhtml-editor.ui
 share/gtkhtml-%%VERSION%%/icons/bulb.png
 share/gtkhtml-%%VERSION%%/icons/confidential-stamp.jpg
 share/gtkhtml-%%VERSION%%/icons/draft-paper.png
@@ -76,6 +82,7 @@ share/locale/id/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ka/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/kn/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ku/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -104,9 +111,10 @@ share/locale/sk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/sr@latin/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ta/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/te/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/th/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
@@ -117,13 +125,17 @@ share/locale/zh_HK/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 @dirrm share/gtkhtml-%%VERSION%%/icons
 @dirrm share/gtkhtml-%%VERSION%%
-@dirrmtry lib/gtkhtml
 @dirrm include/libgtkhtml-%%VERSION%%/gtkhtml
+@dirrm include/libgtkhtml-%%VERSION%%/editor
 @dirrm include/libgtkhtml-%%VERSION%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

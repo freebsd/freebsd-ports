@@ -154,7 +154,9 @@ share/applications/dasher.desktop
 %%DATADIR%%/dasher.fullscreen.glade
 %%DATADIR%%/dasher.gameWIP.glade
 %%DATADIR%%/dasher.traditional.glade
+%%DATADIR%%/dasher.preferences.glade
 %%DATADIR%%/dashermaemo.glade
+%%DATADIR%%/dashermaemo.preferences.glade
 %%DATADIR%%/dashermaemofullscreen.glade
 %%DATADIR%%/training_albanian_SQ.txt
 %%DATADIR%%/training_basque_EU.txt

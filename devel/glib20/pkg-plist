@@ -17,6 +17,8 @@ include/glib-2.0/gio/gcontenttype.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdrive.h
+include/glib-2.0/gio/gemblem.h
+include/glib-2.0/gio/gemblemedicon.h
 include/glib-2.0/gio/gfile.h
 include/glib-2.0/gio/gfileattribute.h
 include/glib-2.0/gio/gfileenumerator.h
@@ -31,10 +33,12 @@ include/glib-2.0/gio/gfilteroutputstream.h
 include/glib-2.0/gio/gicon.h
 include/glib-2.0/gio/ginputstream.h
 include/glib-2.0/gio/gio.h
+include/glib-2.0/gio/gioenums.h
 include/glib-2.0/gio/gioenumtypes.h
 include/glib-2.0/gio/gioerror.h
 include/glib-2.0/gio/giomodule.h
 include/glib-2.0/gio/gioscheduler.h
+include/glib-2.0/gio/giotypes.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
 include/glib-2.0/gio/gmemoryoutputstream.h
@@ -204,6 +208,7 @@ share/locale/ko/LC_MESSAGES/glib20.mo
 share/locale/ku/LC_MESSAGES/glib20.mo
 share/locale/lt/LC_MESSAGES/glib20.mo
 share/locale/lv/LC_MESSAGES/glib20.mo
+share/locale/mai/LC_MESSAGES/glib20.mo
 share/locale/mg/LC_MESSAGES/glib20.mo
 share/locale/mk/LC_MESSAGES/glib20.mo
 share/locale/ml/LC_MESSAGES/glib20.mo
@@ -218,6 +223,7 @@ share/locale/oc/LC_MESSAGES/glib20.mo
 share/locale/or/LC_MESSAGES/glib20.mo
 share/locale/pa/LC_MESSAGES/glib20.mo
 share/locale/pl/LC_MESSAGES/glib20.mo
+share/locale/ps/LC_MESSAGES/glib20.mo
 share/locale/pt/LC_MESSAGES/glib20.mo
 share/locale/pt_BR/LC_MESSAGES/glib20.mo
 share/locale/ro/LC_MESSAGES/glib20.mo
@@ -228,8 +234,8 @@ share/locale/sk/LC_MESSAGES/glib20.mo
 share/locale/sl/LC_MESSAGES/glib20.mo
 share/locale/sq/LC_MESSAGES/glib20.mo
 share/locale/sr/LC_MESSAGES/glib20.mo
-share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 share/locale/sr@ije/LC_MESSAGES/glib20.mo
+share/locale/sr@latin/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
 share/locale/te/LC_MESSAGES/glib20.mo
@@ -248,6 +254,9 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrm share/glib-2.0/gettext/po
 @dirrm share/glib-2.0/gettext
 @dirrm share/glib-2.0
+@exec mkdir -p %D/lib/gio/modules
+@dirrmtry lib/gio/modules
+@dirrmtry lib/gio
 @dirrm include/glib-2.0/gobject
 @dirrm include/glib-2.0/glib
 @dirrm include/glib-2.0/gio
@@ -266,18 +275,24 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/tl
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES

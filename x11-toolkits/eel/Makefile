@@ -3,12 +3,11 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.67 2008/03/10 21:38:32 mezz Exp $
+#   $MCom: ports/x11-toolkits/eel/Makefile,v 1.80 2008/10/20 21:37:09 mezz Exp $
 #
 
 PORTNAME=	eel
-PORTVERSION=	2.22.2
-PORTREVISION=	1
+PORTVERSION=	2.24.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	xrender
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack gail gnomedesktop ltverhack intlhack
+USE_GNOME=	gnomeprefix gnomehack gnomedesktop ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static

@@ -45,7 +45,8 @@ lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.pyo
-%%PYTHON%%lib/gedit-2/plugins/externaltools/tools.glade
+%%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.ui
+%%PYTHON%%lib/gedit-2/plugins/externaltools/tools.ui
 lib/gedit-2/plugins/filebrowser.gedit-plugin
 lib/gedit-2/plugins/indent.gedit-plugin
 lib/gedit-2/plugins/libchangecase.a
@@ -130,7 +131,7 @@ lib/gedit-2/plugins/sample.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/__init__.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/snippets.glade
+%%PYTHON%%lib/gedit-2/plugins/snippets/snippets.ui
 lib/gedit-2/plugins/sort.gedit-plugin
 lib/gedit-2/plugins/spell.gedit-plugin
 lib/gedit-2/plugins/taglist.gedit-plugin
@@ -171,19 +172,13 @@ share/applications/gedit.desktop
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gedit-2/glade/docinfo.glade2
-share/gedit-2/glade/gedit-encodings-dialog.glade
-share/gedit-2/glade/gedit-open-location-dialog.glade
-share/gedit-2/glade/gedit-preferences-dialog.glade
-share/gedit-2/glade/gedit-print-preferences.glade
-share/gedit-2/glade/gedit-search-dialog.glade
-share/gedit-2/glade/languages-dialog.glade2
-share/gedit-2/glade/sort.glade2
-share/gedit-2/glade/spell-checker.glade2
-share/gedit-2/glade/time.glade2
 share/gedit-2/icons/gedit-plugin.png
 share/gedit-2/logo/gedit-logo.png
+@exec mkdir -p %D/share/gedit-2/plugins/changecase
+share/gedit-2/plugins/docinfo/docinfo.ui
 share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
+@exec mkdir -p %D/share/gedit-2/plugins/indent
+@exec mkdir -p %D/share/gedit-2/plugins/sample
 %%PYTHON%%share/gedit-2/plugins/snippets/c++.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/c.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/css.xml
@@ -204,6 +199,10 @@ share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/snippets.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/tcl.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/xml.xml
+share/gedit-2/plugins/sort/sort.ui
+share/gedit-2/plugins/spell/languages-dialog.ui
+share/gedit-2/plugins/spell/spell-checker.ui
+share/gedit-2/plugins/time/time.ui
 %%PYTHON%%share/gedit-2/plugins/tools/build
 %%PYTHON%%share/gedit-2/plugins/tools/open-terminal-here
 %%PYTHON%%share/gedit-2/plugins/tools/remove-trailing-spaces
@@ -212,6 +211,11 @@ share/gedit-2/taglist/HTML.tags.gz
 share/gedit-2/taglist/Latex.tags.gz
 share/gedit-2/taglist/XSLT.tags.gz
 share/gedit-2/taglist/XUL.tags.gz
+share/gedit-2/ui/gedit-encodings-dialog.ui
+share/gedit-2/ui/gedit-open-location-dialog.ui
+share/gedit-2/ui/gedit-preferences-dialog.ui
+share/gedit-2/ui/gedit-print-preferences.ui
+share/gedit-2/ui/gedit-search-dialog.ui
 share/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/C/figures/gedit_format_bold.png
 share/gnome/help/gedit/C/figures/gedit_format_italic.png
@@ -229,6 +233,14 @@ share/gnome/help/gedit/bg/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/bg/figures/gedit_window.png
 share/gnome/help/gedit/bg/gedit.xml
 share/gnome/help/gedit/bg/legal.xml
+share/gnome/help/gedit/da/figures/gedit_format_bold.png
+share/gnome/help/gedit/da/figures/gedit_format_italic.png
+share/gnome/help/gedit/da/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/da/figures/gedit_format_underline.png
+share/gnome/help/gedit/da/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/da/figures/gedit_window.png
+share/gnome/help/gedit/da/gedit.xml
+share/gnome/help/gedit/da/legal.xml
 share/gnome/help/gedit/de/figures/gedit_format_bold.png
 share/gnome/help/gedit/de/figures/gedit_format_italic.png
 share/gnome/help/gedit/de/figures/gedit_format_strikethrough.png
@@ -249,6 +261,14 @@ share/gnome/help/gedit/eu/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/eu/figures/gedit_window.png
 share/gnome/help/gedit/eu/gedit.xml
 share/gnome/help/gedit/eu/legal.xml
+share/gnome/help/gedit/fi/figures/gedit_format_bold.png
+share/gnome/help/gedit/fi/figures/gedit_format_italic.png
+share/gnome/help/gedit/fi/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/fi/figures/gedit_format_underline.png
+share/gnome/help/gedit/fi/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/fi/figures/gedit_window.png
+share/gnome/help/gedit/fi/gedit.xml
+share/gnome/help/gedit/fi/legal.xml
 share/gnome/help/gedit/fr/figures/gedit_format_bold.png
 share/gnome/help/gedit/fr/figures/gedit_format_italic.png
 share/gnome/help/gedit/fr/figures/gedit_format_strikethrough.png
@@ -399,8 +419,10 @@ share/locale/ka/LC_MESSAGES/gedit.mo
 share/locale/kn/LC_MESSAGES/gedit.mo
 share/locale/ko/LC_MESSAGES/gedit.mo
 share/locale/ku/LC_MESSAGES/gedit.mo
+share/locale/la/LC_MESSAGES/gedit.mo
 share/locale/lt/LC_MESSAGES/gedit.mo
 share/locale/lv/LC_MESSAGES/gedit.mo
+share/locale/mai/LC_MESSAGES/gedit.mo
 share/locale/mg/LC_MESSAGES/gedit.mo
 share/locale/mi/LC_MESSAGES/gedit.mo
 share/locale/mk/LC_MESSAGES/gedit.mo
@@ -416,6 +438,7 @@ share/locale/oc/LC_MESSAGES/gedit.mo
 share/locale/or/LC_MESSAGES/gedit.mo
 share/locale/pa/LC_MESSAGES/gedit.mo
 share/locale/pl/LC_MESSAGES/gedit.mo
+share/locale/ps/LC_MESSAGES/gedit.mo
 share/locale/pt/LC_MESSAGES/gedit.mo
 share/locale/pt_BR/LC_MESSAGES/gedit.mo
 share/locale/ro/LC_MESSAGES/gedit.mo
@@ -426,7 +449,7 @@ share/locale/sk/LC_MESSAGES/gedit.mo
 share/locale/sl/LC_MESSAGES/gedit.mo
 share/locale/sq/LC_MESSAGES/gedit.mo
 share/locale/sr/LC_MESSAGES/gedit.mo
-share/locale/sr@Latn/LC_MESSAGES/gedit.mo
+share/locale/sr@latin/LC_MESSAGES/gedit.mo
 share/locale/sv/LC_MESSAGES/gedit.mo
 share/locale/ta/LC_MESSAGES/gedit.mo
 share/locale/te/LC_MESSAGES/gedit.mo
@@ -442,9 +465,11 @@ share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
 share/omf/gedit/gedit-C.omf
 share/omf/gedit/gedit-bg.omf
+share/omf/gedit/gedit-da.omf
 share/omf/gedit/gedit-de.omf
 share/omf/gedit/gedit-es.omf
 share/omf/gedit/gedit-eu.omf
+share/omf/gedit/gedit-fi.omf
 share/omf/gedit/gedit-fr.omf
 share/omf/gedit/gedit-hu.omf
 share/omf/gedit/gedit-it.omf
@@ -488,12 +513,16 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gnome/help/gedit/hu
 @dirrm share/gnome/help/gedit/fr/figures
 @dirrm share/gnome/help/gedit/fr
+@dirrm share/gnome/help/gedit/fi/figures
+@dirrm share/gnome/help/gedit/fi
 @dirrm share/gnome/help/gedit/eu/figures
 @dirrm share/gnome/help/gedit/eu
 @dirrm share/gnome/help/gedit/es/figures
 @dirrm share/gnome/help/gedit/es
 @dirrm share/gnome/help/gedit/de/figures
 @dirrm share/gnome/help/gedit/de
+@dirrm share/gnome/help/gedit/da/figures
+@dirrm share/gnome/help/gedit/da
 @dirrm share/gnome/help/gedit/bg/figures
 @dirrm share/gnome/help/gedit/bg
 @dirrm share/gnome/help/gedit/C/figures
@@ -502,15 +531,22 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gedit-2/ui
 @dirrm share/gedit-2/taglist
 %%PYTHON%%@dirrm share/gedit-2/plugins/tools
+@dirrm share/gedit-2/plugins/time
+@dirrm share/gedit-2/plugins/spell
+@dirrm share/gedit-2/plugins/sort
 %%PYTHON%%@dirrm share/gedit-2/plugins/snippets/lang
 %%PYTHON%%@dirrm share/gedit-2/plugins/snippets
+@dirrm share/gedit-2/plugins/sample
+@dirrm share/gedit-2/plugins/indent
 @dirrm share/gedit-2/plugins/filebrowser
+@dirrm share/gedit-2/plugins/docinfo
+@dirrm share/gedit-2/plugins/changecase
 @dirrm share/gedit-2/plugins
 @dirrm share/gedit-2/logo
 @dirrm share/gedit-2/icons
-@dirrm share/gedit-2/glade
 @dirrm share/gedit-2
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrmtry libexec/gedit-2
 %%PYTHON%%@dirrm lib/gedit-2/plugins/snippets
 %%PYTHON%%@dirrm lib/gedit-2/plugins/pythonconsole
@@ -521,17 +557,20 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm include/gedit-%%VERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -540,6 +579,10 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES

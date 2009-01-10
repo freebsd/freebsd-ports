@@ -1,6 +1,6 @@
---- docs/reference/camel/Makefile.in.orig	2007-12-21 11:30:30.000000000 +0100
-+++ docs/reference/camel/Makefile.in	2007-12-21 11:55:58.000000000 +0100
-@@ -123,7 +123,7 @@
+--- docs/reference/camel/Makefile.in.orig	2008-09-08 23:00:49.000000000 +0200
++++ docs/reference/camel/Makefile.in	2008-09-08 23:01:25.000000000 +0200
+@@ -129,7 +129,7 @@
  GOBJECT_QUERY = @GOBJECT_QUERY@
  GREP = @GREP@
  HAVE_JW = @HAVE_JW@
@@ -9,10 +9,10 @@
  ICONV_CFLAGS = @ICONV_CFLAGS@
  ICONV_LIBS = @ICONV_LIBS@
  IDL_INCLUDES = @IDL_INCLUDES@
-@@ -690,8 +690,8 @@
+@@ -704,8 +704,8 @@
+ 	    echo '-- Installing '$$i ; \
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
  	  done; \
- 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
- 	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
 -	  which gtkdoc-rebase >/dev/null && \
 -	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
 +#	  which gtkdoc-rebase >/dev/null && \

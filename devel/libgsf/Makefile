@@ -3,15 +3,14 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgsf/Makefile,v 1.27 2006/10/04 00:03:42 ahze Exp $
+#   $MCom: ports/devel/libgsf/Makefile,v 1.33 2009/01/08 01:28:46 marcus Exp $
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.8
-PORTREVISION?=	2
+PORTVERSION=	1.14.11
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,13 +26,14 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnomeprefix glib20 libxml2 gconf2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS?=--without-gnome --without-python --without-gvfs
+CONFIGURE_ARGS?=--without-gnome-vfs --without-python --with-gio \
+		--without-bonobo
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(GSF_SLAVE)
 GCONF_SCHEMAS=	gsf-office-thumbnailer.schemas
-MAN1=		gsf.1 gsf-office-thumbnailer.1
+MAN1=		gsf.1 gsf-office-thumbnailer.1 gsf-vba-dump.1
 .endif
 
 .include <bsd.port.mk>

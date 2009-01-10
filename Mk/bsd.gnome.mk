@@ -3,9 +3,22 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports-stable/Mk/bsd.gnome.mk,v 1.8 2008/06/16 21:35:56 mezz Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.471 2008/09/01 16:45:46 ahze Exp $
 #
 # Please view me with 4 column tabs!
+
+#######################################################
+#
+# *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
+#
+#MARCUSCOM_CVS=yes
+
+# ======================= USERS =================================
+# 
+# There are no significant user-definable settings in here.
+# This file is a framework to make it easier to create GNOME ports.
+# 
+# ======================= /USERS ================================
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gnome_Pre_Include)
 
@@ -57,11 +70,11 @@ _USE_GNOME_ALL+= bonobo gal gconf gdkpixbuf glib12 glibwww \
 		oaf orbit pygnome pygtk
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gail \
-		gal2 gconf2 _glib20 glib20 gnomecontrolcenter2 gnomedesktop gnomedocutils \
+_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 \
+		gconf2 _glib20 glib20 gnomecontrolcenter2 gnomedesktop gnomedocutils \
 		gnomemenus gnomepanel gnomesharp20 gnomespeech gnomevfs2 gtk20 \
 		gtkhtml3 gtksharp10 gtksharp20 gtksourceview gtksourceview2 gvfs \
-		libartlgpl2 libbonobo libbonoboui libgailgnome libgda2 libgda3 \
+		libartlgpl2 libbonobo libbonoboui libgailgnome libgda2 libgda3 libgda4 \
 		libglade2 libgnome libgnomecanvas libgnomedb libgnomekbd libgnomeprint \
 		libgnomeprintui libgnomeui libgsf libgsf_gnome libgtkhtml libidl \
 		librsvg2 libwnck libxml2 libxslt libzvt linc metacity nautilus2 \
@@ -103,9 +116,6 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${GNOME_LOCALSTATEDIR} \
 			   --disable-gtk-doc \
 			   --with-gconf-source=${GCONF_CONFIG_SOURCE}
 gnomeprefix_USE_GNOME_IMPL=gnomehier
-.if !defined(WITHOUT_HACK)
-gnomeprefix_PREFIX=${LOCALBASE}
-.endif
 
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
@@ -252,7 +262,7 @@ pygnome_USE_GNOME_IMPL=	gtkhtml pygtk
 
 _glib20_LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
 _glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
-_glib20_USE_GNOME_IMPL=	gnometarget pkgconfig
+_glib20_USE_GNOME_IMPL=	pkgconfig
 
 glib20_RUN_DEPENDS=	${LOCALBASE}/lib/gio/modules/libgiofam.so:${PORTSDIR}/devel/gio-fam-backend
 glib20_DETECT=		${LOCALBASE}/lib/gio/modules/libgiofam.so
@@ -307,13 +317,9 @@ gnomevfs2_LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnome-vfs
 gnomevfs2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-vfs-2.0.pc
 gnomevfs2_USE_GNOME_IMPL=gconf2 gnomemimedata
 
-gail_LIB_DEPENDS=	gailutil.18:${PORTSDIR}/accessibility/gail
-gail_DETECT=		${LOCALBASE}/libdata/pkgconfig/gail.pc
-gail_USE_GNOME_IMPL=	gtk20
-
 libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
 libgnomecanvas_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc
-libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2 gail
+libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
 libartlgpl2_LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl
 libartlgpl2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libart-2.0.pc
@@ -341,7 +347,7 @@ libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
 atspi_LIB_DEPENDS=	spi.10:${PORTSDIR}/accessibility/at-spi
 atspi_DETECT=		${LOCALBASE}/libdata/pkgconfig/cspi-1.0.pc
-atspi_USE_GNOME_IMPL=	gail libbonobo
+atspi_USE_GNOME_IMPL=	gtk20 libbonobo
 
 libgailgnome_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgail-gnome.pc
 libgailgnome_RUN_DEPENDS=	${libgailgnome_DETECT}:${PORTSDIR}/x11-toolkits/libgail-gnome
@@ -349,9 +355,9 @@ libgailgnome_USE_GNOME_IMPL=	libgnomeui atspi
 
 libgtkhtml_LIB_DEPENDS=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc
-libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2 gail
+libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
 
-gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.2:${PORTSDIR}/x11/gnome-desktop
+gnomedesktop_LIB_DEPENDS=	gnome-desktop-2.7:${PORTSDIR}/x11/gnome-desktop
 gnomedesktop_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	libgnomeui gnomedocutils
 gnomedesktop_GNOME_DESKTOP_VERSION=2
@@ -374,7 +380,7 @@ librsvg2_USE_GNOME_IMPL=libgsf gtk20
 
 eel2_LIB_DEPENDS=	eel-2.2:${PORTSDIR}/x11-toolkits/eel
 eel2_DETECT=		${LOCALBASE}/libdata/pkgconfig/eel-2.0.pc
-eel2_USE_GNOME_IMPL=	gnomedesktop gail
+eel2_USE_GNOME_IMPL=	gnomedesktop
 
 gnomepanel_LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnome-panel
 gnomepanel_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
@@ -405,6 +411,10 @@ libgda2_USE_GNOME_IMPL=	glib20 libxslt
 libgda3_LIB_DEPENDS=	gda-3.0.3:${PORTSDIR}/databases/libgda3
 libgda3_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgda-3.0.pc
 libgda3_USE_GNOME_IMPL=	glib20 libxslt
+
+libgda4_LIB_DEPENDS=	gda-4.0.4:${PORTSDIR}/databases/libgda4
+libgda4_DETECT=			 ${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
+libgda4_USE_GNOME_IMPL=	glib20 libxslt
 
 libgnomedb_LIB_DEPENDS=	gnomedb-3.0.4:${PORTSDIR}/databases/libgnomedb
 libgnomedb_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomedb.pc
@@ -452,13 +462,13 @@ intlhack_USE_GNOME_IMPL=intltool
 
 gtkhtml3_LIB_DEPENDS=	gtkhtml-3.14.19:${PORTSDIR}/www/gtkhtml3
 gtkhtml3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgtkhtml-3.14.pc
-gtkhtml3_USE_GNOME_IMPL=gail libgnomeui
+gtkhtml3_USE_GNOME_IMPL=libgnomeui
 
 gnomespeech_LIB_DEPENDS=gnomespeech.7:${PORTSDIR}/accessibility/gnome-speech
 gnomespeech_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
 gnomespeech_USE_GNOME_IMPL=libbonobo
 
-evolutiondataserver_LIB_DEPENDS=edataserver-1.2.9:${PORTSDIR}/databases/evolution-data-server
+evolutiondataserver_LIB_DEPENDS=edataserver-1.2.11:${PORTSDIR}/databases/evolution-data-server
 evolutiondataserver_DETECT=		${LOCALBASE}/libdata/pkgconfig/evolution-data-server-1.2.pc
 evolutiondataserver_USE_GNOME_IMPL=libgnomeui
 
@@ -506,7 +516,7 @@ gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-
 gnomesharp20_USE_GNOME_IMPL=	gnomepanel gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
-libgnomekbd_LIB_DEPENDS=	gnomekbd.2:${PORTSDIR}/x11/libgnomekbd
+libgnomekbd_LIB_DEPENDS=	gnomekbd.3:${PORTSDIR}/x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	libgnomeui
 
 pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
@@ -517,6 +527,12 @@ pygtksourceview_USE_GNOME_IMPL=	gtksourceview2 pygtk2
 gvfs_DETECT=			${LOCALBASE}/lib/libgvfscommon.so
 gvfs_LIB_DEPENDS=		gvfscommon.0:${PORTSDIR}/devel/gvfs
 gvfs_USE_GNOME_IMPL=		glib20 gconf2
+
+.if defined(MARCUSCOM_CVS)
+. if exists(${PORTSDIR}/Mk/bsd.gnome-experimental.mk)
+.include "${PORTSDIR}/Mk/bsd.gnome-experimental.mk"
+. endif
+.endif
 
 # End component definition section
 
@@ -614,24 +630,7 @@ Gnome_Post_Include=		bsd.gnome.mk
 .error The Pre include part of bsd.gnome.mk part is not included. Did you forget WANT_GNOME=yes before bsd.port.pre.mk?
 .endif
 
-# DO NOT USE THESE MACROS!  They are obsolete, and only provided for
-# backward compatibility with old ports that have not converted to the new
-# GNOME infrastructure.
-.if defined(USE_GTK)
-#.warning The USE_GTK macro is deprecated. It should be replaced by USE_GNOME=gtk12.
-USE_GNOME+=	gtk12
-.endif
-# End of obsolete macros
-
 .if defined(USE_GNOME)
-# Hack USE_GNOME to the modular infrastructure for port maintainers that
-# didn't do so themselves.  New ports should NOT set USE_GNOME=yes.
-. if ${USE_GNOME}=="yes"
-#.warning The USE_GNOME=yes component is deprecated. It should be replaced by some combination of gnomeprefix, gnomehack, and gtkhtml
-USE_GNOME:=	${USE_GNOME:S/yes//}
-USE_GNOME+=	gnomeprefix gnomehack gtkhtml
-. endif
-
 # First of all expand all USE_GNOME_IMPL recursively
 . for component in ${_USE_GNOME_ALL}
 .  for subcomponent in ${${component}_USE_GNOME_IMPL}
@@ -666,7 +665,7 @@ PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}"
 # we rely on some bsd.autotools.mk variables, and bsd.autotools.mk is
 # included in the post-makefile section).
 .if defined(AUTOTOOL_libtool)
-lthacks_CONFIGURE_ENV=	ac_cv_path_DOLT_BASH=
+lthacks_CONFIGURE_ENV=		ac_cv_path_DOLT_BASH=
 lthacks_PRE_PATCH=		${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
 						${CP} -pf ${LIBTOOL} ${WRKDIR}/gnome-libtool && \
 						for file in ${LIBTOOLFILES}; do \
@@ -717,22 +716,15 @@ PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}
 FETCH_DEPENDS+=	${${component}_FETCH_DEPENDS}
 EXTRACT_DEPENDS+=${${component}_EXTRACT_DEPENDS}
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
-#######################################################
-
+.  if defined(MARCUSCOM_CVS)
+.   if !defined(NODEPENDS)
 LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
-
-.if !defined(WITHOUT_HACK)
-.if defined(${component}_PREFIX)
-.if ${.MAKEFLAGS:MPREFIX=*}==""
-PREFIX=	${${component}_PREFIX}
-.endif
-.if defined(USE_X_PREFIX)
-.undef USE_X_PREFIX
-USE_XLIB=	yes
-.endif
-.endif
-.endif
+.   endif
+.  else
+LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.  endif
 
 CONFIGURE_ARGS+=${${component}_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	${${component}_CONFIGURE_ENV}
@@ -787,12 +779,12 @@ CONFIGURE_FAIL_MESSAGE= "Please run the gnomelogalyzer, available from \"http://
 
 
 .if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
-	|| (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomeprefix}!="")
+	|| (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="")
 pre-su-install: gnome-pre-su-install
 post-install: gnome-post-install
 
 gnome-pre-su-install:
-.if defined(_USE_GNOME) && ${_USE_GNOME:Mgnomeprefix}!="" && !defined(NO_MTREE)
+.if defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="" && !defined(NO_MTREE)
 	@${MTREE_CMD} ${MTREE_ARGS:S/${MTREE_FILE}/${GNOME_MTREE_FILE}/} ${PREFIX}/ >/dev/null
 .endif
 .if defined(GCONF_SCHEMAS)

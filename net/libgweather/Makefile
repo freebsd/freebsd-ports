@@ -3,16 +3,18 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/libgweather/Makefile,v 1.7 2008/03/11 11:45:48 ahze Exp $
+#   $MCom: ports/net/libgweather/Makefile,v 1.21 2008/11/25 17:04:51 mezz Exp $
 #
 
 PORTNAME=	libgweather
-PORTVERSION=	2.22.3
+PORTVERSION=	2.24.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
+
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

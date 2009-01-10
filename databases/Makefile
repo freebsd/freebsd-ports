@@ -122,6 +122,11 @@
     SUBDIR += libgda3-odbc
     SUBDIR += libgda3-postgresql
     SUBDIR += libgda3-reference
+    SUBDIR += libgda4
+    SUBDIR += libgda4-mdb
+    SUBDIR += libgda4-mysql
+    SUBDIR += libgda4-postgresql
+    SUBDIR += libgda4-reference
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libgnomedb-reference

@@ -63,6 +63,16 @@ share/applications/gok.desktop
 %%DOCSDIR%%/up.png
 share/gnome/help/gok/C/gok.xml
 share/gnome/help/gok/C/legal.xml
+%%DATADIR%%/C/gok-controls.kbd
+%%DATADIR%%/C/hide.kbd
+%%DATADIR%%/C/launcher.kbd
+%%DATADIR%%/C/main.kbd
+%%DATADIR%%/C/mouse.kbd
+%%DATADIR%%/C/move-resize.kbd
+%%DATADIR%%/C/numberpad.kbd
+%%DATADIR%%/C/quit.kbd
+%%DATADIR%%/C/text-operations.kbd
+%%DATADIR%%/C/valuator.kbd
 %%DATADIR%%/East.png
 %%DATADIR%%/Keyboard.kbd
 %%DATADIR%%/NE.png
@@ -102,6 +112,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/ar/quit.kbd
 %%DATADIR%%/ar/text-operations.kbd
 %%DATADIR%%/ar/valuator.kbd
+%%DATADIR%%/as/gok-controls.kbd
+%%DATADIR%%/as/hide.kbd
+%%DATADIR%%/as/launcher.kbd
+%%DATADIR%%/as/main.kbd
+%%DATADIR%%/as/mouse.kbd
+%%DATADIR%%/as/move-resize.kbd
+%%DATADIR%%/as/numberpad.kbd
+%%DATADIR%%/as/quit.kbd
+%%DATADIR%%/as/text-operations.kbd
+%%DATADIR%%/as/valuator.kbd
 %%DATADIR%%/automatic-scanning.xam
 %%DATADIR%%/az/gok-controls.kbd
 %%DATADIR%%/az/hide.kbd
@@ -329,7 +349,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/gl/text-operations.kbd
 %%DATADIR%%/gl/valuator.kbd
 %%DATADIR%%/glade/gok.glade2
-%%DATADIR%%/gok-controls.kbd
 %%DATADIR%%/gok.rc
 %%DATADIR%%/goklogo.png
 %%DATADIR%%/goksound1.wav
@@ -344,6 +363,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/gu/quit.kbd
 %%DATADIR%%/gu/text-operations.kbd
 %%DATADIR%%/gu/valuator.kbd
+%%DATADIR%%/he/gok-controls.kbd
+%%DATADIR%%/he/hide.kbd
+%%DATADIR%%/he/launcher.kbd
+%%DATADIR%%/he/main.kbd
+%%DATADIR%%/he/mouse.kbd
+%%DATADIR%%/he/move-resize.kbd
+%%DATADIR%%/he/numberpad.kbd
+%%DATADIR%%/he/quit.kbd
+%%DATADIR%%/he/text-operations.kbd
+%%DATADIR%%/he/valuator.kbd
 %%DATADIR%%/hi/gok-controls.kbd
 %%DATADIR%%/hi/hide.kbd
 %%DATADIR%%/hi/launcher.kbd
@@ -354,7 +383,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/hi/quit.kbd
 %%DATADIR%%/hi/text-operations.kbd
 %%DATADIR%%/hi/valuator.kbd
-%%DATADIR%%/hide.kbd
 %%DATADIR%%/hr/gok-controls.kbd
 %%DATADIR%%/hr/hide.kbd
 %%DATADIR%%/hr/launcher.kbd
@@ -416,6 +444,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/ka/quit.kbd
 %%DATADIR%%/ka/text-operations.kbd
 %%DATADIR%%/ka/valuator.kbd
+%%DATADIR%%/kn/gok-controls.kbd
+%%DATADIR%%/kn/hide.kbd
+%%DATADIR%%/kn/launcher.kbd
+%%DATADIR%%/kn/main.kbd
+%%DATADIR%%/kn/mouse.kbd
+%%DATADIR%%/kn/move-resize.kbd
+%%DATADIR%%/kn/numberpad.kbd
+%%DATADIR%%/kn/quit.kbd
+%%DATADIR%%/kn/text-operations.kbd
+%%DATADIR%%/kn/valuator.kbd
 %%DATADIR%%/ko/gok-controls.kbd
 %%DATADIR%%/ko/hide.kbd
 %%DATADIR%%/ko/launcher.kbd
@@ -437,7 +475,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/ku/text-operations.kbd
 %%DATADIR%%/ku/valuator.kbd
 %%DATADIR%%/latched.png
-%%DATADIR%%/launcher.kbd
 %%DATADIR%%/locked.png
 %%DATADIR%%/lt/gok-controls.kbd
 %%DATADIR%%/lt/hide.kbd
@@ -459,7 +496,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/lv/quit.kbd
 %%DATADIR%%/lv/text-operations.kbd
 %%DATADIR%%/lv/valuator.kbd
-%%DATADIR%%/main.kbd
 %%DATADIR%%/manage.kbd
 %%DATADIR%%/mk/gok-controls.kbd
 %%DATADIR%%/mk/hide.kbd
@@ -491,8 +527,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/mn/quit.kbd
 %%DATADIR%%/mn/text-operations.kbd
 %%DATADIR%%/mn/valuator.kbd
-%%DATADIR%%/mouse.kbd
-%%DATADIR%%/move-resize.kbd
 %%DATADIR%%/mr/gok-controls.kbd
 %%DATADIR%%/mr/hide.kbd
 %%DATADIR%%/mr/launcher.kbd
@@ -543,7 +577,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/nl/quit.kbd
 %%DATADIR%%/nl/text-operations.kbd
 %%DATADIR%%/nl/valuator.kbd
-%%DATADIR%%/numberpad.kbd
+%%DATADIR%%/nn/gok-controls.kbd
+%%DATADIR%%/nn/hide.kbd
+%%DATADIR%%/nn/launcher.kbd
+%%DATADIR%%/nn/main.kbd
+%%DATADIR%%/nn/mouse.kbd
+%%DATADIR%%/nn/move-resize.kbd
+%%DATADIR%%/nn/numberpad.kbd
+%%DATADIR%%/nn/quit.kbd
+%%DATADIR%%/nn/text-operations.kbd
+%%DATADIR%%/nn/valuator.kbd
 %%DATADIR%%/oc/gok-controls.kbd
 %%DATADIR%%/oc/hide.kbd
 %%DATADIR%%/oc/launcher.kbd
@@ -604,7 +647,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/pt_BR/quit.kbd
 %%DATADIR%%/pt_BR/text-operations.kbd
 %%DATADIR%%/pt_BR/valuator.kbd
-%%DATADIR%%/quit.kbd
 %%DATADIR%%/qwerty.kbd
 %%DATADIR%%/ro/gok-controls.kbd
 %%DATADIR%%/ro/hide.kbd
@@ -689,16 +731,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/sr/quit.kbd
 %%DATADIR%%/sr/text-operations.kbd
 %%DATADIR%%/sr/valuator.kbd
-%%DATADIR%%/sr@Latn/gok-controls.kbd
-%%DATADIR%%/sr@Latn/hide.kbd
-%%DATADIR%%/sr@Latn/launcher.kbd
-%%DATADIR%%/sr@Latn/main.kbd
-%%DATADIR%%/sr@Latn/mouse.kbd
-%%DATADIR%%/sr@Latn/move-resize.kbd
-%%DATADIR%%/sr@Latn/numberpad.kbd
-%%DATADIR%%/sr@Latn/quit.kbd
-%%DATADIR%%/sr@Latn/text-operations.kbd
-%%DATADIR%%/sr@Latn/valuator.kbd
+%%DATADIR%%/sr@latin/gok-controls.kbd
+%%DATADIR%%/sr@latin/hide.kbd
+%%DATADIR%%/sr@latin/launcher.kbd
+%%DATADIR%%/sr@latin/main.kbd
+%%DATADIR%%/sr@latin/mouse.kbd
+%%DATADIR%%/sr@latin/move-resize.kbd
+%%DATADIR%%/sr@latin/numberpad.kbd
+%%DATADIR%%/sr@latin/quit.kbd
+%%DATADIR%%/sr@latin/text-operations.kbd
+%%DATADIR%%/sr@latin/valuator.kbd
 %%DATADIR%%/sv/gok-controls.kbd
 %%DATADIR%%/sv/hide.kbd
 %%DATADIR%%/sv/launcher.kbd
@@ -729,7 +771,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/te/quit.kbd
 %%DATADIR%%/te/text-operations.kbd
 %%DATADIR%%/te/valuator.kbd
-%%DATADIR%%/text-operations.kbd
 %%DATADIR%%/th/gok-controls.kbd
 %%DATADIR%%/th/hide.kbd
 %%DATADIR%%/th/launcher.kbd
@@ -760,7 +801,6 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/uk/quit.kbd
 %%DATADIR%%/uk/text-operations.kbd
 %%DATADIR%%/uk/valuator.kbd
-%%DATADIR%%/valuator.kbd
 %%DATADIR%%/value-fast-less.png
 %%DATADIR%%/value-fast-more.png
 %%DATADIR%%/value-less.png
@@ -811,6 +851,7 @@ share/icons/hicolor/48x48/apps/gok.png
 share/locale/am/LC_MESSAGES/gok.mo
 share/locale/ang/LC_MESSAGES/gok.mo
 share/locale/ar/LC_MESSAGES/gok.mo
+share/locale/as/LC_MESSAGES/gok.mo
 share/locale/az/LC_MESSAGES/gok.mo
 share/locale/be/LC_MESSAGES/gok.mo
 share/locale/bg/LC_MESSAGES/gok.mo
@@ -834,6 +875,7 @@ share/locale/fr/LC_MESSAGES/gok.mo
 share/locale/ga/LC_MESSAGES/gok.mo
 share/locale/gl/LC_MESSAGES/gok.mo
 share/locale/gu/LC_MESSAGES/gok.mo
+share/locale/he/LC_MESSAGES/gok.mo
 share/locale/hi/LC_MESSAGES/gok.mo
 share/locale/hr/LC_MESSAGES/gok.mo
 share/locale/hu/LC_MESSAGES/gok.mo
@@ -841,6 +883,7 @@ share/locale/id/LC_MESSAGES/gok.mo
 share/locale/it/LC_MESSAGES/gok.mo
 share/locale/ja/LC_MESSAGES/gok.mo
 share/locale/ka/LC_MESSAGES/gok.mo
+share/locale/kn/LC_MESSAGES/gok.mo
 share/locale/ko/LC_MESSAGES/gok.mo
 share/locale/ku/LC_MESSAGES/gok.mo
 share/locale/lt/LC_MESSAGES/gok.mo
@@ -853,6 +896,7 @@ share/locale/ms/LC_MESSAGES/gok.mo
 share/locale/nb/LC_MESSAGES/gok.mo
 share/locale/ne/LC_MESSAGES/gok.mo
 share/locale/nl/LC_MESSAGES/gok.mo
+share/locale/nn/LC_MESSAGES/gok.mo
 share/locale/oc/LC_MESSAGES/gok.mo
 share/locale/or/LC_MESSAGES/gok.mo
 share/locale/pa/LC_MESSAGES/gok.mo
@@ -867,7 +911,7 @@ share/locale/sk/LC_MESSAGES/gok.mo
 share/locale/sl/LC_MESSAGES/gok.mo
 share/locale/sq/LC_MESSAGES/gok.mo
 share/locale/sr/LC_MESSAGES/gok.mo
-share/locale/sr@Latn/LC_MESSAGES/gok.mo
+share/locale/sr@latin/LC_MESSAGES/gok.mo
 share/locale/sv/LC_MESSAGES/gok.mo
 share/locale/ta/LC_MESSAGES/gok.mo
 share/locale/te/LC_MESSAGES/gok.mo
@@ -891,7 +935,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/te
 @dirrm %%DATADIR%%/ta
 @dirrm %%DATADIR%%/sv
-@dirrm %%DATADIR%%/sr@Latn
+@dirrm %%DATADIR%%/sr@latin
 @dirrm %%DATADIR%%/sr
 @dirrm %%DATADIR%%/sq
 @dirrm %%DATADIR%%/sl
@@ -906,6 +950,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/pa
 @dirrm %%DATADIR%%/or
 @dirrm %%DATADIR%%/oc
+@dirrm %%DATADIR%%/nn
 @dirrm %%DATADIR%%/nl
 @dirrm %%DATADIR%%/ne
 @dirrm %%DATADIR%%/nb
@@ -918,6 +963,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/lt
 @dirrm %%DATADIR%%/ku
 @dirrm %%DATADIR%%/ko
+@dirrm %%DATADIR%%/kn
 @dirrm %%DATADIR%%/ka
 @dirrm %%DATADIR%%/ja
 @dirrm %%DATADIR%%/it
@@ -925,6 +971,7 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/hu
 @dirrm %%DATADIR%%/hr
 @dirrm %%DATADIR%%/hi
+@dirrm %%DATADIR%%/he
 @dirrm %%DATADIR%%/gu
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/gl
@@ -949,17 +996,22 @@ share/pixmaps/gok.png
 @dirrm %%DATADIR%%/bg
 @dirrm %%DATADIR%%/be
 @dirrm %%DATADIR%%/az
+@dirrm %%DATADIR%%/as
 @dirrm %%DATADIR%%/ar
 @dirrm %%DATADIR%%/ang
 @dirrm %%DATADIR%%/am
+@dirrm %%DATADIR%%/C
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -974,6 +1026,7 @@ share/pixmaps/gok.png
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
-@dirrmtry share/applications

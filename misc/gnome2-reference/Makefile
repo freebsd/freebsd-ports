@@ -3,10 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/misc/gnome2-reference/Makefile,v 1.7 2007/09/04 21:54:03 ahze Exp $
+#   $MCom: ports/misc/gnome2-reference/Makefile,v 1.9 2008/08/23 18:22:59 mezz Exp $
+#
 
 PORTNAME=	gnome2-reference
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -21,7 +23,6 @@ COMMENT=	The "meta-port" for GNOME 2 programming references
 
 REF_LIST=	accessibility/at-spi-reference \
 		accessibility/atk-reference \
-		accessibility/gail-reference \
 		databases/libgda2-reference \
 		databases/libgda3-reference \
 		databases/libgnomedb-reference \

@@ -447,6 +447,7 @@
     SUBDIR += gob2
     SUBDIR += goffice
     SUBDIR += goffice04
+    SUBDIR += goffice06
     SUBDIR += goffice1
     SUBDIR += gonzui
     SUBDIR += google-perftools

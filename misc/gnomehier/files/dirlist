@@ -7,6 +7,7 @@ etc/X11/sysconfig
 etc/gconf
 etc/gconf/gconf.xml.defaults
 etc/gconf/gconf.xml.mandatory
+etc/gconf/gconf.xml.system
 etc/gconf/schemas
 etc/gnome
 etc/gnome-vfs-2.0

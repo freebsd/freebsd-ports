@@ -3,18 +3,17 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-fm/nautilus/Makefile,v 1.2 2008/03/31 00:51:45 ahze Exp $
+#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.171 2008/11/25 01:09:55 marcus Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	2.22.5.1
-PORTREVISION=	1
+PORTVERSION=	2.24.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	File manager for the GNOME desktop
+COMMENT?=	File manager for the GNOME desktop
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
@@ -38,6 +37,9 @@ MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off
 
 GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
+
+MAN1=		nautilus-connect-server.1 nautilus-file-management-properties.1 \
+		nautilus.1
 
 .include <bsd.port.pre.mk>
 

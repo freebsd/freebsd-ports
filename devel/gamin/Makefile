@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/gamin/Makefile,v 1.4 2008/01/09 19:55:24 marcus Exp $
+#    $MCom: ports/devel/gamin/Makefile,v 1.6 2008/11/26 06:48:13 marcus Exp $
 #
 
 PORTNAME=	gamin
-PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTVERSION=	0.1.10
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 

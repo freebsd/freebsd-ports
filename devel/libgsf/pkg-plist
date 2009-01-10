@@ -1,8 +1,6 @@
 bin/gsf
 bin/gsf-office-thumbnailer
 bin/gsf-vba-dump
-include/libgsf-1/gsf-gvfs/gsf-input-gvfs.h
-include/libgsf-1/gsf-gvfs/gsf-output-gvfs.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
@@ -12,9 +10,11 @@ include/libgsf-1/gsf/gsf-infile-impl.h
 include/libgsf-1/gsf/gsf-infile-msole.h
 include/libgsf-1/gsf/gsf-infile-msvba.h
 include/libgsf-1/gsf/gsf-infile-stdio.h
+include/libgsf-1/gsf/gsf-infile-tar.h
 include/libgsf-1/gsf/gsf-infile-zip.h
 include/libgsf-1/gsf/gsf-infile.h
 include/libgsf-1/gsf/gsf-input-bzip.h
+include/libgsf-1/gsf/gsf-input-gio.h
 include/libgsf-1/gsf/gsf-input-gzip.h
 include/libgsf-1/gsf/gsf-input-http.h
 include/libgsf-1/gsf/gsf-input-impl.h
@@ -36,6 +36,7 @@ include/libgsf-1/gsf/gsf-outfile-zip.h
 include/libgsf-1/gsf/gsf-outfile.h
 include/libgsf-1/gsf/gsf-output-bzip.h
 include/libgsf-1/gsf/gsf-output-csv.h
+include/libgsf-1/gsf/gsf-output-gio.h
 include/libgsf-1/gsf/gsf-output-gzip.h
 include/libgsf-1/gsf/gsf-output-iconv.h
 include/libgsf-1/gsf/gsf-output-impl.h
@@ -43,6 +44,7 @@ include/libgsf-1/gsf/gsf-output-iochannel.h
 include/libgsf-1/gsf/gsf-output-memory.h
 include/libgsf-1/gsf/gsf-output-stdio.h
 include/libgsf-1/gsf/gsf-output.h
+include/libgsf-1/gsf/gsf-shared-memory.h
 include/libgsf-1/gsf/gsf-structured-blob.h
 include/libgsf-1/gsf/gsf-timestamp.h
 include/libgsf-1/gsf/gsf-utils.h
@@ -57,6 +59,7 @@ share/doc/gsf/api.html
 share/doc/gsf/dependencies.html
 share/doc/gsf/gsf-Bononbo.html
 share/doc/gsf/gsf-Compression.html
+share/doc/gsf/gsf-GIO.html
 share/doc/gsf/gsf-GIOChannel.html
 share/doc/gsf/gsf-GnomeVFS.html
 share/doc/gsf/gsf-Infile-reading-structed-files.html
@@ -91,15 +94,15 @@ share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
 share/locale/es/LC_MESSAGES/libgsf.mo
+share/locale/nb/LC_MESSAGES/libgsf.mo
 share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
+@dirrm share/doc/gsf
+@dirrm include/libgsf-1/gsf
+@dirrm include/libgsf-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrm share/doc/gsf
-@dirrm include/libgsf-1/gsf-gvfs
-@dirrm include/libgsf-1/gsf
-@dirrm include/libgsf-1

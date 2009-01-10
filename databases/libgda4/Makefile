@@ -1,0 +1,130 @@
+# New ports collection makefile for:	libgda2
+# Date created:				02 June 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports/databases/libgda4/Makefile,v 1.3 2008/10/09 22:27:17 kwm Exp $
+#
+
+PORTNAME=	libgda4
+PORTVERSION?=	3.99.5
+PORTREVISION?=	0
+CATEGORIES=	databases gnome
+MASTER_SITES=	GNOME
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
+DISTNAME=	libgda-${PORTVERSION}
+DIST_SUBDIR=	gnome2
+
+MAINTAINER?=	gnome@FreeBSD.org
+COMMENT?=	Provides uniform access to different kinds of data sources
+
+USE_BZIP2=	yes
+LIBGDA4_SLAVE?=	no
+
+.if !defined(REFERENCE_PORT)
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
+USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
+USE_XLIB=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-sybase
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
+
+.include <bsd.port.pre.mk>
+
+#VERSION=	${PORTVERSION:R}
+VERSION=	4.0
+PLIST_SUB=	VERSION=${VERSION}
+
+.if ${LIBGDA4_SLAVE}=="no"
+#MAN1=		gda-config-tool-3.0.1
+#MAN5=		gda-config-3.0.5
+.else
+USE_GNOME+=	libgda4
+.endif
+
+.if ${LIBGDA4_SLAVE}=="bdb"
+USE_BDB=		yes
+CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-bdb
+.endif
+
+.if ${LIBGDA4_SLAVE}=="mysql"
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-mysql
+.endif
+
+.if ${LIBGDA4_SLAVE}=="postgresql"
+USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-postgres
+.endif
+
+.if ${LIBGDA4_SLAVE}=="ldap"
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+.if ${LIBGDA4_SLAVE}=="firebird"
+LIB_DEPENDS+=		gds.2:${PORTSDIR}/databases/firebird2-client
+CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-firebird
+.endif
+
+.if ${LIBGDA4_SLAVE}=="freetds"
+LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
+CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-tds
+.endif
+
+# MDB (MS Access)
+.if ${LIBGDA4_SLAVE}=="mdb"
+LIB_DEPENDS+=		mdbsql.0:${PORTSDIR}/databases/mdbtools
+CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-mdb
+.endif
+
+.if ${LIBGDA4_SLAVE}=="odbc"
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-odbc
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|include/db.h|${BDB_VER}/include/db.h|g' \
+		-e 's|ldb47|ldb${BDB_VER}|g' \
+		-e 's|ldb|ldb${BDB_VER}|g' \
+		${WRKSRC}/configure
+.if ${LIBGDA4_SLAVE}!="no"
+#. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
+. for d in bdb mdb mysql sqlite postgres
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|${LOCALBASE}/lib/libgda-4.0.la|g' \
+		${WRKSRC}/providers/${d}/Makefile.in
+. endfor
+.endif
+
+.if ${LIBGDA4_SLAVE}=="no"
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/data/config \
+		${PREFIX}/etc/libgda-${VERSION}/config.default
+.endif
+
+.include <bsd.port.post.mk>
+.endif

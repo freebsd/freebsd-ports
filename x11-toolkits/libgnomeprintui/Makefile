@@ -3,12 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libgnomeprintui/Makefile,v 1.69 2007/10/17 21:36:14 mezz Exp $
+#   $MCom: ports/x11-toolkits/libgnomeprintui/Makefile,v 1.71 2008/09/22 14:00:52 kwm Exp $
 #
 
 PORTNAME=	libgnomeprintui
-PORTVERSION=	2.18.2
-PORTREVISION=	2
+PORTVERSION=	2.18.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

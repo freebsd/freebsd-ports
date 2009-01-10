@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-01-22 15:47:56.000000000 -0500
-+++ Makefile.in	2008-01-22 15:49:21.000000000 -0500
-@@ -486,13 +486,13 @@ sysconfdir = @sysconfdir@
+--- Makefile.in.orig	2008-10-05 07:36:15.299141562 -0400
++++ Makefile.in	2008-10-05 07:41:11.883687363 -0400
+@@ -513,13 +513,13 @@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -16,16 +16,16 @@
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
  @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
  @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -590,7 +590,7 @@ testapi_LDFLAGS = 
- testapi_DEPENDENCIES = $(DEPS)
- testapi_LDADD = $(LDADDS)
- CLEANFILES = xml2Conf.sh
+@@ -633,7 +633,7 @@
+ runxmlconf_DEPENDENCIES = $(DEPS)
+ runxmlconf_LDADD = $(LDADDS)
+ CLEANFILES = xml2Conf.sh *.gcda *.gcno
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xml2Conf.sh
  CVS_EXTRA_DIST = 
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
-@@ -613,8 +613,8 @@ pkgconfig_DATA = libxml-2.0.pc
+@@ -656,8 +656,8 @@
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -33,12 +33,12 @@
 -EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
 +DOC_MODULE = libxml2
 +EXAMPLES_DIR = $(datadir)/examples/libxml2
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1344,7 +1344,7 @@ distcleancheck: distclean
+ #
+ # Coverage support, largely borrowed from libvirt
+@@ -1414,7 +1414,7 @@
+ 	       exit 1; } >&2
  check-am: all-am
- 	$(MAKE) $(AM_MAKEFLAGS) check-local
  check: check-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \

@@ -3,16 +3,15 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#   $MCom: ports/devel/devhelp/Makefile,v 1.10 2009/01/09 22:20:28 kwm Exp $
 
 PORTNAME=	devhelp
-PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 2
 
 USE_BZIP2=	yes
@@ -42,10 +41,6 @@ PLIST_SUB+=	GEDIT=""
 .else
 PLIST_SUB+=	GEDIT="@comment "
 .endif
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,g;s,^@dirrm share/((gnome/[^d]|pixmaps|application|locale).*|gnome$$),,;s,^@dirrm etc/gconf.*,,;s,^etc/gconf/gconf.*,,'|${TR} -s '\n') > temp-pkg-plist
 
 post-patch:
 .if defined(WITHOUT_GEDIT)

@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-session/Makefile,v 1.141 2008/03/10 23:48:33 ahze Exp $
+#   $MCom: ports/x11/gnome-session/Makefile,v 1.164 2008/11/25 19:25:49 marcus Exp $
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.22.3
+PORTVERSION=	2.24.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME \
 		http://www.marcuscom.com/downloads/:local
@@ -22,7 +22,8 @@ COMMENT=	Session component for the GNOME 2 desktop
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.1:${PORTSDIR}/devel/libnotify \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
@@ -34,6 +35,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-docbook-docs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -45,7 +47,7 @@ GCONF_SCHEMAS=	gnome-session.schemas
 SPLASHES=	freebsd-splashes-gnome-2.18_1.tar
 
 post-extract:
-	cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${SPLASHES}
+	cd ${WRKDIR} && ${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${SPLASHES}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/gnome-splash.png \

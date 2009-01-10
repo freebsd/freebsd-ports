@@ -1,0 +1,12 @@
+--- config.h.in.orig	2007-11-02 20:48:28.000000000 -0400
++++ config.h.in	2007-11-02 20:49:39.000000000 -0400
+@@ -23,6 +23,9 @@
+ #undef HAVE_LC_MESSAGES
+ #undef HAVE_LIBSM
+ #undef HAVE_LIBXDMCP
++#undef HAVE_LOGIN
++#undef HAVE_LOGOUT
++#undef HAVE_LOGWTMP
+ #undef HAVE_LOGINCAP
+ #undef HAVE_LOGINDEVPERM
+ #undef HAVE_LOGINRESTRICTIONS

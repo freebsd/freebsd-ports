@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.142 2008/03/10 20:33:29 mezz Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.164 2009/01/10 01:59:21 mezz Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.22.3
-PORTREVISION=	2
+PORTVERSION=	2.24.2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,14 +18,15 @@ COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		nss3.1:${PORTSDIR}/security/nss \
 		tasn1.3:${PORTSDIR}/security/libtasn1 \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget libgnomeui \
-		ltverhack
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui ltverhack \
+		ltasneededhack
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BDB=	41+
@@ -39,9 +39,9 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="2.22" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="2.24" EVO_VERSION="1.2"
 
-OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
+#OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 
 .include <bsd.port.pre.mk>
 
@@ -55,12 +55,12 @@ CONFIGURE_ARGS+=        --with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
-.if defined(WITH_IMAP4) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-imap4=yes
-PLIST_SUB+=		IMAP4=""
-.else
+#.if defined(WITH_IMAP4) || defined(PACKAGE_BUILDING)
+#CONFIGURE_ARGS+=	--enable-imap4=yes
+#PLIST_SUB+=		IMAP4=""
+#.else
 PLIST_SUB+=		IMAP4="@comment "
-.endif
+#.endif
 
 EDS_BDB_MSG=	"!!!WARNING!!!: Berkeley Database version is ${BDB_VER}.  If this is an upgrade, you may experience problems if you or any other Evolution-data-server users were previously using BDB_VER 41."
 

@@ -193,6 +193,7 @@
     SUBDIR += fmio
     SUBDIR += fmit
     SUBDIR += freealut
+    SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
     SUBDIR += funktrackergold
     SUBDIR += gai-album

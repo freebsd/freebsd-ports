@@ -1,0 +1,7 @@
+--- data/greeter-autostart/gdm-simple-greeter.desktop.in.in.orig	2008-11-23 22:22:04.000000000 -0500
++++ data/greeter-autostart/gdm-simple-greeter.desktop.in.in	2008-11-23 22:22:09.000000000 -0500
+@@ -5,4 +5,3 @@ Exec=@LIBEXECDIR@/gdm-simple-greeter
+ OnlyShowIn=GNOME;
+ X-GNOME-Autostart-Phase=Application
+ X-GNOME-Autostart-Notify=true
+-X-GNOME-AutoRestart=true

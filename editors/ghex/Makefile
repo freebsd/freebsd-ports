@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/ghex/Makefile,v 1.11 2008/02/27 04:39:06 mezz Exp $
+#   $MCom: ports/editors/ghex/Makefile,v 1.13 2008/08/23 18:22:59 mezz Exp $
 #
 
 PORTNAME=	ghex
@@ -18,7 +18,7 @@ COMMENT=	GNOME 2 hex editor
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeprintui libgnomeui \
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		gnomedocutils
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

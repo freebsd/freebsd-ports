@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.29 2008/03/11 18:33:24 mezz Exp $
+#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.33 2008/09/27 01:52:59 mezz Exp $
 #
 
 PORTNAME=	evolution-jescs
-PORTVERSION=	2.22.2
-PORTREVISION=	2
+PORTVERSION=	2.24.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,13 +21,14 @@ RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
+USE_GNOME=	gnomeprefix gnomehack intlhack
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-EVO_VERSION=	2.22
-PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.22"
+EVO_VERSION=	2.24
+PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.24"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir/bonobo/servers|prefix/libdata/bonobo/servers|g' \

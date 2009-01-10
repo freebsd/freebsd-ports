@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION?=	1.2.1
+PORTVERSION?=	1.2.4.2
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
+DISTNAME=	dbus-${PORTVERSION}permissive
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A message bus system for inter-application communication
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_GNOME?=	gnomehack gnometarget libxml2 ltverhack
+USE_GNOME?=	gnomehack libxml2 ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

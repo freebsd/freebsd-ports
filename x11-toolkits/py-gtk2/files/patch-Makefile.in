@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Sep  5 02:02:53 2006
-+++ Makefile.in	Tue Sep  5 02:06:11 2006
-@@ -292,7 +292,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- AUTOMAKE_OPTIONS = 1.7
- @BUILD_GTK_TRUE@GTK_SUBDIR = gtk
--SUBDIRS = codegen . $(GTK_SUBDIR) examples tests docs
-+SUBDIRS = codegen . $(GTK_SUBDIR) examples
- PLATFORM_VERSION = 2.0
- CLEANFILES = atk.c pango.c pangocairo.c
- EXTRA_DIST = \
+--- Makefile.in.orig	2008-09-01 08:50:06.000000000 +0000
++++ Makefile.in	2008-09-01 08:51:03.000000000 +0000
+@@ -124,7 +124,7 @@
+ DATA = $(defs_DATA) $(pkgconfig_DATA)
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = . gtk examples tests docs
++DIST_SUBDIRS = . gtk examples
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)

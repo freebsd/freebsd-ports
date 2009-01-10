@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/orca/Makefile,v 1.42 2008/03/10 00:56:17 mezz Exp $
+#   $MCom: ports/accessibility/orca/Makefile,v 1.58 2008/11/25 05:37:04 mezz Exp $
 #
 
 PORTNAME=	orca
-PORTVERSION=	2.22.3
+PORTVERSION=	2.24.2
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,7 +15,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scriptable screen reader
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
 LATEST_LINK=	gnome-orca
 
@@ -23,7 +25,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui atspi gnomespeech pygnome2
+USE_GNOME=	gnomeprefix gnomehack libgnomeui atspi gnomespeech pygnome2 \
+		pygnomedesktop
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

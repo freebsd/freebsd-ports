@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-applets/Makefile,v 1.175 2008/03/10 20:03:41 mezz Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.193 2008/12/20 20:05:50 marcus Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.22.3
+PORTVERSION=	2.24.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${POR
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		gweather.1:${PORTSDIR}/net/libgweather \
 		xklavier.12:${PORTSDIR}/x11/libxklavier \
-		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
@@ -31,13 +32,12 @@ GNOME_DESKTOP_VERSION=2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
-		gail gnomedocutils libgnomekbd
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gnomedocutils \
+		libgnomekbd
 WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gstreamer=0.10 \
-		--enable-stickynotes
+CONFIGURE_ARGS=	--with-gstreamer=0.10
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		OS_SYS="/usr/include"

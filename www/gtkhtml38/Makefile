@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gtkhtml38/Makefile,v 1.106 2008/01/29 01:43:06 marcus Exp $
+#   $MCom: ports/www/gtkhtml38/Makefile,v 1.108 2008/08/23 18:23:00 mezz Exp $
 #
 
 PORTNAME=	gtkhtml3
@@ -26,7 +26,7 @@ DEPRECATED=	Older API; newer applications should use www/gtkhtml3
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeui ltverhack \
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui ltverhack \
 		libgnomeprintui
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15

@@ -155,7 +155,7 @@ share/locale/sk/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/sl/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/sq/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/sr/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/sr@latin/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/sv/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ta/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/te/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
@@ -190,6 +190,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

@@ -1,50 +1,20 @@
 bin/seahorse
-bin/seahorse-agent
 bin/seahorse-daemon
-bin/seahorse-preferences
-bin/seahorse-tool
 include/libcryptui/cryptui-key-chooser.h
 include/libcryptui/cryptui-key-combo.h
 include/libcryptui/cryptui-key-list.h
 include/libcryptui/cryptui-key-store.h
 include/libcryptui/cryptui-keyset.h
 include/libcryptui/cryptui.h
-%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.a
-%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.la
-%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libseahorseextension.so
-%%EPHY%%lib/epiphany/%%EPHY_VERSION%%/extensions/seahorse.ephy-extension
-%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.a
-%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.la
-%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
-%%GEDIT%%lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
 lib/libcryptui.a
 lib/libcryptui.la
 lib/libcryptui.so
 lib/libcryptui.so.0
-%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.a
-%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.la
-%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.so
-%%APPLET%%lib/seahorse/seahorse-applet
 lib/seahorse/seahorse-ssh-askpass
 lib/seahorse/xloadimage
-%%APPLET%%libdata/bonobo/servers/GNOME_SeahorseApplet.server
 libdata/pkgconfig/cryptui-0.0.pc
-share/applications/seahorse-pgp-encrypted.desktop
-share/applications/seahorse-pgp-keys.desktop
-share/applications/seahorse-pgp-preferences.desktop
-share/applications/seahorse-pgp-signature.desktop
 share/applications/seahorse.desktop
 share/dbus-1/services/org.gnome.seahorse.service
-%%APPLET%%share/gnome-2.0/ui/GNOME_SeahorseApplet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/C/legal.xml
-%%APPLET%%share/gnome/help/seahorse-applet/C/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/es/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/fr/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/it/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/oc/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/ru/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/sv/seahorse-applet.xml
-%%APPLET%%share/gnome/help/seahorse-applet/vi/seahorse-applet.xml
 share/gnome/help/seahorse/C/figures/export.png
 share/gnome/help/seahorse/C/figures/file-manager.png
 share/gnome/help/seahorse/C/figures/generate.png
@@ -59,6 +29,19 @@ share/gnome/help/seahorse/C/figures/signature.png
 share/gnome/help/seahorse/C/figures/text-editor.png
 share/gnome/help/seahorse/C/legal.xml
 share/gnome/help/seahorse/C/seahorse.xml
+share/gnome/help/seahorse/de/figures/export.png
+share/gnome/help/seahorse/de/figures/file-manager.png
+share/gnome/help/seahorse/de/figures/generate.png
+share/gnome/help/seahorse/de/figures/import.png
+share/gnome/help/seahorse/de/figures/key-manager.png
+share/gnome/help/seahorse/de/figures/key-properties.png
+share/gnome/help/seahorse/de/figures/passphrase.png
+share/gnome/help/seahorse/de/figures/preferences.png
+share/gnome/help/seahorse/de/figures/recipients.png
+share/gnome/help/seahorse/de/figures/seahorse-window.png
+share/gnome/help/seahorse/de/figures/signature.png
+share/gnome/help/seahorse/de/figures/text-editor.png
+share/gnome/help/seahorse/de/seahorse.xml
 share/gnome/help/seahorse/en_GB/figures/export.png
 share/gnome/help/seahorse/en_GB/figures/file-manager.png
 share/gnome/help/seahorse/en_GB/figures/generate.png
@@ -163,14 +146,16 @@ share/gnome/help/seahorse/vi/figures/seahorse-window.png
 share/gnome/help/seahorse/vi/figures/signature.png
 share/gnome/help/seahorse/vi/figures/text-editor.png
 share/gnome/help/seahorse/vi/seahorse.xml
-share/icons/hicolor/22x22/apps/seahorse-preferences.svg
-share/icons/hicolor/22x22/apps/seahorse.svg
-share/icons/hicolor/48x48/apps/seahorse-applet.png
+share/icons/hicolor/16x16/apps/seahorse-preferences.png
+share/icons/hicolor/16x16/apps/seahorse.png
+share/icons/hicolor/22x22/apps/seahorse-preferences.png
+share/icons/hicolor/22x22/apps/seahorse.png
+share/icons/hicolor/24x24/apps/seahorse-preferences.png
+share/icons/hicolor/24x24/apps/seahorse.png
+share/icons/hicolor/32x32/apps/seahorse-preferences.png
+share/icons/hicolor/32x32/apps/seahorse.png
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
-share/icons/hicolor/scalable/apps/seahorse-applet.svg
-share/icons/hicolor/scalable/apps/seahorse-preferences.svg
-share/icons/hicolor/scalable/apps/seahorse.svg
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
@@ -224,7 +209,7 @@ share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
 share/locale/sq/LC_MESSAGES/seahorse.mo
 share/locale/sr/LC_MESSAGES/seahorse.mo
-share/locale/sr@Latn/LC_MESSAGES/seahorse.mo
+share/locale/sr@latin/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
 share/locale/te/LC_MESSAGES/seahorse.mo
@@ -235,16 +220,8 @@ share/locale/vi/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 share/locale/zh_HK/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
-share/mime/packages/seahorse.xml
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-C.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-es.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-fr.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-it.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-oc.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-ru.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-sv.omf
-%%APPLET%%share/omf/seahorse-applet/seahorse-applet-vi.omf
 share/omf/seahorse/seahorse-C.omf
+share/omf/seahorse/seahorse-de.omf
 share/omf/seahorse/seahorse-en_GB.omf
 share/omf/seahorse/seahorse-es.omf
 share/omf/seahorse/seahorse-fr.omf
@@ -253,64 +230,36 @@ share/omf/seahorse/seahorse-oc.omf
 share/omf/seahorse/seahorse-ru.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
-share/pixmaps/seahorse-applet.svg
-share/pixmaps/seahorse-preferences.png
-share/pixmaps/seahorse.png
-share/pixmaps/seahorse/22x22/seahorse-applet-encrypted.png
-share/pixmaps/seahorse/22x22/seahorse-applet-key.png
-share/pixmaps/seahorse/22x22/seahorse-applet-signed.png
-share/pixmaps/seahorse/22x22/seahorse-applet-text.png
-share/pixmaps/seahorse/22x22/seahorse-applet-unknown.png
 share/pixmaps/seahorse/22x22/seahorse-key-personal.png
 share/pixmaps/seahorse/22x22/seahorse-key-ssh.png
 share/pixmaps/seahorse/22x22/seahorse-key.png
 share/pixmaps/seahorse/22x22/seahorse-person.png
-share/pixmaps/seahorse/22x22/seahorse-preferences.png
 share/pixmaps/seahorse/22x22/seahorse-share-keys.png
 share/pixmaps/seahorse/22x22/seahorse-sign-bad.png
 share/pixmaps/seahorse/22x22/seahorse-sign-ok.png
 share/pixmaps/seahorse/22x22/seahorse-sign.png
-share/pixmaps/seahorse/22x22/seahorse.png
-share/pixmaps/seahorse/48x48/seahorse-applet-encrypted.png
-share/pixmaps/seahorse/48x48/seahorse-applet-key.png
-share/pixmaps/seahorse/48x48/seahorse-applet-signed.png
-share/pixmaps/seahorse/48x48/seahorse-applet-text.png
-share/pixmaps/seahorse/48x48/seahorse-applet-unknown.png
-share/pixmaps/seahorse/48x48/seahorse-applet.png
 share/pixmaps/seahorse/48x48/seahorse-key-personal.png
 share/pixmaps/seahorse/48x48/seahorse-key-ssh.png
 share/pixmaps/seahorse/48x48/seahorse-key.png
 share/pixmaps/seahorse/48x48/seahorse-person.png
-share/pixmaps/seahorse/48x48/seahorse-preferences.png
 share/pixmaps/seahorse/48x48/seahorse-share-keys.png
 share/pixmaps/seahorse/48x48/seahorse-sign-bad.png
 share/pixmaps/seahorse/48x48/seahorse-sign-ok.png
 share/pixmaps/seahorse/48x48/seahorse-sign-unknown.png
 share/pixmaps/seahorse/48x48/seahorse-sign.png
-share/pixmaps/seahorse/48x48/seahorse.png
-share/pixmaps/seahorse/scalable/seahorse-applet-encrypted.svg
-share/pixmaps/seahorse/scalable/seahorse-applet-key.svg
-share/pixmaps/seahorse/scalable/seahorse-applet-signed.svg
-share/pixmaps/seahorse/scalable/seahorse-applet-text.svg
-share/pixmaps/seahorse/scalable/seahorse-applet-unknown.svg
-share/pixmaps/seahorse/scalable/seahorse-applet.svg
 share/pixmaps/seahorse/scalable/seahorse-key-personal.svg
 share/pixmaps/seahorse/scalable/seahorse-key-ssh.svg
 share/pixmaps/seahorse/scalable/seahorse-key.svg
 share/pixmaps/seahorse/scalable/seahorse-person.svg
-share/pixmaps/seahorse/scalable/seahorse-preferences.svg
 share/pixmaps/seahorse/scalable/seahorse-share-keys.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse/scalable/seahorse-sign.svg
-share/pixmaps/seahorse/scalable/seahorse.svg
 %%DATADIR%%/glade/seahorse-add-keyring.glade
 %%DATADIR%%/glade/seahorse-add-keyserver.glade
 %%DATADIR%%/glade/seahorse-add-subkey.glade
 %%DATADIR%%/glade/seahorse-add-uid.glade
-%%DATADIR%%/glade/seahorse-agent-cache.glade
-%%APPLET%%%%DATADIR%%/glade/seahorse-applet-preferences.glade
 %%DATADIR%%/glade/seahorse-change-passphrase.glade
 %%DATADIR%%/glade/seahorse-expires.glade
 %%DATADIR%%/glade/seahorse-generate-select.glade
@@ -321,7 +270,6 @@ share/pixmaps/seahorse/scalable/seahorse.svg
 %%DATADIR%%/glade/seahorse-keyserver-results.ui
 %%DATADIR%%/glade/seahorse-keyserver-search.glade
 %%DATADIR%%/glade/seahorse-keyserver-sync.glade
-%%DATADIR%%/glade/seahorse-multi-encrypt.glade
 %%DATADIR%%/glade/seahorse-notify.glade
 %%DATADIR%%/glade/seahorse-pgp-generate.glade
 %%DATADIR%%/glade/seahorse-pgp-private-key-properties.glade
@@ -340,7 +288,6 @@ share/pixmaps/seahorse/scalable/seahorse.svg
 @dirrm share/pixmaps/seahorse/48x48
 @dirrm share/pixmaps/seahorse/22x22
 @dirrm share/pixmaps/seahorse
-%%APPLET%%@dirrm share/omf/seahorse-applet
 @dirrm share/omf/seahorse
 @dirrm share/gnome/help/seahorse/vi/figures
 @dirrm share/gnome/help/seahorse/vi
@@ -358,32 +305,20 @@ share/pixmaps/seahorse/scalable/seahorse.svg
 @dirrm share/gnome/help/seahorse/es
 @dirrm share/gnome/help/seahorse/en_GB/figures
 @dirrm share/gnome/help/seahorse/en_GB
+@dirrm share/gnome/help/seahorse/de/figures
+@dirrm share/gnome/help/seahorse/de
 @dirrm share/gnome/help/seahorse/C/figures
 @dirrm share/gnome/help/seahorse/C
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/vi
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/sv
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/ru
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/oc
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/it
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/fr
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/es
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet/C
-%%APPLET%%@dirrm share/gnome/help/seahorse-applet
 @dirrm share/gnome/help/seahorse
-@dirrm lib/seahorse
-%%EPHY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
-%%EPHY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%
-%%EPHY%%@dirrmtry lib/epiphany
-@dirrm include/libcryptui
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/applications
+@dirrm lib/seahorse
+@dirrm include/libcryptui
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
