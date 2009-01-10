@@ -2,21 +2,13 @@ include/libircclient.h
 include/libirc_errors.h
 include/libirc_events.h
 include/libirc_options.h
+include/libirc_rfcnumeric.h
 lib/libircclient.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/censor.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircftp.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/log.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/ircmud.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/log.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/main.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/ircmud.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/config.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/global.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircmud/config.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/irctest.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spammer.c
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/ircmud
