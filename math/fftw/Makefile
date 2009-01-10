@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" FC="${FC}" F77="${F77}"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
