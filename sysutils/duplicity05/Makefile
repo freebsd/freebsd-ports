@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.5.03
+PORTVERSION=	0.5.06
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,12 @@ USE_PYDISTUTILS=yes
 
 MAN1=		duplicity.1 rdiffdir.1
 
-DOCFILES=	CHANGELOG COPYING README
+DOCFILES=	CHANGELOG \
+		COPYING \
+		CVS-README \
+		LOG-README \
+		README \
+		tarfile-LICENSE
 
 .include <bsd.port.pre.mk>
 
@@ -37,8 +42,6 @@ RUN_DEPENDS+=	${PEXPECT_DEP}
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/duplicity.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/rdiffdir.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}

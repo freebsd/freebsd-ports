@@ -85,6 +85,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.py
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/patchdir.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.py
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/path.py
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyo
@@ -116,5 +119,9 @@ bin/rdiffdir
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CVS-README
+%%PORTDOCS%%%%DOCSDIR%%/LOG-README
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/io/LC_MESSAGES/duplicity.mo
