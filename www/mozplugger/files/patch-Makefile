@@ -49,7 +49,7 @@
 -	-@mkdir -p $(root)$(prefix)/lib/mozilla/plugins
 -	-@mkdir -p $(root)$(prefix)/share/man/man7
 -	-@mkdir -p $(root)/etc
-+	-@mkdir -p $(root)$(prefix)/lib/browser_plugins
++	-@mkdir -p $(root)${WEBPLUGINS_DIR}
 +	-@mkdir -p $(root)$(prefix)/man/man7
 +	-@mkdir -p $(root)$(prefix)/etc
  	cp mozplugger-helper $(root)$(prefix)/bin/
@@ -58,7 +58,7 @@
 -	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
 -	cp mozpluggerrc $(root)/etc/
 -	cp mozplugger.7 $(root)$(prefix)/share/man/man7/
-+	cp mozplugger.so $(root)$(prefix)/lib/browser_plugins/
++	cp mozplugger.so $(root)${WEBPLUGINS_DIR}/
 +	cp mozpluggerrc $(root)$(prefix)/etc/
 +	cp mozplugger.7 $(root)$(prefix)/man/man7/
  

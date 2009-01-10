@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://snapshot.opera.com/${MASTER_SITES_VER_PATH}/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
@@ -42,13 +43,17 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${OSVERSION} >= 700000
 OPERA_TYPE=	7
-.else 
+.else
 OPERA_TYPE=	6
 .endif
 
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera-devel|g' \
+		${WRKSRC}/usr/local/share/opera/ini/pluginpath.ini
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)

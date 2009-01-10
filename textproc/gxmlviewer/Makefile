@@ -8,7 +8,7 @@
 
 PORTNAME=	gxmlviewer
 PORTVERSION=	1.3.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,14 +21,18 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 
+USE_WEBPLUGINS=	native
+WEBPLUGINS_DIR=	${PREFIX}/lib/gxmlviewer/plugins
+WEBPLUGINS_FILES=npgxmlviewer.so
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|intl||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|= -DXP_UNIX|= -fPIC -DXP_UNIX|g ; \
-		s|/netscape/|/gxmlviewer/|g' ${WRKSRC}/src/nsplugin/Makefile.in
+		s|/netscape/|/gxmlviewer/|g ; \
+		s|@LIBS@|@LIBS@ -lXt -lXext|g' \
+			${WRKSRC}/src/nsplugin/Makefile.in
 
-post-install:
-	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
-	@${LN} -sf ${PREFIX}/lib/gxmlviewer/plugins/npgxmlviewer.so \
-		${LOCALBASE}/lib/browser_plugins/npgxmlviewer.so
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

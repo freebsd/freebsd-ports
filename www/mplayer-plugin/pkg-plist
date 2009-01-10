@@ -2,18 +2,18 @@
 etc/mplayerplug-in.conf.dist
 @unexec if cmp -s %D/etc/mplayerplug-in.types %D/etc/mplayerplug-in.types.dist; then rm -f %D/etc/mplayerplug-in.types; fi
 etc/mplayerplug-in.types.dist
-lib/browser_plugins/mplayerplug-in-dvx.so
-lib/browser_plugins/mplayerplug-in-dvx.xpt
-lib/browser_plugins/mplayerplug-in-gmp.so
-lib/browser_plugins/mplayerplug-in-gmp.xpt
-lib/browser_plugins/mplayerplug-in-qt.so
-lib/browser_plugins/mplayerplug-in-qt.xpt
-lib/browser_plugins/mplayerplug-in-rm.so
-lib/browser_plugins/mplayerplug-in-rm.xpt
-lib/browser_plugins/mplayerplug-in-wmp.so
-lib/browser_plugins/mplayerplug-in-wmp.xpt
-lib/browser_plugins/mplayerplug-in.so
-lib/browser_plugins/mplayerplug-in.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in-dvx.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in-dvx.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in-gmp.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in-gmp.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in-qt.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in-qt.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in-rm.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in-rm.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in-wmp.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in-wmp.xpt
+%%WEBPLUGINS_DIR%%/mplayerplug-in.so
+%%WEBPLUGINS_DIR%%/mplayerplug-in.xpt
 share/locale/cs/LC_MESSAGES/mplayerplug-in.mo
 share/locale/da/LC_MESSAGES/mplayerplug-in.mo
 share/locale/de/LC_MESSAGES/mplayerplug-in.mo
@@ -34,7 +34,7 @@ share/locale/sk/LC_MESSAGES/mplayerplug-in.mo
 share/locale/tr/LC_MESSAGES/mplayerplug-in.mo
 share/locale/wa/LC_MESSAGES/mplayerplug-in.mo
 share/locale/zh_CN/LC_MESSAGES/mplayerplug-in.mo
-@dirrmtry lib/browser_plugins
+@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/en_US/LC_MESSAGES

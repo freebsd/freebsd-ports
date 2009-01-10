@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.17.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GECKO=	firefox seamonkey
 
-PLIST_SUB=	PLUGINS_DIR=${BROWSER_PLUGINS_DIR:S|^${LOCALBASE}/||}
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=openvrml.so
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -46,6 +47,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 .if ${OSVERSION} < 700042
 BROKEN=		Does not compile
@@ -79,7 +81,7 @@ pre-configure:
 		"/hardcode_libdir_flag_spec/s|\(=.\)\(.*\)\(\$$libdir\)|& \2${JAVA_HOME}/jre/lib/${ARCH}/client|"	\
 		${WRKSRC}/${cfg}
 .endfor
-	${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${BROWSER_PLUGINS_DIR}|'	\
+	${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${WEBPLUGINS_DIR}|'	\
 		${WRKSRC}/mozilla-plugin/src/Makefile.in
 .if ${GECKO} != "firefox"
 	${REINPLACE_CMD} -e "s|FIREFOX_JS|${GECKO:U}_JS|g;s|firefox-js|${GECKO}-js|"	\

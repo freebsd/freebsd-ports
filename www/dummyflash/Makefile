@@ -7,7 +7,7 @@
 
 PORTNAME=	dummyflash
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTNAME=	unix-sdk-3.0b5
@@ -21,8 +21,14 @@ BUILD_WRKSRC=	${WRKSRC}/PluginSDK30b5/examples/UnixTemplate/Unix
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.freebsd
 
-do-install:
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	${INSTALL_DATA} ${BUILD_WRKSRC}/dummyflash.so ${PREFIX}/lib/browser_plugins
+USE_WEBPLUGINS=	native
+WEBPLUGINS_FILES=dummyflash.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+
+do-install:
+	@${MKDIR} ${WEBPLUGINS_DIR}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/dummyflash.so ${WEBPLUGINS_DIR}
+
+.include <bsd.port.post.mk>

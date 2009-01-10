@@ -3,12 +3,12 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/flock/Makefile,v 1.2 2006/10/05 21:37:18 mezz Exp $
+#   $MCom: ports-stable/www/flock/Makefile,v 1.4 2009/01/09 23:41:22 mezz Exp $
 #
 
 PORTNAME=	flock
 DISTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
@@ -83,17 +83,6 @@ pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${FLOCK_ICON}' >> ${PLIST}
-
-do-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${LN} -sf $${jpi} \
-					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps

@@ -3,14 +3,14 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.21 2006/10/01 18:16:43 ahze Exp $
+#   $MCom: ports-stable/multimedia/vlc/Makefile,v 1.6 2009/01/09 23:41:21 mezz Exp $
 #      $Id: Makefile 6 2006-09-27 14:05:34Z buhnux $
 # *** PLEASE READ Makefile.inc for more information on knobs ***
 #
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6i
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -354,6 +354,10 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"
 CONFIGURE_ARGS+=--enable-mozilla
+
+USE_WEBPLUGINS=	gecko*
+WEBPLUGINS_FILES=libvlcplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .endif
 
 .if !defined(WITHOUT_MPEG2)

@@ -3,12 +3,12 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.102 2008/03/16 06:11:13 mezz Exp $
+#   $MCom: ports-stable/multimedia/totem/Makefile,v 1.9 2008/08/02 21:17:25 mezz Exp $
 #
 
 PORTNAME=	totem
 PORTVERSION=	2.22.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -100,6 +100,16 @@ CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
 		--enable-complex-plugin \
 		--enable-narrowspace-plugin
 PLIST_SUB+=	GECKO_PLUGINS=""
+
+USE_WEBPLUGINS=		gecko*
+WEBPLUGINS_FILES=	libtotem-basic-plugin.so libtotem-basic-plugin.xpt \
+			libtotem-complex-plugin.so libtotem-complex-plugin.xpt \
+			libtotem-cone-plugin.so libtotem-cone-plugin.xpt \
+			libtotem-gmp-plugin.so libtotem-gmp-plugin.xpt \
+			libtotem-mully-plugin.so libtotem-mully-plugin.xpt \
+			libtotem-narrowspace-plugin.so \
+			libtotem-narrowspace-plugin.xpt
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
 CONFIGURE_ARGS+=--without-mozilla \
 		--disable-browser-plugins \
@@ -139,12 +149,9 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e ' s|@MOZILLA_PLUGINDIR@|${PREFIX}/lib/browser_plugins|; \
-		s|mozilla/plugins|browser_plugins|' \
-		${WRKSRC}/browser-plugin/Makefile.in \
-		${WRKSRC}/browser-plugin/idl/Makefile.in
-	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g' \
-	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g ; \
+		s|_PLUGINDIR=".*"|_PLUGINDIR="${WEBPLUGINS_DIR}"|g' \
+	    		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 

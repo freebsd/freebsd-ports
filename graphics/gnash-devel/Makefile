@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20081208
+PORTREVISION=	1
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://mirror.amdmi3.ru/ \
@@ -43,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
+		--with-npapi-plugindir="${WEBPLUGINS_DIR}" \
 		--with-kde-pluginprefix="${PREFIX}"
 
 GNASHVER=	trunk
@@ -70,6 +71,9 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 
 # Plugin option processing
 .if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
+USE_WEBPLUGINS=		native
+WEBPLUGINS_FILES=	libgnashplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 PLIST_SUB+=	FFPLUGIN=""
 .else
 PLIST_SUB+=	FFPLUGIN="@comment "

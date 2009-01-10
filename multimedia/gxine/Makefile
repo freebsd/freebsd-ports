@@ -7,6 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.903
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
@@ -78,7 +79,10 @@ CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
 USE_GECKO=	firefox mozilla seamonkey xulrunner
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+USE_WEBPLUGINS=	native
+WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
+WEBPLUGINS_FILES=gxineplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
 CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \
 		NSPR_LIBS="-L${LOCALBASE}/lib"
@@ -99,11 +103,5 @@ pre-configure:
 		${WRKSRC}/misc/po/Makefile.in.in
 	@${REINPLACE_CMD} -e "s:@MAKE_PNG_TRUE@:#:g" \
 		${WRKSRC}/pixmaps/Makefile.in
-
-post-install:
-.if !defined(WITHOUT_MOZILLA_PLUGIN)
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	@${LN} -sf ${PREFIX}/lib/gxine/gxineplugin.so ${PREFIX}/lib/browser_plugins
-.endif
 
 .include <bsd.port.post.mk>

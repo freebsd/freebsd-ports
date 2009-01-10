@@ -2,30 +2,30 @@ bin/totem
 bin/totem-audio-preview
 bin/totem-video-indexer
 bin/totem-video-thumbnailer
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.xpt
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.xpt
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.xpt
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.xpt
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.xpt
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.a
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.la
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.so
-%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.xpt
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.a
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.la
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.so
+%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.xpt
 lib/nautilus/extensions-2.0/libtotem-properties-page.a
 lib/nautilus/extensions-2.0/libtotem-properties-page.la
 lib/nautilus/extensions-2.0/libtotem-properties-page.so
@@ -403,7 +403,7 @@ share/vala/vapi/totem.vapi
 %%GALAGO%%@dirrm lib/totem/plugins/galago
 @dirrm lib/totem/plugins
 @dirrm lib/totem
-%%GECKO_PLUGINS%%@dirrmtry lib/browser_plugins
+%%GECKO_PLUGINS%%@dirrmtry %%WEBPLUGINS_DIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/applications

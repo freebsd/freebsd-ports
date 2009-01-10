@@ -3,11 +3,11 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/firefox-devel/Makefile,v 1.36 2007/02/24 21:00:46 mezz Exp $
+#   $MCom: ports-stable/www/firefox-devel/Makefile,v 1.7 2008/08/07 04:42:35 mezz Exp $
 
 PORTNAME=	firefox
 DISTVERSION=	3.0.a2
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -94,17 +94,6 @@ port-pre-install:
 	${ECHO_CMD} "pref(\"browser.link.open_external\", 3);" \
 		>> ${SYSTEM_PREFS}
 .endif # !defined(WITHOUT_NEWTAB)
-
-do-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${LN} -sf $${jpi} \
-					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps

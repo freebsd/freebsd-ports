@@ -4,7 +4,7 @@
 # and will be autodetected to enable
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.8 2006/10/01 18:16:43 ahze Exp $
+#   $MCom: ports-stable/multimedia/vlc-devel/Makefile.inc,v 1.4 2009/01/09 23:41:21 mezz Exp $
 #      $Id: Makefile.inc 6 2006-09-27 14:05:34Z buhnux $
 # If you define for example WITH_FAAD and WITHOUT_FAAD
 # the WITHOUT_ will always over ride the WITH_.
@@ -281,7 +281,8 @@ pre-install: build
 .endif
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
-		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
+		${SED} -e 's|^|%%WEBPLUGINS_DIR%%/|' >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry %%WEBPLUGINS_DIR%%" >> ${PLIST}
 .endif
 .for locale in co fur my oc ps tet tl
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
@@ -298,8 +299,8 @@ do-install:
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
 .if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
+	@${MKDIR} ${WEBPLUGINS_DIR}
+	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${WEBPLUGINS_DIR}
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/

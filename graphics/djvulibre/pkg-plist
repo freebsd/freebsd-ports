@@ -12,9 +12,6 @@ share/djvu/djview3/fr/djview.qm
 share/djvu/djview3/fr/qt.qm
 share/djvu/djview3/ja/djview.qm
 share/djvu/djview3/ja/qt.qm
-@exec mkdir -p %%LOCALBASE%%/lib/browser_plugins
-@exec ln -sf %D/lib/djvulibre/plugins/nsdejavu.so %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
-@unexec rm -f %%LOCALBASE%%/lib/browser_plugins/nsdejavu.so
 @dirrm share/djvu/djview3/ja
 @dirrm share/djvu/djview3/fr
 @dirrm share/djvu/djview3/desktop
@@ -24,4 +21,3 @@ share/djvu/djview3/ja/qt.qm
 @dirrmtry share/djvu
 @dirrm lib/djvulibre/plugins
 @dirrm lib/djvulibre
-@unexec rmdir %%LOCALBASE%%/lib/browser_plugins 2>/dev/null || true

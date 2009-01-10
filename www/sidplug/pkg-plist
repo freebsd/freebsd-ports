@@ -1,7 +1,7 @@
 bin/sidplug
-lib/browser_plugins/npsidplug.so
+%%WEBPLUGINS_DIR%%/npsidplug.so
 %%PORTDOCS%%share/examples/sidplug/Lazy_Fast.sid
 %%PORTDOCS%%share/examples/sidplug/README.html
 %%PORTDOCS%%share/examples/sidplug/sidplug.png
 %%PORTDOCS%%@dirrm share/examples/sidplug
-@dirrmtry lib/browser_plugins/
+@dirrmtry %%WEBPLUGINS_DIR%%

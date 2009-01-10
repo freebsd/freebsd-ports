@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.11.6
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -78,9 +79,13 @@ RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}
 USE_XORG=	x11
 CONFIGURE_ARGS+=--enable-nsplugin \
 		--with-libassuan-prefix=${LOCALBASE} \
-		--with-plugindir=${LOCALBASE}/lib/browser_plugins \
+		--with-plugindir=${WEBPLUGINS_DIR} \
 		--with-pinentry=${PINENTRY}
 PLIST_SUB+=	SIGNER=""
+
+USE_WEBPLUGINS=	gecko*
+WEBPLUGINS_FILES=opensc-signer.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
 PLIST_SUB+=	SIGNER="@comment "
 .endif

@@ -1,4 +1,4 @@
-lib/browser_plugins/libswfdecmozilla.a
-lib/browser_plugins/libswfdecmozilla.la
-lib/browser_plugins/libswfdecmozilla.so
-@dirrmtry lib/browser_plugins
+%%WEBPLUGINS_DIR%%/libswfdecmozilla.a
+%%WEBPLUGINS_DIR%%/libswfdecmozilla.la
+%%WEBPLUGINS_DIR%%/libswfdecmozilla.so
+@dirrmtry %%WEBPLUGINS_DIR%%

@@ -1,8 +1,8 @@
 bin/rhythmbox
 bin/rhythmbox-client
-%%GECKO_PLUGIN%%lib/browser_plugins/librhythmbox-itms-detection-plugin.a
-%%GECKO_PLUGIN%%lib/browser_plugins/librhythmbox-itms-detection-plugin.la
-%%GECKO_PLUGIN%%lib/browser_plugins/librhythmbox-itms-detection-plugin.so
+%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.a
+%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.la
+%%GECKO_PLUGIN%%%%WEBPLUGINS_DIR%%/librhythmbox-itms-detection-plugin.so
 lib/librhythmbox-core.a
 lib/librhythmbox-core.la
 lib/librhythmbox-core.so
@@ -609,6 +609,7 @@ share/rhythmbox/rhythmbox-ui.xml
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/artdisplay
 @dirrm lib/rhythmbox/plugins
 @dirrm lib/rhythmbox
+%%GECKO_PLUGIN%%@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK

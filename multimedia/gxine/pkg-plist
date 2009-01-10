@@ -5,7 +5,6 @@ etc/gxine/keypad.xml
 etc/gxine/startup
 etc/gxine/toolbar-fullscreen.xml
 etc/gxine/toolbar-window.xml
-%%MOZILLA_PLUGIN%%lib/browser_plugins/gxineplugin.so
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.a
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.la
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.so

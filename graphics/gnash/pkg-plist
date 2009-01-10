@@ -6,7 +6,7 @@ bin/soldumper
 %%GTK%%bin/gtk-gnash
 %%KDE%%bin/kde-gnash
 %%CYGNAL%%bin/cygnal
-%%FFPLUGIN%%lib/browser_plugins/libgnashplugin.so
+%%FFPLUGIN%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
 %%KONQPLUGIN%%share/apps/klash/pluginsinfo
 %%KONQPLUGIN%%share/apps/klash/klashpartui.rc
 %%KONQPLUGIN%%share/services/klash_part.desktop
@@ -55,4 +55,4 @@ share/locale/sv/LC_MESSAGES/gnash.mo
 @dirrm %%DOCSDIR%%
 @dirrm lib/gnash
 %%KONQPLUGIN%%@dirrm share/apps/klash
-%%FFPLUGIN%%@dirrmtry lib/browser_plugins
+%%FFPLUGIN%%@dirrmtry %%WEBPLUGINS_DIR%%

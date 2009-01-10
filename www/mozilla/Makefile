@@ -3,11 +3,11 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports-stable/www/mozilla/Makefile,v 1.18 2008/06/16 22:25:44 mezz Exp $
+#    $MCom: ports-stable/www/mozilla/Makefile,v 1.22 2008/08/07 04:42:36 mezz Exp $
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.13
-PORTREVISION?=	8
+PORTREVISION?=	10
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -129,14 +129,6 @@ post-patch:
 		${WRKDIR}/mozilla.desktop
 
 pre-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
-				break; \
-			fi; \
-		done; \
-	fi
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 .endif
@@ -144,15 +136,6 @@ pre-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-		    		${LN} -sf $${jpi} \
-			    		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla.desktop \
 		${PREFIX}/share/applications

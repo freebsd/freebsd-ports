@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.21
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu
 
@@ -41,7 +41,12 @@ MAN1=		djview3.1 nsdejavu.1
 MLINKS=		djview3.1 djview.1
 DESKTOPDIR=	${PREFIX}/share/djvu/djview3/desktop
 
+USE_WEBPLUGINS=		gecko*
+WEBPLUGINS_DIR=		${PREFIX}/lib/djvulibre/plugins
+WEBPLUGINS_FILES=	nsdejavu.so
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -81,12 +86,5 @@ post-install:
 		${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/desktopfiles/register-djview-menu \
 		${DESKTOPDIR}
-
-#
-# Install browser plugin.
-#
-	@${MKDIR} ${LOCALBASE}/lib/browser_plugins
-	${LN} -sf ${PREFIX}/lib/djvulibre/plugins/nsdejavu.so \
-		${LOCALBASE}/lib/browser_plugins/nsdejavu.so
 
 .include <bsd.port.post.mk>
