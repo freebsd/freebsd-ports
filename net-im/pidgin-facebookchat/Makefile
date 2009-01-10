@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-facebookchat
-PORTVERSION=	1.35
+PORTVERSION=	1.45
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 PROJECTHOST=	${PORTNAME}
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/pidgin-facebookchat
 USE_BZIP2=	yes
 
 PIXMAPS_DIR=	${PREFIX}/share/pixmaps/pidgin/protocols
