@@ -1,0 +1,86 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/www/squidstats/files/pkg-install.in,v 1.1 2009-01-10 15:05:56 miwi Exp $
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+pkgname=$1
+squid_base="${PKG_PREFIX:-%%PREFIX%%}/squid"
+squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
+if [ -x /usr/sbin/nologin ]; then
+	nologin=/usr/sbin/nologin
+else
+	nologin=/sbin/nologin
+fi
+
+squid_user="%%SQUID_UID%%"
+squid_group="%%SQUID_GID%%"
+squid_name="Squid caching-proxy pseudo-owner"
+squid_homedir="/usr/local/squid"
+squid_gid=100
+squid_uid=100
+
+
+group_create () {
+	n_group=$1
+	n_gid=$2
+	if ! pw groupshow ${n_group} -q >/dev/null ; then
+		echo "There is no group '${n_group}' on this system, so I will try to create it (using group id ${n_gid}):"
+		if ! pw groupadd ${n_group} -g ${n_gid} -q ; then
+			echo "Failed to create group \"${n_group}\"!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "Group '${n_group}' created successfully:"
+		fi
+	else
+		echo "I will use the existing group '${n_group}':"
+	fi
+	pw groupshow ${n_group}
+}
+
+user_create () {
+	n_user="$1"
+	n_uid="$2"
+	n_group="$3"
+	n_homedir="$4"
+	n_name="$5"
+	n_shell="$6"
+
+	echo "Given: $1 $2 $3 $4 '$5' '$6'"
+
+	if ! pw usershow ${n_user} -q >/dev/null ; then
+		echo "There is no account '${n_user}' on this system, so I will try to create it (using user id ${n_uid}):"
+		if ! pw useradd -q -n ${n_user} \
+		    -u ${n_uid} -g ${n_group} \
+	  	    -c "${n_name}" \
+		    -d "${n_homedir}" -s "${n_shell}" \
+		    -h - ; then
+			echo "Failed to create user '${n_user}'!" >&2
+			echo "Please create it manually." >&2
+			exit 1
+		else
+			echo "User '${n_user}' created successfully:"
+		fi
+	else
+		echo "I will use the existing user '${n_user}':"
+	fi
+	pw usershow ${n_user}
+}
+
+case $2 in
+PRE-INSTALL)
+	echo "===> Pre-installation configuration for ${pkgname}"
+	echo "===> - Creating Groups"
+	group_create ${squid_group} ${squid_gid}
+	echo "===> - Creating Users"
+	user_create ${squid_user} ${squid_uid} ${squid_group} ${squid_homedir} "${squid_name}" ${nologin}
+	echo "===> - Done."
+	;;
+POST-INSTALL)
+	;;
+*)
+	exit 64
+	;;
+esac
+exit 0
