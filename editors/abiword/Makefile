@@ -3,12 +3,12 @@
 # Whom:                 Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/abiword/Makefile,v 1.8 2007/07/24 04:25:21 mezz Exp $
+#   $MCom: ports/editors/abiword/Makefile,v 1.11 2008/08/19 00:45:06 marcus Exp $
 #
 
 PORTNAME=	abiword
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -66,14 +66,14 @@ PLIST_SUB+=		DICT:="@comment "
 #CONFIGURE_ARGS+=	--disable-gnomeui
 #.endif
 
-.if (defined(WITH_GUCHARMAP) || \
-	exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)) && \
-	!defined(WITHOUT_GUCHARMAP)
-LIB_DEPENDS+=		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
-CONFIGURE_ARGS+=	--enable-gucharmap
-.else
+#.if (defined(WITH_GUCHARMAP) || \
+#	exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)) && \
+#	!defined(WITHOUT_GUCHARMAP)
+#LIB_DEPENDS+=		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+#CONFIGURE_ARGS+=	--enable-gucharmap
+#.else
 CONFIGURE_ARGS+=	--disable-gucharmap
-.endif
+#.endif
 
 pre-everything::
 	@${ECHO_MSG} ""

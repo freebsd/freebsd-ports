@@ -3,12 +3,12 @@
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
-#   $MCom: ports/finance/gnucash/Makefile,v 1.22 2007/07/30 20:05:51 mezz Exp $
+#   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 #
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -20,7 +20,7 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		goffice-0.6.6:${PORTSDIR}/devel/goffice
+		goffice-0.8.7:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

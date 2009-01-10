@@ -3,12 +3,12 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#   $MCom: ports/www/kazehakase/Makefile,v 1.9 2007/10/24 16:17:14 ahze Exp $
+#   $MCom: ports/www/kazehakase/Makefile,v 1.15 2008/08/06 04:22:50 mezz Exp $
 #
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/30219
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	firefox mozilla seamonkey xulrunner seamonkey
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
@@ -40,7 +40,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if defined(WITH_WEBKIT)
-LIB_DEPENDS+=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
 PLIST_SUB+=	WEBKIT=""
 .else
 PLIST_SUB+=	WEBKIT="@comment "

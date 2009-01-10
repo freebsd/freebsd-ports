@@ -1,0 +1,9 @@
+--- data/gconf.path.orig	2008-12-26 17:04:03.000000000 -0500
++++ data/gconf.path	2008-12-26 17:04:13.000000000 -0500
+@@ -1,5 +1,5 @@
+ # treat system-wide settings as mandatory
+-xml:readonly:/etc/gconf/gconf.xml.system
++xml:readonly:%%LOCALBASE%%/etc/gconf/gconf.xml.system
+ 
+ # override some settings
+ # we treat settings in this location as

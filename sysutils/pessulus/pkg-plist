@@ -39,6 +39,12 @@ bin/pessulus
 %%PYTHON_SITELIBDIR%%/Pessulus/simpleeditabletreeview.pyc
 %%PYTHON_SITELIBDIR%%/Pessulus/simpleeditabletreeview.pyo
 share/applications/pessulus.desktop
+share/icons/hicolor/16x16/apps/pessulus.png
+share/icons/hicolor/22x22/apps/pessulus.png
+share/icons/hicolor/24x24/apps/pessulus.png
+share/icons/hicolor/32x32/apps/pessulus.png
+share/icons/hicolor/48x48/apps/pessulus.png
+share/icons/hicolor/scalable/apps/pessulus.svg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -49,6 +55,7 @@ share/applications/pessulus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/ar/LC_MESSAGES/pessulus.mo
 share/locale/as/LC_MESSAGES/pessulus.mo
+share/locale/bal/LC_MESSAGES/pessulus.mo
 share/locale/be/LC_MESSAGES/pessulus.mo
 share/locale/be@latin/LC_MESSAGES/pessulus.mo
 share/locale/bg/LC_MESSAGES/pessulus.mo
@@ -78,6 +85,7 @@ share/locale/it/LC_MESSAGES/pessulus.mo
 share/locale/ja/LC_MESSAGES/pessulus.mo
 share/locale/ka/LC_MESSAGES/pessulus.mo
 share/locale/ko/LC_MESSAGES/pessulus.mo
+share/locale/kn/LC_MESSAGES/pessulus.mo
 share/locale/ku/LC_MESSAGES/pessulus.mo
 share/locale/lt/LC_MESSAGES/pessulus.mo
 share/locale/lv/LC_MESSAGES/pessulus.mo
@@ -93,14 +101,16 @@ share/locale/oc/LC_MESSAGES/pessulus.mo
 share/locale/or/LC_MESSAGES/pessulus.mo
 share/locale/pa/LC_MESSAGES/pessulus.mo
 share/locale/pl/LC_MESSAGES/pessulus.mo
+share/locale/ps/LC_MESSAGES/pessulus.mo
 share/locale/pt/LC_MESSAGES/pessulus.mo
 share/locale/pt_BR/LC_MESSAGES/pessulus.mo
+share/locale/ro/LC_MESSAGES/pessulus.mo
 share/locale/ru/LC_MESSAGES/pessulus.mo
 share/locale/sk/LC_MESSAGES/pessulus.mo
 share/locale/sl/LC_MESSAGES/pessulus.mo
 share/locale/sq/LC_MESSAGES/pessulus.mo
 share/locale/sr/LC_MESSAGES/pessulus.mo
-share/locale/sr@Latn/LC_MESSAGES/pessulus.mo
+share/locale/sr@latin/LC_MESSAGES/pessulus.mo
 share/locale/sv/LC_MESSAGES/pessulus.mo
 share/locale/ta/LC_MESSAGES/pessulus.mo
 share/locale/te/LC_MESSAGES/pessulus.mo
@@ -121,6 +131,10 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -133,5 +147,7 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/bal/LC_MESSAGES
+@dirrmtry share/locale/bal
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

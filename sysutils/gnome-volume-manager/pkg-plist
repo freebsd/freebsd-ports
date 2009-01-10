@@ -37,6 +37,7 @@ share/locale/is/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/it/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ka/LC_MESSAGES/gnome-volume-manager.mo
+share/locale/kn/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ku/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-volume-manager.mo
@@ -65,7 +66,7 @@ share/locale/sk/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/sl/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/sq/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/sr/LC_MESSAGES/gnome-volume-manager.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-volume-manager.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/sv/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/ta/LC_MESSAGES/gnome-volume-manager.mo
 share/locale/te/LC_MESSAGES/gnome-volume-manager.mo
@@ -87,6 +88,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-volume-manager.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.28 2008/03/17 11:25:37 ahze Exp $
+#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.33 2008/10/26 20:28:27 marcus Exp $
 #
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	2.22.2
-PORTREVISION=	1
+PORTVERSION=	2.22.5
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,7 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
+USE_GNOME=	gnomehack gnomeprefix intlhack
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -142,6 +142,11 @@ share/gnome/help/epiphany/ca/figures/ephy-addressbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/ca/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/ca/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/ca/figures/ephy-screenshot.png
+share/gnome/help/epiphany/cs/epiphany.xml
+share/gnome/help/epiphany/cs/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-screenshot.png
 share/gnome/help/epiphany/de/epiphany.xml
 share/gnome/help/epiphany/de/figures/ephy-addressbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/de/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
@@ -224,6 +229,7 @@ share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/as/LC_MESSAGES/epiphany.mo
+share/locale/ast/LC_MESSAGES/epiphany.mo
 share/locale/az/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
 share/locale/be@latin/LC_MESSAGES/epiphany.mo
@@ -289,7 +295,7 @@ share/locale/sk/LC_MESSAGES/epiphany.mo
 share/locale/sl/LC_MESSAGES/epiphany.mo
 share/locale/sq/LC_MESSAGES/epiphany.mo
 share/locale/sr/LC_MESSAGES/epiphany.mo
-share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
+share/locale/sr@latin/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
 share/locale/ta/LC_MESSAGES/epiphany.mo
 share/locale/te/LC_MESSAGES/epiphany.mo
@@ -305,6 +311,7 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 share/omf/epiphany/epiphany-C.omf
 share/omf/epiphany/epiphany-bg.omf
 share/omf/epiphany/epiphany-ca.omf
+share/omf/epiphany/epiphany-cs.omf
 share/omf/epiphany/epiphany-de.omf
 share/omf/epiphany/epiphany-el.omf
 share/omf/epiphany/epiphany-en_GB.omf
@@ -352,6 +359,8 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrm share/gnome/help/epiphany/el
 @dirrm share/gnome/help/epiphany/de/figures
 @dirrm share/gnome/help/epiphany/de
+@dirrm share/gnome/help/epiphany/cs/figures
+@dirrm share/gnome/help/epiphany/cs
 @dirrm share/gnome/help/epiphany/ca/figures
 @dirrm share/gnome/help/epiphany/ca
 @dirrm share/gnome/help/epiphany/bg/figures
@@ -401,6 +410,8 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -421,5 +432,7 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

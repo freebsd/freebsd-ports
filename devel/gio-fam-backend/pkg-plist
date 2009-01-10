@@ -1,5 +1,3 @@
 lib/gio/modules/libgiofam.a
 lib/gio/modules/libgiofam.la
 lib/gio/modules/libgiofam.so
-@dirrmtry lib/gio/modules
-@dirrmtry lib/gio

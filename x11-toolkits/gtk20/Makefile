@@ -3,12 +3,12 @@
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/gtk20/Makefile,v 1.11 2007/12/04 21:45:14 mezz Exp $
+#   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.147 2009/01/08 17:38:06 kwm Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.12.11
-PORTREVISION?=	1
+PORTVERSION=	2.14.7
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/%SUBDIR%/ \
@@ -29,10 +29,11 @@ LATEST_LINK=	gtk20
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jasper.4:${PORTSDIR}/graphics/jasper
+RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_GMAKE=	yes
@@ -76,8 +77,6 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/gtk/xdgmime/xdgmime.c
 # GnomeVFS needs pthread; gtk-demo may use GnomeVFS (via GtkFileChooser)
 	@${REINPLACE_CMD} -e 's|@CFLAGS@|& ${PTHREAD_CFLAGS}|; \
 		s|@LDFLAGS@|& ${PTHREAD_LIBS}|' \

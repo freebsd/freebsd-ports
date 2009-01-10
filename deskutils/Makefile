@@ -102,6 +102,7 @@
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += gxneur
+    SUBDIR += hamster-applet
     SUBDIR += helpviewer
     SUBDIR += horde-hermes
     SUBDIR += horde-kronolith

@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.14 2008/01/08 04:28:10 marcus Exp $
+#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.18 2008/08/21 21:53:01 mezz Exp $
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
@@ -24,7 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
+USE_GNOME=	gnomehack pkgconfig ltverhack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
@@ -41,22 +41,15 @@ PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/docbook2man)
-USE_DOCBOOK2MAN=	yes
-BUILD_DEPENDS+=		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
 	${INSTALL_MAN} ${MAN5:S|^|${WRKSRC}/doc/|} ${PREFIX}/man/man5
-.if !defined(USE_DOCBOOK2MAN)
 .for manpage in ${MAN1}
 	${INSTALL_MAN} ${FILESDIR}/${manpage} ${PREFIX}/man/man1
 .endfor
-.endif
 	if [ ! -f ${PREFIX}/etc/fonts/fonts.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf; \
 		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \

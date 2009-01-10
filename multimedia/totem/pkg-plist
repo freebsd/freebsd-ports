@@ -2,30 +2,28 @@ bin/totem
 bin/totem-audio-preview
 bin/totem-video-indexer
 bin/totem-video-thumbnailer
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.xpt
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.xpt
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.xpt
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.xpt
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.xpt
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.a
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.la
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.so
-%%GECKO_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.xpt
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-basic-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-complex-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.so
+lib/libbaconvideowidget.a
+lib/libbaconvideowidget.la
+lib/libbaconvideowidget.so
+lib/libbaconvideowidget.so.0
 lib/nautilus/extensions-2.0/libtotem-properties-page.a
 lib/nautilus/extensions-2.0/libtotem-properties-page.la
 lib/nautilus/extensions-2.0/libtotem-properties-page.so
@@ -83,7 +81,7 @@ lib/totem/plugins/youtube/youtube.pyc
 lib/totem/plugins/youtube/youtube.pyo
 lib/totem/plugins/youtube/youtube.totem-plugin
 lib/totem/plugins/youtube/youtube.ui
-%%GECKO_PLUGINS%%libexec/totem-plugin-viewer
+%%BROWSER_PLUGINS%%libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
 share/applications/totem.desktop
 share/gnome/help/totem/C/figures/totem_next_button.png
@@ -180,6 +178,15 @@ share/gnome/help/totem/pa/figures/totem_start_window.png
 share/gnome/help/totem/pa/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/pa/figures/totem_volume_mute_button.png
 share/gnome/help/totem/pa/totem.xml
+share/gnome/help/totem/pl/figures/totem_next_button.png
+share/gnome/help/totem/pl/figures/totem_pause_button.png
+share/gnome/help/totem/pl/figures/totem_play_button.png
+share/gnome/help/totem/pl/figures/totem_previous_button.png
+share/gnome/help/totem/pl/figures/totem_show_playlist_button.png
+share/gnome/help/totem/pl/figures/totem_start_window.png
+share/gnome/help/totem/pl/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/pl/figures/totem_volume_mute_button.png
+share/gnome/help/totem/pl/totem.xml
 share/gnome/help/totem/pt_BR/figures/totem_next_button.png
 share/gnome/help/totem/pt_BR/figures/totem_pause_button.png
 share/gnome/help/totem/pt_BR/figures/totem_play_button.png
@@ -305,7 +312,7 @@ share/locale/sk/LC_MESSAGES/totem.mo
 share/locale/sl/LC_MESSAGES/totem.mo
 share/locale/sq/LC_MESSAGES/totem.mo
 share/locale/sr/LC_MESSAGES/totem.mo
-share/locale/sr@Latn/LC_MESSAGES/totem.mo
+share/locale/sr@latin/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
 share/locale/ta/LC_MESSAGES/totem.mo
 share/locale/te/LC_MESSAGES/totem.mo
@@ -330,6 +337,7 @@ share/omf/totem/totem-fr.omf
 share/omf/totem/totem-it.omf
 share/omf/totem/totem-oc.omf
 share/omf/totem/totem-pa.omf
+share/omf/totem/totem-pl.omf
 share/omf/totem/totem-pt_BR.omf
 share/omf/totem/totem-ru.omf
 share/omf/totem/totem-sv.omf
@@ -364,6 +372,8 @@ share/vala/vapi/totem.vapi
 @dirrm share/gnome/help/totem/ru
 @dirrm share/gnome/help/totem/pt_BR/figures
 @dirrm share/gnome/help/totem/pt_BR
+@dirrm share/gnome/help/totem/pl/figures
+@dirrm share/gnome/help/totem/pl
 @dirrm share/gnome/help/totem/pa/figures
 @dirrm share/gnome/help/totem/pa
 @dirrm share/gnome/help/totem/oc/figures
@@ -387,6 +397,7 @@ share/vala/vapi/totem.vapi
 @dirrm share/gnome/help/totem/C/figures
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
+@dirrmtry share/applications
 @dirrm libexec/totem
 @dirrm lib/totem/plugins/youtube
 @dirrm lib/totem/plugins/totem
@@ -403,10 +414,9 @@ share/vala/vapi/totem.vapi
 %%GALAGO%%@dirrm lib/totem/plugins/galago
 @dirrm lib/totem/plugins
 @dirrm lib/totem
-%%GECKO_PLUGINS%%@dirrmtry %%WEBPLUGINS_DIR%%
+%%BROWSER_PLUGINS%%@dirrmtry %%WEBPLUGINS_DIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -415,6 +425,8 @@ share/vala/vapi/totem.vapi
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

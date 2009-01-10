@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pixman
-PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTVERSION=	0.12.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,6 +14,7 @@ COMMENT=	Low-level pixel manipulation library
 
 XORG_CAT=	lib
 USE_AUTOTOOLS=	libtool:15
+USE_PERL5_BUILD=yes
 USE_GNOME=	ltverhack:9
 
 post-patch:

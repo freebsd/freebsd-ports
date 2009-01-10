@@ -1,0 +1,129 @@
+#!/bin/sh
+# Wrapper script for FreeBSD and PC-BSD, which takes calls from HAL
+# for running mount_ntfs, and performs it with a given FUSE helper.
+###################################################################
+
+## Modify this next variable to point to the correct FUSE helper.
+FUSE_HELPER="ntfs-3g"
+## DO NOT modify anything below this.
+
+FUSEDB="/tmp"
+if [ -n "${TMPDIR}" ]
+then
+   FUSEDB=${TMPDIR}
+fi
+
+FUSEDB="${FUSEDB}/.fuse-mnts"
+MNTSTRING=""
+OPTIONS=""
+FOUNDOPT="0"
+FOUNDU="0"
+HWDEV=""
+FOUNDDEV="0"
+
+for i in $@
+do
+    if [ "$FOUNDOPT" = "1" ]
+    then
+        OPTIONS="${OPTIONS} -o ${i}"
+    elif [ "${FOUNDU}" = "1" ]
+    then
+        OPTIONS="${OPTIONS} -o uid=${i}"
+    else
+
+       if [ "${FOUNDDEV}" = "1" ]
+       then
+         # Save the mount-point, will be used later
+         MNTPOINT="${i}"
+         FOUNDDEV="2"
+       fi
+
+        echo ${i}| grep -q "/dev" 2>/dev/null
+        if [ "$?" = "0" -a "${FOUNDDEV}" = "0" ]
+        then
+            FOUNDDEV="1"
+            # Lets check if we were given a fuse[] device
+            # or a real device name
+            echo "${i}" | grep -q "fuse" 2>/dev/null
+            if [ "$?" = "0" ]
+            then
+             # Lets save the old fuse device name we had saved
+             OLDFUSE="${i}"
+
+             # Lets get the *real* device name for FUSE helper
+             REALHWDEV="`cat ${FUSEDB} | grep ${i} | cut -d '=' -f 2`"
+
+             # Now lets change the string we will be saving
+             i="${REALHWDEV}"
+            else
+             # We are doing a first time mount of this device
+
+             # Set the real device name for mounting
+             REALHWDEV="${i}"
+            fi
+        fi
+
+        # Add the value to our mount string
+        if [ "${i}" != "-o" -a "${i}" != "-u" ]
+        then
+          MNTSTRING="${MNTSTRING} ${i}"
+        fi
+
+    fi
+
+    # Check if we are on a -u flag now
+    if [ "${i}" = "-u" ]
+    then
+       FOUNDU="1"
+    else
+       FOUNDU="0"
+    fi
+
+    # Check if we are on a -o option
+    if [ "${i}" = "-o" ]
+    then
+       FOUNDOPT="1"
+    else
+       FOUNDOPT="0"
+    fi
+done
+
+# Save our final string which our FUSE helper will use
+FINALSTRING="${MNTSTRING} ${OPTIONS}"
+
+
+# Check that fuse.ko is loaded
+kldstat | grep -q fuse 2>/dev/null
+if [ "$?" != "0" ]
+then
+  kldload /usr/local/modules/fuse.ko
+fi
+
+# Run the FUSE helper command now, with the options in the right order
+${FUSE_HELPER} ${FINALSTRING}
+
+# If we have an OLDFUSE variable, lets clear it from the list
+if [ ! -z "${OLDFUSE}" -a -e ${FUSEDB} ]
+then
+   cat ${FUSEDB} | grep -v "${OLDFUSE}=" > /tmp/.newfuse
+   mv /tmp/.newfuse ${FUSEDB}
+fi
+
+# Now lets figure out which fuse device was used and save it to DB
+NEWFUSE="`mount | tr -s ' ' |  grep \" ${MNTPOINT} \" | cut -d ' ' -f 1`"
+
+# Make sure we don't already have this fuse device listed
+if [ -e ${FUSEDB} ]
+then
+   cat ${FUSEDB} | grep -v "${NEWFUSE}=" > /tmp/.newfuse
+   mv /tmp/.newfuse ${FUSEDB}
+else
+   touch ${FUSEDB}
+fi
+
+# Save the fuse device to our DB
+echo "${NEWFUSE}=${REALHWDEV}" >> ${FUSEDB}
+
+
+# Finished!
+exit 0

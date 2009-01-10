@@ -17,7 +17,10 @@ libexec/ck-collect-session-info
 libexec/ck-get-x11-display-device
 libexec/ck-get-x11-server-pid
 sbin/console-kit-daemon
-share/PolicyKit/policy/ConsoleKit.policy
+share/PolicyKit/policy/org.freedesktop.consolekit.policy
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
 @exec mkdir -p %D/etc/ConsoleKit/run-session.d
 @exec mkdir -p %D/lib/ConsoleKit/run-session.d

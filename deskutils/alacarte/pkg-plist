@@ -15,10 +15,13 @@ bin/alacarte
 %%PYTHON_SITELIBDIR%%/Alacarte/util.pyc
 %%PYTHON_SITELIBDIR%%/Alacarte/util.pyo
 share/alacarte/alacarte.glade
-share/alacarte/logo.svg
 share/applications/alacarte.desktop
+share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
-share/icons/hicolor/scalable/apps/alacarte.svg
+share/icons/hicolor/24x24/apps/alacarte.png
+share/icons/hicolor/256x256/apps/alacarte.png
+share/icons/hicolor/32x32/apps/alacarte.png
+share/icons/hicolor/48x48/apps/alacarte.png
 share/locale/ar/LC_MESSAGES/alacarte.mo
 share/locale/as/LC_MESSAGES/alacarte.mo
 share/locale/be/LC_MESSAGES/alacarte.mo
@@ -41,10 +44,13 @@ share/locale/eu/LC_MESSAGES/alacarte.mo
 share/locale/fa/LC_MESSAGES/alacarte.mo
 share/locale/fi/LC_MESSAGES/alacarte.mo
 share/locale/fr/LC_MESSAGES/alacarte.mo
+share/locale/fur/LC_MESSAGES/alacarte.mo
 share/locale/ga/LC_MESSAGES/alacarte.mo
 share/locale/gl/LC_MESSAGES/alacarte.mo
 share/locale/gu/LC_MESSAGES/alacarte.mo
+share/locale/he/LC_MESSAGES/alacarte.mo
 share/locale/hi/LC_MESSAGES/alacarte.mo
+share/locale/hr/LC_MESSAGES/alacarte.mo
 share/locale/hu/LC_MESSAGES/alacarte.mo
 share/locale/id/LC_MESSAGES/alacarte.mo
 share/locale/io/LC_MESSAGES/alacarte.mo
@@ -68,15 +74,17 @@ share/locale/oc/LC_MESSAGES/alacarte.mo
 share/locale/or/LC_MESSAGES/alacarte.mo
 share/locale/pa/LC_MESSAGES/alacarte.mo
 share/locale/pl/LC_MESSAGES/alacarte.mo
+share/locale/ps/LC_MESSAGES/alacarte.mo
 share/locale/pt/LC_MESSAGES/alacarte.mo
 share/locale/pt_BR/LC_MESSAGES/alacarte.mo
 share/locale/ro/LC_MESSAGES/alacarte.mo
 share/locale/ru/LC_MESSAGES/alacarte.mo
 share/locale/si/LC_MESSAGES/alacarte.mo
+share/locale/sk/LC_MESSAGES/alacarte.mo
 share/locale/sl/LC_MESSAGES/alacarte.mo
 share/locale/sq/LC_MESSAGES/alacarte.mo
 share/locale/sr/LC_MESSAGES/alacarte.mo
-share/locale/sr@Latn/LC_MESSAGES/alacarte.mo
+share/locale/sr@latin/LC_MESSAGES/alacarte.mo
 share/locale/sv/LC_MESSAGES/alacarte.mo
 share/locale/ta/LC_MESSAGES/alacarte.mo
 share/locale/te/LC_MESSAGES/alacarte.mo
@@ -88,16 +96,23 @@ share/locale/vi/LC_MESSAGES/alacarte.mo
 share/locale/zh_CN/LC_MESSAGES/alacarte.mo
 share/locale/zh_HK/LC_MESSAGES/alacarte.mo
 share/locale/zh_TW/LC_MESSAGES/alacarte.mo
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrm share/alacarte
 @dirrm %%PYTHON_SITELIBDIR%%/Alacarte
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -108,6 +123,8 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -116,4 +133,3 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/applications

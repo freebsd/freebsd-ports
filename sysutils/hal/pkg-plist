@@ -72,6 +72,7 @@ libexec/hald-probe-volume
 libexec/hald-runner
 sbin/hald
 %%PORTDOCS%%%%DOCSDIR%%/README.freebsd
+%%PORTDOCS%%%%DOCSDIR%%/README.fuse
 %%DATADIR%%/dist/hal.conf
 %%DATADIR%%/fdi/fdi.dtd
 %%DATADIR%%/fdi/information/10freedesktop/01-deprecated-keys.fdi
@@ -87,6 +88,7 @@ sbin/hald
 %%DATADIR%%/fdi/policy/10osvendor/15-storage-luks.fdi
 %%DATADIR%%/fdi/policy/10osvendor/20-storage-methods.fdi
 %%DATADIR%%/fdi/policy/10osvendor/30-wol.fdi
+%%DATADIR%%/mount-fuse
 share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
 share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
 share/PolicyKit/policy/org.freedesktop.hal.policy

@@ -6,11 +6,11 @@ include/totem-pl-parser/1/plparser/totem-pl-parser.h
 lib/libtotem-plparser-mini.a
 lib/libtotem-plparser-mini.la
 lib/libtotem-plparser-mini.so
-lib/libtotem-plparser-mini.so.10
+lib/libtotem-plparser-mini.so.12
 lib/libtotem-plparser.a
 lib/libtotem-plparser.la
 lib/libtotem-plparser.so
-lib/libtotem-plparser.so.10
+lib/libtotem-plparser.so.12
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
 %%DOCSDIR%%/ch01.html
@@ -88,7 +88,7 @@ share/locale/sk/LC_MESSAGES/totem-pl-parser.mo
 share/locale/sl/LC_MESSAGES/totem-pl-parser.mo
 share/locale/sq/LC_MESSAGES/totem-pl-parser.mo
 share/locale/sr/LC_MESSAGES/totem-pl-parser.mo
-share/locale/sr@Latn/LC_MESSAGES/totem-pl-parser.mo
+share/locale/sr@latin/LC_MESSAGES/totem-pl-parser.mo
 share/locale/sv/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ta/LC_MESSAGES/totem-pl-parser.mo
 share/locale/te/LC_MESSAGES/totem-pl-parser.mo
@@ -114,6 +114,8 @@ share/locale/zh_TW/LC_MESSAGES/totem-pl-parser.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

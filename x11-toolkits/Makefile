@@ -180,6 +180,7 @@
     SUBDIR += p5-Tk-TableMatrix
     SUBDIR += pango
     SUBDIR += pango-reference
+    SUBDIR += pangomm
     SUBDIR += pangoxsl
     SUBDIR += paragui
     SUBDIR += paragui-devel

@@ -1,0 +1,5 @@
+These are various plug-ins for the Seahorse security management application.
+They serve to extend Seahorse, and to integrate Seahorse into other
+applications such as Nautilus, GEdit, etc.
+
+WWW: http://seahorse.sourceforge.net/

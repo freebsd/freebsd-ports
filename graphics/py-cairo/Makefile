@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#	$MCom: ports/graphics/py-cairo/Makefile,v 1.22 2007/03/14 21:38:08 ahze Exp $
+#	$MCom: ports/graphics/py-cairo/Makefile,v 1.26 2009/01/02 20:13:31 mezz Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.6.4
+PORTVERSION=	1.8.0
 PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/releases/
@@ -23,7 +23,6 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pygtk
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,0 +1,31 @@
+--- WebCore/platform/graphics/BitmapImage.cpp
++++ WebCore/platform/graphics/BitmapImage.cpp
+@@ -203,7 +203,7 @@ float BitmapImage::frameDurationAtIndex(size_t index)
+ bool BitmapImage::frameHasAlphaAtIndex(size_t index)
+ {
+     if (index >= frameCount())
+-        return 0;
++        return true;
+ 
+     if (index >= m_frames.size() || !m_frames[index].m_frame)
+         cacheFrame(index);
+--- WebCore/platform/graphics/cairo/ImageCairo.cpp
++++ WebCore/platform/graphics/cairo/ImageCairo.cpp
+@@ -76,6 +76,7 @@ BitmapImage::BitmapImage(cairo_surface_t* surface, ImageObserver* observer)
+ 
+     m_frames.grow(1);
+     m_frames[0].m_frame = surface;
++    m_frames[0].m_hasAlpha = cairo_surface_get_content(surface) != CAIRO_CONTENT_COLOR;
+     checkForSolidColor();
+ }
+ 
+--- WebCore/platform/graphics/cg/ImageCG.cpp
++++ WebCore/platform/graphics/cg/ImageCG.cpp
+@@ -87,6 +87,7 @@ BitmapImage::BitmapImage(CGImageRef cgImage, ImageObserver* observer)
+ 
+     m_frames.grow(1);
+     m_frames[0].m_frame = cgImage;
++    m_frames[0].m_hasAlpha = true;
+     checkForSolidColor();
+ }
+ 

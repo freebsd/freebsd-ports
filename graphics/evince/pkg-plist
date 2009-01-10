@@ -20,6 +20,7 @@ include/evince-2.20/evince/ev-image.h
 include/evince-2.20/evince/ev-link-action.h
 include/evince-2.20/evince/ev-link-dest.h
 include/evince-2.20/evince/ev-link.h
+include/evince-2.20/evince/ev-page.h
 include/evince-2.20/evince/ev-render-context.h
 include/evince-2.20/evince/ev-selection.h
 include/evince-2.20/evince/ev-transition-effect.h
@@ -60,7 +61,6 @@ lib/libevbackend.so
 lib/libevbackend.so.0
 share/applications/evince.desktop
 %%DOCSDIR%%/EvAttachment.html
-%%DOCSDIR%%/EvJobPrint.html
 %%DOCSDIR%%/EvNavigationAction.html
 %%DOCSDIR%%/EvNavigationActionWidget.html
 %%DOCSDIR%%/EvPageAction.html
@@ -68,6 +68,7 @@ share/applications/evince.desktop
 %%DOCSDIR%%/EvWindow.html
 %%DOCSDIR%%/evince-EvHistory.html
 %%DOCSDIR%%/evince-EvImage.html
+%%DOCSDIR%%/evince-EvJobFind.html
 %%DOCSDIR%%/evince-EvPasswordDialog.html
 %%DOCSDIR%%/evince-EvPasswordView.html
 %%DOCSDIR%%/evince-EvRenderContext.html
@@ -90,7 +91,6 @@ share/applications/evince.desktop
 %%DOCSDIR%%/evince-ev-document.html
 %%DOCSDIR%%/evince-ev-file-exporter.html
 %%DOCSDIR%%/evince-ev-file-helpers.html
-%%DOCSDIR%%/evince-ev-job-queue.html
 %%DOCSDIR%%/evince-ev-link-action.html
 %%DOCSDIR%%/evince-ev-link-dest.html
 %%DOCSDIR%%/evince-ev-link.html
@@ -151,6 +151,8 @@ share/gnome/help/evince/bg/evince.xml
 share/gnome/help/evince/bg/figures/evince_start_window.png
 share/gnome/help/evince/ca/evince.xml
 share/gnome/help/evince/ca/figures/evince_start_window.png
+share/gnome/help/evince/de/evince.xml
+share/gnome/help/evince/de/figures/evince_start_window.png
 share/gnome/help/evince/el/evince.xml
 share/gnome/help/evince/el/figures/evince_start_window.png
 share/gnome/help/evince/en_GB/evince.xml
@@ -179,6 +181,8 @@ share/gnome/help/evince/sv/evince.xml
 share/gnome/help/evince/sv/figures/evince_start_window.png
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/evince_start_window.png
+share/gnome/help/evince/vi/evince.xml
+share/gnome/help/evince/vi/figures/evince_start_window.png
 share/gnome/help/evince/zh_CN/evince.xml
 share/gnome/help/evince/zh_CN/figures/evince_start_window.png
 share/icons/hicolor/16x16/apps/evince.png
@@ -221,6 +225,7 @@ share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ka/LC_MESSAGES/evince.mo
 share/locale/kn/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
+share/locale/ks/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
@@ -236,6 +241,7 @@ share/locale/oc/LC_MESSAGES/evince.mo
 share/locale/or/LC_MESSAGES/evince.mo
 share/locale/pa/LC_MESSAGES/evince.mo
 share/locale/pl/LC_MESSAGES/evince.mo
+share/locale/ps/LC_MESSAGES/evince.mo
 share/locale/pt/LC_MESSAGES/evince.mo
 share/locale/pt_BR/LC_MESSAGES/evince.mo
 share/locale/ro/LC_MESSAGES/evince.mo
@@ -246,7 +252,7 @@ share/locale/sk/LC_MESSAGES/evince.mo
 share/locale/sl/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
-share/locale/sr@Latn/LC_MESSAGES/evince.mo
+share/locale/sr@latin/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
 share/locale/ta/LC_MESSAGES/evince.mo
 share/locale/te/LC_MESSAGES/evince.mo
@@ -261,6 +267,7 @@ share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/omf/evince/evince-C.omf
 share/omf/evince/evince-bg.omf
 share/omf/evince/evince-ca.omf
+share/omf/evince/evince-de.omf
 share/omf/evince/evince-el.omf
 share/omf/evince/evince-en_GB.omf
 share/omf/evince/evince-es.omf
@@ -275,10 +282,13 @@ share/omf/evince/evince-ru.omf
 share/omf/evince/evince-sr.omf
 share/omf/evince/evince-sv.omf
 share/omf/evince/evince-uk.omf
+share/omf/evince/evince-vi.omf
 share/omf/evince/evince-zh_CN.omf
 @dirrm share/omf/evince
 @dirrm share/gnome/help/evince/zh_CN/figures
 @dirrm share/gnome/help/evince/zh_CN
+@dirrm share/gnome/help/evince/vi/figures
+@dirrm share/gnome/help/evince/vi
 @dirrm share/gnome/help/evince/uk/figures
 @dirrm share/gnome/help/evince/uk
 @dirrm share/gnome/help/evince/sv/figures
@@ -307,6 +317,8 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm share/gnome/help/evince/en_GB
 @dirrm share/gnome/help/evince/el/figures
 @dirrm share/gnome/help/evince/el
+@dirrm share/gnome/help/evince/de/figures
+@dirrm share/gnome/help/evince/de
 @dirrm share/gnome/help/evince/ca/figures
 @dirrm share/gnome/help/evince/ca
 @dirrm share/gnome/help/evince/bg/figures
@@ -339,10 +351,14 @@ share/omf/evince/evince-zh_CN.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -351,6 +367,8 @@ share/omf/evince/evince-zh_CN.omf
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ks/LC_MESSAGES
+@dirrmtry share/locale/ks
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

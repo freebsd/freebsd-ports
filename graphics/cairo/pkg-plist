@@ -5,6 +5,7 @@ include/cairo/cairo-ft.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-svg.h
+include/cairo/cairo-version.h
 %%XCB%%include/cairo/cairo-xcb-xrender.h
 %%XCB%%include/cairo/cairo-xcb.h
 %%X11%%include/cairo/cairo-xlib-xrender.h

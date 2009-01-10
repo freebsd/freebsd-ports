@@ -1,0 +1,31 @@
+Mounting Fuse File Systems with HAL
+-----------------------------------
+
+$FreeBSD$
+
+Hal supports mounting Fuse device-backed file systems (e.g. NTFS).  To enable
+this feature, copy the included %%LOCALBASE%%/share/hal/mount-fuse script
+to /sbin.  Make sure this script is executable.  Edit the script, and change
+the FUSE_HELPER environment variable to the name of the executable which
+will actually mount the Fuse volume (e.g. for NTFS, this is ``ntfs-3g'').
+
+Finally, the script must be renamed to ``mount_FSNAME''.  FSNAME is the name
+of the file system type (e.g. for NTFS, this is ``ntfs'').  If there is
+already an executable in /sbin or /usr/sbin with this name, the
+existing executable must be renamed or deleted.
+
+As is stated in the examples above, overriding FreeBSD's existing NTFS
+support with Fuse's ntfs-3g is the most common use case for this.  The
+ntfs-3g Fuse driver uses different mount options than FreeBSD's included
+mount_ntfs.  GNOME transparently supports switching between ntfs and
+ntfs-3g.  Simply edit the following GConf key in the GNOME
+Configuration Editor (i.e. gconf-editor):
+
+/system/storage/default_options/ntfs/fstype_override
+
+Set the value to ``ntfs-3g'', then add your desired ntfs-3g options to the
+following GConf key:
+
+/system/storage/default_options/ntfs-3g/mount_options
+
+Other desktop systems may have similar options.

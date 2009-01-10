@@ -3,16 +3,15 @@
 # Whom:                 		Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glibmm/Makefile,v 1.58 2008/03/10 23:01:49 ahze Exp $
+#   $MCom: ports/devel/glibmm/Makefile,v 1.68 2008/10/21 15:59:45 mezz Exp $
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.16.4
+PORTVERSION=	2.18.1
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -28,9 +27,9 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget glib20
+USE_GNOME=	gnomehack glib20 ltverhack
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 

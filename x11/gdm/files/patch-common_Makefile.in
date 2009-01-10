@@ -1,0 +1,20 @@
+--- common/Makefile.in.orig	2008-08-20 14:34:16.000000000 -0400
++++ common/Makefile.in	2008-08-20 14:36:50.000000000 -0400
+@@ -428,7 +428,8 @@ gdm_crash_logger_CPPFLAGS = \
+ 	-DLOCALSTATEDIR=\"$(localstatedir)\"	\
+ 	$(NULL)
+ 
+-gdm_crash_logger_LDADD = $(GTHREAD_LIBS)
++gdm_crash_logger_LDADD = $(GTHREAD_LIBS)	\
++			 -lexecinfo
+ @MKDTEMP_MISSING_FALSE@MKDTEMP_FILES = 
+ @MKDTEMP_MISSING_TRUE@MKDTEMP_FILES = mkdtemp.c mkdtemp.h
+ libgdmcommon_la_SOURCES = \
+@@ -473,6 +474,7 @@ libgdmcommon_la_CFLAGS = \
+ 	$(NULL)
+ 
+ libgdmcommon_la_LIBADD = \
++	-lexecinfo			\
+ 	$(NULL)
+ 
+ libgdmcommon_la_LDFLAGS = \

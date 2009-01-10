@@ -1,6 +1,6 @@
---- dbus/dbus-sysdeps-unix.c.orig	2008-02-15 20:26:46.000000000 -0500
-+++ dbus/dbus-sysdeps-unix.c	2008-02-15 20:28:46.000000000 -0500
-@@ -1032,9 +1032,9 @@ write_credentials_byte (int             
+--- dbus/dbus-sysdeps-unix.c.orig	2008-08-06 13:00:29.000000000 -0400
++++ dbus/dbus-sysdeps-unix.c	2008-08-10 15:04:32.000000000 -0400
+@@ -1041,9 +1041,9 @@ write_credentials_byte (int             
    int bytes_written;
    char buf[1] = { '\0' };
  #if defined(HAVE_CMSGCRED) 
@@ -12,7 +12,7 @@
    } cmsg;
    struct iovec iov;
    struct msghdr msg;
-@@ -1045,10 +1045,10 @@ write_credentials_byte (int             
+@@ -1054,10 +1054,10 @@ write_credentials_byte (int             
    msg.msg_iov = &iov;
    msg.msg_iovlen = 1;
  
@@ -26,7 +26,7 @@
    cmsg.hdr.cmsg_level = SOL_SOCKET;
    cmsg.hdr.cmsg_type = SCM_CREDS;
  #endif
-@@ -1124,9 +1124,9 @@ _dbus_read_credentials_socket  (int     
+@@ -1133,9 +1133,9 @@ _dbus_read_credentials_socket  (int     
    pid_read = DBUS_PID_UNSET;
    
  #ifdef HAVE_CMSGCRED 
@@ -38,7 +38,7 @@
    } cmsg;
  
  #elif defined(LOCAL_CREDS)
-@@ -1163,8 +1163,8 @@ _dbus_read_credentials_socket  (int     
+@@ -1172,8 +1172,8 @@ _dbus_read_credentials_socket  (int     
  
  #if defined(HAVE_CMSGCRED) || defined(LOCAL_CREDS)
    memset (&cmsg, 0, sizeof (cmsg));
@@ -49,7 +49,7 @@
  #endif
  
   again:
-@@ -1202,7 +1202,8 @@ _dbus_read_credentials_socket  (int     
+@@ -1211,7 +1211,8 @@ _dbus_read_credentials_socket  (int     
      }
  
  #if defined(HAVE_CMSGCRED) || defined(LOCAL_CREDS)
@@ -59,7 +59,7 @@
      {
        dbus_set_error (error, DBUS_ERROR_FAILED,
                        "Message from recvmsg() was not SCM_CREDS");
-@@ -1229,8 +1230,11 @@ _dbus_read_credentials_socket  (int     
+@@ -1238,8 +1239,11 @@ _dbus_read_credentials_socket  (int     
  		       cr_len, (int) sizeof (cr), _dbus_strerror (errno));
        }
  #elif defined(HAVE_CMSGCRED)

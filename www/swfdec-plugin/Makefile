@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	www
-MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.6/
+MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.8/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Flash rendering plugin
 
-LIB_DEPENDS=	swfdec-0.6:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	swfdec-0.8:${PORTSDIR}/graphics/swfdec
 
 USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
+USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-plugin-dir="${WEBPLUGINS_DIR}"
 
 USE_LDCONFIG=	yes

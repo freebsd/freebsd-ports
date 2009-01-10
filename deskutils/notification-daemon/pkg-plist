@@ -1,10 +1,24 @@
+bin/notification-properties
 lib/notification-daemon-1.0/engines/libstandard.a
 lib/notification-daemon-1.0/engines/libstandard.la
 lib/notification-daemon-1.0/engines/libstandard.so
 libexec/notification-daemon
+share/applications/notification-properties.desktop
 share/dbus-1/services/org.freedesktop.Notifications.service
+share/icons/hicolor/16x16/apps/notification-properties.png
+share/icons/hicolor/22x22/apps/notification-properties.png
+share/icons/hicolor/24x24/apps/notification-properties.png
+share/icons/hicolor/32x32/apps/notification-properties.png
+share/icons/hicolor/48x48/apps/notification-properties.png
+share/icons/hicolor/scalable/apps/notification-properties.svg
+share/locale/ar/LC_MESSAGES/notification-daemon.mo
 share/locale/de/LC_MESSAGES/notification-daemon.mo
+share/locale/it/LC_MESSAGES/notification-daemon.mo
 share/locale/nl/LC_MESSAGES/notification-daemon.mo
+share/locale/pl/LC_MESSAGES/notification-daemon.mo
 share/locale/sv/LC_MESSAGES/notification-daemon.mo
+share/notification-daemon/notification-properties.glade
+@dirrm share/notification-daemon
 @dirrm lib/notification-daemon-1.0/engines
 @dirrm lib/notification-daemon-1.0
+@dirrmtry share/applications

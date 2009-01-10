@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/bug-buddy/Makefile,v 1.60 2008/03/11 03:04:07 mezz Exp $
+#   $MCom: ports/devel/bug-buddy/Makefile,v 1.71 2008/11/25 17:43:11 mezz Exp $
 #
 
 PORTNAME=	bug-buddy
-PORTVERSION=	2.22.0
-PORTREVISION=	3
+PORTVERSION=	2.24.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,13 +23,15 @@ USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop gnomemenus \
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomemenus \
 		gnomedocutils evolutiondataserver
 GNOME_DESKTOP_VERSION=2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	bug-buddy.schemas
+
+MAN1=		bug-buddy.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \

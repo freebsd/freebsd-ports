@@ -2,10 +2,11 @@ bin/evolution
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-config.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-menu.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-popup.h
+include/evolution-%%VERSION%%/calendar/gui/dialogs/comp-editor-page.h
+include/evolution-%%VERSION%%/calendar/gui/dialogs/comp-editor.h
 include/evolution-%%VERSION%%/calendar/gui/e-cal-config.h
-include/evolution-%%VERSION%%/composer/Editor.h
-include/evolution-%%VERSION%%/composer/e-msg-composer-hdrs.h
-include/evolution-%%VERSION%%/composer/e-msg-composer-select-file.h
+include/evolution-%%VERSION%%/calendar/gui/e-cal-popup.h
+include/evolution-%%VERSION%%/calendar/gui/itip-utils.h
 include/evolution-%%VERSION%%/composer/e-msg-composer.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-map.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-util.h
@@ -29,6 +30,7 @@ include/evolution-%%VERSION%%/e-util/e-import.h
 include/evolution-%%VERSION%%/e-util/e-logger.h
 include/evolution-%%VERSION%%/e-util/e-menu.h
 include/evolution-%%VERSION%%/e-util/e-mktemp.h
+include/evolution-%%VERSION%%/e-util/e-plugin-ui.h
 include/evolution-%%VERSION%%/e-util/e-plugin.h
 include/evolution-%%VERSION%%/e-util/e-popup.h
 include/evolution-%%VERSION%%/e-util/e-print.h
@@ -70,7 +72,6 @@ include/evolution-%%VERSION%%/mail/em-popup.h
 include/evolution-%%VERSION%%/mail/em-stripsig-filter.h
 include/evolution-%%VERSION%%/mail/em-sync-stream.h
 include/evolution-%%VERSION%%/mail/em-utils.h
-include/evolution-%%VERSION%%/mail/em-vfs-stream.h
 include/evolution-%%VERSION%%/mail/mail-autofilter.h
 include/evolution-%%VERSION%%/mail/mail-component.h
 include/evolution-%%VERSION%%/mail/mail-config.h
@@ -119,6 +120,7 @@ include/evolution-%%VERSION%%/misc/e-image-chooser.h
 include/evolution-%%VERSION%%/misc/e-info-label.h
 include/evolution-%%VERSION%%/misc/e-map.h
 include/evolution-%%VERSION%%/misc/e-multi-config-dialog.h
+include/evolution-%%VERSION%%/misc/e-online-button.h
 %%PILOT:%%include/evolution-%%VERSION%%/misc/e-pilot-settings.h
 include/evolution-%%VERSION%%/misc/e-popup-menu.h
 include/evolution-%%VERSION%%/misc/e-printable.h
@@ -138,7 +140,6 @@ include/evolution-%%VERSION%%/misc/e-unicode.h
 include/evolution-%%VERSION%%/misc/e-url-entry.h
 include/evolution-%%VERSION%%/shell/Evolution.h
 include/evolution-%%VERSION%%/shell/e-component-view.h
-include/evolution-%%VERSION%%/shell/e-shell-utils.h
 include/evolution-%%VERSION%%/shell/e-user-creatable-items-handler.h
 include/evolution-%%VERSION%%/shell/es-event.h
 include/evolution-%%VERSION%%/shell/es-menu.h
@@ -149,14 +150,11 @@ include/evolution-%%VERSION%%/shell/evolution-shell-component-utils.h
 include/evolution-%%VERSION%%/table/e-cell-checkbox.h
 include/evolution-%%VERSION%%/table/e-cell-combo.h
 include/evolution-%%VERSION%%/table/e-cell-date.h
-include/evolution-%%VERSION%%/table/e-cell-float.h
 include/evolution-%%VERSION%%/table/e-cell-hbox.h
 include/evolution-%%VERSION%%/table/e-cell-number.h
 include/evolution-%%VERSION%%/table/e-cell-pixbuf.h
 include/evolution-%%VERSION%%/table/e-cell-popup.h
-include/evolution-%%VERSION%%/table/e-cell-progress.h
 include/evolution-%%VERSION%%/table/e-cell-size.h
-include/evolution-%%VERSION%%/table/e-cell-spin-button.h
 include/evolution-%%VERSION%%/table/e-cell-text.h
 include/evolution-%%VERSION%%/table/e-cell-toggle.h
 include/evolution-%%VERSION%%/table/e-cell-tree.h
@@ -352,6 +350,9 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-mailer.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-email-custom-header.a
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-email-custom-header.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-email-custom-header.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-attachment-reminder.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-attachment-reminder.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-attachment-reminder.so
@@ -364,15 +365,15 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-caldav.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-google.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-google.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-google.so
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-hula-account-setup.a
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-hula-account-setup.la
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-hula-account-setup.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-mail-attachments-import-ics.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-mail-attachments-import-ics.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-mail-attachments-import-ics.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-webdav.a
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-webdav.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-webdav.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.so
@@ -412,9 +413,6 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.so
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.a
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.la
-lib/evolution/%%VERSION%%/plugins/liborg-gnome-print-message.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-publish-calendar.so
@@ -430,6 +428,9 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-select-one-source.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.a
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-templates.a
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-templates.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-templates.so
 lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.xml
@@ -441,18 +442,18 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-compose-send-options.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-copy-tool.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-mailer.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-source.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-email-custom-header.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-attachment-reminder.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-bbdb.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-google.eplug
-lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-hula-account-setup.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-mail-attachments-import-ics.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-startup-wizard.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-webdav.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-ab-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-cal-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-operations.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-tasks-subscription.xml
-lib/evolution/%%VERSION%%/plugins/org-gnome-face-ui.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-face.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-folder-permissions.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-folder-subscription.xml
@@ -471,14 +472,14 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-mark-calendar-offline.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-prefer-plain.eplug
-lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.eplug
-lib/evolution/%%VERSION%%/plugins/org-gnome-print-message.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-publish-calendar.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-sa-junk-plugin.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-save-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-select-one-source.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-subject-thread.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-templates.eplug
+lib/evolution/%%VERSION%%/plugins/templates.glade
 libdata/bonobo/servers/GNOME_Evolution_Addressbook.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify.server
@@ -496,10 +497,13 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/addresstypes.xml
 %%DATADIR%%/%%VERSION%%/caltypes.xml
 %%DATADIR%%/%%VERSION%%/default/C/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/cs/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/de/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/es/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/fi/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/fr/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/hu/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/it/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/ja/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/ko/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/lt/mail/local/Inbox
@@ -507,6 +511,8 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/default/nl/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/pl/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/pt/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/sr/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/sr@latin/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/sv/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/default/zh_CN/mail/local/Inbox
 %%DATADIR%%/%%VERSION%%/ecps/medbook.ecps
@@ -555,6 +561,7 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/glade/e-timezone-dialog.glade
 %%DATADIR%%/%%VERSION%%/glade/eab-contact-commit-duplicate-detected.glade
 %%DATADIR%%/%%VERSION%%/glade/eab-contact-duplicate-detected.glade
+%%DATADIR%%/%%VERSION%%/glade/email-custom-header.glade
 %%DATADIR%%/%%VERSION%%/glade/event-page.glade
 %%DATADIR%%/%%VERSION%%/glade/exchange-change-password.glade
 %%DATADIR%%/%%VERSION%%/glade/exchange-delegates.glade
@@ -580,6 +587,7 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/glade/mail-dialogs.glade
 %%DATADIR%%/%%VERSION%%/glade/meeting-page.glade
 %%DATADIR%%/%%VERSION%%/glade/memo-page.glade
+%%DATADIR%%/%%VERSION%%/glade/org-gnome-email-custom-header.glade
 %%DATADIR%%/%%VERSION%%/glade/properties.glade
 %%DATADIR%%/%%VERSION%%/glade/proxy-add-dialog.glade
 %%DATADIR%%/%%VERSION%%/glade/proxy-listing.glade
@@ -610,6 +618,7 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/view-calendar-month.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/view-calendar-week.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/view-calendar-workweek.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-outbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-sent.png
@@ -619,15 +628,18 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/view-calendar-month.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/view-calendar-week.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/view-calendar-workweek.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places/mail-outbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places/mail-sent.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/go-today.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/query-free-busy.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/view-calendar-day.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/view-calendar-list.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/view-calendar-month.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/view-calendar-week.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/view-calendar-workweek.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-outbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-sent.png
@@ -636,23 +648,24 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-month.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-week.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-workweek.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/apps/contact-editor.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/offline.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/online.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-autocompletion.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-calendar-and-tasks.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-certificates.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-composer.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-mail.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-day.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-list.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-month.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-week.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-workweek.svg
-%%DATADIR%%/%%VERSION%%/images/evolution-contacts-mini.png
 %%DATADIR%%/%%VERSION%%/images/minus.png
-%%DATADIR%%/%%VERSION%%/images/offline.png
-%%DATADIR%%/%%VERSION%%/images/online.png
 %%DATADIR%%/%%VERSION%%/images/plus.png
-%%DATADIR%%/%%VERSION%%/images/query-free-busy.png
 %%DATADIR%%/%%VERSION%%/images/world_map-960.png
 %%DATADIR%%/%%VERSION%%/memotypes.xml
 %%DATADIR%%/%%VERSION%%/searchtypes.xml
@@ -660,19 +673,12 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/tasktypes.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-addressbook.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-calendar.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-composer-entries.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-editor.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-event-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-composer.ui
 %%DATADIR%%/%%VERSION%%/ui/evolution-mail-global.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-mail-list.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-mail-message.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-mail-messagedisplay.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-memo-editor.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-memos.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-message-composer.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-signature-editor.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-subscribe.xml
-%%DATADIR%%/%%VERSION%%/ui/evolution-task-editor.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution-tasks.xml
 %%DATADIR%%/%%VERSION%%/ui/evolution.xml
 %%DATADIR%%/%%VERSION%%/vfoldertypes.xml
@@ -705,10 +711,11 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/weather/category_weather_sun_16.png
 %%DATADIR%%/%%VERSION%%/weather/category_weather_tstorm_16.png
 share/gnome/help/evolution/C/evolution.xml
+share/gnome/help/evolution/C/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/C/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/C/figures/account_editor_a.png
 share/gnome/help/evolution/C/figures/addrs_book_a.png
-share/gnome/help/evolution/C/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/C/figures/attach_reminder_a.png
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/categories_a.png
 share/gnome/help/evolution/C/figures/collap_head_a.png
@@ -825,10 +832,11 @@ share/gnome/help/evolution/C/figures/sub-pub-fold.png
 share/gnome/help/evolution/C/figures/ver_view_a.png
 share/gnome/help/evolution/C/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/cs/evolution.xml
+share/gnome/help/evolution/cs/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/cs/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/cs/figures/account_editor_a.png
 share/gnome/help/evolution/cs/figures/addrs_book_a.png
-share/gnome/help/evolution/cs/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/cs/figures/attach_reminder_a.png
 share/gnome/help/evolution/cs/figures/calendar.png
 share/gnome/help/evolution/cs/figures/categories_a.png
 share/gnome/help/evolution/cs/figures/collap_head_a.png
@@ -945,10 +953,11 @@ share/gnome/help/evolution/cs/figures/sub-pub-fold.png
 share/gnome/help/evolution/cs/figures/ver_view_a.png
 share/gnome/help/evolution/cs/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/de/evolution.xml
+share/gnome/help/evolution/de/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/de/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/de/figures/account_editor_a.png
 share/gnome/help/evolution/de/figures/addrs_book_a.png
-share/gnome/help/evolution/de/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/de/figures/attach_reminder_a.png
 share/gnome/help/evolution/de/figures/calendar.png
 share/gnome/help/evolution/de/figures/categories_a.png
 share/gnome/help/evolution/de/figures/collap_head_a.png
@@ -1065,10 +1074,11 @@ share/gnome/help/evolution/de/figures/sub-pub-fold.png
 share/gnome/help/evolution/de/figures/ver_view_a.png
 share/gnome/help/evolution/de/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/el/evolution.xml
+share/gnome/help/evolution/el/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/el/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/el/figures/account_editor_a.png
 share/gnome/help/evolution/el/figures/addrs_book_a.png
-share/gnome/help/evolution/el/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/el/figures/attach_reminder_a.png
 share/gnome/help/evolution/el/figures/calendar.png
 share/gnome/help/evolution/el/figures/categories_a.png
 share/gnome/help/evolution/el/figures/collap_head_a.png
@@ -1185,10 +1195,11 @@ share/gnome/help/evolution/el/figures/sub-pub-fold.png
 share/gnome/help/evolution/el/figures/ver_view_a.png
 share/gnome/help/evolution/el/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/en_GB/evolution.xml
+share/gnome/help/evolution/en_GB/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/en_GB/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/en_GB/figures/account_editor_a.png
 share/gnome/help/evolution/en_GB/figures/addrs_book_a.png
-share/gnome/help/evolution/en_GB/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/en_GB/figures/attach_reminder_a.png
 share/gnome/help/evolution/en_GB/figures/calendar.png
 share/gnome/help/evolution/en_GB/figures/categories_a.png
 share/gnome/help/evolution/en_GB/figures/collap_head_a.png
@@ -1305,10 +1316,11 @@ share/gnome/help/evolution/en_GB/figures/sub-pub-fold.png
 share/gnome/help/evolution/en_GB/figures/ver_view_a.png
 share/gnome/help/evolution/en_GB/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/es/evolution.xml
+share/gnome/help/evolution/es/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/es/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/es/figures/account_editor_a.png
 share/gnome/help/evolution/es/figures/addrs_book_a.png
-share/gnome/help/evolution/es/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/es/figures/attach_reminder_a.png
 share/gnome/help/evolution/es/figures/calendar.png
 share/gnome/help/evolution/es/figures/categories_a.png
 share/gnome/help/evolution/es/figures/collap_head_a.png
@@ -1425,10 +1437,11 @@ share/gnome/help/evolution/es/figures/sub-pub-fold.png
 share/gnome/help/evolution/es/figures/ver_view_a.png
 share/gnome/help/evolution/es/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/fr/evolution.xml
+share/gnome/help/evolution/fr/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/fr/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/fr/figures/account_editor_a.png
 share/gnome/help/evolution/fr/figures/addrs_book_a.png
-share/gnome/help/evolution/fr/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/fr/figures/attach_reminder_a.png
 share/gnome/help/evolution/fr/figures/calendar.png
 share/gnome/help/evolution/fr/figures/categories_a.png
 share/gnome/help/evolution/fr/figures/collap_head_a.png
@@ -1545,10 +1558,11 @@ share/gnome/help/evolution/fr/figures/sub-pub-fold.png
 share/gnome/help/evolution/fr/figures/ver_view_a.png
 share/gnome/help/evolution/fr/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/mk/evolution.xml
+share/gnome/help/evolution/mk/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/mk/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/mk/figures/account_editor_a.png
 share/gnome/help/evolution/mk/figures/addrs_book_a.png
-share/gnome/help/evolution/mk/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/mk/figures/attach_reminder_a.png
 share/gnome/help/evolution/mk/figures/calendar.png
 share/gnome/help/evolution/mk/figures/categories_a.png
 share/gnome/help/evolution/mk/figures/collap_head_a.png
@@ -1665,10 +1679,11 @@ share/gnome/help/evolution/mk/figures/sub-pub-fold.png
 share/gnome/help/evolution/mk/figures/ver_view_a.png
 share/gnome/help/evolution/mk/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/oc/evolution.xml
+share/gnome/help/evolution/oc/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/oc/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/oc/figures/account_editor_a.png
 share/gnome/help/evolution/oc/figures/addrs_book_a.png
-share/gnome/help/evolution/oc/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/oc/figures/attach_reminder_a.png
 share/gnome/help/evolution/oc/figures/calendar.png
 share/gnome/help/evolution/oc/figures/categories_a.png
 share/gnome/help/evolution/oc/figures/collap_head_a.png
@@ -1785,10 +1800,11 @@ share/gnome/help/evolution/oc/figures/sub-pub-fold.png
 share/gnome/help/evolution/oc/figures/ver_view_a.png
 share/gnome/help/evolution/oc/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/ru/evolution.xml
+share/gnome/help/evolution/ru/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/ru/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/ru/figures/account_editor_a.png
 share/gnome/help/evolution/ru/figures/addrs_book_a.png
-share/gnome/help/evolution/ru/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/ru/figures/attach_reminder_a.png
 share/gnome/help/evolution/ru/figures/calendar.png
 share/gnome/help/evolution/ru/figures/categories_a.png
 share/gnome/help/evolution/ru/figures/collap_head_a.png
@@ -1905,10 +1921,11 @@ share/gnome/help/evolution/ru/figures/sub-pub-fold.png
 share/gnome/help/evolution/ru/figures/ver_view_a.png
 share/gnome/help/evolution/ru/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/sv/evolution.xml
+share/gnome/help/evolution/sv/figures/Screenshot-Evolution-mailer-Preferences.png
 share/gnome/help/evolution/sv/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/sv/figures/account_editor_a.png
 share/gnome/help/evolution/sv/figures/addrs_book_a.png
-share/gnome/help/evolution/sv/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/sv/figures/attach_reminder_a.png
 share/gnome/help/evolution/sv/figures/calendar.png
 share/gnome/help/evolution/sv/figures/categories_a.png
 share/gnome/help/evolution/sv/figures/collap_head_a.png
@@ -2024,15 +2041,28 @@ share/gnome/help/evolution/sv/figures/sub-others-folder.png
 share/gnome/help/evolution/sv/figures/sub-pub-fold.png
 share/gnome/help/evolution/sv/figures/ver_view_a.png
 share/gnome/help/evolution/sv/figures/vfolder-createrule-fig.png
+share/icons/hicolor/16x16/apps/evolution-mail.png
+share/icons/hicolor/16x16/apps/evolution-memos.png
+share/icons/hicolor/16x16/apps/evolution-tasks.png
 share/icons/hicolor/16x16/apps/evolution.png
+share/icons/hicolor/22x22/apps/evolution-mail.png
+share/icons/hicolor/22x22/apps/evolution-memos.png
+share/icons/hicolor/22x22/apps/evolution-tasks.png
 share/icons/hicolor/22x22/apps/evolution.png
+share/icons/hicolor/24x24/apps/evolution-mail.png
+share/icons/hicolor/24x24/apps/evolution-memos.png
+share/icons/hicolor/24x24/apps/evolution-tasks.png
 share/icons/hicolor/24x24/apps/evolution.png
+share/icons/hicolor/32x32/apps/evolution-mail.png
+share/icons/hicolor/32x32/apps/evolution-memos.png
+share/icons/hicolor/32x32/apps/evolution-tasks.png
 share/icons/hicolor/32x32/apps/evolution.png
+share/icons/hicolor/48x48/apps/evolution-mail.png
+share/icons/hicolor/48x48/apps/evolution-memos.png
+share/icons/hicolor/48x48/apps/evolution-tasks.png
 share/icons/hicolor/48x48/apps/evolution.png
 share/icons/hicolor/scalable/apps/evolution.svg
-share/idl/evolution-%%VERSION%%/Composer.idl
 share/idl/evolution-%%VERSION%%/Evolution-Component.idl
-share/idl/evolution-%%VERSION%%/Evolution-Composer.idl
 share/idl/evolution-%%VERSION%%/Evolution-ConfigControl.idl
 share/idl/evolution-%%VERSION%%/Evolution-Mail.idl
 share/idl/evolution-%%VERSION%%/Evolution-Shell.idl
@@ -2041,6 +2071,7 @@ share/idl/evolution-%%VERSION%%/evolution-calendar.idl
 share/locale/am/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/as/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ast/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be@latin/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -2094,6 +2125,7 @@ share/locale/oc/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pa/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/ps/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -2104,7 +2136,7 @@ share/locale/sk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/sr@latin/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ta/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/te/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -2168,16 +2200,22 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor
@@ -2204,6 +2242,12 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/default/sv/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/sv/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/sv
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr@latin/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr@latin/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr@latin
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/sr
 @dirrm %%DATADIR%%/%%VERSION%%/default/pt/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/pt/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/pt
@@ -2225,6 +2269,12 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/default/ja/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/ja/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/ja
+@dirrm %%DATADIR%%/%%VERSION%%/default/it/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/it/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/it
+@dirrm %%DATADIR%%/%%VERSION%%/default/hu/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/hu/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/hu
 @dirrm %%DATADIR%%/%%VERSION%%/default/fr/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/fr/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/fr
@@ -2237,6 +2287,9 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/default/de/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/de/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/de
+@dirrm %%DATADIR%%/%%VERSION%%/default/cs/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/cs/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/cs
 @dirrm %%DATADIR%%/%%VERSION%%/default/C/mail/local
 @dirrm %%DATADIR%%/%%VERSION%%/default/C/mail
 @dirrm %%DATADIR%%/%%VERSION%%/default/C
@@ -2259,6 +2312,7 @@ share/omf/evolution/evolution-sv.omf
 @dirrm include/evolution-%%VERSION%%/e-util
 @dirrm include/evolution-%%VERSION%%/e-conduit
 @dirrm include/evolution-%%VERSION%%/composer
+@dirrm include/evolution-%%VERSION%%/calendar/gui/dialogs
 @dirrm include/evolution-%%VERSION%%/calendar/gui
 @dirrm include/evolution-%%VERSION%%/calendar
 @dirrm include/evolution-%%VERSION%%/addressbook/gui/widgets
@@ -2271,10 +2325,14 @@ share/omf/evolution/evolution-sv.omf
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -2287,5 +2345,7 @@ share/omf/evolution/evolution-sv.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

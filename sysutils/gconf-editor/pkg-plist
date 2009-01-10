@@ -1,8 +1,18 @@
 bin/gconf-editor
 share/applications/gconf-editor.desktop
+%%DATADIR%%/icons/hicolor/16x16/status/type-boolean.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-float.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-integer.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-list.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-pair.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-schema.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-string.png
+%%DATADIR%%/icons/hicolor/16x16/status/type-undefined.png
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/ca/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/ca/gconf-editor.xml
 share/gnome/help/gconf-editor/de/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/de/gconf-editor.xml
 share/gnome/help/gconf-editor/es/figures/gconf_editor_anno_window.png
@@ -13,8 +23,14 @@ share/gnome/help/gconf-editor/it/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/it/gconf-editor.xml
 share/gnome/help/gconf-editor/oc/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/oc/gconf-editor.xml
+share/gnome/help/gconf-editor/pt_BR/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/pt_BR/gconf-editor.xml
+share/gnome/help/gconf-editor/ru/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/ru/gconf-editor.xml
 share/gnome/help/gconf-editor/sv/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/sv/gconf-editor.xml
+share/gnome/help/gconf-editor/th/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/th/gconf-editor.xml
 share/gnome/help/gconf-editor/uk/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/uk/gconf-editor.xml
 share/icons/hicolor/48x48/apps/gconf-editor.png
@@ -85,7 +101,7 @@ share/locale/sk/LC_MESSAGES/gconf-editor.mo
 share/locale/sl/LC_MESSAGES/gconf-editor.mo
 share/locale/sq/LC_MESSAGES/gconf-editor.mo
 share/locale/sr/LC_MESSAGES/gconf-editor.mo
-share/locale/sr@Latn/LC_MESSAGES/gconf-editor.mo
+share/locale/sr@latin/LC_MESSAGES/gconf-editor.mo
 share/locale/sv/LC_MESSAGES/gconf-editor.mo
 share/locale/ta/LC_MESSAGES/gconf-editor.mo
 share/locale/te/LC_MESSAGES/gconf-editor.mo
@@ -99,27 +115,28 @@ share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 share/omf/gconf-editor/gconf-editor-C.omf
+share/omf/gconf-editor/gconf-editor-ca.omf
 share/omf/gconf-editor/gconf-editor-de.omf
 share/omf/gconf-editor/gconf-editor-es.omf
 share/omf/gconf-editor/gconf-editor-fr.omf
 share/omf/gconf-editor/gconf-editor-it.omf
 share/omf/gconf-editor/gconf-editor-oc.omf
+share/omf/gconf-editor/gconf-editor-pt_BR.omf
+share/omf/gconf-editor/gconf-editor-ru.omf
 share/omf/gconf-editor/gconf-editor-sv.omf
+share/omf/gconf-editor/gconf-editor-th.omf
 share/omf/gconf-editor/gconf-editor-uk.omf
-share/pixmaps/gconf-editor/entry-blank.png
-share/pixmaps/gconf-editor/entry-bool.png
-share/pixmaps/gconf-editor/entry-list.png
-share/pixmaps/gconf-editor/entry-number.png
-share/pixmaps/gconf-editor/entry-schema.png
-share/pixmaps/gconf-editor/entry-string.png
-share/pixmaps/gconf-editor/folder-closed.png
-share/pixmaps/gconf-editor/folder-open.png
-@dirrm share/pixmaps/gconf-editor
 @dirrm share/omf/gconf-editor
 @dirrm share/gnome/help/gconf-editor/uk/figures
 @dirrm share/gnome/help/gconf-editor/uk
+@dirrm share/gnome/help/gconf-editor/th/figures
+@dirrm share/gnome/help/gconf-editor/th
 @dirrm share/gnome/help/gconf-editor/sv/figures
 @dirrm share/gnome/help/gconf-editor/sv
+@dirrm share/gnome/help/gconf-editor/ru/figures
+@dirrm share/gnome/help/gconf-editor/ru
+@dirrm share/gnome/help/gconf-editor/pt_BR/figures
+@dirrm share/gnome/help/gconf-editor/pt_BR
 @dirrm share/gnome/help/gconf-editor/oc/figures
 @dirrm share/gnome/help/gconf-editor/oc
 @dirrm share/gnome/help/gconf-editor/it/figures
@@ -130,9 +147,16 @@ share/pixmaps/gconf-editor/folder-open.png
 @dirrm share/gnome/help/gconf-editor/es
 @dirrm share/gnome/help/gconf-editor/de/figures
 @dirrm share/gnome/help/gconf-editor/de
+@dirrm share/gnome/help/gconf-editor/ca/figures
+@dirrm share/gnome/help/gconf-editor/ca
 @dirrm share/gnome/help/gconf-editor/C/figures
 @dirrm share/gnome/help/gconf-editor/C
 @dirrm share/gnome/help/gconf-editor
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -142,6 +166,8 @@ share/pixmaps/gconf-editor/folder-open.png
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

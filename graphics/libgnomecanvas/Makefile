@@ -3,7 +3,7 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/libgnomecanvas/Makefile,v 1.70 2007/10/20 18:32:13 mezz Exp $
+#   $MCom: ports/graphics/libgnomecanvas/Makefile,v 1.72 2008/08/23 18:22:59 mezz Exp $
 #
 
 PORTNAME=	libgnomecanvas
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack gail
+USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

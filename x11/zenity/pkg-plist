@@ -25,6 +25,18 @@ share/gnome/help/zenity/bg/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/bg/zenity.xml
+share/gnome/help/zenity/de/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/de/zenity.xml
 share/gnome/help/zenity/en_GB/figures/zenity-calendar-screenshot.png
 share/gnome/help/zenity/en_GB/figures/zenity-entry-screenshot.png
 share/gnome/help/zenity/en_GB/figures/zenity-error-screenshot.png
@@ -49,6 +61,18 @@ share/gnome/help/zenity/es/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/es/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/es/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/es/zenity.xml
+share/gnome/help/zenity/fi/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/fi/zenity.xml
 share/gnome/help/zenity/fr/figures/zenity-calendar-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-entry-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-error-screenshot.png
@@ -171,11 +195,12 @@ share/locale/pt_BR/LC_MESSAGES/zenity.mo
 share/locale/ro/LC_MESSAGES/zenity.mo
 share/locale/ru/LC_MESSAGES/zenity.mo
 share/locale/rw/LC_MESSAGES/zenity.mo
+share/locale/si/LC_MESSAGES/zenity.mo
 share/locale/sk/LC_MESSAGES/zenity.mo
 share/locale/sl/LC_MESSAGES/zenity.mo
 share/locale/sq/LC_MESSAGES/zenity.mo
 share/locale/sr/LC_MESSAGES/zenity.mo
-share/locale/sr@Latn/LC_MESSAGES/zenity.mo
+share/locale/sr@latin/LC_MESSAGES/zenity.mo
 share/locale/sv/LC_MESSAGES/zenity.mo
 share/locale/ta/LC_MESSAGES/zenity.mo
 share/locale/te/LC_MESSAGES/zenity.mo
@@ -190,8 +215,10 @@ share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
 share/omf/zenity/zenity-C.omf
 share/omf/zenity/zenity-bg.omf
+share/omf/zenity/zenity-de.omf
 share/omf/zenity/zenity-en_GB.omf
 share/omf/zenity/zenity-es.omf
+share/omf/zenity/zenity-fi.omf
 share/omf/zenity/zenity-fr.omf
 share/omf/zenity/zenity-oc.omf
 share/omf/zenity/zenity-ru.omf
@@ -225,10 +252,14 @@ share/omf/zenity/zenity-uk.omf
 @dirrm share/gnome/help/zenity/oc
 @dirrm share/gnome/help/zenity/fr/figures
 @dirrm share/gnome/help/zenity/fr
+@dirrm share/gnome/help/zenity/fi/figures
+@dirrm share/gnome/help/zenity/fi
 @dirrm share/gnome/help/zenity/es/figures
 @dirrm share/gnome/help/zenity/es
 @dirrm share/gnome/help/zenity/en_GB/figures
 @dirrm share/gnome/help/zenity/en_GB
+@dirrm share/gnome/help/zenity/de/figures
+@dirrm share/gnome/help/zenity/de
 @dirrm share/gnome/help/zenity/bg/figures
 @dirrm share/gnome/help/zenity/bg
 @dirrm share/gnome/help/zenity/C/figures
@@ -242,6 +273,10 @@ share/omf/zenity/zenity-uk.omf
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES

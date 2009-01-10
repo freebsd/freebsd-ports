@@ -3,11 +3,11 @@
 # Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/net-im/telepathy-salut/Makefile,v 1.4 2009/01/08 07:12:15 marcus Exp $
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -17,7 +17,7 @@ COMMENT=	Link-local Connection Manager for Telepathy Framework
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		avahi-glib.pc:${PORTSDIR}/net/avahi-app \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
-		libsoup-2.2.pc:${PORTSDIR}/devel/libsoup22
+		libsoup-2.4.pc:${PORTSDIR}/devel/libsoup
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 

@@ -26,6 +26,28 @@ share/applications/nautilus-folder-handler.desktop
 share/applications/nautilus-home.desktop
 share/applications/nautilus.desktop
 share/applications/network-scheme.desktop
+share/doc/libnautilus-extension/NautilusColumn.html
+share/doc/libnautilus-extension/NautilusMenuItem.html
+share/doc/libnautilus-extension/NautilusPropertyPage.html
+share/doc/libnautilus-extension/ch01.html
+share/doc/libnautilus-extension/home.png
+share/doc/libnautilus-extension/index.html
+share/doc/libnautilus-extension/index.sgml
+share/doc/libnautilus-extension/ix01.html
+share/doc/libnautilus-extension/left.png
+share/doc/libnautilus-extension/libnautilus-extension.devhelp
+share/doc/libnautilus-extension/libnautilus-extension.devhelp2
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-column-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-extension-types.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-file-info.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-info-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-location-widget-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-menu-provider.html
+share/doc/libnautilus-extension/libnautilus-extension-nautilus-property-page-provider.html
+share/doc/libnautilus-extension/pt01.html
+share/doc/libnautilus-extension/right.png
+share/doc/libnautilus-extension/style.css
+share/doc/libnautilus-extension/up.png
 share/icons/hicolor/16x16/apps/nautilus.png
 share/icons/hicolor/22x22/apps/nautilus.png
 share/icons/hicolor/24x24/apps/nautilus.png
@@ -35,6 +57,7 @@ share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/as/LC_MESSAGES/nautilus.mo
+share/locale/ast/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/be@latin/LC_MESSAGES/nautilus.mo
@@ -60,6 +83,7 @@ share/locale/eu/LC_MESSAGES/nautilus.mo
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
+share/locale/fur/LC_MESSAGES/nautilus.mo
 share/locale/ga/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
 share/locale/gu/LC_MESSAGES/nautilus.mo
@@ -69,6 +93,7 @@ share/locale/hr/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
 share/locale/hy/LC_MESSAGES/nautilus.mo
 share/locale/id/LC_MESSAGES/nautilus.mo
+share/locale/io/LC_MESSAGES/nautilus.mo
 share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
@@ -96,6 +121,7 @@ share/locale/oc/LC_MESSAGES/nautilus.mo
 share/locale/or/LC_MESSAGES/nautilus.mo
 share/locale/pa/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
+share/locale/ps/LC_MESSAGES/nautilus.mo
 share/locale/pt/LC_MESSAGES/nautilus.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus.mo
 share/locale/ro/LC_MESSAGES/nautilus.mo
@@ -106,7 +132,7 @@ share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo
 share/locale/sq/LC_MESSAGES/nautilus.mo
 share/locale/sr/LC_MESSAGES/nautilus.mo
-share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
+share/locale/sr@latin/LC_MESSAGES/nautilus.mo
 share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
 share/locale/ta/LC_MESSAGES/nautilus.mo
@@ -191,6 +217,7 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm share/doc/libnautilus-extension
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -201,12 +228,16 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
@@ -221,8 +252,12 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/io/LC_MESSAGES
+@dirrmtry share/locale/io
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -231,5 +266,7 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

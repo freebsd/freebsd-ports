@@ -3,12 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.168 2008/03/14 05:32:17 marcus Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.186 2008/11/25 05:29:01 mezz Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.22.3.1
-PORTREVISION=	1
+PORTVERSION=	2.24.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -39,13 +38,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
 		apps-evolution-attachment-reminder.schemas \
 		apps_evolution_calendar.schemas \
+		apps_evolution_email_custom_header.schemas \
 		apps-evolution-mail-notification.schemas \
 		apps-evolution-mail-prompts-checkdefault.schemas \
 		apps_evolution_shell.schemas \
+		apps-evolution-template-placeholders.schemas \
 		bogo-junk-plugin.schemas \
 		evolution-mail.schemas
 
-EVO_VERSION=	2.22
+EVO_VERSION=	2.24
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -102,6 +103,5 @@ post-patch:
 post-install: install-ldconfig-file
 	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
-	${INSTALL_DATA} ${WRKSRC}/composer/Editor.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 
 .include <bsd.port.post.mk>

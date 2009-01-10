@@ -1,9 +1,11 @@
+etc/xdg/autostart/gnome-settings-daemon.desktop
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 lib/gnome-settings-daemon-2.0/a11y-keyboard.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/background.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/clipboard.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/dummy.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/font.gnome-settings-plugin
+lib/gnome-settings-daemon-2.0/housekeeping.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/keybindings.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/keyboard.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/liba11y-keyboard.a
@@ -21,6 +23,9 @@ lib/gnome-settings-daemon-2.0/libdummy.so
 lib/gnome-settings-daemon-2.0/libfont.a
 lib/gnome-settings-daemon-2.0/libfont.la
 lib/gnome-settings-daemon-2.0/libfont.so
+lib/gnome-settings-daemon-2.0/libhousekeeping.a
+lib/gnome-settings-daemon-2.0/libhousekeeping.la
+lib/gnome-settings-daemon-2.0/libhousekeeping.so
 lib/gnome-settings-daemon-2.0/libkeybindings.a
 lib/gnome-settings-daemon-2.0/libkeybindings.la
 lib/gnome-settings-daemon-2.0/libkeybindings.so
@@ -64,6 +69,7 @@ libexec/gnome-settings-daemon
 share/dbus-1/services/org.gnome.SettingsDaemon.service
 %%DATADIR%%/acme-eject.png
 %%DATADIR%%/acme.glade
+%%DATADIR%%/gsd-a11y-preferences-dialog.glade
 %%DATADIR%%/modmap-dialog.glade
 %%DATADIR%%/xrdb/Editres.ad
 %%DATADIR%%/xrdb/Emacs.ad
@@ -71,6 +77,11 @@ share/dbus-1/services/org.gnome.SettingsDaemon.service
 %%DATADIR%%/xrdb/Motif.ad
 %%DATADIR%%/xrdb/Tk.ad
 %%DATADIR%%/xrdb/Xaw.ad
+share/icons/hicolor/16x16/apps/gsd-xrandr.png
+share/icons/hicolor/22x22/apps/gsd-xrandr.png
+share/icons/hicolor/24x24/apps/gsd-xrandr.png
+share/icons/hicolor/32x32/apps/gsd-xrandr.png
+share/icons/hicolor/scalable/apps/gsd-xrandr.svg
 share/locale/af/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/am/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ar/LC_MESSAGES/gnome-settings-daemon.mo
@@ -109,6 +120,7 @@ share/locale/is/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/it/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ja/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ka/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/kn/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ko/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ku/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/lt/LC_MESSAGES/gnome-settings-daemon.mo
@@ -138,7 +150,7 @@ share/locale/sk/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sl/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sq/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sr/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sv/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ta/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/te/LC_MESSAGES/gnome-settings-daemon.mo
@@ -157,6 +169,8 @@ share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
 @dirrm lib/gnome-settings-daemon-2.0
 @dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
 @dirrm include/gnome-settings-daemon-2.0
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -165,6 +179,8 @@ share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

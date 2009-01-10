@@ -6,42 +6,25 @@ bin/gnome-at-visual
 bin/gnome-control-center
 bin/gnome-default-applications-properties
 bin/gnome-display-properties
-bin/gnome-font-viewer
 bin/gnome-keybinding-properties
 bin/gnome-keyboard-properties
 bin/gnome-mouse-properties
 bin/gnome-network-preferences
 bin/gnome-sound-properties
-bin/gnome-theme-thumbnailer
-bin/gnome-thumbnail-font
 bin/gnome-typing-monitor
 bin/gnome-window-properties
-bin/themus-theme-applier
-etc/gnome-vfs-2.0/modules/font-method.conf
-etc/gnome-vfs-2.0/modules/theme-method.conf
 etc/xdg/autostart/gnome-at-session.desktop
 etc/xdg/menus/gnomecc.menu
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
-lib/gnome-vfs-2.0/modules/libfont-method.a
-lib/gnome-vfs-2.0/modules/libfont-method.la
-lib/gnome-vfs-2.0/modules/libfont-method.so
-lib/gnome-vfs-2.0/modules/libtheme-method.a
-lib/gnome-vfs-2.0/modules/libtheme-method.la
-lib/gnome-vfs-2.0/modules/libtheme-method.so
 lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
 lib/libgnome-window-settings.so
 lib/libgnome-window-settings.so.1
-lib/nautilus/extensions-2.0/libnautilus-fontilus.a
-lib/nautilus/extensions-2.0/libnautilus-fontilus.la
-lib/nautilus/extensions-2.0/libnautilus-fontilus.so
-lib/nautilus/extensions-2.0/libnautilus-themus.a
-lib/nautilus/extensions-2.0/libnautilus-themus.la
-lib/nautilus/extensions-2.0/libnautilus-themus.so
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
+libdata/pkgconfig/gnome-default-applications.pc
 libdata/pkgconfig/gnome-keybindings.pc
 libdata/pkgconfig/gnome-window-settings-2.0.pc
 share/applications/at-properties.desktop
@@ -49,7 +32,6 @@ share/applications/default-applications.desktop
 share/applications/display-properties.desktop
 %%ABOUTME%%share/applications/gnome-about-me.desktop
 share/applications/gnome-appearance-properties.desktop
-share/applications/gnome-font-viewer.desktop
 share/applications/gnome-network-preferences.desktop
 share/applications/gnome-settings-mouse.desktop
 share/applications/gnome-settings-sound.desktop
@@ -57,14 +39,12 @@ share/applications/gnome-theme-installer.desktop
 share/applications/gnomecc.desktop
 share/applications/keybinding.desktop
 share/applications/keyboard.desktop
-share/applications/themus-theme-applier.desktop
 share/applications/window-properties.desktop
-share/desktop-directories/font-method.directory
 share/desktop-directories/gnomecc.directory
-share/desktop-directories/theme-method.directory
+%%DATADIR%%/default-apps/gnome-default-applications.xml
 %%DATADIR%%/glade/appearance.glade
-%%DATADIR%%/glade/apply-font.glade
 %%DATADIR%%/glade/at-enable-dialog.glade
+%%DATADIR%%/glade/display-capplet.glade
 %%ABOUTME%%%%DATADIR%%/glade/gnome-about-me.glade
 %%DATADIR%%/glade/gnome-default-applications-properties.glade
 %%DATADIR%%/glade/gnome-keybinding-properties.glade
@@ -73,7 +53,6 @@ share/desktop-directories/theme-method.directory
 %%DATADIR%%/glade/gnome-network-preferences.glade
 %%DATADIR%%/glade/gnome-window-properties.glade
 %%DATADIR%%/glade/sound-properties.glade
-%%DATADIR%%/gnome-default-applications.xml
 %%DATADIR%%/keybindings/00-multimedia-key.xml
 %%DATADIR%%/keybindings/01-desktop-key.xml
 %%DATADIR%%/pixmaps/at-startup.png
@@ -99,7 +78,6 @@ share/desktop-directories/theme-method.directory
 %%DATADIR%%/pixmaps/subpixel-vbgr.png
 %%DATADIR%%/pixmaps/subpixel-vrgb.png
 %%DATADIR%%/pixmaps/theme-thumbnailing.png
-%%DATADIR%%/pixmaps/visual-bell.png
 %%DATADIR%%/pixmaps/window-theme-thumbnailing.png
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
@@ -137,17 +115,22 @@ share/gnome/help/control-center/vi/control-center.xml
 share/gnome/help/control-center/zh_CN/control-center.xml
 share/icons/hicolor/16x16/apps/gnome-display-properties.png
 share/icons/hicolor/16x16/apps/gnome-network-preferences.png
+share/icons/hicolor/16x16/apps/gnome-settings-default-applications.png
 share/icons/hicolor/16x16/apps/gnome-sound-properties.png
 share/icons/hicolor/22x22/apps/gnome-display-properties.png
 share/icons/hicolor/22x22/apps/gnome-network-preferences.png
+share/icons/hicolor/22x22/apps/gnome-settings-default-applications.png
 share/icons/hicolor/22x22/apps/gnome-sound-properties.png
 share/icons/hicolor/24x24/apps/gnome-display-properties.png
 share/icons/hicolor/24x24/apps/gnome-network-preferences.png
+share/icons/hicolor/24x24/apps/gnome-settings-default-applications.png
 share/icons/hicolor/24x24/apps/gnome-sound-properties.png
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
 share/icons/hicolor/32x32/apps/gnome-network-preferences.png
+share/icons/hicolor/32x32/apps/gnome-settings-default-applications.png
 share/icons/hicolor/32x32/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/gnome-network-preferences.png
+share/icons/hicolor/48x48/apps/gnome-settings-default-applications.png
 share/icons/hicolor/48x48/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
 share/icons/hicolor/scalable/apps/gnome-display-properties.svg
@@ -223,7 +206,7 @@ share/locale/sk/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -278,6 +261,7 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/cursor-fonts
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/default-apps
 @dirrmtry share/desktop-directories
 @dirrmtry share/applications
 @dirrm lib/window-manager-settings
@@ -295,6 +279,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

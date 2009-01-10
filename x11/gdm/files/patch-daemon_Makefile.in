@@ -1,0 +1,10 @@
+--- daemon/Makefile.in.orig	2007-11-02 20:54:53.000000000 -0400
++++ daemon/Makefile.in	2007-11-02 20:55:08.000000000 -0400
+@@ -451,6 +451,7 @@ test_session_SOURCES = \
+ 
+ test_session_LDADD = \
+ 	$(DAEMON_LIBS)		\
++	$(EXTRA_DAEMON_LIBS)	\
+ 	$(PAM_LIBS)		\
+ 	$(top_builddir)/common/libgdmcommon.la	\
+ 	$(NULL)

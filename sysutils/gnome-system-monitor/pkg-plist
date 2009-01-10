@@ -15,6 +15,20 @@ share/gnome/help/gnome-system-monitor/C/figures/systemMonitor.png
 share/gnome/help/gnome-system-monitor/C/figures/viewMenu.png
 share/gnome/help/gnome-system-monitor/C/gnome-system-monitor.xml
 share/gnome/help/gnome-system-monitor/C/legal.xml
+share/gnome/help/gnome-system-monitor/ar/figures/addColumn.png
+share/gnome/help/gnome-system-monitor/ar/figures/changePriority.png
+share/gnome/help/gnome-system-monitor/ar/figures/colorPanel.png
+share/gnome/help/gnome-system-monitor/ar/figures/columnContextMenu.png
+share/gnome/help/gnome-system-monitor/ar/figures/gnome-system-monitor_window.png
+share/gnome/help/gnome-system-monitor/ar/figures/memoryMaps.png
+share/gnome/help/gnome-system-monitor/ar/figures/moreInfo.png
+share/gnome/help/gnome-system-monitor/ar/figures/processListing.png
+share/gnome/help/gnome-system-monitor/ar/figures/sortButton.png
+share/gnome/help/gnome-system-monitor/ar/figures/sortMenu.png
+share/gnome/help/gnome-system-monitor/ar/figures/sortMenu2.png
+share/gnome/help/gnome-system-monitor/ar/figures/systemMonitor.png
+share/gnome/help/gnome-system-monitor/ar/figures/viewMenu.png
+share/gnome/help/gnome-system-monitor/ar/gnome-system-monitor.xml
 share/gnome/help/gnome-system-monitor/bg/figures/addColumn.png
 share/gnome/help/gnome-system-monitor/bg/figures/changePriority.png
 share/gnome/help/gnome-system-monitor/bg/figures/colorPanel.png
@@ -168,6 +182,7 @@ share/locale/oc/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/or/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/pa/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/pl/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ps/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/pt/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ro/LC_MESSAGES/gnome-system-monitor.mo
@@ -178,7 +193,7 @@ share/locale/sk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sl/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sq/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sr/LC_MESSAGES/gnome-system-monitor.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ta/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/te/LC_MESSAGES/gnome-system-monitor.mo
@@ -191,6 +206,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
 share/omf/gnome-system-monitor/gnome-system-monitor-C.omf
+share/omf/gnome-system-monitor/gnome-system-monitor-ar.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-bg.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-ca.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-es.omf
@@ -217,6 +233,8 @@ share/pixmaps/gnome-system-monitor/upload.svg
 @dirrm share/gnome/help/gnome-system-monitor/ca
 @dirrm share/gnome/help/gnome-system-monitor/bg/figures
 @dirrm share/gnome/help/gnome-system-monitor/bg
+@dirrm share/gnome/help/gnome-system-monitor/ar/figures
+@dirrm share/gnome/help/gnome-system-monitor/ar
 @dirrm share/gnome/help/gnome-system-monitor/C/figures
 @dirrm share/gnome/help/gnome-system-monitor/C
 @dirrm share/gnome/help/gnome-system-monitor
@@ -227,10 +245,14 @@ share/pixmaps/gnome-system-monitor/upload.svg
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES

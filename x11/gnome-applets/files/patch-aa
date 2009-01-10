@@ -1,6 +1,6 @@
---- configure.orig	2007-07-09 18:13:48.000000000 -0400
-+++ configure	2007-07-09 18:14:19.000000000 -0400
-@@ -25117,7 +25117,7 @@ _ACEOF
+--- configure.orig	2008-12-20 14:46:11.000000000 -0500
++++ configure	2008-12-20 14:54:57.000000000 -0500
+@@ -17150,7 +17150,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -9,7 +9,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    GNOMELOCALEDIR="$ac_define_dir"
  
-@@ -27157,8 +27157,8 @@ fi
+@@ -19097,8 +19097,8 @@ fi
  
  	   ;;
         # list of supported OS cores that do not use libapm
@@ -20,16 +20,7 @@
  	       ACPIINC="-I${OS_SYS}"
  	   else
  	       ACPIINC="-I/usr/src/sys"
-@@ -27924,7 +27924,7 @@ echo "${ECHO_T}no" >&6; }
- fi
- 
- 
--  stb="system-tools-backends"
-+  stb="system-tools-backends-2.0"
- 
-   if test x$PKG_CONFIG != xno ; then
-     if $PKG_CONFIG --atleast-pkgconfig-version 0.12 ; then
-@@ -28166,6 +28166,9 @@ if test x$disable_cpufreq = xno; then
+@@ -20023,6 +20023,9 @@ if test x$disable_cpufreq = xno; then
        *linux*)
           build_cpufreq_applet=yes
  	 ;;
@@ -39,7 +30,7 @@
        *)
           { echo "$as_me:$LINENO: WARNING: ${host} is not supported by cpufreq applet, not building" >&5
  echo "$as_me: WARNING: ${host} is not supported by cpufreq applet, not building" >&2;}
-@@ -28684,7 +28687,7 @@ gladedir="${pkgdatadir}/glade"
+@@ -20591,7 +20594,7 @@ builderdir="${pkgdatadir}/builder"
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -48,7 +39,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_ICONDIR="$ac_define_dir"
  
-@@ -28697,7 +28700,7 @@ _ACEOF
+@@ -20604,7 +20607,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -57,16 +48,16 @@
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
-@@ -28710,7 +28713,7 @@ _ACEOF
+@@ -20617,7 +20620,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
--  ac_define_dir=`eval echo $"${gladedir}"`
-+  ac_define_dir=`eval echo "${gladedir}"`
+-  ac_define_dir=`eval echo $"${builderdir}"`
++  ac_define_dir=`eval echo "${builderdir}"`
    ac_define_dir=`eval echo $ac_define_dir`
-   GNOME_GLADEDIR="$ac_define_dir"
+   GTK_BUILDERDIR="$ac_define_dir"
  
-@@ -28723,7 +28726,7 @@ _ACEOF
+@@ -20630,7 +20633,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -75,7 +66,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -28736,7 +28739,7 @@ _ACEOF
+@@ -20643,7 +20646,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -84,7 +75,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -28749,7 +28752,7 @@ _ACEOF
+@@ -20656,7 +20659,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -93,7 +84,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -28762,7 +28765,7 @@ _ACEOF
+@@ -20669,7 +20672,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'

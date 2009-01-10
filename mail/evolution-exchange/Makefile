@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.110 2008/03/13 03:13:38 marcus Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.129 2008/11/25 05:34:10 mezz Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.22.3
-PORTREVISION=	1
+PORTVERSION=	2.24.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BDB=	41
 USE_OPENLDAP=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget ltasneededhack
+USE_GNOME=	gnomeprefix intlhack gnomehack ltasneededhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
@@ -33,8 +32,8 @@ CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--disable-compile-warnings \
 		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.22
-VERSION=	2.22
+EVO_VERSION=	2.24
+VERSION=	2.24
 PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 		EDS_VERSION="1.2"
 
@@ -60,9 +59,6 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .if exists(${LOCALBASE}/include/mapi.h)
 IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall the port that installed mapi.h
 .endif
-
-post-extract:
-	@${RM} -f ${WRKSRC}/storage/*.server
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \

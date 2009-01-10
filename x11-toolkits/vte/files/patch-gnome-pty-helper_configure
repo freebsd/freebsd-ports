@@ -1,14 +1,22 @@
---- gnome-pty-helper/configure.orig	2007-07-29 17:28:10.000000000 -0400
-+++ gnome-pty-helper/configure	2007-07-29 17:29:30.000000000 -0400
-@@ -8408,6 +8408,7 @@ ECHO_C!$ECHO_C$ac_delim
- ECHO_N!$ECHO_N$ac_delim
- ECHO_T!$ECHO_T$ac_delim
- LIBS!$LIBS$ac_delim
+--- gnome-pty-helper/configure.orig	2008-09-08 19:30:02.000000000 -0400
++++ gnome-pty-helper/configure	2008-09-08 19:31:21.000000000 -0400
+@@ -673,6 +673,7 @@ AMTAR
+ am__tar
+ am__untar
+ CC
++BSD_PTHREAD_LIBS
+ CFLAGS
+ LDFLAGS
+ CPPFLAGS
+@@ -8434,6 +8435,7 @@ AMTAR!$AMTAR$ac_delim
+ am__tar!$am__tar$ac_delim
+ am__untar!$am__untar$ac_delim
+ CC!$CC$ac_delim
 +BSD_PTHREAD_LIBS!$BSD_PTHREAD_LIBS$ac_delim
- build_alias!$build_alias$ac_delim
- host_alias!$host_alias$ac_delim
- target_alias!$target_alias$ac_delim
-@@ -8470,7 +8471,7 @@ LIBOBJS!$LIBOBJS$ac_delim
+ CFLAGS!$CFLAGS$ac_delim
+ LDFLAGS!$LDFLAGS$ac_delim
+ CPPFLAGS!$CPPFLAGS$ac_delim
+@@ -8470,7 +8472,7 @@ LIBOBJS!$LIBOBJS$ac_delim
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  

@@ -34,6 +34,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/presence.py
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/presence.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/simple_presence.py
+%%PYTHON_SITELIBDIR%%/butterfly/simple_presence.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/simple_presence.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyo

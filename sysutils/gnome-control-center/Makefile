@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.172 2008/03/10 21:50:24 mezz Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.185 2008/09/24 21:51:29 mezz Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.22.2.1
-PORTREVISION=	1
+PORTVERSION=	2.24.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
@@ -38,8 +37,7 @@ CONFIGURE_ARGS=	--enable-gstreamer=0.10
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	control-center.schemas \
-		fontilus.schemas themus.schemas
+GCONF_SCHEMAS=	control-center.schemas
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME

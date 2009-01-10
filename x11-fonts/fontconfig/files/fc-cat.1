@@ -3,23 +3,30 @@
 .\" <http://shell.ipoline.com/~elmert/comp/docbook2X/> 
 .\" Please send any bug reports, improvements, comments, patches, 
 .\" etc. to Steve Cheng <steve@ggi-project.org>.
-.TH "FC-CAT" "1" "12 November 2006" "" ""
+.TH "FC-CAT" "1" "05 May 2008" "" ""
 
 .SH NAME
 fc-cat \- read font information cache files
 .SH SYNOPSIS
 
-\fBfc-cat < fonts-cache-2-file >\fR [ \fB-V?\fR ] [ \fB--version\fR ] [ \fB--help\fR ] [ \fB\fIdirs\fB\fR ]
+\fBfc-cat\fR [ \fB-rvV?\fR ] [ \fB--recurse\fR ] [ \fB--verbose\fR ] [ \fB--version\fR ] [ \fB--help\fR ] [ \fB\fIfonts-cache-2-files\fB\fR ] [ \fB\fIdirs\fB\fR ]
 
 .SH "DESCRIPTION"
 .PP
-\fBfc-cat\fR reads a font information cache file
+\fBfc-cat\fR reads the font information from
+cache files or related to font directories
 and emits it in ASCII form.
 .SH "OPTIONS"
 .PP
 This program follows the usual GNU command line syntax,
 with long options starting with two dashes (`-').  A summary of
 options is included below.
+.TP
+\fB-r --recurse \fR
+Recurse into subdirectories.
+.TP
+\fB-v --verbose \fR
+Be verbose.
 .TP
 \fB-? --help \fR
 Show summary of options.

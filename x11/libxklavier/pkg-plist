@@ -15,10 +15,10 @@ libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
-%%DOCSDIR%%/libxklavier-XklConfigItem.html
-%%DOCSDIR%%/libxklavier-XklConfigRec.html
-%%DOCSDIR%%/libxklavier-XklConfigRegistry.html
-%%DOCSDIR%%/libxklavier-XklEngine.html
+%%DOCSDIR%%/XklConfigItem.html
+%%DOCSDIR%%/XklConfigRec.html
+%%DOCSDIR%%/XklConfigRegistry.html
+%%DOCSDIR%%/XklEngine.html
 %%DOCSDIR%%/libxklavier-xklavier.html
 %%DOCSDIR%%/libxklavier.devhelp
 %%DOCSDIR%%/libxklavier.devhelp2

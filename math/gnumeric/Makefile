@@ -3,12 +3,11 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/math/gnumeric/Makefile,v 1.42 2008/03/11 12:45:31 ahze Exp $
+#   $MCom: ports/math/gnumeric/Makefile,v 1.46 2008/10/20 21:37:28 kwm Exp $
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	goffice-0.6.6:${PORTSDIR}/devel/goffice \
+LIB_DEPENDS=	goffice-0.8.7:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
@@ -29,6 +28,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier \
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-guile --with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -38,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
 		gnumeric-plugins.schemas
 
-MAN1=		gnumeric.1 ssconvert.1 ssindex.1
+MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

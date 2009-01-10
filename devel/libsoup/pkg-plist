@@ -3,6 +3,8 @@ include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-basic.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-digest.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth.h
+include/libsoup-%%VERSION%%/libsoup/soup-cookie-jar.h
+include/libsoup-%%VERSION%%/libsoup/soup-cookie.h
 include/libsoup-%%VERSION%%/libsoup/soup-date.h
 include/libsoup-%%VERSION%%/libsoup/soup-enum-types.h
 include/libsoup-%%VERSION%%/libsoup/soup-form.h
@@ -16,6 +18,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-misc.h
 include/libsoup-%%VERSION%%/libsoup/soup-portability.h
 include/libsoup-%%VERSION%%/libsoup/soup-server.h
 include/libsoup-%%VERSION%%/libsoup/soup-session-async.h
+include/libsoup-%%VERSION%%/libsoup/soup-session-feature.h
 include/libsoup-%%VERSION%%/libsoup/soup-session-sync.h
 include/libsoup-%%VERSION%%/libsoup/soup-session.h
 include/libsoup-%%VERSION%%/libsoup/soup-socket.h

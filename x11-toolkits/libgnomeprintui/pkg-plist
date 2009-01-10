@@ -56,6 +56,7 @@ share/locale/eu/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fr/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/fur/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ga/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/gl/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/gu/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -86,6 +87,7 @@ share/locale/oc/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/or/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pl/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/ps/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ro/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -96,7 +98,7 @@ share/locale/sk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sl/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sq/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sr/LC_MESSAGES/libgnomeprintui-2.2.mo
-share/locale/sr@Latn/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/sr@latin/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/sv/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ta/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/te/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -120,14 +122,20 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

@@ -31,6 +31,7 @@ share/gtksourceview-2.0/language-specs/def.lang
 share/gtksourceview-2.0/language-specs/desktop.lang
 share/gtksourceview-2.0/language-specs/diff.lang
 share/gtksourceview-2.0/language-specs/docbook.lang
+share/gtksourceview-2.0/language-specs/dot.lang
 share/gtksourceview-2.0/language-specs/dpatch.lang
 share/gtksourceview-2.0/language-specs/dtd.lang
 share/gtksourceview-2.0/language-specs/eiffel.lang
@@ -81,6 +82,7 @@ share/gtksourceview-2.0/language-specs/vbnet.lang
 share/gtksourceview-2.0/language-specs/verilog.lang
 share/gtksourceview-2.0/language-specs/vhdl.lang
 share/gtksourceview-2.0/language-specs/xml.lang
+share/gtksourceview-2.0/language-specs/xslt.lang
 share/gtksourceview-2.0/language-specs/yacc.lang
 share/gtksourceview-2.0/styles/classic.xml
 share/gtksourceview-2.0/styles/kate.xml
@@ -119,6 +121,7 @@ share/locale/hu/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/id/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/it/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/kn/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/lt/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/lv/LC_MESSAGES/gtksourceview-2.0.mo
@@ -146,9 +149,10 @@ share/locale/sk/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/sl/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/sq/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/sr/LC_MESSAGES/gtksourceview-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ta/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/te/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/th/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/tr/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/uk/LC_MESSAGES/gtksourceview-2.0.mo
@@ -166,6 +170,10 @@ share/locale/zh_TW/LC_MESSAGES/gtksourceview-2.0.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES

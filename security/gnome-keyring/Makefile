@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/gnome-keyring/Makefile,v 1.59 2008/03/09 18:30:40 mezz Exp $
+#   $MCom: ports/security/gnome-keyring/Makefile,v 1.71 2009/01/10 01:59:21 mezz Exp $
 #
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	2.22.3
-PORTREVISION=	2
+PORTVERSION=	2.24.1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
-LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
-		tasn1.3:${PORTSDIR}/security/libtasn1 \
+LIB_DEPENDS=	tasn1.3:${PORTSDIR}/security/libtasn1 \
     		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
@@ -31,4 +30,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	gnome-keyring.schemas
 
-.include <bsd.port.mk>
+OPTIONS=	HAL "Use HAL for keys on removable drives" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=--enable-hal
+.else
+CONFIGURE_ARGS+=--disable-hal
+.endif
+
+.include <bsd.port.post.mk>

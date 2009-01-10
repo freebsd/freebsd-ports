@@ -340,6 +340,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/toggletoolbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolbar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolitem_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/toolshell_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/tooltip_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/tooltips_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/treedragdest_p.h
@@ -414,6 +415,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/toggletoolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolitem.h
+include/gtkmm-%%API_VERSION%%/gtkmm/toolshell.h
 include/gtkmm-%%API_VERSION%%/gtkmm/tooltip.h
 include/gtkmm-%%API_VERSION%%/gtkmm/tooltips.h
 include/gtkmm-%%API_VERSION%%/gtkmm/treedragdest.h
@@ -437,60 +439,6 @@ include/gtkmm-%%API_VERSION%%/gtkmm/volumebutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/widget.h
 include/gtkmm-%%API_VERSION%%/gtkmm/window.h
 include/gtkmm-%%API_VERSION%%/gtkmm/wrap_init.h
-include/pangomm-1.4/pangomm.h
-include/pangomm-1.4/pangomm/attributes.h
-include/pangomm-1.4/pangomm/attriter.h
-include/pangomm-1.4/pangomm/attrlist.h
-include/pangomm-1.4/pangomm/cairofontmap.h
-include/pangomm-1.4/pangomm/color.h
-include/pangomm-1.4/pangomm/context.h
-include/pangomm-1.4/pangomm/coverage.h
-include/pangomm-1.4/pangomm/font.h
-include/pangomm-1.4/pangomm/fontdescription.h
-include/pangomm-1.4/pangomm/fontface.h
-include/pangomm-1.4/pangomm/fontfamily.h
-include/pangomm-1.4/pangomm/fontmap.h
-include/pangomm-1.4/pangomm/fontmetrics.h
-include/pangomm-1.4/pangomm/fontset.h
-include/pangomm-1.4/pangomm/glyph.h
-include/pangomm-1.4/pangomm/glyphstring.h
-include/pangomm-1.4/pangomm/init.h
-include/pangomm-1.4/pangomm/item.h
-include/pangomm-1.4/pangomm/language.h
-include/pangomm-1.4/pangomm/layout.h
-include/pangomm-1.4/pangomm/layoutiter.h
-include/pangomm-1.4/pangomm/layoutline.h
-include/pangomm-1.4/pangomm/layoutrun.h
-include/pangomm-1.4/pangomm/private/attributes_p.h
-include/pangomm-1.4/pangomm/private/attriter_p.h
-include/pangomm-1.4/pangomm/private/attrlist_p.h
-include/pangomm-1.4/pangomm/private/cairofontmap_p.h
-include/pangomm-1.4/pangomm/private/color_p.h
-include/pangomm-1.4/pangomm/private/context_p.h
-include/pangomm-1.4/pangomm/private/coverage_p.h
-include/pangomm-1.4/pangomm/private/font_p.h
-include/pangomm-1.4/pangomm/private/fontdescription_p.h
-include/pangomm-1.4/pangomm/private/fontface_p.h
-include/pangomm-1.4/pangomm/private/fontfamily_p.h
-include/pangomm-1.4/pangomm/private/fontmap_p.h
-include/pangomm-1.4/pangomm/private/fontmetrics_p.h
-include/pangomm-1.4/pangomm/private/fontset_p.h
-include/pangomm-1.4/pangomm/private/glyph_p.h
-include/pangomm-1.4/pangomm/private/glyphstring_p.h
-include/pangomm-1.4/pangomm/private/item_p.h
-include/pangomm-1.4/pangomm/private/language_p.h
-include/pangomm-1.4/pangomm/private/layout_p.h
-include/pangomm-1.4/pangomm/private/layoutiter_p.h
-include/pangomm-1.4/pangomm/private/layoutline_p.h
-include/pangomm-1.4/pangomm/private/layoutrun_p.h
-include/pangomm-1.4/pangomm/private/rectangle_p.h
-include/pangomm-1.4/pangomm/private/renderer_p.h
-include/pangomm-1.4/pangomm/private/tabarray_p.h
-include/pangomm-1.4/pangomm/rectangle.h
-include/pangomm-1.4/pangomm/renderer.h
-include/pangomm-1.4/pangomm/tabarray.h
-include/pangomm-1.4/pangomm/types.h
-include/pangomm-1.4/pangomm/wrap_init.h
 lib/gdkmm-%%API_VERSION%%/include/gdkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/include/gtkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/proc/m4/convert.m4
@@ -511,23 +459,15 @@ lib/libgtkmm-%%VERSION%%.a
 lib/libgtkmm-%%VERSION%%.la
 lib/libgtkmm-%%VERSION%%.so
 lib/libgtkmm-%%VERSION%%.so.1
-lib/libpangomm-1.4.a
-lib/libpangomm-1.4.la
-lib/libpangomm-1.4.so
-lib/libpangomm-1.4.so.1
 libdata/pkgconfig/atkmm-1.6.pc
 libdata/pkgconfig/gdkmm-%%API_VERSION%%.pc
 libdata/pkgconfig/gtkmm-%%API_VERSION%%.pc
-libdata/pkgconfig/pangomm-1.4.pc
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
 @dirrm lib/gtkmm-%%API_VERSION%%/proc
 @dirrm lib/gtkmm-%%API_VERSION%%/include
 @dirrm lib/gtkmm-%%API_VERSION%%
 @dirrm lib/gdkmm-%%API_VERSION%%/include
 @dirrm lib/gdkmm-%%API_VERSION%%
-@dirrm include/pangomm-1.4/pangomm/private
-@dirrm include/pangomm-1.4/pangomm
-@dirrm include/pangomm-1.4
 @dirrm include/gtkmm-%%API_VERSION%%/gtkmm/private
 @dirrm include/gtkmm-%%API_VERSION%%/gtkmm
 @dirrm include/gtkmm-%%API_VERSION%%

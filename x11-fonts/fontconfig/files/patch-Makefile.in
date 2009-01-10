@@ -1,7 +1,7 @@
---- Makefile.in.orig	Sat Nov  4 14:54:15 2006
-+++ Makefile.in	Sat Nov  4 14:54:46 2006
-@@ -785,28 +785,6 @@ $(srcdir)/ChangeLog:
- .PHONY: ChangeLog $(srcdir)/ChangeLog
+--- Makefile.in.orig	2008-07-03 03:20:43.000000000 -0400
++++ Makefile.in	2008-07-03 03:21:18.000000000 -0400
+@@ -789,28 +789,28 @@ ChangeLog:
+ .PHONY: ChangeLog
  
  install-data-local:
 -	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
@@ -17,8 +17,8 @@
 -	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
 -	fi; fi
 -	@(if $(RUN_FC_CACHE_TEST); then \
--	    echo " fc-cache/fc-cache -s -f -v"; \
--	    fc-cache/fc-cache -s -f -v; \
+-	    echo " $(bindir)/fc-cache -s -f -v"; \
+-	    $(bindir)/fc-cache -s -f -v; \
 -	else \
 -	    echo "***"; \
 -	    echo "*** Warning: fonts.cache not built"; \
@@ -26,6 +26,28 @@
 -	    echo "*** Generate this file manually on host system using fc-cache"; \
 -	    echo "***"; \
 -	fi)
++#	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
++#	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
++#	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
++#	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
++#	fi
++#	if [ -f $(srcdir)/fonts.conf ]; then \
++#	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
++#	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
++#	else if [ -f fonts.conf ]; then \
++#	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
++#	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
++#	fi; fi
++#	@(if $(RUN_FC_CACHE_TEST); then \
++#	    echo " $(bindir)/fc-cache -s -f -v"; \
++#	    $(bindir)/fc-cache -s -f -v; \
++#	else \
++#	    echo "***"; \
++#	    echo "*** Warning: fonts.cache not built"; \
++#	    echo "***"; \
++#	    echo "*** Generate this file manually on host system using fc-cache"; \
++#	    echo "***"; \
++#	fi)
  
  uninstall-local:
  	if [ -f $(srcdir)/fonts.conf ]; then \

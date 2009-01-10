@@ -3,14 +3,14 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.54 2007/09/16 17:26:18 ahze Exp $
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.58 2008/09/27 01:53:01 mezz Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.12.1
+PORTVERSION=	2.13.0
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget libglade2
+USE_GNOME=	gnomehack libglade2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

@@ -1,6 +1,14 @@
---- esddsp.c.orig	2008-07-15 11:47:20.000000000 -0400
-+++ esddsp.c	2008-07-17 13:58:09.000000000 -0400
-@@ -220,16 +220,19 @@ open_wrapper (int (*func) (const char *,
+--- esddsp.c.orig	2008-11-18 15:35:19.000000000 -0500
++++ esddsp.c	2008-11-20 14:35:02.000000000 -0500
+@@ -70,6 +70,7 @@
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__bsdi__)
+ typedef unsigned long request_t;
++typedef off_t off64_t;
+ #else
+ typedef int request_t;
+ #endif
+@@ -228,16 +229,19 @@ open_wrapper (int (*func) (const char *,
  	      const char *pathname, int flags, ...)
  {
    va_list args;
@@ -25,7 +33,7 @@
  
    if (!strcmp (pathname, "/dev/dsp"))
      {
-@@ -260,7 +263,7 @@ open (const char *pathname, int flags, .
+@@ -268,7 +272,7 @@ open (const char *pathname, int flags, .
  {
    static int (*func) (const char *, int, mode_t) = NULL;
    va_list args;
@@ -34,7 +42,7 @@
  
    DPRINTF ("open\n");
  
-@@ -275,9 +278,12 @@ open (const char *pathname, int flags, .
+@@ -283,9 +287,12 @@ open (const char *pathname, int flags, .
  	}
      }
  
@@ -50,7 +58,7 @@
  
    return open_wrapper(func, pathname, flags, mode);
  }
-@@ -287,7 +293,7 @@ open64 (const char *pathname, int flags,
+@@ -295,7 +302,7 @@ open64 (const char *pathname, int flags,
  {
    static int (*func) (const char *, int, mode_t) = NULL;
    va_list args;
@@ -59,7 +67,7 @@
  
    DPRINTF ("open64\n");
  
-@@ -302,9 +308,12 @@ open64 (const char *pathname, int flags,
+@@ -310,9 +317,12 @@ open64 (const char *pathname, int flags,
  	}
      }
  

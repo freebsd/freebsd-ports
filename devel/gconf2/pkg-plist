@@ -1,5 +1,6 @@
 bin/gconf-merge-tree
 bin/gconftool-2
+etc/dbus-1/system.d/org.gnome.GConf.Defaults.conf
 %%LDAP%%etc/gconf/2/evoldap.conf
 etc/gconf/2/path
 include/gconf/2/gconf/gconf-changeset.h
@@ -11,6 +12,7 @@ include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
 include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
+libexec/gconf-defaults-mechanism
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.a
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.la
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.so
@@ -29,6 +31,9 @@ libexec/gconf-sanity-check-2
 libexec/gconfd-2
 %%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
+share/PolicyKit/policy/org.gnome.gconf.defaults.policy
+share/dbus-1/system-services/org.gnome.GConf.Defaults.service
+share/dbus-1/services/org.gnome.GConf.service
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/as/LC_MESSAGES/GConf2.mo
@@ -65,10 +70,12 @@ share/locale/is/LC_MESSAGES/GConf2.mo
 share/locale/it/LC_MESSAGES/GConf2.mo
 share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ka/LC_MESSAGES/GConf2.mo
+share/locale/kn/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
 share/locale/ku/LC_MESSAGES/GConf2.mo
 share/locale/lt/LC_MESSAGES/GConf2.mo
 share/locale/lv/LC_MESSAGES/GConf2.mo
+share/locale/mai/LC_MESSAGES/GConf2.mo
 share/locale/mg/LC_MESSAGES/GConf2.mo
 share/locale/mk/LC_MESSAGES/GConf2.mo
 share/locale/ml/LC_MESSAGES/GConf2.mo
@@ -93,7 +100,7 @@ share/locale/sk/LC_MESSAGES/GConf2.mo
 share/locale/sl/LC_MESSAGES/GConf2.mo
 share/locale/sq/LC_MESSAGES/GConf2.mo
 share/locale/sr/LC_MESSAGES/GConf2.mo
-share/locale/sr@Latn/LC_MESSAGES/GConf2.mo
+share/locale/sr@latin/LC_MESSAGES/GConf2.mo
 share/locale/sv/LC_MESSAGES/GConf2.mo
 share/locale/ta/LC_MESSAGES/GConf2.mo
 share/locale/te/LC_MESSAGES/GConf2.mo
@@ -122,6 +129,8 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -132,6 +141,8 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES

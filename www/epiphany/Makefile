@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/epiphany/Makefile,v 1.11 2008/08/06 04:20:12 mezz Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.188 2008/11/27 01:59:20 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.22.3
-PORTREVISION?=	1
+PORTVERSION=	2.24.2.1
+PORTREVISION?=	0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -53,7 +53,7 @@ WITH_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(EPHY_SLAVE) && ${EPHY_SLAVE}=="webkit"
-LIB_DEPENDS+=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkit-1.0.1:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=	--with-engine=webkit
 EXTRA_CFLAGS+=	`pkg-config --cflags WebKitGtk` -I${LOCALBASE}/include/WebKit/webkit
 EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`

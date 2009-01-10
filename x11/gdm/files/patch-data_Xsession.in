@@ -1,0 +1,39 @@
+--- data/Xsession.in.orig	2008-05-12 20:25:54.000000000 -0400
++++ data/Xsession.in	2008-06-09 01:29:59.000000000 -0400
+@@ -231,12 +231,31 @@ if [ "x$command" = "xdefault" ] ; then
+   fi
+ fi
+ 
++is_gnome=0
++if [ "x$command" = "xgnome-session" ]; then
++    is_gnome=1
++fi
++
++# add seahorse-agent if found
++if [ ${is_gnome} = 1 ]; then
++    seahorseagent="`gdmwhich seahorse-agent`"
++    if [ -n "$seahorseagent" ] && [ -x "$seahorseagent" ] && [ -z "$GPG_AGENT_INFO" ] ; then
++        command="dbus-launch --exit-with-session $seahorseagent --execute $command"
++    elif [ -z "$seahorseagent" ] ; then
++        echo "$0: seahorse-agent not found!"
++    fi
++fi
++ 
+ # add ssh-agent if found
+-sshagent="`gdmwhich ssh-agent`"
+-if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
+-    command="$sshagent -- $command"
+-elif [ -z "$sshagent" ] ; then
+-    echo "$0: ssh-agent not found!"
++# ssh-agent functionality is handled by gnome-keyring-daemon which is launched
++# from gnome-session
++if [ ${is_gnome} != 1 ]; then
++    sshagent="`gdmwhich ssh-agent`"
++    if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
++        command="$sshagent -- $command"
++    elif [ -z "$sshagent" ] ; then
++        echo "$0: ssh-agent not found!"
++    fi
+ fi
+ 
+ echo "$0: Setup done, will execute: $command"

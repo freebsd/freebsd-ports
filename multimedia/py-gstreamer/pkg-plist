@@ -28,6 +28,8 @@
 %%PYTHON_SITELIBDIR%%/gst-%%VERSION%%/gst/interfaces.so
 %%PYTHON_SITELIBDIR%%/gst-%%VERSION%%/gst/pbutils.la
 %%PYTHON_SITELIBDIR%%/gst-%%VERSION%%/gst/pbutils.so
+%%PYTHON_SITELIBDIR%%/gstoption.la
+%%PYTHON_SITELIBDIR%%/gstoption.so
 %%PYTHON_SITELIBDIR%%/pygst.pth
 %%PYTHON_SITELIBDIR%%/pygst.py
 %%PYTHON_SITELIBDIR%%/pygst.pyc

@@ -1,6 +1,6 @@
---- hald/freebsd/addons/addon-mouse.c.orig	2008-03-31 04:53:42.000000000 -0400
-+++ hald/freebsd/addons/addon-mouse.c	2008-03-31 05:07:19.000000000 -0400
-@@ -0,0 +1,216 @@
+--- hald/freebsd/addons/addon-mouse.c.orig	2008-12-21 01:15:41.000000000 -0500
++++ hald/freebsd/addons/addon-mouse.c	2008-12-21 01:17:03.000000000 -0500
+@@ -0,0 +1,336 @@
 +/***************************************************************************
 + * CVSID: $Id$
 + *
@@ -28,6 +28,13 @@
 +#  include <config.h>
 +#endif
 +
++#include <sys/param.h>
++#if __FreeBSD_version >= 800058
++#include <sys/types.h>
++#include <sys/user.h>
++#include <sys/sysctl.h>
++#include <libutil.h>
++#endif
 +#include <string.h>
 +#include <stdlib.h>
 +#include <assert.h>
@@ -38,7 +45,9 @@
 +
 +#include "../libprobe/hfp.h"
 +
++#if __FreeBSD_version < 800058
 +#define CMD "/usr/bin/fstat %s"
++#endif
 +
 +#define MOUSE_DRIVER "mouse"
 +#define MOUSED_DEVICE "/dev/sysmouse"
@@ -47,11 +56,121 @@
 +
 +static struct
 +{
-+  const struct timespec	update_interval;
-+  char			*device_file;
-+  struct timespec	next_update;
++  const struct timespec        update_interval;
++  char                        *device_file;
++  struct timespec              next_update;
 +} addon = { { 2, 0 } };
 +
++#if __FreeBSD_version >= 800058
++static struct kinfo_proc *
++hfp_kinfo_getproc (int *cntp)
++{
++  int mib[3];
++  int error;
++  int cnt;
++  size_t len;
++  char *buf, *bp, *eb;
++  struct kinfo_proc *kip, *kp, *ki;
++
++  *cntp = 0;
++
++  len = 0;
++  mib[0] = CTL_KERN;
++  mib[1] = KERN_PROC;
++  mib[2] = KERN_PROC_PROC;
++
++  error = sysctl(mib, 3, NULL, &len, NULL, 0);
++  if (error)
++    return NULL;
++
++  len = len * 4 / 3;
++  buf = (char *) g_malloc(len);
++  if (buf == NULL)
++    return NULL;
++
++  error = sysctl(mib, 3, buf, &len, NULL, 0);
++  if (error)
++    {
++      g_free(buf);
++      return NULL;
++    }
++
++  cnt = 0;
++  bp = buf;
++  eb = buf + len;
++  while (bp < eb)
++    {
++      ki =  (struct kinfo_proc *) (uintptr_t) bp;
++      bp += ki->ki_structsize;
++      cnt++;
++    }
++
++  kip = calloc(cnt, sizeof (*kip));
++  if (kip == NULL)
++    {
++      g_free(buf);
++      return NULL;
++    }
++
++  bp = buf;
++  eb = buf + len;
++  kp = kip;
++  while (bp < eb)
++    {
++      ki = (struct kinfo_proc *) (uintptr_t) bp;
++      memcpy(kp, ki, ki->ki_structsize);
++      bp += ki->ki_structsize;
++      kp->ki_structsize = sizeof(*kp);
++      kp++;
++    }
++
++  g_free(buf);
++  *cntp = cnt;
++  return kip;
++}
++
++static gboolean
++device_opened_by_proc (const char *device, const char *proc)
++{
++  struct kinfo_proc *kip, *pfreep;
++  int cnt, i;
++
++  pfreep = hfp_kinfo_getproc(&cnt);
++  if (pfreep == NULL)
++    return FALSE;
++
++  for (i = 0; i < cnt; i++)
++    {
++      kip = &pfreep[i];
++
++      if (! strcmp(kip->ki_comm, proc))
++        {
++          struct kinfo_file *kif, *ffreep;
++          int fcnt, j;
++
++          ffreep = kinfo_getfile(kip->ki_pid, &fcnt);
++          if (ffreep == NULL)
++                  continue;
++          for (j = 0; j < fcnt; j++)
++            {
++              kif = &ffreep[j];
++
++              if (kif->kf_type == KF_TYPE_VNODE &&
++                  ! strcmp(kif->kf_path, device))
++                {
++                  g_free(ffreep);
++                  g_free(pfreep);
++                  return TRUE;
++                }
++            }
++          g_free(ffreep);
++        }
++    }
++  g_free(pfreep);
++
++  return FALSE;
++}
++#else
 +static gboolean
 +device_opened_by_proc (const char *device, const char *proc)
 +{
@@ -91,16 +210,16 @@
 +      if (len < 2)
 +        {
 +          g_strfreev(fields);
-+	  continue;
-+	}
++          continue;
++        }
 +      for (j = 1; j < len && fields[j] && *fields[j] == '\0'; j++)
 +        ;
 +      if (j < len && fields[j] && ! strcmp(fields[j], proc))
 +        {
 +          found = TRUE;
 +          g_strfreev(fields);
-+	  break;
-+	}
++          break;
++        }
 +      g_strfreev(fields);
 +    }
 +
@@ -111,6 +230,7 @@
 +
 +  return found;
 +}
++#endif
 +
 +static const char *
 +get_mouse_device (const char *device)
@@ -186,27 +306,27 @@
 +    {
 +      /* process dbus traffic until update interval has elapsed */
 +      while (TRUE)
-+	{
-+	  struct timespec now;
++        {
++          struct timespec now;
 +
-+	  hfp_clock_gettime(&now);
-+	  if (hfp_timespeccmp(&now, &addon.next_update, <))
-+	    {
-+	      struct timespec timeout;
++          hfp_clock_gettime(&now);
++          if (hfp_timespeccmp(&now, &addon.next_update, <))
++            {
++              struct timespec timeout;
 +
-+	      timeout = addon.next_update;
-+	      hfp_timespecsub(&timeout, &now);
++              timeout = addon.next_update;
++              hfp_timespecsub(&timeout, &now);
 +
-+	      if (timeout.tv_sec < 0) /* current time went backwards */
-+		timeout = addon.update_interval;
++              if (timeout.tv_sec < 0) /* current time went backwards */
++                timeout = addon.update_interval;
 +
-+	      dbus_connection_read_write_dispatch(connection, timeout.tv_sec * 1000 + timeout.tv_nsec / 1000000);
-+	      if (! dbus_connection_get_is_connected(connection))
-+		goto end;
-+	    }
-+	  else
-+	    break;
-+	}
++              dbus_connection_read_write_dispatch(connection, timeout.tv_sec * 1000 + timeout.tv_nsec / 1000000);
++              if (! dbus_connection_get_is_connected(connection))
++                goto end;
++            }
++          else
++            break;
++        }
 +
 +      poll_for_moused();
 +

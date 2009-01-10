@@ -3,13 +3,12 @@
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/print/libgnomeprint/Makefile,v 1.71 2007/10/17 21:36:12 mezz Exp $
+#   $MCom: ports/print/libgnomeprint/Makefile,v 1.73 2008/09/22 13:55:39 kwm Exp $
 #
 # NOTE: Remind to update comms/gfax plist when PORTVERSION change.
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.18.4
-PORTREVISION?=	2
+PORTVERSION=	2.18.5
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

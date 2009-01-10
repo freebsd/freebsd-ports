@@ -3,12 +3,11 @@
 # Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/sound-juicer/Makefile,v 1.79 2008/03/10 20:39:31 mezz Exp $
+#   $MCom: ports/audio/sound-juicer/Makefile,v 1.87 2008/09/21 06:37:08 kwm Exp $
 #
 
 PORTNAME=	sound-juicer
-PORTVERSION=	2.22.0
-PORTREVISION=	4
+PORTVERSION=	2.24.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -40,6 +39,7 @@ GCONF_SCHEMAS=	sound-juicer.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)tests\(.*\)|\1\2|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|" == "|" = "|g' ${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database

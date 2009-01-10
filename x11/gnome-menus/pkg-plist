@@ -1,5 +1,4 @@
 etc/xdg/menus/gnome-applications.menu
-etc/xdg/menus/preferences.menu
 etc/xdg/menus/settings.menu
 include/gnome-menus/gmenu-tree.h
 lib/libgnome-menu.a
@@ -10,32 +9,31 @@ lib/libgnome-menu.so.2
 %%PYTHON_SITELIBDIR%%/gmenu.la
 %%PYTHON_SITELIBDIR%%/gmenu.so
 libdata/pkgconfig/libgnome-menu.pc
-share/desktop-directories/Accessibility.directory
-share/desktop-directories/Accessories.directory
-share/desktop-directories/Applications.directory
-share/desktop-directories/Desktop.directory
+share/desktop-directories/AudioVideo.directory
 share/desktop-directories/Development.directory
 share/desktop-directories/Education.directory
-share/desktop-directories/Games.directory
+share/desktop-directories/Game.directory
 share/desktop-directories/Graphics.directory
 share/desktop-directories/Hardware.directory
-share/desktop-directories/Internet.directory
 share/desktop-directories/InternetAndNetwork.directory
 share/desktop-directories/KDE.directory
 share/desktop-directories/LookAndFeel.directory
-share/desktop-directories/Multimedia.directory
+share/desktop-directories/Network.directory
 share/desktop-directories/Office.directory
-share/desktop-directories/Other.directory
 share/desktop-directories/Personal.directory
-share/desktop-directories/Preferences.directory
-share/desktop-directories/Settings-Accessibility.directory
+share/desktop-directories/Settings-System.directory
 share/desktop-directories/Settings.directory
-share/desktop-directories/System-Settings.directory
 share/desktop-directories/System-Tools.directory
 share/desktop-directories/System.directory
+share/desktop-directories/Utility-Accessibility.directory
+share/desktop-directories/Utility.directory
+share/desktop-directories/X-GNOME-Menu-Applications.directory
+share/desktop-directories/X-GNOME-Menu-System.directory
+share/desktop-directories/X-GNOME-Other.directory
 share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
+share/locale/ast/LC_MESSAGES/gnome-menus.mo
 share/locale/be/LC_MESSAGES/gnome-menus.mo
 share/locale/be@latin/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
@@ -65,13 +63,16 @@ share/locale/gn/LC_MESSAGES/gnome-menus.mo
 share/locale/gu/LC_MESSAGES/gnome-menus.mo
 share/locale/he/LC_MESSAGES/gnome-menus.mo
 share/locale/hi/LC_MESSAGES/gnome-menus.mo
+share/locale/hr/LC_MESSAGES/gnome-menus.mo
 share/locale/hu/LC_MESSAGES/gnome-menus.mo
 share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
 share/locale/io/LC_MESSAGES/gnome-menus.mo
+share/locale/is/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
 share/locale/ka/LC_MESSAGES/gnome-menus.mo
+share/locale/kk/LC_MESSAGES/gnome-menus.mo
 share/locale/kn/LC_MESSAGES/gnome-menus.mo
 share/locale/ko/LC_MESSAGES/gnome-menus.mo
 share/locale/ku/LC_MESSAGES/gnome-menus.mo
@@ -93,6 +94,7 @@ share/locale/oc/LC_MESSAGES/gnome-menus.mo
 share/locale/or/LC_MESSAGES/gnome-menus.mo
 share/locale/pa/LC_MESSAGES/gnome-menus.mo
 share/locale/pl/LC_MESSAGES/gnome-menus.mo
+share/locale/ps/LC_MESSAGES/gnome-menus.mo
 share/locale/pt/LC_MESSAGES/gnome-menus.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-menus.mo
 share/locale/ro/LC_MESSAGES/gnome-menus.mo
@@ -103,7 +105,7 @@ share/locale/sk/LC_MESSAGES/gnome-menus.mo
 share/locale/sl/LC_MESSAGES/gnome-menus.mo
 share/locale/sq/LC_MESSAGES/gnome-menus.mo
 share/locale/sr/LC_MESSAGES/gnome-menus.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-menus.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-menus.mo
 share/locale/sv/LC_MESSAGES/gnome-menus.mo
 share/locale/ta/LC_MESSAGES/gnome-menus.mo
 share/locale/te/LC_MESSAGES/gnome-menus.mo
@@ -131,10 +133,14 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -147,6 +153,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -161,5 +169,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

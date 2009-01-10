@@ -3,14 +3,13 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/py-goocanvas/Makefile,v 1.4 2008/02/27 16:19:50 ahze Exp $
+#    $MCom: ports/graphics/py-goocanvas/Makefile,v 1.6 2008/09/22 09:14:41 kwm Exp $
 
 PORTNAME=	goocanvas
-PORTVERSION=	0.9.0
-PORTREVISION=	1
-CATEGORIES=	graphics python
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=	py${PORTNAME}
+PORTVERSION=	0.12.0
+CATEGORIES=	graphics
+MASTER_SITES=	GNOME
+MASTER_SITE_SUBDIR=	sources/py${PORTNAME}/${PORTVERSION:C/..$//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -20,8 +19,10 @@ COMMENT=	GooCanvas python bindings
 LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.la \
-		%%PYTHON_SITELIBDIR%%/goocanvasmodule.so
+		%%PYTHON_SITELIBDIR%%/goocanvasmodule.so \
+		libdata/pkgconfig/pygoocanvas.pc
 USE_PYTHON=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs

@@ -3,11 +3,11 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/mousetweaks/Makefile,v 1.7 2008/03/10 21:35:20 mezz Exp $
+#   $MCom: ports/accessibility/mousetweaks/Makefile,v 1.22 2008/11/25 01:01:35 marcus Exp $
 #
 
 PORTNAME=	mousetweaks
-PORTVERSION=	2.22.3
+PORTVERSION=	2.24.2
 CATEGORIES=	accessibility
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack atspi
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

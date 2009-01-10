@@ -703,6 +703,7 @@
     SUBDIR += scanlogd
     SUBDIR += scanssh
     SUBDIR += seahorse
+    SUBDIR += seahorse-plugins
     SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok

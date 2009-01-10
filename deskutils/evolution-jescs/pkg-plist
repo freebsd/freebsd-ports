@@ -3,12 +3,19 @@ lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
 libdata/bonobo/servers/GNOME_Evolution_SunOne_Storage.server
 libexec/evolution/%%EVO_VERSION%%/evolution-jescs
-share/evolution/%%EVO_VERSION%%/images/sun-connector.png
-share/evolution/%%EVO_VERSION%%/images/sunone-invitations.png
-share/evolution/%%EVO_VERSION%%/images/sunone-invitations-mini.png
+share/evolution/%%EVO_VERSION%%/icons/hicolor/16x16/categories/sunone-invitations.png
+share/evolution/%%EVO_VERSION%%/icons/hicolor/22x22/categories/sunone-invitations.png
+share/evolution/%%EVO_VERSION%%/icons/hicolor/24x24/categories/sunone-invitations.png
+share/evolution/%%EVO_VERSION%%/icons/hicolor/32x32/categories/sunone-invitations.png
+share/evolution/%%EVO_VERSION%%/icons/hicolor/48x48/categories/sunone-invitations.png
 share/evolution-jescs/glade/sunone-add-permission-dialog.glade
 share/evolution-jescs/glade/sunone-permissions-dialog.glade
 share/evolution-jescs/glade/sunone-subscription-dialog.glade
+share/icons/hicolor/16x16/apps/sun-connector.png
+share/icons/hicolor/22x22/apps/sun-connector.png
+share/icons/hicolor/24x24/apps/sun-connector.png
+share/icons/hicolor/32x32/apps/sun-connector.png
+share/icons/hicolor/48x48/apps/sun-connector.png
 share/locale/ar/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
@@ -40,6 +47,10 @@ share/locale/zh_HK/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 @dirrm share/evolution-jescs/glade
 @dirrm share/evolution-jescs
+@dirrmtry share/evolution/%%EVO_VERSION%%/icons/hicolor/32x32/categories
+@dirrmtry share/evolution/%%EVO_VERSION%%/icons/hicolor/24x24/categories
+@dirrmtry share/evolution/%%EVO_VERSION%%/icons/hicolor/22x22/categories
+@dirrmtry share/evolution/%%EVO_VERSION%%/icons/hicolor/16x16/categories
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES

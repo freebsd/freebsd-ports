@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/epiphany-webkit/Makefile,v 1.2 2008/02/24 22:10:56 ahze Exp $
+#    $MCom: ports/www/epiphany-webkit/Makefile,v 1.8 2008/06/18 18:40:49 marcus Exp $
 
 PORTVERSION=	0
 PKGNAMESUFFIX=	-webkit

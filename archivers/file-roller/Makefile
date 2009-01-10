@@ -3,11 +3,11 @@
 # Whom:					Anders Nordby <anders@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/archivers/file-roller/Makefile,v 1.136 2008/03/11 18:31:35 mezz Exp $
+#   $MCom: ports/archivers/file-roller/Makefile,v 1.150 2008/11/25 16:07:09 marcus Exp $
 #
 
 PORTNAME=	file-roller
-PORTVERSION=	2.22.4
+PORTVERSION=	2.24.2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -16,9 +16,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An archive manager for zip files, tar, etc
 
-# XXX: We need the ports version of gtar since gtar-1.13.25 included with
-# FreeBSD is not sufficient.  If the base version of GNU tar is updated, then
-# we can do away with this dependency.
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 
 USE_LDCONFIG=	yes

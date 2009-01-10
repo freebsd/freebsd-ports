@@ -1,8 +1,8 @@
---- layout/applications.menu.orig	Sun Jul  8 18:04:11 2007
-+++ layout/applications.menu	Sun Jul  8 18:04:35 2007
-@@ -6,24 +6,26 @@
+--- layout/applications.menu.orig	2008-04-21 15:49:29.000000000 -0400
++++ layout/applications.menu	2008-04-28 14:51:24.000000000 -0400
+@@ -6,9 +6,8 @@
    <Name>Applications</Name>
-   <Directory>Applications.directory</Directory>
+   <Directory>X-GNOME-Menu-Applications.directory</Directory>
  
 -  <!-- Scan legacy dirs first, as later items take priority -->
 -  <KDELegacyDirs/>
@@ -12,161 +12,106 @@
    <LegacyDir>/usr/share/gnome/apps</LegacyDir>
  
    <!-- Read standard .directory and .desktop file locations -->
-   <DefaultAppDirs/>
-   <DefaultDirectoryDirs/>
- 
--  <!-- Read in overrides and child menus from applications-merged/ -->
--  <DefaultMergeDirs/>
--
-   <!-- Accessories submenu -->
-   <Menu>
-     <Name>Accessories</Name>
-     <Directory>Accessories.directory</Directory>
-     <Include>
+@@ -31,6 +30,8 @@
+ 	     applications here -->
+         <Not><Category>Accessibility</Category></Not>
+         <Not><Category>System</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Accessories -->
+@@ -43,6 +44,8 @@
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
-         <Category>Utility</Category>
-         <Not>
-           <Category>System</Category>
-@@ -38,6 +40,12 @@
-     <Directory>Accessibility.directory</Directory>
-     <Include>
-       <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Accessibility</Category>
-         <Not>
-           <Category>Settings</Category>
-@@ -52,6 +60,12 @@
-     <Directory>Development.directory</Directory>
+         <Not><Category>Settings</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Accessibility -->
+@@ -54,6 +57,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Development</Category>
++        <Not><Category>Qt</Category></Not>
++        <Not><Category>KDE</Category></Not>
        </And>
        <Filename>emacs.desktop</Filename>
-@@ -64,6 +78,12 @@
-     <Directory>Education.directory</Directory>
+     </Include>
+@@ -66,6 +71,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Education</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -75,6 +95,12 @@
-     <Directory>Games.directory</Directory>
+   </Menu> <!-- End Education -->
+@@ -77,6 +84,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Game</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -86,6 +112,12 @@
-     <Directory>Graphics.directory</Directory>
+   </Menu> <!-- End Games -->
+@@ -88,6 +97,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Graphics</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -97,6 +129,12 @@
-     <Directory>Internet.directory</Directory>
+   </Menu> <!-- End Graphics -->
+@@ -99,6 +110,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Network</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -108,6 +146,12 @@
-     <Directory>Multimedia.directory</Directory>
+   </Menu>   <!-- End Internet -->
+@@ -110,6 +123,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>AudioVideo</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -119,6 +163,12 @@
-     <Directory>Office.directory</Directory>
+   </Menu>   <!-- End Multimedia -->
+@@ -121,6 +136,8 @@
      <Include>
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>Office</Category>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
-@@ -130,6 +180,12 @@
-     <Directory>System-Tools.directory</Directory>
-     <Include>
+   </Menu> <!-- End Office -->
+@@ -133,6 +150,8 @@
        <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
          <Category>System</Category>
          <Not><Category>Settings</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
-@@ -143,11 +199,204 @@
-     <OnlyUnallocated/>
-     <Include>
-       <And>
-+        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
+     </Include>
+   </Menu>   <!-- End System Tools -->
+@@ -147,8 +166,197 @@
          <Not><Category>Core</Category></Not>
          <Not><Category>Settings</Category></Not>
          <Not><Category>Screensaver</Category></Not>
++	<Not><Category>Qt</Category></Not>
++	<Not><Category>KDE</Category></Not>
        </And>
      </Include>
    </Menu> <!-- End Other -->
-+
+ 
 +  <!-- Read in overrides and child menus from applications-merged/ -->
 +  <DefaultMergeDirs/>
 +
@@ -353,5 +298,5 @@
 +      </Include>
 +    </Menu> <!-- End KOther -->
 +  </Menu> <!-- KDE -->
- 
++
  </Menu> <!-- End Applications -->

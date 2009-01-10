@@ -1,7 +1,27 @@
+bin/pygobject-codegen-2.0
+include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
+lib/libpyglib-2.0.la
+lib/libpyglib-2.0.so
+lib/libpyglib-2.0.so.0
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/_glib.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/_glib.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/option.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/option.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/glib/option.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/__init__.pyo
@@ -10,9 +30,6 @@ include/pygtk-2.0/pygobject.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.pyo
@@ -21,12 +38,14 @@ include/pygtk-2.0/pygobject.h
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
 %%PYTHON_SITELIBDIR%%/pygtk.pyo
 libdata/pkgconfig/pygobject-2.0.pc
+share/doc/pygobject/class-glibmaincontext.html
+share/doc/pygobject/class-glibmainloop.html
 share/doc/pygobject/class-gobject.html
 share/doc/pygobject/class-gobjectgboxed.html
 share/doc/pygobject/class-gobjectginterface.html
 share/doc/pygobject/class-gobjectgpointer.html
-share/doc/pygobject/class-gobjectmaincontext.html
-share/doc/pygobject/class-gobjectmainloop.html
+share/doc/pygobject/glib-constants.html
+share/doc/pygobject/glib-functions.html
 share/doc/pygobject/gobject-class-reference.html
 share/doc/pygobject/gobject-constants.html
 share/doc/pygobject/gobject-functions.html
@@ -35,6 +54,65 @@ share/doc/pygobject/index.sgml
 share/doc/pygobject/pygobject-introduction.html
 share/doc/pygobject/pygobject.devhelp
 share/doc/pygobject/style.css
+share/pygobject/2.0/codegen/__init__.py
+share/pygobject/2.0/codegen/__init__.pyc
+share/pygobject/2.0/codegen/__init__.pyo
+share/pygobject/2.0/codegen/argtypes.py
+share/pygobject/2.0/codegen/argtypes.pyc
+share/pygobject/2.0/codegen/argtypes.pyo
+share/pygobject/2.0/codegen/codegen.py
+share/pygobject/2.0/codegen/codegen.pyc
+share/pygobject/2.0/codegen/codegen.pyo
+share/pygobject/2.0/codegen/createdefs.py
+share/pygobject/2.0/codegen/createdefs.pyc
+share/pygobject/2.0/codegen/createdefs.pyo
+share/pygobject/2.0/codegen/definitions.py
+share/pygobject/2.0/codegen/definitions.pyc
+share/pygobject/2.0/codegen/definitions.pyo
+share/pygobject/2.0/codegen/defsparser.py
+share/pygobject/2.0/codegen/defsparser.pyc
+share/pygobject/2.0/codegen/defsparser.pyo
+share/pygobject/2.0/codegen/docextract.py
+share/pygobject/2.0/codegen/docextract.pyc
+share/pygobject/2.0/codegen/docextract.pyo
+share/pygobject/2.0/codegen/docgen.py
+share/pygobject/2.0/codegen/docgen.pyc
+share/pygobject/2.0/codegen/docgen.pyo
+share/pygobject/2.0/codegen/h2def.py
+share/pygobject/2.0/codegen/h2def.pyc
+share/pygobject/2.0/codegen/h2def.pyo
+share/pygobject/2.0/codegen/mergedefs.py
+share/pygobject/2.0/codegen/mergedefs.pyc
+share/pygobject/2.0/codegen/mergedefs.pyo
+share/pygobject/2.0/codegen/mkskel.py
+share/pygobject/2.0/codegen/mkskel.pyc
+share/pygobject/2.0/codegen/mkskel.pyo
+share/pygobject/2.0/codegen/override.py
+share/pygobject/2.0/codegen/override.pyc
+share/pygobject/2.0/codegen/override.pyo
+share/pygobject/2.0/codegen/reversewrapper.py
+share/pygobject/2.0/codegen/reversewrapper.pyc
+share/pygobject/2.0/codegen/reversewrapper.pyo
+share/pygobject/2.0/codegen/scmexpr.py
+share/pygobject/2.0/codegen/scmexpr.pyc
+share/pygobject/2.0/codegen/scmexpr.pyo
+share/pygobject/2.0/defs/gappinfo.override
+share/pygobject/2.0/defs/gapplaunchcontext.override
+share/pygobject/2.0/defs/gfile.override
+share/pygobject/2.0/defs/gfileattribute.override
+share/pygobject/2.0/defs/gfileenumerator.override
+share/pygobject/2.0/defs/gfileinfo.override
+share/pygobject/2.0/defs/gicon.override
+share/pygobject/2.0/defs/ginputstream.override
+share/pygobject/2.0/defs/gio-types.defs
+share/pygobject/2.0/defs/gio.defs
+share/pygobject/2.0/defs/gio.override
+share/pygobject/2.0/defs/goutputstream.override
+share/pygobject/2.0/defs/gvolume.override
+share/pygobject/2.0/defs/gvolumemonitor.override
+share/pygobject/2.0/defs/unix-types.defs
+share/pygobject/2.0/defs/unix.defs
+share/pygobject/2.0/defs/unix.override
 share/pygobject/xsl/common.xsl
 share/pygobject/xsl/devhelp.xsl
 share/pygobject/xsl/fixxref.py
@@ -43,8 +121,13 @@ share/pygobject/xsl/pdf-style.xsl
 share/pygobject/xsl/pdf.xsl
 share/pygobject/xsl/ref-html-style.xsl
 @dirrm share/pygobject/xsl
+@dirrm share/pygobject/2.0/defs
+@dirrm share/pygobject/2.0/codegen
+@dirrm share/pygobject/2.0
 @dirrm share/pygobject
 @dirrm share/doc/pygobject
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/glib
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gio
 @dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0
 @dirrmtry include/pygtk-2.0

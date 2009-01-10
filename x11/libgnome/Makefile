@@ -3,12 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/Makefile,v 1.115 2008/03/10 15:39:00 ahze Exp $
+#   $MCom: ports/x11/libgnome/Makefile,v 1.123 2008/09/22 23:01:20 kwm Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.22.0
-PORTREVISION?=	1
+PORTVERSION=	2.24.1
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries for GNOME, a GNU desktop environment
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -54,6 +54,7 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_peripherals_keyboard.schemas \
 		desktop_gnome_peripherals_mouse.schemas \
 		desktop_gnome_sound.schemas \
+		desktop_gnome_thumbnail_cache.schemas \
 		desktop_gnome_thumbnailers.schemas \
 		desktop_gnome_typing_break.schemas
 

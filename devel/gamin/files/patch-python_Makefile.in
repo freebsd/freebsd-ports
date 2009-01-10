@@ -1,23 +1,20 @@
---- python/Makefile.in.orig	Mon Feb  6 23:00:32 2006
-+++ python/Makefile.in	Tue Feb  7 08:10:46 2006
-@@ -59,7 +59,7 @@
+--- python/Makefile.in.orig	2008-11-26 01:42:29.000000000 -0500
++++ python/Makefile.in	2008-11-26 01:43:26.000000000 -0500
+@@ -53,7 +53,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
+ am__installdirs = "$(DESTDIR)$(pythondir)" "$(DESTDIR)$(pythondir)"
  pythonLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(python_LTLIBRARIES)
- @WITH_PYTHON_TRUE@am__DEPENDENCIES_1 =  \
--@WITH_PYTHON_TRUE@	$(top_builddir)/libgamin/libgamin-1.la
-+@WITH_PYTHON_TRUE@	-lgamin-1
- @WITH_PYTHON_TRUE@_gamin_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
- am___gamin_la_SOURCES_DIST = gamin.c
- @WITH_PYTHON_TRUE@am__gamin_la_OBJECTS = gamin.lo
-@@ -239,9 +239,9 @@
- 	gamin.c			\
- 	gamin.py
+-_gamin_la_DEPENDENCIES = $(top_builddir)/libgamin/libgamin-1.la
++_gamin_la_DEPENDENCIES = -lgamin-1
+ am__gamin_la_OBJECTS = gamin.lo
+ _gamin_la_OBJECTS = $(am__gamin_la_OBJECTS)
+ _gamin_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -228,7 +228,7 @@ INCLUDES = \
  
--_gamin_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/libgamin/.libs
-+_gamin_la_LDFLAGS = -module -avoid-version
- @WITH_PYTHON_TRUE@mylibs = \
--@WITH_PYTHON_TRUE@	$(top_builddir)/libgamin/libgamin-1.la
-+@WITH_PYTHON_TRUE@	-lgamin-1
- 
- @WITH_PYTHON_TRUE@python_LTLIBRARIES = _gamin.la
- @WITH_PYTHON_TRUE@_gamin_la_SOURCES = gamin.c
+ python_LTLIBRARIES = _gamin.la
+ _gamin_la_SOURCES = gamin.c
+-_gamin_la_LIBADD = $(top_builddir)/libgamin/libgamin-1.la
++_gamin_la_LIBADD = -lgamin-1
+ _gamin_la_LDFLAGS = -module -avoid-version
+ python_PYTHON = gamin.py
+ all: all-recursive

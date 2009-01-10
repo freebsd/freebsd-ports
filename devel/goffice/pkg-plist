@@ -1,143 +1,152 @@
-include/libgoffice-0.6/goffice/app/error-info.h
-include/libgoffice-0.6/goffice/app/file.h
-include/libgoffice-0.6/goffice/app/go-cmd-context-impl.h
-include/libgoffice-0.6/goffice/app/go-cmd-context.h
-include/libgoffice-0.6/goffice/app/go-doc-control-impl.h
-include/libgoffice-0.6/goffice/app/go-doc-control.h
-include/libgoffice-0.6/goffice/app/go-doc-impl.h
-include/libgoffice-0.6/goffice/app/go-doc.h
-include/libgoffice-0.6/goffice/app/go-plugin-loader-module.h
-include/libgoffice-0.6/goffice/app/go-plugin-loader.h
-include/libgoffice-0.6/goffice/app/go-plugin-service-impl.h
-include/libgoffice-0.6/goffice/app/go-plugin-service.h
-include/libgoffice-0.6/goffice/app/go-plugin.h
-include/libgoffice-0.6/goffice/app/goffice-app.h
-include/libgoffice-0.6/goffice/app/io-context-priv.h
-include/libgoffice-0.6/goffice/app/io-context.h
-include/libgoffice-0.6/goffice/app/module-plugin-defs.h
-include/libgoffice-0.6/goffice/component/go-component-factory.h
-include/libgoffice-0.6/goffice/component/go-component.h
-include/libgoffice-0.6/goffice/component/goffice-component.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-line.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-pixbuf.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-polygon.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-rect-ellipse.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-text.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-util.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas-widget.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/foo-canvas.h
-include/libgoffice-0.6/goffice/cut-n-paste/foocanvas/libfoocanvas.h
-include/libgoffice-0.6/goffice/data/go-data-impl.h
-include/libgoffice-0.6/goffice/data/go-data-simple.h
-include/libgoffice-0.6/goffice/data/go-data.h
-include/libgoffice-0.6/goffice/data/goffice-data.h
-include/libgoffice-0.6/goffice/drawing/god-anchor.h
-include/libgoffice-0.6/goffice/drawing/god-default-attributes.h
-include/libgoffice-0.6/goffice/drawing/god-drawing-group.h
-include/libgoffice-0.6/goffice/drawing/god-drawing-renderer-gdk.h
-include/libgoffice-0.6/goffice/drawing/god-drawing-view.h
-include/libgoffice-0.6/goffice/drawing/god-drawing.h
-include/libgoffice-0.6/goffice/drawing/god-image-store.h
-include/libgoffice-0.6/goffice/drawing/god-image.h
-include/libgoffice-0.6/goffice/drawing/god-paragraph-attributes.h
-include/libgoffice-0.6/goffice/drawing/god-property-table.h
-include/libgoffice-0.6/goffice/drawing/god-shape.h
-include/libgoffice-0.6/goffice/drawing/god-text-model.h
-include/libgoffice-0.6/goffice/goffice-features.h
-include/libgoffice-0.6/goffice/goffice.h
-include/libgoffice-0.6/goffice/graph/goffice-graph.h
-include/libgoffice-0.6/goffice/graph/gog-axis-line-impl.h
-include/libgoffice-0.6/goffice/graph/gog-axis-line.h
-include/libgoffice-0.6/goffice/graph/gog-axis.h
-include/libgoffice-0.6/goffice/graph/gog-chart-impl.h
-include/libgoffice-0.6/goffice/graph/gog-chart-map.h
-include/libgoffice-0.6/goffice/graph/gog-chart.h
-include/libgoffice-0.6/goffice/graph/gog-child-button.h
-include/libgoffice-0.6/goffice/graph/gog-control-foocanvas.h
-include/libgoffice-0.6/goffice/graph/gog-data-allocator.h
-include/libgoffice-0.6/goffice/graph/gog-data-set.h
-include/libgoffice-0.6/goffice/graph/gog-error-bar.h
-include/libgoffice-0.6/goffice/graph/gog-graph-impl.h
-include/libgoffice-0.6/goffice/graph/gog-graph.h
-include/libgoffice-0.6/goffice/graph/gog-grid-line.h
-include/libgoffice-0.6/goffice/graph/gog-grid.h
-include/libgoffice-0.6/goffice/graph/gog-guru.h
-include/libgoffice-0.6/goffice/graph/gog-label.h
-include/libgoffice-0.6/goffice/graph/gog-legend.h
-include/libgoffice-0.6/goffice/graph/gog-object-xml.h
-include/libgoffice-0.6/goffice/graph/gog-object.h
-include/libgoffice-0.6/goffice/graph/gog-outlined-object.h
-include/libgoffice-0.6/goffice/graph/gog-plot-engine.h
-include/libgoffice-0.6/goffice/graph/gog-plot-impl.h
-include/libgoffice-0.6/goffice/graph/gog-plot.h
-include/libgoffice-0.6/goffice/graph/gog-reg-curve.h
-include/libgoffice-0.6/goffice/graph/gog-renderer.h
-include/libgoffice-0.6/goffice/graph/gog-series-impl.h
-include/libgoffice-0.6/goffice/graph/gog-series-lines.h
-include/libgoffice-0.6/goffice/graph/gog-series.h
-include/libgoffice-0.6/goffice/graph/gog-smoothed-curve.h
-include/libgoffice-0.6/goffice/graph/gog-style.h
-include/libgoffice-0.6/goffice/graph/gog-styled-object.h
-include/libgoffice-0.6/goffice/graph/gog-theme.h
-include/libgoffice-0.6/goffice/graph/gog-trend-line.h
-include/libgoffice-0.6/goffice/graph/gog-view.h
-include/libgoffice-0.6/goffice/gtk/go-action-combo-color.h
-include/libgoffice-0.6/goffice/gtk/go-action-combo-pixmaps.h
-include/libgoffice-0.6/goffice/gtk/go-action-combo-stack.h
-include/libgoffice-0.6/goffice/gtk/go-action-combo-text.h
-include/libgoffice-0.6/goffice/gtk/go-charmap-sel.h
-include/libgoffice-0.6/goffice/gtk/go-color-group.h
-include/libgoffice-0.6/goffice/gtk/go-color-palette.h
-include/libgoffice-0.6/goffice/gtk/go-color-selector.h
-include/libgoffice-0.6/goffice/gtk/go-combo-box.h
-include/libgoffice-0.6/goffice/gtk/go-combo-color.h
-include/libgoffice-0.6/goffice/gtk/go-combo-pixmaps.h
-include/libgoffice-0.6/goffice/gtk/go-combo-text.h
-include/libgoffice-0.6/goffice/gtk/go-font-sel.h
-include/libgoffice-0.6/goffice/gtk/go-format-sel.h
-include/libgoffice-0.6/goffice/gtk/go-gradient-selector.h
-include/libgoffice-0.6/goffice/gtk/go-graph-widget.h
-include/libgoffice-0.6/goffice/gtk/go-line-selector.h
-include/libgoffice-0.6/goffice/gtk/go-locale-sel.h
-include/libgoffice-0.6/goffice/gtk/go-marker-selector.h
-include/libgoffice-0.6/goffice/gtk/go-optionmenu.h
-include/libgoffice-0.6/goffice/gtk/go-palette.h
-include/libgoffice-0.6/goffice/gtk/go-pattern-selector.h
-include/libgoffice-0.6/goffice/gtk/go-pixbuf.h
-include/libgoffice-0.6/goffice/gtk/go-rotation-sel.h
-include/libgoffice-0.6/goffice/gtk/go-selector.h
-include/libgoffice-0.6/goffice/gtk/goffice-gtk.h
-include/libgoffice-0.6/goffice/math/go-complex.h
-include/libgoffice-0.6/goffice/math/go-cspline.h
-include/libgoffice-0.6/goffice/math/go-fft.h
-include/libgoffice-0.6/goffice/math/go-math.h
-include/libgoffice-0.6/goffice/math/go-rangefunc.h
-include/libgoffice-0.6/goffice/math/go-regression.h
-include/libgoffice-0.6/goffice/ms-compat/go-ms-parser.h
-include/libgoffice-0.6/goffice/ms-compat/god-drawing-ms-client-handler.h
-include/libgoffice-0.6/goffice/ms-compat/god-drawing-ms.h
-include/libgoffice-0.6/goffice/ms-compat/god-image-ms.h
-include/libgoffice-0.6/goffice/utils/datetime.h
-include/libgoffice-0.6/goffice/utils/go-cairo.h
-include/libgoffice-0.6/goffice/utils/go-color.h
-include/libgoffice-0.6/goffice/utils/go-file.h
-include/libgoffice-0.6/goffice/utils/go-font.h
-include/libgoffice-0.6/goffice/utils/go-format.h
-include/libgoffice-0.6/goffice/utils/go-geometry.h
-include/libgoffice-0.6/goffice/utils/go-glib-extras.h
-include/libgoffice-0.6/goffice/utils/go-gradient.h
-include/libgoffice-0.6/goffice/utils/go-image.h
-include/libgoffice-0.6/goffice/utils/go-libxml-extras.h
-include/libgoffice-0.6/goffice/utils/go-line.h
-include/libgoffice-0.6/goffice/utils/go-locale.h
-include/libgoffice-0.6/goffice/utils/go-marker.h
-include/libgoffice-0.6/goffice/utils/go-pango-extras.h
-include/libgoffice-0.6/goffice/utils/go-path.h
-include/libgoffice-0.6/goffice/utils/go-pattern.h
-include/libgoffice-0.6/goffice/utils/go-undo.h
-include/libgoffice-0.6/goffice/utils/go-units.h
-include/libgoffice-0.6/goffice/utils/goffice-utils.h
-include/libgoffice-0.6/goffice/utils/regutf8.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/error-info.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/file.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-cmd-context-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-cmd-context.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-conf.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-doc-control-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-doc-control.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-doc-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-doc.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-plugin-loader-module.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-plugin-loader.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-plugin-service-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-plugin-service.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/go-plugin.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/goffice-app.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/io-context-priv.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/io-context.h
+include/libgoffice-%%SHORT_VER%%/goffice/app/module-plugin-defs.h
+include/libgoffice-%%SHORT_VER%%/goffice/component/go-component-factory.h
+include/libgoffice-%%SHORT_VER%%/goffice/component/go-component.h
+include/libgoffice-%%SHORT_VER%%/goffice/component/goffice-component.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-pixbuf.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-polygon.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-rect-ellipse.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-text.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-util.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas-widget.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/foo-canvas.h
+include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas/libfoocanvas.h
+include/libgoffice-%%SHORT_VER%%/goffice/data/go-data-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/data/go-data-simple.h
+include/libgoffice-%%SHORT_VER%%/goffice/data/go-data.h
+include/libgoffice-%%SHORT_VER%%/goffice/data/goffice-data.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-anchor.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-default-attributes.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-drawing-group.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-drawing-renderer-gdk.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-drawing-view.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-drawing.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-image-store.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-image.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-paragraph-attributes.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-property-table.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-shape.h
+include/libgoffice-%%SHORT_VER%%/goffice/drawing/god-text-model.h
+include/libgoffice-%%SHORT_VER%%/goffice/goffice-features.h
+include/libgoffice-%%SHORT_VER%%/goffice/goffice.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/goffice-graph.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-3d-box.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-axis-line-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-axis-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-axis.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart-map-3d.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart-map.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-chart.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-child-button.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-control-foocanvas.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-data-allocator.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-data-set.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-error-bar.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-graph-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-graph.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-grid-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-grid.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-guru.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-label.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-legend.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-object-xml.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-object.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-outlined-object.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-plot-engine.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-plot-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-plot.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-reg-curve.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-renderer.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series-impl.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series-lines.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-series.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-smoothed-curve.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-style.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-styled-object.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-theme.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-trend-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/graph/gog-view.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-3d-rotation-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-color.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-pixmaps.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-stack.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-action-combo-text.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-charmap-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-color-group.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-color-palette.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-color-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-combo-box.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-combo-color.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-combo-pixmaps.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-combo-text.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-font-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-format-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-gradient-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-graph-widget.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-image-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-line-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-locale-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-marker-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-optionmenu.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-palette.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-pattern-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-pixbuf.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-rotation-sel.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/go-selector.h
+include/libgoffice-%%SHORT_VER%%/goffice/gtk/goffice-gtk.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-R.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-complex.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix3x3.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-rangefunc.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-regression.h
+include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/go-ms-parser.h
+include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms-client-handler.h
+include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-drawing-ms.h
+include/libgoffice-%%SHORT_VER%%/goffice/ms-compat/god-image-ms.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/datetime.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-cairo.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-color.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-file.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-font.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-format.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-geometry.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-glib-extras.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-gradient.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-image.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-libxml-extras.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-locale.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-marker.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pango-extras.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-path.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-pattern.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-persist.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-undo.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/go-units.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/goffice-utils.h
+include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.a
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
@@ -145,12 +154,12 @@ lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.glade
 lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-minmax-prefs.glade
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plugin.xml
-lib/goffice/%%VERSION%%/plugins/plot_boxes/boxplot.a
-lib/goffice/%%VERSION%%/plugins/plot_boxes/boxplot.la
-lib/goffice/%%VERSION%%/plugins/plot_boxes/boxplot.so
-lib/goffice/%%VERSION%%/plugins/plot_boxes/gog-boxplot-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_boxes/plot-types.xml
-lib/goffice/%%VERSION%%/plugins/plot_boxes/plugin.xml
+lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.a
+lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.la
+lib/goffice/%%VERSION%%/plugins/plot_distrib/distrib.so
+lib/goffice/%%VERSION%%/plugins/plot_distrib/gog-boxplot-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_distrib/plot-types.xml
+lib/goffice/%%VERSION%%/plugins/plot_distrib/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-prefs.glade
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-pie-series.glade
 lib/goffice/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.glade
@@ -164,7 +173,8 @@ lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.a
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.la
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.so
-lib/goffice/%%VERSION%%/plugins/plot_surface/gog-contour-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-prefs.glade
+lib/goffice/%%VERSION%%/plugins/plot_surface/gog-xyz-surface-prefs.glade
 lib/goffice/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.a
@@ -195,109 +205,112 @@ lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.a
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
 lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
-lib/libgoffice-0.6.a
-lib/libgoffice-0.6.la
-lib/libgoffice-0.6.so
-lib/libgoffice-0.6.so.6
-libdata/pkgconfig/libgoffice-0.6.pc
-share/doc/goffice-0.6/GOComboBox.html
-share/doc/goffice-0.6/GOComponent.html
-share/doc/goffice-0.6/GOOptionMenu.html
-share/doc/goffice-0.6/GOPalette.html
-share/doc/goffice-0.6/GOPluginLoader.html
-share/doc/goffice-0.6/GOSelector.html
-share/doc/goffice-0.6/GOUndoUnary.html
-share/doc/goffice-0.6/GogDataAllocator.html
-share/doc/goffice-0.6/GogDataset.html
-share/doc/goffice-0.6/GogObject.html
-share/doc/goffice-0.6/GogOutlinedView.html
-share/doc/goffice-0.6/GogRegCurve.html
-share/doc/goffice-0.6/GogSmoothedCurve.html
-share/doc/goffice-0.6/GogStyledObject.html
-share/doc/goffice-0.6/GogView.html
-share/doc/goffice-0.6/ch01.html
-share/doc/goffice-0.6/ch02.html
-share/doc/goffice-0.6/ch03.html
-share/doc/goffice-0.6/ch04.html
-share/doc/goffice-0.6/ch05.html
-share/doc/goffice-0.6/ch06.html
-share/doc/goffice-0.6/ch07.html
-share/doc/goffice-0.6/ch08.html
-share/doc/goffice-0.6/ch09.html
-share/doc/goffice-0.6/ch10.html
-share/doc/goffice-0.6/ch11.html
-share/doc/goffice-0.6/ch12.html
-share/doc/goffice-0.6/ch13.html
-share/doc/goffice-0.6/goffice-0.6.devhelp
-share/doc/goffice-0.6/goffice-0.6.devhelp2
-share/doc/goffice-0.6/goffice-06-go-cairo.html
-share/doc/goffice-0.6/goffice-06-go-charmap-sel.html
-share/doc/goffice-0.6/goffice-06-go-cmd-context.html
-share/doc/goffice-0.6/goffice-06-go-color.html
-share/doc/goffice-0.6/goffice-06-go-combo-color.html
-share/doc/goffice-0.6/goffice-06-go-combo-pixmaps.html
-share/doc/goffice-0.6/goffice-06-go-combo-text.html
-share/doc/goffice-0.6/goffice-06-go-complex.html
-share/doc/goffice-0.6/goffice-06-go-component-factory.html
-share/doc/goffice-0.6/goffice-06-go-data.html
-share/doc/goffice-0.6/goffice-06-go-doc-control.html
-share/doc/goffice-0.6/goffice-06-go-doc.html
-share/doc/goffice-0.6/goffice-06-go-fft.html
-share/doc/goffice-0.6/goffice-06-go-file.html
-share/doc/goffice-0.6/goffice-06-go-font-sel.html
-share/doc/goffice-0.6/goffice-06-go-font.html
-share/doc/goffice-0.6/goffice-06-go-format-sel.html
-share/doc/goffice-0.6/goffice-06-go-format.html
-share/doc/goffice-0.6/goffice-06-go-geometry.html
-share/doc/goffice-0.6/goffice-06-go-glib-extras.html
-share/doc/goffice-0.6/goffice-06-go-gradient.html
-share/doc/goffice-0.6/goffice-06-go-libxml-extras.html
-share/doc/goffice-0.6/goffice-06-go-line.html
-share/doc/goffice-0.6/goffice-06-go-locale-sel.html
-share/doc/goffice-0.6/goffice-06-go-marker.html
-share/doc/goffice-0.6/goffice-06-go-math.html
-share/doc/goffice-0.6/goffice-06-go-path.html
-share/doc/goffice-0.6/goffice-06-go-pattern.html
-share/doc/goffice-0.6/goffice-06-go-plugin-loader-module.html
-share/doc/goffice-0.6/goffice-06-go-plugin-service.html
-share/doc/goffice-0.6/goffice-06-go-plugin.html
-share/doc/goffice-0.6/goffice-06-go-regression.html
-share/doc/goffice-0.6/goffice-06-go-rotation-sel.html
-share/doc/goffice-0.6/goffice-06-go-units.html
-share/doc/goffice-0.6/goffice-06-gog-axis-line.html
-share/doc/goffice-0.6/goffice-06-gog-axis.html
-share/doc/goffice-0.6/goffice-06-gog-chart-map.html
-share/doc/goffice-0.6/goffice-06-gog-chart.html
-share/doc/goffice-0.6/goffice-06-gog-control-foocanvas.html
-share/doc/goffice-0.6/goffice-06-gog-error-bar.html
-share/doc/goffice-0.6/goffice-06-gog-graph.html
-share/doc/goffice-0.6/goffice-06-gog-grid-line.html
-share/doc/goffice-0.6/goffice-06-gog-grid.html
-share/doc/goffice-0.6/goffice-06-gog-guru.html
-share/doc/goffice-0.6/goffice-06-gog-label.html
-share/doc/goffice-0.6/goffice-06-gog-legend.html
-share/doc/goffice-0.6/goffice-06-gog-plot-engine.html
-share/doc/goffice-0.6/goffice-06-gog-plot.html
-share/doc/goffice-0.6/goffice-06-gog-renderer.html
-share/doc/goffice-0.6/goffice-06-gog-series-lines.html
-share/doc/goffice-0.6/goffice-06-gog-series.html
-share/doc/goffice-0.6/goffice-06-gog-style.html
-share/doc/goffice-0.6/goffice-06-gog-theme.html
-share/doc/goffice-0.6/goffice-06-gog-trend-line.html
-share/doc/goffice-0.6/home.png
-share/doc/goffice-0.6/index.html
-share/doc/goffice-0.6/index.sgml
-share/doc/goffice-0.6/left.png
-share/doc/goffice-0.6/pt01.html
-share/doc/goffice-0.6/pt02.html
-share/doc/goffice-0.6/pt03.html
-share/doc/goffice-0.6/right.png
-share/doc/goffice-0.6/style.css
-share/doc/goffice-0.6/up.png
+lib/libgoffice-%%SHORT_VER%%.a
+lib/libgoffice-%%SHORT_VER%%.la
+lib/libgoffice-%%SHORT_VER%%.so
+lib/libgoffice-%%SHORT_VER%%.so.7
+libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
+%%DOCSDIR%%-%%SHORT_VER%%/GOComboBox.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOComponent.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOOptionMenu.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOPalette.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOPluginLoader.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOSelector.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOUndoUnary.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogDataAllocator.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogDataset.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedView.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogSmoothedCurve.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogStyledObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/GogView.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch01.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch02.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch03.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch04.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch05.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch06.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch07.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch08.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch09.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch10.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch11.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch12.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch13.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-%%SHORT_VER%%.devhelp
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-%%SHORT_VER%%.devhelp2
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-cairo.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-charmap-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-cmd-context.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-color.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-combo-color.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-combo-pixmaps.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-combo-text.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-complex.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-component-factory.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-data.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-doc-control.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-doc.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-fft.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-file.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-font-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-font.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-format-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-format.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-geometry.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-glib-extras.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-gradient.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-libxml-extras.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-line.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-locale-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-marker.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-math.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-path.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-pattern.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin-loader-module.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin-service.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-plugin.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-regression.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-rotation-sel.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-go-units.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-axis-line.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-axis.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-chart-map.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-chart.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-control-foocanvas.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-error-bar.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-graph.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-grid-line.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-grid.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-guru.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-label.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-legend.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-plot-engine.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-plot.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-renderer.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-series-lines.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-series.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-style.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-theme.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-08-gog-trend-line.html
+%%DOCSDIR%%-%%SHORT_VER%%/home.png
+%%DOCSDIR%%-%%SHORT_VER%%/index.html
+%%DOCSDIR%%-%%SHORT_VER%%/index.sgml
+%%DOCSDIR%%-%%SHORT_VER%%/left.png
+%%DOCSDIR%%-%%SHORT_VER%%/pt01.html
+%%DOCSDIR%%-%%SHORT_VER%%/pt02.html
+%%DOCSDIR%%-%%SHORT_VER%%/pt03.html
+%%DOCSDIR%%-%%SHORT_VER%%/right.png
+%%DOCSDIR%%-%%SHORT_VER%%/style.css
+%%DOCSDIR%%-%%SHORT_VER%%/up.png
+%%DATADIR%%/%%VERSION%%/glade/go-3d-rotation-sel.glade
 %%DATADIR%%/%%VERSION%%/glade/go-font-sel.glade
 %%DATADIR%%/%%VERSION%%/glade/go-format-sel.glade
 %%DATADIR%%/%%VERSION%%/glade/go-image-save-dialog-extra.glade
+%%DATADIR%%/%%VERSION%%/glade/go-image-sel.glade
 %%DATADIR%%/%%VERSION%%/glade/go-rotation-sel.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-3d-box-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-axis-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-error-bar-prefs.glade
 %%DATADIR%%/%%VERSION%%/glade/gog-graph-prefs.glade
@@ -366,7 +379,6 @@ share/pixmaps/goffice/%%VERSION%%/bar-vboth.png
 share/pixmaps/goffice/%%VERSION%%/bar-vminus.png
 share/pixmaps/goffice/%%VERSION%%/bar-vplus.png
 share/pixmaps/goffice/%%VERSION%%/bar.xpm
-share/pixmaps/goffice/%%VERSION%%/boxplot.xpm
 share/pixmaps/goffice/%%VERSION%%/bubble.xpm
 share/pixmaps/goffice/%%VERSION%%/chart_area_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_area_1_2.png
@@ -428,6 +440,7 @@ share/pixmaps/goffice/%%VERSION%%/chart_pie_2_3.png
 share/pixmaps/goffice/%%VERSION%%/chart_pie_3_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_pie_3_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_polar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_prob_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_3.png
@@ -455,11 +468,13 @@ share/pixmaps/goffice/%%VERSION%%/chart_stock_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_stock_2_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_stock_2_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_surface_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_surface_2_2.png
 share/pixmaps/goffice/%%VERSION%%/color.xpm
 share/pixmaps/goffice/%%VERSION%%/column.xpm
+share/pixmaps/goffice/%%VERSION%%/contour.xpm
+share/pixmaps/goffice/%%VERSION%%/dist.xpm
 share/pixmaps/goffice/%%VERSION%%/doughnut.xpm
 share/pixmaps/goffice/%%VERSION%%/dropbar.xpm
-share/pixmaps/goffice/%%VERSION%%/hist.xpm
 share/pixmaps/goffice/%%VERSION%%/linegraph.xpm
 share/pixmaps/goffice/%%VERSION%%/minmax.xpm
 share/pixmaps/goffice/%%VERSION%%/pie.xpm
@@ -469,18 +484,12 @@ share/pixmaps/goffice/%%VERSION%%/scatter.xpm
 share/pixmaps/goffice/%%VERSION%%/stock.xpm
 share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm share/pixmaps/goffice/%%VERSION%%
-@dirrm share/pixmaps/goffice
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
+@dirrmtry share/pixmaps/goffice
 @dirrm %%DATADIR%%/%%VERSION%%/patterns
 @dirrm %%DATADIR%%/%%VERSION%%/glade
 @dirrm %%DATADIR%%/%%VERSION%%
-@dirrm %%DATADIR%%
-@dirrm share/doc/goffice-0.6
+@dirrmtry %%DATADIR%%
+@dirrm %%DOCSDIR%%-%%SHORT_VER%%
 @dirrm lib/goffice/%%VERSION%%/plugins/smoothing
 @dirrm lib/goffice/%%VERSION%%/plugins/reg_logfit
 @dirrm lib/goffice/%%VERSION%%/plugins/reg_linear
@@ -488,21 +497,27 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_surface
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_radar
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_pie
-@dirrm lib/goffice/%%VERSION%%/plugins/plot_boxes
+@dirrm lib/goffice/%%VERSION%%/plugins/plot_distrib
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_barcol
 @dirrm lib/goffice/%%VERSION%%/plugins
 @dirrm lib/goffice/%%VERSION%%
 @dirrmtry lib/goffice
-@dirrm include/libgoffice-0.6/goffice/utils
-@dirrm include/libgoffice-0.6/goffice/ms-compat
-@dirrm include/libgoffice-0.6/goffice/math
-@dirrm include/libgoffice-0.6/goffice/gtk
-@dirrm include/libgoffice-0.6/goffice/graph
-@dirrm include/libgoffice-0.6/goffice/drawing
-@dirrm include/libgoffice-0.6/goffice/data
-@dirrm include/libgoffice-0.6/goffice/cut-n-paste/foocanvas
-@dirrm include/libgoffice-0.6/goffice/cut-n-paste
-@dirrm include/libgoffice-0.6/goffice/component
-@dirrm include/libgoffice-0.6/goffice/app
-@dirrm include/libgoffice-0.6/goffice
-@dirrm include/libgoffice-0.6
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/utils
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/ms-compat
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/math
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/gtk
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/graph
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/drawing
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/data
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste/foocanvas
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/cut-n-paste
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/component
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice/app
+@dirrm include/libgoffice-%%SHORT_VER%%/goffice
+@dirrm include/libgoffice-%%SHORT_VER%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr

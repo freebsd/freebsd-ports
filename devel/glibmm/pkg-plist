@@ -100,6 +100,7 @@ include/glibmm-%%API_VERSION%%/glibmm/main.h
 include/glibmm-%%API_VERSION%%/glibmm/markup.h
 include/glibmm-%%API_VERSION%%/glibmm/miscutils.h
 include/glibmm-%%API_VERSION%%/glibmm/module.h
+include/glibmm-%%API_VERSION%%/glibmm/nodetree.h
 include/glibmm-%%API_VERSION%%/glibmm/object.h
 include/glibmm-%%API_VERSION%%/glibmm/objectbase.h
 include/glibmm-%%API_VERSION%%/glibmm/optioncontext.h
@@ -116,6 +117,7 @@ include/glibmm-%%API_VERSION%%/glibmm/private/iochannel_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/keyfile_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/markup_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/module_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/nodetree_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/object_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/optioncontext_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/optionentry_p.h

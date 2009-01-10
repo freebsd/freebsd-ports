@@ -92,6 +92,7 @@
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
     SUBDIR += gdm
+    SUBDIR += gegl
     SUBDIR += ggiterm
     SUBDIR += glproto
     SUBDIR += gmessage

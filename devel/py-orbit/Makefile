@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/py-orbit2/Makefile,v 1.11 2006/04/13 07:52:34 bland Exp $
+#   $MCom: ports/devel/py-orbit/Makefile,v 1.1 2008/09/23 20:08:04 mezz Exp $
+#
 
 PORTNAME=	orbit
-PORTVERSION=	2.14.3
-PORTREVISION=	1
+PORTVERSION=	2.24.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pyorbit/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
