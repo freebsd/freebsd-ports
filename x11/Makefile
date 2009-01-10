@@ -78,7 +78,6 @@
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += evieext
     SUBDIR += examine
-    SUBDIR += fast-user-switch-applet
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += fbsd-icons

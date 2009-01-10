@@ -1,5 +1,0 @@
-Gail, the Gnome Accessibility Implementation library, contains
-the bindings to integrate the platform-independent ATK accessibility
-widgets into the Gtk structure.
-
-WWW: http://developer.gnome.org/projects/gap/
