@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
