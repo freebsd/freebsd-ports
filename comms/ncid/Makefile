@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.70
+PORTVERSION=	0.72.1
 CATEGORIES=	comms
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	adox@mcx2.org
 COMMENT=	Network based Caller ID package
