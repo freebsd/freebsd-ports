@@ -1,0 +1,31 @@
+--- pypanel.orig	2005-06-26 19:24:43.000000000 -0400
++++ pypanel	2008-12-08 00:06:37.000000000 -0500
+@@ -95,6 +95,7 @@
+         self.root.change_attributes(event_mask=(X.PropertyChangeMask)) 
+         self.window.map()
+         self.display.flush()
++        self.updatePanel(self.root, self.window, self.panel)
+         self.loop(self.display, self.root, self.window, self.panel)
+                 
+     #------------------------------------
+@@ -944,6 +945,9 @@
+     main   = 2.4
+     config = globals().get("VERSION", None)
+     
++    # Get the startup delay
++    delay  = globals().get("STARTUP_DELAY", None)
++    
+     # Set locale to user's default
+     locale.setlocale(locale.LC_ALL, "")
+     
+@@ -953,5 +957,9 @@
+         sys.stderr.write("\nA current pypanelrc example can be found here -\n")
+         sys.stderr.write("%s/pypanel/pypanelrc\n\n" % sysconfig.get_python_lib())
+     del main, config
+-
++    
++    # If delay is set, pause, and let windowmanager load
++    if delay:
++	    time.sleep(delay)
++	    
+     PyPanel(display.Display())
