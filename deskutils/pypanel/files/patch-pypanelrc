@@ -1,0 +1,15 @@
+--- pypanelrc.orig	2005-06-26 19:27:37.000000000 -0400
++++ pypanelrc	2008-12-08 00:06:54.000000000 -0500
+@@ -9,6 +9,12 @@
+ VERSION         = 2.4           # Config file version
+ 
+ #------------------------------------------------------------------------------
++# Startup delay: The time to wait before painting the pypanel window. This lets
++# the background load up so that pypanel will be displayed correctly. 
++#------------------------------------------------------------------------------
++STARTUP_DELAY   = 2
++
++#------------------------------------------------------------------------------
+ # Colors: Format is hex triplet - 0xrrggbb
+ #------------------------------------------------------------------------------
+ BG_COLOR        = "0xd6d6d6"    # Panel background and tinting color
