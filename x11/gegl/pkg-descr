@@ -1,8 +1,0 @@
-GEGL (Generic Graphics Library) is a graph based image processing
-framework.
-
-GEGL's original design was made to scratch GIMP's itches for a new
-compositing and processing core. This core is being designed to have
-minimal dependencies. and a simple well defined API.
-
-WWW: http://www.gegl.org/
