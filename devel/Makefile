@@ -2136,6 +2136,7 @@
     SUBDIR += pth-hard
     SUBDIR += pthsem
     SUBDIR += ptmalloc
+    SUBDIR += ptmalloc2
     SUBDIR += pty
     SUBDIR += ptypes
     SUBDIR += publib
