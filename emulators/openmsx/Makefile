@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openmsx
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +29,7 @@ MAKEFILE=	GNUmakefile
 USE_GMAKE=	yes
 USE_TCL=	84
 USE_TCL_BUILD=	84
-USE_SDL=	sdl image
+USE_SDL=	sdl image ttf
 
 .ifdef(NOPORTDOCS)
 # Use dummy target rather than rewriting makefile

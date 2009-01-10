@@ -15,8 +15,10 @@ bin/openmsx
 %%DATADIR%%/extensions/Konami_Snatcher_Sound_Cartridge/hardwareconfig.xml
 %%DATADIR%%/extensions/MegaRAM_Disk/hardwareconfig.xml
 %%DATADIR%%/extensions/MegaRAM_Disk/roms/SHA1SUMS
+%%DATADIR%%/extensions/Mega_Flash_ROM_SCC/hardwareconfig.xml
 %%DATADIR%%/extensions/Microsol_CDX-2/hardwareconfig.xml
 %%DATADIR%%/extensions/Microsol_CDX-2/roms/SHA1SUMS
+%%DATADIR%%/extensions/OPL3Cartridge/hardwareconfig.xml
 %%DATADIR%%/extensions/Panasonic_FS-CA1/hardwareconfig.xml
 %%DATADIR%%/extensions/Panasonic_FS-CA1/roms/SHA1SUMS
 %%DATADIR%%/extensions/Panasonic_FS-FD1A/hardwareconfig.xml
@@ -77,12 +79,15 @@ bin/openmsx
 %%DATADIR%%/machines/Boosted_MSX2_EN/hardwareconfig.xml
 %%DATADIR%%/machines/Boosted_MSX2_EN/roms/README
 %%DATADIR%%/machines/C-BIOS_MSX1/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_logo_msx1.rom
 %%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_main_msx1.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_logo_msx2+.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_main_msx2+.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_music.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_sub.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_logo_msx2.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_main_msx2.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_sub.rom
 %%DATADIR%%/machines/Canon_V-20/hardwareconfig.xml
@@ -167,10 +172,14 @@ bin/openmsx
 %%DATADIR%%/machines/Philips_NMS_8250/roms/SHA1SUMS
 %%DATADIR%%/machines/Philips_NMS_8255/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_NMS_8255/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8000/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8010/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8010F/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8020-20/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8020-20/roms/SHA1SUMS
 %%DATADIR%%/machines/Philips_VG_8020/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8020/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8020F/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8230/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8230/roms/SHA1SUMS
 %%DATADIR%%/machines/Philips_VG_8235/hardwareconfig.xml
@@ -178,6 +187,8 @@ bin/openmsx
 %%DATADIR%%/machines/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_MPC-100/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_MPC-100/roms/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_PHC-23JB/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_PHC-23JB/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_PHC-35J/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_PHC-35J/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_PHC-70FD/hardwareconfig.xml
@@ -189,10 +200,16 @@ bin/openmsx
 %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/hardwareconfig.xml
 %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-101P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-10P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-10P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-201P/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-201P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-20P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-20P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-501P/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-501P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-55P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-55P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-75P/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-75P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F1/hardwareconfig.xml
@@ -229,6 +246,7 @@ bin/openmsx
 %%DATADIR%%/machines/msx2
 %%DATADIR%%/machines/msx2plus
 %%DATADIR%%/machines/turbor
+%%DATADIR%%/nettou_yakyuu/README
 %%DATADIR%%/playball/README
 %%DATADIR%%/scripts/about.tcl
 %%DATADIR%%/scripts/autoplug.tcl
@@ -239,15 +257,19 @@ bin/openmsx
 %%DATADIR%%/scripts/cpuregs.tcl
 %%DATADIR%%/scripts/cycle.tcl
 %%DATADIR%%/scripts/disasm.tcl
+%%DATADIR%%/scripts/example_tools.tcl
 %%DATADIR%%/scripts/guess_title.tcl
 %%DATADIR%%/scripts/load_icons.tcl
 %%DATADIR%%/scripts/monitor.tcl
 %%DATADIR%%/scripts/multi_screenshot.tcl
+%%DATADIR%%/scripts/osd.tcl
+%%DATADIR%%/scripts/osd_menu.tcl
 %%DATADIR%%/scripts/psg_log.tcl
 %%DATADIR%%/scripts/psg_profile.tcl
 %%DATADIR%%/scripts/record_channels.tcl
 %%DATADIR%%/scripts/reg_log.tcl
 %%DATADIR%%/scripts/save_debuggable.tcl
+%%DATADIR%%/scripts/savestate.tcl
 %%DATADIR%%/scripts/showdebuggable.tcl
 %%DATADIR%%/scripts/slot.tcl
 %%DATADIR%%/scripts/soundlog.tcl
@@ -299,6 +321,11 @@ bin/openmsx
 %%DATADIR%%/skins/ConsoleFontRaveLShaded.png
 %%DATADIR%%/skins/ConsoleFontRaveShaded.png
 %%DATADIR%%/skins/ConsoleFontShaded.png
+%%DATADIR%%/skins/Vera.ttf.gz
+%%DATADIR%%/skins/fancy/frame.png
+%%DATADIR%%/skins/fancy/led-off.png
+%%DATADIR%%/skins/fancy/led-on.png
+%%DATADIR%%/skins/fancy/skin.tcl
 %%DATADIR%%/skins/led-off.png
 %%DATADIR%%/skins/led.png
 %%DATADIR%%/skins/none/skin.tcl
@@ -345,6 +372,17 @@ bin/openmsx
 %%DATADIR%%/skins/set4/turbo-on.png
 %%DATADIR%%/softwaredb.xml
 %%DATADIR%%/systemroms/README
+%%DATADIR%%/unicodemaps/unicodemap.de
+%%DATADIR%%/unicodemaps/unicodemap.es
+%%DATADIR%%/unicodemaps/unicodemap.fr
+%%DATADIR%%/unicodemaps/unicodemap.gb
+%%DATADIR%%/unicodemaps/unicodemap.int
+%%DATADIR%%/unicodemaps/unicodemap.jp_ansi
+%%DATADIR%%/unicodemaps/unicodemap.jp_jis
+%%DATADIR%%/unicodemaps/unicodemap.kr
+%%DATADIR%%/unicodemaps/unicodemap.proto_fr
+%%DATADIR%%/unicodemaps/unicodemap.proto_int
+%%DATADIR%%/unicodemaps/unicodemap.ru
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK
 @dirrm %%DATADIR%%/extensions/DDX_3.0/roms
@@ -361,8 +399,10 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/Konami_Snatcher_Sound_Cartridge
 @dirrm %%DATADIR%%/extensions/MegaRAM_Disk/roms
 @dirrm %%DATADIR%%/extensions/MegaRAM_Disk
+@dirrm %%DATADIR%%/extensions/Mega_Flash_ROM_SCC
 @dirrm %%DATADIR%%/extensions/Microsol_CDX-2/roms
 @dirrm %%DATADIR%%/extensions/Microsol_CDX-2
+@dirrm %%DATADIR%%/extensions/OPL3Cartridge
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-CA1/roms
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-CA1
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-FD1A/roms
@@ -416,6 +456,12 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Al_Alamiah_AX170
 @dirrm %%DATADIR%%/machines/Boosted_MSX2_EN/roms
 @dirrm %%DATADIR%%/machines/Boosted_MSX2_EN
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2
 @dirrm %%DATADIR%%/machines/Canon_V-20/roms
 @dirrm %%DATADIR%%/machines/Canon_V-20
 @dirrm %%DATADIR%%/machines/Daewoo_CPC-300/roms
@@ -498,16 +544,22 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Philips_NMS_8250
 @dirrm %%DATADIR%%/machines/Philips_NMS_8255/roms
 @dirrm %%DATADIR%%/machines/Philips_NMS_8255
-@dirrm %%DATADIR%%/machines/Philips_VG_8020/roms
-@dirrm %%DATADIR%%/machines/Philips_VG_8020
+@dirrm %%DATADIR%%/machines/Philips_VG_8010
+@dirrm %%DATADIR%%/machines/Philips_VG_8000
+@dirrm %%DATADIR%%/machines/Philips_VG_8010F
 @dirrm %%DATADIR%%/machines/Philips_VG_8020-20/roms
 @dirrm %%DATADIR%%/machines/Philips_VG_8020-20
+@dirrm %%DATADIR%%/machines/Philips_VG_8020F
+@dirrm %%DATADIR%%/machines/Philips_VG_8020/roms
+@dirrm %%DATADIR%%/machines/Philips_VG_8020
 @dirrm %%DATADIR%%/machines/Philips_VG_8230/roms
 @dirrm %%DATADIR%%/machines/Philips_VG_8230
 @dirrm %%DATADIR%%/machines/Philips_VG_8235/roms
 @dirrm %%DATADIR%%/machines/Philips_VG_8235
 @dirrm %%DATADIR%%/machines/Sanyo_MPC-100/roms
 @dirrm %%DATADIR%%/machines/Sanyo_MPC-100
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-23JB/roms
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-23JB
 @dirrm %%DATADIR%%/machines/Sanyo_PHC-35J/roms
 @dirrm %%DATADIR%%/machines/Sanyo_PHC-35J
 @dirrm %%DATADIR%%/machines/Sanyo_PHC-70FD/roms
@@ -519,10 +571,16 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/roms
 @dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2
 @dirrm %%DATADIR%%/machines/Sony_HB-101P
+@dirrm %%DATADIR%%/machines/Sony_HB-10P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-10P
 @dirrm %%DATADIR%%/machines/Sony_HB-201P/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-201P
+@dirrm %%DATADIR%%/machines/Sony_HB-20P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-20P
 @dirrm %%DATADIR%%/machines/Sony_HB-501P/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-501P
+@dirrm %%DATADIR%%/machines/Sony_HB-55P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-55P
 @dirrm %%DATADIR%%/machines/Sony_HB-75P/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-75P
 @dirrm %%DATADIR%%/machines/Sony_HB-F1/roms
@@ -555,22 +613,19 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Yamaha_CX5MII-128
 @dirrm %%DATADIR%%/machines/Yashica_YC-64/roms
 @dirrm %%DATADIR%%/machines/Yashica_YC-64
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX1
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX2/roms
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX2
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+/roms
-@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+
 @dirrm %%DATADIR%%/machines
+@dirrm %%DATADIR%%/nettou_yakyuu
 @dirrm %%DATADIR%%/playball
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/shaders
+@dirrm %%DATADIR%%/skins/fancy
 @dirrm %%DATADIR%%/skins/none
 @dirrm %%DATADIR%%/skins/set1
 @dirrm %%DATADIR%%/skins/set2
 @dirrm %%DATADIR%%/skins/set4
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/systemroms
+@dirrm %%DATADIR%%/unicodemaps
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/GPL
