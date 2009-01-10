@@ -4419,6 +4419,7 @@ gnustep-ticker                  ports/www/gnustep-ticker
 gnustep-wrapper                 ports/deskutils/gnustep-wrapper
 gnustep-xdps                    ports/x11-toolkits/gnustep-xdps
 gnutls                          ports/security/gnutls
+gnutls-devel                    ports/security/gnutls-devel
 gnuwash                         ports/deskutils/gnuwash
 gob                             ports/x11-toolkits/gob
 gob2                            ports/devel/gob2
@@ -9541,7 +9542,6 @@ opensp                          ports/textproc/opensp
 openspc                         ports/audio/openspc
 openssh-askpass                 ports/security/openssh-askpass
 openssh-portable                ports/security/openssh-portable
-openssl-beta                    ports/security/openssl-beta
 opentaxsolver                   ports/finance/opentaxsolver
 openttd                         ports/games/openttd
 openuniverse                    ports/astro/openuniverse
@@ -11301,6 +11301,7 @@ p5-List-MoreUtils               ports/lang/p5-List-MoreUtils
 p5-List-Permutor                ports/devel/p5-List-Permutor
 p5-List-PowerSet                ports/devel/p5-List-PowerSet
 p5-List-Rotation-Cycle          ports/devel/p5-List-Rotation-Cycle
+p5-List-Uniq                    ports/devel/p5-List-Uniq
 p5-Locale-Codes                 ports/misc/p5-Locale-Codes
 p5-Locale-Currency-Format       ports/finance/p5-Locale-Currency-Format
 p5-Locale-Geocode               ports/misc/p5-Locale-Geocode
@@ -14538,6 +14539,7 @@ p5-list-moreutils               ports/lang/p5-List-MoreUtils
 p5-list-permutor                ports/devel/p5-List-Permutor
 p5-list-powerset                ports/devel/p5-List-PowerSet
 p5-list-rotation-cycle          ports/devel/p5-List-Rotation-Cycle
+p5-list-uniq                    ports/devel/p5-List-Uniq
 p5-lj-cache                     ports/sysutils/p5-LJ-Cache
 p5-lj-spellcheck                ports/textproc/p5-LJ-SpellCheck
 p5-lj-textmessage               ports/sysutils/p5-LJ-TextMessage
@@ -17560,6 +17562,7 @@ ports_gpt                       ports/misc/gpt
 ports_gzip                      ports/archivers/gzip
 ports_host                      ports/dns/host
 ports_ja-man                    ports/japanese/man
+ports_kzip                      ports/archivers/kzip
 ports_lam                       ports/net/lam
 ports_less                      ports/sysutils/less
 ports_libarchive                ports/archivers/libarchive
@@ -18042,6 +18045,7 @@ py-fusefs                       ports/devel/py-fusefs
 py-game                         ports/devel/py-game
 py-gamin                        ports/devel/py-gamin
 py-gato                         ports/math/py-gato
+py-gchartwrapper                ports/graphics/py-gchartwrapper
 py-gd                           ports/graphics/py-gd
 py-gdata                        ports/devel/py-gdata
 py-gdbm                         ports/databases/py-gdbm
@@ -18268,6 +18272,7 @@ py-pyfits                       ports/astro/py-pyfits
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
 py-pyglet                       ports/graphics/py-pyglet
 py-pygments                     ports/textproc/py-pygments
+py-pygooglechart                ports/graphics/py-pygooglechart
 py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
 py-pyke                         ports/devel/py-pyke
@@ -19725,6 +19730,7 @@ sbd                             ports/net/sbd
 sblim-wbemcli                   ports/net-mgmt/sblim-wbemcli
 sbniconfig                      ports/sysutils/sbniconfig
 sbox-dtc                        ports/www/sbox-dtc
+sc                              ports/math/sc
 sc-aspell                       ports/textproc/sc-aspell
 scalapack                       ports/math/scalapack
 scale2x                         ports/graphics/scale2x
@@ -23418,6 +23424,7 @@ zimg                            ports/graphics/zimg
 zinf                            ports/audio/zinf
 zip                             ports/archivers/zip
 zipios++                        ports/archivers/zipios++
+zipmix                          ports/archivers/zipmix
 zipper                          ports/archivers/zipper
 ziproxy                         ports/www/ziproxy
 zircon                          ports/irc/zircon
