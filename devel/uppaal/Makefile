@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	uppaal
-PORTVERSION=	4.0.6
-PORTREVISION=	2
+PORTVERSION=	4.0.7
 CATEGORIES=	devel java linux
+DISTNAME=	uppaal-${PORTVERSION}-aca
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Tool environment for modeling and verifying timed automata
@@ -16,13 +16,14 @@ COMMENT=	Tool environment for modeling and verifying timed automata
 USE_ZIP=	yes
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	uppaal verifyta
 SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB+=	PORTNAME=${PORTNAME}
-DOWNLOAD_URL=	http://www.it.uu.se/research/group/darts/uppaal/download/registration.php?id=0&subid=0
+DOWNLOAD_URL=	http://www.it.uu.se/research/group/darts/uppaal/download.shtml
 NO_BUILD=	yes
 
 MAN1=		uppaal.1
@@ -63,7 +64,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/uppaal ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

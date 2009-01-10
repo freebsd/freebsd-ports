@@ -27,5 +27,5 @@ bin/verifyta
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%JAVASHAREDIR%%/%%PORTNAME%%/lib
 @dirrm %%JAVASHAREDIR%%/%%PORTNAME%%
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
