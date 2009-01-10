@@ -459,6 +459,7 @@
     SUBDIR += mod_macro
     SUBDIR += mod_macro2
     SUBDIR += mod_macro22
+    SUBDIR += mod_memcache
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
     SUBDIR += mod_mya
