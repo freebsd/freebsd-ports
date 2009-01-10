@@ -1171,6 +1171,7 @@
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
+    SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += pligg
     SUBDIR += plone
