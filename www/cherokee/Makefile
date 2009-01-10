@@ -90,7 +90,7 @@ post-patch:
 		s:%wwwroot%:${PREFIX}/www/cherokee:g; \
 		s:%prefix%:${PREFIX}:g; \
 		s:%localstatedir%:/var:g; \
-		s:#.*User.*nobody:User www:g; \1
+		s:#.*User.*nobody:User www:g; \
 		s:#.*Group.*nogroup:Group www:g; \
 		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
 		$$i > $${i%.pre};done
