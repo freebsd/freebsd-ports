@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
@@ -18,13 +18,18 @@ USE_PYDISTUTILS=yes
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
-		darcs2hg.py \
+		dumprevlog \
+		hg-relink \
 		hg-ssh \
 		hgdiff \
 		hgk \
+		logo-droplets.svg \
 		mercurial.el \
+		mq.el \
 		sample.hgrc \
+		simplemerge \
 		tcsh_completion \
+		undumprevlog \
 		zsh_completion \
 		git-viz/git-cat-file \
 		git-viz/git-diff-tree \
@@ -69,6 +74,7 @@ post-install:
 	done
 	${MKDIR} ${DATADIR}/www
 	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
+	${INSTALL_MAN} ${WRKSRC}/contrib/hgwebdir.fcgi ${DATADIR}/www
 .endif
 	@${CAT} ${PKGMESSAGE}
 
