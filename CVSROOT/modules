@@ -3093,7 +3093,6 @@ farbot                          ports/sysutils/farbot
 fargoal                         ports/games/fargoal
 farsifonts                      ports/x11-fonts/farsifonts
 fasm                            ports/lang/fasm
-fast-user-switch-applet         ports/x11/fast-user-switch-applet
 fasta                           ports/biology/fasta
 fasta3                          ports/biology/fasta3
 fastcap                         ports/science/fastcap
@@ -3551,6 +3550,7 @@ freeciv-sounds                  ports/games/freeciv-sounds
 freecol                         ports/games/freecol
 freecolor                       ports/sysutils/freecolor
 freedbd                         ports/net/freedbd
+freedesktop-sound-theme		ports/audio/freedesktop-sound-theme
 freedialog                      ports/misc/freedialog
 freedink                        ports/games/freedink
 freedink-data                   ports/games/freedink-data
@@ -3746,8 +3746,6 @@ gai-album                       ports/audio/gai-album
 gai-leds                        ports/sysutils/gai-leds
 gai-visual-audio                ports/audio/gai-visual-audio
 gaia                            ports/astro/gaia
-gail                            ports/accessibility/gail
-gail-reference                  ports/accessibility/gail-reference
 gajim                           ports/net-im/gajim
 gajim-devel                     ports/net-im/gajim-devel
 gal                             ports/x11-toolkits/gal
@@ -4429,6 +4427,7 @@ gocr                            ports/graphics/gocr
 gofer                           ports/lang/Gofer
 goffice                         ports/devel/goffice
 goffice04                       ports/devel/goffice04
+goffice06                       ports/devel/goffice06
 goffice1                        ports/devel/goffice1
 gofish                          ports/net/gofish
 goggles                         ports/multimedia/goggles
@@ -4907,6 +4906,7 @@ hamachi                         ports/security/hamachi
 hamfax                          ports/comms/hamfax
 hamlib                          ports/comms/hamlib
 hammerhead                      ports/sysutils/hammerhead
+hamster-applet			ports/deskutils/hamster-applet
 hamsterdb                       ports/databases/hamsterdb
 handbrake                       ports/multimedia/handbrake
 hangman                         ports/games/hangman
@@ -7109,6 +7109,11 @@ libgda3-mysql                   ports/databases/libgda3-mysql
 libgda3-odbc                    ports/databases/libgda3-odbc
 libgda3-postgresql              ports/databases/libgda3-postgresql
 libgda3-reference               ports/databases/libgda3-reference
+libgda4				ports/databases/libgda4
+libgda4-mdb			ports/databases/libgda4-mdb
+libgda4-mysql			ports/databases/libgda4-mysql
+libgda4-postgresql		ports/databases/libgda4-postgresql
+libgda4-reference		ports/databases/libgda4-reference
 libgdamm                        ports/databases/libgdamm
 libgdgeda                       ports/graphics/libgdgeda
 libgdiplus                      ports/x11-toolkits/libgdiplus
@@ -16200,6 +16205,7 @@ panda                           ports/print/panda
 pandoc                          ports/textproc/pandoc
 pango                           ports/x11-toolkits/pango
 pango-reference                 ports/x11-toolkits/pango-reference
+pangomm                         ports/x11-toolkits/pangomm
 pangoxsl                        ports/x11-toolkits/pangoxsl
 panoglview                      ports/graphics/panoglview
 panomatic                       ports/graphics/panomatic
@@ -19854,6 +19860,7 @@ sdts++                          ports/devel/sdts++
 seabattle                       ports/games/seabattle
 seahaven                        ports/games/seahaven
 seahorse                        ports/security/seahorse
+seahorse-plugins                ports/security/seahorse-plugins
 seam-carving-gui                ports/graphics/seam-carving-gui
 seamonkey                       ports/www/seamonkey
 searchmonkey                    ports/sysutils/searchmonkey
