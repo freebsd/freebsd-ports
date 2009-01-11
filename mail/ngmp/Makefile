@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngmp
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.prevantage.com/releases/ \
