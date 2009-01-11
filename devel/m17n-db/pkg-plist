@@ -1,7 +1,7 @@
-bin/m17n-db
-libdata/pkgconfig/m17n-db.pc
 %%NLS%%share/locale/ja/LC_MESSAGES/m17n-db.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/m17n-db.mo
+bin/m17n-db
+libdata/pkgconfig/m17n-db.pc
 share/m17n/8859-10.map
 share/m17n/8859-11.map
 share/m17n/8859-13.map
@@ -422,5 +422,5 @@ share/m17n/zh-util.mim
 share/m17n/zh.lnm
 share/m17n/zh_Hans.lnm
 share/m17n/zh_Hant.lnm
-@dirrm share/m17n/icons
-@dirrm share/m17n
+@dirrmtry share/m17n/icons
+@dirrmtry share/m17n

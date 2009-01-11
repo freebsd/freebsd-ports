@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	m17n-docs
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
+MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	The m17n library documentation
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MAN1=		m17n-config.1 m17n-db.1
-MAN3=		m17nCharacter.3m17n \
+MAN3=		M17NObjectHead.3m17n \
+		MDrawMetric.3m17n \
+		m17nCharacter.3m17n \
 		m17nCharset.3m17n \
 		m17nChartable.3m17n \
 		m17nConv.3m17n \
@@ -271,8 +274,9 @@ MAN5=		mdbCharsetList.5 mdbCodingList.5 mdbDir.5 \
 DOCSDIR=	${PREFIX}/share/doc/m17n
 
 post-patch:
-.for file in configure Makefile.in
-	@${REINPLACE_CMD} -e 's|/m17n/docs|/doc/m17n|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|/m17n/docs|/doc/m17n|g' \
+		${WRKSRC}/configure ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|for f in \*.html \*.png; do|for f in \*; do|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
