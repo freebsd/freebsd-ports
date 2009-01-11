@@ -34,6 +34,99 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c451386-dff3-11dd-a765-0030843d3802">
+    <topic>mysql -- privilege escalation and overwrite of the system table information</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>4.1</ge><lt>4.1.24</lt></range>
+	<range><ge>5.0</ge><lt>5.0.51</lt></range>
+	<range><ge>5.1</ge><lt>5.1.23</lt></range>
+	<range><ge>6.0</ge><lt>6.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL reports:</p>
+	<blockquote cite="http://dev.mysql.com/doc/refman/4.1/en/news-4-1-24.html">
+	  <p>Using RENAME TABLE against a table with explicit DATA
+	    DIRECTORY and INDEX DIRECTORY options can be used to overwrite
+	    system table information by replacing the symbolic link
+	    points. the file to which the symlink points.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5969</cvename>
+      <bid>26765</bid>
+      <url>http://bugs.mysql.com/bug.php?id=32111</url>
+    </references>
+    <dates>
+      <discovery>2007-11-14</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="240ac24c-dff3-11dd-a765-0030843d3802">
+    <topic>mysql -- remote dos via malformed password packet</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>4.1</ge><lt>4.1.24</lt></range>
+	<range><ge>5.0</ge><lt>5.0.44</lt></range>
+	<range><ge>5.1</ge><lt>5.1.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL reports:</p>
+	<blockquote cite="http://dev.mysql.com/doc/refman/4.1/en/news-4-1-24.html">
+	  <p>A malformed password packet in the connection protocol
+	    could cause the server to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-3780</cvename>
+      <bid>25017</bid>
+      <url>http://bugs.mysql.com/bug.php?id=28984</url>
+    </references>
+    <dates>
+      <discovery>2007-07-15</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bb4e9a44-dff2-11dd-a765-0030843d3802">
+    <topic>mysql -- renaming of arbitrary tables by authenticated users</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>4.1</ge><lt>4.1.23</lt></range>
+	<range><ge>5.0</ge><lt>5.0.42</lt></range>
+	<range><ge>5.1</ge><lt>5.1.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL reports:</p>
+	<blockquote cite="http://dev.mysql.com/doc/refman/4.1/en/news-4-1-23.html">
+	  <p>The requirement of the DROP privilege for RENAME TABLE was not
+	    enforced.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2691</cvename>
+      <bid>24016</bid>
+      <url>http://bugs.mysql.com/bug.php?id=27515</url>
+    </references>
+    <dates>
+      <discovery>2007-05-2007</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69a20ce4-dfee-11dd-a765-0030843d3802">
     <topic>imap-uw -- imap c-client buffer overflow</topic>
     <affects>
