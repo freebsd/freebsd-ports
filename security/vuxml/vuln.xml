@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="66a770b4-e008-11dd-a765-0030843d3802">
+    <topic>mysql -- empty bit-string literal denial of service</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.0</ge><lt>5.0.66</lt></range>
+	<range><ge>5.1</ge><lt>5.1.26</lt></range>
+	<range><ge>6.0</ge><lt>6.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MySQL reports:</p>
+	<blockquote cite="http://bugs.mysql.com/bug.php?id=35658">
+	  <p>The vulnerability is caused due to an error when processing an
+	    empty bit-string literal and can be exploited to crash the server via
+	    a specially crafted SQL statement.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3963</cvename>
+      <url>http://bugs.mysql.com/bug.php?id=35658</url>
+      <url>http://dev.mysql.com/doc/refman/5.0/en/releasenotes-es-5-0-66.html</url>
+      <url>http://dev.mysql.com/doc/refman/5.1/en/news-5-1-26.html</url>
+      <url>http://dev.mysql.com/doc/refman/6.0/en/news-6-0-6.html</url>
+      <url>http://secunia.com/advisories/31769</url>
+    </references>
+    <dates>
+      <discovery>2008-09-11</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c451386-dff3-11dd-a765-0030843d3802">
     <topic>mysql -- privilege escalation and overwrite of the system table information</topic>
     <affects>
