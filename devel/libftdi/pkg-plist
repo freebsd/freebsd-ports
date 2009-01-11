@@ -9,5 +9,5 @@ include/ftdi.h
 lib/libftdi.a
 lib/libftdi.la
 lib/libftdi.so
-lib/libftdi.so.10
+lib/libftdi.so.15
 libdata/pkgconfig/libftdi.pc
