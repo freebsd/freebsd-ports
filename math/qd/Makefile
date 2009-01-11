@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared=yes
 
 .include <bsd.port.post.mk>
