@@ -9,11 +9,11 @@ PORTNAME=	mtr
 PORTVERSION=	0.75
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
 		http://gd.tuwien.ac.at/infosys/network/tools/mtr/ \
-		http://mirrors.evolva.ro/util/mtr/
+		http://mirrors.evolva.ro/util/mtr/ \
+		http://sunpoet.net/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 USE_GMAKE=	yes
