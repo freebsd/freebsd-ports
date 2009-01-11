@@ -1904,6 +1904,7 @@
     SUBDIR += p5-Want
     SUBDIR += p5-WeakRef
     SUBDIR += p5-Workflow
+    SUBDIR += p5-XML-Compile-Tester
     SUBDIR += p5-XSLoader
     SUBDIR += p5-Yada-Yada-Yada
     SUBDIR += p5-ZML
