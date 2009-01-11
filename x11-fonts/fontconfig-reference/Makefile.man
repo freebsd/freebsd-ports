@@ -55,4 +55,4 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcStrSetMember.3 FcStrStr.3 FcStrStrIgnoreCase.3 FcToLower.3 \
 	FcUcs4ToUtf8.3 FcUtf16Len.3 FcUtf16ToUcs4.3 FcUtf8Len.3 \
 	FcUtf8ToUcs4.3 FcValueDestroy.3 FcValueEqual.3 FcValuePrint.3 \
-	FcValueSave.3
+	FcValueSave.3 FcStrDirname.3
