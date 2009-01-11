@@ -524,6 +524,7 @@
     SUBDIR += p5-GD-SVG
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-GD-Thumbnail
+    SUBDIR += p5-Geo-KML
     SUBDIR += p5-Geo-Point
     SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-Geometry-Primitive
