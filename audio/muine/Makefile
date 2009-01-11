@@ -61,6 +61,8 @@ post-patch:
 		${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|libmusicbrainz.so.4|libmusicbrainz.so|g' \
 		${WRKSRC}/src/muine.exe.config.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+	    	's|-DG.*_DISABLE_DEPRECATED||g'
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/muine/plugins

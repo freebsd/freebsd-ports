@@ -25,4 +25,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN6=	${PORTNAME}.6
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+	    	's|-DG.*_DISABLE_DEPRECATED||g'
+
 .include <bsd.port.mk>
