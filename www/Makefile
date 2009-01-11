@@ -69,6 +69,7 @@
     SUBDIR += c-icap
     SUBDIR += cacheboy
     SUBDIR += cacheboy15-devel
+    SUBDIR += cacheboy16
     SUBDIR += cadaver
     SUBDIR += cakephp
     SUBDIR += cakephp-devel
