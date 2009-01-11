@@ -37,6 +37,7 @@ PLIST_SUB=	VERSION="3.8"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
-	    	's|-DG_DISABLE_DEPRECATED[^[:space:]]+||g'
+		's|-DG_DISABLE_DEPRECATED[^[:space:]]+||g ; \
+	         s|-DG.*_DISABLE_DEPRECATED=1||g'
 
 .include <bsd.port.mk>
