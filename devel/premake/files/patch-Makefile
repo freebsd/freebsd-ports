@@ -1,0 +1,15 @@
+--- Makefile.old	2009-01-11 15:25:47.000000000 -0200
++++ Makefile	2009-01-11 15:25:56.000000000 -0200
+@@ -13,9 +13,9 @@
+ 
+ all: Premake
+ 
+-Makefile: premake.lua Src/premake.lua
+-	@echo ==== Regenerating Makefiles ====
+-	@premake --file $^ --clean --target gnu
++#Makefile: premake.lua Src/premake.lua
++#	@echo ==== Regenerating Makefiles ====
++#	@premake --file $^ --clean --target gnu
+ 
+ Premake:
+ 	@echo ==== Building Premake ====
