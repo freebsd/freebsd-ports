@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libftdi
-PORTVERSION=	0.10
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/de/produkte/opensource/ftdi/TGZ/
 
