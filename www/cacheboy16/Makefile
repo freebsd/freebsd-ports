@@ -75,13 +75,12 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	cacheboy
-DISTVERSION=	1.5.2
-PORTREVISION=	5
+DISTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	CACHEBOY_1.5.2
+DISTNAME=	cacheboy-1.6-r13563
 # EXTRACT_SUFX=	.tar.gz
-DIST_SUBDIR=	CACHEBOY_1.5.2
 
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Development Release
@@ -126,7 +125,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_KQUEUE "Use kqueue(2) instead of poll(2)" on \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
-		SQUID_STACKTRACES "Create backtraces on fatal errors" off
+		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
+		SQUID_TPROXY "Enable FreeBSD-current TPROXY support" off
 
 etc_files=	squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
@@ -329,6 +329,9 @@ CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
 CONFIGURE_ARGS+=	--enable-stacktraces
 CFLAGS+=	-g
 STRIP=
+.endif
+.if defined(WITH_SQUID_TPROXY)
+CONFIGURE_ARGS+=	--enable-freebsd-tproxy
 .endif
 
 # Languages:
