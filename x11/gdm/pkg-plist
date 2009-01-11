@@ -10,6 +10,8 @@ etc/gdm/Xsession
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
 etc/gdm/gdm.schemas
+etc/gdm/home/.gconf.path
+etc/gdm/home/.gconf.mandatory/%gconf-tree.xml
 etc/pam.d/gdm
 libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
 libexec/gdm-crash-logger
@@ -193,6 +195,7 @@ share/pixmaps/nohost.png
 @dirrm etc/gdm/PostSession
 @dirrm etc/gdm/PostLogin
 @dirrm etc/gdm/Init
+@dirrm etc/gdm/home/.gconf.mandatory
 @dirrmtry etc/gdm/home
 @dirrmtry etc/gdm
 @dirrmtry etc/dm/Sessions
