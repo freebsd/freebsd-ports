@@ -1,11 +1,17 @@
+include/gal.h
 include/gal_a2af.h
 include/gal_a2tf.h
+include/gal_accdrag.h
 include/gal_acch.h
 include/gal_accpm.h
+include/gal_accsrp.h
+include/gal_accsrps.h
 include/gal_anp.h
 include/gal_anpm.h
 include/gal_beapv87.h
 include/gal_bebpv87.h
+include/gal_bf2c.h
+include/gal_bf2me.h
 include/gal_bi00.h
 include/gal_bjupv87.h
 include/gal_bmapv87.h
@@ -19,12 +25,14 @@ include/gal_bsapv87.h
 include/gal_bsupv87.h
 include/gal_burpv87.h
 include/gal_bvepv87.h
+include/gal_c2bf.h
 include/gal_c2i00a.h
 include/gal_c2i00b.h
 include/gal_c2i06a.h
 include/gal_c2ibpn.h
 include/gal_c2ixy.h
 include/gal_c2ixys.h
+include/gal_c2me.h
 include/gal_c2radec.h
 include/gal_c2s.h
 include/gal_c2t00a.h
@@ -55,6 +63,9 @@ include/gal_dscom.h
 include/gal_dsinit.h
 include/gal_dspace.h
 include/gal_dtdb.h
+include/gal_ea2ta.h
+include/gal_eaadhp.h
+include/gal_eao.h
 include/gal_earthrot.h
 include/gal_ee00.h
 include/gal_ee00a.h
@@ -130,6 +141,7 @@ include/gal_gst06a.h
 include/gal_gst94.h
 include/gal_gsupv00.h
 include/gal_h2fk5.h
+include/gal_ha2ta.h
 include/gal_heapv87.h
 include/gal_hebpv87.h
 include/gal_hfk5z.h
@@ -143,6 +155,7 @@ include/gal_hurpv87.h
 include/gal_hvepv87.h
 include/gal_i2tpv00.h
 include/gal_ijk2pqw.h
+include/gal_illum.h
 include/gal_initsgp4p.h
 include/gal_insert.h
 include/gal_instr.h
@@ -159,8 +172,18 @@ include/gal_latlon2t_iers00.h
 include/gal_latlon2t_wgs72.h
 include/gal_latlon2t_wgs84.h
 include/gal_leftstr.h
+include/gal_ma2ea.h
+include/gal_ma2ha.h
+include/gal_mafms.h
+include/gal_maltst.h
+include/gal_masudat.h
 include/gal_math.h
+include/gal_me2bf.h
+include/gal_me2c.h
 include/gal_midstr.h
+include/gal_morotel00.h
+include/gal_morotel91.h
+include/gal_mtc2tt.h
 include/gal_num00a.h
 include/gal_num00b.h
 include/gal_num06a.h
@@ -184,6 +207,8 @@ include/gal_pb06.h
 include/gal_pdp.h
 include/gal_pfw06.h
 include/gal_plan94.h
+include/gal_plrotel00.h
+include/gal_plrotel91.h
 include/gal_pm.h
 include/gal_pmat00.h
 include/gal_pmat06.h
@@ -249,9 +274,11 @@ include/gal_s2pv.h
 include/gal_s2xpv.h
 include/gal_sepp.h
 include/gal_seps.h
+include/gal_sezm.h
 include/gal_sgp4.h
 include/gal_sgp4gm.h
 include/gal_sgp4init.h
+include/gal_sgp4rs.h
 include/gal_sgp4t.h
 include/gal_sp00.h
 include/gal_star.h
@@ -275,6 +302,9 @@ include/gal_t2latlon_iers00.h
 include/gal_t2latlon_wgs72.h
 include/gal_t2latlon_wgs84.h
 include/gal_t2latlonf.h
+include/gal_t2pa.h
+include/gal_ta2ea.h
+include/gal_ta2ha.h
 include/gal_tai2tt.h
 include/gal_tle.h
 include/gal_tlechksum.h
@@ -285,6 +315,7 @@ include/gal_triml.h
 include/gal_trimr.h
 include/gal_trxp.h
 include/gal_trxpv.h
+include/gal_tt2mtc.h
 include/gal_tu.h
 include/gal_ucase.h
 include/gal_uncanpv.h
@@ -304,6 +335,5 @@ lib/libgal.a
 lib/libgal.la
 lib/libgal.so
 lib/libgal.so.0
-%%DOCSDIR%%/MANUAL
 %%DOCSDIR%%/README
 @dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgal
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	astro hamradio
 MASTER_SITES=	http://homepage.mac.com/pclwillmott/GAL/ \
 		${MASTER_SITE_LOCAL}
