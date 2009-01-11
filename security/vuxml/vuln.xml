@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bd730827-dfe0-11dd-a765-0030843d3802">
+    <topic>libcdaudio -- remote buffer overflow and code execution</topic>
+    <affects>
+      <package>
+	<name>libcdaudio</name>
+	<range><lt>0.99.12p2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>securityfocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/32122/discuss">
+	  <p>The 'libcdaudio' library is prone to a remote heap code in the
+	    context of an application that uses the library. Failed attacks will
+	    cause denial-of-service conditions.</p>
+	</blockquote>
+	<blockquote cite="http://www.securityfocus.com/bid/12770/discuss">
+	  <p>A buffer-overflow in Grip occurs when the software processes a
+	    response to a CDDB query that has more than 16 matches.</p>
+	  <p>To exploit this issue, an attacker must be able to influence the
+	    response to a CDDB query, either by controlling a malicious CDDB
+	    server or through some other means. Successful exploits will allow
+	    arbitrary code to run.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5030</cvename>
+      <cvename>CVE-2005-0706</cvename>
+      <bid>32122</bid>
+      <bid>12770</bid>
+    </references>
+    <dates>
+      <discovery>2008-11-05</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c702944a-db0f-11dd-aa56-000bcdf0a03b">
     <topic>FreeBSD -- netgraph / bluetooth privilege escalation</topic>
     <affects>
