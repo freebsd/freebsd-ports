@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.3.pre12
+PORTVERSION=	1.4.3.pre13
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
   		http://cle.linux.org.tw/gcin/download/:main \
@@ -21,7 +21,7 @@ COMMENT=	A traditional chinese input utility in X
 CONFLICTS=	zh-gcin-[0-9]*
 NO_LATEST_LINK=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
+BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
 USE_GNOME=	gtk20
@@ -32,7 +32,8 @@ USE_LDCONFIG=	YES
 
 ONLY_FOR_ARCHS=	i386
 
-OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method" on \
+OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
+		BOSHIAMY	"enable Boshiamy Input Method" on \
 		QT_IM_MODULE	"enable QT IM module" on
 
 MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
@@ -42,6 +43,10 @@ MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 WRKSRC=		${WRKDIR}/gcin-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ANTHY)
+BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
+.endif
 
 .if defined(WITH_BOSHIAMY)
 MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
