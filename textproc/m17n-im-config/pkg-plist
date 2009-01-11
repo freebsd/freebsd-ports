@@ -1,0 +1,9 @@
+%%NLS%%share/locale/ja/LC_MESSAGES/m17n-im-config.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/m17n-im-config.mo
+bin/m17n-im-config
+include/m17n-im-config.h
+lib/libm17n-im-config.so.0
+lib/libm17n-im-config.so
+lib/libm17n-im-config.la
+lib/libm17n-im-config.a
+libdata/pkgconfig/m17n-im-config.pc
