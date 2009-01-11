@@ -39,3 +39,15 @@
  
  define_macros = []
  include_dirs  = []
+@@ -104,7 +104,10 @@
+             if flag[2:] not in include_dirs:
+                 include_dirs.append(flag[2:])
+         elif flag[:2] == "-D":
+-            t = tuple(flag[2:].split('='))
++            t = flag[2:].split('=')
++            if (len(t) == 1):
++                t.append('1')
++            t = tuple(t)
+             if t not in define_macros:
+                 define_macros.append(t)
+         else:
