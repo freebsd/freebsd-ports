@@ -8,6 +8,7 @@
 
 PORTNAME=	pessulus
 PORTVERSION=	2.24.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A lockdown editor for GNOME
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
+USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomedesktop
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
