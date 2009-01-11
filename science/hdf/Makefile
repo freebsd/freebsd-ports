@@ -33,7 +33,6 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
 #wiredness of F77, FC in hdf/src/Makefile
-CONFIGURE_ENV+=	F77="f77" FC="f77"
 MAKE_ENV+=	PATH="${WRKSRC}/bin:${PATH}"
 DOCFILES=	HDF41r5_SpecDG.pdf \
 		HDF42r0_RefMan.pdf \

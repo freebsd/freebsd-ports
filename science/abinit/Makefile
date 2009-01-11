@@ -16,7 +16,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Abinit calculates electronic structure of systems
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262

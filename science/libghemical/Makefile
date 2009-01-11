@@ -31,7 +31,6 @@ USE_LDCONFIG=   yes
 USE_FORTRAN=	yes
 USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS+=	--enable-mpqc --enable-openbabel --enable-mopac7 
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 

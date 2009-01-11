@@ -26,8 +26,6 @@ LIB_DEPENDS=	mpqc:${PORTSDIR}/science/mpqc \
 		mopac7:${PORTSDIR}/biology/mopac
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libglade2 pkgconfig
 USE_GL=		glut
