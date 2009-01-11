@@ -8,6 +8,7 @@
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.24.1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=--disable-nautilus
 .if !defined(WITHOUT_EPIPHANY)
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.23"
+PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.24"
 .else
 CONFIGURE_ARGS+=--disable-epiphany
 PLIST_SUB+=	EPHY="@comment "
