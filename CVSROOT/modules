@@ -3550,7 +3550,7 @@ freeciv-sounds                  ports/games/freeciv-sounds
 freecol                         ports/games/freecol
 freecolor                       ports/sysutils/freecolor
 freedbd                         ports/net/freedbd
-freedesktop-sound-theme		ports/audio/freedesktop-sound-theme
+freedesktop-sound-theme         ports/audio/freedesktop-sound-theme
 freedialog                      ports/misc/freedialog
 freedink                        ports/games/freedink
 freedink-data                   ports/games/freedink-data
@@ -4906,7 +4906,7 @@ hamachi                         ports/security/hamachi
 hamfax                          ports/comms/hamfax
 hamlib                          ports/comms/hamlib
 hammerhead                      ports/sysutils/hammerhead
-hamster-applet			ports/deskutils/hamster-applet
+hamster-applet                  ports/deskutils/hamster-applet
 hamsterdb                       ports/databases/hamsterdb
 handbrake                       ports/multimedia/handbrake
 hangman                         ports/games/hangman
@@ -7109,11 +7109,11 @@ libgda3-mysql                   ports/databases/libgda3-mysql
 libgda3-odbc                    ports/databases/libgda3-odbc
 libgda3-postgresql              ports/databases/libgda3-postgresql
 libgda3-reference               ports/databases/libgda3-reference
-libgda4				ports/databases/libgda4
-libgda4-mdb			ports/databases/libgda4-mdb
-libgda4-mysql			ports/databases/libgda4-mysql
-libgda4-postgresql		ports/databases/libgda4-postgresql
-libgda4-reference		ports/databases/libgda4-reference
+libgda4                         ports/databases/libgda4
+libgda4-mdb                     ports/databases/libgda4-mdb
+libgda4-mysql                   ports/databases/libgda4-mysql
+libgda4-postgresql              ports/databases/libgda4-postgresql
+libgda4-reference               ports/databases/libgda4-reference
 libgdamm                        ports/databases/libgdamm
 libgdgeda                       ports/graphics/libgdgeda
 libgdiplus                      ports/x11-toolkits/libgdiplus
@@ -8467,6 +8467,7 @@ mod_log_sql2-dtc                ports/www/mod_log_sql2-dtc
 mod_macro                       ports/www/mod_macro
 mod_macro2                      ports/www/mod_macro2
 mod_macro22                     ports/www/mod_macro22
+mod_memcache                    ports/www/mod_memcache
 mod_mp3                         ports/www/mod_mp3
 mod_musicindex                  ports/www/mod_musicindex
 mod_mya                         ports/www/mod_mya
@@ -11464,6 +11465,7 @@ p5-Math-Logic                   ports/math/p5-Math-Logic
 p5-Math-Matrix                  ports/math/p5-Math-Matrix
 p5-Math-NumberCruncher          ports/math/p5-Math-NumberCruncher
 p5-Math-Pari                    ports/math/p5-Math-Pari
+p5-Math-Polygon                 ports/math/p5-Math-Polygon
 p5-Math-Polynomial-Solve        ports/math/p5-Math-Polynomial-Solve
 p5-Math-Random                  ports/math/p5-Math-Random
 p5-Math-Random-MT               ports/math/p5-Math-Random-MT
@@ -14685,6 +14687,7 @@ p5-math-logic                   ports/math/p5-Math-Logic
 p5-math-matrix                  ports/math/p5-Math-Matrix
 p5-math-numbercruncher          ports/math/p5-Math-NumberCruncher
 p5-math-pari                    ports/math/p5-Math-Pari
+p5-math-polygon                 ports/math/p5-Math-Polygon
 p5-math-polynomial-solve        ports/math/p5-Math-Polynomial-Solve
 p5-math-random                  ports/math/p5-Math-Random
 p5-math-random-mt               ports/math/p5-Math-Random-MT
@@ -17343,6 +17346,7 @@ pipsv700-cups                   ports/print/pipsv700-cups
 pircbot                         ports/irc/pircbot
 pisg                            ports/irc/pisg
 pivot-weblog                    ports/www/pivot-weblog
+piwik                           ports/www/piwik
 pixelize                        ports/graphics/pixelize
 pixen                           ports/graphics/pixen
 pixie                           ports/graphics/pixie
@@ -17839,6 +17843,7 @@ ptkei                           ports/games/ptkei
 ptlink-ircd                     ports/irc/ptlink-ircd
 ptlink-services                 ports/irc/ptlink-services
 ptmalloc                        ports/devel/ptmalloc
+ptmalloc2                       ports/devel/ptmalloc2
 ptoc                            ports/lang/ptoc
 ptools                          ports/games/ptools
 ptop                            ports/databases/ptop
@@ -18270,6 +18275,7 @@ py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
 py-pychess                      ports/games/py-pychess
+py-pyclamd                      ports/mail/py-pyclamd
 py-pycrypto                     ports/security/py-pycrypto
 py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
@@ -20407,6 +20413,7 @@ squidclamav                     ports/security/squidclamav
 squidclients                    ports/www/squidclients
 squidguard                      ports/www/squidguard
 squidpurge                      ports/www/squidpurge
+squidstats                      ports/www/squidstats
 squidtimes                      ports/www/squidtimes
 squidview                       ports/www/squidview
 squirm                          ports/www/squirm
@@ -21195,6 +21202,7 @@ trac-customfieldadmin           ports/www/trac-customfieldadmin
 trac-customroadmap              ports/www/trac-customroadmap
 trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
+trac-fullblog                   ports/www/trac-fullblog
 trac-gantt                      ports/www/trac-gantt
 trac-hierwiki                   ports/www/trac-hierwiki
 trac-iniadmin                   ports/www/trac-iniadmin
@@ -21206,6 +21214,7 @@ trac-pagelist                   ports/www/trac-pagelist
 trac-pagetopdf                  ports/www/trac-pagetopdf
 trac-pendingticket              ports/www/trac-pendingticket
 trac-privatetickets             ports/www/trac-privatetickets
+trac-pydotorgtheme              ports/www/trac-pydotorgtheme
 trac-remind                     ports/www/trac-remind
 trac-restrictedarea             ports/www/trac-restrictedarea
 trac-revtree                    ports/www/trac-revtree
@@ -21213,6 +21222,7 @@ trac-robotstxt                  ports/www/trac-robotstxt
 trac-simpleticket               ports/www/trac-simpleticket
 trac-spam-filter                ports/www/trac-spam-filter
 trac-tags                       ports/www/trac-tags
+trac-themeengine                ports/www/trac-themeengine
 trac-ticketdelete               ports/www/trac-ticketdelete
 trac-tocmacro                   ports/www/trac-tocmacro
 trac-tweakui                    ports/www/trac-tweakui
@@ -21222,6 +21232,7 @@ trac-wikinegotiator             ports/www/trac-wikinegotiator
 trac-wikinotification           ports/www/trac-wikinotification
 trac-wikirename                 ports/www/trac-wikirename
 trac-wikitemplates              ports/www/trac-wikitemplates
+trac-wikitopdf                  ports/www/trac-wikitopdf
 trac-wysiwyg                    ports/www/trac-wysiwyg
 trac-xmlrpc                     ports/www/trac-xmlrpc
 trackballs                      ports/games/trackballs
@@ -21359,12 +21370,14 @@ twiki-ClassicSkin               ports/www/twiki-ClassicSkin
 twiki-CommentPlugin             ports/www/twiki-CommentPlugin
 twiki-EditTablePlugin           ports/www/twiki-EditTablePlugin
 twiki-EmptyPlugin               ports/www/twiki-EmptyPlugin
+twiki-GluePlugin                ports/www/twiki-GluePlugin
 twiki-InterwikiPlugin           ports/www/twiki-InterwikiPlugin
 twiki-JSCalendarContrib         ports/www/twiki-JSCalendarContrib
 twiki-LdapContrib               ports/www/twiki-LdapContrib
 twiki-LdapNgPlugin              ports/www/twiki-LdapNgPlugin
 twiki-MailerContrib             ports/www/twiki-MailerContrib
 twiki-MathModePlugin            ports/www/twiki-MathModePlugin
+twiki-NewUserPlugin             ports/www/twiki-NewUserPlugin
 twiki-PatternSkin               ports/www/twiki-PatternSkin
 twiki-PreferencesPlugin         ports/www/twiki-PreferencesPlugin
 twiki-RenderListPlugin          ports/www/twiki-RenderListPlugin
@@ -21388,12 +21401,14 @@ twiki-classicskin               ports/www/twiki-ClassicSkin
 twiki-commentplugin             ports/www/twiki-CommentPlugin
 twiki-edittableplugin           ports/www/twiki-EditTablePlugin
 twiki-emptyplugin               ports/www/twiki-EmptyPlugin
+twiki-glueplugin                ports/www/twiki-GluePlugin
 twiki-interwikiplugin           ports/www/twiki-InterwikiPlugin
 twiki-jscalendarcontrib         ports/www/twiki-JSCalendarContrib
 twiki-ldapcontrib               ports/www/twiki-LdapContrib
 twiki-ldapngplugin              ports/www/twiki-LdapNgPlugin
 twiki-mailercontrib             ports/www/twiki-MailerContrib
 twiki-mathmodeplugin            ports/www/twiki-MathModePlugin
+twiki-newuserplugin             ports/www/twiki-NewUserPlugin
 twiki-patternskin               ports/www/twiki-PatternSkin
 twiki-preferencesplugin         ports/www/twiki-PreferencesPlugin
 twiki-renderlistplugin          ports/www/twiki-RenderListPlugin
