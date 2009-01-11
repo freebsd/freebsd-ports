@@ -58,9 +58,15 @@
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.py
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.py
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.py
+%%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.py
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyo
@@ -74,6 +80,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.2.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.3.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.4.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-1.0.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
