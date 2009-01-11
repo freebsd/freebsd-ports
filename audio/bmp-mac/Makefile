@@ -27,6 +27,10 @@ PLUGDIR=	lib/bmp/Input
 PLUGFILE=	lib${PKGNAMEPREFIX}${PORTNAME}.so
 PLIST_FILES=	${PLUGDIR}/${PLUGFILE}
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PLUGFILE} ${PREFIX}/${PLUGDIR}/
 
