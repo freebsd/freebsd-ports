@@ -1,5 +1,5 @@
---- Makefile.orig	2008-11-19 22:52:22.000000000 +0300
-+++ Makefile	2008-11-24 14:48:47.000000000 +0300
+--- Makefile.orig	2008-12-31 03:42:35.000000000 +0300
++++ Makefile	2009-01-11 18:51:37.000000000 +0300
 @@ -2,13 +2,12 @@
  
  #append -DWITH_WIIUSE to compile with WIIUSE support!
@@ -11,8 +11,8 @@
  
  #append -lwiiuse to compile with WIIUSE support
  #remove -lSDL_mixer if compiling with -DNOSOUND
--LDFLAGS+=-lGL -lGLU `sdl-config --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
-+LDFLAGS+=-lGL -lGLU `${SDL_CONFIG} --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
+-LIBS+=-lGL -lGLU `sdl-config --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
++LIBS+=-lGL -lGLU `${SDL_CONFIG} --libs` -lSDL_image -lSDL_ttf -lSDL_mixer
  
  SOURCES=main.cpp 
  OBJECTS=$(SOURCES:.cpp=.o)

@@ -143,6 +143,34 @@ bin/sdl-ball
 %%DATADIR%%/default/snd/po-hit-border.ogg
 %%DATADIR%%/default/snd/shot.ogg
 %%DATADIR%%/default/snd/start.ogg
+%%DATADIR%%/dio-sound-theme/readme
+%%DATADIR%%/dio-sound-theme/snd/ball-hit-border.ogg
+%%DATADIR%%/dio-sound-theme/snd/ball-hit-paddle.ogg
+%%DATADIR%%/dio-sound-theme/snd/buy-powerup.ogg
+%%DATADIR%%/dio-sound-theme/snd/cement-brick-hit.ogg
+%%DATADIR%%/dio-sound-theme/snd/die.ogg
+%%DATADIR%%/dio-sound-theme/snd/doom-brick-break.ogg
+%%DATADIR%%/dio-sound-theme/snd/evil-po-hit-paddle.ogg
+%%DATADIR%%/dio-sound-theme/snd/expl-brick-break.ogg
+%%DATADIR%%/dio-sound-theme/snd/gameover.ogg
+%%DATADIR%%/dio-sound-theme/snd/glass-brick-break.ogg
+%%DATADIR%%/dio-sound-theme/snd/glass-brick-hit.ogg
+%%DATADIR%%/dio-sound-theme/snd/glue-ball-hit-paddle.ogg
+%%DATADIR%%/dio-sound-theme/snd/good-po-hit-paddle.ogg
+%%DATADIR%%/dio-sound-theme/snd/highscore.ogg
+%%DATADIR%%/dio-sound-theme/snd/invisible-brick-appear.ogg
+%%DATADIR%%/dio-sound-theme/snd/menuclick.ogg
+%%DATADIR%%/dio-sound-theme/snd/nextlevel.ogg
+%%DATADIR%%/dio-sound-theme/snd/norm-brick-breaka.ogg
+%%DATADIR%%/dio-sound-theme/snd/norm-brick-breakb.ogg
+%%DATADIR%%/dio-sound-theme/snd/norm-brick-breakc.ogg
+%%DATADIR%%/dio-sound-theme/snd/norm-brick-breakd.ogg
+%%DATADIR%%/dio-sound-theme/snd/norm-brick-breake.ogg
+%%DATADIR%%/dio-sound-theme/snd/po-hit-border.ogg
+%%DATADIR%%/dio-sound-theme/snd/shot.ogg
+%%DATADIR%%/dio-sound-theme/snd/start.ogg
+@dirrm %%DATADIR%%/dio-sound-theme/snd
+@dirrm %%DATADIR%%/dio-sound-theme
 @dirrm %%DATADIR%%/default/snd
 @dirrm %%DATADIR%%/default/gfx/title
 @dirrm %%DATADIR%%/default/gfx/powerup
