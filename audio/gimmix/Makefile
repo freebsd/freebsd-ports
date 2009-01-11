@@ -23,6 +23,8 @@ USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 
+BROKEN=	needs update for new intltool
+
 post-patch:
 	${LN} -sf ${LOCALBASE}/share/intltool/intltool-update.in ${WRKSRC}/intltool-update.in
 	${LN} -sf ${LOCALBASE}/share/intltool/intltool-merge.in ${WRKSRC}/intltool-merge.in
