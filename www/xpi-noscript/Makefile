@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	1.8
-DISTVERSIONSUFFIX=	-fx+mz+sm
+PORTVERSION=	1.8.8.8
+DISTVERSIONSUFFIX=	-fx+sm+fn
 CATEGORIES=	www
 
 MAINTAINER=	yasu@utahime.org
