@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	devel audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -23,7 +23,7 @@ MAKE_ENV=	MKDIR="${MKDIR}" INLINE_VER="${INLINE_VER}"
 MAKEFILE=	Makefile.BSD
 USE_LDCONFIG=	yes
 
-INLINE_VER=	1.2.8
+INLINE_VER=	1.4.0
 
 do-configure:
 	@${DO_NADA}
