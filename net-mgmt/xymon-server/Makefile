@@ -73,7 +73,7 @@ do-configure:
 pre-install:
 	if ! pw groupshow ${BBUSER}; then pw groupadd ${BBUSER} -g 280; fi
 	if ! pw usershow ${BBUSER}; then pw useradd ${BBUSER} -g ${BBUSER} -u 280 \
-		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+		-h - -d ${WWWDIR} -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
 
 post-install:
 .for i in ${FIXME1}
