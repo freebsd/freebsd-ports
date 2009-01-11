@@ -281,7 +281,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::i18n.3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-WITH_OPENSSL_BETA=	yes
 PERL_CONFIGURE=	5.8.6+
 
 OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
@@ -292,6 +291,13 @@ OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
 # compile the collection into HTML or PDF forms.
 # If you want to read OpenXPKI documentation, these tools are not needed.
 # Just visit http://www.openxpki.org/docs/
+
+.include <bsd.port.options.mk>
+
+# needs openssl 0.9.8
+.if ${OSVERSION} < 700019
+WITH_OPENSSL_PORT=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
