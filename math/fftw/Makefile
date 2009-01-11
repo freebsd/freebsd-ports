@@ -61,4 +61,7 @@ post-install:
 .endif
 .endif
 
+regression-test: build
+	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
 .include <bsd.port.post.mk>
