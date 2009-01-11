@@ -39,6 +39,8 @@ lib/brasero/plugins/libbrasero-vob.la
 lib/brasero/plugins/libbrasero-vob.so
 lib/brasero/plugins/libbrasero-wodim.la
 lib/brasero/plugins/libbrasero-wodim.so
+lib/nautilus/extensions-2.0/libnautilus-brasero-extension.la
+lib/nautilus/extensions-2.0/libnautilus-brasero-extension.so
 share/applications/brasero.desktop
 share/applications/brasero-copy-medium.desktop
 share/applications/brasero-open-image.desktop

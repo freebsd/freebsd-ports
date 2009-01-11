@@ -7,6 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
