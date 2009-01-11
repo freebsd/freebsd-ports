@@ -7,6 +7,7 @@
 
 PORTNAME=	urjtag
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -45,7 +46,7 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 
 .if !defined(WITHOUT_FTDI)
 CONFIGURE_ARGS+=	--with-libftdi
-LIB_DEPENDS+=	ftdi.10:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=	ftdi.15:${PORTSDIR}/devel/libftdi
 .endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
