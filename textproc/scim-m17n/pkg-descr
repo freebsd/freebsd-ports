@@ -1,3 +1,7 @@
-This is a SCIM IMEngine module which uses m17n library as the backend.
+This is a SCIM IMEngine module which uses m17n library as the backend. It
+allows you to use keyboard layouts available via devel/m17n-db and
+textproc/m17n-contrib through standard SCIM interface. m17n-lib currently
+supports input of more than 60 languages with more than 70 language
+specific input methods.
 
 WWW: http://www.scim-im.org/
