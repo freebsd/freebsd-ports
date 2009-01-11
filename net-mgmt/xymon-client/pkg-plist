@@ -1,5 +1,5 @@
 @exec if ! pw groupshow %%BBUSER%% 2>/dev/null; then pw groupadd %%BBUSER%% -g 280; fi
-@exec if ! pw usershow %%BBUSER%% 2>/dev/null; then pw useradd %%BBUSER%% -g %%BBUSER%% -u 280 -h - -d /nonexistent -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+@exec if ! pw usershow %%BBUSER%% 2>/dev/null; then pw useradd %%BBUSER%% -g %%BBUSER%% -u 280 -h - -d %%WWWDIR%% -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
 @unexec if pw usershow %%BBUSER%%; then pw userdel %%BBUSER%%; fi
 %%WWWDIR%%/client/bin/bb
 %%WWWDIR%%/client/bin/bbcmd
