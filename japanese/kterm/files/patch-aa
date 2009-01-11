@@ -1,5 +1,5 @@
---- Imakefile.orig	Sun Dec 13 16:59:08 1998
-+++ Imakefile	Sun Dec 13 17:37:16 1998
+--- Imakefile.orig	2009-01-12 06:30:54.603258900 +0900
++++ Imakefile	2009-01-12 06:45:23.991164903 +0900
 @@ -13,6 +13,17 @@
        XPOLL_DEF = -DNO_XPOLL_H
  #endif
@@ -18,3 +18,12 @@
  /*
   * add -DWTMP and -DLASTLOG if you want them.
   */
+@@ -72,7 +83,7 @@
+ #endif
+ #endif
+ 
+-     TERMCAPLIB = TermcapLibrary
++     TERMCAPLIB = TermcapLibrary -lutil
+ 
+ AllTarget($(PROGRAMS))
+ 
