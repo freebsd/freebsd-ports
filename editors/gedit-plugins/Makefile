@@ -8,6 +8,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.22.5
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnomeprefix intlhack
+USE_GNOME=	gnomehack gnomeprefix intlhack gnomevfs2
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
