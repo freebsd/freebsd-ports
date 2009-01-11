@@ -52,7 +52,6 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 
 #lapack++ forces to use atlas when detected, so we should disable here.
 CONFIGURE_ARGS+=	--with-blas="${BLAS_LIB}" --with-lapack="${LAPACK_LIB}" --disable-atlas
-CONFIGURE_ENV+=		FC="${FC}" F77="${F77}"
 
 do-install:
 	@(cd ${WRKSRC} ; ${GMAKE} install)
