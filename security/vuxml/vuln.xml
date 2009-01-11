@@ -122,7 +122,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://bugs.mysql.com/bug.php?id=27515</url>
     </references>
     <dates>
-      <discovery>2007-05-2007</discovery>
+      <discovery>2007-05-14</discovery>
       <entry>2009-01-11</entry>
     </dates>
   </vuln>
