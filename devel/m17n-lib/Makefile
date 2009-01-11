@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
+MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A library for the multilingual text handling
 
 BUILD_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
@@ -22,9 +22,9 @@ RUN_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
 
 USE_XORG=	xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
-USE_AUTOTOOLS=	autoconf:262 libtool:15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_LDCONFIG=	yes
 
 OPTIONS=	ANTHY	"With Anthy support" off \

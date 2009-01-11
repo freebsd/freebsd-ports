@@ -1,3 +1,5 @@
-This package contains the data files for the m17n library.
+This package contains the data files for the m17n library. m17n-lib
+currently supports input of more than 60 languages with more than 70
+language specific input methods.
 
 WWW: http://www.m17n.org/m17n-lib/
