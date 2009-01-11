@@ -7,7 +7,7 @@
 
 PORTNAME=	URI_Template
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
@@ -16,7 +16,7 @@ COMMENT=	Parser for URI Templates
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-CATAGORY=	URI
+CATEGORY=	URI
 FILES=		Template.php
 TESTS=		AllTests.php
 
