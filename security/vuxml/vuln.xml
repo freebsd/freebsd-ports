@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="69a20ce4-dfee-11dd-a765-0030843d3802">
+    <topic>imap-uw -- imap c-client buffer overflow</topic>
+    <affects>
+      <package>
+	<name>imap-uw</name>
+	<range><lt>2007e</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SANS reports:</p>
+	<blockquote cite="http://www.washington.edu/imap/documentation/RELNOTES.html">
+	  <p>The University of Washington IMAP library is a library implementing
+	    the IMAP mail protocol. University of Washington IMAP is exposed to a
+	    buffer overflow issue that occurs due to a boundary error within the
+	    rfc822_output_char function in the c-client library. The University of
+	    Washington IMAP library versions prior to 2007e are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.washington.edu/imap/documentation/RELNOTES.html</url>
+    </references>
+    <dates>
+      <discovery>2008-12-16</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a6713190-dfea-11dd-a765-0030843d3802">
     <topic>imap-uw -- local buffer overflow vulnerabilities</topic>
     <affects>
