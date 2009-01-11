@@ -18,7 +18,7 @@ MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework creating UML diagrams in Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.4.v200710030400/feature.xml:${PORTSDIR}/java/eclipse-emf
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
