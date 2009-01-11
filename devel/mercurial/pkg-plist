@@ -35,7 +35,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyo
-%%PYTHON_SITELIBDIR%%/hgext/convert/cvsps
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvsps.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvsps.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvsps.pyo
@@ -90,12 +89,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/imerge.py
 %%PYTHON_SITELIBDIR%%/hgext/imerge.pyc
 %%PYTHON_SITELIBDIR%%/hgext/imerge.pyo
-%%PYTHON_SITELIBDIR%%/hgext/inotify/__init__.py
-%%PYTHON_SITELIBDIR%%/hgext/inotify/__init__.pyc
-%%PYTHON_SITELIBDIR%%/hgext/inotify/__init__.pyo
-%%PYTHON_SITELIBDIR%%/hgext/inotify/inotify.py
-%%PYTHON_SITELIBDIR%%/hgext/inotify/inotify.pyc
-%%PYTHON_SITELIBDIR%%/hgext/inotify/inotify.pyo
 %%PYTHON_SITELIBDIR%%/hgext/interhg.py
 %%PYTHON_SITELIBDIR%%/hgext/interhg.pyc
 %%PYTHON_SITELIBDIR%%/hgext/interhg.pyo
