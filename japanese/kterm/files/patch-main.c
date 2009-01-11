@@ -1,5 +1,5 @@
---- main.c.orig	Wed Jun 21 15:49:06 2006
-+++ main.c	Wed Jun 21 15:50:17 2006
+--- main.c.orig	2009-01-12 06:02:34.419192340 +0900
++++ main.c	2009-01-12 06:29:01.427571571 +0900
 @@ -210,7 +210,9 @@
  #undef FIOCLEX
  #undef FIONCLEX
@@ -19,7 +19,18 @@
  #include <sgtty.h>
  #endif
  #include <sys/resource.h>
-@@ -1355,6 +1357,8 @@
+@@ -319,6 +321,10 @@
+ int	Ptyfd;
+ #endif /* PUCC_PTYD */
+ 
++#ifdef __FreeBSD__
++#include <libutil.h>	/* openpty() */
++#endif
++
+ #ifdef sequent
+ #define USE_GET_PSEUDOTTY
+ #endif
+@@ -1355,6 +1361,8 @@
  	d_tio.c_cc[VDISCARD] = CFLUSH;
  	d_tio.c_cc[VWERASE] = CWERASE;
  	d_tio.c_cc[VLNEXT] = CLNEXT;
@@ -28,7 +39,7 @@
  #endif /* } */
  #ifdef TIOCSLTC /* { */
          d_ltc.t_suspc = CSUSP;		/* t_suspc */
-@@ -1403,6 +1407,8 @@
+@@ -1403,6 +1411,8 @@
  	d_tio.c_cc[VQUIT] = CQUIT;		/* '^\'	*/
      	d_tio.c_cc[VEOF] = CEOF;		/* '^D'	*/
  	d_tio.c_cc[VEOL] = CEOL;		/* '^@'	*/
@@ -37,3 +48,22 @@
  #ifdef VSWTCH
  	d_tio.c_cc[VSWTCH] = CSWTCH;            /* usually '^Z' */
  #endif
+@@ -1963,6 +1973,10 @@
+ get_pty (pty)
+     int *pty;
+ {
++#if 1
++    int tty;
++    return (openpty(pty, &tty, ttydev, NULL, NULL));
++#else
+ #ifdef __osf__
+     int tty;
+     return (openpty(pty, &tty, ttydev, NULL, NULL));
+@@ -2066,6 +2080,7 @@
+ #endif /* __sgi or umips else */
+ #endif /* USE_GET_PSEUDOTTY else */
+ #endif /* ATT else */
++#endif /* !0 */
+ }
+ 
+ /*
