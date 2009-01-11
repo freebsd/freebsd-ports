@@ -7,9 +7,9 @@ LOCALCLIENT = no
 # configure settings for Hobbit
 #
 # Toplevel dir
-BBTOPDIR = ${PREFIX}/www/hobbit
+BBTOPDIR = ${PREFIX}/www/xymon
 # Server home dir for etc/, www/
-BBHOME = ${PREFIX}/www/hobbit/client
+BBHOME = ${PREFIX}/www/xymon/client
 
 # hobbit settings follows
 #

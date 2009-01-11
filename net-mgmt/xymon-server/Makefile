@@ -1,13 +1,12 @@
-# New ports collection makefile for:    hobbit-server
+# New ports collection makefile for:    xymon-server
 # Date created:         24 Jan 2008
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	hobbit
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTNAME=	xymon
+PORTVERSION=	4.2.2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hobbitmon
@@ -44,7 +43,7 @@ FIXME1=	bb-hosts hobbit-alerts.cfg hobbit-clients.cfg bbcombotest.cfg
 
 MAN1 =	bb-ack.cgi.1 bb-csvinfo.cgi.1 bb-datepage.cgi.1 bb-eventlog.cgi.1 \
 	bb-findhost.cgi.1 bb-hist.cgi.1 bb-rep.cgi.1 bb-replog.cgi.1 \
-	bb-snapshot.cgi.1 bb-webpage.1 bb.1 bbcmd.1 bbcombotest.1 bbdigest.1 \
+	bb-snapshot.cgi.1 bb-webpage.cgi.1 bb.1 bbcmd.1 bbcombotest.1 bbdigest.1 \
 	bbgen.1 bbhostgrep.1 bbhostshow.1 bbretest-net.sh.1 bbtest-net.1 \
 	clientupdate.1 hobbit-ackinfo.cgi.1 hobbit-confreport.cgi.1 \
 	hobbit-ghosts.cgi.1 hobbit-hostgraphs.cgi.1 hobbit-nkedit.cgi.1 \
@@ -54,7 +53,7 @@ MAN5=	bb-hosts.5 bb-services.5 bbcombotest.cfg.5 client-local.cfg.5 \
 	clientlaunch.cfg.5 hobbit-alerts.cfg.5 hobbit-clients.cfg.5 \
 	hobbit-nkview.cfg.5 hobbitcgi.cfg.5 hobbitclient.cfg.5 \
 	hobbitgraph.cfg.5 hobbitlaunch.cfg.5 hobbitserver.cfg.5 hobbitweb.5
-MAN7=	hobbit.7
+MAN7=	xymon.7
 MAN8=	bbmessage.cgi.8 bbproxy.8 hobbit-enadis.cgi.8 hobbit-mailack.8 \
 	hobbitd.8 hobbitd_alert.8 hobbitd_channel.8 hobbitd_client.8 \
 	hobbitd_filestore.8 hobbitd_history.8 hobbitd_hostdata.8 \
@@ -76,6 +75,7 @@ pre-install:
 		-h - -d ${WWWDIR} -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
 
 post-install:
+	-${MKDIR} ${WWWDIR}/server/etc
 .for i in ${FIXME1}
 	${INSTALL_DATA} ${WRKSRC}/hobbitd/etcfiles/${i} ${WWWDIR}/server/etc/${i}-dist
 .endfor

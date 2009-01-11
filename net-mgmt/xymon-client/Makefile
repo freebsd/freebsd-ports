@@ -1,13 +1,12 @@
-# New ports collection makefile for:    hobbit-client
+# New ports collection makefile for:    xymon-client
 # Date created:         24 Jan 2008
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	hobbit
-PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTNAME=	xymon
+PORTVERSION=	4.2.2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hobbitmon
