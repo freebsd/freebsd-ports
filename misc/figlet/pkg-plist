@@ -60,6 +60,6 @@ share/figlet/upper.flc
 share/figlet/ushebrew.flc
 share/figlet/uskata.flc
 share/figlet/utf8.flc
+@dirrm share/figlet
 %%PORTDOCS%%%%DOCSDIR%%/figfont.txt
-%%PORTDOCS%%@dirrm share/figlet
 %%PORTDOCS%%@dirrm share/doc/figlet
