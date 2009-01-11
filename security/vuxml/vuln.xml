@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a02c9595-e018-11dd-a765-0030843d3802">
+    <topic>pdfjam -- insecure temporary files</topic>
+    <affects>
+      <package>
+	<name>pdfjam</name>
+	<range><lt>1.20_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33278">
+	  <p>Some security issues have been reported in PDFjam, which can be
+	    exploited by malicious, local users to perform certain actions with
+	    escalated privileges.</p>
+	  <p>The security issues are caused due to the "pdf90", "pdfjoin", and
+	    "pdfnup" scripts using temporary files in an insecure manner. This can
+	    be exploited to overwrite arbitrary files via symlink attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5743</cvename>
+      <url>https://bugzilla.novell.com/show_bug.cgi?id=459031</url>
+      <url>http://secunia.com/advisories/33278</url>
+    </references>
+    <dates>
+      <discovery>2008-12-05</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58997463-e012-11dd-a765-0030843d3802">
     <topic>verlihub -- insecure temporary file usage and arbitrary command execution</topic>
     <affects>
