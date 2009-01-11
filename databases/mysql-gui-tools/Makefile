@@ -78,6 +78,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-llualib||g' ${WRKSRC}/mysql-gui-common/configure \
 	    ${WRKSRC}/mysql-gui-common/source/php/Makefile \
 	    ${WRKSRC}/mysql-gui-common/source/php/modules/Makefile
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+	    	's|-DG.*_DISABLE_DEPRECATED||g'
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e '/^SUBDIRS/s|po||' \
 	    ${WRKSRC}/mysql-gui-common/Makefile.am \
