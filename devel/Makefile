@@ -180,7 +180,6 @@
     SUBDIR += codeblocks
     SUBDIR += codeville
     SUBDIR += codeworker
-    SUBDIR += cogito
     SUBDIR += colorer
     SUBDIR += commoncpp
     SUBDIR += compiz-bcop

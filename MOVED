@@ -3740,3 +3740,4 @@ accessibility/gail|x11-toolkits/gtk20|2009-01-10|Now included with Gtk20
 accessibility/gail-reference|x11-toolkits/gtk20-reference|2009-01-10|Now included with Gtk20
 x11/fast-user-switch-applet|x11/gdm|2009-01-10|This is now part of GDM
 net-mgmt/bsnmpd||2009-01-10|Part of the base system since FreeBSD 6.0
+devel/cogito||2009-01-11|Broken and abandoned by upstream
