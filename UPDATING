@@ -17,9 +17,12 @@ upgrades.
 
   Portupgrade users:
     # pkgdb -Ff
+    (Answer "yes" to unregister gail while keeping gtk20.)
+    (Answer "yes" to unregister fast-user-switch-applet while keeping gdm.)
+
     # pkg_deinstall -fO gtkmm-2.12\*
     # portupgrade -aOW
-    # portupgrade gnome-session
+    # portupgrade -f gnome-session
 
   Portmaster users:
     # pkg_delete -f gtkmm-2.12\*
