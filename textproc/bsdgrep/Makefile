@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20081226
+PORTVERSION=	20090111
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -29,7 +29,8 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls"
 
-OPTIONS=	NLS	"Compile with NLS support"	on
+OPTIONS=	NLS	"Compile with NLS support"	on \
+		GNU_COMPAT	"Use GNU regex library (recommended)"	on
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +39,10 @@ MAKE_ENV+=	WITHOUT_NLS=yes
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_GNU_COMPAT)
+MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
 .endif
 
 post-install:
