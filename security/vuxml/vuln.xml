@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a6713190-dfea-11dd-a765-0030843d3802">
+    <topic>imap-uw -- local buffer overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>imap-uw</name>
+	<range><lt>2007d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SANS reports:</p>
+	<blockquote cite="http://www.sans.org/newsletters/risk/display.php?v=7&amp;i=45#08.45.22">
+	  <p>University of Washington "tmail" and "dmail" are mail deliver
+	    agents. "tmail" and "dmail" are exposed to local buffer overflow
+	    issues because they fail to perform adequate boundary checks on
+	    user-supplied data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.washington.edu/imap/documentation/RELNOTES.html</url>
+      <url>http://www.sans.org/newsletters/risk/display.php?v=7&amp;i=45#08.45.22</url>
+    </references>
+    <dates>
+      <discovery>2008-10-29</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd730827-dfe0-11dd-a765-0030843d3802">
     <topic>libcdaudio -- remote buffer overflow and code execution</topic>
     <affects>
