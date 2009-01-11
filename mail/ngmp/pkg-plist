@@ -16,10 +16,7 @@
 %%WWWDIR%%/conf/exim/configure
 %%WWWDIR%%/conf/etc/php.ini
 %%WWWDIR%%/conf/etc/rc.conf.ngmp
-%%WWWDIR%%/conf/sql/empty.sh
 %%WWWDIR%%/conf/sql/ngmp.sql
-%%WWWDIR%%/conf/sql/testdata.sh
-%%WWWDIR%%/conf/sql/testdata.sql
 %%WWWDIR%%/conf/sql/user.mail.sql
 %%WWWDIR%%/docs/README
 %%WWWDIR%%/docs/license/license-zh_cn.txt
