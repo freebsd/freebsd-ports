@@ -1,0 +1,27 @@
+startup:
+
+default:
+	load l2tp
+
+l2tp:
+	create bundle static Bl2tp
+	set bundle no ipcp
+	set bundle enable ipv6cp
+	set iface idle 0
+	set iface up-script %%PREFIX%%/%%CONF_DIR%%/linkup.sh
+	set iface down-script %%PREFIX%%/%%CONF_DIR%%/linkdown.sh
+	#set iface route ::/0
+
+	create link static Ll2tp l2tp
+	set link action bundle Bl2tp
+	set link no acfcomp protocomp
+	set link disable pap chap
+	set link accept chap
+	set link keep-alive 15 60
+	set link max-redial 0
+	set link mtu 1390
+	set link mru 1390
+	set l2tp peer %%FIXED_SERVER%%
+	set l2tp hostname %%PPP_ID%%
+	set auth authname %%PPP_ID%%
+	open
