@@ -5,15 +5,15 @@ BUILDTOPDIR=`pwd`
 # configure settings for Hobbit
 #
 # Toplevel dir
-BBTOPDIR = ${PREFIX}/www/hobbit
+BBTOPDIR = ${PREFIX}/www/xymon
 # Server home dir for etc/, bin/
-BBHOME = ${PREFIX}/www/hobbit/server
+BBHOME = ${PREFIX}/www/xymon/server
 # Server data dir for hist/ etc.
-BBVAR = ${PREFIX}/www/hobbit/data
+BBVAR = ${PREFIX}/www/xymon/data
 # CGI scripts go in CGIDIR
-CGIDIR = ${PREFIX}/www/hobbit/cgi-bin
+CGIDIR = ${PREFIX}/www/xymon/cgi-bin
 # Admin CGI scripts go in SECURECGIDIR
-SECURECGIDIR = ${PREFIX}/www/hobbit/cgi-secure
+SECURECGIDIR = ${PREFIX}/www/xymon/cgi-secure
 # Where to put logfiles
 BBLOGDIR = /var/log/hobbit
 # Where to install manpages

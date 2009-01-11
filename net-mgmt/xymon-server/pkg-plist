@@ -13,12 +13,14 @@
 %%WWWDIR%%/cgi-bin/bb-snapshot.sh
 %%WWWDIR%%/cgi-bin/hobbit-certreport.sh
 %%WWWDIR%%/cgi-bin/hobbit-confreport.sh
+%%WWWDIR%%/cgi-bin/hobbit-confreport-critical.sh
 %%WWWDIR%%/cgi-bin/hobbit-ghosts.sh
 %%WWWDIR%%/cgi-bin/hobbit-hostgraphs.sh
 %%WWWDIR%%/cgi-bin/hobbit-nkview.sh
 %%WWWDIR%%/cgi-bin/hobbit-nongreen.sh
 %%WWWDIR%%/cgi-bin/hobbitcolumn.sh
 %%WWWDIR%%/cgi-bin/hobbitgraph.sh
+%%WWWDIR%%/cgi-bin/hobbit-notifylog.sh
 %%WWWDIR%%/cgi-secure/bb-ack.sh
 %%WWWDIR%%/cgi-secure/hobbit-ackinfo.sh
 %%WWWDIR%%/cgi-secure/hobbit-enadis.sh
@@ -45,6 +47,7 @@
 %%WWWDIR%%/server/bin/bbtest-net
 %%WWWDIR%%/server/bin/beastat
 %%WWWDIR%%/server/bin/boilerplate.cgi
+%%WWWDIR%%/server/bin/convertnk
 %%WWWDIR%%/server/bin/hobbit-ackinfo.cgi
 %%WWWDIR%%/server/bin/hobbit-confreport.cgi
 %%WWWDIR%%/server/bin/hobbit-enadis.cgi
@@ -53,6 +56,7 @@
 %%WWWDIR%%/server/bin/hobbit-mailack
 %%WWWDIR%%/server/bin/hobbit-nkedit.cgi
 %%WWWDIR%%/server/bin/hobbit-nkview.cgi
+%%WWWDIR%%/server/bin/hobbit-notifylog.cgi
 %%WWWDIR%%/server/bin/hobbit-statusreport.cgi
 %%WWWDIR%%/server/bin/hobbit.sh
 %%WWWDIR%%/server/bin/hobbitd
@@ -171,6 +175,9 @@
 %%WWWDIR%%/server/web/nkedit_footer
 %%WWWDIR%%/server/web/nkedit_form
 %%WWWDIR%%/server/web/nkedit_header
+%%WWWDIR%%/server/web/notify_footer
+%%WWWDIR%%/server/web/notify_form
+%%WWWDIR%%/server/web/notify_header
 %%WWWDIR%%/server/web/replog_footer
 %%WWWDIR%%/server/web/replog_header
 %%WWWDIR%%/server/web/report_footer
@@ -258,7 +265,7 @@
 %%WWWDIR%%/server/www/help/manpages/man1/bb-rep.cgi.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/bb-replog.cgi.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/bb-snapshot.cgi.1.html
-%%WWWDIR%%/server/www/help/manpages/man1/bb-webpage.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-webpage.cgi.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/bb.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/bbcmd.1.html
 %%WWWDIR%%/server/www/help/manpages/man1/bbcombotest.1.html
@@ -295,7 +302,7 @@
 %%WWWDIR%%/server/www/help/manpages/man5/hobbitlaunch.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/hobbitserver.cfg.5.html
 %%WWWDIR%%/server/www/help/manpages/man5/hobbitweb.5.html
-%%WWWDIR%%/server/www/help/manpages/man7/hobbit.7.html
+%%WWWDIR%%/server/www/help/manpages/man7/xymon.7.html
 %%WWWDIR%%/server/www/help/manpages/man8/bbmessage.cgi.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/bbproxy.8.html
 %%WWWDIR%%/server/www/help/manpages/man8/hobbit-enadis.cgi.8.html

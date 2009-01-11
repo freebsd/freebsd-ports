@@ -15,12 +15,12 @@ load_rc_config "$name"
 : ${hobbit_client_enable:="NO"}
 : ${hobbit_client_flags:=""}
 
-command="%%PREFIX%%/www/hobbit/client/runclient.sh"
-start_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} start"
-stop_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} stop"
-status_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} status"
-reload_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} restart"
-pidfile="%%PREFIX%%/www/hobbit/client/logs/clientlaunch.`hostname`.pid"
+command="%%PREFIX%%/www/xymon/client/runclient.sh"
+start_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${hobbit_client_flags} start"
+stop_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${hobbit_client_flags} stop"
+status_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${hobbit_client_flags} status"
+reload_cmd="%%PREFIX%%/www/xymon/client/runclient.sh ${hobbit_client_flags} restart"
+pidfile="%%PREFIX%%/www/xymon/client/logs/clientlaunch.`hostname`.pid"
 
 run_rc_command "$1"
 # eof
