@@ -7,7 +7,7 @@
 
 PORTNAME=	libcdaudio
 PORTVERSION=	0.99.12p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	A library for playing audio CDs
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
