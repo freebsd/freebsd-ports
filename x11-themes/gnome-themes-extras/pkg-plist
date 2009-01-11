@@ -366,6 +366,7 @@ share/icons/Foxtrot/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
 share/icons/Foxtrot/scalable/places/gnome-stock-trash.svg
 share/icons/Foxtrot/scalable/places/gtk-directory.svg
 share/icons/Foxtrot/scalable/places/gtk-network.svg
+share/icons/Foxtrot/scalable/places/inode-directory.svg
 share/icons/Foxtrot/scalable/places/network-workgroup.svg
 share/icons/Foxtrot/scalable/places/network.svg
 share/icons/Foxtrot/scalable/places/network_local.svg
@@ -528,6 +529,8 @@ share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-php.png
 share/icons/Gion/128x128/mimetypes/gnome-mime-application-x-python-bytecode.png
@@ -604,6 +607,7 @@ share/icons/Gion/128x128/places/gnome-fs-trash-empty.png
 share/icons/Gion/128x128/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/128x128/places/gnome-stock-trash.png
 share/icons/Gion/128x128/places/gtk-directory.png
+share/icons/Gion/128x128/places/inode-directory.png
 share/icons/Gion/128x128/places/network.png
 share/icons/Gion/128x128/places/stock_folder.png
 share/icons/Gion/128x128/places/trashcan_empty.png
@@ -821,6 +825,8 @@ share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-php.png
 share/icons/Gion/16x16/mimetypes/gnome-mime-application-x-python-bytecode.png
@@ -888,6 +894,7 @@ share/icons/Gion/16x16/places/gnome-fs-home.png
 share/icons/Gion/16x16/places/gnome-fs-trash-empty.png
 share/icons/Gion/16x16/places/gnome-stock-trash.png
 share/icons/Gion/16x16/places/gtk-directory.png
+share/icons/Gion/16x16/places/inode-directory.png
 share/icons/Gion/16x16/places/stock_folder.png
 share/icons/Gion/16x16/places/trashcan_empty.png
 share/icons/Gion/16x16/places/user-home.png
@@ -1091,6 +1098,8 @@ share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-php.png
 share/icons/Gion/22x22/mimetypes/gnome-mime-application-x-python-bytecode.png
@@ -1168,6 +1177,7 @@ share/icons/Gion/22x22/places/gnome-fs-trash-empty.png
 share/icons/Gion/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/22x22/places/gnome-stock-trash.png
 share/icons/Gion/22x22/places/gtk-directory.png
+share/icons/Gion/22x22/places/inode-directory.png
 share/icons/Gion/22x22/places/network.png
 share/icons/Gion/22x22/places/stock_folder.png
 share/icons/Gion/22x22/places/trashcan_empty.png
@@ -1390,6 +1400,8 @@ share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-php.png
 share/icons/Gion/24x24/mimetypes/gnome-mime-application-x-python-bytecode.png
@@ -1467,6 +1479,7 @@ share/icons/Gion/24x24/places/gnome-fs-trash-empty.png
 share/icons/Gion/24x24/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/24x24/places/gnome-stock-trash.png
 share/icons/Gion/24x24/places/gtk-directory.png
+share/icons/Gion/24x24/places/inode-directory.png
 share/icons/Gion/24x24/places/network.png
 share/icons/Gion/24x24/places/stock_folder.png
 share/icons/Gion/24x24/places/trashcan_empty.png
@@ -1624,6 +1637,8 @@ share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-php.png
 share/icons/Gion/48x48/mimetypes/gnome-mime-application-x-python-bytecode.png
@@ -1701,6 +1716,7 @@ share/icons/Gion/48x48/places/gnome-fs-trash-empty.png
 share/icons/Gion/48x48/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/48x48/places/gnome-stock-trash.png
 share/icons/Gion/48x48/places/gtk-directory.png
+share/icons/Gion/48x48/places/inode-directory.png
 share/icons/Gion/48x48/places/network.png
 share/icons/Gion/48x48/places/stock_folder.png
 share/icons/Gion/48x48/places/trashcan_empty.png
@@ -1855,6 +1871,8 @@ share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-kspread.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-kword.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-lha.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-lhz.svg
+share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-lzma-compressed-tar.svg
+share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-lzma.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-perl.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-php.svg
 share/icons/Gion/scalable/mimetypes/gnome-mime-application-x-python-bytecode.svg
@@ -1931,6 +1949,7 @@ share/icons/Gion/scalable/places/gnome-fs-trash-empty.svg
 share/icons/Gion/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/Gion/scalable/places/gnome-stock-trash.svg
 share/icons/Gion/scalable/places/gtk-directory.svg
+share/icons/Gion/scalable/places/inode-directory.svg
 share/icons/Gion/scalable/places/network.svg
 share/icons/Gion/scalable/places/stock_folder.svg
 share/icons/Gion/scalable/places/trashcan_empty.svg
@@ -2011,6 +2030,7 @@ share/icons/Neu/128x128/actions/forward.png
 share/icons/Neu/128x128/actions/gnome-lockscreen.png
 share/icons/Neu/128x128/actions/gnome-logout.png
 share/icons/Neu/128x128/actions/gnome-searchtool.png
+share/icons/Neu/128x128/actions/gnome-shutdown.png
 share/icons/Neu/128x128/actions/gnome-stock-mail-fwd.png
 share/icons/Neu/128x128/actions/gnome-stock-mail-new.png
 share/icons/Neu/128x128/actions/gnome-stock-mail-rpl.png
@@ -2447,6 +2467,8 @@ share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Neu/128x128/mimetypes/gnome-mime-application-x-php.png
@@ -2536,6 +2558,7 @@ share/icons/Neu/128x128/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/128x128/places/gnome-stock-trash.png
 share/icons/Neu/128x128/places/gtk-directory.png
 share/icons/Neu/128x128/places/gtk-network.png
+share/icons/Neu/128x128/places/inode-directory.png
 share/icons/Neu/128x128/places/network-server.png
 share/icons/Neu/128x128/places/network-workgroup.png
 share/icons/Neu/128x128/places/network.png
@@ -2685,6 +2708,7 @@ share/icons/Neu/22x22/actions/gnome-lockscreen.png
 share/icons/Neu/22x22/actions/gnome-logout.png
 share/icons/Neu/22x22/actions/gnome-run.png
 share/icons/Neu/22x22/actions/gnome-searchtool.png
+share/icons/Neu/22x22/actions/gnome-shutdown.png
 share/icons/Neu/22x22/actions/gnome-stock-mail-fwd.png
 share/icons/Neu/22x22/actions/gnome-stock-mail-new.png
 share/icons/Neu/22x22/actions/gnome-stock-mail-rpl.png
@@ -3118,6 +3142,8 @@ share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Neu/22x22/mimetypes/gnome-mime-application-x-php.png
@@ -3208,6 +3234,7 @@ share/icons/Neu/22x22/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/22x22/places/gnome-stock-trash.png
 share/icons/Neu/22x22/places/gtk-directory.png
 share/icons/Neu/22x22/places/gtk-network.png
+share/icons/Neu/22x22/places/inode-directory.png
 share/icons/Neu/22x22/places/network-server.png
 share/icons/Neu/22x22/places/network-workgroup.png
 share/icons/Neu/22x22/places/network.png
@@ -3357,6 +3384,7 @@ share/icons/Neu/24x24/actions/gnome-lockscreen.png
 share/icons/Neu/24x24/actions/gnome-logout.png
 share/icons/Neu/24x24/actions/gnome-run.png
 share/icons/Neu/24x24/actions/gnome-searchtool.png
+share/icons/Neu/24x24/actions/gnome-shutdown.png
 share/icons/Neu/24x24/actions/gnome-stock-mail-fwd.png
 share/icons/Neu/24x24/actions/gnome-stock-mail-new.png
 share/icons/Neu/24x24/actions/gnome-stock-mail-rpl.png
@@ -3786,6 +3814,8 @@ share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Neu/24x24/mimetypes/gnome-mime-application-x-php.png
@@ -3876,6 +3906,7 @@ share/icons/Neu/24x24/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/24x24/places/gnome-stock-trash.png
 share/icons/Neu/24x24/places/gtk-directory.png
 share/icons/Neu/24x24/places/gtk-network.png
+share/icons/Neu/24x24/places/inode-directory.png
 share/icons/Neu/24x24/places/network-server.png
 share/icons/Neu/24x24/places/network-workgroup.png
 share/icons/Neu/24x24/places/network.png
@@ -4025,6 +4056,7 @@ share/icons/Neu/48x48/actions/gnome-lockscreen.png
 share/icons/Neu/48x48/actions/gnome-logout.png
 share/icons/Neu/48x48/actions/gnome-run.png
 share/icons/Neu/48x48/actions/gnome-searchtool.png
+share/icons/Neu/48x48/actions/gnome-shutdown.png
 share/icons/Neu/48x48/actions/gnome-stock-mail-fwd.png
 share/icons/Neu/48x48/actions/gnome-stock-mail-new.png
 share/icons/Neu/48x48/actions/gnome-stock-mail-rpl.png
@@ -4464,6 +4496,8 @@ share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Neu/48x48/mimetypes/gnome-mime-application-x-php.png
@@ -4554,6 +4588,7 @@ share/icons/Neu/48x48/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/48x48/places/gnome-stock-trash.png
 share/icons/Neu/48x48/places/gtk-directory.png
 share/icons/Neu/48x48/places/gtk-network.png
+share/icons/Neu/48x48/places/inode-directory.png
 share/icons/Neu/48x48/places/network-server.png
 share/icons/Neu/48x48/places/network-workgroup.png
 share/icons/Neu/48x48/places/network.png
@@ -4703,6 +4738,7 @@ share/icons/Neu/scalable/actions/forward.svg
 share/icons/Neu/scalable/actions/gnome-lockscreen.svg
 share/icons/Neu/scalable/actions/gnome-logout.svg
 share/icons/Neu/scalable/actions/gnome-searchtool.svg
+share/icons/Neu/scalable/actions/gnome-shutdown.svg
 share/icons/Neu/scalable/actions/gnome-stock-mail-fwd.svg
 share/icons/Neu/scalable/actions/gnome-stock-mail-new.svg
 share/icons/Neu/scalable/actions/gnome-stock-mail-rpl.svg
@@ -5142,6 +5178,8 @@ share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-kspread.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-kword.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-lha.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-lhz.svg
+share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-lzma-compressed-tar.svg
+share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-lzma.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-ms-dos-executable.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-perl.svg
 share/icons/Neu/scalable/mimetypes/gnome-mime-application-x-php.svg
@@ -5232,6 +5270,7 @@ share/icons/Neu/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
 share/icons/Neu/scalable/places/gnome-stock-trash.svg
 share/icons/Neu/scalable/places/gtk-directory.svg
 share/icons/Neu/scalable/places/gtk-network.svg
+share/icons/Neu/scalable/places/inode-directory.svg
 share/icons/Neu/scalable/places/network-server.svg
 share/icons/Neu/scalable/places/network-workgroup.svg
 share/icons/Neu/scalable/places/network.svg
@@ -5340,6 +5379,7 @@ share/icons/gnome-alternative/16x16/places/gnome-fs-smb.png
 share/icons/gnome-alternative/16x16/places/gnome-fs-ssh.png
 share/icons/gnome-alternative/16x16/places/gnome-mime-x-directory-smb-share.png
 share/icons/gnome-alternative/16x16/places/gtk-directory.png
+share/icons/gnome-alternative/16x16/places/inode-directory.png
 share/icons/gnome-alternative/16x16/places/network.png
 share/icons/gnome-alternative/16x16/places/stock_folder.png
 share/icons/gnome-alternative/16x16/places/user-home.png
@@ -5374,6 +5414,7 @@ share/icons/gnome-alternative/22x22/places/gnome-fs-smb.png
 share/icons/gnome-alternative/22x22/places/gnome-fs-ssh.png
 share/icons/gnome-alternative/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/gnome-alternative/22x22/places/gtk-directory.png
+share/icons/gnome-alternative/22x22/places/inode-directory.png
 share/icons/gnome-alternative/22x22/places/network.png
 share/icons/gnome-alternative/22x22/places/stock_folder.png
 share/icons/gnome-alternative/22x22/places/user-home.png
@@ -5408,6 +5449,7 @@ share/icons/gnome-alternative/24x24/places/gnome-fs-smb.png
 share/icons/gnome-alternative/24x24/places/gnome-fs-ssh.png
 share/icons/gnome-alternative/24x24/places/gnome-mime-x-directory-smb-share.png
 share/icons/gnome-alternative/24x24/places/gtk-directory.png
+share/icons/gnome-alternative/24x24/places/inode-directory.png
 share/icons/gnome-alternative/24x24/places/network.png
 share/icons/gnome-alternative/24x24/places/stock_folder.png
 share/icons/gnome-alternative/24x24/places/user-home.png
@@ -5441,6 +5483,7 @@ share/icons/gnome-alternative/32x32/places/gnome-fs-smb.png
 share/icons/gnome-alternative/32x32/places/gnome-fs-ssh.png
 share/icons/gnome-alternative/32x32/places/gnome-mime-x-directory-smb-share.png
 share/icons/gnome-alternative/32x32/places/gtk-directory.png
+share/icons/gnome-alternative/32x32/places/inode-directory.png
 share/icons/gnome-alternative/32x32/places/network.png
 share/icons/gnome-alternative/32x32/places/stock_folder.png
 share/icons/gnome-alternative/32x32/places/user-home.png
@@ -5475,6 +5518,7 @@ share/icons/gnome-alternative/scalable/places/gnome-fs-smb.svg
 share/icons/gnome-alternative/scalable/places/gnome-fs-ssh.svg
 share/icons/gnome-alternative/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/gnome-alternative/scalable/places/gtk-directory.svg
+share/icons/gnome-alternative/scalable/places/inode-directory.svg
 share/icons/gnome-alternative/scalable/places/network.svg
 share/icons/gnome-alternative/scalable/places/stock_folder.svg
 share/icons/gnome-alternative/scalable/places/user-home.svg
