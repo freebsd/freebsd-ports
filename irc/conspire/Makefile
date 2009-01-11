@@ -69,5 +69,7 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|GtkType|GType|g' \
+		${WRKSRC}/src/fe-gtk/xtext.h
 
 .include <bsd.port.post.mk>
