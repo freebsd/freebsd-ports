@@ -767,6 +767,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # config-recursive
 #				- Configure options for this port for this port and all dependencies.
 # showconfig	- Display options config for this port.
+# showconfig-recursive
+#				- Display options config for this port and all dependencies.
 # rmconfig		- Remove the options config for this port.
 # rmconfig-recursive
 #				- Remove the options config for this port and all dependencies.
@@ -1753,26 +1755,18 @@ SUB_FILES+=	${USE_RC_SUBR}
 .if defined(USE_RCORDER)
 SUB_FILES+=	${USE_RCORDER}
 .endif
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+.if (${OSVERSION} >= 700007 || ${OSVERSION} < 700000)
 RC_SUBR_SUFFIX?=
 .else
 RC_SUBR_SUFFIX?=	.sh
 .endif
 .endif
 
-.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if !defined(INSTALL_AS_USER) && ( ( ${OSVERSION} < 504105 ) || \
-		( ${OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
-		( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 ) )
-RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
-NO_LDCONFIG_MTREE=	yes
-.endif
 .if defined(USE_LDCONFIG) && ${USE_LDCONFIG:L} == "yes"
 USE_LDCONFIG=	${PREFIX}/lib
 .endif
 .if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
 IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
-.endif
 .endif
 
 .if defined(USE_ICONV)
@@ -2287,22 +2281,22 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
 					${CHOWN} -R ${BINOWN}:${BINGRP} $$1 && \
-					${FIND} $$1 -type d -exec chmod 755 {} \; && \
-					${FIND} $$1 -type f -exec chmod ${BINMODE} {} \;' --
+					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
+					${FIND} -d $$0 $$2 -type f -exec chmod ${BINMODE} $$1/{} \;' --
 COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
 					${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-					${FIND} $$1/ -type d -exec chmod 755 {} \; && \
-					${FIND} $$1/ -type f -exec chmod ${SHAREMODE} {} \;' --
+					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
+					${FIND} -d $$0 $$2 -type f -exec chmod ${SHAREMODE} $$1/{} \;' --
 .else
 COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
-					${FIND} $$1 -type d -exec chmod 755 {} \; && \
-					${FIND} $$1 -type f -exec chmod ${BINMODE} {} \;' --
+					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
+					${FIND} -d $$0 $$2 -type f -exec chmod ${BINMODE} $$1/{} \;' --
 COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
-					${FIND} $$1/ -type d -exec chmod 755 {} \; && \
-					${FIND} $$1/ -type f -exec chmod ${SHAREMODE} {} \;' --
+					${FIND} -d $$0 $$2 -type d -exec chmod 755 $$1/{} \; && \
+					${FIND} -d $$0 $$2 -type f -exec chmod ${SHAREMODE} $$1/{} \;' --
 .endif
 
 # The user can override the NO_PACKAGE by specifying this from
@@ -2328,10 +2322,7 @@ PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
 
-.if ((${OSVERSION} < 504105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600103) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700012)) && ${PKGORIGIN} != "ports-mgmt/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
-.if (${OSVERSION} < 504105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600103) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700012)) && ${PKGORIGIN} != "ports-mgmt/pkg_install"
-EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install
-.endif
+.if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
 PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
 PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
@@ -3166,9 +3157,9 @@ ignorelist:
 .if defined(IGNORE) || defined(NO_PACKAGE)
 ignorelist-verbose:
 .if defined(IGNORE)
-	@${ECHO_MSG} "${PKGNAME}|IGNORE: "${IGNORE:Q}
+	@${ECHO_CMD} "${PKGNAME}|IGNORE: "${IGNORE:Q}
 .else
-	@${ECHO_MSG} "${PKGNAME}|NO_PACKAGE: "${NO_PACKAGE:Q}
+	@${ECHO_CMD} "${PKGNAME}|NO_PACKAGE: "${NO_PACKAGE:Q}
 .endif
 .else
 ignorelist-verbose:
@@ -3234,7 +3225,7 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 # target or not.
 #
 ################################################################
-.if (!defined(OPTIONS) || defined(CONFIG_DONE) || \
+.if (!defined(OPTIONS) || defined(CONFIG_DONE_${UNIQUENAME:U}) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH))
 _OPTIONS_OK=yes
 .endif
@@ -4169,7 +4160,7 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 ${target}: ${${target:U}_COOKIE}
 .elif !target(${target})
 ${target}: config-conditional
-	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
+	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:U}=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
 .elif target(${target}) && defined(IGNORE)
 .endif
 
@@ -4868,6 +4859,7 @@ ${deptype:L}-depends:
 					fi; \
 				fi; \
 			else \
+				fileneeded="$$prog"; \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
 				notfound=1; \
 			fi; \
@@ -4886,6 +4878,7 @@ ${deptype:L}-depends:
 						notfound=0; \
 					fi; \
 				else \
+					pkgneeded="$$prog"; \
 					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
 					notfound=1; \
 				fi; \
@@ -4908,6 +4901,7 @@ ${deptype:L}-depends:
 					notfound=0; \
 				fi; \
 			else \
+				execneeded="$$prog"; \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
 				notfound=1; \
 			fi; \
@@ -4918,6 +4912,24 @@ ${deptype:L}-depends:
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
 			else \
 				${_INSTALL_DEPENDS} \
+				if [ "$$fileneeded" != "${NONEXISTENT}" ]; then \
+					if [ ! -z "$$fileneeded" ]; then \
+						if [ ! -e "$$prog" ]; then \
+							${ECHO_MSG} "Error: file \"$$prog\" does not exist"; \
+							${FALSE}; \
+						fi; \
+					elif [ ! -z "$$pkgneeded" ]; then \
+						if ! ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
+							${ECHO_MSG} "Error: package \"$$prog\" does not exist"; \
+							${FALSE}; \
+						fi; \
+					elif [ ! -z "$$execneeded" ]; then \
+						if ! ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
+							${ECHO_MSG} "Error: executable \"$$prog\" does not exist"; \
+							${FALSE}; \
+						fi; \
+					fi; \
+				fi; \
 			fi; \
 		fi; \
 	done
@@ -5993,6 +6005,14 @@ showconfig:
 	done
 	@${ECHO_MSG} "===> Use 'make config' to modify these settings"
 .endif
+.endif
+
+.if !target(showconfig-recursive)
+showconfig-recursive:
+	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME} and dependencies";
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} showconfig); \
+	done
 .endif
 
 .if !target(rmconfig)
