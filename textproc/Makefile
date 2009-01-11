@@ -318,6 +318,7 @@
     SUBDIR += ltxml
     SUBDIR += lucene
     SUBDIR += lv-aspell
+    SUBDIR += m17n-contrib
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += maketeidtd
