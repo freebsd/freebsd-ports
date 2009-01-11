@@ -1252,6 +1252,7 @@ cabextract                      ports/archivers/cabextract
 cacao                           ports/java/cacao
 cacheboy                        ports/www/cacheboy
 cacheboy15-devel                ports/www/cacheboy15-devel
+cacheboy16			ports/www/cacheboy16
 cacti                           ports/net-mgmt/cacti
 cacti-spine                     ports/net-mgmt/cacti-spine
 cadaver                         ports/www/cadaver
