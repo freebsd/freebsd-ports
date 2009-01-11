@@ -14,12 +14,8 @@ GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.4
 
-post-patch:
-	@${FIND} ${WRKSRC}/examples -name Makefile.in \
-		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
-
 do-install:
-.for d in docs examples
+.for d in docs
 	@cd ${WRKSRC}/${d} && ${GMAKE} install
 .endfor
 
