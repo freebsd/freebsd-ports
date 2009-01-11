@@ -10,7 +10,9 @@ PORTVERSION=	4.3.7284.3916
 PORTREVISION=	2
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
-DISTFILES=	${TARGET_DISTFILE}
+DISTNAME=	GoogleEarthLinux
+EXTRACT_SUFX=	.bin
+DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	nox@FreeBSD.org
@@ -28,12 +30,6 @@ USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
 USE_XLIB=	yes
 
-REAL_DISTFILE=		GoogleEarthLinux.bin
-TARGET_DISTFILE=	GoogleEarthLinux-${PORTVERSION}.bin
-
-FETCH_CMD=	/usr/bin/fetch -ARm
-FETCH_BEFORE_ARGS=	-o ${TARGET_DISTFILE}
-
 .include <bsd.port.pre.mk>
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
@@ -44,15 +40,9 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${TARGET_DISTFILE} ]; then \
-		cd ${DISTDIR}; \
-		${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${REAL_DISTFILE}|g} ${FETCH_AFTER_ARGS}; \
-	fi
-
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
 	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} -f ${DISTFILES}
 	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
