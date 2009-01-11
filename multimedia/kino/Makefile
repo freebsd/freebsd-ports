@@ -46,7 +46,7 @@ MAN1+=	ffmpeg-kino.1
 
 .if defined(WITH_QUICKTIME)
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
-CONFIGURE_ARGS+=	--with-quicktime
+CONFIGURE_ARGS+=	--enable-quicktime
 .endif
 
 .if defined(WITH_FFMPEG_KINO)
