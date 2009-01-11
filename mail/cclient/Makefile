@@ -23,6 +23,10 @@ DISTFILES=	${DISTNAME}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
 
+FORBIDDEN=	multiple vulnerabilities \
+		http://www.vuxml.org/freebsd/a6713190-dfea-11dd-a765-0030843d3802.html \
+		http://www.vuxml.org/freebsd/69a20ce4-dfee-11dd-a765-0030843d3802.html
+
 OPTIONS=	SSL "Compile with SSL support" on \
 		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
 		IPV6 "Support IPv6" on \

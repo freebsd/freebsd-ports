@@ -42,6 +42,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+FORBIDDEN=	multiple vulnerabilities \
+		http://www.vuxml.org/freebsd/a6713190-dfea-11dd-a765-0030843d3802.html \
+		http://www.vuxml.org/freebsd/69a20ce4-dfee-11dd-a765-0030843d3802.html
+
 MAN1=		dmail.1 mailutil.1 tmail.1
 MAN8=		ipopd.8 imapd.8
 
