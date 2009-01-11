@@ -19,7 +19,6 @@ lib/libmp3lame.so.0
 %%PORTDOCS%%%%DOCSDIR%%/html/lame.css
 %%PORTDOCS%%%%DOCSDIR%%/html/modes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/presets.html
 %%PORTDOCS%%%%DOCSDIR%%/html/switchs.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
