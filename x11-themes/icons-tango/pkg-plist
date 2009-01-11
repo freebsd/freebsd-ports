@@ -58,6 +58,7 @@ share/icons/Tango/16x16/actions/forward.png
 share/icons/Tango/16x16/actions/gnome-lockscreen.png
 share/icons/Tango/16x16/actions/gnome-logout.png
 share/icons/Tango/16x16/actions/gnome-searchtool.png
+share/icons/Tango/16x16/actions/gnome-shutdown.png
 share/icons/Tango/16x16/actions/gnome-stock-mail-fwd.png
 share/icons/Tango/16x16/actions/gnome-stock-mail-new.png
 share/icons/Tango/16x16/actions/gnome-stock-mail-rpl.png
@@ -627,6 +628,8 @@ share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/16x16/mimetypes/gnome-mime-application-x-php.png
@@ -729,6 +732,7 @@ share/icons/Tango/16x16/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/16x16/places/gnome-stock-trash.png
 share/icons/Tango/16x16/places/gtk-directory.png
 share/icons/Tango/16x16/places/gtk-network.png
+share/icons/Tango/16x16/places/inode-directory.png
 share/icons/Tango/16x16/places/network-server.png
 share/icons/Tango/16x16/places/network-workgroup.png
 share/icons/Tango/16x16/places/network.png
@@ -892,6 +896,7 @@ share/icons/Tango/22x22/actions/forward.png
 share/icons/Tango/22x22/actions/gnome-lockscreen.png
 share/icons/Tango/22x22/actions/gnome-logout.png
 share/icons/Tango/22x22/actions/gnome-searchtool.png
+share/icons/Tango/22x22/actions/gnome-shutdown.png
 share/icons/Tango/22x22/actions/gnome-stock-mail-fwd.png
 share/icons/Tango/22x22/actions/gnome-stock-mail-new.png
 share/icons/Tango/22x22/actions/gnome-stock-mail-rpl.png
@@ -1461,6 +1466,8 @@ share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/22x22/mimetypes/gnome-mime-application-x-php.png
@@ -1563,6 +1570,7 @@ share/icons/Tango/22x22/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/22x22/places/gnome-stock-trash.png
 share/icons/Tango/22x22/places/gtk-directory.png
 share/icons/Tango/22x22/places/gtk-network.png
+share/icons/Tango/22x22/places/inode-directory.png
 share/icons/Tango/22x22/places/network-server.png
 share/icons/Tango/22x22/places/network-workgroup.png
 share/icons/Tango/22x22/places/network.png
@@ -1726,6 +1734,7 @@ share/icons/Tango/24x24/actions/forward.png
 share/icons/Tango/24x24/actions/gnome-lockscreen.png
 share/icons/Tango/24x24/actions/gnome-logout.png
 share/icons/Tango/24x24/actions/gnome-searchtool.png
+share/icons/Tango/24x24/actions/gnome-shutdown.png
 share/icons/Tango/24x24/actions/gnome-stock-mail-fwd.png
 share/icons/Tango/24x24/actions/gnome-stock-mail-new.png
 share/icons/Tango/24x24/actions/gnome-stock-mail-rpl.png
@@ -2293,6 +2302,8 @@ share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/24x24/mimetypes/gnome-mime-application-x-php.png
@@ -2395,6 +2406,7 @@ share/icons/Tango/24x24/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/24x24/places/gnome-stock-trash.png
 share/icons/Tango/24x24/places/gtk-directory.png
 share/icons/Tango/24x24/places/gtk-network.png
+share/icons/Tango/24x24/places/inode-directory.png
 share/icons/Tango/24x24/places/network-server.png
 share/icons/Tango/24x24/places/network-workgroup.png
 share/icons/Tango/24x24/places/network.png
@@ -2558,6 +2570,7 @@ share/icons/Tango/32x32/actions/forward.png
 share/icons/Tango/32x32/actions/gnome-lockscreen.png
 share/icons/Tango/32x32/actions/gnome-logout.png
 share/icons/Tango/32x32/actions/gnome-searchtool.png
+share/icons/Tango/32x32/actions/gnome-shutdown.png
 share/icons/Tango/32x32/actions/gnome-stock-mail-fwd.png
 share/icons/Tango/32x32/actions/gnome-stock-mail-new.png
 share/icons/Tango/32x32/actions/gnome-stock-mail-rpl.png
@@ -3127,6 +3140,8 @@ share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-kspread.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-kword.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-lha.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-lhz.png
+share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-lzma-compressed-tar.png
+share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-lzma.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-ms-dos-executable.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-perl.png
 share/icons/Tango/32x32/mimetypes/gnome-mime-application-x-php.png
@@ -3229,6 +3244,7 @@ share/icons/Tango/32x32/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/32x32/places/gnome-stock-trash.png
 share/icons/Tango/32x32/places/gtk-directory.png
 share/icons/Tango/32x32/places/gtk-network.png
+share/icons/Tango/32x32/places/inode-directory.png
 share/icons/Tango/32x32/places/network-server.png
 share/icons/Tango/32x32/places/network-workgroup.png
 share/icons/Tango/32x32/places/network.png
@@ -3393,6 +3409,7 @@ share/icons/Tango/scalable/actions/forward.svg
 share/icons/Tango/scalable/actions/gnome-lockscreen.svg
 share/icons/Tango/scalable/actions/gnome-logout.svg
 share/icons/Tango/scalable/actions/gnome-searchtool.svg
+share/icons/Tango/scalable/actions/gnome-shutdown.svg
 share/icons/Tango/scalable/actions/gnome-stock-mail-fwd.svg
 share/icons/Tango/scalable/actions/gnome-stock-mail-new.svg
 share/icons/Tango/scalable/actions/gnome-stock-mail-rpl.svg
@@ -3958,6 +3975,8 @@ share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-kspread.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-kword.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lha.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lhz.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lzma-compressed-tar.svg
+share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-lzma.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-ms-dos-executable.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-perl.svg
 share/icons/Tango/scalable/mimetypes/gnome-mime-application-x-php.svg
@@ -4063,6 +4082,8 @@ share/icons/Tango/scalable/places/gnome-stock-trash.svg
 share/icons/Tango/scalable/places/gtk-directory.icon
 share/icons/Tango/scalable/places/gtk-directory.svg
 share/icons/Tango/scalable/places/gtk-network.svg
+share/icons/Tango/scalable/places/inode-directory.icon
+share/icons/Tango/scalable/places/inode-directory.svg
 share/icons/Tango/scalable/places/network-server.svg
 share/icons/Tango/scalable/places/network-workgroup.svg
 share/icons/Tango/scalable/places/network.svg
@@ -4171,7 +4192,6 @@ share/icons/Tango/scalable/status/weather-showers.svg
 share/icons/Tango/scalable/status/weather-snow.svg
 share/icons/Tango/scalable/status/weather-storm.svg
 share/icons/Tango/scalable/status/xfce-trash_full.svg
-@dirrmtry share/locale
 @dirrm share/icons/Tango/scalable/status
 @dirrm share/icons/Tango/scalable/places
 @dirrm share/icons/Tango/scalable/mimetypes
