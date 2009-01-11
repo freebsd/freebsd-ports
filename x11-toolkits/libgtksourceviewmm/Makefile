@@ -7,6 +7,7 @@
 
 PORTNAME=	libgtksourceviewmm
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gtksourceview gnomeprefix gnomehack
+USE_GNOME=	gtksourceview2 gnomeprefix gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
