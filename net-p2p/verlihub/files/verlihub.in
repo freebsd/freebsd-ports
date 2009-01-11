@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: verlihub
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON mysql
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
