@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	0
 
 DOCSDIR=	${PREFIX}/share/doc/fontconfig-devel
