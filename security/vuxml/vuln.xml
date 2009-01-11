@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58997463-e012-11dd-a765-0030843d3802">
+    <topic>verlihub -- insecure temporary file usage and arbitrary command execution</topic>
+    <affects>
+      <package>
+	<name>verlihub</name>
+	<range><lt>0.9.8.d.r2_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>securityfocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/32889/discuss">
+	  <p>An attacker with local access could potentially exploit this issue
+	    to perform symbolic-link attacks, overwriting arbitrary files in the
+	    context of the affected application.</p>
+	  <p>Successfully mounting a symlink attack may allow the attacker to
+	    delete or corrupt sensitive files, which may result in a denial of
+	    service. Other attacks may also be possible.</p>
+	</blockquote>
+	<blockquote cite="http://www.securityfocus.com/bid/32420/discuss">
+	  <p>Verlihub is prone to a remote command-execution vulnerability
+	    because it fails to sufficiently validate user input.</p>
+	  <p>Successfully exploiting this issue would allow an attacker to
+	    execute arbitrary commands on an affected computer in the context of
+	    the affected application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5705</cvename>
+      <cvename>CVE-2008-5706</cvename>
+      <bid>32889</bid>
+      <bid>32420</bid>
+      <url>http://milw0rm.com/exploits/7183</url>
+    </references>
+    <dates>
+      <discovery>2008-11-22</discovery>
+      <entry>2009-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66a770b4-e008-11dd-a765-0030843d3802">
     <topic>mysql -- empty bit-string literal denial of service</topic>
     <affects>
