@@ -72,8 +72,6 @@
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += gsnmp
-    SUBDIR += hobbit-client
-    SUBDIR += hobbit-server
     SUBDIR += horde-nic
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
@@ -262,6 +260,8 @@
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += xymon-client
+    SUBDIR += xymon-server
     SUBDIR += yabm
     SUBDIR += zabbix
     SUBDIR += zabbix-agent
