@@ -1,0 +1,18 @@
+%%SITE_PERL%%/mach/auto/Geo/Point/.packlist
+%%SITE_PERL%%/Geo/Surface.pod
+%%SITE_PERL%%/Geo/Point.pod
+%%SITE_PERL%%/Geo/Point.pm
+%%SITE_PERL%%/Geo/Proj.pm
+%%SITE_PERL%%/Geo/Shape.pm
+%%SITE_PERL%%/Geo/Line.pod
+%%SITE_PERL%%/Geo/Surface.pm
+%%SITE_PERL%%/Geo/Line.pm
+%%SITE_PERL%%/Geo/Space.pm
+%%SITE_PERL%%/Geo/Space.pod
+%%SITE_PERL%%/Geo/Proj.pod
+%%SITE_PERL%%/Geo/Shape.pod
+@dirrmtry %%SITE_PERL%%/mach/auto/Geo/Point
+@dirrmtry %%SITE_PERL%%/mach/auto/Geo
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/mach
+@dirrmtry %%SITE_PERL%%/Geo
