@@ -40,10 +40,10 @@
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxyoptions2.ico
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxypatterndlg2.ico
 %%XPI_XPIDIR%%/chrome/icons/default/foxyproxyquickadddlg2.ico
-%%XPI_XPIDIR%%/chrome/locale/af-ZA/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/af-ZA/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/af-ZA/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/af-ZA/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/ar/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/ar/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/cs-CZ/foxyproxy.properties
@@ -152,10 +152,6 @@
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/uk-UA/torwizhelp.dtd
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/amo.properties
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.dtd
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/foxyproxy.properties
-%%XPI_XPIDIR%%/chrome/locale/vi-VN/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/zh-CN/foxyproxy.properties
@@ -181,7 +177,6 @@
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/chrome/locale/vi-VN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/th-TH
@@ -209,7 +204,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/chrome/locale/da-DK
 @dirrm %%XPI_XPIDIR%%/chrome/locale/cs-CZ
-@dirrm %%XPI_XPIDIR%%/chrome/locale/af-ZA
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ar
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/icons/default
 @dirrm %%XPI_XPIDIR%%/chrome/icons
