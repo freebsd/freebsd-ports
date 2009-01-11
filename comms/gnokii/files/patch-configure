@@ -1,6 +1,6 @@
---- configure.orig     2008-02-15 10:21:49.000000000 +0100
-+++ configure  2008-02-23 11:08:39.000000000 +0100
-@@ -1050,7 +1050,7 @@
+--- configure.orig	2008-10-06 08:57:27.000000000 +0200
++++ configure	2008-11-01 00:28:22.000000000 +0100
+@@ -1057,7 +1057,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,7 +9,7 @@
  
  ac_prev=
  ac_dashdash=
-@@ -22653,13 +22653,15 @@
+@@ -24163,13 +24163,15 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
  # them:
@@ -30,7 +30,7 @@
          cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23023,7 +23025,7 @@
+@@ -24533,7 +24535,7 @@
  echo $ECHO_N "checking if more special flags are required for pthreads... $ECHO_C" >&6; }
          flag=no
          case "${host_cpu}-${host_os}" in
@@ -39,21 +39,96 @@
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
          { echo "$as_me:$LINENO: result: ${flag}" >&5
-@@ -23840,7 +23842,7 @@
+@@ -26561,9 +26563,9 @@
+ fi
  
- if test "$enable_libical" == "yes"; then
+ 
+-if test "$enable_libical" == "yes"; then
++if test "$enable_libical" = "yes"; then
  	OLD_CFLAGS="$CFLAGS"
 -	LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
 +	LIBS="$LIBS $ICAL_LIBS -pthread -lical"
  	CFLAGS="$CFLAGS $ICAL_CFLAGS"
  	{ echo "$as_me:$LINENO: checking whether libical is installed" >&5
  echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6; }
-@@ -25684,7 +25686,7 @@
+@@ -26650,7 +26652,7 @@
+   enable_libusb=yes
+ fi
+ 
+-if test "$enable_libusb" == "yes"; then
++if test "$enable_libusb" = "yes"; then
+ 	{ echo "$as_me:$LINENO: checking whether libusb is installed" >&5
+ echo $ECHO_N "checking whether libusb is installed... $ECHO_C" >&6; }
+ 	cat >conftest.$ac_ext <<_ACEOF
+@@ -26872,7 +26874,7 @@
+   enable_irda=yes
+ fi
+ 
+-if test "$enable_irda" == "yes"; then
++if test "$enable_irda" = "yes"; then
+ 	{ echo "$as_me:$LINENO: checking for linux/irda.h" >&5
+ echo $ECHO_N "checking for linux/irda.h... $ECHO_C" >&6; }
+ if test "${ac_cv_header_linux_irda_h+set}" = set; then
+@@ -26955,7 +26957,7 @@
+   enable_bluetooth=yes
+ fi
+ 
+-if test "$enable_bluetooth" == "yes"; then
++if test "$enable_bluetooth" = "yes"; then
+ 	{ echo "$as_me:$LINENO: checking for the bluetooth support" >&5
+ echo $ECHO_N "checking for the bluetooth support... $ECHO_C" >&6; }
+ 	{ echo "$as_me:$LINENO: checking for the struct sockaddr_rc in <bluetooth/rfcomm.h>" >&5
+@@ -27025,7 +27027,7 @@
+ 
+ 	fi
+ fi
+-if test "$enable_bluetooth" == "yes"; then
++if test "$enable_bluetooth" = "yes"; then
+ 	{ echo "$as_me:$LINENO: checking for the MacOS X bluetooth support" >&5
+ echo $ECHO_N "checking for the MacOS X bluetooth support... $ECHO_C" >&6; }
+ 
+@@ -27526,7 +27528,7 @@
+ 	fi
+ fi
+ 
+-if test "$enable_bluetooth" == "yes"; then
++if test "$enable_bluetooth" = "yes"; then
+ 	{ echo "$as_me:$LINENO: checking for the FreeBSD/netgraph bluetooth support" >&5
+ echo $ECHO_N "checking for the FreeBSD/netgraph bluetooth support... $ECHO_C" >&6; }
+ 	{ echo "$as_me:$LINENO: checking for the struct sockaddr_rfcomm in <netgraph/.../ng_btsocket.h>" >&5
+@@ -27602,7 +27604,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lbluetooth  $LIBS"
++LIBS="-lsdp -lbluetooth $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27658,7 +27660,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ echo "${ECHO_T}$ac_cv_lib_bluetooth_bt_aton" >&6; }
+ if test $ac_cv_lib_bluetooth_bt_aton = yes; then
+-  BLUETOOTH_LIBS="$LIBS -lbluetooth"
++  BLUETOOTH_LIBS="$LIBS -lsdp -lbluetooth"
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_BT_ATON
+ _ACEOF
+@@ -27676,7 +27678,7 @@
+   enable_libpcsclite=yes
+ fi
+ 
+-if test "$enable_libpcsclite" == "yes"; then
++if test "$enable_libpcsclite" = "yes"; then
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+@@ -28474,7 +28476,7 @@
  echo "${ECHO_T}$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
  if test $ac_cv_lib_Xpm_XpmWriteFileFromXpmImage = yes; then
     XPM_CFLAGS="$XINCL"
 -                  XPM_LIBS="$XLIBS -lXpm -lX11"
 +                  XPM_LIBS="$XLIBS -lXpm -lX11 -lroken -lcrypt"
-
+ 
  cat >>confdefs.h <<\_ACEOF
  #define XPM 1
