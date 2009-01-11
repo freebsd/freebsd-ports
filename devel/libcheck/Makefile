@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libcheck
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/check
 DISTNAME=	check-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A unit test framework for C
 
 GNU_CONFIGURE=	yes
@@ -23,18 +22,21 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/check-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/check-${PORTVERSION}
 
+.if !defined(NOPORTDOCS)
 INFO=		check
+.endif
 
 post-patch:
-.ifdef (NOPORTDOCS)
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} \
-		's/^install-data-am: install-docDATA/install-data-am:/' \
+		-e '/^install-data-am:/ s/ install-docDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
-.ifdef (NOPORTEXAMPLES)
-	@${REINPLACE_CMD} -e \
-		's/^\(install-data-am:\) install-exampleDATA install-examplesrcDATA/\1/; \
-		s/.*install-exampletestsDATA \(install-info-am\)/\1/' \
+.if defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} \
+		-e '/^install-data-am:/ s/ install-exampleDATA//' \
+		-e '/^install-data-am:/ s/ install-examplesrcDATA//' \
+		-e '/install-exampletestsDATA/ s/ install-info-am//' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 

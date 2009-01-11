@@ -1,6 +1,6 @@
---- check.m4.orig	Tue Mar  1 01:25:26 2005
-+++ check.m4	Sun Jul  2 21:13:20 2006
-@@ -19,8 +19,21 @@
+--- check.m4.orig	2008-12-29 21:48:46.000000000 +0800
++++ check.m4	2009-01-07 09:02:41.452952376 +0800
+@@ -21,8 +21,20 @@
        CHECK_CFLAGS="-I$with_check/include"
        CHECK_LIBS="-L$with_check/lib -lcheck"
      else
@@ -13,7 +13,6 @@
 +          break
 +        fi
 +      done
-+
 +      for check_libdir in /usr/local/lib /usr/local/lib/check /usr/lib $prefix/lib
 +      do
 +        if test -e $check_libdir/libcheck.a ; then

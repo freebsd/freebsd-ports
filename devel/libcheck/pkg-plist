@@ -5,33 +5,33 @@ lib/libcheck.la
 lib/libcheck.a
 libdata/pkgconfig/check.pc
 share/aclocal/check.m4
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.am
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/configure.ac
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/Makefile.am
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/main.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.1.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.2.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.1.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.3.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.4.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.5.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/src/money.6.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/Makefile.am
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.1.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.2.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.3.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.6.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tests/check_money.7.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configure.ac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.1.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.2.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.4.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.5.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/money.6.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.6.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.7.c
 %%PORTDOCS%%%%DOCSDIR%%/SVNChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLogOld
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/src
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
