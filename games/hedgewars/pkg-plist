@@ -3,8 +3,24 @@ bin/hwengine
 %%DATADIR%%/Data/Fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/Data/Forts/BarrelhouseL.png
 %%DATADIR%%/Data/Forts/BarrelhouseR.png
+%%DATADIR%%/Data/Forts/CakeL.png
+%%DATADIR%%/Data/Forts/CakeR.png
+%%DATADIR%%/Data/Forts/CastleL.png
+%%DATADIR%%/Data/Forts/CastleR.png
+%%DATADIR%%/Data/Forts/EarthL.png
+%%DATADIR%%/Data/Forts/EarthR.png
+%%DATADIR%%/Data/Forts/FlowerhogL.png
+%%DATADIR%%/Data/Forts/FlowerhogR.png
+%%DATADIR%%/Data/Forts/HydrantL.png
+%%DATADIR%%/Data/Forts/HydrantR.png
 %%DATADIR%%/Data/Forts/IslandL.png
 %%DATADIR%%/Data/Forts/IslandR.png
+%%DATADIR%%/Data/Forts/LegoL.png
+%%DATADIR%%/Data/Forts/LegoR.png
+%%DATADIR%%/Data/Forts/PlaneL.png
+%%DATADIR%%/Data/Forts/PlaneR.png
+%%DATADIR%%/Data/Forts/StatueL.png
+%%DATADIR%%/Data/Forts/StatueR.png
 %%DATADIR%%/Data/Graphics/AirBomb.png
 %%DATADIR%%/Data/Graphics/Airplane.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/AmmoName.png
@@ -16,6 +32,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/AmmoMenu/SlotKeys.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/TurnsLeft.png
 %%DATADIR%%/Data/Graphics/Arrow.png
+%%DATADIR%%/Data/Graphics/Balls.png
 %%DATADIR%%/Data/Graphics/BigDigits.png
 %%DATADIR%%/Data/Graphics/BlueWater.png
 %%DATADIR%%/Data/Graphics/Bomb.png
@@ -27,6 +44,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/ClParticle.png
 %%DATADIR%%/Data/Graphics/Clouds.png
 %%DATADIR%%/Data/Graphics/Crosshair.png
+%%DATADIR%%/Data/Graphics/Drill.png
 %%DATADIR%%/Data/Graphics/EvilTrace.png
 %%DATADIR%%/Data/Graphics/Expl50.png
 %%DATADIR%%/Data/Graphics/ExplPart.png
@@ -112,10 +130,12 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hedgehog/amAirAttack.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBTorch_i.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBTorch_w.png
+%%DATADIR%%/Data/Graphics/Hedgehog/amBallgun.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBaseball.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBazooka.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amDEagle.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amDEagle_w.png
+%%DATADIR%%/Data/Graphics/Hedgehog/amDrill.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amKamikaze.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amRope.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amShotgun.png
@@ -165,8 +185,11 @@ bin/hwengine
 %%DATADIR%%/Data/Locale/hedgewars_ru.qm
 %%DATADIR%%/Data/Locale/hedgewars_sk.qm
 %%DATADIR%%/Data/Locale/hedgewars_sv.qm
+%%DATADIR%%/Data/Locale/hedgewars_uk.qm
+%%DATADIR%%/Data/Locale/hedgewars_zh_CN.qm
 %%DATADIR%%/Data/Locale/it.txt
 %%DATADIR%%/Data/Locale/pl.txt
+%%DATADIR%%/Data/Locale/pt-br.txt
 %%DATADIR%%/Data/Locale/ru.txt
 %%DATADIR%%/Data/Locale/sk.txt
 %%DATADIR%%/Data/Locale/sv.txt
@@ -180,12 +203,30 @@ bin/hwengine
 %%DATADIR%%/Data/Maps/Bath/map.cfg
 %%DATADIR%%/Data/Maps/Bath/map.png
 %%DATADIR%%/Data/Maps/Bath/preview.png
+%%DATADIR%%/Data/Maps/Blox/map.cfg
+%%DATADIR%%/Data/Maps/Blox/map.png
+%%DATADIR%%/Data/Maps/Blox/preview.png
+%%DATADIR%%/Data/Maps/Cake/map.cfg
+%%DATADIR%%/Data/Maps/Cake/map.png
+%%DATADIR%%/Data/Maps/Cake/preview.png
 %%DATADIR%%/Data/Maps/Castle/map.cfg
 %%DATADIR%%/Data/Maps/Castle/map.png
 %%DATADIR%%/Data/Maps/Castle/preview.png
+%%DATADIR%%/Data/Maps/Cogs/map.cfg
+%%DATADIR%%/Data/Maps/Cogs/map.png
+%%DATADIR%%/Data/Maps/Cogs/preview.png
+%%DATADIR%%/Data/Maps/CrazyMission/map.cfg
+%%DATADIR%%/Data/Maps/CrazyMission/map.png
+%%DATADIR%%/Data/Maps/CrazyMission/preview.png
 %%DATADIR%%/Data/Maps/EarthRise/map.cfg
 %%DATADIR%%/Data/Maps/EarthRise/map.png
 %%DATADIR%%/Data/Maps/EarthRise/preview.png
+%%DATADIR%%/Data/Maps/Eyes/map.cfg
+%%DATADIR%%/Data/Maps/Eyes/map.png
+%%DATADIR%%/Data/Maps/Eyes/preview.png
+%%DATADIR%%/Data/Maps/HedgeFortress/map.cfg
+%%DATADIR%%/Data/Maps/HedgeFortress/map.png
+%%DATADIR%%/Data/Maps/HedgeFortress/preview.png
 %%DATADIR%%/Data/Maps/Hedgelove/map.cfg
 %%DATADIR%%/Data/Maps/Hedgelove/map.png
 %%DATADIR%%/Data/Maps/Hedgelove/preview.png
@@ -242,66 +283,66 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/throwpowerup.ogg
 %%DATADIR%%/Data/Sounds/throwrelease.ogg
 %%DATADIR%%/Data/Sounds/ufo.ogg
-%%DATADIR%%/Data/Sounds/voices/Amazing.ogg
-%%DATADIR%%/Data/Sounds/voices/Boring.ogg
-%%DATADIR%%/Data/Sounds/voices/Brilliant.ogg
-%%DATADIR%%/Data/Sounds/voices/Bugger.ogg
-%%DATADIR%%/Data/Sounds/voices/Bungee.ogg
-%%DATADIR%%/Data/Sounds/voices/Byebye.ogg
-%%DATADIR%%/Data/Sounds/voices/Comeonthen.ogg
-%%DATADIR%%/Data/Sounds/voices/Coward.ogg
-%%DATADIR%%/Data/Sounds/voices/Cutitout.ogg
-%%DATADIR%%/Data/Sounds/voices/Drat.ogg
-%%DATADIR%%/Data/Sounds/voices/Enemydown.ogg
-%%DATADIR%%/Data/Sounds/voices/Excellent.ogg
-%%DATADIR%%/Data/Sounds/voices/Fire.ogg
-%%DATADIR%%/Data/Sounds/voices/Firstblood.ogg
-%%DATADIR%%/Data/Sounds/voices/Flawless.ogg
-%%DATADIR%%/Data/Sounds/voices/Gonnagetyou.ogg
-%%DATADIR%%/Data/Sounds/voices/Grenade.ogg
-%%DATADIR%%/Data/Sounds/voices/Hello.ogg
-%%DATADIR%%/Data/Sounds/voices/Hmm.ogg
-%%DATADIR%%/Data/Sounds/voices/Hurry.ogg
-%%DATADIR%%/Data/Sounds/voices/Illgetyou.ogg
-%%DATADIR%%/Data/Sounds/voices/Incoming.ogg
-%%DATADIR%%/Data/Sounds/voices/Jump1.ogg
-%%DATADIR%%/Data/Sounds/voices/Jump2.ogg
-%%DATADIR%%/Data/Sounds/voices/Jump3.ogg
-%%DATADIR%%/Data/Sounds/voices/Justyouwait.ogg
-%%DATADIR%%/Data/Sounds/voices/Kamikaze.ogg
-%%DATADIR%%/Data/Sounds/voices/Laugh.ogg
-%%DATADIR%%/Data/Sounds/voices/Leavemealone.ogg
-%%DATADIR%%/Data/Sounds/voices/Missed.ogg
-%%DATADIR%%/Data/Sounds/voices/Nooo.ogg
-%%DATADIR%%/Data/Sounds/voices/Nutter.ogg
-%%DATADIR%%/Data/Sounds/voices/Ohdear.ogg
-%%DATADIR%%/Data/Sounds/voices/Ooff1.ogg
-%%DATADIR%%/Data/Sounds/voices/Ooff2.ogg
-%%DATADIR%%/Data/Sounds/voices/Ooff3.ogg
-%%DATADIR%%/Data/Sounds/voices/Oops.ogg
-%%DATADIR%%/Data/Sounds/voices/Ouch.ogg
-%%DATADIR%%/Data/Sounds/voices/Ow1.ogg
-%%DATADIR%%/Data/Sounds/voices/Ow2.ogg
-%%DATADIR%%/Data/Sounds/voices/Ow3.ogg
-%%DATADIR%%/Data/Sounds/voices/Ow4.ogg
-%%DATADIR%%/Data/Sounds/voices/Perfect.ogg
-%%DATADIR%%/Data/Sounds/voices/Reinforcements.ogg
-%%DATADIR%%/Data/Sounds/voices/Revenge.ogg
-%%DATADIR%%/Data/Sounds/voices/Runaway.ogg
-%%DATADIR%%/Data/Sounds/voices/Sameteam.ogg
-%%DATADIR%%/Data/Sounds/voices/Solong.ogg
-%%DATADIR%%/Data/Sounds/voices/Stupid.ogg
-%%DATADIR%%/Data/Sounds/voices/Takecover.ogg
-%%DATADIR%%/Data/Sounds/voices/Thisoneismine.ogg
-%%DATADIR%%/Data/Sounds/voices/Traitor.ogg
-%%DATADIR%%/Data/Sounds/voices/Uh-oh.ogg
-%%DATADIR%%/Data/Sounds/voices/Victory.ogg
-%%DATADIR%%/Data/Sounds/voices/Watchit.ogg
-%%DATADIR%%/Data/Sounds/voices/Watchthis.ogg
-%%DATADIR%%/Data/Sounds/voices/Whatthe.ogg
-%%DATADIR%%/Data/Sounds/voices/Whoopsee.ogg
-%%DATADIR%%/Data/Sounds/voices/Yessir.ogg
-%%DATADIR%%/Data/Sounds/voices/Youllregretthat.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Amazing.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Boring.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Brilliant.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Bugger.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Bungee.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Byebye.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Comeonthen.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Coward.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Cutitout.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Drat.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Enemydown.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Excellent.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Fire.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Firstblood.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Flawless.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Gonnagetyou.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Grenade.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Hello.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Hmm.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Hurry.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Illgetyou.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Incoming.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Jump1.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Jump2.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Jump3.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Justyouwait.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Kamikaze.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Laugh.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Leavemealone.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Missed.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Nooo.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Nutter.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ohdear.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ooff1.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ooff2.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ooff3.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Oops.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ouch.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ow1.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ow2.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ow3.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Ow4.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Perfect.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Reinforcements.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Revenge.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Runaway.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Sameteam.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Solong.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Stupid.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Takecover.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Thisoneismine.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Traitor.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Uh-oh.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Victory.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Watchit.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Watchthis.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Whatthe.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Whoopsee.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Yessir.ogg
+%%DATADIR%%/Data/Sounds/voices/Default/Youllregretthat.ogg
 %%DATADIR%%/Data/Themes/Bamboo/Bamboo.png
 %%DATADIR%%/Data/Themes/Bamboo/Bamboo2.png
 %%DATADIR%%/Data/Themes/Bamboo/Bamboo3.png
@@ -330,6 +371,31 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Bath/horizont.png
 %%DATADIR%%/Data/Themes/Bath/icon.png
 %%DATADIR%%/Data/Themes/Bath/theme.cfg
+%%DATADIR%%/Data/Themes/Blox/Border.png
+%%DATADIR%%/Data/Themes/Blox/Flake.png
+%%DATADIR%%/Data/Themes/Blox/LandTex.png
+%%DATADIR%%/Data/Themes/Blox/Sky.png
+%%DATADIR%%/Data/Themes/Blox/horizont.png
+%%DATADIR%%/Data/Themes/Blox/icon.png
+%%DATADIR%%/Data/Themes/Blox/plant1.png
+%%DATADIR%%/Data/Themes/Blox/plant2.png
+%%DATADIR%%/Data/Themes/Blox/plant3.png
+%%DATADIR%%/Data/Themes/Blox/plant4.png
+%%DATADIR%%/Data/Themes/Blox/theme.cfg
+%%DATADIR%%/Data/Themes/Cake/BlueWater.png
+%%DATADIR%%/Data/Themes/Cake/Border.png
+%%DATADIR%%/Data/Themes/Cake/Cherry.png
+%%DATADIR%%/Data/Themes/Cake/Clouds.png
+%%DATADIR%%/Data/Themes/Cake/Flake.png
+%%DATADIR%%/Data/Themes/Cake/LandTex.png
+%%DATADIR%%/Data/Themes/Cake/Sky.png
+%%DATADIR%%/Data/Themes/Cake/horizont.png
+%%DATADIR%%/Data/Themes/Cake/icon.png
+%%DATADIR%%/Data/Themes/Cake/plant1.png
+%%DATADIR%%/Data/Themes/Cake/plant2.png
+%%DATADIR%%/Data/Themes/Cake/plant3.png
+%%DATADIR%%/Data/Themes/Cake/plant4.png
+%%DATADIR%%/Data/Themes/Cake/theme.cfg
 %%DATADIR%%/Data/Themes/City/Border.png
 %%DATADIR%%/Data/Themes/City/Flake.png
 %%DATADIR%%/Data/Themes/City/LandTex.png
@@ -341,6 +407,11 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/City/plant3.png
 %%DATADIR%%/Data/Themes/City/plant4.png
 %%DATADIR%%/Data/Themes/City/theme.cfg
+%%DATADIR%%/Data/Themes/CrazyMission/BlueWater.png
+%%DATADIR%%/Data/Themes/CrazyMission/Flake.png
+%%DATADIR%%/Data/Themes/CrazyMission/Sky.png
+%%DATADIR%%/Data/Themes/CrazyMission/horizont.png
+%%DATADIR%%/Data/Themes/CrazyMission/theme.cfg
 %%DATADIR%%/Data/Themes/EarthRise/Border.png
 %%DATADIR%%/Data/Themes/EarthRise/Clouds.png
 %%DATADIR%%/Data/Themes/EarthRise/Flake.png
@@ -351,6 +422,12 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/EarthRise/horizont.png
 %%DATADIR%%/Data/Themes/EarthRise/icon.png
 %%DATADIR%%/Data/Themes/EarthRise/theme.cfg
+%%DATADIR%%/Data/Themes/Eyes/BlueWater.png
+%%DATADIR%%/Data/Themes/Eyes/Clouds.png
+%%DATADIR%%/Data/Themes/Eyes/Flake.png
+%%DATADIR%%/Data/Themes/Eyes/Sky.png
+%%DATADIR%%/Data/Themes/Eyes/horizont.png
+%%DATADIR%%/Data/Themes/Eyes/theme.cfg
 %%DATADIR%%/Data/Themes/Freeway/AppleDirt.png
 %%DATADIR%%/Data/Themes/Freeway/AppleSmall.png
 %%DATADIR%%/Data/Themes/Freeway/Border.png
@@ -472,11 +549,16 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Themes/Planes
 @dirrm %%DATADIR%%/Data/Themes/Island
 @dirrm %%DATADIR%%/Data/Themes/Freeway
+@dirrm %%DATADIR%%/Data/Themes/Eyes
 @dirrm %%DATADIR%%/Data/Themes/EarthRise
+@dirrm %%DATADIR%%/Data/Themes/CrazyMission
 @dirrm %%DATADIR%%/Data/Themes/City
+@dirrm %%DATADIR%%/Data/Themes/Cake
+@dirrm %%DATADIR%%/Data/Themes/Blox
 @dirrm %%DATADIR%%/Data/Themes/Bath
 @dirrm %%DATADIR%%/Data/Themes/Bamboo
 @dirrm %%DATADIR%%/Data/Themes
+@dirrm %%DATADIR%%/Data/Sounds/voices/Default
 @dirrm %%DATADIR%%/Data/Sounds/voices
 @dirrm %%DATADIR%%/Data/Sounds
 @dirrm %%DATADIR%%/Data/Music
@@ -489,8 +571,14 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Maps/Hydrant
 @dirrm %%DATADIR%%/Data/Maps/Hedgewars
 @dirrm %%DATADIR%%/Data/Maps/Hedgelove
+@dirrm %%DATADIR%%/Data/Maps/HedgeFortress
+@dirrm %%DATADIR%%/Data/Maps/Eyes
 @dirrm %%DATADIR%%/Data/Maps/EarthRise
+@dirrm %%DATADIR%%/Data/Maps/CrazyMission
+@dirrm %%DATADIR%%/Data/Maps/Cogs
 @dirrm %%DATADIR%%/Data/Maps/Castle
+@dirrm %%DATADIR%%/Data/Maps/Cake
+@dirrm %%DATADIR%%/Data/Maps/Blox
 @dirrm %%DATADIR%%/Data/Maps/Bath
 @dirrm %%DATADIR%%/Data/Maps/BambooPlinko
 @dirrm %%DATADIR%%/Data/Maps/Bamboo
