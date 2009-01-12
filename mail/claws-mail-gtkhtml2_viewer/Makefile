@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkhtml2_viewer
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -20,7 +21,7 @@ RUN_DEPENDS=	claws-mail>=3.7.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
-USE_GNOME=	gail
+USE_GNOME=	gtk20
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
