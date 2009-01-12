@@ -17,6 +17,8 @@ USE_APACHE=	13
 
 CONFLICTS=	mod_layout-4.* mod_layout-5.* apache-contrib-1.*
 
+PORTSCOUT=	limit:^3
+
 CFLAGS+=	-fPIC
 
 post-patch:
