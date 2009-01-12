@@ -1,0 +1,28 @@
+# New ports collection makefile for:	xmms-wavpack
+# Date created:		2009-01-12
+# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	xmms-wavpack
+PORTVERSION=	1.0.2
+CATEGORIES=	audio
+MASTER_SITES=	http://www.wavpack.com/
+
+MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	XMMS input plugin to play WavPack files
+
+LIB_DEPENDS=	wavpack.1:${PORTSDIR}/audio/wavpack \
+		xmms.4:${PORTSDIR}/multimedia/xmms
+
+RESTRICTED=	missing license
+
+USE_BZIP2=	Yes
+GNU_CONFIGURE=	Yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	${RM} ${PREFIX}/lib/xmms/Input/libwavpack.la
+
+.include <bsd.port.mk>
