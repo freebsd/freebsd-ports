@@ -1,12 +1,12 @@
---- man/Makefile.in.orig	Sun Nov 20 08:14:38 2005
-+++ man/Makefile.in	Tue Jul 11 09:25:59 2006
-@@ -22,7 +22,7 @@
+--- man/Makefile.in.orig	2009-01-07 03:37:45.000000000 +1100
++++ man/Makefile.in	2009-01-12 21:52:53.000000000 +1100
+@@ -25,7 +25,7 @@
  test:		
  
  install:
--		mkdir -p $(root)@mandir@/man8
-+		mkdir -p $(root)${PREFIX}/man/man8
+-		mkdir -p $(DESTDIR)$(mandir)/man8
++		mkdir -p $(DESTDIR)${PREIFIX}/man//man8
  		for f in *.8; do \
--			install -m 644 $$f $(root)@mandir@/man8; \
-+			install -m 644 $$f $(root)${PREFIX}/man/man8; \
+-			install -m 644 $$f $(DESTDIR)$(mandir)/man8; \
++			install -m 644 $$f $(DESTDIR)${PREFIX}/man/man8; \
  		done
