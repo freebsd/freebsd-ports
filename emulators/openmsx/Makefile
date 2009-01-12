@@ -36,4 +36,10 @@ USE_SDL=	sdl image ttf
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
