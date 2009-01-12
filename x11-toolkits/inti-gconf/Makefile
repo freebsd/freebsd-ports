@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	inti
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Inti binding for GConf, the GNOME Configuration System
 
+DEPRECATED=	not maintain by upstream for more than five years and no port depend on this
+EXPIRATION_DATE=2009-02-11
+
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
 USE_GNOME=	gconf2 gnomehack gnomeprefix
