@@ -1175,7 +1175,6 @@ bsmtp                           ports/mail/bsmtp
 bsmtrace                        ports/security/bsmtrace
 bsnmp-regex                     ports/net-mgmt/bsnmp-regex
 bsnmp-ucd                       ports/net-mgmt/bsnmp-ucd
-bsnmpd                          ports/net-mgmt/bsnmpd
 bsnmptools                      ports/net-mgmt/bsnmptools
 bsp                             ports/games/bsp
 bsp_upektfmess                  ports/security/bsp_upektfmess
@@ -1252,7 +1251,6 @@ cabextract                      ports/archivers/cabextract
 cacao                           ports/java/cacao
 cacheboy                        ports/www/cacheboy
 cacheboy15-devel                ports/www/cacheboy15-devel
-cacheboy16			ports/www/cacheboy16
 cacti                           ports/net-mgmt/cacti
 cacti-spine                     ports/net-mgmt/cacti-spine
 cadaver                         ports/www/cadaver
@@ -1627,7 +1625,6 @@ codelite                        ports/editors/codelite
 codeville                       ports/devel/codeville
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
-cogito                          ports/devel/cogito
 coin                            ports/graphics/Coin
 coldsync                        ports/palm/coldsync
 cole                            ports/textproc/cole
@@ -7970,8 +7967,10 @@ lzmautils-devel                 ports/archivers/lzmautils-devel
 lzo                             ports/archivers/lzo
 lzo2                            ports/archivers/lzo2
 lzop                            ports/archivers/lzop
+m17n-contrib                    ports/textproc/m17n-contrib
 m17n-db                         ports/devel/m17n-db
 m17n-docs                       ports/devel/m17n-docs
+m17n-im-config                  ports/textproc/m17n-im-config
 m17n-lib                        ports/devel/m17n-lib
 m2000                           ports/emulators/m2000
 m6811-binutils                  ports/devel/m6811-binutils
@@ -10921,10 +10920,13 @@ p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
+p5-Geo-GML                      ports/graphics/p5-Geo-GML
 p5-Geo-IP                       ports/net/p5-Geo-IP
 p5-Geo-IP-PurePerl              ports/net/p5-Geo-IP-PurePerl
 p5-Geo-IPfree                   ports/net/p5-Geo-IPfree
+p5-Geo-KML                      ports/graphics/p5-Geo-KML
 p5-Geo-METAR                    ports/astro/p5-Geo-METAR
+p5-Geo-Point                    ports/graphics/p5-Geo-Point
 p5-Geo-Postcodes                ports/misc/p5-Geo-Postcodes
 p5-Geo-Postcodes-DK             ports/misc/p5-Geo-Postcodes-DK
 p5-Geo-Postcodes-NO             ports/misc/p5-Geo-Postcodes-NO
@@ -12751,8 +12753,10 @@ p5-XML-Catalog                  ports/textproc/p5-XML-Catalog
 p5-XML-Clean                    ports/textproc/p5-XML-Clean
 p5-XML-Code                     ports/textproc/p5-XML-Code
 p5-XML-Compile                  ports/textproc/p5-XML-Compile
+p5-XML-Compile-Cache            ports/textproc/p5-XML-Compile-Cache
 p5-XML-Compile-SOAP             ports/net/p5-XML-Compile-SOAP
 p5-XML-Compile-SOAP-Daemon      ports/net/p5-XML-Compile-SOAP-Daemon
+p5-XML-Compile-Tester           ports/devel/p5-XML-Compile-Tester
 p5-XML-DBMS                     ports/textproc/p5-XML-DBMS
 p5-XML-DOM                      ports/textproc/p5-XML-DOM
 p5-XML-DOM-Lite                 ports/textproc/p5-XML-DOM-Lite
@@ -14151,10 +14155,13 @@ p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
+p5-geo-gml                      ports/graphics/p5-Geo-GML
 p5-geo-ip                       ports/net/p5-Geo-IP
 p5-geo-ip-pureperl              ports/net/p5-Geo-IP-PurePerl
 p5-geo-ipfree                   ports/net/p5-Geo-IPfree
+p5-geo-kml                      ports/graphics/p5-Geo-KML
 p5-geo-metar                    ports/astro/p5-Geo-METAR
+p5-geo-point                    ports/graphics/p5-Geo-Point
 p5-geo-postcodes                ports/misc/p5-Geo-Postcodes
 p5-geo-postcodes-dk             ports/misc/p5-Geo-Postcodes-DK
 p5-geo-postcodes-no             ports/misc/p5-Geo-Postcodes-NO
@@ -16039,8 +16046,10 @@ p5-xml-catalog                  ports/textproc/p5-XML-Catalog
 p5-xml-clean                    ports/textproc/p5-XML-Clean
 p5-xml-code                     ports/textproc/p5-XML-Code
 p5-xml-compile                  ports/textproc/p5-XML-Compile
+p5-xml-compile-cache            ports/textproc/p5-XML-Compile-Cache
 p5-xml-compile-soap             ports/net/p5-XML-Compile-SOAP
 p5-xml-compile-soap-daemon      ports/net/p5-XML-Compile-SOAP-Daemon
+p5-xml-compile-tester           ports/devel/p5-XML-Compile-Tester
 p5-xml-dbms                     ports/textproc/p5-XML-DBMS
 p5-xml-differencemarkup         ports/textproc/p5-XML-DifferenceMarkup
 p5-xml-directory                ports/textproc/p5-XML-Directory
