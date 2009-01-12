@@ -26,6 +26,10 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 .endif
 
+BROKEN=		does not build with latest GTK+2
+DEPRECATED=	not maintain by upstream for more than five years and no port depend on this
+EXPIRATION_DATE=2009-02-11
+
 .include <bsd.port.pre.mk>
 
 post-patch:
