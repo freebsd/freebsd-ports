@@ -82,6 +82,7 @@
     SUBDIR += tochnog
     SUBDIR += transcalc
     SUBDIR += varkon
+    SUBDIR += verilog-mode.el
     SUBDIR += vipec
     SUBDIR += xcircuit
     SUBDIR += z88
