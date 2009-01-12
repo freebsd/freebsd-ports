@@ -63,6 +63,10 @@ lib/libplplotd.so.11
 %%FORTRAN%%@dirrm lib/fortran/modules/plplot
 %%FORTRAN%%@dirrm lib/fortran/modules
 %%FORTRAN%%@dirrm lib/fortran
+%%GNOME%%lib/libplplotgnome2d.a
+%%GNOME%%lib/libplplotgnome2d.la
+%%GNOME%%lib/libplplotgnome2d.so.0
+%%GNOME%%lib/libplplotgnome2d.so
 %%TCLTK%%lib/libplplottcltkd.a
 %%TCLTK%%lib/libplplottcltkd.la
 %%TCLTK%%lib/libplplottcltkd.so
@@ -121,6 +125,7 @@ libdata/pkgconfig/plplotd.pc
 libdata/pkgconfig/plplotd-c++.pc
 %%FORTRAN%%libdata/pkgconfig/plplotd-f77.pc
 %%FORTRAN%%libdata/pkgconfig/plplotd-f95.pc
+%%GNOME%%libdata/pkgconfig/plplotd-gnome2.pc
 %%TCLTK%%libdata/pkgconfig/plplotd-tcl.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
