@@ -1,0 +1,11 @@
+This module adds cancellation capabilities for threads. Cancelled threads are
+terminated using threads->exit(). The thread is then detached, and hence
+automatically cleaned up.
+
+Threads that are suspended using Thread::Suspend do not need to be resumed in
+order to be cancelled.
+
+It is possible for a thread to cancel itself.
+
+
+WWW: http://search.cpan.org/dist/Thread-Cancel/
