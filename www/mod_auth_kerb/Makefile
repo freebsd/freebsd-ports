@@ -29,6 +29,8 @@ USE_GMAKE=	yes
 CFLAGS:=
 GNU_CONFIGURE=	yes
 
+PORTSCOUT=	limit:^5.3
+
 .include <bsd.port.pre.mk>
 
 .if exists(${PREFIX}/sbin/apxs)
