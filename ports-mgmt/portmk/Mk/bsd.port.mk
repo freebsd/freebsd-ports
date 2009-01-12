@@ -5079,7 +5079,6 @@ ${deptype:L}-depends:
 					fi; \
 				fi; \
 			else \
-				fileneeded="$$prog"; \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
 				notfound=1; \
 			fi; \
@@ -5098,7 +5097,6 @@ ${deptype:L}-depends:
 						notfound=0; \
 					fi; \
 				else \
-					pkgneeded="$$prog"; \
 					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
 					notfound=1; \
 				fi; \
@@ -5121,7 +5119,6 @@ ${deptype:L}-depends:
 					notfound=0; \
 				fi; \
 			else \
-				execneeded="$$prog"; \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
 				notfound=1; \
 			fi; \
@@ -5132,24 +5129,6 @@ ${deptype:L}-depends:
 				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
 			else \
 				${_INSTALL_DEPENDS} \
-				if [ "$$fileneeded" != "${NONEXISTENT}" ]; then \
-					if [ ! -z "$$fileneeded" ]; then \
-						if [ ! -e "$$prog" ]; then \
-							${ECHO_MSG} "Error: file \"$$prog\" does not exist"; \
-							${FALSE}; \
-						fi; \
-					elif [ ! -z "$$pkgneeded" ]; then \
-						if ! ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
-							${ECHO_MSG} "Error: package \"$$prog\" does not exist"; \
-							${FALSE}; \
-						fi; \
-					elif [ ! -z "$$execneeded" ]; then \
-						if ! ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
-							${ECHO_MSG} "Error: executable \"$$prog\" does not exist"; \
-							${FALSE}; \
-						fi; \
-					fi; \
-				fi; \
 			fi; \
 		fi; \
 	done
