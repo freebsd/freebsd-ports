@@ -4,6 +4,7 @@ lib/claws-mail/plugins/vcalendar.a
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
 %%NLS%%share/locale/ca/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/de/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vcalendar.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/vcalendar.mo
