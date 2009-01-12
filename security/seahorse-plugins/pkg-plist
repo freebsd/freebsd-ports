@@ -316,6 +316,7 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 %%DATADIR%%/glade/seahorse-notify.glade
 %%DATADIR%%/glade/seahorse-prefs.glade
 %%DATADIR%%/glade/seahorse-progress.glade
+%%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps/seahorse-plugins/scalable
