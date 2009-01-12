@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	10.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://mirror.mcx2.org/
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl.12:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.13:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif

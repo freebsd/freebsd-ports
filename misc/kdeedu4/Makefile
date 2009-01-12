@@ -6,7 +6,7 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -24,7 +24,7 @@ LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb \
 		openbabel.3:${PORTSDIR}/science/openbabel \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		qalculate.4:${PORTSDIR}/math/libqalculate \
-		gsl.12:${PORTSDIR}/math/gsl
+		gsl.13:${PORTSDIR}/math/gsl
 
 LATEST_LINK=	${PORTNAME}4
 

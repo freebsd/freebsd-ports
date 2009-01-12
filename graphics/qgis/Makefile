@@ -7,6 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		gsl.12:${PORTSDIR}/math/gsl \
+		gsl.13:${PORTSDIR}/math/gsl \
 		gdal:${PORTSDIR}/graphics/gdal
 
 USE_BISON=	build

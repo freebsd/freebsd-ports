@@ -7,6 +7,7 @@
 
 PORTNAME=	gsl
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pygsl
@@ -19,7 +20,7 @@ COMMENT=	Python interface to GNU Scientific Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/include/numpy/arrayobject.h:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/__init__.py:${PORTSDIR}/math/py-numpy
-LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
 
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 USE_PYTHON=	yes
