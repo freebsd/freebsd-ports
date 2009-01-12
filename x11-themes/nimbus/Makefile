@@ -25,6 +25,8 @@ USE_GNOME=	intltool
 INTLTOOLIZE?=	${LOCALBASE}/bin/intltoolize
 CONFIGURE_ARGS=	--localedir=${PREFIX}/share/locale
 
+BROKEN=		needs an update to work with latest intltool
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/locale|$${datadir}/locale|' \
 		${WRKSRC}/aclocal.m4
