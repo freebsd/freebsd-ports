@@ -89,6 +89,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ical
+    SUBDIR += icanna
     SUBDIR += iiimf-le-canna
     SUBDIR += iiimf-le-freewnn
     SUBDIR += im-ja
