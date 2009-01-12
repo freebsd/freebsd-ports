@@ -76,6 +76,8 @@ pre-configure:
 	${REINPLACE_CMD} -e	\
 		's|-rpath $$(libdir)|-rpath $$(libdir) -rpath ${JAVA_HOME}/jre/lib/${ARCH}/client|'	\
 		${WRKSRC}/src/Makefile.in
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+	    	's|-DG[[:alpha:]]*_DISABLE_DEPRECATED||g'
 .for cfg in ${LIBTOOLFILES}
 	${REINPLACE_CMD} -e	\
 		"/hardcode_libdir_flag_spec/s|\(=.\)\(.*\)\(\$$libdir\)|& \2${JAVA_HOME}/jre/lib/${ARCH}/client|"	\
