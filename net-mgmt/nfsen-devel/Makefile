@@ -21,6 +21,8 @@ RUN_DEPENDS=	nfdump:${PORTSDIR}/net-mgmt/nfdump \
 		${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool
 
 BROKEN=		fails to install
+DEPRECATED=		no separate development version exists anymore
+EXPIRATION_DATE=	2009-02-12
 
 CONFLICTS=	nfsen-[0-9]*
 
