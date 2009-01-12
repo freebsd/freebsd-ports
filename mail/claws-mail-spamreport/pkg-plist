@@ -8,6 +8,8 @@ lib/claws-mail/plugins/spamreport.so
 %%NLS%%share/locale/hu/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/it/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/spam_report.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/spam_report.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/spam_report.mo
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
