@@ -51,6 +51,7 @@ include/gsl/gsl_heapsort.h
 include/gsl/gsl_histogram.h
 include/gsl/gsl_histogram2d.h
 include/gsl/gsl_ieee_utils.h
+include/gsl/gsl_inline.h
 include/gsl/gsl_integration.h
 include/gsl/gsl_interp.h
 include/gsl/gsl_linalg.h
@@ -73,6 +74,7 @@ include/gsl/gsl_matrix_ulong.h
 include/gsl/gsl_matrix_ushort.h
 include/gsl/gsl_message.h
 include/gsl/gsl_min.h
+include/gsl/gsl_minmax.h
 include/gsl/gsl_mode.h
 include/gsl/gsl_monte.h
 include/gsl/gsl_monte_miser.h
@@ -219,7 +221,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.12
+lib/libgsl.so.13
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
