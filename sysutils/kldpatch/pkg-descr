@@ -1,0 +1,8 @@
+The kldpatch utility can print or alter the content of device/quirk tables
+in kernel modules. These tables are generally used to identify devices,
+and possibly apply specific quirks to enable/disable certain features.
+
+Kldpatch is especially useful to let the kernel recognise a new device
+without rebooting and rebuilding/reinstalling kernel or modules.
+
+WWW: http://info.iet.unipi.it/~luigi/FreeBSD/
