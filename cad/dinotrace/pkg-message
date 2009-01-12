@@ -1,0 +1,15 @@
+====
+To activate dinotrace Emacs extensions add the following lines
+to your Emacs configuration file (usually ~/.emacs):
+
+;; Dinotrace mode
+(autoload 'dinotrace-update "dinotrace" "Update dinotrace annotations in this buffer" t)
+(autoload 'dinotrace-mode   "dinotrace" "Toggle dinotrace annotations in this buffer" t)
+(global-set-key "\C-x\C-aa" 'dinotrace-update)
+(global-set-key "\C-x\C-ad" 'dinotrace-mode)
+
+;; Sim-Log mode
+(autoload 'sim-log-mode "sim-log" "Mode for Simulation Log files." t)
+(setq auto-mode-alist (append (list '("\\.log$" . sim-log-mode)) auto-mode-alist))
+
+====
