@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	udfclient
-PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
 		${MASTER_SITE_NETBSD} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
-DISTNAME=	UDFclient.${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz
+DISTFILES=	UDFclient.${PORTVERSION}.tgz
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Tools for UDF filesystem
+
+WRKSRC=		${WRKDIR}/UDFclient.${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	with_pthread_cflags="${PTHREAD_CFLAGS}" \
@@ -25,7 +25,7 @@ CONFIGURE_ENV+=	with_pthread_cflags="${PTHREAD_CFLAGS}" \
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
 OPTIONS=	FUSE	"udfclientfs via FUSE"	off \
-		DEBUG	"build with debuging support" off
+		DEBUG	"build with debug support" off
 
 PLIST_FILES=	bin/udfdump \
 		bin/udfclient \
@@ -38,7 +38,7 @@ PLIST_FILES=	bin/udfdump \
 
 .if defined(WITH_FUSE)
 UDFCLIENTFS_NAME=	udfclientfs
-UDFCLIENTFS_VERSION=	0.2
+UDFCLIENTFS_VERSION=	0.4
 UDFCLIENTFS_DIR=	${WRKDIR}/udfclientfs
 
 MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse
