@@ -12,4 +12,6 @@ lib/claws-mail/plugins/gtkhtml2_viewer.so
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gtkhtml2_viewer.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gtkhtml2_viewer.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtkhtml2_viewer.mo
