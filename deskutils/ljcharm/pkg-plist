@@ -5,6 +5,6 @@ bin/charm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/charm.html
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample.charmrc
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.charmrc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
