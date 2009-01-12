@@ -34,4 +34,6 @@ MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 DEPRECATED=		project has been abandoned
 EXPIRATION_DATE=	2009-01-31
 
+BROKEN=			project has been abandoned
+
 .include <bsd.port.mk>
