@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -150,6 +150,14 @@ pre-configure:
 		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
 	@${CAT} ${PATCHDIR}/pkg-message-dynamicplugin
 	@sleep 5
+.endif
+
+pre-install:
+.if defined(WITH_POSTGRESQL)
+	@${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| postgresql|' ${WRKDIR}/snort.sh
+.endif
+.if defined(WITH_MYSQL)
+	@${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/snort.sh
 .endif
 
 post-install:
