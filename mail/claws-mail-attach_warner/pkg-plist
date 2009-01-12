@@ -9,6 +9,7 @@ lib/claws-mail/plugins/attachwarner.so
 %%NLS%%share/locale/fr/LC_MESSAGES/attachwarner.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/attachwarner.mo
 %%NLS%%share/locale/it/LC_MESSAGES/attachwarner.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/attachwarner.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/attachwarner.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/attachwarner.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/attachwarner.mo
