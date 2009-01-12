@@ -8,6 +8,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/alias.py
 %%PYTHON_SITELIBDIR%%/hgext/alias.pyc
 %%PYTHON_SITELIBDIR%%/hgext/alias.pyo
+%%PYTHON_SITELIBDIR%%/hgext/bookmarks.py
+%%PYTHON_SITELIBDIR%%/hgext/bookmarks.pyc
+%%PYTHON_SITELIBDIR%%/hgext/bookmarks.pyo
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.py
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyc
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyo
