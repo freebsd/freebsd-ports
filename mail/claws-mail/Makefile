@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	mail news ipv6
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sylpheed-claws
-DISTFILES=	${EXTRACT_ONLY} \
-		${THEMEFILE}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	SF/sylpheed-claws
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
@@ -23,13 +18,11 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		expat:${PORTSDIR}/textproc/expat2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
-		png:${PORTSDIR}/graphics/png
+		png:${PORTSDIR}/graphics/png \
+		gnutls.26:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
-
-THEMEVERSION=	20070116
-THEMEFILE=	claws-mail-themes-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -61,7 +54,6 @@ OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
 		DEBUG		"Enable debug support."			off \
 		DILLO		"Enable Dillo HTML viewer."		off \
 		GNOMEPRINT	"Enable extended print support (deprecated)."	off \
-		GNUTLS		"Enable gnuTLS support."		off \
 		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
 		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
@@ -123,17 +115,6 @@ PLIST_SUB+=		SA_PLUG=""
 CONFIGURE_ARGS+=	--disable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG="@comment "
 .endif
-.if defined(WITH_GNUTLS)
-CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
-LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
-.else
-CONFIGURE_ARGS+=	--disable-gnutls
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--enable-openssl --with-openssl-includes=${OPENSSLINC} \
-			--with-openssl-libs=${OPENSSLLIB}
-CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-.endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=		GPGME=""
 CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
@@ -145,11 +126,6 @@ RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 PLIST_SUB+=		GPGME="@comment "
 CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
 			--disable-pgpinline-plugin
-.endif
-.if defined(WITHOUT_THEMES)
-PLIST_SUB+=	THEMES="@comment "
-.else
-PLIST_SUB+=	THEMES=""
 .endif
 .if defined(WITH_DEBUG) || defined(WITH_ALL)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
@@ -176,10 +152,8 @@ CONFIGURE_ARGS+=	--enable-startup-notification
 CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
 
-post-extract:
 .if !defined(WITHOUT_THEMES)
-	@${MKDIR} ${WRKSRC}/themes
-	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${THEMEFILE} ${EXTRACT_AFTER_ARGS}
+RUN_DEPENDS+=	claws-mail-themes>=20080822:${PORTSDIR}/x11-themes/claws-mail-themes
 .endif
 
 post-patch:
@@ -213,15 +187,6 @@ post-install:
 		${DATADIR}
 	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/
-.if !defined(WITHOUT_THEMES)
-	@${MKDIR} ${DATADIR}/themes
-	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -mindepth 2 -print | \
-		${GREP} -vE '(Makefile.*|INSTALL)' | \
-		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
-	@${CHMOD} -R a+r ${DATADIR}/themes
-	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${FIND} ${DATADIR}/themes -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-.endif
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/claws-mail*.png ${PREFIX}/share/pixmaps/
 
