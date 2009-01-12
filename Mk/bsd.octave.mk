@@ -19,8 +19,6 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 RUN_DEPENDS+=	${LOCALBASE}/share/octave/tarballs:${PORTSDIR}/math/octave-forge-base
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 USE_FORTRAN=	yes
-# hack to get fortran installed with octave
-RUN_DEPENDS+=	${BUILD_DEPENDS:M*fortran*} ${BUILD_DEPENDS:M*f77*} ${BUILD_DEPENDS:M*g77*}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
