@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090112:
+  AFFECTS: users of mail/claws-mail*
+  AUTHOR: miwi@FreeBSD.org
+
+  claws-mail has been updated to 3.7.0, with this update openSSL
+  support has been removed by upstream in favour of gnuTLS. gnuTLS
+  is now enabled by default. Themes were have also been split to an
+  extra port which your can find under  x11-themes/claws-mail-themes.
+
 20090110:
   AFFECTS: users of GNOME and GTK+
   AUTHOR: gnome@FreeBSD.org
