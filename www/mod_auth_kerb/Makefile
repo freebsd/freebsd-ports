@@ -8,7 +8,8 @@
 # Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
-PORTVERSION=	5.4
+PORTVERSION=	5.3
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=modauthkerb
@@ -22,7 +23,7 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 # (i.e., HTTP over SSL/TLS).  Thus, we require as a dependency
 # a version of Apache which can do this.
 #
-USE_APACHE=	2.0+
+USE_APACHE=	1.3
 USE_GMAKE=	yes
 # Don't fsck with CFLAGS
 CFLAGS:=
