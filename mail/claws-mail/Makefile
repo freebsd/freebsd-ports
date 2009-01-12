@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws
 
@@ -153,7 +154,7 @@ CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
 
 .if !defined(WITHOUT_THEMES)
-RUN_DEPENDS+=	claws-mail-themes>=20080822:${PORTSDIR}/x11-themes/claws-mail-themes
+RUN_DEPENDS+=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${PORTSDIR}/x11-themes/claws-mail-themes
 .endif
 
 post-patch:
