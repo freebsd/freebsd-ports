@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.55
-CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTVERSION=	0.57
+CATEGORIES=	mail ipv6
+MASTER_SITES=	SF
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	A mail library
@@ -24,10 +23,15 @@ USE_AUTOTOOLS=	libtool:15 autoconf:262
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
+		IPV6	"Enable ipv6 support." on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
@@ -37,7 +41,13 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.else
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
