@@ -7,6 +7,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}v38-0
@@ -18,9 +19,8 @@ USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
 USE_GMAKE=	yes
 MAKEFILE=	makefile
+MAKE_ENV=	USE_NETWORK=1
 NO_WRKSUBDIR=	yes
-
-OPTIONS=	NETWORK	"Enable Sim_Ether module (and ports libpcap)"	on
 
 BIN_FILES=	altair altairz80 gri h316 hp2100 i1401 i1620 i7094 ibm1130 \
 		id16 id32 lgp nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 \
@@ -34,13 +34,6 @@ PLIST_DIRS=	%%DATADIR%%
 SUB_FILES+=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-# XXX How do we know that libpcap.a is really the correct >0.9.x version?!
-.if defined (WITH_NETWORK)
-RUN_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-BUILD_DEPENDS=	${RUN_DEPENDS}
-MAKE_ENV=	USE_NETWORK=1
-.endif
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN

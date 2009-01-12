@@ -1,6 +1,6 @@
 --- makefile.orig	2008-06-06 15:00:46.000000000 +0200
-+++ makefile	2008-07-22 23:16:54.000000000 +0200
-@@ -9,10 +9,10 @@
++++ makefile	2009-01-12 21:12:48.000000000 +0100
+@@ -9,13 +9,13 @@
      ifneq (,$(findstring darwin,$(OSTYPE)))
        OS_CCDEFS = -D_GNU_SOURCE
      else
@@ -12,4 +12,8 @@
 +  CC += ${CFLAGS} $(OS_CCDEFS) -I .
    ifeq ($(USE_NETWORK),)
    else
-     NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
+-    NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
++    NETWORK_OPT = -DUSE_NETWORK -lpcap
+   endif
+ else
+   #Win32 Environments
