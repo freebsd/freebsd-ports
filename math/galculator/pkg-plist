@@ -16,13 +16,13 @@ share/locale/es_MX/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
 share/locale/pl/LC_MESSAGES/galculator.mo
+share/locale/pt/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
 share/locale/ro/LC_MESSAGES/galculator.mo
 share/locale/ru/LC_MESSAGES/galculator.mo
 share/locale/sk/LC_MESSAGES/galculator.mo
-share/pixmaps/galculator/galculator.svg
-share/pixmaps/galculator/galculator_48x48.png
-@dirrm share/pixmaps/galculator
+share/pixmaps/galculator.svg
+share/pixmaps/galculator_48x48.png
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
