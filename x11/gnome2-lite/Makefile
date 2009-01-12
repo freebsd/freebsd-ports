@@ -6,14 +6,14 @@
 #   $MCom: ports/x11/gnome2-lite/Makefile,v 1.60 2007/08/15 17:52:07 mezz Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	The "meta-port" of the GNOME desktop slimmed down for FreeBSD releases
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets \
-		gnome-cd:${PORTSDIR}/audio/gnome-media \
+    		gnome-audio-profiles-properties:${PORTSDIR}/audio/gnome-media \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnome-utils \
 		eog:${PORTSDIR}/graphics/eog \
 		gedit:${PORTSDIR}/editors/gedit \
