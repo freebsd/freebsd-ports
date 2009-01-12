@@ -34,6 +34,10 @@ RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
+.ifdef(WITH_OPENSSL_PORT)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ext_openssl_openssl_missing.h
+.endif
+
 OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 		ONIGURUMA "Build with oniguruma regular expressions lib" off \
 		GCPATCH "Build with GC performance statistics collector" off \
