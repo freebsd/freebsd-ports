@@ -13,7 +13,7 @@ MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyYAML-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Python YAML parser
 
 OPTIONS=	YAML "Enable LibYAML binding" Off
