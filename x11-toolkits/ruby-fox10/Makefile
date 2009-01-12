@@ -26,7 +26,7 @@ LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox10 \
 
 DEPRECATED=		depends on deprecated port x11-toolkits/fox10
 EXPIRATION_DATE=	2009-01-28
-
+IGNORE=	please use x11-toolkits/ruby-fox12 instead.
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}10
 
 USE_RUBY=	yes
