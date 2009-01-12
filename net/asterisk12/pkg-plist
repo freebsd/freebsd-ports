@@ -158,6 +158,7 @@ include/asterisk/ast_expr.h
 include/asterisk/astdb.h
 include/asterisk/astmm.h
 include/asterisk/astobj.h
+include/asterisk/astobj2.h
 include/asterisk/astosp.h
 include/asterisk/build.h
 include/asterisk/callerid.h

@@ -12,7 +12,7 @@ $FreeBSD$
    ifeq (${OSARCH},NetBSD)
      SOLINK+=-L$(CROSS_COMPILE_TARGET)/usr/pkg/lib
    endif
-@@ -43,8 +43,8 @@
+@@ -43,28 +43,28 @@
  
  UI_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex.h)
  UIS_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex/speex.h)
@@ -22,26 +22,35 @@ $FreeBSD$
 +ULIS_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/speex/speex.h)
  ifneq (${UI_SPEEX},)
    MODSPEEX=codec_speex.so
-   LIBSPEEX+=-lspeex -lm
-@@ -56,14 +56,14 @@
+-  LIBSPEEX+=-lspeex -lm
++  LIBSPEEX+=-lspeex -lspeexdsp -lm
+ endif
+ ifneq (${UIS_SPEEX},)
+   MODSPEEX=codec_speex.so
+   CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/include/speex
+-  LIBSPEEX+=-lspeex -lm
++  LIBSPEEX+=-lspeex -lspeexdsp -lm
  endif
  ifneq (${ULI_SPEEX},)
    MODSPEEX=codec_speex.so
 -  CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include
 -  LIBSPEEX=-L$(CROSS_COMPILE_TARGET)/usr/local/lib
+-  LIBSPEEX+=-lspeex -lm
 +  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include
 +  LIBSPEEX=-L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib
-   LIBSPEEX+=-lspeex -lm
++  LIBSPEEX+=-lspeex -lspeexdsp -lm
  endif
  ifneq (${ULIS_SPEEX},)
    MODSPEEX=codec_speex.so
 -  CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include/speex
 -  LIBSPEEX=-L$(CROSS_COMPILE_TARGET)/usr/local/lib
+-  LIBSPEEX+=-lspeex -lm
 +  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/speex
 +  LIBSPEEX=-L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib
-   LIBSPEEX+=-lspeex -lm
++  LIBSPEEX+=-lspeex -lspeexdsp -lm
  endif
  
+ ifneq ($(wildcard ilbc/iLBC_decode.h),)
 @@ -78,7 +78,7 @@
  LIBLPC10=lpc10/liblpc10.a
  
