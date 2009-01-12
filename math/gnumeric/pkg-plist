@@ -971,6 +971,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/include
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@dirrm lib/goffice/0.7.2/plugins/gnumeric
 @dirrm include/libspreadsheet-1.10/spreadsheet
 @dirrm include/libspreadsheet-1.10
 @unexec update-desktop-database > /dev/null || /usr/bin/true
