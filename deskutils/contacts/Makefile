@@ -24,4 +24,6 @@ GCONF_SCHEMAS=	contacts.schemas
 MAN1=		${PORTNAME}.1
 # CFLAGS+=	-g
 
+BROKEN=		needs upgrade to work with evolution-data-server 2.24
+
 .include <bsd.port.mk>
