@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	giffunip@tutopia.com
 COMMENT=	A scientific plotting package
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		gd.4:${PORTSDIR}/graphics/gd \
 		qhull.5:${PORTSDIR}/math/qhull
@@ -22,9 +21,9 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 USE_AUTOTOOLS=	libltdl:15
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		M4="${LOCALBASE}/bin/gm4"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
 		--with-gd-incdir=${LOCALBASE}/include \
 		--with-gd-libdir=${LOCALBASE}/lib \
@@ -34,15 +33,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		plm2gif.1 plplot_libtool.1 plpr.1 pltek.1 pstex2eps.1
 
-.if defined(WITH_FORTRAN)
-PKGNAMESUFFIX=	-fortran
-USE_FORTRAN=	yes
-CONFIGURE_ENV+= FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-CONFIGURE_ARGS+=	--enable-f95
-PLIST_SUB+=	FORTRAN=""
-.else
-CONFIGURE_ARGS+=	--disable-f77
-PLIST_SUB+=	FORTRAN="@comment "
+.if !defined(WITHOUT_PTHREAD)
+CONFIGURE_ARGS+=	--with-pthreads
 .endif
 
 .if defined(WITHOUT_X11)
@@ -55,25 +47,15 @@ LIB_DEPENDS+=	LASi.0:${PORTSDIR}/devel/lasi
 PLIST_SUB+=	X11=""
 .endif
 
-.if !defined(WITHOUT_PTHREAD)
-CONFIGURE_ARGS+=	--with-pthreads
-.endif
-
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
-PLIST_SUB+=	SVGALIB=""
+.if defined(WITH_FORTRAN)
+PKGNAMESUFFIX=	-fortran
+USE_FORTRAN=	yes
+CONFIGURE_ENV+= FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+CONFIGURE_ARGS+=	--enable-f95
+PLIST_SUB+=	FORTRAN=""
 .else
-CONFIGURE_ARGS+=	--disable-linuxvga
-PLIST_SUB+=	SVGALIB="@comment "
-.endif
-
-.if defined(WITH_PYTHON)
-USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
-.else
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON="@comment "
+CONFIGURE_ARGS+=	--disable-f77
+PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if defined(WITH_GNOME)
@@ -83,6 +65,24 @@ PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
 CONFIGURE_ARGS+=	--disable-gcw
+.endif
+
+.if defined(WITH_PYTHON)
+BROKEN= 	does not build
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
+CONFIGURE_ENV+=	PYTHON_VERSION="${PYTHON_VERSION}"
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+PLIST_SUB+=	SVGALIB=""
+.else
+CONFIGURE_ARGS+=	--disable-linuxvga
+PLIST_SUB+=	SVGALIB="@comment "
 .endif
 
 .if defined(WITH_TCLTK)
@@ -110,12 +110,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "PLplot has the following tunable options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
+	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITH_FORTRAN=yes	Turns on Fortran support"
-	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
 	@${ECHO_MSG} "	WITH_GNOME=yes		Turns on GNOME driver support"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
+	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
 	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
 	@${ECHO_MSG} ""
 
@@ -124,8 +124,6 @@ post-patch:
 		 s|-ltcl$$|-ltcl84|g ; \
 		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
 		 s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|tk octave java|tk|g' \
-		${WRKSRC}/bindings/Makefile.in
 	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.4 |g' \
 		${WRKSRC}/scripts/mktclIndex
 
