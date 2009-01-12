@@ -7,12 +7,13 @@
 
 PORTNAME=	octave-forge-gsl
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=     math
 
 MAINTAINER=	stephen@math.missouri.edu
 COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
 
-LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl
 
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+/usr/local/bin/bash+g ${WRKSRC}/src/config*
