@@ -1,0 +1,16 @@
+$NetBSD: patch-ab,v 1.1 2008/10/02 16:34:18 joerg Exp $
+
+--- configure.orig	2006-12-24 18:45:07.000000000 +0000
++++ configure
+@@ -21508,7 +21508,10 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+   fi
+-  if test $LIBXML2_VERSION -ge 2616; then
++  good_libxml2=no
++  case "$LIBXML2_VERSION" in 27*) good_libxml2=yes;; esac
++  test $LIBXML2_VERSION -ge 2616 && good_libxml2=yes
++  if test $good_libxml2 = yes; then
+     cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBXML2 1
+ _ACEOF
