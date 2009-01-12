@@ -1,27 +1,14 @@
---- ../libhangul-0.0.8_orig/test/Makefile.in	2008-04-20 16:01:44.000000000 +0900
-+++ test/Makefile.in	2008-04-21 18:12:41.000000000 +0900
+--- test/Makefile.in.orig	2009-01-06 21:01:57.000000000 +0900
++++ test/Makefile.in	2009-01-06 20:49:06.000000000 +0900
 @@ -184,9 +184,11 @@
  hangul_CFLAGS = 
  hangul_SOURCES = hangul.c
  hangul_LDADD = ../hangul/libhangul.la
-+hangul_LDFLAGS = -liconv 
++hangul_LDFLAGS = -liconv
  hanja_CFLAGS = 
  hanja_SOURCES = hanja.c
  hanja_LDADD = ../hangul/libhangul.la
-+hanja_LDFLAGS = -liconv 
- all: all-am
- 
- .SUFFIXES:
-@@ -229,10 +231,10 @@
- 	done
- hangul$(EXEEXT): $(hangul_OBJECTS) $(hangul_DEPENDENCIES) 
- 	@rm -f hangul$(EXEEXT)
--	$(hangul_LINK) $(hangul_OBJECTS) $(hangul_LDADD) $(LIBS)
-+	$(hangul_LINK) $(hangul_OBJECTS) $(hangul_LDADD) $(hangul_LDFLAGS) $(LIBS)
- hanja$(EXEEXT): $(hanja_OBJECTS) $(hanja_DEPENDENCIES) 
- 	@rm -f hanja$(EXEEXT)
--	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(LIBS)
-+	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(hanja_LDADD) $(LIBS)
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
++hanja_LDFLAGS = -liconv
+ TESTS = test
+ test_SOURCES = test.c ../hangul/hangul.h
+ test_CFLAGS = @CHECK_CFLAGS@
