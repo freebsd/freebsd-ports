@@ -367,6 +367,7 @@
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
     SUBDIR += kldfind
+    SUBDIR += kldpatch
     SUBDIR += kleansweep
     SUBDIR += klineakconfig
     SUBDIR += kmilo
