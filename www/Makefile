@@ -389,6 +389,7 @@
     SUBDIR += mod_auth_imap
     SUBDIR += mod_auth_imap2
     SUBDIR += mod_auth_kerb
+    SUBDIR += mod_auth_kerb2
     SUBDIR += mod_auth_ldap
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_mysql2

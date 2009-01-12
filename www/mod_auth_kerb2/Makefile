@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=modauthkerb
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
 
+LATEST_LINK=	mod_auth_kerb2
 #
 # This module allows users to send their Kerberos password in
 # plain text; it should only be used over an encrypted connection
