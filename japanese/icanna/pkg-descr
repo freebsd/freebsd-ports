@@ -1,0 +1,7 @@
+icanna is a connector program between yc.el and Canna server
+via unix domain socket. Since emacs21 or former version does
+not support unix domain socket in elisp itself, icanna helps
+the elisp application to interact with Canna server by relaying
+data between standard input/output and unix domain socket.
+
+WWW: http://www.ceres.dti.ne.jp/~knak/yc.html
