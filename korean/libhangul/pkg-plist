@@ -1,14 +1,10 @@
-bin/hanjac
 include/hangul-1.0/hangul.h
-%%DATADIR%%/hanja/hanja.txt
 lib/libhangul.a
 lib/libhangul.la
 lib/libhangul.so
 lib/libhangul.so.1
-lib/libhangul/hanja/hanja.bin
+lib/libhangul/hanja/hanja.txt
 libdata/pkgconfig/libhangul.pc
-@dirrm %%DATADIR%%/hanja
-@dirrm %%DATADIR%%
 @dirrm include/hangul-1.0
 @dirrm lib/libhangul/hanja
 @dirrm lib/libhangul
