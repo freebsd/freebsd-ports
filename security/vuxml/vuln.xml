@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d4a358d3-e09a-11dd-a765-0030843d3802">
+    <topic>nagios -- web interface privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+      <package>
+        <name>nagios2</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>securityfocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/32156/discuss">
+	  <p>An attacker with low-level privileges may exploit this issue to
+	    bypass authorization and cause arbitrary commands to run within the
+	    context of the Nagios server. This may aid in further attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5027</cvename>
+      <bid>32156</bid>
+      <url>http://secunia.com/advisories/33320</url>
+      <url>http://www.ubuntu.com/usn/USN-698-1</url>
+      <url>http://www.nagios.org/development/history/nagios-3x.php</url>
+    </references>
+    <dates>
+      <discovery>2008-11-06</discovery>
+      <entry>2009-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a02c9595-e018-11dd-a765-0030843d3802">
     <topic>pdfjam -- insecure temporary files</topic>
     <affects>
