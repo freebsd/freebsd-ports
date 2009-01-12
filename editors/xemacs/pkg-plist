@@ -864,6 +864,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/dump-paths.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/dumped-lisp.el
 lib/xemacs-%%XEMACS_VER%%/lisp/easymenu.el
 lib/xemacs-%%XEMACS_VER%%/lisp/easymenu.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/easy-mmode.el
+lib/xemacs-%%XEMACS_VER%%/lisp/easy-mmode.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/etags.el
 lib/xemacs-%%XEMACS_VER%%/lisp/etags.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/events.el
