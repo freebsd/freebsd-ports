@@ -20,6 +20,8 @@ USE_APACHE=	13
 NO_PACKAGE=	Requires Python without threads support
 USE_PYTHON=	yes
 
+PORTSCOUT=	limit:^2
+
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
