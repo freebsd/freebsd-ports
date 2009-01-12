@@ -45,5 +45,7 @@ post-patch:
 		's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
 		 s|\\[$$][{]top_builddir[}]/intl/libintl.a|-lintl|g' \
 		 	${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|#define GTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/support/widgets/*.c
 
 .include <bsd.port.mk>
