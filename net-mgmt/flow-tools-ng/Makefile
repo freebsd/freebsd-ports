@@ -7,6 +7,7 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-ng
@@ -74,6 +75,8 @@ post-patch:
 	 -e 's|@sysconfdir@/sym/|${PREFIX}/share/flow-tools/|' \
 	 -e 's|@sysconfdir@/cfg/|${PREFIX}/etc/flow-tools/|' \
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
+	@${REINPLACE_CMD} -e 's|!/bin/env|!/usr/bin/env|' \
+		${WRKSRC}/bin/* ${WRKSRC}/utils/*
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} \
