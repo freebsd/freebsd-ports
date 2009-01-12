@@ -31,4 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
+DEPRECATED=		project has been abandoned
+EXPIRATION_DATE=	2009-01-31
+
 .include <bsd.port.mk>
