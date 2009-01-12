@@ -7,14 +7,12 @@
 
 PORTNAME=	claws-mail-themes
 PORTVERSION=	20080822
+PORTREVISION=	1
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Claws-Mail Themes
-
-BUILD_DEPENDS=	claws-mail>=3.7.0:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.0:${PORTSDIR}/mail/claws-mail
 
 NO_BUILD=	yes
 
