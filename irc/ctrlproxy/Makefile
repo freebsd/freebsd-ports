@@ -8,11 +8,12 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 		LOCAL/chinsan/ctrlproxy/
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	wahjava@gmail.com
 COMMENT=	Flexible IRC proxy
 
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
