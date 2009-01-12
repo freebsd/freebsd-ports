@@ -30,6 +30,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
-	    	's|-DG.*_DISABLE_DEPRECATED||g'
+	    	's|-DG[[:alpha:]]*_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
