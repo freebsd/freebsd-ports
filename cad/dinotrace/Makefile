@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A graphical signal trace waveform viewer
 
 USE_GNOME=	gnometarget
