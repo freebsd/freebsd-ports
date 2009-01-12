@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	traindirector
-PORTVERSION=	3.5
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.backerstreet.com/traindir/
-DISTNAME=	tdir35src
+DISTNAME=	tdir36src
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
@@ -22,7 +21,7 @@ USE_GNOME=	gtk20
 USE_ZIP=	yes
 
 USE_WX=		2.8
-WX_COMPS=	wx
+WX_COMPS=	wx:lib
 WX_UNICODE=	yes
 
 DESKTOP_ENTRIES="Train Director" "${COMMENT}" "" "traindir3" \
