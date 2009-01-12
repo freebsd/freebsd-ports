@@ -13,12 +13,12 @@ PORTNAME=	fetchmail
 PORTVERSION=	6.3.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
-		${MASTER_SITE_SUNSITE:S/$/:sunsite/}\
-		http://home.leo.org/~barner/freebsd/distfiles/:leo
-MASTER_SITE_SUBDIR=	fetchmail/:DEFAULT,leo \
-			system/mail/pop/fetchmail/:sunsite
-MASTER_SITE_SUBDIR=	fetchmail
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,leo,sunsite
+		http://homepages.uni-paderborn.de/mandree/fetchmail/:ma \
+		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
+MASTER_SITE_SUBDIR=	fetchmail/:DEFAULT \
+			system/mail/pop/fetchmail/:sunsite \
+			./:ma
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,ma,sunsite
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
