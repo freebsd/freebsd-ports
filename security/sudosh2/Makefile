@@ -5,17 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=		sudosh
-PORTVERSION=		1.8.2
-PORTREVISION=		5
+PORTNAME=		sudosh2
+PORTVERSION=		1.0.2
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=		.tbz2
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		A sudo shell
+COMMENT=		Second version of the sudo shell
+CONFLICTS=		sudosh-*
 
+USE_BZIP2=		yes
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes
