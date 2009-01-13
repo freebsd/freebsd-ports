@@ -161,6 +161,7 @@
     SUBDIR += dump9660
     SUBDIR += dupfind
     SUBDIR += duplicity
+    SUBDIR += dupmerge
     SUBDIR += durep
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup

@@ -1,0 +1,6 @@
+Dupmerge reads a list of files from standard input (eg., as produced by
+"find . -print") and looks securely for identical files. When it finds
+two or more identical files, all but one are unlinked to reclaim the
+disk space and recreated as hard links to the remaining copy.
+
+WWW: http://sourceforge.net/projects/dupmerge
