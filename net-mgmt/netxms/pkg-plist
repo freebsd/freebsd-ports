@@ -5,6 +5,7 @@
 %%SERVER%%bin/nxagentd
 %%CLIENT%%bin/nxalarm
 %%CLIENT%%bin/nxcmd
+%%NXCPTEST%%bin/nxcptest
 %%SERVER%%bin/nxdbmgr
 %%CLIENT%%bin/nxevent
 %%SERVER%%bin/nxget
@@ -31,6 +32,9 @@ lib/libnetxms.so.0
 %%SERVER%%lib/libnsm_freebsd.la
 %%SERVER%%lib/libnsm_freebsd.so
 %%SERVER%%lib/libnsm_freebsd.so.0
+%%SERVER%%lib/libnsm_logwatch.la
+%%SERVER%%lib/libnsm_logwatch.so
+%%SERVER%%lib/libnsm_logwatch.so.0
 %%SERVER%%lib/libnsm_ping.la
 %%SERVER%%lib/libnsm_ping.so
 %%SERVER%%lib/libnsm_ping.so.0
@@ -52,6 +56,9 @@ lib/libnetxms.so.0
 %%AGENT%%lib/libnsm_freebsd.la
 %%AGENT%%lib/libnsm_freebsd.so
 %%AGENT%%lib/libnsm_freebsd.so.0
+%%AGENT%%lib/libnsm_logwatch.la
+%%AGENT%%lib/libnsm_logwatch.so
+%%AGENT%%lib/libnsm_logwatch.so.0
 %%AGENT%%lib/libnsm_ping.la
 %%AGENT%%lib/libnsm_ping.so
 %%AGENT%%lib/libnsm_ping.so.0
@@ -85,6 +92,12 @@ lib/libnetxms.so.0
 %%SQLITE%%lib/libnxddr_sqlite.la
 %%SQLITE%%lib/libnxddr_sqlite.so
 %%SQLITE%%lib/libnxddr_sqlite.so.0
+%%SERVER%%lib/libnxlp.la
+%%SERVER%%lib/libnxlp.so
+%%SERVER%%lib/libnxlp.so.0
+%%AGENT%%lib/libnxlp.la
+%%AGENT%%lib/libnxlp.so
+%%AGENT%%lib/libnxlp.so.0
 %%NXMAP%%lib/libnxmap.la
 %%NXMAP%%lib/libnxmap.so
 %%NXMAP%%lib/libnxmap.so.0
@@ -164,12 +177,14 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/HOST-RESOURCES-TYPES.txt
 %%SERVER%%%%DATADIR%%/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IANA-LANGUAGE-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/IANA-RTPROTO-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IANAifType-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IEEE8021-PAE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IEEE802dot11-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IF-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/INET-ADDRESS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/IP-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/IPMROUTE-STD-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/LLDP-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/MAU-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/MTA-MIB.txt
@@ -195,6 +210,7 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/NOKIA-IPSO-SYSTEM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OPTIMUX-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OSPF-MIB.txt
+%%SERVER%%%%DATADIR%%/PIM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/P-BRIDGE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PerfHist-TC-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PowerNet-MIB.txt
