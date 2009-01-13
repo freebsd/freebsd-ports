@@ -8,5 +8,15 @@ lib/X11/fonts/local/ProggyTinySZ.pcf.gz
 lib/X11/fonts/local/ProggyCleanSZBP.pcf.gz
 lib/X11/fonts/local/ProggyCleanCP.pcf.gz
 lib/X11/fonts/local/ProggyCleanSZCP.pcf.gz
+lib/X11/fonts/local/cft.pcf
+lib/X11/fonts/local/Opti.pcf.gz
+lib/X11/fonts/local/OptiSmall.pcf.gz
+lib/X11/fonts/local/Speedy11.pcf.gz
+lib/X11/fonts/local/Speedy12.pcf.gz
+lib/X11/fonts/local/Speedy.pcf.gz
+lib/X11/fonts/local/PixelCarnageMono.pcf.gz
+lib/X11/fonts/local/ProggyTinyBold.pcf.gz
+lib/X11/fonts/local/WebbySmall.pcf.gz
+lib/X11/fonts/local/WebbyCaps.pcf.gz
 @exec (cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir)
 @unexec (cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir)
