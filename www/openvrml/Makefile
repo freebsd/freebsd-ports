@@ -57,8 +57,6 @@ BROKEN=		Does not compile
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
-BROKEN=	does not build with GNOME 2.24
-
 .if exists(${LOCALBASE}/include/boost/python.hpp)
 LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python
 .else
