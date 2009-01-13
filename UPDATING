@@ -14,6 +14,9 @@ upgrades.
   support has been removed by upstream in favour of gnuTLS. gnuTLS
   is now enabled by default. Themes were have also been split to an
   extra port which your can find under  x11-themes/claws-mail-themes.
+  Entirely menu was rewritten in 3.6.0 version using modern GTK
+  interface, as a consequence, all custom shortcuts will be lost
+  after upgrade.
 
 20090110:
   AFFECTS: users of GNOME and GTK+
