@@ -208,6 +208,7 @@ share/gnome/help/window-list/ja/window-list.xml
 share/gnome/help/window-list/ko/window-list.xml
 share/gnome/help/window-list/oc/window-list.xml
 share/gnome/help/window-list/pa/window-list.xml
+share/gnome/help/window-list/pt_BR/window-list.xml
 share/gnome/help/window-list/ru/window-list.xml
 share/gnome/help/window-list/sv/window-list.xml
 share/gnome/help/window-list/uk/window-list.xml
@@ -465,6 +466,7 @@ share/omf/window-list/window-list-it.omf
 share/omf/window-list/window-list-ko.omf
 share/omf/window-list/window-list-oc.omf
 share/omf/window-list/window-list-pa.omf
+share/omf/window-list/window-list-pt_BR.omf
 share/omf/window-list/window-list-ru.omf
 share/omf/window-list/window-list-sv.omf
 share/omf/window-list/window-list-uk.omf
@@ -527,6 +529,7 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/window-list/uk
 @dirrm share/gnome/help/window-list/sv
 @dirrm share/gnome/help/window-list/ru
+@dirrm share/gnome/help/window-list/pt_BR
 @dirrm share/gnome/help/window-list/pa
 @dirrm share/gnome/help/window-list/oc
 @dirrm share/gnome/help/window-list/ko
