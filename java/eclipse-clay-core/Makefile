@@ -17,7 +17,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A database design tool for the Eclipse development environment
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feature.xml:${PORTSDIR}/java/eclipse-gef
+RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 RESTRICTED=	License agreement is required to download.
 
