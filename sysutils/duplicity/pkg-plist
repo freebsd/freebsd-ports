@@ -125,3 +125,5 @@ bin/rdiffdir
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/locale/io/LC_MESSAGES/duplicity.mo
+@dirrmtry share/locale/io/LC_MESSAGES
+@dirrmtry share/locale/io
