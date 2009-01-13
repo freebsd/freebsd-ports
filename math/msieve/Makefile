@@ -7,6 +7,7 @@
 
 PORTNAME=	msieve
 PORTVERSION=	1.38
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
