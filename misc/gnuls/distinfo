@@ -1,3 +1,3 @@
-MD5 (fileutils-4.1.tar.gz) = 2fa04ceee87e962ddf72f32a2d6b906d
-SHA256 (fileutils-4.1.tar.gz) = 301c60795b011e63f034cfdf7b327b60f1f8f76909337a530b903bb697937188
-SIZE (fileutils-4.1.tar.gz) = 1812537
+MD5 (coreutils-6.12.tar.gz) = 2ca9ac69823dbd567b905a9e9f53c4f6
+SHA256 (coreutils-6.12.tar.gz) = 49d2f703e2310e6328cb6f9d9bae3612c42b3ee5175f449692c5b95e453cf18a
+SIZE (coreutils-6.12.tar.gz) = 9001890
