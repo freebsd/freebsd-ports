@@ -7,7 +7,7 @@ individual man pages for details on each program.
 
 NOTES:
 
-1. This port modifies the GNU `fileutils' make procedure so that it
+1. This port modifies the GNU `coreutils' make procedure so that it
    installs only programs and man pages listed above. In particular, it
    does not install the various GNU info files associated with the
    programs.
