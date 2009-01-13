@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Remove package declaration from PEAR's registry and optionally delete
+# a non-standard channel.
+
+if [ x$2 != xDEINSTALL -a x$2 != xPOST-DEINSTALL ]; then
+    exit
+fi
+PKG_NAME=${1%%-[0-9._]*}
+PACKAGE=$(echo $PKG_NAME | sed 's/pear-//')
+
+PEAR=${PKG_PREFIX}/bin/pear
+CHANNEL=%%CHANNEL%%
+
+if [ "$2" = "DEINSTALL" ]; then
+	if [ "x${CHANNEL}" != "x" ]; then
+		${PEAR} uninstall -r -n ${CHANNEL}/${PACKAGE} || true
+	else
+		${PEAR} uninstall -r -n ${PACKAGE} || true
+	fi
+else
+	if [ "x${CHANNEL}" != "x" ]; then
+		${PEAR} channel-delete ${CHANNEL}
+	fi
+fi
