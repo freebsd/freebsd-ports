@@ -1,5 +1,5 @@
---- src/Makefile	2008-04-16 14:06:34.000000000 +0200
-+++ src/Makefile.port	2008-07-15 14:28:18.000000000 +0200
+--- src/Makefile	2008-12-22 23:37:41.000000000 +0100
++++ src/Makefile.port	2009-01-13 15:24:01.000000000 +0100
 @@ -1,10 +1,10 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -11,14 +11,14 @@
 -DATADIR=$(PREFIX)/share/espeak-data
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.37
+ RELEASE = 1.40
  BIN_NAME = speak
 @@ -24,18 +24,18 @@
  LN_SF = /bin/ln -sf
  MKDIR = mkdir -p
  
 -AUDIO = portaudio
-+AUDIO ?= portaudio
++AUDIO? = portaudio
  #AUDIO = pulseaudio
  #AUDIO = sada
  
@@ -69,8 +69,8 @@
  
  
  x_%.o: %.cpp
--	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
-+	$(CXX) $(CXXFLAGS) $(PHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
+-	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -fvisibility=hidden -pedantic \
++	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -fvisibility=hidden -pedantic \
  	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
@@ -79,7 +79,7 @@
  install: all
  	# Create directories
 -	rm -rf $(DESTDIR)$(DATADIR)
-+	# rm -rf $(DESTDIR)$(DATADIR)
++	#rm -rf $(DESTDIR)$(DATADIR)
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
