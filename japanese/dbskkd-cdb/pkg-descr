@@ -8,4 +8,4 @@ called from "super-server" programs such as inetd or tcpserver, and the
 I/O operation is solely with the stdio interface, so the code is compact
 and the access to the server can be easily restricted.
 
-WWW: http://www.ne.jp/asahi/bdx/info/software/jp-dbskkd.html
+WWW: http://code.google.com/p/dbskkd-cdb/
