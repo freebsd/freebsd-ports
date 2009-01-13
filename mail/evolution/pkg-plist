@@ -599,6 +599,7 @@ share/applications/evolution.desktop
 %%DATADIR%%/%%VERSION%%/glade/task-details-page.glade
 %%DATADIR%%/%%VERSION%%/glade/task-page.glade
 %%DATADIR%%/%%VERSION%%/help/quickref/C/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/cs/quickref.pd
 %%DATADIR%%/%%VERSION%%/help/quickref/de/quickref.pdf
 %%DATADIR%%/%%VERSION%%/help/quickref/es/quickref.pdf
 %%DATADIR%%/%%VERSION%%/help/quickref/fr/quickref.pdf
