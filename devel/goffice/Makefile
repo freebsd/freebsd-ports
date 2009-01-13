@@ -5,6 +5,8 @@
 # $FreeBSD$
 #   $MCom: ports/devel/goffice/Makefile,v 1.35 2008/10/20 18:13:37 kwm Exp $
 #
+# !!! When updating goffice, don't forget to update pkg-plist in:
+#     math/gnumeric, science/gchemutils
 
 PORTNAME=	goffice
 PORTVERSION=	0.7.2

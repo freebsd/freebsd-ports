@@ -5,7 +5,6 @@
 # $FreeBSD$
 #   $MCom: ports/devel/goffice/Makefile,v 1.32 2007/09/06 05:01:28 marcus Exp $
 #
-# !!! When updating goffice, don't forget to update science/gchempaint pkg-plists too! !!!
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.3
