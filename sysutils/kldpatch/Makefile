@@ -18,7 +18,7 @@ COMMENT=	Utility to patch modules and kernel
 MAN8=		kldpatch.8
 PLIST_FILES=	sbin/kldpatch
 
-WRKSRC=${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
