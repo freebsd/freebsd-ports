@@ -2,7 +2,6 @@ bin/compile_link
 bin/config_prog
 bin/configdump
 bin/crontab
-bin/dump
 bin/expire
 bin/expireall
 bin/findtags
@@ -17,7 +16,6 @@ interchange/_session_storable
 interchange/_uid
 interchange/catalog_after.cfg
 interchange/catalog_before.cfg
-interchange/code/ActionMap/foo.am
 interchange/code/Filter/acl2hash.filter
 interchange/code/Filter/alpha.filter
 interchange/code/Filter/alphanumeric.filter
@@ -33,9 +31,11 @@ interchange/code/Filter/crypt.filter
 interchange/code/Filter/currency.filter
 interchange/code/Filter/date2time.filter
 interchange/code/Filter/date_change.filter
+interchange/code/Filter/datetime2epoch.filter
 interchange/code/Filter/dbi_quote.filter
 interchange/code/Filter/decode_entities.filter
 interchange/code/Filter/digits.filter
+interchange/code/Filter/digits_dash.filter
 interchange/code/Filter/digits_dot.filter
 interchange/code/Filter/dos.filter
 interchange/code/Filter/duration.filter
@@ -51,12 +51,14 @@ interchange/code/Filter/italics.filter
 interchange/code/Filter/large.filter
 interchange/code/Filter/last_non_null.filter
 interchange/code/Filter/lc.filter
+interchange/code/Filter/lcfirst.filter
 interchange/code/Filter/line.filter
 interchange/code/Filter/line2options.filter
 interchange/code/Filter/linkdecode.filter
 interchange/code/Filter/liven_urls.filter
 interchange/code/Filter/loc.filter
 interchange/code/Filter/lookup.filter
+interchange/code/Filter/lspace_to_nbsp.filter
 interchange/code/Filter/mac.filter
 interchange/code/Filter/mailto.filter
 interchange/code/Filter/md5.filter
@@ -79,8 +81,11 @@ interchange/code/Filter/pre.filter
 interchange/code/Filter/qb_safe.filter
 interchange/code/Filter/restrict_html.filter
 interchange/code/Filter/roman.filter
+interchange/code/Filter/round.filter
+interchange/code/Filter/sha1.filter
 interchange/code/Filter/show_null.filter
 interchange/code/Filter/small.filter
+interchange/code/Filter/space_to_nbsp.filter
 interchange/code/Filter/space_to_null.filter
 interchange/code/Filter/sql.filter
 interchange/code/Filter/strftime.filter
@@ -92,6 +97,7 @@ interchange/code/Filter/textarea_get.filter
 interchange/code/Filter/textarea_put.filter
 interchange/code/Filter/tt.filter
 interchange/code/Filter/uc.filter
+interchange/code/Filter/ucfirst.filter
 interchange/code/Filter/unix.filter
 interchange/code/Filter/upload.filter
 interchange/code/Filter/urldecode.filter
@@ -102,11 +108,14 @@ interchange/code/Filter/word.filter
 interchange/code/Filter/yesno.filter
 interchange/code/Filter/zerofix.filter
 interchange/code/JavaScriptCheck/required.jsc
+interchange/code/OrderCheck/always_fail.oc
+interchange/code/OrderCheck/always_pass.oc
 interchange/code/OrderCheck/email_only.oc
 interchange/code/OrderCheck/exists.oc
 interchange/code/OrderCheck/filter.oc
 interchange/code/OrderCheck/future.oc
 interchange/code/OrderCheck/length.oc
+interchange/code/OrderCheck/match.oc
 interchange/code/OrderCheck/natural.oc
 interchange/code/OrderCheck/regex.oc
 interchange/code/OrderCheck/relative_filename.oc
@@ -119,6 +128,7 @@ interchange/code/SystemTag/attr_list.coretag
 interchange/code/SystemTag/banner.coretag
 interchange/code/SystemTag/calc.coretag
 interchange/code/SystemTag/calcn.coretag
+interchange/code/SystemTag/captcha.coretag
 interchange/code/SystemTag/cart.coretag
 interchange/code/SystemTag/catch.coretag
 interchange/code/SystemTag/cgi.coretag
@@ -144,6 +154,7 @@ interchange/code/SystemTag/field.coretag
 interchange/code/SystemTag/file.coretag
 interchange/code/SystemTag/filter.coretag
 interchange/code/SystemTag/flag.coretag
+interchange/code/SystemTag/flag_job.coretag
 interchange/code/SystemTag/fly_list.coretag
 interchange/code/SystemTag/fly_tax.coretag
 interchange/code/SystemTag/form_session_id.coretag
@@ -158,6 +169,7 @@ interchange/code/SystemTag/input_filter.coretag
 interchange/code/SystemTag/item_list.coretag
 interchange/code/SystemTag/levies.coretag
 interchange/code/SystemTag/levy_list.coretag
+interchange/code/SystemTag/local.coretag
 interchange/code/SystemTag/log.coretag
 interchange/code/SystemTag/loop.coretag
 interchange/code/SystemTag/mail.coretag
@@ -192,7 +204,6 @@ interchange/code/SystemTag/setlocale.coretag
 interchange/code/SystemTag/shipping.coretag
 interchange/code/SystemTag/shipping_desc.coretag
 interchange/code/SystemTag/soap.coretag
-interchange/code/SystemTag/sql.coretag
 interchange/code/SystemTag/strip.coretag
 interchange/code/SystemTag/subtotal.coretag
 interchange/code/SystemTag/tag.coretag
@@ -234,7 +245,6 @@ interchange/code/UI_Tag/dump_session.coretag
 interchange/code/UI_Tag/export_database.coretag
 interchange/code/UI_Tag/file_info.coretag
 interchange/code/UI_Tag/file_navigator.coretag
-interchange/code/UI_Tag/filters.coretag
 interchange/code/UI_Tag/flex_select.coretag
 interchange/code/UI_Tag/get_gpg_keys.coretag
 interchange/code/UI_Tag/global_value.coretag
@@ -273,6 +283,7 @@ interchange/code/UI_Tag/update_order_status.tag
 interchange/code/UI_Tag/user_merge.tag
 interchange/code/UI_Tag/version.coretag
 interchange/code/UI_Tag/widget.coretag
+interchange/code/UI_Tag/widget_info.coretag
 interchange/code/UI_Tag/widget_meta.coretag
 interchange/code/UI_Tag/write_relative_file.coretag
 interchange/code/UI_Tag/write_shipping.coretag
@@ -288,7 +299,6 @@ interchange/code/UserTag/delete_cart.tag
 interchange/code/UserTag/email.tag
 interchange/code/UserTag/email_raw.tag
 interchange/code/UserTag/env.tag
-interchange/code/UserTag/fedex_query.tag
 interchange/code/UserTag/formel.tag
 interchange/code/UserTag/fortune.tag
 interchange/code/UserTag/forum.tag
@@ -302,6 +312,7 @@ interchange/code/UserTag/report_table.tag
 interchange/code/UserTag/save_cart.tag
 interchange/code/UserTag/summary.tag
 interchange/code/UserTag/table_organize.tag
+interchange/code/UserTag/timed_display.tag
 interchange/code/UserTag/title_bar.tag
 interchange/code/UserTag/ups_query.tag
 interchange/code/UserTag/usertrack.tag
@@ -337,8 +348,11 @@ interchange/code/Widget/uploadblob.widget
 interchange/code/Widget/uploadhelper.widget
 interchange/code/Widget/value.widget
 interchange/code/Widget/yesno.widget
+interchange/code/Widget/ynzero.widget
 @unexec if [ `cat %D/interchange/error.log | wc -l` -le 1 ]; then rm -f %D/interchange/error.log; fi
 interchange/etc/.empty
+interchange/etc/jobs/db/export
+interchange/etc/jobs/maintenance/logrotate
 interchange/etc/jobs/merchandising/topsellers
 interchange/features/quickpoll/doc/quickpoll/README
 interchange/features/quickpoll/quickpoll.catalog.cfg
@@ -347,6 +361,7 @@ interchange/features/quickpoll/quickpoll.init
 interchange/features/quickpoll/quickpoll.uninstall
 interchange/features/quickpoll/templates/components/quickpoll
 interchange/interchange.cfg.dist
+interchange/lib/IniConf.pm
 interchange/lib/UI/ContentEditor.pm
 interchange/lib/UI/Primitive.pm
 interchange/lib/UI/ichelp.txt
@@ -355,6 +370,7 @@ interchange/lib/UI/locales/TODO
 interchange/lib/UI/locales/da_DK.cfg
 interchange/lib/UI/locales/de_DE.cfg
 interchange/lib/UI/locales/default.cfg
+interchange/lib/UI/locales/en_GB.cfg
 interchange/lib/UI/locales/en_US.cfg
 interchange/lib/UI/locales/es_ES.cfg
 interchange/lib/UI/locales/gr_GR.cfg
@@ -563,115 +579,7 @@ interchange/lib/UI/vars/UI_JSLIB
 interchange/lib/UI/vars/UI_STD_FILE_NAV
 interchange/lib/UI/vars/UI_STD_FOOTER
 interchange/lib/UI/vars/UI_STD_HEAD
-interchange/locale.error
-interchange/share/interchange-5/da_DK/az.gif
-interchange/share/interchange-5/da_DK/bg.gif
-interchange/share/interchange-5/da_DK/box_checked.gif
-interchange/share/interchange-5/da_DK/box_empty.gif
-interchange/share/interchange-5/da_DK/delete.gif
-interchange/share/interchange-5/da_DK/delsm.gif
-interchange/share/interchange-5/da_DK/doc.gif
-interchange/share/interchange-5/da_DK/down.gif
-interchange/share/interchange-5/da_DK/folder.gif
-interchange/share/interchange-5/da_DK/folder.open.gif
-interchange/share/interchange-5/da_DK/forward.gif
-interchange/share/interchange-5/da_DK/generic.gif
-interchange/share/interchange-5/da_DK/graylogo.gif
-interchange/share/interchange-5/da_DK/icfooter.gif
-interchange/share/interchange-5/da_DK/iclogo.gif
-interchange/share/interchange-5/da_DK/ico_download.gif
-interchange/share/interchange-5/da_DK/ico_duck.gif
-interchange/share/interchange-5/da_DK/ico_export.gif
-interchange/share/interchange-5/da_DK/ico_folder.gif
-interchange/share/interchange-5/da_DK/ico_import.gif
-interchange/share/interchange-5/da_DK/ico_magnify.gif
-interchange/share/interchange-5/da_DK/ico_pen.gif
-interchange/share/interchange-5/da_DK/ico_upload.gif
-interchange/share/interchange-5/da_DK/icon_config.gif
-interchange/share/interchange-5/da_DK/icon_design.gif
-interchange/share/interchange-5/da_DK/icon_error.gif
-interchange/share/interchange-5/da_DK/icon_ic.gif
-interchange/share/interchange-5/da_DK/icon_item.gif
-interchange/share/interchange-5/da_DK/icon_merch.gif
-interchange/share/interchange-5/da_DK/icon_orders.gif
-interchange/share/interchange-5/da_DK/icon_pages.gif
-interchange/share/interchange-5/da_DK/icon_people.gif
-interchange/share/interchange-5/da_DK/icon_regen.gif
-interchange/share/interchange-5/da_DK/icon_stats.gif
-interchange/share/interchange-5/da_DK/icon_tab.png
-interchange/share/interchange-5/da_DK/index.gif
-interchange/share/interchange-5/da_DK/interchange.css
-interchange/share/interchange-5/da_DK/layout.gif
-interchange/share/interchange-5/da_DK/left.gif
-interchange/share/interchange-5/da_DK/logo.gif
-interchange/share/interchange-5/da_DK/meta.png
-interchange/share/interchange-5/da_DK/minus.gif
-interchange/share/interchange-5/da_DK/photo.jpg
-interchange/share/interchange-5/da_DK/plus.gif
-interchange/share/interchange-5/da_DK/poweredby.gif
-interchange/share/interchange-5/da_DK/right.gif
-interchange/share/interchange-5/da_DK/smindex.gif
-interchange/share/interchange-5/da_DK/specmeta.png
-interchange/share/interchange-5/da_DK/text.gif
-interchange/share/interchange-5/da_DK/tminus.gif
-interchange/share/interchange-5/da_DK/tplus.gif
-interchange/share/interchange-5/da_DK/transfer.gif
-interchange/share/interchange-5/da_DK/unknown.gif
-interchange/share/interchange-5/da_DK/up.gif
-interchange/share/interchange-5/de_DE/az.gif
-interchange/share/interchange-5/de_DE/bg.gif
-interchange/share/interchange-5/de_DE/box_checked.gif
-interchange/share/interchange-5/de_DE/box_empty.gif
-interchange/share/interchange-5/de_DE/delete.gif
-interchange/share/interchange-5/de_DE/delsm.gif
-interchange/share/interchange-5/de_DE/doc.gif
-interchange/share/interchange-5/de_DE/down.gif
-interchange/share/interchange-5/de_DE/folder.gif
-interchange/share/interchange-5/de_DE/folder.open.gif
-interchange/share/interchange-5/de_DE/forward.gif
-interchange/share/interchange-5/de_DE/generic.gif
-interchange/share/interchange-5/de_DE/graylogo.gif
-interchange/share/interchange-5/de_DE/icfooter.gif
-interchange/share/interchange-5/de_DE/iclogo.gif
-interchange/share/interchange-5/de_DE/ico_download.gif
-interchange/share/interchange-5/de_DE/ico_duck.gif
-interchange/share/interchange-5/de_DE/ico_export.gif
-interchange/share/interchange-5/de_DE/ico_folder.gif
-interchange/share/interchange-5/de_DE/ico_import.gif
-interchange/share/interchange-5/de_DE/ico_magnify.gif
-interchange/share/interchange-5/de_DE/ico_pen.gif
-interchange/share/interchange-5/de_DE/ico_upload.gif
-interchange/share/interchange-5/de_DE/icon_config.gif
-interchange/share/interchange-5/de_DE/icon_design.gif
-interchange/share/interchange-5/de_DE/icon_error.gif
-interchange/share/interchange-5/de_DE/icon_ic.gif
-interchange/share/interchange-5/de_DE/icon_item.gif
-interchange/share/interchange-5/de_DE/icon_merch.gif
-interchange/share/interchange-5/de_DE/icon_orders.gif
-interchange/share/interchange-5/de_DE/icon_pages.gif
-interchange/share/interchange-5/de_DE/icon_people.gif
-interchange/share/interchange-5/de_DE/icon_regen.gif
-interchange/share/interchange-5/de_DE/icon_stats.gif
-interchange/share/interchange-5/de_DE/icon_tab.png
-interchange/share/interchange-5/de_DE/index.gif
-interchange/share/interchange-5/de_DE/interchange.css
-interchange/share/interchange-5/de_DE/layout.gif
-interchange/share/interchange-5/de_DE/left.gif
-interchange/share/interchange-5/de_DE/logo.gif
-interchange/share/interchange-5/de_DE/meta.png
-interchange/share/interchange-5/de_DE/minus.gif
-interchange/share/interchange-5/de_DE/photo.jpg
-interchange/share/interchange-5/de_DE/plus.gif
-interchange/share/interchange-5/de_DE/poweredby.gif
-interchange/share/interchange-5/de_DE/right.gif
-interchange/share/interchange-5/de_DE/smindex.gif
-interchange/share/interchange-5/de_DE/specmeta.png
-interchange/share/interchange-5/de_DE/text.gif
-interchange/share/interchange-5/de_DE/tminus.gif
-interchange/share/interchange-5/de_DE/tplus.gif
-interchange/share/interchange-5/de_DE/transfer.gif
-interchange/share/interchange-5/de_DE/unknown.gif
-interchange/share/interchange-5/de_DE/up.gif
+interchange/robots.cfg
 interchange/share/interchange-5/en_US/az.gif
 interchange/share/interchange-5/en_US/bg.gif
 interchange/share/interchange-5/en_US/box_checked.gif
@@ -726,6 +634,168 @@ interchange/share/interchange-5/en_US/tplus.gif
 interchange/share/interchange-5/en_US/transfer.gif
 interchange/share/interchange-5/en_US/unknown.gif
 interchange/share/interchange-5/en_US/up.gif
+interchange/share/interchange-5/da_DK/az.gif
+interchange/share/interchange-5/da_DK/bg.gif
+interchange/share/interchange-5/da_DK/box_checked.gif
+interchange/share/interchange-5/da_DK/box_empty.gif
+interchange/share/interchange-5/da_DK/delete.gif
+interchange/share/interchange-5/da_DK/delsm.gif
+interchange/share/interchange-5/da_DK/doc.gif
+interchange/share/interchange-5/da_DK/down.gif
+interchange/share/interchange-5/da_DK/folder.gif
+interchange/share/interchange-5/da_DK/folder.open.gif
+interchange/share/interchange-5/da_DK/forward.gif
+interchange/share/interchange-5/da_DK/generic.gif
+interchange/share/interchange-5/da_DK/graylogo.gif
+interchange/share/interchange-5/da_DK/icfooter.gif
+interchange/share/interchange-5/da_DK/iclogo.gif
+interchange/share/interchange-5/da_DK/ico_download.gif
+interchange/share/interchange-5/da_DK/ico_duck.gif
+interchange/share/interchange-5/da_DK/ico_export.gif
+interchange/share/interchange-5/da_DK/ico_folder.gif
+interchange/share/interchange-5/da_DK/ico_import.gif
+interchange/share/interchange-5/da_DK/ico_magnify.gif
+interchange/share/interchange-5/da_DK/ico_pen.gif
+interchange/share/interchange-5/da_DK/ico_upload.gif
+interchange/share/interchange-5/da_DK/icon_config.gif
+interchange/share/interchange-5/da_DK/icon_design.gif
+interchange/share/interchange-5/da_DK/icon_error.gif
+interchange/share/interchange-5/da_DK/icon_ic.gif
+interchange/share/interchange-5/da_DK/icon_item.gif
+interchange/share/interchange-5/da_DK/icon_merch.gif
+interchange/share/interchange-5/da_DK/icon_orders.gif
+interchange/share/interchange-5/da_DK/icon_pages.gif
+interchange/share/interchange-5/da_DK/icon_people.gif
+interchange/share/interchange-5/da_DK/icon_regen.gif
+interchange/share/interchange-5/da_DK/icon_stats.gif
+interchange/share/interchange-5/da_DK/icon_tab.png
+interchange/share/interchange-5/da_DK/index.gif
+interchange/share/interchange-5/da_DK/interchange.css
+interchange/share/interchange-5/da_DK/layout.gif
+interchange/share/interchange-5/da_DK/left.gif
+interchange/share/interchange-5/da_DK/logo.gif
+interchange/share/interchange-5/da_DK/meta.png
+interchange/share/interchange-5/da_DK/minus.gif
+interchange/share/interchange-5/da_DK/photo.jpg
+interchange/share/interchange-5/da_DK/plus.gif
+interchange/share/interchange-5/da_DK/right.gif
+interchange/share/interchange-5/da_DK/poweredby.gif
+interchange/share/interchange-5/da_DK/smindex.gif
+interchange/share/interchange-5/da_DK/specmeta.png
+interchange/share/interchange-5/da_DK/text.gif
+interchange/share/interchange-5/da_DK/tminus.gif
+interchange/share/interchange-5/da_DK/tplus.gif
+interchange/share/interchange-5/da_DK/transfer.gif
+interchange/share/interchange-5/da_DK/unknown.gif
+interchange/share/interchange-5/da_DK/up.gif
+interchange/share/interchange-5/de_DE/az.gif
+interchange/share/interchange-5/de_DE/bg.gif
+interchange/share/interchange-5/de_DE/box_checked.gif
+interchange/share/interchange-5/de_DE/box_empty.gif
+interchange/share/interchange-5/de_DE/delete.gif
+interchange/share/interchange-5/de_DE/delsm.gif
+interchange/share/interchange-5/de_DE/doc.gif
+interchange/share/interchange-5/de_DE/down.gif
+interchange/share/interchange-5/de_DE/folder.gif
+interchange/share/interchange-5/de_DE/folder.open.gif
+interchange/share/interchange-5/de_DE/forward.gif
+interchange/share/interchange-5/de_DE/generic.gif
+interchange/share/interchange-5/de_DE/graylogo.gif
+interchange/share/interchange-5/de_DE/icfooter.gif
+interchange/share/interchange-5/de_DE/iclogo.gif
+interchange/share/interchange-5/de_DE/ico_download.gif
+interchange/share/interchange-5/de_DE/ico_duck.gif
+interchange/share/interchange-5/de_DE/ico_export.gif
+interchange/share/interchange-5/de_DE/ico_folder.gif
+interchange/share/interchange-5/de_DE/ico_import.gif
+interchange/share/interchange-5/de_DE/ico_magnify.gif
+interchange/share/interchange-5/de_DE/ico_pen.gif
+interchange/share/interchange-5/de_DE/ico_upload.gif
+interchange/share/interchange-5/de_DE/icon_config.gif
+interchange/share/interchange-5/de_DE/icon_design.gif
+interchange/share/interchange-5/de_DE/icon_error.gif
+interchange/share/interchange-5/de_DE/icon_ic.gif
+interchange/share/interchange-5/de_DE/icon_item.gif
+interchange/share/interchange-5/de_DE/icon_merch.gif
+interchange/share/interchange-5/de_DE/icon_orders.gif
+interchange/share/interchange-5/de_DE/icon_pages.gif
+interchange/share/interchange-5/de_DE/icon_people.gif
+interchange/share/interchange-5/de_DE/icon_regen.gif
+interchange/share/interchange-5/de_DE/icon_stats.gif
+interchange/share/interchange-5/de_DE/icon_tab.png
+interchange/share/interchange-5/de_DE/index.gif
+interchange/share/interchange-5/de_DE/interchange.css
+interchange/share/interchange-5/de_DE/layout.gif
+interchange/share/interchange-5/de_DE/left.gif
+interchange/share/interchange-5/de_DE/logo.gif
+interchange/share/interchange-5/de_DE/meta.png
+interchange/share/interchange-5/de_DE/minus.gif
+interchange/share/interchange-5/de_DE/photo.jpg
+interchange/share/interchange-5/de_DE/plus.gif
+interchange/share/interchange-5/de_DE/right.gif
+interchange/share/interchange-5/de_DE/poweredby.gif
+interchange/share/interchange-5/de_DE/smindex.gif
+interchange/share/interchange-5/de_DE/specmeta.png
+interchange/share/interchange-5/de_DE/text.gif
+interchange/share/interchange-5/de_DE/tminus.gif
+interchange/share/interchange-5/de_DE/tplus.gif
+interchange/share/interchange-5/de_DE/transfer.gif
+interchange/share/interchange-5/de_DE/unknown.gif
+interchange/share/interchange-5/de_DE/up.gif
+interchange/share/interchange-5/en_GB/az.gif
+interchange/share/interchange-5/en_GB/bg.gif
+interchange/share/interchange-5/en_GB/box_checked.gif
+interchange/share/interchange-5/en_GB/box_empty.gif
+interchange/share/interchange-5/en_GB/delete.gif
+interchange/share/interchange-5/en_GB/delsm.gif
+interchange/share/interchange-5/en_GB/doc.gif
+interchange/share/interchange-5/en_GB/down.gif
+interchange/share/interchange-5/en_GB/folder.gif
+interchange/share/interchange-5/en_GB/folder.open.gif
+interchange/share/interchange-5/en_GB/forward.gif
+interchange/share/interchange-5/en_GB/generic.gif
+interchange/share/interchange-5/en_GB/graylogo.gif
+interchange/share/interchange-5/en_GB/icfooter.gif
+interchange/share/interchange-5/en_GB/iclogo.gif
+interchange/share/interchange-5/en_GB/ico_download.gif
+interchange/share/interchange-5/en_GB/ico_duck.gif
+interchange/share/interchange-5/en_GB/ico_export.gif
+interchange/share/interchange-5/en_GB/ico_folder.gif
+interchange/share/interchange-5/en_GB/ico_import.gif
+interchange/share/interchange-5/en_GB/ico_magnify.gif
+interchange/share/interchange-5/en_GB/ico_pen.gif
+interchange/share/interchange-5/en_GB/ico_upload.gif
+interchange/share/interchange-5/en_GB/icon_config.gif
+interchange/share/interchange-5/en_GB/icon_design.gif
+interchange/share/interchange-5/en_GB/icon_error.gif
+interchange/share/interchange-5/en_GB/icon_ic.gif
+interchange/share/interchange-5/en_GB/icon_item.gif
+interchange/share/interchange-5/en_GB/icon_merch.gif
+interchange/share/interchange-5/en_GB/icon_orders.gif
+interchange/share/interchange-5/en_GB/icon_pages.gif
+interchange/share/interchange-5/en_GB/icon_people.gif
+interchange/share/interchange-5/en_GB/icon_regen.gif
+interchange/share/interchange-5/en_GB/icon_stats.gif
+interchange/share/interchange-5/en_GB/icon_tab.png
+interchange/share/interchange-5/en_GB/index.gif
+interchange/share/interchange-5/en_GB/interchange.css
+interchange/share/interchange-5/en_GB/layout.gif
+interchange/share/interchange-5/en_GB/left.gif
+interchange/share/interchange-5/en_GB/logo.gif
+interchange/share/interchange-5/en_GB/meta.png
+interchange/share/interchange-5/en_GB/minus.gif
+interchange/share/interchange-5/en_GB/photo.jpg
+interchange/share/interchange-5/en_GB/plus.gif
+interchange/share/interchange-5/en_GB/right.gif
+interchange/share/interchange-5/en_GB/poweredby.gif
+interchange/share/interchange-5/en_GB/smindex.gif
+interchange/share/interchange-5/en_GB/specmeta.png
+interchange/share/interchange-5/en_GB/text.gif
+interchange/share/interchange-5/en_GB/tminus.gif
+interchange/share/interchange-5/en_GB/tplus.gif
+interchange/share/interchange-5/en_GB/transfer.gif
+interchange/share/interchange-5/en_GB/unknown.gif
+interchange/share/interchange-5/en_GB/up.gif
 interchange/share/interchange-5/es_ES/az.gif
 interchange/share/interchange-5/es_ES/bg.gif
 interchange/share/interchange-5/es_ES/box_checked.gif
@@ -770,8 +840,8 @@ interchange/share/interchange-5/es_ES/meta.png
 interchange/share/interchange-5/es_ES/minus.gif
 interchange/share/interchange-5/es_ES/photo.jpg
 interchange/share/interchange-5/es_ES/plus.gif
-interchange/share/interchange-5/es_ES/poweredby.gif
 interchange/share/interchange-5/es_ES/right.gif
+interchange/share/interchange-5/es_ES/poweredby.gif
 interchange/share/interchange-5/es_ES/smindex.gif
 interchange/share/interchange-5/es_ES/specmeta.png
 interchange/share/interchange-5/es_ES/text.gif
@@ -824,8 +894,8 @@ interchange/share/interchange-5/gr_GR/meta.png
 interchange/share/interchange-5/gr_GR/minus.gif
 interchange/share/interchange-5/gr_GR/photo.jpg
 interchange/share/interchange-5/gr_GR/plus.gif
-interchange/share/interchange-5/gr_GR/poweredby.gif
 interchange/share/interchange-5/gr_GR/right.gif
+interchange/share/interchange-5/gr_GR/poweredby.gif
 interchange/share/interchange-5/gr_GR/smindex.gif
 interchange/share/interchange-5/gr_GR/specmeta.png
 interchange/share/interchange-5/gr_GR/text.gif
@@ -878,8 +948,8 @@ interchange/share/interchange-5/he_IL/meta.png
 interchange/share/interchange-5/he_IL/minus.gif
 interchange/share/interchange-5/he_IL/photo.jpg
 interchange/share/interchange-5/he_IL/plus.gif
-interchange/share/interchange-5/he_IL/poweredby.gif
 interchange/share/interchange-5/he_IL/right.gif
+interchange/share/interchange-5/he_IL/poweredby.gif
 interchange/share/interchange-5/he_IL/smindex.gif
 interchange/share/interchange-5/he_IL/specmeta.png
 interchange/share/interchange-5/he_IL/text.gif
@@ -932,8 +1002,8 @@ interchange/share/interchange-5/it_IT/meta.png
 interchange/share/interchange-5/it_IT/minus.gif
 interchange/share/interchange-5/it_IT/photo.jpg
 interchange/share/interchange-5/it_IT/plus.gif
-interchange/share/interchange-5/it_IT/poweredby.gif
 interchange/share/interchange-5/it_IT/right.gif
+interchange/share/interchange-5/it_IT/poweredby.gif
 interchange/share/interchange-5/it_IT/smindex.gif
 interchange/share/interchange-5/it_IT/specmeta.png
 interchange/share/interchange-5/it_IT/text.gif
@@ -986,8 +1056,8 @@ interchange/share/interchange-5/ja_JP/meta.png
 interchange/share/interchange-5/ja_JP/minus.gif
 interchange/share/interchange-5/ja_JP/photo.jpg
 interchange/share/interchange-5/ja_JP/plus.gif
-interchange/share/interchange-5/ja_JP/poweredby.gif
 interchange/share/interchange-5/ja_JP/right.gif
+interchange/share/interchange-5/ja_JP/poweredby.gif
 interchange/share/interchange-5/ja_JP/smindex.gif
 interchange/share/interchange-5/ja_JP/specmeta.png
 interchange/share/interchange-5/ja_JP/text.gif
@@ -1040,8 +1110,8 @@ interchange/share/interchange-5/nl_NL/meta.png
 interchange/share/interchange-5/nl_NL/minus.gif
 interchange/share/interchange-5/nl_NL/photo.jpg
 interchange/share/interchange-5/nl_NL/plus.gif
-interchange/share/interchange-5/nl_NL/poweredby.gif
 interchange/share/interchange-5/nl_NL/right.gif
+interchange/share/interchange-5/nl_NL/poweredby.gif
 interchange/share/interchange-5/nl_NL/smindex.gif
 interchange/share/interchange-5/nl_NL/specmeta.png
 interchange/share/interchange-5/nl_NL/text.gif
@@ -1094,8 +1164,8 @@ interchange/share/interchange-5/pt_BR/meta.png
 interchange/share/interchange-5/pt_BR/minus.gif
 interchange/share/interchange-5/pt_BR/photo.jpg
 interchange/share/interchange-5/pt_BR/plus.gif
-interchange/share/interchange-5/pt_BR/poweredby.gif
 interchange/share/interchange-5/pt_BR/right.gif
+interchange/share/interchange-5/pt_BR/poweredby.gif
 interchange/share/interchange-5/pt_BR/smindex.gif
 interchange/share/interchange-5/pt_BR/specmeta.png
 interchange/share/interchange-5/pt_BR/text.gif
@@ -1148,8 +1218,8 @@ interchange/share/interchange-5/sv_SE/meta.png
 interchange/share/interchange-5/sv_SE/minus.gif
 interchange/share/interchange-5/sv_SE/photo.jpg
 interchange/share/interchange-5/sv_SE/plus.gif
-interchange/share/interchange-5/sv_SE/poweredby.gif
 interchange/share/interchange-5/sv_SE/right.gif
+interchange/share/interchange-5/sv_SE/poweredby.gif
 interchange/share/interchange-5/sv_SE/smindex.gif
 interchange/share/interchange-5/sv_SE/specmeta.png
 interchange/share/interchange-5/sv_SE/text.gif
@@ -1183,8 +1253,8 @@ interchange/src/mod_interchange/Makefile
 interchange/src/mod_interchange/README
 interchange/src/mod_interchange/mod_interchange.c
 interchange/src/mod_interchange/mod_interchange.html
-interchange/src/mod_perl2/Interchange/Link.pm.mod_perl-1.999_21_and_before
 interchange/src/mod_perl2/Interchange/Link.pm
+interchange/src/mod_perl2/Interchange/Link.pm.mod_perl-1.999_21_and_before
 interchange/src/mod_perl2/README
 interchange/src/mod_perl_tlink.pl
 interchange/src/mvctl.c
@@ -1268,6 +1338,7 @@ interchange/standard/etc/rma.number
 interchange/standard/etc/ship_notice
 interchange/standard/html/index.html
 interchange/standard/images/affiliate/hardhat.gif
+interchange/standard/images/amex_cvv.png
 interchange/standard/images/bg.gif
 interchange/standard/images/blank1.gif
 interchange/standard/images/blank2.gif
@@ -1384,6 +1455,7 @@ interchange/standard/images/thumb/os28113_b.gif
 interchange/standard/images/thumb/os29000_b.gif
 interchange/standard/images/title_tab_cross.gif
 interchange/standard/images/title_tab_random.gif
+interchange/standard/images/visa_cvv.png
 interchange/standard/images/yourimage.gif
 interchange/standard/include/checkout/billing_address
 interchange/standard/include/checkout/initialization
@@ -1465,6 +1537,7 @@ interchange/standard/pages/query/unsub.html
 interchange/standard/pages/results.html
 interchange/standard/pages/results_big.html
 interchange/standard/pages/special/alpha_select.html
+interchange/standard/pages/special/cvv_pop.html
 interchange/standard/pages/splash.html
 interchange/standard/pages/survey/graph.html
 interchange/standard/pages/survey/graph.png.html
@@ -1562,13 +1635,11 @@ interchange/standard/variables/COPYRIGHT
 interchange/standard/variables/LINE_MENU
 interchange/standard/variables/PAGE_INIT
 interchange/standard/variables/THEME_CSS
-%%SITE_PERL%%/Business/Fedex.pm
-%%SITE_PERL%%/Business/UPS.pm
-%%SITE_PERL%%/IniConf.pm
-%%SITE_PERL%%/Tie/ShadowHash.pm
+interchange/subdomains.cfg
 %%SITE_PERL%%/Vend/Accounting.pm
 %%SITE_PERL%%/Vend/Accounting/SQL_Ledger.pm
 %%SITE_PERL%%/Vend/Cart.pm
+%%SITE_PERL%%/Vend/CharSet.pm
 %%SITE_PERL%%/Vend/Config.pm
 %%SITE_PERL%%/Vend/Control.pm
 %%SITE_PERL%%/Vend/CounterFile.pm
@@ -1577,6 +1648,7 @@ interchange/standard/variables/THEME_CSS
 %%SITE_PERL%%/Vend/DbSearch.pm
 %%SITE_PERL%%/Vend/Dispatch.pm
 %%SITE_PERL%%/Vend/Document.pm
+%%SITE_PERL%%/Vend/Email.pm
 %%SITE_PERL%%/Vend/Error.pm
 %%SITE_PERL%%/Vend/External.pm
 %%SITE_PERL%%/Vend/File.pm
@@ -1603,16 +1675,19 @@ interchange/standard/variables/THEME_CSS
 %%SITE_PERL%%/Vend/Payment/ECHO.pm
 %%SITE_PERL%%/Vend/Payment/EFSNet.pm
 %%SITE_PERL%%/Vend/Payment/Ezic.pm
+%%SITE_PERL%%/Vend/Payment/Getitcard.pm
 %%SITE_PERL%%/Vend/Payment/ICS.pm
 %%SITE_PERL%%/Vend/Payment/Linkpoint.pm
 %%SITE_PERL%%/Vend/Payment/MCVE.pm
+%%SITE_PERL%%/Vend/Payment/NetBilling.pm
 %%SITE_PERL%%/Vend/Payment/PRI.pm
 %%SITE_PERL%%/Vend/Payment/PSiGate.pm
+%%SITE_PERL%%/Vend/Payment/Protx2.pm
+%%SITE_PERL%%/Vend/Payment/Sage.pm
 %%SITE_PERL%%/Vend/Payment/Signio.pm
 %%SITE_PERL%%/Vend/Payment/Skipjack.pm
 %%SITE_PERL%%/Vend/Payment/TCLink.pm
 %%SITE_PERL%%/Vend/Payment/TestPayment.pm
-%%SITE_PERL%%/Vend/Payment/WellsFargo.pm
 %%SITE_PERL%%/Vend/Payment/iTransact.pm
 %%SITE_PERL%%/Vend/RefSearch.pm
 %%SITE_PERL%%/Vend/SOAP.pm
@@ -1645,27 +1720,23 @@ interchange/standard/variables/THEME_CSS
 %%SITE_PERL%%/Vend/UserControl.pm
 %%SITE_PERL%%/Vend/UserDB.pm
 %%SITE_PERL%%/Vend/Util.pm
+%%SITE_PERL%%/auto/Vend/SOAP/autosplit.ix
+%%SITE_PERL%%/auto/Vend/Tags/autosplit.ix
 %%SITE_PERL%%/hints.pl
 %%SITE_PERL%%/install_lsb.pl
-%%SITE_PERL%%/relocate.pl
-%%SITE_PERL%%/auto/Vend/Tags/autosplit.ix
-%%SITE_PERL%%/auto/Vend/SOAP/autosplit.ix
-%%SITE_PERL%%/auto/Business/UPS/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Interchange/.packlist
-@dirrm %%SITE_PERL%%/Vend/Accounting
-@dirrm %%SITE_PERL%%/Vend/Options
-@dirrm %%SITE_PERL%%/Vend/Payment
+%%SITE_PERL%%/relocate.pl
+@dirrm %%SITE_PERL%%/Vend/Table
 @dirrm %%SITE_PERL%%/Vend/Ship
 @dirrm %%SITE_PERL%%/Vend/SOAP
-@dirrm %%SITE_PERL%%/Vend/Table
+@dirrm %%SITE_PERL%%/Vend/Options
+@dirrm %%SITE_PERL%%/Vend/Payment
+@dirrm %%SITE_PERL%%/Vend/Accounting
 @dirrm %%SITE_PERL%%/Vend
-@dirrm %%SITE_PERL%%/Tie
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Interchange
-@dirrm %%SITE_PERL%%/auto/Business/UPS
-@dirrmtry %%SITE_PERL%%/auto/Business
-@dirrm %%SITE_PERL%%/auto/Vend/SOAP
 @dirrm %%SITE_PERL%%/auto/Vend/Tags
+@dirrm %%SITE_PERL%%/auto/Vend/SOAP
 @dirrm %%SITE_PERL%%/auto/Vend
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Interchange
 @dirrm interchange/standard/variables
 @dirrm interchange/standard/upload
 @dirrm interchange/standard/templates/regions
@@ -1696,12 +1767,12 @@ interchange/standard/variables/THEME_CSS
 @dirrm interchange/standard/images/affiliate
 @dirrm interchange/standard/images
 @dirrm interchange/standard/html
-@dirrm interchange/standard/etc
 @dirrm interchange/standard/dbconf/pgsql
 @dirrm interchange/standard/dbconf/mysql
 @dirrm interchange/standard/dbconf/locales
 @dirrm interchange/standard/dbconf
 @dirrm interchange/standard/config
+@dirrm interchange/standard/etc
 @dirrm interchange/standard
 @dirrm interchange/src/mod_perl2/Interchange
 @dirrm interchange/src/mod_perl2
@@ -1716,6 +1787,7 @@ interchange/standard/variables/THEME_CSS
 @dirrm interchange/share/interchange-5/gr_GR
 @dirrm interchange/share/interchange-5/es_ES
 @dirrm interchange/share/interchange-5/en_US
+@dirrm interchange/share/interchange-5/en_GB
 @dirrm interchange/share/interchange-5/de_DE
 @dirrm interchange/share/interchange-5/da_DK
 @dirrm interchange/share/interchange-5
@@ -1746,6 +1818,8 @@ interchange/standard/variables/THEME_CSS
 @dirrm interchange/features/quickpoll
 @dirrm interchange/features
 @dirrm interchange/etc/jobs/merchandising
+@dirrm interchange/etc/jobs/maintenance
+@dirrm interchange/etc/jobs/db
 @dirrm interchange/etc/jobs
 @dirrm interchange/code/Widget
 @dirrm interchange/code/UserTag
@@ -1754,7 +1828,6 @@ interchange/standard/variables/THEME_CSS
 @dirrm interchange/code/OrderCheck
 @dirrm interchange/code/JavaScriptCheck
 @dirrm interchange/code/Filter
-@dirrm interchange/code/ActionMap
 @dirrm interchange/code
 @dirrmtry interchange/src
 @dirrmtry interchange/etc

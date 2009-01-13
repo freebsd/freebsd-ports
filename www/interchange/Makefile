@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	interchange
-PORTVERSION=	5.4.2
-PORTREVISION=	1
-CATEGORIES=	www
-MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.4/tar/
+PORTVERSION=	5.6.1
+CATEGORIES=	www perl5
+MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	loader@freebsdmall.com
 COMMENT=	RedHat's database-enabled e-commerce server
 
-BUILD_DEPENDS=	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
-		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Set/Crontab.pm:${PORTSDIR}/devel/p5-Set-Crontab \
-		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment
+RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
+		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=5.810:${PORTSDIR}/www/p5-libwww \
+		p5-Set-Crontab>=1.00:${PORTSDIR}/devel/p5-Set-Crontab \
+		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 
-OPTIONS=	MYSQL "Add MySQL support" off \
+OPTIONS=	MYSQL "Add MySQL support" on \
 		PGSQL "Add PostgreSQL support" off
 
 .include <bsd.port.pre.mk>
@@ -31,13 +31,11 @@ OPTIONS=	MYSQL "Add MySQL support" off \
 USE_RC_SUBR=	interchange.sh
 
 .if defined(WITH_MYSQL)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-USE_SQLDB=	yes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_PGSQL)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-USE_SQLDB=	yes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
@@ -46,7 +44,6 @@ MAN1=		compile_link.1 \
 		config_prog.1 \
 		configdump.1 \
 		crontab.1 \
-		dump.1 \
 		expire.1 \
 		expireall.1 \
 		findtags.1 \
@@ -58,11 +55,7 @@ MAN1=		compile_link.1 \
 		restart.1 \
 		update.1
 
-MAN3=		Business::Fedex.3 \
-		Business::UPS.3 \
-		IniConf.3 \
-		Tie::ShadowHash.3 \
-		Vend::Accounting::SQL_Ledger.3 \
+MAN3=		Vend::Accounting::SQL_Ledger.3 \
 		Vend::CounterFile.3 \
 		Vend::Form.3 \
 		Vend::Interpolate.3 \
@@ -77,16 +70,19 @@ MAN3=		Business::Fedex.3 \
 		Vend::Payment::ECHO.3 \
 		Vend::Payment::EFSNet.3 \
 		Vend::Payment::Ezic.3 \
+		Vend::Payment::Getitcard.3 \
 		Vend::Payment::ICS.3 \
 		Vend::Payment::Linkpoint.3 \
 		Vend::Payment::MCVE.3 \
+		Vend::Payment::NetBilling.3 \
+		Vend::Payment::Protx2.3 \
 		Vend::Payment::PRI.3 \
 		Vend::Payment::PSiGate.3 \
+		Vend::Payment::Sage.3 \
 		Vend::Payment::Signio.3 \
 		Vend::Payment::Skipjack.3 \
 		Vend::Payment::TCLink.3 \
 		Vend::Payment::TestPayment.3 \
-		Vend::Payment::WellsFargo.3 \
 		Vend::Payment::iTransact.3 \
 		Vend::SOAP::Transport.3 \
 		Vend::SQL_Parser.3 \
@@ -114,7 +110,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/interchange
 
 post-install:
-.for i in compile_link config_prog configdump dump expire expireall interchange localize makecat offline restart update
+.for i in compile_link config_prog configdump expire expireall interchange localize makecat offline restart update
 	@${REINPLACE_CMD} -i "" -e "s:${PREFIX}:${PREFIX}/interchange:g; s:${PREFIX}/interchange/bin: ${PREFIX}/bin:g" ${PREFIX}/bin/${i}
 .endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
