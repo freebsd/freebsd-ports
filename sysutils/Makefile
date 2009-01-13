@@ -736,6 +736,7 @@
     SUBDIR += ttyload
     SUBDIR += tua
     SUBDIR += tw_cli
+    SUBDIR += ua
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy
     SUBDIR += ucspi-ssl
