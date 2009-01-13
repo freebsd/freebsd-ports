@@ -1,0 +1,9 @@
+ua is a simple command-line tool that finds sets of identical files.
+The name ua is derived from the Hungarian word ugyanaz meaning the same.
+
+The development of ua was motivated by the disturbingly often recurring
+event of waiting too long for a shell script using sorts, md5sums, diffs
+and the like to finish finding identical files. While there are many tools
+out there, we needed a tool that can ignore white spaces and runs quite fast.
+
+WWW: http://oss.euedge.com/wiki/UaMainPage
