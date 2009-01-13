@@ -6,14 +6,23 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel www pear
+MASTER_SITES=	http://pear.phpunit.de/get/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	PEAR regression testing framework for unit tests
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MANUAL_PACKAGE_BUILD=	attempts to contact pear.phpunit.de during install phase
+
+CHANNEL=	pear.phpunit.de
+SUB_FILES=	pear-deinstall pear-install
+SUB_LIST+=	CHANNEL=${CHANNEL}
+PKGINSTALL=	${WRKDIR}/pear-install
+PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 
 FILES=		PHPUnit.php PHPUnit/GUI/Gtk.php PHPUnit/GUI/HTML.php \
 		PHPUnit/GUI/HTML.tpl PHPUnit/GUI/SetupDecorator.php \
