@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Breve
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://breve.twisty-industries.com/downloads/ \
 		LOCAL/nivit/${PORTNAME}
