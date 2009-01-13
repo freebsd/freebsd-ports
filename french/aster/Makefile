@@ -146,8 +146,8 @@ HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
 USE_FORTRAN=	yes
-FORTRANLIBDIR=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
-FORTRANLIBDIR2=	`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
+FORTRANLIBDIR=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``
+FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
