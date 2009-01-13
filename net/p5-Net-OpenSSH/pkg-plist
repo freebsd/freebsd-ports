@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/OpenSSH/Constants.pm
+%%SITE_PERL%%/Net/OpenSSH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/OpenSSH
+@dirrmtry %%SITE_PERL%%/Net
