@@ -208,7 +208,7 @@
 -    //ret = shout_send_data(&conn, mp3buffer, imp3);
 -    lame_close_infile(&gf) ;
 -    lame_mp3_tags(&gf) ;
-+    imp3=lame_encode_finish(gf,mp3buffer,(int)sizeof(mp3buffer));
++    imp3=lame_encode_flush(gf,mp3buffer,(int)sizeof(mp3buffer));
 +    lame_close(gf) ;
      puts("") ;
  
