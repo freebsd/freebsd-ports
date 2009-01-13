@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	0.2.22
+PORTVERSION=	0.2.24
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
@@ -22,7 +22,7 @@ USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	SERVER "Install NetXMS server & agent" off\
+OPTIONS=	SERVER "Install NetXMS server & agent" off \
 		CLIENT "Install NetXMS client" on \
 		AGENT "Install NetXMS agent" on \
 		NXHTTPD "Install web-interface" off \
@@ -37,6 +37,13 @@ NETXMS_GRP=	netxms
 .include <bsd.port.pre.mk>
 
 SUB_FILES=	pkg-install	pkg-deinstall
+
+.if defined(WITH_SERVER) || defined(WITH_AGENT) || defined(WITH_CLIENT) || defined(WITH_NXHTTPD)
+PLIST_SUB+=	NXCPTEST=""
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+.else
+PLIST_SUB+=	NXCPTEST="@comment "
+.endif
 
 .if defined(WITH_SERVER) || defined(WITH_CLIENT) || defined(WITH_NXHTTPD)
 PLIST_SUB+=	NXMAP=""
