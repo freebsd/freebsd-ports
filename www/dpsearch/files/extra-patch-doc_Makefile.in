@@ -1,0 +1,23 @@
+--- doc/Makefile.in.orig	2008-12-31 06:24:25.000000000 -0900
++++ doc/Makefile.in	2009-01-13 02:09:48.000000000 -0900
+@@ -570,13 +570,13 @@
+ dist-hook:
+ 	cp -rf $(srcdir)/samples $(distdir)
+ 
+-install-data-local: $(PDF_FILES) $(HTML_FILES)
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/dataparksearch
+-	echo ${INSTALL_DATA} docs $(DESTDIR)$(datadir)/doc/dataparksearch/
+-	list='${HTML_FILES} ${PDF_FILES}'; \
+-	for p in $$list; do \
+-		${INSTALL_DATA} $(srcdir)/$$p $(DESTDIR)$(datadir)/doc/dataparksearch/ ; \
+-	done
++#install-data-local: $(PDF_FILES) $(HTML_FILES)
++#	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/dataparksearch
++#	echo ${INSTALL_DATA} docs $(DESTDIR)$(datadir)/doc/dataparksearch/
++#	list='${HTML_FILES} ${PDF_FILES}'; \
++#	for p in $$list; do \
++#		${INSTALL_DATA} $(srcdir)/$$p $(DESTDIR)$(datadir)/doc/dataparksearch/ ; \
++#	done
+ 
+ uninstall-local:
+ 	list='${PDF_FILES} ${HTML_FILES}'; \

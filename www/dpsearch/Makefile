@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.50
-PORTREVISION=	1
+PORTVERSION=	4.51
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
@@ -19,6 +18,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 		--localstatedir=/var/dpsearch \
@@ -126,6 +126,11 @@ CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
+.endif
+
+post-extract:
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-doc_Makefile.in
 .endif
 
 post-patch:
