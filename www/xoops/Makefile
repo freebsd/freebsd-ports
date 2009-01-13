@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xoops
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2b
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -21,7 +21,13 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	${MKDIR} ${WWWDIR}
+.for i in checksum.md5 checksum.php release_notes.txt
+	@cd ${WRKDIR} && ${CP} ${i} ${WWWDIR}/
+.endfor
+.for d in docs extras htdocs upgrade
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${d} ${WWWDIR}
+.endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CHMOD} -R 755 ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \

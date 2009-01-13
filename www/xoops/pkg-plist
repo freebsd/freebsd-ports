@@ -215,6 +215,7 @@
 %%WWWDIR%%/htdocs/class/textsanitizer/censor/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/censor/index.html
 %%WWWDIR%%/htdocs/class/textsanitizer/config.php
+%%WWWDIR%%/htdocs/class/textsanitizer/config.custom.php
 %%WWWDIR%%/htdocs/class/textsanitizer/flash/config.php
 %%WWWDIR%%/htdocs/class/textsanitizer/flash/flash.php
 %%WWWDIR%%/htdocs/class/textsanitizer/flash/index.html
@@ -3041,8 +3042,10 @@
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/postcommon_register_insert_js_check.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/precommon_badip_message.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/precommon_badip_redirection.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/precommon_bwlimit_message.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/prepurge_exit_message.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_disabled/spamcheck_overrun_message.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/filters_enabled/precommon_badip_message.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/include/install_extramodcheck.inc.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/include/postcheck.inc.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/include/postcheck_functions.php
@@ -3079,6 +3082,14 @@
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/ja_utf8/admin.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/ja_utf8/main.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/ja_utf8/modinfo.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/italian/admin.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/italian/index.html
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/italian/main.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/italian/modinfo.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/nederlands/admin.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/nederlands/index.html
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/nederlands/main.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/nederlands/modinfo.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/persian/admin.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/persian/index.html
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/persian/main.php
@@ -3278,6 +3289,8 @@
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/oninstall.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/onuninstall.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/onupdate.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/public_check.php
+%%WWWDIR%%/htdocs/xoops_lib/modules/protector/public_check.png
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/sql/mysql.sql
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/preload.php
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/README
@@ -3687,6 +3700,8 @@
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/french
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/fr_utf8
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/german
+@dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/italian
+@dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/nederlands
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/japanese
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/ja_utf8
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules/protector/language/persian
