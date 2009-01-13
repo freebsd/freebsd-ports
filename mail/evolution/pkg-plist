@@ -2230,6 +2230,7 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/fr
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/es
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/de
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/cs
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref/C
 @dirrm %%DATADIR%%/%%VERSION%%/help/quickref
 @dirrm %%DATADIR%%/%%VERSION%%/help
