@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liborange
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
@@ -27,7 +26,7 @@ OPTIONS=	LIBSYNCE	"Build with libsynce support"			on \
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_ICONV=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
