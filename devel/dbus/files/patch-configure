@@ -1,0 +1,13 @@
+--- configure.orig	2009-01-13 07:43:11.194080000 +0000
++++ configure	2009-01-13 07:43:26.270082000 +0000
+@@ -20956,10 +20956,6 @@ if test "x$GCC" = "xyes"; then
+   *[\ \	]-Wno-sign-compare[\ \	]*) ;;
+   *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
+   esac
+-  case " $CFLAGS " in
+-  *[\ \	]-Wno-pointer-sign[\ \	]*) ;;
+-  *) CFLAGS="$CFLAGS -Wno-pointer-sign" ;;
+-  esac
+ 
+   # http://bugs.freedesktop.org/show_bug.cgi?id=19195
+   case " $CFLAGS " in
