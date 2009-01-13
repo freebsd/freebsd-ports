@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="bc6a7e79-e111-11dd-afcd-00e0815b8da8">
-    <topic>cgiwrap  -- XSS Vulnerability</topic>
+    <topic>cgiwrap -- XSS Vulnerability</topic>
     <affects>
       <package>
 	<name>cgiwrap</name>
@@ -60,6 +60,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-2852</cvename>
+      <url>http://secunia.com/advisories/30765</url>
+      <url>http://cgiwrap.sourceforge.net/changes.html</url>
     </references>
     <dates>
       <discovery>2008-06-19</discovery>
