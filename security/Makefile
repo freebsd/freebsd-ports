@@ -635,6 +635,7 @@
     SUBDIR += py-clamav
     SUBDIR += py-crack
     SUBDIR += py-cryptkit
+    SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls

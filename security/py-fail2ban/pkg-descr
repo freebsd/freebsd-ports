@@ -1,0 +1,5 @@
+Fail2ban scans log files like /var/log/pwdfail or /var/log/apache/error_log 
+and bans IP that makes too many password failures. It updates 
+firewall rules to reject the IP address. 
+
+WWW: http://www.fail2ban.org/wiki/index.php/Main_Page
