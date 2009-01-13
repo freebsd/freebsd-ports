@@ -504,8 +504,8 @@ lib/qt4/libQtCore.prl
 lib/qt4/libQtCore.so
 lib/qt4/libQtCore.so.4
 lib/qt4/libQtCore.so.4.4
-%%DEBUG%%lib/qt4/libQtCore.so.4.4.1.debug
-lib/qt4/libQtCore.so.4.4.1
+%%DEBUG%%lib/qt4/libQtCore.so.4.4.3.debug
+lib/qt4/libQtCore.so.4.4.3
 lib/qt4/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 share/qt4/mkspecs/qconfig.pri

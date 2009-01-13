@@ -10,6 +10,7 @@ include/qt4/Qt/qhelpsearchresultwidget.h
 include/qt4/QtHelp/QHelpContentItem
 include/qt4/QtHelp/QHelpContentModel
 include/qt4/QtHelp/QHelpContentWidget
+include/qt4/QtHelp/QHelpGlobal
 include/qt4/QtHelp/QHelpEngine
 include/qt4/QtHelp/QHelpEngineCore
 include/qt4/QtHelp/QHelpIndexModel
@@ -32,8 +33,8 @@ lib/qt4/libQtHelp.prl
 lib/qt4/libQtHelp.so
 lib/qt4/libQtHelp.so.4
 lib/qt4/libQtHelp.so.4.4
-lib/qt4/libQtHelp.so.4.4.1
-%%DEBUG%%lib/qt4/libQtHelp.so.4.4.1.debug
+lib/qt4/libQtHelp.so.4.4.3
+%%DEBUG%%lib/qt4/libQtHelp.so.4.4.3.debug
 libdata/pkgconfig/QtHelp.pc
 @dirrm include/qt4/QtHelp
 @dirrmtry include/qt4/Qt

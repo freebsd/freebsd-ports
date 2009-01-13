@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build corelib dbus gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USE_KDE4=	#dummy, we need to know KDE4_PREFIX
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
@@ -44,6 +45,12 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 
+.include <bsd.port.pre.mk>
+
+.if exists(${KDE4_PREFIX}/lib/libphonon.so)
+IGNORE=		conflicts with KDE4 phonon. Please, deinstall multimedia/phonon
+.endif
+
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${MKDIR} ${WRKSRC}/../../mkspecs
@@ -62,4 +69,4 @@ post-configure:
 post-install:
 	${MKDIR} ${PREFIX}/lib/qt4/plugins/phonon_backend
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

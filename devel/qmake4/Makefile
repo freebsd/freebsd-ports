@@ -51,7 +51,12 @@ post-patch:
 		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|uic|uic-qt4|' \
 		-e 's|moc|moc-qt4|' \
-		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf
+		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf \
+		${WRKSRC}/../mkspecs/freebsd-g++34/qmake.conf \
+		${WRKSRC}/../mkspecs/freebsd-g++40/qmake.conf \
+		${WRKSRC}/../mkspecs/freebsd-icc/qmake.conf
+	@${REINPLACE_CMD} -e 's|include(../common/c++|include(../common/g++.conf)|' \
+		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf 
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 
 do-configure:

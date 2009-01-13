@@ -49,21 +49,22 @@ pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer-qt4|g' \
 		${WRKSRC}/src/designer/${PORTNAME}.pro
+# fix build when previous version is installed
+	${REINPLACE_CMD} -e '/^CONFIG/s|depend_prl||' \
+		${WRKSRC}/src/components/lib/lib.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
-post-configure:
+pre-install:
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/../../lib/pkgconfig/QtUiTools.pc \
 		${WRKSRC}/../../lib/pkgconfig/QtDesigner.pc \
 		${WRKSRC}/../../lib/pkgconfig/QtDesignerComponents.pc
-
-pre-install:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/src/lib/Makefile \
 		${WRKSRC}/src/uitools/Makefile \

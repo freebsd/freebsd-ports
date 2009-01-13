@@ -88,7 +88,7 @@ QTCGFLIBS?=
 # QT4 version
 # Don't forget to update ${PORTSDIR}/devel/qt4/files/configure !
 #
-QT4_VERSION?=		4.4.1
+QT4_VERSION?=		4.4.3
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
