@@ -339,6 +339,7 @@
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
     SUBDIR += jpegpixi
+    SUBDIR += jpg2pdf
     SUBDIR += jpgraph
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
