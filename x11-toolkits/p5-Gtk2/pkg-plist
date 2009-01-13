@@ -286,6 +286,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToggleToolButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolButton.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolItem.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/ToolShell.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Toolbar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Tooltip.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Tooltips.pod
