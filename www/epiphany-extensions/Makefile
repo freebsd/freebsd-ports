@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	epiphany-extensions
-PORTVERSION=	2.24.1
+PORTVERSION=	2.24.3
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
