@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
+MASTER_SITE_SUBDIR=	${PORTNAME}/0.10
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
@@ -18,14 +17,14 @@ COMMENT=	C++ classes and Gtk2 widgets related to chemistry
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		openbabel.3:${PORTSDIR}/science/openbabel \
-		goffice-0.4:${PORTSDIR}/devel/goffice04
+		goffice-0.8.7:${PORTSDIR}/devel/goffice
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack libglade2 libgnomeprintui libgnomeui gnomedocutils
+USE_GNOME=	gnomehack intlhack libglade2 gnomedocutils
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -33,27 +32,24 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-GCONF_SCHEMAS=	gcrystal.schemas
+GCONF_SCHEMAS=	gcrystal.schemas gchempaint.schemas gchempaint-arrows.schemas gchemutils.schemas
 
-MAN1=		gchem3d-viewer.1 gchemcalc.1 gchemtable.1 gcrystal.1
-MAN3=		libgcu.3
+MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 gspectrum.1
 
-OPTIONS=	MOZILLA "Build mozilla plugin" off
+PLIST_SUB=	VER=0.10
+
+OPTIONS=	XUL "Build browser plugin (requires Xulrunner)" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800058
-BROKEN=		does not build
-.endif
-
-.if defined(WITH_MOZILLA)
-USE_GECKO=	mozilla
+.if defined(WITH_XUL)
+USE_GECKO=	xulrunner
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFIGURE_ARGS+=--enable-mozilla-plugin
-PLIST_SUB=	MOZILLA=""
+PLIST_SUB+=	XUL=""
 .else
 CONFIGURE_ARGS+=--disable-mozilla-plugin
-PLIST_SUB=	MOZILLA="@comment "
+PLIST_SUB+=	XUL="@comment "
 .endif
 
 .include <bsd.port.post.mk>
