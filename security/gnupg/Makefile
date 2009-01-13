@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.9
-PORTREVISION=	3
+PORTVERSION=	2.0.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -31,12 +30,13 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 USE_ICONV=	YES
 USE_LDCONFIG=	YES
+CONFIGURE_ARGS+=	--enable-symcryptrun
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-doc
 .else
 MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
 		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
-		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
+		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1 gpg-zip.1
 MAN8=		addgnupghome.8 applygnupgdefaults.8
 INFO=		gnupg
 .endif
@@ -45,6 +45,8 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
 		GPGSM "Enable GPGSM (require LDAP)" off \
+		CAMELLIA "Enable Camellia algorithm" on \
+		KDNS "Use DNS CERT helper" off \
 		NLS "National Language Support" off
 
 .include <bsd.port.pre.mk>
@@ -66,6 +68,18 @@ PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.if defined(WITH_CAMELLIA) && !defined(WITHOUT_CAMELLIA)
+CONFIGURE_ARGS+=--enable-camellia
+.endif
+
+.if defined(WITH_KDNS) && !defined(WITHOUT_KDNS)
+LIB_DEPENDS+=	adns:${PORTSDIR}/dns/adns
+PLIST_SUB+=	ADNS=""
+.else
+CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
+PLIST_SUB+=	ADNS="@comment "
 .endif
 
 .if defined(WITH_NLS) && !defined(WITHOUT_NLS)
@@ -97,7 +111,7 @@ verify:	checksum
 	gpg2 --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 pre-configure:
-	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
+	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" ${CONFIGURE_SUB} \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
