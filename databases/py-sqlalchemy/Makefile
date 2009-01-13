@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.4.8
+PORTVERSION=	0.5.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://pypi.python.org/packages/source/S/SQLAlchemy/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+		CHEESESHOP
 MASTER_SITE_SUBDIR=	sqlalchemy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${PORTVERSION}
@@ -19,16 +18,9 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
 USE_PYTHON=	2.3+
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
-		PYTHONVERSION=${_PYTHON_VERSION} \
-		EGG="SQLAlchemy==${PORTVERSION}"
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLAlchemy
 PYDISTUTILS_NOEGGINFO=	yes
-
-BUILD_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
-# make sure we have it @deinstall time to remove the egg
-RUN_DEPENDS+=		easy_install:${PORTSDIR}/devel/py-setuptools
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -40,12 +32,8 @@ OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	*.html *.css *.js
+AL_PORTDOCS=	*.html *.js
 .endif
-
-PORTEXAMPLES=	adjacencytree association collections \
-		derived_attributes elementtree graphs pickle polymorph \
-		poly_assoc sharding vertical
 
 .include <bsd.port.pre.mk>
 
@@ -58,32 +46,30 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
 .if !defined(WITHOUT_MYSQL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if !defined(WITHOUT_POSTGRE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 .endif
 
 .if !defined(WITHOUT_SQLITE)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 .endif
 
-PYALCHEMY_EGG=	SQLAlchemy-${PORTVERSION}-py${PYTHON_VERSION:S/^python//}.egg
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+.for i in ${AL_PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
+	${MKDIR} ${DOCSDIR}/reference
+	@cd ${WRKSRC}/doc/reference && ${COPYTREE_SHARE} . ${DOCSDIR}/reference
 .endif
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in ${PORTEXAMPLES}
-	${CP} -r ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
-.endfor
+	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
