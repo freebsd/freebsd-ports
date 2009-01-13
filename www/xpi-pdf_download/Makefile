@@ -7,6 +7,7 @@
 
 PORTNAME=	pdf_download
 PORTVERSION=	2.1.0.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,9 +16,10 @@ COMMENT=	An extension to handle PDF files
 
 XPI_ID=		{37E4D8EA-8BDA-4831-8EA1-89053939A250}
 XPI_NUM=	636
-XPI_FILES=	chrome/pdfdownload.jar chrome.manifest install.rdf \
+XPI_FILES=	META-INF/manifest.mf META-INF/zigbert.rsa META-INF/zigbert.sf \
+		chrome/pdfdownload.jar chrome.manifest install.rdf \
 		defaults/preferences/prefs.js
-XPI_DIRS=	chrome defaults/preferences defaults
+XPI_DIRS=	META-INF chrome defaults/preferences defaults
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
