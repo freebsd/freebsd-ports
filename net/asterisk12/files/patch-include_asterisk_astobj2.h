@@ -7,7 +7,7 @@ $FreeBSD$
  #ifndef _ASTERISK_ASTOBJ2_H
  #define _ASTERISK_ASTOBJ2_H
  
-+#define uint unsigned int
++typedef unsigned int    uint;
 +
  #include "asterisk/compat.h"
  
