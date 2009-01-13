@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	0.98
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -28,8 +28,9 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Be aware that some of the self tests are known to fail."
+	@${ECHO} "Be aware that 1 (heap-checker-death_unittest) out of 23 self tests is known to fail."
 	@${ECHO} "Run 'make check' and try to fix that. Thanks!"
+	@${ECHO} "Be aware that another self test (profiler_unittest) can randomly fail on the loaded system."
 	@${ECHO}
 
 # four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
@@ -42,7 +43,10 @@ check: build
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 # src/stacktrace.cc:81:5: #error Cannnot calculate stack trace: need libunwind (see INSTALL file)
-BROKEN=	Does not build, cannnot calculate stack trace: need libunwind (see INSTALL file)
+BROKEN=	Does not build, cannot calculate stack trace: need libunwind (see INSTALL file)
+.endif
+.if ${ARCH} == "ia64"
+BROKEN=	Does not build, ia64 assembly not supported, see PR-94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 .endif
 
 .include <bsd.port.post.mk>

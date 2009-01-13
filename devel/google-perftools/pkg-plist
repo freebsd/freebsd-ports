@@ -5,6 +5,7 @@ include/google/malloc_extension.h
 include/google/malloc_hook.h
 include/google/profiler.h
 include/google/stacktrace.h
+include/google/malloc_hook_c.h
 lib/libprofiler.a
 lib/libprofiler.la
 lib/libprofiler.so
