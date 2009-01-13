@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	TurboJson
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -18,8 +17,7 @@ COMMENT=	Python template plugin for TurboGears that supports json
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}RuleDispatch>=0.5.a0.r2306:${PORTSDIR}/devel/py-ruledispatch \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.0_1:${PORTSDIR}/databases/py-sqlobject
-
+		${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools \
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
 
