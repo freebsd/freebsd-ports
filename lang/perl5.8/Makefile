@@ -7,19 +7,19 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
-		http://www.tobez.org/download/port-mirrors/lang/perl58/:local
+		http://protey.ru/freebsd/distfiles/:local
 MASTER_SITE_SUBDIR=	../../src \
-			tobez/:local
+			skv/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
+DIST_SUBDIR=	perl
 
-PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/tobez\//} \
-		http://www.tobez.org/download/port-mirrors/lang/perl58/
-PATCHFILES=	defined-or-5.8.8.bz2
+PATCH_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
+		http://protey.ru/freebsd/distfiles/
+PATCHFILES=	defined-or-${PERL_VER}.bz2
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
@@ -32,9 +32,10 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
 		THREADS		"Build threaded perl"			off \
 		SUIDPERL	"Build set-user-id suidperl binary"	off \
+		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
 
-PERL_VER=	5.8.8
+PERL_VER=	5.8.9
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
@@ -53,7 +54,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsiteman1dir=${PREFIX}/man/man1 \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
-	-Dcc="${CC}" -Duseshrplib \
+	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
@@ -120,6 +121,10 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 
 .if defined(WITH_PERL_64BITINT)
 CONFIGURE_ARGS+=	-Duse64bitint
+.endif
+
+.if defined(WITH_SITECUSTOMIZE)
+CONFIGURE_ARGS+=	-Dusesitecustomize
 .endif
 
 LATEST_LINK=	perl
