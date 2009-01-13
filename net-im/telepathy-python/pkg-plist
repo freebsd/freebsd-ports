@@ -163,6 +163,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/server/properties.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/properties.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/properties.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/utils.py
+%%PYTHON_SITELIBDIR%%/telepathy/utils.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/telepathy/server
 @dirrm %%PYTHON_SITELIBDIR%%/telepathy/client
 @dirrm %%PYTHON_SITELIBDIR%%/telepathy/_generated
