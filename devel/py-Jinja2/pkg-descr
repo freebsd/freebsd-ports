@@ -4,4 +4,4 @@ compiles templates into executable python code. It's basically a
 combination of Django templates and python code.
 
 Author: Armin Ronacher
-WWW:	http://jinja.pocoo.org/
+WWW:	http://jinja.pocoo.org/2/
