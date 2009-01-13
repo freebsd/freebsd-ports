@@ -6,6 +6,7 @@
 
 PORTNAME=	akonadi
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	http://akonadi.omat.nl/
 DIST_SUBDIR=	KDE
@@ -22,7 +23,8 @@ RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_XORG=	x11
-QT_COMPONENTS=	corelib network qtestlib moc rcc uic qmake dbus
+QT_COMPONENTS=	corelib network qtestlib dbus \
+		qmake_build moc_build rcc_build uic_build
 USE_MYSQL=	yes
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes

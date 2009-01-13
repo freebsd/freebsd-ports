@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-ru
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES?=	russian kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Russian messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	ru
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

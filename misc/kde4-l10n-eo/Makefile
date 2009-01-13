@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-eo
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Esperanto messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	eo
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

@@ -6,6 +6,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.5.11
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.vandenoever.info/software/strigi/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		exiv2:${PORTSDIR}/graphics/exiv2
 
 USE_QT_VER=	4
-QT_COMPONENTS=	moc uic qmake gui dbus
+QT_COMPONENTS=	gui dbus moc_build uic_build qmake_build
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 pkgconfig
 USE_FAM=	yes

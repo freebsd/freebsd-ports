@@ -7,6 +7,7 @@
 
 PORTNAME=	qimageblitz
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -17,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake moc uic gui rcc
+QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 CMAKE_DEBUG=	yes
 CMAKE_VERBOSE=	yes

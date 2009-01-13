@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -24,8 +23,9 @@ USE_QT_VER=	4
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_OPENSSL=	yes
-QT_COMPONENTS=	corelib opengl moc rcc dbus qt3support designer network svg qtestlib \
-		network uic3 porting
+QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
+		network porting_build qmake_build moc_build rcc_build \
+		uic_build uic3_build
 #USE_OPENLDAP=	yes
 
 # dirty hack should fix in upstream?

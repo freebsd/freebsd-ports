@@ -20,7 +20,7 @@ USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui moc rcc uic
+QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
 
 CMAKE_ARGS+=	-DKDE4_KTTSD_ALSA:BOOL=OFF
 

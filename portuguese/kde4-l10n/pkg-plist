@@ -1242,7 +1242,7 @@ share/locale/pt/LC_MESSAGES/kmouth.mo
 share/locale/pt/LC_MESSAGES/kmplot.mo
 share/locale/pt/LC_MESSAGES/knetattach.mo
 share/locale/pt/LC_MESSAGES/knetwalk.mo
-share/locale/pt/LC_MESSAGES/knetworkconf.mo
+share/locale/pt/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/pt/LC_MESSAGES/knode.mo
 share/locale/pt/LC_MESSAGES/knotes.mo
 share/locale/pt/LC_MESSAGES/knotify4.mo

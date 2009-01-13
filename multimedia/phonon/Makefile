@@ -6,6 +6,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/phonon/${PORTVERSION}
@@ -20,8 +21,15 @@ USE_BZIP2=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support designer network svg qtestlib
+QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
+		qmake_build moc_build rcc_build uic_build
 USE_GSTREAMER=	yes
+
+.include <bsd.port.pre.mk>
+
+.if exists(${QT_LIBDIR}/libphonon.so)
+IGNORE=		conflicts with Qt4 phonon. Please, deinstall qt4-phonon
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}
@@ -36,4 +44,4 @@ pre-configure:
 			-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
 		${WRKSRC}/../CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

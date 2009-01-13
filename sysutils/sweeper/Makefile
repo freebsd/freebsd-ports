@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -27,7 +26,8 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 KDE4_BUILDENV= yes
 USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4
-QT_COMPONENTS=	network gui moc rcc uic porting xml
+QT_COMPONENTS=	network gui porting xml \
+		qmake_build moc_build rcc_build uic_build
 
 post-extract:
 	${MKDIR} ${WRKSRC}

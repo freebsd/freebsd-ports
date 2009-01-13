@@ -122,6 +122,9 @@ share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2
 share/doc/HTML/en/kcharselect/index.docbook
+share/doc/HTML/en/kcontrol/blockdevices/common
+share/doc/HTML/en/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/en/kcontrol/blockdevices/index.docbook
 share/doc/HTML/en/kdf/common
 share/doc/HTML/en/kdf/index.cache.bz2
 share/doc/HTML/en/kdf/index.docbook
@@ -272,6 +275,7 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/doc/HTML/en/kgpg
 @dirrm share/doc/HTML/en/kfloppy
 @dirrm share/doc/HTML/en/kdf
+@dirrm share/doc/HTML/en/kcontrol/blockdevices
 @dirrm share/doc/HTML/en/kcharselect
 @dirrm share/doc/HTML/en/kcalc
 @dirrm share/doc/HTML/en/ark

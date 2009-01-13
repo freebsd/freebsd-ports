@@ -382,6 +382,9 @@ share/doc/HTML/es/kcontrol/background/index.docbook
 share/doc/HTML/es/kcontrol/bell/common
 share/doc/HTML/es/kcontrol/bell/index.cache.bz2
 share/doc/HTML/es/kcontrol/bell/index.docbook
+share/doc/HTML/es/kcontrol/blockdevices/common
+share/doc/HTML/es/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/es/kcontrol/blockdevices/index.docbook
 share/doc/HTML/es/kcontrol/cache/common
 share/doc/HTML/es/kcontrol/cache/index.cache.bz2
 share/doc/HTML/es/kcontrol/cache/index.docbook
@@ -1592,7 +1595,7 @@ share/locale/es/LC_MESSAGES/kmouth.mo
 share/locale/es/LC_MESSAGES/kmplot.mo
 share/locale/es/LC_MESSAGES/knetattach.mo
 share/locale/es/LC_MESSAGES/knetwalk.mo
-share/locale/es/LC_MESSAGES/knetworkconf.mo
+share/locale/es/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/es/LC_MESSAGES/knode.mo
 share/locale/es/LC_MESSAGES/knotes.mo
 share/locale/es/LC_MESSAGES/knotify4.mo
@@ -2008,6 +2011,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/colors
 @dirrm share/doc/HTML/es/kcontrol/clock
 @dirrm share/doc/HTML/es/kcontrol/cache
+@dirrm share/doc/HTML/es/kcontrol/blockdevices
 @dirrm share/doc/HTML/es/kcontrol/bell
 @dirrm share/doc/HTML/es/kcontrol/background
 @dirrm share/doc/HTML/es/kcontrol/autostart

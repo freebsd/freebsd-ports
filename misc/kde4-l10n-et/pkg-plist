@@ -190,6 +190,9 @@ share/doc/HTML/et/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/et/kcontrol/kcmcss/common
 share/doc/HTML/et/kcontrol/kcmcss/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmcss/index.docbook
+share/doc/HTML/et/kcontrol/kcmdisplay/common
+share/doc/HTML/et/kcontrol/kcmdisplay/index.cache.bz2
+share/doc/HTML/et/kcontrol/kcmdisplay/index.docbook
 share/doc/HTML/et/kcontrol/kcmkonsole/common
 share/doc/HTML/et/kcontrol/kcmkonsole/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmkonsole/index.docbook
@@ -1287,7 +1290,7 @@ share/locale/et/LC_MESSAGES/kmouth.mo
 share/locale/et/LC_MESSAGES/kmplot.mo
 share/locale/et/LC_MESSAGES/knetattach.mo
 share/locale/et/LC_MESSAGES/knetwalk.mo
-share/locale/et/LC_MESSAGES/knetworkconf.mo
+share/locale/et/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/et/LC_MESSAGES/knode.mo
 share/locale/et/LC_MESSAGES/knotes.mo
 share/locale/et/LC_MESSAGES/knotify4.mo
@@ -1670,6 +1673,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kcontrol/kcmlaunch
 @dirrm share/doc/HTML/et/kcontrol/kcmktalkd
 @dirrm share/doc/HTML/et/kcontrol/kcmkonsole
+@dirrm share/doc/HTML/et/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/et/kcontrol/kcmcss
 @dirrm share/doc/HTML/et/kcontrol/kcmaccess
 @dirrm share/doc/HTML/et/kcontrol/kalarmd

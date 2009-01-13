@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -23,8 +22,9 @@ USE_KDE4=	kdelibs akonadi kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support designer network svg \
-		qtestlib help
+QT_COMPONENTS=	corelib opengl dbus qt3support \
+		designer network svg qtestlib help \
+		qmake_build moc_build rcc_build uic_build
 USE_OPENLDAP=	yes
 
 .if exists(${LOCALBASE}/lib/libgpgme-pth.so)

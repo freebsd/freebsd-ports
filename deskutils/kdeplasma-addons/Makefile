@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -20,7 +19,8 @@ USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl webkit xml network moc rcc uic
+QT_COMPONENTS=	opengl webkit xml network \
+		qmake_build moc_build rcc_build uic_build
 
 post-extract:
 	${MKDIR} ${WRKSRC}

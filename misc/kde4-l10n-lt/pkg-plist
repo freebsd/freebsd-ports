@@ -8,6 +8,7 @@ share/locale/lt/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/lt/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/lt/LC_MESSAGES/audiorename_plugin.mo
 share/locale/lt/LC_MESSAGES/blinken.mo
+share/locale/lt/LC_MESSAGES/bovo.mo
 share/locale/lt/LC_MESSAGES/cervisia.mo
 share/locale/lt/LC_MESSAGES/cvsservice.mo
 share/locale/lt/LC_MESSAGES/display.mo
@@ -144,6 +145,7 @@ share/locale/lt/LC_MESSAGES/kdesud.mo
 share/locale/lt/LC_MESSAGES/kdf.mo
 share/locale/lt/LC_MESSAGES/kdgantt1.mo
 share/locale/lt/LC_MESSAGES/kdialog.mo
+share/locale/lt/LC_MESSAGES/kdiamond.mo
 share/locale/lt/LC_MESSAGES/kdmconfig.mo
 share/locale/lt/LC_MESSAGES/kdmgreet.mo
 share/locale/lt/LC_MESSAGES/keditbookmarks.mo
@@ -248,11 +250,12 @@ share/locale/lt/LC_MESSAGES/kmouth.mo
 share/locale/lt/LC_MESSAGES/kmplot.mo
 share/locale/lt/LC_MESSAGES/knetattach.mo
 share/locale/lt/LC_MESSAGES/knetwalk.mo
-share/locale/lt/LC_MESSAGES/knetworkconf.mo
+share/locale/lt/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/lt/LC_MESSAGES/knode.mo
 share/locale/lt/LC_MESSAGES/knotes.mo
 share/locale/lt/LC_MESSAGES/knotify4.mo
 share/locale/lt/LC_MESSAGES/kolf.mo
+share/locale/lt/LC_MESSAGES/kollision.mo
 share/locale/lt/LC_MESSAGES/kolourpaint.mo
 share/locale/lt/LC_MESSAGES/kompare.mo
 share/locale/lt/LC_MESSAGES/konqueror.mo

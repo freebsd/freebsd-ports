@@ -1294,6 +1294,7 @@ share/doc/HTML/en/ksirk/moveFive.png
 share/doc/HTML/en/ksirk/moveOne.png
 share/doc/HTML/en/ksirk/moveTen.png
 share/doc/HTML/en/ksirk/movement.png
+share/doc/HTML/en/ksirk/newGame.png
 share/doc/HTML/en/ksirk/newNetGame.png
 share/doc/HTML/en/ksirk/newgamedialog.png
 share/doc/HTML/en/ksirk/nouveauJeu.png
@@ -1303,6 +1304,7 @@ share/doc/HTML/en/ksirk/placingarmies.png
 share/doc/HTML/en/ksirk/player1PlacingArmies.png
 share/doc/HTML/en/ksirk/playersetupdialog.png
 share/doc/HTML/en/ksirk/preferences.png
+share/doc/HTML/en/ksirk/quit.png
 share/doc/HTML/en/ksirk/quitter.png
 share/doc/HTML/en/ksirk/saveGame.png
 share/doc/HTML/en/ksirk/shownumberofarmies.png

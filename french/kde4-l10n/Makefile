@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-fr
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	french kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	French messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	fr
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

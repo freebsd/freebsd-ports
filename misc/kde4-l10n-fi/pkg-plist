@@ -266,7 +266,7 @@ share/locale/fi/LC_MESSAGES/kmouth.mo
 share/locale/fi/LC_MESSAGES/kmplot.mo
 share/locale/fi/LC_MESSAGES/knetattach.mo
 share/locale/fi/LC_MESSAGES/knetwalk.mo
-share/locale/fi/LC_MESSAGES/knetworkconf.mo
+share/locale/fi/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/fi/LC_MESSAGES/knode.mo
 share/locale/fi/LC_MESSAGES/knotes.mo
 share/locale/fi/LC_MESSAGES/knotify4.mo

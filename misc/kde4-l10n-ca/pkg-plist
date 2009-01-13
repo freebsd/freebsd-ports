@@ -161,6 +161,9 @@ share/doc/HTML/ca/kcontrol/khtml/common
 share/doc/HTML/ca/kcontrol/khtml/index.cache.bz2
 share/doc/HTML/ca/kcontrol/khtml/index.docbook
 share/doc/HTML/ca/kcontrol/khtml/nsplugin.docbook
+share/doc/HTML/ca/kcontrol/knetworkconf/common
+share/doc/HTML/ca/kcontrol/knetworkconf/index.cache.bz2
+share/doc/HTML/ca/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/ca/kcontrol/kwindecoration/common
 share/doc/HTML/ca/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kwindecoration/index.docbook
@@ -204,6 +207,9 @@ share/doc/HTML/ca/kcontrol/useragent/index.docbook
 share/doc/HTML/ca/kcontrol/windowmanagement/common
 share/doc/HTML/ca/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/ca/kcontrol/windowmanagement/index.docbook
+share/doc/HTML/ca/kcontrol/windowspecific/common
+share/doc/HTML/ca/kcontrol/windowspecific/index.cache.bz2
+share/doc/HTML/ca/kcontrol/windowspecific/index.docbook
 share/doc/HTML/ca/kcron/common
 share/doc/HTML/ca/kcron/index.cache.bz2
 share/doc/HTML/ca/kcron/index.docbook
@@ -590,6 +596,7 @@ share/locale/ca/LC_MESSAGES/kalgebra.mo
 share/locale/ca/LC_MESSAGES/kalzium.mo
 share/locale/ca/LC_MESSAGES/kanagram.mo
 share/locale/ca/LC_MESSAGES/kappfinder.mo
+share/locale/ca/LC_MESSAGES/kapptemplate.mo
 share/locale/ca/LC_MESSAGES/kate.mo
 share/locale/ca/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca/LC_MESSAGES/katefilebrowserplugin.mo
@@ -814,7 +821,7 @@ share/locale/ca/LC_MESSAGES/kmouth.mo
 share/locale/ca/LC_MESSAGES/kmplot.mo
 share/locale/ca/LC_MESSAGES/knetattach.mo
 share/locale/ca/LC_MESSAGES/knetwalk.mo
-share/locale/ca/LC_MESSAGES/knetworkconf.mo
+share/locale/ca/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/ca/LC_MESSAGES/knode.mo
 share/locale/ca/LC_MESSAGES/knotes.mo
 share/locale/ca/LC_MESSAGES/knotify4.mo
@@ -1108,6 +1115,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kdebugdialog
 @dirrm share/doc/HTML/ca/kdat
 @dirrm share/doc/HTML/ca/kcron
+@dirrm share/doc/HTML/ca/kcontrol/windowspecific
 @dirrm share/doc/HTML/ca/kcontrol/windowmanagement
 @dirrm share/doc/HTML/ca/kcontrol/useragent
 @dirrm share/doc/HTML/ca/kcontrol/spellchecking
@@ -1122,6 +1130,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kcontrol/mouse
 @dirrm share/doc/HTML/ca/kcontrol/language
 @dirrm share/doc/HTML/ca/kcontrol/kwindecoration
+@dirrm share/doc/HTML/ca/kcontrol/knetworkconf
 @dirrm share/doc/HTML/ca/kcontrol/khtml
 @dirrm share/doc/HTML/ca/kcontrol/keys
 @dirrm share/doc/HTML/ca/kcontrol/keyboard

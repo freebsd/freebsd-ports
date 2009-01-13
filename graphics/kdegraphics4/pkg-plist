@@ -62,9 +62,9 @@ lib/kde4/kio_msits.so
 lib/kde4/ksaneplugin.so
 lib/kde4/okularGenerator_chmlib.so
 lib/kde4/okularGenerator_comicbook.so
-lib/kde4/okularGenerator_epub.so
 lib/kde4/okularGenerator_djvu.so
 lib/kde4/okularGenerator_dvi.so
+lib/kde4/okularGenerator_epub.so
 lib/kde4/okularGenerator_fb.so
 lib/kde4/okularGenerator_ghostview.so
 lib/kde4/okularGenerator_kimgio.so
@@ -99,9 +99,9 @@ lib/libokularcore.so
 lib/libokularcore.so.1
 lib/libokularcore.so.1.1.0
 lib/strigi/strigita_dvi.so
-libdata/pkgconfig/libkipi-kde4.pc
 libdata/pkgconfig/libkdcraw-kde4.pc
 libdata/pkgconfig/libkexiv2-kde4.pc
+libdata/pkgconfig/libkipi-kde4.pc
 libdata/pkgconfig/libksane.pc
 share/applications/kde4/gwenview.desktop
 share/applications/kde4/kcolorchooser.desktop
@@ -111,9 +111,9 @@ share/applications/kde4/ksnapshot.desktop
 share/applications/kde4/okular.desktop
 share/applications/kde4/okularApplication_chm.desktop
 share/applications/kde4/okularApplication_comicbook.desktop
-share/applications/kde4/okularApplication_epub.desktop
 share/applications/kde4/okularApplication_djvu.desktop
 share/applications/kde4/okularApplication_dvi.desktop
+share/applications/kde4/okularApplication_epub.desktop
 share/applications/kde4/okularApplication_fb.desktop
 share/applications/kde4/okularApplication_ghostview.desktop
 share/applications/kde4/okularApplication_kimgio.desktop
@@ -364,6 +364,7 @@ share/doc/HTML/en/kolourpaint/view_thumbnails.png
 share/doc/HTML/en/kruler/common
 share/doc/HTML/en/kruler/index.cache.bz2
 share/doc/HTML/en/kruler/index.docbook
+share/doc/HTML/en/kruler/kruler.png
 share/doc/HTML/en/ksnapshot/common
 share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
@@ -431,9 +432,9 @@ share/kde4/services/kgamma.desktop
 share/kde4/services/ksane_scan_service.desktop
 share/kde4/services/libokularGenerator_chmlib.desktop
 share/kde4/services/libokularGenerator_comicbook.desktop
-share/kde4/services/libokularGenerator_epub.desktop
 share/kde4/services/libokularGenerator_djvu.desktop
 share/kde4/services/libokularGenerator_dvi.desktop
+share/kde4/services/libokularGenerator_epub.desktop
 share/kde4/services/libokularGenerator_fb.desktop
 share/kde4/services/libokularGenerator_ghostview.desktop
 share/kde4/services/libokularGenerator_kimgio.desktop
@@ -445,9 +446,9 @@ share/kde4/services/libokularGenerator_xps.desktop
 share/kde4/services/msits.protocol
 share/kde4/services/okularChm.desktop
 share/kde4/services/okularComicbook.desktop
-share/kde4/services/okularEPub.desktop
 share/kde4/services/okularDjvu.desktop
 share/kde4/services/okularDvi.desktop
+share/kde4/services/okularEPub.desktop
 share/kde4/services/okularFb.desktop
 share/kde4/services/okularGhostview.desktop
 share/kde4/services/okularKimgio.desktop

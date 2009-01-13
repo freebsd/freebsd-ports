@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-zh_CN
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	chinese kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simplified Chinese messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	zh_CN
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

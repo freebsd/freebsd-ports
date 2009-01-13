@@ -228,6 +228,7 @@ share/locale/lv/LC_MESSAGES/kio_zeroconf.mo
 share/locale/lv/LC_MESSAGES/kioclient.mo
 share/locale/lv/LC_MESSAGES/kioexec.mo
 share/locale/lv/LC_MESSAGES/kiriki.mo
+share/locale/lv/LC_MESSAGES/kitchensync.mo
 share/locale/lv/LC_MESSAGES/kiten.mo
 share/locale/lv/LC_MESSAGES/kjots.mo
 share/locale/lv/LC_MESSAGES/kjumpingcube.mo
@@ -253,7 +254,7 @@ share/locale/lv/LC_MESSAGES/kmouth.mo
 share/locale/lv/LC_MESSAGES/kmplot.mo
 share/locale/lv/LC_MESSAGES/knetattach.mo
 share/locale/lv/LC_MESSAGES/knetwalk.mo
-share/locale/lv/LC_MESSAGES/knetworkconf.mo
+share/locale/lv/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/lv/LC_MESSAGES/knode.mo
 share/locale/lv/LC_MESSAGES/knotes.mo
 share/locale/lv/LC_MESSAGES/knotify4.mo
@@ -324,6 +325,7 @@ share/locale/lv/LC_MESSAGES/kstyle_config.mo
 share/locale/lv/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/lv/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/lv/LC_MESSAGES/ksysguard.mo
+share/locale/lv/LC_MESSAGES/ksystemlog.mo
 share/locale/lv/LC_MESSAGES/ksystraycmd.mo
 share/locale/lv/LC_MESSAGES/ksysv.mo
 share/locale/lv/LC_MESSAGES/kteatime.mo
@@ -367,6 +369,7 @@ share/locale/lv/LC_MESSAGES/libkdegames.mo
 share/locale/lv/LC_MESSAGES/libkdepim.mo
 share/locale/lv/LC_MESSAGES/libkholidays.mo
 share/locale/lv/LC_MESSAGES/libkldap.mo
+share/locale/lv/LC_MESSAGES/libkleopatra.mo
 share/locale/lv/LC_MESSAGES/libkmahjongg.mo
 share/locale/lv/LC_MESSAGES/libkmime.mo
 share/locale/lv/LC_MESSAGES/libkonq.mo

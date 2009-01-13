@@ -110,6 +110,9 @@ share/doc/HTML/pt_BR/amor/common
 share/doc/HTML/pt_BR/amor/index.cache.bz2
 share/doc/HTML/pt_BR/amor/index.docbook
 share/doc/HTML/pt_BR/amor/man-amor.6.docbook
+share/doc/HTML/pt_BR/ark/common
+share/doc/HTML/pt_BR/ark/index.cache.bz2
+share/doc/HTML/pt_BR/ark/index.docbook
 share/doc/HTML/pt_BR/cervisia/common
 share/doc/HTML/pt_BR/cervisia/index.cache.bz2
 share/doc/HTML/pt_BR/cervisia/index.docbook
@@ -117,7 +120,7 @@ share/doc/HTML/pt_BR/cervisia/mainview.png
 share/doc/HTML/pt_BR/cervisia/popup.png
 share/doc/HTML/pt_BR/gwenview/browse_mode.png
 share/doc/HTML/pt_BR/gwenview/common
-share/doc/HTML/pt_BR/gwenview/docked_windows.docbook
+share/doc/HTML/pt_BR/gwenview/fullscreen_mode.png
 share/doc/HTML/pt_BR/gwenview/index.cache.bz2
 share/doc/HTML/pt_BR/gwenview/index.docbook
 share/doc/HTML/pt_BR/gwenview/interface.docbook
@@ -214,11 +217,6 @@ share/doc/HTML/pt_BR/kdm/common
 share/doc/HTML/pt_BR/kdm/index.cache.bz2
 share/doc/HTML/pt_BR/kdm/index.docbook
 share/doc/HTML/pt_BR/kdm/kdmrc-ref.docbook
-share/doc/HTML/pt_BR/kdvi/common
-share/doc/HTML/pt_BR/kdvi/index.cache.bz2
-share/doc/HTML/pt_BR/kdvi/index.docbook
-share/doc/HTML/pt_BR/kdvi/optionrequester1.png
-share/doc/HTML/pt_BR/kdvi/optionrequester2.png
 share/doc/HTML/pt_BR/kedit/common
 share/doc/HTML/pt_BR/kedit/index.cache.bz2
 share/doc/HTML/pt_BR/kedit/index.docbook
@@ -1191,7 +1189,7 @@ share/locale/pt_BR/LC_MESSAGES/kmouth.mo
 share/locale/pt_BR/LC_MESSAGES/kmplot.mo
 share/locale/pt_BR/LC_MESSAGES/knetattach.mo
 share/locale/pt_BR/LC_MESSAGES/knetwalk.mo
-share/locale/pt_BR/LC_MESSAGES/knetworkconf.mo
+share/locale/pt_BR/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/pt_BR/LC_MESSAGES/knode.mo
 share/locale/pt_BR/LC_MESSAGES/knotes.mo
 share/locale/pt_BR/LC_MESSAGES/knotify4.mo
@@ -1359,6 +1357,7 @@ share/locale/pt_BR/LC_MESSAGES/okular_tiff.mo
 share/locale/pt_BR/LC_MESSAGES/okular_xps.mo
 share/locale/pt_BR/LC_MESSAGES/parley.mo
 share/locale/pt_BR/LC_MESSAGES/phonon-xine.mo
+share/locale/pt_BR/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/pt_BR/LC_MESSAGES/phonon_kde.mo
 share/locale/pt_BR/LC_MESSAGES/plasma.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_battery.mo
@@ -1375,6 +1374,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_knewsticker.mo
@@ -1523,7 +1523,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kfind
 @dirrm share/doc/HTML/pt_BR/kfilereplace
 @dirrm share/doc/HTML/pt_BR/kedit
-@dirrm share/doc/HTML/pt_BR/kdvi
 @dirrm share/doc/HTML/pt_BR/kdm
 @dirrm share/doc/HTML/pt_BR/kdf
 @dirrm share/doc/HTML/pt_BR/kdesu
@@ -1555,6 +1554,7 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/irkick
 @dirrm share/doc/HTML/pt_BR/gwenview
 @dirrm share/doc/HTML/pt_BR/cervisia
+@dirrm share/doc/HTML/pt_BR/ark
 @dirrm share/doc/HTML/pt_BR/amor
 @dirrm share/apps/kvtml/pt_BR
 @dirrm share/apps/kvtml
