@@ -302,6 +302,7 @@
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat5
+    SUBDIR += jawstats
     SUBDIR += jdresolve
     SUBDIR += jericho-html
     SUBDIR += jesred
