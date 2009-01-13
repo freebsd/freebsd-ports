@@ -9,7 +9,7 @@ PORTNAME=	dbskkd-cdb
 PORTVERSION=	1.71
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTVERSIONSUFFIX=	dev
 
 MAINTAINER=	matusita@FreeBSD.org
