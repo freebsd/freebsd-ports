@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mg
-PORTVERSION=	20080610
+PORTVERSION=	20090107
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xs4all.nl/~hanb/software/mg/
 
