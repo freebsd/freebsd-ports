@@ -6,44 +6,24 @@
 #
 
 PORTNAME=	RuleDispatch
-PORTVERSION=	0.5.a0.r2427
+PORTVERSION=	0.5.a1.r2506
 CATEGORIES=	devel python
-MASTER_SITES=	http://files.turbogears.org/eggs/ \
-		http://dryice.name/computer/FreeBSD/distfiles/ \
-		http://peak.telecommunity.com/snapshots/
+MASTER_SITES=	http://peak.telecommunity.com/snapshots/ \
+		http:///nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-0.5a0.dev-r2427
+DISTNAME=	${PORTNAME}-0.5a1.dev-r2506
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Rule-based Dispatching and Generic Functions
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYPROTOCOLS_EGG}:${PORTSDIR}/devel/py-protocols-devel
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel \
+		${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes
 
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	0.5a0
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2506
+PYEASYINSTALL_ARCHDEP=	yes
 
-PLIST_FILES+=	lib/${PYTHON_VERSION}/site-packages/${PYRULEDISPATCH_EGG}
+PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="RuleDispatch==${PYRULEDISPATCH_VER}"
-
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-OSINFOS=	${OPSYS:L}-${OSRELEASE}-${ARCH}
-PYRULEDISPATCH_EGG=	${PORTNAME}-${PYRULEDISPATCH_VER}-py${PYTHON_VERSION:S/^python//}-${OSINFOS}.egg
-PYRULEDISPATCH_VER?=	0.5a0
-
-SETUP_CFG=	setup.cfg
-
-post-extract:
-	${CP} ${FILESDIR}/${SETUP_CFG} ${WRKSRC}
-
-.include <bsd.port.pre.mk>
-
-OSRELEASE!=	/usr/bin/uname -r
-PYPROTOCOLS_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-protocols-devel/Makefile -V PYPROTOCOLS_EGG
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
