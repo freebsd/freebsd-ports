@@ -86,6 +86,8 @@ post-patch:
 .if defined(WITH_THUMBNAIL)
 	@${ECHO_MSG} "create_thumbnail=true" >> ${WRKSRC}/etc/kzrc
 .endif
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED=1||g'
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|localen|locale|' \
