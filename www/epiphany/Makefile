@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	2.24.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -98,6 +98,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins/symlinks/gecko18"|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
+	@${REINPLACE_CMD} -e 's|@with_engine@|mozilla|' \
+		${WRKSRC}/data/epiphany.pc.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/epiphany-fonts.schemas \
