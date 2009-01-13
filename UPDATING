@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090113:
+  AFFECTS: users of lang/perl5.8
+  AUTHOR: skv@FreeBSD.org
+
+  lang/perl5.8 has been updated to 5.8.9. You should update everything
+  depending on perl. The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8. Please see
+  its manual page for details.
+
 20090112:
   AFFECTS: users of mail/claws-mail*
   AUTHOR: miwi@FreeBSD.org
