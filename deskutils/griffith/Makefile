@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	deskutils
-MASTER_SITES=	CENKES BERLIOS
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
@@ -18,7 +17,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
-		py*-sqlalchemy>=0.3.3:${PORTSDIR}/databases/py-sqlalchemy
+		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.4.8:${PORTSDIR}/databases/py-sqlalchemy
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
@@ -32,6 +32,6 @@ post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile |\
 		${XARGS} ${REINPLACE_CMD} -e '/^PREFIX/d' -e '/^MANDIR/s|=.*|=${MANPREFIX}/man|'
 	@${REINPLACE_CMD} -e '/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
+#	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.mk>
