@@ -1251,6 +1251,7 @@ cabextract                      ports/archivers/cabextract
 cacao                           ports/java/cacao
 cacheboy                        ports/www/cacheboy
 cacheboy15-devel                ports/www/cacheboy15-devel
+cacheboy16                      ports/www/cacheboy16
 cacti                           ports/net-mgmt/cacti
 cacti-spine                     ports/net-mgmt/cacti-spine
 cadaver                         ports/www/cadaver
@@ -1531,6 +1532,7 @@ claws-mail-rssyl                ports/mail/claws-mail-rssyl
 claws-mail-smime                ports/mail/claws-mail-smime
 claws-mail-spamreport           ports/mail/claws-mail-spamreport
 claws-mail-synce                ports/mail/claws-mail-synce
+claws-mail-themes               ports/x11-themes/claws-mail-themes
 claws-mail-tnef                 ports/mail/claws-mail-tnef
 claws-mail-vcalendar            ports/mail/claws-mail-vcalendar
 clawsker                        ports/mail/clawsker
@@ -5003,8 +5005,6 @@ hmap                            ports/security/hmap
 hmmer                           ports/biology/hmmer
 hnb                             ports/editors/hnb
 hobbes-icons-xpm                ports/graphics/hobbes-icons-xpm
-hobbit-client                   ports/net-mgmt/hobbit-client
-hobbit-server                   ports/net-mgmt/hobbit-server
 hohlin                          ports/games/hohlin
 holotz-castle                   ports/games/holotz-castle
 holyshout                       ports/audio/holyshout
@@ -8396,6 +8396,7 @@ mod_auth_form                   ports/www/mod_auth_form
 mod_auth_imap                   ports/www/mod_auth_imap
 mod_auth_imap2                  ports/www/mod_auth_imap2
 mod_auth_kerb                   ports/www/mod_auth_kerb
+mod_auth_kerb2                  ports/www/mod_auth_kerb2
 mod_auth_ldap                   ports/www/mod_auth_ldap
 mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
@@ -8451,6 +8452,7 @@ mod_jk                          ports/www/mod_jk
 mod_jk-apache2                  ports/www/mod_jk-apache2
 mod_layout                      ports/www/mod_layout
 mod_layout2                     ports/www/mod_layout2
+mod_layout22                    ports/www/mod_layout22
 mod_limitipconn                 ports/www/mod_limitipconn
 mod_limitipconn2                ports/www/mod_limitipconn2
 mod_line_edit                   ports/www/mod_line_edit
@@ -21689,6 +21691,7 @@ velocity                        ports/x11-fm/velocity
 venice                          ports/finance/venice
 ventrilo-server                 ports/audio/ventrilo-server
 vera                            ports/misc/vera
+verilog-mode.el                 ports/cad/verilog-mode.el
 verlihub                        ports/net-p2p/verlihub
 verlihub-plugins                ports/net-p2p/verlihub-plugins
 verlihub-plugins-chatroom       ports/net-p2p/verlihub-plugins-chatroom
@@ -22810,6 +22813,7 @@ xmms-volnorm                    ports/audio/xmms-volnorm
 xmms-vumeter                    ports/graphics/xmms-vumeter
 xmms-vumeter-skins              ports/x11-themes/xmms-vumeter-skins
 xmms-waterfall                  ports/graphics/xmms-waterfall
+xmms-wavpack                    ports/audio/xmms-wavpack
 xmms-weasel                     ports/multimedia/xmms-weasel
 xmms-wma                        ports/audio/xmms-wma
 xmms-xf86audio                  ports/audio/xmms-xf86audio
@@ -23177,6 +23181,8 @@ xxgdb                           ports/devel/xxgdb
 xxkb                            ports/x11/xxkb
 xxl                             ports/devel/xxl
 xye                             ports/games/xye
+xymon-client                    ports/net-mgmt/xymon-client
+xymon-server                    ports/net-mgmt/xymon-server
 xyssl                           ports/security/xyssl
 xzgv                            ports/graphics/xzgv
 xzip                            ports/games/xzip
