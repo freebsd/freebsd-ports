@@ -7,7 +7,7 @@
 
 PORTNAME=	qt4
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
+PORTREVISION=0
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -32,6 +32,10 @@ QT_COMPONENTS=	accessible assistant assistant-adp assistantclient \
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+RUN_DEPENDS+=	qt4-l10n>=${QT4_VERSION}:${PORTSDIR}/misc/qt4-l10n
+.endif
 
 .if defined(WITH_TOOLS)
 QT_COMPONENTS+=	help-tools linguist makeqpf moc pixeltool \

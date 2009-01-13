@@ -468,6 +468,7 @@
     SUBDIR += qlas
     SUBDIR += qmc
     SUBDIR += qt4-doc
+    SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
     SUBDIR += quick-lounge-applet

@@ -30,8 +30,8 @@ lib/qt4/libQtWebKit.prl
 lib/qt4/libQtWebKit.so
 lib/qt4/libQtWebKit.so.4
 lib/qt4/libQtWebKit.so.4.4
-lib/qt4/libQtWebKit.so.4.4.1
-%%DEBUG%%lib/qt4/libQtWebKit.so.4.4.1.debug
+lib/qt4/libQtWebKit.so.4.4.3
+%%DEBUG%%lib/qt4/libQtWebKit.so.4.4.3.debug
 libdata/pkgconfig/QtWebKit.pc
 @dirrm include/qt4/QtWebKit
 @dirrmtry include/qt4/Qt

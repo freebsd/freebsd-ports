@@ -117,6 +117,8 @@ share/qt4/mkspecs/hpuxi-acc-32/qmake.conf
 share/qt4/mkspecs/hpuxi-acc-32/qplatformdefs.h
 share/qt4/mkspecs/hpuxi-acc-64/qmake.conf
 share/qt4/mkspecs/hpuxi-acc-64/qplatformdefs.h
+share/qt4/mkspecs/hpuxi-g++-64/qmake.conf
+share/qt4/mkspecs/hpuxi-g++-64/qplatformdefs.h
 share/qt4/mkspecs/hurd-g++/qmake.conf
 share/qt4/mkspecs/hurd-g++/qplatformdefs.h
 share/qt4/mkspecs/irix-cc-64/qmake.conf
@@ -228,8 +230,6 @@ share/qt4/mkspecs/unixware-cc/qmake.conf
 share/qt4/mkspecs/unixware-cc/qplatformdefs.h
 share/qt4/mkspecs/unixware-g++/qmake.conf
 share/qt4/mkspecs/unixware-g++/qplatformdefs.h
-share/qt4/mkspecs/win32-borland/qmake.conf
-share/qt4/mkspecs/win32-borland/qplatformdefs.h
 share/qt4/mkspecs/win32-g++/qmake.conf
 share/qt4/mkspecs/win32-g++/qplatformdefs.h
 share/qt4/mkspecs/win32-msvc.net/qmake.conf
@@ -311,7 +311,6 @@ share/qt4/mkspecs/wincewm60standard-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/win32-msvc.net
 @dirrm share/qt4/mkspecs/win32-msvc
 @dirrm share/qt4/mkspecs/win32-g++
-@dirrm share/qt4/mkspecs/win32-borland
 @dirrm share/qt4/mkspecs/unixware-g++
 @dirrm share/qt4/mkspecs/unixware-cc
 @dirrm share/qt4/mkspecs/tru64-g++
@@ -365,6 +364,7 @@ share/qt4/mkspecs/wincewm60standard-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/irix-cc-64
 @dirrm share/qt4/mkspecs/irix-cc
 @dirrm share/qt4/mkspecs/hurd-g++
+@dirrm share/qt4/mkspecs/hpuxi-g++-64
 @dirrm share/qt4/mkspecs/hpuxi-acc-64
 @dirrm share/qt4/mkspecs/hpuxi-acc-32
 @dirrm share/qt4/mkspecs/hpux-g++-64

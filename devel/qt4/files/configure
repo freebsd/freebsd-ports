@@ -2,7 +2,8 @@
 #
 # Configures to build the Qt library
 #
-# Copyright (C) 1999-2008 Trolltech ASA. All rights reserved.
+# Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+# Contact: Qt Software Information (qt-info@nokia.com)
 #
 # This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 # WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -170,34 +171,13 @@ elif [ -f "$relpath"/LICENSE.GPL2 -o -f "$relpath"/LICENSE.GPL3 ]; then
     Edition="OpenSource"
     EditionString="Open Source"
     QT_EDITION="QT_EDITION_OPENSOURCE"
-elif [ -f "$relpath"/LICENSE.PREVIEW.OPENSOURCE ]; then
-    # tech preview - opensource
+elif [ -f "$relpath"/.LICENSE ]; then
+    # Generic, non final license
     [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
     [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
-    Licensee="Preview"
-    Edition="Preview"
-    QT_EDITION="QT_EDITION_OPENSOURCE"
-elif [ -f "$relpath"/LICENSE.PREVIEW.COMMERCIAL ]; then
-    # tech preview - commercial
-    [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
-    [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
-    Licensee="Preview"
-    Edition="Preview"
+    Edition=`sed 's/ LICENSE AGREEMENT//;q' .LICENSE`
+    Licensee="$Edition"
     QT_EDITION="QT_EDITION_DESKTOP"
-elif [ -f "$relpath"/LICENSE.SNAPSHOT.COMMERCIAL ]; then
-    # snapshot - commercial
-    [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
-    [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
-    Licensee="Snapshot"
-    Edition="Snapshot"
-    QT_EDITION="QT_EDITION_DESKTOP"
-elif [ -f "$relpath"/LICENSE.SNAPSHOT.OPENSOURCE.GPL2 -o -f "$relpath"/LICENSE.SNAPSHOT.OPENSOURCE.GPL3 ]; then
-    # snapshot - opensource
-    [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
-    [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
-    Licensee="Snapshot"
-    Edition="Snapshot"
-    QT_EDITION="QT_EDITION_OPENSOURCE"
 elif [ -f "$relpath"/LICENSE.TROLL ]; then
     # internal Trolltech edition
     [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
@@ -263,17 +243,14 @@ else
             QT_EDITION="QT_EDITION_UNIVERSAL"
             ;;
         B)
-            Edition="Desktop"
+            Edition="FullFramework"
+            EditionString="Full Framework"
             QT_EDITION="QT_EDITION_DESKTOP"
             ;;
         L)
-            Edition="DesktopLight"
-            EditionString="Desktop Light"
+            Edition="GUIFramework"
+            EditionString="GUI Framework"
             QT_EDITION="QT_EDITION_DESKTOPLIGHT"
-            ;;
-        R)
-            Edition="Console"
-            QT_EDITION="QT_EDITION_CONSOLE"
             ;;
         esac
         ;;
@@ -286,24 +263,6 @@ else
             ;;
         esac
         ;;
-    34M)
-        LicenseType="Academic"
-        case $ProductCode in
-        B)
-            Edition="Academic"
-            QT_EDITION="QT_EDITION_ACADEMIC"
-            ;;
-        esac
-        ;;
-    TBM)
-        LicenseType="Educational"
-        case $ProductCode in
-        B)
-            Edition="Educational"
-            QT_EDITION="QT_EDITION_EDUCATIONAL"
-            ;;
-        esac
-        ;;
     esac
     if [ -z "$LicenseType" -o -z "$Edition" -o -z "$QT_EDITION" ]; then
         echo
@@ -313,11 +272,14 @@ else
 
     # verify that we are licensed to use Qt on this platform
     LICENSE_EXTENSION=
-    if [ "$PLATFORM_QWS" = "yes" ]; then
+    if [ "$PlatformCode" = "X" ]; then
+	# Qt All-OS
+	LICENSE_EXTENSION="-ALLOS"
+    elif [ "$PLATFORM_QWS" = "yes" ]; then
         case $PlatformCode in
-        2|4|8|A|B|E|G|J|K|P|Q|S|U|V|W|X)
+        2|4|8|A|B|E|G|J|K|P|Q|S|U|V|W)
+            # Qt for Embedded Linux
             LICENSE_EXTENSION="-EMBEDDED"
-            # Qt Embedded
             ;;
         *)
             echo
@@ -331,9 +293,14 @@ else
         esac
     elif [ "$PLATFORM_MAC" = "yes" ]; then
         case $PlatformCode in
-        2|4|5|7|9|B|C|E|F|G|L|M|U|W|X|Y)
+        2|4|5|7|9|B|C|E|F|G|L|M|U|W|Y)
             # Qt/Mac
+            LICENSE_EXTENSION="-DESKTOP"
             ;;
+        3|6|8|A|D|H|J|K|P|Q|S|V)
+            # Embedded no-deploy
+            LICENSE_EXTENSION="-EMBEDDED"
+	    ;;
         *)
             echo
             echo "You are not licensed for the Qt/Mac platform."
@@ -345,8 +312,13 @@ else
         esac
      else
          case $PlatformCode in
-         2|3|4|5|7|D|E|F|J|M|Q|S|T|V|X|Z)
+         2|3|4|5|7|D|E|F|J|M|Q|S|T|V|Z)
              # Qt/X11
+             LICENSE_EXTENSION="-DESKTOP"
+             ;;
+         6|8|9|A|B|C|G|H|K|P|U|W)
+             # Embedded no-deploy
+             LICENSE_EXTENSION="-EMBEDDED"
              ;;
          *)
              echo
@@ -369,12 +341,6 @@ else
         Evaluation)
             cp -f "$relpath/.LICENSE-EVALUATION-US" "$outpath/LICENSE"
             ;;
-        Academic)
-            cp -f "$relpath/.LICENSE-ACADEMIC-US" "$outpath/LICENSE"
-            ;;
-        Educational)
-            cp -f "$relpath/.LICENSE-EDUCATIONAL-US" "$outpath/LICENSE"
-            ;;
         esac
         ;;
     2|5)
@@ -385,12 +351,6 @@ else
             ;;
         Evaluation)
             cp -f "$relpath/.LICENSE-EVALUATION" "$outpath/LICENSE"
-            ;;
-        Academic)
-            cp -f "$relpath/.LICENSE-ACADEMIC" "$outpath/LICENSE"
-            ;;
-        Educational)
-            cp -f "$relpath/.LICENSE-EDUCATIONAL" "$outpath/LICENSE"
             ;;
         esac
         ;;
@@ -517,6 +477,7 @@ CFG_BUILD_PARTS=""
 CFG_NOBUILD_PARTS=""
 CFG_RELEASE_QMAKE=no
 CFG_PHONON=auto
+CFG_PHONON_BACKEND=yes
 CFG_SVG=yes
 CFG_WEBKIT=auto # (yes|no|auto)
 CFG_ASSISTANT_WEBKIT=no
@@ -747,7 +708,7 @@ while [ "$#" -gt 0 ]; do
         VAL=no
         ;;
     #Qt style yes options
-        -incremental|-qvfb|-profile|-shared|-static|-sm|-xinerama|-xshape|-tablet|-reduce-exports|-pch|-separate-debug-info|-stl|-freetype|-xcursor|-xfixes|-xrandr|-xrender|-fontconfig|-xkb|-nis|-qdbus|-dbus|-dbus-linked|-glib|-gstreamer|-cups|-iconv|-largefile|-h|-help|-v|-verbose|-debug|-release|-fast|-opengl|-accessibility|-confirm-license|-gnumake|-framework|-qt3support|-debug-and-release|-exceptions|-universal|-prefix-install|-silent|-armfpa|-optimized-qmake|-dwarf2|-reduce-relocations|-sse|-openssl|-openssl-linked|-xmlpatterns|-phonon|-svg|-webkit|-assistant-webkit)
+        -incremental|-qvfb|-profile|-shared|-static|-sm|-xinerama|-xshape|-tablet|-reduce-exports|-pch|-separate-debug-info|-stl|-freetype|-xcursor|-xfixes|-xrandr|-xrender|-fontconfig|-xkb|-nis|-qdbus|-dbus|-dbus-linked|-glib|-gstreamer|-cups|-iconv|-largefile|-h|-help|-v|-verbose|-debug|-release|-fast|-opengl|-accessibility|-confirm-license|-gnumake|-framework|-qt3support|-debug-and-release|-exceptions|-universal|-prefix-install|-silent|-armfpa|-optimized-qmake|-dwarf2|-reduce-relocations|-sse|-openssl|-openssl-linked|-xmlpatterns|-phonon|-phonon-backend|-svg|-webkit|-assistant-webkit)
         VAR=`echo $1 | sed "s,^-\(.*\),\1,"`
         VAL=yes
         ;;
@@ -1769,6 +1730,13 @@ while [ "$#" -gt 0 ]; do
     phonon)
         if [ "$VAL" = "yes" ] || [ "$VAL" = "no" ]; then
             CFG_PHONON="$VAL"
+        else
+            UNKNOWN_OPT=yes
+        fi
+        ;;
+    phonon-backend)
+        if [ "$VAL" = "yes" ] || [ "$VAL" = "no" ]; then
+            CFG_PHONON_BACKEND="$VAL"
         else
             UNKNOWN_OPT=yes
         fi
@@ -2836,8 +2804,8 @@ Usage:  $relconf [-prefix <dir>] [-prefix-install] [-bindir <dir>] [-libdir <dir
         [-no-separate-debug-info] [-no-mmx] [-no-3dnow] [-no-sse] [-no-sse2]
         [-qtnamespace <namespace>] [-separate-debug-info] [-armfpa]
         [-no-optimized-qmake] [-optimized-qmake] [-no-xmlpatterns] [-xmlpatterns]
-        [-no-phonon] [-phonon] [-no-svg] [-svg] [-no-webkit] [-webkit]
-        [-no-assistant-webkit] [-assistant-webkit]
+        [-no-phonon] [-phonon-backend] [-no-phonon-backend] [-phonon-backend] [-no-svg] 
+        [-svg] [-no-webkit] [-webkit] [-no-assistant-webkit] [-assistant-webkit]
 
         [additional platform specific options (see below)]
 
@@ -2967,6 +2935,8 @@ fi
     -no-phonon ......... Do not build the Phonon module.
  +  -phonon ............ Build the Phonon module.
                          Phonon is built if a decent C++ compiler is used.
+    -no-phonon-backend.. Do not build the platform phonon plugin.
+ +  -phonon-backend..... Build the platform phonon plugin.
 
     -no-svg ............ Do not build the SVG module.
  +  -svg ............... Build the SVG module.
@@ -3653,29 +3623,19 @@ esac
 #-------------------------------------------------------------------------------
 [ -d "$outpath/src/corelib/global" ] || mkdir -p "$outpath/src/corelib/global"
 
-PADDING="\\0"
-
-if [ "$PLATFORM_MAC" = "yes" ]; then
-    case $UNAME_RELEASE in
-    9.*)
-        PADDING="\\\\0"
-        ;;
-    esac
-fi
-
-LICENSE_USER_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_lcnsuser=$Licensee" "$PADDING"`
-LICENSE_PRODUCTS_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_lcnsprod=$Edition" "$PADDING"`
-PREFIX_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_prfxpath=$QT_INSTALL_PREFIX" "$PADDING"`
-DOCUMENTATION_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_docspath=$QT_INSTALL_DOCS" "$PADDING"`
-HEADERS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_hdrspath=$QT_INSTALL_HEADERS" "$PADDING"`
-LIBRARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_libspath=$QT_INSTALL_LIBS" "$PADDING"`
-BINARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_binspath=$QT_INSTALL_BINS" "$PADDING"`
-PLUGINS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_plugpath=$QT_INSTALL_PLUGINS" "$PADDING"`
-DATA_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_datapath=$QT_INSTALL_DATA" "$PADDING"`
-TRANSLATIONS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_trnspath=$QT_INSTALL_TRANSLATIONS" "$PADDING"`
-SETTINGS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_stngpath=$QT_INSTALL_SETTINGS" "$PADDING"`
-EXAMPLES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_xmplpath=$QT_INSTALL_EXAMPLES" "$PADDING"`
-DEMOS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_demopath=$QT_INSTALL_DEMOS" "$PADDING"`
+LICENSE_USER_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_lcnsuser=$Licensee"`
+LICENSE_PRODUCTS_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_lcnsprod=$Edition"`
+PREFIX_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_prfxpath=$QT_INSTALL_PREFIX"`
+DOCUMENTATION_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_docspath=$QT_INSTALL_DOCS"`
+HEADERS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_hdrspath=$QT_INSTALL_HEADERS"`
+LIBRARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_libspath=$QT_INSTALL_LIBS"`
+BINARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_binspath=$QT_INSTALL_BINS"`
+PLUGINS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_plugpath=$QT_INSTALL_PLUGINS"`
+DATA_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_datapath=$QT_INSTALL_DATA"`
+TRANSLATIONS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_trnspath=$QT_INSTALL_TRANSLATIONS"`
+SETTINGS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_stngpath=$QT_INSTALL_SETTINGS"`
+EXAMPLES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_xmplpath=$QT_INSTALL_EXAMPLES"`
+DEMOS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_demopath=$QT_INSTALL_DEMOS"`
 
 cat > "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
 /* License Info */
@@ -3684,17 +3644,17 @@ static const char qt_configure_licensed_products_str [256 + 12] = "$LICENSE_PROD
 EOF
 
 if [ ! -z "$QT_HOST_PREFIX" ]; then
-    HOSTPREFIX_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_prfxpath=$QT_HOST_PREFIX" "$PADDING"`
-    HOSTDOCUMENTATION_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_docspath=$QT_HOST_PREFIX/doc" "$PADDING"`
-    HOSTHEADERS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_hdrspath=$QT_HOST_PREFIX/include" "$PADDING"`
-    HOSTLIBRARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_libspath=$QT_HOST_PREFIX/lib" "$PADDING"`
-    HOSTBINARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_binspath=$QT_HOST_PREFIX/bin" "$PADDING"`
-    HOSTPLUGINS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_plugpath=$QT_HOST_PREFIX/plugins" "$PADDING"`
-    HOSTDATA_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_datapath=$QT_HOST_PREFIX" "$PADDING"`
-    HOSTTRANSLATIONS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_trnspath=$QT_HOST_PREFIX/translations" "$PADDING"`
-    HOSTSETTINGS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_stngpath=$QT_INSTALL_SETTINGS" "$PADDING"`
-    HOSTEXAMPLES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_xmplpath=$QT_INSTALL_EXAMPLES" "$PADDING"`
-    HOSTDEMOS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_demopath=$QT_INSTALL_DEMOS" "$PADDING"`
+    HOSTPREFIX_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_prfxpath=$QT_HOST_PREFIX"`
+    HOSTDOCUMENTATION_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_docspath=$QT_HOST_PREFIX/doc"`
+    HOSTHEADERS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_hdrspath=$QT_HOST_PREFIX/include"`
+    HOSTLIBRARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_libspath=$QT_HOST_PREFIX/lib"`
+    HOSTBINARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_binspath=$QT_HOST_PREFIX/bin"`
+    HOSTPLUGINS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_plugpath=$QT_HOST_PREFIX/plugins"`
+    HOSTDATA_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_datapath=$QT_HOST_PREFIX"`
+    HOSTTRANSLATIONS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_trnspath=$QT_HOST_PREFIX/translations"`
+    HOSTSETTINGS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_stngpath=$QT_INSTALL_SETTINGS"`
+    HOSTEXAMPLES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_xmplpath=$QT_INSTALL_EXAMPLES"`
+    HOSTDEMOS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_demopath=$QT_INSTALL_DEMOS"`
 
     cat >> "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
 
@@ -4665,8 +4625,8 @@ if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" ]; then
         fi
         if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/glib "Glib" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GLIB $QT_LIBS_GLIB $X11TESTS_FLAGS; then
             CFG_GLIB=yes
-	    QMakeVar set QT_CFLAGS_GLIB "$QT_CFLAGS_GLIB"
-	    QMakeVar set QT_LIBS_GLIB "$QT_LIBS_GLIB"
+            QMakeVar set QT_CFLAGS_GLIB "$QT_CFLAGS_GLIB"
+            QMakeVar set QT_LIBS_GLIB "$QT_LIBS_GLIB"
         else
             if [ "$CFG_GLIB" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
                 echo "Glib support cannot be enabled due to functionality tests!"
@@ -4680,43 +4640,47 @@ if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" ]; then
         fi
     fi
 
-    if [ "$CFG_GLIB" = "yes" -a "$CFG_GSTREAMER" != "no" -a "$CFG_PHONON" != "no" ]; then
-        if [ -n "$PKG_CONFIG" ]; then
-            QT_CFLAGS_GSTREAMER=`$PKG_CONFIG --cflags gstreamer-0.10 gstreamer-plugins-base-0.10 2>/dev/null`
-            QT_LIBS_GSTREAMER=`$PKG_CONFIG --libs gstreamer-0.10 gstreamer-plugins-base-0.10 2>/dev/null`
-        fi
-        if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/gstreamer "GStreamer" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GSTREAMER $QT_LIBS_GSTREAMER $X11TESTS_FLAGS; then
-            CFG_GSTREAMER=yes
-	    QMakeVar set QT_CFLAGS_GSTREAMER "$QT_CFLAGS_GSTREAMER"
-	    QMakeVar set QT_LIBS_GSTREAMER "$QT_LIBS_GSTREAMER"
-        else
-            if [ "$CFG_GSTREAMER" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
-                echo "Gstreamer support cannot be enabled due to functionality tests!"
-                echo " Turn on verbose messaging (-v) to $0 to see the final report."
-                echo " If you believe this message is in error you may use the continue"
-                echo " switch (-continue) to $0 to continue."
-                exit 101
-            else
+    if [ "$CFG_PHONON" != "no" ]; then
+        if [ "$CFG_PHONON_BACKEND" != "no" ]; then
+            if [ "$CFG_GLIB" = "yes" -a "$CFG_GSTREAMER" != "no" ]; then
+                if [ -n "$PKG_CONFIG" ]; then
+                    QT_CFLAGS_GSTREAMER=`$PKG_CONFIG --cflags gstreamer-0.10 gstreamer-plugins-base-0.10 2>/dev/null`
+                    QT_LIBS_GSTREAMER=`$PKG_CONFIG --libs gstreamer-0.10 gstreamer-plugins-base-0.10 2>/dev/null`
+                fi
+                if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/gstreamer "GStreamer" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GSTREAMER $QT_LIBS_GSTREAMER $X11TESTS_FLAGS; then
+                    CFG_GSTREAMER=yes
+                    QMakeVar set QT_CFLAGS_GSTREAMER "$QT_CFLAGS_GSTREAMER"
+                    QMakeVar set QT_LIBS_GSTREAMER "$QT_LIBS_GSTREAMER"
+                else
+                    if [ "$CFG_GSTREAMER" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
+                        echo "Gstreamer support cannot be enabled due to functionality tests!"
+                        echo " Turn on verbose messaging (-v) to $0 to see the final report."
+                        echo " If you believe this message is in error you may use the continue"
+                        echo " switch (-continue) to $0 to continue."
+                        exit 101
+                    else
+                        CFG_GSTREAMER=no
+                    fi
+                fi
+            elif [ "$CFG_GLIB" = "no" ]; then
                 CFG_GSTREAMER=no
             fi
-        fi
-    elif [ "$CFG_GLIB" = "no" ]; then
-	CFG_GSTREAMER=no
-    fi
 
-    if [ "$CFG_PHONON" != "no" ]; then
-        if [ "$CFG_GSTREAMER" = "yes" ]; then
-            CFG_PHONON=yes
-        else
-            if [ "$CFG_PHONON" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
-                echo "Phonon support cannot be enabled due to functionality tests!"
-                echo " Turn on verbose messaging (-v) to $0 to see the final report."
-                echo " If you believe this message is in error you may use the continue"
-                echo " switch (-continue) to $0 to continue."
-                exit 101
+            if [ "$CFG_GSTREAMER" = "yes" ]; then
+                CFG_PHONON=yes
             else
-                CFG_PHONON=no
+                if [ "$CFG_PHONON" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
+                    echo "Phonon support cannot be enabled due to functionality tests!"
+                    echo " Turn on verbose messaging (-v) to $0 to see the final report."
+                    echo " If you believe this message is in error you may use the continue"
+                    echo " switch (-continue) to $0 to continue."
+                    exit 101
+                else
+                    CFG_PHONON=no
+                fi
             fi
+        else
+            CFG_PHONON=yes            
         fi
     fi
 fi # X11/QWS
@@ -4893,8 +4857,14 @@ if [ "$CFG_DOUBLEFORMAT" = "auto" ]; then
         fi
     fi
 fi
+
+HAVE_STL=no
+if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/stl "STL" $L_FLAGS $I_FLAGS $l_FLAGS; then
+    HAVE_STL=yes
+fi
+
 if [ "$CFG_STL" != "no" ]; then
-    if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/stl "STL" $L_FLAGS $I_FLAGS $l_FLAGS; then
+    if [ "$HAVE_STL" = "yes" ]; then
         CFG_STL=yes
     else
         if [ "$CFG_STL" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
@@ -5110,6 +5080,9 @@ fi
 # enable Phonon
 if [ "$CFG_PHONON" = "yes" ]; then
     QT_CONFIG="$QT_CONFIG phonon"
+    if [ "$CFG_PHONON_BACKEND" = "yes" ]; then
+        QT_CONFIG="$QT_CONFIG phonon-backend"
+    fi
 else
     QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_PHONON"
 fi
@@ -5411,7 +5384,7 @@ fi
 # supported and on which compilers.
 #
 canBuildPatternist="yes"
-canBuildWebKit="yes"
+canBuildWebKit="$HAVE_STL"
 
 # WebKit requires stdint.h
 if ! "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/stdint "Stdint" $L_FLAGS $I_FLAGS $l_FLAGS; then

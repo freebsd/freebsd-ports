@@ -85,10 +85,10 @@ include/qt4/QtNetwork/qurlinfo.h
 lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
 lib/qt4/libQtNetwork.so
-%%DEBUG%%lib/qt4/libQtNetwork.so.4.4.1.debug
+%%DEBUG%%lib/qt4/libQtNetwork.so.4.4.3.debug
 lib/qt4/libQtNetwork.so.4
 lib/qt4/libQtNetwork.so.4.4
-lib/qt4/libQtNetwork.so.4.4.1
+lib/qt4/libQtNetwork.so.4.4.3
 libdata/pkgconfig/QtNetwork.pc
 @dirrm include/qt4/QtNetwork
 @dirrmtry include/qt4/Qt

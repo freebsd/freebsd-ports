@@ -794,8 +794,8 @@ lib/qt4/libQtGui.prl
 lib/qt4/libQtGui.so
 lib/qt4/libQtGui.so.4
 lib/qt4/libQtGui.so.4.4
-lib/qt4/libQtGui.so.4.4.1
-%%DEBUG%%lib/qt4/libQtGui.so.4.4.1.debug
+lib/qt4/libQtGui.so.4.4.3
+%%DEBUG%%lib/qt4/libQtGui.so.4.4.3.debug
 libdata/pkgconfig/QtGui.pc
 @dirrm include/qt4/QtGui
 @dirrmtry include/qt4/Qt

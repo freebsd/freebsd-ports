@@ -69,8 +69,8 @@ lib/qt4/libphonon.prl
 lib/qt4/libphonon.so
 lib/qt4/libphonon.so.4
 lib/qt4/libphonon.so.4.1
-lib/qt4/libphonon.so.4.1.1
-%%DEBUG%%lib/qt4/libphonon.so.4.1.1.debug
+lib/qt4/libphonon.so.4.1.3
+%%DEBUG%%lib/qt4/libphonon.so.4.1.3.debug
 libdata/pkgconfig/phonon.pc
 @dirrm include/qt4/phonon
 @dirrmtry include/qt4/Qt

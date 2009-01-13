@@ -6,7 +6,7 @@ lib/qt4/libQtAssistantClient.prl
 lib/qt4/libQtAssistantClient.so
 lib/qt4/libQtAssistantClient.so.4
 lib/qt4/libQtAssistantClient.so.4.4
-lib/qt4/libQtAssistantClient.so.4.4.1
-%%DEBUG%%lib/qt4/libQtAssistantClient.so.4.4.1.debug
+lib/qt4/libQtAssistantClient.so.4.4.3
+%%DEBUG%%lib/qt4/libQtAssistantClient.so.4.4.3.debug
 libdata/pkgconfig/QtAssistantClient.pc
 @dirrm include/qt4/QtAssistant
