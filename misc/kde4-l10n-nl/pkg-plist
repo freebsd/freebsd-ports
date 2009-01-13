@@ -841,6 +841,7 @@ share/locale/nl/LC_MESSAGES/kalgebra.mo
 share/locale/nl/LC_MESSAGES/kalzium.mo
 share/locale/nl/LC_MESSAGES/kanagram.mo
 share/locale/nl/LC_MESSAGES/kappfinder.mo
+share/locale/nl/LC_MESSAGES/kapptemplate.mo
 share/locale/nl/LC_MESSAGES/kate.mo
 share/locale/nl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nl/LC_MESSAGES/katefilebrowserplugin.mo
@@ -1065,12 +1066,13 @@ share/locale/nl/LC_MESSAGES/kmouth.mo
 share/locale/nl/LC_MESSAGES/kmplot.mo
 share/locale/nl/LC_MESSAGES/knetattach.mo
 share/locale/nl/LC_MESSAGES/knetwalk.mo
-share/locale/nl/LC_MESSAGES/knetworkconf.mo
+share/locale/nl/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/nl/LC_MESSAGES/knode.mo
 share/locale/nl/LC_MESSAGES/knotes.mo
 share/locale/nl/LC_MESSAGES/knotify4.mo
 share/locale/nl/LC_MESSAGES/kode.mo
 share/locale/nl/LC_MESSAGES/kolf.mo
+share/locale/nl/LC_MESSAGES/kollision.mo
 share/locale/nl/LC_MESSAGES/kolourpaint.mo
 share/locale/nl/LC_MESSAGES/kommander.mo
 share/locale/nl/LC_MESSAGES/kompare.mo
@@ -1232,6 +1234,7 @@ share/locale/nl/LC_MESSAGES/okular_tiff.mo
 share/locale/nl/LC_MESSAGES/okular_xps.mo
 share/locale/nl/LC_MESSAGES/parley.mo
 share/locale/nl/LC_MESSAGES/phonon-xine.mo
+share/locale/nl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nl/LC_MESSAGES/phonon_kde.mo
 share/locale/nl/LC_MESSAGES/plasma.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_battery.mo
@@ -1249,6 +1252,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalgebra.mo
+share/locale/nl/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_knewsticker.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kolourpicker.mo

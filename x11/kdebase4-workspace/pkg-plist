@@ -207,6 +207,7 @@ include/taskmanager/task.h
 include/taskmanager/taskmanager.h
 include/ui_calendar.h
 lib/kconf_update_bin/khotkeys_update
+lib/kconf_update_bin/krdb_clearlibrarypath
 lib/kconf_update_bin/kwin_update_default_rules
 lib/kconf_update_bin/kwin_update_window_settings
 lib/kconf_update_bin/plasma-add-shortcut-to-menu
@@ -451,7 +452,9 @@ share/apps/kconf_update/kaccel.upd
 share/apps/kconf_update/kcmdisplayrc.upd
 share/apps/kconf_update/khotkeys_32b1_update.upd
 share/apps/kconf_update/khotkeys_printscreen.upd
+share/apps/kconf_update/khotkeys_remove_shortcuts.upd
 share/apps/kconf_update/konqueror_gestures_kde321_update.upd
+share/apps/kconf_update/krdb.upd
 share/apps/kconf_update/ksmserver.upd
 share/apps/kconf_update/kwin.upd
 share/apps/kconf_update/kwin3_plugin.pl
@@ -462,6 +465,8 @@ share/apps/kconf_update/kwin_focus2.sh
 share/apps/kconf_update/kwin_focus2.upd
 share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwin_on_off.upd
+share/apps/kconf_update/kwin_window_shortcuts.sh
+share/apps/kconf_update/kwin_window_shortcuts.upd
 share/apps/kconf_update/kwiniconify.upd
 share/apps/kconf_update/kwinsticky.upd
 share/apps/kconf_update/kwinupdatewindowsettings.upd
@@ -759,6 +764,9 @@ share/doc/HTML/en/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/en/kcontrol/kcmdisplay/common
 share/doc/HTML/en/kcontrol/kcmdisplay/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmdisplay/index.docbook
+share/doc/HTML/en/kcontrol/kcmsmserver/common
+share/doc/HTML/en/kcontrol/kcmsmserver/index.cache.bz2
+share/doc/HTML/en/kcontrol/kcmsmserver/index.docbook
 share/doc/HTML/en/kcontrol/kcmstyle/common
 share/doc/HTML/en/kcontrol/kcmstyle/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmstyle/index.docbook
@@ -773,6 +781,9 @@ share/doc/HTML/en/kcontrol/kwindecoration/common
 share/doc/HTML/en/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/en/kcontrol/kwindecoration/index.docbook
 share/doc/HTML/en/kcontrol/kwindecoration/main.png
+share/doc/HTML/en/kcontrol/mouse/common
+share/doc/HTML/en/kcontrol/mouse/index.cache.bz2
+share/doc/HTML/en/kcontrol/mouse/index.docbook
 share/doc/HTML/en/kcontrol/screensaver/common
 share/doc/HTML/en/kcontrol/screensaver/index.cache.bz2
 share/doc/HTML/en/kcontrol/screensaver/index.docbook
@@ -781,6 +792,12 @@ share/doc/HTML/en/kcontrol/splashscreen/get-new-theme.png
 share/doc/HTML/en/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/en/kcontrol/splashscreen/index.docbook
 share/doc/HTML/en/kcontrol/splashscreen/splash-main.png
+share/doc/HTML/en/kcontrol/windowbehaviour/common
+share/doc/HTML/en/kcontrol/windowbehaviour/index.cache.bz2
+share/doc/HTML/en/kcontrol/windowbehaviour/index.docbook
+share/doc/HTML/en/kcontrol/windowspecific/common
+share/doc/HTML/en/kcontrol/windowspecific/index.cache.bz2
+share/doc/HTML/en/kcontrol/windowspecific/index.docbook
 share/doc/HTML/en/kdm/common
 share/doc/HTML/en/kdm/index.cache.bz2
 share/doc/HTML/en/kdm/index.docbook
@@ -2028,12 +2045,16 @@ share/wallpapers/default_blue.jpg.desktop
 @dirrmtry share/doc/HTML/en/kmenuedit
 @dirrmtry share/doc/HTML/en/klipper
 @dirrmtry share/doc/HTML/en/kdm
+@dirrmtry share/doc/HTML/en/kcontrol/windowspecific
+@dirrmtry share/doc/HTML/en/kcontrol/windowbehaviour
 @dirrmtry share/doc/HTML/en/kcontrol/splashscreen
 @dirrmtry share/doc/HTML/en/kcontrol/screensaver
+@dirrmtry share/doc/HTML/en/kcontrol/mouse
 @dirrmtry share/doc/HTML/en/kcontrol/kwindecoration
 @dirrmtry share/doc/HTML/en/kcontrol/keys
 @dirrmtry share/doc/HTML/en/kcontrol/keyboard
 @dirrmtry share/doc/HTML/en/kcontrol/kcmstyle
+@dirrmtry share/doc/HTML/en/kcontrol/kcmsmserver
 @dirrmtry share/doc/HTML/en/kcontrol/kcmdisplay
 @dirrmtry share/doc/HTML/en/kcontrol/kcmaccess
 @dirrmtry share/doc/HTML/en/kcontrol/joystick

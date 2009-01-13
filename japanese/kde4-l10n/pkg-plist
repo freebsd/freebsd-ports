@@ -319,6 +319,7 @@ share/locale/ja/LC_MESSAGES/kcmscreensaver.mo
 share/locale/ja/LC_MESSAGES/kcmshell.mo
 share/locale/ja/LC_MESSAGES/kcmsmartcard.mo
 share/locale/ja/LC_MESSAGES/kcmsmserver.mo
+share/locale/ja/LC_MESSAGES/kcmsolidproc.mo
 share/locale/ja/LC_MESSAGES/kcmstyle.mo
 share/locale/ja/LC_MESSAGES/kcmtaskbar.mo
 share/locale/ja/LC_MESSAGES/kcmusb.mo
@@ -447,7 +448,7 @@ share/locale/ja/LC_MESSAGES/kmouth.mo
 share/locale/ja/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/knetattach.mo
 share/locale/ja/LC_MESSAGES/knetwalk.mo
-share/locale/ja/LC_MESSAGES/knetworkconf.mo
+share/locale/ja/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/ja/LC_MESSAGES/knode.mo
 share/locale/ja/LC_MESSAGES/knotes.mo
 share/locale/ja/LC_MESSAGES/knotify4.mo

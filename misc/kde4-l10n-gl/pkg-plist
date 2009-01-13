@@ -1,3 +1,75 @@
+share/apps/ktuberling/sounds/gl.soundtheme
+share/apps/ktuberling/sounds/gl/ball.ogg
+share/apps/ktuberling/sounds/gl/bow.ogg
+share/apps/ktuberling/sounds/gl/coat.ogg
+share/apps/ktuberling/sounds/gl/ear.ogg
+share/apps/ktuberling/sounds/gl/earring.ogg
+share/apps/ktuberling/sounds/gl/egypt_arch.ogg
+share/apps/ktuberling/sounds/gl/egypt_birds.ogg
+share/apps/ktuberling/sounds/gl/egypt_boy.ogg
+share/apps/ktuberling/sounds/gl/egypt_bridge.ogg
+share/apps/ktuberling/sounds/gl/egypt_camel.ogg
+share/apps/ktuberling/sounds/gl/egypt_cart.ogg
+share/apps/ktuberling/sounds/gl/egypt_column.ogg
+share/apps/ktuberling/sounds/gl/egypt_donkey.ogg
+share/apps/ktuberling/sounds/gl/egypt_girl.ogg
+share/apps/ktuberling/sounds/gl/egypt_grass.ogg
+share/apps/ktuberling/sounds/gl/egypt_man.ogg
+share/apps/ktuberling/sounds/gl/egypt_oasis.ogg
+share/apps/ktuberling/sounds/gl/egypt_palmtree.ogg
+share/apps/ktuberling/sounds/gl/egypt_pyramid.ogg
+share/apps/ktuberling/sounds/gl/egypt_road.ogg
+share/apps/ktuberling/sounds/gl/egypt_sphynx.ogg
+share/apps/ktuberling/sounds/gl/egypt_well.ogg
+share/apps/ktuberling/sounds/gl/egypt_woman.ogg
+share/apps/ktuberling/sounds/gl/eye.ogg
+share/apps/ktuberling/sounds/gl/eyebrow.ogg
+share/apps/ktuberling/sounds/gl/flower.ogg
+share/apps/ktuberling/sounds/gl/hair.ogg
+share/apps/ktuberling/sounds/gl/hat.ogg
+share/apps/ktuberling/sounds/gl/moon_alien.ogg
+share/apps/ktuberling/sounds/gl/moon_astronaut.ogg
+share/apps/ktuberling/sounds/gl/moon_earth.ogg
+share/apps/ktuberling/sounds/gl/moon_fallingstar.ogg
+share/apps/ktuberling/sounds/gl/moon_hotel.ogg
+share/apps/ktuberling/sounds/gl/moon_monster.ogg
+share/apps/ktuberling/sounds/gl/moon_moonwalker.ogg
+share/apps/ktuberling/sounds/gl/moon_planet.ogg
+share/apps/ktuberling/sounds/gl/moon_radar.ogg
+share/apps/ktuberling/sounds/gl/moon_rocket.ogg
+share/apps/ktuberling/sounds/gl/moon_satellite.ogg
+share/apps/ktuberling/sounds/gl/moon_sign.ogg
+share/apps/ktuberling/sounds/gl/moon_star.ogg
+share/apps/ktuberling/sounds/gl/moon_ufo.ogg
+share/apps/ktuberling/sounds/gl/moustache.ogg
+share/apps/ktuberling/sounds/gl/mouth.ogg
+share/apps/ktuberling/sounds/gl/nose.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_anchovy.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_bacon.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_broccolli.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_cheese.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_cucumber.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_mushroom.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_olive.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_onion.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_oregano.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_pepper.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_pepperoni.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_pineapple.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_salami.ogg
+share/apps/ktuberling/sounds/gl/pizzeria_tomato.ogg
+share/apps/ktuberling/sounds/gl/shoe.ogg
+share/apps/ktuberling/sounds/gl/shorts.ogg
+share/apps/ktuberling/sounds/gl/skirt.ogg
+share/apps/ktuberling/sounds/gl/spectacles.ogg
+share/apps/ktuberling/sounds/gl/stick.ogg
+share/apps/ktuberling/sounds/gl/sunglasses.ogg
+share/apps/ktuberling/sounds/gl/tie.ogg
+share/apps/ktuberling/sounds/gl/tv_bicycle.ogg
+share/apps/ktuberling/sounds/gl/tv_car.ogg
+share/apps/ktuberling/sounds/gl/tv_cyclist.ogg
+share/apps/ktuberling/sounds/gl/tv_train.ogg
+share/apps/ktuberling/sounds/gl/umbrella.ogg
 share/apps/kvtml/gl/animals.kvtml
 share/apps/kvtml/gl/capitaisdomundo.kvtml
 share/apps/kvtml/gl/deportes.kvtml
@@ -350,7 +422,7 @@ share/locale/gl/LC_MESSAGES/kmouth.mo
 share/locale/gl/LC_MESSAGES/kmplot.mo
 share/locale/gl/LC_MESSAGES/knetattach.mo
 share/locale/gl/LC_MESSAGES/knetwalk.mo
-share/locale/gl/LC_MESSAGES/knetworkconf.mo
+share/locale/gl/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/gl/LC_MESSAGES/knode.mo
 share/locale/gl/LC_MESSAGES/knotes.mo
 share/locale/gl/LC_MESSAGES/knotify4.mo
@@ -590,3 +662,6 @@ share/locale/gl/entry.desktop
 @dirrm share/doc/HTML/gl
 @dirrm share/apps/kvtml/gl
 @dirrm share/apps/kvtml
+@dirrm share/apps/ktuberling/sounds/gl
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

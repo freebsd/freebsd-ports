@@ -279,6 +279,9 @@ share/doc/HTML/sv/kcontrol/background/index.docbook
 share/doc/HTML/sv/kcontrol/bell/common
 share/doc/HTML/sv/kcontrol/bell/index.cache.bz2
 share/doc/HTML/sv/kcontrol/bell/index.docbook
+share/doc/HTML/sv/kcontrol/blockdevices/common
+share/doc/HTML/sv/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/sv/kcontrol/blockdevices/index.docbook
 share/doc/HTML/sv/kcontrol/cache/common
 share/doc/HTML/sv/kcontrol/cache/index.cache.bz2
 share/doc/HTML/sv/kcontrol/cache/index.docbook
@@ -384,6 +387,9 @@ share/doc/HTML/sv/kcontrol/khtml/common
 share/doc/HTML/sv/kcontrol/khtml/index.cache.bz2
 share/doc/HTML/sv/kcontrol/khtml/index.docbook
 share/doc/HTML/sv/kcontrol/khtml/nsplugin.docbook
+share/doc/HTML/sv/kcontrol/knetworkconf/common
+share/doc/HTML/sv/kcontrol/knetworkconf/index.cache.bz2
+share/doc/HTML/sv/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/sv/kcontrol/kwindecoration/common
 share/doc/HTML/sv/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kwindecoration/index.docbook
@@ -439,9 +445,15 @@ share/doc/HTML/sv/kcontrol/splashscreen/index.docbook
 share/doc/HTML/sv/kcontrol/useragent/common
 share/doc/HTML/sv/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/sv/kcontrol/useragent/index.docbook
+share/doc/HTML/sv/kcontrol/windowbehaviour/common
+share/doc/HTML/sv/kcontrol/windowbehaviour/index.cache.bz2
+share/doc/HTML/sv/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/sv/kcontrol/windowmanagement/common
 share/doc/HTML/sv/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/sv/kcontrol/windowmanagement/index.docbook
+share/doc/HTML/sv/kcontrol/windowspecific/common
+share/doc/HTML/sv/kcontrol/windowspecific/index.cache.bz2
+share/doc/HTML/sv/kcontrol/windowspecific/index.docbook
 share/doc/HTML/sv/kcron/common
 share/doc/HTML/sv/kcron/index.cache.bz2
 share/doc/HTML/sv/kcron/index.docbook
@@ -1917,7 +1929,7 @@ share/locale/sv/LC_MESSAGES/kmouth.mo
 share/locale/sv/LC_MESSAGES/kmplot.mo
 share/locale/sv/LC_MESSAGES/knetattach.mo
 share/locale/sv/LC_MESSAGES/knetwalk.mo
-share/locale/sv/LC_MESSAGES/knetworkconf.mo
+share/locale/sv/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/sv/LC_MESSAGES/knode.mo
 share/locale/sv/LC_MESSAGES/knotes.mo
 share/locale/sv/LC_MESSAGES/knotify4.mo
@@ -2277,7 +2289,9 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kdebugdialog
 @dirrm share/doc/HTML/sv/kdat
 @dirrm share/doc/HTML/sv/kcron
+@dirrm share/doc/HTML/sv/kcontrol/windowspecific
 @dirrm share/doc/HTML/sv/kcontrol/windowmanagement
+@dirrm share/doc/HTML/sv/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/sv/kcontrol/useragent
 @dirrm share/doc/HTML/sv/kcontrol/splashscreen
 @dirrm share/doc/HTML/sv/kcontrol/spellchecking
@@ -2296,6 +2310,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcontrol/language
 @dirrm share/doc/HTML/sv/kcontrol/kxkb
 @dirrm share/doc/HTML/sv/kcontrol/kwindecoration
+@dirrm share/doc/HTML/sv/kcontrol/knetworkconf
 @dirrm share/doc/HTML/sv/kcontrol/khtml
 @dirrm share/doc/HTML/sv/kcontrol/keys
 @dirrm share/doc/HTML/sv/kcontrol/keyboard
@@ -2330,6 +2345,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcontrol/colors
 @dirrm share/doc/HTML/sv/kcontrol/clock
 @dirrm share/doc/HTML/sv/kcontrol/cache
+@dirrm share/doc/HTML/sv/kcontrol/blockdevices
 @dirrm share/doc/HTML/sv/kcontrol/bell
 @dirrm share/doc/HTML/sv/kcontrol/background
 @dirrm share/doc/HTML/sv/kcontrol/autostart

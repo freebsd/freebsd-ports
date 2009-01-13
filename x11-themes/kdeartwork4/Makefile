@@ -20,7 +20,8 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-QT_COMPONENTS=	opengl gui moc rcc uic svg qt3support
+QT_COMPONENTS=	opengl gui svg qt3support \
+		qmake_build moc_build rcc_build uic_build
 
 OPTIONS=	GNOME "Use Gnome screensavers" off
 

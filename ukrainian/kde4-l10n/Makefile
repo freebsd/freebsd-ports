@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-uk
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	ukrainian kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ukrainian messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	uk
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

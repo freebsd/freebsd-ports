@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde-l10n-ko
+PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	korean kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Korean messages and documentation for KDE4
 
-KDE4_L10N=	yes
+KDE4_L10N=	ko
 
 post-extract:
 	${MKDIR} ${WRKSRC}/build

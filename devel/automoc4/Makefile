@@ -6,6 +6,7 @@
 
 PORTNAME=	automoc4
 PORTVERSION=	0.9.84
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/automoc4/0.9.84/
@@ -18,7 +19,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_KDE4=	kdeprefix kdehier
 USE_QT_VER=	4
-QT_COMPONENTS=	uic moc rcc qmake corelib
+QT_COMPONENTS=	corelib qmake_build moc rcc_build uic_build
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes
 CMAKE_USE_PTHREAD=	yes

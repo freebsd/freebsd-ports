@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -34,7 +33,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_KDE4=	kdelibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-QT_COMPONENTS=	qmake gui moc rcc uic svg
+QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
 
 #fix checking boost_python
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"

@@ -462,14 +462,13 @@ share/apps/akregator/about/akregator.css
 share/apps/akregator/about/main.html
 share/apps/akregator/about/top-left-akregator.png
 share/apps/akregator/akregator.notifyrc
-share/apps/akregator/akregator_onlinesync_plugin.desktop
-share/apps/akregator/akregator_onlinesync_plugin.rc
 share/apps/akregator/akregator_part.rc
 share/apps/akregator/akregator_shell.rc
 share/apps/akregator/articleviewer.rc
 share/apps/akregator/pageviewer.rc
 share/apps/akregator/pics/kmmsgnew.png
 share/apps/akregator/pics/kmmsgunseen.png
+share/apps/akregator_onlinesync_plugin/akregator_onlinesync_plugin.rc
 share/apps/cmake/modules/FindKode.cmake
 share/apps/cmake/modules/KodeMacros.cmake
 share/apps/kaddressbook/bookmark_xxportui.rc
@@ -719,6 +718,7 @@ share/apps/libkholidays/holiday_br
 share/apps/libkholidays/holiday_ca
 share/apps/libkholidays/holiday_catalan
 share/apps/libkholidays/holiday_ch
+share/apps/libkholidays/holiday_cl
 share/apps/libkholidays/holiday_co
 share/apps/libkholidays/holiday_cz
 share/apps/libkholidays/holiday_de
@@ -736,6 +736,7 @@ share/apps/libkholidays/holiday_ie
 share/apps/libkholidays/holiday_il
 share/apps/libkholidays/holiday_is
 share/apps/libkholidays/holiday_it
+share/apps/libkholidays/holiday_jm
 share/apps/libkholidays/holiday_jp
 share/apps/libkholidays/holiday_lt
 share/apps/libkholidays/holiday_mx
@@ -1117,6 +1118,7 @@ share/icons/oxygen/22x22/actions/edit-delete-page.png
 share/icons/oxygen/22x22/actions/mail-reply-custom.png
 share/icons/oxygen/22x22/actions/meeting-attending-tentative.png
 share/icons/oxygen/22x22/actions/meeting-attending.png
+share/icons/oxygen/22x22/actions/new-command-alarm.png
 share/icons/oxygen/22x22/apps/kalarm.png
 share/icons/oxygen/22x22/apps/kleopatra.png
 share/icons/oxygen/22x22/mimetypes/x-mail-distribution-list.png
@@ -1409,6 +1411,7 @@ share/kde4/servicetypes/korgprintplugin.desktop
 @dirrm share/apps/kaddressbook
 @dirrmtry share/apps/cmake/modules
 @dirrmtry share/apps/cmake
+@dirrm share/apps/akregator_onlinesync_plugin
 @dirrm share/apps/akregator/pics
 @dirrm share/apps/akregator/about
 @dirrm share/apps/akregator

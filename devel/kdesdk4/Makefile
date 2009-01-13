@@ -6,7 +6,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -25,7 +24,8 @@ KDE4_BUILDENV=	yes
 USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier \
 		automoc4 akonadi
 USE_QT_VER=	4
-QT_COMPONENTS=	network gui moc rcc uic svg qt3support
+QT_COMPONENTS=	network gui svg qt3support \
+		qmake_build moc_build rcc_build uic_build
 
 MAN1=		cervisia.1
 

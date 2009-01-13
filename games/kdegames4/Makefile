@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl gui moc rcc uic svg iconengines pixeltool
+QT_COMPONENTS=	opengl gui svg iconengines pixeltool \
+		qmake_build moc_build rcc_build uic_build
 
 post-extract:
 	${MKDIR} ${WRKSRC}

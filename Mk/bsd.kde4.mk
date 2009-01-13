@@ -49,7 +49,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.1.1
+KDE4_VERSION=		4.1.4
 
 #
 # KDE4 is installed into its own prefix to not conflict with KDE3
@@ -125,8 +125,6 @@ IGNORE=	cannot install: Unknown component ${component}
 #
 .if defined(KDE4_BUILDENV)
 USE_CMAKE=	yes
-CMAKE_DEBUG=	yes
-CMAKE_VERBOSE=	yes
 
 USE_LDCONFIG=	${KDE4_PREFIX}/lib ${KDE4_PREFIX}/lib/kde4
 

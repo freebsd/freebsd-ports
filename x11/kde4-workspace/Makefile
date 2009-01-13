@@ -35,8 +35,10 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	assistant corelib dbus designer gui_build moc network opengl rcc \
-		script svg sql qt3support qtestlib uic3 xml porting webkit
+QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
+		script svg sql qt3support qtestlib xml webkit \
+		qmake_build moc_build rcc_build uic_build \
+		porting_build uic3_build
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 

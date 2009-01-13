@@ -49,21 +49,30 @@ LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 CONFLICTS=	qt4-phonon-4*
 LATEST_LINK=	${PORTNAME}4
 
+CMAKE_ARGS+=	-DWITH_FAM:BOOL=Off
+
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
-USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui moc network opengl qmake qt3support \
-		qtestlib rcc script sql svg uic3 xml designer \
-		assistant svg qdbusviewer makeqpf imageformats
+QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
+		qtestlib script sql svg xml designer \
+		assistant svg qdbusviewer makeqpf imageformats \
+		qmake_build moc_build rcc_build uic_build uic3_build
 USE_GNOME=	libxml2 libxslt
 
 MAN1=		checkXML.1 kde4-config.1 makekdewidgets.1 kdecmake.1
 MAN7=		kdeoptions.7 qtoptions.7
 MAN8=		kbuildsycoca4.8
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-nepomuk-core-resourcefiltermodel.cpp \
+		${FILESDIR}/extrapatch-nepomuk-core-resourcefiltermodel.h
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}
@@ -85,4 +94,4 @@ pre-configure:
 post-install:
 	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

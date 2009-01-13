@@ -92,6 +92,7 @@ share/doc/HTML/fr/amor/man-amor.6.docbook
 share/doc/HTML/fr/ark/common
 share/doc/HTML/fr/ark/index.cache.bz2
 share/doc/HTML/fr/ark/index.docbook
+share/doc/HTML/fr/ark/man-ark.1.docbook
 share/doc/HTML/fr/blinken/blinken1.png
 share/doc/HTML/fr/blinken/blinken2.png
 share/doc/HTML/fr/blinken/blinken_accesskeys.png
@@ -99,6 +100,9 @@ share/doc/HTML/fr/blinken/blinken_nickprompt.png
 share/doc/HTML/fr/blinken/common
 share/doc/HTML/fr/blinken/index.cache.bz2
 share/doc/HTML/fr/blinken/index.docbook
+share/doc/HTML/fr/bovo/common
+share/doc/HTML/fr/bovo/index.cache.bz2
+share/doc/HTML/fr/bovo/index.docbook
 share/doc/HTML/fr/cervisia/annotate.png
 share/doc/HTML/fr/cervisia/checkout.png
 share/doc/HTML/fr/cervisia/commit.png
@@ -115,6 +119,9 @@ share/doc/HTML/fr/cervisia/updatetag.png
 share/doc/HTML/fr/dolphin/common
 share/doc/HTML/fr/dolphin/index.cache.bz2
 share/doc/HTML/fr/dolphin/index.docbook
+share/doc/HTML/fr/dragonplayer/common
+share/doc/HTML/fr/dragonplayer/index.cache.bz2
+share/doc/HTML/fr/dragonplayer/index.docbook
 share/doc/HTML/fr/gwenview/common
 share/doc/HTML/fr/gwenview/index.cache.bz2
 share/doc/HTML/fr/gwenview/index.docbook
@@ -137,6 +144,9 @@ share/doc/HTML/fr/kalarm/editwindow.png
 share/doc/HTML/fr/kalarm/index.cache.bz2
 share/doc/HTML/fr/kalarm/index.docbook
 share/doc/HTML/fr/kalarm/mainwindow.png
+share/doc/HTML/fr/kalgebra/common
+share/doc/HTML/fr/kalgebra/index.cache.bz2
+share/doc/HTML/fr/kalgebra/index.docbook
 share/doc/HTML/fr/kalzium/common
 share/doc/HTML/fr/kalzium/index.cache.bz2
 share/doc/HTML/fr/kalzium/index.docbook
@@ -163,6 +173,9 @@ share/doc/HTML/fr/kanagram/newstuff-settings.png
 share/doc/HTML/fr/kanagram/standard-fonts.png
 share/doc/HTML/fr/kanagram/vocab-editor.png
 share/doc/HTML/fr/kanagram/vocab-settings.png
+share/doc/HTML/fr/kapptemplate/common
+share/doc/HTML/fr/kapptemplate/index.cache.bz2
+share/doc/HTML/fr/kapptemplate/index.docbook
 share/doc/HTML/fr/karm/common
 share/doc/HTML/fr/karm/index.cache.bz2
 share/doc/HTML/fr/karm/index.docbook
@@ -202,12 +215,23 @@ share/doc/HTML/fr/kbattleship/index.docbook
 share/doc/HTML/fr/kblackbox/common
 share/doc/HTML/fr/kblackbox/index.cache.bz2
 share/doc/HTML/fr/kblackbox/index.docbook
+share/doc/HTML/fr/kblocks/common
+share/doc/HTML/fr/kblocks/index.cache.bz2
+share/doc/HTML/fr/kblocks/index.docbook
+share/doc/HTML/fr/kbounce/button-new.png
+share/doc/HTML/fr/kbounce/button-pause.png
 share/doc/HTML/fr/kbounce/common
 share/doc/HTML/fr/kbounce/index.cache.bz2
 share/doc/HTML/fr/kbounce/index.docbook
-share/doc/HTML/fr/kbounce/jezball_corridor1.png
-share/doc/HTML/fr/kbounce/jezball_corridor2.png
-share/doc/HTML/fr/kbounce/jezball_newWall.png
+share/doc/HTML/fr/kbounce/kbounce_corridor1.png
+share/doc/HTML/fr/kbounce/kbounce_corridor2.png
+share/doc/HTML/fr/kbounce/menu-game.png
+share/doc/HTML/fr/kbounce/menu-help.png
+share/doc/HTML/fr/kbounce/menu-settings.png
+share/doc/HTML/fr/kbounce/toolbar.png
+share/doc/HTML/fr/kbreakout/common
+share/doc/HTML/fr/kbreakout/index.cache.bz2
+share/doc/HTML/fr/kbreakout/index.docbook
 share/doc/HTML/fr/kbruch/checked.png
 share/doc/HTML/fr/kbruch/common
 share/doc/HTML/fr/kbruch/compare.png
@@ -233,12 +257,18 @@ share/doc/HTML/fr/kcharselect/index.docbook
 share/doc/HTML/fr/kcmlirc/common
 share/doc/HTML/fr/kcmlirc/index.cache.bz2
 share/doc/HTML/fr/kcmlirc/index.docbook
+share/doc/HTML/fr/kcontrol/autostart/common
+share/doc/HTML/fr/kcontrol/autostart/index.cache.bz2
+share/doc/HTML/fr/kcontrol/autostart/index.docbook
 share/doc/HTML/fr/kcontrol/background/common
 share/doc/HTML/fr/kcontrol/background/index.cache.bz2
 share/doc/HTML/fr/kcontrol/background/index.docbook
 share/doc/HTML/fr/kcontrol/bell/common
 share/doc/HTML/fr/kcontrol/bell/index.cache.bz2
 share/doc/HTML/fr/kcontrol/bell/index.docbook
+share/doc/HTML/fr/kcontrol/blockdevices/common
+share/doc/HTML/fr/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/fr/kcontrol/blockdevices/index.docbook
 share/doc/HTML/fr/kcontrol/cache/common
 share/doc/HTML/fr/kcontrol/cache/index.cache.bz2
 share/doc/HTML/fr/kcontrol/cache/index.docbook
@@ -292,6 +322,9 @@ share/doc/HTML/fr/kcontrol/helpindex/index.docbook
 share/doc/HTML/fr/kcontrol/icons/common
 share/doc/HTML/fr/kcontrol/icons/index.cache.bz2
 share/doc/HTML/fr/kcontrol/icons/index.docbook
+share/doc/HTML/fr/kcontrol/joystick/common
+share/doc/HTML/fr/kcontrol/joystick/index.cache.bz2
+share/doc/HTML/fr/kcontrol/joystick/index.docbook
 share/doc/HTML/fr/kcontrol/kalarmd/common
 share/doc/HTML/fr/kcontrol/kalarmd/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kalarmd/index.docbook
@@ -347,12 +380,18 @@ share/doc/HTML/fr/kcontrol/khtml/common
 share/doc/HTML/fr/kcontrol/khtml/index.cache.bz2
 share/doc/HTML/fr/kcontrol/khtml/index.docbook
 share/doc/HTML/fr/kcontrol/khtml/nsplugin.docbook
+share/doc/HTML/fr/kcontrol/knetworkconf/common
+share/doc/HTML/fr/kcontrol/knetworkconf/index.cache.bz2
+share/doc/HTML/fr/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/fr/kcontrol/kthememgr/common
 share/doc/HTML/fr/kcontrol/kthememgr/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kthememgr/index.docbook
 share/doc/HTML/fr/kcontrol/kwindecoration/common
 share/doc/HTML/fr/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/fr/kcontrol/kxkb/common
+share/doc/HTML/fr/kcontrol/kxkb/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kxkb/index.docbook
 share/doc/HTML/fr/kcontrol/language/common
 share/doc/HTML/fr/kcontrol/language/index.cache.bz2
 share/doc/HTML/fr/kcontrol/language/index.docbook
@@ -396,12 +435,21 @@ share/doc/HTML/fr/kcontrol/smb/index.docbook
 share/doc/HTML/fr/kcontrol/spellchecking/common
 share/doc/HTML/fr/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/fr/kcontrol/spellchecking/index.docbook
+share/doc/HTML/fr/kcontrol/splashscreen/common
+share/doc/HTML/fr/kcontrol/splashscreen/index.cache.bz2
+share/doc/HTML/fr/kcontrol/splashscreen/index.docbook
 share/doc/HTML/fr/kcontrol/useragent/common
 share/doc/HTML/fr/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/fr/kcontrol/useragent/index.docbook
+share/doc/HTML/fr/kcontrol/windowbehaviour/common
+share/doc/HTML/fr/kcontrol/windowbehaviour/index.cache.bz2
+share/doc/HTML/fr/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/fr/kcontrol/windowmanagement/common
 share/doc/HTML/fr/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/fr/kcontrol/windowmanagement/index.docbook
+share/doc/HTML/fr/kcontrol/windowspecific/common
+share/doc/HTML/fr/kcontrol/windowspecific/index.cache.bz2
+share/doc/HTML/fr/kcontrol/windowspecific/index.docbook
 share/doc/HTML/fr/kcron/common
 share/doc/HTML/fr/kcron/index.cache.bz2
 share/doc/HTML/fr/kcron/index.docbook
@@ -428,6 +476,9 @@ share/doc/HTML/fr/kdf/index.cache.bz2
 share/doc/HTML/fr/kdf/index.docbook
 share/doc/HTML/fr/kdf/kdf.png
 share/doc/HTML/fr/kdf/kdf_config.png
+share/doc/HTML/fr/kdiamond/common
+share/doc/HTML/fr/kdiamond/index.cache.bz2
+share/doc/HTML/fr/kdiamond/index.docbook
 share/doc/HTML/fr/kdm/common
 share/doc/HTML/fr/kdm/index.cache.bz2
 share/doc/HTML/fr/kdm/index.docbook
@@ -527,6 +578,57 @@ share/doc/HTML/fr/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/fr/khelpcenter/quickstart/common
 share/doc/HTML/fr/khelpcenter/quickstart/index.cache.bz2
 share/doc/HTML/fr/khelpcenter/quickstart/index.docbook
+share/doc/HTML/fr/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/fr/khelpcenter/userguide/base-kde-applications.docbook
+share/doc/HTML/fr/khelpcenter/userguide/browser-fine-tuning.docbook
+share/doc/HTML/fr/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/fr/khelpcenter/userguide/common
+share/doc/HTML/fr/khelpcenter/userguide/control-center.docbook
+share/doc/HTML/fr/khelpcenter/userguide/creating-graphics.docbook
+share/doc/HTML/fr/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/fr/khelpcenter/userguide/customizing-desktop.docbook
+share/doc/HTML/fr/khelpcenter/userguide/email.docbook
+share/doc/HTML/fr/khelpcenter/userguide/extragear-applications.docbook
+share/doc/HTML/fr/khelpcenter/userguide/file-sharing.docbook
+share/doc/HTML/fr/khelpcenter/userguide/font-installation.docbook
+share/doc/HTML/fr/khelpcenter/userguide/getting-help.docbook
+share/doc/HTML/fr/khelpcenter/userguide/glossary.docbook
+share/doc/HTML/fr/khelpcenter/userguide/groupware-kontact.docbook
+share/doc/HTML/fr/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/fr/khelpcenter/userguide/index.docbook
+share/doc/HTML/fr/khelpcenter/userguide/internet-shortcuts.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kde-as-root.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/fr/khelpcenter/userguide/konsole-intro.docbook
+share/doc/HTML/fr/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/fr/khelpcenter/userguide/migrator-applications.docbook
+share/doc/HTML/fr/khelpcenter/userguide/migrator-dictionary.docbook
+share/doc/HTML/fr/khelpcenter/userguide/net-connection-setup.docbook
+share/doc/HTML/fr/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/fr/khelpcenter/userguide/panel-and-desktop.docbook
+share/doc/HTML/fr/khelpcenter/userguide/pdf-files.docbook
+share/doc/HTML/fr/khelpcenter/userguide/playing-audiocds.docbook
+share/doc/HTML/fr/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/fr/khelpcenter/userguide/playing-music.docbook
+share/doc/HTML/fr/khelpcenter/userguide/printer-setup.docbook
+share/doc/HTML/fr/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/fr/khelpcenter/userguide/programs-and-documents.docbook
+share/doc/HTML/fr/khelpcenter/userguide/programs-controlling.docbook
+share/doc/HTML/fr/khelpcenter/userguide/removable-disks.docbook
+share/doc/HTML/fr/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/fr/khelpcenter/userguide/shared-sessions.docbook
+share/doc/HTML/fr/khelpcenter/userguide/standard-menu-entries.docbook
+share/doc/HTML/fr/khelpcenter/userguide/switching-sessions.docbook
+share/doc/HTML/fr/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/fr/khelpcenter/userguide/troubleshooting-network-x.docbook
+share/doc/HTML/fr/khelpcenter/userguide/troubleshooting-no-open.docbook
+share/doc/HTML/fr/khelpcenter/userguide/under-the-hood.docbook
+share/doc/HTML/fr/khelpcenter/userguide/usenet.docbook
+share/doc/HTML/fr/khelpcenter/userguide/where-next.docbook
+share/doc/HTML/fr/khelpcenter/userguide/windows-how-to.docbook
+share/doc/HTML/fr/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/fr/khelpcenter/visualdict/common
 share/doc/HTML/fr/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/fr/khelpcenter/visualdict/index.docbook
@@ -690,8 +792,16 @@ share/doc/HTML/fr/kmag/index.docbook
 share/doc/HTML/fr/kmag/man-kmag.1.docbook
 share/doc/HTML/fr/kmag/screenshot.png
 share/doc/HTML/fr/kmahjongg/common
+share/doc/HTML/fr/kmahjongg/config.png
+share/doc/HTML/fr/kmahjongg/config_background.png
+share/doc/HTML/fr/kmahjongg/config_layout.png
+share/doc/HTML/fr/kmahjongg/config_tiles.png
+share/doc/HTML/fr/kmahjongg/gamescreen.png
+share/doc/HTML/fr/kmahjongg/highscore.png
 share/doc/HTML/fr/kmahjongg/index.cache.bz2
 share/doc/HTML/fr/kmahjongg/index.docbook
+share/doc/HTML/fr/kmahjongg/numbered.png
+share/doc/HTML/fr/kmahjongg/shortcuts.png
 share/doc/HTML/fr/kmail/common
 share/doc/HTML/fr/kmail/configure.docbook
 share/doc/HTML/fr/kmail/credits-and-licenses.docbook
@@ -726,6 +836,9 @@ share/doc/HTML/fr/kmines/kmines2.png
 share/doc/HTML/fr/kmix/common
 share/doc/HTML/fr/kmix/index.cache.bz2
 share/doc/HTML/fr/kmix/index.docbook
+share/doc/HTML/fr/kmobiletools/common
+share/doc/HTML/fr/kmobiletools/index.cache.bz2
+share/doc/HTML/fr/kmobiletools/index.docbook
 share/doc/HTML/fr/kmoon/common
 share/doc/HTML/fr/kmoon/index.cache.bz2
 share/doc/HTML/fr/kmoon/index.docbook
@@ -808,6 +921,9 @@ share/doc/HTML/fr/knotes/index.docbook
 share/doc/HTML/fr/kolf/common
 share/doc/HTML/fr/kolf/index.cache.bz2
 share/doc/HTML/fr/kolf/index.docbook
+share/doc/HTML/fr/kollision/common
+share/doc/HTML/fr/kollision/index.cache.bz2
+share/doc/HTML/fr/kollision/index.docbook
 share/doc/HTML/fr/kolourpaint/common
 share/doc/HTML/fr/kolourpaint/index.cache.bz2
 share/doc/HTML/fr/kolourpaint/index.docbook
@@ -928,11 +1044,16 @@ share/doc/HTML/fr/kpackage/right-prop.png
 share/doc/HTML/fr/kpackage/rpmlock.png
 share/doc/HTML/fr/kpackage/slackloc.png
 share/doc/HTML/fr/kpackage/uninstall.png
+share/doc/HTML/fr/kpat/clubs.png
 share/doc/HTML/fr/kpat/common
+share/doc/HTML/fr/kpat/diamonds.png
+share/doc/HTML/fr/kpat/hearts.png
 share/doc/HTML/fr/kpat/index.cache.bz2
 share/doc/HTML/fr/kpat/index.docbook
 share/doc/HTML/fr/kpat/man-kpat.6.docbook
 share/doc/HTML/fr/kpat/man.docbook
+share/doc/HTML/fr/kpat/playfield.png
+share/doc/HTML/fr/kpat/spades.png
 share/doc/HTML/fr/kpercentage/answer.png
 share/doc/HTML/fr/kpercentage/commands.docbook
 share/doc/HTML/fr/kpercentage/common
@@ -1013,12 +1134,17 @@ share/doc/HTML/fr/kscd/kscd9.png
 share/doc/HTML/fr/kshisen/common
 share/doc/HTML/fr/kshisen/index.cache.bz2
 share/doc/HTML/fr/kshisen/index.docbook
+share/doc/HTML/fr/kshisen/kshisen-configuration.png
+share/doc/HTML/fr/kshisen/score-formula.png
 share/doc/HTML/fr/ksim/common
 share/doc/HTML/fr/ksim/index.cache.bz2
 share/doc/HTML/fr/ksim/index.docbook
 share/doc/HTML/fr/ksirc/common
 share/doc/HTML/fr/ksirc/index.cache.bz2
 share/doc/HTML/fr/ksirc/index.docbook
+share/doc/HTML/fr/ksirk/common
+share/doc/HTML/fr/ksirk/index.cache.bz2
+share/doc/HTML/fr/ksirk/index.docbook
 share/doc/HTML/fr/ksirtet/common
 share/doc/HTML/fr/ksirtet/index.cache.bz2
 share/doc/HTML/fr/ksirtet/index.docbook
@@ -1039,6 +1165,9 @@ share/doc/HTML/fr/kspaceduel/kspaceduel3.png
 share/doc/HTML/fr/ksplashml/common
 share/doc/HTML/fr/ksplashml/index.cache.bz2
 share/doc/HTML/fr/ksplashml/index.docbook
+share/doc/HTML/fr/ksquares/common
+share/doc/HTML/fr/ksquares/index.cache.bz2
+share/doc/HTML/fr/ksquares/index.docbook
 share/doc/HTML/fr/kstars/aavso.png
 share/doc/HTML/fr/kstars/ai-contents.docbook
 share/doc/HTML/fr/kstars/altvstime.docbook
@@ -1118,6 +1247,7 @@ share/doc/HTML/fr/kstars/lightcurve.png
 share/doc/HTML/fr/kstars/lightcurves.docbook
 share/doc/HTML/fr/kstars/luminosity.docbook
 share/doc/HTML/fr/kstars/magnitude.docbook
+share/doc/HTML/fr/kstars/man-indi_v4l_generic.1.docbook
 share/doc/HTML/fr/kstars/man-v4ldriver.1.docbook
 share/doc/HTML/fr/kstars/meridian.docbook
 share/doc/HTML/fr/kstars/newfov.png
@@ -1147,6 +1277,9 @@ share/doc/HTML/fr/kstars/viewops.png
 share/doc/HTML/fr/kstars/wut.docbook
 share/doc/HTML/fr/kstars/wut.png
 share/doc/HTML/fr/kstars/zenith.docbook
+share/doc/HTML/fr/ksudoku/common
+share/doc/HTML/fr/ksudoku/index.cache.bz2
+share/doc/HTML/fr/ksudoku/index.docbook
 share/doc/HTML/fr/ksysguard/common
 share/doc/HTML/fr/ksysguard/index.cache.bz2
 share/doc/HTML/fr/ksysguard/index.docbook
@@ -1174,10 +1307,20 @@ share/doc/HTML/fr/ktouch/main_window_german.png
 share/doc/HTML/fr/ktouch/statistics_dialog.png
 share/doc/HTML/fr/ktouch/statistics_dialog_chart.png
 share/doc/HTML/fr/ktouch/training_options.png
+share/doc/HTML/fr/ktuberling/button-new.png
+share/doc/HTML/fr/ktuberling/button-open.png
+share/doc/HTML/fr/ktuberling/button-print.png
+share/doc/HTML/fr/ktuberling/button-redo.png
+share/doc/HTML/fr/ktuberling/button-save.png
+share/doc/HTML/fr/ktuberling/button-undo.png
 share/doc/HTML/fr/ktuberling/common
 share/doc/HTML/fr/ktuberling/gameboard.png
 share/doc/HTML/fr/ktuberling/index.cache.bz2
 share/doc/HTML/fr/ktuberling/index.docbook
+share/doc/HTML/fr/ktuberling/menu-edit.png
+share/doc/HTML/fr/ktuberling/menu-game.png
+share/doc/HTML/fr/ktuberling/menu-help.png
+share/doc/HTML/fr/ktuberling/menu-settings.png
 share/doc/HTML/fr/ktuberling/menu.edit.png
 share/doc/HTML/fr/ktuberling/menu.file.png
 share/doc/HTML/fr/ktuberling/menu.game.png
@@ -1187,17 +1330,10 @@ share/doc/HTML/fr/ktuberling/menu.playground.png
 share/doc/HTML/fr/ktuberling/menu.raw.png
 share/doc/HTML/fr/ktuberling/menu.speech.png
 share/doc/HTML/fr/ktuberling/technical-reference.docbook
-share/doc/HTML/fr/kturtle/common
-share/doc/HTML/fr/kturtle/getting-started.docbook
-share/doc/HTML/fr/kturtle/glossary.docbook
-share/doc/HTML/fr/kturtle/index.cache.bz2
-share/doc/HTML/fr/kturtle/index.docbook
-share/doc/HTML/fr/kturtle/mainwindow.png
-share/doc/HTML/fr/kturtle/mainwindow_flower_nrs.png
-share/doc/HTML/fr/kturtle/programming-reference.docbook
-share/doc/HTML/fr/kturtle/translator-guide.docbook
-share/doc/HTML/fr/kturtle/using-kturtle.docbook
-share/doc/HTML/fr/kturtle/wrapping.png
+share/doc/HTML/fr/ktuberling/toolbar.png
+share/doc/HTML/fr/kubrick/common
+share/doc/HTML/fr/kubrick/index.cache.bz2
+share/doc/HTML/fr/kubrick/index.docbook
 share/doc/HTML/fr/kuser/common
 share/doc/HTML/fr/kuser/index.cache.bz2
 share/doc/HTML/fr/kuser/index.docbook
@@ -1238,9 +1374,13 @@ share/doc/HTML/fr/kxsldbg/variables.docbook
 share/doc/HTML/fr/lilo-config/common
 share/doc/HTML/fr/lilo-config/index.cache.bz2
 share/doc/HTML/fr/lilo-config/index.docbook
+share/doc/HTML/fr/lokalize/common
+share/doc/HTML/fr/lokalize/index.cache.bz2
+share/doc/HTML/fr/lokalize/index.docbook
 share/doc/HTML/fr/lskat/common
 share/doc/HTML/fr/lskat/index.cache.bz2
 share/doc/HTML/fr/lskat/index.docbook
+share/doc/HTML/fr/lskat/lskat_screen_01.png
 share/doc/HTML/fr/marble/common
 share/doc/HTML/fr/marble/index.cache.bz2
 share/doc/HTML/fr/marble/index.docbook
@@ -1250,9 +1390,34 @@ share/doc/HTML/fr/marble/measure-1.png
 share/doc/HTML/fr/marble/quick-1.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
+share/doc/HTML/fr/okteta/basics.docbook
+share/doc/HTML/fr/okteta/common
+share/doc/HTML/fr/okteta/credits.docbook
+share/doc/HTML/fr/okteta/index.cache.bz2
+share/doc/HTML/fr/okteta/index.docbook
+share/doc/HTML/fr/okteta/introduction.docbook
+share/doc/HTML/fr/okteta/menu.docbook
+share/doc/HTML/fr/okteta/tools.docbook
 share/doc/HTML/fr/okular/common
 share/doc/HTML/fr/okular/index.cache.bz2
 share/doc/HTML/fr/okular/index.docbook
+share/doc/HTML/fr/plasma/common
+share/doc/HTML/fr/plasma/index.cache.bz2
+share/doc/HTML/fr/plasma/index.docbook
+share/doc/HTML/fr/sonnet/common
+share/doc/HTML/fr/sonnet/index.cache.bz2
+share/doc/HTML/fr/sonnet/index.docbook
+share/doc/HTML/fr/step/common
+share/doc/HTML/fr/step/examples.docbook
+share/doc/HTML/fr/step/index.cache.bz2
+share/doc/HTML/fr/step/index.docbook
+share/doc/HTML/fr/step/tutorials.docbook
+share/doc/HTML/fr/superkaramba/common
+share/doc/HTML/fr/superkaramba/index.cache.bz2
+share/doc/HTML/fr/superkaramba/index.docbook
+share/doc/HTML/fr/systemsettings/common
+share/doc/HTML/fr/systemsettings/index.cache.bz2
+share/doc/HTML/fr/systemsettings/index.docbook
 share/locale/fr/LC_MESSAGES/akonaditray.mo
 share/locale/fr/LC_MESSAGES/akregator.mo
 share/locale/fr/LC_MESSAGES/amor.mo
@@ -1515,7 +1680,7 @@ share/locale/fr/LC_MESSAGES/kmouth.mo
 share/locale/fr/LC_MESSAGES/kmplot.mo
 share/locale/fr/LC_MESSAGES/knetattach.mo
 share/locale/fr/LC_MESSAGES/knetwalk.mo
-share/locale/fr/LC_MESSAGES/knetworkconf.mo
+share/locale/fr/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/fr/LC_MESSAGES/knode.mo
 share/locale/fr/LC_MESSAGES/knotes.mo
 share/locale/fr/LC_MESSAGES/knotify4.mo
@@ -1740,9 +1905,16 @@ share/locale/fr/LC_MESSAGES/timezones4.mo
 share/locale/fr/LC_MESSAGES/umbrello.mo
 share/locale/fr/LC_MESSAGES/useraccount.mo
 share/locale/fr/entry.desktop
+@dirrm share/doc/HTML/fr/systemsettings
+@dirrm share/doc/HTML/fr/superkaramba
+@dirrm share/doc/HTML/fr/step
+@dirrm share/doc/HTML/fr/sonnet
+@dirrm share/doc/HTML/fr/plasma
 @dirrm share/doc/HTML/fr/okular
+@dirrm share/doc/HTML/fr/okteta
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
+@dirrm share/doc/HTML/fr/lokalize
 @dirrm share/doc/HTML/fr/lilo-config
 @dirrm share/doc/HTML/fr/kxsldbg
 @dirrm share/doc/HTML/fr/kxkb
@@ -1752,7 +1924,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kweather
 @dirrm share/doc/HTML/fr/kwallet
 @dirrm share/doc/HTML/fr/kuser
-@dirrm share/doc/HTML/fr/kturtle
+@dirrm share/doc/HTML/fr/kubrick
 @dirrm share/doc/HTML/fr/ktuberling
 @dirrm share/doc/HTML/fr/ktouch
 @dirrm share/doc/HTML/fr/ktnef
@@ -1760,12 +1932,15 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kteatime
 @dirrm share/doc/HTML/fr/ksysv
 @dirrm share/doc/HTML/fr/ksysguard
+@dirrm share/doc/HTML/fr/ksudoku
 @dirrm share/doc/HTML/fr/kstars
+@dirrm share/doc/HTML/fr/ksquares
 @dirrm share/doc/HTML/fr/ksplashml
 @dirrm share/doc/HTML/fr/kspaceduel
 @dirrm share/doc/HTML/fr/ksnapshot
 @dirrm share/doc/HTML/fr/ksmiletris
 @dirrm share/doc/HTML/fr/ksirtet
+@dirrm share/doc/HTML/fr/ksirk
 @dirrm share/doc/HTML/fr/ksirc
 @dirrm share/doc/HTML/fr/ksim
 @dirrm share/doc/HTML/fr/kshisen
@@ -1791,6 +1966,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kompare
 @dirrm share/doc/HTML/fr/kommander
 @dirrm share/doc/HTML/fr/kolourpaint
+@dirrm share/doc/HTML/fr/kollision
 @dirrm share/doc/HTML/fr/kolf
 @dirrm share/doc/HTML/fr/knotes
 @dirrm share/doc/HTML/fr/knode
@@ -1801,6 +1977,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kmouth
 @dirrm share/doc/HTML/fr/kmousetool
 @dirrm share/doc/HTML/fr/kmoon
+@dirrm share/doc/HTML/fr/kmobiletools
 @dirrm share/doc/HTML/fr/kmix
 @dirrm share/doc/HTML/fr/kmines
 @dirrm share/doc/HTML/fr/kmenuedit
@@ -1838,6 +2015,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kinfocenter
 @dirrm share/doc/HTML/fr/kig
 @dirrm share/doc/HTML/fr/khelpcenter/visualdict
+@dirrm share/doc/HTML/fr/khelpcenter/userguide
 @dirrm share/doc/HTML/fr/khelpcenter/quickstart
 @dirrm share/doc/HTML/fr/khelpcenter/glossary
 @dirrm share/doc/HTML/fr/khelpcenter/faq
@@ -1854,14 +2032,18 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kedit
 @dirrm share/doc/HTML/fr/kdvi
 @dirrm share/doc/HTML/fr/kdm
+@dirrm share/doc/HTML/fr/kdiamond
 @dirrm share/doc/HTML/fr/kdf
 @dirrm share/doc/HTML/fr/kdesu
 @dirrm share/doc/HTML/fr/kdepasswd
 @dirrm share/doc/HTML/fr/kdebugdialog
 @dirrm share/doc/HTML/fr/kdat
 @dirrm share/doc/HTML/fr/kcron
+@dirrm share/doc/HTML/fr/kcontrol/windowspecific
 @dirrm share/doc/HTML/fr/kcontrol/windowmanagement
+@dirrm share/doc/HTML/fr/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/fr/kcontrol/useragent
+@dirrm share/doc/HTML/fr/kcontrol/splashscreen
 @dirrm share/doc/HTML/fr/kcontrol/spellchecking
 @dirrm share/doc/HTML/fr/kcontrol/smb
 @dirrm share/doc/HTML/fr/kcontrol/screensaver
@@ -1876,8 +2058,10 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/mouse
 @dirrm share/doc/HTML/fr/kcontrol/laptop
 @dirrm share/doc/HTML/fr/kcontrol/language
+@dirrm share/doc/HTML/fr/kcontrol/kxkb
 @dirrm share/doc/HTML/fr/kcontrol/kwindecoration
 @dirrm share/doc/HTML/fr/kcontrol/kthememgr
+@dirrm share/doc/HTML/fr/kcontrol/knetworkconf
 @dirrm share/doc/HTML/fr/kcontrol/khtml
 @dirrm share/doc/HTML/fr/kcontrol/keys
 @dirrm share/doc/HTML/fr/kcontrol/keyboard
@@ -1896,6 +2080,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/kcmcss
 @dirrm share/doc/HTML/fr/kcontrol/kcmaccess
 @dirrm share/doc/HTML/fr/kcontrol/kalarmd
+@dirrm share/doc/HTML/fr/kcontrol/joystick
 @dirrm share/doc/HTML/fr/kcontrol/icons
 @dirrm share/doc/HTML/fr/kcontrol/helpindex
 @dirrm share/doc/HTML/fr/kcontrol/fonts
@@ -1913,8 +2098,10 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/colors
 @dirrm share/doc/HTML/fr/kcontrol/clock
 @dirrm share/doc/HTML/fr/kcontrol/cache
+@dirrm share/doc/HTML/fr/kcontrol/blockdevices
 @dirrm share/doc/HTML/fr/kcontrol/bell
 @dirrm share/doc/HTML/fr/kcontrol/background
+@dirrm share/doc/HTML/fr/kcontrol/autostart
 @dirrm share/doc/HTML/fr/kcontrol
 @dirrm share/doc/HTML/fr/kcmlirc
 @dirrm share/doc/HTML/fr/kcharselect
@@ -1922,23 +2109,29 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcachegrind
 @dirrm share/doc/HTML/fr/kbugbuster
 @dirrm share/doc/HTML/fr/kbruch
+@dirrm share/doc/HTML/fr/kbreakout
 @dirrm share/doc/HTML/fr/kbounce
+@dirrm share/doc/HTML/fr/kblocks
 @dirrm share/doc/HTML/fr/kblackbox
 @dirrm share/doc/HTML/fr/kbattleship
 @dirrm share/doc/HTML/fr/katomic
 @dirrm share/doc/HTML/fr/kate-plugins
 @dirrm share/doc/HTML/fr/kate
 @dirrm share/doc/HTML/fr/karm
+@dirrm share/doc/HTML/fr/kapptemplate
 @dirrm share/doc/HTML/fr/kanagram
 @dirrm share/doc/HTML/fr/kamera
 @dirrm share/doc/HTML/fr/kalzium
+@dirrm share/doc/HTML/fr/kalgebra
 @dirrm share/doc/HTML/fr/kalarm
 @dirrm share/doc/HTML/fr/kaddressbook
 @dirrm share/doc/HTML/fr/juk
 @dirrm share/doc/HTML/fr/irkick
 @dirrm share/doc/HTML/fr/gwenview
+@dirrm share/doc/HTML/fr/dragonplayer
 @dirrm share/doc/HTML/fr/dolphin
 @dirrm share/doc/HTML/fr/cervisia
+@dirrm share/doc/HTML/fr/bovo
 @dirrm share/doc/HTML/fr/blinken
 @dirrm share/doc/HTML/fr/ark
 @dirrm share/doc/HTML/fr/amor

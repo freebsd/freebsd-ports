@@ -6,7 +6,6 @@
 
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -25,7 +24,8 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-QT_COMPONENTS=	opengl gui moc rcc uic
+QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build \
+		porting_build uic3_build
 
 MAN1=		xsldbg.1
 

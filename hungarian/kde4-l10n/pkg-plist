@@ -332,6 +332,7 @@ share/locale/hu/LC_MESSAGES/kalarm.mo
 share/locale/hu/LC_MESSAGES/kalzium.mo
 share/locale/hu/LC_MESSAGES/kanagram.mo
 share/locale/hu/LC_MESSAGES/kappfinder.mo
+share/locale/hu/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kate.mo
 share/locale/hu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/hu/LC_MESSAGES/katefiletemplates.mo
@@ -545,7 +546,7 @@ share/locale/hu/LC_MESSAGES/kmouth.mo
 share/locale/hu/LC_MESSAGES/kmplot.mo
 share/locale/hu/LC_MESSAGES/knetattach.mo
 share/locale/hu/LC_MESSAGES/knetwalk.mo
-share/locale/hu/LC_MESSAGES/knetworkconf.mo
+share/locale/hu/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/hu/LC_MESSAGES/knode.mo
 share/locale/hu/LC_MESSAGES/knotes.mo
 share/locale/hu/LC_MESSAGES/knotify4.mo
@@ -675,6 +676,7 @@ share/locale/hu/LC_MESSAGES/libmailtransport.mo
 share/locale/hu/LC_MESSAGES/libphonon.mo
 share/locale/hu/LC_MESSAGES/libplasma.mo
 share/locale/hu/LC_MESSAGES/libtaskmanager.mo
+share/locale/hu/LC_MESSAGES/lokalize.mo
 share/locale/hu/LC_MESSAGES/lskat.mo
 share/locale/hu/LC_MESSAGES/nepomuk.mo
 share/locale/hu/LC_MESSAGES/nsplugin.mo
@@ -727,6 +729,7 @@ share/locale/hu/LC_MESSAGES/plasma_engine_dict.mo
 share/locale/hu/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hu/LC_MESSAGES/plasmapkg.mo
 share/locale/hu/LC_MESSAGES/plasmoidviewer.mo
+share/locale/hu/LC_MESSAGES/printer-applet.mo
 share/locale/hu/LC_MESSAGES/processcore.mo
 share/locale/hu/LC_MESSAGES/processui.mo
 share/locale/hu/LC_MESSAGES/solid-bluetooth.mo

@@ -105,6 +105,7 @@ include/marble/GeoDataStyleSelector.h
 include/marble/GeoDocument.h
 include/marble/GeoPainter.h
 include/marble/MapThemeManager.h
+include/marble/MarbleAboutDialog.h
 include/marble/MarbleAbstractFloatItem.h
 include/marble/MarbleAbstractLayer.h
 include/marble/MarbleControlBox.h
@@ -2132,6 +2133,7 @@ share/apps/ktouch/de.keyboard
 share/apps/ktouch/de.keyboard.xml
 share/apps/ktouch/de_neo.keyboard
 share/apps/ktouch/dk.keyboard
+share/apps/ktouch/dk.keyboard.xml
 share/apps/ktouch/down.wav
 share/apps/ktouch/dvorak-fr-1.ktouch.xml
 share/apps/ktouch/dvorak-fr-2.ktouch.xml
@@ -2222,6 +2224,7 @@ share/apps/ktouch/typewriter.wav
 share/apps/ktouch/uk.basic.keyboard
 share/apps/ktouch/uk.typewriter.keyboard
 share/apps/ktouch/uk.winkeys.keyboard
+share/apps/ktouch/uk.winkeys.keyboard.xml
 share/apps/ktouch/ukrainian.ktouch.xml
 share/apps/ktouch/up.wav
 share/apps/kturtle/kturtleui.rc
@@ -3633,11 +3636,10 @@ share/doc/HTML/en/kalzium/gradient.png
 share/doc/HTML/en/kalzium/index.cache.bz2
 share/doc/HTML/en/kalzium/index.docbook
 share/doc/HTML/en/kalzium/infodialog_bohr.png
-share/doc/HTML/en/kalzium/infodialog_chemicaldata.png
-share/doc/HTML/en/kalzium/infodialog_energies.png
+share/doc/HTML/en/kalzium/infodialog_data_overview.png
+share/doc/HTML/en/kalzium/infodialog_isotopes.png
 share/doc/HTML/en/kalzium/infodialog_misc.png
 share/doc/HTML/en/kalzium/infodialog_overview.png
-share/doc/HTML/en/kalzium/infodialog_picture.png
 share/doc/HTML/en/kalzium/infodialog_spectrum.png
 share/doc/HTML/en/kalzium/man-kalzium.1.docbook
 share/doc/HTML/en/kalzium/quick-1.png
@@ -3646,20 +3648,16 @@ share/doc/HTML/en/kalzium/quick-3.png
 share/doc/HTML/en/kalzium/quick-4.png
 share/doc/HTML/en/kalzium/screenshot1.png
 share/doc/HTML/en/kalzium/screenshot2.png
-share/doc/HTML/en/kalzium/screenshot3.png
-share/doc/HTML/en/kalzium/screenshot4.png
 share/doc/HTML/en/kalzium/screenshot5.png
 share/doc/HTML/en/kalzium/screenshot6.png
 share/doc/HTML/en/kalzium/screenshot7.png
 share/doc/HTML/en/kalzium/screenshoteqsolver.png
 share/doc/HTML/en/kalzium/screenshotnuclidboard.png
-share/doc/HTML/en/kalzium/settings.png
 share/doc/HTML/en/kalzium/settings1.png
 share/doc/HTML/en/kalzium/settings2.png
 share/doc/HTML/en/kalzium/settings3.png
 share/doc/HTML/en/kalzium/sidebar1.png
 share/doc/HTML/en/kalzium/sidebar2.png
-share/doc/HTML/en/kalzium/sidebar3.png
 share/doc/HTML/en/kanagram/answer-highlight.png
 share/doc/HTML/en/kanagram/common
 share/doc/HTML/en/kanagram/general-settings.png
@@ -3670,6 +3668,7 @@ share/doc/HTML/en/kanagram/kanagram-hint.png
 share/doc/HTML/en/kanagram/kanagram.png
 share/doc/HTML/en/kanagram/newstuff-dialog.png
 share/doc/HTML/en/kanagram/newstuff-settings.png
+share/doc/HTML/en/kanagram/shortcuts-settings.png
 share/doc/HTML/en/kanagram/vocab-editor.png
 share/doc/HTML/en/kanagram/vocab-settings.png
 share/doc/HTML/en/kbruch/checked.png
@@ -3926,6 +3925,7 @@ share/doc/HTML/en/ktouch/keyboard_options.png
 share/doc/HTML/en/ktouch/main_screen_default_color.png
 share/doc/HTML/en/ktouch/main_window_german.png
 share/doc/HTML/en/ktouch/man-ktouch.1.docbook
+share/doc/HTML/en/ktouch/sound_options.png
 share/doc/HTML/en/ktouch/statistics_dialog.png
 share/doc/HTML/en/ktouch/statistics_dialog_chart.png
 share/doc/HTML/en/ktouch/training_options.png
@@ -3960,6 +3960,10 @@ share/doc/HTML/en/kwordquiz/kwq-flashcard.png
 share/doc/HTML/en/kwordquiz/kwq-multiple.png
 share/doc/HTML/en/kwordquiz/kwq-qanda.png
 share/doc/HTML/en/marble/common
+share/doc/HTML/en/marble/configure-cacheproxy.png
+share/doc/HTML/en/marble/configure-navigation.png
+share/doc/HTML/en/marble/configure-plugins.png
+share/doc/HTML/en/marble/configure-view.png
 share/doc/HTML/en/marble/index.cache.bz2
 share/doc/HTML/en/marble/index.docbook
 share/doc/HTML/en/marble/logo-1.png
@@ -4028,6 +4032,7 @@ share/doc/HTML/en/step/disk-properties.png
 share/doc/HTML/en/step/examples.docbook
 share/doc/HTML/en/step/index.cache.bz2
 share/doc/HTML/en/step/index.docbook
+share/doc/HTML/en/step/mainwindow.png
 share/doc/HTML/en/step/tutorial1.png
 share/doc/HTML/en/step/tutorial2.png
 share/doc/HTML/en/step/tutorial3.png

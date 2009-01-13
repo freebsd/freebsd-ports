@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -31,7 +30,8 @@ USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 USE_SQLITE=	yes
-QT_COMPONENTS=	corelib opengl moc rcc uic dbus qt3support gui network porting uic3 xml
+QT_COMPONENTS=	corelib opengl dbus qt3support gui network xml porting_build \
+		qmake_build moc_build rcc_build uic_build uic3_build
 USE_OPENSSL=	yes
 
 post-extract:

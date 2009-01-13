@@ -145,10 +145,10 @@ share/apps/khelpcenter/plugins/contact.desktop
 share/apps/khelpcenter/plugins/faq.desktop
 share/apps/khelpcenter/plugins/info.desktop
 share/apps/khelpcenter/plugins/kcontrolmodules.desktop
-share/apps/khelpcenter/plugins/plasma.desktop
 share/apps/khelpcenter/plugins/kicmodules.desktop
 share/apps/khelpcenter/plugins/kioslaves.desktop
 share/apps/khelpcenter/plugins/links.desktop
+share/apps/khelpcenter/plugins/plasma.desktop
 share/apps/khelpcenter/plugins/support.desktop
 share/apps/khelpcenter/plugins/userguide.desktop
 share/apps/khelpcenter/plugins/welcome.desktop
@@ -282,9 +282,6 @@ share/doc/HTML/en/kcontrol/kcmlaunch/index.docbook
 share/doc/HTML/en/kcontrol/kcmnotify/common
 share/doc/HTML/en/kcontrol/kcmnotify/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmnotify/index.docbook
-share/doc/HTML/en/kcontrol/kcmsmserver/common
-share/doc/HTML/en/kcontrol/kcmsmserver/index.cache.bz2
-share/doc/HTML/en/kcontrol/kcmsmserver/index.docbook
 share/doc/HTML/en/kcontrol/kcmtaskbar/common
 share/doc/HTML/en/kcontrol/kcmtaskbar/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmtaskbar/index.docbook
@@ -298,9 +295,6 @@ share/doc/HTML/en/kcontrol/khtml/nsplugin.docbook
 share/doc/HTML/en/kcontrol/language/common
 share/doc/HTML/en/kcontrol/language/index.cache.bz2
 share/doc/HTML/en/kcontrol/language/index.docbook
-share/doc/HTML/en/kcontrol/mouse/common
-share/doc/HTML/en/kcontrol/mouse/index.cache.bz2
-share/doc/HTML/en/kcontrol/mouse/index.docbook
 share/doc/HTML/en/kcontrol/netpref/common
 share/doc/HTML/en/kcontrol/netpref/index.cache.bz2
 share/doc/HTML/en/kcontrol/netpref/index.docbook
@@ -334,9 +328,6 @@ share/doc/HTML/en/kcontrol/spellchecking/index.docbook
 share/doc/HTML/en/kcontrol/useragent/common
 share/doc/HTML/en/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/en/kcontrol/useragent/index.docbook
-share/doc/HTML/en/kcontrol/windowmanagement/common
-share/doc/HTML/en/kcontrol/windowmanagement/index.cache.bz2
-share/doc/HTML/en/kcontrol/windowmanagement/index.docbook
 share/doc/HTML/en/kdebugdialog/common
 share/doc/HTML/en/kdebugdialog/index.cache.bz2
 share/doc/HTML/en/kdebugdialog/index.docbook
@@ -837,6 +828,7 @@ share/icons/oxygen/128x128/emotes/face-smile.png
 share/icons/oxygen/128x128/emotes/face-surprise.png
 share/icons/oxygen/128x128/emotes/face-uncertain.png
 share/icons/oxygen/128x128/mimetypes/application-illustrator.png
+share/icons/oxygen/128x128/mimetypes/application-msword.png
 share/icons/oxygen/128x128/mimetypes/application-octet-stream.png
 share/icons/oxygen/128x128/mimetypes/application-pdf.png
 share/icons/oxygen/128x128/mimetypes/application-pgp-encrypted.png
@@ -848,7 +840,6 @@ share/icons/oxygen/128x128/mimetypes/application-rss+xml.png
 share/icons/oxygen/128x128/mimetypes/application-rtf.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/128x128/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -909,6 +900,7 @@ share/icons/oxygen/128x128/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/128x128/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/128x128/mimetypes/application-x-kontour.png
 share/icons/oxygen/128x128/mimetypes/application-x-krita.png
+share/icons/oxygen/128x128/mimetypes/application-x-kvtml.png
 share/icons/oxygen/128x128/mimetypes/application-x-lha.png
 share/icons/oxygen/128x128/mimetypes/application-x-lzop.png
 share/icons/oxygen/128x128/mimetypes/application-x-marble.png
@@ -976,8 +968,8 @@ share/icons/oxygen/128x128/mimetypes/image-bmp.png
 share/icons/oxygen/128x128/mimetypes/image-cgm.png
 share/icons/oxygen/128x128/mimetypes/image-fax-g3.png
 share/icons/oxygen/128x128/mimetypes/image-gif.png
+share/icons/oxygen/128x128/mimetypes/image-jp2.png
 share/icons/oxygen/128x128/mimetypes/image-jpeg.png
-share/icons/oxygen/128x128/mimetypes/image-jpeg2000.png
 share/icons/oxygen/128x128/mimetypes/image-png.png
 share/icons/oxygen/128x128/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/128x128/mimetypes/image-svg+xml.png
@@ -1605,6 +1597,7 @@ share/icons/oxygen/16x16/emotes/face-smile.png
 share/icons/oxygen/16x16/emotes/face-surprise.png
 share/icons/oxygen/16x16/emotes/face-uncertain.png
 share/icons/oxygen/16x16/mimetypes/application-illustrator.png
+share/icons/oxygen/16x16/mimetypes/application-msword.png
 share/icons/oxygen/16x16/mimetypes/application-octet-stream.png
 share/icons/oxygen/16x16/mimetypes/application-pdf.png
 share/icons/oxygen/16x16/mimetypes/application-pgp-encrypted.png
@@ -1617,7 +1610,6 @@ share/icons/oxygen/16x16/mimetypes/application-rss+xml.png
 share/icons/oxygen/16x16/mimetypes/application-rtf.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/16x16/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -1677,6 +1669,7 @@ share/icons/oxygen/16x16/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/16x16/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/16x16/mimetypes/application-x-kontour.png
 share/icons/oxygen/16x16/mimetypes/application-x-krita.png
+share/icons/oxygen/16x16/mimetypes/application-x-kvtml.png
 share/icons/oxygen/16x16/mimetypes/application-x-lha.png
 share/icons/oxygen/16x16/mimetypes/application-x-lzop.png
 share/icons/oxygen/16x16/mimetypes/application-x-marble.png
@@ -1744,8 +1737,8 @@ share/icons/oxygen/16x16/mimetypes/image-bmp.png
 share/icons/oxygen/16x16/mimetypes/image-cgm.png
 share/icons/oxygen/16x16/mimetypes/image-fax-g3.png
 share/icons/oxygen/16x16/mimetypes/image-gif.png
+share/icons/oxygen/16x16/mimetypes/image-jp2.png
 share/icons/oxygen/16x16/mimetypes/image-jpeg.png
-share/icons/oxygen/16x16/mimetypes/image-jpeg2000.png
 share/icons/oxygen/16x16/mimetypes/image-png.png
 share/icons/oxygen/16x16/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/16x16/mimetypes/image-svg+xml.png
@@ -2422,6 +2415,7 @@ share/icons/oxygen/22x22/emotes/face-surprise.png
 share/icons/oxygen/22x22/emotes/face-uncertain.png
 share/icons/oxygen/22x22/emotes/face-wink.png
 share/icons/oxygen/22x22/mimetypes/application-illustrator.png
+share/icons/oxygen/22x22/mimetypes/application-msword.png
 share/icons/oxygen/22x22/mimetypes/application-octet-stream.png
 share/icons/oxygen/22x22/mimetypes/application-pdf.png
 share/icons/oxygen/22x22/mimetypes/application-pgp-encrypted.png
@@ -2435,7 +2429,6 @@ share/icons/oxygen/22x22/mimetypes/application-rss+xml.png
 share/icons/oxygen/22x22/mimetypes/application-rtf.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/22x22/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -2496,6 +2489,7 @@ share/icons/oxygen/22x22/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/22x22/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/22x22/mimetypes/application-x-kontour.png
 share/icons/oxygen/22x22/mimetypes/application-x-krita.png
+share/icons/oxygen/22x22/mimetypes/application-x-kvtml.png
 share/icons/oxygen/22x22/mimetypes/application-x-lha.png
 share/icons/oxygen/22x22/mimetypes/application-x-lzop.png
 share/icons/oxygen/22x22/mimetypes/application-x-marble.png
@@ -2563,8 +2557,8 @@ share/icons/oxygen/22x22/mimetypes/image-bmp.png
 share/icons/oxygen/22x22/mimetypes/image-cgm.png
 share/icons/oxygen/22x22/mimetypes/image-fax-g3.png
 share/icons/oxygen/22x22/mimetypes/image-gif.png
+share/icons/oxygen/22x22/mimetypes/image-jp2.png
 share/icons/oxygen/22x22/mimetypes/image-jpeg.png
-share/icons/oxygen/22x22/mimetypes/image-jpeg2000.png
 share/icons/oxygen/22x22/mimetypes/image-png.png
 share/icons/oxygen/22x22/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/22x22/mimetypes/image-svg+xml.png
@@ -3237,6 +3231,7 @@ share/icons/oxygen/32x32/emotes/face-smile.png
 share/icons/oxygen/32x32/emotes/face-surprise.png
 share/icons/oxygen/32x32/emotes/face-uncertain.png
 share/icons/oxygen/32x32/mimetypes/application-illustrator.png
+share/icons/oxygen/32x32/mimetypes/application-msword.png
 share/icons/oxygen/32x32/mimetypes/application-octet-stream.png
 share/icons/oxygen/32x32/mimetypes/application-pdf.png
 share/icons/oxygen/32x32/mimetypes/application-pgp-encrypted.png
@@ -3250,7 +3245,6 @@ share/icons/oxygen/32x32/mimetypes/application-rss+xml.png
 share/icons/oxygen/32x32/mimetypes/application-rtf.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/32x32/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -3311,6 +3305,7 @@ share/icons/oxygen/32x32/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/32x32/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/32x32/mimetypes/application-x-kontour.png
 share/icons/oxygen/32x32/mimetypes/application-x-krita.png
+share/icons/oxygen/32x32/mimetypes/application-x-kvtml.png
 share/icons/oxygen/32x32/mimetypes/application-x-lha.png
 share/icons/oxygen/32x32/mimetypes/application-x-lzop.png
 share/icons/oxygen/32x32/mimetypes/application-x-marble.png
@@ -3378,8 +3373,8 @@ share/icons/oxygen/32x32/mimetypes/image-bmp.png
 share/icons/oxygen/32x32/mimetypes/image-cgm.png
 share/icons/oxygen/32x32/mimetypes/image-fax-g3.png
 share/icons/oxygen/32x32/mimetypes/image-gif.png
+share/icons/oxygen/32x32/mimetypes/image-jp2.png
 share/icons/oxygen/32x32/mimetypes/image-jpeg.png
-share/icons/oxygen/32x32/mimetypes/image-jpeg2000.png
 share/icons/oxygen/32x32/mimetypes/image-png.png
 share/icons/oxygen/32x32/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/32x32/mimetypes/image-svg+xml.png
@@ -4043,6 +4038,7 @@ share/icons/oxygen/48x48/emotes/face-smile.png
 share/icons/oxygen/48x48/emotes/face-surprise.png
 share/icons/oxygen/48x48/emotes/face-uncertain.png
 share/icons/oxygen/48x48/mimetypes/application-illustrator.png
+share/icons/oxygen/48x48/mimetypes/application-msword.png
 share/icons/oxygen/48x48/mimetypes/application-octet-stream.png
 share/icons/oxygen/48x48/mimetypes/application-pdf.png
 share/icons/oxygen/48x48/mimetypes/application-pgp-encrypted.png
@@ -4056,7 +4052,6 @@ share/icons/oxygen/48x48/mimetypes/application-rss+xml.png
 share/icons/oxygen/48x48/mimetypes/application-rtf.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/48x48/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -4117,6 +4112,7 @@ share/icons/oxygen/48x48/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/48x48/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/48x48/mimetypes/application-x-kontour.png
 share/icons/oxygen/48x48/mimetypes/application-x-krita.png
+share/icons/oxygen/48x48/mimetypes/application-x-kvtml.png
 share/icons/oxygen/48x48/mimetypes/application-x-lha.png
 share/icons/oxygen/48x48/mimetypes/application-x-lzop.png
 share/icons/oxygen/48x48/mimetypes/application-x-marble.png
@@ -4184,8 +4180,8 @@ share/icons/oxygen/48x48/mimetypes/image-bmp.png
 share/icons/oxygen/48x48/mimetypes/image-cgm.png
 share/icons/oxygen/48x48/mimetypes/image-fax-g3.png
 share/icons/oxygen/48x48/mimetypes/image-gif.png
+share/icons/oxygen/48x48/mimetypes/image-jp2.png
 share/icons/oxygen/48x48/mimetypes/image-jpeg.png
-share/icons/oxygen/48x48/mimetypes/image-jpeg2000.png
 share/icons/oxygen/48x48/mimetypes/image-png.png
 share/icons/oxygen/48x48/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/48x48/mimetypes/image-svg+xml.png
@@ -4611,6 +4607,7 @@ share/icons/oxygen/64x64/emotes/face-smile.png
 share/icons/oxygen/64x64/emotes/face-surprise.png
 share/icons/oxygen/64x64/emotes/face-uncertain.png
 share/icons/oxygen/64x64/mimetypes/application-illustrator.png
+share/icons/oxygen/64x64/mimetypes/application-msword.png
 share/icons/oxygen/64x64/mimetypes/application-octet-stream.png
 share/icons/oxygen/64x64/mimetypes/application-pdf.png
 share/icons/oxygen/64x64/mimetypes/application-pgp-encrypted.png
@@ -4622,7 +4619,6 @@ share/icons/oxygen/64x64/mimetypes/application-rss+xml.png
 share/icons/oxygen/64x64/mimetypes/application-rtf.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.ms-excel.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.ms-powerpoint.png
-share/icons/oxygen/64x64/mimetypes/application-vnd.ms-word.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.chart.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.database.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.formula.png
@@ -4683,6 +4679,7 @@ share/icons/oxygen/64x64/mimetypes/application-x-kcsrc.png
 share/icons/oxygen/64x64/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/64x64/mimetypes/application-x-kontour.png
 share/icons/oxygen/64x64/mimetypes/application-x-krita.png
+share/icons/oxygen/64x64/mimetypes/application-x-kvtml.png
 share/icons/oxygen/64x64/mimetypes/application-x-lha.png
 share/icons/oxygen/64x64/mimetypes/application-x-lzop.png
 share/icons/oxygen/64x64/mimetypes/application-x-marble.png
@@ -4750,8 +4747,8 @@ share/icons/oxygen/64x64/mimetypes/image-bmp.png
 share/icons/oxygen/64x64/mimetypes/image-cgm.png
 share/icons/oxygen/64x64/mimetypes/image-fax-g3.png
 share/icons/oxygen/64x64/mimetypes/image-gif.png
+share/icons/oxygen/64x64/mimetypes/image-jp2.png
 share/icons/oxygen/64x64/mimetypes/image-jpeg.png
-share/icons/oxygen/64x64/mimetypes/image-jpeg2000.png
 share/icons/oxygen/64x64/mimetypes/image-png.png
 share/icons/oxygen/64x64/mimetypes/image-svg+xml-compressed.png
 share/icons/oxygen/64x64/mimetypes/image-svg+xml.png
@@ -5999,6 +5996,7 @@ share/icons/oxygen/scalable/emotes/small/22x22/face-surprise.svgz
 share/icons/oxygen/scalable/emotes/small/22x22/face-uncertain.svgz
 share/icons/oxygen/scalable/emotes/small/22x22/face-wink.svgz
 share/icons/oxygen/scalable/mimetypes/application-illustrator.svgz
+share/icons/oxygen/scalable/mimetypes/application-msword.svgz
 share/icons/oxygen/scalable/mimetypes/application-octet-stream.svgz
 share/icons/oxygen/scalable/mimetypes/application-pdf.svgz
 share/icons/oxygen/scalable/mimetypes/application-pgp-encrypted.svgz
@@ -6012,7 +6010,6 @@ share/icons/oxygen/scalable/mimetypes/application-rss+xml.svgz
 share/icons/oxygen/scalable/mimetypes/application-rtf.svgz
 share/icons/oxygen/scalable/mimetypes/application-vnd.ms-excel.svgz
 share/icons/oxygen/scalable/mimetypes/application-vnd.ms-powerpoint.svgz
-share/icons/oxygen/scalable/mimetypes/application-vnd.ms-word.svgz
 share/icons/oxygen/scalable/mimetypes/application-vnd.oasis.opendocument.chart.svgz
 share/icons/oxygen/scalable/mimetypes/application-vnd.oasis.opendocument.database.svgz
 share/icons/oxygen/scalable/mimetypes/application-vnd.oasis.opendocument.formula.svgz
@@ -6073,6 +6070,7 @@ share/icons/oxygen/scalable/mimetypes/application-x-kcsrc.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-kgetlist.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-kontour.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-krita.svgz
+share/icons/oxygen/scalable/mimetypes/application-x-kvtml.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-lha.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-lzop.svgz
 share/icons/oxygen/scalable/mimetypes/application-x-marble.svgz
@@ -6140,12 +6138,13 @@ share/icons/oxygen/scalable/mimetypes/image-bmp.svgz
 share/icons/oxygen/scalable/mimetypes/image-cgm.svgz
 share/icons/oxygen/scalable/mimetypes/image-fax-g3.svgz
 share/icons/oxygen/scalable/mimetypes/image-gif.svgz
+share/icons/oxygen/scalable/mimetypes/image-jp2.svgz
 share/icons/oxygen/scalable/mimetypes/image-jpeg.svgz
-share/icons/oxygen/scalable/mimetypes/image-jpeg2000.svgz
 share/icons/oxygen/scalable/mimetypes/image-png.svgz
 share/icons/oxygen/scalable/mimetypes/image-svg+xml-compressed.svgz
 share/icons/oxygen/scalable/mimetypes/image-svg+xml.svgz
 share/icons/oxygen/scalable/mimetypes/image-tiff.svgz
+share/icons/oxygen/scalable/mimetypes/image-x-adobe-dng.svgz
 share/icons/oxygen/scalable/mimetypes/image-x-applix-graphics.svgz
 share/icons/oxygen/scalable/mimetypes/image-x-dcraw.svgz
 share/icons/oxygen/scalable/mimetypes/image-x-dds.svgz
@@ -6176,6 +6175,7 @@ share/icons/oxygen/scalable/mimetypes/message-rfc822.svgz
 share/icons/oxygen/scalable/mimetypes/message.svgz
 share/icons/oxygen/scalable/mimetypes/odf.svgz
 share/icons/oxygen/scalable/mimetypes/package-x-generic.svgz
+share/icons/oxygen/scalable/mimetypes/small/16x16/application-msword.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-pdf.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-pgp-encrypted.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-pgp-keys.svgz
@@ -6184,7 +6184,6 @@ share/icons/oxygen/scalable/mimetypes/small/16x16/application-rss+xml.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-rtf.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.ms-excel.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.ms-powerpoint.svgz
-share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.ms-word.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.oasis.opendocument.database.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.oasis.opendocument.formula.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/application-vnd.oasis.opendocument.graphics.svgz
@@ -6281,8 +6280,8 @@ share/icons/oxygen/scalable/mimetypes/small/16x16/image-bmp.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-cgm.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-fax-g3.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-gif.svgz
+share/icons/oxygen/scalable/mimetypes/small/16x16/image-jp2.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-jpeg.svgz
-share/icons/oxygen/scalable/mimetypes/small/16x16/image-jpeg2000.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-png.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-svg+xml-compressed.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/image-svg+xml.svgz
@@ -6366,6 +6365,7 @@ share/icons/oxygen/scalable/mimetypes/small/16x16/x-office-calendar.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/x-office-contact.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/x-office-document.svgz
 share/icons/oxygen/scalable/mimetypes/small/16x16/x-office-spreadsheet.svgz
+share/icons/oxygen/scalable/mimetypes/small/22x22/application-msword.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-pdf.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-pgp-encrypted.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-pgp-keys.svgz
@@ -6374,7 +6374,6 @@ share/icons/oxygen/scalable/mimetypes/small/22x22/application-rss+xml.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-rtf.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.ms-excel.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.ms-powerpoint.svgz
-share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.ms-word.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.oasis.opendocument.database.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.oasis.opendocument.presentation.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/application-vnd.oasis.opendocument.spreadsheet.svgz
@@ -6451,8 +6450,8 @@ share/icons/oxygen/scalable/mimetypes/small/22x22/image-bmp.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-cgm.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-fax-g3.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-gif.svgz
+share/icons/oxygen/scalable/mimetypes/small/22x22/image-jp2.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-jpeg.svgz
-share/icons/oxygen/scalable/mimetypes/small/22x22/image-jpeg2000.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-png.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-svg+xml-compressed.svgz
 share/icons/oxygen/scalable/mimetypes/small/22x22/image-svg+xml.svgz
@@ -7867,7 +7866,6 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrmtry share/doc/HTML/en/khelpcenter
 @dirrmtry share/doc/HTML/en/kdesu
 @dirrmtry share/doc/HTML/en/kdebugdialog
-@dirrmtry share/doc/HTML/en/kcontrol/windowmanagement
 @dirrmtry share/doc/HTML/en/kcontrol/useragent
 @dirrmtry share/doc/HTML/en/kcontrol/spellchecking
 @dirrmtry share/doc/HTML/en/kcontrol/smb
@@ -7878,12 +7876,10 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrmtry share/doc/HTML/en/kcontrol/panelappearance
 @dirrmtry share/doc/HTML/en/kcontrol/panel
 @dirrmtry share/doc/HTML/en/kcontrol/netpref
-@dirrmtry share/doc/HTML/en/kcontrol/mouse
 @dirrmtry share/doc/HTML/en/kcontrol/language
 @dirrmtry share/doc/HTML/en/kcontrol/khtml
 @dirrmtry share/doc/HTML/en/kcontrol/kdm
 @dirrmtry share/doc/HTML/en/kcontrol/kcmtaskbar
-@dirrmtry share/doc/HTML/en/kcontrol/kcmsmserver
 @dirrmtry share/doc/HTML/en/kcontrol/kcmnotify
 @dirrmtry share/doc/HTML/en/kcontrol/kcmlaunch
 @dirrmtry share/doc/HTML/en/kcontrol/kcmkonsole

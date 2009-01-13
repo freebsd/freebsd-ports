@@ -398,8 +398,6 @@ share/apps/konqueror/icons/crystalsvg/16x16/actions/kde3.png
 share/apps/konqueror/icons/crystalsvg/16x16/actions/kde4.png
 share/apps/konqueror/icons/crystalsvg/16x16/actions/kde5.png
 share/apps/konqueror/icons/crystalsvg/16x16/actions/kde6.png
-share/apps/konqueror/konq-filemanagement.rc
-share/apps/konqueror/konq-webbrowsing.rc
 share/apps/konqueror/konqueror.rc
 share/apps/konqueror/pics/arrow_bottomleft.png
 share/apps/konqueror/pics/arrow_bottomright.png
@@ -560,8 +558,6 @@ share/doc/HTML/en/konqueror/sidebar.docbook
 share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
-share/doc/HTML/en/konsole/konsole.png
-share/doc/HTML/en/konsole/tabbar.png
 share/doc/HTML/en/kwrite/common
 share/doc/HTML/en/kwrite/index.cache.bz2
 share/doc/HTML/en/kwrite/index.docbook

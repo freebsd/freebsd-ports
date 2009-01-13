@@ -44,6 +44,20 @@ share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
 share/config.kcfg/kuser.kcfg
+share/doc/HTML/en/kcontrol/knetworkconf/01.png
+share/doc/HTML/en/kcontrol/knetworkconf/02.png
+share/doc/HTML/en/kcontrol/knetworkconf/03.png
+share/doc/HTML/en/kcontrol/knetworkconf/04.png
+share/doc/HTML/en/kcontrol/knetworkconf/05.png
+share/doc/HTML/en/kcontrol/knetworkconf/06.png
+share/doc/HTML/en/kcontrol/knetworkconf/07.png
+share/doc/HTML/en/kcontrol/knetworkconf/08.png
+share/doc/HTML/en/kcontrol/knetworkconf/09.png
+share/doc/HTML/en/kcontrol/knetworkconf/11.png
+share/doc/HTML/en/kcontrol/knetworkconf/about1.png
+share/doc/HTML/en/kcontrol/knetworkconf/common
+share/doc/HTML/en/kcontrol/knetworkconf/index.cache.bz2
+share/doc/HTML/en/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -52,20 +66,6 @@ share/doc/HTML/en/kcron/kcronstart.png
 share/doc/HTML/en/kcron/newtask.png
 share/doc/HTML/en/kcron/newvariable.png
 share/doc/HTML/en/kcron/print.png
-share/doc/HTML/en/knetworkconf/01.png
-share/doc/HTML/en/knetworkconf/02.png
-share/doc/HTML/en/knetworkconf/03.png
-share/doc/HTML/en/knetworkconf/04.png
-share/doc/HTML/en/knetworkconf/05.png
-share/doc/HTML/en/knetworkconf/06.png
-share/doc/HTML/en/knetworkconf/07.png
-share/doc/HTML/en/knetworkconf/08.png
-share/doc/HTML/en/knetworkconf/09.png
-share/doc/HTML/en/knetworkconf/11.png
-share/doc/HTML/en/knetworkconf/about1.png
-share/doc/HTML/en/knetworkconf/common
-share/doc/HTML/en/knetworkconf/index.cache.bz2
-share/doc/HTML/en/knetworkconf/index.docbook
 share/doc/HTML/en/kpackage/common
 share/doc/HTML/en/kpackage/handle.png
 share/doc/HTML/en/kpackage/index.cache.bz2
@@ -136,8 +136,8 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksystemlog
 @dirrm share/doc/HTML/en/kpackage
-@dirrm share/doc/HTML/en/knetworkconf
 @dirrm share/doc/HTML/en/kcron
+@dirrm share/doc/HTML/en/kcontrol/knetworkconf
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
 @dirrmtry share/config.kcfg

@@ -3,10 +3,19 @@ share/apps/kvtml/pl/animals.kvtml
 share/apps/kvtml/pl/easy.kvtml
 share/apps/kvtml/pl/hard.kvtml
 share/apps/kvtml/pl/medium.kvtml
+share/doc/HTML/pl/amor/common
+share/doc/HTML/pl/amor/index.cache.bz2
+share/doc/HTML/pl/amor/index.docbook
 share/doc/HTML/pl/ark/common
 share/doc/HTML/pl/ark/index.cache.bz2
 share/doc/HTML/pl/ark/index.docbook
 share/doc/HTML/pl/ark/man-ark.1.docbook
+share/doc/HTML/pl/kaddressbook/common
+share/doc/HTML/pl/kaddressbook/index.cache.bz2
+share/doc/HTML/pl/kaddressbook/index.docbook
+share/doc/HTML/pl/kalarm/common
+share/doc/HTML/pl/kalarm/index.cache.bz2
+share/doc/HTML/pl/kalarm/index.docbook
 share/doc/HTML/pl/kbruch/checked.png
 share/doc/HTML/pl/kbruch/common
 share/doc/HTML/pl/kbruch/compare.png
@@ -20,6 +29,92 @@ share/doc/HTML/pl/kbruch/settings.png
 share/doc/HTML/pl/kcontrol/kcontrol/common
 share/doc/HTML/pl/kcontrol/kcontrol/index.cache.bz2
 share/doc/HTML/pl/kcontrol/kcontrol/index.docbook
+share/doc/HTML/pl/kdepasswd/common
+share/doc/HTML/pl/kdepasswd/index.cache.bz2
+share/doc/HTML/pl/kdepasswd/index.docbook
+share/doc/HTML/pl/kgeography/common
+share/doc/HTML/pl/kgeography/index.cache.bz2
+share/doc/HTML/pl/kgeography/index.docbook
+share/doc/HTML/pl/khelpcenter/faq/about.docbook
+share/doc/HTML/pl/khelpcenter/faq/common
+share/doc/HTML/pl/khelpcenter/faq/configkde.docbook
+share/doc/HTML/pl/khelpcenter/faq/contrib.docbook
+share/doc/HTML/pl/khelpcenter/faq/desktop.docbook
+share/doc/HTML/pl/khelpcenter/faq/filemng.docbook
+share/doc/HTML/pl/khelpcenter/faq/getkde.docbook
+share/doc/HTML/pl/khelpcenter/faq/index.cache.bz2
+share/doc/HTML/pl/khelpcenter/faq/index.docbook
+share/doc/HTML/pl/khelpcenter/faq/install.docbook
+share/doc/HTML/pl/khelpcenter/faq/intro.docbook
+share/doc/HTML/pl/khelpcenter/faq/kdeapps.docbook
+share/doc/HTML/pl/khelpcenter/faq/misc.docbook
+share/doc/HTML/pl/khelpcenter/faq/moreinfo.docbook
+share/doc/HTML/pl/khelpcenter/faq/nonkdeapps.docbook
+share/doc/HTML/pl/khelpcenter/faq/notrelated.docbook
+share/doc/HTML/pl/khelpcenter/faq/panel.docbook
+share/doc/HTML/pl/khelpcenter/faq/qt.docbook
+share/doc/HTML/pl/khelpcenter/faq/questions.docbook
+share/doc/HTML/pl/khelpcenter/faq/sound.docbook
+share/doc/HTML/pl/khelpcenter/faq/tips.docbook
+share/doc/HTML/pl/khelpcenter/faq/webbrowse.docbook
+share/doc/HTML/pl/khelpcenter/faq/winmng.docbook
+share/doc/HTML/pl/khelpcenter/quickstart/common
+share/doc/HTML/pl/khelpcenter/quickstart/index.cache.bz2
+share/doc/HTML/pl/khelpcenter/quickstart/index.docbook
+share/doc/HTML/pl/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/pl/khelpcenter/userguide/base-kde-applications.docbook
+share/doc/HTML/pl/khelpcenter/userguide/browser-fine-tuning.docbook
+share/doc/HTML/pl/khelpcenter/userguide/burning-cds.docbook
+share/doc/HTML/pl/khelpcenter/userguide/common
+share/doc/HTML/pl/khelpcenter/userguide/control-center.docbook
+share/doc/HTML/pl/khelpcenter/userguide/creating-graphics.docbook
+share/doc/HTML/pl/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/pl/khelpcenter/userguide/customizing-desktop.docbook
+share/doc/HTML/pl/khelpcenter/userguide/email.docbook
+share/doc/HTML/pl/khelpcenter/userguide/extragear-applications.docbook
+share/doc/HTML/pl/khelpcenter/userguide/file-sharing.docbook
+share/doc/HTML/pl/khelpcenter/userguide/font-installation.docbook
+share/doc/HTML/pl/khelpcenter/userguide/getting-help.docbook
+share/doc/HTML/pl/khelpcenter/userguide/glossary.docbook
+share/doc/HTML/pl/khelpcenter/userguide/groupware-kontact.docbook
+share/doc/HTML/pl/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/pl/khelpcenter/userguide/index.docbook
+share/doc/HTML/pl/khelpcenter/userguide/internet-shortcuts.docbook
+share/doc/HTML/pl/khelpcenter/userguide/kde-as-root.docbook
+share/doc/HTML/pl/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/pl/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/pl/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/pl/khelpcenter/userguide/konsole-intro.docbook
+share/doc/HTML/pl/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/pl/khelpcenter/userguide/migrator-applications.docbook
+share/doc/HTML/pl/khelpcenter/userguide/migrator-dictionary.docbook
+share/doc/HTML/pl/khelpcenter/userguide/net-connection-setup.docbook
+share/doc/HTML/pl/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/pl/khelpcenter/userguide/panel-and-desktop.docbook
+share/doc/HTML/pl/khelpcenter/userguide/pdf-files.docbook
+share/doc/HTML/pl/khelpcenter/userguide/playing-audiocds.docbook
+share/doc/HTML/pl/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/pl/khelpcenter/userguide/playing-music.docbook
+share/doc/HTML/pl/khelpcenter/userguide/printer-setup.docbook
+share/doc/HTML/pl/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/pl/khelpcenter/userguide/programs-and-documents.docbook
+share/doc/HTML/pl/khelpcenter/userguide/programs-controlling.docbook
+share/doc/HTML/pl/khelpcenter/userguide/removable-disks.docbook
+share/doc/HTML/pl/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/pl/khelpcenter/userguide/shared-sessions.docbook
+share/doc/HTML/pl/khelpcenter/userguide/standard-menu-entries.docbook
+share/doc/HTML/pl/khelpcenter/userguide/switching-sessions.docbook
+share/doc/HTML/pl/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/pl/khelpcenter/userguide/troubleshooting-network-x.docbook
+share/doc/HTML/pl/khelpcenter/userguide/troubleshooting-no-open.docbook
+share/doc/HTML/pl/khelpcenter/userguide/under-the-hood.docbook
+share/doc/HTML/pl/khelpcenter/userguide/usenet.docbook
+share/doc/HTML/pl/khelpcenter/userguide/where-next.docbook
+share/doc/HTML/pl/khelpcenter/userguide/windows-how-to.docbook
+share/doc/HTML/pl/khelpcenter/userguide/your-kde-account.docbook
+share/doc/HTML/pl/khelpcenter/visualdict/common
+share/doc/HTML/pl/khelpcenter/visualdict/index.cache.bz2
+share/doc/HTML/pl/khelpcenter/visualdict/index.docbook
 share/doc/HTML/pl/klettres/common
 share/doc/HTML/pl/klettres/index.cache.bz2
 share/doc/HTML/pl/klettres/index.docbook
@@ -28,6 +123,17 @@ share/doc/HTML/pl/klettres/klettres2.png
 share/doc/HTML/pl/klettres/klettres3.png
 share/doc/HTML/pl/klettres/klettres4.png
 share/doc/HTML/pl/klettres/klettres5.png
+share/doc/HTML/pl/kmail/common
+share/doc/HTML/pl/kmail/configure.docbook
+share/doc/HTML/pl/kmail/credits-and-licenses.docbook
+share/doc/HTML/pl/kmail/faq.docbook
+share/doc/HTML/pl/kmail/getting-started.docbook
+share/doc/HTML/pl/kmail/importing.docbook
+share/doc/HTML/pl/kmail/index.cache.bz2
+share/doc/HTML/pl/kmail/index.docbook
+share/doc/HTML/pl/kmail/intro.docbook
+share/doc/HTML/pl/kmail/menus.docbook
+share/doc/HTML/pl/kmail/using-kmail.docbook
 share/doc/HTML/pl/kmplot/commands.docbook
 share/doc/HTML/pl/kmplot/common
 share/doc/HTML/pl/kmplot/configuration.docbook
@@ -45,6 +151,23 @@ share/doc/HTML/pl/kmplot/using.docbook
 share/doc/HTML/pl/kollision/common
 share/doc/HTML/pl/kollision/index.cache.bz2
 share/doc/HTML/pl/kollision/index.docbook
+share/doc/HTML/pl/konqueror/basics.docbook
+share/doc/HTML/pl/konqueror/bookmarks.docbook
+share/doc/HTML/pl/konqueror/browser.docbook
+share/doc/HTML/pl/konqueror/commands.docbook
+share/doc/HTML/pl/konqueror/common
+share/doc/HTML/pl/konqueror/config.docbook
+share/doc/HTML/pl/konqueror/credits.docbook
+share/doc/HTML/pl/konqueror/faq.docbook
+share/doc/HTML/pl/konqueror/filemanager.docbook
+share/doc/HTML/pl/konqueror/index.cache.bz2
+share/doc/HTML/pl/konqueror/index.docbook
+share/doc/HTML/pl/konqueror/introduction.docbook
+share/doc/HTML/pl/konqueror/man-kbookmarkmerger.1.docbook
+share/doc/HTML/pl/konqueror/path-complete.docbook
+share/doc/HTML/pl/konqueror/plugins.docbook
+share/doc/HTML/pl/konqueror/save-settings.docbook
+share/doc/HTML/pl/konqueror/sidebar.docbook
 share/doc/HTML/pl/kpercentage/answer.png
 share/doc/HTML/pl/kpercentage/commands.docbook
 share/doc/HTML/pl/kpercentage/common
@@ -58,6 +181,12 @@ share/doc/HTML/pl/kpercentage/install.docbook
 share/doc/HTML/pl/kpercentage/introduction.docbook
 share/doc/HTML/pl/kpercentage/using.docbook
 share/doc/HTML/pl/kpercentage/welcome.png
+share/doc/HTML/pl/kteatime/common
+share/doc/HTML/pl/kteatime/index.cache.bz2
+share/doc/HTML/pl/kteatime/index.docbook
+share/doc/HTML/pl/ktnef/common
+share/doc/HTML/pl/ktnef/index.cache.bz2
+share/doc/HTML/pl/ktnef/index.docbook
 share/doc/HTML/pl/ktouch/common
 share/doc/HTML/pl/ktouch/index.cache.bz2
 share/doc/HTML/pl/ktouch/index.docbook
@@ -70,9 +199,15 @@ share/doc/HTML/pl/kwallet/edit1.png
 share/doc/HTML/pl/kwallet/index.cache.bz2
 share/doc/HTML/pl/kwallet/index.docbook
 share/doc/HTML/pl/kwallet/kwalletmanager.png
+share/doc/HTML/pl/kwatchgnupg/common
+share/doc/HTML/pl/kwatchgnupg/index.cache.bz2
+share/doc/HTML/pl/kwatchgnupg/index.docbook
 share/doc/HTML/pl/kwordquiz/common
 share/doc/HTML/pl/kwordquiz/index.cache.bz2
 share/doc/HTML/pl/kwordquiz/index.docbook
+share/doc/HTML/pl/okular/common
+share/doc/HTML/pl/okular/index.cache.bz2
+share/doc/HTML/pl/okular/index.docbook
 share/locale/pl/LC_MESSAGES/akonaditray.mo
 share/locale/pl/LC_MESSAGES/akregator.mo
 share/locale/pl/LC_MESSAGES/amor.mo
@@ -335,7 +470,7 @@ share/locale/pl/LC_MESSAGES/kmouth.mo
 share/locale/pl/LC_MESSAGES/kmplot.mo
 share/locale/pl/LC_MESSAGES/knetattach.mo
 share/locale/pl/LC_MESSAGES/knetwalk.mo
-share/locale/pl/LC_MESSAGES/knetworkconf.mo
+share/locale/pl/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/pl/LC_MESSAGES/knode.mo
 share/locale/pl/LC_MESSAGES/knotes.mo
 share/locale/pl/LC_MESSAGES/knotify4.mo
@@ -476,6 +611,7 @@ share/locale/pl/LC_MESSAGES/libktnef.mo
 share/locale/pl/LC_MESSAGES/libkworkspace.mo
 share/locale/pl/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/pl/LC_MESSAGES/libmailtransport.mo
+share/locale/pl/LC_MESSAGES/liboktetacore.mo
 share/locale/pl/LC_MESSAGES/libphonon.mo
 share/locale/pl/LC_MESSAGES/libplasma.mo
 share/locale/pl/LC_MESSAGES/libtaskmanager.mo
@@ -488,8 +624,10 @@ share/locale/pl/LC_MESSAGES/okteta.mo
 share/locale/pl/LC_MESSAGES/oktetapart.mo
 share/locale/pl/LC_MESSAGES/okular.mo
 share/locale/pl/LC_MESSAGES/okular_chm.mo
+share/locale/pl/LC_MESSAGES/okular_comicbook.mo
 share/locale/pl/LC_MESSAGES/okular_djvu.mo
 share/locale/pl/LC_MESSAGES/okular_dvi.mo
+share/locale/pl/LC_MESSAGES/okular_epub.mo
 share/locale/pl/LC_MESSAGES/okular_fictionbook.mo
 share/locale/pl/LC_MESSAGES/okular_ghostview.mo
 share/locale/pl/LC_MESSAGES/okular_kimgio.mo
@@ -561,18 +699,34 @@ share/locale/pl/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/pl/entry.desktop
 @dirrm share/locale/pl/LC_SCRIPTS/kgeography
 @dirrm share/locale/pl/LC_SCRIPTS
+@dirrm share/doc/HTML/pl/okular
 @dirrm share/doc/HTML/pl/kwordquiz
+@dirrm share/doc/HTML/pl/kwatchgnupg
 @dirrm share/doc/HTML/pl/kwallet
 @dirrm share/doc/HTML/pl/ktuberling
 @dirrm share/doc/HTML/pl/ktouch
+@dirrm share/doc/HTML/pl/ktnef
+@dirrm share/doc/HTML/pl/kteatime
 @dirrm share/doc/HTML/pl/kpercentage
+@dirrm share/doc/HTML/pl/konqueror
 @dirrm share/doc/HTML/pl/kollision
 @dirrm share/doc/HTML/pl/kmplot
+@dirrm share/doc/HTML/pl/kmail
 @dirrm share/doc/HTML/pl/klettres
+@dirrm share/doc/HTML/pl/khelpcenter/visualdict
+@dirrm share/doc/HTML/pl/khelpcenter/userguide
+@dirrm share/doc/HTML/pl/khelpcenter/quickstart
+@dirrm share/doc/HTML/pl/khelpcenter/faq
+@dirrm share/doc/HTML/pl/khelpcenter
+@dirrm share/doc/HTML/pl/kgeography
+@dirrm share/doc/HTML/pl/kdepasswd
 @dirrm share/doc/HTML/pl/kcontrol/kcontrol
 @dirrm share/doc/HTML/pl/kcontrol
 @dirrm share/doc/HTML/pl/kbruch
+@dirrm share/doc/HTML/pl/kalarm
+@dirrm share/doc/HTML/pl/kaddressbook
 @dirrm share/doc/HTML/pl/ark
+@dirrm share/doc/HTML/pl/amor
 @dirrm share/apps/kvtml/pl
 @dirrm share/apps/kvtml
 @dirrm share/apps/khangman

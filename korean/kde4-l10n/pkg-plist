@@ -196,7 +196,7 @@ share/locale/ko/LC_MESSAGES/kmousetool.mo
 share/locale/ko/LC_MESSAGES/kmouth.mo
 share/locale/ko/LC_MESSAGES/knetattach.mo
 share/locale/ko/LC_MESSAGES/knetwalk.mo
-share/locale/ko/LC_MESSAGES/knetworkconf.mo
+share/locale/ko/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/ko/LC_MESSAGES/knode.mo
 share/locale/ko/LC_MESSAGES/knotes.mo
 share/locale/ko/LC_MESSAGES/knotify4.mo
