@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	hdf
-PORTVERSION=	4.2r1
-PORTREVISION=	3
+PORTVERSION=	4.2r3
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
-		ftp://ftp.hdfgroup.org/HDF/Documentation/HDF4.2r0/:doc \
+		ftp://ftp.hdfgroup.org/HDF/Documentation/HDF4.2r3/:doc \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
 DISTNAME=	HDF${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
@@ -19,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${DOCFILES:C/$/:doc/g}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -34,9 +33,8 @@ CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
 #wiredness of F77, FC in hdf/src/Makefile
 MAKE_ENV+=	PATH="${WRKSRC}/bin:${PATH}"
-DOCFILES=	HDF41r5_SpecDG.pdf \
-		HDF42r0_RefMan.pdf \
-		HDF42r0_UserGd.pdf
+DOCFILES=	RM-print42r3.pdf \
+		UG_print42r3.pdf
 SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
@@ -50,17 +48,9 @@ USE_LDCONFIG=	yes
 BROKEN=		Does not compile on !i386, !amd64 and !alpha
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 		${WRKSRC}/hdf/src/Makefile.in ${WRKSRC}/mfhdf/libsrc/Makefile.in
-
-#wiredness of F77, FC in hdf/src/Makefile
-pre-configure:
-	${LN} -s `${WHICH} ${FC}` ${WRKSRC}/bin/f77
 
 post-install:
 .if !defined(NOPORTDOCS)
