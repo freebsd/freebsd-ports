@@ -4,7 +4,7 @@ include/espeak/speak_lib.h
 lib/libespeak.a
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.39
+lib/libespeak.so.1.1.40
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -23,6 +23,7 @@ lib/libespeak.so.1.1.39
 %%PORTDOCS%%%%DOCSDIR%%/ssml.html
 %%PORTDOCS%%%%DOCSDIR%%/voices.html
 %%DATADIR%%/espeak-data/af_dict
+%%DATADIR%%/espeak-data/ca_dict
 %%DATADIR%%/espeak-data/config
 %%DATADIR%%/espeak-data/cs_dict
 %%DATADIR%%/espeak-data/cy_dict
@@ -37,12 +38,14 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/hbs_dict
 %%DATADIR%%/espeak-data/hi_dict
 %%DATADIR%%/espeak-data/hu_dict
+%%DATADIR%%/espeak-data/hy_dict
 %%DATADIR%%/espeak-data/id_dict
 %%DATADIR%%/espeak-data/is_dict
 %%DATADIR%%/espeak-data/it_dict
 %%DATADIR%%/espeak-data/jbo_dict
 %%DATADIR%%/espeak-data/ku_dict
 %%DATADIR%%/espeak-data/la_dict
+%%DATADIR%%/espeak-data/lv_dict
 %%DATADIR%%/espeak-data/mbrola_ph/af1_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/ca1_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/cr1_phtrans
@@ -51,7 +54,6 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/mbrola_ph/de4_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/de6_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/en1_phtrans
-%%DATADIR%%/espeak-data/mbrola_ph/es4_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/es_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/fr1_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/gr2_phtrans
@@ -63,6 +65,7 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/mbrola_ph/la1_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/nl_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/pl1_phtrans
+%%DATADIR%%/espeak-data/mbrola_ph/pt1_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/pt_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/ptbr4_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/ptbr_phtrans
@@ -82,6 +85,7 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/ro_dict
 %%DATADIR%%/espeak-data/ru_dict
 %%DATADIR%%/espeak-data/sk_dict
+%%DATADIR%%/espeak-data/sq_dict
 %%DATADIR%%/espeak-data/sv_dict
 %%DATADIR%%/espeak-data/sw_dict
 %%DATADIR%%/espeak-data/ta_dict
@@ -92,6 +96,7 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/!v/f2
 %%DATADIR%%/espeak-data/voices/!v/f3
 %%DATADIR%%/espeak-data/voices/!v/f4
+%%DATADIR%%/espeak-data/voices/!v/fast
 %%DATADIR%%/espeak-data/voices/!v/m1
 %%DATADIR%%/espeak-data/voices/!v/m2
 %%DATADIR%%/espeak-data/voices/!v/m3
@@ -101,6 +106,7 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/!v/whisper
 %%DATADIR%%/espeak-data/voices/af
 %%DATADIR%%/espeak-data/voices/bs
+%%DATADIR%%/espeak-data/voices/ca
 %%DATADIR%%/espeak-data/voices/cs
 %%DATADIR%%/espeak-data/voices/cy
 %%DATADIR%%/espeak-data/voices/de
@@ -108,9 +114,9 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/el
 %%DATADIR%%/espeak-data/voices/en/en
 %%DATADIR%%/espeak-data/voices/en/en-n
-%%DATADIR%%/espeak-data/voices/en/en-r
 %%DATADIR%%/espeak-data/voices/en/en-rp
 %%DATADIR%%/espeak-data/voices/en/en-sc
+%%DATADIR%%/espeak-data/voices/en/en-us
 %%DATADIR%%/espeak-data/voices/en/en-wi
 %%DATADIR%%/espeak-data/voices/en/en-wm
 %%DATADIR%%/espeak-data/voices/eo
@@ -119,16 +125,17 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/fr
 %%DATADIR%%/espeak-data/voices/fr-be
-%%DATADIR%%/espeak-data/voices/grc
 %%DATADIR%%/espeak-data/voices/hi
 %%DATADIR%%/espeak-data/voices/hr
 %%DATADIR%%/espeak-data/voices/hu
+%%DATADIR%%/espeak-data/voices/hy
+%%DATADIR%%/espeak-data/voices/hy-west
 %%DATADIR%%/espeak-data/voices/id
 %%DATADIR%%/espeak-data/voices/is
 %%DATADIR%%/espeak-data/voices/it
-%%DATADIR%%/espeak-data/voices/jbo
 %%DATADIR%%/espeak-data/voices/ku
 %%DATADIR%%/espeak-data/voices/la
+%%DATADIR%%/espeak-data/voices/lv
 %%DATADIR%%/espeak-data/voices/mb/mb-af1
 %%DATADIR%%/espeak-data/voices/mb/mb-af1-en
 %%DATADIR%%/espeak-data/voices/mb/mb-br1
@@ -163,6 +170,7 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/mb/mb-nl2-en
 %%DATADIR%%/espeak-data/voices/mb/mb-pl1
 %%DATADIR%%/espeak-data/voices/mb/mb-pl1-en
+%%DATADIR%%/espeak-data/voices/mb/mb-pt1
 %%DATADIR%%/espeak-data/voices/mb/mb-ro1
 %%DATADIR%%/espeak-data/voices/mb/mb-ro1-en
 %%DATADIR%%/espeak-data/voices/mb/mb-sw1
@@ -181,16 +189,20 @@ lib/libespeak.so.1.1.39
 %%DATADIR%%/espeak-data/voices/ro
 %%DATADIR%%/espeak-data/voices/ru
 %%DATADIR%%/espeak-data/voices/sk
+%%DATADIR%%/espeak-data/voices/sq
 %%DATADIR%%/espeak-data/voices/sr
 %%DATADIR%%/espeak-data/voices/sv
 %%DATADIR%%/espeak-data/voices/sw
 %%DATADIR%%/espeak-data/voices/ta
+%%DATADIR%%/espeak-data/voices/test/grc
+%%DATADIR%%/espeak-data/voices/test/jbo
 %%DATADIR%%/espeak-data/voices/tr
 %%DATADIR%%/espeak-data/voices/vi
 %%DATADIR%%/espeak-data/voices/zh
-%%DATADIR%%/espeak-data/voices/zhy
+%%DATADIR%%/espeak-data/voices/zh-yue
 %%DATADIR%%/espeak-data/zh_dict
 %%DATADIR%%/espeak-data/zhy_dict
+@dirrm %%DATADIR%%/espeak-data/voices/test
 @dirrm %%DATADIR%%/espeak-data/voices/mb
 @dirrm %%DATADIR%%/espeak-data/voices/en
 @dirrm %%DATADIR%%/espeak-data/voices/!v
@@ -202,4 +214,6 @@ lib/libespeak.so.1.1.39
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%DATADIR%%/espeak-data/soundicons
+@exec mkdir -p %D/%%DATADIR%%/espeak-data/mbrola
 @dirrm include/espeak
