@@ -16,14 +16,16 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
-LIB_DEPENDS=	bakery-2.4:${PORTSDIR}/x11-toolkits/bakery \
+LIB_DEPENDS=	bakery-2.6:${PORTSDIR}/x11-toolkits/bakery \
 		gdamm-3.0.10:${PORTSDIR}/databases/libgdamm \
-		gtksourceviewmm-1.0.1:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
+		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		goocanvas.3:${PORTSDIR}/graphics/goocanvas
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-3.0.pc:${PORTSDIR}/databases/libgda3-postgresql
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-3.0.pc:${PORTSDIR}/databases/libgda3-postgresql
+
+BROKEN=		needs bakery-2.4, but bakery-2.6 is available in portstree
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
