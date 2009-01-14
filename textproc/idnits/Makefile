@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	2.08.10
-PORTREVISION=	1
+PORTVERSION=	2.11.00
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +16,8 @@ COMMENT=	Looks for problems in internet draft formatting
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	YES
+
+PLIST_FILES=	bin/idnits
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
