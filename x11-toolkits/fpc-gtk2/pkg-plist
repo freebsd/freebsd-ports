@@ -1,4 +1,6 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/buildgtk2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkhtml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/glib2.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/pango.ppu
@@ -9,6 +11,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libglade2.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkglext.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2x.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdkglext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/buildgtk2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkhtml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/glib2.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/pango.o
@@ -29,6 +33,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtk2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libplibglade2.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtkglext.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdkglext.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtkhtml.a
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-calendar.png
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gtk-logo-rgb.gif
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-gimp.png

@@ -19,29 +19,22 @@ MAKE_ENV+=		PP=${LOCALBASE}/bin/ppc386 \
 			OPT="${OPT}" \
 			BSDHIER=1
 
-.if ${PKGNAMESUFFIX} == "-gdbint"
-HAVE_EXAMPLES=	true
-.endif
-
 .if ${PKGNAMESUFFIX} == "-ibase"
 .	if defined(WITH_IBASE)
 USE_FIREBIRD=	yes
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-mysql"
 .	if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-odbc"
 .	if defined(WITH_ODBC)
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-oracle"
@@ -49,26 +42,12 @@ HAVE_EXAMPLES=	true
 ORACLE8_LIB=	${LOCALBASE}/oracle8-client/rdbms/lib
 RUN_DEPENDS=	${ORACLE8_LIB}/env_rdbms.mk:${PORTSDIR}/databases/oracle8-client
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-postgres"
 .	if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 .	endif
-HAVE_EXAMPLES=	true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-pasjpeg"
-HAVE_EXAMPLES=  true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-paszlib"
-HAVE_EXAMPLES=	true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-regexpr"
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-sqlite"
@@ -89,7 +68,13 @@ LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-forms"
+.if ${PKGNAMESUFFIX} == "-imagemagick"
+.	if defined(WITH_IMAGEMAGICK)
+LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-xforms"
 .	if defined(WITH_XFORMS)
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 .	endif
@@ -97,9 +82,9 @@ HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fcl-db"
-OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd \
-	-Fu../src -Fu../../units/${ARCH}-freebsd -Fu../../../units/${ARCH}-freebsd
-HAVE_EXAMPLES=  true
+OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd -Fu../* \
+	-Fu../../units/${ARCH}-freebsd -Fu../../../units/${ARCH}-freebsd \
+	-Fu../sqldb/*
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fcl-net"
@@ -117,29 +102,19 @@ USE_GNOME=	gtk12
 HAVE_EXAMPLES=	true
 .endif
 
-.if ${PKGNAMESUFFIX} == "-gconf"
-.	if defined(WITH_GCONF)
-.include <${PORTSDIR}/Mk/bsd.gnome.mk>
-USE_GNOME=      gconf
-.	endif
-HAVE_EXAMPLES=	true
-.endif
-
 .if ${PKGNAMESUFFIX} == "-gdbm"
 .	if defined(WITH_GDBM)
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-ggi"
 .	if defined(WITH_LIBGGI)
 LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
-.if ${PKGNAMESUFFIX} == "-gtk"
+.if ${PKGNAMESUFFIX} == "-gtk1"
 .	if defined(WITH_GTK1)
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
 USE_GNOME=	gtk12
@@ -156,17 +131,19 @@ USE_GNOME=	gtk20
 HAVE_EXAMPLES=	true
 .endif
 
-.if ${PKGNAMESUFFIX} == "-hash"
-HAVE_EXAMPLES=	true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-httpd"
-.	if defined(WITH_APACHE12)
+.if ${PKGNAMESUFFIX} == "-httpd13"
+.	if defined(WITH_APACHE13)
 USE_APACHE=	13
 .	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-httpd20"
 .	if defined(WITH_APACHE20)
 USE_APACHE=	20
 .	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-httpd22"
 .	if defined(WITH_APACHE22)
 USE_APACHE=	22
 .	endif
@@ -189,28 +166,18 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 .	if defined(WITH_LIBCURL)
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-libgd"
 .	if defined(WITH_LIBGD)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-libpng"
 .	if defined(WITH_LIBPNG)
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 .	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-ncurses"
-HAVE_EXAMPLES=	true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-netdb"
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-opengl"
@@ -233,22 +200,22 @@ LIB_DEPENDS=    pcap:${PORTSDIR}/net/libpcap
 .	endif
 .endif
 
+.if ${PKGNAMESUFFIX} == "-sdl"
+.	if defined(WITH_SDL)
+USE_SDL=	sdl image mixer ttf gfx 
+.	endif
+.endif
+
 .if ${PKGNAMESUFFIX} == "-svgalib"
 .	if defined(WITH_SVGA)
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 .	endif
-HAVE_EXAMPLES=	true
-.endif
-
-.if ${PKGNAMESUFFIX} == "-syslog"
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-tcl"
 .	if defined(WITH_TCL)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-unzip"
@@ -261,22 +228,10 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 OPT+=-Fu../fcl/*
 .endif
 
-.if ${PKGNAMESUFFIX} == "-utmp"
-HAVE_EXAMPLES=	true
-.endif
-
 .if ${PKGNAMESUFFIX} == "-x11"
 .	if defined(WITH_X11)
 USE_XLIB=	yes
 .	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-zvt"
-.	if defined(WITH_ZVT)
-.include <${PORTSDIR}/Mk/bsd.gnome.mk>
-USE_GNOME=	libzvt
-.	endif
-HAVE_EXAMPLES=	true
 .endif
 
 post-extract:

@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-db
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-USE_FPC=	fcl-base hash ibase mysql netdb odbc oracle paszlib postgres pthreads \
-		libasync sqlite
+USE_FPC=	fcl-async fcl-base hash ibase mysql odbc oracle paszlib postgres \
+		pthreads pxlib sqlite
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

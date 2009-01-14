@@ -1,4 +1,5 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/sax_xml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmldefs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/sax.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlutils.ppu
@@ -16,6 +17,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmlelements.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmlwriter.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlconf.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmldefs.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/sax_xml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/sax.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/dom.o
@@ -31,6 +33,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xpath.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmlelements.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/htmlwriter.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/xmlconf.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/libpsax_xml.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/libphtmldefs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/libpsax.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/libpxmlutils.a

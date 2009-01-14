@@ -19,7 +19,7 @@ bin/unitdiff
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglibcurl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fprepos.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fpxmlrep.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.ppu
@@ -28,12 +28,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmessages.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkghandler.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgarchive.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglibcurl.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fprepos.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fpxmlrep.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.o
@@ -42,12 +41,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmessages.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkghandler.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgarchive.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgwget.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkglnet.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkglibcurl.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgrepos.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libpfprepos.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libpfpxmlrep.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgoptions.a
@@ -56,7 +54,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgmessages.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkghandler.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgmkconv.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgdownload.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgarchive.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgfpmake.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgcommands.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/Package.fpc

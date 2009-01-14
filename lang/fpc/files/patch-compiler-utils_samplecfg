@@ -1,11 +1,11 @@
---- compiler/utils/samplecfg       2008-01-06 01:17:24.468239657 +0300
-+++ compiler/utils/samplecfg    2008-01-06 01:36:20.388869514 +0300
-@@ -72,7 +72,7 @@
+--- compiler/utils/samplecfg	2008-06-04 13:06:36.000000000 -0500
++++ compiler/utils/samplecfg	2009-01-06 22:35:23.000000000 -0500
+@@ -50,7 +50,7 @@
  # Detect if we have write permission in root.
- if [ -w $sysdir ] ; then
+ if [ -w "$sysdir" ] ; then
    echo Write permission in $sysdir.
--  thefile=$sysdir/fpc.cfg
-+  thefile=$sysdir/fpc.cfg.sample
+-  thefile="$sysdir"/fpc.cfg
++  thefile="$sysdir"/fpc.cfg.sample
  else
    echo No write premission in $sysdir.
-   thefile=$HOME/.fpc.cfg
+   thefile="$HOME"/.fpc.cfg
