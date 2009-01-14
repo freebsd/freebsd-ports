@@ -7,6 +7,7 @@
 
 PORTNAME=	pspp
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 OPTIONS=	GUI "Build the PSPPIRE gui" off \
 		PGSQL "Compile in PostgreSQL capability" off
 
-USE_GNOME=	gnometarget libxml2
+USE_GNOME=	libxml2
 USE_PERL5_BUILD=yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -45,6 +46,7 @@ PLIST_SUB+=	NLS=""
 LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 USE_GNOME+=	libglade2
+CONFIGURE_ARGS+=	--with-gui-tools
 PLIST_SUB+=	GUI=""
 .else
 CONFIGURE_ARGS+=	--without-gui
@@ -56,5 +58,12 @@ USE_PGSQL=	yes
 .else
 CONFIGURE_ARGS+=	--without-libpq
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^install-exec-am:/s|install-exec-local||' \
+		${WRKSRC}/gl/Makefile.in
+
+post-install:
+	@${TOUCH} ${PREFIX}/lib/pspp/.keep_me
 
 .include <bsd.port.post.mk>
