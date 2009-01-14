@@ -1,3 +1,4 @@
+%%SERV%%%%MPI%%aster/aster-mpihosts
 %%CLIENT%%%%ASTKDIR%%/GPL.txt
 %%CLIENT%%%%ASTKDIR%%/bin/astk
 %%CLIENT%%%%ASTKDIR%%/bin/bsf
@@ -53,6 +54,7 @@
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/lance_calcul.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/meshtool.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/options.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/pref_config.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/tools.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/unites_logiques.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/BSF/bsf.tcl
@@ -180,23 +182,44 @@
 %%SERV%%%%ASTKDIR%%/GPL.txt
 %%SERV%%%%ASTKDIR%%/bin/as_run
 %%SERV%%%%ASTKDIR%%/bin/as_serv
+%%SERV%%%%ASTKDIR%%/bin/main.py
+%%SERV%%%%ASTKDIR%%/bin/main.pyc
+%%SERV%%%%ASTKDIR%%/bin/main.pyo
+%%SERV%%%%ASTKDIR%%/bin/mpirun_template
+%%SERV%%%%ASTKDIR%%/bin/parallel_cp
+%%SERV%%%%ASTKDIR%%/bin/sub_script
 %%SERV%%%%ASTKDIR%%/conf/.mysql_connect_REX
 %%SERV%%%%ASTKDIR%%/conf/aster_profile.sh
 %%SERV%%%%ASTKDIR%%/conf/config
 %%SERV%%%%ASTKDIR%%/conf/config_nodename
 %%SERV%%%%ASTKDIR%%/lib/HELP_as_run.txt
+%%SERV%%%%ASTKDIR%%/lib/N__F.py
+%%SERV%%%%ASTKDIR%%/lib/N__F.pyc
+%%SERV%%%%ASTKDIR%%/lib/N__F.pyo
 %%SERV%%%%ASTKDIR%%/lib/alamain.py
 %%SERV%%%%ASTKDIR%%/lib/alamain.pyc
 %%SERV%%%%ASTKDIR%%/lib/alamain.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_astout.py
+%%SERV%%%%ASTKDIR%%/lib/as_astout.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_astout.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_build.py
 %%SERV%%%%ASTKDIR%%/lib/as_build.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_build.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_calcul.py
+%%SERV%%%%ASTKDIR%%/lib/as_calcul.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_calcul.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_common_func.py
+%%SERV%%%%ASTKDIR%%/lib/as_common_func.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_common_func.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_config.py
 %%SERV%%%%ASTKDIR%%/lib/as_config.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_config.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_devtools.py
 %%SERV%%%%ASTKDIR%%/lib/as_devtools.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_devtools.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_distrib.py
+%%SERV%%%%ASTKDIR%%/lib/as_distrib.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_distrib.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_etude.py
 %%SERV%%%%ASTKDIR%%/lib/as_etude.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_etude.pyo
@@ -212,9 +235,6 @@
 %%SERV%%%%ASTKDIR%%/lib/as_list.py
 %%SERV%%%%ASTKDIR%%/lib/as_list.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_list.pyo
-%%SERV%%%%ASTKDIR%%/lib/as_mail.py
-%%SERV%%%%ASTKDIR%%/lib/as_mail.pyc
-%%SERV%%%%ASTKDIR%%/lib/as_mail.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_maintenance.py
 %%SERV%%%%ASTKDIR%%/lib/as_maintenance.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_maintenance.pyo
@@ -224,9 +244,15 @@
 %%SERV%%%%ASTKDIR%%/lib/as_option.py
 %%SERV%%%%ASTKDIR%%/lib/as_option.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_option.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_param.py
+%%SERV%%%%ASTKDIR%%/lib/as_param.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_param.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_profil.py
 %%SERV%%%%ASTKDIR%%/lib/as_profil.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_profil.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_repart.py
+%%SERV%%%%ASTKDIR%%/lib/as_repart.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_repart.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_rex.py
 %%SERV%%%%ASTKDIR%%/lib/as_rex.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_rex.pyo
@@ -260,24 +286,29 @@
 %%SERV%%%%ASTKDIR%%/lib/histor.pyc
 %%SERV%%%%ASTKDIR%%/lib/histor.pyo
 %%SERV%%%%ASTKDIR%%/lib/meshtool.comm
-%%SERV%%%%ASTKDIR%%/lib/mpirun_template
 %%SERV%%%%ASTKDIR%%/lib/myconnect.py
 %%SERV%%%%ASTKDIR%%/lib/myconnect.pyc
 %%SERV%%%%ASTKDIR%%/lib/myconnect.pyo
 %%SERV%%%%ASTKDIR%%/lib/mystring.py
 %%SERV%%%%ASTKDIR%%/lib/mystring.pyc
 %%SERV%%%%ASTKDIR%%/lib/mystring.pyo
+%%SERV%%%%ASTKDIR%%/lib/old_astout.py
+%%SERV%%%%ASTKDIR%%/lib/old_astout.pyc
+%%SERV%%%%ASTKDIR%%/lib/old_astout.pyo
+%%SERV%%%%ASTKDIR%%/lib/profile_modifier.py
+%%SERV%%%%ASTKDIR%%/lib/profile_modifier.pyc
+%%SERV%%%%ASTKDIR%%/lib/profile_modifier.pyo
 %%SERV%%%%ASTKDIR%%/lib/progress.py
 %%SERV%%%%ASTKDIR%%/lib/progress.pyc
 %%SERV%%%%ASTKDIR%%/lib/progress.pyo
 %%SERV%%%%ASTKDIR%%/lib/sample_extension.py
 %%SERV%%%%ASTKDIR%%/lib/sample_extension.pyc
 %%SERV%%%%ASTKDIR%%/lib/sample_extension.pyo
+%%SERV%%%%ASTKDIR%%/lib/sample_hostfile_distrib
 %%SERV%%%%ASTKDIR%%/lib/schema.py
 %%SERV%%%%ASTKDIR%%/lib/schema.pyc
 %%SERV%%%%ASTKDIR%%/lib/schema.pyo
 %%SERV%%%%ASTKDIR%%/lib/stanley_post.comm
-%%SERV%%%%ASTKDIR%%/lib/sub_script
 %%SERV%%%%ASTKDIR%%/lib/sum_tps.awk
 %%SERV%%%%ASTKDIR%%/lib/user_filter.py
 %%SERV%%%%ASTKDIR%%/lib/user_filter.pyc
@@ -285,6 +316,33 @@
 %%SERV%%%%ASTKDIR%%/lib/utils.py
 %%SERV%%%%ASTKDIR%%/lib/utils.pyc
 %%SERV%%%%ASTKDIR%%/lib/utils.pyo
+%%SERV%%%%ASTKDIR%%/unittest/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/Makefile.inc
+%%SERV%%%%ASTKDIR%%/unittest/astout/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/astout/astout.export.in
+%%SERV%%%%ASTKDIR%%/unittest/astout/hostfile
+%%SERV%%%%ASTKDIR%%/unittest/catalo/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/catalo/catalo.export.in
+%%SERV%%%%ASTKDIR%%/unittest/catapy/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/catapy/catapy.export.in
+%%SERV%%%%ASTKDIR%%/unittest/compil/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/compil/compil.export.in
+%%SERV%%%%ASTKDIR%%/unittest/config.py
+%%SERV%%%%ASTKDIR%%/unittest/config.pyc
+%%SERV%%%%ASTKDIR%%/unittest/config.pyo
+%%SERV%%%%ASTKDIR%%/unittest/etude/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/etude/etude.export.in
+%%SERV%%%%ASTKDIR%%/unittest/etude/test.py.in
+%%SERV%%%%ASTKDIR%%/unittest/jobs/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/jobs/jobs.export.in
+%%SERV%%%%ASTKDIR%%/unittest/meshtool/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/meshtool/meshtool.export.in
+%%SERV%%%%ASTKDIR%%/unittest/param/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/param/param.distr
+%%SERV%%%%ASTKDIR%%/unittest/param/param.export.in
+%%SERV%%%%ASTKDIR%%/unittest/surcharge/Makefile
+%%SERV%%%%ASTKDIR%%/unittest/surcharge/surcharge.export.in
+%%SERV%%%%ASTKDIR%%/unittest/surcharge/surcharge_astout.export.in
 %%CLIENT%%@dirrm %%ASTKDIR%%/bin
 %%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASJOB
 %%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/DOC
@@ -300,9 +358,19 @@
 %%CLIENT%%@dirrm %%BWidget_DIR%%/lang
 %%CLIENT%%@dirrm %%BWidget_DIR%%
 %%CLIENT%%@dirrm %%ASTKDIR%%/share
-%%SERV%%@dirrm %%ASTKDIR%%/bin
-%%SERV%%@dirrm %%ASTKDIR%%/conf
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/surcharge
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/param
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/meshtool
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/jobs
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/etude
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/compil
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/catapy
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/catalo
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/astout
+%%SERV%%@dirrm %%ASTKDIR%%/unittest
 %%SERV%%@dirrm %%ASTKDIR%%/lib
+%%SERV%%@dirrm %%ASTKDIR%%/conf
+%%SERV%%@dirrm %%ASTKDIR%%/bin
 @dirrm %%ASTKDIR%%
 @dirrmtry aster/ASTK
 @dirrmtry aster

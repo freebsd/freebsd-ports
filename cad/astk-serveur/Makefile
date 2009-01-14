@@ -7,7 +7,7 @@
 
 PORTNAME=	astk
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.6.2-1
+DISTVERSION=	1.7.0-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
@@ -35,19 +35,22 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 # for the server part, but it is not set to avoid circular dependences.
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 
+.if !defined(CLIENT_SEUL)
 USE_PYTHON=	yes
+.endif
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-ASTER_DISTVERSION=	${ASTER_VER}-2
+ASTER_DISTVERSION=	${ASTER_VER}-1
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
-S_SCRIPTS=	bin/as_run bin/as_serv lib/sub_script
-S_PYLIBS=	alamain.py as_config.py as_timer.py as_devtools.py user_filter.py
+S_SCRIPTS=	bin/as_run bin/as_serv bin/mpirun_template bin/sub_script
+S_PYLIBS=	lib/alamain.py lib/as_config.py lib/as_timer.py lib/as_devtools.py	\
+		lib/as_repart.py lib/user_filter.py bin/main.py bin/parallel_cp
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${aster_dir}/outils
 conf_dir=	${WRKSRC}/lib/ASTK/astkrc
@@ -59,9 +62,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
-PATCH2RM=	conf/config lib/as_config.py lib/as_exec.py conf/aster_profile.sh
+PATCH2RM=	conf/config lib/as_config.py conf/aster_profile.sh
 . if exists(${LOCALBASE}/sbin/pbs_server)
 WITH_PBS=	yes
+. endif
+. if exists(${LOCALBASE}/mpich2/bin/mpirun)
+WITH_MPI=	yes
+. endif
+. if defined(WITH_MPI)
+RUN_DEPENDS+=	${HOME_MPI}/bin/mpirun:${PORTSDIR}/net/mpich2
+HOME_MPI=	${LOCALBASE}/mpich2
+PLIST_SUB+=	MPI=""
+. else
+PLIST_SUB+=	MPI="@comment "
 . endif
 . if defined(WITH_PBS)
 RUN_DEPENDS+=	qsub:${PORTSDIR}/sysutils/torque
@@ -84,7 +97,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	9.3.0
+ASTER_VER=	9.4.0
 vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2003
@@ -171,9 +184,14 @@ do-configure:
 			${WRKSRC}/bin/as_run
 . for scripts in ${S_SCRIPTS}
 	${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
-	-e "s#?ASTER_ROOT?#${PREFIX}/aster#;s#?HOME_ASTK?#${inst_dir}#"		\
-		${WRKSRC}/${scripts}
+		-e 's#?PYTHON_EXE?#${PYTHON_CMD}#'				\
+		-e "s#?ASTER_ROOT?#${PREFIX}/aster#"				\
+		-e "s#?HOME_ASTK?#${inst_dir}#"	${WRKSRC}/${scripts}
 . endfor
+. if defined(WITH_MPI)
+	${REINPLACE_CMD} -e "s|^#mpi_hostfile|mpi_hostfile|g"				\
+	-e "s#?MPIRUN?#${HOME_MPI}/bin/mpirun#" ${WRKSRC}/conf/config
+. endif
 	${REINPLACE_CMD} -e "s#?IFDEF?#${v_ifdef}#g"				\
 	-e "s#?ASTER_ROOT?#${LOCALBASE}/aster#g"				\
 	-e "s#?EDITOR?#${WITH_ED}#g"						\
@@ -182,10 +200,12 @@ do-configure:
 	-e "s#?vaster?#${vaster}#"						\
 	-e "s#LOCALBASE#${LOCALBASE}#"						\
 	-e "s#%%v_ifdef%%#${v_ifdef}#" ${WRKSRC}/conf/config
-.for libs in ${S_PYLIBS}
+. for libs in ${S_PYLIBS}
 	${REINPLACE_CMD} -e "s#/opt/aster/NEW9#${aster_dir}#"			\
-		-e "s#/opt/aster#${aster_dir}#"					\
-		-e "s#/opt/aster/ASTK#${inst_dir}#" ${WRKSRC}/lib/${libs}
+		-e 's#?PYTHON_EXE?#${PYTHON_CMD}#'				\
+		-e 's#?MAXCMDLEN?#16384#;s#?MULTITHREADING?#True#'		\
+		-e "s#/opt/aster/ASTK#${inst_dir}#"				\
+		-e "s#/opt/aster#${aster_dir}#" ${WRKSRC}/${libs}
 . endfor
 . if defined(WITH_PBS)
 	${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
@@ -225,8 +245,16 @@ do-configure:
 do-install:
 	${MKDIR} ${inst_dir}
 	${CP} -R ${WRKSRC} ${inst_dir}
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/lib
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/lib
+.if !defined(CLIENT_SEUL)
+. for rep in bin lib unittest
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
+. endfor
+	(cd ${inst_dir}/ASTK_SERV/unittest/ && ${PYTHON_CMD} ./config.py)
+. if defined(WITH_MPI)
+	${ECHO_CMD} "localhost" > ${PREFIX}/aster/aster-mpihosts
+. endif
+.endif
 
 post-install:
 	@${ECHO_MSG}

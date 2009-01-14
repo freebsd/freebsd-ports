@@ -1,8 +1,8 @@
---- conf/config.orig	2008-06-25 15:43:23.000000000 +0200
-+++ conf/config	2008-07-06 18:16:37.000000000 +0200
-@@ -50,6 +50,10 @@
- # (used by mpi executions). For example : /export/tmp, /home/tmp...
- shared_tmp : /tmp
+--- conf/config.orig	2008-12-05 15:11:26.000000000 +0100
++++ conf/config	2009-01-11 11:49:58.000000000 +0100
+@@ -53,6 +53,10 @@
+ # shared folders = for which remote copy is never necessary (comma separated)
+ shared_folders :
  
 +# directories for tests
 +rep_test : /tmp
@@ -11,7 +11,7 @@
  # choose True to create symbolic links instead of copying executable and catalogs
  symlink : True
  
-@@ -80,6 +84,7 @@
+@@ -83,6 +87,7 @@
  # for each version a config.VVV file must be created.
  # DO NOT EDIT FOLLOWING LINE !
  #?vers : VVV?
@@ -19,7 +19,7 @@
  
  #-------------------------------------------------------------------------------
  # ----- batch/interactive configuration
-@@ -122,12 +127,12 @@
+@@ -125,12 +130,12 @@
  # batch_job : to display information about jobs
  # batch_kil : to delete jobs
  # --- Sun Grid Engine example
@@ -38,17 +38,17 @@
  
  # --- LSF example
  #batch_nom : LSF
-@@ -138,12 +143,12 @@
- #batch_kil : /usr/opt/lsf/4.2/alpha5/bin/bkill
+@@ -141,19 +146,19 @@
+ #batch_kil : /usr/share/lsf/6.2/linux2.6-glibc2.3-ia64/bin/bkill
  
  # --- PBS example
 -#batch_nom : PBS
 +batch_nom : PBS
  #batch_ini : 
--#batch_sub : /local/openpbs-2.3.16/bin/qsub
+-#batch_sub : /usr/bin/qsub
 -#batch_jid : PBS_JOBID
--#batch_job : /local/openpbs-2.3.16/bin/qstat
--#batch_kil : /local/openpbs-2.3.16/bin/qdel
+-#batch_job : /usr/bin/qstat
+-#batch_kil : /usr/bin/qdel
 +batch_sub : LOCALBASE/bin/qsub
 +batch_jid : PBS_JOBID
 +batch_job : LOCALBASE/bin/qstat
@@ -56,7 +56,15 @@
  
  #-------------------------------------------------------------------------------
  # ----- MPI commands and parameters
-@@ -168,8 +173,11 @@
+ # mpirun
+ #    available arguments are : mpi_hostfile, mpi_nbnoeud, mpi_nbcpu
+ #    (use Python string formatting style)
+-mpirun_cmd : ?MPIRUN? -np %(mpi_nbcpu)s --hostfile %(mpi_hostfile)s %(program)s
++mpirun_cmd : ?MPIRUN? -np %(mpi_nbcpu)s %(program)s
+ 
+ # file which contains list of hosts
+ #mpi_hostfile : ?ASTER_ROOT?/aster-mpihosts
+@@ -183,8 +188,11 @@
  # ps commands : uncomment lines corresponding to your platform
  #ps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
  #ps_pid : /bin/ps -e --width=512 -opid -ocommand
@@ -70,11 +78,16 @@
  
  #-------------------------------------------------------------------------------
  # debug command :
-@@ -181,7 +189,7 @@
- #cmd_post : gdb -batch --command=@D @E @C
- #cmd_dbg : ddd --debugger gdb --command=@D --exec=@E --core=@C
- cmd_post : ?DEBUGGER_COMMAND_POST?
+@@ -193,10 +201,10 @@
+ #  @D will be remplaced by the filename which contains "where+quit"
+ #  @d will be remplaced by the string 'where ; quit'
+ #
+-#cmd_post : gdb -batch --command=@D @E @C
++cmd_post : gdb -batch --command=@D @E @C
+ #cmd_dbg : ddd --debugger gdb --command=@D @E @C
+-cmd_post : ?DEBUGGER_COMMAND_POST?
 -cmd_dbg : ?DEBUGGER_COMMAND?
++#cmd_post : ?DEBUGGER_COMMAND_POST?
 +cmd_dbg : gdb --dbx --command=@D @E @C
  
  #-------------------------------------------------------------------------------
