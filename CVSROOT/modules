@@ -2474,6 +2474,7 @@ dungeoncrawl                    ports/games/dungeoncrawl
 dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
 duplo                           ports/devel/duplo
+dupmerge                        ports/sysutils/dupmerge
 durep                           ports/sysutils/durep
 dv2jpg                          ports/multimedia/dv2jpg
 dv2sub                          ports/multimedia/dv2sub
@@ -3824,7 +3825,6 @@ gccmakedep                      ports/devel/gccmakedep
 gccxml                          ports/devel/gccxml
 gcdmaster                       ports/sysutils/gcdmaster
 gcfilms                         ports/multimedia/gcfilms
-gchempaint                      ports/science/gchempaint
 gchemutils                      ports/science/gchemutils
 gcipher                         ports/security/gcipher
 gcl                             ports/lang/gcl
@@ -5624,6 +5624,7 @@ ja-gxditview                    ports/japanese/gxditview
 ja-hex                          ports/japanese/hex
 ja-hns                          ports/japanese/hns
 ja-ical                         ports/japanese/ical
+ja-icanna                       ports/japanese/icanna
 ja-iiimf-le-canna               ports/japanese/iiimf-le-canna
 ja-iiimf-le-freewnn             ports/japanese/iiimf-le-freewnn
 ja-im-ja                        ports/japanese/im-ja
@@ -6031,6 +6032,7 @@ javavmwrapper                   ports/java/javavmwrapper
 jave6                           ports/graphics/jave6
 javel                           ports/java/javel
 javolution                      ports/devel/javolution
+jawstats                        ports/www/jawstats
 jaxen                           ports/java/jaxen
 jaxup                           ports/textproc/jaxup
 jbidwatcher                     ports/misc/jbidwatcher
@@ -6138,6 +6140,7 @@ jpeg2ps-letter                  ports/graphics/jpeg2ps-letter
 jpeginfo                        ports/graphics/jpeginfo
 jpegoptim                       ports/graphics/jpegoptim
 jpegpixi                        ports/graphics/jpegpixi
+jpg2pdf                         ports/graphics/jpg2pdf
 jpgraph                         ports/graphics/jpgraph
 jpgraph2                        ports/graphics/jpgraph2
 jpgtn                           ports/graphics/jpgtn
@@ -6511,6 +6514,7 @@ klat4                           ports/editors/klat4
 klavaro                         ports/games/klavaro
 klayout                         ports/cad/klayout
 kldfind                         ports/sysutils/kldfind
+kldpatch                        ports/sysutils/kldpatch
 kleansweep                      ports/sysutils/kleansweep
 klh10                           ports/emulators/klh10
 klibido                         ports/news/klibido
@@ -11701,6 +11705,7 @@ p5-Net-OpenDHT                  ports/net/p5-Net-OpenDHT
 p5-Net-OpenID-Consumer          ports/net/p5-Net-OpenID-Consumer
 p5-Net-OpenID-JanRain           ports/security/p5-Net-OpenID-JanRain
 p5-Net-OpenID-Server            ports/security/p5-Net-OpenID-Server
+p5-Net-OpenSSH                  ports/net/p5-Net-OpenSSH
 p5-Net-Packet                   ports/net/p5-Net-Packet
 p5-Net-Packet-Target            ports/net/p5-Net-Packet-Target
 p5-Net-ParseWhois               ports/net/p5-Net-ParseWhois
@@ -12524,8 +12529,10 @@ p5-Text-vCard                   ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData            ports/devel/p5-Text-vFile-asData
 p5-TheSchwartz                  ports/devel/p5-TheSchwartz
 p5-Thread-Apartment             ports/devel/p5-Thread-Apartment
+p5-Thread-Cancel                ports/devel/p5-Thread-Cancel
 p5-Thread-Pool-Simple           ports/devel/p5-Thread-Pool-Simple
 p5-Thread-Queue-Duplex          ports/devel/p5-Thread-Queue-Duplex
+p5-Thread-Suspend               ports/devel/p5-Thread-Suspend
 p5-Thrift                       ports/devel/p5-Thrift
 p5-Tie-Array-Pack               ports/devel/p5-Tie-Array-Pack
 p5-Tie-Array-Sorted             ports/devel/p5-Tie-Array-Sorted
@@ -14956,6 +14963,7 @@ p5-net-opendht                  ports/net/p5-Net-OpenDHT
 p5-net-openid-consumer          ports/net/p5-Net-OpenID-Consumer
 p5-net-openid-janrain           ports/security/p5-Net-OpenID-JanRain
 p5-net-openid-server            ports/security/p5-Net-OpenID-Server
+p5-net-openssh                  ports/net/p5-Net-OpenSSH
 p5-net-oscar                    ports/net-im/p5-Net-OSCAR
 p5-net-packet                   ports/net/p5-Net-Packet
 p5-net-packet-target            ports/net/p5-Net-Packet-Target
@@ -15807,8 +15815,10 @@ p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
 p5-theschwartz                  ports/devel/p5-TheSchwartz
 p5-thread-apartment             ports/devel/p5-Thread-Apartment
+p5-thread-cancel                ports/devel/p5-Thread-Cancel
 p5-thread-pool-simple           ports/devel/p5-Thread-Pool-Simple
 p5-thread-queue-duplex          ports/devel/p5-Thread-Queue-Duplex
+p5-thread-suspend               ports/devel/p5-Thread-Suspend
 p5-threads                      ports/devel/p5-threads
 p5-threads-shared               ports/devel/p5-threads-shared
 p5-thrift                       ports/devel/p5-Thrift
@@ -17918,6 +17928,7 @@ py-GinGin                       ports/www/py-GinGin
 py-HTMLgen                      ports/www/py-HTMLgen
 py-HyperText                    ports/textproc/py-HyperText
 py-Jinja                        ports/devel/py-Jinja
+py-Jinja2                       ports/devel/py-Jinja2
 py-Lightbox                     ports/www/py-Lightbox
 py-MySQL                        ports/databases/py-MySQL
 py-MySQLdb                      ports/databases/py-MySQLdb
@@ -18040,6 +18051,7 @@ py-eyed3                        ports/audio/py-eyed3
 py-ez_web                       ports/www/py-ez_web
 py-ez_xml                       ports/devel/py-ez_xml
 py-ezpyinline                   ports/devel/py-ezpyinline
+py-fail2ban                     ports/security/py-fail2ban
 py-fam                          ports/devel/py-fam
 py-fastaudio                    ports/audio/py-fastaudio
 py-fcgi                         ports/www/py-fcgi
@@ -18137,6 +18149,7 @@ py-jabber                       ports/net-im/py-jabber
 py-jaxml                        ports/textproc/py-jaxml
 py-jcc                          ports/devel/py-jcc
 py-jinja                        ports/devel/py-Jinja
+py-jinja2                       ports/devel/py-Jinja2
 py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
 py-jsonlib                      ports/devel/py-jsonlib
@@ -21464,6 +21477,7 @@ typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 u-boot                          ports/devel/u-boot
 uDrawGraph                      ports/graphics/uDrawGraph
+ua                              ports/sysutils/ua
 ua-ispell                       ports/textproc/ua-ispell
 uae                             ports/emulators/uae
 ubench                          ports/benchmarks/ubench
