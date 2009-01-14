@@ -15,8 +15,6 @@ COMMENT=	Software-based interactive video-effect system
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		does not build
-
 OPTIONS=	SDL	"Turn on SDL support"		on \
 		AALIB	"Turn on AALIB support"		on \
 		FFMPEG	"Turn on FFMPEG support"	on \
@@ -29,7 +27,7 @@ ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build uic_build
-USE_GNOME=	gnometarget
+USE_XORG=	xv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:18 autoconf:262 libtool:15
 AUTOMAKE_ARGS=	--foreign
