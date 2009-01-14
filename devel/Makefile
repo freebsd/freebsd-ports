@@ -352,6 +352,7 @@
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
     SUBDIR += fpc-bfd
+    SUBDIR += fpc-sdl
     SUBDIR += fpc-fcl-base
     SUBDIR += fpc-fcl-db
     SUBDIR += fpc-fcl-fpcunit
