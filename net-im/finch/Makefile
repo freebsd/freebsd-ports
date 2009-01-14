@@ -27,4 +27,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtkui \
 		--disable-nm
 
+MAN1=		finch.1
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/finch.1 ${MAN1PREFIX}/man/man1
+
 .include "${MASTERDIR}/Makefile"

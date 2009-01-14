@@ -32,6 +32,8 @@ WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui \
 		--disable-nm
 
+MAN1=		pidgin.1
+
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 	    	Makefile ${MAKE_ARGS} pidgin.desktop
@@ -40,5 +42,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
 	    	${PREFIX}/share/applications/pidgin.desktop
+	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${MAN1PREFIX}/man/man1
 
 .include "${MASTERDIR}/Makefile"

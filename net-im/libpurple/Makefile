@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +23,7 @@ USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
-		--with-dynamic_prpls=${PRPL_MODULES} \
+		--with-dynamic_prpls=${PRPL_MODULES:S/,$//} \
 		--disable-nm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
@@ -43,21 +43,30 @@ USE_PYTHON=	yes
 WITH_GNOME=	yes
 .endif
 
-MAN1=		pidgin.1 finch.1
-
 .endif
 
-PRPL_MODULES=	gg,irc,jabber,msn,novell,oscar,qq,simple,yahoo,zephyr
+PRPL_MODULES=
 
-OPTIONS=	SILC "Secure Internet Live Conferencing support" off \
+OPTIONS=	BONJOUR "Enable mDNS support" on \
+		DBUS "Enable DBUS bindings" on \
 		GNUTLS "GNUTLS encryption support" on \
 		NSS "Mozilla NSS encryption support" off \
 		SASL "Cyrus SASL support (for jabberd)" off \
-		DBUS "Enable DBUS bindings" on \
 		PERL "Perl scripting" off \
-		BONJOUR "Enable mDNS support" on \
-		SAMETIME "Enable Sametime client support" off \
-		TCLTK "Tcl/Tk scripting" off
+		TCLTK "Tcl/Tk scripting" off \
+		SAMETIME "The Lotus Sametime chat protocol" off \
+		SILC "The Secure Internet Live Conferencing protocol" off \
+		GG "The Gadu-Gadu chat protocol" on \
+		IRC "The Internet Relay Chat protocol" on \
+		JABBER "The Jabber/XMPP/Google Talk protocol" on \
+		MSN "The MSN Messenger protocol" on \
+		MYSPACE "The MySpaceIM protocol" on \
+		NOVELL "The Novell GroupWise chat protocol" on \
+		OSCAR "The AIM/ICQ/Oscar protocol" on \
+		QQ "The Tercent QQ chat protocol" on \
+		SIMPLE "The SIMPLE chat protocol" on \
+		YAHOO "The Yahoo! Messenger protocol" on \
+		ZEPHYR "The Zephyr chat protocol" on
 
 .if defined(WITH_GTKUI)
 OPTIONS+=	GTKSPELL "Spell checking support" on \
@@ -107,8 +116,10 @@ PLIST_SUB+=	CAP="@comment not installed: "
 .if !defined(WITHOUT_GNUTLS)
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls=yes
+PLIST_SUB+=		GNUTLS=""
 .else
 CONFIGURE_ARGS+=	--enable-gnutls=no
+PLIST_SUB+=		GNUTLS="@comment "
 .endif
 
 .if defined(WITH_NSS)
@@ -129,32 +140,13 @@ LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-cyrus-sasl
 .endif
 
-.if defined(WITH_SILC)
-LIB_DEPENDS+=		silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
-CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
-			--with-silc-libs=${LOCALBASE}/lib
-PLIST_SUB+=		SILC=""
-PRPL_MODULES:=		${PRPL_MODULES},silc
-.else
-PLIST_SUB+=		SILC="@comment not installed: "
-.endif
-
 .if !defined(WITHOUT_BONJOUR)
 LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	BONJOUR=""
-PRPL_MODULES:=	${PRPL_MODULES},bonjour
+PRPL_MODULES:=	bonjour,${PRPL_MODULES}
 .else
 CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	BONJOUR="@comment not installed: "
-.endif
-
-.if defined(WITH_SAMETIME)
-LIB_DEPENDS+=	meanwhile.1:${PORTSDIR}/net-im/meanwhile
-PLIST_SUB+=	SAMETIME=""
-PRPL_MODULES:=	${PRPL_MODULES},sametime
-.else
-PLIST_SUB+=	SAMETIME="@comment not installed: "
-CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
 .if defined(WITH_TCLTK)
@@ -171,6 +163,12 @@ PLIST_SUB+=		TCL:=""
 .else
 CONFIGURE_ARGS+=	--disable-tcl
 PLIST_SUB+=		TCL:="@comment not installed: "
+.endif
+
+.if defined(WITH_GTKUI) && !defined(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+.else
+CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if !defined(WITHOUT_DBUS)
@@ -198,10 +196,100 @@ CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL:="@comment not installed: "
 .endif
 
-.if defined(WITH_GTKUI) && !defined(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+.if defined(WITH_SAMETIME)
+LIB_DEPENDS+=	meanwhile.1:${PORTSDIR}/net-im/meanwhile
+PLIST_SUB+=	SAMETIME=""
+PRPL_MODULES:=	sametime,${PRPL_MODULES}
 .else
-CONFIGURE_ARGS+=	--disable-gtkspell
+PLIST_SUB+=	SAMETIME="@comment not installed: "
+CONFIGURE_ARGS+=--disable-meanwhile
+.endif
+
+.if defined(WITH_SILC)
+LIB_DEPENDS+=		silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
+CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
+			--with-silc-libs=${LOCALBASE}/lib
+PLIST_SUB+=		SILC=""
+PRPL_MODULES:=		silc,${PRPL_MODULES}
+.else
+PLIST_SUB+=		SILC="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_GG)
+PLIST_SUB+=		GG=""
+PRPL_MODULES:=		gg,${PRPL_MODULES}
+.else
+PLIST_SUB+=		GG="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_IRC)
+PLIST_SUB+=		IRC=""
+PRPL_MODULES:=		irc,${PRPL_MODULES}
+.else
+PLIST_SUB+=		IRC="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_JABBER)
+PLIST_SUB+=		JABBER=""
+PRPL_MODULES:=		jabber,${PRPL_MODULES}
+.else
+PLIST_SUB+=		JABBER="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_MSN)
+PLIST_SUB+=		MSN=""
+PRPL_MODULES:=		msn,${PRPL_MODULES}
+.else
+PLIST_SUB+=		MSN="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_MYSPACE)
+PLIST_SUB+=		MYSPACE=""
+PRPL_MODULES:=		myspace,${PRPL_MODULES}
+.else
+PLIST_SUB+=		MYSPACE="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_NOVELL)
+PLIST_SUB+=		NOVELL=""
+PRPL_MODULES:=		novell,${PRPL_MODULES}
+.else
+PLIST_SUB+=		NOVELL="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_OSCAR)
+PLIST_SUB+=		OSCAR=""
+PRPL_MODULES:=		oscar,${PRPL_MODULES}
+.else
+PLIST_SUB+=		OSCAR="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_QQ)
+PLIST_SUB+=		QQ=""
+PRPL_MODULES:=		qq,${PRPL_MODULES}
+.else
+PLIST_SUB+=		QQ="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_SIMPLE)
+PLIST_SUB+=		SIMPLE=""
+PRPL_MODULES:=		simple,${PRPL_MODULES}
+.else
+PLIST_SUB+=		SIMPLE="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_YAHOO)
+PLIST_SUB+=		YAHOO=""
+PRPL_MODULES:=		yahoo,${PRPL_MODULES}
+.else
+PLIST_SUB+=		YAHOO="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_ZEPHYR)
+PLIST_SUB+=		ZEPHYR=""
+PRPL_MODULES:=		zephyr,${PRPL_MODULES}
+.else
+PLIST_SUB+=		ZEPHYR="@comment not installed: "
 .endif
 
 pre-everything::

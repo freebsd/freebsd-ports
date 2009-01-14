@@ -624,5 +624,5 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/animations
 @dirrm share/pixmaps/pidgin
 @dirrmtry share/applications
-@dirrm lib/pidgin
+@dirrmtry lib/pidgin
 @dirrm include/pidgin
