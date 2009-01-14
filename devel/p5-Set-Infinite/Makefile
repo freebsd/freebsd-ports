@@ -7,6 +7,7 @@
 
 PORTNAME=	Set-Infinite
 PORTVERSION=	0.63
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,7 @@ COMMENT=	Set::Infinite - Sets of intervals
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Infinite.3 Set::Infinite::Basic.3
+MAN3=		Set::Infinite.3 Set::Infinite::Arithmetic.3 Set::Infinite::Basic.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README TODO

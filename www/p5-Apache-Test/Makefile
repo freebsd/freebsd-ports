@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Test
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +29,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestConfigData.3 \
 		Apache::TestMB.3 Apache::TestMM.3 Apache::TestReport.3 \
 		Apache::TestRequest.3 Apache::TestRun.3 Apache::TestRunPHP.3 \
-		Apache::TestRunPerl.3 Apache::TestSmoke.3 Apache::TestTrace.3 \
+		Apache::TestRunPerl.3 Apache::TestServer.3 \
+		Apache::TestSmoke.3 Apache::TestTrace.3 \
 		Apache::TestUtil.3 Bundle::ApacheTest.3
 
 .include <bsd.port.mk>

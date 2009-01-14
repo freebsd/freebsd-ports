@@ -7,7 +7,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/ \
 		CPAN
@@ -343,6 +343,7 @@ MAN3=		Bio::Align::AlignI.3 \
 		Bio::Graphics::Panel.3 \
 		Bio::Graphics::Pictogram.3 \
 		Bio::Graphics::RendererI.3 \
+		Bio::Graphics::Util.3 \
 		Bio::IdCollectionI.3 \
 		Bio::IdentifiableI.3 \
 		Bio::Index::Abstract.3 \
