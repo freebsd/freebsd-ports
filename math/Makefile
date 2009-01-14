@@ -71,6 +71,7 @@
     SUBDIR += fftw3-long
     SUBDIR += fityk
     SUBDIR += fpc-fftw
+    SUBDIR += fpc-numlib
     SUBDIR += freefem
     SUBDIR += freefem++
     SUBDIR += freemat
