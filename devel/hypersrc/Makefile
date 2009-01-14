@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.4.20
-PORTREVISION=	2
+PORTVERSION=	5.4.21
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
 		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adox@mcx2.org
 COMMENT=	Source code browser
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
