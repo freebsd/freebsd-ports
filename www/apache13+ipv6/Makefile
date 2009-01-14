@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.don.to/arc/
 PATCHFILES=	apache-1.3.41-v6-20080122.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The extremely popular Apache http server. Very fast, very clean
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
