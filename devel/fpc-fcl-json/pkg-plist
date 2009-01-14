@@ -1,0 +1,18 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjson.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonscanner.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonparser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonconf.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/fpjson.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonscanner.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonparser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/jsonconf.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpfpjson.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonscanner.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonparser.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json/libpjsonconf.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-json
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
