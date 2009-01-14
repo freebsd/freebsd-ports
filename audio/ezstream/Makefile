@@ -7,40 +7,59 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://svn.xiph.org/releases/ezstream/
+MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line utility for streaming to icecast servers
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
+OPTIONS=	TAGLIB "TagLib support" on
+
+USE_GNOME=	libxml2
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-
+MAN1=		ezstream.1
+PORTDOCS=	NEWS README
+PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
+		ezstream_reencode_mp3.xml ezstream_reencode_theora.xml \
+		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
+		ezstream_vorbis.xml meta.sh play.sh
 PLIST_FILES=	bin/ezstream
-PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml ezstream_reencode_mp3.xml \
-		ezstream_reencode_theora.xml ezstream_reencode_vorbis.xml \
-		ezstream_stdin_vorbis.xml ezstream_vorbis.xml meta.sh play.sh
 
-MAN1=	ezstream.1
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_TAGLIB)
+CONFIGURE_ARGS+=	--without-taglib
+.else
+LIB_DEPENDS+=	tag.6:${PORTSDIR}/audio/taglib
+CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
+.endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|COPYING NEWS README||g; s|examples||g; \
-	    s|install-dist_docDATA||g' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|examples||g ; \
+		 s|: install-dist_docDATA|:|g' ${WRKSRC}/Makefile.in
 
-.if !defined(NOPORTEXAMPLES)
 post-install:
-	${INSTALL} -d ${EXAMPLESDIR}
-.for ex in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
