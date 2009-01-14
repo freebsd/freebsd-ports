@@ -23,6 +23,7 @@ USE_RC_SUBR=	dansguardian
 
 CONFLICTS=	dansguardian-2.[678]*
 LATEST_LINK=	dansguardian-devel
+IGNORE=		dansGuardian 2.10 has gone stable, use www/dansguardian
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
