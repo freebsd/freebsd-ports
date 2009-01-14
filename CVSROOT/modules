@@ -8749,6 +8749,7 @@ mupen64-tr64                    ports/emulators/mupen64-tr64
 mupen64plus                     ports/emulators/mupen64plus
 mupen64plus-base                ports/emulators/mupen64plus-base
 mupen64plus-dummyaudio          ports/emulators/mupen64plus-dummyaudio
+mupen64plus-dummyvideo          ports/emulators/mupen64plus-dummyvideo
 mupen64plus-glide               ports/emulators/mupen64plus-glide
 mupen64plus-gln64               ports/emulators/mupen64plus-gln64
 mupen64plus-input               ports/emulators/mupen64plus-input
