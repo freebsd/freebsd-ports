@@ -3476,6 +3476,7 @@ fpc-libpng                      ports/graphics/fpc-libpng
 fpc-mysql                       ports/databases/fpc-mysql
 fpc-ncurses                     ports/graphics/fpc-ncurses
 fpc-netdb                       ports/net/fpc-netdb
+fpc-numlib                      ports/math/fpc-numlib
 fpc-odbc                        ports/databases/fpc-odbc
 fpc-opengl                      ports/graphics/fpc-opengl
 fpc-openssl                     ports/security/fpc-openssl
