@@ -154,7 +154,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Co
 .endif
 
 .if defined(WITH_PUBLISHCSV)
-BUILD_DEPENDS+=	${SITE_PERL}/Text/CSV_PP.pm:${PORTSDIR}/textproc/p5-Text-CSV_PP
+BUILD_DEPENDS+=	${SITE_PERL}/Text/CSV_PP.pm:${PORTSDIR}/textproc/p5-Text-CSV
 .endif
 
 .if defined(WITH_FILDEGYT)
