@@ -28,7 +28,6 @@
     SUBDIR += fox12
     SUBDIR += fox14
     SUBDIR += fox16
-    SUBDIR += fpc-forms
     SUBDIR += fpc-gnome
     SUBDIR += fpc-gnome1
     SUBDIR += fpc-gtk
