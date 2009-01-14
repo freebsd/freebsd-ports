@@ -30,7 +30,6 @@
     SUBDIR += fox16
     SUBDIR += fpc-gnome
     SUBDIR += fpc-gnome1
-    SUBDIR += fpc-gtk
     SUBDIR += fpc-gtk1
     SUBDIR += fpc-gtk2
     SUBDIR += fpc-xforms
