@@ -1,3 +1,8 @@
+bin/dbeg1-ftpd.pl
+bin/ftpd.pl
+bin/inmem-ftpd.pl
+bin/proxy-ftpd.pl
+bin/ro-ftpd.pl
 %%SITE_PERL%%/Net/FTPServer.pm
 %%SITE_PERL%%/Net/FTPServer/DBeg1/DirHandle.pm
 %%SITE_PERL%%/Net/FTPServer/DBeg1/FileHandle.pm
@@ -19,11 +24,6 @@
 %%SITE_PERL%%/Net/FTPServer/RO/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/RO/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
-sbin/dbeg1-ftpd.pl
-sbin/ftpd.pl
-sbin/inmem-ftpd.pl
-sbin/proxy-ftpd.pl
-sbin/ro-ftpd.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/FTPServer/RO
