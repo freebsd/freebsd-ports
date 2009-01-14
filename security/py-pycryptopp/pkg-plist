@@ -14,17 +14,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/cipher/aes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/ecdsa.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/rsa.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/ecdsamodule.cpp
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/rsamodule.cpp
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/rsa.so
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/ecdsa.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/rsa.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/ecdsa.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/rsa.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/publickey/ecdsa.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/hash/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/hash/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/hash/sha256.pyo
