@@ -7,7 +7,7 @@
 
 PORTNAME=	eficas
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.14.0-1
+DISTVERSION=	1.15.0-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	french cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
 		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-ASTER_VER=	9.3.0
-ASTER_DISTVERSION=	${ASTER_VER}-2
+ASTER_VER=	9.4.0
+ASTER_DISTVERSION=	${ASTER_VER}-1
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 USE_PYTHON=	yes
@@ -43,8 +43,16 @@ EF_LANG=	fr
 EF_LANG=	ang
 .endif
 
-ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
-FIXSH=		bureau.py cataediteur.py panels.py
+.if !defined(WITHOUT_QT)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
+SUB_FILES+=	qtEficas
+.endif
+
+ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py	\
+		Traducteur/traduitV8V9.py Traducteur/traduitV7V8.py Aster/test_eficas.py\
+		Aster/qtEficas_aster.py
+FIXSHTK=	bureau.py cataediteur.py panels.py
+FIXSHQT=	qtCommun.py
 
 post-extract:
 	(cd ${WRKDIR} &&	\
@@ -58,8 +66,10 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
 		-e "s|^#!*./bin/env python|#!${PYTHON_CMD}|" ${WRKSRC}/${FILE}
 .endfor
-.for FILE in ${FIXSH}
-	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/InterfaceTK/${FILE}
+.for tk in TK QT
+. for FILE in ${FIXSH${tk}}
+	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/Interface${tk}/${FILE}
+. endfor
 .endfor
 	${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
@@ -73,6 +83,9 @@ do-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
+.if !defined(WITHOUT_QT)
+	@${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} ${WRKDIR}/Doc/* ${DOCSDIR}
