@@ -575,7 +575,6 @@
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV-Simple
-    SUBDIR += p5-Text-CSV_PP
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-Capitalize
     SUBDIR += p5-Text-CharWidth

@@ -3751,3 +3751,4 @@ x11-toolkits/gnome|x11-toolkits/gnome1|2009-01-13|This unit was renamed
 devel/fpc-gconf||2008-01-13|This is now part of fpc-gnome1
 x11-toolkits/fpc-zvt||2008-01-13|This is now part of fpc-gnome1
 net/fpc-netdb||2008-01-13|This is now part of fpc-fcl-net
+textproc/p5-Text-CSV_PP||2009-01-14|Has expired: textproc/Text-CSV_PP was merged into textproc/p5-Text-CSV
