@@ -1,11 +1,12 @@
+include/mysql++/autoflag.h
 include/mysql++/coldata.h
+include/mysql++/common.h
 include/mysql++/connection.h
 include/mysql++/const_string.h
 include/mysql++/convert.h
 include/mysql++/custom-macros.h
 include/mysql++/custom.h
 include/mysql++/datetime.h
-include/mysql++/defs.h
 include/mysql++/exceptions.h
 include/mysql++/field_names.h
 include/mysql++/field_types.h
@@ -16,7 +17,6 @@ include/mysql++/myset.h
 include/mysql++/mysql++.h
 include/mysql++/noexceptions.h
 include/mysql++/null.h
-include/mysql++/platform.h
 include/mysql++/qparms.h
 include/mysql++/query.h
 include/mysql++/querydef.h
@@ -31,30 +31,7 @@ include/mysql++/tiny_int.h
 include/mysql++/transaction.h
 include/mysql++/type_info.h
 include/mysql++/vallist.h
-@dirrm include/mysql++
 lib/libmysqlpp.so
-lib/libmysqlpp.so.3
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/cgi_image.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom2.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom3.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom4.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom5.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom6.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/dbinfo.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/fieldinf1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/load_file.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/multiquery.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/resetdb.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple2.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/simple3.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/stock.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/updel.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/usequery.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/util.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/util.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/xaction.cpp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+lib/libmysqlpp.so.2
+lib/libmysqlpp.so.%%VERSION%%
+@dirrm include/mysql++
