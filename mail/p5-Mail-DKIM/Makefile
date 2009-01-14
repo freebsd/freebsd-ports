@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-DKIM
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,6 +33,7 @@ MAN3=		Mail::DKIM.3 \
     		Mail::DKIM::DkSignature.3 \
 		Mail::DKIM::Policy.3 \
 		Mail::DKIM::PrivateKey.3 \
+		Mail::DKIM::PublicKey.3 \
 		Mail::DKIM::Signature.3 \
 		Mail::DKIM::Signer.3 \
 		Mail::DKIM::SignerPolicy.3 \

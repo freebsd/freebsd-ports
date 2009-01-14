@@ -7,6 +7,7 @@
 
 PORTNAME=	SVG
 PORTVERSION=	2.44
+PORTREVISION=	1
 CATEGORIES=	textproc graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,8 @@ COMMENT=	Perl extension for generating Scalable Vector Graphics (SVG) documents
 
 PERL_CONFIGURE=	yes
 
-MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Manual.3 SVG::XML.3
+MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Extension.3 \
+		SVG::Manual.3 SVG::XML.3
 
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.p[lm]" -or -name "*.cgi" \

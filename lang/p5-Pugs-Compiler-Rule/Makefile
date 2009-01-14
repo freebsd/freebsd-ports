@@ -8,6 +8,7 @@
 
 PORTNAME=	Pugs-Compiler-Rule
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
@@ -33,6 +34,7 @@ MAN3=	Pugs::Compiler::Regex.3 \
 	Pugs::Emitter::Grammar::Perl5.3 \
 	Pugs::Grammar::Precedence.3 \
 	Pugs::Runtime::Match.3 \
+	Pugs::Runtime::Regex.3 \
 	Pugs::Runtime::StrPos.3 \
     	Pugs::Runtime::Tracer.3
 

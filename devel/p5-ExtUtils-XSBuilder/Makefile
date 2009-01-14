@@ -7,6 +7,7 @@
 
 PORTNAME=	ExtUtils-XSBuilder
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +20,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::PODTemplate.3 \
+MAN3=		ExtUtils::XSBuilder.3 ExtUtils::XSBuilder::C::grammar.3 \
+		ExtUtils::XSBuilder::PODTemplate.3 \
 		ExtUtils::XSBuilder::ParseSource.3 \
 		ExtUtils::XSBuilder::WrapXS.3 ExtUtils::xsbuilder.osc2002.3
 
