@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	0.6.0.1
-PORTREVISION=	1
+PORTVERSION=	0.7.1.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin
 
@@ -15,15 +14,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui rcc network xml moc_build qmake_build uic_build
+QT_COMPONENTS=	corelib dbus gui network xml \
+		moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD= yes
-CMAKE_ARGS+=	-DMANPAGE_DIRECTORY="${MANPREFIX}/man/man1"
+CMAKE_USE_PTHREAD=	yes
+CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
+		-DMANPAGE_DIRECTORY="${MANPREFIX}/man/man1"
 
 MANCOMPRESSED=	yes
 MAN1=		qtm.1
 
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/qtm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in Changelog INSTALL README
