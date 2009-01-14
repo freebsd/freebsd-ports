@@ -360,6 +360,7 @@
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
+    SUBDIR += fpc-fcl-process
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
