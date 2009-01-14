@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a53
+PORTVERSION=	2.01.01a55
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -75,7 +75,7 @@ PKGNAMESUFFIX?=	-devel
 .include <bsd.port.pre.mk>
 
 CCOM!=		${BASENAME} ${CC}
-MAKE_ENV=	CCOM=${CCOM} LANG=C INS_BASE=${LOCALBASE}
+MAKE_ENV=	CCOM=${CCOM} LANG=C INS_BASE=${LOCALBASE} INS_RBASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
 
 .if exists(${LOCALBASE}/lib/libiconv.a) || \
