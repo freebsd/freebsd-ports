@@ -1,6 +1,6 @@
-%%WITH_X11%%bin/floppyd
-%%WITH_X11%%bin/floppyd_installtest
 bin/amuFormat.sh
+%%X11%%bin/floppyd
+%%X11%%bin/floppyd_installtest
 bin/mattrib
 bin/mbadblocks
 bin/mcat
@@ -27,11 +27,8 @@ bin/mshowfat
 bin/mtools
 bin/mtoolstest
 bin/mtype
-bin/mwrite
 bin/mxtar
 bin/mzip
 @unexec if cmp -s %D/etc/mtools.conf %D/etc/mtools.conf.sample; then rm -f %D/etc/mtools.conf; fi
 etc/mtools.conf.sample
 @exec if [ ! -f %D/etc/mtools.conf ]; then cp %B/%f %D/etc/mtools.conf; fi
-@exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
-@unexec rm %D/man/man1/mwrite.1.gz
