@@ -98,7 +98,6 @@
     SUBDIR += mupen64
     SUBDIR += mupen64-base
     SUBDIR += mupen64-dummyaudio
-    SUBDIR += mupen64-dummyvideo
     SUBDIR += mupen64-glide
     SUBDIR += mupen64-gln64
     SUBDIR += mupen64-input
@@ -112,6 +111,7 @@
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-base
     SUBDIR += mupen64plus-dummyaudio
+    SUBDIR += mupen64plus-dummyvideo
     SUBDIR += mupen64plus-glide
     SUBDIR += mupen64plus-gln64
     SUBDIR += mupen64plus-input
