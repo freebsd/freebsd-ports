@@ -15,8 +15,6 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview3.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview4.mapyrus
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapyrus.lof
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapyrus.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapyrus.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/muc_freight.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piechart.mapyrus
