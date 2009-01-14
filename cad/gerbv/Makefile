@@ -7,18 +7,20 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Free Gerber Viewer
 
-USE_GNOME=	desktopfileutils gnometarget gtk20
-GNU_CONFIGURE=	yes
+USE_GNOME=	desktopfileutils gnomehack gtk20
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		gerbv.1
 
