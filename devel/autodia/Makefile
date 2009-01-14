@@ -8,11 +8,11 @@
 
 PORTNAME=	autodia
 PORTVERSION=	2.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Tree/TEEJAY
-	
+
 DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
@@ -33,6 +33,10 @@ MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Diagram.3 \
 	Autodia::Diagram::Class.3 \
 	Autodia::Diagram::Component.3 \
+	Autodia::Diagram::Dependancy.3 \
+	Autodia::Diagram::Inheritance.3 \
+	Autodia::Diagram::Object.3 \
+	Autodia::Diagram::Superclass.3 \
 	Autodia::Handler.3 \
 	Autodia::Handler::Cpp.3 \
 	Autodia::Handler::DBI.3 \
