@@ -3745,3 +3745,4 @@ net-mgmt/hobbit-client|net-mgmt/xymon-client|2009-01-11|Renamed
 net-mgmt/hobbit-server|net-mgmt/xymon-server|2009-01-11|Renamed
 science/gchempaint|science/gchemutils|2009-01-13|gchempaint was integrated into gchemutils
 net/fpc-libasync|devel/fpc-fcl-async|2009-01-13|This unit was renamed
+x11-toolkits/forms|x11-toolkits/xforms|2009-01-13|This unit was renamed
