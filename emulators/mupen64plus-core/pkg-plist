@@ -1,49 +1,60 @@
 bin/mupen64plus
+share/applications/mupen64plus.desktop
 %%DATADIR%%/config/mupen64plus.conf
-%%DATADIR%%/config/mupen64plus.ini
-%%DATADIR%%/lang/catalan.lng
-%%DATADIR%%/lang/dutch.lng
-%%DATADIR%%/lang/english.lng
-%%DATADIR%%/lang/french.lng
-%%DATADIR%%/lang/german.lng
-%%DATADIR%%/lang/italian.lng
-%%DATADIR%%/lang/pt_BR.lng
-%%DATADIR%%/lang/spanish.lng
-%%DATADIR%%/lang/swedish.lng
+%%DATADIR%%/icons/view-fullscreen.png
+%%DATADIR%%/icons/cpu.png
+%%DATADIR%%/icons/preferences-system.png
+%%DATADIR%%/icons/media-playback-stop.png
+%%DATADIR%%/icons/audio-card.png
+%%DATADIR%%/icons/edit-delete.png
+%%DATADIR%%/icons/input-gaming.png
+%%DATADIR%%/icons/video-display.png
+%%DATADIR%%/icons/document-open.png
+%%DATADIR%%/icons/document-save-all.png
+%%DATADIR%%/icons/mupen64plus.png
+%%DATADIR%%/icons/gtk-about.png
+%%DATADIR%%/icons/document-save-as.png
+%%DATADIR%%/icons/application-exit.png
+%%DATADIR%%/icons/window-close.png
+%%DATADIR%%/icons/star.png
+%%DATADIR%%/icons/media-playback-pause.png
+%%DATADIR%%/icons/document-save.png
+%%DATADIR%%/icons/mupen64cart.png
+%%DATADIR%%/icons/document-revert.png
+%%DATADIR%%/icons/view-refresh.png
+%%DATADIR%%/icons/media-playback-start.png
+%%DATADIR%%/icons/document-properties.png
+%%DATADIR%%/icons/dialog-warning.png
+%%DATADIR%%/icons/dialog-error.png
+%%DATADIR%%/icons/dialog-question.png
+%%DATADIR%%/icons/LICENSES
+%%DATADIR%%/icons/applications-utilities.png
 %%DATADIR%%/icons/australia.png
-%%DATADIR%%/icons/configure-small.png
-%%DATADIR%%/icons/configure.png
 %%DATADIR%%/icons/europe.png
 %%DATADIR%%/icons/france.png
-%%DATADIR%%/icons/fullscreen-small.png
-%%DATADIR%%/icons/fullscreen.png
 %%DATADIR%%/icons/germany.png
-%%DATADIR%%/icons/graphics.png
-%%DATADIR%%/icons/input.png
 %%DATADIR%%/icons/italy.png
 %%DATADIR%%/icons/japan.png
 %%DATADIR%%/icons/japanusa.png
-%%DATADIR%%/icons/logo.png
-%%DATADIR%%/icons/logo.xpm
-%%DATADIR%%/icons/messagebox-error.png
-%%DATADIR%%/icons/messagebox-info.png
-%%DATADIR%%/icons/messagebox-quest.png
-%%DATADIR%%/icons/messagebox-warn.png
-%%DATADIR%%/icons/n64cart.xpm
-%%DATADIR%%/icons/open-small.png
-%%DATADIR%%/icons/open.png
-%%DATADIR%%/icons/pause-small.png
-%%DATADIR%%/icons/pause.png
-%%DATADIR%%/icons/play-small.png
-%%DATADIR%%/icons/play.png
-%%DATADIR%%/icons/rsp.png
-%%DATADIR%%/icons/sound.png
+%%DATADIR%%/icons/mupen64cart.svg
+%%DATADIR%%/icons/mupen64logo.png
+%%DATADIR%%/icons/mupen64logo.svg
+%%DATADIR%%/icons/mupen64plus-large.png
+%%DATADIR%%/icons/mupen64plus.svg
+%%DATADIR%%/icons/preferences-system-network.png
 %%DATADIR%%/icons/spain.png
-%%DATADIR%%/icons/stop-small.png
-%%DATADIR%%/icons/stop.png
 %%DATADIR%%/icons/usa.png
-%%PORTDOCS%%%%DOCSDIR%%/README.vcr
+%%DATADIR%%/lang/english.lng
+%%TRANSLATIONS%%%%DATADIR%%/translations/mupen64plus_de.ts
+%%TRANSLATIONS%%%%DATADIR%%/translations/mupen64plus_en.ts
+%%TRANSLATIONS%%%%DATADIR%%/translations/mupen64plus_nb.ts
+%%TRANSLATIONS%%%%DATADIR%%/translations/mupen64plus_nl.ts
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
+@dirrmtry share/applications
+%%TRANSLATIONS%%@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/icons/32x32
+@dirrm %%DATADIR%%/icons/22x22
+@dirrm %%DATADIR%%/icons/16x16
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%/config

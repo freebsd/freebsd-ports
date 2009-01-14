@@ -1,18 +1,7 @@
---- rice_video/Makefile	2008-10-13 21:31:48.000000000 -0500
-+++ rice_video/Makefile	2008-12-15 01:54:25.000000000 -0500
-@@ -4,8 +4,8 @@
- include ../pre.mk
- 
- # local CFLAGS, LIBS, and LDFLAGS
--CFLAGS += -DUSE_GTK `sdl-config --cflags` $(GTK_FLAGS) -fpic -DPIC -Wall
--LDFLAGS	+= -L/usr/X11R6/lib `sdl-config --libs` -lGL -shared -Wl,-Bsymbolic
-+CFLAGS += -DUSE_GTK  $(SDL_FLAGS) $(GTK_FLAGS) -fpic -DPIC -Wall
-+LDFLAGS	+= -L$(LOCALBASE)/lib $(SDL_LIBS) -lGL -shared -Wl,-Bsymbolic
- 
- # set options
- 
-@@ -101,7 +101,7 @@
- all: ricevideo.so
+--- rice_video/Makefile	2009-01-13 00:49:24.000000000 -0500
++++ rice_video/Makefile	2009-01-13 00:50:11.000000000 -0500
+@@ -131,7 +131,7 @@
+ all: version.h ricevideo.so
  
  ricevideo.so: $(OBJECTS)
 -	$(LD) $(OBJECTS) $(GTK_LIBS) $(LDFLAGS) -o $@

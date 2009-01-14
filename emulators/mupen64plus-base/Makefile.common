@@ -4,26 +4,39 @@ DISTNAME=		${PORTNAME:S/m/M/:S/pl/Pl/}-${PORTVERSION:S/./-/g}-src
 PATCHDIR=		${.CURDIR}/files
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 
-EXTRACT_AFTER_ARGS=	"${DISTNAME}/Makefile" ${DISTNAME}/pre.mk ${DISTNAME}/release.mk \
-				"${DISTNAME}/config/*" "${DISTNAME}/main/*" "${DISTNAME}/plugins/*" \
-					"${DISTNAME}/opengl/*"
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - "${DISTNAME}/Makefile" "${DISTNAME}/mupen64plus.desktop.in" \
+				"${DISTNAME}/pre.mk" "${DISTNAME}/release.mk" "${DISTNAME}/config/*" \
+					"${DISTNAME}/main/*" "${DISTNAME}/plugins/*" "${DISTNAME}/opengl/*"
 
 .if ${PKGNAMESUFFIX} == "-base"
 USE_GL=		yes
 USE_SDL=	sdl
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-.	if defined(HAVE_VCR)
-LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
-MAKE_ENV+=	VCR=1
-.	endif
-.	if defined(HAVE_NOGUI)
+.	if defined(WITH_NOGUI)
 USE_GNOME=	#
-MAKE_ENV+=	NOGUI_ONLY=1
+
+MAKE_ENV+=	GUI=	NONE
 .	endif
+.if defined(WITH_QT4)
+USE_GNOME=	#
+USE_QT_VER=	4
+
+BUILD_DEPENDS+=	lrelease-qt4:${PORTSDIR}/devel/qt4-linguist
+
+MAKE_ENV+=	GUI=	QT4
+HAVE_QT4=	yes
+
+PLIST_SUB+=	TRANSLATIONS=""
+.else
+PLIST_SUB+=	TRANSLATIONS="@comment "
+.endif
+
 ALL_TARGET=		mupen64plus
-EXTRACT_AFTER_ARGS+=	"${DISTNAME}/RELEASE" "${DISTNAME}/README.vcr" "${DISTNAME}/doc/*" "${DISTNAME}/lang/*" \
-				"${DISTNAME}/icons/*" "${DISTNAME}/memory/*" "${DISTNAME}/r4300/*" "${DISTNAME}/debugger/*"
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/RELEASE" "${DISTNAME}/README" "${DISTNAME}/doc/*" "${DISTNAME}/lang/*" \
+				"${DISTNAME}/icons/*" "${DISTNAME}/memory/*" "${DISTNAME}/r4300/*" "${DISTNAME}/debugger/*" \
+						"${DISTNAME}/translations/*"
+
 MAN1=			mupen64plus.1
 .else
 EXTRA_PATCHES?=		${.CURDIR}/../mupen64plus-base/files/patch-Makefile \
@@ -34,6 +47,16 @@ PLIST=			${WRKDIR}/pkg-plist
 .if ${PKGNAMESUFFIX} == "-dummyaudio"
 ALL_TARGET=		plugins/dummyaudio.so
 EXTRACT_AFTER_ARGS+=	"${DISTNAME}/dummy_audio/*"
+.endif
+
+.if ${PKGNAMESUFFIX} == "-dummyinput"
+ALL_TARGET=		plugins/dummyinput.so
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/dummy_input/*"
+.endif
+
+.if ${PKGNAMESUFFIX} == "-dummyvideo"
+ALL_TARGET=		plugins/dummyvideo.so
+EXTRACT_AFTER_ARGS+=	"${DISTNAME}/dummy_video/*"
 .endif
 
 .if ${PKGNAMESUFFIX} == "-sdlinput"
@@ -82,8 +105,6 @@ EXTRACT_AFTER_ARGS+=	"${DISTNAME}/glide64/*"
 ALL_TARGET=             plugins/ricevideo.so
 EXTRACT_AFTER_ARGS+=    "${DISTNAME}/rice_video/*"
 .endif
-
-EXTRACT_AFTER_ARGS+=	-d ${WRKDIR}
 
 post-configure:
 .for f in ${FIXFILES}
@@ -135,22 +156,29 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 	@${MKDIR} ${DATADIR}/config
-	${INSTALL_DATA} ${WRKSRC}/config/mupen64plus.ini ${DATADIR}/config/
 	${INSTALL_DATA} ${WRKSRC}/config/mupen64plus.conf ${DATADIR}/config/
 
 	@${MKDIR} ${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${DATADIR}/lang/
 
 	@${MKDIR} ${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
+	@cd ${WRKSRC}/icons && \
+		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/icons/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "${WRKSRC}/icons/{}" "${DATADIR}/icons/" \;
 
+	@${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
+	
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${PREFIX}/man/man1/
 
+.	if defined(HAVE_QT4)
+		@${MKDIR} ${DATADIR}/translations
+		${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
+.	endif
 
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/RELEASE ${DOCSDIR}/RELEASE
-		${INSTALL_DATA} ${WRKSRC}/README.vcr ${DOCSDIR}/README.vcr
 .	endif
 .else
 	@${MKDIR} ${DATADIR}/plugins
