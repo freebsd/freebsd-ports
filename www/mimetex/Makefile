@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimetex
-PORTVERSION=	20071005.1.64
+PORTVERSION=	20080906.1.70
 CATEGORIES=	www math
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
 		http://www.forkosh.com/
@@ -57,6 +57,5 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
-
 
 .include <bsd.port.mk>
