@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	geomview
-PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTVERSION=	1.9.4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/geomview
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
@@ -17,62 +16,73 @@ COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 NOT_FOR_ARCHS=	amd64
 NOT_FOR_ARCHS_REASON=	Segfaults on amd64
 
+OPTIONS=	MOTION_AVG "Use experimental motion averaging code" off
+
+USE_BZIP2=	yes
 USE_MOTIF=	yes
-USE_GL=		glut
+USE_GL=		glu
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--with-motif=${LOCALBASE} --with-opengl=${LOCALBASE}
+USE_LDCONFIG=	yes
 
-USE_AUTOTOOLS=	autoconf:213
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-opengl=${LOCALBASE}
-
-MANCOMPRESSED=	no
-MAN1=		geomview.1 togeomview.1 bdy.1 oogl2rib.1 anytooff.1 \
-		bez2mesh.1 offconsol.1 polymerge.1 vrml2oogl.1 clip.1 \
-		math2oogl.1 oogl2vrml.1 anytoucd.1 ucdtooff.1
-MAN3=		lisp.3
-MAN5=		oogl.5 geomview.5
-
-INFO=		geomview-7 geomview-6 geomview-5 geomview-4 geomview-3 \
-		geomview-2 geomview-1 geomview
-
-MAN_FILES=	oogl.5 geomview.5
-DOC_FILES=	gvplot.txt oogltour OOGL.m.txt README
-
-EXAMPLE_FILES=	example1.c example2.c example3.c example4.tcl
+MAN1=		animate.1gv anytooff.1gv anytoucd.1gv bdy.1gv bez2mesh.1gv \
+		clip.1gv geomview.1gv hvectext.1gv math2oogl.1gv nose.1gv \
+		offconsol.1gv oogl2rib.1gv oogl2vrml.1gv polymerge.1gv \
+		togeomview.1gv ucdtooff.1gv vrml2oogl.1gv
+MAN3=		anytopl.3gv bdy.3gv fsaparse.3gv geomutil.3gv lisp.3gv \
+		plcombine.3gv plconsol.3gv
+MAN5=		discgrp.5gv geomview.5gv oogl.5gv
+INFO=		geomview
 
 # Set "CPU" type for Geomview make
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
 MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
-AC_FAKE_FILES=	aclocal.m4 config.h.in stamp-h stamp-h.in
+.include <bsd.port.pre.mk>
 
-post-configure:
-	cd ${WRKSRC}; ${TOUCH} ${AC_FAKE_FILES}
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
-
-post-install:
-	${MKDIR} ${EXAMPLESDIR}
-.for i in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${EXAMPLESDIR}
-.endfor
-.for i in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${PREFIX}/man/man3
-.endfor
-.for i in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${PREFIX}/man/man5
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${DOCSDIR}/figs ${DOCSDIR}/html \
-	    ${DOCSDIR}/html/pix
-.for i in ${DOC_FILES}
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/figs/*.ps ${DOCSDIR}/figs
-	${INSTALL_MAN} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/doc/html/pix/*.gif ${DOCSDIR}/html/pix
-.for i in ${INFO}
-	${MV} ${PREFIX}/info/${i} ${PREFIX}/info/${i}.info
-.endfor
+.if defined(WITH_MOTION_AVG)
+CONFIGURE_ARGS+=	--enable-motion-averaging
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||g' ${WRKSRC}/Makefile.in
+.for i in src/bin/geomutil/math2oogl/Makefile.in \
+	src/bin/geomutil/maple2oogl/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am:/s|install-docDATA||g' ${WRKSRC}/${i}
+.endfor
+
+post-build:
+	cd ${WRKSRC}/doc && /usr/bin/makeinfo --no-split --no-validate \
+		-o geomview.info geomview.texi
+
+post-install:
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.3gv ${MAN3PREFIX}/man/man3
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.5gv ${MAN5PREFIX}/man/man5
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.info ${PREFIX}/${INFO_PATH}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in OOGL.m.txt README README.gvplot geomview.pdf geomview-pt_BR.pdf \
+	oogltour oogltour-pt_BR
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${DOCSDIR}/html
+	cd ${WRKSRC}/doc/geomview.html \
+		&& ${INSTALL_DATA} *.html ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/html/figs
+	cd ${WRKSRC}/doc/figs \
+		&& ${INSTALL_DATA} *.png ${DOCSDIR}/html/figs
+	@${MKDIR} ${DOCSDIR}/html/pt_BR
+	cd ${WRKSRC}/doc/geomview-pt_BR.html \
+		&& ${INSTALL_DATA} *.html ${DOCSDIR}/html/pt_BR
+	cd ${DOCSDIR}/html/pt_BR && ${LN} -sf ../figs .
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.c ${EXAMPLESDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.tcl ${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.post.mk>
