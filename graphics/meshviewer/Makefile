@@ -6,41 +6,36 @@
 # $FreeBSD$
 
 PORTNAME=	meshviewer
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mview
+MASTER_SITES=	SF/mview
 DISTNAME=	mview-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh Viewer
 
-USE_QT_VER=	3
-USE_GL=		yes
-USE_GMAKE=	yes
-MAKE_ENV=	MOC="${MOC}" \
-		QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui opengl moc_build qmake_build
+
+PORTDOCS=	*
+PLIST_FILES=	bin/mview
+
+post-extract:
+	@${RM} -f ${WRKSRC}/qt4/*.moc.cpp
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^INCPATH +=.*$$|INCPATH += $${QTCPPFLAGS}|g ; \
-		 s|^LIBPATH =|#LIBPATH =|g ; \
-		 s|^LIBPATH +=.*$$|LIBPATH += $${QTCFGLIBS}|g ; \
-		 s|=g\+\+|=$${CXX}|g ; \
-		 s|^MOC=|#MOC=|g ; \
-		 s|-O2|$${CXXFLAGS}|g ; \
-		 s|make |$$(MAKE) |g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
-		's|<values\.h>|<climits>|g' ${WRKSRC}/mesh/mesh.cpp
+	@${ECHO_CMD} "QT += opengl" >> ${WRKSRC}/mview.pro
+	@${REINPLACE_CMD} -e 's|<values.h>|<cmath>|g' ${WRKSRC}/mesh/mesh.cpp
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} -spec ${QMAKESPEC} GUI="QT4"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mview ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/Documentation && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@(cd ${WRKSRC}/Documentation && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
