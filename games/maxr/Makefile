@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxr
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.maxthegame.de/downloads/ \
 		http://mirror.amdmi3.ru/
