@@ -3467,6 +3467,7 @@ fpc-hash                        ports/security/fpc-hash
 fpc-httpd                       ports/www/fpc-httpd
 fpc-ibase                       ports/databases/fpc-ibase
 fpc-ide                         ports/editors/fpc-ide
+fpc-imagemagick                 ports/graphics/fpc-imagemagick
 fpc-imlib                       ports/graphics/fpc-imlib
 fpc-libasync                    ports/net/fpc-libasync
 fpc-libcurl                     ports/ftp/fpc-libcurl
