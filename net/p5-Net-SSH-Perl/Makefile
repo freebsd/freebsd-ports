@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=		net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -55,6 +56,7 @@ MAN3=	Net::SSH::Perl.3 \
 	Net::SSH::Perl::Comp::Zlib.3 \
 	Net::SSH::Perl::Config.3 \
 	Net::SSH::Perl::Constants.3 \
+	Net::SSH::Perl::Handle.3 \
 	Net::SSH::Perl::Kex.3 \
 	Net::SSH::Perl::Kex::DH1.3 \
 	Net::SSH::Perl::Key.3 \
