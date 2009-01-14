@@ -3748,3 +3748,4 @@ net/fpc-libasync|devel/fpc-fcl-async|2009-01-13|This unit was renamed
 x11-toolkits/forms|x11-toolkits/xforms|2009-01-13|This unit was renamed
 x11-toolkits/gtk|x11-toolkits/gtk1|2009-01-13|This unit was renamed
 x11-toolkits/gnome|x11-toolkits/gnome1|2009-01-13|This unit was renamed
+devel/fpc-gconf||2008-01-13|This is now part of fpc-gnome1
