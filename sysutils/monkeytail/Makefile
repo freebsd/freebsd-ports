@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monkeytail
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.dollyfish.net.nz/releases/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
