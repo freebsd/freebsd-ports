@@ -3486,6 +3486,7 @@ fpc-regexpr                     ports/devel/fpc-regexpr
 fpc-sdl				ports/databases/fpc-sdl
 fpc-sqlite                      ports/databases/fpc-sqlite
 fpc-svgalib                     ports/graphics/fpc-svgalib
+fpc-symbolic			ports/graphics/fpc-symbolic
 fpc-syslog                      ports/sysutils/fpc-syslog
 fpc-tcl                         ports/lang/fpc-tcl
 fpc-units                       ports/lang/fpc-units
