@@ -7,6 +7,7 @@
 
 PORTNAME=	T2
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +25,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		T2.3 T2::Association.3 T2::Attribute.3 T2::Class.3 \
-		T2::DBSetup.3 T2::Schema.3 T2::Storage.3
+		T2::DBSetup.3 T2::Method.3 T2::Schema.3 T2::Storage.3
 
 .include <bsd.port.mk>
