@@ -16,7 +16,7 @@ Check ${PREFIX}/share/doc/abcmidi/ for these and other docs.
 The abc format is plain text, but you might optionally install
 a MIDI player (timidity) and a PostScript viewer (gv with ghostscript).
 
-WWW: http://abc.sourceforge.net/abcMIDI/
+WWW: http://ifdo.pugmarks.com/~seymour/runabc/top.html
 
 - Sue Blake
 sue@freebsd.org
