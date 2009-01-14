@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpaspell.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpspellcheck.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/i386-freebsd/aspell
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
