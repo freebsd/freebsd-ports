@@ -7,6 +7,7 @@
 
 PORTNAME=	Perlbal
 PORTVERSION=	1.70
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
 		http://www.powertrip.co.za/distfiles/danga/
@@ -26,7 +27,8 @@ PERL_CONFIGURE=	yes
 MAN1=		perlbal.1
 MAN3=		Perlbal.3 Perlbal::Plugin::Palimg.3 \
 		Perlbal::Plugin::Cgilike.3 \
-		Perlbal::Plugin::Include.3
+		Perlbal::Plugin::Include.3 \
+		Perlbal::Util.3
 
 .include <bsd.port.pre.mk>
 
