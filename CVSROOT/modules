@@ -3442,6 +3442,7 @@ fpc-fcl-base                    ports/devel/fpc-fcl-base
 fpc-fcl-db                      ports/devel/fpc-fcl-db
 fpc-fcl-fpcunit                 ports/devel/fpc-fcl-fpcunit
 fpc-fcl-image                   ports/devel/fpc-fcl-image
+fpc-fcl-json			ports/devel/fpc-fcl-json
 fpc-fcl-net                     ports/devel/fpc-fcl-net
 fpc-fcl-passrc                  ports/devel/fpc-fcl-passrc
 fpc-fcl-registry                ports/devel/fpc-fcl-registry
