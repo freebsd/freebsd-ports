@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bigloo
-PORTVERSION=	3.1a
+PORTVERSION=	3.2a
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
@@ -32,13 +32,19 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--gclibdir=${LOCALBASE}/lib \
 		--gcincdir=${LOCALBASE}/include \
 		--customgc=no
-ALL_TARGET=	# empty
+ALL_TARGET=	build
 INSTALL_TARGET=	install-progs compile-bee install-bee
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/bigloo/${PORTVERSION}
 PLIST_SUB=	BIGLOO_VERSION="${PORTVERSION}"
 
 MAN1=		bigloo.1
 INFO=		bigloo
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-O3"|""|g' ${WRKSRC}/configure
@@ -62,11 +68,5 @@ post-install:
 
 test: build
 	@(cd ${WRKSRC}; ${GMAKE} test)
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
 
 .include <bsd.port.post.mk>
