@@ -6,7 +6,7 @@
  	    case SVt_PVAV:
 -		if (AvARRAY((AV*)sstr)) {
 +		/* avoid cloning an empty array */
-+		if (AvARRAY((AV*)sstr) && AvFILLp((AV*)sstr >= 0) {
++		if (AvARRAY((AV*)sstr) && AvFILLp((AV*)sstr) >= 0) {
  		    SV **dst_ary, **src_ary;
  		    SSize_t items = AvFILLp((AV*)sstr) + 1;
  
