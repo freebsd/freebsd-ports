@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.7.7
-PORTREVISION=	1
+PORTVERSION=	1.7.9
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -22,11 +21,11 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget gtk20 libxml2
+USE_GNOME=	gtk20 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:262
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${GCCLIBDIR}"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
@@ -47,7 +46,7 @@ BROKEN=		math/lapack appears to be broken on alpha
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix gtksourceview2 libgnomeui
+USE_GNOME+=	gnomehier gtksourceview2 libgnomeui
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif
@@ -68,6 +67,8 @@ LAPACK=		-llapack
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|set term png|set term dumb|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<regex.h>|<gnu/regex.h>|g' \
 		${WRKSRC}/gui2/gtksourceview/gtksourceregex.c
 
