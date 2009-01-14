@@ -1,25 +1,37 @@
 bin/squidGuard
 etc/squid/squidGuard.conf.sample
-@dirrm squidGuard
 %%PORTDOCS%%%%DOCSDIR%%/LDAPFlow.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/authentication.html
+%%PORTDOCS%%%%DOCSDIR%%/authentication.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/configure.html
 %%PORTDOCS%%%%DOCSDIR%%/configure.txt
+%%PORTDOCS%%%%DOCSDIR%%/expressionlist.html
+%%PORTDOCS%%%%DOCSDIR%%/expressionlist.txt
 %%PORTDOCS%%%%DOCSDIR%%/extended.html
 %%PORTDOCS%%%%DOCSDIR%%/extended.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/features.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldap-ad-tips.html
+%%PORTDOCS%%%%DOCSDIR%%/ldap-ad-tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/ldap.html
+%%PORTDOCS%%%%DOCSDIR%%/ldap.txt
+%%PORTDOCS%%%%DOCSDIR%%/runtimeops.html
+%%PORTDOCS%%%%DOCSDIR%%/runtimeops.txt
+%%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
+%%PORTDOCS%%%%DOCSDIR%%/troubleshoot.txt
 %%PORTDOCS%%%%DOCSDIR%%/squidGuard.gif
 %%PORTDOCS%%%%DOCSDIR%%/README.blacklists
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-
 %%BLACKLIST%%@cwd %%DATADIR%%
 %%BLACKLIST%%ads/domains
 %%BLACKLIST%%ads/domains.db
