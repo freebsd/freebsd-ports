@@ -1,34 +1,28 @@
---- check_compilers.py.orig	2008-07-03 18:50:57.000000000 +0200
-+++ check_compilers.py	2008-07-08 00:01:13.000000000 +0200
-@@ -290,7 +290,7 @@
-       if self.platform == 'LINUX64':
-          self.F77 = 'gfortran'
- 
--      self.libs.extend([('math', 'lapack'), ('math', 'blas'), ('math', 'g2c'),
-+      self.libs.extend([('math', 'lapack'), ('math', 'blas'), ('math', 'f2c'),
-                         ('cxx', ['libstdc++.so', 'libstdc++.a']),])
- 
- #-------------------------------------------------------------------------------
-@@ -332,7 +332,7 @@
-       if self.platform == 'LINUX64':
-          self.F77 = 'gfortran'
- 
--      self.libs.extend([('math', 'g2c'),
-+      self.libs.extend([('math', 'f2c'),
-                         ('cxx', ['libstdc++.so', 'libstdc++.a']),])
- 
- #-------------------------------------------------------------------------------
-@@ -356,6 +356,13 @@
-             self.profiles.append('mklvars64.sh')
+--- check_compilers.py.orig	2008-12-23 18:01:02.000000000 +0100
++++ check_compilers.py	2009-01-04 16:59:06.000000000 +0100
+@@ -394,7 +394,7 @@
+             args='-ffree-form -fdefault-integer-8', src=trivial_src['F90'])
+       self.fcheck(self.is_F77_is_gfortran, 'F77 (%s) is gfortran' % self.cfg.get('F77', '?'))
+       if True or not self.is_F77_is_gfortran: # on ne sait pas si les blas/lapack en ont besoin, le tester
+-         self.libs.append(('math', 'g2c'))
++         self.libs.append(('math', 'f2c'))
+          self.find_libs(lib=self.libs[-1])
+       if self.cfg.get('F90') or self.is_F77_is_gfortran:
+          self.libs.append(('math', 'gfortran'))
+@@ -487,6 +487,16 @@
           else:                      # x86_64
-             self.profiles.append('mklvarsem64t.sh')
+             intel_arch   = 'intel64'
+             mkl_src_name = 'mklvarsem64t.sh'
 +      elif self.platform == 'FREEBSD':	# Not yet tested with icc!
 +         if self.arch == 'ia64':    # ia64
-+            self.profiles.append('mklvars64.sh')
++            intel_arch   = 'ia64'
++            mkl_src_name = 'mklvars64.sh'
 +         elif self.arch == 'x86_64':    # x86_64
-+            self.profiles.append('mklvarsem64t.sh')
++            intel_arch   = 'ia64'
++            mkl_src_name = 'mklvars64.sh'
 +         else:                      # 32 bits
-+            self.profiles.append('mklvars32.sh')
++            intel_arch   = 'ia32'
++            mkl_src_name = 'mklvars32.sh'
        else:
           raise CheckCompilerError, _('Unsupported platform : %s') % self.platform
-       
+ 

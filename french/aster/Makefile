@@ -7,7 +7,7 @@
 
 PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		9.3.0-2
+DISTVERSION=		9.4.0-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=		french cad
 MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
@@ -79,9 +79,6 @@ FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 .if ${OSVERSION} < 700000
 BROKEN=		does not install
 .endif
-#.if ${ARCH} != "i386"
-#BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
-#.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -135,7 +132,7 @@ MUMPS_PORT=	mumps
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 MUMPS_PORT=	mumps-mpich
-MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/mpich2/lib -lmpich
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/mpich2/lib -lmpich
 . endif
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 .endif
@@ -146,8 +143,6 @@ HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
 USE_FORTRAN=	yes
-FORTRANLIBDIR=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``
-FORTRANLIBDIR2=	`${DIRNAME} \`${FC} -print-libgcc-file-name\``/../../../
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -222,6 +217,12 @@ ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
 ${WRKSRC}/instdir/${vaster}/elements:	build
 
+pre-everything::
+.if defined(WITH_MPI)
+	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you nedd to run `mpd &'"
+	@${ECHO_MSG} "and may be you have to run `ldconfig -R ${LOCALBASE}/mpich2/lib'"
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
@@ -288,14 +289,25 @@ pre-configure:
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+.if defined(WITH_MPI)
 	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+		>> ${WRKSRC}/setup.cfg
+.else
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
+		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
+.endif
 .for is in ${INTERACTIVE_SCRIPTS}
 	${REINPLACE_CMD} -e '/should_continue()/d'		\
 		${WRKSRC}/${is}
@@ -311,16 +323,18 @@ do-configure:
 	@${ECHO_MSG} "------------ Fin debug ------------------"
 
 pre-build:
-	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf ${WRKSRC}/instdir/outils
+	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf			\
+		${WRKSRC}/instdir/ASTK/ASTK_SERV/lib			\
+		${WRKSRC}/instdir/outils
 	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'		\
 		< ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/config		\
 		> ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf/config
 	${CP} ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/aster_profile.sh	\
 		${WRKSRC}/instdir/ASTK/ASTK_SERV/conf
-	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin			\
+	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin			\
 		${WRKSRC}/instdir/ASTK/ASTK_SERV
-	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/lib			\
-		${WRKSRC}/instdir/ASTK/ASTK_SERV
+	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/lib			\
+		${WRKSRC}/instdir/ASTK/ASTK_SERV/
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\
@@ -366,6 +380,9 @@ post-install:
 .endif
 .if !defined(WITHOUT_EFICAS)
 	${LN} -fs ${LOCALBASE}/bin/eficas ${tools_dir}/
+. if exists(${LOCALBASE}/bin/qtEficas)
+	${LN} -fs ${LOCALBASE}/bin/qtEficas ${tools_dir}/
+. endif
 .endif
 .if !defined(WITHOUT_GMSH)
 	${LN} -fs ${LOCALBASE}/bin/gmsh ${tools_dir}/
@@ -384,11 +401,11 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
+	@${ECHO_MSG} "Note: homard must be installed to run some steps succesfully."
 	(cd ${inst_dir};	\
 	HDF5_DISABLE_VERSION_CHECK=1	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
-	@${ECHO_CMD} Check ${inst_dir}/astest/*.erre
+	@${ECHO_MSG} "Check ${inst_dir}/astest/*.erre"
 .endif
 
 .include <bsd.port.post.mk>
