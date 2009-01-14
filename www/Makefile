@@ -552,6 +552,7 @@
     SUBDIR += oops
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
+    SUBDIR += openbravoerp
     SUBDIR += opencart
     SUBDIR += openvrml
     SUBDIR += openx
