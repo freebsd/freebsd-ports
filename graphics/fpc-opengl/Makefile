@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-opengl
 
@@ -15,7 +15,7 @@ COMMENT=	Free Pascal interface to the OpenGL library
 USE_FPC=	x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	OPENGL	"Install opengl libraries"	on

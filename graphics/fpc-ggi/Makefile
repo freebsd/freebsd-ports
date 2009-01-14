@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-ggi
 
@@ -15,7 +15,7 @@ COMMENT=	Free Pascal interface to libggi
 USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	LIBGGI	"Install ggi library"	on

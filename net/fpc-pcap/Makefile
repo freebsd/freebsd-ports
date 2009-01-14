@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-pcap
 
@@ -15,7 +15,7 @@ COMMENT=	Free Pascal unit for libpcap library
 USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	LIBPCAP	"Install ubiquitous network traffic capture library"	on

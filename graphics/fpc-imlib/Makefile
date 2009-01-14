@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-imlib
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to imlib library
 
-USE_FPC=	gtk x11 opengl
+USE_FPC=	gtk1 x11 opengl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	IMLIB	"Install imlib graphic library"	on

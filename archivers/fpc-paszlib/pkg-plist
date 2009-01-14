@@ -21,11 +21,16 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpinffast.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpinftrees.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpinfutil.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libppaszlib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpunzip.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libptrees.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzbase.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzcompres.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzdeflate.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzinflate.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzip.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzipper.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpziputils.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzstream.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/libpzuncompr.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/paszlib.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/paszlib.ppu
@@ -37,16 +42,22 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zcompres.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zcompres.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zdeflate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zdeflate.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zip.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zip.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/unzip.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/unzip.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zipper.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zipper.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/ziputils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/ziputils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zstream.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zstream.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zinflate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zinflate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zuncompr.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib/zuncompr.ppu
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/paszlib/minigzip.pas
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/paszlib/example.pas
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/paszlib
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
 @dirrmtry lib/fpc
-%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/paszlib
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

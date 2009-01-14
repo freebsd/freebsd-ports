@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.2.0
-PORTREVISION?=	2
+PORTVERSION=	2.2.2
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -24,8 +24,6 @@ DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
-
-LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -47,7 +45,8 @@ MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/lib/${PORTNAME}/${P
 		FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake \
 		FPCTARGET=${BUILDNAME} \
 		OPT="${OPT}" \
-		BSDHIER=1	
+		BSDHIER=1
+
 MAN1=	bin2obj.1 \
 	data2inc.1 \
 	delp.1 \

@@ -1,7 +1,13 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairo.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairo.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoft.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoft.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoxlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoxlib.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/libpcairo.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/libpcairoft.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/libpcairoxlib.a
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

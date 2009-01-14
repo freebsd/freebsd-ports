@@ -1,4 +1,10 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pcxcomn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadpcx.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpwritepcx.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libppcxcomn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpreadpcx.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/libpfpwritepcx.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimgcmn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimage.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pngcomn.ppu
@@ -30,6 +36,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/extinterpolation.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/freetypeh.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/freetype.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/ftfont.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pcxcomn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpreadpcx.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpwritepcx.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimgcmn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/fpimage.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-image/pngcomn.o

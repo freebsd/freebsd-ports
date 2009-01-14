@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.10 2008-06-24 15:18:12 acm Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.11 2009-01-14 06:12:03 acm Exp $
 
 @unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
 etc/fpc.cfg.sample
@@ -39,6 +39,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/bsd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/bsd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/classes.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/classes.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/clocale.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/clocale.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cmem.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cmem.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/console.o
@@ -68,6 +70,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dynlibs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/dynlibs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/errors.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/errors.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/exeinfo.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/exeinfo.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.o
@@ -88,6 +92,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/keyboard.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpbaseunix.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpbsd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpclasses.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpclocale.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcmem.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconsole.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconvutils.a
@@ -102,6 +107,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdos.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpdynlibs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libperrors.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpexeinfo.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfgl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfmtbcd.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfreebsd.a

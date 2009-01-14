@@ -1,4 +1,5 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/digesttestreport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testregistry.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testreport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testdecorator.ppu
@@ -10,6 +11,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/xmltestreport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/plaintestreport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/fpcunit.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/digesttestreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testregistry.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testdecorator.o
@@ -21,6 +23,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/xmltestreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/plaintestreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/fpcunit.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libpdigesttestreport.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libptestregistry.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libptestreport.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/libptestdecorator.a

@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-fpcunit
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-USE_FPC=	fcl-base fcl-xml hash libasync netdb paszlib pthreads
+USE_FPC=	fcl-async fcl-base fcl-xml hash paszlib pthreads
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

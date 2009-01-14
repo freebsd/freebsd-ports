@@ -11,11 +11,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpntlm.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/libpuuid.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash/uuid.ppu
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/hash/mdtest.pas
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hash
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
 @dirrmtry lib/fpc
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/hash
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

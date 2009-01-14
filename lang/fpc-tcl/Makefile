@@ -5,18 +5,17 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-tcl
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the tcl/tk interpreter
 
-USE_FPC=	fcl-base gdbint graph ibase libasync hash mysql netdb odbc \
-		oracle pasjpeg paszlib pthreads postgres regexpr sqlite
+USE_FPC=	fcl-base
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	TCL	"Install tool commnad language"	on

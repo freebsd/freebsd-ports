@@ -50,12 +50,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql41.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql41dyn.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql50.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql50dyn.a
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/mysql/testdb3.pp
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/mysql/testdb4.pp
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
 @dirrmtry lib/fpc
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/mysql
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%
