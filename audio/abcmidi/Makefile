@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2008.08.13
+PORTVERSION=	2008.09.28
 CATEGORIES=	audio
-MASTER_SITES=	SF/abc
+MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
