@@ -1,8 +1,18 @@
-ezstream is a command line utility which is a improved version 
-of the old "shout" utility. It enables you to stream mp3 or vorbis
-files to an icecast server without reencoding and thus requires
-very little CPU. ezstream is controlled via a XML config file.
-ezstream can stream mp3 and ogg vorbis files as well as reading
-from stdin. ID3v1 tags are supported in mp3 files and all ogg
-vorbis tags are propagated as metadata as well.
+Ezstream is a command line source client for Icecast media streaming servers.
+It began as the successor of the old "shout" utility, and has since gained a
+lot of useful features.
+
+In its basic mode of operation, it streams media files or data from standard
+input without reencoding and thus requires only very little CPU resources.
+It can also use various external decoders and encoders to reencode from one
+format to another, and stream the result to an Icecast server. Additional
+features include scriptable playlist and metadata handling. All of its
+features make ezstream a very flexible source client.
+
+Supported media formats for streaming are MP3, Ogg Vorbis and Ogg Theora.
+Native metadata support includes MP3 (ID3v1 only) and Ogg Vorbis, and many
+more formats when the optional TagLib support has been compiled in.
+
+Ezstream is free software and licensed under the GNU General Public License.
+
 WWW: http://www.icecast.org/ezstream.php
