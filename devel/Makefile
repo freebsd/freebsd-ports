@@ -356,6 +356,7 @@
     SUBDIR += fpc-fcl-db
     SUBDIR += fpc-fcl-fpcunit
     SUBDIR += fpc-fcl-image
+    SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
     SUBDIR += fpc-fcl-registry
