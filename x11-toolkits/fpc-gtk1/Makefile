@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
-PKGNAMESUFFIX=	-gtk
+PKGNAMESUFFIX=	-gtk1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK libraries
@@ -15,7 +15,7 @@ COMMENT=	Free Pascal interface to the GTK libraries
 USE_FPC=	gtk2 x11 opengl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	GTK1	"Gimp Toolkit for X11 GUI (version 1.x)"	on
