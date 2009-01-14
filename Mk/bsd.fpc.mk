@@ -57,7 +57,7 @@ check-makevars::
 
 _FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
 		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
-		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd13 \
+		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd \
 		httpd20 httpd22 ibase imagemagick imlib libcurl libgd libpng mysql ncurses \
 		odbc opengl openssl oracle pasjpeg paszlib pcap postgres pthreads pxlib \
 		regexpr sdl sqlite svgalib symbolic syslog tcl unzip users utmp x11 xforms \
@@ -92,7 +92,8 @@ gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
 ibase_UNIT=	databases/fpc-ibase
 hash_UNIT=	security/fpc-hash
-httpd13_UNIT=	www/fpc-httpd13
+httpd_UNIT=	www/fpc-httpd
+#httpd13_UNIT=	www/fpc-httpd13
 httpd20_UNIT=	www/fpc-httpd20
 httpd22_UNIT=	www/fpc-httpd22
 mysql_UNIT=	databases/fpc-mysql
