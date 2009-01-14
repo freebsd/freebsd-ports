@@ -26,13 +26,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	netcdf-*
 
-USE_FORTRAN=   yes
+USE_FORTRAN=	yes
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
-		--with-szlib="${LOCALBASE}"
-#wiredness of F77, FC in hdf/src/Makefile
-MAKE_ENV+=	PATH="${WRKSRC}/bin:${PATH}"
+		--with-szlib="${LOCALBASE}"\
+		--mandir=${MANPREFIX}/man
 DOCFILES=	RM-print42r3.pdf \
 		UG_print42r3.pdf
 SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
@@ -48,11 +47,35 @@ USE_LDCONFIG=	yes
 BROKEN=		Does not compile on !i386, !amd64 and !alpha
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
-		${WRKSRC}/hdf/src/Makefile.in ${WRKSRC}/mfhdf/libsrc/Makefile.in
+.if ${ARCH} == "sparc64"
+PICFLAG?=	-fPIC
+.else
+PICFLAG?=	-fpic
+.endif
+
+SHLIBVER_LIBMFHDF=	3
+SHLIBVER_MDF=	2
+
+post-extract:
+	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
+
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} ./configure \
+		${MAKE_ENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS})
+	@(cd ${WRKSRC}_SHARED && ${SETENV} ./configure \
+		${MAKE_ENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS} CFLAGS="${PICFLAG}" FFLAGS="${PICFLAG}")
+
+do-build:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE})
+	@(cd ${WRKSRC}_SHARED; ${SETENV} ${MAKE_ENV} ${MAKE})
+	@(cd ${WRKSRC}_SHARED/mfhdf/libsrc; ld -Bshareable -o libmfhdf.so.${SHLIBVER_LIBMFHDF} -x -soname libmfhdf.so.${SHLIBVER_LIBMFHDF} --whole-archive libmfhdf.a )
+	@(cd ${WRKSRC}_SHARED/hdf/src; ld -Bshareable -o libdf.so.${SHLIBVER_MDF} -x -soname libdf.so.${SHLIBVER_MDF} --whole-archive libdf.a )
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}_SHARED/mfhdf/libsrc/libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}_SHARED/hdf/src/libdf.so.${SHLIBVER_MDF} ${PREFIX}/lib
+	${LN} -sf libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib/libmfhdf.so
+	${LN} -sf libmdf.so.${SHLIBVER_MDF} ${PREFIX}/lib/libmdf.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES} ${SZIP_DOCFILE}
