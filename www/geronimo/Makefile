@@ -7,6 +7,7 @@
 
 PORTNAME=	geronimo
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
@@ -22,22 +23,14 @@ NO_BUILD=	YES
 USE_RC_SUBR=	geronimo2.sh
 SUB_FILES=	pkg-install pkg-deinstall
 
-OPTIONS=	JETTY6 "Use Jetty6 as web server" on \
-		TOMCAT6 "Use Tomcat as web server" off
+OPTIONS=	TOMCAT6 "Use Tomcat instead of default Jetty" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JETTY6) && defined(WITH_TOMCAT6)
-BROKEN=		Choose only one web server
-.endif
-.if defined(WITHOUT_JETTY6) && defined(WITHOUT_TOMCAT6)
-BROKEN=		Choose one web server
-.endif
-
-.if defined(WITH_JETTY6)
-WEBSERVER=	jetty6
-.elif defined(WITH_TOMCAT6)
+.if defined(WITH_TOMCAT6)
 WEBSERVER=	tomcat6
+.else
+WEBSERVER=	jetty6
 .endif
 
 MAJOR_VER=	${PORTVERSION:C/\..*//}

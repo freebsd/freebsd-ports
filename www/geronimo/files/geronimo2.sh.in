@@ -3,6 +3,10 @@
 # $FreeBSD$
 #
 
+# PROVIDE: %%APP_SHORTNAME%%
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+
 #
 # Configuration settings for geronimo%%GERONIMO_VERSION%% in /etc/rc.conf:
 #
