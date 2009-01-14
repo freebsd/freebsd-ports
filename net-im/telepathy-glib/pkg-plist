@@ -43,6 +43,7 @@ include/telepathy-1.0/telepathy-glib/heap.h
 include/telepathy-1.0/telepathy-glib/interfaces.h
 include/telepathy-1.0/telepathy-glib/intset.h
 include/telepathy-1.0/telepathy-glib/media-interfaces.h
+include/telepathy-1.0/telepathy-glib/message-mixin.h
 include/telepathy-1.0/telepathy-glib/presence-mixin.h
 include/telepathy-1.0/telepathy-glib/properties-mixin.h
 include/telepathy-1.0/telepathy-glib/proxy-subclass.h
@@ -86,6 +87,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-TpContactsMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpGroupMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpHeap.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpIntSet.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-TpMessageMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPresenceMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpPropertiesMixin.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-TpTextMixin.html
