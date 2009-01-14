@@ -1,8 +1,11 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libasync.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libasync.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libplibasync.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/fpasync.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/fpasync.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libpfpasync.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libplibasync.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
