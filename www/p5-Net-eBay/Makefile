@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-eBay
-PORTVERSION=	0.49
+PORTVERSION=	0.52
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	Perl Interface to XML based eBay API
 
-BUILD_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
-BUILD_DEPENDS+=	${SITE_PERL}/XML/Dumper.pm:${PORTSDIR}/textproc/p5-XML-Dumper
-BUILD_DEPENDS+=	${SITE_PERL}/DateTime/Precise.pm:${PORTSDIR}/devel/p5-DateTime-Precise
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
+BUILD_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/XML/Dumper.pm:${PORTSDIR}/textproc/p5-XML-Dumper \
+		${SITE_PERL}/DateTime/Precise.pm:${PORTSDIR}/devel/p5-DateTime-Precise \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
