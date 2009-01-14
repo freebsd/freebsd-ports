@@ -23,63 +23,6 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%AHPY%%/aster_homard_utilitaires.py
 %%AHPY%%/aster_homard_utilitaires.pyc
 %%AHPY%%/aster_homard_utilitaires.pyo
-%%AHPY5%%/__init__.py
-%%AHPY5%%/__init__.pyc
-%%AHPY5%%/__init__.pyo
-%%AHPY5%%/aster_homard_1.py
-%%AHPY5%%/aster_homard_1.pyc
-%%AHPY5%%/aster_homard_1.pyo
-%%AHPY5%%/aster_homard_2.py
-%%AHPY5%%/aster_homard_2.pyc
-%%AHPY5%%/aster_homard_2.pyo
-%%AHPY5%%/aster_homard_3.py
-%%AHPY5%%/aster_homard_3.pyc
-%%AHPY5%%/aster_homard_3.pyo
-%%AHPY5%%/aster_homard_4.py
-%%AHPY5%%/aster_homard_4.pyc
-%%AHPY5%%/aster_homard_4.pyo
-%%AHPY5%%/aster_homard_5.py
-%%AHPY5%%/aster_homard_5.pyc
-%%AHPY5%%/aster_homard_5.pyo
-%%AHPY5%%/aster_homard_6.py
-%%AHPY5%%/aster_homard_6.pyc
-%%AHPY5%%/aster_homard_6.pyo
-%%AHPY5%%/aster_homard_7.py
-%%AHPY5%%/aster_homard_7.pyc
-%%AHPY5%%/aster_homard_7.pyo
-%%AHPY5%%/aster_homard_8.py
-%%AHPY5%%/aster_homard_8.pyc
-%%AHPY5%%/aster_homard_8.pyo
-%%AHPY5%%/aster_homard_v5x.py
-%%AHPY5%%/aster_homard_v5x.pyc
-%%AHPY5%%/aster_homard_v5x.pyo
-%%AHPY5%%/aster_homard_utilitaires.py
-%%AHPY5%%/aster_homard_utilitaires.pyc
-%%AHPY5%%/aster_homard_utilitaires.pyo
-%%AHPY6%%/__init__.py
-%%AHPY6%%/__init__.pyc
-%%AHPY6%%/__init__.pyo
-%%AHPY6%%/aster_homard_1.py
-%%AHPY6%%/aster_homard_1.pyc
-%%AHPY6%%/aster_homard_1.pyo
-%%AHPY6%%/aster_homard_2.py
-%%AHPY6%%/aster_homard_2.pyc
-%%AHPY6%%/aster_homard_2.pyo
-%%AHPY6%%/aster_homard_3.py
-%%AHPY6%%/aster_homard_3.pyc
-%%AHPY6%%/aster_homard_3.pyo
-%%AHPY6%%/aster_homard_4.py
-%%AHPY6%%/aster_homard_4.pyc
-%%AHPY6%%/aster_homard_4.pyo
-%%AHPY6%%/aster_homard_5.py
-%%AHPY6%%/aster_homard_5.pyc
-%%AHPY6%%/aster_homard_5.pyo
-%%AHPY6%%/aster_homard_v6x.py
-%%AHPY6%%/aster_homard_v6x.pyc
-%%AHPY6%%/aster_homard_v6x.pyo
-%%AHPY6%%/aster_homard_utilitaires.py
-%%AHPY6%%/aster_homard_utilitaires.pyc
-%%AHPY6%%/aster_homard_utilitaires.pyo
 %%HOMARDDIR%%/homard
 %%PORTDOCS%%%%DOCSDIR%%/A_Lire.txt
 %%PORTDOCS%%%%DOCSDIR%%/Readme.txt
@@ -344,6 +287,31 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTDOCS%%%%DOCSDIR%%/Intranet/menu_homard.fr.htm
 %%PORTDOCS%%%%DOCSDIR%%/Intranet/menu_homard.en.htm
 %%PORTDOCS%%%%DOCSDIR%%/Intranet/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/depart/maill.00.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/depart/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats/.keepme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/HOMARD.Configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/HOMARD.Configuration.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/HOMARD.Configuration.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/Liste.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/Liste.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/apad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/apad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/avad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.hexa.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.hexa.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.pyra.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.pyra.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/diam.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/maill.01.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/maill.02.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/depart/maill.00.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/depart/maill.01.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats/.keepme
@@ -356,10 +324,10 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/apad.02.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/avad.01.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/maill.02.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hex_d2/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/depart/maill.00.med
@@ -387,12 +355,12 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/indic.tria.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/indic.tria.01.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/indic.tria.02.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/maill.03.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/qual.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_6xtri_d2/resultats_ref/qual.tria.03.dat
@@ -425,17 +393,74 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/indic.tria.01.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/indic.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/indic.tria.02.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/maill.03.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/qual.tria.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/qual.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/qual.tria.03.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref/verif_avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart/maill.00.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart/maill.03.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart/maill.04.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats/.keepme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration.03.vers.04
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/HOMARD.Configuration.04.vers.05
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/Liste.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/Liste.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/Liste.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/Liste.03.vers.04
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/Liste.04.vers.05
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/apad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/apad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/apad.03.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/apad.04.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/apad.05.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/avad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/avad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/avad.03.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/avad.04.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/diam.tetr.05.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.noeu.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.noeu.03.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.tetr.01.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.tetr.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/indic.tetr.04.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.01.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.02.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.03.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.03.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.04.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.04.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.05.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/maill.05.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/qual.tetr.05.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/depart/maill.00.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/depart/maill.01.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats/.keepme
@@ -450,15 +475,93 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/avad.01.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/diam.tetr.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/diam.tetr.02.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/maill.02.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/qual.tetr.00.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/qual.tetr.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/qual.tetr.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref/verif_avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/depart/maill.00.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/depart/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/depart/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/depart/maill.03.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats/.keepme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/HOMARD.Configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/HOMARD.Configuration.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/HOMARD.Configuration.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/HOMARD.Configuration.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/HOMARD.Configuration.03.vers.04
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/Liste.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/Liste.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/Liste.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/Liste.03.vers.04
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/apad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/apad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/apad.03.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/apad.04.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/avad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/avad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/avad.03.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.hexa.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.hexa.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.hexa.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.hexa.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pent.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pent.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pent.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pent.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pent.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pyra.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pyra.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.pyra.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.quad.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.quad.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/diam.tetr.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.hexa.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.hexa.00.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.hexa.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.hexa.02.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.pyra.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.pyra.01.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.pyra.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.pyra.02.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.00.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.01.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/indic.tetr.02.hist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.01.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.02.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.03.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.03.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.04.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/maill.04.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.hexa.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.hexa.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.hexa.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.hexa.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.quad.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.quad.04.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.tetr.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.tetr.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/qual.tetr.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_3d_d2/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/depart/maill.00.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/depart/maill.01.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/depart/maill.02.med
@@ -494,17 +597,50 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/indic.tria.01.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/indic.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/indic.tria.02.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/maill.03.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/qual.tria.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/qual.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/qual.tria.03.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref/verif_avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/depart/maill.00.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/depart/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/depart/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats/.keepme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/HOMARD.Configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/HOMARD.Configuration.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/HOMARD.Configuration.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/HOMARD.Configuration.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/Liste.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/Liste.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/Liste.02.vers.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/apad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/apad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/apad.03.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/avad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/avad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/diam.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/diam.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/diam.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/diam.quad.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.01.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.02.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.03.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/maill.03.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/qual.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/qual.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/qual.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/qual.quad.03.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pen_d1/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/depart/maill.00.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/depart/maill.01.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/depart/maill.02.med
@@ -538,12 +674,12 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/indic.tria.01.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/indic.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/indic.tria.02.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/maill.03.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/qual.tria.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats_ref/qual.tria.02.dat
@@ -594,43 +730,45 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/indic.tria.02.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/indic.tria.03.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/indic.tria.03.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.03.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.04.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.04.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/maill.04.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/qual.tria.01.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/qual.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/qual.tria.03.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/qual.tria.04.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref/verif_avad.00.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/depart/front.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/depart/maill.00.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/depart/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats/.keepme
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/HOMARD.Configuration
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/HOMARD.Configuration.00.vers.01
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/HOMARD.Configuration.01.vers.02
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/Liste.00.vers.01
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/Liste.01.vers.02
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/apad.01.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/apad.02.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/avad.00.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/avad.01.bilan
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/diam.tria.01.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/diam.tria.02.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/maill.01.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/maill.02.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/qual.tria.01.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/qual.tria.02.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref/verif_avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/depart/front.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/depart/maill.00.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/depart/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats/.keepme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/HOMARD.Configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/HOMARD.Configuration.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/HOMARD.Configuration.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/Liste.00.vers.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/Liste.01.vers.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/apad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/apad.02.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/avad.00.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/avad.01.bilan
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/diam.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/diam.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/diam.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/maill.01.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/maill.01.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/maill.02.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/maill.02.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/qual.quad.00.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/qual.quad.01.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/qual.quad.02.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref/verif_avad.00.bilan
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/depart/front.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/depart/maill.00.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/depart/maill.01.med
@@ -669,12 +807,12 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/indic.tria.01.hist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/indic.tria.02.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/indic.tria.02.hist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.00.hom
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.01.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.00.hom.med
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.01.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.01.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.02.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.02.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.02.med
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.03.hom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.03.hom.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/maill.03.med
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/qual.quad.00.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats_ref/qual.quad.01.dat
@@ -688,10 +826,10 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1/depart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_mix_2d_zzzz121d_d1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats_ref
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_rugby_d2/resultats
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_rugby_d2/depart
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_rugby_d2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats_ref
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/resultats
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_att_rugby_qua/depart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sfr_2d_att_rugby_qua
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sau_qua_tri_d1/resultats_ref
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sau_qua_tri_d1/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sau_qua_tri_d1/depart
@@ -700,14 +838,26 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/qua_2d_24x36_d2/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/qua_2d_24x36_d2/depart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/qua_2d_24x36_d2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pen_d1/resultats_ref
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pen_d1/resultats
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pen_d1/depart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pen_d1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats_ref
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_qua_tri_d1_equ/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_qua_tri_d1_equ/depart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_qua_tri_d1_equ
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_3d_d2/resultats_ref
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_3d_d2/resultats
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_3d_d2/depart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mix_3d_d2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats_ref
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_tet_tri_d2_man/depart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_tet_tri_d2_man
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats_ref
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_cube_d2_fig/resultats
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_cube_d2_fig/depart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_3d_cube_d2_fig
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_2d_carre_d1/resultats_ref
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_2d_carre_d1/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/med_2d_carre_d1/depart
@@ -720,6 +870,10 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_d2/resultats
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_d2/depart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_d2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_3x3_d1/resultats_ref
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_3x3_d1/resultats
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_3x3_d1/depart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hex_3x3_d1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Intranet/usage
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Intranet/presentation
@@ -746,7 +900,5 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 @unexec rm -f %%ASTER_TOOLS%%/homard
 @dirrmtry bin/%%UNAMES%%
 @dirrm %%AHPY%%
-@dirrm %%AHPY5%%
-@dirrm %%AHPY6%%
 @dirrm %%HOMARDDIR%%
 @dirrmtry apps
