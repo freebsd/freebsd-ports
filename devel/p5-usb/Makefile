@@ -16,7 +16,7 @@ DISTNAME=	Device-USB-${PORTVERSION}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Perl wrapper for libusb
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.8.8/Inline.pm:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 WRKSRC=		${WRKDIR}/Device-USB-0.21
