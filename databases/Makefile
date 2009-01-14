@@ -65,6 +65,7 @@
     SUBDIR += fpc-odbc
     SUBDIR += fpc-oracle
     SUBDIR += fpc-postgres
+    SUBDIR += fpc-pxlib
     SUBDIR += fpc-sqlite
     SUBDIR += freetds
     SUBDIR += freetds-msdblib

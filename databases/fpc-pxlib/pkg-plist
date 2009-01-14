@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib/pxlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib/pxlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib/libppxlib.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pxlib
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
