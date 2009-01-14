@@ -6,50 +6,25 @@
 #
 
 PORTNAME=	tn5250
-PORTVERSION=	0.17.3
-PORTREVISION=	1
+PORTVERSION=	0.17.4
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
 
-USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 
 MAN1=		lp5250d.1 scs2ascii.1 scs2pdf.1 scs2ps.1 tn5250.1
 MAN5=		tn5250rc.5
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-.if defined(WITH_SLANG)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-PKGNAMESUFFIX=	-slang
-CONFIGURE_ARGS+=	--with-slang=yes
-LDFLAGS+=	-lcurses
-.else
-CONFIGURE_ARGS+=	--with-slang=no
-.endif
-
-pre-everything::
-.if !defined(WITH_SLANG)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with S/Lang support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_SLANG=yes\""
-	@${ECHO_MSG}
-.endif
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/freebsd/5250keys ${PREFIX}/bin
-.for file in README sample.termcap us.5250.kbd
-	${INSTALL_DATA} ${WRKSRC}/freebsd/${file} ${DATADIR}
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS =/s|linux||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|: install-data-local|:|g' ${WRKSRC}/freebsd/Makefile.in
 
 .include <bsd.port.mk>
