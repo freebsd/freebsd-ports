@@ -3437,6 +3437,7 @@ fpc                             ports/lang/fpc
 fpc-base                        ports/lang/fpc-base
 fpc-bfd                         ports/devel/fpc-bfd
 fpc-cairo                       ports/graphics/fpc-cairo
+fpc-chm				ports/misc/fpc-chm
 fpc-docs                        ports/lang/fpc-docs
 fpc-fcl-base                    ports/devel/fpc-fcl-base
 fpc-fcl-db                      ports/devel/fpc-fcl-db
