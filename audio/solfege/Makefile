@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.10.4
-PORTREVISION=	1
+PORTVERSION=	3.12.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-nosound
@@ -17,9 +16,10 @@ PKGNAMESUFFIX=	-nosound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
-BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
+		txt2man:${PORTSDIR}/textproc/txt2man
 
-USE_GNOME=	gnomehack gnometarget libxslt pygtk2
+USE_GNOME=	gnomehack pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--disable-oss-sound \
 MAKE_ARGS=	skipmanual=yes
 USE_DISPLAY=	yes
 
-MAN1=		lessonfile_editor.1 solfege.1
+MAN1=		solfege.1
 
 STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
 
