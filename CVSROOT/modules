@@ -3434,6 +3434,7 @@ fox12                           ports/x11-toolkits/fox12
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
 fpc                             ports/lang/fpc
+fpc-aspell                      ports/textproc/fpc-aspell
 fpc-base                        ports/lang/fpc-base
 fpc-bfd                         ports/devel/fpc-bfd
 fpc-cairo                       ports/graphics/fpc-cairo
