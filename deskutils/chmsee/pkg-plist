@@ -9,9 +9,16 @@ share/applications/chmsee.desktop
 %%DATADIR%%/helpdoc.png
 %%DATADIR%%/hide-pane.png
 %%DATADIR%%/show-pane.png
+share/locale/bn/LC_MESSAGES/chmsee.mo
+share/locale/he/LC_MESSAGES/chmsee.mo
+share/locale/it/LC_MESSAGES/chmsee.mo
+share/locale/sv/LC_MESSAGES/chmsee.mo
+share/locale/sw/LC_MESSAGES/chmsee.mo
 share/locale/zh_CN/LC_MESSAGES/chmsee.mo
 share/mime-info/chmsee.keys
 share/mime-info/chmsee.mime
 share/pixmaps/chmsee-icon.png
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
 @dirrmtry share/applications
