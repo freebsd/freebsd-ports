@@ -1,6 +1,25 @@
---- Makefile.orig	2008-12-13 14:53:49.000000000 -0500
-+++ Makefile	2008-12-14 23:40:23.000000000 -0500
-@@ -97,7 +97,7 @@
+--- Makefile	2009-01-04 13:47:07.000000000 -0500
++++ Makefile	2009-01-09 00:52:30.000000000 -0500
+@@ -29,12 +29,18 @@
+   include ./pre.mk
+ endif
+ 
++ifeq ($OS), FREEBSD)
++  LDFLAGS += -Wl,-export-dynamic
++endif
+ ifeq ($(OS), LINUX)
+   LDFLAGS += -Wl,-export-dynamic
+ endif
+ 
+ # set executable stack as a linker option for X86 architecture, for dynamic recompiler
+ ifeq ($(CPU), X86)
++  ifeq ($(OS), FREEBSD)
++    LDFLAGS += -z execstack
++  endif
+   ifeq ($(OS), LINUX)
+     LDFLAGS += -z execstack
+   endif
+@@ -159,7 +165,7 @@
  # handle dynamic recompiler objects
  ifneq ($(NO_ASM), 1)
    ifeq ($(CPU), X86)
@@ -9,12 +28,3 @@
        DYNAREC = x86_64
      else
        DYNAREC = x86
-@@ -274,7 +274,7 @@
- all: $(ALL)
- 
- mupen64plus: $(OBJECTS)
--	$(MUPENCC) $^ $(LDFLAGS) $(LIBS) -Wl,-export-dynamic -lpthread -ldl -o $@
-+	$(MUPENCC) $^ $(LDFLAGS) $(LIBS) -Wl,-export-dynamic ${PTHREAD_LIBS} -o $@
- 	$(STRIP) $@
- 
- install:

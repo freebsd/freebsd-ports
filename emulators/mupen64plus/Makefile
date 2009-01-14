@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mupen64plus
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -28,6 +28,7 @@ RUN_DEPENDS+=	${PLUGINDIR}/blight_input.so:${PORTSDIR}/emulators/mupen64plus-sdl
 RUN_DEPENDS+=	${PLUGINDIR}/mupen64_hle_rsp_azimer.so:${PORTSDIR}/emulators/mupen64plus-rsp
 
 # Graphics plugins
+RUN_DEPENDS+=	${PLUGINDIR}/dummyvideo.so:${PORTSDIR}/emulators/mupen64plus-dummyvideo
 RUN_DEPENDS+=	${PLUGINDIR}/ricevideo.so:${PORTSDIR}/emulators/mupen64plus-rice
 RUN_DEPENDS+=	${PLUGINDIR}/glide64.so:${PORTSDIR}/emulators/mupen64plus-glide
 RUN_DEPENDS+=	${PLUGINDIR}/glN64.so:${PORTSDIR}/emulators/mupen64plus-gln64

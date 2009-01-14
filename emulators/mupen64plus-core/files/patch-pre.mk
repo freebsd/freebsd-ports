@@ -1,10 +1,18 @@
---- pre.mk.orig	2008-12-14 22:42:29.000000000 -0500
-+++ pre.mk	2008-12-14 23:37:19.000000000 -0500
-@@ -1,45 +1,28 @@
+--- pre.mk	2009-01-09 00:29:06.000000000 -0500
++++ pre.mk	2009-01-09 00:51:15.000000000 -0500
+@@ -21,26 +21,34 @@
+ 
  # detect system architecture: i386, x86_64, or PPC/PPC64
  UNAME = $(shell uname -m)
--ifeq ("$(UNAME)","x86_64")
 +ifeq ("$(UNAME)","amd64")
++  CPU = X86
++  ifeq ("$(BITS)", "32")
++    ARCH_DETECTED = 64BITS_32
++  else
++    ARCH_DETECTED = 64BITS
++  endif
++endif
+ ifeq ("$(UNAME)","x86_64")
    CPU = X86
    ifeq ("$(BITS)", "32")
 -    ARCH = 64BITS_32
@@ -32,46 +40,59 @@
    NO_ASM = 1
  endif
  
--
--# test for presence of SDL
--ifeq ($(shell which sdl-config 2>/dev/null),)
--  # throw error
--  $(error No SDL development libraries found!)
--endif
--
--# test for presence of GTK 2.0
--ifeq ($(shell which pkg-config 2>/dev/null),)
--  # throw error
--  $(error pkg-config not installed!)
--endif
--ifneq ("$(shell pkg-config gtk+-2.0 --modversion | head -c 2)", "2.")
--  # throw error
--  $(error No GTK 2.x development libraries found!)
--endif
--
- # set GTK flags and libraries
- GTK_FLAGS	= $(shell pkg-config gtk+-2.0 --cflags) -D_GTK2
- GTK_LIBS	= $(shell pkg-config gtk+-2.0 --libs)
-@@ -74,36 +57,36 @@
+@@ -56,6 +64,9 @@
+   OS = OSX
+   LDFLAGS += -liconv -lpng
+ endif
++ifeq ("$(UNAME)","FreeBSD")
++  OS = FREEBSD
++endif
  
+ ifeq ($(OS),)
+    $(warning OS not supported or detected, using default linux options.)
+@@ -66,8 +77,9 @@
+ ifeq ($(shell which sdl-config 2>/dev/null),)
+   $(error No SDL development libraries found!)
+ endif
+-SDL_FLAGS	= $(shell sdl-config --cflags)
+-SDL_LIBS	= $(shell sdl-config --libs)
++
++SDL_FLAGS	= `${SDL_CONFIG} --cflags`
++SDL_LIBS	= `${SDL_CONFIG} --libs`
+ 
+ # test for presence of FreeType
+ ifeq ($(shell which freetype-config 2>/dev/null),)
+@@ -147,23 +159,26 @@
+ endif
  
  # set base program pointers and flags
 -CC      = gcc
 -CXX     = g++
 -LD      = g++
--STRIP   = strip --strip-all
++CC      ?= gcc
++CXX     ?= g++
++LD      ?= g++
+ ifeq ($(OS),LINUX)
+-STRIP	= strip -s
++STRIP	?= strip -s
++endif
++ifeq ($(OS),FREEBSD)
++STRIP	?= strip -s
+ endif
+ ifeq ($(OS),OSX)
+-STRIP	= strip -x 
++STRIP	?= strip -x 
+ endif
 -RM      = rm
+-RM_F    = rm -f
 -MV      = mv
 -CP      = cp
 -MD      = mkdir
 -FIND    = find
 -PROF    = gprof
 -INSTALL = ginstall
-+CC      ?= gcc
-+CXX     ?= g++
-+LD      ?= g++
-+STRIP   ?= strip --strip-all
 +RM      ?= rm
++RM_F    ?= rm -f
 +MV      ?= mv
 +CP      ?= cp
 +MD      ?= mkdir
@@ -79,20 +100,38 @@
 +PROF    ?= gprof
 +INSTALL ?= ginstall
  
- # set base CFLAGS and LDFLAGS for all systems
--CFLAGS = -pipe -O3 -ffast-math -funroll-loops -fexpensive-optimizations -fno-strict-aliasing
+ # create SVN version defines
+ MUPEN_RELEASE = 1.5
+@@ -185,23 +200,40 @@
+ endif
+ 
+ # set base CFLAGS and LDFLAGS
+-CFLAGS += -pipe -O3 -ffast-math -funroll-loops -fexpensive-optimizations -fno-strict-aliasing
+-CORE_LDFLAGS += -lz -lm -lpng -lfreetype -ldl
 +CFLAGS += -ffast-math -funroll-loops -fexpensive-optimizations -fno-strict-aliasing
- LDFLAGS =
++ifeq ($(OS), FREEBSD)
++  CORE_LDFLAGS += -lz -lm -lpng -lfreetype
++else
++  CORE_LDFLAGS += -lz -lm -lpng -lfreetype -ldl
++endif
  
  # set special flags per-system
  ifeq ($(CPU), X86)
 -  ifeq ($(ARCH), 64BITS)
 -    CFLAGS += -march=athlon64
 +  ifeq ($(ARCH_DETECTED), 64BITS)
-+    CFLAGS += 
++    ifeq ($(OS), FREEBSD)
++      CFLAGS +=
++    else
++      CFLAGS += -march=athlon64
++    endif
    else
 -    CFLAGS += -march=i686 -mtune=pentium-m -mmmx -msse
-+    CFLAGS += -mmmx -msse
++    ifeq ($(OS), FREEBSD)
++      CFLAGS += -mmmx -msse
++    else
++      CFLAGS += -march=i686 -mtune=pentium-m -mmmx -msse
++    endif
      ifneq ($(PROFILE), 1)
        CFLAGS += -fomit-frame-pointer
      endif
@@ -102,26 +141,33 @@
 -    CFLAGS += -m32
 -    LDFLAGS += -m32 -m elf_i386
 +  ifeq ($(ARCH_DETECTED), 64BITS_32)
-+    CFLAGS += 
-+    LDFLAGS += 
++    ifeq ($(OS), FREEBSD)
++      CFLAGS += 
++      LDFLAGS += 
++    else
++      CFLAGS += -m32
++      LDFLAGS += -m32 -m elf_i386
++    endif
    endif
  endif
  ifeq ($(CPU), PPC)
-@@ -129,8 +112,8 @@
+@@ -209,6 +241,9 @@
+ endif
  
  # set CFLAGS, LIBS, and LDFLAGS for external dependencies
++ifeq ($(OS),FREEBSD)
++  PLUGIN_LDFLAGS	= -Wl,-Bsymbolic -shared
++endif
+ ifeq ($(OS),LINUX)
+   PLUGIN_LDFLAGS	= -Wl,-Bsymbolic -shared
+ endif
+@@ -216,6 +251,9 @@
+   PLUGIN_LDFLAGS	= -bundle
+ endif
  
--SDL_FLAGS	= $(shell sdl-config --cflags)
--SDL_LIBS	= $(shell sdl-config --libs)
-+SDL_FLAGS	= `${SDL_CONFIG} --cflags`
-+SDL_LIBS	= `${SDL_CONFIG} --libs`
- 
- ifeq ($(VCR), 1)
-   # test for presence of avifile
-@@ -148,5 +131,5 @@
- 
- PLUGIN_LDFLAGS	= -Wl,-Bsymbolic -shared
- 
--LIBGL_LIBS	= -L/usr/X11R6/lib -lGL -lGLU
-+LIBGL_LIBS	= -L${LOCALBASE}/lib -lGL -lGLU
- 
++ifeq ($(OS),FREEBSD)
++  LIBGL_LIBS	= -L${LOCALBASE}/lib -lGL -lGLU
++endif
+ ifeq ($(OS),LINUX)
+   LIBGL_LIBS	= -L/usr/X11R6/lib -lGL -lGLU
+ endif

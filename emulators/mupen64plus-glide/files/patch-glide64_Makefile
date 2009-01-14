@@ -1,58 +1,15 @@
---- glide64/Makefile	2008-10-13 21:31:47.000000000 -0500
-+++ glide64/Makefile	2008-12-15 01:10:56.000000000 -0500
-@@ -4,7 +4,7 @@
- include ../pre.mk
- 
- # set BITS
--ifeq ("$(ARCH)","64BITS")
-+ifeq ("$(ARCH_DETECTED)","64BITS")
-   BITS=64
-   MOPT=-m amd64
- else
-@@ -13,15 +13,15 @@
- endif
- 
- # local CFLAGS, LIBS, and LDFLAGS
--CFLAGS = -O3 -Wall -g -DGCC -DUSE_GTK $(SDL_CFLAGS) $(GTK_FLAGS) -Iwrapper/ -ffast-math -funroll-loops
--LDFLAGS	= -shared -Wl,-Bsymbolic -lGL -lGLU -L/usr/X11R6/lib $(SDL_LIBS)
-+CFLAGS += -DGCC -DUSE_GTK $(SDL_CFLAGS) $(GTK_FLAGS) -Iwrapper/ -ffast-math -funroll-loops
-+LDFLAGS	+= -shared -Wl,-Bsymbolic -lGL -lGLU -L${LOCALBASE}/lib $(SDL_LIBS)
- 
- # set special flags per-system
- ifeq ($(CPU), X86)
--  ifeq ($(ARCH), 64BITS)
--    CFLAGS += -march=athlon64 -fPIC
-+  ifeq ($(ARCH_DETECTED), 64BITS)
-+    CFLAGS += -fPIC
-   else
--    CFLAGS += -march=i686 -mtune=pentium-m -mmmx -msse
-+    CFLAGS += -mmmx -msse
-     ifneq ($(PROFILE), 1)
-     ifneq ($(VPDEBUG), 1)
-       CFLAGS += -fomit-frame-pointer
-@@ -29,9 +29,9 @@
-     endif
-   endif
-   # tweak flags for 32-bit build on 64-bit system
--  ifeq ($(ARCH), 64BITS_32)
--    CFLAGS += -m32
--    LDFLAGS += -m32 -m elf_i386
-+  ifeq ($(ARCH_DETECTED), 64BITS_32)
-+    CFLAGS += 
-+    LDFLAGS += 
-   endif
- endif
- ifeq ($(CPU), PPC)
-@@ -122,7 +122,7 @@
+--- glide64/Makefile	2009-01-13 00:45:38.000000000 -0500
++++ glide64/Makefile	2009-01-13 00:46:46.000000000 -0500
+@@ -114,7 +114,7 @@
  all: $(TARGET)
  
- $(TARGET): $(OBJECTS)
--	$(LD) $(OBJECTS) $(GTK_LIBS) $(LDFLAGS) -o $@
-+	$(CC) $(OBJECTS) $(LDFLAGS) $(GTK_LIBS) -o $@
- 	$(STRIP) --strip-all $@
+ $(TARGET): $(QT_EXTRA) $(OBJECTS)
+-	$(LD) $(OBJECTS) $(LDFLAGS) -o $@
++	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+ 	$(STRIP) $@
  
- Main.o: font.h cursor.h
-@@ -135,7 +135,7 @@
+ ui_glide64config.h: glide64config.ui
+@@ -133,7 +133,7 @@
  compiletex: compiletex.c
  	@rm -f compiletex compiletex.o
  	$(CC) -o compiletex.o -c $<
