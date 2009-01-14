@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.13.11
+PORTVERSION=	1.14.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/
+MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor with block and binary operations
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lgnuregex"
 
 MAN1=		le.1
 PORTDOCS=	FEATURES HISTORY NEWS README TODO
@@ -26,13 +25,6 @@ PLIST_FILES=	bin/le
 MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
 		colors-white keymap-emacs mainmenu mainmenu-ru syntax
 SRC_DATA=	le.hlp
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@LIBOBJS@||g ; \
-		 s|@ALLOCA@||g' ${WRKSRC}/lib/Makefile.in
-.for file in configure src/search.cc src/highli.h
-	@${REINPLACE_CMD} -e 's|<regex.h>|<gnu/regex.h>|g' ${WRKSRC}/${file}
-.endfor
 
 do-install:
 	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${PREFIX}/bin
