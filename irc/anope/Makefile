@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anope
-PORTVERSION=	1.7.24
+PORTVERSION=	1.8.0
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
@@ -19,6 +19,10 @@ CONFIGURE_ARGS=	--with-bindir=${PREFIX}/libexec/anope \
 		--with-datadir=${DATADIR} \
 		--with-rungroup=ircdru
 USE_PERL5_BUILD=	yes
+
+PORTDOCS=	BUGS COPYING DEFCON EVENTS \
+		FAQ INSTALL IRCD MODULES MYSQL \
+		NEWS PROXY README
 
 USE_RC_SUBR=	anope
 
@@ -40,5 +44,11 @@ CONFIGURE_ARGS+=	--without-mysql
 pre-install:
 	@${MKDIR} ${PREFIX}/libexec/anope
 	@${MKDIR} ${DATADIR}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
