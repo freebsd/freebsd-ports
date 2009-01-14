@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	chmsee
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://download.gro.clinux.org/chmsee/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
-LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
+LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
+		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
-USE_GNOME=	gnomehack gnomehier gnometarget libglade2
-WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnomehier libglade2
 USE_GECKO=	firefox mozilla seamonkey
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-gecko=${GECKO}
 
 MAN1=		chmsee.1
 
