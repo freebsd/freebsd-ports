@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Info
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		module_info.1 pfunc.1
-MAN3=		B::BUtils.3 Module::Info.3
+MAN3=		B::BUtils.3 B::Module::Info.3 Module::Info.3
 
 .include <bsd.port.mk>
