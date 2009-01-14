@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
-PKGNAMESUFFIX=	-forms
+PKGNAMESUFFIX=	-xforms
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	X-Forms interface for Free Pascal
@@ -15,7 +15,7 @@ COMMENT=	X-Forms interface for Free Pascal
 USE_FPC=	x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 OPTIONS=	XFORMS	"Install xforms graphical user interface toolkit"	on
