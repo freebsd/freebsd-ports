@@ -100,6 +100,7 @@
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-the-godfather
     SUBDIR += fortuneit
+    SUBDIR += fpc-chm
     SUBDIR += freedialog
     SUBDIR += freeguide
     SUBDIR += freshmeat-submit
