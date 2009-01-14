@@ -185,6 +185,8 @@ lib/libbiglooweb_u-%%BIGLOO_VERSION%%.so
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-32.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-33.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-34.html
+%%PORTDOCS%%%%DOCSDIR%%/bigloo-35.html
+%%PORTDOCS%%%%DOCSDIR%%/bigloo-36.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-4.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-5.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-6.html
