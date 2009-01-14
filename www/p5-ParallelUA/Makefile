@@ -7,6 +7,7 @@
 
 PORTNAME=	ParallelUA
 PORTVERSION=	2.57
+PORTREVISION=	1
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	LWP
@@ -26,6 +27,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Bundle::ParallelUA.3 \
 		LWP::Parallel.3 \
 		LWP::Parallel::Protocol.3 \
+		LWP::Parallel::Protocol::ftp.3 \
+		LWP::Parallel::Protocol::http.3 \
 		LWP::Parallel::RobotUA.3 \
 		LWP::Parallel::UserAgent.3 \
 		LWP::ParallelUA.3 \

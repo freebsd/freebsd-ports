@@ -15,4 +15,3 @@
 @dirrmtry %%SITE_PERL%%/LWP
 @dirrmtry %%SITE_PERL%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
