@@ -6,48 +6,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=		gerris
-PORTVERSION=		0.6.0
-PORTREVISION=	7
-CATEGORIES=		science math
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gfs
+PORTNAME=	gerris
+PORTVERSION=	0.9.2
+CATEGORIES=	science math
+MASTER_SITES=	SF/gfs
 
-PATCH_SITES=		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-			http://members.aon.at/odi/downloads/patches/:odunkl
-PATCH_SITE_SUBDIR=	gfs/:sf
-PATCHFILES=		gerris-0.6-patch-1.gz:sf,odunkl \
-			gerris-0.6-patch-2.gz:odunkl
-PATCH_DIST_STRIP=	-p1
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scientific CFD simulator
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A scientific CFD simulator
+LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts
 
-LIB_DEPENDS=		gts.5:${PORTSDIR}/graphics/gts
+USE_GNOME=	glib20 gnomehack pkgconfig
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-mpi
+USE_LDCONFIG=	yes
 
-.if !defined(WITHOUT_DX)
+.if defined(WITHOUT_DX)
+CONFIGURE_ARGS+=	--disable-dx
+PLIST_SUB+=	DX="@comment "
+.else
 BUILD_DEPENDS+=		dx:${PORTSDIR}/graphics/opendx
 RUN_DEPENDS+=		dx:${PORTSDIR}/graphics/opendx
-.else
-CONFIGURE_ARGS+=	--disable-dx
+PLIST_SUB+=	DX=""
 .endif
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=		yes
-USE_GNOME=		pkgconfig
-
-CONFIGURE_ARGS+=	--disable-mpi
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=	does not compile
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
-		${WRKSRC}/src/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
