@@ -1,0 +1,15 @@
+lib/fpc/2.2.2/units/i386-freebsd/users/Package.fpc
+lib/fpc/2.2.2/units/i386-freebsd/users/grp.ppu
+lib/fpc/2.2.2/units/i386-freebsd/users/pwd.ppu
+lib/fpc/2.2.2/units/i386-freebsd/users/users.ppu
+lib/fpc/2.2.2/units/i386-freebsd/users/grp.o
+lib/fpc/2.2.2/units/i386-freebsd/users/pwd.o
+lib/fpc/2.2.2/units/i386-freebsd/users/users.o
+lib/fpc/2.2.2/units/i386-freebsd/users/libpgrp.a
+lib/fpc/2.2.2/units/i386-freebsd/users/libppwd.a
+lib/fpc/2.2.2/units/i386-freebsd/users/libpusers.a
+@dirrm lib/fpc/2.2.2/units/i386-freebsd/users
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
