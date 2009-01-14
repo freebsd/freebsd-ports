@@ -1,4 +1,10 @@
 bin/gerbv
+include/gerbv-%%VERSION%%/gerbv.h
+lib/libgerbv.a
+lib/libgerbv.la
+lib/libgerbv.so
+lib/libgerbv.so.1
+libdata/pkgconfig/libgerbv.pc
 share/applications/gerbv.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/PNGPrintMiniHowto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/gimp-window.jpg
@@ -113,5 +119,6 @@ share/icons/hicolor/scalable/apps/gerbv.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm include/gerbv-%%VERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
