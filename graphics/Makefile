@@ -168,6 +168,7 @@
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
+    SUBDIR += fpc-imagemagick
     SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
     SUBDIR += fpc-libpng
