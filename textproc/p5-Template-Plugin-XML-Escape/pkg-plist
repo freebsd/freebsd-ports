@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Template/Plugin/XML/Escape.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/XML/Escape/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/XML/Escape
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin/XML
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
