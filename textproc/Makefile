@@ -562,6 +562,7 @@
     SUBDIR += p5-Template-Extract
     SUBDIR += p5-Template-Magic
     SUBDIR += p5-Template-Plugin-Lingua-EN-Inflect
+    SUBDIR += p5-Template-Plugin-XML-Escape
     SUBDIR += p5-Test-Perl-Critic
     SUBDIR += p5-Text-ASCIITable
     SUBDIR += p5-Text-Affixes
