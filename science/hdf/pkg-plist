@@ -79,9 +79,11 @@ include/tbbt.h
 include/vattr.h
 include/vg.h
 lib/libdf.a
+lib/libdf.so
 lib/libdf.so.2
 lib/libhdf4.settings
 lib/libmfhdf.a
+lib/libmfhdf.so
 lib/libmfhdf.so.3
 %%PORTDOCS%%%%DOCSDIR%%/RM-print42r3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UG_print42r3.pdf
