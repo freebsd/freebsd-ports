@@ -3483,6 +3483,7 @@ fpc-pcap                        ports/net/fpc-pcap
 fpc-postgres                    ports/databases/fpc-postgres
 fpc-pthreads                    ports/devel/fpc-pthreads
 fpc-regexpr                     ports/devel/fpc-regexpr
+fpc-sdl				ports/databases/fpc-sdl
 fpc-sqlite                      ports/databases/fpc-sqlite
 fpc-svgalib                     ports/graphics/fpc-svgalib
 fpc-syslog                      ports/sysutils/fpc-syslog
