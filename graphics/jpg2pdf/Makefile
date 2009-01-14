@@ -18,7 +18,7 @@ COMMENT=	Plain C converter of jpeg images to PDF or PostScript
 MAN1=		jpg2pdf.1
 PLIST_FILES=	bin/jpg2pdf
 
-WRKSRC=${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	(cd ${WRKSRC} ; ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c )
