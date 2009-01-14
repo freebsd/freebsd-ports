@@ -6,35 +6,47 @@
 #
 
 PORTNAME=	tinycobol
-PORTVERSION=	0.63
-PORTREVISION=	1
+PORTVERSION=	0.64
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tiny-cobol
+MASTER_SITES=	SF/tiny-cobol
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
-LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
-
-USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
-HAS_CONFIGURE=	yes
+
+USE_BZIP2=	yes
+USE_BDB=	3
 USE_BISON=	build
 USE_GMAKE=	yes
-
-CONFIGURE_ARGS=	--with-libdb=3 \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-cobf2f \
+		--with-libdb=3 \
 		--with-readline
-CPPFLAGS=	-I${LOCALBASE}/include
-CFLAGS+=		${CPPFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
 
-MAN1=		htcobol.1 htcobf2f.1
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+MANCOMPRESSED=	yes
+MAN1=		htcobf2f.1 htcobol.1 htcobrun.1
+
+CPPFLAGS=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+LDFLAGS=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		'/^INSTALL_PROGRAM=/s|=.*|=@INSTALL_PROGRAM@|g ; \
+		 /cobdir_docdir/s|^|#|g'
 
 post-install:
+	@(cd ${WRKSRC}/lib && ${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
+		install-static-libs install-shared-libs)
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/info/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/info/*.txt ${DOCSDIR}
 .endif
 
