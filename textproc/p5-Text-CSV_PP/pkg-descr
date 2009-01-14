@@ -1,7 +1,0 @@
-Text::CSV_PP has almost same functions of Text::CSV_XS which provides
-facilities for the composition and decomposition of comma-separated
-values. As its name suggests, Text::CSV_XS is a XS module and
-Text::CSV_PP is a Puer Perl one.
-
-Author:	Makamaka Hannyaharamitu, <makamaka[at]cpan.org>
-WWW:	http://search.cpan.org/dist/Text-CSV_PP/
