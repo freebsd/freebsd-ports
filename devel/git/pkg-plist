@@ -55,7 +55,9 @@ libexec/git-core/git-gc
 libexec/git-core/git-get-tar-commit-id
 libexec/git-core/git-grep
 %%GUI%%libexec/git-core/git-gui
+%%GUI%%libexec/git-core/git-gui--askpass
 libexec/git-core/git-hash-object
+libexec/git-core/git-help
 libexec/git-core/git-http-fetch
 libexec/git-core/git-http-push
 libexec/git-core/git-imap-send
@@ -117,6 +119,7 @@ libexec/git-core/git-send-email
 libexec/git-core/git-send-pack
 libexec/git-core/git-sh-setup
 libexec/git-core/git-shell
+libexec/git-core/git-stage
 @exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
 @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 libexec/git-core/git-shortlog
@@ -189,12 +192,18 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/index.tcl
 %%GUI%%share/git-gui/lib/logo.tcl
 %%GUI%%share/git-gui/lib/merge.tcl
+%%GUI%%share/git-gui/lib/mergetool.tcl
 %%GUI%%share/git-gui/lib/option.tcl
 %%GUI%%share/git-gui/lib/remote.tcl
+%%GUI%%share/git-gui/lib/remote_add.tcl
 %%GUI%%share/git-gui/lib/remote_branch_delete.tcl
+%%GUI%%share/git-gui/lib/search.tcl
 %%GUI%%share/git-gui/lib/shortcut.tcl
 %%GUI%%share/git-gui/lib/spellcheck.tcl
+%%GUI%%share/git-gui/lib/sshkey.tcl
 %%GUI%%share/git-gui/lib/status_bar.tcl
+%%GUI%%share/git-gui/lib/tools_dlg.tcl
+%%GUI%%share/git-gui/lib/tools.tcl
 %%GUI%%share/git-gui/lib/transport.tcl
 %%GUI%%share/git-gui/lib/win32.tcl
 %%GUI%%share/git-gui/lib/win32_shortcut.js
@@ -203,6 +212,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/msgs/hu.msg
 %%GUI%%share/git-gui/lib/msgs/it.msg
 %%GUI%%share/git-gui/lib/msgs/ja.msg
+%%GUI%%share/git-gui/lib/msgs/nb.msg
 %%GUI%%share/git-gui/lib/msgs/ru.msg
 %%GUI%%share/git-gui/lib/msgs/sv.msg
 %%GUI%%share/git-gui/lib/msgs/zh_cn.msg
@@ -256,8 +266,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/howto/update-hook-example.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/rebuild-from-update-hook.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/revert-branch-rebase.html
-%%HTMLDOCS%%%%DOCSDIR%%/howto/rebase-and-edit.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/using-merge-subtree.html
+%%HTMLDOCS%%%%DOCSDIR%%/howto/revert-a-faulty-merge.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/revert-branch-rebase.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/separating-topic-branches.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/rebase-from-internal-branch.txt
@@ -271,8 +281,10 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-merge-index.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-refs.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-rev-parse.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-stage.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-status.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitworkflows.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-hash.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-setup.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/send-pack-pipeline.txt
@@ -507,6 +519,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.0.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.0.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.0.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
