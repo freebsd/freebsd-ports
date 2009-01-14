@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-WebMake
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://webmake.sourceforge.net/released/ \
 		http://webmake.taint.org/released/
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		webmake.1
-MAN3=		HTML::WebMake.3 HTML::WebMake::PerlCodeLibrary.3 \
-		HTML::WebMake::Content.3 HTML::WebMake::Main.3
+MAN3=		HTML::WebMake.3 HTML::WebMake::MetadataContent.3 HTML::WebMake::PerlCodeLibrary.3 \
+		HTML::WebMake::Content.3 HTML::WebMake::Main.3 HTML::WebMake::Util.3
 
 .include <bsd.port.mk>
