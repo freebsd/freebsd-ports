@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/ \
-		http://www.teeworlds.com/files/
+MASTER_SITES=	http://www.teeworlds.com/files/ \
+		http://mirror.amdmi3.ru/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
@@ -18,8 +18,8 @@ COMMENT=	Platform game featuring buggers equipped with weapons
 
 USE_PYTHON_BUILD=	yes
 
-BAM=		${WRKDIR}/bam.bin
-BAM_VERSION=	20080326
+BAM_VERSION=	0.2.0
+BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
 
 OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
@@ -30,38 +30,34 @@ OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 BAM_TARGET=	server_release
 PLIST_SUB+=	CLIENT="@comment "
 .else
-LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
-USE_XORG=	x11 xxf86vm
-USE_GL=		yes
+USE_XORG=	x11
+USE_GL=		gl glu
+USE_SDL=	sdl
 PLIST_SUB+=	CLIENT=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/default.bam
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/default.bam
-	@${REINPLACE_CMD} -e 's|\(s.cc.c_compiler = \).*|\1"${CC}"|; \
-		s|\(s.cc.cxx_compiler = \).*|\1"${CXX}"|; \
-		s|\(s.cc.flags = \).*|\1"${CFLAGS}"|; \
-		s|\(s.linker.linker = \).*|\1"${CXX}"|' \
-		${WRKDIR}/bam/src/base.bam
-	@${FIND} ${WRKSRC}/src -name "*.c" -o -name "*.cpp" | \
-		${XARGS} ${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g'
-	@${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g' ${WRKSRC}/datasrc/*
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's|-fstack-protector -fstack-protector-all||' \
+	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|' \
+		${BAM_WRKSRC}/make_unix.sh
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.bam
+	@${REINPLACE_CMD} -e '/sdirs\[\]/,/}/ s|"/.*"|"${DATADIR}"|' \
+		${WRKSRC}/src/engine/e_engine.c
+
+	@${REINPLACE_CMD} -e 's|\(settings.cc.c_compiler = \).*|\1"${CC}"|; \
+		s|\(settings.cc.cxx_compiler = \).*|\1"${CXX}"|' \
+		${BAM_WRKSRC}/src/driver_gcc.bam
+	@${REINPLACE_CMD} -e 's|\(settings.*linker = \).*|\1"${CXX}"|' \
+		${BAM_WRKSRC}/src/base.bam
+	@${REINPLACE_CMD} -e '/settings.cc.flags:Add/ s|-fno-exceptions|& ${CFLAGS}|' \
 		${WRKSRC}/default.bam
-.endif
 
 # build bam executable - teeworlds own build system
 pre-build:
-	cd ${WRKDIR}/bam && ${CC} ${CFLAGS} src/tools/txt2c.c -o src/tools/txt2c
-	cd ${WRKDIR}/bam && src/tools/txt2c < src/base.bam > src/internal_base.h
-	cd ${WRKDIR}/bam && ${CC} ${CFLAGS} src/lua/src/*.c src/lua/src/lib/*.c \
-		src/*.c -Isrc/lua/include -o ${BAM} -lm ${PTHREAD_LIBS}
+	cd ${BAM_WRKSRC} && ${SH} -v make_unix.sh
 
 # build teeworlds
 do-build:
-	cd ${WRKSRC} && ${BAM} -v ${BAM_TARGET}
+	cd ${WRKSRC} && ${BAM_WRKSRC}/src/bam -v ${BAM_TARGET}
 
 do-install:
 .if !defined(WITH_TEEWORLDS_SERVER_ONLY)
