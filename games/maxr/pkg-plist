@@ -83,6 +83,7 @@ bin/maxr
 %%DATADIR%%/buildings/fac_small/info.pcx
 %%DATADIR%%/buildings/fac_small/shw.pcx
 %%DATADIR%%/buildings/fac_small/video.pcx
+%%DATADIR%%/buildings/goldraff/.directory
 %%DATADIR%%/buildings/goldraff/data.xml
 %%DATADIR%%/buildings/goldraff/effect.pcx
 %%DATADIR%%/buildings/goldraff/effect_org.pcx
@@ -317,6 +318,7 @@ bin/maxr
 %%DATADIR%%/max.xml
 %%DATADIR%%/maxr
 %%DATADIR%%/maxr.png
+%%DATADIR%%/maxr.bmp
 %%DATADIR%%/music/music.xml
 %%DATADIR%%/sounds/Chat.wav
 %%DATADIR%%/sounds/absorb.wav
