@@ -1,40 +1,66 @@
---- Makefile.in.orig	Thu Jan 10 10:33:23 2008
-+++ Makefile.in	Sun Jan 13 04:43:42 2008
-@@ -56,11 +56,11 @@
- # machines or ./configure --enable-altivec on PowerPC architectures, this will then set the option 
- # correctly
- HARDWARECFLAGS    = @HARDWARECFLAGS@
--COMMONFLAGS       = $(ARCH) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
-+COMMONFLAGS       = -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
+--- Makefile.in.orig	2008-12-06 03:19:25.000000000 +0900
++++ Makefile.in	2008-12-09 15:17:10.000000000 +0900
+@@ -79,7 +79,7 @@
+ # -DNEXUSTREE print nexus tree instead of plain newick trees
+ # -UEP calculates unique event polymorphism
+ NEWSTUFF          = -DNEWVERSION -DBFDEBUG
+-COMMONFLAGS       = $(ARCH) $(MACOSVERSION) $(NEWSTUFF) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
++COMMONFLAGS       = $(MACOSVERSION) $(NEWSTUFF) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
  #
  # combine the common flags with the version number and subversion number
  COMMONVFLAGS      =  $(COMMONFLAGS)  -DMIGRATESUBVERSION=\"\\\"$(MIGRATESUBVERSION)\\\"\" 
--CFLAGS            = @CFLAGS@ $(COMMONVFLAGS) -DMIGRATEVERSION=\"\\\"$(MIGRATEVERSION)\\\"\" 
-+CFLAGS            = $(COMMONVFLAGS) -DMIGRATEVERSION=\"\\\"$(MIGRATEVERSION)\\\"\" 
- # IBM xlc compiler
- # CC              = xlc
- # CFLAGS_XLC      = -O3 -Q -qunroll -qalloca -qhot -qipa -qthreaded 
-@@ -151,8 +151,8 @@
- 	@echo "----------------------------------------------------"
- 	$(MAKE) all
+@@ -195,22 +195,21 @@
+ 	@echo '  make install (installs the executables and man page)'
+ 	@echo '  [there are other targets for debugging purposes, check the Makefile]'
  
 -all::   haru
--	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)  $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)" "LDFLAGS = $(LDFLAGS) -fexceptions" 
-+all::   
-+	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)" "LIBS = $(LIBS)" "LDFLAGS = $(LDFLAGS) -fexceptions" 
+-	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)  $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)" "LDFLAGS = $(LDFLAGS) $(EXCEPTIONS)" 
++all::
++	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)" "LIBS = $(LIBS)" "LDFLAGS = $(LDFLAGS) $(EXCEPTIONS)" 
  
- debug::   
- 	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)"
-@@ -274,10 +274,10 @@
- 	-/bin/chmod +x $(CONFIGUREEXEC) 	
  
- haru::
--	(cd ./haru ; make -f makefile.osx "CC=$(CC)" "CPP=$(CC)" "ARCH=$(ARCH)")
-+	(cd ./haru ; $(MAKE) -f makefile.osx "CC=$(CC)" "CPP=$(CC)" "ARCH=")
+ pretty:: haru   
+ 	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)  $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)" "LDFLAGS = $(LDFLAGS) $(EXCEPTIONS)" 
  
- haru-clean::
--	(cd ./haru ; make -f makefile.osx clean)
-+	(cd ./haru ; $(MAKE) -f makefile.osx clean)
+-thread:: haru   
++thread-pretty:: haru   
+ 	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)  $(PRETTYCFLAGS) $(THREADCFLAGS)" "LIBS = $(OTHERLIBS) $(PDFLIB) $(LIBS)" "LDFLAGS = $(LDFLAGS) $(EXCEPTIONS)" 
  
- distrib::
- 	$(MAKE) srcdistrib;
+ debug:: haru   
+ 	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)  $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)" "LDFLAGS =$(LDFLAGS) $(EXCEPTIONS)" 
+  
+ thread::   
+-	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS) $(THREADCFLAGS)" "LIBS = $(OTHERLIBS) $(LIBS)";\
+-	strip $(NAME) 
++	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS) $(THREADCFLAGS)" "LIBS = $(OTHERLIBS) $(LIBS)"
+ 
+ mpis-thread:: haru   
+ 	$(MAKE) $(NAME) "CC=$(MPICC)" "CFLAGS = $(CFLAGS) $(PRETTYCFLAGS) $(THREADCFLAGS) -DMPI -DSLOWNET -DNEWREPLICANT -DMPIREPLICANT" "LIBS = $(OTHERLIBS) $(PDFLIB) $(LIBS)"
+@@ -398,22 +397,22 @@
+ 	else echo Must define $@; exit 1; fi
+ 
+ $(NAME): $(PRODUCT_DEPENDS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(LIBS) ;
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(LIBS) ;
+ 
+ $(WINNAME): $(PRODUCT_DEPENDS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(OTHERLIBS) $(WINLIBS) ;
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(OTHERLIBS) $(WINLIBS) ;
+ 
+ 
+ $(EFENCENAME): $(PRODUCT_DEPENDS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(EFENCELIBS) $(LIBS) ;
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(EFENCELIBS) $(LIBS) ;
+ 
+ 
+ $(MEMDEBUGNAME): $(PRODUCT_DEPENDS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(MEMDEBUGLIBS) $(LIBS) ;
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(MEMDEBUGLIBS) $(LIBS) ;
+ 
+ 
+ $(DMALLOCNAME): $(PRODUCT_DEPENDS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(DMALLOCLIBS) $(LIBS) ;
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OFILES) $(DMALLOCLIBS) $(LIBS) ;
+ 
+ 
+ #----------------------------------------------------------------

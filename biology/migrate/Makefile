@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	biology
-MASTER_SITES=	http://popgen.csit.fsu.edu/%SUBDIR%/
-MASTER_SITE_SUBDIR=	currentversion oldversions/${PORTVERSION}
+MASTER_SITES=	http://people.scs.fsu.edu/~beerli/popgen/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,10 +16,9 @@ COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	HARDWARECFLAGS="${CFLAGS}" \
-		MYCPPFLAGS="${CFLAGS} -DNOJPEG -DNOPNG -DNOZLIB"
+CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
+MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY"
 
 MAN1=		migrate.1
 MLINKS=		migrate.1 migrate-n.1
@@ -42,8 +39,8 @@ ALL_TARGET=	all
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin
@@ -59,7 +56,7 @@ do-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/../example/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/../example/[A-Za-z]* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
