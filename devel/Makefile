@@ -369,6 +369,7 @@
     SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
     SUBDIR += fpc-sdl
+    SUBDIR += fpc-symbolic
     SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += freebase
