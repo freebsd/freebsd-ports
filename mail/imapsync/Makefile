@@ -7,6 +7,7 @@
 
 PORTNAME=	imapsync
 PORTVERSION=	1.267
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/:imapsync \
 		${MASTER_SITE_PERL_CPAN:S/$/:imapclient229/} \

@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -182,7 +183,9 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Timeout.3 \
 		Mail::SpamAssassin::Util.3 \
 		Mail::SpamAssassin::Util::Charset.3 \
+		Mail::SpamAssassin::Util::DependencyInfo.3 \
 		Mail::SpamAssassin::Util::Progress.3 \
+		Mail::SpamAssassin::Util::RegistrarBoundaries.3 \
 		spamassassin-run.3
 
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
