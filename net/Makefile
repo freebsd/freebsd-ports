@@ -136,7 +136,6 @@
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += forg
-    SUBDIR += fpc-libasync
     SUBDIR += fpc-netdb
     SUBDIR += fpc-pcap
     SUBDIR += fping
