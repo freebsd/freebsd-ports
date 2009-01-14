@@ -366,7 +366,6 @@
     SUBDIR += fpc-fcl-xml
     SUBDIR += fpc-fpmkunit
     SUBDIR += fpc-fv
-    SUBDIR += fpc-gconf
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
