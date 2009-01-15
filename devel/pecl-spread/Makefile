@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +16,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Php Interface to the Spread Toolkit API
 
-BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread
+BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
