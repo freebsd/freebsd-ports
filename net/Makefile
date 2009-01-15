@@ -903,6 +903,7 @@
     SUBDIR += spnetkit
     SUBDIR += spoofer
     SUBDIR += spread
+    SUBDIR += spread4
     SUBDIR += spread-j
     SUBDIR += sprinkle
     SUBDIR += spserver
