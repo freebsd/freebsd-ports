@@ -7,6 +7,7 @@
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.1
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
@@ -56,6 +57,7 @@ MAN1=		compile_link.1 \
 		update.1
 
 MAN3=		Vend::Accounting::SQL_Ledger.3 \
+		Vend::Cart.3 \
 		Vend::CounterFile.3 \
 		Vend::Form.3 \
 		Vend::Interpolate.3 \
