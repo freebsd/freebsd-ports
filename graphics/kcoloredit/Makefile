@@ -19,10 +19,10 @@ COMMENT=	Palette files editor for KDE
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib uic_build moc_build
+QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
-APP_VER=	1.9.0
-EXTRA_VER=	4.1.1
+APP_VER=	2.0.0
+EXTRA_VER=	4.1.2
 
 .include <bsd.port.mk>

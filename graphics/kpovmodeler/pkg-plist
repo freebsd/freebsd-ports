@@ -422,6 +422,7 @@ share/icons/hicolor/48x48/apps/kpovmodeler.png
 share/icons/oxygen/16x16/mimetypes/kpovmodeler_doc.png
 share/icons/oxygen/32x32/mimetypes/kpovmodeler_doc.png
 share/icons/oxygen/48x48/mimetypes/kpovmodeler_doc.png
+share/kde4/services/kpovmodelerpart.desktop
 share/locale/af/LC_MESSAGES/kpovmodeler.mo
 share/locale/ar/LC_MESSAGES/kpovmodeler.mo
 share/locale/be/LC_MESSAGES/kpovmodeler.mo

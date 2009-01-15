@@ -19,11 +19,11 @@ COMMENT=	A KDE editor/frontend for Povray
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl
+QT_COMPONENTS=	corelib opengl qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
 APP_VER=	1.1.3
-EXTRA_VER=	4.1.1
+EXTRA_VER=	4.1.2
 
 .include <bsd.port.mk>

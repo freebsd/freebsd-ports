@@ -18,9 +18,9 @@ COMMENT=	Additonal plugins and features for Konqueror
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdebase kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib
+QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
-EXTRA_VER=	4.1.1
+EXTRA_VER=	4.1.2
 
 .include <bsd.port.mk>
