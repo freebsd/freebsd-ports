@@ -52,4 +52,8 @@ CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB+=	XUL="@comment "
 .endif
 
+.if ${OSVERSION} < 70043
+BROKEN=		does not compile
+.endif
+
 .include <bsd.port.post.mk>
