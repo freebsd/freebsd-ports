@@ -119,6 +119,7 @@ include/google-gadgets/ggadget/text_frame.h
 include/google-gadgets/ggadget/texture.h
 include/google-gadgets/ggadget/unicode_utils.h
 include/google-gadgets/ggadget/usage_collector_interface.h
+include/google-gadgets/ggadget/uuid.h
 include/google-gadgets/ggadget/variant.h
 include/google-gadgets/ggadget/video_element_base.h
 include/google-gadgets/ggadget/view.h
@@ -229,11 +230,12 @@ libdata/pkgconfig/libggadget-js-1.0.pc
 libdata/pkgconfig/libggadget-npapi-1.0.pc
 %%QT%%libdata/pkgconfig/libggadget-qt-1.0.pc
 libdata/pkgconfig/libggadget-xdg-1.0.pc
+%%GTK%%share/applications/ggl-designer.desktop
 %%GTK%%share/applications/ggl-gtk.desktop
 %%QT%%share/applications/ggl-qt.desktop
-%%DATADIR%%/analog_clock.gg
+%%DATADIR%%/analog-clock.gg
 %%DATADIR%%/designer.gg
-%%DATADIR%%/digital_alarm_clock.gg
+%%DATADIR%%/digital-alarm-clock.gg
 %%DATADIR%%/google-gadget-browser.gg
 %%DATADIR%%/igoogle.gg
 %%DATADIR%%/photos.gg
