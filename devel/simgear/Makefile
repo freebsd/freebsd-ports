@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	1.0.0
+PORTVERSION=	1.9.0
 CATEGORIES=	devel games
-MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
-		ftp://ftp.de.simgear.org/pub/simgear/Source/
+MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
+		ftp://ftp.simgear.org/pub/simgear/Source/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A toolkit for 3D games and simulations
@@ -18,7 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		alut.1:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut \
+		osg.48:${PORTSDIR}/graphics/osg \
+		boost_thread.4:${PORTSDIR}/devel/boost
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=	gl glu glut
