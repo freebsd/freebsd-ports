@@ -1,23 +1,17 @@
-lib/perl5/site_perl/5.8.8/mach/Device/USB.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/Bus.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/DevConfig.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/DevEndpoint.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/DevInterface.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/Device.pm
-lib/perl5/site_perl/5.8.8/mach/Device/USB/FAQ.pod
-lib/perl5/site_perl/5.8.8/mach/Device/dump_usb.pl
-lib/perl5/site_perl/5.8.8/mach/auto/Device/USB/.packlist
-lib/perl5/site_perl/5.8.8/mach/auto/Device/USB/USB.bs
-lib/perl5/site_perl/5.8.8/mach/auto/Device/USB/USB.so
-@dirrm lib/perl5/site_perl/5.8.8/mach/auto/Device/USB
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/auto/Device
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/auto
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/Device/USB
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/Device
-@dirrmtry lib/perl5/site_perl/5.8.8/mach
-@dirrmtry lib/perl5/site_perl/5.8.8
-@dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5/5.8.8/man/man3
-@dirrmtry lib/perl5/5.8.8/man
-@dirrmtry lib/perl5/5.8.8
-@dirrmtry lib/perl5
+%%SITE_PERL%%/mach/Device/USB.pm
+%%SITE_PERL%%/mach/Device/USB/Bus.pm
+%%SITE_PERL%%/mach/Device/USB/DevConfig.pm
+%%SITE_PERL%%/mach/Device/USB/DevEndpoint.pm
+%%SITE_PERL%%/mach/Device/USB/DevInterface.pm
+%%SITE_PERL%%/mach/Device/USB/Device.pm
+%%SITE_PERL%%/mach/Device/USB/FAQ.pod
+%%SITE_PERL%%/mach/Device/dump_usb.pl
+%%SITE_PERL%%/mach/auto/Device/USB/.packlist
+%%SITE_PERL%%/mach/auto/Device/USB/USB.bs
+%%SITE_PERL%%/mach/auto/Device/USB/USB.so
+@dirrm %%SITE_PERL%%/mach/auto/Device/USB
+@dirrmtry %%SITE_PERL%%/mach/auto/Device
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/mach/Device/USB
+@dirrmtry %%SITE_PERL%%/mach/Device
+@dirrmtry %%SITE_PERL%%/mach
