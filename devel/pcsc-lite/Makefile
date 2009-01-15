@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.4.102
+PORTVERSION=	1.5.1
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2479/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2708/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -31,8 +31,7 @@ CONFIGURE_ARGS+=--enable-debug \
 		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
-		--enable-threadsafe \
-		--disable-libhal
+		--enable-threadsafe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN5=		reader.conf.5
@@ -40,7 +39,10 @@ MAN8=		pcscd.8 update-reader.conf.8
 
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE} \
+		--disable-libhal
+.else
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
 post-patch:
