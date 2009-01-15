@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hoc
-PORTVERSION=	9.1.2
+PORTVERSION=	9.2
 CATEGORIES=	math
-MASTER_SITES=	http://nadav.harel.org.il/homepage/hoc/ CENKES
+MASTER_SITES=	http://nadav.harel.org.il/homepage/hoc/
 PKGNAMEPREFIX=	nyh-
 EXTRACT_SUFX=	.tgz
 
