@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5ccb1c14-e357-11dd-a765-0030843d3802">
+    <topic>mplayer -- vulnerability in STR files processor</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.11_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30994">
+	  <p>The vulnerability is caused due to a boundary error within the
+	    "str_read_packet()" function in libavformat/psxstr.c. This can be
+	    exploited to cause a heap-based buffer overflow via a specially
+	    crafted STR file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3162</cvename>
+      <bid>30157</bid>
+      <url>http://secunia.com/advisories/30994</url>
+      <url>https://roundup.mplayerhq.hu/roundup/ffmpeg/issue311</url>
+    </references>
+    <dates>
+      <discovery>2008-07-09</discovery>
+      <entry>2009-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bc6a7e79-e111-11dd-afcd-00e0815b8da8">
     <topic>cgiwrap -- XSS Vulnerability</topic>
     <affects>
