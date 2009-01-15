@@ -7,7 +7,7 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	1.7.b3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/.beta/}
@@ -27,7 +27,7 @@ KDE4_BUILDENV=	yes
 USE_KDE4=	kdeprefix kdelibs runtime workspace automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui xml
+QT_COMPONENTS=	corelib dbus gui xml qmake_build moc uic rcc
 
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
