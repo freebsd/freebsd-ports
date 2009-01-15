@@ -8,6 +8,7 @@
 
 PORTNAME=	SVG-Graph
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +24,25 @@ BUILD_DEPENDS=	${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		SVG::Graph.3
+MAN3=		SVG::Graph.3 \
+		SVG::Frame.3 \
+		SVG::Graph::Data.3 \
+		SVG::Graph::Data::Datum.3 \
+		SVG::Graph::Data::Node.3 \
+		SVG::Graph::Data::Tree.3 \
+		SVG::Graph::File.3 \
+		SVG::Graph::Frame.3 \
+		SVG::Graph::Glyph.3 \
+		SVG::Graph::Glyph::axis.3 \
+		SVG::Graph::Glyph::bar.3 \
+		SVG::Graph::Glyph::barflex.3 \
+		SVG::Graph::Glyph::bezier.3 \
+		SVG::Graph::Glyph::bubble.3 \
+		SVG::Graph::Glyph::heatmap.3 \
+		SVG::Graph::Glyph::line.3 \
+		SVG::Graph::Glyph::pictogram.3 \
+		SVG::Graph::Glyph::scatter.3 \
+		SVG::Graph::Glyph::tree.3 \
+		SVG::Graph::Glyph::wedge.3
 
 .include <bsd.port.mk>
