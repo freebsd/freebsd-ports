@@ -7,7 +7,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.2r3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
 		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
@@ -76,7 +76,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}_SHARED/mfhdf/libsrc/libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}_SHARED/hdf/src/libdf.so.${SHLIBVER_MDF} ${PREFIX}/lib
 	${LN} -sf libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib/libmfhdf.so
-	${LN} -sf libmdf.so.${SHLIBVER_MDF} ${PREFIX}/lib/libmdf.so
+	${LN} -sf libdf.so.${SHLIBVER_MDF} ${PREFIX}/lib/libdf.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES} ${SZIP_DOCFILE}
