@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -17,7 +17,6 @@ OPTIONS=	MYSQL "Add MySQL support" on \
 		SQLITE " Add Sqlite support" on \
 		PGSQL "Add PgSQL support" on
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
