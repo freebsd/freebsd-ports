@@ -116,8 +116,8 @@ share/gimageview/pixmaps/default/zoom.xpm
 share/gimageview/pixmaps/default/zoom_fit.xpm
 share/gimageview/pixmaps/default/zoom_in.xpm
 share/gimageview/pixmaps/default/zoom_out.xpm
-share/locale/fr/LC_MESSAGES/gimageview.mo
-share/locale/ja/LC_MESSAGES/gimageview.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gimageview.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gimageview.mo
 share/pixmaps/gimv.png
 @dirrm lib/gimageview/archiver
 @dirrm lib/gimageview/image_loader
