@@ -8,6 +8,7 @@
 
 PORTNAME=	WebService-Technorati
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +24,17 @@ PERL_CONFIGURE=	yes
 
 MAN3=	WebService::Technorati.3 \
 	WebService::Technorati::ApiQuery.3 \
-	WebService::Technorati::Exception.3
+	WebService::Technorati::Author.3 \
+	WebService::Technorati::AuthorinfoApiQuery.3 \
+	WebService::Technorati::Blog.3 \
+	WebService::Technorati::BlogLink.3 \
+	WebService::Technorati::BloginfoApiQuery.3 \
+	WebService::Technorati::CosmosApiQuery.3 \
+	WebService::Technorati::Exception.3 \
+	WebService::Technorati::LinkQuerySubject.3 \
+	WebService::Technorati::OutboundApiQuery.3 \
+	WebService::Technorati::SearchApiQuery.3 \
+	WebService::Technorati::SearchMatch.3 \
+	WebService::Technorati::SearchTerm.3
 
 .include <bsd.port.mk>

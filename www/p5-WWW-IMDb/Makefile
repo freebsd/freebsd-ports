@@ -7,6 +7,7 @@
 
 PORTNAME=	IMDb
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	ftp://ftp.rhapsodyk.net/pub/devel/perl/
 PKGNAMEPREFIX=	p5-WWW-
@@ -21,6 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PERL_CONFIGURE=	yes
 
-MAN3=		IMDb.3
+MAN3=		IMDb.3 IMDb::People.3 IMDb::Title.3
 
 .include <bsd.port.mk>
