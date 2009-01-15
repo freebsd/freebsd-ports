@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/stomljen/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 
-MAINTAINER=	stevefranks@ieee.org
+MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Resolution tool for Intel i915 video cards
 
 USE_RC_SUBR=	915resolution.sh

@@ -11,7 +11,7 @@ PORTVERSION=	0.19
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
-MAINTAINER=	stevefranks@ieee.org
+MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	A 3D GPS Mapping program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
