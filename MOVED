@@ -1108,7 +1108,6 @@ textproc/p5-Search-OpenFTS|textproc/openfts|2004-06-19|duplicate of textproc/ope
 devel/ORBacus||2004-06-20|port broken for >2 months
 devel/libcache||2004-06-20|port broken for >2 months
 devel/linguist||2004-06-20|port broken for >2 months
-textproc/p5-XML-Xerces||2004-06-20|port broken for >2 months
 textproc/p5-XML-Xerces-BagOfTricks||2004-06-20|depended on removed port textproc/p5-XML-Xerces
 audio/spiralsynthbaby||2004-06-20|port broken for >2 months
 x11-toolkits/xclass||2004-06-20|port broken for >2 months
