@@ -1424,6 +1424,7 @@
     SUBDIR += trac-email2trac
     SUBDIR += trac-fullblog
     SUBDIR += trac-gantt
+    SUBDIR += trac-graphviz
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
     SUBDIR += trac-ldap
