@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-mb339-pan
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	MB339-PAN
@@ -14,7 +15,7 @@ DISTNAME=	MB339-PAN
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A simulation of the MB-339 PAN aerobatic jet
 
-RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
