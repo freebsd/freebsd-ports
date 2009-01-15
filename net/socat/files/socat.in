@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Author: Emanuel Haupt <ehaupt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: socat
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="socat"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+command_args="&"
+
+load_rc_config $name
+
+: ${socat_enable="NO"}
+: ${socat_flags=""}
+
+run_rc_command "$1"
