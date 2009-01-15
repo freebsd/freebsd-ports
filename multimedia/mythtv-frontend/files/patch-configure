@@ -1,0 +1,11 @@
+--- configure.orig	2008-03-04 22:23:23.000000000 +0100
++++ configure	2008-11-04 20:12:25.000000000 +0100
+@@ -1466,7 +1466,7 @@
+   x86_64|amd64)
+     arch="x86_32"
+     enable fast_unaligned
+-    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
++    canon_arch="`$cxx -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
+     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
+       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+         arch="x86_64"
