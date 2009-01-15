@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pydf
-PORTVERSION=	5
+PORTVERSION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
-DISTNAME=	pydf_5
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	gwarf@gwarf.org
 COMMENT=	A python implementation of df
