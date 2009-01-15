@@ -1,4 +1,4 @@
-bin/corelist
+%%PL_FILES%%bin/corelist
 %%SITE_PERL%%/Module/CoreList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
