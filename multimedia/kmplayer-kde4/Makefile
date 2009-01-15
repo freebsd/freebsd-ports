@@ -7,6 +7,7 @@
 
 PORTNAME=	kmplayer
 DISTVERSION=	0.11.0-rc4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/
@@ -20,6 +21,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	${KDE4_PREFIX}/lib ${KDE4_PREFIX}/lib/kde4
 
 .include <bsd.port.mk>
