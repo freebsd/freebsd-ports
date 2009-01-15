@@ -1,24 +1,22 @@
-# ex:ts=8
 # Ports collection makefile for:	socat
-# Date created:			May 14, 2002
-# Whom:				ijliao
+# Date created:				May 14, 2002
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.6.0.0
-PORTREVISION=	1
-CATEGORIES=	net
-MASTER_SITES=	http://www.dest-unreach.org/socat/download/
+PORTVERSION=	1.7.0.0
+CATEGORIES=	net ipv6
+MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
+		CRITICAL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multipurpose relay and more
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
-USE_BZIP2=	yes
-
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_RC_SUBR=	socat
 
 MAN1=		socat.1
 
