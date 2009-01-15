@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-trayicon
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
@@ -16,36 +16,26 @@ COMMENT=	GNOME system tray app for monitoring connected WinCE based devices
 LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \
 		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		unshield.0:${PORTSDIR}/archivers/unshield \
-		orange.0:${PORTSDIR}/archivers/liborange
-RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs
-
-OPTIONS=	NOTIFY	"Enable libnotify support"	on
+		orange.0:${PORTSDIR}/archivers/liborange \
+		notify.1:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs \
+		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget libgnomeui
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	${PORTNAME}.schemas
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
 MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
-.endif
-
-post-patch:
-.if !defined(WITH_NOTIFY)
-	@${REINPLACE_CMD} -e 's|enable_notify=yes|enable_notify=no|' ${WRKSRC}/configure
-.endif
 
 pre-configure:
 	@if [ -z "`${GREP} libsynce ${LOCALBASE}/libdata/pkgconfig/liborange.pc`" ]; then \
