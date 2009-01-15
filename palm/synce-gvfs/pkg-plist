@@ -1,6 +1,11 @@
 libexec/gvfsd-synce
 share/gvfs/mounts/synce.mount
 share/icons/gnome/48x48/apps/synce-gvfs.png
+share/mime/application/x-pocket-excel.xml
+share/mime/application/x-pocket-word.xml
+share/mime/packages/synce-gvfs.xml
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/gvfs/mounts
 @dirrmtry share/gvfs
 @dirrmtry share/icons/gnome/48x48/apps
