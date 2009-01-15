@@ -1,9 +1,9 @@
 etc/psg.conf.sample
 etc/psgconf_modules.sample
-sbin/ConfigFile2Storable
-sbin/psgconf
-sbin/psgconf-import
-sbin/platform-name
+bin/ConfigFile2Storable
+bin/psgconf
+bin/psgconf-import
+bin/platform-name
 %%DATADIR%%/config/defaults.conf
 %%DATADIR%%/config/platform-fc4.conf
 %%DATADIR%%/config/platform-freebsd4.conf

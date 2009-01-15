@@ -7,6 +7,7 @@
 
 PORTNAME=	psgconf
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-DOM2
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	XML
@@ -26,6 +27,7 @@ MAN3=		XML::DOM2::Attribute.3 XML::DOM2::Element.3 \
 		XML::DOM2::DOM::Document.3 XML::DOM2::Parser.3 \
 		XML::DOM2::Attribute::Namespace.3 XML::DOM2::XPath.3 \
 		XML::DOM2::DOM::NameSpace.3 XML::DOM2::Element::CDATA.3 \
-		XML::DOM2::DOM::Element.3 XML::DOM2::Element::Comment.3
+		XML::DOM2::DOM::Element.3 XML::DOM2::Element::Comment.3 \
+		XML::DOM2::DOM::Attribute.3
 
 .include <bsd.port.mk>
