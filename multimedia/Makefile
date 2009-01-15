@@ -174,6 +174,8 @@
     SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += mythtv
+    SUBDIR += mythtv-frontend
+    SUBDIR += mythtv-themes
     SUBDIR += netshow
     SUBDIR += nmm
     SUBDIR += noatun-plugins
