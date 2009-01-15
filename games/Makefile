@@ -222,7 +222,6 @@
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fargoal
-    SUBDIR += fgfs-base
     SUBDIR += fgkicker
     SUBDIR += fgrun
     SUBDIR += fgsd
