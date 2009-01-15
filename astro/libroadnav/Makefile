@@ -12,7 +12,7 @@ CATEGORIES=	astro geography
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=roadnav
 
-MAINTAINER=	stevefranks@ieee.org
+MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Helper library for Roadnav: A 3D GPS Mapping program
 
 USE_WX=		2.6+

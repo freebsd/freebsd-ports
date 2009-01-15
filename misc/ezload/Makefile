@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://proj.bpsw.biz/ezload/downloads/
 
-MAINTAINER=	stevefranks@ieee.org
+MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Firmware down/uploader for Cypress' EZ-USB chip
 
 MAN1=		ezupload.1 ezdownload.1 aw.1

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	stevefranks@ieee.org
+MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Extended utility to work with JTAG-aware boards
 
 USE_BZIP2=	yes
