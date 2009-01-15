@@ -1,0 +1,13 @@
+This package builds a docset from sources in different formats. The
+generated documents can be all nicely interlinked and to have the same
+look and feel.
+
+Currently it knows to handle input formats:
+
+ * POD * HTML
+
+and knows to generate:
+
+ * HTML * PS * PDF
+
+WWW: http://search.cpan.org/~stas/DocSet
