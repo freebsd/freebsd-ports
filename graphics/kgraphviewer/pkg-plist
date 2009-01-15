@@ -3,7 +3,6 @@ bin/kgraphviewer
 lib/kde4/kgraphviewerpart.so
 share/applications/kde4/kgrapheditor.desktop
 share/applications/kde4/kgraphviewer.desktop
-share/applications/kde4/kgraphviewer_part.desktop
 share/apps/kgrapheditor/kgrapheditorui.rc
 share/apps/kgraphviewer/kgraphviewerui.rc
 share/apps/kgraphviewerpart/kgraphviewer_part.rc
@@ -46,6 +45,7 @@ share/icons/hicolor/32x32/apps/kgraphviewer.png
 share/kde4/services/kgraphviewer_part.desktop
 share/locale/ar/LC_MESSAGES/kgraphviewer.mo
 share/locale/be/LC_MESSAGES/kgraphviewer.mo
+share/locale/cs/LC_MESSAGES/kgraphviewer.mo
 share/locale/da/LC_MESSAGES/kgraphviewer.mo
 share/locale/de/LC_MESSAGES/kgraphviewer.mo
 share/locale/el/LC_MESSAGES/kgraphviewer.mo
