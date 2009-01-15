@@ -1,11 +1,11 @@
-# New ports collection makefile for:	skanlite
-# Date created:		2008-09-01
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
+# New ports collection makefile for:	kpovmodeler
+# Date created:		2008-07-31
+# Whom:			Max Brazhnikov <makc@issp.ac.ru>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	skanlite
+PORTNAME=	kpovmodeler
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -14,17 +14,16 @@ DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Simple image scanning application for KDE
-
-LIB_DEPENDS=	ksane.0:${PORTSDIR}/graphics/kdegraphics4
+COMMENT=	A KDE editor/frontend for Povray
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib uic_build moc_build
+QT_COMPONENTS=	corelib opengl qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+USE_GETTEXT=	yes
 
-APP_VER=	0.2
-EXTRA_VER=	4.1.1
+APP_VER=	1.1.3
+EXTRA_VER=	4.1.2
 
 .include <bsd.port.mk>
