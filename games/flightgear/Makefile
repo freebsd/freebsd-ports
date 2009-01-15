@@ -9,13 +9,14 @@ PORTNAME?=	FlightGear
 PORTVERSION?=	${FGVERSION}
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
+MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Source/ \
 		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
-		http://flightgear.mxchange.org/pub/fgfs/Source/ \
-		http://ftp3.linux.kiev.ua/pub/fgfs/Source/
+		http://ftp3.linux.kiev.ua/pub/fgfs/Source/ \
+		ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
+		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
+		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Source/
 
 MAINTAINER?=	ganael.laplanche@martymac.com
 COMMENT?=	The FlightGear flight simulator
@@ -25,9 +26,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
-		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
 
-FGVERSION=	1.0.0
+FGVERSION=	1.9.0
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
@@ -35,7 +36,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share	# location of fgfs-base
+# location of flightgear-data
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
 
 MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
 
