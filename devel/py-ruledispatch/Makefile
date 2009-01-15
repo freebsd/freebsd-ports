@@ -8,8 +8,8 @@
 PORTNAME=	RuleDispatch
 PORTVERSION=	0.5.a1.r2506
 CATEGORIES=	devel python
-MASTER_SITES=	http://peak.telecommunity.com/snapshots/ \
-		http:///nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
+		http://peak.telecommunity.com/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-0.5a1.dev-r2506
 
