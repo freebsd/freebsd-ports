@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.7
+PORTVERSION=	1.98.8
 CATEGORIES+=	net games
 MASTER_SITES=	SFE
 
@@ -22,11 +22,11 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/tt++
 
-.include <bsd.port.pre.mk>
-
 DOCS=		CREDITS FAQ README SCRIPTS TODO \
 		docs/chat_protocol.txt docs/tintin19.txt
 PORTDOCS=	${DOCS:T}
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
