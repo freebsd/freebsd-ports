@@ -143,6 +143,7 @@
     SUBDIR += netbeans4
     SUBDIR += netbeans5
     SUBDIR += netbeans55
+    SUBDIR += netbeans61
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
