@@ -26,6 +26,8 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 
+BROKEN=		does not build with simgear
+
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
