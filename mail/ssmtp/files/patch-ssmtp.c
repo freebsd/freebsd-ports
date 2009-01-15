@@ -1,5 +1,5 @@
 --- ssmtp.c.orig	2004-07-23 01:58:48.000000000 -0400
-+++ ssmtp.c	2008-11-19 16:13:46.000000000 -0500
++++ ssmtp.c	2009-01-15 14:13:10.000000000 -0500
 @@ -12,8 +12,9 @@
   See COPYRIGHT for the license
  
@@ -419,15 +419,7 @@
  
  	SSL_load_error_strings();
  	SSLeay_add_ssl_algorithms();
-@@ -1117,6 +1147,7 @@
- 			}
- 			use_tls=True; /* now continue as normal for SSL */
- 		}
-+		printf("cert ok\n");
- 
- 		ssl = SSL_new(ctx);
- 		if(!ssl) {
-@@ -1179,7 +1210,7 @@
+@@ -1179,7 +1209,7 @@
  			buf[i++] = c;
  		}
  	}
@@ -436,7 +428,7 @@
  
  	return(buf);
  }
-@@ -1293,14 +1324,14 @@
+@@ -1293,14 +1323,14 @@
  	}
  
  	if((p = strtok(pw->pw_gecos, ";,"))) {
@@ -453,7 +445,7 @@
  		uad = append_domain(pw->pw_name);
  	}
  
-@@ -1349,7 +1380,7 @@
+@@ -1349,7 +1379,7 @@
  	/* Try to log in if username was supplied */
  	if(auth_user) {
  #ifdef MD5AUTH
@@ -462,7 +454,7 @@
  			auth_pass = strdup("");
  		}
  
-@@ -1377,7 +1408,7 @@
+@@ -1377,7 +1407,7 @@
  		}
  		memset(buf, 0, sizeof(buf));
  
@@ -471,7 +463,7 @@
  #ifdef MD5AUTH
  		}
  #endif
-@@ -1549,7 +1580,7 @@
+@@ -1549,7 +1579,7 @@
  		j = 0;
  
  		add = 1;
@@ -480,7 +472,7 @@
  			switch(argv[i][j]) {
  #ifdef INET6
  			case '6':
-@@ -1567,14 +1598,14 @@
+@@ -1567,14 +1597,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_user = strdup(argv[i+1]);
@@ -497,7 +489,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1584,14 +1615,14 @@
+@@ -1584,14 +1614,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_pass = strdup(argv[i+1]);
@@ -514,7 +506,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1669,14 +1700,14 @@
+@@ -1669,14 +1699,14 @@
  			case 'F':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_F = strdup(argv[(i + 1)]);
@@ -531,7 +523,7 @@
  						die("parse_options() -- strdup() failed");
  					}
  				}
-@@ -1688,14 +1719,14 @@
+@@ -1688,14 +1718,14 @@
  			case 'r':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_f = strdup(argv[(i + 1)]);
