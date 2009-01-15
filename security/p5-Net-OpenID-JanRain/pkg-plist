@@ -12,7 +12,6 @@
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/SQLStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/MySQLStore.pm
 %%SITE_PERL%%/Net/OpenID/JanRain/Stores/SQLiteStore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/JanRain/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID/JanRain
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

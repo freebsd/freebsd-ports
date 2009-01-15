@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-OpenID-JanRain
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +31,7 @@ MAN3=		Net::OpenID::JanRain::Consumer.3 \
 		Net::OpenID::JanRain::Stores::MySQLStore.3 \
 		Net::OpenID::JanRain::Stores::PostgreSQLStore.3 \
 		Net::OpenID::JanRain::Stores::SQLStore.3 \
-		Net::OpenID::JanRain::Stores::SQLiteStore.3
+		Net::OpenID::JanRain::Stores::SQLiteStore.3 \
+		Net::OpenID::JanRain::Util.3
 
 .include <bsd.port.mk>
