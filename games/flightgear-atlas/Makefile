@@ -27,6 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 USE_AUTOTOOLS=	aclocal:19 autoheader:262 automake:15 autoconf:262
 AUTOMAKE_ARGS=	--add-missing
 
+BROKEN=	does not build with simgear
+
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=	gl glu glut
