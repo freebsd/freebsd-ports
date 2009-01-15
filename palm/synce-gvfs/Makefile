@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synce-gvfs
-PORTVERSION=	0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget gvfs
+USE_GNOME=	gnomeprefix gnomehack gvfs
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
