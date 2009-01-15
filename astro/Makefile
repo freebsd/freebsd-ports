@@ -32,6 +32,7 @@
     SUBDIR += libroadnav
     SUBDIR += luna
     SUBDIR += match
+    SUBDIR += merkaartor
     SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += nova
