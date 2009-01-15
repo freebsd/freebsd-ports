@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Harness
 PORTVERSION=	3.14
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -63,6 +64,8 @@ MAN3=		App::Prove.3 \
 .if ${PERL_LEVEL} >= 500800
 .undef MAN1
 PLIST_SUB+=	PL_FILES="@comment "
+pre-patch:
+	@${PERL} -pi -e "s,'bin/prove',," ${WRKSRC}/Makefile.PL
 .else
 PLIST_SUB+=	PL_FILES=""
 .endif
