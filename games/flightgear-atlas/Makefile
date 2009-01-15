@@ -22,7 +22,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
-		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
 
 USE_AUTOTOOLS=	aclocal:19 autoheader:262 automake:15 autoconf:262
 AUTOMAKE_ARGS=	--add-missing
