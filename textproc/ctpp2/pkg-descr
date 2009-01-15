@@ -1,6 +1,7 @@
 This is a simple set of C++ classes which allow to use
-templates like perl module HTML::Template
+templates like perl modules Template Toolkit and HTML::Template::Pro
+Version 2.
 
-WWW: http://reki.ru/products/ctpp/
+WWW: http://ctpp.havoc.ru/
 
 - reki@reki.ru
