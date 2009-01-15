@@ -775,6 +775,7 @@
     SUBDIR += sudo
     SUBDIR += sudoscript
     SUBDIR += sudosh
+    SUBDIR += sudosh2
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += switzerland
