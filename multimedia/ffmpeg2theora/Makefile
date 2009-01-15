@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg2theora
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/
 
