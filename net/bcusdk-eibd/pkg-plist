@@ -15,9 +15,12 @@ bin/eibnetsearch
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupresponse
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupsocketlisten
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupsocketread
+%%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupsocketswrite
+%%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupsocketwrite
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupsresponse
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupswrite
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/groupwrite
+%%EXAMPLES%%%%EXAMPLESDIR%%/bin/knxtool
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/madcread
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/maskver
 %%EXAMPLES%%%%EXAMPLESDIR%%/bin/mmaskver
@@ -61,9 +64,12 @@ bin/eibnetsearch
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupresponse.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupsocketlisten.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupsocketread.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/groupsocketswrite.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/groupsocketwrite.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupsresponse.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupswrite.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/groupwrite.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/knxtool.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/madcread.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/maskver.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/mmaskver.c
@@ -93,6 +99,8 @@ bin/eibnetsearch
 %%EXAMPLES%%%%EXAMPLESDIR%%/writeaddress.c
 %%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bin
 %%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/EIBConnection.cs
+@dirrm %%DATADIR%%
 %%JAVA%%%%JAVASHAREDIR%%/eibclient.jar
 include/eibclient.h
 include/eibloadresult.h

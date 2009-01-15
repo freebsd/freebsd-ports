@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcusdk
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.auto.tuwien.ac.at/~mkoegler/eib/
 PKGNAMESUFFIX=	-eibd
