@@ -179,6 +179,8 @@ include/fxt/comb/fact2perm.h
 include/fxt/comb/fibonacci.h
 include/fxt/comb/gray-cycle-leaders.h
 include/fxt/comb/gray.h
+include/fxt/comb/hilbert-ndim-rec.h
+include/fxt/comb/hilbert-ndim.h
 include/fxt/comb/ksubset-gray.h
 include/fxt/comb/ksubset-rec.h
 include/fxt/comb/ksubset-twoclose.h
@@ -196,12 +198,14 @@ include/fxt/comb/mpartition.h
 include/fxt/comb/mset-perm-gray.h
 include/fxt/comb/mset-perm-lex-rec.h
 include/fxt/comb/mset-perm-lex.h
+include/fxt/comb/mset-perm-pref.h
 include/fxt/comb/necklace.h
 include/fxt/comb/num-compositions.h
 include/fxt/comb/num-necklaces.h
 include/fxt/comb/num2perm.h
 include/fxt/comb/paren-gray.h
 include/fxt/comb/paren.h
+include/fxt/comb/paren-pref.h
 include/fxt/comb/partition-rec.h
 include/fxt/comb/partition.h
 include/fxt/comb/perm-colex.h
@@ -377,6 +381,7 @@ include/fxt/sort/convex.h
 include/fxt/sort/equivclasses.h
 include/fxt/sort/grep.h
 include/fxt/sort/heapsort.h
+include/fxt/sort/merge-sort.h
 include/fxt/sort/minmax.h
 include/fxt/sort/minmaxfunc.h
 include/fxt/sort/minmaxidx.h
@@ -411,6 +416,7 @@ include/fxt/walsh/and-convolution.h
 include/fxt/walsh/arithtransform.h
 include/fxt/walsh/dyadiccnvl.h
 include/fxt/walsh/fib-walsh.h
+include/fxt/walsh/max-convolution.h
 include/fxt/walsh/mers-walsh.h
 include/fxt/walsh/or-convolution.h
 include/fxt/walsh/reedmuller.h
@@ -630,6 +636,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/gexz-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hadamard-srs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hadamard-srs-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hilbert-ndim-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hilbert-ndim-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hilbert-ndim-rec-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hilbert-ndim-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hanoi-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/hanoi-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kproducts-colex-demo.cc
@@ -672,6 +682,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-lex-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-lex-rec2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-lex-rec2-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-pref-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-gray-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-gray-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-pos-rec-demo.cc
@@ -710,6 +722,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-gray-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-gray-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-pref-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/paren-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-rec-demo.cc
@@ -1003,6 +1017,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-necklaces-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/heapsort-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/heapsort-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/merge-sort-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/merge-sort-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/merge-sort4-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/merge-sort4-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/radixsort-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/radixsort-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/selection-sort-demo.cc
