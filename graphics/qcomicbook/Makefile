@@ -7,11 +7,11 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
-MAINTAINER=	makc@issp.ac.ru
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
@@ -30,4 +30,13 @@ DESKTOP_ENTRIES="QComicBook" "Comic Book Viewer" \
 		"${DATADIR}/${PORTNAME}.png" \
 		"qcomicbook" "" false
 
-.include <bsd.port.mk>
+OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on
+
+.include <bsd.port.pre.mk>
+
+# 7-Zip (.cb7) support
+.if !defined(WITHOUT_7ZIP)
+RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+.endif
+
+.include <bsd.port.post.mk>
