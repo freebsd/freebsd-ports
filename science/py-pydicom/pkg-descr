@@ -1,0 +1,7 @@
+pydicom is a pure python package for working with DICOM files. It was
+made for inspecting and modifying DICOM files in an easy "pythonic"
+way. The modifications can be written again to a new file. As a pure
+python package, it should run anywhere python runs without any other
+requirements.
+
+WWW:	http://code.google.com/p/pydicom/
