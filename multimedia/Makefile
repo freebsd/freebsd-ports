@@ -29,6 +29,7 @@
     SUBDIR += dv2jpg
     SUBDIR += dv2sub
     SUBDIR += dvbcut
+    SUBDIR += dvbsnoop
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
     SUBDIR += dvdauthorwizard
