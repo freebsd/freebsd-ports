@@ -176,6 +176,7 @@ GiNaC                           ports/math/GiNaC
 Gofer                           ports/lang/Gofer
 GraphicsMagick                  ports/graphics/GraphicsMagick
 GraphicsMagick12                ports/graphics/GraphicsMagick12
+GraphicsMagick13                ports/graphics/GraphicsMagick13
 HVSC-Update                     ports/audio/HVSC-Update
 Hermes                          ports/graphics/Hermes
 HeroesOfMightAndMagic           ports/games/HeroesOfMightAndMagic
@@ -4545,6 +4546,7 @@ graphics_jgraph                 ports/graphics/jgraph
 graphics_orca                   ports/graphics/orca
 graphicsmagick                  ports/graphics/GraphicsMagick
 graphicsmagick12                ports/graphics/GraphicsMagick12
+graphicsmagick13                ports/graphics/GraphicsMagick13
 graphopt                        ports/graphics/graphopt
 graphthing                      ports/math/graphthing
 graphviz                        ports/graphics/graphviz
@@ -8186,6 +8188,7 @@ mercury                         ports/net-im/mercury
 mergeant                        ports/databases/mergeant
 mergelog                        ports/www/mergelog
 meritous                        ports/games/meritous
+merkaartor                      ports/astro/merkaartor
 merlin                          ports/games/merlin
 merlinmon                       ports/net/merlinmon
 mesa-demos                      ports/graphics/mesa-demos
@@ -8986,6 +8989,7 @@ netbeans3                       ports/java/netbeans3
 netbeans4                       ports/java/netbeans4
 netbeans5                       ports/java/netbeans5
 netbeans55                      ports/java/netbeans55
+netbeans61                      ports/java/netbeans61
 netboot                         ports/net/netboot
 netcat                          ports/net/netcat
 netcdf                          ports/science/netcdf
@@ -10707,6 +10711,7 @@ p5-Dir-Project                  ports/devel/p5-Dir-Project
 p5-Dir-Purge                    ports/sysutils/p5-Dir-Purge
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
+p5-DocSet                       ports/textproc/p5-DocSet
 p5-EV                           ports/devel/p5-EV
 p5-EasyTCP                      ports/net/p5-EasyTCP
 p5-Email-Abstract               ports/mail/p5-Email-Abstract
@@ -12452,7 +12457,6 @@ p5-Text-Bidi                    ports/converters/p5-Text-Bidi
 p5-Text-Bind                    ports/textproc/p5-Text-Bind
 p5-Text-CSV                     ports/textproc/p5-Text-CSV
 p5-Text-CSV-Simple              ports/textproc/p5-Text-CSV-Simple
-p5-Text-CSV_PP                  ports/textproc/p5-Text-CSV_PP
 p5-Text-CSV_XS                  ports/textproc/p5-Text-CSV_XS
 p5-Text-Capitalize              ports/textproc/p5-Text-Capitalize
 p5-Text-CharWidth               ports/textproc/p5-Text-CharWidth
@@ -13944,6 +13948,7 @@ p5-dns-config                   ports/dns/p5-DNS-Config
 p5-dns-easydns                  ports/dns/p5-DNS-EasyDNS
 p5-dns-zone                     ports/dns/p5-DNS-Zone
 p5-dns-zoneparse                ports/dns/p5-DNS-ZoneParse
+p5-docset                       ports/textproc/p5-DocSet
 p5-doxygenfilter                ports/devel/p5-doxygenfilter
 p5-dtemplate                    ports/textproc/p5-dTemplate
 p5-dwh_file                     ports/databases/p5-DWH_File
@@ -15743,7 +15748,6 @@ p5-text-chomp                   ports/textproc/p5-Text-Chomp
 p5-text-context-eitherside      ports/textproc/p5-Text-Context-EitherSide
 p5-text-csv                     ports/textproc/p5-Text-CSV
 p5-text-csv-simple              ports/textproc/p5-Text-CSV-Simple
-p5-text-csv_pp                  ports/textproc/p5-Text-CSV_PP
 p5-text-csv_xs                  ports/textproc/p5-Text-CSV_XS
 p5-text-decorator               ports/textproc/p5-Text-Decorator
 p5-text-delimited               ports/textproc/p5-Text-Delimited
@@ -20407,6 +20411,7 @@ spooles                         ports/math/spooles
 spooles-mpich                   ports/math/spooles-mpich
 spread                          ports/net/spread
 spread-j                        ports/net/spread-j
+spread4                         ports/net/spread4
 spreadlogd                      ports/www/spreadlogd
 spring                          ports/games/spring
 springframework                 ports/java/springframework
@@ -20643,6 +20648,7 @@ sudoku                          ports/games/sudoku
 sudoku_solver                   ports/games/sudoku_solver
 sudoscript                      ports/security/sudoscript
 sudosh                          ports/security/sudosh
+sudosh2                         ports/security/sudosh2
 sudsol                          ports/games/sudsol
 sugarcrm                        ports/deskutils/sugarcrm
 suitesparse                     ports/math/suitesparse
@@ -21241,6 +21247,7 @@ trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
 trac-fullblog                   ports/www/trac-fullblog
 trac-gantt                      ports/www/trac-gantt
+trac-graphviz                   ports/www/trac-graphviz
 trac-hierwiki                   ports/www/trac-hierwiki
 trac-iniadmin                   ports/www/trac-iniadmin
 trac-ldap                       ports/www/trac-ldap
