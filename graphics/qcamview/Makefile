@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
 PATCHFILES=	${REALNAME}-bsd-0.04.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Logitech Quickcam Express USB Utilities for NetBSD/FreeBSD
 
 REALNAME=	qce-ga

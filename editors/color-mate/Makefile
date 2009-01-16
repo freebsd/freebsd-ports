@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Color customizing module for Emacsen
 
 USE_PERL5=	yes

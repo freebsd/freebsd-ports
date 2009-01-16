@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://line.to/mac/soft/du2ps/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Filter for converting output of du to PostScript file
 
 # Nkf is required for just converting character code of japanese manual

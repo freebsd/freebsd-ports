@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	A Java/UML Object-Oriented Design Tool
 
 USE_ZIP=	yes

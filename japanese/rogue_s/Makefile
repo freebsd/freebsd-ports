@@ -21,7 +21,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL} \
 PATCH_SITE_SUBDIR=	knu
 PATCHFILES=	rogue_s.patch04
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Japanized and message separated version of Rogue-clone: Version II
 
 .if !defined(NOPORTDATA)

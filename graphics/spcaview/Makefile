@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
 PATCHFILES=	spca5xx-bsd-0.6b.patch.gz
 PATCH_DIST_STRIP=	-p3
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	USB Cameras based SPCA5xx Utilities
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/drivers/usb
