@@ -4,35 +4,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=		linuxlibertine
-PORTVERSION=		2.7
-CATEGORIES=		x11-fonts
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		LinLibertineFont-${PORTVERSION}
-EXTRACT_SUFX=		.tgz
+PORTNAME=	linuxlibertine
+PORTVERSION=	4.1.8
+CATEGORIES=	x11-fonts
+MASTER_SITES=	SF
+DISTNAME=	LinLibertineFont-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		bkoenig@alpha-tierchen.de
-COMMENT=		Linux Libertine Open Fonts
+MAINTAINER=	bkoenig@alpha-tierchen.de
+COMMENT=	Linux Libertine Open Fonts
 
-BUILD_DEPENDS=		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-WRKSRC=			${WRKDIR}/${DISTNAME:C/-.*//}
-PREFIX?=		${X11BASE}
-FONTSDIR?=		${PREFIX}/lib/X11/fonts/${PORTNAME}
-PLIST_SUB=		FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
-NO_BUILD=		yes
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-.*//}
+FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+NO_BUILD=	yes
 
-.SILENT:
-
-do-install: install-fonts install-docs
-
-install-fonts:
+do-install:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.otf ${FONTSDIR}
-
-install-docs:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Bugs ${DOCSDIR}
