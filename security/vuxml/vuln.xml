@@ -114,7 +114,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>nagios2</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.12_2</lt></range>
       </package>
     </affects>
     <description>
@@ -137,6 +137,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-11-06</discovery>
       <entry>2009-01-12</entry>
+      <modified>2009-01-15</modified>
     </dates>
   </vuln>
 
