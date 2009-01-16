@@ -12,5 +12,7 @@ The four packages are:
     callback - closures with variable arguments as first-class C functions
                (a reentrant combination of vacall and trampoline)
 
+LICENSE: GPL2 or later
+
 WWW: http://www.haible.de/bruno/packages-ffcall.html
 WWW: http://directory.fsf.org/ffcall.html
