@@ -6,4 +6,7 @@ arrays, to GUI interface classes such as windows, sliders, buttons, etc.
 Please contact the GNUstep maintainers at <discussion@gnustep.org> in 
 case of questions and help offers.
 
+LICENSE: LGPL2 or later (framework)
+LICENSE: GPL3 or later (tools)
+
 WWW: http://www.gnustep.org/
