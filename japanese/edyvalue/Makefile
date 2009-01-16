@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Utility to print a statement of Edy card
 
 LIB_DEPENDS=	pasori.1:${PORTSDIR}/devel/libpasori

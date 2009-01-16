@@ -16,7 +16,7 @@ PATCH_SITES=	http://vinvin.dyndns.org/projects/
 PATCHFILES=	${REALNAME}-${PORTVERSION}-bsd-0.06.patch.gz
 PATCH_DIST_STRIP=       -p1
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Philips USB Cameras Utilities for NetBSD/FreeBSD
 
 REALNAME=	pwc

@@ -10,7 +10,7 @@ PORTVERSION=	2.3e
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
-MAINTAINER=	mistral@imasy.or.jp
+MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	Stone is a TCP/IP packet repeater in the application layer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.3d-2.3.2.7
