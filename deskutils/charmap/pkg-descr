@@ -5,4 +5,6 @@ promise towards a desktop environment.
 Charmap offers font selection, allowing one to easily see all the glyphs
 which a particular font offers.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.nongnu.org/charmap/

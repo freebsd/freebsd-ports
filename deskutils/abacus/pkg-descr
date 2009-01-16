@@ -17,4 +17,6 @@ can delete, move around and resize. Printing via Postscript.
 Imports/Exports CSV,Tab separated, Wk1 and TinySheet (for the popular
 PalmPilot organizer) formats.
 
+LICENSE: GPL2 or later
+
 WWW: http://tahoe.inesc.pt/~aml/abacus/abacus.html
