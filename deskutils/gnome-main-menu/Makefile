@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-main-menu
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
