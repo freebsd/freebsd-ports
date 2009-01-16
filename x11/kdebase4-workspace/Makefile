@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -29,6 +30,8 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		xrdb:${PORTSDIR}/x11/xrdb \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		xset:${PORTSDIR}/x11/xset
+
+CONFLICTS=	kdebase-runtime-4.1.[0-1]*
 
 SUB_FILES=	kdm
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
