@@ -251,6 +251,7 @@
     SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += transkode
+    SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += tv_grab_au
     SUBDIR += umr
