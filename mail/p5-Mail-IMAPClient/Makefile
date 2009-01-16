@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Mail-IMAPClient
-PORTVERSION=	3.12
+PORTVERSION=	3.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 module to talk to a IMAP4rev1 (RFC2060) server
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
