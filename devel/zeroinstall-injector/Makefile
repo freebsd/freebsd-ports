@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zeroinstall-injector
-PORTVERSION=	0.34
+PORTVERSION=	0.37
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=zero-install
 
 MAINTAINER=	a134qaed@gmail.com
@@ -17,6 +17,7 @@ COMMENT=	0install injector
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	lzma:${PORTSDIR}/archivers/lzma
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
