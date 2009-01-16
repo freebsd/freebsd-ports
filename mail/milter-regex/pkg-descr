@@ -10,4 +10,6 @@ Some of the sendmail ports omit libmilter by default (SENDMAIL_WITHOUT_MILTER).
 
 This program is developed on OpenBSD by the maintainer.
 
+LICENSE: BSD
+
 WWW:  http://www.benzedrine.cx/milter-regex.html
