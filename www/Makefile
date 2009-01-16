@@ -105,6 +105,7 @@
     SUBDIR += comclear
     SUBDIR += commonist
     SUBDIR += conkeror
+    SUBDIR += contenido
     SUBDIR += coppermine
     SUBDIR += crawl
     SUBDIR += crp
