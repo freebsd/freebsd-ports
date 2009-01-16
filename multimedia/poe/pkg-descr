@@ -5,4 +5,6 @@ Poe: A Pugnacious Ogg Editor. Poe is a vorbis comment editor. It tries to
  table change dependent upon preference settings, and what comments are in the
  ogg file you are editing.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.eskimo.com/~pburns/Poe/

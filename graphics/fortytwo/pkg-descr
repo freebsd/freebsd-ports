@@ -5,4 +5,6 @@ Such a service may be e.g. a dictionary services, which all nodes provide
 at present. This service allows the storage of any data in a node and is
 based on keys which uniquely identify content within a dictionary.
 
+LICENSE: LGPL2 or later
+
 WWW: http://FortyTwo.sourceforge.net/index.html

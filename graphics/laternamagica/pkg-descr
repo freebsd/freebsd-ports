@@ -3,4 +3,6 @@ switching to full-screen mode. LaternaMagica maintains its image list in a
 window and the user selects which image to display, making it easy to assemble
 a show from different source directories.
 
+LICENSE: GPL2 or later
+
 WWW: http://gap.nongnu.org/

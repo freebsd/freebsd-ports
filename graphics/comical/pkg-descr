@@ -15,4 +15,6 @@ Nifty Features:
 * Supports all encrypted RAR archives as well as ZIP archives with
   pkzip 2.04g encryption.
 
+LICENSE: GPL2 or later with exception to link with unrar
+
 WWW: http://comical.sourceforge.net/

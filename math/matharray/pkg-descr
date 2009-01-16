@@ -14,3 +14,5 @@ user-defined functions.
 MathArray also does much more.  Arrays can be manipulated, transposed
 and concatenated. One can extract subarrays or include subarrays within
 larger arrays.
+
+LICENSE: LGPL2 or later
