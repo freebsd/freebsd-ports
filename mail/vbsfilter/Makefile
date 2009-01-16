@@ -7,6 +7,7 @@
 
 PORTNAME=	vbsfilter
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://aeschi.ch.eu.org/milter/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,8 +17,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A vbs-attachment filter for Sendmail Milter
 
-SUB_FILES=	vbsfilter.sh
-PLIST_FILES=	libexec/vbsfilter etc/rc.d/vbsfilter.sh.sample
+USE_RC_SUBR=	vbsfilter.sh
+PLIST_FILES=	libexec/vbsfilter
 
 CTARGETS+=	vbsfilter-${PORTVERSION}
 LIBS+=		${PTHREAD_LIBS}
@@ -48,7 +49,5 @@ do-build:	${CTARGETS}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbsfilter-${PORTVERSION} \
 		${PREFIX}/libexec/vbsfilter
-	${INSTALL_SCRIPT} ${WRKDIR}/vbsfilter.sh \
-		${PREFIX}/etc/rc.d/vbsfilter.sh.sample
 
 .include <bsd.port.post.mk>

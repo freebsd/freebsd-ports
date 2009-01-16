@@ -7,14 +7,17 @@
 
 PORTNAME=	noattach
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail Milter
 
-CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=    noattach.sh
+
+CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
@@ -32,15 +35,11 @@ MAKE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
 .endif
 
 pre-configure:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/noattach.sh \
-		> ${WRKSRC}/noattach.sh
 	${REINPLACE_CMD} -e 's=-pthread=${PTHREAD_LIBS}=' \
 		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${PREFIX}/libexec/noattach
-	${INSTALL_SCRIPT} ${WRKSRC}/noattach.sh \
-		${PREFIX}/etc/rc.d/noattach.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
 		 ${PREFIX}/etc/noattach.patterns-dist
 	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${PREFIX}/man/man8/
