@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	opende
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Articulated rigid body dynamics library
 
 CONFLICTS=	ode-devel-[0-9].*
 
-USE_ZIP=	yes
+USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -29,7 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 OPTIONS=	GIMPACT	"Enable gimpact instead of opcode support" off \
 		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \
-		DOUBLE  "Enable double precision (BROKEN with GIMPACT)" off
+		DOUBLE  "Enable double precision (BROKEN with GIMPACT)" off \
+		OU	"Enable Thread-local storage (Experimental)" off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -53,6 +53,12 @@ CONFIGURE_ARGS+=	--disable-gyroscopic
 CONFIGURE_ARGS+=	--enable-double-precision
 .endif
 
+.if defined(WITH_OU)
+CONFIGURE_ARGS+=	--enable-ou
+.else
+CONFIGURE_ARGS+=	--disable-ou
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
@@ -67,7 +73,7 @@ post-patch:
 		-i "" -e 's|malloc.h|stdlib.h|g'
 
 post-install:
-	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/include/ode/config.h \
+	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
 		> ${PREFIX}/include/ode/config.h
 
 .include <bsd.port.post.mk>
