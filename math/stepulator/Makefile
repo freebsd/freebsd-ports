@@ -7,7 +7,7 @@
 
 PORTNAME=	stepulator
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/stepulator/ \
 		${MASTER_SITE_GNUSTEP_CH}
@@ -24,5 +24,9 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Stepulator-gs
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/LICENSE \
+		${GNUSTEP_LOCAL_APPS}/Stepulator.app/Resources/
 
 .include <bsd.port.mk>
