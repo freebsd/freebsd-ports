@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090114:
+  AFFECTS: users of x11/kdebase4-workspace, x11/kdebase4-runtime
+  AUTHOR: kde@FreeBSD.org
+
+  KDE4 has been updated from 4.1.1 to 4.1.4. A number of files
+  have been moved between packages. You should deinstall kdebase4-runtime
+  package before updating:
+
+  pkg_delete -f kdebase-runtime-4.1\*
+  portmaster -a
+
+  After successful update you could install kdebase4-runtime if it has not
+  been installed during update process.
+
 20090113:
   AFFECTS: users of lang/perl5.8
   AUTHOR: skv@FreeBSD.org
