@@ -7,6 +7,7 @@
 
 PORTNAME=	spamilter
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 MASTER_SITE_SUBDIR=	dinoex
@@ -15,8 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
+USE_RC_SUBR=	spamilter.sh
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ENV+=	__MAKE_CONF=/dev/null
@@ -50,14 +53,11 @@ CONFIGURE_ARGS+=	--have-resn
 
 PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 		bin/spamilter \
-		bin/spamilter-system-report bin/spamilter-user-report \
-		etc/rc.d/milter-spamilter.sh.sample
+		bin/spamilter-system-report bin/spamilter-user-report
 PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
 		db.rdnsbl db.sndr policy.html spamilter.rc
 
 pre-configure:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/spamilter.sh \
-		> ${WRKSRC}/spamilter.sh
 	${REINPLACE_CMD} \
 		-e "s=/etc/spamilter.rc=${PREFIX}/etc/spamilter.rc=" \
 		${WRKSRC}/spamilter.c \
@@ -69,8 +69,6 @@ xpost-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/spamilter.sh \
-		${PREFIX}/etc/rc.d/milter-spamilter.sh.sample
 .for i in ${BINFILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor

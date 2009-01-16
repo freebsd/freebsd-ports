@@ -1,5 +1,4 @@
 libexec/noattach
-etc/rc.d/noattach.sh.sample
 etc/noattach.patterns-dist
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

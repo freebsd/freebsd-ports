@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# Start or stop noattach
+
+# PROVIDE: noattach
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+prefix=%%PREFIX%%
+
+# Define these noattach_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/noattach
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+noattach_enable=${noattach_enable:-"NO"}      # Enable noattach
+noattach_pidfile=${noattach_pidfile:-"/var/run/noattach.pid"} # Path to pidfile
+noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
+noattach_flags=${noattach_flags:-""} # Flags to noattach
+
+. /etc/rc.subr
+
+name="noattach"
+rcvar=`set_rcvar`
+command="${prefix}/libexec/${name}"
+required_files="${prefix}/etc/noattach.patterns"
+start_precmd="noattach_prestart"
+stop_postcmd="noattach_poststop"
+reload_cmd="noattach_reload"
+extra_commands="reload"
+
+noattach_prestart() {
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_poststop() {
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_reload() {
+	kill -USR1 `head -1 "${pidfile}"`
+}
+
+load_rc_config $name
+pidfile="${noattach_pidfile}"
+command_args="-p local:${noattach_socket} ${noattach_flags}"
+
+run_rc_command "$1"
+
+# eof
