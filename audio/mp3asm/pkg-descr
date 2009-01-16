@@ -10,4 +10,6 @@ Feature:
    - Setting header flags, gain values
    - ...
 
+LICENSE: GPL2 or later
+
 WWW: http://mp3asm.sourceforge.net/

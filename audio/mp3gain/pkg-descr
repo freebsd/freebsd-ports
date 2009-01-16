@@ -8,6 +8,6 @@ sounds to the human ear.  Also, the changes MP3Gain makes are completely
 lossless.  There is no quality lost in the change because the program adjusts
 the MP3 file directly, without decoding and re-encoding.
 
-WWW: http://mp3gain.sourceforge.net/
+LICENSE: LGPL2 or later
 
-- Simon 'corecode' Schubert
+WWW: http://mp3gain.sourceforge.net/

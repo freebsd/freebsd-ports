@@ -14,3 +14,5 @@ This player supports all modes, which are single channel, stereo,
 joint stereo and dual channel, and all bitrates except free mode.
 The missing free mode support should not be a problem for now,
 because I haven't seen such a stream yet.
+
+LICENSE: GPL2 or later
