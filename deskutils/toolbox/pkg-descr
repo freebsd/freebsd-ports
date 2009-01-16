@@ -8,4 +8,6 @@ frequently. It is designed to access the fixed location, either on file
 system or over internet. Some items don't access any location, such as
 calculator.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.nongnu.org/toolbox/

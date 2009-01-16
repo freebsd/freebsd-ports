@@ -7,4 +7,7 @@ developers did not think of or even intend -- that don't require
 recompiling the main program. For more information on what bundles can do,
 see StepWise. They are a very powerful tool.
 
+LICENSE: LGPL2 or later (framework)
+LICENSE: GPL2 or later (application)
+
 WWW: http://www.nongnu.org/backbone/
