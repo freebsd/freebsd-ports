@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	contenido
-PORTVERSION=	4.8.8
+PORTVERSION=	4.8.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.contenido.org/de/upload/versionen/
 DISTNAME=	Contenido_${PORTVERSION}

@@ -1,6 +1,5 @@
 %%WWWDIR%%/CHANGELOG.txt
 %%WWWDIR%%/FAQ.txt
-%%WWWDIR%%/KNOWNBUGS.txt
 %%WWWDIR%%/LIZENZ.txt
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/cms/config.php
@@ -13,6 +12,7 @@
 %%WWWDIR%%/cms/front_content.php
 %%WWWDIR%%/cms/front_crcloginform.inc.php
 %%WWWDIR%%/cms/images/bg.gif
+%%WWWDIR%%/cms/images/but_ok.gif
 %%WWWDIR%%/cms/images/header_bild_beispiel.gif
 %%WWWDIR%%/cms/images/header_bsplmandant_01.gif
 %%WWWDIR%%/cms/images/header_bsplmandant_02.gif
@@ -104,8 +104,10 @@
 %%WWWDIR%%/conlib/prepend.php
 %%WWWDIR%%/conlib/query_sql.inc
 %%WWWDIR%%/conlib/session.inc
+%%WWWDIR%%/contenido/ajaxmain.php
 %%WWWDIR%%/contenido/backend_search.php
 %%WWWDIR%%/contenido/classes/Contenido_Category/Contenido_Category.class.php
+%%WWWDIR%%/contenido/classes/Contenido_Category/Contenido_Category_Articles.class.php
 %%WWWDIR%%/contenido/classes/Contenido_Category/Sample.php
 %%WWWDIR%%/contenido/classes/Contenido_FrontendNavigation/Contenido_FrontendNavigation.class.php
 %%WWWDIR%%/contenido/classes/Contenido_FrontendNavigation/Contenido_FrontendNavigation_Base.class.php
@@ -126,6 +128,8 @@
 %%WWWDIR%%/contenido/classes/UrlBuilder/Contenido_UrlBuilder_CustomPath.class.php
 %%WWWDIR%%/contenido/classes/UrlBuilder/Contenido_UrlBuilder_Frontcontent.class.php
 %%WWWDIR%%/contenido/classes/UrlBuilder/Sample.php
+%%WWWDIR%%/contenido/classes/Url/Contenido_Url.class.php
+%%WWWDIR%%/contenido/classes/abstract_classes/class.conuser.php
 %%WWWDIR%%/contenido/classes/class.action.php
 %%WWWDIR%%/contenido/classes/class.activeusers.php
 %%WWWDIR%%/contenido/classes/class.area.php
@@ -140,6 +144,7 @@
 %%WWWDIR%%/contenido/classes/class.chartable.php
 %%WWWDIR%%/contenido/classes/class.client.php
 %%WWWDIR%%/contenido/classes/class.cms_date.php
+%%WWWDIR%%/contenido/classes/class.conuser.php
 %%WWWDIR%%/contenido/classes/class.communications.php
 %%WWWDIR%%/contenido/classes/class.csv.php
 %%WWWDIR%%/contenido/classes/class.dbfs.php
@@ -171,6 +176,7 @@
 %%WWWDIR%%/contenido/classes/class.phpmailer.php
 %%WWWDIR%%/contenido/classes/class.properties.php
 %%WWWDIR%%/contenido/classes/class.request.password.php
+%%WWWDIR%%/contenido/classes/class.request.php
 %%WWWDIR%%/contenido/classes/class.search.php
 %%WWWDIR%%/contenido/classes/class.security.php
 %%WWWDIR%%/contenido/classes/class.smtp.php
@@ -221,7 +227,9 @@
 %%WWWDIR%%/contenido/classes/drivers/class.gdb.driver.php
 %%WWWDIR%%/contenido/classes/drivers/drivers.txt
 %%WWWDIR%%/contenido/classes/drivers/mysql/class.gdb.mysql.php
+%%WWWDIR%%/contenido/classes/exceptions/exception.conuser.php
 %%WWWDIR%%/contenido/classes/index.php
+%%WWWDIR%%/contenido/classes/interfaces/interface.conuser.php
 %%WWWDIR%%/contenido/classes/log/class.bufferedlog.php
 %%WWWDIR%%/contenido/classes/log/class.log.php
 %%WWWDIR%%/contenido/classes/log/class.modulelog.php
@@ -248,13 +256,21 @@
 %%WWWDIR%%/contenido/cronjobs/crontab.txt
 %%WWWDIR%%/contenido/cronjobs/index.php
 %%WWWDIR%%/contenido/cronjobs/linkchecker.php
+%%WWWDIR%%/contenido/cronjobs/linkchecker.php.job
 %%WWWDIR%%/contenido/cronjobs/move_articles.php
+%%WWWDIR%%/contenido/cronjobs/move_articles.php.job
 %%WWWDIR%%/contenido/cronjobs/move_old_stats.php
+%%WWWDIR%%/contenido/cronjobs/move_old_stats.php.job
 %%WWWDIR%%/contenido/cronjobs/optimize_database.php
+%%WWWDIR%%/contenido/cronjobs/optimize_database.php.job
 %%WWWDIR%%/contenido/cronjobs/run_newsletter_job.php
+%%WWWDIR%%/contenido/cronjobs/run_newsletter_job.php.job
 %%WWWDIR%%/contenido/cronjobs/send_reminder.php
+%%WWWDIR%%/contenido/cronjobs/send_reminder.php.job
 %%WWWDIR%%/contenido/cronjobs/session_cleanup.php
+%%WWWDIR%%/contenido/cronjobs/session_cleanup.php.job
 %%WWWDIR%%/contenido/cronjobs/setfrontenduserstate.php
+%%WWWDIR%%/contenido/cronjobs/setfrontenduserstate.php.job
 %%WWWDIR%%/contenido/external/backendedit/front_content.php
 %%WWWDIR%%/contenido/external/edit_area/class.edit_area.php
 %%WWWDIR%%/contenido/external/edit_area/edit_area.css
@@ -349,6 +365,7 @@
 %%WWWDIR%%/contenido/external/frontend/error.php
 %%WWWDIR%%/contenido/external/frontend/front_content.php
 %%WWWDIR%%/contenido/external/frontend/front_crcloginform.inc.php
+%%WWWDIR%%/contenido/external/frontend/images/but_ok.gif
 %%WWWDIR%%/contenido/external/frontend/images/index.php
 %%WWWDIR%%/contenido/external/frontend/includes/class.concache.php
 %%WWWDIR%%/contenido/external/frontend/includes/concache.php
@@ -361,58 +378,6 @@
 %%WWWDIR%%/contenido/external/frontend/templates/index.php
 %%WWWDIR%%/contenido/external/frontend/upload/test.txt
 %%WWWDIR%%/contenido/external/index.php
-%%WWWDIR%%/contenido/external/mozile/LICENSEBLOCK.txt
-%%WWWDIR%%/contenido/external/mozile/LICENSESHORT.txt
-%%WWWDIR%%/contenido/external/mozile/README.html
-%%WWWDIR%%/contenido/external/mozile/TBImages/backcolor.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/bold.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/buttons.png
-%%WWWDIR%%/contenido/external/mozile/TBImages/colors.html
-%%WWWDIR%%/contenido/external/mozile/TBImages/copy.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/cut.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/decreasefontsize.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/forecolor.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/hr.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/image.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/increasefontsize.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/indent.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/italic.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/justifycenter.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/justifyleft.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/justifyright.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/link.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/new.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/oList.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/outdent.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/paste.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/playicon.ico
-%%WWWDIR%%/contenido/external/mozile/TBImages/raw.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/redo.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/save.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/strikethrough.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/subscript.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/superscript.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/table.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/uList.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/underline.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/undo.gif
-%%WWWDIR%%/contenido/external/mozile/TBImages/unlink.gif
-%%WWWDIR%%/contenido/external/mozile/buttons.png
-%%WWWDIR%%/contenido/external/mozile/domlevel3.js
-%%WWWDIR%%/contenido/external/mozile/eDOM.js
-%%WWWDIR%%/contenido/external/mozile/eDOMXHTML.js
-%%WWWDIR%%/contenido/external/mozile/jsdav.js
-%%WWWDIR%%/contenido/external/mozile/mozCE.js
-%%WWWDIR%%/contenido/external/mozile/mozDataTransport.js
-%%WWWDIR%%/contenido/external/mozile/mozIECE.js
-%%WWWDIR%%/contenido/external/mozile/mozWrappers.js
-%%WWWDIR%%/contenido/external/mozile/mozileConfig.xml
-%%WWWDIR%%/contenido/external/mozile/mozileLoader.js
-%%WWWDIR%%/contenido/external/mozile/mozileModify.js
-%%WWWDIR%%/contenido/external/mozile/mozileSave.js
-%%WWWDIR%%/contenido/external/mozile/mozilehtmltb.js
-%%WWWDIR%%/contenido/external/mozile/mozilekb.js
-%%WWWDIR%%/contenido/external/mozile/updateinfo.txt
 %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/editor.php
 %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/images/ed_about.gif
 %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/images/ed_align_center.gif
@@ -2500,6 +2465,7 @@
 %%WWWDIR%%/contenido/images/artikel_spez_akt.gif
 %%WWWDIR%%/contenido/images/artikel_spez_inakt.gif
 %%WWWDIR%%/contenido/images/avail_clients.gif
+%%WWWDIR%%/contenido/images/back.gif
 %%WWWDIR%%/contenido/images/background.jpg
 %%WWWDIR%%/contenido/images/bg_dark.gif
 %%WWWDIR%%/contenido/images/bg_high.gif
@@ -2569,6 +2535,7 @@
 %%WWWDIR%%/contenido/images/editieren.gif
 %%WWWDIR%%/contenido/images/exclamation.gif
 %%WWWDIR%%/contenido/images/filetypes/css.gif
+%%WWWDIR%%/contenido/images/filetypes/design.gif
 %%WWWDIR%%/contenido/images/filetypes/excel.gif
 %%WWWDIR%%/contenido/images/filetypes/gif.gif
 %%WWWDIR%%/contenido/images/filetypes/html.gif
@@ -2576,17 +2543,22 @@
 %%WWWDIR%%/contenido/images/filetypes/jpg.gif
 %%WWWDIR%%/contenido/images/filetypes/js.gif
 %%WWWDIR%%/contenido/images/filetypes/movie.gif
+%%WWWDIR%%/contenido/images/filetypes/odf.gif
 %%WWWDIR%%/contenido/images/filetypes/pdf.gif
+%%WWWDIR%%/contenido/images/filetypes/php.gif
 %%WWWDIR%%/contenido/images/filetypes/png.gif
 %%WWWDIR%%/contenido/images/filetypes/ppt.gif
+%%WWWDIR%%/contenido/images/filetypes/sound.gif
 %%WWWDIR%%/contenido/images/filetypes/swf.gif
 %%WWWDIR%%/contenido/images/filetypes/txt.gif
 %%WWWDIR%%/contenido/images/filetypes/unknown.gif
+%%WWWDIR%%/contenido/images/filetypes/vcf.gif
 %%WWWDIR%%/contenido/images/filetypes/word.gif
 %%WWWDIR%%/contenido/images/filetypes/zip.gif
 %%WWWDIR%%/contenido/images/filler_bg.gif
 %%WWWDIR%%/contenido/images/folder.gif
 %%WWWDIR%%/contenido/images/folder_delock.gif
+%%WWWDIR%%/contenido/images/folder_delocked.gif
 %%WWWDIR%%/contenido/images/folder_duplicate.gif
 %%WWWDIR%%/contenido/images/folder_duplicate_off.gif
 %%WWWDIR%%/contenido/images/folder_lock.gif
@@ -2668,6 +2640,7 @@
 %%WWWDIR%%/contenido/images/reminder/status_inprogress.gif
 %%WWWDIR%%/contenido/images/reminder/status_new.gif
 %%WWWDIR%%/contenido/images/reminder/status_waiting.gif
+%%WWWDIR%%/contenido/images/save.gif
 %%WWWDIR%%/contenido/images/sort_down.gif
 %%WWWDIR%%/contenido/images/sort_up.gif
 %%WWWDIR%%/contenido/images/space.gif
@@ -2683,9 +2656,11 @@
 %%WWWDIR%%/contenido/images/users.gif
 %%WWWDIR%%/contenido/images/users_o.gif
 %%WWWDIR%%/contenido/images/vert.gif
+%%WWWDIR%%/contenido/images/vert-neu.gif
 %%WWWDIR%%/contenido/images/widgets/foldingrow/collapsed.gif
 %%WWWDIR%%/contenido/images/widgets/foldingrow/expanded.gif
 %%WWWDIR%%/contenido/images/workflow_step_delete.gif
+%%WWWDIR%%/contenido/includes/ajax/include.ajax.con.php
 %%WWWDIR%%/contenido/includes/api/functions.api.general.php
 %%WWWDIR%%/contenido/includes/api/functions.frontend.list.php
 %%WWWDIR%%/contenido/includes/cfg_language_de.inc.php
@@ -2928,7 +2903,7 @@
 %%WWWDIR%%/contenido/plugins/frontendlogic/includes/config.plugin.php
 %%WWWDIR%%/contenido/plugins/frontendusers/includes/config.plugin.php
 %%WWWDIR%%/contenido/plugins/frontendusers/valid_from/valid_from.php
-%%WWWDIR%%/contenido/plugins/frontendusers/valid_until/valid_to.php
+%%WWWDIR%%/contenido/plugins/frontendusers/valid_to/valid_to.php
 %%WWWDIR%%/contenido/plugins/index.php
 %%WWWDIR%%/contenido/plugins/linkchecker/includes/config.plugin.php
 %%WWWDIR%%/contenido/plugins/linkchecker/includes/include.checkperms.php
@@ -2997,6 +2972,7 @@
 %%WWWDIR%%/contenido/scripts/conFrameResize.js
 %%WWWDIR%%/contenido/scripts/contenidoConfig.js
 %%WWWDIR%%/contenido/scripts/contextMenu.js
+%%WWWDIR%%/contenido/scripts/con_tiny.js
 %%WWWDIR%%/contenido/scripts/expandCollapse.js
 %%WWWDIR%%/contenido/scripts/general.js
 %%WWWDIR%%/contenido/scripts/group_association.js
@@ -3005,7 +2981,7 @@
 %%WWWDIR%%/contenido/scripts/iZoom.js.php
 %%WWWDIR%%/contenido/scripts/index.php
 %%WWWDIR%%/contenido/scripts/infoBox.js
-%%WWWDIR%%/contenido/scripts/jquery.js
+%%WWWDIR%%/contenido/scripts/jquery/jquery.js
 %%WWWDIR%%/contenido/scripts/jscalendar/calendar-contenido.css
 %%WWWDIR%%/contenido/scripts/jscalendar/calendar-setup.js
 %%WWWDIR%%/contenido/scripts/jscalendar/calendar.js
@@ -3109,6 +3085,7 @@
 %%WWWDIR%%/contenido/templates/standard/template.con_edit_form.html
 %%WWWDIR%%/contenido/templates/standard/template.con_left_top.html
 %%WWWDIR%%/contenido/templates/standard/template.con_str_overview.html
+%%WWWDIR%%/contenido/templates/standard/template.con_str_overview.list.html
 %%WWWDIR%%/contenido/templates/standard/template.con_subnav.html
 %%WWWDIR%%/contenido/templates/standard/template.con_subnav_noleft.html
 %%WWWDIR%%/contenido/templates/standard/template.deco.html
@@ -3497,6 +3474,7 @@
 @dirrm %%WWWDIR%%/contenido/scripts/tip_balloon
 @dirrm %%WWWDIR%%/contenido/scripts/jscalendar/lang
 @dirrm %%WWWDIR%%/contenido/scripts/jscalendar
+@dirrm %%WWWDIR%%/contenido/scripts/jquery
 @dirrm %%WWWDIR%%/contenido/scripts
 @dirrm %%WWWDIR%%/contenido/plugins/workflow/xml
 @dirrm %%WWWDIR%%/contenido/plugins/workflow/templates
@@ -3518,7 +3496,7 @@
 @dirrm %%WWWDIR%%/contenido/plugins/linkchecker/locale
 @dirrm %%WWWDIR%%/contenido/plugins/linkchecker/includes
 @dirrm %%WWWDIR%%/contenido/plugins/linkchecker
-@dirrm %%WWWDIR%%/contenido/plugins/frontendusers/valid_until
+@dirrm %%WWWDIR%%/contenido/plugins/frontendusers/valid_to
 @dirrm %%WWWDIR%%/contenido/plugins/frontendusers/valid_from
 @dirrm %%WWWDIR%%/contenido/plugins/frontendusers/includes
 @dirrm %%WWWDIR%%/contenido/plugins/frontendusers
@@ -3555,6 +3533,7 @@
 @dirrm %%WWWDIR%%/contenido/locale/de_DE
 @dirrm %%WWWDIR%%/contenido/locale
 @dirrm %%WWWDIR%%/contenido/includes/api
+@dirrm %%WWWDIR%%/contenido/includes/ajax
 @dirrm %%WWWDIR%%/contenido/includes
 @dirrm %%WWWDIR%%/contenido/images/widgets/foldingrow
 @dirrm %%WWWDIR%%/contenido/images/widgets
@@ -3808,8 +3787,6 @@
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/images
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg
-@dirrm %%WWWDIR%%/contenido/external/mozile/TBImages
-@dirrm %%WWWDIR%%/contenido/external/mozile
 @dirrm %%WWWDIR%%/contenido/external/frontend/upload
 @dirrm %%WWWDIR%%/contenido/external/frontend/templates
 @dirrm %%WWWDIR%%/contenido/external/frontend/logs
@@ -3836,11 +3813,15 @@
 @dirrm %%WWWDIR%%/contenido/classes/widgets
 @dirrm %%WWWDIR%%/contenido/classes/tree
 @dirrm %%WWWDIR%%/contenido/classes/log
+@dirrm %%WWWDIR%%/contenido/classes/interfaces
+@dirrm %%WWWDIR%%/contenido/classes/exceptions
 @dirrm %%WWWDIR%%/contenido/classes/drivers/mysql
 @dirrm %%WWWDIR%%/contenido/classes/drivers
 @dirrm %%WWWDIR%%/contenido/classes/datatypes
 @dirrm %%WWWDIR%%/contenido/classes/contenido
+@dirrm %%WWWDIR%%/contenido/classes/abstract_classes
 @dirrm %%WWWDIR%%/contenido/classes/UrlBuilder
+@dirrm %%WWWDIR%%/contenido/classes/Url
 @dirrm %%WWWDIR%%/contenido/classes/Debug
 @dirrm %%WWWDIR%%/contenido/classes/Contenido_FrontendNavigation
 @dirrm %%WWWDIR%%/contenido/classes/Contenido_Category
