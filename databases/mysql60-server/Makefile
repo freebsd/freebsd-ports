@@ -180,7 +180,6 @@ post-install:
 # MySQL-Scripts part
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	60
-USE_PERL5=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql60
 .if ${PERL_LEVEL} <= 500800
