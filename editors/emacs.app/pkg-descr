@@ -7,4 +7,6 @@ and support for Services. Via GNUstep, it provides anti-aliased font
 rendering on Linux and other Unix systems.
 This port is based on GNU Emacs 23 from CVS.
 
+LICENSE: GPL2 or later
+
 WWW: http://emacs-app.sourceforge.net/
