@@ -30,7 +30,6 @@ OPTIONS=	SPLASH "Show splash on startup" on \
 		LIBWMF "Build with libwmf support" on \
 		LIBRSVG "Build with librsvg support" off \
 		LIBRSVG2 "Build with librsvg-2 support" on \
-		LIBWMF "Build with libwmf support" on \
 		LIBEXIF "Build with libexif support" on \
 		MPLAYER "Build with Mplayer support" on \
 		LIBXINE "Build with Xine support" off
