@@ -35,6 +35,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
+.endif
+
 .if defined(WITH_GIMPACT) && defined(WITH_DOUBLE)
 IGNORE=	currently double precision is not supported by gimpact
 .endif
