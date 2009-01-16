@@ -8,3 +8,5 @@ of the library is therefore -
    by mechanisms not covered by existing classes.
 3. Classes to monitor/analyse performance issues so you can tell what
    needs to be optimised.
+
+LICENSE: LGPL3 or later
