@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	vdrift
-PORTVERSION=	20070323
-PORTREVISION=	4
+PORTVERSION=	20080508
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-2007-03-23-src
+DISTNAME=	${PORTNAME}-08-05-08
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes
@@ -30,7 +27,7 @@ SCONS_ARGS=	prefix=${PREFIX} \
 		datadir=share/${PORTNAME} \
 		bindir=bin \
 		use_binreloc=0
-WRKSRC=		${WRKDIR}/build/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	pkg-message
 
@@ -59,7 +56,6 @@ BROKEN=		Does not compile on sparc64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e "s|'openal'|'openal','alut'|g" ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|^os.system.*||g' ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/main.cpp
 
@@ -70,10 +66,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/vdrift ${PREFIX}/bin
 
 .if defined(FLAG_NLS)
-.	for DIRE in nl
-		@cd ${WRKSRC}/po/share/locale/${DIRE}/LC_MESSAGES && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" ${PREFIX}/share/locale/${DIRE}/LC_MESSAGES \;
-.	endfor
+	@${MKDIR} ${DATADIR}/po
+	@cd ${WRKSRC}/po && \
+		${FIND} * -type f -name "*.po" -exec ${INSTALL_DATA} "{}" "${DATADIR}/po/{}" \;
 .endif
 
 .if !defined(NOPORTDOCS)
