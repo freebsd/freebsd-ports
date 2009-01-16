@@ -9,9 +9,9 @@ PORTNAME=	gtkdps
 PORTVERSION=	0.3.4
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gyve.org/pub/gtkDPS/	\
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+#		ftp://ftp.gyve.org/pub/gtkDPS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	gtkDPS-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

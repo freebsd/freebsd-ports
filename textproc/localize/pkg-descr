@@ -5,4 +5,6 @@ difficult to enter Chinese characters into an ASCII encoded text file.
 Localize will, with any luck, help out with this. Currently its just a
 shell of an application, but sometime in the future I hope to complete it.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.eskimo.com/~pburns/Localize/

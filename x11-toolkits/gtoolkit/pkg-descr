@@ -14,6 +14,6 @@ Currently implemented features:
 - can load user interfaces created with Glade 
 - works in multi-threaded programs (not well tested) 
 
-WWW: http://www.informatik.uni-osnabrueck.de/elmar/projects/gtoolkit/
+LICENSE: LGPL2 or later
 
-Miguel Mendez <flynn@energyhq.homeip.net>
+WWW: http://www.informatik.uni-osnabrueck.de/elmar/projects/gtoolkit/

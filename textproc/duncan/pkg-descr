@@ -3,4 +3,6 @@ Cocoa libraries. The GNUstep port that can be found here, was done by me. It
 was very easy to do; primarily requiring only new interface files, and build
 files.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.eskimo.com/~pburns/Dictionaries/
