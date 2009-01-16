@@ -218,6 +218,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += snotes
     SUBDIR += splashsetter
