@@ -8,4 +8,6 @@ The program replies with an evaluation -- a black peg for a color that
 is placed correctly, and a white peg for a color that is in the wrong
 position. The user may make a total of eight queries.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.gnustep.it/marko/GMastermind/
