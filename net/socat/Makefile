@@ -20,6 +20,8 @@ USE_RC_SUBR=	socat
 
 MAN1=		socat.1
 
+PORTSCOUT=	skipv:2.0.0-b2
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 .endif
