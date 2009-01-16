@@ -1,0 +1,46 @@
+--- SConstruct	2009-01-15 23:59:59.000000000 -0500
++++ SConstruct	2009-01-16 00:01:12.000000000 -0500
+@@ -6,26 +6,26 @@
+ # Build Options #
+ #---------------#
+ 
+-opts = Options('vdrift.conf', ARGUMENTS)
++opts =  Variables('vdrift.conf', ARGUMENTS)
+ opts.Add('destdir', 'Staging area to install VDrift to.  Useful for packagers. ', '')
+ opts.Add('localedir', 'Path suffix were vdrift locales (.mo files) will be installed', "share/locale")
+ opts.Add('arch', 'Target architecture to compile vdrift for (x86, 686, p4, axp, a64)', 'x86')
+-opts.Add(BoolOption('minimal', 'Only install minimal data (3 cars and 2 tracks)', 0))
+-opts.Add(BoolOption('cache', 'Cache options in vdrift.conf', 1))
+-opts.Add(BoolOption('release', 'Turn off debug option during build', 0))
+-opts.Add(BoolOption('use_gcc_32', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
+-opts.Add(BoolOption('use_gcc_33', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
+-opts.Add(BoolOption('use_gcc_34', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
+-opts.Add(BoolOption('use_apbuild', 'Set this to 1 if you want to compile with apgcc to create an autopackage', 0))
+-opts.Add(BoolOption('use_binreloc', 'Set this to 1 if you want to compile with Binary Relocation support', 1))
+-opts.Add(BoolOption('os_cc', 'Set this to 1 if you want to use the operating system\'s C compiler environment variable.', 0))
+-opts.Add(BoolOption('os_cxx', 'Set this to 1 if you want to use the operating system\'s C++ compiler environment variable.', 0))
+-opts.Add(BoolOption('os_cxxflags', 'Set this to 1 if you want to use the operating system\'s C++ compiler flags environment variable.', 0))
+-opts.Add(BoolOption('NLS', 'Set this to 1 to turn on i18n support', 1))
+-opts.Add(BoolOption('force_feedback', 'Enable force-feedback support', 0))
+-opts.Add(BoolOption('profiling', 'Turn on profiling output', 0))
+-opts.Add(BoolOption('efficiency', 'Turn on compile-time efficiency warnings', 0))
+-opts.Add(BoolOption('opcode', 'Set this to one if you have ode compiled with opcode', 0))
++opts.Add(BoolVariable('minimal', 'Only install minimal data (3 cars and 2 tracks)', 0))
++opts.Add(BoolVariable('cache', 'Cache options in vdrift.conf', 1))
++opts.Add(BoolVariable('release', 'Turn off debug option during build', 0))
++opts.Add(BoolVariable('use_gcc_32', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
++opts.Add(BoolVariable('use_gcc_33', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
++opts.Add(BoolVariable('use_gcc_34', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
++opts.Add(BoolVariable('use_apbuild', 'Set this to 1 if you want to compile with apgcc to create an autopackage', 0))
++opts.Add(BoolVariable('use_binreloc', 'Set this to 1 if you want to compile with Binary Relocation support', 1))
++opts.Add(BoolVariable('os_cc', 'Set this to 1 if you want to use the operating system\'s C compiler environment variable.', 0))
++opts.Add(BoolVariable('os_cxx', 'Set this to 1 if you want to use the operating system\'s C++ compiler environment variable.', 0))
++opts.Add(BoolVariable('os_cxxflags', 'Set this to 1 if you want to use the operating system\'s C++ compiler flags environment variable.', 0))
++opts.Add(BoolVariable('NLS', 'Set this to 1 to turn on i18n support', 1))
++opts.Add(BoolVariable('force_feedback', 'Enable force-feedback support', 0))
++opts.Add(BoolVariable('profiling', 'Turn on profiling output', 0))
++opts.Add(BoolVariable('efficiency', 'Turn on compile-time efficiency warnings', 0))
++opts.Add(BoolVariable('opcode', 'Set this to one if you have ode compiled with opcode', 0))
+ 
+ 
+ #--------------------------#
