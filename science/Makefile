@@ -105,6 +105,7 @@
     SUBDIR += py-mdp
     SUBDIR += py-openbabel
     SUBDIR += py-paida
+    SUBDIR += py-pydicom
     SUBDIR += py-scipy
     SUBDIR += pycdf
     SUBDIR += qcl
