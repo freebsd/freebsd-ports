@@ -1,4 +1,6 @@
 This is a graphically pleasing implementation of Go. It uses gnugo as its
 engine.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.nongnu.org/gap/ladder/
