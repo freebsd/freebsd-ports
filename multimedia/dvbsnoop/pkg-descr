@@ -1,0 +1,8 @@
+DVBsnoop is an analyzer for DVB broadcast streams / MPEG transport
+streams.
+
+DVBsnoop is a program to monitor, analyze, debug, dump or view
+dvb/mpeg/dsm-cc/mhp stream information (TS, PES, SECTION) (e.g.
+digital television) send via satellite, cable or terrestrial.
+
+WWW: http://dvbsnoop.sourceforge.net/
