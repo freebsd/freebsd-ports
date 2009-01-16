@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	1.0
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	1.0.r3
+PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PORTSUBVER}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r3//}RC3
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
@@ -39,7 +38,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl 
 
 PERL_CONFIGURE=	yes
 APACHE_COMPAT=	yes
-PORTSUBVER=	RC3
 
 MAN3=		Apache::Gallery.3
 DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
