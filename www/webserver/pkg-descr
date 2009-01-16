@@ -8,3 +8,5 @@ The emphasis is on making it robust/reliable/simple, so you can rapidly
 develop software using it. It is a single-threaded, single-process
 system using asynchronous I/O, so you can easily run it under debug
 in gdb to fix any bugs in your delegate object.
+
+LICENSE: LGPL3 or later

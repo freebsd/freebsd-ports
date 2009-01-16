@@ -6,4 +6,6 @@ Bonjour allows you to register a network service, such as a printer or file
 server, so that it can be found by name or browsed for by service type and
 domain.
 
+LICENSE: BSD 2 clause / LGPL
+
 WWW: http://gnustep.dyndns.org/

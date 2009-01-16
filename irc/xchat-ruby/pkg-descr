@@ -4,4 +4,6 @@ in addition to the other supported scripting interfaces. This means that,
 for the first time, you can use a purely object-oriented language
 in which to write X-Chat plugins.
 
+LICENSE: GPL2 or later
+
 WWW: http://xchat-ruby.sourceforge.net/
