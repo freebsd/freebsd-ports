@@ -1,12 +1,6 @@
 bin/adonthell
+bin/adonthell-%%VERSION%%
 bin/adonthell-wastesedge
-%%DATADIR%%/modules/dialogue.pyc
-%%DATADIR%%/modules/adonthell.pyc
-%%DATADIR%%/games/wastesedge/gamename.txt
-%%DATADIR%%/games/wastesedge/character.data
-%%DATADIR%%/games/wastesedge/mapengine.data
-%%DATADIR%%/games/wastesedge/quest.data
-%%DATADIR%%/games/wastesedge/audio.data
 %%DATADIR%%/games/wastesedge/audio/at-demo-1.ogg
 %%DATADIR%%/games/wastesedge/audio/at-demo-2.ogg
 %%DATADIR%%/games/wastesedge/audio/at-demo-3.ogg
@@ -19,140 +13,142 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/audio/at-demo-a.ogg
 %%DATADIR%%/games/wastesedge/audio/select.wav
 %%DATADIR%%/games/wastesedge/audio/switch.wav
-%%DATADIR%%/games/wastesedge/locale/nl/LC_MESSAGES/wastesedge.mo
-%%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES/wastesedge.mo
+%%DATADIR%%/games/wastesedge/audio.data
+%%DATADIR%%/games/wastesedge/character.data
+%%DATADIR%%/games/wastesedge/gamename.txt
 %%DATADIR%%/games/wastesedge/gfx/cutscene/adonthell_03.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/adonthell_green.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/jewelbag_closed.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/jewelbag_open.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_bjarn.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_chest.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_closed_bag.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_open_bag.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_wall.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/forest1.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/forest2.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/forest3.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/gem.pnm
 %%DATADIR%%/games/wastesedge/gfx/cutscene/intro_bg.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/intro_guard.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/intro_player.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/intro_inn.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/intro_player.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/intro_talan.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/jewelbag_closed.img
+%%DATADIR%%/games/wastesedge/gfx/cutscene/jewelbag_open.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/player.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/gem.pnm
-%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_bjarn.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_chest.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_wall.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_open_bag.img
-%%DATADIR%%/games/wastesedge/gfx/cutscene/extro_closed_bag.img
 %%DATADIR%%/games/wastesedge/gfx/cutscene/running_alek.anim
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/frostbloom.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/player.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/servant1.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/silverhair.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/orloth.mchar
+%%DATADIR%%/games/wastesedge/gfx/empty_slot.pnm
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/alek.mchar
 %%DATADIR%%/games/wastesedge/gfx/mapcharacters/bjarn.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/oliver.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/lucia.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/servant2.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/talan.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/bjarn_crying.mchar
 %%DATADIR%%/games/wastesedge/gfx/mapcharacters/erek.mchar
 %%DATADIR%%/games/wastesedge/gfx/mapcharacters/fellnir.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/jelom.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/alek.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/frostbloom.mchar
 %%DATADIR%%/games/wastesedge/gfx/mapcharacters/illig.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapcharacters/bjarn_crying.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/jelom.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/lucia.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/oliver.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/orloth.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/player.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/servant1.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/servant2.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/silverhair.mchar
+%%DATADIR%%/games/wastesedge/gfx/mapcharacters/talan.mchar
 %%DATADIR%%/games/wastesedge/gfx/mapcharacters/talan_beaten.mchar
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/treeleaves.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/tree.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/vine.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/gate-fore.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/gate-back.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/gate-fore.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/hay-cart.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/low-bushes-left.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/low-bushes-mid.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/low-bushes-right.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor2b.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor2a.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor1b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/tree.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/treeleaves.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors/vine.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_ground_inside.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_loft_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_loft_main.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor1a.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor1b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor2a.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/bath-floor2b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/behind-window.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/terracotta-tiles-1.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/terracotta-tiles-2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/terracotta-tiles-3.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/terracotta-trans.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks_2_1.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks_2_2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/terracotta-trans.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks_2_trans_1.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks_2_trans_2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/woodenplanks_trans.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/behind-window.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_ground_inside.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_loft_main.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings/barn_loft_front.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bar.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barn_loft_clutter.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barrel_wooden.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barrel_wooden2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barrel_wooden_with-tap.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/clock.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/cupboard.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/oven.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/round-table.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelves_wooden_books.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelves_wooden_filled.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/water-bucket.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bathtub.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelf_bottles1.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelf_bottles2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/mug_on_table-1.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/mug_on_table-2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_bot.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_mid.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stool.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bed.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bed_wooden_h.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bed_wooden_v.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/bed.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_alchemy_h.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/chest-wooden.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/clock.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/crate.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/crate2.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/cupboard.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/draws_wooden.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/dwarf_chest.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/kitchen_smoke.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/kitchen_smoke_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/mug_on_table-1.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/mug_on_table-2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/noble_bed.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_cupboard.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/normal-cupboard.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/oven.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/oven_flame.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/round-table.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelf_bottles1.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelf_bottles2.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelves_wooden_books.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/shelves_wooden_filled.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_basin.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_chest.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stone_bed.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stone_v.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/crate.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barrel_wooden.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/crate2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barrel_wooden2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/dwarf_chest.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/normal-cupboard.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/chest-wooden.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_cupboard.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_rug-1.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_rug-2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_rug-3.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/silverhair_rug-4.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stone_bed.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stone_v.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stool.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/stove.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/barn_loft_clutter.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/oven_flame.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/kitchen_smoke.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/kitchen_smoke_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_alchemy_h.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_bot.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_mid.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/table_wooden_v_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures/water-bucket.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barn_backpart.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barn_frontpart.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barn_frontpart_entrance.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barnroof.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/entrance.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/entrance-top-fore.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/entrance-top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/entrance.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/gatepost.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/guardhouse_entrance.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/guardhouse_main.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_door.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_leftwing.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_left_bot.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_left_top.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_mid_bot.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_mid_top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_right_top.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_right_bot.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/mainleft-top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/main-ltop.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_door.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/mainright-top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_right_top.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/inn_mainwing_roof.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/main-ltop.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/main-rtop.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/guardhouse_entrance.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/guardhouse_main.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barn_frontpart.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/barn_frontpart_entrance.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/mainleft-top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn/mainright-top.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/green-down.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/green-left.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/green-right.mobj
@@ -161,36 +157,81 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/red-left.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/red-right.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows/red-up.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass1.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/ground-stone-1.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/ground-stone2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/hay-bot.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/hay.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stoneflower.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stone_ground.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/tree_ground.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_bot.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_left.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_right.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_to_stone_bot-left.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_to_stone_left.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_medium-height_front.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_medium-height.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_ground-cellar.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_ground-loft.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_loft-ground.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_back.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_bl-tr.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_br-tl.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_tl-br.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_tr-bl.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_bl-tr.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_br-tl.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_tl-br.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_tr-bl.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_bot.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_bot_leaves.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_br.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_br_leaves.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_left.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_left_leaves.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_mid.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_mid_leaves.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stone_to_grass.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_to_stone.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_br.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_br_leaves.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_top.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/forest_top_leaves.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass1.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass2.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_medium-height.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_medium-height_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/grass_to_stone.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/ground-stone-1.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/ground-stone2.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/hay-bot.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/hay.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_bot.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_left.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_right.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_sandy_to_grass_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_to_stone_bot-left.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/road_to_stone_left.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stone_ground.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stone_to_grass.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/stoneflower.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains/tree_ground.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_back.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_ground_back_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left_back.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main_top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right_back.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-bl-lb.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-bl-rf.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-ib.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-if.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-lf.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-rb.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-column-b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-column-f.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-b-top.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-f.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-h-b.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-h-f.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tl-lf.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tl-rb.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-ib.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-if.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-lb.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-rf.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-v-l.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-v-r.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/gate_back_wall.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/doorframe-back.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/doorframe.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/wall-bl1.mobj
@@ -209,106 +250,61 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/wall-tr2.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/wall-v-l.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside/wall-v-r.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting1.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting2.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting3.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-bl.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-br.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-h.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-tl.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-tr.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone/stone-wall-v.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-bl-lb.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-bl-rf.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-ib.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-if.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-lf.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-br-rb.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-column-b.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-column-f.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-b.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-b-top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-doorframe-f.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-h-b.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-h-f.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tl-lf.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tl-rb.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-ib.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-v-l.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-if.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-lb.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-tr-rf.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar/cellar-v-r.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting1.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting2.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/painting3.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_right.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_left.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_front.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_round_front.mobj
 %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_back.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_back.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main_top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_loft_main_front.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_ground_back_top.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/gate_back_wall.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left_back.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right_back.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_left_front.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/barn_right_front.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_bl-tr.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_br-tl.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_tr-bl.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet_tl-br.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_bl-tr.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_back.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_br-tl.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_tl-br.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/red-carpet-front_tr-bl.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_ground-cellar.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_ground-loft.mobj
-%%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs/barn_loft-ground.mobj
-%%DATADIR%%/games/wastesedge/gfx/portraits/erek.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/jelom.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/talan.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/player.pnm
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_front.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_left.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_right.mobj
+%%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/window_round_front.mobj
 %%DATADIR%%/games/wastesedge/gfx/portraits/alek.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/frostbloom.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/lucia.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/sarin.pnm
 %%DATADIR%%/games/wastesedge/gfx/portraits/bjarn.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/illig.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/oliver.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/silverhair.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/janesta.pnm
-%%DATADIR%%/games/wastesedge/gfx/portraits/orloth.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/erek.pnm
 %%DATADIR%%/games/wastesedge/gfx/portraits/fellnir.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/frostbloom.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/illig.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/janesta.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/jelom.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/lucia.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/oliver.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/orloth.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/player.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/sarin.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/silverhair.pnm
+%%DATADIR%%/games/wastesedge/gfx/portraits/talan.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/background/original/background.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/background/silverleaf/background.pnm
+%%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner_bottom_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner_bottom_right.pnm
-%%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner_top_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/corner_top_right.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/h_border.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini/v_border.pnm
+%%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner_bottom_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner_bottom_right.pnm
-%%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner_top_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/corner_top_right.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/h_border.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal/v_border.pnm
+%%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner_bottom_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner_bottom_right.pnm
-%%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner_top_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/corner_top_right.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/h_border.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini/v_border.pnm
+%%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner_bottom_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner_bottom_right.pnm
-%%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner_top_left.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/corner_top_right.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal/h_border.pnm
@@ -338,8 +334,13 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf/scroll_bar_flex.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf/scroll_bar_mid.pnm
 %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf/scroll_bar_top.pnm
-%%DATADIR%%/games/wastesedge/gfx/empty_slot.pnm
+%%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES/wastesedge.mo
+%%DATADIR%%/games/wastesedge/locale/nl/LC_MESSAGES/wastesedge.mo
+%%DATADIR%%/games/wastesedge/mapengine.data
 %%DATADIR%%/games/wastesedge/maps/test.map
+%%DATADIR%%/games/wastesedge/quest.data
+%%DATADIR%%/games/wastesedge/scripts/actions/__init__.pyc
+%%DATADIR%%/games/wastesedge/scripts/actions/talk.pyc
 %%DATADIR%%/games/wastesedge/scripts/dialogues/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/dialogues/alek_start.pyc
 %%DATADIR%%/games/wastesedge/scripts/dialogues/bjarn_start.pyc
@@ -372,13 +373,16 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/scripts/game_events/teleport.pyc
 %%DATADIR%%/games/wastesedge/scripts/game_events/to_storage.pyc
 %%DATADIR%%/games/wastesedge/scripts/game_events/vnd_to_lft.pyc
+%%DATADIR%%/games/wastesedge/scripts/init.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/character_screen.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/console.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/events.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/intro.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/main_menu.pyc
+%%DATADIR%%/games/wastesedge/scripts/schedules/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/audio/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/audio/in_game.pyc
+%%DATADIR%%/games/wastesedge/scripts/schedules/control.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters/alek.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters/bjarn.pyc
@@ -401,74 +405,71 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters/tristan.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapviews/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/mapviews/center_character.pyc
-%%DATADIR%%/games/wastesedge/scripts/schedules/__init__.pyc
-%%DATADIR%%/games/wastesedge/scripts/schedules/control.pyc
-%%DATADIR%%/games/wastesedge/scripts/actions/__init__.pyc
-%%DATADIR%%/games/wastesedge/scripts/actions/talk.pyc
-%%DATADIR%%/games/wastesedge/scripts/init.pyc
+%%DATADIR%%/modules/adonthell.pyc
+%%DATADIR%%/modules/dialogue.pyc
 share/pixmaps/wastesedge_16x16.xpm
 share/pixmaps/wastesedge_32x32.xpm
-@dirrm %%DATADIR%%/games/wastesedge/audio
-@dirrm %%DATADIR%%/games/wastesedge/gfx/cutscene
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapcharacters
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls
-@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects
-@dirrm %%DATADIR%%/games/wastesedge/gfx/portraits
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background/original
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background/silverleaf
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor/original
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor/silverleaf
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/blue
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/green
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/original
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/red
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/silverleaf
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/violet
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/white
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/yellow
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/original
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar
-@dirrm %%DATADIR%%/games/wastesedge/gfx/window
-@dirrm %%DATADIR%%/games/wastesedge/gfx
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/mapviews
+@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters
+@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/audio
+@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules
+@dirrm %%DATADIR%%/games/wastesedge/scripts/modules
+@dirrm %%DATADIR%%/games/wastesedge/scripts/game_events
+@dirrm %%DATADIR%%/games/wastesedge/scripts/dialogues
+@dirrm %%DATADIR%%/games/wastesedge/scripts/actions
+@dirrm %%DATADIR%%/games/wastesedge/scripts
+@dirrm %%DATADIR%%/games/wastesedge/maps
 @dirrm %%DATADIR%%/games/wastesedge/locale/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES
 @dirrm %%DATADIR%%/games/wastesedge/locale/nl
+@dirrm %%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES
 @dirrm %%DATADIR%%/games/wastesedge/locale/it
 @dirrm %%DATADIR%%/games/wastesedge/locale
-@dirrm %%DATADIR%%/games/wastesedge/maps
-@dirrm %%DATADIR%%/games/wastesedge/scripts/actions
-@dirrm %%DATADIR%%/games/wastesedge/scripts/dialogues
-@dirrm %%DATADIR%%/games/wastesedge/scripts/game_events
-@dirrm %%DATADIR%%/games/wastesedge/scripts/modules
-@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/audio
-@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/mapcharacters
-@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules/mapviews
-@dirrm %%DATADIR%%/games/wastesedge/scripts/schedules
-@dirrm %%DATADIR%%/games/wastesedge/scripts
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/original
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/yellow
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/white
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/violet
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/silverleaf
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/red
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/original
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/green
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font/blue
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/font
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor/silverleaf
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor/original
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/cursor
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/normal
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf/mini
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/silverleaf
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original/normal
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original/mini
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border/original
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/border
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background/silverleaf
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background/original
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window/background
+@dirrm %%DATADIR%%/games/wastesedge/gfx/window
+@dirrm %%DATADIR%%/games/wastesedge/gfx/portraits
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/stone
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/inside
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls/cellar
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/walls
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/terrains
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/stairs
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons/arrows
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/icons
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses/redwyne-inn
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/houses
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/furnitures
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/floorings
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects/exteriors
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapobjects
+@dirrm %%DATADIR%%/games/wastesedge/gfx/mapcharacters
+@dirrm %%DATADIR%%/games/wastesedge/gfx/cutscene
+@dirrm %%DATADIR%%/games/wastesedge/gfx
+@dirrm %%DATADIR%%/games/wastesedge/audio
 @dirrm %%DATADIR%%/games/wastesedge
 @dirrm %%DATADIR%%/games
-@dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%

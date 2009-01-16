@@ -6,29 +6,33 @@
 #    $MCom: ports/games/adonthell/Makefile,v 1.1 2006/10/04 20:13:33 ahze Exp $
 
 PORTNAME=	adonthell
-PORTVERSION=	0.3.4
-PORTREVISION=	6
+PORTVERSION=	0.3.5
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-src-${PORTVERSION}a${EXTRACT_SUFX} \
-	   	wastesedge-src-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SAVANNAH
+DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
+	   	wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free role playing game
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
-		freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_SDL=	mixer sdl
+USE_SDL=	mixer ttf sdl
 USE_PYTHON=	-2.5
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	--disable-py-debug
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
-		PYPACKAGE=${PYTHON_CMD}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		PYPACKAGE="${PYTHON_CMD}" ac_cv_path_P_SWIG=no
+CONFIGURE_ARGS=	--disable-py-debug
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+WEDGE_VERSION=	0.3.4
 
 .include <bsd.port.pre.mk>
 
@@ -36,16 +40,19 @@ CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 BROKEN=		Does not build on sparc64
 .endif
 
-post-extract:
+post-patch:
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e \
+		's|-g -Wall|$$CFLAGS -Wall|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' configure 
+	@cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${REINPLACE_CMD} -e \
+		's/test $$adonthell_major_ver -eq 0 .*/true ;/' configure
 
 post-install:
-	cd ${WRKDIR}/wastesedge-${PORTVERSION} && \
-	${REINPLACE_CMD} -e 's/test $$adonthell_major_ver -eq 0 .*/true ;/' configure
-	cd ${WRKDIR}/wastesedge-${PORTVERSION} && \
-	${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
-	--with-adonthell-binary=${PREFIX}/bin/${PORTNAME} \
-	${CONFIGURE_TARGET}
-	cd ${WRKDIR}/wastesedge-${PORTVERSION} && ${GMAKE}
-	cd ${WRKDIR}/wastesedge-${PORTVERSION} && ${GMAKE} install
+	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} \
+		&& ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
+			--with-adonthell-binary=${PREFIX}/bin/${PORTNAME} \
+			${CONFIGURE_TARGET}
+	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${GMAKE}
+	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${GMAKE} install
 
 .include <bsd.port.post.mk>
