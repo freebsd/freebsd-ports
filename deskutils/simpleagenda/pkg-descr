@@ -1,0 +1,15 @@
+SimpleAgenda is a simple calendar and agenda application.
+Based on libical, SimpleAgenda handles multiple local and distant
+(through webcal) calendars.
+
+Features
+* multiples agendas
+* monthly calendar, day view and summary
+* create, resize and move appointments easily
+* export individual appointments as files and to pasteboard
+* changing rapidly
+* open to suggestions and friendly with contributors !
+
+LICENSE: GPL2 or later
+
+WWW: http://wiki.gnustep.org/index.php/SimpleAgenda.app
