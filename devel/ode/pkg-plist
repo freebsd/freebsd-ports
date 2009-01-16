@@ -14,10 +14,13 @@ include/ode/memory.h
 include/ode/misc.h
 include/ode/objects.h
 include/ode/ode.h
+include/ode/odeconfig.h
 include/ode/odecpp.h
 include/ode/odecpp_collision.h
+include/ode/odeinit.h
 include/ode/odemath.h
 include/ode/rotation.h
 include/ode/timer.h
 lib/libode.a
+lib/libode.la
 @dirrm include/ode
