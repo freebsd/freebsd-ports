@@ -27,7 +27,9 @@ libdata/pkgconfig/libslab.pc
 libexec/main-menu
 share/applications/application-browser.desktop
 share/applications/gnome-screensaver-lock.desktop
-share/applications/gnome-session-kill.desktop
+share/applications/gnome-session-logout.desktop
+share/applications/gnome-session-shutdown.desktop
+share/applications/trigger-panel-run-dialog.desktop
 share/gnome-2.0/ui/GNOME_MainMenu_ContextMenu.xml
 %%DATADIR%%/applications.xbel
 %%DATADIR%%/documents.xbel
@@ -90,9 +92,11 @@ share/locale/sl/LC_MESSAGES/gnome-main-menu.mo
 share/locale/sr/LC_MESSAGES/gnome-main-menu.mo
 share/locale/sv/LC_MESSAGES/gnome-main-menu.mo
 share/locale/ta/LC_MESSAGES/gnome-main-menu.mo
+share/locale/th/LC_MESSAGES/gnome-main-menu.mo
 share/locale/tr/LC_MESSAGES/gnome-main-menu.mo
 share/locale/uk/LC_MESSAGES/gnome-main-menu.mo
 share/locale/vi/LC_MESSAGES/gnome-main-menu.mo
+share/locale/wa/LC_MESSAGES/gnome-main-menu.mo
 share/locale/xh/LC_MESSAGES/gnome-main-menu.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-main-menu.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-main-menu.mo
