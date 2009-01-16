@@ -1,15 +1,19 @@
 bin/gappletviewer
+bin/gjavah
 bin/gjar
 bin/gjarsigner
 bin/gkeytool
 bin/gnative2ascii
 bin/gorbd
+bin/grmic
 bin/grmid
 bin/grmiregistry
 bin/gserialver
 bin/gtnameserv
 include/jawt.h
 include/jawt_md.h
+include/jni.h
+include/jni_md.h
 %%GCONF%%lib/classpath/libgconfpeer.la
 %%GCONF%%lib/classpath/libgconfpeer.so
 %%GTK2%%lib/classpath/libgtkpeer.so
@@ -20,6 +24,9 @@ lib/classpath/libjavaio.so.0
 lib/classpath/libjavalang.la
 lib/classpath/libjavalang.so
 lib/classpath/libjavalang.so.0
+lib/classpath/libjavalangmanagement.la
+lib/classpath/libjavalangmanagement.so
+lib/classpath/libjavalangmanagement.so.0
 lib/classpath/libjavalangreflect.la
 lib/classpath/libjavalangreflect.so
 lib/classpath/libjavalangreflect.so.0
@@ -85,13 +92,16 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/awt/AicasGraphicsBenchmark.java
 %%DATADIR%%/examples/gnu/classpath/examples/awt/AnimationApplet.java
 %%DATADIR%%/examples/gnu/classpath/examples/awt/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/awt/HintingDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/datatransfer/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/html/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/icons/aicas.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/back.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/badge.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-fullscreen.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-home.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-warning.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/palme.gif
 %%DATADIR%%/examples/gnu/classpath/examples/icons/reload.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-copy.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-cut.png
@@ -125,6 +135,7 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/management/TestThread.java
 %%DATADIR%%/examples/gnu/classpath/examples/midi/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/print/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/sound/AudioPlayerSample.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/BrowserEditorKit.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ButtonDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ComboBoxDemo.java
@@ -159,6 +170,7 @@ lib/security/classpath.security
 %%DATADIR%%/glibj.zip
 %%DATADIR%%/tools.zip
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/swing
+@dirrm %%DATADIR%%/examples/gnu/classpath/examples/sound
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/print
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/midi
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/management

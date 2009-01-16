@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	classpath
-PORTVERSION=	0.93
-PORTREVISION=	3
+PORTVERSION=	0.97.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SAVANNAH}
@@ -17,18 +16,32 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	A GNU project to create a free Java class library
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		jikes:${PORTSDIR}/java/jikes
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
 USE_XORG=	x11 ice xtst xaw xproto xext
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--enable-jni --with-jikes --disable-alsa --disable-dssi --disable-plugin
+CONFIGURE_ARGS=	--enable-jni --disable-alsa --disable-dssi --disable-plugin
 USE_GMAKE=	yes
 
-INFO=		hacking tools vmintegration
+MAN1=		gappletviewer.1 \
+		gjar.1 \
+		gjarsigner.1 \
+		gjavah.1 \
+		gcjh.1 \
+		gkeytool.1 \
+		gnative2ascii.1 \
+		gorbd.1 \
+		grmid.1 \
+		grmiregistry.1 \
+		gserialver.1 \
+		gtnameserv.1
+
+INFO=		cp-hacking cp-tools cp-vmintegration
 
 CONFLICTS=	sablevm-classpath-*
 
@@ -74,9 +87,5 @@ PLIST_SUB+=		QT4=""
 .else
 PLIST_SUB+=		QT4="@comment "
 .endif
-
-post-extract:
-	@${REINPLACE_CMD} -e 's,^\(include_HEADERS = \)jni.h jni_md.h \(.*\),\1\2,' \
-		${WRKSRC}/include/Makefile.in
 
 .include <bsd.port.post.mk>
