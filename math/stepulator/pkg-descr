@@ -2,4 +2,6 @@ Stepulator is a scientific calculator implementing the RPN notation.
 It is developed in Objective-C and is currently being maintained on GNUstep
 and Mac OS X (Cocoa).
 
+LICENSE: BSD 2-clause
+
 WWW: http://www.linuks.mine.nu/stepulator/
