@@ -6,27 +6,46 @@
 #
 
 PORTNAME=	kardsgt
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	games
-MASTER_SITES=	SAVANNAH CENKES
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Card game suite
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+USE_QT_VER=	4
+QT_COMPONENTS=	assistantclient corelib gui network \
+		moc_build qmake_build rcc_build uic_build
+ALL_TARGET=	qmake release
 
-USE_QT_VER=	3
-MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} QTDIR="${QT_PREFIX}"
-MAKE_ARGS=	bindir=${PREFIX}/bin mandir=${MANPREFIX}/man\
-		datadir=${PREFIX}/share
-QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-MAN6=	${PORTNAME}.6
+MAN6=		kardsgt.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datadir}/kardsgt|$${DATADIR}|;\
-		s|$${docdir}/kardsgt|$${DOCSDIR}|;\
-		s|qmake|${SETENV} ${MAKE_ENV} qmake -spec ${QMAKESPEC}|;\
-		s|--parents|-p|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^QT +=|#QT +=|g' \
+		${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e 's|/usr/share/kardsgt/|${DATADIR}/|g' \
+		${WRKSRC}/src/kardsgtinterface.cpp
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+		-spec ${QMAKESPEC} kardsgt.pro
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/release/kardsgt ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/doc/kardsgt.6 ${MAN6PREFIX}/man/man6
+	@${MKDIR} ${PREFIX}/share/icons
+	${INSTALL_DATA} ${WRKSRC}/src/images/kardsgt.png ${PREFIX}/share/icons
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/doc/*.dcf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/doc/*.html ${DATADIR}
+	@${MKDIR} ${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.jpg ${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.png ${DATADIR}/images
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in CREDITS ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
