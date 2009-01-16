@@ -58,7 +58,7 @@ check-makevars::
 _FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
 		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
 		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd \
-		ibase imagemagick imlib libcurl libgd libpng mysql ncurses \
+		ibase imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
 		odbc opengl openssl oracle pasjpeg paszlib pcap postgres pthreads pxlib \
 		regexpr sdl sqlite svgalib symbolic syslog tcl unzip users utmp x11 xforms \
 		zlib
