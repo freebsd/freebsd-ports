@@ -557,6 +557,7 @@
     SUBDIR += npush
     SUBDIR += nuclearchess
     SUBDIR += numptyphysics
+    SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
     SUBDIR += odamex
     SUBDIR += oilwar
