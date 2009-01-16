@@ -31,6 +31,8 @@ nsd_stop()
 	echo "Merging nsd zone transfer changes to zone files."
 	%%PREFIX%%/sbin/nsdc patch
 
+	sleep 5
+
 	echo "Stopping nsd."
 	%%PREFIX%%/sbin/nsdc stop
 }

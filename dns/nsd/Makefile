@@ -7,6 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -33,6 +34,8 @@ CONFIGURE_ARGS=	--with-user=${NSDUSER} \
 		--with-difffile=${NSDDIFFFILE} \
 		--with-xfrdfile=${NSDXFRDFILE} \
 		--with-libwrap
+
+USE_OPENSSL=	yes
 
 MAN5=	nsd.conf.5
 MAN8=	nsd.8 nsdc.8 zonec.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 \
