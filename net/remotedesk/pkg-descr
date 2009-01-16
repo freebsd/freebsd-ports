@@ -1,4 +1,6 @@
 RemoteDesk is a graphical interface to rdesktop
 and it allows you to remotely access Windows computers.
 
+LICENSE: GPL2 or later
+
 WWW: http://gap.nongnu.org/remotedesk/index.html

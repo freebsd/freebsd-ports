@@ -17,4 +17,6 @@ experiment to find a font that displays your language correctly. I
 have found that Helvetica works well with Google's German, French and
 Spanish feeds.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.gnustep.it/marko/Ticker/index.html

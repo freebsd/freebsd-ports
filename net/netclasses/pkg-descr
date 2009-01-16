@@ -5,6 +5,6 @@ background connections, etc.). Netclasses seamlessly integrates into
 NSRunLoop, which means there should be no need for redesigning applications
 to use it.
 
-WWW: http://netclasses.aeruder.net/
+LICENSE: LGPL2 or later
 
-gurkan@linuks.mine.nu
+WWW: http://netclasses.aeruder.net/
