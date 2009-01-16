@@ -1,17 +1,16 @@
 bin/kardsgt
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/kardsgt.png
 %%DATADIR%%/abigail.html
+%%DATADIR%%/crazyeights.html
 %%DATADIR%%/credits.html
 %%DATADIR%%/cribbage.html
 %%DATADIR%%/euchre.html
 %%DATADIR%%/fdl.html
 %%DATADIR%%/games.html
 %%DATADIR%%/hearts.html
-%%DATADIR%%/images/NOTICE
 %%DATADIR%%/images/abigail.png
 %%DATADIR%%/images/cribbageboard.jpg
 %%DATADIR%%/images/jack.png
@@ -29,7 +28,7 @@ share/icons/kardsgt.png
 %%DATADIR%%/toc.html
 %%DATADIR%%/wally.html
 %%DATADIR%%/war.html
-@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
