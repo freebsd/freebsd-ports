@@ -6,30 +6,43 @@
 #
 
 PORTNAME=	libexif
-PORTVERSION=	0.6.16
+PORTVERSION=	0.6.17
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to read digital camera file meta-data
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
+USE_GNOME=	gnomehack ltverhack pkgconfig
+USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-docs
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
 .else
+CONFIGURE_ENV+=	am_cv_func_iconv=no
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|doc||g ; \
+		 /^am__installdirs =/s|$$(docdir)||g ; \
+		 /^install-data-am:/s|install-docDATA||g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
