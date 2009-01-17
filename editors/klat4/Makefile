@@ -7,7 +7,7 @@
 
 PORTNAME=	klat4
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.algebraic.ru/klat4/
 
@@ -17,6 +17,7 @@ COMMENT=	A LaTeX source editor for KDE4
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdeprefix kdelibs automoc4
+USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>
