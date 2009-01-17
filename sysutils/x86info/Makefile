@@ -25,7 +25,7 @@ MAN8=	lsmsr.8
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800042
+.if ${OSVERSION} < 701102
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu.h:${PORTSDIR}/sysutils/devcpu
 CFLAGS+=	-I"${LOCALBASE}"/include
 .endif

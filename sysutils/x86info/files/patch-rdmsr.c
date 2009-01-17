@@ -7,7 +7,7 @@
 +# include <sys/param.h>
  # include <sys/ioctl.h>
 -# include <cpu.h>
-+# if __FreeBSD_version < 800042
++# if __FreeBSD_version < 701102
 +#  define CPUDEV "/dev/cpu%d"
 +#  include <cpu.h>
 +# else
@@ -21,7 +21,7 @@
  	unsigned long lo, hi;
  	int fh;
  	static int nodriver=0;
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
  	cpu_msr_args_t args;
 +#else
 +	cpuctl_msr_args_t args;
@@ -40,7 +40,7 @@
  
  	args.msr = idx;
 -	if (ioctl(fh, CPU_RDMSR, &args) != 0) {
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
 +	if (ioctl(fh, CPU_RDMSR, &args) != 0) {                                 
 +#else
 +	if (ioctl(fh, CPUCTL_RDMSR, &args) != 0) {                                 

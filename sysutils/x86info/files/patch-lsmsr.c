@@ -7,7 +7,7 @@
 +#if defined(__FreeBSD__)
 +# include <sys/param.h>
 +# include <sys/ioctl.h>
-+# if __FreeBSD_version < 800042
++# if __FreeBSD_version < 701102
 +#  define CPUDEV "/dev/cpu%d"
 +#  include <cpu.h>
 +# else
@@ -27,14 +27,14 @@
 +
 +int get_msr_val(unsigned int msr, unsigned long long *val)
 +{
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
 +	cpu_msr_args_t args;
 +#else   
 +	cpuctl_msr_args_t args;
 +#endif
 +
 +	args.msr = msr;
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
 +	if (ioctl(g.fd, CPU_RDMSR, &args) != 0) {
 +#else
 +	if (ioctl(g.fd, CPUCTL_RDMSR, &args) != 0) {
