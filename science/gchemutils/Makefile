@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB+=	XUL="@comment "
 .endif
 
-.if ${OSVERSION} < 70043
+.if ${OSVERSION} < 700043
 BROKEN=		does not compile
 .endif
 
