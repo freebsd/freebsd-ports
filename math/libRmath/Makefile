@@ -37,7 +37,6 @@ USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--with-readline=no --with-x=no
-CONFIGURE_ENV+=	F77="${F77}"
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
