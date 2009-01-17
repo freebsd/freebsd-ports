@@ -6,7 +6,7 @@
 
 PORTNAME=	dikt
 PORTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc net kde
 MASTER_SITES=	http://diktv1.googlepages.com/	\
 		LOCAL/beech
@@ -17,7 +17,7 @@ COMMENT=	Dictionary for KDE4
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 workspace
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc uic network svg xml
+QT_COMPONENTS=	corelib gui qmake_build moc_build uic_build network svg xml rcc_build
 USE_CMAKE=	yes
 
 PLIST_FILES=	bin/dikt \
