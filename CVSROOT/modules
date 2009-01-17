@@ -1690,6 +1690,7 @@ conspire                        ports/irc/conspire
 construo                        ports/games/construo
 contact-lookup-applet           ports/mail/contact-lookup-applet
 contacts                        ports/deskutils/contacts
+contenido                       ports/www/contenido
 contool                         ports/sysutils/contool
 convertall                      ports/math/convertall
 convey                          ports/net-im/convey
@@ -2480,6 +2481,7 @@ durep                           ports/sysutils/durep
 dv2jpg                          ports/multimedia/dv2jpg
 dv2sub                          ports/multimedia/dv2sub
 dvbcut                          ports/multimedia/dvbcut
+dvbsnoop                        ports/multimedia/dvbsnoop
 dvd+rw-tools                    ports/sysutils/dvd+rw-tools
 dvd-slideshow                   ports/multimedia/dvd-slideshow
 dvda-author                     ports/audio/dvda-author
@@ -3194,7 +3196,6 @@ fftw3-float                     ports/math/fftw3-float
 fftw3-long                      ports/math/fftw3-long
 fga                             ports/devel/fga
 fget                            ports/ftp/fget
-fgfs-base                       ports/games/fgfs-base
 fgkicker                        ports/games/fgkicker
 fgrun                           ports/games/fgrun
 fgsd                            ports/games/fgsd
@@ -3289,6 +3290,7 @@ flickcurl                       ports/www/flickcurl
 flightgear                      ports/games/flightgear
 flightgear-aircrafts            ports/games/flightgear-aircrafts
 flightgear-atlas                ports/games/flightgear-atlas
+flightgear-data                 ports/games/flightgear-data
 flightgear-mb339-pan            ports/games/flightgear-mb339-pan
 flim                            ports/editors/flim
 flim-emacs21                    ports/editors/flim-emacs21
@@ -7331,6 +7333,7 @@ libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
 libopensync-plugin-sunbird      ports/deskutils/libopensync-plugin-sunbird
 libopensync-plugin-synce        ports/deskutils/libopensync-plugin-synce
 libopensync-plugin-synce-devel  ports/deskutils/libopensync-plugin-synce-devel
+libopensync-plugin-synce-legacy  ports/deskutils/libopensync-plugin-synce-legacy
 libopensync-plugin-syncml       ports/deskutils/libopensync-plugin-syncml
 libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
 libopensync022                  ports/devel/libopensync022
@@ -8850,6 +8853,8 @@ mysqlsla                        ports/databases/mysqlsla
 mysqltcl                        ports/databases/mysqltcl
 mysqltuner                      ports/databases/mysqltuner
 mythtv                          ports/multimedia/mythtv
+mythtv-frontend                 ports/multimedia/mythtv-frontend
+mythtv-themes                   ports/multimedia/mythtv-themes
 mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
@@ -9230,6 +9235,7 @@ numchar                         ports/misc/numchar
 numdiff                         ports/math/numdiff
 numlockx                        ports/x11/numlockx
 numptyphysics                   ports/games/numptyphysics
+numptyphysics-npcomplete        ports/games/numptyphysics-npcomplete
 nunnimcax                       ports/textproc/nunnimcax
 nurbs++                         ports/graphics/nurbs++
 nusoap                          ports/net/nusoap
@@ -18319,6 +18325,7 @@ py-pyclamd                      ports/mail/py-pyclamd
 py-pycrypto                     ports/security/py-pycrypto
 py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
+py-pydicom                      ports/science/py-pydicom
 py-pydot                        ports/graphics/py-pydot
 py-pyfits                       ports/astro/py-pyfits
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
@@ -20083,6 +20090,7 @@ simh                            ports/emulators/simh
 simian                          ports/devel/simian
 simlib                          ports/science/simlib
 simple-ccsm                     ports/x11-wm/simple-ccsm
+simpleagenda                    ports/deskutils/simpleagenda
 simpleirc                       ports/irc/simpleirc
 simplemod                       ports/audio/simplemod
 simpletest                      ports/devel/simpletest
@@ -21356,6 +21364,7 @@ tshark-lite                     ports/net/tshark-lite
 tsito                           ports/games/tsito
 tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
+tstools                         ports/multimedia/tstools
 tt                              ports/games/tt
 tta                             ports/audio/tta
 ttbudget                        ports/net/ttbudget
