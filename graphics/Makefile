@@ -571,6 +571,7 @@
     SUBDIR += p5-SVG-Metadata
     SUBDIR += p5-SWF-Builder
     SUBDIR += p5-SWF-File
+    SUBDIR += p5-Sane
     SUBDIR += p5-SpringGraph
     SUBDIR += p5-Tk-JPEG-Lite
     SUBDIR += p5-VCG
