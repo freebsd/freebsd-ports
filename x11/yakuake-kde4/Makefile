@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdebase kdeprefix automoc4
 USE_GETTEXT=	yes
-USE_QT_VER=	yes
+USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>
