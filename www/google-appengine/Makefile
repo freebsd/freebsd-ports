@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
@@ -39,7 +39,7 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
-GAEDOCSREL=	20081003
+GAEDOCSREL=	20090115
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
