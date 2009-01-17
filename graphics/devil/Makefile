@@ -6,42 +6,108 @@
 #
 
 PORTNAME=	devil
-PORTVERSION=	1.6.7
-PORTREVISION=	6
+PORTVERSION=	1.7.5
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openil
+MASTER_SITES=	SF/openil
 DISTNAME=	DevIL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full featured cross-platform image library
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		lcms.1:${PORTSDIR}/graphics/lcms
+OPTIONS=	JPEG	"Enable JPEG support"		on \
+		JASPER	"Enable JPEG2000 support"	on \
+		LCMS	"Enable LCMS support"		on \
+		MNG	"Enable MNG support"		on \
+		PNG	"Enable PNG support"		on \
+		TIFF	"Enable TIFF support"		on \
+		X11	"Enable X11 support"		on \
+		SDL	"Enable SDL support"		off
 
-USE_AUTOTOOLS=	libtool:15
-USE_GL=		yes
+WRKSRC=		${WRKDIR}/${DISTNAME:L}
+
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:15
+ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-ILU \
+		--disable-allegro --disable-directx8 --disable-directx9 \
+		--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-allegro
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-OPTIONS=	SDL "Enable SDL support" off
+CFLAGS+=	-DIL_NO_VTF
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_JPEG)
+CONFIGURE_ARGS+=--disable-jpeg
+.else
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+CONFIGURE_ARGS+=--enable-jpeg
+.endif
+
+.if defined(WITHOUT_JASPER)
+CONFIGURE_ARGS+=--disable-jp2
+.else
+LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+CONFIGURE_ARGS+=--enable-jp2
+.endif
+
+.if defined(WITHOUT_LCMS)
+CONFIGURE_ARGS+=--disable-lcms
+.else
+LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms
+CONFIGURE_ARGS+=--enable-lcms
+.endif
+
+.if defined(WITHOUT_MNG)
+CONFIGURE_ARGS+=--disable-mng
+.else
+LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
+CONFIGURE_ARGS+=--enable-mng
+.endif
+
+.if defined(WITHOUT_PNG)
+CONFIGURE_ENV+=	libpng_app=no
+CONFIGURE_ARGS+=--disable-png
+.else
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+.endif
+
+.if defined(WITHOUT_TIFF)
+CONFIGURE_ARGS+=--disable-tiff
+.else
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+CONFIGURE_ARGS+=--enable-tiff
+.endif
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--disable-opengl --disable-x11 --disable-xpm --disable-shm
+PLIST_SUB+=	X11="@comment "
+.else
+USE_GL=		glut
+CONFIGURE_ARGS+=--enable-ILUT
+PLIST_SUB+=	X11=""
+.endif
+
 .if defined(WITH_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} \( -name '*.c' -o -name '*.cpp' -o -name '*.h' \) -print0 |\
-		${XARGS} -0 ${REINPLACE_CMD} 's|ILvoid|void|g'
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
