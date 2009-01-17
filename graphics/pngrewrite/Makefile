@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pngrewrite
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
