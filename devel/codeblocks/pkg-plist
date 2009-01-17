@@ -1,6 +1,7 @@
 bin/cb_console_runner
 bin/cb_share_config
 bin/codeblocks
+bin/codesnippets
 include/codeblocks/annoyingdialog.h
 include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
@@ -134,15 +135,32 @@ include/codeblocks/xtra_res.h
 lib/libcodeblocks.la
 lib/libcodeblocks.so
 lib/libcodeblocks.so.0
+lib/libwxsmithlib.la
+lib/libwxsmithlib.so
+lib/libwxsmithlib.so.0
 libdata/pkgconfig/codeblocks.pc
+man/man1/codesnippets.1
 share/applications/codeblocks.desktop
+%%DATADIR%%/BrowseTracker.zip
+%%DATADIR%%/Profiler.zip
+%%DATADIR%%/RegExTestbed.zip
+%%DATADIR%%/SymTab.zip
+%%DATADIR%%/ThreadSearch.zip
 %%DATADIR%%/astyle.zip
 %%DATADIR%%/autosave.zip
+%%DATADIR%%/byogames.zip
+%%DATADIR%%/cb_koders.zip
 %%DATADIR%%/classwizard.zip
 %%DATADIR%%/codecompletion.zip
+%%DATADIR%%/codesnippets.zip
+%%DATADIR%%/codestat.zip
 %%DATADIR%%/compiler.zip
 %%DATADIR%%/debugger.zip
 %%DATADIR%%/defaultmimehandler.zip
+%%DATADIR%%/dragscroll.zip
+%%DATADIR%%/envvars.zip
+%%DATADIR%%/exporter.zip
+%%DATADIR%%/help_plugin.zip
 %%DATADIR%%/icons/app.xpm
 %%DATADIR%%/icons/app_64.xpm
 %%DATADIR%%/icons/c64.xpm
@@ -201,6 +219,12 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/16x16/view_tree.png
 %%DATADIR%%/images/16x16/window.png
 %%DATADIR%%/images/16x16/window_fullscreen.png
+%%DATADIR%%/images/ThreadSearch/findf.png
+%%DATADIR%%/images/ThreadSearch/findfdisabled.png
+%%DATADIR%%/images/ThreadSearch/options.png
+%%DATADIR%%/images/ThreadSearch/optionsdisabled.png
+%%DATADIR%%/images/ThreadSearch/stop.png
+%%DATADIR%%/images/ThreadSearch/stopdisabled.png
 %%DATADIR%%/images/ascii.png
 %%DATADIR%%/images/codeblocks.png
 %%DATADIR%%/images/codecompletion/class.png
@@ -227,6 +251,9 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/codecompletion/var_private.png
 %%DATADIR%%/images/codecompletion/var_protected.png
 %%DATADIR%%/images/codecompletion/var_public.png
+%%DATADIR%%/images/codesnippets/allsnippets.png
+%%DATADIR%%/images/codesnippets/category.png
+%%DATADIR%%/images/codesnippets/snippet.png
 %%DATADIR%%/images/compile.png
 %%DATADIR%%/images/compilerun.png
 %%DATADIR%%/images/contents_16x16.png
@@ -278,6 +305,8 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/redo.png
 %%DATADIR%%/images/run.png
 %%DATADIR%%/images/searchreplace.png
+%%DATADIR%%/images/settings/ThreadSearch-off.png
+%%DATADIR%%/images/settings/ThreadSearch.png
 %%DATADIR%%/images/settings/abbrev-off.png
 %%DATADIR%%/images/settings/abbrev.png
 %%DATADIR%%/images/settings/astyle-plugin-off.png
@@ -341,6 +370,135 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/window.png
 %%DATADIR%%/images/workspace-readonly.png
 %%DATADIR%%/images/workspace.png
+%%DATADIR%%/images/wxsmith/Custom16.png
+%%DATADIR%%/images/wxsmith/Custom32.png
+%%DATADIR%%/images/wxsmith/Spacer16.png
+%%DATADIR%%/images/wxsmith/Spacer32.png
+%%DATADIR%%/images/wxsmith/deletewidget16.png
+%%DATADIR%%/images/wxsmith/deletewidget32.png
+%%DATADIR%%/images/wxsmith/insertafter16.png
+%%DATADIR%%/images/wxsmith/insertafter32.png
+%%DATADIR%%/images/wxsmith/insertbefore16.png
+%%DATADIR%%/images/wxsmith/insertbefore32.png
+%%DATADIR%%/images/wxsmith/insertinto16.png
+%%DATADIR%%/images/wxsmith/insertinto32.png
+%%DATADIR%%/images/wxsmith/insertpoint16.png
+%%DATADIR%%/images/wxsmith/insertpoint32.png
+%%DATADIR%%/images/wxsmith/quickpropsclose16.png
+%%DATADIR%%/images/wxsmith/quickpropsclose32.png
+%%DATADIR%%/images/wxsmith/quickpropsopen16.png
+%%DATADIR%%/images/wxsmith/quickpropsopen32.png
+%%DATADIR%%/images/wxsmith/selected16.png
+%%DATADIR%%/images/wxsmith/selected32.png
+%%DATADIR%%/images/wxsmith/showpreview16.png
+%%DATADIR%%/images/wxsmith/showpreview32.png
+%%DATADIR%%/images/wxsmith/wxBitmapButton16.png
+%%DATADIR%%/images/wxsmith/wxBitmapButton32.png
+%%DATADIR%%/images/wxsmith/wxBoxSizer16.png
+%%DATADIR%%/images/wxsmith/wxBoxSizer32.png
+%%DATADIR%%/images/wxsmith/wxButton16.png
+%%DATADIR%%/images/wxsmith/wxButton32.png
+%%DATADIR%%/images/wxsmith/wxCalendarCtrl16.png
+%%DATADIR%%/images/wxsmith/wxCalendarCtrl32.png
+%%DATADIR%%/images/wxsmith/wxCheckBox16.png
+%%DATADIR%%/images/wxsmith/wxCheckBox32.png
+%%DATADIR%%/images/wxsmith/wxCheckListBox16.png
+%%DATADIR%%/images/wxsmith/wxCheckListBox32.png
+%%DATADIR%%/images/wxsmith/wxChoice16.png
+%%DATADIR%%/images/wxsmith/wxChoice32.png
+%%DATADIR%%/images/wxsmith/wxChoicebook16.png
+%%DATADIR%%/images/wxsmith/wxChoicebook32.png
+%%DATADIR%%/images/wxsmith/wxColourDialog16.png
+%%DATADIR%%/images/wxsmith/wxColourDialog32.png
+%%DATADIR%%/images/wxsmith/wxComboBox16.png
+%%DATADIR%%/images/wxsmith/wxComboBox32.png
+%%DATADIR%%/images/wxsmith/wxDatePickerCtrl16.png
+%%DATADIR%%/images/wxsmith/wxDatePickerCtrl32.png
+%%DATADIR%%/images/wxsmith/wxDialog16.png
+%%DATADIR%%/images/wxsmith/wxDialog32.png
+%%DATADIR%%/images/wxsmith/wxDirDialog16.png
+%%DATADIR%%/images/wxsmith/wxDirDialog32.png
+%%DATADIR%%/images/wxsmith/wxFileDialog16.png
+%%DATADIR%%/images/wxsmith/wxFileDialog32.png
+%%DATADIR%%/images/wxsmith/wxFlexGridSizer16.png
+%%DATADIR%%/images/wxsmith/wxFlexGridSizer32.png
+%%DATADIR%%/images/wxsmith/wxFrame16.png
+%%DATADIR%%/images/wxsmith/wxFrame32.png
+%%DATADIR%%/images/wxsmith/wxGauge16.png
+%%DATADIR%%/images/wxsmith/wxGauge32.png
+%%DATADIR%%/images/wxsmith/wxGenericDirCtrl16.png
+%%DATADIR%%/images/wxsmith/wxGenericDirCtrl32.png
+%%DATADIR%%/images/wxsmith/wxGrid16.png
+%%DATADIR%%/images/wxsmith/wxGrid32.png
+%%DATADIR%%/images/wxsmith/wxGridSizer16.png
+%%DATADIR%%/images/wxsmith/wxGridSizer32.png
+%%DATADIR%%/images/wxsmith/wxHtmlWindow16.png
+%%DATADIR%%/images/wxsmith/wxHtmlWindow32.png
+%%DATADIR%%/images/wxsmith/wxListBox16.png
+%%DATADIR%%/images/wxsmith/wxListBox32.png
+%%DATADIR%%/images/wxsmith/wxListCtrl16.png
+%%DATADIR%%/images/wxsmith/wxListCtrl32.png
+%%DATADIR%%/images/wxsmith/wxListbook16.png
+%%DATADIR%%/images/wxsmith/wxListbook32.png
+%%DATADIR%%/images/wxsmith/wxMenu16.png
+%%DATADIR%%/images/wxsmith/wxMenu32.png
+%%DATADIR%%/images/wxsmith/wxMenuBar16.png
+%%DATADIR%%/images/wxsmith/wxMenuBar32.png
+%%DATADIR%%/images/wxsmith/wxMenuItem16.png
+%%DATADIR%%/images/wxsmith/wxMenuItem32.png
+%%DATADIR%%/images/wxsmith/wxMultiChoiceDialog16.png
+%%DATADIR%%/images/wxsmith/wxMultiChoiceDialog32.png
+%%DATADIR%%/images/wxsmith/wxNotebook16.png
+%%DATADIR%%/images/wxsmith/wxNotebook32.png
+%%DATADIR%%/images/wxsmith/wxPanel16.png
+%%DATADIR%%/images/wxsmith/wxPanel32.png
+%%DATADIR%%/images/wxsmith/wxRadioBox16.png
+%%DATADIR%%/images/wxsmith/wxRadioBox32.png
+%%DATADIR%%/images/wxsmith/wxRadioButton16.png
+%%DATADIR%%/images/wxsmith/wxRadioButton32.png
+%%DATADIR%%/images/wxsmith/wxScrollBar16.png
+%%DATADIR%%/images/wxsmith/wxScrollBar32.png
+%%DATADIR%%/images/wxsmith/wxScrolledWindow16.png
+%%DATADIR%%/images/wxsmith/wxScrolledWindow32.png
+%%DATADIR%%/images/wxsmith/wxSingleChoiceDialog16.png
+%%DATADIR%%/images/wxsmith/wxSingleChoiceDialog32.png
+%%DATADIR%%/images/wxsmith/wxSlider16.png
+%%DATADIR%%/images/wxsmith/wxSlider32.png
+%%DATADIR%%/images/wxsmith/wxSmith16.png
+%%DATADIR%%/images/wxsmith/wxSmith32.png
+%%DATADIR%%/images/wxsmith/wxSpinButton16.png
+%%DATADIR%%/images/wxsmith/wxSpinButton32.png
+%%DATADIR%%/images/wxsmith/wxSpinCtrl16.png
+%%DATADIR%%/images/wxsmith/wxSpinCtrl32.png
+%%DATADIR%%/images/wxsmith/wxSplitterWindow16.png
+%%DATADIR%%/images/wxsmith/wxSplitterWindow32.png
+%%DATADIR%%/images/wxsmith/wxStaticBitmap16.png
+%%DATADIR%%/images/wxsmith/wxStaticBitmap32.png
+%%DATADIR%%/images/wxsmith/wxStaticBox16.png
+%%DATADIR%%/images/wxsmith/wxStaticBox32.png
+%%DATADIR%%/images/wxsmith/wxStaticBoxSizer16.png
+%%DATADIR%%/images/wxsmith/wxStaticBoxSizer32.png
+%%DATADIR%%/images/wxsmith/wxStaticLine16.png
+%%DATADIR%%/images/wxsmith/wxStaticLine32.png
+%%DATADIR%%/images/wxsmith/wxStaticText16.png
+%%DATADIR%%/images/wxsmith/wxStaticText32.png
+%%DATADIR%%/images/wxsmith/wxStatusBar16.png
+%%DATADIR%%/images/wxsmith/wxStatusBar32.png
+%%DATADIR%%/images/wxsmith/wxStdDialogButtonSizer16.png
+%%DATADIR%%/images/wxsmith/wxStdDialogButtonSizer32.png
+%%DATADIR%%/images/wxsmith/wxTextCtrl16.png
+%%DATADIR%%/images/wxsmith/wxTextCtrl32.png
+%%DATADIR%%/images/wxsmith/wxTimer16.png
+%%DATADIR%%/images/wxsmith/wxTimer32.png
+%%DATADIR%%/images/wxsmith/wxToggleButton16.png
+%%DATADIR%%/images/wxsmith/wxToggleButton32.png
+%%DATADIR%%/images/wxsmith/wxToolBar16.png
+%%DATADIR%%/images/wxsmith/wxToolBar32.png
+%%DATADIR%%/images/wxsmith/wxToolBarItem16.png
+%%DATADIR%%/images/wxsmith/wxToolBarItem32.png
+%%DATADIR%%/images/wxsmith/wxTreeCtrl16.png
+%%DATADIR%%/images/wxsmith/wxTreeCtrl32.png
+%%DATADIR%%/keybinder.zip
 %%DATADIR%%/lexers/lexer_OgreCompositor.sample
 %%DATADIR%%/lexers/lexer_OgreCompositor.xml
 %%DATADIR%%/lexers/lexer_OgreMaterial.sample
@@ -405,22 +563,58 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lexers/lexer_vhdl.xml
 %%DATADIR%%/lexers/lexer_xml.sample
 %%DATADIR%%/lexers/lexer_xml.xml
+%%DATADIR%%/lib_finder.zip
+%%DATADIR%%/lib_finder/codeblocks_sdk.xml
+%%DATADIR%%/lib_finder/glfw.xml
+%%DATADIR%%/lib_finder/wxwidgets.xml
 %%DATADIR%%/manager_resources.zip
 %%DATADIR%%/openfileslist.zip
+%%DATADIR%%/plugins/libAutoVersioning.la
+%%DATADIR%%/plugins/libAutoVersioning.so
+%%DATADIR%%/plugins/libBrowseTracker.la
+%%DATADIR%%/plugins/libBrowseTracker.so
+%%DATADIR%%/plugins/libProfiler.la
+%%DATADIR%%/plugins/libProfiler.so
+%%DATADIR%%/plugins/libRegExTestbed.la
+%%DATADIR%%/plugins/libRegExTestbed.so
+%%DATADIR%%/plugins/libSymTab.la
+%%DATADIR%%/plugins/libSymTab.so
+%%DATADIR%%/plugins/libThreadSearch.la
+%%DATADIR%%/plugins/libThreadSearch.so
 %%DATADIR%%/plugins/libastyle.la
 %%DATADIR%%/plugins/libastyle.so
 %%DATADIR%%/plugins/libautosave.la
 %%DATADIR%%/plugins/libautosave.so
+%%DATADIR%%/plugins/libbyogames.la
+%%DATADIR%%/plugins/libbyogames.so
+%%DATADIR%%/plugins/libcb_koders.la
+%%DATADIR%%/plugins/libcb_koders.so
 %%DATADIR%%/plugins/libclasswizard.la
 %%DATADIR%%/plugins/libclasswizard.so
 %%DATADIR%%/plugins/libcodecompletion.la
 %%DATADIR%%/plugins/libcodecompletion.so
+%%DATADIR%%/plugins/libcodesnippets.la
+%%DATADIR%%/plugins/libcodesnippets.so
+%%DATADIR%%/plugins/libcodestat.la
+%%DATADIR%%/plugins/libcodestat.so
 %%DATADIR%%/plugins/libcompiler.la
 %%DATADIR%%/plugins/libcompiler.so
 %%DATADIR%%/plugins/libdebugger.la
 %%DATADIR%%/plugins/libdebugger.so
 %%DATADIR%%/plugins/libdefaultmimehandler.la
 %%DATADIR%%/plugins/libdefaultmimehandler.so
+%%DATADIR%%/plugins/libdragscroll.la
+%%DATADIR%%/plugins/libdragscroll.so
+%%DATADIR%%/plugins/libenvvars.la
+%%DATADIR%%/plugins/libenvvars.so
+%%DATADIR%%/plugins/libexporter.la
+%%DATADIR%%/plugins/libexporter.so
+%%DATADIR%%/plugins/libhelp_plugin.la
+%%DATADIR%%/plugins/libhelp_plugin.so
+%%DATADIR%%/plugins/libkeybinder.la
+%%DATADIR%%/plugins/libkeybinder.so
+%%DATADIR%%/plugins/liblib_finder.la
+%%DATADIR%%/plugins/liblib_finder.so
 %%DATADIR%%/plugins/libopenfileslist.la
 %%DATADIR%%/plugins/libopenfileslist.so
 %%DATADIR%%/plugins/libprojectsimporter.la
@@ -429,6 +623,10 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/plugins/libscriptedwizard.so
 %%DATADIR%%/plugins/libtodo.la
 %%DATADIR%%/plugins/libtodo.so
+%%DATADIR%%/plugins/libwxsmith.la
+%%DATADIR%%/plugins/libwxsmith.so
+%%DATADIR%%/plugins/libwxsmithcontribitems.la
+%%DATADIR%%/plugins/libwxsmithcontribitems.so
 %%DATADIR%%/projectsimporter.zip
 %%DATADIR%%/resources.zip
 %%DATADIR%%/scriptedwizard.zip
@@ -631,14 +829,16 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wxwidgets.template
 %%DATADIR%%/tips.txt
 %%DATADIR%%/todo.zip
+%%DATADIR%%/wxsmith.zip
+%%DATADIR%%/wxsmithcontribitems.zip
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks-workspace.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks.png
 share/mime/application/x-codeblocks-workspace.xml
 share/mime/application/x-codeblocks.xml
 share/mime/packages/codeblocks.xml
 share/pixmaps/codeblocks.png
+%%DATADIR%%/AutoVersioning.zip
 @dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxsmith
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog
@@ -704,13 +904,18 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lib_finder
 @dirrm %%DATADIR%%/lexers
+@dirrm %%DATADIR%%/images/wxsmith
 @dirrm %%DATADIR%%/images/settings
+@dirrm %%DATADIR%%/images/codesnippets
 @dirrm %%DATADIR%%/images/codecompletion
+@dirrm %%DATADIR%%/images/ThreadSearch
 @dirrm %%DATADIR%%/images/16x16
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm include/codeblocks/wxscintilla/include/wx
 @dirrm include/codeblocks/wxscintilla/include
 @dirrm include/codeblocks/wxscintilla
