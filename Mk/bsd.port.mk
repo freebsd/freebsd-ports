@@ -1407,8 +1407,8 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 # to set one of the conditionals that force the inclusion of bsd.perl.mk
 .if !defined(_PERL_REFACTORING_COMPLETE)
 
-PERL_VERSION?=	5.8.8
-PERL_VER?=	5.8.8
+PERL_VERSION?=	5.8.9
+PERL_VER?=	5.8.9
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
