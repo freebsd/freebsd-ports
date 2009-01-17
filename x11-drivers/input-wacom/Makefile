@@ -30,10 +30,11 @@ MAN4DIR=	man/man4
 WRKSRC=		${WRKDIR}
 
 PLIST_SUB+=	KMODDIR=${KMODDIR} \
-		XINPUTMODDIR=${XINPUTMODDIR}
+		XINPUTMODDIR=${XINPUTMODDIR} \
+		PORTTYPE=${PORTTYPE}
 SUB_LIST:=	${PLIST_SUB}
-SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES+=	pkg-message-${PORTTYPE}
+PKGMESSAGE=	${WRKDIR}/pkg-message-${PORTTYPE}
 
 XORG_CAT=	driver
 USE_XORG=	xi
@@ -49,14 +50,16 @@ OPTIONS=	UWACOMKLD "Install USB kernel module" On
 
 .if defined(WITH_UWACOMKLD)
 PLIST_SUB+=	UWACOMKLD="uwacom.ko"
+PORTTYPE=	usb
 .else
 PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
+PORTTYPE=	serial
 .endif
 
 do-configure:
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${LN} -s ${DISTDIR}/${DIST_SUBDIR}/${LINUXWACOM}.tar.bz2 \
-		&& ${SETENV} PREFIX=${PREFIX} ./run_configure
+		&& ${SETENV} ${MAKE_ENV} ./run_configure
 
 do-build:
 .if defined(WITH_UWACOMKLD)
@@ -73,7 +76,7 @@ do-install:
 .endif
 	@${MKDIR} ${PREFIX}/${XINPUTMODDIR} ${PREFIX}/${MAN4DIR}
 	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util/ \
-		&& ${GMAKE} install
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	@${INSTALL} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/xdrv/wacom_drv.so \
 		${PREFIX}/${XINPUTMODDIR}/
 	@${INSTALL_MAN} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/wacom.4x.gz \
@@ -84,11 +87,12 @@ plist: clean configure
 	@${TOUCH} ${PLIST}
 	@${RM} ${PLIST}
 	@cd ${WRKDIR}/linuxwacom \
-		&& ${SETENV} PREFIX=${WRKDIR}/plist ./run_configure
+		&& ${SETENV} ${MAKE_ENV} PREFIX=${WRKDIR}/plist ./run_configure
 	@${MKDIR} ${WRKDIR}/plist
-	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util && ${GMAKE} install
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util \
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	@cd ${WRKDIR}/linuxwacom \
-		&& ${SETENV} PREFIX=${PREFIX} ./run_configure
+		&& ${SETENV} ${MAKE_ENV} ./run_configure
 	@${FIND} ${WRKDIR}/plist/ -not -type d \
 		| ${SED} "s|${WRKDIR}/plist/||1" \
 		>> ${PLIST}

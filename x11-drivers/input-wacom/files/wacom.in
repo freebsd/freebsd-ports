@@ -92,6 +92,34 @@ get_first() {
 }
 
 #
+# Returns the line numbers of lines matching the extended regular
+# expression $2 in the file $1.
+#
+# @param $1
+#	The file to get the line numbers from.
+# @param $2
+#	An extend regular expression.
+# @stdout
+#	The line numbers of lines matching $2.
+#
+get_all() {
+	local entry result IFS
+	IFS='
+'
+
+	result="$(/usr/bin/grep -Ein "$2" "$1")"
+
+	# No match.
+	if [ -z "$result" ]; then
+		return 1
+	fi
+
+	for entry in $result; {
+		echo "${entry%%:*}"
+	}
+}
+
+#
 # Returns the line number of the line before line number $2 that matches the
 # extended regular expression $3 in the file $1.
 #
@@ -171,44 +199,50 @@ get_behind() {
 
 #
 # Inserts a line at the end of a section of an Xorg configuration file.
-# Only works on the first matching section.
+# The insertion is done on all matching sections!
 #
 section_insert_line() {
-	local file section insert begin end length
+	local file section insert sections begin end length
 	file="$1"
 	section="$2"
 	insert="$3"
 
 	# Find the beginning of the section.
-	begin="$(get_first "$file" \
+	# Start with the last section to avoid moving sections around
+	# before something is inserted into them.
+	sections="$(get_all "$file" \
 		"^[[:space:]]*Section[[:space:]]+\"$section\"" \
+		| /usr/bin/sort -nr
 	)"
 
-	if [ -z "$begin" ]; then
+	if [ -z "$sections" ]; then
 		echo "Identifying section $section has failed." 1>&2
 		return 1
 	fi
 
-	# Find the end of the section.
-	end="$(get_behind "$file" "$begin" "^[[:space:]]*EndSection")"
+	for begin in $sections; {
 
-	if [ -z "$end" ]; then
-		echo "The section $section is not closed." 1>&2
-		return 2
-	fi
+		# Find the end of the section.
+		end="$(get_behind "$file" "$begin" "^[[:space:]]*EndSection")"
 
-	# Determine the length of the configuration file.
-	length="$(/usr/bin/wc -l "$file")"
-	length=${length% *}
+		if [ -z "$end" ]; then
+			echo "The section $section($begin) is not closed." 1>&2
+			return 2
+		fi
 
-	# Insert the line.
-	/bin/cp "$file" "$file.$$"
+		# Determine the length of the configuration file.
+		length="$(/usr/bin/wc -l "$file")"
+		length=${length% *}
 
-	/usr/bin/head -n$(($end - 1)) "$file.$$" > "$file"
-	echo "$insert" >> "$file"
-	/usr/bin/tail -n$(($length - $end + 1)) "$file.$$" >> "$file"
+		# Insert the line.
+		/bin/cp "$file" "$file.$$"
+
+		/usr/bin/head -n$(($end - 1)) "$file.$$" > "$file"
+		echo "$insert" >> "$file"
+		/usr/bin/tail -n$(($length - $end + 1)) "$file.$$" >> "$file"
 	
-	/bin/rm "$file.$$"
+		/bin/rm "$file.$$"
+	}
 }
 
 #
@@ -225,7 +259,7 @@ do_setup() {
 	echo "Setting up configuration in $config."
 
 	# Add all the necessary sections.
-	for ident in stylus eraser cursor pad touch; {
+	for ident in $(eval "echo \${${name}_types}"); {
 		if /usr/bin/grep -Eqi "^[[:space:]]*Identifier[[:space:]]+\"$ident\"" "$config"; then
 			echo "Skipping $ident, because it already exists in $config."
 			continue
@@ -236,10 +270,17 @@ do_setup() {
 		echo "Section \"InputDevice\"
 	Driver		\"wacom\"
 	Identifier	\"$ident\"
-	Option		\"Device\"	\"/dev/event0\"
-	Option		\"Type\"	\"$ident\"
-	Option		\"USB\"		\"on\"
-EndSection
+	Option		\"Type\"	\"$ident\"" >> "$config"
+
+	if [ "$(eval "echo \${${name}_porttype}")" = "usb" ]; then
+		echo "	Option		\"Device\"	\"/dev/event0\"
+	Option		\"USB\"		\"on\"" >> "$config"
+	else
+		echo "	Option		\"Device\"	\"/dev/ttyd0\"
+	Option		\"ForceDevice\"	\"ISDV4\"" >> "$config"
+	fi
+
+	echo "EndSection
 " >> "$config"
 
 		section_insert_line "$config" "ServerLayout" "	InputDevice	\"$ident\"	\"SendCoreEvents\""
@@ -318,13 +359,14 @@ do_cleanup() {
 
 	echo "Cleaning up ServerLayout section."
 
-	for ident in stylus eraser cursor pad touch; {
+	for ident in $(eval "echo \${${name}_types}"); {
+		while true; do
 		driver="$(get_first "$config" \
 			"[[:space:]]*InputDevice[[:space:]]+\"$ident\"" \
 		)"
 
 		# There is no line matching this driver.
-		test -z "$driver" && continue
+		test -z "$driver" && break 
 
 		# Determine the length of the configuration file.
 		length="$(/usr/bin/wc -l "$config")"
@@ -337,6 +379,7 @@ do_cleanup() {
 		/usr/bin/tail -n$(($length - $driver)) "$config.$$" >> "$config"
 	
 		/bin/rm "$config.$$"
+		done
 	}
 }
 
@@ -360,6 +403,8 @@ do_stop() {
 
 load_rc_config $name
 
-: ${wacom_enable="NO"}
+eval ": \${${name}_enable=\"NO\"}"
+eval ": \${${name}_types=\"stylus eraser cursor pad touch\"}"
+eval ": \${${name}_porttype=\"%%PORTTYPE%%\"}"
 
 run_rc_command "$1"
