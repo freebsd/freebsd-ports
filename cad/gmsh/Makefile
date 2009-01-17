@@ -9,7 +9,8 @@ PORTNAME=	gmsh
 PORTVERSION=	2.2.6
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	http://www.geuz.org/gmsh/src/
+MASTER_SITES=	http://www.sfr-fresh.com/unix/privat/ \
+				http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
 
@@ -35,7 +36,6 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
 		--with-med-prefix=${LOCALBASE}	\
 		--with-jpeg-prefix=${LOCALBASE}	\
 		--with-png-prefix=${LOCALBASE}
-CONFIGURE_ENV=	F77=${F77}
 USE_GMAKE=	yes
 ALL_TARGET=	all utils
 
