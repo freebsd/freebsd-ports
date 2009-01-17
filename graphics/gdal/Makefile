@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--with-grass=no
 .endif
 
 .if defined(WITH_HDF4)
-LIB_DEPENDS+=		mfhdf.2:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=		mfhdf.3:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=	--with-hdf4=${LOCALBASE}
 .endif
 
