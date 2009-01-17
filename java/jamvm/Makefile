@@ -6,7 +6,7 @@
 
 PORTNAME=	jamvm
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
@@ -44,6 +44,7 @@ BROKEN=		Does not configure on sparc64
 
 post-extract:
 	@${MV} ${WRKSRC}/src/arch/x86_64.h ${WRKSRC}/src/arch/amd64.h
+	@${REINPLACE_CMD} -e "s,\(^include_HEADERS = .*\)jni.h\(.*\),\1\2," ${WRKSRC}/src/Makefile.in
 
 post-configure:
 	@${MV} ${WRKSRC}/src/os/bsd/x86_64 ${WRKSRC}/src/os/bsd/amd64

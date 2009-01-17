@@ -1,5 +1,4 @@
 bin/jamvm
-include/jni.h
 lib/libjvm.la
 lib/libjvm.a
 %%WITH_ZIP%%lib/rt.jar
