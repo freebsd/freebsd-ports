@@ -21,7 +21,6 @@ LIB_DEPENDS=	gsl.13:${PORTSDIR}/math/gsl	\
 
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+= FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE}
 WANT_PERL=	yes
