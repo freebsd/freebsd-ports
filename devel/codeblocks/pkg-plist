@@ -139,7 +139,6 @@ lib/libwxsmithlib.la
 lib/libwxsmithlib.so
 lib/libwxsmithlib.so.0
 libdata/pkgconfig/codeblocks.pc
-man/man1/codesnippets.1
 share/applications/codeblocks.desktop
 %%DATADIR%%/BrowseTracker.zip
 %%DATADIR%%/Profiler.zip
