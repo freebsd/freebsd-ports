@@ -19,6 +19,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
+.if defined(NOPORTDATA)
+.undef NOPORTDATA
+.endif
+
 PLIST_FILES=	bin/freecol
 PORTDATA=	*
 PORTDOCS=	*
