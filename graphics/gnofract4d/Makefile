@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gnofract4d
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.10
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
@@ -20,7 +18,7 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-PORTDOCS=	*
+PORTDOCS=	README COPYING
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}
 
@@ -41,15 +39,19 @@ post-patch:
 	# libraries again
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/gnofract4d
 
-	# where to install docs
-	@${REINPLACE_CMD} \
-	    -e "s,share/doc/gnofract4d-%s/'.*,${DOCSDIR:C/${PREFIX}\///}'\,," \
-	    ${WRKSRC}/setup.py
+	# fix NOPORTDOCS
+	@${REINPLACE_CMD} -e '233,235d' ${WRKSRC}/setup.py
 
 	# fixup library detection
 	@${REINPLACE_CMD} -e "s/libpng/libpng12/" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 	     -e "s,/usr/include/jpeglib.h,${LOCALBASE}/include/jpeglib.h," \
 	     ${WRKSRC}/setup.py
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>

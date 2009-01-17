@@ -271,6 +271,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/createdocs.py
 %%PYTHON_SITELIBDIR%%/fract4d/createdocs.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/createdocs.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/encoder.py
+%%PYTHON_SITELIBDIR%%/fract4d/encoder.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/encoder.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/event.py
 %%PYTHON_SITELIBDIR%%/fract4d/event.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/event.pyo
@@ -309,6 +312,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/fracttypes.py
 %%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/fracttypes.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/fractsettings.py
+%%PYTHON_SITELIBDIR%%/fract4d/fractsettings.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/fractsettings.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.py
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/fsymbol.pyo
@@ -327,6 +333,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/ir.py
 %%PYTHON_SITELIBDIR%%/fract4d/ir.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/ir.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/keyframe.py
+%%PYTHON_SITELIBDIR%%/fract4d/keyframe.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/keyframe.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/lex.py
 %%PYTHON_SITELIBDIR%%/fract4d/lex.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/lex.pyo
@@ -390,6 +399,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/test_colorizer.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_colorizer.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_colorizer.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/test_encoder.py
+%%PYTHON_SITELIBDIR%%/fract4d/test_encoder.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/test_encoder.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/test_event.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_event.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_event.pyo
@@ -429,6 +441,9 @@
 %%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_fracttypes.pyo
+%%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.py
+%%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.pyc
+%%PYTHON_SITELIBDIR%%/fract4d/test_fractsettings.pyo
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.py
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.pyc
 %%PYTHON_SITELIBDIR%%/fract4d/test_gradient.pyo
@@ -510,7 +525,6 @@
 %%PYTHON_SITELIBDIR%%/fract4dgui/fourway.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/fourway.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/fourway.pyo
-%%PYTHON_SITELIBDIR%%/fract4dgui/fract4dguic.so
 %%PYTHON_SITELIBDIR%%/fract4dgui/gtkfractal.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/gtkfractal.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/gtkfractal.pyo
@@ -562,9 +576,6 @@
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_fourway.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_fourway.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_fourway.pyo
-%%PYTHON_SITELIBDIR%%/fract4dgui/test_fract4dguic.py
-%%PYTHON_SITELIBDIR%%/fract4dgui/test_fract4dguic.pyc
-%%PYTHON_SITELIBDIR%%/fract4dgui/test_fract4dguic.pyo
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_gtkfractal.py
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_gtkfractal.pyc
 %%PYTHON_SITELIBDIR%%/fract4dgui/test_gtkfractal.pyo
@@ -608,9 +619,15 @@
 %%PYTHON_SITELIBDIR%%/fractutils/__init__.py
 %%PYTHON_SITELIBDIR%%/fractutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/fractutils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/fractutils/fetch.py
+%%PYTHON_SITELIBDIR%%/fractutils/fetch.pyc
+%%PYTHON_SITELIBDIR%%/fractutils/fetch.pyo
 %%PYTHON_SITELIBDIR%%/fractutils/flickr.py
 %%PYTHON_SITELIBDIR%%/fractutils/flickr.pyc
 %%PYTHON_SITELIBDIR%%/fractutils/flickr.pyo
+%%PYTHON_SITELIBDIR%%/fractutils/formulas.py
+%%PYTHON_SITELIBDIR%%/fractutils/formulas.pyc
+%%PYTHON_SITELIBDIR%%/fractutils/formulas.pyo
 %%PYTHON_SITELIBDIR%%/fractutils/get.py
 %%PYTHON_SITELIBDIR%%/fractutils/get.pyc
 %%PYTHON_SITELIBDIR%%/fractutils/get.pyo
@@ -638,7 +655,6 @@
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.py
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.pyc
 %%PYTHON_SITELIBDIR%%/fractutils/test_slave.pyo
-@comment %%PYTHON_SITELIBDIR%%/gnofract4d-3.8-py2.5.egg-info
 
 share/gnome/help/gnofract4d/C/commands.xml
 share/gnome/help/gnofract4d/C/figures/MyFormula.png
@@ -652,6 +668,7 @@ share/gnome/help/gnofract4d/C/figures/tutorial002.png
 share/gnome/help/gnofract4d/C/figures/xw_plane.png
 share/gnome/help/gnofract4d/C/figures/xz_plane.png
 share/gnome/help/gnofract4d/C/figures/yz_plane.png
+share/gnome/help/gnofract4d/C/docbook.css
 share/gnome/help/gnofract4d/C/gnofract4d-manual.html
 share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
 share/gnome/help/gnofract4d/C/stdlib.xml
