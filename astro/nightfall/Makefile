@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--with-gnuplot
 .else
 LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
 .endif
