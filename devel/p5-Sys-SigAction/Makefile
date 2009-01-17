@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl extension for Consistent Signal Handling
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
