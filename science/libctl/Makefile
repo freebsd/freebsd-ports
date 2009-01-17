@@ -18,7 +18,6 @@ COMMENT=	Control Language Library
 LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV+=	 FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
