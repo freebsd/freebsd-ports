@@ -7,7 +7,7 @@
 +# include <sys/param.h>
  # include <sys/ioctl.h>
 -# include <cpu.h>
-+# if __FreeBSD_version < 800042
++# if __FreeBSD_version < 701102
 +#  define CPUDEV "/dev/cpu%d"
 +#  include <cpu.h>
 +# else
@@ -45,7 +45,7 @@
  	char cpuname[20];
  	unsigned char buffer[16];
  	int fh;
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
  	cpu_cpuid_args_t args;
 +#else
 +	cpuctl_cpuid_args_t args;
@@ -61,7 +61,7 @@
 +	(void)snprintf(cpuname,18, CPUDEV, CPU_number);
  	fh = open(cpuname, O_RDONLY);
  	if (fh != -1) {
-+#if __FreeBSD_version < 800042
++#if __FreeBSD_version < 701102
  		if (ioctl(fh, CPU_CPUID, &args) != 0) {
 +#else
 +		if (ioctl(fh, CPUCTL_CPUID, &args) != 0) {
