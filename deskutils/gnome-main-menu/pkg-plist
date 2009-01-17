@@ -1,4 +1,5 @@
 bin/application-browser
+bin/trigger-panel-run-dialog
 include/slab/app-resizer.h
 include/slab/app-shell-startup.h
 include/slab/app-shell.h
