@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}.tgz:main
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20081202.tgz:geodb
+DISTFILES+=	webalizer-geodb-20090101.tgz:geodb
 .endif
 
 MAINTAINER?=	dinoex@FreeBSD.org
@@ -142,6 +142,11 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e "s|webalizer.conf|${PKGNAMEPREFIX}webalizer.conf|" \
 		${WRKSRC}/webalizer.c
+.if defined(WITH_MAXURLH)
+	${REINPLACE_CMD} \
+		-e "s|MAXURLH  512 |MAXURLH  2048|" \
+		${WRKSRC}/webalizer.h
+.endif
 .if defined(WITH_BDB_VER) || defined(WITH_BDB) 
 	${REINPLACE_CMD} -e "s|-ldb|-l${BDB_LIB_NAME}|" \
 		${WRKSRC}/configure
