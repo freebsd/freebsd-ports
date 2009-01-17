@@ -1,0 +1,14 @@
+This package contains a library that is able to read and write German DTAUS
+files, DTAUS is an abbreviation for DatenTraegerAUStausch and refers to a
+special file format used by German credit institutes in order to manage money
+exchanges between accounts and institutes.
+
+Dieses Paket enthaelt ein Programm zur Verwaltung und Erstellung von DTA- bzw.
+DTAUS-Dateien. Damit wird belegloser Datentraegeraustausch fuer Ueberweisungen,
+Lastschriften, Lohnzahlungen in Euro mit Deutschen Banken automatisiert
+realisiert. Als Grundlage dient eine leicht verstaendliche ASCII-Datei,
+die in das DTA-Format uebersetzt wird.
+
+LICENSE: GPL2 or later
+
+WWW: http://www.infodrom.org/projects/dtaus/
