@@ -6,7 +6,7 @@ if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi
 
-USER=vsftpd
+USER=ftp
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
         echo "To delete FTP user permanently, use 'pw userdel ${USER}'"
