@@ -46,7 +46,7 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 do-configure:
 	${REINPLACE_CMD} -e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
-		${WRKSRC}/defs.h
+		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
 	${REINPLACE_CMD} \
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
 		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
@@ -55,8 +55,13 @@ do-configure:
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
-	${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
+	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
+	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf ""
+	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf \
+		"# If using vsftpd in standalone mode, uncomment the next two lines:"
+	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# listen=YES"
+	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# background=YES"
 	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
 		-e 's|delay_failed_logins|delay_failed_login|' \
 		-e 's|delay_successful_logins|delay_successful_login|' \
@@ -66,6 +71,9 @@ do-configure:
 		"s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
 		${WRKSRC}/builddefs.h
 .endif
+
+pre-install:
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${PREFIX}/libexec/
@@ -81,7 +89,6 @@ do-install:
 	@for i in ${MAN5} ; do \
 		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
 		done
-	${SH} ${PKGINSTALL}
 	${MKDIR} /var/ftp
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
