@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.23.0
+PORTVERSION=	0.30.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.23/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.30/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Subtitle editor
@@ -34,6 +34,6 @@ MAN1=		subtitleeditor.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/src/formats/SubtitleASS.cc
+	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
 
 .include <bsd.port.mk>
