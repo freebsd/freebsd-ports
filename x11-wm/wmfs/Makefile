@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	0.1rc3
+DISTVERSION=	0.1rc4
 CATEGORIES=	x11-wm
-MASTER_SITES=http://wmfs.sangor.net/ \
+MASTER_SITES=	http://wmfs.sangor.net/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	adox@mcx2.org
