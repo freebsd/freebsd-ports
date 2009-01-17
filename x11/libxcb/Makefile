@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xau xdmcp
-USE_PYTHON=	2.5
+USE_PYTHON=	2.5+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-check=${LOCALBASE}
