@@ -7,7 +7,7 @@
 
 PORTNAME=	grads
 PORTVERSION=	1.9b3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
@@ -39,7 +39,7 @@ OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HDF)
-LIB_DEPENDS+=		mfhdf.2:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=		mfhdf.3:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=	--with-hdf
 PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
