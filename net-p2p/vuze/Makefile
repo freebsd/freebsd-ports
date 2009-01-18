@@ -31,6 +31,7 @@ USE_DOS2UNIX=	\
 org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
 org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
 org/gudy/azureus2/platform/PlatformManagerFactory.java \
+org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
