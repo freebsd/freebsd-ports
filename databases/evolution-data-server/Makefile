@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	2.24.3
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,7 @@ COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		nss3.1:${PORTSDIR}/security/nss \
-		tasn1.3:${PORTSDIR}/security/libtasn1 \
+		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
