@@ -11,10 +11,16 @@ etc/asciidoc/docbook-xsl/manpage.xsl
 etc/asciidoc/docbook-xsl/text.xsl
 etc/asciidoc/docbook-xsl/xhtml.xsl
 etc/asciidoc/docbook.conf
-etc/asciidoc/filters/code-filter.conf
-etc/asciidoc/filters/code-filter.py
+etc/asciidoc/filters/code/code-filter.conf
+etc/asciidoc/filters/code/code-filter.py
+etc/asciidoc/filters/graphviz/graphviz-filter.conf
+etc/asciidoc/filters/graphviz/graphviz2png.py
+etc/asciidoc/filters/music/music-filter.conf
+etc/asciidoc/filters/music/music2png.py
+etc/asciidoc/filters/source/source-highlight-filter.conf
 etc/asciidoc/help.conf
 etc/asciidoc/html4.conf
+etc/asciidoc/images/icons/README
 etc/asciidoc/images/icons/callouts/1.png
 etc/asciidoc/images/icons/callouts/10.png
 etc/asciidoc/images/icons/callouts/11.png
@@ -55,6 +61,10 @@ etc/asciidoc/xhtml11-quirks.conf
 etc/asciidoc/xhtml11.conf
 @dirrm etc/asciidoc/dblatex
 @dirrm etc/asciidoc/docbook-xsl
+@dirrm etc/asciidoc/filters/code
+@dirrm etc/asciidoc/filters/graphviz
+@dirrm etc/asciidoc/filters/music
+@dirrm etc/asciidoc/filters/source
 @dirrm etc/asciidoc/filters
 @dirrm etc/asciidoc/images/icons/callouts
 @dirrm etc/asciidoc/images/icons
