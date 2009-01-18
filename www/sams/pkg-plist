@@ -33,7 +33,6 @@ etc/sams.conf.sample
 %%DATADIR%%/doc/RU/script.html
 %%DATADIR%%/doc/RU/settings.html
 %%DATADIR%%/doc/RU/samba.html
-%%DATADIR%%/doc/RU/weather.php
 %%DATADIR%%/doc/RU/apache.html
 %%DATADIR%%/doc/RU/groups.html
 %%DATADIR%%/doc/RU/users.html
@@ -478,7 +477,6 @@ etc/sams.conf.sample
 %%DATADIR%%/install.php
 %%DATADIR%%/lang/koi8r-2-utf8
 %%DATADIR%%/lang/koi8r-2-win1251
-%%DATADIR%%/lang/koi8r-2-win1251.php
 %%DATADIR%%/lang/lang.EN
 %%DATADIR%%/lang/lang.KOI8-R
 %%DATADIR%%/lang/lang.UTF8
@@ -616,7 +614,6 @@ etc/sams.conf.sample
 %%DATADIR%%/src/newgrpbuttom_1_adldap.php
 %%DATADIR%%/src/newgrpbuttom_5_addgroup.php
 %%DATADIR%%/src/newgrptray.php
-%%DATADIR%%/src/newshablon.php
 %%DATADIR%%/src/proxybuttom_1_down.php
 %%DATADIR%%/src/proxytray.php
 %%DATADIR%%/src/redirbuttom_1_loadlist.php
