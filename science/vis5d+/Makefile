@@ -29,8 +29,8 @@ USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" F77="${F77}" FFLAGS="-fno-range-check" LIBS="-lgfx"
 FFLAGS+=	-fno-range-check
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" LIBS="-lgfx"
 CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-netcdf \
 		--with-mixkit=${LOCALBASE}/lib/libmix.a --with-x
 USE_LDCONFIG=	yes
