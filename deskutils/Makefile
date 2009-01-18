@@ -120,6 +120,7 @@
     SUBDIR += kblticker
     SUBDIR += kchm
     SUBDIR += kchmviewer
+    SUBDIR += kchmviewer-kde4
     SUBDIR += kdepim3
     SUBDIR += kdepim4
     SUBDIR += kdepimlibs4
