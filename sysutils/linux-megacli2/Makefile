@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	megacli
-PORTVERSION=	1.01.40
-PORTREVISION=	2
+PORTVERSION=	2.00.12
 CATEGORIES=	sysutils linux
-MASTER_SITES=	http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/
+MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/support/downloads/megaraid/miscellaneous/linux/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTVERSION}_Linux_Cli
+DISTNAME=	${PORTVERSION}_Linux_CLI
 
 MAINTAINER=	ruben@verweg.com
 COMMENT=	LSI MegaRAID SAS controller management utility
@@ -21,11 +20,12 @@ USE_ZIP=	yes
 RESTRICTED=	Redistribution prohibited, see: http://lsi.com/cm/License.do
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-SUB_FILES=	megacli.sh
+SUB_FILES=	megacli
 SUB_FILES+=	407.status-mfi-raid
 SUB_FILES+=	mfi_tty_log
 
-BROKEN=		Unfetchable
+CONFLICTS=	linux-megacli-1*
+LATEST_LINK=	megacli2
 
 # From bsd.linux.rpm.mk
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
@@ -33,7 +33,8 @@ EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
 
 post-extract:
 	cd ${WRKSRC} && \
-		${RPM2CPIO} MegaCli-${PORTVERSION}-0.i386.rpm | ${CPIO} -id --quiet
+		${UNZIP_CMD} -qo MegaCliLin.zip && \
+		${RPM2CPIO} MegaCli-${PORTVERSION}-1.i386.rpm | ${CPIO} -id --quiet
 
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli
