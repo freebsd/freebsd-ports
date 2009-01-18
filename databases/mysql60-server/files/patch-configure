@@ -1,6 +1,6 @@
---- configure.orig	Sat May 26 12:22:14 2007
-+++ configure	Fri Jun  1 07:53:46 2007
-@@ -20394,8 +20394,6 @@
+--- configure.orig	2009-01-02 16:59:54.000000000 +0100
++++ configure	2009-01-18 10:14:57.000000000 +0100
+@@ -21832,8 +21832,6 @@
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
@@ -9,7 +9,23 @@
  
  # Prevent multiple expansion
  
-@@ -26935,8 +26933,8 @@
+@@ -27046,13 +27044,14 @@
+         { $as_echo "$as_me:$LINENO: result: using bundled zlib" >&5
+ $as_echo "using bundled zlib" >&6; }
+         ;;
+-      "")
++      *)
+         ZLIB_INCLUDES=""
+         ZLIB_LIBS="-lz"
+ 
+ save_CPPFLAGS="$CPPFLAGS"
+ save_LIBS="$LIBS"
+ CPPFLAGS="$ZLIB_INCLUDES $CPPFLAGS"
++LIBS="$ZLIB_LIBS $LIBS"
+ if test X"$with_server" = Xno
+ then
+   zlibsym=zlibVersion
+@@ -29214,8 +29213,8 @@
  # Some system specific hacks
  #
  
