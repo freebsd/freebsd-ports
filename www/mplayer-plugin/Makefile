@@ -18,7 +18,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	firefox mozilla seamonkey
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
