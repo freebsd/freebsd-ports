@@ -1034,6 +1034,7 @@
     SUBDIR += wmwifi
     SUBDIR += wmwlmon
     SUBDIR += wol
+    SUBDIR += wpa_gui
     SUBDIR += wping
     SUBDIR += x11vnc
     SUBDIR += xbone
