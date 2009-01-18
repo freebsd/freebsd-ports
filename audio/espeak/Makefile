@@ -23,6 +23,7 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 USE_GMAKE=	yes
+USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 USE_ZIP=	yes
 
@@ -43,10 +44,6 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
