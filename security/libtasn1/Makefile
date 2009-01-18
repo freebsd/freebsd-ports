@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	1.5
+PORTVERSION=	1.8
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
 		http://josefsson.org/gnutls/releases/libtasn1/
@@ -42,6 +42,7 @@ MAN3=		\
 		asn1_find_node.3 \
 		asn1_find_structure_from_oid.3 \
 		asn1_get_bit_der.3 \
+		asn1_get_length_ber.3 \
 		asn1_get_length_der.3 \
 		asn1_get_octet_der.3 \
 		asn1_get_tag_der.3 \
@@ -50,9 +51,11 @@ MAN3=		\
 		asn1_octet_der.3 \
 		asn1_parser2array.3 \
 		asn1_parser2tree.3 \
+		asn1_perror.3 \
 		asn1_print_structure.3 \
 		asn1_read_tag.3 \
 		asn1_read_value.3 \
+		asn1_strerror.3 \
 		asn1_write_value.3 \
 		libtasn1_perror.3 \
 		libtasn1_strerror.3

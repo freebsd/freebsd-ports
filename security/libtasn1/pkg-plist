@@ -7,9 +7,8 @@ include/libtasn1.h
 lib/libtasn1.a
 lib/libtasn1.la
 lib/libtasn1.so
-lib/libtasn1.so.3
+lib/libtasn1.so.4
 libdata/pkgconfig/libtasn1.pc
-share/aclocal/libtasn1.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
