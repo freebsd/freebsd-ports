@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20090118:
+  AFFECTS:  users of devel/apr-svn devel/apr
+  AUTHOR:   pgollucci@FreeBSD.org
+
+  devel/apr-svn has been removed and devel/apr now handles its role.
+  devel/apr now defaults to building with berkley database support (bdb)
+  APR_UTIL_* tunablables have been renamed to compy with ports/KNOBS names.
+
 20090114:
   AFFECTS: users of x11/kdebase4-workspace, x11/kdebase4-runtime
   AUTHOR: kde@FreeBSD.org

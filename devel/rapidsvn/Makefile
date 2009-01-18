@@ -13,8 +13,7 @@ MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
-BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr-svn \
-		neon-config:${PORTSDIR}/www/neon28 \
+BUILD_DEPENDS=	neon-config:${PORTSDIR}/www/neon28 \
 		svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl

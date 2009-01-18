@@ -6,14 +6,14 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.14.4
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/trac.fcgi/downloads/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
-		svn_client-1:${PORTSDIR}/devel/subversion \
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon:${PORTSDIR}/www/neon28
 
 USE_CMAKE=	yes
