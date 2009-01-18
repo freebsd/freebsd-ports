@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.03
+PORTVERSION=	3.10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-.if ${ARCH} == "amd64" && ${OSVERSION} < 700000
+.if ${OSVERSION} < 700000
 USE_GCC=	4.2+
 .endif
 .if ${ARCH} == "sparc64"
@@ -36,6 +36,7 @@ BROKEN=		Fails to install
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
+		-e 's|^CPPFLAGS|#CPPFLAGS|' \
 		${WRKSRC}/src/Makefile
 
 post-install:
