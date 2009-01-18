@@ -20,12 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx \
 		imake:${PORTSDIR}/devel/imake
 
 USE_XORG=	xaw
-WANT_FORTRAN=	yes #dummy but future use
-BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
-MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
-
+USE_FORTRAN=	yes
 
 FEMLAB_HOME=	${PREFIX}/lib/X11/femlab
 
