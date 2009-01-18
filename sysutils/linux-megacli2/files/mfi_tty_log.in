@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/linux-megacli2/files/Attic/mfi_tty_log.in,v 1.1 2008-10-13 17:22:20 stefan Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/linux-megacli2/files/Attic/mfi_tty_log.in,v 1.2 2009-01-18 19:50:26 pgollucci Exp $
 #
 
 # PROVIDE: mfi_tty_log
