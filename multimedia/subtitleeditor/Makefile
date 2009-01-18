@@ -32,8 +32,14 @@ LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 MAN1=		subtitleeditor.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700043
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
