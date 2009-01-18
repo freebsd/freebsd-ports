@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sams
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \
@@ -22,30 +21,35 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 USE_RC_SUBR=	sams.sh
 
 OPTIONS=	NTLM	"NTLM autorization/ActiveDirectory support"	off \
-		APACHE2	"Use apache version 2"	on
+		APACHE22	"Use apache version 2.2"	on \
+		PHP5GD	"Enable constructing graphs" on
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_PHP=	gd mysql ldap
+USE_PHP=	mysql
 USE_MYSQL=	5.0
 
 CONFIGURE_ARGS=	--with-configfile=${LOCALBASE}/etc/sams.conf \
-		--with-rcd-locations=${LOCALBASE}/etc/rc.d/ \
-		--with-httpd-locations=${DOCUMENT_ROOT}
+		--with-rcd-locations=${LOCALBASE}/etc/rc.d/
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NTLM)
-RUN_DEPENDS=	 ${LOCALBASE}/bin/ntlm_auth:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	${LOCALBASE}/bin/ntlm_auth:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	${LOCALBASE}/include/php/ext/ldap/php_ldap.h:${PORTSDIR}/net/php5-ldap/
 .endif
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-.else
+.if defined(WITH_PHP5GD)
+RUN_DEPENDS+=	${LOCALBASE}/include/php/ext/gd/php_gd.h:${PORTSDIR}/graphics/php5-gd/
+.endif
+
+.if defined(WITH_APACHE22)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22
+.else
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 .endif
 
 post-extract:
