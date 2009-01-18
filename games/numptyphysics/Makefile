@@ -7,6 +7,7 @@
 
 PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/
 
@@ -23,9 +24,15 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS=	MOREFPS "More FPS for smoother graphics" on
+
 .include <bsd.port.pre.mk>
 
 post-patch:
+.if !defined(WITHOUT_MOREFPS)
+	@${REINPLACE_CMD} -e '/define RENDER_RATE/ s|20|60|' \
+		${WRKSRC}/Config.h
+.endif
 	@${CHMOD} a+x ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} -e 's|\(desktopentrydir=\).*|\1${PREFIX}/share/applications|' \
 		${WRKSRC}/configure ${WRKSRC}/configure.in
@@ -33,6 +40,6 @@ post-patch:
 		${WRKSRC}/data/${PORTNAME}.desktop
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
