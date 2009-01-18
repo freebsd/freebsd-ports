@@ -563,6 +563,7 @@
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn
+    SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
