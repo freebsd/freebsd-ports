@@ -27,6 +27,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 
+MANUAL_PACKAGE_BUILD=	exceeds pointyhat filesize limit during compilation
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
