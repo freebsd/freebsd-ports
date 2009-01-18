@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20090118:
+  AFFECTS: users of www/ikiwiki
+  AUTHOR: brix@FreeBSD.org
+
+  Ikiwiki has been upgraded from 2.x to 3.x. Instructions for
+  migrating existing ikiwiki configurations to 3.x format can be found
+  at: http://ikiwiki.info/tips/upgrade_to_3.0/
+
+20090118:
   AFFECTS:  users of devel/apr-svn devel/apr
   AUTHOR:   pgollucci@FreeBSD.org
 

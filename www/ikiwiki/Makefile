@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.67
+PORTVERSION=	3.01
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -54,6 +54,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 .endif
 
 .if defined(WITH_W3M)
+MAKE_ENV+=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
 PLIST_SUB=	W3M=""
 .else
 PLIST_SUB=	W3M="@comment "
@@ -72,7 +73,6 @@ post-patch:
 		${WRKSRC}/doc/ikiwiki-update-wikilist.mdwn
 	@${REINPLACE_CMD} \
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
-		-e 's|$$(PREFIX)/lib/w3m|$$(PREFIX)/libexec/w3m|' \
 		-e 's|-wholename|-path|' \
 		-e 's|\(-install -d $$(DESTDIR)/etc/ikiwiki\)|#\1|' \
 		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
@@ -83,7 +83,7 @@ post-patch:
 		${WRKSRC}/IkiWiki/Plugin/search.pm
 	@${RM} ${WRKSRC}/IkiWiki/Plugin/search.pm.bak
 .ifndef(WITH_W3M)
-	@${REINPLACE_CMD} -e '/w3m/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/w3m/d' -e '/W3M/d' ${WRKSRC}/Makefile.PL
 .endif
 
 post-install:

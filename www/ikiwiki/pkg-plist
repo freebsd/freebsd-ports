@@ -1,4 +1,3 @@
-%%DATADIR%%/basewiki/directive.mdwn
 %%DATADIR%%/basewiki/favicon.ico
 %%DATADIR%%/basewiki/index.mdwn
 %%DATADIR%%/basewiki/ikiwiki.mdwn
@@ -33,6 +32,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/cut.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cutpaste.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/edittemplate.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/format.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/fortune.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/graph.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/haiku.mdwn
@@ -66,6 +66,9 @@
 %%DATADIR%%/directives/ikiwiki/directive/toggle.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toggleable.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/version.mdwn
+%%DATADIR%%/javascript/ikiwiki.js
+%%DATADIR%%/javascript/relativedate.js
+%%DATADIR%%/javascript/toggle.js
 %%DATADIR%%/smiley/smileys.mdwn
 %%DATADIR%%/smiley/smileys/alert.png
 %%DATADIR%%/smiley/smileys/angry.png
@@ -101,6 +104,8 @@
 %%DATADIR%%/templates/autoindex.tmpl
 %%DATADIR%%/templates/blogpost.tmpl
 %%DATADIR%%/templates/change.tmpl
+%%DATADIR%%/templates/comment.tmpl
+%%DATADIR%%/templates/editcomment.tmpl
 %%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/editconflict.tmpl
 %%DATADIR%%/templates/editcreationconflict.tmpl
@@ -132,6 +137,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/color.pm
+%%SITE_PERL%%/IkiWiki/Plugin/comments.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/creole.pm
 %%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
@@ -143,15 +149,16 @@
 %%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
 %%SITE_PERL%%/IkiWiki/Plugin/filecheck.pm
+%%SITE_PERL%%/IkiWiki/Plugin/format.pm
 %%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
 %%SITE_PERL%%/IkiWiki/Plugin/git.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/google.pm
-%%SITE_PERL%%/IkiWiki/Plugin/googlecalendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
 %%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
 %%SITE_PERL%%/IkiWiki/Plugin/html.pm
+%%SITE_PERL%%/IkiWiki/Plugin/htmlbalance.pm
 %%SITE_PERL%%/IkiWiki/Plugin/htmlscrubber.pm
 %%SITE_PERL%%/IkiWiki/Plugin/htmltidy.pm
 %%SITE_PERL%%/IkiWiki/Plugin/httpauth.pm
@@ -188,6 +195,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
 %%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
 %%SITE_PERL%%/IkiWiki/Plugin/recentchangesdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/relativedate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/remove.pm
 %%SITE_PERL%%/IkiWiki/Plugin/rename.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
@@ -212,6 +220,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
+%%SITE_PERL%%/IkiWiki/Receive.pm
 %%SITE_PERL%%/IkiWiki/Render.pm
 %%SITE_PERL%%/IkiWiki/Setup.pm
 %%SITE_PERL%%/IkiWiki/Setup/Automator.pm
@@ -250,6 +259,7 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%/directives/ikiwiki/directive
 @dirrm %%DATADIR%%/directives/ikiwiki
 @dirrm %%DATADIR%%/directives
+@dirrm %%DATADIR%%/javascript
 @dirrm %%DATADIR%%/smiley/smileys
 @dirrm %%DATADIR%%/smiley
 @dirrm %%DATADIR%%/templates
