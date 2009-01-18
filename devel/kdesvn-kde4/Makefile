@@ -5,42 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.14.4
+DISTVERSION=	1.2.2
 CATEGORIES=	devel kde
-MASTER_SITES=	http://kdesvn.alwins-world.de/trac.fcgi/downloads/
+MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
+PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	yuanjue@FreeBSD.org
+MAINTAINER=	dragonsa@highveldmail.co.za
 COMMENT=	KDE frontend for Subversion
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
-		svn_client-1:${PORTSDIR}/devel/subversion \
-		neon:${PORTSDIR}/www/neon28
+LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 
-USE_CMAKE=	yes
+CONFLICTS=	qsvn-[0-9]*
+
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
-
-CMAKE_ARGS=	-DLIB_SUFFIX=
-
-.if !defined(WITHOUT_NLS)
+USE_CMAKE=	yes
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-EXTRA_PATCHES=	${FILESDIR}/nls-patch-CMakeLists.txt
-.endif
+USE_KDE4=	kdelibs kdeprefix automoc4
+USE_LDCONFIG=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui xml network dbus svg qt3support sql \
+		qmake_build moc_build rcc_build uic_build
 
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
+MAN1=		kdesvn.1 kdesvnaskpass.1
 
-MAN1=	kdesvn.1 kdesvnaskpass.1
-
-post-extract:
-	${MKDIR} ${WRKSRC}
+post-patch:
+	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
 .if defined(NOPORTDOCS)
-	${RM} -f ${PATCH_WRKSRC}/doc/CMakeLists.txt
-	${ECHO} "ADD_SUBDIRECTORY(man)" > ${PATCH_WRKSRC}/doc/CMakeLists.txt
+	${ECHO} "ADD_SUBDIRECTORY(man)" > ${WRKSRC}/doc/CMakeLists.txt
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
