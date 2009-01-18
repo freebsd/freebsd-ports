@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.7
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/39522/
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/44501/
 DISTNAME=	site-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -18,8 +18,6 @@ COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
-CONFLICTS=	phpeclipse-[0-9]*
-
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_ZIP=	yes
@@ -27,11 +25,25 @@ USE_ZIP=	yes
 ECLIPSE=	${PREFIX}/eclipse
 SUBCLIPSE=	org.tigris.subversion.subclipse
 SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
-		features/${SUBCLIPSE}.mylyn_2.0.0 \
+		features/${SUBCLIPSE}.graph.feature_1.0.1 \
+		features/${SUBCLIPSE}.mylyn_2.0.4 \
+		features/${SUBCLIPSE}.mylyn_3.0.0 \
+		features/org.tigris.subversion.clientadapter.feature_1.5.2 \
+		features/org.tigris.subversion.clientadapter.javahl.feature_1.5.4.1 \
+		features/org.tigris.subversion.clientadapter.svnkit.feature_1.5.4 \
+		features/com.sun.jna_3.0.9 \
+		features/org.tmatesoft.svnkit_1.2.1.5297 \
+		plugins/org.tigris.subversion.clientadapter_1.5.2 \
+		plugins/org.tigris.subversion.clientadapter.javahl_1.5.4.1 \
+		plugins/org.tigris.subversion.clientadapter.svnkit_1.5.4 \
 		plugins/${SUBCLIPSE}.core_${PORTVERSION} \
-		plugins/${SUBCLIPSE}.doc_1.2.0 \
-		plugins/${SUBCLIPSE}.mylyn_2.0.0 \
-		plugins/${SUBCLIPSE}.ui_${PORTVERSION}
+		plugins/${SUBCLIPSE}.doc_1.3.0 \
+		plugins/${SUBCLIPSE}.graph_1.0.1 \
+		plugins/${SUBCLIPSE}.mylyn_2.0.4 \
+		plugins/${SUBCLIPSE}.mylyn_3.0.0 \
+		plugins/${SUBCLIPSE}.ui_${PORTVERSION} \
+		plugins/com.sun.jna_3.0.9 \
+		plugins/org.tmatesoft.svnkit_1.2.1.5297
 
 .include <bsd.port.pre.mk>
 
