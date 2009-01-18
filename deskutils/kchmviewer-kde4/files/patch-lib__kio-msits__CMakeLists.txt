@@ -1,0 +1,8 @@
+--- ./lib/kio-msits/CMakeLists.txt.orig	2008-12-01 13:03:06.000000000 +0300
++++ ./lib/kio-msits/CMakeLists.txt	2009-01-17 16:50:48.000000000 +0300
+@@ -2,4 +2,4 @@
+ KDE4_ADD_PLUGIN( kio_msits ${kioSources} )
+ TARGET_LINK_LIBRARIES( kio_msits ${KDE4_KIO_LIBS} ${LIBCHM_LIBRARY} )
+ INSTALL( TARGETS kio_msits DESTINATION ${PLUGIN_INSTALL_DIR} )
+-INSTALL( FILES msits.protocol DESTINATION ${KDE4_SERVICES_INSTALL_DIR} )
++INSTALL( FILES msits.protocol DESTINATION ${SERVICES_INSTALL_DIR} )
