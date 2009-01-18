@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.5p122
+PORTVERSION=	4.2.5p155
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -41,7 +41,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-MAN1=		ntp-keygen.1 ntpd.1 ntpdc.1 ntpq.1 sntp.1
+MAN1=		ntp-keygen.1 ntpd.1 ntpdc.1 ntpq.1 ntpsnmpd.1 sntp.1
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

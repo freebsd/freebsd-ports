@@ -8,6 +8,7 @@ bin/ntptime
 bin/ntptrace
 bin/sntp
 bin/tickadj
+sbin/ntpsnmpd
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
@@ -134,6 +135,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/pic/beaver.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/boom3.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/boom3a.gif
+%%PORTDOCS%%%%DOCSDIR%%/pic/boom4.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/broad.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/bustardfly.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/c51.jpg
