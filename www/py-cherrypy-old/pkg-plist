@@ -1,4 +1,7 @@
 @comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/cherrypy/_cpwsgiserver3.py
+%%PYTHON_SITELIBDIR%%/cherrypy/_cpwsgiserver3.pyc
+%%PYTHON_SITELIBDIR%%/cherrypy/_cpwsgiserver3.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/__init__.py
 %%PYTHON_SITELIBDIR%%/cherrypy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/__init__.pyo
@@ -202,10 +205,16 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_xmlrpc_filter.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_xmlrpc_filter.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_xmlrpc_filter.pyo
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_etags.py
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_etags.pyc
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_etags.pyo
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_misc_tools.py
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_misc_tools.pyc
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_misc_tools.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.pyo
-%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial
+%%PORTPYTHON_SITELIBDIR%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.pyc
