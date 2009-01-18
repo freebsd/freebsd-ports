@@ -25,7 +25,7 @@ USE_GMAKE=	YES
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,-pthread -lpthread,${PTHREAD_LIBS},g; \
-		s,-O3,${CXXFLAGS},; \
+		s,-O2,${CXXFLAGS},; \
 		s,^CC,#CC,; \
 		s,CC,CXX,' ${WRKSRC}/Makefile
 
