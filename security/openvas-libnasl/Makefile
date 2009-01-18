@@ -20,7 +20,7 @@ LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpgme.17:${PORTSDIR}/security/gpgme \
 		openvas.1:${PORTSDIR}/security/openvas-libraries \
 		openvas_hg.1:${PORTSDIR}/security/openvas-libraries \
-		tasn1.3:${PORTSDIR}/security/libtasn1
+		tasn1.4:${PORTSDIR}/security/libtasn1
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

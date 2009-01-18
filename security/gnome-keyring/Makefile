@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
-LIB_DEPENDS=	tasn1.3:${PORTSDIR}/security/libtasn1 \
+LIB_DEPENDS=	tasn1.4:${PORTSDIR}/security/libtasn1 \
     		gcrypt.16:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
