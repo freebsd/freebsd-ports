@@ -2056,6 +2056,7 @@ de-citrix_ica                   ports/german/citrix_ica
 de-dict                         ports/german/dict
 de-digibux                      ports/german/digibux
 de-ding                         ports/german/ding
+de-dtaus                        ports/german/dtaus
 de-eric4                        ports/german/eric4
 de-geonext                      ports/german/geonext
 de-ispell                       ports/german/ispell
@@ -12165,6 +12166,7 @@ p5-SWF-Chart                    ports/www/p5-SWF-Chart
 p5-SWF-File                     ports/graphics/p5-SWF-File
 p5-Safe-Hole                    ports/security/p5-Safe-Hole
 p5-Samba-LDAP                   ports/net/p5-Samba-LDAP
+p5-Sane                         ports/graphics/p5-Sane
 p5-Scalar-Defer                 ports/devel/p5-Scalar-Defer
 p5-Scalar-List-Utils            ports/lang/p5-Scalar-List-Utils
 p5-Scalar-Listify               ports/devel/p5-Scalar-Listify
@@ -15386,6 +15388,7 @@ p5-runapp                       ports/devel/p5-RunApp
 p5-s3                           ports/net/p5-S3
 p5-safe-hole                    ports/security/p5-Safe-Hole
 p5-samba-ldap                   ports/net/p5-Samba-LDAP
+p5-sane                         ports/graphics/p5-Sane
 p5-savi-perl                    ports/security/p5-SAVI-Perl
 p5-scalar-defer                 ports/devel/p5-Scalar-Defer
 p5-scalar-list-utils            ports/lang/p5-Scalar-List-Utils
